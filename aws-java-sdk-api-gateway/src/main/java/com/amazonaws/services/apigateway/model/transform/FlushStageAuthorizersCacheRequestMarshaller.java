@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,48 +41,35 @@ import com.amazonaws.protocol.json.*;
 /**
  * FlushStageAuthorizersCacheRequest Marshaller
  */
-public class FlushStageAuthorizersCacheRequestMarshaller
-        implements
-        Marshaller<Request<FlushStageAuthorizersCacheRequest>, FlushStageAuthorizersCacheRequest> {
+public class FlushStageAuthorizersCacheRequestMarshaller implements Marshaller<Request<FlushStageAuthorizersCacheRequest>, FlushStageAuthorizersCacheRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public FlushStageAuthorizersCacheRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public FlushStageAuthorizersCacheRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<FlushStageAuthorizersCacheRequest> marshall(
-            FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest) {
+    public Request<FlushStageAuthorizersCacheRequest> marshall(FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest) {
 
         if (flushStageAuthorizersCacheRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<FlushStageAuthorizersCacheRequest> request = new DefaultRequest<FlushStageAuthorizersCacheRequest>(
-                flushStageAuthorizersCacheRequest, "AmazonApiGateway");
+        Request<FlushStageAuthorizersCacheRequest> request = new DefaultRequest<FlushStageAuthorizersCacheRequest>(flushStageAuthorizersCacheRequest,
+                "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/cache/authorizers";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{restapi_id}",
-                        (flushStageAuthorizersCacheRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(flushStageAuthorizersCacheRequest
-                                                .getRestApiId()), false)
-                                : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{stage_name}",
-                        (flushStageAuthorizersCacheRequest.getStageName() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(flushStageAuthorizersCacheRequest
-                                                .getStageName()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{restapi_id}",
+                (flushStageAuthorizersCacheRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(flushStageAuthorizersCacheRequest.getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{stage_name}",
+                (flushStageAuthorizersCacheRequest.getStageName() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(flushStageAuthorizersCacheRequest.getStageName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

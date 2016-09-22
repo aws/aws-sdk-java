@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -18,13 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides details about a DB cluster parameter group including the parameters
- * in the DB cluster parameter group.
+ * Provides details about a DB cluster parameter group including the parameters in the DB cluster parameter group.
  * </p>
  */
-public class DescribeDBClusterParametersResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeDBClusterParametersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,10 +29,9 @@ public class DescribeDBClusterParametersResult extends
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * DescribeDBClusterParameters request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code> .
+     * An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code> .
      * </p>
      */
     private String marker;
@@ -72,8 +66,7 @@ public class DescribeDBClusterParametersResult extends
             return;
         }
 
-        this.parameters = new com.amazonaws.internal.SdkInternalList<Parameter>(
-                parameters);
+        this.parameters = new com.amazonaws.internal.SdkInternalList<Parameter>(parameters);
     }
 
     /**
@@ -81,23 +74,19 @@ public class DescribeDBClusterParametersResult extends
      * Provides a list of parameters for the DB cluster parameter group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setParameters(java.util.Collection)} or
-     * {@link #withParameters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParameters(java.util.Collection)} or {@link #withParameters(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param parameters
      *        Provides a list of parameters for the DB cluster parameter group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDBClusterParametersResult withParameters(
-            Parameter... parameters) {
+    public DescribeDBClusterParametersResult withParameters(Parameter... parameters) {
         if (this.parameters == null) {
-            setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(
-                    parameters.length));
+            setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(parameters.length));
         }
         for (Parameter ele : parameters) {
             this.parameters.add(ele);
@@ -112,29 +101,25 @@ public class DescribeDBClusterParametersResult extends
      * 
      * @param parameters
      *        Provides a list of parameters for the DB cluster parameter group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDBClusterParametersResult withParameters(
-            java.util.Collection<Parameter> parameters) {
+    public DescribeDBClusterParametersResult withParameters(java.util.Collection<Parameter> parameters) {
         setParameters(parameters);
         return this;
     }
 
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * DescribeDBClusterParameters request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code> .
+     * An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code> .
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous
-     *        DescribeDBClusterParameters request. If this parameter is
-     *        specified, the response includes only records beyond the marker,
-     *        up to the value specified by <code>MaxRecords</code> .
+     *        An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter
+     *        is specified, the response includes only records beyond the marker, up to the value specified by
+     *        <code>MaxRecords</code> .
      */
 
     public void setMarker(String marker) {
@@ -143,16 +128,14 @@ public class DescribeDBClusterParametersResult extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * DescribeDBClusterParameters request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code> .
+     * An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code> .
      * </p>
      * 
-     * @return An optional pagination token provided by a previous
-     *         DescribeDBClusterParameters request. If this parameter is
-     *         specified, the response includes only records beyond the marker,
-     *         up to the value specified by <code>MaxRecords</code> .
+     * @return An optional pagination token provided by a previous DescribeDBClusterParameters request. If this
+     *         parameter is specified, the response includes only records beyond the marker, up to the value specified
+     *         by <code>MaxRecords</code> .
      */
 
     public String getMarker() {
@@ -161,19 +144,16 @@ public class DescribeDBClusterParametersResult extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * DescribeDBClusterParameters request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code> .
+     * An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code> .
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous
-     *        DescribeDBClusterParameters request. If this parameter is
-     *        specified, the response includes only records beyond the marker,
-     *        up to the value specified by <code>MaxRecords</code> .
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter
+     *        is specified, the response includes only records beyond the marker, up to the value specified by
+     *        <code>MaxRecords</code> .
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDBClusterParametersResult withMarker(String marker) {
@@ -182,8 +162,7 @@ public class DescribeDBClusterParametersResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -213,13 +192,11 @@ public class DescribeDBClusterParametersResult extends
         DescribeDBClusterParametersResult other = (DescribeDBClusterParametersResult) obj;
         if (other.getParameters() == null ^ this.getParameters() == null)
             return false;
-        if (other.getParameters() != null
-                && other.getParameters().equals(this.getParameters()) == false)
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -229,10 +206,8 @@ public class DescribeDBClusterParametersResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getParameters() == null) ? 0 : getParameters().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -241,9 +216,7 @@ public class DescribeDBClusterParametersResult extends
         try {
             return (DescribeDBClusterParametersResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * ListFunctionsRequest Marshaller
  */
-public class ListFunctionsRequestMarshaller implements
-        Marshaller<Request<ListFunctionsRequest>, ListFunctionsRequest> {
+public class ListFunctionsRequestMarshaller implements Marshaller<Request<ListFunctionsRequest>, ListFunctionsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,16 +49,13 @@ public class ListFunctionsRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<ListFunctionsRequest> marshall(
-            ListFunctionsRequest listFunctionsRequest) {
+    public Request<ListFunctionsRequest> marshall(ListFunctionsRequest listFunctionsRequest) {
 
         if (listFunctionsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListFunctionsRequest> request = new DefaultRequest<ListFunctionsRequest>(
-                listFunctionsRequest, "AWSLambda");
+        Request<ListFunctionsRequest> request = new DefaultRequest<ListFunctionsRequest>(listFunctionsRequest, "AWSLambda");
 
         request.setHttpMethod(HttpMethodName.GET);
 
@@ -70,13 +64,11 @@ public class ListFunctionsRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         if (listFunctionsRequest.getMarker() != null) {
-            request.addParameter("Marker",
-                    StringUtils.fromString(listFunctionsRequest.getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(listFunctionsRequest.getMarker()));
         }
 
         if (listFunctionsRequest.getMaxItems() != null) {
-            request.addParameter("MaxItems",
-                    StringUtils.fromInteger(listFunctionsRequest.getMaxItems()));
+            request.addParameter("MaxItems", StringUtils.fromInteger(listFunctionsRequest.getMaxItems()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

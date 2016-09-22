@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -34,34 +32,28 @@ public class KinesisActionJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(KinesisAction kinesisAction,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(KinesisAction kinesisAction, StructuredJsonGenerator jsonGenerator) {
 
         if (kinesisAction == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (kinesisAction.getRoleArn() != null) {
-                jsonGenerator.writeFieldName("roleArn").writeValue(
-                        kinesisAction.getRoleArn());
+                jsonGenerator.writeFieldName("roleArn").writeValue(kinesisAction.getRoleArn());
             }
             if (kinesisAction.getStreamName() != null) {
-                jsonGenerator.writeFieldName("streamName").writeValue(
-                        kinesisAction.getStreamName());
+                jsonGenerator.writeFieldName("streamName").writeValue(kinesisAction.getStreamName());
             }
             if (kinesisAction.getPartitionKey() != null) {
-                jsonGenerator.writeFieldName("partitionKey").writeValue(
-                        kinesisAction.getPartitionKey());
+                jsonGenerator.writeFieldName("partitionKey").writeValue(kinesisAction.getPartitionKey());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

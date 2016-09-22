@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ElasticLoadBalancer JSON Unmarshaller
  */
-public class ElasticLoadBalancerJsonUnmarshaller implements
-        Unmarshaller<ElasticLoadBalancer, JsonUnmarshallerContext> {
+public class ElasticLoadBalancerJsonUnmarshaller implements Unmarshaller<ElasticLoadBalancer, JsonUnmarshallerContext> {
 
-    public ElasticLoadBalancer unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ElasticLoadBalancer unmarshall(JsonUnmarshallerContext context) throws Exception {
         ElasticLoadBalancer elasticLoadBalancer = new ElasticLoadBalancer();
 
         int originalDepth = context.getCurrentDepth();
@@ -51,62 +47,44 @@ public class ElasticLoadBalancerJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("ElasticLoadBalancerName",
-                        targetDepth)) {
+                if (context.testExpression("ElasticLoadBalancerName", targetDepth)) {
                     context.nextToken();
-                    elasticLoadBalancer.setElasticLoadBalancerName(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    elasticLoadBalancer.setElasticLoadBalancerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
                     context.nextToken();
-                    elasticLoadBalancer.setRegion(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    elasticLoadBalancer.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsName", targetDepth)) {
                     context.nextToken();
-                    elasticLoadBalancer.setDnsName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    elasticLoadBalancer.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
-                    elasticLoadBalancer.setStackId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    elasticLoadBalancer.setStackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LayerId", targetDepth)) {
                     context.nextToken();
-                    elasticLoadBalancer.setLayerId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    elasticLoadBalancer.setLayerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
                     context.nextToken();
-                    elasticLoadBalancer.setVpcId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    elasticLoadBalancer.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     context.nextToken();
-                    elasticLoadBalancer
-                            .setAvailabilityZones(new ListUnmarshaller<String>(
-                                    context.getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    elasticLoadBalancer.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
-                    elasticLoadBalancer
-                            .setSubnetIds(new ListUnmarshaller<String>(context
-                                    .getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    elasticLoadBalancer.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Ec2InstanceIds", targetDepth)) {
                     context.nextToken();
-                    elasticLoadBalancer
-                            .setEc2InstanceIds(new ListUnmarshaller<String>(
-                                    context.getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    elasticLoadBalancer.setEc2InstanceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

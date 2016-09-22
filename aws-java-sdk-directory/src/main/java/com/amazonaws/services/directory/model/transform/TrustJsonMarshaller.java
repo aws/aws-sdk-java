@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model.transform;
 
@@ -37,58 +35,46 @@ public class TrustJsonMarshaller {
     public void marshall(Trust trust, StructuredJsonGenerator jsonGenerator) {
 
         if (trust == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (trust.getDirectoryId() != null) {
-                jsonGenerator.writeFieldName("DirectoryId").writeValue(
-                        trust.getDirectoryId());
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(trust.getDirectoryId());
             }
             if (trust.getTrustId() != null) {
-                jsonGenerator.writeFieldName("TrustId").writeValue(
-                        trust.getTrustId());
+                jsonGenerator.writeFieldName("TrustId").writeValue(trust.getTrustId());
             }
             if (trust.getRemoteDomainName() != null) {
-                jsonGenerator.writeFieldName("RemoteDomainName").writeValue(
-                        trust.getRemoteDomainName());
+                jsonGenerator.writeFieldName("RemoteDomainName").writeValue(trust.getRemoteDomainName());
             }
             if (trust.getTrustType() != null) {
-                jsonGenerator.writeFieldName("TrustType").writeValue(
-                        trust.getTrustType());
+                jsonGenerator.writeFieldName("TrustType").writeValue(trust.getTrustType());
             }
             if (trust.getTrustDirection() != null) {
-                jsonGenerator.writeFieldName("TrustDirection").writeValue(
-                        trust.getTrustDirection());
+                jsonGenerator.writeFieldName("TrustDirection").writeValue(trust.getTrustDirection());
             }
             if (trust.getTrustState() != null) {
-                jsonGenerator.writeFieldName("TrustState").writeValue(
-                        trust.getTrustState());
+                jsonGenerator.writeFieldName("TrustState").writeValue(trust.getTrustState());
             }
             if (trust.getCreatedDateTime() != null) {
-                jsonGenerator.writeFieldName("CreatedDateTime").writeValue(
-                        trust.getCreatedDateTime());
+                jsonGenerator.writeFieldName("CreatedDateTime").writeValue(trust.getCreatedDateTime());
             }
             if (trust.getLastUpdatedDateTime() != null) {
-                jsonGenerator.writeFieldName("LastUpdatedDateTime").writeValue(
-                        trust.getLastUpdatedDateTime());
+                jsonGenerator.writeFieldName("LastUpdatedDateTime").writeValue(trust.getLastUpdatedDateTime());
             }
             if (trust.getStateLastUpdatedDateTime() != null) {
-                jsonGenerator.writeFieldName("StateLastUpdatedDateTime")
-                        .writeValue(trust.getStateLastUpdatedDateTime());
+                jsonGenerator.writeFieldName("StateLastUpdatedDateTime").writeValue(trust.getStateLastUpdatedDateTime());
             }
             if (trust.getTrustStateReason() != null) {
-                jsonGenerator.writeFieldName("TrustStateReason").writeValue(
-                        trust.getTrustStateReason());
+                jsonGenerator.writeFieldName("TrustStateReason").writeValue(trust.getTrustStateReason());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

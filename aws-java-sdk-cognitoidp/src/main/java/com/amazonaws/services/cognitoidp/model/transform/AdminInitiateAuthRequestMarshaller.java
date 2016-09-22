@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
@@ -35,85 +33,67 @@ import com.amazonaws.protocol.json.*;
 /**
  * AdminInitiateAuthRequest Marshaller
  */
-public class AdminInitiateAuthRequestMarshaller implements
-        Marshaller<Request<AdminInitiateAuthRequest>, AdminInitiateAuthRequest> {
+public class AdminInitiateAuthRequestMarshaller implements Marshaller<Request<AdminInitiateAuthRequest>, AdminInitiateAuthRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public AdminInitiateAuthRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public AdminInitiateAuthRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<AdminInitiateAuthRequest> marshall(
-            AdminInitiateAuthRequest adminInitiateAuthRequest) {
+    public Request<AdminInitiateAuthRequest> marshall(AdminInitiateAuthRequest adminInitiateAuthRequest) {
 
         if (adminInitiateAuthRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AdminInitiateAuthRequest> request = new DefaultRequest<AdminInitiateAuthRequest>(
-                adminInitiateAuthRequest, "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target",
-                "AWSCognitoIdentityProviderService.AdminInitiateAuth");
+        Request<AdminInitiateAuthRequest> request = new DefaultRequest<AdminInitiateAuthRequest>(adminInitiateAuthRequest, "AWSCognitoIdentityProvider");
+        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminInitiateAuth");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (adminInitiateAuthRequest.getUserPoolId() != null) {
-                jsonGenerator.writeFieldName("UserPoolId").writeValue(
-                        adminInitiateAuthRequest.getUserPoolId());
+                jsonGenerator.writeFieldName("UserPoolId").writeValue(adminInitiateAuthRequest.getUserPoolId());
             }
             if (adminInitiateAuthRequest.getClientId() != null) {
-                jsonGenerator.writeFieldName("ClientId").writeValue(
-                        adminInitiateAuthRequest.getClientId());
+                jsonGenerator.writeFieldName("ClientId").writeValue(adminInitiateAuthRequest.getClientId());
             }
             if (adminInitiateAuthRequest.getAuthFlow() != null) {
-                jsonGenerator.writeFieldName("AuthFlow").writeValue(
-                        adminInitiateAuthRequest.getAuthFlow());
+                jsonGenerator.writeFieldName("AuthFlow").writeValue(adminInitiateAuthRequest.getAuthFlow());
             }
 
-            java.util.Map<String, String> authParametersMap = adminInitiateAuthRequest
-                    .getAuthParameters();
+            java.util.Map<String, String> authParametersMap = adminInitiateAuthRequest.getAuthParameters();
             if (authParametersMap != null) {
                 jsonGenerator.writeFieldName("AuthParameters");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> authParametersMapValue : authParametersMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> authParametersMapValue : authParametersMap.entrySet()) {
                     if (authParametersMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(authParametersMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(authParametersMapValue.getKey());
 
-                        jsonGenerator.writeValue(authParametersMapValue
-                                .getValue());
+                        jsonGenerator.writeValue(authParametersMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
             }
 
-            java.util.Map<String, String> clientMetadataMap = adminInitiateAuthRequest
-                    .getClientMetadata();
+            java.util.Map<String, String> clientMetadataMap = adminInitiateAuthRequest.getClientMetadata();
             if (clientMetadataMap != null) {
                 jsonGenerator.writeFieldName("ClientMetadata");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> clientMetadataMapValue : clientMetadataMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> clientMetadataMapValue : clientMetadataMap.entrySet()) {
                     if (clientMetadataMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(clientMetadataMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(clientMetadataMapValue.getKey());
 
-                        jsonGenerator.writeValue(clientMetadataMapValue
-                                .getValue());
+                        jsonGenerator.writeValue(clientMetadataMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
@@ -123,12 +103,10 @@ public class AdminInitiateAuthRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

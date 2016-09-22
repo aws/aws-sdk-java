@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the time period for a Scheduled Instance to start its first
- * schedule.
+ * Describes the time period for a Scheduled Instance to start its first schedule.
  * </p>
  */
 public class SlotStartTimeRangeRequest implements Serializable, Cloneable {
@@ -43,8 +40,7 @@ public class SlotStartTimeRangeRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @param earliestTime
-     *        The earliest date and time, in UTC, for the Scheduled Instance to
-     *        start.
+     *        The earliest date and time, in UTC, for the Scheduled Instance to start.
      */
 
     public void setEarliestTime(java.util.Date earliestTime) {
@@ -56,8 +52,7 @@ public class SlotStartTimeRangeRequest implements Serializable, Cloneable {
      * The earliest date and time, in UTC, for the Scheduled Instance to start.
      * </p>
      * 
-     * @return The earliest date and time, in UTC, for the Scheduled Instance to
-     *         start.
+     * @return The earliest date and time, in UTC, for the Scheduled Instance to start.
      */
 
     public java.util.Date getEarliestTime() {
@@ -70,14 +65,11 @@ public class SlotStartTimeRangeRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @param earliestTime
-     *        The earliest date and time, in UTC, for the Scheduled Instance to
-     *        start.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The earliest date and time, in UTC, for the Scheduled Instance to start.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SlotStartTimeRangeRequest withEarliestTime(
-            java.util.Date earliestTime) {
+    public SlotStartTimeRangeRequest withEarliestTime(java.util.Date earliestTime) {
         setEarliestTime(earliestTime);
         return this;
     }
@@ -88,8 +80,7 @@ public class SlotStartTimeRangeRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @param latestTime
-     *        The latest date and time, in UTC, for the Scheduled Instance to
-     *        start.
+     *        The latest date and time, in UTC, for the Scheduled Instance to start.
      */
 
     public void setLatestTime(java.util.Date latestTime) {
@@ -101,8 +92,7 @@ public class SlotStartTimeRangeRequest implements Serializable, Cloneable {
      * The latest date and time, in UTC, for the Scheduled Instance to start.
      * </p>
      * 
-     * @return The latest date and time, in UTC, for the Scheduled Instance to
-     *         start.
+     * @return The latest date and time, in UTC, for the Scheduled Instance to start.
      */
 
     public java.util.Date getLatestTime() {
@@ -115,10 +105,8 @@ public class SlotStartTimeRangeRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @param latestTime
-     *        The latest date and time, in UTC, for the Scheduled Instance to
-     *        start.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The latest date and time, in UTC, for the Scheduled Instance to start.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SlotStartTimeRangeRequest withLatestTime(java.util.Date latestTime) {
@@ -127,8 +115,7 @@ public class SlotStartTimeRangeRequest implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -158,13 +145,11 @@ public class SlotStartTimeRangeRequest implements Serializable, Cloneable {
         SlotStartTimeRangeRequest other = (SlotStartTimeRangeRequest) obj;
         if (other.getEarliestTime() == null ^ this.getEarliestTime() == null)
             return false;
-        if (other.getEarliestTime() != null
-                && other.getEarliestTime().equals(this.getEarliestTime()) == false)
+        if (other.getEarliestTime() != null && other.getEarliestTime().equals(this.getEarliestTime()) == false)
             return false;
         if (other.getLatestTime() == null ^ this.getLatestTime() == null)
             return false;
-        if (other.getLatestTime() != null
-                && other.getLatestTime().equals(this.getLatestTime()) == false)
+        if (other.getLatestTime() != null && other.getLatestTime().equals(this.getLatestTime()) == false)
             return false;
         return true;
     }
@@ -174,12 +159,8 @@ public class SlotStartTimeRangeRequest implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEarliestTime() == null) ? 0 : getEarliestTime()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getLatestTime() == null) ? 0 : getLatestTime().hashCode());
+        hashCode = prime * hashCode + ((getEarliestTime() == null) ? 0 : getEarliestTime().hashCode());
+        hashCode = prime * hashCode + ((getLatestTime() == null) ? 0 : getLatestTime().hashCode());
         return hashCode;
     }
 
@@ -188,9 +169,7 @@ public class SlotStartTimeRangeRequest implements Serializable, Cloneable {
         try {
             return (SlotStartTimeRangeRequest) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

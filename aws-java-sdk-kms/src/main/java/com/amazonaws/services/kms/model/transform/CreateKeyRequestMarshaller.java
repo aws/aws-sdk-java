@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kms.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * CreateKeyRequest Marshaller
  */
-public class CreateKeyRequestMarshaller implements
-        Marshaller<Request<CreateKeyRequest>, CreateKeyRequest> {
+public class CreateKeyRequestMarshaller implements Marshaller<Request<CreateKeyRequest>, CreateKeyRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -47,12 +44,10 @@ public class CreateKeyRequestMarshaller implements
     public Request<CreateKeyRequest> marshall(CreateKeyRequest createKeyRequest) {
 
         if (createKeyRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateKeyRequest> request = new DefaultRequest<CreateKeyRequest>(
-                createKeyRequest, "AWSKMS");
+        Request<CreateKeyRequest> request = new DefaultRequest<CreateKeyRequest>(createKeyRequest, "AWSKMS");
         request.addHeader("X-Amz-Target", "TrentService.CreateKey");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -60,44 +55,34 @@ public class CreateKeyRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (createKeyRequest.getPolicy() != null) {
-                jsonGenerator.writeFieldName("Policy").writeValue(
-                        createKeyRequest.getPolicy());
+                jsonGenerator.writeFieldName("Policy").writeValue(createKeyRequest.getPolicy());
             }
             if (createKeyRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(
-                        createKeyRequest.getDescription());
+                jsonGenerator.writeFieldName("Description").writeValue(createKeyRequest.getDescription());
             }
             if (createKeyRequest.getKeyUsage() != null) {
-                jsonGenerator.writeFieldName("KeyUsage").writeValue(
-                        createKeyRequest.getKeyUsage());
+                jsonGenerator.writeFieldName("KeyUsage").writeValue(createKeyRequest.getKeyUsage());
             }
             if (createKeyRequest.getOrigin() != null) {
-                jsonGenerator.writeFieldName("Origin").writeValue(
-                        createKeyRequest.getOrigin());
+                jsonGenerator.writeFieldName("Origin").writeValue(createKeyRequest.getOrigin());
             }
             if (createKeyRequest.getBypassPolicyLockoutSafetyCheck() != null) {
-                jsonGenerator.writeFieldName("BypassPolicyLockoutSafetyCheck")
-                        .writeValue(
-                                createKeyRequest
-                                        .getBypassPolicyLockoutSafetyCheck());
+                jsonGenerator.writeFieldName("BypassPolicyLockoutSafetyCheck").writeValue(createKeyRequest.getBypassPolicyLockoutSafetyCheck());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

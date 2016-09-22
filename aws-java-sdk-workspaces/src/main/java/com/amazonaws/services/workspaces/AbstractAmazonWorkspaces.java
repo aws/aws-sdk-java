@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.workspaces;
 
@@ -18,9 +16,8 @@ import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AmazonWorkspaces}. Convenient method forms
- * pass through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonWorkspaces}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
 
@@ -43,8 +40,7 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
-    public CreateWorkspacesResult createWorkspaces(
-            CreateWorkspacesRequest request) {
+    public CreateWorkspacesResult createWorkspaces(CreateWorkspacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,8 +55,7 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
-    public DescribeWorkspaceBundlesResult describeWorkspaceBundles(
-            DescribeWorkspaceBundlesRequest request) {
+    public DescribeWorkspaceBundlesResult describeWorkspaceBundles(DescribeWorkspaceBundlesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -70,8 +65,7 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
-    public DescribeWorkspaceDirectoriesResult describeWorkspaceDirectories(
-            DescribeWorkspaceDirectoriesRequest request) {
+    public DescribeWorkspaceDirectoriesResult describeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -81,8 +75,7 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
-    public DescribeWorkspacesResult describeWorkspaces(
-            DescribeWorkspacesRequest request) {
+    public DescribeWorkspacesResult describeWorkspaces(DescribeWorkspacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -92,26 +85,22 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
-    public DescribeWorkspacesConnectionStatusResult describeWorkspacesConnectionStatus(
-            DescribeWorkspacesConnectionStatusRequest request) {
+    public DescribeWorkspacesConnectionStatusResult describeWorkspacesConnectionStatus(DescribeWorkspacesConnectionStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ModifyWorkspacePropertiesResult modifyWorkspaceProperties(
-            ModifyWorkspacePropertiesRequest request) {
+    public ModifyWorkspacePropertiesResult modifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RebootWorkspacesResult rebootWorkspaces(
-            RebootWorkspacesRequest request) {
+    public RebootWorkspacesResult rebootWorkspaces(RebootWorkspacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RebuildWorkspacesResult rebuildWorkspaces(
-            RebuildWorkspacesRequest request) {
+    public RebuildWorkspacesResult rebuildWorkspaces(RebuildWorkspacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -126,8 +115,7 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
-    public TerminateWorkspacesResult terminateWorkspaces(
-            TerminateWorkspacesRequest request) {
+    public TerminateWorkspacesResult terminateWorkspaces(TerminateWorkspacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -137,8 +125,7 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

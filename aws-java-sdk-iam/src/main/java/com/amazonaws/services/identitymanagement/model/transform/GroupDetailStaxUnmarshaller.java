@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * GroupDetail StAX Unmarshaller
  */
-public class GroupDetailStaxUnmarshaller implements
-        Unmarshaller<GroupDetail, StaxUnmarshallerContext> {
+public class GroupDetailStaxUnmarshaller implements Unmarshaller<GroupDetail, StaxUnmarshallerContext> {
 
-    public GroupDetail unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public GroupDetail unmarshall(StaxUnmarshallerContext context) throws Exception {
         GroupDetail groupDetail = new GroupDetail();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,48 +46,37 @@ public class GroupDetailStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Path", targetDepth)) {
-                    groupDetail.setPath(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    groupDetail.setPath(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("GroupName", targetDepth)) {
-                    groupDetail.setGroupName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    groupDetail.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("GroupId", targetDepth)) {
-                    groupDetail.setGroupId(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    groupDetail.setGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Arn", targetDepth)) {
-                    groupDetail.setArn(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    groupDetail.setArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    groupDetail.setCreateDate(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    groupDetail.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("GroupPolicyList/member",
-                        targetDepth)) {
-                    groupDetail
-                            .withGroupPolicyList(PolicyDetailStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("GroupPolicyList/member", targetDepth)) {
+                    groupDetail.withGroupPolicyList(PolicyDetailStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("AttachedManagedPolicies/member",
-                        targetDepth)) {
-                    groupDetail
-                            .withAttachedManagedPolicies(AttachedPolicyStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("AttachedManagedPolicies/member", targetDepth)) {
+                    groupDetail.withAttachedManagedPolicies(AttachedPolicyStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

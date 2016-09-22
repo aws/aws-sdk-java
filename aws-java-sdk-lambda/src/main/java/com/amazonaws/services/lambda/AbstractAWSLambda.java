@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda;
 
@@ -18,9 +16,8 @@ import com.amazonaws.services.lambda.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AWSLambda}. Convenient method forms pass
- * through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AWSLambda}. Convenient method forms pass through to the corresponding overload that
+ * takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAWSLambda implements AWSLambda {
 
@@ -48,8 +45,7 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
-    public CreateEventSourceMappingResult createEventSourceMapping(
-            CreateEventSourceMappingRequest request) {
+    public CreateEventSourceMappingResult createEventSourceMapping(CreateEventSourceMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,8 +60,7 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
-    public DeleteEventSourceMappingResult deleteEventSourceMapping(
-            DeleteEventSourceMappingRequest request) {
+    public DeleteEventSourceMappingResult deleteEventSourceMapping(DeleteEventSourceMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,8 +75,7 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
-    public GetEventSourceMappingResult getEventSourceMapping(
-            GetEventSourceMappingRequest request) {
+    public GetEventSourceMappingResult getEventSourceMapping(GetEventSourceMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,8 +85,7 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
-    public GetFunctionConfigurationResult getFunctionConfiguration(
-            GetFunctionConfigurationRequest request) {
+    public GetFunctionConfigurationResult getFunctionConfiguration(GetFunctionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,8 +111,7 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
-    public ListEventSourceMappingsResult listEventSourceMappings(
-            ListEventSourceMappingsRequest request) {
+    public ListEventSourceMappingsResult listEventSourceMappings(ListEventSourceMappingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -139,8 +131,7 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
-    public ListVersionsByFunctionResult listVersionsByFunction(
-            ListVersionsByFunctionRequest request) {
+    public ListVersionsByFunctionResult listVersionsByFunction(ListVersionsByFunctionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -150,8 +141,7 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
-    public RemovePermissionResult removePermission(
-            RemovePermissionRequest request) {
+    public RemovePermissionResult removePermission(RemovePermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -161,20 +151,17 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
-    public UpdateEventSourceMappingResult updateEventSourceMapping(
-            UpdateEventSourceMappingRequest request) {
+    public UpdateEventSourceMappingResult updateEventSourceMapping(UpdateEventSourceMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateFunctionCodeResult updateFunctionCode(
-            UpdateFunctionCodeRequest request) {
+    public UpdateFunctionCodeResult updateFunctionCode(UpdateFunctionCodeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateFunctionConfigurationResult updateFunctionConfiguration(
-            UpdateFunctionConfigurationRequest request) {
+    public UpdateFunctionConfigurationResult updateFunctionConfiguration(UpdateFunctionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -184,8 +171,7 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

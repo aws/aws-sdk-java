@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
 
@@ -19,13 +17,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the AllocatePrivateVirtualInterface
- * operation.
+ * Container for the parameters to the AllocatePrivateVirtualInterface operation.
  * </p>
  */
-public class AllocatePrivateVirtualInterfaceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -64,8 +59,7 @@ public class AllocatePrivateVirtualInterfaceRequest extends
      * </p>
      * 
      * @param connectionId
-     *        The connection ID on which the private virtual interface is
-     *        provisioned.</p>
+     *        The connection ID on which the private virtual interface is provisioned.</p>
      *        <p>
      *        Default: None
      */
@@ -82,8 +76,7 @@ public class AllocatePrivateVirtualInterfaceRequest extends
      * Default: None
      * </p>
      * 
-     * @return The connection ID on which the private virtual interface is
-     *         provisioned.</p>
+     * @return The connection ID on which the private virtual interface is provisioned.</p>
      *         <p>
      *         Default: None
      */
@@ -101,16 +94,13 @@ public class AllocatePrivateVirtualInterfaceRequest extends
      * </p>
      * 
      * @param connectionId
-     *        The connection ID on which the private virtual interface is
-     *        provisioned.</p>
+     *        The connection ID on which the private virtual interface is provisioned.</p>
      *        <p>
      *        Default: None
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocatePrivateVirtualInterfaceRequest withConnectionId(
-            String connectionId) {
+    public AllocatePrivateVirtualInterfaceRequest withConnectionId(String connectionId) {
         setConnectionId(connectionId);
         return this;
     }
@@ -124,8 +114,7 @@ public class AllocatePrivateVirtualInterfaceRequest extends
      * </p>
      * 
      * @param ownerAccount
-     *        The AWS account that will own the new private virtual
-     *        interface.</p>
+     *        The AWS account that will own the new private virtual interface.</p>
      *        <p>
      *        Default: None
      */
@@ -142,8 +131,7 @@ public class AllocatePrivateVirtualInterfaceRequest extends
      * Default: None
      * </p>
      * 
-     * @return The AWS account that will own the new private virtual
-     *         interface.</p>
+     * @return The AWS account that will own the new private virtual interface.</p>
      *         <p>
      *         Default: None
      */
@@ -161,16 +149,13 @@ public class AllocatePrivateVirtualInterfaceRequest extends
      * </p>
      * 
      * @param ownerAccount
-     *        The AWS account that will own the new private virtual
-     *        interface.</p>
+     *        The AWS account that will own the new private virtual interface.</p>
      *        <p>
      *        Default: None
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocatePrivateVirtualInterfaceRequest withOwnerAccount(
-            String ownerAccount) {
+    public AllocatePrivateVirtualInterfaceRequest withOwnerAccount(String ownerAccount) {
         setOwnerAccount(ownerAccount);
         return this;
     }
@@ -184,14 +169,12 @@ public class AllocatePrivateVirtualInterfaceRequest extends
      * </p>
      * 
      * @param newPrivateVirtualInterfaceAllocation
-     *        Detailed information for the private virtual interface to be
-     *        provisioned.</p>
+     *        Detailed information for the private virtual interface to be provisioned.</p>
      *        <p>
      *        Default: None
      */
 
-    public void setNewPrivateVirtualInterfaceAllocation(
-            NewPrivateVirtualInterfaceAllocation newPrivateVirtualInterfaceAllocation) {
+    public void setNewPrivateVirtualInterfaceAllocation(NewPrivateVirtualInterfaceAllocation newPrivateVirtualInterfaceAllocation) {
         this.newPrivateVirtualInterfaceAllocation = newPrivateVirtualInterfaceAllocation;
     }
 
@@ -203,8 +186,7 @@ public class AllocatePrivateVirtualInterfaceRequest extends
      * Default: None
      * </p>
      * 
-     * @return Detailed information for the private virtual interface to be
-     *         provisioned.</p>
+     * @return Detailed information for the private virtual interface to be provisioned.</p>
      *         <p>
      *         Default: None
      */
@@ -222,12 +204,10 @@ public class AllocatePrivateVirtualInterfaceRequest extends
      * </p>
      * 
      * @param newPrivateVirtualInterfaceAllocation
-     *        Detailed information for the private virtual interface to be
-     *        provisioned.</p>
+     *        Detailed information for the private virtual interface to be provisioned.</p>
      *        <p>
      *        Default: None
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AllocatePrivateVirtualInterfaceRequest withNewPrivateVirtualInterfaceAllocation(
@@ -237,8 +217,7 @@ public class AllocatePrivateVirtualInterfaceRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -253,8 +232,7 @@ public class AllocatePrivateVirtualInterfaceRequest extends
         if (getOwnerAccount() != null)
             sb.append("OwnerAccount: " + getOwnerAccount() + ",");
         if (getNewPrivateVirtualInterfaceAllocation() != null)
-            sb.append("NewPrivateVirtualInterfaceAllocation: "
-                    + getNewPrivateVirtualInterfaceAllocation());
+            sb.append("NewPrivateVirtualInterfaceAllocation: " + getNewPrivateVirtualInterfaceAllocation());
         sb.append("}");
         return sb.toString();
     }
@@ -271,20 +249,16 @@ public class AllocatePrivateVirtualInterfaceRequest extends
         AllocatePrivateVirtualInterfaceRequest other = (AllocatePrivateVirtualInterfaceRequest) obj;
         if (other.getConnectionId() == null ^ this.getConnectionId() == null)
             return false;
-        if (other.getConnectionId() != null
-                && other.getConnectionId().equals(this.getConnectionId()) == false)
+        if (other.getConnectionId() != null && other.getConnectionId().equals(this.getConnectionId()) == false)
             return false;
         if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null)
             return false;
-        if (other.getOwnerAccount() != null
-                && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
+        if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
             return false;
-        if (other.getNewPrivateVirtualInterfaceAllocation() == null
-                ^ this.getNewPrivateVirtualInterfaceAllocation() == null)
+        if (other.getNewPrivateVirtualInterfaceAllocation() == null ^ this.getNewPrivateVirtualInterfaceAllocation() == null)
             return false;
         if (other.getNewPrivateVirtualInterfaceAllocation() != null
-                && other.getNewPrivateVirtualInterfaceAllocation().equals(
-                        this.getNewPrivateVirtualInterfaceAllocation()) == false)
+                && other.getNewPrivateVirtualInterfaceAllocation().equals(this.getNewPrivateVirtualInterfaceAllocation()) == false)
             return false;
         return true;
     }
@@ -294,18 +268,9 @@ public class AllocatePrivateVirtualInterfaceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getConnectionId() == null) ? 0 : getConnectionId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOwnerAccount() == null) ? 0 : getOwnerAccount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNewPrivateVirtualInterfaceAllocation() == null) ? 0
-                        : getNewPrivateVirtualInterfaceAllocation().hashCode());
+        hashCode = prime * hashCode + ((getConnectionId() == null) ? 0 : getConnectionId().hashCode());
+        hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
+        hashCode = prime * hashCode + ((getNewPrivateVirtualInterfaceAllocation() == null) ? 0 : getNewPrivateVirtualInterfaceAllocation().hashCode());
         return hashCode;
     }
 

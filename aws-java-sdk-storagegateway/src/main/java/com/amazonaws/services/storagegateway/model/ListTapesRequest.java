@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -39,14 +37,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<String> tapeARNs;
     /**
      * <p>
-     * A string that indicates the position at which to begin the returned list
-     * of tapes.
+     * A string that indicates the position at which to begin the returned list of tapes.
      * </p>
      */
     private String marker;
@@ -78,27 +74,23 @@ public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest
             return;
         }
 
-        this.tapeARNs = new com.amazonaws.internal.SdkInternalList<String>(
-                tapeARNs);
+        this.tapeARNs = new com.amazonaws.internal.SdkInternalList<String>(tapeARNs);
     }
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTapeARNs(java.util.Collection)} or
-     * {@link #withTapeARNs(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTapeARNs(java.util.Collection)} or {@link #withTapeARNs(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param tapeARNs
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTapesRequest withTapeARNs(String... tapeARNs) {
         if (this.tapeARNs == null) {
-            setTapeARNs(new com.amazonaws.internal.SdkInternalList<String>(
-                    tapeARNs.length));
+            setTapeARNs(new com.amazonaws.internal.SdkInternalList<String>(tapeARNs.length));
         }
         for (String ele : tapeARNs) {
             this.tapeARNs.add(ele);
@@ -108,8 +100,7 @@ public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * @param tapeARNs
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTapesRequest withTapeARNs(java.util.Collection<String> tapeARNs) {
@@ -119,13 +110,11 @@ public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string that indicates the position at which to begin the returned list
-     * of tapes.
+     * A string that indicates the position at which to begin the returned list of tapes.
      * </p>
      * 
      * @param marker
-     *        A string that indicates the position at which to begin the
-     *        returned list of tapes.
+     *        A string that indicates the position at which to begin the returned list of tapes.
      */
 
     public void setMarker(String marker) {
@@ -134,12 +123,10 @@ public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string that indicates the position at which to begin the returned list
-     * of tapes.
+     * A string that indicates the position at which to begin the returned list of tapes.
      * </p>
      * 
-     * @return A string that indicates the position at which to begin the
-     *         returned list of tapes.
+     * @return A string that indicates the position at which to begin the returned list of tapes.
      */
 
     public String getMarker() {
@@ -148,15 +135,12 @@ public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string that indicates the position at which to begin the returned list
-     * of tapes.
+     * A string that indicates the position at which to begin the returned list of tapes.
      * </p>
      * 
      * @param marker
-     *        A string that indicates the position at which to begin the
-     *        returned list of tapes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A string that indicates the position at which to begin the returned list of tapes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTapesRequest withMarker(String marker) {
@@ -170,8 +154,7 @@ public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param limit
-     *        An optional number limit for the tapes in the list returned by
-     *        this call.
+     *        An optional number limit for the tapes in the list returned by this call.
      */
 
     public void setLimit(Integer limit) {
@@ -183,8 +166,7 @@ public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest
      * An optional number limit for the tapes in the list returned by this call.
      * </p>
      * 
-     * @return An optional number limit for the tapes in the list returned by
-     *         this call.
+     * @return An optional number limit for the tapes in the list returned by this call.
      */
 
     public Integer getLimit() {
@@ -197,10 +179,8 @@ public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param limit
-     *        An optional number limit for the tapes in the list returned by
-     *        this call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional number limit for the tapes in the list returned by this call.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTapesRequest withLimit(Integer limit) {
@@ -209,8 +189,7 @@ public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -242,18 +221,15 @@ public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest
         ListTapesRequest other = (ListTapesRequest) obj;
         if (other.getTapeARNs() == null ^ this.getTapeARNs() == null)
             return false;
-        if (other.getTapeARNs() != null
-                && other.getTapeARNs().equals(this.getTapeARNs()) == false)
+        if (other.getTapeARNs() != null && other.getTapeARNs().equals(this.getTapeARNs()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -263,12 +239,9 @@ public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTapeARNs() == null) ? 0 : getTapeARNs().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getTapeARNs() == null) ? 0 : getTapeARNs().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -19,21 +17,19 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeCrossAccountAccessRoleResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeCrossAccountAccessRoleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
-     * The ARN that specifies the IAM role that Amazon Inspector uses to access
-     * your AWS account.
+     * The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * A Boolean value that specifies whether the IAM role has the necessary
-     * policies attached to enable Amazon Inspector to access your AWS account.
+     * A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon
+     * Inspector to access your AWS account.
      * </p>
      */
     private Boolean valid;
@@ -46,13 +42,11 @@ public class DescribeCrossAccountAccessRoleResult extends
 
     /**
      * <p>
-     * The ARN that specifies the IAM role that Amazon Inspector uses to access
-     * your AWS account.
+     * The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.
      * </p>
      * 
      * @param roleArn
-     *        The ARN that specifies the IAM role that Amazon Inspector uses to
-     *        access your AWS account.
+     *        The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.
      */
 
     public void setRoleArn(String roleArn) {
@@ -61,12 +55,10 @@ public class DescribeCrossAccountAccessRoleResult extends
 
     /**
      * <p>
-     * The ARN that specifies the IAM role that Amazon Inspector uses to access
-     * your AWS account.
+     * The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.
      * </p>
      * 
-     * @return The ARN that specifies the IAM role that Amazon Inspector uses to
-     *         access your AWS account.
+     * @return The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.
      */
 
     public String getRoleArn() {
@@ -75,15 +67,12 @@ public class DescribeCrossAccountAccessRoleResult extends
 
     /**
      * <p>
-     * The ARN that specifies the IAM role that Amazon Inspector uses to access
-     * your AWS account.
+     * The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.
      * </p>
      * 
      * @param roleArn
-     *        The ARN that specifies the IAM role that Amazon Inspector uses to
-     *        access your AWS account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCrossAccountAccessRoleResult withRoleArn(String roleArn) {
@@ -93,14 +82,13 @@ public class DescribeCrossAccountAccessRoleResult extends
 
     /**
      * <p>
-     * A Boolean value that specifies whether the IAM role has the necessary
-     * policies attached to enable Amazon Inspector to access your AWS account.
+     * A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon
+     * Inspector to access your AWS account.
      * </p>
      * 
      * @param valid
-     *        A Boolean value that specifies whether the IAM role has the
-     *        necessary policies attached to enable Amazon Inspector to access
-     *        your AWS account.
+     *        A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon
+     *        Inspector to access your AWS account.
      */
 
     public void setValid(Boolean valid) {
@@ -109,13 +97,12 @@ public class DescribeCrossAccountAccessRoleResult extends
 
     /**
      * <p>
-     * A Boolean value that specifies whether the IAM role has the necessary
-     * policies attached to enable Amazon Inspector to access your AWS account.
+     * A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon
+     * Inspector to access your AWS account.
      * </p>
      * 
-     * @return A Boolean value that specifies whether the IAM role has the
-     *         necessary policies attached to enable Amazon Inspector to access
-     *         your AWS account.
+     * @return A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon
+     *         Inspector to access your AWS account.
      */
 
     public Boolean getValid() {
@@ -124,16 +111,14 @@ public class DescribeCrossAccountAccessRoleResult extends
 
     /**
      * <p>
-     * A Boolean value that specifies whether the IAM role has the necessary
-     * policies attached to enable Amazon Inspector to access your AWS account.
+     * A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon
+     * Inspector to access your AWS account.
      * </p>
      * 
      * @param valid
-     *        A Boolean value that specifies whether the IAM role has the
-     *        necessary policies attached to enable Amazon Inspector to access
-     *        your AWS account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon
+     *        Inspector to access your AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCrossAccountAccessRoleResult withValid(Boolean valid) {
@@ -143,13 +128,12 @@ public class DescribeCrossAccountAccessRoleResult extends
 
     /**
      * <p>
-     * A Boolean value that specifies whether the IAM role has the necessary
-     * policies attached to enable Amazon Inspector to access your AWS account.
+     * A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon
+     * Inspector to access your AWS account.
      * </p>
      * 
-     * @return A Boolean value that specifies whether the IAM role has the
-     *         necessary policies attached to enable Amazon Inspector to access
-     *         your AWS account.
+     * @return A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon
+     *         Inspector to access your AWS account.
      */
 
     public Boolean isValid() {
@@ -188,19 +172,16 @@ public class DescribeCrossAccountAccessRoleResult extends
      * 
      * @param registeredAt
      *        The date when the cross-account access role was registered.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCrossAccountAccessRoleResult withRegisteredAt(
-            java.util.Date registeredAt) {
+    public DescribeCrossAccountAccessRoleResult withRegisteredAt(java.util.Date registeredAt) {
         setRegisteredAt(registeredAt);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -232,18 +213,15 @@ public class DescribeCrossAccountAccessRoleResult extends
         DescribeCrossAccountAccessRoleResult other = (DescribeCrossAccountAccessRoleResult) obj;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
-        if (other.getRoleArn() != null
-                && other.getRoleArn().equals(this.getRoleArn()) == false)
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
         if (other.getValid() == null ^ this.getValid() == null)
             return false;
-        if (other.getValid() != null
-                && other.getValid().equals(this.getValid()) == false)
+        if (other.getValid() != null && other.getValid().equals(this.getValid()) == false)
             return false;
         if (other.getRegisteredAt() == null ^ this.getRegisteredAt() == null)
             return false;
-        if (other.getRegisteredAt() != null
-                && other.getRegisteredAt().equals(this.getRegisteredAt()) == false)
+        if (other.getRegisteredAt() != null && other.getRegisteredAt().equals(this.getRegisteredAt()) == false)
             return false;
         return true;
     }
@@ -253,14 +231,9 @@ public class DescribeCrossAccountAccessRoleResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getValid() == null) ? 0 : getValid().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegisteredAt() == null) ? 0 : getRegisteredAt()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getValid() == null) ? 0 : getValid().hashCode());
+        hashCode = prime * hashCode + ((getRegisteredAt() == null) ? 0 : getRegisteredAt().hashCode());
         return hashCode;
     }
 
@@ -269,9 +242,7 @@ public class DescribeCrossAccountAccessRoleResult extends
         try {
             return (DescribeCrossAccountAccessRoleResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

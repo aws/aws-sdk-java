@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * UpdateStageResult JSON Unmarshaller
  */
-public class UpdateStageResultJsonUnmarshaller implements
-        Unmarshaller<UpdateStageResult, JsonUnmarshallerContext> {
+public class UpdateStageResultJsonUnmarshaller implements Unmarshaller<UpdateStageResult, JsonUnmarshallerContext> {
 
-    public UpdateStageResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public UpdateStageResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         UpdateStageResult updateStageResult = new UpdateStageResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,71 +49,52 @@ public class UpdateStageResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deploymentId", targetDepth)) {
                     context.nextToken();
-                    updateStageResult.setDeploymentId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    updateStageResult.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientCertificateId", targetDepth)) {
                     context.nextToken();
-                    updateStageResult.setClientCertificateId(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    updateStageResult.setClientCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stageName", targetDepth)) {
                     context.nextToken();
-                    updateStageResult.setStageName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    updateStageResult.setStageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    updateStageResult.setDescription(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    updateStageResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheClusterEnabled", targetDepth)) {
                     context.nextToken();
-                    updateStageResult
-                            .setCacheClusterEnabled(context.getUnmarshaller(
-                                    Boolean.class).unmarshall(context));
+                    updateStageResult.setCacheClusterEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheClusterSize", targetDepth)) {
                     context.nextToken();
-                    updateStageResult.setCacheClusterSize(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    updateStageResult.setCacheClusterSize(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheClusterStatus", targetDepth)) {
                     context.nextToken();
-                    updateStageResult.setCacheClusterStatus(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    updateStageResult.setCacheClusterStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("methodSettings", targetDepth)) {
                     context.nextToken();
-                    updateStageResult
-                            .setMethodSettings(new MapUnmarshaller<String, MethodSetting>(
-                                    context.getUnmarshaller(String.class),
-                                    MethodSettingJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+                    updateStageResult.setMethodSettings(new MapUnmarshaller<String, MethodSetting>(context.getUnmarshaller(String.class),
+                            MethodSettingJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("variables", targetDepth)) {
                     context.nextToken();
-                    updateStageResult
-                            .setVariables(new MapUnmarshaller<String, String>(
-                                    context.getUnmarshaller(String.class),
-                                    context.getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    updateStageResult.setVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    updateStageResult.setCreatedDate(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    updateStageResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    updateStageResult.setLastUpdatedDate(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    updateStageResult.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * PutItemRequest Marshaller
  */
-public class PutItemRequestMarshaller implements
-        Marshaller<Request<PutItemRequest>, PutItemRequest> {
+public class PutItemRequestMarshaller implements Marshaller<Request<PutItemRequest>, PutItemRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -47,12 +44,10 @@ public class PutItemRequestMarshaller implements
     public Request<PutItemRequest> marshall(PutItemRequest putItemRequest) {
 
         if (putItemRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutItemRequest> request = new DefaultRequest<PutItemRequest>(
-                putItemRequest, "AmazonDynamoDBv2");
+        Request<PutItemRequest> request = new DefaultRequest<PutItemRequest>(putItemRequest, "AmazonDynamoDBv2");
         request.addHeader("X-Amz-Target", "DynamoDB_20120810.PutItem");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -60,112 +55,84 @@ public class PutItemRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (putItemRequest.getTableName() != null) {
-                jsonGenerator.writeFieldName("TableName").writeValue(
-                        putItemRequest.getTableName());
+                jsonGenerator.writeFieldName("TableName").writeValue(putItemRequest.getTableName());
             }
 
-            java.util.Map<String, AttributeValue> itemMap = putItemRequest
-                    .getItem();
+            java.util.Map<String, AttributeValue> itemMap = putItemRequest.getItem();
             if (itemMap != null) {
                 jsonGenerator.writeFieldName("Item");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, AttributeValue> itemMapValue : itemMap
-                        .entrySet()) {
+                for (Map.Entry<String, AttributeValue> itemMapValue : itemMap.entrySet()) {
                     if (itemMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(itemMapValue.getKey());
 
-                        AttributeValueJsonMarshaller.getInstance().marshall(
-                                itemMapValue.getValue(), jsonGenerator);
+                        AttributeValueJsonMarshaller.getInstance().marshall(itemMapValue.getValue(), jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndObject();
             }
 
-            java.util.Map<String, ExpectedAttributeValue> expectedMap = putItemRequest
-                    .getExpected();
+            java.util.Map<String, ExpectedAttributeValue> expectedMap = putItemRequest.getExpected();
             if (expectedMap != null) {
                 jsonGenerator.writeFieldName("Expected");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, ExpectedAttributeValue> expectedMapValue : expectedMap
-                        .entrySet()) {
+                for (Map.Entry<String, ExpectedAttributeValue> expectedMapValue : expectedMap.entrySet()) {
                     if (expectedMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(expectedMapValue.getKey());
 
-                        ExpectedAttributeValueJsonMarshaller.getInstance()
-                                .marshall(expectedMapValue.getValue(),
-                                        jsonGenerator);
+                        ExpectedAttributeValueJsonMarshaller.getInstance().marshall(expectedMapValue.getValue(), jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndObject();
             }
             if (putItemRequest.getReturnValues() != null) {
-                jsonGenerator.writeFieldName("ReturnValues").writeValue(
-                        putItemRequest.getReturnValues());
+                jsonGenerator.writeFieldName("ReturnValues").writeValue(putItemRequest.getReturnValues());
             }
             if (putItemRequest.getReturnConsumedCapacity() != null) {
-                jsonGenerator.writeFieldName("ReturnConsumedCapacity")
-                        .writeValue(putItemRequest.getReturnConsumedCapacity());
+                jsonGenerator.writeFieldName("ReturnConsumedCapacity").writeValue(putItemRequest.getReturnConsumedCapacity());
             }
             if (putItemRequest.getReturnItemCollectionMetrics() != null) {
-                jsonGenerator
-                        .writeFieldName("ReturnItemCollectionMetrics")
-                        .writeValue(
-                                putItemRequest.getReturnItemCollectionMetrics());
+                jsonGenerator.writeFieldName("ReturnItemCollectionMetrics").writeValue(putItemRequest.getReturnItemCollectionMetrics());
             }
             if (putItemRequest.getConditionalOperator() != null) {
-                jsonGenerator.writeFieldName("ConditionalOperator").writeValue(
-                        putItemRequest.getConditionalOperator());
+                jsonGenerator.writeFieldName("ConditionalOperator").writeValue(putItemRequest.getConditionalOperator());
             }
             if (putItemRequest.getConditionExpression() != null) {
-                jsonGenerator.writeFieldName("ConditionExpression").writeValue(
-                        putItemRequest.getConditionExpression());
+                jsonGenerator.writeFieldName("ConditionExpression").writeValue(putItemRequest.getConditionExpression());
             }
 
-            java.util.Map<String, String> expressionAttributeNamesMap = putItemRequest
-                    .getExpressionAttributeNames();
+            java.util.Map<String, String> expressionAttributeNamesMap = putItemRequest.getExpressionAttributeNames();
             if (expressionAttributeNamesMap != null) {
                 jsonGenerator.writeFieldName("ExpressionAttributeNames");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> expressionAttributeNamesMapValue : expressionAttributeNamesMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> expressionAttributeNamesMapValue : expressionAttributeNamesMap.entrySet()) {
                     if (expressionAttributeNamesMapValue.getValue() != null) {
-                        jsonGenerator
-                                .writeFieldName(expressionAttributeNamesMapValue
-                                        .getKey());
+                        jsonGenerator.writeFieldName(expressionAttributeNamesMapValue.getKey());
 
-                        jsonGenerator
-                                .writeValue(expressionAttributeNamesMapValue
-                                        .getValue());
+                        jsonGenerator.writeValue(expressionAttributeNamesMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
             }
 
-            java.util.Map<String, AttributeValue> expressionAttributeValuesMap = putItemRequest
-                    .getExpressionAttributeValues();
+            java.util.Map<String, AttributeValue> expressionAttributeValuesMap = putItemRequest.getExpressionAttributeValues();
             if (expressionAttributeValuesMap != null) {
                 jsonGenerator.writeFieldName("ExpressionAttributeValues");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, AttributeValue> expressionAttributeValuesMapValue : expressionAttributeValuesMap
-                        .entrySet()) {
+                for (Map.Entry<String, AttributeValue> expressionAttributeValuesMapValue : expressionAttributeValuesMap.entrySet()) {
                     if (expressionAttributeValuesMapValue.getValue() != null) {
-                        jsonGenerator
-                                .writeFieldName(expressionAttributeValuesMapValue
-                                        .getKey());
+                        jsonGenerator.writeFieldName(expressionAttributeValuesMapValue.getKey());
 
-                        AttributeValueJsonMarshaller.getInstance().marshall(
-                                expressionAttributeValuesMapValue.getValue(),
-                                jsonGenerator);
+                        AttributeValueJsonMarshaller.getInstance().marshall(expressionAttributeValuesMapValue.getValue(), jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndObject();
@@ -175,12 +142,10 @@ public class PutItemRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

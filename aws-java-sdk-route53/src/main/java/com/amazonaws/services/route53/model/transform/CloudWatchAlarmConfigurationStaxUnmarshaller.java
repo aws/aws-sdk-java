@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * CloudWatchAlarmConfiguration StAX Unmarshaller
  */
-public class CloudWatchAlarmConfigurationStaxUnmarshaller implements
-        Unmarshaller<CloudWatchAlarmConfiguration, StaxUnmarshallerContext> {
+public class CloudWatchAlarmConfigurationStaxUnmarshaller implements Unmarshaller<CloudWatchAlarmConfiguration, StaxUnmarshallerContext> {
 
-    public CloudWatchAlarmConfiguration unmarshall(
-            StaxUnmarshallerContext context) throws Exception {
+    public CloudWatchAlarmConfiguration unmarshall(StaxUnmarshallerContext context) throws Exception {
         CloudWatchAlarmConfiguration cloudWatchAlarmConfiguration = new CloudWatchAlarmConfiguration();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,58 +46,42 @@ public class CloudWatchAlarmConfigurationStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("EvaluationPeriods", targetDepth)) {
-                    cloudWatchAlarmConfiguration
-                            .setEvaluationPeriods(IntegerStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    cloudWatchAlarmConfiguration.setEvaluationPeriods(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Threshold", targetDepth)) {
-                    cloudWatchAlarmConfiguration
-                            .setThreshold(DoubleStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    cloudWatchAlarmConfiguration.setThreshold(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ComparisonOperator", targetDepth)) {
-                    cloudWatchAlarmConfiguration
-                            .setComparisonOperator(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    cloudWatchAlarmConfiguration.setComparisonOperator(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Period", targetDepth)) {
-                    cloudWatchAlarmConfiguration
-                            .setPeriod(IntegerStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    cloudWatchAlarmConfiguration.setPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MetricName", targetDepth)) {
-                    cloudWatchAlarmConfiguration
-                            .setMetricName(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    cloudWatchAlarmConfiguration.setMetricName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Namespace", targetDepth)) {
-                    cloudWatchAlarmConfiguration
-                            .setNamespace(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    cloudWatchAlarmConfiguration.setNamespace(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Statistic", targetDepth)) {
-                    cloudWatchAlarmConfiguration
-                            .setStatistic(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    cloudWatchAlarmConfiguration.setStatistic(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Dimensions/Dimension", targetDepth)) {
-                    cloudWatchAlarmConfiguration
-                            .withDimensions(DimensionStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    cloudWatchAlarmConfiguration.withDimensions(DimensionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

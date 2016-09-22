@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -18,57 +16,50 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that identifies the CloudWatch alarm that you want Amazon
- * Route 53 health checkers to use to determine whether this health check is
- * healthy.
+ * A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine
+ * whether this health check is healthy.
  * </p>
  */
 public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that identifies the CloudWatch alarm that you want Amazon
-     * Route 53 health checkers to use to determine whether this health check is
-     * healthy.
+     * A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to
+     * determine whether this health check is healthy.
      * </p>
      * <p>
-     * For the current list of CloudWatch regions, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
-     * >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
-     * <i>Amazon Web Services General Reference</i>.
+     * For the current list of CloudWatch regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in <i>AWS Regions
+     * and Endpoints</i> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String region;
     /**
      * <p>
-     * The name of the CloudWatch alarm that you want Amazon Route 53 health
-     * checkers to use to determine whether this health check is healthy.
+     * The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this
+     * health check is healthy.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * A complex type that identifies the CloudWatch alarm that you want Amazon
-     * Route 53 health checkers to use to determine whether this health check is
-     * healthy.
+     * A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to
+     * determine whether this health check is healthy.
      * </p>
      * <p>
-     * For the current list of CloudWatch regions, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
-     * >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
-     * <i>Amazon Web Services General Reference</i>.
+     * For the current list of CloudWatch regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in <i>AWS Regions
+     * and Endpoints</i> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param region
-     *        A complex type that identifies the CloudWatch alarm that you want
-     *        Amazon Route 53 health checkers to use to determine whether this
-     *        health check is healthy.</p>
+     *        A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use
+     *        to determine whether this health check is healthy.</p>
      *        <p>
-     *        For the current list of CloudWatch regions, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
-     *        >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
-     *        <i>Amazon Web Services General Reference</i>.
+     *        For the current list of CloudWatch regions, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in <i>AWS
+     *        Regions and Endpoints</i> in the <i>Amazon Web Services General Reference</i>.
      * @see CloudWatchRegion
      */
 
@@ -78,25 +69,21 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that identifies the CloudWatch alarm that you want Amazon
-     * Route 53 health checkers to use to determine whether this health check is
-     * healthy.
+     * A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to
+     * determine whether this health check is healthy.
      * </p>
      * <p>
-     * For the current list of CloudWatch regions, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
-     * >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
-     * <i>Amazon Web Services General Reference</i>.
+     * For the current list of CloudWatch regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in <i>AWS Regions
+     * and Endpoints</i> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @return A complex type that identifies the CloudWatch alarm that you want
-     *         Amazon Route 53 health checkers to use to determine whether this
-     *         health check is healthy.</p>
+     * @return A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use
+     *         to determine whether this health check is healthy.</p>
      *         <p>
-     *         For the current list of CloudWatch regions, see <a href=
-     *         "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
-     *         >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
-     *         <i>Amazon Web Services General Reference</i>.
+     *         For the current list of CloudWatch regions, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in <i>AWS
+     *         Regions and Endpoints</i> in the <i>Amazon Web Services General Reference</i>.
      * @see CloudWatchRegion
      */
 
@@ -106,28 +93,23 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that identifies the CloudWatch alarm that you want Amazon
-     * Route 53 health checkers to use to determine whether this health check is
-     * healthy.
+     * A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to
+     * determine whether this health check is healthy.
      * </p>
      * <p>
-     * For the current list of CloudWatch regions, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
-     * >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
-     * <i>Amazon Web Services General Reference</i>.
+     * For the current list of CloudWatch regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in <i>AWS Regions
+     * and Endpoints</i> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param region
-     *        A complex type that identifies the CloudWatch alarm that you want
-     *        Amazon Route 53 health checkers to use to determine whether this
-     *        health check is healthy.</p>
+     *        A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use
+     *        to determine whether this health check is healthy.</p>
      *        <p>
-     *        For the current list of CloudWatch regions, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
-     *        >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
-     *        <i>Amazon Web Services General Reference</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For the current list of CloudWatch regions, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in <i>AWS
+     *        Regions and Endpoints</i> in the <i>Amazon Web Services General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CloudWatchRegion
      */
 
@@ -138,26 +120,22 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that identifies the CloudWatch alarm that you want Amazon
-     * Route 53 health checkers to use to determine whether this health check is
-     * healthy.
+     * A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to
+     * determine whether this health check is healthy.
      * </p>
      * <p>
-     * For the current list of CloudWatch regions, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
-     * >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
-     * <i>Amazon Web Services General Reference</i>.
+     * For the current list of CloudWatch regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in <i>AWS Regions
+     * and Endpoints</i> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param region
-     *        A complex type that identifies the CloudWatch alarm that you want
-     *        Amazon Route 53 health checkers to use to determine whether this
-     *        health check is healthy.</p>
+     *        A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use
+     *        to determine whether this health check is healthy.</p>
      *        <p>
-     *        For the current list of CloudWatch regions, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
-     *        >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
-     *        <i>Amazon Web Services General Reference</i>.
+     *        For the current list of CloudWatch regions, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in <i>AWS
+     *        Regions and Endpoints</i> in the <i>Amazon Web Services General Reference</i>.
      * @see CloudWatchRegion
      */
 
@@ -167,28 +145,23 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that identifies the CloudWatch alarm that you want Amazon
-     * Route 53 health checkers to use to determine whether this health check is
-     * healthy.
+     * A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to
+     * determine whether this health check is healthy.
      * </p>
      * <p>
-     * For the current list of CloudWatch regions, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
-     * >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
-     * <i>Amazon Web Services General Reference</i>.
+     * For the current list of CloudWatch regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in <i>AWS Regions
+     * and Endpoints</i> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param region
-     *        A complex type that identifies the CloudWatch alarm that you want
-     *        Amazon Route 53 health checkers to use to determine whether this
-     *        health check is healthy.</p>
+     *        A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use
+     *        to determine whether this health check is healthy.</p>
      *        <p>
-     *        For the current list of CloudWatch regions, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
-     *        >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
-     *        <i>Amazon Web Services General Reference</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For the current list of CloudWatch regions, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in <i>AWS
+     *        Regions and Endpoints</i> in the <i>Amazon Web Services General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CloudWatchRegion
      */
 
@@ -199,14 +172,13 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch alarm that you want Amazon Route 53 health
-     * checkers to use to determine whether this health check is healthy.
+     * The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this
+     * health check is healthy.
      * </p>
      * 
      * @param name
-     *        The name of the CloudWatch alarm that you want Amazon Route 53
-     *        health checkers to use to determine whether this health check is
-     *        healthy.
+     *        The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether
+     *        this health check is healthy.
      */
 
     public void setName(String name) {
@@ -215,13 +187,12 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch alarm that you want Amazon Route 53 health
-     * checkers to use to determine whether this health check is healthy.
+     * The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this
+     * health check is healthy.
      * </p>
      * 
-     * @return The name of the CloudWatch alarm that you want Amazon Route 53
-     *         health checkers to use to determine whether this health check is
-     *         healthy.
+     * @return The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine
+     *         whether this health check is healthy.
      */
 
     public String getName() {
@@ -230,16 +201,14 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch alarm that you want Amazon Route 53 health
-     * checkers to use to determine whether this health check is healthy.
+     * The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this
+     * health check is healthy.
      * </p>
      * 
      * @param name
-     *        The name of the CloudWatch alarm that you want Amazon Route 53
-     *        health checkers to use to determine whether this health check is
-     *        healthy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether
+     *        this health check is healthy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AlarmIdentifier withName(String name) {
@@ -248,8 +217,7 @@ public class AlarmIdentifier implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -279,13 +247,11 @@ public class AlarmIdentifier implements Serializable, Cloneable {
         AlarmIdentifier other = (AlarmIdentifier) obj;
         if (other.getRegion() == null ^ this.getRegion() == null)
             return false;
-        if (other.getRegion() != null
-                && other.getRegion().equals(this.getRegion()) == false)
+        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -295,10 +261,8 @@ public class AlarmIdentifier implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegion() == null) ? 0 : getRegion().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 
@@ -307,9 +271,7 @@ public class AlarmIdentifier implements Serializable, Cloneable {
         try {
             return (AlarmIdentifier) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

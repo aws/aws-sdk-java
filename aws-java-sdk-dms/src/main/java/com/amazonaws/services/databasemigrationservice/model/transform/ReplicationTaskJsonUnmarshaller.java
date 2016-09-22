@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ReplicationTask JSON Unmarshaller
  */
-public class ReplicationTaskJsonUnmarshaller implements
-        Unmarshaller<ReplicationTask, JsonUnmarshallerContext> {
+public class ReplicationTaskJsonUnmarshaller implements Unmarshaller<ReplicationTask, JsonUnmarshallerContext> {
 
-    public ReplicationTask unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ReplicationTask unmarshall(JsonUnmarshallerContext context) throws Exception {
         ReplicationTask replicationTask = new ReplicationTask();
 
         int originalDepth = context.getCurrentDepth();
@@ -51,83 +47,60 @@ public class ReplicationTaskJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("ReplicationTaskIdentifier",
-                        targetDepth)) {
+                if (context.testExpression("ReplicationTaskIdentifier", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setReplicationTaskIdentifier(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    replicationTask.setReplicationTaskIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceEndpointArn", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setSourceEndpointArn(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    replicationTask.setSourceEndpointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetEndpointArn", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setTargetEndpointArn(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    replicationTask.setTargetEndpointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("ReplicationInstanceArn",
-                        targetDepth)) {
+                if (context.testExpression("ReplicationInstanceArn", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setReplicationInstanceArn(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    replicationTask.setReplicationInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MigrationType", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setMigrationType(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    replicationTask.setMigrationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableMappings", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setTableMappings(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    replicationTask.setTableMappings(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("ReplicationTaskSettings",
-                        targetDepth)) {
+                if (context.testExpression("ReplicationTaskSettings", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setReplicationTaskSettings(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    replicationTask.setReplicationTaskSettings(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setStatus(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    replicationTask.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastFailureMessage", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setLastFailureMessage(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    replicationTask.setLastFailureMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("ReplicationTaskCreationDate",
-                        targetDepth)) {
+                if (context.testExpression("ReplicationTaskCreationDate", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setReplicationTaskCreationDate(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    replicationTask.setReplicationTaskCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
-                if (context.testExpression("ReplicationTaskStartDate",
-                        targetDepth)) {
+                if (context.testExpression("ReplicationTaskStartDate", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setReplicationTaskStartDate(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    replicationTask.setReplicationTaskStartDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationTaskArn", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setReplicationTaskArn(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    replicationTask.setReplicationTaskArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationTaskStats", targetDepth)) {
                     context.nextToken();
-                    replicationTask
-                            .setReplicationTaskStats(ReplicationTaskStatsJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationTask.setReplicationTaskStats(ReplicationTaskStatsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

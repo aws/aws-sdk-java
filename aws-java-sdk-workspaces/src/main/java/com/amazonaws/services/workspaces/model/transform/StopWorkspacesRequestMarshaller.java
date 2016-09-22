@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.workspaces.model.transform;
 
@@ -35,26 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * StopWorkspacesRequest Marshaller
  */
-public class StopWorkspacesRequestMarshaller implements
-        Marshaller<Request<StopWorkspacesRequest>, StopWorkspacesRequest> {
+public class StopWorkspacesRequestMarshaller implements Marshaller<Request<StopWorkspacesRequest>, StopWorkspacesRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public StopWorkspacesRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public StopWorkspacesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<StopWorkspacesRequest> marshall(
-            StopWorkspacesRequest stopWorkspacesRequest) {
+    public Request<StopWorkspacesRequest> marshall(StopWorkspacesRequest stopWorkspacesRequest) {
 
         if (stopWorkspacesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StopWorkspacesRequest> request = new DefaultRequest<StopWorkspacesRequest>(
-                stopWorkspacesRequest, "AmazonWorkspaces");
+        Request<StopWorkspacesRequest> request = new DefaultRequest<StopWorkspacesRequest>(stopWorkspacesRequest, "AmazonWorkspaces");
         request.addHeader("X-Amz-Target", "WorkspacesService.StopWorkspaces");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -62,22 +55,19 @@ public class StopWorkspacesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<StopRequest> stopWorkspaceRequestsList = (com.amazonaws.internal.SdkInternalList<StopRequest>) stopWorkspacesRequest
                     .getStopWorkspaceRequests();
-            if (!stopWorkspaceRequestsList.isEmpty()
-                    || !stopWorkspaceRequestsList.isAutoConstruct()) {
+            if (!stopWorkspaceRequestsList.isEmpty() || !stopWorkspaceRequestsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("StopWorkspaceRequests");
                 jsonGenerator.writeStartArray();
                 for (StopRequest stopWorkspaceRequestsListValue : stopWorkspaceRequestsList) {
                     if (stopWorkspaceRequestsListValue != null) {
 
-                        StopRequestJsonMarshaller.getInstance().marshall(
-                                stopWorkspaceRequestsListValue, jsonGenerator);
+                        StopRequestJsonMarshaller.getInstance().marshall(stopWorkspaceRequestsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
@@ -87,12 +77,10 @@ public class StopWorkspacesRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * MetricTransformation JSON Unmarshaller
  */
-public class MetricTransformationJsonUnmarshaller implements
-        Unmarshaller<MetricTransformation, JsonUnmarshallerContext> {
+public class MetricTransformationJsonUnmarshaller implements Unmarshaller<MetricTransformation, JsonUnmarshallerContext> {
 
-    public MetricTransformation unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public MetricTransformation unmarshall(JsonUnmarshallerContext context) throws Exception {
         MetricTransformation metricTransformation = new MetricTransformation();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,28 +49,22 @@ public class MetricTransformationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("metricName", targetDepth)) {
                     context.nextToken();
-                    metricTransformation.setMetricName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    metricTransformation.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricNamespace", targetDepth)) {
                     context.nextToken();
-                    metricTransformation.setMetricNamespace(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    metricTransformation.setMetricNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricValue", targetDepth)) {
                     context.nextToken();
-                    metricTransformation.setMetricValue(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    metricTransformation.setMetricValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultValue", targetDepth)) {
                     context.nextToken();
-                    metricTransformation.setDefaultValue(context
-                            .getUnmarshaller(Double.class).unmarshall(context));
+                    metricTransformation.setDefaultValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

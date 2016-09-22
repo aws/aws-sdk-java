@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class TestMetricFilterRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class TestMetricFilterRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String filterPattern;
     /**
@@ -50,8 +46,7 @@ public class TestMetricFilterRequest extends
 
     /**
      * @param filterPattern
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestMetricFilterRequest withFilterPattern(String filterPattern) {
@@ -83,15 +78,13 @@ public class TestMetricFilterRequest extends
      *        A list of log event messages to test.
      */
 
-    public void setLogEventMessages(
-            java.util.Collection<String> logEventMessages) {
+    public void setLogEventMessages(java.util.Collection<String> logEventMessages) {
         if (logEventMessages == null) {
             this.logEventMessages = null;
             return;
         }
 
-        this.logEventMessages = new com.amazonaws.internal.SdkInternalList<String>(
-                logEventMessages);
+        this.logEventMessages = new com.amazonaws.internal.SdkInternalList<String>(logEventMessages);
     }
 
     /**
@@ -99,23 +92,19 @@ public class TestMetricFilterRequest extends
      * A list of log event messages to test.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLogEventMessages(java.util.Collection)} or
-     * {@link #withLogEventMessages(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLogEventMessages(java.util.Collection)} or {@link #withLogEventMessages(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param logEventMessages
      *        A list of log event messages to test.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TestMetricFilterRequest withLogEventMessages(
-            String... logEventMessages) {
+    public TestMetricFilterRequest withLogEventMessages(String... logEventMessages) {
         if (this.logEventMessages == null) {
-            setLogEventMessages(new com.amazonaws.internal.SdkInternalList<String>(
-                    logEventMessages.length));
+            setLogEventMessages(new com.amazonaws.internal.SdkInternalList<String>(logEventMessages.length));
         }
         for (String ele : logEventMessages) {
             this.logEventMessages.add(ele);
@@ -130,19 +119,16 @@ public class TestMetricFilterRequest extends
      * 
      * @param logEventMessages
      *        A list of log event messages to test.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TestMetricFilterRequest withLogEventMessages(
-            java.util.Collection<String> logEventMessages) {
+    public TestMetricFilterRequest withLogEventMessages(java.util.Collection<String> logEventMessages) {
         setLogEventMessages(logEventMessages);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -172,15 +158,11 @@ public class TestMetricFilterRequest extends
         TestMetricFilterRequest other = (TestMetricFilterRequest) obj;
         if (other.getFilterPattern() == null ^ this.getFilterPattern() == null)
             return false;
-        if (other.getFilterPattern() != null
-                && other.getFilterPattern().equals(this.getFilterPattern()) == false)
+        if (other.getFilterPattern() != null && other.getFilterPattern().equals(this.getFilterPattern()) == false)
             return false;
-        if (other.getLogEventMessages() == null
-                ^ this.getLogEventMessages() == null)
+        if (other.getLogEventMessages() == null ^ this.getLogEventMessages() == null)
             return false;
-        if (other.getLogEventMessages() != null
-                && other.getLogEventMessages().equals(
-                        this.getLogEventMessages()) == false)
+        if (other.getLogEventMessages() != null && other.getLogEventMessages().equals(this.getLogEventMessages()) == false)
             return false;
         return true;
     }
@@ -190,14 +172,8 @@ public class TestMetricFilterRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFilterPattern() == null) ? 0 : getFilterPattern()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLogEventMessages() == null) ? 0 : getLogEventMessages()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getFilterPattern() == null) ? 0 : getFilterPattern().hashCode());
+        hashCode = prime * hashCode + ((getLogEventMessages() == null) ? 0 : getLogEventMessages().hashCode());
         return hashCode;
     }
 

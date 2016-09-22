@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * UpdateIPSetRequest Marshaller
  */
-public class UpdateIPSetRequestMarshaller implements
-        Marshaller<Request<UpdateIPSetRequest>, UpdateIPSetRequest> {
+public class UpdateIPSetRequestMarshaller implements Marshaller<Request<UpdateIPSetRequest>, UpdateIPSetRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -44,16 +41,13 @@ public class UpdateIPSetRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<UpdateIPSetRequest> marshall(
-            UpdateIPSetRequest updateIPSetRequest) {
+    public Request<UpdateIPSetRequest> marshall(UpdateIPSetRequest updateIPSetRequest) {
 
         if (updateIPSetRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateIPSetRequest> request = new DefaultRequest<UpdateIPSetRequest>(
-                updateIPSetRequest, "AWSWAF");
+        Request<UpdateIPSetRequest> request = new DefaultRequest<UpdateIPSetRequest>(updateIPSetRequest, "AWSWAF");
         request.addHeader("X-Amz-Target", "AWSWAF_20150824.UpdateIPSet");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -61,30 +55,25 @@ public class UpdateIPSetRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (updateIPSetRequest.getIPSetId() != null) {
-                jsonGenerator.writeFieldName("IPSetId").writeValue(
-                        updateIPSetRequest.getIPSetId());
+                jsonGenerator.writeFieldName("IPSetId").writeValue(updateIPSetRequest.getIPSetId());
             }
             if (updateIPSetRequest.getChangeToken() != null) {
-                jsonGenerator.writeFieldName("ChangeToken").writeValue(
-                        updateIPSetRequest.getChangeToken());
+                jsonGenerator.writeFieldName("ChangeToken").writeValue(updateIPSetRequest.getChangeToken());
             }
 
-            java.util.List<IPSetUpdate> updatesList = updateIPSetRequest
-                    .getUpdates();
+            java.util.List<IPSetUpdate> updatesList = updateIPSetRequest.getUpdates();
             if (updatesList != null) {
                 jsonGenerator.writeFieldName("Updates");
                 jsonGenerator.writeStartArray();
                 for (IPSetUpdate updatesListValue : updatesList) {
                     if (updatesListValue != null) {
 
-                        IPSetUpdateJsonMarshaller.getInstance().marshall(
-                                updatesListValue, jsonGenerator);
+                        IPSetUpdateJsonMarshaller.getInstance().marshall(updatesListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
@@ -94,12 +83,10 @@ public class UpdateIPSetRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

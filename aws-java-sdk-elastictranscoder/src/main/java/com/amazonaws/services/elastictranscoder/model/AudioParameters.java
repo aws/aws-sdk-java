@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
 
@@ -25,204 +23,163 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The audio codec for the output file. Valid values include
-     * <code>aac</code>, <code>flac</code>, <code>mp2</code>, <code>mp3</code>,
-     * <code>pcm</code>, and <code>vorbis</code>.
+     * The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>, <code>mp2</code>,
+     * <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.
      * </p>
      */
     private String codec;
     /**
      * <p>
-     * The sample rate of the audio stream in the output file, in Hertz. Valid
-     * values include:
+     * The sample rate of the audio stream in the output file, in Hertz. Valid values include:
      * </p>
      * <p>
-     * <code>auto</code>, <code>22050</code>, <code>32000</code>,
-     * <code>44100</code>, <code>48000</code>, <code>96000</code>
+     * <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>,
+     * <code>96000</code>
      * </p>
      * <p>
-     * If you specify <code>auto</code>, Elastic Transcoder automatically
-     * detects the sample rate.
+     * If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample rate.
      * </p>
      */
     private String sampleRate;
     /**
      * <p>
-     * The bit rate of the audio stream in the output file, in kilobits/second.
-     * Enter an integer between 64 and 320, inclusive.
+     * The bit rate of the audio stream in the output file, in kilobits/second. Enter an integer between 64 and 320,
+     * inclusive.
      * </p>
      */
     private String bitRate;
     /**
      * <p>
-     * The number of audio channels in the output file. The following values are
-     * valid:
+     * The number of audio channels in the output file. The following values are valid:
      * </p>
      * <p>
      * <code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code>
      * </p>
      * <p>
-     * One channel carries the information played by a single speaker. For
-     * example, a stereo track with two channels sends one channel to the left
-     * speaker, and the other channel to the right speaker. The output channels
-     * are organized into tracks. If you want Elastic Transcoder to
-     * automatically detect the number of audio channels in the input file and
-     * use that value for the output file, select <code>auto</code>.
+     * One channel carries the information played by a single speaker. For example, a stereo track with two channels
+     * sends one channel to the left speaker, and the other channel to the right speaker. The output channels are
+     * organized into tracks. If you want Elastic Transcoder to automatically detect the number of audio channels in the
+     * input file and use that value for the output file, select <code>auto</code>.
      * </p>
      * <p>
      * The output of a specific channel value and inputs are as follows:
      * </p>
      * <ul>
-     * <li><code>auto</code><b> channel specified, with any input:</b> Pass
-     * through up to eight input channels.</li>
-     * <li><code>0</code><b> channels specified, with any input:</b> Audio
-     * omitted from the output.</li>
-     * <li><code>1</code><b> channel specified, with at least one input
-     * channel:</b> Mono sound.</li>
-     * <li><code>2</code><b> channels specified, with any input:</b> Two
-     * identical mono channels or stereo. For more information about tracks, see
-     * <code>Audio:AudioPackingMode.</code></li>
+     * <li><code>auto</code><b> channel specified, with any input:</b> Pass through up to eight input channels.</li>
+     * <li><code>0</code><b> channels specified, with any input:</b> Audio omitted from the output.</li>
+     * <li><code>1</code><b> channel specified, with at least one input channel:</b> Mono sound.</li>
+     * <li><code>2</code><b> channels specified, with any input:</b> Two identical mono channels or stereo. For more
+     * information about tracks, see <code>Audio:AudioPackingMode.</code></li>
      * </ul>
      * <p>
-     * For more information about how Elastic Transcoder organizes channels and
-     * tracks, see <code>Audio:AudioPackingMode</code>.
+     * For more information about how Elastic Transcoder organizes channels and tracks, see
+     * <code>Audio:AudioPackingMode</code>.
      * </p>
      */
     private String channels;
     /**
      * <p>
-     * The method of organizing audio channels and tracks. Use
-     * <code>Audio:Channels</code> to specify the number of channels in your
-     * output, and <code>Audio:AudioPackingMode</code> to specify the number of
-     * tracks and their relation to the channels. If you do not specify an
-     * <code>Audio:AudioPackingMode</code>, Elastic Transcoder uses
+     * The method of organizing audio channels and tracks. Use <code>Audio:Channels</code> to specify the number of
+     * channels in your output, and <code>Audio:AudioPackingMode</code> to specify the number of tracks and their
+     * relation to the channels. If you do not specify an <code>Audio:AudioPackingMode</code>, Elastic Transcoder uses
      * <code>SingleTrack</code>.
      * </p>
      * <p>
      * The following values are valid:
      * </p>
      * <p>
-     * <code>SingleTrack</code>, <code>OneChannelPerTrack</code>, and
-     * <code>OneChannelPerTrackWithMosTo8Tracks</code>
+     * <code>SingleTrack</code>, <code>OneChannelPerTrack</code>, and <code>OneChannelPerTrackWithMosTo8Tracks</code>
      * </p>
      * <p>
-     * When you specify <code>SingleTrack</code>, Elastic Transcoder creates a
-     * single track for your output. The track can have up to eight channels.
-     * Use <code>SingleTrack</code> for all non-<code>mxf</code> containers.
+     * When you specify <code>SingleTrack</code>, Elastic Transcoder creates a single track for your output. The track
+     * can have up to eight channels. Use <code>SingleTrack</code> for all non-<code>mxf</code> containers.
      * </p>
      * <p>
-     * The outputs of <code>SingleTrack</code> for a specific channel value and
-     * inputs are as follows:
+     * The outputs of <code>SingleTrack</code> for a specific channel value and inputs are as follows:
      * </p>
      * <ul>
-     * <li><code>0</code> <b> channels with any input:</b> Audio omitted from
-     * the output</li>
-     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b>
-     * Audio omitted from the output</li>
-     * <li><code>1 </code> <b>channel with any input with audio:</b> One track
-     * with one channel, downmixed if necessary</li>
-     * <li><code>2 </code> <b>channels with one track with one channel:</b> One
-     * track with two identical channels</li>
-     * <li><code>2 or auto </code> <b>channels with two tracks with one channel
-     * each:</b> One track with two channels</li>
-     * <li><code>2 or auto </code> <b>channels with one track with two
-     * channels:</b> One track with two channels</li>
-     * <li><code>2 </code> <b>channels with one track with multiple
-     * channels:</b> One track with two channels</li>
-     * <li><code>auto </code> <b>channels with one track with one channel:</b>
-     * One track with one channel</li>
-     * <li><code>auto </code> <b>channels with one track with multiple
-     * channels:</b> One track with multiple channels</li>
+     * <li><code>0</code> <b> channels with any input:</b> Audio omitted from the output</li>
+     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     * <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if necessary</li>
+     * <li><code>2 </code> <b>channels with one track with one channel:</b> One track with two identical channels</li>
+     * <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> One track with two channels</li>
+     * <li><code>2 or auto </code> <b>channels with one track with two channels:</b> One track with two channels</li>
+     * <li><code>2 </code> <b>channels with one track with multiple channels:</b> One track with two channels</li>
+     * <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     * <li><code>auto </code> <b>channels with one track with multiple channels:</b> One track with multiple channels</li>
      * </ul>
      * <p>
-     * When you specify <code>OneChannelPerTrack</code>, Elastic Transcoder
-     * creates a new track for every channel in your output. Your output can
-     * have up to eight single-channel tracks.
+     * When you specify <code>OneChannelPerTrack</code>, Elastic Transcoder creates a new track for every channel in
+     * your output. Your output can have up to eight single-channel tracks.
      * </p>
      * <p>
-     * The outputs of <code>OneChannelPerTrack</code> for a specific channel
-     * value and inputs are as follows:
+     * The outputs of <code>OneChannelPerTrack</code> for a specific channel value and inputs are as follows:
      * </p>
      * <ul>
-     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from
-     * the output</li>
-     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b>
-     * Audio omitted from the output</li>
-     * <li><code>1 </code> <b>channel with any input with audio:</b> One track
-     * with one channel, downmixed if necessary</li>
-     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two
-     * tracks with one identical channel each</li>
-     * <li><code>2 or auto </code> <b>channels with two tracks with one channel
-     * each:</b> Two tracks with one channel each</li>
-     * <li><code>2 or auto </code> <b>channels with one track with two
-     * channels:</b> Two tracks with one channel each</li>
-     * <li><code>2 </code> <b>channels with one track with multiple
-     * channels:</b> Two tracks with one channel each</li>
-     * <li><code>auto </code> <b>channels with one track with one channel:</b>
-     * One track with one channel</li>
-     * <li><code>auto </code> <b>channels with one track with multiple
-     * channels:</b> Up to eight tracks with one channel each</li>
+     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     * <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if necessary</li>
+     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical channel each</li>
+     * <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one channel
+     * each</li>
+     * <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel each</li>
+     * <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel each</li>
+     * <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     * <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel
+     * each</li>
      * </ul>
      * <p>
-     * When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>, Elastic
-     * Transcoder creates eight single-channel tracks for your output. All
-     * tracks that do not contain audio data from an input channel are MOS, or
-     * Mit Out Sound, tracks.
+     * When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>, Elastic Transcoder creates eight single-channel
+     * tracks for your output. All tracks that do not contain audio data from an input channel are MOS, or Mit Out
+     * Sound, tracks.
      * </p>
      * <p>
-     * The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for a
-     * specific channel value and inputs are as follows:
+     * The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for a specific channel value and inputs are as
+     * follows:
      * </p>
      * <ul>
-     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from
-     * the output</li>
-     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b>
-     * Audio omitted from the output</li>
-     * <li><code>1 </code> <b>channel with any input with audio:</b> One track
-     * with one channel, downmixed if necessary, plus six MOS tracks</li>
-     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two
-     * tracks with one identical channel each, plus six MOS tracks</li>
-     * <li><code>2 or auto </code> <b>channels with two tracks with one channel
-     * each:</b> Two tracks with one channel each, plus six MOS tracks</li>
-     * <li><code>2 or auto </code> <b>channels with one track with two
-     * channels:</b> Two tracks with one channel each, plus six MOS tracks</li>
-     * <li><code>2 </code> <b>channels with one track with multiple
-     * channels:</b> Two tracks with one channel each, plus six MOS tracks</li>
-     * <li><code>auto </code> <b>channels with one track with one channel:</b>
-     * One track with one channel, plus seven MOS tracks</li>
-     * <li><code>auto </code> <b>channels with one track with multiple
-     * channels:</b> Up to eight tracks with one channel each, plus MOS tracks
-     * until there are eight tracks in all</li>
+     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     * <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if necessary,
+     * plus six MOS tracks</li>
+     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical channel each,
+     * plus six MOS tracks</li>
+     * <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one channel
+     * each, plus six MOS tracks</li>
+     * <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel each,
+     * plus six MOS tracks</li>
+     * <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel each, plus
+     * six MOS tracks</li>
+     * <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel, plus seven
+     * MOS tracks</li>
+     * <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel
+     * each, plus MOS tracks until there are eight tracks in all</li>
      * </ul>
      */
     private String audioPackingMode;
     /**
      * <p>
-     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is
-     * the <code>AAC</code> compression profile to use. Valid values include:
+     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code> compression profile
+     * to use. Valid values include:
      * </p>
      * <p>
-     * <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>,
-     * <code>HE-AACv2</code>
+     * <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code>
      * </p>
      * <p>
-     * If you specify <code>auto</code>, Elastic Transcoder chooses a profile
-     * based on the bit rate of the output file.
+     * If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the output file.
      * </p>
      */
     private AudioCodecOptions codecOptions;
 
     /**
      * <p>
-     * The audio codec for the output file. Valid values include
-     * <code>aac</code>, <code>flac</code>, <code>mp2</code>, <code>mp3</code>,
-     * <code>pcm</code>, and <code>vorbis</code>.
+     * The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>, <code>mp2</code>,
+     * <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.
      * </p>
      * 
      * @param codec
-     *        The audio codec for the output file. Valid values include
-     *        <code>aac</code>, <code>flac</code>, <code>mp2</code>,
-     *        <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.
+     *        The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>,
+     *        <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.
      */
 
     public void setCodec(String codec) {
@@ -231,14 +188,12 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The audio codec for the output file. Valid values include
-     * <code>aac</code>, <code>flac</code>, <code>mp2</code>, <code>mp3</code>,
-     * <code>pcm</code>, and <code>vorbis</code>.
+     * The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>, <code>mp2</code>,
+     * <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.
      * </p>
      * 
-     * @return The audio codec for the output file. Valid values include
-     *         <code>aac</code>, <code>flac</code>, <code>mp2</code>,
-     *         <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.
+     * @return The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>,
+     *         <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.
      */
 
     public String getCodec() {
@@ -247,17 +202,14 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The audio codec for the output file. Valid values include
-     * <code>aac</code>, <code>flac</code>, <code>mp2</code>, <code>mp3</code>,
-     * <code>pcm</code>, and <code>vorbis</code>.
+     * The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>, <code>mp2</code>,
+     * <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.
      * </p>
      * 
      * @param codec
-     *        The audio codec for the output file. Valid values include
-     *        <code>aac</code>, <code>flac</code>, <code>mp2</code>,
-     *        <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>,
+     *        <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AudioParameters withCodec(String codec) {
@@ -267,28 +219,24 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The sample rate of the audio stream in the output file, in Hertz. Valid
-     * values include:
+     * The sample rate of the audio stream in the output file, in Hertz. Valid values include:
      * </p>
      * <p>
-     * <code>auto</code>, <code>22050</code>, <code>32000</code>,
-     * <code>44100</code>, <code>48000</code>, <code>96000</code>
+     * <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>,
+     * <code>96000</code>
      * </p>
      * <p>
-     * If you specify <code>auto</code>, Elastic Transcoder automatically
-     * detects the sample rate.
+     * If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample rate.
      * </p>
      * 
      * @param sampleRate
-     *        The sample rate of the audio stream in the output file, in Hertz.
-     *        Valid values include:</p>
+     *        The sample rate of the audio stream in the output file, in Hertz. Valid values include:</p>
      *        <p>
-     *        <code>auto</code>, <code>22050</code>, <code>32000</code>,
-     *        <code>44100</code>, <code>48000</code>, <code>96000</code>
+     *        <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>,
+     *        <code>96000</code>
      *        </p>
      *        <p>
-     *        If you specify <code>auto</code>, Elastic Transcoder automatically
-     *        detects the sample rate.
+     *        If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample rate.
      */
 
     public void setSampleRate(String sampleRate) {
@@ -297,27 +245,23 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The sample rate of the audio stream in the output file, in Hertz. Valid
-     * values include:
+     * The sample rate of the audio stream in the output file, in Hertz. Valid values include:
      * </p>
      * <p>
-     * <code>auto</code>, <code>22050</code>, <code>32000</code>,
-     * <code>44100</code>, <code>48000</code>, <code>96000</code>
+     * <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>,
+     * <code>96000</code>
      * </p>
      * <p>
-     * If you specify <code>auto</code>, Elastic Transcoder automatically
-     * detects the sample rate.
+     * If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample rate.
      * </p>
      * 
-     * @return The sample rate of the audio stream in the output file, in Hertz.
-     *         Valid values include:</p>
+     * @return The sample rate of the audio stream in the output file, in Hertz. Valid values include:</p>
      *         <p>
-     *         <code>auto</code>, <code>22050</code>, <code>32000</code>,
-     *         <code>44100</code>, <code>48000</code>, <code>96000</code>
+     *         <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>,
+     *         <code>96000</code>
      *         </p>
      *         <p>
-     *         If you specify <code>auto</code>, Elastic Transcoder
-     *         automatically detects the sample rate.
+     *         If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample rate.
      */
 
     public String getSampleRate() {
@@ -326,30 +270,25 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The sample rate of the audio stream in the output file, in Hertz. Valid
-     * values include:
+     * The sample rate of the audio stream in the output file, in Hertz. Valid values include:
      * </p>
      * <p>
-     * <code>auto</code>, <code>22050</code>, <code>32000</code>,
-     * <code>44100</code>, <code>48000</code>, <code>96000</code>
+     * <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>,
+     * <code>96000</code>
      * </p>
      * <p>
-     * If you specify <code>auto</code>, Elastic Transcoder automatically
-     * detects the sample rate.
+     * If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample rate.
      * </p>
      * 
      * @param sampleRate
-     *        The sample rate of the audio stream in the output file, in Hertz.
-     *        Valid values include:</p>
+     *        The sample rate of the audio stream in the output file, in Hertz. Valid values include:</p>
      *        <p>
-     *        <code>auto</code>, <code>22050</code>, <code>32000</code>,
-     *        <code>44100</code>, <code>48000</code>, <code>96000</code>
+     *        <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>,
+     *        <code>96000</code>
      *        </p>
      *        <p>
-     *        If you specify <code>auto</code>, Elastic Transcoder automatically
-     *        detects the sample rate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample rate.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AudioParameters withSampleRate(String sampleRate) {
@@ -359,13 +298,13 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bit rate of the audio stream in the output file, in kilobits/second.
-     * Enter an integer between 64 and 320, inclusive.
+     * The bit rate of the audio stream in the output file, in kilobits/second. Enter an integer between 64 and 320,
+     * inclusive.
      * </p>
      * 
      * @param bitRate
-     *        The bit rate of the audio stream in the output file, in
-     *        kilobits/second. Enter an integer between 64 and 320, inclusive.
+     *        The bit rate of the audio stream in the output file, in kilobits/second. Enter an integer between 64 and
+     *        320, inclusive.
      */
 
     public void setBitRate(String bitRate) {
@@ -374,12 +313,12 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bit rate of the audio stream in the output file, in kilobits/second.
-     * Enter an integer between 64 and 320, inclusive.
+     * The bit rate of the audio stream in the output file, in kilobits/second. Enter an integer between 64 and 320,
+     * inclusive.
      * </p>
      * 
-     * @return The bit rate of the audio stream in the output file, in
-     *         kilobits/second. Enter an integer between 64 and 320, inclusive.
+     * @return The bit rate of the audio stream in the output file, in kilobits/second. Enter an integer between 64 and
+     *         320, inclusive.
      */
 
     public String getBitRate() {
@@ -388,15 +327,14 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bit rate of the audio stream in the output file, in kilobits/second.
-     * Enter an integer between 64 and 320, inclusive.
+     * The bit rate of the audio stream in the output file, in kilobits/second. Enter an integer between 64 and 320,
+     * inclusive.
      * </p>
      * 
      * @param bitRate
-     *        The bit rate of the audio stream in the output file, in
-     *        kilobits/second. Enter an integer between 64 and 320, inclusive.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The bit rate of the audio stream in the output file, in kilobits/second. Enter an integer between 64 and
+     *        320, inclusive.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AudioParameters withBitRate(String bitRate) {
@@ -406,71 +344,56 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of audio channels in the output file. The following values are
-     * valid:
+     * The number of audio channels in the output file. The following values are valid:
      * </p>
      * <p>
      * <code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code>
      * </p>
      * <p>
-     * One channel carries the information played by a single speaker. For
-     * example, a stereo track with two channels sends one channel to the left
-     * speaker, and the other channel to the right speaker. The output channels
-     * are organized into tracks. If you want Elastic Transcoder to
-     * automatically detect the number of audio channels in the input file and
-     * use that value for the output file, select <code>auto</code>.
+     * One channel carries the information played by a single speaker. For example, a stereo track with two channels
+     * sends one channel to the left speaker, and the other channel to the right speaker. The output channels are
+     * organized into tracks. If you want Elastic Transcoder to automatically detect the number of audio channels in the
+     * input file and use that value for the output file, select <code>auto</code>.
      * </p>
      * <p>
      * The output of a specific channel value and inputs are as follows:
      * </p>
      * <ul>
-     * <li><code>auto</code><b> channel specified, with any input:</b> Pass
-     * through up to eight input channels.</li>
-     * <li><code>0</code><b> channels specified, with any input:</b> Audio
-     * omitted from the output.</li>
-     * <li><code>1</code><b> channel specified, with at least one input
-     * channel:</b> Mono sound.</li>
-     * <li><code>2</code><b> channels specified, with any input:</b> Two
-     * identical mono channels or stereo. For more information about tracks, see
-     * <code>Audio:AudioPackingMode.</code></li>
+     * <li><code>auto</code><b> channel specified, with any input:</b> Pass through up to eight input channels.</li>
+     * <li><code>0</code><b> channels specified, with any input:</b> Audio omitted from the output.</li>
+     * <li><code>1</code><b> channel specified, with at least one input channel:</b> Mono sound.</li>
+     * <li><code>2</code><b> channels specified, with any input:</b> Two identical mono channels or stereo. For more
+     * information about tracks, see <code>Audio:AudioPackingMode.</code></li>
      * </ul>
      * <p>
-     * For more information about how Elastic Transcoder organizes channels and
-     * tracks, see <code>Audio:AudioPackingMode</code>.
+     * For more information about how Elastic Transcoder organizes channels and tracks, see
+     * <code>Audio:AudioPackingMode</code>.
      * </p>
      * 
      * @param channels
-     *        The number of audio channels in the output file. The following
-     *        values are valid:</p>
+     *        The number of audio channels in the output file. The following values are valid:</p>
      *        <p>
      *        <code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code>
      *        </p>
      *        <p>
-     *        One channel carries the information played by a single speaker.
-     *        For example, a stereo track with two channels sends one channel to
-     *        the left speaker, and the other channel to the right speaker. The
-     *        output channels are organized into tracks. If you want Elastic
-     *        Transcoder to automatically detect the number of audio channels in
-     *        the input file and use that value for the output file, select
-     *        <code>auto</code>.
+     *        One channel carries the information played by a single speaker. For example, a stereo track with two
+     *        channels sends one channel to the left speaker, and the other channel to the right speaker. The output
+     *        channels are organized into tracks. If you want Elastic Transcoder to automatically detect the number of
+     *        audio channels in the input file and use that value for the output file, select <code>auto</code>.
      *        </p>
      *        <p>
      *        The output of a specific channel value and inputs are as follows:
      *        </p>
      *        <ul>
-     *        <li><code>auto</code><b> channel specified, with any input:</b>
-     *        Pass through up to eight input channels.</li>
-     *        <li><code>0</code><b> channels specified, with any input:</b>
-     *        Audio omitted from the output.</li>
-     *        <li><code>1</code><b> channel specified, with at least one input
-     *        channel:</b> Mono sound.</li>
-     *        <li><code>2</code><b> channels specified, with any input:</b> Two
-     *        identical mono channels or stereo. For more information about
-     *        tracks, see <code>Audio:AudioPackingMode.</code></li>
+     *        <li><code>auto</code><b> channel specified, with any input:</b> Pass through up to eight input channels.</li>
+     *        <li><code>0</code><b> channels specified, with any input:</b> Audio omitted from the output.</li>
+     *        <li><code>1</code><b> channel specified, with at least one input channel:</b> Mono sound.</li>
+     *        <li><code>2</code><b> channels specified, with any input:</b> Two identical mono channels or stereo. For
+     *        more information about tracks, see <code>Audio:AudioPackingMode.</code></li>
      *        </ul>
      *        <p>
-     *        For more information about how Elastic Transcoder organizes
-     *        channels and tracks, see <code>Audio:AudioPackingMode</code>.
+     *        For more information about how Elastic Transcoder organizes channels and tracks, see
+     *        <code>Audio:AudioPackingMode</code>.
      */
 
     public void setChannels(String channels) {
@@ -479,70 +402,55 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of audio channels in the output file. The following values are
-     * valid:
+     * The number of audio channels in the output file. The following values are valid:
      * </p>
      * <p>
      * <code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code>
      * </p>
      * <p>
-     * One channel carries the information played by a single speaker. For
-     * example, a stereo track with two channels sends one channel to the left
-     * speaker, and the other channel to the right speaker. The output channels
-     * are organized into tracks. If you want Elastic Transcoder to
-     * automatically detect the number of audio channels in the input file and
-     * use that value for the output file, select <code>auto</code>.
+     * One channel carries the information played by a single speaker. For example, a stereo track with two channels
+     * sends one channel to the left speaker, and the other channel to the right speaker. The output channels are
+     * organized into tracks. If you want Elastic Transcoder to automatically detect the number of audio channels in the
+     * input file and use that value for the output file, select <code>auto</code>.
      * </p>
      * <p>
      * The output of a specific channel value and inputs are as follows:
      * </p>
      * <ul>
-     * <li><code>auto</code><b> channel specified, with any input:</b> Pass
-     * through up to eight input channels.</li>
-     * <li><code>0</code><b> channels specified, with any input:</b> Audio
-     * omitted from the output.</li>
-     * <li><code>1</code><b> channel specified, with at least one input
-     * channel:</b> Mono sound.</li>
-     * <li><code>2</code><b> channels specified, with any input:</b> Two
-     * identical mono channels or stereo. For more information about tracks, see
-     * <code>Audio:AudioPackingMode.</code></li>
+     * <li><code>auto</code><b> channel specified, with any input:</b> Pass through up to eight input channels.</li>
+     * <li><code>0</code><b> channels specified, with any input:</b> Audio omitted from the output.</li>
+     * <li><code>1</code><b> channel specified, with at least one input channel:</b> Mono sound.</li>
+     * <li><code>2</code><b> channels specified, with any input:</b> Two identical mono channels or stereo. For more
+     * information about tracks, see <code>Audio:AudioPackingMode.</code></li>
      * </ul>
      * <p>
-     * For more information about how Elastic Transcoder organizes channels and
-     * tracks, see <code>Audio:AudioPackingMode</code>.
+     * For more information about how Elastic Transcoder organizes channels and tracks, see
+     * <code>Audio:AudioPackingMode</code>.
      * </p>
      * 
-     * @return The number of audio channels in the output file. The following
-     *         values are valid:</p>
+     * @return The number of audio channels in the output file. The following values are valid:</p>
      *         <p>
      *         <code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code>
      *         </p>
      *         <p>
-     *         One channel carries the information played by a single speaker.
-     *         For example, a stereo track with two channels sends one channel
-     *         to the left speaker, and the other channel to the right speaker.
-     *         The output channels are organized into tracks. If you want
-     *         Elastic Transcoder to automatically detect the number of audio
-     *         channels in the input file and use that value for the output
-     *         file, select <code>auto</code>.
+     *         One channel carries the information played by a single speaker. For example, a stereo track with two
+     *         channels sends one channel to the left speaker, and the other channel to the right speaker. The output
+     *         channels are organized into tracks. If you want Elastic Transcoder to automatically detect the number of
+     *         audio channels in the input file and use that value for the output file, select <code>auto</code>.
      *         </p>
      *         <p>
      *         The output of a specific channel value and inputs are as follows:
      *         </p>
      *         <ul>
-     *         <li><code>auto</code><b> channel specified, with any input:</b>
-     *         Pass through up to eight input channels.</li>
-     *         <li><code>0</code><b> channels specified, with any input:</b>
-     *         Audio omitted from the output.</li>
-     *         <li><code>1</code><b> channel specified, with at least one input
-     *         channel:</b> Mono sound.</li>
-     *         <li><code>2</code><b> channels specified, with any input:</b> Two
-     *         identical mono channels or stereo. For more information about
-     *         tracks, see <code>Audio:AudioPackingMode.</code></li>
+     *         <li><code>auto</code><b> channel specified, with any input:</b> Pass through up to eight input channels.</li>
+     *         <li><code>0</code><b> channels specified, with any input:</b> Audio omitted from the output.</li>
+     *         <li><code>1</code><b> channel specified, with at least one input channel:</b> Mono sound.</li>
+     *         <li><code>2</code><b> channels specified, with any input:</b> Two identical mono channels or stereo. For
+     *         more information about tracks, see <code>Audio:AudioPackingMode.</code></li>
      *         </ul>
      *         <p>
-     *         For more information about how Elastic Transcoder organizes
-     *         channels and tracks, see <code>Audio:AudioPackingMode</code>.
+     *         For more information about how Elastic Transcoder organizes channels and tracks, see
+     *         <code>Audio:AudioPackingMode</code>.
      */
 
     public String getChannels() {
@@ -551,73 +459,57 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of audio channels in the output file. The following values are
-     * valid:
+     * The number of audio channels in the output file. The following values are valid:
      * </p>
      * <p>
      * <code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code>
      * </p>
      * <p>
-     * One channel carries the information played by a single speaker. For
-     * example, a stereo track with two channels sends one channel to the left
-     * speaker, and the other channel to the right speaker. The output channels
-     * are organized into tracks. If you want Elastic Transcoder to
-     * automatically detect the number of audio channels in the input file and
-     * use that value for the output file, select <code>auto</code>.
+     * One channel carries the information played by a single speaker. For example, a stereo track with two channels
+     * sends one channel to the left speaker, and the other channel to the right speaker. The output channels are
+     * organized into tracks. If you want Elastic Transcoder to automatically detect the number of audio channels in the
+     * input file and use that value for the output file, select <code>auto</code>.
      * </p>
      * <p>
      * The output of a specific channel value and inputs are as follows:
      * </p>
      * <ul>
-     * <li><code>auto</code><b> channel specified, with any input:</b> Pass
-     * through up to eight input channels.</li>
-     * <li><code>0</code><b> channels specified, with any input:</b> Audio
-     * omitted from the output.</li>
-     * <li><code>1</code><b> channel specified, with at least one input
-     * channel:</b> Mono sound.</li>
-     * <li><code>2</code><b> channels specified, with any input:</b> Two
-     * identical mono channels or stereo. For more information about tracks, see
-     * <code>Audio:AudioPackingMode.</code></li>
+     * <li><code>auto</code><b> channel specified, with any input:</b> Pass through up to eight input channels.</li>
+     * <li><code>0</code><b> channels specified, with any input:</b> Audio omitted from the output.</li>
+     * <li><code>1</code><b> channel specified, with at least one input channel:</b> Mono sound.</li>
+     * <li><code>2</code><b> channels specified, with any input:</b> Two identical mono channels or stereo. For more
+     * information about tracks, see <code>Audio:AudioPackingMode.</code></li>
      * </ul>
      * <p>
-     * For more information about how Elastic Transcoder organizes channels and
-     * tracks, see <code>Audio:AudioPackingMode</code>.
+     * For more information about how Elastic Transcoder organizes channels and tracks, see
+     * <code>Audio:AudioPackingMode</code>.
      * </p>
      * 
      * @param channels
-     *        The number of audio channels in the output file. The following
-     *        values are valid:</p>
+     *        The number of audio channels in the output file. The following values are valid:</p>
      *        <p>
      *        <code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code>
      *        </p>
      *        <p>
-     *        One channel carries the information played by a single speaker.
-     *        For example, a stereo track with two channels sends one channel to
-     *        the left speaker, and the other channel to the right speaker. The
-     *        output channels are organized into tracks. If you want Elastic
-     *        Transcoder to automatically detect the number of audio channels in
-     *        the input file and use that value for the output file, select
-     *        <code>auto</code>.
+     *        One channel carries the information played by a single speaker. For example, a stereo track with two
+     *        channels sends one channel to the left speaker, and the other channel to the right speaker. The output
+     *        channels are organized into tracks. If you want Elastic Transcoder to automatically detect the number of
+     *        audio channels in the input file and use that value for the output file, select <code>auto</code>.
      *        </p>
      *        <p>
      *        The output of a specific channel value and inputs are as follows:
      *        </p>
      *        <ul>
-     *        <li><code>auto</code><b> channel specified, with any input:</b>
-     *        Pass through up to eight input channels.</li>
-     *        <li><code>0</code><b> channels specified, with any input:</b>
-     *        Audio omitted from the output.</li>
-     *        <li><code>1</code><b> channel specified, with at least one input
-     *        channel:</b> Mono sound.</li>
-     *        <li><code>2</code><b> channels specified, with any input:</b> Two
-     *        identical mono channels or stereo. For more information about
-     *        tracks, see <code>Audio:AudioPackingMode.</code></li>
+     *        <li><code>auto</code><b> channel specified, with any input:</b> Pass through up to eight input channels.</li>
+     *        <li><code>0</code><b> channels specified, with any input:</b> Audio omitted from the output.</li>
+     *        <li><code>1</code><b> channel specified, with at least one input channel:</b> Mono sound.</li>
+     *        <li><code>2</code><b> channels specified, with any input:</b> Two identical mono channels or stereo. For
+     *        more information about tracks, see <code>Audio:AudioPackingMode.</code></li>
      *        </ul>
      *        <p>
-     *        For more information about how Elastic Transcoder organizes
-     *        channels and tracks, see <code>Audio:AudioPackingMode</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information about how Elastic Transcoder organizes channels and tracks, see
+     *        <code>Audio:AudioPackingMode</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AudioParameters withChannels(String channels) {
@@ -627,116 +519,87 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The method of organizing audio channels and tracks. Use
-     * <code>Audio:Channels</code> to specify the number of channels in your
-     * output, and <code>Audio:AudioPackingMode</code> to specify the number of
-     * tracks and their relation to the channels. If you do not specify an
-     * <code>Audio:AudioPackingMode</code>, Elastic Transcoder uses
+     * The method of organizing audio channels and tracks. Use <code>Audio:Channels</code> to specify the number of
+     * channels in your output, and <code>Audio:AudioPackingMode</code> to specify the number of tracks and their
+     * relation to the channels. If you do not specify an <code>Audio:AudioPackingMode</code>, Elastic Transcoder uses
      * <code>SingleTrack</code>.
      * </p>
      * <p>
      * The following values are valid:
      * </p>
      * <p>
-     * <code>SingleTrack</code>, <code>OneChannelPerTrack</code>, and
-     * <code>OneChannelPerTrackWithMosTo8Tracks</code>
+     * <code>SingleTrack</code>, <code>OneChannelPerTrack</code>, and <code>OneChannelPerTrackWithMosTo8Tracks</code>
      * </p>
      * <p>
-     * When you specify <code>SingleTrack</code>, Elastic Transcoder creates a
-     * single track for your output. The track can have up to eight channels.
-     * Use <code>SingleTrack</code> for all non-<code>mxf</code> containers.
+     * When you specify <code>SingleTrack</code>, Elastic Transcoder creates a single track for your output. The track
+     * can have up to eight channels. Use <code>SingleTrack</code> for all non-<code>mxf</code> containers.
      * </p>
      * <p>
-     * The outputs of <code>SingleTrack</code> for a specific channel value and
-     * inputs are as follows:
+     * The outputs of <code>SingleTrack</code> for a specific channel value and inputs are as follows:
      * </p>
      * <ul>
-     * <li><code>0</code> <b> channels with any input:</b> Audio omitted from
-     * the output</li>
-     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b>
-     * Audio omitted from the output</li>
-     * <li><code>1 </code> <b>channel with any input with audio:</b> One track
-     * with one channel, downmixed if necessary</li>
-     * <li><code>2 </code> <b>channels with one track with one channel:</b> One
-     * track with two identical channels</li>
-     * <li><code>2 or auto </code> <b>channels with two tracks with one channel
-     * each:</b> One track with two channels</li>
-     * <li><code>2 or auto </code> <b>channels with one track with two
-     * channels:</b> One track with two channels</li>
-     * <li><code>2 </code> <b>channels with one track with multiple
-     * channels:</b> One track with two channels</li>
-     * <li><code>auto </code> <b>channels with one track with one channel:</b>
-     * One track with one channel</li>
-     * <li><code>auto </code> <b>channels with one track with multiple
-     * channels:</b> One track with multiple channels</li>
+     * <li><code>0</code> <b> channels with any input:</b> Audio omitted from the output</li>
+     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     * <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if necessary</li>
+     * <li><code>2 </code> <b>channels with one track with one channel:</b> One track with two identical channels</li>
+     * <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> One track with two channels</li>
+     * <li><code>2 or auto </code> <b>channels with one track with two channels:</b> One track with two channels</li>
+     * <li><code>2 </code> <b>channels with one track with multiple channels:</b> One track with two channels</li>
+     * <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     * <li><code>auto </code> <b>channels with one track with multiple channels:</b> One track with multiple channels</li>
      * </ul>
      * <p>
-     * When you specify <code>OneChannelPerTrack</code>, Elastic Transcoder
-     * creates a new track for every channel in your output. Your output can
-     * have up to eight single-channel tracks.
+     * When you specify <code>OneChannelPerTrack</code>, Elastic Transcoder creates a new track for every channel in
+     * your output. Your output can have up to eight single-channel tracks.
      * </p>
      * <p>
-     * The outputs of <code>OneChannelPerTrack</code> for a specific channel
-     * value and inputs are as follows:
+     * The outputs of <code>OneChannelPerTrack</code> for a specific channel value and inputs are as follows:
      * </p>
      * <ul>
-     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from
-     * the output</li>
-     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b>
-     * Audio omitted from the output</li>
-     * <li><code>1 </code> <b>channel with any input with audio:</b> One track
-     * with one channel, downmixed if necessary</li>
-     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two
-     * tracks with one identical channel each</li>
-     * <li><code>2 or auto </code> <b>channels with two tracks with one channel
-     * each:</b> Two tracks with one channel each</li>
-     * <li><code>2 or auto </code> <b>channels with one track with two
-     * channels:</b> Two tracks with one channel each</li>
-     * <li><code>2 </code> <b>channels with one track with multiple
-     * channels:</b> Two tracks with one channel each</li>
-     * <li><code>auto </code> <b>channels with one track with one channel:</b>
-     * One track with one channel</li>
-     * <li><code>auto </code> <b>channels with one track with multiple
-     * channels:</b> Up to eight tracks with one channel each</li>
+     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     * <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if necessary</li>
+     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical channel each</li>
+     * <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one channel
+     * each</li>
+     * <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel each</li>
+     * <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel each</li>
+     * <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     * <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel
+     * each</li>
      * </ul>
      * <p>
-     * When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>, Elastic
-     * Transcoder creates eight single-channel tracks for your output. All
-     * tracks that do not contain audio data from an input channel are MOS, or
-     * Mit Out Sound, tracks.
+     * When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>, Elastic Transcoder creates eight single-channel
+     * tracks for your output. All tracks that do not contain audio data from an input channel are MOS, or Mit Out
+     * Sound, tracks.
      * </p>
      * <p>
-     * The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for a
-     * specific channel value and inputs are as follows:
+     * The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for a specific channel value and inputs are as
+     * follows:
      * </p>
      * <ul>
-     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from
-     * the output</li>
-     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b>
-     * Audio omitted from the output</li>
-     * <li><code>1 </code> <b>channel with any input with audio:</b> One track
-     * with one channel, downmixed if necessary, plus six MOS tracks</li>
-     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two
-     * tracks with one identical channel each, plus six MOS tracks</li>
-     * <li><code>2 or auto </code> <b>channels with two tracks with one channel
-     * each:</b> Two tracks with one channel each, plus six MOS tracks</li>
-     * <li><code>2 or auto </code> <b>channels with one track with two
-     * channels:</b> Two tracks with one channel each, plus six MOS tracks</li>
-     * <li><code>2 </code> <b>channels with one track with multiple
-     * channels:</b> Two tracks with one channel each, plus six MOS tracks</li>
-     * <li><code>auto </code> <b>channels with one track with one channel:</b>
-     * One track with one channel, plus seven MOS tracks</li>
-     * <li><code>auto </code> <b>channels with one track with multiple
-     * channels:</b> Up to eight tracks with one channel each, plus MOS tracks
-     * until there are eight tracks in all</li>
+     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     * <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if necessary,
+     * plus six MOS tracks</li>
+     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical channel each,
+     * plus six MOS tracks</li>
+     * <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one channel
+     * each, plus six MOS tracks</li>
+     * <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel each,
+     * plus six MOS tracks</li>
+     * <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel each, plus
+     * six MOS tracks</li>
+     * <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel, plus seven
+     * MOS tracks</li>
+     * <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel
+     * each, plus MOS tracks until there are eight tracks in all</li>
      * </ul>
      * 
      * @param audioPackingMode
-     *        The method of organizing audio channels and tracks. Use
-     *        <code>Audio:Channels</code> to specify the number of channels in
-     *        your output, and <code>Audio:AudioPackingMode</code> to specify
-     *        the number of tracks and their relation to the channels. If you do
-     *        not specify an <code>Audio:AudioPackingMode</code>, Elastic
+     *        The method of organizing audio channels and tracks. Use <code>Audio:Channels</code> to specify the number
+     *        of channels in your output, and <code>Audio:AudioPackingMode</code> to specify the number of tracks and
+     *        their relation to the channels. If you do not specify an <code>Audio:AudioPackingMode</code>, Elastic
      *        Transcoder uses <code>SingleTrack</code>.</p>
      *        <p>
      *        The following values are valid:
@@ -746,99 +609,77 @@ public class AudioParameters implements Serializable, Cloneable {
      *        <code>OneChannelPerTrackWithMosTo8Tracks</code>
      *        </p>
      *        <p>
-     *        When you specify <code>SingleTrack</code>, Elastic Transcoder
-     *        creates a single track for your output. The track can have up to
-     *        eight channels. Use <code>SingleTrack</code> for all non-
-     *        <code>mxf</code> containers.
+     *        When you specify <code>SingleTrack</code>, Elastic Transcoder creates a single track for your output. The
+     *        track can have up to eight channels. Use <code>SingleTrack</code> for all non-<code>mxf</code> containers.
      *        </p>
      *        <p>
-     *        The outputs of <code>SingleTrack</code> for a specific channel
-     *        value and inputs are as follows:
+     *        The outputs of <code>SingleTrack</code> for a specific channel value and inputs are as follows:
      *        </p>
      *        <ul>
-     *        <li><code>0</code> <b> channels with any input:</b> Audio omitted
-     *        from the output</li>
-     *        <li><code>1, 2, or auto </code> <b>channels with no audio
-     *        input:</b> Audio omitted from the output</li>
-     *        <li><code>1 </code> <b>channel with any input with audio:</b> One
-     *        track with one channel, downmixed if necessary</li>
-     *        <li><code>2 </code> <b>channels with one track with one
-     *        channel:</b> One track with two identical channels</li>
-     *        <li><code>2 or auto </code> <b>channels with two tracks with one
-     *        channel each:</b> One track with two channels</li>
-     *        <li><code>2 or auto </code> <b>channels with one track with two
-     *        channels:</b> One track with two channels</li>
-     *        <li><code>2 </code> <b>channels with one track with multiple
-     *        channels:</b> One track with two channels</li>
-     *        <li><code>auto </code> <b>channels with one track with one
-     *        channel:</b> One track with one channel</li>
-     *        <li><code>auto </code> <b>channels with one track with multiple
-     *        channels:</b> One track with multiple channels</li>
+     *        <li><code>0</code> <b> channels with any input:</b> Audio omitted from the output</li>
+     *        <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     *        <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if
+     *        necessary</li>
+     *        <li><code>2 </code> <b>channels with one track with one channel:</b> One track with two identical channels
+     *        </li>
+     *        <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> One track with two
+     *        channels</li>
+     *        <li><code>2 or auto </code> <b>channels with one track with two channels:</b> One track with two channels</li>
+     *        <li><code>2 </code> <b>channels with one track with multiple channels:</b> One track with two channels</li>
+     *        <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     *        <li><code>auto </code> <b>channels with one track with multiple channels:</b> One track with multiple
+     *        channels</li>
      *        </ul>
      *        <p>
-     *        When you specify <code>OneChannelPerTrack</code>, Elastic
-     *        Transcoder creates a new track for every channel in your output.
-     *        Your output can have up to eight single-channel tracks.
+     *        When you specify <code>OneChannelPerTrack</code>, Elastic Transcoder creates a new track for every channel
+     *        in your output. Your output can have up to eight single-channel tracks.
      *        </p>
      *        <p>
-     *        The outputs of <code>OneChannelPerTrack</code> for a specific
-     *        channel value and inputs are as follows:
+     *        The outputs of <code>OneChannelPerTrack</code> for a specific channel value and inputs are as follows:
      *        </p>
      *        <ul>
-     *        <li><code>0 </code> <b>channels with any input:</b> Audio omitted
-     *        from the output</li>
-     *        <li><code>1, 2, or auto </code> <b>channels with no audio
-     *        input:</b> Audio omitted from the output</li>
-     *        <li><code>1 </code> <b>channel with any input with audio:</b> One
-     *        track with one channel, downmixed if necessary</li>
-     *        <li><code>2 </code> <b>channels with one track with one
-     *        channel:</b> Two tracks with one identical channel each</li>
-     *        <li><code>2 or auto </code> <b>channels with two tracks with one
-     *        channel each:</b> Two tracks with one channel each</li>
-     *        <li><code>2 or auto </code> <b>channels with one track with two
-     *        channels:</b> Two tracks with one channel each</li>
-     *        <li><code>2 </code> <b>channels with one track with multiple
-     *        channels:</b> Two tracks with one channel each</li>
-     *        <li><code>auto </code> <b>channels with one track with one
-     *        channel:</b> One track with one channel</li>
-     *        <li><code>auto </code> <b>channels with one track with multiple
-     *        channels:</b> Up to eight tracks with one channel each</li>
+     *        <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     *        <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     *        <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if
+     *        necessary</li>
+     *        <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical channel
+     *        each</li>
+     *        <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one
+     *        channel each</li>
+     *        <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel
+     *        each</li>
+     *        <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel
+     *        each</li>
+     *        <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     *        <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one
+     *        channel each</li>
      *        </ul>
      *        <p>
-     *        When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>,
-     *        Elastic Transcoder creates eight single-channel tracks for your
-     *        output. All tracks that do not contain audio data from an input
-     *        channel are MOS, or Mit Out Sound, tracks.
+     *        When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>, Elastic Transcoder creates eight
+     *        single-channel tracks for your output. All tracks that do not contain audio data from an input channel are
+     *        MOS, or Mit Out Sound, tracks.
      *        </p>
      *        <p>
-     *        The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for
-     *        a specific channel value and inputs are as follows:
+     *        The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for a specific channel value and inputs are
+     *        as follows:
      *        </p>
      *        <ul>
-     *        <li><code>0 </code> <b>channels with any input:</b> Audio omitted
-     *        from the output</li>
-     *        <li><code>1, 2, or auto </code> <b>channels with no audio
-     *        input:</b> Audio omitted from the output</li>
-     *        <li><code>1 </code> <b>channel with any input with audio:</b> One
-     *        track with one channel, downmixed if necessary, plus six MOS
-     *        tracks</li>
-     *        <li><code>2 </code> <b>channels with one track with one
-     *        channel:</b> Two tracks with one identical channel each, plus six
-     *        MOS tracks</li>
-     *        <li><code>2 or auto </code> <b>channels with two tracks with one
-     *        channel each:</b> Two tracks with one channel each, plus six MOS
-     *        tracks</li>
-     *        <li><code>2 or auto </code> <b>channels with one track with two
-     *        channels:</b> Two tracks with one channel each, plus six MOS
-     *        tracks</li>
-     *        <li><code>2 </code> <b>channels with one track with multiple
-     *        channels:</b> Two tracks with one channel each, plus six MOS
-     *        tracks</li>
-     *        <li><code>auto </code> <b>channels with one track with one
-     *        channel:</b> One track with one channel, plus seven MOS tracks</li>
-     *        <li><code>auto </code> <b>channels with one track with multiple
-     *        channels:</b> Up to eight tracks with one channel each, plus MOS
-     *        tracks until there are eight tracks in all</li>
+     *        <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     *        <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     *        <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if
+     *        necessary, plus six MOS tracks</li>
+     *        <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical channel
+     *        each, plus six MOS tracks</li>
+     *        <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one
+     *        channel each, plus six MOS tracks</li>
+     *        <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel
+     *        each, plus six MOS tracks</li>
+     *        <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel
+     *        each, plus six MOS tracks</li>
+     *        <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel, plus
+     *        seven MOS tracks</li>
+     *        <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one
+     *        channel each, plus MOS tracks until there are eight tracks in all</li>
      */
 
     public void setAudioPackingMode(String audioPackingMode) {
@@ -847,115 +688,86 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The method of organizing audio channels and tracks. Use
-     * <code>Audio:Channels</code> to specify the number of channels in your
-     * output, and <code>Audio:AudioPackingMode</code> to specify the number of
-     * tracks and their relation to the channels. If you do not specify an
-     * <code>Audio:AudioPackingMode</code>, Elastic Transcoder uses
+     * The method of organizing audio channels and tracks. Use <code>Audio:Channels</code> to specify the number of
+     * channels in your output, and <code>Audio:AudioPackingMode</code> to specify the number of tracks and their
+     * relation to the channels. If you do not specify an <code>Audio:AudioPackingMode</code>, Elastic Transcoder uses
      * <code>SingleTrack</code>.
      * </p>
      * <p>
      * The following values are valid:
      * </p>
      * <p>
-     * <code>SingleTrack</code>, <code>OneChannelPerTrack</code>, and
-     * <code>OneChannelPerTrackWithMosTo8Tracks</code>
+     * <code>SingleTrack</code>, <code>OneChannelPerTrack</code>, and <code>OneChannelPerTrackWithMosTo8Tracks</code>
      * </p>
      * <p>
-     * When you specify <code>SingleTrack</code>, Elastic Transcoder creates a
-     * single track for your output. The track can have up to eight channels.
-     * Use <code>SingleTrack</code> for all non-<code>mxf</code> containers.
+     * When you specify <code>SingleTrack</code>, Elastic Transcoder creates a single track for your output. The track
+     * can have up to eight channels. Use <code>SingleTrack</code> for all non-<code>mxf</code> containers.
      * </p>
      * <p>
-     * The outputs of <code>SingleTrack</code> for a specific channel value and
-     * inputs are as follows:
+     * The outputs of <code>SingleTrack</code> for a specific channel value and inputs are as follows:
      * </p>
      * <ul>
-     * <li><code>0</code> <b> channels with any input:</b> Audio omitted from
-     * the output</li>
-     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b>
-     * Audio omitted from the output</li>
-     * <li><code>1 </code> <b>channel with any input with audio:</b> One track
-     * with one channel, downmixed if necessary</li>
-     * <li><code>2 </code> <b>channels with one track with one channel:</b> One
-     * track with two identical channels</li>
-     * <li><code>2 or auto </code> <b>channels with two tracks with one channel
-     * each:</b> One track with two channels</li>
-     * <li><code>2 or auto </code> <b>channels with one track with two
-     * channels:</b> One track with two channels</li>
-     * <li><code>2 </code> <b>channels with one track with multiple
-     * channels:</b> One track with two channels</li>
-     * <li><code>auto </code> <b>channels with one track with one channel:</b>
-     * One track with one channel</li>
-     * <li><code>auto </code> <b>channels with one track with multiple
-     * channels:</b> One track with multiple channels</li>
+     * <li><code>0</code> <b> channels with any input:</b> Audio omitted from the output</li>
+     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     * <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if necessary</li>
+     * <li><code>2 </code> <b>channels with one track with one channel:</b> One track with two identical channels</li>
+     * <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> One track with two channels</li>
+     * <li><code>2 or auto </code> <b>channels with one track with two channels:</b> One track with two channels</li>
+     * <li><code>2 </code> <b>channels with one track with multiple channels:</b> One track with two channels</li>
+     * <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     * <li><code>auto </code> <b>channels with one track with multiple channels:</b> One track with multiple channels</li>
      * </ul>
      * <p>
-     * When you specify <code>OneChannelPerTrack</code>, Elastic Transcoder
-     * creates a new track for every channel in your output. Your output can
-     * have up to eight single-channel tracks.
+     * When you specify <code>OneChannelPerTrack</code>, Elastic Transcoder creates a new track for every channel in
+     * your output. Your output can have up to eight single-channel tracks.
      * </p>
      * <p>
-     * The outputs of <code>OneChannelPerTrack</code> for a specific channel
-     * value and inputs are as follows:
+     * The outputs of <code>OneChannelPerTrack</code> for a specific channel value and inputs are as follows:
      * </p>
      * <ul>
-     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from
-     * the output</li>
-     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b>
-     * Audio omitted from the output</li>
-     * <li><code>1 </code> <b>channel with any input with audio:</b> One track
-     * with one channel, downmixed if necessary</li>
-     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two
-     * tracks with one identical channel each</li>
-     * <li><code>2 or auto </code> <b>channels with two tracks with one channel
-     * each:</b> Two tracks with one channel each</li>
-     * <li><code>2 or auto </code> <b>channels with one track with two
-     * channels:</b> Two tracks with one channel each</li>
-     * <li><code>2 </code> <b>channels with one track with multiple
-     * channels:</b> Two tracks with one channel each</li>
-     * <li><code>auto </code> <b>channels with one track with one channel:</b>
-     * One track with one channel</li>
-     * <li><code>auto </code> <b>channels with one track with multiple
-     * channels:</b> Up to eight tracks with one channel each</li>
+     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     * <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if necessary</li>
+     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical channel each</li>
+     * <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one channel
+     * each</li>
+     * <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel each</li>
+     * <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel each</li>
+     * <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     * <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel
+     * each</li>
      * </ul>
      * <p>
-     * When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>, Elastic
-     * Transcoder creates eight single-channel tracks for your output. All
-     * tracks that do not contain audio data from an input channel are MOS, or
-     * Mit Out Sound, tracks.
+     * When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>, Elastic Transcoder creates eight single-channel
+     * tracks for your output. All tracks that do not contain audio data from an input channel are MOS, or Mit Out
+     * Sound, tracks.
      * </p>
      * <p>
-     * The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for a
-     * specific channel value and inputs are as follows:
+     * The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for a specific channel value and inputs are as
+     * follows:
      * </p>
      * <ul>
-     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from
-     * the output</li>
-     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b>
-     * Audio omitted from the output</li>
-     * <li><code>1 </code> <b>channel with any input with audio:</b> One track
-     * with one channel, downmixed if necessary, plus six MOS tracks</li>
-     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two
-     * tracks with one identical channel each, plus six MOS tracks</li>
-     * <li><code>2 or auto </code> <b>channels with two tracks with one channel
-     * each:</b> Two tracks with one channel each, plus six MOS tracks</li>
-     * <li><code>2 or auto </code> <b>channels with one track with two
-     * channels:</b> Two tracks with one channel each, plus six MOS tracks</li>
-     * <li><code>2 </code> <b>channels with one track with multiple
-     * channels:</b> Two tracks with one channel each, plus six MOS tracks</li>
-     * <li><code>auto </code> <b>channels with one track with one channel:</b>
-     * One track with one channel, plus seven MOS tracks</li>
-     * <li><code>auto </code> <b>channels with one track with multiple
-     * channels:</b> Up to eight tracks with one channel each, plus MOS tracks
-     * until there are eight tracks in all</li>
+     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     * <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if necessary,
+     * plus six MOS tracks</li>
+     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical channel each,
+     * plus six MOS tracks</li>
+     * <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one channel
+     * each, plus six MOS tracks</li>
+     * <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel each,
+     * plus six MOS tracks</li>
+     * <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel each, plus
+     * six MOS tracks</li>
+     * <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel, plus seven
+     * MOS tracks</li>
+     * <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel
+     * each, plus MOS tracks until there are eight tracks in all</li>
      * </ul>
      * 
-     * @return The method of organizing audio channels and tracks. Use
-     *         <code>Audio:Channels</code> to specify the number of channels in
-     *         your output, and <code>Audio:AudioPackingMode</code> to specify
-     *         the number of tracks and their relation to the channels. If you
-     *         do not specify an <code>Audio:AudioPackingMode</code>, Elastic
+     * @return The method of organizing audio channels and tracks. Use <code>Audio:Channels</code> to specify the number
+     *         of channels in your output, and <code>Audio:AudioPackingMode</code> to specify the number of tracks and
+     *         their relation to the channels. If you do not specify an <code>Audio:AudioPackingMode</code>, Elastic
      *         Transcoder uses <code>SingleTrack</code>.</p>
      *         <p>
      *         The following values are valid:
@@ -965,99 +777,79 @@ public class AudioParameters implements Serializable, Cloneable {
      *         <code>OneChannelPerTrackWithMosTo8Tracks</code>
      *         </p>
      *         <p>
-     *         When you specify <code>SingleTrack</code>, Elastic Transcoder
-     *         creates a single track for your output. The track can have up to
-     *         eight channels. Use <code>SingleTrack</code> for all non-
-     *         <code>mxf</code> containers.
+     *         When you specify <code>SingleTrack</code>, Elastic Transcoder creates a single track for your output. The
+     *         track can have up to eight channels. Use <code>SingleTrack</code> for all non-<code>mxf</code>
+     *         containers.
      *         </p>
      *         <p>
-     *         The outputs of <code>SingleTrack</code> for a specific channel
-     *         value and inputs are as follows:
+     *         The outputs of <code>SingleTrack</code> for a specific channel value and inputs are as follows:
      *         </p>
      *         <ul>
-     *         <li><code>0</code> <b> channels with any input:</b> Audio omitted
-     *         from the output</li>
-     *         <li><code>1, 2, or auto </code> <b>channels with no audio
-     *         input:</b> Audio omitted from the output</li>
-     *         <li><code>1 </code> <b>channel with any input with audio:</b> One
-     *         track with one channel, downmixed if necessary</li>
-     *         <li><code>2 </code> <b>channels with one track with one
-     *         channel:</b> One track with two identical channels</li>
-     *         <li><code>2 or auto </code> <b>channels with two tracks with one
-     *         channel each:</b> One track with two channels</li>
-     *         <li><code>2 or auto </code> <b>channels with one track with two
-     *         channels:</b> One track with two channels</li>
-     *         <li><code>2 </code> <b>channels with one track with multiple
-     *         channels:</b> One track with two channels</li>
-     *         <li><code>auto </code> <b>channels with one track with one
-     *         channel:</b> One track with one channel</li>
-     *         <li><code>auto </code> <b>channels with one track with multiple
-     *         channels:</b> One track with multiple channels</li>
+     *         <li><code>0</code> <b> channels with any input:</b> Audio omitted from the output</li>
+     *         <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     *         <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if
+     *         necessary</li>
+     *         <li><code>2 </code> <b>channels with one track with one channel:</b> One track with two identical
+     *         channels</li>
+     *         <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> One track with two
+     *         channels</li>
+     *         <li><code>2 or auto </code> <b>channels with one track with two channels:</b> One track with two channels
+     *         </li>
+     *         <li><code>2 </code> <b>channels with one track with multiple channels:</b> One track with two channels</li>
+     *         <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     *         <li><code>auto </code> <b>channels with one track with multiple channels:</b> One track with multiple
+     *         channels</li>
      *         </ul>
      *         <p>
-     *         When you specify <code>OneChannelPerTrack</code>, Elastic
-     *         Transcoder creates a new track for every channel in your output.
-     *         Your output can have up to eight single-channel tracks.
+     *         When you specify <code>OneChannelPerTrack</code>, Elastic Transcoder creates a new track for every
+     *         channel in your output. Your output can have up to eight single-channel tracks.
      *         </p>
      *         <p>
-     *         The outputs of <code>OneChannelPerTrack</code> for a specific
-     *         channel value and inputs are as follows:
+     *         The outputs of <code>OneChannelPerTrack</code> for a specific channel value and inputs are as follows:
      *         </p>
      *         <ul>
-     *         <li><code>0 </code> <b>channels with any input:</b> Audio omitted
-     *         from the output</li>
-     *         <li><code>1, 2, or auto </code> <b>channels with no audio
-     *         input:</b> Audio omitted from the output</li>
-     *         <li><code>1 </code> <b>channel with any input with audio:</b> One
-     *         track with one channel, downmixed if necessary</li>
-     *         <li><code>2 </code> <b>channels with one track with one
-     *         channel:</b> Two tracks with one identical channel each</li>
-     *         <li><code>2 or auto </code> <b>channels with two tracks with one
-     *         channel each:</b> Two tracks with one channel each</li>
-     *         <li><code>2 or auto </code> <b>channels with one track with two
-     *         channels:</b> Two tracks with one channel each</li>
-     *         <li><code>2 </code> <b>channels with one track with multiple
-     *         channels:</b> Two tracks with one channel each</li>
-     *         <li><code>auto </code> <b>channels with one track with one
-     *         channel:</b> One track with one channel</li>
-     *         <li><code>auto </code> <b>channels with one track with multiple
-     *         channels:</b> Up to eight tracks with one channel each</li>
+     *         <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     *         <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     *         <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if
+     *         necessary</li>
+     *         <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical
+     *         channel each</li>
+     *         <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one
+     *         channel each</li>
+     *         <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel
+     *         each</li>
+     *         <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel
+     *         each</li>
+     *         <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     *         <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one
+     *         channel each</li>
      *         </ul>
      *         <p>
-     *         When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>,
-     *         Elastic Transcoder creates eight single-channel tracks for your
-     *         output. All tracks that do not contain audio data from an input
-     *         channel are MOS, or Mit Out Sound, tracks.
+     *         When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>, Elastic Transcoder creates eight
+     *         single-channel tracks for your output. All tracks that do not contain audio data from an input channel
+     *         are MOS, or Mit Out Sound, tracks.
      *         </p>
      *         <p>
-     *         The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code>
-     *         for a specific channel value and inputs are as follows:
+     *         The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for a specific channel value and inputs
+     *         are as follows:
      *         </p>
      *         <ul>
-     *         <li><code>0 </code> <b>channels with any input:</b> Audio omitted
-     *         from the output</li>
-     *         <li><code>1, 2, or auto </code> <b>channels with no audio
-     *         input:</b> Audio omitted from the output</li>
-     *         <li><code>1 </code> <b>channel with any input with audio:</b> One
-     *         track with one channel, downmixed if necessary, plus six MOS
-     *         tracks</li>
-     *         <li><code>2 </code> <b>channels with one track with one
-     *         channel:</b> Two tracks with one identical channel each, plus six
-     *         MOS tracks</li>
-     *         <li><code>2 or auto </code> <b>channels with two tracks with one
-     *         channel each:</b> Two tracks with one channel each, plus six MOS
-     *         tracks</li>
-     *         <li><code>2 or auto </code> <b>channels with one track with two
-     *         channels:</b> Two tracks with one channel each, plus six MOS
-     *         tracks</li>
-     *         <li><code>2 </code> <b>channels with one track with multiple
-     *         channels:</b> Two tracks with one channel each, plus six MOS
-     *         tracks</li>
-     *         <li><code>auto </code> <b>channels with one track with one
-     *         channel:</b> One track with one channel, plus seven MOS tracks</li>
-     *         <li><code>auto </code> <b>channels with one track with multiple
-     *         channels:</b> Up to eight tracks with one channel each, plus MOS
-     *         tracks until there are eight tracks in all</li>
+     *         <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     *         <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     *         <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if
+     *         necessary, plus six MOS tracks</li>
+     *         <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical
+     *         channel each, plus six MOS tracks</li>
+     *         <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one
+     *         channel each, plus six MOS tracks</li>
+     *         <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel
+     *         each, plus six MOS tracks</li>
+     *         <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel
+     *         each, plus six MOS tracks</li>
+     *         <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel, plus
+     *         seven MOS tracks</li>
+     *         <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one
+     *         channel each, plus MOS tracks until there are eight tracks in all</li>
      */
 
     public String getAudioPackingMode() {
@@ -1066,116 +858,87 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The method of organizing audio channels and tracks. Use
-     * <code>Audio:Channels</code> to specify the number of channels in your
-     * output, and <code>Audio:AudioPackingMode</code> to specify the number of
-     * tracks and their relation to the channels. If you do not specify an
-     * <code>Audio:AudioPackingMode</code>, Elastic Transcoder uses
+     * The method of organizing audio channels and tracks. Use <code>Audio:Channels</code> to specify the number of
+     * channels in your output, and <code>Audio:AudioPackingMode</code> to specify the number of tracks and their
+     * relation to the channels. If you do not specify an <code>Audio:AudioPackingMode</code>, Elastic Transcoder uses
      * <code>SingleTrack</code>.
      * </p>
      * <p>
      * The following values are valid:
      * </p>
      * <p>
-     * <code>SingleTrack</code>, <code>OneChannelPerTrack</code>, and
-     * <code>OneChannelPerTrackWithMosTo8Tracks</code>
+     * <code>SingleTrack</code>, <code>OneChannelPerTrack</code>, and <code>OneChannelPerTrackWithMosTo8Tracks</code>
      * </p>
      * <p>
-     * When you specify <code>SingleTrack</code>, Elastic Transcoder creates a
-     * single track for your output. The track can have up to eight channels.
-     * Use <code>SingleTrack</code> for all non-<code>mxf</code> containers.
+     * When you specify <code>SingleTrack</code>, Elastic Transcoder creates a single track for your output. The track
+     * can have up to eight channels. Use <code>SingleTrack</code> for all non-<code>mxf</code> containers.
      * </p>
      * <p>
-     * The outputs of <code>SingleTrack</code> for a specific channel value and
-     * inputs are as follows:
+     * The outputs of <code>SingleTrack</code> for a specific channel value and inputs are as follows:
      * </p>
      * <ul>
-     * <li><code>0</code> <b> channels with any input:</b> Audio omitted from
-     * the output</li>
-     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b>
-     * Audio omitted from the output</li>
-     * <li><code>1 </code> <b>channel with any input with audio:</b> One track
-     * with one channel, downmixed if necessary</li>
-     * <li><code>2 </code> <b>channels with one track with one channel:</b> One
-     * track with two identical channels</li>
-     * <li><code>2 or auto </code> <b>channels with two tracks with one channel
-     * each:</b> One track with two channels</li>
-     * <li><code>2 or auto </code> <b>channels with one track with two
-     * channels:</b> One track with two channels</li>
-     * <li><code>2 </code> <b>channels with one track with multiple
-     * channels:</b> One track with two channels</li>
-     * <li><code>auto </code> <b>channels with one track with one channel:</b>
-     * One track with one channel</li>
-     * <li><code>auto </code> <b>channels with one track with multiple
-     * channels:</b> One track with multiple channels</li>
+     * <li><code>0</code> <b> channels with any input:</b> Audio omitted from the output</li>
+     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     * <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if necessary</li>
+     * <li><code>2 </code> <b>channels with one track with one channel:</b> One track with two identical channels</li>
+     * <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> One track with two channels</li>
+     * <li><code>2 or auto </code> <b>channels with one track with two channels:</b> One track with two channels</li>
+     * <li><code>2 </code> <b>channels with one track with multiple channels:</b> One track with two channels</li>
+     * <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     * <li><code>auto </code> <b>channels with one track with multiple channels:</b> One track with multiple channels</li>
      * </ul>
      * <p>
-     * When you specify <code>OneChannelPerTrack</code>, Elastic Transcoder
-     * creates a new track for every channel in your output. Your output can
-     * have up to eight single-channel tracks.
+     * When you specify <code>OneChannelPerTrack</code>, Elastic Transcoder creates a new track for every channel in
+     * your output. Your output can have up to eight single-channel tracks.
      * </p>
      * <p>
-     * The outputs of <code>OneChannelPerTrack</code> for a specific channel
-     * value and inputs are as follows:
+     * The outputs of <code>OneChannelPerTrack</code> for a specific channel value and inputs are as follows:
      * </p>
      * <ul>
-     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from
-     * the output</li>
-     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b>
-     * Audio omitted from the output</li>
-     * <li><code>1 </code> <b>channel with any input with audio:</b> One track
-     * with one channel, downmixed if necessary</li>
-     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two
-     * tracks with one identical channel each</li>
-     * <li><code>2 or auto </code> <b>channels with two tracks with one channel
-     * each:</b> Two tracks with one channel each</li>
-     * <li><code>2 or auto </code> <b>channels with one track with two
-     * channels:</b> Two tracks with one channel each</li>
-     * <li><code>2 </code> <b>channels with one track with multiple
-     * channels:</b> Two tracks with one channel each</li>
-     * <li><code>auto </code> <b>channels with one track with one channel:</b>
-     * One track with one channel</li>
-     * <li><code>auto </code> <b>channels with one track with multiple
-     * channels:</b> Up to eight tracks with one channel each</li>
+     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     * <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if necessary</li>
+     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical channel each</li>
+     * <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one channel
+     * each</li>
+     * <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel each</li>
+     * <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel each</li>
+     * <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     * <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel
+     * each</li>
      * </ul>
      * <p>
-     * When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>, Elastic
-     * Transcoder creates eight single-channel tracks for your output. All
-     * tracks that do not contain audio data from an input channel are MOS, or
-     * Mit Out Sound, tracks.
+     * When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>, Elastic Transcoder creates eight single-channel
+     * tracks for your output. All tracks that do not contain audio data from an input channel are MOS, or Mit Out
+     * Sound, tracks.
      * </p>
      * <p>
-     * The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for a
-     * specific channel value and inputs are as follows:
+     * The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for a specific channel value and inputs are as
+     * follows:
      * </p>
      * <ul>
-     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from
-     * the output</li>
-     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b>
-     * Audio omitted from the output</li>
-     * <li><code>1 </code> <b>channel with any input with audio:</b> One track
-     * with one channel, downmixed if necessary, plus six MOS tracks</li>
-     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two
-     * tracks with one identical channel each, plus six MOS tracks</li>
-     * <li><code>2 or auto </code> <b>channels with two tracks with one channel
-     * each:</b> Two tracks with one channel each, plus six MOS tracks</li>
-     * <li><code>2 or auto </code> <b>channels with one track with two
-     * channels:</b> Two tracks with one channel each, plus six MOS tracks</li>
-     * <li><code>2 </code> <b>channels with one track with multiple
-     * channels:</b> Two tracks with one channel each, plus six MOS tracks</li>
-     * <li><code>auto </code> <b>channels with one track with one channel:</b>
-     * One track with one channel, plus seven MOS tracks</li>
-     * <li><code>auto </code> <b>channels with one track with multiple
-     * channels:</b> Up to eight tracks with one channel each, plus MOS tracks
-     * until there are eight tracks in all</li>
+     * <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     * <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     * <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if necessary,
+     * plus six MOS tracks</li>
+     * <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical channel each,
+     * plus six MOS tracks</li>
+     * <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one channel
+     * each, plus six MOS tracks</li>
+     * <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel each,
+     * plus six MOS tracks</li>
+     * <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel each, plus
+     * six MOS tracks</li>
+     * <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel, plus seven
+     * MOS tracks</li>
+     * <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel
+     * each, plus MOS tracks until there are eight tracks in all</li>
      * </ul>
      * 
      * @param audioPackingMode
-     *        The method of organizing audio channels and tracks. Use
-     *        <code>Audio:Channels</code> to specify the number of channels in
-     *        your output, and <code>Audio:AudioPackingMode</code> to specify
-     *        the number of tracks and their relation to the channels. If you do
-     *        not specify an <code>Audio:AudioPackingMode</code>, Elastic
+     *        The method of organizing audio channels and tracks. Use <code>Audio:Channels</code> to specify the number
+     *        of channels in your output, and <code>Audio:AudioPackingMode</code> to specify the number of tracks and
+     *        their relation to the channels. If you do not specify an <code>Audio:AudioPackingMode</code>, Elastic
      *        Transcoder uses <code>SingleTrack</code>.</p>
      *        <p>
      *        The following values are valid:
@@ -1185,101 +948,78 @@ public class AudioParameters implements Serializable, Cloneable {
      *        <code>OneChannelPerTrackWithMosTo8Tracks</code>
      *        </p>
      *        <p>
-     *        When you specify <code>SingleTrack</code>, Elastic Transcoder
-     *        creates a single track for your output. The track can have up to
-     *        eight channels. Use <code>SingleTrack</code> for all non-
-     *        <code>mxf</code> containers.
+     *        When you specify <code>SingleTrack</code>, Elastic Transcoder creates a single track for your output. The
+     *        track can have up to eight channels. Use <code>SingleTrack</code> for all non-<code>mxf</code> containers.
      *        </p>
      *        <p>
-     *        The outputs of <code>SingleTrack</code> for a specific channel
-     *        value and inputs are as follows:
+     *        The outputs of <code>SingleTrack</code> for a specific channel value and inputs are as follows:
      *        </p>
      *        <ul>
-     *        <li><code>0</code> <b> channels with any input:</b> Audio omitted
-     *        from the output</li>
-     *        <li><code>1, 2, or auto </code> <b>channels with no audio
-     *        input:</b> Audio omitted from the output</li>
-     *        <li><code>1 </code> <b>channel with any input with audio:</b> One
-     *        track with one channel, downmixed if necessary</li>
-     *        <li><code>2 </code> <b>channels with one track with one
-     *        channel:</b> One track with two identical channels</li>
-     *        <li><code>2 or auto </code> <b>channels with two tracks with one
-     *        channel each:</b> One track with two channels</li>
-     *        <li><code>2 or auto </code> <b>channels with one track with two
-     *        channels:</b> One track with two channels</li>
-     *        <li><code>2 </code> <b>channels with one track with multiple
-     *        channels:</b> One track with two channels</li>
-     *        <li><code>auto </code> <b>channels with one track with one
-     *        channel:</b> One track with one channel</li>
-     *        <li><code>auto </code> <b>channels with one track with multiple
-     *        channels:</b> One track with multiple channels</li>
+     *        <li><code>0</code> <b> channels with any input:</b> Audio omitted from the output</li>
+     *        <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     *        <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if
+     *        necessary</li>
+     *        <li><code>2 </code> <b>channels with one track with one channel:</b> One track with two identical channels
+     *        </li>
+     *        <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> One track with two
+     *        channels</li>
+     *        <li><code>2 or auto </code> <b>channels with one track with two channels:</b> One track with two channels</li>
+     *        <li><code>2 </code> <b>channels with one track with multiple channels:</b> One track with two channels</li>
+     *        <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     *        <li><code>auto </code> <b>channels with one track with multiple channels:</b> One track with multiple
+     *        channels</li>
      *        </ul>
      *        <p>
-     *        When you specify <code>OneChannelPerTrack</code>, Elastic
-     *        Transcoder creates a new track for every channel in your output.
-     *        Your output can have up to eight single-channel tracks.
+     *        When you specify <code>OneChannelPerTrack</code>, Elastic Transcoder creates a new track for every channel
+     *        in your output. Your output can have up to eight single-channel tracks.
      *        </p>
      *        <p>
-     *        The outputs of <code>OneChannelPerTrack</code> for a specific
-     *        channel value and inputs are as follows:
+     *        The outputs of <code>OneChannelPerTrack</code> for a specific channel value and inputs are as follows:
      *        </p>
      *        <ul>
-     *        <li><code>0 </code> <b>channels with any input:</b> Audio omitted
-     *        from the output</li>
-     *        <li><code>1, 2, or auto </code> <b>channels with no audio
-     *        input:</b> Audio omitted from the output</li>
-     *        <li><code>1 </code> <b>channel with any input with audio:</b> One
-     *        track with one channel, downmixed if necessary</li>
-     *        <li><code>2 </code> <b>channels with one track with one
-     *        channel:</b> Two tracks with one identical channel each</li>
-     *        <li><code>2 or auto </code> <b>channels with two tracks with one
-     *        channel each:</b> Two tracks with one channel each</li>
-     *        <li><code>2 or auto </code> <b>channels with one track with two
-     *        channels:</b> Two tracks with one channel each</li>
-     *        <li><code>2 </code> <b>channels with one track with multiple
-     *        channels:</b> Two tracks with one channel each</li>
-     *        <li><code>auto </code> <b>channels with one track with one
-     *        channel:</b> One track with one channel</li>
-     *        <li><code>auto </code> <b>channels with one track with multiple
-     *        channels:</b> Up to eight tracks with one channel each</li>
+     *        <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     *        <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     *        <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if
+     *        necessary</li>
+     *        <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical channel
+     *        each</li>
+     *        <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one
+     *        channel each</li>
+     *        <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel
+     *        each</li>
+     *        <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel
+     *        each</li>
+     *        <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel</li>
+     *        <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one
+     *        channel each</li>
      *        </ul>
      *        <p>
-     *        When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>,
-     *        Elastic Transcoder creates eight single-channel tracks for your
-     *        output. All tracks that do not contain audio data from an input
-     *        channel are MOS, or Mit Out Sound, tracks.
+     *        When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>, Elastic Transcoder creates eight
+     *        single-channel tracks for your output. All tracks that do not contain audio data from an input channel are
+     *        MOS, or Mit Out Sound, tracks.
      *        </p>
      *        <p>
-     *        The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for
-     *        a specific channel value and inputs are as follows:
+     *        The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for a specific channel value and inputs are
+     *        as follows:
      *        </p>
      *        <ul>
-     *        <li><code>0 </code> <b>channels with any input:</b> Audio omitted
-     *        from the output</li>
-     *        <li><code>1, 2, or auto </code> <b>channels with no audio
-     *        input:</b> Audio omitted from the output</li>
-     *        <li><code>1 </code> <b>channel with any input with audio:</b> One
-     *        track with one channel, downmixed if necessary, plus six MOS
-     *        tracks</li>
-     *        <li><code>2 </code> <b>channels with one track with one
-     *        channel:</b> Two tracks with one identical channel each, plus six
-     *        MOS tracks</li>
-     *        <li><code>2 or auto </code> <b>channels with two tracks with one
-     *        channel each:</b> Two tracks with one channel each, plus six MOS
-     *        tracks</li>
-     *        <li><code>2 or auto </code> <b>channels with one track with two
-     *        channels:</b> Two tracks with one channel each, plus six MOS
-     *        tracks</li>
-     *        <li><code>2 </code> <b>channels with one track with multiple
-     *        channels:</b> Two tracks with one channel each, plus six MOS
-     *        tracks</li>
-     *        <li><code>auto </code> <b>channels with one track with one
-     *        channel:</b> One track with one channel, plus seven MOS tracks</li>
-     *        <li><code>auto </code> <b>channels with one track with multiple
-     *        channels:</b> Up to eight tracks with one channel each, plus MOS
-     *        tracks until there are eight tracks in all</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><code>0 </code> <b>channels with any input:</b> Audio omitted from the output</li>
+     *        <li><code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from the output</li>
+     *        <li><code>1 </code> <b>channel with any input with audio:</b> One track with one channel, downmixed if
+     *        necessary, plus six MOS tracks</li>
+     *        <li><code>2 </code> <b>channels with one track with one channel:</b> Two tracks with one identical channel
+     *        each, plus six MOS tracks</li>
+     *        <li><code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two tracks with one
+     *        channel each, plus six MOS tracks</li>
+     *        <li><code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks with one channel
+     *        each, plus six MOS tracks</li>
+     *        <li><code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks with one channel
+     *        each, plus six MOS tracks</li>
+     *        <li><code>auto </code> <b>channels with one track with one channel:</b> One track with one channel, plus
+     *        seven MOS tracks</li>
+     *        <li><code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one
+     *        channel each, plus MOS tracks until there are eight tracks in all</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AudioParameters withAudioPackingMode(String audioPackingMode) {
@@ -1289,29 +1029,25 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is
-     * the <code>AAC</code> compression profile to use. Valid values include:
+     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code> compression profile
+     * to use. Valid values include:
      * </p>
      * <p>
-     * <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>,
-     * <code>HE-AACv2</code>
+     * <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code>
      * </p>
      * <p>
-     * If you specify <code>auto</code>, Elastic Transcoder chooses a profile
-     * based on the bit rate of the output file.
+     * If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the output file.
      * </p>
      * 
      * @param codecOptions
-     *        If you specified <code>AAC</code> for <code>Audio:Codec</code>,
-     *        this is the <code>AAC</code> compression profile to use. Valid
-     *        values include:</p>
+     *        If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code> compression
+     *        profile to use. Valid values include:</p>
      *        <p>
-     *        <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>,
-     *        <code>HE-AACv2</code>
+     *        <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code>
      *        </p>
      *        <p>
-     *        If you specify <code>auto</code>, Elastic Transcoder chooses a
-     *        profile based on the bit rate of the output file.
+     *        If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the output
+     *        file.
      */
 
     public void setCodecOptions(AudioCodecOptions codecOptions) {
@@ -1320,28 +1056,24 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is
-     * the <code>AAC</code> compression profile to use. Valid values include:
+     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code> compression profile
+     * to use. Valid values include:
      * </p>
      * <p>
-     * <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>,
-     * <code>HE-AACv2</code>
+     * <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code>
      * </p>
      * <p>
-     * If you specify <code>auto</code>, Elastic Transcoder chooses a profile
-     * based on the bit rate of the output file.
+     * If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the output file.
      * </p>
      * 
-     * @return If you specified <code>AAC</code> for <code>Audio:Codec</code>,
-     *         this is the <code>AAC</code> compression profile to use. Valid
-     *         values include:</p>
+     * @return If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code> compression
+     *         profile to use. Valid values include:</p>
      *         <p>
-     *         <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>,
-     *         <code>HE-AACv2</code>
+     *         <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code>
      *         </p>
      *         <p>
-     *         If you specify <code>auto</code>, Elastic Transcoder chooses a
-     *         profile based on the bit rate of the output file.
+     *         If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the
+     *         output file.
      */
 
     public AudioCodecOptions getCodecOptions() {
@@ -1350,31 +1082,26 @@ public class AudioParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is
-     * the <code>AAC</code> compression profile to use. Valid values include:
+     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code> compression profile
+     * to use. Valid values include:
      * </p>
      * <p>
-     * <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>,
-     * <code>HE-AACv2</code>
+     * <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code>
      * </p>
      * <p>
-     * If you specify <code>auto</code>, Elastic Transcoder chooses a profile
-     * based on the bit rate of the output file.
+     * If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the output file.
      * </p>
      * 
      * @param codecOptions
-     *        If you specified <code>AAC</code> for <code>Audio:Codec</code>,
-     *        this is the <code>AAC</code> compression profile to use. Valid
-     *        values include:</p>
+     *        If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code> compression
+     *        profile to use. Valid values include:</p>
      *        <p>
-     *        <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>,
-     *        <code>HE-AACv2</code>
+     *        <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code>
      *        </p>
      *        <p>
-     *        If you specify <code>auto</code>, Elastic Transcoder chooses a
-     *        profile based on the bit rate of the output file.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the output
+     *        file.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AudioParameters withCodecOptions(AudioCodecOptions codecOptions) {
@@ -1383,8 +1110,7 @@ public class AudioParameters implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1422,35 +1148,27 @@ public class AudioParameters implements Serializable, Cloneable {
         AudioParameters other = (AudioParameters) obj;
         if (other.getCodec() == null ^ this.getCodec() == null)
             return false;
-        if (other.getCodec() != null
-                && other.getCodec().equals(this.getCodec()) == false)
+        if (other.getCodec() != null && other.getCodec().equals(this.getCodec()) == false)
             return false;
         if (other.getSampleRate() == null ^ this.getSampleRate() == null)
             return false;
-        if (other.getSampleRate() != null
-                && other.getSampleRate().equals(this.getSampleRate()) == false)
+        if (other.getSampleRate() != null && other.getSampleRate().equals(this.getSampleRate()) == false)
             return false;
         if (other.getBitRate() == null ^ this.getBitRate() == null)
             return false;
-        if (other.getBitRate() != null
-                && other.getBitRate().equals(this.getBitRate()) == false)
+        if (other.getBitRate() != null && other.getBitRate().equals(this.getBitRate()) == false)
             return false;
         if (other.getChannels() == null ^ this.getChannels() == null)
             return false;
-        if (other.getChannels() != null
-                && other.getChannels().equals(this.getChannels()) == false)
+        if (other.getChannels() != null && other.getChannels().equals(this.getChannels()) == false)
             return false;
-        if (other.getAudioPackingMode() == null
-                ^ this.getAudioPackingMode() == null)
+        if (other.getAudioPackingMode() == null ^ this.getAudioPackingMode() == null)
             return false;
-        if (other.getAudioPackingMode() != null
-                && other.getAudioPackingMode().equals(
-                        this.getAudioPackingMode()) == false)
+        if (other.getAudioPackingMode() != null && other.getAudioPackingMode().equals(this.getAudioPackingMode()) == false)
             return false;
         if (other.getCodecOptions() == null ^ this.getCodecOptions() == null)
             return false;
-        if (other.getCodecOptions() != null
-                && other.getCodecOptions().equals(this.getCodecOptions()) == false)
+        if (other.getCodecOptions() != null && other.getCodecOptions().equals(this.getCodecOptions()) == false)
             return false;
         return true;
     }
@@ -1460,22 +1178,12 @@ public class AudioParameters implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCodec() == null) ? 0 : getCodec().hashCode());
-        hashCode = prime * hashCode
-                + ((getSampleRate() == null) ? 0 : getSampleRate().hashCode());
-        hashCode = prime * hashCode
-                + ((getBitRate() == null) ? 0 : getBitRate().hashCode());
-        hashCode = prime * hashCode
-                + ((getChannels() == null) ? 0 : getChannels().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAudioPackingMode() == null) ? 0 : getAudioPackingMode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCodecOptions() == null) ? 0 : getCodecOptions()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getCodec() == null) ? 0 : getCodec().hashCode());
+        hashCode = prime * hashCode + ((getSampleRate() == null) ? 0 : getSampleRate().hashCode());
+        hashCode = prime * hashCode + ((getBitRate() == null) ? 0 : getBitRate().hashCode());
+        hashCode = prime * hashCode + ((getChannels() == null) ? 0 : getChannels().hashCode());
+        hashCode = prime * hashCode + ((getAudioPackingMode() == null) ? 0 : getAudioPackingMode().hashCode());
+        hashCode = prime * hashCode + ((getCodecOptions() == null) ? 0 : getCodecOptions().hashCode());
         return hashCode;
     }
 
@@ -1484,9 +1192,7 @@ public class AudioParameters implements Serializable, Cloneable {
         try {
             return (AudioParameters) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

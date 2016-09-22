@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
@@ -29,12 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ScheduleActivityTaskDecisionAttributes JSON Unmarshaller
  */
-public class ScheduleActivityTaskDecisionAttributesJsonUnmarshaller
-        implements
-        Unmarshaller<ScheduleActivityTaskDecisionAttributes, JsonUnmarshallerContext> {
+public class ScheduleActivityTaskDecisionAttributesJsonUnmarshaller implements Unmarshaller<ScheduleActivityTaskDecisionAttributes, JsonUnmarshallerContext> {
 
-    public ScheduleActivityTaskDecisionAttributes unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public ScheduleActivityTaskDecisionAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         ScheduleActivityTaskDecisionAttributes scheduleActivityTaskDecisionAttributes = new ScheduleActivityTaskDecisionAttributes();
 
         int originalDepth = context.getCurrentDepth();
@@ -54,69 +49,46 @@ public class ScheduleActivityTaskDecisionAttributesJsonUnmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activityType", targetDepth)) {
                     context.nextToken();
-                    scheduleActivityTaskDecisionAttributes
-                            .setActivityType(ActivityTypeJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduleActivityTaskDecisionAttributes.setActivityType(ActivityTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activityId", targetDepth)) {
                     context.nextToken();
-                    scheduleActivityTaskDecisionAttributes
-                            .setActivityId(context
-                                    .getUnmarshaller(String.class).unmarshall(
-                                            context));
+                    scheduleActivityTaskDecisionAttributes.setActivityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("control", targetDepth)) {
                     context.nextToken();
-                    scheduleActivityTaskDecisionAttributes.setControl(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    scheduleActivityTaskDecisionAttributes.setControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("input", targetDepth)) {
                     context.nextToken();
-                    scheduleActivityTaskDecisionAttributes.setInput(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    scheduleActivityTaskDecisionAttributes.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("scheduleToCloseTimeout",
-                        targetDepth)) {
+                if (context.testExpression("scheduleToCloseTimeout", targetDepth)) {
                     context.nextToken();
-                    scheduleActivityTaskDecisionAttributes
-                            .setScheduleToCloseTimeout(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    scheduleActivityTaskDecisionAttributes.setScheduleToCloseTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskList", targetDepth)) {
                     context.nextToken();
-                    scheduleActivityTaskDecisionAttributes
-                            .setTaskList(TaskListJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    scheduleActivityTaskDecisionAttributes.setTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("taskPriority", targetDepth)) {
                     context.nextToken();
-                    scheduleActivityTaskDecisionAttributes
-                            .setTaskPriority(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    scheduleActivityTaskDecisionAttributes.setTaskPriority(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("scheduleToStartTimeout",
-                        targetDepth)) {
+                if (context.testExpression("scheduleToStartTimeout", targetDepth)) {
                     context.nextToken();
-                    scheduleActivityTaskDecisionAttributes
-                            .setScheduleToStartTimeout(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    scheduleActivityTaskDecisionAttributes.setScheduleToStartTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startToCloseTimeout", targetDepth)) {
                     context.nextToken();
-                    scheduleActivityTaskDecisionAttributes
-                            .setStartToCloseTimeout(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    scheduleActivityTaskDecisionAttributes.setStartToCloseTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("heartbeatTimeout", targetDepth)) {
                     context.nextToken();
-                    scheduleActivityTaskDecisionAttributes
-                            .setHeartbeatTimeout(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    scheduleActivityTaskDecisionAttributes.setHeartbeatTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -19,9 +17,8 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeSecurityConfigurationResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeSecurityConfigurationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -74,8 +71,7 @@ public class DescribeSecurityConfigurationResult extends
      * 
      * @param name
      *        The name of the security configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSecurityConfigurationResult withName(String name) {
@@ -115,12 +111,10 @@ public class DescribeSecurityConfigurationResult extends
      * 
      * @param securityConfiguration
      *        The security configuration details in JSON format.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSecurityConfigurationResult withSecurityConfiguration(
-            String securityConfiguration) {
+    public DescribeSecurityConfigurationResult withSecurityConfiguration(String securityConfiguration) {
         setSecurityConfiguration(securityConfiguration);
         return this;
     }
@@ -157,19 +151,16 @@ public class DescribeSecurityConfigurationResult extends
      * 
      * @param creationDateTime
      *        The date and time the security configuration was created
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSecurityConfigurationResult withCreationDateTime(
-            java.util.Date creationDateTime) {
+    public DescribeSecurityConfigurationResult withCreationDateTime(java.util.Date creationDateTime) {
         setCreationDateTime(creationDateTime);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -182,8 +173,7 @@ public class DescribeSecurityConfigurationResult extends
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
         if (getSecurityConfiguration() != null)
-            sb.append("SecurityConfiguration: " + getSecurityConfiguration()
-                    + ",");
+            sb.append("SecurityConfiguration: " + getSecurityConfiguration() + ",");
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: " + getCreationDateTime());
         sb.append("}");
@@ -202,22 +192,15 @@ public class DescribeSecurityConfigurationResult extends
         DescribeSecurityConfigurationResult other = (DescribeSecurityConfigurationResult) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getSecurityConfiguration() == null
-                ^ this.getSecurityConfiguration() == null)
+        if (other.getSecurityConfiguration() == null ^ this.getSecurityConfiguration() == null)
             return false;
-        if (other.getSecurityConfiguration() != null
-                && other.getSecurityConfiguration().equals(
-                        this.getSecurityConfiguration()) == false)
+        if (other.getSecurityConfiguration() != null && other.getSecurityConfiguration().equals(this.getSecurityConfiguration()) == false)
             return false;
-        if (other.getCreationDateTime() == null
-                ^ this.getCreationDateTime() == null)
+        if (other.getCreationDateTime() == null ^ this.getCreationDateTime() == null)
             return false;
-        if (other.getCreationDateTime() != null
-                && other.getCreationDateTime().equals(
-                        this.getCreationDateTime()) == false)
+        if (other.getCreationDateTime() != null && other.getCreationDateTime().equals(this.getCreationDateTime()) == false)
             return false;
         return true;
     }
@@ -227,16 +210,9 @@ public class DescribeSecurityConfigurationResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityConfiguration() == null) ? 0
-                        : getSecurityConfiguration().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDateTime() == null) ? 0 : getCreationDateTime()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         return hashCode;
     }
 
@@ -245,9 +221,7 @@ public class DescribeSecurityConfigurationResult extends
         try {
             return (DescribeSecurityConfigurationResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

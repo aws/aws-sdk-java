@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -21,21 +19,17 @@ import java.io.Serializable;
  * Contains the parameters for DescribeAccountLimits.
  * </p>
  */
-public class DescribeAccountLimitsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeAccountLimitsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of groups allowed for your AWS account. The default
-     * limit is 20 per region.
+     * The maximum number of groups allowed for your AWS account. The default limit is 20 per region.
      * </p>
      */
     private Integer maxNumberOfAutoScalingGroups;
     /**
      * <p>
-     * The maximum number of launch configurations allowed for your AWS account.
-     * The default limit is 100 per region.
+     * The maximum number of launch configurations allowed for your AWS account. The default limit is 100 per region.
      * </p>
      */
     private Integer maxNumberOfLaunchConfigurations;
@@ -54,28 +48,23 @@ public class DescribeAccountLimitsResult extends
 
     /**
      * <p>
-     * The maximum number of groups allowed for your AWS account. The default
-     * limit is 20 per region.
+     * The maximum number of groups allowed for your AWS account. The default limit is 20 per region.
      * </p>
      * 
      * @param maxNumberOfAutoScalingGroups
-     *        The maximum number of groups allowed for your AWS account. The
-     *        default limit is 20 per region.
+     *        The maximum number of groups allowed for your AWS account. The default limit is 20 per region.
      */
 
-    public void setMaxNumberOfAutoScalingGroups(
-            Integer maxNumberOfAutoScalingGroups) {
+    public void setMaxNumberOfAutoScalingGroups(Integer maxNumberOfAutoScalingGroups) {
         this.maxNumberOfAutoScalingGroups = maxNumberOfAutoScalingGroups;
     }
 
     /**
      * <p>
-     * The maximum number of groups allowed for your AWS account. The default
-     * limit is 20 per region.
+     * The maximum number of groups allowed for your AWS account. The default limit is 20 per region.
      * </p>
      * 
-     * @return The maximum number of groups allowed for your AWS account. The
-     *         default limit is 20 per region.
+     * @return The maximum number of groups allowed for your AWS account. The default limit is 20 per region.
      */
 
     public Integer getMaxNumberOfAutoScalingGroups() {
@@ -84,47 +73,40 @@ public class DescribeAccountLimitsResult extends
 
     /**
      * <p>
-     * The maximum number of groups allowed for your AWS account. The default
-     * limit is 20 per region.
+     * The maximum number of groups allowed for your AWS account. The default limit is 20 per region.
      * </p>
      * 
      * @param maxNumberOfAutoScalingGroups
-     *        The maximum number of groups allowed for your AWS account. The
-     *        default limit is 20 per region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of groups allowed for your AWS account. The default limit is 20 per region.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAccountLimitsResult withMaxNumberOfAutoScalingGroups(
-            Integer maxNumberOfAutoScalingGroups) {
+    public DescribeAccountLimitsResult withMaxNumberOfAutoScalingGroups(Integer maxNumberOfAutoScalingGroups) {
         setMaxNumberOfAutoScalingGroups(maxNumberOfAutoScalingGroups);
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of launch configurations allowed for your AWS account.
-     * The default limit is 100 per region.
+     * The maximum number of launch configurations allowed for your AWS account. The default limit is 100 per region.
      * </p>
      * 
      * @param maxNumberOfLaunchConfigurations
-     *        The maximum number of launch configurations allowed for your AWS
-     *        account. The default limit is 100 per region.
+     *        The maximum number of launch configurations allowed for your AWS account. The default limit is 100 per
+     *        region.
      */
 
-    public void setMaxNumberOfLaunchConfigurations(
-            Integer maxNumberOfLaunchConfigurations) {
+    public void setMaxNumberOfLaunchConfigurations(Integer maxNumberOfLaunchConfigurations) {
         this.maxNumberOfLaunchConfigurations = maxNumberOfLaunchConfigurations;
     }
 
     /**
      * <p>
-     * The maximum number of launch configurations allowed for your AWS account.
-     * The default limit is 100 per region.
+     * The maximum number of launch configurations allowed for your AWS account. The default limit is 100 per region.
      * </p>
      * 
-     * @return The maximum number of launch configurations allowed for your AWS
-     *         account. The default limit is 100 per region.
+     * @return The maximum number of launch configurations allowed for your AWS account. The default limit is 100 per
+     *         region.
      */
 
     public Integer getMaxNumberOfLaunchConfigurations() {
@@ -133,19 +115,16 @@ public class DescribeAccountLimitsResult extends
 
     /**
      * <p>
-     * The maximum number of launch configurations allowed for your AWS account.
-     * The default limit is 100 per region.
+     * The maximum number of launch configurations allowed for your AWS account. The default limit is 100 per region.
      * </p>
      * 
      * @param maxNumberOfLaunchConfigurations
-     *        The maximum number of launch configurations allowed for your AWS
-     *        account. The default limit is 100 per region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of launch configurations allowed for your AWS account. The default limit is 100 per
+     *        region.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAccountLimitsResult withMaxNumberOfLaunchConfigurations(
-            Integer maxNumberOfLaunchConfigurations) {
+    public DescribeAccountLimitsResult withMaxNumberOfLaunchConfigurations(Integer maxNumberOfLaunchConfigurations) {
         setMaxNumberOfLaunchConfigurations(maxNumberOfLaunchConfigurations);
         return this;
     }
@@ -182,12 +161,10 @@ public class DescribeAccountLimitsResult extends
      * 
      * @param numberOfAutoScalingGroups
      *        The current number of groups for your AWS account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAccountLimitsResult withNumberOfAutoScalingGroups(
-            Integer numberOfAutoScalingGroups) {
+    public DescribeAccountLimitsResult withNumberOfAutoScalingGroups(Integer numberOfAutoScalingGroups) {
         setNumberOfAutoScalingGroups(numberOfAutoScalingGroups);
         return this;
     }
@@ -201,8 +178,7 @@ public class DescribeAccountLimitsResult extends
      *        The current number of launch configurations for your AWS account.
      */
 
-    public void setNumberOfLaunchConfigurations(
-            Integer numberOfLaunchConfigurations) {
+    public void setNumberOfLaunchConfigurations(Integer numberOfLaunchConfigurations) {
         this.numberOfLaunchConfigurations = numberOfLaunchConfigurations;
     }
 
@@ -225,19 +201,16 @@ public class DescribeAccountLimitsResult extends
      * 
      * @param numberOfLaunchConfigurations
      *        The current number of launch configurations for your AWS account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAccountLimitsResult withNumberOfLaunchConfigurations(
-            Integer numberOfLaunchConfigurations) {
+    public DescribeAccountLimitsResult withNumberOfLaunchConfigurations(Integer numberOfLaunchConfigurations) {
         setNumberOfLaunchConfigurations(numberOfLaunchConfigurations);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -248,17 +221,13 @@ public class DescribeAccountLimitsResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMaxNumberOfAutoScalingGroups() != null)
-            sb.append("MaxNumberOfAutoScalingGroups: "
-                    + getMaxNumberOfAutoScalingGroups() + ",");
+            sb.append("MaxNumberOfAutoScalingGroups: " + getMaxNumberOfAutoScalingGroups() + ",");
         if (getMaxNumberOfLaunchConfigurations() != null)
-            sb.append("MaxNumberOfLaunchConfigurations: "
-                    + getMaxNumberOfLaunchConfigurations() + ",");
+            sb.append("MaxNumberOfLaunchConfigurations: " + getMaxNumberOfLaunchConfigurations() + ",");
         if (getNumberOfAutoScalingGroups() != null)
-            sb.append("NumberOfAutoScalingGroups: "
-                    + getNumberOfAutoScalingGroups() + ",");
+            sb.append("NumberOfAutoScalingGroups: " + getNumberOfAutoScalingGroups() + ",");
         if (getNumberOfLaunchConfigurations() != null)
-            sb.append("NumberOfLaunchConfigurations: "
-                    + getNumberOfLaunchConfigurations());
+            sb.append("NumberOfLaunchConfigurations: " + getNumberOfLaunchConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -273,33 +242,22 @@ public class DescribeAccountLimitsResult extends
         if (obj instanceof DescribeAccountLimitsResult == false)
             return false;
         DescribeAccountLimitsResult other = (DescribeAccountLimitsResult) obj;
-        if (other.getMaxNumberOfAutoScalingGroups() == null
-                ^ this.getMaxNumberOfAutoScalingGroups() == null)
+        if (other.getMaxNumberOfAutoScalingGroups() == null ^ this.getMaxNumberOfAutoScalingGroups() == null)
             return false;
-        if (other.getMaxNumberOfAutoScalingGroups() != null
-                && other.getMaxNumberOfAutoScalingGroups().equals(
-                        this.getMaxNumberOfAutoScalingGroups()) == false)
+        if (other.getMaxNumberOfAutoScalingGroups() != null && other.getMaxNumberOfAutoScalingGroups().equals(this.getMaxNumberOfAutoScalingGroups()) == false)
             return false;
-        if (other.getMaxNumberOfLaunchConfigurations() == null
-                ^ this.getMaxNumberOfLaunchConfigurations() == null)
+        if (other.getMaxNumberOfLaunchConfigurations() == null ^ this.getMaxNumberOfLaunchConfigurations() == null)
             return false;
         if (other.getMaxNumberOfLaunchConfigurations() != null
-                && other.getMaxNumberOfLaunchConfigurations().equals(
-                        this.getMaxNumberOfLaunchConfigurations()) == false)
+                && other.getMaxNumberOfLaunchConfigurations().equals(this.getMaxNumberOfLaunchConfigurations()) == false)
             return false;
-        if (other.getNumberOfAutoScalingGroups() == null
-                ^ this.getNumberOfAutoScalingGroups() == null)
+        if (other.getNumberOfAutoScalingGroups() == null ^ this.getNumberOfAutoScalingGroups() == null)
             return false;
-        if (other.getNumberOfAutoScalingGroups() != null
-                && other.getNumberOfAutoScalingGroups().equals(
-                        this.getNumberOfAutoScalingGroups()) == false)
+        if (other.getNumberOfAutoScalingGroups() != null && other.getNumberOfAutoScalingGroups().equals(this.getNumberOfAutoScalingGroups()) == false)
             return false;
-        if (other.getNumberOfLaunchConfigurations() == null
-                ^ this.getNumberOfLaunchConfigurations() == null)
+        if (other.getNumberOfLaunchConfigurations() == null ^ this.getNumberOfLaunchConfigurations() == null)
             return false;
-        if (other.getNumberOfLaunchConfigurations() != null
-                && other.getNumberOfLaunchConfigurations().equals(
-                        this.getNumberOfLaunchConfigurations()) == false)
+        if (other.getNumberOfLaunchConfigurations() != null && other.getNumberOfLaunchConfigurations().equals(this.getNumberOfLaunchConfigurations()) == false)
             return false;
         return true;
     }
@@ -309,22 +267,10 @@ public class DescribeAccountLimitsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getMaxNumberOfAutoScalingGroups() == null) ? 0
-                        : getMaxNumberOfAutoScalingGroups().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMaxNumberOfLaunchConfigurations() == null) ? 0
-                        : getMaxNumberOfLaunchConfigurations().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNumberOfAutoScalingGroups() == null) ? 0
-                        : getNumberOfAutoScalingGroups().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNumberOfLaunchConfigurations() == null) ? 0
-                        : getNumberOfLaunchConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getMaxNumberOfAutoScalingGroups() == null) ? 0 : getMaxNumberOfAutoScalingGroups().hashCode());
+        hashCode = prime * hashCode + ((getMaxNumberOfLaunchConfigurations() == null) ? 0 : getMaxNumberOfLaunchConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfAutoScalingGroups() == null) ? 0 : getNumberOfAutoScalingGroups().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfLaunchConfigurations() == null) ? 0 : getNumberOfLaunchConfigurations().hashCode());
         return hashCode;
     }
 
@@ -333,9 +279,7 @@ public class DescribeAccountLimitsResult extends
         try {
             return (DescribeAccountLimitsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The output of the DescribeCertificate operation.
  * </p>
  */
-public class DescribeCertificateResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeCertificateResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -41,8 +37,7 @@ public class DescribeCertificateResult extends
      *        The description of the certificate.
      */
 
-    public void setCertificateDescription(
-            CertificateDescription certificateDescription) {
+    public void setCertificateDescription(CertificateDescription certificateDescription) {
         this.certificateDescription = certificateDescription;
     }
 
@@ -65,19 +60,16 @@ public class DescribeCertificateResult extends
      * 
      * @param certificateDescription
      *        The description of the certificate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCertificateResult withCertificateDescription(
-            CertificateDescription certificateDescription) {
+    public DescribeCertificateResult withCertificateDescription(CertificateDescription certificateDescription) {
         setCertificateDescription(certificateDescription);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -103,12 +95,9 @@ public class DescribeCertificateResult extends
         if (obj instanceof DescribeCertificateResult == false)
             return false;
         DescribeCertificateResult other = (DescribeCertificateResult) obj;
-        if (other.getCertificateDescription() == null
-                ^ this.getCertificateDescription() == null)
+        if (other.getCertificateDescription() == null ^ this.getCertificateDescription() == null)
             return false;
-        if (other.getCertificateDescription() != null
-                && other.getCertificateDescription().equals(
-                        this.getCertificateDescription()) == false)
+        if (other.getCertificateDescription() != null && other.getCertificateDescription().equals(this.getCertificateDescription()) == false)
             return false;
         return true;
     }
@@ -118,10 +107,7 @@ public class DescribeCertificateResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCertificateDescription() == null) ? 0
-                        : getCertificateDescription().hashCode());
+        hashCode = prime * hashCode + ((getCertificateDescription() == null) ? 0 : getCertificateDescription().hashCode());
         return hashCode;
     }
 
@@ -130,9 +116,7 @@ public class DescribeCertificateResult extends
         try {
             return (DescribeCertificateResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

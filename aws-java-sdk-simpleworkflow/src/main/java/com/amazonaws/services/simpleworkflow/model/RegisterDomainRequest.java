@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
 
@@ -20,19 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class RegisterDomainRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of the domain to register. The name must be unique in the region
-     * that the domain is registered in.
+     * Name of the domain to register. The name must be unique in the region that the domain is registered in.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not
-     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
+     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      * \u009f). Also, it must not contain the literal string quotarnquot.
      * </p>
      */
@@ -45,47 +39,38 @@ public class RegisterDomainRequest extends
     private String description;
     /**
      * <p>
-     * The duration (in days) that records and histories of workflow executions
-     * on the domain should be kept by the service. After the retention period,
-     * the workflow execution is not available in the results of visibility
-     * calls.
+     * The duration (in days) that records and histories of workflow executions on the domain should be kept by the
+     * service. After the retention period, the workflow execution is not available in the results of visibility calls.
      * </p>
      * <p>
-     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then
-     * the workflow execution history will not be retained. As soon as the
-     * workflow execution completes, the execution record and its history are
-     * deleted.
+     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history will not be
+     * retained. As soon as the workflow execution completes, the execution record and its history are deleted.
      * </p>
      * <p>
-     * The maximum workflow execution retention period is 90 days. For more
-     * information about Amazon SWF service limits, see: <a href=
-     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html"
-     * >Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.
+     * The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits,
+     * see: <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     * Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      */
     private String workflowExecutionRetentionPeriodInDays;
 
     /**
      * <p>
-     * Name of the domain to register. The name must be unique in the region
-     * that the domain is registered in.
+     * Name of the domain to register. The name must be unique in the region that the domain is registered in.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not
-     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
+     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      * \u009f). Also, it must not contain the literal string quotarnquot.
      * </p>
      * 
      * @param name
-     *        Name of the domain to register. The name must be unique in the
-     *        region that the domain is registered in.</p>
+     *        Name of the domain to register. The name must be unique in the region that the domain is registered
+     *        in.</p>
      *        <p>
-     *        The specified string must not start or end with whitespace. It
-     *        must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     *        <code>|</code> (vertical bar), or any control characters
-     *        (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     *        literal string quotarnquot.
+     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
+     *        \u009f). Also, it must not contain the literal string quotarnquot.
      */
 
     public void setName(String name) {
@@ -94,24 +79,20 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Name of the domain to register. The name must be unique in the region
-     * that the domain is registered in.
+     * Name of the domain to register. The name must be unique in the region that the domain is registered in.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not
-     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
+     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      * \u009f). Also, it must not contain the literal string quotarnquot.
      * </p>
      * 
-     * @return Name of the domain to register. The name must be unique in the
-     *         region that the domain is registered in.</p>
+     * @return Name of the domain to register. The name must be unique in the region that the domain is registered
+     *         in.</p>
      *         <p>
-     *         The specified string must not start or end with whitespace. It
-     *         must not contain a <code>:</code> (colon), <code>/</code>
-     *         (slash), <code>|</code> (vertical bar), or any control characters
-     *         (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     *         literal string quotarnquot.
+     *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
+     *         - \u009f). Also, it must not contain the literal string quotarnquot.
      */
 
     public String getName() {
@@ -120,27 +101,22 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Name of the domain to register. The name must be unique in the region
-     * that the domain is registered in.
+     * Name of the domain to register. The name must be unique in the region that the domain is registered in.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not
-     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
+     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      * \u009f). Also, it must not contain the literal string quotarnquot.
      * </p>
      * 
      * @param name
-     *        Name of the domain to register. The name must be unique in the
-     *        region that the domain is registered in.</p>
+     *        Name of the domain to register. The name must be unique in the region that the domain is registered
+     *        in.</p>
      *        <p>
-     *        The specified string must not start or end with whitespace. It
-     *        must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     *        <code>|</code> (vertical bar), or any control characters
-     *        (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     *        literal string quotarnquot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
+     *        \u009f). Also, it must not contain the literal string quotarnquot.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterDomainRequest withName(String name) {
@@ -180,8 +156,7 @@ public class RegisterDomainRequest extends
      * 
      * @param description
      *        A text description of the domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterDomainRequest withDescription(String description) {
@@ -191,84 +166,67 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * The duration (in days) that records and histories of workflow executions
-     * on the domain should be kept by the service. After the retention period,
-     * the workflow execution is not available in the results of visibility
-     * calls.
+     * The duration (in days) that records and histories of workflow executions on the domain should be kept by the
+     * service. After the retention period, the workflow execution is not available in the results of visibility calls.
      * </p>
      * <p>
-     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then
-     * the workflow execution history will not be retained. As soon as the
-     * workflow execution completes, the execution record and its history are
-     * deleted.
+     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history will not be
+     * retained. As soon as the workflow execution completes, the execution record and its history are deleted.
      * </p>
      * <p>
-     * The maximum workflow execution retention period is 90 days. For more
-     * information about Amazon SWF service limits, see: <a href=
-     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html"
-     * >Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.
+     * The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits,
+     * see: <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     * Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
      * @param workflowExecutionRetentionPeriodInDays
-     *        The duration (in days) that records and histories of workflow
-     *        executions on the domain should be kept by the service. After the
-     *        retention period, the workflow execution is not available in the
-     *        results of visibility calls.</p>
+     *        The duration (in days) that records and histories of workflow executions on the domain should be kept by
+     *        the service. After the retention period, the workflow execution is not available in the results of
+     *        visibility calls.</p>
      *        <p>
-     *        If you pass the value <code>NONE</code> or <code>0</code> (zero),
-     *        then the workflow execution history will not be retained. As soon
-     *        as the workflow execution completes, the execution record and its
-     *        history are deleted.
+     *        If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history will
+     *        not be retained. As soon as the workflow execution completes, the execution record and its history are
+     *        deleted.
      *        </p>
      *        <p>
-     *        The maximum workflow execution retention period is 90 days. For
-     *        more information about Amazon SWF service limits, see: <a href=
-     *        "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html"
-     *        >Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer
-     *        Guide</i>.
+     *        The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service
+     *        limits, see: <a
+     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     *        Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
-    public void setWorkflowExecutionRetentionPeriodInDays(
-            String workflowExecutionRetentionPeriodInDays) {
+    public void setWorkflowExecutionRetentionPeriodInDays(String workflowExecutionRetentionPeriodInDays) {
         this.workflowExecutionRetentionPeriodInDays = workflowExecutionRetentionPeriodInDays;
     }
 
     /**
      * <p>
-     * The duration (in days) that records and histories of workflow executions
-     * on the domain should be kept by the service. After the retention period,
-     * the workflow execution is not available in the results of visibility
-     * calls.
+     * The duration (in days) that records and histories of workflow executions on the domain should be kept by the
+     * service. After the retention period, the workflow execution is not available in the results of visibility calls.
      * </p>
      * <p>
-     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then
-     * the workflow execution history will not be retained. As soon as the
-     * workflow execution completes, the execution record and its history are
-     * deleted.
+     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history will not be
+     * retained. As soon as the workflow execution completes, the execution record and its history are deleted.
      * </p>
      * <p>
-     * The maximum workflow execution retention period is 90 days. For more
-     * information about Amazon SWF service limits, see: <a href=
-     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html"
-     * >Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.
+     * The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits,
+     * see: <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     * Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
-     * @return The duration (in days) that records and histories of workflow
-     *         executions on the domain should be kept by the service. After the
-     *         retention period, the workflow execution is not available in the
-     *         results of visibility calls.</p>
+     * @return The duration (in days) that records and histories of workflow executions on the domain should be kept by
+     *         the service. After the retention period, the workflow execution is not available in the results of
+     *         visibility calls.</p>
      *         <p>
-     *         If you pass the value <code>NONE</code> or <code>0</code> (zero),
-     *         then the workflow execution history will not be retained. As soon
-     *         as the workflow execution completes, the execution record and its
-     *         history are deleted.
+     *         If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history
+     *         will not be retained. As soon as the workflow execution completes, the execution record and its history
+     *         are deleted.
      *         </p>
      *         <p>
-     *         The maximum workflow execution retention period is 90 days. For
-     *         more information about Amazon SWF service limits, see: <a href=
-     *         "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html"
-     *         >Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer
-     *         Guide</i>.
+     *         The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service
+     *         limits, see: <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     *         Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
     public String getWorkflowExecutionRetentionPeriodInDays() {
@@ -277,54 +235,43 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * The duration (in days) that records and histories of workflow executions
-     * on the domain should be kept by the service. After the retention period,
-     * the workflow execution is not available in the results of visibility
-     * calls.
+     * The duration (in days) that records and histories of workflow executions on the domain should be kept by the
+     * service. After the retention period, the workflow execution is not available in the results of visibility calls.
      * </p>
      * <p>
-     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then
-     * the workflow execution history will not be retained. As soon as the
-     * workflow execution completes, the execution record and its history are
-     * deleted.
+     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history will not be
+     * retained. As soon as the workflow execution completes, the execution record and its history are deleted.
      * </p>
      * <p>
-     * The maximum workflow execution retention period is 90 days. For more
-     * information about Amazon SWF service limits, see: <a href=
-     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html"
-     * >Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.
+     * The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits,
+     * see: <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     * Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
      * @param workflowExecutionRetentionPeriodInDays
-     *        The duration (in days) that records and histories of workflow
-     *        executions on the domain should be kept by the service. After the
-     *        retention period, the workflow execution is not available in the
-     *        results of visibility calls.</p>
+     *        The duration (in days) that records and histories of workflow executions on the domain should be kept by
+     *        the service. After the retention period, the workflow execution is not available in the results of
+     *        visibility calls.</p>
      *        <p>
-     *        If you pass the value <code>NONE</code> or <code>0</code> (zero),
-     *        then the workflow execution history will not be retained. As soon
-     *        as the workflow execution completes, the execution record and its
-     *        history are deleted.
+     *        If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history will
+     *        not be retained. As soon as the workflow execution completes, the execution record and its history are
+     *        deleted.
      *        </p>
      *        <p>
-     *        The maximum workflow execution retention period is 90 days. For
-     *        more information about Amazon SWF service limits, see: <a href=
-     *        "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html"
-     *        >Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer
-     *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service
+     *        limits, see: <a
+     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     *        Limits</a> in the <i>Amazon SWF Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RegisterDomainRequest withWorkflowExecutionRetentionPeriodInDays(
-            String workflowExecutionRetentionPeriodInDays) {
+    public RegisterDomainRequest withWorkflowExecutionRetentionPeriodInDays(String workflowExecutionRetentionPeriodInDays) {
         setWorkflowExecutionRetentionPeriodInDays(workflowExecutionRetentionPeriodInDays);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -339,8 +286,7 @@ public class RegisterDomainRequest extends
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
         if (getWorkflowExecutionRetentionPeriodInDays() != null)
-            sb.append("WorkflowExecutionRetentionPeriodInDays: "
-                    + getWorkflowExecutionRetentionPeriodInDays());
+            sb.append("WorkflowExecutionRetentionPeriodInDays: " + getWorkflowExecutionRetentionPeriodInDays());
         sb.append("}");
         return sb.toString();
     }
@@ -357,20 +303,16 @@ public class RegisterDomainRequest extends
         RegisterDomainRequest other = (RegisterDomainRequest) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getWorkflowExecutionRetentionPeriodInDays() == null
-                ^ this.getWorkflowExecutionRetentionPeriodInDays() == null)
+        if (other.getWorkflowExecutionRetentionPeriodInDays() == null ^ this.getWorkflowExecutionRetentionPeriodInDays() == null)
             return false;
         if (other.getWorkflowExecutionRetentionPeriodInDays() != null
-                && other.getWorkflowExecutionRetentionPeriodInDays().equals(
-                        this.getWorkflowExecutionRetentionPeriodInDays()) == false)
+                && other.getWorkflowExecutionRetentionPeriodInDays().equals(this.getWorkflowExecutionRetentionPeriodInDays()) == false)
             return false;
         return true;
     }
@@ -380,16 +322,9 @@ public class RegisterDomainRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getWorkflowExecutionRetentionPeriodInDays() == null) ? 0
-                        : getWorkflowExecutionRetentionPeriodInDays()
-                                .hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getWorkflowExecutionRetentionPeriodInDays() == null) ? 0 : getWorkflowExecutionRetentionPeriodInDays().hashCode());
         return hashCode;
     }
 

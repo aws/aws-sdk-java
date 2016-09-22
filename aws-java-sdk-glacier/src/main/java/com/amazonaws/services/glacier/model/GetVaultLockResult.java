@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
 
@@ -21,48 +19,41 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class GetVaultLockResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetVaultLockResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The vault lock policy as a JSON string, which uses "\" as an escape
-     * character.
+     * The vault lock policy as a JSON string, which uses "\" as an escape character.
      * </p>
      */
     private String policy;
     /**
      * <p>
-     * The state of the vault lock. <code>InProgress</code> or
-     * <code>Locked</code>.
+     * The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The UTC date and time at which the lock ID expires. This value can be
-     * <code>null</code> if the vault lock is in a <code>Locked</code> state.
+     * The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a
+     * <code>Locked</code> state.
      * </p>
      */
     private String expirationDate;
     /**
      * <p>
-     * The UTC date and time at which the vault lock was put into the
-     * <code>InProgress</code> state.
+     * The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.
      * </p>
      */
     private String creationDate;
 
     /**
      * <p>
-     * The vault lock policy as a JSON string, which uses "\" as an escape
-     * character.
+     * The vault lock policy as a JSON string, which uses "\" as an escape character.
      * </p>
      * 
      * @param policy
-     *        The vault lock policy as a JSON string, which uses "\" as an
-     *        escape character.
+     *        The vault lock policy as a JSON string, which uses "\" as an escape character.
      */
 
     public void setPolicy(String policy) {
@@ -71,12 +62,10 @@ public class GetVaultLockResult extends
 
     /**
      * <p>
-     * The vault lock policy as a JSON string, which uses "\" as an escape
-     * character.
+     * The vault lock policy as a JSON string, which uses "\" as an escape character.
      * </p>
      * 
-     * @return The vault lock policy as a JSON string, which uses "\" as an
-     *         escape character.
+     * @return The vault lock policy as a JSON string, which uses "\" as an escape character.
      */
 
     public String getPolicy() {
@@ -85,15 +74,12 @@ public class GetVaultLockResult extends
 
     /**
      * <p>
-     * The vault lock policy as a JSON string, which uses "\" as an escape
-     * character.
+     * The vault lock policy as a JSON string, which uses "\" as an escape character.
      * </p>
      * 
      * @param policy
-     *        The vault lock policy as a JSON string, which uses "\" as an
-     *        escape character.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The vault lock policy as a JSON string, which uses "\" as an escape character.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetVaultLockResult withPolicy(String policy) {
@@ -103,13 +89,11 @@ public class GetVaultLockResult extends
 
     /**
      * <p>
-     * The state of the vault lock. <code>InProgress</code> or
-     * <code>Locked</code>.
+     * The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.
      * </p>
      * 
      * @param state
-     *        The state of the vault lock. <code>InProgress</code> or
-     *        <code>Locked</code>.
+     *        The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.
      */
 
     public void setState(String state) {
@@ -118,12 +102,10 @@ public class GetVaultLockResult extends
 
     /**
      * <p>
-     * The state of the vault lock. <code>InProgress</code> or
-     * <code>Locked</code>.
+     * The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.
      * </p>
      * 
-     * @return The state of the vault lock. <code>InProgress</code> or
-     *         <code>Locked</code>.
+     * @return The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.
      */
 
     public String getState() {
@@ -132,15 +114,12 @@ public class GetVaultLockResult extends
 
     /**
      * <p>
-     * The state of the vault lock. <code>InProgress</code> or
-     * <code>Locked</code>.
+     * The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.
      * </p>
      * 
      * @param state
-     *        The state of the vault lock. <code>InProgress</code> or
-     *        <code>Locked</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetVaultLockResult withState(String state) {
@@ -150,14 +129,13 @@ public class GetVaultLockResult extends
 
     /**
      * <p>
-     * The UTC date and time at which the lock ID expires. This value can be
-     * <code>null</code> if the vault lock is in a <code>Locked</code> state.
+     * The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a
+     * <code>Locked</code> state.
      * </p>
      * 
      * @param expirationDate
-     *        The UTC date and time at which the lock ID expires. This value can
-     *        be <code>null</code> if the vault lock is in a <code>Locked</code>
-     *        state.
+     *        The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock
+     *        is in a <code>Locked</code> state.
      */
 
     public void setExpirationDate(String expirationDate) {
@@ -166,13 +144,12 @@ public class GetVaultLockResult extends
 
     /**
      * <p>
-     * The UTC date and time at which the lock ID expires. This value can be
-     * <code>null</code> if the vault lock is in a <code>Locked</code> state.
+     * The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a
+     * <code>Locked</code> state.
      * </p>
      * 
-     * @return The UTC date and time at which the lock ID expires. This value
-     *         can be <code>null</code> if the vault lock is in a
-     *         <code>Locked</code> state.
+     * @return The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock
+     *         is in a <code>Locked</code> state.
      */
 
     public String getExpirationDate() {
@@ -181,16 +158,14 @@ public class GetVaultLockResult extends
 
     /**
      * <p>
-     * The UTC date and time at which the lock ID expires. This value can be
-     * <code>null</code> if the vault lock is in a <code>Locked</code> state.
+     * The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a
+     * <code>Locked</code> state.
      * </p>
      * 
      * @param expirationDate
-     *        The UTC date and time at which the lock ID expires. This value can
-     *        be <code>null</code> if the vault lock is in a <code>Locked</code>
-     *        state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock
+     *        is in a <code>Locked</code> state.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetVaultLockResult withExpirationDate(String expirationDate) {
@@ -200,13 +175,11 @@ public class GetVaultLockResult extends
 
     /**
      * <p>
-     * The UTC date and time at which the vault lock was put into the
-     * <code>InProgress</code> state.
+     * The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.
      * </p>
      * 
      * @param creationDate
-     *        The UTC date and time at which the vault lock was put into the
-     *        <code>InProgress</code> state.
+     *        The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.
      */
 
     public void setCreationDate(String creationDate) {
@@ -215,12 +188,10 @@ public class GetVaultLockResult extends
 
     /**
      * <p>
-     * The UTC date and time at which the vault lock was put into the
-     * <code>InProgress</code> state.
+     * The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.
      * </p>
      * 
-     * @return The UTC date and time at which the vault lock was put into the
-     *         <code>InProgress</code> state.
+     * @return The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.
      */
 
     public String getCreationDate() {
@@ -229,15 +200,12 @@ public class GetVaultLockResult extends
 
     /**
      * <p>
-     * The UTC date and time at which the vault lock was put into the
-     * <code>InProgress</code> state.
+     * The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.
      * </p>
      * 
      * @param creationDate
-     *        The UTC date and time at which the vault lock was put into the
-     *        <code>InProgress</code> state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetVaultLockResult withCreationDate(String creationDate) {
@@ -246,8 +214,7 @@ public class GetVaultLockResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -281,24 +248,19 @@ public class GetVaultLockResult extends
         GetVaultLockResult other = (GetVaultLockResult) obj;
         if (other.getPolicy() == null ^ this.getPolicy() == null)
             return false;
-        if (other.getPolicy() != null
-                && other.getPolicy().equals(this.getPolicy()) == false)
+        if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
-        if (other.getExpirationDate() == null
-                ^ this.getExpirationDate() == null)
+        if (other.getExpirationDate() == null ^ this.getExpirationDate() == null)
             return false;
-        if (other.getExpirationDate() != null
-                && other.getExpirationDate().equals(this.getExpirationDate()) == false)
+        if (other.getExpirationDate() != null && other.getExpirationDate().equals(this.getExpirationDate()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
-        if (other.getCreationDate() != null
-                && other.getCreationDate().equals(this.getCreationDate()) == false)
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
         return true;
     }
@@ -308,18 +270,10 @@ public class GetVaultLockResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExpirationDate() == null) ? 0 : getExpirationDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDate() == null) ? 0 : getCreationDate()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getExpirationDate() == null) ? 0 : getExpirationDate().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         return hashCode;
     }
 
@@ -328,9 +282,7 @@ public class GetVaultLockResult extends
         try {
             return (GetVaultLockResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

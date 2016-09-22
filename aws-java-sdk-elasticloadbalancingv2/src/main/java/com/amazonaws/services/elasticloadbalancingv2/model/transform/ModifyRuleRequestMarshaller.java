@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
@@ -31,30 +29,24 @@ import com.amazonaws.util.IdempotentUtils;
  * ModifyRuleRequest Marshaller
  */
 
-public class ModifyRuleRequestMarshaller implements
-        Marshaller<Request<ModifyRuleRequest>, ModifyRuleRequest> {
+public class ModifyRuleRequestMarshaller implements Marshaller<Request<ModifyRuleRequest>, ModifyRuleRequest> {
 
-    public Request<ModifyRuleRequest> marshall(
-            ModifyRuleRequest modifyRuleRequest) {
+    public Request<ModifyRuleRequest> marshall(ModifyRuleRequest modifyRuleRequest) {
 
         if (modifyRuleRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ModifyRuleRequest> request = new DefaultRequest<ModifyRuleRequest>(
-                modifyRuleRequest, "AmazonElasticLoadBalancing");
+        Request<ModifyRuleRequest> request = new DefaultRequest<ModifyRuleRequest>(modifyRuleRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "ModifyRule");
         request.addParameter("Version", "2015-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifyRuleRequest.getRuleArn() != null) {
-            request.addParameter("RuleArn",
-                    StringUtils.fromString(modifyRuleRequest.getRuleArn()));
+            request.addParameter("RuleArn", StringUtils.fromString(modifyRuleRequest.getRuleArn()));
         }
 
-        java.util.List<RuleCondition> conditionsList = modifyRuleRequest
-                .getConditions();
+        java.util.List<RuleCondition> conditionsList = modifyRuleRequest.getConditions();
 
         if (conditionsList != null) {
             if (conditionsList.isEmpty()) {
@@ -65,28 +57,21 @@ public class ModifyRuleRequestMarshaller implements
                 for (RuleCondition conditionsListValue : conditionsList) {
 
                     if (conditionsListValue.getField() != null) {
-                        request.addParameter("Conditions.member."
-                                + conditionsListIndex + ".Field", StringUtils
-                                .fromString(conditionsListValue.getField()));
+                        request.addParameter("Conditions.member." + conditionsListIndex + ".Field", StringUtils.fromString(conditionsListValue.getField()));
                     }
 
-                    java.util.List<String> valuesList = conditionsListValue
-                            .getValues();
+                    java.util.List<String> valuesList = conditionsListValue.getValues();
 
                     if (valuesList != null) {
                         if (valuesList.isEmpty()) {
-                            request.addParameter("Conditions.member."
-                                    + conditionsListIndex + ".Values", "");
+                            request.addParameter("Conditions.member." + conditionsListIndex + ".Values", "");
                         } else {
                             int valuesListIndex = 1;
 
                             for (String valuesListValue : valuesList) {
                                 if (valuesListValue != null) {
-                                    request.addParameter("Conditions.member."
-                                            + conditionsListIndex
-                                            + ".Values.member."
-                                            + valuesListIndex, StringUtils
-                                            .fromString(valuesListValue));
+                                    request.addParameter("Conditions.member." + conditionsListIndex + ".Values.member." + valuesListIndex,
+                                            StringUtils.fromString(valuesListValue));
                                 }
                                 valuesListIndex++;
                             }
@@ -108,16 +93,12 @@ public class ModifyRuleRequestMarshaller implements
                 for (Action actionsListValue : actionsList) {
 
                     if (actionsListValue.getType() != null) {
-                        request.addParameter("Actions.member."
-                                + actionsListIndex + ".Type", StringUtils
-                                .fromString(actionsListValue.getType()));
+                        request.addParameter("Actions.member." + actionsListIndex + ".Type", StringUtils.fromString(actionsListValue.getType()));
                     }
 
                     if (actionsListValue.getTargetGroupArn() != null) {
-                        request.addParameter("Actions.member."
-                                + actionsListIndex + ".TargetGroupArn",
-                                StringUtils.fromString(actionsListValue
-                                        .getTargetGroupArn()));
+                        request.addParameter("Actions.member." + actionsListIndex + ".TargetGroupArn",
+                                StringUtils.fromString(actionsListValue.getTargetGroupArn()));
                     }
                     actionsListIndex++;
                 }

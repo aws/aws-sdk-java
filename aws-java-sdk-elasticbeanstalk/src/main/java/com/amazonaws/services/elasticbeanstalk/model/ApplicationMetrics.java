@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -25,47 +23,41 @@ public class ApplicationMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time that the metrics cover (usually 10 seconds). For
-     * example, you might have 5 requests (<code>request_count</code>) within
-     * the most recent time slice of 10 seconds (<code>duration</code>).
+     * The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (
+     * <code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).
      * </p>
      */
     private Integer duration;
     /**
      * <p>
-     * Average number of requests handled by the web server per second over the
-     * last 10 seconds.
+     * Average number of requests handled by the web server per second over the last 10 seconds.
      * </p>
      */
     private Integer requestCount;
     /**
      * <p>
-     * Represents the percentage of requests over the last 10 seconds that
-     * resulted in each type of status code response.
+     * Represents the percentage of requests over the last 10 seconds that resulted in each type of status code
+     * response.
      * </p>
      */
     private StatusCodes statusCodes;
     /**
      * <p>
-     * Represents the average latency for the slowest X percent of requests over
-     * the last 10 seconds. Latencies are in seconds with one milisecond
-     * resolution.
+     * Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in
+     * seconds with one milisecond resolution.
      * </p>
      */
     private Latency latency;
 
     /**
      * <p>
-     * The amount of time that the metrics cover (usually 10 seconds). For
-     * example, you might have 5 requests (<code>request_count</code>) within
-     * the most recent time slice of 10 seconds (<code>duration</code>).
+     * The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (
+     * <code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).
      * </p>
      * 
      * @param duration
-     *        The amount of time that the metrics cover (usually 10 seconds).
-     *        For example, you might have 5 requests (<code>request_count</code>
-     *        ) within the most recent time slice of 10 seconds (
-     *        <code>duration</code>).
+     *        The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (
+     *        <code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).
      */
 
     public void setDuration(Integer duration) {
@@ -74,15 +66,12 @@ public class ApplicationMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time that the metrics cover (usually 10 seconds). For
-     * example, you might have 5 requests (<code>request_count</code>) within
-     * the most recent time slice of 10 seconds (<code>duration</code>).
+     * The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (
+     * <code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).
      * </p>
      * 
-     * @return The amount of time that the metrics cover (usually 10 seconds).
-     *         For example, you might have 5 requests (
-     *         <code>request_count</code>) within the most recent time slice of
-     *         10 seconds (<code>duration</code>).
+     * @return The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (
+     *         <code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).
      */
 
     public Integer getDuration() {
@@ -91,18 +80,14 @@ public class ApplicationMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time that the metrics cover (usually 10 seconds). For
-     * example, you might have 5 requests (<code>request_count</code>) within
-     * the most recent time slice of 10 seconds (<code>duration</code>).
+     * The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (
+     * <code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).
      * </p>
      * 
      * @param duration
-     *        The amount of time that the metrics cover (usually 10 seconds).
-     *        For example, you might have 5 requests (<code>request_count</code>
-     *        ) within the most recent time slice of 10 seconds (
-     *        <code>duration</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (
+     *        <code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationMetrics withDuration(Integer duration) {
@@ -112,13 +97,11 @@ public class ApplicationMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Average number of requests handled by the web server per second over the
-     * last 10 seconds.
+     * Average number of requests handled by the web server per second over the last 10 seconds.
      * </p>
      * 
      * @param requestCount
-     *        Average number of requests handled by the web server per second
-     *        over the last 10 seconds.
+     *        Average number of requests handled by the web server per second over the last 10 seconds.
      */
 
     public void setRequestCount(Integer requestCount) {
@@ -127,12 +110,10 @@ public class ApplicationMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Average number of requests handled by the web server per second over the
-     * last 10 seconds.
+     * Average number of requests handled by the web server per second over the last 10 seconds.
      * </p>
      * 
-     * @return Average number of requests handled by the web server per second
-     *         over the last 10 seconds.
+     * @return Average number of requests handled by the web server per second over the last 10 seconds.
      */
 
     public Integer getRequestCount() {
@@ -141,15 +122,12 @@ public class ApplicationMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Average number of requests handled by the web server per second over the
-     * last 10 seconds.
+     * Average number of requests handled by the web server per second over the last 10 seconds.
      * </p>
      * 
      * @param requestCount
-     *        Average number of requests handled by the web server per second
-     *        over the last 10 seconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Average number of requests handled by the web server per second over the last 10 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationMetrics withRequestCount(Integer requestCount) {
@@ -159,13 +137,13 @@ public class ApplicationMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents the percentage of requests over the last 10 seconds that
-     * resulted in each type of status code response.
+     * Represents the percentage of requests over the last 10 seconds that resulted in each type of status code
+     * response.
      * </p>
      * 
      * @param statusCodes
-     *        Represents the percentage of requests over the last 10 seconds
-     *        that resulted in each type of status code response.
+     *        Represents the percentage of requests over the last 10 seconds that resulted in each type of status code
+     *        response.
      */
 
     public void setStatusCodes(StatusCodes statusCodes) {
@@ -174,12 +152,12 @@ public class ApplicationMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents the percentage of requests over the last 10 seconds that
-     * resulted in each type of status code response.
+     * Represents the percentage of requests over the last 10 seconds that resulted in each type of status code
+     * response.
      * </p>
      * 
-     * @return Represents the percentage of requests over the last 10 seconds
-     *         that resulted in each type of status code response.
+     * @return Represents the percentage of requests over the last 10 seconds that resulted in each type of status code
+     *         response.
      */
 
     public StatusCodes getStatusCodes() {
@@ -188,15 +166,14 @@ public class ApplicationMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents the percentage of requests over the last 10 seconds that
-     * resulted in each type of status code response.
+     * Represents the percentage of requests over the last 10 seconds that resulted in each type of status code
+     * response.
      * </p>
      * 
      * @param statusCodes
-     *        Represents the percentage of requests over the last 10 seconds
-     *        that resulted in each type of status code response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Represents the percentage of requests over the last 10 seconds that resulted in each type of status code
+     *        response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationMetrics withStatusCodes(StatusCodes statusCodes) {
@@ -206,15 +183,13 @@ public class ApplicationMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents the average latency for the slowest X percent of requests over
-     * the last 10 seconds. Latencies are in seconds with one milisecond
-     * resolution.
+     * Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in
+     * seconds with one milisecond resolution.
      * </p>
      * 
      * @param latency
-     *        Represents the average latency for the slowest X percent of
-     *        requests over the last 10 seconds. Latencies are in seconds with
-     *        one milisecond resolution.
+     *        Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies
+     *        are in seconds with one milisecond resolution.
      */
 
     public void setLatency(Latency latency) {
@@ -223,14 +198,12 @@ public class ApplicationMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents the average latency for the slowest X percent of requests over
-     * the last 10 seconds. Latencies are in seconds with one milisecond
-     * resolution.
+     * Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in
+     * seconds with one milisecond resolution.
      * </p>
      * 
-     * @return Represents the average latency for the slowest X percent of
-     *         requests over the last 10 seconds. Latencies are in seconds with
-     *         one milisecond resolution.
+     * @return Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies
+     *         are in seconds with one milisecond resolution.
      */
 
     public Latency getLatency() {
@@ -239,17 +212,14 @@ public class ApplicationMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents the average latency for the slowest X percent of requests over
-     * the last 10 seconds. Latencies are in seconds with one milisecond
-     * resolution.
+     * Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in
+     * seconds with one milisecond resolution.
      * </p>
      * 
      * @param latency
-     *        Represents the average latency for the slowest X percent of
-     *        requests over the last 10 seconds. Latencies are in seconds with
-     *        one milisecond resolution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies
+     *        are in seconds with one milisecond resolution.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationMetrics withLatency(Latency latency) {
@@ -258,8 +228,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -293,23 +262,19 @@ public class ApplicationMetrics implements Serializable, Cloneable {
         ApplicationMetrics other = (ApplicationMetrics) obj;
         if (other.getDuration() == null ^ this.getDuration() == null)
             return false;
-        if (other.getDuration() != null
-                && other.getDuration().equals(this.getDuration()) == false)
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
             return false;
         if (other.getRequestCount() == null ^ this.getRequestCount() == null)
             return false;
-        if (other.getRequestCount() != null
-                && other.getRequestCount().equals(this.getRequestCount()) == false)
+        if (other.getRequestCount() != null && other.getRequestCount().equals(this.getRequestCount()) == false)
             return false;
         if (other.getStatusCodes() == null ^ this.getStatusCodes() == null)
             return false;
-        if (other.getStatusCodes() != null
-                && other.getStatusCodes().equals(this.getStatusCodes()) == false)
+        if (other.getStatusCodes() != null && other.getStatusCodes().equals(this.getStatusCodes()) == false)
             return false;
         if (other.getLatency() == null ^ this.getLatency() == null)
             return false;
-        if (other.getLatency() != null
-                && other.getLatency().equals(this.getLatency()) == false)
+        if (other.getLatency() != null && other.getLatency().equals(this.getLatency()) == false)
             return false;
         return true;
     }
@@ -319,17 +284,10 @@ public class ApplicationMetrics implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDuration() == null) ? 0 : getDuration().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRequestCount() == null) ? 0 : getRequestCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStatusCodes() == null) ? 0 : getStatusCodes().hashCode());
-        hashCode = prime * hashCode
-                + ((getLatency() == null) ? 0 : getLatency().hashCode());
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
+        hashCode = prime * hashCode + ((getRequestCount() == null) ? 0 : getRequestCount().hashCode());
+        hashCode = prime * hashCode + ((getStatusCodes() == null) ? 0 : getStatusCodes().hashCode());
+        hashCode = prime * hashCode + ((getLatency() == null) ? 0 : getLatency().hashCode());
         return hashCode;
     }
 
@@ -338,9 +296,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
         try {
             return (ApplicationMetrics) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

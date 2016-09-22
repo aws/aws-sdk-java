@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -21,9 +19,8 @@ import java.io.Serializable;
  * Represents the custom MAIL FROM attributes for a list of identities.
  * </p>
  */
-public class GetIdentityMailFromDomainAttributesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetIdentityMailFromDomainAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -56,11 +53,9 @@ public class GetIdentityMailFromDomainAttributesResult extends
      *        A map of identities to custom MAIL FROM attributes.
      */
 
-    public void setMailFromDomainAttributes(
-            java.util.Map<String, IdentityMailFromDomainAttributes> mailFromDomainAttributes) {
+    public void setMailFromDomainAttributes(java.util.Map<String, IdentityMailFromDomainAttributes> mailFromDomainAttributes) {
         this.mailFromDomainAttributes = mailFromDomainAttributes == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, IdentityMailFromDomainAttributes>(
-                        mailFromDomainAttributes);
+                : new com.amazonaws.internal.SdkInternalMap<String, IdentityMailFromDomainAttributes>(mailFromDomainAttributes);
     }
 
     /**
@@ -70,8 +65,7 @@ public class GetIdentityMailFromDomainAttributesResult extends
      * 
      * @param mailFromDomainAttributes
      *        A map of identities to custom MAIL FROM attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetIdentityMailFromDomainAttributesResult withMailFromDomainAttributes(
@@ -80,22 +74,19 @@ public class GetIdentityMailFromDomainAttributesResult extends
         return this;
     }
 
-    public GetIdentityMailFromDomainAttributesResult addMailFromDomainAttributesEntry(
-            String key, IdentityMailFromDomainAttributes value) {
+    public GetIdentityMailFromDomainAttributesResult addMailFromDomainAttributesEntry(String key, IdentityMailFromDomainAttributes value) {
         if (null == this.mailFromDomainAttributes) {
             this.mailFromDomainAttributes = new com.amazonaws.internal.SdkInternalMap<String, IdentityMailFromDomainAttributes>();
         }
         if (this.mailFromDomainAttributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.mailFromDomainAttributes.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into MailFromDomainAttributes. &lt;p>
-     * Returns a reference to this object so that method calls can be chained
-     * together.
+     * Removes all the entries added into MailFromDomainAttributes. &lt;p> Returns a reference to this object so that
+     * method calls can be chained together.
      */
 
     public GetIdentityMailFromDomainAttributesResult clearMailFromDomainAttributesEntries() {
@@ -104,8 +95,7 @@ public class GetIdentityMailFromDomainAttributesResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -116,8 +106,7 @@ public class GetIdentityMailFromDomainAttributesResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMailFromDomainAttributes() != null)
-            sb.append("MailFromDomainAttributes: "
-                    + getMailFromDomainAttributes());
+            sb.append("MailFromDomainAttributes: " + getMailFromDomainAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -132,12 +121,9 @@ public class GetIdentityMailFromDomainAttributesResult extends
         if (obj instanceof GetIdentityMailFromDomainAttributesResult == false)
             return false;
         GetIdentityMailFromDomainAttributesResult other = (GetIdentityMailFromDomainAttributesResult) obj;
-        if (other.getMailFromDomainAttributes() == null
-                ^ this.getMailFromDomainAttributes() == null)
+        if (other.getMailFromDomainAttributes() == null ^ this.getMailFromDomainAttributes() == null)
             return false;
-        if (other.getMailFromDomainAttributes() != null
-                && other.getMailFromDomainAttributes().equals(
-                        this.getMailFromDomainAttributes()) == false)
+        if (other.getMailFromDomainAttributes() != null && other.getMailFromDomainAttributes().equals(this.getMailFromDomainAttributes()) == false)
             return false;
         return true;
     }
@@ -147,10 +133,7 @@ public class GetIdentityMailFromDomainAttributesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getMailFromDomainAttributes() == null) ? 0
-                        : getMailFromDomainAttributes().hashCode());
+        hashCode = prime * hashCode + ((getMailFromDomainAttributes() == null) ? 0 : getMailFromDomainAttributes().hashCode());
         return hashCode;
     }
 
@@ -159,9 +142,7 @@ public class GetIdentityMailFromDomainAttributesResult extends
         try {
             return (GetIdentityMailFromDomainAttributesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

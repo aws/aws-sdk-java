@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * DeleteVaultRequest Marshaller
  */
-public class DeleteVaultRequestMarshaller implements
-        Marshaller<Request<DeleteVaultRequest>, DeleteVaultRequest> {
+public class DeleteVaultRequestMarshaller implements Marshaller<Request<DeleteVaultRequest>, DeleteVaultRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,31 +49,22 @@ public class DeleteVaultRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DeleteVaultRequest> marshall(
-            DeleteVaultRequest deleteVaultRequest) {
+    public Request<DeleteVaultRequest> marshall(DeleteVaultRequest deleteVaultRequest) {
 
         if (deleteVaultRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteVaultRequest> request = new DefaultRequest<DeleteVaultRequest>(
-                deleteVaultRequest, "AmazonGlacier");
+        Request<DeleteVaultRequest> request = new DefaultRequest<DeleteVaultRequest>(deleteVaultRequest, "AmazonGlacier");
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (deleteVaultRequest.getAccountId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(deleteVaultRequest
-                                .getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (deleteVaultRequest.getVaultName() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(deleteVaultRequest
-                                .getVaultName()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{accountId}",
+                (deleteVaultRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteVaultRequest.getAccountId()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{vaultName}",
+                (deleteVaultRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteVaultRequest.getVaultName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

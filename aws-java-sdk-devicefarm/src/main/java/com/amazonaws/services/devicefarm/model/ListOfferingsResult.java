@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Represents the return values of the list of offerings.
  * </p>
  */
-public class ListOfferingsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListOfferingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,8 @@ public class ListOfferingsResult extends
     private java.util.List<Offering> offerings;
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next
+     * set of items in the list.
      * </p>
      */
     private String nextToken;
@@ -74,16 +70,14 @@ public class ListOfferingsResult extends
      * A value representing the list offering results.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOfferings(java.util.Collection)} or
-     * {@link #withOfferings(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOfferings(java.util.Collection)} or {@link #withOfferings(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param offerings
      *        A value representing the list offering results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListOfferingsResult withOfferings(Offering... offerings) {
@@ -103,26 +97,23 @@ public class ListOfferingsResult extends
      * 
      * @param offerings
      *        A value representing the list offering results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListOfferingsResult withOfferings(
-            java.util.Collection<Offering> offerings) {
+    public ListOfferingsResult withOfferings(java.util.Collection<Offering> offerings) {
         setOfferings(offerings);
         return this;
     }
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next
+     * set of items in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous call to this
-     *        operation, which can be used to return the next set of items in
-     *        the list.
+     *        An identifier that was returned from the previous call to this operation, which can be used to return the
+     *        next set of items in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -131,13 +122,12 @@ public class ListOfferingsResult extends
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next
+     * set of items in the list.
      * </p>
      * 
-     * @return An identifier that was returned from the previous call to this
-     *         operation, which can be used to return the next set of items in
-     *         the list.
+     * @return An identifier that was returned from the previous call to this operation, which can be used to return the
+     *         next set of items in the list.
      */
 
     public String getNextToken() {
@@ -146,16 +136,14 @@ public class ListOfferingsResult extends
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next
+     * set of items in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous call to this
-     *        operation, which can be used to return the next set of items in
-     *        the list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An identifier that was returned from the previous call to this operation, which can be used to return the
+     *        next set of items in the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListOfferingsResult withNextToken(String nextToken) {
@@ -164,8 +152,7 @@ public class ListOfferingsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -195,13 +182,11 @@ public class ListOfferingsResult extends
         ListOfferingsResult other = (ListOfferingsResult) obj;
         if (other.getOfferings() == null ^ this.getOfferings() == null)
             return false;
-        if (other.getOfferings() != null
-                && other.getOfferings().equals(this.getOfferings()) == false)
+        if (other.getOfferings() != null && other.getOfferings().equals(this.getOfferings()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -211,10 +196,8 @@ public class ListOfferingsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getOfferings() == null) ? 0 : getOfferings().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getOfferings() == null) ? 0 : getOfferings().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -223,9 +206,7 @@ public class ListOfferingsResult extends
         try {
             return (ListOfferingsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

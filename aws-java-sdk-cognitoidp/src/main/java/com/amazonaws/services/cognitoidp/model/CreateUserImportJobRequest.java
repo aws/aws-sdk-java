@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to create the user import job.
  * </p>
  */
-public class CreateUserImportJobRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateUserImportJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,15 +30,13 @@ public class CreateUserImportJobRequest extends
     private String jobName;
     /**
      * <p>
-     * The user pool ID for the user pool that the users are being imported
-     * into.
+     * The user pool ID for the user pool that the users are being imported into.
      * </p>
      */
     private String userPoolId;
     /**
      * <p>
-     * The role ARN for the Amazon CloudWatch Logging role for the user import
-     * job.
+     * The role ARN for the Amazon CloudWatch Logging role for the user import job.
      * </p>
      */
     private String cloudWatchLogsRoleArn;
@@ -79,8 +73,7 @@ public class CreateUserImportJobRequest extends
      * 
      * @param jobName
      *        The job name for the user import job.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateUserImportJobRequest withJobName(String jobName) {
@@ -90,13 +83,11 @@ public class CreateUserImportJobRequest extends
 
     /**
      * <p>
-     * The user pool ID for the user pool that the users are being imported
-     * into.
+     * The user pool ID for the user pool that the users are being imported into.
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID for the user pool that the users are being
-     *        imported into.
+     *        The user pool ID for the user pool that the users are being imported into.
      */
 
     public void setUserPoolId(String userPoolId) {
@@ -105,12 +96,10 @@ public class CreateUserImportJobRequest extends
 
     /**
      * <p>
-     * The user pool ID for the user pool that the users are being imported
-     * into.
+     * The user pool ID for the user pool that the users are being imported into.
      * </p>
      * 
-     * @return The user pool ID for the user pool that the users are being
-     *         imported into.
+     * @return The user pool ID for the user pool that the users are being imported into.
      */
 
     public String getUserPoolId() {
@@ -119,15 +108,12 @@ public class CreateUserImportJobRequest extends
 
     /**
      * <p>
-     * The user pool ID for the user pool that the users are being imported
-     * into.
+     * The user pool ID for the user pool that the users are being imported into.
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID for the user pool that the users are being
-     *        imported into.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user pool ID for the user pool that the users are being imported into.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateUserImportJobRequest withUserPoolId(String userPoolId) {
@@ -137,13 +123,11 @@ public class CreateUserImportJobRequest extends
 
     /**
      * <p>
-     * The role ARN for the Amazon CloudWatch Logging role for the user import
-     * job.
+     * The role ARN for the Amazon CloudWatch Logging role for the user import job.
      * </p>
      * 
      * @param cloudWatchLogsRoleArn
-     *        The role ARN for the Amazon CloudWatch Logging role for the user
-     *        import job.
+     *        The role ARN for the Amazon CloudWatch Logging role for the user import job.
      */
 
     public void setCloudWatchLogsRoleArn(String cloudWatchLogsRoleArn) {
@@ -152,12 +136,10 @@ public class CreateUserImportJobRequest extends
 
     /**
      * <p>
-     * The role ARN for the Amazon CloudWatch Logging role for the user import
-     * job.
+     * The role ARN for the Amazon CloudWatch Logging role for the user import job.
      * </p>
      * 
-     * @return The role ARN for the Amazon CloudWatch Logging role for the user
-     *         import job.
+     * @return The role ARN for the Amazon CloudWatch Logging role for the user import job.
      */
 
     public String getCloudWatchLogsRoleArn() {
@@ -166,26 +148,21 @@ public class CreateUserImportJobRequest extends
 
     /**
      * <p>
-     * The role ARN for the Amazon CloudWatch Logging role for the user import
-     * job.
+     * The role ARN for the Amazon CloudWatch Logging role for the user import job.
      * </p>
      * 
      * @param cloudWatchLogsRoleArn
-     *        The role ARN for the Amazon CloudWatch Logging role for the user
-     *        import job.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The role ARN for the Amazon CloudWatch Logging role for the user import job.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateUserImportJobRequest withCloudWatchLogsRoleArn(
-            String cloudWatchLogsRoleArn) {
+    public CreateUserImportJobRequest withCloudWatchLogsRoleArn(String cloudWatchLogsRoleArn) {
         setCloudWatchLogsRoleArn(cloudWatchLogsRoleArn);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -217,20 +194,15 @@ public class CreateUserImportJobRequest extends
         CreateUserImportJobRequest other = (CreateUserImportJobRequest) obj;
         if (other.getJobName() == null ^ this.getJobName() == null)
             return false;
-        if (other.getJobName() != null
-                && other.getJobName().equals(this.getJobName()) == false)
+        if (other.getJobName() != null && other.getJobName().equals(this.getJobName()) == false)
             return false;
         if (other.getUserPoolId() == null ^ this.getUserPoolId() == null)
             return false;
-        if (other.getUserPoolId() != null
-                && other.getUserPoolId().equals(this.getUserPoolId()) == false)
+        if (other.getUserPoolId() != null && other.getUserPoolId().equals(this.getUserPoolId()) == false)
             return false;
-        if (other.getCloudWatchLogsRoleArn() == null
-                ^ this.getCloudWatchLogsRoleArn() == null)
+        if (other.getCloudWatchLogsRoleArn() == null ^ this.getCloudWatchLogsRoleArn() == null)
             return false;
-        if (other.getCloudWatchLogsRoleArn() != null
-                && other.getCloudWatchLogsRoleArn().equals(
-                        this.getCloudWatchLogsRoleArn()) == false)
+        if (other.getCloudWatchLogsRoleArn() != null && other.getCloudWatchLogsRoleArn().equals(this.getCloudWatchLogsRoleArn()) == false)
             return false;
         return true;
     }
@@ -240,14 +212,9 @@ public class CreateUserImportJobRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJobName() == null) ? 0 : getJobName().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCloudWatchLogsRoleArn() == null) ? 0
-                        : getCloudWatchLogsRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLogsRoleArn() == null) ? 0 : getCloudWatchLogsRoleArn().hashCode());
         return hashCode;
     }
 

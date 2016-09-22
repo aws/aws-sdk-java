@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codecommit.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a batch get repositories operation.
  * </p>
  */
-public class BatchGetRepositoriesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class BatchGetRepositoriesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -68,23 +64,19 @@ public class BatchGetRepositoriesRequest extends
      * The names of the repositories to get information about.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRepositoryNames(java.util.Collection)} or
-     * {@link #withRepositoryNames(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRepositoryNames(java.util.Collection)} or {@link #withRepositoryNames(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param repositoryNames
      *        The names of the repositories to get information about.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetRepositoriesRequest withRepositoryNames(
-            String... repositoryNames) {
+    public BatchGetRepositoriesRequest withRepositoryNames(String... repositoryNames) {
         if (this.repositoryNames == null) {
-            setRepositoryNames(new java.util.ArrayList<String>(
-                    repositoryNames.length));
+            setRepositoryNames(new java.util.ArrayList<String>(repositoryNames.length));
         }
         for (String ele : repositoryNames) {
             this.repositoryNames.add(ele);
@@ -99,19 +91,16 @@ public class BatchGetRepositoriesRequest extends
      * 
      * @param repositoryNames
      *        The names of the repositories to get information about.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetRepositoriesRequest withRepositoryNames(
-            java.util.Collection<String> repositoryNames) {
+    public BatchGetRepositoriesRequest withRepositoryNames(java.util.Collection<String> repositoryNames) {
         setRepositoryNames(repositoryNames);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -137,11 +126,9 @@ public class BatchGetRepositoriesRequest extends
         if (obj instanceof BatchGetRepositoriesRequest == false)
             return false;
         BatchGetRepositoriesRequest other = (BatchGetRepositoriesRequest) obj;
-        if (other.getRepositoryNames() == null
-                ^ this.getRepositoryNames() == null)
+        if (other.getRepositoryNames() == null ^ this.getRepositoryNames() == null)
             return false;
-        if (other.getRepositoryNames() != null
-                && other.getRepositoryNames().equals(this.getRepositoryNames()) == false)
+        if (other.getRepositoryNames() != null && other.getRepositoryNames().equals(this.getRepositoryNames()) == false)
             return false;
         return true;
     }
@@ -151,10 +138,7 @@ public class BatchGetRepositoriesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryNames() == null) ? 0 : getRepositoryNames()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRepositoryNames() == null) ? 0 : getRepositoryNames().hashCode());
         return hashCode;
     }
 

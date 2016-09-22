@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -61,8 +59,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private Integer desiredCapacity;
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.
+     * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.
      * </p>
      */
     private Integer defaultCooldown;
@@ -80,22 +77,20 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> loadBalancerNames;
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups for your load
-     * balancer.
+     * The Amazon Resource Names (ARN) of the target groups for your load balancer.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> targetGroupARNs;
     /**
      * <p>
-     * The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>.
+     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
      * </p>
      */
     private String healthCheckType;
     /**
      * <p>
-     * The amount of time, in seconds, that Auto Scaling waits before checking
-     * the health status of an EC2 instance that has come into service.
+     * The amount of time, in seconds, that Auto Scaling waits before checking the health status of an EC2 instance that
+     * has come into service.
      * </p>
      */
     private Integer healthCheckGracePeriod;
@@ -119,11 +114,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<SuspendedProcess> suspendedProcesses;
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances,
-     * if any. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
-     * >Placement Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String placementGroup;
@@ -132,9 +125,8 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * One or more subnet IDs, if applicable, separated by commas.
      * </p>
      * <p>
-     * If you specify <code>VPCZoneIdentifier</code> and
-     * <code>AvailabilityZones</code>, ensure that the Availability Zones of the
-     * subnets match the values for <code>AvailabilityZones</code>.
+     * If you specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>, ensure that the Availability
+     * Zones of the subnets match the values for <code>AvailabilityZones</code>.
      * </p>
      */
     private String vPCZoneIdentifier;
@@ -146,8 +138,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<EnabledMetric> enabledMetrics;
     /**
      * <p>
-     * The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.
+     * The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
      * </p>
      */
     private String status;
@@ -165,8 +156,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> terminationPolicies;
     /**
      * <p>
-     * Indicates whether newly launched instances are protected from termination
-     * by Auto Scaling when scaling in.
+     * Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
      * </p>
      */
     private Boolean newInstancesProtectedFromScaleIn;
@@ -203,8 +193,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param autoScalingGroupName
      *        The name of the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withAutoScalingGroupName(String autoScalingGroupName) {
@@ -244,8 +233,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param autoScalingGroupARN
      *        The Amazon Resource Name (ARN) of the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withAutoScalingGroupARN(String autoScalingGroupARN) {
@@ -285,12 +273,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param launchConfigurationName
      *        The name of the associated launch configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AutoScalingGroup withLaunchConfigurationName(
-            String launchConfigurationName) {
+    public AutoScalingGroup withLaunchConfigurationName(String launchConfigurationName) {
         setLaunchConfigurationName(launchConfigurationName);
         return this;
     }
@@ -327,8 +313,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param minSize
      *        The minimum size of the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withMinSize(Integer minSize) {
@@ -368,8 +353,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param maxSize
      *        The maximum size of the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withMaxSize(Integer maxSize) {
@@ -409,8 +393,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param desiredCapacity
      *        The desired size of the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withDesiredCapacity(Integer desiredCapacity) {
@@ -420,13 +403,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.
+     * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.
      * </p>
      * 
      * @param defaultCooldown
-     *        The amount of time, in seconds, after a scaling activity completes
-     *        before another scaling activity can start.
+     *        The amount of time, in seconds, after a scaling activity completes before another scaling activity can
+     *        start.
      */
 
     public void setDefaultCooldown(Integer defaultCooldown) {
@@ -435,12 +417,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.
+     * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.
      * </p>
      * 
-     * @return The amount of time, in seconds, after a scaling activity
-     *         completes before another scaling activity can start.
+     * @return The amount of time, in seconds, after a scaling activity completes before another scaling activity can
+     *         start.
      */
 
     public Integer getDefaultCooldown() {
@@ -449,15 +430,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.
+     * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.
      * </p>
      * 
      * @param defaultCooldown
-     *        The amount of time, in seconds, after a scaling activity completes
-     *        before another scaling activity can start.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The amount of time, in seconds, after a scaling activity completes before another scaling activity can
+     *        start.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withDefaultCooldown(Integer defaultCooldown) {
@@ -489,15 +468,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      *        One or more Availability Zones for the group.
      */
 
-    public void setAvailabilityZones(
-            java.util.Collection<String> availabilityZones) {
+    public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
             this.availabilityZones = null;
             return;
         }
 
-        this.availabilityZones = new com.amazonaws.internal.SdkInternalList<String>(
-                availabilityZones);
+        this.availabilityZones = new com.amazonaws.internal.SdkInternalList<String>(availabilityZones);
     }
 
     /**
@@ -505,22 +482,19 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * One or more Availability Zones for the group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
-     * {@link #withAvailabilityZones(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param availabilityZones
      *        One or more Availability Zones for the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withAvailabilityZones(String... availabilityZones) {
         if (this.availabilityZones == null) {
-            setAvailabilityZones(new com.amazonaws.internal.SdkInternalList<String>(
-                    availabilityZones.length));
+            setAvailabilityZones(new com.amazonaws.internal.SdkInternalList<String>(availabilityZones.length));
         }
         for (String ele : availabilityZones) {
             this.availabilityZones.add(ele);
@@ -535,12 +509,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param availabilityZones
      *        One or more Availability Zones for the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AutoScalingGroup withAvailabilityZones(
-            java.util.Collection<String> availabilityZones) {
+    public AutoScalingGroup withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         setAvailabilityZones(availabilityZones);
         return this;
     }
@@ -569,15 +541,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      *        One or more load balancers associated with the group.
      */
 
-    public void setLoadBalancerNames(
-            java.util.Collection<String> loadBalancerNames) {
+    public void setLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
         if (loadBalancerNames == null) {
             this.loadBalancerNames = null;
             return;
         }
 
-        this.loadBalancerNames = new com.amazonaws.internal.SdkInternalList<String>(
-                loadBalancerNames);
+        this.loadBalancerNames = new com.amazonaws.internal.SdkInternalList<String>(loadBalancerNames);
     }
 
     /**
@@ -585,22 +555,19 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * One or more load balancers associated with the group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLoadBalancerNames(java.util.Collection)} or
-     * {@link #withLoadBalancerNames(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLoadBalancerNames(java.util.Collection)} or {@link #withLoadBalancerNames(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param loadBalancerNames
      *        One or more load balancers associated with the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withLoadBalancerNames(String... loadBalancerNames) {
         if (this.loadBalancerNames == null) {
-            setLoadBalancerNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    loadBalancerNames.length));
+            setLoadBalancerNames(new com.amazonaws.internal.SdkInternalList<String>(loadBalancerNames.length));
         }
         for (String ele : loadBalancerNames) {
             this.loadBalancerNames.add(ele);
@@ -615,24 +582,20 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param loadBalancerNames
      *        One or more load balancers associated with the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AutoScalingGroup withLoadBalancerNames(
-            java.util.Collection<String> loadBalancerNames) {
+    public AutoScalingGroup withLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
         setLoadBalancerNames(loadBalancerNames);
         return this;
     }
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups for your load
-     * balancer.
+     * The Amazon Resource Names (ARN) of the target groups for your load balancer.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of the target groups for your
-     *         load balancer.
+     * @return The Amazon Resource Names (ARN) of the target groups for your load balancer.
      */
 
     public java.util.List<String> getTargetGroupARNs() {
@@ -644,13 +607,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups for your load
-     * balancer.
+     * The Amazon Resource Names (ARN) of the target groups for your load balancer.
      * </p>
      * 
      * @param targetGroupARNs
-     *        The Amazon Resource Names (ARN) of the target groups for your load
-     *        balancer.
+     *        The Amazon Resource Names (ARN) of the target groups for your load balancer.
      */
 
     public void setTargetGroupARNs(java.util.Collection<String> targetGroupARNs) {
@@ -659,33 +620,27 @@ public class AutoScalingGroup implements Serializable, Cloneable {
             return;
         }
 
-        this.targetGroupARNs = new com.amazonaws.internal.SdkInternalList<String>(
-                targetGroupARNs);
+        this.targetGroupARNs = new com.amazonaws.internal.SdkInternalList<String>(targetGroupARNs);
     }
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups for your load
-     * balancer.
+     * The Amazon Resource Names (ARN) of the target groups for your load balancer.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTargetGroupARNs(java.util.Collection)} or
-     * {@link #withTargetGroupARNs(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetGroupARNs(java.util.Collection)} or {@link #withTargetGroupARNs(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param targetGroupARNs
-     *        The Amazon Resource Names (ARN) of the target groups for your load
-     *        balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Names (ARN) of the target groups for your load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withTargetGroupARNs(String... targetGroupARNs) {
         if (this.targetGroupARNs == null) {
-            setTargetGroupARNs(new com.amazonaws.internal.SdkInternalList<String>(
-                    targetGroupARNs.length));
+            setTargetGroupARNs(new com.amazonaws.internal.SdkInternalList<String>(targetGroupARNs.length));
         }
         for (String ele : targetGroupARNs) {
             this.targetGroupARNs.add(ele);
@@ -695,32 +650,26 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups for your load
-     * balancer.
+     * The Amazon Resource Names (ARN) of the target groups for your load balancer.
      * </p>
      * 
      * @param targetGroupARNs
-     *        The Amazon Resource Names (ARN) of the target groups for your load
-     *        balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Names (ARN) of the target groups for your load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AutoScalingGroup withTargetGroupARNs(
-            java.util.Collection<String> targetGroupARNs) {
+    public AutoScalingGroup withTargetGroupARNs(java.util.Collection<String> targetGroupARNs) {
         setTargetGroupARNs(targetGroupARNs);
         return this;
     }
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>.
+     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
      * </p>
      * 
      * @param healthCheckType
-     *        The service to use for the health checks. The valid values are
-     *        <code>EC2</code> and <code>ELB</code>.
+     *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
      */
 
     public void setHealthCheckType(String healthCheckType) {
@@ -729,12 +678,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>.
+     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
      * </p>
      * 
-     * @return The service to use for the health checks. The valid values are
-     *         <code>EC2</code> and <code>ELB</code>.
+     * @return The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
      */
 
     public String getHealthCheckType() {
@@ -743,15 +690,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>.
+     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
      * </p>
      * 
      * @param healthCheckType
-     *        The service to use for the health checks. The valid values are
-     *        <code>EC2</code> and <code>ELB</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withHealthCheckType(String healthCheckType) {
@@ -761,14 +705,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, that Auto Scaling waits before checking
-     * the health status of an EC2 instance that has come into service.
+     * The amount of time, in seconds, that Auto Scaling waits before checking the health status of an EC2 instance that
+     * has come into service.
      * </p>
      * 
      * @param healthCheckGracePeriod
-     *        The amount of time, in seconds, that Auto Scaling waits before
-     *        checking the health status of an EC2 instance that has come into
-     *        service.
+     *        The amount of time, in seconds, that Auto Scaling waits before checking the health status of an EC2
+     *        instance that has come into service.
      */
 
     public void setHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
@@ -777,13 +720,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, that Auto Scaling waits before checking
-     * the health status of an EC2 instance that has come into service.
+     * The amount of time, in seconds, that Auto Scaling waits before checking the health status of an EC2 instance that
+     * has come into service.
      * </p>
      * 
-     * @return The amount of time, in seconds, that Auto Scaling waits before
-     *         checking the health status of an EC2 instance that has come into
-     *         service.
+     * @return The amount of time, in seconds, that Auto Scaling waits before checking the health status of an EC2
+     *         instance that has come into service.
      */
 
     public Integer getHealthCheckGracePeriod() {
@@ -792,20 +734,17 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, that Auto Scaling waits before checking
-     * the health status of an EC2 instance that has come into service.
+     * The amount of time, in seconds, that Auto Scaling waits before checking the health status of an EC2 instance that
+     * has come into service.
      * </p>
      * 
      * @param healthCheckGracePeriod
-     *        The amount of time, in seconds, that Auto Scaling waits before
-     *        checking the health status of an EC2 instance that has come into
-     *        service.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The amount of time, in seconds, that Auto Scaling waits before checking the health status of an EC2
+     *        instance that has come into service.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AutoScalingGroup withHealthCheckGracePeriod(
-            Integer healthCheckGracePeriod) {
+    public AutoScalingGroup withHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
         setHealthCheckGracePeriod(healthCheckGracePeriod);
         return this;
     }
@@ -840,8 +779,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
             return;
         }
 
-        this.instances = new com.amazonaws.internal.SdkInternalList<Instance>(
-                instances);
+        this.instances = new com.amazonaws.internal.SdkInternalList<Instance>(instances);
     }
 
     /**
@@ -849,22 +787,19 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * The EC2 instances associated with the group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstances(java.util.Collection)} or
-     * {@link #withInstances(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstances(java.util.Collection)} or {@link #withInstances(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param instances
      *        The EC2 instances associated with the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withInstances(Instance... instances) {
         if (this.instances == null) {
-            setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(
-                    instances.length));
+            setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(instances.length));
         }
         for (Instance ele : instances) {
             this.instances.add(ele);
@@ -879,12 +814,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param instances
      *        The EC2 instances associated with the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AutoScalingGroup withInstances(
-            java.util.Collection<Instance> instances) {
+    public AutoScalingGroup withInstances(java.util.Collection<Instance> instances) {
         setInstances(instances);
         return this;
     }
@@ -921,8 +854,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param createdTime
      *        The date and time the group was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withCreatedTime(java.util.Date createdTime) {
@@ -954,15 +886,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      *        The suspended processes associated with the group.
      */
 
-    public void setSuspendedProcesses(
-            java.util.Collection<SuspendedProcess> suspendedProcesses) {
+    public void setSuspendedProcesses(java.util.Collection<SuspendedProcess> suspendedProcesses) {
         if (suspendedProcesses == null) {
             this.suspendedProcesses = null;
             return;
         }
 
-        this.suspendedProcesses = new com.amazonaws.internal.SdkInternalList<SuspendedProcess>(
-                suspendedProcesses);
+        this.suspendedProcesses = new com.amazonaws.internal.SdkInternalList<SuspendedProcess>(suspendedProcesses);
     }
 
     /**
@@ -970,23 +900,19 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * The suspended processes associated with the group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSuspendedProcesses(java.util.Collection)} or
-     * {@link #withSuspendedProcesses(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSuspendedProcesses(java.util.Collection)} or {@link #withSuspendedProcesses(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param suspendedProcesses
      *        The suspended processes associated with the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AutoScalingGroup withSuspendedProcesses(
-            SuspendedProcess... suspendedProcesses) {
+    public AutoScalingGroup withSuspendedProcesses(SuspendedProcess... suspendedProcesses) {
         if (this.suspendedProcesses == null) {
-            setSuspendedProcesses(new com.amazonaws.internal.SdkInternalList<SuspendedProcess>(
-                    suspendedProcesses.length));
+            setSuspendedProcesses(new com.amazonaws.internal.SdkInternalList<SuspendedProcess>(suspendedProcesses.length));
         }
         for (SuspendedProcess ele : suspendedProcesses) {
             this.suspendedProcesses.add(ele);
@@ -1001,31 +927,25 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param suspendedProcesses
      *        The suspended processes associated with the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AutoScalingGroup withSuspendedProcesses(
-            java.util.Collection<SuspendedProcess> suspendedProcesses) {
+    public AutoScalingGroup withSuspendedProcesses(java.util.Collection<SuspendedProcess> suspendedProcesses) {
         setSuspendedProcesses(suspendedProcesses);
         return this;
     }
 
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances,
-     * if any. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
-     * >Placement Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param placementGroup
-     *        The name of the placement group into which you'll launch your
-     *        instances, if any. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
-     *        >Placement Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.
+     *        The name of the placement group into which you'll launch your instances, if any. For more information, see
+     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setPlacementGroup(String placementGroup) {
@@ -1034,18 +954,14 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances,
-     * if any. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
-     * >Placement Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return The name of the placement group into which you'll launch your
-     *         instances, if any. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
-     *         >Placement Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>.
+     * @return The name of the placement group into which you'll launch your instances, if any. For more information,
+     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     *         Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getPlacementGroup() {
@@ -1054,21 +970,16 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances,
-     * if any. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
-     * >Placement Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param placementGroup
-     *        The name of the placement group into which you'll launch your
-     *        instances, if any. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
-     *        >Placement Groups</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the placement group into which you'll launch your instances, if any. For more information, see
+     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withPlacementGroup(String placementGroup) {
@@ -1081,17 +992,15 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * One or more subnet IDs, if applicable, separated by commas.
      * </p>
      * <p>
-     * If you specify <code>VPCZoneIdentifier</code> and
-     * <code>AvailabilityZones</code>, ensure that the Availability Zones of the
-     * subnets match the values for <code>AvailabilityZones</code>.
+     * If you specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>, ensure that the Availability
+     * Zones of the subnets match the values for <code>AvailabilityZones</code>.
      * </p>
      * 
      * @param vPCZoneIdentifier
      *        One or more subnet IDs, if applicable, separated by commas.</p>
      *        <p>
-     *        If you specify <code>VPCZoneIdentifier</code> and
-     *        <code>AvailabilityZones</code>, ensure that the Availability Zones
-     *        of the subnets match the values for <code>AvailabilityZones</code>.
+     *        If you specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>, ensure that the
+     *        Availability Zones of the subnets match the values for <code>AvailabilityZones</code>.
      */
 
     public void setVPCZoneIdentifier(String vPCZoneIdentifier) {
@@ -1103,17 +1012,14 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * One or more subnet IDs, if applicable, separated by commas.
      * </p>
      * <p>
-     * If you specify <code>VPCZoneIdentifier</code> and
-     * <code>AvailabilityZones</code>, ensure that the Availability Zones of the
-     * subnets match the values for <code>AvailabilityZones</code>.
+     * If you specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>, ensure that the Availability
+     * Zones of the subnets match the values for <code>AvailabilityZones</code>.
      * </p>
      * 
      * @return One or more subnet IDs, if applicable, separated by commas.</p>
      *         <p>
-     *         If you specify <code>VPCZoneIdentifier</code> and
-     *         <code>AvailabilityZones</code>, ensure that the Availability
-     *         Zones of the subnets match the values for
-     *         <code>AvailabilityZones</code>.
+     *         If you specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>, ensure that the
+     *         Availability Zones of the subnets match the values for <code>AvailabilityZones</code>.
      */
 
     public String getVPCZoneIdentifier() {
@@ -1125,19 +1031,16 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * One or more subnet IDs, if applicable, separated by commas.
      * </p>
      * <p>
-     * If you specify <code>VPCZoneIdentifier</code> and
-     * <code>AvailabilityZones</code>, ensure that the Availability Zones of the
-     * subnets match the values for <code>AvailabilityZones</code>.
+     * If you specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>, ensure that the Availability
+     * Zones of the subnets match the values for <code>AvailabilityZones</code>.
      * </p>
      * 
      * @param vPCZoneIdentifier
      *        One or more subnet IDs, if applicable, separated by commas.</p>
      *        <p>
-     *        If you specify <code>VPCZoneIdentifier</code> and
-     *        <code>AvailabilityZones</code>, ensure that the Availability Zones
-     *        of the subnets match the values for <code>AvailabilityZones</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>, ensure that the
+     *        Availability Zones of the subnets match the values for <code>AvailabilityZones</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withVPCZoneIdentifier(String vPCZoneIdentifier) {
@@ -1169,15 +1072,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      *        The metrics enabled for the group.
      */
 
-    public void setEnabledMetrics(
-            java.util.Collection<EnabledMetric> enabledMetrics) {
+    public void setEnabledMetrics(java.util.Collection<EnabledMetric> enabledMetrics) {
         if (enabledMetrics == null) {
             this.enabledMetrics = null;
             return;
         }
 
-        this.enabledMetrics = new com.amazonaws.internal.SdkInternalList<EnabledMetric>(
-                enabledMetrics);
+        this.enabledMetrics = new com.amazonaws.internal.SdkInternalList<EnabledMetric>(enabledMetrics);
     }
 
     /**
@@ -1185,22 +1086,19 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * The metrics enabled for the group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEnabledMetrics(java.util.Collection)} or
-     * {@link #withEnabledMetrics(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEnabledMetrics(java.util.Collection)} or {@link #withEnabledMetrics(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param enabledMetrics
      *        The metrics enabled for the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withEnabledMetrics(EnabledMetric... enabledMetrics) {
         if (this.enabledMetrics == null) {
-            setEnabledMetrics(new com.amazonaws.internal.SdkInternalList<EnabledMetric>(
-                    enabledMetrics.length));
+            setEnabledMetrics(new com.amazonaws.internal.SdkInternalList<EnabledMetric>(enabledMetrics.length));
         }
         for (EnabledMetric ele : enabledMetrics) {
             this.enabledMetrics.add(ele);
@@ -1215,25 +1113,21 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param enabledMetrics
      *        The metrics enabled for the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AutoScalingGroup withEnabledMetrics(
-            java.util.Collection<EnabledMetric> enabledMetrics) {
+    public AutoScalingGroup withEnabledMetrics(java.util.Collection<EnabledMetric> enabledMetrics) {
         setEnabledMetrics(enabledMetrics);
         return this;
     }
 
     /**
      * <p>
-     * The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.
+     * The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
      * </p>
      * 
      * @param status
-     *        The current state of the group when <a>DeleteAutoScalingGroup</a>
-     *        is in progress.
+     *        The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
      */
 
     public void setStatus(String status) {
@@ -1242,12 +1136,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.
+     * The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
      * </p>
      * 
-     * @return The current state of the group when <a>DeleteAutoScalingGroup</a>
-     *         is in progress.
+     * @return The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
      */
 
     public String getStatus() {
@@ -1256,15 +1148,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.
+     * The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
      * </p>
      * 
      * @param status
-     *        The current state of the group when <a>DeleteAutoScalingGroup</a>
-     *        is in progress.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withStatus(String status) {
@@ -1302,8 +1191,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
             return;
         }
 
-        this.tags = new com.amazonaws.internal.SdkInternalList<TagDescription>(
-                tags);
+        this.tags = new com.amazonaws.internal.SdkInternalList<TagDescription>(tags);
     }
 
     /**
@@ -1311,22 +1199,19 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * The tags for the group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        The tags for the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withTags(TagDescription... tags) {
         if (this.tags == null) {
-            setTags(new com.amazonaws.internal.SdkInternalList<TagDescription>(
-                    tags.length));
+            setTags(new com.amazonaws.internal.SdkInternalList<TagDescription>(tags.length));
         }
         for (TagDescription ele : tags) {
             this.tags.add(ele);
@@ -1341,8 +1226,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param tags
      *        The tags for the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withTags(java.util.Collection<TagDescription> tags) {
@@ -1374,15 +1258,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      *        The termination policies for the group.
      */
 
-    public void setTerminationPolicies(
-            java.util.Collection<String> terminationPolicies) {
+    public void setTerminationPolicies(java.util.Collection<String> terminationPolicies) {
         if (terminationPolicies == null) {
             this.terminationPolicies = null;
             return;
         }
 
-        this.terminationPolicies = new com.amazonaws.internal.SdkInternalList<String>(
-                terminationPolicies);
+        this.terminationPolicies = new com.amazonaws.internal.SdkInternalList<String>(terminationPolicies);
     }
 
     /**
@@ -1390,23 +1272,19 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * The termination policies for the group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTerminationPolicies(java.util.Collection)} or
-     * {@link #withTerminationPolicies(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTerminationPolicies(java.util.Collection)} or {@link #withTerminationPolicies(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param terminationPolicies
      *        The termination policies for the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AutoScalingGroup withTerminationPolicies(
-            String... terminationPolicies) {
+    public AutoScalingGroup withTerminationPolicies(String... terminationPolicies) {
         if (this.terminationPolicies == null) {
-            setTerminationPolicies(new com.amazonaws.internal.SdkInternalList<String>(
-                    terminationPolicies.length));
+            setTerminationPolicies(new com.amazonaws.internal.SdkInternalList<String>(terminationPolicies.length));
         }
         for (String ele : terminationPolicies) {
             this.terminationPolicies.add(ele);
@@ -1421,40 +1299,34 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param terminationPolicies
      *        The termination policies for the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AutoScalingGroup withTerminationPolicies(
-            java.util.Collection<String> terminationPolicies) {
+    public AutoScalingGroup withTerminationPolicies(java.util.Collection<String> terminationPolicies) {
         setTerminationPolicies(terminationPolicies);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether newly launched instances are protected from termination
-     * by Auto Scaling when scaling in.
+     * Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
      * </p>
      * 
      * @param newInstancesProtectedFromScaleIn
-     *        Indicates whether newly launched instances are protected from
-     *        termination by Auto Scaling when scaling in.
+     *        Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
      */
 
-    public void setNewInstancesProtectedFromScaleIn(
-            Boolean newInstancesProtectedFromScaleIn) {
+    public void setNewInstancesProtectedFromScaleIn(Boolean newInstancesProtectedFromScaleIn) {
         this.newInstancesProtectedFromScaleIn = newInstancesProtectedFromScaleIn;
     }
 
     /**
      * <p>
-     * Indicates whether newly launched instances are protected from termination
-     * by Auto Scaling when scaling in.
+     * Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
      * </p>
      * 
-     * @return Indicates whether newly launched instances are protected from
-     *         termination by Auto Scaling when scaling in.
+     * @return Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling
+     *         in.
      */
 
     public Boolean getNewInstancesProtectedFromScaleIn() {
@@ -1463,31 +1335,26 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether newly launched instances are protected from termination
-     * by Auto Scaling when scaling in.
+     * Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
      * </p>
      * 
      * @param newInstancesProtectedFromScaleIn
-     *        Indicates whether newly launched instances are protected from
-     *        termination by Auto Scaling when scaling in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AutoScalingGroup withNewInstancesProtectedFromScaleIn(
-            Boolean newInstancesProtectedFromScaleIn) {
+    public AutoScalingGroup withNewInstancesProtectedFromScaleIn(Boolean newInstancesProtectedFromScaleIn) {
         setNewInstancesProtectedFromScaleIn(newInstancesProtectedFromScaleIn);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether newly launched instances are protected from termination
-     * by Auto Scaling when scaling in.
+     * Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
      * </p>
      * 
-     * @return Indicates whether newly launched instances are protected from
-     *         termination by Auto Scaling when scaling in.
+     * @return Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling
+     *         in.
      */
 
     public Boolean isNewInstancesProtectedFromScaleIn() {
@@ -1495,8 +1362,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1507,13 +1373,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
         if (getAutoScalingGroupARN() != null)
             sb.append("AutoScalingGroupARN: " + getAutoScalingGroupARN() + ",");
         if (getLaunchConfigurationName() != null)
-            sb.append("LaunchConfigurationName: "
-                    + getLaunchConfigurationName() + ",");
+            sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ",");
         if (getMinSize() != null)
             sb.append("MinSize: " + getMinSize() + ",");
         if (getMaxSize() != null)
@@ -1531,8 +1395,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (getHealthCheckType() != null)
             sb.append("HealthCheckType: " + getHealthCheckType() + ",");
         if (getHealthCheckGracePeriod() != null)
-            sb.append("HealthCheckGracePeriod: " + getHealthCheckGracePeriod()
-                    + ",");
+            sb.append("HealthCheckGracePeriod: " + getHealthCheckGracePeriod() + ",");
         if (getInstances() != null)
             sb.append("Instances: " + getInstances() + ",");
         if (getCreatedTime() != null)
@@ -1552,8 +1415,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (getTerminationPolicies() != null)
             sb.append("TerminationPolicies: " + getTerminationPolicies() + ",");
         if (getNewInstancesProtectedFromScaleIn() != null)
-            sb.append("NewInstancesProtectedFromScaleIn: "
-                    + getNewInstancesProtectedFromScaleIn());
+            sb.append("NewInstancesProtectedFromScaleIn: " + getNewInstancesProtectedFromScaleIn());
         sb.append("}");
         return sb.toString();
     }
@@ -1568,141 +1430,94 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (obj instanceof AutoScalingGroup == false)
             return false;
         AutoScalingGroup other = (AutoScalingGroup) obj;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
-        if (other.getAutoScalingGroupARN() == null
-                ^ this.getAutoScalingGroupARN() == null)
+        if (other.getAutoScalingGroupARN() == null ^ this.getAutoScalingGroupARN() == null)
             return false;
-        if (other.getAutoScalingGroupARN() != null
-                && other.getAutoScalingGroupARN().equals(
-                        this.getAutoScalingGroupARN()) == false)
+        if (other.getAutoScalingGroupARN() != null && other.getAutoScalingGroupARN().equals(this.getAutoScalingGroupARN()) == false)
             return false;
-        if (other.getLaunchConfigurationName() == null
-                ^ this.getLaunchConfigurationName() == null)
+        if (other.getLaunchConfigurationName() == null ^ this.getLaunchConfigurationName() == null)
             return false;
-        if (other.getLaunchConfigurationName() != null
-                && other.getLaunchConfigurationName().equals(
-                        this.getLaunchConfigurationName()) == false)
+        if (other.getLaunchConfigurationName() != null && other.getLaunchConfigurationName().equals(this.getLaunchConfigurationName()) == false)
             return false;
         if (other.getMinSize() == null ^ this.getMinSize() == null)
             return false;
-        if (other.getMinSize() != null
-                && other.getMinSize().equals(this.getMinSize()) == false)
+        if (other.getMinSize() != null && other.getMinSize().equals(this.getMinSize()) == false)
             return false;
         if (other.getMaxSize() == null ^ this.getMaxSize() == null)
             return false;
-        if (other.getMaxSize() != null
-                && other.getMaxSize().equals(this.getMaxSize()) == false)
+        if (other.getMaxSize() != null && other.getMaxSize().equals(this.getMaxSize()) == false)
             return false;
-        if (other.getDesiredCapacity() == null
-                ^ this.getDesiredCapacity() == null)
+        if (other.getDesiredCapacity() == null ^ this.getDesiredCapacity() == null)
             return false;
-        if (other.getDesiredCapacity() != null
-                && other.getDesiredCapacity().equals(this.getDesiredCapacity()) == false)
+        if (other.getDesiredCapacity() != null && other.getDesiredCapacity().equals(this.getDesiredCapacity()) == false)
             return false;
-        if (other.getDefaultCooldown() == null
-                ^ this.getDefaultCooldown() == null)
+        if (other.getDefaultCooldown() == null ^ this.getDefaultCooldown() == null)
             return false;
-        if (other.getDefaultCooldown() != null
-                && other.getDefaultCooldown().equals(this.getDefaultCooldown()) == false)
+        if (other.getDefaultCooldown() != null && other.getDefaultCooldown().equals(this.getDefaultCooldown()) == false)
             return false;
-        if (other.getAvailabilityZones() == null
-                ^ this.getAvailabilityZones() == null)
+        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null)
             return false;
-        if (other.getAvailabilityZones() != null
-                && other.getAvailabilityZones().equals(
-                        this.getAvailabilityZones()) == false)
+        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false)
             return false;
-        if (other.getLoadBalancerNames() == null
-                ^ this.getLoadBalancerNames() == null)
+        if (other.getLoadBalancerNames() == null ^ this.getLoadBalancerNames() == null)
             return false;
-        if (other.getLoadBalancerNames() != null
-                && other.getLoadBalancerNames().equals(
-                        this.getLoadBalancerNames()) == false)
+        if (other.getLoadBalancerNames() != null && other.getLoadBalancerNames().equals(this.getLoadBalancerNames()) == false)
             return false;
-        if (other.getTargetGroupARNs() == null
-                ^ this.getTargetGroupARNs() == null)
+        if (other.getTargetGroupARNs() == null ^ this.getTargetGroupARNs() == null)
             return false;
-        if (other.getTargetGroupARNs() != null
-                && other.getTargetGroupARNs().equals(this.getTargetGroupARNs()) == false)
+        if (other.getTargetGroupARNs() != null && other.getTargetGroupARNs().equals(this.getTargetGroupARNs()) == false)
             return false;
-        if (other.getHealthCheckType() == null
-                ^ this.getHealthCheckType() == null)
+        if (other.getHealthCheckType() == null ^ this.getHealthCheckType() == null)
             return false;
-        if (other.getHealthCheckType() != null
-                && other.getHealthCheckType().equals(this.getHealthCheckType()) == false)
+        if (other.getHealthCheckType() != null && other.getHealthCheckType().equals(this.getHealthCheckType()) == false)
             return false;
-        if (other.getHealthCheckGracePeriod() == null
-                ^ this.getHealthCheckGracePeriod() == null)
+        if (other.getHealthCheckGracePeriod() == null ^ this.getHealthCheckGracePeriod() == null)
             return false;
-        if (other.getHealthCheckGracePeriod() != null
-                && other.getHealthCheckGracePeriod().equals(
-                        this.getHealthCheckGracePeriod()) == false)
+        if (other.getHealthCheckGracePeriod() != null && other.getHealthCheckGracePeriod().equals(this.getHealthCheckGracePeriod()) == false)
             return false;
         if (other.getInstances() == null ^ this.getInstances() == null)
             return false;
-        if (other.getInstances() != null
-                && other.getInstances().equals(this.getInstances()) == false)
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
             return false;
         if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
             return false;
-        if (other.getCreatedTime() != null
-                && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
-        if (other.getSuspendedProcesses() == null
-                ^ this.getSuspendedProcesses() == null)
+        if (other.getSuspendedProcesses() == null ^ this.getSuspendedProcesses() == null)
             return false;
-        if (other.getSuspendedProcesses() != null
-                && other.getSuspendedProcesses().equals(
-                        this.getSuspendedProcesses()) == false)
+        if (other.getSuspendedProcesses() != null && other.getSuspendedProcesses().equals(this.getSuspendedProcesses()) == false)
             return false;
-        if (other.getPlacementGroup() == null
-                ^ this.getPlacementGroup() == null)
+        if (other.getPlacementGroup() == null ^ this.getPlacementGroup() == null)
             return false;
-        if (other.getPlacementGroup() != null
-                && other.getPlacementGroup().equals(this.getPlacementGroup()) == false)
+        if (other.getPlacementGroup() != null && other.getPlacementGroup().equals(this.getPlacementGroup()) == false)
             return false;
-        if (other.getVPCZoneIdentifier() == null
-                ^ this.getVPCZoneIdentifier() == null)
+        if (other.getVPCZoneIdentifier() == null ^ this.getVPCZoneIdentifier() == null)
             return false;
-        if (other.getVPCZoneIdentifier() != null
-                && other.getVPCZoneIdentifier().equals(
-                        this.getVPCZoneIdentifier()) == false)
+        if (other.getVPCZoneIdentifier() != null && other.getVPCZoneIdentifier().equals(this.getVPCZoneIdentifier()) == false)
             return false;
-        if (other.getEnabledMetrics() == null
-                ^ this.getEnabledMetrics() == null)
+        if (other.getEnabledMetrics() == null ^ this.getEnabledMetrics() == null)
             return false;
-        if (other.getEnabledMetrics() != null
-                && other.getEnabledMetrics().equals(this.getEnabledMetrics()) == false)
+        if (other.getEnabledMetrics() != null && other.getEnabledMetrics().equals(this.getEnabledMetrics()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getTerminationPolicies() == null
-                ^ this.getTerminationPolicies() == null)
+        if (other.getTerminationPolicies() == null ^ this.getTerminationPolicies() == null)
             return false;
-        if (other.getTerminationPolicies() != null
-                && other.getTerminationPolicies().equals(
-                        this.getTerminationPolicies()) == false)
+        if (other.getTerminationPolicies() != null && other.getTerminationPolicies().equals(this.getTerminationPolicies()) == false)
             return false;
-        if (other.getNewInstancesProtectedFromScaleIn() == null
-                ^ this.getNewInstancesProtectedFromScaleIn() == null)
+        if (other.getNewInstancesProtectedFromScaleIn() == null ^ this.getNewInstancesProtectedFromScaleIn() == null)
             return false;
         if (other.getNewInstancesProtectedFromScaleIn() != null
-                && other.getNewInstancesProtectedFromScaleIn().equals(
-                        this.getNewInstancesProtectedFromScaleIn()) == false)
+                && other.getNewInstancesProtectedFromScaleIn().equals(this.getNewInstancesProtectedFromScaleIn()) == false)
             return false;
         return true;
     }
@@ -1712,83 +1527,28 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupARN() == null) ? 0
-                        : getAutoScalingGroupARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLaunchConfigurationName() == null) ? 0
-                        : getLaunchConfigurationName().hashCode());
-        hashCode = prime * hashCode
-                + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultCooldown() == null) ? 0 : getDefaultCooldown()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZones() == null) ? 0
-                        : getAvailabilityZones().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerNames() == null) ? 0
-                        : getLoadBalancerNames().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTargetGroupARNs() == null) ? 0 : getTargetGroupARNs()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckType() == null) ? 0 : getHealthCheckType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckGracePeriod() == null) ? 0
-                        : getHealthCheckGracePeriod().hashCode());
-        hashCode = prime * hashCode
-                + ((getInstances() == null) ? 0 : getInstances().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSuspendedProcesses() == null) ? 0
-                        : getSuspendedProcesses().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPlacementGroup() == null) ? 0 : getPlacementGroup()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVPCZoneIdentifier() == null) ? 0
-                        : getVPCZoneIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEnabledMetrics() == null) ? 0 : getEnabledMetrics()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTerminationPolicies() == null) ? 0
-                        : getTerminationPolicies().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNewInstancesProtectedFromScaleIn() == null) ? 0
-                        : getNewInstancesProtectedFromScaleIn().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupARN() == null) ? 0 : getAutoScalingGroupARN().hashCode());
+        hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode());
+        hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
+        hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
+        hashCode = prime * hashCode + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity().hashCode());
+        hashCode = prime * hashCode + ((getDefaultCooldown() == null) ? 0 : getDefaultCooldown().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerNames() == null) ? 0 : getLoadBalancerNames().hashCode());
+        hashCode = prime * hashCode + ((getTargetGroupARNs() == null) ? 0 : getTargetGroupARNs().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckType() == null) ? 0 : getHealthCheckType().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckGracePeriod() == null) ? 0 : getHealthCheckGracePeriod().hashCode());
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getSuspendedProcesses() == null) ? 0 : getSuspendedProcesses().hashCode());
+        hashCode = prime * hashCode + ((getPlacementGroup() == null) ? 0 : getPlacementGroup().hashCode());
+        hashCode = prime * hashCode + ((getVPCZoneIdentifier() == null) ? 0 : getVPCZoneIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getEnabledMetrics() == null) ? 0 : getEnabledMetrics().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTerminationPolicies() == null) ? 0 : getTerminationPolicies().hashCode());
+        hashCode = prime * hashCode + ((getNewInstancesProtectedFromScaleIn() == null) ? 0 : getNewInstancesProtectedFromScaleIn().hashCode());
         return hashCode;
     }
 
@@ -1797,9 +1557,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         try {
             return (AutoScalingGroup) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeCacheParameterGroups</i> action.
  * </p>
  */
-public class DescribeCacheParameterGroupsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeCacheParameterGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,8 @@ public class DescribeCacheParameterGroupsResult extends
     private String marker;
     /**
      * <p>
-     * A list of cache parameter groups. Each element in the list contains
-     * detailed information about one cache parameter group.
+     * A list of cache parameter groups. Each element in the list contains detailed information about one cache
+     * parameter group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CacheParameterGroup> cacheParameterGroups;
@@ -71,8 +67,7 @@ public class DescribeCacheParameterGroupsResult extends
      * 
      * @param marker
      *        Provides an identifier to allow retrieval of paginated results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCacheParameterGroupsResult withMarker(String marker) {
@@ -82,12 +77,12 @@ public class DescribeCacheParameterGroupsResult extends
 
     /**
      * <p>
-     * A list of cache parameter groups. Each element in the list contains
-     * detailed information about one cache parameter group.
+     * A list of cache parameter groups. Each element in the list contains detailed information about one cache
+     * parameter group.
      * </p>
      * 
-     * @return A list of cache parameter groups. Each element in the list
-     *         contains detailed information about one cache parameter group.
+     * @return A list of cache parameter groups. Each element in the list contains detailed information about one cache
+     *         parameter group.
      */
 
     public java.util.List<CacheParameterGroup> getCacheParameterGroups() {
@@ -99,50 +94,44 @@ public class DescribeCacheParameterGroupsResult extends
 
     /**
      * <p>
-     * A list of cache parameter groups. Each element in the list contains
-     * detailed information about one cache parameter group.
+     * A list of cache parameter groups. Each element in the list contains detailed information about one cache
+     * parameter group.
      * </p>
      * 
      * @param cacheParameterGroups
-     *        A list of cache parameter groups. Each element in the list
-     *        contains detailed information about one cache parameter group.
+     *        A list of cache parameter groups. Each element in the list contains detailed information about one cache
+     *        parameter group.
      */
 
-    public void setCacheParameterGroups(
-            java.util.Collection<CacheParameterGroup> cacheParameterGroups) {
+    public void setCacheParameterGroups(java.util.Collection<CacheParameterGroup> cacheParameterGroups) {
         if (cacheParameterGroups == null) {
             this.cacheParameterGroups = null;
             return;
         }
 
-        this.cacheParameterGroups = new com.amazonaws.internal.SdkInternalList<CacheParameterGroup>(
-                cacheParameterGroups);
+        this.cacheParameterGroups = new com.amazonaws.internal.SdkInternalList<CacheParameterGroup>(cacheParameterGroups);
     }
 
     /**
      * <p>
-     * A list of cache parameter groups. Each element in the list contains
-     * detailed information about one cache parameter group.
+     * A list of cache parameter groups. Each element in the list contains detailed information about one cache
+     * parameter group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCacheParameterGroups(java.util.Collection)} or
-     * {@link #withCacheParameterGroups(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCacheParameterGroups(java.util.Collection)} or {@link #withCacheParameterGroups(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param cacheParameterGroups
-     *        A list of cache parameter groups. Each element in the list
-     *        contains detailed information about one cache parameter group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of cache parameter groups. Each element in the list contains detailed information about one cache
+     *        parameter group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCacheParameterGroupsResult withCacheParameterGroups(
-            CacheParameterGroup... cacheParameterGroups) {
+    public DescribeCacheParameterGroupsResult withCacheParameterGroups(CacheParameterGroup... cacheParameterGroups) {
         if (this.cacheParameterGroups == null) {
-            setCacheParameterGroups(new com.amazonaws.internal.SdkInternalList<CacheParameterGroup>(
-                    cacheParameterGroups.length));
+            setCacheParameterGroups(new com.amazonaws.internal.SdkInternalList<CacheParameterGroup>(cacheParameterGroups.length));
         }
         for (CacheParameterGroup ele : cacheParameterGroups) {
             this.cacheParameterGroups.add(ele);
@@ -152,26 +141,23 @@ public class DescribeCacheParameterGroupsResult extends
 
     /**
      * <p>
-     * A list of cache parameter groups. Each element in the list contains
-     * detailed information about one cache parameter group.
+     * A list of cache parameter groups. Each element in the list contains detailed information about one cache
+     * parameter group.
      * </p>
      * 
      * @param cacheParameterGroups
-     *        A list of cache parameter groups. Each element in the list
-     *        contains detailed information about one cache parameter group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of cache parameter groups. Each element in the list contains detailed information about one cache
+     *        parameter group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCacheParameterGroupsResult withCacheParameterGroups(
-            java.util.Collection<CacheParameterGroup> cacheParameterGroups) {
+    public DescribeCacheParameterGroupsResult withCacheParameterGroups(java.util.Collection<CacheParameterGroup> cacheParameterGroups) {
         setCacheParameterGroups(cacheParameterGroups);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -201,15 +187,11 @@ public class DescribeCacheParameterGroupsResult extends
         DescribeCacheParameterGroupsResult other = (DescribeCacheParameterGroupsResult) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
-        if (other.getCacheParameterGroups() == null
-                ^ this.getCacheParameterGroups() == null)
+        if (other.getCacheParameterGroups() == null ^ this.getCacheParameterGroups() == null)
             return false;
-        if (other.getCacheParameterGroups() != null
-                && other.getCacheParameterGroups().equals(
-                        this.getCacheParameterGroups()) == false)
+        if (other.getCacheParameterGroups() != null && other.getCacheParameterGroups().equals(this.getCacheParameterGroups()) == false)
             return false;
         return true;
     }
@@ -219,12 +201,8 @@ public class DescribeCacheParameterGroupsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheParameterGroups() == null) ? 0
-                        : getCacheParameterGroups().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getCacheParameterGroups() == null) ? 0 : getCacheParameterGroups().hashCode());
         return hashCode;
     }
 
@@ -233,9 +211,7 @@ public class DescribeCacheParameterGroupsResult extends
         try {
             return (DescribeCacheParameterGroupsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

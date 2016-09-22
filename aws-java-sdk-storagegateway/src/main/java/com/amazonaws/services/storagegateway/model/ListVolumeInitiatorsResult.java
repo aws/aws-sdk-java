@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -21,26 +19,21 @@ import java.io.Serializable;
  * ListVolumeInitiatorsOutput
  * </p>
  */
-public class ListVolumeInitiatorsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListVolumeInitiatorsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The host names and port numbers of all iSCSI initiators that are
-     * connected to the gateway.
+     * The host names and port numbers of all iSCSI initiators that are connected to the gateway.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> initiators;
 
     /**
      * <p>
-     * The host names and port numbers of all iSCSI initiators that are
-     * connected to the gateway.
+     * The host names and port numbers of all iSCSI initiators that are connected to the gateway.
      * </p>
      * 
-     * @return The host names and port numbers of all iSCSI initiators that are
-     *         connected to the gateway.
+     * @return The host names and port numbers of all iSCSI initiators that are connected to the gateway.
      */
 
     public java.util.List<String> getInitiators() {
@@ -52,13 +45,11 @@ public class ListVolumeInitiatorsResult extends
 
     /**
      * <p>
-     * The host names and port numbers of all iSCSI initiators that are
-     * connected to the gateway.
+     * The host names and port numbers of all iSCSI initiators that are connected to the gateway.
      * </p>
      * 
      * @param initiators
-     *        The host names and port numbers of all iSCSI initiators that are
-     *        connected to the gateway.
+     *        The host names and port numbers of all iSCSI initiators that are connected to the gateway.
      */
 
     public void setInitiators(java.util.Collection<String> initiators) {
@@ -67,33 +58,27 @@ public class ListVolumeInitiatorsResult extends
             return;
         }
 
-        this.initiators = new com.amazonaws.internal.SdkInternalList<String>(
-                initiators);
+        this.initiators = new com.amazonaws.internal.SdkInternalList<String>(initiators);
     }
 
     /**
      * <p>
-     * The host names and port numbers of all iSCSI initiators that are
-     * connected to the gateway.
+     * The host names and port numbers of all iSCSI initiators that are connected to the gateway.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInitiators(java.util.Collection)} or
-     * {@link #withInitiators(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInitiators(java.util.Collection)} or {@link #withInitiators(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param initiators
-     *        The host names and port numbers of all iSCSI initiators that are
-     *        connected to the gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The host names and port numbers of all iSCSI initiators that are connected to the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListVolumeInitiatorsResult withInitiators(String... initiators) {
         if (this.initiators == null) {
-            setInitiators(new com.amazonaws.internal.SdkInternalList<String>(
-                    initiators.length));
+            setInitiators(new com.amazonaws.internal.SdkInternalList<String>(initiators.length));
         }
         for (String ele : initiators) {
             this.initiators.add(ele);
@@ -103,26 +88,21 @@ public class ListVolumeInitiatorsResult extends
 
     /**
      * <p>
-     * The host names and port numbers of all iSCSI initiators that are
-     * connected to the gateway.
+     * The host names and port numbers of all iSCSI initiators that are connected to the gateway.
      * </p>
      * 
      * @param initiators
-     *        The host names and port numbers of all iSCSI initiators that are
-     *        connected to the gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The host names and port numbers of all iSCSI initiators that are connected to the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListVolumeInitiatorsResult withInitiators(
-            java.util.Collection<String> initiators) {
+    public ListVolumeInitiatorsResult withInitiators(java.util.Collection<String> initiators) {
         setInitiators(initiators);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -150,8 +130,7 @@ public class ListVolumeInitiatorsResult extends
         ListVolumeInitiatorsResult other = (ListVolumeInitiatorsResult) obj;
         if (other.getInitiators() == null ^ this.getInitiators() == null)
             return false;
-        if (other.getInitiators() != null
-                && other.getInitiators().equals(this.getInitiators()) == false)
+        if (other.getInitiators() != null && other.getInitiators().equals(this.getInitiators()) == false)
             return false;
         return true;
     }
@@ -161,8 +140,7 @@ public class ListVolumeInitiatorsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInitiators() == null) ? 0 : getInitiators().hashCode());
+        hashCode = prime * hashCode + ((getInitiators() == null) ? 0 : getInitiators().hashCode());
         return hashCode;
     }
 
@@ -171,9 +149,7 @@ public class ListVolumeInitiatorsResult extends
         try {
             return (ListVolumeInitiatorsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

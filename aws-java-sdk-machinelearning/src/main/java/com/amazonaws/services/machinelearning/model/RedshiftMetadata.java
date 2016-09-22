@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.machinelearning.model;
 
@@ -28,8 +26,7 @@ public class RedshiftMetadata implements Serializable, Cloneable {
     private String databaseUserName;
     /**
      * <p>
-     * The SQL query that is specified during
-     * <a>CreateDataSourceFromRedshift</a>. Returns only if <code>Verbose</code>
+     * The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>. Returns only if <code>Verbose</code>
      * is true in GetDataSourceInput.
      * </p>
      */
@@ -53,12 +50,10 @@ public class RedshiftMetadata implements Serializable, Cloneable {
 
     /**
      * @param redshiftDatabase
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RedshiftMetadata withRedshiftDatabase(
-            RedshiftDatabase redshiftDatabase) {
+    public RedshiftMetadata withRedshiftDatabase(RedshiftDatabase redshiftDatabase) {
         setRedshiftDatabase(redshiftDatabase);
         return this;
     }
@@ -81,8 +76,7 @@ public class RedshiftMetadata implements Serializable, Cloneable {
 
     /**
      * @param databaseUserName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RedshiftMetadata withDatabaseUserName(String databaseUserName) {
@@ -92,14 +86,12 @@ public class RedshiftMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SQL query that is specified during
-     * <a>CreateDataSourceFromRedshift</a>. Returns only if <code>Verbose</code>
+     * The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>. Returns only if <code>Verbose</code>
      * is true in GetDataSourceInput.
      * </p>
      * 
      * @param selectSqlQuery
-     *        The SQL query that is specified during
-     *        <a>CreateDataSourceFromRedshift</a>. Returns only if
+     *        The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>. Returns only if
      *        <code>Verbose</code> is true in GetDataSourceInput.
      */
 
@@ -109,13 +101,11 @@ public class RedshiftMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SQL query that is specified during
-     * <a>CreateDataSourceFromRedshift</a>. Returns only if <code>Verbose</code>
+     * The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>. Returns only if <code>Verbose</code>
      * is true in GetDataSourceInput.
      * </p>
      * 
-     * @return The SQL query that is specified during
-     *         <a>CreateDataSourceFromRedshift</a>. Returns only if
+     * @return The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>. Returns only if
      *         <code>Verbose</code> is true in GetDataSourceInput.
      */
 
@@ -125,17 +115,14 @@ public class RedshiftMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SQL query that is specified during
-     * <a>CreateDataSourceFromRedshift</a>. Returns only if <code>Verbose</code>
+     * The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>. Returns only if <code>Verbose</code>
      * is true in GetDataSourceInput.
      * </p>
      * 
      * @param selectSqlQuery
-     *        The SQL query that is specified during
-     *        <a>CreateDataSourceFromRedshift</a>. Returns only if
+     *        The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>. Returns only if
      *        <code>Verbose</code> is true in GetDataSourceInput.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RedshiftMetadata withSelectSqlQuery(String selectSqlQuery) {
@@ -144,8 +131,7 @@ public class RedshiftMetadata implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -175,25 +161,17 @@ public class RedshiftMetadata implements Serializable, Cloneable {
         if (obj instanceof RedshiftMetadata == false)
             return false;
         RedshiftMetadata other = (RedshiftMetadata) obj;
-        if (other.getRedshiftDatabase() == null
-                ^ this.getRedshiftDatabase() == null)
+        if (other.getRedshiftDatabase() == null ^ this.getRedshiftDatabase() == null)
             return false;
-        if (other.getRedshiftDatabase() != null
-                && other.getRedshiftDatabase().equals(
-                        this.getRedshiftDatabase()) == false)
+        if (other.getRedshiftDatabase() != null && other.getRedshiftDatabase().equals(this.getRedshiftDatabase()) == false)
             return false;
-        if (other.getDatabaseUserName() == null
-                ^ this.getDatabaseUserName() == null)
+        if (other.getDatabaseUserName() == null ^ this.getDatabaseUserName() == null)
             return false;
-        if (other.getDatabaseUserName() != null
-                && other.getDatabaseUserName().equals(
-                        this.getDatabaseUserName()) == false)
+        if (other.getDatabaseUserName() != null && other.getDatabaseUserName().equals(this.getDatabaseUserName()) == false)
             return false;
-        if (other.getSelectSqlQuery() == null
-                ^ this.getSelectSqlQuery() == null)
+        if (other.getSelectSqlQuery() == null ^ this.getSelectSqlQuery() == null)
             return false;
-        if (other.getSelectSqlQuery() != null
-                && other.getSelectSqlQuery().equals(this.getSelectSqlQuery()) == false)
+        if (other.getSelectSqlQuery() != null && other.getSelectSqlQuery().equals(this.getSelectSqlQuery()) == false)
             return false;
         return true;
     }
@@ -203,18 +181,9 @@ public class RedshiftMetadata implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRedshiftDatabase() == null) ? 0 : getRedshiftDatabase()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDatabaseUserName() == null) ? 0 : getDatabaseUserName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSelectSqlQuery() == null) ? 0 : getSelectSqlQuery()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRedshiftDatabase() == null) ? 0 : getRedshiftDatabase().hashCode());
+        hashCode = prime * hashCode + ((getDatabaseUserName() == null) ? 0 : getDatabaseUserName().hashCode());
+        hashCode = prime * hashCode + ((getSelectSqlQuery() == null) ? 0 : getSelectSqlQuery().hashCode());
         return hashCode;
     }
 
@@ -223,9 +192,7 @@ public class RedshiftMetadata implements Serializable, Cloneable {
         try {
             return (RedshiftMetadata) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

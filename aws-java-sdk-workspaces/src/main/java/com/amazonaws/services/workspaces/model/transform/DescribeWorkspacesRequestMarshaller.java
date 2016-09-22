@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.workspaces.model.transform;
 
@@ -35,44 +33,35 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeWorkspacesRequest Marshaller
  */
-public class DescribeWorkspacesRequestMarshaller
-        implements
-        Marshaller<Request<DescribeWorkspacesRequest>, DescribeWorkspacesRequest> {
+public class DescribeWorkspacesRequestMarshaller implements Marshaller<Request<DescribeWorkspacesRequest>, DescribeWorkspacesRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeWorkspacesRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeWorkspacesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeWorkspacesRequest> marshall(
-            DescribeWorkspacesRequest describeWorkspacesRequest) {
+    public Request<DescribeWorkspacesRequest> marshall(DescribeWorkspacesRequest describeWorkspacesRequest) {
 
         if (describeWorkspacesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeWorkspacesRequest> request = new DefaultRequest<DescribeWorkspacesRequest>(
-                describeWorkspacesRequest, "AmazonWorkspaces");
-        request.addHeader("X-Amz-Target",
-                "WorkspacesService.DescribeWorkspaces");
+        Request<DescribeWorkspacesRequest> request = new DefaultRequest<DescribeWorkspacesRequest>(describeWorkspacesRequest, "AmazonWorkspaces");
+        request.addHeader("X-Amz-Target", "WorkspacesService.DescribeWorkspaces");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> workspaceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeWorkspacesRequest
                     .getWorkspaceIds();
-            if (!workspaceIdsList.isEmpty()
-                    || !workspaceIdsList.isAutoConstruct()) {
+            if (!workspaceIdsList.isEmpty() || !workspaceIdsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("WorkspaceIds");
                 jsonGenerator.writeStartArray();
                 for (String workspaceIdsListValue : workspaceIdsList) {
@@ -83,36 +72,29 @@ public class DescribeWorkspacesRequestMarshaller
                 jsonGenerator.writeEndArray();
             }
             if (describeWorkspacesRequest.getDirectoryId() != null) {
-                jsonGenerator.writeFieldName("DirectoryId").writeValue(
-                        describeWorkspacesRequest.getDirectoryId());
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(describeWorkspacesRequest.getDirectoryId());
             }
             if (describeWorkspacesRequest.getUserName() != null) {
-                jsonGenerator.writeFieldName("UserName").writeValue(
-                        describeWorkspacesRequest.getUserName());
+                jsonGenerator.writeFieldName("UserName").writeValue(describeWorkspacesRequest.getUserName());
             }
             if (describeWorkspacesRequest.getBundleId() != null) {
-                jsonGenerator.writeFieldName("BundleId").writeValue(
-                        describeWorkspacesRequest.getBundleId());
+                jsonGenerator.writeFieldName("BundleId").writeValue(describeWorkspacesRequest.getBundleId());
             }
             if (describeWorkspacesRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(
-                        describeWorkspacesRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(describeWorkspacesRequest.getLimit());
             }
             if (describeWorkspacesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(
-                        describeWorkspacesRequest.getNextToken());
+                jsonGenerator.writeFieldName("NextToken").writeValue(describeWorkspacesRequest.getNextToken());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

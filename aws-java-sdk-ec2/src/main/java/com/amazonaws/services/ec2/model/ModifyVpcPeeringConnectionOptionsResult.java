@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -20,49 +18,41 @@ import com.amazonaws.AmazonWebServiceResult;
 /**
  * 
  */
-public class ModifyVpcPeeringConnectionOptionsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ModifyVpcPeeringConnectionOptionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
-     * Information about the VPC peering connection options for the requester
-     * VPC.
+     * Information about the VPC peering connection options for the requester VPC.
      * </p>
      */
     private PeeringConnectionOptions requesterPeeringConnectionOptions;
     /**
      * <p>
-     * Information about the VPC peering connection options for the accepter
-     * VPC.
+     * Information about the VPC peering connection options for the accepter VPC.
      * </p>
      */
     private PeeringConnectionOptions accepterPeeringConnectionOptions;
 
     /**
      * <p>
-     * Information about the VPC peering connection options for the requester
-     * VPC.
+     * Information about the VPC peering connection options for the requester VPC.
      * </p>
      * 
      * @param requesterPeeringConnectionOptions
-     *        Information about the VPC peering connection options for the
-     *        requester VPC.
+     *        Information about the VPC peering connection options for the requester VPC.
      */
 
-    public void setRequesterPeeringConnectionOptions(
-            PeeringConnectionOptions requesterPeeringConnectionOptions) {
+    public void setRequesterPeeringConnectionOptions(PeeringConnectionOptions requesterPeeringConnectionOptions) {
         this.requesterPeeringConnectionOptions = requesterPeeringConnectionOptions;
     }
 
     /**
      * <p>
-     * Information about the VPC peering connection options for the requester
-     * VPC.
+     * Information about the VPC peering connection options for the requester VPC.
      * </p>
      * 
-     * @return Information about the VPC peering connection options for the
-     *         requester VPC.
+     * @return Information about the VPC peering connection options for the requester VPC.
      */
 
     public PeeringConnectionOptions getRequesterPeeringConnectionOptions() {
@@ -71,47 +61,38 @@ public class ModifyVpcPeeringConnectionOptionsResult extends
 
     /**
      * <p>
-     * Information about the VPC peering connection options for the requester
-     * VPC.
+     * Information about the VPC peering connection options for the requester VPC.
      * </p>
      * 
      * @param requesterPeeringConnectionOptions
-     *        Information about the VPC peering connection options for the
-     *        requester VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the VPC peering connection options for the requester VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyVpcPeeringConnectionOptionsResult withRequesterPeeringConnectionOptions(
-            PeeringConnectionOptions requesterPeeringConnectionOptions) {
+    public ModifyVpcPeeringConnectionOptionsResult withRequesterPeeringConnectionOptions(PeeringConnectionOptions requesterPeeringConnectionOptions) {
         setRequesterPeeringConnectionOptions(requesterPeeringConnectionOptions);
         return this;
     }
 
     /**
      * <p>
-     * Information about the VPC peering connection options for the accepter
-     * VPC.
+     * Information about the VPC peering connection options for the accepter VPC.
      * </p>
      * 
      * @param accepterPeeringConnectionOptions
-     *        Information about the VPC peering connection options for the
-     *        accepter VPC.
+     *        Information about the VPC peering connection options for the accepter VPC.
      */
 
-    public void setAccepterPeeringConnectionOptions(
-            PeeringConnectionOptions accepterPeeringConnectionOptions) {
+    public void setAccepterPeeringConnectionOptions(PeeringConnectionOptions accepterPeeringConnectionOptions) {
         this.accepterPeeringConnectionOptions = accepterPeeringConnectionOptions;
     }
 
     /**
      * <p>
-     * Information about the VPC peering connection options for the accepter
-     * VPC.
+     * Information about the VPC peering connection options for the accepter VPC.
      * </p>
      * 
-     * @return Information about the VPC peering connection options for the
-     *         accepter VPC.
+     * @return Information about the VPC peering connection options for the accepter VPC.
      */
 
     public PeeringConnectionOptions getAccepterPeeringConnectionOptions() {
@@ -120,26 +101,21 @@ public class ModifyVpcPeeringConnectionOptionsResult extends
 
     /**
      * <p>
-     * Information about the VPC peering connection options for the accepter
-     * VPC.
+     * Information about the VPC peering connection options for the accepter VPC.
      * </p>
      * 
      * @param accepterPeeringConnectionOptions
-     *        Information about the VPC peering connection options for the
-     *        accepter VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the VPC peering connection options for the accepter VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyVpcPeeringConnectionOptionsResult withAccepterPeeringConnectionOptions(
-            PeeringConnectionOptions accepterPeeringConnectionOptions) {
+    public ModifyVpcPeeringConnectionOptionsResult withAccepterPeeringConnectionOptions(PeeringConnectionOptions accepterPeeringConnectionOptions) {
         setAccepterPeeringConnectionOptions(accepterPeeringConnectionOptions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -150,11 +126,9 @@ public class ModifyVpcPeeringConnectionOptionsResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRequesterPeeringConnectionOptions() != null)
-            sb.append("RequesterPeeringConnectionOptions: "
-                    + getRequesterPeeringConnectionOptions() + ",");
+            sb.append("RequesterPeeringConnectionOptions: " + getRequesterPeeringConnectionOptions() + ",");
         if (getAccepterPeeringConnectionOptions() != null)
-            sb.append("AccepterPeeringConnectionOptions: "
-                    + getAccepterPeeringConnectionOptions());
+            sb.append("AccepterPeeringConnectionOptions: " + getAccepterPeeringConnectionOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -169,19 +143,15 @@ public class ModifyVpcPeeringConnectionOptionsResult extends
         if (obj instanceof ModifyVpcPeeringConnectionOptionsResult == false)
             return false;
         ModifyVpcPeeringConnectionOptionsResult other = (ModifyVpcPeeringConnectionOptionsResult) obj;
-        if (other.getRequesterPeeringConnectionOptions() == null
-                ^ this.getRequesterPeeringConnectionOptions() == null)
+        if (other.getRequesterPeeringConnectionOptions() == null ^ this.getRequesterPeeringConnectionOptions() == null)
             return false;
         if (other.getRequesterPeeringConnectionOptions() != null
-                && other.getRequesterPeeringConnectionOptions().equals(
-                        this.getRequesterPeeringConnectionOptions()) == false)
+                && other.getRequesterPeeringConnectionOptions().equals(this.getRequesterPeeringConnectionOptions()) == false)
             return false;
-        if (other.getAccepterPeeringConnectionOptions() == null
-                ^ this.getAccepterPeeringConnectionOptions() == null)
+        if (other.getAccepterPeeringConnectionOptions() == null ^ this.getAccepterPeeringConnectionOptions() == null)
             return false;
         if (other.getAccepterPeeringConnectionOptions() != null
-                && other.getAccepterPeeringConnectionOptions().equals(
-                        this.getAccepterPeeringConnectionOptions()) == false)
+                && other.getAccepterPeeringConnectionOptions().equals(this.getAccepterPeeringConnectionOptions()) == false)
             return false;
         return true;
     }
@@ -191,14 +161,8 @@ public class ModifyVpcPeeringConnectionOptionsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRequesterPeeringConnectionOptions() == null) ? 0
-                        : getRequesterPeeringConnectionOptions().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAccepterPeeringConnectionOptions() == null) ? 0
-                        : getAccepterPeeringConnectionOptions().hashCode());
+        hashCode = prime * hashCode + ((getRequesterPeeringConnectionOptions() == null) ? 0 : getRequesterPeeringConnectionOptions().hashCode());
+        hashCode = prime * hashCode + ((getAccepterPeeringConnectionOptions() == null) ? 0 : getAccepterPeeringConnectionOptions().hashCode());
         return hashCode;
     }
 
@@ -207,9 +171,7 @@ public class ModifyVpcPeeringConnectionOptionsResult extends
         try {
             return (ModifyVpcPeeringConnectionOptionsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

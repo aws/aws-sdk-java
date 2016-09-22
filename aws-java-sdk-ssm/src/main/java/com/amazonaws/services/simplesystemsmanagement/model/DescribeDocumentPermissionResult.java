@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
@@ -19,26 +17,22 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeDocumentPermissionResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The account IDs that have permission to use this document. The ID can be
-     * either an AWS account or <i>All</i>.
+     * The account IDs that have permission to use this document. The ID can be either an AWS account or <i>All</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> accountIds;
 
     /**
      * <p>
-     * The account IDs that have permission to use this document. The ID can be
-     * either an AWS account or <i>All</i>.
+     * The account IDs that have permission to use this document. The ID can be either an AWS account or <i>All</i>.
      * </p>
      * 
-     * @return The account IDs that have permission to use this document. The ID
-     *         can be either an AWS account or <i>All</i>.
+     * @return The account IDs that have permission to use this document. The ID can be either an AWS account or
+     *         <i>All</i>.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -50,13 +44,12 @@ public class DescribeDocumentPermissionResult extends
 
     /**
      * <p>
-     * The account IDs that have permission to use this document. The ID can be
-     * either an AWS account or <i>All</i>.
+     * The account IDs that have permission to use this document. The ID can be either an AWS account or <i>All</i>.
      * </p>
      * 
      * @param accountIds
-     *        The account IDs that have permission to use this document. The ID
-     *        can be either an AWS account or <i>All</i>.
+     *        The account IDs that have permission to use this document. The ID can be either an AWS account or
+     *        <i>All</i>.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -65,33 +58,28 @@ public class DescribeDocumentPermissionResult extends
             return;
         }
 
-        this.accountIds = new com.amazonaws.internal.SdkInternalList<String>(
-                accountIds);
+        this.accountIds = new com.amazonaws.internal.SdkInternalList<String>(accountIds);
     }
 
     /**
      * <p>
-     * The account IDs that have permission to use this document. The ID can be
-     * either an AWS account or <i>All</i>.
+     * The account IDs that have permission to use this document. The ID can be either an AWS account or <i>All</i>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAccountIds(java.util.Collection)} or
-     * {@link #withAccountIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param accountIds
-     *        The account IDs that have permission to use this document. The ID
-     *        can be either an AWS account or <i>All</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The account IDs that have permission to use this document. The ID can be either an AWS account or
+     *        <i>All</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDocumentPermissionResult withAccountIds(String... accountIds) {
         if (this.accountIds == null) {
-            setAccountIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    accountIds.length));
+            setAccountIds(new com.amazonaws.internal.SdkInternalList<String>(accountIds.length));
         }
         for (String ele : accountIds) {
             this.accountIds.add(ele);
@@ -101,26 +89,22 @@ public class DescribeDocumentPermissionResult extends
 
     /**
      * <p>
-     * The account IDs that have permission to use this document. The ID can be
-     * either an AWS account or <i>All</i>.
+     * The account IDs that have permission to use this document. The ID can be either an AWS account or <i>All</i>.
      * </p>
      * 
      * @param accountIds
-     *        The account IDs that have permission to use this document. The ID
-     *        can be either an AWS account or <i>All</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The account IDs that have permission to use this document. The ID can be either an AWS account or
+     *        <i>All</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDocumentPermissionResult withAccountIds(
-            java.util.Collection<String> accountIds) {
+    public DescribeDocumentPermissionResult withAccountIds(java.util.Collection<String> accountIds) {
         setAccountIds(accountIds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -148,8 +132,7 @@ public class DescribeDocumentPermissionResult extends
         DescribeDocumentPermissionResult other = (DescribeDocumentPermissionResult) obj;
         if (other.getAccountIds() == null ^ this.getAccountIds() == null)
             return false;
-        if (other.getAccountIds() != null
-                && other.getAccountIds().equals(this.getAccountIds()) == false)
+        if (other.getAccountIds() != null && other.getAccountIds().equals(this.getAccountIds()) == false)
             return false;
         return true;
     }
@@ -159,8 +142,7 @@ public class DescribeDocumentPermissionResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
+        hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         return hashCode;
     }
 
@@ -169,9 +151,7 @@ public class DescribeDocumentPermissionResult extends
         try {
             return (DescribeDocumentPermissionResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

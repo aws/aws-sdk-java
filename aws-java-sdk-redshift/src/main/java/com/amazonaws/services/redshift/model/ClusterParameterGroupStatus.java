@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -41,10 +39,8 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href=
-     * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"
-     * >Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
-     * Management Guide</i>.
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ClusterParameterStatus> clusterParameterStatusList;
@@ -81,12 +77,10 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      * 
      * @param parameterGroupName
      *        The name of the cluster parameter group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ClusterParameterGroupStatus withParameterGroupName(
-            String parameterGroupName) {
+    public ClusterParameterGroupStatus withParameterGroupName(String parameterGroupName) {
         setParameterGroupName(parameterGroupName);
         return this;
     }
@@ -123,12 +117,10 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      * 
      * @param parameterApplyStatus
      *        The status of parameter updates.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ClusterParameterGroupStatus withParameterApplyStatus(
-            String parameterApplyStatus) {
+    public ClusterParameterGroupStatus withParameterApplyStatus(String parameterApplyStatus) {
         setParameterApplyStatus(parameterApplyStatus);
         return this;
     }
@@ -139,19 +131,15 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href=
-     * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"
-     * >Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
-     * Management Guide</i>.
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @return The list of parameter statuses.</p>
      *         <p>
-     *         For more information about parameters and parameter groups, go to
-     *         <a href=
-     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"
-     *         >Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift
-     *         Cluster Management Guide</i>.
+     *         For more information about parameters and parameter groups, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *         Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      */
 
     public java.util.List<ClusterParameterStatus> getClusterParameterStatusList() {
@@ -167,31 +155,25 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href=
-     * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"
-     * >Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
-     * Management Guide</i>.
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param clusterParameterStatusList
      *        The list of parameter statuses.</p>
      *        <p>
-     *        For more information about parameters and parameter groups, go to
-     *        <a href=
-     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"
-     *        >Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift
-     *        Cluster Management Guide</i>.
+     *        For more information about parameters and parameter groups, go to <a
+     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      */
 
-    public void setClusterParameterStatusList(
-            java.util.Collection<ClusterParameterStatus> clusterParameterStatusList) {
+    public void setClusterParameterStatusList(java.util.Collection<ClusterParameterStatus> clusterParameterStatusList) {
         if (clusterParameterStatusList == null) {
             this.clusterParameterStatusList = null;
             return;
         }
 
-        this.clusterParameterStatusList = new com.amazonaws.internal.SdkInternalList<ClusterParameterStatus>(
-                clusterParameterStatusList);
+        this.clusterParameterStatusList = new com.amazonaws.internal.SdkInternalList<ClusterParameterStatus>(clusterParameterStatusList);
     }
 
     /**
@@ -200,35 +182,27 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href=
-     * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"
-     * >Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
-     * Management Guide</i>.
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setClusterParameterStatusList(java.util.Collection)} or
-     * {@link #withClusterParameterStatusList(java.util.Collection)} if you want
-     * to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setClusterParameterStatusList(java.util.Collection)} or
+     * {@link #withClusterParameterStatusList(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param clusterParameterStatusList
      *        The list of parameter statuses.</p>
      *        <p>
-     *        For more information about parameters and parameter groups, go to
-     *        <a href=
-     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"
-     *        >Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift
-     *        Cluster Management Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information about parameters and parameter groups, go to <a
+     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ClusterParameterGroupStatus withClusterParameterStatusList(
-            ClusterParameterStatus... clusterParameterStatusList) {
+    public ClusterParameterGroupStatus withClusterParameterStatusList(ClusterParameterStatus... clusterParameterStatusList) {
         if (this.clusterParameterStatusList == null) {
-            setClusterParameterStatusList(new com.amazonaws.internal.SdkInternalList<ClusterParameterStatus>(
-                    clusterParameterStatusList.length));
+            setClusterParameterStatusList(new com.amazonaws.internal.SdkInternalList<ClusterParameterStatus>(clusterParameterStatusList.length));
         }
         for (ClusterParameterStatus ele : clusterParameterStatusList) {
             this.clusterParameterStatusList.add(ele);
@@ -242,33 +216,26 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href=
-     * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"
-     * >Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
-     * Management Guide</i>.
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param clusterParameterStatusList
      *        The list of parameter statuses.</p>
      *        <p>
-     *        For more information about parameters and parameter groups, go to
-     *        <a href=
-     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"
-     *        >Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift
-     *        Cluster Management Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information about parameters and parameter groups, go to <a
+     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ClusterParameterGroupStatus withClusterParameterStatusList(
-            java.util.Collection<ClusterParameterStatus> clusterParameterStatusList) {
+    public ClusterParameterGroupStatus withClusterParameterStatusList(java.util.Collection<ClusterParameterStatus> clusterParameterStatusList) {
         setClusterParameterStatusList(clusterParameterStatusList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -281,11 +248,9 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
         if (getParameterGroupName() != null)
             sb.append("ParameterGroupName: " + getParameterGroupName() + ",");
         if (getParameterApplyStatus() != null)
-            sb.append("ParameterApplyStatus: " + getParameterApplyStatus()
-                    + ",");
+            sb.append("ParameterApplyStatus: " + getParameterApplyStatus() + ",");
         if (getClusterParameterStatusList() != null)
-            sb.append("ClusterParameterStatusList: "
-                    + getClusterParameterStatusList());
+            sb.append("ClusterParameterStatusList: " + getClusterParameterStatusList());
         sb.append("}");
         return sb.toString();
     }
@@ -300,26 +265,17 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
         if (obj instanceof ClusterParameterGroupStatus == false)
             return false;
         ClusterParameterGroupStatus other = (ClusterParameterGroupStatus) obj;
-        if (other.getParameterGroupName() == null
-                ^ this.getParameterGroupName() == null)
+        if (other.getParameterGroupName() == null ^ this.getParameterGroupName() == null)
             return false;
-        if (other.getParameterGroupName() != null
-                && other.getParameterGroupName().equals(
-                        this.getParameterGroupName()) == false)
+        if (other.getParameterGroupName() != null && other.getParameterGroupName().equals(this.getParameterGroupName()) == false)
             return false;
-        if (other.getParameterApplyStatus() == null
-                ^ this.getParameterApplyStatus() == null)
+        if (other.getParameterApplyStatus() == null ^ this.getParameterApplyStatus() == null)
             return false;
-        if (other.getParameterApplyStatus() != null
-                && other.getParameterApplyStatus().equals(
-                        this.getParameterApplyStatus()) == false)
+        if (other.getParameterApplyStatus() != null && other.getParameterApplyStatus().equals(this.getParameterApplyStatus()) == false)
             return false;
-        if (other.getClusterParameterStatusList() == null
-                ^ this.getClusterParameterStatusList() == null)
+        if (other.getClusterParameterStatusList() == null ^ this.getClusterParameterStatusList() == null)
             return false;
-        if (other.getClusterParameterStatusList() != null
-                && other.getClusterParameterStatusList().equals(
-                        this.getClusterParameterStatusList()) == false)
+        if (other.getClusterParameterStatusList() != null && other.getClusterParameterStatusList().equals(this.getClusterParameterStatusList()) == false)
             return false;
         return true;
     }
@@ -329,18 +285,9 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getParameterGroupName() == null) ? 0
-                        : getParameterGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getParameterApplyStatus() == null) ? 0
-                        : getParameterApplyStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClusterParameterStatusList() == null) ? 0
-                        : getClusterParameterStatusList().hashCode());
+        hashCode = prime * hashCode + ((getParameterGroupName() == null) ? 0 : getParameterGroupName().hashCode());
+        hashCode = prime * hashCode + ((getParameterApplyStatus() == null) ? 0 : getParameterApplyStatus().hashCode());
+        hashCode = prime * hashCode + ((getClusterParameterStatusList() == null) ? 0 : getClusterParameterStatusList().hashCode());
         return hashCode;
     }
 
@@ -349,9 +296,7 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
         try {
             return (ClusterParameterGroupStatus) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

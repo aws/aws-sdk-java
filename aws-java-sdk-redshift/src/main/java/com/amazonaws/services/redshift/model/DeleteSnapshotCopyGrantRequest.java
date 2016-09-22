@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The result of the <code>DeleteSnapshotCopyGrant</code> action.
  * </p>
  */
-public class DeleteSnapshotCopyGrantRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -65,19 +61,16 @@ public class DeleteSnapshotCopyGrantRequest extends
      * 
      * @param snapshotCopyGrantName
      *        The name of the snapshot copy grant to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteSnapshotCopyGrantRequest withSnapshotCopyGrantName(
-            String snapshotCopyGrantName) {
+    public DeleteSnapshotCopyGrantRequest withSnapshotCopyGrantName(String snapshotCopyGrantName) {
         setSnapshotCopyGrantName(snapshotCopyGrantName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -103,12 +96,9 @@ public class DeleteSnapshotCopyGrantRequest extends
         if (obj instanceof DeleteSnapshotCopyGrantRequest == false)
             return false;
         DeleteSnapshotCopyGrantRequest other = (DeleteSnapshotCopyGrantRequest) obj;
-        if (other.getSnapshotCopyGrantName() == null
-                ^ this.getSnapshotCopyGrantName() == null)
+        if (other.getSnapshotCopyGrantName() == null ^ this.getSnapshotCopyGrantName() == null)
             return false;
-        if (other.getSnapshotCopyGrantName() != null
-                && other.getSnapshotCopyGrantName().equals(
-                        this.getSnapshotCopyGrantName()) == false)
+        if (other.getSnapshotCopyGrantName() != null && other.getSnapshotCopyGrantName().equals(this.getSnapshotCopyGrantName()) == false)
             return false;
         return true;
     }
@@ -118,10 +108,7 @@ public class DeleteSnapshotCopyGrantRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotCopyGrantName() == null) ? 0
-                        : getSnapshotCopyGrantName().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotCopyGrantName() == null) ? 0 : getSnapshotCopyGrantName().hashCode());
         return hashCode;
     }
 

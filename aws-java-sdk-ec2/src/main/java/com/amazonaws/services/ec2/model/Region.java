@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -68,8 +66,7 @@ public class Region implements Serializable, Cloneable {
      * 
      * @param regionName
      *        The name of the region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Region withRegionName(String regionName) {
@@ -109,8 +106,7 @@ public class Region implements Serializable, Cloneable {
      * 
      * @param endpoint
      *        The region service endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Region withEndpoint(String endpoint) {
@@ -119,8 +115,7 @@ public class Region implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -150,13 +145,11 @@ public class Region implements Serializable, Cloneable {
         Region other = (Region) obj;
         if (other.getRegionName() == null ^ this.getRegionName() == null)
             return false;
-        if (other.getRegionName() != null
-                && other.getRegionName().equals(this.getRegionName()) == false)
+        if (other.getRegionName() != null && other.getRegionName().equals(this.getRegionName()) == false)
             return false;
         if (other.getEndpoint() == null ^ this.getEndpoint() == null)
             return false;
-        if (other.getEndpoint() != null
-                && other.getEndpoint().equals(this.getEndpoint()) == false)
+        if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false)
             return false;
         return true;
     }
@@ -166,10 +159,8 @@ public class Region implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
+        hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         return hashCode;
     }
 
@@ -178,9 +169,7 @@ public class Region implements Serializable, Cloneable {
         try {
             return (Region) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

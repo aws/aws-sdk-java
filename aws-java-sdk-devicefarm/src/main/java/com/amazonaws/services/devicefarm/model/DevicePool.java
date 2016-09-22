@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model;
 
@@ -56,8 +54,7 @@ public class DevicePool implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PRIVATE: A device pool that is created and managed by the device pool
-     * developer.
+     * PRIVATE: A device pool that is created and managed by the device pool developer.
      * </p>
      * </li>
      * </ul>
@@ -102,8 +99,7 @@ public class DevicePool implements Serializable, Cloneable {
      * 
      * @param arn
      *        The device pool's ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DevicePool withArn(String arn) {
@@ -143,8 +139,7 @@ public class DevicePool implements Serializable, Cloneable {
      * 
      * @param name
      *        The device pool's name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DevicePool withName(String name) {
@@ -184,8 +179,7 @@ public class DevicePool implements Serializable, Cloneable {
      * 
      * @param description
      *        The device pool's description.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DevicePool withDescription(String description) {
@@ -208,8 +202,7 @@ public class DevicePool implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PRIVATE: A device pool that is created and managed by the device pool
-     * developer.
+     * PRIVATE: A device pool that is created and managed by the device pool developer.
      * </p>
      * </li>
      * </ul>
@@ -222,14 +215,12 @@ public class DevicePool implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        CURATED: A device pool that is created and managed by AWS Device
-     *        Farm.
+     *        CURATED: A device pool that is created and managed by AWS Device Farm.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PRIVATE: A device pool that is created and managed by the device
-     *        pool developer.
+     *        PRIVATE: A device pool that is created and managed by the device pool developer.
      *        </p>
      *        </li>
      * @see DevicePoolType
@@ -254,8 +245,7 @@ public class DevicePool implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PRIVATE: A device pool that is created and managed by the device pool
-     * developer.
+     * PRIVATE: A device pool that is created and managed by the device pool developer.
      * </p>
      * </li>
      * </ul>
@@ -267,14 +257,12 @@ public class DevicePool implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         CURATED: A device pool that is created and managed by AWS Device
-     *         Farm.
+     *         CURATED: A device pool that is created and managed by AWS Device Farm.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PRIVATE: A device pool that is created and managed by the device
-     *         pool developer.
+     *         PRIVATE: A device pool that is created and managed by the device pool developer.
      *         </p>
      *         </li>
      * @see DevicePoolType
@@ -299,8 +287,7 @@ public class DevicePool implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PRIVATE: A device pool that is created and managed by the device pool
-     * developer.
+     * PRIVATE: A device pool that is created and managed by the device pool developer.
      * </p>
      * </li>
      * </ul>
@@ -313,18 +300,15 @@ public class DevicePool implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        CURATED: A device pool that is created and managed by AWS Device
-     *        Farm.
+     *        CURATED: A device pool that is created and managed by AWS Device Farm.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PRIVATE: A device pool that is created and managed by the device
-     *        pool developer.
+     *        PRIVATE: A device pool that is created and managed by the device pool developer.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DevicePoolType
      */
 
@@ -348,8 +332,7 @@ public class DevicePool implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PRIVATE: A device pool that is created and managed by the device pool
-     * developer.
+     * PRIVATE: A device pool that is created and managed by the device pool developer.
      * </p>
      * </li>
      * </ul>
@@ -362,14 +345,12 @@ public class DevicePool implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        CURATED: A device pool that is created and managed by AWS Device
-     *        Farm.
+     *        CURATED: A device pool that is created and managed by AWS Device Farm.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PRIVATE: A device pool that is created and managed by the device
-     *        pool developer.
+     *        PRIVATE: A device pool that is created and managed by the device pool developer.
      *        </p>
      *        </li>
      * @see DevicePoolType
@@ -394,8 +375,7 @@ public class DevicePool implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PRIVATE: A device pool that is created and managed by the device pool
-     * developer.
+     * PRIVATE: A device pool that is created and managed by the device pool developer.
      * </p>
      * </li>
      * </ul>
@@ -408,18 +388,15 @@ public class DevicePool implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        CURATED: A device pool that is created and managed by AWS Device
-     *        Farm.
+     *        CURATED: A device pool that is created and managed by AWS Device Farm.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PRIVATE: A device pool that is created and managed by the device
-     *        pool developer.
+     *        PRIVATE: A device pool that is created and managed by the device pool developer.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DevicePoolType
      */
 
@@ -463,16 +440,14 @@ public class DevicePool implements Serializable, Cloneable {
      * Information about the device pool's rules.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRules(java.util.Collection)} or
-     * {@link #withRules(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRules(java.util.Collection)} or {@link #withRules(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param rules
      *        Information about the device pool's rules.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DevicePool withRules(Rule... rules) {
@@ -492,8 +467,7 @@ public class DevicePool implements Serializable, Cloneable {
      * 
      * @param rules
      *        Information about the device pool's rules.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DevicePool withRules(java.util.Collection<Rule> rules) {
@@ -502,8 +476,7 @@ public class DevicePool implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -539,28 +512,23 @@ public class DevicePool implements Serializable, Cloneable {
         DevicePool other = (DevicePool) obj;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getRules() == null ^ this.getRules() == null)
             return false;
-        if (other.getRules() != null
-                && other.getRules().equals(this.getRules()) == false)
+        if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
             return false;
         return true;
     }
@@ -570,17 +538,11 @@ public class DevicePool implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode
-                + ((getRules() == null) ? 0 : getRules().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
         return hashCode;
     }
 
@@ -589,9 +551,7 @@ public class DevicePool implements Serializable, Cloneable {
         try {
             return (DevicePool) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

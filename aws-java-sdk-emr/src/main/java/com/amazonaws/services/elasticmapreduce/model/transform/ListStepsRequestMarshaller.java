@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * ListStepsRequest Marshaller
  */
-public class ListStepsRequestMarshaller implements
-        Marshaller<Request<ListStepsRequest>, ListStepsRequest> {
+public class ListStepsRequestMarshaller implements Marshaller<Request<ListStepsRequest>, ListStepsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -47,12 +44,10 @@ public class ListStepsRequestMarshaller implements
     public Request<ListStepsRequest> marshall(ListStepsRequest listStepsRequest) {
 
         if (listStepsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListStepsRequest> request = new DefaultRequest<ListStepsRequest>(
-                listStepsRequest, "AmazonElasticMapReduce");
+        Request<ListStepsRequest> request = new DefaultRequest<ListStepsRequest>(listStepsRequest, "AmazonElasticMapReduce");
         request.addHeader("X-Amz-Target", "ElasticMapReduce.ListSteps");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -60,18 +55,15 @@ public class ListStepsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (listStepsRequest.getClusterId() != null) {
-                jsonGenerator.writeFieldName("ClusterId").writeValue(
-                        listStepsRequest.getClusterId());
+                jsonGenerator.writeFieldName("ClusterId").writeValue(listStepsRequest.getClusterId());
             }
 
-            com.amazonaws.internal.SdkInternalList<String> stepStatesList = (com.amazonaws.internal.SdkInternalList<String>) listStepsRequest
-                    .getStepStates();
+            com.amazonaws.internal.SdkInternalList<String> stepStatesList = (com.amazonaws.internal.SdkInternalList<String>) listStepsRequest.getStepStates();
             if (!stepStatesList.isEmpty() || !stepStatesList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("StepStates");
                 jsonGenerator.writeStartArray();
@@ -83,8 +75,7 @@ public class ListStepsRequestMarshaller implements
                 jsonGenerator.writeEndArray();
             }
 
-            com.amazonaws.internal.SdkInternalList<String> stepIdsList = (com.amazonaws.internal.SdkInternalList<String>) listStepsRequest
-                    .getStepIds();
+            com.amazonaws.internal.SdkInternalList<String> stepIdsList = (com.amazonaws.internal.SdkInternalList<String>) listStepsRequest.getStepIds();
             if (!stepIdsList.isEmpty() || !stepIdsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("StepIds");
                 jsonGenerator.writeStartArray();
@@ -96,20 +87,17 @@ public class ListStepsRequestMarshaller implements
                 jsonGenerator.writeEndArray();
             }
             if (listStepsRequest.getMarker() != null) {
-                jsonGenerator.writeFieldName("Marker").writeValue(
-                        listStepsRequest.getMarker());
+                jsonGenerator.writeFieldName("Marker").writeValue(listStepsRequest.getMarker());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

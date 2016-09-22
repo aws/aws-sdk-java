@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.AssignPrivateIpAddressesReques
  * Contains the parameters for AssignPrivateIpAddresses.
  * </p>
  */
-public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<AssignPrivateIpAddressesRequest> {
 
     /**
@@ -36,29 +33,25 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
     private String networkInterfaceId;
     /**
      * <p>
-     * One or more IP addresses to be assigned as a secondary private IP address
-     * to the network interface. You can't specify this parameter when also
-     * specifying a number of secondary IP addresses.
+     * One or more IP addresses to be assigned as a secondary private IP address to the network interface. You can't
+     * specify this parameter when also specifying a number of secondary IP addresses.
      * </p>
      * <p>
-     * If you don't specify an IP address, Amazon EC2 automatically selects an
-     * IP address within the subnet range.
+     * If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> privateIpAddresses;
     /**
      * <p>
-     * The number of secondary IP addresses to assign to the network interface.
-     * You can't specify this parameter when also specifying private IP
-     * addresses.
+     * The number of secondary IP addresses to assign to the network interface. You can't specify this parameter when
+     * also specifying private IP addresses.
      * </p>
      */
     private Integer secondaryPrivateIpAddressCount;
     /**
      * <p>
-     * Indicates whether to allow an IP address that is already assigned to
-     * another network interface or instance to be reassigned to the specified
-     * network interface.
+     * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
+     * reassigned to the specified network interface.
      * </p>
      */
     private Boolean allowReassignment;
@@ -95,34 +88,28 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      * 
      * @param networkInterfaceId
      *        The ID of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssignPrivateIpAddressesRequest withNetworkInterfaceId(
-            String networkInterfaceId) {
+    public AssignPrivateIpAddressesRequest withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
         return this;
     }
 
     /**
      * <p>
-     * One or more IP addresses to be assigned as a secondary private IP address
-     * to the network interface. You can't specify this parameter when also
-     * specifying a number of secondary IP addresses.
+     * One or more IP addresses to be assigned as a secondary private IP address to the network interface. You can't
+     * specify this parameter when also specifying a number of secondary IP addresses.
      * </p>
      * <p>
-     * If you don't specify an IP address, Amazon EC2 automatically selects an
-     * IP address within the subnet range.
+     * If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.
      * </p>
      * 
-     * @return One or more IP addresses to be assigned as a secondary private IP
-     *         address to the network interface. You can't specify this
-     *         parameter when also specifying a number of secondary IP
-     *         addresses.</p>
+     * @return One or more IP addresses to be assigned as a secondary private IP address to the network interface. You
+     *         can't specify this parameter when also specifying a number of secondary IP addresses.</p>
      *         <p>
-     *         If you don't specify an IP address, Amazon EC2 automatically
-     *         selects an IP address within the subnet range.
+     *         If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet
+     *         range.
      */
 
     public java.util.List<String> getPrivateIpAddresses() {
@@ -134,68 +121,56 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more IP addresses to be assigned as a secondary private IP address
-     * to the network interface. You can't specify this parameter when also
-     * specifying a number of secondary IP addresses.
+     * One or more IP addresses to be assigned as a secondary private IP address to the network interface. You can't
+     * specify this parameter when also specifying a number of secondary IP addresses.
      * </p>
      * <p>
-     * If you don't specify an IP address, Amazon EC2 automatically selects an
-     * IP address within the subnet range.
+     * If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.
      * </p>
      * 
      * @param privateIpAddresses
-     *        One or more IP addresses to be assigned as a secondary private IP
-     *        address to the network interface. You can't specify this parameter
-     *        when also specifying a number of secondary IP addresses.</p>
+     *        One or more IP addresses to be assigned as a secondary private IP address to the network interface. You
+     *        can't specify this parameter when also specifying a number of secondary IP addresses.</p>
      *        <p>
-     *        If you don't specify an IP address, Amazon EC2 automatically
-     *        selects an IP address within the subnet range.
+     *        If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet
+     *        range.
      */
 
-    public void setPrivateIpAddresses(
-            java.util.Collection<String> privateIpAddresses) {
+    public void setPrivateIpAddresses(java.util.Collection<String> privateIpAddresses) {
         if (privateIpAddresses == null) {
             this.privateIpAddresses = null;
             return;
         }
 
-        this.privateIpAddresses = new com.amazonaws.internal.SdkInternalList<String>(
-                privateIpAddresses);
+        this.privateIpAddresses = new com.amazonaws.internal.SdkInternalList<String>(privateIpAddresses);
     }
 
     /**
      * <p>
-     * One or more IP addresses to be assigned as a secondary private IP address
-     * to the network interface. You can't specify this parameter when also
-     * specifying a number of secondary IP addresses.
+     * One or more IP addresses to be assigned as a secondary private IP address to the network interface. You can't
+     * specify this parameter when also specifying a number of secondary IP addresses.
      * </p>
      * <p>
-     * If you don't specify an IP address, Amazon EC2 automatically selects an
-     * IP address within the subnet range.
+     * If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPrivateIpAddresses(java.util.Collection)} or
-     * {@link #withPrivateIpAddresses(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPrivateIpAddresses(java.util.Collection)} or {@link #withPrivateIpAddresses(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param privateIpAddresses
-     *        One or more IP addresses to be assigned as a secondary private IP
-     *        address to the network interface. You can't specify this parameter
-     *        when also specifying a number of secondary IP addresses.</p>
+     *        One or more IP addresses to be assigned as a secondary private IP address to the network interface. You
+     *        can't specify this parameter when also specifying a number of secondary IP addresses.</p>
      *        <p>
-     *        If you don't specify an IP address, Amazon EC2 automatically
-     *        selects an IP address within the subnet range.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet
+     *        range.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssignPrivateIpAddressesRequest withPrivateIpAddresses(
-            String... privateIpAddresses) {
+    public AssignPrivateIpAddressesRequest withPrivateIpAddresses(String... privateIpAddresses) {
         if (this.privateIpAddresses == null) {
-            setPrivateIpAddresses(new com.amazonaws.internal.SdkInternalList<String>(
-                    privateIpAddresses.length));
+            setPrivateIpAddresses(new com.amazonaws.internal.SdkInternalList<String>(privateIpAddresses.length));
         }
         for (String ele : privateIpAddresses) {
             this.privateIpAddresses.add(ele);
@@ -205,60 +180,50 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more IP addresses to be assigned as a secondary private IP address
-     * to the network interface. You can't specify this parameter when also
-     * specifying a number of secondary IP addresses.
+     * One or more IP addresses to be assigned as a secondary private IP address to the network interface. You can't
+     * specify this parameter when also specifying a number of secondary IP addresses.
      * </p>
      * <p>
-     * If you don't specify an IP address, Amazon EC2 automatically selects an
-     * IP address within the subnet range.
+     * If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.
      * </p>
      * 
      * @param privateIpAddresses
-     *        One or more IP addresses to be assigned as a secondary private IP
-     *        address to the network interface. You can't specify this parameter
-     *        when also specifying a number of secondary IP addresses.</p>
+     *        One or more IP addresses to be assigned as a secondary private IP address to the network interface. You
+     *        can't specify this parameter when also specifying a number of secondary IP addresses.</p>
      *        <p>
-     *        If you don't specify an IP address, Amazon EC2 automatically
-     *        selects an IP address within the subnet range.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet
+     *        range.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssignPrivateIpAddressesRequest withPrivateIpAddresses(
-            java.util.Collection<String> privateIpAddresses) {
+    public AssignPrivateIpAddressesRequest withPrivateIpAddresses(java.util.Collection<String> privateIpAddresses) {
         setPrivateIpAddresses(privateIpAddresses);
         return this;
     }
 
     /**
      * <p>
-     * The number of secondary IP addresses to assign to the network interface.
-     * You can't specify this parameter when also specifying private IP
-     * addresses.
+     * The number of secondary IP addresses to assign to the network interface. You can't specify this parameter when
+     * also specifying private IP addresses.
      * </p>
      * 
      * @param secondaryPrivateIpAddressCount
-     *        The number of secondary IP addresses to assign to the network
-     *        interface. You can't specify this parameter when also specifying
-     *        private IP addresses.
+     *        The number of secondary IP addresses to assign to the network interface. You can't specify this parameter
+     *        when also specifying private IP addresses.
      */
 
-    public void setSecondaryPrivateIpAddressCount(
-            Integer secondaryPrivateIpAddressCount) {
+    public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
         this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
     }
 
     /**
      * <p>
-     * The number of secondary IP addresses to assign to the network interface.
-     * You can't specify this parameter when also specifying private IP
-     * addresses.
+     * The number of secondary IP addresses to assign to the network interface. You can't specify this parameter when
+     * also specifying private IP addresses.
      * </p>
      * 
-     * @return The number of secondary IP addresses to assign to the network
-     *         interface. You can't specify this parameter when also specifying
-     *         private IP addresses.
+     * @return The number of secondary IP addresses to assign to the network interface. You can't specify this parameter
+     *         when also specifying private IP addresses.
      */
 
     public Integer getSecondaryPrivateIpAddressCount() {
@@ -267,36 +232,30 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of secondary IP addresses to assign to the network interface.
-     * You can't specify this parameter when also specifying private IP
-     * addresses.
+     * The number of secondary IP addresses to assign to the network interface. You can't specify this parameter when
+     * also specifying private IP addresses.
      * </p>
      * 
      * @param secondaryPrivateIpAddressCount
-     *        The number of secondary IP addresses to assign to the network
-     *        interface. You can't specify this parameter when also specifying
-     *        private IP addresses.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of secondary IP addresses to assign to the network interface. You can't specify this parameter
+     *        when also specifying private IP addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssignPrivateIpAddressesRequest withSecondaryPrivateIpAddressCount(
-            Integer secondaryPrivateIpAddressCount) {
+    public AssignPrivateIpAddressesRequest withSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
         setSecondaryPrivateIpAddressCount(secondaryPrivateIpAddressCount);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether to allow an IP address that is already assigned to
-     * another network interface or instance to be reassigned to the specified
-     * network interface.
+     * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
+     * reassigned to the specified network interface.
      * </p>
      * 
      * @param allowReassignment
-     *        Indicates whether to allow an IP address that is already assigned
-     *        to another network interface or instance to be reassigned to the
-     *        specified network interface.
+     *        Indicates whether to allow an IP address that is already assigned to another network interface or instance
+     *        to be reassigned to the specified network interface.
      */
 
     public void setAllowReassignment(Boolean allowReassignment) {
@@ -305,14 +264,12 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicates whether to allow an IP address that is already assigned to
-     * another network interface or instance to be reassigned to the specified
-     * network interface.
+     * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
+     * reassigned to the specified network interface.
      * </p>
      * 
-     * @return Indicates whether to allow an IP address that is already assigned
-     *         to another network interface or instance to be reassigned to the
-     *         specified network interface.
+     * @return Indicates whether to allow an IP address that is already assigned to another network interface or
+     *         instance to be reassigned to the specified network interface.
      */
 
     public Boolean getAllowReassignment() {
@@ -321,35 +278,29 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicates whether to allow an IP address that is already assigned to
-     * another network interface or instance to be reassigned to the specified
-     * network interface.
+     * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
+     * reassigned to the specified network interface.
      * </p>
      * 
      * @param allowReassignment
-     *        Indicates whether to allow an IP address that is already assigned
-     *        to another network interface or instance to be reassigned to the
-     *        specified network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether to allow an IP address that is already assigned to another network interface or instance
+     *        to be reassigned to the specified network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssignPrivateIpAddressesRequest withAllowReassignment(
-            Boolean allowReassignment) {
+    public AssignPrivateIpAddressesRequest withAllowReassignment(Boolean allowReassignment) {
         setAllowReassignment(allowReassignment);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether to allow an IP address that is already assigned to
-     * another network interface or instance to be reassigned to the specified
-     * network interface.
+     * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
+     * reassigned to the specified network interface.
      * </p>
      * 
-     * @return Indicates whether to allow an IP address that is already assigned
-     *         to another network interface or instance to be reassigned to the
-     *         specified network interface.
+     * @return Indicates whether to allow an IP address that is already assigned to another network interface or
+     *         instance to be reassigned to the specified network interface.
      */
 
     public Boolean isAllowReassignment() {
@@ -357,21 +308,18 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<AssignPrivateIpAddressesRequest> getDryRunRequest() {
-        Request<AssignPrivateIpAddressesRequest> request = new AssignPrivateIpAddressesRequestMarshaller()
-                .marshall(this);
+        Request<AssignPrivateIpAddressesRequest> request = new AssignPrivateIpAddressesRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -386,8 +334,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
         if (getPrivateIpAddresses() != null)
             sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ",");
         if (getSecondaryPrivateIpAddressCount() != null)
-            sb.append("SecondaryPrivateIpAddressCount: "
-                    + getSecondaryPrivateIpAddressCount() + ",");
+            sb.append("SecondaryPrivateIpAddressCount: " + getSecondaryPrivateIpAddressCount() + ",");
         if (getAllowReassignment() != null)
             sb.append("AllowReassignment: " + getAllowReassignment());
         sb.append("}");
@@ -404,33 +351,22 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
         if (obj instanceof AssignPrivateIpAddressesRequest == false)
             return false;
         AssignPrivateIpAddressesRequest other = (AssignPrivateIpAddressesRequest) obj;
-        if (other.getNetworkInterfaceId() == null
-                ^ this.getNetworkInterfaceId() == null)
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
-        if (other.getNetworkInterfaceId() != null
-                && other.getNetworkInterfaceId().equals(
-                        this.getNetworkInterfaceId()) == false)
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
-        if (other.getPrivateIpAddresses() == null
-                ^ this.getPrivateIpAddresses() == null)
+        if (other.getPrivateIpAddresses() == null ^ this.getPrivateIpAddresses() == null)
             return false;
-        if (other.getPrivateIpAddresses() != null
-                && other.getPrivateIpAddresses().equals(
-                        this.getPrivateIpAddresses()) == false)
+        if (other.getPrivateIpAddresses() != null && other.getPrivateIpAddresses().equals(this.getPrivateIpAddresses()) == false)
             return false;
-        if (other.getSecondaryPrivateIpAddressCount() == null
-                ^ this.getSecondaryPrivateIpAddressCount() == null)
+        if (other.getSecondaryPrivateIpAddressCount() == null ^ this.getSecondaryPrivateIpAddressCount() == null)
             return false;
         if (other.getSecondaryPrivateIpAddressCount() != null
-                && other.getSecondaryPrivateIpAddressCount().equals(
-                        this.getSecondaryPrivateIpAddressCount()) == false)
+                && other.getSecondaryPrivateIpAddressCount().equals(this.getSecondaryPrivateIpAddressCount()) == false)
             return false;
-        if (other.getAllowReassignment() == null
-                ^ this.getAllowReassignment() == null)
+        if (other.getAllowReassignment() == null ^ this.getAllowReassignment() == null)
             return false;
-        if (other.getAllowReassignment() != null
-                && other.getAllowReassignment().equals(
-                        this.getAllowReassignment()) == false)
+        if (other.getAllowReassignment() != null && other.getAllowReassignment().equals(this.getAllowReassignment()) == false)
             return false;
         return true;
     }
@@ -440,22 +376,10 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaceId() == null) ? 0
-                        : getNetworkInterfaceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrivateIpAddresses() == null) ? 0
-                        : getPrivateIpAddresses().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecondaryPrivateIpAddressCount() == null) ? 0
-                        : getSecondaryPrivateIpAddressCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAllowReassignment() == null) ? 0
-                        : getAllowReassignment().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());
+        hashCode = prime * hashCode + ((getSecondaryPrivateIpAddressCount() == null) ? 0 : getSecondaryPrivateIpAddressCount().hashCode());
+        hashCode = prime * hashCode + ((getAllowReassignment() == null) ? 0 : getAllowReassignment().hashCode());
         return hashCode;
     }
 

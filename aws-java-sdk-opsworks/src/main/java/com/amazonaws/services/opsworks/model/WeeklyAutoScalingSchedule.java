@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a time-based instance's auto scaling schedule. The schedule
- * consists of a set of key-value pairs.
+ * Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.
  * </p>
  * <ul>
  * <li>
@@ -29,20 +26,19 @@ import java.io.Serializable;
  * </li>
  * <li>
  * <p>
- * The value indicates whether the instance should be online or offline for the
- * specified period, and must be set to "on" or "off"
+ * The value indicates whether the instance should be online or offline for the specified period, and must be set to
+ * "on" or "off"
  * </p>
  * </li>
  * </ul>
  * <p>
- * The default setting for all time periods is off, so you use the following
- * parameters primarily to specify the online periods. You don't have to
- * explicitly specify offline periods unless you want to change an online period
- * to an offline period.
+ * The default setting for all time periods is off, so you use the following parameters primarily to specify the online
+ * periods. You don't have to explicitly specify offline periods unless you want to change an online period to an
+ * offline period.
  * </p>
  * <p>
- * The following example specifies that the instance should be online for four
- * hours, from UTC 1200 - 1600. It will be off for the remainder of the day.
+ * The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be
+ * off for the remainder of the day.
  * </p>
  * <p>
  * <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code>
@@ -118,9 +114,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      */
 
     public void setMonday(java.util.Map<String, String> monday) {
-        this.monday = monday == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        monday);
+        this.monday = monday == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(monday);
     }
 
     /**
@@ -130,12 +124,10 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @param monday
      *        The schedule for Monday.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WeeklyAutoScalingSchedule withMonday(
-            java.util.Map<String, String> monday) {
+    public WeeklyAutoScalingSchedule withMonday(java.util.Map<String, String> monday) {
         setMonday(monday);
         return this;
     }
@@ -145,15 +137,14 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
             this.monday = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.monday.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.monday.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Monday. &lt;p> Returns a reference to
-     * this object so that method calls can be chained together.
+     * Removes all the entries added into Monday. &lt;p> Returns a reference to this object so that method calls can be
+     * chained together.
      */
 
     public WeeklyAutoScalingSchedule clearMondayEntries() {
@@ -186,9 +177,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      */
 
     public void setTuesday(java.util.Map<String, String> tuesday) {
-        this.tuesday = tuesday == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        tuesday);
+        this.tuesday = tuesday == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(tuesday);
     }
 
     /**
@@ -198,12 +187,10 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @param tuesday
      *        The schedule for Tuesday.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WeeklyAutoScalingSchedule withTuesday(
-            java.util.Map<String, String> tuesday) {
+    public WeeklyAutoScalingSchedule withTuesday(java.util.Map<String, String> tuesday) {
         setTuesday(tuesday);
         return this;
     }
@@ -213,15 +200,14 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
             this.tuesday = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.tuesday.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.tuesday.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Tuesday. &lt;p> Returns a reference to
-     * this object so that method calls can be chained together.
+     * Removes all the entries added into Tuesday. &lt;p> Returns a reference to this object so that method calls can be
+     * chained together.
      */
 
     public WeeklyAutoScalingSchedule clearTuesdayEntries() {
@@ -254,9 +240,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      */
 
     public void setWednesday(java.util.Map<String, String> wednesday) {
-        this.wednesday = wednesday == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        wednesday);
+        this.wednesday = wednesday == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(wednesday);
     }
 
     /**
@@ -266,12 +250,10 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @param wednesday
      *        The schedule for Wednesday.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WeeklyAutoScalingSchedule withWednesday(
-            java.util.Map<String, String> wednesday) {
+    public WeeklyAutoScalingSchedule withWednesday(java.util.Map<String, String> wednesday) {
         setWednesday(wednesday);
         return this;
     }
@@ -281,15 +263,14 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
             this.wednesday = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.wednesday.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.wednesday.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Wednesday. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into Wednesday. &lt;p> Returns a reference to this object so that method calls can
+     * be chained together.
      */
 
     public WeeklyAutoScalingSchedule clearWednesdayEntries() {
@@ -322,9 +303,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      */
 
     public void setThursday(java.util.Map<String, String> thursday) {
-        this.thursday = thursday == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        thursday);
+        this.thursday = thursday == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(thursday);
     }
 
     /**
@@ -334,12 +313,10 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @param thursday
      *        The schedule for Thursday.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WeeklyAutoScalingSchedule withThursday(
-            java.util.Map<String, String> thursday) {
+    public WeeklyAutoScalingSchedule withThursday(java.util.Map<String, String> thursday) {
         setThursday(thursday);
         return this;
     }
@@ -349,15 +326,14 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
             this.thursday = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.thursday.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.thursday.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Thursday. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into Thursday. &lt;p> Returns a reference to this object so that method calls can
+     * be chained together.
      */
 
     public WeeklyAutoScalingSchedule clearThursdayEntries() {
@@ -390,9 +366,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      */
 
     public void setFriday(java.util.Map<String, String> friday) {
-        this.friday = friday == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        friday);
+        this.friday = friday == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(friday);
     }
 
     /**
@@ -402,12 +376,10 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @param friday
      *        The schedule for Friday.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WeeklyAutoScalingSchedule withFriday(
-            java.util.Map<String, String> friday) {
+    public WeeklyAutoScalingSchedule withFriday(java.util.Map<String, String> friday) {
         setFriday(friday);
         return this;
     }
@@ -417,15 +389,14 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
             this.friday = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.friday.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.friday.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Friday. &lt;p> Returns a reference to
-     * this object so that method calls can be chained together.
+     * Removes all the entries added into Friday. &lt;p> Returns a reference to this object so that method calls can be
+     * chained together.
      */
 
     public WeeklyAutoScalingSchedule clearFridayEntries() {
@@ -458,9 +429,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      */
 
     public void setSaturday(java.util.Map<String, String> saturday) {
-        this.saturday = saturday == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        saturday);
+        this.saturday = saturday == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(saturday);
     }
 
     /**
@@ -470,12 +439,10 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @param saturday
      *        The schedule for Saturday.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WeeklyAutoScalingSchedule withSaturday(
-            java.util.Map<String, String> saturday) {
+    public WeeklyAutoScalingSchedule withSaturday(java.util.Map<String, String> saturday) {
         setSaturday(saturday);
         return this;
     }
@@ -485,15 +452,14 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
             this.saturday = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.saturday.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.saturday.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Saturday. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into Saturday. &lt;p> Returns a reference to this object so that method calls can
+     * be chained together.
      */
 
     public WeeklyAutoScalingSchedule clearSaturdayEntries() {
@@ -526,9 +492,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      */
 
     public void setSunday(java.util.Map<String, String> sunday) {
-        this.sunday = sunday == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        sunday);
+        this.sunday = sunday == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(sunday);
     }
 
     /**
@@ -538,12 +502,10 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @param sunday
      *        The schedule for Sunday.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WeeklyAutoScalingSchedule withSunday(
-            java.util.Map<String, String> sunday) {
+    public WeeklyAutoScalingSchedule withSunday(java.util.Map<String, String> sunday) {
         setSunday(sunday);
         return this;
     }
@@ -553,15 +515,14 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
             this.sunday = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.sunday.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.sunday.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Sunday. &lt;p> Returns a reference to
-     * this object so that method calls can be chained together.
+     * Removes all the entries added into Sunday. &lt;p> Returns a reference to this object so that method calls can be
+     * chained together.
      */
 
     public WeeklyAutoScalingSchedule clearSundayEntries() {
@@ -570,8 +531,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -611,38 +571,31 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
         WeeklyAutoScalingSchedule other = (WeeklyAutoScalingSchedule) obj;
         if (other.getMonday() == null ^ this.getMonday() == null)
             return false;
-        if (other.getMonday() != null
-                && other.getMonday().equals(this.getMonday()) == false)
+        if (other.getMonday() != null && other.getMonday().equals(this.getMonday()) == false)
             return false;
         if (other.getTuesday() == null ^ this.getTuesday() == null)
             return false;
-        if (other.getTuesday() != null
-                && other.getTuesday().equals(this.getTuesday()) == false)
+        if (other.getTuesday() != null && other.getTuesday().equals(this.getTuesday()) == false)
             return false;
         if (other.getWednesday() == null ^ this.getWednesday() == null)
             return false;
-        if (other.getWednesday() != null
-                && other.getWednesday().equals(this.getWednesday()) == false)
+        if (other.getWednesday() != null && other.getWednesday().equals(this.getWednesday()) == false)
             return false;
         if (other.getThursday() == null ^ this.getThursday() == null)
             return false;
-        if (other.getThursday() != null
-                && other.getThursday().equals(this.getThursday()) == false)
+        if (other.getThursday() != null && other.getThursday().equals(this.getThursday()) == false)
             return false;
         if (other.getFriday() == null ^ this.getFriday() == null)
             return false;
-        if (other.getFriday() != null
-                && other.getFriday().equals(this.getFriday()) == false)
+        if (other.getFriday() != null && other.getFriday().equals(this.getFriday()) == false)
             return false;
         if (other.getSaturday() == null ^ this.getSaturday() == null)
             return false;
-        if (other.getSaturday() != null
-                && other.getSaturday().equals(this.getSaturday()) == false)
+        if (other.getSaturday() != null && other.getSaturday().equals(this.getSaturday()) == false)
             return false;
         if (other.getSunday() == null ^ this.getSunday() == null)
             return false;
-        if (other.getSunday() != null
-                && other.getSunday().equals(this.getSunday()) == false)
+        if (other.getSunday() != null && other.getSunday().equals(this.getSunday()) == false)
             return false;
         return true;
     }
@@ -652,20 +605,13 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMonday() == null) ? 0 : getMonday().hashCode());
-        hashCode = prime * hashCode
-                + ((getTuesday() == null) ? 0 : getTuesday().hashCode());
-        hashCode = prime * hashCode
-                + ((getWednesday() == null) ? 0 : getWednesday().hashCode());
-        hashCode = prime * hashCode
-                + ((getThursday() == null) ? 0 : getThursday().hashCode());
-        hashCode = prime * hashCode
-                + ((getFriday() == null) ? 0 : getFriday().hashCode());
-        hashCode = prime * hashCode
-                + ((getSaturday() == null) ? 0 : getSaturday().hashCode());
-        hashCode = prime * hashCode
-                + ((getSunday() == null) ? 0 : getSunday().hashCode());
+        hashCode = prime * hashCode + ((getMonday() == null) ? 0 : getMonday().hashCode());
+        hashCode = prime * hashCode + ((getTuesday() == null) ? 0 : getTuesday().hashCode());
+        hashCode = prime * hashCode + ((getWednesday() == null) ? 0 : getWednesday().hashCode());
+        hashCode = prime * hashCode + ((getThursday() == null) ? 0 : getThursday().hashCode());
+        hashCode = prime * hashCode + ((getFriday() == null) ? 0 : getFriday().hashCode());
+        hashCode = prime * hashCode + ((getSaturday() == null) ? 0 : getSaturday().hashCode());
+        hashCode = prime * hashCode + ((getSunday() == null) ? 0 : getSunday().hashCode());
         return hashCode;
     }
 
@@ -674,9 +620,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
         try {
             return (WeeklyAutoScalingSchedule) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

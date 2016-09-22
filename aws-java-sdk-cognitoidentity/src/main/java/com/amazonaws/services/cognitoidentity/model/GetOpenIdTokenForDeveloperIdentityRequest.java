@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidentity.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action.
  * </p>
  */
-public class GetOpenIdTokenForDeveloperIdentityRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class GetOpenIdTokenForDeveloperIdentityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -40,30 +36,23 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
     private String identityId;
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider
-     * tokens. Each name-value pair represents a user from a public provider or
-     * developer provider. If the user is from a developer provider, the
-     * name-value pair will follow the syntax
-     * <code>"developer_provider_name": "developer_user_identifier"</code>. The
-     * developer provider is the "domain" by which Cognito will refer to your
-     * users; you provided this domain while creating/updating the identity
-     * pool. The developer user identifier is an identifier from your backend
-     * that uniquely identifies a user. When you create an identity pool, you
-     * can specify the supported logins.
+     * A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a
+     * user from a public provider or developer provider. If the user is from a developer provider, the name-value pair
+     * will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
+     * provider is the "domain" by which Cognito will refer to your users; you provided this domain while
+     * creating/updating the identity pool. The developer user identifier is an identifier from your backend that
+     * uniquely identifies a user. When you create an identity pool, you can specify the supported logins.
      * </p>
      */
     private java.util.Map<String, String> logins;
     /**
      * <p>
-     * The expiration time of the token, in seconds. You can specify a custom
-     * expiration time for the token so that you can cache it. If you don't
-     * provide an expiration time, the token is valid for 15 minutes. You can
-     * exchange the token with Amazon STS for temporary AWS credentials, which
-     * are valid for a maximum of one hour. The maximum token duration you can
-     * set is 24 hours. You should take care in setting the expiration time for
-     * a token, as there are significant security implications: an attacker
-     * could use a leaked token to access your AWS resources for the token's
-     * duration.
+     * The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you
+     * can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the
+     * token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token
+     * duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are
+     * significant security implications: an attacker could use a leaked token to access your AWS resources for the
+     * token's duration.
      * </p>
      */
     private Long tokenDuration;
@@ -100,12 +89,10 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetOpenIdTokenForDeveloperIdentityRequest withIdentityPoolId(
-            String identityPoolId) {
+    public GetOpenIdTokenForDeveloperIdentityRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
     }
@@ -142,41 +129,31 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      * 
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetOpenIdTokenForDeveloperIdentityRequest withIdentityId(
-            String identityId) {
+    public GetOpenIdTokenForDeveloperIdentityRequest withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
     }
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider
-     * tokens. Each name-value pair represents a user from a public provider or
-     * developer provider. If the user is from a developer provider, the
-     * name-value pair will follow the syntax
-     * <code>"developer_provider_name": "developer_user_identifier"</code>. The
-     * developer provider is the "domain" by which Cognito will refer to your
-     * users; you provided this domain while creating/updating the identity
-     * pool. The developer user identifier is an identifier from your backend
-     * that uniquely identifies a user. When you create an identity pool, you
-     * can specify the supported logins.
+     * A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a
+     * user from a public provider or developer provider. If the user is from a developer provider, the name-value pair
+     * will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
+     * provider is the "domain" by which Cognito will refer to your users; you provided this domain while
+     * creating/updating the identity pool. The developer user identifier is an identifier from your backend that
+     * uniquely identifies a user. When you create an identity pool, you can specify the supported logins.
      * </p>
      * 
-     * @return A set of optional name-value pairs that map provider names to
-     *         provider tokens. Each name-value pair represents a user from a
-     *         public provider or developer provider. If the user is from a
-     *         developer provider, the name-value pair will follow the syntax
-     *         <code>"developer_provider_name": "developer_user_identifier"</code>
-     *         . The developer provider is the "domain" by which Cognito will
-     *         refer to your users; you provided this domain while
-     *         creating/updating the identity pool. The developer user
-     *         identifier is an identifier from your backend that uniquely
-     *         identifies a user. When you create an identity pool, you can
-     *         specify the supported logins.
+     * @return A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair
+     *         represents a user from a public provider or developer provider. If the user is from a developer provider,
+     *         the name-value pair will follow the syntax
+     *         <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the
+     *         "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the
+     *         identity pool. The developer user identifier is an identifier from your backend that uniquely identifies
+     *         a user. When you create an identity pool, you can specify the supported logins.
      */
 
     public java.util.Map<String, String> getLogins() {
@@ -185,30 +162,22 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider
-     * tokens. Each name-value pair represents a user from a public provider or
-     * developer provider. If the user is from a developer provider, the
-     * name-value pair will follow the syntax
-     * <code>"developer_provider_name": "developer_user_identifier"</code>. The
-     * developer provider is the "domain" by which Cognito will refer to your
-     * users; you provided this domain while creating/updating the identity
-     * pool. The developer user identifier is an identifier from your backend
-     * that uniquely identifies a user. When you create an identity pool, you
-     * can specify the supported logins.
+     * A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a
+     * user from a public provider or developer provider. If the user is from a developer provider, the name-value pair
+     * will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
+     * provider is the "domain" by which Cognito will refer to your users; you provided this domain while
+     * creating/updating the identity pool. The developer user identifier is an identifier from your backend that
+     * uniquely identifies a user. When you create an identity pool, you can specify the supported logins.
      * </p>
      * 
      * @param logins
-     *        A set of optional name-value pairs that map provider names to
-     *        provider tokens. Each name-value pair represents a user from a
-     *        public provider or developer provider. If the user is from a
-     *        developer provider, the name-value pair will follow the syntax
-     *        <code>"developer_provider_name": "developer_user_identifier"</code>
-     *        . The developer provider is the "domain" by which Cognito will
-     *        refer to your users; you provided this domain while
-     *        creating/updating the identity pool. The developer user identifier
-     *        is an identifier from your backend that uniquely identifies a
-     *        user. When you create an identity pool, you can specify the
-     *        supported logins.
+     *        A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair
+     *        represents a user from a public provider or developer provider. If the user is from a developer provider,
+     *        the name-value pair will follow the syntax
+     *        <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the
+     *        "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the
+     *        identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a
+     *        user. When you create an identity pool, you can specify the supported logins.
      */
 
     public void setLogins(java.util.Map<String, String> logins) {
@@ -217,55 +186,43 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider
-     * tokens. Each name-value pair represents a user from a public provider or
-     * developer provider. If the user is from a developer provider, the
-     * name-value pair will follow the syntax
-     * <code>"developer_provider_name": "developer_user_identifier"</code>. The
-     * developer provider is the "domain" by which Cognito will refer to your
-     * users; you provided this domain while creating/updating the identity
-     * pool. The developer user identifier is an identifier from your backend
-     * that uniquely identifies a user. When you create an identity pool, you
-     * can specify the supported logins.
+     * A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a
+     * user from a public provider or developer provider. If the user is from a developer provider, the name-value pair
+     * will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
+     * provider is the "domain" by which Cognito will refer to your users; you provided this domain while
+     * creating/updating the identity pool. The developer user identifier is an identifier from your backend that
+     * uniquely identifies a user. When you create an identity pool, you can specify the supported logins.
      * </p>
      * 
      * @param logins
-     *        A set of optional name-value pairs that map provider names to
-     *        provider tokens. Each name-value pair represents a user from a
-     *        public provider or developer provider. If the user is from a
-     *        developer provider, the name-value pair will follow the syntax
-     *        <code>"developer_provider_name": "developer_user_identifier"</code>
-     *        . The developer provider is the "domain" by which Cognito will
-     *        refer to your users; you provided this domain while
-     *        creating/updating the identity pool. The developer user identifier
-     *        is an identifier from your backend that uniquely identifies a
-     *        user. When you create an identity pool, you can specify the
-     *        supported logins.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair
+     *        represents a user from a public provider or developer provider. If the user is from a developer provider,
+     *        the name-value pair will follow the syntax
+     *        <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the
+     *        "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the
+     *        identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a
+     *        user. When you create an identity pool, you can specify the supported logins.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetOpenIdTokenForDeveloperIdentityRequest withLogins(
-            java.util.Map<String, String> logins) {
+    public GetOpenIdTokenForDeveloperIdentityRequest withLogins(java.util.Map<String, String> logins) {
         setLogins(logins);
         return this;
     }
 
-    public GetOpenIdTokenForDeveloperIdentityRequest addLoginsEntry(String key,
-            String value) {
+    public GetOpenIdTokenForDeveloperIdentityRequest addLoginsEntry(String key, String value) {
         if (null == this.logins) {
             this.logins = new java.util.HashMap<String, String>();
         }
         if (this.logins.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.logins.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Logins. &lt;p> Returns a reference to
-     * this object so that method calls can be chained together.
+     * Removes all the entries added into Logins. &lt;p> Returns a reference to this object so that method calls can be
+     * chained together.
      */
 
     public GetOpenIdTokenForDeveloperIdentityRequest clearLoginsEntries() {
@@ -275,27 +232,21 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
 
     /**
      * <p>
-     * The expiration time of the token, in seconds. You can specify a custom
-     * expiration time for the token so that you can cache it. If you don't
-     * provide an expiration time, the token is valid for 15 minutes. You can
-     * exchange the token with Amazon STS for temporary AWS credentials, which
-     * are valid for a maximum of one hour. The maximum token duration you can
-     * set is 24 hours. You should take care in setting the expiration time for
-     * a token, as there are significant security implications: an attacker
-     * could use a leaked token to access your AWS resources for the token's
-     * duration.
+     * The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you
+     * can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the
+     * token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token
+     * duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are
+     * significant security implications: an attacker could use a leaked token to access your AWS resources for the
+     * token's duration.
      * </p>
      * 
      * @param tokenDuration
-     *        The expiration time of the token, in seconds. You can specify a
-     *        custom expiration time for the token so that you can cache it. If
-     *        you don't provide an expiration time, the token is valid for 15
-     *        minutes. You can exchange the token with Amazon STS for temporary
-     *        AWS credentials, which are valid for a maximum of one hour. The
-     *        maximum token duration you can set is 24 hours. You should take
-     *        care in setting the expiration time for a token, as there are
-     *        significant security implications: an attacker could use a leaked
-     *        token to access your AWS resources for the token's duration.
+     *        The expiration time of the token, in seconds. You can specify a custom expiration time for the token so
+     *        that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can
+     *        exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one
+     *        hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration
+     *        time for a token, as there are significant security implications: an attacker could use a leaked token to
+     *        access your AWS resources for the token's duration.
      */
 
     public void setTokenDuration(Long tokenDuration) {
@@ -304,26 +255,20 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
 
     /**
      * <p>
-     * The expiration time of the token, in seconds. You can specify a custom
-     * expiration time for the token so that you can cache it. If you don't
-     * provide an expiration time, the token is valid for 15 minutes. You can
-     * exchange the token with Amazon STS for temporary AWS credentials, which
-     * are valid for a maximum of one hour. The maximum token duration you can
-     * set is 24 hours. You should take care in setting the expiration time for
-     * a token, as there are significant security implications: an attacker
-     * could use a leaked token to access your AWS resources for the token's
-     * duration.
+     * The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you
+     * can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the
+     * token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token
+     * duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are
+     * significant security implications: an attacker could use a leaked token to access your AWS resources for the
+     * token's duration.
      * </p>
      * 
-     * @return The expiration time of the token, in seconds. You can specify a
-     *         custom expiration time for the token so that you can cache it. If
-     *         you don't provide an expiration time, the token is valid for 15
-     *         minutes. You can exchange the token with Amazon STS for temporary
-     *         AWS credentials, which are valid for a maximum of one hour. The
-     *         maximum token duration you can set is 24 hours. You should take
-     *         care in setting the expiration time for a token, as there are
-     *         significant security implications: an attacker could use a leaked
-     *         token to access your AWS resources for the token's duration.
+     * @return The expiration time of the token, in seconds. You can specify a custom expiration time for the token so
+     *         that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You
+     *         can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of
+     *         one hour. The maximum token duration you can set is 24 hours. You should take care in setting the
+     *         expiration time for a token, as there are significant security implications: an attacker could use a
+     *         leaked token to access your AWS resources for the token's duration.
      */
 
     public Long getTokenDuration() {
@@ -332,40 +277,31 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
 
     /**
      * <p>
-     * The expiration time of the token, in seconds. You can specify a custom
-     * expiration time for the token so that you can cache it. If you don't
-     * provide an expiration time, the token is valid for 15 minutes. You can
-     * exchange the token with Amazon STS for temporary AWS credentials, which
-     * are valid for a maximum of one hour. The maximum token duration you can
-     * set is 24 hours. You should take care in setting the expiration time for
-     * a token, as there are significant security implications: an attacker
-     * could use a leaked token to access your AWS resources for the token's
-     * duration.
+     * The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you
+     * can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the
+     * token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token
+     * duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are
+     * significant security implications: an attacker could use a leaked token to access your AWS resources for the
+     * token's duration.
      * </p>
      * 
      * @param tokenDuration
-     *        The expiration time of the token, in seconds. You can specify a
-     *        custom expiration time for the token so that you can cache it. If
-     *        you don't provide an expiration time, the token is valid for 15
-     *        minutes. You can exchange the token with Amazon STS for temporary
-     *        AWS credentials, which are valid for a maximum of one hour. The
-     *        maximum token duration you can set is 24 hours. You should take
-     *        care in setting the expiration time for a token, as there are
-     *        significant security implications: an attacker could use a leaked
-     *        token to access your AWS resources for the token's duration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The expiration time of the token, in seconds. You can specify a custom expiration time for the token so
+     *        that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can
+     *        exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one
+     *        hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration
+     *        time for a token, as there are significant security implications: an attacker could use a leaked token to
+     *        access your AWS resources for the token's duration.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetOpenIdTokenForDeveloperIdentityRequest withTokenDuration(
-            Long tokenDuration) {
+    public GetOpenIdTokenForDeveloperIdentityRequest withTokenDuration(Long tokenDuration) {
         setTokenDuration(tokenDuration);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -397,26 +333,21 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
         if (obj instanceof GetOpenIdTokenForDeveloperIdentityRequest == false)
             return false;
         GetOpenIdTokenForDeveloperIdentityRequest other = (GetOpenIdTokenForDeveloperIdentityRequest) obj;
-        if (other.getIdentityPoolId() == null
-                ^ this.getIdentityPoolId() == null)
+        if (other.getIdentityPoolId() == null ^ this.getIdentityPoolId() == null)
             return false;
-        if (other.getIdentityPoolId() != null
-                && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
+        if (other.getIdentityPoolId() != null && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
             return false;
         if (other.getIdentityId() == null ^ this.getIdentityId() == null)
             return false;
-        if (other.getIdentityId() != null
-                && other.getIdentityId().equals(this.getIdentityId()) == false)
+        if (other.getIdentityId() != null && other.getIdentityId().equals(this.getIdentityId()) == false)
             return false;
         if (other.getLogins() == null ^ this.getLogins() == null)
             return false;
-        if (other.getLogins() != null
-                && other.getLogins().equals(this.getLogins()) == false)
+        if (other.getLogins() != null && other.getLogins().equals(this.getLogins()) == false)
             return false;
         if (other.getTokenDuration() == null ^ this.getTokenDuration() == null)
             return false;
-        if (other.getTokenDuration() != null
-                && other.getTokenDuration().equals(this.getTokenDuration()) == false)
+        if (other.getTokenDuration() != null && other.getTokenDuration().equals(this.getTokenDuration()) == false)
             return false;
         return true;
     }
@@ -426,18 +357,10 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
-        hashCode = prime * hashCode
-                + ((getLogins() == null) ? 0 : getLogins().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTokenDuration() == null) ? 0 : getTokenDuration()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode());
+        hashCode = prime * hashCode + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
+        hashCode = prime * hashCode + ((getLogins() == null) ? 0 : getLogins().hashCode());
+        hashCode = prime * hashCode + ((getTokenDuration() == null) ? 0 : getTokenDuration().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -82,8 +80,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * 
      * @param infoType
      *        The type of information retrieved.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentInfoType
      */
 
@@ -113,8 +110,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * 
      * @param infoType
      *        The type of information retrieved.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentInfoType
      */
 
@@ -155,8 +151,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * 
      * @param ec2InstanceId
      *        The Amazon EC2 Instance ID for this information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EnvironmentInfoDescription withEc2InstanceId(String ec2InstanceId) {
@@ -196,12 +191,10 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * 
      * @param sampleTimestamp
      *        The time stamp when this information was retrieved.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EnvironmentInfoDescription withSampleTimestamp(
-            java.util.Date sampleTimestamp) {
+    public EnvironmentInfoDescription withSampleTimestamp(java.util.Date sampleTimestamp) {
         setSampleTimestamp(sampleTimestamp);
         return this;
     }
@@ -238,8 +231,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * 
      * @param message
      *        The retrieved information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EnvironmentInfoDescription withMessage(String message) {
@@ -248,8 +240,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -283,24 +274,19 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
         EnvironmentInfoDescription other = (EnvironmentInfoDescription) obj;
         if (other.getInfoType() == null ^ this.getInfoType() == null)
             return false;
-        if (other.getInfoType() != null
-                && other.getInfoType().equals(this.getInfoType()) == false)
+        if (other.getInfoType() != null && other.getInfoType().equals(this.getInfoType()) == false)
             return false;
         if (other.getEc2InstanceId() == null ^ this.getEc2InstanceId() == null)
             return false;
-        if (other.getEc2InstanceId() != null
-                && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false)
+        if (other.getEc2InstanceId() != null && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false)
             return false;
-        if (other.getSampleTimestamp() == null
-                ^ this.getSampleTimestamp() == null)
+        if (other.getSampleTimestamp() == null ^ this.getSampleTimestamp() == null)
             return false;
-        if (other.getSampleTimestamp() != null
-                && other.getSampleTimestamp().equals(this.getSampleTimestamp()) == false)
+        if (other.getSampleTimestamp() != null && other.getSampleTimestamp().equals(this.getSampleTimestamp()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         return true;
     }
@@ -310,18 +296,10 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInfoType() == null) ? 0 : getInfoType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSampleTimestamp() == null) ? 0 : getSampleTimestamp()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getInfoType() == null) ? 0 : getInfoType().hashCode());
+        hashCode = prime * hashCode + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId().hashCode());
+        hashCode = prime * hashCode + ((getSampleTimestamp() == null) ? 0 : getSampleTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         return hashCode;
     }
 
@@ -330,9 +308,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
         try {
             return (EnvironmentInfoDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

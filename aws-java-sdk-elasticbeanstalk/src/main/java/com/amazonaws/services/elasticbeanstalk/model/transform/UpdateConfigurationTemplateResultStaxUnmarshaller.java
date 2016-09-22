@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
@@ -30,12 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * UpdateConfigurationTemplateResult StAX Unmarshaller
  */
-public class UpdateConfigurationTemplateResultStaxUnmarshaller
-        implements
-        Unmarshaller<UpdateConfigurationTemplateResult, StaxUnmarshallerContext> {
+public class UpdateConfigurationTemplateResultStaxUnmarshaller implements Unmarshaller<UpdateConfigurationTemplateResult, StaxUnmarshallerContext> {
 
-    public UpdateConfigurationTemplateResult unmarshall(
-            StaxUnmarshallerContext context) throws Exception {
+    public UpdateConfigurationTemplateResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         UpdateConfigurationTemplateResult updateConfigurationTemplateResult = new UpdateConfigurationTemplateResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -51,66 +46,47 @@ public class UpdateConfigurationTemplateResultStaxUnmarshaller
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("SolutionStackName", targetDepth)) {
-                    updateConfigurationTemplateResult
-                            .setSolutionStackName(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateConfigurationTemplateResult.setSolutionStackName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ApplicationName", targetDepth)) {
-                    updateConfigurationTemplateResult
-                            .setApplicationName(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateConfigurationTemplateResult.setApplicationName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("TemplateName", targetDepth)) {
-                    updateConfigurationTemplateResult
-                            .setTemplateName(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateConfigurationTemplateResult.setTemplateName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Description", targetDepth)) {
-                    updateConfigurationTemplateResult
-                            .setDescription(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateConfigurationTemplateResult.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EnvironmentName", targetDepth)) {
-                    updateConfigurationTemplateResult
-                            .setEnvironmentName(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateConfigurationTemplateResult.setEnvironmentName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DeploymentStatus", targetDepth)) {
-                    updateConfigurationTemplateResult
-                            .setDeploymentStatus(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateConfigurationTemplateResult.setDeploymentStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DateCreated", targetDepth)) {
-                    updateConfigurationTemplateResult
-                            .setDateCreated(DateStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    updateConfigurationTemplateResult.setDateCreated(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DateUpdated", targetDepth)) {
-                    updateConfigurationTemplateResult
-                            .setDateUpdated(DateStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    updateConfigurationTemplateResult.setDateUpdated(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("OptionSettings/member", targetDepth)) {
-                    updateConfigurationTemplateResult
-                            .withOptionSettings(ConfigurationOptionSettingStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("OptionSettings/member", targetDepth)) {
+                    updateConfigurationTemplateResult.withOptionSettings(ConfigurationOptionSettingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

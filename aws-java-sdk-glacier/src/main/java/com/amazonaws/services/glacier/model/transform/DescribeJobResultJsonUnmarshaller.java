@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DescribeJobResult JSON Unmarshaller
  */
-public class DescribeJobResultJsonUnmarshaller implements
-        Unmarshaller<DescribeJobResult, JsonUnmarshallerContext> {
+public class DescribeJobResultJsonUnmarshaller implements Unmarshaller<DescribeJobResult, JsonUnmarshallerContext> {
 
-    public DescribeJobResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public DescribeJobResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeJobResult describeJobResult = new DescribeJobResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,96 +49,74 @@ public class DescribeJobResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobId", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setJobId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobDescription", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setJobDescription(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeJobResult.setJobDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setAction(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeJobResult.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ArchiveId", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setArchiveId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeJobResult.setArchiveId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VaultARN", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setVaultARN(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeJobResult.setVaultARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setCreationDate(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeJobResult.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Completed", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setCompleted(context.getUnmarshaller(
-                            Boolean.class).unmarshall(context));
+                    describeJobResult.setCompleted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusCode", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setStatusCode(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeJobResult.setStatusCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setStatusMessage(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeJobResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ArchiveSizeInBytes", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setArchiveSizeInBytes(context
-                            .getUnmarshaller(Long.class).unmarshall(context));
+                    describeJobResult.setArchiveSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("InventorySizeInBytes", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setInventorySizeInBytes(context
-                            .getUnmarshaller(Long.class).unmarshall(context));
+                    describeJobResult.setInventorySizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SNSTopic", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setSNSTopic(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeJobResult.setSNSTopic(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletionDate", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setCompletionDate(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeJobResult.setCompletionDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SHA256TreeHash", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setSHA256TreeHash(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeJobResult.setSHA256TreeHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context
-                        .testExpression("ArchiveSHA256TreeHash", targetDepth)) {
+                if (context.testExpression("ArchiveSHA256TreeHash", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setArchiveSHA256TreeHash(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeJobResult.setArchiveSHA256TreeHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetrievalByteRange", targetDepth)) {
                     context.nextToken();
-                    describeJobResult.setRetrievalByteRange(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeJobResult.setRetrievalByteRange(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("InventoryRetrievalParameters",
-                        targetDepth)) {
+                if (context.testExpression("InventoryRetrievalParameters", targetDepth)) {
                     context.nextToken();
-                    describeJobResult
-                            .setInventoryRetrievalParameters(InventoryRetrievalJobDescriptionJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeJobResult.setInventoryRetrievalParameters(InventoryRetrievalJobDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

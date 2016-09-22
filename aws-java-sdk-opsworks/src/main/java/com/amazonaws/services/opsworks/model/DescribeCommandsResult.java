@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -21,26 +19,21 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeCommands</code> request.
  * </p>
  */
-public class DescribeCommandsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeCommandsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of <code>Command</code> objects that describe each of the
-     * specified commands.
+     * An array of <code>Command</code> objects that describe each of the specified commands.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Command> commands;
 
     /**
      * <p>
-     * An array of <code>Command</code> objects that describe each of the
-     * specified commands.
+     * An array of <code>Command</code> objects that describe each of the specified commands.
      * </p>
      * 
-     * @return An array of <code>Command</code> objects that describe each of
-     *         the specified commands.
+     * @return An array of <code>Command</code> objects that describe each of the specified commands.
      */
 
     public java.util.List<Command> getCommands() {
@@ -52,13 +45,11 @@ public class DescribeCommandsResult extends
 
     /**
      * <p>
-     * An array of <code>Command</code> objects that describe each of the
-     * specified commands.
+     * An array of <code>Command</code> objects that describe each of the specified commands.
      * </p>
      * 
      * @param commands
-     *        An array of <code>Command</code> objects that describe each of the
-     *        specified commands.
+     *        An array of <code>Command</code> objects that describe each of the specified commands.
      */
 
     public void setCommands(java.util.Collection<Command> commands) {
@@ -67,33 +58,27 @@ public class DescribeCommandsResult extends
             return;
         }
 
-        this.commands = new com.amazonaws.internal.SdkInternalList<Command>(
-                commands);
+        this.commands = new com.amazonaws.internal.SdkInternalList<Command>(commands);
     }
 
     /**
      * <p>
-     * An array of <code>Command</code> objects that describe each of the
-     * specified commands.
+     * An array of <code>Command</code> objects that describe each of the specified commands.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCommands(java.util.Collection)} or
-     * {@link #withCommands(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCommands(java.util.Collection)} or {@link #withCommands(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param commands
-     *        An array of <code>Command</code> objects that describe each of the
-     *        specified commands.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of <code>Command</code> objects that describe each of the specified commands.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCommandsResult withCommands(Command... commands) {
         if (this.commands == null) {
-            setCommands(new com.amazonaws.internal.SdkInternalList<Command>(
-                    commands.length));
+            setCommands(new com.amazonaws.internal.SdkInternalList<Command>(commands.length));
         }
         for (Command ele : commands) {
             this.commands.add(ele);
@@ -103,26 +88,21 @@ public class DescribeCommandsResult extends
 
     /**
      * <p>
-     * An array of <code>Command</code> objects that describe each of the
-     * specified commands.
+     * An array of <code>Command</code> objects that describe each of the specified commands.
      * </p>
      * 
      * @param commands
-     *        An array of <code>Command</code> objects that describe each of the
-     *        specified commands.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of <code>Command</code> objects that describe each of the specified commands.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCommandsResult withCommands(
-            java.util.Collection<Command> commands) {
+    public DescribeCommandsResult withCommands(java.util.Collection<Command> commands) {
         setCommands(commands);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -150,8 +130,7 @@ public class DescribeCommandsResult extends
         DescribeCommandsResult other = (DescribeCommandsResult) obj;
         if (other.getCommands() == null ^ this.getCommands() == null)
             return false;
-        if (other.getCommands() != null
-                && other.getCommands().equals(this.getCommands()) == false)
+        if (other.getCommands() != null && other.getCommands().equals(this.getCommands()) == false)
             return false;
         return true;
     }
@@ -161,8 +140,7 @@ public class DescribeCommandsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCommands() == null) ? 0 : getCommands().hashCode());
+        hashCode = prime * hashCode + ((getCommands() == null) ? 0 : getCommands().hashCode());
         return hashCode;
     }
 
@@ -171,9 +149,7 @@ public class DescribeCommandsResult extends
         try {
             return (DescribeCommandsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

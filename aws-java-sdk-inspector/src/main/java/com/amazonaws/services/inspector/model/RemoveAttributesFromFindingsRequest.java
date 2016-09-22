@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -20,33 +18,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class RemoveAttributesFromFindingsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class RemoveAttributesFromFindingsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARNs that specify the findings that you want to remove attributes
-     * from.
+     * The ARNs that specify the findings that you want to remove attributes from.
      * </p>
      */
     private java.util.List<String> findingArns;
     /**
      * <p>
-     * The array of attribute keys that you want to remove from specified
-     * findings.
+     * The array of attribute keys that you want to remove from specified findings.
      * </p>
      */
     private java.util.List<String> attributeKeys;
 
     /**
      * <p>
-     * The ARNs that specify the findings that you want to remove attributes
-     * from.
+     * The ARNs that specify the findings that you want to remove attributes from.
      * </p>
      * 
-     * @return The ARNs that specify the findings that you want to remove
-     *         attributes from.
+     * @return The ARNs that specify the findings that you want to remove attributes from.
      */
 
     public java.util.List<String> getFindingArns() {
@@ -55,13 +47,11 @@ public class RemoveAttributesFromFindingsRequest extends
 
     /**
      * <p>
-     * The ARNs that specify the findings that you want to remove attributes
-     * from.
+     * The ARNs that specify the findings that you want to remove attributes from.
      * </p>
      * 
      * @param findingArns
-     *        The ARNs that specify the findings that you want to remove
-     *        attributes from.
+     *        The ARNs that specify the findings that you want to remove attributes from.
      */
 
     public void setFindingArns(java.util.Collection<String> findingArns) {
@@ -75,25 +65,20 @@ public class RemoveAttributesFromFindingsRequest extends
 
     /**
      * <p>
-     * The ARNs that specify the findings that you want to remove attributes
-     * from.
+     * The ARNs that specify the findings that you want to remove attributes from.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFindingArns(java.util.Collection)} or
-     * {@link #withFindingArns(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFindingArns(java.util.Collection)} or {@link #withFindingArns(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param findingArns
-     *        The ARNs that specify the findings that you want to remove
-     *        attributes from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARNs that specify the findings that you want to remove attributes from.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RemoveAttributesFromFindingsRequest withFindingArns(
-            String... findingArns) {
+    public RemoveAttributesFromFindingsRequest withFindingArns(String... findingArns) {
         if (this.findingArns == null) {
             setFindingArns(new java.util.ArrayList<String>(findingArns.length));
         }
@@ -105,31 +90,25 @@ public class RemoveAttributesFromFindingsRequest extends
 
     /**
      * <p>
-     * The ARNs that specify the findings that you want to remove attributes
-     * from.
+     * The ARNs that specify the findings that you want to remove attributes from.
      * </p>
      * 
      * @param findingArns
-     *        The ARNs that specify the findings that you want to remove
-     *        attributes from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARNs that specify the findings that you want to remove attributes from.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RemoveAttributesFromFindingsRequest withFindingArns(
-            java.util.Collection<String> findingArns) {
+    public RemoveAttributesFromFindingsRequest withFindingArns(java.util.Collection<String> findingArns) {
         setFindingArns(findingArns);
         return this;
     }
 
     /**
      * <p>
-     * The array of attribute keys that you want to remove from specified
-     * findings.
+     * The array of attribute keys that you want to remove from specified findings.
      * </p>
      * 
-     * @return The array of attribute keys that you want to remove from
-     *         specified findings.
+     * @return The array of attribute keys that you want to remove from specified findings.
      */
 
     public java.util.List<String> getAttributeKeys() {
@@ -138,13 +117,11 @@ public class RemoveAttributesFromFindingsRequest extends
 
     /**
      * <p>
-     * The array of attribute keys that you want to remove from specified
-     * findings.
+     * The array of attribute keys that you want to remove from specified findings.
      * </p>
      * 
      * @param attributeKeys
-     *        The array of attribute keys that you want to remove from specified
-     *        findings.
+     *        The array of attribute keys that you want to remove from specified findings.
      */
 
     public void setAttributeKeys(java.util.Collection<String> attributeKeys) {
@@ -158,28 +135,22 @@ public class RemoveAttributesFromFindingsRequest extends
 
     /**
      * <p>
-     * The array of attribute keys that you want to remove from specified
-     * findings.
+     * The array of attribute keys that you want to remove from specified findings.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttributeKeys(java.util.Collection)} or
-     * {@link #withAttributeKeys(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributeKeys(java.util.Collection)} or {@link #withAttributeKeys(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param attributeKeys
-     *        The array of attribute keys that you want to remove from specified
-     *        findings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The array of attribute keys that you want to remove from specified findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RemoveAttributesFromFindingsRequest withAttributeKeys(
-            String... attributeKeys) {
+    public RemoveAttributesFromFindingsRequest withAttributeKeys(String... attributeKeys) {
         if (this.attributeKeys == null) {
-            setAttributeKeys(new java.util.ArrayList<String>(
-                    attributeKeys.length));
+            setAttributeKeys(new java.util.ArrayList<String>(attributeKeys.length));
         }
         for (String ele : attributeKeys) {
             this.attributeKeys.add(ele);
@@ -189,26 +160,21 @@ public class RemoveAttributesFromFindingsRequest extends
 
     /**
      * <p>
-     * The array of attribute keys that you want to remove from specified
-     * findings.
+     * The array of attribute keys that you want to remove from specified findings.
      * </p>
      * 
      * @param attributeKeys
-     *        The array of attribute keys that you want to remove from specified
-     *        findings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The array of attribute keys that you want to remove from specified findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RemoveAttributesFromFindingsRequest withAttributeKeys(
-            java.util.Collection<String> attributeKeys) {
+    public RemoveAttributesFromFindingsRequest withAttributeKeys(java.util.Collection<String> attributeKeys) {
         setAttributeKeys(attributeKeys);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -238,13 +204,11 @@ public class RemoveAttributesFromFindingsRequest extends
         RemoveAttributesFromFindingsRequest other = (RemoveAttributesFromFindingsRequest) obj;
         if (other.getFindingArns() == null ^ this.getFindingArns() == null)
             return false;
-        if (other.getFindingArns() != null
-                && other.getFindingArns().equals(this.getFindingArns()) == false)
+        if (other.getFindingArns() != null && other.getFindingArns().equals(this.getFindingArns()) == false)
             return false;
         if (other.getAttributeKeys() == null ^ this.getAttributeKeys() == null)
             return false;
-        if (other.getAttributeKeys() != null
-                && other.getAttributeKeys().equals(this.getAttributeKeys()) == false)
+        if (other.getAttributeKeys() != null && other.getAttributeKeys().equals(this.getAttributeKeys()) == false)
             return false;
         return true;
     }
@@ -254,13 +218,8 @@ public class RemoveAttributesFromFindingsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFindingArns() == null) ? 0 : getFindingArns().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttributeKeys() == null) ? 0 : getAttributeKeys()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getFindingArns() == null) ? 0 : getFindingArns().hashCode());
+        hashCode = prime * hashCode + ((getAttributeKeys() == null) ? 0 : getAttributeKeys().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -19,15 +17,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents a request to create a receipt rule. You use receipt rules to
- * receive email with Amazon SES. For more information, see the <a href=
- * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
- * >Amazon SES Developer Guide</a>.
+ * Represents a request to create a receipt rule. You use receipt rules to receive email with Amazon SES. For more
+ * information, see the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
+ * Guide</a>.
  * </p>
  */
-public class CreateReceiptRuleRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -37,16 +33,15 @@ public class CreateReceiptRuleRequest extends
     private String ruleSetName;
     /**
      * <p>
-     * The name of an existing rule after which the new rule will be placed. If
-     * this parameter is null, the new rule will be inserted at the beginning of
-     * the rule list.
+     * The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule
+     * will be inserted at the beginning of the rule list.
      * </p>
      */
     private String after;
     /**
      * <p>
-     * A data structure that contains the specified rule's name, actions,
-     * recipients, domains, enabled status, scan status, and TLS policy.
+     * A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan
+     * status, and TLS policy.
      * </p>
      */
     private ReceiptRule rule;
@@ -83,8 +78,7 @@ public class CreateReceiptRuleRequest extends
      * 
      * @param ruleSetName
      *        The name of the rule set to which to add the rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateReceiptRuleRequest withRuleSetName(String ruleSetName) {
@@ -94,15 +88,13 @@ public class CreateReceiptRuleRequest extends
 
     /**
      * <p>
-     * The name of an existing rule after which the new rule will be placed. If
-     * this parameter is null, the new rule will be inserted at the beginning of
-     * the rule list.
+     * The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule
+     * will be inserted at the beginning of the rule list.
      * </p>
      * 
      * @param after
-     *        The name of an existing rule after which the new rule will be
-     *        placed. If this parameter is null, the new rule will be inserted
-     *        at the beginning of the rule list.
+     *        The name of an existing rule after which the new rule will be placed. If this parameter is null, the new
+     *        rule will be inserted at the beginning of the rule list.
      */
 
     public void setAfter(String after) {
@@ -111,14 +103,12 @@ public class CreateReceiptRuleRequest extends
 
     /**
      * <p>
-     * The name of an existing rule after which the new rule will be placed. If
-     * this parameter is null, the new rule will be inserted at the beginning of
-     * the rule list.
+     * The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule
+     * will be inserted at the beginning of the rule list.
      * </p>
      * 
-     * @return The name of an existing rule after which the new rule will be
-     *         placed. If this parameter is null, the new rule will be inserted
-     *         at the beginning of the rule list.
+     * @return The name of an existing rule after which the new rule will be placed. If this parameter is null, the new
+     *         rule will be inserted at the beginning of the rule list.
      */
 
     public String getAfter() {
@@ -127,17 +117,14 @@ public class CreateReceiptRuleRequest extends
 
     /**
      * <p>
-     * The name of an existing rule after which the new rule will be placed. If
-     * this parameter is null, the new rule will be inserted at the beginning of
-     * the rule list.
+     * The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule
+     * will be inserted at the beginning of the rule list.
      * </p>
      * 
      * @param after
-     *        The name of an existing rule after which the new rule will be
-     *        placed. If this parameter is null, the new rule will be inserted
-     *        at the beginning of the rule list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of an existing rule after which the new rule will be placed. If this parameter is null, the new
+     *        rule will be inserted at the beginning of the rule list.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateReceiptRuleRequest withAfter(String after) {
@@ -147,13 +134,13 @@ public class CreateReceiptRuleRequest extends
 
     /**
      * <p>
-     * A data structure that contains the specified rule's name, actions,
-     * recipients, domains, enabled status, scan status, and TLS policy.
+     * A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan
+     * status, and TLS policy.
      * </p>
      * 
      * @param rule
-     *        A data structure that contains the specified rule's name, actions,
-     *        recipients, domains, enabled status, scan status, and TLS policy.
+     *        A data structure that contains the specified rule's name, actions, recipients, domains, enabled status,
+     *        scan status, and TLS policy.
      */
 
     public void setRule(ReceiptRule rule) {
@@ -162,13 +149,12 @@ public class CreateReceiptRuleRequest extends
 
     /**
      * <p>
-     * A data structure that contains the specified rule's name, actions,
-     * recipients, domains, enabled status, scan status, and TLS policy.
+     * A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan
+     * status, and TLS policy.
      * </p>
      * 
-     * @return A data structure that contains the specified rule's name,
-     *         actions, recipients, domains, enabled status, scan status, and
-     *         TLS policy.
+     * @return A data structure that contains the specified rule's name, actions, recipients, domains, enabled status,
+     *         scan status, and TLS policy.
      */
 
     public ReceiptRule getRule() {
@@ -177,15 +163,14 @@ public class CreateReceiptRuleRequest extends
 
     /**
      * <p>
-     * A data structure that contains the specified rule's name, actions,
-     * recipients, domains, enabled status, scan status, and TLS policy.
+     * A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan
+     * status, and TLS policy.
      * </p>
      * 
      * @param rule
-     *        A data structure that contains the specified rule's name, actions,
-     *        recipients, domains, enabled status, scan status, and TLS policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A data structure that contains the specified rule's name, actions, recipients, domains, enabled status,
+     *        scan status, and TLS policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateReceiptRuleRequest withRule(ReceiptRule rule) {
@@ -194,8 +179,7 @@ public class CreateReceiptRuleRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -227,18 +211,15 @@ public class CreateReceiptRuleRequest extends
         CreateReceiptRuleRequest other = (CreateReceiptRuleRequest) obj;
         if (other.getRuleSetName() == null ^ this.getRuleSetName() == null)
             return false;
-        if (other.getRuleSetName() != null
-                && other.getRuleSetName().equals(this.getRuleSetName()) == false)
+        if (other.getRuleSetName() != null && other.getRuleSetName().equals(this.getRuleSetName()) == false)
             return false;
         if (other.getAfter() == null ^ this.getAfter() == null)
             return false;
-        if (other.getAfter() != null
-                && other.getAfter().equals(this.getAfter()) == false)
+        if (other.getAfter() != null && other.getAfter().equals(this.getAfter()) == false)
             return false;
         if (other.getRule() == null ^ this.getRule() == null)
             return false;
-        if (other.getRule() != null
-                && other.getRule().equals(this.getRule()) == false)
+        if (other.getRule() != null && other.getRule().equals(this.getRule()) == false)
             return false;
         return true;
     }
@@ -248,13 +229,9 @@ public class CreateReceiptRuleRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRuleSetName() == null) ? 0 : getRuleSetName().hashCode());
-        hashCode = prime * hashCode
-                + ((getAfter() == null) ? 0 : getAfter().hashCode());
-        hashCode = prime * hashCode
-                + ((getRule() == null) ? 0 : getRule().hashCode());
+        hashCode = prime * hashCode + ((getRuleSetName() == null) ? 0 : getRuleSetName().hashCode());
+        hashCode = prime * hashCode + ((getAfter() == null) ? 0 : getAfter().hashCode());
+        hashCode = prime * hashCode + ((getRule() == null) ? 0 : getRule().hashCode());
         return hashCode;
     }
 

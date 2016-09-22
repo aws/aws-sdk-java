@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
@@ -34,12 +32,10 @@ public class EbsBlockDeviceConfigJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(EbsBlockDeviceConfig ebsBlockDeviceConfig,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(EbsBlockDeviceConfig ebsBlockDeviceConfig, StructuredJsonGenerator jsonGenerator) {
 
         if (ebsBlockDeviceConfig == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -47,19 +43,15 @@ public class EbsBlockDeviceConfigJsonMarshaller {
 
             if (ebsBlockDeviceConfig.getVolumeSpecification() != null) {
                 jsonGenerator.writeFieldName("VolumeSpecification");
-                VolumeSpecificationJsonMarshaller.getInstance().marshall(
-                        ebsBlockDeviceConfig.getVolumeSpecification(),
-                        jsonGenerator);
+                VolumeSpecificationJsonMarshaller.getInstance().marshall(ebsBlockDeviceConfig.getVolumeSpecification(), jsonGenerator);
             }
             if (ebsBlockDeviceConfig.getVolumesPerInstance() != null) {
-                jsonGenerator.writeFieldName("VolumesPerInstance").writeValue(
-                        ebsBlockDeviceConfig.getVolumesPerInstance());
+                jsonGenerator.writeFieldName("VolumesPerInstance").writeValue(ebsBlockDeviceConfig.getVolumesPerInstance());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

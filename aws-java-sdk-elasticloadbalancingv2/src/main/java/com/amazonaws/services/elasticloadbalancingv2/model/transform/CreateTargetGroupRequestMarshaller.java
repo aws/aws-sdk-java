@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
@@ -31,89 +29,68 @@ import com.amazonaws.util.IdempotentUtils;
  * CreateTargetGroupRequest Marshaller
  */
 
-public class CreateTargetGroupRequestMarshaller implements
-        Marshaller<Request<CreateTargetGroupRequest>, CreateTargetGroupRequest> {
+public class CreateTargetGroupRequestMarshaller implements Marshaller<Request<CreateTargetGroupRequest>, CreateTargetGroupRequest> {
 
-    public Request<CreateTargetGroupRequest> marshall(
-            CreateTargetGroupRequest createTargetGroupRequest) {
+    public Request<CreateTargetGroupRequest> marshall(CreateTargetGroupRequest createTargetGroupRequest) {
 
         if (createTargetGroupRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateTargetGroupRequest> request = new DefaultRequest<CreateTargetGroupRequest>(
-                createTargetGroupRequest, "AmazonElasticLoadBalancing");
+        Request<CreateTargetGroupRequest> request = new DefaultRequest<CreateTargetGroupRequest>(createTargetGroupRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "CreateTargetGroup");
         request.addParameter("Version", "2015-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createTargetGroupRequest.getName() != null) {
-            request.addParameter("Name",
-                    StringUtils.fromString(createTargetGroupRequest.getName()));
+            request.addParameter("Name", StringUtils.fromString(createTargetGroupRequest.getName()));
         }
 
         if (createTargetGroupRequest.getProtocol() != null) {
-            request.addParameter("Protocol", StringUtils
-                    .fromString(createTargetGroupRequest.getProtocol()));
+            request.addParameter("Protocol", StringUtils.fromString(createTargetGroupRequest.getProtocol()));
         }
 
         if (createTargetGroupRequest.getPort() != null) {
-            request.addParameter("Port",
-                    StringUtils.fromInteger(createTargetGroupRequest.getPort()));
+            request.addParameter("Port", StringUtils.fromInteger(createTargetGroupRequest.getPort()));
         }
 
         if (createTargetGroupRequest.getVpcId() != null) {
-            request.addParameter("VpcId",
-                    StringUtils.fromString(createTargetGroupRequest.getVpcId()));
+            request.addParameter("VpcId", StringUtils.fromString(createTargetGroupRequest.getVpcId()));
         }
 
         if (createTargetGroupRequest.getHealthCheckProtocol() != null) {
-            request.addParameter("HealthCheckProtocol", StringUtils
-                    .fromString(createTargetGroupRequest
-                            .getHealthCheckProtocol()));
+            request.addParameter("HealthCheckProtocol", StringUtils.fromString(createTargetGroupRequest.getHealthCheckProtocol()));
         }
 
         if (createTargetGroupRequest.getHealthCheckPort() != null) {
-            request.addParameter("HealthCheckPort", StringUtils
-                    .fromString(createTargetGroupRequest.getHealthCheckPort()));
+            request.addParameter("HealthCheckPort", StringUtils.fromString(createTargetGroupRequest.getHealthCheckPort()));
         }
 
         if (createTargetGroupRequest.getHealthCheckPath() != null) {
-            request.addParameter("HealthCheckPath", StringUtils
-                    .fromString(createTargetGroupRequest.getHealthCheckPath()));
+            request.addParameter("HealthCheckPath", StringUtils.fromString(createTargetGroupRequest.getHealthCheckPath()));
         }
 
         if (createTargetGroupRequest.getHealthCheckIntervalSeconds() != null) {
-            request.addParameter("HealthCheckIntervalSeconds", StringUtils
-                    .fromInteger(createTargetGroupRequest
-                            .getHealthCheckIntervalSeconds()));
+            request.addParameter("HealthCheckIntervalSeconds", StringUtils.fromInteger(createTargetGroupRequest.getHealthCheckIntervalSeconds()));
         }
 
         if (createTargetGroupRequest.getHealthCheckTimeoutSeconds() != null) {
-            request.addParameter("HealthCheckTimeoutSeconds", StringUtils
-                    .fromInteger(createTargetGroupRequest
-                            .getHealthCheckTimeoutSeconds()));
+            request.addParameter("HealthCheckTimeoutSeconds", StringUtils.fromInteger(createTargetGroupRequest.getHealthCheckTimeoutSeconds()));
         }
 
         if (createTargetGroupRequest.getHealthyThresholdCount() != null) {
-            request.addParameter("HealthyThresholdCount", StringUtils
-                    .fromInteger(createTargetGroupRequest
-                            .getHealthyThresholdCount()));
+            request.addParameter("HealthyThresholdCount", StringUtils.fromInteger(createTargetGroupRequest.getHealthyThresholdCount()));
         }
 
         if (createTargetGroupRequest.getUnhealthyThresholdCount() != null) {
-            request.addParameter("UnhealthyThresholdCount", StringUtils
-                    .fromInteger(createTargetGroupRequest
-                            .getUnhealthyThresholdCount()));
+            request.addParameter("UnhealthyThresholdCount", StringUtils.fromInteger(createTargetGroupRequest.getUnhealthyThresholdCount()));
         }
 
         Matcher matcher = createTargetGroupRequest.getMatcher();
         if (matcher != null) {
 
             if (matcher.getHttpCode() != null) {
-                request.addParameter("Matcher.HttpCode",
-                        StringUtils.fromString(matcher.getHttpCode()));
+                request.addParameter("Matcher.HttpCode", StringUtils.fromString(matcher.getHttpCode()));
             }
         }
 

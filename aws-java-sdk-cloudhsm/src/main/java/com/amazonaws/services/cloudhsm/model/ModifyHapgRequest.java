@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudhsm.model;
 
@@ -20,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ModifyHapgRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ModifyHapgRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -37,8 +34,7 @@ public class ModifyHapgRequest extends com.amazonaws.AmazonWebServiceRequest
     private String label;
     /**
      * <p>
-     * The list of partition serial numbers to make members of the
-     * high-availability partition group.
+     * The list of partition serial numbers to make members of the high-availability partition group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> partitionSerialList;
@@ -75,8 +71,7 @@ public class ModifyHapgRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param hapgArn
      *        The ARN of the high-availability partition group to modify.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyHapgRequest withHapgArn(String hapgArn) {
@@ -116,8 +111,7 @@ public class ModifyHapgRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param label
      *        The new label for the high-availability partition group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyHapgRequest withLabel(String label) {
@@ -127,12 +121,10 @@ public class ModifyHapgRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The list of partition serial numbers to make members of the
-     * high-availability partition group.
+     * The list of partition serial numbers to make members of the high-availability partition group.
      * </p>
      * 
-     * @return The list of partition serial numbers to make members of the
-     *         high-availability partition group.
+     * @return The list of partition serial numbers to make members of the high-availability partition group.
      */
 
     public java.util.List<String> getPartitionSerialList() {
@@ -144,50 +136,40 @@ public class ModifyHapgRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The list of partition serial numbers to make members of the
-     * high-availability partition group.
+     * The list of partition serial numbers to make members of the high-availability partition group.
      * </p>
      * 
      * @param partitionSerialList
-     *        The list of partition serial numbers to make members of the
-     *        high-availability partition group.
+     *        The list of partition serial numbers to make members of the high-availability partition group.
      */
 
-    public void setPartitionSerialList(
-            java.util.Collection<String> partitionSerialList) {
+    public void setPartitionSerialList(java.util.Collection<String> partitionSerialList) {
         if (partitionSerialList == null) {
             this.partitionSerialList = null;
             return;
         }
 
-        this.partitionSerialList = new com.amazonaws.internal.SdkInternalList<String>(
-                partitionSerialList);
+        this.partitionSerialList = new com.amazonaws.internal.SdkInternalList<String>(partitionSerialList);
     }
 
     /**
      * <p>
-     * The list of partition serial numbers to make members of the
-     * high-availability partition group.
+     * The list of partition serial numbers to make members of the high-availability partition group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPartitionSerialList(java.util.Collection)} or
-     * {@link #withPartitionSerialList(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPartitionSerialList(java.util.Collection)} or {@link #withPartitionSerialList(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param partitionSerialList
-     *        The list of partition serial numbers to make members of the
-     *        high-availability partition group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of partition serial numbers to make members of the high-availability partition group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyHapgRequest withPartitionSerialList(
-            String... partitionSerialList) {
+    public ModifyHapgRequest withPartitionSerialList(String... partitionSerialList) {
         if (this.partitionSerialList == null) {
-            setPartitionSerialList(new com.amazonaws.internal.SdkInternalList<String>(
-                    partitionSerialList.length));
+            setPartitionSerialList(new com.amazonaws.internal.SdkInternalList<String>(partitionSerialList.length));
         }
         for (String ele : partitionSerialList) {
             this.partitionSerialList.add(ele);
@@ -197,26 +179,21 @@ public class ModifyHapgRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The list of partition serial numbers to make members of the
-     * high-availability partition group.
+     * The list of partition serial numbers to make members of the high-availability partition group.
      * </p>
      * 
      * @param partitionSerialList
-     *        The list of partition serial numbers to make members of the
-     *        high-availability partition group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of partition serial numbers to make members of the high-availability partition group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyHapgRequest withPartitionSerialList(
-            java.util.Collection<String> partitionSerialList) {
+    public ModifyHapgRequest withPartitionSerialList(java.util.Collection<String> partitionSerialList) {
         setPartitionSerialList(partitionSerialList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -248,20 +225,15 @@ public class ModifyHapgRequest extends com.amazonaws.AmazonWebServiceRequest
         ModifyHapgRequest other = (ModifyHapgRequest) obj;
         if (other.getHapgArn() == null ^ this.getHapgArn() == null)
             return false;
-        if (other.getHapgArn() != null
-                && other.getHapgArn().equals(this.getHapgArn()) == false)
+        if (other.getHapgArn() != null && other.getHapgArn().equals(this.getHapgArn()) == false)
             return false;
         if (other.getLabel() == null ^ this.getLabel() == null)
             return false;
-        if (other.getLabel() != null
-                && other.getLabel().equals(this.getLabel()) == false)
+        if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
             return false;
-        if (other.getPartitionSerialList() == null
-                ^ this.getPartitionSerialList() == null)
+        if (other.getPartitionSerialList() == null ^ this.getPartitionSerialList() == null)
             return false;
-        if (other.getPartitionSerialList() != null
-                && other.getPartitionSerialList().equals(
-                        this.getPartitionSerialList()) == false)
+        if (other.getPartitionSerialList() != null && other.getPartitionSerialList().equals(this.getPartitionSerialList()) == false)
             return false;
         return true;
     }
@@ -271,14 +243,9 @@ public class ModifyHapgRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getHapgArn() == null) ? 0 : getHapgArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getLabel() == null) ? 0 : getLabel().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPartitionSerialList() == null) ? 0
-                        : getPartitionSerialList().hashCode());
+        hashCode = prime * hashCode + ((getHapgArn() == null) ? 0 : getHapgArn().hashCode());
+        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
+        hashCode = prime * hashCode + ((getPartitionSerialList() == null) ? 0 : getPartitionSerialList().hashCode());
         return hashCode;
     }
 

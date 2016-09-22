@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchdomain.model;
 
@@ -28,12 +26,10 @@ public class FieldStats implements Serializable, Cloneable {
      * The minimum value found in the specified field in the result set.
      * </p>
      * <p>
-     * If the field is numeric (<code>int</code>, <code>int-array</code>,
-     * <code>double</code>, or <code>double-array</code>), <code>min</code> is
-     * the string representation of a double-precision 64-bit floating point
-     * value. If the field is <code>date</code> or <code>date-array</code>,
-     * <code>min</code> is the string representation of a date with the format
-     * specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+     * If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     * <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating
+     * point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string
+     * representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
      * RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      * </p>
      */
@@ -43,34 +39,29 @@ public class FieldStats implements Serializable, Cloneable {
      * The maximum value found in the specified field in the result set.
      * </p>
      * <p>
-     * If the field is numeric (<code>int</code>, <code>int-array</code>,
-     * <code>double</code>, or <code>double-array</code>), <code>max</code> is
-     * the string representation of a double-precision 64-bit floating point
-     * value. If the field is <code>date</code> or <code>date-array</code>,
-     * <code>max</code> is the string representation of a date with the format
-     * specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+     * If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     * <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating
+     * point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string
+     * representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
      * RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      * </p>
      */
     private String max;
     /**
      * <p>
-     * The number of documents that contain a value in the specified field in
-     * the result set.
+     * The number of documents that contain a value in the specified field in the result set.
      * </p>
      */
     private Long count;
     /**
      * <p>
-     * The number of documents that do not contain a value in the specified
-     * field in the result set.
+     * The number of documents that do not contain a value in the specified field in the result set.
      * </p>
      */
     private Long missing;
     /**
      * <p>
-     * The sum of the field values across the documents in the result set.
-     * <code>null</code> for date fields.
+     * The sum of the field values across the documents in the result set. <code>null</code> for date fields.
      * </p>
      */
     private Double sum;
@@ -85,20 +76,17 @@ public class FieldStats implements Serializable, Cloneable {
      * The average of the values found in the specified field in the result set.
      * </p>
      * <p>
-     * If the field is numeric (<code>int</code>, <code>int-array</code>,
-     * <code>double</code>, or <code>double-array</code>), <code>mean</code> is
-     * the string representation of a double-precision 64-bit floating point
-     * value. If the field is <code>date</code> or <code>date-array</code>,
-     * <code>mean</code> is the string representation of a date with the format
-     * specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+     * If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     * <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating
+     * point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string
+     * representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
      * RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      * </p>
      */
     private String mean;
     /**
      * <p>
-     * The standard deviation of the values in the specified field in the result
-     * set.
+     * The standard deviation of the values in the specified field in the result set.
      * </p>
      */
     private Double stddev;
@@ -108,27 +96,21 @@ public class FieldStats implements Serializable, Cloneable {
      * The minimum value found in the specified field in the result set.
      * </p>
      * <p>
-     * If the field is numeric (<code>int</code>, <code>int-array</code>,
-     * <code>double</code>, or <code>double-array</code>), <code>min</code> is
-     * the string representation of a double-precision 64-bit floating point
-     * value. If the field is <code>date</code> or <code>date-array</code>,
-     * <code>min</code> is the string representation of a date with the format
-     * specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+     * If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     * <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating
+     * point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string
+     * representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
      * RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      * </p>
      * 
      * @param min
-     *        The minimum value found in the specified field in the result
-     *        set.</p>
+     *        The minimum value found in the specified field in the result set.</p>
      *        <p>
-     *        If the field is numeric (<code>int</code>, <code>int-array</code>,
-     *        <code>double</code>, or <code>double-array</code>),
-     *        <code>min</code> is the string representation of a
-     *        double-precision 64-bit floating point value. If the field is
-     *        <code>date</code> or <code>date-array</code>, <code>min</code> is
-     *        the string representation of a date with the format specified in
-     *        <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
-     *        yyyy-mm-ddTHH:mm:ss.SSSZ.
+     *        If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     *        <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit
+     *        floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is
+     *        the string representation of a date with the format specified in <a
+     *        href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      */
 
     public void setMin(String min) {
@@ -140,25 +122,20 @@ public class FieldStats implements Serializable, Cloneable {
      * The minimum value found in the specified field in the result set.
      * </p>
      * <p>
-     * If the field is numeric (<code>int</code>, <code>int-array</code>,
-     * <code>double</code>, or <code>double-array</code>), <code>min</code> is
-     * the string representation of a double-precision 64-bit floating point
-     * value. If the field is <code>date</code> or <code>date-array</code>,
-     * <code>min</code> is the string representation of a date with the format
-     * specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+     * If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     * <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating
+     * point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string
+     * representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
      * RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      * </p>
      * 
-     * @return The minimum value found in the specified field in the result
-     *         set.</p>
+     * @return The minimum value found in the specified field in the result set.</p>
      *         <p>
-     *         If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>),
-     *         <code>min</code> is the string representation of a
-     *         double-precision 64-bit floating point value. If the field is
-     *         <code>date</code> or <code>date-array</code>, <code>min</code> is
-     *         the string representation of a date with the format specified in
-     *         <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
-     *         yyyy-mm-ddTHH:mm:ss.SSSZ.
+     *         If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     *         <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit
+     *         floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is
+     *         the string representation of a date with the format specified in <a
+     *         href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      */
 
     public String getMin() {
@@ -170,29 +147,22 @@ public class FieldStats implements Serializable, Cloneable {
      * The minimum value found in the specified field in the result set.
      * </p>
      * <p>
-     * If the field is numeric (<code>int</code>, <code>int-array</code>,
-     * <code>double</code>, or <code>double-array</code>), <code>min</code> is
-     * the string representation of a double-precision 64-bit floating point
-     * value. If the field is <code>date</code> or <code>date-array</code>,
-     * <code>min</code> is the string representation of a date with the format
-     * specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+     * If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     * <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating
+     * point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string
+     * representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
      * RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      * </p>
      * 
      * @param min
-     *        The minimum value found in the specified field in the result
-     *        set.</p>
+     *        The minimum value found in the specified field in the result set.</p>
      *        <p>
-     *        If the field is numeric (<code>int</code>, <code>int-array</code>,
-     *        <code>double</code>, or <code>double-array</code>),
-     *        <code>min</code> is the string representation of a
-     *        double-precision 64-bit floating point value. If the field is
-     *        <code>date</code> or <code>date-array</code>, <code>min</code> is
-     *        the string representation of a date with the format specified in
-     *        <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
-     *        yyyy-mm-ddTHH:mm:ss.SSSZ.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     *        <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit
+     *        floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is
+     *        the string representation of a date with the format specified in <a
+     *        href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FieldStats withMin(String min) {
@@ -205,27 +175,21 @@ public class FieldStats implements Serializable, Cloneable {
      * The maximum value found in the specified field in the result set.
      * </p>
      * <p>
-     * If the field is numeric (<code>int</code>, <code>int-array</code>,
-     * <code>double</code>, or <code>double-array</code>), <code>max</code> is
-     * the string representation of a double-precision 64-bit floating point
-     * value. If the field is <code>date</code> or <code>date-array</code>,
-     * <code>max</code> is the string representation of a date with the format
-     * specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+     * If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     * <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating
+     * point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string
+     * representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
      * RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      * </p>
      * 
      * @param max
-     *        The maximum value found in the specified field in the result
-     *        set.</p>
+     *        The maximum value found in the specified field in the result set.</p>
      *        <p>
-     *        If the field is numeric (<code>int</code>, <code>int-array</code>,
-     *        <code>double</code>, or <code>double-array</code>),
-     *        <code>max</code> is the string representation of a
-     *        double-precision 64-bit floating point value. If the field is
-     *        <code>date</code> or <code>date-array</code>, <code>max</code> is
-     *        the string representation of a date with the format specified in
-     *        <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
-     *        yyyy-mm-ddTHH:mm:ss.SSSZ.
+     *        If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     *        <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit
+     *        floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is
+     *        the string representation of a date with the format specified in <a
+     *        href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      */
 
     public void setMax(String max) {
@@ -237,25 +201,20 @@ public class FieldStats implements Serializable, Cloneable {
      * The maximum value found in the specified field in the result set.
      * </p>
      * <p>
-     * If the field is numeric (<code>int</code>, <code>int-array</code>,
-     * <code>double</code>, or <code>double-array</code>), <code>max</code> is
-     * the string representation of a double-precision 64-bit floating point
-     * value. If the field is <code>date</code> or <code>date-array</code>,
-     * <code>max</code> is the string representation of a date with the format
-     * specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+     * If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     * <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating
+     * point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string
+     * representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
      * RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      * </p>
      * 
-     * @return The maximum value found in the specified field in the result
-     *         set.</p>
+     * @return The maximum value found in the specified field in the result set.</p>
      *         <p>
-     *         If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>),
-     *         <code>max</code> is the string representation of a
-     *         double-precision 64-bit floating point value. If the field is
-     *         <code>date</code> or <code>date-array</code>, <code>max</code> is
-     *         the string representation of a date with the format specified in
-     *         <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
-     *         yyyy-mm-ddTHH:mm:ss.SSSZ.
+     *         If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     *         <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit
+     *         floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is
+     *         the string representation of a date with the format specified in <a
+     *         href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      */
 
     public String getMax() {
@@ -267,29 +226,22 @@ public class FieldStats implements Serializable, Cloneable {
      * The maximum value found in the specified field in the result set.
      * </p>
      * <p>
-     * If the field is numeric (<code>int</code>, <code>int-array</code>,
-     * <code>double</code>, or <code>double-array</code>), <code>max</code> is
-     * the string representation of a double-precision 64-bit floating point
-     * value. If the field is <code>date</code> or <code>date-array</code>,
-     * <code>max</code> is the string representation of a date with the format
-     * specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+     * If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     * <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating
+     * point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string
+     * representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
      * RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      * </p>
      * 
      * @param max
-     *        The maximum value found in the specified field in the result
-     *        set.</p>
+     *        The maximum value found in the specified field in the result set.</p>
      *        <p>
-     *        If the field is numeric (<code>int</code>, <code>int-array</code>,
-     *        <code>double</code>, or <code>double-array</code>),
-     *        <code>max</code> is the string representation of a
-     *        double-precision 64-bit floating point value. If the field is
-     *        <code>date</code> or <code>date-array</code>, <code>max</code> is
-     *        the string representation of a date with the format specified in
-     *        <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
-     *        yyyy-mm-ddTHH:mm:ss.SSSZ.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     *        <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit
+     *        floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is
+     *        the string representation of a date with the format specified in <a
+     *        href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FieldStats withMax(String max) {
@@ -299,13 +251,11 @@ public class FieldStats implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of documents that contain a value in the specified field in
-     * the result set.
+     * The number of documents that contain a value in the specified field in the result set.
      * </p>
      * 
      * @param count
-     *        The number of documents that contain a value in the specified
-     *        field in the result set.
+     *        The number of documents that contain a value in the specified field in the result set.
      */
 
     public void setCount(Long count) {
@@ -314,12 +264,10 @@ public class FieldStats implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of documents that contain a value in the specified field in
-     * the result set.
+     * The number of documents that contain a value in the specified field in the result set.
      * </p>
      * 
-     * @return The number of documents that contain a value in the specified
-     *         field in the result set.
+     * @return The number of documents that contain a value in the specified field in the result set.
      */
 
     public Long getCount() {
@@ -328,15 +276,12 @@ public class FieldStats implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of documents that contain a value in the specified field in
-     * the result set.
+     * The number of documents that contain a value in the specified field in the result set.
      * </p>
      * 
      * @param count
-     *        The number of documents that contain a value in the specified
-     *        field in the result set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of documents that contain a value in the specified field in the result set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FieldStats withCount(Long count) {
@@ -346,13 +291,11 @@ public class FieldStats implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of documents that do not contain a value in the specified
-     * field in the result set.
+     * The number of documents that do not contain a value in the specified field in the result set.
      * </p>
      * 
      * @param missing
-     *        The number of documents that do not contain a value in the
-     *        specified field in the result set.
+     *        The number of documents that do not contain a value in the specified field in the result set.
      */
 
     public void setMissing(Long missing) {
@@ -361,12 +304,10 @@ public class FieldStats implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of documents that do not contain a value in the specified
-     * field in the result set.
+     * The number of documents that do not contain a value in the specified field in the result set.
      * </p>
      * 
-     * @return The number of documents that do not contain a value in the
-     *         specified field in the result set.
+     * @return The number of documents that do not contain a value in the specified field in the result set.
      */
 
     public Long getMissing() {
@@ -375,15 +316,12 @@ public class FieldStats implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of documents that do not contain a value in the specified
-     * field in the result set.
+     * The number of documents that do not contain a value in the specified field in the result set.
      * </p>
      * 
      * @param missing
-     *        The number of documents that do not contain a value in the
-     *        specified field in the result set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of documents that do not contain a value in the specified field in the result set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FieldStats withMissing(Long missing) {
@@ -393,13 +331,11 @@ public class FieldStats implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The sum of the field values across the documents in the result set.
-     * <code>null</code> for date fields.
+     * The sum of the field values across the documents in the result set. <code>null</code> for date fields.
      * </p>
      * 
      * @param sum
-     *        The sum of the field values across the documents in the result
-     *        set. <code>null</code> for date fields.
+     *        The sum of the field values across the documents in the result set. <code>null</code> for date fields.
      */
 
     public void setSum(Double sum) {
@@ -408,12 +344,10 @@ public class FieldStats implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The sum of the field values across the documents in the result set.
-     * <code>null</code> for date fields.
+     * The sum of the field values across the documents in the result set. <code>null</code> for date fields.
      * </p>
      * 
-     * @return The sum of the field values across the documents in the result
-     *         set. <code>null</code> for date fields.
+     * @return The sum of the field values across the documents in the result set. <code>null</code> for date fields.
      */
 
     public Double getSum() {
@@ -422,15 +356,12 @@ public class FieldStats implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The sum of the field values across the documents in the result set.
-     * <code>null</code> for date fields.
+     * The sum of the field values across the documents in the result set. <code>null</code> for date fields.
      * </p>
      * 
      * @param sum
-     *        The sum of the field values across the documents in the result
-     *        set. <code>null</code> for date fields.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The sum of the field values across the documents in the result set. <code>null</code> for date fields.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FieldStats withSum(Double sum) {
@@ -470,8 +401,7 @@ public class FieldStats implements Serializable, Cloneable {
      * 
      * @param sumOfSquares
      *        The sum of all field values in the result set squared.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FieldStats withSumOfSquares(Double sumOfSquares) {
@@ -484,27 +414,21 @@ public class FieldStats implements Serializable, Cloneable {
      * The average of the values found in the specified field in the result set.
      * </p>
      * <p>
-     * If the field is numeric (<code>int</code>, <code>int-array</code>,
-     * <code>double</code>, or <code>double-array</code>), <code>mean</code> is
-     * the string representation of a double-precision 64-bit floating point
-     * value. If the field is <code>date</code> or <code>date-array</code>,
-     * <code>mean</code> is the string representation of a date with the format
-     * specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+     * If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     * <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating
+     * point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string
+     * representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
      * RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      * </p>
      * 
      * @param mean
-     *        The average of the values found in the specified field in the
-     *        result set.</p>
+     *        The average of the values found in the specified field in the result set.</p>
      *        <p>
-     *        If the field is numeric (<code>int</code>, <code>int-array</code>,
-     *        <code>double</code>, or <code>double-array</code>),
-     *        <code>mean</code> is the string representation of a
-     *        double-precision 64-bit floating point value. If the field is
-     *        <code>date</code> or <code>date-array</code>, <code>mean</code> is
-     *        the string representation of a date with the format specified in
-     *        <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
-     *        yyyy-mm-ddTHH:mm:ss.SSSZ.
+     *        If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     *        <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit
+     *        floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is
+     *        the string representation of a date with the format specified in <a
+     *        href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      */
 
     public void setMean(String mean) {
@@ -516,25 +440,20 @@ public class FieldStats implements Serializable, Cloneable {
      * The average of the values found in the specified field in the result set.
      * </p>
      * <p>
-     * If the field is numeric (<code>int</code>, <code>int-array</code>,
-     * <code>double</code>, or <code>double-array</code>), <code>mean</code> is
-     * the string representation of a double-precision 64-bit floating point
-     * value. If the field is <code>date</code> or <code>date-array</code>,
-     * <code>mean</code> is the string representation of a date with the format
-     * specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+     * If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     * <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating
+     * point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string
+     * representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
      * RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      * </p>
      * 
-     * @return The average of the values found in the specified field in the
-     *         result set.</p>
+     * @return The average of the values found in the specified field in the result set.</p>
      *         <p>
-     *         If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>),
-     *         <code>mean</code> is the string representation of a
-     *         double-precision 64-bit floating point value. If the field is
-     *         <code>date</code> or <code>date-array</code>, <code>mean</code>
-     *         is the string representation of a date with the format specified
-     *         in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
-     *         yyyy-mm-ddTHH:mm:ss.SSSZ.
+     *         If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     *         <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit
+     *         floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is
+     *         the string representation of a date with the format specified in <a
+     *         href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      */
 
     public String getMean() {
@@ -546,29 +465,22 @@ public class FieldStats implements Serializable, Cloneable {
      * The average of the values found in the specified field in the result set.
      * </p>
      * <p>
-     * If the field is numeric (<code>int</code>, <code>int-array</code>,
-     * <code>double</code>, or <code>double-array</code>), <code>mean</code> is
-     * the string representation of a double-precision 64-bit floating point
-     * value. If the field is <code>date</code> or <code>date-array</code>,
-     * <code>mean</code> is the string representation of a date with the format
-     * specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+     * If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     * <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating
+     * point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string
+     * representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
      * RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
      * </p>
      * 
      * @param mean
-     *        The average of the values found in the specified field in the
-     *        result set.</p>
+     *        The average of the values found in the specified field in the result set.</p>
      *        <p>
-     *        If the field is numeric (<code>int</code>, <code>int-array</code>,
-     *        <code>double</code>, or <code>double-array</code>),
-     *        <code>mean</code> is the string representation of a
-     *        double-precision 64-bit floating point value. If the field is
-     *        <code>date</code> or <code>date-array</code>, <code>mean</code> is
-     *        the string representation of a date with the format specified in
-     *        <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
-     *        yyyy-mm-ddTHH:mm:ss.SSSZ.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or
+     *        <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit
+     *        floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is
+     *        the string representation of a date with the format specified in <a
+     *        href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FieldStats withMean(String mean) {
@@ -578,13 +490,11 @@ public class FieldStats implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The standard deviation of the values in the specified field in the result
-     * set.
+     * The standard deviation of the values in the specified field in the result set.
      * </p>
      * 
      * @param stddev
-     *        The standard deviation of the values in the specified field in the
-     *        result set.
+     *        The standard deviation of the values in the specified field in the result set.
      */
 
     public void setStddev(Double stddev) {
@@ -593,12 +503,10 @@ public class FieldStats implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The standard deviation of the values in the specified field in the result
-     * set.
+     * The standard deviation of the values in the specified field in the result set.
      * </p>
      * 
-     * @return The standard deviation of the values in the specified field in
-     *         the result set.
+     * @return The standard deviation of the values in the specified field in the result set.
      */
 
     public Double getStddev() {
@@ -607,15 +515,12 @@ public class FieldStats implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The standard deviation of the values in the specified field in the result
-     * set.
+     * The standard deviation of the values in the specified field in the result set.
      * </p>
      * 
      * @param stddev
-     *        The standard deviation of the values in the specified field in the
-     *        result set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The standard deviation of the values in the specified field in the result set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FieldStats withStddev(Double stddev) {
@@ -624,8 +529,7 @@ public class FieldStats implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -667,43 +571,35 @@ public class FieldStats implements Serializable, Cloneable {
         FieldStats other = (FieldStats) obj;
         if (other.getMin() == null ^ this.getMin() == null)
             return false;
-        if (other.getMin() != null
-                && other.getMin().equals(this.getMin()) == false)
+        if (other.getMin() != null && other.getMin().equals(this.getMin()) == false)
             return false;
         if (other.getMax() == null ^ this.getMax() == null)
             return false;
-        if (other.getMax() != null
-                && other.getMax().equals(this.getMax()) == false)
+        if (other.getMax() != null && other.getMax().equals(this.getMax()) == false)
             return false;
         if (other.getCount() == null ^ this.getCount() == null)
             return false;
-        if (other.getCount() != null
-                && other.getCount().equals(this.getCount()) == false)
+        if (other.getCount() != null && other.getCount().equals(this.getCount()) == false)
             return false;
         if (other.getMissing() == null ^ this.getMissing() == null)
             return false;
-        if (other.getMissing() != null
-                && other.getMissing().equals(this.getMissing()) == false)
+        if (other.getMissing() != null && other.getMissing().equals(this.getMissing()) == false)
             return false;
         if (other.getSum() == null ^ this.getSum() == null)
             return false;
-        if (other.getSum() != null
-                && other.getSum().equals(this.getSum()) == false)
+        if (other.getSum() != null && other.getSum().equals(this.getSum()) == false)
             return false;
         if (other.getSumOfSquares() == null ^ this.getSumOfSquares() == null)
             return false;
-        if (other.getSumOfSquares() != null
-                && other.getSumOfSquares().equals(this.getSumOfSquares()) == false)
+        if (other.getSumOfSquares() != null && other.getSumOfSquares().equals(this.getSumOfSquares()) == false)
             return false;
         if (other.getMean() == null ^ this.getMean() == null)
             return false;
-        if (other.getMean() != null
-                && other.getMean().equals(this.getMean()) == false)
+        if (other.getMean() != null && other.getMean().equals(this.getMean()) == false)
             return false;
         if (other.getStddev() == null ^ this.getStddev() == null)
             return false;
-        if (other.getStddev() != null
-                && other.getStddev().equals(this.getStddev()) == false)
+        if (other.getStddev() != null && other.getStddev().equals(this.getStddev()) == false)
             return false;
         return true;
     }
@@ -713,24 +609,14 @@ public class FieldStats implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMin() == null) ? 0 : getMin().hashCode());
-        hashCode = prime * hashCode
-                + ((getMax() == null) ? 0 : getMax().hashCode());
-        hashCode = prime * hashCode
-                + ((getCount() == null) ? 0 : getCount().hashCode());
-        hashCode = prime * hashCode
-                + ((getMissing() == null) ? 0 : getMissing().hashCode());
-        hashCode = prime * hashCode
-                + ((getSum() == null) ? 0 : getSum().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSumOfSquares() == null) ? 0 : getSumOfSquares()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMean() == null) ? 0 : getMean().hashCode());
-        hashCode = prime * hashCode
-                + ((getStddev() == null) ? 0 : getStddev().hashCode());
+        hashCode = prime * hashCode + ((getMin() == null) ? 0 : getMin().hashCode());
+        hashCode = prime * hashCode + ((getMax() == null) ? 0 : getMax().hashCode());
+        hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
+        hashCode = prime * hashCode + ((getMissing() == null) ? 0 : getMissing().hashCode());
+        hashCode = prime * hashCode + ((getSum() == null) ? 0 : getSum().hashCode());
+        hashCode = prime * hashCode + ((getSumOfSquares() == null) ? 0 : getSumOfSquares().hashCode());
+        hashCode = prime * hashCode + ((getMean() == null) ? 0 : getMean().hashCode());
+        hashCode = prime * hashCode + ((getStddev() == null) ? 0 : getStddev().hashCode());
         return hashCode;
     }
 
@@ -739,9 +625,7 @@ public class FieldStats implements Serializable, Cloneable {
         try {
             return (FieldStats) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

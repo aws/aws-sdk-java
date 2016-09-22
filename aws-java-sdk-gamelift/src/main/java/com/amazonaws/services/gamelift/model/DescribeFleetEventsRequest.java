@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for a request action.
  * </p>
  */
-public class DescribeFleetEventsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,34 +30,31 @@ public class DescribeFleetEventsRequest extends
     private String fleetId;
     /**
      * <p>
-     * Earliest date to retrieve event logs for. If no start time is specified,
-     * this call returns entries starting from when the fleet was created to the
-     * specified end time. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * Earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from
+     * when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds
+     * (ex: "1469498468.057".
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * Most recent date to retrieve event logs for. If no end time is specified,
-     * this call returns entries from the specified start time up to the
-     * present. Format is a number expressed in Unix time as milliseconds (ex:
+     * Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
+     * specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057".
      * </p>
      */
     private java.util.Date endTime;
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
+     * sequential pages.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To
-     * specify the start of the result set, do not specify a value.
+     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
+     * call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
@@ -98,8 +91,7 @@ public class DescribeFleetEventsRequest extends
      * 
      * @param fleetId
      *        Unique identifier for the fleet to get event logs for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeFleetEventsRequest withFleetId(String fleetId) {
@@ -109,17 +101,15 @@ public class DescribeFleetEventsRequest extends
 
     /**
      * <p>
-     * Earliest date to retrieve event logs for. If no start time is specified,
-     * this call returns entries starting from when the fleet was created to the
-     * specified end time. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * Earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from
+     * when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds
+     * (ex: "1469498468.057".
      * </p>
      * 
      * @param startTime
-     *        Earliest date to retrieve event logs for. If no start time is
-     *        specified, this call returns entries starting from when the fleet
-     *        was created to the specified end time. Format is a number
-     *        expressed in Unix time as milliseconds (ex: "1469498468.057".
+     *        Earliest date to retrieve event logs for. If no start time is specified, this call returns entries
+     *        starting from when the fleet was created to the specified end time. Format is a number expressed in Unix
+     *        time as milliseconds (ex: "1469498468.057".
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -128,16 +118,14 @@ public class DescribeFleetEventsRequest extends
 
     /**
      * <p>
-     * Earliest date to retrieve event logs for. If no start time is specified,
-     * this call returns entries starting from when the fleet was created to the
-     * specified end time. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * Earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from
+     * when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds
+     * (ex: "1469498468.057".
      * </p>
      * 
-     * @return Earliest date to retrieve event logs for. If no start time is
-     *         specified, this call returns entries starting from when the fleet
-     *         was created to the specified end time. Format is a number
-     *         expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * @return Earliest date to retrieve event logs for. If no start time is specified, this call returns entries
+     *         starting from when the fleet was created to the specified end time. Format is a number expressed in Unix
+     *         time as milliseconds (ex: "1469498468.057".
      */
 
     public java.util.Date getStartTime() {
@@ -146,19 +134,16 @@ public class DescribeFleetEventsRequest extends
 
     /**
      * <p>
-     * Earliest date to retrieve event logs for. If no start time is specified,
-     * this call returns entries starting from when the fleet was created to the
-     * specified end time. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * Earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from
+     * when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds
+     * (ex: "1469498468.057".
      * </p>
      * 
      * @param startTime
-     *        Earliest date to retrieve event logs for. If no start time is
-     *        specified, this call returns entries starting from when the fleet
-     *        was created to the specified end time. Format is a number
-     *        expressed in Unix time as milliseconds (ex: "1469498468.057".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Earliest date to retrieve event logs for. If no start time is specified, this call returns entries
+     *        starting from when the fleet was created to the specified end time. Format is a number expressed in Unix
+     *        time as milliseconds (ex: "1469498468.057".
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeFleetEventsRequest withStartTime(java.util.Date startTime) {
@@ -168,17 +153,15 @@ public class DescribeFleetEventsRequest extends
 
     /**
      * <p>
-     * Most recent date to retrieve event logs for. If no end time is specified,
-     * this call returns entries from the specified start time up to the
-     * present. Format is a number expressed in Unix time as milliseconds (ex:
+     * Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
+     * specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057".
      * </p>
      * 
      * @param endTime
-     *        Most recent date to retrieve event logs for. If no end time is
-     *        specified, this call returns entries from the specified start time
-     *        up to the present. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057".
+     *        Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from
+     *        the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -187,16 +170,14 @@ public class DescribeFleetEventsRequest extends
 
     /**
      * <p>
-     * Most recent date to retrieve event logs for. If no end time is specified,
-     * this call returns entries from the specified start time up to the
-     * present. Format is a number expressed in Unix time as milliseconds (ex:
+     * Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
+     * specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057".
      * </p>
      * 
-     * @return Most recent date to retrieve event logs for. If no end time is
-     *         specified, this call returns entries from the specified start
-     *         time up to the present. Format is a number expressed in Unix time
-     *         as milliseconds (ex: "1469498468.057".
+     * @return Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from
+     *         the specified start time up to the present. Format is a number expressed in Unix time as milliseconds
+     *         (ex: "1469498468.057".
      */
 
     public java.util.Date getEndTime() {
@@ -205,19 +186,16 @@ public class DescribeFleetEventsRequest extends
 
     /**
      * <p>
-     * Most recent date to retrieve event logs for. If no end time is specified,
-     * this call returns entries from the specified start time up to the
-     * present. Format is a number expressed in Unix time as milliseconds (ex:
+     * Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
+     * specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057".
      * </p>
      * 
      * @param endTime
-     *        Most recent date to retrieve event logs for. If no end time is
-     *        specified, this call returns entries from the specified start time
-     *        up to the present. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from
+     *        the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeFleetEventsRequest withEndTime(java.util.Date endTime) {
@@ -227,14 +205,13 @@ public class DescribeFleetEventsRequest extends
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
+     * sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with
-     *        <code>NextToken</code> to get results as a set of sequential
-     *        pages.
+     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
+     *        set of sequential pages.
      */
 
     public void setLimit(Integer limit) {
@@ -243,13 +220,12 @@ public class DescribeFleetEventsRequest extends
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
+     * sequential pages.
      * </p>
      * 
-     * @return Maximum number of results to return. Use this parameter with
-     *         <code>NextToken</code> to get results as a set of sequential
-     *         pages.
+     * @return Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
+     *         set of sequential pages.
      */
 
     public Integer getLimit() {
@@ -258,16 +234,14 @@ public class DescribeFleetEventsRequest extends
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
+     * sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with
-     *        <code>NextToken</code> to get results as a set of sequential
-     *        pages.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
+     *        set of sequential pages.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeFleetEventsRequest withLimit(Integer limit) {
@@ -277,16 +251,13 @@ public class DescribeFleetEventsRequest extends
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To
-     * specify the start of the result set, do not specify a value.
+     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
+     * call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results.
-     *        Use the token that is returned with a previous call to this
-     *        action. To specify the start of the result set, do not specify a
-     *        value.
+     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
+     *        previous call to this action. To specify the start of the result set, do not specify a value.
      */
 
     public void setNextToken(String nextToken) {
@@ -295,15 +266,12 @@ public class DescribeFleetEventsRequest extends
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To
-     * specify the start of the result set, do not specify a value.
+     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
+     * call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
-     * @return Token indicating the start of the next sequential page of
-     *         results. Use the token that is returned with a previous call to
-     *         this action. To specify the start of the result set, do not
-     *         specify a value.
+     * @return Token indicating the start of the next sequential page of results. Use the token that is returned with a
+     *         previous call to this action. To specify the start of the result set, do not specify a value.
      */
 
     public String getNextToken() {
@@ -312,18 +280,14 @@ public class DescribeFleetEventsRequest extends
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To
-     * specify the start of the result set, do not specify a value.
+     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
+     * call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results.
-     *        Use the token that is returned with a previous call to this
-     *        action. To specify the start of the result set, do not specify a
-     *        value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
+     *        previous call to this action. To specify the start of the result set, do not specify a value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeFleetEventsRequest withNextToken(String nextToken) {
@@ -332,8 +296,7 @@ public class DescribeFleetEventsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -369,28 +332,23 @@ public class DescribeFleetEventsRequest extends
         DescribeFleetEventsRequest other = (DescribeFleetEventsRequest) obj;
         if (other.getFleetId() == null ^ this.getFleetId() == null)
             return false;
-        if (other.getFleetId() != null
-                && other.getFleetId().equals(this.getFleetId()) == false)
+        if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
-        if (other.getStartTime() != null
-                && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
-        if (other.getEndTime() != null
-                && other.getEndTime().equals(this.getEndTime()) == false)
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -400,16 +358,11 @@ public class DescribeFleetEventsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

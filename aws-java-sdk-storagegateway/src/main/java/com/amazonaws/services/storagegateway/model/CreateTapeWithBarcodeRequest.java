@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -22,15 +20,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * CreateTapeWithBarcodeInput
  * </p>
  */
-public class CreateTapeWithBarcodeRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) that represents the gateway to
-     * associate the virtual tape with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and region.
+     * The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tape with. Use the
+     * <a>ListGateways</a> operation to return a list of gateways for your account and region.
      * </p>
      */
     private String gatewayARN;
@@ -54,16 +49,13 @@ public class CreateTapeWithBarcodeRequest extends
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) that represents the gateway to
-     * associate the virtual tape with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and region.
+     * The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tape with. Use the
+     * <a>ListGateways</a> operation to return a list of gateways for your account and region.
      * </p>
      * 
      * @param gatewayARN
-     *        The unique Amazon Resource Name (ARN) that represents the gateway
-     *        to associate the virtual tape with. Use the <a>ListGateways</a>
-     *        operation to return a list of gateways for your account and
-     *        region.
+     *        The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tape with. Use
+     *        the <a>ListGateways</a> operation to return a list of gateways for your account and region.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -72,15 +64,12 @@ public class CreateTapeWithBarcodeRequest extends
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) that represents the gateway to
-     * associate the virtual tape with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and region.
+     * The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tape with. Use the
+     * <a>ListGateways</a> operation to return a list of gateways for your account and region.
      * </p>
      * 
-     * @return The unique Amazon Resource Name (ARN) that represents the gateway
-     *         to associate the virtual tape with. Use the <a>ListGateways</a>
-     *         operation to return a list of gateways for your account and
-     *         region.
+     * @return The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tape with. Use
+     *         the <a>ListGateways</a> operation to return a list of gateways for your account and region.
      */
 
     public String getGatewayARN() {
@@ -89,18 +78,14 @@ public class CreateTapeWithBarcodeRequest extends
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) that represents the gateway to
-     * associate the virtual tape with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and region.
+     * The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tape with. Use the
+     * <a>ListGateways</a> operation to return a list of gateways for your account and region.
      * </p>
      * 
      * @param gatewayARN
-     *        The unique Amazon Resource Name (ARN) that represents the gateway
-     *        to associate the virtual tape with. Use the <a>ListGateways</a>
-     *        operation to return a list of gateways for your account and
-     *        region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tape with. Use
+     *        the <a>ListGateways</a> operation to return a list of gateways for your account and region.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTapeWithBarcodeRequest withGatewayARN(String gatewayARN) {
@@ -119,8 +104,7 @@ public class CreateTapeWithBarcodeRequest extends
      * </note>
      * 
      * @param tapeSizeInBytes
-     *        The size, in bytes, of the virtual tape that you want to
-     *        create.</p> <note>
+     *        The size, in bytes, of the virtual tape that you want to create.</p> <note>
      *        <p>
      *        The size must be aligned by gigabyte (1024*1024*1024 byte).
      *        </p>
@@ -140,8 +124,7 @@ public class CreateTapeWithBarcodeRequest extends
      * </p>
      * </note>
      * 
-     * @return The size, in bytes, of the virtual tape that you want to
-     *         create.</p> <note>
+     * @return The size, in bytes, of the virtual tape that you want to create.</p> <note>
      *         <p>
      *         The size must be aligned by gigabyte (1024*1024*1024 byte).
      *         </p>
@@ -162,13 +145,11 @@ public class CreateTapeWithBarcodeRequest extends
      * </note>
      * 
      * @param tapeSizeInBytes
-     *        The size, in bytes, of the virtual tape that you want to
-     *        create.</p> <note>
+     *        The size, in bytes, of the virtual tape that you want to create.</p> <note>
      *        <p>
      *        The size must be aligned by gigabyte (1024*1024*1024 byte).
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTapeWithBarcodeRequest withTapeSizeInBytes(Long tapeSizeInBytes) {
@@ -208,8 +189,7 @@ public class CreateTapeWithBarcodeRequest extends
      * 
      * @param tapeBarcode
      *        The barcode that you want to assign to the tape.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTapeWithBarcodeRequest withTapeBarcode(String tapeBarcode) {
@@ -218,8 +198,7 @@ public class CreateTapeWithBarcodeRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -251,19 +230,15 @@ public class CreateTapeWithBarcodeRequest extends
         CreateTapeWithBarcodeRequest other = (CreateTapeWithBarcodeRequest) obj;
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null)
             return false;
-        if (other.getGatewayARN() != null
-                && other.getGatewayARN().equals(this.getGatewayARN()) == false)
+        if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
-        if (other.getTapeSizeInBytes() == null
-                ^ this.getTapeSizeInBytes() == null)
+        if (other.getTapeSizeInBytes() == null ^ this.getTapeSizeInBytes() == null)
             return false;
-        if (other.getTapeSizeInBytes() != null
-                && other.getTapeSizeInBytes().equals(this.getTapeSizeInBytes()) == false)
+        if (other.getTapeSizeInBytes() != null && other.getTapeSizeInBytes().equals(this.getTapeSizeInBytes()) == false)
             return false;
         if (other.getTapeBarcode() == null ^ this.getTapeBarcode() == null)
             return false;
-        if (other.getTapeBarcode() != null
-                && other.getTapeBarcode().equals(this.getTapeBarcode()) == false)
+        if (other.getTapeBarcode() != null && other.getTapeBarcode().equals(this.getTapeBarcode()) == false)
             return false;
         return true;
     }
@@ -273,15 +248,9 @@ public class CreateTapeWithBarcodeRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTapeSizeInBytes() == null) ? 0 : getTapeSizeInBytes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTapeBarcode() == null) ? 0 : getTapeBarcode().hashCode());
+        hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getTapeSizeInBytes() == null) ? 0 : getTapeSizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getTapeBarcode() == null) ? 0 : getTapeBarcode().hashCode());
         return hashCode;
     }
 

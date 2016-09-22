@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model.transform;
 
@@ -39,39 +37,30 @@ import com.amazonaws.util.SdkHttpUtils;
  * DeleteStreamingDistributionRequest Marshaller
  */
 
-public class DeleteStreamingDistributionRequestMarshaller
-        implements
+public class DeleteStreamingDistributionRequestMarshaller implements
         Marshaller<Request<DeleteStreamingDistributionRequest>, DeleteStreamingDistributionRequest> {
 
-    public Request<DeleteStreamingDistributionRequest> marshall(
-            DeleteStreamingDistributionRequest deleteStreamingDistributionRequest) {
+    public Request<DeleteStreamingDistributionRequest> marshall(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest) {
 
         if (deleteStreamingDistributionRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteStreamingDistributionRequest> request = new DefaultRequest<DeleteStreamingDistributionRequest>(
-                deleteStreamingDistributionRequest, "AmazonCloudFront");
+        Request<DeleteStreamingDistributionRequest> request = new DefaultRequest<DeleteStreamingDistributionRequest>(deleteStreamingDistributionRequest,
+                "AmazonCloudFront");
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
         if (deleteStreamingDistributionRequest.getIfMatch() != null) {
-            request.addHeader("If-Match",
-                    StringUtils.fromString(deleteStreamingDistributionRequest
-                            .getIfMatch()));
+            request.addHeader("If-Match", StringUtils.fromString(deleteStreamingDistributionRequest.getIfMatch()));
         }
 
         String uriResourcePath = "/2016-09-07/streaming-distribution/{Id}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{Id}",
-                        (deleteStreamingDistributionRequest.getId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(deleteStreamingDistributionRequest
-                                                .getId()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{Id}",
+                (deleteStreamingDistributionRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(deleteStreamingDistributionRequest.getId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

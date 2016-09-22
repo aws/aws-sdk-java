@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeTargetGroups.
  * </p>
  */
-public class DescribeTargetGroupsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeTargetGroupsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -46,8 +42,7 @@ public class DescribeTargetGroupsRequest extends
     private java.util.List<String> names;
     /**
      * <p>
-     * The marker for the next set of results. (You received this marker from a
-     * previous call.)
+     * The marker for the next set of results. (You received this marker from a previous call.)
      * </p>
      */
     private String marker;
@@ -90,12 +85,10 @@ public class DescribeTargetGroupsRequest extends
      * 
      * @param loadBalancerArn
      *        The Amazon Resource Name (ARN) of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTargetGroupsRequest withLoadBalancerArn(
-            String loadBalancerArn) {
+    public DescribeTargetGroupsRequest withLoadBalancerArn(String loadBalancerArn) {
         setLoadBalancerArn(loadBalancerArn);
         return this;
     }
@@ -135,23 +128,19 @@ public class DescribeTargetGroupsRequest extends
      * The Amazon Resource Names (ARN) of the target groups.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTargetGroupArns(java.util.Collection)} or
-     * {@link #withTargetGroupArns(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetGroupArns(java.util.Collection)} or {@link #withTargetGroupArns(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param targetGroupArns
      *        The Amazon Resource Names (ARN) of the target groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTargetGroupsRequest withTargetGroupArns(
-            String... targetGroupArns) {
+    public DescribeTargetGroupsRequest withTargetGroupArns(String... targetGroupArns) {
         if (this.targetGroupArns == null) {
-            setTargetGroupArns(new java.util.ArrayList<String>(
-                    targetGroupArns.length));
+            setTargetGroupArns(new java.util.ArrayList<String>(targetGroupArns.length));
         }
         for (String ele : targetGroupArns) {
             this.targetGroupArns.add(ele);
@@ -166,12 +155,10 @@ public class DescribeTargetGroupsRequest extends
      * 
      * @param targetGroupArns
      *        The Amazon Resource Names (ARN) of the target groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTargetGroupsRequest withTargetGroupArns(
-            java.util.Collection<String> targetGroupArns) {
+    public DescribeTargetGroupsRequest withTargetGroupArns(java.util.Collection<String> targetGroupArns) {
         setTargetGroupArns(targetGroupArns);
         return this;
     }
@@ -211,16 +198,14 @@ public class DescribeTargetGroupsRequest extends
      * The names of the target groups.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNames(java.util.Collection)} or
-     * {@link #withNames(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNames(java.util.Collection)} or {@link #withNames(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param names
      *        The names of the target groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTargetGroupsRequest withNames(String... names) {
@@ -240,25 +225,21 @@ public class DescribeTargetGroupsRequest extends
      * 
      * @param names
      *        The names of the target groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTargetGroupsRequest withNames(
-            java.util.Collection<String> names) {
+    public DescribeTargetGroupsRequest withNames(java.util.Collection<String> names) {
         setNames(names);
         return this;
     }
 
     /**
      * <p>
-     * The marker for the next set of results. (You received this marker from a
-     * previous call.)
+     * The marker for the next set of results. (You received this marker from a previous call.)
      * </p>
      * 
      * @param marker
-     *        The marker for the next set of results. (You received this marker
-     *        from a previous call.)
+     *        The marker for the next set of results. (You received this marker from a previous call.)
      */
 
     public void setMarker(String marker) {
@@ -267,12 +248,10 @@ public class DescribeTargetGroupsRequest extends
 
     /**
      * <p>
-     * The marker for the next set of results. (You received this marker from a
-     * previous call.)
+     * The marker for the next set of results. (You received this marker from a previous call.)
      * </p>
      * 
-     * @return The marker for the next set of results. (You received this marker
-     *         from a previous call.)
+     * @return The marker for the next set of results. (You received this marker from a previous call.)
      */
 
     public String getMarker() {
@@ -281,15 +260,12 @@ public class DescribeTargetGroupsRequest extends
 
     /**
      * <p>
-     * The marker for the next set of results. (You received this marker from a
-     * previous call.)
+     * The marker for the next set of results. (You received this marker from a previous call.)
      * </p>
      * 
      * @param marker
-     *        The marker for the next set of results. (You received this marker
-     *        from a previous call.)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The marker for the next set of results. (You received this marker from a previous call.)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTargetGroupsRequest withMarker(String marker) {
@@ -329,8 +305,7 @@ public class DescribeTargetGroupsRequest extends
      * 
      * @param pageSize
      *        The maximum number of results to return with this call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTargetGroupsRequest withPageSize(Integer pageSize) {
@@ -339,8 +314,7 @@ public class DescribeTargetGroupsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -374,32 +348,25 @@ public class DescribeTargetGroupsRequest extends
         if (obj instanceof DescribeTargetGroupsRequest == false)
             return false;
         DescribeTargetGroupsRequest other = (DescribeTargetGroupsRequest) obj;
-        if (other.getLoadBalancerArn() == null
-                ^ this.getLoadBalancerArn() == null)
+        if (other.getLoadBalancerArn() == null ^ this.getLoadBalancerArn() == null)
             return false;
-        if (other.getLoadBalancerArn() != null
-                && other.getLoadBalancerArn().equals(this.getLoadBalancerArn()) == false)
+        if (other.getLoadBalancerArn() != null && other.getLoadBalancerArn().equals(this.getLoadBalancerArn()) == false)
             return false;
-        if (other.getTargetGroupArns() == null
-                ^ this.getTargetGroupArns() == null)
+        if (other.getTargetGroupArns() == null ^ this.getTargetGroupArns() == null)
             return false;
-        if (other.getTargetGroupArns() != null
-                && other.getTargetGroupArns().equals(this.getTargetGroupArns()) == false)
+        if (other.getTargetGroupArns() != null && other.getTargetGroupArns().equals(this.getTargetGroupArns()) == false)
             return false;
         if (other.getNames() == null ^ this.getNames() == null)
             return false;
-        if (other.getNames() != null
-                && other.getNames().equals(this.getNames()) == false)
+        if (other.getNames() != null && other.getNames().equals(this.getNames()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getPageSize() == null ^ this.getPageSize() == null)
             return false;
-        if (other.getPageSize() != null
-                && other.getPageSize().equals(this.getPageSize()) == false)
+        if (other.getPageSize() != null && other.getPageSize().equals(this.getPageSize()) == false)
             return false;
         return true;
     }
@@ -409,20 +376,11 @@ public class DescribeTargetGroupsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerArn() == null) ? 0 : getLoadBalancerArn()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTargetGroupArns() == null) ? 0 : getTargetGroupArns()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNames() == null) ? 0 : getNames().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerArn() == null) ? 0 : getLoadBalancerArn().hashCode());
+        hashCode = prime * hashCode + ((getTargetGroupArns() == null) ? 0 : getTargetGroupArns().hashCode());
+        hashCode = prime * hashCode + ((getNames() == null) ? 0 : getNames().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
         return hashCode;
     }
 

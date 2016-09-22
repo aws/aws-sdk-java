@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -18,8 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about an Amazon Inspector agent. This data type is used
- * as a response element in the <a>ListAssessmentRunAgents</a> action.
+ * Contains information about an Amazon Inspector agent. This data type is used as a response element in the
+ * <a>ListAssessmentRunAgents</a> action.
  * </p>
  */
 public class AssessmentRunAgent implements Serializable, Cloneable {
@@ -56,15 +54,13 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
     private String agentHealthDetails;
     /**
      * <p>
-     * The Auto Scaling group of the EC2 instance that is specified by the agent
-     * ID.
+     * The Auto Scaling group of the EC2 instance that is specified by the agent ID.
      * </p>
      */
     private String autoScalingGroup;
     /**
      * <p>
-     * The Amazon Inspector application data metrics that are collected by the
-     * agent.
+     * The Amazon Inspector application data metrics that are collected by the agent.
      * </p>
      */
     private java.util.List<TelemetryMetadata> telemetryMetadata;
@@ -101,8 +97,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
      * 
      * @param agentId
      *        The AWS account of the EC2 instance where the agent is installed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRunAgent withAgentId(String agentId) {
@@ -142,8 +137,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
      * 
      * @param assessmentRunArn
      *        The ARN of the assessment run that is associated with the agent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRunAgent withAssessmentRunArn(String assessmentRunArn) {
@@ -185,8 +179,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
      * 
      * @param agentHealth
      *        The current health state of the agent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentHealth
      */
 
@@ -216,8 +209,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
      * 
      * @param agentHealth
      *        The current health state of the agent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentHealth
      */
 
@@ -260,8 +252,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
      * 
      * @param agentHealthCode
      *        The detailed health state of the agent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentHealthCode
      */
 
@@ -291,13 +282,11 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
      * 
      * @param agentHealthCode
      *        The detailed health state of the agent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentHealthCode
      */
 
-    public AssessmentRunAgent withAgentHealthCode(
-            AgentHealthCode agentHealthCode) {
+    public AssessmentRunAgent withAgentHealthCode(AgentHealthCode agentHealthCode) {
         setAgentHealthCode(agentHealthCode);
         return this;
     }
@@ -334,8 +323,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
      * 
      * @param agentHealthDetails
      *        The description for the agent health code.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRunAgent withAgentHealthDetails(String agentHealthDetails) {
@@ -345,13 +333,11 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Auto Scaling group of the EC2 instance that is specified by the agent
-     * ID.
+     * The Auto Scaling group of the EC2 instance that is specified by the agent ID.
      * </p>
      * 
      * @param autoScalingGroup
-     *        The Auto Scaling group of the EC2 instance that is specified by
-     *        the agent ID.
+     *        The Auto Scaling group of the EC2 instance that is specified by the agent ID.
      */
 
     public void setAutoScalingGroup(String autoScalingGroup) {
@@ -360,12 +346,10 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Auto Scaling group of the EC2 instance that is specified by the agent
-     * ID.
+     * The Auto Scaling group of the EC2 instance that is specified by the agent ID.
      * </p>
      * 
-     * @return The Auto Scaling group of the EC2 instance that is specified by
-     *         the agent ID.
+     * @return The Auto Scaling group of the EC2 instance that is specified by the agent ID.
      */
 
     public String getAutoScalingGroup() {
@@ -374,15 +358,12 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Auto Scaling group of the EC2 instance that is specified by the agent
-     * ID.
+     * The Auto Scaling group of the EC2 instance that is specified by the agent ID.
      * </p>
      * 
      * @param autoScalingGroup
-     *        The Auto Scaling group of the EC2 instance that is specified by
-     *        the agent ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Auto Scaling group of the EC2 instance that is specified by the agent ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRunAgent withAutoScalingGroup(String autoScalingGroup) {
@@ -392,12 +373,10 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Inspector application data metrics that are collected by the
-     * agent.
+     * The Amazon Inspector application data metrics that are collected by the agent.
      * </p>
      * 
-     * @return The Amazon Inspector application data metrics that are collected
-     *         by the agent.
+     * @return The Amazon Inspector application data metrics that are collected by the agent.
      */
 
     public java.util.List<TelemetryMetadata> getTelemetryMetadata() {
@@ -406,50 +385,40 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Inspector application data metrics that are collected by the
-     * agent.
+     * The Amazon Inspector application data metrics that are collected by the agent.
      * </p>
      * 
      * @param telemetryMetadata
-     *        The Amazon Inspector application data metrics that are collected
-     *        by the agent.
+     *        The Amazon Inspector application data metrics that are collected by the agent.
      */
 
-    public void setTelemetryMetadata(
-            java.util.Collection<TelemetryMetadata> telemetryMetadata) {
+    public void setTelemetryMetadata(java.util.Collection<TelemetryMetadata> telemetryMetadata) {
         if (telemetryMetadata == null) {
             this.telemetryMetadata = null;
             return;
         }
 
-        this.telemetryMetadata = new java.util.ArrayList<TelemetryMetadata>(
-                telemetryMetadata);
+        this.telemetryMetadata = new java.util.ArrayList<TelemetryMetadata>(telemetryMetadata);
     }
 
     /**
      * <p>
-     * The Amazon Inspector application data metrics that are collected by the
-     * agent.
+     * The Amazon Inspector application data metrics that are collected by the agent.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTelemetryMetadata(java.util.Collection)} or
-     * {@link #withTelemetryMetadata(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTelemetryMetadata(java.util.Collection)} or {@link #withTelemetryMetadata(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param telemetryMetadata
-     *        The Amazon Inspector application data metrics that are collected
-     *        by the agent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Inspector application data metrics that are collected by the agent.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssessmentRunAgent withTelemetryMetadata(
-            TelemetryMetadata... telemetryMetadata) {
+    public AssessmentRunAgent withTelemetryMetadata(TelemetryMetadata... telemetryMetadata) {
         if (this.telemetryMetadata == null) {
-            setTelemetryMetadata(new java.util.ArrayList<TelemetryMetadata>(
-                    telemetryMetadata.length));
+            setTelemetryMetadata(new java.util.ArrayList<TelemetryMetadata>(telemetryMetadata.length));
         }
         for (TelemetryMetadata ele : telemetryMetadata) {
             this.telemetryMetadata.add(ele);
@@ -459,26 +428,21 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Inspector application data metrics that are collected by the
-     * agent.
+     * The Amazon Inspector application data metrics that are collected by the agent.
      * </p>
      * 
      * @param telemetryMetadata
-     *        The Amazon Inspector application data metrics that are collected
-     *        by the agent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Inspector application data metrics that are collected by the agent.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssessmentRunAgent withTelemetryMetadata(
-            java.util.Collection<TelemetryMetadata> telemetryMetadata) {
+    public AssessmentRunAgent withTelemetryMetadata(java.util.Collection<TelemetryMetadata> telemetryMetadata) {
         setTelemetryMetadata(telemetryMetadata);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -518,47 +482,31 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
         AssessmentRunAgent other = (AssessmentRunAgent) obj;
         if (other.getAgentId() == null ^ this.getAgentId() == null)
             return false;
-        if (other.getAgentId() != null
-                && other.getAgentId().equals(this.getAgentId()) == false)
+        if (other.getAgentId() != null && other.getAgentId().equals(this.getAgentId()) == false)
             return false;
-        if (other.getAssessmentRunArn() == null
-                ^ this.getAssessmentRunArn() == null)
+        if (other.getAssessmentRunArn() == null ^ this.getAssessmentRunArn() == null)
             return false;
-        if (other.getAssessmentRunArn() != null
-                && other.getAssessmentRunArn().equals(
-                        this.getAssessmentRunArn()) == false)
+        if (other.getAssessmentRunArn() != null && other.getAssessmentRunArn().equals(this.getAssessmentRunArn()) == false)
             return false;
         if (other.getAgentHealth() == null ^ this.getAgentHealth() == null)
             return false;
-        if (other.getAgentHealth() != null
-                && other.getAgentHealth().equals(this.getAgentHealth()) == false)
+        if (other.getAgentHealth() != null && other.getAgentHealth().equals(this.getAgentHealth()) == false)
             return false;
-        if (other.getAgentHealthCode() == null
-                ^ this.getAgentHealthCode() == null)
+        if (other.getAgentHealthCode() == null ^ this.getAgentHealthCode() == null)
             return false;
-        if (other.getAgentHealthCode() != null
-                && other.getAgentHealthCode().equals(this.getAgentHealthCode()) == false)
+        if (other.getAgentHealthCode() != null && other.getAgentHealthCode().equals(this.getAgentHealthCode()) == false)
             return false;
-        if (other.getAgentHealthDetails() == null
-                ^ this.getAgentHealthDetails() == null)
+        if (other.getAgentHealthDetails() == null ^ this.getAgentHealthDetails() == null)
             return false;
-        if (other.getAgentHealthDetails() != null
-                && other.getAgentHealthDetails().equals(
-                        this.getAgentHealthDetails()) == false)
+        if (other.getAgentHealthDetails() != null && other.getAgentHealthDetails().equals(this.getAgentHealthDetails()) == false)
             return false;
-        if (other.getAutoScalingGroup() == null
-                ^ this.getAutoScalingGroup() == null)
+        if (other.getAutoScalingGroup() == null ^ this.getAutoScalingGroup() == null)
             return false;
-        if (other.getAutoScalingGroup() != null
-                && other.getAutoScalingGroup().equals(
-                        this.getAutoScalingGroup()) == false)
+        if (other.getAutoScalingGroup() != null && other.getAutoScalingGroup().equals(this.getAutoScalingGroup()) == false)
             return false;
-        if (other.getTelemetryMetadata() == null
-                ^ this.getTelemetryMetadata() == null)
+        if (other.getTelemetryMetadata() == null ^ this.getTelemetryMetadata() == null)
             return false;
-        if (other.getTelemetryMetadata() != null
-                && other.getTelemetryMetadata().equals(
-                        this.getTelemetryMetadata()) == false)
+        if (other.getTelemetryMetadata() != null && other.getTelemetryMetadata().equals(this.getTelemetryMetadata()) == false)
             return false;
         return true;
     }
@@ -568,31 +516,13 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAgentId() == null) ? 0 : getAgentId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAssessmentRunArn() == null) ? 0 : getAssessmentRunArn()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAgentHealth() == null) ? 0 : getAgentHealth().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAgentHealthCode() == null) ? 0 : getAgentHealthCode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAgentHealthDetails() == null) ? 0
-                        : getAgentHealthDetails().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroup() == null) ? 0 : getAutoScalingGroup()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTelemetryMetadata() == null) ? 0
-                        : getTelemetryMetadata().hashCode());
+        hashCode = prime * hashCode + ((getAgentId() == null) ? 0 : getAgentId().hashCode());
+        hashCode = prime * hashCode + ((getAssessmentRunArn() == null) ? 0 : getAssessmentRunArn().hashCode());
+        hashCode = prime * hashCode + ((getAgentHealth() == null) ? 0 : getAgentHealth().hashCode());
+        hashCode = prime * hashCode + ((getAgentHealthCode() == null) ? 0 : getAgentHealthCode().hashCode());
+        hashCode = prime * hashCode + ((getAgentHealthDetails() == null) ? 0 : getAgentHealthDetails().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroup() == null) ? 0 : getAutoScalingGroup().hashCode());
+        hashCode = prime * hashCode + ((getTelemetryMetadata() == null) ? 0 : getTelemetryMetadata().hashCode());
         return hashCode;
     }
 
@@ -601,9 +531,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
         try {
             return (AssessmentRunAgent) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

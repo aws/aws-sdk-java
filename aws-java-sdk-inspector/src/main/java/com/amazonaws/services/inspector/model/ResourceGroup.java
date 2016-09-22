@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -18,9 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about a resource group. The resource group defines a set
- * of tags that, when queried, identify the AWS resources that make up the
- * assessment target. This data type is used as the response element in the
+ * Contains information about a resource group. The resource group defines a set of tags that, when queried, identify
+ * the AWS resources that make up the assessment target. This data type is used as the response element in the
  * <a>DescribeResourceGroups</a> action.
  * </p>
  */
@@ -34,8 +31,8 @@ public class ResourceGroup implements Serializable, Cloneable {
     private String arn;
     /**
      * <p>
-     * The tags (key and value pairs) of the resource group. This data type
-     * property is used in the <a>CreateResourceGroup</a> action.
+     * The tags (key and value pairs) of the resource group. This data type property is used in the
+     * <a>CreateResourceGroup</a> action.
      * </p>
      */
     private java.util.List<ResourceGroupTag> tags;
@@ -78,8 +75,7 @@ public class ResourceGroup implements Serializable, Cloneable {
      * 
      * @param arn
      *        The ARN of the resource group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceGroup withArn(String arn) {
@@ -89,12 +85,12 @@ public class ResourceGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags (key and value pairs) of the resource group. This data type
-     * property is used in the <a>CreateResourceGroup</a> action.
+     * The tags (key and value pairs) of the resource group. This data type property is used in the
+     * <a>CreateResourceGroup</a> action.
      * </p>
      * 
-     * @return The tags (key and value pairs) of the resource group. This data
-     *         type property is used in the <a>CreateResourceGroup</a> action.
+     * @return The tags (key and value pairs) of the resource group. This data type property is used in the
+     *         <a>CreateResourceGroup</a> action.
      */
 
     public java.util.List<ResourceGroupTag> getTags() {
@@ -103,13 +99,13 @@ public class ResourceGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags (key and value pairs) of the resource group. This data type
-     * property is used in the <a>CreateResourceGroup</a> action.
+     * The tags (key and value pairs) of the resource group. This data type property is used in the
+     * <a>CreateResourceGroup</a> action.
      * </p>
      * 
      * @param tags
-     *        The tags (key and value pairs) of the resource group. This data
-     *        type property is used in the <a>CreateResourceGroup</a> action.
+     *        The tags (key and value pairs) of the resource group. This data type property is used in the
+     *        <a>CreateResourceGroup</a> action.
      */
 
     public void setTags(java.util.Collection<ResourceGroupTag> tags) {
@@ -123,21 +119,19 @@ public class ResourceGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags (key and value pairs) of the resource group. This data type
-     * property is used in the <a>CreateResourceGroup</a> action.
+     * The tags (key and value pairs) of the resource group. This data type property is used in the
+     * <a>CreateResourceGroup</a> action.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     *        The tags (key and value pairs) of the resource group. This data
-     *        type property is used in the <a>CreateResourceGroup</a> action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The tags (key and value pairs) of the resource group. This data type property is used in the
+     *        <a>CreateResourceGroup</a> action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceGroup withTags(ResourceGroupTag... tags) {
@@ -152,15 +146,14 @@ public class ResourceGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags (key and value pairs) of the resource group. This data type
-     * property is used in the <a>CreateResourceGroup</a> action.
+     * The tags (key and value pairs) of the resource group. This data type property is used in the
+     * <a>CreateResourceGroup</a> action.
      * </p>
      * 
      * @param tags
-     *        The tags (key and value pairs) of the resource group. This data
-     *        type property is used in the <a>CreateResourceGroup</a> action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The tags (key and value pairs) of the resource group. This data type property is used in the
+     *        <a>CreateResourceGroup</a> action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceGroup withTags(java.util.Collection<ResourceGroupTag> tags) {
@@ -200,8 +193,7 @@ public class ResourceGroup implements Serializable, Cloneable {
      * 
      * @param createdAt
      *        The time at which resource group is created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceGroup withCreatedAt(java.util.Date createdAt) {
@@ -210,8 +202,7 @@ public class ResourceGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -243,18 +234,15 @@ public class ResourceGroup implements Serializable, Cloneable {
         ResourceGroup other = (ResourceGroup) obj;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getCreatedAt() != null
-                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         return true;
     }
@@ -264,12 +252,9 @@ public class ResourceGroup implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         return hashCode;
     }
 
@@ -278,9 +263,7 @@ public class ResourceGroup implements Serializable, Cloneable {
         try {
             return (ResourceGroup) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudtrail.model;
 
@@ -18,13 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns the objects or data listed below if successful. Otherwise, returns an
- * error.
+ * Returns the objects or data listed below if successful. Otherwise, returns an error.
  * </p>
  */
-public class GetTrailStatusResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetTrailStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,98 +29,84 @@ public class GetTrailStatusResult extends
     private Boolean isLogging;
     /**
      * <p>
-     * Displays any Amazon S3 error that CloudTrail encountered when attempting
-     * to deliver log files to the designated bucket. For more information see
-     * the topic <a href=
-     * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     * >Error Responses</a> in the Amazon S3 API Reference.
+     * Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated
+     * bucket. For more information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3
+     * API Reference.
      * </p>
      * <note>
      * <p>
-     * This error occurs only when there is a problem with the destination S3
-     * bucket and will not occur for timeouts. To resolve the issue, create a
-     * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
-     * or fix the existing objects so that CloudTrail can again write to the
-     * bucket.
+     * This error occurs only when there is a problem with the destination S3 bucket and will not occur for timeouts. To
+     * resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
      * </p>
      * </note>
      */
     private String latestDeliveryError;
     /**
      * <p>
-     * Displays any Amazon SNS error that CloudTrail encountered when attempting
-     * to send a notification. For more information about Amazon SNS errors, see
-     * the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
-     * Developer Guide</a>.
+     * Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more
+     * information about Amazon SNS errors, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
      * </p>
      */
     private String latestNotificationError;
     /**
      * <p>
-     * Specifies the date and time that CloudTrail last delivered log files to
-     * an account's Amazon S3 bucket.
+     * Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.
      * </p>
      */
     private java.util.Date latestDeliveryTime;
     /**
      * <p>
-     * Specifies the date and time of the most recent Amazon SNS notification
-     * that CloudTrail has written a new log file to an account's Amazon S3
-     * bucket.
+     * Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file
+     * to an account's Amazon S3 bucket.
      * </p>
      */
     private java.util.Date latestNotificationTime;
     /**
      * <p>
-     * Specifies the most recent date and time when CloudTrail started recording
-     * API calls for an AWS account.
+     * Specifies the most recent date and time when CloudTrail started recording API calls for an AWS account.
      * </p>
      */
     private java.util.Date startLoggingTime;
     /**
      * <p>
-     * Specifies the most recent date and time when CloudTrail stopped recording
-     * API calls for an AWS account.
+     * Specifies the most recent date and time when CloudTrail stopped recording API calls for an AWS account.
      * </p>
      */
     private java.util.Date stopLoggingTime;
     /**
      * <p>
-     * Displays any CloudWatch Logs error that CloudTrail encountered when
-     * attempting to deliver logs to CloudWatch Logs.
+     * Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch
+     * Logs.
      * </p>
      */
     private String latestCloudWatchLogsDeliveryError;
     /**
      * <p>
-     * Displays the most recent date and time when CloudTrail delivered logs to
-     * CloudWatch Logs.
+     * Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.
      * </p>
      */
     private java.util.Date latestCloudWatchLogsDeliveryTime;
     /**
      * <p>
-     * Specifies the date and time that CloudTrail last delivered a digest file
-     * to an account's Amazon S3 bucket.
+     * Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.
      * </p>
      */
     private java.util.Date latestDigestDeliveryTime;
     /**
      * <p>
-     * Displays any Amazon S3 error that CloudTrail encountered when attempting
-     * to deliver a digest file to the designated bucket. For more information
-     * see the topic <a href=
-     * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     * >Error Responses</a> in the Amazon S3 API Reference.
+     * Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the
+     * designated bucket. For more information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3
+     * API Reference.
      * </p>
      * <note>
      * <p>
-     * This error occurs only when there is a problem with the destination S3
-     * bucket and will not occur for timeouts. To resolve the issue, create a
-     * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
-     * or fix the existing objects so that CloudTrail can again write to the
-     * bucket.
+     * This error occurs only when there is a problem with the destination S3 bucket and will not occur for timeouts. To
+     * resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
      * </p>
      * </note>
      */
@@ -199,8 +180,7 @@ public class GetTrailStatusResult extends
      * 
      * @param isLogging
      *        Whether the CloudTrail is currently logging AWS API calls.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetTrailStatusResult withIsLogging(Boolean isLogging) {
@@ -222,34 +202,28 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Displays any Amazon S3 error that CloudTrail encountered when attempting
-     * to deliver log files to the designated bucket. For more information see
-     * the topic <a href=
-     * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     * >Error Responses</a> in the Amazon S3 API Reference.
+     * Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated
+     * bucket. For more information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3
+     * API Reference.
      * </p>
      * <note>
      * <p>
-     * This error occurs only when there is a problem with the destination S3
-     * bucket and will not occur for timeouts. To resolve the issue, create a
-     * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
-     * or fix the existing objects so that CloudTrail can again write to the
-     * bucket.
+     * This error occurs only when there is a problem with the destination S3 bucket and will not occur for timeouts. To
+     * resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
      * </p>
      * </note>
      * 
      * @param latestDeliveryError
-     *        Displays any Amazon S3 error that CloudTrail encountered when
-     *        attempting to deliver log files to the designated bucket. For more
-     *        information see the topic <a href=
-     *        "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     *        >Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+     *        Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the
+     *        designated bucket. For more information see the topic <a
+     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the
+     *        Amazon S3 API Reference. </p> <note>
      *        <p>
-     *        This error occurs only when there is a problem with the
-     *        destination S3 bucket and will not occur for timeouts. To resolve
-     *        the issue, create a new bucket and call <code>UpdateTrail</code>
-     *        to specify the new bucket, or fix the existing objects so that
-     *        CloudTrail can again write to the bucket.
+     *        This error occurs only when there is a problem with the destination S3 bucket and will not occur for
+     *        timeouts. To resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new
+     *        bucket, or fix the existing objects so that CloudTrail can again write to the bucket.
      *        </p>
      */
 
@@ -259,33 +233,27 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Displays any Amazon S3 error that CloudTrail encountered when attempting
-     * to deliver log files to the designated bucket. For more information see
-     * the topic <a href=
-     * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     * >Error Responses</a> in the Amazon S3 API Reference.
+     * Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated
+     * bucket. For more information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3
+     * API Reference.
      * </p>
      * <note>
      * <p>
-     * This error occurs only when there is a problem with the destination S3
-     * bucket and will not occur for timeouts. To resolve the issue, create a
-     * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
-     * or fix the existing objects so that CloudTrail can again write to the
-     * bucket.
+     * This error occurs only when there is a problem with the destination S3 bucket and will not occur for timeouts. To
+     * resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
      * </p>
      * </note>
      * 
-     * @return Displays any Amazon S3 error that CloudTrail encountered when
-     *         attempting to deliver log files to the designated bucket. For
-     *         more information see the topic <a href=
-     *         "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     *         >Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+     * @return Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the
+     *         designated bucket. For more information see the topic <a
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the
+     *         Amazon S3 API Reference. </p> <note>
      *         <p>
-     *         This error occurs only when there is a problem with the
-     *         destination S3 bucket and will not occur for timeouts. To resolve
-     *         the issue, create a new bucket and call <code>UpdateTrail</code>
-     *         to specify the new bucket, or fix the existing objects so that
-     *         CloudTrail can again write to the bucket.
+     *         This error occurs only when there is a problem with the destination S3 bucket and will not occur for
+     *         timeouts. To resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new
+     *         bucket, or fix the existing objects so that CloudTrail can again write to the bucket.
      *         </p>
      */
 
@@ -295,60 +263,48 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Displays any Amazon S3 error that CloudTrail encountered when attempting
-     * to deliver log files to the designated bucket. For more information see
-     * the topic <a href=
-     * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     * >Error Responses</a> in the Amazon S3 API Reference.
+     * Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated
+     * bucket. For more information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3
+     * API Reference.
      * </p>
      * <note>
      * <p>
-     * This error occurs only when there is a problem with the destination S3
-     * bucket and will not occur for timeouts. To resolve the issue, create a
-     * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
-     * or fix the existing objects so that CloudTrail can again write to the
-     * bucket.
+     * This error occurs only when there is a problem with the destination S3 bucket and will not occur for timeouts. To
+     * resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
      * </p>
      * </note>
      * 
      * @param latestDeliveryError
-     *        Displays any Amazon S3 error that CloudTrail encountered when
-     *        attempting to deliver log files to the designated bucket. For more
-     *        information see the topic <a href=
-     *        "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     *        >Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+     *        Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the
+     *        designated bucket. For more information see the topic <a
+     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the
+     *        Amazon S3 API Reference. </p> <note>
      *        <p>
-     *        This error occurs only when there is a problem with the
-     *        destination S3 bucket and will not occur for timeouts. To resolve
-     *        the issue, create a new bucket and call <code>UpdateTrail</code>
-     *        to specify the new bucket, or fix the existing objects so that
-     *        CloudTrail can again write to the bucket.
+     *        This error occurs only when there is a problem with the destination S3 bucket and will not occur for
+     *        timeouts. To resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new
+     *        bucket, or fix the existing objects so that CloudTrail can again write to the bucket.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withLatestDeliveryError(
-            String latestDeliveryError) {
+    public GetTrailStatusResult withLatestDeliveryError(String latestDeliveryError) {
         setLatestDeliveryError(latestDeliveryError);
         return this;
     }
 
     /**
      * <p>
-     * Displays any Amazon SNS error that CloudTrail encountered when attempting
-     * to send a notification. For more information about Amazon SNS errors, see
-     * the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
-     * Developer Guide</a>.
+     * Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more
+     * information about Amazon SNS errors, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
      * </p>
      * 
      * @param latestNotificationError
-     *        Displays any Amazon SNS error that CloudTrail encountered when
-     *        attempting to send a notification. For more information about
-     *        Amazon SNS errors, see the <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html"
-     *        >Amazon SNS Developer Guide</a>.
+     *        Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more
+     *        information about Amazon SNS errors, see the <a
+     *        href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
      */
 
     public void setLatestNotificationError(String latestNotificationError) {
@@ -357,18 +313,14 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Displays any Amazon SNS error that CloudTrail encountered when attempting
-     * to send a notification. For more information about Amazon SNS errors, see
-     * the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
-     * Developer Guide</a>.
+     * Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more
+     * information about Amazon SNS errors, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
      * </p>
      * 
-     * @return Displays any Amazon SNS error that CloudTrail encountered when
-     *         attempting to send a notification. For more information about
-     *         Amazon SNS errors, see the <a
-     *         href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html"
-     *         >Amazon SNS Developer Guide</a>.
+     * @return Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For
+     *         more information about Amazon SNS errors, see the <a
+     *         href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
      */
 
     public String getLatestNotificationError() {
@@ -377,38 +329,30 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Displays any Amazon SNS error that CloudTrail encountered when attempting
-     * to send a notification. For more information about Amazon SNS errors, see
-     * the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
-     * Developer Guide</a>.
+     * Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more
+     * information about Amazon SNS errors, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
      * </p>
      * 
      * @param latestNotificationError
-     *        Displays any Amazon SNS error that CloudTrail encountered when
-     *        attempting to send a notification. For more information about
-     *        Amazon SNS errors, see the <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html"
-     *        >Amazon SNS Developer Guide</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more
+     *        information about Amazon SNS errors, see the <a
+     *        href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withLatestNotificationError(
-            String latestNotificationError) {
+    public GetTrailStatusResult withLatestNotificationError(String latestNotificationError) {
         setLatestNotificationError(latestNotificationError);
         return this;
     }
 
     /**
      * <p>
-     * Specifies the date and time that CloudTrail last delivered log files to
-     * an account's Amazon S3 bucket.
+     * Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.
      * </p>
      * 
      * @param latestDeliveryTime
-     *        Specifies the date and time that CloudTrail last delivered log
-     *        files to an account's Amazon S3 bucket.
+     *        Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.
      */
 
     public void setLatestDeliveryTime(java.util.Date latestDeliveryTime) {
@@ -417,12 +361,10 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Specifies the date and time that CloudTrail last delivered log files to
-     * an account's Amazon S3 bucket.
+     * Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.
      * </p>
      * 
-     * @return Specifies the date and time that CloudTrail last delivered log
-     *         files to an account's Amazon S3 bucket.
+     * @return Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.
      */
 
     public java.util.Date getLatestDeliveryTime() {
@@ -431,34 +373,28 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Specifies the date and time that CloudTrail last delivered log files to
-     * an account's Amazon S3 bucket.
+     * Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.
      * </p>
      * 
      * @param latestDeliveryTime
-     *        Specifies the date and time that CloudTrail last delivered log
-     *        files to an account's Amazon S3 bucket.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withLatestDeliveryTime(
-            java.util.Date latestDeliveryTime) {
+    public GetTrailStatusResult withLatestDeliveryTime(java.util.Date latestDeliveryTime) {
         setLatestDeliveryTime(latestDeliveryTime);
         return this;
     }
 
     /**
      * <p>
-     * Specifies the date and time of the most recent Amazon SNS notification
-     * that CloudTrail has written a new log file to an account's Amazon S3
-     * bucket.
+     * Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file
+     * to an account's Amazon S3 bucket.
      * </p>
      * 
      * @param latestNotificationTime
-     *        Specifies the date and time of the most recent Amazon SNS
-     *        notification that CloudTrail has written a new log file to an
-     *        account's Amazon S3 bucket.
+     *        Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new
+     *        log file to an account's Amazon S3 bucket.
      */
 
     public void setLatestNotificationTime(java.util.Date latestNotificationTime) {
@@ -467,14 +403,12 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Specifies the date and time of the most recent Amazon SNS notification
-     * that CloudTrail has written a new log file to an account's Amazon S3
-     * bucket.
+     * Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file
+     * to an account's Amazon S3 bucket.
      * </p>
      * 
-     * @return Specifies the date and time of the most recent Amazon SNS
-     *         notification that CloudTrail has written a new log file to an
-     *         account's Amazon S3 bucket.
+     * @return Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new
+     *         log file to an account's Amazon S3 bucket.
      */
 
     public java.util.Date getLatestNotificationTime() {
@@ -483,34 +417,28 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Specifies the date and time of the most recent Amazon SNS notification
-     * that CloudTrail has written a new log file to an account's Amazon S3
-     * bucket.
+     * Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file
+     * to an account's Amazon S3 bucket.
      * </p>
      * 
      * @param latestNotificationTime
-     *        Specifies the date and time of the most recent Amazon SNS
-     *        notification that CloudTrail has written a new log file to an
-     *        account's Amazon S3 bucket.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new
+     *        log file to an account's Amazon S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withLatestNotificationTime(
-            java.util.Date latestNotificationTime) {
+    public GetTrailStatusResult withLatestNotificationTime(java.util.Date latestNotificationTime) {
         setLatestNotificationTime(latestNotificationTime);
         return this;
     }
 
     /**
      * <p>
-     * Specifies the most recent date and time when CloudTrail started recording
-     * API calls for an AWS account.
+     * Specifies the most recent date and time when CloudTrail started recording API calls for an AWS account.
      * </p>
      * 
      * @param startLoggingTime
-     *        Specifies the most recent date and time when CloudTrail started
-     *        recording API calls for an AWS account.
+     *        Specifies the most recent date and time when CloudTrail started recording API calls for an AWS account.
      */
 
     public void setStartLoggingTime(java.util.Date startLoggingTime) {
@@ -519,12 +447,10 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Specifies the most recent date and time when CloudTrail started recording
-     * API calls for an AWS account.
+     * Specifies the most recent date and time when CloudTrail started recording API calls for an AWS account.
      * </p>
      * 
-     * @return Specifies the most recent date and time when CloudTrail started
-     *         recording API calls for an AWS account.
+     * @return Specifies the most recent date and time when CloudTrail started recording API calls for an AWS account.
      */
 
     public java.util.Date getStartLoggingTime() {
@@ -533,32 +459,26 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Specifies the most recent date and time when CloudTrail started recording
-     * API calls for an AWS account.
+     * Specifies the most recent date and time when CloudTrail started recording API calls for an AWS account.
      * </p>
      * 
      * @param startLoggingTime
-     *        Specifies the most recent date and time when CloudTrail started
-     *        recording API calls for an AWS account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the most recent date and time when CloudTrail started recording API calls for an AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withStartLoggingTime(
-            java.util.Date startLoggingTime) {
+    public GetTrailStatusResult withStartLoggingTime(java.util.Date startLoggingTime) {
         setStartLoggingTime(startLoggingTime);
         return this;
     }
 
     /**
      * <p>
-     * Specifies the most recent date and time when CloudTrail stopped recording
-     * API calls for an AWS account.
+     * Specifies the most recent date and time when CloudTrail stopped recording API calls for an AWS account.
      * </p>
      * 
      * @param stopLoggingTime
-     *        Specifies the most recent date and time when CloudTrail stopped
-     *        recording API calls for an AWS account.
+     *        Specifies the most recent date and time when CloudTrail stopped recording API calls for an AWS account.
      */
 
     public void setStopLoggingTime(java.util.Date stopLoggingTime) {
@@ -567,12 +487,10 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Specifies the most recent date and time when CloudTrail stopped recording
-     * API calls for an AWS account.
+     * Specifies the most recent date and time when CloudTrail stopped recording API calls for an AWS account.
      * </p>
      * 
-     * @return Specifies the most recent date and time when CloudTrail stopped
-     *         recording API calls for an AWS account.
+     * @return Specifies the most recent date and time when CloudTrail stopped recording API calls for an AWS account.
      */
 
     public java.util.Date getStopLoggingTime() {
@@ -581,47 +499,42 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Specifies the most recent date and time when CloudTrail stopped recording
-     * API calls for an AWS account.
+     * Specifies the most recent date and time when CloudTrail stopped recording API calls for an AWS account.
      * </p>
      * 
      * @param stopLoggingTime
-     *        Specifies the most recent date and time when CloudTrail stopped
-     *        recording API calls for an AWS account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the most recent date and time when CloudTrail stopped recording API calls for an AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withStopLoggingTime(
-            java.util.Date stopLoggingTime) {
+    public GetTrailStatusResult withStopLoggingTime(java.util.Date stopLoggingTime) {
         setStopLoggingTime(stopLoggingTime);
         return this;
     }
 
     /**
      * <p>
-     * Displays any CloudWatch Logs error that CloudTrail encountered when
-     * attempting to deliver logs to CloudWatch Logs.
+     * Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch
+     * Logs.
      * </p>
      * 
      * @param latestCloudWatchLogsDeliveryError
-     *        Displays any CloudWatch Logs error that CloudTrail encountered
-     *        when attempting to deliver logs to CloudWatch Logs.
+     *        Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to
+     *        CloudWatch Logs.
      */
 
-    public void setLatestCloudWatchLogsDeliveryError(
-            String latestCloudWatchLogsDeliveryError) {
+    public void setLatestCloudWatchLogsDeliveryError(String latestCloudWatchLogsDeliveryError) {
         this.latestCloudWatchLogsDeliveryError = latestCloudWatchLogsDeliveryError;
     }
 
     /**
      * <p>
-     * Displays any CloudWatch Logs error that CloudTrail encountered when
-     * attempting to deliver logs to CloudWatch Logs.
+     * Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch
+     * Logs.
      * </p>
      * 
-     * @return Displays any CloudWatch Logs error that CloudTrail encountered
-     *         when attempting to deliver logs to CloudWatch Logs.
+     * @return Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to
+     *         CloudWatch Logs.
      */
 
     public String getLatestCloudWatchLogsDeliveryError() {
@@ -630,47 +543,40 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Displays any CloudWatch Logs error that CloudTrail encountered when
-     * attempting to deliver logs to CloudWatch Logs.
+     * Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch
+     * Logs.
      * </p>
      * 
      * @param latestCloudWatchLogsDeliveryError
-     *        Displays any CloudWatch Logs error that CloudTrail encountered
-     *        when attempting to deliver logs to CloudWatch Logs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to
+     *        CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withLatestCloudWatchLogsDeliveryError(
-            String latestCloudWatchLogsDeliveryError) {
+    public GetTrailStatusResult withLatestCloudWatchLogsDeliveryError(String latestCloudWatchLogsDeliveryError) {
         setLatestCloudWatchLogsDeliveryError(latestCloudWatchLogsDeliveryError);
         return this;
     }
 
     /**
      * <p>
-     * Displays the most recent date and time when CloudTrail delivered logs to
-     * CloudWatch Logs.
+     * Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.
      * </p>
      * 
      * @param latestCloudWatchLogsDeliveryTime
-     *        Displays the most recent date and time when CloudTrail delivered
-     *        logs to CloudWatch Logs.
+     *        Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.
      */
 
-    public void setLatestCloudWatchLogsDeliveryTime(
-            java.util.Date latestCloudWatchLogsDeliveryTime) {
+    public void setLatestCloudWatchLogsDeliveryTime(java.util.Date latestCloudWatchLogsDeliveryTime) {
         this.latestCloudWatchLogsDeliveryTime = latestCloudWatchLogsDeliveryTime;
     }
 
     /**
      * <p>
-     * Displays the most recent date and time when CloudTrail delivered logs to
-     * CloudWatch Logs.
+     * Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.
      * </p>
      * 
-     * @return Displays the most recent date and time when CloudTrail delivered
-     *         logs to CloudWatch Logs.
+     * @return Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.
      */
 
     public java.util.Date getLatestCloudWatchLogsDeliveryTime() {
@@ -679,47 +585,39 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Displays the most recent date and time when CloudTrail delivered logs to
-     * CloudWatch Logs.
+     * Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.
      * </p>
      * 
      * @param latestCloudWatchLogsDeliveryTime
-     *        Displays the most recent date and time when CloudTrail delivered
-     *        logs to CloudWatch Logs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withLatestCloudWatchLogsDeliveryTime(
-            java.util.Date latestCloudWatchLogsDeliveryTime) {
+    public GetTrailStatusResult withLatestCloudWatchLogsDeliveryTime(java.util.Date latestCloudWatchLogsDeliveryTime) {
         setLatestCloudWatchLogsDeliveryTime(latestCloudWatchLogsDeliveryTime);
         return this;
     }
 
     /**
      * <p>
-     * Specifies the date and time that CloudTrail last delivered a digest file
-     * to an account's Amazon S3 bucket.
+     * Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.
      * </p>
      * 
      * @param latestDigestDeliveryTime
-     *        Specifies the date and time that CloudTrail last delivered a
-     *        digest file to an account's Amazon S3 bucket.
+     *        Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.
      */
 
-    public void setLatestDigestDeliveryTime(
-            java.util.Date latestDigestDeliveryTime) {
+    public void setLatestDigestDeliveryTime(java.util.Date latestDigestDeliveryTime) {
         this.latestDigestDeliveryTime = latestDigestDeliveryTime;
     }
 
     /**
      * <p>
-     * Specifies the date and time that CloudTrail last delivered a digest file
-     * to an account's Amazon S3 bucket.
+     * Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.
      * </p>
      * 
-     * @return Specifies the date and time that CloudTrail last delivered a
-     *         digest file to an account's Amazon S3 bucket.
+     * @return Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3
+     *         bucket.
      */
 
     public java.util.Date getLatestDigestDeliveryTime() {
@@ -728,53 +626,43 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Specifies the date and time that CloudTrail last delivered a digest file
-     * to an account's Amazon S3 bucket.
+     * Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.
      * </p>
      * 
      * @param latestDigestDeliveryTime
-     *        Specifies the date and time that CloudTrail last delivered a
-     *        digest file to an account's Amazon S3 bucket.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withLatestDigestDeliveryTime(
-            java.util.Date latestDigestDeliveryTime) {
+    public GetTrailStatusResult withLatestDigestDeliveryTime(java.util.Date latestDigestDeliveryTime) {
         setLatestDigestDeliveryTime(latestDigestDeliveryTime);
         return this;
     }
 
     /**
      * <p>
-     * Displays any Amazon S3 error that CloudTrail encountered when attempting
-     * to deliver a digest file to the designated bucket. For more information
-     * see the topic <a href=
-     * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     * >Error Responses</a> in the Amazon S3 API Reference.
+     * Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the
+     * designated bucket. For more information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3
+     * API Reference.
      * </p>
      * <note>
      * <p>
-     * This error occurs only when there is a problem with the destination S3
-     * bucket and will not occur for timeouts. To resolve the issue, create a
-     * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
-     * or fix the existing objects so that CloudTrail can again write to the
-     * bucket.
+     * This error occurs only when there is a problem with the destination S3 bucket and will not occur for timeouts. To
+     * resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
      * </p>
      * </note>
      * 
      * @param latestDigestDeliveryError
-     *        Displays any Amazon S3 error that CloudTrail encountered when
-     *        attempting to deliver a digest file to the designated bucket. For
-     *        more information see the topic <a href=
-     *        "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     *        >Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+     *        Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the
+     *        designated bucket. For more information see the topic <a
+     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the
+     *        Amazon S3 API Reference. </p> <note>
      *        <p>
-     *        This error occurs only when there is a problem with the
-     *        destination S3 bucket and will not occur for timeouts. To resolve
-     *        the issue, create a new bucket and call <code>UpdateTrail</code>
-     *        to specify the new bucket, or fix the existing objects so that
-     *        CloudTrail can again write to the bucket.
+     *        This error occurs only when there is a problem with the destination S3 bucket and will not occur for
+     *        timeouts. To resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new
+     *        bucket, or fix the existing objects so that CloudTrail can again write to the bucket.
      *        </p>
      */
 
@@ -784,33 +672,27 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Displays any Amazon S3 error that CloudTrail encountered when attempting
-     * to deliver a digest file to the designated bucket. For more information
-     * see the topic <a href=
-     * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     * >Error Responses</a> in the Amazon S3 API Reference.
+     * Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the
+     * designated bucket. For more information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3
+     * API Reference.
      * </p>
      * <note>
      * <p>
-     * This error occurs only when there is a problem with the destination S3
-     * bucket and will not occur for timeouts. To resolve the issue, create a
-     * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
-     * or fix the existing objects so that CloudTrail can again write to the
-     * bucket.
+     * This error occurs only when there is a problem with the destination S3 bucket and will not occur for timeouts. To
+     * resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
      * </p>
      * </note>
      * 
-     * @return Displays any Amazon S3 error that CloudTrail encountered when
-     *         attempting to deliver a digest file to the designated bucket. For
-     *         more information see the topic <a href=
-     *         "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     *         >Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+     * @return Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the
+     *         designated bucket. For more information see the topic <a
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the
+     *         Amazon S3 API Reference. </p> <note>
      *         <p>
-     *         This error occurs only when there is a problem with the
-     *         destination S3 bucket and will not occur for timeouts. To resolve
-     *         the issue, create a new bucket and call <code>UpdateTrail</code>
-     *         to specify the new bucket, or fix the existing objects so that
-     *         CloudTrail can again write to the bucket.
+     *         This error occurs only when there is a problem with the destination S3 bucket and will not occur for
+     *         timeouts. To resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new
+     *         bucket, or fix the existing objects so that CloudTrail can again write to the bucket.
      *         </p>
      */
 
@@ -820,41 +702,33 @@ public class GetTrailStatusResult extends
 
     /**
      * <p>
-     * Displays any Amazon S3 error that CloudTrail encountered when attempting
-     * to deliver a digest file to the designated bucket. For more information
-     * see the topic <a href=
-     * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     * >Error Responses</a> in the Amazon S3 API Reference.
+     * Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the
+     * designated bucket. For more information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3
+     * API Reference.
      * </p>
      * <note>
      * <p>
-     * This error occurs only when there is a problem with the destination S3
-     * bucket and will not occur for timeouts. To resolve the issue, create a
-     * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
-     * or fix the existing objects so that CloudTrail can again write to the
-     * bucket.
+     * This error occurs only when there is a problem with the destination S3 bucket and will not occur for timeouts. To
+     * resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
      * </p>
      * </note>
      * 
      * @param latestDigestDeliveryError
-     *        Displays any Amazon S3 error that CloudTrail encountered when
-     *        attempting to deliver a digest file to the designated bucket. For
-     *        more information see the topic <a href=
-     *        "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     *        >Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+     *        Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the
+     *        designated bucket. For more information see the topic <a
+     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the
+     *        Amazon S3 API Reference. </p> <note>
      *        <p>
-     *        This error occurs only when there is a problem with the
-     *        destination S3 bucket and will not occur for timeouts. To resolve
-     *        the issue, create a new bucket and call <code>UpdateTrail</code>
-     *        to specify the new bucket, or fix the existing objects so that
-     *        CloudTrail can again write to the bucket.
+     *        This error occurs only when there is a problem with the destination S3 bucket and will not occur for
+     *        timeouts. To resolve the issue, create a new bucket and call <code>UpdateTrail</code> to specify the new
+     *        bucket, or fix the existing objects so that CloudTrail can again write to the bucket.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withLatestDigestDeliveryError(
-            String latestDigestDeliveryError) {
+    public GetTrailStatusResult withLatestDigestDeliveryError(String latestDigestDeliveryError) {
         setLatestDigestDeliveryError(latestDigestDeliveryError);
         return this;
     }
@@ -891,12 +765,10 @@ public class GetTrailStatusResult extends
      * 
      * @param latestDeliveryAttemptTime
      *        This field is deprecated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withLatestDeliveryAttemptTime(
-            String latestDeliveryAttemptTime) {
+    public GetTrailStatusResult withLatestDeliveryAttemptTime(String latestDeliveryAttemptTime) {
         setLatestDeliveryAttemptTime(latestDeliveryAttemptTime);
         return this;
     }
@@ -910,8 +782,7 @@ public class GetTrailStatusResult extends
      *        This field is deprecated.
      */
 
-    public void setLatestNotificationAttemptTime(
-            String latestNotificationAttemptTime) {
+    public void setLatestNotificationAttemptTime(String latestNotificationAttemptTime) {
         this.latestNotificationAttemptTime = latestNotificationAttemptTime;
     }
 
@@ -934,12 +805,10 @@ public class GetTrailStatusResult extends
      * 
      * @param latestNotificationAttemptTime
      *        This field is deprecated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withLatestNotificationAttemptTime(
-            String latestNotificationAttemptTime) {
+    public GetTrailStatusResult withLatestNotificationAttemptTime(String latestNotificationAttemptTime) {
         setLatestNotificationAttemptTime(latestNotificationAttemptTime);
         return this;
     }
@@ -953,8 +822,7 @@ public class GetTrailStatusResult extends
      *        This field is deprecated.
      */
 
-    public void setLatestNotificationAttemptSucceeded(
-            String latestNotificationAttemptSucceeded) {
+    public void setLatestNotificationAttemptSucceeded(String latestNotificationAttemptSucceeded) {
         this.latestNotificationAttemptSucceeded = latestNotificationAttemptSucceeded;
     }
 
@@ -977,12 +845,10 @@ public class GetTrailStatusResult extends
      * 
      * @param latestNotificationAttemptSucceeded
      *        This field is deprecated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withLatestNotificationAttemptSucceeded(
-            String latestNotificationAttemptSucceeded) {
+    public GetTrailStatusResult withLatestNotificationAttemptSucceeded(String latestNotificationAttemptSucceeded) {
         setLatestNotificationAttemptSucceeded(latestNotificationAttemptSucceeded);
         return this;
     }
@@ -996,8 +862,7 @@ public class GetTrailStatusResult extends
      *        This field is deprecated.
      */
 
-    public void setLatestDeliveryAttemptSucceeded(
-            String latestDeliveryAttemptSucceeded) {
+    public void setLatestDeliveryAttemptSucceeded(String latestDeliveryAttemptSucceeded) {
         this.latestDeliveryAttemptSucceeded = latestDeliveryAttemptSucceeded;
     }
 
@@ -1020,12 +885,10 @@ public class GetTrailStatusResult extends
      * 
      * @param latestDeliveryAttemptSucceeded
      *        This field is deprecated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTrailStatusResult withLatestDeliveryAttemptSucceeded(
-            String latestDeliveryAttemptSucceeded) {
+    public GetTrailStatusResult withLatestDeliveryAttemptSucceeded(String latestDeliveryAttemptSucceeded) {
         setLatestDeliveryAttemptSucceeded(latestDeliveryAttemptSucceeded);
         return this;
     }
@@ -1062,8 +925,7 @@ public class GetTrailStatusResult extends
      * 
      * @param timeLoggingStarted
      *        This field is deprecated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetTrailStatusResult withTimeLoggingStarted(String timeLoggingStarted) {
@@ -1103,8 +965,7 @@ public class GetTrailStatusResult extends
      * 
      * @param timeLoggingStopped
      *        This field is deprecated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetTrailStatusResult withTimeLoggingStopped(String timeLoggingStopped) {
@@ -1113,8 +974,7 @@ public class GetTrailStatusResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1129,41 +989,31 @@ public class GetTrailStatusResult extends
         if (getLatestDeliveryError() != null)
             sb.append("LatestDeliveryError: " + getLatestDeliveryError() + ",");
         if (getLatestNotificationError() != null)
-            sb.append("LatestNotificationError: "
-                    + getLatestNotificationError() + ",");
+            sb.append("LatestNotificationError: " + getLatestNotificationError() + ",");
         if (getLatestDeliveryTime() != null)
             sb.append("LatestDeliveryTime: " + getLatestDeliveryTime() + ",");
         if (getLatestNotificationTime() != null)
-            sb.append("LatestNotificationTime: " + getLatestNotificationTime()
-                    + ",");
+            sb.append("LatestNotificationTime: " + getLatestNotificationTime() + ",");
         if (getStartLoggingTime() != null)
             sb.append("StartLoggingTime: " + getStartLoggingTime() + ",");
         if (getStopLoggingTime() != null)
             sb.append("StopLoggingTime: " + getStopLoggingTime() + ",");
         if (getLatestCloudWatchLogsDeliveryError() != null)
-            sb.append("LatestCloudWatchLogsDeliveryError: "
-                    + getLatestCloudWatchLogsDeliveryError() + ",");
+            sb.append("LatestCloudWatchLogsDeliveryError: " + getLatestCloudWatchLogsDeliveryError() + ",");
         if (getLatestCloudWatchLogsDeliveryTime() != null)
-            sb.append("LatestCloudWatchLogsDeliveryTime: "
-                    + getLatestCloudWatchLogsDeliveryTime() + ",");
+            sb.append("LatestCloudWatchLogsDeliveryTime: " + getLatestCloudWatchLogsDeliveryTime() + ",");
         if (getLatestDigestDeliveryTime() != null)
-            sb.append("LatestDigestDeliveryTime: "
-                    + getLatestDigestDeliveryTime() + ",");
+            sb.append("LatestDigestDeliveryTime: " + getLatestDigestDeliveryTime() + ",");
         if (getLatestDigestDeliveryError() != null)
-            sb.append("LatestDigestDeliveryError: "
-                    + getLatestDigestDeliveryError() + ",");
+            sb.append("LatestDigestDeliveryError: " + getLatestDigestDeliveryError() + ",");
         if (getLatestDeliveryAttemptTime() != null)
-            sb.append("LatestDeliveryAttemptTime: "
-                    + getLatestDeliveryAttemptTime() + ",");
+            sb.append("LatestDeliveryAttemptTime: " + getLatestDeliveryAttemptTime() + ",");
         if (getLatestNotificationAttemptTime() != null)
-            sb.append("LatestNotificationAttemptTime: "
-                    + getLatestNotificationAttemptTime() + ",");
+            sb.append("LatestNotificationAttemptTime: " + getLatestNotificationAttemptTime() + ",");
         if (getLatestNotificationAttemptSucceeded() != null)
-            sb.append("LatestNotificationAttemptSucceeded: "
-                    + getLatestNotificationAttemptSucceeded() + ",");
+            sb.append("LatestNotificationAttemptSucceeded: " + getLatestNotificationAttemptSucceeded() + ",");
         if (getLatestDeliveryAttemptSucceeded() != null)
-            sb.append("LatestDeliveryAttemptSucceeded: "
-                    + getLatestDeliveryAttemptSucceeded() + ",");
+            sb.append("LatestDeliveryAttemptSucceeded: " + getLatestDeliveryAttemptSucceeded() + ",");
         if (getTimeLoggingStarted() != null)
             sb.append("TimeLoggingStarted: " + getTimeLoggingStarted() + ",");
         if (getTimeLoggingStopped() != null)
@@ -1184,119 +1034,76 @@ public class GetTrailStatusResult extends
         GetTrailStatusResult other = (GetTrailStatusResult) obj;
         if (other.getIsLogging() == null ^ this.getIsLogging() == null)
             return false;
-        if (other.getIsLogging() != null
-                && other.getIsLogging().equals(this.getIsLogging()) == false)
+        if (other.getIsLogging() != null && other.getIsLogging().equals(this.getIsLogging()) == false)
             return false;
-        if (other.getLatestDeliveryError() == null
-                ^ this.getLatestDeliveryError() == null)
+        if (other.getLatestDeliveryError() == null ^ this.getLatestDeliveryError() == null)
             return false;
-        if (other.getLatestDeliveryError() != null
-                && other.getLatestDeliveryError().equals(
-                        this.getLatestDeliveryError()) == false)
+        if (other.getLatestDeliveryError() != null && other.getLatestDeliveryError().equals(this.getLatestDeliveryError()) == false)
             return false;
-        if (other.getLatestNotificationError() == null
-                ^ this.getLatestNotificationError() == null)
+        if (other.getLatestNotificationError() == null ^ this.getLatestNotificationError() == null)
             return false;
-        if (other.getLatestNotificationError() != null
-                && other.getLatestNotificationError().equals(
-                        this.getLatestNotificationError()) == false)
+        if (other.getLatestNotificationError() != null && other.getLatestNotificationError().equals(this.getLatestNotificationError()) == false)
             return false;
-        if (other.getLatestDeliveryTime() == null
-                ^ this.getLatestDeliveryTime() == null)
+        if (other.getLatestDeliveryTime() == null ^ this.getLatestDeliveryTime() == null)
             return false;
-        if (other.getLatestDeliveryTime() != null
-                && other.getLatestDeliveryTime().equals(
-                        this.getLatestDeliveryTime()) == false)
+        if (other.getLatestDeliveryTime() != null && other.getLatestDeliveryTime().equals(this.getLatestDeliveryTime()) == false)
             return false;
-        if (other.getLatestNotificationTime() == null
-                ^ this.getLatestNotificationTime() == null)
+        if (other.getLatestNotificationTime() == null ^ this.getLatestNotificationTime() == null)
             return false;
-        if (other.getLatestNotificationTime() != null
-                && other.getLatestNotificationTime().equals(
-                        this.getLatestNotificationTime()) == false)
+        if (other.getLatestNotificationTime() != null && other.getLatestNotificationTime().equals(this.getLatestNotificationTime()) == false)
             return false;
-        if (other.getStartLoggingTime() == null
-                ^ this.getStartLoggingTime() == null)
+        if (other.getStartLoggingTime() == null ^ this.getStartLoggingTime() == null)
             return false;
-        if (other.getStartLoggingTime() != null
-                && other.getStartLoggingTime().equals(
-                        this.getStartLoggingTime()) == false)
+        if (other.getStartLoggingTime() != null && other.getStartLoggingTime().equals(this.getStartLoggingTime()) == false)
             return false;
-        if (other.getStopLoggingTime() == null
-                ^ this.getStopLoggingTime() == null)
+        if (other.getStopLoggingTime() == null ^ this.getStopLoggingTime() == null)
             return false;
-        if (other.getStopLoggingTime() != null
-                && other.getStopLoggingTime().equals(this.getStopLoggingTime()) == false)
+        if (other.getStopLoggingTime() != null && other.getStopLoggingTime().equals(this.getStopLoggingTime()) == false)
             return false;
-        if (other.getLatestCloudWatchLogsDeliveryError() == null
-                ^ this.getLatestCloudWatchLogsDeliveryError() == null)
+        if (other.getLatestCloudWatchLogsDeliveryError() == null ^ this.getLatestCloudWatchLogsDeliveryError() == null)
             return false;
         if (other.getLatestCloudWatchLogsDeliveryError() != null
-                && other.getLatestCloudWatchLogsDeliveryError().equals(
-                        this.getLatestCloudWatchLogsDeliveryError()) == false)
+                && other.getLatestCloudWatchLogsDeliveryError().equals(this.getLatestCloudWatchLogsDeliveryError()) == false)
             return false;
-        if (other.getLatestCloudWatchLogsDeliveryTime() == null
-                ^ this.getLatestCloudWatchLogsDeliveryTime() == null)
+        if (other.getLatestCloudWatchLogsDeliveryTime() == null ^ this.getLatestCloudWatchLogsDeliveryTime() == null)
             return false;
         if (other.getLatestCloudWatchLogsDeliveryTime() != null
-                && other.getLatestCloudWatchLogsDeliveryTime().equals(
-                        this.getLatestCloudWatchLogsDeliveryTime()) == false)
+                && other.getLatestCloudWatchLogsDeliveryTime().equals(this.getLatestCloudWatchLogsDeliveryTime()) == false)
             return false;
-        if (other.getLatestDigestDeliveryTime() == null
-                ^ this.getLatestDigestDeliveryTime() == null)
+        if (other.getLatestDigestDeliveryTime() == null ^ this.getLatestDigestDeliveryTime() == null)
             return false;
-        if (other.getLatestDigestDeliveryTime() != null
-                && other.getLatestDigestDeliveryTime().equals(
-                        this.getLatestDigestDeliveryTime()) == false)
+        if (other.getLatestDigestDeliveryTime() != null && other.getLatestDigestDeliveryTime().equals(this.getLatestDigestDeliveryTime()) == false)
             return false;
-        if (other.getLatestDigestDeliveryError() == null
-                ^ this.getLatestDigestDeliveryError() == null)
+        if (other.getLatestDigestDeliveryError() == null ^ this.getLatestDigestDeliveryError() == null)
             return false;
-        if (other.getLatestDigestDeliveryError() != null
-                && other.getLatestDigestDeliveryError().equals(
-                        this.getLatestDigestDeliveryError()) == false)
+        if (other.getLatestDigestDeliveryError() != null && other.getLatestDigestDeliveryError().equals(this.getLatestDigestDeliveryError()) == false)
             return false;
-        if (other.getLatestDeliveryAttemptTime() == null
-                ^ this.getLatestDeliveryAttemptTime() == null)
+        if (other.getLatestDeliveryAttemptTime() == null ^ this.getLatestDeliveryAttemptTime() == null)
             return false;
-        if (other.getLatestDeliveryAttemptTime() != null
-                && other.getLatestDeliveryAttemptTime().equals(
-                        this.getLatestDeliveryAttemptTime()) == false)
+        if (other.getLatestDeliveryAttemptTime() != null && other.getLatestDeliveryAttemptTime().equals(this.getLatestDeliveryAttemptTime()) == false)
             return false;
-        if (other.getLatestNotificationAttemptTime() == null
-                ^ this.getLatestNotificationAttemptTime() == null)
+        if (other.getLatestNotificationAttemptTime() == null ^ this.getLatestNotificationAttemptTime() == null)
             return false;
         if (other.getLatestNotificationAttemptTime() != null
-                && other.getLatestNotificationAttemptTime().equals(
-                        this.getLatestNotificationAttemptTime()) == false)
+                && other.getLatestNotificationAttemptTime().equals(this.getLatestNotificationAttemptTime()) == false)
             return false;
-        if (other.getLatestNotificationAttemptSucceeded() == null
-                ^ this.getLatestNotificationAttemptSucceeded() == null)
+        if (other.getLatestNotificationAttemptSucceeded() == null ^ this.getLatestNotificationAttemptSucceeded() == null)
             return false;
         if (other.getLatestNotificationAttemptSucceeded() != null
-                && other.getLatestNotificationAttemptSucceeded().equals(
-                        this.getLatestNotificationAttemptSucceeded()) == false)
+                && other.getLatestNotificationAttemptSucceeded().equals(this.getLatestNotificationAttemptSucceeded()) == false)
             return false;
-        if (other.getLatestDeliveryAttemptSucceeded() == null
-                ^ this.getLatestDeliveryAttemptSucceeded() == null)
+        if (other.getLatestDeliveryAttemptSucceeded() == null ^ this.getLatestDeliveryAttemptSucceeded() == null)
             return false;
         if (other.getLatestDeliveryAttemptSucceeded() != null
-                && other.getLatestDeliveryAttemptSucceeded().equals(
-                        this.getLatestDeliveryAttemptSucceeded()) == false)
+                && other.getLatestDeliveryAttemptSucceeded().equals(this.getLatestDeliveryAttemptSucceeded()) == false)
             return false;
-        if (other.getTimeLoggingStarted() == null
-                ^ this.getTimeLoggingStarted() == null)
+        if (other.getTimeLoggingStarted() == null ^ this.getTimeLoggingStarted() == null)
             return false;
-        if (other.getTimeLoggingStarted() != null
-                && other.getTimeLoggingStarted().equals(
-                        this.getTimeLoggingStarted()) == false)
+        if (other.getTimeLoggingStarted() != null && other.getTimeLoggingStarted().equals(this.getTimeLoggingStarted()) == false)
             return false;
-        if (other.getTimeLoggingStopped() == null
-                ^ this.getTimeLoggingStopped() == null)
+        if (other.getTimeLoggingStopped() == null ^ this.getTimeLoggingStopped() == null)
             return false;
-        if (other.getTimeLoggingStopped() != null
-                && other.getTimeLoggingStopped().equals(
-                        this.getTimeLoggingStopped()) == false)
+        if (other.getTimeLoggingStopped() != null && other.getTimeLoggingStopped().equals(this.getTimeLoggingStopped()) == false)
             return false;
         return true;
     }
@@ -1306,72 +1113,23 @@ public class GetTrailStatusResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIsLogging() == null) ? 0 : getIsLogging().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestDeliveryError() == null) ? 0
-                        : getLatestDeliveryError().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestNotificationError() == null) ? 0
-                        : getLatestNotificationError().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestDeliveryTime() == null) ? 0
-                        : getLatestDeliveryTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestNotificationTime() == null) ? 0
-                        : getLatestNotificationTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStartLoggingTime() == null) ? 0 : getStartLoggingTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStopLoggingTime() == null) ? 0 : getStopLoggingTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestCloudWatchLogsDeliveryError() == null) ? 0
-                        : getLatestCloudWatchLogsDeliveryError().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestCloudWatchLogsDeliveryTime() == null) ? 0
-                        : getLatestCloudWatchLogsDeliveryTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestDigestDeliveryTime() == null) ? 0
-                        : getLatestDigestDeliveryTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestDigestDeliveryError() == null) ? 0
-                        : getLatestDigestDeliveryError().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestDeliveryAttemptTime() == null) ? 0
-                        : getLatestDeliveryAttemptTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestNotificationAttemptTime() == null) ? 0
-                        : getLatestNotificationAttemptTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestNotificationAttemptSucceeded() == null) ? 0
-                        : getLatestNotificationAttemptSucceeded().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestDeliveryAttemptSucceeded() == null) ? 0
-                        : getLatestDeliveryAttemptSucceeded().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTimeLoggingStarted() == null) ? 0
-                        : getTimeLoggingStarted().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTimeLoggingStopped() == null) ? 0
-                        : getTimeLoggingStopped().hashCode());
+        hashCode = prime * hashCode + ((getIsLogging() == null) ? 0 : getIsLogging().hashCode());
+        hashCode = prime * hashCode + ((getLatestDeliveryError() == null) ? 0 : getLatestDeliveryError().hashCode());
+        hashCode = prime * hashCode + ((getLatestNotificationError() == null) ? 0 : getLatestNotificationError().hashCode());
+        hashCode = prime * hashCode + ((getLatestDeliveryTime() == null) ? 0 : getLatestDeliveryTime().hashCode());
+        hashCode = prime * hashCode + ((getLatestNotificationTime() == null) ? 0 : getLatestNotificationTime().hashCode());
+        hashCode = prime * hashCode + ((getStartLoggingTime() == null) ? 0 : getStartLoggingTime().hashCode());
+        hashCode = prime * hashCode + ((getStopLoggingTime() == null) ? 0 : getStopLoggingTime().hashCode());
+        hashCode = prime * hashCode + ((getLatestCloudWatchLogsDeliveryError() == null) ? 0 : getLatestCloudWatchLogsDeliveryError().hashCode());
+        hashCode = prime * hashCode + ((getLatestCloudWatchLogsDeliveryTime() == null) ? 0 : getLatestCloudWatchLogsDeliveryTime().hashCode());
+        hashCode = prime * hashCode + ((getLatestDigestDeliveryTime() == null) ? 0 : getLatestDigestDeliveryTime().hashCode());
+        hashCode = prime * hashCode + ((getLatestDigestDeliveryError() == null) ? 0 : getLatestDigestDeliveryError().hashCode());
+        hashCode = prime * hashCode + ((getLatestDeliveryAttemptTime() == null) ? 0 : getLatestDeliveryAttemptTime().hashCode());
+        hashCode = prime * hashCode + ((getLatestNotificationAttemptTime() == null) ? 0 : getLatestNotificationAttemptTime().hashCode());
+        hashCode = prime * hashCode + ((getLatestNotificationAttemptSucceeded() == null) ? 0 : getLatestNotificationAttemptSucceeded().hashCode());
+        hashCode = prime * hashCode + ((getLatestDeliveryAttemptSucceeded() == null) ? 0 : getLatestDeliveryAttemptSucceeded().hashCode());
+        hashCode = prime * hashCode + ((getTimeLoggingStarted() == null) ? 0 : getTimeLoggingStarted().hashCode());
+        hashCode = prime * hashCode + ((getTimeLoggingStopped() == null) ? 0 : getTimeLoggingStopped().hashCode());
         return hashCode;
     }
 
@@ -1380,9 +1138,7 @@ public class GetTrailStatusResult extends
         try {
             return (GetTrailStatusResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

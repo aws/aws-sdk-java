@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -18,8 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An AWS Identity and Access Management (IAM) role that can be used by the
- * associated Amazon Redshift cluster to access other AWS services.
+ * An AWS Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access
+ * other AWS services.
  * </p>
  */
 public class ClusterIamRole implements Serializable, Cloneable {
@@ -33,8 +31,7 @@ public class ClusterIamRole implements Serializable, Cloneable {
     private String iamRoleArn;
     /**
      * <p>
-     * A value that describes the status of the IAM role's association with an
-     * Amazon Redshift cluster.
+     * A value that describes the status of the IAM role's association with an Amazon Redshift cluster.
      * </p>
      * <p>
      * The following are possible statuses and descriptions.
@@ -47,14 +44,12 @@ public class ClusterIamRole implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>adding</code>: The role is in the process of being associated with
-     * the cluster.
+     * <code>adding</code>: The role is in the process of being associated with the cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>removing</code>: The role is in the process of being disassociated
-     * with the cluster.
+     * <code>removing</code>: The role is in the process of being disassociated with the cluster.
      * </p>
      * </li>
      * </ul>
@@ -99,8 +94,7 @@ public class ClusterIamRole implements Serializable, Cloneable {
      * @param iamRoleArn
      *        The Amazon Resource Name (ARN) of the IAM role, for example,
      *        <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterIamRole withIamRoleArn(String iamRoleArn) {
@@ -110,8 +104,7 @@ public class ClusterIamRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that describes the status of the IAM role's association with an
-     * Amazon Redshift cluster.
+     * A value that describes the status of the IAM role's association with an Amazon Redshift cluster.
      * </p>
      * <p>
      * The following are possible statuses and descriptions.
@@ -124,41 +117,35 @@ public class ClusterIamRole implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>adding</code>: The role is in the process of being associated with
-     * the cluster.
+     * <code>adding</code>: The role is in the process of being associated with the cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>removing</code>: The role is in the process of being disassociated
-     * with the cluster.
+     * <code>removing</code>: The role is in the process of being disassociated with the cluster.
      * </p>
      * </li>
      * </ul>
      * 
      * @param applyStatus
-     *        A value that describes the status of the IAM role's association
-     *        with an Amazon Redshift cluster.</p>
+     *        A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
      *        <p>
      *        The following are possible statuses and descriptions.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>in-sync</code>: The role is available for use by the
-     *        cluster.
+     *        <code>in-sync</code>: The role is available for use by the cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>adding</code>: The role is in the process of being
-     *        associated with the cluster.
+     *        <code>adding</code>: The role is in the process of being associated with the cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>removing</code>: The role is in the process of being
-     *        disassociated with the cluster.
+     *        <code>removing</code>: The role is in the process of being disassociated with the cluster.
      *        </p>
      *        </li>
      */
@@ -169,8 +156,7 @@ public class ClusterIamRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that describes the status of the IAM role's association with an
-     * Amazon Redshift cluster.
+     * A value that describes the status of the IAM role's association with an Amazon Redshift cluster.
      * </p>
      * <p>
      * The following are possible statuses and descriptions.
@@ -183,40 +169,34 @@ public class ClusterIamRole implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>adding</code>: The role is in the process of being associated with
-     * the cluster.
+     * <code>adding</code>: The role is in the process of being associated with the cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>removing</code>: The role is in the process of being disassociated
-     * with the cluster.
+     * <code>removing</code>: The role is in the process of being disassociated with the cluster.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return A value that describes the status of the IAM role's association
-     *         with an Amazon Redshift cluster.</p>
+     * @return A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
      *         <p>
      *         The following are possible statuses and descriptions.
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>in-sync</code>: The role is available for use by the
-     *         cluster.
+     *         <code>in-sync</code>: The role is available for use by the cluster.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>adding</code>: The role is in the process of being
-     *         associated with the cluster.
+     *         <code>adding</code>: The role is in the process of being associated with the cluster.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>removing</code>: The role is in the process of being
-     *         disassociated with the cluster.
+     *         <code>removing</code>: The role is in the process of being disassociated with the cluster.
      *         </p>
      *         </li>
      */
@@ -227,8 +207,7 @@ public class ClusterIamRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that describes the status of the IAM role's association with an
-     * Amazon Redshift cluster.
+     * A value that describes the status of the IAM role's association with an Amazon Redshift cluster.
      * </p>
      * <p>
      * The following are possible statuses and descriptions.
@@ -241,45 +220,38 @@ public class ClusterIamRole implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>adding</code>: The role is in the process of being associated with
-     * the cluster.
+     * <code>adding</code>: The role is in the process of being associated with the cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>removing</code>: The role is in the process of being disassociated
-     * with the cluster.
+     * <code>removing</code>: The role is in the process of being disassociated with the cluster.
      * </p>
      * </li>
      * </ul>
      * 
      * @param applyStatus
-     *        A value that describes the status of the IAM role's association
-     *        with an Amazon Redshift cluster.</p>
+     *        A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
      *        <p>
      *        The following are possible statuses and descriptions.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>in-sync</code>: The role is available for use by the
-     *        cluster.
+     *        <code>in-sync</code>: The role is available for use by the cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>adding</code>: The role is in the process of being
-     *        associated with the cluster.
+     *        <code>adding</code>: The role is in the process of being associated with the cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>removing</code>: The role is in the process of being
-     *        disassociated with the cluster.
+     *        <code>removing</code>: The role is in the process of being disassociated with the cluster.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterIamRole withApplyStatus(String applyStatus) {
@@ -288,8 +260,7 @@ public class ClusterIamRole implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -319,13 +290,11 @@ public class ClusterIamRole implements Serializable, Cloneable {
         ClusterIamRole other = (ClusterIamRole) obj;
         if (other.getIamRoleArn() == null ^ this.getIamRoleArn() == null)
             return false;
-        if (other.getIamRoleArn() != null
-                && other.getIamRoleArn().equals(this.getIamRoleArn()) == false)
+        if (other.getIamRoleArn() != null && other.getIamRoleArn().equals(this.getIamRoleArn()) == false)
             return false;
         if (other.getApplyStatus() == null ^ this.getApplyStatus() == null)
             return false;
-        if (other.getApplyStatus() != null
-                && other.getApplyStatus().equals(this.getApplyStatus()) == false)
+        if (other.getApplyStatus() != null && other.getApplyStatus().equals(this.getApplyStatus()) == false)
             return false;
         return true;
     }
@@ -335,11 +304,8 @@ public class ClusterIamRole implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getApplyStatus() == null) ? 0 : getApplyStatus().hashCode());
+        hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getApplyStatus() == null) ? 0 : getApplyStatus().hashCode());
         return hashCode;
     }
 
@@ -348,9 +314,7 @@ public class ClusterIamRole implements Serializable, Cloneable {
         try {
             return (ClusterIamRole) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

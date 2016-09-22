@@ -32,7 +32,7 @@ import java.lang.annotation.Target;
  * representing 'true' and a value of '0' representing 'false'. To force the
  * {@code N} conversion in other schemas,
  * <pre class="brush: java">
- * &#064;DynamoDBTyped(type=DynamoDBAttributeType.N)
+ * &#064;DynamoDBTyped(DynamoDBAttributeType.N)
  * public boolean isTesting()
  * </pre>
  *
@@ -40,7 +40,7 @@ import java.lang.annotation.Target;
  * natively using the DynamoDB {@code BOOL} type. To force the native
  * {@code BOOL} conversion in other schemas,
  * <pre class="brush: java">
- * &#064;DynamoDBTyped(type=DynamoDBAttributeType.BOOL)
+ * &#064;DynamoDBTyped(DynamoDBAttributeType.BOOL)
  * public boolean isTesting()
  * </pre>
  *

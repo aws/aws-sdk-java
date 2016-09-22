@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.sns.model.transform;
 
@@ -31,40 +29,31 @@ import com.amazonaws.util.IdempotentUtils;
  * SetEndpointAttributesRequest Marshaller
  */
 
-public class SetEndpointAttributesRequestMarshaller
-        implements
-        Marshaller<Request<SetEndpointAttributesRequest>, SetEndpointAttributesRequest> {
+public class SetEndpointAttributesRequestMarshaller implements Marshaller<Request<SetEndpointAttributesRequest>, SetEndpointAttributesRequest> {
 
-    public Request<SetEndpointAttributesRequest> marshall(
-            SetEndpointAttributesRequest setEndpointAttributesRequest) {
+    public Request<SetEndpointAttributesRequest> marshall(SetEndpointAttributesRequest setEndpointAttributesRequest) {
 
         if (setEndpointAttributesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetEndpointAttributesRequest> request = new DefaultRequest<SetEndpointAttributesRequest>(
-                setEndpointAttributesRequest, "AmazonSNS");
+        Request<SetEndpointAttributesRequest> request = new DefaultRequest<SetEndpointAttributesRequest>(setEndpointAttributesRequest, "AmazonSNS");
         request.addParameter("Action", "SetEndpointAttributes");
         request.addParameter("Version", "2010-03-31");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (setEndpointAttributesRequest.getEndpointArn() != null) {
-            request.addParameter("EndpointArn", StringUtils
-                    .fromString(setEndpointAttributesRequest.getEndpointArn()));
+            request.addParameter("EndpointArn", StringUtils.fromString(setEndpointAttributesRequest.getEndpointArn()));
         }
 
-        java.util.Map<String, String> attributes = setEndpointAttributesRequest
-                .getAttributes();
+        java.util.Map<String, String> attributes = setEndpointAttributesRequest.getAttributes();
         int attributesListIndex = 1;
         for (Map.Entry<String, String> entry : attributes.entrySet()) {
             if (entry.getKey() != null) {
-                request.addParameter("Attributes.entry." + attributesListIndex
-                        + ".key", StringUtils.fromString(entry.getKey()));
+                request.addParameter("Attributes.entry." + attributesListIndex + ".key", StringUtils.fromString(entry.getKey()));
             }
             if (entry.getValue() != null) {
-                request.addParameter("Attributes.entry." + attributesListIndex
-                        + ".value", StringUtils.fromString(entry.getValue()));
+                request.addParameter("Attributes.entry." + attributesListIndex + ".value", StringUtils.fromString(entry.getValue()));
             }
             attributesListIndex++;
         }

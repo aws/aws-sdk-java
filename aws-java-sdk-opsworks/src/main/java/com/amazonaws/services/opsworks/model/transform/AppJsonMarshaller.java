@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -37,44 +35,36 @@ public class AppJsonMarshaller {
     public void marshall(App app, StructuredJsonGenerator jsonGenerator) {
 
         if (app == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (app.getAppId() != null) {
-                jsonGenerator.writeFieldName("AppId")
-                        .writeValue(app.getAppId());
+                jsonGenerator.writeFieldName("AppId").writeValue(app.getAppId());
             }
             if (app.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(
-                        app.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(app.getStackId());
             }
             if (app.getShortname() != null) {
-                jsonGenerator.writeFieldName("Shortname").writeValue(
-                        app.getShortname());
+                jsonGenerator.writeFieldName("Shortname").writeValue(app.getShortname());
             }
             if (app.getName() != null) {
                 jsonGenerator.writeFieldName("Name").writeValue(app.getName());
             }
             if (app.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(
-                        app.getDescription());
+                jsonGenerator.writeFieldName("Description").writeValue(app.getDescription());
             }
 
-            com.amazonaws.internal.SdkInternalList<DataSource> dataSourcesList = (com.amazonaws.internal.SdkInternalList<DataSource>) app
-                    .getDataSources();
-            if (!dataSourcesList.isEmpty()
-                    || !dataSourcesList.isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<DataSource> dataSourcesList = (com.amazonaws.internal.SdkInternalList<DataSource>) app.getDataSources();
+            if (!dataSourcesList.isEmpty() || !dataSourcesList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("DataSources");
                 jsonGenerator.writeStartArray();
                 for (DataSource dataSourcesListValue : dataSourcesList) {
                     if (dataSourcesListValue != null) {
 
-                        DataSourceJsonMarshaller.getInstance().marshall(
-                                dataSourcesListValue, jsonGenerator);
+                        DataSourceJsonMarshaller.getInstance().marshall(dataSourcesListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
@@ -84,12 +74,10 @@ public class AppJsonMarshaller {
             }
             if (app.getAppSource() != null) {
                 jsonGenerator.writeFieldName("AppSource");
-                SourceJsonMarshaller.getInstance().marshall(app.getAppSource(),
-                        jsonGenerator);
+                SourceJsonMarshaller.getInstance().marshall(app.getAppSource(), jsonGenerator);
             }
 
-            com.amazonaws.internal.SdkInternalList<String> domainsList = (com.amazonaws.internal.SdkInternalList<String>) app
-                    .getDomains();
+            com.amazonaws.internal.SdkInternalList<String> domainsList = (com.amazonaws.internal.SdkInternalList<String>) app.getDomains();
             if (!domainsList.isEmpty() || !domainsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("Domains");
                 jsonGenerator.writeStartArray();
@@ -101,26 +89,21 @@ public class AppJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
             if (app.getEnableSsl() != null) {
-                jsonGenerator.writeFieldName("EnableSsl").writeValue(
-                        app.getEnableSsl());
+                jsonGenerator.writeFieldName("EnableSsl").writeValue(app.getEnableSsl());
             }
             if (app.getSslConfiguration() != null) {
                 jsonGenerator.writeFieldName("SslConfiguration");
-                SslConfigurationJsonMarshaller.getInstance().marshall(
-                        app.getSslConfiguration(), jsonGenerator);
+                SslConfigurationJsonMarshaller.getInstance().marshall(app.getSslConfiguration(), jsonGenerator);
             }
 
-            com.amazonaws.internal.SdkInternalMap<String, String> attributesMap = (com.amazonaws.internal.SdkInternalMap<String, String>) app
-                    .getAttributes();
+            com.amazonaws.internal.SdkInternalMap<String, String> attributesMap = (com.amazonaws.internal.SdkInternalMap<String, String>) app.getAttributes();
             if (!attributesMap.isEmpty() || !attributesMap.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("Attributes");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> attributesMapValue : attributesMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> attributesMapValue : attributesMap.entrySet()) {
                     if (attributesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(attributesMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(attributesMapValue.getKey());
 
                         jsonGenerator.writeValue(attributesMapValue.getValue());
                     }
@@ -128,21 +111,18 @@ public class AppJsonMarshaller {
                 jsonGenerator.writeEndObject();
             }
             if (app.getCreatedAt() != null) {
-                jsonGenerator.writeFieldName("CreatedAt").writeValue(
-                        app.getCreatedAt());
+                jsonGenerator.writeFieldName("CreatedAt").writeValue(app.getCreatedAt());
             }
 
             com.amazonaws.internal.SdkInternalList<EnvironmentVariable> environmentList = (com.amazonaws.internal.SdkInternalList<EnvironmentVariable>) app
                     .getEnvironment();
-            if (!environmentList.isEmpty()
-                    || !environmentList.isAutoConstruct()) {
+            if (!environmentList.isEmpty() || !environmentList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("Environment");
                 jsonGenerator.writeStartArray();
                 for (EnvironmentVariable environmentListValue : environmentList) {
                     if (environmentListValue != null) {
 
-                        EnvironmentVariableJsonMarshaller.getInstance()
-                                .marshall(environmentListValue, jsonGenerator);
+                        EnvironmentVariableJsonMarshaller.getInstance().marshall(environmentListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
@@ -150,8 +130,7 @@ public class AppJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

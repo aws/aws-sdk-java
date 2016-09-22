@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model.transform;
 
@@ -39,19 +37,15 @@ import com.amazonaws.util.SdkHttpUtils;
  * ListHealthChecksRequest Marshaller
  */
 
-public class ListHealthChecksRequestMarshaller implements
-        Marshaller<Request<ListHealthChecksRequest>, ListHealthChecksRequest> {
+public class ListHealthChecksRequestMarshaller implements Marshaller<Request<ListHealthChecksRequest>, ListHealthChecksRequest> {
 
-    public Request<ListHealthChecksRequest> marshall(
-            ListHealthChecksRequest listHealthChecksRequest) {
+    public Request<ListHealthChecksRequest> marshall(ListHealthChecksRequest listHealthChecksRequest) {
 
         if (listHealthChecksRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListHealthChecksRequest> request = new DefaultRequest<ListHealthChecksRequest>(
-                listHealthChecksRequest, "AmazonRoute53");
+        Request<ListHealthChecksRequest> request = new DefaultRequest<ListHealthChecksRequest>(listHealthChecksRequest, "AmazonRoute53");
 
         request.setHttpMethod(HttpMethodName.GET);
 
@@ -60,13 +54,11 @@ public class ListHealthChecksRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         if (listHealthChecksRequest.getMarker() != null) {
-            request.addParameter("marker",
-                    StringUtils.fromString(listHealthChecksRequest.getMarker()));
+            request.addParameter("marker", StringUtils.fromString(listHealthChecksRequest.getMarker()));
         }
 
         if (listHealthChecksRequest.getMaxItems() != null) {
-            request.addParameter("maxitems", StringUtils
-                    .fromString(listHealthChecksRequest.getMaxItems()));
+            request.addParameter("maxitems", StringUtils.fromString(listHealthChecksRequest.getMaxItems()));
         }
 
         return request;

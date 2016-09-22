@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
@@ -77,16 +75,14 @@ public class SslPolicy implements Serializable, Cloneable {
      * The protocols.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSslProtocols(java.util.Collection)} or
-     * {@link #withSslProtocols(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSslProtocols(java.util.Collection)} or {@link #withSslProtocols(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param sslProtocols
      *        The protocols.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SslPolicy withSslProtocols(String... sslProtocols) {
@@ -106,8 +102,7 @@ public class SslPolicy implements Serializable, Cloneable {
      * 
      * @param sslProtocols
      *        The protocols.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SslPolicy withSslProtocols(java.util.Collection<String> sslProtocols) {
@@ -150,16 +145,14 @@ public class SslPolicy implements Serializable, Cloneable {
      * The ciphers.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCiphers(java.util.Collection)} or
-     * {@link #withCiphers(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCiphers(java.util.Collection)} or {@link #withCiphers(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param ciphers
      *        The ciphers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SslPolicy withCiphers(Cipher... ciphers) {
@@ -179,8 +172,7 @@ public class SslPolicy implements Serializable, Cloneable {
      * 
      * @param ciphers
      *        The ciphers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SslPolicy withCiphers(java.util.Collection<Cipher> ciphers) {
@@ -220,8 +212,7 @@ public class SslPolicy implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SslPolicy withName(String name) {
@@ -230,8 +221,7 @@ public class SslPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -263,18 +253,15 @@ public class SslPolicy implements Serializable, Cloneable {
         SslPolicy other = (SslPolicy) obj;
         if (other.getSslProtocols() == null ^ this.getSslProtocols() == null)
             return false;
-        if (other.getSslProtocols() != null
-                && other.getSslProtocols().equals(this.getSslProtocols()) == false)
+        if (other.getSslProtocols() != null && other.getSslProtocols().equals(this.getSslProtocols()) == false)
             return false;
         if (other.getCiphers() == null ^ this.getCiphers() == null)
             return false;
-        if (other.getCiphers() != null
-                && other.getCiphers().equals(this.getCiphers()) == false)
+        if (other.getCiphers() != null && other.getCiphers().equals(this.getCiphers()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -284,14 +271,9 @@ public class SslPolicy implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSslProtocols() == null) ? 0 : getSslProtocols()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCiphers() == null) ? 0 : getCiphers().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getSslProtocols() == null) ? 0 : getSslProtocols().hashCode());
+        hashCode = prime * hashCode + ((getCiphers() == null) ? 0 : getCiphers().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 
@@ -300,9 +282,7 @@ public class SslPolicy implements Serializable, Cloneable {
         try {
             return (SslPolicy) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

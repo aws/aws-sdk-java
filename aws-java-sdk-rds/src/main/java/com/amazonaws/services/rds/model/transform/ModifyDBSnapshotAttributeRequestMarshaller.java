@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model.transform;
 
@@ -31,34 +29,25 @@ import com.amazonaws.util.IdempotentUtils;
  * ModifyDBSnapshotAttributeRequest Marshaller
  */
 
-public class ModifyDBSnapshotAttributeRequestMarshaller
-        implements
-        Marshaller<Request<ModifyDBSnapshotAttributeRequest>, ModifyDBSnapshotAttributeRequest> {
+public class ModifyDBSnapshotAttributeRequestMarshaller implements Marshaller<Request<ModifyDBSnapshotAttributeRequest>, ModifyDBSnapshotAttributeRequest> {
 
-    public Request<ModifyDBSnapshotAttributeRequest> marshall(
-            ModifyDBSnapshotAttributeRequest modifyDBSnapshotAttributeRequest) {
+    public Request<ModifyDBSnapshotAttributeRequest> marshall(ModifyDBSnapshotAttributeRequest modifyDBSnapshotAttributeRequest) {
 
         if (modifyDBSnapshotAttributeRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ModifyDBSnapshotAttributeRequest> request = new DefaultRequest<ModifyDBSnapshotAttributeRequest>(
-                modifyDBSnapshotAttributeRequest, "AmazonRDS");
+        Request<ModifyDBSnapshotAttributeRequest> request = new DefaultRequest<ModifyDBSnapshotAttributeRequest>(modifyDBSnapshotAttributeRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyDBSnapshotAttribute");
         request.addParameter("Version", "2014-10-31");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifyDBSnapshotAttributeRequest.getDBSnapshotIdentifier() != null) {
-            request.addParameter("DBSnapshotIdentifier", StringUtils
-                    .fromString(modifyDBSnapshotAttributeRequest
-                            .getDBSnapshotIdentifier()));
+            request.addParameter("DBSnapshotIdentifier", StringUtils.fromString(modifyDBSnapshotAttributeRequest.getDBSnapshotIdentifier()));
         }
 
         if (modifyDBSnapshotAttributeRequest.getAttributeName() != null) {
-            request.addParameter("AttributeName", StringUtils
-                    .fromString(modifyDBSnapshotAttributeRequest
-                            .getAttributeName()));
+            request.addParameter("AttributeName", StringUtils.fromString(modifyDBSnapshotAttributeRequest.getAttributeName()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> valuesToAddList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest
@@ -68,9 +57,7 @@ public class ModifyDBSnapshotAttributeRequestMarshaller
 
             for (String valuesToAddListValue : valuesToAddList) {
                 if (valuesToAddListValue != null) {
-                    request.addParameter("ValuesToAdd.AttributeValue."
-                            + valuesToAddListIndex,
-                            StringUtils.fromString(valuesToAddListValue));
+                    request.addParameter("ValuesToAdd.AttributeValue." + valuesToAddListIndex, StringUtils.fromString(valuesToAddListValue));
                 }
                 valuesToAddListIndex++;
             }
@@ -78,15 +65,12 @@ public class ModifyDBSnapshotAttributeRequestMarshaller
 
         com.amazonaws.internal.SdkInternalList<String> valuesToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest
                 .getValuesToRemove();
-        if (!valuesToRemoveList.isEmpty()
-                || !valuesToRemoveList.isAutoConstruct()) {
+        if (!valuesToRemoveList.isEmpty() || !valuesToRemoveList.isAutoConstruct()) {
             int valuesToRemoveListIndex = 1;
 
             for (String valuesToRemoveListValue : valuesToRemoveList) {
                 if (valuesToRemoveListValue != null) {
-                    request.addParameter("ValuesToRemove.AttributeValue."
-                            + valuesToRemoveListIndex,
-                            StringUtils.fromString(valuesToRemoveListValue));
+                    request.addParameter("ValuesToRemove.AttributeValue." + valuesToRemoveListIndex, StringUtils.fromString(valuesToRemoveListValue));
                 }
                 valuesToRemoveListIndex++;
             }

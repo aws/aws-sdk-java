@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.machinelearning.model;
 
@@ -21,60 +19,53 @@ import java.io.Serializable;
  * Represents the output of a <code>GetBatchPrediction</code> operation.
  * </p>
  * <p>
- * The content consists of the detailed metadata, the status, and the data file
- * information of a <code>Batch Prediction</code>.
+ * The content consists of the detailed metadata, the status, and the data file information of a
+ * <code>Batch Prediction</code>.
  * </p>
  */
 public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID assigned to the <code>BatchPrediction</code> at creation. This
-     * value should be identical to the value of the
-     * <code>BatchPredictionID</code> in the request.
+     * The ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of
+     * the <code>BatchPredictionID</code> in the request.
      * </p>
      */
     private String batchPredictionId;
     /**
      * <p>
-     * The ID of the <code>MLModel</code> that generated predictions for the
-     * <code>BatchPrediction</code> request.
+     * The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.
      * </p>
      */
     private String mLModelId;
     /**
      * <p>
-     * The ID of the <code>DataSource</code> that points to the group of
-     * observations to predict.
+     * The ID of the <code>DataSource</code> that points to the group of observations to predict.
      * </p>
      */
     private String batchPredictionDataSourceId;
     /**
      * <p>
-     * The location of the data file or directory in Amazon Simple Storage
-     * Service (Amazon S3).
+     * The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).
      * </p>
      */
     private String inputDataLocationS3;
     /**
      * <p>
-     * The AWS user account that invoked the <code>BatchPrediction</code>. The
-     * account type can be either an AWS root account or an AWS Identity and
-     * Access Management (IAM) user account.
+     * The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root
+     * account or an AWS Identity and Access Management (IAM) user account.
      * </p>
      */
     private String createdByIamUser;
     /**
      * <p>
-     * The time that the <code>BatchPrediction</code> was created. The time is
-     * expressed in epoch time.
+     * The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The time of the most recent edit to the <code>BatchPrediction</code>. The
-     * time is expressed in epoch time.
+     * The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
@@ -86,35 +77,28 @@ public class BatchPrediction implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The status of the <code>BatchPrediction</code>. This element can have one
-     * of the following values:
+     * The status of the <code>BatchPrediction</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
-     * a request to generate predictions for a batch of observations.</li>
+     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate predictions for a
+     * batch of observations.</li>
      * <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to perform a batch prediction did
-     * not run to completion. It is not usable.</li>
-     * <li> <code>COMPLETED</code> - The batch prediction process completed
-     * successfully.</li>
-     * <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as
-     * deleted. It is not usable.</li>
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</li>
+     * <li> <code>COMPLETED</code> - The batch prediction process completed successfully.</li>
+     * <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</li>
      * </ul>
      */
     private String status;
     /**
      * <p>
-     * The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the
-     * <code>s3 key</code> portion of the <code>outputURI</code> field: ':',
-     * '//', '/./', '/../'.
+     * The location of an Amazon S3 bucket or directory to receive the operation results. The following substrings are
+     * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.
      * </p>
      */
     private String outputUri;
     /**
      * <p>
-     * A description of the most recent details about processing the batch
-     * prediction request.
+     * A description of the most recent details about processing the batch prediction request.
      * </p>
      */
     private String message;
@@ -131,15 +115,13 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID assigned to the <code>BatchPrediction</code> at creation. This
-     * value should be identical to the value of the
-     * <code>BatchPredictionID</code> in the request.
+     * The ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of
+     * the <code>BatchPredictionID</code> in the request.
      * </p>
      * 
      * @param batchPredictionId
-     *        The ID assigned to the <code>BatchPrediction</code> at creation.
-     *        This value should be identical to the value of the
-     *        <code>BatchPredictionID</code> in the request.
+     *        The ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the
+     *        value of the <code>BatchPredictionID</code> in the request.
      */
 
     public void setBatchPredictionId(String batchPredictionId) {
@@ -148,14 +130,12 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID assigned to the <code>BatchPrediction</code> at creation. This
-     * value should be identical to the value of the
-     * <code>BatchPredictionID</code> in the request.
+     * The ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of
+     * the <code>BatchPredictionID</code> in the request.
      * </p>
      * 
-     * @return The ID assigned to the <code>BatchPrediction</code> at creation.
-     *         This value should be identical to the value of the
-     *         <code>BatchPredictionID</code> in the request.
+     * @return The ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the
+     *         value of the <code>BatchPredictionID</code> in the request.
      */
 
     public String getBatchPredictionId() {
@@ -164,17 +144,14 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID assigned to the <code>BatchPrediction</code> at creation. This
-     * value should be identical to the value of the
-     * <code>BatchPredictionID</code> in the request.
+     * The ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of
+     * the <code>BatchPredictionID</code> in the request.
      * </p>
      * 
      * @param batchPredictionId
-     *        The ID assigned to the <code>BatchPrediction</code> at creation.
-     *        This value should be identical to the value of the
-     *        <code>BatchPredictionID</code> in the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the
+     *        value of the <code>BatchPredictionID</code> in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withBatchPredictionId(String batchPredictionId) {
@@ -184,13 +161,12 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the <code>MLModel</code> that generated predictions for the
-     * <code>BatchPrediction</code> request.
+     * The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.
      * </p>
      * 
      * @param mLModelId
-     *        The ID of the <code>MLModel</code> that generated predictions for
-     *        the <code>BatchPrediction</code> request.
+     *        The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code>
+     *        request.
      */
 
     public void setMLModelId(String mLModelId) {
@@ -199,12 +175,11 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the <code>MLModel</code> that generated predictions for the
-     * <code>BatchPrediction</code> request.
+     * The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.
      * </p>
      * 
-     * @return The ID of the <code>MLModel</code> that generated predictions for
-     *         the <code>BatchPrediction</code> request.
+     * @return The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code>
+     *         request.
      */
 
     public String getMLModelId() {
@@ -213,15 +188,13 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the <code>MLModel</code> that generated predictions for the
-     * <code>BatchPrediction</code> request.
+     * The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.
      * </p>
      * 
      * @param mLModelId
-     *        The ID of the <code>MLModel</code> that generated predictions for
-     *        the <code>BatchPrediction</code> request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code>
+     *        request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withMLModelId(String mLModelId) {
@@ -231,28 +204,23 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the <code>DataSource</code> that points to the group of
-     * observations to predict.
+     * The ID of the <code>DataSource</code> that points to the group of observations to predict.
      * </p>
      * 
      * @param batchPredictionDataSourceId
-     *        The ID of the <code>DataSource</code> that points to the group of
-     *        observations to predict.
+     *        The ID of the <code>DataSource</code> that points to the group of observations to predict.
      */
 
-    public void setBatchPredictionDataSourceId(
-            String batchPredictionDataSourceId) {
+    public void setBatchPredictionDataSourceId(String batchPredictionDataSourceId) {
         this.batchPredictionDataSourceId = batchPredictionDataSourceId;
     }
 
     /**
      * <p>
-     * The ID of the <code>DataSource</code> that points to the group of
-     * observations to predict.
+     * The ID of the <code>DataSource</code> that points to the group of observations to predict.
      * </p>
      * 
-     * @return The ID of the <code>DataSource</code> that points to the group of
-     *         observations to predict.
+     * @return The ID of the <code>DataSource</code> that points to the group of observations to predict.
      */
 
     public String getBatchPredictionDataSourceId() {
@@ -261,32 +229,26 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the <code>DataSource</code> that points to the group of
-     * observations to predict.
+     * The ID of the <code>DataSource</code> that points to the group of observations to predict.
      * </p>
      * 
      * @param batchPredictionDataSourceId
-     *        The ID of the <code>DataSource</code> that points to the group of
-     *        observations to predict.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the <code>DataSource</code> that points to the group of observations to predict.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchPrediction withBatchPredictionDataSourceId(
-            String batchPredictionDataSourceId) {
+    public BatchPrediction withBatchPredictionDataSourceId(String batchPredictionDataSourceId) {
         setBatchPredictionDataSourceId(batchPredictionDataSourceId);
         return this;
     }
 
     /**
      * <p>
-     * The location of the data file or directory in Amazon Simple Storage
-     * Service (Amazon S3).
+     * The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).
      * </p>
      * 
      * @param inputDataLocationS3
-     *        The location of the data file or directory in Amazon Simple
-     *        Storage Service (Amazon S3).
+     *        The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).
      */
 
     public void setInputDataLocationS3(String inputDataLocationS3) {
@@ -295,12 +257,10 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location of the data file or directory in Amazon Simple Storage
-     * Service (Amazon S3).
+     * The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).
      * </p>
      * 
-     * @return The location of the data file or directory in Amazon Simple
-     *         Storage Service (Amazon S3).
+     * @return The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).
      */
 
     public String getInputDataLocationS3() {
@@ -309,15 +269,12 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location of the data file or directory in Amazon Simple Storage
-     * Service (Amazon S3).
+     * The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).
      * </p>
      * 
      * @param inputDataLocationS3
-     *        The location of the data file or directory in Amazon Simple
-     *        Storage Service (Amazon S3).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withInputDataLocationS3(String inputDataLocationS3) {
@@ -327,15 +284,13 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS user account that invoked the <code>BatchPrediction</code>. The
-     * account type can be either an AWS root account or an AWS Identity and
-     * Access Management (IAM) user account.
+     * The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root
+     * account or an AWS Identity and Access Management (IAM) user account.
      * </p>
      * 
      * @param createdByIamUser
-     *        The AWS user account that invoked the <code>BatchPrediction</code>
-     *        . The account type can be either an AWS root account or an AWS
-     *        Identity and Access Management (IAM) user account.
+     *        The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS
+     *        root account or an AWS Identity and Access Management (IAM) user account.
      */
 
     public void setCreatedByIamUser(String createdByIamUser) {
@@ -344,15 +299,12 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS user account that invoked the <code>BatchPrediction</code>. The
-     * account type can be either an AWS root account or an AWS Identity and
-     * Access Management (IAM) user account.
+     * The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root
+     * account or an AWS Identity and Access Management (IAM) user account.
      * </p>
      * 
-     * @return The AWS user account that invoked the
-     *         <code>BatchPrediction</code>. The account type can be either an
-     *         AWS root account or an AWS Identity and Access Management (IAM)
-     *         user account.
+     * @return The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS
+     *         root account or an AWS Identity and Access Management (IAM) user account.
      */
 
     public String getCreatedByIamUser() {
@@ -361,17 +313,14 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS user account that invoked the <code>BatchPrediction</code>. The
-     * account type can be either an AWS root account or an AWS Identity and
-     * Access Management (IAM) user account.
+     * The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root
+     * account or an AWS Identity and Access Management (IAM) user account.
      * </p>
      * 
      * @param createdByIamUser
-     *        The AWS user account that invoked the <code>BatchPrediction</code>
-     *        . The account type can be either an AWS root account or an AWS
-     *        Identity and Access Management (IAM) user account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS
+     *        root account or an AWS Identity and Access Management (IAM) user account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withCreatedByIamUser(String createdByIamUser) {
@@ -381,13 +330,11 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the <code>BatchPrediction</code> was created. The time is
-     * expressed in epoch time.
+     * The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.
      * </p>
      * 
      * @param createdAt
-     *        The time that the <code>BatchPrediction</code> was created. The
-     *        time is expressed in epoch time.
+     *        The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -396,12 +343,10 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the <code>BatchPrediction</code> was created. The time is
-     * expressed in epoch time.
+     * The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.
      * </p>
      * 
-     * @return The time that the <code>BatchPrediction</code> was created. The
-     *         time is expressed in epoch time.
+     * @return The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.
      */
 
     public java.util.Date getCreatedAt() {
@@ -410,15 +355,12 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the <code>BatchPrediction</code> was created. The time is
-     * expressed in epoch time.
+     * The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.
      * </p>
      * 
      * @param createdAt
-     *        The time that the <code>BatchPrediction</code> was created. The
-     *        time is expressed in epoch time.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withCreatedAt(java.util.Date createdAt) {
@@ -428,13 +370,11 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time of the most recent edit to the <code>BatchPrediction</code>. The
-     * time is expressed in epoch time.
+     * The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The time of the most recent edit to the
-     *        <code>BatchPrediction</code>. The time is expressed in epoch time.
+     *        The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -443,12 +383,10 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time of the most recent edit to the <code>BatchPrediction</code>. The
-     * time is expressed in epoch time.
+     * The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.
      * </p>
      * 
-     * @return The time of the most recent edit to the
-     *         <code>BatchPrediction</code>. The time is expressed in epoch
+     * @return The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch
      *         time.
      */
 
@@ -458,15 +396,12 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time of the most recent edit to the <code>BatchPrediction</code>. The
-     * time is expressed in epoch time.
+     * The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The time of the most recent edit to the
-     *        <code>BatchPrediction</code>. The time is expressed in epoch time.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -480,8 +415,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * </p>
      * 
      * @param name
-     *        A user-supplied name or description of the
-     *        <code>BatchPrediction</code>.
+     *        A user-supplied name or description of the <code>BatchPrediction</code>.
      */
 
     public void setName(String name) {
@@ -493,8 +427,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * A user-supplied name or description of the <code>BatchPrediction</code>.
      * </p>
      * 
-     * @return A user-supplied name or description of the
-     *         <code>BatchPrediction</code>.
+     * @return A user-supplied name or description of the <code>BatchPrediction</code>.
      */
 
     public String getName() {
@@ -507,10 +440,8 @@ public class BatchPrediction implements Serializable, Cloneable {
      * </p>
      * 
      * @param name
-     *        A user-supplied name or description of the
-     *        <code>BatchPrediction</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A user-supplied name or description of the <code>BatchPrediction</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withName(String name) {
@@ -520,35 +451,27 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the <code>BatchPrediction</code>. This element can have one
-     * of the following values:
+     * The status of the <code>BatchPrediction</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
-     * a request to generate predictions for a batch of observations.</li>
+     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate predictions for a
+     * batch of observations.</li>
      * <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to perform a batch prediction did
-     * not run to completion. It is not usable.</li>
-     * <li> <code>COMPLETED</code> - The batch prediction process completed
-     * successfully.</li>
-     * <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as
-     * deleted. It is not usable.</li>
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</li>
+     * <li> <code>COMPLETED</code> - The batch prediction process completed successfully.</li>
+     * <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</li>
      * </ul>
      * 
      * @param status
-     *        The status of the <code>BatchPrediction</code>. This element can
-     *        have one of the following values:</p>
+     *        The status of the <code>BatchPrediction</code>. This element can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML)
-     *        submitted a request to generate predictions for a batch of
-     *        observations.</li>
+     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate predictions
+     *        for a batch of observations.</li>
      *        <li> <code>INPROGRESS</code> - The process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to perform a batch
-     *        prediction did not run to completion. It is not usable.</li>
-     *        <li> <code>COMPLETED</code> - The batch prediction process
-     *        completed successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>BatchPrediction</code> is
-     *        marked as deleted. It is not usable.</li>
+     *        <li> <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not
+     *        usable.</li>
+     *        <li> <code>COMPLETED</code> - The batch prediction process completed successfully.</li>
+     *        <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</li>
      * @see EntityStatus
      */
 
@@ -558,34 +481,26 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the <code>BatchPrediction</code>. This element can have one
-     * of the following values:
+     * The status of the <code>BatchPrediction</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
-     * a request to generate predictions for a batch of observations.</li>
+     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate predictions for a
+     * batch of observations.</li>
      * <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to perform a batch prediction did
-     * not run to completion. It is not usable.</li>
-     * <li> <code>COMPLETED</code> - The batch prediction process completed
-     * successfully.</li>
-     * <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as
-     * deleted. It is not usable.</li>
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</li>
+     * <li> <code>COMPLETED</code> - The batch prediction process completed successfully.</li>
+     * <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</li>
      * </ul>
      * 
-     * @return The status of the <code>BatchPrediction</code>. This element can
-     *         have one of the following values:</p>
+     * @return The status of the <code>BatchPrediction</code>. This element can have one of the following values:</p>
      *         <ul>
-     *         <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML)
-     *         submitted a request to generate predictions for a batch of
-     *         observations.</li>
+     *         <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate
+     *         predictions for a batch of observations.</li>
      *         <li> <code>INPROGRESS</code> - The process is underway.</li>
-     *         <li> <code>FAILED</code> - The request to perform a batch
-     *         prediction did not run to completion. It is not usable.</li>
-     *         <li> <code>COMPLETED</code> - The batch prediction process
-     *         completed successfully.</li>
-     *         <li> <code>DELETED</code> - The <code>BatchPrediction</code> is
-     *         marked as deleted. It is not usable.</li>
+     *         <li> <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not
+     *         usable.</li>
+     *         <li> <code>COMPLETED</code> - The batch prediction process completed successfully.</li>
+     *         <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</li>
      * @see EntityStatus
      */
 
@@ -595,37 +510,28 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the <code>BatchPrediction</code>. This element can have one
-     * of the following values:
+     * The status of the <code>BatchPrediction</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
-     * a request to generate predictions for a batch of observations.</li>
+     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate predictions for a
+     * batch of observations.</li>
      * <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to perform a batch prediction did
-     * not run to completion. It is not usable.</li>
-     * <li> <code>COMPLETED</code> - The batch prediction process completed
-     * successfully.</li>
-     * <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as
-     * deleted. It is not usable.</li>
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</li>
+     * <li> <code>COMPLETED</code> - The batch prediction process completed successfully.</li>
+     * <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</li>
      * </ul>
      * 
      * @param status
-     *        The status of the <code>BatchPrediction</code>. This element can
-     *        have one of the following values:</p>
+     *        The status of the <code>BatchPrediction</code>. This element can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML)
-     *        submitted a request to generate predictions for a batch of
-     *        observations.</li>
+     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate predictions
+     *        for a batch of observations.</li>
      *        <li> <code>INPROGRESS</code> - The process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to perform a batch
-     *        prediction did not run to completion. It is not usable.</li>
-     *        <li> <code>COMPLETED</code> - The batch prediction process
-     *        completed successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>BatchPrediction</code> is
-     *        marked as deleted. It is not usable.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li> <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not
+     *        usable.</li>
+     *        <li> <code>COMPLETED</code> - The batch prediction process completed successfully.</li>
+     *        <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityStatus
      */
 
@@ -636,35 +542,27 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the <code>BatchPrediction</code>. This element can have one
-     * of the following values:
+     * The status of the <code>BatchPrediction</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
-     * a request to generate predictions for a batch of observations.</li>
+     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate predictions for a
+     * batch of observations.</li>
      * <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to perform a batch prediction did
-     * not run to completion. It is not usable.</li>
-     * <li> <code>COMPLETED</code> - The batch prediction process completed
-     * successfully.</li>
-     * <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as
-     * deleted. It is not usable.</li>
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</li>
+     * <li> <code>COMPLETED</code> - The batch prediction process completed successfully.</li>
+     * <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</li>
      * </ul>
      * 
      * @param status
-     *        The status of the <code>BatchPrediction</code>. This element can
-     *        have one of the following values:</p>
+     *        The status of the <code>BatchPrediction</code>. This element can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML)
-     *        submitted a request to generate predictions for a batch of
-     *        observations.</li>
+     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate predictions
+     *        for a batch of observations.</li>
      *        <li> <code>INPROGRESS</code> - The process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to perform a batch
-     *        prediction did not run to completion. It is not usable.</li>
-     *        <li> <code>COMPLETED</code> - The batch prediction process
-     *        completed successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>BatchPrediction</code> is
-     *        marked as deleted. It is not usable.</li>
+     *        <li> <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not
+     *        usable.</li>
+     *        <li> <code>COMPLETED</code> - The batch prediction process completed successfully.</li>
+     *        <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</li>
      * @see EntityStatus
      */
 
@@ -674,37 +572,28 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the <code>BatchPrediction</code>. This element can have one
-     * of the following values:
+     * The status of the <code>BatchPrediction</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
-     * a request to generate predictions for a batch of observations.</li>
+     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate predictions for a
+     * batch of observations.</li>
      * <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to perform a batch prediction did
-     * not run to completion. It is not usable.</li>
-     * <li> <code>COMPLETED</code> - The batch prediction process completed
-     * successfully.</li>
-     * <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as
-     * deleted. It is not usable.</li>
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</li>
+     * <li> <code>COMPLETED</code> - The batch prediction process completed successfully.</li>
+     * <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</li>
      * </ul>
      * 
      * @param status
-     *        The status of the <code>BatchPrediction</code>. This element can
-     *        have one of the following values:</p>
+     *        The status of the <code>BatchPrediction</code>. This element can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML)
-     *        submitted a request to generate predictions for a batch of
-     *        observations.</li>
+     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate predictions
+     *        for a batch of observations.</li>
      *        <li> <code>INPROGRESS</code> - The process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to perform a batch
-     *        prediction did not run to completion. It is not usable.</li>
-     *        <li> <code>COMPLETED</code> - The batch prediction process
-     *        completed successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>BatchPrediction</code> is
-     *        marked as deleted. It is not usable.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li> <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not
+     *        usable.</li>
+     *        <li> <code>COMPLETED</code> - The batch prediction process completed successfully.</li>
+     *        <li> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityStatus
      */
 
@@ -715,17 +604,14 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the
-     * <code>s3 key</code> portion of the <code>outputURI</code> field: ':',
-     * '//', '/./', '/../'.
+     * The location of an Amazon S3 bucket or directory to receive the operation results. The following substrings are
+     * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.
      * </p>
      * 
      * @param outputUri
-     *        The location of an Amazon S3 bucket or directory to receive the
-     *        operation results. The following substrings are not allowed in the
-     *        <code>s3 key</code> portion of the <code>outputURI</code> field:
-     *        ':', '//', '/./', '/../'.
+     *        The location of an Amazon S3 bucket or directory to receive the operation results. The following
+     *        substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':',
+     *        '//', '/./', '/../'.
      */
 
     public void setOutputUri(String outputUri) {
@@ -734,16 +620,13 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the
-     * <code>s3 key</code> portion of the <code>outputURI</code> field: ':',
-     * '//', '/./', '/../'.
+     * The location of an Amazon S3 bucket or directory to receive the operation results. The following substrings are
+     * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.
      * </p>
      * 
-     * @return The location of an Amazon S3 bucket or directory to receive the
-     *         operation results. The following substrings are not allowed in
-     *         the <code>s3 key</code> portion of the <code>outputURI</code>
-     *         field: ':', '//', '/./', '/../'.
+     * @return The location of an Amazon S3 bucket or directory to receive the operation results. The following
+     *         substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':',
+     *         '//', '/./', '/../'.
      */
 
     public String getOutputUri() {
@@ -752,19 +635,15 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the
-     * <code>s3 key</code> portion of the <code>outputURI</code> field: ':',
-     * '//', '/./', '/../'.
+     * The location of an Amazon S3 bucket or directory to receive the operation results. The following substrings are
+     * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.
      * </p>
      * 
      * @param outputUri
-     *        The location of an Amazon S3 bucket or directory to receive the
-     *        operation results. The following substrings are not allowed in the
-     *        <code>s3 key</code> portion of the <code>outputURI</code> field:
-     *        ':', '//', '/./', '/../'.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The location of an Amazon S3 bucket or directory to receive the operation results. The following
+     *        substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':',
+     *        '//', '/./', '/../'.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withOutputUri(String outputUri) {
@@ -774,13 +653,11 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the most recent details about processing the batch
-     * prediction request.
+     * A description of the most recent details about processing the batch prediction request.
      * </p>
      * 
      * @param message
-     *        A description of the most recent details about processing the
-     *        batch prediction request.
+     *        A description of the most recent details about processing the batch prediction request.
      */
 
     public void setMessage(String message) {
@@ -789,12 +666,10 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the most recent details about processing the batch
-     * prediction request.
+     * A description of the most recent details about processing the batch prediction request.
      * </p>
      * 
-     * @return A description of the most recent details about processing the
-     *         batch prediction request.
+     * @return A description of the most recent details about processing the batch prediction request.
      */
 
     public String getMessage() {
@@ -803,15 +678,12 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the most recent details about processing the batch
-     * prediction request.
+     * A description of the most recent details about processing the batch prediction request.
      * </p>
      * 
      * @param message
-     *        A description of the most recent details about processing the
-     *        batch prediction request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A description of the most recent details about processing the batch prediction request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withMessage(String message) {
@@ -837,8 +709,7 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * @param computeTime
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withComputeTime(Long computeTime) {
@@ -864,8 +735,7 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * @param finishedAt
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withFinishedAt(java.util.Date finishedAt) {
@@ -891,8 +761,7 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * @param startedAt
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withStartedAt(java.util.Date startedAt) {
@@ -918,8 +787,7 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * @param totalRecordCount
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withTotalRecordCount(Long totalRecordCount) {
@@ -945,8 +813,7 @@ public class BatchPrediction implements Serializable, Cloneable {
 
     /**
      * @param invalidRecordCount
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPrediction withInvalidRecordCount(Long invalidRecordCount) {
@@ -955,8 +822,7 @@ public class BatchPrediction implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -971,8 +837,7 @@ public class BatchPrediction implements Serializable, Cloneable {
         if (getMLModelId() != null)
             sb.append("MLModelId: " + getMLModelId() + ",");
         if (getBatchPredictionDataSourceId() != null)
-            sb.append("BatchPredictionDataSourceId: "
-                    + getBatchPredictionDataSourceId() + ",");
+            sb.append("BatchPredictionDataSourceId: " + getBatchPredictionDataSourceId() + ",");
         if (getInputDataLocationS3() != null)
             sb.append("InputDataLocationS3: " + getInputDataLocationS3() + ",");
         if (getCreatedByIamUser() != null)
@@ -1013,97 +878,69 @@ public class BatchPrediction implements Serializable, Cloneable {
         if (obj instanceof BatchPrediction == false)
             return false;
         BatchPrediction other = (BatchPrediction) obj;
-        if (other.getBatchPredictionId() == null
-                ^ this.getBatchPredictionId() == null)
+        if (other.getBatchPredictionId() == null ^ this.getBatchPredictionId() == null)
             return false;
-        if (other.getBatchPredictionId() != null
-                && other.getBatchPredictionId().equals(
-                        this.getBatchPredictionId()) == false)
+        if (other.getBatchPredictionId() != null && other.getBatchPredictionId().equals(this.getBatchPredictionId()) == false)
             return false;
         if (other.getMLModelId() == null ^ this.getMLModelId() == null)
             return false;
-        if (other.getMLModelId() != null
-                && other.getMLModelId().equals(this.getMLModelId()) == false)
+        if (other.getMLModelId() != null && other.getMLModelId().equals(this.getMLModelId()) == false)
             return false;
-        if (other.getBatchPredictionDataSourceId() == null
-                ^ this.getBatchPredictionDataSourceId() == null)
+        if (other.getBatchPredictionDataSourceId() == null ^ this.getBatchPredictionDataSourceId() == null)
             return false;
-        if (other.getBatchPredictionDataSourceId() != null
-                && other.getBatchPredictionDataSourceId().equals(
-                        this.getBatchPredictionDataSourceId()) == false)
+        if (other.getBatchPredictionDataSourceId() != null && other.getBatchPredictionDataSourceId().equals(this.getBatchPredictionDataSourceId()) == false)
             return false;
-        if (other.getInputDataLocationS3() == null
-                ^ this.getInputDataLocationS3() == null)
+        if (other.getInputDataLocationS3() == null ^ this.getInputDataLocationS3() == null)
             return false;
-        if (other.getInputDataLocationS3() != null
-                && other.getInputDataLocationS3().equals(
-                        this.getInputDataLocationS3()) == false)
+        if (other.getInputDataLocationS3() != null && other.getInputDataLocationS3().equals(this.getInputDataLocationS3()) == false)
             return false;
-        if (other.getCreatedByIamUser() == null
-                ^ this.getCreatedByIamUser() == null)
+        if (other.getCreatedByIamUser() == null ^ this.getCreatedByIamUser() == null)
             return false;
-        if (other.getCreatedByIamUser() != null
-                && other.getCreatedByIamUser().equals(
-                        this.getCreatedByIamUser()) == false)
+        if (other.getCreatedByIamUser() != null && other.getCreatedByIamUser().equals(this.getCreatedByIamUser()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getCreatedAt() != null
-                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getLastUpdatedAt() == null ^ this.getLastUpdatedAt() == null)
             return false;
-        if (other.getLastUpdatedAt() != null
-                && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
+        if (other.getLastUpdatedAt() != null && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getOutputUri() == null ^ this.getOutputUri() == null)
             return false;
-        if (other.getOutputUri() != null
-                && other.getOutputUri().equals(this.getOutputUri()) == false)
+        if (other.getOutputUri() != null && other.getOutputUri().equals(this.getOutputUri()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         if (other.getComputeTime() == null ^ this.getComputeTime() == null)
             return false;
-        if (other.getComputeTime() != null
-                && other.getComputeTime().equals(this.getComputeTime()) == false)
+        if (other.getComputeTime() != null && other.getComputeTime().equals(this.getComputeTime()) == false)
             return false;
         if (other.getFinishedAt() == null ^ this.getFinishedAt() == null)
             return false;
-        if (other.getFinishedAt() != null
-                && other.getFinishedAt().equals(this.getFinishedAt()) == false)
+        if (other.getFinishedAt() != null && other.getFinishedAt().equals(this.getFinishedAt()) == false)
             return false;
         if (other.getStartedAt() == null ^ this.getStartedAt() == null)
             return false;
-        if (other.getStartedAt() != null
-                && other.getStartedAt().equals(this.getStartedAt()) == false)
+        if (other.getStartedAt() != null && other.getStartedAt().equals(this.getStartedAt()) == false)
             return false;
-        if (other.getTotalRecordCount() == null
-                ^ this.getTotalRecordCount() == null)
+        if (other.getTotalRecordCount() == null ^ this.getTotalRecordCount() == null)
             return false;
-        if (other.getTotalRecordCount() != null
-                && other.getTotalRecordCount().equals(
-                        this.getTotalRecordCount()) == false)
+        if (other.getTotalRecordCount() != null && other.getTotalRecordCount().equals(this.getTotalRecordCount()) == false)
             return false;
-        if (other.getInvalidRecordCount() == null
-                ^ this.getInvalidRecordCount() == null)
+        if (other.getInvalidRecordCount() == null ^ this.getInvalidRecordCount() == null)
             return false;
-        if (other.getInvalidRecordCount() != null
-                && other.getInvalidRecordCount().equals(
-                        this.getInvalidRecordCount()) == false)
+        if (other.getInvalidRecordCount() != null && other.getInvalidRecordCount().equals(this.getInvalidRecordCount()) == false)
             return false;
         return true;
     }
@@ -1113,53 +950,22 @@ public class BatchPrediction implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getBatchPredictionId() == null) ? 0
-                        : getBatchPredictionId().hashCode());
-        hashCode = prime * hashCode
-                + ((getMLModelId() == null) ? 0 : getMLModelId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBatchPredictionDataSourceId() == null) ? 0
-                        : getBatchPredictionDataSourceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInputDataLocationS3() == null) ? 0
-                        : getInputDataLocationS3().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedByIamUser() == null) ? 0 : getCreatedByIamUser()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getOutputUri() == null) ? 0 : getOutputUri().hashCode());
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getComputeTime() == null) ? 0 : getComputeTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getFinishedAt() == null) ? 0 : getFinishedAt().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTotalRecordCount() == null) ? 0 : getTotalRecordCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInvalidRecordCount() == null) ? 0
-                        : getInvalidRecordCount().hashCode());
+        hashCode = prime * hashCode + ((getBatchPredictionId() == null) ? 0 : getBatchPredictionId().hashCode());
+        hashCode = prime * hashCode + ((getMLModelId() == null) ? 0 : getMLModelId().hashCode());
+        hashCode = prime * hashCode + ((getBatchPredictionDataSourceId() == null) ? 0 : getBatchPredictionDataSourceId().hashCode());
+        hashCode = prime * hashCode + ((getInputDataLocationS3() == null) ? 0 : getInputDataLocationS3().hashCode());
+        hashCode = prime * hashCode + ((getCreatedByIamUser() == null) ? 0 : getCreatedByIamUser().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getOutputUri() == null) ? 0 : getOutputUri().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getComputeTime() == null) ? 0 : getComputeTime().hashCode());
+        hashCode = prime * hashCode + ((getFinishedAt() == null) ? 0 : getFinishedAt().hashCode());
+        hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
+        hashCode = prime * hashCode + ((getTotalRecordCount() == null) ? 0 : getTotalRecordCount().hashCode());
+        hashCode = prime * hashCode + ((getInvalidRecordCount() == null) ? 0 : getInvalidRecordCount().hashCode());
         return hashCode;
     }
 
@@ -1168,9 +974,7 @@ public class BatchPrediction implements Serializable, Cloneable {
         try {
             return (BatchPrediction) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -22,20 +20,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for a request action.
  * </p>
  */
-public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Specify the alias you want to
-     * update.
+     * Unique identifier for a fleet alias. Specify the alias you want to update.
      * </p>
      */
     private String aliasId;
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be
-     * unique.
+     * Descriptive label associated with an alias. Alias names do not need to be unique.
      * </p>
      */
     private String name;
@@ -54,13 +49,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Specify the alias you want to
-     * update.
+     * Unique identifier for a fleet alias. Specify the alias you want to update.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for a fleet alias. Specify the alias you want to
-     *        update.
+     *        Unique identifier for a fleet alias. Specify the alias you want to update.
      */
 
     public void setAliasId(String aliasId) {
@@ -69,12 +62,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Specify the alias you want to
-     * update.
+     * Unique identifier for a fleet alias. Specify the alias you want to update.
      * </p>
      * 
-     * @return Unique identifier for a fleet alias. Specify the alias you want
-     *         to update.
+     * @return Unique identifier for a fleet alias. Specify the alias you want to update.
      */
 
     public String getAliasId() {
@@ -83,15 +74,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Specify the alias you want to
-     * update.
+     * Unique identifier for a fleet alias. Specify the alias you want to update.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for a fleet alias. Specify the alias you want to
-     *        update.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique identifier for a fleet alias. Specify the alias you want to update.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAliasRequest withAliasId(String aliasId) {
@@ -101,13 +89,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be
-     * unique.
+     * Descriptive label associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with an alias. Alias names do not
-     *        need to be unique.
+     *        Descriptive label associated with an alias. Alias names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -116,12 +102,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be
-     * unique.
+     * Descriptive label associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with an alias. Alias names do not
-     *         need to be unique.
+     * @return Descriptive label associated with an alias. Alias names do not need to be unique.
      */
 
     public String getName() {
@@ -130,15 +114,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be
-     * unique.
+     * Descriptive label associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with an alias. Alias names do not
-     *        need to be unique.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Descriptive label associated with an alias. Alias names do not need to be unique.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAliasRequest withName(String name) {
@@ -178,8 +159,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param description
      *        Human-readable description of an alias.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAliasRequest withDescription(String description) {
@@ -205,8 +185,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
      * Object specifying the fleet and routing type to use for the alias.
      * </p>
      * 
-     * @return Object specifying the fleet and routing type to use for the
-     *         alias.
+     * @return Object specifying the fleet and routing type to use for the alias.
      */
 
     public RoutingStrategy getRoutingStrategy() {
@@ -220,19 +199,16 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param routingStrategy
      *        Object specifying the fleet and routing type to use for the alias.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateAliasRequest withRoutingStrategy(
-            RoutingStrategy routingStrategy) {
+    public UpdateAliasRequest withRoutingStrategy(RoutingStrategy routingStrategy) {
         setRoutingStrategy(routingStrategy);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -266,24 +242,19 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
         UpdateAliasRequest other = (UpdateAliasRequest) obj;
         if (other.getAliasId() == null ^ this.getAliasId() == null)
             return false;
-        if (other.getAliasId() != null
-                && other.getAliasId().equals(this.getAliasId()) == false)
+        if (other.getAliasId() != null && other.getAliasId().equals(this.getAliasId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getRoutingStrategy() == null
-                ^ this.getRoutingStrategy() == null)
+        if (other.getRoutingStrategy() == null ^ this.getRoutingStrategy() == null)
             return false;
-        if (other.getRoutingStrategy() != null
-                && other.getRoutingStrategy().equals(this.getRoutingStrategy()) == false)
+        if (other.getRoutingStrategy() != null && other.getRoutingStrategy().equals(this.getRoutingStrategy()) == false)
             return false;
         return true;
     }
@@ -293,17 +264,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAliasId() == null) ? 0 : getAliasId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRoutingStrategy() == null) ? 0 : getRoutingStrategy()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAliasId() == null) ? 0 : getAliasId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getRoutingStrategy() == null) ? 0 : getRoutingStrategy().hashCode());
         return hashCode;
     }
 

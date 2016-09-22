@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -67,15 +65,13 @@ public class Option implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<OptionSetting> optionSettings;
     /**
      * <p>
-     * If the option requires access to a port, then this DB security group
-     * allows access to the port.
+     * If the option requires access to a port, then this DB security group allows access to the port.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBSecurityGroupMembership> dBSecurityGroupMemberships;
     /**
      * <p>
-     * If the option requires access to a port, then this VPC security group
-     * allows access to the port.
+     * If the option requires access to a port, then this VPC security group allows access to the port.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VpcSecurityGroupMembership> vpcSecurityGroupMemberships;
@@ -112,8 +108,7 @@ public class Option implements Serializable, Cloneable {
      * 
      * @param optionName
      *        The name of the option.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Option withOptionName(String optionName) {
@@ -153,8 +148,7 @@ public class Option implements Serializable, Cloneable {
      * 
      * @param optionDescription
      *        The description of the option.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Option withOptionDescription(String optionDescription) {
@@ -194,8 +188,7 @@ public class Option implements Serializable, Cloneable {
      * 
      * @param persistent
      *        Indicate if this option is persistent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Option withPersistent(Boolean persistent) {
@@ -247,8 +240,7 @@ public class Option implements Serializable, Cloneable {
      * 
      * @param permanent
      *        Indicate if this option is permanent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Option withPermanent(Boolean permanent) {
@@ -300,8 +292,7 @@ public class Option implements Serializable, Cloneable {
      * 
      * @param port
      *        If required, the port configured for this option to use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Option withPort(Integer port) {
@@ -341,8 +332,7 @@ public class Option implements Serializable, Cloneable {
      * 
      * @param optionVersion
      *        The version of the option.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Option withOptionVersion(String optionVersion) {
@@ -374,15 +364,13 @@ public class Option implements Serializable, Cloneable {
      *        The option settings for this option.
      */
 
-    public void setOptionSettings(
-            java.util.Collection<OptionSetting> optionSettings) {
+    public void setOptionSettings(java.util.Collection<OptionSetting> optionSettings) {
         if (optionSettings == null) {
             this.optionSettings = null;
             return;
         }
 
-        this.optionSettings = new com.amazonaws.internal.SdkInternalList<OptionSetting>(
-                optionSettings);
+        this.optionSettings = new com.amazonaws.internal.SdkInternalList<OptionSetting>(optionSettings);
     }
 
     /**
@@ -390,22 +378,19 @@ public class Option implements Serializable, Cloneable {
      * The option settings for this option.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOptionSettings(java.util.Collection)} or
-     * {@link #withOptionSettings(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOptionSettings(java.util.Collection)} or {@link #withOptionSettings(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param optionSettings
      *        The option settings for this option.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Option withOptionSettings(OptionSetting... optionSettings) {
         if (this.optionSettings == null) {
-            setOptionSettings(new com.amazonaws.internal.SdkInternalList<OptionSetting>(
-                    optionSettings.length));
+            setOptionSettings(new com.amazonaws.internal.SdkInternalList<OptionSetting>(optionSettings.length));
         }
         for (OptionSetting ele : optionSettings) {
             this.optionSettings.add(ele);
@@ -420,24 +405,20 @@ public class Option implements Serializable, Cloneable {
      * 
      * @param optionSettings
      *        The option settings for this option.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Option withOptionSettings(
-            java.util.Collection<OptionSetting> optionSettings) {
+    public Option withOptionSettings(java.util.Collection<OptionSetting> optionSettings) {
         setOptionSettings(optionSettings);
         return this;
     }
 
     /**
      * <p>
-     * If the option requires access to a port, then this DB security group
-     * allows access to the port.
+     * If the option requires access to a port, then this DB security group allows access to the port.
      * </p>
      * 
-     * @return If the option requires access to a port, then this DB security
-     *         group allows access to the port.
+     * @return If the option requires access to a port, then this DB security group allows access to the port.
      */
 
     public java.util.List<DBSecurityGroupMembership> getDBSecurityGroupMemberships() {
@@ -449,50 +430,40 @@ public class Option implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the option requires access to a port, then this DB security group
-     * allows access to the port.
+     * If the option requires access to a port, then this DB security group allows access to the port.
      * </p>
      * 
      * @param dBSecurityGroupMemberships
-     *        If the option requires access to a port, then this DB security
-     *        group allows access to the port.
+     *        If the option requires access to a port, then this DB security group allows access to the port.
      */
 
-    public void setDBSecurityGroupMemberships(
-            java.util.Collection<DBSecurityGroupMembership> dBSecurityGroupMemberships) {
+    public void setDBSecurityGroupMemberships(java.util.Collection<DBSecurityGroupMembership> dBSecurityGroupMemberships) {
         if (dBSecurityGroupMemberships == null) {
             this.dBSecurityGroupMemberships = null;
             return;
         }
 
-        this.dBSecurityGroupMemberships = new com.amazonaws.internal.SdkInternalList<DBSecurityGroupMembership>(
-                dBSecurityGroupMemberships);
+        this.dBSecurityGroupMemberships = new com.amazonaws.internal.SdkInternalList<DBSecurityGroupMembership>(dBSecurityGroupMemberships);
     }
 
     /**
      * <p>
-     * If the option requires access to a port, then this DB security group
-     * allows access to the port.
+     * If the option requires access to a port, then this DB security group allows access to the port.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDBSecurityGroupMemberships(java.util.Collection)} or
-     * {@link #withDBSecurityGroupMemberships(java.util.Collection)} if you want
-     * to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDBSecurityGroupMemberships(java.util.Collection)} or
+     * {@link #withDBSecurityGroupMemberships(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param dBSecurityGroupMemberships
-     *        If the option requires access to a port, then this DB security
-     *        group allows access to the port.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the option requires access to a port, then this DB security group allows access to the port.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Option withDBSecurityGroupMemberships(
-            DBSecurityGroupMembership... dBSecurityGroupMemberships) {
+    public Option withDBSecurityGroupMemberships(DBSecurityGroupMembership... dBSecurityGroupMemberships) {
         if (this.dBSecurityGroupMemberships == null) {
-            setDBSecurityGroupMemberships(new com.amazonaws.internal.SdkInternalList<DBSecurityGroupMembership>(
-                    dBSecurityGroupMemberships.length));
+            setDBSecurityGroupMemberships(new com.amazonaws.internal.SdkInternalList<DBSecurityGroupMembership>(dBSecurityGroupMemberships.length));
         }
         for (DBSecurityGroupMembership ele : dBSecurityGroupMemberships) {
             this.dBSecurityGroupMemberships.add(ele);
@@ -502,31 +473,25 @@ public class Option implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the option requires access to a port, then this DB security group
-     * allows access to the port.
+     * If the option requires access to a port, then this DB security group allows access to the port.
      * </p>
      * 
      * @param dBSecurityGroupMemberships
-     *        If the option requires access to a port, then this DB security
-     *        group allows access to the port.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the option requires access to a port, then this DB security group allows access to the port.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Option withDBSecurityGroupMemberships(
-            java.util.Collection<DBSecurityGroupMembership> dBSecurityGroupMemberships) {
+    public Option withDBSecurityGroupMemberships(java.util.Collection<DBSecurityGroupMembership> dBSecurityGroupMemberships) {
         setDBSecurityGroupMemberships(dBSecurityGroupMemberships);
         return this;
     }
 
     /**
      * <p>
-     * If the option requires access to a port, then this VPC security group
-     * allows access to the port.
+     * If the option requires access to a port, then this VPC security group allows access to the port.
      * </p>
      * 
-     * @return If the option requires access to a port, then this VPC security
-     *         group allows access to the port.
+     * @return If the option requires access to a port, then this VPC security group allows access to the port.
      */
 
     public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroupMemberships() {
@@ -538,50 +503,40 @@ public class Option implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the option requires access to a port, then this VPC security group
-     * allows access to the port.
+     * If the option requires access to a port, then this VPC security group allows access to the port.
      * </p>
      * 
      * @param vpcSecurityGroupMemberships
-     *        If the option requires access to a port, then this VPC security
-     *        group allows access to the port.
+     *        If the option requires access to a port, then this VPC security group allows access to the port.
      */
 
-    public void setVpcSecurityGroupMemberships(
-            java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroupMemberships) {
+    public void setVpcSecurityGroupMemberships(java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroupMemberships) {
         if (vpcSecurityGroupMemberships == null) {
             this.vpcSecurityGroupMemberships = null;
             return;
         }
 
-        this.vpcSecurityGroupMemberships = new com.amazonaws.internal.SdkInternalList<VpcSecurityGroupMembership>(
-                vpcSecurityGroupMemberships);
+        this.vpcSecurityGroupMemberships = new com.amazonaws.internal.SdkInternalList<VpcSecurityGroupMembership>(vpcSecurityGroupMemberships);
     }
 
     /**
      * <p>
-     * If the option requires access to a port, then this VPC security group
-     * allows access to the port.
+     * If the option requires access to a port, then this VPC security group allows access to the port.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVpcSecurityGroupMemberships(java.util.Collection)}
-     * or {@link #withVpcSecurityGroupMemberships(java.util.Collection)} if you
-     * want to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcSecurityGroupMemberships(java.util.Collection)} or
+     * {@link #withVpcSecurityGroupMemberships(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param vpcSecurityGroupMemberships
-     *        If the option requires access to a port, then this VPC security
-     *        group allows access to the port.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the option requires access to a port, then this VPC security group allows access to the port.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Option withVpcSecurityGroupMemberships(
-            VpcSecurityGroupMembership... vpcSecurityGroupMemberships) {
+    public Option withVpcSecurityGroupMemberships(VpcSecurityGroupMembership... vpcSecurityGroupMemberships) {
         if (this.vpcSecurityGroupMemberships == null) {
-            setVpcSecurityGroupMemberships(new com.amazonaws.internal.SdkInternalList<VpcSecurityGroupMembership>(
-                    vpcSecurityGroupMemberships.length));
+            setVpcSecurityGroupMemberships(new com.amazonaws.internal.SdkInternalList<VpcSecurityGroupMembership>(vpcSecurityGroupMemberships.length));
         }
         for (VpcSecurityGroupMembership ele : vpcSecurityGroupMemberships) {
             this.vpcSecurityGroupMemberships.add(ele);
@@ -591,26 +546,21 @@ public class Option implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the option requires access to a port, then this VPC security group
-     * allows access to the port.
+     * If the option requires access to a port, then this VPC security group allows access to the port.
      * </p>
      * 
      * @param vpcSecurityGroupMemberships
-     *        If the option requires access to a port, then this VPC security
-     *        group allows access to the port.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the option requires access to a port, then this VPC security group allows access to the port.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Option withVpcSecurityGroupMemberships(
-            java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroupMemberships) {
+    public Option withVpcSecurityGroupMemberships(java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroupMemberships) {
         setVpcSecurityGroupMemberships(vpcSecurityGroupMemberships);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -635,11 +585,9 @@ public class Option implements Serializable, Cloneable {
         if (getOptionSettings() != null)
             sb.append("OptionSettings: " + getOptionSettings() + ",");
         if (getDBSecurityGroupMemberships() != null)
-            sb.append("DBSecurityGroupMemberships: "
-                    + getDBSecurityGroupMemberships() + ",");
+            sb.append("DBSecurityGroupMemberships: " + getDBSecurityGroupMemberships() + ",");
         if (getVpcSecurityGroupMemberships() != null)
-            sb.append("VpcSecurityGroupMemberships: "
-                    + getVpcSecurityGroupMemberships());
+            sb.append("VpcSecurityGroupMemberships: " + getVpcSecurityGroupMemberships());
         sb.append("}");
         return sb.toString();
     }
@@ -656,55 +604,39 @@ public class Option implements Serializable, Cloneable {
         Option other = (Option) obj;
         if (other.getOptionName() == null ^ this.getOptionName() == null)
             return false;
-        if (other.getOptionName() != null
-                && other.getOptionName().equals(this.getOptionName()) == false)
+        if (other.getOptionName() != null && other.getOptionName().equals(this.getOptionName()) == false)
             return false;
-        if (other.getOptionDescription() == null
-                ^ this.getOptionDescription() == null)
+        if (other.getOptionDescription() == null ^ this.getOptionDescription() == null)
             return false;
-        if (other.getOptionDescription() != null
-                && other.getOptionDescription().equals(
-                        this.getOptionDescription()) == false)
+        if (other.getOptionDescription() != null && other.getOptionDescription().equals(this.getOptionDescription()) == false)
             return false;
         if (other.getPersistent() == null ^ this.getPersistent() == null)
             return false;
-        if (other.getPersistent() != null
-                && other.getPersistent().equals(this.getPersistent()) == false)
+        if (other.getPersistent() != null && other.getPersistent().equals(this.getPersistent()) == false)
             return false;
         if (other.getPermanent() == null ^ this.getPermanent() == null)
             return false;
-        if (other.getPermanent() != null
-                && other.getPermanent().equals(this.getPermanent()) == false)
+        if (other.getPermanent() != null && other.getPermanent().equals(this.getPermanent()) == false)
             return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
-        if (other.getPort() != null
-                && other.getPort().equals(this.getPort()) == false)
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
         if (other.getOptionVersion() == null ^ this.getOptionVersion() == null)
             return false;
-        if (other.getOptionVersion() != null
-                && other.getOptionVersion().equals(this.getOptionVersion()) == false)
+        if (other.getOptionVersion() != null && other.getOptionVersion().equals(this.getOptionVersion()) == false)
             return false;
-        if (other.getOptionSettings() == null
-                ^ this.getOptionSettings() == null)
+        if (other.getOptionSettings() == null ^ this.getOptionSettings() == null)
             return false;
-        if (other.getOptionSettings() != null
-                && other.getOptionSettings().equals(this.getOptionSettings()) == false)
+        if (other.getOptionSettings() != null && other.getOptionSettings().equals(this.getOptionSettings()) == false)
             return false;
-        if (other.getDBSecurityGroupMemberships() == null
-                ^ this.getDBSecurityGroupMemberships() == null)
+        if (other.getDBSecurityGroupMemberships() == null ^ this.getDBSecurityGroupMemberships() == null)
             return false;
-        if (other.getDBSecurityGroupMemberships() != null
-                && other.getDBSecurityGroupMemberships().equals(
-                        this.getDBSecurityGroupMemberships()) == false)
+        if (other.getDBSecurityGroupMemberships() != null && other.getDBSecurityGroupMemberships().equals(this.getDBSecurityGroupMemberships()) == false)
             return false;
-        if (other.getVpcSecurityGroupMemberships() == null
-                ^ this.getVpcSecurityGroupMemberships() == null)
+        if (other.getVpcSecurityGroupMemberships() == null ^ this.getVpcSecurityGroupMemberships() == null)
             return false;
-        if (other.getVpcSecurityGroupMemberships() != null
-                && other.getVpcSecurityGroupMemberships().equals(
-                        this.getVpcSecurityGroupMemberships()) == false)
+        if (other.getVpcSecurityGroupMemberships() != null && other.getVpcSecurityGroupMemberships().equals(this.getVpcSecurityGroupMemberships()) == false)
             return false;
         return true;
     }
@@ -714,34 +646,15 @@ public class Option implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getOptionName() == null) ? 0 : getOptionName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOptionDescription() == null) ? 0
-                        : getOptionDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getPersistent() == null) ? 0 : getPersistent().hashCode());
-        hashCode = prime * hashCode
-                + ((getPermanent() == null) ? 0 : getPermanent().hashCode());
-        hashCode = prime * hashCode
-                + ((getPort() == null) ? 0 : getPort().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOptionVersion() == null) ? 0 : getOptionVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOptionSettings() == null) ? 0 : getOptionSettings()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBSecurityGroupMemberships() == null) ? 0
-                        : getDBSecurityGroupMemberships().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVpcSecurityGroupMemberships() == null) ? 0
-                        : getVpcSecurityGroupMemberships().hashCode());
+        hashCode = prime * hashCode + ((getOptionName() == null) ? 0 : getOptionName().hashCode());
+        hashCode = prime * hashCode + ((getOptionDescription() == null) ? 0 : getOptionDescription().hashCode());
+        hashCode = prime * hashCode + ((getPersistent() == null) ? 0 : getPersistent().hashCode());
+        hashCode = prime * hashCode + ((getPermanent() == null) ? 0 : getPermanent().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getOptionVersion() == null) ? 0 : getOptionVersion().hashCode());
+        hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode());
+        hashCode = prime * hashCode + ((getDBSecurityGroupMemberships() == null) ? 0 : getDBSecurityGroupMemberships().hashCode());
+        hashCode = prime * hashCode + ((getVpcSecurityGroupMemberships() == null) ? 0 : getVpcSecurityGroupMemberships().hashCode());
         return hashCode;
     }
 
@@ -750,9 +663,7 @@ public class Option implements Serializable, Cloneable {
         try {
             return (Option) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Offering JSON Unmarshaller
  */
-public class OfferingJsonUnmarshaller implements
-        Unmarshaller<Offering, JsonUnmarshallerContext> {
+public class OfferingJsonUnmarshaller implements Unmarshaller<Offering, JsonUnmarshallerContext> {
 
-    public Offering unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public Offering unmarshall(JsonUnmarshallerContext context) throws Exception {
         Offering offering = new Offering();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,34 +49,26 @@ public class OfferingJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    offering.setId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    offering.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    offering.setDescription(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    offering.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    offering.setType(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    offering.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
                     context.nextToken();
-                    offering.setPlatform(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    offering.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recurringCharges", targetDepth)) {
                     context.nextToken();
-                    offering.setRecurringCharges(new ListUnmarshaller<RecurringCharge>(
-                            RecurringChargeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    offering.setRecurringCharges(new ListUnmarshaller<RecurringCharge>(RecurringChargeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

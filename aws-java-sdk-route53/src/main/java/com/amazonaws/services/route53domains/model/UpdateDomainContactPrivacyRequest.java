@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The UpdateDomainContactPrivacy request includes the following elements.
  * </p>
  */
-public class UpdateDomainContactPrivacyRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -37,9 +33,8 @@ public class UpdateDomainContactPrivacyRequest extends
      * Default: None
      * </p>
      * <p>
-     * Constraints: The domain name can contain only the letters a through z,
-     * the numbers 0 through 9, and hyphen (-). Internationalized Domain Names
-     * are not supported.
+     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
+     * Internationalized Domain Names are not supported.
      * </p>
      * <p>
      * Required: Yes
@@ -48,10 +43,9 @@ public class UpdateDomainContactPrivacyRequest extends
     private String domainName;
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -69,10 +63,9 @@ public class UpdateDomainContactPrivacyRequest extends
     private Boolean adminPrivacy;
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -90,10 +83,9 @@ public class UpdateDomainContactPrivacyRequest extends
     private Boolean registrantPrivacy;
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -121,9 +113,8 @@ public class UpdateDomainContactPrivacyRequest extends
      * Default: None
      * </p>
      * <p>
-     * Constraints: The domain name can contain only the letters a through z,
-     * the numbers 0 through 9, and hyphen (-). Internationalized Domain Names
-     * are not supported.
+     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
+     * Internationalized Domain Names are not supported.
      * </p>
      * <p>
      * Required: Yes
@@ -138,9 +129,8 @@ public class UpdateDomainContactPrivacyRequest extends
      *        Default: None
      *        </p>
      *        <p>
-     *        Constraints: The domain name can contain only the letters a
-     *        through z, the numbers 0 through 9, and hyphen (-).
-     *        Internationalized Domain Names are not supported.
+     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
+     *        (-). Internationalized Domain Names are not supported.
      *        </p>
      *        <p>
      *        Required: Yes
@@ -161,9 +151,8 @@ public class UpdateDomainContactPrivacyRequest extends
      * Default: None
      * </p>
      * <p>
-     * Constraints: The domain name can contain only the letters a through z,
-     * the numbers 0 through 9, and hyphen (-). Internationalized Domain Names
-     * are not supported.
+     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
+     * Internationalized Domain Names are not supported.
      * </p>
      * <p>
      * Required: Yes
@@ -177,9 +166,8 @@ public class UpdateDomainContactPrivacyRequest extends
      *         Default: None
      *         </p>
      *         <p>
-     *         Constraints: The domain name can contain only the letters a
-     *         through z, the numbers 0 through 9, and hyphen (-).
-     *         Internationalized Domain Names are not supported.
+     *         Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and
+     *         hyphen (-). Internationalized Domain Names are not supported.
      *         </p>
      *         <p>
      *         Required: Yes
@@ -200,9 +188,8 @@ public class UpdateDomainContactPrivacyRequest extends
      * Default: None
      * </p>
      * <p>
-     * Constraints: The domain name can contain only the letters a through z,
-     * the numbers 0 through 9, and hyphen (-). Internationalized Domain Names
-     * are not supported.
+     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
+     * Internationalized Domain Names are not supported.
      * </p>
      * <p>
      * Required: Yes
@@ -217,14 +204,12 @@ public class UpdateDomainContactPrivacyRequest extends
      *        Default: None
      *        </p>
      *        <p>
-     *        Constraints: The domain name can contain only the letters a
-     *        through z, the numbers 0 through 9, and hyphen (-).
-     *        Internationalized Domain Names are not supported.
+     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
+     *        (-). Internationalized Domain Names are not supported.
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateDomainContactPrivacyRequest withDomainName(String domainName) {
@@ -234,10 +219,9 @@ public class UpdateDomainContactPrivacyRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -253,10 +237,9 @@ public class UpdateDomainContactPrivacyRequest extends
      * </p>
      * 
      * @param adminPrivacy
-     *        Whether you want to conceal contact information from WHOIS
-     *        queries. If you specify true, WHOIS ("who is") queries will return
-     *        contact information for our registrar partner, Gandi, instead of
-     *        the contact information that you enter.</p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *        information that you enter.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -276,10 +259,9 @@ public class UpdateDomainContactPrivacyRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -294,10 +276,9 @@ public class UpdateDomainContactPrivacyRequest extends
      * Required: No
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS
-     *         queries. If you specify true, WHOIS ("who is") queries will
-     *         return contact information for our registrar partner, Gandi,
-     *         instead of the contact information that you enter.</p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *         information that you enter.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -317,10 +298,9 @@ public class UpdateDomainContactPrivacyRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -336,10 +316,9 @@ public class UpdateDomainContactPrivacyRequest extends
      * </p>
      * 
      * @param adminPrivacy
-     *        Whether you want to conceal contact information from WHOIS
-     *        queries. If you specify true, WHOIS ("who is") queries will return
-     *        contact information for our registrar partner, Gandi, instead of
-     *        the contact information that you enter.</p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *        information that you enter.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -351,22 +330,19 @@ public class UpdateDomainContactPrivacyRequest extends
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateDomainContactPrivacyRequest withAdminPrivacy(
-            Boolean adminPrivacy) {
+    public UpdateDomainContactPrivacyRequest withAdminPrivacy(Boolean adminPrivacy) {
         setAdminPrivacy(adminPrivacy);
         return this;
     }
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -381,10 +357,9 @@ public class UpdateDomainContactPrivacyRequest extends
      * Required: No
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS
-     *         queries. If you specify true, WHOIS ("who is") queries will
-     *         return contact information for our registrar partner, Gandi,
-     *         instead of the contact information that you enter.</p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *         information that you enter.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -404,10 +379,9 @@ public class UpdateDomainContactPrivacyRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -423,10 +397,9 @@ public class UpdateDomainContactPrivacyRequest extends
      * </p>
      * 
      * @param registrantPrivacy
-     *        Whether you want to conceal contact information from WHOIS
-     *        queries. If you specify true, WHOIS ("who is") queries will return
-     *        contact information for our registrar partner, Gandi, instead of
-     *        the contact information that you enter.</p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *        information that you enter.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -446,10 +419,9 @@ public class UpdateDomainContactPrivacyRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -464,10 +436,9 @@ public class UpdateDomainContactPrivacyRequest extends
      * Required: No
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS
-     *         queries. If you specify true, WHOIS ("who is") queries will
-     *         return contact information for our registrar partner, Gandi,
-     *         instead of the contact information that you enter.</p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *         information that you enter.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -487,10 +458,9 @@ public class UpdateDomainContactPrivacyRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -506,10 +476,9 @@ public class UpdateDomainContactPrivacyRequest extends
      * </p>
      * 
      * @param registrantPrivacy
-     *        Whether you want to conceal contact information from WHOIS
-     *        queries. If you specify true, WHOIS ("who is") queries will return
-     *        contact information for our registrar partner, Gandi, instead of
-     *        the contact information that you enter.</p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *        information that you enter.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -521,22 +490,19 @@ public class UpdateDomainContactPrivacyRequest extends
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateDomainContactPrivacyRequest withRegistrantPrivacy(
-            Boolean registrantPrivacy) {
+    public UpdateDomainContactPrivacyRequest withRegistrantPrivacy(Boolean registrantPrivacy) {
         setRegistrantPrivacy(registrantPrivacy);
         return this;
     }
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -551,10 +517,9 @@ public class UpdateDomainContactPrivacyRequest extends
      * Required: No
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS
-     *         queries. If you specify true, WHOIS ("who is") queries will
-     *         return contact information for our registrar partner, Gandi,
-     *         instead of the contact information that you enter.</p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *         information that you enter.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -574,10 +539,9 @@ public class UpdateDomainContactPrivacyRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -593,10 +557,9 @@ public class UpdateDomainContactPrivacyRequest extends
      * </p>
      * 
      * @param techPrivacy
-     *        Whether you want to conceal contact information from WHOIS
-     *        queries. If you specify true, WHOIS ("who is") queries will return
-     *        contact information for our registrar partner, Gandi, instead of
-     *        the contact information that you enter.</p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *        information that you enter.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -616,10 +579,9 @@ public class UpdateDomainContactPrivacyRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -634,10 +596,9 @@ public class UpdateDomainContactPrivacyRequest extends
      * Required: No
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS
-     *         queries. If you specify true, WHOIS ("who is") queries will
-     *         return contact information for our registrar partner, Gandi,
-     *         instead of the contact information that you enter.</p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *         information that you enter.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -657,10 +618,9 @@ public class UpdateDomainContactPrivacyRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -676,10 +636,9 @@ public class UpdateDomainContactPrivacyRequest extends
      * </p>
      * 
      * @param techPrivacy
-     *        Whether you want to conceal contact information from WHOIS
-     *        queries. If you specify true, WHOIS ("who is") queries will return
-     *        contact information for our registrar partner, Gandi, instead of
-     *        the contact information that you enter.</p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *        information that you enter.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -691,8 +650,7 @@ public class UpdateDomainContactPrivacyRequest extends
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateDomainContactPrivacyRequest withTechPrivacy(Boolean techPrivacy) {
@@ -702,10 +660,9 @@ public class UpdateDomainContactPrivacyRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -720,10 +677,9 @@ public class UpdateDomainContactPrivacyRequest extends
      * Required: No
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS
-     *         queries. If you specify true, WHOIS ("who is") queries will
-     *         return contact information for our registrar partner, Gandi,
-     *         instead of the contact information that you enter.</p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *         information that you enter.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -742,8 +698,7 @@ public class UpdateDomainContactPrivacyRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -777,25 +732,19 @@ public class UpdateDomainContactPrivacyRequest extends
         UpdateDomainContactPrivacyRequest other = (UpdateDomainContactPrivacyRequest) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
         if (other.getAdminPrivacy() == null ^ this.getAdminPrivacy() == null)
             return false;
-        if (other.getAdminPrivacy() != null
-                && other.getAdminPrivacy().equals(this.getAdminPrivacy()) == false)
+        if (other.getAdminPrivacy() != null && other.getAdminPrivacy().equals(this.getAdminPrivacy()) == false)
             return false;
-        if (other.getRegistrantPrivacy() == null
-                ^ this.getRegistrantPrivacy() == null)
+        if (other.getRegistrantPrivacy() == null ^ this.getRegistrantPrivacy() == null)
             return false;
-        if (other.getRegistrantPrivacy() != null
-                && other.getRegistrantPrivacy().equals(
-                        this.getRegistrantPrivacy()) == false)
+        if (other.getRegistrantPrivacy() != null && other.getRegistrantPrivacy().equals(this.getRegistrantPrivacy()) == false)
             return false;
         if (other.getTechPrivacy() == null ^ this.getTechPrivacy() == null)
             return false;
-        if (other.getTechPrivacy() != null
-                && other.getTechPrivacy().equals(this.getTechPrivacy()) == false)
+        if (other.getTechPrivacy() != null && other.getTechPrivacy().equals(this.getTechPrivacy()) == false)
             return false;
         return true;
     }
@@ -805,19 +754,10 @@ public class UpdateDomainContactPrivacyRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAdminPrivacy() == null) ? 0 : getAdminPrivacy()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegistrantPrivacy() == null) ? 0
-                        : getRegistrantPrivacy().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTechPrivacy() == null) ? 0 : getTechPrivacy().hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getAdminPrivacy() == null) ? 0 : getAdminPrivacy().hashCode());
+        hashCode = prime * hashCode + ((getRegistrantPrivacy() == null) ? 0 : getRegistrantPrivacy().hashCode());
+        hashCode = prime * hashCode + ((getTechPrivacy() == null) ? 0 : getTechPrivacy().hashCode());
         return hashCode;
     }
 

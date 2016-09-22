@@ -189,7 +189,7 @@ import com.amazonaws.util.VersionInfoUtils;
 public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
     private final AmazonDynamoDB db;
-    private final DynamoDBMapperModelFactory.Factory models;
+    private final DynamoDBMapperModelFactory models;
     private final S3Link.Factory s3Links;
 
     private final AttributeTransformer transformer;
@@ -389,7 +389,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     private <T extends Object> DynamoDBMapperTableModel<T> getTableModel(Class<T> clazz, DynamoDBMapperConfig config) {
-        return this.models.getModelFactory(config).getTableModel(clazz);
+        return this.models.getTableFactory(config).getTable(clazz);
     }
 
     @Override
@@ -994,7 +994,17 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
                 AttributeValueUpdate update = updateValues.get(entry.getKey());
                 if (update != null) {
-                    StandardModelFactories.CopyConverter.set(update.getValue(), entry.getValue());
+                    update.getValue()
+                        .withB(entry.getValue().getB())
+                        .withBS(entry.getValue().getBS())
+                        .withN(entry.getValue().getN())
+                        .withNS(entry.getValue().getNS())
+                        .withS(entry.getValue().getS())
+                        .withSS(entry.getValue().getSS())
+                        .withM(entry.getValue().getM())
+                        .withL(entry.getValue().getL())
+                        .withNULL(entry.getValue().getNULL())
+                        .withBOOL(entry.getValue().getBOOL());
                 } else {
                     updateValues.put(entry.getKey(),
                                      new AttributeValueUpdate(entry.getValue(),

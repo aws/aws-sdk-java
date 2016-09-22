@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ApplicationDetail JSON Unmarshaller
  */
-public class ApplicationDetailJsonUnmarshaller implements
-        Unmarshaller<ApplicationDetail, JsonUnmarshallerContext> {
+public class ApplicationDetailJsonUnmarshaller implements Unmarshaller<ApplicationDetail, JsonUnmarshallerContext> {
 
-    public ApplicationDetail unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ApplicationDetail unmarshall(JsonUnmarshallerContext context) throws Exception {
         ApplicationDetail applicationDetail = new ApplicationDetail();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,73 +49,53 @@ public class ApplicationDetailJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationName", targetDepth)) {
                     context.nextToken();
-                    applicationDetail.setApplicationName(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    applicationDetail.setApplicationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("ApplicationDescription",
-                        targetDepth)) {
+                if (context.testExpression("ApplicationDescription", targetDepth)) {
                     context.nextToken();
-                    applicationDetail.setApplicationDescription(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    applicationDetail.setApplicationDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationARN", targetDepth)) {
                     context.nextToken();
-                    applicationDetail.setApplicationARN(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    applicationDetail.setApplicationARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationStatus", targetDepth)) {
                     context.nextToken();
-                    applicationDetail.setApplicationStatus(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    applicationDetail.setApplicationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTimestamp", targetDepth)) {
                     context.nextToken();
-                    applicationDetail.setCreateTimestamp(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    applicationDetail.setCreateTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTimestamp", targetDepth)) {
                     context.nextToken();
-                    applicationDetail.setLastUpdateTimestamp(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    applicationDetail.setLastUpdateTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("InputDescriptions", targetDepth)) {
                     context.nextToken();
-                    applicationDetail
-                            .setInputDescriptions(new ListUnmarshaller<InputDescription>(
-                                    InputDescriptionJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    applicationDetail.setInputDescriptions(new ListUnmarshaller<InputDescription>(InputDescriptionJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("OutputDescriptions", targetDepth)) {
                     context.nextToken();
-                    applicationDetail
-                            .setOutputDescriptions(new ListUnmarshaller<OutputDescription>(
-                                    OutputDescriptionJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    applicationDetail.setOutputDescriptions(new ListUnmarshaller<OutputDescription>(OutputDescriptionJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
-                if (context.testExpression("ReferenceDataSourceDescriptions",
-                        targetDepth)) {
+                if (context.testExpression("ReferenceDataSourceDescriptions", targetDepth)) {
                     context.nextToken();
-                    applicationDetail
-                            .setReferenceDataSourceDescriptions(new ListUnmarshaller<ReferenceDataSourceDescription>(
-                                    ReferenceDataSourceDescriptionJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    applicationDetail.setReferenceDataSourceDescriptions(new ListUnmarshaller<ReferenceDataSourceDescription>(
+                            ReferenceDataSourceDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationCode", targetDepth)) {
                     context.nextToken();
-                    applicationDetail.setApplicationCode(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    applicationDetail.setApplicationCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationVersionId", targetDepth)) {
                     context.nextToken();
-                    applicationDetail.setApplicationVersionId(context
-                            .getUnmarshaller(Long.class).unmarshall(context));
+                    applicationDetail.setApplicationVersionId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

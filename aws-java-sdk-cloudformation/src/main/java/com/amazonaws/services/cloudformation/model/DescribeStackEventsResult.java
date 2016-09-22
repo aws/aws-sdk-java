@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The output for a <a>DescribeStackEvents</a> action.
  * </p>
  */
-public class DescribeStackEventsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeStackEventsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,8 @@ public class DescribeStackEventsResult extends
     private com.amazonaws.internal.SdkInternalList<StackEvent> stackEvents;
     /**
      * <p>
-     * If the output exceeds 1 MB in size, a string that identifies the next
-     * page of events. If no additional page exists, this value is null.
+     * If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page
+     * exists, this value is null.
      * </p>
      */
     private String nextToken;
@@ -69,8 +65,7 @@ public class DescribeStackEventsResult extends
             return;
         }
 
-        this.stackEvents = new com.amazonaws.internal.SdkInternalList<StackEvent>(
-                stackEvents);
+        this.stackEvents = new com.amazonaws.internal.SdkInternalList<StackEvent>(stackEvents);
     }
 
     /**
@@ -78,22 +73,19 @@ public class DescribeStackEventsResult extends
      * A list of <code>StackEvents</code> structures.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setStackEvents(java.util.Collection)} or
-     * {@link #withStackEvents(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStackEvents(java.util.Collection)} or {@link #withStackEvents(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param stackEvents
      *        A list of <code>StackEvents</code> structures.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStackEventsResult withStackEvents(StackEvent... stackEvents) {
         if (this.stackEvents == null) {
-            setStackEvents(new com.amazonaws.internal.SdkInternalList<StackEvent>(
-                    stackEvents.length));
+            setStackEvents(new com.amazonaws.internal.SdkInternalList<StackEvent>(stackEvents.length));
         }
         for (StackEvent ele : stackEvents) {
             this.stackEvents.add(ele);
@@ -108,26 +100,23 @@ public class DescribeStackEventsResult extends
      * 
      * @param stackEvents
      *        A list of <code>StackEvents</code> structures.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeStackEventsResult withStackEvents(
-            java.util.Collection<StackEvent> stackEvents) {
+    public DescribeStackEventsResult withStackEvents(java.util.Collection<StackEvent> stackEvents) {
         setStackEvents(stackEvents);
         return this;
     }
 
     /**
      * <p>
-     * If the output exceeds 1 MB in size, a string that identifies the next
-     * page of events. If no additional page exists, this value is null.
+     * If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page
+     * exists, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        If the output exceeds 1 MB in size, a string that identifies the
-     *        next page of events. If no additional page exists, this value is
-     *        null.
+     *        If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional
+     *        page exists, this value is null.
      */
 
     public void setNextToken(String nextToken) {
@@ -136,13 +125,12 @@ public class DescribeStackEventsResult extends
 
     /**
      * <p>
-     * If the output exceeds 1 MB in size, a string that identifies the next
-     * page of events. If no additional page exists, this value is null.
+     * If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page
+     * exists, this value is null.
      * </p>
      * 
-     * @return If the output exceeds 1 MB in size, a string that identifies the
-     *         next page of events. If no additional page exists, this value is
-     *         null.
+     * @return If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional
+     *         page exists, this value is null.
      */
 
     public String getNextToken() {
@@ -151,16 +139,14 @@ public class DescribeStackEventsResult extends
 
     /**
      * <p>
-     * If the output exceeds 1 MB in size, a string that identifies the next
-     * page of events. If no additional page exists, this value is null.
+     * If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page
+     * exists, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        If the output exceeds 1 MB in size, a string that identifies the
-     *        next page of events. If no additional page exists, this value is
-     *        null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional
+     *        page exists, this value is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStackEventsResult withNextToken(String nextToken) {
@@ -169,8 +155,7 @@ public class DescribeStackEventsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -200,13 +185,11 @@ public class DescribeStackEventsResult extends
         DescribeStackEventsResult other = (DescribeStackEventsResult) obj;
         if (other.getStackEvents() == null ^ this.getStackEvents() == null)
             return false;
-        if (other.getStackEvents() != null
-                && other.getStackEvents().equals(this.getStackEvents()) == false)
+        if (other.getStackEvents() != null && other.getStackEvents().equals(this.getStackEvents()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -216,11 +199,8 @@ public class DescribeStackEventsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getStackEvents() == null) ? 0 : getStackEvents().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getStackEvents() == null) ? 0 : getStackEvents().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -229,9 +209,7 @@ public class DescribeStackEventsResult extends
         try {
             return (DescribeStackEventsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

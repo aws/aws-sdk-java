@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class RemoveTagsFromResourceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -69,8 +65,7 @@ public class RemoveTagsFromResourceRequest extends
      * 
      * @param resourceId
      *        Identifier (ID) of the directory from which to remove the tag.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTagsFromResourceRequest withResourceId(String resourceId) {
@@ -108,8 +103,7 @@ public class RemoveTagsFromResourceRequest extends
             return;
         }
 
-        this.tagKeys = new com.amazonaws.internal.SdkInternalList<String>(
-                tagKeys);
+        this.tagKeys = new com.amazonaws.internal.SdkInternalList<String>(tagKeys);
     }
 
     /**
@@ -117,22 +111,19 @@ public class RemoveTagsFromResourceRequest extends
      * The tag key (name) of the tag to be removed.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagKeys(java.util.Collection)} or
-     * {@link #withTagKeys(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param tagKeys
      *        The tag key (name) of the tag to be removed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTagsFromResourceRequest withTagKeys(String... tagKeys) {
         if (this.tagKeys == null) {
-            setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(
-                    tagKeys.length));
+            setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(tagKeys.length));
         }
         for (String ele : tagKeys) {
             this.tagKeys.add(ele);
@@ -147,19 +138,16 @@ public class RemoveTagsFromResourceRequest extends
      * 
      * @param tagKeys
      *        The tag key (name) of the tag to be removed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RemoveTagsFromResourceRequest withTagKeys(
-            java.util.Collection<String> tagKeys) {
+    public RemoveTagsFromResourceRequest withTagKeys(java.util.Collection<String> tagKeys) {
         setTagKeys(tagKeys);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -189,13 +177,11 @@ public class RemoveTagsFromResourceRequest extends
         RemoveTagsFromResourceRequest other = (RemoveTagsFromResourceRequest) obj;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getTagKeys() == null ^ this.getTagKeys() == null)
             return false;
-        if (other.getTagKeys() != null
-                && other.getTagKeys().equals(this.getTagKeys()) == false)
+        if (other.getTagKeys() != null && other.getTagKeys().equals(this.getTagKeys()) == false)
             return false;
         return true;
     }
@@ -205,10 +191,8 @@ public class RemoveTagsFromResourceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
         return hashCode;
     }
 

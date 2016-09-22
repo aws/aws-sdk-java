@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * DBCluster StAX Unmarshaller
  */
-public class DBClusterStaxUnmarshaller implements
-        Unmarshaller<DBCluster, StaxUnmarshallerContext> {
+public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUnmarshallerContext> {
 
-    public DBCluster unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public DBCluster unmarshall(StaxUnmarshallerContext context) throws Exception {
         DBCluster dBCluster = new DBCluster();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,201 +46,152 @@ public class DBClusterStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("AllocatedStorage", targetDepth)) {
-                    dBCluster.setAllocatedStorage(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setAllocatedStorage(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "AvailabilityZones/AvailabilityZone", targetDepth)) {
-                    dBCluster.withAvailabilityZones(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("AvailabilityZones/AvailabilityZone", targetDepth)) {
+                    dBCluster.withAvailabilityZones(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("BackupRetentionPeriod", targetDepth)) {
-                    dBCluster.setBackupRetentionPeriod(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("BackupRetentionPeriod", targetDepth)) {
+                    dBCluster.setBackupRetentionPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("CharacterSetName", targetDepth)) {
-                    dBCluster.setCharacterSetName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setCharacterSetName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DatabaseName", targetDepth)) {
-                    dBCluster.setDatabaseName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setDatabaseName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DBClusterIdentifier", targetDepth)) {
-                    dBCluster.setDBClusterIdentifier(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setDBClusterIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("DBClusterParameterGroup",
-                        targetDepth)) {
-                    dBCluster.setDBClusterParameterGroup(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("DBClusterParameterGroup", targetDepth)) {
+                    dBCluster.setDBClusterParameterGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DBSubnetGroup", targetDepth)) {
-                    dBCluster.setDBSubnetGroup(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setDBSubnetGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Status", targetDepth)) {
-                    dBCluster.setStatus(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    dBCluster.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("PercentProgress", targetDepth)) {
-                    dBCluster.setPercentProgress(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setPercentProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("EarliestRestorableTime",
-                        targetDepth)) {
-                    dBCluster.setEarliestRestorableTime(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("EarliestRestorableTime", targetDepth)) {
+                    dBCluster.setEarliestRestorableTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Endpoint", targetDepth)) {
-                    dBCluster.setEndpoint(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    dBCluster.setEndpoint(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ReaderEndpoint", targetDepth)) {
-                    dBCluster.setReaderEndpoint(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setReaderEndpoint(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Engine", targetDepth)) {
-                    dBCluster.setEngine(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    dBCluster.setEngine(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EngineVersion", targetDepth)) {
-                    dBCluster.setEngineVersion(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setEngineVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LatestRestorableTime", targetDepth)) {
-                    dBCluster.setLatestRestorableTime(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setLatestRestorableTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Port", targetDepth)) {
-                    dBCluster.setPort(IntegerStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    dBCluster.setPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MasterUsername", targetDepth)) {
-                    dBCluster.setMasterUsername(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setMasterUsername(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "DBClusterOptionGroupMemberships/DBClusterOptionGroup",
-                        targetDepth)) {
-                    dBCluster
-                            .withDBClusterOptionGroupMemberships(DBClusterOptionGroupStatusStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("DBClusterOptionGroupMemberships/DBClusterOptionGroup", targetDepth)) {
+                    dBCluster.withDBClusterOptionGroupMemberships(DBClusterOptionGroupStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("PreferredBackupWindow", targetDepth)) {
-                    dBCluster.setPreferredBackupWindow(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("PreferredBackupWindow", targetDepth)) {
+                    dBCluster.setPreferredBackupWindow(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("PreferredMaintenanceWindow",
-                        targetDepth)) {
-                    dBCluster
-                            .setPreferredMaintenanceWindow(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("PreferredMaintenanceWindow", targetDepth)) {
+                    dBCluster.setPreferredMaintenanceWindow(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("ReplicationSourceIdentifier",
-                        targetDepth)) {
-                    dBCluster
-                            .setReplicationSourceIdentifier(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("ReplicationSourceIdentifier", targetDepth)) {
+                    dBCluster.setReplicationSourceIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "ReadReplicaIdentifiers/ReadReplicaIdentifier",
-                        targetDepth)) {
-                    dBCluster.withReadReplicaIdentifiers(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("ReadReplicaIdentifiers/ReadReplicaIdentifier", targetDepth)) {
+                    dBCluster.withReadReplicaIdentifiers(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("DBClusterMembers/DBClusterMember",
-                        targetDepth)) {
-                    dBCluster
-                            .withDBClusterMembers(DBClusterMemberStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("DBClusterMembers/DBClusterMember", targetDepth)) {
+                    dBCluster.withDBClusterMembers(DBClusterMemberStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "VpcSecurityGroups/VpcSecurityGroupMembership",
-                        targetDepth)) {
-                    dBCluster
-                            .withVpcSecurityGroups(VpcSecurityGroupMembershipStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth)) {
+                    dBCluster.withVpcSecurityGroups(VpcSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("HostedZoneId", targetDepth)) {
-                    dBCluster.setHostedZoneId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setHostedZoneId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("StorageEncrypted", targetDepth)) {
-                    dBCluster.setStorageEncrypted(BooleanStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setStorageEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("KmsKeyId", targetDepth)) {
-                    dBCluster.setKmsKeyId(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    dBCluster.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DbClusterResourceId", targetDepth)) {
-                    dBCluster.setDbClusterResourceId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setDbClusterResourceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DBClusterArn", targetDepth)) {
-                    dBCluster.setDBClusterArn(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBCluster.setDBClusterArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

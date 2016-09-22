@@ -1,38 +1,32 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesis.model;
 
 /**
  * <p>
- * The request rate for the stream is too high, or the requested data is too
- * large for the available throughput. Reduce the frequency or size of your
- * requests. For more information, see <a href=
- * "http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html"
- * >Streams Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>, and
- * <a href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error
- * Retries and Exponential Backoff in AWS</a> in the <i>AWS General
- * Reference</i>.
+ * The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce
+ * the frequency or size of your requests. For more information, see <a
+ * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
+ * <i>Amazon Kinesis Streams Developer Guide</i>, and <a
+ * href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential Backoff in AWS</a>
+ * in the <i>AWS General Reference</i>.
  * </p>
  */
-public class ProvisionedThroughputExceededException extends
-        com.amazonaws.services.kinesis.model.AmazonKinesisException {
+public class ProvisionedThroughputExceededException extends com.amazonaws.services.kinesis.model.AmazonKinesisException {
     private static final long serialVersionUID = 1L;
 
     /**
-     * Constructs a new ProvisionedThroughputExceededException with the
-     * specified error message.
+     * Constructs a new ProvisionedThroughputExceededException with the specified error message.
      *
      * @param message
      *        Describes the error encountered.

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.support.model;
 
@@ -18,13 +16,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The result of the Trusted Advisor check returned by the
- * <a>DescribeTrustedAdvisorCheckResult</a> operation.
+ * The result of the Trusted Advisor check returned by the <a>DescribeTrustedAdvisorCheckResult</a> operation.
  * </p>
  */
-public class DescribeTrustedAdvisorCheckResultResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeTrustedAdvisorCheckResultResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -65,19 +61,16 @@ public class DescribeTrustedAdvisorCheckResultResult extends
      * 
      * @param result
      *        The detailed results of the Trusted Advisor check.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTrustedAdvisorCheckResultResult withResult(
-            TrustedAdvisorCheckResult result) {
+    public DescribeTrustedAdvisorCheckResultResult withResult(TrustedAdvisorCheckResult result) {
         setResult(result);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -105,8 +98,7 @@ public class DescribeTrustedAdvisorCheckResultResult extends
         DescribeTrustedAdvisorCheckResultResult other = (DescribeTrustedAdvisorCheckResultResult) obj;
         if (other.getResult() == null ^ this.getResult() == null)
             return false;
-        if (other.getResult() != null
-                && other.getResult().equals(this.getResult()) == false)
+        if (other.getResult() != null && other.getResult().equals(this.getResult()) == false)
             return false;
         return true;
     }
@@ -116,8 +108,7 @@ public class DescribeTrustedAdvisorCheckResultResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getResult() == null) ? 0 : getResult().hashCode());
+        hashCode = prime * hashCode + ((getResult() == null) ? 0 : getResult().hashCode());
         return hashCode;
     }
 
@@ -126,9 +117,7 @@ public class DescribeTrustedAdvisorCheckResultResult extends
         try {
             return (DescribeTrustedAdvisorCheckResultResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

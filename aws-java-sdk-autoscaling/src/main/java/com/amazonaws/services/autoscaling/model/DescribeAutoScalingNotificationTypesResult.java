@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -21,9 +19,8 @@ import java.io.Serializable;
  * Contains the output of DescribeAutoScalingNotificationTypes.
  * </p>
  */
-public class DescribeAutoScalingNotificationTypesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeAutoScalingNotificationTypesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -56,15 +53,13 @@ public class DescribeAutoScalingNotificationTypesResult extends
      *        The notification types.
      */
 
-    public void setAutoScalingNotificationTypes(
-            java.util.Collection<String> autoScalingNotificationTypes) {
+    public void setAutoScalingNotificationTypes(java.util.Collection<String> autoScalingNotificationTypes) {
         if (autoScalingNotificationTypes == null) {
             this.autoScalingNotificationTypes = null;
             return;
         }
 
-        this.autoScalingNotificationTypes = new com.amazonaws.internal.SdkInternalList<String>(
-                autoScalingNotificationTypes);
+        this.autoScalingNotificationTypes = new com.amazonaws.internal.SdkInternalList<String>(autoScalingNotificationTypes);
     }
 
     /**
@@ -72,23 +67,19 @@ public class DescribeAutoScalingNotificationTypesResult extends
      * The notification types.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAutoScalingNotificationTypes(java.util.Collection)}
-     * or {@link #withAutoScalingNotificationTypes(java.util.Collection)} if you
-     * want to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAutoScalingNotificationTypes(java.util.Collection)} or
+     * {@link #withAutoScalingNotificationTypes(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param autoScalingNotificationTypes
      *        The notification types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAutoScalingNotificationTypesResult withAutoScalingNotificationTypes(
-            String... autoScalingNotificationTypes) {
+    public DescribeAutoScalingNotificationTypesResult withAutoScalingNotificationTypes(String... autoScalingNotificationTypes) {
         if (this.autoScalingNotificationTypes == null) {
-            setAutoScalingNotificationTypes(new com.amazonaws.internal.SdkInternalList<String>(
-                    autoScalingNotificationTypes.length));
+            setAutoScalingNotificationTypes(new com.amazonaws.internal.SdkInternalList<String>(autoScalingNotificationTypes.length));
         }
         for (String ele : autoScalingNotificationTypes) {
             this.autoScalingNotificationTypes.add(ele);
@@ -103,19 +94,16 @@ public class DescribeAutoScalingNotificationTypesResult extends
      * 
      * @param autoScalingNotificationTypes
      *        The notification types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAutoScalingNotificationTypesResult withAutoScalingNotificationTypes(
-            java.util.Collection<String> autoScalingNotificationTypes) {
+    public DescribeAutoScalingNotificationTypesResult withAutoScalingNotificationTypes(java.util.Collection<String> autoScalingNotificationTypes) {
         setAutoScalingNotificationTypes(autoScalingNotificationTypes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -126,8 +114,7 @@ public class DescribeAutoScalingNotificationTypesResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingNotificationTypes() != null)
-            sb.append("AutoScalingNotificationTypes: "
-                    + getAutoScalingNotificationTypes());
+            sb.append("AutoScalingNotificationTypes: " + getAutoScalingNotificationTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -142,12 +129,9 @@ public class DescribeAutoScalingNotificationTypesResult extends
         if (obj instanceof DescribeAutoScalingNotificationTypesResult == false)
             return false;
         DescribeAutoScalingNotificationTypesResult other = (DescribeAutoScalingNotificationTypesResult) obj;
-        if (other.getAutoScalingNotificationTypes() == null
-                ^ this.getAutoScalingNotificationTypes() == null)
+        if (other.getAutoScalingNotificationTypes() == null ^ this.getAutoScalingNotificationTypes() == null)
             return false;
-        if (other.getAutoScalingNotificationTypes() != null
-                && other.getAutoScalingNotificationTypes().equals(
-                        this.getAutoScalingNotificationTypes()) == false)
+        if (other.getAutoScalingNotificationTypes() != null && other.getAutoScalingNotificationTypes().equals(this.getAutoScalingNotificationTypes()) == false)
             return false;
         return true;
     }
@@ -157,10 +141,7 @@ public class DescribeAutoScalingNotificationTypesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingNotificationTypes() == null) ? 0
-                        : getAutoScalingNotificationTypes().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingNotificationTypes() == null) ? 0 : getAutoScalingNotificationTypes().hashCode());
         return hashCode;
     }
 
@@ -169,9 +150,7 @@ public class DescribeAutoScalingNotificationTypesResult extends
         try {
             return (DescribeAutoScalingNotificationTypesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitosync.model;
 
@@ -20,24 +18,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * A request for a list of records.
  */
-public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      */
     private String identityPoolId;
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      */
     private String identityId;
     /**
-     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-     * '_' (underscore), '-' (dash), and '.' (dot).
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+     * (dot).
      */
     private String datasetName;
     /** The last server sync count for this record. */
@@ -50,13 +45,11 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String syncSessionToken;
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
      * @param identityPoolId
-     *        A name-spaced GUID (for example,
-     *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     *        A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
 
@@ -65,12 +58,10 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
-     * @return A name-spaced GUID (for example,
-     *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     * @return A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
 
@@ -79,16 +70,13 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
      * @param identityPoolId
-     *        A name-spaced GUID (for example,
-     *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     *        A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListRecordsRequest withIdentityPoolId(String identityPoolId) {
@@ -97,13 +85,11 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
      * @param identityId
-     *        A name-spaced GUID (for example,
-     *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     *        A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
 
@@ -112,12 +98,10 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
-     * @return A name-spaced GUID (for example,
-     *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     * @return A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
 
@@ -126,16 +110,13 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
      * @param identityId
-     *        A name-spaced GUID (for example,
-     *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     *        A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListRecordsRequest withIdentityId(String identityId) {
@@ -144,12 +125,12 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-     * '_' (underscore), '-' (dash), and '.' (dot).
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+     * (dot).
      * 
      * @param datasetName
-     *        A string of up to 128 characters. Allowed characters are a-z, A-Z,
-     *        0-9, '_' (underscore), '-' (dash), and '.' (dot).
+     *        A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and
+     *        '.' (dot).
      */
 
     public void setDatasetName(String datasetName) {
@@ -157,11 +138,11 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-     * '_' (underscore), '-' (dash), and '.' (dot).
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+     * (dot).
      * 
-     * @return A string of up to 128 characters. Allowed characters are a-z,
-     *         A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+     * @return A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and
+     *         '.' (dot).
      */
 
     public String getDatasetName() {
@@ -169,14 +150,13 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-     * '_' (underscore), '-' (dash), and '.' (dot).
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+     * (dot).
      * 
      * @param datasetName
-     *        A string of up to 128 characters. Allowed characters are a-z, A-Z,
-     *        0-9, '_' (underscore), '-' (dash), and '.' (dot).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and
+     *        '.' (dot).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListRecordsRequest withDatasetName(String datasetName) {
@@ -210,8 +190,7 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param lastSyncCount
      *        The last server sync count for this record.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListRecordsRequest withLastSyncCount(Long lastSyncCount) {
@@ -245,8 +224,7 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param nextToken
      *        A pagination token for obtaining the next page of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListRecordsRequest withNextToken(String nextToken) {
@@ -280,8 +258,7 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param maxResults
      *        The maximum number of results to be returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListRecordsRequest withMaxResults(Integer maxResults) {
@@ -315,8 +292,7 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param syncSessionToken
      *        A token containing a session ID, identity ID, and expiration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListRecordsRequest withSyncSessionToken(String syncSessionToken) {
@@ -325,8 +301,7 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -364,43 +339,33 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof ListRecordsRequest == false)
             return false;
         ListRecordsRequest other = (ListRecordsRequest) obj;
-        if (other.getIdentityPoolId() == null
-                ^ this.getIdentityPoolId() == null)
+        if (other.getIdentityPoolId() == null ^ this.getIdentityPoolId() == null)
             return false;
-        if (other.getIdentityPoolId() != null
-                && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
+        if (other.getIdentityPoolId() != null && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
             return false;
         if (other.getIdentityId() == null ^ this.getIdentityId() == null)
             return false;
-        if (other.getIdentityId() != null
-                && other.getIdentityId().equals(this.getIdentityId()) == false)
+        if (other.getIdentityId() != null && other.getIdentityId().equals(this.getIdentityId()) == false)
             return false;
         if (other.getDatasetName() == null ^ this.getDatasetName() == null)
             return false;
-        if (other.getDatasetName() != null
-                && other.getDatasetName().equals(this.getDatasetName()) == false)
+        if (other.getDatasetName() != null && other.getDatasetName().equals(this.getDatasetName()) == false)
             return false;
         if (other.getLastSyncCount() == null ^ this.getLastSyncCount() == null)
             return false;
-        if (other.getLastSyncCount() != null
-                && other.getLastSyncCount().equals(this.getLastSyncCount()) == false)
+        if (other.getLastSyncCount() != null && other.getLastSyncCount().equals(this.getLastSyncCount()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
-        if (other.getSyncSessionToken() == null
-                ^ this.getSyncSessionToken() == null)
+        if (other.getSyncSessionToken() == null ^ this.getSyncSessionToken() == null)
             return false;
-        if (other.getSyncSessionToken() != null
-                && other.getSyncSessionToken().equals(
-                        this.getSyncSessionToken()) == false)
+        if (other.getSyncSessionToken() != null && other.getSyncSessionToken().equals(this.getSyncSessionToken()) == false)
             return false;
         return true;
     }
@@ -410,27 +375,13 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDatasetName() == null) ? 0 : getDatasetName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastSyncCount() == null) ? 0 : getLastSyncCount()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSyncSessionToken() == null) ? 0 : getSyncSessionToken()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode());
+        hashCode = prime * hashCode + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
+        hashCode = prime * hashCode + ((getDatasetName() == null) ? 0 : getDatasetName().hashCode());
+        hashCode = prime * hashCode + ((getLastSyncCount() == null) ? 0 : getLastSyncCount().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getSyncSessionToken() == null) ? 0 : getSyncSessionToken().hashCode());
         return hashCode;
     }
 

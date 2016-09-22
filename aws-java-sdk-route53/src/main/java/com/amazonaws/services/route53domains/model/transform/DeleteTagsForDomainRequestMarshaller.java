@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model.transform;
 
@@ -35,49 +33,39 @@ import com.amazonaws.protocol.json.*;
 /**
  * DeleteTagsForDomainRequest Marshaller
  */
-public class DeleteTagsForDomainRequestMarshaller
-        implements
-        Marshaller<Request<DeleteTagsForDomainRequest>, DeleteTagsForDomainRequest> {
+public class DeleteTagsForDomainRequestMarshaller implements Marshaller<Request<DeleteTagsForDomainRequest>, DeleteTagsForDomainRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DeleteTagsForDomainRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DeleteTagsForDomainRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DeleteTagsForDomainRequest> marshall(
-            DeleteTagsForDomainRequest deleteTagsForDomainRequest) {
+    public Request<DeleteTagsForDomainRequest> marshall(DeleteTagsForDomainRequest deleteTagsForDomainRequest) {
 
         if (deleteTagsForDomainRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteTagsForDomainRequest> request = new DefaultRequest<DeleteTagsForDomainRequest>(
-                deleteTagsForDomainRequest, "AmazonRoute53Domains");
-        request.addHeader("X-Amz-Target",
-                "Route53Domains_v20140515.DeleteTagsForDomain");
+        Request<DeleteTagsForDomainRequest> request = new DefaultRequest<DeleteTagsForDomainRequest>(deleteTagsForDomainRequest, "AmazonRoute53Domains");
+        request.addHeader("X-Amz-Target", "Route53Domains_v20140515.DeleteTagsForDomain");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (deleteTagsForDomainRequest.getDomainName() != null) {
-                jsonGenerator.writeFieldName("DomainName").writeValue(
-                        deleteTagsForDomainRequest.getDomainName());
+                jsonGenerator.writeFieldName("DomainName").writeValue(deleteTagsForDomainRequest.getDomainName());
             }
 
             com.amazonaws.internal.SdkInternalList<String> tagsToDeleteList = (com.amazonaws.internal.SdkInternalList<String>) deleteTagsForDomainRequest
                     .getTagsToDelete();
-            if (!tagsToDeleteList.isEmpty()
-                    || !tagsToDeleteList.isAutoConstruct()) {
+            if (!tagsToDeleteList.isEmpty() || !tagsToDeleteList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("TagsToDelete");
                 jsonGenerator.writeStartArray();
                 for (String tagsToDeleteListValue : tagsToDeleteList) {
@@ -92,12 +80,10 @@ public class DeleteTagsForDomainRequestMarshaller
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

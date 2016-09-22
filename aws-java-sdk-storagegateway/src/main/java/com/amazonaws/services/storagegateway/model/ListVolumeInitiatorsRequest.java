@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -22,28 +20,25 @@ import com.amazonaws.AmazonWebServiceRequest;
  * ListVolumeInitiatorsInput
  * </p>
  */
-public class ListVolumeInitiatorsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListVolumeInitiatorsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes for the gateway.
+     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway
+     * volumes for the gateway.
      * </p>
      */
     private String volumeARN;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes for the gateway.
+     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway
+     * volumes for the gateway.
      * </p>
      * 
      * @param volumeARN
-     *        The Amazon Resource Name (ARN) of the volume. Use the
-     *        <a>ListVolumes</a> operation to return a list of gateway volumes
-     *        for the gateway.
+     *        The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of
+     *        gateway volumes for the gateway.
      */
 
     public void setVolumeARN(String volumeARN) {
@@ -52,13 +47,12 @@ public class ListVolumeInitiatorsRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes for the gateway.
+     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway
+     * volumes for the gateway.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the volume. Use the
-     *         <a>ListVolumes</a> operation to return a list of gateway volumes
-     *         for the gateway.
+     * @return The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of
+     *         gateway volumes for the gateway.
      */
 
     public String getVolumeARN() {
@@ -67,16 +61,14 @@ public class ListVolumeInitiatorsRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes for the gateway.
+     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway
+     * volumes for the gateway.
      * </p>
      * 
      * @param volumeARN
-     *        The Amazon Resource Name (ARN) of the volume. Use the
-     *        <a>ListVolumes</a> operation to return a list of gateway volumes
-     *        for the gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of
+     *        gateway volumes for the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListVolumeInitiatorsRequest withVolumeARN(String volumeARN) {
@@ -85,8 +77,7 @@ public class ListVolumeInitiatorsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -114,8 +105,7 @@ public class ListVolumeInitiatorsRequest extends
         ListVolumeInitiatorsRequest other = (ListVolumeInitiatorsRequest) obj;
         if (other.getVolumeARN() == null ^ this.getVolumeARN() == null)
             return false;
-        if (other.getVolumeARN() != null
-                && other.getVolumeARN().equals(this.getVolumeARN()) == false)
+        if (other.getVolumeARN() != null && other.getVolumeARN().equals(this.getVolumeARN()) == false)
             return false;
         return true;
     }
@@ -125,8 +115,7 @@ public class ListVolumeInitiatorsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode());
+        hashCode = prime * hashCode + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode());
         return hashCode;
     }
 

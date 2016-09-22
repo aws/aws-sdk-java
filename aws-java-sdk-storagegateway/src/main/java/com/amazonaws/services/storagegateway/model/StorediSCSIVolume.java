@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -59,8 +57,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
 
     /**
      * @param volumeARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StorediSCSIVolume withVolumeARN(String volumeARN) {
@@ -86,8 +83,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
 
     /**
      * @param volumeId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StorediSCSIVolume withVolumeId(String volumeId) {
@@ -113,8 +109,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
 
     /**
      * @param volumeType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StorediSCSIVolume withVolumeType(String volumeType) {
@@ -140,8 +135,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
 
     /**
      * @param volumeStatus
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StorediSCSIVolume withVolumeStatus(String volumeStatus) {
@@ -167,8 +161,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
 
     /**
      * @param volumeSizeInBytes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StorediSCSIVolume withVolumeSizeInBytes(Long volumeSizeInBytes) {
@@ -194,8 +187,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
 
     /**
      * @param volumeProgress
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StorediSCSIVolume withVolumeProgress(Double volumeProgress) {
@@ -221,8 +213,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
 
     /**
      * @param volumeDiskId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StorediSCSIVolume withVolumeDiskId(String volumeDiskId) {
@@ -248,8 +239,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
 
     /**
      * @param sourceSnapshotId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StorediSCSIVolume withSourceSnapshotId(String sourceSnapshotId) {
@@ -275,12 +265,10 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
 
     /**
      * @param preservedExistingData
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StorediSCSIVolume withPreservedExistingData(
-            Boolean preservedExistingData) {
+    public StorediSCSIVolume withPreservedExistingData(Boolean preservedExistingData) {
         setPreservedExistingData(preservedExistingData);
         return this;
     }
@@ -297,8 +285,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
      * @param volumeiSCSIAttributes
      */
 
-    public void setVolumeiSCSIAttributes(
-            VolumeiSCSIAttributes volumeiSCSIAttributes) {
+    public void setVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes) {
         this.volumeiSCSIAttributes = volumeiSCSIAttributes;
     }
 
@@ -312,19 +299,16 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
 
     /**
      * @param volumeiSCSIAttributes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StorediSCSIVolume withVolumeiSCSIAttributes(
-            VolumeiSCSIAttributes volumeiSCSIAttributes) {
+    public StorediSCSIVolume withVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes) {
         setVolumeiSCSIAttributes(volumeiSCSIAttributes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -351,8 +335,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
         if (getSourceSnapshotId() != null)
             sb.append("SourceSnapshotId: " + getSourceSnapshotId() + ",");
         if (getPreservedExistingData() != null)
-            sb.append("PreservedExistingData: " + getPreservedExistingData()
-                    + ",");
+            sb.append("PreservedExistingData: " + getPreservedExistingData() + ",");
         if (getVolumeiSCSIAttributes() != null)
             sb.append("VolumeiSCSIAttributes: " + getVolumeiSCSIAttributes());
         sb.append("}");
@@ -371,62 +354,43 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
         StorediSCSIVolume other = (StorediSCSIVolume) obj;
         if (other.getVolumeARN() == null ^ this.getVolumeARN() == null)
             return false;
-        if (other.getVolumeARN() != null
-                && other.getVolumeARN().equals(this.getVolumeARN()) == false)
+        if (other.getVolumeARN() != null && other.getVolumeARN().equals(this.getVolumeARN()) == false)
             return false;
         if (other.getVolumeId() == null ^ this.getVolumeId() == null)
             return false;
-        if (other.getVolumeId() != null
-                && other.getVolumeId().equals(this.getVolumeId()) == false)
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
             return false;
         if (other.getVolumeType() == null ^ this.getVolumeType() == null)
             return false;
-        if (other.getVolumeType() != null
-                && other.getVolumeType().equals(this.getVolumeType()) == false)
+        if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false)
             return false;
         if (other.getVolumeStatus() == null ^ this.getVolumeStatus() == null)
             return false;
-        if (other.getVolumeStatus() != null
-                && other.getVolumeStatus().equals(this.getVolumeStatus()) == false)
+        if (other.getVolumeStatus() != null && other.getVolumeStatus().equals(this.getVolumeStatus()) == false)
             return false;
-        if (other.getVolumeSizeInBytes() == null
-                ^ this.getVolumeSizeInBytes() == null)
+        if (other.getVolumeSizeInBytes() == null ^ this.getVolumeSizeInBytes() == null)
             return false;
-        if (other.getVolumeSizeInBytes() != null
-                && other.getVolumeSizeInBytes().equals(
-                        this.getVolumeSizeInBytes()) == false)
+        if (other.getVolumeSizeInBytes() != null && other.getVolumeSizeInBytes().equals(this.getVolumeSizeInBytes()) == false)
             return false;
-        if (other.getVolumeProgress() == null
-                ^ this.getVolumeProgress() == null)
+        if (other.getVolumeProgress() == null ^ this.getVolumeProgress() == null)
             return false;
-        if (other.getVolumeProgress() != null
-                && other.getVolumeProgress().equals(this.getVolumeProgress()) == false)
+        if (other.getVolumeProgress() != null && other.getVolumeProgress().equals(this.getVolumeProgress()) == false)
             return false;
         if (other.getVolumeDiskId() == null ^ this.getVolumeDiskId() == null)
             return false;
-        if (other.getVolumeDiskId() != null
-                && other.getVolumeDiskId().equals(this.getVolumeDiskId()) == false)
+        if (other.getVolumeDiskId() != null && other.getVolumeDiskId().equals(this.getVolumeDiskId()) == false)
             return false;
-        if (other.getSourceSnapshotId() == null
-                ^ this.getSourceSnapshotId() == null)
+        if (other.getSourceSnapshotId() == null ^ this.getSourceSnapshotId() == null)
             return false;
-        if (other.getSourceSnapshotId() != null
-                && other.getSourceSnapshotId().equals(
-                        this.getSourceSnapshotId()) == false)
+        if (other.getSourceSnapshotId() != null && other.getSourceSnapshotId().equals(this.getSourceSnapshotId()) == false)
             return false;
-        if (other.getPreservedExistingData() == null
-                ^ this.getPreservedExistingData() == null)
+        if (other.getPreservedExistingData() == null ^ this.getPreservedExistingData() == null)
             return false;
-        if (other.getPreservedExistingData() != null
-                && other.getPreservedExistingData().equals(
-                        this.getPreservedExistingData()) == false)
+        if (other.getPreservedExistingData() != null && other.getPreservedExistingData().equals(this.getPreservedExistingData()) == false)
             return false;
-        if (other.getVolumeiSCSIAttributes() == null
-                ^ this.getVolumeiSCSIAttributes() == null)
+        if (other.getVolumeiSCSIAttributes() == null ^ this.getVolumeiSCSIAttributes() == null)
             return false;
-        if (other.getVolumeiSCSIAttributes() != null
-                && other.getVolumeiSCSIAttributes().equals(
-                        this.getVolumeiSCSIAttributes()) == false)
+        if (other.getVolumeiSCSIAttributes() != null && other.getVolumeiSCSIAttributes().equals(this.getVolumeiSCSIAttributes()) == false)
             return false;
         return true;
     }
@@ -436,40 +400,16 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
-        hashCode = prime * hashCode
-                + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeStatus() == null) ? 0 : getVolumeStatus()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeSizeInBytes() == null) ? 0
-                        : getVolumeSizeInBytes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeProgress() == null) ? 0 : getVolumeProgress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeDiskId() == null) ? 0 : getVolumeDiskId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceSnapshotId() == null) ? 0 : getSourceSnapshotId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPreservedExistingData() == null) ? 0
-                        : getPreservedExistingData().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeiSCSIAttributes() == null) ? 0
-                        : getVolumeiSCSIAttributes().hashCode());
+        hashCode = prime * hashCode + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode());
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
+        hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
+        hashCode = prime * hashCode + ((getVolumeStatus() == null) ? 0 : getVolumeStatus().hashCode());
+        hashCode = prime * hashCode + ((getVolumeSizeInBytes() == null) ? 0 : getVolumeSizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getVolumeProgress() == null) ? 0 : getVolumeProgress().hashCode());
+        hashCode = prime * hashCode + ((getVolumeDiskId() == null) ? 0 : getVolumeDiskId().hashCode());
+        hashCode = prime * hashCode + ((getSourceSnapshotId() == null) ? 0 : getSourceSnapshotId().hashCode());
+        hashCode = prime * hashCode + ((getPreservedExistingData() == null) ? 0 : getPreservedExistingData().hashCode());
+        hashCode = prime * hashCode + ((getVolumeiSCSIAttributes() == null) ? 0 : getVolumeiSCSIAttributes().hashCode());
         return hashCode;
     }
 
@@ -478,9 +418,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
         try {
             return (StorediSCSIVolume) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

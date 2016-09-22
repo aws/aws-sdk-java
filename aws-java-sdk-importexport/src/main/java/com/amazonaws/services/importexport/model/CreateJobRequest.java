@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.importexport.model;
 
@@ -20,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Input structure for the CreateJob operation.
  */
-public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String jobType;
 
@@ -53,8 +50,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * @param jobType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */
 
@@ -74,8 +70,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * @param jobType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */
 
@@ -102,8 +97,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * @param manifest
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobRequest withManifest(String manifest) {
@@ -129,8 +123,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * @param manifestAddendum
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobRequest withManifestAddendum(String manifestAddendum) {
@@ -156,8 +149,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * @param validateOnly
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobRequest withValidateOnly(Boolean validateOnly) {
@@ -191,8 +183,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * @param aPIVersion
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobRequest withAPIVersion(String aPIVersion) {
@@ -201,8 +192,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -238,30 +228,23 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
         CreateJobRequest other = (CreateJobRequest) obj;
         if (other.getJobType() == null ^ this.getJobType() == null)
             return false;
-        if (other.getJobType() != null
-                && other.getJobType().equals(this.getJobType()) == false)
+        if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
             return false;
         if (other.getManifest() == null ^ this.getManifest() == null)
             return false;
-        if (other.getManifest() != null
-                && other.getManifest().equals(this.getManifest()) == false)
+        if (other.getManifest() != null && other.getManifest().equals(this.getManifest()) == false)
             return false;
-        if (other.getManifestAddendum() == null
-                ^ this.getManifestAddendum() == null)
+        if (other.getManifestAddendum() == null ^ this.getManifestAddendum() == null)
             return false;
-        if (other.getManifestAddendum() != null
-                && other.getManifestAddendum().equals(
-                        this.getManifestAddendum()) == false)
+        if (other.getManifestAddendum() != null && other.getManifestAddendum().equals(this.getManifestAddendum()) == false)
             return false;
         if (other.getValidateOnly() == null ^ this.getValidateOnly() == null)
             return false;
-        if (other.getValidateOnly() != null
-                && other.getValidateOnly().equals(this.getValidateOnly()) == false)
+        if (other.getValidateOnly() != null && other.getValidateOnly().equals(this.getValidateOnly()) == false)
             return false;
         if (other.getAPIVersion() == null ^ this.getAPIVersion() == null)
             return false;
-        if (other.getAPIVersion() != null
-                && other.getAPIVersion().equals(this.getAPIVersion()) == false)
+        if (other.getAPIVersion() != null && other.getAPIVersion().equals(this.getAPIVersion()) == false)
             return false;
         return true;
     }
@@ -271,20 +254,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJobType() == null) ? 0 : getJobType().hashCode());
-        hashCode = prime * hashCode
-                + ((getManifest() == null) ? 0 : getManifest().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getManifestAddendum() == null) ? 0 : getManifestAddendum()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getValidateOnly() == null) ? 0 : getValidateOnly()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getAPIVersion() == null) ? 0 : getAPIVersion().hashCode());
+        hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
+        hashCode = prime * hashCode + ((getManifest() == null) ? 0 : getManifest().hashCode());
+        hashCode = prime * hashCode + ((getManifestAddendum() == null) ? 0 : getManifestAddendum().hashCode());
+        hashCode = prime * hashCode + ((getValidateOnly() == null) ? 0 : getValidateOnly().hashCode());
+        hashCode = prime * hashCode + ((getAPIVersion() == null) ? 0 : getAPIVersion().hashCode());
         return hashCode;
     }
 

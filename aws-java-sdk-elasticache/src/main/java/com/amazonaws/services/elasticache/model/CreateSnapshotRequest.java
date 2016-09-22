@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -22,14 +20,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>CreateSnapshot</i> action.
  * </p>
  */
-public class CreateSnapshotRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of an existing cache cluster. The snapshot will be created
-     * from this cache cluster.
+     * The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
      * </p>
      */
     private String cacheClusterId;
@@ -42,13 +37,11 @@ public class CreateSnapshotRequest extends
 
     /**
      * <p>
-     * The identifier of an existing cache cluster. The snapshot will be created
-     * from this cache cluster.
+     * The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
      * </p>
      * 
      * @param cacheClusterId
-     *        The identifier of an existing cache cluster. The snapshot will be
-     *        created from this cache cluster.
+     *        The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
      */
 
     public void setCacheClusterId(String cacheClusterId) {
@@ -57,12 +50,10 @@ public class CreateSnapshotRequest extends
 
     /**
      * <p>
-     * The identifier of an existing cache cluster. The snapshot will be created
-     * from this cache cluster.
+     * The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
      * </p>
      * 
-     * @return The identifier of an existing cache cluster. The snapshot will be
-     *         created from this cache cluster.
+     * @return The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
      */
 
     public String getCacheClusterId() {
@@ -71,15 +62,12 @@ public class CreateSnapshotRequest extends
 
     /**
      * <p>
-     * The identifier of an existing cache cluster. The snapshot will be created
-     * from this cache cluster.
+     * The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
      * </p>
      * 
      * @param cacheClusterId
-     *        The identifier of an existing cache cluster. The snapshot will be
-     *        created from this cache cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateSnapshotRequest withCacheClusterId(String cacheClusterId) {
@@ -119,8 +107,7 @@ public class CreateSnapshotRequest extends
      * 
      * @param snapshotName
      *        A name for the snapshot being created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateSnapshotRequest withSnapshotName(String snapshotName) {
@@ -129,8 +116,7 @@ public class CreateSnapshotRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -158,16 +144,13 @@ public class CreateSnapshotRequest extends
         if (obj instanceof CreateSnapshotRequest == false)
             return false;
         CreateSnapshotRequest other = (CreateSnapshotRequest) obj;
-        if (other.getCacheClusterId() == null
-                ^ this.getCacheClusterId() == null)
+        if (other.getCacheClusterId() == null ^ this.getCacheClusterId() == null)
             return false;
-        if (other.getCacheClusterId() != null
-                && other.getCacheClusterId().equals(this.getCacheClusterId()) == false)
+        if (other.getCacheClusterId() != null && other.getCacheClusterId().equals(this.getCacheClusterId()) == false)
             return false;
         if (other.getSnapshotName() == null ^ this.getSnapshotName() == null)
             return false;
-        if (other.getSnapshotName() != null
-                && other.getSnapshotName().equals(this.getSnapshotName()) == false)
+        if (other.getSnapshotName() != null && other.getSnapshotName().equals(this.getSnapshotName()) == false)
             return false;
         return true;
     }
@@ -177,14 +160,8 @@ public class CreateSnapshotRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCacheClusterId() == null) ? 0 : getCacheClusterId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotName() == null) ? 0 : getSnapshotName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotName() == null) ? 0 : getSnapshotName().hashCode());
         return hashCode;
     }
 

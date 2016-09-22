@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecr.model;
 
@@ -25,26 +23,23 @@ public class AuthorizationData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A base64-encoded string that contains authorization data for the
-     * specified Amazon ECR registry. When the string is decoded, it is
-     * presented in the format <code>user:password</code> for private registry
-     * authentication using <code>docker login</code>.
+     * A base64-encoded string that contains authorization data for the specified Amazon ECR registry. When the string
+     * is decoded, it is presented in the format <code>user:password</code> for private registry authentication using
+     * <code>docker login</code>.
      * </p>
      */
     private String authorizationToken;
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the authorization token
-     * expires. Authorization tokens are valid for 12 hours.
+     * The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are valid
+     * for 12 hours.
      * </p>
      */
     private java.util.Date expiresAt;
     /**
      * <p>
-     * The registry URL to use for this authorization token in a
-     * <code>docker login</code> command. The Amazon ECR registry URL format is
-     * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For
-     * example,
+     * The registry URL to use for this authorization token in a <code>docker login</code> command. The Amazon ECR
+     * registry URL format is <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
      * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>..
      * </p>
      */
@@ -52,17 +47,15 @@ public class AuthorizationData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A base64-encoded string that contains authorization data for the
-     * specified Amazon ECR registry. When the string is decoded, it is
-     * presented in the format <code>user:password</code> for private registry
-     * authentication using <code>docker login</code>.
+     * A base64-encoded string that contains authorization data for the specified Amazon ECR registry. When the string
+     * is decoded, it is presented in the format <code>user:password</code> for private registry authentication using
+     * <code>docker login</code>.
      * </p>
      * 
      * @param authorizationToken
-     *        A base64-encoded string that contains authorization data for the
-     *        specified Amazon ECR registry. When the string is decoded, it is
-     *        presented in the format <code>user:password</code> for private
-     *        registry authentication using <code>docker login</code>.
+     *        A base64-encoded string that contains authorization data for the specified Amazon ECR registry. When the
+     *        string is decoded, it is presented in the format <code>user:password</code> for private registry
+     *        authentication using <code>docker login</code>.
      */
 
     public void setAuthorizationToken(String authorizationToken) {
@@ -71,16 +64,14 @@ public class AuthorizationData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A base64-encoded string that contains authorization data for the
-     * specified Amazon ECR registry. When the string is decoded, it is
-     * presented in the format <code>user:password</code> for private registry
-     * authentication using <code>docker login</code>.
+     * A base64-encoded string that contains authorization data for the specified Amazon ECR registry. When the string
+     * is decoded, it is presented in the format <code>user:password</code> for private registry authentication using
+     * <code>docker login</code>.
      * </p>
      * 
-     * @return A base64-encoded string that contains authorization data for the
-     *         specified Amazon ECR registry. When the string is decoded, it is
-     *         presented in the format <code>user:password</code> for private
-     *         registry authentication using <code>docker login</code>.
+     * @return A base64-encoded string that contains authorization data for the specified Amazon ECR registry. When the
+     *         string is decoded, it is presented in the format <code>user:password</code> for private registry
+     *         authentication using <code>docker login</code>.
      */
 
     public String getAuthorizationToken() {
@@ -89,19 +80,16 @@ public class AuthorizationData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A base64-encoded string that contains authorization data for the
-     * specified Amazon ECR registry. When the string is decoded, it is
-     * presented in the format <code>user:password</code> for private registry
-     * authentication using <code>docker login</code>.
+     * A base64-encoded string that contains authorization data for the specified Amazon ECR registry. When the string
+     * is decoded, it is presented in the format <code>user:password</code> for private registry authentication using
+     * <code>docker login</code>.
      * </p>
      * 
      * @param authorizationToken
-     *        A base64-encoded string that contains authorization data for the
-     *        specified Amazon ECR registry. When the string is decoded, it is
-     *        presented in the format <code>user:password</code> for private
-     *        registry authentication using <code>docker login</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A base64-encoded string that contains authorization data for the specified Amazon ECR registry. When the
+     *        string is decoded, it is presented in the format <code>user:password</code> for private registry
+     *        authentication using <code>docker login</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AuthorizationData withAuthorizationToken(String authorizationToken) {
@@ -111,13 +99,13 @@ public class AuthorizationData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the authorization token
-     * expires. Authorization tokens are valid for 12 hours.
+     * The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are valid
+     * for 12 hours.
      * </p>
      * 
      * @param expiresAt
-     *        The Unix time in seconds and milliseconds when the authorization
-     *        token expires. Authorization tokens are valid for 12 hours.
+     *        The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are
+     *        valid for 12 hours.
      */
 
     public void setExpiresAt(java.util.Date expiresAt) {
@@ -126,12 +114,12 @@ public class AuthorizationData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the authorization token
-     * expires. Authorization tokens are valid for 12 hours.
+     * The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are valid
+     * for 12 hours.
      * </p>
      * 
-     * @return The Unix time in seconds and milliseconds when the authorization
-     *         token expires. Authorization tokens are valid for 12 hours.
+     * @return The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are
+     *         valid for 12 hours.
      */
 
     public java.util.Date getExpiresAt() {
@@ -140,15 +128,14 @@ public class AuthorizationData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the authorization token
-     * expires. Authorization tokens are valid for 12 hours.
+     * The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are valid
+     * for 12 hours.
      * </p>
      * 
      * @param expiresAt
-     *        The Unix time in seconds and milliseconds when the authorization
-     *        token expires. Authorization tokens are valid for 12 hours.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are
+     *        valid for 12 hours.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AuthorizationData withExpiresAt(java.util.Date expiresAt) {
@@ -158,21 +145,15 @@ public class AuthorizationData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The registry URL to use for this authorization token in a
-     * <code>docker login</code> command. The Amazon ECR registry URL format is
-     * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For
-     * example,
+     * The registry URL to use for this authorization token in a <code>docker login</code> command. The Amazon ECR
+     * registry URL format is <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
      * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>..
      * </p>
      * 
      * @param proxyEndpoint
-     *        The registry URL to use for this authorization token in a
-     *        <code>docker login</code> command. The Amazon ECR registry URL
-     *        format is
-     *        <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>.
-     *        For example,
-     *        <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>
-     *        ..
+     *        The registry URL to use for this authorization token in a <code>docker login</code> command. The Amazon
+     *        ECR registry URL format is <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
+     *        <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>..
      */
 
     public void setProxyEndpoint(String proxyEndpoint) {
@@ -181,20 +162,14 @@ public class AuthorizationData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The registry URL to use for this authorization token in a
-     * <code>docker login</code> command. The Amazon ECR registry URL format is
-     * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For
-     * example,
+     * The registry URL to use for this authorization token in a <code>docker login</code> command. The Amazon ECR
+     * registry URL format is <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
      * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>..
      * </p>
      * 
-     * @return The registry URL to use for this authorization token in a
-     *         <code>docker login</code> command. The Amazon ECR registry URL
-     *         format is
-     *         <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>.
-     *         For example,
-     *         <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>
-     *         ..
+     * @return The registry URL to use for this authorization token in a <code>docker login</code> command. The Amazon
+     *         ECR registry URL format is <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
+     *         <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>..
      */
 
     public String getProxyEndpoint() {
@@ -203,23 +178,16 @@ public class AuthorizationData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The registry URL to use for this authorization token in a
-     * <code>docker login</code> command. The Amazon ECR registry URL format is
-     * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For
-     * example,
+     * The registry URL to use for this authorization token in a <code>docker login</code> command. The Amazon ECR
+     * registry URL format is <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
      * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>..
      * </p>
      * 
      * @param proxyEndpoint
-     *        The registry URL to use for this authorization token in a
-     *        <code>docker login</code> command. The Amazon ECR registry URL
-     *        format is
-     *        <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>.
-     *        For example,
-     *        <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>
-     *        ..
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The registry URL to use for this authorization token in a <code>docker login</code> command. The Amazon
+     *        ECR registry URL format is <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
+     *        <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>..
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AuthorizationData withProxyEndpoint(String proxyEndpoint) {
@@ -228,8 +196,7 @@ public class AuthorizationData implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -259,22 +226,17 @@ public class AuthorizationData implements Serializable, Cloneable {
         if (obj instanceof AuthorizationData == false)
             return false;
         AuthorizationData other = (AuthorizationData) obj;
-        if (other.getAuthorizationToken() == null
-                ^ this.getAuthorizationToken() == null)
+        if (other.getAuthorizationToken() == null ^ this.getAuthorizationToken() == null)
             return false;
-        if (other.getAuthorizationToken() != null
-                && other.getAuthorizationToken().equals(
-                        this.getAuthorizationToken()) == false)
+        if (other.getAuthorizationToken() != null && other.getAuthorizationToken().equals(this.getAuthorizationToken()) == false)
             return false;
         if (other.getExpiresAt() == null ^ this.getExpiresAt() == null)
             return false;
-        if (other.getExpiresAt() != null
-                && other.getExpiresAt().equals(this.getExpiresAt()) == false)
+        if (other.getExpiresAt() != null && other.getExpiresAt().equals(this.getExpiresAt()) == false)
             return false;
         if (other.getProxyEndpoint() == null ^ this.getProxyEndpoint() == null)
             return false;
-        if (other.getProxyEndpoint() != null
-                && other.getProxyEndpoint().equals(this.getProxyEndpoint()) == false)
+        if (other.getProxyEndpoint() != null && other.getProxyEndpoint().equals(this.getProxyEndpoint()) == false)
             return false;
         return true;
     }
@@ -284,16 +246,9 @@ public class AuthorizationData implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAuthorizationToken() == null) ? 0
-                        : getAuthorizationToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getExpiresAt() == null) ? 0 : getExpiresAt().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProxyEndpoint() == null) ? 0 : getProxyEndpoint()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAuthorizationToken() == null) ? 0 : getAuthorizationToken().hashCode());
+        hashCode = prime * hashCode + ((getExpiresAt() == null) ? 0 : getExpiresAt().hashCode());
+        hashCode = prime * hashCode + ((getProxyEndpoint() == null) ? 0 : getProxyEndpoint().hashCode());
         return hashCode;
     }
 
@@ -302,9 +257,7 @@ public class AuthorizationData implements Serializable, Cloneable {
         try {
             return (AuthorizationData) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

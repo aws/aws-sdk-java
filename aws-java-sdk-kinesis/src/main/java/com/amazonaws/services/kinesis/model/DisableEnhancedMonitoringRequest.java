@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesis.model;
 
@@ -22,14 +20,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for <a>DisableEnhancedMonitoring</a>.
  * </p>
  */
-public class DisableEnhancedMonitoringRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream for which to disable enhanced
-     * monitoring.
+     * The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
      * </p>
      */
     private String streamName;
@@ -38,8 +33,7 @@ public class DisableEnhancedMonitoringRequest extends
      * List of shard-level metrics to disable.
      * </p>
      * <p>
-     * The following are the valid shard-level metrics. The value "
-     * <code>ALL</code>" disables every metric.
+     * The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.
      * </p>
      * <ul>
      * <li> <code>IncomingBytes</code></li>
@@ -52,23 +46,20 @@ public class DisableEnhancedMonitoringRequest extends
      * <li> <code>ALL</code></li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html"
-     * >Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a>
-     * in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+     * Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> shardLevelMetrics;
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream for which to disable enhanced
-     * monitoring.
+     * The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon Kinesis stream for which to disable
-     *        enhanced monitoring.
+     *        The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
      */
 
     public void setStreamName(String streamName) {
@@ -77,12 +68,10 @@ public class DisableEnhancedMonitoringRequest extends
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream for which to disable enhanced
-     * monitoring.
+     * The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
      * </p>
      * 
-     * @return The name of the Amazon Kinesis stream for which to disable
-     *         enhanced monitoring.
+     * @return The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
      */
 
     public String getStreamName() {
@@ -91,15 +80,12 @@ public class DisableEnhancedMonitoringRequest extends
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream for which to disable enhanced
-     * monitoring.
+     * The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon Kinesis stream for which to disable
-     *        enhanced monitoring.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisableEnhancedMonitoringRequest withStreamName(String streamName) {
@@ -112,8 +98,7 @@ public class DisableEnhancedMonitoringRequest extends
      * List of shard-level metrics to disable.
      * </p>
      * <p>
-     * The following are the valid shard-level metrics. The value "
-     * <code>ALL</code>" disables every metric.
+     * The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.
      * </p>
      * <ul>
      * <li> <code>IncomingBytes</code></li>
@@ -126,16 +111,14 @@ public class DisableEnhancedMonitoringRequest extends
      * <li> <code>ALL</code></li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html"
-     * >Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a>
-     * in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+     * Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      * 
      * @return List of shard-level metrics to disable.</p>
      *         <p>
-     *         The following are the valid shard-level metrics. The value "
-     *         <code>ALL</code>" disables every metric.
+     *         The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.
      *         </p>
      *         <ul>
      *         <li> <code>IncomingBytes</code></li>
@@ -148,10 +131,9 @@ public class DisableEnhancedMonitoringRequest extends
      *         <li> <code>ALL</code></li>
      *         </ul>
      *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html"
-     *         >Monitoring the Amazon Kinesis Streams Service with Amazon
-     *         CloudWatch</a> in the <i>Amazon Kinesis Streams Developer
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the
+     *         Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer
      *         Guide</i>.
      * @see MetricsName
      */
@@ -168,8 +150,7 @@ public class DisableEnhancedMonitoringRequest extends
      * List of shard-level metrics to disable.
      * </p>
      * <p>
-     * The following are the valid shard-level metrics. The value "
-     * <code>ALL</code>" disables every metric.
+     * The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.
      * </p>
      * <ul>
      * <li> <code>IncomingBytes</code></li>
@@ -182,17 +163,15 @@ public class DisableEnhancedMonitoringRequest extends
      * <li> <code>ALL</code></li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html"
-     * >Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a>
-     * in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+     * Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      * 
      * @param shardLevelMetrics
      *        List of shard-level metrics to disable.</p>
      *        <p>
-     *        The following are the valid shard-level metrics. The value "
-     *        <code>ALL</code>" disables every metric.
+     *        The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.
      *        </p>
      *        <ul>
      *        <li> <code>IncomingBytes</code></li>
@@ -205,23 +184,19 @@ public class DisableEnhancedMonitoringRequest extends
      *        <li> <code>ALL</code></li>
      *        </ul>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html"
-     *        >Monitoring the Amazon Kinesis Streams Service with Amazon
-     *        CloudWatch</a> in the <i>Amazon Kinesis Streams Developer
-     *        Guide</i>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+     *        Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * @see MetricsName
      */
 
-    public void setShardLevelMetrics(
-            java.util.Collection<String> shardLevelMetrics) {
+    public void setShardLevelMetrics(java.util.Collection<String> shardLevelMetrics) {
         if (shardLevelMetrics == null) {
             this.shardLevelMetrics = null;
             return;
         }
 
-        this.shardLevelMetrics = new com.amazonaws.internal.SdkInternalList<String>(
-                shardLevelMetrics);
+        this.shardLevelMetrics = new com.amazonaws.internal.SdkInternalList<String>(shardLevelMetrics);
     }
 
     /**
@@ -229,8 +204,7 @@ public class DisableEnhancedMonitoringRequest extends
      * List of shard-level metrics to disable.
      * </p>
      * <p>
-     * The following are the valid shard-level metrics. The value "
-     * <code>ALL</code>" disables every metric.
+     * The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.
      * </p>
      * <ul>
      * <li> <code>IncomingBytes</code></li>
@@ -243,23 +217,20 @@ public class DisableEnhancedMonitoringRequest extends
      * <li> <code>ALL</code></li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html"
-     * >Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a>
-     * in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+     * Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setShardLevelMetrics(java.util.Collection)} or
-     * {@link #withShardLevelMetrics(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setShardLevelMetrics(java.util.Collection)} or {@link #withShardLevelMetrics(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param shardLevelMetrics
      *        List of shard-level metrics to disable.</p>
      *        <p>
-     *        The following are the valid shard-level metrics. The value "
-     *        <code>ALL</code>" disables every metric.
+     *        The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.
      *        </p>
      *        <ul>
      *        <li> <code>IncomingBytes</code></li>
@@ -272,21 +243,16 @@ public class DisableEnhancedMonitoringRequest extends
      *        <li> <code>ALL</code></li>
      *        </ul>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html"
-     *        >Monitoring the Amazon Kinesis Streams Service with Amazon
-     *        CloudWatch</a> in the <i>Amazon Kinesis Streams Developer
-     *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+     *        Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricsName
      */
 
-    public DisableEnhancedMonitoringRequest withShardLevelMetrics(
-            String... shardLevelMetrics) {
+    public DisableEnhancedMonitoringRequest withShardLevelMetrics(String... shardLevelMetrics) {
         if (this.shardLevelMetrics == null) {
-            setShardLevelMetrics(new com.amazonaws.internal.SdkInternalList<String>(
-                    shardLevelMetrics.length));
+            setShardLevelMetrics(new com.amazonaws.internal.SdkInternalList<String>(shardLevelMetrics.length));
         }
         for (String ele : shardLevelMetrics) {
             this.shardLevelMetrics.add(ele);
@@ -299,8 +265,7 @@ public class DisableEnhancedMonitoringRequest extends
      * List of shard-level metrics to disable.
      * </p>
      * <p>
-     * The following are the valid shard-level metrics. The value "
-     * <code>ALL</code>" disables every metric.
+     * The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.
      * </p>
      * <ul>
      * <li> <code>IncomingBytes</code></li>
@@ -313,17 +278,15 @@ public class DisableEnhancedMonitoringRequest extends
      * <li> <code>ALL</code></li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html"
-     * >Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a>
-     * in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+     * Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      * 
      * @param shardLevelMetrics
      *        List of shard-level metrics to disable.</p>
      *        <p>
-     *        The following are the valid shard-level metrics. The value "
-     *        <code>ALL</code>" disables every metric.
+     *        The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.
      *        </p>
      *        <ul>
      *        <li> <code>IncomingBytes</code></li>
@@ -336,18 +299,14 @@ public class DisableEnhancedMonitoringRequest extends
      *        <li> <code>ALL</code></li>
      *        </ul>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html"
-     *        >Monitoring the Amazon Kinesis Streams Service with Amazon
-     *        CloudWatch</a> in the <i>Amazon Kinesis Streams Developer
-     *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+     *        Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricsName
      */
 
-    public DisableEnhancedMonitoringRequest withShardLevelMetrics(
-            java.util.Collection<String> shardLevelMetrics) {
+    public DisableEnhancedMonitoringRequest withShardLevelMetrics(java.util.Collection<String> shardLevelMetrics) {
         setShardLevelMetrics(shardLevelMetrics);
         return this;
     }
@@ -357,8 +316,7 @@ public class DisableEnhancedMonitoringRequest extends
      * List of shard-level metrics to disable.
      * </p>
      * <p>
-     * The following are the valid shard-level metrics. The value "
-     * <code>ALL</code>" disables every metric.
+     * The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.
      * </p>
      * <ul>
      * <li> <code>IncomingBytes</code></li>
@@ -371,17 +329,15 @@ public class DisableEnhancedMonitoringRequest extends
      * <li> <code>ALL</code></li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html"
-     * >Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a>
-     * in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+     * Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      * 
      * @param shardLevelMetrics
      *        List of shard-level metrics to disable.</p>
      *        <p>
-     *        The following are the valid shard-level metrics. The value "
-     *        <code>ALL</code>" disables every metric.
+     *        The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.
      *        </p>
      *        <ul>
      *        <li> <code>IncomingBytes</code></li>
@@ -394,20 +350,15 @@ public class DisableEnhancedMonitoringRequest extends
      *        <li> <code>ALL</code></li>
      *        </ul>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html"
-     *        >Monitoring the Amazon Kinesis Streams Service with Amazon
-     *        CloudWatch</a> in the <i>Amazon Kinesis Streams Developer
-     *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+     *        Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricsName
      */
 
-    public DisableEnhancedMonitoringRequest withShardLevelMetrics(
-            MetricsName... shardLevelMetrics) {
-        com.amazonaws.internal.SdkInternalList<String> shardLevelMetricsCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                shardLevelMetrics.length);
+    public DisableEnhancedMonitoringRequest withShardLevelMetrics(MetricsName... shardLevelMetrics) {
+        com.amazonaws.internal.SdkInternalList<String> shardLevelMetricsCopy = new com.amazonaws.internal.SdkInternalList<String>(shardLevelMetrics.length);
         for (MetricsName value : shardLevelMetrics) {
             shardLevelMetricsCopy.add(value.toString());
         }
@@ -420,8 +371,7 @@ public class DisableEnhancedMonitoringRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -451,15 +401,11 @@ public class DisableEnhancedMonitoringRequest extends
         DisableEnhancedMonitoringRequest other = (DisableEnhancedMonitoringRequest) obj;
         if (other.getStreamName() == null ^ this.getStreamName() == null)
             return false;
-        if (other.getStreamName() != null
-                && other.getStreamName().equals(this.getStreamName()) == false)
+        if (other.getStreamName() != null && other.getStreamName().equals(this.getStreamName()) == false)
             return false;
-        if (other.getShardLevelMetrics() == null
-                ^ this.getShardLevelMetrics() == null)
+        if (other.getShardLevelMetrics() == null ^ this.getShardLevelMetrics() == null)
             return false;
-        if (other.getShardLevelMetrics() != null
-                && other.getShardLevelMetrics().equals(
-                        this.getShardLevelMetrics()) == false)
+        if (other.getShardLevelMetrics() != null && other.getShardLevelMetrics().equals(this.getShardLevelMetrics()) == false)
             return false;
         return true;
     }
@@ -469,12 +415,8 @@ public class DisableEnhancedMonitoringRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getShardLevelMetrics() == null) ? 0
-                        : getShardLevelMetrics().hashCode());
+        hashCode = prime * hashCode + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
+        hashCode = prime * hashCode + ((getShardLevelMetrics() == null) ? 0 : getShardLevelMetrics().hashCode());
         return hashCode;
     }
 

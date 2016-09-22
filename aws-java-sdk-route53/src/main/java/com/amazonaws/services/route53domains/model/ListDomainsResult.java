@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The ListDomains response includes the following elements.
  * </p>
  */
-public class ListDomainsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,16 +29,14 @@ public class ListDomainsResult extends
      * Type: Complex type containing a list of domain summaries.
      * </p>
      * <p>
-     * Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     * <code>Expiry</code>, <code>TransferLock</code>
+     * Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DomainSummary> domains;
     /**
      * <p>
-     * If there are more domains than you specified for <code>MaxItems</code> in
-     * the request, submit another request and include the value of
-     * <code>NextPageMarker</code> in the value of <code>Marker</code>.
+     * If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and
+     * include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
      * <p>
      * Type: String
@@ -61,8 +55,7 @@ public class ListDomainsResult extends
      * Type: Complex type containing a list of domain summaries.
      * </p>
      * <p>
-     * Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     * <code>Expiry</code>, <code>TransferLock</code>
+     * Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
      * </p>
      * 
      * @return A summary of domains.</p>
@@ -70,8 +63,7 @@ public class ListDomainsResult extends
      *         Type: Complex type containing a list of domain summaries.
      *         </p>
      *         <p>
-     *         Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     *         <code>Expiry</code>, <code>TransferLock</code>
+     *         Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
      */
 
     public java.util.List<DomainSummary> getDomains() {
@@ -89,8 +81,7 @@ public class ListDomainsResult extends
      * Type: Complex type containing a list of domain summaries.
      * </p>
      * <p>
-     * Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     * <code>Expiry</code>, <code>TransferLock</code>
+     * Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
      * </p>
      * 
      * @param domains
@@ -99,8 +90,7 @@ public class ListDomainsResult extends
      *        Type: Complex type containing a list of domain summaries.
      *        </p>
      *        <p>
-     *        Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     *        <code>Expiry</code>, <code>TransferLock</code>
+     *        Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
      */
 
     public void setDomains(java.util.Collection<DomainSummary> domains) {
@@ -109,8 +99,7 @@ public class ListDomainsResult extends
             return;
         }
 
-        this.domains = new com.amazonaws.internal.SdkInternalList<DomainSummary>(
-                domains);
+        this.domains = new com.amazonaws.internal.SdkInternalList<DomainSummary>(domains);
     }
 
     /**
@@ -121,14 +110,12 @@ public class ListDomainsResult extends
      * Type: Complex type containing a list of domain summaries.
      * </p>
      * <p>
-     * Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     * <code>Expiry</code>, <code>TransferLock</code>
+     * Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDomains(java.util.Collection)} or
-     * {@link #withDomains(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDomains(java.util.Collection)} or {@link #withDomains(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param domains
@@ -137,16 +124,13 @@ public class ListDomainsResult extends
      *        Type: Complex type containing a list of domain summaries.
      *        </p>
      *        <p>
-     *        Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     *        <code>Expiry</code>, <code>TransferLock</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDomainsResult withDomains(DomainSummary... domains) {
         if (this.domains == null) {
-            setDomains(new com.amazonaws.internal.SdkInternalList<DomainSummary>(
-                    domains.length));
+            setDomains(new com.amazonaws.internal.SdkInternalList<DomainSummary>(domains.length));
         }
         for (DomainSummary ele : domains) {
             this.domains.add(ele);
@@ -162,8 +146,7 @@ public class ListDomainsResult extends
      * Type: Complex type containing a list of domain summaries.
      * </p>
      * <p>
-     * Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     * <code>Expiry</code>, <code>TransferLock</code>
+     * Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
      * </p>
      * 
      * @param domains
@@ -172,23 +155,19 @@ public class ListDomainsResult extends
      *        Type: Complex type containing a list of domain summaries.
      *        </p>
      *        <p>
-     *        Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     *        <code>Expiry</code>, <code>TransferLock</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListDomainsResult withDomains(
-            java.util.Collection<DomainSummary> domains) {
+    public ListDomainsResult withDomains(java.util.Collection<DomainSummary> domains) {
         setDomains(domains);
         return this;
     }
 
     /**
      * <p>
-     * If there are more domains than you specified for <code>MaxItems</code> in
-     * the request, submit another request and include the value of
-     * <code>NextPageMarker</code> in the value of <code>Marker</code>.
+     * If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and
+     * include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
      * <p>
      * Type: String
@@ -198,10 +177,8 @@ public class ListDomainsResult extends
      * </p>
      * 
      * @param nextPageMarker
-     *        If there are more domains than you specified for
-     *        <code>MaxItems</code> in the request, submit another request and
-     *        include the value of <code>NextPageMarker</code> in the value of
-     *        <code>Marker</code>.</p>
+     *        If there are more domains than you specified for <code>MaxItems</code> in the request, submit another
+     *        request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -215,9 +192,8 @@ public class ListDomainsResult extends
 
     /**
      * <p>
-     * If there are more domains than you specified for <code>MaxItems</code> in
-     * the request, submit another request and include the value of
-     * <code>NextPageMarker</code> in the value of <code>Marker</code>.
+     * If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and
+     * include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
      * <p>
      * Type: String
@@ -226,10 +202,8 @@ public class ListDomainsResult extends
      * Parent: <code>Operations</code>
      * </p>
      * 
-     * @return If there are more domains than you specified for
-     *         <code>MaxItems</code> in the request, submit another request and
-     *         include the value of <code>NextPageMarker</code> in the value of
-     *         <code>Marker</code>.</p>
+     * @return If there are more domains than you specified for <code>MaxItems</code> in the request, submit another
+     *         request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -243,9 +217,8 @@ public class ListDomainsResult extends
 
     /**
      * <p>
-     * If there are more domains than you specified for <code>MaxItems</code> in
-     * the request, submit another request and include the value of
-     * <code>NextPageMarker</code> in the value of <code>Marker</code>.
+     * If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and
+     * include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
      * <p>
      * Type: String
@@ -255,17 +228,14 @@ public class ListDomainsResult extends
      * </p>
      * 
      * @param nextPageMarker
-     *        If there are more domains than you specified for
-     *        <code>MaxItems</code> in the request, submit another request and
-     *        include the value of <code>NextPageMarker</code> in the value of
-     *        <code>Marker</code>.</p>
+     *        If there are more domains than you specified for <code>MaxItems</code> in the request, submit another
+     *        request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      *        <p>
      *        Type: String
      *        </p>
      *        <p>
      *        Parent: <code>Operations</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDomainsResult withNextPageMarker(String nextPageMarker) {
@@ -274,8 +244,7 @@ public class ListDomainsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -305,14 +274,11 @@ public class ListDomainsResult extends
         ListDomainsResult other = (ListDomainsResult) obj;
         if (other.getDomains() == null ^ this.getDomains() == null)
             return false;
-        if (other.getDomains() != null
-                && other.getDomains().equals(this.getDomains()) == false)
+        if (other.getDomains() != null && other.getDomains().equals(this.getDomains()) == false)
             return false;
-        if (other.getNextPageMarker() == null
-                ^ this.getNextPageMarker() == null)
+        if (other.getNextPageMarker() == null ^ this.getNextPageMarker() == null)
             return false;
-        if (other.getNextPageMarker() != null
-                && other.getNextPageMarker().equals(this.getNextPageMarker()) == false)
+        if (other.getNextPageMarker() != null && other.getNextPageMarker().equals(this.getNextPageMarker()) == false)
             return false;
         return true;
     }
@@ -322,12 +288,8 @@ public class ListDomainsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomains() == null) ? 0 : getDomains().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextPageMarker() == null) ? 0 : getNextPageMarker()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDomains() == null) ? 0 : getDomains().hashCode());
+        hashCode = prime * hashCode + ((getNextPageMarker() == null) ? 0 : getNextPageMarker().hashCode());
         return hashCode;
     }
 
@@ -336,9 +298,7 @@ public class ListDomainsResult extends
         try {
             return (ListDomainsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

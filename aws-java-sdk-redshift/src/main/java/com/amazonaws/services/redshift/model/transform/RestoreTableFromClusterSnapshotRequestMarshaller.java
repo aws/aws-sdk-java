@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model.transform;
 
@@ -31,16 +29,13 @@ import com.amazonaws.util.IdempotentUtils;
  * RestoreTableFromClusterSnapshotRequest Marshaller
  */
 
-public class RestoreTableFromClusterSnapshotRequestMarshaller
-        implements
+public class RestoreTableFromClusterSnapshotRequestMarshaller implements
         Marshaller<Request<RestoreTableFromClusterSnapshotRequest>, RestoreTableFromClusterSnapshotRequest> {
 
-    public Request<RestoreTableFromClusterSnapshotRequest> marshall(
-            RestoreTableFromClusterSnapshotRequest restoreTableFromClusterSnapshotRequest) {
+    public Request<RestoreTableFromClusterSnapshotRequest> marshall(RestoreTableFromClusterSnapshotRequest restoreTableFromClusterSnapshotRequest) {
 
         if (restoreTableFromClusterSnapshotRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<RestoreTableFromClusterSnapshotRequest> request = new DefaultRequest<RestoreTableFromClusterSnapshotRequest>(
@@ -50,51 +45,35 @@ public class RestoreTableFromClusterSnapshotRequestMarshaller
         request.setHttpMethod(HttpMethodName.POST);
 
         if (restoreTableFromClusterSnapshotRequest.getClusterIdentifier() != null) {
-            request.addParameter("ClusterIdentifier", StringUtils
-                    .fromString(restoreTableFromClusterSnapshotRequest
-                            .getClusterIdentifier()));
+            request.addParameter("ClusterIdentifier", StringUtils.fromString(restoreTableFromClusterSnapshotRequest.getClusterIdentifier()));
         }
 
         if (restoreTableFromClusterSnapshotRequest.getSnapshotIdentifier() != null) {
-            request.addParameter("SnapshotIdentifier", StringUtils
-                    .fromString(restoreTableFromClusterSnapshotRequest
-                            .getSnapshotIdentifier()));
+            request.addParameter("SnapshotIdentifier", StringUtils.fromString(restoreTableFromClusterSnapshotRequest.getSnapshotIdentifier()));
         }
 
         if (restoreTableFromClusterSnapshotRequest.getSourceDatabaseName() != null) {
-            request.addParameter("SourceDatabaseName", StringUtils
-                    .fromString(restoreTableFromClusterSnapshotRequest
-                            .getSourceDatabaseName()));
+            request.addParameter("SourceDatabaseName", StringUtils.fromString(restoreTableFromClusterSnapshotRequest.getSourceDatabaseName()));
         }
 
         if (restoreTableFromClusterSnapshotRequest.getSourceSchemaName() != null) {
-            request.addParameter("SourceSchemaName", StringUtils
-                    .fromString(restoreTableFromClusterSnapshotRequest
-                            .getSourceSchemaName()));
+            request.addParameter("SourceSchemaName", StringUtils.fromString(restoreTableFromClusterSnapshotRequest.getSourceSchemaName()));
         }
 
         if (restoreTableFromClusterSnapshotRequest.getSourceTableName() != null) {
-            request.addParameter("SourceTableName", StringUtils
-                    .fromString(restoreTableFromClusterSnapshotRequest
-                            .getSourceTableName()));
+            request.addParameter("SourceTableName", StringUtils.fromString(restoreTableFromClusterSnapshotRequest.getSourceTableName()));
         }
 
         if (restoreTableFromClusterSnapshotRequest.getTargetDatabaseName() != null) {
-            request.addParameter("TargetDatabaseName", StringUtils
-                    .fromString(restoreTableFromClusterSnapshotRequest
-                            .getTargetDatabaseName()));
+            request.addParameter("TargetDatabaseName", StringUtils.fromString(restoreTableFromClusterSnapshotRequest.getTargetDatabaseName()));
         }
 
         if (restoreTableFromClusterSnapshotRequest.getTargetSchemaName() != null) {
-            request.addParameter("TargetSchemaName", StringUtils
-                    .fromString(restoreTableFromClusterSnapshotRequest
-                            .getTargetSchemaName()));
+            request.addParameter("TargetSchemaName", StringUtils.fromString(restoreTableFromClusterSnapshotRequest.getTargetSchemaName()));
         }
 
         if (restoreTableFromClusterSnapshotRequest.getNewTableName() != null) {
-            request.addParameter("NewTableName", StringUtils
-                    .fromString(restoreTableFromClusterSnapshotRequest
-                            .getNewTableName()));
+            request.addParameter("NewTableName", StringUtils.fromString(restoreTableFromClusterSnapshotRequest.getNewTableName()));
         }
 
         return request;

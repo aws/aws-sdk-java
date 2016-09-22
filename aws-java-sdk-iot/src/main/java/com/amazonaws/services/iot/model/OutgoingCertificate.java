@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -92,8 +90,7 @@ public class OutgoingCertificate implements Serializable, Cloneable {
      * 
      * @param certificateArn
      *        The certificate ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OutgoingCertificate withCertificateArn(String certificateArn) {
@@ -133,8 +130,7 @@ public class OutgoingCertificate implements Serializable, Cloneable {
      * 
      * @param certificateId
      *        The certificate ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OutgoingCertificate withCertificateId(String certificateId) {
@@ -174,8 +170,7 @@ public class OutgoingCertificate implements Serializable, Cloneable {
      * 
      * @param transferredTo
      *        The AWS account to which the transfer was made.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OutgoingCertificate withTransferredTo(String transferredTo) {
@@ -215,8 +210,7 @@ public class OutgoingCertificate implements Serializable, Cloneable {
      * 
      * @param transferDate
      *        The date the transfer was initiated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OutgoingCertificate withTransferDate(java.util.Date transferDate) {
@@ -256,8 +250,7 @@ public class OutgoingCertificate implements Serializable, Cloneable {
      * 
      * @param transferMessage
      *        The transfer message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OutgoingCertificate withTransferMessage(String transferMessage) {
@@ -297,8 +290,7 @@ public class OutgoingCertificate implements Serializable, Cloneable {
      * 
      * @param creationDate
      *        The certificate creation date.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OutgoingCertificate withCreationDate(java.util.Date creationDate) {
@@ -307,8 +299,7 @@ public class OutgoingCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -344,37 +335,29 @@ public class OutgoingCertificate implements Serializable, Cloneable {
         if (obj instanceof OutgoingCertificate == false)
             return false;
         OutgoingCertificate other = (OutgoingCertificate) obj;
-        if (other.getCertificateArn() == null
-                ^ this.getCertificateArn() == null)
+        if (other.getCertificateArn() == null ^ this.getCertificateArn() == null)
             return false;
-        if (other.getCertificateArn() != null
-                && other.getCertificateArn().equals(this.getCertificateArn()) == false)
+        if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
             return false;
         if (other.getCertificateId() == null ^ this.getCertificateId() == null)
             return false;
-        if (other.getCertificateId() != null
-                && other.getCertificateId().equals(this.getCertificateId()) == false)
+        if (other.getCertificateId() != null && other.getCertificateId().equals(this.getCertificateId()) == false)
             return false;
         if (other.getTransferredTo() == null ^ this.getTransferredTo() == null)
             return false;
-        if (other.getTransferredTo() != null
-                && other.getTransferredTo().equals(this.getTransferredTo()) == false)
+        if (other.getTransferredTo() != null && other.getTransferredTo().equals(this.getTransferredTo()) == false)
             return false;
         if (other.getTransferDate() == null ^ this.getTransferDate() == null)
             return false;
-        if (other.getTransferDate() != null
-                && other.getTransferDate().equals(this.getTransferDate()) == false)
+        if (other.getTransferDate() != null && other.getTransferDate().equals(this.getTransferDate()) == false)
             return false;
-        if (other.getTransferMessage() == null
-                ^ this.getTransferMessage() == null)
+        if (other.getTransferMessage() == null ^ this.getTransferMessage() == null)
             return false;
-        if (other.getTransferMessage() != null
-                && other.getTransferMessage().equals(this.getTransferMessage()) == false)
+        if (other.getTransferMessage() != null && other.getTransferMessage().equals(this.getTransferMessage()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
-        if (other.getCreationDate() != null
-                && other.getCreationDate().equals(this.getCreationDate()) == false)
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
         return true;
     }
@@ -384,30 +367,12 @@ public class OutgoingCertificate implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCertificateArn() == null) ? 0 : getCertificateArn()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCertificateId() == null) ? 0 : getCertificateId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTransferredTo() == null) ? 0 : getTransferredTo()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTransferDate() == null) ? 0 : getTransferDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTransferMessage() == null) ? 0 : getTransferMessage()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDate() == null) ? 0 : getCreationDate()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getCertificateId() == null) ? 0 : getCertificateId().hashCode());
+        hashCode = prime * hashCode + ((getTransferredTo() == null) ? 0 : getTransferredTo().hashCode());
+        hashCode = prime * hashCode + ((getTransferDate() == null) ? 0 : getTransferDate().hashCode());
+        hashCode = prime * hashCode + ((getTransferMessage() == null) ? 0 : getTransferMessage().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         return hashCode;
     }
 
@@ -416,9 +381,7 @@ public class OutgoingCertificate implements Serializable, Cloneable {
         try {
             return (OutgoingCertificate) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

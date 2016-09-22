@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -18,18 +16,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the storage parameters for S3 and S3 buckets for an instance
- * store-backed AMI.
+ * Describes the storage parameters for S3 and S3 buckets for an instance store-backed AMI.
  * </p>
  */
 public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bucket in which to store the AMI. You can specify a bucket that you
-     * already own or a new bucket that Amazon EC2 creates on your behalf. If
-     * you specify a bucket that belongs to someone else, Amazon EC2 returns an
-     * error.
+     * The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon
+     * EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.
      * </p>
      */
     private String bucket;
@@ -41,17 +36,16 @@ public class S3Storage implements Serializable, Cloneable {
     private String prefix;
     /**
      * <p>
-     * The access key ID of the owner of the bucket. Before you specify a value
-     * for your access key ID, review and follow the guidance in <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * >Best Practices for Managing AWS Access Keys</a>.
+     * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
+     * follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     * Managing AWS Access Keys</a>.
      * </p>
      */
     private String aWSAccessKeyId;
     /**
      * <p>
-     * An Amazon S3 upload policy that gives Amazon EC2 permission to upload
-     * items into Amazon S3 on your behalf.
+     * An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.
      * </p>
      */
     private String uploadPolicy;
@@ -64,17 +58,14 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bucket in which to store the AMI. You can specify a bucket that you
-     * already own or a new bucket that Amazon EC2 creates on your behalf. If
-     * you specify a bucket that belongs to someone else, Amazon EC2 returns an
-     * error.
+     * The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon
+     * EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.
      * </p>
      * 
      * @param bucket
-     *        The bucket in which to store the AMI. You can specify a bucket
-     *        that you already own or a new bucket that Amazon EC2 creates on
-     *        your behalf. If you specify a bucket that belongs to someone else,
-     *        Amazon EC2 returns an error.
+     *        The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that
+     *        Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2
+     *        returns an error.
      */
 
     public void setBucket(String bucket) {
@@ -83,16 +74,13 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bucket in which to store the AMI. You can specify a bucket that you
-     * already own or a new bucket that Amazon EC2 creates on your behalf. If
-     * you specify a bucket that belongs to someone else, Amazon EC2 returns an
-     * error.
+     * The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon
+     * EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.
      * </p>
      * 
-     * @return The bucket in which to store the AMI. You can specify a bucket
-     *         that you already own or a new bucket that Amazon EC2 creates on
-     *         your behalf. If you specify a bucket that belongs to someone
-     *         else, Amazon EC2 returns an error.
+     * @return The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that
+     *         Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2
+     *         returns an error.
      */
 
     public String getBucket() {
@@ -101,19 +89,15 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bucket in which to store the AMI. You can specify a bucket that you
-     * already own or a new bucket that Amazon EC2 creates on your behalf. If
-     * you specify a bucket that belongs to someone else, Amazon EC2 returns an
-     * error.
+     * The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon
+     * EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.
      * </p>
      * 
      * @param bucket
-     *        The bucket in which to store the AMI. You can specify a bucket
-     *        that you already own or a new bucket that Amazon EC2 creates on
-     *        your behalf. If you specify a bucket that belongs to someone else,
-     *        Amazon EC2 returns an error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that
+     *        Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2
+     *        returns an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public S3Storage withBucket(String bucket) {
@@ -153,8 +137,7 @@ public class S3Storage implements Serializable, Cloneable {
      * 
      * @param prefix
      *        The beginning of the file name of the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public S3Storage withPrefix(String prefix) {
@@ -164,18 +147,17 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The access key ID of the owner of the bucket. Before you specify a value
-     * for your access key ID, review and follow the guidance in <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * >Best Practices for Managing AWS Access Keys</a>.
+     * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
+     * follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     * Managing AWS Access Keys</a>.
      * </p>
      * 
      * @param aWSAccessKeyId
-     *        The access key ID of the owner of the bucket. Before you specify a
-     *        value for your access key ID, review and follow the guidance in <a
-     *        href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     *        >Best Practices for Managing AWS Access Keys</a>.
+     *        The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review
+     *        and follow the guidance in <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     *        Managing AWS Access Keys</a>.
      */
 
     public void setAWSAccessKeyId(String aWSAccessKeyId) {
@@ -184,17 +166,16 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The access key ID of the owner of the bucket. Before you specify a value
-     * for your access key ID, review and follow the guidance in <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * >Best Practices for Managing AWS Access Keys</a>.
+     * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
+     * follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     * Managing AWS Access Keys</a>.
      * </p>
      * 
-     * @return The access key ID of the owner of the bucket. Before you specify
-     *         a value for your access key ID, review and follow the guidance in
-     *         <a href=
-     *         "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     *         >Best Practices for Managing AWS Access Keys</a>.
+     * @return The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review
+     *         and follow the guidance in <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices
+     *         for Managing AWS Access Keys</a>.
      */
 
     public String getAWSAccessKeyId() {
@@ -203,20 +184,18 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The access key ID of the owner of the bucket. Before you specify a value
-     * for your access key ID, review and follow the guidance in <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * >Best Practices for Managing AWS Access Keys</a>.
+     * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
+     * follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     * Managing AWS Access Keys</a>.
      * </p>
      * 
      * @param aWSAccessKeyId
-     *        The access key ID of the owner of the bucket. Before you specify a
-     *        value for your access key ID, review and follow the guidance in <a
-     *        href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     *        >Best Practices for Managing AWS Access Keys</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review
+     *        and follow the guidance in <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     *        Managing AWS Access Keys</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public S3Storage withAWSAccessKeyId(String aWSAccessKeyId) {
@@ -226,13 +205,11 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon S3 upload policy that gives Amazon EC2 permission to upload
-     * items into Amazon S3 on your behalf.
+     * An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.
      * </p>
      * 
      * @param uploadPolicy
-     *        An Amazon S3 upload policy that gives Amazon EC2 permission to
-     *        upload items into Amazon S3 on your behalf.
+     *        An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.
      */
 
     public void setUploadPolicy(String uploadPolicy) {
@@ -241,12 +218,11 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon S3 upload policy that gives Amazon EC2 permission to upload
-     * items into Amazon S3 on your behalf.
+     * An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.
      * </p>
      * 
-     * @return An Amazon S3 upload policy that gives Amazon EC2 permission to
-     *         upload items into Amazon S3 on your behalf.
+     * @return An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your
+     *         behalf.
      */
 
     public String getUploadPolicy() {
@@ -255,15 +231,12 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon S3 upload policy that gives Amazon EC2 permission to upload
-     * items into Amazon S3 on your behalf.
+     * An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.
      * </p>
      * 
      * @param uploadPolicy
-     *        An Amazon S3 upload policy that gives Amazon EC2 permission to
-     *        upload items into Amazon S3 on your behalf.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public S3Storage withUploadPolicy(String uploadPolicy) {
@@ -303,8 +276,7 @@ public class S3Storage implements Serializable, Cloneable {
      * 
      * @param uploadPolicySignature
      *        The signature of the JSON document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public S3Storage withUploadPolicySignature(String uploadPolicySignature) {
@@ -313,8 +285,7 @@ public class S3Storage implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -350,31 +321,23 @@ public class S3Storage implements Serializable, Cloneable {
         S3Storage other = (S3Storage) obj;
         if (other.getBucket() == null ^ this.getBucket() == null)
             return false;
-        if (other.getBucket() != null
-                && other.getBucket().equals(this.getBucket()) == false)
+        if (other.getBucket() != null && other.getBucket().equals(this.getBucket()) == false)
             return false;
         if (other.getPrefix() == null ^ this.getPrefix() == null)
             return false;
-        if (other.getPrefix() != null
-                && other.getPrefix().equals(this.getPrefix()) == false)
+        if (other.getPrefix() != null && other.getPrefix().equals(this.getPrefix()) == false)
             return false;
-        if (other.getAWSAccessKeyId() == null
-                ^ this.getAWSAccessKeyId() == null)
+        if (other.getAWSAccessKeyId() == null ^ this.getAWSAccessKeyId() == null)
             return false;
-        if (other.getAWSAccessKeyId() != null
-                && other.getAWSAccessKeyId().equals(this.getAWSAccessKeyId()) == false)
+        if (other.getAWSAccessKeyId() != null && other.getAWSAccessKeyId().equals(this.getAWSAccessKeyId()) == false)
             return false;
         if (other.getUploadPolicy() == null ^ this.getUploadPolicy() == null)
             return false;
-        if (other.getUploadPolicy() != null
-                && other.getUploadPolicy().equals(this.getUploadPolicy()) == false)
+        if (other.getUploadPolicy() != null && other.getUploadPolicy().equals(this.getUploadPolicy()) == false)
             return false;
-        if (other.getUploadPolicySignature() == null
-                ^ this.getUploadPolicySignature() == null)
+        if (other.getUploadPolicySignature() == null ^ this.getUploadPolicySignature() == null)
             return false;
-        if (other.getUploadPolicySignature() != null
-                && other.getUploadPolicySignature().equals(
-                        this.getUploadPolicySignature()) == false)
+        if (other.getUploadPolicySignature() != null && other.getUploadPolicySignature().equals(this.getUploadPolicySignature()) == false)
             return false;
         return true;
     }
@@ -384,22 +347,11 @@ public class S3Storage implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getBucket() == null) ? 0 : getBucket().hashCode());
-        hashCode = prime * hashCode
-                + ((getPrefix() == null) ? 0 : getPrefix().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAWSAccessKeyId() == null) ? 0 : getAWSAccessKeyId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUploadPolicy() == null) ? 0 : getUploadPolicy()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUploadPolicySignature() == null) ? 0
-                        : getUploadPolicySignature().hashCode());
+        hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode());
+        hashCode = prime * hashCode + ((getPrefix() == null) ? 0 : getPrefix().hashCode());
+        hashCode = prime * hashCode + ((getAWSAccessKeyId() == null) ? 0 : getAWSAccessKeyId().hashCode());
+        hashCode = prime * hashCode + ((getUploadPolicy() == null) ? 0 : getUploadPolicy().hashCode());
+        hashCode = prime * hashCode + ((getUploadPolicySignature() == null) ? 0 : getUploadPolicySignature().hashCode());
         return hashCode;
     }
 
@@ -408,9 +360,7 @@ public class S3Storage implements Serializable, Cloneable {
         try {
             return (S3Storage) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

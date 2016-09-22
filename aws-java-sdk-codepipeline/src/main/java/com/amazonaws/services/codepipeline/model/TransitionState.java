@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model;
 
@@ -18,16 +16,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents information about the state of transitions between one stage and
- * another stage.
+ * Represents information about the state of transitions between one stage and another stage.
  * </p>
  */
 public class TransitionState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the transition between stages is enabled (true) or disabled
-     * (false).
+     * Whether the transition between stages is enabled (true) or disabled (false).
      * </p>
      */
     private Boolean enabled;
@@ -45,21 +41,18 @@ public class TransitionState implements Serializable, Cloneable {
     private java.util.Date lastChangedAt;
     /**
      * <p>
-     * The user-specified reason why the transition between two stages of a
-     * pipeline was disabled.
+     * The user-specified reason why the transition between two stages of a pipeline was disabled.
      * </p>
      */
     private String disabledReason;
 
     /**
      * <p>
-     * Whether the transition between stages is enabled (true) or disabled
-     * (false).
+     * Whether the transition between stages is enabled (true) or disabled (false).
      * </p>
      * 
      * @param enabled
-     *        Whether the transition between stages is enabled (true) or
-     *        disabled (false).
+     *        Whether the transition between stages is enabled (true) or disabled (false).
      */
 
     public void setEnabled(Boolean enabled) {
@@ -68,12 +61,10 @@ public class TransitionState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the transition between stages is enabled (true) or disabled
-     * (false).
+     * Whether the transition between stages is enabled (true) or disabled (false).
      * </p>
      * 
-     * @return Whether the transition between stages is enabled (true) or
-     *         disabled (false).
+     * @return Whether the transition between stages is enabled (true) or disabled (false).
      */
 
     public Boolean getEnabled() {
@@ -82,15 +73,12 @@ public class TransitionState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the transition between stages is enabled (true) or disabled
-     * (false).
+     * Whether the transition between stages is enabled (true) or disabled (false).
      * </p>
      * 
      * @param enabled
-     *        Whether the transition between stages is enabled (true) or
-     *        disabled (false).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Whether the transition between stages is enabled (true) or disabled (false).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TransitionState withEnabled(Boolean enabled) {
@@ -100,12 +88,10 @@ public class TransitionState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the transition between stages is enabled (true) or disabled
-     * (false).
+     * Whether the transition between stages is enabled (true) or disabled (false).
      * </p>
      * 
-     * @return Whether the transition between stages is enabled (true) or
-     *         disabled (false).
+     * @return Whether the transition between stages is enabled (true) or disabled (false).
      */
 
     public Boolean isEnabled() {
@@ -144,8 +130,7 @@ public class TransitionState implements Serializable, Cloneable {
      * 
      * @param lastChangedBy
      *        The ID of the user who last changed the transition state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TransitionState withLastChangedBy(String lastChangedBy) {
@@ -185,8 +170,7 @@ public class TransitionState implements Serializable, Cloneable {
      * 
      * @param lastChangedAt
      *        The timestamp when the transition state was last changed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TransitionState withLastChangedAt(java.util.Date lastChangedAt) {
@@ -196,13 +180,11 @@ public class TransitionState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-specified reason why the transition between two stages of a
-     * pipeline was disabled.
+     * The user-specified reason why the transition between two stages of a pipeline was disabled.
      * </p>
      * 
      * @param disabledReason
-     *        The user-specified reason why the transition between two stages of
-     *        a pipeline was disabled.
+     *        The user-specified reason why the transition between two stages of a pipeline was disabled.
      */
 
     public void setDisabledReason(String disabledReason) {
@@ -211,12 +193,10 @@ public class TransitionState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-specified reason why the transition between two stages of a
-     * pipeline was disabled.
+     * The user-specified reason why the transition between two stages of a pipeline was disabled.
      * </p>
      * 
-     * @return The user-specified reason why the transition between two stages
-     *         of a pipeline was disabled.
+     * @return The user-specified reason why the transition between two stages of a pipeline was disabled.
      */
 
     public String getDisabledReason() {
@@ -225,15 +205,12 @@ public class TransitionState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-specified reason why the transition between two stages of a
-     * pipeline was disabled.
+     * The user-specified reason why the transition between two stages of a pipeline was disabled.
      * </p>
      * 
      * @param disabledReason
-     *        The user-specified reason why the transition between two stages of
-     *        a pipeline was disabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user-specified reason why the transition between two stages of a pipeline was disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TransitionState withDisabledReason(String disabledReason) {
@@ -242,8 +219,7 @@ public class TransitionState implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -277,24 +253,19 @@ public class TransitionState implements Serializable, Cloneable {
         TransitionState other = (TransitionState) obj;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
-        if (other.getEnabled() != null
-                && other.getEnabled().equals(this.getEnabled()) == false)
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
         if (other.getLastChangedBy() == null ^ this.getLastChangedBy() == null)
             return false;
-        if (other.getLastChangedBy() != null
-                && other.getLastChangedBy().equals(this.getLastChangedBy()) == false)
+        if (other.getLastChangedBy() != null && other.getLastChangedBy().equals(this.getLastChangedBy()) == false)
             return false;
         if (other.getLastChangedAt() == null ^ this.getLastChangedAt() == null)
             return false;
-        if (other.getLastChangedAt() != null
-                && other.getLastChangedAt().equals(this.getLastChangedAt()) == false)
+        if (other.getLastChangedAt() != null && other.getLastChangedAt().equals(this.getLastChangedAt()) == false)
             return false;
-        if (other.getDisabledReason() == null
-                ^ this.getDisabledReason() == null)
+        if (other.getDisabledReason() == null ^ this.getDisabledReason() == null)
             return false;
-        if (other.getDisabledReason() != null
-                && other.getDisabledReason().equals(this.getDisabledReason()) == false)
+        if (other.getDisabledReason() != null && other.getDisabledReason().equals(this.getDisabledReason()) == false)
             return false;
         return true;
     }
@@ -304,20 +275,10 @@ public class TransitionState implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastChangedBy() == null) ? 0 : getLastChangedBy()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastChangedAt() == null) ? 0 : getLastChangedAt()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDisabledReason() == null) ? 0 : getDisabledReason()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getLastChangedBy() == null) ? 0 : getLastChangedBy().hashCode());
+        hashCode = prime * hashCode + ((getLastChangedAt() == null) ? 0 : getLastChangedAt().hashCode());
+        hashCode = prime * hashCode + ((getDisabledReason() == null) ? 0 : getDisabledReason().hashCode());
         return hashCode;
     }
 
@@ -326,9 +287,7 @@ public class TransitionState implements Serializable, Cloneable {
         try {
             return (TransitionState) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
@@ -20,15 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class AddTagsToResourceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * added to. AWS DMS resources include a replication instance, endpoint, and
-     * a replication task.
+     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources include a
+     * replication instance, endpoint, and a replication task.
      * </p>
      */
     private String resourceArn;
@@ -41,15 +36,13 @@ public class AddTagsToResourceRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * added to. AWS DMS resources include a replication instance, endpoint, and
-     * a replication task.
+     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources include a
+     * replication instance, endpoint, and a replication task.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the AWS DMS resource the tag is
-     *        to be added to. AWS DMS resources include a replication instance,
-     *        endpoint, and a replication task.
+     *        The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources
+     *        include a replication instance, endpoint, and a replication task.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -58,14 +51,12 @@ public class AddTagsToResourceRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * added to. AWS DMS resources include a replication instance, endpoint, and
-     * a replication task.
+     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources include a
+     * replication instance, endpoint, and a replication task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS DMS resource the tag is
-     *         to be added to. AWS DMS resources include a replication instance,
-     *         endpoint, and a replication task.
+     * @return The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources
+     *         include a replication instance, endpoint, and a replication task.
      */
 
     public String getResourceArn() {
@@ -74,17 +65,14 @@ public class AddTagsToResourceRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * added to. AWS DMS resources include a replication instance, endpoint, and
-     * a replication task.
+     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources include a
+     * replication instance, endpoint, and a replication task.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the AWS DMS resource the tag is
-     *        to be added to. AWS DMS resources include a replication instance,
-     *        endpoint, and a replication task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources
+     *        include a replication instance, endpoint, and a replication task.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsToResourceRequest withResourceArn(String resourceArn) {
@@ -127,16 +115,14 @@ public class AddTagsToResourceRequest extends
      * The tag to be assigned to the DMS resource.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        The tag to be assigned to the DMS resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsToResourceRequest withTags(Tag... tags) {
@@ -156,8 +142,7 @@ public class AddTagsToResourceRequest extends
      * 
      * @param tags
      *        The tag to be assigned to the DMS resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsToResourceRequest withTags(java.util.Collection<Tag> tags) {
@@ -166,8 +151,7 @@ public class AddTagsToResourceRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -197,13 +181,11 @@ public class AddTagsToResourceRequest extends
         AddTagsToResourceRequest other = (AddTagsToResourceRequest) obj;
         if (other.getResourceArn() == null ^ this.getResourceArn() == null)
             return false;
-        if (other.getResourceArn() != null
-                && other.getResourceArn().equals(this.getResourceArn()) == false)
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -213,11 +195,8 @@ public class AddTagsToResourceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

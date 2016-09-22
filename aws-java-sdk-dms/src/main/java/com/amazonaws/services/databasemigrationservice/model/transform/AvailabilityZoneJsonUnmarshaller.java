@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * AvailabilityZone JSON Unmarshaller
  */
-public class AvailabilityZoneJsonUnmarshaller implements
-        Unmarshaller<AvailabilityZone, JsonUnmarshallerContext> {
+public class AvailabilityZoneJsonUnmarshaller implements Unmarshaller<AvailabilityZone, JsonUnmarshallerContext> {
 
-    public AvailabilityZone unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public AvailabilityZone unmarshall(JsonUnmarshallerContext context) throws Exception {
         AvailabilityZone availabilityZone = new AvailabilityZone();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,13 +49,10 @@ public class AvailabilityZoneJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    availabilityZone.setName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    availabilityZone.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

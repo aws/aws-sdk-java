@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -43,8 +41,8 @@ public class VpnGateway implements Serializable, Cloneable {
     private String type;
     /**
      * <p>
-     * The Availability Zone where the virtual private gateway was created, if
-     * applicable. This field may be empty or not returned.
+     * The Availability Zone where the virtual private gateway was created, if applicable. This field may be empty or
+     * not returned.
      * </p>
      */
     private String availabilityZone;
@@ -93,8 +91,7 @@ public class VpnGateway implements Serializable, Cloneable {
      * 
      * @param vpnGatewayId
      *        The ID of the virtual private gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnGateway withVpnGatewayId(String vpnGatewayId) {
@@ -136,8 +133,7 @@ public class VpnGateway implements Serializable, Cloneable {
      * 
      * @param state
      *        The current state of the virtual private gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VpnState
      */
 
@@ -167,8 +163,7 @@ public class VpnGateway implements Serializable, Cloneable {
      * 
      * @param state
      *        The current state of the virtual private gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VpnState
      */
 
@@ -211,8 +206,7 @@ public class VpnGateway implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of VPN connection the virtual private gateway supports.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see GatewayType
      */
 
@@ -242,8 +236,7 @@ public class VpnGateway implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of VPN connection the virtual private gateway supports.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see GatewayType
      */
 
@@ -254,13 +247,13 @@ public class VpnGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zone where the virtual private gateway was created, if
-     * applicable. This field may be empty or not returned.
+     * The Availability Zone where the virtual private gateway was created, if applicable. This field may be empty or
+     * not returned.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone where the virtual private gateway was
-     *        created, if applicable. This field may be empty or not returned.
+     *        The Availability Zone where the virtual private gateway was created, if applicable. This field may be
+     *        empty or not returned.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -269,12 +262,12 @@ public class VpnGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zone where the virtual private gateway was created, if
-     * applicable. This field may be empty or not returned.
+     * The Availability Zone where the virtual private gateway was created, if applicable. This field may be empty or
+     * not returned.
      * </p>
      * 
-     * @return The Availability Zone where the virtual private gateway was
-     *         created, if applicable. This field may be empty or not returned.
+     * @return The Availability Zone where the virtual private gateway was created, if applicable. This field may be
+     *         empty or not returned.
      */
 
     public String getAvailabilityZone() {
@@ -283,15 +276,14 @@ public class VpnGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zone where the virtual private gateway was created, if
-     * applicable. This field may be empty or not returned.
+     * The Availability Zone where the virtual private gateway was created, if applicable. This field may be empty or
+     * not returned.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone where the virtual private gateway was
-     *        created, if applicable. This field may be empty or not returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Availability Zone where the virtual private gateway was created, if applicable. This field may be
+     *        empty or not returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnGateway withAvailabilityZone(String availabilityZone) {
@@ -323,15 +315,13 @@ public class VpnGateway implements Serializable, Cloneable {
      *        Any VPCs attached to the virtual private gateway.
      */
 
-    public void setVpcAttachments(
-            java.util.Collection<VpcAttachment> vpcAttachments) {
+    public void setVpcAttachments(java.util.Collection<VpcAttachment> vpcAttachments) {
         if (vpcAttachments == null) {
             this.vpcAttachments = null;
             return;
         }
 
-        this.vpcAttachments = new com.amazonaws.internal.SdkInternalList<VpcAttachment>(
-                vpcAttachments);
+        this.vpcAttachments = new com.amazonaws.internal.SdkInternalList<VpcAttachment>(vpcAttachments);
     }
 
     /**
@@ -339,22 +329,19 @@ public class VpnGateway implements Serializable, Cloneable {
      * Any VPCs attached to the virtual private gateway.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVpcAttachments(java.util.Collection)} or
-     * {@link #withVpcAttachments(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcAttachments(java.util.Collection)} or {@link #withVpcAttachments(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param vpcAttachments
      *        Any VPCs attached to the virtual private gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnGateway withVpcAttachments(VpcAttachment... vpcAttachments) {
         if (this.vpcAttachments == null) {
-            setVpcAttachments(new com.amazonaws.internal.SdkInternalList<VpcAttachment>(
-                    vpcAttachments.length));
+            setVpcAttachments(new com.amazonaws.internal.SdkInternalList<VpcAttachment>(vpcAttachments.length));
         }
         for (VpcAttachment ele : vpcAttachments) {
             this.vpcAttachments.add(ele);
@@ -369,12 +356,10 @@ public class VpnGateway implements Serializable, Cloneable {
      * 
      * @param vpcAttachments
      *        Any VPCs attached to the virtual private gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VpnGateway withVpcAttachments(
-            java.util.Collection<VpcAttachment> vpcAttachments) {
+    public VpnGateway withVpcAttachments(java.util.Collection<VpcAttachment> vpcAttachments) {
         setVpcAttachments(vpcAttachments);
         return this;
     }
@@ -417,16 +402,14 @@ public class VpnGateway implements Serializable, Cloneable {
      * Any tags assigned to the virtual private gateway.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        Any tags assigned to the virtual private gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnGateway withTags(Tag... tags) {
@@ -446,8 +429,7 @@ public class VpnGateway implements Serializable, Cloneable {
      * 
      * @param tags
      *        Any tags assigned to the virtual private gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnGateway withTags(java.util.Collection<Tag> tags) {
@@ -456,8 +438,7 @@ public class VpnGateway implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -495,36 +476,27 @@ public class VpnGateway implements Serializable, Cloneable {
         VpnGateway other = (VpnGateway) obj;
         if (other.getVpnGatewayId() == null ^ this.getVpnGatewayId() == null)
             return false;
-        if (other.getVpnGatewayId() != null
-                && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false)
+        if (other.getVpnGatewayId() != null && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
-        if (other.getVpcAttachments() == null
-                ^ this.getVpcAttachments() == null)
+        if (other.getVpcAttachments() == null ^ this.getVpcAttachments() == null)
             return false;
-        if (other.getVpcAttachments() != null
-                && other.getVpcAttachments().equals(this.getVpcAttachments()) == false)
+        if (other.getVpcAttachments() != null && other.getVpcAttachments().equals(this.getVpcAttachments()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -534,24 +506,12 @@ public class VpnGateway implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVpcAttachments() == null) ? 0 : getVpcAttachments()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getVpcAttachments() == null) ? 0 : getVpcAttachments().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -560,9 +520,7 @@ public class VpnGateway implements Serializable, Cloneable {
         try {
             return (VpnGateway) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

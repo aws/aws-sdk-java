@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -20,29 +18,24 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeStacksRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeStacksRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of stack IDs that specify the stacks to be described. If you
-     * omit this parameter, <code>DescribeStacks</code> returns a description of
-     * every stack.
+     * An array of stack IDs that specify the stacks to be described. If you omit this parameter,
+     * <code>DescribeStacks</code> returns a description of every stack.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> stackIds;
 
     /**
      * <p>
-     * An array of stack IDs that specify the stacks to be described. If you
-     * omit this parameter, <code>DescribeStacks</code> returns a description of
-     * every stack.
+     * An array of stack IDs that specify the stacks to be described. If you omit this parameter,
+     * <code>DescribeStacks</code> returns a description of every stack.
      * </p>
      * 
-     * @return An array of stack IDs that specify the stacks to be described. If
-     *         you omit this parameter, <code>DescribeStacks</code> returns a
-     *         description of every stack.
+     * @return An array of stack IDs that specify the stacks to be described. If you omit this parameter,
+     *         <code>DescribeStacks</code> returns a description of every stack.
      */
 
     public java.util.List<String> getStackIds() {
@@ -54,15 +47,13 @@ public class DescribeStacksRequest extends
 
     /**
      * <p>
-     * An array of stack IDs that specify the stacks to be described. If you
-     * omit this parameter, <code>DescribeStacks</code> returns a description of
-     * every stack.
+     * An array of stack IDs that specify the stacks to be described. If you omit this parameter,
+     * <code>DescribeStacks</code> returns a description of every stack.
      * </p>
      * 
      * @param stackIds
-     *        An array of stack IDs that specify the stacks to be described. If
-     *        you omit this parameter, <code>DescribeStacks</code> returns a
-     *        description of every stack.
+     *        An array of stack IDs that specify the stacks to be described. If you omit this parameter,
+     *        <code>DescribeStacks</code> returns a description of every stack.
      */
 
     public void setStackIds(java.util.Collection<String> stackIds) {
@@ -71,35 +62,29 @@ public class DescribeStacksRequest extends
             return;
         }
 
-        this.stackIds = new com.amazonaws.internal.SdkInternalList<String>(
-                stackIds);
+        this.stackIds = new com.amazonaws.internal.SdkInternalList<String>(stackIds);
     }
 
     /**
      * <p>
-     * An array of stack IDs that specify the stacks to be described. If you
-     * omit this parameter, <code>DescribeStacks</code> returns a description of
-     * every stack.
+     * An array of stack IDs that specify the stacks to be described. If you omit this parameter,
+     * <code>DescribeStacks</code> returns a description of every stack.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setStackIds(java.util.Collection)} or
-     * {@link #withStackIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStackIds(java.util.Collection)} or {@link #withStackIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param stackIds
-     *        An array of stack IDs that specify the stacks to be described. If
-     *        you omit this parameter, <code>DescribeStacks</code> returns a
-     *        description of every stack.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of stack IDs that specify the stacks to be described. If you omit this parameter,
+     *        <code>DescribeStacks</code> returns a description of every stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStacksRequest withStackIds(String... stackIds) {
         if (this.stackIds == null) {
-            setStackIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    stackIds.length));
+            setStackIds(new com.amazonaws.internal.SdkInternalList<String>(stackIds.length));
         }
         for (String ele : stackIds) {
             this.stackIds.add(ele);
@@ -109,28 +94,23 @@ public class DescribeStacksRequest extends
 
     /**
      * <p>
-     * An array of stack IDs that specify the stacks to be described. If you
-     * omit this parameter, <code>DescribeStacks</code> returns a description of
-     * every stack.
+     * An array of stack IDs that specify the stacks to be described. If you omit this parameter,
+     * <code>DescribeStacks</code> returns a description of every stack.
      * </p>
      * 
      * @param stackIds
-     *        An array of stack IDs that specify the stacks to be described. If
-     *        you omit this parameter, <code>DescribeStacks</code> returns a
-     *        description of every stack.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of stack IDs that specify the stacks to be described. If you omit this parameter,
+     *        <code>DescribeStacks</code> returns a description of every stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeStacksRequest withStackIds(
-            java.util.Collection<String> stackIds) {
+    public DescribeStacksRequest withStackIds(java.util.Collection<String> stackIds) {
         setStackIds(stackIds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -158,8 +138,7 @@ public class DescribeStacksRequest extends
         DescribeStacksRequest other = (DescribeStacksRequest) obj;
         if (other.getStackIds() == null ^ this.getStackIds() == null)
             return false;
-        if (other.getStackIds() != null
-                && other.getStackIds().equals(this.getStackIds()) == false)
+        if (other.getStackIds() != null && other.getStackIds().equals(this.getStackIds()) == false)
             return false;
         return true;
     }
@@ -169,8 +148,7 @@ public class DescribeStacksRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStackIds() == null) ? 0 : getStackIds().hashCode());
+        hashCode = prime * hashCode + ((getStackIds() == null) ? 0 : getStackIds().hashCode());
         return hashCode;
     }
 

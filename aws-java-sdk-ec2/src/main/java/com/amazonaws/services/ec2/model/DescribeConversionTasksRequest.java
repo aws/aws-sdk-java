@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeConversionTasksRequest
  * Contains the parameters for DescribeConversionTasks.
  * </p>
  */
-public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class DescribeConversionTasksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeConversionTasksRequest> {
 
     /**
@@ -71,8 +68,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -80,22 +76,19 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
      * One or more filters.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
      *        One or more filters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeConversionTasksRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -110,12 +103,10 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
      * 
      * @param filters
      *        One or more filters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConversionTasksRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeConversionTasksRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
@@ -144,15 +135,13 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
      *        One or more conversion task IDs.
      */
 
-    public void setConversionTaskIds(
-            java.util.Collection<String> conversionTaskIds) {
+    public void setConversionTaskIds(java.util.Collection<String> conversionTaskIds) {
         if (conversionTaskIds == null) {
             this.conversionTaskIds = null;
             return;
         }
 
-        this.conversionTaskIds = new com.amazonaws.internal.SdkInternalList<String>(
-                conversionTaskIds);
+        this.conversionTaskIds = new com.amazonaws.internal.SdkInternalList<String>(conversionTaskIds);
     }
 
     /**
@@ -160,23 +149,19 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
      * One or more conversion task IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConversionTaskIds(java.util.Collection)} or
-     * {@link #withConversionTaskIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConversionTaskIds(java.util.Collection)} or {@link #withConversionTaskIds(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param conversionTaskIds
      *        One or more conversion task IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConversionTasksRequest withConversionTaskIds(
-            String... conversionTaskIds) {
+    public DescribeConversionTasksRequest withConversionTaskIds(String... conversionTaskIds) {
         if (this.conversionTaskIds == null) {
-            setConversionTaskIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    conversionTaskIds.length));
+            setConversionTaskIds(new com.amazonaws.internal.SdkInternalList<String>(conversionTaskIds.length));
         }
         for (String ele : conversionTaskIds) {
             this.conversionTaskIds.add(ele);
@@ -191,32 +176,27 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
      * 
      * @param conversionTaskIds
      *        One or more conversion task IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConversionTasksRequest withConversionTaskIds(
-            java.util.Collection<String> conversionTaskIds) {
+    public DescribeConversionTasksRequest withConversionTaskIds(java.util.Collection<String> conversionTaskIds) {
         setConversionTaskIds(conversionTaskIds);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeConversionTasksRequest> getDryRunRequest() {
-        Request<DescribeConversionTasksRequest> request = new DescribeConversionTasksRequestMarshaller()
-                .marshall(this);
+        Request<DescribeConversionTasksRequest> request = new DescribeConversionTasksRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -246,15 +226,11 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
         DescribeConversionTasksRequest other = (DescribeConversionTasksRequest) obj;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
-        if (other.getConversionTaskIds() == null
-                ^ this.getConversionTaskIds() == null)
+        if (other.getConversionTaskIds() == null ^ this.getConversionTaskIds() == null)
             return false;
-        if (other.getConversionTaskIds() != null
-                && other.getConversionTaskIds().equals(
-                        this.getConversionTaskIds()) == false)
+        if (other.getConversionTaskIds() != null && other.getConversionTaskIds().equals(this.getConversionTaskIds()) == false)
             return false;
         return true;
     }
@@ -264,12 +240,8 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConversionTaskIds() == null) ? 0
-                        : getConversionTaskIds().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getConversionTaskIds() == null) ? 0 : getConversionTaskIds().hashCode());
         return hashCode;
     }
 

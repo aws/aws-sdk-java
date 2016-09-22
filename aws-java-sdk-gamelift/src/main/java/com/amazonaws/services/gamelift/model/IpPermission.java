@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -18,11 +16,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A range of IP addresses and port settings that allow inbound traffic to
- * connect to server processes on GameLift. Each game session hosted on a fleet
- * is assigned a unique combination of IP address and port number, which must
- * fall into the fleet's allowed ranges. This combination is included in the
- * <a>GameSession</a> object.
+ * A range of IP addresses and port settings that allow inbound traffic to connect to server processes on GameLift. Each
+ * game session hosted on a fleet is assigned a unique combination of IP address and port number, which must fall into
+ * the fleet's allowed ranges. This combination is included in the <a>GameSession</a> object.
  * </p>
  */
 public class IpPermission implements Serializable, Cloneable {
@@ -35,18 +31,16 @@ public class IpPermission implements Serializable, Cloneable {
     private Integer fromPort;
     /**
      * <p>
-     * Ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <code>FromPort</code>.
+     * Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than
+     * <code>FromPort</code>.
      * </p>
      */
     private Integer toPort;
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
-     * <code>000.000.000.000/[subnet mask]</code>
-     * " or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>
-     * ".
+     * Range of allowed IP addresses. This value must be expressed in <a href="https://tools.ietf.org/id/cidr">CIDR
+     * notation</a>. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
+     * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      */
     private String ipRange;
@@ -89,8 +83,7 @@ public class IpPermission implements Serializable, Cloneable {
      * 
      * @param fromPort
      *        Starting value for a range of allowed port numbers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IpPermission withFromPort(Integer fromPort) {
@@ -100,14 +93,13 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <code>FromPort</code>.
+     * Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than
+     * <code>FromPort</code>.
      * </p>
      * 
      * @param toPort
-     *        Ending value for a range of allowed port numbers. Port numbers are
-     *        end-inclusive. This value must be higher than
-     *        <code>FromPort</code>.
+     *        Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be
+     *        higher than <code>FromPort</code>.
      */
 
     public void setToPort(Integer toPort) {
@@ -116,13 +108,12 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <code>FromPort</code>.
+     * Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than
+     * <code>FromPort</code>.
      * </p>
      * 
-     * @return Ending value for a range of allowed port numbers. Port numbers
-     *         are end-inclusive. This value must be higher than
-     *         <code>FromPort</code>.
+     * @return Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be
+     *         higher than <code>FromPort</code>.
      */
 
     public Integer getToPort() {
@@ -131,16 +122,14 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <code>FromPort</code>.
+     * Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than
+     * <code>FromPort</code>.
      * </p>
      * 
      * @param toPort
-     *        Ending value for a range of allowed port numbers. Port numbers are
-     *        end-inclusive. This value must be higher than
-     *        <code>FromPort</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be
+     *        higher than <code>FromPort</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IpPermission withToPort(Integer toPort) {
@@ -150,18 +139,15 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
-     * <code>000.000.000.000/[subnet mask]</code>
-     * " or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>
-     * ".
+     * Range of allowed IP addresses. This value must be expressed in <a href="https://tools.ietf.org/id/cidr">CIDR
+     * notation</a>. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
+     * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      * 
      * @param ipRange
      *        Range of allowed IP addresses. This value must be expressed in <a
-     *        href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     *        "<code>000.000.000.000/[subnet mask]</code>
-     *        " or optionally the shortened version "
+     *        href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     *        <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      *        <code>0.0.0.0/[subnet mask]</code>".
      */
 
@@ -171,17 +157,14 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
-     * <code>000.000.000.000/[subnet mask]</code>
-     * " or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>
-     * ".
+     * Range of allowed IP addresses. This value must be expressed in <a href="https://tools.ietf.org/id/cidr">CIDR
+     * notation</a>. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
+     * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      * 
      * @return Range of allowed IP addresses. This value must be expressed in <a
-     *         href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     *         "<code>000.000.000.000/[subnet mask]</code>
-     *         " or optionally the shortened version "
+     *         href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     *         <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      *         <code>0.0.0.0/[subnet mask]</code>".
      */
 
@@ -191,21 +174,17 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
-     * <code>000.000.000.000/[subnet mask]</code>
-     * " or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>
-     * ".
+     * Range of allowed IP addresses. This value must be expressed in <a href="https://tools.ietf.org/id/cidr">CIDR
+     * notation</a>. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
+     * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      * 
      * @param ipRange
      *        Range of allowed IP addresses. This value must be expressed in <a
-     *        href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     *        "<code>000.000.000.000/[subnet mask]</code>
-     *        " or optionally the shortened version "
+     *        href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     *        <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      *        <code>0.0.0.0/[subnet mask]</code>".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IpPermission withIpRange(String ipRange) {
@@ -247,8 +226,7 @@ public class IpPermission implements Serializable, Cloneable {
      * 
      * @param protocol
      *        Network communication protocol used by the fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpProtocol
      */
 
@@ -278,8 +256,7 @@ public class IpPermission implements Serializable, Cloneable {
      * 
      * @param protocol
      *        Network communication protocol used by the fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpProtocol
      */
 
@@ -289,8 +266,7 @@ public class IpPermission implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -324,23 +300,19 @@ public class IpPermission implements Serializable, Cloneable {
         IpPermission other = (IpPermission) obj;
         if (other.getFromPort() == null ^ this.getFromPort() == null)
             return false;
-        if (other.getFromPort() != null
-                && other.getFromPort().equals(this.getFromPort()) == false)
+        if (other.getFromPort() != null && other.getFromPort().equals(this.getFromPort()) == false)
             return false;
         if (other.getToPort() == null ^ this.getToPort() == null)
             return false;
-        if (other.getToPort() != null
-                && other.getToPort().equals(this.getToPort()) == false)
+        if (other.getToPort() != null && other.getToPort().equals(this.getToPort()) == false)
             return false;
         if (other.getIpRange() == null ^ this.getIpRange() == null)
             return false;
-        if (other.getIpRange() != null
-                && other.getIpRange().equals(this.getIpRange()) == false)
+        if (other.getIpRange() != null && other.getIpRange().equals(this.getIpRange()) == false)
             return false;
         if (other.getProtocol() == null ^ this.getProtocol() == null)
             return false;
-        if (other.getProtocol() != null
-                && other.getProtocol().equals(this.getProtocol()) == false)
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
             return false;
         return true;
     }
@@ -350,14 +322,10 @@ public class IpPermission implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFromPort() == null) ? 0 : getFromPort().hashCode());
-        hashCode = prime * hashCode
-                + ((getToPort() == null) ? 0 : getToPort().hashCode());
-        hashCode = prime * hashCode
-                + ((getIpRange() == null) ? 0 : getIpRange().hashCode());
-        hashCode = prime * hashCode
-                + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
+        hashCode = prime * hashCode + ((getFromPort() == null) ? 0 : getFromPort().hashCode());
+        hashCode = prime * hashCode + ((getToPort() == null) ? 0 : getToPort().hashCode());
+        hashCode = prime * hashCode + ((getIpRange() == null) ? 0 : getIpRange().hashCode());
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         return hashCode;
     }
 
@@ -366,9 +334,7 @@ public class IpPermission implements Serializable, Cloneable {
         try {
             return (IpPermission) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

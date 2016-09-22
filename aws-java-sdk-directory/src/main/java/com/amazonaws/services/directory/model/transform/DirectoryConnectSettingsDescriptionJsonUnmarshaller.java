@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model.transform;
 
@@ -29,12 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DirectoryConnectSettingsDescription JSON Unmarshaller
  */
-public class DirectoryConnectSettingsDescriptionJsonUnmarshaller
-        implements
-        Unmarshaller<DirectoryConnectSettingsDescription, JsonUnmarshallerContext> {
+public class DirectoryConnectSettingsDescriptionJsonUnmarshaller implements Unmarshaller<DirectoryConnectSettingsDescription, JsonUnmarshallerContext> {
 
-    public DirectoryConnectSettingsDescription unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public DirectoryConnectSettingsDescription unmarshall(JsonUnmarshallerContext context) throws Exception {
         DirectoryConnectSettingsDescription directoryConnectSettingsDescription = new DirectoryConnectSettingsDescription();
 
         int originalDepth = context.getCurrentDepth();
@@ -54,46 +49,31 @@ public class DirectoryConnectSettingsDescriptionJsonUnmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VpcId", targetDepth)) {
                     context.nextToken();
-                    directoryConnectSettingsDescription.setVpcId(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    directoryConnectSettingsDescription.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
-                    directoryConnectSettingsDescription
-                            .setSubnetIds(new ListUnmarshaller<String>(context
-                                    .getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    directoryConnectSettingsDescription.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("CustomerUserName", targetDepth)) {
                     context.nextToken();
-                    directoryConnectSettingsDescription
-                            .setCustomerUserName(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    directoryConnectSettingsDescription.setCustomerUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupId", targetDepth)) {
                     context.nextToken();
-                    directoryConnectSettingsDescription
-                            .setSecurityGroupId(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    directoryConnectSettingsDescription.setSecurityGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     context.nextToken();
-                    directoryConnectSettingsDescription
-                            .setAvailabilityZones(new ListUnmarshaller<String>(
-                                    context.getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    directoryConnectSettingsDescription.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
                 if (context.testExpression("ConnectIps", targetDepth)) {
                     context.nextToken();
-                    directoryConnectSettingsDescription
-                            .setConnectIps(new ListUnmarshaller<String>(context
-                                    .getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    directoryConnectSettingsDescription.setConnectIps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

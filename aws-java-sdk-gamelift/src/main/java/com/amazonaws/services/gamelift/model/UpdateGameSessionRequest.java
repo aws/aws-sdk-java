@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -22,28 +20,23 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for a request action.
  * </p>
  */
-public class UpdateGameSessionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want
-     * to update.
+     * Unique identifier for a game session. Specify the game session you want to update.
      * </p>
      */
     private String gameSessionId;
     /**
      * <p>
-     * Maximum number of players that can be simultaneously connected to the
-     * game session.
+     * Maximum number of players that can be simultaneously connected to the game session.
      * </p>
      */
     private Integer maximumPlayerSessionCount;
     /**
      * <p>
-     * Descriptive label associated with a game session. Session names do not
-     * need to be unique.
+     * Descriptive label associated with a game session. Session names do not need to be unique.
      * </p>
      */
     private String name;
@@ -58,24 +51,20 @@ public class UpdateGameSessionRequest extends
      * Game session protection policy to apply to this game session only.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</li>
      * </ul>
      */
     private String protectionPolicy;
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want
-     * to update.
+     * Unique identifier for a game session. Specify the game session you want to update.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session. Specify the game session you
-     *        want to update.
+     *        Unique identifier for a game session. Specify the game session you want to update.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -84,12 +73,10 @@ public class UpdateGameSessionRequest extends
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want
-     * to update.
+     * Unique identifier for a game session. Specify the game session you want to update.
      * </p>
      * 
-     * @return Unique identifier for a game session. Specify the game session
-     *         you want to update.
+     * @return Unique identifier for a game session. Specify the game session you want to update.
      */
 
     public String getGameSessionId() {
@@ -98,15 +85,12 @@ public class UpdateGameSessionRequest extends
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want
-     * to update.
+     * Unique identifier for a game session. Specify the game session you want to update.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session. Specify the game session you
-     *        want to update.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique identifier for a game session. Specify the game session you want to update.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateGameSessionRequest withGameSessionId(String gameSessionId) {
@@ -116,13 +100,11 @@ public class UpdateGameSessionRequest extends
 
     /**
      * <p>
-     * Maximum number of players that can be simultaneously connected to the
-     * game session.
+     * Maximum number of players that can be simultaneously connected to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be simultaneously connected to
-     *        the game session.
+     *        Maximum number of players that can be simultaneously connected to the game session.
      */
 
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
@@ -131,12 +113,10 @@ public class UpdateGameSessionRequest extends
 
     /**
      * <p>
-     * Maximum number of players that can be simultaneously connected to the
-     * game session.
+     * Maximum number of players that can be simultaneously connected to the game session.
      * </p>
      * 
-     * @return Maximum number of players that can be simultaneously connected to
-     *         the game session.
+     * @return Maximum number of players that can be simultaneously connected to the game session.
      */
 
     public Integer getMaximumPlayerSessionCount() {
@@ -145,32 +125,26 @@ public class UpdateGameSessionRequest extends
 
     /**
      * <p>
-     * Maximum number of players that can be simultaneously connected to the
-     * game session.
+     * Maximum number of players that can be simultaneously connected to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be simultaneously connected to
-     *        the game session.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Maximum number of players that can be simultaneously connected to the game session.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateGameSessionRequest withMaximumPlayerSessionCount(
-            Integer maximumPlayerSessionCount) {
+    public UpdateGameSessionRequest withMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
         setMaximumPlayerSessionCount(maximumPlayerSessionCount);
         return this;
     }
 
     /**
      * <p>
-     * Descriptive label associated with a game session. Session names do not
-     * need to be unique.
+     * Descriptive label associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a game session. Session names do
-     *        not need to be unique.
+     *        Descriptive label associated with a game session. Session names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -179,12 +153,10 @@ public class UpdateGameSessionRequest extends
 
     /**
      * <p>
-     * Descriptive label associated with a game session. Session names do not
-     * need to be unique.
+     * Descriptive label associated with a game session. Session names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with a game session. Session names
-     *         do not need to be unique.
+     * @return Descriptive label associated with a game session. Session names do not need to be unique.
      */
 
     public String getName() {
@@ -193,15 +165,12 @@ public class UpdateGameSessionRequest extends
 
     /**
      * <p>
-     * Descriptive label associated with a game session. Session names do not
-     * need to be unique.
+     * Descriptive label associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a game session. Session names do
-     *        not need to be unique.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Descriptive label associated with a game session. Session names do not need to be unique.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateGameSessionRequest withName(String name) {
@@ -215,13 +184,11 @@ public class UpdateGameSessionRequest extends
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session accepts new
-     *        players.
+     *        Policy determining whether or not the game session accepts new players.
      * @see PlayerSessionCreationPolicy
      */
 
-    public void setPlayerSessionCreationPolicy(
-            String playerSessionCreationPolicy) {
+    public void setPlayerSessionCreationPolicy(String playerSessionCreationPolicy) {
         this.playerSessionCreationPolicy = playerSessionCreationPolicy;
     }
 
@@ -230,8 +197,7 @@ public class UpdateGameSessionRequest extends
      * Policy determining whether or not the game session accepts new players.
      * </p>
      * 
-     * @return Policy determining whether or not the game session accepts new
-     *         players.
+     * @return Policy determining whether or not the game session accepts new players.
      * @see PlayerSessionCreationPolicy
      */
 
@@ -245,15 +211,12 @@ public class UpdateGameSessionRequest extends
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session accepts new
-     *        players.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Policy determining whether or not the game session accepts new players.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlayerSessionCreationPolicy
      */
 
-    public UpdateGameSessionRequest withPlayerSessionCreationPolicy(
-            String playerSessionCreationPolicy) {
+    public UpdateGameSessionRequest withPlayerSessionCreationPolicy(String playerSessionCreationPolicy) {
         setPlayerSessionCreationPolicy(playerSessionCreationPolicy);
         return this;
     }
@@ -264,15 +227,12 @@ public class UpdateGameSessionRequest extends
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session accepts new
-     *        players.
+     *        Policy determining whether or not the game session accepts new players.
      * @see PlayerSessionCreationPolicy
      */
 
-    public void setPlayerSessionCreationPolicy(
-            PlayerSessionCreationPolicy playerSessionCreationPolicy) {
-        this.playerSessionCreationPolicy = playerSessionCreationPolicy
-                .toString();
+    public void setPlayerSessionCreationPolicy(PlayerSessionCreationPolicy playerSessionCreationPolicy) {
+        this.playerSessionCreationPolicy = playerSessionCreationPolicy.toString();
     }
 
     /**
@@ -281,15 +241,12 @@ public class UpdateGameSessionRequest extends
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session accepts new
-     *        players.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Policy determining whether or not the game session accepts new players.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlayerSessionCreationPolicy
      */
 
-    public UpdateGameSessionRequest withPlayerSessionCreationPolicy(
-            PlayerSessionCreationPolicy playerSessionCreationPolicy) {
+    public UpdateGameSessionRequest withPlayerSessionCreationPolicy(PlayerSessionCreationPolicy playerSessionCreationPolicy) {
         setPlayerSessionCreationPolicy(playerSessionCreationPolicy);
         return this;
     }
@@ -299,22 +256,17 @@ public class UpdateGameSessionRequest extends
      * Game session protection policy to apply to this game session only.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</li>
      * </ul>
      * 
      * @param protectionPolicy
-     *        Game session protection policy to apply to this game session
-     *        only.</p>
+     *        Game session protection policy to apply to this game session only.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated
-     *        during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an
-     *        <code>ACTIVE</code> status, it cannot be terminated during a
-     *        scale-down event.</li>
+     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
+     *        terminated during a scale-down event.</li>
      * @see ProtectionPolicy
      */
 
@@ -327,21 +279,16 @@ public class UpdateGameSessionRequest extends
      * Game session protection policy to apply to this game session only.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</li>
      * </ul>
      * 
-     * @return Game session protection policy to apply to this game session
-     *         only.</p>
+     * @return Game session protection policy to apply to this game session only.</p>
      *         <ul>
-     *         <li><b>NoProtection</b> – The game session can be terminated
-     *         during a scale-down event.</li>
-     *         <li><b>FullProtection</b> – If the game session is in an
-     *         <code>ACTIVE</code> status, it cannot be terminated during a
-     *         scale-down event.</li>
+     *         <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     *         <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
+     *         terminated during a scale-down event.</li>
      * @see ProtectionPolicy
      */
 
@@ -354,24 +301,18 @@ public class UpdateGameSessionRequest extends
      * Game session protection policy to apply to this game session only.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</li>
      * </ul>
      * 
      * @param protectionPolicy
-     *        Game session protection policy to apply to this game session
-     *        only.</p>
+     *        Game session protection policy to apply to this game session only.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated
-     *        during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an
-     *        <code>ACTIVE</code> status, it cannot be terminated during a
-     *        scale-down event.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
+     *        terminated during a scale-down event.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */
 
@@ -385,22 +326,17 @@ public class UpdateGameSessionRequest extends
      * Game session protection policy to apply to this game session only.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</li>
      * </ul>
      * 
      * @param protectionPolicy
-     *        Game session protection policy to apply to this game session
-     *        only.</p>
+     *        Game session protection policy to apply to this game session only.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated
-     *        during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an
-     *        <code>ACTIVE</code> status, it cannot be terminated during a
-     *        scale-down event.</li>
+     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
+     *        terminated during a scale-down event.</li>
      * @see ProtectionPolicy
      */
 
@@ -413,36 +349,28 @@ public class UpdateGameSessionRequest extends
      * Game session protection policy to apply to this game session only.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</li>
      * </ul>
      * 
      * @param protectionPolicy
-     *        Game session protection policy to apply to this game session
-     *        only.</p>
+     *        Game session protection policy to apply to this game session only.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated
-     *        during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an
-     *        <code>ACTIVE</code> status, it cannot be terminated during a
-     *        scale-down event.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
+     *        terminated during a scale-down event.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */
 
-    public UpdateGameSessionRequest withProtectionPolicy(
-            ProtectionPolicy protectionPolicy) {
+    public UpdateGameSessionRequest withProtectionPolicy(ProtectionPolicy protectionPolicy) {
         setProtectionPolicy(protectionPolicy);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -455,13 +383,11 @@ public class UpdateGameSessionRequest extends
         if (getGameSessionId() != null)
             sb.append("GameSessionId: " + getGameSessionId() + ",");
         if (getMaximumPlayerSessionCount() != null)
-            sb.append("MaximumPlayerSessionCount: "
-                    + getMaximumPlayerSessionCount() + ",");
+            sb.append("MaximumPlayerSessionCount: " + getMaximumPlayerSessionCount() + ",");
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
         if (getPlayerSessionCreationPolicy() != null)
-            sb.append("PlayerSessionCreationPolicy: "
-                    + getPlayerSessionCreationPolicy() + ",");
+            sb.append("PlayerSessionCreationPolicy: " + getPlayerSessionCreationPolicy() + ",");
         if (getProtectionPolicy() != null)
             sb.append("ProtectionPolicy: " + getProtectionPolicy());
         sb.append("}");
@@ -480,34 +406,23 @@ public class UpdateGameSessionRequest extends
         UpdateGameSessionRequest other = (UpdateGameSessionRequest) obj;
         if (other.getGameSessionId() == null ^ this.getGameSessionId() == null)
             return false;
-        if (other.getGameSessionId() != null
-                && other.getGameSessionId().equals(this.getGameSessionId()) == false)
+        if (other.getGameSessionId() != null && other.getGameSessionId().equals(this.getGameSessionId()) == false)
             return false;
-        if (other.getMaximumPlayerSessionCount() == null
-                ^ this.getMaximumPlayerSessionCount() == null)
+        if (other.getMaximumPlayerSessionCount() == null ^ this.getMaximumPlayerSessionCount() == null)
             return false;
-        if (other.getMaximumPlayerSessionCount() != null
-                && other.getMaximumPlayerSessionCount().equals(
-                        this.getMaximumPlayerSessionCount()) == false)
+        if (other.getMaximumPlayerSessionCount() != null && other.getMaximumPlayerSessionCount().equals(this.getMaximumPlayerSessionCount()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getPlayerSessionCreationPolicy() == null
-                ^ this.getPlayerSessionCreationPolicy() == null)
+        if (other.getPlayerSessionCreationPolicy() == null ^ this.getPlayerSessionCreationPolicy() == null)
             return false;
-        if (other.getPlayerSessionCreationPolicy() != null
-                && other.getPlayerSessionCreationPolicy().equals(
-                        this.getPlayerSessionCreationPolicy()) == false)
+        if (other.getPlayerSessionCreationPolicy() != null && other.getPlayerSessionCreationPolicy().equals(this.getPlayerSessionCreationPolicy()) == false)
             return false;
-        if (other.getProtectionPolicy() == null
-                ^ this.getProtectionPolicy() == null)
+        if (other.getProtectionPolicy() == null ^ this.getProtectionPolicy() == null)
             return false;
-        if (other.getProtectionPolicy() != null
-                && other.getProtectionPolicy().equals(
-                        this.getProtectionPolicy()) == false)
+        if (other.getProtectionPolicy() != null && other.getProtectionPolicy().equals(this.getProtectionPolicy()) == false)
             return false;
         return true;
     }
@@ -517,24 +432,11 @@ public class UpdateGameSessionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getGameSessionId() == null) ? 0 : getGameSessionId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMaximumPlayerSessionCount() == null) ? 0
-                        : getMaximumPlayerSessionCount().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPlayerSessionCreationPolicy() == null) ? 0
-                        : getPlayerSessionCreationPolicy().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProtectionPolicy() == null) ? 0 : getProtectionPolicy()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getGameSessionId() == null) ? 0 : getGameSessionId().hashCode());
+        hashCode = prime * hashCode + ((getMaximumPlayerSessionCount() == null) ? 0 : getMaximumPlayerSessionCount().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPlayerSessionCreationPolicy() == null) ? 0 : getPlayerSessionCreationPolicy().hashCode());
+        hashCode = prime * hashCode + ((getProtectionPolicy() == null) ? 0 : getProtectionPolicy().hashCode());
         return hashCode;
     }
 

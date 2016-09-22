@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * ListCommandsRequest Marshaller
  */
-public class ListCommandsRequestMarshaller implements
-        Marshaller<Request<ListCommandsRequest>, ListCommandsRequest> {
+public class ListCommandsRequestMarshaller implements Marshaller<Request<ListCommandsRequest>, ListCommandsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -44,16 +41,13 @@ public class ListCommandsRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<ListCommandsRequest> marshall(
-            ListCommandsRequest listCommandsRequest) {
+    public Request<ListCommandsRequest> marshall(ListCommandsRequest listCommandsRequest) {
 
         if (listCommandsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListCommandsRequest> request = new DefaultRequest<ListCommandsRequest>(
-                listCommandsRequest, "AWSSimpleSystemsManagement");
+        Request<ListCommandsRequest> request = new DefaultRequest<ListCommandsRequest>(listCommandsRequest, "AWSSimpleSystemsManagement");
         request.addHeader("X-Amz-Target", "AmazonSSM.ListCommands");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -61,26 +55,21 @@ public class ListCommandsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (listCommandsRequest.getCommandId() != null) {
-                jsonGenerator.writeFieldName("CommandId").writeValue(
-                        listCommandsRequest.getCommandId());
+                jsonGenerator.writeFieldName("CommandId").writeValue(listCommandsRequest.getCommandId());
             }
             if (listCommandsRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(
-                        listCommandsRequest.getInstanceId());
+                jsonGenerator.writeFieldName("InstanceId").writeValue(listCommandsRequest.getInstanceId());
             }
             if (listCommandsRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(
-                        listCommandsRequest.getMaxResults());
+                jsonGenerator.writeFieldName("MaxResults").writeValue(listCommandsRequest.getMaxResults());
             }
             if (listCommandsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(
-                        listCommandsRequest.getNextToken());
+                jsonGenerator.writeFieldName("NextToken").writeValue(listCommandsRequest.getNextToken());
             }
 
             com.amazonaws.internal.SdkInternalList<CommandFilter> filtersList = (com.amazonaws.internal.SdkInternalList<CommandFilter>) listCommandsRequest
@@ -91,8 +80,7 @@ public class ListCommandsRequestMarshaller implements
                 for (CommandFilter filtersListValue : filtersList) {
                     if (filtersListValue != null) {
 
-                        CommandFilterJsonMarshaller.getInstance().marshall(
-                                filtersListValue, jsonGenerator);
+                        CommandFilterJsonMarshaller.getInstance().marshall(filtersListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
@@ -102,12 +90,10 @@ public class ListCommandsRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

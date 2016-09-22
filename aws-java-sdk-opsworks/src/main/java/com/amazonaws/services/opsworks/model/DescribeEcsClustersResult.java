@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -21,36 +19,29 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeEcsClusters</code> request.
  * </p>
  */
-public class DescribeEcsClustersResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeEcsClustersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code>EcsCluster</code> objects containing the cluster
-     * descriptions.
+     * A list of <code>EcsCluster</code> objects containing the cluster descriptions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EcsCluster> ecsClusters;
     /**
      * <p>
-     * If a paginated request does not return all of the remaining results, this
-     * parameter is set to a token that you can assign to the request object's
-     * <code>NextToken</code> parameter to retrieve the next set of results. If
-     * the previous paginated request returned all of the remaining results,
-     * this parameter is set to <code>null</code>.
+     * If a paginated request does not return all of the remaining results, this parameter is set to a token that you
+     * can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the
+     * previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of <code>EcsCluster</code> objects containing the cluster
-     * descriptions.
+     * A list of <code>EcsCluster</code> objects containing the cluster descriptions.
      * </p>
      * 
-     * @return A list of <code>EcsCluster</code> objects containing the cluster
-     *         descriptions.
+     * @return A list of <code>EcsCluster</code> objects containing the cluster descriptions.
      */
 
     public java.util.List<EcsCluster> getEcsClusters() {
@@ -62,13 +53,11 @@ public class DescribeEcsClustersResult extends
 
     /**
      * <p>
-     * A list of <code>EcsCluster</code> objects containing the cluster
-     * descriptions.
+     * A list of <code>EcsCluster</code> objects containing the cluster descriptions.
      * </p>
      * 
      * @param ecsClusters
-     *        A list of <code>EcsCluster</code> objects containing the cluster
-     *        descriptions.
+     *        A list of <code>EcsCluster</code> objects containing the cluster descriptions.
      */
 
     public void setEcsClusters(java.util.Collection<EcsCluster> ecsClusters) {
@@ -77,33 +66,27 @@ public class DescribeEcsClustersResult extends
             return;
         }
 
-        this.ecsClusters = new com.amazonaws.internal.SdkInternalList<EcsCluster>(
-                ecsClusters);
+        this.ecsClusters = new com.amazonaws.internal.SdkInternalList<EcsCluster>(ecsClusters);
     }
 
     /**
      * <p>
-     * A list of <code>EcsCluster</code> objects containing the cluster
-     * descriptions.
+     * A list of <code>EcsCluster</code> objects containing the cluster descriptions.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEcsClusters(java.util.Collection)} or
-     * {@link #withEcsClusters(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEcsClusters(java.util.Collection)} or {@link #withEcsClusters(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param ecsClusters
-     *        A list of <code>EcsCluster</code> objects containing the cluster
-     *        descriptions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of <code>EcsCluster</code> objects containing the cluster descriptions.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEcsClustersResult withEcsClusters(EcsCluster... ecsClusters) {
         if (this.ecsClusters == null) {
-            setEcsClusters(new com.amazonaws.internal.SdkInternalList<EcsCluster>(
-                    ecsClusters.length));
+            setEcsClusters(new com.amazonaws.internal.SdkInternalList<EcsCluster>(ecsClusters.length));
         }
         for (EcsCluster ele : ecsClusters) {
             this.ecsClusters.add(ele);
@@ -113,38 +96,30 @@ public class DescribeEcsClustersResult extends
 
     /**
      * <p>
-     * A list of <code>EcsCluster</code> objects containing the cluster
-     * descriptions.
+     * A list of <code>EcsCluster</code> objects containing the cluster descriptions.
      * </p>
      * 
      * @param ecsClusters
-     *        A list of <code>EcsCluster</code> objects containing the cluster
-     *        descriptions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of <code>EcsCluster</code> objects containing the cluster descriptions.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEcsClustersResult withEcsClusters(
-            java.util.Collection<EcsCluster> ecsClusters) {
+    public DescribeEcsClustersResult withEcsClusters(java.util.Collection<EcsCluster> ecsClusters) {
         setEcsClusters(ecsClusters);
         return this;
     }
 
     /**
      * <p>
-     * If a paginated request does not return all of the remaining results, this
-     * parameter is set to a token that you can assign to the request object's
-     * <code>NextToken</code> parameter to retrieve the next set of results. If
-     * the previous paginated request returned all of the remaining results,
-     * this parameter is set to <code>null</code>.
+     * If a paginated request does not return all of the remaining results, this parameter is set to a token that you
+     * can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the
+     * previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        If a paginated request does not return all of the remaining
-     *        results, this parameter is set to a token that you can assign to
-     *        the request object's <code>NextToken</code> parameter to retrieve
-     *        the next set of results. If the previous paginated request
-     *        returned all of the remaining results, this parameter is set to
+     *        If a paginated request does not return all of the remaining results, this parameter is set to a token that
+     *        you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of
+     *        results. If the previous paginated request returned all of the remaining results, this parameter is set to
      *        <code>null</code>.
      */
 
@@ -154,19 +129,15 @@ public class DescribeEcsClustersResult extends
 
     /**
      * <p>
-     * If a paginated request does not return all of the remaining results, this
-     * parameter is set to a token that you can assign to the request object's
-     * <code>NextToken</code> parameter to retrieve the next set of results. If
-     * the previous paginated request returned all of the remaining results,
-     * this parameter is set to <code>null</code>.
+     * If a paginated request does not return all of the remaining results, this parameter is set to a token that you
+     * can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the
+     * previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.
      * </p>
      * 
-     * @return If a paginated request does not return all of the remaining
-     *         results, this parameter is set to a token that you can assign to
-     *         the request object's <code>NextToken</code> parameter to retrieve
-     *         the next set of results. If the previous paginated request
-     *         returned all of the remaining results, this parameter is set to
-     *         <code>null</code>.
+     * @return If a paginated request does not return all of the remaining results, this parameter is set to a token
+     *         that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of
+     *         results. If the previous paginated request returned all of the remaining results, this parameter is set
+     *         to <code>null</code>.
      */
 
     public String getNextToken() {
@@ -175,22 +146,17 @@ public class DescribeEcsClustersResult extends
 
     /**
      * <p>
-     * If a paginated request does not return all of the remaining results, this
-     * parameter is set to a token that you can assign to the request object's
-     * <code>NextToken</code> parameter to retrieve the next set of results. If
-     * the previous paginated request returned all of the remaining results,
-     * this parameter is set to <code>null</code>.
+     * If a paginated request does not return all of the remaining results, this parameter is set to a token that you
+     * can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the
+     * previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        If a paginated request does not return all of the remaining
-     *        results, this parameter is set to a token that you can assign to
-     *        the request object's <code>NextToken</code> parameter to retrieve
-     *        the next set of results. If the previous paginated request
-     *        returned all of the remaining results, this parameter is set to
+     *        If a paginated request does not return all of the remaining results, this parameter is set to a token that
+     *        you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of
+     *        results. If the previous paginated request returned all of the remaining results, this parameter is set to
      *        <code>null</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEcsClustersResult withNextToken(String nextToken) {
@@ -199,8 +165,7 @@ public class DescribeEcsClustersResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -230,13 +195,11 @@ public class DescribeEcsClustersResult extends
         DescribeEcsClustersResult other = (DescribeEcsClustersResult) obj;
         if (other.getEcsClusters() == null ^ this.getEcsClusters() == null)
             return false;
-        if (other.getEcsClusters() != null
-                && other.getEcsClusters().equals(this.getEcsClusters()) == false)
+        if (other.getEcsClusters() != null && other.getEcsClusters().equals(this.getEcsClusters()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -246,11 +209,8 @@ public class DescribeEcsClustersResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEcsClusters() == null) ? 0 : getEcsClusters().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getEcsClusters() == null) ? 0 : getEcsClusters().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -259,9 +219,7 @@ public class DescribeEcsClustersResult extends
         try {
             return (DescribeEcsClustersResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

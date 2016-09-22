@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ModifyDocumentPermissionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ModifyDocumentPermissionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,25 +28,22 @@ public class ModifyDocumentPermissionRequest extends
     private String name;
     /**
      * <p>
-     * The permission type for the document. The permission type can be
-     * <i>Share</i>.
+     * The permission type for the document. The permission type can be <i>Share</i>.
      * </p>
      */
     private String permissionType;
     /**
      * <p>
-     * The AWS user accounts that should have access to the document. The
-     * account IDs can either be a group of account IDs or <i>All</i>.
+     * The AWS user accounts that should have access to the document. The account IDs can either be a group of account
+     * IDs or <i>All</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> accountIdsToAdd;
     /**
      * <p>
-     * The AWS user accounts that should no longer have access to the document.
-     * The AWS user account can either be a group of account IDs or <i>All</i>.
-     * This action has a higher priority than <i>AccountIdsToAdd</i>. If you
-     * specify an account ID to add and the same ID to remove, the system
-     * removes access to the document.
+     * The AWS user accounts that should no longer have access to the document. The AWS user account can either be a
+     * group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify
+     * an account ID to add and the same ID to remove, the system removes access to the document.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> accountIdsToRemove;
@@ -87,8 +80,7 @@ public class ModifyDocumentPermissionRequest extends
      * 
      * @param name
      *        The name of the document that you want to share.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyDocumentPermissionRequest withName(String name) {
@@ -98,13 +90,11 @@ public class ModifyDocumentPermissionRequest extends
 
     /**
      * <p>
-     * The permission type for the document. The permission type can be
-     * <i>Share</i>.
+     * The permission type for the document. The permission type can be <i>Share</i>.
      * </p>
      * 
      * @param permissionType
-     *        The permission type for the document. The permission type can be
-     *        <i>Share</i>.
+     *        The permission type for the document. The permission type can be <i>Share</i>.
      * @see DocumentPermissionType
      */
 
@@ -114,12 +104,10 @@ public class ModifyDocumentPermissionRequest extends
 
     /**
      * <p>
-     * The permission type for the document. The permission type can be
-     * <i>Share</i>.
+     * The permission type for the document. The permission type can be <i>Share</i>.
      * </p>
      * 
-     * @return The permission type for the document. The permission type can be
-     *         <i>Share</i>.
+     * @return The permission type for the document. The permission type can be <i>Share</i>.
      * @see DocumentPermissionType
      */
 
@@ -129,33 +117,27 @@ public class ModifyDocumentPermissionRequest extends
 
     /**
      * <p>
-     * The permission type for the document. The permission type can be
-     * <i>Share</i>.
+     * The permission type for the document. The permission type can be <i>Share</i>.
      * </p>
      * 
      * @param permissionType
-     *        The permission type for the document. The permission type can be
-     *        <i>Share</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The permission type for the document. The permission type can be <i>Share</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentPermissionType
      */
 
-    public ModifyDocumentPermissionRequest withPermissionType(
-            String permissionType) {
+    public ModifyDocumentPermissionRequest withPermissionType(String permissionType) {
         setPermissionType(permissionType);
         return this;
     }
 
     /**
      * <p>
-     * The permission type for the document. The permission type can be
-     * <i>Share</i>.
+     * The permission type for the document. The permission type can be <i>Share</i>.
      * </p>
      * 
      * @param permissionType
-     *        The permission type for the document. The permission type can be
-     *        <i>Share</i>.
+     *        The permission type for the document. The permission type can be <i>Share</i>.
      * @see DocumentPermissionType
      */
 
@@ -165,33 +147,28 @@ public class ModifyDocumentPermissionRequest extends
 
     /**
      * <p>
-     * The permission type for the document. The permission type can be
-     * <i>Share</i>.
+     * The permission type for the document. The permission type can be <i>Share</i>.
      * </p>
      * 
      * @param permissionType
-     *        The permission type for the document. The permission type can be
-     *        <i>Share</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The permission type for the document. The permission type can be <i>Share</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentPermissionType
      */
 
-    public ModifyDocumentPermissionRequest withPermissionType(
-            DocumentPermissionType permissionType) {
+    public ModifyDocumentPermissionRequest withPermissionType(DocumentPermissionType permissionType) {
         setPermissionType(permissionType);
         return this;
     }
 
     /**
      * <p>
-     * The AWS user accounts that should have access to the document. The
-     * account IDs can either be a group of account IDs or <i>All</i>.
+     * The AWS user accounts that should have access to the document. The account IDs can either be a group of account
+     * IDs or <i>All</i>.
      * </p>
      * 
-     * @return The AWS user accounts that should have access to the document.
-     *         The account IDs can either be a group of account IDs or
-     *         <i>All</i>.
+     * @return The AWS user accounts that should have access to the document. The account IDs can either be a group of
+     *         account IDs or <i>All</i>.
      */
 
     public java.util.List<String> getAccountIdsToAdd() {
@@ -203,13 +180,13 @@ public class ModifyDocumentPermissionRequest extends
 
     /**
      * <p>
-     * The AWS user accounts that should have access to the document. The
-     * account IDs can either be a group of account IDs or <i>All</i>.
+     * The AWS user accounts that should have access to the document. The account IDs can either be a group of account
+     * IDs or <i>All</i>.
      * </p>
      * 
      * @param accountIdsToAdd
-     *        The AWS user accounts that should have access to the document. The
-     *        account IDs can either be a group of account IDs or <i>All</i>.
+     *        The AWS user accounts that should have access to the document. The account IDs can either be a group of
+     *        account IDs or <i>All</i>.
      */
 
     public void setAccountIdsToAdd(java.util.Collection<String> accountIdsToAdd) {
@@ -218,34 +195,29 @@ public class ModifyDocumentPermissionRequest extends
             return;
         }
 
-        this.accountIdsToAdd = new com.amazonaws.internal.SdkInternalList<String>(
-                accountIdsToAdd);
+        this.accountIdsToAdd = new com.amazonaws.internal.SdkInternalList<String>(accountIdsToAdd);
     }
 
     /**
      * <p>
-     * The AWS user accounts that should have access to the document. The
-     * account IDs can either be a group of account IDs or <i>All</i>.
+     * The AWS user accounts that should have access to the document. The account IDs can either be a group of account
+     * IDs or <i>All</i>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAccountIdsToAdd(java.util.Collection)} or
-     * {@link #withAccountIdsToAdd(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccountIdsToAdd(java.util.Collection)} or {@link #withAccountIdsToAdd(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param accountIdsToAdd
-     *        The AWS user accounts that should have access to the document. The
-     *        account IDs can either be a group of account IDs or <i>All</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS user accounts that should have access to the document. The account IDs can either be a group of
+     *        account IDs or <i>All</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyDocumentPermissionRequest withAccountIdsToAdd(
-            String... accountIdsToAdd) {
+    public ModifyDocumentPermissionRequest withAccountIdsToAdd(String... accountIdsToAdd) {
         if (this.accountIdsToAdd == null) {
-            setAccountIdsToAdd(new com.amazonaws.internal.SdkInternalList<String>(
-                    accountIdsToAdd.length));
+            setAccountIdsToAdd(new com.amazonaws.internal.SdkInternalList<String>(accountIdsToAdd.length));
         }
         for (String ele : accountIdsToAdd) {
             this.accountIdsToAdd.add(ele);
@@ -255,37 +227,31 @@ public class ModifyDocumentPermissionRequest extends
 
     /**
      * <p>
-     * The AWS user accounts that should have access to the document. The
-     * account IDs can either be a group of account IDs or <i>All</i>.
+     * The AWS user accounts that should have access to the document. The account IDs can either be a group of account
+     * IDs or <i>All</i>.
      * </p>
      * 
      * @param accountIdsToAdd
-     *        The AWS user accounts that should have access to the document. The
-     *        account IDs can either be a group of account IDs or <i>All</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS user accounts that should have access to the document. The account IDs can either be a group of
+     *        account IDs or <i>All</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyDocumentPermissionRequest withAccountIdsToAdd(
-            java.util.Collection<String> accountIdsToAdd) {
+    public ModifyDocumentPermissionRequest withAccountIdsToAdd(java.util.Collection<String> accountIdsToAdd) {
         setAccountIdsToAdd(accountIdsToAdd);
         return this;
     }
 
     /**
      * <p>
-     * The AWS user accounts that should no longer have access to the document.
-     * The AWS user account can either be a group of account IDs or <i>All</i>.
-     * This action has a higher priority than <i>AccountIdsToAdd</i>. If you
-     * specify an account ID to add and the same ID to remove, the system
-     * removes access to the document.
+     * The AWS user accounts that should no longer have access to the document. The AWS user account can either be a
+     * group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify
+     * an account ID to add and the same ID to remove, the system removes access to the document.
      * </p>
      * 
-     * @return The AWS user accounts that should no longer have access to the
-     *         document. The AWS user account can either be a group of account
-     *         IDs or <i>All</i>. This action has a higher priority than
-     *         <i>AccountIdsToAdd</i>. If you specify an account ID to add and
-     *         the same ID to remove, the system removes access to the document.
+     * @return The AWS user accounts that should no longer have access to the document. The AWS user account can either
+     *         be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>.
+     *         If you specify an account ID to add and the same ID to remove, the system removes access to the document.
      */
 
     public java.util.List<String> getAccountIdsToRemove() {
@@ -297,62 +263,48 @@ public class ModifyDocumentPermissionRequest extends
 
     /**
      * <p>
-     * The AWS user accounts that should no longer have access to the document.
-     * The AWS user account can either be a group of account IDs or <i>All</i>.
-     * This action has a higher priority than <i>AccountIdsToAdd</i>. If you
-     * specify an account ID to add and the same ID to remove, the system
-     * removes access to the document.
+     * The AWS user accounts that should no longer have access to the document. The AWS user account can either be a
+     * group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify
+     * an account ID to add and the same ID to remove, the system removes access to the document.
      * </p>
      * 
      * @param accountIdsToRemove
-     *        The AWS user accounts that should no longer have access to the
-     *        document. The AWS user account can either be a group of account
-     *        IDs or <i>All</i>. This action has a higher priority than
-     *        <i>AccountIdsToAdd</i>. If you specify an account ID to add and
-     *        the same ID to remove, the system removes access to the document.
+     *        The AWS user accounts that should no longer have access to the document. The AWS user account can either
+     *        be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If
+     *        you specify an account ID to add and the same ID to remove, the system removes access to the document.
      */
 
-    public void setAccountIdsToRemove(
-            java.util.Collection<String> accountIdsToRemove) {
+    public void setAccountIdsToRemove(java.util.Collection<String> accountIdsToRemove) {
         if (accountIdsToRemove == null) {
             this.accountIdsToRemove = null;
             return;
         }
 
-        this.accountIdsToRemove = new com.amazonaws.internal.SdkInternalList<String>(
-                accountIdsToRemove);
+        this.accountIdsToRemove = new com.amazonaws.internal.SdkInternalList<String>(accountIdsToRemove);
     }
 
     /**
      * <p>
-     * The AWS user accounts that should no longer have access to the document.
-     * The AWS user account can either be a group of account IDs or <i>All</i>.
-     * This action has a higher priority than <i>AccountIdsToAdd</i>. If you
-     * specify an account ID to add and the same ID to remove, the system
-     * removes access to the document.
+     * The AWS user accounts that should no longer have access to the document. The AWS user account can either be a
+     * group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify
+     * an account ID to add and the same ID to remove, the system removes access to the document.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAccountIdsToRemove(java.util.Collection)} or
-     * {@link #withAccountIdsToRemove(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccountIdsToRemove(java.util.Collection)} or {@link #withAccountIdsToRemove(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param accountIdsToRemove
-     *        The AWS user accounts that should no longer have access to the
-     *        document. The AWS user account can either be a group of account
-     *        IDs or <i>All</i>. This action has a higher priority than
-     *        <i>AccountIdsToAdd</i>. If you specify an account ID to add and
-     *        the same ID to remove, the system removes access to the document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS user accounts that should no longer have access to the document. The AWS user account can either
+     *        be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If
+     *        you specify an account ID to add and the same ID to remove, the system removes access to the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyDocumentPermissionRequest withAccountIdsToRemove(
-            String... accountIdsToRemove) {
+    public ModifyDocumentPermissionRequest withAccountIdsToRemove(String... accountIdsToRemove) {
         if (this.accountIdsToRemove == null) {
-            setAccountIdsToRemove(new com.amazonaws.internal.SdkInternalList<String>(
-                    accountIdsToRemove.length));
+            setAccountIdsToRemove(new com.amazonaws.internal.SdkInternalList<String>(accountIdsToRemove.length));
         }
         for (String ele : accountIdsToRemove) {
             this.accountIdsToRemove.add(ele);
@@ -362,32 +314,25 @@ public class ModifyDocumentPermissionRequest extends
 
     /**
      * <p>
-     * The AWS user accounts that should no longer have access to the document.
-     * The AWS user account can either be a group of account IDs or <i>All</i>.
-     * This action has a higher priority than <i>AccountIdsToAdd</i>. If you
-     * specify an account ID to add and the same ID to remove, the system
-     * removes access to the document.
+     * The AWS user accounts that should no longer have access to the document. The AWS user account can either be a
+     * group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify
+     * an account ID to add and the same ID to remove, the system removes access to the document.
      * </p>
      * 
      * @param accountIdsToRemove
-     *        The AWS user accounts that should no longer have access to the
-     *        document. The AWS user account can either be a group of account
-     *        IDs or <i>All</i>. This action has a higher priority than
-     *        <i>AccountIdsToAdd</i>. If you specify an account ID to add and
-     *        the same ID to remove, the system removes access to the document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS user accounts that should no longer have access to the document. The AWS user account can either
+     *        be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If
+     *        you specify an account ID to add and the same ID to remove, the system removes access to the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyDocumentPermissionRequest withAccountIdsToRemove(
-            java.util.Collection<String> accountIdsToRemove) {
+    public ModifyDocumentPermissionRequest withAccountIdsToRemove(java.util.Collection<String> accountIdsToRemove) {
         setAccountIdsToRemove(accountIdsToRemove);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -421,27 +366,19 @@ public class ModifyDocumentPermissionRequest extends
         ModifyDocumentPermissionRequest other = (ModifyDocumentPermissionRequest) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getPermissionType() == null
-                ^ this.getPermissionType() == null)
+        if (other.getPermissionType() == null ^ this.getPermissionType() == null)
             return false;
-        if (other.getPermissionType() != null
-                && other.getPermissionType().equals(this.getPermissionType()) == false)
+        if (other.getPermissionType() != null && other.getPermissionType().equals(this.getPermissionType()) == false)
             return false;
-        if (other.getAccountIdsToAdd() == null
-                ^ this.getAccountIdsToAdd() == null)
+        if (other.getAccountIdsToAdd() == null ^ this.getAccountIdsToAdd() == null)
             return false;
-        if (other.getAccountIdsToAdd() != null
-                && other.getAccountIdsToAdd().equals(this.getAccountIdsToAdd()) == false)
+        if (other.getAccountIdsToAdd() != null && other.getAccountIdsToAdd().equals(this.getAccountIdsToAdd()) == false)
             return false;
-        if (other.getAccountIdsToRemove() == null
-                ^ this.getAccountIdsToRemove() == null)
+        if (other.getAccountIdsToRemove() == null ^ this.getAccountIdsToRemove() == null)
             return false;
-        if (other.getAccountIdsToRemove() != null
-                && other.getAccountIdsToRemove().equals(
-                        this.getAccountIdsToRemove()) == false)
+        if (other.getAccountIdsToRemove() != null && other.getAccountIdsToRemove().equals(this.getAccountIdsToRemove()) == false)
             return false;
         return true;
     }
@@ -451,20 +388,10 @@ public class ModifyDocumentPermissionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPermissionType() == null) ? 0 : getPermissionType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAccountIdsToAdd() == null) ? 0 : getAccountIdsToAdd()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAccountIdsToRemove() == null) ? 0
-                        : getAccountIdsToRemove().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPermissionType() == null) ? 0 : getPermissionType().hashCode());
+        hashCode = prime * hashCode + ((getAccountIdsToAdd() == null) ? 0 : getAccountIdsToAdd().hashCode());
+        hashCode = prime * hashCode + ((getAccountIdsToRemove() == null) ? 0 : getAccountIdsToRemove().hashCode());
         return hashCode;
     }
 

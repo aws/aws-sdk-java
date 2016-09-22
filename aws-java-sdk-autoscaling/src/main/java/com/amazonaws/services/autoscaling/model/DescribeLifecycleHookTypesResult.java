@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Contains the output of DescribeLifecycleHookTypes.
  * </p>
  */
-public class DescribeLifecycleHookTypesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeLifecycleHookTypesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -56,15 +52,13 @@ public class DescribeLifecycleHookTypesResult extends
      *        The lifecycle hook types.
      */
 
-    public void setLifecycleHookTypes(
-            java.util.Collection<String> lifecycleHookTypes) {
+    public void setLifecycleHookTypes(java.util.Collection<String> lifecycleHookTypes) {
         if (lifecycleHookTypes == null) {
             this.lifecycleHookTypes = null;
             return;
         }
 
-        this.lifecycleHookTypes = new com.amazonaws.internal.SdkInternalList<String>(
-                lifecycleHookTypes);
+        this.lifecycleHookTypes = new com.amazonaws.internal.SdkInternalList<String>(lifecycleHookTypes);
     }
 
     /**
@@ -72,23 +66,19 @@ public class DescribeLifecycleHookTypesResult extends
      * The lifecycle hook types.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLifecycleHookTypes(java.util.Collection)} or
-     * {@link #withLifecycleHookTypes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLifecycleHookTypes(java.util.Collection)} or {@link #withLifecycleHookTypes(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param lifecycleHookTypes
      *        The lifecycle hook types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLifecycleHookTypesResult withLifecycleHookTypes(
-            String... lifecycleHookTypes) {
+    public DescribeLifecycleHookTypesResult withLifecycleHookTypes(String... lifecycleHookTypes) {
         if (this.lifecycleHookTypes == null) {
-            setLifecycleHookTypes(new com.amazonaws.internal.SdkInternalList<String>(
-                    lifecycleHookTypes.length));
+            setLifecycleHookTypes(new com.amazonaws.internal.SdkInternalList<String>(lifecycleHookTypes.length));
         }
         for (String ele : lifecycleHookTypes) {
             this.lifecycleHookTypes.add(ele);
@@ -103,19 +93,16 @@ public class DescribeLifecycleHookTypesResult extends
      * 
      * @param lifecycleHookTypes
      *        The lifecycle hook types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLifecycleHookTypesResult withLifecycleHookTypes(
-            java.util.Collection<String> lifecycleHookTypes) {
+    public DescribeLifecycleHookTypesResult withLifecycleHookTypes(java.util.Collection<String> lifecycleHookTypes) {
         setLifecycleHookTypes(lifecycleHookTypes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -141,12 +128,9 @@ public class DescribeLifecycleHookTypesResult extends
         if (obj instanceof DescribeLifecycleHookTypesResult == false)
             return false;
         DescribeLifecycleHookTypesResult other = (DescribeLifecycleHookTypesResult) obj;
-        if (other.getLifecycleHookTypes() == null
-                ^ this.getLifecycleHookTypes() == null)
+        if (other.getLifecycleHookTypes() == null ^ this.getLifecycleHookTypes() == null)
             return false;
-        if (other.getLifecycleHookTypes() != null
-                && other.getLifecycleHookTypes().equals(
-                        this.getLifecycleHookTypes()) == false)
+        if (other.getLifecycleHookTypes() != null && other.getLifecycleHookTypes().equals(this.getLifecycleHookTypes()) == false)
             return false;
         return true;
     }
@@ -156,10 +140,7 @@ public class DescribeLifecycleHookTypesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLifecycleHookTypes() == null) ? 0
-                        : getLifecycleHookTypes().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleHookTypes() == null) ? 0 : getLifecycleHookTypes().hashCode());
         return hashCode;
     }
 
@@ -168,9 +149,7 @@ public class DescribeLifecycleHookTypesResult extends
         try {
             return (DescribeLifecycleHookTypesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

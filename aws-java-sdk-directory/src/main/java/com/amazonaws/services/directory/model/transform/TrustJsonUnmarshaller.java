@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model.transform;
 
@@ -29,8 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Trust JSON Unmarshaller
  */
-public class TrustJsonUnmarshaller implements
-        Unmarshaller<Trust, JsonUnmarshallerContext> {
+public class TrustJsonUnmarshaller implements Unmarshaller<Trust, JsonUnmarshallerContext> {
 
     public Trust unmarshall(JsonUnmarshallerContext context) throws Exception {
         Trust trust = new Trust();
@@ -52,59 +49,46 @@ public class TrustJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryId", targetDepth)) {
                     context.nextToken();
-                    trust.setDirectoryId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    trust.setDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrustId", targetDepth)) {
                     context.nextToken();
-                    trust.setTrustId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    trust.setTrustId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RemoteDomainName", targetDepth)) {
                     context.nextToken();
-                    trust.setRemoteDomainName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    trust.setRemoteDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrustType", targetDepth)) {
                     context.nextToken();
-                    trust.setTrustType(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    trust.setTrustType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrustDirection", targetDepth)) {
                     context.nextToken();
-                    trust.setTrustDirection(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    trust.setTrustDirection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrustState", targetDepth)) {
                     context.nextToken();
-                    trust.setTrustState(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    trust.setTrustState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDateTime", targetDepth)) {
                     context.nextToken();
-                    trust.setCreatedDateTime(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    trust.setCreatedDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedDateTime", targetDepth)) {
                     context.nextToken();
-                    trust.setLastUpdatedDateTime(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    trust.setLastUpdatedDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
-                if (context.testExpression("StateLastUpdatedDateTime",
-                        targetDepth)) {
+                if (context.testExpression("StateLastUpdatedDateTime", targetDepth)) {
                     context.nextToken();
-                    trust.setStateLastUpdatedDateTime(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    trust.setStateLastUpdatedDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("TrustStateReason", targetDepth)) {
                     context.nextToken();
-                    trust.setTrustStateReason(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    trust.setTrustStateReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

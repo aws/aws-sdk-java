@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to describe an existing <a>Authorizers</a> resource.
  * </p>
  */
-public class GetAuthorizersRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,8 +30,8 @@ public class GetAuthorizersRequest extends
     private String restApiId;
     /**
      * <p>
-     * If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specify where to start the next page of results.
+     * If not all <a>Authorizer</a> resources in the response were present, the position will specify where to start the
+     * next page of results.
      * </p>
      */
     private String position;
@@ -64,8 +60,7 @@ public class GetAuthorizersRequest extends
      * The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.
      * </p>
      * 
-     * @return The <a>RestApi</a> identifier for the <a>Authorizers</a>
-     *         resource.
+     * @return The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.
      */
 
     public String getRestApiId() {
@@ -79,8 +74,7 @@ public class GetAuthorizersRequest extends
      * 
      * @param restApiId
      *        The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAuthorizersRequest withRestApiId(String restApiId) {
@@ -90,14 +84,13 @@ public class GetAuthorizersRequest extends
 
     /**
      * <p>
-     * If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specify where to start the next page of results.
+     * If not all <a>Authorizer</a> resources in the response were present, the position will specify where to start the
+     * next page of results.
      * </p>
      * 
      * @param position
-     *        If not all <a>Authorizer</a> resources in the response were
-     *        present, the position will specify where to start the next page of
-     *        results.
+     *        If not all <a>Authorizer</a> resources in the response were present, the position will specify where to
+     *        start the next page of results.
      */
 
     public void setPosition(String position) {
@@ -106,13 +99,12 @@ public class GetAuthorizersRequest extends
 
     /**
      * <p>
-     * If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specify where to start the next page of results.
+     * If not all <a>Authorizer</a> resources in the response were present, the position will specify where to start the
+     * next page of results.
      * </p>
      * 
-     * @return If not all <a>Authorizer</a> resources in the response were
-     *         present, the position will specify where to start the next page
-     *         of results.
+     * @return If not all <a>Authorizer</a> resources in the response were present, the position will specify where to
+     *         start the next page of results.
      */
 
     public String getPosition() {
@@ -121,16 +113,14 @@ public class GetAuthorizersRequest extends
 
     /**
      * <p>
-     * If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specify where to start the next page of results.
+     * If not all <a>Authorizer</a> resources in the response were present, the position will specify where to start the
+     * next page of results.
      * </p>
      * 
      * @param position
-     *        If not all <a>Authorizer</a> resources in the response were
-     *        present, the position will specify where to start the next page of
-     *        results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If not all <a>Authorizer</a> resources in the response were present, the position will specify where to
+     *        start the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAuthorizersRequest withPosition(String position) {
@@ -170,8 +160,7 @@ public class GetAuthorizersRequest extends
      * 
      * @param limit
      *        Limit the number of <a>Authorizer</a> resources in the response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAuthorizersRequest withLimit(Integer limit) {
@@ -180,8 +169,7 @@ public class GetAuthorizersRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -213,18 +201,15 @@ public class GetAuthorizersRequest extends
         GetAuthorizersRequest other = (GetAuthorizersRequest) obj;
         if (other.getRestApiId() == null ^ this.getRestApiId() == null)
             return false;
-        if (other.getRestApiId() != null
-                && other.getRestApiId().equals(this.getRestApiId()) == false)
+        if (other.getRestApiId() != null && other.getRestApiId().equals(this.getRestApiId()) == false)
             return false;
         if (other.getPosition() == null ^ this.getPosition() == null)
             return false;
-        if (other.getPosition() != null
-                && other.getPosition().equals(this.getPosition()) == false)
+        if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -234,12 +219,9 @@ public class GetAuthorizersRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
-        hashCode = prime * hashCode
-                + ((getPosition() == null) ? 0 : getPosition().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
+        hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 

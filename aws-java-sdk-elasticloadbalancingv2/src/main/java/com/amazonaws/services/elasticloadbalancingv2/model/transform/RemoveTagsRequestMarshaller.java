@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
@@ -31,25 +29,20 @@ import com.amazonaws.util.IdempotentUtils;
  * RemoveTagsRequest Marshaller
  */
 
-public class RemoveTagsRequestMarshaller implements
-        Marshaller<Request<RemoveTagsRequest>, RemoveTagsRequest> {
+public class RemoveTagsRequestMarshaller implements Marshaller<Request<RemoveTagsRequest>, RemoveTagsRequest> {
 
-    public Request<RemoveTagsRequest> marshall(
-            RemoveTagsRequest removeTagsRequest) {
+    public Request<RemoveTagsRequest> marshall(RemoveTagsRequest removeTagsRequest) {
 
         if (removeTagsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RemoveTagsRequest> request = new DefaultRequest<RemoveTagsRequest>(
-                removeTagsRequest, "AmazonElasticLoadBalancing");
+        Request<RemoveTagsRequest> request = new DefaultRequest<RemoveTagsRequest>(removeTagsRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "RemoveTags");
         request.addParameter("Version", "2015-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        java.util.List<String> resourceArnsList = removeTagsRequest
-                .getResourceArns();
+        java.util.List<String> resourceArnsList = removeTagsRequest.getResourceArns();
 
         if (resourceArnsList != null) {
             if (resourceArnsList.isEmpty()) {
@@ -59,9 +52,7 @@ public class RemoveTagsRequestMarshaller implements
 
                 for (String resourceArnsListValue : resourceArnsList) {
                     if (resourceArnsListValue != null) {
-                        request.addParameter("ResourceArns.member."
-                                + resourceArnsListIndex,
-                                StringUtils.fromString(resourceArnsListValue));
+                        request.addParameter("ResourceArns.member." + resourceArnsListIndex, StringUtils.fromString(resourceArnsListValue));
                     }
                     resourceArnsListIndex++;
                 }
@@ -78,9 +69,7 @@ public class RemoveTagsRequestMarshaller implements
 
                 for (String tagKeysListValue : tagKeysList) {
                     if (tagKeysListValue != null) {
-                        request.addParameter("TagKeys.member."
-                                + tagKeysListIndex,
-                                StringUtils.fromString(tagKeysListValue));
+                        request.addParameter("TagKeys.member." + tagKeysListIndex, StringUtils.fromString(tagKeysListValue));
                     }
                     tagKeysListIndex++;
                 }

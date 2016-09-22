@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model.transform;
 
@@ -30,8 +28,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Cluster StAX Unmarshaller
  */
-public class ClusterStaxUnmarshaller implements
-        Unmarshaller<Cluster, StaxUnmarshallerContext> {
+public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmarshallerContext> {
 
     public Cluster unmarshall(StaxUnmarshallerContext context) throws Exception {
         Cluster cluster = new Cluster();
@@ -49,212 +46,167 @@ public class ClusterStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("ClusterIdentifier", targetDepth)) {
-                    cluster.setClusterIdentifier(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setClusterIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("NodeType", targetDepth)) {
-                    cluster.setNodeType(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    cluster.setNodeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ClusterStatus", targetDepth)) {
-                    cluster.setClusterStatus(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setClusterStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ModifyStatus", targetDepth)) {
-                    cluster.setModifyStatus(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setModifyStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MasterUsername", targetDepth)) {
-                    cluster.setMasterUsername(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setMasterUsername(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DBName", targetDepth)) {
-                    cluster.setDBName(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    cluster.setDBName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Endpoint", targetDepth)) {
-                    cluster.setEndpoint(EndpointStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    cluster.setEndpoint(EndpointStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ClusterCreateTime", targetDepth)) {
-                    cluster.setClusterCreateTime(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("AutomatedSnapshotRetentionPeriod",
-                        targetDepth)) {
-                    cluster.setAutomatedSnapshotRetentionPeriod(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("AutomatedSnapshotRetentionPeriod", targetDepth)) {
+                    cluster.setAutomatedSnapshotRetentionPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "ClusterSecurityGroups/ClusterSecurityGroup",
-                        targetDepth)) {
-                    cluster.withClusterSecurityGroups(ClusterSecurityGroupMembershipStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("ClusterSecurityGroups/ClusterSecurityGroup", targetDepth)) {
+                    cluster.withClusterSecurityGroups(ClusterSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "VpcSecurityGroups/VpcSecurityGroup", targetDepth)) {
-                    cluster.withVpcSecurityGroups(VpcSecurityGroupMembershipStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("VpcSecurityGroups/VpcSecurityGroup", targetDepth)) {
+                    cluster.withVpcSecurityGroups(VpcSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "ClusterParameterGroups/ClusterParameterGroup",
-                        targetDepth)) {
-                    cluster.withClusterParameterGroups(ClusterParameterGroupStatusStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("ClusterParameterGroups/ClusterParameterGroup", targetDepth)) {
+                    cluster.withClusterParameterGroups(ClusterParameterGroupStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("ClusterSubnetGroupName",
-                        targetDepth)) {
-                    cluster.setClusterSubnetGroupName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("ClusterSubnetGroupName", targetDepth)) {
+                    cluster.setClusterSubnetGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("VpcId", targetDepth)) {
-                    cluster.setVpcId(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    cluster.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
-                    cluster.setAvailabilityZone(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("PreferredMaintenanceWindow",
-                        targetDepth)) {
-                    cluster.setPreferredMaintenanceWindow(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("PreferredMaintenanceWindow", targetDepth)) {
+                    cluster.setPreferredMaintenanceWindow(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("PendingModifiedValues", targetDepth)) {
-                    cluster.setPendingModifiedValues(PendingModifiedValuesStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("PendingModifiedValues", targetDepth)) {
+                    cluster.setPendingModifiedValues(PendingModifiedValuesStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ClusterVersion", targetDepth)) {
-                    cluster.setClusterVersion(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setClusterVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("AllowVersionUpgrade", targetDepth)) {
-                    cluster.setAllowVersionUpgrade(BooleanStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setAllowVersionUpgrade(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("NumberOfNodes", targetDepth)) {
-                    cluster.setNumberOfNodes(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setNumberOfNodes(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("PubliclyAccessible", targetDepth)) {
-                    cluster.setPubliclyAccessible(BooleanStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setPubliclyAccessible(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Encrypted", targetDepth)) {
-                    cluster.setEncrypted(BooleanStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    cluster.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("RestoreStatus", targetDepth)) {
-                    cluster.setRestoreStatus(RestoreStatusStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setRestoreStatus(RestoreStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("HsmStatus", targetDepth)) {
-                    cluster.setHsmStatus(HsmStatusStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setHsmStatus(HsmStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("ClusterSnapshotCopyStatus",
-                        targetDepth)) {
-                    cluster.setClusterSnapshotCopyStatus(ClusterSnapshotCopyStatusStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("ClusterSnapshotCopyStatus", targetDepth)) {
+                    cluster.setClusterSnapshotCopyStatus(ClusterSnapshotCopyStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ClusterPublicKey", targetDepth)) {
-                    cluster.setClusterPublicKey(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setClusterPublicKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ClusterNodes/member", targetDepth)) {
-                    cluster.withClusterNodes(ClusterNodeStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.withClusterNodes(ClusterNodeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ElasticIpStatus", targetDepth)) {
-                    cluster.setElasticIpStatus(ElasticIpStatusStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setElasticIpStatus(ElasticIpStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("ClusterRevisionNumber", targetDepth)) {
-                    cluster.setClusterRevisionNumber(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("ClusterRevisionNumber", targetDepth)) {
+                    cluster.setClusterRevisionNumber(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Tags/Tag", targetDepth)) {
-                    cluster.withTags(TagStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    cluster.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("KmsKeyId", targetDepth)) {
-                    cluster.setKmsKeyId(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    cluster.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EnhancedVpcRouting", targetDepth)) {
-                    cluster.setEnhancedVpcRouting(BooleanStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setEnhancedVpcRouting(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("IamRoles/ClusterIamRole",
-                        targetDepth)) {
-                    cluster.withIamRoles(ClusterIamRoleStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("IamRoles/ClusterIamRole", targetDepth)) {
+                    cluster.withIamRoles(ClusterIamRoleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

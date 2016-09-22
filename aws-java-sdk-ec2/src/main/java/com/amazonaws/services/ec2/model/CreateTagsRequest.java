@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.CreateTagsRequestMarshaller;
  * Contains the parameters for CreateTags.
  * </p>
  */
-public class CreateTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<CreateTagsRequest> {
+public class CreateTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateTagsRequest> {
 
     /**
      * <p>
@@ -35,36 +32,30 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> resources;
     /**
      * <p>
-     * One or more tags. The <code>value</code> parameter is required, but if
-     * you don't want the tag to have a value, specify the parameter with no
-     * value, and we set the value to an empty string.
+     * One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value,
+     * specify the parameter with no value, and we set the value to an empty string.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
-     * Default constructor for CreateTagsRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for CreateTagsRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public CreateTagsRequest() {
     }
 
     /**
-     * Constructs a new CreateTagsRequest object. Callers should use the setter
-     * or fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new CreateTagsRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param resources
-     *        The IDs of one or more resources to tag. For example,
-     *        ami-1a2b3c4d.
+     *        The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      * @param tags
-     *        One or more tags. The <code>value</code> parameter is required,
-     *        but if you don't want the tag to have a value, specify the
-     *        parameter with no value, and we set the value to an empty string.
+     *        One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a
+     *        value, specify the parameter with no value, and we set the value to an empty string.
      */
-    public CreateTagsRequest(java.util.List<String> resources,
-            java.util.List<Tag> tags) {
+    public CreateTagsRequest(java.util.List<String> resources, java.util.List<Tag> tags) {
         setResources(resources);
         setTags(tags);
     }
@@ -74,8 +65,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      * </p>
      * 
-     * @return The IDs of one or more resources to tag. For example,
-     *         ami-1a2b3c4d.
+     * @return The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      */
 
     public java.util.List<String> getResources() {
@@ -91,8 +81,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param resources
-     *        The IDs of one or more resources to tag. For example,
-     *        ami-1a2b3c4d.
+     *        The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      */
 
     public void setResources(java.util.Collection<String> resources) {
@@ -101,8 +90,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.resources = new com.amazonaws.internal.SdkInternalList<String>(
-                resources);
+        this.resources = new com.amazonaws.internal.SdkInternalList<String>(resources);
     }
 
     /**
@@ -110,23 +98,19 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setResources(java.util.Collection)} or
-     * {@link #withResources(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param resources
-     *        The IDs of one or more resources to tag. For example,
-     *        ami-1a2b3c4d.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTagsRequest withResources(String... resources) {
         if (this.resources == null) {
-            setResources(new com.amazonaws.internal.SdkInternalList<String>(
-                    resources.length));
+            setResources(new com.amazonaws.internal.SdkInternalList<String>(resources.length));
         }
         for (String ele : resources) {
             this.resources.add(ele);
@@ -140,28 +124,23 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param resources
-     *        The IDs of one or more resources to tag. For example,
-     *        ami-1a2b3c4d.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateTagsRequest withResources(
-            java.util.Collection<String> resources) {
+    public CreateTagsRequest withResources(java.util.Collection<String> resources) {
         setResources(resources);
         return this;
     }
 
     /**
      * <p>
-     * One or more tags. The <code>value</code> parameter is required, but if
-     * you don't want the tag to have a value, specify the parameter with no
-     * value, and we set the value to an empty string.
+     * One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value,
+     * specify the parameter with no value, and we set the value to an empty string.
      * </p>
      * 
-     * @return One or more tags. The <code>value</code> parameter is required,
-     *         but if you don't want the tag to have a value, specify the
-     *         parameter with no value, and we set the value to an empty string.
+     * @return One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a
+     *         value, specify the parameter with no value, and we set the value to an empty string.
      */
 
     public java.util.List<Tag> getTags() {
@@ -173,15 +152,13 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more tags. The <code>value</code> parameter is required, but if
-     * you don't want the tag to have a value, specify the parameter with no
-     * value, and we set the value to an empty string.
+     * One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value,
+     * specify the parameter with no value, and we set the value to an empty string.
      * </p>
      * 
      * @param tags
-     *        One or more tags. The <code>value</code> parameter is required,
-     *        but if you don't want the tag to have a value, specify the
-     *        parameter with no value, and we set the value to an empty string.
+     *        One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a
+     *        value, specify the parameter with no value, and we set the value to an empty string.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -195,23 +172,19 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more tags. The <code>value</code> parameter is required, but if
-     * you don't want the tag to have a value, specify the parameter with no
-     * value, and we set the value to an empty string.
+     * One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value,
+     * specify the parameter with no value, and we set the value to an empty string.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     *        One or more tags. The <code>value</code> parameter is required,
-     *        but if you don't want the tag to have a value, specify the
-     *        parameter with no value, and we set the value to an empty string.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a
+     *        value, specify the parameter with no value, and we set the value to an empty string.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTagsRequest withTags(Tag... tags) {
@@ -226,17 +199,14 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more tags. The <code>value</code> parameter is required, but if
-     * you don't want the tag to have a value, specify the parameter with no
-     * value, and we set the value to an empty string.
+     * One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value,
+     * specify the parameter with no value, and we set the value to an empty string.
      * </p>
      * 
      * @param tags
-     *        One or more tags. The <code>value</code> parameter is required,
-     *        but if you don't want the tag to have a value, specify the
-     *        parameter with no value, and we set the value to an empty string.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a
+     *        value, specify the parameter with no value, and we set the value to an empty string.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTagsRequest withTags(java.util.Collection<Tag> tags) {
@@ -245,21 +215,18 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<CreateTagsRequest> getDryRunRequest() {
-        Request<CreateTagsRequest> request = new CreateTagsRequestMarshaller()
-                .marshall(this);
+        Request<CreateTagsRequest> request = new CreateTagsRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -289,13 +256,11 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
         CreateTagsRequest other = (CreateTagsRequest) obj;
         if (other.getResources() == null ^ this.getResources() == null)
             return false;
-        if (other.getResources() != null
-                && other.getResources().equals(this.getResources()) == false)
+        if (other.getResources() != null && other.getResources().equals(this.getResources()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -305,10 +270,8 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getResources() == null) ? 0 : getResources().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

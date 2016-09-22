@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -22,15 +20,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeAutoScalingInstances.
  * </p>
  */
-public class DescribeAutoScalingInstancesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instances to describe; up to 50 instance IDs. If you omit this
-     * parameter, all Auto Scaling instances are described. If you specify an ID
-     * that does not exist, it is ignored with no error.
+     * The instances to describe; up to 50 instance IDs. If you omit this parameter, all Auto Scaling instances are
+     * described. If you specify an ID that does not exist, it is ignored with no error.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -42,22 +37,19 @@ public class DescribeAutoScalingInstancesRequest extends
     private Integer maxRecords;
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token
-     * from a previous call.)
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The instances to describe; up to 50 instance IDs. If you omit this
-     * parameter, all Auto Scaling instances are described. If you specify an ID
-     * that does not exist, it is ignored with no error.
+     * The instances to describe; up to 50 instance IDs. If you omit this parameter, all Auto Scaling instances are
+     * described. If you specify an ID that does not exist, it is ignored with no error.
      * </p>
      * 
-     * @return The instances to describe; up to 50 instance IDs. If you omit
-     *         this parameter, all Auto Scaling instances are described. If you
-     *         specify an ID that does not exist, it is ignored with no error.
+     * @return The instances to describe; up to 50 instance IDs. If you omit this parameter, all Auto Scaling instances
+     *         are described. If you specify an ID that does not exist, it is ignored with no error.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -69,15 +61,13 @@ public class DescribeAutoScalingInstancesRequest extends
 
     /**
      * <p>
-     * The instances to describe; up to 50 instance IDs. If you omit this
-     * parameter, all Auto Scaling instances are described. If you specify an ID
-     * that does not exist, it is ignored with no error.
+     * The instances to describe; up to 50 instance IDs. If you omit this parameter, all Auto Scaling instances are
+     * described. If you specify an ID that does not exist, it is ignored with no error.
      * </p>
      * 
      * @param instanceIds
-     *        The instances to describe; up to 50 instance IDs. If you omit this
-     *        parameter, all Auto Scaling instances are described. If you
-     *        specify an ID that does not exist, it is ignored with no error.
+     *        The instances to describe; up to 50 instance IDs. If you omit this parameter, all Auto Scaling instances
+     *        are described. If you specify an ID that does not exist, it is ignored with no error.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -86,36 +76,29 @@ public class DescribeAutoScalingInstancesRequest extends
             return;
         }
 
-        this.instanceIds = new com.amazonaws.internal.SdkInternalList<String>(
-                instanceIds);
+        this.instanceIds = new com.amazonaws.internal.SdkInternalList<String>(instanceIds);
     }
 
     /**
      * <p>
-     * The instances to describe; up to 50 instance IDs. If you omit this
-     * parameter, all Auto Scaling instances are described. If you specify an ID
-     * that does not exist, it is ignored with no error.
+     * The instances to describe; up to 50 instance IDs. If you omit this parameter, all Auto Scaling instances are
+     * described. If you specify an ID that does not exist, it is ignored with no error.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstanceIds(java.util.Collection)} or
-     * {@link #withInstanceIds(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceIds(java.util.Collection)} or {@link #withInstanceIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param instanceIds
-     *        The instances to describe; up to 50 instance IDs. If you omit this
-     *        parameter, all Auto Scaling instances are described. If you
-     *        specify an ID that does not exist, it is ignored with no error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instances to describe; up to 50 instance IDs. If you omit this parameter, all Auto Scaling instances
+     *        are described. If you specify an ID that does not exist, it is ignored with no error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAutoScalingInstancesRequest withInstanceIds(
-            String... instanceIds) {
+    public DescribeAutoScalingInstancesRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
-            setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    instanceIds.length));
+            setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(instanceIds.length));
         }
         for (String ele : instanceIds) {
             this.instanceIds.add(ele);
@@ -125,21 +108,17 @@ public class DescribeAutoScalingInstancesRequest extends
 
     /**
      * <p>
-     * The instances to describe; up to 50 instance IDs. If you omit this
-     * parameter, all Auto Scaling instances are described. If you specify an ID
-     * that does not exist, it is ignored with no error.
+     * The instances to describe; up to 50 instance IDs. If you omit this parameter, all Auto Scaling instances are
+     * described. If you specify an ID that does not exist, it is ignored with no error.
      * </p>
      * 
      * @param instanceIds
-     *        The instances to describe; up to 50 instance IDs. If you omit this
-     *        parameter, all Auto Scaling instances are described. If you
-     *        specify an ID that does not exist, it is ignored with no error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instances to describe; up to 50 instance IDs. If you omit this parameter, all Auto Scaling instances
+     *        are described. If you specify an ID that does not exist, it is ignored with no error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAutoScalingInstancesRequest withInstanceIds(
-            java.util.Collection<String> instanceIds) {
+    public DescribeAutoScalingInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
         return this;
     }
@@ -176,8 +155,7 @@ public class DescribeAutoScalingInstancesRequest extends
      * 
      * @param maxRecords
      *        The maximum number of items to return with this call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAutoScalingInstancesRequest withMaxRecords(Integer maxRecords) {
@@ -187,13 +165,11 @@ public class DescribeAutoScalingInstancesRequest extends
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token
-     * from a previous call.)
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this
-     *        token from a previous call.)
+     *        The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -202,12 +178,10 @@ public class DescribeAutoScalingInstancesRequest extends
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token
-     * from a previous call.)
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
-     * @return The token for the next set of items to return. (You received this
-     *         token from a previous call.)
+     * @return The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public String getNextToken() {
@@ -216,15 +190,12 @@ public class DescribeAutoScalingInstancesRequest extends
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token
-     * from a previous call.)
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this
-     *        token from a previous call.)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token for the next set of items to return. (You received this token from a previous call.)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAutoScalingInstancesRequest withNextToken(String nextToken) {
@@ -233,8 +204,7 @@ public class DescribeAutoScalingInstancesRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -266,18 +236,15 @@ public class DescribeAutoScalingInstancesRequest extends
         DescribeAutoScalingInstancesRequest other = (DescribeAutoScalingInstancesRequest) obj;
         if (other.getInstanceIds() == null ^ this.getInstanceIds() == null)
             return false;
-        if (other.getInstanceIds() != null
-                && other.getInstanceIds().equals(this.getInstanceIds()) == false)
+        if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -287,13 +254,9 @@ public class DescribeAutoScalingInstancesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -18,42 +16,35 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * <a>DescribeSourceRegions</a> action.
+ * Contains the result of a successful invocation of the <a>DescribeSourceRegions</a> action.
  * </p>
  */
-public class DescribeSourceRegionsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeSourceRegionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * A list of SourceRegion instances that contains each source AWS Region
-     * that the current region can get a Read Replica or a DB snapshot from.
+     * A list of SourceRegion instances that contains each source AWS Region that the current region can get a Read
+     * Replica or a DB snapshot from.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SourceRegion> sourceRegions;
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous request. If
-     *        this parameter is specified, the response includes only records
-     *        beyond the marker, up to the value specified by
-     *        <code>MaxRecords</code>.
+     *        An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *        includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -62,15 +53,12 @@ public class DescribeSourceRegionsResult extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
-     * @return An optional pagination token provided by a previous request. If
-     *         this parameter is specified, the response includes only records
-     *         beyond the marker, up to the value specified by
-     *         <code>MaxRecords</code>.
+     * @return An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *         includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -79,18 +67,14 @@ public class DescribeSourceRegionsResult extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous request. If
-     *        this parameter is specified, the response includes only records
-     *        beyond the marker, up to the value specified by
-     *        <code>MaxRecords</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *        includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSourceRegionsResult withMarker(String marker) {
@@ -100,13 +84,12 @@ public class DescribeSourceRegionsResult extends
 
     /**
      * <p>
-     * A list of SourceRegion instances that contains each source AWS Region
-     * that the current region can get a Read Replica or a DB snapshot from.
+     * A list of SourceRegion instances that contains each source AWS Region that the current region can get a Read
+     * Replica or a DB snapshot from.
      * </p>
      * 
-     * @return A list of SourceRegion instances that contains each source AWS
-     *         Region that the current region can get a Read Replica or a DB
-     *         snapshot from.
+     * @return A list of SourceRegion instances that contains each source AWS Region that the current region can get a
+     *         Read Replica or a DB snapshot from.
      */
 
     public java.util.List<SourceRegion> getSourceRegions() {
@@ -118,52 +101,44 @@ public class DescribeSourceRegionsResult extends
 
     /**
      * <p>
-     * A list of SourceRegion instances that contains each source AWS Region
-     * that the current region can get a Read Replica or a DB snapshot from.
+     * A list of SourceRegion instances that contains each source AWS Region that the current region can get a Read
+     * Replica or a DB snapshot from.
      * </p>
      * 
      * @param sourceRegions
-     *        A list of SourceRegion instances that contains each source AWS
-     *        Region that the current region can get a Read Replica or a DB
-     *        snapshot from.
+     *        A list of SourceRegion instances that contains each source AWS Region that the current region can get a
+     *        Read Replica or a DB snapshot from.
      */
 
-    public void setSourceRegions(
-            java.util.Collection<SourceRegion> sourceRegions) {
+    public void setSourceRegions(java.util.Collection<SourceRegion> sourceRegions) {
         if (sourceRegions == null) {
             this.sourceRegions = null;
             return;
         }
 
-        this.sourceRegions = new com.amazonaws.internal.SdkInternalList<SourceRegion>(
-                sourceRegions);
+        this.sourceRegions = new com.amazonaws.internal.SdkInternalList<SourceRegion>(sourceRegions);
     }
 
     /**
      * <p>
-     * A list of SourceRegion instances that contains each source AWS Region
-     * that the current region can get a Read Replica or a DB snapshot from.
+     * A list of SourceRegion instances that contains each source AWS Region that the current region can get a Read
+     * Replica or a DB snapshot from.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSourceRegions(java.util.Collection)} or
-     * {@link #withSourceRegions(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSourceRegions(java.util.Collection)} or {@link #withSourceRegions(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param sourceRegions
-     *        A list of SourceRegion instances that contains each source AWS
-     *        Region that the current region can get a Read Replica or a DB
-     *        snapshot from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of SourceRegion instances that contains each source AWS Region that the current region can get a
+     *        Read Replica or a DB snapshot from.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSourceRegionsResult withSourceRegions(
-            SourceRegion... sourceRegions) {
+    public DescribeSourceRegionsResult withSourceRegions(SourceRegion... sourceRegions) {
         if (this.sourceRegions == null) {
-            setSourceRegions(new com.amazonaws.internal.SdkInternalList<SourceRegion>(
-                    sourceRegions.length));
+            setSourceRegions(new com.amazonaws.internal.SdkInternalList<SourceRegion>(sourceRegions.length));
         }
         for (SourceRegion ele : sourceRegions) {
             this.sourceRegions.add(ele);
@@ -173,27 +148,23 @@ public class DescribeSourceRegionsResult extends
 
     /**
      * <p>
-     * A list of SourceRegion instances that contains each source AWS Region
-     * that the current region can get a Read Replica or a DB snapshot from.
+     * A list of SourceRegion instances that contains each source AWS Region that the current region can get a Read
+     * Replica or a DB snapshot from.
      * </p>
      * 
      * @param sourceRegions
-     *        A list of SourceRegion instances that contains each source AWS
-     *        Region that the current region can get a Read Replica or a DB
-     *        snapshot from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of SourceRegion instances that contains each source AWS Region that the current region can get a
+     *        Read Replica or a DB snapshot from.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSourceRegionsResult withSourceRegions(
-            java.util.Collection<SourceRegion> sourceRegions) {
+    public DescribeSourceRegionsResult withSourceRegions(java.util.Collection<SourceRegion> sourceRegions) {
         setSourceRegions(sourceRegions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -223,13 +194,11 @@ public class DescribeSourceRegionsResult extends
         DescribeSourceRegionsResult other = (DescribeSourceRegionsResult) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getSourceRegions() == null ^ this.getSourceRegions() == null)
             return false;
-        if (other.getSourceRegions() != null
-                && other.getSourceRegions().equals(this.getSourceRegions()) == false)
+        if (other.getSourceRegions() != null && other.getSourceRegions().equals(this.getSourceRegions()) == false)
             return false;
         return true;
     }
@@ -239,12 +208,8 @@ public class DescribeSourceRegionsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceRegions() == null) ? 0 : getSourceRegions()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getSourceRegions() == null) ? 0 : getSourceRegions().hashCode());
         return hashCode;
     }
 
@@ -253,9 +218,7 @@ public class DescribeSourceRegionsResult extends
         try {
             return (DescribeSourceRegionsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

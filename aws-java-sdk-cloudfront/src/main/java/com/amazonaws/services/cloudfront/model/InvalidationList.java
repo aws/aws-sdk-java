@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
@@ -24,28 +22,23 @@ public class InvalidationList implements Serializable, Cloneable {
     /** The value you provided for the Marker request parameter. */
     private String marker;
     /**
-     * If IsTruncated is true, this element is present and contains the value
-     * you can use for the Marker request parameter to continue listing your
-     * invalidation batches where they left off.
+     * If IsTruncated is true, this element is present and contains the value you can use for the Marker request
+     * parameter to continue listing your invalidation batches where they left off.
      */
     private String nextMarker;
     /** The value you provided for the MaxItems request parameter. */
     private Integer maxItems;
     /**
-     * A flag that indicates whether more invalidation batch requests remain to
-     * be listed. If your results were truncated, you can make a follow-up
-     * pagination request using the Marker request parameter to retrieve more
+     * A flag that indicates whether more invalidation batch requests remain to be listed. If your results were
+     * truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more
      * invalidation batches in the list.
      */
     private Boolean isTruncated;
-    /**
-     * The number of invalidation batches that were created by the current AWS
-     * account.
-     */
+    /** The number of invalidation batches that were created by the current AWS account. */
     private Integer quantity;
     /**
-     * A complex type that contains one InvalidationSummary element for each
-     * invalidation batch that was created by the current AWS account.
+     * A complex type that contains one InvalidationSummary element for each invalidation batch that was created by the
+     * current AWS account.
      */
     private com.amazonaws.internal.SdkInternalList<InvalidationSummary> items;
 
@@ -75,8 +68,7 @@ public class InvalidationList implements Serializable, Cloneable {
      * 
      * @param marker
      *        The value you provided for the Marker request parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvalidationList withMarker(String marker) {
@@ -85,14 +77,12 @@ public class InvalidationList implements Serializable, Cloneable {
     }
 
     /**
-     * If IsTruncated is true, this element is present and contains the value
-     * you can use for the Marker request parameter to continue listing your
-     * invalidation batches where they left off.
+     * If IsTruncated is true, this element is present and contains the value you can use for the Marker request
+     * parameter to continue listing your invalidation batches where they left off.
      * 
      * @param nextMarker
-     *        If IsTruncated is true, this element is present and contains the
-     *        value you can use for the Marker request parameter to continue
-     *        listing your invalidation batches where they left off.
+     *        If IsTruncated is true, this element is present and contains the value you can use for the Marker request
+     *        parameter to continue listing your invalidation batches where they left off.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -100,13 +90,11 @@ public class InvalidationList implements Serializable, Cloneable {
     }
 
     /**
-     * If IsTruncated is true, this element is present and contains the value
-     * you can use for the Marker request parameter to continue listing your
-     * invalidation batches where they left off.
+     * If IsTruncated is true, this element is present and contains the value you can use for the Marker request
+     * parameter to continue listing your invalidation batches where they left off.
      * 
-     * @return If IsTruncated is true, this element is present and contains the
-     *         value you can use for the Marker request parameter to continue
-     *         listing your invalidation batches where they left off.
+     * @return If IsTruncated is true, this element is present and contains the value you can use for the Marker request
+     *         parameter to continue listing your invalidation batches where they left off.
      */
 
     public String getNextMarker() {
@@ -114,16 +102,13 @@ public class InvalidationList implements Serializable, Cloneable {
     }
 
     /**
-     * If IsTruncated is true, this element is present and contains the value
-     * you can use for the Marker request parameter to continue listing your
-     * invalidation batches where they left off.
+     * If IsTruncated is true, this element is present and contains the value you can use for the Marker request
+     * parameter to continue listing your invalidation batches where they left off.
      * 
      * @param nextMarker
-     *        If IsTruncated is true, this element is present and contains the
-     *        value you can use for the Marker request parameter to continue
-     *        listing your invalidation batches where they left off.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If IsTruncated is true, this element is present and contains the value you can use for the Marker request
+     *        parameter to continue listing your invalidation batches where they left off.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvalidationList withNextMarker(String nextMarker) {
@@ -157,8 +142,7 @@ public class InvalidationList implements Serializable, Cloneable {
      * 
      * @param maxItems
      *        The value you provided for the MaxItems request parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvalidationList withMaxItems(Integer maxItems) {
@@ -167,16 +151,14 @@ public class InvalidationList implements Serializable, Cloneable {
     }
 
     /**
-     * A flag that indicates whether more invalidation batch requests remain to
-     * be listed. If your results were truncated, you can make a follow-up
-     * pagination request using the Marker request parameter to retrieve more
+     * A flag that indicates whether more invalidation batch requests remain to be listed. If your results were
+     * truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more
      * invalidation batches in the list.
      * 
      * @param isTruncated
-     *        A flag that indicates whether more invalidation batch requests
-     *        remain to be listed. If your results were truncated, you can make
-     *        a follow-up pagination request using the Marker request parameter
-     *        to retrieve more invalidation batches in the list.
+     *        A flag that indicates whether more invalidation batch requests remain to be listed. If your results were
+     *        truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more
+     *        invalidation batches in the list.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -184,15 +166,13 @@ public class InvalidationList implements Serializable, Cloneable {
     }
 
     /**
-     * A flag that indicates whether more invalidation batch requests remain to
-     * be listed. If your results were truncated, you can make a follow-up
-     * pagination request using the Marker request parameter to retrieve more
+     * A flag that indicates whether more invalidation batch requests remain to be listed. If your results were
+     * truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more
      * invalidation batches in the list.
      * 
-     * @return A flag that indicates whether more invalidation batch requests
-     *         remain to be listed. If your results were truncated, you can make
-     *         a follow-up pagination request using the Marker request parameter
-     *         to retrieve more invalidation batches in the list.
+     * @return A flag that indicates whether more invalidation batch requests remain to be listed. If your results were
+     *         truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve
+     *         more invalidation batches in the list.
      */
 
     public Boolean getIsTruncated() {
@@ -200,18 +180,15 @@ public class InvalidationList implements Serializable, Cloneable {
     }
 
     /**
-     * A flag that indicates whether more invalidation batch requests remain to
-     * be listed. If your results were truncated, you can make a follow-up
-     * pagination request using the Marker request parameter to retrieve more
+     * A flag that indicates whether more invalidation batch requests remain to be listed. If your results were
+     * truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more
      * invalidation batches in the list.
      * 
      * @param isTruncated
-     *        A flag that indicates whether more invalidation batch requests
-     *        remain to be listed. If your results were truncated, you can make
-     *        a follow-up pagination request using the Marker request parameter
-     *        to retrieve more invalidation batches in the list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A flag that indicates whether more invalidation batch requests remain to be listed. If your results were
+     *        truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more
+     *        invalidation batches in the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvalidationList withIsTruncated(Boolean isTruncated) {
@@ -220,15 +197,13 @@ public class InvalidationList implements Serializable, Cloneable {
     }
 
     /**
-     * A flag that indicates whether more invalidation batch requests remain to
-     * be listed. If your results were truncated, you can make a follow-up
-     * pagination request using the Marker request parameter to retrieve more
+     * A flag that indicates whether more invalidation batch requests remain to be listed. If your results were
+     * truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more
      * invalidation batches in the list.
      * 
-     * @return A flag that indicates whether more invalidation batch requests
-     *         remain to be listed. If your results were truncated, you can make
-     *         a follow-up pagination request using the Marker request parameter
-     *         to retrieve more invalidation batches in the list.
+     * @return A flag that indicates whether more invalidation batch requests remain to be listed. If your results were
+     *         truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve
+     *         more invalidation batches in the list.
      */
 
     public Boolean isTruncated() {
@@ -236,12 +211,10 @@ public class InvalidationList implements Serializable, Cloneable {
     }
 
     /**
-     * The number of invalidation batches that were created by the current AWS
-     * account.
+     * The number of invalidation batches that were created by the current AWS account.
      * 
      * @param quantity
-     *        The number of invalidation batches that were created by the
-     *        current AWS account.
+     *        The number of invalidation batches that were created by the current AWS account.
      */
 
     public void setQuantity(Integer quantity) {
@@ -249,11 +222,9 @@ public class InvalidationList implements Serializable, Cloneable {
     }
 
     /**
-     * The number of invalidation batches that were created by the current AWS
-     * account.
+     * The number of invalidation batches that were created by the current AWS account.
      * 
-     * @return The number of invalidation batches that were created by the
-     *         current AWS account.
+     * @return The number of invalidation batches that were created by the current AWS account.
      */
 
     public Integer getQuantity() {
@@ -261,14 +232,11 @@ public class InvalidationList implements Serializable, Cloneable {
     }
 
     /**
-     * The number of invalidation batches that were created by the current AWS
-     * account.
+     * The number of invalidation batches that were created by the current AWS account.
      * 
      * @param quantity
-     *        The number of invalidation batches that were created by the
-     *        current AWS account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of invalidation batches that were created by the current AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvalidationList withQuantity(Integer quantity) {
@@ -277,12 +245,11 @@ public class InvalidationList implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one InvalidationSummary element for each
-     * invalidation batch that was created by the current AWS account.
+     * A complex type that contains one InvalidationSummary element for each invalidation batch that was created by the
+     * current AWS account.
      * 
-     * @return A complex type that contains one InvalidationSummary element for
-     *         each invalidation batch that was created by the current AWS
-     *         account.
+     * @return A complex type that contains one InvalidationSummary element for each invalidation batch that was created
+     *         by the current AWS account.
      */
 
     public java.util.List<InvalidationSummary> getItems() {
@@ -293,13 +260,12 @@ public class InvalidationList implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one InvalidationSummary element for each
-     * invalidation batch that was created by the current AWS account.
+     * A complex type that contains one InvalidationSummary element for each invalidation batch that was created by the
+     * current AWS account.
      * 
      * @param items
-     *        A complex type that contains one InvalidationSummary element for
-     *        each invalidation batch that was created by the current AWS
-     *        account.
+     *        A complex type that contains one InvalidationSummary element for each invalidation batch that was created
+     *        by the current AWS account.
      */
 
     public void setItems(java.util.Collection<InvalidationSummary> items) {
@@ -308,32 +274,27 @@ public class InvalidationList implements Serializable, Cloneable {
             return;
         }
 
-        this.items = new com.amazonaws.internal.SdkInternalList<InvalidationSummary>(
-                items);
+        this.items = new com.amazonaws.internal.SdkInternalList<InvalidationSummary>(items);
     }
 
     /**
-     * A complex type that contains one InvalidationSummary element for each
-     * invalidation batch that was created by the current AWS account.
+     * A complex type that contains one InvalidationSummary element for each invalidation batch that was created by the
+     * current AWS account.
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setItems(java.util.Collection)} or
-     * {@link #withItems(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param items
-     *        A complex type that contains one InvalidationSummary element for
-     *        each invalidation batch that was created by the current AWS
-     *        account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains one InvalidationSummary element for each invalidation batch that was created
+     *        by the current AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvalidationList withItems(InvalidationSummary... items) {
         if (this.items == null) {
-            setItems(new com.amazonaws.internal.SdkInternalList<InvalidationSummary>(
-                    items.length));
+            setItems(new com.amazonaws.internal.SdkInternalList<InvalidationSummary>(items.length));
         }
         for (InvalidationSummary ele : items) {
             this.items.add(ele);
@@ -342,26 +303,22 @@ public class InvalidationList implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one InvalidationSummary element for each
-     * invalidation batch that was created by the current AWS account.
+     * A complex type that contains one InvalidationSummary element for each invalidation batch that was created by the
+     * current AWS account.
      * 
      * @param items
-     *        A complex type that contains one InvalidationSummary element for
-     *        each invalidation batch that was created by the current AWS
-     *        account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains one InvalidationSummary element for each invalidation batch that was created
+     *        by the current AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InvalidationList withItems(
-            java.util.Collection<InvalidationSummary> items) {
+    public InvalidationList withItems(java.util.Collection<InvalidationSummary> items) {
         setItems(items);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -399,33 +356,27 @@ public class InvalidationList implements Serializable, Cloneable {
         InvalidationList other = (InvalidationList) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getNextMarker() == null ^ this.getNextMarker() == null)
             return false;
-        if (other.getNextMarker() != null
-                && other.getNextMarker().equals(this.getNextMarker()) == false)
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         if (other.getIsTruncated() == null ^ this.getIsTruncated() == null)
             return false;
-        if (other.getIsTruncated() != null
-                && other.getIsTruncated().equals(this.getIsTruncated()) == false)
+        if (other.getIsTruncated() != null && other.getIsTruncated().equals(this.getIsTruncated()) == false)
             return false;
         if (other.getQuantity() == null ^ this.getQuantity() == null)
             return false;
-        if (other.getQuantity() != null
-                && other.getQuantity().equals(this.getQuantity()) == false)
+        if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false)
             return false;
         if (other.getItems() == null ^ this.getItems() == null)
             return false;
-        if (other.getItems() != null
-                && other.getItems().equals(this.getItems()) == false)
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false)
             return false;
         return true;
     }
@@ -435,19 +386,12 @@ public class InvalidationList implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
-        hashCode = prime * hashCode
-                + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
-        hashCode = prime * hashCode
-                + ((getItems() == null) ? 0 : getItems().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
+        hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());
         return hashCode;
     }
 
@@ -456,9 +400,7 @@ public class InvalidationList implements Serializable, Cloneable {
         try {
             return (InvalidationList) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

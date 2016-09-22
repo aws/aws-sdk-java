@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * AWSSessionCredentials JSON Unmarshaller
  */
-public class AWSSessionCredentialsJsonUnmarshaller implements
-        Unmarshaller<AWSSessionCredentials, JsonUnmarshallerContext> {
+public class AWSSessionCredentialsJsonUnmarshaller implements Unmarshaller<AWSSessionCredentials, JsonUnmarshallerContext> {
 
-    public AWSSessionCredentials unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public AWSSessionCredentials unmarshall(JsonUnmarshallerContext context) throws Exception {
         AWSSessionCredentials aWSSessionCredentials = new AWSSessionCredentials();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,23 +49,18 @@ public class AWSSessionCredentialsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accessKeyId", targetDepth)) {
                     context.nextToken();
-                    aWSSessionCredentials.setAccessKeyId(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    aWSSessionCredentials.setAccessKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("secretAccessKey", targetDepth)) {
                     context.nextToken();
-                    aWSSessionCredentials.setSecretAccessKey(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    aWSSessionCredentials.setSecretAccessKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sessionToken", targetDepth)) {
                     context.nextToken();
-                    aWSSessionCredentials.setSessionToken(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    aWSSessionCredentials.setSessionToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DomainSummary JSON Unmarshaller
  */
-public class DomainSummaryJsonUnmarshaller implements
-        Unmarshaller<DomainSummary, JsonUnmarshallerContext> {
+public class DomainSummaryJsonUnmarshaller implements Unmarshaller<DomainSummary, JsonUnmarshallerContext> {
 
-    public DomainSummary unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public DomainSummary unmarshall(JsonUnmarshallerContext context) throws Exception {
         DomainSummary domainSummary = new DomainSummary();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,28 +49,22 @@ public class DomainSummaryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
                     context.nextToken();
-                    domainSummary.setDomainName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    domainSummary.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoRenew", targetDepth)) {
                     context.nextToken();
-                    domainSummary.setAutoRenew(context.getUnmarshaller(
-                            Boolean.class).unmarshall(context));
+                    domainSummary.setAutoRenew(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TransferLock", targetDepth)) {
                     context.nextToken();
-                    domainSummary.setTransferLock(context.getUnmarshaller(
-                            Boolean.class).unmarshall(context));
+                    domainSummary.setTransferLock(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Expiry", targetDepth)) {
                     context.nextToken();
-                    domainSummary.setExpiry(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    domainSummary.setExpiry(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -74,8 +72,7 @@ public class PrefixList implements Serializable, Cloneable {
      * 
      * @param prefixListId
      *        The ID of the prefix.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PrefixList withPrefixListId(String prefixListId) {
@@ -115,8 +112,7 @@ public class PrefixList implements Serializable, Cloneable {
      * 
      * @param prefixListName
      *        The name of the prefix.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PrefixList withPrefixListName(String prefixListName) {
@@ -162,22 +158,19 @@ public class PrefixList implements Serializable, Cloneable {
      * The IP address range of the AWS service.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCidrs(java.util.Collection)} or
-     * {@link #withCidrs(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCidrs(java.util.Collection)} or {@link #withCidrs(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param cidrs
      *        The IP address range of the AWS service.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PrefixList withCidrs(String... cidrs) {
         if (this.cidrs == null) {
-            setCidrs(new com.amazonaws.internal.SdkInternalList<String>(
-                    cidrs.length));
+            setCidrs(new com.amazonaws.internal.SdkInternalList<String>(cidrs.length));
         }
         for (String ele : cidrs) {
             this.cidrs.add(ele);
@@ -192,8 +185,7 @@ public class PrefixList implements Serializable, Cloneable {
      * 
      * @param cidrs
      *        The IP address range of the AWS service.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PrefixList withCidrs(java.util.Collection<String> cidrs) {
@@ -202,8 +194,7 @@ public class PrefixList implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -235,19 +226,15 @@ public class PrefixList implements Serializable, Cloneable {
         PrefixList other = (PrefixList) obj;
         if (other.getPrefixListId() == null ^ this.getPrefixListId() == null)
             return false;
-        if (other.getPrefixListId() != null
-                && other.getPrefixListId().equals(this.getPrefixListId()) == false)
+        if (other.getPrefixListId() != null && other.getPrefixListId().equals(this.getPrefixListId()) == false)
             return false;
-        if (other.getPrefixListName() == null
-                ^ this.getPrefixListName() == null)
+        if (other.getPrefixListName() == null ^ this.getPrefixListName() == null)
             return false;
-        if (other.getPrefixListName() != null
-                && other.getPrefixListName().equals(this.getPrefixListName()) == false)
+        if (other.getPrefixListName() != null && other.getPrefixListName().equals(this.getPrefixListName()) == false)
             return false;
         if (other.getCidrs() == null ^ this.getCidrs() == null)
             return false;
-        if (other.getCidrs() != null
-                && other.getCidrs().equals(this.getCidrs()) == false)
+        if (other.getCidrs() != null && other.getCidrs().equals(this.getCidrs()) == false)
             return false;
         return true;
     }
@@ -257,16 +244,9 @@ public class PrefixList implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPrefixListId() == null) ? 0 : getPrefixListId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrefixListName() == null) ? 0 : getPrefixListName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCidrs() == null) ? 0 : getCidrs().hashCode());
+        hashCode = prime * hashCode + ((getPrefixListId() == null) ? 0 : getPrefixListId().hashCode());
+        hashCode = prime * hashCode + ((getPrefixListName() == null) ? 0 : getPrefixListName().hashCode());
+        hashCode = prime * hashCode + ((getCidrs() == null) ? 0 : getCidrs().hashCode());
         return hashCode;
     }
 
@@ -275,9 +255,7 @@ public class PrefixList implements Serializable, Cloneable {
         try {
             return (PrefixList) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

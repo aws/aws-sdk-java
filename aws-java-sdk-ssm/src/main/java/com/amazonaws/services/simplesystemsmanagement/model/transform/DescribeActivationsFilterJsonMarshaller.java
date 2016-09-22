@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
@@ -34,26 +32,22 @@ public class DescribeActivationsFilterJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(DescribeActivationsFilter describeActivationsFilter,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(DescribeActivationsFilter describeActivationsFilter, StructuredJsonGenerator jsonGenerator) {
 
         if (describeActivationsFilter == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (describeActivationsFilter.getFilterKey() != null) {
-                jsonGenerator.writeFieldName("FilterKey").writeValue(
-                        describeActivationsFilter.getFilterKey());
+                jsonGenerator.writeFieldName("FilterKey").writeValue(describeActivationsFilter.getFilterKey());
             }
 
             com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeActivationsFilter
                     .getFilterValues();
-            if (!filterValuesList.isEmpty()
-                    || !filterValuesList.isAutoConstruct()) {
+            if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("FilterValues");
                 jsonGenerator.writeStartArray();
                 for (String filterValuesListValue : filterValuesList) {
@@ -66,8 +60,7 @@ public class DescribeActivationsFilterJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
@@ -37,43 +35,35 @@ public class RecordJsonMarshaller {
     public void marshall(Record record, StructuredJsonGenerator jsonGenerator) {
 
         if (record == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (record.getEventID() != null) {
-                jsonGenerator.writeFieldName("eventID").writeValue(
-                        record.getEventID());
+                jsonGenerator.writeFieldName("eventID").writeValue(record.getEventID());
             }
             if (record.getEventName() != null) {
-                jsonGenerator.writeFieldName("eventName").writeValue(
-                        record.getEventName());
+                jsonGenerator.writeFieldName("eventName").writeValue(record.getEventName());
             }
             if (record.getEventVersion() != null) {
-                jsonGenerator.writeFieldName("eventVersion").writeValue(
-                        record.getEventVersion());
+                jsonGenerator.writeFieldName("eventVersion").writeValue(record.getEventVersion());
             }
             if (record.getEventSource() != null) {
-                jsonGenerator.writeFieldName("eventSource").writeValue(
-                        record.getEventSource());
+                jsonGenerator.writeFieldName("eventSource").writeValue(record.getEventSource());
             }
             if (record.getAwsRegion() != null) {
-                jsonGenerator.writeFieldName("awsRegion").writeValue(
-                        record.getAwsRegion());
+                jsonGenerator.writeFieldName("awsRegion").writeValue(record.getAwsRegion());
             }
             if (record.getDynamodb() != null) {
                 jsonGenerator.writeFieldName("dynamodb");
-                StreamRecordJsonMarshaller.getInstance().marshall(
-                        record.getDynamodb(), jsonGenerator);
+                StreamRecordJsonMarshaller.getInstance().marshall(record.getDynamodb(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

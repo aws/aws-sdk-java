@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model;
 
@@ -20,14 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>IPSetId</code> of the <a>IPSet</a> that you want to update.
-     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-     * <a>ListIPSets</a>.
+     * The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by
+     * <a>CreateIPSet</a> and by <a>ListIPSets</a>.
      * </p>
      */
     private String iPSetId;
@@ -39,30 +35,25 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private String changeToken;
     /**
      * <p>
-     * An array of <code>IPSetUpdate</code> objects that you want to insert into
-     * or delete from an <a>IPSet</a>. For more information, see the applicable
-     * data types:
+     * An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For
+     * more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>IPSetUpdate</a>: Contains <code>Action</code> and
-     * <code>IPSetDescriptor</code></li>
-     * <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and
-     * <code>Value</code></li>
+     * <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li>
+     * <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li>
      * </ul>
      */
     private java.util.List<IPSetUpdate> updates;
 
     /**
      * <p>
-     * The <code>IPSetId</code> of the <a>IPSet</a> that you want to update.
-     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-     * <a>ListIPSets</a>.
+     * The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by
+     * <a>CreateIPSet</a> and by <a>ListIPSets</a>.
      * </p>
      * 
      * @param iPSetId
-     *        The <code>IPSetId</code> of the <a>IPSet</a> that you want to
-     *        update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and
-     *        by <a>ListIPSets</a>.
+     *        The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by
+     *        <a>CreateIPSet</a> and by <a>ListIPSets</a>.
      */
 
     public void setIPSetId(String iPSetId) {
@@ -71,14 +62,12 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>IPSetId</code> of the <a>IPSet</a> that you want to update.
-     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-     * <a>ListIPSets</a>.
+     * The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by
+     * <a>CreateIPSet</a> and by <a>ListIPSets</a>.
      * </p>
      * 
-     * @return The <code>IPSetId</code> of the <a>IPSet</a> that you want to
-     *         update. <code>IPSetId</code> is returned by <a>CreateIPSet</a>
-     *         and by <a>ListIPSets</a>.
+     * @return The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by
+     *         <a>CreateIPSet</a> and by <a>ListIPSets</a>.
      */
 
     public String getIPSetId() {
@@ -87,17 +76,14 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>IPSetId</code> of the <a>IPSet</a> that you want to update.
-     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-     * <a>ListIPSets</a>.
+     * The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by
+     * <a>CreateIPSet</a> and by <a>ListIPSets</a>.
      * </p>
      * 
      * @param iPSetId
-     *        The <code>IPSetId</code> of the <a>IPSet</a> that you want to
-     *        update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and
-     *        by <a>ListIPSets</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by
+     *        <a>CreateIPSet</a> and by <a>ListIPSets</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateIPSetRequest withIPSetId(String iPSetId) {
@@ -111,8 +97,7 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param changeToken
-     *        The value returned by the most recent call to
-     *        <a>GetChangeToken</a>.
+     *        The value returned by the most recent call to <a>GetChangeToken</a>.
      */
 
     public void setChangeToken(String changeToken) {
@@ -124,8 +109,7 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * The value returned by the most recent call to <a>GetChangeToken</a>.
      * </p>
      * 
-     * @return The value returned by the most recent call to
-     *         <a>GetChangeToken</a>.
+     * @return The value returned by the most recent call to <a>GetChangeToken</a>.
      */
 
     public String getChangeToken() {
@@ -138,10 +122,8 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param changeToken
-     *        The value returned by the most recent call to
-     *        <a>GetChangeToken</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value returned by the most recent call to <a>GetChangeToken</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateIPSetRequest withChangeToken(String changeToken) {
@@ -151,25 +133,19 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of <code>IPSetUpdate</code> objects that you want to insert into
-     * or delete from an <a>IPSet</a>. For more information, see the applicable
-     * data types:
+     * An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For
+     * more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>IPSetUpdate</a>: Contains <code>Action</code> and
-     * <code>IPSetDescriptor</code></li>
-     * <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and
-     * <code>Value</code></li>
+     * <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li>
+     * <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li>
      * </ul>
      * 
-     * @return An array of <code>IPSetUpdate</code> objects that you want to
-     *         insert into or delete from an <a>IPSet</a>. For more information,
-     *         see the applicable data types:</p>
+     * @return An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>.
+     *         For more information, see the applicable data types:</p>
      *         <ul>
-     *         <li><a>IPSetUpdate</a>: Contains <code>Action</code> and
-     *         <code>IPSetDescriptor</code></li>
-     *         <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and
-     *         <code>Value</code></li>
+     *         <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li>
+     *         <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li>
      */
 
     public java.util.List<IPSetUpdate> getUpdates() {
@@ -178,26 +154,20 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of <code>IPSetUpdate</code> objects that you want to insert into
-     * or delete from an <a>IPSet</a>. For more information, see the applicable
-     * data types:
+     * An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For
+     * more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>IPSetUpdate</a>: Contains <code>Action</code> and
-     * <code>IPSetDescriptor</code></li>
-     * <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and
-     * <code>Value</code></li>
+     * <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li>
+     * <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li>
      * </ul>
      * 
      * @param updates
-     *        An array of <code>IPSetUpdate</code> objects that you want to
-     *        insert into or delete from an <a>IPSet</a>. For more information,
-     *        see the applicable data types:</p>
+     *        An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>.
+     *        For more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>IPSetUpdate</a>: Contains <code>Action</code> and
-     *        <code>IPSetDescriptor</code></li>
-     *        <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and
-     *        <code>Value</code></li>
+     *        <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li>
+     *        <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li>
      */
 
     public void setUpdates(java.util.Collection<IPSetUpdate> updates) {
@@ -211,34 +181,26 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of <code>IPSetUpdate</code> objects that you want to insert into
-     * or delete from an <a>IPSet</a>. For more information, see the applicable
-     * data types:
+     * An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For
+     * more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>IPSetUpdate</a>: Contains <code>Action</code> and
-     * <code>IPSetDescriptor</code></li>
-     * <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and
-     * <code>Value</code></li>
+     * <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li>
+     * <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setUpdates(java.util.Collection)} or
-     * {@link #withUpdates(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUpdates(java.util.Collection)} or {@link #withUpdates(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param updates
-     *        An array of <code>IPSetUpdate</code> objects that you want to
-     *        insert into or delete from an <a>IPSet</a>. For more information,
-     *        see the applicable data types:</p>
+     *        An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>.
+     *        For more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>IPSetUpdate</a>: Contains <code>Action</code> and
-     *        <code>IPSetDescriptor</code></li>
-     *        <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and
-     *        <code>Value</code></li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li>
+     *        <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateIPSetRequest withUpdates(IPSetUpdate... updates) {
@@ -253,39 +215,30 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of <code>IPSetUpdate</code> objects that you want to insert into
-     * or delete from an <a>IPSet</a>. For more information, see the applicable
-     * data types:
+     * An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For
+     * more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>IPSetUpdate</a>: Contains <code>Action</code> and
-     * <code>IPSetDescriptor</code></li>
-     * <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and
-     * <code>Value</code></li>
+     * <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li>
+     * <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li>
      * </ul>
      * 
      * @param updates
-     *        An array of <code>IPSetUpdate</code> objects that you want to
-     *        insert into or delete from an <a>IPSet</a>. For more information,
-     *        see the applicable data types:</p>
+     *        An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>.
+     *        For more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>IPSetUpdate</a>: Contains <code>Action</code> and
-     *        <code>IPSetDescriptor</code></li>
-     *        <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and
-     *        <code>Value</code></li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li>
+     *        <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateIPSetRequest withUpdates(
-            java.util.Collection<IPSetUpdate> updates) {
+    public UpdateIPSetRequest withUpdates(java.util.Collection<IPSetUpdate> updates) {
         setUpdates(updates);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -317,18 +270,15 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
         UpdateIPSetRequest other = (UpdateIPSetRequest) obj;
         if (other.getIPSetId() == null ^ this.getIPSetId() == null)
             return false;
-        if (other.getIPSetId() != null
-                && other.getIPSetId().equals(this.getIPSetId()) == false)
+        if (other.getIPSetId() != null && other.getIPSetId().equals(this.getIPSetId()) == false)
             return false;
         if (other.getChangeToken() == null ^ this.getChangeToken() == null)
             return false;
-        if (other.getChangeToken() != null
-                && other.getChangeToken().equals(this.getChangeToken()) == false)
+        if (other.getChangeToken() != null && other.getChangeToken().equals(this.getChangeToken()) == false)
             return false;
         if (other.getUpdates() == null ^ this.getUpdates() == null)
             return false;
-        if (other.getUpdates() != null
-                && other.getUpdates().equals(this.getUpdates()) == false)
+        if (other.getUpdates() != null && other.getUpdates().equals(this.getUpdates()) == false)
             return false;
         return true;
     }
@@ -338,13 +288,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIPSetId() == null) ? 0 : getIPSetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getChangeToken() == null) ? 0 : getChangeToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getUpdates() == null) ? 0 : getUpdates().hashCode());
+        hashCode = prime * hashCode + ((getIPSetId() == null) ? 0 : getIPSetId().hashCode());
+        hashCode = prime * hashCode + ((getChangeToken() == null) ? 0 : getChangeToken().hashCode());
+        hashCode = prime * hashCode + ((getUpdates() == null) ? 0 : getUpdates().hashCode());
         return hashCode;
     }
 

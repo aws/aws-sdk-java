@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Represents the output of a batch get deployment groups operation.
  * </p>
  */
-public class BatchGetDeploymentGroupsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class BatchGetDeploymentGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -62,15 +58,13 @@ public class BatchGetDeploymentGroupsResult extends
      *        Information about the deployment groups.
      */
 
-    public void setDeploymentGroupsInfo(
-            java.util.Collection<DeploymentGroupInfo> deploymentGroupsInfo) {
+    public void setDeploymentGroupsInfo(java.util.Collection<DeploymentGroupInfo> deploymentGroupsInfo) {
         if (deploymentGroupsInfo == null) {
             this.deploymentGroupsInfo = null;
             return;
         }
 
-        this.deploymentGroupsInfo = new com.amazonaws.internal.SdkInternalList<DeploymentGroupInfo>(
-                deploymentGroupsInfo);
+        this.deploymentGroupsInfo = new com.amazonaws.internal.SdkInternalList<DeploymentGroupInfo>(deploymentGroupsInfo);
     }
 
     /**
@@ -78,23 +72,19 @@ public class BatchGetDeploymentGroupsResult extends
      * Information about the deployment groups.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDeploymentGroupsInfo(java.util.Collection)} or
-     * {@link #withDeploymentGroupsInfo(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeploymentGroupsInfo(java.util.Collection)} or {@link #withDeploymentGroupsInfo(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param deploymentGroupsInfo
      *        Information about the deployment groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetDeploymentGroupsResult withDeploymentGroupsInfo(
-            DeploymentGroupInfo... deploymentGroupsInfo) {
+    public BatchGetDeploymentGroupsResult withDeploymentGroupsInfo(DeploymentGroupInfo... deploymentGroupsInfo) {
         if (this.deploymentGroupsInfo == null) {
-            setDeploymentGroupsInfo(new com.amazonaws.internal.SdkInternalList<DeploymentGroupInfo>(
-                    deploymentGroupsInfo.length));
+            setDeploymentGroupsInfo(new com.amazonaws.internal.SdkInternalList<DeploymentGroupInfo>(deploymentGroupsInfo.length));
         }
         for (DeploymentGroupInfo ele : deploymentGroupsInfo) {
             this.deploymentGroupsInfo.add(ele);
@@ -109,12 +99,10 @@ public class BatchGetDeploymentGroupsResult extends
      * 
      * @param deploymentGroupsInfo
      *        Information about the deployment groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetDeploymentGroupsResult withDeploymentGroupsInfo(
-            java.util.Collection<DeploymentGroupInfo> deploymentGroupsInfo) {
+    public BatchGetDeploymentGroupsResult withDeploymentGroupsInfo(java.util.Collection<DeploymentGroupInfo> deploymentGroupsInfo) {
         setDeploymentGroupsInfo(deploymentGroupsInfo);
         return this;
     }
@@ -125,8 +113,7 @@ public class BatchGetDeploymentGroupsResult extends
      * </p>
      * 
      * @param errorMessage
-     *        Information about errors that may have occurred during the API
-     *        call.
+     *        Information about errors that may have occurred during the API call.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -138,8 +125,7 @@ public class BatchGetDeploymentGroupsResult extends
      * Information about errors that may have occurred during the API call.
      * </p>
      * 
-     * @return Information about errors that may have occurred during the API
-     *         call.
+     * @return Information about errors that may have occurred during the API call.
      */
 
     public String getErrorMessage() {
@@ -152,10 +138,8 @@ public class BatchGetDeploymentGroupsResult extends
      * </p>
      * 
      * @param errorMessage
-     *        Information about errors that may have occurred during the API
-     *        call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about errors that may have occurred during the API call.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchGetDeploymentGroupsResult withErrorMessage(String errorMessage) {
@@ -164,8 +148,7 @@ public class BatchGetDeploymentGroupsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -176,8 +159,7 @@ public class BatchGetDeploymentGroupsResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentGroupsInfo() != null)
-            sb.append("DeploymentGroupsInfo: " + getDeploymentGroupsInfo()
-                    + ",");
+            sb.append("DeploymentGroupsInfo: " + getDeploymentGroupsInfo() + ",");
         if (getErrorMessage() != null)
             sb.append("ErrorMessage: " + getErrorMessage());
         sb.append("}");
@@ -194,17 +176,13 @@ public class BatchGetDeploymentGroupsResult extends
         if (obj instanceof BatchGetDeploymentGroupsResult == false)
             return false;
         BatchGetDeploymentGroupsResult other = (BatchGetDeploymentGroupsResult) obj;
-        if (other.getDeploymentGroupsInfo() == null
-                ^ this.getDeploymentGroupsInfo() == null)
+        if (other.getDeploymentGroupsInfo() == null ^ this.getDeploymentGroupsInfo() == null)
             return false;
-        if (other.getDeploymentGroupsInfo() != null
-                && other.getDeploymentGroupsInfo().equals(
-                        this.getDeploymentGroupsInfo()) == false)
+        if (other.getDeploymentGroupsInfo() != null && other.getDeploymentGroupsInfo().equals(this.getDeploymentGroupsInfo()) == false)
             return false;
         if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
             return false;
-        if (other.getErrorMessage() != null
-                && other.getErrorMessage().equals(this.getErrorMessage()) == false)
+        if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
         return true;
     }
@@ -214,14 +192,8 @@ public class BatchGetDeploymentGroupsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentGroupsInfo() == null) ? 0
-                        : getDeploymentGroupsInfo().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getErrorMessage() == null) ? 0 : getErrorMessage()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDeploymentGroupsInfo() == null) ? 0 : getDeploymentGroupsInfo().hashCode());
+        hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         return hashCode;
     }
 
@@ -230,9 +202,7 @@ public class BatchGetDeploymentGroupsResult extends
         try {
             return (BatchGetDeploymentGroupsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

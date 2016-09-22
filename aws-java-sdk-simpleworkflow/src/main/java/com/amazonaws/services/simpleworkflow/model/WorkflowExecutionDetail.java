@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Contains details about a workflow execution.
  * </p>
  */
-public class WorkflowExecutionDetail extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class WorkflowExecutionDetail extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,32 +29,28 @@ public class WorkflowExecutionDetail extends
     private WorkflowExecutionInfo executionInfo;
     /**
      * <p>
-     * The configuration settings for this workflow execution including timeout
-     * values, tasklist etc.
+     * The configuration settings for this workflow execution including timeout values, tasklist etc.
      * </p>
      */
     private WorkflowExecutionConfiguration executionConfiguration;
     /**
      * <p>
-     * The number of tasks for this workflow execution. This includes open and
-     * closed tasks of all types.
+     * The number of tasks for this workflow execution. This includes open and closed tasks of all types.
      * </p>
      */
     private WorkflowExecutionOpenCounts openCounts;
     /**
      * <p>
-     * The time when the last activity task was scheduled for this workflow
-     * execution. You can use this information to determine if the workflow has
-     * not made progress for an unusually long period of time and might require
-     * a corrective action.
+     * The time when the last activity task was scheduled for this workflow execution. You can use this information to
+     * determine if the workflow has not made progress for an unusually long period of time and might require a
+     * corrective action.
      * </p>
      */
     private java.util.Date latestActivityTaskTimestamp;
     /**
      * <p>
-     * The latest executionContext provided by the decider for this workflow
-     * execution. A decider can provide an executionContext (a free-form string)
-     * when closing a decision task using <a>RespondDecisionTaskCompleted</a>.
+     * The latest executionContext provided by the decider for this workflow execution. A decider can provide an
+     * executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.
      * </p>
      */
     private String latestExecutionContext;
@@ -95,40 +87,33 @@ public class WorkflowExecutionDetail extends
      * 
      * @param executionInfo
      *        Information about the workflow execution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WorkflowExecutionDetail withExecutionInfo(
-            WorkflowExecutionInfo executionInfo) {
+    public WorkflowExecutionDetail withExecutionInfo(WorkflowExecutionInfo executionInfo) {
         setExecutionInfo(executionInfo);
         return this;
     }
 
     /**
      * <p>
-     * The configuration settings for this workflow execution including timeout
-     * values, tasklist etc.
+     * The configuration settings for this workflow execution including timeout values, tasklist etc.
      * </p>
      * 
      * @param executionConfiguration
-     *        The configuration settings for this workflow execution including
-     *        timeout values, tasklist etc.
+     *        The configuration settings for this workflow execution including timeout values, tasklist etc.
      */
 
-    public void setExecutionConfiguration(
-            WorkflowExecutionConfiguration executionConfiguration) {
+    public void setExecutionConfiguration(WorkflowExecutionConfiguration executionConfiguration) {
         this.executionConfiguration = executionConfiguration;
     }
 
     /**
      * <p>
-     * The configuration settings for this workflow execution including timeout
-     * values, tasklist etc.
+     * The configuration settings for this workflow execution including timeout values, tasklist etc.
      * </p>
      * 
-     * @return The configuration settings for this workflow execution including
-     *         timeout values, tasklist etc.
+     * @return The configuration settings for this workflow execution including timeout values, tasklist etc.
      */
 
     public WorkflowExecutionConfiguration getExecutionConfiguration() {
@@ -137,32 +122,26 @@ public class WorkflowExecutionDetail extends
 
     /**
      * <p>
-     * The configuration settings for this workflow execution including timeout
-     * values, tasklist etc.
+     * The configuration settings for this workflow execution including timeout values, tasklist etc.
      * </p>
      * 
      * @param executionConfiguration
-     *        The configuration settings for this workflow execution including
-     *        timeout values, tasklist etc.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The configuration settings for this workflow execution including timeout values, tasklist etc.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WorkflowExecutionDetail withExecutionConfiguration(
-            WorkflowExecutionConfiguration executionConfiguration) {
+    public WorkflowExecutionDetail withExecutionConfiguration(WorkflowExecutionConfiguration executionConfiguration) {
         setExecutionConfiguration(executionConfiguration);
         return this;
     }
 
     /**
      * <p>
-     * The number of tasks for this workflow execution. This includes open and
-     * closed tasks of all types.
+     * The number of tasks for this workflow execution. This includes open and closed tasks of all types.
      * </p>
      * 
      * @param openCounts
-     *        The number of tasks for this workflow execution. This includes
-     *        open and closed tasks of all types.
+     *        The number of tasks for this workflow execution. This includes open and closed tasks of all types.
      */
 
     public void setOpenCounts(WorkflowExecutionOpenCounts openCounts) {
@@ -171,12 +150,10 @@ public class WorkflowExecutionDetail extends
 
     /**
      * <p>
-     * The number of tasks for this workflow execution. This includes open and
-     * closed tasks of all types.
+     * The number of tasks for this workflow execution. This includes open and closed tasks of all types.
      * </p>
      * 
-     * @return The number of tasks for this workflow execution. This includes
-     *         open and closed tasks of all types.
+     * @return The number of tasks for this workflow execution. This includes open and closed tasks of all types.
      */
 
     public WorkflowExecutionOpenCounts getOpenCounts() {
@@ -185,55 +162,46 @@ public class WorkflowExecutionDetail extends
 
     /**
      * <p>
-     * The number of tasks for this workflow execution. This includes open and
-     * closed tasks of all types.
+     * The number of tasks for this workflow execution. This includes open and closed tasks of all types.
      * </p>
      * 
      * @param openCounts
-     *        The number of tasks for this workflow execution. This includes
-     *        open and closed tasks of all types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of tasks for this workflow execution. This includes open and closed tasks of all types.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WorkflowExecutionDetail withOpenCounts(
-            WorkflowExecutionOpenCounts openCounts) {
+    public WorkflowExecutionDetail withOpenCounts(WorkflowExecutionOpenCounts openCounts) {
         setOpenCounts(openCounts);
         return this;
     }
 
     /**
      * <p>
-     * The time when the last activity task was scheduled for this workflow
-     * execution. You can use this information to determine if the workflow has
-     * not made progress for an unusually long period of time and might require
-     * a corrective action.
+     * The time when the last activity task was scheduled for this workflow execution. You can use this information to
+     * determine if the workflow has not made progress for an unusually long period of time and might require a
+     * corrective action.
      * </p>
      * 
      * @param latestActivityTaskTimestamp
-     *        The time when the last activity task was scheduled for this
-     *        workflow execution. You can use this information to determine if
-     *        the workflow has not made progress for an unusually long period of
-     *        time and might require a corrective action.
+     *        The time when the last activity task was scheduled for this workflow execution. You can use this
+     *        information to determine if the workflow has not made progress for an unusually long period of time and
+     *        might require a corrective action.
      */
 
-    public void setLatestActivityTaskTimestamp(
-            java.util.Date latestActivityTaskTimestamp) {
+    public void setLatestActivityTaskTimestamp(java.util.Date latestActivityTaskTimestamp) {
         this.latestActivityTaskTimestamp = latestActivityTaskTimestamp;
     }
 
     /**
      * <p>
-     * The time when the last activity task was scheduled for this workflow
-     * execution. You can use this information to determine if the workflow has
-     * not made progress for an unusually long period of time and might require
-     * a corrective action.
+     * The time when the last activity task was scheduled for this workflow execution. You can use this information to
+     * determine if the workflow has not made progress for an unusually long period of time and might require a
+     * corrective action.
      * </p>
      * 
-     * @return The time when the last activity task was scheduled for this
-     *         workflow execution. You can use this information to determine if
-     *         the workflow has not made progress for an unusually long period
-     *         of time and might require a corrective action.
+     * @return The time when the last activity task was scheduled for this workflow execution. You can use this
+     *         information to determine if the workflow has not made progress for an unusually long period of time and
+     *         might require a corrective action.
      */
 
     public java.util.Date getLatestActivityTaskTimestamp() {
@@ -242,38 +210,32 @@ public class WorkflowExecutionDetail extends
 
     /**
      * <p>
-     * The time when the last activity task was scheduled for this workflow
-     * execution. You can use this information to determine if the workflow has
-     * not made progress for an unusually long period of time and might require
-     * a corrective action.
+     * The time when the last activity task was scheduled for this workflow execution. You can use this information to
+     * determine if the workflow has not made progress for an unusually long period of time and might require a
+     * corrective action.
      * </p>
      * 
      * @param latestActivityTaskTimestamp
-     *        The time when the last activity task was scheduled for this
-     *        workflow execution. You can use this information to determine if
-     *        the workflow has not made progress for an unusually long period of
-     *        time and might require a corrective action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time when the last activity task was scheduled for this workflow execution. You can use this
+     *        information to determine if the workflow has not made progress for an unusually long period of time and
+     *        might require a corrective action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WorkflowExecutionDetail withLatestActivityTaskTimestamp(
-            java.util.Date latestActivityTaskTimestamp) {
+    public WorkflowExecutionDetail withLatestActivityTaskTimestamp(java.util.Date latestActivityTaskTimestamp) {
         setLatestActivityTaskTimestamp(latestActivityTaskTimestamp);
         return this;
     }
 
     /**
      * <p>
-     * The latest executionContext provided by the decider for this workflow
-     * execution. A decider can provide an executionContext (a free-form string)
-     * when closing a decision task using <a>RespondDecisionTaskCompleted</a>.
+     * The latest executionContext provided by the decider for this workflow execution. A decider can provide an
+     * executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.
      * </p>
      * 
      * @param latestExecutionContext
-     *        The latest executionContext provided by the decider for this
-     *        workflow execution. A decider can provide an executionContext (a
-     *        free-form string) when closing a decision task using
+     *        The latest executionContext provided by the decider for this workflow execution. A decider can provide an
+     *        executionContext (a free-form string) when closing a decision task using
      *        <a>RespondDecisionTaskCompleted</a>.
      */
 
@@ -283,14 +245,12 @@ public class WorkflowExecutionDetail extends
 
     /**
      * <p>
-     * The latest executionContext provided by the decider for this workflow
-     * execution. A decider can provide an executionContext (a free-form string)
-     * when closing a decision task using <a>RespondDecisionTaskCompleted</a>.
+     * The latest executionContext provided by the decider for this workflow execution. A decider can provide an
+     * executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.
      * </p>
      * 
-     * @return The latest executionContext provided by the decider for this
-     *         workflow execution. A decider can provide an executionContext (a
-     *         free-form string) when closing a decision task using
+     * @return The latest executionContext provided by the decider for this workflow execution. A decider can provide an
+     *         executionContext (a free-form string) when closing a decision task using
      *         <a>RespondDecisionTaskCompleted</a>.
      */
 
@@ -300,29 +260,24 @@ public class WorkflowExecutionDetail extends
 
     /**
      * <p>
-     * The latest executionContext provided by the decider for this workflow
-     * execution. A decider can provide an executionContext (a free-form string)
-     * when closing a decision task using <a>RespondDecisionTaskCompleted</a>.
+     * The latest executionContext provided by the decider for this workflow execution. A decider can provide an
+     * executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.
      * </p>
      * 
      * @param latestExecutionContext
-     *        The latest executionContext provided by the decider for this
-     *        workflow execution. A decider can provide an executionContext (a
-     *        free-form string) when closing a decision task using
+     *        The latest executionContext provided by the decider for this workflow execution. A decider can provide an
+     *        executionContext (a free-form string) when closing a decision task using
      *        <a>RespondDecisionTaskCompleted</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WorkflowExecutionDetail withLatestExecutionContext(
-            String latestExecutionContext) {
+    public WorkflowExecutionDetail withLatestExecutionContext(String latestExecutionContext) {
         setLatestExecutionContext(latestExecutionContext);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -335,13 +290,11 @@ public class WorkflowExecutionDetail extends
         if (getExecutionInfo() != null)
             sb.append("ExecutionInfo: " + getExecutionInfo() + ",");
         if (getExecutionConfiguration() != null)
-            sb.append("ExecutionConfiguration: " + getExecutionConfiguration()
-                    + ",");
+            sb.append("ExecutionConfiguration: " + getExecutionConfiguration() + ",");
         if (getOpenCounts() != null)
             sb.append("OpenCounts: " + getOpenCounts() + ",");
         if (getLatestActivityTaskTimestamp() != null)
-            sb.append("LatestActivityTaskTimestamp: "
-                    + getLatestActivityTaskTimestamp() + ",");
+            sb.append("LatestActivityTaskTimestamp: " + getLatestActivityTaskTimestamp() + ",");
         if (getLatestExecutionContext() != null)
             sb.append("LatestExecutionContext: " + getLatestExecutionContext());
         sb.append("}");
@@ -360,34 +313,23 @@ public class WorkflowExecutionDetail extends
         WorkflowExecutionDetail other = (WorkflowExecutionDetail) obj;
         if (other.getExecutionInfo() == null ^ this.getExecutionInfo() == null)
             return false;
-        if (other.getExecutionInfo() != null
-                && other.getExecutionInfo().equals(this.getExecutionInfo()) == false)
+        if (other.getExecutionInfo() != null && other.getExecutionInfo().equals(this.getExecutionInfo()) == false)
             return false;
-        if (other.getExecutionConfiguration() == null
-                ^ this.getExecutionConfiguration() == null)
+        if (other.getExecutionConfiguration() == null ^ this.getExecutionConfiguration() == null)
             return false;
-        if (other.getExecutionConfiguration() != null
-                && other.getExecutionConfiguration().equals(
-                        this.getExecutionConfiguration()) == false)
+        if (other.getExecutionConfiguration() != null && other.getExecutionConfiguration().equals(this.getExecutionConfiguration()) == false)
             return false;
         if (other.getOpenCounts() == null ^ this.getOpenCounts() == null)
             return false;
-        if (other.getOpenCounts() != null
-                && other.getOpenCounts().equals(this.getOpenCounts()) == false)
+        if (other.getOpenCounts() != null && other.getOpenCounts().equals(this.getOpenCounts()) == false)
             return false;
-        if (other.getLatestActivityTaskTimestamp() == null
-                ^ this.getLatestActivityTaskTimestamp() == null)
+        if (other.getLatestActivityTaskTimestamp() == null ^ this.getLatestActivityTaskTimestamp() == null)
             return false;
-        if (other.getLatestActivityTaskTimestamp() != null
-                && other.getLatestActivityTaskTimestamp().equals(
-                        this.getLatestActivityTaskTimestamp()) == false)
+        if (other.getLatestActivityTaskTimestamp() != null && other.getLatestActivityTaskTimestamp().equals(this.getLatestActivityTaskTimestamp()) == false)
             return false;
-        if (other.getLatestExecutionContext() == null
-                ^ this.getLatestExecutionContext() == null)
+        if (other.getLatestExecutionContext() == null ^ this.getLatestExecutionContext() == null)
             return false;
-        if (other.getLatestExecutionContext() != null
-                && other.getLatestExecutionContext().equals(
-                        this.getLatestExecutionContext()) == false)
+        if (other.getLatestExecutionContext() != null && other.getLatestExecutionContext().equals(this.getLatestExecutionContext()) == false)
             return false;
         return true;
     }
@@ -397,24 +339,11 @@ public class WorkflowExecutionDetail extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getExecutionInfo() == null) ? 0 : getExecutionInfo()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExecutionConfiguration() == null) ? 0
-                        : getExecutionConfiguration().hashCode());
-        hashCode = prime * hashCode
-                + ((getOpenCounts() == null) ? 0 : getOpenCounts().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestActivityTaskTimestamp() == null) ? 0
-                        : getLatestActivityTaskTimestamp().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestExecutionContext() == null) ? 0
-                        : getLatestExecutionContext().hashCode());
+        hashCode = prime * hashCode + ((getExecutionInfo() == null) ? 0 : getExecutionInfo().hashCode());
+        hashCode = prime * hashCode + ((getExecutionConfiguration() == null) ? 0 : getExecutionConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getOpenCounts() == null) ? 0 : getOpenCounts().hashCode());
+        hashCode = prime * hashCode + ((getLatestActivityTaskTimestamp() == null) ? 0 : getLatestActivityTaskTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getLatestExecutionContext() == null) ? 0 : getLatestExecutionContext().hashCode());
         return hashCode;
     }
 
@@ -423,9 +352,7 @@ public class WorkflowExecutionDetail extends
         try {
             return (WorkflowExecutionDetail) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

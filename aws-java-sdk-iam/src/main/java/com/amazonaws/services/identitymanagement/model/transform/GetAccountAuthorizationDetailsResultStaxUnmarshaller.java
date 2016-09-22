@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
@@ -30,12 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * GetAccountAuthorizationDetailsResult StAX Unmarshaller
  */
-public class GetAccountAuthorizationDetailsResultStaxUnmarshaller
-        implements
-        Unmarshaller<GetAccountAuthorizationDetailsResult, StaxUnmarshallerContext> {
+public class GetAccountAuthorizationDetailsResultStaxUnmarshaller implements Unmarshaller<GetAccountAuthorizationDetailsResult, StaxUnmarshallerContext> {
 
-    public GetAccountAuthorizationDetailsResult unmarshall(
-            StaxUnmarshallerContext context) throws Exception {
+    public GetAccountAuthorizationDetailsResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         GetAccountAuthorizationDetailsResult getAccountAuthorizationDetailsResult = new GetAccountAuthorizationDetailsResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,48 +45,33 @@ public class GetAccountAuthorizationDetailsResultStaxUnmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context
-                        .testExpression("UserDetailList/member", targetDepth)) {
-                    getAccountAuthorizationDetailsResult
-                            .withUserDetailList(UserDetailStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("UserDetailList/member", targetDepth)) {
+                    getAccountAuthorizationDetailsResult.withUserDetailList(UserDetailStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("GroupDetailList/member",
-                        targetDepth)) {
-                    getAccountAuthorizationDetailsResult
-                            .withGroupDetailList(GroupDetailStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("GroupDetailList/member", targetDepth)) {
+                    getAccountAuthorizationDetailsResult.withGroupDetailList(GroupDetailStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("RoleDetailList/member", targetDepth)) {
-                    getAccountAuthorizationDetailsResult
-                            .withRoleDetailList(RoleDetailStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("RoleDetailList/member", targetDepth)) {
+                    getAccountAuthorizationDetailsResult.withRoleDetailList(RoleDetailStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Policies/member", targetDepth)) {
-                    getAccountAuthorizationDetailsResult
-                            .withPolicies(ManagedPolicyDetailStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getAccountAuthorizationDetailsResult.withPolicies(ManagedPolicyDetailStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("IsTruncated", targetDepth)) {
-                    getAccountAuthorizationDetailsResult
-                            .setIsTruncated(BooleanStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getAccountAuthorizationDetailsResult.setIsTruncated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Marker", targetDepth)) {
-                    getAccountAuthorizationDetailsResult
-                            .setMarker(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    getAccountAuthorizationDetailsResult.setMarker(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

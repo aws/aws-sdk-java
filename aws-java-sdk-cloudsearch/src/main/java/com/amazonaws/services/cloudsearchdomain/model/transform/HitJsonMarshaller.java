@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchdomain.model.transform;
 
@@ -37,8 +35,7 @@ public class HitJsonMarshaller {
     public void marshall(Hit hit, StructuredJsonGenerator jsonGenerator) {
 
         if (hit == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -54,14 +51,12 @@ public class HitJsonMarshaller {
                 jsonGenerator.writeFieldName("fields");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, java.util.List<String>> fieldsMapValue : fieldsMap
-                        .entrySet()) {
+                for (Map.Entry<String, java.util.List<String>> fieldsMapValue : fieldsMap.entrySet()) {
                     if (fieldsMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(fieldsMapValue.getKey());
 
                         jsonGenerator.writeStartArray();
-                        for (String fieldsMapValueList : fieldsMapValue
-                                .getValue()) {
+                        for (String fieldsMapValueList : fieldsMapValue.getValue()) {
                             if (fieldsMapValueList != null) {
                                 jsonGenerator.writeValue(fieldsMapValueList);
                             }
@@ -72,14 +67,12 @@ public class HitJsonMarshaller {
                 jsonGenerator.writeEndObject();
             }
 
-            com.amazonaws.internal.SdkInternalMap<String, String> exprsMap = (com.amazonaws.internal.SdkInternalMap<String, String>) hit
-                    .getExprs();
+            com.amazonaws.internal.SdkInternalMap<String, String> exprsMap = (com.amazonaws.internal.SdkInternalMap<String, String>) hit.getExprs();
             if (!exprsMap.isEmpty() || !exprsMap.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("exprs");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> exprsMapValue : exprsMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> exprsMapValue : exprsMap.entrySet()) {
                     if (exprsMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(exprsMapValue.getKey());
 
@@ -89,17 +82,14 @@ public class HitJsonMarshaller {
                 jsonGenerator.writeEndObject();
             }
 
-            com.amazonaws.internal.SdkInternalMap<String, String> highlightsMap = (com.amazonaws.internal.SdkInternalMap<String, String>) hit
-                    .getHighlights();
+            com.amazonaws.internal.SdkInternalMap<String, String> highlightsMap = (com.amazonaws.internal.SdkInternalMap<String, String>) hit.getHighlights();
             if (!highlightsMap.isEmpty() || !highlightsMap.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("highlights");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> highlightsMapValue : highlightsMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> highlightsMapValue : highlightsMap.entrySet()) {
                     if (highlightsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(highlightsMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(highlightsMapValue.getKey());
 
                         jsonGenerator.writeValue(highlightsMapValue.getValue());
                     }
@@ -109,8 +99,7 @@ public class HitJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

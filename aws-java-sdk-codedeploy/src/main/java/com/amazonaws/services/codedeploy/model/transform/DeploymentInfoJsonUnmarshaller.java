@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DeploymentInfo JSON Unmarshaller
  */
-public class DeploymentInfoJsonUnmarshaller implements
-        Unmarshaller<DeploymentInfo, JsonUnmarshallerContext> {
+public class DeploymentInfoJsonUnmarshaller implements Unmarshaller<DeploymentInfo, JsonUnmarshallerContext> {
 
-    public DeploymentInfo unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public DeploymentInfo unmarshall(JsonUnmarshallerContext context) throws Exception {
         DeploymentInfo deploymentInfo = new DeploymentInfo();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,103 +49,74 @@ public class DeploymentInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationName", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setApplicationName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    deploymentInfo.setApplicationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentGroupName", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setDeploymentGroupName(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    deploymentInfo.setDeploymentGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentConfigName", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setDeploymentConfigName(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    deploymentInfo.setDeploymentConfigName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentId", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setDeploymentId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    deploymentInfo.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revision", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setRevision(RevisionLocationJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentInfo.setRevision(RevisionLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setStatus(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    deploymentInfo.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorInformation", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo
-                            .setErrorInformation(ErrorInformationJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deploymentInfo.setErrorInformation(ErrorInformationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setCreateTime(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    deploymentInfo.setCreateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setStartTime(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    deploymentInfo.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("completeTime", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setCompleteTime(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    deploymentInfo.setCompleteTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentOverview", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo
-                            .setDeploymentOverview(DeploymentOverviewJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deploymentInfo.setDeploymentOverview(DeploymentOverviewJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setDescription(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    deploymentInfo.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creator", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setCreator(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    deploymentInfo.setCreator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("ignoreApplicationStopFailures",
-                        targetDepth)) {
+                if (context.testExpression("ignoreApplicationStopFailures", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo
-                            .setIgnoreApplicationStopFailures(context
-                                    .getUnmarshaller(Boolean.class).unmarshall(
-                                            context));
+                    deploymentInfo.setIgnoreApplicationStopFailures(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
-                if (context.testExpression("autoRollbackConfiguration",
-                        targetDepth)) {
+                if (context.testExpression("autoRollbackConfiguration", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo
-                            .setAutoRollbackConfiguration(AutoRollbackConfigurationJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deploymentInfo.setAutoRollbackConfiguration(AutoRollbackConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("updateOutdatedInstancesOnly",
-                        targetDepth)) {
+                if (context.testExpression("updateOutdatedInstancesOnly", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo
-                            .setUpdateOutdatedInstancesOnly(context
-                                    .getUnmarshaller(Boolean.class).unmarshall(
-                                            context));
+                    deploymentInfo.setUpdateOutdatedInstancesOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("rollbackInfo", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setRollbackInfo(RollbackInfoJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentInfo.setRollbackInfo(RollbackInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

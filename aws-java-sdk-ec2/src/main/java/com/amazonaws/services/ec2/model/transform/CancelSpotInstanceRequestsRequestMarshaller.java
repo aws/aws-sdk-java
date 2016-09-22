@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,35 +29,28 @@ import com.amazonaws.util.IdempotentUtils;
  * CancelSpotInstanceRequestsRequest Marshaller
  */
 
-public class CancelSpotInstanceRequestsRequestMarshaller
-        implements
-        Marshaller<Request<CancelSpotInstanceRequestsRequest>, CancelSpotInstanceRequestsRequest> {
+public class CancelSpotInstanceRequestsRequestMarshaller implements Marshaller<Request<CancelSpotInstanceRequestsRequest>, CancelSpotInstanceRequestsRequest> {
 
-    public Request<CancelSpotInstanceRequestsRequest> marshall(
-            CancelSpotInstanceRequestsRequest cancelSpotInstanceRequestsRequest) {
+    public Request<CancelSpotInstanceRequestsRequest> marshall(CancelSpotInstanceRequestsRequest cancelSpotInstanceRequestsRequest) {
 
         if (cancelSpotInstanceRequestsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CancelSpotInstanceRequestsRequest> request = new DefaultRequest<CancelSpotInstanceRequestsRequest>(
-                cancelSpotInstanceRequestsRequest, "AmazonEC2");
+        Request<CancelSpotInstanceRequestsRequest> request = new DefaultRequest<CancelSpotInstanceRequestsRequest>(cancelSpotInstanceRequestsRequest,
+                "AmazonEC2");
         request.addParameter("Action", "CancelSpotInstanceRequests");
         request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> spotInstanceRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) cancelSpotInstanceRequestsRequest
                 .getSpotInstanceRequestIds();
-        if (!spotInstanceRequestIdsList.isEmpty()
-                || !spotInstanceRequestIdsList.isAutoConstruct()) {
+        if (!spotInstanceRequestIdsList.isEmpty() || !spotInstanceRequestIdsList.isAutoConstruct()) {
             int spotInstanceRequestIdsListIndex = 1;
 
             for (String spotInstanceRequestIdsListValue : spotInstanceRequestIdsList) {
                 if (spotInstanceRequestIdsListValue != null) {
-                    request.addParameter("SpotInstanceRequestId."
-                            + spotInstanceRequestIdsListIndex, StringUtils
-                            .fromString(spotInstanceRequestIdsListValue));
+                    request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex, StringUtils.fromString(spotInstanceRequestIdsListValue));
                 }
                 spotInstanceRequestIdsListIndex++;
             }

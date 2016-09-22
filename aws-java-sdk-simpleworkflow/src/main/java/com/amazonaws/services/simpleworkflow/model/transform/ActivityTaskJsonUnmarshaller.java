@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ActivityTask JSON Unmarshaller
  */
-public class ActivityTaskJsonUnmarshaller implements
-        Unmarshaller<ActivityTask, JsonUnmarshallerContext> {
+public class ActivityTaskJsonUnmarshaller implements Unmarshaller<ActivityTask, JsonUnmarshallerContext> {
 
-    public ActivityTask unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ActivityTask unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActivityTask activityTask = new ActivityTask();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,39 +49,30 @@ public class ActivityTaskJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskToken", targetDepth)) {
                     context.nextToken();
-                    activityTask.setTaskToken(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    activityTask.setTaskToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("activityId", targetDepth)) {
                     context.nextToken();
-                    activityTask.setActivityId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    activityTask.setActivityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startedEventId", targetDepth)) {
                     context.nextToken();
-                    activityTask.setStartedEventId(context.getUnmarshaller(
-                            Long.class).unmarshall(context));
+                    activityTask.setStartedEventId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("workflowExecution", targetDepth)) {
                     context.nextToken();
-                    activityTask
-                            .setWorkflowExecution(WorkflowExecutionJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    activityTask.setWorkflowExecution(WorkflowExecutionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activityType", targetDepth)) {
                     context.nextToken();
-                    activityTask.setActivityType(ActivityTypeJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    activityTask.setActivityType(ActivityTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("input", targetDepth)) {
                     context.nextToken();
-                    activityTask.setInput(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    activityTask.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

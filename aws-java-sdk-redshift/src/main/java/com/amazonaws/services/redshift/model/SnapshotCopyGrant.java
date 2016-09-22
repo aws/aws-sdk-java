@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -18,15 +16,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The snapshot copy grant that grants Amazon Redshift permission to encrypt
- * copied snapshots with the specified customer master key (CMK) from AWS KMS in
- * the destination region.
+ * The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified
+ * customer master key (CMK) from AWS KMS in the destination region.
  * </p>
  * <p>
- * For more information about managing snapshot copy grants, go to <a href=
- * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html"
- * >Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster
- * Management Guide</i>.
+ * For more information about managing snapshot copy grants, go to <a
+ * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database
+ * Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
  * </p>
  */
 public class SnapshotCopyGrant implements Serializable, Cloneable {
@@ -39,8 +35,7 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
     private String snapshotCopyGrantName;
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) in AWS KMS to
-     * which Amazon Redshift is granted permission.
+     * The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.
      * </p>
      */
     private String kmsKeyId;
@@ -83,25 +78,22 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
      * 
      * @param snapshotCopyGrantName
      *        The name of the snapshot copy grant.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SnapshotCopyGrant withSnapshotCopyGrantName(
-            String snapshotCopyGrantName) {
+    public SnapshotCopyGrant withSnapshotCopyGrantName(String snapshotCopyGrantName) {
         setSnapshotCopyGrantName(snapshotCopyGrantName);
         return this;
     }
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) in AWS KMS to
-     * which Amazon Redshift is granted permission.
+     * The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.
      * </p>
      * 
      * @param kmsKeyId
-     *        The unique identifier of the customer master key (CMK) in AWS KMS
-     *        to which Amazon Redshift is granted permission.
+     *        The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted
+     *        permission.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -110,12 +102,11 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) in AWS KMS to
-     * which Amazon Redshift is granted permission.
+     * The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.
      * </p>
      * 
-     * @return The unique identifier of the customer master key (CMK) in AWS KMS
-     *         to which Amazon Redshift is granted permission.
+     * @return The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted
+     *         permission.
      */
 
     public String getKmsKeyId() {
@@ -124,15 +115,13 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) in AWS KMS to
-     * which Amazon Redshift is granted permission.
+     * The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.
      * </p>
      * 
      * @param kmsKeyId
-     *        The unique identifier of the customer master key (CMK) in AWS KMS
-     *        to which Amazon Redshift is granted permission.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted
+     *        permission.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotCopyGrant withKmsKeyId(String kmsKeyId) {
@@ -178,16 +167,14 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
      * A list of tag instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        A list of tag instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotCopyGrant withTags(Tag... tags) {
@@ -207,8 +194,7 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
      * 
      * @param tags
      *        A list of tag instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotCopyGrant withTags(java.util.Collection<Tag> tags) {
@@ -217,8 +203,7 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -229,8 +214,7 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotCopyGrantName() != null)
-            sb.append("SnapshotCopyGrantName: " + getSnapshotCopyGrantName()
-                    + ",");
+            sb.append("SnapshotCopyGrantName: " + getSnapshotCopyGrantName() + ",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: " + getKmsKeyId() + ",");
         if (getTags() != null)
@@ -249,22 +233,17 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
         if (obj instanceof SnapshotCopyGrant == false)
             return false;
         SnapshotCopyGrant other = (SnapshotCopyGrant) obj;
-        if (other.getSnapshotCopyGrantName() == null
-                ^ this.getSnapshotCopyGrantName() == null)
+        if (other.getSnapshotCopyGrantName() == null ^ this.getSnapshotCopyGrantName() == null)
             return false;
-        if (other.getSnapshotCopyGrantName() != null
-                && other.getSnapshotCopyGrantName().equals(
-                        this.getSnapshotCopyGrantName()) == false)
+        if (other.getSnapshotCopyGrantName() != null && other.getSnapshotCopyGrantName().equals(this.getSnapshotCopyGrantName()) == false)
             return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
-        if (other.getKmsKeyId() != null
-                && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -274,14 +253,9 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotCopyGrantName() == null) ? 0
-                        : getSnapshotCopyGrantName().hashCode());
-        hashCode = prime * hashCode
-                + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotCopyGrantName() == null) ? 0 : getSnapshotCopyGrantName().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -290,9 +264,7 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
         try {
             return (SnapshotCopyGrant) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

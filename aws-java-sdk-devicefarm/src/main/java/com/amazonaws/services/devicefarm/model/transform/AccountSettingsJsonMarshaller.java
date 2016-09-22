@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
@@ -34,57 +32,44 @@ public class AccountSettingsJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(AccountSettings accountSettings,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(AccountSettings accountSettings, StructuredJsonGenerator jsonGenerator) {
 
         if (accountSettings == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (accountSettings.getAwsAccountNumber() != null) {
-                jsonGenerator.writeFieldName("awsAccountNumber").writeValue(
-                        accountSettings.getAwsAccountNumber());
+                jsonGenerator.writeFieldName("awsAccountNumber").writeValue(accountSettings.getAwsAccountNumber());
             }
 
-            java.util.Map<String, Integer> unmeteredDevicesMap = accountSettings
-                    .getUnmeteredDevices();
+            java.util.Map<String, Integer> unmeteredDevicesMap = accountSettings.getUnmeteredDevices();
             if (unmeteredDevicesMap != null) {
                 jsonGenerator.writeFieldName("unmeteredDevices");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, Integer> unmeteredDevicesMapValue : unmeteredDevicesMap
-                        .entrySet()) {
+                for (Map.Entry<String, Integer> unmeteredDevicesMapValue : unmeteredDevicesMap.entrySet()) {
                     if (unmeteredDevicesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(unmeteredDevicesMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(unmeteredDevicesMapValue.getKey());
 
-                        jsonGenerator.writeValue(unmeteredDevicesMapValue
-                                .getValue());
+                        jsonGenerator.writeValue(unmeteredDevicesMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
             }
 
-            java.util.Map<String, Integer> unmeteredRemoteAccessDevicesMap = accountSettings
-                    .getUnmeteredRemoteAccessDevices();
+            java.util.Map<String, Integer> unmeteredRemoteAccessDevicesMap = accountSettings.getUnmeteredRemoteAccessDevices();
             if (unmeteredRemoteAccessDevicesMap != null) {
                 jsonGenerator.writeFieldName("unmeteredRemoteAccessDevices");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, Integer> unmeteredRemoteAccessDevicesMapValue : unmeteredRemoteAccessDevicesMap
-                        .entrySet()) {
+                for (Map.Entry<String, Integer> unmeteredRemoteAccessDevicesMapValue : unmeteredRemoteAccessDevicesMap.entrySet()) {
                     if (unmeteredRemoteAccessDevicesMapValue.getValue() != null) {
-                        jsonGenerator
-                                .writeFieldName(unmeteredRemoteAccessDevicesMapValue
-                                        .getKey());
+                        jsonGenerator.writeFieldName(unmeteredRemoteAccessDevicesMapValue.getKey());
 
-                        jsonGenerator
-                                .writeValue(unmeteredRemoteAccessDevicesMapValue
-                                        .getValue());
+                        jsonGenerator.writeValue(unmeteredRemoteAccessDevicesMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
@@ -92,8 +77,7 @@ public class AccountSettingsJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

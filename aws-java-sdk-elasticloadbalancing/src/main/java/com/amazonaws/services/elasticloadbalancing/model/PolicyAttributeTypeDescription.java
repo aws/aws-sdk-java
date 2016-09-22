@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
@@ -31,8 +29,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
     private String attributeName;
     /**
      * <p>
-     * The type of the attribute. For example, <code>Boolean</code> or
-     * <code>Integer</code>.
+     * The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.
      * </p>
      */
     private String attributeType;
@@ -112,8 +109,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * 
      * @param attributeName
      *        The name of the attribute.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PolicyAttributeTypeDescription withAttributeName(String attributeName) {
@@ -123,13 +119,11 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the attribute. For example, <code>Boolean</code> or
-     * <code>Integer</code>.
+     * The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.
      * </p>
      * 
      * @param attributeType
-     *        The type of the attribute. For example, <code>Boolean</code> or
-     *        <code>Integer</code>.
+     *        The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.
      */
 
     public void setAttributeType(String attributeType) {
@@ -138,12 +132,10 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the attribute. For example, <code>Boolean</code> or
-     * <code>Integer</code>.
+     * The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.
      * </p>
      * 
-     * @return The type of the attribute. For example, <code>Boolean</code> or
-     *         <code>Integer</code>.
+     * @return The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.
      */
 
     public String getAttributeType() {
@@ -152,15 +144,12 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the attribute. For example, <code>Boolean</code> or
-     * <code>Integer</code>.
+     * The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.
      * </p>
      * 
      * @param attributeType
-     *        The type of the attribute. For example, <code>Boolean</code> or
-     *        <code>Integer</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PolicyAttributeTypeDescription withAttributeType(String attributeType) {
@@ -200,8 +189,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * 
      * @param description
      *        A description of the attribute.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PolicyAttributeTypeDescription withDescription(String description) {
@@ -241,8 +229,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * 
      * @param defaultValue
      *        The default value of the attribute, if applicable.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PolicyAttributeTypeDescription withDefaultValue(String defaultValue) {
@@ -429,8 +416,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      *        ONE_OR_MORE(1..*0) : Required. Multiple values are allowed
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PolicyAttributeTypeDescription withCardinality(String cardinality) {
@@ -439,8 +425,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -476,28 +461,23 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
         PolicyAttributeTypeDescription other = (PolicyAttributeTypeDescription) obj;
         if (other.getAttributeName() == null ^ this.getAttributeName() == null)
             return false;
-        if (other.getAttributeName() != null
-                && other.getAttributeName().equals(this.getAttributeName()) == false)
+        if (other.getAttributeName() != null && other.getAttributeName().equals(this.getAttributeName()) == false)
             return false;
         if (other.getAttributeType() == null ^ this.getAttributeType() == null)
             return false;
-        if (other.getAttributeType() != null
-                && other.getAttributeType().equals(this.getAttributeType()) == false)
+        if (other.getAttributeType() != null && other.getAttributeType().equals(this.getAttributeType()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
             return false;
-        if (other.getDefaultValue() != null
-                && other.getDefaultValue().equals(this.getDefaultValue()) == false)
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
             return false;
         if (other.getCardinality() == null ^ this.getCardinality() == null)
             return false;
-        if (other.getCardinality() != null
-                && other.getCardinality().equals(this.getCardinality()) == false)
+        if (other.getCardinality() != null && other.getCardinality().equals(this.getCardinality()) == false)
             return false;
         return true;
     }
@@ -507,24 +487,11 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAttributeName() == null) ? 0 : getAttributeName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttributeType() == null) ? 0 : getAttributeType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultValue() == null) ? 0 : getDefaultValue()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCardinality() == null) ? 0 : getCardinality().hashCode());
+        hashCode = prime * hashCode + ((getAttributeName() == null) ? 0 : getAttributeName().hashCode());
+        hashCode = prime * hashCode + ((getAttributeType() == null) ? 0 : getAttributeType().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
+        hashCode = prime * hashCode + ((getCardinality() == null) ? 0 : getCardinality().hashCode());
         return hashCode;
     }
 
@@ -533,9 +500,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
         try {
             return (PolicyAttributeTypeDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

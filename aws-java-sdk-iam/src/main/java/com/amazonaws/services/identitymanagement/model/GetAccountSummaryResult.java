@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -21,26 +19,21 @@ import java.io.Serializable;
  * Contains the response to a successful <a>GetAccountSummary</a> request.
  * </p>
  */
-public class GetAccountSummaryResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetAccountSummaryResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A set of key value pairs containing information about IAM entity usage
-     * and IAM quotas.
+     * A set of key value pairs containing information about IAM entity usage and IAM quotas.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, Integer> summaryMap;
 
     /**
      * <p>
-     * A set of key value pairs containing information about IAM entity usage
-     * and IAM quotas.
+     * A set of key value pairs containing information about IAM entity usage and IAM quotas.
      * </p>
      * 
-     * @return A set of key value pairs containing information about IAM entity
-     *         usage and IAM quotas.
+     * @return A set of key value pairs containing information about IAM entity usage and IAM quotas.
      */
 
     public java.util.Map<String, Integer> getSummaryMap() {
@@ -52,36 +45,28 @@ public class GetAccountSummaryResult extends
 
     /**
      * <p>
-     * A set of key value pairs containing information about IAM entity usage
-     * and IAM quotas.
+     * A set of key value pairs containing information about IAM entity usage and IAM quotas.
      * </p>
      * 
      * @param summaryMap
-     *        A set of key value pairs containing information about IAM entity
-     *        usage and IAM quotas.
+     *        A set of key value pairs containing information about IAM entity usage and IAM quotas.
      */
 
     public void setSummaryMap(java.util.Map<String, Integer> summaryMap) {
-        this.summaryMap = summaryMap == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, Integer>(
-                        summaryMap);
+        this.summaryMap = summaryMap == null ? null : new com.amazonaws.internal.SdkInternalMap<String, Integer>(summaryMap);
     }
 
     /**
      * <p>
-     * A set of key value pairs containing information about IAM entity usage
-     * and IAM quotas.
+     * A set of key value pairs containing information about IAM entity usage and IAM quotas.
      * </p>
      * 
      * @param summaryMap
-     *        A set of key value pairs containing information about IAM entity
-     *        usage and IAM quotas.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A set of key value pairs containing information about IAM entity usage and IAM quotas.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetAccountSummaryResult withSummaryMap(
-            java.util.Map<String, Integer> summaryMap) {
+    public GetAccountSummaryResult withSummaryMap(java.util.Map<String, Integer> summaryMap) {
         setSummaryMap(summaryMap);
         return this;
     }
@@ -91,15 +76,14 @@ public class GetAccountSummaryResult extends
             this.summaryMap = new com.amazonaws.internal.SdkInternalMap<String, Integer>();
         }
         if (this.summaryMap.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.summaryMap.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into SummaryMap. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into SummaryMap. &lt;p> Returns a reference to this object so that method calls can
+     * be chained together.
      */
 
     public GetAccountSummaryResult clearSummaryMapEntries() {
@@ -108,8 +92,7 @@ public class GetAccountSummaryResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -137,8 +120,7 @@ public class GetAccountSummaryResult extends
         GetAccountSummaryResult other = (GetAccountSummaryResult) obj;
         if (other.getSummaryMap() == null ^ this.getSummaryMap() == null)
             return false;
-        if (other.getSummaryMap() != null
-                && other.getSummaryMap().equals(this.getSummaryMap()) == false)
+        if (other.getSummaryMap() != null && other.getSummaryMap().equals(this.getSummaryMap()) == false)
             return false;
         return true;
     }
@@ -148,8 +130,7 @@ public class GetAccountSummaryResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSummaryMap() == null) ? 0 : getSummaryMap().hashCode());
+        hashCode = prime * hashCode + ((getSummaryMap() == null) ? 0 : getSummaryMap().hashCode());
         return hashCode;
     }
 
@@ -158,9 +139,7 @@ public class GetAccountSummaryResult extends
         try {
             return (GetAccountSummaryResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

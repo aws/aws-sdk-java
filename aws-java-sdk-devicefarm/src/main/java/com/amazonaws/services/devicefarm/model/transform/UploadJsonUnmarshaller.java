@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
@@ -29,8 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Upload JSON Unmarshaller
  */
-public class UploadJsonUnmarshaller implements
-        Unmarshaller<Upload, JsonUnmarshallerContext> {
+public class UploadJsonUnmarshaller implements Unmarshaller<Upload, JsonUnmarshallerContext> {
 
     public Upload unmarshall(JsonUnmarshallerContext context) throws Exception {
         Upload upload = new Upload();
@@ -52,53 +49,42 @@ public class UploadJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    upload.setArn(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    upload.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    upload.setName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    upload.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    upload.setCreated(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    upload.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    upload.setType(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    upload.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    upload.setStatus(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    upload.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("url", targetDepth)) {
                     context.nextToken();
-                    upload.setUrl(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    upload.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
                     context.nextToken();
-                    upload.setMetadata(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    upload.setMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contentType", targetDepth)) {
                     context.nextToken();
-                    upload.setContentType(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    upload.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    upload.setMessage(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    upload.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

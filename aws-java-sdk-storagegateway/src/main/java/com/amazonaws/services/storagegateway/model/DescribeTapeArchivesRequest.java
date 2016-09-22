@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -22,40 +20,34 @@ import com.amazonaws.AmazonWebServiceRequest;
  * DescribeTapeArchivesInput
  * </p>
  */
-public class DescribeTapeArchivesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeTapeArchivesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies one or more unique Amazon Resource Names (ARNs) that represent
-     * the virtual tapes you want to describe.
+     * Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tapeARNs;
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin describing
-     * virtual tapes.
+     * An opaque string that indicates the position at which to begin describing virtual tapes.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Specifies that the number of virtual tapes descried be limited to the
-     * specified number.
+     * Specifies that the number of virtual tapes descried be limited to the specified number.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * Specifies one or more unique Amazon Resource Names (ARNs) that represent
-     * the virtual tapes you want to describe.
+     * Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.
      * </p>
      * 
-     * @return Specifies one or more unique Amazon Resource Names (ARNs) that
-     *         represent the virtual tapes you want to describe.
+     * @return Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to
+     *         describe.
      */
 
     public java.util.List<String> getTapeARNs() {
@@ -67,13 +59,12 @@ public class DescribeTapeArchivesRequest extends
 
     /**
      * <p>
-     * Specifies one or more unique Amazon Resource Names (ARNs) that represent
-     * the virtual tapes you want to describe.
+     * Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.
      * </p>
      * 
      * @param tapeARNs
-     *        Specifies one or more unique Amazon Resource Names (ARNs) that
-     *        represent the virtual tapes you want to describe.
+     *        Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to
+     *        describe.
      */
 
     public void setTapeARNs(java.util.Collection<String> tapeARNs) {
@@ -82,33 +73,28 @@ public class DescribeTapeArchivesRequest extends
             return;
         }
 
-        this.tapeARNs = new com.amazonaws.internal.SdkInternalList<String>(
-                tapeARNs);
+        this.tapeARNs = new com.amazonaws.internal.SdkInternalList<String>(tapeARNs);
     }
 
     /**
      * <p>
-     * Specifies one or more unique Amazon Resource Names (ARNs) that represent
-     * the virtual tapes you want to describe.
+     * Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTapeARNs(java.util.Collection)} or
-     * {@link #withTapeARNs(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTapeARNs(java.util.Collection)} or {@link #withTapeARNs(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param tapeARNs
-     *        Specifies one or more unique Amazon Resource Names (ARNs) that
-     *        represent the virtual tapes you want to describe.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to
+     *        describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTapeArchivesRequest withTapeARNs(String... tapeARNs) {
         if (this.tapeARNs == null) {
-            setTapeARNs(new com.amazonaws.internal.SdkInternalList<String>(
-                    tapeARNs.length));
+            setTapeARNs(new com.amazonaws.internal.SdkInternalList<String>(tapeARNs.length));
         }
         for (String ele : tapeARNs) {
             this.tapeARNs.add(ele);
@@ -118,32 +104,27 @@ public class DescribeTapeArchivesRequest extends
 
     /**
      * <p>
-     * Specifies one or more unique Amazon Resource Names (ARNs) that represent
-     * the virtual tapes you want to describe.
+     * Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.
      * </p>
      * 
      * @param tapeARNs
-     *        Specifies one or more unique Amazon Resource Names (ARNs) that
-     *        represent the virtual tapes you want to describe.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to
+     *        describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTapeArchivesRequest withTapeARNs(
-            java.util.Collection<String> tapeARNs) {
+    public DescribeTapeArchivesRequest withTapeARNs(java.util.Collection<String> tapeARNs) {
         setTapeARNs(tapeARNs);
         return this;
     }
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin describing
-     * virtual tapes.
+     * An opaque string that indicates the position at which to begin describing virtual tapes.
      * </p>
      * 
      * @param marker
-     *        An opaque string that indicates the position at which to begin
-     *        describing virtual tapes.
+     *        An opaque string that indicates the position at which to begin describing virtual tapes.
      */
 
     public void setMarker(String marker) {
@@ -152,12 +133,10 @@ public class DescribeTapeArchivesRequest extends
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin describing
-     * virtual tapes.
+     * An opaque string that indicates the position at which to begin describing virtual tapes.
      * </p>
      * 
-     * @return An opaque string that indicates the position at which to begin
-     *         describing virtual tapes.
+     * @return An opaque string that indicates the position at which to begin describing virtual tapes.
      */
 
     public String getMarker() {
@@ -166,15 +145,12 @@ public class DescribeTapeArchivesRequest extends
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin describing
-     * virtual tapes.
+     * An opaque string that indicates the position at which to begin describing virtual tapes.
      * </p>
      * 
      * @param marker
-     *        An opaque string that indicates the position at which to begin
-     *        describing virtual tapes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An opaque string that indicates the position at which to begin describing virtual tapes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTapeArchivesRequest withMarker(String marker) {
@@ -184,13 +160,11 @@ public class DescribeTapeArchivesRequest extends
 
     /**
      * <p>
-     * Specifies that the number of virtual tapes descried be limited to the
-     * specified number.
+     * Specifies that the number of virtual tapes descried be limited to the specified number.
      * </p>
      * 
      * @param limit
-     *        Specifies that the number of virtual tapes descried be limited to
-     *        the specified number.
+     *        Specifies that the number of virtual tapes descried be limited to the specified number.
      */
 
     public void setLimit(Integer limit) {
@@ -199,12 +173,10 @@ public class DescribeTapeArchivesRequest extends
 
     /**
      * <p>
-     * Specifies that the number of virtual tapes descried be limited to the
-     * specified number.
+     * Specifies that the number of virtual tapes descried be limited to the specified number.
      * </p>
      * 
-     * @return Specifies that the number of virtual tapes descried be limited to
-     *         the specified number.
+     * @return Specifies that the number of virtual tapes descried be limited to the specified number.
      */
 
     public Integer getLimit() {
@@ -213,15 +185,12 @@ public class DescribeTapeArchivesRequest extends
 
     /**
      * <p>
-     * Specifies that the number of virtual tapes descried be limited to the
-     * specified number.
+     * Specifies that the number of virtual tapes descried be limited to the specified number.
      * </p>
      * 
      * @param limit
-     *        Specifies that the number of virtual tapes descried be limited to
-     *        the specified number.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies that the number of virtual tapes descried be limited to the specified number.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTapeArchivesRequest withLimit(Integer limit) {
@@ -230,8 +199,7 @@ public class DescribeTapeArchivesRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -263,18 +231,15 @@ public class DescribeTapeArchivesRequest extends
         DescribeTapeArchivesRequest other = (DescribeTapeArchivesRequest) obj;
         if (other.getTapeARNs() == null ^ this.getTapeARNs() == null)
             return false;
-        if (other.getTapeARNs() != null
-                && other.getTapeARNs().equals(this.getTapeARNs()) == false)
+        if (other.getTapeARNs() != null && other.getTapeARNs().equals(this.getTapeARNs()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -284,12 +249,9 @@ public class DescribeTapeArchivesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTapeARNs() == null) ? 0 : getTapeARNs().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getTapeARNs() == null) ? 0 : getTapeARNs().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 

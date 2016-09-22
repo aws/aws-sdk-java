@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model;
 
@@ -22,30 +20,25 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to get an <a>XssMatchSet</a>.
  * </p>
  */
-public class GetXssMatchSetRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class GetXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to
-     * get. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a>
-     * and by <a>ListXssMatchSets</a>.
+     * The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code> is
+     * returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
      * </p>
      */
     private String xssMatchSetId;
 
     /**
      * <p>
-     * The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to
-     * get. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a>
-     * and by <a>ListXssMatchSets</a>.
+     * The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code> is
+     * returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
      * </p>
      * 
      * @param xssMatchSetId
-     *        The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you
-     *        want to get. <code>XssMatchSetId</code> is returned by
-     *        <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
+     *        The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code>
+     *        is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
      */
 
     public void setXssMatchSetId(String xssMatchSetId) {
@@ -54,14 +47,12 @@ public class GetXssMatchSetRequest extends
 
     /**
      * <p>
-     * The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to
-     * get. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a>
-     * and by <a>ListXssMatchSets</a>.
+     * The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code> is
+     * returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
      * </p>
      * 
-     * @return The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you
-     *         want to get. <code>XssMatchSetId</code> is returned by
-     *         <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
+     * @return The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code>
+     *         is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
      */
 
     public String getXssMatchSetId() {
@@ -70,17 +61,14 @@ public class GetXssMatchSetRequest extends
 
     /**
      * <p>
-     * The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to
-     * get. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a>
-     * and by <a>ListXssMatchSets</a>.
+     * The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code> is
+     * returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
      * </p>
      * 
      * @param xssMatchSetId
-     *        The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you
-     *        want to get. <code>XssMatchSetId</code> is returned by
-     *        <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code>
+     *        is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetXssMatchSetRequest withXssMatchSetId(String xssMatchSetId) {
@@ -89,8 +77,7 @@ public class GetXssMatchSetRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -118,8 +105,7 @@ public class GetXssMatchSetRequest extends
         GetXssMatchSetRequest other = (GetXssMatchSetRequest) obj;
         if (other.getXssMatchSetId() == null ^ this.getXssMatchSetId() == null)
             return false;
-        if (other.getXssMatchSetId() != null
-                && other.getXssMatchSetId().equals(this.getXssMatchSetId()) == false)
+        if (other.getXssMatchSetId() != null && other.getXssMatchSetId().equals(this.getXssMatchSetId()) == false)
             return false;
         return true;
     }
@@ -129,10 +115,7 @@ public class GetXssMatchSetRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getXssMatchSetId() == null) ? 0 : getXssMatchSetId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getXssMatchSetId() == null) ? 0 : getXssMatchSetId().hashCode());
         return hashCode;
     }
 

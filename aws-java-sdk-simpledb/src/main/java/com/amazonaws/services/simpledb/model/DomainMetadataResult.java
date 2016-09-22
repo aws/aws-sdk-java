@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model;
 
@@ -19,10 +17,8 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DomainMetadataResult
-        extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.simpledb.SimpleDBResponseMetadata>
-        implements Serializable, Cloneable {
+public class DomainMetadataResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.simpledb.SimpleDBResponseMetadata> implements
+        Serializable, Cloneable {
 
     /** The number of all items in the domain. */
     private Integer itemCount;
@@ -65,8 +61,7 @@ public class DomainMetadataResult
      * 
      * @param itemCount
      *        The number of all items in the domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainMetadataResult withItemCount(Integer itemCount) {
@@ -100,8 +95,7 @@ public class DomainMetadataResult
      * 
      * @param itemNamesSizeBytes
      *        The total size of all item names in the domain, in bytes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainMetadataResult withItemNamesSizeBytes(Long itemNamesSizeBytes) {
@@ -135,12 +129,10 @@ public class DomainMetadataResult
      * 
      * @param attributeNameCount
      *        The number of unique attribute names in the domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DomainMetadataResult withAttributeNameCount(
-            Integer attributeNameCount) {
+    public DomainMetadataResult withAttributeNameCount(Integer attributeNameCount) {
         setAttributeNameCount(attributeNameCount);
         return this;
     }
@@ -149,8 +141,7 @@ public class DomainMetadataResult
      * The total size of all unique attribute names in the domain, in bytes.
      * 
      * @param attributeNamesSizeBytes
-     *        The total size of all unique attribute names in the domain, in
-     *        bytes.
+     *        The total size of all unique attribute names in the domain, in bytes.
      */
 
     public void setAttributeNamesSizeBytes(Long attributeNamesSizeBytes) {
@@ -160,8 +151,7 @@ public class DomainMetadataResult
     /**
      * The total size of all unique attribute names in the domain, in bytes.
      * 
-     * @return The total size of all unique attribute names in the domain, in
-     *         bytes.
+     * @return The total size of all unique attribute names in the domain, in bytes.
      */
 
     public Long getAttributeNamesSizeBytes() {
@@ -172,14 +162,11 @@ public class DomainMetadataResult
      * The total size of all unique attribute names in the domain, in bytes.
      * 
      * @param attributeNamesSizeBytes
-     *        The total size of all unique attribute names in the domain, in
-     *        bytes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The total size of all unique attribute names in the domain, in bytes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DomainMetadataResult withAttributeNamesSizeBytes(
-            Long attributeNamesSizeBytes) {
+    public DomainMetadataResult withAttributeNamesSizeBytes(Long attributeNamesSizeBytes) {
         setAttributeNamesSizeBytes(attributeNamesSizeBytes);
         return this;
     }
@@ -210,12 +197,10 @@ public class DomainMetadataResult
      * 
      * @param attributeValueCount
      *        The number of all attribute name/value pairs in the domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DomainMetadataResult withAttributeValueCount(
-            Integer attributeValueCount) {
+    public DomainMetadataResult withAttributeValueCount(Integer attributeValueCount) {
         setAttributeValueCount(attributeValueCount);
         return this;
     }
@@ -246,12 +231,10 @@ public class DomainMetadataResult
      * 
      * @param attributeValuesSizeBytes
      *        The total size of all attribute values in the domain, in bytes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DomainMetadataResult withAttributeValuesSizeBytes(
-            Long attributeValuesSizeBytes) {
+    public DomainMetadataResult withAttributeValuesSizeBytes(Long attributeValuesSizeBytes) {
         setAttributeValuesSizeBytes(attributeValuesSizeBytes);
         return this;
     }
@@ -260,8 +243,7 @@ public class DomainMetadataResult
      * The data and time when metadata was calculated, in Epoch (UNIX) seconds.
      * 
      * @param timestamp
-     *        The data and time when metadata was calculated, in Epoch (UNIX)
-     *        seconds.
+     *        The data and time when metadata was calculated, in Epoch (UNIX) seconds.
      */
 
     public void setTimestamp(Integer timestamp) {
@@ -271,8 +253,7 @@ public class DomainMetadataResult
     /**
      * The data and time when metadata was calculated, in Epoch (UNIX) seconds.
      * 
-     * @return The data and time when metadata was calculated, in Epoch (UNIX)
-     *         seconds.
+     * @return The data and time when metadata was calculated, in Epoch (UNIX) seconds.
      */
 
     public Integer getTimestamp() {
@@ -283,10 +264,8 @@ public class DomainMetadataResult
      * The data and time when metadata was calculated, in Epoch (UNIX) seconds.
      * 
      * @param timestamp
-     *        The data and time when metadata was calculated, in Epoch (UNIX)
-     *        seconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The data and time when metadata was calculated, in Epoch (UNIX) seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainMetadataResult withTimestamp(Integer timestamp) {
@@ -295,8 +274,7 @@ public class DomainMetadataResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -313,13 +291,11 @@ public class DomainMetadataResult
         if (getAttributeNameCount() != null)
             sb.append("AttributeNameCount: " + getAttributeNameCount() + ",");
         if (getAttributeNamesSizeBytes() != null)
-            sb.append("AttributeNamesSizeBytes: "
-                    + getAttributeNamesSizeBytes() + ",");
+            sb.append("AttributeNamesSizeBytes: " + getAttributeNamesSizeBytes() + ",");
         if (getAttributeValueCount() != null)
             sb.append("AttributeValueCount: " + getAttributeValueCount() + ",");
         if (getAttributeValuesSizeBytes() != null)
-            sb.append("AttributeValuesSizeBytes: "
-                    + getAttributeValuesSizeBytes() + ",");
+            sb.append("AttributeValuesSizeBytes: " + getAttributeValuesSizeBytes() + ",");
         if (getTimestamp() != null)
             sb.append("Timestamp: " + getTimestamp());
         sb.append("}");
@@ -338,48 +314,31 @@ public class DomainMetadataResult
         DomainMetadataResult other = (DomainMetadataResult) obj;
         if (other.getItemCount() == null ^ this.getItemCount() == null)
             return false;
-        if (other.getItemCount() != null
-                && other.getItemCount().equals(this.getItemCount()) == false)
+        if (other.getItemCount() != null && other.getItemCount().equals(this.getItemCount()) == false)
             return false;
-        if (other.getItemNamesSizeBytes() == null
-                ^ this.getItemNamesSizeBytes() == null)
+        if (other.getItemNamesSizeBytes() == null ^ this.getItemNamesSizeBytes() == null)
             return false;
-        if (other.getItemNamesSizeBytes() != null
-                && other.getItemNamesSizeBytes().equals(
-                        this.getItemNamesSizeBytes()) == false)
+        if (other.getItemNamesSizeBytes() != null && other.getItemNamesSizeBytes().equals(this.getItemNamesSizeBytes()) == false)
             return false;
-        if (other.getAttributeNameCount() == null
-                ^ this.getAttributeNameCount() == null)
+        if (other.getAttributeNameCount() == null ^ this.getAttributeNameCount() == null)
             return false;
-        if (other.getAttributeNameCount() != null
-                && other.getAttributeNameCount().equals(
-                        this.getAttributeNameCount()) == false)
+        if (other.getAttributeNameCount() != null && other.getAttributeNameCount().equals(this.getAttributeNameCount()) == false)
             return false;
-        if (other.getAttributeNamesSizeBytes() == null
-                ^ this.getAttributeNamesSizeBytes() == null)
+        if (other.getAttributeNamesSizeBytes() == null ^ this.getAttributeNamesSizeBytes() == null)
             return false;
-        if (other.getAttributeNamesSizeBytes() != null
-                && other.getAttributeNamesSizeBytes().equals(
-                        this.getAttributeNamesSizeBytes()) == false)
+        if (other.getAttributeNamesSizeBytes() != null && other.getAttributeNamesSizeBytes().equals(this.getAttributeNamesSizeBytes()) == false)
             return false;
-        if (other.getAttributeValueCount() == null
-                ^ this.getAttributeValueCount() == null)
+        if (other.getAttributeValueCount() == null ^ this.getAttributeValueCount() == null)
             return false;
-        if (other.getAttributeValueCount() != null
-                && other.getAttributeValueCount().equals(
-                        this.getAttributeValueCount()) == false)
+        if (other.getAttributeValueCount() != null && other.getAttributeValueCount().equals(this.getAttributeValueCount()) == false)
             return false;
-        if (other.getAttributeValuesSizeBytes() == null
-                ^ this.getAttributeValuesSizeBytes() == null)
+        if (other.getAttributeValuesSizeBytes() == null ^ this.getAttributeValuesSizeBytes() == null)
             return false;
-        if (other.getAttributeValuesSizeBytes() != null
-                && other.getAttributeValuesSizeBytes().equals(
-                        this.getAttributeValuesSizeBytes()) == false)
+        if (other.getAttributeValuesSizeBytes() != null && other.getAttributeValuesSizeBytes().equals(this.getAttributeValuesSizeBytes()) == false)
             return false;
         if (other.getTimestamp() == null ^ this.getTimestamp() == null)
             return false;
-        if (other.getTimestamp() != null
-                && other.getTimestamp().equals(this.getTimestamp()) == false)
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
         return true;
     }
@@ -389,30 +348,13 @@ public class DomainMetadataResult
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getItemCount() == null) ? 0 : getItemCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getItemNamesSizeBytes() == null) ? 0
-                        : getItemNamesSizeBytes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttributeNameCount() == null) ? 0
-                        : getAttributeNameCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttributeNamesSizeBytes() == null) ? 0
-                        : getAttributeNamesSizeBytes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttributeValueCount() == null) ? 0
-                        : getAttributeValueCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttributeValuesSizeBytes() == null) ? 0
-                        : getAttributeValuesSizeBytes().hashCode());
-        hashCode = prime * hashCode
-                + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getItemCount() == null) ? 0 : getItemCount().hashCode());
+        hashCode = prime * hashCode + ((getItemNamesSizeBytes() == null) ? 0 : getItemNamesSizeBytes().hashCode());
+        hashCode = prime * hashCode + ((getAttributeNameCount() == null) ? 0 : getAttributeNameCount().hashCode());
+        hashCode = prime * hashCode + ((getAttributeNamesSizeBytes() == null) ? 0 : getAttributeNamesSizeBytes().hashCode());
+        hashCode = prime * hashCode + ((getAttributeValueCount() == null) ? 0 : getAttributeValueCount().hashCode());
+        hashCode = prime * hashCode + ((getAttributeValuesSizeBytes() == null) ? 0 : getAttributeValuesSizeBytes().hashCode());
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         return hashCode;
     }
 
@@ -421,9 +363,7 @@ public class DomainMetadataResult
         try {
             return (DomainMetadataResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

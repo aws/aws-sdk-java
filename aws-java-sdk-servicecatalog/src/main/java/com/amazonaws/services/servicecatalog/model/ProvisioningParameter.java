@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.servicecatalog.model;
 
@@ -25,28 +23,26 @@ public class ProvisioningParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter
-     * from <a>DescribeProvisioningParameters</a>.
+     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The value to use for provisioning. Any constraints on this value can be
-     * found in <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
+     * The value to use for provisioning. Any constraints on this value can be found in
+     * <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter
-     * from <a>DescribeProvisioningParameters</a>.
+     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
      * @param key
-     *        The <code>ProvisioningArtifactParameter.ParameterKey</code>
-     *        parameter from <a>DescribeProvisioningParameters</a>.
+     *        The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
+     *        <a>DescribeProvisioningParameters</a>.
      */
 
     public void setKey(String key) {
@@ -55,12 +51,11 @@ public class ProvisioningParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter
-     * from <a>DescribeProvisioningParameters</a>.
+     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
-     * @return The <code>ProvisioningArtifactParameter.ParameterKey</code>
-     *         parameter from <a>DescribeProvisioningParameters</a>.
+     * @return The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
+     *         <a>DescribeProvisioningParameters</a>.
      */
 
     public String getKey() {
@@ -69,15 +64,13 @@ public class ProvisioningParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter
-     * from <a>DescribeProvisioningParameters</a>.
+     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
      * @param key
-     *        The <code>ProvisioningArtifactParameter.ParameterKey</code>
-     *        parameter from <a>DescribeProvisioningParameters</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
+     *        <a>DescribeProvisioningParameters</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisioningParameter withKey(String key) {
@@ -87,14 +80,13 @@ public class ProvisioningParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value to use for provisioning. Any constraints on this value can be
-     * found in <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
+     * The value to use for provisioning. Any constraints on this value can be found in
+     * <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
      * </p>
      * 
      * @param value
-     *        The value to use for provisioning. Any constraints on this value
-     *        can be found in <code>ProvisioningArtifactParameter</code> for
-     *        <code>Key</code>.
+     *        The value to use for provisioning. Any constraints on this value can be found in
+     *        <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
      */
 
     public void setValue(String value) {
@@ -103,13 +95,12 @@ public class ProvisioningParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value to use for provisioning. Any constraints on this value can be
-     * found in <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
+     * The value to use for provisioning. Any constraints on this value can be found in
+     * <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
      * </p>
      * 
-     * @return The value to use for provisioning. Any constraints on this value
-     *         can be found in <code>ProvisioningArtifactParameter</code> for
-     *         <code>Key</code>.
+     * @return The value to use for provisioning. Any constraints on this value can be found in
+     *         <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
      */
 
     public String getValue() {
@@ -118,16 +109,14 @@ public class ProvisioningParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value to use for provisioning. Any constraints on this value can be
-     * found in <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
+     * The value to use for provisioning. Any constraints on this value can be found in
+     * <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
      * </p>
      * 
      * @param value
-     *        The value to use for provisioning. Any constraints on this value
-     *        can be found in <code>ProvisioningArtifactParameter</code> for
-     *        <code>Key</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value to use for provisioning. Any constraints on this value can be found in
+     *        <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisioningParameter withValue(String value) {
@@ -136,8 +125,7 @@ public class ProvisioningParameter implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -167,13 +155,11 @@ public class ProvisioningParameter implements Serializable, Cloneable {
         ProvisioningParameter other = (ProvisioningParameter) obj;
         if (other.getKey() == null ^ this.getKey() == null)
             return false;
-        if (other.getKey() != null
-                && other.getKey().equals(this.getKey()) == false)
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
             return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
-        if (other.getValue() != null
-                && other.getValue().equals(this.getValue()) == false)
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
         return true;
     }
@@ -183,10 +169,8 @@ public class ProvisioningParameter implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKey() == null) ? 0 : getKey().hashCode());
-        hashCode = prime * hashCode
-                + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         return hashCode;
     }
 
@@ -195,9 +179,7 @@ public class ProvisioningParameter implements Serializable, Cloneable {
         try {
             return (ProvisioningParameter) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ExportTask StAX Unmarshaller
  */
-public class ExportTaskStaxUnmarshaller implements
-        Unmarshaller<ExportTask, StaxUnmarshallerContext> {
+public class ExportTaskStaxUnmarshaller implements Unmarshaller<ExportTask, StaxUnmarshallerContext> {
 
-    public ExportTask unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public ExportTask unmarshall(StaxUnmarshallerContext context) throws Exception {
         ExportTask exportTask = new ExportTask();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,39 +46,32 @@ public class ExportTaskStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("exportTaskId", targetDepth)) {
-                    exportTask.setExportTaskId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    exportTask.setExportTaskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("description", targetDepth)) {
-                    exportTask.setDescription(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    exportTask.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("state", targetDepth)) {
-                    exportTask.setState(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    exportTask.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("statusMessage", targetDepth)) {
-                    exportTask.setStatusMessage(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    exportTask.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("instanceExport", targetDepth)) {
-                    exportTask
-                            .setInstanceExportDetails(InstanceExportDetailsStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    exportTask.setInstanceExportDetails(InstanceExportDetailsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("exportToS3", targetDepth)) {
-                    exportTask.setExportToS3Task(ExportToS3TaskStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    exportTask.setExportToS3Task(ExportToS3TaskStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

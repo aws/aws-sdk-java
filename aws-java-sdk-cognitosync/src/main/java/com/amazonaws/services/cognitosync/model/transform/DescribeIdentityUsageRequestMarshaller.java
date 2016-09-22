@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitosync.model.transform;
 
@@ -43,48 +41,34 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeIdentityUsageRequest Marshaller
  */
-public class DescribeIdentityUsageRequestMarshaller
-        implements
-        Marshaller<Request<DescribeIdentityUsageRequest>, DescribeIdentityUsageRequest> {
+public class DescribeIdentityUsageRequestMarshaller implements Marshaller<Request<DescribeIdentityUsageRequest>, DescribeIdentityUsageRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeIdentityUsageRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeIdentityUsageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeIdentityUsageRequest> marshall(
-            DescribeIdentityUsageRequest describeIdentityUsageRequest) {
+    public Request<DescribeIdentityUsageRequest> marshall(DescribeIdentityUsageRequest describeIdentityUsageRequest) {
 
         if (describeIdentityUsageRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeIdentityUsageRequest> request = new DefaultRequest<DescribeIdentityUsageRequest>(
-                describeIdentityUsageRequest, "AmazonCognitoSync");
+        Request<DescribeIdentityUsageRequest> request = new DefaultRequest<DescribeIdentityUsageRequest>(describeIdentityUsageRequest, "AmazonCognitoSync");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{IdentityPoolId}",
-                        (describeIdentityUsageRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(describeIdentityUsageRequest
-                                                .getIdentityPoolId()), false)
-                                : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{IdentityId}",
-                        (describeIdentityUsageRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(describeIdentityUsageRequest
-                                                .getIdentityId()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{IdentityPoolId}",
+                (describeIdentityUsageRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(describeIdentityUsageRequest.getIdentityPoolId()), false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{IdentityId}",
+                (describeIdentityUsageRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(describeIdentityUsageRequest.getIdentityId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
 
@@ -20,13 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the queue whose URL must be fetched. Maximum 80 characters;
-     * alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens (-), and
+     * underscores (_) are allowed.
      * </p>
      * <p>
      * Queue names are case-sensitive.
@@ -41,22 +38,19 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest
     private String queueOwnerAWSAccountId;
 
     /**
-     * Default constructor for GetQueueUrlRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for GetQueueUrlRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public GetQueueUrlRequest() {
     }
 
     /**
-     * Constructs a new GetQueueUrlRequest object. Callers should use the setter
-     * or fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new GetQueueUrlRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param queueName
-     *        The name of the queue whose URL must be fetched. Maximum 80
-     *        characters; alphanumeric characters, hyphens (-), and underscores
-     *        (_) are allowed.</p>
+     *        The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens
+     *        (-), and underscores (_) are allowed.</p>
      *        <p>
      *        Queue names are case-sensitive.
      */
@@ -66,17 +60,16 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the queue whose URL must be fetched. Maximum 80 characters;
-     * alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens (-), and
+     * underscores (_) are allowed.
      * </p>
      * <p>
      * Queue names are case-sensitive.
      * </p>
      * 
      * @param queueName
-     *        The name of the queue whose URL must be fetched. Maximum 80
-     *        characters; alphanumeric characters, hyphens (-), and underscores
-     *        (_) are allowed.</p>
+     *        The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens
+     *        (-), and underscores (_) are allowed.</p>
      *        <p>
      *        Queue names are case-sensitive.
      */
@@ -87,16 +80,15 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the queue whose URL must be fetched. Maximum 80 characters;
-     * alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens (-), and
+     * underscores (_) are allowed.
      * </p>
      * <p>
      * Queue names are case-sensitive.
      * </p>
      * 
-     * @return The name of the queue whose URL must be fetched. Maximum 80
-     *         characters; alphanumeric characters, hyphens (-), and underscores
-     *         (_) are allowed.</p>
+     * @return The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens
+     *         (-), and underscores (_) are allowed.</p>
      *         <p>
      *         Queue names are case-sensitive.
      */
@@ -107,21 +99,19 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the queue whose URL must be fetched. Maximum 80 characters;
-     * alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens (-), and
+     * underscores (_) are allowed.
      * </p>
      * <p>
      * Queue names are case-sensitive.
      * </p>
      * 
      * @param queueName
-     *        The name of the queue whose URL must be fetched. Maximum 80
-     *        characters; alphanumeric characters, hyphens (-), and underscores
-     *        (_) are allowed.</p>
+     *        The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens
+     *        (-), and underscores (_) are allowed.</p>
      *        <p>
      *        Queue names are case-sensitive.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetQueueUrlRequest withQueueName(String queueName) {
@@ -161,19 +151,16 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param queueOwnerAWSAccountId
      *        The AWS account ID of the account that created the queue.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetQueueUrlRequest withQueueOwnerAWSAccountId(
-            String queueOwnerAWSAccountId) {
+    public GetQueueUrlRequest withQueueOwnerAWSAccountId(String queueOwnerAWSAccountId) {
         setQueueOwnerAWSAccountId(queueOwnerAWSAccountId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -203,15 +190,11 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest
         GetQueueUrlRequest other = (GetQueueUrlRequest) obj;
         if (other.getQueueName() == null ^ this.getQueueName() == null)
             return false;
-        if (other.getQueueName() != null
-                && other.getQueueName().equals(this.getQueueName()) == false)
+        if (other.getQueueName() != null && other.getQueueName().equals(this.getQueueName()) == false)
             return false;
-        if (other.getQueueOwnerAWSAccountId() == null
-                ^ this.getQueueOwnerAWSAccountId() == null)
+        if (other.getQueueOwnerAWSAccountId() == null ^ this.getQueueOwnerAWSAccountId() == null)
             return false;
-        if (other.getQueueOwnerAWSAccountId() != null
-                && other.getQueueOwnerAWSAccountId().equals(
-                        this.getQueueOwnerAWSAccountId()) == false)
+        if (other.getQueueOwnerAWSAccountId() != null && other.getQueueOwnerAWSAccountId().equals(this.getQueueOwnerAWSAccountId()) == false)
             return false;
         return true;
     }
@@ -221,12 +204,8 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getQueueName() == null) ? 0 : getQueueName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getQueueOwnerAWSAccountId() == null) ? 0
-                        : getQueueOwnerAWSAccountId().hashCode());
+        hashCode = prime * hashCode + ((getQueueName() == null) ? 0 : getQueueName().hashCode());
+        hashCode = prime * hashCode + ((getQueueOwnerAWSAccountId() == null) ? 0 : getQueueOwnerAWSAccountId().hashCode());
         return hashCode;
     }
 

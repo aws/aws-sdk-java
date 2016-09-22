@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model;
 
@@ -25,9 +23,8 @@ public class ActionTypeId implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage, and
-     * constrains the provider type for the action. Valid categories are limited
-     * to one of the values below.
+     * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
+     * action. Valid categories are limited to one of the values below.
      * </p>
      */
     private String category;
@@ -39,10 +36,9 @@ public class ActionTypeId implements Serializable, Cloneable {
     private String owner;
     /**
      * <p>
-     * The provider of the service being called by the action. Valid providers
-     * are determined by the action category. For example, an action in the
-     * Deploy category type might have a provider of AWS CodeDeploy, which would
-     * be specified as CodeDeploy.
+     * The provider of the service being called by the action. Valid providers are determined by the action category.
+     * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
+     * specified as CodeDeploy.
      * </p>
      */
     private String provider;
@@ -55,15 +51,13 @@ public class ActionTypeId implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage, and
-     * constrains the provider type for the action. Valid categories are limited
-     * to one of the values below.
+     * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
+     * action. Valid categories are limited to one of the values below.
      * </p>
      * 
      * @param category
-     *        A category defines what kind of action can be taken in the stage,
-     *        and constrains the provider type for the action. Valid categories
-     *        are limited to one of the values below.
+     *        A category defines what kind of action can be taken in the stage, and constrains the provider type for the
+     *        action. Valid categories are limited to one of the values below.
      * @see ActionCategory
      */
 
@@ -73,14 +67,12 @@ public class ActionTypeId implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage, and
-     * constrains the provider type for the action. Valid categories are limited
-     * to one of the values below.
+     * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
+     * action. Valid categories are limited to one of the values below.
      * </p>
      * 
-     * @return A category defines what kind of action can be taken in the stage,
-     *         and constrains the provider type for the action. Valid categories
-     *         are limited to one of the values below.
+     * @return A category defines what kind of action can be taken in the stage, and constrains the provider type for
+     *         the action. Valid categories are limited to one of the values below.
      * @see ActionCategory
      */
 
@@ -90,17 +82,14 @@ public class ActionTypeId implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage, and
-     * constrains the provider type for the action. Valid categories are limited
-     * to one of the values below.
+     * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
+     * action. Valid categories are limited to one of the values below.
      * </p>
      * 
      * @param category
-     *        A category defines what kind of action can be taken in the stage,
-     *        and constrains the provider type for the action. Valid categories
-     *        are limited to one of the values below.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A category defines what kind of action can be taken in the stage, and constrains the provider type for the
+     *        action. Valid categories are limited to one of the values below.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCategory
      */
 
@@ -111,15 +100,13 @@ public class ActionTypeId implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage, and
-     * constrains the provider type for the action. Valid categories are limited
-     * to one of the values below.
+     * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
+     * action. Valid categories are limited to one of the values below.
      * </p>
      * 
      * @param category
-     *        A category defines what kind of action can be taken in the stage,
-     *        and constrains the provider type for the action. Valid categories
-     *        are limited to one of the values below.
+     *        A category defines what kind of action can be taken in the stage, and constrains the provider type for the
+     *        action. Valid categories are limited to one of the values below.
      * @see ActionCategory
      */
 
@@ -129,17 +116,14 @@ public class ActionTypeId implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A category defines what kind of action can be taken in the stage, and
-     * constrains the provider type for the action. Valid categories are limited
-     * to one of the values below.
+     * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
+     * action. Valid categories are limited to one of the values below.
      * </p>
      * 
      * @param category
-     *        A category defines what kind of action can be taken in the stage,
-     *        and constrains the provider type for the action. Valid categories
-     *        are limited to one of the values below.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A category defines what kind of action can be taken in the stage, and constrains the provider type for the
+     *        action. Valid categories are limited to one of the values below.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCategory
      */
 
@@ -182,8 +166,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      * 
      * @param owner
      *        The creator of the action being called.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionOwner
      */
 
@@ -213,8 +196,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      * 
      * @param owner
      *        The creator of the action being called.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionOwner
      */
 
@@ -225,17 +207,15 @@ public class ActionTypeId implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The provider of the service being called by the action. Valid providers
-     * are determined by the action category. For example, an action in the
-     * Deploy category type might have a provider of AWS CodeDeploy, which would
-     * be specified as CodeDeploy.
+     * The provider of the service being called by the action. Valid providers are determined by the action category.
+     * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
+     * specified as CodeDeploy.
      * </p>
      * 
      * @param provider
-     *        The provider of the service being called by the action. Valid
-     *        providers are determined by the action category. For example, an
-     *        action in the Deploy category type might have a provider of AWS
-     *        CodeDeploy, which would be specified as CodeDeploy.
+     *        The provider of the service being called by the action. Valid providers are determined by the action
+     *        category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy,
+     *        which would be specified as CodeDeploy.
      */
 
     public void setProvider(String provider) {
@@ -244,16 +224,14 @@ public class ActionTypeId implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The provider of the service being called by the action. Valid providers
-     * are determined by the action category. For example, an action in the
-     * Deploy category type might have a provider of AWS CodeDeploy, which would
-     * be specified as CodeDeploy.
+     * The provider of the service being called by the action. Valid providers are determined by the action category.
+     * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
+     * specified as CodeDeploy.
      * </p>
      * 
-     * @return The provider of the service being called by the action. Valid
-     *         providers are determined by the action category. For example, an
-     *         action in the Deploy category type might have a provider of AWS
-     *         CodeDeploy, which would be specified as CodeDeploy.
+     * @return The provider of the service being called by the action. Valid providers are determined by the action
+     *         category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy,
+     *         which would be specified as CodeDeploy.
      */
 
     public String getProvider() {
@@ -262,19 +240,16 @@ public class ActionTypeId implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The provider of the service being called by the action. Valid providers
-     * are determined by the action category. For example, an action in the
-     * Deploy category type might have a provider of AWS CodeDeploy, which would
-     * be specified as CodeDeploy.
+     * The provider of the service being called by the action. Valid providers are determined by the action category.
+     * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
+     * specified as CodeDeploy.
      * </p>
      * 
      * @param provider
-     *        The provider of the service being called by the action. Valid
-     *        providers are determined by the action category. For example, an
-     *        action in the Deploy category type might have a provider of AWS
-     *        CodeDeploy, which would be specified as CodeDeploy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The provider of the service being called by the action. Valid providers are determined by the action
+     *        category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy,
+     *        which would be specified as CodeDeploy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ActionTypeId withProvider(String provider) {
@@ -314,8 +289,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      * 
      * @param version
      *        A string that identifies the action type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ActionTypeId withVersion(String version) {
@@ -324,8 +298,7 @@ public class ActionTypeId implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -359,23 +332,19 @@ public class ActionTypeId implements Serializable, Cloneable {
         ActionTypeId other = (ActionTypeId) obj;
         if (other.getCategory() == null ^ this.getCategory() == null)
             return false;
-        if (other.getCategory() != null
-                && other.getCategory().equals(this.getCategory()) == false)
+        if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
             return false;
         if (other.getOwner() == null ^ this.getOwner() == null)
             return false;
-        if (other.getOwner() != null
-                && other.getOwner().equals(this.getOwner()) == false)
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
             return false;
         if (other.getProvider() == null ^ this.getProvider() == null)
             return false;
-        if (other.getProvider() != null
-                && other.getProvider().equals(this.getProvider()) == false)
+        if (other.getProvider() != null && other.getProvider().equals(this.getProvider()) == false)
             return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
-        if (other.getVersion() != null
-                && other.getVersion().equals(this.getVersion()) == false)
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
         return true;
     }
@@ -385,14 +354,10 @@ public class ActionTypeId implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCategory() == null) ? 0 : getCategory().hashCode());
-        hashCode = prime * hashCode
-                + ((getOwner() == null) ? 0 : getOwner().hashCode());
-        hashCode = prime * hashCode
-                + ((getProvider() == null) ? 0 : getProvider().hashCode());
-        hashCode = prime * hashCode
-                + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
+        hashCode = prime * hashCode + ((getProvider() == null) ? 0 : getProvider().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
 
@@ -401,9 +366,7 @@ public class ActionTypeId implements Serializable, Cloneable {
         try {
             return (ActionTypeId) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

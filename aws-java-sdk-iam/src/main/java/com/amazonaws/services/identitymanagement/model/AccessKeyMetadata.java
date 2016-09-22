@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -21,8 +19,7 @@ import java.io.Serializable;
  * Contains information about an AWS access key, without its secret key.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>ListAccessKeys</a>
- * action.
+ * This data type is used as a response element in the <a>ListAccessKeys</a> action.
  * </p>
  */
 public class AccessKeyMetadata implements Serializable, Cloneable {
@@ -41,8 +38,8 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
     private String accessKeyId;
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid
-     * for API calls; <code>Inactive</code> means it is not.
+     * The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code>
+     * means it is not.
      * </p>
      */
     private String status;
@@ -85,8 +82,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      * 
      * @param userName
      *        The name of the IAM user that the key is associated with.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AccessKeyMetadata withUserName(String userName) {
@@ -126,8 +122,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      * 
      * @param accessKeyId
      *        The ID for this access key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AccessKeyMetadata withAccessKeyId(String accessKeyId) {
@@ -137,13 +132,13 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid
-     * for API calls; <code>Inactive</code> means it is not.
+     * The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code>
+     * means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is
-     *        valid for API calls; <code>Inactive</code> means it is not.
+     *        The status of the access key. <code>Active</code> means the key is valid for API calls;
+     *        <code>Inactive</code> means it is not.
      * @see StatusType
      */
 
@@ -153,12 +148,12 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid
-     * for API calls; <code>Inactive</code> means it is not.
+     * The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code>
+     * means it is not.
      * </p>
      * 
-     * @return The status of the access key. <code>Active</code> means the key
-     *         is valid for API calls; <code>Inactive</code> means it is not.
+     * @return The status of the access key. <code>Active</code> means the key is valid for API calls;
+     *         <code>Inactive</code> means it is not.
      * @see StatusType
      */
 
@@ -168,15 +163,14 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid
-     * for API calls; <code>Inactive</code> means it is not.
+     * The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code>
+     * means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is
-     *        valid for API calls; <code>Inactive</code> means it is not.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status of the access key. <code>Active</code> means the key is valid for API calls;
+     *        <code>Inactive</code> means it is not.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
 
@@ -187,13 +181,13 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid
-     * for API calls; <code>Inactive</code> means it is not.
+     * The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code>
+     * means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is
-     *        valid for API calls; <code>Inactive</code> means it is not.
+     *        The status of the access key. <code>Active</code> means the key is valid for API calls;
+     *        <code>Inactive</code> means it is not.
      * @see StatusType
      */
 
@@ -203,15 +197,14 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid
-     * for API calls; <code>Inactive</code> means it is not.
+     * The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code>
+     * means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is
-     *        valid for API calls; <code>Inactive</code> means it is not.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status of the access key. <code>Active</code> means the key is valid for API calls;
+     *        <code>Inactive</code> means it is not.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
 
@@ -252,8 +245,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      * 
      * @param createDate
      *        The date when the access key was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AccessKeyMetadata withCreateDate(java.util.Date createDate) {
@@ -262,8 +254,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -297,23 +288,19 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
         AccessKeyMetadata other = (AccessKeyMetadata) obj;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
-        if (other.getUserName() != null
-                && other.getUserName().equals(this.getUserName()) == false)
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
         if (other.getAccessKeyId() == null ^ this.getAccessKeyId() == null)
             return false;
-        if (other.getAccessKeyId() != null
-                && other.getAccessKeyId().equals(this.getAccessKeyId()) == false)
+        if (other.getAccessKeyId() != null && other.getAccessKeyId().equals(this.getAccessKeyId()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getCreateDate() == null ^ this.getCreateDate() == null)
             return false;
-        if (other.getCreateDate() != null
-                && other.getCreateDate().equals(this.getCreateDate()) == false)
+        if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false)
             return false;
         return true;
     }
@@ -323,15 +310,10 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAccessKeyId() == null) ? 0 : getAccessKeyId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getAccessKeyId() == null) ? 0 : getAccessKeyId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         return hashCode;
     }
 
@@ -340,9 +322,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
         try {
             return (AccessKeyMetadata) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

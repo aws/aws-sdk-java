@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,33 +20,31 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output for DescribeImportImageTasks.
  * </p>
  */
-public class DescribeImportImageTasksResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeImportImageTasksResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of zero or more import image tasks that are currently active or
-     * were completed or canceled in the previous 7 days.
+     * A list of zero or more import image tasks that are currently active or were completed or canceled in the previous
+     * 7 days.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ImportImageTask> importImageTasks;
     /**
      * <p>
-     * The token to use to get the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to get the next page of results. This value is <code>null</code> when there are no more results
+     * to return.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of zero or more import image tasks that are currently active or
-     * were completed or canceled in the previous 7 days.
+     * A list of zero or more import image tasks that are currently active or were completed or canceled in the previous
+     * 7 days.
      * </p>
      * 
-     * @return A list of zero or more import image tasks that are currently
-     *         active or were completed or canceled in the previous 7 days.
+     * @return A list of zero or more import image tasks that are currently active or were completed or canceled in the
+     *         previous 7 days.
      */
 
     public java.util.List<ImportImageTask> getImportImageTasks() {
@@ -60,50 +56,44 @@ public class DescribeImportImageTasksResult extends
 
     /**
      * <p>
-     * A list of zero or more import image tasks that are currently active or
-     * were completed or canceled in the previous 7 days.
+     * A list of zero or more import image tasks that are currently active or were completed or canceled in the previous
+     * 7 days.
      * </p>
      * 
      * @param importImageTasks
-     *        A list of zero or more import image tasks that are currently
-     *        active or were completed or canceled in the previous 7 days.
+     *        A list of zero or more import image tasks that are currently active or were completed or canceled in the
+     *        previous 7 days.
      */
 
-    public void setImportImageTasks(
-            java.util.Collection<ImportImageTask> importImageTasks) {
+    public void setImportImageTasks(java.util.Collection<ImportImageTask> importImageTasks) {
         if (importImageTasks == null) {
             this.importImageTasks = null;
             return;
         }
 
-        this.importImageTasks = new com.amazonaws.internal.SdkInternalList<ImportImageTask>(
-                importImageTasks);
+        this.importImageTasks = new com.amazonaws.internal.SdkInternalList<ImportImageTask>(importImageTasks);
     }
 
     /**
      * <p>
-     * A list of zero or more import image tasks that are currently active or
-     * were completed or canceled in the previous 7 days.
+     * A list of zero or more import image tasks that are currently active or were completed or canceled in the previous
+     * 7 days.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setImportImageTasks(java.util.Collection)} or
-     * {@link #withImportImageTasks(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setImportImageTasks(java.util.Collection)} or {@link #withImportImageTasks(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param importImageTasks
-     *        A list of zero or more import image tasks that are currently
-     *        active or were completed or canceled in the previous 7 days.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of zero or more import image tasks that are currently active or were completed or canceled in the
+     *        previous 7 days.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeImportImageTasksResult withImportImageTasks(
-            ImportImageTask... importImageTasks) {
+    public DescribeImportImageTasksResult withImportImageTasks(ImportImageTask... importImageTasks) {
         if (this.importImageTasks == null) {
-            setImportImageTasks(new com.amazonaws.internal.SdkInternalList<ImportImageTask>(
-                    importImageTasks.length));
+            setImportImageTasks(new com.amazonaws.internal.SdkInternalList<ImportImageTask>(importImageTasks.length));
         }
         for (ImportImageTask ele : importImageTasks) {
             this.importImageTasks.add(ele);
@@ -113,32 +103,30 @@ public class DescribeImportImageTasksResult extends
 
     /**
      * <p>
-     * A list of zero or more import image tasks that are currently active or
-     * were completed or canceled in the previous 7 days.
+     * A list of zero or more import image tasks that are currently active or were completed or canceled in the previous
+     * 7 days.
      * </p>
      * 
      * @param importImageTasks
-     *        A list of zero or more import image tasks that are currently
-     *        active or were completed or canceled in the previous 7 days.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of zero or more import image tasks that are currently active or were completed or canceled in the
+     *        previous 7 days.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeImportImageTasksResult withImportImageTasks(
-            java.util.Collection<ImportImageTask> importImageTasks) {
+    public DescribeImportImageTasksResult withImportImageTasks(java.util.Collection<ImportImageTask> importImageTasks) {
         setImportImageTasks(importImageTasks);
         return this;
     }
 
     /**
      * <p>
-     * The token to use to get the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to get the next page of results. This value is <code>null</code> when there are no more results
+     * to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to get the next page of results. This value is
-     *        <code>null</code> when there are no more results to return.
+     *        The token to use to get the next page of results. This value is <code>null</code> when there are no more
+     *        results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -147,12 +135,12 @@ public class DescribeImportImageTasksResult extends
 
     /**
      * <p>
-     * The token to use to get the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to get the next page of results. This value is <code>null</code> when there are no more results
+     * to return.
      * </p>
      * 
-     * @return The token to use to get the next page of results. This value is
-     *         <code>null</code> when there are no more results to return.
+     * @return The token to use to get the next page of results. This value is <code>null</code> when there are no more
+     *         results to return.
      */
 
     public String getNextToken() {
@@ -161,15 +149,14 @@ public class DescribeImportImageTasksResult extends
 
     /**
      * <p>
-     * The token to use to get the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to get the next page of results. This value is <code>null</code> when there are no more results
+     * to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to get the next page of results. This value is
-     *        <code>null</code> when there are no more results to return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token to use to get the next page of results. This value is <code>null</code> when there are no more
+     *        results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeImportImageTasksResult withNextToken(String nextToken) {
@@ -178,8 +165,7 @@ public class DescribeImportImageTasksResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -207,17 +193,13 @@ public class DescribeImportImageTasksResult extends
         if (obj instanceof DescribeImportImageTasksResult == false)
             return false;
         DescribeImportImageTasksResult other = (DescribeImportImageTasksResult) obj;
-        if (other.getImportImageTasks() == null
-                ^ this.getImportImageTasks() == null)
+        if (other.getImportImageTasks() == null ^ this.getImportImageTasks() == null)
             return false;
-        if (other.getImportImageTasks() != null
-                && other.getImportImageTasks().equals(
-                        this.getImportImageTasks()) == false)
+        if (other.getImportImageTasks() != null && other.getImportImageTasks().equals(this.getImportImageTasks()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -227,12 +209,8 @@ public class DescribeImportImageTasksResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getImportImageTasks() == null) ? 0 : getImportImageTasks()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getImportImageTasks() == null) ? 0 : getImportImageTasks().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -241,9 +219,7 @@ public class DescribeImportImageTasksResult extends
         try {
             return (DescribeImportImageTasksResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

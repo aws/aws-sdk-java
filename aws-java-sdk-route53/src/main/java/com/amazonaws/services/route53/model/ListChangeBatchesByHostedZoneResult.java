@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -22,23 +20,20 @@ import java.io.Serializable;
  * </p>
  */
 @Deprecated
-public class ListChangeBatchesByHostedZoneResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListChangeBatchesByHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
-     * The value that you specified for the <code>maxitems</code> parameter in
-     * the call to <code>ListHostedZones</code> that produced the current
-     * response.
+     * The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZones</code>
+     * that produced the current response.
      * </p>
      */
     private String maxItems;
     /**
      * <p>
-     * For the second and subsequent calls to ListHostedZones, Marker is the
-     * value that you specified for the marker parameter in the request that
-     * produced the current response.
+     * For the second and subsequent calls to ListHostedZones, Marker is the value that you specified for the marker
+     * parameter in the request that produced the current response.
      * </p>
      */
     private String marker;
@@ -63,15 +58,13 @@ public class ListChangeBatchesByHostedZoneResult extends
 
     /**
      * <p>
-     * The value that you specified for the <code>maxitems</code> parameter in
-     * the call to <code>ListHostedZones</code> that produced the current
-     * response.
+     * The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZones</code>
+     * that produced the current response.
      * </p>
      * 
      * @param maxItems
-     *        The value that you specified for the <code>maxitems</code>
-     *        parameter in the call to <code>ListHostedZones</code> that
-     *        produced the current response.
+     *        The value that you specified for the <code>maxitems</code> parameter in the call to
+     *        <code>ListHostedZones</code> that produced the current response.
      */
 
     public void setMaxItems(String maxItems) {
@@ -80,14 +73,12 @@ public class ListChangeBatchesByHostedZoneResult extends
 
     /**
      * <p>
-     * The value that you specified for the <code>maxitems</code> parameter in
-     * the call to <code>ListHostedZones</code> that produced the current
-     * response.
+     * The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZones</code>
+     * that produced the current response.
      * </p>
      * 
-     * @return The value that you specified for the <code>maxitems</code>
-     *         parameter in the call to <code>ListHostedZones</code> that
-     *         produced the current response.
+     * @return The value that you specified for the <code>maxitems</code> parameter in the call to
+     *         <code>ListHostedZones</code> that produced the current response.
      */
 
     public String getMaxItems() {
@@ -96,17 +87,14 @@ public class ListChangeBatchesByHostedZoneResult extends
 
     /**
      * <p>
-     * The value that you specified for the <code>maxitems</code> parameter in
-     * the call to <code>ListHostedZones</code> that produced the current
-     * response.
+     * The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZones</code>
+     * that produced the current response.
      * </p>
      * 
      * @param maxItems
-     *        The value that you specified for the <code>maxitems</code>
-     *        parameter in the call to <code>ListHostedZones</code> that
-     *        produced the current response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value that you specified for the <code>maxitems</code> parameter in the call to
+     *        <code>ListHostedZones</code> that produced the current response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByHostedZoneResult withMaxItems(String maxItems) {
@@ -116,15 +104,13 @@ public class ListChangeBatchesByHostedZoneResult extends
 
     /**
      * <p>
-     * For the second and subsequent calls to ListHostedZones, Marker is the
-     * value that you specified for the marker parameter in the request that
-     * produced the current response.
+     * For the second and subsequent calls to ListHostedZones, Marker is the value that you specified for the marker
+     * parameter in the request that produced the current response.
      * </p>
      * 
      * @param marker
-     *        For the second and subsequent calls to ListHostedZones, Marker is
-     *        the value that you specified for the marker parameter in the
-     *        request that produced the current response.
+     *        For the second and subsequent calls to ListHostedZones, Marker is the value that you specified for the
+     *        marker parameter in the request that produced the current response.
      */
 
     public void setMarker(String marker) {
@@ -133,14 +119,12 @@ public class ListChangeBatchesByHostedZoneResult extends
 
     /**
      * <p>
-     * For the second and subsequent calls to ListHostedZones, Marker is the
-     * value that you specified for the marker parameter in the request that
-     * produced the current response.
+     * For the second and subsequent calls to ListHostedZones, Marker is the value that you specified for the marker
+     * parameter in the request that produced the current response.
      * </p>
      * 
-     * @return For the second and subsequent calls to ListHostedZones, Marker is
-     *         the value that you specified for the marker parameter in the
-     *         request that produced the current response.
+     * @return For the second and subsequent calls to ListHostedZones, Marker is the value that you specified for the
+     *         marker parameter in the request that produced the current response.
      */
 
     public String getMarker() {
@@ -149,17 +133,14 @@ public class ListChangeBatchesByHostedZoneResult extends
 
     /**
      * <p>
-     * For the second and subsequent calls to ListHostedZones, Marker is the
-     * value that you specified for the marker parameter in the request that
-     * produced the current response.
+     * For the second and subsequent calls to ListHostedZones, Marker is the value that you specified for the marker
+     * parameter in the request that produced the current response.
      * </p>
      * 
      * @param marker
-     *        For the second and subsequent calls to ListHostedZones, Marker is
-     *        the value that you specified for the marker parameter in the
-     *        request that produced the current response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For the second and subsequent calls to ListHostedZones, Marker is the value that you specified for the
+     *        marker parameter in the request that produced the current response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByHostedZoneResult withMarker(String marker) {
@@ -199,12 +180,10 @@ public class ListChangeBatchesByHostedZoneResult extends
      * 
      * @param isTruncated
      *        A flag that indicates if there are more change batches to list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListChangeBatchesByHostedZoneResult withIsTruncated(
-            Boolean isTruncated) {
+    public ListChangeBatchesByHostedZoneResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
     }
@@ -245,15 +224,13 @@ public class ListChangeBatchesByHostedZoneResult extends
      *        The change batches within the given hosted zone and time period.
      */
 
-    public void setChangeBatchRecords(
-            java.util.Collection<ChangeBatchRecord> changeBatchRecords) {
+    public void setChangeBatchRecords(java.util.Collection<ChangeBatchRecord> changeBatchRecords) {
         if (changeBatchRecords == null) {
             this.changeBatchRecords = null;
             return;
         }
 
-        this.changeBatchRecords = new com.amazonaws.internal.SdkInternalList<ChangeBatchRecord>(
-                changeBatchRecords);
+        this.changeBatchRecords = new com.amazonaws.internal.SdkInternalList<ChangeBatchRecord>(changeBatchRecords);
     }
 
     /**
@@ -261,23 +238,19 @@ public class ListChangeBatchesByHostedZoneResult extends
      * The change batches within the given hosted zone and time period.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setChangeBatchRecords(java.util.Collection)} or
-     * {@link #withChangeBatchRecords(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setChangeBatchRecords(java.util.Collection)} or {@link #withChangeBatchRecords(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param changeBatchRecords
      *        The change batches within the given hosted zone and time period.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListChangeBatchesByHostedZoneResult withChangeBatchRecords(
-            ChangeBatchRecord... changeBatchRecords) {
+    public ListChangeBatchesByHostedZoneResult withChangeBatchRecords(ChangeBatchRecord... changeBatchRecords) {
         if (this.changeBatchRecords == null) {
-            setChangeBatchRecords(new com.amazonaws.internal.SdkInternalList<ChangeBatchRecord>(
-                    changeBatchRecords.length));
+            setChangeBatchRecords(new com.amazonaws.internal.SdkInternalList<ChangeBatchRecord>(changeBatchRecords.length));
         }
         for (ChangeBatchRecord ele : changeBatchRecords) {
             this.changeBatchRecords.add(ele);
@@ -292,12 +265,10 @@ public class ListChangeBatchesByHostedZoneResult extends
      * 
      * @param changeBatchRecords
      *        The change batches within the given hosted zone and time period.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListChangeBatchesByHostedZoneResult withChangeBatchRecords(
-            java.util.Collection<ChangeBatchRecord> changeBatchRecords) {
+    public ListChangeBatchesByHostedZoneResult withChangeBatchRecords(java.util.Collection<ChangeBatchRecord> changeBatchRecords) {
         setChangeBatchRecords(changeBatchRecords);
         return this;
     }
@@ -334,8 +305,7 @@ public class ListChangeBatchesByHostedZoneResult extends
      * 
      * @param nextMarker
      *        The next page marker.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByHostedZoneResult withNextMarker(String nextMarker) {
@@ -344,8 +314,7 @@ public class ListChangeBatchesByHostedZoneResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -381,30 +350,23 @@ public class ListChangeBatchesByHostedZoneResult extends
         ListChangeBatchesByHostedZoneResult other = (ListChangeBatchesByHostedZoneResult) obj;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getIsTruncated() == null ^ this.getIsTruncated() == null)
             return false;
-        if (other.getIsTruncated() != null
-                && other.getIsTruncated().equals(this.getIsTruncated()) == false)
+        if (other.getIsTruncated() != null && other.getIsTruncated().equals(this.getIsTruncated()) == false)
             return false;
-        if (other.getChangeBatchRecords() == null
-                ^ this.getChangeBatchRecords() == null)
+        if (other.getChangeBatchRecords() == null ^ this.getChangeBatchRecords() == null)
             return false;
-        if (other.getChangeBatchRecords() != null
-                && other.getChangeBatchRecords().equals(
-                        this.getChangeBatchRecords()) == false)
+        if (other.getChangeBatchRecords() != null && other.getChangeBatchRecords().equals(this.getChangeBatchRecords()) == false)
             return false;
         if (other.getNextMarker() == null ^ this.getNextMarker() == null)
             return false;
-        if (other.getNextMarker() != null
-                && other.getNextMarker().equals(this.getNextMarker()) == false)
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false)
             return false;
         return true;
     }
@@ -414,19 +376,11 @@ public class ListChangeBatchesByHostedZoneResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getChangeBatchRecords() == null) ? 0
-                        : getChangeBatchRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
+        hashCode = prime * hashCode + ((getChangeBatchRecords() == null) ? 0 : getChangeBatchRecords().hashCode());
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
         return hashCode;
     }
 
@@ -435,9 +389,7 @@ public class ListChangeBatchesByHostedZoneResult extends
         try {
             return (ListChangeBatchesByHostedZoneResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

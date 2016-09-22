@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
@@ -34,12 +32,10 @@ public class WorkflowExecutionInfoJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(WorkflowExecutionInfo workflowExecutionInfo,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(WorkflowExecutionInfo workflowExecutionInfo, StructuredJsonGenerator jsonGenerator) {
 
         if (workflowExecutionInfo == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -47,38 +43,30 @@ public class WorkflowExecutionInfoJsonMarshaller {
 
             if (workflowExecutionInfo.getExecution() != null) {
                 jsonGenerator.writeFieldName("execution");
-                WorkflowExecutionJsonMarshaller.getInstance().marshall(
-                        workflowExecutionInfo.getExecution(), jsonGenerator);
+                WorkflowExecutionJsonMarshaller.getInstance().marshall(workflowExecutionInfo.getExecution(), jsonGenerator);
             }
             if (workflowExecutionInfo.getWorkflowType() != null) {
                 jsonGenerator.writeFieldName("workflowType");
-                WorkflowTypeJsonMarshaller.getInstance().marshall(
-                        workflowExecutionInfo.getWorkflowType(), jsonGenerator);
+                WorkflowTypeJsonMarshaller.getInstance().marshall(workflowExecutionInfo.getWorkflowType(), jsonGenerator);
             }
             if (workflowExecutionInfo.getStartTimestamp() != null) {
-                jsonGenerator.writeFieldName("startTimestamp").writeValue(
-                        workflowExecutionInfo.getStartTimestamp());
+                jsonGenerator.writeFieldName("startTimestamp").writeValue(workflowExecutionInfo.getStartTimestamp());
             }
             if (workflowExecutionInfo.getCloseTimestamp() != null) {
-                jsonGenerator.writeFieldName("closeTimestamp").writeValue(
-                        workflowExecutionInfo.getCloseTimestamp());
+                jsonGenerator.writeFieldName("closeTimestamp").writeValue(workflowExecutionInfo.getCloseTimestamp());
             }
             if (workflowExecutionInfo.getExecutionStatus() != null) {
-                jsonGenerator.writeFieldName("executionStatus").writeValue(
-                        workflowExecutionInfo.getExecutionStatus());
+                jsonGenerator.writeFieldName("executionStatus").writeValue(workflowExecutionInfo.getExecutionStatus());
             }
             if (workflowExecutionInfo.getCloseStatus() != null) {
-                jsonGenerator.writeFieldName("closeStatus").writeValue(
-                        workflowExecutionInfo.getCloseStatus());
+                jsonGenerator.writeFieldName("closeStatus").writeValue(workflowExecutionInfo.getCloseStatus());
             }
             if (workflowExecutionInfo.getParent() != null) {
                 jsonGenerator.writeFieldName("parent");
-                WorkflowExecutionJsonMarshaller.getInstance().marshall(
-                        workflowExecutionInfo.getParent(), jsonGenerator);
+                WorkflowExecutionJsonMarshaller.getInstance().marshall(workflowExecutionInfo.getParent(), jsonGenerator);
             }
 
-            java.util.List<String> tagListList = workflowExecutionInfo
-                    .getTagList();
+            java.util.List<String> tagListList = workflowExecutionInfo.getTagList();
             if (tagListList != null) {
                 jsonGenerator.writeFieldName("tagList");
                 jsonGenerator.writeStartArray();
@@ -90,14 +78,12 @@ public class WorkflowExecutionInfoJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
             if (workflowExecutionInfo.getCancelRequested() != null) {
-                jsonGenerator.writeFieldName("cancelRequested").writeValue(
-                        workflowExecutionInfo.getCancelRequested());
+                jsonGenerator.writeFieldName("cancelRequested").writeValue(workflowExecutionInfo.getCancelRequested());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

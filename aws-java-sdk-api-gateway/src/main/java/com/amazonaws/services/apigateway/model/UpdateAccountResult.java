@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -34,10 +32,9 @@ import java.io.Serializable;
  * <li>TooManyRequestsException</li>
  * </ul>
  * <p>
- * For detailed error code information, including the corresponding HTTP Status
- * Codes, see <a href=
- * "http://docs.aws.amazon.com/apigateway/api-reference/handling-errors/#api-error-codes"
- * >API Gateway Error Codes</a>
+ * For detailed error code information, including the corresponding HTTP Status Codes, see <a
+ * href="http://docs.aws.amazon.com/apigateway/api-reference/handling-errors/#api-error-codes">API Gateway Error
+ * Codes</a>
  * </p>
  * <h4>Example: Get the information about an account.</h4> <h5>Request</h5>
  * 
@@ -47,28 +44,21 @@ import java.io.Serializable;
  * 
  * <h5>Response</h5>
  * <p>
- * The successful response returns a <code>200 OK</code> status code and a
- * payload similar to the following:
+ * The successful response returns a <code>200 OK</code> status code and a payload similar to the following:
  * </p>
  * 
  * <pre>
  * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/account-apigateway-{rel}.html", "name": "account", "templated": true }, "self": { "href": "/account" }, "account:update": { "href": "/account" } }, "cloudwatchRoleArn": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "throttleSettings": { "rateLimit": 500, "burstLimit": 1000 } } </code>
  * </pre>
  * <p>
- * In addition to making the REST API call directly, you can use the AWS CLI and
- * an AWS SDK to access this resource.
+ * In addition to making the REST API call directly, you can use the AWS CLI and an AWS SDK to access this resource.
  * </p>
- * </div> <div class="seeAlso"> <a href=
- * "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-limits.html"
- * >API Gateway Limits</a> <a href=
- * "http://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html"
- * >Developer Guide</a>, <a href=
- * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-account.html"
- * >AWS CLI</a> </div>
+ * </div> <div class="seeAlso"> <a
+ * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-limits.html">API Gateway Limits</a> <a
+ * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html">Developer Guide</a>, <a
+ * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-account.html">AWS CLI</a> </div>
  */
-public class UpdateAccountResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class UpdateAccountResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -78,16 +68,14 @@ public class UpdateAccountResult extends
     private String cloudwatchRoleArn;
     /**
      * <p>
-     * Specifies the API request limits configured for the current
-     * <a>Account</a>.
+     * Specifies the API request limits configured for the current <a>Account</a>.
      * </p>
      */
     private ThrottleSettings throttleSettings;
     /**
      * <p>
-     * A list of features supported for the account. When usage plans are
-     * enabled, the features list will include an entry of
-     * <code>"UsagePlans"</code>.
+     * A list of features supported for the account. When usage plans are enabled, the features list will include an
+     * entry of <code>"UsagePlans"</code>.
      * </p>
      */
     private java.util.List<String> features;
@@ -104,8 +92,7 @@ public class UpdateAccountResult extends
      * </p>
      * 
      * @param cloudwatchRoleArn
-     *        The ARN of an Amazon CloudWatch role for the current
-     *        <a>Account</a>.
+     *        The ARN of an Amazon CloudWatch role for the current <a>Account</a>.
      */
 
     public void setCloudwatchRoleArn(String cloudwatchRoleArn) {
@@ -117,8 +104,7 @@ public class UpdateAccountResult extends
      * The ARN of an Amazon CloudWatch role for the current <a>Account</a>.
      * </p>
      * 
-     * @return The ARN of an Amazon CloudWatch role for the current
-     *         <a>Account</a>.
+     * @return The ARN of an Amazon CloudWatch role for the current <a>Account</a>.
      */
 
     public String getCloudwatchRoleArn() {
@@ -131,10 +117,8 @@ public class UpdateAccountResult extends
      * </p>
      * 
      * @param cloudwatchRoleArn
-     *        The ARN of an Amazon CloudWatch role for the current
-     *        <a>Account</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN of an Amazon CloudWatch role for the current <a>Account</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAccountResult withCloudwatchRoleArn(String cloudwatchRoleArn) {
@@ -144,13 +128,11 @@ public class UpdateAccountResult extends
 
     /**
      * <p>
-     * Specifies the API request limits configured for the current
-     * <a>Account</a>.
+     * Specifies the API request limits configured for the current <a>Account</a>.
      * </p>
      * 
      * @param throttleSettings
-     *        Specifies the API request limits configured for the current
-     *        <a>Account</a>.
+     *        Specifies the API request limits configured for the current <a>Account</a>.
      */
 
     public void setThrottleSettings(ThrottleSettings throttleSettings) {
@@ -159,12 +141,10 @@ public class UpdateAccountResult extends
 
     /**
      * <p>
-     * Specifies the API request limits configured for the current
-     * <a>Account</a>.
+     * Specifies the API request limits configured for the current <a>Account</a>.
      * </p>
      * 
-     * @return Specifies the API request limits configured for the current
-     *         <a>Account</a>.
+     * @return Specifies the API request limits configured for the current <a>Account</a>.
      */
 
     public ThrottleSettings getThrottleSettings() {
@@ -173,33 +153,27 @@ public class UpdateAccountResult extends
 
     /**
      * <p>
-     * Specifies the API request limits configured for the current
-     * <a>Account</a>.
+     * Specifies the API request limits configured for the current <a>Account</a>.
      * </p>
      * 
      * @param throttleSettings
-     *        Specifies the API request limits configured for the current
-     *        <a>Account</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the API request limits configured for the current <a>Account</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateAccountResult withThrottleSettings(
-            ThrottleSettings throttleSettings) {
+    public UpdateAccountResult withThrottleSettings(ThrottleSettings throttleSettings) {
         setThrottleSettings(throttleSettings);
         return this;
     }
 
     /**
      * <p>
-     * A list of features supported for the account. When usage plans are
-     * enabled, the features list will include an entry of
-     * <code>"UsagePlans"</code>.
+     * A list of features supported for the account. When usage plans are enabled, the features list will include an
+     * entry of <code>"UsagePlans"</code>.
      * </p>
      * 
-     * @return A list of features supported for the account. When usage plans
-     *         are enabled, the features list will include an entry of
-     *         <code>"UsagePlans"</code>.
+     * @return A list of features supported for the account. When usage plans are enabled, the features list will
+     *         include an entry of <code>"UsagePlans"</code>.
      */
 
     public java.util.List<String> getFeatures() {
@@ -208,15 +182,13 @@ public class UpdateAccountResult extends
 
     /**
      * <p>
-     * A list of features supported for the account. When usage plans are
-     * enabled, the features list will include an entry of
-     * <code>"UsagePlans"</code>.
+     * A list of features supported for the account. When usage plans are enabled, the features list will include an
+     * entry of <code>"UsagePlans"</code>.
      * </p>
      * 
      * @param features
-     *        A list of features supported for the account. When usage plans are
-     *        enabled, the features list will include an entry of
-     *        <code>"UsagePlans"</code>.
+     *        A list of features supported for the account. When usage plans are enabled, the features list will include
+     *        an entry of <code>"UsagePlans"</code>.
      */
 
     public void setFeatures(java.util.Collection<String> features) {
@@ -230,23 +202,19 @@ public class UpdateAccountResult extends
 
     /**
      * <p>
-     * A list of features supported for the account. When usage plans are
-     * enabled, the features list will include an entry of
-     * <code>"UsagePlans"</code>.
+     * A list of features supported for the account. When usage plans are enabled, the features list will include an
+     * entry of <code>"UsagePlans"</code>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFeatures(java.util.Collection)} or
-     * {@link #withFeatures(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFeatures(java.util.Collection)} or {@link #withFeatures(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param features
-     *        A list of features supported for the account. When usage plans are
-     *        enabled, the features list will include an entry of
-     *        <code>"UsagePlans"</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of features supported for the account. When usage plans are enabled, the features list will include
+     *        an entry of <code>"UsagePlans"</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAccountResult withFeatures(String... features) {
@@ -261,21 +229,17 @@ public class UpdateAccountResult extends
 
     /**
      * <p>
-     * A list of features supported for the account. When usage plans are
-     * enabled, the features list will include an entry of
-     * <code>"UsagePlans"</code>.
+     * A list of features supported for the account. When usage plans are enabled, the features list will include an
+     * entry of <code>"UsagePlans"</code>.
      * </p>
      * 
      * @param features
-     *        A list of features supported for the account. When usage plans are
-     *        enabled, the features list will include an entry of
-     *        <code>"UsagePlans"</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of features supported for the account. When usage plans are enabled, the features list will include
+     *        an entry of <code>"UsagePlans"</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateAccountResult withFeatures(
-            java.util.Collection<String> features) {
+    public UpdateAccountResult withFeatures(java.util.Collection<String> features) {
         setFeatures(features);
         return this;
     }
@@ -312,8 +276,7 @@ public class UpdateAccountResult extends
      * 
      * @param apiKeyVersion
      *        The version of the API keys used for the account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAccountResult withApiKeyVersion(String apiKeyVersion) {
@@ -322,8 +285,7 @@ public class UpdateAccountResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -355,29 +317,21 @@ public class UpdateAccountResult extends
         if (obj instanceof UpdateAccountResult == false)
             return false;
         UpdateAccountResult other = (UpdateAccountResult) obj;
-        if (other.getCloudwatchRoleArn() == null
-                ^ this.getCloudwatchRoleArn() == null)
+        if (other.getCloudwatchRoleArn() == null ^ this.getCloudwatchRoleArn() == null)
             return false;
-        if (other.getCloudwatchRoleArn() != null
-                && other.getCloudwatchRoleArn().equals(
-                        this.getCloudwatchRoleArn()) == false)
+        if (other.getCloudwatchRoleArn() != null && other.getCloudwatchRoleArn().equals(this.getCloudwatchRoleArn()) == false)
             return false;
-        if (other.getThrottleSettings() == null
-                ^ this.getThrottleSettings() == null)
+        if (other.getThrottleSettings() == null ^ this.getThrottleSettings() == null)
             return false;
-        if (other.getThrottleSettings() != null
-                && other.getThrottleSettings().equals(
-                        this.getThrottleSettings()) == false)
+        if (other.getThrottleSettings() != null && other.getThrottleSettings().equals(this.getThrottleSettings()) == false)
             return false;
         if (other.getFeatures() == null ^ this.getFeatures() == null)
             return false;
-        if (other.getFeatures() != null
-                && other.getFeatures().equals(this.getFeatures()) == false)
+        if (other.getFeatures() != null && other.getFeatures().equals(this.getFeatures()) == false)
             return false;
         if (other.getApiKeyVersion() == null ^ this.getApiKeyVersion() == null)
             return false;
-        if (other.getApiKeyVersion() != null
-                && other.getApiKeyVersion().equals(this.getApiKeyVersion()) == false)
+        if (other.getApiKeyVersion() != null && other.getApiKeyVersion().equals(this.getApiKeyVersion()) == false)
             return false;
         return true;
     }
@@ -387,20 +341,10 @@ public class UpdateAccountResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCloudwatchRoleArn() == null) ? 0
-                        : getCloudwatchRoleArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getThrottleSettings() == null) ? 0 : getThrottleSettings()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getFeatures() == null) ? 0 : getFeatures().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getApiKeyVersion() == null) ? 0 : getApiKeyVersion()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getCloudwatchRoleArn() == null) ? 0 : getCloudwatchRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getThrottleSettings() == null) ? 0 : getThrottleSettings().hashCode());
+        hashCode = prime * hashCode + ((getFeatures() == null) ? 0 : getFeatures().hashCode());
+        hashCode = prime * hashCode + ((getApiKeyVersion() == null) ? 0 : getApiKeyVersion().hashCode());
         return hashCode;
     }
 
@@ -409,9 +353,7 @@ public class UpdateAccountResult extends
         try {
             return (UpdateAccountResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

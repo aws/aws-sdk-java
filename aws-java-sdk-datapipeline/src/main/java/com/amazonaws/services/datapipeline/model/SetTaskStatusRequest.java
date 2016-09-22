@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
 
@@ -22,61 +20,54 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for SetTaskStatus.
  * </p>
  */
-public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the task assigned to the task runner. This value is provided in
-     * the response for <a>PollForTask</a>.
+     * The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.
      * </p>
      */
     private String taskId;
     /**
      * <p>
-     * If <code>FINISHED</code>, the task successfully completed. If
-     * <code>FAILED</code>, the task ended unsuccessfully. Preconditions use
-     * false.
+     * If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully.
+     * Preconditions use false.
      * </p>
      */
     private String taskStatus;
     /**
      * <p>
-     * If an error occurred during the task, this value specifies the error
-     * code. This value is set on the physical attempt object. It is used to
-     * display error information to the user. It should not start with string
-     * "Service_" which is reserved by the system.
+     * If an error occurred during the task, this value specifies the error code. This value is set on the physical
+     * attempt object. It is used to display error information to the user. It should not start with string "Service_"
+     * which is reserved by the system.
      * </p>
      */
     private String errorId;
     /**
      * <p>
-     * If an error occurred during the task, this value specifies a text
-     * description of the error. This value is set on the physical attempt
-     * object. It is used to display error information to the user. The web
-     * service does not parse this value.
+     * If an error occurred during the task, this value specifies a text description of the error. This value is set on
+     * the physical attempt object. It is used to display error information to the user. The web service does not parse
+     * this value.
      * </p>
      */
     private String errorMessage;
     /**
      * <p>
-     * If an error occurred during the task, this value specifies the stack
-     * trace associated with the error. This value is set on the physical
-     * attempt object. It is used to display error information to the user. The
-     * web service does not parse this value.
+     * If an error occurred during the task, this value specifies the stack trace associated with the error. This value
+     * is set on the physical attempt object. It is used to display error information to the user. The web service does
+     * not parse this value.
      * </p>
      */
     private String errorStackTrace;
 
     /**
      * <p>
-     * The ID of the task assigned to the task runner. This value is provided in
-     * the response for <a>PollForTask</a>.
+     * The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.
      * </p>
      * 
      * @param taskId
-     *        The ID of the task assigned to the task runner. This value is
-     *        provided in the response for <a>PollForTask</a>.
+     *        The ID of the task assigned to the task runner. This value is provided in the response for
+     *        <a>PollForTask</a>.
      */
 
     public void setTaskId(String taskId) {
@@ -85,12 +76,11 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the task assigned to the task runner. This value is provided in
-     * the response for <a>PollForTask</a>.
+     * The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.
      * </p>
      * 
-     * @return The ID of the task assigned to the task runner. This value is
-     *         provided in the response for <a>PollForTask</a>.
+     * @return The ID of the task assigned to the task runner. This value is provided in the response for
+     *         <a>PollForTask</a>.
      */
 
     public String getTaskId() {
@@ -99,15 +89,13 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the task assigned to the task runner. This value is provided in
-     * the response for <a>PollForTask</a>.
+     * The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.
      * </p>
      * 
      * @param taskId
-     *        The ID of the task assigned to the task runner. This value is
-     *        provided in the response for <a>PollForTask</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the task assigned to the task runner. This value is provided in the response for
+     *        <a>PollForTask</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetTaskStatusRequest withTaskId(String taskId) {
@@ -117,15 +105,13 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If <code>FINISHED</code>, the task successfully completed. If
-     * <code>FAILED</code>, the task ended unsuccessfully. Preconditions use
-     * false.
+     * If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully.
+     * Preconditions use false.
      * </p>
      * 
      * @param taskStatus
-     *        If <code>FINISHED</code>, the task successfully completed. If
-     *        <code>FAILED</code>, the task ended unsuccessfully. Preconditions
-     *        use false.
+     *        If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended
+     *        unsuccessfully. Preconditions use false.
      * @see TaskStatus
      */
 
@@ -135,14 +121,12 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If <code>FINISHED</code>, the task successfully completed. If
-     * <code>FAILED</code>, the task ended unsuccessfully. Preconditions use
-     * false.
+     * If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully.
+     * Preconditions use false.
      * </p>
      * 
-     * @return If <code>FINISHED</code>, the task successfully completed. If
-     *         <code>FAILED</code>, the task ended unsuccessfully. Preconditions
-     *         use false.
+     * @return If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended
+     *         unsuccessfully. Preconditions use false.
      * @see TaskStatus
      */
 
@@ -152,17 +136,14 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If <code>FINISHED</code>, the task successfully completed. If
-     * <code>FAILED</code>, the task ended unsuccessfully. Preconditions use
-     * false.
+     * If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully.
+     * Preconditions use false.
      * </p>
      * 
      * @param taskStatus
-     *        If <code>FINISHED</code>, the task successfully completed. If
-     *        <code>FAILED</code>, the task ended unsuccessfully. Preconditions
-     *        use false.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended
+     *        unsuccessfully. Preconditions use false.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskStatus
      */
 
@@ -173,15 +154,13 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If <code>FINISHED</code>, the task successfully completed. If
-     * <code>FAILED</code>, the task ended unsuccessfully. Preconditions use
-     * false.
+     * If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully.
+     * Preconditions use false.
      * </p>
      * 
      * @param taskStatus
-     *        If <code>FINISHED</code>, the task successfully completed. If
-     *        <code>FAILED</code>, the task ended unsuccessfully. Preconditions
-     *        use false.
+     *        If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended
+     *        unsuccessfully. Preconditions use false.
      * @see TaskStatus
      */
 
@@ -191,17 +170,14 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If <code>FINISHED</code>, the task successfully completed. If
-     * <code>FAILED</code>, the task ended unsuccessfully. Preconditions use
-     * false.
+     * If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully.
+     * Preconditions use false.
      * </p>
      * 
      * @param taskStatus
-     *        If <code>FINISHED</code>, the task successfully completed. If
-     *        <code>FAILED</code>, the task ended unsuccessfully. Preconditions
-     *        use false.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended
+     *        unsuccessfully. Preconditions use false.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskStatus
      */
 
@@ -212,17 +188,15 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If an error occurred during the task, this value specifies the error
-     * code. This value is set on the physical attempt object. It is used to
-     * display error information to the user. It should not start with string
-     * "Service_" which is reserved by the system.
+     * If an error occurred during the task, this value specifies the error code. This value is set on the physical
+     * attempt object. It is used to display error information to the user. It should not start with string "Service_"
+     * which is reserved by the system.
      * </p>
      * 
      * @param errorId
-     *        If an error occurred during the task, this value specifies the
-     *        error code. This value is set on the physical attempt object. It
-     *        is used to display error information to the user. It should not
-     *        start with string "Service_" which is reserved by the system.
+     *        If an error occurred during the task, this value specifies the error code. This value is set on the
+     *        physical attempt object. It is used to display error information to the user. It should not start with
+     *        string "Service_" which is reserved by the system.
      */
 
     public void setErrorId(String errorId) {
@@ -231,16 +205,14 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If an error occurred during the task, this value specifies the error
-     * code. This value is set on the physical attempt object. It is used to
-     * display error information to the user. It should not start with string
-     * "Service_" which is reserved by the system.
+     * If an error occurred during the task, this value specifies the error code. This value is set on the physical
+     * attempt object. It is used to display error information to the user. It should not start with string "Service_"
+     * which is reserved by the system.
      * </p>
      * 
-     * @return If an error occurred during the task, this value specifies the
-     *         error code. This value is set on the physical attempt object. It
-     *         is used to display error information to the user. It should not
-     *         start with string "Service_" which is reserved by the system.
+     * @return If an error occurred during the task, this value specifies the error code. This value is set on the
+     *         physical attempt object. It is used to display error information to the user. It should not start with
+     *         string "Service_" which is reserved by the system.
      */
 
     public String getErrorId() {
@@ -249,19 +221,16 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If an error occurred during the task, this value specifies the error
-     * code. This value is set on the physical attempt object. It is used to
-     * display error information to the user. It should not start with string
-     * "Service_" which is reserved by the system.
+     * If an error occurred during the task, this value specifies the error code. This value is set on the physical
+     * attempt object. It is used to display error information to the user. It should not start with string "Service_"
+     * which is reserved by the system.
      * </p>
      * 
      * @param errorId
-     *        If an error occurred during the task, this value specifies the
-     *        error code. This value is set on the physical attempt object. It
-     *        is used to display error information to the user. It should not
-     *        start with string "Service_" which is reserved by the system.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If an error occurred during the task, this value specifies the error code. This value is set on the
+     *        physical attempt object. It is used to display error information to the user. It should not start with
+     *        string "Service_" which is reserved by the system.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetTaskStatusRequest withErrorId(String errorId) {
@@ -271,17 +240,15 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If an error occurred during the task, this value specifies a text
-     * description of the error. This value is set on the physical attempt
-     * object. It is used to display error information to the user. The web
-     * service does not parse this value.
+     * If an error occurred during the task, this value specifies a text description of the error. This value is set on
+     * the physical attempt object. It is used to display error information to the user. The web service does not parse
+     * this value.
      * </p>
      * 
      * @param errorMessage
-     *        If an error occurred during the task, this value specifies a text
-     *        description of the error. This value is set on the physical
-     *        attempt object. It is used to display error information to the
-     *        user. The web service does not parse this value.
+     *        If an error occurred during the task, this value specifies a text description of the error. This value is
+     *        set on the physical attempt object. It is used to display error information to the user. The web service
+     *        does not parse this value.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -290,16 +257,14 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If an error occurred during the task, this value specifies a text
-     * description of the error. This value is set on the physical attempt
-     * object. It is used to display error information to the user. The web
-     * service does not parse this value.
+     * If an error occurred during the task, this value specifies a text description of the error. This value is set on
+     * the physical attempt object. It is used to display error information to the user. The web service does not parse
+     * this value.
      * </p>
      * 
-     * @return If an error occurred during the task, this value specifies a text
-     *         description of the error. This value is set on the physical
-     *         attempt object. It is used to display error information to the
-     *         user. The web service does not parse this value.
+     * @return If an error occurred during the task, this value specifies a text description of the error. This value is
+     *         set on the physical attempt object. It is used to display error information to the user. The web service
+     *         does not parse this value.
      */
 
     public String getErrorMessage() {
@@ -308,19 +273,16 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If an error occurred during the task, this value specifies a text
-     * description of the error. This value is set on the physical attempt
-     * object. It is used to display error information to the user. The web
-     * service does not parse this value.
+     * If an error occurred during the task, this value specifies a text description of the error. This value is set on
+     * the physical attempt object. It is used to display error information to the user. The web service does not parse
+     * this value.
      * </p>
      * 
      * @param errorMessage
-     *        If an error occurred during the task, this value specifies a text
-     *        description of the error. This value is set on the physical
-     *        attempt object. It is used to display error information to the
-     *        user. The web service does not parse this value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If an error occurred during the task, this value specifies a text description of the error. This value is
+     *        set on the physical attempt object. It is used to display error information to the user. The web service
+     *        does not parse this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetTaskStatusRequest withErrorMessage(String errorMessage) {
@@ -330,17 +292,15 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If an error occurred during the task, this value specifies the stack
-     * trace associated with the error. This value is set on the physical
-     * attempt object. It is used to display error information to the user. The
-     * web service does not parse this value.
+     * If an error occurred during the task, this value specifies the stack trace associated with the error. This value
+     * is set on the physical attempt object. It is used to display error information to the user. The web service does
+     * not parse this value.
      * </p>
      * 
      * @param errorStackTrace
-     *        If an error occurred during the task, this value specifies the
-     *        stack trace associated with the error. This value is set on the
-     *        physical attempt object. It is used to display error information
-     *        to the user. The web service does not parse this value.
+     *        If an error occurred during the task, this value specifies the stack trace associated with the error. This
+     *        value is set on the physical attempt object. It is used to display error information to the user. The web
+     *        service does not parse this value.
      */
 
     public void setErrorStackTrace(String errorStackTrace) {
@@ -349,16 +309,14 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If an error occurred during the task, this value specifies the stack
-     * trace associated with the error. This value is set on the physical
-     * attempt object. It is used to display error information to the user. The
-     * web service does not parse this value.
+     * If an error occurred during the task, this value specifies the stack trace associated with the error. This value
+     * is set on the physical attempt object. It is used to display error information to the user. The web service does
+     * not parse this value.
      * </p>
      * 
-     * @return If an error occurred during the task, this value specifies the
-     *         stack trace associated with the error. This value is set on the
-     *         physical attempt object. It is used to display error information
-     *         to the user. The web service does not parse this value.
+     * @return If an error occurred during the task, this value specifies the stack trace associated with the error.
+     *         This value is set on the physical attempt object. It is used to display error information to the user.
+     *         The web service does not parse this value.
      */
 
     public String getErrorStackTrace() {
@@ -367,19 +325,16 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If an error occurred during the task, this value specifies the stack
-     * trace associated with the error. This value is set on the physical
-     * attempt object. It is used to display error information to the user. The
-     * web service does not parse this value.
+     * If an error occurred during the task, this value specifies the stack trace associated with the error. This value
+     * is set on the physical attempt object. It is used to display error information to the user. The web service does
+     * not parse this value.
      * </p>
      * 
      * @param errorStackTrace
-     *        If an error occurred during the task, this value specifies the
-     *        stack trace associated with the error. This value is set on the
-     *        physical attempt object. It is used to display error information
-     *        to the user. The web service does not parse this value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If an error occurred during the task, this value specifies the stack trace associated with the error. This
+     *        value is set on the physical attempt object. It is used to display error information to the user. The web
+     *        service does not parse this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetTaskStatusRequest withErrorStackTrace(String errorStackTrace) {
@@ -388,8 +343,7 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -425,29 +379,23 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
         SetTaskStatusRequest other = (SetTaskStatusRequest) obj;
         if (other.getTaskId() == null ^ this.getTaskId() == null)
             return false;
-        if (other.getTaskId() != null
-                && other.getTaskId().equals(this.getTaskId()) == false)
+        if (other.getTaskId() != null && other.getTaskId().equals(this.getTaskId()) == false)
             return false;
         if (other.getTaskStatus() == null ^ this.getTaskStatus() == null)
             return false;
-        if (other.getTaskStatus() != null
-                && other.getTaskStatus().equals(this.getTaskStatus()) == false)
+        if (other.getTaskStatus() != null && other.getTaskStatus().equals(this.getTaskStatus()) == false)
             return false;
         if (other.getErrorId() == null ^ this.getErrorId() == null)
             return false;
-        if (other.getErrorId() != null
-                && other.getErrorId().equals(this.getErrorId()) == false)
+        if (other.getErrorId() != null && other.getErrorId().equals(this.getErrorId()) == false)
             return false;
         if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
             return false;
-        if (other.getErrorMessage() != null
-                && other.getErrorMessage().equals(this.getErrorMessage()) == false)
+        if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
-        if (other.getErrorStackTrace() == null
-                ^ this.getErrorStackTrace() == null)
+        if (other.getErrorStackTrace() == null ^ this.getErrorStackTrace() == null)
             return false;
-        if (other.getErrorStackTrace() != null
-                && other.getErrorStackTrace().equals(this.getErrorStackTrace()) == false)
+        if (other.getErrorStackTrace() != null && other.getErrorStackTrace().equals(this.getErrorStackTrace()) == false)
             return false;
         return true;
     }
@@ -457,20 +405,11 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTaskId() == null) ? 0 : getTaskId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTaskStatus() == null) ? 0 : getTaskStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getErrorId() == null) ? 0 : getErrorId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getErrorMessage() == null) ? 0 : getErrorMessage()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getErrorStackTrace() == null) ? 0 : getErrorStackTrace()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getTaskId() == null) ? 0 : getTaskId().hashCode());
+        hashCode = prime * hashCode + ((getTaskStatus() == null) ? 0 : getTaskStatus().hashCode());
+        hashCode = prime * hashCode + ((getErrorId() == null) ? 0 : getErrorId().hashCode());
+        hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getErrorStackTrace() == null) ? 0 : getErrorStackTrace().hashCode());
         return hashCode;
     }
 

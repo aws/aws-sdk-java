@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -43,8 +41,7 @@ public class HostOffering implements Serializable, Cloneable {
     private String paymentOption;
     /**
      * <p>
-     * The upfront price of the offering. Does not apply to No Upfront
-     * offerings.
+     * The upfront price of the offering. Does not apply to No Upfront offerings.
      * </p>
      */
     private String upfrontPrice;
@@ -99,8 +96,7 @@ public class HostOffering implements Serializable, Cloneable {
      * 
      * @param offeringId
      *        The ID of the offering.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HostOffering withOfferingId(String offeringId) {
@@ -140,8 +136,7 @@ public class HostOffering implements Serializable, Cloneable {
      * 
      * @param instanceFamily
      *        The instance family of the offering.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HostOffering withInstanceFamily(String instanceFamily) {
@@ -183,8 +178,7 @@ public class HostOffering implements Serializable, Cloneable {
      * 
      * @param paymentOption
      *        The available payment option.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PaymentOption
      */
 
@@ -214,8 +208,7 @@ public class HostOffering implements Serializable, Cloneable {
      * 
      * @param paymentOption
      *        The available payment option.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PaymentOption
      */
 
@@ -226,13 +219,11 @@ public class HostOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The upfront price of the offering. Does not apply to No Upfront
-     * offerings.
+     * The upfront price of the offering. Does not apply to No Upfront offerings.
      * </p>
      * 
      * @param upfrontPrice
-     *        The upfront price of the offering. Does not apply to No Upfront
-     *        offerings.
+     *        The upfront price of the offering. Does not apply to No Upfront offerings.
      */
 
     public void setUpfrontPrice(String upfrontPrice) {
@@ -241,12 +232,10 @@ public class HostOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The upfront price of the offering. Does not apply to No Upfront
-     * offerings.
+     * The upfront price of the offering. Does not apply to No Upfront offerings.
      * </p>
      * 
-     * @return The upfront price of the offering. Does not apply to No Upfront
-     *         offerings.
+     * @return The upfront price of the offering. Does not apply to No Upfront offerings.
      */
 
     public String getUpfrontPrice() {
@@ -255,15 +244,12 @@ public class HostOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The upfront price of the offering. Does not apply to No Upfront
-     * offerings.
+     * The upfront price of the offering. Does not apply to No Upfront offerings.
      * </p>
      * 
      * @param upfrontPrice
-     *        The upfront price of the offering. Does not apply to No Upfront
-     *        offerings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The upfront price of the offering. Does not apply to No Upfront offerings.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HostOffering withUpfrontPrice(String upfrontPrice) {
@@ -303,8 +289,7 @@ public class HostOffering implements Serializable, Cloneable {
      * 
      * @param hourlyPrice
      *        The hourly price of the offering.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HostOffering withHourlyPrice(String hourlyPrice) {
@@ -346,8 +331,7 @@ public class HostOffering implements Serializable, Cloneable {
      * 
      * @param currencyCode
      *        The currency of the offering.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CurrencyCodeValues
      */
 
@@ -377,8 +361,7 @@ public class HostOffering implements Serializable, Cloneable {
      * 
      * @param currencyCode
      *        The currency of the offering.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CurrencyCodeValues
      */
 
@@ -419,8 +402,7 @@ public class HostOffering implements Serializable, Cloneable {
      * 
      * @param duration
      *        The duration of the offering (in seconds).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HostOffering withDuration(Integer duration) {
@@ -429,8 +411,7 @@ public class HostOffering implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -470,39 +451,31 @@ public class HostOffering implements Serializable, Cloneable {
         HostOffering other = (HostOffering) obj;
         if (other.getOfferingId() == null ^ this.getOfferingId() == null)
             return false;
-        if (other.getOfferingId() != null
-                && other.getOfferingId().equals(this.getOfferingId()) == false)
+        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
             return false;
-        if (other.getInstanceFamily() == null
-                ^ this.getInstanceFamily() == null)
+        if (other.getInstanceFamily() == null ^ this.getInstanceFamily() == null)
             return false;
-        if (other.getInstanceFamily() != null
-                && other.getInstanceFamily().equals(this.getInstanceFamily()) == false)
+        if (other.getInstanceFamily() != null && other.getInstanceFamily().equals(this.getInstanceFamily()) == false)
             return false;
         if (other.getPaymentOption() == null ^ this.getPaymentOption() == null)
             return false;
-        if (other.getPaymentOption() != null
-                && other.getPaymentOption().equals(this.getPaymentOption()) == false)
+        if (other.getPaymentOption() != null && other.getPaymentOption().equals(this.getPaymentOption()) == false)
             return false;
         if (other.getUpfrontPrice() == null ^ this.getUpfrontPrice() == null)
             return false;
-        if (other.getUpfrontPrice() != null
-                && other.getUpfrontPrice().equals(this.getUpfrontPrice()) == false)
+        if (other.getUpfrontPrice() != null && other.getUpfrontPrice().equals(this.getUpfrontPrice()) == false)
             return false;
         if (other.getHourlyPrice() == null ^ this.getHourlyPrice() == null)
             return false;
-        if (other.getHourlyPrice() != null
-                && other.getHourlyPrice().equals(this.getHourlyPrice()) == false)
+        if (other.getHourlyPrice() != null && other.getHourlyPrice().equals(this.getHourlyPrice()) == false)
             return false;
         if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
             return false;
-        if (other.getCurrencyCode() != null
-                && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
+        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
             return false;
         if (other.getDuration() == null ^ this.getDuration() == null)
             return false;
-        if (other.getDuration() != null
-                && other.getDuration().equals(this.getDuration()) == false)
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
             return false;
         return true;
     }
@@ -512,29 +485,13 @@ public class HostOffering implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceFamily() == null) ? 0 : getInstanceFamily()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPaymentOption() == null) ? 0 : getPaymentOption()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUpfrontPrice() == null) ? 0 : getUpfrontPrice()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHourlyPrice() == null) ? 0 : getHourlyPrice().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCurrencyCode() == null) ? 0 : getCurrencyCode()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getDuration() == null) ? 0 : getDuration().hashCode());
+        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceFamily() == null) ? 0 : getInstanceFamily().hashCode());
+        hashCode = prime * hashCode + ((getPaymentOption() == null) ? 0 : getPaymentOption().hashCode());
+        hashCode = prime * hashCode + ((getUpfrontPrice() == null) ? 0 : getUpfrontPrice().hashCode());
+        hashCode = prime * hashCode + ((getHourlyPrice() == null) ? 0 : getHourlyPrice().hashCode());
+        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         return hashCode;
     }
 
@@ -543,9 +500,7 @@ public class HostOffering implements Serializable, Cloneable {
         try {
             return (HostOffering) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

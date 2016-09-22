@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to update the device status.
  * </p>
  */
-public class UpdateDeviceStatusRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -77,8 +73,7 @@ public class UpdateDeviceStatusRequest extends
      * 
      * @param accessToken
      *        The access token.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateDeviceStatusRequest withAccessToken(String accessToken) {
@@ -118,8 +113,7 @@ public class UpdateDeviceStatusRequest extends
      * 
      * @param deviceKey
      *        The device key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateDeviceStatusRequest withDeviceKey(String deviceKey) {
@@ -161,13 +155,11 @@ public class UpdateDeviceStatusRequest extends
      * 
      * @param deviceRememberedStatus
      *        The status of whether a device is remembered.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceRememberedStatusType
      */
 
-    public UpdateDeviceStatusRequest withDeviceRememberedStatus(
-            String deviceRememberedStatus) {
+    public UpdateDeviceStatusRequest withDeviceRememberedStatus(String deviceRememberedStatus) {
         setDeviceRememberedStatus(deviceRememberedStatus);
         return this;
     }
@@ -182,8 +174,7 @@ public class UpdateDeviceStatusRequest extends
      * @see DeviceRememberedStatusType
      */
 
-    public void setDeviceRememberedStatus(
-            DeviceRememberedStatusType deviceRememberedStatus) {
+    public void setDeviceRememberedStatus(DeviceRememberedStatusType deviceRememberedStatus) {
         this.deviceRememberedStatus = deviceRememberedStatus.toString();
     }
 
@@ -194,20 +185,17 @@ public class UpdateDeviceStatusRequest extends
      * 
      * @param deviceRememberedStatus
      *        The status of whether a device is remembered.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceRememberedStatusType
      */
 
-    public UpdateDeviceStatusRequest withDeviceRememberedStatus(
-            DeviceRememberedStatusType deviceRememberedStatus) {
+    public UpdateDeviceStatusRequest withDeviceRememberedStatus(DeviceRememberedStatusType deviceRememberedStatus) {
         setDeviceRememberedStatus(deviceRememberedStatus);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -239,20 +227,15 @@ public class UpdateDeviceStatusRequest extends
         UpdateDeviceStatusRequest other = (UpdateDeviceStatusRequest) obj;
         if (other.getAccessToken() == null ^ this.getAccessToken() == null)
             return false;
-        if (other.getAccessToken() != null
-                && other.getAccessToken().equals(this.getAccessToken()) == false)
+        if (other.getAccessToken() != null && other.getAccessToken().equals(this.getAccessToken()) == false)
             return false;
         if (other.getDeviceKey() == null ^ this.getDeviceKey() == null)
             return false;
-        if (other.getDeviceKey() != null
-                && other.getDeviceKey().equals(this.getDeviceKey()) == false)
+        if (other.getDeviceKey() != null && other.getDeviceKey().equals(this.getDeviceKey()) == false)
             return false;
-        if (other.getDeviceRememberedStatus() == null
-                ^ this.getDeviceRememberedStatus() == null)
+        if (other.getDeviceRememberedStatus() == null ^ this.getDeviceRememberedStatus() == null)
             return false;
-        if (other.getDeviceRememberedStatus() != null
-                && other.getDeviceRememberedStatus().equals(
-                        this.getDeviceRememberedStatus()) == false)
+        if (other.getDeviceRememberedStatus() != null && other.getDeviceRememberedStatus().equals(this.getDeviceRememberedStatus()) == false)
             return false;
         return true;
     }
@@ -262,15 +245,9 @@ public class UpdateDeviceStatusRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAccessToken() == null) ? 0 : getAccessToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getDeviceKey() == null) ? 0 : getDeviceKey().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeviceRememberedStatus() == null) ? 0
-                        : getDeviceRememberedStatus().hashCode());
+        hashCode = prime * hashCode + ((getAccessToken() == null) ? 0 : getAccessToken().hashCode());
+        hashCode = prime * hashCode + ((getDeviceKey() == null) ? 0 : getDeviceKey().hashCode());
+        hashCode = prime * hashCode + ((getDeviceRememberedStatus() == null) ? 0 : getDeviceRememberedStatus().hashCode());
         return hashCode;
     }
 

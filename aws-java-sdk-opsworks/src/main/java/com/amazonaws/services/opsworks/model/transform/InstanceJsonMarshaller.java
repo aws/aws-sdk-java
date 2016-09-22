@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -34,109 +32,85 @@ public class InstanceJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Instance instance,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(Instance instance, StructuredJsonGenerator jsonGenerator) {
 
         if (instance == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (instance.getAgentVersion() != null) {
-                jsonGenerator.writeFieldName("AgentVersion").writeValue(
-                        instance.getAgentVersion());
+                jsonGenerator.writeFieldName("AgentVersion").writeValue(instance.getAgentVersion());
             }
             if (instance.getAmiId() != null) {
-                jsonGenerator.writeFieldName("AmiId").writeValue(
-                        instance.getAmiId());
+                jsonGenerator.writeFieldName("AmiId").writeValue(instance.getAmiId());
             }
             if (instance.getArchitecture() != null) {
-                jsonGenerator.writeFieldName("Architecture").writeValue(
-                        instance.getArchitecture());
+                jsonGenerator.writeFieldName("Architecture").writeValue(instance.getArchitecture());
             }
             if (instance.getAutoScalingType() != null) {
-                jsonGenerator.writeFieldName("AutoScalingType").writeValue(
-                        instance.getAutoScalingType());
+                jsonGenerator.writeFieldName("AutoScalingType").writeValue(instance.getAutoScalingType());
             }
             if (instance.getAvailabilityZone() != null) {
-                jsonGenerator.writeFieldName("AvailabilityZone").writeValue(
-                        instance.getAvailabilityZone());
+                jsonGenerator.writeFieldName("AvailabilityZone").writeValue(instance.getAvailabilityZone());
             }
 
             com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>) instance
                     .getBlockDeviceMappings();
-            if (!blockDeviceMappingsList.isEmpty()
-                    || !blockDeviceMappingsList.isAutoConstruct()) {
+            if (!blockDeviceMappingsList.isEmpty() || !blockDeviceMappingsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("BlockDeviceMappings");
                 jsonGenerator.writeStartArray();
                 for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
                     if (blockDeviceMappingsListValue != null) {
 
-                        BlockDeviceMappingJsonMarshaller.getInstance()
-                                .marshall(blockDeviceMappingsListValue,
-                                        jsonGenerator);
+                        BlockDeviceMappingJsonMarshaller.getInstance().marshall(blockDeviceMappingsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (instance.getCreatedAt() != null) {
-                jsonGenerator.writeFieldName("CreatedAt").writeValue(
-                        instance.getCreatedAt());
+                jsonGenerator.writeFieldName("CreatedAt").writeValue(instance.getCreatedAt());
             }
             if (instance.getEbsOptimized() != null) {
-                jsonGenerator.writeFieldName("EbsOptimized").writeValue(
-                        instance.getEbsOptimized());
+                jsonGenerator.writeFieldName("EbsOptimized").writeValue(instance.getEbsOptimized());
             }
             if (instance.getEc2InstanceId() != null) {
-                jsonGenerator.writeFieldName("Ec2InstanceId").writeValue(
-                        instance.getEc2InstanceId());
+                jsonGenerator.writeFieldName("Ec2InstanceId").writeValue(instance.getEc2InstanceId());
             }
             if (instance.getEcsClusterArn() != null) {
-                jsonGenerator.writeFieldName("EcsClusterArn").writeValue(
-                        instance.getEcsClusterArn());
+                jsonGenerator.writeFieldName("EcsClusterArn").writeValue(instance.getEcsClusterArn());
             }
             if (instance.getEcsContainerInstanceArn() != null) {
-                jsonGenerator.writeFieldName("EcsContainerInstanceArn")
-                        .writeValue(instance.getEcsContainerInstanceArn());
+                jsonGenerator.writeFieldName("EcsContainerInstanceArn").writeValue(instance.getEcsContainerInstanceArn());
             }
             if (instance.getElasticIp() != null) {
-                jsonGenerator.writeFieldName("ElasticIp").writeValue(
-                        instance.getElasticIp());
+                jsonGenerator.writeFieldName("ElasticIp").writeValue(instance.getElasticIp());
             }
             if (instance.getHostname() != null) {
-                jsonGenerator.writeFieldName("Hostname").writeValue(
-                        instance.getHostname());
+                jsonGenerator.writeFieldName("Hostname").writeValue(instance.getHostname());
             }
             if (instance.getInfrastructureClass() != null) {
-                jsonGenerator.writeFieldName("InfrastructureClass").writeValue(
-                        instance.getInfrastructureClass());
+                jsonGenerator.writeFieldName("InfrastructureClass").writeValue(instance.getInfrastructureClass());
             }
             if (instance.getInstallUpdatesOnBoot() != null) {
-                jsonGenerator.writeFieldName("InstallUpdatesOnBoot")
-                        .writeValue(instance.getInstallUpdatesOnBoot());
+                jsonGenerator.writeFieldName("InstallUpdatesOnBoot").writeValue(instance.getInstallUpdatesOnBoot());
             }
             if (instance.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(
-                        instance.getInstanceId());
+                jsonGenerator.writeFieldName("InstanceId").writeValue(instance.getInstanceId());
             }
             if (instance.getInstanceProfileArn() != null) {
-                jsonGenerator.writeFieldName("InstanceProfileArn").writeValue(
-                        instance.getInstanceProfileArn());
+                jsonGenerator.writeFieldName("InstanceProfileArn").writeValue(instance.getInstanceProfileArn());
             }
             if (instance.getInstanceType() != null) {
-                jsonGenerator.writeFieldName("InstanceType").writeValue(
-                        instance.getInstanceType());
+                jsonGenerator.writeFieldName("InstanceType").writeValue(instance.getInstanceType());
             }
             if (instance.getLastServiceErrorId() != null) {
-                jsonGenerator.writeFieldName("LastServiceErrorId").writeValue(
-                        instance.getLastServiceErrorId());
+                jsonGenerator.writeFieldName("LastServiceErrorId").writeValue(instance.getLastServiceErrorId());
             }
 
-            com.amazonaws.internal.SdkInternalList<String> layerIdsList = (com.amazonaws.internal.SdkInternalList<String>) instance
-                    .getLayerIds();
+            com.amazonaws.internal.SdkInternalList<String> layerIdsList = (com.amazonaws.internal.SdkInternalList<String>) instance.getLayerIds();
             if (!layerIdsList.isEmpty() || !layerIdsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("LayerIds");
                 jsonGenerator.writeStartArray();
@@ -151,51 +125,40 @@ public class InstanceJsonMarshaller {
                 jsonGenerator.writeFieldName("Os").writeValue(instance.getOs());
             }
             if (instance.getPlatform() != null) {
-                jsonGenerator.writeFieldName("Platform").writeValue(
-                        instance.getPlatform());
+                jsonGenerator.writeFieldName("Platform").writeValue(instance.getPlatform());
             }
             if (instance.getPrivateDns() != null) {
-                jsonGenerator.writeFieldName("PrivateDns").writeValue(
-                        instance.getPrivateDns());
+                jsonGenerator.writeFieldName("PrivateDns").writeValue(instance.getPrivateDns());
             }
             if (instance.getPrivateIp() != null) {
-                jsonGenerator.writeFieldName("PrivateIp").writeValue(
-                        instance.getPrivateIp());
+                jsonGenerator.writeFieldName("PrivateIp").writeValue(instance.getPrivateIp());
             }
             if (instance.getPublicDns() != null) {
-                jsonGenerator.writeFieldName("PublicDns").writeValue(
-                        instance.getPublicDns());
+                jsonGenerator.writeFieldName("PublicDns").writeValue(instance.getPublicDns());
             }
             if (instance.getPublicIp() != null) {
-                jsonGenerator.writeFieldName("PublicIp").writeValue(
-                        instance.getPublicIp());
+                jsonGenerator.writeFieldName("PublicIp").writeValue(instance.getPublicIp());
             }
             if (instance.getRegisteredBy() != null) {
-                jsonGenerator.writeFieldName("RegisteredBy").writeValue(
-                        instance.getRegisteredBy());
+                jsonGenerator.writeFieldName("RegisteredBy").writeValue(instance.getRegisteredBy());
             }
             if (instance.getReportedAgentVersion() != null) {
-                jsonGenerator.writeFieldName("ReportedAgentVersion")
-                        .writeValue(instance.getReportedAgentVersion());
+                jsonGenerator.writeFieldName("ReportedAgentVersion").writeValue(instance.getReportedAgentVersion());
             }
             if (instance.getReportedOs() != null) {
                 jsonGenerator.writeFieldName("ReportedOs");
-                ReportedOsJsonMarshaller.getInstance().marshall(
-                        instance.getReportedOs(), jsonGenerator);
+                ReportedOsJsonMarshaller.getInstance().marshall(instance.getReportedOs(), jsonGenerator);
             }
             if (instance.getRootDeviceType() != null) {
-                jsonGenerator.writeFieldName("RootDeviceType").writeValue(
-                        instance.getRootDeviceType());
+                jsonGenerator.writeFieldName("RootDeviceType").writeValue(instance.getRootDeviceType());
             }
             if (instance.getRootDeviceVolumeId() != null) {
-                jsonGenerator.writeFieldName("RootDeviceVolumeId").writeValue(
-                        instance.getRootDeviceVolumeId());
+                jsonGenerator.writeFieldName("RootDeviceVolumeId").writeValue(instance.getRootDeviceVolumeId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> securityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) instance
                     .getSecurityGroupIds();
-            if (!securityGroupIdsList.isEmpty()
-                    || !securityGroupIdsList.isAutoConstruct()) {
+            if (!securityGroupIdsList.isEmpty() || !securityGroupIdsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("SecurityGroupIds");
                 jsonGenerator.writeStartArray();
                 for (String securityGroupIdsListValue : securityGroupIdsList) {
@@ -206,42 +169,33 @@ public class InstanceJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
             if (instance.getSshHostDsaKeyFingerprint() != null) {
-                jsonGenerator.writeFieldName("SshHostDsaKeyFingerprint")
-                        .writeValue(instance.getSshHostDsaKeyFingerprint());
+                jsonGenerator.writeFieldName("SshHostDsaKeyFingerprint").writeValue(instance.getSshHostDsaKeyFingerprint());
             }
             if (instance.getSshHostRsaKeyFingerprint() != null) {
-                jsonGenerator.writeFieldName("SshHostRsaKeyFingerprint")
-                        .writeValue(instance.getSshHostRsaKeyFingerprint());
+                jsonGenerator.writeFieldName("SshHostRsaKeyFingerprint").writeValue(instance.getSshHostRsaKeyFingerprint());
             }
             if (instance.getSshKeyName() != null) {
-                jsonGenerator.writeFieldName("SshKeyName").writeValue(
-                        instance.getSshKeyName());
+                jsonGenerator.writeFieldName("SshKeyName").writeValue(instance.getSshKeyName());
             }
             if (instance.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(
-                        instance.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(instance.getStackId());
             }
             if (instance.getStatus() != null) {
-                jsonGenerator.writeFieldName("Status").writeValue(
-                        instance.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(instance.getStatus());
             }
             if (instance.getSubnetId() != null) {
-                jsonGenerator.writeFieldName("SubnetId").writeValue(
-                        instance.getSubnetId());
+                jsonGenerator.writeFieldName("SubnetId").writeValue(instance.getSubnetId());
             }
             if (instance.getTenancy() != null) {
-                jsonGenerator.writeFieldName("Tenancy").writeValue(
-                        instance.getTenancy());
+                jsonGenerator.writeFieldName("Tenancy").writeValue(instance.getTenancy());
             }
             if (instance.getVirtualizationType() != null) {
-                jsonGenerator.writeFieldName("VirtualizationType").writeValue(
-                        instance.getVirtualizationType());
+                jsonGenerator.writeFieldName("VirtualizationType").writeValue(instance.getVirtualizationType());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * KeysAndAttributes JSON Unmarshaller
  */
-public class KeysAndAttributesJsonUnmarshaller implements
-        Unmarshaller<KeysAndAttributes, JsonUnmarshallerContext> {
+public class KeysAndAttributesJsonUnmarshaller implements Unmarshaller<KeysAndAttributes, JsonUnmarshallerContext> {
 
-    public KeysAndAttributes unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public KeysAndAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         KeysAndAttributes keysAndAttributes = new KeysAndAttributes();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,45 +49,28 @@ public class KeysAndAttributesJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Keys", targetDepth)) {
                     context.nextToken();
-                    keysAndAttributes
-                            .setKeys(new ListUnmarshaller<java.util.Map<String, AttributeValue>>(
-                                    new MapUnmarshaller<String, AttributeValue>(
-                                            context.getUnmarshaller(String.class),
-                                            AttributeValueJsonUnmarshaller
-                                                    .getInstance()))
-                                    .unmarshall(context));
+                    keysAndAttributes.setKeys(new ListUnmarshaller<java.util.Map<String, AttributeValue>>(new MapUnmarshaller<String, AttributeValue>(context
+                            .getUnmarshaller(String.class), AttributeValueJsonUnmarshaller.getInstance())).unmarshall(context));
                 }
                 if (context.testExpression("AttributesToGet", targetDepth)) {
                     context.nextToken();
-                    keysAndAttributes
-                            .setAttributesToGet(new ListUnmarshaller<String>(
-                                    context.getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    keysAndAttributes.setAttributesToGet(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("ConsistentRead", targetDepth)) {
                     context.nextToken();
-                    keysAndAttributes
-                            .setConsistentRead(context.getUnmarshaller(
-                                    Boolean.class).unmarshall(context));
+                    keysAndAttributes.setConsistentRead(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ProjectionExpression", targetDepth)) {
                     context.nextToken();
-                    keysAndAttributes.setProjectionExpression(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    keysAndAttributes.setProjectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("ExpressionAttributeNames",
-                        targetDepth)) {
+                if (context.testExpression("ExpressionAttributeNames", targetDepth)) {
                     context.nextToken();
-                    keysAndAttributes
-                            .setExpressionAttributeNames(new MapUnmarshaller<String, String>(
-                                    context.getUnmarshaller(String.class),
-                                    context.getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    keysAndAttributes.setExpressionAttributeNames(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

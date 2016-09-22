@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * BlockDeviceMapping JSON Unmarshaller
  */
-public class BlockDeviceMappingJsonUnmarshaller implements
-        Unmarshaller<BlockDeviceMapping, JsonUnmarshallerContext> {
+public class BlockDeviceMappingJsonUnmarshaller implements Unmarshaller<BlockDeviceMapping, JsonUnmarshallerContext> {
 
-    public BlockDeviceMapping unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public BlockDeviceMapping unmarshall(JsonUnmarshallerContext context) throws Exception {
         BlockDeviceMapping blockDeviceMapping = new BlockDeviceMapping();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,28 +49,22 @@ public class BlockDeviceMappingJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeviceName", targetDepth)) {
                     context.nextToken();
-                    blockDeviceMapping.setDeviceName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    blockDeviceMapping.setDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NoDevice", targetDepth)) {
                     context.nextToken();
-                    blockDeviceMapping.setNoDevice(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    blockDeviceMapping.setNoDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VirtualName", targetDepth)) {
                     context.nextToken();
-                    blockDeviceMapping.setVirtualName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    blockDeviceMapping.setVirtualName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ebs", targetDepth)) {
                     context.nextToken();
-                    blockDeviceMapping.setEbs(EbsBlockDeviceJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    blockDeviceMapping.setEbs(EbsBlockDeviceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -29,8 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ApiKey JSON Unmarshaller
  */
-public class ApiKeyJsonUnmarshaller implements
-        Unmarshaller<ApiKey, JsonUnmarshallerContext> {
+public class ApiKeyJsonUnmarshaller implements Unmarshaller<ApiKey, JsonUnmarshallerContext> {
 
     public ApiKey unmarshall(JsonUnmarshallerContext context) throws Exception {
         ApiKey apiKey = new ApiKey();
@@ -52,48 +49,38 @@ public class ApiKeyJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    apiKey.setId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    apiKey.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("value", targetDepth)) {
                     context.nextToken();
-                    apiKey.setValue(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    apiKey.setValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    apiKey.setName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    apiKey.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    apiKey.setDescription(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    apiKey.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("enabled", targetDepth)) {
                     context.nextToken();
-                    apiKey.setEnabled(context.getUnmarshaller(Boolean.class)
-                            .unmarshall(context));
+                    apiKey.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    apiKey.setCreatedDate(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    apiKey.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    apiKey.setLastUpdatedDate(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    apiKey.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("stageKeys", targetDepth)) {
                     context.nextToken();
-                    apiKey.setStageKeys(new ListUnmarshaller<String>(context
-                            .getUnmarshaller(String.class)).unmarshall(context));
+                    apiKey.setStageKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model;
 
@@ -21,33 +19,28 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeStream</i> operation.
  * </p>
  */
-public class DescribeStreamResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeStreamResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complete description of the stream, including its creation date and
-     * time, the DynamoDB table associated with the stream, the shard IDs within
-     * the stream, and the beginning and ending sequence numbers of stream
-     * records within the shards.
+     * A complete description of the stream, including its creation date and time, the DynamoDB table associated with
+     * the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records
+     * within the shards.
      * </p>
      */
     private StreamDescription streamDescription;
 
     /**
      * <p>
-     * A complete description of the stream, including its creation date and
-     * time, the DynamoDB table associated with the stream, the shard IDs within
-     * the stream, and the beginning and ending sequence numbers of stream
-     * records within the shards.
+     * A complete description of the stream, including its creation date and time, the DynamoDB table associated with
+     * the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records
+     * within the shards.
      * </p>
      * 
      * @param streamDescription
-     *        A complete description of the stream, including its creation date
-     *        and time, the DynamoDB table associated with the stream, the shard
-     *        IDs within the stream, and the beginning and ending sequence
-     *        numbers of stream records within the shards.
+     *        A complete description of the stream, including its creation date and time, the DynamoDB table associated
+     *        with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream
+     *        records within the shards.
      */
 
     public void setStreamDescription(StreamDescription streamDescription) {
@@ -56,16 +49,14 @@ public class DescribeStreamResult extends
 
     /**
      * <p>
-     * A complete description of the stream, including its creation date and
-     * time, the DynamoDB table associated with the stream, the shard IDs within
-     * the stream, and the beginning and ending sequence numbers of stream
-     * records within the shards.
+     * A complete description of the stream, including its creation date and time, the DynamoDB table associated with
+     * the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records
+     * within the shards.
      * </p>
      * 
-     * @return A complete description of the stream, including its creation date
-     *         and time, the DynamoDB table associated with the stream, the
-     *         shard IDs within the stream, and the beginning and ending
-     *         sequence numbers of stream records within the shards.
+     * @return A complete description of the stream, including its creation date and time, the DynamoDB table associated
+     *         with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream
+     *         records within the shards.
      */
 
     public StreamDescription getStreamDescription() {
@@ -74,30 +65,25 @@ public class DescribeStreamResult extends
 
     /**
      * <p>
-     * A complete description of the stream, including its creation date and
-     * time, the DynamoDB table associated with the stream, the shard IDs within
-     * the stream, and the beginning and ending sequence numbers of stream
-     * records within the shards.
+     * A complete description of the stream, including its creation date and time, the DynamoDB table associated with
+     * the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records
+     * within the shards.
      * </p>
      * 
      * @param streamDescription
-     *        A complete description of the stream, including its creation date
-     *        and time, the DynamoDB table associated with the stream, the shard
-     *        IDs within the stream, and the beginning and ending sequence
-     *        numbers of stream records within the shards.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complete description of the stream, including its creation date and time, the DynamoDB table associated
+     *        with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream
+     *        records within the shards.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeStreamResult withStreamDescription(
-            StreamDescription streamDescription) {
+    public DescribeStreamResult withStreamDescription(StreamDescription streamDescription) {
         setStreamDescription(streamDescription);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -123,12 +109,9 @@ public class DescribeStreamResult extends
         if (obj instanceof DescribeStreamResult == false)
             return false;
         DescribeStreamResult other = (DescribeStreamResult) obj;
-        if (other.getStreamDescription() == null
-                ^ this.getStreamDescription() == null)
+        if (other.getStreamDescription() == null ^ this.getStreamDescription() == null)
             return false;
-        if (other.getStreamDescription() != null
-                && other.getStreamDescription().equals(
-                        this.getStreamDescription()) == false)
+        if (other.getStreamDescription() != null && other.getStreamDescription().equals(this.getStreamDescription()) == false)
             return false;
         return true;
     }
@@ -138,10 +121,7 @@ public class DescribeStreamResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getStreamDescription() == null) ? 0
-                        : getStreamDescription().hashCode());
+        hashCode = prime * hashCode + ((getStreamDescription() == null) ? 0 : getStreamDescription().hashCode());
         return hashCode;
     }
 
@@ -150,9 +130,7 @@ public class DescribeStreamResult extends
         try {
             return (DescribeStreamResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

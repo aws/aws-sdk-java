@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudhsm.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListAvailableZonesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListAvailableZonesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,8 +31,7 @@ public class ListAvailableZonesResult extends
      * The list of Availability Zones that have available AWS CloudHSM capacity.
      * </p>
      * 
-     * @return The list of Availability Zones that have available AWS CloudHSM
-     *         capacity.
+     * @return The list of Availability Zones that have available AWS CloudHSM capacity.
      */
 
     public java.util.List<String> getAZList() {
@@ -52,8 +47,7 @@ public class ListAvailableZonesResult extends
      * </p>
      * 
      * @param aZList
-     *        The list of Availability Zones that have available AWS CloudHSM
-     *        capacity.
+     *        The list of Availability Zones that have available AWS CloudHSM capacity.
      */
 
     public void setAZList(java.util.Collection<String> aZList) {
@@ -70,23 +64,19 @@ public class ListAvailableZonesResult extends
      * The list of Availability Zones that have available AWS CloudHSM capacity.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAZList(java.util.Collection)} or
-     * {@link #withAZList(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAZList(java.util.Collection)} or {@link #withAZList(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param aZList
-     *        The list of Availability Zones that have available AWS CloudHSM
-     *        capacity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of Availability Zones that have available AWS CloudHSM capacity.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListAvailableZonesResult withAZList(String... aZList) {
         if (this.aZList == null) {
-            setAZList(new com.amazonaws.internal.SdkInternalList<String>(
-                    aZList.length));
+            setAZList(new com.amazonaws.internal.SdkInternalList<String>(aZList.length));
         }
         for (String ele : aZList) {
             this.aZList.add(ele);
@@ -100,21 +90,17 @@ public class ListAvailableZonesResult extends
      * </p>
      * 
      * @param aZList
-     *        The list of Availability Zones that have available AWS CloudHSM
-     *        capacity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of Availability Zones that have available AWS CloudHSM capacity.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListAvailableZonesResult withAZList(
-            java.util.Collection<String> aZList) {
+    public ListAvailableZonesResult withAZList(java.util.Collection<String> aZList) {
         setAZList(aZList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -142,8 +128,7 @@ public class ListAvailableZonesResult extends
         ListAvailableZonesResult other = (ListAvailableZonesResult) obj;
         if (other.getAZList() == null ^ this.getAZList() == null)
             return false;
-        if (other.getAZList() != null
-                && other.getAZList().equals(this.getAZList()) == false)
+        if (other.getAZList() != null && other.getAZList().equals(this.getAZList()) == false)
             return false;
         return true;
     }
@@ -153,8 +138,7 @@ public class ListAvailableZonesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAZList() == null) ? 0 : getAZList().hashCode());
+        hashCode = prime * hashCode + ((getAZList() == null) ? 0 : getAZList().hashCode());
         return hashCode;
     }
 
@@ -163,9 +147,7 @@ public class ListAvailableZonesResult extends
         try {
             return (ListAvailableZonesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

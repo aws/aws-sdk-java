@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
@@ -20,38 +18,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to list origin access identities.
  */
-public class ListCloudFrontOriginAccessIdentitiesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListCloudFrontOriginAccessIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Use this when paginating results to indicate where to begin in your list
-     * of origin access identities. The results include identities in the list
-     * that occur after the marker. To get the next page of results, set the
-     * Marker to the value of the NextMarker from the current page's response
-     * (which is also the ID of the last identity on that page).
+     * Use this when paginating results to indicate where to begin in your list of origin access identities. The results
+     * include identities in the list that occur after the marker. To get the next page of results, set the Marker to
+     * the value of the NextMarker from the current page's response (which is also the ID of the last identity on that
+     * page).
      */
     private String marker;
-    /**
-     * The maximum number of origin access identities you want in the response
-     * body.
-     */
+    /** The maximum number of origin access identities you want in the response body. */
     private String maxItems;
 
     /**
-     * Use this when paginating results to indicate where to begin in your list
-     * of origin access identities. The results include identities in the list
-     * that occur after the marker. To get the next page of results, set the
-     * Marker to the value of the NextMarker from the current page's response
-     * (which is also the ID of the last identity on that page).
+     * Use this when paginating results to indicate where to begin in your list of origin access identities. The results
+     * include identities in the list that occur after the marker. To get the next page of results, set the Marker to
+     * the value of the NextMarker from the current page's response (which is also the ID of the last identity on that
+     * page).
      * 
      * @param marker
-     *        Use this when paginating results to indicate where to begin in
-     *        your list of origin access identities. The results include
-     *        identities in the list that occur after the marker. To get the
-     *        next page of results, set the Marker to the value of the
-     *        NextMarker from the current page's response (which is also the ID
-     *        of the last identity on that page).
+     *        Use this when paginating results to indicate where to begin in your list of origin access identities. The
+     *        results include identities in the list that occur after the marker. To get the next page of results, set
+     *        the Marker to the value of the NextMarker from the current page's response (which is also the ID of the
+     *        last identity on that page).
      */
 
     public void setMarker(String marker) {
@@ -59,18 +48,15 @@ public class ListCloudFrontOriginAccessIdentitiesRequest extends
     }
 
     /**
-     * Use this when paginating results to indicate where to begin in your list
-     * of origin access identities. The results include identities in the list
-     * that occur after the marker. To get the next page of results, set the
-     * Marker to the value of the NextMarker from the current page's response
-     * (which is also the ID of the last identity on that page).
+     * Use this when paginating results to indicate where to begin in your list of origin access identities. The results
+     * include identities in the list that occur after the marker. To get the next page of results, set the Marker to
+     * the value of the NextMarker from the current page's response (which is also the ID of the last identity on that
+     * page).
      * 
-     * @return Use this when paginating results to indicate where to begin in
-     *         your list of origin access identities. The results include
-     *         identities in the list that occur after the marker. To get the
-     *         next page of results, set the Marker to the value of the
-     *         NextMarker from the current page's response (which is also the ID
-     *         of the last identity on that page).
+     * @return Use this when paginating results to indicate where to begin in your list of origin access identities. The
+     *         results include identities in the list that occur after the marker. To get the next page of results, set
+     *         the Marker to the value of the NextMarker from the current page's response (which is also the ID of the
+     *         last identity on that page).
      */
 
     public String getMarker() {
@@ -78,21 +64,17 @@ public class ListCloudFrontOriginAccessIdentitiesRequest extends
     }
 
     /**
-     * Use this when paginating results to indicate where to begin in your list
-     * of origin access identities. The results include identities in the list
-     * that occur after the marker. To get the next page of results, set the
-     * Marker to the value of the NextMarker from the current page's response
-     * (which is also the ID of the last identity on that page).
+     * Use this when paginating results to indicate where to begin in your list of origin access identities. The results
+     * include identities in the list that occur after the marker. To get the next page of results, set the Marker to
+     * the value of the NextMarker from the current page's response (which is also the ID of the last identity on that
+     * page).
      * 
      * @param marker
-     *        Use this when paginating results to indicate where to begin in
-     *        your list of origin access identities. The results include
-     *        identities in the list that occur after the marker. To get the
-     *        next page of results, set the Marker to the value of the
-     *        NextMarker from the current page's response (which is also the ID
-     *        of the last identity on that page).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Use this when paginating results to indicate where to begin in your list of origin access identities. The
+     *        results include identities in the list that occur after the marker. To get the next page of results, set
+     *        the Marker to the value of the NextMarker from the current page's response (which is also the ID of the
+     *        last identity on that page).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCloudFrontOriginAccessIdentitiesRequest withMarker(String marker) {
@@ -101,12 +83,10 @@ public class ListCloudFrontOriginAccessIdentitiesRequest extends
     }
 
     /**
-     * The maximum number of origin access identities you want in the response
-     * body.
+     * The maximum number of origin access identities you want in the response body.
      * 
      * @param maxItems
-     *        The maximum number of origin access identities you want in the
-     *        response body.
+     *        The maximum number of origin access identities you want in the response body.
      */
 
     public void setMaxItems(String maxItems) {
@@ -114,11 +94,9 @@ public class ListCloudFrontOriginAccessIdentitiesRequest extends
     }
 
     /**
-     * The maximum number of origin access identities you want in the response
-     * body.
+     * The maximum number of origin access identities you want in the response body.
      * 
-     * @return The maximum number of origin access identities you want in the
-     *         response body.
+     * @return The maximum number of origin access identities you want in the response body.
      */
 
     public String getMaxItems() {
@@ -126,25 +104,20 @@ public class ListCloudFrontOriginAccessIdentitiesRequest extends
     }
 
     /**
-     * The maximum number of origin access identities you want in the response
-     * body.
+     * The maximum number of origin access identities you want in the response body.
      * 
      * @param maxItems
-     *        The maximum number of origin access identities you want in the
-     *        response body.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of origin access identities you want in the response body.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListCloudFrontOriginAccessIdentitiesRequest withMaxItems(
-            String maxItems) {
+    public ListCloudFrontOriginAccessIdentitiesRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -174,13 +147,11 @@ public class ListCloudFrontOriginAccessIdentitiesRequest extends
         ListCloudFrontOriginAccessIdentitiesRequest other = (ListCloudFrontOriginAccessIdentitiesRequest) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         return true;
     }
@@ -190,10 +161,8 @@ public class ListCloudFrontOriginAccessIdentitiesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
 

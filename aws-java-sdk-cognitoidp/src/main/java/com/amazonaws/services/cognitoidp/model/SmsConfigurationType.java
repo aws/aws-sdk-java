@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -25,8 +23,7 @@ public class SmsConfigurationType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) caller.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
      * </p>
      */
     private String snsCallerArn;
@@ -39,13 +36,11 @@ public class SmsConfigurationType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) caller.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
      * </p>
      * 
      * @param snsCallerArn
-     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *        Service (SNS) caller.
+     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
      */
 
     public void setSnsCallerArn(String snsCallerArn) {
@@ -54,12 +49,10 @@ public class SmsConfigurationType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) caller.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *         Service (SNS) caller.
+     * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
      */
 
     public String getSnsCallerArn() {
@@ -68,15 +61,12 @@ public class SmsConfigurationType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) caller.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
      * </p>
      * 
      * @param snsCallerArn
-     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *        Service (SNS) caller.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SmsConfigurationType withSnsCallerArn(String snsCallerArn) {
@@ -116,8 +106,7 @@ public class SmsConfigurationType implements Serializable, Cloneable {
      * 
      * @param externalId
      *        The external ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SmsConfigurationType withExternalId(String externalId) {
@@ -126,8 +115,7 @@ public class SmsConfigurationType implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -157,13 +145,11 @@ public class SmsConfigurationType implements Serializable, Cloneable {
         SmsConfigurationType other = (SmsConfigurationType) obj;
         if (other.getSnsCallerArn() == null ^ this.getSnsCallerArn() == null)
             return false;
-        if (other.getSnsCallerArn() != null
-                && other.getSnsCallerArn().equals(this.getSnsCallerArn()) == false)
+        if (other.getSnsCallerArn() != null && other.getSnsCallerArn().equals(this.getSnsCallerArn()) == false)
             return false;
         if (other.getExternalId() == null ^ this.getExternalId() == null)
             return false;
-        if (other.getExternalId() != null
-                && other.getExternalId().equals(this.getExternalId()) == false)
+        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
             return false;
         return true;
     }
@@ -173,12 +159,8 @@ public class SmsConfigurationType implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSnsCallerArn() == null) ? 0 : getSnsCallerArn()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
+        hashCode = prime * hashCode + ((getSnsCallerArn() == null) ? 0 : getSnsCallerArn().hashCode());
+        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         return hashCode;
     }
 
@@ -187,9 +169,7 @@ public class SmsConfigurationType implements Serializable, Cloneable {
         try {
             return (SmsConfigurationType) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

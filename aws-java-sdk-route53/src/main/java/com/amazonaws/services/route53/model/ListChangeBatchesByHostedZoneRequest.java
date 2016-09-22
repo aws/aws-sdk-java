@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for a ListChangeBatchesByHostedZone request.
  * </p>
  */
-public class ListChangeBatchesByHostedZoneRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListChangeBatchesByHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -89,12 +85,10 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * 
      * @param hostedZoneId
      *        The ID of the hosted zone that you want to see changes for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListChangeBatchesByHostedZoneRequest withHostedZoneId(
-            String hostedZoneId) {
+    public ListChangeBatchesByHostedZoneRequest withHostedZoneId(String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
         return this;
     }
@@ -131,8 +125,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * 
      * @param startDate
      *        The start of the time period you want to see changes for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByHostedZoneRequest withStartDate(String startDate) {
@@ -172,8 +165,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * 
      * @param endDate
      *        The end of the time period you want to see changes for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByHostedZoneRequest withEndDate(String endDate) {
@@ -213,8 +205,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * 
      * @param maxItems
      *        The maximum number of items on a page.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByHostedZoneRequest withMaxItems(String maxItems) {
@@ -254,8 +245,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * 
      * @param marker
      *        The page marker.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByHostedZoneRequest withMarker(String marker) {
@@ -264,8 +254,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -301,28 +290,23 @@ public class ListChangeBatchesByHostedZoneRequest extends
         ListChangeBatchesByHostedZoneRequest other = (ListChangeBatchesByHostedZoneRequest) obj;
         if (other.getHostedZoneId() == null ^ this.getHostedZoneId() == null)
             return false;
-        if (other.getHostedZoneId() != null
-                && other.getHostedZoneId().equals(this.getHostedZoneId()) == false)
+        if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false)
             return false;
         if (other.getStartDate() == null ^ this.getStartDate() == null)
             return false;
-        if (other.getStartDate() != null
-                && other.getStartDate().equals(this.getStartDate()) == false)
+        if (other.getStartDate() != null && other.getStartDate().equals(this.getStartDate()) == false)
             return false;
         if (other.getEndDate() == null ^ this.getEndDate() == null)
             return false;
-        if (other.getEndDate() != null
-                && other.getEndDate().equals(this.getEndDate()) == false)
+        if (other.getEndDate() != null && other.getEndDate().equals(this.getEndDate()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -332,18 +316,11 @@ public class ListChangeBatchesByHostedZoneRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getHostedZoneId() == null) ? 0 : getHostedZoneId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode());
+        hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
+        hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 

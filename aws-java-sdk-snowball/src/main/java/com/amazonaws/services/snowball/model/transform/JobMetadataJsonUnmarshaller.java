@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.snowball.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * JobMetadata JSON Unmarshaller
  */
-public class JobMetadataJsonUnmarshaller implements
-        Unmarshaller<JobMetadata, JsonUnmarshallerContext> {
+public class JobMetadataJsonUnmarshaller implements Unmarshaller<JobMetadata, JsonUnmarshallerContext> {
 
-    public JobMetadata unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public JobMetadata unmarshall(JsonUnmarshallerContext context) throws Exception {
         JobMetadata jobMetadata = new JobMetadata();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,81 +49,62 @@ public class JobMetadataJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobId", targetDepth)) {
                     context.nextToken();
-                    jobMetadata.setJobId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    jobMetadata.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobState", targetDepth)) {
                     context.nextToken();
-                    jobMetadata.setJobState(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    jobMetadata.setJobState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobType", targetDepth)) {
                     context.nextToken();
-                    jobMetadata.setJobType(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    jobMetadata.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    jobMetadata.setCreationDate(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    jobMetadata.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Resources", targetDepth)) {
                     context.nextToken();
-                    jobMetadata.setResources(JobResourceJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobMetadata.setResources(JobResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    jobMetadata.setDescription(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    jobMetadata.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyARN", targetDepth)) {
                     context.nextToken();
-                    jobMetadata.setKmsKeyARN(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    jobMetadata.setKmsKeyARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleARN", targetDepth)) {
                     context.nextToken();
-                    jobMetadata.setRoleARN(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    jobMetadata.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AddressId", targetDepth)) {
                     context.nextToken();
-                    jobMetadata.setAddressId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    jobMetadata.setAddressId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShippingDetails", targetDepth)) {
                     context.nextToken();
-                    jobMetadata
-                            .setShippingDetails(ShippingDetailsJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobMetadata.setShippingDetails(ShippingDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("SnowballCapacityPreference",
-                        targetDepth)) {
+                if (context.testExpression("SnowballCapacityPreference", targetDepth)) {
                     context.nextToken();
-                    jobMetadata.setSnowballCapacityPreference(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    jobMetadata.setSnowballCapacityPreference(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Notification", targetDepth)) {
                     context.nextToken();
-                    jobMetadata.setNotification(NotificationJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobMetadata.setNotification(NotificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataTransferProgress", targetDepth)) {
                     context.nextToken();
-                    jobMetadata
-                            .setDataTransferProgress(DataTransferJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobMetadata.setDataTransferProgress(DataTransferJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobLogInfo", targetDepth)) {
                     context.nextToken();
-                    jobMetadata.setJobLogInfo(JobLogsJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobMetadata.setJobLogInfo(JobLogsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

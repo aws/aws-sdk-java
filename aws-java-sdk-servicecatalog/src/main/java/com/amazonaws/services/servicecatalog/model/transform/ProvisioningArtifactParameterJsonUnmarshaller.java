@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ProvisioningArtifactParameter JSON Unmarshaller
  */
-public class ProvisioningArtifactParameterJsonUnmarshaller implements
-        Unmarshaller<ProvisioningArtifactParameter, JsonUnmarshallerContext> {
+public class ProvisioningArtifactParameterJsonUnmarshaller implements Unmarshaller<ProvisioningArtifactParameter, JsonUnmarshallerContext> {
 
-    public ProvisioningArtifactParameter unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public ProvisioningArtifactParameter unmarshall(JsonUnmarshallerContext context) throws Exception {
         ProvisioningArtifactParameter provisioningArtifactParameter = new ProvisioningArtifactParameter();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,40 +49,30 @@ public class ProvisioningArtifactParameterJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ParameterKey", targetDepth)) {
                     context.nextToken();
-                    provisioningArtifactParameter.setParameterKey(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    provisioningArtifactParameter.setParameterKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultValue", targetDepth)) {
                     context.nextToken();
-                    provisioningArtifactParameter.setDefaultValue(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    provisioningArtifactParameter.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParameterType", targetDepth)) {
                     context.nextToken();
-                    provisioningArtifactParameter.setParameterType(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    provisioningArtifactParameter.setParameterType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsNoEcho", targetDepth)) {
                     context.nextToken();
-                    provisioningArtifactParameter
-                            .setIsNoEcho(context.getUnmarshaller(Boolean.class)
-                                    .unmarshall(context));
+                    provisioningArtifactParameter.setIsNoEcho(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    provisioningArtifactParameter.setDescription(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    provisioningArtifactParameter.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParameterConstraints", targetDepth)) {
                     context.nextToken();
-                    provisioningArtifactParameter
-                            .setParameterConstraints(ParameterConstraintsJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    provisioningArtifactParameter.setParameterConstraints(ParameterConstraintsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

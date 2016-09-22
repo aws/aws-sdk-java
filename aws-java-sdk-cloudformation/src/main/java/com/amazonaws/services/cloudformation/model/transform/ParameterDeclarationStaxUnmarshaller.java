@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ParameterDeclaration StAX Unmarshaller
  */
-public class ParameterDeclarationStaxUnmarshaller implements
-        Unmarshaller<ParameterDeclaration, StaxUnmarshallerContext> {
+public class ParameterDeclarationStaxUnmarshaller implements Unmarshaller<ParameterDeclaration, StaxUnmarshallerContext> {
 
-    public ParameterDeclaration unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public ParameterDeclaration unmarshall(StaxUnmarshallerContext context) throws Exception {
         ParameterDeclaration parameterDeclaration = new ParameterDeclaration();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,40 +46,32 @@ public class ParameterDeclarationStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("ParameterKey", targetDepth)) {
-                    parameterDeclaration.setParameterKey(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    parameterDeclaration.setParameterKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DefaultValue", targetDepth)) {
-                    parameterDeclaration.setDefaultValue(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    parameterDeclaration.setDefaultValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ParameterType", targetDepth)) {
-                    parameterDeclaration
-                            .setParameterType(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    parameterDeclaration.setParameterType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("NoEcho", targetDepth)) {
-                    parameterDeclaration.setNoEcho(BooleanStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    parameterDeclaration.setNoEcho(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Description", targetDepth)) {
-                    parameterDeclaration.setDescription(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    parameterDeclaration.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ParameterConstraints", targetDepth)) {
-                    parameterDeclaration
-                            .setParameterConstraints(ParameterConstraintsStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    parameterDeclaration.setParameterConstraints(ParameterConstraintsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

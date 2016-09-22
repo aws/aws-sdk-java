@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kms.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * EncryptRequest Marshaller
  */
-public class EncryptRequestMarshaller implements
-        Marshaller<Request<EncryptRequest>, EncryptRequest> {
+public class EncryptRequestMarshaller implements Marshaller<Request<EncryptRequest>, EncryptRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -47,12 +44,10 @@ public class EncryptRequestMarshaller implements
     public Request<EncryptRequest> marshall(EncryptRequest encryptRequest) {
 
         if (encryptRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<EncryptRequest> request = new DefaultRequest<EncryptRequest>(
-                encryptRequest, "AWSKMS");
+        Request<EncryptRequest> request = new DefaultRequest<EncryptRequest>(encryptRequest, "AWSKMS");
         request.addHeader("X-Amz-Target", "TrentService.Encrypt");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -60,44 +55,35 @@ public class EncryptRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (encryptRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(
-                        encryptRequest.getKeyId());
+                jsonGenerator.writeFieldName("KeyId").writeValue(encryptRequest.getKeyId());
             }
             if (encryptRequest.getPlaintext() != null) {
-                jsonGenerator.writeFieldName("Plaintext").writeValue(
-                        encryptRequest.getPlaintext());
+                jsonGenerator.writeFieldName("Plaintext").writeValue(encryptRequest.getPlaintext());
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> encryptionContextMap = (com.amazonaws.internal.SdkInternalMap<String, String>) encryptRequest
                     .getEncryptionContext();
-            if (!encryptionContextMap.isEmpty()
-                    || !encryptionContextMap.isAutoConstruct()) {
+            if (!encryptionContextMap.isEmpty() || !encryptionContextMap.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("EncryptionContext");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> encryptionContextMapValue : encryptionContextMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> encryptionContextMapValue : encryptionContextMap.entrySet()) {
                     if (encryptionContextMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(encryptionContextMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(encryptionContextMapValue.getKey());
 
-                        jsonGenerator.writeValue(encryptionContextMapValue
-                                .getValue());
+                        jsonGenerator.writeValue(encryptionContextMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
             }
 
-            com.amazonaws.internal.SdkInternalList<String> grantTokensList = (com.amazonaws.internal.SdkInternalList<String>) encryptRequest
-                    .getGrantTokens();
-            if (!grantTokensList.isEmpty()
-                    || !grantTokensList.isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> grantTokensList = (com.amazonaws.internal.SdkInternalList<String>) encryptRequest.getGrantTokens();
+            if (!grantTokensList.isEmpty() || !grantTokensList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("GrantTokens");
                 jsonGenerator.writeStartArray();
                 for (String grantTokensListValue : grantTokensList) {
@@ -112,12 +98,10 @@ public class EncryptRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

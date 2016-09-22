@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model;
 
@@ -22,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the schedule run operation.
  * </p>
  */
-public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -94,8 +91,7 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param projectArn
      *        The ARN of the project for the run to be scheduled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduleRunRequest withProjectArn(String projectArn) {
@@ -135,8 +131,7 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param appArn
      *        The ARN of the app to schedule a run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduleRunRequest withAppArn(String appArn) {
@@ -176,8 +171,7 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param devicePoolArn
      *        The ARN of the device pool for the run to be scheduled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduleRunRequest withDevicePoolArn(String devicePoolArn) {
@@ -217,8 +211,7 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param name
      *        The name for the run to be scheduled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduleRunRequest withName(String name) {
@@ -258,8 +251,7 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param test
      *        Information about the test for the run to be scheduled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduleRunRequest withTest(ScheduleRunTest test) {
@@ -299,19 +291,16 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param configuration
      *        Information about the settings for the run to be scheduled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduleRunRequest withConfiguration(
-            ScheduleRunConfiguration configuration) {
+    public ScheduleRunRequest withConfiguration(ScheduleRunConfiguration configuration) {
         setConfiguration(configuration);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -349,33 +338,27 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest
         ScheduleRunRequest other = (ScheduleRunRequest) obj;
         if (other.getProjectArn() == null ^ this.getProjectArn() == null)
             return false;
-        if (other.getProjectArn() != null
-                && other.getProjectArn().equals(this.getProjectArn()) == false)
+        if (other.getProjectArn() != null && other.getProjectArn().equals(this.getProjectArn()) == false)
             return false;
         if (other.getAppArn() == null ^ this.getAppArn() == null)
             return false;
-        if (other.getAppArn() != null
-                && other.getAppArn().equals(this.getAppArn()) == false)
+        if (other.getAppArn() != null && other.getAppArn().equals(this.getAppArn()) == false)
             return false;
         if (other.getDevicePoolArn() == null ^ this.getDevicePoolArn() == null)
             return false;
-        if (other.getDevicePoolArn() != null
-                && other.getDevicePoolArn().equals(this.getDevicePoolArn()) == false)
+        if (other.getDevicePoolArn() != null && other.getDevicePoolArn().equals(this.getDevicePoolArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getTest() == null ^ this.getTest() == null)
             return false;
-        if (other.getTest() != null
-                && other.getTest().equals(this.getTest()) == false)
+        if (other.getTest() != null && other.getTest().equals(this.getTest()) == false)
             return false;
         if (other.getConfiguration() == null ^ this.getConfiguration() == null)
             return false;
-        if (other.getConfiguration() != null
-                && other.getConfiguration().equals(this.getConfiguration()) == false)
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
         return true;
     }
@@ -385,22 +368,12 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getProjectArn() == null) ? 0 : getProjectArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getAppArn() == null) ? 0 : getAppArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDevicePoolArn() == null) ? 0 : getDevicePoolArn()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getTest() == null) ? 0 : getTest().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConfiguration() == null) ? 0 : getConfiguration()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getProjectArn() == null) ? 0 : getProjectArn().hashCode());
+        hashCode = prime * hashCode + ((getAppArn() == null) ? 0 : getAppArn().hashCode());
+        hashCode = prime * hashCode + ((getDevicePoolArn() == null) ? 0 : getDevicePoolArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getTest() == null) ? 0 : getTest().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         return hashCode;
     }
 

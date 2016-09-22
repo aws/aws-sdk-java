@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information for the <a>ConnectDirectory</a> operation when an AD
- * Connector directory is being created.
+ * Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created.
  * </p>
  */
 public class DirectoryConnectSettings implements Serializable, Cloneable {
@@ -32,23 +29,20 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * A list of subnet identifiers in the VPC in which the AD Connector is
-     * created.
+     * A list of subnet identifiers in the VPC in which the AD Connector is created.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
     /**
      * <p>
-     * A list of one or more IP addresses of DNS servers or domain controllers
-     * in the on-premises directory.
+     * A list of one or more IP addresses of DNS servers or domain controllers in the on-premises directory.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> customerDnsIps;
     /**
      * <p>
-     * The username of an account in the on-premises directory that is used to
-     * connect to the directory. This account must have the following
-     * privileges:
+     * The username of an account in the on-premises directory that is used to connect to the directory. This account
+     * must have the following privileges:
      * </p>
      * <ul>
      * <li>
@@ -102,8 +96,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * 
      * @param vpcId
      *        The identifier of the VPC in which the AD Connector is created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DirectoryConnectSettings withVpcId(String vpcId) {
@@ -113,12 +106,10 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of subnet identifiers in the VPC in which the AD Connector is
-     * created.
+     * A list of subnet identifiers in the VPC in which the AD Connector is created.
      * </p>
      * 
-     * @return A list of subnet identifiers in the VPC in which the AD Connector
-     *         is created.
+     * @return A list of subnet identifiers in the VPC in which the AD Connector is created.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -130,13 +121,11 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of subnet identifiers in the VPC in which the AD Connector is
-     * created.
+     * A list of subnet identifiers in the VPC in which the AD Connector is created.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet identifiers in the VPC in which the AD Connector
-     *        is created.
+     *        A list of subnet identifiers in the VPC in which the AD Connector is created.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -145,33 +134,27 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
             return;
         }
 
-        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(
-                subnetIds);
+        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(subnetIds);
     }
 
     /**
      * <p>
-     * A list of subnet identifiers in the VPC in which the AD Connector is
-     * created.
+     * A list of subnet identifiers in the VPC in which the AD Connector is created.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnetIds(java.util.Collection)} or
-     * {@link #withSubnetIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet identifiers in the VPC in which the AD Connector
-     *        is created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of subnet identifiers in the VPC in which the AD Connector is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DirectoryConnectSettings withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
-            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    subnetIds.length));
+            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(subnetIds.length));
         }
         for (String ele : subnetIds) {
             this.subnetIds.add(ele);
@@ -181,31 +164,25 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of subnet identifiers in the VPC in which the AD Connector is
-     * created.
+     * A list of subnet identifiers in the VPC in which the AD Connector is created.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet identifiers in the VPC in which the AD Connector
-     *        is created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of subnet identifiers in the VPC in which the AD Connector is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DirectoryConnectSettings withSubnetIds(
-            java.util.Collection<String> subnetIds) {
+    public DirectoryConnectSettings withSubnetIds(java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
         return this;
     }
 
     /**
      * <p>
-     * A list of one or more IP addresses of DNS servers or domain controllers
-     * in the on-premises directory.
+     * A list of one or more IP addresses of DNS servers or domain controllers in the on-premises directory.
      * </p>
      * 
-     * @return A list of one or more IP addresses of DNS servers or domain
-     *         controllers in the on-premises directory.
+     * @return A list of one or more IP addresses of DNS servers or domain controllers in the on-premises directory.
      */
 
     public java.util.List<String> getCustomerDnsIps() {
@@ -217,13 +194,11 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of one or more IP addresses of DNS servers or domain controllers
-     * in the on-premises directory.
+     * A list of one or more IP addresses of DNS servers or domain controllers in the on-premises directory.
      * </p>
      * 
      * @param customerDnsIps
-     *        A list of one or more IP addresses of DNS servers or domain
-     *        controllers in the on-premises directory.
+     *        A list of one or more IP addresses of DNS servers or domain controllers in the on-premises directory.
      */
 
     public void setCustomerDnsIps(java.util.Collection<String> customerDnsIps) {
@@ -232,33 +207,27 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
             return;
         }
 
-        this.customerDnsIps = new com.amazonaws.internal.SdkInternalList<String>(
-                customerDnsIps);
+        this.customerDnsIps = new com.amazonaws.internal.SdkInternalList<String>(customerDnsIps);
     }
 
     /**
      * <p>
-     * A list of one or more IP addresses of DNS servers or domain controllers
-     * in the on-premises directory.
+     * A list of one or more IP addresses of DNS servers or domain controllers in the on-premises directory.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCustomerDnsIps(java.util.Collection)} or
-     * {@link #withCustomerDnsIps(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCustomerDnsIps(java.util.Collection)} or {@link #withCustomerDnsIps(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param customerDnsIps
-     *        A list of one or more IP addresses of DNS servers or domain
-     *        controllers in the on-premises directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of one or more IP addresses of DNS servers or domain controllers in the on-premises directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DirectoryConnectSettings withCustomerDnsIps(String... customerDnsIps) {
         if (this.customerDnsIps == null) {
-            setCustomerDnsIps(new com.amazonaws.internal.SdkInternalList<String>(
-                    customerDnsIps.length));
+            setCustomerDnsIps(new com.amazonaws.internal.SdkInternalList<String>(customerDnsIps.length));
         }
         for (String ele : customerDnsIps) {
             this.customerDnsIps.add(ele);
@@ -268,28 +237,23 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of one or more IP addresses of DNS servers or domain controllers
-     * in the on-premises directory.
+     * A list of one or more IP addresses of DNS servers or domain controllers in the on-premises directory.
      * </p>
      * 
      * @param customerDnsIps
-     *        A list of one or more IP addresses of DNS servers or domain
-     *        controllers in the on-premises directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of one or more IP addresses of DNS servers or domain controllers in the on-premises directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DirectoryConnectSettings withCustomerDnsIps(
-            java.util.Collection<String> customerDnsIps) {
+    public DirectoryConnectSettings withCustomerDnsIps(java.util.Collection<String> customerDnsIps) {
         setCustomerDnsIps(customerDnsIps);
         return this;
     }
 
     /**
      * <p>
-     * The username of an account in the on-premises directory that is used to
-     * connect to the directory. This account must have the following
-     * privileges:
+     * The username of an account in the on-premises directory that is used to connect to the directory. This account
+     * must have the following privileges:
      * </p>
      * <ul>
      * <li>
@@ -310,9 +274,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * </ul>
      * 
      * @param customerUserName
-     *        The username of an account in the on-premises directory that is
-     *        used to connect to the directory. This account must have the
-     *        following privileges:</p>
+     *        The username of an account in the on-premises directory that is used to connect to the directory. This
+     *        account must have the following privileges:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -337,9 +300,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The username of an account in the on-premises directory that is used to
-     * connect to the directory. This account must have the following
-     * privileges:
+     * The username of an account in the on-premises directory that is used to connect to the directory. This account
+     * must have the following privileges:
      * </p>
      * <ul>
      * <li>
@@ -359,9 +321,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The username of an account in the on-premises directory that is
-     *         used to connect to the directory. This account must have the
-     *         following privileges:</p>
+     * @return The username of an account in the on-premises directory that is used to connect to the directory. This
+     *         account must have the following privileges:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -386,9 +347,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The username of an account in the on-premises directory that is used to
-     * connect to the directory. This account must have the following
-     * privileges:
+     * The username of an account in the on-premises directory that is used to connect to the directory. This account
+     * must have the following privileges:
      * </p>
      * <ul>
      * <li>
@@ -409,9 +369,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * </ul>
      * 
      * @param customerUserName
-     *        The username of an account in the on-premises directory that is
-     *        used to connect to the directory. This account must have the
-     *        following privileges:</p>
+     *        The username of an account in the on-premises directory that is used to connect to the directory. This
+     *        account must have the following privileges:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -428,8 +387,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      *        Join computers to the domain
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DirectoryConnectSettings withCustomerUserName(String customerUserName) {
@@ -438,8 +396,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -473,26 +430,19 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
         DirectoryConnectSettings other = (DirectoryConnectSettings) obj;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
-        if (other.getSubnetIds() != null
-                && other.getSubnetIds().equals(this.getSubnetIds()) == false)
+        if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
             return false;
-        if (other.getCustomerDnsIps() == null
-                ^ this.getCustomerDnsIps() == null)
+        if (other.getCustomerDnsIps() == null ^ this.getCustomerDnsIps() == null)
             return false;
-        if (other.getCustomerDnsIps() != null
-                && other.getCustomerDnsIps().equals(this.getCustomerDnsIps()) == false)
+        if (other.getCustomerDnsIps() != null && other.getCustomerDnsIps().equals(this.getCustomerDnsIps()) == false)
             return false;
-        if (other.getCustomerUserName() == null
-                ^ this.getCustomerUserName() == null)
+        if (other.getCustomerUserName() == null ^ this.getCustomerUserName() == null)
             return false;
-        if (other.getCustomerUserName() != null
-                && other.getCustomerUserName().equals(
-                        this.getCustomerUserName()) == false)
+        if (other.getCustomerUserName() != null && other.getCustomerUserName().equals(this.getCustomerUserName()) == false)
             return false;
         return true;
     }
@@ -502,18 +452,10 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomerDnsIps() == null) ? 0 : getCustomerDnsIps()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomerUserName() == null) ? 0 : getCustomerUserName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
+        hashCode = prime * hashCode + ((getCustomerDnsIps() == null) ? 0 : getCustomerDnsIps().hashCode());
+        hashCode = prime * hashCode + ((getCustomerUserName() == null) ? 0 : getCustomerUserName().hashCode());
         return hashCode;
     }
 
@@ -522,9 +464,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
         try {
             return (DirectoryConnectSettings) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

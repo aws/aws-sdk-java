@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
 
@@ -22,17 +20,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Provides options for downloading output of an Amazon Glacier job.
  * </p>
  */
-public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include
+     * any hyphens (apos-apos) in the ID.
      * </p>
      */
     private String accountId;
@@ -50,35 +45,30 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
     private String jobId;
     /**
      * <p>
-     * The range of bytes to retrieve from the output. For example, if you want
-     * to download the first 1,048,576 bytes, specify "Range: bytes=0-1048575".
-     * By default, this operation downloads the entire output.
+     * The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes,
+     * specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
      * </p>
      */
     private String range;
 
     /**
-     * Default constructor for GetJobOutputRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for GetJobOutputRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public GetJobOutputRequest() {
     }
 
     /**
-     * Constructs a new GetJobOutputRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new GetJobOutputRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param vaultName
      *        The name of the vault.
      * @param jobId
      *        The job ID whose data is downloaded.
      * @param range
-     *        The range of bytes to retrieve from the output. For example, if
-     *        you want to download the first 1,048,576 bytes, specify
-     *        "Range: bytes=0-1048575". By default, this operation downloads the
-     *        entire output.
+     *        The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576
+     *        bytes, specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
      */
     public GetJobOutputRequest(String vaultName, String jobId, String range) {
         setVaultName(vaultName);
@@ -87,29 +77,23 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Constructs a new GetJobOutputRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new GetJobOutputRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param accountId
-     *        The <code>AccountId</code> value is the AWS account ID of the
-     *        account that owns the vault. You can either specify an AWS account
-     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
-     *        which case Amazon Glacier uses the AWS account ID associated with
-     *        the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens (apos-apos) in the ID.
+     *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *        specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens (apos-apos) in the ID.
      * @param vaultName
      *        The name of the vault.
      * @param jobId
      *        The job ID whose data is downloaded.
      * @param range
-     *        The range of bytes to retrieve from the output. For example, if
-     *        you want to download the first 1,048,576 bytes, specify
-     *        "Range: bytes=0-1048575". By default, this operation downloads the
-     *        entire output.
+     *        The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576
+     *        bytes, specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
      */
-    public GetJobOutputRequest(String accountId, String vaultName,
-            String jobId, String range) {
+    public GetJobOutputRequest(String accountId, String vaultName, String jobId, String range) {
         setAccountId(accountId);
         setVaultName(vaultName);
         setJobId(jobId);
@@ -118,21 +102,17 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include
+     * any hyphens (apos-apos) in the ID.
      * </p>
      * 
      * @param accountId
-     *        The <code>AccountId</code> value is the AWS account ID of the
-     *        account that owns the vault. You can either specify an AWS account
-     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
-     *        which case Amazon Glacier uses the AWS account ID associated with
-     *        the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens (apos-apos) in the ID.
+     *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *        specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens (apos-apos) in the ID.
      */
 
     public void setAccountId(String accountId) {
@@ -141,21 +121,16 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include
+     * any hyphens (apos-apos) in the ID.
      * </p>
      * 
-     * @return The <code>AccountId</code> value is the AWS account ID of the
-     *         account that owns the vault. You can either specify an AWS
-     *         account ID or optionally a single apos<code>-</code>apos
-     *         (hyphen), in which case Amazon Glacier uses the AWS account ID
-     *         associated with the credentials used to sign the request. If you
-     *         use an account ID, do not include any hyphens (apos-apos) in the
-     *         ID.
+     * @return The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *         specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     *         Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *         account ID, do not include any hyphens (apos-apos) in the ID.
      */
 
     public String getAccountId() {
@@ -164,23 +139,18 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include
+     * any hyphens (apos-apos) in the ID.
      * </p>
      * 
      * @param accountId
-     *        The <code>AccountId</code> value is the AWS account ID of the
-     *        account that owns the vault. You can either specify an AWS account
-     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
-     *        which case Amazon Glacier uses the AWS account ID associated with
-     *        the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens (apos-apos) in the ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *        specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens (apos-apos) in the ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetJobOutputRequest withAccountId(String accountId) {
@@ -220,8 +190,7 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param vaultName
      *        The name of the vault.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetJobOutputRequest withVaultName(String vaultName) {
@@ -261,8 +230,7 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param jobId
      *        The job ID whose data is downloaded.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetJobOutputRequest withJobId(String jobId) {
@@ -272,16 +240,13 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The range of bytes to retrieve from the output. For example, if you want
-     * to download the first 1,048,576 bytes, specify "Range: bytes=0-1048575".
-     * By default, this operation downloads the entire output.
+     * The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes,
+     * specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
      * </p>
      * 
      * @param range
-     *        The range of bytes to retrieve from the output. For example, if
-     *        you want to download the first 1,048,576 bytes, specify
-     *        "Range: bytes=0-1048575". By default, this operation downloads the
-     *        entire output.
+     *        The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576
+     *        bytes, specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
      */
 
     public void setRange(String range) {
@@ -290,15 +255,12 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The range of bytes to retrieve from the output. For example, if you want
-     * to download the first 1,048,576 bytes, specify "Range: bytes=0-1048575".
-     * By default, this operation downloads the entire output.
+     * The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes,
+     * specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
      * </p>
      * 
-     * @return The range of bytes to retrieve from the output. For example, if
-     *         you want to download the first 1,048,576 bytes, specify
-     *         "Range: bytes=0-1048575". By default, this operation downloads
-     *         the entire output.
+     * @return The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576
+     *         bytes, specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
      */
 
     public String getRange() {
@@ -307,18 +269,14 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The range of bytes to retrieve from the output. For example, if you want
-     * to download the first 1,048,576 bytes, specify "Range: bytes=0-1048575".
-     * By default, this operation downloads the entire output.
+     * The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes,
+     * specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
      * </p>
      * 
      * @param range
-     *        The range of bytes to retrieve from the output. For example, if
-     *        you want to download the first 1,048,576 bytes, specify
-     *        "Range: bytes=0-1048575". By default, this operation downloads the
-     *        entire output.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576
+     *        bytes, specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetJobOutputRequest withRange(String range) {
@@ -327,8 +285,7 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -362,23 +319,19 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
         GetJobOutputRequest other = (GetJobOutputRequest) obj;
         if (other.getAccountId() == null ^ this.getAccountId() == null)
             return false;
-        if (other.getAccountId() != null
-                && other.getAccountId().equals(this.getAccountId()) == false)
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
         if (other.getVaultName() == null ^ this.getVaultName() == null)
             return false;
-        if (other.getVaultName() != null
-                && other.getVaultName().equals(this.getVaultName()) == false)
+        if (other.getVaultName() != null && other.getVaultName().equals(this.getVaultName()) == false)
             return false;
         if (other.getJobId() == null ^ this.getJobId() == null)
             return false;
-        if (other.getJobId() != null
-                && other.getJobId().equals(this.getJobId()) == false)
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
         if (other.getRange() == null ^ this.getRange() == null)
             return false;
-        if (other.getRange() != null
-                && other.getRange().equals(this.getRange()) == false)
+        if (other.getRange() != null && other.getRange().equals(this.getRange()) == false)
             return false;
         return true;
     }
@@ -388,14 +341,10 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
-        hashCode = prime * hashCode
-                + ((getVaultName() == null) ? 0 : getVaultName().hashCode());
-        hashCode = prime * hashCode
-                + ((getJobId() == null) ? 0 : getJobId().hashCode());
-        hashCode = prime * hashCode
-                + ((getRange() == null) ? 0 : getRange().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getVaultName() == null) ? 0 : getVaultName().hashCode());
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getRange() == null) ? 0 : getRange().hashCode());
         return hashCode;
     }
 

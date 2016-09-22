@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Make a request to simulate the execution of a <a>Method</a>.
  * </p>
  */
-public class TestInvokeMethodRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class TestInvokeMethodRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -46,8 +42,8 @@ public class TestInvokeMethodRequest extends
     private String httpMethod;
     /**
      * <p>
-     * The URI path, including query string, of the simulated invocation
-     * request. Use this to specify path parameters and query string parameters.
+     * The URI path, including query string, of the simulated invocation request. Use this to specify path parameters
+     * and query string parameters.
      * </p>
      */
     private String pathWithQueryString;
@@ -65,16 +61,14 @@ public class TestInvokeMethodRequest extends
     private java.util.Map<String, String> headers;
     /**
      * <p>
-     * A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use the certificate when making the HTTPS request to the
-     * defined back-end endpoint.
+     * A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate when
+     * making the HTTPS request to the defined back-end endpoint.
      * </p>
      */
     private String clientCertificateId;
     /**
      * <p>
-     * A key-value map of stage variables to simulate an invocation on a
-     * deployed <a>Stage</a>.
+     * A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
      * </p>
      */
     private java.util.Map<String, String> stageVariables;
@@ -111,8 +105,7 @@ public class TestInvokeMethodRequest extends
      * 
      * @param restApiId
      *        Specifies a test invoke method request's API identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestInvokeMethodRequest withRestApiId(String restApiId) {
@@ -152,8 +145,7 @@ public class TestInvokeMethodRequest extends
      * 
      * @param resourceId
      *        Specifies a test invoke method request's resource ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestInvokeMethodRequest withResourceId(String resourceId) {
@@ -193,8 +185,7 @@ public class TestInvokeMethodRequest extends
      * 
      * @param httpMethod
      *        Specifies a test invoke method request's HTTP method.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestInvokeMethodRequest withHttpMethod(String httpMethod) {
@@ -204,14 +195,13 @@ public class TestInvokeMethodRequest extends
 
     /**
      * <p>
-     * The URI path, including query string, of the simulated invocation
-     * request. Use this to specify path parameters and query string parameters.
+     * The URI path, including query string, of the simulated invocation request. Use this to specify path parameters
+     * and query string parameters.
      * </p>
      * 
      * @param pathWithQueryString
-     *        The URI path, including query string, of the simulated invocation
-     *        request. Use this to specify path parameters and query string
-     *        parameters.
+     *        The URI path, including query string, of the simulated invocation request. Use this to specify path
+     *        parameters and query string parameters.
      */
 
     public void setPathWithQueryString(String pathWithQueryString) {
@@ -220,13 +210,12 @@ public class TestInvokeMethodRequest extends
 
     /**
      * <p>
-     * The URI path, including query string, of the simulated invocation
-     * request. Use this to specify path parameters and query string parameters.
+     * The URI path, including query string, of the simulated invocation request. Use this to specify path parameters
+     * and query string parameters.
      * </p>
      * 
-     * @return The URI path, including query string, of the simulated invocation
-     *         request. Use this to specify path parameters and query string
-     *         parameters.
+     * @return The URI path, including query string, of the simulated invocation request. Use this to specify path
+     *         parameters and query string parameters.
      */
 
     public String getPathWithQueryString() {
@@ -235,20 +224,17 @@ public class TestInvokeMethodRequest extends
 
     /**
      * <p>
-     * The URI path, including query string, of the simulated invocation
-     * request. Use this to specify path parameters and query string parameters.
+     * The URI path, including query string, of the simulated invocation request. Use this to specify path parameters
+     * and query string parameters.
      * </p>
      * 
      * @param pathWithQueryString
-     *        The URI path, including query string, of the simulated invocation
-     *        request. Use this to specify path parameters and query string
-     *        parameters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The URI path, including query string, of the simulated invocation request. Use this to specify path
+     *        parameters and query string parameters.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TestInvokeMethodRequest withPathWithQueryString(
-            String pathWithQueryString) {
+    public TestInvokeMethodRequest withPathWithQueryString(String pathWithQueryString) {
         setPathWithQueryString(pathWithQueryString);
         return this;
     }
@@ -285,8 +271,7 @@ public class TestInvokeMethodRequest extends
      * 
      * @param body
      *        The simulated request body of an incoming invocation request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestInvokeMethodRequest withBody(String body) {
@@ -299,8 +284,7 @@ public class TestInvokeMethodRequest extends
      * A key-value map of headers to simulate an incoming invocation request.
      * </p>
      * 
-     * @return A key-value map of headers to simulate an incoming invocation
-     *         request.
+     * @return A key-value map of headers to simulate an incoming invocation request.
      */
 
     public java.util.Map<String, String> getHeaders() {
@@ -313,8 +297,7 @@ public class TestInvokeMethodRequest extends
      * </p>
      * 
      * @param headers
-     *        A key-value map of headers to simulate an incoming invocation
-     *        request.
+     *        A key-value map of headers to simulate an incoming invocation request.
      */
 
     public void setHeaders(java.util.Map<String, String> headers) {
@@ -327,14 +310,11 @@ public class TestInvokeMethodRequest extends
      * </p>
      * 
      * @param headers
-     *        A key-value map of headers to simulate an incoming invocation
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A key-value map of headers to simulate an incoming invocation request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TestInvokeMethodRequest withHeaders(
-            java.util.Map<String, String> headers) {
+    public TestInvokeMethodRequest withHeaders(java.util.Map<String, String> headers) {
         setHeaders(headers);
         return this;
     }
@@ -344,15 +324,14 @@ public class TestInvokeMethodRequest extends
             this.headers = new java.util.HashMap<String, String>();
         }
         if (this.headers.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.headers.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Headers. &lt;p> Returns a reference to
-     * this object so that method calls can be chained together.
+     * Removes all the entries added into Headers. &lt;p> Returns a reference to this object so that method calls can be
+     * chained together.
      */
 
     public TestInvokeMethodRequest clearHeadersEntries() {
@@ -362,15 +341,13 @@ public class TestInvokeMethodRequest extends
 
     /**
      * <p>
-     * A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use the certificate when making the HTTPS request to the
-     * defined back-end endpoint.
+     * A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate when
+     * making the HTTPS request to the defined back-end endpoint.
      * </p>
      * 
      * @param clientCertificateId
-     *        A <a>ClientCertificate</a> identifier to use in the test
-     *        invocation. API Gateway will use the certificate when making the
-     *        HTTPS request to the defined back-end endpoint.
+     *        A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate
+     *        when making the HTTPS request to the defined back-end endpoint.
      */
 
     public void setClientCertificateId(String clientCertificateId) {
@@ -379,14 +356,12 @@ public class TestInvokeMethodRequest extends
 
     /**
      * <p>
-     * A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use the certificate when making the HTTPS request to the
-     * defined back-end endpoint.
+     * A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate when
+     * making the HTTPS request to the defined back-end endpoint.
      * </p>
      * 
-     * @return A <a>ClientCertificate</a> identifier to use in the test
-     *         invocation. API Gateway will use the certificate when making the
-     *         HTTPS request to the defined back-end endpoint.
+     * @return A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate
+     *         when making the HTTPS request to the defined back-end endpoint.
      */
 
     public String getClientCertificateId() {
@@ -395,33 +370,27 @@ public class TestInvokeMethodRequest extends
 
     /**
      * <p>
-     * A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use the certificate when making the HTTPS request to the
-     * defined back-end endpoint.
+     * A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate when
+     * making the HTTPS request to the defined back-end endpoint.
      * </p>
      * 
      * @param clientCertificateId
-     *        A <a>ClientCertificate</a> identifier to use in the test
-     *        invocation. API Gateway will use the certificate when making the
-     *        HTTPS request to the defined back-end endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate
+     *        when making the HTTPS request to the defined back-end endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TestInvokeMethodRequest withClientCertificateId(
-            String clientCertificateId) {
+    public TestInvokeMethodRequest withClientCertificateId(String clientCertificateId) {
         setClientCertificateId(clientCertificateId);
         return this;
     }
 
     /**
      * <p>
-     * A key-value map of stage variables to simulate an invocation on a
-     * deployed <a>Stage</a>.
+     * A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
      * </p>
      * 
-     * @return A key-value map of stage variables to simulate an invocation on a
-     *         deployed <a>Stage</a>.
+     * @return A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
      */
 
     public java.util.Map<String, String> getStageVariables() {
@@ -430,13 +399,11 @@ public class TestInvokeMethodRequest extends
 
     /**
      * <p>
-     * A key-value map of stage variables to simulate an invocation on a
-     * deployed <a>Stage</a>.
+     * A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
      * </p>
      * 
      * @param stageVariables
-     *        A key-value map of stage variables to simulate an invocation on a
-     *        deployed <a>Stage</a>.
+     *        A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
      */
 
     public void setStageVariables(java.util.Map<String, String> stageVariables) {
@@ -445,38 +412,32 @@ public class TestInvokeMethodRequest extends
 
     /**
      * <p>
-     * A key-value map of stage variables to simulate an invocation on a
-     * deployed <a>Stage</a>.
+     * A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
      * </p>
      * 
      * @param stageVariables
-     *        A key-value map of stage variables to simulate an invocation on a
-     *        deployed <a>Stage</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TestInvokeMethodRequest withStageVariables(
-            java.util.Map<String, String> stageVariables) {
+    public TestInvokeMethodRequest withStageVariables(java.util.Map<String, String> stageVariables) {
         setStageVariables(stageVariables);
         return this;
     }
 
-    public TestInvokeMethodRequest addStageVariablesEntry(String key,
-            String value) {
+    public TestInvokeMethodRequest addStageVariablesEntry(String key, String value) {
         if (null == this.stageVariables) {
             this.stageVariables = new java.util.HashMap<String, String>();
         }
         if (this.stageVariables.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.stageVariables.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into StageVariables. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into StageVariables. &lt;p> Returns a reference to this object so that method calls
+     * can be chained together.
      */
 
     public TestInvokeMethodRequest clearStageVariablesEntries() {
@@ -485,8 +446,7 @@ public class TestInvokeMethodRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -528,48 +488,35 @@ public class TestInvokeMethodRequest extends
         TestInvokeMethodRequest other = (TestInvokeMethodRequest) obj;
         if (other.getRestApiId() == null ^ this.getRestApiId() == null)
             return false;
-        if (other.getRestApiId() != null
-                && other.getRestApiId().equals(this.getRestApiId()) == false)
+        if (other.getRestApiId() != null && other.getRestApiId().equals(this.getRestApiId()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getHttpMethod() == null ^ this.getHttpMethod() == null)
             return false;
-        if (other.getHttpMethod() != null
-                && other.getHttpMethod().equals(this.getHttpMethod()) == false)
+        if (other.getHttpMethod() != null && other.getHttpMethod().equals(this.getHttpMethod()) == false)
             return false;
-        if (other.getPathWithQueryString() == null
-                ^ this.getPathWithQueryString() == null)
+        if (other.getPathWithQueryString() == null ^ this.getPathWithQueryString() == null)
             return false;
-        if (other.getPathWithQueryString() != null
-                && other.getPathWithQueryString().equals(
-                        this.getPathWithQueryString()) == false)
+        if (other.getPathWithQueryString() != null && other.getPathWithQueryString().equals(this.getPathWithQueryString()) == false)
             return false;
         if (other.getBody() == null ^ this.getBody() == null)
             return false;
-        if (other.getBody() != null
-                && other.getBody().equals(this.getBody()) == false)
+        if (other.getBody() != null && other.getBody().equals(this.getBody()) == false)
             return false;
         if (other.getHeaders() == null ^ this.getHeaders() == null)
             return false;
-        if (other.getHeaders() != null
-                && other.getHeaders().equals(this.getHeaders()) == false)
+        if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false)
             return false;
-        if (other.getClientCertificateId() == null
-                ^ this.getClientCertificateId() == null)
+        if (other.getClientCertificateId() == null ^ this.getClientCertificateId() == null)
             return false;
-        if (other.getClientCertificateId() != null
-                && other.getClientCertificateId().equals(
-                        this.getClientCertificateId()) == false)
+        if (other.getClientCertificateId() != null && other.getClientCertificateId().equals(this.getClientCertificateId()) == false)
             return false;
-        if (other.getStageVariables() == null
-                ^ this.getStageVariables() == null)
+        if (other.getStageVariables() == null ^ this.getStageVariables() == null)
             return false;
-        if (other.getStageVariables() != null
-                && other.getStageVariables().equals(this.getStageVariables()) == false)
+        if (other.getStageVariables() != null && other.getStageVariables().equals(this.getStageVariables()) == false)
             return false;
         return true;
     }
@@ -579,28 +526,14 @@ public class TestInvokeMethodRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getHttpMethod() == null) ? 0 : getHttpMethod().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPathWithQueryString() == null) ? 0
-                        : getPathWithQueryString().hashCode());
-        hashCode = prime * hashCode
-                + ((getBody() == null) ? 0 : getBody().hashCode());
-        hashCode = prime * hashCode
-                + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClientCertificateId() == null) ? 0
-                        : getClientCertificateId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStageVariables() == null) ? 0 : getStageVariables()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getHttpMethod() == null) ? 0 : getHttpMethod().hashCode());
+        hashCode = prime * hashCode + ((getPathWithQueryString() == null) ? 0 : getPathWithQueryString().hashCode());
+        hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
+        hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
+        hashCode = prime * hashCode + ((getClientCertificateId() == null) ? 0 : getClientCertificateId().hashCode());
+        hashCode = prime * hashCode + ((getStageVariables() == null) ? 0 : getStageVariables().hashCode());
         return hashCode;
     }
 

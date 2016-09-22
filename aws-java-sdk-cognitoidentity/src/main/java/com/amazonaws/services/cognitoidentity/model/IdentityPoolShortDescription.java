@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidentity.model;
 
@@ -52,8 +50,7 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IdentityPoolShortDescription withIdentityPoolId(String identityPoolId) {
@@ -87,19 +84,16 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
      * 
      * @param identityPoolName
      *        A string that you provide.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public IdentityPoolShortDescription withIdentityPoolName(
-            String identityPoolName) {
+    public IdentityPoolShortDescription withIdentityPoolName(String identityPoolName) {
         setIdentityPoolName(identityPoolName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -127,18 +121,13 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
         if (obj instanceof IdentityPoolShortDescription == false)
             return false;
         IdentityPoolShortDescription other = (IdentityPoolShortDescription) obj;
-        if (other.getIdentityPoolId() == null
-                ^ this.getIdentityPoolId() == null)
+        if (other.getIdentityPoolId() == null ^ this.getIdentityPoolId() == null)
             return false;
-        if (other.getIdentityPoolId() != null
-                && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
+        if (other.getIdentityPoolId() != null && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
             return false;
-        if (other.getIdentityPoolName() == null
-                ^ this.getIdentityPoolName() == null)
+        if (other.getIdentityPoolName() == null ^ this.getIdentityPoolName() == null)
             return false;
-        if (other.getIdentityPoolName() != null
-                && other.getIdentityPoolName().equals(
-                        this.getIdentityPoolName()) == false)
+        if (other.getIdentityPoolName() != null && other.getIdentityPoolName().equals(this.getIdentityPoolName()) == false)
             return false;
         return true;
     }
@@ -148,14 +137,8 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIdentityPoolName() == null) ? 0 : getIdentityPoolName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode());
+        hashCode = prime * hashCode + ((getIdentityPoolName() == null) ? 0 : getIdentityPoolName().hashCode());
         return hashCode;
     }
 
@@ -164,9 +147,7 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
         try {
             return (IdentityPoolShortDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

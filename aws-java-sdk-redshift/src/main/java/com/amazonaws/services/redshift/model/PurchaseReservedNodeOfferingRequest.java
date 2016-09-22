@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class PurchaseReservedNodeOfferingRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class PurchaseReservedNodeOfferingRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -46,8 +42,7 @@ public class PurchaseReservedNodeOfferingRequest extends
      * </p>
      * 
      * @param reservedNodeOfferingId
-     *        The unique identifier of the reserved node offering you want to
-     *        purchase.
+     *        The unique identifier of the reserved node offering you want to purchase.
      */
 
     public void setReservedNodeOfferingId(String reservedNodeOfferingId) {
@@ -59,8 +54,7 @@ public class PurchaseReservedNodeOfferingRequest extends
      * The unique identifier of the reserved node offering you want to purchase.
      * </p>
      * 
-     * @return The unique identifier of the reserved node offering you want to
-     *         purchase.
+     * @return The unique identifier of the reserved node offering you want to purchase.
      */
 
     public String getReservedNodeOfferingId() {
@@ -73,14 +67,11 @@ public class PurchaseReservedNodeOfferingRequest extends
      * </p>
      * 
      * @param reservedNodeOfferingId
-     *        The unique identifier of the reserved node offering you want to
-     *        purchase.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The unique identifier of the reserved node offering you want to purchase.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PurchaseReservedNodeOfferingRequest withReservedNodeOfferingId(
-            String reservedNodeOfferingId) {
+    public PurchaseReservedNodeOfferingRequest withReservedNodeOfferingId(String reservedNodeOfferingId) {
         setReservedNodeOfferingId(reservedNodeOfferingId);
         return this;
     }
@@ -132,8 +123,7 @@ public class PurchaseReservedNodeOfferingRequest extends
      *        The number of reserved nodes that you want to purchase.</p>
      *        <p>
      *        Default: <code>1</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PurchaseReservedNodeOfferingRequest withNodeCount(Integer nodeCount) {
@@ -142,8 +132,7 @@ public class PurchaseReservedNodeOfferingRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -154,8 +143,7 @@ public class PurchaseReservedNodeOfferingRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedNodeOfferingId() != null)
-            sb.append("ReservedNodeOfferingId: " + getReservedNodeOfferingId()
-                    + ",");
+            sb.append("ReservedNodeOfferingId: " + getReservedNodeOfferingId() + ",");
         if (getNodeCount() != null)
             sb.append("NodeCount: " + getNodeCount());
         sb.append("}");
@@ -172,17 +160,13 @@ public class PurchaseReservedNodeOfferingRequest extends
         if (obj instanceof PurchaseReservedNodeOfferingRequest == false)
             return false;
         PurchaseReservedNodeOfferingRequest other = (PurchaseReservedNodeOfferingRequest) obj;
-        if (other.getReservedNodeOfferingId() == null
-                ^ this.getReservedNodeOfferingId() == null)
+        if (other.getReservedNodeOfferingId() == null ^ this.getReservedNodeOfferingId() == null)
             return false;
-        if (other.getReservedNodeOfferingId() != null
-                && other.getReservedNodeOfferingId().equals(
-                        this.getReservedNodeOfferingId()) == false)
+        if (other.getReservedNodeOfferingId() != null && other.getReservedNodeOfferingId().equals(this.getReservedNodeOfferingId()) == false)
             return false;
         if (other.getNodeCount() == null ^ this.getNodeCount() == null)
             return false;
-        if (other.getNodeCount() != null
-                && other.getNodeCount().equals(this.getNodeCount()) == false)
+        if (other.getNodeCount() != null && other.getNodeCount().equals(this.getNodeCount()) == false)
             return false;
         return true;
     }
@@ -192,12 +176,8 @@ public class PurchaseReservedNodeOfferingRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReservedNodeOfferingId() == null) ? 0
-                        : getReservedNodeOfferingId().hashCode());
-        hashCode = prime * hashCode
-                + ((getNodeCount() == null) ? 0 : getNodeCount().hashCode());
+        hashCode = prime * hashCode + ((getReservedNodeOfferingId() == null) ? 0 : getReservedNodeOfferingId().hashCode());
+        hashCode = prime * hashCode + ((getNodeCount() == null) ? 0 : getNodeCount().hashCode());
         return hashCode;
     }
 

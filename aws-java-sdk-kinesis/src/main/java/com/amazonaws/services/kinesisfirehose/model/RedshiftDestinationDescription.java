@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisfirehose.model;
 
@@ -49,8 +47,8 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
     private String username;
     /**
      * <p>
-     * Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).
+     * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
+     * value is 3600 (60 minutes).
      * </p>
      */
     private RedshiftRetryOptions retryOptions;
@@ -99,8 +97,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * 
      * @param roleARN
      *        The ARN of the AWS credentials.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RedshiftDestinationDescription withRoleARN(String roleARN) {
@@ -140,12 +137,10 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * 
      * @param clusterJDBCURL
      *        The database connection string.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RedshiftDestinationDescription withClusterJDBCURL(
-            String clusterJDBCURL) {
+    public RedshiftDestinationDescription withClusterJDBCURL(String clusterJDBCURL) {
         setClusterJDBCURL(clusterJDBCURL);
         return this;
     }
@@ -182,12 +177,10 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * 
      * @param copyCommand
      *        The <code>COPY</code> command.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RedshiftDestinationDescription withCopyCommand(
-            CopyCommand copyCommand) {
+    public RedshiftDestinationDescription withCopyCommand(CopyCommand copyCommand) {
         setCopyCommand(copyCommand);
         return this;
     }
@@ -224,8 +217,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * 
      * @param username
      *        The name of the user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RedshiftDestinationDescription withUsername(String username) {
@@ -235,14 +227,13 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).
+     * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
+     * value is 3600 (60 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        Configures retry behavior in the event that Firehose is unable to
-     *        deliver documents to Amazon Redshift. Default value is 3600 (60
-     *        minutes).
+     *        Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift.
+     *        Default value is 3600 (60 minutes).
      */
 
     public void setRetryOptions(RedshiftRetryOptions retryOptions) {
@@ -251,13 +242,12 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).
+     * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
+     * value is 3600 (60 minutes).
      * </p>
      * 
-     * @return Configures retry behavior in the event that Firehose is unable to
-     *         deliver documents to Amazon Redshift. Default value is 3600 (60
-     *         minutes).
+     * @return Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift.
+     *         Default value is 3600 (60 minutes).
      */
 
     public RedshiftRetryOptions getRetryOptions() {
@@ -266,20 +256,17 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).
+     * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
+     * value is 3600 (60 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        Configures retry behavior in the event that Firehose is unable to
-     *        deliver documents to Amazon Redshift. Default value is 3600 (60
-     *        minutes).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift.
+     *        Default value is 3600 (60 minutes).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RedshiftDestinationDescription withRetryOptions(
-            RedshiftRetryOptions retryOptions) {
+    public RedshiftDestinationDescription withRetryOptions(RedshiftRetryOptions retryOptions) {
         setRetryOptions(retryOptions);
         return this;
     }
@@ -293,8 +280,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      *        The Amazon S3 destination.
      */
 
-    public void setS3DestinationDescription(
-            S3DestinationDescription s3DestinationDescription) {
+    public void setS3DestinationDescription(S3DestinationDescription s3DestinationDescription) {
         this.s3DestinationDescription = s3DestinationDescription;
     }
 
@@ -317,12 +303,10 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * 
      * @param s3DestinationDescription
      *        The Amazon S3 destination.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RedshiftDestinationDescription withS3DestinationDescription(
-            S3DestinationDescription s3DestinationDescription) {
+    public RedshiftDestinationDescription withS3DestinationDescription(S3DestinationDescription s3DestinationDescription) {
         setS3DestinationDescription(s3DestinationDescription);
         return this;
     }
@@ -336,8 +320,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      *        Describes CloudWatch logging options for your delivery stream.
      */
 
-    public void setCloudWatchLoggingOptions(
-            CloudWatchLoggingOptions cloudWatchLoggingOptions) {
+    public void setCloudWatchLoggingOptions(CloudWatchLoggingOptions cloudWatchLoggingOptions) {
         this.cloudWatchLoggingOptions = cloudWatchLoggingOptions;
     }
 
@@ -360,19 +343,16 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * 
      * @param cloudWatchLoggingOptions
      *        Describes CloudWatch logging options for your delivery stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RedshiftDestinationDescription withCloudWatchLoggingOptions(
-            CloudWatchLoggingOptions cloudWatchLoggingOptions) {
+    public RedshiftDestinationDescription withCloudWatchLoggingOptions(CloudWatchLoggingOptions cloudWatchLoggingOptions) {
         setCloudWatchLoggingOptions(cloudWatchLoggingOptions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -393,11 +373,9 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
         if (getRetryOptions() != null)
             sb.append("RetryOptions: " + getRetryOptions() + ",");
         if (getS3DestinationDescription() != null)
-            sb.append("S3DestinationDescription: "
-                    + getS3DestinationDescription() + ",");
+            sb.append("S3DestinationDescription: " + getS3DestinationDescription() + ",");
         if (getCloudWatchLoggingOptions() != null)
-            sb.append("CloudWatchLoggingOptions: "
-                    + getCloudWatchLoggingOptions());
+            sb.append("CloudWatchLoggingOptions: " + getCloudWatchLoggingOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -414,43 +392,31 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
         RedshiftDestinationDescription other = (RedshiftDestinationDescription) obj;
         if (other.getRoleARN() == null ^ this.getRoleARN() == null)
             return false;
-        if (other.getRoleARN() != null
-                && other.getRoleARN().equals(this.getRoleARN()) == false)
+        if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false)
             return false;
-        if (other.getClusterJDBCURL() == null
-                ^ this.getClusterJDBCURL() == null)
+        if (other.getClusterJDBCURL() == null ^ this.getClusterJDBCURL() == null)
             return false;
-        if (other.getClusterJDBCURL() != null
-                && other.getClusterJDBCURL().equals(this.getClusterJDBCURL()) == false)
+        if (other.getClusterJDBCURL() != null && other.getClusterJDBCURL().equals(this.getClusterJDBCURL()) == false)
             return false;
         if (other.getCopyCommand() == null ^ this.getCopyCommand() == null)
             return false;
-        if (other.getCopyCommand() != null
-                && other.getCopyCommand().equals(this.getCopyCommand()) == false)
+        if (other.getCopyCommand() != null && other.getCopyCommand().equals(this.getCopyCommand()) == false)
             return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
-        if (other.getUsername() != null
-                && other.getUsername().equals(this.getUsername()) == false)
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
         if (other.getRetryOptions() == null ^ this.getRetryOptions() == null)
             return false;
-        if (other.getRetryOptions() != null
-                && other.getRetryOptions().equals(this.getRetryOptions()) == false)
+        if (other.getRetryOptions() != null && other.getRetryOptions().equals(this.getRetryOptions()) == false)
             return false;
-        if (other.getS3DestinationDescription() == null
-                ^ this.getS3DestinationDescription() == null)
+        if (other.getS3DestinationDescription() == null ^ this.getS3DestinationDescription() == null)
             return false;
-        if (other.getS3DestinationDescription() != null
-                && other.getS3DestinationDescription().equals(
-                        this.getS3DestinationDescription()) == false)
+        if (other.getS3DestinationDescription() != null && other.getS3DestinationDescription().equals(this.getS3DestinationDescription()) == false)
             return false;
-        if (other.getCloudWatchLoggingOptions() == null
-                ^ this.getCloudWatchLoggingOptions() == null)
+        if (other.getCloudWatchLoggingOptions() == null ^ this.getCloudWatchLoggingOptions() == null)
             return false;
-        if (other.getCloudWatchLoggingOptions() != null
-                && other.getCloudWatchLoggingOptions().equals(
-                        this.getCloudWatchLoggingOptions()) == false)
+        if (other.getCloudWatchLoggingOptions() != null && other.getCloudWatchLoggingOptions().equals(this.getCloudWatchLoggingOptions()) == false)
             return false;
         return true;
     }
@@ -460,29 +426,13 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClusterJDBCURL() == null) ? 0 : getClusterJDBCURL()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCopyCommand() == null) ? 0 : getCopyCommand().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRetryOptions() == null) ? 0 : getRetryOptions()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getS3DestinationDescription() == null) ? 0
-                        : getS3DestinationDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCloudWatchLoggingOptions() == null) ? 0
-                        : getCloudWatchLoggingOptions().hashCode());
+        hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
+        hashCode = prime * hashCode + ((getClusterJDBCURL() == null) ? 0 : getClusterJDBCURL().hashCode());
+        hashCode = prime * hashCode + ((getCopyCommand() == null) ? 0 : getCopyCommand().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getRetryOptions() == null) ? 0 : getRetryOptions().hashCode());
+        hashCode = prime * hashCode + ((getS3DestinationDescription() == null) ? 0 : getS3DestinationDescription().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
         return hashCode;
     }
 
@@ -491,9 +441,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
         try {
             return (RedshiftDestinationDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

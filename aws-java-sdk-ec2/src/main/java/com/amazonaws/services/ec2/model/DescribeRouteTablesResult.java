@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of DescribeRouteTables.
  * </p>
  */
-public class DescribeRouteTablesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeRouteTablesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -63,8 +59,7 @@ public class DescribeRouteTablesResult extends
             return;
         }
 
-        this.routeTables = new com.amazonaws.internal.SdkInternalList<RouteTable>(
-                routeTables);
+        this.routeTables = new com.amazonaws.internal.SdkInternalList<RouteTable>(routeTables);
     }
 
     /**
@@ -72,22 +67,19 @@ public class DescribeRouteTablesResult extends
      * Information about one or more route tables.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRouteTables(java.util.Collection)} or
-     * {@link #withRouteTables(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRouteTables(java.util.Collection)} or {@link #withRouteTables(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param routeTables
      *        Information about one or more route tables.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeRouteTablesResult withRouteTables(RouteTable... routeTables) {
         if (this.routeTables == null) {
-            setRouteTables(new com.amazonaws.internal.SdkInternalList<RouteTable>(
-                    routeTables.length));
+            setRouteTables(new com.amazonaws.internal.SdkInternalList<RouteTable>(routeTables.length));
         }
         for (RouteTable ele : routeTables) {
             this.routeTables.add(ele);
@@ -102,19 +94,16 @@ public class DescribeRouteTablesResult extends
      * 
      * @param routeTables
      *        Information about one or more route tables.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeRouteTablesResult withRouteTables(
-            java.util.Collection<RouteTable> routeTables) {
+    public DescribeRouteTablesResult withRouteTables(java.util.Collection<RouteTable> routeTables) {
         setRouteTables(routeTables);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -142,8 +131,7 @@ public class DescribeRouteTablesResult extends
         DescribeRouteTablesResult other = (DescribeRouteTablesResult) obj;
         if (other.getRouteTables() == null ^ this.getRouteTables() == null)
             return false;
-        if (other.getRouteTables() != null
-                && other.getRouteTables().equals(this.getRouteTables()) == false)
+        if (other.getRouteTables() != null && other.getRouteTables().equals(this.getRouteTables()) == false)
             return false;
         return true;
     }
@@ -153,9 +141,7 @@ public class DescribeRouteTablesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRouteTables() == null) ? 0 : getRouteTables().hashCode());
+        hashCode = prime * hashCode + ((getRouteTables() == null) ? 0 : getRouteTables().hashCode());
         return hashCode;
     }
 
@@ -164,9 +150,7 @@ public class DescribeRouteTablesResult extends
         try {
             return (DescribeRouteTablesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

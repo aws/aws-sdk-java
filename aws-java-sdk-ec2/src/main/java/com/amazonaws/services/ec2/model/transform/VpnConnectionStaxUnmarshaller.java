@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * VpnConnection StAX Unmarshaller
  */
-public class VpnConnectionStaxUnmarshaller implements
-        Unmarshaller<VpnConnection, StaxUnmarshallerContext> {
+public class VpnConnectionStaxUnmarshaller implements Unmarshaller<VpnConnection, StaxUnmarshallerContext> {
 
-    public VpnConnection unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public VpnConnection unmarshall(StaxUnmarshallerContext context) throws Exception {
         VpnConnection vpnConnection = new VpnConnection();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,65 +46,52 @@ public class VpnConnectionStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("vpnConnectionId", targetDepth)) {
-                    vpnConnection.setVpnConnectionId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    vpnConnection.setVpnConnectionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("state", targetDepth)) {
-                    vpnConnection.setState(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    vpnConnection.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("customerGatewayConfiguration",
-                        targetDepth)) {
-                    vpnConnection
-                            .setCustomerGatewayConfiguration(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("customerGatewayConfiguration", targetDepth)) {
+                    vpnConnection.setCustomerGatewayConfiguration(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("type", targetDepth)) {
-                    vpnConnection.setType(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    vpnConnection.setType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("customerGatewayId", targetDepth)) {
-                    vpnConnection.setCustomerGatewayId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    vpnConnection.setCustomerGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("vpnGatewayId", targetDepth)) {
-                    vpnConnection.setVpnGatewayId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    vpnConnection.setVpnGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("tagSet/item", targetDepth)) {
-                    vpnConnection.withTags(TagStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    vpnConnection.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("vgwTelemetry/item", targetDepth)) {
-                    vpnConnection.withVgwTelemetry(VgwTelemetryStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    vpnConnection.withVgwTelemetry(VgwTelemetryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("options", targetDepth)) {
-                    vpnConnection
-                            .setOptions(VpnConnectionOptionsStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    vpnConnection.setOptions(VpnConnectionOptionsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("routes/item", targetDepth)) {
-                    vpnConnection.withRoutes(VpnStaticRouteStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    vpnConnection.withRoutes(VpnStaticRouteStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

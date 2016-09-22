@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeNetworkInterfaceAttrib
  * Contains the parameters for DescribeNetworkInterfaceAttribute.
  * </p>
  */
-public class DescribeNetworkInterfaceAttributeRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable,
+public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeNetworkInterfaceAttributeRequest> {
 
     /**
@@ -73,12 +70,10 @@ public class DescribeNetworkInterfaceAttributeRequest extends
      * 
      * @param networkInterfaceId
      *        The ID of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfaceAttributeRequest withNetworkInterfaceId(
-            String networkInterfaceId) {
+    public DescribeNetworkInterfaceAttributeRequest withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
         return this;
     }
@@ -117,13 +112,11 @@ public class DescribeNetworkInterfaceAttributeRequest extends
      * 
      * @param attribute
      *        The attribute of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkInterfaceAttribute
      */
 
-    public DescribeNetworkInterfaceAttributeRequest withAttribute(
-            String attribute) {
+    public DescribeNetworkInterfaceAttributeRequest withAttribute(String attribute) {
         setAttribute(attribute);
         return this;
     }
@@ -149,33 +142,28 @@ public class DescribeNetworkInterfaceAttributeRequest extends
      * 
      * @param attribute
      *        The attribute of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkInterfaceAttribute
      */
 
-    public DescribeNetworkInterfaceAttributeRequest withAttribute(
-            NetworkInterfaceAttribute attribute) {
+    public DescribeNetworkInterfaceAttributeRequest withAttribute(NetworkInterfaceAttribute attribute) {
         setAttribute(attribute);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeNetworkInterfaceAttributeRequest> getDryRunRequest() {
-        Request<DescribeNetworkInterfaceAttributeRequest> request = new DescribeNetworkInterfaceAttributeRequestMarshaller()
-                .marshall(this);
+        Request<DescribeNetworkInterfaceAttributeRequest> request = new DescribeNetworkInterfaceAttributeRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -203,17 +191,13 @@ public class DescribeNetworkInterfaceAttributeRequest extends
         if (obj instanceof DescribeNetworkInterfaceAttributeRequest == false)
             return false;
         DescribeNetworkInterfaceAttributeRequest other = (DescribeNetworkInterfaceAttributeRequest) obj;
-        if (other.getNetworkInterfaceId() == null
-                ^ this.getNetworkInterfaceId() == null)
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
-        if (other.getNetworkInterfaceId() != null
-                && other.getNetworkInterfaceId().equals(
-                        this.getNetworkInterfaceId()) == false)
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
         if (other.getAttribute() == null ^ this.getAttribute() == null)
             return false;
-        if (other.getAttribute() != null
-                && other.getAttribute().equals(this.getAttribute()) == false)
+        if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false)
             return false;
         return true;
     }
@@ -223,12 +207,8 @@ public class DescribeNetworkInterfaceAttributeRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaceId() == null) ? 0
-                        : getNetworkInterfaceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
         return hashCode;
     }
 

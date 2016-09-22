@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -68,8 +66,7 @@ public class TimestampRange implements Serializable, Cloneable {
      * 
      * @param beginDate
      *        The minimum value of the timestamp range.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TimestampRange withBeginDate(java.util.Date beginDate) {
@@ -109,8 +106,7 @@ public class TimestampRange implements Serializable, Cloneable {
      * 
      * @param endDate
      *        The maximum value of the timestamp range.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TimestampRange withEndDate(java.util.Date endDate) {
@@ -119,8 +115,7 @@ public class TimestampRange implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -150,13 +145,11 @@ public class TimestampRange implements Serializable, Cloneable {
         TimestampRange other = (TimestampRange) obj;
         if (other.getBeginDate() == null ^ this.getBeginDate() == null)
             return false;
-        if (other.getBeginDate() != null
-                && other.getBeginDate().equals(this.getBeginDate()) == false)
+        if (other.getBeginDate() != null && other.getBeginDate().equals(this.getBeginDate()) == false)
             return false;
         if (other.getEndDate() == null ^ this.getEndDate() == null)
             return false;
-        if (other.getEndDate() != null
-                && other.getEndDate().equals(this.getEndDate()) == false)
+        if (other.getEndDate() != null && other.getEndDate().equals(this.getEndDate()) == false)
             return false;
         return true;
     }
@@ -166,10 +159,8 @@ public class TimestampRange implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getBeginDate() == null) ? 0 : getBeginDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
+        hashCode = prime * hashCode + ((getBeginDate() == null) ? 0 : getBeginDate().hashCode());
+        hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
         return hashCode;
     }
 
@@ -178,9 +169,7 @@ public class TimestampRange implements Serializable, Cloneable {
         try {
             return (TimestampRange) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

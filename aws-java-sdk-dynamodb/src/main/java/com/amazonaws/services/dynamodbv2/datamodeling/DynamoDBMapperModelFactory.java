@@ -14,24 +14,27 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
+import com.amazonaws.annotation.SdkInternalApi;
+
 /**
  * {@link DynamoDBMapper} table model factory.
  */
+@SdkInternalApi
 public interface DynamoDBMapperModelFactory {
 
     /**
-     * Gets the table model for the given type and configuration.
+     * Gets/creates the mapper's model factory.
      */
-    public <T> DynamoDBMapperTableModel<T> getTableModel(Class<T> targetType);
+    public TableFactory getTableFactory(DynamoDBMapperConfig config);
 
     /**
      * {@link DynamoDBMapperModelFactory} factory.
      */
-    public static interface Factory {
+    public static interface TableFactory {
         /**
-         * Gets/creates the mapper's model factory.
+         * Gets the table model for the given type and configuration.
          */
-        public DynamoDBMapperModelFactory getModelFactory(DynamoDBMapperConfig config);
+        public <T> DynamoDBMapperTableModel<T> getTable(Class<T> clazz);
     }
 
 }

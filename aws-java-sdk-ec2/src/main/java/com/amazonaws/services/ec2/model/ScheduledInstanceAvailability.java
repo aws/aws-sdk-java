@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -25,8 +23,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. You can specify one of the C3, C4, M4, or R3 instance
-     * types.
+     * The instance type. You can specify one of the C3, C4, M4, or R3 instance types.
      * </p>
      */
     private String instanceType;
@@ -105,13 +102,11 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. You can specify one of the C3, C4, M4, or R3 instance
-     * types.
+     * The instance type. You can specify one of the C3, C4, M4, or R3 instance types.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. You can specify one of the C3, C4, M4, or R3
-     *        instance types.
+     *        The instance type. You can specify one of the C3, C4, M4, or R3 instance types.
      */
 
     public void setInstanceType(String instanceType) {
@@ -120,12 +115,10 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. You can specify one of the C3, C4, M4, or R3 instance
-     * types.
+     * The instance type. You can specify one of the C3, C4, M4, or R3 instance types.
      * </p>
      * 
-     * @return The instance type. You can specify one of the C3, C4, M4, or R3
-     *         instance types.
+     * @return The instance type. You can specify one of the C3, C4, M4, or R3 instance types.
      */
 
     public String getInstanceType() {
@@ -134,15 +127,12 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. You can specify one of the C3, C4, M4, or R3 instance
-     * types.
+     * The instance type. You can specify one of the C3, C4, M4, or R3 instance types.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. You can specify one of the C3, C4, M4, or R3
-     *        instance types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance type. You can specify one of the C3, C4, M4, or R3 instance types.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledInstanceAvailability withInstanceType(String instanceType) {
@@ -182,8 +172,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @param platform
      *        The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledInstanceAvailability withPlatform(String platform) {
@@ -197,8 +186,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * </p>
      * 
      * @param networkPlatform
-     *        The network platform (<code>EC2-Classic</code> or
-     *        <code>EC2-VPC</code>).
+     *        The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      */
 
     public void setNetworkPlatform(String networkPlatform) {
@@ -210,8 +198,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      * </p>
      * 
-     * @return The network platform (<code>EC2-Classic</code> or
-     *         <code>EC2-VPC</code>).
+     * @return The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      */
 
     public String getNetworkPlatform() {
@@ -224,14 +211,11 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * </p>
      * 
      * @param networkPlatform
-     *        The network platform (<code>EC2-Classic</code> or
-     *        <code>EC2-VPC</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstanceAvailability withNetworkPlatform(
-            String networkPlatform) {
+    public ScheduledInstanceAvailability withNetworkPlatform(String networkPlatform) {
         setNetworkPlatform(networkPlatform);
         return this;
     }
@@ -268,12 +252,10 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @param availabilityZone
      *        The Availability Zone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstanceAvailability withAvailabilityZone(
-            String availabilityZone) {
+    public ScheduledInstanceAvailability withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
     }
@@ -310,8 +292,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @param purchaseToken
      *        The purchase token. This token expires in two hours.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledInstanceAvailability withPurchaseToken(String purchaseToken) {
@@ -351,12 +332,10 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @param slotDurationInHours
      *        The number of hours in the schedule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstanceAvailability withSlotDurationInHours(
-            Integer slotDurationInHours) {
+    public ScheduledInstanceAvailability withSlotDurationInHours(Integer slotDurationInHours) {
         setSlotDurationInHours(slotDurationInHours);
         return this;
     }
@@ -393,12 +372,10 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @param recurrence
      *        The schedule recurrence.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstanceAvailability withRecurrence(
-            ScheduledInstanceRecurrence recurrence) {
+    public ScheduledInstanceAvailability withRecurrence(ScheduledInstanceRecurrence recurrence) {
         setRecurrence(recurrence);
         return this;
     }
@@ -435,12 +412,10 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @param firstSlotStartTime
      *        The time period for the first schedule to start.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstanceAvailability withFirstSlotStartTime(
-            java.util.Date firstSlotStartTime) {
+    public ScheduledInstanceAvailability withFirstSlotStartTime(java.util.Date firstSlotStartTime) {
         setFirstSlotStartTime(firstSlotStartTime);
         return this;
     }
@@ -477,8 +452,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @param hourlyPrice
      *        The hourly price for a single instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledInstanceAvailability withHourlyPrice(String hourlyPrice) {
@@ -492,12 +466,10 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * </p>
      * 
      * @param totalScheduledInstanceHours
-     *        The total number of hours for a single instance for the entire
-     *        term.
+     *        The total number of hours for a single instance for the entire term.
      */
 
-    public void setTotalScheduledInstanceHours(
-            Integer totalScheduledInstanceHours) {
+    public void setTotalScheduledInstanceHours(Integer totalScheduledInstanceHours) {
         this.totalScheduledInstanceHours = totalScheduledInstanceHours;
     }
 
@@ -506,8 +478,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * The total number of hours for a single instance for the entire term.
      * </p>
      * 
-     * @return The total number of hours for a single instance for the entire
-     *         term.
+     * @return The total number of hours for a single instance for the entire term.
      */
 
     public Integer getTotalScheduledInstanceHours() {
@@ -520,14 +491,11 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * </p>
      * 
      * @param totalScheduledInstanceHours
-     *        The total number of hours for a single instance for the entire
-     *        term.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The total number of hours for a single instance for the entire term.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstanceAvailability withTotalScheduledInstanceHours(
-            Integer totalScheduledInstanceHours) {
+    public ScheduledInstanceAvailability withTotalScheduledInstanceHours(Integer totalScheduledInstanceHours) {
         setTotalScheduledInstanceHours(totalScheduledInstanceHours);
         return this;
     }
@@ -564,12 +532,10 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @param availableInstanceCount
      *        The number of available instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstanceAvailability withAvailableInstanceCount(
-            Integer availableInstanceCount) {
+    public ScheduledInstanceAvailability withAvailableInstanceCount(Integer availableInstanceCount) {
         setAvailableInstanceCount(availableInstanceCount);
         return this;
     }
@@ -606,12 +572,10 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @param minTermDurationInDays
      *        The minimum term. The only possible value is 365 days.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstanceAvailability withMinTermDurationInDays(
-            Integer minTermDurationInDays) {
+    public ScheduledInstanceAvailability withMinTermDurationInDays(Integer minTermDurationInDays) {
         setMinTermDurationInDays(minTermDurationInDays);
         return this;
     }
@@ -648,19 +612,16 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @param maxTermDurationInDays
      *        The maximum term. The only possible value is 365 days.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstanceAvailability withMaxTermDurationInDays(
-            Integer maxTermDurationInDays) {
+    public ScheduledInstanceAvailability withMaxTermDurationInDays(Integer maxTermDurationInDays) {
         setMaxTermDurationInDays(maxTermDurationInDays);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -689,14 +650,11 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
         if (getHourlyPrice() != null)
             sb.append("HourlyPrice: " + getHourlyPrice() + ",");
         if (getTotalScheduledInstanceHours() != null)
-            sb.append("TotalScheduledInstanceHours: "
-                    + getTotalScheduledInstanceHours() + ",");
+            sb.append("TotalScheduledInstanceHours: " + getTotalScheduledInstanceHours() + ",");
         if (getAvailableInstanceCount() != null)
-            sb.append("AvailableInstanceCount: " + getAvailableInstanceCount()
-                    + ",");
+            sb.append("AvailableInstanceCount: " + getAvailableInstanceCount() + ",");
         if (getMinTermDurationInDays() != null)
-            sb.append("MinTermDurationInDays: " + getMinTermDurationInDays()
-                    + ",");
+            sb.append("MinTermDurationInDays: " + getMinTermDurationInDays() + ",");
         if (getMaxTermDurationInDays() != null)
             sb.append("MaxTermDurationInDays: " + getMaxTermDurationInDays());
         sb.append("}");
@@ -715,83 +673,55 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
         ScheduledInstanceAvailability other = (ScheduledInstanceAvailability) obj;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
-        if (other.getPlatform() != null
-                && other.getPlatform().equals(this.getPlatform()) == false)
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
-        if (other.getNetworkPlatform() == null
-                ^ this.getNetworkPlatform() == null)
+        if (other.getNetworkPlatform() == null ^ this.getNetworkPlatform() == null)
             return false;
-        if (other.getNetworkPlatform() != null
-                && other.getNetworkPlatform().equals(this.getNetworkPlatform()) == false)
+        if (other.getNetworkPlatform() != null && other.getNetworkPlatform().equals(this.getNetworkPlatform()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
         if (other.getPurchaseToken() == null ^ this.getPurchaseToken() == null)
             return false;
-        if (other.getPurchaseToken() != null
-                && other.getPurchaseToken().equals(this.getPurchaseToken()) == false)
+        if (other.getPurchaseToken() != null && other.getPurchaseToken().equals(this.getPurchaseToken()) == false)
             return false;
-        if (other.getSlotDurationInHours() == null
-                ^ this.getSlotDurationInHours() == null)
+        if (other.getSlotDurationInHours() == null ^ this.getSlotDurationInHours() == null)
             return false;
-        if (other.getSlotDurationInHours() != null
-                && other.getSlotDurationInHours().equals(
-                        this.getSlotDurationInHours()) == false)
+        if (other.getSlotDurationInHours() != null && other.getSlotDurationInHours().equals(this.getSlotDurationInHours()) == false)
             return false;
         if (other.getRecurrence() == null ^ this.getRecurrence() == null)
             return false;
-        if (other.getRecurrence() != null
-                && other.getRecurrence().equals(this.getRecurrence()) == false)
+        if (other.getRecurrence() != null && other.getRecurrence().equals(this.getRecurrence()) == false)
             return false;
-        if (other.getFirstSlotStartTime() == null
-                ^ this.getFirstSlotStartTime() == null)
+        if (other.getFirstSlotStartTime() == null ^ this.getFirstSlotStartTime() == null)
             return false;
-        if (other.getFirstSlotStartTime() != null
-                && other.getFirstSlotStartTime().equals(
-                        this.getFirstSlotStartTime()) == false)
+        if (other.getFirstSlotStartTime() != null && other.getFirstSlotStartTime().equals(this.getFirstSlotStartTime()) == false)
             return false;
         if (other.getHourlyPrice() == null ^ this.getHourlyPrice() == null)
             return false;
-        if (other.getHourlyPrice() != null
-                && other.getHourlyPrice().equals(this.getHourlyPrice()) == false)
+        if (other.getHourlyPrice() != null && other.getHourlyPrice().equals(this.getHourlyPrice()) == false)
             return false;
-        if (other.getTotalScheduledInstanceHours() == null
-                ^ this.getTotalScheduledInstanceHours() == null)
+        if (other.getTotalScheduledInstanceHours() == null ^ this.getTotalScheduledInstanceHours() == null)
             return false;
-        if (other.getTotalScheduledInstanceHours() != null
-                && other.getTotalScheduledInstanceHours().equals(
-                        this.getTotalScheduledInstanceHours()) == false)
+        if (other.getTotalScheduledInstanceHours() != null && other.getTotalScheduledInstanceHours().equals(this.getTotalScheduledInstanceHours()) == false)
             return false;
-        if (other.getAvailableInstanceCount() == null
-                ^ this.getAvailableInstanceCount() == null)
+        if (other.getAvailableInstanceCount() == null ^ this.getAvailableInstanceCount() == null)
             return false;
-        if (other.getAvailableInstanceCount() != null
-                && other.getAvailableInstanceCount().equals(
-                        this.getAvailableInstanceCount()) == false)
+        if (other.getAvailableInstanceCount() != null && other.getAvailableInstanceCount().equals(this.getAvailableInstanceCount()) == false)
             return false;
-        if (other.getMinTermDurationInDays() == null
-                ^ this.getMinTermDurationInDays() == null)
+        if (other.getMinTermDurationInDays() == null ^ this.getMinTermDurationInDays() == null)
             return false;
-        if (other.getMinTermDurationInDays() != null
-                && other.getMinTermDurationInDays().equals(
-                        this.getMinTermDurationInDays()) == false)
+        if (other.getMinTermDurationInDays() != null && other.getMinTermDurationInDays().equals(this.getMinTermDurationInDays()) == false)
             return false;
-        if (other.getMaxTermDurationInDays() == null
-                ^ this.getMaxTermDurationInDays() == null)
+        if (other.getMaxTermDurationInDays() == null ^ this.getMaxTermDurationInDays() == null)
             return false;
-        if (other.getMaxTermDurationInDays() != null
-                && other.getMaxTermDurationInDays().equals(
-                        this.getMaxTermDurationInDays()) == false)
+        if (other.getMaxTermDurationInDays() != null && other.getMaxTermDurationInDays().equals(this.getMaxTermDurationInDays()) == false)
             return false;
         return true;
     }
@@ -801,53 +731,19 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkPlatform() == null) ? 0 : getNetworkPlatform()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPurchaseToken() == null) ? 0 : getPurchaseToken()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSlotDurationInHours() == null) ? 0
-                        : getSlotDurationInHours().hashCode());
-        hashCode = prime * hashCode
-                + ((getRecurrence() == null) ? 0 : getRecurrence().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFirstSlotStartTime() == null) ? 0
-                        : getFirstSlotStartTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHourlyPrice() == null) ? 0 : getHourlyPrice().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTotalScheduledInstanceHours() == null) ? 0
-                        : getTotalScheduledInstanceHours().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailableInstanceCount() == null) ? 0
-                        : getAvailableInstanceCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMinTermDurationInDays() == null) ? 0
-                        : getMinTermDurationInDays().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMaxTermDurationInDays() == null) ? 0
-                        : getMaxTermDurationInDays().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getNetworkPlatform() == null) ? 0 : getNetworkPlatform().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getPurchaseToken() == null) ? 0 : getPurchaseToken().hashCode());
+        hashCode = prime * hashCode + ((getSlotDurationInHours() == null) ? 0 : getSlotDurationInHours().hashCode());
+        hashCode = prime * hashCode + ((getRecurrence() == null) ? 0 : getRecurrence().hashCode());
+        hashCode = prime * hashCode + ((getFirstSlotStartTime() == null) ? 0 : getFirstSlotStartTime().hashCode());
+        hashCode = prime * hashCode + ((getHourlyPrice() == null) ? 0 : getHourlyPrice().hashCode());
+        hashCode = prime * hashCode + ((getTotalScheduledInstanceHours() == null) ? 0 : getTotalScheduledInstanceHours().hashCode());
+        hashCode = prime * hashCode + ((getAvailableInstanceCount() == null) ? 0 : getAvailableInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getMinTermDurationInDays() == null) ? 0 : getMinTermDurationInDays().hashCode());
+        hashCode = prime * hashCode + ((getMaxTermDurationInDays() == null) ? 0 : getMaxTermDurationInDays().hashCode());
         return hashCode;
     }
 
@@ -856,9 +752,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
         try {
             return (ScheduledInstanceAvailability) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

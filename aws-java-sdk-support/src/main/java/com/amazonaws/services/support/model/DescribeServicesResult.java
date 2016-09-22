@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.support.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The list of AWS services returned by the <a>DescribeServices</a> operation.
  * </p>
  */
-public class DescribeServicesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeServicesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -62,8 +58,7 @@ public class DescribeServicesResult extends
             return;
         }
 
-        this.services = new com.amazonaws.internal.SdkInternalList<Service>(
-                services);
+        this.services = new com.amazonaws.internal.SdkInternalList<Service>(services);
     }
 
     /**
@@ -71,22 +66,19 @@ public class DescribeServicesResult extends
      * A JSON-formatted list of AWS services.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setServices(java.util.Collection)} or
-     * {@link #withServices(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param services
      *        A JSON-formatted list of AWS services.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeServicesResult withServices(Service... services) {
         if (this.services == null) {
-            setServices(new com.amazonaws.internal.SdkInternalList<Service>(
-                    services.length));
+            setServices(new com.amazonaws.internal.SdkInternalList<Service>(services.length));
         }
         for (Service ele : services) {
             this.services.add(ele);
@@ -101,19 +93,16 @@ public class DescribeServicesResult extends
      * 
      * @param services
      *        A JSON-formatted list of AWS services.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeServicesResult withServices(
-            java.util.Collection<Service> services) {
+    public DescribeServicesResult withServices(java.util.Collection<Service> services) {
         setServices(services);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -141,8 +130,7 @@ public class DescribeServicesResult extends
         DescribeServicesResult other = (DescribeServicesResult) obj;
         if (other.getServices() == null ^ this.getServices() == null)
             return false;
-        if (other.getServices() != null
-                && other.getServices().equals(this.getServices()) == false)
+        if (other.getServices() != null && other.getServices().equals(this.getServices()) == false)
             return false;
         return true;
     }
@@ -152,8 +140,7 @@ public class DescribeServicesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getServices() == null) ? 0 : getServices().hashCode());
+        hashCode = prime * hashCode + ((getServices() == null) ? 0 : getServices().hashCode());
         return hashCode;
     }
 
@@ -162,9 +149,7 @@ public class DescribeServicesResult extends
         try {
             return (DescribeServicesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

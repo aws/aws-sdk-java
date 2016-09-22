@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -21,34 +19,31 @@ import java.io.Serializable;
  * Represents the details of the specified receipt rule set.
  * </p>
  */
-public class DescribeReceiptRuleSetResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeReceiptRuleSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The metadata for the receipt rule set, which consists of the rule set
-     * name and the timestamp of when the rule set was created.
+     * The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set
+     * was created.
      * </p>
      */
     private ReceiptRuleSetMetadata metadata;
     /**
      * <p>
-     * A list of the receipt rules that belong to the specified receipt rule
-     * set.
+     * A list of the receipt rules that belong to the specified receipt rule set.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ReceiptRule> rules;
 
     /**
      * <p>
-     * The metadata for the receipt rule set, which consists of the rule set
-     * name and the timestamp of when the rule set was created.
+     * The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set
+     * was created.
      * </p>
      * 
      * @param metadata
-     *        The metadata for the receipt rule set, which consists of the rule
-     *        set name and the timestamp of when the rule set was created.
+     *        The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the
+     *        rule set was created.
      */
 
     public void setMetadata(ReceiptRuleSetMetadata metadata) {
@@ -57,12 +52,12 @@ public class DescribeReceiptRuleSetResult extends
 
     /**
      * <p>
-     * The metadata for the receipt rule set, which consists of the rule set
-     * name and the timestamp of when the rule set was created.
+     * The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set
+     * was created.
      * </p>
      * 
-     * @return The metadata for the receipt rule set, which consists of the rule
-     *         set name and the timestamp of when the rule set was created.
+     * @return The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the
+     *         rule set was created.
      */
 
     public ReceiptRuleSetMetadata getMetadata() {
@@ -71,31 +66,27 @@ public class DescribeReceiptRuleSetResult extends
 
     /**
      * <p>
-     * The metadata for the receipt rule set, which consists of the rule set
-     * name and the timestamp of when the rule set was created.
+     * The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set
+     * was created.
      * </p>
      * 
      * @param metadata
-     *        The metadata for the receipt rule set, which consists of the rule
-     *        set name and the timestamp of when the rule set was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the
+     *        rule set was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReceiptRuleSetResult withMetadata(
-            ReceiptRuleSetMetadata metadata) {
+    public DescribeReceiptRuleSetResult withMetadata(ReceiptRuleSetMetadata metadata) {
         setMetadata(metadata);
         return this;
     }
 
     /**
      * <p>
-     * A list of the receipt rules that belong to the specified receipt rule
-     * set.
+     * A list of the receipt rules that belong to the specified receipt rule set.
      * </p>
      * 
-     * @return A list of the receipt rules that belong to the specified receipt
-     *         rule set.
+     * @return A list of the receipt rules that belong to the specified receipt rule set.
      */
 
     public java.util.List<ReceiptRule> getRules() {
@@ -107,13 +98,11 @@ public class DescribeReceiptRuleSetResult extends
 
     /**
      * <p>
-     * A list of the receipt rules that belong to the specified receipt rule
-     * set.
+     * A list of the receipt rules that belong to the specified receipt rule set.
      * </p>
      * 
      * @param rules
-     *        A list of the receipt rules that belong to the specified receipt
-     *        rule set.
+     *        A list of the receipt rules that belong to the specified receipt rule set.
      */
 
     public void setRules(java.util.Collection<ReceiptRule> rules) {
@@ -122,33 +111,27 @@ public class DescribeReceiptRuleSetResult extends
             return;
         }
 
-        this.rules = new com.amazonaws.internal.SdkInternalList<ReceiptRule>(
-                rules);
+        this.rules = new com.amazonaws.internal.SdkInternalList<ReceiptRule>(rules);
     }
 
     /**
      * <p>
-     * A list of the receipt rules that belong to the specified receipt rule
-     * set.
+     * A list of the receipt rules that belong to the specified receipt rule set.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRules(java.util.Collection)} or
-     * {@link #withRules(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRules(java.util.Collection)} or {@link #withRules(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param rules
-     *        A list of the receipt rules that belong to the specified receipt
-     *        rule set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of the receipt rules that belong to the specified receipt rule set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeReceiptRuleSetResult withRules(ReceiptRule... rules) {
         if (this.rules == null) {
-            setRules(new com.amazonaws.internal.SdkInternalList<ReceiptRule>(
-                    rules.length));
+            setRules(new com.amazonaws.internal.SdkInternalList<ReceiptRule>(rules.length));
         }
         for (ReceiptRule ele : rules) {
             this.rules.add(ele);
@@ -158,26 +141,21 @@ public class DescribeReceiptRuleSetResult extends
 
     /**
      * <p>
-     * A list of the receipt rules that belong to the specified receipt rule
-     * set.
+     * A list of the receipt rules that belong to the specified receipt rule set.
      * </p>
      * 
      * @param rules
-     *        A list of the receipt rules that belong to the specified receipt
-     *        rule set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of the receipt rules that belong to the specified receipt rule set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReceiptRuleSetResult withRules(
-            java.util.Collection<ReceiptRule> rules) {
+    public DescribeReceiptRuleSetResult withRules(java.util.Collection<ReceiptRule> rules) {
         setRules(rules);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -207,13 +185,11 @@ public class DescribeReceiptRuleSetResult extends
         DescribeReceiptRuleSetResult other = (DescribeReceiptRuleSetResult) obj;
         if (other.getMetadata() == null ^ this.getMetadata() == null)
             return false;
-        if (other.getMetadata() != null
-                && other.getMetadata().equals(this.getMetadata()) == false)
+        if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
             return false;
         if (other.getRules() == null ^ this.getRules() == null)
             return false;
-        if (other.getRules() != null
-                && other.getRules().equals(this.getRules()) == false)
+        if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
             return false;
         return true;
     }
@@ -223,10 +199,8 @@ public class DescribeReceiptRuleSetResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
-        hashCode = prime * hashCode
-                + ((getRules() == null) ? 0 : getRules().hashCode());
+        hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
+        hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
         return hashCode;
     }
 
@@ -235,9 +209,7 @@ public class DescribeReceiptRuleSetResult extends
         try {
             return (DescribeReceiptRuleSetResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

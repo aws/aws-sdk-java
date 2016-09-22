@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.machinelearning.model;
 
@@ -20,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteMLModelRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteMLModelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -36,8 +33,7 @@ public class DeleteMLModelRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param mLModelId
-     *        A user-supplied ID that uniquely identifies the
-     *        <code>MLModel</code>.
+     *        A user-supplied ID that uniquely identifies the <code>MLModel</code>.
      */
 
     public void setMLModelId(String mLModelId) {
@@ -49,8 +45,7 @@ public class DeleteMLModelRequest extends com.amazonaws.AmazonWebServiceRequest
      * A user-supplied ID that uniquely identifies the <code>MLModel</code>.
      * </p>
      * 
-     * @return A user-supplied ID that uniquely identifies the
-     *         <code>MLModel</code>.
+     * @return A user-supplied ID that uniquely identifies the <code>MLModel</code>.
      */
 
     public String getMLModelId() {
@@ -63,10 +58,8 @@ public class DeleteMLModelRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param mLModelId
-     *        A user-supplied ID that uniquely identifies the
-     *        <code>MLModel</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A user-supplied ID that uniquely identifies the <code>MLModel</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteMLModelRequest withMLModelId(String mLModelId) {
@@ -75,8 +68,7 @@ public class DeleteMLModelRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -104,8 +96,7 @@ public class DeleteMLModelRequest extends com.amazonaws.AmazonWebServiceRequest
         DeleteMLModelRequest other = (DeleteMLModelRequest) obj;
         if (other.getMLModelId() == null ^ this.getMLModelId() == null)
             return false;
-        if (other.getMLModelId() != null
-                && other.getMLModelId().equals(this.getMLModelId()) == false)
+        if (other.getMLModelId() != null && other.getMLModelId().equals(this.getMLModelId()) == false)
             return false;
         return true;
     }
@@ -115,8 +106,7 @@ public class DeleteMLModelRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMLModelId() == null) ? 0 : getMLModelId().hashCode());
+        hashCode = prime * hashCode + ((getMLModelId() == null) ? 0 : getMLModelId().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,56 +29,45 @@ import com.amazonaws.util.IdempotentUtils;
  * CreateVolumeRequest Marshaller
  */
 
-public class CreateVolumeRequestMarshaller implements
-        Marshaller<Request<CreateVolumeRequest>, CreateVolumeRequest> {
+public class CreateVolumeRequestMarshaller implements Marshaller<Request<CreateVolumeRequest>, CreateVolumeRequest> {
 
-    public Request<CreateVolumeRequest> marshall(
-            CreateVolumeRequest createVolumeRequest) {
+    public Request<CreateVolumeRequest> marshall(CreateVolumeRequest createVolumeRequest) {
 
         if (createVolumeRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateVolumeRequest> request = new DefaultRequest<CreateVolumeRequest>(
-                createVolumeRequest, "AmazonEC2");
+        Request<CreateVolumeRequest> request = new DefaultRequest<CreateVolumeRequest>(createVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVolume");
         request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createVolumeRequest.getSize() != null) {
-            request.addParameter("Size",
-                    StringUtils.fromInteger(createVolumeRequest.getSize()));
+            request.addParameter("Size", StringUtils.fromInteger(createVolumeRequest.getSize()));
         }
 
         if (createVolumeRequest.getSnapshotId() != null) {
-            request.addParameter("SnapshotId",
-                    StringUtils.fromString(createVolumeRequest.getSnapshotId()));
+            request.addParameter("SnapshotId", StringUtils.fromString(createVolumeRequest.getSnapshotId()));
         }
 
         if (createVolumeRequest.getAvailabilityZone() != null) {
-            request.addParameter("AvailabilityZone", StringUtils
-                    .fromString(createVolumeRequest.getAvailabilityZone()));
+            request.addParameter("AvailabilityZone", StringUtils.fromString(createVolumeRequest.getAvailabilityZone()));
         }
 
         if (createVolumeRequest.getVolumeType() != null) {
-            request.addParameter("VolumeType",
-                    StringUtils.fromString(createVolumeRequest.getVolumeType()));
+            request.addParameter("VolumeType", StringUtils.fromString(createVolumeRequest.getVolumeType()));
         }
 
         if (createVolumeRequest.getIops() != null) {
-            request.addParameter("Iops",
-                    StringUtils.fromInteger(createVolumeRequest.getIops()));
+            request.addParameter("Iops", StringUtils.fromInteger(createVolumeRequest.getIops()));
         }
 
         if (createVolumeRequest.getEncrypted() != null) {
-            request.addParameter("Encrypted",
-                    StringUtils.fromBoolean(createVolumeRequest.getEncrypted()));
+            request.addParameter("Encrypted", StringUtils.fromBoolean(createVolumeRequest.getEncrypted()));
         }
 
         if (createVolumeRequest.getKmsKeyId() != null) {
-            request.addParameter("KmsKeyId",
-                    StringUtils.fromString(createVolumeRequest.getKmsKeyId()));
+            request.addParameter("KmsKeyId", StringUtils.fromString(createVolumeRequest.getKmsKeyId()));
         }
 
         return request;

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics;
 
@@ -25,98 +23,78 @@ import com.amazonaws.services.kinesisanalytics.model.*;
 public interface AmazonKinesisAnalytics {
 
     /**
-     * The region metadata service name for computing region endpoints. You can
-     * use this value to retrieve metadata (such as supported regions) of the
-     * service.
+     * The region metadata service name for computing region endpoints. You can use this value to retrieve metadata
+     * (such as supported regions) of the service.
      *
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "kinesisanalytics";
 
     /**
-     * Overrides the default endpoint for this client
-     * ("https://kinesisanalytics.us-east-1.amazonaws.com"). Callers can use
-     * this method to control which AWS region they want to work with.
+     * Overrides the default endpoint for this client ("https://kinesisanalytics.us-east-1.amazonaws.com"). Callers can
+     * use this method to control which AWS region they want to work with.
      * <p>
-     * Callers can pass in just the endpoint (ex:
-     * "kinesisanalytics.us-east-1.amazonaws.com") or a full URL, including the
-     * protocol (ex: "https://kinesisanalytics.us-east-1.amazonaws.com"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * Callers can pass in just the endpoint (ex: "kinesisanalytics.us-east-1.amazonaws.com") or a full URL, including
+     * the protocol (ex: "https://kinesisanalytics.us-east-1.amazonaws.com"). If the protocol is not specified here, the
+     * default protocol from this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see: <a
-     * href=
-     * "http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912"
-     * > http://developer.amazonwebservices.com/connect/entry.jspa?externalID=
-     * 3912</a>
+     * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
+     * endpoints for all AWS services, see: <a
+     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
+     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
      * <p>
-     * <b>This method is not threadsafe. An endpoint should be configured when
-     * the client is created and before any service requests are made. Changing
-     * it afterwards creates inevitable race conditions for any service requests
-     * in transit or retrying.</b>
+     * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
+     * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
+     * transit or retrying.</b>
      *
      * @param endpoint
-     *        The endpoint (ex: "kinesisanalytics.us-east-1.amazonaws.com") or a
-     *        full URL, including the protocol (ex:
-     *        "https://kinesisanalytics.us-east-1.amazonaws.com") of the region
-     *        specific AWS endpoint this client will communicate with.
+     *        The endpoint (ex: "kinesisanalytics.us-east-1.amazonaws.com") or a full URL, including the protocol (ex:
+     *        "https://kinesisanalytics.us-east-1.amazonaws.com") of the region specific AWS endpoint this client will
+     *        communicate with.
      */
     void setEndpoint(String endpoint);
 
     /**
-     * An alternative to {@link AmazonKinesisAnalytics#setEndpoint(String)},
-     * sets the regional endpoint for this client's service calls. Callers can
-     * use this method to control which AWS region they want to work with.
+     * An alternative to {@link AmazonKinesisAnalytics#setEndpoint(String)}, sets the regional endpoint for this
+     * client's service calls. Callers can use this method to control which AWS region they want to work with.
      * <p>
-     * By default, all service endpoints in all regions use the https protocol.
-     * To use http instead, specify it in the {@link ClientConfiguration}
-     * supplied at construction.
+     * By default, all service endpoints in all regions use the https protocol. To use http instead, specify it in the
+     * {@link ClientConfiguration} supplied at construction.
      * <p>
-     * <b>This method is not threadsafe. A region should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit or retrying.</b>
+     * <b>This method is not threadsafe. A region should be configured when the client is created and before any service
+     * requests are made. Changing it afterwards creates inevitable race conditions for any service requests in transit
+     * or retrying.</b>
      *
      * @param region
-     *        The region this client will communicate with. See
-     *        {@link Region#getRegion(com.amazonaws.regions.Regions)} for
-     *        accessing a given region. Must not be null and must be a region
-     *        where the service is available.
+     *        The region this client will communicate with. See {@link Region#getRegion(com.amazonaws.regions.Regions)}
+     *        for accessing a given region. Must not be null and must be a region where the service is available.
      *
      * @see Region#getRegion(com.amazonaws.regions.Regions)
-     * @see Region#createClient(Class,
-     *      com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      * @see Region#isServiceSupported(String)
      */
     void setRegion(Region region);
 
     /**
      * <p>
-     * Adds a streaming source to your Amazon Kinesis application. For
-     * conceptual information, see <a href=
-     * "http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html"
-     * >Configuring Application Input</a>.
+     * Adds a streaming source to your Amazon Kinesis application. For conceptual information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * Input</a>.
      * </p>
      * <p>
-     * You can add a streaming source either when you create an application or
-     * you can use this operation to add a streaming source after you create an
-     * application. For more information, see <a>CreateApplication</a>.
+     * You can add a streaming source either when you create an application or you can use this operation to add a
+     * streaming source after you create an application. For more information, see <a>CreateApplication</a>.
      * </p>
      * <p>
-     * Any configuration update, including adding a streaming source using this
-     * operation, results in a new version of the application. You can use the
-     * <a>DescribeApplication</a> operation to find the current application
-     * version.
+     * Any configuration update, including adding a streaming source using this operation, results in a new version of
+     * the application. You can use the <a>DescribeApplication</a> operation to find the current application version.
      * </p>
      * <p>
-     * This operation requires permissions to perform the
-     * <code>kinesisanalytics:AddApplicationInput</code> action.
+     * This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationInput</code> action.
      * </p>
      * 
      * @param addApplicationInputRequest
-     * @return Result of the AddApplicationInput operation returned by the
-     *         service.
+     * @return Result of the AddApplicationInput operation returned by the service.
      * @throws ResourceNotFoundException
      *         Specified application can't be found.
      * @throws ResourceInUseException
@@ -124,54 +102,43 @@ public interface AmazonKinesisAnalytics {
      * @throws InvalidArgumentException
      *         Specified input parameter value is invalid.
      * @throws ConcurrentModificationException
-     *         Exception thrown as a result of concurrent modification to an
-     *         application. For example, two individuals attempting to edit the
-     *         same application at the same time.
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
      * @sample AmazonKinesisAnalytics.AddApplicationInput
      */
-    AddApplicationInputResult addApplicationInput(
-            AddApplicationInputRequest addApplicationInputRequest);
+    AddApplicationInputResult addApplicationInput(AddApplicationInputRequest addApplicationInputRequest);
 
     /**
      * <p>
-     * Adds an external destination to your Amazon Kinesis Analytics
-     * application.
+     * Adds an external destination to your Amazon Kinesis Analytics application.
      * </p>
      * <p>
-     * If you want Amazon Kinesis Analytics to deliver data from an
-     * in-application stream within your application to an external destination
-     * (such as an Amazon Kinesis stream or a Firehose delivery stream), you add
-     * the relevant configuration to your application using this operation. You
-     * can configure one or more outputs for your application. Each output
-     * configuration maps an in-application stream and an external destination.
+     * If you want Amazon Kinesis Analytics to deliver data from an in-application stream within your application to an
+     * external destination (such as an Amazon Kinesis stream or a Firehose delivery stream), you add the relevant
+     * configuration to your application using this operation. You can configure one or more outputs for your
+     * application. Each output configuration maps an in-application stream and an external destination.
      * </p>
      * <p>
-     * You can use one of the output configurations to deliver data from your
-     * in-application error stream to an external destination so that you can
-     * analyze the errors. For conceptual information, see <a href=
-     * "http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html"
-     * >Understanding Application Output (Destination)</a>.
+     * You can use one of the output configurations to deliver data from your in-application error stream to an external
+     * destination so that you can analyze the errors. For conceptual information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding Application
+     * Output (Destination)</a>.
      * </p>
      * <p>
-     * Note that any configuration update, including adding a streaming source
-     * using this operation, results in a new version of the application. You
-     * can use the <a>DescribeApplication</a> operation to find the current
-     * application version.
+     * Note that any configuration update, including adding a streaming source using this operation, results in a new
+     * version of the application. You can use the <a>DescribeApplication</a> operation to find the current application
+     * version.
      * </p>
      * <p>
-     * For the limits on the number of application inputs and outputs you can
-     * configure, see <a href=
-     * "http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html"
-     * >Limits</a>.
+     * For the limits on the number of application inputs and outputs you can configure, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * </p>
      * <p>
-     * This operation requires permissions to perform the
-     * <code>kinesisanalytics:AddApplicationOutput</code> action.
+     * This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationOutput</code> action.
      * </p>
      * 
      * @param addApplicationOutputRequest
-     * @return Result of the AddApplicationOutput operation returned by the
-     *         service.
+     * @return Result of the AddApplicationOutput operation returned by the service.
      * @throws ResourceNotFoundException
      *         Specified application can't be found.
      * @throws ResourceInUseException
@@ -179,42 +146,34 @@ public interface AmazonKinesisAnalytics {
      * @throws InvalidArgumentException
      *         Specified input parameter value is invalid.
      * @throws ConcurrentModificationException
-     *         Exception thrown as a result of concurrent modification to an
-     *         application. For example, two individuals attempting to edit the
-     *         same application at the same time.
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
      * @sample AmazonKinesisAnalytics.AddApplicationOutput
      */
-    AddApplicationOutputResult addApplicationOutput(
-            AddApplicationOutputRequest addApplicationOutputRequest);
+    AddApplicationOutputResult addApplicationOutput(AddApplicationOutputRequest addApplicationOutputRequest);
 
     /**
      * <p>
      * Adds a reference data source to an existing application.
      * </p>
      * <p>
-     * Amazon Kinesis Analytics reads reference data (that is, an Amazon S3
-     * object) and creates an in-application table within your application. In
-     * the request, you provide the source (S3 bucket name and object key name),
-     * name of the in-application table to create, and the necessary mapping
-     * information that describes how data in Amazon S3 object maps to columns
-     * in the resulting in-application table.
+     * Amazon Kinesis Analytics reads reference data (that is, an Amazon S3 object) and creates an in-application table
+     * within your application. In the request, you provide the source (S3 bucket name and object key name), name of the
+     * in-application table to create, and the necessary mapping information that describes how data in Amazon S3 object
+     * maps to columns in the resulting in-application table.
      * </p>
      * <p>
-     * For conceptual information, see <a href=
-     * "http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html"
-     * >Configuring Application Input</a>. For the limits on data sources you
-     * can add to your application, see <a href=
-     * "http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html"
-     * >Limits</a>.
+     * For conceptual information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * Input</a>. For the limits on data sources you can add to your application, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * </p>
      * <p>
-     * This operation requires permissions to perform the
-     * <code>kinesisanalytics:AddApplicationOutput</code> action.
+     * This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationOutput</code> action.
      * </p>
      * 
      * @param addApplicationReferenceDataSourceRequest
-     * @return Result of the AddApplicationReferenceDataSource operation
-     *         returned by the service.
+     * @return Result of the AddApplicationReferenceDataSource operation returned by the service.
      * @throws ResourceNotFoundException
      *         Specified application can't be found.
      * @throws ResourceInUseException
@@ -222,62 +181,48 @@ public interface AmazonKinesisAnalytics {
      * @throws InvalidArgumentException
      *         Specified input parameter value is invalid.
      * @throws ConcurrentModificationException
-     *         Exception thrown as a result of concurrent modification to an
-     *         application. For example, two individuals attempting to edit the
-     *         same application at the same time.
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
      * @sample AmazonKinesisAnalytics.AddApplicationReferenceDataSource
      */
-    AddApplicationReferenceDataSourceResult addApplicationReferenceDataSource(
-            AddApplicationReferenceDataSourceRequest addApplicationReferenceDataSourceRequest);
+    AddApplicationReferenceDataSourceResult addApplicationReferenceDataSource(AddApplicationReferenceDataSourceRequest addApplicationReferenceDataSourceRequest);
 
     /**
      * <p>
-     * Creates an Amazon Kinesis Analytics application. You can configure each
-     * application with one streaming source as input, application code to
-     * process the input, and up to five streaming destinations where you want
-     * Amazon Kinesis Analytics to write the output data from your application.
-     * For an overview, see <a href=
-     * "http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html"
-     * >How it Works</a>.
+     * Creates an Amazon Kinesis Analytics application. You can configure each application with one streaming source as
+     * input, application code to process the input, and up to five streaming destinations where you want Amazon Kinesis
+     * Analytics to write the output data from your application. For an overview, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How it Works</a>.
      * </p>
      * <p>
-     * In the input configuration, you map the streaming source to an
-     * in-application stream, which you can think of as a constantly updating
-     * table. In the mapping, you must provide a schema for the in-application
-     * stream and map each data column in the in-application stream to a data
-     * element in the streaming source, with the option of renaming, casting and
-     * dropping columns as desired.
+     * In the input configuration, you map the streaming source to an in-application stream, which you can think of as a
+     * constantly updating table. In the mapping, you must provide a schema for the in-application stream and map each
+     * data column in the in-application stream to a data element in the streaming source, with the option of renaming,
+     * casting and dropping columns as desired.
      * </p>
      * <p>
-     * Your application code is one or more SQL statements that read input data,
-     * transform it, and generate output. Your application code can create one
-     * or more SQL artifacts like SQL streams or pumps.
+     * Your application code is one or more SQL statements that read input data, transform it, and generate output. Your
+     * application code can create one or more SQL artifacts like SQL streams or pumps.
      * </p>
      * <p>
-     * In the output configuration, you can configure the application to write
-     * data from in-application streams created in your applications to up to
-     * five streaming destinations.
+     * In the output configuration, you can configure the application to write data from in-application streams created
+     * in your applications to up to five streaming destinations.
      * </p>
      * <p>
-     * To read data from your source stream or write data to destination
-     * streams, Amazon Kinesis Analytics needs your permissions. You grant these
-     * permissions by creating IAM roles. This operation requires permissions to
-     * perform the <code>kinesisanalytics:CreateApplication</code> action.
+     * To read data from your source stream or write data to destination streams, Amazon Kinesis Analytics needs your
+     * permissions. You grant these permissions by creating IAM roles. This operation requires permissions to perform
+     * the <code>kinesisanalytics:CreateApplication</code> action.
      * </p>
      * <p>
-     * For introductory exercises to create an Amazon Kinesis Analytics
-     * application, see <a href=
-     * "http://docs.aws.amazon.com/kinesisanalytics/latest/dev/getting-started.html"
-     * >Getting Started</a>.
+     * For introductory exercises to create an Amazon Kinesis Analytics application, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/getting-started.html">Getting Started</a>.
      * </p>
      * 
      * @param createApplicationRequest
      *        TBD
-     * @return Result of the CreateApplication operation returned by the
-     *         service.
+     * @return Result of the CreateApplication operation returned by the service.
      * @throws CodeValidationException
-     *         User-provided application code (query) is invalid. This can be a
-     *         simple syntax error.
+     *         User-provided application code (query) is invalid. This can be a simple syntax error.
      * @throws ResourceInUseException
      *         Application is not available for this operation.
      * @throws LimitExceededException
@@ -286,84 +231,68 @@ public interface AmazonKinesisAnalytics {
      *         Specified input parameter value is invalid.
      * @sample AmazonKinesisAnalytics.CreateApplication
      */
-    CreateApplicationResult createApplication(
-            CreateApplicationRequest createApplicationRequest);
+    CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest);
 
     /**
      * <p>
-     * Deletes the specified application. Amazon Kinesis Analytics halts
-     * application execution and deletes the application, including any
-     * application artifacts (such as in-application streams, reference table,
-     * and application code).
+     * Deletes the specified application. Amazon Kinesis Analytics halts application execution and deletes the
+     * application, including any application artifacts (such as in-application streams, reference table, and
+     * application code).
      * </p>
      * <p>
-     * This operation requires permissions to perform the
-     * <code>kinesisanalytics:DeleteApplication</code> action.
+     * This operation requires permissions to perform the <code>kinesisanalytics:DeleteApplication</code> action.
      * </p>
      * 
      * @param deleteApplicationRequest
-     * @return Result of the DeleteApplication operation returned by the
-     *         service.
+     * @return Result of the DeleteApplication operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Exception thrown as a result of concurrent modification to an
-     *         application. For example, two individuals attempting to edit the
-     *         same application at the same time.
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
      * @throws ResourceNotFoundException
      *         Specified application can't be found.
      * @throws ResourceInUseException
      *         Application is not available for this operation.
      * @sample AmazonKinesisAnalytics.DeleteApplication
      */
-    DeleteApplicationResult deleteApplication(
-            DeleteApplicationRequest deleteApplicationRequest);
+    DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest);
 
     /**
      * <p>
-     * Deletes output destination configuration from your application
-     * configuration. Amazon Kinesis Analytics will no longer write data from
-     * the corresponding in-application stream to the external output
-     * destination.
+     * Deletes output destination configuration from your application configuration. Amazon Kinesis Analytics will no
+     * longer write data from the corresponding in-application stream to the external output destination.
      * </p>
      * <p>
-     * This operation requires permissions to perform the
-     * <code>kinesisanalytics:DeleteApplicationOutput</code> action.
+     * This operation requires permissions to perform the <code>kinesisanalytics:DeleteApplicationOutput</code> action.
      * </p>
      * 
      * @param deleteApplicationOutputRequest
-     * @return Result of the DeleteApplicationOutput operation returned by the
-     *         service.
+     * @return Result of the DeleteApplicationOutput operation returned by the service.
      * @throws ResourceNotFoundException
      *         Specified application can't be found.
      * @throws ResourceInUseException
      *         Application is not available for this operation.
      * @throws ConcurrentModificationException
-     *         Exception thrown as a result of concurrent modification to an
-     *         application. For example, two individuals attempting to edit the
-     *         same application at the same time.
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
      * @sample AmazonKinesisAnalytics.DeleteApplicationOutput
      */
-    DeleteApplicationOutputResult deleteApplicationOutput(
-            DeleteApplicationOutputRequest deleteApplicationOutputRequest);
+    DeleteApplicationOutputResult deleteApplicationOutput(DeleteApplicationOutputRequest deleteApplicationOutputRequest);
 
     /**
      * <p>
-     * Deletes a reference data source configuration from the specified
-     * application configuration.
+     * Deletes a reference data source configuration from the specified application configuration.
      * </p>
      * <p>
-     * If the application is running, Amazon Kinesis Analytics immediately
-     * removes the in-application table that you created using the
-     * <a>AddApplicationReferenceDataSource</a> operation.
+     * If the application is running, Amazon Kinesis Analytics immediately removes the in-application table that you
+     * created using the <a>AddApplicationReferenceDataSource</a> operation.
      * </p>
      * <p>
      * This operation requires permissions to perform the
-     * <code>kinesisanalytics.DeleteApplicationReferenceDataSource</code>
-     * action.
+     * <code>kinesisanalytics.DeleteApplicationReferenceDataSource</code> action.
      * </p>
      * 
      * @param deleteApplicationReferenceDataSourceRequest
-     * @return Result of the DeleteApplicationReferenceDataSource operation
-     *         returned by the service.
+     * @return Result of the DeleteApplicationReferenceDataSource operation returned by the service.
      * @throws ResourceNotFoundException
      *         Specified application can't be found.
      * @throws ResourceInUseException
@@ -371,9 +300,8 @@ public interface AmazonKinesisAnalytics {
      * @throws InvalidArgumentException
      *         Specified input parameter value is invalid.
      * @throws ConcurrentModificationException
-     *         Exception thrown as a result of concurrent modification to an
-     *         application. For example, two individuals attempting to edit the
-     *         same application at the same time.
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
      * @sample AmazonKinesisAnalytics.DeleteApplicationReferenceDataSource
      */
     DeleteApplicationReferenceDataSourceResult deleteApplicationReferenceDataSource(
@@ -381,117 +309,95 @@ public interface AmazonKinesisAnalytics {
 
     /**
      * <p>
-     * Returns information about a specific Amazon Kinesis Analytics
-     * application.
+     * Returns information about a specific Amazon Kinesis Analytics application.
      * </p>
      * <p>
-     * If you want to retrieve a list of all applications in your account, use
-     * the <a>ListApplications</a> operation.
+     * If you want to retrieve a list of all applications in your account, use the <a>ListApplications</a> operation.
      * </p>
      * <p>
-     * This operation requires permissions to perform the
-     * <code>kinesisanalytics:DescribeApplication</code> action. You can use
-     * <code>DescribeApplication</code> to get the current application
-     * versionId, which you need to call other operations such as
-     * <code>Update</code>.
+     * This operation requires permissions to perform the <code>kinesisanalytics:DescribeApplication</code> action. You
+     * can use <code>DescribeApplication</code> to get the current application versionId, which you need to call other
+     * operations such as <code>Update</code>.
      * </p>
      * 
      * @param describeApplicationRequest
-     * @return Result of the DescribeApplication operation returned by the
-     *         service.
+     * @return Result of the DescribeApplication operation returned by the service.
      * @throws ResourceNotFoundException
      *         Specified application can't be found.
      * @sample AmazonKinesisAnalytics.DescribeApplication
      */
-    DescribeApplicationResult describeApplication(
-            DescribeApplicationRequest describeApplicationRequest);
+    DescribeApplicationResult describeApplication(DescribeApplicationRequest describeApplicationRequest);
 
     /**
      * <p>
-     * Infers a schema by evaluating sample records on the specified streaming
-     * source (Amazon Kinesis stream or Amazon Kinesis Firehose delivery
-     * stream). In the response, the operation returns the inferred schema and
-     * also the sample records that the operation used to infer the schema.
+     * Infers a schema by evaluating sample records on the specified streaming source (Amazon Kinesis stream or Amazon
+     * Kinesis Firehose delivery stream). In the response, the operation returns the inferred schema and also the sample
+     * records that the operation used to infer the schema.
      * </p>
      * <p>
-     * You can use the inferred schema when configuring a streaming source for
-     * your application. For conceptual information, see <a href=
-     * "http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html"
-     * >Configuring Application Input</a>. Note that when you create an
-     * application using the Amazon Kinesis Analytics console, the console uses
-     * this operation to infer a schema and show it in the console user
-     * interface.
+     * You can use the inferred schema when configuring a streaming source for your application. For conceptual
+     * information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * Input</a>. Note that when you create an application using the Amazon Kinesis Analytics console, the console uses
+     * this operation to infer a schema and show it in the console user interface.
      * </p>
      * <p>
-     * This operation requires permissions to perform the
-     * <code>kinesisanalytics:DiscoverInputSchema</code> action.
+     * This operation requires permissions to perform the <code>kinesisanalytics:DiscoverInputSchema</code> action.
      * </p>
      * 
      * @param discoverInputSchemaRequest
-     * @return Result of the DiscoverInputSchema operation returned by the
-     *         service.
+     * @return Result of the DiscoverInputSchema operation returned by the service.
      * @throws InvalidArgumentException
      *         Specified input parameter value is invalid.
      * @throws UnableToDetectSchemaException
-     *         Data format is not valid, Kinesis Analytics is not able to detect
-     *         schema for the given streaming source.
+     *         Data format is not valid, Kinesis Analytics is not able to detect schema for the given streaming source.
      * @throws ResourceProvisionedThroughputExceededException
-     *         Discovery failed to get a record from the streaming source
-     *         because of the Kinesis Streams
+     *         Discovery failed to get a record from the streaming source because of the Kinesis Streams
      *         ProvisionedThroughputExceededException.
      * @sample AmazonKinesisAnalytics.DiscoverInputSchema
      */
-    DiscoverInputSchemaResult discoverInputSchema(
-            DiscoverInputSchemaRequest discoverInputSchemaRequest);
+    DiscoverInputSchemaResult discoverInputSchema(DiscoverInputSchemaRequest discoverInputSchemaRequest);
 
     /**
      * <p>
-     * Returns a list of Amazon Kinesis Analytics applications in your account.
-     * For each application, the response includes the application name, Amazon
-     * Resource Name (ARN), and status. If the response returns the
-     * <code>HasMoreApplications</code> value as true, you can send another
-     * request by adding the <code>ExclusiveStartApplicationName</code> in the
-     * request body, and set the value of this to the last application name from
-     * the previous response.
+     * Returns a list of Amazon Kinesis Analytics applications in your account. For each application, the response
+     * includes the application name, Amazon Resource Name (ARN), and status. If the response returns the
+     * <code>HasMoreApplications</code> value as true, you can send another request by adding the
+     * <code>ExclusiveStartApplicationName</code> in the request body, and set the value of this to the last application
+     * name from the previous response.
      * </p>
      * <p>
-     * If you want detailed information about a specific application, use
-     * <a>DescribeApplication</a>.
+     * If you want detailed information about a specific application, use <a>DescribeApplication</a>.
      * </p>
      * <p>
-     * This operation requires permissions to perform the
-     * <code>kinesisanalytics:ListApplications</code> action.
+     * This operation requires permissions to perform the <code>kinesisanalytics:ListApplications</code> action.
      * </p>
      * 
      * @param listApplicationsRequest
      * @return Result of the ListApplications operation returned by the service.
      * @sample AmazonKinesisAnalytics.ListApplications
      */
-    ListApplicationsResult listApplications(
-            ListApplicationsRequest listApplicationsRequest);
+    ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest);
 
     /**
      * <p>
-     * Starts the specified Amazon Kinesis Analytics application. After creating
-     * an application, you must exclusively call this operation to start your
-     * application.
+     * Starts the specified Amazon Kinesis Analytics application. After creating an application, you must exclusively
+     * call this operation to start your application.
      * </p>
      * <p>
-     * After the application starts, it begins consuming the input data,
-     * processes it, and writes the output to the configured destination.
+     * After the application starts, it begins consuming the input data, processes it, and writes the output to the
+     * configured destination.
      * </p>
      * <p>
-     * The application status must be <code>READY</code> for you to start an
-     * application. You can get the application status in the console or using
-     * the <a>DescribeApplication</a> operation.
+     * The application status must be <code>READY</code> for you to start an application. You can get the application
+     * status in the console or using the <a>DescribeApplication</a> operation.
      * </p>
      * <p>
-     * After you start the application, you can stop the application from
-     * processing the input by calling the <a>StopApplication</a> operation.
+     * After you start the application, you can stop the application from processing the input by calling the
+     * <a>StopApplication</a> operation.
      * </p>
      * <p>
-     * This operation requires permissions to perform the
-     * <code>kinesisanalytics:StartApplication</code> action.
+     * This operation requires permissions to perform the <code>kinesisanalytics:StartApplication</code> action.
      * </p>
      * 
      * @param startApplicationRequest
@@ -506,21 +412,17 @@ public interface AmazonKinesisAnalytics {
      *         User-provided application configuration is not valid.
      * @sample AmazonKinesisAnalytics.StartApplication
      */
-    StartApplicationResult startApplication(
-            StartApplicationRequest startApplicationRequest);
+    StartApplicationResult startApplication(StartApplicationRequest startApplicationRequest);
 
     /**
      * <p>
-     * Stops the application from processing input data. You can stop an
-     * application only if it is in the running state. You can use the
-     * <a>DescribeApplication</a> operation to find the application state. After
-     * the application is stopped, Amazon Kinesis Analytics stops reading data
-     * from the input, the application stops processing data, and there is no
-     * output written to the destination.
+     * Stops the application from processing input data. You can stop an application only if it is in the running state.
+     * You can use the <a>DescribeApplication</a> operation to find the application state. After the application is
+     * stopped, Amazon Kinesis Analytics stops reading data from the input, the application stops processing data, and
+     * there is no output written to the destination.
      * </p>
      * <p>
-     * This operation requires permissions to perform the
-     * <code>kinesisanalytics:StopApplication</code> action.
+     * This operation requires permissions to perform the <code>kinesisanalytics:StopApplication</code> action.
      * </p>
      * 
      * @param stopApplicationRequest
@@ -531,31 +433,25 @@ public interface AmazonKinesisAnalytics {
      *         Application is not available for this operation.
      * @sample AmazonKinesisAnalytics.StopApplication
      */
-    StopApplicationResult stopApplication(
-            StopApplicationRequest stopApplicationRequest);
+    StopApplicationResult stopApplication(StopApplicationRequest stopApplicationRequest);
 
     /**
      * <p>
-     * Updates an existing Kinesis Analytics application. Using this API, you
-     * can update application code, input configuration, and output
-     * configuration.
+     * Updates an existing Kinesis Analytics application. Using this API, you can update application code, input
+     * configuration, and output configuration.
      * </p>
      * <p>
-     * Note that Kinesis Analytics updates the
-     * <code>CurrentApplicationVersionId</code> each time you update your
+     * Note that Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your
      * application.
      * </p>
      * <p>
-     * This opeation requires permission for the
-     * <code>kinesisanalytics:UpdateApplication</code> action.
+     * This opeation requires permission for the <code>kinesisanalytics:UpdateApplication</code> action.
      * </p>
      * 
      * @param updateApplicationRequest
-     * @return Result of the UpdateApplication operation returned by the
-     *         service.
+     * @return Result of the UpdateApplication operation returned by the service.
      * @throws CodeValidationException
-     *         User-provided application code (query) is invalid. This can be a
-     *         simple syntax error.
+     *         User-provided application code (query) is invalid. This can be a simple syntax error.
      * @throws ResourceNotFoundException
      *         Specified application can't be found.
      * @throws ResourceInUseException
@@ -563,40 +459,32 @@ public interface AmazonKinesisAnalytics {
      * @throws InvalidArgumentException
      *         Specified input parameter value is invalid.
      * @throws ConcurrentModificationException
-     *         Exception thrown as a result of concurrent modification to an
-     *         application. For example, two individuals attempting to edit the
-     *         same application at the same time.
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
      * @sample AmazonKinesisAnalytics.UpdateApplication
      */
-    UpdateApplicationResult updateApplication(
-            UpdateApplicationRequest updateApplicationRequest);
+    UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest);
 
     /**
-     * Shuts down this client object, releasing any resources that might be held
-     * open. This is an optional method, and callers are not expected to call
-     * it, but can if they want to explicitly release any open resources. Once a
-     * client has been shutdown, it should not be used to make any more
-     * requests.
+     * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
+     * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
+     * has been shutdown, it should not be used to make any more requests.
      */
     void shutdown();
 
     /**
-     * Returns additional metadata for a previously executed successful request,
-     * typically used for debugging issues where a service isn't acting as
-     * expected. This data isn't considered part of the result data returned by
-     * an operation, so it's available through this separate, diagnostic
-     * interface.
+     * Returns additional metadata for a previously executed successful request, typically used for debugging issues
+     * where a service isn't acting as expected. This data isn't considered part of the result data returned by an
+     * operation, so it's available through this separate, diagnostic interface.
      * <p>
-     * Response metadata is only cached for a limited period of time, so if you
-     * need to access this extra diagnostic information for an executed request,
-     * you should use this method to retrieve it as soon as possible after
+     * Response metadata is only cached for a limited period of time, so if you need to access this extra diagnostic
+     * information for an executed request, you should use this method to retrieve it as soon as possible after
      * executing a request.
      *
      * @param request
      *        The originally executed request.
      *
-     * @return The response metadata for the specified request, or null if none
-     *         is available.
+     * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 

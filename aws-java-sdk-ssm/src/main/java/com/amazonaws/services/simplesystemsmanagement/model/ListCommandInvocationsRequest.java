@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListCommandInvocationsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -38,30 +34,27 @@ public class ListCommandInvocationsRequest extends
     private String instanceId;
     /**
      * <p>
-     * (Optional) The maximum number of items to return for this call. The call
-     * also returns a token that you can specify in a subsequent call to get the
-     * next set of results.
+     * (Optional) The maximum number of items to return for this call. The call also returns a token that you can
+     * specify in a subsequent call to get the next set of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * (Optional) The token for the next set of items to return. (You received
-     * this token from a previous call.)
+     * (Optional) The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * (Optional) One or more filters. Use a filter to return a more specific
-     * list of results.
+     * (Optional) One or more filters. Use a filter to return a more specific list of results.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CommandFilter> filters;
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and
-     * any command output. By default this is set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. By default this is
+     * set to False.
      * </p>
      */
     private Boolean details;
@@ -98,8 +91,7 @@ public class ListCommandInvocationsRequest extends
      * 
      * @param commandId
      *        (Optional) The invocations for a specific command ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCommandInvocationsRequest withCommandId(String commandId) {
@@ -113,8 +105,7 @@ public class ListCommandInvocationsRequest extends
      * </p>
      * 
      * @param instanceId
-     *        (Optional) The command execution details for a specific instance
-     *        ID.
+     *        (Optional) The command execution details for a specific instance ID.
      */
 
     public void setInstanceId(String instanceId) {
@@ -126,8 +117,7 @@ public class ListCommandInvocationsRequest extends
      * (Optional) The command execution details for a specific instance ID.
      * </p>
      * 
-     * @return (Optional) The command execution details for a specific instance
-     *         ID.
+     * @return (Optional) The command execution details for a specific instance ID.
      */
 
     public String getInstanceId() {
@@ -140,10 +130,8 @@ public class ListCommandInvocationsRequest extends
      * </p>
      * 
      * @param instanceId
-     *        (Optional) The command execution details for a specific instance
-     *        ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) The command execution details for a specific instance ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCommandInvocationsRequest withInstanceId(String instanceId) {
@@ -153,15 +141,13 @@ public class ListCommandInvocationsRequest extends
 
     /**
      * <p>
-     * (Optional) The maximum number of items to return for this call. The call
-     * also returns a token that you can specify in a subsequent call to get the
-     * next set of results.
+     * (Optional) The maximum number of items to return for this call. The call also returns a token that you can
+     * specify in a subsequent call to get the next set of results.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) The maximum number of items to return for this call.
-     *        The call also returns a token that you can specify in a subsequent
-     *        call to get the next set of results.
+     *        (Optional) The maximum number of items to return for this call. The call also returns a token that you can
+     *        specify in a subsequent call to get the next set of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -170,14 +156,12 @@ public class ListCommandInvocationsRequest extends
 
     /**
      * <p>
-     * (Optional) The maximum number of items to return for this call. The call
-     * also returns a token that you can specify in a subsequent call to get the
-     * next set of results.
+     * (Optional) The maximum number of items to return for this call. The call also returns a token that you can
+     * specify in a subsequent call to get the next set of results.
      * </p>
      * 
-     * @return (Optional) The maximum number of items to return for this call.
-     *         The call also returns a token that you can specify in a
-     *         subsequent call to get the next set of results.
+     * @return (Optional) The maximum number of items to return for this call. The call also returns a token that you
+     *         can specify in a subsequent call to get the next set of results.
      */
 
     public Integer getMaxResults() {
@@ -186,17 +170,14 @@ public class ListCommandInvocationsRequest extends
 
     /**
      * <p>
-     * (Optional) The maximum number of items to return for this call. The call
-     * also returns a token that you can specify in a subsequent call to get the
-     * next set of results.
+     * (Optional) The maximum number of items to return for this call. The call also returns a token that you can
+     * specify in a subsequent call to get the next set of results.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) The maximum number of items to return for this call.
-     *        The call also returns a token that you can specify in a subsequent
-     *        call to get the next set of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) The maximum number of items to return for this call. The call also returns a token that you can
+     *        specify in a subsequent call to get the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCommandInvocationsRequest withMaxResults(Integer maxResults) {
@@ -206,13 +187,11 @@ public class ListCommandInvocationsRequest extends
 
     /**
      * <p>
-     * (Optional) The token for the next set of items to return. (You received
-     * this token from a previous call.)
+     * (Optional) The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        (Optional) The token for the next set of items to return. (You
-     *        received this token from a previous call.)
+     *        (Optional) The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -221,12 +200,10 @@ public class ListCommandInvocationsRequest extends
 
     /**
      * <p>
-     * (Optional) The token for the next set of items to return. (You received
-     * this token from a previous call.)
+     * (Optional) The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
-     * @return (Optional) The token for the next set of items to return. (You
-     *         received this token from a previous call.)
+     * @return (Optional) The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public String getNextToken() {
@@ -235,15 +212,12 @@ public class ListCommandInvocationsRequest extends
 
     /**
      * <p>
-     * (Optional) The token for the next set of items to return. (You received
-     * this token from a previous call.)
+     * (Optional) The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        (Optional) The token for the next set of items to return. (You
-     *        received this token from a previous call.)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) The token for the next set of items to return. (You received this token from a previous call.)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCommandInvocationsRequest withNextToken(String nextToken) {
@@ -253,12 +227,10 @@ public class ListCommandInvocationsRequest extends
 
     /**
      * <p>
-     * (Optional) One or more filters. Use a filter to return a more specific
-     * list of results.
+     * (Optional) One or more filters. Use a filter to return a more specific list of results.
      * </p>
      * 
-     * @return (Optional) One or more filters. Use a filter to return a more
-     *         specific list of results.
+     * @return (Optional) One or more filters. Use a filter to return a more specific list of results.
      */
 
     public java.util.List<CommandFilter> getFilters() {
@@ -270,13 +242,11 @@ public class ListCommandInvocationsRequest extends
 
     /**
      * <p>
-     * (Optional) One or more filters. Use a filter to return a more specific
-     * list of results.
+     * (Optional) One or more filters. Use a filter to return a more specific list of results.
      * </p>
      * 
      * @param filters
-     *        (Optional) One or more filters. Use a filter to return a more
-     *        specific list of results.
+     *        (Optional) One or more filters. Use a filter to return a more specific list of results.
      */
 
     public void setFilters(java.util.Collection<CommandFilter> filters) {
@@ -285,33 +255,27 @@ public class ListCommandInvocationsRequest extends
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<CommandFilter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<CommandFilter>(filters);
     }
 
     /**
      * <p>
-     * (Optional) One or more filters. Use a filter to return a more specific
-     * list of results.
+     * (Optional) One or more filters. Use a filter to return a more specific list of results.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
-     *        (Optional) One or more filters. Use a filter to return a more
-     *        specific list of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) One or more filters. Use a filter to return a more specific list of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCommandInvocationsRequest withFilters(CommandFilter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<CommandFilter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<CommandFilter>(filters.length));
         }
         for (CommandFilter ele : filters) {
             this.filters.add(ele);
@@ -321,33 +285,28 @@ public class ListCommandInvocationsRequest extends
 
     /**
      * <p>
-     * (Optional) One or more filters. Use a filter to return a more specific
-     * list of results.
+     * (Optional) One or more filters. Use a filter to return a more specific list of results.
      * </p>
      * 
      * @param filters
-     *        (Optional) One or more filters. Use a filter to return a more
-     *        specific list of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) One or more filters. Use a filter to return a more specific list of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListCommandInvocationsRequest withFilters(
-            java.util.Collection<CommandFilter> filters) {
+    public ListCommandInvocationsRequest withFilters(java.util.Collection<CommandFilter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and
-     * any command output. By default this is set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. By default this is
+     * set to False.
      * </p>
      * 
      * @param details
-     *        (Optional) If set this returns the response of the command
-     *        executions and any command output. By default this is set to
-     *        False.
+     *        (Optional) If set this returns the response of the command executions and any command output. By default
+     *        this is set to False.
      */
 
     public void setDetails(Boolean details) {
@@ -356,13 +315,12 @@ public class ListCommandInvocationsRequest extends
 
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and
-     * any command output. By default this is set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. By default this is
+     * set to False.
      * </p>
      * 
-     * @return (Optional) If set this returns the response of the command
-     *         executions and any command output. By default this is set to
-     *         False.
+     * @return (Optional) If set this returns the response of the command executions and any command output. By default
+     *         this is set to False.
      */
 
     public Boolean getDetails() {
@@ -371,16 +329,14 @@ public class ListCommandInvocationsRequest extends
 
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and
-     * any command output. By default this is set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. By default this is
+     * set to False.
      * </p>
      * 
      * @param details
-     *        (Optional) If set this returns the response of the command
-     *        executions and any command output. By default this is set to
-     *        False.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) If set this returns the response of the command executions and any command output. By default
+     *        this is set to False.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCommandInvocationsRequest withDetails(Boolean details) {
@@ -390,13 +346,12 @@ public class ListCommandInvocationsRequest extends
 
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and
-     * any command output. By default this is set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. By default this is
+     * set to False.
      * </p>
      * 
-     * @return (Optional) If set this returns the response of the command
-     *         executions and any command output. By default this is set to
-     *         False.
+     * @return (Optional) If set this returns the response of the command executions and any command output. By default
+     *         this is set to False.
      */
 
     public Boolean isDetails() {
@@ -404,8 +359,7 @@ public class ListCommandInvocationsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -443,33 +397,27 @@ public class ListCommandInvocationsRequest extends
         ListCommandInvocationsRequest other = (ListCommandInvocationsRequest) obj;
         if (other.getCommandId() == null ^ this.getCommandId() == null)
             return false;
-        if (other.getCommandId() != null
-                && other.getCommandId().equals(this.getCommandId()) == false)
+        if (other.getCommandId() != null && other.getCommandId().equals(this.getCommandId()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         if (other.getDetails() == null ^ this.getDetails() == null)
             return false;
-        if (other.getDetails() != null
-                && other.getDetails().equals(this.getDetails()) == false)
+        if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
             return false;
         return true;
     }
@@ -479,18 +427,12 @@ public class ListCommandInvocationsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCommandId() == null) ? 0 : getCommandId().hashCode());
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime * hashCode
-                + ((getDetails() == null) ? 0 : getDetails().hashCode());
+        hashCode = prime * hashCode + ((getCommandId() == null) ? 0 : getCommandId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -92,8 +90,7 @@ public class RouteTable implements Serializable, Cloneable {
      * 
      * @param routeTableId
      *        The ID of the route table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RouteTable withRouteTableId(String routeTableId) {
@@ -133,8 +130,7 @@ public class RouteTable implements Serializable, Cloneable {
      * 
      * @param vpcId
      *        The ID of the VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RouteTable withVpcId(String vpcId) {
@@ -180,22 +176,19 @@ public class RouteTable implements Serializable, Cloneable {
      * The routes in the route table.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRoutes(java.util.Collection)} or
-     * {@link #withRoutes(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRoutes(java.util.Collection)} or {@link #withRoutes(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param routes
      *        The routes in the route table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RouteTable withRoutes(Route... routes) {
         if (this.routes == null) {
-            setRoutes(new com.amazonaws.internal.SdkInternalList<Route>(
-                    routes.length));
+            setRoutes(new com.amazonaws.internal.SdkInternalList<Route>(routes.length));
         }
         for (Route ele : routes) {
             this.routes.add(ele);
@@ -210,8 +203,7 @@ public class RouteTable implements Serializable, Cloneable {
      * 
      * @param routes
      *        The routes in the route table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RouteTable withRoutes(java.util.Collection<Route> routes) {
@@ -243,15 +235,13 @@ public class RouteTable implements Serializable, Cloneable {
      *        The associations between the route table and one or more subnets.
      */
 
-    public void setAssociations(
-            java.util.Collection<RouteTableAssociation> associations) {
+    public void setAssociations(java.util.Collection<RouteTableAssociation> associations) {
         if (associations == null) {
             this.associations = null;
             return;
         }
 
-        this.associations = new com.amazonaws.internal.SdkInternalList<RouteTableAssociation>(
-                associations);
+        this.associations = new com.amazonaws.internal.SdkInternalList<RouteTableAssociation>(associations);
     }
 
     /**
@@ -259,22 +249,19 @@ public class RouteTable implements Serializable, Cloneable {
      * The associations between the route table and one or more subnets.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAssociations(java.util.Collection)} or
-     * {@link #withAssociations(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssociations(java.util.Collection)} or {@link #withAssociations(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param associations
      *        The associations between the route table and one or more subnets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RouteTable withAssociations(RouteTableAssociation... associations) {
         if (this.associations == null) {
-            setAssociations(new com.amazonaws.internal.SdkInternalList<RouteTableAssociation>(
-                    associations.length));
+            setAssociations(new com.amazonaws.internal.SdkInternalList<RouteTableAssociation>(associations.length));
         }
         for (RouteTableAssociation ele : associations) {
             this.associations.add(ele);
@@ -289,12 +276,10 @@ public class RouteTable implements Serializable, Cloneable {
      * 
      * @param associations
      *        The associations between the route table and one or more subnets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RouteTable withAssociations(
-            java.util.Collection<RouteTableAssociation> associations) {
+    public RouteTable withAssociations(java.util.Collection<RouteTableAssociation> associations) {
         setAssociations(associations);
         return this;
     }
@@ -337,16 +322,14 @@ public class RouteTable implements Serializable, Cloneable {
      * Any tags assigned to the route table.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        Any tags assigned to the route table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RouteTable withTags(Tag... tags) {
@@ -366,8 +349,7 @@ public class RouteTable implements Serializable, Cloneable {
      * 
      * @param tags
      *        Any tags assigned to the route table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RouteTable withTags(java.util.Collection<Tag> tags) {
@@ -399,15 +381,13 @@ public class RouteTable implements Serializable, Cloneable {
      *        Any virtual private gateway (VGW) propagating routes.
      */
 
-    public void setPropagatingVgws(
-            java.util.Collection<PropagatingVgw> propagatingVgws) {
+    public void setPropagatingVgws(java.util.Collection<PropagatingVgw> propagatingVgws) {
         if (propagatingVgws == null) {
             this.propagatingVgws = null;
             return;
         }
 
-        this.propagatingVgws = new com.amazonaws.internal.SdkInternalList<PropagatingVgw>(
-                propagatingVgws);
+        this.propagatingVgws = new com.amazonaws.internal.SdkInternalList<PropagatingVgw>(propagatingVgws);
     }
 
     /**
@@ -415,22 +395,19 @@ public class RouteTable implements Serializable, Cloneable {
      * Any virtual private gateway (VGW) propagating routes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPropagatingVgws(java.util.Collection)} or
-     * {@link #withPropagatingVgws(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPropagatingVgws(java.util.Collection)} or {@link #withPropagatingVgws(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param propagatingVgws
      *        Any virtual private gateway (VGW) propagating routes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RouteTable withPropagatingVgws(PropagatingVgw... propagatingVgws) {
         if (this.propagatingVgws == null) {
-            setPropagatingVgws(new com.amazonaws.internal.SdkInternalList<PropagatingVgw>(
-                    propagatingVgws.length));
+            setPropagatingVgws(new com.amazonaws.internal.SdkInternalList<PropagatingVgw>(propagatingVgws.length));
         }
         for (PropagatingVgw ele : propagatingVgws) {
             this.propagatingVgws.add(ele);
@@ -445,19 +422,16 @@ public class RouteTable implements Serializable, Cloneable {
      * 
      * @param propagatingVgws
      *        Any virtual private gateway (VGW) propagating routes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RouteTable withPropagatingVgws(
-            java.util.Collection<PropagatingVgw> propagatingVgws) {
+    public RouteTable withPropagatingVgws(java.util.Collection<PropagatingVgw> propagatingVgws) {
         setPropagatingVgws(propagatingVgws);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -495,34 +469,27 @@ public class RouteTable implements Serializable, Cloneable {
         RouteTable other = (RouteTable) obj;
         if (other.getRouteTableId() == null ^ this.getRouteTableId() == null)
             return false;
-        if (other.getRouteTableId() != null
-                && other.getRouteTableId().equals(this.getRouteTableId()) == false)
+        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false)
             return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         if (other.getRoutes() == null ^ this.getRoutes() == null)
             return false;
-        if (other.getRoutes() != null
-                && other.getRoutes().equals(this.getRoutes()) == false)
+        if (other.getRoutes() != null && other.getRoutes().equals(this.getRoutes()) == false)
             return false;
         if (other.getAssociations() == null ^ this.getAssociations() == null)
             return false;
-        if (other.getAssociations() != null
-                && other.getAssociations().equals(this.getAssociations()) == false)
+        if (other.getAssociations() != null && other.getAssociations().equals(this.getAssociations()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getPropagatingVgws() == null
-                ^ this.getPropagatingVgws() == null)
+        if (other.getPropagatingVgws() == null ^ this.getPropagatingVgws() == null)
             return false;
-        if (other.getPropagatingVgws() != null
-                && other.getPropagatingVgws().equals(this.getPropagatingVgws()) == false)
+        if (other.getPropagatingVgws() != null && other.getPropagatingVgws().equals(this.getPropagatingVgws()) == false)
             return false;
         return true;
     }
@@ -532,24 +499,12 @@ public class RouteTable implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRouteTableId() == null) ? 0 : getRouteTableId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode
-                + ((getRoutes() == null) ? 0 : getRoutes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAssociations() == null) ? 0 : getAssociations()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPropagatingVgws() == null) ? 0 : getPropagatingVgws()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getRoutes() == null) ? 0 : getRoutes().hashCode());
+        hashCode = prime * hashCode + ((getAssociations() == null) ? 0 : getAssociations().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPropagatingVgws() == null) ? 0 : getPropagatingVgws().hashCode());
         return hashCode;
     }
 
@@ -558,9 +513,7 @@ public class RouteTable implements Serializable, Cloneable {
         try {
             return (RouteTable) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

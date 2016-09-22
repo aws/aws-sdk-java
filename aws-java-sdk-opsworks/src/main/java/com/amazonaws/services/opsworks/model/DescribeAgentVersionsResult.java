@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -21,29 +19,24 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeAgentVersions</code> request.
  * </p>
  */
-public class DescribeAgentVersionsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeAgentVersionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The agent versions for the specified stack or configuration manager. Note
-     * that this value is the complete version number, not the abbreviated
-     * number used by the console.
+     * The agent versions for the specified stack or configuration manager. Note that this value is the complete version
+     * number, not the abbreviated number used by the console.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AgentVersion> agentVersions;
 
     /**
      * <p>
-     * The agent versions for the specified stack or configuration manager. Note
-     * that this value is the complete version number, not the abbreviated
-     * number used by the console.
+     * The agent versions for the specified stack or configuration manager. Note that this value is the complete version
+     * number, not the abbreviated number used by the console.
      * </p>
      * 
-     * @return The agent versions for the specified stack or configuration
-     *         manager. Note that this value is the complete version number, not
-     *         the abbreviated number used by the console.
+     * @return The agent versions for the specified stack or configuration manager. Note that this value is the complete
+     *         version number, not the abbreviated number used by the console.
      */
 
     public java.util.List<AgentVersion> getAgentVersions() {
@@ -55,54 +48,44 @@ public class DescribeAgentVersionsResult extends
 
     /**
      * <p>
-     * The agent versions for the specified stack or configuration manager. Note
-     * that this value is the complete version number, not the abbreviated
-     * number used by the console.
+     * The agent versions for the specified stack or configuration manager. Note that this value is the complete version
+     * number, not the abbreviated number used by the console.
      * </p>
      * 
      * @param agentVersions
-     *        The agent versions for the specified stack or configuration
-     *        manager. Note that this value is the complete version number, not
-     *        the abbreviated number used by the console.
+     *        The agent versions for the specified stack or configuration manager. Note that this value is the complete
+     *        version number, not the abbreviated number used by the console.
      */
 
-    public void setAgentVersions(
-            java.util.Collection<AgentVersion> agentVersions) {
+    public void setAgentVersions(java.util.Collection<AgentVersion> agentVersions) {
         if (agentVersions == null) {
             this.agentVersions = null;
             return;
         }
 
-        this.agentVersions = new com.amazonaws.internal.SdkInternalList<AgentVersion>(
-                agentVersions);
+        this.agentVersions = new com.amazonaws.internal.SdkInternalList<AgentVersion>(agentVersions);
     }
 
     /**
      * <p>
-     * The agent versions for the specified stack or configuration manager. Note
-     * that this value is the complete version number, not the abbreviated
-     * number used by the console.
+     * The agent versions for the specified stack or configuration manager. Note that this value is the complete version
+     * number, not the abbreviated number used by the console.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAgentVersions(java.util.Collection)} or
-     * {@link #withAgentVersions(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAgentVersions(java.util.Collection)} or {@link #withAgentVersions(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param agentVersions
-     *        The agent versions for the specified stack or configuration
-     *        manager. Note that this value is the complete version number, not
-     *        the abbreviated number used by the console.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The agent versions for the specified stack or configuration manager. Note that this value is the complete
+     *        version number, not the abbreviated number used by the console.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAgentVersionsResult withAgentVersions(
-            AgentVersion... agentVersions) {
+    public DescribeAgentVersionsResult withAgentVersions(AgentVersion... agentVersions) {
         if (this.agentVersions == null) {
-            setAgentVersions(new com.amazonaws.internal.SdkInternalList<AgentVersion>(
-                    agentVersions.length));
+            setAgentVersions(new com.amazonaws.internal.SdkInternalList<AgentVersion>(agentVersions.length));
         }
         for (AgentVersion ele : agentVersions) {
             this.agentVersions.add(ele);
@@ -112,28 +95,23 @@ public class DescribeAgentVersionsResult extends
 
     /**
      * <p>
-     * The agent versions for the specified stack or configuration manager. Note
-     * that this value is the complete version number, not the abbreviated
-     * number used by the console.
+     * The agent versions for the specified stack or configuration manager. Note that this value is the complete version
+     * number, not the abbreviated number used by the console.
      * </p>
      * 
      * @param agentVersions
-     *        The agent versions for the specified stack or configuration
-     *        manager. Note that this value is the complete version number, not
-     *        the abbreviated number used by the console.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The agent versions for the specified stack or configuration manager. Note that this value is the complete
+     *        version number, not the abbreviated number used by the console.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAgentVersionsResult withAgentVersions(
-            java.util.Collection<AgentVersion> agentVersions) {
+    public DescribeAgentVersionsResult withAgentVersions(java.util.Collection<AgentVersion> agentVersions) {
         setAgentVersions(agentVersions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -161,8 +139,7 @@ public class DescribeAgentVersionsResult extends
         DescribeAgentVersionsResult other = (DescribeAgentVersionsResult) obj;
         if (other.getAgentVersions() == null ^ this.getAgentVersions() == null)
             return false;
-        if (other.getAgentVersions() != null
-                && other.getAgentVersions().equals(this.getAgentVersions()) == false)
+        if (other.getAgentVersions() != null && other.getAgentVersions().equals(this.getAgentVersions()) == false)
             return false;
         return true;
     }
@@ -172,10 +149,7 @@ public class DescribeAgentVersionsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAgentVersions() == null) ? 0 : getAgentVersions()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAgentVersions() == null) ? 0 : getAgentVersions().hashCode());
         return hashCode;
     }
 
@@ -184,9 +158,7 @@ public class DescribeAgentVersionsResult extends
         try {
             return (DescribeAgentVersionsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

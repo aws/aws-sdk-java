@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model.transform;
 
@@ -34,59 +32,43 @@ public class EventSourceMappingConfigurationJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(
-            EventSourceMappingConfiguration eventSourceMappingConfiguration,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(EventSourceMappingConfiguration eventSourceMappingConfiguration, StructuredJsonGenerator jsonGenerator) {
 
         if (eventSourceMappingConfiguration == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (eventSourceMappingConfiguration.getUUID() != null) {
-                jsonGenerator.writeFieldName("UUID").writeValue(
-                        eventSourceMappingConfiguration.getUUID());
+                jsonGenerator.writeFieldName("UUID").writeValue(eventSourceMappingConfiguration.getUUID());
             }
             if (eventSourceMappingConfiguration.getBatchSize() != null) {
-                jsonGenerator.writeFieldName("BatchSize").writeValue(
-                        eventSourceMappingConfiguration.getBatchSize());
+                jsonGenerator.writeFieldName("BatchSize").writeValue(eventSourceMappingConfiguration.getBatchSize());
             }
             if (eventSourceMappingConfiguration.getEventSourceArn() != null) {
-                jsonGenerator.writeFieldName("EventSourceArn").writeValue(
-                        eventSourceMappingConfiguration.getEventSourceArn());
+                jsonGenerator.writeFieldName("EventSourceArn").writeValue(eventSourceMappingConfiguration.getEventSourceArn());
             }
             if (eventSourceMappingConfiguration.getFunctionArn() != null) {
-                jsonGenerator.writeFieldName("FunctionArn").writeValue(
-                        eventSourceMappingConfiguration.getFunctionArn());
+                jsonGenerator.writeFieldName("FunctionArn").writeValue(eventSourceMappingConfiguration.getFunctionArn());
             }
             if (eventSourceMappingConfiguration.getLastModified() != null) {
-                jsonGenerator.writeFieldName("LastModified").writeValue(
-                        eventSourceMappingConfiguration.getLastModified());
+                jsonGenerator.writeFieldName("LastModified").writeValue(eventSourceMappingConfiguration.getLastModified());
             }
             if (eventSourceMappingConfiguration.getLastProcessingResult() != null) {
-                jsonGenerator.writeFieldName("LastProcessingResult")
-                        .writeValue(
-                                eventSourceMappingConfiguration
-                                        .getLastProcessingResult());
+                jsonGenerator.writeFieldName("LastProcessingResult").writeValue(eventSourceMappingConfiguration.getLastProcessingResult());
             }
             if (eventSourceMappingConfiguration.getState() != null) {
-                jsonGenerator.writeFieldName("State").writeValue(
-                        eventSourceMappingConfiguration.getState());
+                jsonGenerator.writeFieldName("State").writeValue(eventSourceMappingConfiguration.getState());
             }
             if (eventSourceMappingConfiguration.getStateTransitionReason() != null) {
-                jsonGenerator.writeFieldName("StateTransitionReason")
-                        .writeValue(
-                                eventSourceMappingConfiguration
-                                        .getStateTransitionReason());
+                jsonGenerator.writeFieldName("StateTransitionReason").writeValue(eventSourceMappingConfiguration.getStateTransitionReason());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

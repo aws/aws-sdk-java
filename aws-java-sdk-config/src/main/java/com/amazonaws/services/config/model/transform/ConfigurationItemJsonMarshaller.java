@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model.transform;
 
@@ -34,75 +32,53 @@ public class ConfigurationItemJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ConfigurationItem configurationItem,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(ConfigurationItem configurationItem, StructuredJsonGenerator jsonGenerator) {
 
         if (configurationItem == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (configurationItem.getVersion() != null) {
-                jsonGenerator.writeFieldName("version").writeValue(
-                        configurationItem.getVersion());
+                jsonGenerator.writeFieldName("version").writeValue(configurationItem.getVersion());
             }
             if (configurationItem.getAccountId() != null) {
-                jsonGenerator.writeFieldName("accountId").writeValue(
-                        configurationItem.getAccountId());
+                jsonGenerator.writeFieldName("accountId").writeValue(configurationItem.getAccountId());
             }
             if (configurationItem.getConfigurationItemCaptureTime() != null) {
-                jsonGenerator.writeFieldName("configurationItemCaptureTime")
-                        .writeValue(
-                                configurationItem
-                                        .getConfigurationItemCaptureTime());
+                jsonGenerator.writeFieldName("configurationItemCaptureTime").writeValue(configurationItem.getConfigurationItemCaptureTime());
             }
             if (configurationItem.getConfigurationItemStatus() != null) {
-                jsonGenerator.writeFieldName("configurationItemStatus")
-                        .writeValue(
-                                configurationItem.getConfigurationItemStatus());
+                jsonGenerator.writeFieldName("configurationItemStatus").writeValue(configurationItem.getConfigurationItemStatus());
             }
             if (configurationItem.getConfigurationStateId() != null) {
-                jsonGenerator
-                        .writeFieldName("configurationStateId")
-                        .writeValue(configurationItem.getConfigurationStateId());
+                jsonGenerator.writeFieldName("configurationStateId").writeValue(configurationItem.getConfigurationStateId());
             }
             if (configurationItem.getConfigurationItemMD5Hash() != null) {
-                jsonGenerator
-                        .writeFieldName("configurationItemMD5Hash")
-                        .writeValue(
-                                configurationItem.getConfigurationItemMD5Hash());
+                jsonGenerator.writeFieldName("configurationItemMD5Hash").writeValue(configurationItem.getConfigurationItemMD5Hash());
             }
             if (configurationItem.getArn() != null) {
-                jsonGenerator.writeFieldName("arn").writeValue(
-                        configurationItem.getArn());
+                jsonGenerator.writeFieldName("arn").writeValue(configurationItem.getArn());
             }
             if (configurationItem.getResourceType() != null) {
-                jsonGenerator.writeFieldName("resourceType").writeValue(
-                        configurationItem.getResourceType());
+                jsonGenerator.writeFieldName("resourceType").writeValue(configurationItem.getResourceType());
             }
             if (configurationItem.getResourceId() != null) {
-                jsonGenerator.writeFieldName("resourceId").writeValue(
-                        configurationItem.getResourceId());
+                jsonGenerator.writeFieldName("resourceId").writeValue(configurationItem.getResourceId());
             }
             if (configurationItem.getResourceName() != null) {
-                jsonGenerator.writeFieldName("resourceName").writeValue(
-                        configurationItem.getResourceName());
+                jsonGenerator.writeFieldName("resourceName").writeValue(configurationItem.getResourceName());
             }
             if (configurationItem.getAwsRegion() != null) {
-                jsonGenerator.writeFieldName("awsRegion").writeValue(
-                        configurationItem.getAwsRegion());
+                jsonGenerator.writeFieldName("awsRegion").writeValue(configurationItem.getAwsRegion());
             }
             if (configurationItem.getAvailabilityZone() != null) {
-                jsonGenerator.writeFieldName("availabilityZone").writeValue(
-                        configurationItem.getAvailabilityZone());
+                jsonGenerator.writeFieldName("availabilityZone").writeValue(configurationItem.getAvailabilityZone());
             }
             if (configurationItem.getResourceCreationTime() != null) {
-                jsonGenerator
-                        .writeFieldName("resourceCreationTime")
-                        .writeValue(configurationItem.getResourceCreationTime());
+                jsonGenerator.writeFieldName("resourceCreationTime").writeValue(configurationItem.getResourceCreationTime());
             }
 
             java.util.Map<String, String> tagsMap = configurationItem.getTags();
@@ -110,8 +86,7 @@ public class ConfigurationItemJsonMarshaller {
                 jsonGenerator.writeFieldName("tags");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> tagsMapValue : tagsMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> tagsMapValue : tagsMap.entrySet()) {
                     if (tagsMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(tagsMapValue.getKey());
 
@@ -123,8 +98,7 @@ public class ConfigurationItemJsonMarshaller {
 
             com.amazonaws.internal.SdkInternalList<String> relatedEventsList = (com.amazonaws.internal.SdkInternalList<String>) configurationItem
                     .getRelatedEvents();
-            if (!relatedEventsList.isEmpty()
-                    || !relatedEventsList.isAutoConstruct()) {
+            if (!relatedEventsList.isEmpty() || !relatedEventsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("relatedEvents");
                 jsonGenerator.writeStartArray();
                 for (String relatedEventsListValue : relatedEventsList) {
@@ -137,40 +111,31 @@ public class ConfigurationItemJsonMarshaller {
 
             com.amazonaws.internal.SdkInternalList<Relationship> relationshipsList = (com.amazonaws.internal.SdkInternalList<Relationship>) configurationItem
                     .getRelationships();
-            if (!relationshipsList.isEmpty()
-                    || !relationshipsList.isAutoConstruct()) {
+            if (!relationshipsList.isEmpty() || !relationshipsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("relationships");
                 jsonGenerator.writeStartArray();
                 for (Relationship relationshipsListValue : relationshipsList) {
                     if (relationshipsListValue != null) {
 
-                        RelationshipJsonMarshaller.getInstance().marshall(
-                                relationshipsListValue, jsonGenerator);
+                        RelationshipJsonMarshaller.getInstance().marshall(relationshipsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (configurationItem.getConfiguration() != null) {
-                jsonGenerator.writeFieldName("configuration").writeValue(
-                        configurationItem.getConfiguration());
+                jsonGenerator.writeFieldName("configuration").writeValue(configurationItem.getConfiguration());
             }
 
-            java.util.Map<String, String> supplementaryConfigurationMap = configurationItem
-                    .getSupplementaryConfiguration();
+            java.util.Map<String, String> supplementaryConfigurationMap = configurationItem.getSupplementaryConfiguration();
             if (supplementaryConfigurationMap != null) {
                 jsonGenerator.writeFieldName("supplementaryConfiguration");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> supplementaryConfigurationMapValue : supplementaryConfigurationMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> supplementaryConfigurationMapValue : supplementaryConfigurationMap.entrySet()) {
                     if (supplementaryConfigurationMapValue.getValue() != null) {
-                        jsonGenerator
-                                .writeFieldName(supplementaryConfigurationMapValue
-                                        .getKey());
+                        jsonGenerator.writeFieldName(supplementaryConfigurationMapValue.getKey());
 
-                        jsonGenerator
-                                .writeValue(supplementaryConfigurationMapValue
-                                        .getValue());
+                        jsonGenerator.writeValue(supplementaryConfigurationMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
@@ -178,8 +143,7 @@ public class ConfigurationItemJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

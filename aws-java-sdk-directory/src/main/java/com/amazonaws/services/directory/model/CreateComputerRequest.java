@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>CreateComputer</a> operation.
  * </p>
  */
-public class CreateComputerRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateComputerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -40,22 +36,20 @@ public class CreateComputerRequest extends
     private String computerName;
     /**
      * <p>
-     * A one-time password that is used to join the computer to the directory.
-     * You should generate a random, strong password to use for this parameter.
+     * A one-time password that is used to join the computer to the directory. You should generate a random, strong
+     * password to use for this parameter.
      * </p>
      */
     private String password;
     /**
      * <p>
-     * The fully-qualified distinguished name of the organizational unit to
-     * place the computer account in.
+     * The fully-qualified distinguished name of the organizational unit to place the computer account in.
      * </p>
      */
     private String organizationalUnitDistinguishedName;
     /**
      * <p>
-     * An array of <a>Attribute</a> objects that contain any LDAP attributes to
-     * apply to the computer account.
+     * An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the computer account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attribute> computerAttributes;
@@ -66,8 +60,7 @@ public class CreateComputerRequest extends
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory in which to create the computer
-     *        account.
+     *        The identifier of the directory in which to create the computer account.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -79,8 +72,7 @@ public class CreateComputerRequest extends
      * The identifier of the directory in which to create the computer account.
      * </p>
      * 
-     * @return The identifier of the directory in which to create the computer
-     *         account.
+     * @return The identifier of the directory in which to create the computer account.
      */
 
     public String getDirectoryId() {
@@ -93,10 +85,8 @@ public class CreateComputerRequest extends
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory in which to create the computer
-     *        account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the directory in which to create the computer account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateComputerRequest withDirectoryId(String directoryId) {
@@ -136,8 +126,7 @@ public class CreateComputerRequest extends
      * 
      * @param computerName
      *        The name of the computer account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateComputerRequest withComputerName(String computerName) {
@@ -147,14 +136,13 @@ public class CreateComputerRequest extends
 
     /**
      * <p>
-     * A one-time password that is used to join the computer to the directory.
-     * You should generate a random, strong password to use for this parameter.
+     * A one-time password that is used to join the computer to the directory. You should generate a random, strong
+     * password to use for this parameter.
      * </p>
      * 
      * @param password
-     *        A one-time password that is used to join the computer to the
-     *        directory. You should generate a random, strong password to use
-     *        for this parameter.
+     *        A one-time password that is used to join the computer to the directory. You should generate a random,
+     *        strong password to use for this parameter.
      */
 
     public void setPassword(String password) {
@@ -163,13 +151,12 @@ public class CreateComputerRequest extends
 
     /**
      * <p>
-     * A one-time password that is used to join the computer to the directory.
-     * You should generate a random, strong password to use for this parameter.
+     * A one-time password that is used to join the computer to the directory. You should generate a random, strong
+     * password to use for this parameter.
      * </p>
      * 
-     * @return A one-time password that is used to join the computer to the
-     *         directory. You should generate a random, strong password to use
-     *         for this parameter.
+     * @return A one-time password that is used to join the computer to the directory. You should generate a random,
+     *         strong password to use for this parameter.
      */
 
     public String getPassword() {
@@ -178,16 +165,14 @@ public class CreateComputerRequest extends
 
     /**
      * <p>
-     * A one-time password that is used to join the computer to the directory.
-     * You should generate a random, strong password to use for this parameter.
+     * A one-time password that is used to join the computer to the directory. You should generate a random, strong
+     * password to use for this parameter.
      * </p>
      * 
      * @param password
-     *        A one-time password that is used to join the computer to the
-     *        directory. You should generate a random, strong password to use
-     *        for this parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A one-time password that is used to join the computer to the directory. You should generate a random,
+     *        strong password to use for this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateComputerRequest withPassword(String password) {
@@ -197,28 +182,23 @@ public class CreateComputerRequest extends
 
     /**
      * <p>
-     * The fully-qualified distinguished name of the organizational unit to
-     * place the computer account in.
+     * The fully-qualified distinguished name of the organizational unit to place the computer account in.
      * </p>
      * 
      * @param organizationalUnitDistinguishedName
-     *        The fully-qualified distinguished name of the organizational unit
-     *        to place the computer account in.
+     *        The fully-qualified distinguished name of the organizational unit to place the computer account in.
      */
 
-    public void setOrganizationalUnitDistinguishedName(
-            String organizationalUnitDistinguishedName) {
+    public void setOrganizationalUnitDistinguishedName(String organizationalUnitDistinguishedName) {
         this.organizationalUnitDistinguishedName = organizationalUnitDistinguishedName;
     }
 
     /**
      * <p>
-     * The fully-qualified distinguished name of the organizational unit to
-     * place the computer account in.
+     * The fully-qualified distinguished name of the organizational unit to place the computer account in.
      * </p>
      * 
-     * @return The fully-qualified distinguished name of the organizational unit
-     *         to place the computer account in.
+     * @return The fully-qualified distinguished name of the organizational unit to place the computer account in.
      */
 
     public String getOrganizationalUnitDistinguishedName() {
@@ -227,31 +207,25 @@ public class CreateComputerRequest extends
 
     /**
      * <p>
-     * The fully-qualified distinguished name of the organizational unit to
-     * place the computer account in.
+     * The fully-qualified distinguished name of the organizational unit to place the computer account in.
      * </p>
      * 
      * @param organizationalUnitDistinguishedName
-     *        The fully-qualified distinguished name of the organizational unit
-     *        to place the computer account in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The fully-qualified distinguished name of the organizational unit to place the computer account in.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateComputerRequest withOrganizationalUnitDistinguishedName(
-            String organizationalUnitDistinguishedName) {
+    public CreateComputerRequest withOrganizationalUnitDistinguishedName(String organizationalUnitDistinguishedName) {
         setOrganizationalUnitDistinguishedName(organizationalUnitDistinguishedName);
         return this;
     }
 
     /**
      * <p>
-     * An array of <a>Attribute</a> objects that contain any LDAP attributes to
-     * apply to the computer account.
+     * An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the computer account.
      * </p>
      * 
-     * @return An array of <a>Attribute</a> objects that contain any LDAP
-     *         attributes to apply to the computer account.
+     * @return An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the computer account.
      */
 
     public java.util.List<Attribute> getComputerAttributes() {
@@ -263,50 +237,40 @@ public class CreateComputerRequest extends
 
     /**
      * <p>
-     * An array of <a>Attribute</a> objects that contain any LDAP attributes to
-     * apply to the computer account.
+     * An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the computer account.
      * </p>
      * 
      * @param computerAttributes
-     *        An array of <a>Attribute</a> objects that contain any LDAP
-     *        attributes to apply to the computer account.
+     *        An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the computer account.
      */
 
-    public void setComputerAttributes(
-            java.util.Collection<Attribute> computerAttributes) {
+    public void setComputerAttributes(java.util.Collection<Attribute> computerAttributes) {
         if (computerAttributes == null) {
             this.computerAttributes = null;
             return;
         }
 
-        this.computerAttributes = new com.amazonaws.internal.SdkInternalList<Attribute>(
-                computerAttributes);
+        this.computerAttributes = new com.amazonaws.internal.SdkInternalList<Attribute>(computerAttributes);
     }
 
     /**
      * <p>
-     * An array of <a>Attribute</a> objects that contain any LDAP attributes to
-     * apply to the computer account.
+     * An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the computer account.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setComputerAttributes(java.util.Collection)} or
-     * {@link #withComputerAttributes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setComputerAttributes(java.util.Collection)} or {@link #withComputerAttributes(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param computerAttributes
-     *        An array of <a>Attribute</a> objects that contain any LDAP
-     *        attributes to apply to the computer account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the computer account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateComputerRequest withComputerAttributes(
-            Attribute... computerAttributes) {
+    public CreateComputerRequest withComputerAttributes(Attribute... computerAttributes) {
         if (this.computerAttributes == null) {
-            setComputerAttributes(new com.amazonaws.internal.SdkInternalList<Attribute>(
-                    computerAttributes.length));
+            setComputerAttributes(new com.amazonaws.internal.SdkInternalList<Attribute>(computerAttributes.length));
         }
         for (Attribute ele : computerAttributes) {
             this.computerAttributes.add(ele);
@@ -316,26 +280,21 @@ public class CreateComputerRequest extends
 
     /**
      * <p>
-     * An array of <a>Attribute</a> objects that contain any LDAP attributes to
-     * apply to the computer account.
+     * An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the computer account.
      * </p>
      * 
      * @param computerAttributes
-     *        An array of <a>Attribute</a> objects that contain any LDAP
-     *        attributes to apply to the computer account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the computer account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateComputerRequest withComputerAttributes(
-            java.util.Collection<Attribute> computerAttributes) {
+    public CreateComputerRequest withComputerAttributes(java.util.Collection<Attribute> computerAttributes) {
         setComputerAttributes(computerAttributes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -352,8 +311,7 @@ public class CreateComputerRequest extends
         if (getPassword() != null)
             sb.append("Password: " + getPassword() + ",");
         if (getOrganizationalUnitDistinguishedName() != null)
-            sb.append("OrganizationalUnitDistinguishedName: "
-                    + getOrganizationalUnitDistinguishedName() + ",");
+            sb.append("OrganizationalUnitDistinguishedName: " + getOrganizationalUnitDistinguishedName() + ",");
         if (getComputerAttributes() != null)
             sb.append("ComputerAttributes: " + getComputerAttributes());
         sb.append("}");
@@ -372,32 +330,24 @@ public class CreateComputerRequest extends
         CreateComputerRequest other = (CreateComputerRequest) obj;
         if (other.getDirectoryId() == null ^ this.getDirectoryId() == null)
             return false;
-        if (other.getDirectoryId() != null
-                && other.getDirectoryId().equals(this.getDirectoryId()) == false)
+        if (other.getDirectoryId() != null && other.getDirectoryId().equals(this.getDirectoryId()) == false)
             return false;
         if (other.getComputerName() == null ^ this.getComputerName() == null)
             return false;
-        if (other.getComputerName() != null
-                && other.getComputerName().equals(this.getComputerName()) == false)
+        if (other.getComputerName() != null && other.getComputerName().equals(this.getComputerName()) == false)
             return false;
         if (other.getPassword() == null ^ this.getPassword() == null)
             return false;
-        if (other.getPassword() != null
-                && other.getPassword().equals(this.getPassword()) == false)
+        if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false)
             return false;
-        if (other.getOrganizationalUnitDistinguishedName() == null
-                ^ this.getOrganizationalUnitDistinguishedName() == null)
+        if (other.getOrganizationalUnitDistinguishedName() == null ^ this.getOrganizationalUnitDistinguishedName() == null)
             return false;
         if (other.getOrganizationalUnitDistinguishedName() != null
-                && other.getOrganizationalUnitDistinguishedName().equals(
-                        this.getOrganizationalUnitDistinguishedName()) == false)
+                && other.getOrganizationalUnitDistinguishedName().equals(this.getOrganizationalUnitDistinguishedName()) == false)
             return false;
-        if (other.getComputerAttributes() == null
-                ^ this.getComputerAttributes() == null)
+        if (other.getComputerAttributes() == null ^ this.getComputerAttributes() == null)
             return false;
-        if (other.getComputerAttributes() != null
-                && other.getComputerAttributes().equals(
-                        this.getComputerAttributes()) == false)
+        if (other.getComputerAttributes() != null && other.getComputerAttributes().equals(this.getComputerAttributes()) == false)
             return false;
         return true;
     }
@@ -407,23 +357,11 @@ public class CreateComputerRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getComputerName() == null) ? 0 : getComputerName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPassword() == null) ? 0 : getPassword().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOrganizationalUnitDistinguishedName() == null) ? 0
-                        : getOrganizationalUnitDistinguishedName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getComputerAttributes() == null) ? 0
-                        : getComputerAttributes().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getComputerName() == null) ? 0 : getComputerName().hashCode());
+        hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationalUnitDistinguishedName() == null) ? 0 : getOrganizationalUnitDistinguishedName().hashCode());
+        hashCode = prime * hashCode + ((getComputerAttributes() == null) ? 0 : getComputerAttributes().hashCode());
         return hashCode;
     }
 

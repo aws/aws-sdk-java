@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model;
 
@@ -20,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -37,8 +34,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
     private String name;
     /**
      * <p>
-     * Using this parameter you can change the Lambda function version to which
-     * the alias points.
+     * Using this parameter you can change the Lambda function version to which the alias points.
      * </p>
      */
     private String functionVersion;
@@ -81,8 +77,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param functionName
      *        The function name for which the alias is created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAliasRequest withFunctionName(String functionName) {
@@ -122,8 +117,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param name
      *        The alias name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAliasRequest withName(String name) {
@@ -133,13 +127,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Using this parameter you can change the Lambda function version to which
-     * the alias points.
+     * Using this parameter you can change the Lambda function version to which the alias points.
      * </p>
      * 
      * @param functionVersion
-     *        Using this parameter you can change the Lambda function version to
-     *        which the alias points.
+     *        Using this parameter you can change the Lambda function version to which the alias points.
      */
 
     public void setFunctionVersion(String functionVersion) {
@@ -148,12 +140,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Using this parameter you can change the Lambda function version to which
-     * the alias points.
+     * Using this parameter you can change the Lambda function version to which the alias points.
      * </p>
      * 
-     * @return Using this parameter you can change the Lambda function version
-     *         to which the alias points.
+     * @return Using this parameter you can change the Lambda function version to which the alias points.
      */
 
     public String getFunctionVersion() {
@@ -162,15 +152,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Using this parameter you can change the Lambda function version to which
-     * the alias points.
+     * Using this parameter you can change the Lambda function version to which the alias points.
      * </p>
      * 
      * @param functionVersion
-     *        Using this parameter you can change the Lambda function version to
-     *        which the alias points.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Using this parameter you can change the Lambda function version to which the alias points.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAliasRequest withFunctionVersion(String functionVersion) {
@@ -210,8 +197,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param description
      *        You can change the description of the alias using this parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAliasRequest withDescription(String description) {
@@ -220,8 +206,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -255,24 +240,19 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
         UpdateAliasRequest other = (UpdateAliasRequest) obj;
         if (other.getFunctionName() == null ^ this.getFunctionName() == null)
             return false;
-        if (other.getFunctionName() != null
-                && other.getFunctionName().equals(this.getFunctionName()) == false)
+        if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getFunctionVersion() == null
-                ^ this.getFunctionVersion() == null)
+        if (other.getFunctionVersion() == null ^ this.getFunctionVersion() == null)
             return false;
-        if (other.getFunctionVersion() != null
-                && other.getFunctionVersion().equals(this.getFunctionVersion()) == false)
+        if (other.getFunctionVersion() != null && other.getFunctionVersion().equals(this.getFunctionVersion()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         return true;
     }
@@ -282,19 +262,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFunctionName() == null) ? 0 : getFunctionName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFunctionVersion() == null) ? 0 : getFunctionVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getFunctionVersion() == null) ? 0 : getFunctionVersion().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

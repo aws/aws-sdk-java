@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of ImportKeyPair.
  * </p>
  */
-public class ImportKeyPairResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -71,8 +67,7 @@ public class ImportKeyPairResult extends
      * 
      * @param keyName
      *        The key pair name you provided.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportKeyPairResult withKeyName(String keyName) {
@@ -86,8 +81,7 @@ public class ImportKeyPairResult extends
      * </p>
      * 
      * @param keyFingerprint
-     *        The MD5 public key fingerprint as specified in section 4 of RFC
-     *        4716.
+     *        The MD5 public key fingerprint as specified in section 4 of RFC 4716.
      */
 
     public void setKeyFingerprint(String keyFingerprint) {
@@ -99,8 +93,7 @@ public class ImportKeyPairResult extends
      * The MD5 public key fingerprint as specified in section 4 of RFC 4716.
      * </p>
      * 
-     * @return The MD5 public key fingerprint as specified in section 4 of RFC
-     *         4716.
+     * @return The MD5 public key fingerprint as specified in section 4 of RFC 4716.
      */
 
     public String getKeyFingerprint() {
@@ -113,10 +106,8 @@ public class ImportKeyPairResult extends
      * </p>
      * 
      * @param keyFingerprint
-     *        The MD5 public key fingerprint as specified in section 4 of RFC
-     *        4716.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The MD5 public key fingerprint as specified in section 4 of RFC 4716.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportKeyPairResult withKeyFingerprint(String keyFingerprint) {
@@ -125,8 +116,7 @@ public class ImportKeyPairResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -156,14 +146,11 @@ public class ImportKeyPairResult extends
         ImportKeyPairResult other = (ImportKeyPairResult) obj;
         if (other.getKeyName() == null ^ this.getKeyName() == null)
             return false;
-        if (other.getKeyName() != null
-                && other.getKeyName().equals(this.getKeyName()) == false)
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
-        if (other.getKeyFingerprint() == null
-                ^ this.getKeyFingerprint() == null)
+        if (other.getKeyFingerprint() == null ^ this.getKeyFingerprint() == null)
             return false;
-        if (other.getKeyFingerprint() != null
-                && other.getKeyFingerprint().equals(this.getKeyFingerprint()) == false)
+        if (other.getKeyFingerprint() != null && other.getKeyFingerprint().equals(this.getKeyFingerprint()) == false)
             return false;
         return true;
     }
@@ -173,12 +160,8 @@ public class ImportKeyPairResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getKeyFingerprint() == null) ? 0 : getKeyFingerprint()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getKeyFingerprint() == null) ? 0 : getKeyFingerprint().hashCode());
         return hashCode;
     }
 
@@ -187,9 +170,7 @@ public class ImportKeyPairResult extends
         try {
             return (ImportKeyPairResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

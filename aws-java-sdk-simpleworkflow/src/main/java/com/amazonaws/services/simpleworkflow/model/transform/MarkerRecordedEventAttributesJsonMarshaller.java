@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
@@ -34,37 +32,28 @@ public class MarkerRecordedEventAttributesJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(
-            MarkerRecordedEventAttributes markerRecordedEventAttributes,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(MarkerRecordedEventAttributes markerRecordedEventAttributes, StructuredJsonGenerator jsonGenerator) {
 
         if (markerRecordedEventAttributes == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (markerRecordedEventAttributes.getMarkerName() != null) {
-                jsonGenerator.writeFieldName("markerName").writeValue(
-                        markerRecordedEventAttributes.getMarkerName());
+                jsonGenerator.writeFieldName("markerName").writeValue(markerRecordedEventAttributes.getMarkerName());
             }
             if (markerRecordedEventAttributes.getDetails() != null) {
-                jsonGenerator.writeFieldName("details").writeValue(
-                        markerRecordedEventAttributes.getDetails());
+                jsonGenerator.writeFieldName("details").writeValue(markerRecordedEventAttributes.getDetails());
             }
             if (markerRecordedEventAttributes.getDecisionTaskCompletedEventId() != null) {
-                jsonGenerator.writeFieldName("decisionTaskCompletedEventId")
-                        .writeValue(
-                                markerRecordedEventAttributes
-                                        .getDecisionTaskCompletedEventId());
+                jsonGenerator.writeFieldName("decisionTaskCompletedEventId").writeValue(markerRecordedEventAttributes.getDecisionTaskCompletedEventId());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

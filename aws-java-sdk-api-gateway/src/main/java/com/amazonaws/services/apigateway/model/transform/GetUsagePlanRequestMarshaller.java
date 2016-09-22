@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetUsagePlanRequest Marshaller
  */
-public class GetUsagePlanRequestMarshaller implements
-        Marshaller<Request<GetUsagePlanRequest>, GetUsagePlanRequest> {
+public class GetUsagePlanRequestMarshaller implements Marshaller<Request<GetUsagePlanRequest>, GetUsagePlanRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,26 +49,21 @@ public class GetUsagePlanRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<GetUsagePlanRequest> marshall(
-            GetUsagePlanRequest getUsagePlanRequest) {
+    public Request<GetUsagePlanRequest> marshall(GetUsagePlanRequest getUsagePlanRequest) {
 
         if (getUsagePlanRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetUsagePlanRequest> request = new DefaultRequest<GetUsagePlanRequest>(
-                getUsagePlanRequest, "AmazonApiGateway");
+        Request<GetUsagePlanRequest> request = new DefaultRequest<GetUsagePlanRequest>(getUsagePlanRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/usageplans/{usageplanId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{usageplanId}",
-                (getUsagePlanRequest.getUsagePlanId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(getUsagePlanRequest
-                                .getUsagePlanId()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{usageplanId}",
+                (getUsagePlanRequest.getUsagePlanId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getUsagePlanRequest.getUsagePlanId()), false)
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

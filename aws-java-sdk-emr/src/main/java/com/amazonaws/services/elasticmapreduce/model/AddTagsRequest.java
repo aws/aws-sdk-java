@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -22,60 +20,51 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This input identifies a cluster and a list of tags to attach.
  * </p>
  */
-public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EMR resource identifier to which tags will be added. This
-     * value must be a cluster identifier.
+     * The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * A list of tags to associate with a cluster and propagate to Amazon EC2
-     * instances. Tags are user-defined key/value pairs that consist of a
-     * required key string with a maximum of 128 characters, and an optional
-     * value string with a maximum of 256 characters.
+     * A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value
+     * pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a
+     * maximum of 256 characters.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
-     * Default constructor for AddTagsRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for AddTagsRequest object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize the object after creating it.
      */
     public AddTagsRequest() {
     }
 
     /**
-     * Constructs a new AddTagsRequest object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new AddTagsRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param resourceId
-     *        The Amazon EMR resource identifier to which tags will be added.
-     *        This value must be a cluster identifier.
+     *        The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.
      */
     public AddTagsRequest(String resourceId) {
         setResourceId(resourceId);
     }
 
     /**
-     * Constructs a new AddTagsRequest object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new AddTagsRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param resourceId
-     *        The Amazon EMR resource identifier to which tags will be added.
-     *        This value must be a cluster identifier.
+     *        The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.
      * @param tags
-     *        A list of tags to associate with a cluster and propagate to Amazon
-     *        EC2 instances. Tags are user-defined key/value pairs that consist
-     *        of a required key string with a maximum of 128 characters, and an
-     *        optional value string with a maximum of 256 characters.
+     *        A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined
+     *        key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional
+     *        value string with a maximum of 256 characters.
      */
     public AddTagsRequest(String resourceId, java.util.List<Tag> tags) {
         setResourceId(resourceId);
@@ -84,13 +73,11 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon EMR resource identifier to which tags will be added. This
-     * value must be a cluster identifier.
+     * The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.
      * </p>
      * 
      * @param resourceId
-     *        The Amazon EMR resource identifier to which tags will be added.
-     *        This value must be a cluster identifier.
+     *        The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.
      */
 
     public void setResourceId(String resourceId) {
@@ -99,12 +86,10 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon EMR resource identifier to which tags will be added. This
-     * value must be a cluster identifier.
+     * The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.
      * </p>
      * 
-     * @return The Amazon EMR resource identifier to which tags will be added.
-     *         This value must be a cluster identifier.
+     * @return The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.
      */
 
     public String getResourceId() {
@@ -113,15 +98,12 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon EMR resource identifier to which tags will be added. This
-     * value must be a cluster identifier.
+     * The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.
      * </p>
      * 
      * @param resourceId
-     *        The Amazon EMR resource identifier to which tags will be added.
-     *        This value must be a cluster identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsRequest withResourceId(String resourceId) {
@@ -131,17 +113,14 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of tags to associate with a cluster and propagate to Amazon EC2
-     * instances. Tags are user-defined key/value pairs that consist of a
-     * required key string with a maximum of 128 characters, and an optional
-     * value string with a maximum of 256 characters.
+     * A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value
+     * pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a
+     * maximum of 256 characters.
      * </p>
      * 
-     * @return A list of tags to associate with a cluster and propagate to
-     *         Amazon EC2 instances. Tags are user-defined key/value pairs that
-     *         consist of a required key string with a maximum of 128
-     *         characters, and an optional value string with a maximum of 256
-     *         characters.
+     * @return A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined
+     *         key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional
+     *         value string with a maximum of 256 characters.
      */
 
     public java.util.List<Tag> getTags() {
@@ -153,17 +132,15 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of tags to associate with a cluster and propagate to Amazon EC2
-     * instances. Tags are user-defined key/value pairs that consist of a
-     * required key string with a maximum of 128 characters, and an optional
-     * value string with a maximum of 256 characters.
+     * A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value
+     * pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a
+     * maximum of 256 characters.
      * </p>
      * 
      * @param tags
-     *        A list of tags to associate with a cluster and propagate to Amazon
-     *        EC2 instances. Tags are user-defined key/value pairs that consist
-     *        of a required key string with a maximum of 128 characters, and an
-     *        optional value string with a maximum of 256 characters.
+     *        A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined
+     *        key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional
+     *        value string with a maximum of 256 characters.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -177,25 +154,21 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of tags to associate with a cluster and propagate to Amazon EC2
-     * instances. Tags are user-defined key/value pairs that consist of a
-     * required key string with a maximum of 128 characters, and an optional
-     * value string with a maximum of 256 characters.
+     * A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value
+     * pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a
+     * maximum of 256 characters.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     *        A list of tags to associate with a cluster and propagate to Amazon
-     *        EC2 instances. Tags are user-defined key/value pairs that consist
-     *        of a required key string with a maximum of 128 characters, and an
-     *        optional value string with a maximum of 256 characters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined
+     *        key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional
+     *        value string with a maximum of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsRequest withTags(Tag... tags) {
@@ -210,19 +183,16 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of tags to associate with a cluster and propagate to Amazon EC2
-     * instances. Tags are user-defined key/value pairs that consist of a
-     * required key string with a maximum of 128 characters, and an optional
-     * value string with a maximum of 256 characters.
+     * A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value
+     * pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a
+     * maximum of 256 characters.
      * </p>
      * 
      * @param tags
-     *        A list of tags to associate with a cluster and propagate to Amazon
-     *        EC2 instances. Tags are user-defined key/value pairs that consist
-     *        of a required key string with a maximum of 128 characters, and an
-     *        optional value string with a maximum of 256 characters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined
+     *        key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional
+     *        value string with a maximum of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsRequest withTags(java.util.Collection<Tag> tags) {
@@ -231,8 +201,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -262,13 +231,11 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
         AddTagsRequest other = (AddTagsRequest) obj;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -278,10 +245,8 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

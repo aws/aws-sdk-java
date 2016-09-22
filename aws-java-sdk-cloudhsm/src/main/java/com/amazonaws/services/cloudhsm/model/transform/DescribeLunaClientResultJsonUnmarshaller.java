@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudhsm.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DescribeLunaClientResult JSON Unmarshaller
  */
-public class DescribeLunaClientResultJsonUnmarshaller implements
-        Unmarshaller<DescribeLunaClientResult, JsonUnmarshallerContext> {
+public class DescribeLunaClientResultJsonUnmarshaller implements Unmarshaller<DescribeLunaClientResult, JsonUnmarshallerContext> {
 
-    public DescribeLunaClientResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public DescribeLunaClientResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeLunaClientResult describeLunaClientResult = new DescribeLunaClientResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,35 +49,26 @@ public class DescribeLunaClientResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClientArn", targetDepth)) {
                     context.nextToken();
-                    describeLunaClientResult.setClientArn(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeLunaClientResult.setClientArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Certificate", targetDepth)) {
                     context.nextToken();
-                    describeLunaClientResult.setCertificate(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeLunaClientResult.setCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("CertificateFingerprint",
-                        targetDepth)) {
+                if (context.testExpression("CertificateFingerprint", targetDepth)) {
                     context.nextToken();
-                    describeLunaClientResult.setCertificateFingerprint(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeLunaClientResult.setCertificateFingerprint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context
-                        .testExpression("LastModifiedTimestamp", targetDepth)) {
+                if (context.testExpression("LastModifiedTimestamp", targetDepth)) {
                     context.nextToken();
-                    describeLunaClientResult.setLastModifiedTimestamp(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeLunaClientResult.setLastModifiedTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Label", targetDepth)) {
                     context.nextToken();
-                    describeLunaClientResult.setLabel(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeLunaClientResult.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

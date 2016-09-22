@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.applicationautoscaling.model;
 
@@ -25,55 +23,46 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace for the AWS service that the scalable target is associated
-     * with. For more information, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * The namespace for the AWS service that the scalable target is associated with. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
      * </p>
      */
     private String serviceNamespace;
     /**
      * <p>
-     * The resource type and unique identifier string for the resource
-     * associated with the scalable target. For Amazon ECS services, the
-     * resource type is <code>services</code>, and the identifier is the cluster
-     * name and service name; for example,
-     * <code>service/default/sample-webapp</code>. For Amazon EC2 Spot fleet
-     * requests, the resource type is <code>spot-fleet-request</code>, and the
-     * identifier is the Spot fleet request ID; for example,
+     * The resource type and unique identifier string for the resource associated with the scalable target. For Amazon
+     * ECS services, the resource type is <code>services</code>, and the identifier is the cluster name and service
+     * name; for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot fleet requests, the resource
+     * type is <code>spot-fleet-request</code>, and the identifier is the Spot fleet request ID; for example,
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * The scalable dimension associated with the scalable target. The scalable
-     * dimension contains the service namespace, resource type, and scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired
-     * task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
+     * The scalable dimension associated with the scalable target. The scalable dimension contains the service
+     * namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired
+     * task count of an Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
      * capacity of an Amazon EC2 Spot fleet request.
      * </p>
      */
     private String scalableDimension;
     /**
      * <p>
-     * The minimum value for this scalable target to scale in to in response to
-     * scaling activities.
+     * The minimum value for this scalable target to scale in to in response to scaling activities.
      * </p>
      */
     private Integer minCapacity;
     /**
      * <p>
-     * The maximum value for this scalable target to scale out to in response to
-     * scaling activities.
+     * The maximum value for this scalable target to scale out to in response to scaling activities.
      * </p>
      */
     private Integer maxCapacity;
     /**
      * <p>
-     * The ARN of the IAM role that allows Application Auto Scaling to modify
-     * your scalable target on your behalf.
+     * The ARN of the IAM role that allows Application Auto Scaling to modify your scalable target on your behalf.
      * </p>
      */
     private String roleARN;
@@ -86,18 +75,16 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace for the AWS service that the scalable target is associated
-     * with. For more information, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * The namespace for the AWS service that the scalable target is associated with. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace for the AWS service that the scalable target is
-     *        associated with. For more information, see <a href=
+     *        The namespace for the AWS service that the scalable target is associated with. For more information, see
+     *        <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the Amazon Web Services General
-     *        Reference.
+     *        >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
      * @see ServiceNamespace
      */
 
@@ -107,17 +94,15 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace for the AWS service that the scalable target is associated
-     * with. For more information, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * The namespace for the AWS service that the scalable target is associated with. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
      * </p>
      * 
-     * @return The namespace for the AWS service that the scalable target is
-     *         associated with. For more information, see <a href=
+     * @return The namespace for the AWS service that the scalable target is associated with. For more information, see
+     *         <a href=
      *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *         >AWS Service Namespaces</a> in the Amazon Web Services General
-     *         Reference.
+     *         >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
      * @see ServiceNamespace
      */
 
@@ -127,20 +112,17 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace for the AWS service that the scalable target is associated
-     * with. For more information, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * The namespace for the AWS service that the scalable target is associated with. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace for the AWS service that the scalable target is
-     *        associated with. For more information, see <a href=
+     *        The namespace for the AWS service that the scalable target is associated with. For more information, see
+     *        <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the Amazon Web Services General
-     *        Reference.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
      */
 
@@ -151,18 +133,16 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace for the AWS service that the scalable target is associated
-     * with. For more information, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * The namespace for the AWS service that the scalable target is associated with. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace for the AWS service that the scalable target is
-     *        associated with. For more information, see <a href=
+     *        The namespace for the AWS service that the scalable target is associated with. For more information, see
+     *        <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the Amazon Web Services General
-     *        Reference.
+     *        >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
      * @see ServiceNamespace
      */
 
@@ -172,20 +152,17 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace for the AWS service that the scalable target is associated
-     * with. For more information, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * The namespace for the AWS service that the scalable target is associated with. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace for the AWS service that the scalable target is
-     *        associated with. For more information, see <a href=
+     *        The namespace for the AWS service that the scalable target is associated with. For more information, see
+     *        <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the Amazon Web Services General
-     *        Reference.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        >AWS Service Namespaces</a> in the Amazon Web Services General Reference.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
      */
 
@@ -196,27 +173,19 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The resource type and unique identifier string for the resource
-     * associated with the scalable target. For Amazon ECS services, the
-     * resource type is <code>services</code>, and the identifier is the cluster
-     * name and service name; for example,
-     * <code>service/default/sample-webapp</code>. For Amazon EC2 Spot fleet
-     * requests, the resource type is <code>spot-fleet-request</code>, and the
-     * identifier is the Spot fleet request ID; for example,
+     * The resource type and unique identifier string for the resource associated with the scalable target. For Amazon
+     * ECS services, the resource type is <code>services</code>, and the identifier is the cluster name and service
+     * name; for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot fleet requests, the resource
+     * type is <code>spot-fleet-request</code>, and the identifier is the Spot fleet request ID; for example,
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * 
      * @param resourceId
-     *        The resource type and unique identifier string for the resource
-     *        associated with the scalable target. For Amazon ECS services, the
-     *        resource type is <code>services</code>, and the identifier is the
-     *        cluster name and service name; for example,
-     *        <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
-     *        fleet requests, the resource type is
-     *        <code>spot-fleet-request</code>, and the identifier is the Spot
-     *        fleet request ID; for example,
-     *        <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>
-     *        .
+     *        The resource type and unique identifier string for the resource associated with the scalable target. For
+     *        Amazon ECS services, the resource type is <code>services</code>, and the identifier is the cluster name
+     *        and service name; for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot fleet
+     *        requests, the resource type is <code>spot-fleet-request</code>, and the identifier is the Spot fleet
+     *        request ID; for example, <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      */
 
     public void setResourceId(String resourceId) {
@@ -225,26 +194,18 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The resource type and unique identifier string for the resource
-     * associated with the scalable target. For Amazon ECS services, the
-     * resource type is <code>services</code>, and the identifier is the cluster
-     * name and service name; for example,
-     * <code>service/default/sample-webapp</code>. For Amazon EC2 Spot fleet
-     * requests, the resource type is <code>spot-fleet-request</code>, and the
-     * identifier is the Spot fleet request ID; for example,
+     * The resource type and unique identifier string for the resource associated with the scalable target. For Amazon
+     * ECS services, the resource type is <code>services</code>, and the identifier is the cluster name and service
+     * name; for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot fleet requests, the resource
+     * type is <code>spot-fleet-request</code>, and the identifier is the Spot fleet request ID; for example,
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * 
-     * @return The resource type and unique identifier string for the resource
-     *         associated with the scalable target. For Amazon ECS services, the
-     *         resource type is <code>services</code>, and the identifier is the
-     *         cluster name and service name; for example,
-     *         <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
-     *         fleet requests, the resource type is
-     *         <code>spot-fleet-request</code>, and the identifier is the Spot
-     *         fleet request ID; for example,
-     *         <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>
-     *         .
+     * @return The resource type and unique identifier string for the resource associated with the scalable target. For
+     *         Amazon ECS services, the resource type is <code>services</code>, and the identifier is the cluster name
+     *         and service name; for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot fleet
+     *         requests, the resource type is <code>spot-fleet-request</code>, and the identifier is the Spot fleet
+     *         request ID; for example, <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      */
 
     public String getResourceId() {
@@ -253,29 +214,20 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The resource type and unique identifier string for the resource
-     * associated with the scalable target. For Amazon ECS services, the
-     * resource type is <code>services</code>, and the identifier is the cluster
-     * name and service name; for example,
-     * <code>service/default/sample-webapp</code>. For Amazon EC2 Spot fleet
-     * requests, the resource type is <code>spot-fleet-request</code>, and the
-     * identifier is the Spot fleet request ID; for example,
+     * The resource type and unique identifier string for the resource associated with the scalable target. For Amazon
+     * ECS services, the resource type is <code>services</code>, and the identifier is the cluster name and service
+     * name; for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot fleet requests, the resource
+     * type is <code>spot-fleet-request</code>, and the identifier is the Spot fleet request ID; for example,
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * 
      * @param resourceId
-     *        The resource type and unique identifier string for the resource
-     *        associated with the scalable target. For Amazon ECS services, the
-     *        resource type is <code>services</code>, and the identifier is the
-     *        cluster name and service name; for example,
-     *        <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
-     *        fleet requests, the resource type is
-     *        <code>spot-fleet-request</code>, and the identifier is the Spot
-     *        fleet request ID; for example,
-     *        <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>
-     *        .
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The resource type and unique identifier string for the resource associated with the scalable target. For
+     *        Amazon ECS services, the resource type is <code>services</code>, and the identifier is the cluster name
+     *        and service name; for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot fleet
+     *        requests, the resource type is <code>spot-fleet-request</code>, and the identifier is the Spot fleet
+     *        request ID; for example, <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalableTarget withResourceId(String resourceId) {
@@ -285,22 +237,17 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scalable dimension associated with the scalable target. The scalable
-     * dimension contains the service namespace, resource type, and scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired
-     * task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
+     * The scalable dimension associated with the scalable target. The scalable dimension contains the service
+     * namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired
+     * task count of an Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
      * capacity of an Amazon EC2 Spot fleet request.
      * </p>
      * 
      * @param scalableDimension
-     *        The scalable dimension associated with the scalable target. The
-     *        scalable dimension contains the service namespace, resource type,
-     *        and scaling property, such as
-     *        <code>ecs:service:DesiredCount</code> for the desired task count
-     *        of an Amazon ECS service, or
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     *        capacity of an Amazon EC2 Spot fleet request.
+     *        The scalable dimension associated with the scalable target. The scalable dimension contains the service
+     *        namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the
+     *        desired task count of an Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code> for the
+     *        target capacity of an Amazon EC2 Spot fleet request.
      * @see ScalableDimension
      */
 
@@ -310,21 +257,16 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scalable dimension associated with the scalable target. The scalable
-     * dimension contains the service namespace, resource type, and scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired
-     * task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
+     * The scalable dimension associated with the scalable target. The scalable dimension contains the service
+     * namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired
+     * task count of an Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
      * capacity of an Amazon EC2 Spot fleet request.
      * </p>
      * 
-     * @return The scalable dimension associated with the scalable target. The
-     *         scalable dimension contains the service namespace, resource type,
-     *         and scaling property, such as
-     *         <code>ecs:service:DesiredCount</code> for the desired task count
-     *         of an Amazon ECS service, or
-     *         <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     *         capacity of an Amazon EC2 Spot fleet request.
+     * @return The scalable dimension associated with the scalable target. The scalable dimension contains the service
+     *         namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the
+     *         desired task count of an Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code> for
+     *         the target capacity of an Amazon EC2 Spot fleet request.
      * @see ScalableDimension
      */
 
@@ -334,24 +276,18 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scalable dimension associated with the scalable target. The scalable
-     * dimension contains the service namespace, resource type, and scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired
-     * task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
+     * The scalable dimension associated with the scalable target. The scalable dimension contains the service
+     * namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired
+     * task count of an Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
      * capacity of an Amazon EC2 Spot fleet request.
      * </p>
      * 
      * @param scalableDimension
-     *        The scalable dimension associated with the scalable target. The
-     *        scalable dimension contains the service namespace, resource type,
-     *        and scaling property, such as
-     *        <code>ecs:service:DesiredCount</code> for the desired task count
-     *        of an Amazon ECS service, or
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     *        capacity of an Amazon EC2 Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The scalable dimension associated with the scalable target. The scalable dimension contains the service
+     *        namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the
+     *        desired task count of an Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code> for the
+     *        target capacity of an Amazon EC2 Spot fleet request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
 
@@ -362,22 +298,17 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scalable dimension associated with the scalable target. The scalable
-     * dimension contains the service namespace, resource type, and scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired
-     * task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
+     * The scalable dimension associated with the scalable target. The scalable dimension contains the service
+     * namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired
+     * task count of an Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
      * capacity of an Amazon EC2 Spot fleet request.
      * </p>
      * 
      * @param scalableDimension
-     *        The scalable dimension associated with the scalable target. The
-     *        scalable dimension contains the service namespace, resource type,
-     *        and scaling property, such as
-     *        <code>ecs:service:DesiredCount</code> for the desired task count
-     *        of an Amazon ECS service, or
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     *        capacity of an Amazon EC2 Spot fleet request.
+     *        The scalable dimension associated with the scalable target. The scalable dimension contains the service
+     *        namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the
+     *        desired task count of an Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code> for the
+     *        target capacity of an Amazon EC2 Spot fleet request.
      * @see ScalableDimension
      */
 
@@ -387,42 +318,33 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scalable dimension associated with the scalable target. The scalable
-     * dimension contains the service namespace, resource type, and scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired
-     * task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
+     * The scalable dimension associated with the scalable target. The scalable dimension contains the service
+     * namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired
+     * task count of an Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
      * capacity of an Amazon EC2 Spot fleet request.
      * </p>
      * 
      * @param scalableDimension
-     *        The scalable dimension associated with the scalable target. The
-     *        scalable dimension contains the service namespace, resource type,
-     *        and scaling property, such as
-     *        <code>ecs:service:DesiredCount</code> for the desired task count
-     *        of an Amazon ECS service, or
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
-     *        capacity of an Amazon EC2 Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The scalable dimension associated with the scalable target. The scalable dimension contains the service
+     *        namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the
+     *        desired task count of an Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code> for the
+     *        target capacity of an Amazon EC2 Spot fleet request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
 
-    public ScalableTarget withScalableDimension(
-            ScalableDimension scalableDimension) {
+    public ScalableTarget withScalableDimension(ScalableDimension scalableDimension) {
         setScalableDimension(scalableDimension);
         return this;
     }
 
     /**
      * <p>
-     * The minimum value for this scalable target to scale in to in response to
-     * scaling activities.
+     * The minimum value for this scalable target to scale in to in response to scaling activities.
      * </p>
      * 
      * @param minCapacity
-     *        The minimum value for this scalable target to scale in to in
-     *        response to scaling activities.
+     *        The minimum value for this scalable target to scale in to in response to scaling activities.
      */
 
     public void setMinCapacity(Integer minCapacity) {
@@ -431,12 +353,10 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum value for this scalable target to scale in to in response to
-     * scaling activities.
+     * The minimum value for this scalable target to scale in to in response to scaling activities.
      * </p>
      * 
-     * @return The minimum value for this scalable target to scale in to in
-     *         response to scaling activities.
+     * @return The minimum value for this scalable target to scale in to in response to scaling activities.
      */
 
     public Integer getMinCapacity() {
@@ -445,15 +365,12 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum value for this scalable target to scale in to in response to
-     * scaling activities.
+     * The minimum value for this scalable target to scale in to in response to scaling activities.
      * </p>
      * 
      * @param minCapacity
-     *        The minimum value for this scalable target to scale in to in
-     *        response to scaling activities.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The minimum value for this scalable target to scale in to in response to scaling activities.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalableTarget withMinCapacity(Integer minCapacity) {
@@ -463,13 +380,11 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum value for this scalable target to scale out to in response to
-     * scaling activities.
+     * The maximum value for this scalable target to scale out to in response to scaling activities.
      * </p>
      * 
      * @param maxCapacity
-     *        The maximum value for this scalable target to scale out to in
-     *        response to scaling activities.
+     *        The maximum value for this scalable target to scale out to in response to scaling activities.
      */
 
     public void setMaxCapacity(Integer maxCapacity) {
@@ -478,12 +393,10 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum value for this scalable target to scale out to in response to
-     * scaling activities.
+     * The maximum value for this scalable target to scale out to in response to scaling activities.
      * </p>
      * 
-     * @return The maximum value for this scalable target to scale out to in
-     *         response to scaling activities.
+     * @return The maximum value for this scalable target to scale out to in response to scaling activities.
      */
 
     public Integer getMaxCapacity() {
@@ -492,15 +405,12 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum value for this scalable target to scale out to in response to
-     * scaling activities.
+     * The maximum value for this scalable target to scale out to in response to scaling activities.
      * </p>
      * 
      * @param maxCapacity
-     *        The maximum value for this scalable target to scale out to in
-     *        response to scaling activities.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum value for this scalable target to scale out to in response to scaling activities.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalableTarget withMaxCapacity(Integer maxCapacity) {
@@ -510,13 +420,12 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that allows Application Auto Scaling to modify
-     * your scalable target on your behalf.
+     * The ARN of the IAM role that allows Application Auto Scaling to modify your scalable target on your behalf.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the IAM role that allows Application Auto Scaling to
-     *        modify your scalable target on your behalf.
+     *        The ARN of the IAM role that allows Application Auto Scaling to modify your scalable target on your
+     *        behalf.
      */
 
     public void setRoleARN(String roleARN) {
@@ -525,12 +434,11 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that allows Application Auto Scaling to modify
-     * your scalable target on your behalf.
+     * The ARN of the IAM role that allows Application Auto Scaling to modify your scalable target on your behalf.
      * </p>
      * 
-     * @return The ARN of the IAM role that allows Application Auto Scaling to
-     *         modify your scalable target on your behalf.
+     * @return The ARN of the IAM role that allows Application Auto Scaling to modify your scalable target on your
+     *         behalf.
      */
 
     public String getRoleARN() {
@@ -539,15 +447,13 @@ public class ScalableTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that allows Application Auto Scaling to modify
-     * your scalable target on your behalf.
+     * The ARN of the IAM role that allows Application Auto Scaling to modify your scalable target on your behalf.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the IAM role that allows Application Auto Scaling to
-     *        modify your scalable target on your behalf.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN of the IAM role that allows Application Auto Scaling to modify your scalable target on your
+     *        behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalableTarget withRoleARN(String roleARN) {
@@ -587,8 +493,7 @@ public class ScalableTarget implements Serializable, Cloneable {
      * 
      * @param creationTime
      *        The Unix timestamp for when the scalable target was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalableTarget withCreationTime(java.util.Date creationTime) {
@@ -597,8 +502,7 @@ public class ScalableTarget implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -636,44 +540,33 @@ public class ScalableTarget implements Serializable, Cloneable {
         if (obj instanceof ScalableTarget == false)
             return false;
         ScalableTarget other = (ScalableTarget) obj;
-        if (other.getServiceNamespace() == null
-                ^ this.getServiceNamespace() == null)
+        if (other.getServiceNamespace() == null ^ this.getServiceNamespace() == null)
             return false;
-        if (other.getServiceNamespace() != null
-                && other.getServiceNamespace().equals(
-                        this.getServiceNamespace()) == false)
+        if (other.getServiceNamespace() != null && other.getServiceNamespace().equals(this.getServiceNamespace()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
-        if (other.getScalableDimension() == null
-                ^ this.getScalableDimension() == null)
+        if (other.getScalableDimension() == null ^ this.getScalableDimension() == null)
             return false;
-        if (other.getScalableDimension() != null
-                && other.getScalableDimension().equals(
-                        this.getScalableDimension()) == false)
+        if (other.getScalableDimension() != null && other.getScalableDimension().equals(this.getScalableDimension()) == false)
             return false;
         if (other.getMinCapacity() == null ^ this.getMinCapacity() == null)
             return false;
-        if (other.getMinCapacity() != null
-                && other.getMinCapacity().equals(this.getMinCapacity()) == false)
+        if (other.getMinCapacity() != null && other.getMinCapacity().equals(this.getMinCapacity()) == false)
             return false;
         if (other.getMaxCapacity() == null ^ this.getMaxCapacity() == null)
             return false;
-        if (other.getMaxCapacity() != null
-                && other.getMaxCapacity().equals(this.getMaxCapacity()) == false)
+        if (other.getMaxCapacity() != null && other.getMaxCapacity().equals(this.getMaxCapacity()) == false)
             return false;
         if (other.getRoleARN() == null ^ this.getRoleARN() == null)
             return false;
-        if (other.getRoleARN() != null
-                && other.getRoleARN().equals(this.getRoleARN()) == false)
+        if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false)
             return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getCreationTime() != null
-                && other.getCreationTime().equals(this.getCreationTime()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
         return true;
     }
@@ -683,28 +576,13 @@ public class ScalableTarget implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getServiceNamespace() == null) ? 0 : getServiceNamespace()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getScalableDimension() == null) ? 0
-                        : getScalableDimension().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMinCapacity() == null) ? 0 : getMinCapacity().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
-        hashCode = prime * hashCode
-                + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationTime() == null) ? 0 : getCreationTime()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getServiceNamespace() == null) ? 0 : getServiceNamespace().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getScalableDimension() == null) ? 0 : getScalableDimension().hashCode());
+        hashCode = prime * hashCode + ((getMinCapacity() == null) ? 0 : getMinCapacity().hashCode());
+        hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
+        hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }
 
@@ -713,9 +591,7 @@ public class ScalableTarget implements Serializable, Cloneable {
         try {
             return (ScalableTarget) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

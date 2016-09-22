@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotFleetInstancesRequ
  * Contains the parameters for DescribeSpotFleetInstances.
  * </p>
  */
-public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeSpotFleetInstancesRequest> {
 
     /**
@@ -42,10 +39,8 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      */
     private Integer maxResults;
@@ -82,12 +77,10 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
      * 
      * @param spotFleetRequestId
      *        The ID of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSpotFleetInstancesRequest withSpotFleetRequestId(
-            String spotFleetRequestId) {
+    public DescribeSpotFleetInstancesRequest withSpotFleetRequestId(String spotFleetRequestId) {
         setSpotFleetRequestId(spotFleetRequestId);
         return this;
     }
@@ -124,8 +117,7 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
      * 
      * @param nextToken
      *        The token for the next set of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSpotFleetInstancesRequest withNextToken(String nextToken) {
@@ -135,16 +127,13 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. Specify
-     *        a value between 1 and 1000. The default value is 1000. To retrieve
-     *        the remaining results, make another call with the returned
+     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *        value is 1000. To retrieve the remaining results, make another call with the returned
      *        <code>NextToken</code> value.
      */
 
@@ -154,16 +143,13 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. Specify
-     *         a value between 1 and 1000. The default value is 1000. To
-     *         retrieve the remaining results, make another call with the
-     *         returned <code>NextToken</code> value.
+     * @return The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *         value is 1000. To retrieve the remaining results, make another call with the returned
+     *         <code>NextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -172,19 +158,15 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. Specify
-     *        a value between 1 and 1000. The default value is 1000. To retrieve
-     *        the remaining results, make another call with the returned
+     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *        value is 1000. To retrieve the remaining results, make another call with the returned
      *        <code>NextToken</code> value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSpotFleetInstancesRequest withMaxResults(Integer maxResults) {
@@ -193,21 +175,18 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeSpotFleetInstancesRequest> getDryRunRequest() {
-        Request<DescribeSpotFleetInstancesRequest> request = new DescribeSpotFleetInstancesRequestMarshaller()
-                .marshall(this);
+        Request<DescribeSpotFleetInstancesRequest> request = new DescribeSpotFleetInstancesRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -237,22 +216,17 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeSpotFleetInstancesRequest == false)
             return false;
         DescribeSpotFleetInstancesRequest other = (DescribeSpotFleetInstancesRequest) obj;
-        if (other.getSpotFleetRequestId() == null
-                ^ this.getSpotFleetRequestId() == null)
+        if (other.getSpotFleetRequestId() == null ^ this.getSpotFleetRequestId() == null)
             return false;
-        if (other.getSpotFleetRequestId() != null
-                && other.getSpotFleetRequestId().equals(
-                        this.getSpotFleetRequestId()) == false)
+        if (other.getSpotFleetRequestId() != null && other.getSpotFleetRequestId().equals(this.getSpotFleetRequestId()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -262,14 +236,9 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSpotFleetRequestId() == null) ? 0
-                        : getSpotFleetRequestId().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

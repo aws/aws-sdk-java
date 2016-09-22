@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ViewBillingResult JSON Unmarshaller
  */
-public class ViewBillingResultJsonUnmarshaller implements
-        Unmarshaller<ViewBillingResult, JsonUnmarshallerContext> {
+public class ViewBillingResultJsonUnmarshaller implements Unmarshaller<ViewBillingResult, JsonUnmarshallerContext> {
 
-    public ViewBillingResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ViewBillingResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ViewBillingResult viewBillingResult = new ViewBillingResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,20 +49,14 @@ public class ViewBillingResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextPageMarker", targetDepth)) {
                     context.nextToken();
-                    viewBillingResult.setNextPageMarker(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    viewBillingResult.setNextPageMarker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BillingRecords", targetDepth)) {
                     context.nextToken();
-                    viewBillingResult
-                            .setBillingRecords(new ListUnmarshaller<BillingRecord>(
-                                    BillingRecordJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+                    viewBillingResult.setBillingRecords(new ListUnmarshaller<BillingRecord>(BillingRecordJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

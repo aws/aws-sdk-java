@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -86,8 +84,7 @@ public class TransferData implements Serializable, Cloneable {
      * 
      * @param transferMessage
      *        The transfer message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TransferData withTransferMessage(String transferMessage) {
@@ -127,8 +124,7 @@ public class TransferData implements Serializable, Cloneable {
      * 
      * @param rejectReason
      *        The reason why the transfer was rejected.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TransferData withRejectReason(String rejectReason) {
@@ -168,8 +164,7 @@ public class TransferData implements Serializable, Cloneable {
      * 
      * @param transferDate
      *        The date the transfer took place.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TransferData withTransferDate(java.util.Date transferDate) {
@@ -209,8 +204,7 @@ public class TransferData implements Serializable, Cloneable {
      * 
      * @param acceptDate
      *        The date the transfer was accepted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TransferData withAcceptDate(java.util.Date acceptDate) {
@@ -250,8 +244,7 @@ public class TransferData implements Serializable, Cloneable {
      * 
      * @param rejectDate
      *        The date the transfer was rejected.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TransferData withRejectDate(java.util.Date rejectDate) {
@@ -260,8 +253,7 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -295,31 +287,25 @@ public class TransferData implements Serializable, Cloneable {
         if (obj instanceof TransferData == false)
             return false;
         TransferData other = (TransferData) obj;
-        if (other.getTransferMessage() == null
-                ^ this.getTransferMessage() == null)
+        if (other.getTransferMessage() == null ^ this.getTransferMessage() == null)
             return false;
-        if (other.getTransferMessage() != null
-                && other.getTransferMessage().equals(this.getTransferMessage()) == false)
+        if (other.getTransferMessage() != null && other.getTransferMessage().equals(this.getTransferMessage()) == false)
             return false;
         if (other.getRejectReason() == null ^ this.getRejectReason() == null)
             return false;
-        if (other.getRejectReason() != null
-                && other.getRejectReason().equals(this.getRejectReason()) == false)
+        if (other.getRejectReason() != null && other.getRejectReason().equals(this.getRejectReason()) == false)
             return false;
         if (other.getTransferDate() == null ^ this.getTransferDate() == null)
             return false;
-        if (other.getTransferDate() != null
-                && other.getTransferDate().equals(this.getTransferDate()) == false)
+        if (other.getTransferDate() != null && other.getTransferDate().equals(this.getTransferDate()) == false)
             return false;
         if (other.getAcceptDate() == null ^ this.getAcceptDate() == null)
             return false;
-        if (other.getAcceptDate() != null
-                && other.getAcceptDate().equals(this.getAcceptDate()) == false)
+        if (other.getAcceptDate() != null && other.getAcceptDate().equals(this.getAcceptDate()) == false)
             return false;
         if (other.getRejectDate() == null ^ this.getRejectDate() == null)
             return false;
-        if (other.getRejectDate() != null
-                && other.getRejectDate().equals(this.getRejectDate()) == false)
+        if (other.getRejectDate() != null && other.getRejectDate().equals(this.getRejectDate()) == false)
             return false;
         return true;
     }
@@ -329,22 +315,11 @@ public class TransferData implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getTransferMessage() == null) ? 0 : getTransferMessage()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRejectReason() == null) ? 0 : getRejectReason()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTransferDate() == null) ? 0 : getTransferDate()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getAcceptDate() == null) ? 0 : getAcceptDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getRejectDate() == null) ? 0 : getRejectDate().hashCode());
+        hashCode = prime * hashCode + ((getTransferMessage() == null) ? 0 : getTransferMessage().hashCode());
+        hashCode = prime * hashCode + ((getRejectReason() == null) ? 0 : getRejectReason().hashCode());
+        hashCode = prime * hashCode + ((getTransferDate() == null) ? 0 : getTransferDate().hashCode());
+        hashCode = prime * hashCode + ((getAcceptDate() == null) ? 0 : getAcceptDate().hashCode());
+        hashCode = prime * hashCode + ((getRejectDate() == null) ? 0 : getRejectDate().hashCode());
         return hashCode;
     }
 
@@ -353,9 +328,7 @@ public class TransferData implements Serializable, Cloneable {
         try {
             return (TransferData) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Activation JSON Unmarshaller
  */
-public class ActivationJsonUnmarshaller implements
-        Unmarshaller<Activation, JsonUnmarshallerContext> {
+public class ActivationJsonUnmarshaller implements Unmarshaller<Activation, JsonUnmarshallerContext> {
 
-    public Activation unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public Activation unmarshall(JsonUnmarshallerContext context) throws Exception {
         Activation activation = new Activation();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,54 +49,42 @@ public class ActivationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ActivationId", targetDepth)) {
                     context.nextToken();
-                    activation.setActivationId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    activation.setActivationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    activation.setDescription(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    activation.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultInstanceName", targetDepth)) {
                     context.nextToken();
-                    activation.setDefaultInstanceName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    activation.setDefaultInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamRole", targetDepth)) {
                     context.nextToken();
-                    activation.setIamRole(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    activation.setIamRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistrationLimit", targetDepth)) {
                     context.nextToken();
-                    activation.setRegistrationLimit(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    activation.setRegistrationLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistrationsCount", targetDepth)) {
                     context.nextToken();
-                    activation.setRegistrationsCount(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    activation.setRegistrationsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpirationDate", targetDepth)) {
                     context.nextToken();
-                    activation.setExpirationDate(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    activation.setExpirationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Expired", targetDepth)) {
                     context.nextToken();
-                    activation
-                            .setExpired(context.getUnmarshaller(Boolean.class)
-                                    .unmarshall(context));
+                    activation.setExpired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    activation.setCreatedDate(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    activation.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

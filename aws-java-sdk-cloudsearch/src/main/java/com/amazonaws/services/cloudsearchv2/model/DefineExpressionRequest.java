@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchv2.model;
 
@@ -19,14 +17,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code><a>DefineExpression</a></code>
- * operation. Specifies the name of the domain you want to update and the
- * expression you want to configure.
+ * Container for the parameters to the <code><a>DefineExpression</a></code> operation. Specifies the name of the domain
+ * you want to update and the expression you want to configure.
  * </p>
  */
-public class DefineExpressionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DefineExpressionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String domainName;
 
@@ -50,8 +45,7 @@ public class DefineExpressionRequest extends
 
     /**
      * @param domainName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DefineExpressionRequest withDomainName(String domainName) {
@@ -77,8 +71,7 @@ public class DefineExpressionRequest extends
 
     /**
      * @param expression
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DefineExpressionRequest withExpression(Expression expression) {
@@ -87,8 +80,7 @@ public class DefineExpressionRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -118,13 +110,11 @@ public class DefineExpressionRequest extends
         DefineExpressionRequest other = (DefineExpressionRequest) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
         if (other.getExpression() == null ^ this.getExpression() == null)
             return false;
-        if (other.getExpression() != null
-                && other.getExpression().equals(this.getExpression()) == false)
+        if (other.getExpression() != null && other.getExpression().equals(this.getExpression()) == false)
             return false;
         return true;
     }
@@ -134,10 +124,8 @@ public class DefineExpressionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime * hashCode
-                + ((getExpression() == null) ? 0 : getExpression().hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getExpression() == null) ? 0 : getExpression().hashCode());
         return hashCode;
     }
 

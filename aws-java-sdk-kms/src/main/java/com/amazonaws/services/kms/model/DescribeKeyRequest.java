@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kms.model;
 
@@ -20,21 +18,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier, a fully specified ARN to either an alias or a
-     * key, or an alias name prefixed by "alias/".
+     * A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
+     * specified ARN to either an alias or a key, or an alias name prefixed by "alias/".
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
-     * -1234-123456789012
+     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -60,26 +54,22 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> grantTokens;
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier, a fully specified ARN to either an alias or a
-     * key, or an alias name prefixed by "alias/".
+     * A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
+     * specified ARN to either an alias or a key, or an alias name prefixed by "alias/".
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
-     * -1234-123456789012
+     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -100,27 +90,22 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be
-     *        a globally unique identifier, a fully specified ARN to either an
-     *        alias or a key, or an alias name prefixed by "alias/".</p>
+     *        A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
+     *        specified ARN to either an alias or a key, or an alias name prefixed by "alias/".</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     *        -1234-1234-123456789012
+     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012
+     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
      *        <li>
@@ -136,16 +121,13 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier, a fully specified ARN to either an alias or a
-     * key, or an alias name prefixed by "alias/".
+     * A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
+     * specified ARN to either an alias or a key, or an alias name prefixed by "alias/".
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
-     * -1234-123456789012
+     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -165,27 +147,22 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * 
-     * @return A unique identifier for the customer master key. This value can
-     *         be a globally unique identifier, a fully specified ARN to either
-     *         an alias or a key, or an alias name prefixed by "alias/".</p>
+     * @return A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
+     *         specified ARN to either an alias or a key, or an alias name prefixed by "alias/".</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Key ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678-
-     *         1234-1234-1234-123456789012
+     *         Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Alias ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *         Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012
+     *         Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
      *         </p>
      *         </li>
      *         <li>
@@ -201,16 +178,13 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier, a fully specified ARN to either an alias or a
-     * key, or an alias name prefixed by "alias/".
+     * A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
+     * specified ARN to either an alias or a key, or an alias name prefixed by "alias/".
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
-     * -1234-123456789012
+     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -231,27 +205,22 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be
-     *        a globally unique identifier, a fully specified ARN to either an
-     *        alias or a key, or an alias name prefixed by "alias/".</p>
+     *        A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
+     *        specified ARN to either an alias or a key, or an alias name prefixed by "alias/".</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     *        -1234-1234-123456789012
+     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012
+     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
      *        <li>
@@ -259,8 +228,7 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Alias Name Example - alias/MyAliasName
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeKeyRequest withKeyId(String keyId) {
@@ -273,18 +241,16 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return A list of grant tokens.</p>
      *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     *         Guide</i>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *         the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public java.util.List<String> getGrantTokens() {
@@ -299,19 +265,17 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     *        Guide</i>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
@@ -320,8 +284,7 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
             return;
         }
 
-        this.grantTokens = new com.amazonaws.internal.SdkInternalList<String>(
-                grantTokens);
+        this.grantTokens = new com.amazonaws.internal.SdkInternalList<String>(grantTokens);
     }
 
     /**
@@ -329,33 +292,28 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGrantTokens(java.util.Collection)} or
-     * {@link #withGrantTokens(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGrantTokens(java.util.Collection)} or {@link #withGrantTokens(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        the <i>AWS Key Management Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeKeyRequest withGrantTokens(String... grantTokens) {
         if (this.grantTokens == null) {
-            setGrantTokens(new com.amazonaws.internal.SdkInternalList<String>(
-                    grantTokens.length));
+            setGrantTokens(new com.amazonaws.internal.SdkInternalList<String>(grantTokens.length));
         }
         for (String ele : grantTokens) {
             this.grantTokens.add(ele);
@@ -368,32 +326,27 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        the <i>AWS Key Management Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeKeyRequest withGrantTokens(
-            java.util.Collection<String> grantTokens) {
+    public DescribeKeyRequest withGrantTokens(java.util.Collection<String> grantTokens) {
         setGrantTokens(grantTokens);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -423,13 +376,11 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
         DescribeKeyRequest other = (DescribeKeyRequest) obj;
         if (other.getKeyId() == null ^ this.getKeyId() == null)
             return false;
-        if (other.getKeyId() != null
-                && other.getKeyId().equals(this.getKeyId()) == false)
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
             return false;
         if (other.getGrantTokens() == null ^ this.getGrantTokens() == null)
             return false;
-        if (other.getGrantTokens() != null
-                && other.getGrantTokens().equals(this.getGrantTokens()) == false)
+        if (other.getGrantTokens() != null && other.getGrantTokens().equals(this.getGrantTokens()) == false)
             return false;
         return true;
     }
@@ -439,11 +390,8 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getGrantTokens() == null) ? 0 : getGrantTokens().hashCode());
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
+        hashCode = prime * hashCode + ((getGrantTokens() == null) ? 0 : getGrantTokens().hashCode());
         return hashCode;
     }
 

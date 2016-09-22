@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -122,8 +120,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @param dynamoDB
      *        Write to a DynamoDB table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Action withDynamoDB(DynamoDBAction dynamoDB) {
@@ -163,8 +160,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @param lambda
      *        Invoke a Lambda function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Action withLambda(LambdaAction lambda) {
@@ -204,8 +200,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @param sns
      *        Publish to an Amazon SNS topic.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Action withSns(SnsAction sns) {
@@ -245,8 +240,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @param sqs
      *        Publish to an Amazon SQS queue.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Action withSqs(SqsAction sqs) {
@@ -286,8 +280,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @param kinesis
      *        Write data to an Amazon Kinesis stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Action withKinesis(KinesisAction kinesis) {
@@ -327,8 +320,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @param republish
      *        Publish to another MQTT topic.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Action withRepublish(RepublishAction republish) {
@@ -368,8 +360,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @param s3
      *        Write to an Amazon S3 bucket.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Action withS3(S3Action s3) {
@@ -409,8 +400,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @param firehose
      *        Write to an Amazon Kinesis Firehose stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Action withFirehose(FirehoseAction firehose) {
@@ -450,8 +440,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @param cloudwatchMetric
      *        Capture a CloudWatch metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Action withCloudwatchMetric(CloudwatchMetricAction cloudwatchMetric) {
@@ -491,8 +480,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @param cloudwatchAlarm
      *        Change the state of a CloudWatch alarm.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Action withCloudwatchAlarm(CloudwatchAlarmAction cloudwatchAlarm) {
@@ -532,8 +520,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @param elasticsearch
      *        Write data to an Amazon Elasticsearch Service domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Action withElasticsearch(ElasticsearchAction elasticsearch) {
@@ -542,8 +529,7 @@ public class Action implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -591,61 +577,47 @@ public class Action implements Serializable, Cloneable {
         Action other = (Action) obj;
         if (other.getDynamoDB() == null ^ this.getDynamoDB() == null)
             return false;
-        if (other.getDynamoDB() != null
-                && other.getDynamoDB().equals(this.getDynamoDB()) == false)
+        if (other.getDynamoDB() != null && other.getDynamoDB().equals(this.getDynamoDB()) == false)
             return false;
         if (other.getLambda() == null ^ this.getLambda() == null)
             return false;
-        if (other.getLambda() != null
-                && other.getLambda().equals(this.getLambda()) == false)
+        if (other.getLambda() != null && other.getLambda().equals(this.getLambda()) == false)
             return false;
         if (other.getSns() == null ^ this.getSns() == null)
             return false;
-        if (other.getSns() != null
-                && other.getSns().equals(this.getSns()) == false)
+        if (other.getSns() != null && other.getSns().equals(this.getSns()) == false)
             return false;
         if (other.getSqs() == null ^ this.getSqs() == null)
             return false;
-        if (other.getSqs() != null
-                && other.getSqs().equals(this.getSqs()) == false)
+        if (other.getSqs() != null && other.getSqs().equals(this.getSqs()) == false)
             return false;
         if (other.getKinesis() == null ^ this.getKinesis() == null)
             return false;
-        if (other.getKinesis() != null
-                && other.getKinesis().equals(this.getKinesis()) == false)
+        if (other.getKinesis() != null && other.getKinesis().equals(this.getKinesis()) == false)
             return false;
         if (other.getRepublish() == null ^ this.getRepublish() == null)
             return false;
-        if (other.getRepublish() != null
-                && other.getRepublish().equals(this.getRepublish()) == false)
+        if (other.getRepublish() != null && other.getRepublish().equals(this.getRepublish()) == false)
             return false;
         if (other.getS3() == null ^ this.getS3() == null)
             return false;
-        if (other.getS3() != null
-                && other.getS3().equals(this.getS3()) == false)
+        if (other.getS3() != null && other.getS3().equals(this.getS3()) == false)
             return false;
         if (other.getFirehose() == null ^ this.getFirehose() == null)
             return false;
-        if (other.getFirehose() != null
-                && other.getFirehose().equals(this.getFirehose()) == false)
+        if (other.getFirehose() != null && other.getFirehose().equals(this.getFirehose()) == false)
             return false;
-        if (other.getCloudwatchMetric() == null
-                ^ this.getCloudwatchMetric() == null)
+        if (other.getCloudwatchMetric() == null ^ this.getCloudwatchMetric() == null)
             return false;
-        if (other.getCloudwatchMetric() != null
-                && other.getCloudwatchMetric().equals(
-                        this.getCloudwatchMetric()) == false)
+        if (other.getCloudwatchMetric() != null && other.getCloudwatchMetric().equals(this.getCloudwatchMetric()) == false)
             return false;
-        if (other.getCloudwatchAlarm() == null
-                ^ this.getCloudwatchAlarm() == null)
+        if (other.getCloudwatchAlarm() == null ^ this.getCloudwatchAlarm() == null)
             return false;
-        if (other.getCloudwatchAlarm() != null
-                && other.getCloudwatchAlarm().equals(this.getCloudwatchAlarm()) == false)
+        if (other.getCloudwatchAlarm() != null && other.getCloudwatchAlarm().equals(this.getCloudwatchAlarm()) == false)
             return false;
         if (other.getElasticsearch() == null ^ this.getElasticsearch() == null)
             return false;
-        if (other.getElasticsearch() != null
-                && other.getElasticsearch().equals(this.getElasticsearch()) == false)
+        if (other.getElasticsearch() != null && other.getElasticsearch().equals(this.getElasticsearch()) == false)
             return false;
         return true;
     }
@@ -655,34 +627,17 @@ public class Action implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDynamoDB() == null) ? 0 : getDynamoDB().hashCode());
-        hashCode = prime * hashCode
-                + ((getLambda() == null) ? 0 : getLambda().hashCode());
-        hashCode = prime * hashCode
-                + ((getSns() == null) ? 0 : getSns().hashCode());
-        hashCode = prime * hashCode
-                + ((getSqs() == null) ? 0 : getSqs().hashCode());
-        hashCode = prime * hashCode
-                + ((getKinesis() == null) ? 0 : getKinesis().hashCode());
-        hashCode = prime * hashCode
-                + ((getRepublish() == null) ? 0 : getRepublish().hashCode());
-        hashCode = prime * hashCode
-                + ((getS3() == null) ? 0 : getS3().hashCode());
-        hashCode = prime * hashCode
-                + ((getFirehose() == null) ? 0 : getFirehose().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCloudwatchMetric() == null) ? 0 : getCloudwatchMetric()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCloudwatchAlarm() == null) ? 0 : getCloudwatchAlarm()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getElasticsearch() == null) ? 0 : getElasticsearch()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDynamoDB() == null) ? 0 : getDynamoDB().hashCode());
+        hashCode = prime * hashCode + ((getLambda() == null) ? 0 : getLambda().hashCode());
+        hashCode = prime * hashCode + ((getSns() == null) ? 0 : getSns().hashCode());
+        hashCode = prime * hashCode + ((getSqs() == null) ? 0 : getSqs().hashCode());
+        hashCode = prime * hashCode + ((getKinesis() == null) ? 0 : getKinesis().hashCode());
+        hashCode = prime * hashCode + ((getRepublish() == null) ? 0 : getRepublish().hashCode());
+        hashCode = prime * hashCode + ((getS3() == null) ? 0 : getS3().hashCode());
+        hashCode = prime * hashCode + ((getFirehose() == null) ? 0 : getFirehose().hashCode());
+        hashCode = prime * hashCode + ((getCloudwatchMetric() == null) ? 0 : getCloudwatchMetric().hashCode());
+        hashCode = prime * hashCode + ((getCloudwatchAlarm() == null) ? 0 : getCloudwatchAlarm().hashCode());
+        hashCode = prime * hashCode + ((getElasticsearch() == null) ? 0 : getElasticsearch().hashCode());
         return hashCode;
     }
 
@@ -691,9 +646,7 @@ public class Action implements Serializable, Cloneable {
         try {
             return (Action) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -68,12 +66,10 @@ public class SolutionStackDescription implements Serializable, Cloneable {
      * 
      * @param solutionStackName
      *        The name of the solution stack.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SolutionStackDescription withSolutionStackName(
-            String solutionStackName) {
+    public SolutionStackDescription withSolutionStackName(String solutionStackName) {
         setSolutionStackName(solutionStackName);
         return this;
     }
@@ -102,15 +98,13 @@ public class SolutionStackDescription implements Serializable, Cloneable {
      *        The permitted file types allowed for a solution stack.
      */
 
-    public void setPermittedFileTypes(
-            java.util.Collection<String> permittedFileTypes) {
+    public void setPermittedFileTypes(java.util.Collection<String> permittedFileTypes) {
         if (permittedFileTypes == null) {
             this.permittedFileTypes = null;
             return;
         }
 
-        this.permittedFileTypes = new com.amazonaws.internal.SdkInternalList<String>(
-                permittedFileTypes);
+        this.permittedFileTypes = new com.amazonaws.internal.SdkInternalList<String>(permittedFileTypes);
     }
 
     /**
@@ -118,23 +112,19 @@ public class SolutionStackDescription implements Serializable, Cloneable {
      * The permitted file types allowed for a solution stack.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPermittedFileTypes(java.util.Collection)} or
-     * {@link #withPermittedFileTypes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPermittedFileTypes(java.util.Collection)} or {@link #withPermittedFileTypes(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param permittedFileTypes
      *        The permitted file types allowed for a solution stack.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SolutionStackDescription withPermittedFileTypes(
-            String... permittedFileTypes) {
+    public SolutionStackDescription withPermittedFileTypes(String... permittedFileTypes) {
         if (this.permittedFileTypes == null) {
-            setPermittedFileTypes(new com.amazonaws.internal.SdkInternalList<String>(
-                    permittedFileTypes.length));
+            setPermittedFileTypes(new com.amazonaws.internal.SdkInternalList<String>(permittedFileTypes.length));
         }
         for (String ele : permittedFileTypes) {
             this.permittedFileTypes.add(ele);
@@ -149,19 +139,16 @@ public class SolutionStackDescription implements Serializable, Cloneable {
      * 
      * @param permittedFileTypes
      *        The permitted file types allowed for a solution stack.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SolutionStackDescription withPermittedFileTypes(
-            java.util.Collection<String> permittedFileTypes) {
+    public SolutionStackDescription withPermittedFileTypes(java.util.Collection<String> permittedFileTypes) {
         setPermittedFileTypes(permittedFileTypes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -189,19 +176,13 @@ public class SolutionStackDescription implements Serializable, Cloneable {
         if (obj instanceof SolutionStackDescription == false)
             return false;
         SolutionStackDescription other = (SolutionStackDescription) obj;
-        if (other.getSolutionStackName() == null
-                ^ this.getSolutionStackName() == null)
+        if (other.getSolutionStackName() == null ^ this.getSolutionStackName() == null)
             return false;
-        if (other.getSolutionStackName() != null
-                && other.getSolutionStackName().equals(
-                        this.getSolutionStackName()) == false)
+        if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false)
             return false;
-        if (other.getPermittedFileTypes() == null
-                ^ this.getPermittedFileTypes() == null)
+        if (other.getPermittedFileTypes() == null ^ this.getPermittedFileTypes() == null)
             return false;
-        if (other.getPermittedFileTypes() != null
-                && other.getPermittedFileTypes().equals(
-                        this.getPermittedFileTypes()) == false)
+        if (other.getPermittedFileTypes() != null && other.getPermittedFileTypes().equals(this.getPermittedFileTypes()) == false)
             return false;
         return true;
     }
@@ -211,14 +192,8 @@ public class SolutionStackDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSolutionStackName() == null) ? 0
-                        : getSolutionStackName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPermittedFileTypes() == null) ? 0
-                        : getPermittedFileTypes().hashCode());
+        hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode());
+        hashCode = prime * hashCode + ((getPermittedFileTypes() == null) ? 0 : getPermittedFileTypes().hashCode());
         return hashCode;
     }
 
@@ -227,9 +202,7 @@ public class SolutionStackDescription implements Serializable, Cloneable {
         try {
             return (SolutionStackDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

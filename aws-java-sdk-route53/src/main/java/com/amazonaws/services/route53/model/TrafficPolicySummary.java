@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -49,8 +47,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
 
     /**
      * @param id
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TrafficPolicySummary withId(String id) {
@@ -76,8 +73,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
 
     /**
      * @param name
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TrafficPolicySummary withName(String name) {
@@ -105,8 +101,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
 
     /**
      * @param type
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
 
@@ -126,8 +121,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
 
     /**
      * @param type
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
 
@@ -154,8 +148,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
 
     /**
      * @param latestVersion
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TrafficPolicySummary withLatestVersion(Integer latestVersion) {
@@ -181,19 +174,16 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
 
     /**
      * @param trafficPolicyCount
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TrafficPolicySummary withTrafficPolicyCount(
-            Integer trafficPolicyCount) {
+    public TrafficPolicySummary withTrafficPolicyCount(Integer trafficPolicyCount) {
         setTrafficPolicyCount(trafficPolicyCount);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -229,30 +219,23 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
         TrafficPolicySummary other = (TrafficPolicySummary) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getLatestVersion() == null ^ this.getLatestVersion() == null)
             return false;
-        if (other.getLatestVersion() != null
-                && other.getLatestVersion().equals(this.getLatestVersion()) == false)
+        if (other.getLatestVersion() != null && other.getLatestVersion().equals(this.getLatestVersion()) == false)
             return false;
-        if (other.getTrafficPolicyCount() == null
-                ^ this.getTrafficPolicyCount() == null)
+        if (other.getTrafficPolicyCount() == null ^ this.getTrafficPolicyCount() == null)
             return false;
-        if (other.getTrafficPolicyCount() != null
-                && other.getTrafficPolicyCount().equals(
-                        this.getTrafficPolicyCount()) == false)
+        if (other.getTrafficPolicyCount() != null && other.getTrafficPolicyCount().equals(this.getTrafficPolicyCount()) == false)
             return false;
         return true;
     }
@@ -262,20 +245,11 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLatestVersion() == null) ? 0 : getLatestVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTrafficPolicyCount() == null) ? 0
-                        : getTrafficPolicyCount().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getLatestVersion() == null) ? 0 : getLatestVersion().hashCode());
+        hashCode = prime * hashCode + ((getTrafficPolicyCount() == null) ? 0 : getTrafficPolicyCount().hashCode());
         return hashCode;
     }
 
@@ -284,9 +258,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
         try {
             return (TrafficPolicySummary) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

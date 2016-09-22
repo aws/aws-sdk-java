@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -44,22 +42,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class UpdateSnapshotScheduleRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.
+     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway
+     * volumes.
      * </p>
      */
     private String volumeARN;
     /**
      * <p>
-     * The hour of the day at which the snapshot schedule begins represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is
-     * in the time zone of the gateway.
+     * The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour
+     * (0 to 23). The hour of the day is in the time zone of the gateway.
      * </p>
      */
     private Integer startAt;
@@ -71,21 +66,20 @@ public class UpdateSnapshotScheduleRequest extends
     private Integer recurrenceInHours;
     /**
      * <p>
-     * Optional description of the snapshot that overwrites the existing
-     * description.
+     * Optional description of the snapshot that overwrites the existing description.
      * </p>
      */
     private String description;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.
+     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway
+     * volumes.
      * </p>
      * 
      * @param volumeARN
-     *        The Amazon Resource Name (ARN) of the volume. Use the
-     *        <a>ListVolumes</a> operation to return a list of gateway volumes.
+     *        The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of
+     *        gateway volumes.
      */
 
     public void setVolumeARN(String volumeARN) {
@@ -94,12 +88,12 @@ public class UpdateSnapshotScheduleRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.
+     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway
+     * volumes.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the volume. Use the
-     *         <a>ListVolumes</a> operation to return a list of gateway volumes.
+     * @return The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of
+     *         gateway volumes.
      */
 
     public String getVolumeARN() {
@@ -108,15 +102,14 @@ public class UpdateSnapshotScheduleRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.
+     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway
+     * volumes.
      * </p>
      * 
      * @param volumeARN
-     *        The Amazon Resource Name (ARN) of the volume. Use the
-     *        <a>ListVolumes</a> operation to return a list of gateway volumes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of
+     *        gateway volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateSnapshotScheduleRequest withVolumeARN(String volumeARN) {
@@ -126,15 +119,13 @@ public class UpdateSnapshotScheduleRequest extends
 
     /**
      * <p>
-     * The hour of the day at which the snapshot schedule begins represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is
-     * in the time zone of the gateway.
+     * The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour
+     * (0 to 23). The hour of the day is in the time zone of the gateway.
      * </p>
      * 
      * @param startAt
-     *        The hour of the day at which the snapshot schedule begins
-     *        represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23).
-     *        The hour of the day is in the time zone of the gateway.
+     *        The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the
+     *        hour (0 to 23). The hour of the day is in the time zone of the gateway.
      */
 
     public void setStartAt(Integer startAt) {
@@ -143,14 +134,12 @@ public class UpdateSnapshotScheduleRequest extends
 
     /**
      * <p>
-     * The hour of the day at which the snapshot schedule begins represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is
-     * in the time zone of the gateway.
+     * The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour
+     * (0 to 23). The hour of the day is in the time zone of the gateway.
      * </p>
      * 
-     * @return The hour of the day at which the snapshot schedule begins
-     *         represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23).
-     *         The hour of the day is in the time zone of the gateway.
+     * @return The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is
+     *         the hour (0 to 23). The hour of the day is in the time zone of the gateway.
      */
 
     public Integer getStartAt() {
@@ -159,17 +148,14 @@ public class UpdateSnapshotScheduleRequest extends
 
     /**
      * <p>
-     * The hour of the day at which the snapshot schedule begins represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is
-     * in the time zone of the gateway.
+     * The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour
+     * (0 to 23). The hour of the day is in the time zone of the gateway.
      * </p>
      * 
      * @param startAt
-     *        The hour of the day at which the snapshot schedule begins
-     *        represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23).
-     *        The hour of the day is in the time zone of the gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the
+     *        hour (0 to 23). The hour of the day is in the time zone of the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateSnapshotScheduleRequest withStartAt(Integer startAt) {
@@ -183,8 +169,7 @@ public class UpdateSnapshotScheduleRequest extends
      * </p>
      * 
      * @param recurrenceInHours
-     *        Frequency of snapshots. Specify the number of hours between
-     *        snapshots.
+     *        Frequency of snapshots. Specify the number of hours between snapshots.
      */
 
     public void setRecurrenceInHours(Integer recurrenceInHours) {
@@ -196,8 +181,7 @@ public class UpdateSnapshotScheduleRequest extends
      * Frequency of snapshots. Specify the number of hours between snapshots.
      * </p>
      * 
-     * @return Frequency of snapshots. Specify the number of hours between
-     *         snapshots.
+     * @return Frequency of snapshots. Specify the number of hours between snapshots.
      */
 
     public Integer getRecurrenceInHours() {
@@ -210,27 +194,22 @@ public class UpdateSnapshotScheduleRequest extends
      * </p>
      * 
      * @param recurrenceInHours
-     *        Frequency of snapshots. Specify the number of hours between
-     *        snapshots.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Frequency of snapshots. Specify the number of hours between snapshots.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateSnapshotScheduleRequest withRecurrenceInHours(
-            Integer recurrenceInHours) {
+    public UpdateSnapshotScheduleRequest withRecurrenceInHours(Integer recurrenceInHours) {
         setRecurrenceInHours(recurrenceInHours);
         return this;
     }
 
     /**
      * <p>
-     * Optional description of the snapshot that overwrites the existing
-     * description.
+     * Optional description of the snapshot that overwrites the existing description.
      * </p>
      * 
      * @param description
-     *        Optional description of the snapshot that overwrites the existing
-     *        description.
+     *        Optional description of the snapshot that overwrites the existing description.
      */
 
     public void setDescription(String description) {
@@ -239,12 +218,10 @@ public class UpdateSnapshotScheduleRequest extends
 
     /**
      * <p>
-     * Optional description of the snapshot that overwrites the existing
-     * description.
+     * Optional description of the snapshot that overwrites the existing description.
      * </p>
      * 
-     * @return Optional description of the snapshot that overwrites the existing
-     *         description.
+     * @return Optional description of the snapshot that overwrites the existing description.
      */
 
     public String getDescription() {
@@ -253,15 +230,12 @@ public class UpdateSnapshotScheduleRequest extends
 
     /**
      * <p>
-     * Optional description of the snapshot that overwrites the existing
-     * description.
+     * Optional description of the snapshot that overwrites the existing description.
      * </p>
      * 
      * @param description
-     *        Optional description of the snapshot that overwrites the existing
-     *        description.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Optional description of the snapshot that overwrites the existing description.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateSnapshotScheduleRequest withDescription(String description) {
@@ -270,8 +244,7 @@ public class UpdateSnapshotScheduleRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -305,25 +278,19 @@ public class UpdateSnapshotScheduleRequest extends
         UpdateSnapshotScheduleRequest other = (UpdateSnapshotScheduleRequest) obj;
         if (other.getVolumeARN() == null ^ this.getVolumeARN() == null)
             return false;
-        if (other.getVolumeARN() != null
-                && other.getVolumeARN().equals(this.getVolumeARN()) == false)
+        if (other.getVolumeARN() != null && other.getVolumeARN().equals(this.getVolumeARN()) == false)
             return false;
         if (other.getStartAt() == null ^ this.getStartAt() == null)
             return false;
-        if (other.getStartAt() != null
-                && other.getStartAt().equals(this.getStartAt()) == false)
+        if (other.getStartAt() != null && other.getStartAt().equals(this.getStartAt()) == false)
             return false;
-        if (other.getRecurrenceInHours() == null
-                ^ this.getRecurrenceInHours() == null)
+        if (other.getRecurrenceInHours() == null ^ this.getRecurrenceInHours() == null)
             return false;
-        if (other.getRecurrenceInHours() != null
-                && other.getRecurrenceInHours().equals(
-                        this.getRecurrenceInHours()) == false)
+        if (other.getRecurrenceInHours() != null && other.getRecurrenceInHours().equals(this.getRecurrenceInHours()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         return true;
     }
@@ -333,17 +300,10 @@ public class UpdateSnapshotScheduleRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartAt() == null) ? 0 : getStartAt().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRecurrenceInHours() == null) ? 0
-                        : getRecurrenceInHours().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode());
+        hashCode = prime * hashCode + ((getStartAt() == null) ? 0 : getStartAt().hashCode());
+        hashCode = prime * hashCode + ((getRecurrenceInHours() == null) ? 0 : getRecurrenceInHours().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

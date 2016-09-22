@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a stop deployment operation.
  * </p>
  */
-public class StopDeploymentRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class StopDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,9 +30,8 @@ public class StopDeploymentRequest extends
     private String deploymentId;
     /**
      * <p>
-     * Indicates, when a deployment is stopped, whether instances that have been
-     * updated should be rolled back to the previous version of the application
-     * revision.
+     * Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the
+     * previous version of the application revision.
      * </p>
      */
     private Boolean autoRollbackEnabled;
@@ -73,8 +68,7 @@ public class StopDeploymentRequest extends
      * 
      * @param deploymentId
      *        The unique ID of a deployment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StopDeploymentRequest withDeploymentId(String deploymentId) {
@@ -84,15 +78,13 @@ public class StopDeploymentRequest extends
 
     /**
      * <p>
-     * Indicates, when a deployment is stopped, whether instances that have been
-     * updated should be rolled back to the previous version of the application
-     * revision.
+     * Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the
+     * previous version of the application revision.
      * </p>
      * 
      * @param autoRollbackEnabled
-     *        Indicates, when a deployment is stopped, whether instances that
-     *        have been updated should be rolled back to the previous version of
-     *        the application revision.
+     *        Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to
+     *        the previous version of the application revision.
      */
 
     public void setAutoRollbackEnabled(Boolean autoRollbackEnabled) {
@@ -101,14 +93,12 @@ public class StopDeploymentRequest extends
 
     /**
      * <p>
-     * Indicates, when a deployment is stopped, whether instances that have been
-     * updated should be rolled back to the previous version of the application
-     * revision.
+     * Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the
+     * previous version of the application revision.
      * </p>
      * 
-     * @return Indicates, when a deployment is stopped, whether instances that
-     *         have been updated should be rolled back to the previous version
-     *         of the application revision.
+     * @return Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back
+     *         to the previous version of the application revision.
      */
 
     public Boolean getAutoRollbackEnabled() {
@@ -117,35 +107,29 @@ public class StopDeploymentRequest extends
 
     /**
      * <p>
-     * Indicates, when a deployment is stopped, whether instances that have been
-     * updated should be rolled back to the previous version of the application
-     * revision.
+     * Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the
+     * previous version of the application revision.
      * </p>
      * 
      * @param autoRollbackEnabled
-     *        Indicates, when a deployment is stopped, whether instances that
-     *        have been updated should be rolled back to the previous version of
-     *        the application revision.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to
+     *        the previous version of the application revision.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StopDeploymentRequest withAutoRollbackEnabled(
-            Boolean autoRollbackEnabled) {
+    public StopDeploymentRequest withAutoRollbackEnabled(Boolean autoRollbackEnabled) {
         setAutoRollbackEnabled(autoRollbackEnabled);
         return this;
     }
 
     /**
      * <p>
-     * Indicates, when a deployment is stopped, whether instances that have been
-     * updated should be rolled back to the previous version of the application
-     * revision.
+     * Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the
+     * previous version of the application revision.
      * </p>
      * 
-     * @return Indicates, when a deployment is stopped, whether instances that
-     *         have been updated should be rolled back to the previous version
-     *         of the application revision.
+     * @return Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back
+     *         to the previous version of the application revision.
      */
 
     public Boolean isAutoRollbackEnabled() {
@@ -153,8 +137,7 @@ public class StopDeploymentRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -184,15 +167,11 @@ public class StopDeploymentRequest extends
         StopDeploymentRequest other = (StopDeploymentRequest) obj;
         if (other.getDeploymentId() == null ^ this.getDeploymentId() == null)
             return false;
-        if (other.getDeploymentId() != null
-                && other.getDeploymentId().equals(this.getDeploymentId()) == false)
+        if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false)
             return false;
-        if (other.getAutoRollbackEnabled() == null
-                ^ this.getAutoRollbackEnabled() == null)
+        if (other.getAutoRollbackEnabled() == null ^ this.getAutoRollbackEnabled() == null)
             return false;
-        if (other.getAutoRollbackEnabled() != null
-                && other.getAutoRollbackEnabled().equals(
-                        this.getAutoRollbackEnabled()) == false)
+        if (other.getAutoRollbackEnabled() != null && other.getAutoRollbackEnabled().equals(this.getAutoRollbackEnabled()) == false)
             return false;
         return true;
     }
@@ -202,14 +181,8 @@ public class StopDeploymentRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentId() == null) ? 0 : getDeploymentId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoRollbackEnabled() == null) ? 0
-                        : getAutoRollbackEnabled().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
+        hashCode = prime * hashCode + ((getAutoRollbackEnabled() == null) ? 0 : getAutoRollbackEnabled().hashCode());
         return hashCode;
     }
 

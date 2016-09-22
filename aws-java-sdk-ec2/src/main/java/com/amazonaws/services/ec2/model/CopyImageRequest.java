@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.CopyImageRequestMarshaller;
  * Contains the parameters for CopyImage.
  * </p>
  */
-public class CopyImageRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<CopyImageRequest> {
+public class CopyImageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CopyImageRequest> {
 
     /**
      * <p>
@@ -53,40 +50,31 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
     private String description;
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * Specifies whether the destination snapshots of the copied image should be
-     * encrypted. The default CMK for EBS is used unless a non-default AWS Key
-     * Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
-     * >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for EBS is
+     * used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For
+     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private Boolean encrypted;
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when
-     * encrypting the snapshots of an image during a copy operation. This
-     * parameter is only required if you want to use a non-default CMK; if this
-     * parameter is not specified, the default CMK for EBS is used. The ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the region
-     * of the CMK, the AWS account ID of the CMK owner, the <code>key</code>
-     * namespace, and then the CMK ID. For example,
-     * arn:aws:kms:<i>us-east-1</i>:
-     * <i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The
-     * specified CMK must exist in the region that the snapshot is being copied
-     * to. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     * flag must also be set.
+     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an image
+     * during a copy operation. This parameter is only required if you want to use a non-default CMK; if this parameter
+     * is not specified, the default CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then
+     * the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified
+     * CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
      * </p>
      */
     private String kmsKeyId;
@@ -123,8 +111,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * 
      * @param sourceRegion
      *        The name of the region that contains the AMI to copy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CopyImageRequest withSourceRegion(String sourceRegion) {
@@ -164,8 +151,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * 
      * @param sourceImageId
      *        The ID of the AMI to copy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CopyImageRequest withSourceImageId(String sourceImageId) {
@@ -205,8 +191,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * 
      * @param name
      *        The name of the new AMI in the destination region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CopyImageRequest withName(String name) {
@@ -246,8 +231,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * 
      * @param description
      *        A description for the new AMI in the destination region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CopyImageRequest withDescription(String description) {
@@ -257,19 +241,15 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure
-     *        idempotency of the request. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     *        >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
-     *        Cloud User Guide</i>.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setClientToken(String clientToken) {
@@ -278,18 +258,14 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure
-     *         idempotency of the request. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     *         >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
-     *         Cloud User Guide</i>.
+     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getClientToken() {
@@ -298,21 +274,16 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure
-     *        idempotency of the request. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     *        >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
-     *        Cloud User Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CopyImageRequest withClientToken(String clientToken) {
@@ -322,23 +293,18 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the destination snapshots of the copied image should be
-     * encrypted. The default CMK for EBS is used unless a non-default AWS Key
-     * Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
-     * >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for EBS is
+     * used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For
+     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param encrypted
-     *        Specifies whether the destination snapshots of the copied image
-     *        should be encrypted. The default CMK for EBS is used unless a
-     *        non-default AWS Key Management Service (AWS KMS) CMK is specified
-     *        with <code>KmsKeyId</code>. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
-     *        >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
-     *        User Guide</i>.
+     *        Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for
+     *        EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with
+     *        <code>KmsKeyId</code>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -347,22 +313,17 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the destination snapshots of the copied image should be
-     * encrypted. The default CMK for EBS is used unless a non-default AWS Key
-     * Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
-     * >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for EBS is
+     * used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For
+     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return Specifies whether the destination snapshots of the copied image
-     *         should be encrypted. The default CMK for EBS is used unless a
-     *         non-default AWS Key Management Service (AWS KMS) CMK is specified
-     *         with <code>KmsKeyId</code>. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
-     *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
-     *         User Guide</i>.
+     * @return Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for
+     *         EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean getEncrypted() {
@@ -371,25 +332,19 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the destination snapshots of the copied image should be
-     * encrypted. The default CMK for EBS is used unless a non-default AWS Key
-     * Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
-     * >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for EBS is
+     * used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For
+     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param encrypted
-     *        Specifies whether the destination snapshots of the copied image
-     *        should be encrypted. The default CMK for EBS is used unless a
-     *        non-default AWS Key Management Service (AWS KMS) CMK is specified
-     *        with <code>KmsKeyId</code>. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
-     *        >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
-     *        User Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for
+     *        EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with
+     *        <code>KmsKeyId</code>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CopyImageRequest withEncrypted(Boolean encrypted) {
@@ -399,22 +354,17 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the destination snapshots of the copied image should be
-     * encrypted. The default CMK for EBS is used unless a non-default AWS Key
-     * Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
-     * >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for EBS is
+     * used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For
+     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return Specifies whether the destination snapshots of the copied image
-     *         should be encrypted. The default CMK for EBS is used unless a
-     *         non-default AWS Key Management Service (AWS KMS) CMK is specified
-     *         with <code>KmsKeyId</code>. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
-     *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
-     *         User Guide</i>.
+     * @return Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for
+     *         EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean isEncrypted() {
@@ -423,34 +373,25 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when
-     * encrypting the snapshots of an image during a copy operation. This
-     * parameter is only required if you want to use a non-default CMK; if this
-     * parameter is not specified, the default CMK for EBS is used. The ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the region
-     * of the CMK, the AWS account ID of the CMK owner, the <code>key</code>
-     * namespace, and then the CMK ID. For example,
-     * arn:aws:kms:<i>us-east-1</i>:
-     * <i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The
-     * specified CMK must exist in the region that the snapshot is being copied
-     * to. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     * flag must also be set.
+     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an image
+     * during a copy operation. This parameter is only required if you want to use a non-default CMK; if this parameter
+     * is not specified, the default CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then
+     * the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified
+     * CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
      * </p>
      * 
      * @param kmsKeyId
-     *        The full ARN of the AWS Key Management Service (AWS KMS) CMK to
-     *        use when encrypting the snapshots of an image during a copy
-     *        operation. This parameter is only required if you want to use a
-     *        non-default CMK; if this parameter is not specified, the default
-     *        CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code>
-     *        namespace, followed by the region of the CMK, the AWS account ID
-     *        of the CMK owner, the <code>key</code> namespace, and then the CMK
-     *        ID. For example,
-     *        arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key
-     *        /<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified CMK
-     *        must exist in the region that the snapshot is being copied to. If
-     *        a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     *        flag must also be set.
+     *        The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an
+     *        image during a copy operation. This parameter is only required if you want to use a non-default CMK; if
+     *        this parameter is not specified, the default CMK for EBS is used. The ARN contains the
+     *        <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS account ID of the CMK
+     *        owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     *        arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The
+     *        specified CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is
+     *        specified, the <code>Encrypted</code> flag must also be set.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -459,34 +400,24 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when
-     * encrypting the snapshots of an image during a copy operation. This
-     * parameter is only required if you want to use a non-default CMK; if this
-     * parameter is not specified, the default CMK for EBS is used. The ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the region
-     * of the CMK, the AWS account ID of the CMK owner, the <code>key</code>
-     * namespace, and then the CMK ID. For example,
-     * arn:aws:kms:<i>us-east-1</i>:
-     * <i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The
-     * specified CMK must exist in the region that the snapshot is being copied
-     * to. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     * flag must also be set.
+     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an image
+     * during a copy operation. This parameter is only required if you want to use a non-default CMK; if this parameter
+     * is not specified, the default CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then
+     * the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified
+     * CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
      * </p>
      * 
-     * @return The full ARN of the AWS Key Management Service (AWS KMS) CMK to
-     *         use when encrypting the snapshots of an image during a copy
-     *         operation. This parameter is only required if you want to use a
-     *         non-default CMK; if this parameter is not specified, the default
-     *         CMK for EBS is used. The ARN contains the
-     *         <code>arn:aws:kms</code> namespace, followed by the region of the
-     *         CMK, the AWS account ID of the CMK owner, the <code>key</code>
-     *         namespace, and then the CMK ID. For example,
-     *         arn:aws:kms:<i>us-east
-     *         -1</i>:<i>012345678910</i>:key/<i>abcd1234-a123
-     *         -456a-a12b-a123b4cd56ef</i>. The specified CMK must exist in the
-     *         region that the snapshot is being copied to. If a
-     *         <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     *         flag must also be set.
+     * @return The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an
+     *         image during a copy operation. This parameter is only required if you want to use a non-default CMK; if
+     *         this parameter is not specified, the default CMK for EBS is used. The ARN contains the
+     *         <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS account ID of the CMK
+     *         owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The
+     *         specified CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code>
+     *         is specified, the <code>Encrypted</code> flag must also be set.
      */
 
     public String getKmsKeyId() {
@@ -495,36 +426,26 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when
-     * encrypting the snapshots of an image during a copy operation. This
-     * parameter is only required if you want to use a non-default CMK; if this
-     * parameter is not specified, the default CMK for EBS is used. The ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the region
-     * of the CMK, the AWS account ID of the CMK owner, the <code>key</code>
-     * namespace, and then the CMK ID. For example,
-     * arn:aws:kms:<i>us-east-1</i>:
-     * <i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The
-     * specified CMK must exist in the region that the snapshot is being copied
-     * to. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     * flag must also be set.
+     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an image
+     * during a copy operation. This parameter is only required if you want to use a non-default CMK; if this parameter
+     * is not specified, the default CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then
+     * the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified
+     * CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
      * </p>
      * 
      * @param kmsKeyId
-     *        The full ARN of the AWS Key Management Service (AWS KMS) CMK to
-     *        use when encrypting the snapshots of an image during a copy
-     *        operation. This parameter is only required if you want to use a
-     *        non-default CMK; if this parameter is not specified, the default
-     *        CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code>
-     *        namespace, followed by the region of the CMK, the AWS account ID
-     *        of the CMK owner, the <code>key</code> namespace, and then the CMK
-     *        ID. For example,
-     *        arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key
-     *        /<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified CMK
-     *        must exist in the region that the snapshot is being copied to. If
-     *        a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     *        flag must also be set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an
+     *        image during a copy operation. This parameter is only required if you want to use a non-default CMK; if
+     *        this parameter is not specified, the default CMK for EBS is used. The ARN contains the
+     *        <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS account ID of the CMK
+     *        owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     *        arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The
+     *        specified CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is
+     *        specified, the <code>Encrypted</code> flag must also be set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CopyImageRequest withKmsKeyId(String kmsKeyId) {
@@ -533,21 +454,18 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<CopyImageRequest> getDryRunRequest() {
-        Request<CopyImageRequest> request = new CopyImageRequestMarshaller()
-                .marshall(this);
+        Request<CopyImageRequest> request = new CopyImageRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -587,38 +505,31 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
         CopyImageRequest other = (CopyImageRequest) obj;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
-        if (other.getSourceRegion() != null
-                && other.getSourceRegion().equals(this.getSourceRegion()) == false)
+        if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
             return false;
         if (other.getSourceImageId() == null ^ this.getSourceImageId() == null)
             return false;
-        if (other.getSourceImageId() != null
-                && other.getSourceImageId().equals(this.getSourceImageId()) == false)
+        if (other.getSourceImageId() != null && other.getSourceImageId().equals(this.getSourceImageId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getClientToken() != null
-                && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getEncrypted() == null ^ this.getEncrypted() == null)
             return false;
-        if (other.getEncrypted() != null
-                && other.getEncrypted().equals(this.getEncrypted()) == false)
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
             return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
-        if (other.getKmsKeyId() != null
-                && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         return true;
     }
@@ -628,26 +539,13 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSourceRegion() == null) ? 0 : getSourceRegion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceImageId() == null) ? 0 : getSourceImageId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
-        hashCode = prime * hashCode
-                + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
+        hashCode = prime * hashCode + ((getSourceImageId() == null) ? 0 : getSourceImageId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

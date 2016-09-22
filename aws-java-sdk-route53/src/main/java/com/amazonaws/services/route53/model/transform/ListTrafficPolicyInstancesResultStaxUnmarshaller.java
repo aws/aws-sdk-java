@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ListTrafficPolicyInstancesResult StAX Unmarshaller
  */
-public class ListTrafficPolicyInstancesResultStaxUnmarshaller implements
-        Unmarshaller<ListTrafficPolicyInstancesResult, StaxUnmarshallerContext> {
+public class ListTrafficPolicyInstancesResultStaxUnmarshaller implements Unmarshaller<ListTrafficPolicyInstancesResult, StaxUnmarshallerContext> {
 
-    public ListTrafficPolicyInstancesResult unmarshall(
-            StaxUnmarshallerContext context) throws Exception {
+    public ListTrafficPolicyInstancesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         ListTrafficPolicyInstancesResult listTrafficPolicyInstancesResult = new ListTrafficPolicyInstancesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -49,49 +45,33 @@ public class ListTrafficPolicyInstancesResultStaxUnmarshaller implements
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression(
-                        "TrafficPolicyInstances/TrafficPolicyInstance",
-                        targetDepth)) {
-                    listTrafficPolicyInstancesResult
-                            .withTrafficPolicyInstances(TrafficPolicyInstanceStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("TrafficPolicyInstances/TrafficPolicyInstance", targetDepth)) {
+                    listTrafficPolicyInstancesResult.withTrafficPolicyInstances(TrafficPolicyInstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("HostedZoneIdMarker", targetDepth)) {
-                    listTrafficPolicyInstancesResult
-                            .setHostedZoneIdMarker(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    listTrafficPolicyInstancesResult.setHostedZoneIdMarker(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("TrafficPolicyInstanceNameMarker",
-                        targetDepth)) {
-                    listTrafficPolicyInstancesResult
-                            .setTrafficPolicyInstanceNameMarker(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("TrafficPolicyInstanceNameMarker", targetDepth)) {
+                    listTrafficPolicyInstancesResult.setTrafficPolicyInstanceNameMarker(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("TrafficPolicyInstanceTypeMarker",
-                        targetDepth)) {
-                    listTrafficPolicyInstancesResult
-                            .setTrafficPolicyInstanceTypeMarker(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("TrafficPolicyInstanceTypeMarker", targetDepth)) {
+                    listTrafficPolicyInstancesResult.setTrafficPolicyInstanceTypeMarker(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("IsTruncated", targetDepth)) {
-                    listTrafficPolicyInstancesResult
-                            .setIsTruncated(BooleanStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    listTrafficPolicyInstancesResult.setIsTruncated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MaxItems", targetDepth)) {
-                    listTrafficPolicyInstancesResult
-                            .setMaxItems(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listTrafficPolicyInstancesResult.setMaxItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

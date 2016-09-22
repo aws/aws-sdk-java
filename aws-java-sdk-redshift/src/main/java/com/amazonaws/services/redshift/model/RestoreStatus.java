@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -18,23 +16,22 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the status of a cluster restore action. Returns null if the cluster
- * was not created by restoring a snapshot.
+ * Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a
+ * snapshot.
  * </p>
  */
 public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the restore action. Returns starting, restoring, completed,
-     * or failed.
+     * The status of the restore action. Returns starting, restoring, completed, or failed.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The number of megabytes per second being transferred from the backup
-     * storage. Returns the average rate for a completed backup.
+     * The number of megabytes per second being transferred from the backup storage. Returns the average rate for a
+     * completed backup.
      * </p>
      */
     private Double currentRestoreRateInMegaBytesPerSecond;
@@ -52,28 +49,25 @@ public class RestoreStatus implements Serializable, Cloneable {
     private Long progressInMegaBytes;
     /**
      * <p>
-     * The amount of time an in-progress restore has been running, or the amount
-     * of time it took a completed restore to finish.
+     * The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to
+     * finish.
      * </p>
      */
     private Long elapsedTimeInSeconds;
     /**
      * <p>
-     * The estimate of the time remaining before the restore will complete.
-     * Returns 0 for a completed restore.
+     * The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
      * </p>
      */
     private Long estimatedTimeToCompletionInSeconds;
 
     /**
      * <p>
-     * The status of the restore action. Returns starting, restoring, completed,
-     * or failed.
+     * The status of the restore action. Returns starting, restoring, completed, or failed.
      * </p>
      * 
      * @param status
-     *        The status of the restore action. Returns starting, restoring,
-     *        completed, or failed.
+     *        The status of the restore action. Returns starting, restoring, completed, or failed.
      */
 
     public void setStatus(String status) {
@@ -82,12 +76,10 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the restore action. Returns starting, restoring, completed,
-     * or failed.
+     * The status of the restore action. Returns starting, restoring, completed, or failed.
      * </p>
      * 
-     * @return The status of the restore action. Returns starting, restoring,
-     *         completed, or failed.
+     * @return The status of the restore action. Returns starting, restoring, completed, or failed.
      */
 
     public String getStatus() {
@@ -96,15 +88,12 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the restore action. Returns starting, restoring, completed,
-     * or failed.
+     * The status of the restore action. Returns starting, restoring, completed, or failed.
      * </p>
      * 
      * @param status
-     *        The status of the restore action. Returns starting, restoring,
-     *        completed, or failed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status of the restore action. Returns starting, restoring, completed, or failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RestoreStatus withStatus(String status) {
@@ -114,28 +103,27 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of megabytes per second being transferred from the backup
-     * storage. Returns the average rate for a completed backup.
+     * The number of megabytes per second being transferred from the backup storage. Returns the average rate for a
+     * completed backup.
      * </p>
      * 
      * @param currentRestoreRateInMegaBytesPerSecond
-     *        The number of megabytes per second being transferred from the
-     *        backup storage. Returns the average rate for a completed backup.
+     *        The number of megabytes per second being transferred from the backup storage. Returns the average rate for
+     *        a completed backup.
      */
 
-    public void setCurrentRestoreRateInMegaBytesPerSecond(
-            Double currentRestoreRateInMegaBytesPerSecond) {
+    public void setCurrentRestoreRateInMegaBytesPerSecond(Double currentRestoreRateInMegaBytesPerSecond) {
         this.currentRestoreRateInMegaBytesPerSecond = currentRestoreRateInMegaBytesPerSecond;
     }
 
     /**
      * <p>
-     * The number of megabytes per second being transferred from the backup
-     * storage. Returns the average rate for a completed backup.
+     * The number of megabytes per second being transferred from the backup storage. Returns the average rate for a
+     * completed backup.
      * </p>
      * 
-     * @return The number of megabytes per second being transferred from the
-     *         backup storage. Returns the average rate for a completed backup.
+     * @return The number of megabytes per second being transferred from the backup storage. Returns the average rate
+     *         for a completed backup.
      */
 
     public Double getCurrentRestoreRateInMegaBytesPerSecond() {
@@ -144,19 +132,17 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of megabytes per second being transferred from the backup
-     * storage. Returns the average rate for a completed backup.
+     * The number of megabytes per second being transferred from the backup storage. Returns the average rate for a
+     * completed backup.
      * </p>
      * 
      * @param currentRestoreRateInMegaBytesPerSecond
-     *        The number of megabytes per second being transferred from the
-     *        backup storage. Returns the average rate for a completed backup.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of megabytes per second being transferred from the backup storage. Returns the average rate for
+     *        a completed backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RestoreStatus withCurrentRestoreRateInMegaBytesPerSecond(
-            Double currentRestoreRateInMegaBytesPerSecond) {
+    public RestoreStatus withCurrentRestoreRateInMegaBytesPerSecond(Double currentRestoreRateInMegaBytesPerSecond) {
         setCurrentRestoreRateInMegaBytesPerSecond(currentRestoreRateInMegaBytesPerSecond);
         return this;
     }
@@ -193,12 +179,10 @@ public class RestoreStatus implements Serializable, Cloneable {
      * 
      * @param snapshotSizeInMegaBytes
      *        The size of the set of snapshot data used to restore the cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RestoreStatus withSnapshotSizeInMegaBytes(
-            Long snapshotSizeInMegaBytes) {
+    public RestoreStatus withSnapshotSizeInMegaBytes(Long snapshotSizeInMegaBytes) {
         setSnapshotSizeInMegaBytes(snapshotSizeInMegaBytes);
         return this;
     }
@@ -209,8 +193,7 @@ public class RestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param progressInMegaBytes
-     *        The number of megabytes that have been transferred from snapshot
-     *        storage.
+     *        The number of megabytes that have been transferred from snapshot storage.
      */
 
     public void setProgressInMegaBytes(Long progressInMegaBytes) {
@@ -222,8 +205,7 @@ public class RestoreStatus implements Serializable, Cloneable {
      * The number of megabytes that have been transferred from snapshot storage.
      * </p>
      * 
-     * @return The number of megabytes that have been transferred from snapshot
-     *         storage.
+     * @return The number of megabytes that have been transferred from snapshot storage.
      */
 
     public Long getProgressInMegaBytes() {
@@ -236,10 +218,8 @@ public class RestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param progressInMegaBytes
-     *        The number of megabytes that have been transferred from snapshot
-     *        storage.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of megabytes that have been transferred from snapshot storage.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RestoreStatus withProgressInMegaBytes(Long progressInMegaBytes) {
@@ -249,13 +229,13 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time an in-progress restore has been running, or the amount
-     * of time it took a completed restore to finish.
+     * The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to
+     * finish.
      * </p>
      * 
      * @param elapsedTimeInSeconds
-     *        The amount of time an in-progress restore has been running, or the
-     *        amount of time it took a completed restore to finish.
+     *        The amount of time an in-progress restore has been running, or the amount of time it took a completed
+     *        restore to finish.
      */
 
     public void setElapsedTimeInSeconds(Long elapsedTimeInSeconds) {
@@ -264,12 +244,12 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time an in-progress restore has been running, or the amount
-     * of time it took a completed restore to finish.
+     * The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to
+     * finish.
      * </p>
      * 
-     * @return The amount of time an in-progress restore has been running, or
-     *         the amount of time it took a completed restore to finish.
+     * @return The amount of time an in-progress restore has been running, or the amount of time it took a completed
+     *         restore to finish.
      */
 
     public Long getElapsedTimeInSeconds() {
@@ -278,15 +258,14 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time an in-progress restore has been running, or the amount
-     * of time it took a completed restore to finish.
+     * The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to
+     * finish.
      * </p>
      * 
      * @param elapsedTimeInSeconds
-     *        The amount of time an in-progress restore has been running, or the
-     *        amount of time it took a completed restore to finish.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The amount of time an in-progress restore has been running, or the amount of time it took a completed
+     *        restore to finish.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RestoreStatus withElapsedTimeInSeconds(Long elapsedTimeInSeconds) {
@@ -296,28 +275,23 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The estimate of the time remaining before the restore will complete.
-     * Returns 0 for a completed restore.
+     * The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
      * </p>
      * 
      * @param estimatedTimeToCompletionInSeconds
-     *        The estimate of the time remaining before the restore will
-     *        complete. Returns 0 for a completed restore.
+     *        The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
      */
 
-    public void setEstimatedTimeToCompletionInSeconds(
-            Long estimatedTimeToCompletionInSeconds) {
+    public void setEstimatedTimeToCompletionInSeconds(Long estimatedTimeToCompletionInSeconds) {
         this.estimatedTimeToCompletionInSeconds = estimatedTimeToCompletionInSeconds;
     }
 
     /**
      * <p>
-     * The estimate of the time remaining before the restore will complete.
-     * Returns 0 for a completed restore.
+     * The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
      * </p>
      * 
-     * @return The estimate of the time remaining before the restore will
-     *         complete. Returns 0 for a completed restore.
+     * @return The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
      */
 
     public Long getEstimatedTimeToCompletionInSeconds() {
@@ -326,26 +300,21 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The estimate of the time remaining before the restore will complete.
-     * Returns 0 for a completed restore.
+     * The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
      * </p>
      * 
      * @param estimatedTimeToCompletionInSeconds
-     *        The estimate of the time remaining before the restore will
-     *        complete. Returns 0 for a completed restore.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RestoreStatus withEstimatedTimeToCompletionInSeconds(
-            Long estimatedTimeToCompletionInSeconds) {
+    public RestoreStatus withEstimatedTimeToCompletionInSeconds(Long estimatedTimeToCompletionInSeconds) {
         setEstimatedTimeToCompletionInSeconds(estimatedTimeToCompletionInSeconds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -358,19 +327,15 @@ public class RestoreStatus implements Serializable, Cloneable {
         if (getStatus() != null)
             sb.append("Status: " + getStatus() + ",");
         if (getCurrentRestoreRateInMegaBytesPerSecond() != null)
-            sb.append("CurrentRestoreRateInMegaBytesPerSecond: "
-                    + getCurrentRestoreRateInMegaBytesPerSecond() + ",");
+            sb.append("CurrentRestoreRateInMegaBytesPerSecond: " + getCurrentRestoreRateInMegaBytesPerSecond() + ",");
         if (getSnapshotSizeInMegaBytes() != null)
-            sb.append("SnapshotSizeInMegaBytes: "
-                    + getSnapshotSizeInMegaBytes() + ",");
+            sb.append("SnapshotSizeInMegaBytes: " + getSnapshotSizeInMegaBytes() + ",");
         if (getProgressInMegaBytes() != null)
             sb.append("ProgressInMegaBytes: " + getProgressInMegaBytes() + ",");
         if (getElapsedTimeInSeconds() != null)
-            sb.append("ElapsedTimeInSeconds: " + getElapsedTimeInSeconds()
-                    + ",");
+            sb.append("ElapsedTimeInSeconds: " + getElapsedTimeInSeconds() + ",");
         if (getEstimatedTimeToCompletionInSeconds() != null)
-            sb.append("EstimatedTimeToCompletionInSeconds: "
-                    + getEstimatedTimeToCompletionInSeconds());
+            sb.append("EstimatedTimeToCompletionInSeconds: " + getEstimatedTimeToCompletionInSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -387,43 +352,29 @@ public class RestoreStatus implements Serializable, Cloneable {
         RestoreStatus other = (RestoreStatus) obj;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getCurrentRestoreRateInMegaBytesPerSecond() == null
-                ^ this.getCurrentRestoreRateInMegaBytesPerSecond() == null)
+        if (other.getCurrentRestoreRateInMegaBytesPerSecond() == null ^ this.getCurrentRestoreRateInMegaBytesPerSecond() == null)
             return false;
         if (other.getCurrentRestoreRateInMegaBytesPerSecond() != null
-                && other.getCurrentRestoreRateInMegaBytesPerSecond().equals(
-                        this.getCurrentRestoreRateInMegaBytesPerSecond()) == false)
+                && other.getCurrentRestoreRateInMegaBytesPerSecond().equals(this.getCurrentRestoreRateInMegaBytesPerSecond()) == false)
             return false;
-        if (other.getSnapshotSizeInMegaBytes() == null
-                ^ this.getSnapshotSizeInMegaBytes() == null)
+        if (other.getSnapshotSizeInMegaBytes() == null ^ this.getSnapshotSizeInMegaBytes() == null)
             return false;
-        if (other.getSnapshotSizeInMegaBytes() != null
-                && other.getSnapshotSizeInMegaBytes().equals(
-                        this.getSnapshotSizeInMegaBytes()) == false)
+        if (other.getSnapshotSizeInMegaBytes() != null && other.getSnapshotSizeInMegaBytes().equals(this.getSnapshotSizeInMegaBytes()) == false)
             return false;
-        if (other.getProgressInMegaBytes() == null
-                ^ this.getProgressInMegaBytes() == null)
+        if (other.getProgressInMegaBytes() == null ^ this.getProgressInMegaBytes() == null)
             return false;
-        if (other.getProgressInMegaBytes() != null
-                && other.getProgressInMegaBytes().equals(
-                        this.getProgressInMegaBytes()) == false)
+        if (other.getProgressInMegaBytes() != null && other.getProgressInMegaBytes().equals(this.getProgressInMegaBytes()) == false)
             return false;
-        if (other.getElapsedTimeInSeconds() == null
-                ^ this.getElapsedTimeInSeconds() == null)
+        if (other.getElapsedTimeInSeconds() == null ^ this.getElapsedTimeInSeconds() == null)
             return false;
-        if (other.getElapsedTimeInSeconds() != null
-                && other.getElapsedTimeInSeconds().equals(
-                        this.getElapsedTimeInSeconds()) == false)
+        if (other.getElapsedTimeInSeconds() != null && other.getElapsedTimeInSeconds().equals(this.getElapsedTimeInSeconds()) == false)
             return false;
-        if (other.getEstimatedTimeToCompletionInSeconds() == null
-                ^ this.getEstimatedTimeToCompletionInSeconds() == null)
+        if (other.getEstimatedTimeToCompletionInSeconds() == null ^ this.getEstimatedTimeToCompletionInSeconds() == null)
             return false;
         if (other.getEstimatedTimeToCompletionInSeconds() != null
-                && other.getEstimatedTimeToCompletionInSeconds().equals(
-                        this.getEstimatedTimeToCompletionInSeconds()) == false)
+                && other.getEstimatedTimeToCompletionInSeconds().equals(this.getEstimatedTimeToCompletionInSeconds()) == false)
             return false;
         return true;
     }
@@ -433,29 +384,12 @@ public class RestoreStatus implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCurrentRestoreRateInMegaBytesPerSecond() == null) ? 0
-                        : getCurrentRestoreRateInMegaBytesPerSecond()
-                                .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotSizeInMegaBytes() == null) ? 0
-                        : getSnapshotSizeInMegaBytes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProgressInMegaBytes() == null) ? 0
-                        : getProgressInMegaBytes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getElapsedTimeInSeconds() == null) ? 0
-                        : getElapsedTimeInSeconds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEstimatedTimeToCompletionInSeconds() == null) ? 0
-                        : getEstimatedTimeToCompletionInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCurrentRestoreRateInMegaBytesPerSecond() == null) ? 0 : getCurrentRestoreRateInMegaBytesPerSecond().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotSizeInMegaBytes() == null) ? 0 : getSnapshotSizeInMegaBytes().hashCode());
+        hashCode = prime * hashCode + ((getProgressInMegaBytes() == null) ? 0 : getProgressInMegaBytes().hashCode());
+        hashCode = prime * hashCode + ((getElapsedTimeInSeconds() == null) ? 0 : getElapsedTimeInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getEstimatedTimeToCompletionInSeconds() == null) ? 0 : getEstimatedTimeToCompletionInSeconds().hashCode());
         return hashCode;
     }
 
@@ -464,9 +398,7 @@ public class RestoreStatus implements Serializable, Cloneable {
         try {
             return (RestoreStatus) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

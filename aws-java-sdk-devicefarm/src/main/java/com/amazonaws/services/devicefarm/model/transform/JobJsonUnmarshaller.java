@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
@@ -29,8 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Job JSON Unmarshaller
  */
-public class JobJsonUnmarshaller implements
-        Unmarshaller<Job, JsonUnmarshallerContext> {
+public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerContext> {
 
     public Job unmarshall(JsonUnmarshallerContext context) throws Exception {
         Job job = new Job();
@@ -52,71 +49,54 @@ public class JobJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    job.setArn(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    job.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    job.setName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    job.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    job.setType(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    job.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    job.setCreated(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    job.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    job.setStatus(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    job.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("result", targetDepth)) {
                     context.nextToken();
-                    job.setResult(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    job.setResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("started", targetDepth)) {
                     context.nextToken();
-                    job.setStarted(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    job.setStarted(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
                     context.nextToken();
-                    job.setStopped(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    job.setStopped(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("counters", targetDepth)) {
                     context.nextToken();
-                    job.setCounters(CountersJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    job.setCounters(CountersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    job.setMessage(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    job.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("device", targetDepth)) {
                     context.nextToken();
-                    job.setDevice(DeviceJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    job.setDevice(DeviceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("deviceMinutes", targetDepth)) {
                     context.nextToken();
-                    job.setDeviceMinutes(DeviceMinutesJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    job.setDeviceMinutes(DeviceMinutesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

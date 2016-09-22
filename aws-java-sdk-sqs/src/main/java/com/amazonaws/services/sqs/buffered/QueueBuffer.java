@@ -191,12 +191,23 @@ class QueueBuffer {
 
     /**
      * Shuts down the queue buffer. Once this method has been called, the queue buffer is not
-     * operational and all subsequent calls to it may fail
+     * operational and all subsequent calls to it may fail.
+     *
+     * Enabling {@link QueueBufferConfig#flushOnShutdown} will wait for the pending tasks in
+     * {@link SendQueueBuffer} to finish before shutting down.
      */
     public void shutdown() {
-        // send buffer does not require shutdown, only
-        // shut down receive buffer
+        if (config.isFlushOnShutdown()) {
+            flush();
+        }
         receiveBuffer.shutdown();
+    }
+
+    /**
+     * Flushes all outstanding outbound requests in the {@link SendQueueBuffer}.
+     */
+    void flush() {
+        sendBuffer.flush();
     }
 
     /**

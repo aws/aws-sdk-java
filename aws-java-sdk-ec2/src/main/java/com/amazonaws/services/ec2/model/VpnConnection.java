@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -37,11 +35,10 @@ public class VpnConnection implements Serializable, Cloneable {
     private String state;
     /**
      * <p>
-     * The configuration information for the VPN connection's customer gateway
-     * (in the native XML format). This element is always present in the
-     * <a>CreateVpnConnection</a> response; however, it's present in the
-     * <a>DescribeVpnConnections</a> response only if the VPN connection is in
-     * the <code>pending</code> or <code>available</code> state.
+     * The configuration information for the VPN connection's customer gateway (in the native XML format). This element
+     * is always present in the <a>CreateVpnConnection</a> response; however, it's present in the
+     * <a>DescribeVpnConnections</a> response only if the VPN connection is in the <code>pending</code> or
+     * <code>available</code> state.
      * </p>
      */
     private String customerGatewayConfiguration;
@@ -59,8 +56,7 @@ public class VpnConnection implements Serializable, Cloneable {
     private String customerGatewayId;
     /**
      * <p>
-     * The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.
+     * The ID of the virtual private gateway at the AWS side of the VPN connection.
      * </p>
      */
     private String vpnGatewayId;
@@ -121,8 +117,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @param vpnConnectionId
      *        The ID of the VPN connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnConnection withVpnConnectionId(String vpnConnectionId) {
@@ -164,8 +159,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @param state
      *        The current state of the VPN connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VpnState
      */
 
@@ -195,8 +189,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @param state
      *        The current state of the VPN connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VpnState
      */
 
@@ -207,41 +200,34 @@ public class VpnConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The configuration information for the VPN connection's customer gateway
-     * (in the native XML format). This element is always present in the
-     * <a>CreateVpnConnection</a> response; however, it's present in the
-     * <a>DescribeVpnConnections</a> response only if the VPN connection is in
-     * the <code>pending</code> or <code>available</code> state.
+     * The configuration information for the VPN connection's customer gateway (in the native XML format). This element
+     * is always present in the <a>CreateVpnConnection</a> response; however, it's present in the
+     * <a>DescribeVpnConnections</a> response only if the VPN connection is in the <code>pending</code> or
+     * <code>available</code> state.
      * </p>
      * 
      * @param customerGatewayConfiguration
-     *        The configuration information for the VPN connection's customer
-     *        gateway (in the native XML format). This element is always present
-     *        in the <a>CreateVpnConnection</a> response; however, it's present
-     *        in the <a>DescribeVpnConnections</a> response only if the VPN
-     *        connection is in the <code>pending</code> or
+     *        The configuration information for the VPN connection's customer gateway (in the native XML format). This
+     *        element is always present in the <a>CreateVpnConnection</a> response; however, it's present in the
+     *        <a>DescribeVpnConnections</a> response only if the VPN connection is in the <code>pending</code> or
      *        <code>available</code> state.
      */
 
-    public void setCustomerGatewayConfiguration(
-            String customerGatewayConfiguration) {
+    public void setCustomerGatewayConfiguration(String customerGatewayConfiguration) {
         this.customerGatewayConfiguration = customerGatewayConfiguration;
     }
 
     /**
      * <p>
-     * The configuration information for the VPN connection's customer gateway
-     * (in the native XML format). This element is always present in the
-     * <a>CreateVpnConnection</a> response; however, it's present in the
-     * <a>DescribeVpnConnections</a> response only if the VPN connection is in
-     * the <code>pending</code> or <code>available</code> state.
+     * The configuration information for the VPN connection's customer gateway (in the native XML format). This element
+     * is always present in the <a>CreateVpnConnection</a> response; however, it's present in the
+     * <a>DescribeVpnConnections</a> response only if the VPN connection is in the <code>pending</code> or
+     * <code>available</code> state.
      * </p>
      * 
-     * @return The configuration information for the VPN connection's customer
-     *         gateway (in the native XML format). This element is always
-     *         present in the <a>CreateVpnConnection</a> response; however, it's
-     *         present in the <a>DescribeVpnConnections</a> response only if the
-     *         VPN connection is in the <code>pending</code> or
+     * @return The configuration information for the VPN connection's customer gateway (in the native XML format). This
+     *         element is always present in the <a>CreateVpnConnection</a> response; however, it's present in the
+     *         <a>DescribeVpnConnections</a> response only if the VPN connection is in the <code>pending</code> or
      *         <code>available</code> state.
      */
 
@@ -251,26 +237,21 @@ public class VpnConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The configuration information for the VPN connection's customer gateway
-     * (in the native XML format). This element is always present in the
-     * <a>CreateVpnConnection</a> response; however, it's present in the
-     * <a>DescribeVpnConnections</a> response only if the VPN connection is in
-     * the <code>pending</code> or <code>available</code> state.
+     * The configuration information for the VPN connection's customer gateway (in the native XML format). This element
+     * is always present in the <a>CreateVpnConnection</a> response; however, it's present in the
+     * <a>DescribeVpnConnections</a> response only if the VPN connection is in the <code>pending</code> or
+     * <code>available</code> state.
      * </p>
      * 
      * @param customerGatewayConfiguration
-     *        The configuration information for the VPN connection's customer
-     *        gateway (in the native XML format). This element is always present
-     *        in the <a>CreateVpnConnection</a> response; however, it's present
-     *        in the <a>DescribeVpnConnections</a> response only if the VPN
-     *        connection is in the <code>pending</code> or
+     *        The configuration information for the VPN connection's customer gateway (in the native XML format). This
+     *        element is always present in the <a>CreateVpnConnection</a> response; however, it's present in the
+     *        <a>DescribeVpnConnections</a> response only if the VPN connection is in the <code>pending</code> or
      *        <code>available</code> state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VpnConnection withCustomerGatewayConfiguration(
-            String customerGatewayConfiguration) {
+    public VpnConnection withCustomerGatewayConfiguration(String customerGatewayConfiguration) {
         setCustomerGatewayConfiguration(customerGatewayConfiguration);
         return this;
     }
@@ -309,8 +290,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of VPN connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see GatewayType
      */
 
@@ -340,8 +320,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of VPN connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see GatewayType
      */
 
@@ -382,8 +361,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @param customerGatewayId
      *        The ID of the customer gateway at your end of the VPN connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnConnection withCustomerGatewayId(String customerGatewayId) {
@@ -393,13 +371,11 @@ public class VpnConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.
+     * The ID of the virtual private gateway at the AWS side of the VPN connection.
      * </p>
      * 
      * @param vpnGatewayId
-     *        The ID of the virtual private gateway at the AWS side of the VPN
-     *        connection.
+     *        The ID of the virtual private gateway at the AWS side of the VPN connection.
      */
 
     public void setVpnGatewayId(String vpnGatewayId) {
@@ -408,12 +384,10 @@ public class VpnConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.
+     * The ID of the virtual private gateway at the AWS side of the VPN connection.
      * </p>
      * 
-     * @return The ID of the virtual private gateway at the AWS side of the VPN
-     *         connection.
+     * @return The ID of the virtual private gateway at the AWS side of the VPN connection.
      */
 
     public String getVpnGatewayId() {
@@ -422,15 +396,12 @@ public class VpnConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.
+     * The ID of the virtual private gateway at the AWS side of the VPN connection.
      * </p>
      * 
      * @param vpnGatewayId
-     *        The ID of the virtual private gateway at the AWS side of the VPN
-     *        connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the virtual private gateway at the AWS side of the VPN connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnConnection withVpnGatewayId(String vpnGatewayId) {
@@ -476,16 +447,14 @@ public class VpnConnection implements Serializable, Cloneable {
      * Any tags assigned to the VPN connection.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        Any tags assigned to the VPN connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnConnection withTags(Tag... tags) {
@@ -505,8 +474,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @param tags
      *        Any tags assigned to the VPN connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnConnection withTags(java.util.Collection<Tag> tags) {
@@ -544,8 +512,7 @@ public class VpnConnection implements Serializable, Cloneable {
             return;
         }
 
-        this.vgwTelemetry = new com.amazonaws.internal.SdkInternalList<VgwTelemetry>(
-                vgwTelemetry);
+        this.vgwTelemetry = new com.amazonaws.internal.SdkInternalList<VgwTelemetry>(vgwTelemetry);
     }
 
     /**
@@ -553,22 +520,19 @@ public class VpnConnection implements Serializable, Cloneable {
      * Information about the VPN tunnel.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVgwTelemetry(java.util.Collection)} or
-     * {@link #withVgwTelemetry(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVgwTelemetry(java.util.Collection)} or {@link #withVgwTelemetry(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param vgwTelemetry
      *        Information about the VPN tunnel.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnConnection withVgwTelemetry(VgwTelemetry... vgwTelemetry) {
         if (this.vgwTelemetry == null) {
-            setVgwTelemetry(new com.amazonaws.internal.SdkInternalList<VgwTelemetry>(
-                    vgwTelemetry.length));
+            setVgwTelemetry(new com.amazonaws.internal.SdkInternalList<VgwTelemetry>(vgwTelemetry.length));
         }
         for (VgwTelemetry ele : vgwTelemetry) {
             this.vgwTelemetry.add(ele);
@@ -583,12 +547,10 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @param vgwTelemetry
      *        Information about the VPN tunnel.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VpnConnection withVgwTelemetry(
-            java.util.Collection<VgwTelemetry> vgwTelemetry) {
+    public VpnConnection withVgwTelemetry(java.util.Collection<VgwTelemetry> vgwTelemetry) {
         setVgwTelemetry(vgwTelemetry);
         return this;
     }
@@ -625,8 +587,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @param options
      *        The VPN connection options.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnConnection withOptions(VpnConnectionOptions options) {
@@ -664,8 +625,7 @@ public class VpnConnection implements Serializable, Cloneable {
             return;
         }
 
-        this.routes = new com.amazonaws.internal.SdkInternalList<VpnStaticRoute>(
-                routes);
+        this.routes = new com.amazonaws.internal.SdkInternalList<VpnStaticRoute>(routes);
     }
 
     /**
@@ -673,22 +633,19 @@ public class VpnConnection implements Serializable, Cloneable {
      * The static routes associated with the VPN connection.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRoutes(java.util.Collection)} or
-     * {@link #withRoutes(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRoutes(java.util.Collection)} or {@link #withRoutes(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param routes
      *        The static routes associated with the VPN connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnConnection withRoutes(VpnStaticRoute... routes) {
         if (this.routes == null) {
-            setRoutes(new com.amazonaws.internal.SdkInternalList<VpnStaticRoute>(
-                    routes.length));
+            setRoutes(new com.amazonaws.internal.SdkInternalList<VpnStaticRoute>(routes.length));
         }
         for (VpnStaticRoute ele : routes) {
             this.routes.add(ele);
@@ -703,8 +660,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @param routes
      *        The static routes associated with the VPN connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpnConnection withRoutes(java.util.Collection<VpnStaticRoute> routes) {
@@ -713,8 +669,7 @@ public class VpnConnection implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -729,8 +684,7 @@ public class VpnConnection implements Serializable, Cloneable {
         if (getState() != null)
             sb.append("State: " + getState() + ",");
         if (getCustomerGatewayConfiguration() != null)
-            sb.append("CustomerGatewayConfiguration: "
-                    + getCustomerGatewayConfiguration() + ",");
+            sb.append("CustomerGatewayConfiguration: " + getCustomerGatewayConfiguration() + ",");
         if (getType() != null)
             sb.append("Type: " + getType() + ",");
         if (getCustomerGatewayId() != null)
@@ -759,60 +713,45 @@ public class VpnConnection implements Serializable, Cloneable {
         if (obj instanceof VpnConnection == false)
             return false;
         VpnConnection other = (VpnConnection) obj;
-        if (other.getVpnConnectionId() == null
-                ^ this.getVpnConnectionId() == null)
+        if (other.getVpnConnectionId() == null ^ this.getVpnConnectionId() == null)
             return false;
-        if (other.getVpnConnectionId() != null
-                && other.getVpnConnectionId().equals(this.getVpnConnectionId()) == false)
+        if (other.getVpnConnectionId() != null && other.getVpnConnectionId().equals(this.getVpnConnectionId()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
-        if (other.getCustomerGatewayConfiguration() == null
-                ^ this.getCustomerGatewayConfiguration() == null)
+        if (other.getCustomerGatewayConfiguration() == null ^ this.getCustomerGatewayConfiguration() == null)
             return false;
-        if (other.getCustomerGatewayConfiguration() != null
-                && other.getCustomerGatewayConfiguration().equals(
-                        this.getCustomerGatewayConfiguration()) == false)
+        if (other.getCustomerGatewayConfiguration() != null && other.getCustomerGatewayConfiguration().equals(this.getCustomerGatewayConfiguration()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
-        if (other.getCustomerGatewayId() == null
-                ^ this.getCustomerGatewayId() == null)
+        if (other.getCustomerGatewayId() == null ^ this.getCustomerGatewayId() == null)
             return false;
-        if (other.getCustomerGatewayId() != null
-                && other.getCustomerGatewayId().equals(
-                        this.getCustomerGatewayId()) == false)
+        if (other.getCustomerGatewayId() != null && other.getCustomerGatewayId().equals(this.getCustomerGatewayId()) == false)
             return false;
         if (other.getVpnGatewayId() == null ^ this.getVpnGatewayId() == null)
             return false;
-        if (other.getVpnGatewayId() != null
-                && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false)
+        if (other.getVpnGatewayId() != null && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getVgwTelemetry() == null ^ this.getVgwTelemetry() == null)
             return false;
-        if (other.getVgwTelemetry() != null
-                && other.getVgwTelemetry().equals(this.getVgwTelemetry()) == false)
+        if (other.getVgwTelemetry() != null && other.getVgwTelemetry().equals(this.getVgwTelemetry()) == false)
             return false;
         if (other.getOptions() == null ^ this.getOptions() == null)
             return false;
-        if (other.getOptions() != null
-                && other.getOptions().equals(this.getOptions()) == false)
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
             return false;
         if (other.getRoutes() == null ^ this.getRoutes() == null)
             return false;
-        if (other.getRoutes() != null
-                && other.getRoutes().equals(this.getRoutes()) == false)
+        if (other.getRoutes() != null && other.getRoutes().equals(this.getRoutes()) == false)
             return false;
         return true;
     }
@@ -822,36 +761,16 @@ public class VpnConnection implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getVpnConnectionId() == null) ? 0 : getVpnConnectionId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomerGatewayConfiguration() == null) ? 0
-                        : getCustomerGatewayConfiguration().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomerGatewayId() == null) ? 0
-                        : getCustomerGatewayId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVgwTelemetry() == null) ? 0 : getVgwTelemetry()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getOptions() == null) ? 0 : getOptions().hashCode());
-        hashCode = prime * hashCode
-                + ((getRoutes() == null) ? 0 : getRoutes().hashCode());
+        hashCode = prime * hashCode + ((getVpnConnectionId() == null) ? 0 : getVpnConnectionId().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getCustomerGatewayConfiguration() == null) ? 0 : getCustomerGatewayConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getCustomerGatewayId() == null) ? 0 : getCustomerGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVgwTelemetry() == null) ? 0 : getVgwTelemetry().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
+        hashCode = prime * hashCode + ((getRoutes() == null) ? 0 : getRoutes().hashCode());
         return hashCode;
     }
 
@@ -860,9 +779,7 @@ public class VpnConnection implements Serializable, Cloneable {
         try {
             return (VpnConnection) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecs.model;
 
@@ -18,9 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Hostnames and IP address entries that are added to the
- * <code>/etc/hosts</code> file of a container via the <code>extraHosts</code>
- * parameter of its <a>ContainerDefinition</a>.
+ * Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the
+ * <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>.
  * </p>
  */
 public class HostEntry implements Serializable, Cloneable {
@@ -70,8 +67,7 @@ public class HostEntry implements Serializable, Cloneable {
      * 
      * @param hostname
      *        The hostname to use in the <code>/etc/hosts</code> entry.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HostEntry withHostname(String hostname) {
@@ -111,8 +107,7 @@ public class HostEntry implements Serializable, Cloneable {
      * 
      * @param ipAddress
      *        The IP address to use in the <code>/etc/hosts</code> entry.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HostEntry withIpAddress(String ipAddress) {
@@ -121,8 +116,7 @@ public class HostEntry implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -152,13 +146,11 @@ public class HostEntry implements Serializable, Cloneable {
         HostEntry other = (HostEntry) obj;
         if (other.getHostname() == null ^ this.getHostname() == null)
             return false;
-        if (other.getHostname() != null
-                && other.getHostname().equals(this.getHostname()) == false)
+        if (other.getHostname() != null && other.getHostname().equals(this.getHostname()) == false)
             return false;
         if (other.getIpAddress() == null ^ this.getIpAddress() == null)
             return false;
-        if (other.getIpAddress() != null
-                && other.getIpAddress().equals(this.getIpAddress()) == false)
+        if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
             return false;
         return true;
     }
@@ -168,10 +160,8 @@ public class HostEntry implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getHostname() == null) ? 0 : getHostname().hashCode());
-        hashCode = prime * hashCode
-                + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode());
+        hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         return hashCode;
     }
 
@@ -180,9 +170,7 @@ public class HostEntry implements Serializable, Cloneable {
         try {
             return (HostEntry) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

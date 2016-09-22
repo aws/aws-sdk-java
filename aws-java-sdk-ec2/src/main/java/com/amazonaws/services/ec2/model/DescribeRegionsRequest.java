@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeRegionsRequestMarshall
  * Contains the parameters for DescribeRegions.
  * </p>
  */
-public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<DescribeRegionsRequest> {
+public class DescribeRegionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeRegionsRequest> {
 
     /**
      * <p>
@@ -40,14 +37,12 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>endpoint</code> - The endpoint of the region (for example,
-     * <code>ec2.us-east-1.amazonaws.com</code>).
+     * <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region (for example,
-     * <code>us-east-1</code>).
+     * <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
      * </p>
      * </li>
      * </ul>
@@ -84,8 +79,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.regionNames = new com.amazonaws.internal.SdkInternalList<String>(
-                regionNames);
+        this.regionNames = new com.amazonaws.internal.SdkInternalList<String>(regionNames);
     }
 
     /**
@@ -93,22 +87,19 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      * The names of one or more regions.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRegionNames(java.util.Collection)} or
-     * {@link #withRegionNames(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRegionNames(java.util.Collection)} or {@link #withRegionNames(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param regionNames
      *        The names of one or more regions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeRegionsRequest withRegionNames(String... regionNames) {
         if (this.regionNames == null) {
-            setRegionNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    regionNames.length));
+            setRegionNames(new com.amazonaws.internal.SdkInternalList<String>(regionNames.length));
         }
         for (String ele : regionNames) {
             this.regionNames.add(ele);
@@ -123,12 +114,10 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      * 
      * @param regionNames
      *        The names of one or more regions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeRegionsRequest withRegionNames(
-            java.util.Collection<String> regionNames) {
+    public DescribeRegionsRequest withRegionNames(java.util.Collection<String> regionNames) {
         setRegionNames(regionNames);
         return this;
     }
@@ -140,14 +129,12 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>endpoint</code> - The endpoint of the region (for example,
-     * <code>ec2.us-east-1.amazonaws.com</code>).
+     * <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region (for example,
-     * <code>us-east-1</code>).
+     * <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
      * </p>
      * </li>
      * </ul>
@@ -156,14 +143,13 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>endpoint</code> - The endpoint of the region (for example,
-     *         <code>ec2.us-east-1.amazonaws.com</code>).
+     *         <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>
+     *         ).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>region-name</code> - The name of the region (for example,
-     *         <code>us-east-1</code>).
+     *         <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
      *         </p>
      *         </li>
      */
@@ -182,14 +168,12 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>endpoint</code> - The endpoint of the region (for example,
-     * <code>ec2.us-east-1.amazonaws.com</code>).
+     * <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region (for example,
-     * <code>us-east-1</code>).
+     * <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
      * </p>
      * </li>
      * </ul>
@@ -199,14 +183,13 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>endpoint</code> - The endpoint of the region (for example,
-     *        <code>ec2.us-east-1.amazonaws.com</code>).
+     *        <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>
+     *        ).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the region (for example,
-     *        <code>us-east-1</code>).
+     *        <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
      *        </p>
      *        </li>
      */
@@ -217,8 +200,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -228,22 +210,19 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>endpoint</code> - The endpoint of the region (for example,
-     * <code>ec2.us-east-1.amazonaws.com</code>).
+     * <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region (for example,
-     * <code>us-east-1</code>).
+     * <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
@@ -251,24 +230,21 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>endpoint</code> - The endpoint of the region (for example,
-     *        <code>ec2.us-east-1.amazonaws.com</code>).
+     *        <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>
+     *        ).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the region (for example,
-     *        <code>us-east-1</code>).
+     *        <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeRegionsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -283,14 +259,12 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>endpoint</code> - The endpoint of the region (for example,
-     * <code>ec2.us-east-1.amazonaws.com</code>).
+     * <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region (for example,
-     * <code>us-east-1</code>).
+     * <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
      * </p>
      * </li>
      * </ul>
@@ -300,42 +274,36 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>endpoint</code> - The endpoint of the region (for example,
-     *        <code>ec2.us-east-1.amazonaws.com</code>).
+     *        <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>
+     *        ).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the region (for example,
-     *        <code>us-east-1</code>).
+     *        <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeRegionsRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeRegionsRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeRegionsRequest> getDryRunRequest() {
-        Request<DescribeRegionsRequest> request = new DescribeRegionsRequestMarshaller()
-                .marshall(this);
+        Request<DescribeRegionsRequest> request = new DescribeRegionsRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -365,13 +333,11 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
         DescribeRegionsRequest other = (DescribeRegionsRequest) obj;
         if (other.getRegionNames() == null ^ this.getRegionNames() == null)
             return false;
-        if (other.getRegionNames() != null
-                && other.getRegionNames().equals(this.getRegionNames()) == false)
+        if (other.getRegionNames() != null && other.getRegionNames().equals(this.getRegionNames()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         return true;
     }
@@ -381,11 +347,8 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRegionNames() == null) ? 0 : getRegionNames().hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getRegionNames() == null) ? 0 : getRegionNames().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

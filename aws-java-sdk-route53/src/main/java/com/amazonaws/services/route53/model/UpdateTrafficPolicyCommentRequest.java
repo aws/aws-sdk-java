@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -19,25 +17,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the traffic policy for which
- * you want to update the comment.
+ * A complex type that contains information about the traffic policy for which you want to update the comment.
  * </p>
  */
-public class UpdateTrafficPolicyCommentRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateTrafficPolicyCommentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.
+     * The value of <code>Id</code> for the traffic policy for which you want to update the comment.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The value of <code>Version</code> for the traffic policy for which you
-     * want to update the comment.
+     * The value of <code>Version</code> for the traffic policy for which you want to update the comment.
      * </p>
      */
     private Integer version;
@@ -50,13 +43,11 @@ public class UpdateTrafficPolicyCommentRequest extends
 
     /**
      * <p>
-     * The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.
+     * The value of <code>Id</code> for the traffic policy for which you want to update the comment.
      * </p>
      * 
      * @param id
-     *        The value of <code>Id</code> for the traffic policy for which you
-     *        want to update the comment.
+     *        The value of <code>Id</code> for the traffic policy for which you want to update the comment.
      */
 
     public void setId(String id) {
@@ -65,12 +56,10 @@ public class UpdateTrafficPolicyCommentRequest extends
 
     /**
      * <p>
-     * The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.
+     * The value of <code>Id</code> for the traffic policy for which you want to update the comment.
      * </p>
      * 
-     * @return The value of <code>Id</code> for the traffic policy for which you
-     *         want to update the comment.
+     * @return The value of <code>Id</code> for the traffic policy for which you want to update the comment.
      */
 
     public String getId() {
@@ -79,15 +68,12 @@ public class UpdateTrafficPolicyCommentRequest extends
 
     /**
      * <p>
-     * The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.
+     * The value of <code>Id</code> for the traffic policy for which you want to update the comment.
      * </p>
      * 
      * @param id
-     *        The value of <code>Id</code> for the traffic policy for which you
-     *        want to update the comment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value of <code>Id</code> for the traffic policy for which you want to update the comment.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateTrafficPolicyCommentRequest withId(String id) {
@@ -97,13 +83,11 @@ public class UpdateTrafficPolicyCommentRequest extends
 
     /**
      * <p>
-     * The value of <code>Version</code> for the traffic policy for which you
-     * want to update the comment.
+     * The value of <code>Version</code> for the traffic policy for which you want to update the comment.
      * </p>
      * 
      * @param version
-     *        The value of <code>Version</code> for the traffic policy for which
-     *        you want to update the comment.
+     *        The value of <code>Version</code> for the traffic policy for which you want to update the comment.
      */
 
     public void setVersion(Integer version) {
@@ -112,12 +96,10 @@ public class UpdateTrafficPolicyCommentRequest extends
 
     /**
      * <p>
-     * The value of <code>Version</code> for the traffic policy for which you
-     * want to update the comment.
+     * The value of <code>Version</code> for the traffic policy for which you want to update the comment.
      * </p>
      * 
-     * @return The value of <code>Version</code> for the traffic policy for
-     *         which you want to update the comment.
+     * @return The value of <code>Version</code> for the traffic policy for which you want to update the comment.
      */
 
     public Integer getVersion() {
@@ -126,15 +108,12 @@ public class UpdateTrafficPolicyCommentRequest extends
 
     /**
      * <p>
-     * The value of <code>Version</code> for the traffic policy for which you
-     * want to update the comment.
+     * The value of <code>Version</code> for the traffic policy for which you want to update the comment.
      * </p>
      * 
      * @param version
-     *        The value of <code>Version</code> for the traffic policy for which
-     *        you want to update the comment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value of <code>Version</code> for the traffic policy for which you want to update the comment.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateTrafficPolicyCommentRequest withVersion(Integer version) {
@@ -174,8 +153,7 @@ public class UpdateTrafficPolicyCommentRequest extends
      * 
      * @param comment
      *        The new comment for the specified traffic policy and version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateTrafficPolicyCommentRequest withComment(String comment) {
@@ -184,8 +162,7 @@ public class UpdateTrafficPolicyCommentRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -217,18 +194,15 @@ public class UpdateTrafficPolicyCommentRequest extends
         UpdateTrafficPolicyCommentRequest other = (UpdateTrafficPolicyCommentRequest) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
-        if (other.getVersion() != null
-                && other.getVersion().equals(this.getVersion()) == false)
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
         if (other.getComment() == null ^ this.getComment() == null)
             return false;
-        if (other.getComment() != null
-                && other.getComment().equals(this.getComment()) == false)
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
             return false;
         return true;
     }
@@ -238,12 +212,9 @@ public class UpdateTrafficPolicyCommentRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getVersion() == null) ? 0 : getVersion().hashCode());
-        hashCode = prime * hashCode
-                + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         return hashCode;
     }
 

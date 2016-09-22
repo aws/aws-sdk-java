@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -25,8 +23,7 @@ public class AttributePayload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string containing up to three key-value pair in JSON format. For
-     * example:
+     * A JSON string containing up to three key-value pair in JSON format. For example:
      * </p>
      * <p>
      * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
@@ -35,18 +32,15 @@ public class AttributePayload implements Serializable, Cloneable {
     private java.util.Map<String, String> attributes;
     /**
      * <p>
-     * Specifies whether the list of attributes provided in the
-     * <code>AttributePayload</code> is merged with the attributes stored in the
-     * registry, instead of overwriting them.
+     * Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the
+     * attributes stored in the registry, instead of overwriting them.
      * </p>
      * <p>
-     * To remove an attribute, call <code>UpdateThing</code> with an empty
-     * attribute value.
+     * To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.
      * </p>
      * <note>
      * <p>
-     * The <code>merge</code> attribute is only valid when calling
-     * <code>UpdateThing</code>.
+     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
      * </p>
      * </note>
      */
@@ -54,15 +48,13 @@ public class AttributePayload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string containing up to three key-value pair in JSON format. For
-     * example:
+     * A JSON string containing up to three key-value pair in JSON format. For example:
      * </p>
      * <p>
      * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      * </p>
      * 
-     * @return A JSON string containing up to three key-value pair in JSON
-     *         format. For example:</p>
+     * @return A JSON string containing up to three key-value pair in JSON format. For example:</p>
      *         <p>
      *         <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      */
@@ -73,16 +65,14 @@ public class AttributePayload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string containing up to three key-value pair in JSON format. For
-     * example:
+     * A JSON string containing up to three key-value pair in JSON format. For example:
      * </p>
      * <p>
      * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      * </p>
      * 
      * @param attributes
-     *        A JSON string containing up to three key-value pair in JSON
-     *        format. For example:</p>
+     *        A JSON string containing up to three key-value pair in JSON format. For example:</p>
      *        <p>
      *        <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      */
@@ -93,24 +83,20 @@ public class AttributePayload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string containing up to three key-value pair in JSON format. For
-     * example:
+     * A JSON string containing up to three key-value pair in JSON format. For example:
      * </p>
      * <p>
      * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      * </p>
      * 
      * @param attributes
-     *        A JSON string containing up to three key-value pair in JSON
-     *        format. For example:</p>
+     *        A JSON string containing up to three key-value pair in JSON format. For example:</p>
      *        <p>
      *        <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AttributePayload withAttributes(
-            java.util.Map<String, String> attributes) {
+    public AttributePayload withAttributes(java.util.Map<String, String> attributes) {
         setAttributes(attributes);
         return this;
     }
@@ -120,15 +106,14 @@ public class AttributePayload implements Serializable, Cloneable {
             this.attributes = new java.util.HashMap<String, String>();
         }
         if (this.attributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.attributes.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Attributes. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into Attributes. &lt;p> Returns a reference to this object so that method calls can
+     * be chained together.
      */
 
     public AttributePayload clearAttributesEntries() {
@@ -138,33 +123,27 @@ public class AttributePayload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the list of attributes provided in the
-     * <code>AttributePayload</code> is merged with the attributes stored in the
-     * registry, instead of overwriting them.
+     * Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the
+     * attributes stored in the registry, instead of overwriting them.
      * </p>
      * <p>
-     * To remove an attribute, call <code>UpdateThing</code> with an empty
-     * attribute value.
+     * To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.
      * </p>
      * <note>
      * <p>
-     * The <code>merge</code> attribute is only valid when calling
-     * <code>UpdateThing</code>.
+     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
      * </p>
      * </note>
      * 
      * @param merge
-     *        Specifies whether the list of attributes provided in the
-     *        <code>AttributePayload</code> is merged with the attributes stored
-     *        in the registry, instead of overwriting them.</p>
+     *        Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the
+     *        attributes stored in the registry, instead of overwriting them.</p>
      *        <p>
-     *        To remove an attribute, call <code>UpdateThing</code> with an
-     *        empty attribute value.
+     *        To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>merge</code> attribute is only valid when calling
-     *        <code>UpdateThing</code>.
+     *        The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
      *        </p>
      */
 
@@ -174,32 +153,26 @@ public class AttributePayload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the list of attributes provided in the
-     * <code>AttributePayload</code> is merged with the attributes stored in the
-     * registry, instead of overwriting them.
+     * Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the
+     * attributes stored in the registry, instead of overwriting them.
      * </p>
      * <p>
-     * To remove an attribute, call <code>UpdateThing</code> with an empty
-     * attribute value.
+     * To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.
      * </p>
      * <note>
      * <p>
-     * The <code>merge</code> attribute is only valid when calling
-     * <code>UpdateThing</code>.
+     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
      * </p>
      * </note>
      * 
-     * @return Specifies whether the list of attributes provided in the
-     *         <code>AttributePayload</code> is merged with the attributes
-     *         stored in the registry, instead of overwriting them.</p>
+     * @return Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the
+     *         attributes stored in the registry, instead of overwriting them.</p>
      *         <p>
-     *         To remove an attribute, call <code>UpdateThing</code> with an
-     *         empty attribute value.
+     *         To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.
      *         </p>
      *         <note>
      *         <p>
-     *         The <code>merge</code> attribute is only valid when calling
-     *         <code>UpdateThing</code>.
+     *         The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
      *         </p>
      */
 
@@ -209,36 +182,29 @@ public class AttributePayload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the list of attributes provided in the
-     * <code>AttributePayload</code> is merged with the attributes stored in the
-     * registry, instead of overwriting them.
+     * Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the
+     * attributes stored in the registry, instead of overwriting them.
      * </p>
      * <p>
-     * To remove an attribute, call <code>UpdateThing</code> with an empty
-     * attribute value.
+     * To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.
      * </p>
      * <note>
      * <p>
-     * The <code>merge</code> attribute is only valid when calling
-     * <code>UpdateThing</code>.
+     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
      * </p>
      * </note>
      * 
      * @param merge
-     *        Specifies whether the list of attributes provided in the
-     *        <code>AttributePayload</code> is merged with the attributes stored
-     *        in the registry, instead of overwriting them.</p>
+     *        Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the
+     *        attributes stored in the registry, instead of overwriting them.</p>
      *        <p>
-     *        To remove an attribute, call <code>UpdateThing</code> with an
-     *        empty attribute value.
+     *        To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>merge</code> attribute is only valid when calling
-     *        <code>UpdateThing</code>.
+     *        The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributePayload withMerge(Boolean merge) {
@@ -248,32 +214,26 @@ public class AttributePayload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the list of attributes provided in the
-     * <code>AttributePayload</code> is merged with the attributes stored in the
-     * registry, instead of overwriting them.
+     * Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the
+     * attributes stored in the registry, instead of overwriting them.
      * </p>
      * <p>
-     * To remove an attribute, call <code>UpdateThing</code> with an empty
-     * attribute value.
+     * To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.
      * </p>
      * <note>
      * <p>
-     * The <code>merge</code> attribute is only valid when calling
-     * <code>UpdateThing</code>.
+     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
      * </p>
      * </note>
      * 
-     * @return Specifies whether the list of attributes provided in the
-     *         <code>AttributePayload</code> is merged with the attributes
-     *         stored in the registry, instead of overwriting them.</p>
+     * @return Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the
+     *         attributes stored in the registry, instead of overwriting them.</p>
      *         <p>
-     *         To remove an attribute, call <code>UpdateThing</code> with an
-     *         empty attribute value.
+     *         To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.
      *         </p>
      *         <note>
      *         <p>
-     *         The <code>merge</code> attribute is only valid when calling
-     *         <code>UpdateThing</code>.
+     *         The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
      *         </p>
      */
 
@@ -282,8 +242,7 @@ public class AttributePayload implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -313,13 +272,11 @@ public class AttributePayload implements Serializable, Cloneable {
         AttributePayload other = (AttributePayload) obj;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
-        if (other.getAttributes() != null
-                && other.getAttributes().equals(this.getAttributes()) == false)
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
         if (other.getMerge() == null ^ this.getMerge() == null)
             return false;
-        if (other.getMerge() != null
-                && other.getMerge().equals(this.getMerge()) == false)
+        if (other.getMerge() != null && other.getMerge().equals(this.getMerge()) == false)
             return false;
         return true;
     }
@@ -329,10 +286,8 @@ public class AttributePayload implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
-        hashCode = prime * hashCode
-                + ((getMerge() == null) ? 0 : getMerge().hashCode());
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getMerge() == null) ? 0 : getMerge().hashCode());
         return hashCode;
     }
 
@@ -341,9 +296,7 @@ public class AttributePayload implements Serializable, Cloneable {
         try {
             return (AttributePayload) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

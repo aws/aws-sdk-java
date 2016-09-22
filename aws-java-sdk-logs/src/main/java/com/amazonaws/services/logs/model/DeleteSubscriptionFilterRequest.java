@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -20,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteSubscriptionFilterRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteSubscriptionFilterRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the log group that is associated with the subscription filter
-     * to delete.
+     * The name of the log group that is associated with the subscription filter to delete.
      * </p>
      */
     private String logGroupName;
@@ -40,13 +35,11 @@ public class DeleteSubscriptionFilterRequest extends
 
     /**
      * <p>
-     * The name of the log group that is associated with the subscription filter
-     * to delete.
+     * The name of the log group that is associated with the subscription filter to delete.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group that is associated with the subscription
-     *        filter to delete.
+     *        The name of the log group that is associated with the subscription filter to delete.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -55,12 +48,10 @@ public class DeleteSubscriptionFilterRequest extends
 
     /**
      * <p>
-     * The name of the log group that is associated with the subscription filter
-     * to delete.
+     * The name of the log group that is associated with the subscription filter to delete.
      * </p>
      * 
-     * @return The name of the log group that is associated with the
-     *         subscription filter to delete.
+     * @return The name of the log group that is associated with the subscription filter to delete.
      */
 
     public String getLogGroupName() {
@@ -69,15 +60,12 @@ public class DeleteSubscriptionFilterRequest extends
 
     /**
      * <p>
-     * The name of the log group that is associated with the subscription filter
-     * to delete.
+     * The name of the log group that is associated with the subscription filter to delete.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group that is associated with the subscription
-     *        filter to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the log group that is associated with the subscription filter to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteSubscriptionFilterRequest withLogGroupName(String logGroupName) {
@@ -117,8 +105,7 @@ public class DeleteSubscriptionFilterRequest extends
      * 
      * @param filterName
      *        The name of the subscription filter to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteSubscriptionFilterRequest withFilterName(String filterName) {
@@ -127,8 +114,7 @@ public class DeleteSubscriptionFilterRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -158,13 +144,11 @@ public class DeleteSubscriptionFilterRequest extends
         DeleteSubscriptionFilterRequest other = (DeleteSubscriptionFilterRequest) obj;
         if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
             return false;
-        if (other.getLogGroupName() != null
-                && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
             return false;
         if (other.getFilterName() == null ^ this.getFilterName() == null)
             return false;
-        if (other.getFilterName() != null
-                && other.getFilterName().equals(this.getFilterName()) == false)
+        if (other.getFilterName() != null && other.getFilterName().equals(this.getFilterName()) == false)
             return false;
         return true;
     }
@@ -174,12 +158,8 @@ public class DeleteSubscriptionFilterRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLogGroupName() == null) ? 0 : getLogGroupName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getFilterName() == null) ? 0 : getFilterName().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getFilterName() == null) ? 0 : getFilterName().hashCode());
         return hashCode;
     }
 

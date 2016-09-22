@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ReservedDBInstance StAX Unmarshaller
  */
-public class ReservedDBInstanceStaxUnmarshaller implements
-        Unmarshaller<ReservedDBInstance, StaxUnmarshallerContext> {
+public class ReservedDBInstanceStaxUnmarshaller implements Unmarshaller<ReservedDBInstance, StaxUnmarshallerContext> {
 
-    public ReservedDBInstance unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public ReservedDBInstance unmarshall(StaxUnmarshallerContext context) throws Exception {
         ReservedDBInstance reservedDBInstance = new ReservedDBInstance();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,102 +46,77 @@ public class ReservedDBInstanceStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("ReservedDBInstanceId", targetDepth)) {
-                    reservedDBInstance
-                            .setReservedDBInstanceId(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    reservedDBInstance.setReservedDBInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("ReservedDBInstancesOfferingId",
-                        targetDepth)) {
-                    reservedDBInstance
-                            .setReservedDBInstancesOfferingId(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("ReservedDBInstancesOfferingId", targetDepth)) {
+                    reservedDBInstance.setReservedDBInstancesOfferingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DBInstanceClass", targetDepth)) {
-                    reservedDBInstance
-                            .setDBInstanceClass(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    reservedDBInstance.setDBInstanceClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("StartTime", targetDepth)) {
-                    reservedDBInstance.setStartTime(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    reservedDBInstance.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Duration", targetDepth)) {
-                    reservedDBInstance.setDuration(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    reservedDBInstance.setDuration(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("FixedPrice", targetDepth)) {
-                    reservedDBInstance.setFixedPrice(DoubleStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    reservedDBInstance.setFixedPrice(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("UsagePrice", targetDepth)) {
-                    reservedDBInstance.setUsagePrice(DoubleStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    reservedDBInstance.setUsagePrice(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("CurrencyCode", targetDepth)) {
-                    reservedDBInstance.setCurrencyCode(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    reservedDBInstance.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DBInstanceCount", targetDepth)) {
-                    reservedDBInstance
-                            .setDBInstanceCount(IntegerStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    reservedDBInstance.setDBInstanceCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ProductDescription", targetDepth)) {
-                    reservedDBInstance
-                            .setProductDescription(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    reservedDBInstance.setProductDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("OfferingType", targetDepth)) {
-                    reservedDBInstance.setOfferingType(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    reservedDBInstance.setOfferingType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MultiAZ", targetDepth)) {
-                    reservedDBInstance.setMultiAZ(BooleanStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    reservedDBInstance.setMultiAZ(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("State", targetDepth)) {
-                    reservedDBInstance.setState(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    reservedDBInstance.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("RecurringCharges/RecurringCharge",
-                        targetDepth)) {
-                    reservedDBInstance
-                            .withRecurringCharges(RecurringChargeStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("RecurringCharges/RecurringCharge", targetDepth)) {
+                    reservedDBInstance.withRecurringCharges(RecurringChargeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("ReservedDBInstanceArn", targetDepth)) {
-                    reservedDBInstance
-                            .setReservedDBInstanceArn(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("ReservedDBInstanceArn", targetDepth)) {
+                    reservedDBInstance.setReservedDBInstanceArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -21,18 +19,14 @@ import java.io.Serializable;
  * Contains the output from the <a>DescribeClusterSubnetGroups</a> action.
  * </p>
  */
-public class DescribeClusterSubnetGroupsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeClusterSubnetGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      */
     private String marker;
@@ -45,22 +39,17 @@ public class DescribeClusterSubnetGroupsResult extends
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      * 
      * @param marker
-     *        A value that indicates the starting point for the next set of
-     *        response records in a subsequent request. If a value is returned
-     *        in a response, you can retrieve the next set of records by
-     *        providing this returned marker value in the <code>Marker</code>
-     *        parameter and retrying the command. If the <code>Marker</code>
-     *        field is empty, all response records have been retrieved for the
-     *        request.
+     *        A value that indicates the starting point for the next set of response records in a subsequent request. If
+     *        a value is returned in a response, you can retrieve the next set of records by providing this returned
+     *        marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+     *        field is empty, all response records have been retrieved for the request.
      */
 
     public void setMarker(String marker) {
@@ -69,21 +58,16 @@ public class DescribeClusterSubnetGroupsResult extends
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      * 
-     * @return A value that indicates the starting point for the next set of
-     *         response records in a subsequent request. If a value is returned
-     *         in a response, you can retrieve the next set of records by
-     *         providing this returned marker value in the <code>Marker</code>
-     *         parameter and retrying the command. If the <code>Marker</code>
-     *         field is empty, all response records have been retrieved for the
-     *         request.
+     * @return A value that indicates the starting point for the next set of response records in a subsequent request.
+     *         If a value is returned in a response, you can retrieve the next set of records by providing this returned
+     *         marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+     *         field is empty, all response records have been retrieved for the request.
      */
 
     public String getMarker() {
@@ -92,24 +76,18 @@ public class DescribeClusterSubnetGroupsResult extends
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      * 
      * @param marker
-     *        A value that indicates the starting point for the next set of
-     *        response records in a subsequent request. If a value is returned
-     *        in a response, you can retrieve the next set of records by
-     *        providing this returned marker value in the <code>Marker</code>
-     *        parameter and retrying the command. If the <code>Marker</code>
-     *        field is empty, all response records have been retrieved for the
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value that indicates the starting point for the next set of response records in a subsequent request. If
+     *        a value is returned in a response, you can retrieve the next set of records by providing this returned
+     *        marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+     *        field is empty, all response records have been retrieved for the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeClusterSubnetGroupsResult withMarker(String marker) {
@@ -141,15 +119,13 @@ public class DescribeClusterSubnetGroupsResult extends
      *        A list of <a>ClusterSubnetGroup</a> instances.
      */
 
-    public void setClusterSubnetGroups(
-            java.util.Collection<ClusterSubnetGroup> clusterSubnetGroups) {
+    public void setClusterSubnetGroups(java.util.Collection<ClusterSubnetGroup> clusterSubnetGroups) {
         if (clusterSubnetGroups == null) {
             this.clusterSubnetGroups = null;
             return;
         }
 
-        this.clusterSubnetGroups = new com.amazonaws.internal.SdkInternalList<ClusterSubnetGroup>(
-                clusterSubnetGroups);
+        this.clusterSubnetGroups = new com.amazonaws.internal.SdkInternalList<ClusterSubnetGroup>(clusterSubnetGroups);
     }
 
     /**
@@ -157,23 +133,19 @@ public class DescribeClusterSubnetGroupsResult extends
      * A list of <a>ClusterSubnetGroup</a> instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setClusterSubnetGroups(java.util.Collection)} or
-     * {@link #withClusterSubnetGroups(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setClusterSubnetGroups(java.util.Collection)} or {@link #withClusterSubnetGroups(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param clusterSubnetGroups
      *        A list of <a>ClusterSubnetGroup</a> instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeClusterSubnetGroupsResult withClusterSubnetGroups(
-            ClusterSubnetGroup... clusterSubnetGroups) {
+    public DescribeClusterSubnetGroupsResult withClusterSubnetGroups(ClusterSubnetGroup... clusterSubnetGroups) {
         if (this.clusterSubnetGroups == null) {
-            setClusterSubnetGroups(new com.amazonaws.internal.SdkInternalList<ClusterSubnetGroup>(
-                    clusterSubnetGroups.length));
+            setClusterSubnetGroups(new com.amazonaws.internal.SdkInternalList<ClusterSubnetGroup>(clusterSubnetGroups.length));
         }
         for (ClusterSubnetGroup ele : clusterSubnetGroups) {
             this.clusterSubnetGroups.add(ele);
@@ -188,19 +160,16 @@ public class DescribeClusterSubnetGroupsResult extends
      * 
      * @param clusterSubnetGroups
      *        A list of <a>ClusterSubnetGroup</a> instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeClusterSubnetGroupsResult withClusterSubnetGroups(
-            java.util.Collection<ClusterSubnetGroup> clusterSubnetGroups) {
+    public DescribeClusterSubnetGroupsResult withClusterSubnetGroups(java.util.Collection<ClusterSubnetGroup> clusterSubnetGroups) {
         setClusterSubnetGroups(clusterSubnetGroups);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -230,15 +199,11 @@ public class DescribeClusterSubnetGroupsResult extends
         DescribeClusterSubnetGroupsResult other = (DescribeClusterSubnetGroupsResult) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
-        if (other.getClusterSubnetGroups() == null
-                ^ this.getClusterSubnetGroups() == null)
+        if (other.getClusterSubnetGroups() == null ^ this.getClusterSubnetGroups() == null)
             return false;
-        if (other.getClusterSubnetGroups() != null
-                && other.getClusterSubnetGroups().equals(
-                        this.getClusterSubnetGroups()) == false)
+        if (other.getClusterSubnetGroups() != null && other.getClusterSubnetGroups().equals(this.getClusterSubnetGroups()) == false)
             return false;
         return true;
     }
@@ -248,12 +213,8 @@ public class DescribeClusterSubnetGroupsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClusterSubnetGroups() == null) ? 0
-                        : getClusterSubnetGroups().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getClusterSubnetGroups() == null) ? 0 : getClusterSubnetGroups().hashCode());
         return hashCode;
     }
 
@@ -262,9 +223,7 @@ public class DescribeClusterSubnetGroupsResult extends
         try {
             return (DescribeClusterSubnetGroupsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

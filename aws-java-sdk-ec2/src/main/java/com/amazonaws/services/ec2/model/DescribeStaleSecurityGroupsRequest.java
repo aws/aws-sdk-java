@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,8 +20,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeStaleSecurityGroupsReq
 /**
  * 
  */
-public class DescribeStaleSecurityGroupsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class DescribeStaleSecurityGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeStaleSecurityGroupsRequest> {
 
     /**
@@ -34,16 +31,14 @@ public class DescribeStaleSecurityGroupsRequest extends AmazonWebServiceRequest
     private String vpcId;
     /**
      * <p>
-     * The maximum number of items to return for this request. The request
-     * returns a token that you can specify in a subsequent call to get the next
-     * set of results.
+     * The maximum number of items to return for this request. The request returns a token that you can specify in a
+     * subsequent call to get the next set of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token
-     * from a prior call.)
+     * The token for the next set of items to return. (You received this token from a prior call.)
      * </p>
      */
     private String nextToken;
@@ -80,8 +75,7 @@ public class DescribeStaleSecurityGroupsRequest extends AmazonWebServiceRequest
      * 
      * @param vpcId
      *        The ID of the VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStaleSecurityGroupsRequest withVpcId(String vpcId) {
@@ -91,15 +85,13 @@ public class DescribeStaleSecurityGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request
-     * returns a token that you can specify in a subsequent call to get the next
-     * set of results.
+     * The maximum number of items to return for this request. The request returns a token that you can specify in a
+     * subsequent call to get the next set of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this request. The
-     *        request returns a token that you can specify in a subsequent call
-     *        to get the next set of results.
+     *        The maximum number of items to return for this request. The request returns a token that you can specify
+     *        in a subsequent call to get the next set of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -108,14 +100,12 @@ public class DescribeStaleSecurityGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request
-     * returns a token that you can specify in a subsequent call to get the next
-     * set of results.
+     * The maximum number of items to return for this request. The request returns a token that you can specify in a
+     * subsequent call to get the next set of results.
      * </p>
      * 
-     * @return The maximum number of items to return for this request. The
-     *         request returns a token that you can specify in a subsequent call
-     *         to get the next set of results.
+     * @return The maximum number of items to return for this request. The request returns a token that you can specify
+     *         in a subsequent call to get the next set of results.
      */
 
     public Integer getMaxResults() {
@@ -124,17 +114,14 @@ public class DescribeStaleSecurityGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request
-     * returns a token that you can specify in a subsequent call to get the next
-     * set of results.
+     * The maximum number of items to return for this request. The request returns a token that you can specify in a
+     * subsequent call to get the next set of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this request. The
-     *        request returns a token that you can specify in a subsequent call
-     *        to get the next set of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of items to return for this request. The request returns a token that you can specify
+     *        in a subsequent call to get the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStaleSecurityGroupsRequest withMaxResults(Integer maxResults) {
@@ -144,13 +131,11 @@ public class DescribeStaleSecurityGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token
-     * from a prior call.)
+     * The token for the next set of items to return. (You received this token from a prior call.)
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this
-     *        token from a prior call.)
+     *        The token for the next set of items to return. (You received this token from a prior call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -159,12 +144,10 @@ public class DescribeStaleSecurityGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token
-     * from a prior call.)
+     * The token for the next set of items to return. (You received this token from a prior call.)
      * </p>
      * 
-     * @return The token for the next set of items to return. (You received this
-     *         token from a prior call.)
+     * @return The token for the next set of items to return. (You received this token from a prior call.)
      */
 
     public String getNextToken() {
@@ -173,15 +156,12 @@ public class DescribeStaleSecurityGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token
-     * from a prior call.)
+     * The token for the next set of items to return. (You received this token from a prior call.)
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this
-     *        token from a prior call.)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token for the next set of items to return. (You received this token from a prior call.)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStaleSecurityGroupsRequest withNextToken(String nextToken) {
@@ -190,21 +170,18 @@ public class DescribeStaleSecurityGroupsRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeStaleSecurityGroupsRequest> getDryRunRequest() {
-        Request<DescribeStaleSecurityGroupsRequest> request = new DescribeStaleSecurityGroupsRequestMarshaller()
-                .marshall(this);
+        Request<DescribeStaleSecurityGroupsRequest> request = new DescribeStaleSecurityGroupsRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -236,18 +213,15 @@ public class DescribeStaleSecurityGroupsRequest extends AmazonWebServiceRequest
         DescribeStaleSecurityGroupsRequest other = (DescribeStaleSecurityGroupsRequest) obj;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -257,12 +231,9 @@ public class DescribeStaleSecurityGroupsRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

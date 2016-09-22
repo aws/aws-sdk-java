@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -21,21 +19,17 @@ import java.io.Serializable;
  * ListTagsForResourceOutput
  * </p>
  */
-public class ListTagsForResourceResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * he Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.
+     * he Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * An opaque string that indicates the position at which to stop returning
-     * the list of tags.
+     * An opaque string that indicates the position at which to stop returning the list of tags.
      * </p>
      */
     private String marker;
@@ -48,13 +42,11 @@ public class ListTagsForResourceResult extends
 
     /**
      * <p>
-     * he Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.
+     * he Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      * 
      * @param resourceARN
-     *        he Amazon Resource Name (ARN) of the resource for which you want
-     *        to list tags.
+     *        he Amazon Resource Name (ARN) of the resource for which you want to list tags.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -63,12 +55,10 @@ public class ListTagsForResourceResult extends
 
     /**
      * <p>
-     * he Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.
+     * he Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      * 
-     * @return he Amazon Resource Name (ARN) of the resource for which you want
-     *         to list tags.
+     * @return he Amazon Resource Name (ARN) of the resource for which you want to list tags.
      */
 
     public String getResourceARN() {
@@ -77,15 +67,12 @@ public class ListTagsForResourceResult extends
 
     /**
      * <p>
-     * he Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.
+     * he Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      * 
      * @param resourceARN
-     *        he Amazon Resource Name (ARN) of the resource for which you want
-     *        to list tags.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        he Amazon Resource Name (ARN) of the resource for which you want to list tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsForResourceResult withResourceARN(String resourceARN) {
@@ -95,13 +82,11 @@ public class ListTagsForResourceResult extends
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to stop returning
-     * the list of tags.
+     * An opaque string that indicates the position at which to stop returning the list of tags.
      * </p>
      * 
      * @param marker
-     *        An opaque string that indicates the position at which to stop
-     *        returning the list of tags.
+     *        An opaque string that indicates the position at which to stop returning the list of tags.
      */
 
     public void setMarker(String marker) {
@@ -110,12 +95,10 @@ public class ListTagsForResourceResult extends
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to stop returning
-     * the list of tags.
+     * An opaque string that indicates the position at which to stop returning the list of tags.
      * </p>
      * 
-     * @return An opaque string that indicates the position at which to stop
-     *         returning the list of tags.
+     * @return An opaque string that indicates the position at which to stop returning the list of tags.
      */
 
     public String getMarker() {
@@ -124,15 +107,12 @@ public class ListTagsForResourceResult extends
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to stop returning
-     * the list of tags.
+     * An opaque string that indicates the position at which to stop returning the list of tags.
      * </p>
      * 
      * @param marker
-     *        An opaque string that indicates the position at which to stop
-     *        returning the list of tags.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An opaque string that indicates the position at which to stop returning the list of tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsForResourceResult withMarker(String marker) {
@@ -178,16 +158,14 @@ public class ListTagsForResourceResult extends
      * An array that contains the tags for the specified resource.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        An array that contains the tags for the specified resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsForResourceResult withTags(Tag... tags) {
@@ -207,8 +185,7 @@ public class ListTagsForResourceResult extends
      * 
      * @param tags
      *        An array that contains the tags for the specified resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsForResourceResult withTags(java.util.Collection<Tag> tags) {
@@ -217,8 +194,7 @@ public class ListTagsForResourceResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -250,18 +226,15 @@ public class ListTagsForResourceResult extends
         ListTagsForResourceResult other = (ListTagsForResourceResult) obj;
         if (other.getResourceARN() == null ^ this.getResourceARN() == null)
             return false;
-        if (other.getResourceARN() != null
-                && other.getResourceARN().equals(this.getResourceARN()) == false)
+        if (other.getResourceARN() != null && other.getResourceARN().equals(this.getResourceARN()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -271,13 +244,9 @@ public class ListTagsForResourceResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -286,9 +255,7 @@ public class ListTagsForResourceResult extends
         try {
             return (ListTagsForResourceResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

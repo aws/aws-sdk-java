@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The <code>ListJobsByStatusResponse</code> structure.
  * </p>
  */
-public class ListJobsByStatusResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListJobsByStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,10 +29,9 @@ public class ListJobsByStatusResult extends
     private com.amazonaws.internal.SdkInternalList<Job> jobs;
     /**
      * <p>
-     * A value that you use to access the second and subsequent pages of
-     * results, if any. When the jobs in the specified pipeline fit on one page
-     * or when you've reached the last page of results, the value of
-     * <code>NextPageToken</code> is <code>null</code>.
+     * A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified
+     * pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code>
+     * is <code>null</code>.
      * </p>
      */
     private String nextPageToken;
@@ -46,8 +41,7 @@ public class ListJobsByStatusResult extends
      * An array of <code>Job</code> objects that have the specified status.
      * </p>
      * 
-     * @return An array of <code>Job</code> objects that have the specified
-     *         status.
+     * @return An array of <code>Job</code> objects that have the specified status.
      */
 
     public java.util.List<Job> getJobs() {
@@ -63,8 +57,7 @@ public class ListJobsByStatusResult extends
      * </p>
      * 
      * @param jobs
-     *        An array of <code>Job</code> objects that have the specified
-     *        status.
+     *        An array of <code>Job</code> objects that have the specified status.
      */
 
     public void setJobs(java.util.Collection<Job> jobs) {
@@ -81,17 +74,14 @@ public class ListJobsByStatusResult extends
      * An array of <code>Job</code> objects that have the specified status.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setJobs(java.util.Collection)} or
-     * {@link #withJobs(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setJobs(java.util.Collection)} or {@link #withJobs(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param jobs
-     *        An array of <code>Job</code> objects that have the specified
-     *        status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of <code>Job</code> objects that have the specified status.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListJobsByStatusResult withJobs(Job... jobs) {
@@ -110,10 +100,8 @@ public class ListJobsByStatusResult extends
      * </p>
      * 
      * @param jobs
-     *        An array of <code>Job</code> objects that have the specified
-     *        status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of <code>Job</code> objects that have the specified status.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListJobsByStatusResult withJobs(java.util.Collection<Job> jobs) {
@@ -123,17 +111,15 @@ public class ListJobsByStatusResult extends
 
     /**
      * <p>
-     * A value that you use to access the second and subsequent pages of
-     * results, if any. When the jobs in the specified pipeline fit on one page
-     * or when you've reached the last page of results, the value of
-     * <code>NextPageToken</code> is <code>null</code>.
+     * A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified
+     * pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code>
+     * is <code>null</code>.
      * </p>
      * 
      * @param nextPageToken
-     *        A value that you use to access the second and subsequent pages of
-     *        results, if any. When the jobs in the specified pipeline fit on
-     *        one page or when you've reached the last page of results, the
-     *        value of <code>NextPageToken</code> is <code>null</code>.
+     *        A value that you use to access the second and subsequent pages of results, if any. When the jobs in the
+     *        specified pipeline fit on one page or when you've reached the last page of results, the value of
+     *        <code>NextPageToken</code> is <code>null</code>.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -142,16 +128,14 @@ public class ListJobsByStatusResult extends
 
     /**
      * <p>
-     * A value that you use to access the second and subsequent pages of
-     * results, if any. When the jobs in the specified pipeline fit on one page
-     * or when you've reached the last page of results, the value of
-     * <code>NextPageToken</code> is <code>null</code>.
+     * A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified
+     * pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code>
+     * is <code>null</code>.
      * </p>
      * 
-     * @return A value that you use to access the second and subsequent pages of
-     *         results, if any. When the jobs in the specified pipeline fit on
-     *         one page or when you've reached the last page of results, the
-     *         value of <code>NextPageToken</code> is <code>null</code>.
+     * @return A value that you use to access the second and subsequent pages of results, if any. When the jobs in the
+     *         specified pipeline fit on one page or when you've reached the last page of results, the value of
+     *         <code>NextPageToken</code> is <code>null</code>.
      */
 
     public String getNextPageToken() {
@@ -160,19 +144,16 @@ public class ListJobsByStatusResult extends
 
     /**
      * <p>
-     * A value that you use to access the second and subsequent pages of
-     * results, if any. When the jobs in the specified pipeline fit on one page
-     * or when you've reached the last page of results, the value of
-     * <code>NextPageToken</code> is <code>null</code>.
+     * A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified
+     * pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code>
+     * is <code>null</code>.
      * </p>
      * 
      * @param nextPageToken
-     *        A value that you use to access the second and subsequent pages of
-     *        results, if any. When the jobs in the specified pipeline fit on
-     *        one page or when you've reached the last page of results, the
-     *        value of <code>NextPageToken</code> is <code>null</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value that you use to access the second and subsequent pages of results, if any. When the jobs in the
+     *        specified pipeline fit on one page or when you've reached the last page of results, the value of
+     *        <code>NextPageToken</code> is <code>null</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListJobsByStatusResult withNextPageToken(String nextPageToken) {
@@ -181,8 +162,7 @@ public class ListJobsByStatusResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -212,13 +192,11 @@ public class ListJobsByStatusResult extends
         ListJobsByStatusResult other = (ListJobsByStatusResult) obj;
         if (other.getJobs() == null ^ this.getJobs() == null)
             return false;
-        if (other.getJobs() != null
-                && other.getJobs().equals(this.getJobs()) == false)
+        if (other.getJobs() != null && other.getJobs().equals(this.getJobs()) == false)
             return false;
         if (other.getNextPageToken() == null ^ this.getNextPageToken() == null)
             return false;
-        if (other.getNextPageToken() != null
-                && other.getNextPageToken().equals(this.getNextPageToken()) == false)
+        if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false)
             return false;
         return true;
     }
@@ -228,12 +206,8 @@ public class ListJobsByStatusResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJobs() == null) ? 0 : getJobs().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextPageToken() == null) ? 0 : getNextPageToken()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getJobs() == null) ? 0 : getJobs().hashCode());
+        hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
         return hashCode;
     }
 
@@ -242,9 +216,7 @@ public class ListJobsByStatusResult extends
         try {
             return (ListJobsByStatusResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

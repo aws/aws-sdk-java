@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.ReplaceRouteTableAssociationRe
  * Contains the parameters for ReplaceRouteTableAssociation.
  * </p>
  */
-public class ReplaceRouteTableAssociationRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable,
+public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<ReplaceRouteTableAssociationRequest> {
 
     /**
@@ -73,12 +70,10 @@ public class ReplaceRouteTableAssociationRequest extends
      * 
      * @param associationId
      *        The association ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReplaceRouteTableAssociationRequest withAssociationId(
-            String associationId) {
+    public ReplaceRouteTableAssociationRequest withAssociationId(String associationId) {
         setAssociationId(associationId);
         return this;
     }
@@ -115,32 +110,27 @@ public class ReplaceRouteTableAssociationRequest extends
      * 
      * @param routeTableId
      *        The ID of the new route table to associate with the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReplaceRouteTableAssociationRequest withRouteTableId(
-            String routeTableId) {
+    public ReplaceRouteTableAssociationRequest withRouteTableId(String routeTableId) {
         setRouteTableId(routeTableId);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<ReplaceRouteTableAssociationRequest> getDryRunRequest() {
-        Request<ReplaceRouteTableAssociationRequest> request = new ReplaceRouteTableAssociationRequestMarshaller()
-                .marshall(this);
+        Request<ReplaceRouteTableAssociationRequest> request = new ReplaceRouteTableAssociationRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -170,13 +160,11 @@ public class ReplaceRouteTableAssociationRequest extends
         ReplaceRouteTableAssociationRequest other = (ReplaceRouteTableAssociationRequest) obj;
         if (other.getAssociationId() == null ^ this.getAssociationId() == null)
             return false;
-        if (other.getAssociationId() != null
-                && other.getAssociationId().equals(this.getAssociationId()) == false)
+        if (other.getAssociationId() != null && other.getAssociationId().equals(this.getAssociationId()) == false)
             return false;
         if (other.getRouteTableId() == null ^ this.getRouteTableId() == null)
             return false;
-        if (other.getRouteTableId() != null
-                && other.getRouteTableId().equals(this.getRouteTableId()) == false)
+        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false)
             return false;
         return true;
     }
@@ -186,14 +174,8 @@ public class ReplaceRouteTableAssociationRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAssociationId() == null) ? 0 : getAssociationId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRouteTableId() == null) ? 0 : getRouteTableId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
+        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -22,21 +20,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for a request action.
  * </p>
  */
-public class UpdateFleetAttributesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update attribute metadata
-     * for.
+     * Unique identifier for the fleet you want to update attribute metadata for.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.
+     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
      * </p>
      */
     private String name;
@@ -48,29 +42,24 @@ public class UpdateFleetAttributesRequest extends
     private String description;
     /**
      * <p>
-     * Game session protection policy to apply to all new instances created in
-     * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a>UpdateGameSession</a>.
+     * Game session protection policy to apply to all new instances created in this fleet. Instances that already exist
+     * are not affected. You can set protection for individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</li>
      * </ul>
      */
     private String newGameSessionProtectionPolicy;
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update attribute metadata
-     * for.
+     * Unique identifier for the fleet you want to update attribute metadata for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to update attribute
-     *        metadata for.
+     *        Unique identifier for the fleet you want to update attribute metadata for.
      */
 
     public void setFleetId(String fleetId) {
@@ -79,12 +68,10 @@ public class UpdateFleetAttributesRequest extends
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update attribute metadata
-     * for.
+     * Unique identifier for the fleet you want to update attribute metadata for.
      * </p>
      * 
-     * @return Unique identifier for the fleet you want to update attribute
-     *         metadata for.
+     * @return Unique identifier for the fleet you want to update attribute metadata for.
      */
 
     public String getFleetId() {
@@ -93,15 +80,12 @@ public class UpdateFleetAttributesRequest extends
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update attribute metadata
-     * for.
+     * Unique identifier for the fleet you want to update attribute metadata for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to update attribute
-     *        metadata for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique identifier for the fleet you want to update attribute metadata for.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFleetAttributesRequest withFleetId(String fleetId) {
@@ -111,13 +95,11 @@ public class UpdateFleetAttributesRequest extends
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.
+     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a fleet. Fleet names do not need
-     *        to be unique.
+     *        Descriptive label associated with a fleet. Fleet names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -126,12 +108,10 @@ public class UpdateFleetAttributesRequest extends
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.
+     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with a fleet. Fleet names do not
-     *         need to be unique.
+     * @return Descriptive label associated with a fleet. Fleet names do not need to be unique.
      */
 
     public String getName() {
@@ -140,15 +120,12 @@ public class UpdateFleetAttributesRequest extends
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.
+     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a fleet. Fleet names do not need
-     *        to be unique.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFleetAttributesRequest withName(String name) {
@@ -188,8 +165,7 @@ public class UpdateFleetAttributesRequest extends
      * 
      * @param description
      *        Human-readable description of a fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFleetAttributesRequest withDescription(String description) {
@@ -199,61 +175,48 @@ public class UpdateFleetAttributesRequest extends
 
     /**
      * <p>
-     * Game session protection policy to apply to all new instances created in
-     * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a>UpdateGameSession</a>.
+     * Game session protection policy to apply to all new instances created in this fleet. Instances that already exist
+     * are not affected. You can set protection for individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Game session protection policy to apply to all new instances
-     *        created in this fleet. Instances that already exist are not
-     *        affected. You can set protection for individual instances using
+     *        Game session protection policy to apply to all new instances created in this fleet. Instances that already
+     *        exist are not affected. You can set protection for individual instances using
      *        <a>UpdateGameSession</a>.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated
-     *        during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an
-     *        <code>ACTIVE</code> status, it cannot be terminated during a
-     *        scale-down event.</li>
+     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
+     *        terminated during a scale-down event.</li>
      * @see ProtectionPolicy
      */
 
-    public void setNewGameSessionProtectionPolicy(
-            String newGameSessionProtectionPolicy) {
+    public void setNewGameSessionProtectionPolicy(String newGameSessionProtectionPolicy) {
         this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy;
     }
 
     /**
      * <p>
-     * Game session protection policy to apply to all new instances created in
-     * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a>UpdateGameSession</a>.
+     * Game session protection policy to apply to all new instances created in this fleet. Instances that already exist
+     * are not affected. You can set protection for individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</li>
      * </ul>
      * 
-     * @return Game session protection policy to apply to all new instances
-     *         created in this fleet. Instances that already exist are not
-     *         affected. You can set protection for individual instances using
+     * @return Game session protection policy to apply to all new instances created in this fleet. Instances that
+     *         already exist are not affected. You can set protection for individual instances using
      *         <a>UpdateGameSession</a>.</p>
      *         <ul>
-     *         <li><b>NoProtection</b> – The game session can be terminated
-     *         during a scale-down event.</li>
-     *         <li><b>FullProtection</b> – If the game session is in an
-     *         <code>ACTIVE</code> status, it cannot be terminated during a
-     *         scale-down event.</li>
+     *         <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     *         <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
+     *         terminated during a scale-down event.</li>
      * @see ProtectionPolicy
      */
 
@@ -263,113 +226,88 @@ public class UpdateFleetAttributesRequest extends
 
     /**
      * <p>
-     * Game session protection policy to apply to all new instances created in
-     * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a>UpdateGameSession</a>.
+     * Game session protection policy to apply to all new instances created in this fleet. Instances that already exist
+     * are not affected. You can set protection for individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Game session protection policy to apply to all new instances
-     *        created in this fleet. Instances that already exist are not
-     *        affected. You can set protection for individual instances using
+     *        Game session protection policy to apply to all new instances created in this fleet. Instances that already
+     *        exist are not affected. You can set protection for individual instances using
      *        <a>UpdateGameSession</a>.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated
-     *        during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an
-     *        <code>ACTIVE</code> status, it cannot be terminated during a
-     *        scale-down event.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
+     *        terminated during a scale-down event.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */
 
-    public UpdateFleetAttributesRequest withNewGameSessionProtectionPolicy(
-            String newGameSessionProtectionPolicy) {
+    public UpdateFleetAttributesRequest withNewGameSessionProtectionPolicy(String newGameSessionProtectionPolicy) {
         setNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
         return this;
     }
 
     /**
      * <p>
-     * Game session protection policy to apply to all new instances created in
-     * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a>UpdateGameSession</a>.
+     * Game session protection policy to apply to all new instances created in this fleet. Instances that already exist
+     * are not affected. You can set protection for individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Game session protection policy to apply to all new instances
-     *        created in this fleet. Instances that already exist are not
-     *        affected. You can set protection for individual instances using
+     *        Game session protection policy to apply to all new instances created in this fleet. Instances that already
+     *        exist are not affected. You can set protection for individual instances using
      *        <a>UpdateGameSession</a>.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated
-     *        during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an
-     *        <code>ACTIVE</code> status, it cannot be terminated during a
-     *        scale-down event.</li>
+     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
+     *        terminated during a scale-down event.</li>
      * @see ProtectionPolicy
      */
 
-    public void setNewGameSessionProtectionPolicy(
-            ProtectionPolicy newGameSessionProtectionPolicy) {
-        this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy
-                .toString();
+    public void setNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
+        this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy.toString();
     }
 
     /**
      * <p>
-     * Game session protection policy to apply to all new instances created in
-     * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a>UpdateGameSession</a>.
+     * Game session protection policy to apply to all new instances created in this fleet. Instances that already exist
+     * are not affected. You can set protection for individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li>
+     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Game session protection policy to apply to all new instances
-     *        created in this fleet. Instances that already exist are not
-     *        affected. You can set protection for individual instances using
+     *        Game session protection policy to apply to all new instances created in this fleet. Instances that already
+     *        exist are not affected. You can set protection for individual instances using
      *        <a>UpdateGameSession</a>.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated
-     *        during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an
-     *        <code>ACTIVE</code> status, it cannot be terminated during a
-     *        scale-down event.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
+     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
+     *        terminated during a scale-down event.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */
 
-    public UpdateFleetAttributesRequest withNewGameSessionProtectionPolicy(
-            ProtectionPolicy newGameSessionProtectionPolicy) {
+    public UpdateFleetAttributesRequest withNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
         setNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -386,8 +324,7 @@ public class UpdateFleetAttributesRequest extends
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
         if (getNewGameSessionProtectionPolicy() != null)
-            sb.append("NewGameSessionProtectionPolicy: "
-                    + getNewGameSessionProtectionPolicy());
+            sb.append("NewGameSessionProtectionPolicy: " + getNewGameSessionProtectionPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -404,25 +341,20 @@ public class UpdateFleetAttributesRequest extends
         UpdateFleetAttributesRequest other = (UpdateFleetAttributesRequest) obj;
         if (other.getFleetId() == null ^ this.getFleetId() == null)
             return false;
-        if (other.getFleetId() != null
-                && other.getFleetId().equals(this.getFleetId()) == false)
+        if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getNewGameSessionProtectionPolicy() == null
-                ^ this.getNewGameSessionProtectionPolicy() == null)
+        if (other.getNewGameSessionProtectionPolicy() == null ^ this.getNewGameSessionProtectionPolicy() == null)
             return false;
         if (other.getNewGameSessionProtectionPolicy() != null
-                && other.getNewGameSessionProtectionPolicy().equals(
-                        this.getNewGameSessionProtectionPolicy()) == false)
+                && other.getNewGameSessionProtectionPolicy().equals(this.getNewGameSessionProtectionPolicy()) == false)
             return false;
         return true;
     }
@@ -432,17 +364,10 @@ public class UpdateFleetAttributesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNewGameSessionProtectionPolicy() == null) ? 0
-                        : getNewGameSessionProtectionPolicy().hashCode());
+        hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getNewGameSessionProtectionPolicy() == null) ? 0 : getNewGameSessionProtectionPolicy().hashCode());
         return hashCode;
     }
 

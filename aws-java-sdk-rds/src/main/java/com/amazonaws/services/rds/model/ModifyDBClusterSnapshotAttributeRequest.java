@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class ModifyDBClusterSnapshotAttributeRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,39 +31,32 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
      * The name of the DB cluster snapshot attribute to modify.
      * </p>
      * <p>
-     * To manage authorization for other AWS accounts to copy or restore a
-     * manual DB cluster snapshot, set this value to <code>restore</code>.
+     * To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this value to
+     * <code>restore</code>.
      * </p>
      */
     private String attributeName;
     /**
      * <p>
-     * A list of DB cluster snapshot attributes to add to the attribute
-     * specified by <code>AttributeName</code>.
+     * A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To authorize other AWS accounts to copy or restore a manual DB cluster
-     * snapshot, set this list to include one or more AWS account IDs, or
-     * <code>all</code> to make the manual DB cluster snapshot restorable by any
-     * AWS account. Do not add the <code>all</code> value for any manual DB
-     * cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.
+     * To authorize other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to include one or
+     * more AWS account IDs, or <code>all</code> to make the manual DB cluster snapshot restorable by any AWS account.
+     * Do not add the <code>all</code> value for any manual DB cluster snapshots that contain private information that
+     * you don't want available to all AWS accounts.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> valuesToAdd;
     /**
      * <p>
-     * A list of DB cluster snapshot attributes to remove from the attribute
-     * specified by <code>AttributeName</code>.
+     * A list of DB cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To remove authorization for other AWS accounts to copy or restore a
-     * manual DB cluster snapshot, set this list to include one or more AWS
-     * account identifiers, or <code>all</code> to remove authorization for any
-     * AWS account to copy or restore the DB cluster snapshot. If you specify
-     * <code>all</code>, an AWS account whose account ID is explicitly added to
-     * the <code>restore</code> attribute can still copy or restore a manual DB
-     * cluster snapshot.
+     * To remove authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to
+     * include one or more AWS account identifiers, or <code>all</code> to remove authorization for any AWS account to
+     * copy or restore the DB cluster snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * explicitly added to the <code>restore</code> attribute can still copy or restore a manual DB cluster snapshot.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> valuesToRemove;
@@ -78,12 +67,10 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        The identifier for the DB cluster snapshot to modify the
-     *        attributes for.
+     *        The identifier for the DB cluster snapshot to modify the attributes for.
      */
 
-    public void setDBClusterSnapshotIdentifier(
-            String dBClusterSnapshotIdentifier) {
+    public void setDBClusterSnapshotIdentifier(String dBClusterSnapshotIdentifier) {
         this.dBClusterSnapshotIdentifier = dBClusterSnapshotIdentifier;
     }
 
@@ -92,8 +79,7 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
      * The identifier for the DB cluster snapshot to modify the attributes for.
      * </p>
      * 
-     * @return The identifier for the DB cluster snapshot to modify the
-     *         attributes for.
+     * @return The identifier for the DB cluster snapshot to modify the attributes for.
      */
 
     public String getDBClusterSnapshotIdentifier() {
@@ -106,14 +92,11 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        The identifier for the DB cluster snapshot to modify the
-     *        attributes for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier for the DB cluster snapshot to modify the attributes for.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyDBClusterSnapshotAttributeRequest withDBClusterSnapshotIdentifier(
-            String dBClusterSnapshotIdentifier) {
+    public ModifyDBClusterSnapshotAttributeRequest withDBClusterSnapshotIdentifier(String dBClusterSnapshotIdentifier) {
         setDBClusterSnapshotIdentifier(dBClusterSnapshotIdentifier);
         return this;
     }
@@ -123,16 +106,15 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
      * The name of the DB cluster snapshot attribute to modify.
      * </p>
      * <p>
-     * To manage authorization for other AWS accounts to copy or restore a
-     * manual DB cluster snapshot, set this value to <code>restore</code>.
+     * To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this value to
+     * <code>restore</code>.
      * </p>
      * 
      * @param attributeName
      *        The name of the DB cluster snapshot attribute to modify.</p>
      *        <p>
-     *        To manage authorization for other AWS accounts to copy or restore
-     *        a manual DB cluster snapshot, set this value to
-     *        <code>restore</code>.
+     *        To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this
+     *        value to <code>restore</code>.
      */
 
     public void setAttributeName(String attributeName) {
@@ -144,15 +126,14 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
      * The name of the DB cluster snapshot attribute to modify.
      * </p>
      * <p>
-     * To manage authorization for other AWS accounts to copy or restore a
-     * manual DB cluster snapshot, set this value to <code>restore</code>.
+     * To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this value to
+     * <code>restore</code>.
      * </p>
      * 
      * @return The name of the DB cluster snapshot attribute to modify.</p>
      *         <p>
-     *         To manage authorization for other AWS accounts to copy or restore
-     *         a manual DB cluster snapshot, set this value to
-     *         <code>restore</code>.
+     *         To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this
+     *         value to <code>restore</code>.
      */
 
     public String getAttributeName() {
@@ -164,50 +145,41 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
      * The name of the DB cluster snapshot attribute to modify.
      * </p>
      * <p>
-     * To manage authorization for other AWS accounts to copy or restore a
-     * manual DB cluster snapshot, set this value to <code>restore</code>.
+     * To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this value to
+     * <code>restore</code>.
      * </p>
      * 
      * @param attributeName
      *        The name of the DB cluster snapshot attribute to modify.</p>
      *        <p>
-     *        To manage authorization for other AWS accounts to copy or restore
-     *        a manual DB cluster snapshot, set this value to
-     *        <code>restore</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this
+     *        value to <code>restore</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyDBClusterSnapshotAttributeRequest withAttributeName(
-            String attributeName) {
+    public ModifyDBClusterSnapshotAttributeRequest withAttributeName(String attributeName) {
         setAttributeName(attributeName);
         return this;
     }
 
     /**
      * <p>
-     * A list of DB cluster snapshot attributes to add to the attribute
-     * specified by <code>AttributeName</code>.
+     * A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To authorize other AWS accounts to copy or restore a manual DB cluster
-     * snapshot, set this list to include one or more AWS account IDs, or
-     * <code>all</code> to make the manual DB cluster snapshot restorable by any
-     * AWS account. Do not add the <code>all</code> value for any manual DB
-     * cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.
+     * To authorize other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to include one or
+     * more AWS account IDs, or <code>all</code> to make the manual DB cluster snapshot restorable by any AWS account.
+     * Do not add the <code>all</code> value for any manual DB cluster snapshots that contain private information that
+     * you don't want available to all AWS accounts.
      * </p>
      * 
-     * @return A list of DB cluster snapshot attributes to add to the attribute
-     *         specified by <code>AttributeName</code>.</p>
+     * @return A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>
+     *         .</p>
      *         <p>
-     *         To authorize other AWS accounts to copy or restore a manual DB
-     *         cluster snapshot, set this list to include one or more AWS
-     *         account IDs, or <code>all</code> to make the manual DB cluster
-     *         snapshot restorable by any AWS account. Do not add the
-     *         <code>all</code> value for any manual DB cluster snapshots that
-     *         contain private information that you don't want available to all
-     *         AWS accounts.
+     *         To authorize other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to include
+     *         one or more AWS account IDs, or <code>all</code> to make the manual DB cluster snapshot restorable by any
+     *         AWS account. Do not add the <code>all</code> value for any manual DB cluster snapshots that contain
+     *         private information that you don't want available to all AWS accounts.
      */
 
     public java.util.List<String> getValuesToAdd() {
@@ -219,28 +191,23 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
 
     /**
      * <p>
-     * A list of DB cluster snapshot attributes to add to the attribute
-     * specified by <code>AttributeName</code>.
+     * A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To authorize other AWS accounts to copy or restore a manual DB cluster
-     * snapshot, set this list to include one or more AWS account IDs, or
-     * <code>all</code> to make the manual DB cluster snapshot restorable by any
-     * AWS account. Do not add the <code>all</code> value for any manual DB
-     * cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.
+     * To authorize other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to include one or
+     * more AWS account IDs, or <code>all</code> to make the manual DB cluster snapshot restorable by any AWS account.
+     * Do not add the <code>all</code> value for any manual DB cluster snapshots that contain private information that
+     * you don't want available to all AWS accounts.
      * </p>
      * 
      * @param valuesToAdd
-     *        A list of DB cluster snapshot attributes to add to the attribute
-     *        specified by <code>AttributeName</code>.</p>
+     *        A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>
+     *        .</p>
      *        <p>
-     *        To authorize other AWS accounts to copy or restore a manual DB
-     *        cluster snapshot, set this list to include one or more AWS account
-     *        IDs, or <code>all</code> to make the manual DB cluster snapshot
-     *        restorable by any AWS account. Do not add the <code>all</code>
-     *        value for any manual DB cluster snapshots that contain private
-     *        information that you don't want available to all AWS accounts.
+     *        To authorize other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to include
+     *        one or more AWS account IDs, or <code>all</code> to make the manual DB cluster snapshot restorable by any
+     *        AWS account. Do not add the <code>all</code> value for any manual DB cluster snapshots that contain
+     *        private information that you don't want available to all AWS accounts.
      */
 
     public void setValuesToAdd(java.util.Collection<String> valuesToAdd) {
@@ -249,49 +216,39 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
             return;
         }
 
-        this.valuesToAdd = new com.amazonaws.internal.SdkInternalList<String>(
-                valuesToAdd);
+        this.valuesToAdd = new com.amazonaws.internal.SdkInternalList<String>(valuesToAdd);
     }
 
     /**
      * <p>
-     * A list of DB cluster snapshot attributes to add to the attribute
-     * specified by <code>AttributeName</code>.
+     * A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To authorize other AWS accounts to copy or restore a manual DB cluster
-     * snapshot, set this list to include one or more AWS account IDs, or
-     * <code>all</code> to make the manual DB cluster snapshot restorable by any
-     * AWS account. Do not add the <code>all</code> value for any manual DB
-     * cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.
+     * To authorize other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to include one or
+     * more AWS account IDs, or <code>all</code> to make the manual DB cluster snapshot restorable by any AWS account.
+     * Do not add the <code>all</code> value for any manual DB cluster snapshots that contain private information that
+     * you don't want available to all AWS accounts.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setValuesToAdd(java.util.Collection)} or
-     * {@link #withValuesToAdd(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setValuesToAdd(java.util.Collection)} or {@link #withValuesToAdd(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param valuesToAdd
-     *        A list of DB cluster snapshot attributes to add to the attribute
-     *        specified by <code>AttributeName</code>.</p>
+     *        A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>
+     *        .</p>
      *        <p>
-     *        To authorize other AWS accounts to copy or restore a manual DB
-     *        cluster snapshot, set this list to include one or more AWS account
-     *        IDs, or <code>all</code> to make the manual DB cluster snapshot
-     *        restorable by any AWS account. Do not add the <code>all</code>
-     *        value for any manual DB cluster snapshots that contain private
-     *        information that you don't want available to all AWS accounts.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        To authorize other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to include
+     *        one or more AWS account IDs, or <code>all</code> to make the manual DB cluster snapshot restorable by any
+     *        AWS account. Do not add the <code>all</code> value for any manual DB cluster snapshots that contain
+     *        private information that you don't want available to all AWS accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyDBClusterSnapshotAttributeRequest withValuesToAdd(
-            String... valuesToAdd) {
+    public ModifyDBClusterSnapshotAttributeRequest withValuesToAdd(String... valuesToAdd) {
         if (this.valuesToAdd == null) {
-            setValuesToAdd(new com.amazonaws.internal.SdkInternalList<String>(
-                    valuesToAdd.length));
+            setValuesToAdd(new com.amazonaws.internal.SdkInternalList<String>(valuesToAdd.length));
         }
         for (String ele : valuesToAdd) {
             this.valuesToAdd.add(ele);
@@ -301,63 +258,50 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
 
     /**
      * <p>
-     * A list of DB cluster snapshot attributes to add to the attribute
-     * specified by <code>AttributeName</code>.
+     * A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To authorize other AWS accounts to copy or restore a manual DB cluster
-     * snapshot, set this list to include one or more AWS account IDs, or
-     * <code>all</code> to make the manual DB cluster snapshot restorable by any
-     * AWS account. Do not add the <code>all</code> value for any manual DB
-     * cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.
+     * To authorize other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to include one or
+     * more AWS account IDs, or <code>all</code> to make the manual DB cluster snapshot restorable by any AWS account.
+     * Do not add the <code>all</code> value for any manual DB cluster snapshots that contain private information that
+     * you don't want available to all AWS accounts.
      * </p>
      * 
      * @param valuesToAdd
-     *        A list of DB cluster snapshot attributes to add to the attribute
-     *        specified by <code>AttributeName</code>.</p>
+     *        A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>
+     *        .</p>
      *        <p>
-     *        To authorize other AWS accounts to copy or restore a manual DB
-     *        cluster snapshot, set this list to include one or more AWS account
-     *        IDs, or <code>all</code> to make the manual DB cluster snapshot
-     *        restorable by any AWS account. Do not add the <code>all</code>
-     *        value for any manual DB cluster snapshots that contain private
-     *        information that you don't want available to all AWS accounts.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        To authorize other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to include
+     *        one or more AWS account IDs, or <code>all</code> to make the manual DB cluster snapshot restorable by any
+     *        AWS account. Do not add the <code>all</code> value for any manual DB cluster snapshots that contain
+     *        private information that you don't want available to all AWS accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyDBClusterSnapshotAttributeRequest withValuesToAdd(
-            java.util.Collection<String> valuesToAdd) {
+    public ModifyDBClusterSnapshotAttributeRequest withValuesToAdd(java.util.Collection<String> valuesToAdd) {
         setValuesToAdd(valuesToAdd);
         return this;
     }
 
     /**
      * <p>
-     * A list of DB cluster snapshot attributes to remove from the attribute
-     * specified by <code>AttributeName</code>.
+     * A list of DB cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To remove authorization for other AWS accounts to copy or restore a
-     * manual DB cluster snapshot, set this list to include one or more AWS
-     * account identifiers, or <code>all</code> to remove authorization for any
-     * AWS account to copy or restore the DB cluster snapshot. If you specify
-     * <code>all</code>, an AWS account whose account ID is explicitly added to
-     * the <code>restore</code> attribute can still copy or restore a manual DB
-     * cluster snapshot.
+     * To remove authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to
+     * include one or more AWS account identifiers, or <code>all</code> to remove authorization for any AWS account to
+     * copy or restore the DB cluster snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * explicitly added to the <code>restore</code> attribute can still copy or restore a manual DB cluster snapshot.
      * </p>
      * 
-     * @return A list of DB cluster snapshot attributes to remove from the
-     *         attribute specified by <code>AttributeName</code>.</p>
+     * @return A list of DB cluster snapshot attributes to remove from the attribute specified by
+     *         <code>AttributeName</code>.</p>
      *         <p>
-     *         To remove authorization for other AWS accounts to copy or restore
-     *         a manual DB cluster snapshot, set this list to include one or
-     *         more AWS account identifiers, or <code>all</code> to remove
-     *         authorization for any AWS account to copy or restore the DB
-     *         cluster snapshot. If you specify <code>all</code>, an AWS account
-     *         whose account ID is explicitly added to the <code>restore</code>
-     *         attribute can still copy or restore a manual DB cluster snapshot.
+     *         To remove authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this
+     *         list to include one or more AWS account identifiers, or <code>all</code> to remove authorization for any
+     *         AWS account to copy or restore the DB cluster snapshot. If you specify <code>all</code>, an AWS account
+     *         whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a
+     *         manual DB cluster snapshot.
      */
 
     public java.util.List<String> getValuesToRemove() {
@@ -369,30 +313,24 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
 
     /**
      * <p>
-     * A list of DB cluster snapshot attributes to remove from the attribute
-     * specified by <code>AttributeName</code>.
+     * A list of DB cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To remove authorization for other AWS accounts to copy or restore a
-     * manual DB cluster snapshot, set this list to include one or more AWS
-     * account identifiers, or <code>all</code> to remove authorization for any
-     * AWS account to copy or restore the DB cluster snapshot. If you specify
-     * <code>all</code>, an AWS account whose account ID is explicitly added to
-     * the <code>restore</code> attribute can still copy or restore a manual DB
-     * cluster snapshot.
+     * To remove authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to
+     * include one or more AWS account identifiers, or <code>all</code> to remove authorization for any AWS account to
+     * copy or restore the DB cluster snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * explicitly added to the <code>restore</code> attribute can still copy or restore a manual DB cluster snapshot.
      * </p>
      * 
      * @param valuesToRemove
-     *        A list of DB cluster snapshot attributes to remove from the
-     *        attribute specified by <code>AttributeName</code>.</p>
+     *        A list of DB cluster snapshot attributes to remove from the attribute specified by
+     *        <code>AttributeName</code>.</p>
      *        <p>
-     *        To remove authorization for other AWS accounts to copy or restore
-     *        a manual DB cluster snapshot, set this list to include one or more
-     *        AWS account identifiers, or <code>all</code> to remove
-     *        authorization for any AWS account to copy or restore the DB
-     *        cluster snapshot. If you specify <code>all</code>, an AWS account
-     *        whose account ID is explicitly added to the <code>restore</code>
-     *        attribute can still copy or restore a manual DB cluster snapshot.
+     *        To remove authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this
+     *        list to include one or more AWS account identifiers, or <code>all</code> to remove authorization for any
+     *        AWS account to copy or restore the DB cluster snapshot. If you specify <code>all</code>, an AWS account
+     *        whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a
+     *        manual DB cluster snapshot.
      */
 
     public void setValuesToRemove(java.util.Collection<String> valuesToRemove) {
@@ -401,51 +339,40 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
             return;
         }
 
-        this.valuesToRemove = new com.amazonaws.internal.SdkInternalList<String>(
-                valuesToRemove);
+        this.valuesToRemove = new com.amazonaws.internal.SdkInternalList<String>(valuesToRemove);
     }
 
     /**
      * <p>
-     * A list of DB cluster snapshot attributes to remove from the attribute
-     * specified by <code>AttributeName</code>.
+     * A list of DB cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To remove authorization for other AWS accounts to copy or restore a
-     * manual DB cluster snapshot, set this list to include one or more AWS
-     * account identifiers, or <code>all</code> to remove authorization for any
-     * AWS account to copy or restore the DB cluster snapshot. If you specify
-     * <code>all</code>, an AWS account whose account ID is explicitly added to
-     * the <code>restore</code> attribute can still copy or restore a manual DB
-     * cluster snapshot.
+     * To remove authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to
+     * include one or more AWS account identifiers, or <code>all</code> to remove authorization for any AWS account to
+     * copy or restore the DB cluster snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * explicitly added to the <code>restore</code> attribute can still copy or restore a manual DB cluster snapshot.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setValuesToRemove(java.util.Collection)} or
-     * {@link #withValuesToRemove(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setValuesToRemove(java.util.Collection)} or {@link #withValuesToRemove(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param valuesToRemove
-     *        A list of DB cluster snapshot attributes to remove from the
-     *        attribute specified by <code>AttributeName</code>.</p>
+     *        A list of DB cluster snapshot attributes to remove from the attribute specified by
+     *        <code>AttributeName</code>.</p>
      *        <p>
-     *        To remove authorization for other AWS accounts to copy or restore
-     *        a manual DB cluster snapshot, set this list to include one or more
-     *        AWS account identifiers, or <code>all</code> to remove
-     *        authorization for any AWS account to copy or restore the DB
-     *        cluster snapshot. If you specify <code>all</code>, an AWS account
-     *        whose account ID is explicitly added to the <code>restore</code>
-     *        attribute can still copy or restore a manual DB cluster snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        To remove authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this
+     *        list to include one or more AWS account identifiers, or <code>all</code> to remove authorization for any
+     *        AWS account to copy or restore the DB cluster snapshot. If you specify <code>all</code>, an AWS account
+     *        whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a
+     *        manual DB cluster snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyDBClusterSnapshotAttributeRequest withValuesToRemove(
-            String... valuesToRemove) {
+    public ModifyDBClusterSnapshotAttributeRequest withValuesToRemove(String... valuesToRemove) {
         if (this.valuesToRemove == null) {
-            setValuesToRemove(new com.amazonaws.internal.SdkInternalList<String>(
-                    valuesToRemove.length));
+            setValuesToRemove(new com.amazonaws.internal.SdkInternalList<String>(valuesToRemove.length));
         }
         for (String ele : valuesToRemove) {
             this.valuesToRemove.add(ele);
@@ -455,43 +382,34 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
 
     /**
      * <p>
-     * A list of DB cluster snapshot attributes to remove from the attribute
-     * specified by <code>AttributeName</code>.
+     * A list of DB cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To remove authorization for other AWS accounts to copy or restore a
-     * manual DB cluster snapshot, set this list to include one or more AWS
-     * account identifiers, or <code>all</code> to remove authorization for any
-     * AWS account to copy or restore the DB cluster snapshot. If you specify
-     * <code>all</code>, an AWS account whose account ID is explicitly added to
-     * the <code>restore</code> attribute can still copy or restore a manual DB
-     * cluster snapshot.
+     * To remove authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to
+     * include one or more AWS account identifiers, or <code>all</code> to remove authorization for any AWS account to
+     * copy or restore the DB cluster snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * explicitly added to the <code>restore</code> attribute can still copy or restore a manual DB cluster snapshot.
      * </p>
      * 
      * @param valuesToRemove
-     *        A list of DB cluster snapshot attributes to remove from the
-     *        attribute specified by <code>AttributeName</code>.</p>
+     *        A list of DB cluster snapshot attributes to remove from the attribute specified by
+     *        <code>AttributeName</code>.</p>
      *        <p>
-     *        To remove authorization for other AWS accounts to copy or restore
-     *        a manual DB cluster snapshot, set this list to include one or more
-     *        AWS account identifiers, or <code>all</code> to remove
-     *        authorization for any AWS account to copy or restore the DB
-     *        cluster snapshot. If you specify <code>all</code>, an AWS account
-     *        whose account ID is explicitly added to the <code>restore</code>
-     *        attribute can still copy or restore a manual DB cluster snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        To remove authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this
+     *        list to include one or more AWS account identifiers, or <code>all</code> to remove authorization for any
+     *        AWS account to copy or restore the DB cluster snapshot. If you specify <code>all</code>, an AWS account
+     *        whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a
+     *        manual DB cluster snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyDBClusterSnapshotAttributeRequest withValuesToRemove(
-            java.util.Collection<String> valuesToRemove) {
+    public ModifyDBClusterSnapshotAttributeRequest withValuesToRemove(java.util.Collection<String> valuesToRemove) {
         setValuesToRemove(valuesToRemove);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -502,8 +420,7 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterSnapshotIdentifier() != null)
-            sb.append("DBClusterSnapshotIdentifier: "
-                    + getDBClusterSnapshotIdentifier() + ",");
+            sb.append("DBClusterSnapshotIdentifier: " + getDBClusterSnapshotIdentifier() + ",");
         if (getAttributeName() != null)
             sb.append("AttributeName: " + getAttributeName() + ",");
         if (getValuesToAdd() != null)
@@ -524,28 +441,21 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
         if (obj instanceof ModifyDBClusterSnapshotAttributeRequest == false)
             return false;
         ModifyDBClusterSnapshotAttributeRequest other = (ModifyDBClusterSnapshotAttributeRequest) obj;
-        if (other.getDBClusterSnapshotIdentifier() == null
-                ^ this.getDBClusterSnapshotIdentifier() == null)
+        if (other.getDBClusterSnapshotIdentifier() == null ^ this.getDBClusterSnapshotIdentifier() == null)
             return false;
-        if (other.getDBClusterSnapshotIdentifier() != null
-                && other.getDBClusterSnapshotIdentifier().equals(
-                        this.getDBClusterSnapshotIdentifier()) == false)
+        if (other.getDBClusterSnapshotIdentifier() != null && other.getDBClusterSnapshotIdentifier().equals(this.getDBClusterSnapshotIdentifier()) == false)
             return false;
         if (other.getAttributeName() == null ^ this.getAttributeName() == null)
             return false;
-        if (other.getAttributeName() != null
-                && other.getAttributeName().equals(this.getAttributeName()) == false)
+        if (other.getAttributeName() != null && other.getAttributeName().equals(this.getAttributeName()) == false)
             return false;
         if (other.getValuesToAdd() == null ^ this.getValuesToAdd() == null)
             return false;
-        if (other.getValuesToAdd() != null
-                && other.getValuesToAdd().equals(this.getValuesToAdd()) == false)
+        if (other.getValuesToAdd() != null && other.getValuesToAdd().equals(this.getValuesToAdd()) == false)
             return false;
-        if (other.getValuesToRemove() == null
-                ^ this.getValuesToRemove() == null)
+        if (other.getValuesToRemove() == null ^ this.getValuesToRemove() == null)
             return false;
-        if (other.getValuesToRemove() != null
-                && other.getValuesToRemove().equals(this.getValuesToRemove()) == false)
+        if (other.getValuesToRemove() != null && other.getValuesToRemove().equals(this.getValuesToRemove()) == false)
             return false;
         return true;
     }
@@ -555,21 +465,10 @@ public class ModifyDBClusterSnapshotAttributeRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDBClusterSnapshotIdentifier() == null) ? 0
-                        : getDBClusterSnapshotIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttributeName() == null) ? 0 : getAttributeName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getValuesToAdd() == null) ? 0 : getValuesToAdd().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getValuesToRemove() == null) ? 0 : getValuesToRemove()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDBClusterSnapshotIdentifier() == null) ? 0 : getDBClusterSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getAttributeName() == null) ? 0 : getAttributeName().hashCode());
+        hashCode = prime * hashCode + ((getValuesToAdd() == null) ? 0 : getValuesToAdd().hashCode());
+        hashCode = prime * hashCode + ((getValuesToRemove() == null) ? 0 : getValuesToRemove().hashCode());
         return hashCode;
     }
 

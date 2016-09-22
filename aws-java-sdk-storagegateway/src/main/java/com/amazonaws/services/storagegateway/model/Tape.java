@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -49,15 +47,13 @@ public class Tape implements Serializable, Cloneable {
     private String tapeStatus;
     /**
      * <p>
-     * The virtual tape library (VTL) device that the virtual tape is associated
-     * with.
+     * The virtual tape library (VTL) device that the virtual tape is associated with.
      * </p>
      */
     private String vTLDevice;
     /**
      * <p>
-     * For archiving virtual tapes, indicates how much data remains to be
-     * uploaded before archiving is complete.
+     * For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.
      * </p>
      * <p>
      * Range: 0 (not started) to 100 (complete).
@@ -97,8 +93,7 @@ public class Tape implements Serializable, Cloneable {
      * 
      * @param tapeARN
      *        The Amazon Resource Name (ARN) of the virtual tape.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Tape withTapeARN(String tapeARN) {
@@ -138,8 +133,7 @@ public class Tape implements Serializable, Cloneable {
      * 
      * @param tapeBarcode
      *        The barcode that identifies a specific virtual tape.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Tape withTapeBarcode(String tapeBarcode) {
@@ -179,8 +173,7 @@ public class Tape implements Serializable, Cloneable {
      * 
      * @param tapeSizeInBytes
      *        The size, in bytes, of the virtual tape.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Tape withTapeSizeInBytes(Long tapeSizeInBytes) {
@@ -220,8 +213,7 @@ public class Tape implements Serializable, Cloneable {
      * 
      * @param tapeStatus
      *        The current state of the virtual tape.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Tape withTapeStatus(String tapeStatus) {
@@ -231,13 +223,11 @@ public class Tape implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The virtual tape library (VTL) device that the virtual tape is associated
-     * with.
+     * The virtual tape library (VTL) device that the virtual tape is associated with.
      * </p>
      * 
      * @param vTLDevice
-     *        The virtual tape library (VTL) device that the virtual tape is
-     *        associated with.
+     *        The virtual tape library (VTL) device that the virtual tape is associated with.
      */
 
     public void setVTLDevice(String vTLDevice) {
@@ -246,12 +236,10 @@ public class Tape implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The virtual tape library (VTL) device that the virtual tape is associated
-     * with.
+     * The virtual tape library (VTL) device that the virtual tape is associated with.
      * </p>
      * 
-     * @return The virtual tape library (VTL) device that the virtual tape is
-     *         associated with.
+     * @return The virtual tape library (VTL) device that the virtual tape is associated with.
      */
 
     public String getVTLDevice() {
@@ -260,15 +248,12 @@ public class Tape implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The virtual tape library (VTL) device that the virtual tape is associated
-     * with.
+     * The virtual tape library (VTL) device that the virtual tape is associated with.
      * </p>
      * 
      * @param vTLDevice
-     *        The virtual tape library (VTL) device that the virtual tape is
-     *        associated with.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The virtual tape library (VTL) device that the virtual tape is associated with.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Tape withVTLDevice(String vTLDevice) {
@@ -278,16 +263,15 @@ public class Tape implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For archiving virtual tapes, indicates how much data remains to be
-     * uploaded before archiving is complete.
+     * For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.
      * </p>
      * <p>
      * Range: 0 (not started) to 100 (complete).
      * </p>
      * 
      * @param progress
-     *        For archiving virtual tapes, indicates how much data remains to be
-     *        uploaded before archiving is complete.</p>
+     *        For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is
+     *        complete.</p>
      *        <p>
      *        Range: 0 (not started) to 100 (complete).
      */
@@ -298,15 +282,14 @@ public class Tape implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For archiving virtual tapes, indicates how much data remains to be
-     * uploaded before archiving is complete.
+     * For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.
      * </p>
      * <p>
      * Range: 0 (not started) to 100 (complete).
      * </p>
      * 
-     * @return For archiving virtual tapes, indicates how much data remains to
-     *         be uploaded before archiving is complete.</p>
+     * @return For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is
+     *         complete.</p>
      *         <p>
      *         Range: 0 (not started) to 100 (complete).
      */
@@ -317,20 +300,18 @@ public class Tape implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For archiving virtual tapes, indicates how much data remains to be
-     * uploaded before archiving is complete.
+     * For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.
      * </p>
      * <p>
      * Range: 0 (not started) to 100 (complete).
      * </p>
      * 
      * @param progress
-     *        For archiving virtual tapes, indicates how much data remains to be
-     *        uploaded before archiving is complete.</p>
+     *        For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is
+     *        complete.</p>
      *        <p>
      *        Range: 0 (not started) to 100 (complete).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Tape withProgress(Double progress) {
@@ -339,8 +320,7 @@ public class Tape implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -378,34 +358,27 @@ public class Tape implements Serializable, Cloneable {
         Tape other = (Tape) obj;
         if (other.getTapeARN() == null ^ this.getTapeARN() == null)
             return false;
-        if (other.getTapeARN() != null
-                && other.getTapeARN().equals(this.getTapeARN()) == false)
+        if (other.getTapeARN() != null && other.getTapeARN().equals(this.getTapeARN()) == false)
             return false;
         if (other.getTapeBarcode() == null ^ this.getTapeBarcode() == null)
             return false;
-        if (other.getTapeBarcode() != null
-                && other.getTapeBarcode().equals(this.getTapeBarcode()) == false)
+        if (other.getTapeBarcode() != null && other.getTapeBarcode().equals(this.getTapeBarcode()) == false)
             return false;
-        if (other.getTapeSizeInBytes() == null
-                ^ this.getTapeSizeInBytes() == null)
+        if (other.getTapeSizeInBytes() == null ^ this.getTapeSizeInBytes() == null)
             return false;
-        if (other.getTapeSizeInBytes() != null
-                && other.getTapeSizeInBytes().equals(this.getTapeSizeInBytes()) == false)
+        if (other.getTapeSizeInBytes() != null && other.getTapeSizeInBytes().equals(this.getTapeSizeInBytes()) == false)
             return false;
         if (other.getTapeStatus() == null ^ this.getTapeStatus() == null)
             return false;
-        if (other.getTapeStatus() != null
-                && other.getTapeStatus().equals(this.getTapeStatus()) == false)
+        if (other.getTapeStatus() != null && other.getTapeStatus().equals(this.getTapeStatus()) == false)
             return false;
         if (other.getVTLDevice() == null ^ this.getVTLDevice() == null)
             return false;
-        if (other.getVTLDevice() != null
-                && other.getVTLDevice().equals(this.getVTLDevice()) == false)
+        if (other.getVTLDevice() != null && other.getVTLDevice().equals(this.getVTLDevice()) == false)
             return false;
         if (other.getProgress() == null ^ this.getProgress() == null)
             return false;
-        if (other.getProgress() != null
-                && other.getProgress().equals(this.getProgress()) == false)
+        if (other.getProgress() != null && other.getProgress().equals(this.getProgress()) == false)
             return false;
         return true;
     }
@@ -415,21 +388,12 @@ public class Tape implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTapeARN() == null) ? 0 : getTapeARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTapeBarcode() == null) ? 0 : getTapeBarcode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTapeSizeInBytes() == null) ? 0 : getTapeSizeInBytes()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTapeStatus() == null) ? 0 : getTapeStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getVTLDevice() == null) ? 0 : getVTLDevice().hashCode());
-        hashCode = prime * hashCode
-                + ((getProgress() == null) ? 0 : getProgress().hashCode());
+        hashCode = prime * hashCode + ((getTapeARN() == null) ? 0 : getTapeARN().hashCode());
+        hashCode = prime * hashCode + ((getTapeBarcode() == null) ? 0 : getTapeBarcode().hashCode());
+        hashCode = prime * hashCode + ((getTapeSizeInBytes() == null) ? 0 : getTapeSizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getTapeStatus() == null) ? 0 : getTapeStatus().hashCode());
+        hashCode = prime * hashCode + ((getVTLDevice() == null) ? 0 : getVTLDevice().hashCode());
+        hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
         return hashCode;
     }
 
@@ -438,9 +402,7 @@ public class Tape implements Serializable, Cloneable {
         try {
             return (Tape) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

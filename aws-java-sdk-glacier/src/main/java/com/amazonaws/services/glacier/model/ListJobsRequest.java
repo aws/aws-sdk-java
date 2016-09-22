@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
 
@@ -22,17 +20,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Provides options for retrieving a job list for an Amazon Glacier vault.
  * </p>
  */
-public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include
+     * any hyphens (apos-apos) in the ID.
      * </p>
      */
     private String accountId;
@@ -44,49 +39,43 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String vaultName;
     /**
      * <p>
-     * Specifies that the response be limited to the specified number of items
-     * or fewer. If not specified, the List Jobs operation returns up to 1,000
-     * jobs.
+     * Specifies that the response be limited to the specified number of items or fewer. If not specified, the List Jobs
+     * operation returns up to 1,000 jobs.
      * </p>
      */
     private String limit;
     /**
      * <p>
-     * An opaque string used for pagination. This value specifies the job at
-     * which the listing of jobs should begin. Get the marker value from a
-     * previous List Jobs response. You need only include the marker if you are
-     * continuing the pagination of results started in a previous List Jobs
-     * request.
+     * An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get
+     * the marker value from a previous List Jobs response. You need only include the marker if you are continuing the
+     * pagination of results started in a previous List Jobs request.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Specifies the type of job status to return. You can specify the following
-     * values: "InProgress", "Succeeded", or "Failed".
+     * Specifies the type of job status to return. You can specify the following values: "InProgress", "Succeeded", or
+     * "Failed".
      * </p>
      */
     private String statuscode;
     /**
      * <p>
-     * Specifies the state of the jobs to return. You can specify
-     * <code>true</code> or <code>false</code>.
+     * Specifies the state of the jobs to return. You can specify <code>true</code> or <code>false</code>.
      * </p>
      */
     private String completed;
 
     /**
-     * Default constructor for ListJobsRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for ListJobsRequest object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize the object after creating it.
      */
     public ListJobsRequest() {
     }
 
     /**
-     * Constructs a new ListJobsRequest object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new ListJobsRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param vaultName
      *        The name of the vault.
@@ -96,17 +85,14 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Constructs a new ListJobsRequest object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new ListJobsRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param accountId
-     *        The <code>AccountId</code> value is the AWS account ID of the
-     *        account that owns the vault. You can either specify an AWS account
-     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
-     *        which case Amazon Glacier uses the AWS account ID associated with
-     *        the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens (apos-apos) in the ID.
+     *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *        specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens (apos-apos) in the ID.
      * @param vaultName
      *        The name of the vault.
      */
@@ -117,21 +103,17 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include
+     * any hyphens (apos-apos) in the ID.
      * </p>
      * 
      * @param accountId
-     *        The <code>AccountId</code> value is the AWS account ID of the
-     *        account that owns the vault. You can either specify an AWS account
-     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
-     *        which case Amazon Glacier uses the AWS account ID associated with
-     *        the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens (apos-apos) in the ID.
+     *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *        specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens (apos-apos) in the ID.
      */
 
     public void setAccountId(String accountId) {
@@ -140,21 +122,16 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include
+     * any hyphens (apos-apos) in the ID.
      * </p>
      * 
-     * @return The <code>AccountId</code> value is the AWS account ID of the
-     *         account that owns the vault. You can either specify an AWS
-     *         account ID or optionally a single apos<code>-</code>apos
-     *         (hyphen), in which case Amazon Glacier uses the AWS account ID
-     *         associated with the credentials used to sign the request. If you
-     *         use an account ID, do not include any hyphens (apos-apos) in the
-     *         ID.
+     * @return The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *         specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     *         Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *         account ID, do not include any hyphens (apos-apos) in the ID.
      */
 
     public String getAccountId() {
@@ -163,23 +140,18 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include
+     * any hyphens (apos-apos) in the ID.
      * </p>
      * 
      * @param accountId
-     *        The <code>AccountId</code> value is the AWS account ID of the
-     *        account that owns the vault. You can either specify an AWS account
-     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
-     *        which case Amazon Glacier uses the AWS account ID associated with
-     *        the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens (apos-apos) in the ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *        specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens (apos-apos) in the ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListJobsRequest withAccountId(String accountId) {
@@ -219,8 +191,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param vaultName
      *        The name of the vault.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListJobsRequest withVaultName(String vaultName) {
@@ -230,15 +201,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies that the response be limited to the specified number of items
-     * or fewer. If not specified, the List Jobs operation returns up to 1,000
-     * jobs.
+     * Specifies that the response be limited to the specified number of items or fewer. If not specified, the List Jobs
+     * operation returns up to 1,000 jobs.
      * </p>
      * 
      * @param limit
-     *        Specifies that the response be limited to the specified number of
-     *        items or fewer. If not specified, the List Jobs operation returns
-     *        up to 1,000 jobs.
+     *        Specifies that the response be limited to the specified number of items or fewer. If not specified, the
+     *        List Jobs operation returns up to 1,000 jobs.
      */
 
     public void setLimit(String limit) {
@@ -247,14 +216,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies that the response be limited to the specified number of items
-     * or fewer. If not specified, the List Jobs operation returns up to 1,000
-     * jobs.
+     * Specifies that the response be limited to the specified number of items or fewer. If not specified, the List Jobs
+     * operation returns up to 1,000 jobs.
      * </p>
      * 
-     * @return Specifies that the response be limited to the specified number of
-     *         items or fewer. If not specified, the List Jobs operation returns
-     *         up to 1,000 jobs.
+     * @return Specifies that the response be limited to the specified number of items or fewer. If not specified, the
+     *         List Jobs operation returns up to 1,000 jobs.
      */
 
     public String getLimit() {
@@ -263,17 +230,14 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies that the response be limited to the specified number of items
-     * or fewer. If not specified, the List Jobs operation returns up to 1,000
-     * jobs.
+     * Specifies that the response be limited to the specified number of items or fewer. If not specified, the List Jobs
+     * operation returns up to 1,000 jobs.
      * </p>
      * 
      * @param limit
-     *        Specifies that the response be limited to the specified number of
-     *        items or fewer. If not specified, the List Jobs operation returns
-     *        up to 1,000 jobs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies that the response be limited to the specified number of items or fewer. If not specified, the
+     *        List Jobs operation returns up to 1,000 jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListJobsRequest withLimit(String limit) {
@@ -283,19 +247,15 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An opaque string used for pagination. This value specifies the job at
-     * which the listing of jobs should begin. Get the marker value from a
-     * previous List Jobs response. You need only include the marker if you are
-     * continuing the pagination of results started in a previous List Jobs
-     * request.
+     * An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get
+     * the marker value from a previous List Jobs response. You need only include the marker if you are continuing the
+     * pagination of results started in a previous List Jobs request.
      * </p>
      * 
      * @param marker
-     *        An opaque string used for pagination. This value specifies the job
-     *        at which the listing of jobs should begin. Get the marker value
-     *        from a previous List Jobs response. You need only include the
-     *        marker if you are continuing the pagination of results started in
-     *        a previous List Jobs request.
+     *        An opaque string used for pagination. This value specifies the job at which the listing of jobs should
+     *        begin. Get the marker value from a previous List Jobs response. You need only include the marker if you
+     *        are continuing the pagination of results started in a previous List Jobs request.
      */
 
     public void setMarker(String marker) {
@@ -304,18 +264,14 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An opaque string used for pagination. This value specifies the job at
-     * which the listing of jobs should begin. Get the marker value from a
-     * previous List Jobs response. You need only include the marker if you are
-     * continuing the pagination of results started in a previous List Jobs
-     * request.
+     * An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get
+     * the marker value from a previous List Jobs response. You need only include the marker if you are continuing the
+     * pagination of results started in a previous List Jobs request.
      * </p>
      * 
-     * @return An opaque string used for pagination. This value specifies the
-     *         job at which the listing of jobs should begin. Get the marker
-     *         value from a previous List Jobs response. You need only include
-     *         the marker if you are continuing the pagination of results
-     *         started in a previous List Jobs request.
+     * @return An opaque string used for pagination. This value specifies the job at which the listing of jobs should
+     *         begin. Get the marker value from a previous List Jobs response. You need only include the marker if you
+     *         are continuing the pagination of results started in a previous List Jobs request.
      */
 
     public String getMarker() {
@@ -324,21 +280,16 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An opaque string used for pagination. This value specifies the job at
-     * which the listing of jobs should begin. Get the marker value from a
-     * previous List Jobs response. You need only include the marker if you are
-     * continuing the pagination of results started in a previous List Jobs
-     * request.
+     * An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get
+     * the marker value from a previous List Jobs response. You need only include the marker if you are continuing the
+     * pagination of results started in a previous List Jobs request.
      * </p>
      * 
      * @param marker
-     *        An opaque string used for pagination. This value specifies the job
-     *        at which the listing of jobs should begin. Get the marker value
-     *        from a previous List Jobs response. You need only include the
-     *        marker if you are continuing the pagination of results started in
-     *        a previous List Jobs request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An opaque string used for pagination. This value specifies the job at which the listing of jobs should
+     *        begin. Get the marker value from a previous List Jobs response. You need only include the marker if you
+     *        are continuing the pagination of results started in a previous List Jobs request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListJobsRequest withMarker(String marker) {
@@ -348,13 +299,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the type of job status to return. You can specify the following
-     * values: "InProgress", "Succeeded", or "Failed".
+     * Specifies the type of job status to return. You can specify the following values: "InProgress", "Succeeded", or
+     * "Failed".
      * </p>
      * 
      * @param statuscode
-     *        Specifies the type of job status to return. You can specify the
-     *        following values: "InProgress", "Succeeded", or "Failed".
+     *        Specifies the type of job status to return. You can specify the following values: "InProgress",
+     *        "Succeeded", or "Failed".
      */
 
     public void setStatuscode(String statuscode) {
@@ -363,12 +314,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the type of job status to return. You can specify the following
-     * values: "InProgress", "Succeeded", or "Failed".
+     * Specifies the type of job status to return. You can specify the following values: "InProgress", "Succeeded", or
+     * "Failed".
      * </p>
      * 
-     * @return Specifies the type of job status to return. You can specify the
-     *         following values: "InProgress", "Succeeded", or "Failed".
+     * @return Specifies the type of job status to return. You can specify the following values: "InProgress",
+     *         "Succeeded", or "Failed".
      */
 
     public String getStatuscode() {
@@ -377,15 +328,14 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the type of job status to return. You can specify the following
-     * values: "InProgress", "Succeeded", or "Failed".
+     * Specifies the type of job status to return. You can specify the following values: "InProgress", "Succeeded", or
+     * "Failed".
      * </p>
      * 
      * @param statuscode
-     *        Specifies the type of job status to return. You can specify the
-     *        following values: "InProgress", "Succeeded", or "Failed".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the type of job status to return. You can specify the following values: "InProgress",
+     *        "Succeeded", or "Failed".
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListJobsRequest withStatuscode(String statuscode) {
@@ -395,13 +345,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the state of the jobs to return. You can specify
-     * <code>true</code> or <code>false</code>.
+     * Specifies the state of the jobs to return. You can specify <code>true</code> or <code>false</code>.
      * </p>
      * 
      * @param completed
-     *        Specifies the state of the jobs to return. You can specify
-     *        <code>true</code> or <code>false</code>.
+     *        Specifies the state of the jobs to return. You can specify <code>true</code> or <code>false</code>.
      */
 
     public void setCompleted(String completed) {
@@ -410,12 +358,10 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the state of the jobs to return. You can specify
-     * <code>true</code> or <code>false</code>.
+     * Specifies the state of the jobs to return. You can specify <code>true</code> or <code>false</code>.
      * </p>
      * 
-     * @return Specifies the state of the jobs to return. You can specify
-     *         <code>true</code> or <code>false</code>.
+     * @return Specifies the state of the jobs to return. You can specify <code>true</code> or <code>false</code>.
      */
 
     public String getCompleted() {
@@ -424,15 +370,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the state of the jobs to return. You can specify
-     * <code>true</code> or <code>false</code>.
+     * Specifies the state of the jobs to return. You can specify <code>true</code> or <code>false</code>.
      * </p>
      * 
      * @param completed
-     *        Specifies the state of the jobs to return. You can specify
-     *        <code>true</code> or <code>false</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the state of the jobs to return. You can specify <code>true</code> or <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListJobsRequest withCompleted(String completed) {
@@ -441,8 +384,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -480,33 +422,27 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
         ListJobsRequest other = (ListJobsRequest) obj;
         if (other.getAccountId() == null ^ this.getAccountId() == null)
             return false;
-        if (other.getAccountId() != null
-                && other.getAccountId().equals(this.getAccountId()) == false)
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
         if (other.getVaultName() == null ^ this.getVaultName() == null)
             return false;
-        if (other.getVaultName() != null
-                && other.getVaultName().equals(this.getVaultName()) == false)
+        if (other.getVaultName() != null && other.getVaultName().equals(this.getVaultName()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getStatuscode() == null ^ this.getStatuscode() == null)
             return false;
-        if (other.getStatuscode() != null
-                && other.getStatuscode().equals(this.getStatuscode()) == false)
+        if (other.getStatuscode() != null && other.getStatuscode().equals(this.getStatuscode()) == false)
             return false;
         if (other.getCompleted() == null ^ this.getCompleted() == null)
             return false;
-        if (other.getCompleted() != null
-                && other.getCompleted().equals(this.getCompleted()) == false)
+        if (other.getCompleted() != null && other.getCompleted().equals(this.getCompleted()) == false)
             return false;
         return true;
     }
@@ -516,18 +452,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
-        hashCode = prime * hashCode
-                + ((getVaultName() == null) ? 0 : getVaultName().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatuscode() == null) ? 0 : getStatuscode().hashCode());
-        hashCode = prime * hashCode
-                + ((getCompleted() == null) ? 0 : getCompleted().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getVaultName() == null) ? 0 : getVaultName().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getStatuscode() == null) ? 0 : getStatuscode().hashCode());
+        hashCode = prime * hashCode + ((getCompleted() == null) ? 0 : getCompleted().hashCode());
         return hashCode;
     }
 

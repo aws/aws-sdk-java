@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model;
 
@@ -22,15 +20,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The GetOperationDetail request includes the following element.
  * </p>
  */
-public class GetOperationDetailRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class GetOperationDetailRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the operation for which you want to get the status.
-     * Amazon Route 53 returned the identifier in the response to the original
-     * request.
+     * The identifier for the operation for which you want to get the status. Amazon Route 53 returned the identifier in
+     * the response to the original request.
      * </p>
      * <p>
      * Type: String
@@ -46,9 +41,8 @@ public class GetOperationDetailRequest extends
 
     /**
      * <p>
-     * The identifier for the operation for which you want to get the status.
-     * Amazon Route 53 returned the identifier in the response to the original
-     * request.
+     * The identifier for the operation for which you want to get the status. Amazon Route 53 returned the identifier in
+     * the response to the original request.
      * </p>
      * <p>
      * Type: String
@@ -61,9 +55,8 @@ public class GetOperationDetailRequest extends
      * </p>
      * 
      * @param operationId
-     *        The identifier for the operation for which you want to get the
-     *        status. Amazon Route 53 returned the identifier in the response to
-     *        the original request.</p>
+     *        The identifier for the operation for which you want to get the status. Amazon Route 53 returned the
+     *        identifier in the response to the original request.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -80,9 +73,8 @@ public class GetOperationDetailRequest extends
 
     /**
      * <p>
-     * The identifier for the operation for which you want to get the status.
-     * Amazon Route 53 returned the identifier in the response to the original
-     * request.
+     * The identifier for the operation for which you want to get the status. Amazon Route 53 returned the identifier in
+     * the response to the original request.
      * </p>
      * <p>
      * Type: String
@@ -94,9 +86,8 @@ public class GetOperationDetailRequest extends
      * Required: Yes
      * </p>
      * 
-     * @return The identifier for the operation for which you want to get the
-     *         status. Amazon Route 53 returned the identifier in the response
-     *         to the original request.</p>
+     * @return The identifier for the operation for which you want to get the status. Amazon Route 53 returned the
+     *         identifier in the response to the original request.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -113,9 +104,8 @@ public class GetOperationDetailRequest extends
 
     /**
      * <p>
-     * The identifier for the operation for which you want to get the status.
-     * Amazon Route 53 returned the identifier in the response to the original
-     * request.
+     * The identifier for the operation for which you want to get the status. Amazon Route 53 returned the identifier in
+     * the response to the original request.
      * </p>
      * <p>
      * Type: String
@@ -128,9 +118,8 @@ public class GetOperationDetailRequest extends
      * </p>
      * 
      * @param operationId
-     *        The identifier for the operation for which you want to get the
-     *        status. Amazon Route 53 returned the identifier in the response to
-     *        the original request.</p>
+     *        The identifier for the operation for which you want to get the status. Amazon Route 53 returned the
+     *        identifier in the response to the original request.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -139,8 +128,7 @@ public class GetOperationDetailRequest extends
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetOperationDetailRequest withOperationId(String operationId) {
@@ -149,8 +137,7 @@ public class GetOperationDetailRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -178,8 +165,7 @@ public class GetOperationDetailRequest extends
         GetOperationDetailRequest other = (GetOperationDetailRequest) obj;
         if (other.getOperationId() == null ^ this.getOperationId() == null)
             return false;
-        if (other.getOperationId() != null
-                && other.getOperationId().equals(this.getOperationId()) == false)
+        if (other.getOperationId() != null && other.getOperationId().equals(this.getOperationId()) == false)
             return false;
         return true;
     }
@@ -189,9 +175,7 @@ public class GetOperationDetailRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getOperationId() == null) ? 0 : getOperationId().hashCode());
+        hashCode = prime * hashCode + ((getOperationId() == null) ? 0 : getOperationId().hashCode());
         return hashCode;
     }
 

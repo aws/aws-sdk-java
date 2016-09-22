@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesis.model;
 
@@ -43,8 +41,7 @@ public class Shard implements Serializable, Cloneable {
     private String adjacentParentShardId;
     /**
      * <p>
-     * The range of possible hash key values for the shard, which is a set of
-     * ordered contiguous positive integers.
+     * The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.
      * </p>
      */
     private HashKeyRange hashKeyRange;
@@ -87,8 +84,7 @@ public class Shard implements Serializable, Cloneable {
      * 
      * @param shardId
      *        The unique identifier of the shard within the stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Shard withShardId(String shardId) {
@@ -128,8 +124,7 @@ public class Shard implements Serializable, Cloneable {
      * 
      * @param parentShardId
      *        The shard ID of the shard's parent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Shard withParentShardId(String parentShardId) {
@@ -169,8 +164,7 @@ public class Shard implements Serializable, Cloneable {
      * 
      * @param adjacentParentShardId
      *        The shard ID of the shard adjacent to the shard's parent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Shard withAdjacentParentShardId(String adjacentParentShardId) {
@@ -180,13 +174,12 @@ public class Shard implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The range of possible hash key values for the shard, which is a set of
-     * ordered contiguous positive integers.
+     * The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.
      * </p>
      * 
      * @param hashKeyRange
-     *        The range of possible hash key values for the shard, which is a
-     *        set of ordered contiguous positive integers.
+     *        The range of possible hash key values for the shard, which is a set of ordered contiguous positive
+     *        integers.
      */
 
     public void setHashKeyRange(HashKeyRange hashKeyRange) {
@@ -195,12 +188,11 @@ public class Shard implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The range of possible hash key values for the shard, which is a set of
-     * ordered contiguous positive integers.
+     * The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.
      * </p>
      * 
-     * @return The range of possible hash key values for the shard, which is a
-     *         set of ordered contiguous positive integers.
+     * @return The range of possible hash key values for the shard, which is a set of ordered contiguous positive
+     *         integers.
      */
 
     public HashKeyRange getHashKeyRange() {
@@ -209,15 +201,13 @@ public class Shard implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The range of possible hash key values for the shard, which is a set of
-     * ordered contiguous positive integers.
+     * The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.
      * </p>
      * 
      * @param hashKeyRange
-     *        The range of possible hash key values for the shard, which is a
-     *        set of ordered contiguous positive integers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The range of possible hash key values for the shard, which is a set of ordered contiguous positive
+     *        integers.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Shard withHashKeyRange(HashKeyRange hashKeyRange) {
@@ -257,8 +247,7 @@ public class Shard implements Serializable, Cloneable {
      * 
      * @param sequenceNumberRange
      *        The range of possible sequence numbers for the shard.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Shard withSequenceNumberRange(SequenceNumberRange sequenceNumberRange) {
@@ -267,8 +256,7 @@ public class Shard implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -283,8 +271,7 @@ public class Shard implements Serializable, Cloneable {
         if (getParentShardId() != null)
             sb.append("ParentShardId: " + getParentShardId() + ",");
         if (getAdjacentParentShardId() != null)
-            sb.append("AdjacentParentShardId: " + getAdjacentParentShardId()
-                    + ",");
+            sb.append("AdjacentParentShardId: " + getAdjacentParentShardId() + ",");
         if (getHashKeyRange() != null)
             sb.append("HashKeyRange: " + getHashKeyRange() + ",");
         if (getSequenceNumberRange() != null)
@@ -305,32 +292,23 @@ public class Shard implements Serializable, Cloneable {
         Shard other = (Shard) obj;
         if (other.getShardId() == null ^ this.getShardId() == null)
             return false;
-        if (other.getShardId() != null
-                && other.getShardId().equals(this.getShardId()) == false)
+        if (other.getShardId() != null && other.getShardId().equals(this.getShardId()) == false)
             return false;
         if (other.getParentShardId() == null ^ this.getParentShardId() == null)
             return false;
-        if (other.getParentShardId() != null
-                && other.getParentShardId().equals(this.getParentShardId()) == false)
+        if (other.getParentShardId() != null && other.getParentShardId().equals(this.getParentShardId()) == false)
             return false;
-        if (other.getAdjacentParentShardId() == null
-                ^ this.getAdjacentParentShardId() == null)
+        if (other.getAdjacentParentShardId() == null ^ this.getAdjacentParentShardId() == null)
             return false;
-        if (other.getAdjacentParentShardId() != null
-                && other.getAdjacentParentShardId().equals(
-                        this.getAdjacentParentShardId()) == false)
+        if (other.getAdjacentParentShardId() != null && other.getAdjacentParentShardId().equals(this.getAdjacentParentShardId()) == false)
             return false;
         if (other.getHashKeyRange() == null ^ this.getHashKeyRange() == null)
             return false;
-        if (other.getHashKeyRange() != null
-                && other.getHashKeyRange().equals(this.getHashKeyRange()) == false)
+        if (other.getHashKeyRange() != null && other.getHashKeyRange().equals(this.getHashKeyRange()) == false)
             return false;
-        if (other.getSequenceNumberRange() == null
-                ^ this.getSequenceNumberRange() == null)
+        if (other.getSequenceNumberRange() == null ^ this.getSequenceNumberRange() == null)
             return false;
-        if (other.getSequenceNumberRange() != null
-                && other.getSequenceNumberRange().equals(
-                        this.getSequenceNumberRange()) == false)
+        if (other.getSequenceNumberRange() != null && other.getSequenceNumberRange().equals(this.getSequenceNumberRange()) == false)
             return false;
         return true;
     }
@@ -340,24 +318,11 @@ public class Shard implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getShardId() == null) ? 0 : getShardId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getParentShardId() == null) ? 0 : getParentShardId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAdjacentParentShardId() == null) ? 0
-                        : getAdjacentParentShardId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHashKeyRange() == null) ? 0 : getHashKeyRange()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSequenceNumberRange() == null) ? 0
-                        : getSequenceNumberRange().hashCode());
+        hashCode = prime * hashCode + ((getShardId() == null) ? 0 : getShardId().hashCode());
+        hashCode = prime * hashCode + ((getParentShardId() == null) ? 0 : getParentShardId().hashCode());
+        hashCode = prime * hashCode + ((getAdjacentParentShardId() == null) ? 0 : getAdjacentParentShardId().hashCode());
+        hashCode = prime * hashCode + ((getHashKeyRange() == null) ? 0 : getHashKeyRange().hashCode());
+        hashCode = prime * hashCode + ((getSequenceNumberRange() == null) ? 0 : getSequenceNumberRange().hashCode());
         return hashCode;
     }
 
@@ -366,9 +331,7 @@ public class Shard implements Serializable, Cloneable {
         try {
             return (Shard) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

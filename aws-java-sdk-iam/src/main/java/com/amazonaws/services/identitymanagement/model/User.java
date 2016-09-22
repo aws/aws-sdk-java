@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -45,9 +43,9 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The path to the user. For more information about paths, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * The path to the user. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      */
     private String path;
@@ -59,39 +57,35 @@ public class User implements Serializable, Cloneable {
     private String userName;
     /**
      * <p>
-     * The stable and unique string identifying the user. For more information
-     * about IDs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * The stable and unique string identifying the user. For more information about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      */
     private String userId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the user. For more
-     * information about ARNs and how to use ARNs in policies, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in
+     * policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the user was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was
+     * created.
      * </p>
      */
     private java.util.Date createDate;
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the user's password was last used to sign in
-     * to an AWS website. For a list of AWS websites that capture a user's last
-     * sign-in time, see the <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"
-     * >Credential Reports</a> topic in the <i>Using IAM</i> guide. If a
-     * password is used more than once in a five-minute span, only the first use
-     * is returned in this field. This field is null (not present) when:
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's
+     * password was last used to sign in to an AWS website. For a list of AWS websites that capture a user's last
+     * sign-in time, see the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a> topic in
+     * the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the first use is
+     * returned in this field. This field is null (not present) when:
      * </p>
      * <ul>
      * <li>
@@ -101,8 +95,8 @@ public class User implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * The password exists but has never been used (at least not since IAM
-     * started tracking this information on October 20th, 2014
+     * The password exists but has never been used (at least not since IAM started tracking this information on October
+     * 20th, 2014
      * </p>
      * </li>
      * <li>
@@ -112,48 +106,41 @@ public class User implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a>
-     * actions.
+     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
      * </p>
      */
     private java.util.Date passwordLastUsed;
 
     /**
-     * Default constructor for User object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize the object after creating
-     * it.
+     * Default constructor for User object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize the object after creating it.
      */
     public User() {
     }
 
     /**
-     * Constructs a new User object. Callers should use the setter or fluent
-     * setter (with...) methods to initialize any additional object members.
+     * Constructs a new User object. Callers should use the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
      * @param path
      *        The path to the user. For more information about paths, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        <i>Using IAM</i> guide.
      * @param userName
      *        The friendly name identifying the user.
      * @param userId
-     *        The stable and unique string identifying the user. For more
-     *        information about IDs, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     *        The stable and unique string identifying the user. For more information about IDs, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        <i>Using IAM</i> guide.
      * @param arn
-     *        The Amazon Resource Name (ARN) that identifies the user. For more
-     *        information about ARNs and how to use ARNs in policies, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     *        The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use
+     *        ARNs in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *        Identifiers</a> in the <i>Using IAM</i> guide.
      * @param createDate
-     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *        8601 date-time format</a>, when the user was created.
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *        user was created.
      */
-    public User(String path, String userName, String userId, String arn,
-            java.util.Date createDate) {
+    public User(String path, String userName, String userId, String arn, java.util.Date createDate) {
         setPath(path);
         setUserName(userName);
         setUserId(userId);
@@ -163,16 +150,15 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The path to the user. For more information about paths, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * The path to the user. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      * 
      * @param path
      *        The path to the user. For more information about paths, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        <i>Using IAM</i> guide.
      */
 
     public void setPath(String path) {
@@ -181,15 +167,14 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The path to the user. For more information about paths, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * The path to the user. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      * 
      * @return The path to the user. For more information about paths, see <a
-     *         href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         <i>Using IAM</i> guide.
      */
 
     public String getPath() {
@@ -198,18 +183,16 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The path to the user. For more information about paths, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * The path to the user. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      * 
      * @param path
      *        The path to the user. For more information about paths, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        <i>Using IAM</i> guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public User withPath(String path) {
@@ -249,8 +232,7 @@ public class User implements Serializable, Cloneable {
      * 
      * @param userName
      *        The friendly name identifying the user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public User withUserName(String userName) {
@@ -260,17 +242,15 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The stable and unique string identifying the user. For more information
-     * about IDs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * The stable and unique string identifying the user. For more information about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      * 
      * @param userId
-     *        The stable and unique string identifying the user. For more
-     *        information about IDs, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     *        The stable and unique string identifying the user. For more information about IDs, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        <i>Using IAM</i> guide.
      */
 
     public void setUserId(String userId) {
@@ -279,16 +259,14 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The stable and unique string identifying the user. For more information
-     * about IDs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * The stable and unique string identifying the user. For more information about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      * 
-     * @return The stable and unique string identifying the user. For more
-     *         information about IDs, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * @return The stable and unique string identifying the user. For more information about IDs, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         <i>Using IAM</i> guide.
      */
 
     public String getUserId() {
@@ -297,19 +275,16 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The stable and unique string identifying the user. For more information
-     * about IDs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * The stable and unique string identifying the user. For more information about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      * 
      * @param userId
-     *        The stable and unique string identifying the user. For more
-     *        information about IDs, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The stable and unique string identifying the user. For more information about IDs, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        <i>Using IAM</i> guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public User withUserId(String userId) {
@@ -319,18 +294,15 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the user. For more
-     * information about ARNs and how to use ARNs in policies, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in
+     * policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) that identifies the user. For more
-     *        information about ARNs and how to use ARNs in policies, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     *        The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use
+     *        ARNs in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *        Identifiers</a> in the <i>Using IAM</i> guide.
      */
 
     public void setArn(String arn) {
@@ -339,17 +311,15 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the user. For more
-     * information about ARNs and how to use ARNs in policies, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in
+     * policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the user. For more
-     *         information about ARNs and how to use ARNs in policies, see <a
-     *         href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * @return The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use
+     *         ARNs in policies, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         <i>Using IAM</i> guide.
      */
 
     public String getArn() {
@@ -358,20 +328,16 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the user. For more
-     * information about ARNs and how to use ARNs in policies, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in
+     * policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) that identifies the user. For more
-     *        information about ARNs and how to use ARNs in policies, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use
+     *        ARNs in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *        Identifiers</a> in the <i>Using IAM</i> guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public User withArn(String arn) {
@@ -381,13 +347,13 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the user was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was
+     * created.
      * </p>
      * 
      * @param createDate
-     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *        8601 date-time format</a>, when the user was created.
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *        user was created.
      */
 
     public void setCreateDate(java.util.Date createDate) {
@@ -396,13 +362,12 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the user was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was
+     * created.
      * </p>
      * 
-     * @return The date and time, in <a
-     *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
-     *         format</a>, when the user was created.
+     * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *         user was created.
      */
 
     public java.util.Date getCreateDate() {
@@ -411,15 +376,14 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the user was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was
+     * created.
      * </p>
      * 
      * @param createDate
-     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *        8601 date-time format</a>, when the user was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *        user was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public User withCreateDate(java.util.Date createDate) {
@@ -429,14 +393,12 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the user's password was last used to sign in
-     * to an AWS website. For a list of AWS websites that capture a user's last
-     * sign-in time, see the <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"
-     * >Credential Reports</a> topic in the <i>Using IAM</i> guide. If a
-     * password is used more than once in a five-minute span, only the first use
-     * is returned in this field. This field is null (not present) when:
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's
+     * password was last used to sign in to an AWS website. For a list of AWS websites that capture a user's last
+     * sign-in time, see the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a> topic in
+     * the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the first use is
+     * returned in this field. This field is null (not present) when:
      * </p>
      * <ul>
      * <li>
@@ -446,8 +408,8 @@ public class User implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * The password exists but has never been used (at least not since IAM
-     * started tracking this information on October 20th, 2014
+     * The password exists but has never been used (at least not since IAM started tracking this information on October
+     * 20th, 2014
      * </p>
      * </li>
      * <li>
@@ -457,20 +419,16 @@ public class User implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a>
-     * actions.
+     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
      * </p>
      * 
      * @param passwordLastUsed
-     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *        8601 date-time format</a>, when the user's password was last used
-     *        to sign in to an AWS website. For a list of AWS websites that
-     *        capture a user's last sign-in time, see the <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"
-     *        >Credential Reports</a> topic in the <i>Using IAM</i> guide. If a
-     *        password is used more than once in a five-minute span, only the
-     *        first use is returned in this field. This field is null (not
-     *        present) when:</p>
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *        user's password was last used to sign in to an AWS website. For a list of AWS websites that capture a
+     *        user's last sign-in time, see the <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a>
+     *        topic in the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the
+     *        first use is returned in this field. This field is null (not present) when:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -479,8 +437,8 @@ public class User implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        The password exists but has never been used (at least not since
-     *        IAM started tracking this information on October 20th, 2014
+     *        The password exists but has never been used (at least not since IAM started tracking this information on
+     *        October 20th, 2014
      *        </p>
      *        </li>
      *        <li>
@@ -490,8 +448,7 @@ public class User implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        This value is returned only in the <a>GetUser</a> and
-     *        <a>ListUsers</a> actions.
+     *        This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
      */
 
     public void setPasswordLastUsed(java.util.Date passwordLastUsed) {
@@ -500,14 +457,12 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the user's password was last used to sign in
-     * to an AWS website. For a list of AWS websites that capture a user's last
-     * sign-in time, see the <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"
-     * >Credential Reports</a> topic in the <i>Using IAM</i> guide. If a
-     * password is used more than once in a five-minute span, only the first use
-     * is returned in this field. This field is null (not present) when:
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's
+     * password was last used to sign in to an AWS website. For a list of AWS websites that capture a user's last
+     * sign-in time, see the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a> topic in
+     * the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the first use is
+     * returned in this field. This field is null (not present) when:
      * </p>
      * <ul>
      * <li>
@@ -517,8 +472,8 @@ public class User implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * The password exists but has never been used (at least not since IAM
-     * started tracking this information on October 20th, 2014
+     * The password exists but has never been used (at least not since IAM started tracking this information on October
+     * 20th, 2014
      * </p>
      * </li>
      * <li>
@@ -528,20 +483,15 @@ public class User implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a>
-     * actions.
+     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
      * </p>
      * 
-     * @return The date and time, in <a
-     *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
-     *         format</a>, when the user's password was last used to sign in to
-     *         an AWS website. For a list of AWS websites that capture a user's
-     *         last sign-in time, see the <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"
-     *         >Credential Reports</a> topic in the <i>Using IAM</i> guide. If a
-     *         password is used more than once in a five-minute span, only the
-     *         first use is returned in this field. This field is null (not
-     *         present) when:</p>
+     * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *         user's password was last used to sign in to an AWS website. For a list of AWS websites that capture a
+     *         user's last sign-in time, see the <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a>
+     *         topic in the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the
+     *         first use is returned in this field. This field is null (not present) when:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -550,8 +500,8 @@ public class User implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         The password exists but has never been used (at least not since
-     *         IAM started tracking this information on October 20th, 2014
+     *         The password exists but has never been used (at least not since IAM started tracking this information on
+     *         October 20th, 2014
      *         </p>
      *         </li>
      *         <li>
@@ -561,8 +511,7 @@ public class User implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         This value is returned only in the <a>GetUser</a> and
-     *         <a>ListUsers</a> actions.
+     *         This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
      */
 
     public java.util.Date getPasswordLastUsed() {
@@ -571,14 +520,12 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the user's password was last used to sign in
-     * to an AWS website. For a list of AWS websites that capture a user's last
-     * sign-in time, see the <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"
-     * >Credential Reports</a> topic in the <i>Using IAM</i> guide. If a
-     * password is used more than once in a five-minute span, only the first use
-     * is returned in this field. This field is null (not present) when:
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's
+     * password was last used to sign in to an AWS website. For a list of AWS websites that capture a user's last
+     * sign-in time, see the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a> topic in
+     * the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the first use is
+     * returned in this field. This field is null (not present) when:
      * </p>
      * <ul>
      * <li>
@@ -588,8 +535,8 @@ public class User implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * The password exists but has never been used (at least not since IAM
-     * started tracking this information on October 20th, 2014
+     * The password exists but has never been used (at least not since IAM started tracking this information on October
+     * 20th, 2014
      * </p>
      * </li>
      * <li>
@@ -599,20 +546,16 @@ public class User implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a>
-     * actions.
+     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
      * </p>
      * 
      * @param passwordLastUsed
-     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *        8601 date-time format</a>, when the user's password was last used
-     *        to sign in to an AWS website. For a list of AWS websites that
-     *        capture a user's last sign-in time, see the <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"
-     *        >Credential Reports</a> topic in the <i>Using IAM</i> guide. If a
-     *        password is used more than once in a five-minute span, only the
-     *        first use is returned in this field. This field is null (not
-     *        present) when:</p>
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *        user's password was last used to sign in to an AWS website. For a list of AWS websites that capture a
+     *        user's last sign-in time, see the <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a>
+     *        topic in the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the
+     *        first use is returned in this field. This field is null (not present) when:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -621,8 +564,8 @@ public class User implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        The password exists but has never been used (at least not since
-     *        IAM started tracking this information on October 20th, 2014
+     *        The password exists but has never been used (at least not since IAM started tracking this information on
+     *        October 20th, 2014
      *        </p>
      *        </li>
      *        <li>
@@ -632,10 +575,8 @@ public class User implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        This value is returned only in the <a>GetUser</a> and
-     *        <a>ListUsers</a> actions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public User withPasswordLastUsed(java.util.Date passwordLastUsed) {
@@ -644,8 +585,7 @@ public class User implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -683,35 +623,27 @@ public class User implements Serializable, Cloneable {
         User other = (User) obj;
         if (other.getPath() == null ^ this.getPath() == null)
             return false;
-        if (other.getPath() != null
-                && other.getPath().equals(this.getPath()) == false)
+        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false)
             return false;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
-        if (other.getUserName() != null
-                && other.getUserName().equals(this.getUserName()) == false)
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
         if (other.getUserId() == null ^ this.getUserId() == null)
             return false;
-        if (other.getUserId() != null
-                && other.getUserId().equals(this.getUserId()) == false)
+        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getCreateDate() == null ^ this.getCreateDate() == null)
             return false;
-        if (other.getCreateDate() != null
-                && other.getCreateDate().equals(this.getCreateDate()) == false)
+        if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false)
             return false;
-        if (other.getPasswordLastUsed() == null
-                ^ this.getPasswordLastUsed() == null)
+        if (other.getPasswordLastUsed() == null ^ this.getPasswordLastUsed() == null)
             return false;
-        if (other.getPasswordLastUsed() != null
-                && other.getPasswordLastUsed().equals(
-                        this.getPasswordLastUsed()) == false)
+        if (other.getPasswordLastUsed() != null && other.getPasswordLastUsed().equals(this.getPasswordLastUsed()) == false)
             return false;
         return true;
     }
@@ -721,20 +653,12 @@ public class User implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPath() == null) ? 0 : getPath().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserId() == null) ? 0 : getUserId().hashCode());
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPasswordLastUsed() == null) ? 0 : getPasswordLastUsed()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
+        hashCode = prime * hashCode + ((getPasswordLastUsed() == null) ? 0 : getPasswordLastUsed().hashCode());
         return hashCode;
     }
 
@@ -743,9 +667,7 @@ public class User implements Serializable, Cloneable {
         try {
             return (User) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

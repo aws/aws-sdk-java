@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.marketplacemetering.model;
 
@@ -20,28 +18,24 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Product code is used to uniquely identify a product in AWS Marketplace.
-     * The product code should be the same as the one used during the publishing
-     * of a new product.
+     * Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as
+     * the one used during the publishing of a new product.
      * </p>
      */
     private String productCode;
     /**
      * <p>
-     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds
-     * portions of the timestamp will be ignored.
+     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.
      * </p>
      */
     private java.util.Date timestamp;
     /**
      * <p>
-     * It will be one of the 'fcp dimension name' provided during the publishing
-     * of the product.
+     * It will be one of the 'fcp dimension name' provided during the publishing of the product.
      * </p>
      */
     private String usageDimension;
@@ -53,24 +47,21 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer usageQuantity;
     /**
      * <p>
-     * Checks whether you have the permissions required for the action, but does
-     * not make the request. If you have the permissions, the request returns
-     * DryRunOperation; otherwise, it returns UnauthorizedException.
+     * Checks whether you have the permissions required for the action, but does not make the request. If you have the
+     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
      * </p>
      */
     private Boolean dryRun;
 
     /**
      * <p>
-     * Product code is used to uniquely identify a product in AWS Marketplace.
-     * The product code should be the same as the one used during the publishing
-     * of a new product.
+     * Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as
+     * the one used during the publishing of a new product.
      * </p>
      * 
      * @param productCode
-     *        Product code is used to uniquely identify a product in AWS
-     *        Marketplace. The product code should be the same as the one used
-     *        during the publishing of a new product.
+     *        Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the
+     *        same as the one used during the publishing of a new product.
      */
 
     public void setProductCode(String productCode) {
@@ -79,14 +70,12 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Product code is used to uniquely identify a product in AWS Marketplace.
-     * The product code should be the same as the one used during the publishing
-     * of a new product.
+     * Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as
+     * the one used during the publishing of a new product.
      * </p>
      * 
-     * @return Product code is used to uniquely identify a product in AWS
-     *         Marketplace. The product code should be the same as the one used
-     *         during the publishing of a new product.
+     * @return Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the
+     *         same as the one used during the publishing of a new product.
      */
 
     public String getProductCode() {
@@ -95,17 +84,14 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Product code is used to uniquely identify a product in AWS Marketplace.
-     * The product code should be the same as the one used during the publishing
-     * of a new product.
+     * Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as
+     * the one used during the publishing of a new product.
      * </p>
      * 
      * @param productCode
-     *        Product code is used to uniquely identify a product in AWS
-     *        Marketplace. The product code should be the same as the one used
-     *        during the publishing of a new product.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the
+     *        same as the one used during the publishing of a new product.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public MeterUsageRequest withProductCode(String productCode) {
@@ -115,13 +101,12 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds
-     * portions of the timestamp will be ignored.
+     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.
      * </p>
      * 
      * @param timestamp
-     *        Timestamp of the hour, recorded in UTC. The seconds and
-     *        milliseconds portions of the timestamp will be ignored.
+     *        Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be
+     *        ignored.
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -130,12 +115,11 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds
-     * portions of the timestamp will be ignored.
+     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.
      * </p>
      * 
-     * @return Timestamp of the hour, recorded in UTC. The seconds and
-     *         milliseconds portions of the timestamp will be ignored.
+     * @return Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be
+     *         ignored.
      */
 
     public java.util.Date getTimestamp() {
@@ -144,15 +128,13 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds
-     * portions of the timestamp will be ignored.
+     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.
      * </p>
      * 
      * @param timestamp
-     *        Timestamp of the hour, recorded in UTC. The seconds and
-     *        milliseconds portions of the timestamp will be ignored.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be
+     *        ignored.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public MeterUsageRequest withTimestamp(java.util.Date timestamp) {
@@ -162,13 +144,11 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * It will be one of the 'fcp dimension name' provided during the publishing
-     * of the product.
+     * It will be one of the 'fcp dimension name' provided during the publishing of the product.
      * </p>
      * 
      * @param usageDimension
-     *        It will be one of the 'fcp dimension name' provided during the
-     *        publishing of the product.
+     *        It will be one of the 'fcp dimension name' provided during the publishing of the product.
      */
 
     public void setUsageDimension(String usageDimension) {
@@ -177,12 +157,10 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * It will be one of the 'fcp dimension name' provided during the publishing
-     * of the product.
+     * It will be one of the 'fcp dimension name' provided during the publishing of the product.
      * </p>
      * 
-     * @return It will be one of the 'fcp dimension name' provided during the
-     *         publishing of the product.
+     * @return It will be one of the 'fcp dimension name' provided during the publishing of the product.
      */
 
     public String getUsageDimension() {
@@ -191,15 +169,12 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * It will be one of the 'fcp dimension name' provided during the publishing
-     * of the product.
+     * It will be one of the 'fcp dimension name' provided during the publishing of the product.
      * </p>
      * 
      * @param usageDimension
-     *        It will be one of the 'fcp dimension name' provided during the
-     *        publishing of the product.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        It will be one of the 'fcp dimension name' provided during the publishing of the product.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public MeterUsageRequest withUsageDimension(String usageDimension) {
@@ -239,8 +214,7 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param usageQuantity
      *        Consumption value for the hour.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public MeterUsageRequest withUsageQuantity(Integer usageQuantity) {
@@ -250,16 +224,13 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Checks whether you have the permissions required for the action, but does
-     * not make the request. If you have the permissions, the request returns
-     * DryRunOperation; otherwise, it returns UnauthorizedException.
+     * Checks whether you have the permissions required for the action, but does not make the request. If you have the
+     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
      * </p>
      * 
      * @param dryRun
-     *        Checks whether you have the permissions required for the action,
-     *        but does not make the request. If you have the permissions, the
-     *        request returns DryRunOperation; otherwise, it returns
-     *        UnauthorizedException.
+     *        Checks whether you have the permissions required for the action, but does not make the request. If you
+     *        have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
      */
 
     public void setDryRun(Boolean dryRun) {
@@ -268,15 +239,12 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Checks whether you have the permissions required for the action, but does
-     * not make the request. If you have the permissions, the request returns
-     * DryRunOperation; otherwise, it returns UnauthorizedException.
+     * Checks whether you have the permissions required for the action, but does not make the request. If you have the
+     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
      * </p>
      * 
-     * @return Checks whether you have the permissions required for the action,
-     *         but does not make the request. If you have the permissions, the
-     *         request returns DryRunOperation; otherwise, it returns
-     *         UnauthorizedException.
+     * @return Checks whether you have the permissions required for the action, but does not make the request. If you
+     *         have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
      */
 
     public Boolean getDryRun() {
@@ -285,18 +253,14 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Checks whether you have the permissions required for the action, but does
-     * not make the request. If you have the permissions, the request returns
-     * DryRunOperation; otherwise, it returns UnauthorizedException.
+     * Checks whether you have the permissions required for the action, but does not make the request. If you have the
+     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
      * </p>
      * 
      * @param dryRun
-     *        Checks whether you have the permissions required for the action,
-     *        but does not make the request. If you have the permissions, the
-     *        request returns DryRunOperation; otherwise, it returns
-     *        UnauthorizedException.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Checks whether you have the permissions required for the action, but does not make the request. If you
+     *        have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public MeterUsageRequest withDryRun(Boolean dryRun) {
@@ -306,15 +270,12 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Checks whether you have the permissions required for the action, but does
-     * not make the request. If you have the permissions, the request returns
-     * DryRunOperation; otherwise, it returns UnauthorizedException.
+     * Checks whether you have the permissions required for the action, but does not make the request. If you have the
+     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
      * </p>
      * 
-     * @return Checks whether you have the permissions required for the action,
-     *         but does not make the request. If you have the permissions, the
-     *         request returns DryRunOperation; otherwise, it returns
-     *         UnauthorizedException.
+     * @return Checks whether you have the permissions required for the action, but does not make the request. If you
+     *         have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
      */
 
     public Boolean isDryRun() {
@@ -322,8 +283,7 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -359,29 +319,23 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
         MeterUsageRequest other = (MeterUsageRequest) obj;
         if (other.getProductCode() == null ^ this.getProductCode() == null)
             return false;
-        if (other.getProductCode() != null
-                && other.getProductCode().equals(this.getProductCode()) == false)
+        if (other.getProductCode() != null && other.getProductCode().equals(this.getProductCode()) == false)
             return false;
         if (other.getTimestamp() == null ^ this.getTimestamp() == null)
             return false;
-        if (other.getTimestamp() != null
-                && other.getTimestamp().equals(this.getTimestamp()) == false)
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
-        if (other.getUsageDimension() == null
-                ^ this.getUsageDimension() == null)
+        if (other.getUsageDimension() == null ^ this.getUsageDimension() == null)
             return false;
-        if (other.getUsageDimension() != null
-                && other.getUsageDimension().equals(this.getUsageDimension()) == false)
+        if (other.getUsageDimension() != null && other.getUsageDimension().equals(this.getUsageDimension()) == false)
             return false;
         if (other.getUsageQuantity() == null ^ this.getUsageQuantity() == null)
             return false;
-        if (other.getUsageQuantity() != null
-                && other.getUsageQuantity().equals(this.getUsageQuantity()) == false)
+        if (other.getUsageQuantity() != null && other.getUsageQuantity().equals(this.getUsageQuantity()) == false)
             return false;
         if (other.getDryRun() == null ^ this.getDryRun() == null)
             return false;
-        if (other.getDryRun() != null
-                && other.getDryRun().equals(this.getDryRun()) == false)
+        if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
             return false;
         return true;
     }
@@ -391,21 +345,11 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getProductCode() == null) ? 0 : getProductCode().hashCode());
-        hashCode = prime * hashCode
-                + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUsageDimension() == null) ? 0 : getUsageDimension()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUsageQuantity() == null) ? 0 : getUsageQuantity()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
+        hashCode = prime * hashCode + ((getProductCode() == null) ? 0 : getProductCode().hashCode());
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getUsageDimension() == null) ? 0 : getUsageDimension().hashCode());
+        hashCode = prime * hashCode + ((getUsageQuantity() == null) ? 0 : getUsageQuantity().hashCode());
+        hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
         return hashCode;
     }
 

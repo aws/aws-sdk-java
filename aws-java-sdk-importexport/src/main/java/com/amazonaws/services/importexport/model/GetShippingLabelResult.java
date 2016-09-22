@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.importexport.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetShippingLabelResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetShippingLabelResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String shippingLabelURL;
 
@@ -45,8 +41,7 @@ public class GetShippingLabelResult extends
 
     /**
      * @param shippingLabelURL
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetShippingLabelResult withShippingLabelURL(String shippingLabelURL) {
@@ -72,8 +67,7 @@ public class GetShippingLabelResult extends
 
     /**
      * @param warning
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetShippingLabelResult withWarning(String warning) {
@@ -82,8 +76,7 @@ public class GetShippingLabelResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -111,17 +104,13 @@ public class GetShippingLabelResult extends
         if (obj instanceof GetShippingLabelResult == false)
             return false;
         GetShippingLabelResult other = (GetShippingLabelResult) obj;
-        if (other.getShippingLabelURL() == null
-                ^ this.getShippingLabelURL() == null)
+        if (other.getShippingLabelURL() == null ^ this.getShippingLabelURL() == null)
             return false;
-        if (other.getShippingLabelURL() != null
-                && other.getShippingLabelURL().equals(
-                        this.getShippingLabelURL()) == false)
+        if (other.getShippingLabelURL() != null && other.getShippingLabelURL().equals(this.getShippingLabelURL()) == false)
             return false;
         if (other.getWarning() == null ^ this.getWarning() == null)
             return false;
-        if (other.getWarning() != null
-                && other.getWarning().equals(this.getWarning()) == false)
+        if (other.getWarning() != null && other.getWarning().equals(this.getWarning()) == false)
             return false;
         return true;
     }
@@ -131,12 +120,8 @@ public class GetShippingLabelResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getShippingLabelURL() == null) ? 0 : getShippingLabelURL()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getWarning() == null) ? 0 : getWarning().hashCode());
+        hashCode = prime * hashCode + ((getShippingLabelURL() == null) ? 0 : getShippingLabelURL().hashCode());
+        hashCode = prime * hashCode + ((getWarning() == null) ? 0 : getWarning().hashCode());
         return hashCode;
     }
 
@@ -145,9 +130,7 @@ public class GetShippingLabelResult extends
         try {
             return (GetShippingLabelResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

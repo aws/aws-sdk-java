@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ThirdPartyJobData JSON Unmarshaller
  */
-public class ThirdPartyJobDataJsonUnmarshaller implements
-        Unmarshaller<ThirdPartyJobData, JsonUnmarshallerContext> {
+public class ThirdPartyJobDataJsonUnmarshaller implements Unmarshaller<ThirdPartyJobData, JsonUnmarshallerContext> {
 
-    public ThirdPartyJobData unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ThirdPartyJobData unmarshall(JsonUnmarshallerContext context) throws Exception {
         ThirdPartyJobData thirdPartyJobData = new ThirdPartyJobData();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,57 +49,38 @@ public class ThirdPartyJobDataJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actionTypeId", targetDepth)) {
                     context.nextToken();
-                    thirdPartyJobData
-                            .setActionTypeId(ActionTypeIdJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    thirdPartyJobData.setActionTypeId(ActionTypeIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("actionConfiguration", targetDepth)) {
                     context.nextToken();
-                    thirdPartyJobData
-                            .setActionConfiguration(ActionConfigurationJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    thirdPartyJobData.setActionConfiguration(ActionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pipelineContext", targetDepth)) {
                     context.nextToken();
-                    thirdPartyJobData
-                            .setPipelineContext(PipelineContextJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    thirdPartyJobData.setPipelineContext(PipelineContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("inputArtifacts", targetDepth)) {
                     context.nextToken();
-                    thirdPartyJobData
-                            .setInputArtifacts(new ListUnmarshaller<Artifact>(
-                                    ArtifactJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+                    thirdPartyJobData.setInputArtifacts(new ListUnmarshaller<Artifact>(ArtifactJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("outputArtifacts", targetDepth)) {
                     context.nextToken();
-                    thirdPartyJobData
-                            .setOutputArtifacts(new ListUnmarshaller<Artifact>(
-                                    ArtifactJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+                    thirdPartyJobData.setOutputArtifacts(new ListUnmarshaller<Artifact>(ArtifactJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("artifactCredentials", targetDepth)) {
                     context.nextToken();
-                    thirdPartyJobData
-                            .setArtifactCredentials(AWSSessionCredentialsJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    thirdPartyJobData.setArtifactCredentials(AWSSessionCredentialsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("continuationToken", targetDepth)) {
                     context.nextToken();
-                    thirdPartyJobData.setContinuationToken(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    thirdPartyJobData.setContinuationToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encryptionKey", targetDepth)) {
                     context.nextToken();
-                    thirdPartyJobData
-                            .setEncryptionKey(EncryptionKeyJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    thirdPartyJobData.setEncryptionKey(EncryptionKeyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

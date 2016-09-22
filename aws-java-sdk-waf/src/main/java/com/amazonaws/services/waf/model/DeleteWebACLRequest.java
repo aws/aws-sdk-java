@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model;
 
@@ -20,14 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete.
-     * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-     * <a>ListWebACLs</a>.
+     * The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by
+     * <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
      * </p>
      */
     private String webACLId;
@@ -40,15 +36,13 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete.
-     * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-     * <a>ListWebACLs</a>.
+     * The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by
+     * <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
      * </p>
      * 
      * @param webACLId
-     *        The <code>WebACLId</code> of the <a>WebACL</a> that you want to
-     *        delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a>
-     *        and by <a>ListWebACLs</a>.
+     *        The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned
+     *        by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
      */
 
     public void setWebACLId(String webACLId) {
@@ -57,14 +51,12 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete.
-     * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-     * <a>ListWebACLs</a>.
+     * The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by
+     * <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
      * </p>
      * 
-     * @return The <code>WebACLId</code> of the <a>WebACL</a> that you want to
-     *         delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a>
-     *         and by <a>ListWebACLs</a>.
+     * @return The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned
+     *         by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
      */
 
     public String getWebACLId() {
@@ -73,17 +65,14 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete.
-     * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-     * <a>ListWebACLs</a>.
+     * The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by
+     * <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
      * </p>
      * 
      * @param webACLId
-     *        The <code>WebACLId</code> of the <a>WebACL</a> that you want to
-     *        delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a>
-     *        and by <a>ListWebACLs</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned
+     *        by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteWebACLRequest withWebACLId(String webACLId) {
@@ -97,8 +86,7 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param changeToken
-     *        The value returned by the most recent call to
-     *        <a>GetChangeToken</a>.
+     *        The value returned by the most recent call to <a>GetChangeToken</a>.
      */
 
     public void setChangeToken(String changeToken) {
@@ -110,8 +98,7 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest
      * The value returned by the most recent call to <a>GetChangeToken</a>.
      * </p>
      * 
-     * @return The value returned by the most recent call to
-     *         <a>GetChangeToken</a>.
+     * @return The value returned by the most recent call to <a>GetChangeToken</a>.
      */
 
     public String getChangeToken() {
@@ -124,10 +111,8 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param changeToken
-     *        The value returned by the most recent call to
-     *        <a>GetChangeToken</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value returned by the most recent call to <a>GetChangeToken</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteWebACLRequest withChangeToken(String changeToken) {
@@ -136,8 +121,7 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -167,13 +151,11 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest
         DeleteWebACLRequest other = (DeleteWebACLRequest) obj;
         if (other.getWebACLId() == null ^ this.getWebACLId() == null)
             return false;
-        if (other.getWebACLId() != null
-                && other.getWebACLId().equals(this.getWebACLId()) == false)
+        if (other.getWebACLId() != null && other.getWebACLId().equals(this.getWebACLId()) == false)
             return false;
         if (other.getChangeToken() == null ^ this.getChangeToken() == null)
             return false;
-        if (other.getChangeToken() != null
-                && other.getChangeToken().equals(this.getChangeToken()) == false)
+        if (other.getChangeToken() != null && other.getChangeToken().equals(this.getChangeToken()) == false)
             return false;
         return true;
     }
@@ -183,11 +165,8 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getWebACLId() == null) ? 0 : getWebACLId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getChangeToken() == null) ? 0 : getChangeToken().hashCode());
+        hashCode = prime * hashCode + ((getWebACLId() == null) ? 0 : getWebACLId().hashCode());
+        hashCode = prime * hashCode + ((getChangeToken() == null) ? 0 : getChangeToken().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * VolumeStatusItem StAX Unmarshaller
  */
-public class VolumeStatusItemStaxUnmarshaller implements
-        Unmarshaller<VolumeStatusItem, StaxUnmarshallerContext> {
+public class VolumeStatusItemStaxUnmarshaller implements Unmarshaller<VolumeStatusItem, StaxUnmarshallerContext> {
 
-    public VolumeStatusItem unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public VolumeStatusItem unmarshall(StaxUnmarshallerContext context) throws Exception {
         VolumeStatusItem volumeStatusItem = new VolumeStatusItem();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,35 +46,27 @@ public class VolumeStatusItemStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("volumeId", targetDepth)) {
-                    volumeStatusItem.setVolumeId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    volumeStatusItem.setVolumeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("availabilityZone", targetDepth)) {
-                    volumeStatusItem.setAvailabilityZone(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    volumeStatusItem.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("volumeStatus", targetDepth)) {
-                    volumeStatusItem
-                            .setVolumeStatus(VolumeStatusInfoStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    volumeStatusItem.setVolumeStatus(VolumeStatusInfoStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("eventsSet/item", targetDepth)) {
-                    volumeStatusItem
-                            .withEvents(VolumeStatusEventStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    volumeStatusItem.withEvents(VolumeStatusEventStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("actionsSet/item", targetDepth)) {
-                    volumeStatusItem
-                            .withActions(VolumeStatusActionStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    volumeStatusItem.withActions(VolumeStatusActionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

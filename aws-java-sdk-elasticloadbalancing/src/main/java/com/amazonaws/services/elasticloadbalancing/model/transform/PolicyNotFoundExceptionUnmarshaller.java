@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model.transform;
 
@@ -22,8 +20,7 @@ import com.amazonaws.transform.StandardErrorUnmarshaller;
 
 import com.amazonaws.services.elasticloadbalancing.model.PolicyNotFoundException;
 
-public class PolicyNotFoundExceptionUnmarshaller extends
-        StandardErrorUnmarshaller {
+public class PolicyNotFoundExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
     public PolicyNotFoundExceptionUnmarshaller() {
         super(PolicyNotFoundException.class);
@@ -37,8 +34,7 @@ public class PolicyNotFoundExceptionUnmarshaller extends
         if (errorCode == null || !errorCode.equals("PolicyNotFound"))
             return null;
 
-        PolicyNotFoundException e = (PolicyNotFoundException) super
-                .unmarshall(node);
+        PolicyNotFoundException e = (PolicyNotFoundException) super.unmarshall(node);
 
         return e;
     }

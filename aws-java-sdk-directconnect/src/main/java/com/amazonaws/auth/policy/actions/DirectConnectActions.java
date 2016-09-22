@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.auth.policy.actions;
 
@@ -26,19 +24,15 @@ public enum DirectConnectActions implements Action {
     AllDirectConnectActions("directconnect:*"),
 
     /** Action for the AllocateConnectionOnInterconnect operation. */
-    AllocateConnectionOnInterconnect(
-            "directconnect:AllocateConnectionOnInterconnect"),
+    AllocateConnectionOnInterconnect("directconnect:AllocateConnectionOnInterconnect"),
     /** Action for the AllocatePrivateVirtualInterface operation. */
-    AllocatePrivateVirtualInterface(
-            "directconnect:AllocatePrivateVirtualInterface"),
+    AllocatePrivateVirtualInterface("directconnect:AllocatePrivateVirtualInterface"),
     /** Action for the AllocatePublicVirtualInterface operation. */
-    AllocatePublicVirtualInterface(
-            "directconnect:AllocatePublicVirtualInterface"),
+    AllocatePublicVirtualInterface("directconnect:AllocatePublicVirtualInterface"),
     /** Action for the ConfirmConnection operation. */
     ConfirmConnection("directconnect:ConfirmConnection"),
     /** Action for the ConfirmPrivateVirtualInterface operation. */
-    ConfirmPrivateVirtualInterface(
-            "directconnect:ConfirmPrivateVirtualInterface"),
+    ConfirmPrivateVirtualInterface("directconnect:ConfirmPrivateVirtualInterface"),
     /** Action for the ConfirmPublicVirtualInterface operation. */
     ConfirmPublicVirtualInterface("directconnect:ConfirmPublicVirtualInterface"),
     /** Action for the CreateConnection operation. */
@@ -60,8 +54,7 @@ public enum DirectConnectActions implements Action {
     /** Action for the DescribeConnections operation. */
     DescribeConnections("directconnect:DescribeConnections"),
     /** Action for the DescribeConnectionsOnInterconnect operation. */
-    DescribeConnectionsOnInterconnect(
-            "directconnect:DescribeConnectionsOnInterconnect"),
+    DescribeConnectionsOnInterconnect("directconnect:DescribeConnectionsOnInterconnect"),
     /** Action for the DescribeInterconnectLoa operation. */
     DescribeInterconnectLoa("directconnect:DescribeInterconnectLoa"),
     /** Action for the DescribeInterconnects operation. */

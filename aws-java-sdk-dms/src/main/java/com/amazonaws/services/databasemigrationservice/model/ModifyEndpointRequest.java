@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
@@ -20,22 +18,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class ModifyEndpointRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      */
     private String endpointArn;
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter;
-     * must contain only ASCII letters, digits, and hyphens; and must not end
-     * with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
+     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
      * </p>
      */
     private String endpointIdentifier;
@@ -47,8 +41,8 @@ public class ModifyEndpointRequest extends
     private String endpointType;
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and
+     * SQLSERVER.
      * </p>
      */
     private String engineName;
@@ -90,8 +84,7 @@ public class ModifyEndpointRequest extends
     private String extraConnectionAttributes;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the certificate used for SSL
-     * connection.
+     * The Amazon Resource Name (ARN) of the certificate used for SSL connection.
      * </p>
      */
     private String certificateArn;
@@ -100,8 +93,7 @@ public class ModifyEndpointRequest extends
      * The SSL mode to be used.
      * </p>
      * <p>
-     * SSL mode can be one of four values: none, require, verify-ca,
-     * verify-full.
+     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
      * </p>
      * <p>
      * The default value is none.
@@ -111,13 +103,11 @@ public class ModifyEndpointRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param endpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the
-     *        endpoint.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      */
 
     public void setEndpointArn(String endpointArn) {
@@ -126,12 +116,10 @@ public class ModifyEndpointRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) string that uniquely identifies
-     *         the endpoint.
+     * @return The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      */
 
     public String getEndpointArn() {
@@ -140,15 +128,12 @@ public class ModifyEndpointRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param endpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the
-     *        endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyEndpointRequest withEndpointArn(String endpointArn) {
@@ -158,15 +143,13 @@ public class ModifyEndpointRequest extends
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter;
-     * must contain only ASCII letters, digits, and hyphens; and must not end
-     * with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
+     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
      * @param endpointIdentifier
-     *        The database endpoint identifier. Identifiers must begin with a
-     *        letter; must contain only ASCII letters, digits, and hyphens; and
-     *        must not end with a hyphen or contain two consecutive hyphens.
+     *        The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters,
+     *        digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
      */
 
     public void setEndpointIdentifier(String endpointIdentifier) {
@@ -175,14 +158,12 @@ public class ModifyEndpointRequest extends
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter;
-     * must contain only ASCII letters, digits, and hyphens; and must not end
-     * with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
+     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
-     * @return The database endpoint identifier. Identifiers must begin with a
-     *         letter; must contain only ASCII letters, digits, and hyphens; and
-     *         must not end with a hyphen or contain two consecutive hyphens.
+     * @return The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters,
+     *         digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
      */
 
     public String getEndpointIdentifier() {
@@ -191,21 +172,17 @@ public class ModifyEndpointRequest extends
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter;
-     * must contain only ASCII letters, digits, and hyphens; and must not end
-     * with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
+     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
      * @param endpointIdentifier
-     *        The database endpoint identifier. Identifiers must begin with a
-     *        letter; must contain only ASCII letters, digits, and hyphens; and
-     *        must not end with a hyphen or contain two consecutive hyphens.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters,
+     *        digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyEndpointRequest withEndpointIdentifier(
-            String endpointIdentifier) {
+    public ModifyEndpointRequest withEndpointIdentifier(String endpointIdentifier) {
         setEndpointIdentifier(endpointIdentifier);
         return this;
     }
@@ -244,8 +221,7 @@ public class ModifyEndpointRequest extends
      * 
      * @param endpointType
      *        The type of endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -275,26 +251,24 @@ public class ModifyEndpointRequest extends
      * 
      * @param endpointType
      *        The type of endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */
 
-    public ModifyEndpointRequest withEndpointType(
-            ReplicationEndpointTypeValue endpointType) {
+    public ModifyEndpointRequest withEndpointType(ReplicationEndpointTypeValue endpointType) {
         setEndpointType(endpointType);
         return this;
     }
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and
+     * SQLSERVER.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values include MYSQL,
-     *        ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
+     *        The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA,
+     *        REDSHIFT, and SQLSERVER.
      */
 
     public void setEngineName(String engineName) {
@@ -303,12 +277,12 @@ public class ModifyEndpointRequest extends
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and
+     * SQLSERVER.
      * </p>
      * 
-     * @return The type of engine for the endpoint. Valid values include MYSQL,
-     *         ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
+     * @return The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA,
+     *         REDSHIFT, and SQLSERVER.
      */
 
     public String getEngineName() {
@@ -317,15 +291,14 @@ public class ModifyEndpointRequest extends
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and
+     * SQLSERVER.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values include MYSQL,
-     *        ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA,
+     *        REDSHIFT, and SQLSERVER.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyEndpointRequest withEngineName(String engineName) {
@@ -365,8 +338,7 @@ public class ModifyEndpointRequest extends
      * 
      * @param username
      *        The user name to be used to login to the endpoint database.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyEndpointRequest withUsername(String username) {
@@ -406,8 +378,7 @@ public class ModifyEndpointRequest extends
      * 
      * @param password
      *        The password to be used to login to the endpoint database.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyEndpointRequest withPassword(String password) {
@@ -447,8 +418,7 @@ public class ModifyEndpointRequest extends
      * 
      * @param serverName
      *        The name of the server where the endpoint database resides.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyEndpointRequest withServerName(String serverName) {
@@ -488,8 +458,7 @@ public class ModifyEndpointRequest extends
      * 
      * @param port
      *        The port used by the endpoint database.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyEndpointRequest withPort(Integer port) {
@@ -529,8 +498,7 @@ public class ModifyEndpointRequest extends
      * 
      * @param databaseName
      *        The name of the endpoint database.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyEndpointRequest withDatabaseName(String databaseName) {
@@ -570,25 +538,21 @@ public class ModifyEndpointRequest extends
      * 
      * @param extraConnectionAttributes
      *        Additional attributes associated with the connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyEndpointRequest withExtraConnectionAttributes(
-            String extraConnectionAttributes) {
+    public ModifyEndpointRequest withExtraConnectionAttributes(String extraConnectionAttributes) {
         setExtraConnectionAttributes(extraConnectionAttributes);
         return this;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the certificate used for SSL
-     * connection.
+     * The Amazon Resource Name (ARN) of the certificate used for SSL connection.
      * </p>
      * 
      * @param certificateArn
-     *        The Amazon Resource Name (ARN) of the certificate used for SSL
-     *        connection.
+     *        The Amazon Resource Name (ARN) of the certificate used for SSL connection.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -597,12 +561,10 @@ public class ModifyEndpointRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the certificate used for SSL
-     * connection.
+     * The Amazon Resource Name (ARN) of the certificate used for SSL connection.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the certificate used for SSL
-     *         connection.
+     * @return The Amazon Resource Name (ARN) of the certificate used for SSL connection.
      */
 
     public String getCertificateArn() {
@@ -611,15 +573,12 @@ public class ModifyEndpointRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the certificate used for SSL
-     * connection.
+     * The Amazon Resource Name (ARN) of the certificate used for SSL connection.
      * </p>
      * 
      * @param certificateArn
-     *        The Amazon Resource Name (ARN) of the certificate used for SSL
-     *        connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the certificate used for SSL connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyEndpointRequest withCertificateArn(String certificateArn) {
@@ -632,8 +591,7 @@ public class ModifyEndpointRequest extends
      * The SSL mode to be used.
      * </p>
      * <p>
-     * SSL mode can be one of four values: none, require, verify-ca,
-     * verify-full.
+     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
      * </p>
      * <p>
      * The default value is none.
@@ -642,8 +600,7 @@ public class ModifyEndpointRequest extends
      * @param sslMode
      *        The SSL mode to be used.</p>
      *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca,
-     *        verify-full.
+     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
      *        </p>
      *        <p>
      *        The default value is none.
@@ -659,8 +616,7 @@ public class ModifyEndpointRequest extends
      * The SSL mode to be used.
      * </p>
      * <p>
-     * SSL mode can be one of four values: none, require, verify-ca,
-     * verify-full.
+     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
      * </p>
      * <p>
      * The default value is none.
@@ -668,8 +624,7 @@ public class ModifyEndpointRequest extends
      * 
      * @return The SSL mode to be used.</p>
      *         <p>
-     *         SSL mode can be one of four values: none, require, verify-ca,
-     *         verify-full.
+     *         SSL mode can be one of four values: none, require, verify-ca, verify-full.
      *         </p>
      *         <p>
      *         The default value is none.
@@ -685,8 +640,7 @@ public class ModifyEndpointRequest extends
      * The SSL mode to be used.
      * </p>
      * <p>
-     * SSL mode can be one of four values: none, require, verify-ca,
-     * verify-full.
+     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
      * </p>
      * <p>
      * The default value is none.
@@ -695,13 +649,11 @@ public class ModifyEndpointRequest extends
      * @param sslMode
      *        The SSL mode to be used.</p>
      *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca,
-     *        verify-full.
+     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
      *        </p>
      *        <p>
      *        The default value is none.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DmsSslModeValue
      */
 
@@ -715,8 +667,7 @@ public class ModifyEndpointRequest extends
      * The SSL mode to be used.
      * </p>
      * <p>
-     * SSL mode can be one of four values: none, require, verify-ca,
-     * verify-full.
+     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
      * </p>
      * <p>
      * The default value is none.
@@ -725,8 +676,7 @@ public class ModifyEndpointRequest extends
      * @param sslMode
      *        The SSL mode to be used.</p>
      *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca,
-     *        verify-full.
+     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
      *        </p>
      *        <p>
      *        The default value is none.
@@ -742,8 +692,7 @@ public class ModifyEndpointRequest extends
      * The SSL mode to be used.
      * </p>
      * <p>
-     * SSL mode can be one of four values: none, require, verify-ca,
-     * verify-full.
+     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
      * </p>
      * <p>
      * The default value is none.
@@ -752,13 +701,11 @@ public class ModifyEndpointRequest extends
      * @param sslMode
      *        The SSL mode to be used.</p>
      *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca,
-     *        verify-full.
+     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
      *        </p>
      *        <p>
      *        The default value is none.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DmsSslModeValue
      */
 
@@ -768,8 +715,7 @@ public class ModifyEndpointRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -798,8 +744,7 @@ public class ModifyEndpointRequest extends
         if (getDatabaseName() != null)
             sb.append("DatabaseName: " + getDatabaseName() + ",");
         if (getExtraConnectionAttributes() != null)
-            sb.append("ExtraConnectionAttributes: "
-                    + getExtraConnectionAttributes() + ",");
+            sb.append("ExtraConnectionAttributes: " + getExtraConnectionAttributes() + ",");
         if (getCertificateArn() != null)
             sb.append("CertificateArn: " + getCertificateArn() + ",");
         if (getSslMode() != null)
@@ -820,68 +765,51 @@ public class ModifyEndpointRequest extends
         ModifyEndpointRequest other = (ModifyEndpointRequest) obj;
         if (other.getEndpointArn() == null ^ this.getEndpointArn() == null)
             return false;
-        if (other.getEndpointArn() != null
-                && other.getEndpointArn().equals(this.getEndpointArn()) == false)
+        if (other.getEndpointArn() != null && other.getEndpointArn().equals(this.getEndpointArn()) == false)
             return false;
-        if (other.getEndpointIdentifier() == null
-                ^ this.getEndpointIdentifier() == null)
+        if (other.getEndpointIdentifier() == null ^ this.getEndpointIdentifier() == null)
             return false;
-        if (other.getEndpointIdentifier() != null
-                && other.getEndpointIdentifier().equals(
-                        this.getEndpointIdentifier()) == false)
+        if (other.getEndpointIdentifier() != null && other.getEndpointIdentifier().equals(this.getEndpointIdentifier()) == false)
             return false;
         if (other.getEndpointType() == null ^ this.getEndpointType() == null)
             return false;
-        if (other.getEndpointType() != null
-                && other.getEndpointType().equals(this.getEndpointType()) == false)
+        if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
             return false;
         if (other.getEngineName() == null ^ this.getEngineName() == null)
             return false;
-        if (other.getEngineName() != null
-                && other.getEngineName().equals(this.getEngineName()) == false)
+        if (other.getEngineName() != null && other.getEngineName().equals(this.getEngineName()) == false)
             return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
-        if (other.getUsername() != null
-                && other.getUsername().equals(this.getUsername()) == false)
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
         if (other.getPassword() == null ^ this.getPassword() == null)
             return false;
-        if (other.getPassword() != null
-                && other.getPassword().equals(this.getPassword()) == false)
+        if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false)
             return false;
         if (other.getServerName() == null ^ this.getServerName() == null)
             return false;
-        if (other.getServerName() != null
-                && other.getServerName().equals(this.getServerName()) == false)
+        if (other.getServerName() != null && other.getServerName().equals(this.getServerName()) == false)
             return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
-        if (other.getPort() != null
-                && other.getPort().equals(this.getPort()) == false)
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
         if (other.getDatabaseName() == null ^ this.getDatabaseName() == null)
             return false;
-        if (other.getDatabaseName() != null
-                && other.getDatabaseName().equals(this.getDatabaseName()) == false)
+        if (other.getDatabaseName() != null && other.getDatabaseName().equals(this.getDatabaseName()) == false)
             return false;
-        if (other.getExtraConnectionAttributes() == null
-                ^ this.getExtraConnectionAttributes() == null)
+        if (other.getExtraConnectionAttributes() == null ^ this.getExtraConnectionAttributes() == null)
             return false;
-        if (other.getExtraConnectionAttributes() != null
-                && other.getExtraConnectionAttributes().equals(
-                        this.getExtraConnectionAttributes()) == false)
+        if (other.getExtraConnectionAttributes() != null && other.getExtraConnectionAttributes().equals(this.getExtraConnectionAttributes()) == false)
             return false;
-        if (other.getCertificateArn() == null
-                ^ this.getCertificateArn() == null)
+        if (other.getCertificateArn() == null ^ this.getCertificateArn() == null)
             return false;
-        if (other.getCertificateArn() != null
-                && other.getCertificateArn().equals(this.getCertificateArn()) == false)
+        if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
             return false;
         if (other.getSslMode() == null ^ this.getSslMode() == null)
             return false;
-        if (other.getSslMode() != null
-                && other.getSslMode().equals(this.getSslMode()) == false)
+        if (other.getSslMode() != null && other.getSslMode().equals(this.getSslMode()) == false)
             return false;
         return true;
     }
@@ -891,41 +819,18 @@ public class ModifyEndpointRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEndpointIdentifier() == null) ? 0
-                        : getEndpointIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEndpointType() == null) ? 0 : getEndpointType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getEngineName() == null) ? 0 : getEngineName().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        hashCode = prime * hashCode
-                + ((getPassword() == null) ? 0 : getPassword().hashCode());
-        hashCode = prime * hashCode
-                + ((getServerName() == null) ? 0 : getServerName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPort() == null) ? 0 : getPort().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDatabaseName() == null) ? 0 : getDatabaseName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExtraConnectionAttributes() == null) ? 0
-                        : getExtraConnectionAttributes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCertificateArn() == null) ? 0 : getCertificateArn()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getSslMode() == null) ? 0 : getSslMode().hashCode());
+        hashCode = prime * hashCode + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
+        hashCode = prime * hashCode + ((getEndpointIdentifier() == null) ? 0 : getEndpointIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
+        hashCode = prime * hashCode + ((getEngineName() == null) ? 0 : getEngineName().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
+        hashCode = prime * hashCode + ((getExtraConnectionAttributes() == null) ? 0 : getExtraConnectionAttributes().hashCode());
+        hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getSslMode() == null) ? 0 : getSslMode().hashCode());
         return hashCode;
     }
 

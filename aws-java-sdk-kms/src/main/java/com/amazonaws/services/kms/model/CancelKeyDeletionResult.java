@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kms.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CancelKeyDeletionResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CancelKeyDeletionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -36,8 +32,7 @@ public class CancelKeyDeletionResult extends
      * </p>
      * 
      * @param keyId
-     *        The unique identifier of the master key for which deletion is
-     *        canceled.
+     *        The unique identifier of the master key for which deletion is canceled.
      */
 
     public void setKeyId(String keyId) {
@@ -49,8 +44,7 @@ public class CancelKeyDeletionResult extends
      * The unique identifier of the master key for which deletion is canceled.
      * </p>
      * 
-     * @return The unique identifier of the master key for which deletion is
-     *         canceled.
+     * @return The unique identifier of the master key for which deletion is canceled.
      */
 
     public String getKeyId() {
@@ -63,10 +57,8 @@ public class CancelKeyDeletionResult extends
      * </p>
      * 
      * @param keyId
-     *        The unique identifier of the master key for which deletion is
-     *        canceled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The unique identifier of the master key for which deletion is canceled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CancelKeyDeletionResult withKeyId(String keyId) {
@@ -75,8 +67,7 @@ public class CancelKeyDeletionResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -104,8 +95,7 @@ public class CancelKeyDeletionResult extends
         CancelKeyDeletionResult other = (CancelKeyDeletionResult) obj;
         if (other.getKeyId() == null ^ this.getKeyId() == null)
             return false;
-        if (other.getKeyId() != null
-                && other.getKeyId().equals(this.getKeyId()) == false)
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
             return false;
         return true;
     }
@@ -115,8 +105,7 @@ public class CancelKeyDeletionResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
         return hashCode;
     }
 
@@ -125,9 +114,7 @@ public class CancelKeyDeletionResult extends
         try {
             return (CancelKeyDeletionResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

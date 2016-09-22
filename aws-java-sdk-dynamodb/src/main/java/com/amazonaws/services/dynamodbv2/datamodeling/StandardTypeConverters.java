@@ -84,7 +84,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link BigDecimal}
          */
-        BIG_DECIMAL(ScalarAttributeType.N, new ConverterMap<BigDecimal,Object>(BigDecimal.class, null)
+        BIG_DECIMAL(ScalarAttributeType.N, new ConverterMap(BigDecimal.class, null)
             .with(Number.class, ToBigDecimal.FromString.join(ToString.FromNumber))
             .with(String.class, ToBigDecimal.FromString)
         ),
@@ -92,7 +92,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link BigInteger}
          */
-        BIG_INTEGER(ScalarAttributeType.N, new ConverterMap<BigInteger,Object>(BigInteger.class, null)
+        BIG_INTEGER(ScalarAttributeType.N, new ConverterMap(BigInteger.class, null)
             .with(Number.class, ToBigInteger.FromString.join(ToString.FromNumber))
             .with(String.class, ToBigInteger.FromString)
         ),
@@ -100,7 +100,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link Boolean}
          */
-        BOOLEAN(ScalarAttributeType.N, new ConverterMap<Boolean,Object>(Boolean.class, Boolean.TYPE)
+        BOOLEAN(ScalarAttributeType.N, new ConverterMap(Boolean.class, Boolean.TYPE)
             .with(Number.class, ToBoolean.FromString.join(ToString.FromNumber))
             .with(String.class, ToBoolean.FromString)
         ),
@@ -108,7 +108,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link Byte}
          */
-        BYTE(ScalarAttributeType.N, new ConverterMap<Byte,Object>(Byte.class, Byte.TYPE)
+        BYTE(ScalarAttributeType.N, new ConverterMap(Byte.class, Byte.TYPE)
             .with(Number.class, ToByte.FromNumber)
             .with(String.class, ToByte.FromString)
         ),
@@ -116,7 +116,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link Byte} array
          */
-        BYTE_ARRAY(ScalarAttributeType.B, new ConverterMap<byte[],Object>(byte[].class, null)
+        BYTE_ARRAY(ScalarAttributeType.B, new ConverterMap(byte[].class, null)
             .with(ByteBuffer.class, ToByteArray.FromByteBuffer)
             .with(String.class, ToByteArray.FromString)
         ),
@@ -124,7 +124,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link ByteBuffer}
          */
-        BYTE_BUFFER(ScalarAttributeType.B, new ConverterMap<ByteBuffer,Object>(ByteBuffer.class, null)
+        BYTE_BUFFER(ScalarAttributeType.B, new ConverterMap(ByteBuffer.class, null)
             .with(byte[].class, ToByteBuffer.FromByteArray)
             .with(String.class, ToByteBuffer.FromByteArray.join(ToByteArray.FromString))
             .with(java.util.UUID.class, ToByteBuffer.FromUuid)
@@ -133,7 +133,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link Calendar}
          */
-        CALENDAR(ScalarAttributeType.S, new ConverterMap<Calendar,Object>(Calendar.class, null)
+        CALENDAR(ScalarAttributeType.S, new ConverterMap(Calendar.class, null)
             .with(Date.class, ToCalendar.FromDate)
             .with(DateTime.class, ToCalendar.FromDate.join(ToDate.FromDateTime))
             .with(Long.class, ToCalendar.FromDate.join(ToDate.FromLong))
@@ -143,21 +143,21 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link Character}
          */
-        CHARACTER(ScalarAttributeType.S, new ConverterMap<Character,Object>(Character.class, Character.TYPE)
+        CHARACTER(ScalarAttributeType.S, new ConverterMap(Character.class, Character.TYPE)
             .with(String.class, ToCharacter.FromString)
         ),
 
         /**
          * {@link Currency}
          */
-        CURRENCY(ScalarAttributeType.S, new ConverterMap<Currency,Object>(Currency.class, null)
+        CURRENCY(ScalarAttributeType.S, new ConverterMap(Currency.class, null)
             .with(String.class, ToCurrency.FromString)
         ),
 
         /**
          * {@link Date}
          */
-        DATE(ScalarAttributeType.S, new ConverterMap<Date,Object>(Date.class, null)
+        DATE(ScalarAttributeType.S, new ConverterMap(Date.class, null)
             .with(Calendar.class, ToDate.FromCalendar)
             .with(DateTime.class, ToDate.FromDateTime)
             .with(Long.class, ToDate.FromLong)
@@ -167,7 +167,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link DateTime}
          */
-        DATE_TIME(/*ScalarAttributeType.S*/null, new ConverterMap<DateTime,Object>(DateTime.class, null)
+        DATE_TIME(/*ScalarAttributeType.S*/null, new ConverterMap(DateTime.class, null)
             .with(Calendar.class, ToDateTime.FromDate.join(ToDate.FromCalendar))
             .with(Date.class, ToDateTime.FromDate)
             .with(Long.class, ToDateTime.FromDate.join(ToDate.FromLong))
@@ -177,7 +177,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link Double}
          */
-        DOUBLE(ScalarAttributeType.N, new ConverterMap<Double,Object>(Double.class, Double.TYPE)
+        DOUBLE(ScalarAttributeType.N, new ConverterMap(Double.class, Double.TYPE)
             .with(Number.class, ToDouble.FromNumber)
             .with(String.class, ToDouble.FromString)
         ),
@@ -185,7 +185,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link Float}
          */
-        FLOAT(ScalarAttributeType.N, new ConverterMap<Float,Object>(Float.class, Float.TYPE)
+        FLOAT(ScalarAttributeType.N, new ConverterMap(Float.class, Float.TYPE)
             .with(Number.class, ToFloat.FromNumber)
             .with(String.class, ToFloat.FromString)
         ),
@@ -193,7 +193,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link Integer}
          */
-        INTEGER(ScalarAttributeType.N, new ConverterMap<Integer,Object>(Integer.class, Integer.TYPE)
+        INTEGER(ScalarAttributeType.N, new ConverterMap(Integer.class, Integer.TYPE)
             .with(Number.class, ToInteger.FromNumber)
             .with(String.class, ToInteger.FromString)
         ),
@@ -201,14 +201,14 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link Locale}
          */
-        LOCALE(ScalarAttributeType.S, new ConverterMap<Locale,Object>(Locale.class, null)
+        LOCALE(ScalarAttributeType.S, new ConverterMap(Locale.class, null)
             .with(String.class, ToLocale.FromString)
         ),
 
         /**
          * {@link Long}
          */
-        LONG(ScalarAttributeType.N, new ConverterMap<Long,Object>(Long.class, Long.TYPE)
+        LONG(ScalarAttributeType.N, new ConverterMap(Long.class, Long.TYPE)
             .with(Date.class, ToLong.FromDate)
             .with(DateTime.class, ToLong.FromDate.join(ToDate.FromDateTime))
             .with(Number.class, ToLong.FromNumber)
@@ -218,12 +218,12 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link S3Link}
          */
-        S3_LINK(ScalarAttributeType.S, new ConverterMap<S3Link,Object>(S3Link.class, null)),
+        S3_LINK(ScalarAttributeType.S, new ConverterMap(S3Link.class, null)),
 
         /**
          * {@link Short}
          */
-        SHORT(ScalarAttributeType.N, new ConverterMap<Short,Object>(Short.class, Short.TYPE)
+        SHORT(ScalarAttributeType.N, new ConverterMap(Short.class, Short.TYPE)
             .with(Number.class, ToShort.FromNumber)
             .with(String.class, ToShort.FromString)
         ),
@@ -231,7 +231,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link String}
          */
-        STRING(ScalarAttributeType.S, new ConverterMap<String,Object>(String.class, null)
+        STRING(ScalarAttributeType.S, new ConverterMap(String.class, null)
             .with(Boolean.class, ToString.FromBoolean)
             .with(byte[].class, ToString.FromByteArray)
             .with(ByteBuffer.class, ToString.FromByteArray.join(ToByteArray.FromByteBuffer))
@@ -246,28 +246,28 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link TimeZone}
          */
-        TIME_ZONE(ScalarAttributeType.S, new ConverterMap<TimeZone,Object>(TimeZone.class, null)
+        TIME_ZONE(ScalarAttributeType.S, new ConverterMap(TimeZone.class, null)
             .with(String.class, ToTimeZone.FromString)
         ),
 
         /**
          * {@link java.net.URL}
          */
-        URL(ScalarAttributeType.S, new ConverterMap<java.net.URL,Object>(java.net.URL.class, null)
+        URL(ScalarAttributeType.S, new ConverterMap(java.net.URL.class, null)
             .with(String.class, ToUrl.FromString)
         ),
 
         /**
          * {@link java.net.URI}
          */
-        URI(ScalarAttributeType.S, new ConverterMap<java.net.URI,Object>(java.net.URI.class, null)
+        URI(ScalarAttributeType.S, new ConverterMap(java.net.URI.class, null)
             .with(String.class, ToUri.FromString)
         ),
 
         /**
          * {@link java.util.UUID}
          */
-        UUID(ScalarAttributeType.S, new ConverterMap<java.util.UUID,Object>(java.util.UUID.class, null)
+        UUID(ScalarAttributeType.S, new ConverterMap(java.util.UUID.class, null)
             .with(ByteBuffer.class, ToUuid.FromByteBuffer)
             .with(String.class, ToUuid.FromString)
         ),
@@ -275,7 +275,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * {@link Object}; default must be last
          */
-        DEFAULT(null, new ConverterMap<Object,Object>(Object.class, null)) {
+        DEFAULT(null, new ConverterMap(Object.class, null)) {
             @Override
             <S,T> Converter<S,T> getConverter(Class<S> sourceType, Class<T> targetType) {
                 if (sourceType.isEnum() && STRING.map.isAssignableFrom(targetType)) {
@@ -293,12 +293,12 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         /**
          * The mapping of conversion functions for this scalar.
          */
-        private final ConverterMap<?,?> map;
+        private final ConverterMap map;
 
         /**
          * Constructs a new scalar with the specified conversion mappings.
          */
-        private Scalar(ScalarAttributeType scalarAttributeType, ConverterMap<?,?> map) {
+        private Scalar(ScalarAttributeType scalarAttributeType, ConverterMap map) {
             this.scalarAttributeType = scalarAttributeType;
             this.map = map;
         }
@@ -307,9 +307,8 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
          * Returns the function to convert from the specified target class to
          * this scalar type.
          */
-        @SuppressWarnings("unchecked")
         <S,T> Converter<S,T> getConverter(Class<S> sourceType, Class<T> targetType) {
-            return ((ConverterMap<S,T>)map).getConverter(targetType);
+            return map.<S,T>getConverter(targetType);
         }
 
         /**
@@ -483,17 +482,17 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
     /**
      * Converter map.
      */
-    private static class ConverterMap<S,T> extends LinkedHashMap<Class<T>,Converter<S,T>> {
+    private static class ConverterMap extends LinkedHashMap<Class<?>,Converter<?,?>> {
         private static final long serialVersionUID = -1L;
-        private final Class<S> referenceType, primitiveType;
+        private final Class<?> referenceType, primitiveType;
 
-        private ConverterMap(Class<S> referenceType, Class<S> primitiveType) {
+        private ConverterMap(Class<?> referenceType, Class<?> primitiveType) {
             this.referenceType = referenceType;
             this.primitiveType = primitiveType;
         }
 
-        private <t extends T> ConverterMap<S,T> with(Class<t> targetType, Converter<S,t> converter) {
-            put((Class<T>)targetType, (Converter<S,T>)converter);
+        private <S,T> ConverterMap with(Class<T> targetType, Converter<S,T> converter) {
+            put(targetType, converter);
             return this;
         }
 
@@ -501,10 +500,11 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
             return type.isPrimitive() ? primitiveType == type : referenceType.isAssignableFrom(type);
         }
 
-        private Converter<S,T> getConverter(Class<T> targetType) {
-            for (final Map.Entry<Class<T>,Converter<S,T>> entry : entrySet()) {
+        @SuppressWarnings("unchecked")
+        private <S,T> Converter<S,T> getConverter(Class<T> targetType) {
+            for (final Map.Entry<Class<?>,Converter<?,?>> entry : entrySet()) {
                 if (entry.getKey().isAssignableFrom(targetType)) {
-                    return entry.getValue();
+                    return (Converter<S,T>)entry.getValue();
                 }
             }
             if (isAssignableFrom(targetType)) {

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * RespondToAuthChallengeResult JSON Unmarshaller
  */
-public class RespondToAuthChallengeResultJsonUnmarshaller implements
-        Unmarshaller<RespondToAuthChallengeResult, JsonUnmarshallerContext> {
+public class RespondToAuthChallengeResultJsonUnmarshaller implements Unmarshaller<RespondToAuthChallengeResult, JsonUnmarshallerContext> {
 
-    public RespondToAuthChallengeResult unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public RespondToAuthChallengeResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         RespondToAuthChallengeResult respondToAuthChallengeResult = new RespondToAuthChallengeResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,32 +49,23 @@ public class RespondToAuthChallengeResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ChallengeName", targetDepth)) {
                     context.nextToken();
-                    respondToAuthChallengeResult.setChallengeName(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    respondToAuthChallengeResult.setChallengeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Session", targetDepth)) {
                     context.nextToken();
-                    respondToAuthChallengeResult.setSession(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    respondToAuthChallengeResult.setSession(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChallengeParameters", targetDepth)) {
                     context.nextToken();
-                    respondToAuthChallengeResult
-                            .setChallengeParameters(new MapUnmarshaller<String, String>(
-                                    context.getUnmarshaller(String.class),
-                                    context.getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    respondToAuthChallengeResult.setChallengeParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("AuthenticationResult", targetDepth)) {
                     context.nextToken();
-                    respondToAuthChallengeResult
-                            .setAuthenticationResult(AuthenticationResultTypeJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    respondToAuthChallengeResult.setAuthenticationResult(AuthenticationResultTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

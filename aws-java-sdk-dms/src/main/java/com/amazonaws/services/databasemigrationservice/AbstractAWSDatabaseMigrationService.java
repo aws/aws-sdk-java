@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice;
 
@@ -18,12 +16,10 @@ import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AWSDatabaseMigrationService}. Convenient
- * method forms pass through to the corresponding overload that takes a request
- * object, which throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AWSDatabaseMigrationService}. Convenient method forms pass through to the
+ * corresponding overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
-public class AbstractAWSDatabaseMigrationService implements
-        AWSDatabaseMigrationService {
+public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigrationService {
 
     protected AbstractAWSDatabaseMigrationService() {
     }
@@ -39,8 +35,7 @@ public class AbstractAWSDatabaseMigrationService implements
     }
 
     @Override
-    public AddTagsToResourceResult addTagsToResource(
-            AddTagsToResourceRequest request) {
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -50,26 +45,22 @@ public class AbstractAWSDatabaseMigrationService implements
     }
 
     @Override
-    public CreateReplicationInstanceResult createReplicationInstance(
-            CreateReplicationInstanceRequest request) {
+    public CreateReplicationInstanceResult createReplicationInstance(CreateReplicationInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateReplicationSubnetGroupResult createReplicationSubnetGroup(
-            CreateReplicationSubnetGroupRequest request) {
+    public CreateReplicationSubnetGroupResult createReplicationSubnetGroup(CreateReplicationSubnetGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateReplicationTaskResult createReplicationTask(
-            CreateReplicationTaskRequest request) {
+    public CreateReplicationTaskResult createReplicationTask(CreateReplicationTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteCertificateResult deleteCertificate(
-            DeleteCertificateRequest request) {
+    public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,80 +70,67 @@ public class AbstractAWSDatabaseMigrationService implements
     }
 
     @Override
-    public DeleteReplicationInstanceResult deleteReplicationInstance(
-            DeleteReplicationInstanceRequest request) {
+    public DeleteReplicationInstanceResult deleteReplicationInstance(DeleteReplicationInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteReplicationSubnetGroupResult deleteReplicationSubnetGroup(
-            DeleteReplicationSubnetGroupRequest request) {
+    public DeleteReplicationSubnetGroupResult deleteReplicationSubnetGroup(DeleteReplicationSubnetGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteReplicationTaskResult deleteReplicationTask(
-            DeleteReplicationTaskRequest request) {
+    public DeleteReplicationTaskResult deleteReplicationTask(DeleteReplicationTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeAccountAttributesResult describeAccountAttributes(
-            DescribeAccountAttributesRequest request) {
+    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeCertificatesResult describeCertificates(
-            DescribeCertificatesRequest request) {
+    public DescribeCertificatesResult describeCertificates(DescribeCertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeConnectionsResult describeConnections(
-            DescribeConnectionsRequest request) {
+    public DescribeConnectionsResult describeConnections(DescribeConnectionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeEndpointTypesResult describeEndpointTypes(
-            DescribeEndpointTypesRequest request) {
+    public DescribeEndpointTypesResult describeEndpointTypes(DescribeEndpointTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeEndpointsResult describeEndpoints(
-            DescribeEndpointsRequest request) {
+    public DescribeEndpointsResult describeEndpoints(DescribeEndpointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeOrderableReplicationInstancesResult describeOrderableReplicationInstances(
-            DescribeOrderableReplicationInstancesRequest request) {
+    public DescribeOrderableReplicationInstancesResult describeOrderableReplicationInstances(DescribeOrderableReplicationInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeRefreshSchemasStatusResult describeRefreshSchemasStatus(
-            DescribeRefreshSchemasStatusRequest request) {
+    public DescribeRefreshSchemasStatusResult describeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeReplicationInstancesResult describeReplicationInstances(
-            DescribeReplicationInstancesRequest request) {
+    public DescribeReplicationInstancesResult describeReplicationInstances(DescribeReplicationInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeReplicationSubnetGroupsResult describeReplicationSubnetGroups(
-            DescribeReplicationSubnetGroupsRequest request) {
+    public DescribeReplicationSubnetGroupsResult describeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeReplicationTasksResult describeReplicationTasks(
-            DescribeReplicationTasksRequest request) {
+    public DescribeReplicationTasksResult describeReplicationTasks(DescribeReplicationTasksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -162,20 +140,17 @@ public class AbstractAWSDatabaseMigrationService implements
     }
 
     @Override
-    public DescribeTableStatisticsResult describeTableStatistics(
-            DescribeTableStatisticsRequest request) {
+    public DescribeTableStatisticsResult describeTableStatistics(DescribeTableStatisticsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ImportCertificateResult importCertificate(
-            ImportCertificateRequest request) {
+    public ImportCertificateResult importCertificate(ImportCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListTagsForResourceResult listTagsForResource(
-            ListTagsForResourceRequest request) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -185,14 +160,12 @@ public class AbstractAWSDatabaseMigrationService implements
     }
 
     @Override
-    public ModifyReplicationInstanceResult modifyReplicationInstance(
-            ModifyReplicationInstanceRequest request) {
+    public ModifyReplicationInstanceResult modifyReplicationInstance(ModifyReplicationInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ModifyReplicationSubnetGroupResult modifyReplicationSubnetGroup(
-            ModifyReplicationSubnetGroupRequest request) {
+    public ModifyReplicationSubnetGroupResult modifyReplicationSubnetGroup(ModifyReplicationSubnetGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -202,20 +175,17 @@ public class AbstractAWSDatabaseMigrationService implements
     }
 
     @Override
-    public RemoveTagsFromResourceResult removeTagsFromResource(
-            RemoveTagsFromResourceRequest request) {
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public StartReplicationTaskResult startReplicationTask(
-            StartReplicationTaskRequest request) {
+    public StartReplicationTaskResult startReplicationTask(StartReplicationTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public StopReplicationTaskResult stopReplicationTask(
-            StopReplicationTaskRequest request) {
+    public StopReplicationTaskResult stopReplicationTask(StopReplicationTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -230,8 +200,7 @@ public class AbstractAWSDatabaseMigrationService implements
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecr.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeleteRepositoryPolicyResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DeleteRepositoryPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -74,8 +70,7 @@ public class DeleteRepositoryPolicyResult extends
      * 
      * @param registryId
      *        The registry ID associated with the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteRepositoryPolicyResult withRegistryId(String registryId) {
@@ -115,8 +110,7 @@ public class DeleteRepositoryPolicyResult extends
      * 
      * @param repositoryName
      *        The repository name associated with the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteRepositoryPolicyResult withRepositoryName(String repositoryName) {
@@ -156,8 +150,7 @@ public class DeleteRepositoryPolicyResult extends
      * 
      * @param policyText
      *        The JSON repository policy that was deleted from the repository.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteRepositoryPolicyResult withPolicyText(String policyText) {
@@ -166,8 +159,7 @@ public class DeleteRepositoryPolicyResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -199,19 +191,15 @@ public class DeleteRepositoryPolicyResult extends
         DeleteRepositoryPolicyResult other = (DeleteRepositoryPolicyResult) obj;
         if (other.getRegistryId() == null ^ this.getRegistryId() == null)
             return false;
-        if (other.getRegistryId() != null
-                && other.getRegistryId().equals(this.getRegistryId()) == false)
+        if (other.getRegistryId() != null && other.getRegistryId().equals(this.getRegistryId()) == false)
             return false;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
         if (other.getPolicyText() == null ^ this.getPolicyText() == null)
             return false;
-        if (other.getPolicyText() != null
-                && other.getPolicyText().equals(this.getPolicyText()) == false)
+        if (other.getPolicyText() != null && other.getPolicyText().equals(this.getPolicyText()) == false)
             return false;
         return true;
     }
@@ -221,14 +209,9 @@ public class DeleteRepositoryPolicyResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPolicyText() == null) ? 0 : getPolicyText().hashCode());
+        hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getPolicyText() == null) ? 0 : getPolicyText().hashCode());
         return hashCode;
     }
 
@@ -237,9 +220,7 @@ public class DeleteRepositoryPolicyResult extends
         try {
             return (DeleteRepositoryPolicyResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

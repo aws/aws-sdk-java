@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -19,23 +17,18 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class DescribeSnapshotCopyGrantsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeSnapshotCopyGrantsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <code>DescribeSnapshotCopyGrant</code> request exceed the value specified
-     * in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set
-     * of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS
+     * returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response
+     * records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * <p>
-     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b>
-     * parameter or the <b>Marker</b> parameter, but not both.
+     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter,
+     * but not both.
      * </p>
      */
     private String marker;
@@ -48,31 +41,24 @@ public class DescribeSnapshotCopyGrantsResult extends
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <code>DescribeSnapshotCopyGrant</code> request exceed the value specified
-     * in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set
-     * of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS
+     * returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response
+     * records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * <p>
-     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b>
-     * parameter or the <b>Marker</b> parameter, but not both.
+     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter,
+     * but not both.
      * </p>
      * 
      * @param marker
-     *        An optional parameter that specifies the starting point to return
-     *        a set of response records. When the results of a
-     *        <code>DescribeSnapshotCopyGrant</code> request exceed the value
-     *        specified in <code>MaxRecords</code>, AWS returns a value in the
-     *        <code>Marker</code> field of the response. You can retrieve the
-     *        next set of response records by providing the returned marker
-     *        value in the <code>Marker</code> parameter and retrying the
-     *        request. </p>
+     *        An optional parameter that specifies the starting point to return a set of response records. When the
+     *        results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in
+     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
+     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>Marker</code> parameter and retrying the request. </p>
      *        <p>
-     *        Constraints: You can specify either the
-     *        <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
+     *        Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
      *        parameter, but not both.
      */
 
@@ -82,30 +68,23 @@ public class DescribeSnapshotCopyGrantsResult extends
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <code>DescribeSnapshotCopyGrant</code> request exceed the value specified
-     * in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set
-     * of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS
+     * returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response
+     * records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * <p>
-     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b>
-     * parameter or the <b>Marker</b> parameter, but not both.
+     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter,
+     * but not both.
      * </p>
      * 
-     * @return An optional parameter that specifies the starting point to return
-     *         a set of response records. When the results of a
-     *         <code>DescribeSnapshotCopyGrant</code> request exceed the value
-     *         specified in <code>MaxRecords</code>, AWS returns a value in the
-     *         <code>Marker</code> field of the response. You can retrieve the
-     *         next set of response records by providing the returned marker
-     *         value in the <code>Marker</code> parameter and retrying the
-     *         request. </p>
+     * @return An optional parameter that specifies the starting point to return a set of response records. When the
+     *         results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in
+     *         <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
+     *         retrieve the next set of response records by providing the returned marker value in the
+     *         <code>Marker</code> parameter and retrying the request. </p>
      *         <p>
-     *         Constraints: You can specify either the
-     *         <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
+     *         Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
      *         parameter, but not both.
      */
 
@@ -115,34 +94,26 @@ public class DescribeSnapshotCopyGrantsResult extends
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <code>DescribeSnapshotCopyGrant</code> request exceed the value specified
-     * in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set
-     * of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS
+     * returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response
+     * records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * <p>
-     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b>
-     * parameter or the <b>Marker</b> parameter, but not both.
+     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter,
+     * but not both.
      * </p>
      * 
      * @param marker
-     *        An optional parameter that specifies the starting point to return
-     *        a set of response records. When the results of a
-     *        <code>DescribeSnapshotCopyGrant</code> request exceed the value
-     *        specified in <code>MaxRecords</code>, AWS returns a value in the
-     *        <code>Marker</code> field of the response. You can retrieve the
-     *        next set of response records by providing the returned marker
-     *        value in the <code>Marker</code> parameter and retrying the
-     *        request. </p>
+     *        An optional parameter that specifies the starting point to return a set of response records. When the
+     *        results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in
+     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
+     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>Marker</code> parameter and retrying the request. </p>
      *        <p>
-     *        Constraints: You can specify either the
-     *        <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
+     *        Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
      *        parameter, but not both.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSnapshotCopyGrantsResult withMarker(String marker) {
@@ -174,15 +145,13 @@ public class DescribeSnapshotCopyGrantsResult extends
      *        The list of <code>SnapshotCopyGrant</code> objects.
      */
 
-    public void setSnapshotCopyGrants(
-            java.util.Collection<SnapshotCopyGrant> snapshotCopyGrants) {
+    public void setSnapshotCopyGrants(java.util.Collection<SnapshotCopyGrant> snapshotCopyGrants) {
         if (snapshotCopyGrants == null) {
             this.snapshotCopyGrants = null;
             return;
         }
 
-        this.snapshotCopyGrants = new com.amazonaws.internal.SdkInternalList<SnapshotCopyGrant>(
-                snapshotCopyGrants);
+        this.snapshotCopyGrants = new com.amazonaws.internal.SdkInternalList<SnapshotCopyGrant>(snapshotCopyGrants);
     }
 
     /**
@@ -190,23 +159,19 @@ public class DescribeSnapshotCopyGrantsResult extends
      * The list of <code>SnapshotCopyGrant</code> objects.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSnapshotCopyGrants(java.util.Collection)} or
-     * {@link #withSnapshotCopyGrants(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSnapshotCopyGrants(java.util.Collection)} or {@link #withSnapshotCopyGrants(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param snapshotCopyGrants
      *        The list of <code>SnapshotCopyGrant</code> objects.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSnapshotCopyGrantsResult withSnapshotCopyGrants(
-            SnapshotCopyGrant... snapshotCopyGrants) {
+    public DescribeSnapshotCopyGrantsResult withSnapshotCopyGrants(SnapshotCopyGrant... snapshotCopyGrants) {
         if (this.snapshotCopyGrants == null) {
-            setSnapshotCopyGrants(new com.amazonaws.internal.SdkInternalList<SnapshotCopyGrant>(
-                    snapshotCopyGrants.length));
+            setSnapshotCopyGrants(new com.amazonaws.internal.SdkInternalList<SnapshotCopyGrant>(snapshotCopyGrants.length));
         }
         for (SnapshotCopyGrant ele : snapshotCopyGrants) {
             this.snapshotCopyGrants.add(ele);
@@ -221,19 +186,16 @@ public class DescribeSnapshotCopyGrantsResult extends
      * 
      * @param snapshotCopyGrants
      *        The list of <code>SnapshotCopyGrant</code> objects.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSnapshotCopyGrantsResult withSnapshotCopyGrants(
-            java.util.Collection<SnapshotCopyGrant> snapshotCopyGrants) {
+    public DescribeSnapshotCopyGrantsResult withSnapshotCopyGrants(java.util.Collection<SnapshotCopyGrant> snapshotCopyGrants) {
         setSnapshotCopyGrants(snapshotCopyGrants);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -263,15 +225,11 @@ public class DescribeSnapshotCopyGrantsResult extends
         DescribeSnapshotCopyGrantsResult other = (DescribeSnapshotCopyGrantsResult) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
-        if (other.getSnapshotCopyGrants() == null
-                ^ this.getSnapshotCopyGrants() == null)
+        if (other.getSnapshotCopyGrants() == null ^ this.getSnapshotCopyGrants() == null)
             return false;
-        if (other.getSnapshotCopyGrants() != null
-                && other.getSnapshotCopyGrants().equals(
-                        this.getSnapshotCopyGrants()) == false)
+        if (other.getSnapshotCopyGrants() != null && other.getSnapshotCopyGrants().equals(this.getSnapshotCopyGrants()) == false)
             return false;
         return true;
     }
@@ -281,12 +239,8 @@ public class DescribeSnapshotCopyGrantsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotCopyGrants() == null) ? 0
-                        : getSnapshotCopyGrants().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotCopyGrants() == null) ? 0 : getSnapshotCopyGrants().hashCode());
         return hashCode;
     }
 
@@ -295,9 +249,7 @@ public class DescribeSnapshotCopyGrantsResult extends
         try {
             return (DescribeSnapshotCopyGrantsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

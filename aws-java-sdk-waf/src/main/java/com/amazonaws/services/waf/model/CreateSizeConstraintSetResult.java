@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model;
 
@@ -19,36 +17,29 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateSizeConstraintSetResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CreateSizeConstraintSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code>
-     * objects.
+     * A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code> objects.
      * </p>
      */
     private SizeConstraintSet sizeConstraintSet;
     /**
      * <p>
-     * The <code>ChangeToken</code> that you used to submit the
-     * <code>CreateSizeConstraintSet</code> request. You can also use this value
-     * to query the status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.
+     * The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can
+     * also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.
      * </p>
      */
     private String changeToken;
 
     /**
      * <p>
-     * A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code>
-     * objects.
+     * A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code> objects.
      * </p>
      * 
      * @param sizeConstraintSet
-     *        A <a>SizeConstraintSet</a> that contains no
-     *        <code>SizeConstraint</code> objects.
+     *        A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code> objects.
      */
 
     public void setSizeConstraintSet(SizeConstraintSet sizeConstraintSet) {
@@ -57,12 +48,10 @@ public class CreateSizeConstraintSetResult extends
 
     /**
      * <p>
-     * A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code>
-     * objects.
+     * A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code> objects.
      * </p>
      * 
-     * @return A <a>SizeConstraintSet</a> that contains no
-     *         <code>SizeConstraint</code> objects.
+     * @return A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code> objects.
      */
 
     public SizeConstraintSet getSizeConstraintSet() {
@@ -71,36 +60,29 @@ public class CreateSizeConstraintSetResult extends
 
     /**
      * <p>
-     * A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code>
-     * objects.
+     * A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code> objects.
      * </p>
      * 
      * @param sizeConstraintSet
-     *        A <a>SizeConstraintSet</a> that contains no
-     *        <code>SizeConstraint</code> objects.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateSizeConstraintSetResult withSizeConstraintSet(
-            SizeConstraintSet sizeConstraintSet) {
+    public CreateSizeConstraintSetResult withSizeConstraintSet(SizeConstraintSet sizeConstraintSet) {
         setSizeConstraintSet(sizeConstraintSet);
         return this;
     }
 
     /**
      * <p>
-     * The <code>ChangeToken</code> that you used to submit the
-     * <code>CreateSizeConstraintSet</code> request. You can also use this value
-     * to query the status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.
+     * The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can
+     * also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.
      * </p>
      * 
      * @param changeToken
-     *        The <code>ChangeToken</code> that you used to submit the
-     *        <code>CreateSizeConstraintSet</code> request. You can also use
-     *        this value to query the status of the request. For more
-     *        information, see <a>GetChangeTokenStatus</a>.
+     *        The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You
+     *        can also use this value to query the status of the request. For more information, see
+     *        <a>GetChangeTokenStatus</a>.
      */
 
     public void setChangeToken(String changeToken) {
@@ -109,16 +91,13 @@ public class CreateSizeConstraintSetResult extends
 
     /**
      * <p>
-     * The <code>ChangeToken</code> that you used to submit the
-     * <code>CreateSizeConstraintSet</code> request. You can also use this value
-     * to query the status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.
+     * The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can
+     * also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.
      * </p>
      * 
-     * @return The <code>ChangeToken</code> that you used to submit the
-     *         <code>CreateSizeConstraintSet</code> request. You can also use
-     *         this value to query the status of the request. For more
-     *         information, see <a>GetChangeTokenStatus</a>.
+     * @return The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request.
+     *         You can also use this value to query the status of the request. For more information, see
+     *         <a>GetChangeTokenStatus</a>.
      */
 
     public String getChangeToken() {
@@ -127,19 +106,15 @@ public class CreateSizeConstraintSetResult extends
 
     /**
      * <p>
-     * The <code>ChangeToken</code> that you used to submit the
-     * <code>CreateSizeConstraintSet</code> request. You can also use this value
-     * to query the status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.
+     * The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can
+     * also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.
      * </p>
      * 
      * @param changeToken
-     *        The <code>ChangeToken</code> that you used to submit the
-     *        <code>CreateSizeConstraintSet</code> request. You can also use
-     *        this value to query the status of the request. For more
-     *        information, see <a>GetChangeTokenStatus</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You
+     *        can also use this value to query the status of the request. For more information, see
+     *        <a>GetChangeTokenStatus</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateSizeConstraintSetResult withChangeToken(String changeToken) {
@@ -148,8 +123,7 @@ public class CreateSizeConstraintSetResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -177,17 +151,13 @@ public class CreateSizeConstraintSetResult extends
         if (obj instanceof CreateSizeConstraintSetResult == false)
             return false;
         CreateSizeConstraintSetResult other = (CreateSizeConstraintSetResult) obj;
-        if (other.getSizeConstraintSet() == null
-                ^ this.getSizeConstraintSet() == null)
+        if (other.getSizeConstraintSet() == null ^ this.getSizeConstraintSet() == null)
             return false;
-        if (other.getSizeConstraintSet() != null
-                && other.getSizeConstraintSet().equals(
-                        this.getSizeConstraintSet()) == false)
+        if (other.getSizeConstraintSet() != null && other.getSizeConstraintSet().equals(this.getSizeConstraintSet()) == false)
             return false;
         if (other.getChangeToken() == null ^ this.getChangeToken() == null)
             return false;
-        if (other.getChangeToken() != null
-                && other.getChangeToken().equals(this.getChangeToken()) == false)
+        if (other.getChangeToken() != null && other.getChangeToken().equals(this.getChangeToken()) == false)
             return false;
         return true;
     }
@@ -197,13 +167,8 @@ public class CreateSizeConstraintSetResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSizeConstraintSet() == null) ? 0
-                        : getSizeConstraintSet().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getChangeToken() == null) ? 0 : getChangeToken().hashCode());
+        hashCode = prime * hashCode + ((getSizeConstraintSet() == null) ? 0 : getSizeConstraintSet().hashCode());
+        hashCode = prime * hashCode + ((getChangeToken() == null) ? 0 : getChangeToken().hashCode());
         return hashCode;
     }
 
@@ -212,9 +177,7 @@ public class CreateSizeConstraintSetResult extends
         try {
             return (CreateSizeConstraintSetResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

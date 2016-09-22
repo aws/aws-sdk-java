@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the maximum hourly price (bid) for any Spot instance launched to
- * fulfill the request.
+ * Describes the maximum hourly price (bid) for any Spot instance launched to fulfill the request.
  * </p>
  */
 public class SpotPrice implements Serializable, Cloneable {
@@ -90,8 +87,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
@@ -121,8 +117,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
@@ -165,8 +160,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * 
      * @param productDescription
      *        A general description of the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RIProductDescription
      */
 
@@ -196,13 +190,11 @@ public class SpotPrice implements Serializable, Cloneable {
      * 
      * @param productDescription
      *        A general description of the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RIProductDescription
      */
 
-    public SpotPrice withProductDescription(
-            RIProductDescription productDescription) {
+    public SpotPrice withProductDescription(RIProductDescription productDescription) {
         setProductDescription(productDescription);
         return this;
     }
@@ -213,8 +205,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * </p>
      * 
      * @param spotPrice
-     *        The maximum price (bid) that you are willing to pay for a Spot
-     *        instance.
+     *        The maximum price (bid) that you are willing to pay for a Spot instance.
      */
 
     public void setSpotPrice(String spotPrice) {
@@ -226,8 +217,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * The maximum price (bid) that you are willing to pay for a Spot instance.
      * </p>
      * 
-     * @return The maximum price (bid) that you are willing to pay for a Spot
-     *         instance.
+     * @return The maximum price (bid) that you are willing to pay for a Spot instance.
      */
 
     public String getSpotPrice() {
@@ -240,10 +230,8 @@ public class SpotPrice implements Serializable, Cloneable {
      * </p>
      * 
      * @param spotPrice
-     *        The maximum price (bid) that you are willing to pay for a Spot
-     *        instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum price (bid) that you are willing to pay for a Spot instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotPrice withSpotPrice(String spotPrice) {
@@ -258,8 +246,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * </p>
      * 
      * @param timestamp
-     *        The date and time the request was created, in UTC format (for
-     *        example,
+     *        The date and time the request was created, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
 
@@ -273,8 +260,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      * 
-     * @return The date and time the request was created, in UTC format (for
-     *         example,
+     * @return The date and time the request was created, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
 
@@ -289,11 +275,9 @@ public class SpotPrice implements Serializable, Cloneable {
      * </p>
      * 
      * @param timestamp
-     *        The date and time the request was created, in UTC format (for
-     *        example,
+     *        The date and time the request was created, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotPrice withTimestamp(java.util.Date timestamp) {
@@ -333,8 +317,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * 
      * @param availabilityZone
      *        The Availability Zone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotPrice withAvailabilityZone(String availabilityZone) {
@@ -343,8 +326,7 @@ public class SpotPrice implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -380,32 +362,23 @@ public class SpotPrice implements Serializable, Cloneable {
         SpotPrice other = (SpotPrice) obj;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
-        if (other.getProductDescription() == null
-                ^ this.getProductDescription() == null)
+        if (other.getProductDescription() == null ^ this.getProductDescription() == null)
             return false;
-        if (other.getProductDescription() != null
-                && other.getProductDescription().equals(
-                        this.getProductDescription()) == false)
+        if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false)
             return false;
         if (other.getSpotPrice() == null ^ this.getSpotPrice() == null)
             return false;
-        if (other.getSpotPrice() != null
-                && other.getSpotPrice().equals(this.getSpotPrice()) == false)
+        if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false)
             return false;
         if (other.getTimestamp() == null ^ this.getTimestamp() == null)
             return false;
-        if (other.getTimestamp() != null
-                && other.getTimestamp().equals(this.getTimestamp()) == false)
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
         return true;
     }
@@ -415,22 +388,11 @@ public class SpotPrice implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProductDescription() == null) ? 0
-                        : getProductDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode());
-        hashCode = prime * hashCode
-                + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode());
+        hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode());
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         return hashCode;
     }
 
@@ -439,9 +401,7 @@ public class SpotPrice implements Serializable, Cloneable {
         try {
             return (SpotPrice) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

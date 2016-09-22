@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * InitiateJobRequest Marshaller
  */
-public class InitiateJobRequestMarshaller implements
-        Marshaller<Request<InitiateJobRequest>, InitiateJobRequest> {
+public class InitiateJobRequestMarshaller implements Marshaller<Request<InitiateJobRequest>, InitiateJobRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,88 +49,63 @@ public class InitiateJobRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<InitiateJobRequest> marshall(
-            InitiateJobRequest initiateJobRequest) {
+    public Request<InitiateJobRequest> marshall(InitiateJobRequest initiateJobRequest) {
 
         if (initiateJobRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<InitiateJobRequest> request = new DefaultRequest<InitiateJobRequest>(
-                initiateJobRequest, "AmazonGlacier");
+        Request<InitiateJobRequest> request = new DefaultRequest<InitiateJobRequest>(initiateJobRequest, "AmazonGlacier");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (initiateJobRequest.getAccountId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(initiateJobRequest
-                                .getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (initiateJobRequest.getVaultName() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(initiateJobRequest
-                                .getVaultName()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{accountId}",
+                (initiateJobRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(initiateJobRequest.getAccountId()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{vaultName}",
+                (initiateJobRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(initiateJobRequest.getVaultName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             JobParameters jobParameters = initiateJobRequest.getJobParameters();
             if (jobParameters != null) {
                 jsonGenerator.writeStartObject();
                 if (jobParameters.getFormat() != null) {
-                    jsonGenerator.writeFieldName("Format").writeValue(
-                            jobParameters.getFormat());
+                    jsonGenerator.writeFieldName("Format").writeValue(jobParameters.getFormat());
                 }
                 if (jobParameters.getType() != null) {
-                    jsonGenerator.writeFieldName("Type").writeValue(
-                            jobParameters.getType());
+                    jsonGenerator.writeFieldName("Type").writeValue(jobParameters.getType());
                 }
                 if (jobParameters.getArchiveId() != null) {
-                    jsonGenerator.writeFieldName("ArchiveId").writeValue(
-                            jobParameters.getArchiveId());
+                    jsonGenerator.writeFieldName("ArchiveId").writeValue(jobParameters.getArchiveId());
                 }
                 if (jobParameters.getDescription() != null) {
-                    jsonGenerator.writeFieldName("Description").writeValue(
-                            jobParameters.getDescription());
+                    jsonGenerator.writeFieldName("Description").writeValue(jobParameters.getDescription());
                 }
                 if (jobParameters.getSNSTopic() != null) {
-                    jsonGenerator.writeFieldName("SNSTopic").writeValue(
-                            jobParameters.getSNSTopic());
+                    jsonGenerator.writeFieldName("SNSTopic").writeValue(jobParameters.getSNSTopic());
                 }
                 if (jobParameters.getRetrievalByteRange() != null) {
-                    jsonGenerator.writeFieldName("RetrievalByteRange")
-                            .writeValue(jobParameters.getRetrievalByteRange());
+                    jsonGenerator.writeFieldName("RetrievalByteRange").writeValue(jobParameters.getRetrievalByteRange());
                 }
                 if (jobParameters.getInventoryRetrievalParameters() != null) {
-                    jsonGenerator
-                            .writeFieldName("InventoryRetrievalParameters");
-                    InventoryRetrievalJobInputJsonMarshaller
-                            .getInstance()
-                            .marshall(
-                                    jobParameters
-                                            .getInventoryRetrievalParameters(),
-                                    jsonGenerator);
+                    jsonGenerator.writeFieldName("InventoryRetrievalParameters");
+                    InventoryRetrievalJobInputJsonMarshaller.getInstance().marshall(jobParameters.getInventoryRetrievalParameters(), jsonGenerator);
                 }
                 jsonGenerator.writeEndObject();
             }
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type",
-                        protocolFactory.getContentType());
+                request.addHeader("Content-Type", protocolFactory.getContentType());
             }
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

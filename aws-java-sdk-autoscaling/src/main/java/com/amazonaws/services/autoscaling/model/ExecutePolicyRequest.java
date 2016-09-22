@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -22,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for ExecutePolicy.
  * </p>
  */
-public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -39,36 +36,32 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
     private String policyName;
     /**
      * <p>
-     * If this parameter is true, Auto Scaling waits for the cooldown period to
-     * complete before executing the policy. Otherwise, Auto Scaling executes
-     * the policy without waiting for the cooldown period to complete.
+     * If this parameter is true, Auto Scaling waits for the cooldown period to complete before executing the policy.
+     * Otherwise, Auto Scaling executes the policy without waiting for the cooldown period to complete.
      * </p>
      * <p>
-     * This parameter is not supported if the policy type is
-     * <code>StepScaling</code>.
+     * This parameter is not supported if the policy type is <code>StepScaling</code>.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling Cooldowns</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      */
     private Boolean honorCooldown;
     /**
      * <p>
-     * The metric value to compare to <code>BreachThreshold</code>. This enables
-     * you to execute a policy of type <code>StepScaling</code> and determine
-     * which step adjustment to use. For example, if the breach threshold is 50
-     * and you want to use a step adjustment with a lower bound of 0 and an
-     * upper bound of 10, you can set the metric value to 59.
+     * The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type
+     * <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50
+     * and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric
+     * value to 59.
      * </p>
      * <p>
-     * If you specify a metric value that doesn't correspond to a step
-     * adjustment for the policy, the call returns an error.
+     * If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an
+     * error.
      * </p>
      * <p>
-     * This parameter is required if the policy type is <code>StepScaling</code>
-     * and not supported otherwise.
+     * This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
      * </p>
      */
     private Double metricValue;
@@ -77,8 +70,7 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * The breach threshold for the alarm.
      * </p>
      * <p>
-     * This parameter is required if the policy type is <code>StepScaling</code>
-     * and not supported otherwise.
+     * This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
      * </p>
      */
     private Double breachThreshold;
@@ -115,12 +107,10 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param autoScalingGroupName
      *        The name or Amazon Resource Name (ARN) of the Auto Scaling group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ExecutePolicyRequest withAutoScalingGroupName(
-            String autoScalingGroupName) {
+    public ExecutePolicyRequest withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
@@ -157,8 +147,7 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param policyName
      *        The name or ARN of the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ExecutePolicyRequest withPolicyName(String policyName) {
@@ -168,33 +157,29 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If this parameter is true, Auto Scaling waits for the cooldown period to
-     * complete before executing the policy. Otherwise, Auto Scaling executes
-     * the policy without waiting for the cooldown period to complete.
+     * If this parameter is true, Auto Scaling waits for the cooldown period to complete before executing the policy.
+     * Otherwise, Auto Scaling executes the policy without waiting for the cooldown period to complete.
      * </p>
      * <p>
-     * This parameter is not supported if the policy type is
-     * <code>StepScaling</code>.
+     * This parameter is not supported if the policy type is <code>StepScaling</code>.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling Cooldowns</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param honorCooldown
-     *        If this parameter is true, Auto Scaling waits for the cooldown
-     *        period to complete before executing the policy. Otherwise, Auto
-     *        Scaling executes the policy without waiting for the cooldown
-     *        period to complete.</p>
+     *        If this parameter is true, Auto Scaling waits for the cooldown period to complete before executing the
+     *        policy. Otherwise, Auto Scaling executes the policy without waiting for the cooldown period to
+     *        complete.</p>
      *        <p>
-     *        This parameter is not supported if the policy type is
-     *        <code>StepScaling</code>.
+     *        This parameter is not supported if the policy type is <code>StepScaling</code>.
      *        </p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *        >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling
+     *        Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public void setHonorCooldown(Boolean honorCooldown) {
@@ -203,33 +188,28 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If this parameter is true, Auto Scaling waits for the cooldown period to
-     * complete before executing the policy. Otherwise, Auto Scaling executes
-     * the policy without waiting for the cooldown period to complete.
+     * If this parameter is true, Auto Scaling waits for the cooldown period to complete before executing the policy.
+     * Otherwise, Auto Scaling executes the policy without waiting for the cooldown period to complete.
      * </p>
      * <p>
-     * This parameter is not supported if the policy type is
-     * <code>StepScaling</code>.
+     * This parameter is not supported if the policy type is <code>StepScaling</code>.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling Cooldowns</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return If this parameter is true, Auto Scaling waits for the cooldown
-     *         period to complete before executing the policy. Otherwise, Auto
-     *         Scaling executes the policy without waiting for the cooldown
-     *         period to complete.</p>
+     * @return If this parameter is true, Auto Scaling waits for the cooldown period to complete before executing the
+     *         policy. Otherwise, Auto Scaling executes the policy without waiting for the cooldown period to
+     *         complete.</p>
      *         <p>
-     *         This parameter is not supported if the policy type is
-     *         <code>StepScaling</code>.
+     *         This parameter is not supported if the policy type is <code>StepScaling</code>.
      *         </p>
      *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *         >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User
-     *         Guide</i>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling
+     *         Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public Boolean getHonorCooldown() {
@@ -238,35 +218,30 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If this parameter is true, Auto Scaling waits for the cooldown period to
-     * complete before executing the policy. Otherwise, Auto Scaling executes
-     * the policy without waiting for the cooldown period to complete.
+     * If this parameter is true, Auto Scaling waits for the cooldown period to complete before executing the policy.
+     * Otherwise, Auto Scaling executes the policy without waiting for the cooldown period to complete.
      * </p>
      * <p>
-     * This parameter is not supported if the policy type is
-     * <code>StepScaling</code>.
+     * This parameter is not supported if the policy type is <code>StepScaling</code>.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling Cooldowns</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param honorCooldown
-     *        If this parameter is true, Auto Scaling waits for the cooldown
-     *        period to complete before executing the policy. Otherwise, Auto
-     *        Scaling executes the policy without waiting for the cooldown
-     *        period to complete.</p>
+     *        If this parameter is true, Auto Scaling waits for the cooldown period to complete before executing the
+     *        policy. Otherwise, Auto Scaling executes the policy without waiting for the cooldown period to
+     *        complete.</p>
      *        <p>
-     *        This parameter is not supported if the policy type is
-     *        <code>StepScaling</code>.
+     *        This parameter is not supported if the policy type is <code>StepScaling</code>.
      *        </p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *        >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling
+     *        Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ExecutePolicyRequest withHonorCooldown(Boolean honorCooldown) {
@@ -276,33 +251,28 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If this parameter is true, Auto Scaling waits for the cooldown period to
-     * complete before executing the policy. Otherwise, Auto Scaling executes
-     * the policy without waiting for the cooldown period to complete.
+     * If this parameter is true, Auto Scaling waits for the cooldown period to complete before executing the policy.
+     * Otherwise, Auto Scaling executes the policy without waiting for the cooldown period to complete.
      * </p>
      * <p>
-     * This parameter is not supported if the policy type is
-     * <code>StepScaling</code>.
+     * This parameter is not supported if the policy type is <code>StepScaling</code>.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling Cooldowns</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return If this parameter is true, Auto Scaling waits for the cooldown
-     *         period to complete before executing the policy. Otherwise, Auto
-     *         Scaling executes the policy without waiting for the cooldown
-     *         period to complete.</p>
+     * @return If this parameter is true, Auto Scaling waits for the cooldown period to complete before executing the
+     *         policy. Otherwise, Auto Scaling executes the policy without waiting for the cooldown period to
+     *         complete.</p>
      *         <p>
-     *         This parameter is not supported if the policy type is
-     *         <code>StepScaling</code>.
+     *         This parameter is not supported if the policy type is <code>StepScaling</code>.
      *         </p>
      *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *         >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User
-     *         Guide</i>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling
+     *         Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public Boolean isHonorCooldown() {
@@ -311,35 +281,30 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The metric value to compare to <code>BreachThreshold</code>. This enables
-     * you to execute a policy of type <code>StepScaling</code> and determine
-     * which step adjustment to use. For example, if the breach threshold is 50
-     * and you want to use a step adjustment with a lower bound of 0 and an
-     * upper bound of 10, you can set the metric value to 59.
+     * The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type
+     * <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50
+     * and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric
+     * value to 59.
      * </p>
      * <p>
-     * If you specify a metric value that doesn't correspond to a step
-     * adjustment for the policy, the call returns an error.
+     * If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an
+     * error.
      * </p>
      * <p>
-     * This parameter is required if the policy type is <code>StepScaling</code>
-     * and not supported otherwise.
+     * This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
      * </p>
      * 
      * @param metricValue
-     *        The metric value to compare to <code>BreachThreshold</code>. This
-     *        enables you to execute a policy of type <code>StepScaling</code>
-     *        and determine which step adjustment to use. For example, if the
-     *        breach threshold is 50 and you want to use a step adjustment with
-     *        a lower bound of 0 and an upper bound of 10, you can set the
-     *        metric value to 59.</p>
+     *        The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type
+     *        <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold
+     *        is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set
+     *        the metric value to 59.</p>
      *        <p>
-     *        If you specify a metric value that doesn't correspond to a step
-     *        adjustment for the policy, the call returns an error.
+     *        If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call
+     *        returns an error.
      *        </p>
      *        <p>
-     *        This parameter is required if the policy type is
-     *        <code>StepScaling</code> and not supported otherwise.
+     *        This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
      */
 
     public void setMetricValue(Double metricValue) {
@@ -348,34 +313,29 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The metric value to compare to <code>BreachThreshold</code>. This enables
-     * you to execute a policy of type <code>StepScaling</code> and determine
-     * which step adjustment to use. For example, if the breach threshold is 50
-     * and you want to use a step adjustment with a lower bound of 0 and an
-     * upper bound of 10, you can set the metric value to 59.
+     * The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type
+     * <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50
+     * and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric
+     * value to 59.
      * </p>
      * <p>
-     * If you specify a metric value that doesn't correspond to a step
-     * adjustment for the policy, the call returns an error.
+     * If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an
+     * error.
      * </p>
      * <p>
-     * This parameter is required if the policy type is <code>StepScaling</code>
-     * and not supported otherwise.
+     * This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
      * </p>
      * 
-     * @return The metric value to compare to <code>BreachThreshold</code>. This
-     *         enables you to execute a policy of type <code>StepScaling</code>
-     *         and determine which step adjustment to use. For example, if the
-     *         breach threshold is 50 and you want to use a step adjustment with
-     *         a lower bound of 0 and an upper bound of 10, you can set the
-     *         metric value to 59.</p>
+     * @return The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type
+     *         <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold
+     *         is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set
+     *         the metric value to 59.</p>
      *         <p>
-     *         If you specify a metric value that doesn't correspond to a step
-     *         adjustment for the policy, the call returns an error.
+     *         If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call
+     *         returns an error.
      *         </p>
      *         <p>
-     *         This parameter is required if the policy type is
-     *         <code>StepScaling</code> and not supported otherwise.
+     *         This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
      */
 
     public Double getMetricValue() {
@@ -384,37 +344,31 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The metric value to compare to <code>BreachThreshold</code>. This enables
-     * you to execute a policy of type <code>StepScaling</code> and determine
-     * which step adjustment to use. For example, if the breach threshold is 50
-     * and you want to use a step adjustment with a lower bound of 0 and an
-     * upper bound of 10, you can set the metric value to 59.
+     * The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type
+     * <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50
+     * and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric
+     * value to 59.
      * </p>
      * <p>
-     * If you specify a metric value that doesn't correspond to a step
-     * adjustment for the policy, the call returns an error.
+     * If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an
+     * error.
      * </p>
      * <p>
-     * This parameter is required if the policy type is <code>StepScaling</code>
-     * and not supported otherwise.
+     * This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
      * </p>
      * 
      * @param metricValue
-     *        The metric value to compare to <code>BreachThreshold</code>. This
-     *        enables you to execute a policy of type <code>StepScaling</code>
-     *        and determine which step adjustment to use. For example, if the
-     *        breach threshold is 50 and you want to use a step adjustment with
-     *        a lower bound of 0 and an upper bound of 10, you can set the
-     *        metric value to 59.</p>
+     *        The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type
+     *        <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold
+     *        is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set
+     *        the metric value to 59.</p>
      *        <p>
-     *        If you specify a metric value that doesn't correspond to a step
-     *        adjustment for the policy, the call returns an error.
+     *        If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call
+     *        returns an error.
      *        </p>
      *        <p>
-     *        This parameter is required if the policy type is
-     *        <code>StepScaling</code> and not supported otherwise.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ExecutePolicyRequest withMetricValue(Double metricValue) {
@@ -427,15 +381,13 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * The breach threshold for the alarm.
      * </p>
      * <p>
-     * This parameter is required if the policy type is <code>StepScaling</code>
-     * and not supported otherwise.
+     * This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
      * </p>
      * 
      * @param breachThreshold
      *        The breach threshold for the alarm.</p>
      *        <p>
-     *        This parameter is required if the policy type is
-     *        <code>StepScaling</code> and not supported otherwise.
+     *        This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
      */
 
     public void setBreachThreshold(Double breachThreshold) {
@@ -447,14 +399,12 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * The breach threshold for the alarm.
      * </p>
      * <p>
-     * This parameter is required if the policy type is <code>StepScaling</code>
-     * and not supported otherwise.
+     * This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
      * </p>
      * 
      * @return The breach threshold for the alarm.</p>
      *         <p>
-     *         This parameter is required if the policy type is
-     *         <code>StepScaling</code> and not supported otherwise.
+     *         This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
      */
 
     public Double getBreachThreshold() {
@@ -466,17 +416,14 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * The breach threshold for the alarm.
      * </p>
      * <p>
-     * This parameter is required if the policy type is <code>StepScaling</code>
-     * and not supported otherwise.
+     * This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
      * </p>
      * 
      * @param breachThreshold
      *        The breach threshold for the alarm.</p>
      *        <p>
-     *        This parameter is required if the policy type is
-     *        <code>StepScaling</code> and not supported otherwise.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ExecutePolicyRequest withBreachThreshold(Double breachThreshold) {
@@ -485,8 +432,7 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -497,8 +443,7 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
         if (getPolicyName() != null)
             sb.append("PolicyName: " + getPolicyName() + ",");
         if (getHonorCooldown() != null)
@@ -521,33 +466,25 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof ExecutePolicyRequest == false)
             return false;
         ExecutePolicyRequest other = (ExecutePolicyRequest) obj;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
         if (other.getPolicyName() == null ^ this.getPolicyName() == null)
             return false;
-        if (other.getPolicyName() != null
-                && other.getPolicyName().equals(this.getPolicyName()) == false)
+        if (other.getPolicyName() != null && other.getPolicyName().equals(this.getPolicyName()) == false)
             return false;
         if (other.getHonorCooldown() == null ^ this.getHonorCooldown() == null)
             return false;
-        if (other.getHonorCooldown() != null
-                && other.getHonorCooldown().equals(this.getHonorCooldown()) == false)
+        if (other.getHonorCooldown() != null && other.getHonorCooldown().equals(this.getHonorCooldown()) == false)
             return false;
         if (other.getMetricValue() == null ^ this.getMetricValue() == null)
             return false;
-        if (other.getMetricValue() != null
-                && other.getMetricValue().equals(this.getMetricValue()) == false)
+        if (other.getMetricValue() != null && other.getMetricValue().equals(this.getMetricValue()) == false)
             return false;
-        if (other.getBreachThreshold() == null
-                ^ this.getBreachThreshold() == null)
+        if (other.getBreachThreshold() == null ^ this.getBreachThreshold() == null)
             return false;
-        if (other.getBreachThreshold() != null
-                && other.getBreachThreshold().equals(this.getBreachThreshold()) == false)
+        if (other.getBreachThreshold() != null && other.getBreachThreshold().equals(this.getBreachThreshold()) == false)
             return false;
         return true;
     }
@@ -557,23 +494,11 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHonorCooldown() == null) ? 0 : getHonorCooldown()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMetricValue() == null) ? 0 : getMetricValue().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBreachThreshold() == null) ? 0 : getBreachThreshold()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
+        hashCode = prime * hashCode + ((getHonorCooldown() == null) ? 0 : getHonorCooldown().hashCode());
+        hashCode = prime * hashCode + ((getMetricValue() == null) ? 0 : getMetricValue().hashCode());
+        hashCode = prime * hashCode + ((getBreachThreshold() == null) ? 0 : getBreachThreshold().hashCode());
         return hashCode;
     }
 

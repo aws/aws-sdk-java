@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DescribeSourceRegionsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -42,10 +38,9 @@ public class DescribeSourceRegionsRequest extends
     private String regionName;
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -57,10 +52,9 @@ public class DescribeSourceRegionsRequest extends
     private Integer maxRecords;
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * <a>DescribeSourceRegions</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
@@ -160,8 +154,7 @@ public class DescribeSourceRegionsRequest extends
      *        Must specify a valid AWS Region name.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSourceRegionsRequest withRegionName(String regionName) {
@@ -171,10 +164,9 @@ public class DescribeSourceRegionsRequest extends
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -184,10 +176,9 @@ public class DescribeSourceRegionsRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        pagination token called a marker is included in the response so
-     *        that the remaining results can be retrieved. </p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *        remaining results can be retrieved. </p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -201,10 +192,9 @@ public class DescribeSourceRegionsRequest extends
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -213,10 +203,9 @@ public class DescribeSourceRegionsRequest extends
      * Constraints: Minimum 20, maximum 100.
      * </p>
      * 
-     * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         pagination token called a marker is included in the response so
-     *         that the remaining results can be retrieved. </p>
+     * @return The maximum number of records to include in the response. If more records exist than the specified
+     *         <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *         remaining results can be retrieved. </p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -230,10 +219,9 @@ public class DescribeSourceRegionsRequest extends
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -243,17 +231,15 @@ public class DescribeSourceRegionsRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        pagination token called a marker is included in the response so
-     *        that the remaining results can be retrieved. </p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *        remaining results can be retrieved. </p>
      *        <p>
      *        Default: 100
      *        </p>
      *        <p>
      *        Constraints: Minimum 20, maximum 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSourceRegionsRequest withMaxRecords(Integer maxRecords) {
@@ -263,17 +249,15 @@ public class DescribeSourceRegionsRequest extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * <a>DescribeSourceRegions</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous
-     *        <a>DescribeSourceRegions</a> request. If this parameter is
-     *        specified, the response includes only records beyond the marker,
-     *        up to the value specified by <code>MaxRecords</code>.
+     *        An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this
+     *        parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     *        <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -282,16 +266,14 @@ public class DescribeSourceRegionsRequest extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * <a>DescribeSourceRegions</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      * </p>
      * 
-     * @return An optional pagination token provided by a previous
-     *         <a>DescribeSourceRegions</a> request. If this parameter is
-     *         specified, the response includes only records beyond the marker,
-     *         up to the value specified by <code>MaxRecords</code>.
+     * @return An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this
+     *         parameter is specified, the response includes only records beyond the marker, up to the value specified
+     *         by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -300,19 +282,16 @@ public class DescribeSourceRegionsRequest extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * <a>DescribeSourceRegions</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous
-     *        <a>DescribeSourceRegions</a> request. If this parameter is
-     *        specified, the response includes only records beyond the marker,
-     *        up to the value specified by <code>MaxRecords</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this
+     *        parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     *        <code>MaxRecords</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSourceRegionsRequest withMarker(String marker) {
@@ -350,8 +329,7 @@ public class DescribeSourceRegionsRequest extends
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -359,22 +337,19 @@ public class DescribeSourceRegionsRequest extends
      * This parameter is not currently supported.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
      *        This parameter is not currently supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSourceRegionsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -389,19 +364,16 @@ public class DescribeSourceRegionsRequest extends
      * 
      * @param filters
      *        This parameter is not currently supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSourceRegionsRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeSourceRegionsRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -435,23 +407,19 @@ public class DescribeSourceRegionsRequest extends
         DescribeSourceRegionsRequest other = (DescribeSourceRegionsRequest) obj;
         if (other.getRegionName() == null ^ this.getRegionName() == null)
             return false;
-        if (other.getRegionName() != null
-                && other.getRegionName().equals(this.getRegionName()) == false)
+        if (other.getRegionName() != null && other.getRegionName().equals(this.getRegionName()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         return true;
     }
@@ -461,14 +429,10 @@ public class DescribeSourceRegionsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchv2.model;
 
@@ -19,14 +17,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code><a>DeleteAnalysisScheme</a></code>
- * operation. Specifies the name of the domain you want to update and the
- * analysis scheme you want to delete.
+ * Container for the parameters to the <code><a>DeleteAnalysisScheme</a></code> operation. Specifies the name of the
+ * domain you want to update and the analysis scheme you want to delete.
  * </p>
  */
-public class DeleteAnalysisSchemeRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteAnalysisSchemeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String domainName;
     /**
@@ -54,8 +49,7 @@ public class DeleteAnalysisSchemeRequest extends
 
     /**
      * @param domainName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteAnalysisSchemeRequest withDomainName(String domainName) {
@@ -95,19 +89,16 @@ public class DeleteAnalysisSchemeRequest extends
      * 
      * @param analysisSchemeName
      *        The name of the analysis scheme you want to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteAnalysisSchemeRequest withAnalysisSchemeName(
-            String analysisSchemeName) {
+    public DeleteAnalysisSchemeRequest withAnalysisSchemeName(String analysisSchemeName) {
         setAnalysisSchemeName(analysisSchemeName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -137,15 +128,11 @@ public class DeleteAnalysisSchemeRequest extends
         DeleteAnalysisSchemeRequest other = (DeleteAnalysisSchemeRequest) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
-        if (other.getAnalysisSchemeName() == null
-                ^ this.getAnalysisSchemeName() == null)
+        if (other.getAnalysisSchemeName() == null ^ this.getAnalysisSchemeName() == null)
             return false;
-        if (other.getAnalysisSchemeName() != null
-                && other.getAnalysisSchemeName().equals(
-                        this.getAnalysisSchemeName()) == false)
+        if (other.getAnalysisSchemeName() != null && other.getAnalysisSchemeName().equals(this.getAnalysisSchemeName()) == false)
             return false;
         return true;
     }
@@ -155,12 +142,8 @@ public class DeleteAnalysisSchemeRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAnalysisSchemeName() == null) ? 0
-                        : getAnalysisSchemeName().hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getAnalysisSchemeName() == null) ? 0 : getAnalysisSchemeName().hashCode());
         return hashCode;
     }
 

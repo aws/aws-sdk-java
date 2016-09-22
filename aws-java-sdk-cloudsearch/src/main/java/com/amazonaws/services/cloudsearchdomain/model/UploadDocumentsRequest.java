@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchdomain.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <code>UploadDocuments</code> request.
  * </p>
  */
-public class UploadDocumentsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UploadDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,8 +30,7 @@ public class UploadDocumentsRequest extends
     private java.io.InputStream documents;
     /**
      * <p>
-     * The format of the batch you are uploading. Amazon CloudSearch supports
-     * two document batch formats:
+     * The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:
      * </p>
      * <ul>
      * <li>application/json</li>
@@ -78,8 +73,7 @@ public class UploadDocumentsRequest extends
      * 
      * @param documents
      *        A batch of documents formatted in JSON or HTML.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadDocumentsRequest withDocuments(java.io.InputStream documents) {
@@ -89,8 +83,7 @@ public class UploadDocumentsRequest extends
 
     /**
      * <p>
-     * The format of the batch you are uploading. Amazon CloudSearch supports
-     * two document batch formats:
+     * The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:
      * </p>
      * <ul>
      * <li>application/json</li>
@@ -98,8 +91,7 @@ public class UploadDocumentsRequest extends
      * </ul>
      * 
      * @param contentType
-     *        The format of the batch you are uploading. Amazon CloudSearch
-     *        supports two document batch formats:</p>
+     *        The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>
      *        <ul>
      *        <li>application/json</li>
      *        <li>application/xml</li>
@@ -112,16 +104,14 @@ public class UploadDocumentsRequest extends
 
     /**
      * <p>
-     * The format of the batch you are uploading. Amazon CloudSearch supports
-     * two document batch formats:
+     * The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:
      * </p>
      * <ul>
      * <li>application/json</li>
      * <li>application/xml</li>
      * </ul>
      * 
-     * @return The format of the batch you are uploading. Amazon CloudSearch
-     *         supports two document batch formats:</p>
+     * @return The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>
      *         <ul>
      *         <li>application/json</li>
      *         <li>application/xml</li>
@@ -134,8 +124,7 @@ public class UploadDocumentsRequest extends
 
     /**
      * <p>
-     * The format of the batch you are uploading. Amazon CloudSearch supports
-     * two document batch formats:
+     * The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:
      * </p>
      * <ul>
      * <li>application/json</li>
@@ -143,13 +132,11 @@ public class UploadDocumentsRequest extends
      * </ul>
      * 
      * @param contentType
-     *        The format of the batch you are uploading. Amazon CloudSearch
-     *        supports two document batch formats:</p>
+     *        The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>
      *        <ul>
      *        <li>application/json</li>
      *        <li>application/xml</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentType
      */
 
@@ -160,8 +147,7 @@ public class UploadDocumentsRequest extends
 
     /**
      * <p>
-     * The format of the batch you are uploading. Amazon CloudSearch supports
-     * two document batch formats:
+     * The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:
      * </p>
      * <ul>
      * <li>application/json</li>
@@ -169,8 +155,7 @@ public class UploadDocumentsRequest extends
      * </ul>
      * 
      * @param contentType
-     *        The format of the batch you are uploading. Amazon CloudSearch
-     *        supports two document batch formats:</p>
+     *        The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>
      *        <ul>
      *        <li>application/json</li>
      *        <li>application/xml</li>
@@ -183,8 +168,7 @@ public class UploadDocumentsRequest extends
 
     /**
      * <p>
-     * The format of the batch you are uploading. Amazon CloudSearch supports
-     * two document batch formats:
+     * The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:
      * </p>
      * <ul>
      * <li>application/json</li>
@@ -192,13 +176,11 @@ public class UploadDocumentsRequest extends
      * </ul>
      * 
      * @param contentType
-     *        The format of the batch you are uploading. Amazon CloudSearch
-     *        supports two document batch formats:</p>
+     *        The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>
      *        <ul>
      *        <li>application/json</li>
      *        <li>application/xml</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentType
      */
 
@@ -225,8 +207,7 @@ public class UploadDocumentsRequest extends
 
     /**
      * @param contentLength
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadDocumentsRequest withContentLength(Long contentLength) {
@@ -235,8 +216,7 @@ public class UploadDocumentsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -268,18 +248,15 @@ public class UploadDocumentsRequest extends
         UploadDocumentsRequest other = (UploadDocumentsRequest) obj;
         if (other.getDocuments() == null ^ this.getDocuments() == null)
             return false;
-        if (other.getDocuments() != null
-                && other.getDocuments().equals(this.getDocuments()) == false)
+        if (other.getDocuments() != null && other.getDocuments().equals(this.getDocuments()) == false)
             return false;
         if (other.getContentType() == null ^ this.getContentType() == null)
             return false;
-        if (other.getContentType() != null
-                && other.getContentType().equals(this.getContentType()) == false)
+        if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
             return false;
         if (other.getContentLength() == null ^ this.getContentLength() == null)
             return false;
-        if (other.getContentLength() != null
-                && other.getContentLength().equals(this.getContentLength()) == false)
+        if (other.getContentLength() != null && other.getContentLength().equals(this.getContentLength()) == false)
             return false;
         return true;
     }
@@ -289,15 +266,9 @@ public class UploadDocumentsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDocuments() == null) ? 0 : getDocuments().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getContentType() == null) ? 0 : getContentType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getContentLength() == null) ? 0 : getContentLength()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDocuments() == null) ? 0 : getDocuments().hashCode());
+        hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
+        hashCode = prime * hashCode + ((getContentLength() == null) ? 0 : getContentLength().hashCode());
         return hashCode;
     }
 

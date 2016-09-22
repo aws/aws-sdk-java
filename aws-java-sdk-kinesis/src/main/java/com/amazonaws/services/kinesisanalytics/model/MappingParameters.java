@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
@@ -18,53 +16,45 @@ import java.io.Serializable;
 
 /**
  * <p>
- * When configuring application input at the time of creating or updating an
- * application, provides additional mapping information specific to the record
- * format (such as JSON, CSV, or record fields delimited by some delimiter) on
- * the streaming source.
+ * When configuring application input at the time of creating or updating an application, provides additional mapping
+ * information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the
+ * streaming source.
  * </p>
  */
 public class MappingParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides additional mapping information when JSON is the record format on
-     * the streaming source.
+     * Provides additional mapping information when JSON is the record format on the streaming source.
      * </p>
      */
     private JSONMappingParameters jSONMappingParameters;
     /**
      * <p>
-     * Provides additional mapping information when the record format uses
-     * delimiters (for example, CSV).
+     * Provides additional mapping information when the record format uses delimiters (for example, CSV).
      * </p>
      */
     private CSVMappingParameters cSVMappingParameters;
 
     /**
      * <p>
-     * Provides additional mapping information when JSON is the record format on
-     * the streaming source.
+     * Provides additional mapping information when JSON is the record format on the streaming source.
      * </p>
      * 
      * @param jSONMappingParameters
-     *        Provides additional mapping information when JSON is the record
-     *        format on the streaming source.
+     *        Provides additional mapping information when JSON is the record format on the streaming source.
      */
 
-    public void setJSONMappingParameters(
-            JSONMappingParameters jSONMappingParameters) {
+    public void setJSONMappingParameters(JSONMappingParameters jSONMappingParameters) {
         this.jSONMappingParameters = jSONMappingParameters;
     }
 
     /**
      * <p>
-     * Provides additional mapping information when JSON is the record format on
-     * the streaming source.
+     * Provides additional mapping information when JSON is the record format on the streaming source.
      * </p>
      * 
-     * @return Provides additional mapping information when JSON is the record
-     *         format on the streaming source.
+     * @return Provides additional mapping information when JSON is the record format on the streaming source.
      */
 
     public JSONMappingParameters getJSONMappingParameters() {
@@ -73,47 +63,38 @@ public class MappingParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides additional mapping information when JSON is the record format on
-     * the streaming source.
+     * Provides additional mapping information when JSON is the record format on the streaming source.
      * </p>
      * 
      * @param jSONMappingParameters
-     *        Provides additional mapping information when JSON is the record
-     *        format on the streaming source.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Provides additional mapping information when JSON is the record format on the streaming source.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public MappingParameters withJSONMappingParameters(
-            JSONMappingParameters jSONMappingParameters) {
+    public MappingParameters withJSONMappingParameters(JSONMappingParameters jSONMappingParameters) {
         setJSONMappingParameters(jSONMappingParameters);
         return this;
     }
 
     /**
      * <p>
-     * Provides additional mapping information when the record format uses
-     * delimiters (for example, CSV).
+     * Provides additional mapping information when the record format uses delimiters (for example, CSV).
      * </p>
      * 
      * @param cSVMappingParameters
-     *        Provides additional mapping information when the record format
-     *        uses delimiters (for example, CSV).
+     *        Provides additional mapping information when the record format uses delimiters (for example, CSV).
      */
 
-    public void setCSVMappingParameters(
-            CSVMappingParameters cSVMappingParameters) {
+    public void setCSVMappingParameters(CSVMappingParameters cSVMappingParameters) {
         this.cSVMappingParameters = cSVMappingParameters;
     }
 
     /**
      * <p>
-     * Provides additional mapping information when the record format uses
-     * delimiters (for example, CSV).
+     * Provides additional mapping information when the record format uses delimiters (for example, CSV).
      * </p>
      * 
-     * @return Provides additional mapping information when the record format
-     *         uses delimiters (for example, CSV).
+     * @return Provides additional mapping information when the record format uses delimiters (for example, CSV).
      */
 
     public CSVMappingParameters getCSVMappingParameters() {
@@ -122,26 +103,21 @@ public class MappingParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides additional mapping information when the record format uses
-     * delimiters (for example, CSV).
+     * Provides additional mapping information when the record format uses delimiters (for example, CSV).
      * </p>
      * 
      * @param cSVMappingParameters
-     *        Provides additional mapping information when the record format
-     *        uses delimiters (for example, CSV).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Provides additional mapping information when the record format uses delimiters (for example, CSV).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public MappingParameters withCSVMappingParameters(
-            CSVMappingParameters cSVMappingParameters) {
+    public MappingParameters withCSVMappingParameters(CSVMappingParameters cSVMappingParameters) {
         setCSVMappingParameters(cSVMappingParameters);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -152,8 +128,7 @@ public class MappingParameters implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJSONMappingParameters() != null)
-            sb.append("JSONMappingParameters: " + getJSONMappingParameters()
-                    + ",");
+            sb.append("JSONMappingParameters: " + getJSONMappingParameters() + ",");
         if (getCSVMappingParameters() != null)
             sb.append("CSVMappingParameters: " + getCSVMappingParameters());
         sb.append("}");
@@ -170,19 +145,13 @@ public class MappingParameters implements Serializable, Cloneable {
         if (obj instanceof MappingParameters == false)
             return false;
         MappingParameters other = (MappingParameters) obj;
-        if (other.getJSONMappingParameters() == null
-                ^ this.getJSONMappingParameters() == null)
+        if (other.getJSONMappingParameters() == null ^ this.getJSONMappingParameters() == null)
             return false;
-        if (other.getJSONMappingParameters() != null
-                && other.getJSONMappingParameters().equals(
-                        this.getJSONMappingParameters()) == false)
+        if (other.getJSONMappingParameters() != null && other.getJSONMappingParameters().equals(this.getJSONMappingParameters()) == false)
             return false;
-        if (other.getCSVMappingParameters() == null
-                ^ this.getCSVMappingParameters() == null)
+        if (other.getCSVMappingParameters() == null ^ this.getCSVMappingParameters() == null)
             return false;
-        if (other.getCSVMappingParameters() != null
-                && other.getCSVMappingParameters().equals(
-                        this.getCSVMappingParameters()) == false)
+        if (other.getCSVMappingParameters() != null && other.getCSVMappingParameters().equals(this.getCSVMappingParameters()) == false)
             return false;
         return true;
     }
@@ -192,14 +161,8 @@ public class MappingParameters implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getJSONMappingParameters() == null) ? 0
-                        : getJSONMappingParameters().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCSVMappingParameters() == null) ? 0
-                        : getCSVMappingParameters().hashCode());
+        hashCode = prime * hashCode + ((getJSONMappingParameters() == null) ? 0 : getJSONMappingParameters().hashCode());
+        hashCode = prime * hashCode + ((getCSVMappingParameters() == null) ? 0 : getCSVMappingParameters().hashCode());
         return hashCode;
     }
 
@@ -208,9 +171,7 @@ public class MappingParameters implements Serializable, Cloneable {
         try {
             return (MappingParameters) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

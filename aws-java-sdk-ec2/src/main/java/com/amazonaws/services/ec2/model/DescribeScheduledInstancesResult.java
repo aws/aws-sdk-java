@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,14 +20,12 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of DescribeScheduledInstances.
  * </p>
  */
-public class DescribeScheduledInstancesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeScheduledInstancesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      */
     private String nextToken;
@@ -42,13 +38,13 @@ public class DescribeScheduledInstancesResult extends
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token required to retrieve the next set of results. This value
-     *        is <code>null</code> when there are no more results to return.
+     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
+     *        more results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -57,13 +53,12 @@ public class DescribeScheduledInstancesResult extends
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
-     * @return The token required to retrieve the next set of results. This
-     *         value is <code>null</code> when there are no more results to
-     *         return.
+     * @return The token required to retrieve the next set of results. This value is <code>null</code> when there are no
+     *         more results to return.
      */
 
     public String getNextToken() {
@@ -72,15 +67,14 @@ public class DescribeScheduledInstancesResult extends
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token required to retrieve the next set of results. This value
-     *        is <code>null</code> when there are no more results to return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeScheduledInstancesResult withNextToken(String nextToken) {
@@ -112,15 +106,13 @@ public class DescribeScheduledInstancesResult extends
      *        Information about the Scheduled Instances.
      */
 
-    public void setScheduledInstanceSet(
-            java.util.Collection<ScheduledInstance> scheduledInstanceSet) {
+    public void setScheduledInstanceSet(java.util.Collection<ScheduledInstance> scheduledInstanceSet) {
         if (scheduledInstanceSet == null) {
             this.scheduledInstanceSet = null;
             return;
         }
 
-        this.scheduledInstanceSet = new com.amazonaws.internal.SdkInternalList<ScheduledInstance>(
-                scheduledInstanceSet);
+        this.scheduledInstanceSet = new com.amazonaws.internal.SdkInternalList<ScheduledInstance>(scheduledInstanceSet);
     }
 
     /**
@@ -128,23 +120,19 @@ public class DescribeScheduledInstancesResult extends
      * Information about the Scheduled Instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setScheduledInstanceSet(java.util.Collection)} or
-     * {@link #withScheduledInstanceSet(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setScheduledInstanceSet(java.util.Collection)} or {@link #withScheduledInstanceSet(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param scheduledInstanceSet
      *        Information about the Scheduled Instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScheduledInstancesResult withScheduledInstanceSet(
-            ScheduledInstance... scheduledInstanceSet) {
+    public DescribeScheduledInstancesResult withScheduledInstanceSet(ScheduledInstance... scheduledInstanceSet) {
         if (this.scheduledInstanceSet == null) {
-            setScheduledInstanceSet(new com.amazonaws.internal.SdkInternalList<ScheduledInstance>(
-                    scheduledInstanceSet.length));
+            setScheduledInstanceSet(new com.amazonaws.internal.SdkInternalList<ScheduledInstance>(scheduledInstanceSet.length));
         }
         for (ScheduledInstance ele : scheduledInstanceSet) {
             this.scheduledInstanceSet.add(ele);
@@ -159,19 +147,16 @@ public class DescribeScheduledInstancesResult extends
      * 
      * @param scheduledInstanceSet
      *        Information about the Scheduled Instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScheduledInstancesResult withScheduledInstanceSet(
-            java.util.Collection<ScheduledInstance> scheduledInstanceSet) {
+    public DescribeScheduledInstancesResult withScheduledInstanceSet(java.util.Collection<ScheduledInstance> scheduledInstanceSet) {
         setScheduledInstanceSet(scheduledInstanceSet);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -201,15 +186,11 @@ public class DescribeScheduledInstancesResult extends
         DescribeScheduledInstancesResult other = (DescribeScheduledInstancesResult) obj;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getScheduledInstanceSet() == null
-                ^ this.getScheduledInstanceSet() == null)
+        if (other.getScheduledInstanceSet() == null ^ this.getScheduledInstanceSet() == null)
             return false;
-        if (other.getScheduledInstanceSet() != null
-                && other.getScheduledInstanceSet().equals(
-                        this.getScheduledInstanceSet()) == false)
+        if (other.getScheduledInstanceSet() != null && other.getScheduledInstanceSet().equals(this.getScheduledInstanceSet()) == false)
             return false;
         return true;
     }
@@ -219,12 +200,8 @@ public class DescribeScheduledInstancesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getScheduledInstanceSet() == null) ? 0
-                        : getScheduledInstanceSet().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getScheduledInstanceSet() == null) ? 0 : getScheduledInstanceSet().hashCode());
         return hashCode;
     }
 
@@ -233,9 +210,7 @@ public class DescribeScheduledInstancesResult extends
         try {
             return (DescribeScheduledInstancesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

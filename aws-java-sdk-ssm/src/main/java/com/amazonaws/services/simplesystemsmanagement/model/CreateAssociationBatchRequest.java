@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateAssociationBatchRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateAssociationBatchRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -55,15 +51,13 @@ public class CreateAssociationBatchRequest extends
      *        One or more associations.
      */
 
-    public void setEntries(
-            java.util.Collection<CreateAssociationBatchRequestEntry> entries) {
+    public void setEntries(java.util.Collection<CreateAssociationBatchRequestEntry> entries) {
         if (entries == null) {
             this.entries = null;
             return;
         }
 
-        this.entries = new com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>(
-                entries);
+        this.entries = new com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>(entries);
     }
 
     /**
@@ -71,23 +65,19 @@ public class CreateAssociationBatchRequest extends
      * One or more associations.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEntries(java.util.Collection)} or
-     * {@link #withEntries(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEntries(java.util.Collection)} or {@link #withEntries(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param entries
      *        One or more associations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateAssociationBatchRequest withEntries(
-            CreateAssociationBatchRequestEntry... entries) {
+    public CreateAssociationBatchRequest withEntries(CreateAssociationBatchRequestEntry... entries) {
         if (this.entries == null) {
-            setEntries(new com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>(
-                    entries.length));
+            setEntries(new com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>(entries.length));
         }
         for (CreateAssociationBatchRequestEntry ele : entries) {
             this.entries.add(ele);
@@ -102,19 +92,16 @@ public class CreateAssociationBatchRequest extends
      * 
      * @param entries
      *        One or more associations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateAssociationBatchRequest withEntries(
-            java.util.Collection<CreateAssociationBatchRequestEntry> entries) {
+    public CreateAssociationBatchRequest withEntries(java.util.Collection<CreateAssociationBatchRequestEntry> entries) {
         setEntries(entries);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -142,8 +129,7 @@ public class CreateAssociationBatchRequest extends
         CreateAssociationBatchRequest other = (CreateAssociationBatchRequest) obj;
         if (other.getEntries() == null ^ this.getEntries() == null)
             return false;
-        if (other.getEntries() != null
-                && other.getEntries().equals(this.getEntries()) == false)
+        if (other.getEntries() != null && other.getEntries().equals(this.getEntries()) == false)
             return false;
         return true;
     }
@@ -153,8 +139,7 @@ public class CreateAssociationBatchRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getEntries() == null) ? 0 : getEntries().hashCode());
+        hashCode = prime * hashCode + ((getEntries() == null) ? 0 : getEntries().hashCode());
         return hashCode;
     }
 

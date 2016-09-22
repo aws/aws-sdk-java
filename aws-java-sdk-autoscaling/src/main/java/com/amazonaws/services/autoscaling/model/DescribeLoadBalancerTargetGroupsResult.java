@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -21,9 +19,8 @@ import java.io.Serializable;
  * Contains the output of DescribeLoadBalancerTargetGroups.
  * </p>
  */
-public class DescribeLoadBalancerTargetGroupsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeLoadBalancerTargetGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -33,8 +30,8 @@ public class DescribeLoadBalancerTargetGroupsResult extends
     private com.amazonaws.internal.SdkInternalList<LoadBalancerTargetGroupState> loadBalancerTargetGroups;
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      */
     private String nextToken;
@@ -63,15 +60,13 @@ public class DescribeLoadBalancerTargetGroupsResult extends
      *        Information about the target groups.
      */
 
-    public void setLoadBalancerTargetGroups(
-            java.util.Collection<LoadBalancerTargetGroupState> loadBalancerTargetGroups) {
+    public void setLoadBalancerTargetGroups(java.util.Collection<LoadBalancerTargetGroupState> loadBalancerTargetGroups) {
         if (loadBalancerTargetGroups == null) {
             this.loadBalancerTargetGroups = null;
             return;
         }
 
-        this.loadBalancerTargetGroups = new com.amazonaws.internal.SdkInternalList<LoadBalancerTargetGroupState>(
-                loadBalancerTargetGroups);
+        this.loadBalancerTargetGroups = new com.amazonaws.internal.SdkInternalList<LoadBalancerTargetGroupState>(loadBalancerTargetGroups);
     }
 
     /**
@@ -79,23 +74,19 @@ public class DescribeLoadBalancerTargetGroupsResult extends
      * Information about the target groups.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLoadBalancerTargetGroups(java.util.Collection)} or
-     * {@link #withLoadBalancerTargetGroups(java.util.Collection)} if you want
-     * to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLoadBalancerTargetGroups(java.util.Collection)} or
+     * {@link #withLoadBalancerTargetGroups(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param loadBalancerTargetGroups
      *        Information about the target groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLoadBalancerTargetGroupsResult withLoadBalancerTargetGroups(
-            LoadBalancerTargetGroupState... loadBalancerTargetGroups) {
+    public DescribeLoadBalancerTargetGroupsResult withLoadBalancerTargetGroups(LoadBalancerTargetGroupState... loadBalancerTargetGroups) {
         if (this.loadBalancerTargetGroups == null) {
-            setLoadBalancerTargetGroups(new com.amazonaws.internal.SdkInternalList<LoadBalancerTargetGroupState>(
-                    loadBalancerTargetGroups.length));
+            setLoadBalancerTargetGroups(new com.amazonaws.internal.SdkInternalList<LoadBalancerTargetGroupState>(loadBalancerTargetGroups.length));
         }
         for (LoadBalancerTargetGroupState ele : loadBalancerTargetGroups) {
             this.loadBalancerTargetGroups.add(ele);
@@ -110,25 +101,23 @@ public class DescribeLoadBalancerTargetGroupsResult extends
      * 
      * @param loadBalancerTargetGroups
      *        Information about the target groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLoadBalancerTargetGroupsResult withLoadBalancerTargetGroups(
-            java.util.Collection<LoadBalancerTargetGroupState> loadBalancerTargetGroups) {
+    public DescribeLoadBalancerTargetGroupsResult withLoadBalancerTargetGroups(java.util.Collection<LoadBalancerTargetGroupState> loadBalancerTargetGroups) {
         setLoadBalancerTargetGroups(loadBalancerTargetGroups);
         return this;
     }
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there
-     *        are no additional items to return, the string is empty.
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
      */
 
     public void setNextToken(String nextToken) {
@@ -137,12 +126,12 @@ public class DescribeLoadBalancerTargetGroupsResult extends
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
-     * @return The token to use when requesting the next set of items. If there
-     *         are no additional items to return, the string is empty.
+     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
+     *         string is empty.
      */
 
     public String getNextToken() {
@@ -151,15 +140,14 @@ public class DescribeLoadBalancerTargetGroupsResult extends
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there
-     *        are no additional items to return, the string is empty.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeLoadBalancerTargetGroupsResult withNextToken(String nextToken) {
@@ -168,8 +156,7 @@ public class DescribeLoadBalancerTargetGroupsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -180,8 +167,7 @@ public class DescribeLoadBalancerTargetGroupsResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerTargetGroups() != null)
-            sb.append("LoadBalancerTargetGroups: "
-                    + getLoadBalancerTargetGroups() + ",");
+            sb.append("LoadBalancerTargetGroups: " + getLoadBalancerTargetGroups() + ",");
         if (getNextToken() != null)
             sb.append("NextToken: " + getNextToken());
         sb.append("}");
@@ -198,17 +184,13 @@ public class DescribeLoadBalancerTargetGroupsResult extends
         if (obj instanceof DescribeLoadBalancerTargetGroupsResult == false)
             return false;
         DescribeLoadBalancerTargetGroupsResult other = (DescribeLoadBalancerTargetGroupsResult) obj;
-        if (other.getLoadBalancerTargetGroups() == null
-                ^ this.getLoadBalancerTargetGroups() == null)
+        if (other.getLoadBalancerTargetGroups() == null ^ this.getLoadBalancerTargetGroups() == null)
             return false;
-        if (other.getLoadBalancerTargetGroups() != null
-                && other.getLoadBalancerTargetGroups().equals(
-                        this.getLoadBalancerTargetGroups()) == false)
+        if (other.getLoadBalancerTargetGroups() != null && other.getLoadBalancerTargetGroups().equals(this.getLoadBalancerTargetGroups()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -218,12 +200,8 @@ public class DescribeLoadBalancerTargetGroupsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerTargetGroups() == null) ? 0
-                        : getLoadBalancerTargetGroups().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerTargetGroups() == null) ? 0 : getLoadBalancerTargetGroups().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -232,9 +210,7 @@ public class DescribeLoadBalancerTargetGroupsResult extends
         try {
             return (DescribeLoadBalancerTargetGroupsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

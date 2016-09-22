@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The output from the ListPrincipalThings operation.
  * </p>
  */
-public class ListPrincipalThingsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListPrincipalThingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,7 @@ public class ListPrincipalThingsResult extends
     private java.util.List<String> things;
     /**
      * <p>
-     * The token for the next set of results, or <b>null</b> if there are no
-     * additional results.
+     * The token for the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      */
     private String nextToken;
@@ -74,16 +69,14 @@ public class ListPrincipalThingsResult extends
      * The things.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setThings(java.util.Collection)} or
-     * {@link #withThings(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setThings(java.util.Collection)} or {@link #withThings(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param things
      *        The things.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPrincipalThingsResult withThings(String... things) {
@@ -103,25 +96,21 @@ public class ListPrincipalThingsResult extends
      * 
      * @param things
      *        The things.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListPrincipalThingsResult withThings(
-            java.util.Collection<String> things) {
+    public ListPrincipalThingsResult withThings(java.util.Collection<String> things) {
         setThings(things);
         return this;
     }
 
     /**
      * <p>
-     * The token for the next set of results, or <b>null</b> if there are no
-     * additional results.
+     * The token for the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or <b>null</b> if there are
-     *        no additional results.
+     *        The token for the next set of results, or <b>null</b> if there are no additional results.
      */
 
     public void setNextToken(String nextToken) {
@@ -130,12 +119,10 @@ public class ListPrincipalThingsResult extends
 
     /**
      * <p>
-     * The token for the next set of results, or <b>null</b> if there are no
-     * additional results.
+     * The token for the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
-     * @return The token for the next set of results, or <b>null</b> if there
-     *         are no additional results.
+     * @return The token for the next set of results, or <b>null</b> if there are no additional results.
      */
 
     public String getNextToken() {
@@ -144,15 +131,12 @@ public class ListPrincipalThingsResult extends
 
     /**
      * <p>
-     * The token for the next set of results, or <b>null</b> if there are no
-     * additional results.
+     * The token for the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or <b>null</b> if there are
-     *        no additional results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token for the next set of results, or <b>null</b> if there are no additional results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPrincipalThingsResult withNextToken(String nextToken) {
@@ -161,8 +145,7 @@ public class ListPrincipalThingsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -192,13 +175,11 @@ public class ListPrincipalThingsResult extends
         ListPrincipalThingsResult other = (ListPrincipalThingsResult) obj;
         if (other.getThings() == null ^ this.getThings() == null)
             return false;
-        if (other.getThings() != null
-                && other.getThings().equals(this.getThings()) == false)
+        if (other.getThings() != null && other.getThings().equals(this.getThings()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -208,10 +189,8 @@ public class ListPrincipalThingsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getThings() == null) ? 0 : getThings().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getThings() == null) ? 0 : getThings().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -220,9 +199,7 @@ public class ListPrincipalThingsResult extends
         try {
             return (ListPrincipalThingsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

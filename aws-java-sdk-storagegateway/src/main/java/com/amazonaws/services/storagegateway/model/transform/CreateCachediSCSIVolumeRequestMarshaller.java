@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
@@ -35,75 +33,60 @@ import com.amazonaws.protocol.json.*;
 /**
  * CreateCachediSCSIVolumeRequest Marshaller
  */
-public class CreateCachediSCSIVolumeRequestMarshaller
-        implements
-        Marshaller<Request<CreateCachediSCSIVolumeRequest>, CreateCachediSCSIVolumeRequest> {
+public class CreateCachediSCSIVolumeRequestMarshaller implements Marshaller<Request<CreateCachediSCSIVolumeRequest>, CreateCachediSCSIVolumeRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public CreateCachediSCSIVolumeRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public CreateCachediSCSIVolumeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<CreateCachediSCSIVolumeRequest> marshall(
-            CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest) {
+    public Request<CreateCachediSCSIVolumeRequest> marshall(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest) {
 
         if (createCachediSCSIVolumeRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateCachediSCSIVolumeRequest> request = new DefaultRequest<CreateCachediSCSIVolumeRequest>(
-                createCachediSCSIVolumeRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target",
-                "StorageGateway_20130630.CreateCachediSCSIVolume");
+        Request<CreateCachediSCSIVolumeRequest> request = new DefaultRequest<CreateCachediSCSIVolumeRequest>(createCachediSCSIVolumeRequest,
+                "AWSStorageGateway");
+        request.addHeader("X-Amz-Target", "StorageGateway_20130630.CreateCachediSCSIVolume");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (createCachediSCSIVolumeRequest.getGatewayARN() != null) {
-                jsonGenerator.writeFieldName("GatewayARN").writeValue(
-                        createCachediSCSIVolumeRequest.getGatewayARN());
+                jsonGenerator.writeFieldName("GatewayARN").writeValue(createCachediSCSIVolumeRequest.getGatewayARN());
             }
             if (createCachediSCSIVolumeRequest.getVolumeSizeInBytes() != null) {
-                jsonGenerator.writeFieldName("VolumeSizeInBytes").writeValue(
-                        createCachediSCSIVolumeRequest.getVolumeSizeInBytes());
+                jsonGenerator.writeFieldName("VolumeSizeInBytes").writeValue(createCachediSCSIVolumeRequest.getVolumeSizeInBytes());
             }
             if (createCachediSCSIVolumeRequest.getSnapshotId() != null) {
-                jsonGenerator.writeFieldName("SnapshotId").writeValue(
-                        createCachediSCSIVolumeRequest.getSnapshotId());
+                jsonGenerator.writeFieldName("SnapshotId").writeValue(createCachediSCSIVolumeRequest.getSnapshotId());
             }
             if (createCachediSCSIVolumeRequest.getTargetName() != null) {
-                jsonGenerator.writeFieldName("TargetName").writeValue(
-                        createCachediSCSIVolumeRequest.getTargetName());
+                jsonGenerator.writeFieldName("TargetName").writeValue(createCachediSCSIVolumeRequest.getTargetName());
             }
             if (createCachediSCSIVolumeRequest.getNetworkInterfaceId() != null) {
-                jsonGenerator.writeFieldName("NetworkInterfaceId").writeValue(
-                        createCachediSCSIVolumeRequest.getNetworkInterfaceId());
+                jsonGenerator.writeFieldName("NetworkInterfaceId").writeValue(createCachediSCSIVolumeRequest.getNetworkInterfaceId());
             }
             if (createCachediSCSIVolumeRequest.getClientToken() != null) {
-                jsonGenerator.writeFieldName("ClientToken").writeValue(
-                        createCachediSCSIVolumeRequest.getClientToken());
+                jsonGenerator.writeFieldName("ClientToken").writeValue(createCachediSCSIVolumeRequest.getClientToken());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

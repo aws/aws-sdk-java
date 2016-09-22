@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model;
 
@@ -18,14 +16,12 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the data for an attribute. You can set one, and only one, of the
- * elements.
+ * Represents the data for an attribute. You can set one, and only one, of the elements.
  * </p>
  * <p>
- * Each attribute in an item is a name-value pair. An attribute can be
- * single-valued or multi-valued set. For example, a book item can have title
- * and authors attributes. Each book has one title but can have many authors.
- * The multi-valued attribute is a set; duplicate values are not allowed.
+ * Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a
+ * book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued
+ * attribute is a set; duplicate values are not allowed.
  * </p>
  */
 public class AttributeValue implements Serializable, Cloneable {
@@ -92,17 +88,15 @@ public class AttributeValue implements Serializable, Cloneable {
     private Boolean bOOL;
 
     /**
-     * Default constructor for AttributeValue object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for AttributeValue object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize the object after creating it.
      */
     public AttributeValue() {
     }
 
     /**
-     * Constructs a new AttributeValue object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new AttributeValue object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param s
      *        A String data type.
@@ -112,9 +106,8 @@ public class AttributeValue implements Serializable, Cloneable {
     }
 
     /**
-     * Constructs a new AttributeValue object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new AttributeValue object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param sS
      *        A String Set data type.
@@ -155,8 +148,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @param s
      *        A String data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withS(String s) {
@@ -196,8 +188,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @param n
      *        A Number data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withN(String n) {
@@ -210,17 +201,14 @@ public class AttributeValue implements Serializable, Cloneable {
      * A Binary data type.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending
-     * this request to AWS service by default. Users of the SDK should not
-     * perform Base64 encoding on this field.
+     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
-     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
-     * content or position of the byte buffer will be seen by all objects that
-     * have a reference to this object. It is recommended to call
-     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
-     * reading from the buffer. This behavior will be changed in a future major
-     * version of the SDK.
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param b
@@ -236,14 +224,11 @@ public class AttributeValue implements Serializable, Cloneable {
      * A Binary data type.
      * </p>
      * <p>
-     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
-     * changes their {@code position}. We recommend using
-     * {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view
-     * of the buffer with an independent {@code position}, and calling
-     * {@code get} methods on this rather than directly on the returned
-     * {@code ByteBuffer}. Doing so will ensure that anyone else using the
-     * {@code ByteBuffer} will not be affected by changes to the {@code position}
-     * .
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
      * </p>
      * 
      * @return A Binary data type.
@@ -260,8 +245,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @param b
      *        A Binary data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withB(java.nio.ByteBuffer b) {
@@ -304,16 +288,14 @@ public class AttributeValue implements Serializable, Cloneable {
      * A String Set data type.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSS(java.util.Collection)} or
-     * {@link #withSS(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSS(java.util.Collection)} or {@link #withSS(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param sS
      *        A String Set data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withSS(String... sS) {
@@ -333,8 +315,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @param sS
      *        A String Set data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withSS(java.util.Collection<String> sS) {
@@ -377,16 +358,14 @@ public class AttributeValue implements Serializable, Cloneable {
      * A Number Set data type.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNS(java.util.Collection)} or
-     * {@link #withNS(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNS(java.util.Collection)} or {@link #withNS(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param nS
      *        A Number Set data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withNS(String... nS) {
@@ -406,8 +385,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @param nS
      *        A Number Set data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withNS(java.util.Collection<String> nS) {
@@ -450,16 +428,14 @@ public class AttributeValue implements Serializable, Cloneable {
      * A Binary Set data type.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBS(java.util.Collection)} or
-     * {@link #withBS(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBS(java.util.Collection)} or {@link #withBS(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param bS
      *        A Binary Set data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withBS(java.nio.ByteBuffer... bS) {
@@ -479,8 +455,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @param bS
      *        A Binary Set data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withBS(java.util.Collection<java.nio.ByteBuffer> bS) {
@@ -520,8 +495,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @param m
      *        A Map of attribute values.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withM(java.util.Map<String, AttributeValue> m) {
@@ -534,15 +508,14 @@ public class AttributeValue implements Serializable, Cloneable {
             this.m = new java.util.HashMap<String, AttributeValue>();
         }
         if (this.m.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.m.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into M. &lt;p> Returns a reference to this
-     * object so that method calls can be chained together.
+     * Removes all the entries added into M. &lt;p> Returns a reference to this object so that method calls can be
+     * chained together.
      */
 
     public AttributeValue clearMEntries() {
@@ -585,16 +558,14 @@ public class AttributeValue implements Serializable, Cloneable {
      * A List of attribute values.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setL(java.util.Collection)} or
-     * {@link #withL(java.util.Collection)} if you want to override the existing
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setL(java.util.Collection)} or {@link #withL(java.util.Collection)} if you want to override the existing
      * values.
      * </p>
      * 
      * @param l
      *        A List of attribute values.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withL(AttributeValue... l) {
@@ -614,8 +585,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @param l
      *        A List of attribute values.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withL(java.util.Collection<AttributeValue> l) {
@@ -655,8 +625,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @param nULLValue
      *        A Null data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withNULL(Boolean nULLValue) {
@@ -708,8 +677,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @param bOOL
      *        A Boolean data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue withBOOL(Boolean bOOL) {
@@ -730,8 +698,7 @@ public class AttributeValue implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -789,18 +756,15 @@ public class AttributeValue implements Serializable, Cloneable {
             return false;
         if (other.getSS() == null ^ this.getSS() == null)
             return false;
-        if (other.getSS() != null
-                && other.getSS().equals(this.getSS()) == false)
+        if (other.getSS() != null && other.getSS().equals(this.getSS()) == false)
             return false;
         if (other.getNS() == null ^ this.getNS() == null)
             return false;
-        if (other.getNS() != null
-                && other.getNS().equals(this.getNS()) == false)
+        if (other.getNS() != null && other.getNS().equals(this.getNS()) == false)
             return false;
         if (other.getBS() == null ^ this.getBS() == null)
             return false;
-        if (other.getBS() != null
-                && other.getBS().equals(this.getBS()) == false)
+        if (other.getBS() != null && other.getBS().equals(this.getBS()) == false)
             return false;
         if (other.getM() == null ^ this.getM() == null)
             return false;
@@ -812,13 +776,11 @@ public class AttributeValue implements Serializable, Cloneable {
             return false;
         if (other.getNULL() == null ^ this.getNULL() == null)
             return false;
-        if (other.getNULL() != null
-                && other.getNULL().equals(this.getNULL()) == false)
+        if (other.getNULL() != null && other.getNULL().equals(this.getNULL()) == false)
             return false;
         if (other.getBOOL() == null ^ this.getBOOL() == null)
             return false;
-        if (other.getBOOL() != null
-                && other.getBOOL().equals(this.getBOOL()) == false)
+        if (other.getBOOL() != null && other.getBOOL().equals(this.getBOOL()) == false)
             return false;
         return true;
     }
@@ -828,26 +790,16 @@ public class AttributeValue implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getS() == null) ? 0 : getS().hashCode());
-        hashCode = prime * hashCode
-                + ((getN() == null) ? 0 : getN().hashCode());
-        hashCode = prime * hashCode
-                + ((getB() == null) ? 0 : getB().hashCode());
-        hashCode = prime * hashCode
-                + ((getSS() == null) ? 0 : getSS().hashCode());
-        hashCode = prime * hashCode
-                + ((getNS() == null) ? 0 : getNS().hashCode());
-        hashCode = prime * hashCode
-                + ((getBS() == null) ? 0 : getBS().hashCode());
-        hashCode = prime * hashCode
-                + ((getM() == null) ? 0 : getM().hashCode());
-        hashCode = prime * hashCode
-                + ((getL() == null) ? 0 : getL().hashCode());
-        hashCode = prime * hashCode
-                + ((getNULL() == null) ? 0 : getNULL().hashCode());
-        hashCode = prime * hashCode
-                + ((getBOOL() == null) ? 0 : getBOOL().hashCode());
+        hashCode = prime * hashCode + ((getS() == null) ? 0 : getS().hashCode());
+        hashCode = prime * hashCode + ((getN() == null) ? 0 : getN().hashCode());
+        hashCode = prime * hashCode + ((getB() == null) ? 0 : getB().hashCode());
+        hashCode = prime * hashCode + ((getSS() == null) ? 0 : getSS().hashCode());
+        hashCode = prime * hashCode + ((getNS() == null) ? 0 : getNS().hashCode());
+        hashCode = prime * hashCode + ((getBS() == null) ? 0 : getBS().hashCode());
+        hashCode = prime * hashCode + ((getM() == null) ? 0 : getM().hashCode());
+        hashCode = prime * hashCode + ((getL() == null) ? 0 : getL().hashCode());
+        hashCode = prime * hashCode + ((getNULL() == null) ? 0 : getNULL().hashCode());
+        hashCode = prime * hashCode + ((getBOOL() == null) ? 0 : getBOOL().hashCode());
         return hashCode;
     }
 
@@ -856,9 +808,7 @@ public class AttributeValue implements Serializable, Cloneable {
         try {
             return (AttributeValue) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

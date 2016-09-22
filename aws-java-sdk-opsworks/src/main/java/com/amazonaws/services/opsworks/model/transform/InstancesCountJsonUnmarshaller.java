@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * InstancesCount JSON Unmarshaller
  */
-public class InstancesCountJsonUnmarshaller implements
-        Unmarshaller<InstancesCount, JsonUnmarshallerContext> {
+public class InstancesCountJsonUnmarshaller implements Unmarshaller<InstancesCount, JsonUnmarshallerContext> {
 
-    public InstancesCount unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public InstancesCount unmarshall(JsonUnmarshallerContext context) throws Exception {
         InstancesCount instancesCount = new InstancesCount();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,103 +49,82 @@ public class InstancesCountJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Assigning", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setAssigning(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setAssigning(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Booting", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setBooting(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setBooting(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionLost", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setConnectionLost(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setConnectionLost(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Deregistering", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setDeregistering(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setDeregistering(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Online", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setOnline(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setOnline(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Pending", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setPending(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setPending(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Rebooting", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setRebooting(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setRebooting(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Registered", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setRegistered(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setRegistered(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Registering", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setRegistering(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setRegistering(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Requested", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setRequested(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setRequested(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RunningSetup", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setRunningSetup(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setRunningSetup(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SetupFailed", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setSetupFailed(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setSetupFailed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ShuttingDown", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setShuttingDown(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setShuttingDown(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StartFailed", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setStartFailed(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setStartFailed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Stopped", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setStopped(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setStopped(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Stopping", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setStopping(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setStopping(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Terminated", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setTerminated(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setTerminated(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Terminating", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setTerminating(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setTerminating(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Unassigning", targetDepth)) {
                     context.nextToken();
-                    instancesCount.setUnassigning(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    instancesCount.setUnassigning(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

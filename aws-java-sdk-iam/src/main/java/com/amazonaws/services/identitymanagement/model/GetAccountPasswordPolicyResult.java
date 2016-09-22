@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -18,13 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the response to a successful <a>GetAccountPasswordPolicy</a>
- * request.
+ * Contains the response to a successful <a>GetAccountPasswordPolicy</a> request.
  * </p>
  */
-public class GetAccountPasswordPolicyResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetAccountPasswordPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private PasswordPolicy passwordPolicy;
 
@@ -46,19 +41,16 @@ public class GetAccountPasswordPolicyResult extends
 
     /**
      * @param passwordPolicy
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetAccountPasswordPolicyResult withPasswordPolicy(
-            PasswordPolicy passwordPolicy) {
+    public GetAccountPasswordPolicyResult withPasswordPolicy(PasswordPolicy passwordPolicy) {
         setPasswordPolicy(passwordPolicy);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -84,11 +76,9 @@ public class GetAccountPasswordPolicyResult extends
         if (obj instanceof GetAccountPasswordPolicyResult == false)
             return false;
         GetAccountPasswordPolicyResult other = (GetAccountPasswordPolicyResult) obj;
-        if (other.getPasswordPolicy() == null
-                ^ this.getPasswordPolicy() == null)
+        if (other.getPasswordPolicy() == null ^ this.getPasswordPolicy() == null)
             return false;
-        if (other.getPasswordPolicy() != null
-                && other.getPasswordPolicy().equals(this.getPasswordPolicy()) == false)
+        if (other.getPasswordPolicy() != null && other.getPasswordPolicy().equals(this.getPasswordPolicy()) == false)
             return false;
         return true;
     }
@@ -98,10 +88,7 @@ public class GetAccountPasswordPolicyResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPasswordPolicy() == null) ? 0 : getPasswordPolicy()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPasswordPolicy() == null) ? 0 : getPasswordPolicy().hashCode());
         return hashCode;
     }
 
@@ -110,9 +97,7 @@ public class GetAccountPasswordPolicyResult extends
         try {
             return (GetAccountPasswordPolicyResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

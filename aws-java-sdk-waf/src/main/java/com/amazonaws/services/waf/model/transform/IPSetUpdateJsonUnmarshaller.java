@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * IPSetUpdate JSON Unmarshaller
  */
-public class IPSetUpdateJsonUnmarshaller implements
-        Unmarshaller<IPSetUpdate, JsonUnmarshallerContext> {
+public class IPSetUpdateJsonUnmarshaller implements Unmarshaller<IPSetUpdate, JsonUnmarshallerContext> {
 
-    public IPSetUpdate unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public IPSetUpdate unmarshall(JsonUnmarshallerContext context) throws Exception {
         IPSetUpdate iPSetUpdate = new IPSetUpdate();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,19 +49,14 @@ public class IPSetUpdateJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Action", targetDepth)) {
                     context.nextToken();
-                    iPSetUpdate.setAction(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    iPSetUpdate.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IPSetDescriptor", targetDepth)) {
                     context.nextToken();
-                    iPSetUpdate
-                            .setIPSetDescriptor(IPSetDescriptorJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    iPSetUpdate.setIPSetDescriptor(IPSetDescriptorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

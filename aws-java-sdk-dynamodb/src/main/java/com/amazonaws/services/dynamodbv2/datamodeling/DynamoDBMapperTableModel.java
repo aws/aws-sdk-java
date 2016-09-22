@@ -47,6 +47,7 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
     private final Map<String,DynamoDBMapperFieldModel<T,Object>> versions;
     private final Map<String,DynamoDBMapperFieldModel<T,Object>> fields;
     private final Map<KeyType,DynamoDBMapperFieldModel<T,Object>> keys;
+    private final DynamoDBMapperTableModel.Properties<T> properties;
     private final Class<T> targetType;
 
     /**
@@ -59,6 +60,7 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
         this.versions = builder.versions();
         this.fields = builder.fields();
         this.keys = builder.keys();
+        this.properties = builder.properties;
         this.targetType = builder.targetType;
     }
 
@@ -450,14 +452,13 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
         }
     }
 
-
     /**
      * The table model properties.
      */
     static interface Properties<T> {
         public String tableName();
 
-        static class Immutable<T> implements Properties<T> {
+        static final class Immutable<T> implements Properties<T> {
             private final String tableName;
 
             public Immutable(final Properties<T> properties) {
@@ -465,7 +466,7 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
             }
 
             @Override
-            public final String tableName() {
+            public String tableName() {
                 return this.tableName;
             }
         }

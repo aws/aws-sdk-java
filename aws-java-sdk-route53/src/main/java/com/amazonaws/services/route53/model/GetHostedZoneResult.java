@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * A complex type containing the response information for the hosted zone.
  * </p>
  */
-public class GetHostedZoneResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -39,8 +35,7 @@ public class GetHostedZoneResult extends
     private DelegationSet delegationSet;
     /**
      * <p>
-     * A complex type that contains information about VPCs associated with the
-     * specified hosted zone.
+     * A complex type that contains information about VPCs associated with the specified hosted zone.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VPC> vPCs;
@@ -51,8 +46,7 @@ public class GetHostedZoneResult extends
      * </p>
      * 
      * @param hostedZone
-     *        A complex type that contains general information about the hosted
-     *        zone.
+     *        A complex type that contains general information about the hosted zone.
      */
 
     public void setHostedZone(HostedZone hostedZone) {
@@ -64,8 +58,7 @@ public class GetHostedZoneResult extends
      * A complex type that contains general information about the hosted zone.
      * </p>
      * 
-     * @return A complex type that contains general information about the hosted
-     *         zone.
+     * @return A complex type that contains general information about the hosted zone.
      */
 
     public HostedZone getHostedZone() {
@@ -78,10 +71,8 @@ public class GetHostedZoneResult extends
      * </p>
      * 
      * @param hostedZone
-     *        A complex type that contains general information about the hosted
-     *        zone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains general information about the hosted zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetHostedZoneResult withHostedZone(HostedZone hostedZone) {
@@ -95,8 +86,7 @@ public class GetHostedZoneResult extends
      * </p>
      * 
      * @param delegationSet
-     *        A complex type that describes the name servers for this hosted
-     *        zone.
+     *        A complex type that describes the name servers for this hosted zone.
      */
 
     public void setDelegationSet(DelegationSet delegationSet) {
@@ -108,8 +98,7 @@ public class GetHostedZoneResult extends
      * A complex type that describes the name servers for this hosted zone.
      * </p>
      * 
-     * @return A complex type that describes the name servers for this hosted
-     *         zone.
+     * @return A complex type that describes the name servers for this hosted zone.
      */
 
     public DelegationSet getDelegationSet() {
@@ -122,10 +111,8 @@ public class GetHostedZoneResult extends
      * </p>
      * 
      * @param delegationSet
-     *        A complex type that describes the name servers for this hosted
-     *        zone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that describes the name servers for this hosted zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetHostedZoneResult withDelegationSet(DelegationSet delegationSet) {
@@ -135,12 +122,10 @@ public class GetHostedZoneResult extends
 
     /**
      * <p>
-     * A complex type that contains information about VPCs associated with the
-     * specified hosted zone.
+     * A complex type that contains information about VPCs associated with the specified hosted zone.
      * </p>
      * 
-     * @return A complex type that contains information about VPCs associated
-     *         with the specified hosted zone.
+     * @return A complex type that contains information about VPCs associated with the specified hosted zone.
      */
 
     public java.util.List<VPC> getVPCs() {
@@ -152,13 +137,11 @@ public class GetHostedZoneResult extends
 
     /**
      * <p>
-     * A complex type that contains information about VPCs associated with the
-     * specified hosted zone.
+     * A complex type that contains information about VPCs associated with the specified hosted zone.
      * </p>
      * 
      * @param vPCs
-     *        A complex type that contains information about VPCs associated
-     *        with the specified hosted zone.
+     *        A complex type that contains information about VPCs associated with the specified hosted zone.
      */
 
     public void setVPCs(java.util.Collection<VPC> vPCs) {
@@ -172,21 +155,17 @@ public class GetHostedZoneResult extends
 
     /**
      * <p>
-     * A complex type that contains information about VPCs associated with the
-     * specified hosted zone.
+     * A complex type that contains information about VPCs associated with the specified hosted zone.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVPCs(java.util.Collection)} or
-     * {@link #withVPCs(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVPCs(java.util.Collection)} or {@link #withVPCs(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param vPCs
-     *        A complex type that contains information about VPCs associated
-     *        with the specified hosted zone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains information about VPCs associated with the specified hosted zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetHostedZoneResult withVPCs(VPC... vPCs) {
@@ -201,15 +180,12 @@ public class GetHostedZoneResult extends
 
     /**
      * <p>
-     * A complex type that contains information about VPCs associated with the
-     * specified hosted zone.
+     * A complex type that contains information about VPCs associated with the specified hosted zone.
      * </p>
      * 
      * @param vPCs
-     *        A complex type that contains information about VPCs associated
-     *        with the specified hosted zone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains information about VPCs associated with the specified hosted zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetHostedZoneResult withVPCs(java.util.Collection<VPC> vPCs) {
@@ -218,8 +194,7 @@ public class GetHostedZoneResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -251,18 +226,15 @@ public class GetHostedZoneResult extends
         GetHostedZoneResult other = (GetHostedZoneResult) obj;
         if (other.getHostedZone() == null ^ this.getHostedZone() == null)
             return false;
-        if (other.getHostedZone() != null
-                && other.getHostedZone().equals(this.getHostedZone()) == false)
+        if (other.getHostedZone() != null && other.getHostedZone().equals(this.getHostedZone()) == false)
             return false;
         if (other.getDelegationSet() == null ^ this.getDelegationSet() == null)
             return false;
-        if (other.getDelegationSet() != null
-                && other.getDelegationSet().equals(this.getDelegationSet()) == false)
+        if (other.getDelegationSet() != null && other.getDelegationSet().equals(this.getDelegationSet()) == false)
             return false;
         if (other.getVPCs() == null ^ this.getVPCs() == null)
             return false;
-        if (other.getVPCs() != null
-                && other.getVPCs().equals(this.getVPCs()) == false)
+        if (other.getVPCs() != null && other.getVPCs().equals(this.getVPCs()) == false)
             return false;
         return true;
     }
@@ -272,14 +244,9 @@ public class GetHostedZoneResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getHostedZone() == null) ? 0 : getHostedZone().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDelegationSet() == null) ? 0 : getDelegationSet()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getVPCs() == null) ? 0 : getVPCs().hashCode());
+        hashCode = prime * hashCode + ((getHostedZone() == null) ? 0 : getHostedZone().hashCode());
+        hashCode = prime * hashCode + ((getDelegationSet() == null) ? 0 : getDelegationSet().hashCode());
+        hashCode = prime * hashCode + ((getVPCs() == null) ? 0 : getVPCs().hashCode());
         return hashCode;
     }
 
@@ -288,9 +255,7 @@ public class GetHostedZoneResult extends
         try {
             return (GetHostedZoneResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

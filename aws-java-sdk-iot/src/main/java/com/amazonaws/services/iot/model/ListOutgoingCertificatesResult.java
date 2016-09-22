@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The output from the ListOutgoingCertificates operation.
  * </p>
  */
-public class ListOutgoingCertificatesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListOutgoingCertificatesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -59,15 +55,13 @@ public class ListOutgoingCertificatesResult extends
      *        The certificates that are being transfered but not yet accepted.
      */
 
-    public void setOutgoingCertificates(
-            java.util.Collection<OutgoingCertificate> outgoingCertificates) {
+    public void setOutgoingCertificates(java.util.Collection<OutgoingCertificate> outgoingCertificates) {
         if (outgoingCertificates == null) {
             this.outgoingCertificates = null;
             return;
         }
 
-        this.outgoingCertificates = new java.util.ArrayList<OutgoingCertificate>(
-                outgoingCertificates);
+        this.outgoingCertificates = new java.util.ArrayList<OutgoingCertificate>(outgoingCertificates);
     }
 
     /**
@@ -75,23 +69,19 @@ public class ListOutgoingCertificatesResult extends
      * The certificates that are being transfered but not yet accepted.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOutgoingCertificates(java.util.Collection)} or
-     * {@link #withOutgoingCertificates(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOutgoingCertificates(java.util.Collection)} or {@link #withOutgoingCertificates(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param outgoingCertificates
      *        The certificates that are being transfered but not yet accepted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListOutgoingCertificatesResult withOutgoingCertificates(
-            OutgoingCertificate... outgoingCertificates) {
+    public ListOutgoingCertificatesResult withOutgoingCertificates(OutgoingCertificate... outgoingCertificates) {
         if (this.outgoingCertificates == null) {
-            setOutgoingCertificates(new java.util.ArrayList<OutgoingCertificate>(
-                    outgoingCertificates.length));
+            setOutgoingCertificates(new java.util.ArrayList<OutgoingCertificate>(outgoingCertificates.length));
         }
         for (OutgoingCertificate ele : outgoingCertificates) {
             this.outgoingCertificates.add(ele);
@@ -106,12 +96,10 @@ public class ListOutgoingCertificatesResult extends
      * 
      * @param outgoingCertificates
      *        The certificates that are being transfered but not yet accepted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListOutgoingCertificatesResult withOutgoingCertificates(
-            java.util.Collection<OutgoingCertificate> outgoingCertificates) {
+    public ListOutgoingCertificatesResult withOutgoingCertificates(java.util.Collection<OutgoingCertificate> outgoingCertificates) {
         setOutgoingCertificates(outgoingCertificates);
         return this;
     }
@@ -148,8 +136,7 @@ public class ListOutgoingCertificatesResult extends
      * 
      * @param nextMarker
      *        The marker for the next set of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListOutgoingCertificatesResult withNextMarker(String nextMarker) {
@@ -158,8 +145,7 @@ public class ListOutgoingCertificatesResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -170,8 +156,7 @@ public class ListOutgoingCertificatesResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOutgoingCertificates() != null)
-            sb.append("OutgoingCertificates: " + getOutgoingCertificates()
-                    + ",");
+            sb.append("OutgoingCertificates: " + getOutgoingCertificates() + ",");
         if (getNextMarker() != null)
             sb.append("NextMarker: " + getNextMarker());
         sb.append("}");
@@ -188,17 +173,13 @@ public class ListOutgoingCertificatesResult extends
         if (obj instanceof ListOutgoingCertificatesResult == false)
             return false;
         ListOutgoingCertificatesResult other = (ListOutgoingCertificatesResult) obj;
-        if (other.getOutgoingCertificates() == null
-                ^ this.getOutgoingCertificates() == null)
+        if (other.getOutgoingCertificates() == null ^ this.getOutgoingCertificates() == null)
             return false;
-        if (other.getOutgoingCertificates() != null
-                && other.getOutgoingCertificates().equals(
-                        this.getOutgoingCertificates()) == false)
+        if (other.getOutgoingCertificates() != null && other.getOutgoingCertificates().equals(this.getOutgoingCertificates()) == false)
             return false;
         if (other.getNextMarker() == null ^ this.getNextMarker() == null)
             return false;
-        if (other.getNextMarker() != null
-                && other.getNextMarker().equals(this.getNextMarker()) == false)
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false)
             return false;
         return true;
     }
@@ -208,12 +189,8 @@ public class ListOutgoingCertificatesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getOutgoingCertificates() == null) ? 0
-                        : getOutgoingCertificates().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
+        hashCode = prime * hashCode + ((getOutgoingCertificates() == null) ? 0 : getOutgoingCertificates().hashCode());
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
         return hashCode;
     }
 
@@ -222,9 +199,7 @@ public class ListOutgoingCertificatesResult extends
         try {
             return (ListOutgoingCertificatesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

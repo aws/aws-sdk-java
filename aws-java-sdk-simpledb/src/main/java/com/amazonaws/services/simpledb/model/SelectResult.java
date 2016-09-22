@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model;
 
@@ -19,17 +17,14 @@ import java.io.Serializable;
 /**
  * 
  */
-public class SelectResult
-        extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.simpledb.SimpleDBResponseMetadata>
-        implements Serializable, Cloneable {
+public class SelectResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.simpledb.SimpleDBResponseMetadata> implements Serializable,
+        Cloneable {
 
     /** A list of items that match the select expression. */
     private com.amazonaws.internal.SdkInternalList<Item> items;
     /**
-     * An opaque token indicating that more items than
-     * <code>MaxNumberOfItems</code> were matched, the response size exceeded 1
-     * megabyte, or the execution time exceeded 5 seconds.
+     * An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size
+     * exceeded 1 megabyte, or the execution time exceeded 5 seconds.
      */
     private String nextToken;
 
@@ -65,22 +60,19 @@ public class SelectResult
     /**
      * A list of items that match the select expression.
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setItems(java.util.Collection)} or
-     * {@link #withItems(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param items
      *        A list of items that match the select expression.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SelectResult withItems(Item... items) {
         if (this.items == null) {
-            setItems(new com.amazonaws.internal.SdkInternalList<Item>(
-                    items.length));
+            setItems(new com.amazonaws.internal.SdkInternalList<Item>(items.length));
         }
         for (Item ele : items) {
             this.items.add(ele);
@@ -93,8 +85,7 @@ public class SelectResult
      * 
      * @param items
      *        A list of items that match the select expression.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SelectResult withItems(java.util.Collection<Item> items) {
@@ -103,14 +94,12 @@ public class SelectResult
     }
 
     /**
-     * An opaque token indicating that more items than
-     * <code>MaxNumberOfItems</code> were matched, the response size exceeded 1
-     * megabyte, or the execution time exceeded 5 seconds.
+     * An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size
+     * exceeded 1 megabyte, or the execution time exceeded 5 seconds.
      * 
      * @param nextToken
-     *        An opaque token indicating that more items than
-     *        <code>MaxNumberOfItems</code> were matched, the response size
-     *        exceeded 1 megabyte, or the execution time exceeded 5 seconds.
+     *        An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response
+     *        size exceeded 1 megabyte, or the execution time exceeded 5 seconds.
      */
 
     public void setNextToken(String nextToken) {
@@ -118,13 +107,11 @@ public class SelectResult
     }
 
     /**
-     * An opaque token indicating that more items than
-     * <code>MaxNumberOfItems</code> were matched, the response size exceeded 1
-     * megabyte, or the execution time exceeded 5 seconds.
+     * An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size
+     * exceeded 1 megabyte, or the execution time exceeded 5 seconds.
      * 
-     * @return An opaque token indicating that more items than
-     *         <code>MaxNumberOfItems</code> were matched, the response size
-     *         exceeded 1 megabyte, or the execution time exceeded 5 seconds.
+     * @return An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response
+     *         size exceeded 1 megabyte, or the execution time exceeded 5 seconds.
      */
 
     public String getNextToken() {
@@ -132,16 +119,13 @@ public class SelectResult
     }
 
     /**
-     * An opaque token indicating that more items than
-     * <code>MaxNumberOfItems</code> were matched, the response size exceeded 1
-     * megabyte, or the execution time exceeded 5 seconds.
+     * An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size
+     * exceeded 1 megabyte, or the execution time exceeded 5 seconds.
      * 
      * @param nextToken
-     *        An opaque token indicating that more items than
-     *        <code>MaxNumberOfItems</code> were matched, the response size
-     *        exceeded 1 megabyte, or the execution time exceeded 5 seconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response
+     *        size exceeded 1 megabyte, or the execution time exceeded 5 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SelectResult withNextToken(String nextToken) {
@@ -150,8 +134,7 @@ public class SelectResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -181,13 +164,11 @@ public class SelectResult
         SelectResult other = (SelectResult) obj;
         if (other.getItems() == null ^ this.getItems() == null)
             return false;
-        if (other.getItems() != null
-                && other.getItems().equals(this.getItems()) == false)
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -197,10 +178,8 @@ public class SelectResult
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getItems() == null) ? 0 : getItems().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -209,9 +188,7 @@ public class SelectResult
         try {
             return (SelectResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

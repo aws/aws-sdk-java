@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -37,19 +35,15 @@ public class DiskImageDetail implements Serializable, Cloneable {
     private Long bytes;
     /**
      * <p>
-     * A presigned URL for the import manifest stored in Amazon S3 and presented
-     * here as an Amazon S3 presigned URL. For information about creating a
-     * presigned URL for an Amazon S3 object, read the
-     * "Query String Request Authentication Alternative" section of the <a href=
-     * "http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html"
-     * >Authenticating REST Requests</a> topic in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.
+     * A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned URL. For
+     * information about creating a presigned URL for an Amazon S3 object, read the
+     * "Query String Request Authentication Alternative" section of the <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
+     * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * For information about the import manifest referenced by this API action,
-     * see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
-     * Import Manifest</a>.
+     * For information about the import manifest referenced by this API action, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      * </p>
      */
     private String importManifestUrl;
@@ -88,8 +82,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * 
      * @param format
      *        The disk image format.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DiskImageFormat
      */
 
@@ -119,8 +112,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * 
      * @param format
      *        The disk image format.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DiskImageFormat
      */
 
@@ -161,8 +153,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * 
      * @param bytes
      *        The size of the disk image, in GiB.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DiskImageDetail withBytes(Long bytes) {
@@ -172,35 +163,26 @@ public class DiskImageDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A presigned URL for the import manifest stored in Amazon S3 and presented
-     * here as an Amazon S3 presigned URL. For information about creating a
-     * presigned URL for an Amazon S3 object, read the
-     * "Query String Request Authentication Alternative" section of the <a href=
-     * "http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html"
-     * >Authenticating REST Requests</a> topic in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.
+     * A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned URL. For
+     * information about creating a presigned URL for an Amazon S3 object, read the
+     * "Query String Request Authentication Alternative" section of the <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
+     * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * For information about the import manifest referenced by this API action,
-     * see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
-     * Import Manifest</a>.
+     * For information about the import manifest referenced by this API action, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      * </p>
      * 
      * @param importManifestUrl
-     *        A presigned URL for the import manifest stored in Amazon S3 and
-     *        presented here as an Amazon S3 presigned URL. For information
-     *        about creating a presigned URL for an Amazon S3 object, read the
-     *        "Query String Request Authentication Alternative" section of the
-     *        <a href=
-     *        "http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html"
-     *        >Authenticating REST Requests</a> topic in the <i>Amazon Simple
-     *        Storage Service Developer Guide</i>.</p>
+     *        A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned
+     *        URL. For information about creating a presigned URL for an Amazon S3 object, read the
+     *        "Query String Request Authentication Alternative" section of the <a
+     *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
+     *        Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      *        <p>
-     *        For information about the import manifest referenced by this API
-     *        action, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html"
-     *        >VM Import Manifest</a>.
+     *        For information about the import manifest referenced by this API action, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      */
 
     public void setImportManifestUrl(String importManifestUrl) {
@@ -209,34 +191,25 @@ public class DiskImageDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A presigned URL for the import manifest stored in Amazon S3 and presented
-     * here as an Amazon S3 presigned URL. For information about creating a
-     * presigned URL for an Amazon S3 object, read the
-     * "Query String Request Authentication Alternative" section of the <a href=
-     * "http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html"
-     * >Authenticating REST Requests</a> topic in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.
+     * A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned URL. For
+     * information about creating a presigned URL for an Amazon S3 object, read the
+     * "Query String Request Authentication Alternative" section of the <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
+     * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * For information about the import manifest referenced by this API action,
-     * see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
-     * Import Manifest</a>.
+     * For information about the import manifest referenced by this API action, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      * </p>
      * 
-     * @return A presigned URL for the import manifest stored in Amazon S3 and
-     *         presented here as an Amazon S3 presigned URL. For information
-     *         about creating a presigned URL for an Amazon S3 object, read the
-     *         "Query String Request Authentication Alternative" section of the
-     *         <a href=
-     *         "http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html"
-     *         >Authenticating REST Requests</a> topic in the <i>Amazon Simple
-     *         Storage Service Developer Guide</i>.</p>
+     * @return A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned
+     *         URL. For information about creating a presigned URL for an Amazon S3 object, read the
+     *         "Query String Request Authentication Alternative" section of the <a
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
+     *         Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      *         <p>
-     *         For information about the import manifest referenced by this API
-     *         action, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html"
-     *         >VM Import Manifest</a>.
+     *         For information about the import manifest referenced by this API action, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      */
 
     public String getImportManifestUrl() {
@@ -245,37 +218,27 @@ public class DiskImageDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A presigned URL for the import manifest stored in Amazon S3 and presented
-     * here as an Amazon S3 presigned URL. For information about creating a
-     * presigned URL for an Amazon S3 object, read the
-     * "Query String Request Authentication Alternative" section of the <a href=
-     * "http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html"
-     * >Authenticating REST Requests</a> topic in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.
+     * A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned URL. For
+     * information about creating a presigned URL for an Amazon S3 object, read the
+     * "Query String Request Authentication Alternative" section of the <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
+     * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * For information about the import manifest referenced by this API action,
-     * see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
-     * Import Manifest</a>.
+     * For information about the import manifest referenced by this API action, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      * </p>
      * 
      * @param importManifestUrl
-     *        A presigned URL for the import manifest stored in Amazon S3 and
-     *        presented here as an Amazon S3 presigned URL. For information
-     *        about creating a presigned URL for an Amazon S3 object, read the
-     *        "Query String Request Authentication Alternative" section of the
-     *        <a href=
-     *        "http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html"
-     *        >Authenticating REST Requests</a> topic in the <i>Amazon Simple
-     *        Storage Service Developer Guide</i>.</p>
+     *        A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned
+     *        URL. For information about creating a presigned URL for an Amazon S3 object, read the
+     *        "Query String Request Authentication Alternative" section of the <a
+     *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
+     *        Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      *        <p>
-     *        For information about the import manifest referenced by this API
-     *        action, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html"
-     *        >VM Import Manifest</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For information about the import manifest referenced by this API action, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DiskImageDetail withImportManifestUrl(String importManifestUrl) {
@@ -284,8 +247,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -317,20 +279,15 @@ public class DiskImageDetail implements Serializable, Cloneable {
         DiskImageDetail other = (DiskImageDetail) obj;
         if (other.getFormat() == null ^ this.getFormat() == null)
             return false;
-        if (other.getFormat() != null
-                && other.getFormat().equals(this.getFormat()) == false)
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
             return false;
         if (other.getBytes() == null ^ this.getBytes() == null)
             return false;
-        if (other.getBytes() != null
-                && other.getBytes().equals(this.getBytes()) == false)
+        if (other.getBytes() != null && other.getBytes().equals(this.getBytes()) == false)
             return false;
-        if (other.getImportManifestUrl() == null
-                ^ this.getImportManifestUrl() == null)
+        if (other.getImportManifestUrl() == null ^ this.getImportManifestUrl() == null)
             return false;
-        if (other.getImportManifestUrl() != null
-                && other.getImportManifestUrl().equals(
-                        this.getImportManifestUrl()) == false)
+        if (other.getImportManifestUrl() != null && other.getImportManifestUrl().equals(this.getImportManifestUrl()) == false)
             return false;
         return true;
     }
@@ -340,14 +297,9 @@ public class DiskImageDetail implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFormat() == null) ? 0 : getFormat().hashCode());
-        hashCode = prime * hashCode
-                + ((getBytes() == null) ? 0 : getBytes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getImportManifestUrl() == null) ? 0
-                        : getImportManifestUrl().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
+        hashCode = prime * hashCode + ((getBytes() == null) ? 0 : getBytes().hashCode());
+        hashCode = prime * hashCode + ((getImportManifestUrl() == null) ? 0 : getImportManifestUrl().hashCode());
         return hashCode;
     }
 
@@ -356,9 +308,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
         try {
             return (DiskImageDetail) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

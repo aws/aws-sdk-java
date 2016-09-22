@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -19,18 +17,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to add a new <a>Authorizer</a> to an existing <a>RestApi</a>
- * resource.
+ * Request to add a new <a>Authorizer</a> to an existing <a>RestApi</a> resource.
  * </p>
  */
-public class CreateAuthorizerRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
-     * created.
+     * The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be created.
      * </p>
      */
     private String restApiId;
@@ -54,8 +48,7 @@ public class CreateAuthorizerRequest extends
     private java.util.List<String> providerARNs;
     /**
      * <p>
-     * Optional customer-defined field, used in Swagger imports/exports. Has no
-     * functional impact.
+     * Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
      * </p>
      */
     private String authType;
@@ -92,13 +85,11 @@ public class CreateAuthorizerRequest extends
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
-     * created.
+     * The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be created.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier under which the <a>Authorizer</a>
-     *        will be created.
+     *        The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be created.
      */
 
     public void setRestApiId(String restApiId) {
@@ -107,12 +98,10 @@ public class CreateAuthorizerRequest extends
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
-     * created.
+     * The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be created.
      * </p>
      * 
-     * @return The <a>RestApi</a> identifier under which the <a>Authorizer</a>
-     *         will be created.
+     * @return The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be created.
      */
 
     public String getRestApiId() {
@@ -121,15 +110,12 @@ public class CreateAuthorizerRequest extends
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
-     * created.
+     * The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be created.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier under which the <a>Authorizer</a>
-     *        will be created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateAuthorizerRequest withRestApiId(String restApiId) {
@@ -169,8 +155,7 @@ public class CreateAuthorizerRequest extends
      * 
      * @param name
      *        [Required] The name of the authorizer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateAuthorizerRequest withName(String name) {
@@ -212,8 +197,7 @@ public class CreateAuthorizerRequest extends
      * 
      * @param type
      *        [Required] The type of the authorizer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthorizerType
      */
 
@@ -243,8 +227,7 @@ public class CreateAuthorizerRequest extends
      * 
      * @param type
      *        [Required] The type of the authorizer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthorizerType
      */
 
@@ -288,16 +271,14 @@ public class CreateAuthorizerRequest extends
      * A list of the Cognito Your User Pool authorizer's provider ARNs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setProviderARNs(java.util.Collection)} or
-     * {@link #withProviderARNs(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProviderARNs(java.util.Collection)} or {@link #withProviderARNs(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param providerARNs
      *        A list of the Cognito Your User Pool authorizer's provider ARNs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateAuthorizerRequest withProviderARNs(String... providerARNs) {
@@ -317,25 +298,21 @@ public class CreateAuthorizerRequest extends
      * 
      * @param providerARNs
      *        A list of the Cognito Your User Pool authorizer's provider ARNs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateAuthorizerRequest withProviderARNs(
-            java.util.Collection<String> providerARNs) {
+    public CreateAuthorizerRequest withProviderARNs(java.util.Collection<String> providerARNs) {
         setProviderARNs(providerARNs);
         return this;
     }
 
     /**
      * <p>
-     * Optional customer-defined field, used in Swagger imports/exports. Has no
-     * functional impact.
+     * Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
      * </p>
      * 
      * @param authType
-     *        Optional customer-defined field, used in Swagger imports/exports.
-     *        Has no functional impact.
+     *        Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
      */
 
     public void setAuthType(String authType) {
@@ -344,12 +321,10 @@ public class CreateAuthorizerRequest extends
 
     /**
      * <p>
-     * Optional customer-defined field, used in Swagger imports/exports. Has no
-     * functional impact.
+     * Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
      * </p>
      * 
-     * @return Optional customer-defined field, used in Swagger imports/exports.
-     *         Has no functional impact.
+     * @return Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
      */
 
     public String getAuthType() {
@@ -358,15 +333,12 @@ public class CreateAuthorizerRequest extends
 
     /**
      * <p>
-     * Optional customer-defined field, used in Swagger imports/exports. Has no
-     * functional impact.
+     * Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
      * </p>
      * 
      * @param authType
-     *        Optional customer-defined field, used in Swagger imports/exports.
-     *        Has no functional impact.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateAuthorizerRequest withAuthType(String authType) {
@@ -380,8 +352,7 @@ public class CreateAuthorizerRequest extends
      * </p>
      * 
      * @param authorizerUri
-     *        [Required] Specifies the authorizer's Uniform Resource Identifier
-     *        (URI).
+     *        [Required] Specifies the authorizer's Uniform Resource Identifier (URI).
      */
 
     public void setAuthorizerUri(String authorizerUri) {
@@ -393,8 +364,7 @@ public class CreateAuthorizerRequest extends
      * [Required] Specifies the authorizer's Uniform Resource Identifier (URI).
      * </p>
      * 
-     * @return [Required] Specifies the authorizer's Uniform Resource Identifier
-     *         (URI).
+     * @return [Required] Specifies the authorizer's Uniform Resource Identifier (URI).
      */
 
     public String getAuthorizerUri() {
@@ -407,10 +377,8 @@ public class CreateAuthorizerRequest extends
      * </p>
      * 
      * @param authorizerUri
-     *        [Required] Specifies the authorizer's Uniform Resource Identifier
-     *        (URI).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [Required] Specifies the authorizer's Uniform Resource Identifier (URI).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateAuthorizerRequest withAuthorizerUri(String authorizerUri) {
@@ -450,12 +418,10 @@ public class CreateAuthorizerRequest extends
      * 
      * @param authorizerCredentials
      *        Specifies the credentials required for the authorizer, if any.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateAuthorizerRequest withAuthorizerCredentials(
-            String authorizerCredentials) {
+    public CreateAuthorizerRequest withAuthorizerCredentials(String authorizerCredentials) {
         setAuthorizerCredentials(authorizerCredentials);
         return this;
     }
@@ -492,8 +458,7 @@ public class CreateAuthorizerRequest extends
      * 
      * @param identitySource
      *        [Required] The source of the identity in an incoming request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateAuthorizerRequest withIdentitySource(String identitySource) {
@@ -510,8 +475,7 @@ public class CreateAuthorizerRequest extends
      *        A validation expression for the incoming identity.
      */
 
-    public void setIdentityValidationExpression(
-            String identityValidationExpression) {
+    public void setIdentityValidationExpression(String identityValidationExpression) {
         this.identityValidationExpression = identityValidationExpression;
     }
 
@@ -534,12 +498,10 @@ public class CreateAuthorizerRequest extends
      * 
      * @param identityValidationExpression
      *        A validation expression for the incoming identity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateAuthorizerRequest withIdentityValidationExpression(
-            String identityValidationExpression) {
+    public CreateAuthorizerRequest withIdentityValidationExpression(String identityValidationExpression) {
         setIdentityValidationExpression(identityValidationExpression);
         return this;
     }
@@ -553,8 +515,7 @@ public class CreateAuthorizerRequest extends
      *        The TTL of cached authorizer results.
      */
 
-    public void setAuthorizerResultTtlInSeconds(
-            Integer authorizerResultTtlInSeconds) {
+    public void setAuthorizerResultTtlInSeconds(Integer authorizerResultTtlInSeconds) {
         this.authorizerResultTtlInSeconds = authorizerResultTtlInSeconds;
     }
 
@@ -577,19 +538,16 @@ public class CreateAuthorizerRequest extends
      * 
      * @param authorizerResultTtlInSeconds
      *        The TTL of cached authorizer results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateAuthorizerRequest withAuthorizerResultTtlInSeconds(
-            Integer authorizerResultTtlInSeconds) {
+    public CreateAuthorizerRequest withAuthorizerResultTtlInSeconds(Integer authorizerResultTtlInSeconds) {
         setAuthorizerResultTtlInSeconds(authorizerResultTtlInSeconds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -612,16 +570,13 @@ public class CreateAuthorizerRequest extends
         if (getAuthorizerUri() != null)
             sb.append("AuthorizerUri: " + getAuthorizerUri() + ",");
         if (getAuthorizerCredentials() != null)
-            sb.append("AuthorizerCredentials: " + getAuthorizerCredentials()
-                    + ",");
+            sb.append("AuthorizerCredentials: " + getAuthorizerCredentials() + ",");
         if (getIdentitySource() != null)
             sb.append("IdentitySource: " + getIdentitySource() + ",");
         if (getIdentityValidationExpression() != null)
-            sb.append("IdentityValidationExpression: "
-                    + getIdentityValidationExpression() + ",");
+            sb.append("IdentityValidationExpression: " + getIdentityValidationExpression() + ",");
         if (getAuthorizerResultTtlInSeconds() != null)
-            sb.append("AuthorizerResultTtlInSeconds: "
-                    + getAuthorizerResultTtlInSeconds());
+            sb.append("AuthorizerResultTtlInSeconds: " + getAuthorizerResultTtlInSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -638,60 +593,43 @@ public class CreateAuthorizerRequest extends
         CreateAuthorizerRequest other = (CreateAuthorizerRequest) obj;
         if (other.getRestApiId() == null ^ this.getRestApiId() == null)
             return false;
-        if (other.getRestApiId() != null
-                && other.getRestApiId().equals(this.getRestApiId()) == false)
+        if (other.getRestApiId() != null && other.getRestApiId().equals(this.getRestApiId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getProviderARNs() == null ^ this.getProviderARNs() == null)
             return false;
-        if (other.getProviderARNs() != null
-                && other.getProviderARNs().equals(this.getProviderARNs()) == false)
+        if (other.getProviderARNs() != null && other.getProviderARNs().equals(this.getProviderARNs()) == false)
             return false;
         if (other.getAuthType() == null ^ this.getAuthType() == null)
             return false;
-        if (other.getAuthType() != null
-                && other.getAuthType().equals(this.getAuthType()) == false)
+        if (other.getAuthType() != null && other.getAuthType().equals(this.getAuthType()) == false)
             return false;
         if (other.getAuthorizerUri() == null ^ this.getAuthorizerUri() == null)
             return false;
-        if (other.getAuthorizerUri() != null
-                && other.getAuthorizerUri().equals(this.getAuthorizerUri()) == false)
+        if (other.getAuthorizerUri() != null && other.getAuthorizerUri().equals(this.getAuthorizerUri()) == false)
             return false;
-        if (other.getAuthorizerCredentials() == null
-                ^ this.getAuthorizerCredentials() == null)
+        if (other.getAuthorizerCredentials() == null ^ this.getAuthorizerCredentials() == null)
             return false;
-        if (other.getAuthorizerCredentials() != null
-                && other.getAuthorizerCredentials().equals(
-                        this.getAuthorizerCredentials()) == false)
+        if (other.getAuthorizerCredentials() != null && other.getAuthorizerCredentials().equals(this.getAuthorizerCredentials()) == false)
             return false;
-        if (other.getIdentitySource() == null
-                ^ this.getIdentitySource() == null)
+        if (other.getIdentitySource() == null ^ this.getIdentitySource() == null)
             return false;
-        if (other.getIdentitySource() != null
-                && other.getIdentitySource().equals(this.getIdentitySource()) == false)
+        if (other.getIdentitySource() != null && other.getIdentitySource().equals(this.getIdentitySource()) == false)
             return false;
-        if (other.getIdentityValidationExpression() == null
-                ^ this.getIdentityValidationExpression() == null)
+        if (other.getIdentityValidationExpression() == null ^ this.getIdentityValidationExpression() == null)
             return false;
-        if (other.getIdentityValidationExpression() != null
-                && other.getIdentityValidationExpression().equals(
-                        this.getIdentityValidationExpression()) == false)
+        if (other.getIdentityValidationExpression() != null && other.getIdentityValidationExpression().equals(this.getIdentityValidationExpression()) == false)
             return false;
-        if (other.getAuthorizerResultTtlInSeconds() == null
-                ^ this.getAuthorizerResultTtlInSeconds() == null)
+        if (other.getAuthorizerResultTtlInSeconds() == null ^ this.getAuthorizerResultTtlInSeconds() == null)
             return false;
-        if (other.getAuthorizerResultTtlInSeconds() != null
-                && other.getAuthorizerResultTtlInSeconds().equals(
-                        this.getAuthorizerResultTtlInSeconds()) == false)
+        if (other.getAuthorizerResultTtlInSeconds() != null && other.getAuthorizerResultTtlInSeconds().equals(this.getAuthorizerResultTtlInSeconds()) == false)
             return false;
         return true;
     }
@@ -701,38 +639,16 @@ public class CreateAuthorizerRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProviderARNs() == null) ? 0 : getProviderARNs()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getAuthType() == null) ? 0 : getAuthType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAuthorizerUri() == null) ? 0 : getAuthorizerUri()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAuthorizerCredentials() == null) ? 0
-                        : getAuthorizerCredentials().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIdentitySource() == null) ? 0 : getIdentitySource()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIdentityValidationExpression() == null) ? 0
-                        : getIdentityValidationExpression().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAuthorizerResultTtlInSeconds() == null) ? 0
-                        : getAuthorizerResultTtlInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getProviderARNs() == null) ? 0 : getProviderARNs().hashCode());
+        hashCode = prime * hashCode + ((getAuthType() == null) ? 0 : getAuthType().hashCode());
+        hashCode = prime * hashCode + ((getAuthorizerUri() == null) ? 0 : getAuthorizerUri().hashCode());
+        hashCode = prime * hashCode + ((getAuthorizerCredentials() == null) ? 0 : getAuthorizerCredentials().hashCode());
+        hashCode = prime * hashCode + ((getIdentitySource() == null) ? 0 : getIdentitySource().hashCode());
+        hashCode = prime * hashCode + ((getIdentityValidationExpression() == null) ? 0 : getIdentityValidationExpression().hashCode());
+        hashCode = prime * hashCode + ((getAuthorizerResultTtlInSeconds() == null) ? 0 : getAuthorizerResultTtlInSeconds().hashCode());
         return hashCode;
     }
 

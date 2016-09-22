@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticfilesystem.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * CreateMountTargetResult JSON Unmarshaller
  */
-public class CreateMountTargetResultJsonUnmarshaller implements
-        Unmarshaller<CreateMountTargetResult, JsonUnmarshallerContext> {
+public class CreateMountTargetResultJsonUnmarshaller implements Unmarshaller<CreateMountTargetResult, JsonUnmarshallerContext> {
 
-    public CreateMountTargetResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public CreateMountTargetResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         CreateMountTargetResult createMountTargetResult = new CreateMountTargetResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,43 +49,34 @@ public class CreateMountTargetResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OwnerId", targetDepth)) {
                     context.nextToken();
-                    createMountTargetResult.setOwnerId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    createMountTargetResult.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MountTargetId", targetDepth)) {
                     context.nextToken();
-                    createMountTargetResult.setMountTargetId(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    createMountTargetResult.setMountTargetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemId", targetDepth)) {
                     context.nextToken();
-                    createMountTargetResult.setFileSystemId(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    createMountTargetResult.setFileSystemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
                     context.nextToken();
-                    createMountTargetResult.setSubnetId(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    createMountTargetResult.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LifeCycleState", targetDepth)) {
                     context.nextToken();
-                    createMountTargetResult.setLifeCycleState(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    createMountTargetResult.setLifeCycleState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
                     context.nextToken();
-                    createMountTargetResult.setIpAddress(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    createMountTargetResult.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceId", targetDepth)) {
                     context.nextToken();
-                    createMountTargetResult.setNetworkInterfaceId(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    createMountTargetResult.setNetworkInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

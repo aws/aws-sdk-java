@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticfilesystem.model.transform;
 
@@ -34,61 +32,47 @@ public class FileSystemDescriptionJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(FileSystemDescription fileSystemDescription,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(FileSystemDescription fileSystemDescription, StructuredJsonGenerator jsonGenerator) {
 
         if (fileSystemDescription == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (fileSystemDescription.getOwnerId() != null) {
-                jsonGenerator.writeFieldName("OwnerId").writeValue(
-                        fileSystemDescription.getOwnerId());
+                jsonGenerator.writeFieldName("OwnerId").writeValue(fileSystemDescription.getOwnerId());
             }
             if (fileSystemDescription.getCreationToken() != null) {
-                jsonGenerator.writeFieldName("CreationToken").writeValue(
-                        fileSystemDescription.getCreationToken());
+                jsonGenerator.writeFieldName("CreationToken").writeValue(fileSystemDescription.getCreationToken());
             }
             if (fileSystemDescription.getFileSystemId() != null) {
-                jsonGenerator.writeFieldName("FileSystemId").writeValue(
-                        fileSystemDescription.getFileSystemId());
+                jsonGenerator.writeFieldName("FileSystemId").writeValue(fileSystemDescription.getFileSystemId());
             }
             if (fileSystemDescription.getCreationTime() != null) {
-                jsonGenerator.writeFieldName("CreationTime").writeValue(
-                        fileSystemDescription.getCreationTime());
+                jsonGenerator.writeFieldName("CreationTime").writeValue(fileSystemDescription.getCreationTime());
             }
             if (fileSystemDescription.getLifeCycleState() != null) {
-                jsonGenerator.writeFieldName("LifeCycleState").writeValue(
-                        fileSystemDescription.getLifeCycleState());
+                jsonGenerator.writeFieldName("LifeCycleState").writeValue(fileSystemDescription.getLifeCycleState());
             }
             if (fileSystemDescription.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(
-                        fileSystemDescription.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(fileSystemDescription.getName());
             }
             if (fileSystemDescription.getNumberOfMountTargets() != null) {
-                jsonGenerator
-                        .writeFieldName("NumberOfMountTargets")
-                        .writeValue(
-                                fileSystemDescription.getNumberOfMountTargets());
+                jsonGenerator.writeFieldName("NumberOfMountTargets").writeValue(fileSystemDescription.getNumberOfMountTargets());
             }
             if (fileSystemDescription.getSizeInBytes() != null) {
                 jsonGenerator.writeFieldName("SizeInBytes");
-                FileSystemSizeJsonMarshaller.getInstance().marshall(
-                        fileSystemDescription.getSizeInBytes(), jsonGenerator);
+                FileSystemSizeJsonMarshaller.getInstance().marshall(fileSystemDescription.getSizeInBytes(), jsonGenerator);
             }
             if (fileSystemDescription.getPerformanceMode() != null) {
-                jsonGenerator.writeFieldName("PerformanceMode").writeValue(
-                        fileSystemDescription.getPerformanceMode());
+                jsonGenerator.writeFieldName("PerformanceMode").writeValue(fileSystemDescription.getPerformanceMode());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

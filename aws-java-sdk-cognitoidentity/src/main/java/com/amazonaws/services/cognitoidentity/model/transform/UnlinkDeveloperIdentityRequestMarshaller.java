@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidentity.model.transform;
 
@@ -35,71 +33,54 @@ import com.amazonaws.protocol.json.*;
 /**
  * UnlinkDeveloperIdentityRequest Marshaller
  */
-public class UnlinkDeveloperIdentityRequestMarshaller
-        implements
-        Marshaller<Request<UnlinkDeveloperIdentityRequest>, UnlinkDeveloperIdentityRequest> {
+public class UnlinkDeveloperIdentityRequestMarshaller implements Marshaller<Request<UnlinkDeveloperIdentityRequest>, UnlinkDeveloperIdentityRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public UnlinkDeveloperIdentityRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public UnlinkDeveloperIdentityRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<UnlinkDeveloperIdentityRequest> marshall(
-            UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest) {
+    public Request<UnlinkDeveloperIdentityRequest> marshall(UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest) {
 
         if (unlinkDeveloperIdentityRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UnlinkDeveloperIdentityRequest> request = new DefaultRequest<UnlinkDeveloperIdentityRequest>(
-                unlinkDeveloperIdentityRequest, "AmazonCognitoIdentity");
-        request.addHeader("X-Amz-Target",
-                "AWSCognitoIdentityService.UnlinkDeveloperIdentity");
+        Request<UnlinkDeveloperIdentityRequest> request = new DefaultRequest<UnlinkDeveloperIdentityRequest>(unlinkDeveloperIdentityRequest,
+                "AmazonCognitoIdentity");
+        request.addHeader("X-Amz-Target", "AWSCognitoIdentityService.UnlinkDeveloperIdentity");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (unlinkDeveloperIdentityRequest.getIdentityId() != null) {
-                jsonGenerator.writeFieldName("IdentityId").writeValue(
-                        unlinkDeveloperIdentityRequest.getIdentityId());
+                jsonGenerator.writeFieldName("IdentityId").writeValue(unlinkDeveloperIdentityRequest.getIdentityId());
             }
             if (unlinkDeveloperIdentityRequest.getIdentityPoolId() != null) {
-                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(
-                        unlinkDeveloperIdentityRequest.getIdentityPoolId());
+                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(unlinkDeveloperIdentityRequest.getIdentityPoolId());
             }
             if (unlinkDeveloperIdentityRequest.getDeveloperProviderName() != null) {
-                jsonGenerator.writeFieldName("DeveloperProviderName")
-                        .writeValue(
-                                unlinkDeveloperIdentityRequest
-                                        .getDeveloperProviderName());
+                jsonGenerator.writeFieldName("DeveloperProviderName").writeValue(unlinkDeveloperIdentityRequest.getDeveloperProviderName());
             }
             if (unlinkDeveloperIdentityRequest.getDeveloperUserIdentifier() != null) {
-                jsonGenerator.writeFieldName("DeveloperUserIdentifier")
-                        .writeValue(
-                                unlinkDeveloperIdentityRequest
-                                        .getDeveloperUserIdentifier());
+                jsonGenerator.writeFieldName("DeveloperUserIdentifier").writeValue(unlinkDeveloperIdentityRequest.getDeveloperUserIdentifier());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

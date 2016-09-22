@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class ListApplicationsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -57,15 +53,13 @@ public class ListApplicationsResult extends
      *        List of <code>ApplicationSummary</code> objects.
      */
 
-    public void setApplicationSummaries(
-            java.util.Collection<ApplicationSummary> applicationSummaries) {
+    public void setApplicationSummaries(java.util.Collection<ApplicationSummary> applicationSummaries) {
         if (applicationSummaries == null) {
             this.applicationSummaries = null;
             return;
         }
 
-        this.applicationSummaries = new java.util.ArrayList<ApplicationSummary>(
-                applicationSummaries);
+        this.applicationSummaries = new java.util.ArrayList<ApplicationSummary>(applicationSummaries);
     }
 
     /**
@@ -73,23 +67,19 @@ public class ListApplicationsResult extends
      * List of <code>ApplicationSummary</code> objects.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setApplicationSummaries(java.util.Collection)} or
-     * {@link #withApplicationSummaries(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setApplicationSummaries(java.util.Collection)} or {@link #withApplicationSummaries(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param applicationSummaries
      *        List of <code>ApplicationSummary</code> objects.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListApplicationsResult withApplicationSummaries(
-            ApplicationSummary... applicationSummaries) {
+    public ListApplicationsResult withApplicationSummaries(ApplicationSummary... applicationSummaries) {
         if (this.applicationSummaries == null) {
-            setApplicationSummaries(new java.util.ArrayList<ApplicationSummary>(
-                    applicationSummaries.length));
+            setApplicationSummaries(new java.util.ArrayList<ApplicationSummary>(applicationSummaries.length));
         }
         for (ApplicationSummary ele : applicationSummaries) {
             this.applicationSummaries.add(ele);
@@ -104,12 +94,10 @@ public class ListApplicationsResult extends
      * 
      * @param applicationSummaries
      *        List of <code>ApplicationSummary</code> objects.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListApplicationsResult withApplicationSummaries(
-            java.util.Collection<ApplicationSummary> applicationSummaries) {
+    public ListApplicationsResult withApplicationSummaries(java.util.Collection<ApplicationSummary> applicationSummaries) {
         setApplicationSummaries(applicationSummaries);
         return this;
     }
@@ -146,12 +134,10 @@ public class ListApplicationsResult extends
      * 
      * @param hasMoreApplications
      *        Returns true if there are more applications to retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListApplicationsResult withHasMoreApplications(
-            Boolean hasMoreApplications) {
+    public ListApplicationsResult withHasMoreApplications(Boolean hasMoreApplications) {
         setHasMoreApplications(hasMoreApplications);
         return this;
     }
@@ -169,8 +155,7 @@ public class ListApplicationsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -181,8 +166,7 @@ public class ListApplicationsResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationSummaries() != null)
-            sb.append("ApplicationSummaries: " + getApplicationSummaries()
-                    + ",");
+            sb.append("ApplicationSummaries: " + getApplicationSummaries() + ",");
         if (getHasMoreApplications() != null)
             sb.append("HasMoreApplications: " + getHasMoreApplications());
         sb.append("}");
@@ -199,19 +183,13 @@ public class ListApplicationsResult extends
         if (obj instanceof ListApplicationsResult == false)
             return false;
         ListApplicationsResult other = (ListApplicationsResult) obj;
-        if (other.getApplicationSummaries() == null
-                ^ this.getApplicationSummaries() == null)
+        if (other.getApplicationSummaries() == null ^ this.getApplicationSummaries() == null)
             return false;
-        if (other.getApplicationSummaries() != null
-                && other.getApplicationSummaries().equals(
-                        this.getApplicationSummaries()) == false)
+        if (other.getApplicationSummaries() != null && other.getApplicationSummaries().equals(this.getApplicationSummaries()) == false)
             return false;
-        if (other.getHasMoreApplications() == null
-                ^ this.getHasMoreApplications() == null)
+        if (other.getHasMoreApplications() == null ^ this.getHasMoreApplications() == null)
             return false;
-        if (other.getHasMoreApplications() != null
-                && other.getHasMoreApplications().equals(
-                        this.getHasMoreApplications()) == false)
+        if (other.getHasMoreApplications() != null && other.getHasMoreApplications().equals(this.getHasMoreApplications()) == false)
             return false;
         return true;
     }
@@ -221,14 +199,8 @@ public class ListApplicationsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationSummaries() == null) ? 0
-                        : getApplicationSummaries().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHasMoreApplications() == null) ? 0
-                        : getHasMoreApplications().hashCode());
+        hashCode = prime * hashCode + ((getApplicationSummaries() == null) ? 0 : getApplicationSummaries().hashCode());
+        hashCode = prime * hashCode + ((getHasMoreApplications() == null) ? 0 : getHasMoreApplications().hashCode());
         return hashCode;
     }
 
@@ -237,9 +209,7 @@ public class ListApplicationsResult extends
         try {
             return (ListApplicationsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticsearch.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * ListTagsRequest Marshaller
  */
-public class ListTagsRequestMarshaller implements
-        Marshaller<Request<ListTagsRequest>, ListTagsRequest> {
+public class ListTagsRequestMarshaller implements Marshaller<Request<ListTagsRequest>, ListTagsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -55,12 +52,10 @@ public class ListTagsRequestMarshaller implements
     public Request<ListTagsRequest> marshall(ListTagsRequest listTagsRequest) {
 
         if (listTagsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListTagsRequest> request = new DefaultRequest<ListTagsRequest>(
-                listTagsRequest, "AWSElasticsearch");
+        Request<ListTagsRequest> request = new DefaultRequest<ListTagsRequest>(listTagsRequest, "AWSElasticsearch");
 
         request.setHttpMethod(HttpMethodName.GET);
 
@@ -69,8 +64,7 @@ public class ListTagsRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         if (listTagsRequest.getARN() != null) {
-            request.addParameter("arn",
-                    StringUtils.fromString(listTagsRequest.getARN()));
+            request.addParameter("arn", StringUtils.fromString(listTagsRequest.getARN()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

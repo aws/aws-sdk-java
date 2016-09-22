@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -43,47 +41,34 @@ import com.amazonaws.protocol.json.*;
 /**
  * DeletePolicyVersionRequest Marshaller
  */
-public class DeletePolicyVersionRequestMarshaller
-        implements
-        Marshaller<Request<DeletePolicyVersionRequest>, DeletePolicyVersionRequest> {
+public class DeletePolicyVersionRequestMarshaller implements Marshaller<Request<DeletePolicyVersionRequest>, DeletePolicyVersionRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DeletePolicyVersionRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DeletePolicyVersionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DeletePolicyVersionRequest> marshall(
-            DeletePolicyVersionRequest deletePolicyVersionRequest) {
+    public Request<DeletePolicyVersionRequest> marshall(DeletePolicyVersionRequest deletePolicyVersionRequest) {
 
         if (deletePolicyVersionRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeletePolicyVersionRequest> request = new DefaultRequest<DeletePolicyVersionRequest>(
-                deletePolicyVersionRequest, "AWSIot");
+        Request<DeletePolicyVersionRequest> request = new DefaultRequest<DeletePolicyVersionRequest>(deletePolicyVersionRequest, "AWSIot");
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/policies/{policyName}/version/{policyVersionId}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{policyName}",
-                        (deletePolicyVersionRequest.getPolicyName() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(deletePolicyVersionRequest
-                                                .getPolicyName()), false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{policyVersionId}",
-                        (deletePolicyVersionRequest.getPolicyVersionId() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(deletePolicyVersionRequest
-                                                .getPolicyVersionId()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{policyName}",
+                (deletePolicyVersionRequest.getPolicyName() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(deletePolicyVersionRequest.getPolicyName()), false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{policyVersionId}",
+                (deletePolicyVersionRequest.getPolicyVersionId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(deletePolicyVersionRequest.getPolicyVersionId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

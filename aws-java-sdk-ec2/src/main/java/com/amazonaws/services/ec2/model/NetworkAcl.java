@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -92,8 +90,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * 
      * @param networkAclId
      *        The ID of the network ACL.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAcl withNetworkAclId(String networkAclId) {
@@ -133,8 +130,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * 
      * @param vpcId
      *        The ID of the VPC for the network ACL.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAcl withVpcId(String vpcId) {
@@ -174,8 +170,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * 
      * @param isDefault
      *        Indicates whether this is the default network ACL for the VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAcl withIsDefault(Boolean isDefault) {
@@ -225,8 +220,7 @@ public class NetworkAcl implements Serializable, Cloneable {
             return;
         }
 
-        this.entries = new com.amazonaws.internal.SdkInternalList<NetworkAclEntry>(
-                entries);
+        this.entries = new com.amazonaws.internal.SdkInternalList<NetworkAclEntry>(entries);
     }
 
     /**
@@ -234,22 +228,19 @@ public class NetworkAcl implements Serializable, Cloneable {
      * One or more entries (rules) in the network ACL.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEntries(java.util.Collection)} or
-     * {@link #withEntries(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEntries(java.util.Collection)} or {@link #withEntries(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param entries
      *        One or more entries (rules) in the network ACL.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAcl withEntries(NetworkAclEntry... entries) {
         if (this.entries == null) {
-            setEntries(new com.amazonaws.internal.SdkInternalList<NetworkAclEntry>(
-                    entries.length));
+            setEntries(new com.amazonaws.internal.SdkInternalList<NetworkAclEntry>(entries.length));
         }
         for (NetworkAclEntry ele : entries) {
             this.entries.add(ele);
@@ -264,8 +255,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * 
      * @param entries
      *        One or more entries (rules) in the network ACL.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAcl withEntries(java.util.Collection<NetworkAclEntry> entries) {
@@ -297,15 +287,13 @@ public class NetworkAcl implements Serializable, Cloneable {
      *        Any associations between the network ACL and one or more subnets
      */
 
-    public void setAssociations(
-            java.util.Collection<NetworkAclAssociation> associations) {
+    public void setAssociations(java.util.Collection<NetworkAclAssociation> associations) {
         if (associations == null) {
             this.associations = null;
             return;
         }
 
-        this.associations = new com.amazonaws.internal.SdkInternalList<NetworkAclAssociation>(
-                associations);
+        this.associations = new com.amazonaws.internal.SdkInternalList<NetworkAclAssociation>(associations);
     }
 
     /**
@@ -313,22 +301,19 @@ public class NetworkAcl implements Serializable, Cloneable {
      * Any associations between the network ACL and one or more subnets
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAssociations(java.util.Collection)} or
-     * {@link #withAssociations(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssociations(java.util.Collection)} or {@link #withAssociations(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param associations
      *        Any associations between the network ACL and one or more subnets
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAcl withAssociations(NetworkAclAssociation... associations) {
         if (this.associations == null) {
-            setAssociations(new com.amazonaws.internal.SdkInternalList<NetworkAclAssociation>(
-                    associations.length));
+            setAssociations(new com.amazonaws.internal.SdkInternalList<NetworkAclAssociation>(associations.length));
         }
         for (NetworkAclAssociation ele : associations) {
             this.associations.add(ele);
@@ -343,12 +328,10 @@ public class NetworkAcl implements Serializable, Cloneable {
      * 
      * @param associations
      *        Any associations between the network ACL and one or more subnets
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NetworkAcl withAssociations(
-            java.util.Collection<NetworkAclAssociation> associations) {
+    public NetworkAcl withAssociations(java.util.Collection<NetworkAclAssociation> associations) {
         setAssociations(associations);
         return this;
     }
@@ -391,16 +374,14 @@ public class NetworkAcl implements Serializable, Cloneable {
      * Any tags assigned to the network ACL.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        Any tags assigned to the network ACL.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAcl withTags(Tag... tags) {
@@ -420,8 +401,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * 
      * @param tags
      *        Any tags assigned to the network ACL.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAcl withTags(java.util.Collection<Tag> tags) {
@@ -430,8 +410,7 @@ public class NetworkAcl implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -469,33 +448,27 @@ public class NetworkAcl implements Serializable, Cloneable {
         NetworkAcl other = (NetworkAcl) obj;
         if (other.getNetworkAclId() == null ^ this.getNetworkAclId() == null)
             return false;
-        if (other.getNetworkAclId() != null
-                && other.getNetworkAclId().equals(this.getNetworkAclId()) == false)
+        if (other.getNetworkAclId() != null && other.getNetworkAclId().equals(this.getNetworkAclId()) == false)
             return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         if (other.getIsDefault() == null ^ this.getIsDefault() == null)
             return false;
-        if (other.getIsDefault() != null
-                && other.getIsDefault().equals(this.getIsDefault()) == false)
+        if (other.getIsDefault() != null && other.getIsDefault().equals(this.getIsDefault()) == false)
             return false;
         if (other.getEntries() == null ^ this.getEntries() == null)
             return false;
-        if (other.getEntries() != null
-                && other.getEntries().equals(this.getEntries()) == false)
+        if (other.getEntries() != null && other.getEntries().equals(this.getEntries()) == false)
             return false;
         if (other.getAssociations() == null ^ this.getAssociations() == null)
             return false;
-        if (other.getAssociations() != null
-                && other.getAssociations().equals(this.getAssociations()) == false)
+        if (other.getAssociations() != null && other.getAssociations().equals(this.getAssociations()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -505,22 +478,12 @@ public class NetworkAcl implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNetworkAclId() == null) ? 0 : getNetworkAclId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode
-                + ((getIsDefault() == null) ? 0 : getIsDefault().hashCode());
-        hashCode = prime * hashCode
-                + ((getEntries() == null) ? 0 : getEntries().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAssociations() == null) ? 0 : getAssociations()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getNetworkAclId() == null) ? 0 : getNetworkAclId().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getIsDefault() == null) ? 0 : getIsDefault().hashCode());
+        hashCode = prime * hashCode + ((getEntries() == null) ? 0 : getEntries().hashCode());
+        hashCode = prime * hashCode + ((getAssociations() == null) ? 0 : getAssociations().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -529,9 +492,7 @@ public class NetworkAcl implements Serializable, Cloneable {
         try {
             return (NetworkAcl) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

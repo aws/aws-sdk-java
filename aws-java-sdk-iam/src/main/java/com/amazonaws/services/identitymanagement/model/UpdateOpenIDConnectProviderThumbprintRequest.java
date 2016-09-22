@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -20,56 +18,47 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateOpenIDConnectProviderThumbprintRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateOpenIDConnectProviderThumbprintRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource object
-     * for which you want to update the thumbprint. You can get a list of OIDC
-     * provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the
+     * thumbprint. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String openIDConnectProviderArn;
     /**
      * <p>
-     * A list of certificate thumbprints that are associated with the specified
-     * IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>.
+     * A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more
+     * information, see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> thumbprintList;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource object
-     * for which you want to update the thumbprint. You can get a list of OIDC
-     * provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the
+     * thumbprint. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param openIDConnectProviderArn
-     *        The Amazon Resource Name (ARN) of the IAM OIDC provider resource
-     *        object for which you want to update the thumbprint. You can get a
-     *        list of OIDC provider ARNs by using the
-     *        <a>ListOpenIDConnectProviders</a> action.</p>
+     *        The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the
+     *        thumbprint. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a>
+     *        action.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
-     *        the <i>AWS General Reference</i>.
+     *        For more information about ARNs, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
@@ -78,26 +67,22 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource object
-     * for which you want to update the thumbprint. You can get a list of OIDC
-     * provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the
+     * thumbprint. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM OIDC provider resource
-     *         object for which you want to update the thumbprint. You can get a
-     *         list of OIDC provider ARNs by using the
-     *         <a>ListOpenIDConnectProviders</a> action.</p>
+     * @return The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the
+     *         thumbprint. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a>
+     *         action.</p>
      *         <p>
-     *         For more information about ARNs, see <a href=
-     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
-     *         the <i>AWS General Reference</i>.
+     *         For more information about ARNs, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public String getOpenIDConnectProviderArn() {
@@ -106,47 +91,39 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource object
-     * for which you want to update the thumbprint. You can get a list of OIDC
-     * provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the
+     * thumbprint. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param openIDConnectProviderArn
-     *        The Amazon Resource Name (ARN) of the IAM OIDC provider resource
-     *        object for which you want to update the thumbprint. You can get a
-     *        list of OIDC provider ARNs by using the
-     *        <a>ListOpenIDConnectProviders</a> action.</p>
+     *        The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the
+     *        thumbprint. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a>
+     *        action.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
-     *        the <i>AWS General Reference</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information about ARNs, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateOpenIDConnectProviderThumbprintRequest withOpenIDConnectProviderArn(
-            String openIDConnectProviderArn) {
+    public UpdateOpenIDConnectProviderThumbprintRequest withOpenIDConnectProviderArn(String openIDConnectProviderArn) {
         setOpenIDConnectProviderArn(openIDConnectProviderArn);
         return this;
     }
 
     /**
      * <p>
-     * A list of certificate thumbprints that are associated with the specified
-     * IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>.
+     * A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more
+     * information, see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
-     * @return A list of certificate thumbprints that are associated with the
-     *         specified IAM OpenID Connect provider. For more information, see
-     *         <a>CreateOpenIDConnectProvider</a>.
+     * @return A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For
+     *         more information, see <a>CreateOpenIDConnectProvider</a>.
      */
 
     public java.util.List<String> getThumbprintList() {
@@ -158,15 +135,13 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
 
     /**
      * <p>
-     * A list of certificate thumbprints that are associated with the specified
-     * IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>.
+     * A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more
+     * information, see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
      * @param thumbprintList
-     *        A list of certificate thumbprints that are associated with the
-     *        specified IAM OpenID Connect provider. For more information, see
-     *        <a>CreateOpenIDConnectProvider</a>.
+     *        A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For
+     *        more information, see <a>CreateOpenIDConnectProvider</a>.
      */
 
     public void setThumbprintList(java.util.Collection<String> thumbprintList) {
@@ -175,36 +150,29 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
             return;
         }
 
-        this.thumbprintList = new com.amazonaws.internal.SdkInternalList<String>(
-                thumbprintList);
+        this.thumbprintList = new com.amazonaws.internal.SdkInternalList<String>(thumbprintList);
     }
 
     /**
      * <p>
-     * A list of certificate thumbprints that are associated with the specified
-     * IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>.
+     * A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more
+     * information, see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setThumbprintList(java.util.Collection)} or
-     * {@link #withThumbprintList(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setThumbprintList(java.util.Collection)} or {@link #withThumbprintList(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param thumbprintList
-     *        A list of certificate thumbprints that are associated with the
-     *        specified IAM OpenID Connect provider. For more information, see
-     *        <a>CreateOpenIDConnectProvider</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For
+     *        more information, see <a>CreateOpenIDConnectProvider</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateOpenIDConnectProviderThumbprintRequest withThumbprintList(
-            String... thumbprintList) {
+    public UpdateOpenIDConnectProviderThumbprintRequest withThumbprintList(String... thumbprintList) {
         if (this.thumbprintList == null) {
-            setThumbprintList(new com.amazonaws.internal.SdkInternalList<String>(
-                    thumbprintList.length));
+            setThumbprintList(new com.amazonaws.internal.SdkInternalList<String>(thumbprintList.length));
         }
         for (String ele : thumbprintList) {
             this.thumbprintList.add(ele);
@@ -214,28 +182,23 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
 
     /**
      * <p>
-     * A list of certificate thumbprints that are associated with the specified
-     * IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>.
+     * A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more
+     * information, see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
      * @param thumbprintList
-     *        A list of certificate thumbprints that are associated with the
-     *        specified IAM OpenID Connect provider. For more information, see
-     *        <a>CreateOpenIDConnectProvider</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For
+     *        more information, see <a>CreateOpenIDConnectProvider</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateOpenIDConnectProviderThumbprintRequest withThumbprintList(
-            java.util.Collection<String> thumbprintList) {
+    public UpdateOpenIDConnectProviderThumbprintRequest withThumbprintList(java.util.Collection<String> thumbprintList) {
         setThumbprintList(thumbprintList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -246,8 +209,7 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOpenIDConnectProviderArn() != null)
-            sb.append("OpenIDConnectProviderArn: "
-                    + getOpenIDConnectProviderArn() + ",");
+            sb.append("OpenIDConnectProviderArn: " + getOpenIDConnectProviderArn() + ",");
         if (getThumbprintList() != null)
             sb.append("ThumbprintList: " + getThumbprintList());
         sb.append("}");
@@ -264,18 +226,13 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
         if (obj instanceof UpdateOpenIDConnectProviderThumbprintRequest == false)
             return false;
         UpdateOpenIDConnectProviderThumbprintRequest other = (UpdateOpenIDConnectProviderThumbprintRequest) obj;
-        if (other.getOpenIDConnectProviderArn() == null
-                ^ this.getOpenIDConnectProviderArn() == null)
+        if (other.getOpenIDConnectProviderArn() == null ^ this.getOpenIDConnectProviderArn() == null)
             return false;
-        if (other.getOpenIDConnectProviderArn() != null
-                && other.getOpenIDConnectProviderArn().equals(
-                        this.getOpenIDConnectProviderArn()) == false)
+        if (other.getOpenIDConnectProviderArn() != null && other.getOpenIDConnectProviderArn().equals(this.getOpenIDConnectProviderArn()) == false)
             return false;
-        if (other.getThumbprintList() == null
-                ^ this.getThumbprintList() == null)
+        if (other.getThumbprintList() == null ^ this.getThumbprintList() == null)
             return false;
-        if (other.getThumbprintList() != null
-                && other.getThumbprintList().equals(this.getThumbprintList()) == false)
+        if (other.getThumbprintList() != null && other.getThumbprintList().equals(this.getThumbprintList()) == false)
             return false;
         return true;
     }
@@ -285,14 +242,8 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getOpenIDConnectProviderArn() == null) ? 0
-                        : getOpenIDConnectProviderArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getThumbprintList() == null) ? 0 : getThumbprintList()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getOpenIDConnectProviderArn() == null) ? 0 : getOpenIDConnectProviderArn().hashCode());
+        hashCode = prime * hashCode + ((getThumbprintList() == null) ? 0 : getThumbprintList().hashCode());
         return hashCode;
     }
 

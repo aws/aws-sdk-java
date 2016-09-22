@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -68,8 +66,7 @@ public class ChefConfiguration implements Serializable, Cloneable {
      * 
      * @param manageBerkshelf
      *        Whether to enable Berkshelf.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ChefConfiguration withManageBerkshelf(Boolean manageBerkshelf) {
@@ -121,8 +118,7 @@ public class ChefConfiguration implements Serializable, Cloneable {
      * 
      * @param berkshelfVersion
      *        The Berkshelf version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ChefConfiguration withBerkshelfVersion(String berkshelfVersion) {
@@ -131,8 +127,7 @@ public class ChefConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -160,18 +155,13 @@ public class ChefConfiguration implements Serializable, Cloneable {
         if (obj instanceof ChefConfiguration == false)
             return false;
         ChefConfiguration other = (ChefConfiguration) obj;
-        if (other.getManageBerkshelf() == null
-                ^ this.getManageBerkshelf() == null)
+        if (other.getManageBerkshelf() == null ^ this.getManageBerkshelf() == null)
             return false;
-        if (other.getManageBerkshelf() != null
-                && other.getManageBerkshelf().equals(this.getManageBerkshelf()) == false)
+        if (other.getManageBerkshelf() != null && other.getManageBerkshelf().equals(this.getManageBerkshelf()) == false)
             return false;
-        if (other.getBerkshelfVersion() == null
-                ^ this.getBerkshelfVersion() == null)
+        if (other.getBerkshelfVersion() == null ^ this.getBerkshelfVersion() == null)
             return false;
-        if (other.getBerkshelfVersion() != null
-                && other.getBerkshelfVersion().equals(
-                        this.getBerkshelfVersion()) == false)
+        if (other.getBerkshelfVersion() != null && other.getBerkshelfVersion().equals(this.getBerkshelfVersion()) == false)
             return false;
         return true;
     }
@@ -181,14 +171,8 @@ public class ChefConfiguration implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getManageBerkshelf() == null) ? 0 : getManageBerkshelf()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBerkshelfVersion() == null) ? 0 : getBerkshelfVersion()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getManageBerkshelf() == null) ? 0 : getManageBerkshelf().hashCode());
+        hashCode = prime * hashCode + ((getBerkshelfVersion() == null) ? 0 : getBerkshelfVersion().hashCode());
         return hashCode;
     }
 
@@ -197,9 +181,7 @@ public class ChefConfiguration implements Serializable, Cloneable {
         try {
             return (ChefConfiguration) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

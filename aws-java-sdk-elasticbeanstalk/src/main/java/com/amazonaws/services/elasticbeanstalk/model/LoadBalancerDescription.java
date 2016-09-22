@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -74,8 +72,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @param loadBalancerName
      *        The name of the LoadBalancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancerDescription withLoadBalancerName(String loadBalancerName) {
@@ -115,8 +112,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @param domain
      *        The domain name of the LoadBalancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancerDescription withDomain(String domain) {
@@ -154,8 +150,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
             return;
         }
 
-        this.listeners = new com.amazonaws.internal.SdkInternalList<Listener>(
-                listeners);
+        this.listeners = new com.amazonaws.internal.SdkInternalList<Listener>(listeners);
     }
 
     /**
@@ -163,22 +158,19 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * A list of Listeners used by the LoadBalancer.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setListeners(java.util.Collection)} or
-     * {@link #withListeners(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setListeners(java.util.Collection)} or {@link #withListeners(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param listeners
      *        A list of Listeners used by the LoadBalancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancerDescription withListeners(Listener... listeners) {
         if (this.listeners == null) {
-            setListeners(new com.amazonaws.internal.SdkInternalList<Listener>(
-                    listeners.length));
+            setListeners(new com.amazonaws.internal.SdkInternalList<Listener>(listeners.length));
         }
         for (Listener ele : listeners) {
             this.listeners.add(ele);
@@ -193,19 +185,16 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @param listeners
      *        A list of Listeners used by the LoadBalancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LoadBalancerDescription withListeners(
-            java.util.Collection<Listener> listeners) {
+    public LoadBalancerDescription withListeners(java.util.Collection<Listener> listeners) {
         setListeners(listeners);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -235,22 +224,17 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
         if (obj instanceof LoadBalancerDescription == false)
             return false;
         LoadBalancerDescription other = (LoadBalancerDescription) obj;
-        if (other.getLoadBalancerName() == null
-                ^ this.getLoadBalancerName() == null)
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null)
             return false;
-        if (other.getLoadBalancerName() != null
-                && other.getLoadBalancerName().equals(
-                        this.getLoadBalancerName()) == false)
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false)
             return false;
         if (other.getDomain() == null ^ this.getDomain() == null)
             return false;
-        if (other.getDomain() != null
-                && other.getDomain().equals(this.getDomain()) == false)
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
         if (other.getListeners() == null ^ this.getListeners() == null)
             return false;
-        if (other.getListeners() != null
-                && other.getListeners().equals(this.getListeners()) == false)
+        if (other.getListeners() != null && other.getListeners().equals(this.getListeners()) == false)
             return false;
         return true;
     }
@@ -260,14 +244,9 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getDomain() == null) ? 0 : getDomain().hashCode());
-        hashCode = prime * hashCode
-                + ((getListeners() == null) ? 0 : getListeners().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getListeners() == null) ? 0 : getListeners().hashCode());
         return hashCode;
     }
 
@@ -276,9 +255,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
         try {
             return (LoadBalancerDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

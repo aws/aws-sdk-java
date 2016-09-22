@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.snowball.model;
 
@@ -19,27 +17,22 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeAddressResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeAddressResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The address that you want the Snowball or Snowballs associated with a
-     * specific job to be shipped to.
+     * The address that you want the Snowball or Snowballs associated with a specific job to be shipped to.
      * </p>
      */
     private Address address;
 
     /**
      * <p>
-     * The address that you want the Snowball or Snowballs associated with a
-     * specific job to be shipped to.
+     * The address that you want the Snowball or Snowballs associated with a specific job to be shipped to.
      * </p>
      * 
      * @param address
-     *        The address that you want the Snowball or Snowballs associated
-     *        with a specific job to be shipped to.
+     *        The address that you want the Snowball or Snowballs associated with a specific job to be shipped to.
      */
 
     public void setAddress(Address address) {
@@ -48,12 +41,10 @@ public class DescribeAddressResult extends
 
     /**
      * <p>
-     * The address that you want the Snowball or Snowballs associated with a
-     * specific job to be shipped to.
+     * The address that you want the Snowball or Snowballs associated with a specific job to be shipped to.
      * </p>
      * 
-     * @return The address that you want the Snowball or Snowballs associated
-     *         with a specific job to be shipped to.
+     * @return The address that you want the Snowball or Snowballs associated with a specific job to be shipped to.
      */
 
     public Address getAddress() {
@@ -62,15 +53,12 @@ public class DescribeAddressResult extends
 
     /**
      * <p>
-     * The address that you want the Snowball or Snowballs associated with a
-     * specific job to be shipped to.
+     * The address that you want the Snowball or Snowballs associated with a specific job to be shipped to.
      * </p>
      * 
      * @param address
-     *        The address that you want the Snowball or Snowballs associated
-     *        with a specific job to be shipped to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The address that you want the Snowball or Snowballs associated with a specific job to be shipped to.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAddressResult withAddress(Address address) {
@@ -79,8 +67,7 @@ public class DescribeAddressResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -108,8 +95,7 @@ public class DescribeAddressResult extends
         DescribeAddressResult other = (DescribeAddressResult) obj;
         if (other.getAddress() == null ^ this.getAddress() == null)
             return false;
-        if (other.getAddress() != null
-                && other.getAddress().equals(this.getAddress()) == false)
+        if (other.getAddress() != null && other.getAddress().equals(this.getAddress()) == false)
             return false;
         return true;
     }
@@ -119,8 +105,7 @@ public class DescribeAddressResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAddress() == null) ? 0 : getAddress().hashCode());
+        hashCode = prime * hashCode + ((getAddress() == null) ? 0 : getAddress().hashCode());
         return hashCode;
     }
 
@@ -129,9 +114,7 @@ public class DescribeAddressResult extends
         try {
             return (DescribeAddressResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

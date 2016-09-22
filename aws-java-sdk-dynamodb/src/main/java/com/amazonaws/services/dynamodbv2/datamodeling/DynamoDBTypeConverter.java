@@ -39,22 +39,29 @@ public interface DynamoDBTypeConverter<S extends Object, T extends Object> {
      */
     @SdkInternalApi
     static abstract class AbstractConverter<S,T> implements DynamoDBTypeConverter<S,T> {
-        protected AbstractConverter() {
+        public static <S,U,T> ExtendedConverter<S,U,T> join(DynamoDBTypeConverter<S,U> source, DynamoDBTypeConverter<U,T> target) {
+            return new ExtendedConverter<S,U,T>(source, target);
         }
 
-        public static <S,U,T> DynamoDBTypeConverter<S,T> join(DynamoDBTypeConverter<S,U> source, DynamoDBTypeConverter<U,T> target) {
-            return new ExtendedConverter<S,U,T>(nullSafe(source), nullSafe(target));
-        }
-
-        public static <S,T> DynamoDBTypeConverter<S,T> nullSafe(DynamoDBTypeConverter<S,T> converter) {
+        public static <S,T> NullSafeConverter<S,T> nullSafe(DynamoDBTypeConverter<S,T> converter) {
             return new NullSafeConverter<S,T>(converter);
         }
 
-        public <U> DynamoDBTypeConverter<S,U> join(DynamoDBTypeConverter<T,U> target) {
+        public <U> DynamoDBTypeConverter<S,U> joinAll(DynamoDBTypeConverter<T,U> ... targets) {
+            AbstractConverter<S,U> converter = (AbstractConverter<S,U>)nullSafe();
+            for (DynamoDBTypeConverter<T,U> target : targets) {
+                if (target != null) {
+                    converter = converter.join((DynamoDBTypeConverter<U,U>)nullSafe(target));
+                }
+            }
+            return converter;
+        }
+
+        public <U> ExtendedConverter<S,T,U> join(DynamoDBTypeConverter<T,U> target) {
             return AbstractConverter.<S,T,U>join(this, target);
         }
 
-        public DynamoDBTypeConverter<S,T> nullSafe() {
+        public NullSafeConverter<S,T> nullSafe() {
             return AbstractConverter.<S,T>nullSafe(this);
         }
     }
@@ -85,7 +92,7 @@ public interface DynamoDBTypeConverter<S extends Object, T extends Object> {
     /**
      * A general purpose delegating converter.
      */
-    public static abstract class DelegateConverter<S,T> extends AbstractConverter<S,T> {
+    public static class DelegateConverter<S,T> extends AbstractConverter<S,T> {
         private final DynamoDBTypeConverter<S,T> delegate;
 
         public DelegateConverter(DynamoDBTypeConverter<S,T> delegate) {

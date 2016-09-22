@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -61,8 +59,7 @@ public class ImageAttribute implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * Indicates whether enhanced networking with the Intel 82599 Virtual
-     * Function interface is enabled.
+     * Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      */
     private String sriovNetSupport;
@@ -105,8 +102,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @param imageId
      *        The ID of the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageAttribute withImageId(String imageId) {
@@ -138,15 +134,13 @@ public class ImageAttribute implements Serializable, Cloneable {
      *        One or more launch permissions.
      */
 
-    public void setLaunchPermissions(
-            java.util.Collection<LaunchPermission> launchPermissions) {
+    public void setLaunchPermissions(java.util.Collection<LaunchPermission> launchPermissions) {
         if (launchPermissions == null) {
             this.launchPermissions = null;
             return;
         }
 
-        this.launchPermissions = new com.amazonaws.internal.SdkInternalList<LaunchPermission>(
-                launchPermissions);
+        this.launchPermissions = new com.amazonaws.internal.SdkInternalList<LaunchPermission>(launchPermissions);
     }
 
     /**
@@ -154,23 +148,19 @@ public class ImageAttribute implements Serializable, Cloneable {
      * One or more launch permissions.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLaunchPermissions(java.util.Collection)} or
-     * {@link #withLaunchPermissions(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLaunchPermissions(java.util.Collection)} or {@link #withLaunchPermissions(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param launchPermissions
      *        One or more launch permissions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImageAttribute withLaunchPermissions(
-            LaunchPermission... launchPermissions) {
+    public ImageAttribute withLaunchPermissions(LaunchPermission... launchPermissions) {
         if (this.launchPermissions == null) {
-            setLaunchPermissions(new com.amazonaws.internal.SdkInternalList<LaunchPermission>(
-                    launchPermissions.length));
+            setLaunchPermissions(new com.amazonaws.internal.SdkInternalList<LaunchPermission>(launchPermissions.length));
         }
         for (LaunchPermission ele : launchPermissions) {
             this.launchPermissions.add(ele);
@@ -185,12 +175,10 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @param launchPermissions
      *        One or more launch permissions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImageAttribute withLaunchPermissions(
-            java.util.Collection<LaunchPermission> launchPermissions) {
+    public ImageAttribute withLaunchPermissions(java.util.Collection<LaunchPermission> launchPermissions) {
         setLaunchPermissions(launchPermissions);
         return this;
     }
@@ -225,8 +213,7 @@ public class ImageAttribute implements Serializable, Cloneable {
             return;
         }
 
-        this.productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>(
-                productCodes);
+        this.productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>(productCodes);
     }
 
     /**
@@ -234,22 +221,19 @@ public class ImageAttribute implements Serializable, Cloneable {
      * One or more product codes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setProductCodes(java.util.Collection)} or
-     * {@link #withProductCodes(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProductCodes(java.util.Collection)} or {@link #withProductCodes(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param productCodes
      *        One or more product codes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageAttribute withProductCodes(ProductCode... productCodes) {
         if (this.productCodes == null) {
-            setProductCodes(new com.amazonaws.internal.SdkInternalList<ProductCode>(
-                    productCodes.length));
+            setProductCodes(new com.amazonaws.internal.SdkInternalList<ProductCode>(productCodes.length));
         }
         for (ProductCode ele : productCodes) {
             this.productCodes.add(ele);
@@ -264,12 +248,10 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @param productCodes
      *        One or more product codes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImageAttribute withProductCodes(
-            java.util.Collection<ProductCode> productCodes) {
+    public ImageAttribute withProductCodes(java.util.Collection<ProductCode> productCodes) {
         setProductCodes(productCodes);
         return this;
     }
@@ -306,8 +288,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @param kernelId
      *        The kernel ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageAttribute withKernelId(String kernelId) {
@@ -347,8 +328,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @param ramdiskId
      *        The RAM disk ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageAttribute withRamdiskId(String ramdiskId) {
@@ -388,8 +368,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @param description
      *        A description for the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageAttribute withDescription(String description) {
@@ -399,13 +378,11 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether enhanced networking with the Intel 82599 Virtual
-     * Function interface is enabled.
+     * Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      * 
      * @param sriovNetSupport
-     *        Indicates whether enhanced networking with the Intel 82599 Virtual
-     *        Function interface is enabled.
+     *        Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      */
 
     public void setSriovNetSupport(String sriovNetSupport) {
@@ -414,12 +391,10 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether enhanced networking with the Intel 82599 Virtual
-     * Function interface is enabled.
+     * Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      * 
-     * @return Indicates whether enhanced networking with the Intel 82599
-     *         Virtual Function interface is enabled.
+     * @return Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      */
 
     public String getSriovNetSupport() {
@@ -428,15 +403,12 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether enhanced networking with the Intel 82599 Virtual
-     * Function interface is enabled.
+     * Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      * 
      * @param sriovNetSupport
-     *        Indicates whether enhanced networking with the Intel 82599 Virtual
-     *        Function interface is enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageAttribute withSriovNetSupport(String sriovNetSupport) {
@@ -468,15 +440,13 @@ public class ImageAttribute implements Serializable, Cloneable {
      *        One or more block device mapping entries.
      */
 
-    public void setBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
             return;
         }
 
-        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                blockDeviceMappings);
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings);
     }
 
     /**
@@ -484,23 +454,19 @@ public class ImageAttribute implements Serializable, Cloneable {
      * One or more block device mapping entries.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
-     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param blockDeviceMappings
      *        One or more block device mapping entries.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImageAttribute withBlockDeviceMappings(
-            BlockDeviceMapping... blockDeviceMappings) {
+    public ImageAttribute withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
-            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                    blockDeviceMappings.length));
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings.length));
         }
         for (BlockDeviceMapping ele : blockDeviceMappings) {
             this.blockDeviceMappings.add(ele);
@@ -515,19 +481,16 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @param blockDeviceMappings
      *        One or more block device mapping entries.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImageAttribute withBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public ImageAttribute withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -569,48 +532,35 @@ public class ImageAttribute implements Serializable, Cloneable {
         ImageAttribute other = (ImageAttribute) obj;
         if (other.getImageId() == null ^ this.getImageId() == null)
             return false;
-        if (other.getImageId() != null
-                && other.getImageId().equals(this.getImageId()) == false)
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
             return false;
-        if (other.getLaunchPermissions() == null
-                ^ this.getLaunchPermissions() == null)
+        if (other.getLaunchPermissions() == null ^ this.getLaunchPermissions() == null)
             return false;
-        if (other.getLaunchPermissions() != null
-                && other.getLaunchPermissions().equals(
-                        this.getLaunchPermissions()) == false)
+        if (other.getLaunchPermissions() != null && other.getLaunchPermissions().equals(this.getLaunchPermissions()) == false)
             return false;
         if (other.getProductCodes() == null ^ this.getProductCodes() == null)
             return false;
-        if (other.getProductCodes() != null
-                && other.getProductCodes().equals(this.getProductCodes()) == false)
+        if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false)
             return false;
         if (other.getKernelId() == null ^ this.getKernelId() == null)
             return false;
-        if (other.getKernelId() != null
-                && other.getKernelId().equals(this.getKernelId()) == false)
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
             return false;
         if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
             return false;
-        if (other.getRamdiskId() != null
-                && other.getRamdiskId().equals(this.getRamdiskId()) == false)
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getSriovNetSupport() == null
-                ^ this.getSriovNetSupport() == null)
+        if (other.getSriovNetSupport() == null ^ this.getSriovNetSupport() == null)
             return false;
-        if (other.getSriovNetSupport() != null
-                && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
+        if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
             return false;
-        if (other.getBlockDeviceMappings() == null
-                ^ this.getBlockDeviceMappings() == null)
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
             return false;
-        if (other.getBlockDeviceMappings() != null
-                && other.getBlockDeviceMappings().equals(
-                        this.getBlockDeviceMappings()) == false)
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
         return true;
     }
@@ -620,31 +570,14 @@ public class ImageAttribute implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getImageId() == null) ? 0 : getImageId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLaunchPermissions() == null) ? 0
-                        : getLaunchPermissions().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProductCodes() == null) ? 0 : getProductCodes()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
-        hashCode = prime * hashCode
-                + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBlockDeviceMappings() == null) ? 0
-                        : getBlockDeviceMappings().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode + ((getLaunchPermissions() == null) ? 0 : getLaunchPermissions().hashCode());
+        hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode());
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode());
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
         return hashCode;
     }
 
@@ -653,9 +586,7 @@ public class ImageAttribute implements Serializable, Cloneable {
         try {
             return (ImageAttribute) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

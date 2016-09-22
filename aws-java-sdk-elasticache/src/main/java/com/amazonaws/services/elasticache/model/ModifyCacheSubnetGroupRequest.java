@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -22,18 +20,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>ModifyCacheSubnetGroup</i> action.
  * </p>
  */
-public class ModifyCacheSubnetGroupRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ModifyCacheSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name for the cache subnet group. This value is stored as a lowercase
-     * string.
+     * The name for the cache subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters or
-     * hyphens.
+     * Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      * </p>
      * <p>
      * Example: <code>mysubnetgroup</code>
@@ -55,23 +49,19 @@ public class ModifyCacheSubnetGroupRequest extends
 
     /**
      * <p>
-     * The name for the cache subnet group. This value is stored as a lowercase
-     * string.
+     * The name for the cache subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters or
-     * hyphens.
+     * Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      * </p>
      * <p>
      * Example: <code>mysubnetgroup</code>
      * </p>
      * 
      * @param cacheSubnetGroupName
-     *        The name for the cache subnet group. This value is stored as a
-     *        lowercase string.</p>
+     *        The name for the cache subnet group. This value is stored as a lowercase string.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters
-     *        or hyphens.
+     *        Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      *        </p>
      *        <p>
      *        Example: <code>mysubnetgroup</code>
@@ -83,22 +73,18 @@ public class ModifyCacheSubnetGroupRequest extends
 
     /**
      * <p>
-     * The name for the cache subnet group. This value is stored as a lowercase
-     * string.
+     * The name for the cache subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters or
-     * hyphens.
+     * Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      * </p>
      * <p>
      * Example: <code>mysubnetgroup</code>
      * </p>
      * 
-     * @return The name for the cache subnet group. This value is stored as a
-     *         lowercase string.</p>
+     * @return The name for the cache subnet group. This value is stored as a lowercase string.</p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric
-     *         characters or hyphens.
+     *         Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      *         </p>
      *         <p>
      *         Example: <code>mysubnetgroup</code>
@@ -110,32 +96,26 @@ public class ModifyCacheSubnetGroupRequest extends
 
     /**
      * <p>
-     * The name for the cache subnet group. This value is stored as a lowercase
-     * string.
+     * The name for the cache subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters or
-     * hyphens.
+     * Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      * </p>
      * <p>
      * Example: <code>mysubnetgroup</code>
      * </p>
      * 
      * @param cacheSubnetGroupName
-     *        The name for the cache subnet group. This value is stored as a
-     *        lowercase string.</p>
+     *        The name for the cache subnet group. This value is stored as a lowercase string.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters
-     *        or hyphens.
+     *        Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      *        </p>
      *        <p>
      *        Example: <code>mysubnetgroup</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyCacheSubnetGroupRequest withCacheSubnetGroupName(
-            String cacheSubnetGroupName) {
+    public ModifyCacheSubnetGroupRequest withCacheSubnetGroupName(String cacheSubnetGroupName) {
         setCacheSubnetGroupName(cacheSubnetGroupName);
         return this;
     }
@@ -149,8 +129,7 @@ public class ModifyCacheSubnetGroupRequest extends
      *        A description for the cache subnet group.
      */
 
-    public void setCacheSubnetGroupDescription(
-            String cacheSubnetGroupDescription) {
+    public void setCacheSubnetGroupDescription(String cacheSubnetGroupDescription) {
         this.cacheSubnetGroupDescription = cacheSubnetGroupDescription;
     }
 
@@ -173,12 +152,10 @@ public class ModifyCacheSubnetGroupRequest extends
      * 
      * @param cacheSubnetGroupDescription
      *        A description for the cache subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyCacheSubnetGroupRequest withCacheSubnetGroupDescription(
-            String cacheSubnetGroupDescription) {
+    public ModifyCacheSubnetGroupRequest withCacheSubnetGroupDescription(String cacheSubnetGroupDescription) {
         setCacheSubnetGroupDescription(cacheSubnetGroupDescription);
         return this;
     }
@@ -213,8 +190,7 @@ public class ModifyCacheSubnetGroupRequest extends
             return;
         }
 
-        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(
-                subnetIds);
+        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(subnetIds);
     }
 
     /**
@@ -222,22 +198,19 @@ public class ModifyCacheSubnetGroupRequest extends
      * The EC2 subnet IDs for the cache subnet group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnetIds(java.util.Collection)} or
-     * {@link #withSubnetIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param subnetIds
      *        The EC2 subnet IDs for the cache subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyCacheSubnetGroupRequest withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
-            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    subnetIds.length));
+            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(subnetIds.length));
         }
         for (String ele : subnetIds) {
             this.subnetIds.add(ele);
@@ -252,19 +225,16 @@ public class ModifyCacheSubnetGroupRequest extends
      * 
      * @param subnetIds
      *        The EC2 subnet IDs for the cache subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyCacheSubnetGroupRequest withSubnetIds(
-            java.util.Collection<String> subnetIds) {
+    public ModifyCacheSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -275,11 +245,9 @@ public class ModifyCacheSubnetGroupRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheSubnetGroupName() != null)
-            sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName()
-                    + ",");
+            sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");
         if (getCacheSubnetGroupDescription() != null)
-            sb.append("CacheSubnetGroupDescription: "
-                    + getCacheSubnetGroupDescription() + ",");
+            sb.append("CacheSubnetGroupDescription: " + getCacheSubnetGroupDescription() + ",");
         if (getSubnetIds() != null)
             sb.append("SubnetIds: " + getSubnetIds());
         sb.append("}");
@@ -296,24 +264,17 @@ public class ModifyCacheSubnetGroupRequest extends
         if (obj instanceof ModifyCacheSubnetGroupRequest == false)
             return false;
         ModifyCacheSubnetGroupRequest other = (ModifyCacheSubnetGroupRequest) obj;
-        if (other.getCacheSubnetGroupName() == null
-                ^ this.getCacheSubnetGroupName() == null)
+        if (other.getCacheSubnetGroupName() == null ^ this.getCacheSubnetGroupName() == null)
             return false;
-        if (other.getCacheSubnetGroupName() != null
-                && other.getCacheSubnetGroupName().equals(
-                        this.getCacheSubnetGroupName()) == false)
+        if (other.getCacheSubnetGroupName() != null && other.getCacheSubnetGroupName().equals(this.getCacheSubnetGroupName()) == false)
             return false;
-        if (other.getCacheSubnetGroupDescription() == null
-                ^ this.getCacheSubnetGroupDescription() == null)
+        if (other.getCacheSubnetGroupDescription() == null ^ this.getCacheSubnetGroupDescription() == null)
             return false;
-        if (other.getCacheSubnetGroupDescription() != null
-                && other.getCacheSubnetGroupDescription().equals(
-                        this.getCacheSubnetGroupDescription()) == false)
+        if (other.getCacheSubnetGroupDescription() != null && other.getCacheSubnetGroupDescription().equals(this.getCacheSubnetGroupDescription()) == false)
             return false;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
-        if (other.getSubnetIds() != null
-                && other.getSubnetIds().equals(this.getSubnetIds()) == false)
+        if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
             return false;
         return true;
     }
@@ -323,16 +284,9 @@ public class ModifyCacheSubnetGroupRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCacheSubnetGroupName() == null) ? 0
-                        : getCacheSubnetGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheSubnetGroupDescription() == null) ? 0
-                        : getCacheSubnetGroupDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
+        hashCode = prime * hashCode + ((getCacheSubnetGroupName() == null) ? 0 : getCacheSubnetGroupName().hashCode());
+        hashCode = prime * hashCode + ((getCacheSubnetGroupDescription() == null) ? 0 : getCacheSubnetGroupDescription().hashCode());
+        hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         return hashCode;
     }
 

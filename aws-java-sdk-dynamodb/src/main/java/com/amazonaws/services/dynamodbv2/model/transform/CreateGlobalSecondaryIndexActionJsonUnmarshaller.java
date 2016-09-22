@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * CreateGlobalSecondaryIndexAction JSON Unmarshaller
  */
-public class CreateGlobalSecondaryIndexActionJsonUnmarshaller implements
-        Unmarshaller<CreateGlobalSecondaryIndexAction, JsonUnmarshallerContext> {
+public class CreateGlobalSecondaryIndexActionJsonUnmarshaller implements Unmarshaller<CreateGlobalSecondaryIndexAction, JsonUnmarshallerContext> {
 
-    public CreateGlobalSecondaryIndexAction unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public CreateGlobalSecondaryIndexAction unmarshall(JsonUnmarshallerContext context) throws Exception {
         CreateGlobalSecondaryIndexAction createGlobalSecondaryIndexAction = new CreateGlobalSecondaryIndexAction();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,33 +49,23 @@ public class CreateGlobalSecondaryIndexActionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IndexName", targetDepth)) {
                     context.nextToken();
-                    createGlobalSecondaryIndexAction.setIndexName(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    createGlobalSecondaryIndexAction.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
                     context.nextToken();
-                    createGlobalSecondaryIndexAction
-                            .setKeySchema(new ListUnmarshaller<KeySchemaElement>(
-                                    KeySchemaElementJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    createGlobalSecondaryIndexAction.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Projection", targetDepth)) {
                     context.nextToken();
-                    createGlobalSecondaryIndexAction
-                            .setProjection(ProjectionJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createGlobalSecondaryIndexAction.setProjection(ProjectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context
-                        .testExpression("ProvisionedThroughput", targetDepth)) {
+                if (context.testExpression("ProvisionedThroughput", targetDepth)) {
                     context.nextToken();
-                    createGlobalSecondaryIndexAction
-                            .setProvisionedThroughput(ProvisionedThroughputJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createGlobalSecondaryIndexAction.setProvisionedThroughput(ProvisionedThroughputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

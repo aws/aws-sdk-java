@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ProductViewSummary JSON Unmarshaller
  */
-public class ProductViewSummaryJsonUnmarshaller implements
-        Unmarshaller<ProductViewSummary, JsonUnmarshallerContext> {
+public class ProductViewSummaryJsonUnmarshaller implements Unmarshaller<ProductViewSummary, JsonUnmarshallerContext> {
 
-    public ProductViewSummary unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ProductViewSummary unmarshall(JsonUnmarshallerContext context) throws Exception {
         ProductViewSummary productViewSummary = new ProductViewSummary();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,64 +49,50 @@ public class ProductViewSummaryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    productViewSummary.setId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    productViewSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductId", targetDepth)) {
                     context.nextToken();
-                    productViewSummary.setProductId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    productViewSummary.setProductId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    productViewSummary.setName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    productViewSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
                     context.nextToken();
-                    productViewSummary.setOwner(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    productViewSummary.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShortDescription", targetDepth)) {
                     context.nextToken();
-                    productViewSummary.setShortDescription(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    productViewSummary.setShortDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    productViewSummary.setType(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    productViewSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Distributor", targetDepth)) {
                     context.nextToken();
-                    productViewSummary.setDistributor(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    productViewSummary.setDistributor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HasDefaultPath", targetDepth)) {
                     context.nextToken();
-                    productViewSummary
-                            .setHasDefaultPath(context.getUnmarshaller(
-                                    Boolean.class).unmarshall(context));
+                    productViewSummary.setHasDefaultPath(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportEmail", targetDepth)) {
                     context.nextToken();
-                    productViewSummary.setSupportEmail(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    productViewSummary.setSupportEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportDescription", targetDepth)) {
                     context.nextToken();
-                    productViewSummary.setSupportDescription(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    productViewSummary.setSupportDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportUrl", targetDepth)) {
                     context.nextToken();
-                    productViewSummary.setSupportUrl(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    productViewSummary.setSupportUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

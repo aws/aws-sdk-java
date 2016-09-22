@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.snowball.model;
 
@@ -19,38 +17,32 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListJobsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListJobsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Each <code>JobListEntry</code> object contains a job's state, a job's ID,
-     * and a value that indicates whether the job is a job part, in the case of
-     * export jobs.
+     * Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the
+     * job is a job part, in the case of export jobs.
      * </p>
      */
     private java.util.List<JobListEntry> jobListEntries;
     /**
      * <p>
-     * HTTP requests are stateless. If you use this automatically generated
-     * <code>NextToken</code> value in your next <code>ListJobs</code> call,
-     * your returned <code>JobListEntry</code> objects will start from this
-     * point in the array.
+     * HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next
+     * <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the
+     * array.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Each <code>JobListEntry</code> object contains a job's state, a job's ID,
-     * and a value that indicates whether the job is a job part, in the case of
-     * export jobs.
+     * Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the
+     * job is a job part, in the case of export jobs.
      * </p>
      * 
-     * @return Each <code>JobListEntry</code> object contains a job's state, a
-     *         job's ID, and a value that indicates whether the job is a job
-     *         part, in the case of export jobs.
+     * @return Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates
+     *         whether the job is a job part, in the case of export jobs.
      */
 
     public java.util.List<JobListEntry> getJobListEntries() {
@@ -59,53 +51,44 @@ public class ListJobsResult extends
 
     /**
      * <p>
-     * Each <code>JobListEntry</code> object contains a job's state, a job's ID,
-     * and a value that indicates whether the job is a job part, in the case of
-     * export jobs.
+     * Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the
+     * job is a job part, in the case of export jobs.
      * </p>
      * 
      * @param jobListEntries
-     *        Each <code>JobListEntry</code> object contains a job's state, a
-     *        job's ID, and a value that indicates whether the job is a job
-     *        part, in the case of export jobs.
+     *        Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates
+     *        whether the job is a job part, in the case of export jobs.
      */
 
-    public void setJobListEntries(
-            java.util.Collection<JobListEntry> jobListEntries) {
+    public void setJobListEntries(java.util.Collection<JobListEntry> jobListEntries) {
         if (jobListEntries == null) {
             this.jobListEntries = null;
             return;
         }
 
-        this.jobListEntries = new java.util.ArrayList<JobListEntry>(
-                jobListEntries);
+        this.jobListEntries = new java.util.ArrayList<JobListEntry>(jobListEntries);
     }
 
     /**
      * <p>
-     * Each <code>JobListEntry</code> object contains a job's state, a job's ID,
-     * and a value that indicates whether the job is a job part, in the case of
-     * export jobs.
+     * Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the
+     * job is a job part, in the case of export jobs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setJobListEntries(java.util.Collection)} or
-     * {@link #withJobListEntries(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setJobListEntries(java.util.Collection)} or {@link #withJobListEntries(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param jobListEntries
-     *        Each <code>JobListEntry</code> object contains a job's state, a
-     *        job's ID, and a value that indicates whether the job is a job
-     *        part, in the case of export jobs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates
+     *        whether the job is a job part, in the case of export jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListJobsResult withJobListEntries(JobListEntry... jobListEntries) {
         if (this.jobListEntries == null) {
-            setJobListEntries(new java.util.ArrayList<JobListEntry>(
-                    jobListEntries.length));
+            setJobListEntries(new java.util.ArrayList<JobListEntry>(jobListEntries.length));
         }
         for (JobListEntry ele : jobListEntries) {
             this.jobListEntries.add(ele);
@@ -115,39 +98,32 @@ public class ListJobsResult extends
 
     /**
      * <p>
-     * Each <code>JobListEntry</code> object contains a job's state, a job's ID,
-     * and a value that indicates whether the job is a job part, in the case of
-     * export jobs.
+     * Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the
+     * job is a job part, in the case of export jobs.
      * </p>
      * 
      * @param jobListEntries
-     *        Each <code>JobListEntry</code> object contains a job's state, a
-     *        job's ID, and a value that indicates whether the job is a job
-     *        part, in the case of export jobs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates
+     *        whether the job is a job part, in the case of export jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListJobsResult withJobListEntries(
-            java.util.Collection<JobListEntry> jobListEntries) {
+    public ListJobsResult withJobListEntries(java.util.Collection<JobListEntry> jobListEntries) {
         setJobListEntries(jobListEntries);
         return this;
     }
 
     /**
      * <p>
-     * HTTP requests are stateless. If you use this automatically generated
-     * <code>NextToken</code> value in your next <code>ListJobs</code> call,
-     * your returned <code>JobListEntry</code> objects will start from this
-     * point in the array.
+     * HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next
+     * <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the
+     * array.
      * </p>
      * 
      * @param nextToken
-     *        HTTP requests are stateless. If you use this automatically
-     *        generated <code>NextToken</code> value in your next
-     *        <code>ListJobs</code> call, your returned
-     *        <code>JobListEntry</code> objects will start from this point in
-     *        the array.
+     *        HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your
+     *        next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this
+     *        point in the array.
      */
 
     public void setNextToken(String nextToken) {
@@ -156,17 +132,14 @@ public class ListJobsResult extends
 
     /**
      * <p>
-     * HTTP requests are stateless. If you use this automatically generated
-     * <code>NextToken</code> value in your next <code>ListJobs</code> call,
-     * your returned <code>JobListEntry</code> objects will start from this
-     * point in the array.
+     * HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next
+     * <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the
+     * array.
      * </p>
      * 
-     * @return HTTP requests are stateless. If you use this automatically
-     *         generated <code>NextToken</code> value in your next
-     *         <code>ListJobs</code> call, your returned
-     *         <code>JobListEntry</code> objects will start from this point in
-     *         the array.
+     * @return HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your
+     *         next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this
+     *         point in the array.
      */
 
     public String getNextToken() {
@@ -175,20 +148,16 @@ public class ListJobsResult extends
 
     /**
      * <p>
-     * HTTP requests are stateless. If you use this automatically generated
-     * <code>NextToken</code> value in your next <code>ListJobs</code> call,
-     * your returned <code>JobListEntry</code> objects will start from this
-     * point in the array.
+     * HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next
+     * <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the
+     * array.
      * </p>
      * 
      * @param nextToken
-     *        HTTP requests are stateless. If you use this automatically
-     *        generated <code>NextToken</code> value in your next
-     *        <code>ListJobs</code> call, your returned
-     *        <code>JobListEntry</code> objects will start from this point in
-     *        the array.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your
+     *        next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this
+     *        point in the array.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListJobsResult withNextToken(String nextToken) {
@@ -197,8 +166,7 @@ public class ListJobsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -226,16 +194,13 @@ public class ListJobsResult extends
         if (obj instanceof ListJobsResult == false)
             return false;
         ListJobsResult other = (ListJobsResult) obj;
-        if (other.getJobListEntries() == null
-                ^ this.getJobListEntries() == null)
+        if (other.getJobListEntries() == null ^ this.getJobListEntries() == null)
             return false;
-        if (other.getJobListEntries() != null
-                && other.getJobListEntries().equals(this.getJobListEntries()) == false)
+        if (other.getJobListEntries() != null && other.getJobListEntries().equals(this.getJobListEntries()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -245,12 +210,8 @@ public class ListJobsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getJobListEntries() == null) ? 0 : getJobListEntries()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getJobListEntries() == null) ? 0 : getJobListEntries().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -259,9 +220,7 @@ public class ListJobsResult extends
         try {
             return (ListJobsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

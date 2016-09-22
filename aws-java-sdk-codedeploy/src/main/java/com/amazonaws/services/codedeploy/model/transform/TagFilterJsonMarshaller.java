@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
@@ -34,34 +32,28 @@ public class TagFilterJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(TagFilter tagFilter,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(TagFilter tagFilter, StructuredJsonGenerator jsonGenerator) {
 
         if (tagFilter == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (tagFilter.getKey() != null) {
-                jsonGenerator.writeFieldName("Key").writeValue(
-                        tagFilter.getKey());
+                jsonGenerator.writeFieldName("Key").writeValue(tagFilter.getKey());
             }
             if (tagFilter.getValue() != null) {
-                jsonGenerator.writeFieldName("Value").writeValue(
-                        tagFilter.getValue());
+                jsonGenerator.writeFieldName("Value").writeValue(tagFilter.getValue());
             }
             if (tagFilter.getType() != null) {
-                jsonGenerator.writeFieldName("Type").writeValue(
-                        tagFilter.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(tagFilter.getType());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
@@ -35,59 +33,44 @@ import com.amazonaws.protocol.json.*;
 /**
  * CreateReplicationSubnetGroupRequest Marshaller
  */
-public class CreateReplicationSubnetGroupRequestMarshaller
-        implements
+public class CreateReplicationSubnetGroupRequestMarshaller implements
         Marshaller<Request<CreateReplicationSubnetGroupRequest>, CreateReplicationSubnetGroupRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public CreateReplicationSubnetGroupRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public CreateReplicationSubnetGroupRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<CreateReplicationSubnetGroupRequest> marshall(
-            CreateReplicationSubnetGroupRequest createReplicationSubnetGroupRequest) {
+    public Request<CreateReplicationSubnetGroupRequest> marshall(CreateReplicationSubnetGroupRequest createReplicationSubnetGroupRequest) {
 
         if (createReplicationSubnetGroupRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateReplicationSubnetGroupRequest> request = new DefaultRequest<CreateReplicationSubnetGroupRequest>(
-                createReplicationSubnetGroupRequest,
+        Request<CreateReplicationSubnetGroupRequest> request = new DefaultRequest<CreateReplicationSubnetGroupRequest>(createReplicationSubnetGroupRequest,
                 "AWSDatabaseMigrationService");
-        request.addHeader("X-Amz-Target",
-                "AmazonDMSv20160101.CreateReplicationSubnetGroup");
+        request.addHeader("X-Amz-Target", "AmazonDMSv20160101.CreateReplicationSubnetGroup");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
-            if (createReplicationSubnetGroupRequest
-                    .getReplicationSubnetGroupIdentifier() != null) {
-                jsonGenerator
-                        .writeFieldName("ReplicationSubnetGroupIdentifier")
-                        .writeValue(
-                                createReplicationSubnetGroupRequest
-                                        .getReplicationSubnetGroupIdentifier());
+            if (createReplicationSubnetGroupRequest.getReplicationSubnetGroupIdentifier() != null) {
+                jsonGenerator.writeFieldName("ReplicationSubnetGroupIdentifier").writeValue(
+                        createReplicationSubnetGroupRequest.getReplicationSubnetGroupIdentifier());
             }
-            if (createReplicationSubnetGroupRequest
-                    .getReplicationSubnetGroupDescription() != null) {
-                jsonGenerator.writeFieldName(
-                        "ReplicationSubnetGroupDescription").writeValue(
-                        createReplicationSubnetGroupRequest
-                                .getReplicationSubnetGroupDescription());
+            if (createReplicationSubnetGroupRequest.getReplicationSubnetGroupDescription() != null) {
+                jsonGenerator.writeFieldName("ReplicationSubnetGroupDescription").writeValue(
+                        createReplicationSubnetGroupRequest.getReplicationSubnetGroupDescription());
             }
 
-            java.util.List<String> subnetIdsList = createReplicationSubnetGroupRequest
-                    .getSubnetIds();
+            java.util.List<String> subnetIdsList = createReplicationSubnetGroupRequest.getSubnetIds();
             if (subnetIdsList != null) {
                 jsonGenerator.writeFieldName("SubnetIds");
                 jsonGenerator.writeStartArray();
@@ -99,16 +82,14 @@ public class CreateReplicationSubnetGroupRequestMarshaller
                 jsonGenerator.writeEndArray();
             }
 
-            java.util.List<Tag> tagsList = createReplicationSubnetGroupRequest
-                    .getTags();
+            java.util.List<Tag> tagsList = createReplicationSubnetGroupRequest.getTags();
             if (tagsList != null) {
                 jsonGenerator.writeFieldName("Tags");
                 jsonGenerator.writeStartArray();
                 for (Tag tagsListValue : tagsList) {
                     if (tagsListValue != null) {
 
-                        TagJsonMarshaller.getInstance().marshall(tagsListValue,
-                                jsonGenerator);
+                        TagJsonMarshaller.getInstance().marshall(tagsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
@@ -118,12 +99,10 @@ public class CreateReplicationSubnetGroupRequestMarshaller
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

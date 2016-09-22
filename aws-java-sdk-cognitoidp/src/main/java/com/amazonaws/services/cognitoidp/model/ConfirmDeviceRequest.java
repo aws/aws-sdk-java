@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -22,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Confirms the device request.
  * </p>
  */
-public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -82,8 +79,7 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param accessToken
      *        The access token.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfirmDeviceRequest withAccessToken(String accessToken) {
@@ -123,8 +119,7 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param deviceKey
      *        The device key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfirmDeviceRequest withDeviceKey(String deviceKey) {
@@ -141,8 +136,7 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The configuration of the device secret verifier.
      */
 
-    public void setDeviceSecretVerifierConfig(
-            DeviceSecretVerifierConfigType deviceSecretVerifierConfig) {
+    public void setDeviceSecretVerifierConfig(DeviceSecretVerifierConfigType deviceSecretVerifierConfig) {
         this.deviceSecretVerifierConfig = deviceSecretVerifierConfig;
     }
 
@@ -165,12 +159,10 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param deviceSecretVerifierConfig
      *        The configuration of the device secret verifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfirmDeviceRequest withDeviceSecretVerifierConfig(
-            DeviceSecretVerifierConfigType deviceSecretVerifierConfig) {
+    public ConfirmDeviceRequest withDeviceSecretVerifierConfig(DeviceSecretVerifierConfigType deviceSecretVerifierConfig) {
         setDeviceSecretVerifierConfig(deviceSecretVerifierConfig);
         return this;
     }
@@ -207,8 +199,7 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param deviceName
      *        The device name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfirmDeviceRequest withDeviceName(String deviceName) {
@@ -217,8 +208,7 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -233,8 +223,7 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDeviceKey() != null)
             sb.append("DeviceKey: " + getDeviceKey() + ",");
         if (getDeviceSecretVerifierConfig() != null)
-            sb.append("DeviceSecretVerifierConfig: "
-                    + getDeviceSecretVerifierConfig() + ",");
+            sb.append("DeviceSecretVerifierConfig: " + getDeviceSecretVerifierConfig() + ",");
         if (getDeviceName() != null)
             sb.append("DeviceName: " + getDeviceName());
         sb.append("}");
@@ -253,25 +242,19 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
         ConfirmDeviceRequest other = (ConfirmDeviceRequest) obj;
         if (other.getAccessToken() == null ^ this.getAccessToken() == null)
             return false;
-        if (other.getAccessToken() != null
-                && other.getAccessToken().equals(this.getAccessToken()) == false)
+        if (other.getAccessToken() != null && other.getAccessToken().equals(this.getAccessToken()) == false)
             return false;
         if (other.getDeviceKey() == null ^ this.getDeviceKey() == null)
             return false;
-        if (other.getDeviceKey() != null
-                && other.getDeviceKey().equals(this.getDeviceKey()) == false)
+        if (other.getDeviceKey() != null && other.getDeviceKey().equals(this.getDeviceKey()) == false)
             return false;
-        if (other.getDeviceSecretVerifierConfig() == null
-                ^ this.getDeviceSecretVerifierConfig() == null)
+        if (other.getDeviceSecretVerifierConfig() == null ^ this.getDeviceSecretVerifierConfig() == null)
             return false;
-        if (other.getDeviceSecretVerifierConfig() != null
-                && other.getDeviceSecretVerifierConfig().equals(
-                        this.getDeviceSecretVerifierConfig()) == false)
+        if (other.getDeviceSecretVerifierConfig() != null && other.getDeviceSecretVerifierConfig().equals(this.getDeviceSecretVerifierConfig()) == false)
             return false;
         if (other.getDeviceName() == null ^ this.getDeviceName() == null)
             return false;
-        if (other.getDeviceName() != null
-                && other.getDeviceName().equals(this.getDeviceName()) == false)
+        if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
             return false;
         return true;
     }
@@ -281,17 +264,10 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAccessToken() == null) ? 0 : getAccessToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getDeviceKey() == null) ? 0 : getDeviceKey().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeviceSecretVerifierConfig() == null) ? 0
-                        : getDeviceSecretVerifierConfig().hashCode());
-        hashCode = prime * hashCode
-                + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
+        hashCode = prime * hashCode + ((getAccessToken() == null) ? 0 : getAccessToken().hashCode());
+        hashCode = prime * hashCode + ((getDeviceKey() == null) ? 0 : getDeviceKey().hashCode());
+        hashCode = prime * hashCode + ((getDeviceSecretVerifierConfig() == null) ? 0 : getDeviceSecretVerifierConfig().hashCode());
+        hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
         return hashCode;
     }
 

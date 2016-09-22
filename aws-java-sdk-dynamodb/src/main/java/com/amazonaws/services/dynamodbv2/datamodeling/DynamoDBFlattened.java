@@ -36,7 +36,7 @@ import java.lang.annotation.Target;
  * public void setExtensionRange(DateRange extensionRange) { this.extensionRange = extensionRange; }
  * </pre>
  *
- * Where,
+ * <p>Where,</p>
  * <pre class="brush: java">
  * public class DateRange {
  *     private Date start;

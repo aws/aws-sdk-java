@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
@@ -34,28 +32,23 @@ public class ApplicationJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Application application,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(Application application, StructuredJsonGenerator jsonGenerator) {
 
         if (application == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (application.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(
-                        application.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(application.getName());
             }
             if (application.getVersion() != null) {
-                jsonGenerator.writeFieldName("Version").writeValue(
-                        application.getVersion());
+                jsonGenerator.writeFieldName("Version").writeValue(application.getVersion());
             }
 
-            com.amazonaws.internal.SdkInternalList<String> argsList = (com.amazonaws.internal.SdkInternalList<String>) application
-                    .getArgs();
+            com.amazonaws.internal.SdkInternalList<String> argsList = (com.amazonaws.internal.SdkInternalList<String>) application.getArgs();
             if (!argsList.isEmpty() || !argsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("Args");
                 jsonGenerator.writeStartArray();
@@ -69,19 +62,15 @@ public class ApplicationJsonMarshaller {
 
             com.amazonaws.internal.SdkInternalMap<String, String> additionalInfoMap = (com.amazonaws.internal.SdkInternalMap<String, String>) application
                     .getAdditionalInfo();
-            if (!additionalInfoMap.isEmpty()
-                    || !additionalInfoMap.isAutoConstruct()) {
+            if (!additionalInfoMap.isEmpty() || !additionalInfoMap.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("AdditionalInfo");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> additionalInfoMapValue : additionalInfoMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> additionalInfoMapValue : additionalInfoMap.entrySet()) {
                     if (additionalInfoMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(additionalInfoMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(additionalInfoMapValue.getKey());
 
-                        jsonGenerator.writeValue(additionalInfoMapValue
-                                .getValue());
+                        jsonGenerator.writeValue(additionalInfoMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
@@ -89,8 +78,7 @@ public class ApplicationJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

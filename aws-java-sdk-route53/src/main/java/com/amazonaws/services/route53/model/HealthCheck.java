@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -18,17 +16,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about one health check that is
- * associated with the current AWS account.
+ * A complex type that contains information about one health check that is associated with the current AWS account.
  * </p>
  */
 public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier that Amazon Route 53assigned to the health check when you
-     * created it. When you add or update a resource record set, you use this
-     * value to specify which health check to use. The value can be up to 64
+     * The identifier that Amazon Route 53assigned to the health check when you created it. When you add or update a
+     * resource record set, you use this value to specify which health check to use. The value can be up to 64
      * characters long.
      * </p>
      */
@@ -47,33 +43,30 @@ public class HealthCheck implements Serializable, Cloneable {
     private HealthCheckConfig healthCheckConfig;
     /**
      * <p>
-     * The version of the health check. You can optionally pass this value in a
-     * call to <code>UpdateHealthCheck</code> to prevent overwriting another
-     * change to the health check.
+     * The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code>
+     * to prevent overwriting another change to the health check.
      * </p>
      */
     private Long healthCheckVersion;
     /**
      * <p>
-     * A complex type that contains information about the CloudWatch alarm that
-     * Amazon Route 53 is monitoring for this health check.
+     * A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this
+     * health check.
      * </p>
      */
     private CloudWatchAlarmConfiguration cloudWatchAlarmConfiguration;
 
     /**
      * <p>
-     * The identifier that Amazon Route 53assigned to the health check when you
-     * created it. When you add or update a resource record set, you use this
-     * value to specify which health check to use. The value can be up to 64
+     * The identifier that Amazon Route 53assigned to the health check when you created it. When you add or update a
+     * resource record set, you use this value to specify which health check to use. The value can be up to 64
      * characters long.
      * </p>
      * 
      * @param id
-     *        The identifier that Amazon Route 53assigned to the health check
-     *        when you created it. When you add or update a resource record set,
-     *        you use this value to specify which health check to use. The value
-     *        can be up to 64 characters long.
+     *        The identifier that Amazon Route 53assigned to the health check when you created it. When you add or
+     *        update a resource record set, you use this value to specify which health check to use. The value can be up
+     *        to 64 characters long.
      */
 
     public void setId(String id) {
@@ -82,16 +75,14 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier that Amazon Route 53assigned to the health check when you
-     * created it. When you add or update a resource record set, you use this
-     * value to specify which health check to use. The value can be up to 64
+     * The identifier that Amazon Route 53assigned to the health check when you created it. When you add or update a
+     * resource record set, you use this value to specify which health check to use. The value can be up to 64
      * characters long.
      * </p>
      * 
-     * @return The identifier that Amazon Route 53assigned to the health check
-     *         when you created it. When you add or update a resource record
-     *         set, you use this value to specify which health check to use. The
-     *         value can be up to 64 characters long.
+     * @return The identifier that Amazon Route 53assigned to the health check when you created it. When you add or
+     *         update a resource record set, you use this value to specify which health check to use. The value can be
+     *         up to 64 characters long.
      */
 
     public String getId() {
@@ -100,19 +91,16 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier that Amazon Route 53assigned to the health check when you
-     * created it. When you add or update a resource record set, you use this
-     * value to specify which health check to use. The value can be up to 64
+     * The identifier that Amazon Route 53assigned to the health check when you created it. When you add or update a
+     * resource record set, you use this value to specify which health check to use. The value can be up to 64
      * characters long.
      * </p>
      * 
      * @param id
-     *        The identifier that Amazon Route 53assigned to the health check
-     *        when you created it. When you add or update a resource record set,
-     *        you use this value to specify which health check to use. The value
-     *        can be up to 64 characters long.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier that Amazon Route 53assigned to the health check when you created it. When you add or
+     *        update a resource record set, you use this value to specify which health check to use. The value can be up
+     *        to 64 characters long.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HealthCheck withId(String id) {
@@ -126,8 +114,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * </p>
      * 
      * @param callerReference
-     *        A unique string that you specified when you created the health
-     *        check.
+     *        A unique string that you specified when you created the health check.
      */
 
     public void setCallerReference(String callerReference) {
@@ -139,8 +126,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * A unique string that you specified when you created the health check.
      * </p>
      * 
-     * @return A unique string that you specified when you created the health
-     *         check.
+     * @return A unique string that you specified when you created the health check.
      */
 
     public String getCallerReference() {
@@ -153,10 +139,8 @@ public class HealthCheck implements Serializable, Cloneable {
      * </p>
      * 
      * @param callerReference
-     *        A unique string that you specified when you created the health
-     *        check.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A unique string that you specified when you created the health check.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HealthCheck withCallerReference(String callerReference) {
@@ -170,8 +154,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * </p>
      * 
      * @param healthCheckConfig
-     *        A complex type that contains detailed information about one health
-     *        check.
+     *        A complex type that contains detailed information about one health check.
      */
 
     public void setHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
@@ -183,8 +166,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * A complex type that contains detailed information about one health check.
      * </p>
      * 
-     * @return A complex type that contains detailed information about one
-     *         health check.
+     * @return A complex type that contains detailed information about one health check.
      */
 
     public HealthCheckConfig getHealthCheckConfig() {
@@ -197,10 +179,8 @@ public class HealthCheck implements Serializable, Cloneable {
      * </p>
      * 
      * @param healthCheckConfig
-     *        A complex type that contains detailed information about one health
-     *        check.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains detailed information about one health check.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HealthCheck withHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
@@ -210,15 +190,13 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of the health check. You can optionally pass this value in a
-     * call to <code>UpdateHealthCheck</code> to prevent overwriting another
-     * change to the health check.
+     * The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code>
+     * to prevent overwriting another change to the health check.
      * </p>
      * 
      * @param healthCheckVersion
-     *        The version of the health check. You can optionally pass this
-     *        value in a call to <code>UpdateHealthCheck</code> to prevent
-     *        overwriting another change to the health check.
+     *        The version of the health check. You can optionally pass this value in a call to
+     *        <code>UpdateHealthCheck</code> to prevent overwriting another change to the health check.
      */
 
     public void setHealthCheckVersion(Long healthCheckVersion) {
@@ -227,14 +205,12 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of the health check. You can optionally pass this value in a
-     * call to <code>UpdateHealthCheck</code> to prevent overwriting another
-     * change to the health check.
+     * The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code>
+     * to prevent overwriting another change to the health check.
      * </p>
      * 
-     * @return The version of the health check. You can optionally pass this
-     *         value in a call to <code>UpdateHealthCheck</code> to prevent
-     *         overwriting another change to the health check.
+     * @return The version of the health check. You can optionally pass this value in a call to
+     *         <code>UpdateHealthCheck</code> to prevent overwriting another change to the health check.
      */
 
     public Long getHealthCheckVersion() {
@@ -243,17 +219,14 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of the health check. You can optionally pass this value in a
-     * call to <code>UpdateHealthCheck</code> to prevent overwriting another
-     * change to the health check.
+     * The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code>
+     * to prevent overwriting another change to the health check.
      * </p>
      * 
      * @param healthCheckVersion
-     *        The version of the health check. You can optionally pass this
-     *        value in a call to <code>UpdateHealthCheck</code> to prevent
-     *        overwriting another change to the health check.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The version of the health check. You can optionally pass this value in a call to
+     *        <code>UpdateHealthCheck</code> to prevent overwriting another change to the health check.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HealthCheck withHealthCheckVersion(Long healthCheckVersion) {
@@ -263,28 +236,27 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the CloudWatch alarm that
-     * Amazon Route 53 is monitoring for this health check.
+     * A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this
+     * health check.
      * </p>
      * 
      * @param cloudWatchAlarmConfiguration
-     *        A complex type that contains information about the CloudWatch
-     *        alarm that Amazon Route 53 is monitoring for this health check.
+     *        A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for
+     *        this health check.
      */
 
-    public void setCloudWatchAlarmConfiguration(
-            CloudWatchAlarmConfiguration cloudWatchAlarmConfiguration) {
+    public void setCloudWatchAlarmConfiguration(CloudWatchAlarmConfiguration cloudWatchAlarmConfiguration) {
         this.cloudWatchAlarmConfiguration = cloudWatchAlarmConfiguration;
     }
 
     /**
      * <p>
-     * A complex type that contains information about the CloudWatch alarm that
-     * Amazon Route 53 is monitoring for this health check.
+     * A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this
+     * health check.
      * </p>
      * 
-     * @return A complex type that contains information about the CloudWatch
-     *         alarm that Amazon Route 53 is monitoring for this health check.
+     * @return A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring
+     *         for this health check.
      */
 
     public CloudWatchAlarmConfiguration getCloudWatchAlarmConfiguration() {
@@ -293,26 +265,23 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the CloudWatch alarm that
-     * Amazon Route 53 is monitoring for this health check.
+     * A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this
+     * health check.
      * </p>
      * 
      * @param cloudWatchAlarmConfiguration
-     *        A complex type that contains information about the CloudWatch
-     *        alarm that Amazon Route 53 is monitoring for this health check.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for
+     *        this health check.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public HealthCheck withCloudWatchAlarmConfiguration(
-            CloudWatchAlarmConfiguration cloudWatchAlarmConfiguration) {
+    public HealthCheck withCloudWatchAlarmConfiguration(CloudWatchAlarmConfiguration cloudWatchAlarmConfiguration) {
         setCloudWatchAlarmConfiguration(cloudWatchAlarmConfiguration);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -331,8 +300,7 @@ public class HealthCheck implements Serializable, Cloneable {
         if (getHealthCheckVersion() != null)
             sb.append("HealthCheckVersion: " + getHealthCheckVersion() + ",");
         if (getCloudWatchAlarmConfiguration() != null)
-            sb.append("CloudWatchAlarmConfiguration: "
-                    + getCloudWatchAlarmConfiguration());
+            sb.append("CloudWatchAlarmConfiguration: " + getCloudWatchAlarmConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -349,35 +317,23 @@ public class HealthCheck implements Serializable, Cloneable {
         HealthCheck other = (HealthCheck) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
-        if (other.getCallerReference() == null
-                ^ this.getCallerReference() == null)
+        if (other.getCallerReference() == null ^ this.getCallerReference() == null)
             return false;
-        if (other.getCallerReference() != null
-                && other.getCallerReference().equals(this.getCallerReference()) == false)
+        if (other.getCallerReference() != null && other.getCallerReference().equals(this.getCallerReference()) == false)
             return false;
-        if (other.getHealthCheckConfig() == null
-                ^ this.getHealthCheckConfig() == null)
+        if (other.getHealthCheckConfig() == null ^ this.getHealthCheckConfig() == null)
             return false;
-        if (other.getHealthCheckConfig() != null
-                && other.getHealthCheckConfig().equals(
-                        this.getHealthCheckConfig()) == false)
+        if (other.getHealthCheckConfig() != null && other.getHealthCheckConfig().equals(this.getHealthCheckConfig()) == false)
             return false;
-        if (other.getHealthCheckVersion() == null
-                ^ this.getHealthCheckVersion() == null)
+        if (other.getHealthCheckVersion() == null ^ this.getHealthCheckVersion() == null)
             return false;
-        if (other.getHealthCheckVersion() != null
-                && other.getHealthCheckVersion().equals(
-                        this.getHealthCheckVersion()) == false)
+        if (other.getHealthCheckVersion() != null && other.getHealthCheckVersion().equals(this.getHealthCheckVersion()) == false)
             return false;
-        if (other.getCloudWatchAlarmConfiguration() == null
-                ^ this.getCloudWatchAlarmConfiguration() == null)
+        if (other.getCloudWatchAlarmConfiguration() == null ^ this.getCloudWatchAlarmConfiguration() == null)
             return false;
-        if (other.getCloudWatchAlarmConfiguration() != null
-                && other.getCloudWatchAlarmConfiguration().equals(
-                        this.getCloudWatchAlarmConfiguration()) == false)
+        if (other.getCloudWatchAlarmConfiguration() != null && other.getCloudWatchAlarmConfiguration().equals(this.getCloudWatchAlarmConfiguration()) == false)
             return false;
         return true;
     }
@@ -387,24 +343,11 @@ public class HealthCheck implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCallerReference() == null) ? 0 : getCallerReference()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckConfig() == null) ? 0
-                        : getHealthCheckConfig().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckVersion() == null) ? 0
-                        : getHealthCheckVersion().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCloudWatchAlarmConfiguration() == null) ? 0
-                        : getCloudWatchAlarmConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckConfig() == null) ? 0 : getHealthCheckConfig().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckVersion() == null) ? 0 : getHealthCheckVersion().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchAlarmConfiguration() == null) ? 0 : getCloudWatchAlarmConfiguration().hashCode());
         return hashCode;
     }
 
@@ -413,9 +356,7 @@ public class HealthCheck implements Serializable, Cloneable {
         try {
             return (HealthCheck) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

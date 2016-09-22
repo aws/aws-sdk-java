@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * CreateTableRequest Marshaller
  */
-public class CreateTableRequestMarshaller implements
-        Marshaller<Request<CreateTableRequest>, CreateTableRequest> {
+public class CreateTableRequestMarshaller implements Marshaller<Request<CreateTableRequest>, CreateTableRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -44,16 +41,13 @@ public class CreateTableRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<CreateTableRequest> marshall(
-            CreateTableRequest createTableRequest) {
+    public Request<CreateTableRequest> marshall(CreateTableRequest createTableRequest) {
 
         if (createTableRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateTableRequest> request = new DefaultRequest<CreateTableRequest>(
-                createTableRequest, "AmazonDynamoDBv2");
+        Request<CreateTableRequest> request = new DefaultRequest<CreateTableRequest>(createTableRequest, "AmazonDynamoDBv2");
         request.addHeader("X-Amz-Target", "DynamoDB_20120810.CreateTable");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -61,100 +55,81 @@ public class CreateTableRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
-            java.util.List<AttributeDefinition> attributeDefinitionsList = createTableRequest
-                    .getAttributeDefinitions();
+            java.util.List<AttributeDefinition> attributeDefinitionsList = createTableRequest.getAttributeDefinitions();
             if (attributeDefinitionsList != null) {
                 jsonGenerator.writeFieldName("AttributeDefinitions");
                 jsonGenerator.writeStartArray();
                 for (AttributeDefinition attributeDefinitionsListValue : attributeDefinitionsList) {
                     if (attributeDefinitionsListValue != null) {
 
-                        AttributeDefinitionJsonMarshaller.getInstance()
-                                .marshall(attributeDefinitionsListValue,
-                                        jsonGenerator);
+                        AttributeDefinitionJsonMarshaller.getInstance().marshall(attributeDefinitionsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (createTableRequest.getTableName() != null) {
-                jsonGenerator.writeFieldName("TableName").writeValue(
-                        createTableRequest.getTableName());
+                jsonGenerator.writeFieldName("TableName").writeValue(createTableRequest.getTableName());
             }
 
-            java.util.List<KeySchemaElement> keySchemaList = createTableRequest
-                    .getKeySchema();
+            java.util.List<KeySchemaElement> keySchemaList = createTableRequest.getKeySchema();
             if (keySchemaList != null) {
                 jsonGenerator.writeFieldName("KeySchema");
                 jsonGenerator.writeStartArray();
                 for (KeySchemaElement keySchemaListValue : keySchemaList) {
                     if (keySchemaListValue != null) {
 
-                        KeySchemaElementJsonMarshaller.getInstance().marshall(
-                                keySchemaListValue, jsonGenerator);
+                        KeySchemaElementJsonMarshaller.getInstance().marshall(keySchemaListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
 
-            java.util.List<LocalSecondaryIndex> localSecondaryIndexesList = createTableRequest
-                    .getLocalSecondaryIndexes();
+            java.util.List<LocalSecondaryIndex> localSecondaryIndexesList = createTableRequest.getLocalSecondaryIndexes();
             if (localSecondaryIndexesList != null) {
                 jsonGenerator.writeFieldName("LocalSecondaryIndexes");
                 jsonGenerator.writeStartArray();
                 for (LocalSecondaryIndex localSecondaryIndexesListValue : localSecondaryIndexesList) {
                     if (localSecondaryIndexesListValue != null) {
 
-                        LocalSecondaryIndexJsonMarshaller.getInstance()
-                                .marshall(localSecondaryIndexesListValue,
-                                        jsonGenerator);
+                        LocalSecondaryIndexJsonMarshaller.getInstance().marshall(localSecondaryIndexesListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
 
-            java.util.List<GlobalSecondaryIndex> globalSecondaryIndexesList = createTableRequest
-                    .getGlobalSecondaryIndexes();
+            java.util.List<GlobalSecondaryIndex> globalSecondaryIndexesList = createTableRequest.getGlobalSecondaryIndexes();
             if (globalSecondaryIndexesList != null) {
                 jsonGenerator.writeFieldName("GlobalSecondaryIndexes");
                 jsonGenerator.writeStartArray();
                 for (GlobalSecondaryIndex globalSecondaryIndexesListValue : globalSecondaryIndexesList) {
                     if (globalSecondaryIndexesListValue != null) {
 
-                        GlobalSecondaryIndexJsonMarshaller.getInstance()
-                                .marshall(globalSecondaryIndexesListValue,
-                                        jsonGenerator);
+                        GlobalSecondaryIndexJsonMarshaller.getInstance().marshall(globalSecondaryIndexesListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (createTableRequest.getProvisionedThroughput() != null) {
                 jsonGenerator.writeFieldName("ProvisionedThroughput");
-                ProvisionedThroughputJsonMarshaller.getInstance().marshall(
-                        createTableRequest.getProvisionedThroughput(),
-                        jsonGenerator);
+                ProvisionedThroughputJsonMarshaller.getInstance().marshall(createTableRequest.getProvisionedThroughput(), jsonGenerator);
             }
             if (createTableRequest.getStreamSpecification() != null) {
                 jsonGenerator.writeFieldName("StreamSpecification");
-                StreamSpecificationJsonMarshaller.getInstance().marshall(
-                        createTableRequest.getStreamSpecification(),
-                        jsonGenerator);
+                StreamSpecificationJsonMarshaller.getInstance().marshall(createTableRequest.getStreamSpecification(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

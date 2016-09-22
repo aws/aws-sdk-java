@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticsearch.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Specifies the configuration for the domain cluster, such as the type and
- * number of instances.
+ * Specifies the configuration for the domain cluster, such as the type and number of instances.
  * </p>
  */
 public class ElasticsearchClusterConfig implements Serializable, Cloneable {
@@ -38,8 +35,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
     private Integer instanceCount;
     /**
      * <p>
-     * A boolean value to indicate whether a dedicated master node is enabled.
-     * See <a href=
+     * A boolean value to indicate whether a dedicated master node is enabled. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes"
      * target="_blank">About Dedicated Master Nodes</a> for more information.
      * </p>
@@ -47,8 +43,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
     private Boolean dedicatedMasterEnabled;
     /**
      * <p>
-     * A boolean value to indicate whether zone awareness is enabled. See <a
-     * href=
+     * A boolean value to indicate whether zone awareness is enabled. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
      * target="_blank">About Zone Awareness</a> for more information.
      * </p>
@@ -62,8 +57,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
     private String dedicatedMasterType;
     /**
      * <p>
-     * Total number of dedicated master nodes, active and on standby, for the
-     * cluster.
+     * Total number of dedicated master nodes, active and on standby, for the cluster.
      * </p>
      */
     private Integer dedicatedMasterCount;
@@ -102,8 +96,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type for an Elasticsearch cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ESPartitionInstanceType
      */
 
@@ -133,13 +126,11 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type for an Elasticsearch cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ESPartitionInstanceType
      */
 
-    public ElasticsearchClusterConfig withInstanceType(
-            ESPartitionInstanceType instanceType) {
+    public ElasticsearchClusterConfig withInstanceType(ESPartitionInstanceType instanceType) {
         setInstanceType(instanceType);
         return this;
     }
@@ -176,8 +167,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * 
      * @param instanceCount
      *        The number of instances in the specified domain cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ElasticsearchClusterConfig withInstanceCount(Integer instanceCount) {
@@ -187,18 +177,15 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A boolean value to indicate whether a dedicated master node is enabled.
-     * See <a href=
+     * A boolean value to indicate whether a dedicated master node is enabled. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes"
      * target="_blank">About Dedicated Master Nodes</a> for more information.
      * </p>
      * 
      * @param dedicatedMasterEnabled
-     *        A boolean value to indicate whether a dedicated master node is
-     *        enabled. See <a href=
+     *        A boolean value to indicate whether a dedicated master node is enabled. See <a href=
      *        "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes"
-     *        target="_blank">About Dedicated Master Nodes</a> for more
-     *        information.
+     *        target="_blank">About Dedicated Master Nodes</a> for more information.
      */
 
     public void setDedicatedMasterEnabled(Boolean dedicatedMasterEnabled) {
@@ -207,17 +194,14 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A boolean value to indicate whether a dedicated master node is enabled.
-     * See <a href=
+     * A boolean value to indicate whether a dedicated master node is enabled. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes"
      * target="_blank">About Dedicated Master Nodes</a> for more information.
      * </p>
      * 
-     * @return A boolean value to indicate whether a dedicated master node is
-     *         enabled. See <a href=
+     * @return A boolean value to indicate whether a dedicated master node is enabled. See <a href=
      *         "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes"
-     *         target="_blank">About Dedicated Master Nodes</a> for more
-     *         information.
+     *         target="_blank">About Dedicated Master Nodes</a> for more information.
      */
 
     public Boolean getDedicatedMasterEnabled() {
@@ -226,41 +210,33 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A boolean value to indicate whether a dedicated master node is enabled.
-     * See <a href=
+     * A boolean value to indicate whether a dedicated master node is enabled. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes"
      * target="_blank">About Dedicated Master Nodes</a> for more information.
      * </p>
      * 
      * @param dedicatedMasterEnabled
-     *        A boolean value to indicate whether a dedicated master node is
-     *        enabled. See <a href=
+     *        A boolean value to indicate whether a dedicated master node is enabled. See <a href=
      *        "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes"
-     *        target="_blank">About Dedicated Master Nodes</a> for more
-     *        information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        target="_blank">About Dedicated Master Nodes</a> for more information.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ElasticsearchClusterConfig withDedicatedMasterEnabled(
-            Boolean dedicatedMasterEnabled) {
+    public ElasticsearchClusterConfig withDedicatedMasterEnabled(Boolean dedicatedMasterEnabled) {
         setDedicatedMasterEnabled(dedicatedMasterEnabled);
         return this;
     }
 
     /**
      * <p>
-     * A boolean value to indicate whether a dedicated master node is enabled.
-     * See <a href=
+     * A boolean value to indicate whether a dedicated master node is enabled. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes"
      * target="_blank">About Dedicated Master Nodes</a> for more information.
      * </p>
      * 
-     * @return A boolean value to indicate whether a dedicated master node is
-     *         enabled. See <a href=
+     * @return A boolean value to indicate whether a dedicated master node is enabled. See <a href=
      *         "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes"
-     *         target="_blank">About Dedicated Master Nodes</a> for more
-     *         information.
+     *         target="_blank">About Dedicated Master Nodes</a> for more information.
      */
 
     public Boolean isDedicatedMasterEnabled() {
@@ -269,15 +245,13 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A boolean value to indicate whether zone awareness is enabled. See <a
-     * href=
+     * A boolean value to indicate whether zone awareness is enabled. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
      * target="_blank">About Zone Awareness</a> for more information.
      * </p>
      * 
      * @param zoneAwarenessEnabled
-     *        A boolean value to indicate whether zone awareness is enabled. See
-     *        <a href=
+     *        A boolean value to indicate whether zone awareness is enabled. See <a href=
      *        "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
      *        target="_blank">About Zone Awareness</a> for more information.
      */
@@ -288,14 +262,12 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A boolean value to indicate whether zone awareness is enabled. See <a
-     * href=
+     * A boolean value to indicate whether zone awareness is enabled. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
      * target="_blank">About Zone Awareness</a> for more information.
      * </p>
      * 
-     * @return A boolean value to indicate whether zone awareness is enabled.
-     *         See <a href=
+     * @return A boolean value to indicate whether zone awareness is enabled. See <a href=
      *         "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
      *         target="_blank">About Zone Awareness</a> for more information.
      */
@@ -306,37 +278,31 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A boolean value to indicate whether zone awareness is enabled. See <a
-     * href=
+     * A boolean value to indicate whether zone awareness is enabled. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
      * target="_blank">About Zone Awareness</a> for more information.
      * </p>
      * 
      * @param zoneAwarenessEnabled
-     *        A boolean value to indicate whether zone awareness is enabled. See
-     *        <a href=
+     *        A boolean value to indicate whether zone awareness is enabled. See <a href=
      *        "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
      *        target="_blank">About Zone Awareness</a> for more information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ElasticsearchClusterConfig withZoneAwarenessEnabled(
-            Boolean zoneAwarenessEnabled) {
+    public ElasticsearchClusterConfig withZoneAwarenessEnabled(Boolean zoneAwarenessEnabled) {
         setZoneAwarenessEnabled(zoneAwarenessEnabled);
         return this;
     }
 
     /**
      * <p>
-     * A boolean value to indicate whether zone awareness is enabled. See <a
-     * href=
+     * A boolean value to indicate whether zone awareness is enabled. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
      * target="_blank">About Zone Awareness</a> for more information.
      * </p>
      * 
-     * @return A boolean value to indicate whether zone awareness is enabled.
-     *         See <a href=
+     * @return A boolean value to indicate whether zone awareness is enabled. See <a href=
      *         "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
      *         target="_blank">About Zone Awareness</a> for more information.
      */
@@ -379,13 +345,11 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * 
      * @param dedicatedMasterType
      *        The instance type for a dedicated master node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ESPartitionInstanceType
      */
 
-    public ElasticsearchClusterConfig withDedicatedMasterType(
-            String dedicatedMasterType) {
+    public ElasticsearchClusterConfig withDedicatedMasterType(String dedicatedMasterType) {
         setDedicatedMasterType(dedicatedMasterType);
         return this;
     }
@@ -400,8 +364,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * @see ESPartitionInstanceType
      */
 
-    public void setDedicatedMasterType(
-            ESPartitionInstanceType dedicatedMasterType) {
+    public void setDedicatedMasterType(ESPartitionInstanceType dedicatedMasterType) {
         this.dedicatedMasterType = dedicatedMasterType.toString();
     }
 
@@ -412,26 +375,22 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * 
      * @param dedicatedMasterType
      *        The instance type for a dedicated master node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ESPartitionInstanceType
      */
 
-    public ElasticsearchClusterConfig withDedicatedMasterType(
-            ESPartitionInstanceType dedicatedMasterType) {
+    public ElasticsearchClusterConfig withDedicatedMasterType(ESPartitionInstanceType dedicatedMasterType) {
         setDedicatedMasterType(dedicatedMasterType);
         return this;
     }
 
     /**
      * <p>
-     * Total number of dedicated master nodes, active and on standby, for the
-     * cluster.
+     * Total number of dedicated master nodes, active and on standby, for the cluster.
      * </p>
      * 
      * @param dedicatedMasterCount
-     *        Total number of dedicated master nodes, active and on standby, for
-     *        the cluster.
+     *        Total number of dedicated master nodes, active and on standby, for the cluster.
      */
 
     public void setDedicatedMasterCount(Integer dedicatedMasterCount) {
@@ -440,12 +399,10 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Total number of dedicated master nodes, active and on standby, for the
-     * cluster.
+     * Total number of dedicated master nodes, active and on standby, for the cluster.
      * </p>
      * 
-     * @return Total number of dedicated master nodes, active and on standby,
-     *         for the cluster.
+     * @return Total number of dedicated master nodes, active and on standby, for the cluster.
      */
 
     public Integer getDedicatedMasterCount() {
@@ -454,26 +411,21 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Total number of dedicated master nodes, active and on standby, for the
-     * cluster.
+     * Total number of dedicated master nodes, active and on standby, for the cluster.
      * </p>
      * 
      * @param dedicatedMasterCount
-     *        Total number of dedicated master nodes, active and on standby, for
-     *        the cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Total number of dedicated master nodes, active and on standby, for the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ElasticsearchClusterConfig withDedicatedMasterCount(
-            Integer dedicatedMasterCount) {
+    public ElasticsearchClusterConfig withDedicatedMasterCount(Integer dedicatedMasterCount) {
         setDedicatedMasterCount(dedicatedMasterCount);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -488,11 +440,9 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
         if (getInstanceCount() != null)
             sb.append("InstanceCount: " + getInstanceCount() + ",");
         if (getDedicatedMasterEnabled() != null)
-            sb.append("DedicatedMasterEnabled: " + getDedicatedMasterEnabled()
-                    + ",");
+            sb.append("DedicatedMasterEnabled: " + getDedicatedMasterEnabled() + ",");
         if (getZoneAwarenessEnabled() != null)
-            sb.append("ZoneAwarenessEnabled: " + getZoneAwarenessEnabled()
-                    + ",");
+            sb.append("ZoneAwarenessEnabled: " + getZoneAwarenessEnabled() + ",");
         if (getDedicatedMasterType() != null)
             sb.append("DedicatedMasterType: " + getDedicatedMasterType() + ",");
         if (getDedicatedMasterCount() != null)
@@ -513,41 +463,27 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
         ElasticsearchClusterConfig other = (ElasticsearchClusterConfig) obj;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
-        if (other.getInstanceCount() != null
-                && other.getInstanceCount().equals(this.getInstanceCount()) == false)
+        if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
             return false;
-        if (other.getDedicatedMasterEnabled() == null
-                ^ this.getDedicatedMasterEnabled() == null)
+        if (other.getDedicatedMasterEnabled() == null ^ this.getDedicatedMasterEnabled() == null)
             return false;
-        if (other.getDedicatedMasterEnabled() != null
-                && other.getDedicatedMasterEnabled().equals(
-                        this.getDedicatedMasterEnabled()) == false)
+        if (other.getDedicatedMasterEnabled() != null && other.getDedicatedMasterEnabled().equals(this.getDedicatedMasterEnabled()) == false)
             return false;
-        if (other.getZoneAwarenessEnabled() == null
-                ^ this.getZoneAwarenessEnabled() == null)
+        if (other.getZoneAwarenessEnabled() == null ^ this.getZoneAwarenessEnabled() == null)
             return false;
-        if (other.getZoneAwarenessEnabled() != null
-                && other.getZoneAwarenessEnabled().equals(
-                        this.getZoneAwarenessEnabled()) == false)
+        if (other.getZoneAwarenessEnabled() != null && other.getZoneAwarenessEnabled().equals(this.getZoneAwarenessEnabled()) == false)
             return false;
-        if (other.getDedicatedMasterType() == null
-                ^ this.getDedicatedMasterType() == null)
+        if (other.getDedicatedMasterType() == null ^ this.getDedicatedMasterType() == null)
             return false;
-        if (other.getDedicatedMasterType() != null
-                && other.getDedicatedMasterType().equals(
-                        this.getDedicatedMasterType()) == false)
+        if (other.getDedicatedMasterType() != null && other.getDedicatedMasterType().equals(this.getDedicatedMasterType()) == false)
             return false;
-        if (other.getDedicatedMasterCount() == null
-                ^ this.getDedicatedMasterCount() == null)
+        if (other.getDedicatedMasterCount() == null ^ this.getDedicatedMasterCount() == null)
             return false;
-        if (other.getDedicatedMasterCount() != null
-                && other.getDedicatedMasterCount().equals(
-                        this.getDedicatedMasterCount()) == false)
+        if (other.getDedicatedMasterCount() != null && other.getDedicatedMasterCount().equals(this.getDedicatedMasterCount()) == false)
             return false;
         return true;
     }
@@ -557,30 +493,12 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceCount() == null) ? 0 : getInstanceCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDedicatedMasterEnabled() == null) ? 0
-                        : getDedicatedMasterEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getZoneAwarenessEnabled() == null) ? 0
-                        : getZoneAwarenessEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDedicatedMasterType() == null) ? 0
-                        : getDedicatedMasterType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDedicatedMasterCount() == null) ? 0
-                        : getDedicatedMasterCount().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getDedicatedMasterEnabled() == null) ? 0 : getDedicatedMasterEnabled().hashCode());
+        hashCode = prime * hashCode + ((getZoneAwarenessEnabled() == null) ? 0 : getZoneAwarenessEnabled().hashCode());
+        hashCode = prime * hashCode + ((getDedicatedMasterType() == null) ? 0 : getDedicatedMasterType().hashCode());
+        hashCode = prime * hashCode + ((getDedicatedMasterCount() == null) ? 0 : getDedicatedMasterCount().hashCode());
         return hashCode;
     }
 
@@ -589,9 +507,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
         try {
             return (ElasticsearchClusterConfig) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

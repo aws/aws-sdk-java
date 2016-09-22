@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model;
 
@@ -104,8 +102,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the configuration recorder.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfigurationRecorderStatus withName(String name) {
@@ -145,12 +142,10 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @param lastStartTime
      *        The time the recorder was last started.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigurationRecorderStatus withLastStartTime(
-            java.util.Date lastStartTime) {
+    public ConfigurationRecorderStatus withLastStartTime(java.util.Date lastStartTime) {
         setLastStartTime(lastStartTime);
         return this;
     }
@@ -187,12 +182,10 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @param lastStopTime
      *        The time the recorder was last stopped.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigurationRecorderStatus withLastStopTime(
-            java.util.Date lastStopTime) {
+    public ConfigurationRecorderStatus withLastStopTime(java.util.Date lastStopTime) {
         setLastStopTime(lastStopTime);
         return this;
     }
@@ -229,8 +222,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @param recording
      *        Specifies whether the recorder is currently recording or not.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfigurationRecorderStatus withRecording(Boolean recording) {
@@ -284,8 +276,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @param lastStatus
      *        The last (previous) status of the recorder.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecorderStatus
      */
 
@@ -315,8 +306,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @param lastStatus
      *        The last (previous) status of the recorder.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecorderStatus
      */
 
@@ -357,8 +347,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @param lastErrorCode
      *        The error code indicating that the recording failed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfigurationRecorderStatus withLastErrorCode(String lastErrorCode) {
@@ -398,12 +387,10 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @param lastErrorMessage
      *        The message indicating that the recording failed due to an error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigurationRecorderStatus withLastErrorMessage(
-            String lastErrorMessage) {
+    public ConfigurationRecorderStatus withLastErrorMessage(String lastErrorMessage) {
         setLastErrorMessage(lastErrorMessage);
         return this;
     }
@@ -440,19 +427,16 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @param lastStatusChangeTime
      *        The time when the status was last changed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigurationRecorderStatus withLastStatusChangeTime(
-            java.util.Date lastStatusChangeTime) {
+    public ConfigurationRecorderStatus withLastStatusChangeTime(java.util.Date lastStatusChangeTime) {
         setLastStatusChangeTime(lastStatusChangeTime);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -494,47 +478,35 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
         ConfigurationRecorderStatus other = (ConfigurationRecorderStatus) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getLastStartTime() == null ^ this.getLastStartTime() == null)
             return false;
-        if (other.getLastStartTime() != null
-                && other.getLastStartTime().equals(this.getLastStartTime()) == false)
+        if (other.getLastStartTime() != null && other.getLastStartTime().equals(this.getLastStartTime()) == false)
             return false;
         if (other.getLastStopTime() == null ^ this.getLastStopTime() == null)
             return false;
-        if (other.getLastStopTime() != null
-                && other.getLastStopTime().equals(this.getLastStopTime()) == false)
+        if (other.getLastStopTime() != null && other.getLastStopTime().equals(this.getLastStopTime()) == false)
             return false;
         if (other.getRecording() == null ^ this.getRecording() == null)
             return false;
-        if (other.getRecording() != null
-                && other.getRecording().equals(this.getRecording()) == false)
+        if (other.getRecording() != null && other.getRecording().equals(this.getRecording()) == false)
             return false;
         if (other.getLastStatus() == null ^ this.getLastStatus() == null)
             return false;
-        if (other.getLastStatus() != null
-                && other.getLastStatus().equals(this.getLastStatus()) == false)
+        if (other.getLastStatus() != null && other.getLastStatus().equals(this.getLastStatus()) == false)
             return false;
         if (other.getLastErrorCode() == null ^ this.getLastErrorCode() == null)
             return false;
-        if (other.getLastErrorCode() != null
-                && other.getLastErrorCode().equals(this.getLastErrorCode()) == false)
+        if (other.getLastErrorCode() != null && other.getLastErrorCode().equals(this.getLastErrorCode()) == false)
             return false;
-        if (other.getLastErrorMessage() == null
-                ^ this.getLastErrorMessage() == null)
+        if (other.getLastErrorMessage() == null ^ this.getLastErrorMessage() == null)
             return false;
-        if (other.getLastErrorMessage() != null
-                && other.getLastErrorMessage().equals(
-                        this.getLastErrorMessage()) == false)
+        if (other.getLastErrorMessage() != null && other.getLastErrorMessage().equals(this.getLastErrorMessage()) == false)
             return false;
-        if (other.getLastStatusChangeTime() == null
-                ^ this.getLastStatusChangeTime() == null)
+        if (other.getLastStatusChangeTime() == null ^ this.getLastStatusChangeTime() == null)
             return false;
-        if (other.getLastStatusChangeTime() != null
-                && other.getLastStatusChangeTime().equals(
-                        this.getLastStatusChangeTime()) == false)
+        if (other.getLastStatusChangeTime() != null && other.getLastStatusChangeTime().equals(this.getLastStatusChangeTime()) == false)
             return false;
         return true;
     }
@@ -544,32 +516,14 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastStartTime() == null) ? 0 : getLastStartTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastStopTime() == null) ? 0 : getLastStopTime()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getRecording() == null) ? 0 : getRecording().hashCode());
-        hashCode = prime * hashCode
-                + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastErrorCode() == null) ? 0 : getLastErrorCode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastErrorMessage() == null) ? 0 : getLastErrorMessage()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastStatusChangeTime() == null) ? 0
-                        : getLastStatusChangeTime().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getLastStartTime() == null) ? 0 : getLastStartTime().hashCode());
+        hashCode = prime * hashCode + ((getLastStopTime() == null) ? 0 : getLastStopTime().hashCode());
+        hashCode = prime * hashCode + ((getRecording() == null) ? 0 : getRecording().hashCode());
+        hashCode = prime * hashCode + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastErrorCode() == null) ? 0 : getLastErrorCode().hashCode());
+        hashCode = prime * hashCode + ((getLastErrorMessage() == null) ? 0 : getLastErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getLastStatusChangeTime() == null) ? 0 : getLastStatusChangeTime().hashCode());
         return hashCode;
     }
 
@@ -578,9 +532,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
         try {
             return (ConfigurationRecorderStatus) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

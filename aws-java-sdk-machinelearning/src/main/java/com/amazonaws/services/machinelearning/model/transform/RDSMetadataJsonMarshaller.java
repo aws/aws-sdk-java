@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.machinelearning.model.transform;
 
@@ -34,12 +32,10 @@ public class RDSMetadataJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(RDSMetadata rDSMetadata,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(RDSMetadata rDSMetadata, StructuredJsonGenerator jsonGenerator) {
 
         if (rDSMetadata == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -47,34 +43,27 @@ public class RDSMetadataJsonMarshaller {
 
             if (rDSMetadata.getDatabase() != null) {
                 jsonGenerator.writeFieldName("Database");
-                RDSDatabaseJsonMarshaller.getInstance().marshall(
-                        rDSMetadata.getDatabase(), jsonGenerator);
+                RDSDatabaseJsonMarshaller.getInstance().marshall(rDSMetadata.getDatabase(), jsonGenerator);
             }
             if (rDSMetadata.getDatabaseUserName() != null) {
-                jsonGenerator.writeFieldName("DatabaseUserName").writeValue(
-                        rDSMetadata.getDatabaseUserName());
+                jsonGenerator.writeFieldName("DatabaseUserName").writeValue(rDSMetadata.getDatabaseUserName());
             }
             if (rDSMetadata.getSelectSqlQuery() != null) {
-                jsonGenerator.writeFieldName("SelectSqlQuery").writeValue(
-                        rDSMetadata.getSelectSqlQuery());
+                jsonGenerator.writeFieldName("SelectSqlQuery").writeValue(rDSMetadata.getSelectSqlQuery());
             }
             if (rDSMetadata.getResourceRole() != null) {
-                jsonGenerator.writeFieldName("ResourceRole").writeValue(
-                        rDSMetadata.getResourceRole());
+                jsonGenerator.writeFieldName("ResourceRole").writeValue(rDSMetadata.getResourceRole());
             }
             if (rDSMetadata.getServiceRole() != null) {
-                jsonGenerator.writeFieldName("ServiceRole").writeValue(
-                        rDSMetadata.getServiceRole());
+                jsonGenerator.writeFieldName("ServiceRole").writeValue(rDSMetadata.getServiceRole());
             }
             if (rDSMetadata.getDataPipelineId() != null) {
-                jsonGenerator.writeFieldName("DataPipelineId").writeValue(
-                        rDSMetadata.getDataPipelineId());
+                jsonGenerator.writeFieldName("DataPipelineId").writeValue(rDSMetadata.getDataPipelineId());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

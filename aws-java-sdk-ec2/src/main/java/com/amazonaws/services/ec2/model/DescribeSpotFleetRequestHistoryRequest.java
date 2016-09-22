@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotFleetRequestHistor
  * Contains the parameters for DescribeSpotFleetRequestHistory.
  * </p>
  */
-public class DescribeSpotFleetRequestHistoryRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable,
+public class DescribeSpotFleetRequestHistoryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeSpotFleetRequestHistoryRequest> {
 
     /**
@@ -55,10 +52,8 @@ public class DescribeSpotFleetRequestHistoryRequest extends
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      */
     private Integer maxResults;
@@ -95,12 +90,10 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * 
      * @param spotFleetRequestId
      *        The ID of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSpotFleetRequestHistoryRequest withSpotFleetRequestId(
-            String spotFleetRequestId) {
+    public DescribeSpotFleetRequestHistoryRequest withSpotFleetRequestId(String spotFleetRequestId) {
         setSpotFleetRequestId(spotFleetRequestId);
         return this;
     }
@@ -111,8 +104,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * </p>
      * 
      * @param eventType
-     *        The type of events to describe. By default, all events are
-     *        described.
+     *        The type of events to describe. By default, all events are described.
      * @see EventType
      */
 
@@ -125,8 +117,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * The type of events to describe. By default, all events are described.
      * </p>
      * 
-     * @return The type of events to describe. By default, all events are
-     *         described.
+     * @return The type of events to describe. By default, all events are described.
      * @see EventType
      */
 
@@ -140,10 +131,8 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * </p>
      * 
      * @param eventType
-     *        The type of events to describe. By default, all events are
-     *        described.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The type of events to describe. By default, all events are described.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventType
      */
 
@@ -158,8 +147,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * </p>
      * 
      * @param eventType
-     *        The type of events to describe. By default, all events are
-     *        described.
+     *        The type of events to describe. By default, all events are described.
      * @see EventType
      */
 
@@ -173,15 +161,12 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * </p>
      * 
      * @param eventType
-     *        The type of events to describe. By default, all events are
-     *        described.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The type of events to describe. By default, all events are described.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventType
      */
 
-    public DescribeSpotFleetRequestHistoryRequest withEventType(
-            EventType eventType) {
+    public DescribeSpotFleetRequestHistoryRequest withEventType(EventType eventType) {
         setEventType(eventType);
         return this;
     }
@@ -193,8 +178,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * </p>
      * 
      * @param startTime
-     *        The starting date and time for the events, in UTC format (for
-     *        example,
+     *        The starting date and time for the events, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
 
@@ -208,8 +192,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      * 
-     * @return The starting date and time for the events, in UTC format (for
-     *         example,
+     * @return The starting date and time for the events, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
 
@@ -224,15 +207,12 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * </p>
      * 
      * @param startTime
-     *        The starting date and time for the events, in UTC format (for
-     *        example,
+     *        The starting date and time for the events, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSpotFleetRequestHistoryRequest withStartTime(
-            java.util.Date startTime) {
+    public DescribeSpotFleetRequestHistoryRequest withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
     }
@@ -269,8 +249,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * 
      * @param nextToken
      *        The token for the next set of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSpotFleetRequestHistoryRequest withNextToken(String nextToken) {
@@ -280,16 +259,13 @@ public class DescribeSpotFleetRequestHistoryRequest extends
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. Specify
-     *        a value between 1 and 1000. The default value is 1000. To retrieve
-     *        the remaining results, make another call with the returned
+     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *        value is 1000. To retrieve the remaining results, make another call with the returned
      *        <code>NextToken</code> value.
      */
 
@@ -299,16 +275,13 @@ public class DescribeSpotFleetRequestHistoryRequest extends
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. Specify
-     *         a value between 1 and 1000. The default value is 1000. To
-     *         retrieve the remaining results, make another call with the
-     *         returned <code>NextToken</code> value.
+     * @return The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *         value is 1000. To retrieve the remaining results, make another call with the returned
+     *         <code>NextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -317,43 +290,35 @@ public class DescribeSpotFleetRequestHistoryRequest extends
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. Specify
-     *        a value between 1 and 1000. The default value is 1000. To retrieve
-     *        the remaining results, make another call with the returned
+     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *        value is 1000. To retrieve the remaining results, make another call with the returned
      *        <code>NextToken</code> value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSpotFleetRequestHistoryRequest withMaxResults(
-            Integer maxResults) {
+    public DescribeSpotFleetRequestHistoryRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeSpotFleetRequestHistoryRequest> getDryRunRequest() {
-        Request<DescribeSpotFleetRequestHistoryRequest> request = new DescribeSpotFleetRequestHistoryRequestMarshaller()
-                .marshall(this);
+        Request<DescribeSpotFleetRequestHistoryRequest> request = new DescribeSpotFleetRequestHistoryRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -387,32 +352,25 @@ public class DescribeSpotFleetRequestHistoryRequest extends
         if (obj instanceof DescribeSpotFleetRequestHistoryRequest == false)
             return false;
         DescribeSpotFleetRequestHistoryRequest other = (DescribeSpotFleetRequestHistoryRequest) obj;
-        if (other.getSpotFleetRequestId() == null
-                ^ this.getSpotFleetRequestId() == null)
+        if (other.getSpotFleetRequestId() == null ^ this.getSpotFleetRequestId() == null)
             return false;
-        if (other.getSpotFleetRequestId() != null
-                && other.getSpotFleetRequestId().equals(
-                        this.getSpotFleetRequestId()) == false)
+        if (other.getSpotFleetRequestId() != null && other.getSpotFleetRequestId().equals(this.getSpotFleetRequestId()) == false)
             return false;
         if (other.getEventType() == null ^ this.getEventType() == null)
             return false;
-        if (other.getEventType() != null
-                && other.getEventType().equals(this.getEventType()) == false)
+        if (other.getEventType() != null && other.getEventType().equals(this.getEventType()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
-        if (other.getStartTime() != null
-                && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -422,18 +380,11 @@ public class DescribeSpotFleetRequestHistoryRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSpotFleetRequestId() == null) ? 0
-                        : getSpotFleetRequestId().hashCode());
-        hashCode = prime * hashCode
-                + ((getEventType() == null) ? 0 : getEventType().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
+        hashCode = prime * hashCode + ((getEventType() == null) ? 0 : getEventType().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

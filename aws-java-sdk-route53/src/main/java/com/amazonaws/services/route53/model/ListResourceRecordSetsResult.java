@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * A complex type that contains list information for the resource record set.
  * </p>
  */
-public class ListResourceRecordSetsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,9 +29,8 @@ public class ListResourceRecordSetsResult extends
     private com.amazonaws.internal.SdkInternalList<ResourceRecordSet> resourceRecordSets;
     /**
      * <p>
-     * A flag that indicates whether more resource record sets remain to be
-     * listed. If your results were truncated, you can make a follow-up
-     * pagination request by using the <code>NextRecordName</code> element.
+     * A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you
+     * can make a follow-up pagination request by using the <code>NextRecordName</code> element.
      * </p>
      */
     private Boolean isTruncated;
@@ -59,10 +54,9 @@ public class ListResourceRecordSetsResult extends
     private String nextRecordType;
     /**
      * <p>
-     * <i>Weighted, latency, geolocation, and failover resource record sets
-     * only</i>: If results were truncated for a given DNS name and type, the
-     * value of <code>SetIdentifier</code> for the next resource record set that
-     * has the current DNS name and type.
+     * <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated for a
+     * given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the
+     * current DNS name and type.
      * </p>
      */
     private String nextRecordIdentifier;
@@ -97,15 +91,13 @@ public class ListResourceRecordSetsResult extends
      *        Information about multiple resource record sets.
      */
 
-    public void setResourceRecordSets(
-            java.util.Collection<ResourceRecordSet> resourceRecordSets) {
+    public void setResourceRecordSets(java.util.Collection<ResourceRecordSet> resourceRecordSets) {
         if (resourceRecordSets == null) {
             this.resourceRecordSets = null;
             return;
         }
 
-        this.resourceRecordSets = new com.amazonaws.internal.SdkInternalList<ResourceRecordSet>(
-                resourceRecordSets);
+        this.resourceRecordSets = new com.amazonaws.internal.SdkInternalList<ResourceRecordSet>(resourceRecordSets);
     }
 
     /**
@@ -113,23 +105,19 @@ public class ListResourceRecordSetsResult extends
      * Information about multiple resource record sets.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setResourceRecordSets(java.util.Collection)} or
-     * {@link #withResourceRecordSets(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceRecordSets(java.util.Collection)} or {@link #withResourceRecordSets(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param resourceRecordSets
      *        Information about multiple resource record sets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListResourceRecordSetsResult withResourceRecordSets(
-            ResourceRecordSet... resourceRecordSets) {
+    public ListResourceRecordSetsResult withResourceRecordSets(ResourceRecordSet... resourceRecordSets) {
         if (this.resourceRecordSets == null) {
-            setResourceRecordSets(new com.amazonaws.internal.SdkInternalList<ResourceRecordSet>(
-                    resourceRecordSets.length));
+            setResourceRecordSets(new com.amazonaws.internal.SdkInternalList<ResourceRecordSet>(resourceRecordSets.length));
         }
         for (ResourceRecordSet ele : resourceRecordSets) {
             this.resourceRecordSets.add(ele);
@@ -144,28 +132,23 @@ public class ListResourceRecordSetsResult extends
      * 
      * @param resourceRecordSets
      *        Information about multiple resource record sets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListResourceRecordSetsResult withResourceRecordSets(
-            java.util.Collection<ResourceRecordSet> resourceRecordSets) {
+    public ListResourceRecordSetsResult withResourceRecordSets(java.util.Collection<ResourceRecordSet> resourceRecordSets) {
         setResourceRecordSets(resourceRecordSets);
         return this;
     }
 
     /**
      * <p>
-     * A flag that indicates whether more resource record sets remain to be
-     * listed. If your results were truncated, you can make a follow-up
-     * pagination request by using the <code>NextRecordName</code> element.
+     * A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you
+     * can make a follow-up pagination request by using the <code>NextRecordName</code> element.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether more resource record sets remain to
-     *        be listed. If your results were truncated, you can make a
-     *        follow-up pagination request by using the
-     *        <code>NextRecordName</code> element.
+     *        A flag that indicates whether more resource record sets remain to be listed. If your results were
+     *        truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -174,15 +157,12 @@ public class ListResourceRecordSetsResult extends
 
     /**
      * <p>
-     * A flag that indicates whether more resource record sets remain to be
-     * listed. If your results were truncated, you can make a follow-up
-     * pagination request by using the <code>NextRecordName</code> element.
+     * A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you
+     * can make a follow-up pagination request by using the <code>NextRecordName</code> element.
      * </p>
      * 
-     * @return A flag that indicates whether more resource record sets remain to
-     *         be listed. If your results were truncated, you can make a
-     *         follow-up pagination request by using the
-     *         <code>NextRecordName</code> element.
+     * @return A flag that indicates whether more resource record sets remain to be listed. If your results were
+     *         truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.
      */
 
     public Boolean getIsTruncated() {
@@ -191,18 +171,14 @@ public class ListResourceRecordSetsResult extends
 
     /**
      * <p>
-     * A flag that indicates whether more resource record sets remain to be
-     * listed. If your results were truncated, you can make a follow-up
-     * pagination request by using the <code>NextRecordName</code> element.
+     * A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you
+     * can make a follow-up pagination request by using the <code>NextRecordName</code> element.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether more resource record sets remain to
-     *        be listed. If your results were truncated, you can make a
-     *        follow-up pagination request by using the
-     *        <code>NextRecordName</code> element.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A flag that indicates whether more resource record sets remain to be listed. If your results were
+     *        truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListResourceRecordSetsResult withIsTruncated(Boolean isTruncated) {
@@ -212,15 +188,12 @@ public class ListResourceRecordSetsResult extends
 
     /**
      * <p>
-     * A flag that indicates whether more resource record sets remain to be
-     * listed. If your results were truncated, you can make a follow-up
-     * pagination request by using the <code>NextRecordName</code> element.
+     * A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you
+     * can make a follow-up pagination request by using the <code>NextRecordName</code> element.
      * </p>
      * 
-     * @return A flag that indicates whether more resource record sets remain to
-     *         be listed. If your results were truncated, you can make a
-     *         follow-up pagination request by using the
-     *         <code>NextRecordName</code> element.
+     * @return A flag that indicates whether more resource record sets remain to be listed. If your results were
+     *         truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.
      */
 
     public Boolean isTruncated() {
@@ -236,8 +209,7 @@ public class ListResourceRecordSetsResult extends
      * </p>
      * 
      * @param nextRecordName
-     *        If the results were truncated, the name of the next record in the
-     *        list.</p>
+     *        If the results were truncated, the name of the next record in the list.</p>
      *        <p>
      *        This element is present only if <code>IsTruncated</code> is true.
      */
@@ -254,8 +226,7 @@ public class ListResourceRecordSetsResult extends
      * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
-     * @return If the results were truncated, the name of the next record in the
-     *         list.</p>
+     * @return If the results were truncated, the name of the next record in the list.</p>
      *         <p>
      *         This element is present only if <code>IsTruncated</code> is true.
      */
@@ -273,12 +244,10 @@ public class ListResourceRecordSetsResult extends
      * </p>
      * 
      * @param nextRecordName
-     *        If the results were truncated, the name of the next record in the
-     *        list.</p>
+     *        If the results were truncated, the name of the next record in the list.</p>
      *        <p>
      *        This element is present only if <code>IsTruncated</code> is true.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListResourceRecordSetsResult withNextRecordName(String nextRecordName) {
@@ -295,8 +264,7 @@ public class ListResourceRecordSetsResult extends
      * </p>
      * 
      * @param nextRecordType
-     *        If the results were truncated, the type of the next record in the
-     *        list.</p>
+     *        If the results were truncated, the type of the next record in the list.</p>
      *        <p>
      *        This element is present only if <code>IsTruncated</code> is true.
      * @see RRType
@@ -314,8 +282,7 @@ public class ListResourceRecordSetsResult extends
      * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
-     * @return If the results were truncated, the type of the next record in the
-     *         list.</p>
+     * @return If the results were truncated, the type of the next record in the list.</p>
      *         <p>
      *         This element is present only if <code>IsTruncated</code> is true.
      * @see RRType
@@ -334,12 +301,10 @@ public class ListResourceRecordSetsResult extends
      * </p>
      * 
      * @param nextRecordType
-     *        If the results were truncated, the type of the next record in the
-     *        list.</p>
+     *        If the results were truncated, the type of the next record in the list.</p>
      *        <p>
      *        This element is present only if <code>IsTruncated</code> is true.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
 
@@ -357,8 +322,7 @@ public class ListResourceRecordSetsResult extends
      * </p>
      * 
      * @param nextRecordType
-     *        If the results were truncated, the type of the next record in the
-     *        list.</p>
+     *        If the results were truncated, the type of the next record in the list.</p>
      *        <p>
      *        This element is present only if <code>IsTruncated</code> is true.
      * @see RRType
@@ -377,12 +341,10 @@ public class ListResourceRecordSetsResult extends
      * </p>
      * 
      * @param nextRecordType
-     *        If the results were truncated, the type of the next record in the
-     *        list.</p>
+     *        If the results were truncated, the type of the next record in the list.</p>
      *        <p>
      *        This element is present only if <code>IsTruncated</code> is true.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
 
@@ -393,17 +355,15 @@ public class ListResourceRecordSetsResult extends
 
     /**
      * <p>
-     * <i>Weighted, latency, geolocation, and failover resource record sets
-     * only</i>: If results were truncated for a given DNS name and type, the
-     * value of <code>SetIdentifier</code> for the next resource record set that
-     * has the current DNS name and type.
+     * <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated for a
+     * given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the
+     * current DNS name and type.
      * </p>
      * 
      * @param nextRecordIdentifier
-     *        <i>Weighted, latency, geolocation, and failover resource record
-     *        sets only</i>: If results were truncated for a given DNS name and
-     *        type, the value of <code>SetIdentifier</code> for the next
-     *        resource record set that has the current DNS name and type.
+     *        <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated
+     *        for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set
+     *        that has the current DNS name and type.
      */
 
     public void setNextRecordIdentifier(String nextRecordIdentifier) {
@@ -412,16 +372,14 @@ public class ListResourceRecordSetsResult extends
 
     /**
      * <p>
-     * <i>Weighted, latency, geolocation, and failover resource record sets
-     * only</i>: If results were truncated for a given DNS name and type, the
-     * value of <code>SetIdentifier</code> for the next resource record set that
-     * has the current DNS name and type.
+     * <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated for a
+     * given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the
+     * current DNS name and type.
      * </p>
      * 
-     * @return <i>Weighted, latency, geolocation, and failover resource record
-     *         sets only</i>: If results were truncated for a given DNS name and
-     *         type, the value of <code>SetIdentifier</code> for the next
-     *         resource record set that has the current DNS name and type.
+     * @return <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated
+     *         for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set
+     *         that has the current DNS name and type.
      */
 
     public String getNextRecordIdentifier() {
@@ -430,23 +388,19 @@ public class ListResourceRecordSetsResult extends
 
     /**
      * <p>
-     * <i>Weighted, latency, geolocation, and failover resource record sets
-     * only</i>: If results were truncated for a given DNS name and type, the
-     * value of <code>SetIdentifier</code> for the next resource record set that
-     * has the current DNS name and type.
+     * <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated for a
+     * given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the
+     * current DNS name and type.
      * </p>
      * 
      * @param nextRecordIdentifier
-     *        <i>Weighted, latency, geolocation, and failover resource record
-     *        sets only</i>: If results were truncated for a given DNS name and
-     *        type, the value of <code>SetIdentifier</code> for the next
-     *        resource record set that has the current DNS name and type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated
+     *        for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set
+     *        that has the current DNS name and type.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListResourceRecordSetsResult withNextRecordIdentifier(
-            String nextRecordIdentifier) {
+    public ListResourceRecordSetsResult withNextRecordIdentifier(String nextRecordIdentifier) {
         setNextRecordIdentifier(nextRecordIdentifier);
         return this;
     }
@@ -483,8 +437,7 @@ public class ListResourceRecordSetsResult extends
      * 
      * @param maxItems
      *        The maximum number of records you requested.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListResourceRecordSetsResult withMaxItems(String maxItems) {
@@ -493,8 +446,7 @@ public class ListResourceRecordSetsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -513,8 +465,7 @@ public class ListResourceRecordSetsResult extends
         if (getNextRecordType() != null)
             sb.append("NextRecordType: " + getNextRecordType() + ",");
         if (getNextRecordIdentifier() != null)
-            sb.append("NextRecordIdentifier: " + getNextRecordIdentifier()
-                    + ",");
+            sb.append("NextRecordIdentifier: " + getNextRecordIdentifier() + ",");
         if (getMaxItems() != null)
             sb.append("MaxItems: " + getMaxItems());
         sb.append("}");
@@ -531,41 +482,29 @@ public class ListResourceRecordSetsResult extends
         if (obj instanceof ListResourceRecordSetsResult == false)
             return false;
         ListResourceRecordSetsResult other = (ListResourceRecordSetsResult) obj;
-        if (other.getResourceRecordSets() == null
-                ^ this.getResourceRecordSets() == null)
+        if (other.getResourceRecordSets() == null ^ this.getResourceRecordSets() == null)
             return false;
-        if (other.getResourceRecordSets() != null
-                && other.getResourceRecordSets().equals(
-                        this.getResourceRecordSets()) == false)
+        if (other.getResourceRecordSets() != null && other.getResourceRecordSets().equals(this.getResourceRecordSets()) == false)
             return false;
         if (other.getIsTruncated() == null ^ this.getIsTruncated() == null)
             return false;
-        if (other.getIsTruncated() != null
-                && other.getIsTruncated().equals(this.getIsTruncated()) == false)
+        if (other.getIsTruncated() != null && other.getIsTruncated().equals(this.getIsTruncated()) == false)
             return false;
-        if (other.getNextRecordName() == null
-                ^ this.getNextRecordName() == null)
+        if (other.getNextRecordName() == null ^ this.getNextRecordName() == null)
             return false;
-        if (other.getNextRecordName() != null
-                && other.getNextRecordName().equals(this.getNextRecordName()) == false)
+        if (other.getNextRecordName() != null && other.getNextRecordName().equals(this.getNextRecordName()) == false)
             return false;
-        if (other.getNextRecordType() == null
-                ^ this.getNextRecordType() == null)
+        if (other.getNextRecordType() == null ^ this.getNextRecordType() == null)
             return false;
-        if (other.getNextRecordType() != null
-                && other.getNextRecordType().equals(this.getNextRecordType()) == false)
+        if (other.getNextRecordType() != null && other.getNextRecordType().equals(this.getNextRecordType()) == false)
             return false;
-        if (other.getNextRecordIdentifier() == null
-                ^ this.getNextRecordIdentifier() == null)
+        if (other.getNextRecordIdentifier() == null ^ this.getNextRecordIdentifier() == null)
             return false;
-        if (other.getNextRecordIdentifier() != null
-                && other.getNextRecordIdentifier().equals(
-                        this.getNextRecordIdentifier()) == false)
+        if (other.getNextRecordIdentifier() != null && other.getNextRecordIdentifier().equals(this.getNextRecordIdentifier()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         return true;
     }
@@ -575,27 +514,12 @@ public class ListResourceRecordSetsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceRecordSets() == null) ? 0
-                        : getResourceRecordSets().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextRecordName() == null) ? 0 : getNextRecordName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextRecordType() == null) ? 0 : getNextRecordType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextRecordIdentifier() == null) ? 0
-                        : getNextRecordIdentifier().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getResourceRecordSets() == null) ? 0 : getResourceRecordSets().hashCode());
+        hashCode = prime * hashCode + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
+        hashCode = prime * hashCode + ((getNextRecordName() == null) ? 0 : getNextRecordName().hashCode());
+        hashCode = prime * hashCode + ((getNextRecordType() == null) ? 0 : getNextRecordType().hashCode());
+        hashCode = prime * hashCode + ((getNextRecordIdentifier() == null) ? 0 : getNextRecordIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
 
@@ -604,9 +528,7 @@ public class ListResourceRecordSetsResult extends
         try {
             return (ListResourceRecordSetsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

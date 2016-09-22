@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -25,8 +23,7 @@ public class Message implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The subject of the message: A short summary of the content, which will
-     * appear in the recipient's inbox.
+     * The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
      * </p>
      */
     private Content subject;
@@ -38,20 +35,18 @@ public class Message implements Serializable, Cloneable {
     private Body body;
 
     /**
-     * Default constructor for Message object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize the object after creating
-     * it.
+     * Default constructor for Message object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize the object after creating it.
      */
     public Message() {
     }
 
     /**
-     * Constructs a new Message object. Callers should use the setter or fluent
-     * setter (with...) methods to initialize any additional object members.
+     * Constructs a new Message object. Callers should use the setter or fluent setter (with...) methods to initialize
+     * any additional object members.
      * 
      * @param subject
-     *        The subject of the message: A short summary of the content, which
-     *        will appear in the recipient's inbox.
+     *        The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
      * @param body
      *        The message body.
      */
@@ -62,13 +57,11 @@ public class Message implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The subject of the message: A short summary of the content, which will
-     * appear in the recipient's inbox.
+     * The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
      * </p>
      * 
      * @param subject
-     *        The subject of the message: A short summary of the content, which
-     *        will appear in the recipient's inbox.
+     *        The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
      */
 
     public void setSubject(Content subject) {
@@ -77,12 +70,10 @@ public class Message implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The subject of the message: A short summary of the content, which will
-     * appear in the recipient's inbox.
+     * The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
      * </p>
      * 
-     * @return The subject of the message: A short summary of the content, which
-     *         will appear in the recipient's inbox.
+     * @return The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
      */
 
     public Content getSubject() {
@@ -91,15 +82,12 @@ public class Message implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The subject of the message: A short summary of the content, which will
-     * appear in the recipient's inbox.
+     * The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
      * </p>
      * 
      * @param subject
-     *        The subject of the message: A short summary of the content, which
-     *        will appear in the recipient's inbox.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Message withSubject(Content subject) {
@@ -139,8 +127,7 @@ public class Message implements Serializable, Cloneable {
      * 
      * @param body
      *        The message body.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Message withBody(Body body) {
@@ -149,8 +136,7 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -180,13 +166,11 @@ public class Message implements Serializable, Cloneable {
         Message other = (Message) obj;
         if (other.getSubject() == null ^ this.getSubject() == null)
             return false;
-        if (other.getSubject() != null
-                && other.getSubject().equals(this.getSubject()) == false)
+        if (other.getSubject() != null && other.getSubject().equals(this.getSubject()) == false)
             return false;
         if (other.getBody() == null ^ this.getBody() == null)
             return false;
-        if (other.getBody() != null
-                && other.getBody().equals(this.getBody()) == false)
+        if (other.getBody() != null && other.getBody().equals(this.getBody()) == false)
             return false;
         return true;
     }
@@ -196,10 +180,8 @@ public class Message implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSubject() == null) ? 0 : getSubject().hashCode());
-        hashCode = prime * hashCode
-                + ((getBody() == null) ? 0 : getBody().hashCode());
+        hashCode = prime * hashCode + ((getSubject() == null) ? 0 : getSubject().hashCode());
+        hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         return hashCode;
     }
 
@@ -208,9 +190,7 @@ public class Message implements Serializable, Cloneable {
         try {
             return (Message) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

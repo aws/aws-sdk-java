@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Contains the output of ModifyTargetGroupAttributes.
  * </p>
  */
-public class ModifyTargetGroupAttributesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ModifyTargetGroupAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -53,15 +49,13 @@ public class ModifyTargetGroupAttributesResult extends
      *        Information about the attributes.
      */
 
-    public void setAttributes(
-            java.util.Collection<TargetGroupAttribute> attributes) {
+    public void setAttributes(java.util.Collection<TargetGroupAttribute> attributes) {
         if (attributes == null) {
             this.attributes = null;
             return;
         }
 
-        this.attributes = new java.util.ArrayList<TargetGroupAttribute>(
-                attributes);
+        this.attributes = new java.util.ArrayList<TargetGroupAttribute>(attributes);
     }
 
     /**
@@ -69,23 +63,19 @@ public class ModifyTargetGroupAttributesResult extends
      * Information about the attributes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttributes(java.util.Collection)} or
-     * {@link #withAttributes(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param attributes
      *        Information about the attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyTargetGroupAttributesResult withAttributes(
-            TargetGroupAttribute... attributes) {
+    public ModifyTargetGroupAttributesResult withAttributes(TargetGroupAttribute... attributes) {
         if (this.attributes == null) {
-            setAttributes(new java.util.ArrayList<TargetGroupAttribute>(
-                    attributes.length));
+            setAttributes(new java.util.ArrayList<TargetGroupAttribute>(attributes.length));
         }
         for (TargetGroupAttribute ele : attributes) {
             this.attributes.add(ele);
@@ -100,19 +90,16 @@ public class ModifyTargetGroupAttributesResult extends
      * 
      * @param attributes
      *        Information about the attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyTargetGroupAttributesResult withAttributes(
-            java.util.Collection<TargetGroupAttribute> attributes) {
+    public ModifyTargetGroupAttributesResult withAttributes(java.util.Collection<TargetGroupAttribute> attributes) {
         setAttributes(attributes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -140,8 +127,7 @@ public class ModifyTargetGroupAttributesResult extends
         ModifyTargetGroupAttributesResult other = (ModifyTargetGroupAttributesResult) obj;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
-        if (other.getAttributes() != null
-                && other.getAttributes().equals(this.getAttributes()) == false)
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
         return true;
     }
@@ -151,8 +137,7 @@ public class ModifyTargetGroupAttributesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         return hashCode;
     }
 
@@ -161,9 +146,7 @@ public class ModifyTargetGroupAttributesResult extends
         try {
             return (ModifyTargetGroupAttributesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

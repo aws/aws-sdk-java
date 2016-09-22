@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to update user attributes.
  * </p>
  */
-public class UpdateUserAttributesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -60,15 +56,13 @@ public class UpdateUserAttributesRequest extends
      *        An array of name-value pairs representing user attributes.
      */
 
-    public void setUserAttributes(
-            java.util.Collection<AttributeType> userAttributes) {
+    public void setUserAttributes(java.util.Collection<AttributeType> userAttributes) {
         if (userAttributes == null) {
             this.userAttributes = null;
             return;
         }
 
-        this.userAttributes = new java.util.ArrayList<AttributeType>(
-                userAttributes);
+        this.userAttributes = new java.util.ArrayList<AttributeType>(userAttributes);
     }
 
     /**
@@ -76,23 +70,19 @@ public class UpdateUserAttributesRequest extends
      * An array of name-value pairs representing user attributes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setUserAttributes(java.util.Collection)} or
-     * {@link #withUserAttributes(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserAttributes(java.util.Collection)} or {@link #withUserAttributes(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param userAttributes
      *        An array of name-value pairs representing user attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateUserAttributesRequest withUserAttributes(
-            AttributeType... userAttributes) {
+    public UpdateUserAttributesRequest withUserAttributes(AttributeType... userAttributes) {
         if (this.userAttributes == null) {
-            setUserAttributes(new java.util.ArrayList<AttributeType>(
-                    userAttributes.length));
+            setUserAttributes(new java.util.ArrayList<AttributeType>(userAttributes.length));
         }
         for (AttributeType ele : userAttributes) {
             this.userAttributes.add(ele);
@@ -107,12 +97,10 @@ public class UpdateUserAttributesRequest extends
      * 
      * @param userAttributes
      *        An array of name-value pairs representing user attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateUserAttributesRequest withUserAttributes(
-            java.util.Collection<AttributeType> userAttributes) {
+    public UpdateUserAttributesRequest withUserAttributes(java.util.Collection<AttributeType> userAttributes) {
         setUserAttributes(userAttributes);
         return this;
     }
@@ -149,8 +137,7 @@ public class UpdateUserAttributesRequest extends
      * 
      * @param accessToken
      *        The access token for the request to update user attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateUserAttributesRequest withAccessToken(String accessToken) {
@@ -159,8 +146,7 @@ public class UpdateUserAttributesRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -188,16 +174,13 @@ public class UpdateUserAttributesRequest extends
         if (obj instanceof UpdateUserAttributesRequest == false)
             return false;
         UpdateUserAttributesRequest other = (UpdateUserAttributesRequest) obj;
-        if (other.getUserAttributes() == null
-                ^ this.getUserAttributes() == null)
+        if (other.getUserAttributes() == null ^ this.getUserAttributes() == null)
             return false;
-        if (other.getUserAttributes() != null
-                && other.getUserAttributes().equals(this.getUserAttributes()) == false)
+        if (other.getUserAttributes() != null && other.getUserAttributes().equals(this.getUserAttributes()) == false)
             return false;
         if (other.getAccessToken() == null ^ this.getAccessToken() == null)
             return false;
-        if (other.getAccessToken() != null
-                && other.getAccessToken().equals(this.getAccessToken()) == false)
+        if (other.getAccessToken() != null && other.getAccessToken().equals(this.getAccessToken()) == false)
             return false;
         return true;
     }
@@ -207,13 +190,8 @@ public class UpdateUserAttributesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getUserAttributes() == null) ? 0 : getUserAttributes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAccessToken() == null) ? 0 : getAccessToken().hashCode());
+        hashCode = prime * hashCode + ((getUserAttributes() == null) ? 0 : getUserAttributes().hashCode());
+        hashCode = prime * hashCode + ((getAccessToken() == null) ? 0 : getAccessToken().hashCode());
         return hashCode;
     }
 

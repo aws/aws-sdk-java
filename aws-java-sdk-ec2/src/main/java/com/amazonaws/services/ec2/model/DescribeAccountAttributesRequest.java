@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeAccountAttributesReque
  * Contains the parameters for DescribeAccountAttributes.
  * </p>
  */
-public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeAccountAttributesRequest> {
 
     /**
@@ -67,8 +64,7 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.attributeNames = new com.amazonaws.internal.SdkInternalList<String>(
-                attributeNames);
+        this.attributeNames = new com.amazonaws.internal.SdkInternalList<String>(attributeNames);
     }
 
     /**
@@ -76,24 +72,20 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest
      * One or more account attribute names.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttributeNames(java.util.Collection)} or
-     * {@link #withAttributeNames(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributeNames(java.util.Collection)} or {@link #withAttributeNames(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param attributeNames
      *        One or more account attribute names.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountAttributeName
      */
 
-    public DescribeAccountAttributesRequest withAttributeNames(
-            String... attributeNames) {
+    public DescribeAccountAttributesRequest withAttributeNames(String... attributeNames) {
         if (this.attributeNames == null) {
-            setAttributeNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    attributeNames.length));
+            setAttributeNames(new com.amazonaws.internal.SdkInternalList<String>(attributeNames.length));
         }
         for (String ele : attributeNames) {
             this.attributeNames.add(ele);
@@ -108,13 +100,11 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest
      * 
      * @param attributeNames
      *        One or more account attribute names.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountAttributeName
      */
 
-    public DescribeAccountAttributesRequest withAttributeNames(
-            java.util.Collection<String> attributeNames) {
+    public DescribeAccountAttributesRequest withAttributeNames(java.util.Collection<String> attributeNames) {
         setAttributeNames(attributeNames);
         return this;
     }
@@ -126,15 +116,12 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest
      * 
      * @param attributeNames
      *        One or more account attribute names.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountAttributeName
      */
 
-    public DescribeAccountAttributesRequest withAttributeNames(
-            AccountAttributeName... attributeNames) {
-        com.amazonaws.internal.SdkInternalList<String> attributeNamesCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                attributeNames.length);
+    public DescribeAccountAttributesRequest withAttributeNames(AccountAttributeName... attributeNames) {
+        com.amazonaws.internal.SdkInternalList<String> attributeNamesCopy = new com.amazonaws.internal.SdkInternalList<String>(attributeNames.length);
         for (AccountAttributeName value : attributeNames) {
             attributeNamesCopy.add(value.toString());
         }
@@ -147,21 +134,18 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeAccountAttributesRequest> getDryRunRequest() {
-        Request<DescribeAccountAttributesRequest> request = new DescribeAccountAttributesRequestMarshaller()
-                .marshall(this);
+        Request<DescribeAccountAttributesRequest> request = new DescribeAccountAttributesRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -187,11 +171,9 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeAccountAttributesRequest == false)
             return false;
         DescribeAccountAttributesRequest other = (DescribeAccountAttributesRequest) obj;
-        if (other.getAttributeNames() == null
-                ^ this.getAttributeNames() == null)
+        if (other.getAttributeNames() == null ^ this.getAttributeNames() == null)
             return false;
-        if (other.getAttributeNames() != null
-                && other.getAttributeNames().equals(this.getAttributeNames()) == false)
+        if (other.getAttributeNames() != null && other.getAttributeNames().equals(this.getAttributeNames()) == false)
             return false;
         return true;
     }
@@ -201,10 +183,7 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAttributeNames() == null) ? 0 : getAttributeNames()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAttributeNames() == null) ? 0 : getAttributeNames().hashCode());
         return hashCode;
     }
 

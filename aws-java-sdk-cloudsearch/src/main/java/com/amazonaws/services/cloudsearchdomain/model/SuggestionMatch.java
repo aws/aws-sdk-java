@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchdomain.model;
 
@@ -18,16 +16,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An autocomplete suggestion that matches the query string specified in a
- * <code>SuggestRequest</code>.
+ * An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>.
  * </p>
  */
 public class SuggestionMatch implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The string that matches the query string specified in the
-     * <code>SuggestRequest</code>.
+     * The string that matches the query string specified in the <code>SuggestRequest</code>.
      * </p>
      */
     private String suggestion;
@@ -46,13 +42,11 @@ public class SuggestionMatch implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The string that matches the query string specified in the
-     * <code>SuggestRequest</code>.
+     * The string that matches the query string specified in the <code>SuggestRequest</code>.
      * </p>
      * 
      * @param suggestion
-     *        The string that matches the query string specified in the
-     *        <code>SuggestRequest</code>.
+     *        The string that matches the query string specified in the <code>SuggestRequest</code>.
      */
 
     public void setSuggestion(String suggestion) {
@@ -61,12 +55,10 @@ public class SuggestionMatch implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The string that matches the query string specified in the
-     * <code>SuggestRequest</code>.
+     * The string that matches the query string specified in the <code>SuggestRequest</code>.
      * </p>
      * 
-     * @return The string that matches the query string specified in the
-     *         <code>SuggestRequest</code>.
+     * @return The string that matches the query string specified in the <code>SuggestRequest</code>.
      */
 
     public String getSuggestion() {
@@ -75,15 +67,12 @@ public class SuggestionMatch implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The string that matches the query string specified in the
-     * <code>SuggestRequest</code>.
+     * The string that matches the query string specified in the <code>SuggestRequest</code>.
      * </p>
      * 
      * @param suggestion
-     *        The string that matches the query string specified in the
-     *        <code>SuggestRequest</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The string that matches the query string specified in the <code>SuggestRequest</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SuggestionMatch withSuggestion(String suggestion) {
@@ -123,8 +112,7 @@ public class SuggestionMatch implements Serializable, Cloneable {
      * 
      * @param score
      *        The relevance score of a suggested match.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SuggestionMatch withScore(Long score) {
@@ -164,8 +152,7 @@ public class SuggestionMatch implements Serializable, Cloneable {
      * 
      * @param id
      *        The document ID of the suggested document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SuggestionMatch withId(String id) {
@@ -174,8 +161,7 @@ public class SuggestionMatch implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -207,18 +193,15 @@ public class SuggestionMatch implements Serializable, Cloneable {
         SuggestionMatch other = (SuggestionMatch) obj;
         if (other.getSuggestion() == null ^ this.getSuggestion() == null)
             return false;
-        if (other.getSuggestion() != null
-                && other.getSuggestion().equals(this.getSuggestion()) == false)
+        if (other.getSuggestion() != null && other.getSuggestion().equals(this.getSuggestion()) == false)
             return false;
         if (other.getScore() == null ^ this.getScore() == null)
             return false;
-        if (other.getScore() != null
-                && other.getScore().equals(this.getScore()) == false)
+        if (other.getScore() != null && other.getScore().equals(this.getScore()) == false)
             return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         return true;
     }
@@ -228,12 +211,9 @@ public class SuggestionMatch implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSuggestion() == null) ? 0 : getSuggestion().hashCode());
-        hashCode = prime * hashCode
-                + ((getScore() == null) ? 0 : getScore().hashCode());
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getSuggestion() == null) ? 0 : getSuggestion().hashCode());
+        hashCode = prime * hashCode + ((getScore() == null) ? 0 : getScore().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         return hashCode;
     }
 
@@ -242,9 +222,7 @@ public class SuggestionMatch implements Serializable, Cloneable {
         try {
             return (SuggestionMatch) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

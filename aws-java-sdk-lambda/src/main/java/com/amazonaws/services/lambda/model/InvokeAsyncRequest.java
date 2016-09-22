@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model;
 
@@ -20,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -68,8 +65,7 @@ public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param functionName
      *        The Lambda function name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvokeAsyncRequest withFunctionName(String functionName) {
@@ -109,8 +105,7 @@ public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param invokeArgs
      *        JSON that you want to provide to your Lambda function as input.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvokeAsyncRequest withInvokeArgs(java.io.InputStream invokeArgs) {
@@ -127,8 +122,7 @@ public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest
      *        JSON that you want to provide to your Lambda function as input.
      */
     public void setInvokeArgs(String invokeArgs) {
-        setInvokeArgs(new com.amazonaws.adapters.types.StringToInputStreamAdapter()
-                .adapt(invokeArgs));
+        setInvokeArgs(new com.amazonaws.adapters.types.StringToInputStreamAdapter().adapt(invokeArgs));
     }
 
     /**
@@ -138,18 +132,15 @@ public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param invokeArgs
      *        JSON that you want to provide to your Lambda function as input.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
     public InvokeAsyncRequest withInvokeArgs(String invokeArgs) {
-        setInvokeArgs(new com.amazonaws.adapters.types.StringToInputStreamAdapter()
-                .adapt(invokeArgs));
+        setInvokeArgs(new com.amazonaws.adapters.types.StringToInputStreamAdapter().adapt(invokeArgs));
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -179,13 +170,11 @@ public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest
         InvokeAsyncRequest other = (InvokeAsyncRequest) obj;
         if (other.getFunctionName() == null ^ this.getFunctionName() == null)
             return false;
-        if (other.getFunctionName() != null
-                && other.getFunctionName().equals(this.getFunctionName()) == false)
+        if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false)
             return false;
         if (other.getInvokeArgs() == null ^ this.getInvokeArgs() == null)
             return false;
-        if (other.getInvokeArgs() != null
-                && other.getInvokeArgs().equals(this.getInvokeArgs()) == false)
+        if (other.getInvokeArgs() != null && other.getInvokeArgs().equals(this.getInvokeArgs()) == false)
             return false;
         return true;
     }
@@ -195,12 +184,8 @@ public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFunctionName() == null) ? 0 : getFunctionName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getInvokeArgs() == null) ? 0 : getInvokeArgs().hashCode());
+        hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode());
+        hashCode = prime * hashCode + ((getInvokeArgs() == null) ? 0 : getInvokeArgs().hashCode());
         return hashCode;
     }
 

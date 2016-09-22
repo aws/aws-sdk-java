@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
 
@@ -21,9 +19,8 @@ import java.io.Serializable;
  * A structure containing a list of connections.
  * </p>
  */
-public class DescribeConnectionsOnInterconnectResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeConnectionsOnInterconnectResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -62,8 +59,7 @@ public class DescribeConnectionsOnInterconnectResult extends
             return;
         }
 
-        this.connections = new com.amazonaws.internal.SdkInternalList<Connection>(
-                connections);
+        this.connections = new com.amazonaws.internal.SdkInternalList<Connection>(connections);
     }
 
     /**
@@ -71,23 +67,19 @@ public class DescribeConnectionsOnInterconnectResult extends
      * A list of connections.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConnections(java.util.Collection)} or
-     * {@link #withConnections(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConnections(java.util.Collection)} or {@link #withConnections(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param connections
      *        A list of connections.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConnectionsOnInterconnectResult withConnections(
-            Connection... connections) {
+    public DescribeConnectionsOnInterconnectResult withConnections(Connection... connections) {
         if (this.connections == null) {
-            setConnections(new com.amazonaws.internal.SdkInternalList<Connection>(
-                    connections.length));
+            setConnections(new com.amazonaws.internal.SdkInternalList<Connection>(connections.length));
         }
         for (Connection ele : connections) {
             this.connections.add(ele);
@@ -102,19 +94,16 @@ public class DescribeConnectionsOnInterconnectResult extends
      * 
      * @param connections
      *        A list of connections.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConnectionsOnInterconnectResult withConnections(
-            java.util.Collection<Connection> connections) {
+    public DescribeConnectionsOnInterconnectResult withConnections(java.util.Collection<Connection> connections) {
         setConnections(connections);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -142,8 +131,7 @@ public class DescribeConnectionsOnInterconnectResult extends
         DescribeConnectionsOnInterconnectResult other = (DescribeConnectionsOnInterconnectResult) obj;
         if (other.getConnections() == null ^ this.getConnections() == null)
             return false;
-        if (other.getConnections() != null
-                && other.getConnections().equals(this.getConnections()) == false)
+        if (other.getConnections() != null && other.getConnections().equals(this.getConnections()) == false)
             return false;
         return true;
     }
@@ -153,9 +141,7 @@ public class DescribeConnectionsOnInterconnectResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getConnections() == null) ? 0 : getConnections().hashCode());
+        hashCode = prime * hashCode + ((getConnections() == null) ? 0 : getConnections().hashCode());
         return hashCode;
     }
 
@@ -164,9 +150,7 @@ public class DescribeConnectionsOnInterconnectResult extends
         try {
             return (DescribeConnectionsOnInterconnectResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

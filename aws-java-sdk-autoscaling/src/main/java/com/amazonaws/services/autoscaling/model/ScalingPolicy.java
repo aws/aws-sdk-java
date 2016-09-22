@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -43,69 +41,61 @@ public class ScalingPolicy implements Serializable, Cloneable {
     private String policyARN;
     /**
      * <p>
-     * The policy type. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.
+     * The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
      * </p>
      */
     private String policyType;
     /**
      * <p>
-     * The adjustment type, which specifies how <code>ScalingAdjustment</code>
-     * is interpreted. Valid values are <code>ChangeInCapacity</code>,
-     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      */
     private String adjustmentType;
     /**
      * <p>
-     * Available for backward compatibility. Use
-     * <code>MinAdjustmentMagnitude</code> instead.
+     * Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.
      * </p>
      */
     private Integer minAdjustmentStep;
     /**
      * <p>
-     * The minimum number of instances to scale. If the value of
-     * <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the
-     * scaling policy changes the <code>DesiredCapacity</code> of the Auto
-     * Scaling group by at least this many instances. Otherwise, the error is
-     * <code>ValidationError</code>.
+     * The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
+     * <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the Auto
+     * Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>.
      * </p>
      */
     private Integer minAdjustmentMagnitude;
     /**
      * <p>
-     * The amount by which to scale, based on the specified adjustment type. A
-     * positive value adds to the current capacity while a negative number
-     * removes from the current capacity.
+     * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
+     * capacity while a negative number removes from the current capacity.
      * </p>
      */
     private Integer scalingAdjustment;
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before
-     * any further trigger-related scaling activities can start.
+     * The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling
+     * activities can start.
      * </p>
      */
     private Integer cooldown;
     /**
      * <p>
-     * A set of adjustments that enable you to scale based on the size of the
-     * alarm breach.
+     * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StepAdjustment> stepAdjustments;
     /**
      * <p>
-     * The aggregation type for the CloudWatch metrics. Valid values are
-     * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.
+     * The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and
+     * <code>Average</code>.
      * </p>
      */
     private String metricAggregationType;
     /**
      * <p>
-     * The estimated time, in seconds, until a newly launched instance can
-     * contribute to the CloudWatch metrics.
+     * The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.
      * </p>
      */
     private Integer estimatedInstanceWarmup;
@@ -122,8 +112,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the Auto Scaling group associated with this scaling
-     *        policy.
+     *        The name of the Auto Scaling group associated with this scaling policy.
      */
 
     public void setAutoScalingGroupName(String autoScalingGroupName) {
@@ -135,8 +124,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * The name of the Auto Scaling group associated with this scaling policy.
      * </p>
      * 
-     * @return The name of the Auto Scaling group associated with this scaling
-     *         policy.
+     * @return The name of the Auto Scaling group associated with this scaling policy.
      */
 
     public String getAutoScalingGroupName() {
@@ -149,10 +137,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the Auto Scaling group associated with this scaling
-     *        policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the Auto Scaling group associated with this scaling policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withAutoScalingGroupName(String autoScalingGroupName) {
@@ -192,8 +178,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * 
      * @param policyName
      *        The name of the scaling policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withPolicyName(String policyName) {
@@ -233,8 +218,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * 
      * @param policyARN
      *        The Amazon Resource Name (ARN) of the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withPolicyARN(String policyARN) {
@@ -244,13 +228,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy type. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.
+     * The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
      * </p>
      * 
      * @param policyType
-     *        The policy type. Valid values are <code>SimpleScaling</code> and
-     *        <code>StepScaling</code>.
+     *        The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
      */
 
     public void setPolicyType(String policyType) {
@@ -259,12 +241,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy type. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.
+     * The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
      * </p>
      * 
-     * @return The policy type. Valid values are <code>SimpleScaling</code> and
-     *         <code>StepScaling</code>.
+     * @return The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
      */
 
     public String getPolicyType() {
@@ -273,15 +253,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy type. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.
+     * The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
      * </p>
      * 
      * @param policyType
-     *        The policy type. Valid values are <code>SimpleScaling</code> and
-     *        <code>StepScaling</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withPolicyType(String policyType) {
@@ -291,16 +268,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The adjustment type, which specifies how <code>ScalingAdjustment</code>
-     * is interpreted. Valid values are <code>ChangeInCapacity</code>,
-     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * 
      * @param adjustmentType
-     *        The adjustment type, which specifies how
-     *        <code>ScalingAdjustment</code> is interpreted. Valid values are
-     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *        <code>PercentChangeInCapacity</code>.
+     *        The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
+     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      */
 
     public void setAdjustmentType(String adjustmentType) {
@@ -309,15 +283,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The adjustment type, which specifies how <code>ScalingAdjustment</code>
-     * is interpreted. Valid values are <code>ChangeInCapacity</code>,
-     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * 
-     * @return The adjustment type, which specifies how
-     *         <code>ScalingAdjustment</code> is interpreted. Valid values are
-     *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *         <code>PercentChangeInCapacity</code>.
+     * @return The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
+     *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      */
 
     public String getAdjustmentType() {
@@ -326,18 +297,14 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The adjustment type, which specifies how <code>ScalingAdjustment</code>
-     * is interpreted. Valid values are <code>ChangeInCapacity</code>,
-     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * 
      * @param adjustmentType
-     *        The adjustment type, which specifies how
-     *        <code>ScalingAdjustment</code> is interpreted. Valid values are
-     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *        <code>PercentChangeInCapacity</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
+     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withAdjustmentType(String adjustmentType) {
@@ -347,13 +314,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Available for backward compatibility. Use
-     * <code>MinAdjustmentMagnitude</code> instead.
+     * Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.
      * </p>
      * 
      * @param minAdjustmentStep
-     *        Available for backward compatibility. Use
-     *        <code>MinAdjustmentMagnitude</code> instead.
+     *        Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.
      */
 
     public void setMinAdjustmentStep(Integer minAdjustmentStep) {
@@ -362,12 +327,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Available for backward compatibility. Use
-     * <code>MinAdjustmentMagnitude</code> instead.
+     * Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.
      * </p>
      * 
-     * @return Available for backward compatibility. Use
-     *         <code>MinAdjustmentMagnitude</code> instead.
+     * @return Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.
      */
 
     public Integer getMinAdjustmentStep() {
@@ -376,15 +339,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Available for backward compatibility. Use
-     * <code>MinAdjustmentMagnitude</code> instead.
+     * Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.
      * </p>
      * 
      * @param minAdjustmentStep
-     *        Available for backward compatibility. Use
-     *        <code>MinAdjustmentMagnitude</code> instead.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withMinAdjustmentStep(Integer minAdjustmentStep) {
@@ -394,20 +354,15 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum number of instances to scale. If the value of
-     * <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the
-     * scaling policy changes the <code>DesiredCapacity</code> of the Auto
-     * Scaling group by at least this many instances. Otherwise, the error is
-     * <code>ValidationError</code>.
+     * The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
+     * <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the Auto
+     * Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>.
      * </p>
      * 
      * @param minAdjustmentMagnitude
-     *        The minimum number of instances to scale. If the value of
-     *        <code>AdjustmentType</code> is
-     *        <code>PercentChangeInCapacity</code>, the scaling policy changes
-     *        the <code>DesiredCapacity</code> of the Auto Scaling group by at
-     *        least this many instances. Otherwise, the error is
-     *        <code>ValidationError</code>.
+     *        The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
+     *        <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the
+     *        Auto Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>.
      */
 
     public void setMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
@@ -416,19 +371,14 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum number of instances to scale. If the value of
-     * <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the
-     * scaling policy changes the <code>DesiredCapacity</code> of the Auto
-     * Scaling group by at least this many instances. Otherwise, the error is
-     * <code>ValidationError</code>.
+     * The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
+     * <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the Auto
+     * Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>.
      * </p>
      * 
-     * @return The minimum number of instances to scale. If the value of
-     *         <code>AdjustmentType</code> is
-     *         <code>PercentChangeInCapacity</code>, the scaling policy changes
-     *         the <code>DesiredCapacity</code> of the Auto Scaling group by at
-     *         least this many instances. Otherwise, the error is
-     *         <code>ValidationError</code>.
+     * @return The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
+     *         <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the
+     *         Auto Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>.
      */
 
     public Integer getMinAdjustmentMagnitude() {
@@ -437,41 +387,32 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum number of instances to scale. If the value of
-     * <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the
-     * scaling policy changes the <code>DesiredCapacity</code> of the Auto
-     * Scaling group by at least this many instances. Otherwise, the error is
-     * <code>ValidationError</code>.
+     * The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
+     * <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the Auto
+     * Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>.
      * </p>
      * 
      * @param minAdjustmentMagnitude
-     *        The minimum number of instances to scale. If the value of
-     *        <code>AdjustmentType</code> is
-     *        <code>PercentChangeInCapacity</code>, the scaling policy changes
-     *        the <code>DesiredCapacity</code> of the Auto Scaling group by at
-     *        least this many instances. Otherwise, the error is
-     *        <code>ValidationError</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
+     *        <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the
+     *        Auto Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScalingPolicy withMinAdjustmentMagnitude(
-            Integer minAdjustmentMagnitude) {
+    public ScalingPolicy withMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
         setMinAdjustmentMagnitude(minAdjustmentMagnitude);
         return this;
     }
 
     /**
      * <p>
-     * The amount by which to scale, based on the specified adjustment type. A
-     * positive value adds to the current capacity while a negative number
-     * removes from the current capacity.
+     * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
+     * capacity while a negative number removes from the current capacity.
      * </p>
      * 
      * @param scalingAdjustment
-     *        The amount by which to scale, based on the specified adjustment
-     *        type. A positive value adds to the current capacity while a
-     *        negative number removes from the current capacity.
+     *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
+     *        capacity while a negative number removes from the current capacity.
      */
 
     public void setScalingAdjustment(Integer scalingAdjustment) {
@@ -480,14 +421,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount by which to scale, based on the specified adjustment type. A
-     * positive value adds to the current capacity while a negative number
-     * removes from the current capacity.
+     * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
+     * capacity while a negative number removes from the current capacity.
      * </p>
      * 
-     * @return The amount by which to scale, based on the specified adjustment
-     *         type. A positive value adds to the current capacity while a
-     *         negative number removes from the current capacity.
+     * @return The amount by which to scale, based on the specified adjustment type. A positive value adds to the
+     *         current capacity while a negative number removes from the current capacity.
      */
 
     public Integer getScalingAdjustment() {
@@ -496,17 +435,14 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount by which to scale, based on the specified adjustment type. A
-     * positive value adds to the current capacity while a negative number
-     * removes from the current capacity.
+     * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
+     * capacity while a negative number removes from the current capacity.
      * </p>
      * 
      * @param scalingAdjustment
-     *        The amount by which to scale, based on the specified adjustment
-     *        type. A positive value adds to the current capacity while a
-     *        negative number removes from the current capacity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
+     *        capacity while a negative number removes from the current capacity.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withScalingAdjustment(Integer scalingAdjustment) {
@@ -516,13 +452,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before
-     * any further trigger-related scaling activities can start.
+     * The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling
+     * activities can start.
      * </p>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, after a scaling activity completes
-     *        before any further trigger-related scaling activities can start.
+     *        The amount of time, in seconds, after a scaling activity completes before any further trigger-related
+     *        scaling activities can start.
      */
 
     public void setCooldown(Integer cooldown) {
@@ -531,13 +467,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before
-     * any further trigger-related scaling activities can start.
+     * The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling
+     * activities can start.
      * </p>
      * 
-     * @return The amount of time, in seconds, after a scaling activity
-     *         completes before any further trigger-related scaling activities
-     *         can start.
+     * @return The amount of time, in seconds, after a scaling activity completes before any further trigger-related
+     *         scaling activities can start.
      */
 
     public Integer getCooldown() {
@@ -546,15 +481,14 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before
-     * any further trigger-related scaling activities can start.
+     * The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling
+     * activities can start.
      * </p>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, after a scaling activity completes
-     *        before any further trigger-related scaling activities can start.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The amount of time, in seconds, after a scaling activity completes before any further trigger-related
+     *        scaling activities can start.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withCooldown(Integer cooldown) {
@@ -564,12 +498,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A set of adjustments that enable you to scale based on the size of the
-     * alarm breach.
+     * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
      * 
-     * @return A set of adjustments that enable you to scale based on the size
-     *         of the alarm breach.
+     * @return A set of adjustments that enable you to scale based on the size of the alarm breach.
      */
 
     public java.util.List<StepAdjustment> getStepAdjustments() {
@@ -581,49 +513,40 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A set of adjustments that enable you to scale based on the size of the
-     * alarm breach.
+     * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
      * 
      * @param stepAdjustments
-     *        A set of adjustments that enable you to scale based on the size of
-     *        the alarm breach.
+     *        A set of adjustments that enable you to scale based on the size of the alarm breach.
      */
 
-    public void setStepAdjustments(
-            java.util.Collection<StepAdjustment> stepAdjustments) {
+    public void setStepAdjustments(java.util.Collection<StepAdjustment> stepAdjustments) {
         if (stepAdjustments == null) {
             this.stepAdjustments = null;
             return;
         }
 
-        this.stepAdjustments = new com.amazonaws.internal.SdkInternalList<StepAdjustment>(
-                stepAdjustments);
+        this.stepAdjustments = new com.amazonaws.internal.SdkInternalList<StepAdjustment>(stepAdjustments);
     }
 
     /**
      * <p>
-     * A set of adjustments that enable you to scale based on the size of the
-     * alarm breach.
+     * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setStepAdjustments(java.util.Collection)} or
-     * {@link #withStepAdjustments(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStepAdjustments(java.util.Collection)} or {@link #withStepAdjustments(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param stepAdjustments
-     *        A set of adjustments that enable you to scale based on the size of
-     *        the alarm breach.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A set of adjustments that enable you to scale based on the size of the alarm breach.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withStepAdjustments(StepAdjustment... stepAdjustments) {
         if (this.stepAdjustments == null) {
-            setStepAdjustments(new com.amazonaws.internal.SdkInternalList<StepAdjustment>(
-                    stepAdjustments.length));
+            setStepAdjustments(new com.amazonaws.internal.SdkInternalList<StepAdjustment>(stepAdjustments.length));
         }
         for (StepAdjustment ele : stepAdjustments) {
             this.stepAdjustments.add(ele);
@@ -633,33 +556,28 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A set of adjustments that enable you to scale based on the size of the
-     * alarm breach.
+     * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
      * 
      * @param stepAdjustments
-     *        A set of adjustments that enable you to scale based on the size of
-     *        the alarm breach.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A set of adjustments that enable you to scale based on the size of the alarm breach.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScalingPolicy withStepAdjustments(
-            java.util.Collection<StepAdjustment> stepAdjustments) {
+    public ScalingPolicy withStepAdjustments(java.util.Collection<StepAdjustment> stepAdjustments) {
         setStepAdjustments(stepAdjustments);
         return this;
     }
 
     /**
      * <p>
-     * The aggregation type for the CloudWatch metrics. Valid values are
-     * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.
+     * The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and
+     * <code>Average</code>.
      * </p>
      * 
      * @param metricAggregationType
-     *        The aggregation type for the CloudWatch metrics. Valid values are
-     *        <code>Minimum</code>, <code>Maximum</code>, and
-     *        <code>Average</code>.
+     *        The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>,
+     *        <code>Maximum</code>, and <code>Average</code>.
      */
 
     public void setMetricAggregationType(String metricAggregationType) {
@@ -668,13 +586,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The aggregation type for the CloudWatch metrics. Valid values are
-     * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.
+     * The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and
+     * <code>Average</code>.
      * </p>
      * 
-     * @return The aggregation type for the CloudWatch metrics. Valid values are
-     *         <code>Minimum</code>, <code>Maximum</code>, and
-     *         <code>Average</code>.
+     * @return The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>,
+     *         <code>Maximum</code>, and <code>Average</code>.
      */
 
     public String getMetricAggregationType() {
@@ -683,16 +600,14 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The aggregation type for the CloudWatch metrics. Valid values are
-     * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.
+     * The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and
+     * <code>Average</code>.
      * </p>
      * 
      * @param metricAggregationType
-     *        The aggregation type for the CloudWatch metrics. Valid values are
-     *        <code>Minimum</code>, <code>Maximum</code>, and
-     *        <code>Average</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>,
+     *        <code>Maximum</code>, and <code>Average</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withMetricAggregationType(String metricAggregationType) {
@@ -702,13 +617,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The estimated time, in seconds, until a newly launched instance can
-     * contribute to the CloudWatch metrics.
+     * The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.
      * </p>
      * 
      * @param estimatedInstanceWarmup
-     *        The estimated time, in seconds, until a newly launched instance
-     *        can contribute to the CloudWatch metrics.
+     *        The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.
      */
 
     public void setEstimatedInstanceWarmup(Integer estimatedInstanceWarmup) {
@@ -717,12 +630,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The estimated time, in seconds, until a newly launched instance can
-     * contribute to the CloudWatch metrics.
+     * The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.
      * </p>
      * 
-     * @return The estimated time, in seconds, until a newly launched instance
-     *         can contribute to the CloudWatch metrics.
+     * @return The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.
      */
 
     public Integer getEstimatedInstanceWarmup() {
@@ -731,19 +642,15 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The estimated time, in seconds, until a newly launched instance can
-     * contribute to the CloudWatch metrics.
+     * The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.
      * </p>
      * 
      * @param estimatedInstanceWarmup
-     *        The estimated time, in seconds, until a newly launched instance
-     *        can contribute to the CloudWatch metrics.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScalingPolicy withEstimatedInstanceWarmup(
-            Integer estimatedInstanceWarmup) {
+    public ScalingPolicy withEstimatedInstanceWarmup(Integer estimatedInstanceWarmup) {
         setEstimatedInstanceWarmup(estimatedInstanceWarmup);
         return this;
     }
@@ -786,22 +693,19 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * The CloudWatch alarms related to the policy.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAlarms(java.util.Collection)} or
-     * {@link #withAlarms(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAlarms(java.util.Collection)} or {@link #withAlarms(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param alarms
      *        The CloudWatch alarms related to the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withAlarms(Alarm... alarms) {
         if (this.alarms == null) {
-            setAlarms(new com.amazonaws.internal.SdkInternalList<Alarm>(
-                    alarms.length));
+            setAlarms(new com.amazonaws.internal.SdkInternalList<Alarm>(alarms.length));
         }
         for (Alarm ele : alarms) {
             this.alarms.add(ele);
@@ -816,8 +720,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * 
      * @param alarms
      *        The CloudWatch alarms related to the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withAlarms(java.util.Collection<Alarm> alarms) {
@@ -826,8 +729,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -838,8 +740,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
         if (getPolicyName() != null)
             sb.append("PolicyName: " + getPolicyName() + ",");
         if (getPolicyARN() != null)
@@ -851,8 +752,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
         if (getMinAdjustmentStep() != null)
             sb.append("MinAdjustmentStep: " + getMinAdjustmentStep() + ",");
         if (getMinAdjustmentMagnitude() != null)
-            sb.append("MinAdjustmentMagnitude: " + getMinAdjustmentMagnitude()
-                    + ",");
+            sb.append("MinAdjustmentMagnitude: " + getMinAdjustmentMagnitude() + ",");
         if (getScalingAdjustment() != null)
             sb.append("ScalingAdjustment: " + getScalingAdjustment() + ",");
         if (getCooldown() != null)
@@ -860,11 +760,9 @@ public class ScalingPolicy implements Serializable, Cloneable {
         if (getStepAdjustments() != null)
             sb.append("StepAdjustments: " + getStepAdjustments() + ",");
         if (getMetricAggregationType() != null)
-            sb.append("MetricAggregationType: " + getMetricAggregationType()
-                    + ",");
+            sb.append("MetricAggregationType: " + getMetricAggregationType() + ",");
         if (getEstimatedInstanceWarmup() != null)
-            sb.append("EstimatedInstanceWarmup: "
-                    + getEstimatedInstanceWarmup() + ",");
+            sb.append("EstimatedInstanceWarmup: " + getEstimatedInstanceWarmup() + ",");
         if (getAlarms() != null)
             sb.append("Alarms: " + getAlarms());
         sb.append("}");
@@ -881,84 +779,57 @@ public class ScalingPolicy implements Serializable, Cloneable {
         if (obj instanceof ScalingPolicy == false)
             return false;
         ScalingPolicy other = (ScalingPolicy) obj;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
         if (other.getPolicyName() == null ^ this.getPolicyName() == null)
             return false;
-        if (other.getPolicyName() != null
-                && other.getPolicyName().equals(this.getPolicyName()) == false)
+        if (other.getPolicyName() != null && other.getPolicyName().equals(this.getPolicyName()) == false)
             return false;
         if (other.getPolicyARN() == null ^ this.getPolicyARN() == null)
             return false;
-        if (other.getPolicyARN() != null
-                && other.getPolicyARN().equals(this.getPolicyARN()) == false)
+        if (other.getPolicyARN() != null && other.getPolicyARN().equals(this.getPolicyARN()) == false)
             return false;
         if (other.getPolicyType() == null ^ this.getPolicyType() == null)
             return false;
-        if (other.getPolicyType() != null
-                && other.getPolicyType().equals(this.getPolicyType()) == false)
+        if (other.getPolicyType() != null && other.getPolicyType().equals(this.getPolicyType()) == false)
             return false;
-        if (other.getAdjustmentType() == null
-                ^ this.getAdjustmentType() == null)
+        if (other.getAdjustmentType() == null ^ this.getAdjustmentType() == null)
             return false;
-        if (other.getAdjustmentType() != null
-                && other.getAdjustmentType().equals(this.getAdjustmentType()) == false)
+        if (other.getAdjustmentType() != null && other.getAdjustmentType().equals(this.getAdjustmentType()) == false)
             return false;
-        if (other.getMinAdjustmentStep() == null
-                ^ this.getMinAdjustmentStep() == null)
+        if (other.getMinAdjustmentStep() == null ^ this.getMinAdjustmentStep() == null)
             return false;
-        if (other.getMinAdjustmentStep() != null
-                && other.getMinAdjustmentStep().equals(
-                        this.getMinAdjustmentStep()) == false)
+        if (other.getMinAdjustmentStep() != null && other.getMinAdjustmentStep().equals(this.getMinAdjustmentStep()) == false)
             return false;
-        if (other.getMinAdjustmentMagnitude() == null
-                ^ this.getMinAdjustmentMagnitude() == null)
+        if (other.getMinAdjustmentMagnitude() == null ^ this.getMinAdjustmentMagnitude() == null)
             return false;
-        if (other.getMinAdjustmentMagnitude() != null
-                && other.getMinAdjustmentMagnitude().equals(
-                        this.getMinAdjustmentMagnitude()) == false)
+        if (other.getMinAdjustmentMagnitude() != null && other.getMinAdjustmentMagnitude().equals(this.getMinAdjustmentMagnitude()) == false)
             return false;
-        if (other.getScalingAdjustment() == null
-                ^ this.getScalingAdjustment() == null)
+        if (other.getScalingAdjustment() == null ^ this.getScalingAdjustment() == null)
             return false;
-        if (other.getScalingAdjustment() != null
-                && other.getScalingAdjustment().equals(
-                        this.getScalingAdjustment()) == false)
+        if (other.getScalingAdjustment() != null && other.getScalingAdjustment().equals(this.getScalingAdjustment()) == false)
             return false;
         if (other.getCooldown() == null ^ this.getCooldown() == null)
             return false;
-        if (other.getCooldown() != null
-                && other.getCooldown().equals(this.getCooldown()) == false)
+        if (other.getCooldown() != null && other.getCooldown().equals(this.getCooldown()) == false)
             return false;
-        if (other.getStepAdjustments() == null
-                ^ this.getStepAdjustments() == null)
+        if (other.getStepAdjustments() == null ^ this.getStepAdjustments() == null)
             return false;
-        if (other.getStepAdjustments() != null
-                && other.getStepAdjustments().equals(this.getStepAdjustments()) == false)
+        if (other.getStepAdjustments() != null && other.getStepAdjustments().equals(this.getStepAdjustments()) == false)
             return false;
-        if (other.getMetricAggregationType() == null
-                ^ this.getMetricAggregationType() == null)
+        if (other.getMetricAggregationType() == null ^ this.getMetricAggregationType() == null)
             return false;
-        if (other.getMetricAggregationType() != null
-                && other.getMetricAggregationType().equals(
-                        this.getMetricAggregationType()) == false)
+        if (other.getMetricAggregationType() != null && other.getMetricAggregationType().equals(this.getMetricAggregationType()) == false)
             return false;
-        if (other.getEstimatedInstanceWarmup() == null
-                ^ this.getEstimatedInstanceWarmup() == null)
+        if (other.getEstimatedInstanceWarmup() == null ^ this.getEstimatedInstanceWarmup() == null)
             return false;
-        if (other.getEstimatedInstanceWarmup() != null
-                && other.getEstimatedInstanceWarmup().equals(
-                        this.getEstimatedInstanceWarmup()) == false)
+        if (other.getEstimatedInstanceWarmup() != null && other.getEstimatedInstanceWarmup().equals(this.getEstimatedInstanceWarmup()) == false)
             return false;
         if (other.getAlarms() == null ^ this.getAlarms() == null)
             return false;
-        if (other.getAlarms() != null
-                && other.getAlarms().equals(this.getAlarms()) == false)
+        if (other.getAlarms() != null && other.getAlarms().equals(this.getAlarms()) == false)
             return false;
         return true;
     }
@@ -968,48 +839,19 @@ public class ScalingPolicy implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPolicyARN() == null) ? 0 : getPolicyARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getPolicyType() == null) ? 0 : getPolicyType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAdjustmentType() == null) ? 0 : getAdjustmentType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMinAdjustmentStep() == null) ? 0
-                        : getMinAdjustmentStep().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMinAdjustmentMagnitude() == null) ? 0
-                        : getMinAdjustmentMagnitude().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getScalingAdjustment() == null) ? 0
-                        : getScalingAdjustment().hashCode());
-        hashCode = prime * hashCode
-                + ((getCooldown() == null) ? 0 : getCooldown().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStepAdjustments() == null) ? 0 : getStepAdjustments()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMetricAggregationType() == null) ? 0
-                        : getMetricAggregationType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEstimatedInstanceWarmup() == null) ? 0
-                        : getEstimatedInstanceWarmup().hashCode());
-        hashCode = prime * hashCode
-                + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
+        hashCode = prime * hashCode + ((getPolicyARN() == null) ? 0 : getPolicyARN().hashCode());
+        hashCode = prime * hashCode + ((getPolicyType() == null) ? 0 : getPolicyType().hashCode());
+        hashCode = prime * hashCode + ((getAdjustmentType() == null) ? 0 : getAdjustmentType().hashCode());
+        hashCode = prime * hashCode + ((getMinAdjustmentStep() == null) ? 0 : getMinAdjustmentStep().hashCode());
+        hashCode = prime * hashCode + ((getMinAdjustmentMagnitude() == null) ? 0 : getMinAdjustmentMagnitude().hashCode());
+        hashCode = prime * hashCode + ((getScalingAdjustment() == null) ? 0 : getScalingAdjustment().hashCode());
+        hashCode = prime * hashCode + ((getCooldown() == null) ? 0 : getCooldown().hashCode());
+        hashCode = prime * hashCode + ((getStepAdjustments() == null) ? 0 : getStepAdjustments().hashCode());
+        hashCode = prime * hashCode + ((getMetricAggregationType() == null) ? 0 : getMetricAggregationType().hashCode());
+        hashCode = prime * hashCode + ((getEstimatedInstanceWarmup() == null) ? 0 : getEstimatedInstanceWarmup().hashCode());
+        hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
         return hashCode;
     }
 
@@ -1018,9 +860,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
         try {
             return (ScalingPolicy) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

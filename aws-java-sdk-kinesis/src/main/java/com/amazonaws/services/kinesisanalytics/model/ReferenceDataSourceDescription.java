@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
@@ -25,25 +23,22 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of the reference data source. This is the ID that Amazon Kinesis
-     * Analytics assigns when you add the reference data source to your
-     * application using the <a>AddApplicationReferenceDataSource</a> operation.
+     * ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference
+     * data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
      * </p>
      */
     private String referenceId;
     /**
      * <p>
-     * The in-application table name created by the specific reference data
-     * source configuration.
+     * The in-application table name created by the specific reference data source configuration.
      * </p>
      */
     private String tableName;
     /**
      * <p>
-     * Provides the S3 bucket name, the object key name that contains the
-     * reference data. It also provides the Amazon Resource Name (ARN) of the
-     * IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3
-     * object and populate the in-application reference table.
+     * Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon
+     * Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and
+     * populate the in-application reference table.
      * </p>
      */
     private S3ReferenceDataSourceDescription s3ReferenceDataSourceDescription;
@@ -52,16 +47,13 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of the reference data source. This is the ID that Amazon Kinesis
-     * Analytics assigns when you add the reference data source to your
-     * application using the <a>AddApplicationReferenceDataSource</a> operation.
+     * ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference
+     * data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
      * </p>
      * 
      * @param referenceId
-     *        ID of the reference data source. This is the ID that Amazon
-     *        Kinesis Analytics assigns when you add the reference data source
-     *        to your application using the
-     *        <a>AddApplicationReferenceDataSource</a> operation.
+     *        ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the
+     *        reference data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
      */
 
     public void setReferenceId(String referenceId) {
@@ -70,15 +62,12 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of the reference data source. This is the ID that Amazon Kinesis
-     * Analytics assigns when you add the reference data source to your
-     * application using the <a>AddApplicationReferenceDataSource</a> operation.
+     * ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference
+     * data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
      * </p>
      * 
-     * @return ID of the reference data source. This is the ID that Amazon
-     *         Kinesis Analytics assigns when you add the reference data source
-     *         to your application using the
-     *         <a>AddApplicationReferenceDataSource</a> operation.
+     * @return ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the
+     *         reference data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
      */
 
     public String getReferenceId() {
@@ -87,18 +76,14 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of the reference data source. This is the ID that Amazon Kinesis
-     * Analytics assigns when you add the reference data source to your
-     * application using the <a>AddApplicationReferenceDataSource</a> operation.
+     * ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference
+     * data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
      * </p>
      * 
      * @param referenceId
-     *        ID of the reference data source. This is the ID that Amazon
-     *        Kinesis Analytics assigns when you add the reference data source
-     *        to your application using the
-     *        <a>AddApplicationReferenceDataSource</a> operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the
+     *        reference data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReferenceDataSourceDescription withReferenceId(String referenceId) {
@@ -108,13 +93,11 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The in-application table name created by the specific reference data
-     * source configuration.
+     * The in-application table name created by the specific reference data source configuration.
      * </p>
      * 
      * @param tableName
-     *        The in-application table name created by the specific reference
-     *        data source configuration.
+     *        The in-application table name created by the specific reference data source configuration.
      */
 
     public void setTableName(String tableName) {
@@ -123,12 +106,10 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The in-application table name created by the specific reference data
-     * source configuration.
+     * The in-application table name created by the specific reference data source configuration.
      * </p>
      * 
-     * @return The in-application table name created by the specific reference
-     *         data source configuration.
+     * @return The in-application table name created by the specific reference data source configuration.
      */
 
     public String getTableName() {
@@ -137,15 +118,12 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The in-application table name created by the specific reference data
-     * source configuration.
+     * The in-application table name created by the specific reference data source configuration.
      * </p>
      * 
      * @param tableName
-     *        The in-application table name created by the specific reference
-     *        data source configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The in-application table name created by the specific reference data source configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReferenceDataSourceDescription withTableName(String tableName) {
@@ -155,37 +133,31 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the S3 bucket name, the object key name that contains the
-     * reference data. It also provides the Amazon Resource Name (ARN) of the
-     * IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3
-     * object and populate the in-application reference table.
+     * Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon
+     * Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and
+     * populate the in-application reference table.
      * </p>
      * 
      * @param s3ReferenceDataSourceDescription
-     *        Provides the S3 bucket name, the object key name that contains the
-     *        reference data. It also provides the Amazon Resource Name (ARN) of
-     *        the IAM role that Amazon Kinesis Analytics can assume to read the
-     *        Amazon S3 object and populate the in-application reference table.
+     *        Provides the S3 bucket name, the object key name that contains the reference data. It also provides the
+     *        Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3
+     *        object and populate the in-application reference table.
      */
 
-    public void setS3ReferenceDataSourceDescription(
-            S3ReferenceDataSourceDescription s3ReferenceDataSourceDescription) {
+    public void setS3ReferenceDataSourceDescription(S3ReferenceDataSourceDescription s3ReferenceDataSourceDescription) {
         this.s3ReferenceDataSourceDescription = s3ReferenceDataSourceDescription;
     }
 
     /**
      * <p>
-     * Provides the S3 bucket name, the object key name that contains the
-     * reference data. It also provides the Amazon Resource Name (ARN) of the
-     * IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3
-     * object and populate the in-application reference table.
+     * Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon
+     * Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and
+     * populate the in-application reference table.
      * </p>
      * 
-     * @return Provides the S3 bucket name, the object key name that contains
-     *         the reference data. It also provides the Amazon Resource Name
-     *         (ARN) of the IAM role that Amazon Kinesis Analytics can assume to
-     *         read the Amazon S3 object and populate the in-application
-     *         reference table.
+     * @return Provides the S3 bucket name, the object key name that contains the reference data. It also provides the
+     *         Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3
+     *         object and populate the in-application reference table.
      */
 
     public S3ReferenceDataSourceDescription getS3ReferenceDataSourceDescription() {
@@ -194,23 +166,19 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the S3 bucket name, the object key name that contains the
-     * reference data. It also provides the Amazon Resource Name (ARN) of the
-     * IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3
-     * object and populate the in-application reference table.
+     * Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon
+     * Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and
+     * populate the in-application reference table.
      * </p>
      * 
      * @param s3ReferenceDataSourceDescription
-     *        Provides the S3 bucket name, the object key name that contains the
-     *        reference data. It also provides the Amazon Resource Name (ARN) of
-     *        the IAM role that Amazon Kinesis Analytics can assume to read the
-     *        Amazon S3 object and populate the in-application reference table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Provides the S3 bucket name, the object key name that contains the reference data. It also provides the
+     *        Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3
+     *        object and populate the in-application reference table.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReferenceDataSourceDescription withS3ReferenceDataSourceDescription(
-            S3ReferenceDataSourceDescription s3ReferenceDataSourceDescription) {
+    public ReferenceDataSourceDescription withS3ReferenceDataSourceDescription(S3ReferenceDataSourceDescription s3ReferenceDataSourceDescription) {
         setS3ReferenceDataSourceDescription(s3ReferenceDataSourceDescription);
         return this;
     }
@@ -233,19 +201,16 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
 
     /**
      * @param referenceSchema
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReferenceDataSourceDescription withReferenceSchema(
-            SourceSchema referenceSchema) {
+    public ReferenceDataSourceDescription withReferenceSchema(SourceSchema referenceSchema) {
         setReferenceSchema(referenceSchema);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -260,8 +225,7 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
         if (getTableName() != null)
             sb.append("TableName: " + getTableName() + ",");
         if (getS3ReferenceDataSourceDescription() != null)
-            sb.append("S3ReferenceDataSourceDescription: "
-                    + getS3ReferenceDataSourceDescription() + ",");
+            sb.append("S3ReferenceDataSourceDescription: " + getS3ReferenceDataSourceDescription() + ",");
         if (getReferenceSchema() != null)
             sb.append("ReferenceSchema: " + getReferenceSchema());
         sb.append("}");
@@ -280,26 +244,20 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
         ReferenceDataSourceDescription other = (ReferenceDataSourceDescription) obj;
         if (other.getReferenceId() == null ^ this.getReferenceId() == null)
             return false;
-        if (other.getReferenceId() != null
-                && other.getReferenceId().equals(this.getReferenceId()) == false)
+        if (other.getReferenceId() != null && other.getReferenceId().equals(this.getReferenceId()) == false)
             return false;
         if (other.getTableName() == null ^ this.getTableName() == null)
             return false;
-        if (other.getTableName() != null
-                && other.getTableName().equals(this.getTableName()) == false)
+        if (other.getTableName() != null && other.getTableName().equals(this.getTableName()) == false)
             return false;
-        if (other.getS3ReferenceDataSourceDescription() == null
-                ^ this.getS3ReferenceDataSourceDescription() == null)
+        if (other.getS3ReferenceDataSourceDescription() == null ^ this.getS3ReferenceDataSourceDescription() == null)
             return false;
         if (other.getS3ReferenceDataSourceDescription() != null
-                && other.getS3ReferenceDataSourceDescription().equals(
-                        this.getS3ReferenceDataSourceDescription()) == false)
+                && other.getS3ReferenceDataSourceDescription().equals(this.getS3ReferenceDataSourceDescription()) == false)
             return false;
-        if (other.getReferenceSchema() == null
-                ^ this.getReferenceSchema() == null)
+        if (other.getReferenceSchema() == null ^ this.getReferenceSchema() == null)
             return false;
-        if (other.getReferenceSchema() != null
-                && other.getReferenceSchema().equals(this.getReferenceSchema()) == false)
+        if (other.getReferenceSchema() != null && other.getReferenceSchema().equals(this.getReferenceSchema()) == false)
             return false;
         return true;
     }
@@ -309,19 +267,10 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReferenceId() == null) ? 0 : getReferenceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTableName() == null) ? 0 : getTableName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getS3ReferenceDataSourceDescription() == null) ? 0
-                        : getS3ReferenceDataSourceDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReferenceSchema() == null) ? 0 : getReferenceSchema()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getReferenceId() == null) ? 0 : getReferenceId().hashCode());
+        hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode());
+        hashCode = prime * hashCode + ((getS3ReferenceDataSourceDescription() == null) ? 0 : getS3ReferenceDataSourceDescription().hashCode());
+        hashCode = prime * hashCode + ((getReferenceSchema() == null) ? 0 : getReferenceSchema().hashCode());
         return hashCode;
     }
 
@@ -330,9 +279,7 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
         try {
             return (ReferenceDataSourceDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

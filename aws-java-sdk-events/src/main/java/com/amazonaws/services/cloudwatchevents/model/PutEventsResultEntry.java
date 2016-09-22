@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatchevents.model;
 
@@ -31,15 +29,13 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
     private String eventId;
     /**
      * <p>
-     * The error code representing why the event submission failed on this
-     * entry.
+     * The error code representing why the event submission failed on this entry.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * The error message explaining why the event submission failed on this
-     * entry.
+     * The error message explaining why the event submission failed on this entry.
      * </p>
      */
     private String errorMessage;
@@ -76,8 +72,7 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
      * 
      * @param eventId
      *        The ID of the event submitted to Amazon CloudWatch Events.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutEventsResultEntry withEventId(String eventId) {
@@ -87,13 +82,11 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code representing why the event submission failed on this
-     * entry.
+     * The error code representing why the event submission failed on this entry.
      * </p>
      * 
      * @param errorCode
-     *        The error code representing why the event submission failed on
-     *        this entry.
+     *        The error code representing why the event submission failed on this entry.
      */
 
     public void setErrorCode(String errorCode) {
@@ -102,12 +95,10 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code representing why the event submission failed on this
-     * entry.
+     * The error code representing why the event submission failed on this entry.
      * </p>
      * 
-     * @return The error code representing why the event submission failed on
-     *         this entry.
+     * @return The error code representing why the event submission failed on this entry.
      */
 
     public String getErrorCode() {
@@ -116,15 +107,12 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code representing why the event submission failed on this
-     * entry.
+     * The error code representing why the event submission failed on this entry.
      * </p>
      * 
      * @param errorCode
-     *        The error code representing why the event submission failed on
-     *        this entry.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The error code representing why the event submission failed on this entry.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutEventsResultEntry withErrorCode(String errorCode) {
@@ -134,13 +122,11 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error message explaining why the event submission failed on this
-     * entry.
+     * The error message explaining why the event submission failed on this entry.
      * </p>
      * 
      * @param errorMessage
-     *        The error message explaining why the event submission failed on
-     *        this entry.
+     *        The error message explaining why the event submission failed on this entry.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -149,12 +135,10 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error message explaining why the event submission failed on this
-     * entry.
+     * The error message explaining why the event submission failed on this entry.
      * </p>
      * 
-     * @return The error message explaining why the event submission failed on
-     *         this entry.
+     * @return The error message explaining why the event submission failed on this entry.
      */
 
     public String getErrorMessage() {
@@ -163,15 +147,12 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error message explaining why the event submission failed on this
-     * entry.
+     * The error message explaining why the event submission failed on this entry.
      * </p>
      * 
      * @param errorMessage
-     *        The error message explaining why the event submission failed on
-     *        this entry.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The error message explaining why the event submission failed on this entry.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutEventsResultEntry withErrorMessage(String errorMessage) {
@@ -180,8 +161,7 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -213,18 +193,15 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
         PutEventsResultEntry other = (PutEventsResultEntry) obj;
         if (other.getEventId() == null ^ this.getEventId() == null)
             return false;
-        if (other.getEventId() != null
-                && other.getEventId().equals(this.getEventId()) == false)
+        if (other.getEventId() != null && other.getEventId().equals(this.getEventId()) == false)
             return false;
         if (other.getErrorCode() == null ^ this.getErrorCode() == null)
             return false;
-        if (other.getErrorCode() != null
-                && other.getErrorCode().equals(this.getErrorCode()) == false)
+        if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
             return false;
         if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
             return false;
-        if (other.getErrorMessage() != null
-                && other.getErrorMessage().equals(this.getErrorMessage()) == false)
+        if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
         return true;
     }
@@ -234,14 +211,9 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getEventId() == null) ? 0 : getEventId().hashCode());
-        hashCode = prime * hashCode
-                + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getErrorMessage() == null) ? 0 : getErrorMessage()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getEventId() == null) ? 0 : getEventId().hashCode());
+        hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
+        hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         return hashCode;
     }
 
@@ -250,9 +222,7 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
         try {
             return (PutEventsResultEntry) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for ConfirmSubscription action.
  * </p>
  */
-public class ConfirmSubscriptionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ConfirmSubscriptionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,40 +30,34 @@ public class ConfirmSubscriptionRequest extends
     private String topicArn;
     /**
      * <p>
-     * Short-lived token sent to an endpoint during the <code>Subscribe</code>
-     * action.
+     * Short-lived token sent to an endpoint during the <code>Subscribe</code> action.
      * </p>
      */
     private String token;
     /**
      * <p>
-     * Disallows unauthenticated unsubscribes of the subscription. If the value
-     * of this parameter is <code>true</code> and the request has an AWS
-     * signature, then only the topic owner and the subscription owner can
-     * unsubscribe the endpoint. The unsubscribe action requires AWS
-     * authentication.
+     * Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code>
+     * and the request has an AWS signature, then only the topic owner and the subscription owner can unsubscribe the
+     * endpoint. The unsubscribe action requires AWS authentication.
      * </p>
      */
     private String authenticateOnUnsubscribe;
 
     /**
-     * Default constructor for ConfirmSubscriptionRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize the
-     * object after creating it.
+     * Default constructor for ConfirmSubscriptionRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public ConfirmSubscriptionRequest() {
     }
 
     /**
-     * Constructs a new ConfirmSubscriptionRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new ConfirmSubscriptionRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param topicArn
      *        The ARN of the topic for which you wish to confirm a subscription.
      * @param token
-     *        Short-lived token sent to an endpoint during the
-     *        <code>Subscribe</code> action.
+     *        Short-lived token sent to an endpoint during the <code>Subscribe</code> action.
      */
     public ConfirmSubscriptionRequest(String topicArn, String token) {
         setTopicArn(topicArn);
@@ -75,24 +65,19 @@ public class ConfirmSubscriptionRequest extends
     }
 
     /**
-     * Constructs a new ConfirmSubscriptionRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new ConfirmSubscriptionRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param topicArn
      *        The ARN of the topic for which you wish to confirm a subscription.
      * @param token
-     *        Short-lived token sent to an endpoint during the
-     *        <code>Subscribe</code> action.
+     *        Short-lived token sent to an endpoint during the <code>Subscribe</code> action.
      * @param authenticateOnUnsubscribe
-     *        Disallows unauthenticated unsubscribes of the subscription. If the
-     *        value of this parameter is <code>true</code> and the request has
-     *        an AWS signature, then only the topic owner and the subscription
-     *        owner can unsubscribe the endpoint. The unsubscribe action
-     *        requires AWS authentication.
+     *        Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is
+     *        <code>true</code> and the request has an AWS signature, then only the topic owner and the subscription
+     *        owner can unsubscribe the endpoint. The unsubscribe action requires AWS authentication.
      */
-    public ConfirmSubscriptionRequest(String topicArn, String token,
-            String authenticateOnUnsubscribe) {
+    public ConfirmSubscriptionRequest(String topicArn, String token, String authenticateOnUnsubscribe) {
         setTopicArn(topicArn);
         setToken(token);
         setAuthenticateOnUnsubscribe(authenticateOnUnsubscribe);
@@ -116,8 +101,7 @@ public class ConfirmSubscriptionRequest extends
      * The ARN of the topic for which you wish to confirm a subscription.
      * </p>
      * 
-     * @return The ARN of the topic for which you wish to confirm a
-     *         subscription.
+     * @return The ARN of the topic for which you wish to confirm a subscription.
      */
 
     public String getTopicArn() {
@@ -131,8 +115,7 @@ public class ConfirmSubscriptionRequest extends
      * 
      * @param topicArn
      *        The ARN of the topic for which you wish to confirm a subscription.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfirmSubscriptionRequest withTopicArn(String topicArn) {
@@ -142,13 +125,11 @@ public class ConfirmSubscriptionRequest extends
 
     /**
      * <p>
-     * Short-lived token sent to an endpoint during the <code>Subscribe</code>
-     * action.
+     * Short-lived token sent to an endpoint during the <code>Subscribe</code> action.
      * </p>
      * 
      * @param token
-     *        Short-lived token sent to an endpoint during the
-     *        <code>Subscribe</code> action.
+     *        Short-lived token sent to an endpoint during the <code>Subscribe</code> action.
      */
 
     public void setToken(String token) {
@@ -157,12 +138,10 @@ public class ConfirmSubscriptionRequest extends
 
     /**
      * <p>
-     * Short-lived token sent to an endpoint during the <code>Subscribe</code>
-     * action.
+     * Short-lived token sent to an endpoint during the <code>Subscribe</code> action.
      * </p>
      * 
-     * @return Short-lived token sent to an endpoint during the
-     *         <code>Subscribe</code> action.
+     * @return Short-lived token sent to an endpoint during the <code>Subscribe</code> action.
      */
 
     public String getToken() {
@@ -171,15 +150,12 @@ public class ConfirmSubscriptionRequest extends
 
     /**
      * <p>
-     * Short-lived token sent to an endpoint during the <code>Subscribe</code>
-     * action.
+     * Short-lived token sent to an endpoint during the <code>Subscribe</code> action.
      * </p>
      * 
      * @param token
-     *        Short-lived token sent to an endpoint during the
-     *        <code>Subscribe</code> action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Short-lived token sent to an endpoint during the <code>Subscribe</code> action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfirmSubscriptionRequest withToken(String token) {
@@ -189,19 +165,15 @@ public class ConfirmSubscriptionRequest extends
 
     /**
      * <p>
-     * Disallows unauthenticated unsubscribes of the subscription. If the value
-     * of this parameter is <code>true</code> and the request has an AWS
-     * signature, then only the topic owner and the subscription owner can
-     * unsubscribe the endpoint. The unsubscribe action requires AWS
-     * authentication.
+     * Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code>
+     * and the request has an AWS signature, then only the topic owner and the subscription owner can unsubscribe the
+     * endpoint. The unsubscribe action requires AWS authentication.
      * </p>
      * 
      * @param authenticateOnUnsubscribe
-     *        Disallows unauthenticated unsubscribes of the subscription. If the
-     *        value of this parameter is <code>true</code> and the request has
-     *        an AWS signature, then only the topic owner and the subscription
-     *        owner can unsubscribe the endpoint. The unsubscribe action
-     *        requires AWS authentication.
+     *        Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is
+     *        <code>true</code> and the request has an AWS signature, then only the topic owner and the subscription
+     *        owner can unsubscribe the endpoint. The unsubscribe action requires AWS authentication.
      */
 
     public void setAuthenticateOnUnsubscribe(String authenticateOnUnsubscribe) {
@@ -210,18 +182,14 @@ public class ConfirmSubscriptionRequest extends
 
     /**
      * <p>
-     * Disallows unauthenticated unsubscribes of the subscription. If the value
-     * of this parameter is <code>true</code> and the request has an AWS
-     * signature, then only the topic owner and the subscription owner can
-     * unsubscribe the endpoint. The unsubscribe action requires AWS
-     * authentication.
+     * Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code>
+     * and the request has an AWS signature, then only the topic owner and the subscription owner can unsubscribe the
+     * endpoint. The unsubscribe action requires AWS authentication.
      * </p>
      * 
-     * @return Disallows unauthenticated unsubscribes of the subscription. If
-     *         the value of this parameter is <code>true</code> and the request
-     *         has an AWS signature, then only the topic owner and the
-     *         subscription owner can unsubscribe the endpoint. The unsubscribe
-     *         action requires AWS authentication.
+     * @return Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is
+     *         <code>true</code> and the request has an AWS signature, then only the topic owner and the subscription
+     *         owner can unsubscribe the endpoint. The unsubscribe action requires AWS authentication.
      */
 
     public String getAuthenticateOnUnsubscribe() {
@@ -230,32 +198,25 @@ public class ConfirmSubscriptionRequest extends
 
     /**
      * <p>
-     * Disallows unauthenticated unsubscribes of the subscription. If the value
-     * of this parameter is <code>true</code> and the request has an AWS
-     * signature, then only the topic owner and the subscription owner can
-     * unsubscribe the endpoint. The unsubscribe action requires AWS
-     * authentication.
+     * Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code>
+     * and the request has an AWS signature, then only the topic owner and the subscription owner can unsubscribe the
+     * endpoint. The unsubscribe action requires AWS authentication.
      * </p>
      * 
      * @param authenticateOnUnsubscribe
-     *        Disallows unauthenticated unsubscribes of the subscription. If the
-     *        value of this parameter is <code>true</code> and the request has
-     *        an AWS signature, then only the topic owner and the subscription
-     *        owner can unsubscribe the endpoint. The unsubscribe action
-     *        requires AWS authentication.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is
+     *        <code>true</code> and the request has an AWS signature, then only the topic owner and the subscription
+     *        owner can unsubscribe the endpoint. The unsubscribe action requires AWS authentication.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfirmSubscriptionRequest withAuthenticateOnUnsubscribe(
-            String authenticateOnUnsubscribe) {
+    public ConfirmSubscriptionRequest withAuthenticateOnUnsubscribe(String authenticateOnUnsubscribe) {
         setAuthenticateOnUnsubscribe(authenticateOnUnsubscribe);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -270,8 +231,7 @@ public class ConfirmSubscriptionRequest extends
         if (getToken() != null)
             sb.append("Token: " + getToken() + ",");
         if (getAuthenticateOnUnsubscribe() != null)
-            sb.append("AuthenticateOnUnsubscribe: "
-                    + getAuthenticateOnUnsubscribe());
+            sb.append("AuthenticateOnUnsubscribe: " + getAuthenticateOnUnsubscribe());
         sb.append("}");
         return sb.toString();
     }
@@ -288,20 +248,15 @@ public class ConfirmSubscriptionRequest extends
         ConfirmSubscriptionRequest other = (ConfirmSubscriptionRequest) obj;
         if (other.getTopicArn() == null ^ this.getTopicArn() == null)
             return false;
-        if (other.getTopicArn() != null
-                && other.getTopicArn().equals(this.getTopicArn()) == false)
+        if (other.getTopicArn() != null && other.getTopicArn().equals(this.getTopicArn()) == false)
             return false;
         if (other.getToken() == null ^ this.getToken() == null)
             return false;
-        if (other.getToken() != null
-                && other.getToken().equals(this.getToken()) == false)
+        if (other.getToken() != null && other.getToken().equals(this.getToken()) == false)
             return false;
-        if (other.getAuthenticateOnUnsubscribe() == null
-                ^ this.getAuthenticateOnUnsubscribe() == null)
+        if (other.getAuthenticateOnUnsubscribe() == null ^ this.getAuthenticateOnUnsubscribe() == null)
             return false;
-        if (other.getAuthenticateOnUnsubscribe() != null
-                && other.getAuthenticateOnUnsubscribe().equals(
-                        this.getAuthenticateOnUnsubscribe()) == false)
+        if (other.getAuthenticateOnUnsubscribe() != null && other.getAuthenticateOnUnsubscribe().equals(this.getAuthenticateOnUnsubscribe()) == false)
             return false;
         return true;
     }
@@ -311,14 +266,9 @@ public class ConfirmSubscriptionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getToken() == null) ? 0 : getToken().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAuthenticateOnUnsubscribe() == null) ? 0
-                        : getAuthenticateOnUnsubscribe().hashCode());
+        hashCode = prime * hashCode + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode());
+        hashCode = prime * hashCode + ((getToken() == null) ? 0 : getToken().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticateOnUnsubscribe() == null) ? 0 : getAuthenticateOnUnsubscribe().hashCode());
         return hashCode;
     }
 

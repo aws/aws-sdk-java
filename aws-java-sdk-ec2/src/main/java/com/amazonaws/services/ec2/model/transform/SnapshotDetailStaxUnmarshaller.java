@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * SnapshotDetail StAX Unmarshaller
  */
-public class SnapshotDetailStaxUnmarshaller implements
-        Unmarshaller<SnapshotDetail, StaxUnmarshallerContext> {
+public class SnapshotDetailStaxUnmarshaller implements Unmarshaller<SnapshotDetail, StaxUnmarshallerContext> {
 
-    public SnapshotDetail unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public SnapshotDetail unmarshall(StaxUnmarshallerContext context) throws Exception {
         SnapshotDetail snapshotDetail = new SnapshotDetail();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,63 +46,52 @@ public class SnapshotDetailStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("diskImageSize", targetDepth)) {
-                    snapshotDetail.setDiskImageSize(DoubleStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    snapshotDetail.setDiskImageSize(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("description", targetDepth)) {
-                    snapshotDetail.setDescription(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    snapshotDetail.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("format", targetDepth)) {
-                    snapshotDetail.setFormat(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    snapshotDetail.setFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("url", targetDepth)) {
-                    snapshotDetail.setUrl(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    snapshotDetail.setUrl(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("userBucket", targetDepth)) {
-                    snapshotDetail
-                            .setUserBucket(UserBucketDetailsStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    snapshotDetail.setUserBucket(UserBucketDetailsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("deviceName", targetDepth)) {
-                    snapshotDetail.setDeviceName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    snapshotDetail.setDeviceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("snapshotId", targetDepth)) {
-                    snapshotDetail.setSnapshotId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    snapshotDetail.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("progress", targetDepth)) {
-                    snapshotDetail.setProgress(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    snapshotDetail.setProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("statusMessage", targetDepth)) {
-                    snapshotDetail.setStatusMessage(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    snapshotDetail.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("status", targetDepth)) {
-                    snapshotDetail.setStatus(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    snapshotDetail.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

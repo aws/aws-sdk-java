@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.workspaces.model;
 
@@ -25,31 +23,27 @@ public class WorkspaceProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed
-     * monthly. AutoStop WorkSpaces are billed by the hour and stopped when no
-     * longer being used in order to save on costs.
+     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the
+     * hour and stopped when no longer being used in order to save on costs.
      * </p>
      */
     private String runningMode;
     /**
      * <p>
-     * The time after a user logs off when WorkSpaces are automatically stopped.
-     * Configured in 60 minute intervals.
+     * The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.
      * </p>
      */
     private Integer runningModeAutoStopTimeoutInMinutes;
 
     /**
      * <p>
-     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed
-     * monthly. AutoStop WorkSpaces are billed by the hour and stopped when no
-     * longer being used in order to save on costs.
+     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the
+     * hour and stopped when no longer being used in order to save on costs.
      * </p>
      * 
      * @param runningMode
-     *        The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed
-     *        monthly. AutoStop WorkSpaces are billed by the hour and stopped
-     *        when no longer being used in order to save on costs.
+     *        The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed
+     *        by the hour and stopped when no longer being used in order to save on costs.
      * @see RunningMode
      */
 
@@ -59,14 +53,12 @@ public class WorkspaceProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed
-     * monthly. AutoStop WorkSpaces are billed by the hour and stopped when no
-     * longer being used in order to save on costs.
+     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the
+     * hour and stopped when no longer being used in order to save on costs.
      * </p>
      * 
-     * @return The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed
-     *         monthly. AutoStop WorkSpaces are billed by the hour and stopped
-     *         when no longer being used in order to save on costs.
+     * @return The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed
+     *         by the hour and stopped when no longer being used in order to save on costs.
      * @see RunningMode
      */
 
@@ -76,17 +68,14 @@ public class WorkspaceProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed
-     * monthly. AutoStop WorkSpaces are billed by the hour and stopped when no
-     * longer being used in order to save on costs.
+     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the
+     * hour and stopped when no longer being used in order to save on costs.
      * </p>
      * 
      * @param runningMode
-     *        The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed
-     *        monthly. AutoStop WorkSpaces are billed by the hour and stopped
-     *        when no longer being used in order to save on costs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed
+     *        by the hour and stopped when no longer being used in order to save on costs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RunningMode
      */
 
@@ -97,15 +86,13 @@ public class WorkspaceProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed
-     * monthly. AutoStop WorkSpaces are billed by the hour and stopped when no
-     * longer being used in order to save on costs.
+     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the
+     * hour and stopped when no longer being used in order to save on costs.
      * </p>
      * 
      * @param runningMode
-     *        The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed
-     *        monthly. AutoStop WorkSpaces are billed by the hour and stopped
-     *        when no longer being used in order to save on costs.
+     *        The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed
+     *        by the hour and stopped when no longer being used in order to save on costs.
      * @see RunningMode
      */
 
@@ -115,17 +102,14 @@ public class WorkspaceProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed
-     * monthly. AutoStop WorkSpaces are billed by the hour and stopped when no
-     * longer being used in order to save on costs.
+     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the
+     * hour and stopped when no longer being used in order to save on costs.
      * </p>
      * 
      * @param runningMode
-     *        The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed
-     *        monthly. AutoStop WorkSpaces are billed by the hour and stopped
-     *        when no longer being used in order to save on costs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed
+     *        by the hour and stopped when no longer being used in order to save on costs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RunningMode
      */
 
@@ -136,28 +120,25 @@ public class WorkspaceProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time after a user logs off when WorkSpaces are automatically stopped.
-     * Configured in 60 minute intervals.
+     * The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.
      * </p>
      * 
      * @param runningModeAutoStopTimeoutInMinutes
-     *        The time after a user logs off when WorkSpaces are automatically
-     *        stopped. Configured in 60 minute intervals.
+     *        The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute
+     *        intervals.
      */
 
-    public void setRunningModeAutoStopTimeoutInMinutes(
-            Integer runningModeAutoStopTimeoutInMinutes) {
+    public void setRunningModeAutoStopTimeoutInMinutes(Integer runningModeAutoStopTimeoutInMinutes) {
         this.runningModeAutoStopTimeoutInMinutes = runningModeAutoStopTimeoutInMinutes;
     }
 
     /**
      * <p>
-     * The time after a user logs off when WorkSpaces are automatically stopped.
-     * Configured in 60 minute intervals.
+     * The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.
      * </p>
      * 
-     * @return The time after a user logs off when WorkSpaces are automatically
-     *         stopped. Configured in 60 minute intervals.
+     * @return The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute
+     *         intervals.
      */
 
     public Integer getRunningModeAutoStopTimeoutInMinutes() {
@@ -166,26 +147,22 @@ public class WorkspaceProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time after a user logs off when WorkSpaces are automatically stopped.
-     * Configured in 60 minute intervals.
+     * The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.
      * </p>
      * 
      * @param runningModeAutoStopTimeoutInMinutes
-     *        The time after a user logs off when WorkSpaces are automatically
-     *        stopped. Configured in 60 minute intervals.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute
+     *        intervals.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WorkspaceProperties withRunningModeAutoStopTimeoutInMinutes(
-            Integer runningModeAutoStopTimeoutInMinutes) {
+    public WorkspaceProperties withRunningModeAutoStopTimeoutInMinutes(Integer runningModeAutoStopTimeoutInMinutes) {
         setRunningModeAutoStopTimeoutInMinutes(runningModeAutoStopTimeoutInMinutes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -198,8 +175,7 @@ public class WorkspaceProperties implements Serializable, Cloneable {
         if (getRunningMode() != null)
             sb.append("RunningMode: " + getRunningMode() + ",");
         if (getRunningModeAutoStopTimeoutInMinutes() != null)
-            sb.append("RunningModeAutoStopTimeoutInMinutes: "
-                    + getRunningModeAutoStopTimeoutInMinutes());
+            sb.append("RunningModeAutoStopTimeoutInMinutes: " + getRunningModeAutoStopTimeoutInMinutes());
         sb.append("}");
         return sb.toString();
     }
@@ -216,15 +192,12 @@ public class WorkspaceProperties implements Serializable, Cloneable {
         WorkspaceProperties other = (WorkspaceProperties) obj;
         if (other.getRunningMode() == null ^ this.getRunningMode() == null)
             return false;
-        if (other.getRunningMode() != null
-                && other.getRunningMode().equals(this.getRunningMode()) == false)
+        if (other.getRunningMode() != null && other.getRunningMode().equals(this.getRunningMode()) == false)
             return false;
-        if (other.getRunningModeAutoStopTimeoutInMinutes() == null
-                ^ this.getRunningModeAutoStopTimeoutInMinutes() == null)
+        if (other.getRunningModeAutoStopTimeoutInMinutes() == null ^ this.getRunningModeAutoStopTimeoutInMinutes() == null)
             return false;
         if (other.getRunningModeAutoStopTimeoutInMinutes() != null
-                && other.getRunningModeAutoStopTimeoutInMinutes().equals(
-                        this.getRunningModeAutoStopTimeoutInMinutes()) == false)
+                && other.getRunningModeAutoStopTimeoutInMinutes().equals(this.getRunningModeAutoStopTimeoutInMinutes()) == false)
             return false;
         return true;
     }
@@ -234,13 +207,8 @@ public class WorkspaceProperties implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRunningMode() == null) ? 0 : getRunningMode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRunningModeAutoStopTimeoutInMinutes() == null) ? 0
-                        : getRunningModeAutoStopTimeoutInMinutes().hashCode());
+        hashCode = prime * hashCode + ((getRunningMode() == null) ? 0 : getRunningMode().hashCode());
+        hashCode = prime * hashCode + ((getRunningModeAutoStopTimeoutInMinutes() == null) ? 0 : getRunningModeAutoStopTimeoutInMinutes().hashCode());
         return hashCode;
     }
 
@@ -249,9 +217,7 @@ public class WorkspaceProperties implements Serializable, Cloneable {
         try {
             return (WorkspaceProperties) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

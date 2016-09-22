@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
 
@@ -18,25 +16,21 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The user-specified message attribute value. For string data types, the value
- * attribute has the same restrictions on the content as the message body. For
- * more information, see <a href=
- * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html"
- * >SendMessage</a>.
+ * The user-specified message attribute value. For string data types, the value attribute has the same restrictions on
+ * the content as the message body. For more information, see <a
+ * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html">SendMessage</a>.
  * </p>
  * <p>
- * Name, type, and value must not be empty or null. In addition, the message
- * body should not be empty or null. All parts of the message attribute,
- * including name, type, and value, are included in the message size
- * restriction, which is currently 256 KB (262,144 bytes).
+ * Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts
+ * of the message attribute, including name, type, and value, are included in the message size restriction, which is
+ * currently 256 KB (262,144 bytes).
  * </p>
  */
 public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Strings are Unicode with UTF8 binary encoding. For a list of code values,
-     * see <a
+     * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
      * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * </p>
@@ -44,8 +38,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     private String stringValue;
     /**
      * <p>
-     * Binary type attributes can store any binary data, for example, compressed
-     * data, encrypted data, or images.
+     * Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
      * </p>
      */
     private java.nio.ByteBuffer binaryValue;
@@ -63,8 +56,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer> binaryListValues;
     /**
      * <p>
-     * Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. For the Number data type, you must use StringValue.
+     * Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data type, you
+     * must use StringValue.
      * </p>
      * <p>
      * You can also append custom labels. For more information, see <a href=
@@ -76,18 +69,15 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Strings are Unicode with UTF8 binary encoding. For a list of code values,
-     * see <a
+     * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
      * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * </p>
      * 
      * @param stringValue
-     *        Strings are Unicode with UTF8 binary encoding. For a list of code
-     *        values, see <a href=
-     *        "http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     *        >http
-     *        ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *        Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
+     *        href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
+     *        >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      */
 
     public void setStringValue(String stringValue) {
@@ -96,17 +86,14 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Strings are Unicode with UTF8 binary encoding. For a list of code values,
-     * see <a
+     * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
      * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * </p>
      * 
-     * @return Strings are Unicode with UTF8 binary encoding. For a list of code
-     *         values, see <a href=
-     *         "http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     *         >http
-     *         ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * @return Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
+     *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
+     *         >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      */
 
     public String getStringValue() {
@@ -115,20 +102,16 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Strings are Unicode with UTF8 binary encoding. For a list of code values,
-     * see <a
+     * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
      * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * </p>
      * 
      * @param stringValue
-     *        Strings are Unicode with UTF8 binary encoding. For a list of code
-     *        values, see <a href=
-     *        "http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     *        >http
-     *        ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
+     *        href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
+     *        >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public MessageAttributeValue withStringValue(String stringValue) {
@@ -138,26 +121,21 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Binary type attributes can store any binary data, for example, compressed
-     * data, encrypted data, or images.
+     * Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending
-     * this request to AWS service by default. Users of the SDK should not
-     * perform Base64 encoding on this field.
+     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
-     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
-     * content or position of the byte buffer will be seen by all objects that
-     * have a reference to this object. It is recommended to call
-     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
-     * reading from the buffer. This behavior will be changed in a future major
-     * version of the SDK.
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param binaryValue
-     *        Binary type attributes can store any binary data, for example,
-     *        compressed data, encrypted data, or images.
+     *        Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
      */
 
     public void setBinaryValue(java.nio.ByteBuffer binaryValue) {
@@ -166,22 +144,18 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Binary type attributes can store any binary data, for example, compressed
-     * data, encrypted data, or images.
+     * Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
      * </p>
      * <p>
-     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
-     * changes their {@code position}. We recommend using
-     * {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view
-     * of the buffer with an independent {@code position}, and calling
-     * {@code get} methods on this rather than directly on the returned
-     * {@code ByteBuffer}. Doing so will ensure that anyone else using the
-     * {@code ByteBuffer} will not be affected by changes to the {@code position}
-     * .
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
      * </p>
      * 
-     * @return Binary type attributes can store any binary data, for example,
-     *         compressed data, encrypted data, or images.
+     * @return Binary type attributes can store any binary data, for example, compressed data, encrypted data, or
+     *         images.
      */
 
     public java.nio.ByteBuffer getBinaryValue() {
@@ -190,15 +164,12 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Binary type attributes can store any binary data, for example, compressed
-     * data, encrypted data, or images.
+     * Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
      * </p>
      * 
      * @param binaryValue
-     *        Binary type attributes can store any binary data, for example,
-     *        compressed data, encrypted data, or images.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public MessageAttributeValue withBinaryValue(java.nio.ByteBuffer binaryValue) {
@@ -230,15 +201,13 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *        Not implemented. Reserved for future use.
      */
 
-    public void setStringListValues(
-            java.util.Collection<String> stringListValues) {
+    public void setStringListValues(java.util.Collection<String> stringListValues) {
         if (stringListValues == null) {
             this.stringListValues = null;
             return;
         }
 
-        this.stringListValues = new com.amazonaws.internal.SdkInternalList<String>(
-                stringListValues);
+        this.stringListValues = new com.amazonaws.internal.SdkInternalList<String>(stringListValues);
     }
 
     /**
@@ -246,23 +215,19 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * Not implemented. Reserved for future use.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setStringListValues(java.util.Collection)} or
-     * {@link #withStringListValues(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStringListValues(java.util.Collection)} or {@link #withStringListValues(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param stringListValues
      *        Not implemented. Reserved for future use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public MessageAttributeValue withStringListValues(
-            String... stringListValues) {
+    public MessageAttributeValue withStringListValues(String... stringListValues) {
         if (this.stringListValues == null) {
-            setStringListValues(new com.amazonaws.internal.SdkInternalList<String>(
-                    stringListValues.length));
+            setStringListValues(new com.amazonaws.internal.SdkInternalList<String>(stringListValues.length));
         }
         for (String ele : stringListValues) {
             this.stringListValues.add(ele);
@@ -277,12 +242,10 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * 
      * @param stringListValues
      *        Not implemented. Reserved for future use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public MessageAttributeValue withStringListValues(
-            java.util.Collection<String> stringListValues) {
+    public MessageAttributeValue withStringListValues(java.util.Collection<String> stringListValues) {
         setStringListValues(stringListValues);
         return this;
     }
@@ -311,15 +274,13 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *        Not implemented. Reserved for future use.
      */
 
-    public void setBinaryListValues(
-            java.util.Collection<java.nio.ByteBuffer> binaryListValues) {
+    public void setBinaryListValues(java.util.Collection<java.nio.ByteBuffer> binaryListValues) {
         if (binaryListValues == null) {
             this.binaryListValues = null;
             return;
         }
 
-        this.binaryListValues = new com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>(
-                binaryListValues);
+        this.binaryListValues = new com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>(binaryListValues);
     }
 
     /**
@@ -327,23 +288,19 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * Not implemented. Reserved for future use.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBinaryListValues(java.util.Collection)} or
-     * {@link #withBinaryListValues(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBinaryListValues(java.util.Collection)} or {@link #withBinaryListValues(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param binaryListValues
      *        Not implemented. Reserved for future use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public MessageAttributeValue withBinaryListValues(
-            java.nio.ByteBuffer... binaryListValues) {
+    public MessageAttributeValue withBinaryListValues(java.nio.ByteBuffer... binaryListValues) {
         if (this.binaryListValues == null) {
-            setBinaryListValues(new com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>(
-                    binaryListValues.length));
+            setBinaryListValues(new com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>(binaryListValues.length));
         }
         for (java.nio.ByteBuffer ele : binaryListValues) {
             this.binaryListValues.add(ele);
@@ -358,20 +315,18 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * 
      * @param binaryListValues
      *        Not implemented. Reserved for future use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public MessageAttributeValue withBinaryListValues(
-            java.util.Collection<java.nio.ByteBuffer> binaryListValues) {
+    public MessageAttributeValue withBinaryListValues(java.util.Collection<java.nio.ByteBuffer> binaryListValues) {
         setBinaryListValues(binaryListValues);
         return this;
     }
 
     /**
      * <p>
-     * Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. For the Number data type, you must use StringValue.
+     * Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data type, you
+     * must use StringValue.
      * </p>
      * <p>
      * You can also append custom labels. For more information, see <a href=
@@ -380,12 +335,10 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * </p>
      * 
      * @param dataType
-     *        Amazon SQS supports the following logical data types: String,
-     *        Number, and Binary. For the Number data type, you must use
-     *        StringValue.</p>
+     *        Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data
+     *        type, you must use StringValue.</p>
      *        <p>
-     *        You can also append custom labels. For more information, see <a
-     *        href=
+     *        You can also append custom labels. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
      *        >Message Attribute Data Types</a>.
      */
@@ -396,8 +349,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. For the Number data type, you must use StringValue.
+     * Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data type, you
+     * must use StringValue.
      * </p>
      * <p>
      * You can also append custom labels. For more information, see <a href=
@@ -405,12 +358,10 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * >Message Attribute Data Types</a>.
      * </p>
      * 
-     * @return Amazon SQS supports the following logical data types: String,
-     *         Number, and Binary. For the Number data type, you must use
-     *         StringValue.</p>
+     * @return Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data
+     *         type, you must use StringValue.</p>
      *         <p>
-     *         You can also append custom labels. For more information, see <a
-     *         href=
+     *         You can also append custom labels. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
      *         >Message Attribute Data Types</a>.
      */
@@ -421,8 +372,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. For the Number data type, you must use StringValue.
+     * Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data type, you
+     * must use StringValue.
      * </p>
      * <p>
      * You can also append custom labels. For more information, see <a href=
@@ -431,16 +382,13 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * </p>
      * 
      * @param dataType
-     *        Amazon SQS supports the following logical data types: String,
-     *        Number, and Binary. For the Number data type, you must use
-     *        StringValue.</p>
+     *        Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data
+     *        type, you must use StringValue.</p>
      *        <p>
-     *        You can also append custom labels. For more information, see <a
-     *        href=
+     *        You can also append custom labels. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
      *        >Message Attribute Data Types</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public MessageAttributeValue withDataType(String dataType) {
@@ -449,8 +397,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -486,32 +433,23 @@ public class MessageAttributeValue implements Serializable, Cloneable {
         MessageAttributeValue other = (MessageAttributeValue) obj;
         if (other.getStringValue() == null ^ this.getStringValue() == null)
             return false;
-        if (other.getStringValue() != null
-                && other.getStringValue().equals(this.getStringValue()) == false)
+        if (other.getStringValue() != null && other.getStringValue().equals(this.getStringValue()) == false)
             return false;
         if (other.getBinaryValue() == null ^ this.getBinaryValue() == null)
             return false;
-        if (other.getBinaryValue() != null
-                && other.getBinaryValue().equals(this.getBinaryValue()) == false)
+        if (other.getBinaryValue() != null && other.getBinaryValue().equals(this.getBinaryValue()) == false)
             return false;
-        if (other.getStringListValues() == null
-                ^ this.getStringListValues() == null)
+        if (other.getStringListValues() == null ^ this.getStringListValues() == null)
             return false;
-        if (other.getStringListValues() != null
-                && other.getStringListValues().equals(
-                        this.getStringListValues()) == false)
+        if (other.getStringListValues() != null && other.getStringListValues().equals(this.getStringListValues()) == false)
             return false;
-        if (other.getBinaryListValues() == null
-                ^ this.getBinaryListValues() == null)
+        if (other.getBinaryListValues() == null ^ this.getBinaryListValues() == null)
             return false;
-        if (other.getBinaryListValues() != null
-                && other.getBinaryListValues().equals(
-                        this.getBinaryListValues()) == false)
+        if (other.getBinaryListValues() != null && other.getBinaryListValues().equals(this.getBinaryListValues()) == false)
             return false;
         if (other.getDataType() == null ^ this.getDataType() == null)
             return false;
-        if (other.getDataType() != null
-                && other.getDataType().equals(this.getDataType()) == false)
+        if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false)
             return false;
         return true;
     }
@@ -521,22 +459,11 @@ public class MessageAttributeValue implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getStringValue() == null) ? 0 : getStringValue().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBinaryValue() == null) ? 0 : getBinaryValue().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStringListValues() == null) ? 0 : getStringListValues()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBinaryListValues() == null) ? 0 : getBinaryListValues()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getDataType() == null) ? 0 : getDataType().hashCode());
+        hashCode = prime * hashCode + ((getStringValue() == null) ? 0 : getStringValue().hashCode());
+        hashCode = prime * hashCode + ((getBinaryValue() == null) ? 0 : getBinaryValue().hashCode());
+        hashCode = prime * hashCode + ((getStringListValues() == null) ? 0 : getStringListValues().hashCode());
+        hashCode = prime * hashCode + ((getBinaryListValues() == null) ? 0 : getBinaryListValues().hashCode());
+        hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
         return hashCode;
     }
 
@@ -545,9 +472,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
         try {
             return (MessageAttributeValue) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.workspaces.model;
 
@@ -25,25 +23,22 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory to create the
-     * WorkSpace in. You can use the <a>DescribeWorkspaceDirectories</a>
-     * operation to obtain a list of the directories that are available.
+     * The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
+     * <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
      * </p>
      */
     private String directoryId;
     /**
      * <p>
-     * The username that the WorkSpace is assigned to. This username must exist
-     * in the AWS Directory Service directory specified by the
-     * <code>DirectoryId</code> member.
+     * The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service directory
+     * specified by the <code>DirectoryId</code> member.
      * </p>
      */
     private String userName;
     /**
      * <p>
-     * The identifier of the bundle to create the WorkSpace from. You can use
-     * the <a>DescribeWorkspaceBundles</a> operation to obtain a list of the
-     * bundles that are available.
+     * The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a>
+     * operation to obtain a list of the bundles that are available.
      * </p>
      */
     private String bundleId;
@@ -55,15 +50,13 @@ public class WorkspaceRequest implements Serializable, Cloneable {
     private String volumeEncryptionKey;
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      * </p>
      */
     private Boolean userVolumeEncryptionEnabled;
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      * </p>
      */
     private Boolean rootVolumeEncryptionEnabled;
@@ -78,16 +71,13 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory to create the
-     * WorkSpace in. You can use the <a>DescribeWorkspaceDirectories</a>
-     * operation to obtain a list of the directories that are available.
+     * The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
+     * <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the AWS Directory Service directory to create
-     *        the WorkSpace in. You can use the
-     *        <a>DescribeWorkspaceDirectories</a> operation to obtain a list of
-     *        the directories that are available.
+     *        The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
+     *        <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -96,15 +86,12 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory to create the
-     * WorkSpace in. You can use the <a>DescribeWorkspaceDirectories</a>
-     * operation to obtain a list of the directories that are available.
+     * The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
+     * <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
      * </p>
      * 
-     * @return The identifier of the AWS Directory Service directory to create
-     *         the WorkSpace in. You can use the
-     *         <a>DescribeWorkspaceDirectories</a> operation to obtain a list of
-     *         the directories that are available.
+     * @return The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
+     *         <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
      */
 
     public String getDirectoryId() {
@@ -113,18 +100,14 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory to create the
-     * WorkSpace in. You can use the <a>DescribeWorkspaceDirectories</a>
-     * operation to obtain a list of the directories that are available.
+     * The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
+     * <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the AWS Directory Service directory to create
-     *        the WorkSpace in. You can use the
-     *        <a>DescribeWorkspaceDirectories</a> operation to obtain a list of
-     *        the directories that are available.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
+     *        <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceRequest withDirectoryId(String directoryId) {
@@ -134,15 +117,13 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The username that the WorkSpace is assigned to. This username must exist
-     * in the AWS Directory Service directory specified by the
-     * <code>DirectoryId</code> member.
+     * The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service directory
+     * specified by the <code>DirectoryId</code> member.
      * </p>
      * 
      * @param userName
-     *        The username that the WorkSpace is assigned to. This username must
-     *        exist in the AWS Directory Service directory specified by the
-     *        <code>DirectoryId</code> member.
+     *        The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service
+     *        directory specified by the <code>DirectoryId</code> member.
      */
 
     public void setUserName(String userName) {
@@ -151,14 +132,12 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The username that the WorkSpace is assigned to. This username must exist
-     * in the AWS Directory Service directory specified by the
-     * <code>DirectoryId</code> member.
+     * The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service directory
+     * specified by the <code>DirectoryId</code> member.
      * </p>
      * 
-     * @return The username that the WorkSpace is assigned to. This username
-     *         must exist in the AWS Directory Service directory specified by
-     *         the <code>DirectoryId</code> member.
+     * @return The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service
+     *         directory specified by the <code>DirectoryId</code> member.
      */
 
     public String getUserName() {
@@ -167,17 +146,14 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The username that the WorkSpace is assigned to. This username must exist
-     * in the AWS Directory Service directory specified by the
-     * <code>DirectoryId</code> member.
+     * The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service directory
+     * specified by the <code>DirectoryId</code> member.
      * </p>
      * 
      * @param userName
-     *        The username that the WorkSpace is assigned to. This username must
-     *        exist in the AWS Directory Service directory specified by the
-     *        <code>DirectoryId</code> member.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service
+     *        directory specified by the <code>DirectoryId</code> member.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceRequest withUserName(String userName) {
@@ -187,15 +163,13 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the bundle to create the WorkSpace from. You can use
-     * the <a>DescribeWorkspaceBundles</a> operation to obtain a list of the
-     * bundles that are available.
+     * The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a>
+     * operation to obtain a list of the bundles that are available.
      * </p>
      * 
      * @param bundleId
-     *        The identifier of the bundle to create the WorkSpace from. You can
-     *        use the <a>DescribeWorkspaceBundles</a> operation to obtain a list
-     *        of the bundles that are available.
+     *        The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a>
+     *        operation to obtain a list of the bundles that are available.
      */
 
     public void setBundleId(String bundleId) {
@@ -204,14 +178,12 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the bundle to create the WorkSpace from. You can use
-     * the <a>DescribeWorkspaceBundles</a> operation to obtain a list of the
-     * bundles that are available.
+     * The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a>
+     * operation to obtain a list of the bundles that are available.
      * </p>
      * 
-     * @return The identifier of the bundle to create the WorkSpace from. You
-     *         can use the <a>DescribeWorkspaceBundles</a> operation to obtain a
-     *         list of the bundles that are available.
+     * @return The identifier of the bundle to create the WorkSpace from. You can use the
+     *         <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that are available.
      */
 
     public String getBundleId() {
@@ -220,17 +192,14 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the bundle to create the WorkSpace from. You can use
-     * the <a>DescribeWorkspaceBundles</a> operation to obtain a list of the
-     * bundles that are available.
+     * The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a>
+     * operation to obtain a list of the bundles that are available.
      * </p>
      * 
      * @param bundleId
-     *        The identifier of the bundle to create the WorkSpace from. You can
-     *        use the <a>DescribeWorkspaceBundles</a> operation to obtain a list
-     *        of the bundles that are available.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a>
+     *        operation to obtain a list of the bundles that are available.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceRequest withBundleId(String bundleId) {
@@ -270,8 +239,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * 
      * @param volumeEncryptionKey
      *        The KMS key used to encrypt data stored on your WorkSpace.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceRequest withVolumeEncryptionKey(String volumeEncryptionKey) {
@@ -281,28 +249,23 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      * </p>
      * 
      * @param userVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the user volume, or D: drive,
-     *        is encrypted.
+     *        Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      */
 
-    public void setUserVolumeEncryptionEnabled(
-            Boolean userVolumeEncryptionEnabled) {
+    public void setUserVolumeEncryptionEnabled(Boolean userVolumeEncryptionEnabled) {
         this.userVolumeEncryptionEnabled = userVolumeEncryptionEnabled;
     }
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the user volume, or D:
-     *         drive, is encrypted.
+     * @return Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      */
 
     public Boolean getUserVolumeEncryptionEnabled() {
@@ -311,31 +274,25 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      * </p>
      * 
      * @param userVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the user volume, or D: drive,
-     *        is encrypted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WorkspaceRequest withUserVolumeEncryptionEnabled(
-            Boolean userVolumeEncryptionEnabled) {
+    public WorkspaceRequest withUserVolumeEncryptionEnabled(Boolean userVolumeEncryptionEnabled) {
         setUserVolumeEncryptionEnabled(userVolumeEncryptionEnabled);
         return this;
     }
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the user volume, or D:
-     *         drive, is encrypted.
+     * @return Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      */
 
     public Boolean isUserVolumeEncryptionEnabled() {
@@ -344,28 +301,23 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      * </p>
      * 
      * @param rootVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the root volume, or C: drive,
-     *        is encrypted.
+     *        Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      */
 
-    public void setRootVolumeEncryptionEnabled(
-            Boolean rootVolumeEncryptionEnabled) {
+    public void setRootVolumeEncryptionEnabled(Boolean rootVolumeEncryptionEnabled) {
         this.rootVolumeEncryptionEnabled = rootVolumeEncryptionEnabled;
     }
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the root volume, or C:
-     *         drive, is encrypted.
+     * @return Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      */
 
     public Boolean getRootVolumeEncryptionEnabled() {
@@ -374,31 +326,25 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      * </p>
      * 
      * @param rootVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the root volume, or C: drive,
-     *        is encrypted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WorkspaceRequest withRootVolumeEncryptionEnabled(
-            Boolean rootVolumeEncryptionEnabled) {
+    public WorkspaceRequest withRootVolumeEncryptionEnabled(Boolean rootVolumeEncryptionEnabled) {
         setRootVolumeEncryptionEnabled(rootVolumeEncryptionEnabled);
         return this;
     }
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the root volume, or C:
-     *         drive, is encrypted.
+     * @return Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      */
 
     public Boolean isRootVolumeEncryptionEnabled() {
@@ -423,12 +369,10 @@ public class WorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * @param workspaceProperties
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WorkspaceRequest withWorkspaceProperties(
-            WorkspaceProperties workspaceProperties) {
+    public WorkspaceRequest withWorkspaceProperties(WorkspaceProperties workspaceProperties) {
         setWorkspaceProperties(workspaceProperties);
         return this;
     }
@@ -471,16 +415,14 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * The tags of the WorkSpace request.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        The tags of the WorkSpace request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceRequest withTags(Tag... tags) {
@@ -500,8 +442,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * 
      * @param tags
      *        The tags of the WorkSpace request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceRequest withTags(java.util.Collection<Tag> tags) {
@@ -510,8 +451,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -530,11 +470,9 @@ public class WorkspaceRequest implements Serializable, Cloneable {
         if (getVolumeEncryptionKey() != null)
             sb.append("VolumeEncryptionKey: " + getVolumeEncryptionKey() + ",");
         if (getUserVolumeEncryptionEnabled() != null)
-            sb.append("UserVolumeEncryptionEnabled: "
-                    + getUserVolumeEncryptionEnabled() + ",");
+            sb.append("UserVolumeEncryptionEnabled: " + getUserVolumeEncryptionEnabled() + ",");
         if (getRootVolumeEncryptionEnabled() != null)
-            sb.append("RootVolumeEncryptionEnabled: "
-                    + getRootVolumeEncryptionEnabled() + ",");
+            sb.append("RootVolumeEncryptionEnabled: " + getRootVolumeEncryptionEnabled() + ",");
         if (getWorkspaceProperties() != null)
             sb.append("WorkspaceProperties: " + getWorkspaceProperties() + ",");
         if (getTags() != null)
@@ -555,51 +493,35 @@ public class WorkspaceRequest implements Serializable, Cloneable {
         WorkspaceRequest other = (WorkspaceRequest) obj;
         if (other.getDirectoryId() == null ^ this.getDirectoryId() == null)
             return false;
-        if (other.getDirectoryId() != null
-                && other.getDirectoryId().equals(this.getDirectoryId()) == false)
+        if (other.getDirectoryId() != null && other.getDirectoryId().equals(this.getDirectoryId()) == false)
             return false;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
-        if (other.getUserName() != null
-                && other.getUserName().equals(this.getUserName()) == false)
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
         if (other.getBundleId() == null ^ this.getBundleId() == null)
             return false;
-        if (other.getBundleId() != null
-                && other.getBundleId().equals(this.getBundleId()) == false)
+        if (other.getBundleId() != null && other.getBundleId().equals(this.getBundleId()) == false)
             return false;
-        if (other.getVolumeEncryptionKey() == null
-                ^ this.getVolumeEncryptionKey() == null)
+        if (other.getVolumeEncryptionKey() == null ^ this.getVolumeEncryptionKey() == null)
             return false;
-        if (other.getVolumeEncryptionKey() != null
-                && other.getVolumeEncryptionKey().equals(
-                        this.getVolumeEncryptionKey()) == false)
+        if (other.getVolumeEncryptionKey() != null && other.getVolumeEncryptionKey().equals(this.getVolumeEncryptionKey()) == false)
             return false;
-        if (other.getUserVolumeEncryptionEnabled() == null
-                ^ this.getUserVolumeEncryptionEnabled() == null)
+        if (other.getUserVolumeEncryptionEnabled() == null ^ this.getUserVolumeEncryptionEnabled() == null)
             return false;
-        if (other.getUserVolumeEncryptionEnabled() != null
-                && other.getUserVolumeEncryptionEnabled().equals(
-                        this.getUserVolumeEncryptionEnabled()) == false)
+        if (other.getUserVolumeEncryptionEnabled() != null && other.getUserVolumeEncryptionEnabled().equals(this.getUserVolumeEncryptionEnabled()) == false)
             return false;
-        if (other.getRootVolumeEncryptionEnabled() == null
-                ^ this.getRootVolumeEncryptionEnabled() == null)
+        if (other.getRootVolumeEncryptionEnabled() == null ^ this.getRootVolumeEncryptionEnabled() == null)
             return false;
-        if (other.getRootVolumeEncryptionEnabled() != null
-                && other.getRootVolumeEncryptionEnabled().equals(
-                        this.getRootVolumeEncryptionEnabled()) == false)
+        if (other.getRootVolumeEncryptionEnabled() != null && other.getRootVolumeEncryptionEnabled().equals(this.getRootVolumeEncryptionEnabled()) == false)
             return false;
-        if (other.getWorkspaceProperties() == null
-                ^ this.getWorkspaceProperties() == null)
+        if (other.getWorkspaceProperties() == null ^ this.getWorkspaceProperties() == null)
             return false;
-        if (other.getWorkspaceProperties() != null
-                && other.getWorkspaceProperties().equals(
-                        this.getWorkspaceProperties()) == false)
+        if (other.getWorkspaceProperties() != null && other.getWorkspaceProperties().equals(this.getWorkspaceProperties()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -609,31 +531,14 @@ public class WorkspaceRequest implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        hashCode = prime * hashCode
-                + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeEncryptionKey() == null) ? 0
-                        : getVolumeEncryptionKey().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUserVolumeEncryptionEnabled() == null) ? 0
-                        : getUserVolumeEncryptionEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRootVolumeEncryptionEnabled() == null) ? 0
-                        : getRootVolumeEncryptionEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getWorkspaceProperties() == null) ? 0
-                        : getWorkspaceProperties().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
+        hashCode = prime * hashCode + ((getVolumeEncryptionKey() == null) ? 0 : getVolumeEncryptionKey().hashCode());
+        hashCode = prime * hashCode + ((getUserVolumeEncryptionEnabled() == null) ? 0 : getUserVolumeEncryptionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getRootVolumeEncryptionEnabled() == null) ? 0 : getRootVolumeEncryptionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaceProperties() == null) ? 0 : getWorkspaceProperties().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -642,9 +547,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
         try {
             return (WorkspaceRequest) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

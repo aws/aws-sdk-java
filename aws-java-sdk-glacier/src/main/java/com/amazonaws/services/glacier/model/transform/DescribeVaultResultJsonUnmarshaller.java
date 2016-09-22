@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DescribeVaultResult JSON Unmarshaller
  */
-public class DescribeVaultResultJsonUnmarshaller implements
-        Unmarshaller<DescribeVaultResult, JsonUnmarshallerContext> {
+public class DescribeVaultResultJsonUnmarshaller implements Unmarshaller<DescribeVaultResult, JsonUnmarshallerContext> {
 
-    public DescribeVaultResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public DescribeVaultResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeVaultResult describeVaultResult = new DescribeVaultResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,38 +49,30 @@ public class DescribeVaultResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VaultARN", targetDepth)) {
                     context.nextToken();
-                    describeVaultResult.setVaultARN(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeVaultResult.setVaultARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VaultName", targetDepth)) {
                     context.nextToken();
-                    describeVaultResult.setVaultName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeVaultResult.setVaultName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    describeVaultResult.setCreationDate(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeVaultResult.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastInventoryDate", targetDepth)) {
                     context.nextToken();
-                    describeVaultResult.setLastInventoryDate(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeVaultResult.setLastInventoryDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfArchives", targetDepth)) {
                     context.nextToken();
-                    describeVaultResult.setNumberOfArchives(context
-                            .getUnmarshaller(Long.class).unmarshall(context));
+                    describeVaultResult.setNumberOfArchives(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeInBytes", targetDepth)) {
                     context.nextToken();
-                    describeVaultResult.setSizeInBytes(context.getUnmarshaller(
-                            Long.class).unmarshall(context));
+                    describeVaultResult.setSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

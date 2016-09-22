@@ -17,8 +17,8 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.Reflect;
-import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.FieldTypedMap;
-import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.TableTypedMap;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.FieldMap;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.TableMap;
 import com.amazonaws.util.StringUtils;
 
 import java.lang.reflect.Method;
@@ -51,7 +51,7 @@ final class StandardBeanProperties {
 
         private final Beans<T> getBeans(Class<T> clazz) {
             if (!cache.containsKey(clazz)) {
-                final TableTypedMap<T> annotations = StandardAnnotationMaps.<T>of(clazz);
+                final TableMap<T> annotations = StandardAnnotationMaps.<T>of(clazz);
                 final BeanMap<T,Object> map = new BeanMap<T,Object>(clazz, false);
                 cache.putIfAbsent(clazz, new Beans<T>(annotations, map));
             }
@@ -66,7 +66,7 @@ final class StandardBeanProperties {
         private final DynamoDBMapperTableModel.Properties<T> properties;
         private final Map<String,Bean<T,Object>> map;
 
-        private Beans(TableTypedMap<T> annotations, Map<String,Bean<T,Object>> map) {
+        private Beans(TableMap<T> annotations, Map<String,Bean<T,Object>> map) {
             this.properties = new DynamoDBMapperTableModel.Properties.Immutable<T>(annotations);
             this.map = Collections.unmodifiableMap(map);
         }
@@ -85,12 +85,12 @@ final class StandardBeanProperties {
      */
     static final class Bean<T,V> {
         private final DynamoDBMapperFieldModel.Properties<V> properties;
-        private final ConversionType<V> type;
+        private final ConvertibleType<V> type;
         private final Reflect<T,V> reflect;
 
-        private Bean(FieldTypedMap<V> annotations, Reflect<T,V> reflect, Method getter) {
+        private Bean(FieldMap<V> annotations, Reflect<T,V> reflect, Method getter) {
             this.properties = new DynamoDBMapperFieldModel.Properties.Immutable<V>(annotations);
-            this.type = ConversionType.<V>of(getter, annotations);
+            this.type = ConvertibleType.<V>of(getter, annotations);
             this.reflect = reflect;
         }
 
@@ -98,7 +98,7 @@ final class StandardBeanProperties {
             return this.properties;
         }
 
-        final ConversionType<V> type() {
+        final ConvertibleType<V> type() {
             return this.type;
         }
 
@@ -194,7 +194,7 @@ final class StandardBeanProperties {
         BeanMap(Class<T> clazz, boolean inherited) {
             for (final Method method : clazz.getMethods()) {
                 if (canMap(method, inherited)) {
-                    final FieldTypedMap<V> annotations = StandardAnnotationMaps.<V>of(method, null);
+                    final FieldMap<V> annotations = StandardAnnotationMaps.<V>of(method, null);
                     if (!annotations.ignored()) {
                         final Reflect<T,V> reflect = new MethodReflect<T,V>(method);
                         putOrFlatten(annotations, reflect, method);
@@ -203,7 +203,7 @@ final class StandardBeanProperties {
             }
         }
 
-        private void putOrFlatten(FieldTypedMap<V> annotations, Reflect<T,V> reflect, Method getter) {
+        private void putOrFlatten(FieldMap<V> annotations, Reflect<T,V> reflect, Method getter) {
             if (annotations.flattened()) {
                 flatten((Class<T>)annotations.targetType(), annotations.attributes(), (Reflect<T,T>)reflect);
             } else {
@@ -221,7 +221,7 @@ final class StandardBeanProperties {
                     if ((name = attributes.remove(name)) == null) {
                         continue;
                     }
-                    final FieldTypedMap<V> annotations = StandardAnnotationMaps.<V>of(method, name);
+                    final FieldMap<V> annotations = StandardAnnotationMaps.<V>of(method, name);
                     if (!annotations.ignored()) {
                         final Reflect<T,V> reflect = new DeclaringReflect<T,V>(method, declaring, targetType);
                         putOrFlatten(annotations, reflect, method);

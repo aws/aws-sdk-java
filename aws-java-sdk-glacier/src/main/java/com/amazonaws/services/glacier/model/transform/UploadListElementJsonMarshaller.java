@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model.transform;
 
@@ -34,42 +32,34 @@ public class UploadListElementJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(UploadListElement uploadListElement,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(UploadListElement uploadListElement, StructuredJsonGenerator jsonGenerator) {
 
         if (uploadListElement == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (uploadListElement.getMultipartUploadId() != null) {
-                jsonGenerator.writeFieldName("MultipartUploadId").writeValue(
-                        uploadListElement.getMultipartUploadId());
+                jsonGenerator.writeFieldName("MultipartUploadId").writeValue(uploadListElement.getMultipartUploadId());
             }
             if (uploadListElement.getVaultARN() != null) {
-                jsonGenerator.writeFieldName("VaultARN").writeValue(
-                        uploadListElement.getVaultARN());
+                jsonGenerator.writeFieldName("VaultARN").writeValue(uploadListElement.getVaultARN());
             }
             if (uploadListElement.getArchiveDescription() != null) {
-                jsonGenerator.writeFieldName("ArchiveDescription").writeValue(
-                        uploadListElement.getArchiveDescription());
+                jsonGenerator.writeFieldName("ArchiveDescription").writeValue(uploadListElement.getArchiveDescription());
             }
             if (uploadListElement.getPartSizeInBytes() != null) {
-                jsonGenerator.writeFieldName("PartSizeInBytes").writeValue(
-                        uploadListElement.getPartSizeInBytes());
+                jsonGenerator.writeFieldName("PartSizeInBytes").writeValue(uploadListElement.getPartSizeInBytes());
             }
             if (uploadListElement.getCreationDate() != null) {
-                jsonGenerator.writeFieldName("CreationDate").writeValue(
-                        uploadListElement.getCreationDate());
+                jsonGenerator.writeFieldName("CreationDate").writeValue(uploadListElement.getCreationDate());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

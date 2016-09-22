@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetDomainSuggestionsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String domainName;
 
@@ -48,8 +44,7 @@ public class GetDomainSuggestionsRequest extends
 
     /**
      * @param domainName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainSuggestionsRequest withDomainName(String domainName) {
@@ -75,12 +70,10 @@ public class GetDomainSuggestionsRequest extends
 
     /**
      * @param suggestionCount
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetDomainSuggestionsRequest withSuggestionCount(
-            Integer suggestionCount) {
+    public GetDomainSuggestionsRequest withSuggestionCount(Integer suggestionCount) {
         setSuggestionCount(suggestionCount);
         return this;
     }
@@ -103,8 +96,7 @@ public class GetDomainSuggestionsRequest extends
 
     /**
      * @param onlyAvailable
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainSuggestionsRequest withOnlyAvailable(Boolean onlyAvailable) {
@@ -121,8 +113,7 @@ public class GetDomainSuggestionsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -154,19 +145,15 @@ public class GetDomainSuggestionsRequest extends
         GetDomainSuggestionsRequest other = (GetDomainSuggestionsRequest) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
-        if (other.getSuggestionCount() == null
-                ^ this.getSuggestionCount() == null)
+        if (other.getSuggestionCount() == null ^ this.getSuggestionCount() == null)
             return false;
-        if (other.getSuggestionCount() != null
-                && other.getSuggestionCount().equals(this.getSuggestionCount()) == false)
+        if (other.getSuggestionCount() != null && other.getSuggestionCount().equals(this.getSuggestionCount()) == false)
             return false;
         if (other.getOnlyAvailable() == null ^ this.getOnlyAvailable() == null)
             return false;
-        if (other.getOnlyAvailable() != null
-                && other.getOnlyAvailable().equals(this.getOnlyAvailable()) == false)
+        if (other.getOnlyAvailable() != null && other.getOnlyAvailable().equals(this.getOnlyAvailable()) == false)
             return false;
         return true;
     }
@@ -176,16 +163,9 @@ public class GetDomainSuggestionsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSuggestionCount() == null) ? 0 : getSuggestionCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOnlyAvailable() == null) ? 0 : getOnlyAvailable()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getSuggestionCount() == null) ? 0 : getSuggestionCount().hashCode());
+        hashCode = prime * hashCode + ((getOnlyAvailable() == null) ? 0 : getOnlyAvailable().hashCode());
         return hashCode;
     }
 

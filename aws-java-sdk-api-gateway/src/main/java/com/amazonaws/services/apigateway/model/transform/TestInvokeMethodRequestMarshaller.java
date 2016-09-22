@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,75 +41,58 @@ import com.amazonaws.protocol.json.*;
 /**
  * TestInvokeMethodRequest Marshaller
  */
-public class TestInvokeMethodRequestMarshaller implements
-        Marshaller<Request<TestInvokeMethodRequest>, TestInvokeMethodRequest> {
+public class TestInvokeMethodRequestMarshaller implements Marshaller<Request<TestInvokeMethodRequest>, TestInvokeMethodRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public TestInvokeMethodRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public TestInvokeMethodRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<TestInvokeMethodRequest> marshall(
-            TestInvokeMethodRequest testInvokeMethodRequest) {
+    public Request<TestInvokeMethodRequest> marshall(TestInvokeMethodRequest testInvokeMethodRequest) {
 
         if (testInvokeMethodRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<TestInvokeMethodRequest> request = new DefaultRequest<TestInvokeMethodRequest>(
-                testInvokeMethodRequest, "AmazonApiGateway");
+        Request<TestInvokeMethodRequest> request = new DefaultRequest<TestInvokeMethodRequest>(testInvokeMethodRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}";
 
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (testInvokeMethodRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils.fromString(testInvokeMethodRequest.getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (testInvokeMethodRequest.getRestApiId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils
-                                .fromString(testInvokeMethodRequest
-                                        .getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{resource_id}",
-                        (testInvokeMethodRequest.getResourceId() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(testInvokeMethodRequest
-                                                .getResourceId()), false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{http_method}",
-                        (testInvokeMethodRequest.getHttpMethod() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(testInvokeMethodRequest
-                                                .getHttpMethod()), false) : "");
+                "{resource_id}",
+                (testInvokeMethodRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(testInvokeMethodRequest.getResourceId()),
+                        false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{http_method}",
+                (testInvokeMethodRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(testInvokeMethodRequest.getHttpMethod()),
+                        false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
             jsonGenerator.writeStartObject();
 
             if (testInvokeMethodRequest.getPathWithQueryString() != null) {
-                jsonGenerator.writeFieldName("pathWithQueryString").writeValue(
-                        testInvokeMethodRequest.getPathWithQueryString());
+                jsonGenerator.writeFieldName("pathWithQueryString").writeValue(testInvokeMethodRequest.getPathWithQueryString());
             }
             if (testInvokeMethodRequest.getBody() != null) {
-                jsonGenerator.writeFieldName("body").writeValue(
-                        testInvokeMethodRequest.getBody());
+                jsonGenerator.writeFieldName("body").writeValue(testInvokeMethodRequest.getBody());
             }
 
-            java.util.Map<String, String> headersMap = testInvokeMethodRequest
-                    .getHeaders();
+            java.util.Map<String, String> headersMap = testInvokeMethodRequest.getHeaders();
             if (headersMap != null) {
                 jsonGenerator.writeFieldName("headers");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> headersMapValue : headersMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> headersMapValue : headersMap.entrySet()) {
                     if (headersMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(headersMapValue.getKey());
 
@@ -121,24 +102,19 @@ public class TestInvokeMethodRequestMarshaller implements
                 jsonGenerator.writeEndObject();
             }
             if (testInvokeMethodRequest.getClientCertificateId() != null) {
-                jsonGenerator.writeFieldName("clientCertificateId").writeValue(
-                        testInvokeMethodRequest.getClientCertificateId());
+                jsonGenerator.writeFieldName("clientCertificateId").writeValue(testInvokeMethodRequest.getClientCertificateId());
             }
 
-            java.util.Map<String, String> stageVariablesMap = testInvokeMethodRequest
-                    .getStageVariables();
+            java.util.Map<String, String> stageVariablesMap = testInvokeMethodRequest.getStageVariables();
             if (stageVariablesMap != null) {
                 jsonGenerator.writeFieldName("stageVariables");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> stageVariablesMapValue : stageVariablesMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> stageVariablesMapValue : stageVariablesMap.entrySet()) {
                     if (stageVariablesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(stageVariablesMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(stageVariablesMapValue.getKey());
 
-                        jsonGenerator.writeValue(stageVariablesMapValue
-                                .getValue());
+                        jsonGenerator.writeValue(stageVariablesMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
@@ -148,15 +124,12 @@ public class TestInvokeMethodRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type",
-                        protocolFactory.getContentType());
+                request.addHeader("Content-Type", protocolFactory.getContentType());
             }
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

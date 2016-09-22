@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecs.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * TaskDefinition JSON Unmarshaller
  */
-public class TaskDefinitionJsonUnmarshaller implements
-        Unmarshaller<TaskDefinition, JsonUnmarshallerContext> {
+public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefinition, JsonUnmarshallerContext> {
 
-    public TaskDefinition unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public TaskDefinition unmarshall(JsonUnmarshallerContext context) throws Exception {
         TaskDefinition taskDefinition = new TaskDefinition();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,58 +49,43 @@ public class TaskDefinitionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskDefinitionArn", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setTaskDefinitionArn(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    taskDefinition.setTaskDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerDefinitions", targetDepth)) {
                     context.nextToken();
-                    taskDefinition
-                            .setContainerDefinitions(new ListUnmarshaller<ContainerDefinition>(
-                                    ContainerDefinitionJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    taskDefinition.setContainerDefinitions(new ListUnmarshaller<ContainerDefinition>(ContainerDefinitionJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("family", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setFamily(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    taskDefinition.setFamily(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskRoleArn", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setTaskRoleArn(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    taskDefinition.setTaskRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkMode", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setNetworkMode(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    taskDefinition.setNetworkMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revision", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setRevision(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    taskDefinition.setRevision(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("volumes", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setVolumes(new ListUnmarshaller<Volume>(
-                            VolumeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    taskDefinition.setVolumes(new ListUnmarshaller<Volume>(VolumeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setStatus(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    taskDefinition.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requiresAttributes", targetDepth)) {
                     context.nextToken();
-                    taskDefinition
-                            .setRequiresAttributes(new ListUnmarshaller<Attribute>(
-                                    AttributeJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+                    taskDefinition.setRequiresAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

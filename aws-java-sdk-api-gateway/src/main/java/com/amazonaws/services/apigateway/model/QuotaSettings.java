@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -31,15 +29,13 @@ public class QuotaSettings implements Serializable, Cloneable {
     private Integer limit;
     /**
      * <p>
-     * The number of requests subtracted from the given limit in the initial
-     * time period.
+     * The number of requests subtracted from the given limit in the initial time period.
      * </p>
      */
     private Integer offset;
     /**
      * <p>
-     * The time period in which the limit applies. Valid values are "DAY",
-     * "WEEK" or "MONTH".
+     * The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".
      * </p>
      */
     private String period;
@@ -50,8 +46,7 @@ public class QuotaSettings implements Serializable, Cloneable {
      * </p>
      * 
      * @param limit
-     *        The maximum number of requests that can be made in a given time
-     *        period.
+     *        The maximum number of requests that can be made in a given time period.
      */
 
     public void setLimit(Integer limit) {
@@ -63,8 +58,7 @@ public class QuotaSettings implements Serializable, Cloneable {
      * The maximum number of requests that can be made in a given time period.
      * </p>
      * 
-     * @return The maximum number of requests that can be made in a given time
-     *         period.
+     * @return The maximum number of requests that can be made in a given time period.
      */
 
     public Integer getLimit() {
@@ -77,10 +71,8 @@ public class QuotaSettings implements Serializable, Cloneable {
      * </p>
      * 
      * @param limit
-     *        The maximum number of requests that can be made in a given time
-     *        period.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of requests that can be made in a given time period.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QuotaSettings withLimit(Integer limit) {
@@ -90,13 +82,11 @@ public class QuotaSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of requests subtracted from the given limit in the initial
-     * time period.
+     * The number of requests subtracted from the given limit in the initial time period.
      * </p>
      * 
      * @param offset
-     *        The number of requests subtracted from the given limit in the
-     *        initial time period.
+     *        The number of requests subtracted from the given limit in the initial time period.
      */
 
     public void setOffset(Integer offset) {
@@ -105,12 +95,10 @@ public class QuotaSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of requests subtracted from the given limit in the initial
-     * time period.
+     * The number of requests subtracted from the given limit in the initial time period.
      * </p>
      * 
-     * @return The number of requests subtracted from the given limit in the
-     *         initial time period.
+     * @return The number of requests subtracted from the given limit in the initial time period.
      */
 
     public Integer getOffset() {
@@ -119,15 +107,12 @@ public class QuotaSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of requests subtracted from the given limit in the initial
-     * time period.
+     * The number of requests subtracted from the given limit in the initial time period.
      * </p>
      * 
      * @param offset
-     *        The number of requests subtracted from the given limit in the
-     *        initial time period.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of requests subtracted from the given limit in the initial time period.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QuotaSettings withOffset(Integer offset) {
@@ -137,13 +122,11 @@ public class QuotaSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time period in which the limit applies. Valid values are "DAY",
-     * "WEEK" or "MONTH".
+     * The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".
      * </p>
      * 
      * @param period
-     *        The time period in which the limit applies. Valid values are
-     *        "DAY", "WEEK" or "MONTH".
+     *        The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".
      * @see QuotaPeriodType
      */
 
@@ -153,12 +136,10 @@ public class QuotaSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time period in which the limit applies. Valid values are "DAY",
-     * "WEEK" or "MONTH".
+     * The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".
      * </p>
      * 
-     * @return The time period in which the limit applies. Valid values are
-     *         "DAY", "WEEK" or "MONTH".
+     * @return The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".
      * @see QuotaPeriodType
      */
 
@@ -168,15 +149,12 @@ public class QuotaSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time period in which the limit applies. Valid values are "DAY",
-     * "WEEK" or "MONTH".
+     * The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".
      * </p>
      * 
      * @param period
-     *        The time period in which the limit applies. Valid values are
-     *        "DAY", "WEEK" or "MONTH".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see QuotaPeriodType
      */
 
@@ -187,13 +165,11 @@ public class QuotaSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time period in which the limit applies. Valid values are "DAY",
-     * "WEEK" or "MONTH".
+     * The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".
      * </p>
      * 
      * @param period
-     *        The time period in which the limit applies. Valid values are
-     *        "DAY", "WEEK" or "MONTH".
+     *        The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".
      * @see QuotaPeriodType
      */
 
@@ -203,15 +179,12 @@ public class QuotaSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time period in which the limit applies. Valid values are "DAY",
-     * "WEEK" or "MONTH".
+     * The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".
      * </p>
      * 
      * @param period
-     *        The time period in which the limit applies. Valid values are
-     *        "DAY", "WEEK" or "MONTH".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see QuotaPeriodType
      */
 
@@ -221,8 +194,7 @@ public class QuotaSettings implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -254,18 +226,15 @@ public class QuotaSettings implements Serializable, Cloneable {
         QuotaSettings other = (QuotaSettings) obj;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         if (other.getOffset() == null ^ this.getOffset() == null)
             return false;
-        if (other.getOffset() != null
-                && other.getOffset().equals(this.getOffset()) == false)
+        if (other.getOffset() != null && other.getOffset().equals(this.getOffset()) == false)
             return false;
         if (other.getPeriod() == null ^ this.getPeriod() == null)
             return false;
-        if (other.getPeriod() != null
-                && other.getPeriod().equals(this.getPeriod()) == false)
+        if (other.getPeriod() != null && other.getPeriod().equals(this.getPeriod()) == false)
             return false;
         return true;
     }
@@ -275,12 +244,9 @@ public class QuotaSettings implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
-        hashCode = prime * hashCode
-                + ((getOffset() == null) ? 0 : getOffset().hashCode());
-        hashCode = prime * hashCode
-                + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getOffset() == null) ? 0 : getOffset().hashCode());
+        hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
         return hashCode;
     }
 
@@ -289,9 +255,7 @@ public class QuotaSettings implements Serializable, Cloneable {
         try {
             return (QuotaSettings) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

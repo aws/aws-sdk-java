@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeJobRequest Marshaller
  */
-public class DescribeJobRequestMarshaller implements
-        Marshaller<Request<DescribeJobRequest>, DescribeJobRequest> {
+public class DescribeJobRequestMarshaller implements Marshaller<Request<DescribeJobRequest>, DescribeJobRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,36 +49,24 @@ public class DescribeJobRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeJobRequest> marshall(
-            DescribeJobRequest describeJobRequest) {
+    public Request<DescribeJobRequest> marshall(DescribeJobRequest describeJobRequest) {
 
         if (describeJobRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeJobRequest> request = new DefaultRequest<DescribeJobRequest>(
-                describeJobRequest, "AmazonGlacier");
+        Request<DescribeJobRequest> request = new DefaultRequest<DescribeJobRequest>(describeJobRequest, "AmazonGlacier");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (describeJobRequest.getAccountId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(describeJobRequest
-                                .getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (describeJobRequest.getVaultName() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(describeJobRequest
-                                .getVaultName()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{jobId}",
-                (describeJobRequest.getJobId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(describeJobRequest
-                                .getJobId()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{accountId}",
+                (describeJobRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(describeJobRequest.getAccountId()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{vaultName}",
+                (describeJobRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(describeJobRequest.getVaultName()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{jobId}",
+                (describeJobRequest.getJobId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(describeJobRequest.getJobId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

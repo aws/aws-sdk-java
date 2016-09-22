@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
 
@@ -18,32 +16,28 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The HLS content protection settings, if any, that you want Elastic Transcoder
- * to apply to your output files.
+ * The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files.
  * </p>
  */
 public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The content protection method for your output. The only valid value is:
-     * <code>aes-128</code>.
+     * The content protection method for your output. The only valid value is: <code>aes-128</code>.
      * </p>
      * <p>
-     * This value will be written into the method attribute of the
-     * <code>EXT-X-KEY</code> metadata tag in the output playlist.
+     * This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
+     * playlist.
      * </p>
      */
     private String method;
     /**
      * <p>
-     * If you want Elastic Transcoder to generate a key for you, leave this
-     * field blank.
+     * If you want Elastic Transcoder to generate a key for you, leave this field blank.
      * </p>
      * <p>
-     * If you choose to supply your own key, you must encrypt the key by using
-     * AWS KMS. The key must be base64-encoded, and it must be one of the
-     * following bit lengths before being base64-encoded:
+     * If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be base64-encoded,
+     * and it must be one of the following bit lengths before being base64-encoded:
      * </p>
      * <p>
      * <code>128</code>, <code>192</code>, or <code>256</code>.
@@ -52,67 +46,56 @@ public class HlsContentProtection implements Serializable, Cloneable {
     private String key;
     /**
      * <p>
-     * If Elastic Transcoder is generating your key for you, you must leave this
-     * field blank.
+     * If Elastic Transcoder is generating your key for you, you must leave this field blank.
      * </p>
      * <p>
-     * The MD5 digest of the key that you want Elastic Transcoder to use to
-     * encrypt your output file, and that you want Elastic Transcoder to use as
-     * a checksum to make sure your key was not corrupted in transit. The key
-     * MD5 must be base64-encoded, and it must be exactly 16 bytes before being
-     * base64- encoded.
+     * The MD5 digest of the key that you want Elastic Transcoder to use to encrypt your output file, and that you want
+     * Elastic Transcoder to use as a checksum to make sure your key was not corrupted in transit. The key MD5 must be
+     * base64-encoded, and it must be exactly 16 bytes before being base64- encoded.
      * </p>
      */
     private String keyMd5;
     /**
      * <p>
-     * If Elastic Transcoder is generating your key for you, you must leave this
-     * field blank.
+     * If Elastic Transcoder is generating your key for you, you must leave this field blank.
      * </p>
      * <p>
-     * The series of random bits created by a random bit generator, unique for
-     * every encryption operation, that you want Elastic Transcoder to use to
-     * encrypt your output files. The initialization vector must be
-     * base64-encoded, and it must be exactly 16 bytes before being
-     * base64-encoded.
+     * The series of random bits created by a random bit generator, unique for every encryption operation, that you want
+     * Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it
+     * must be exactly 16 bytes before being base64-encoded.
      * </p>
      */
     private String initializationVector;
     /**
      * <p>
-     * The location of the license key required to decrypt your HLS playlist.
-     * The URL must be an absolute path, and is referenced in the URI attribute
-     * of the EXT-X-KEY metadata tag in the playlist file.
+     * The location of the license key required to decrypt your HLS playlist. The URL must be an absolute path, and is
+     * referenced in the URI attribute of the EXT-X-KEY metadata tag in the playlist file.
      * </p>
      */
     private String licenseAcquisitionUrl;
     /**
      * <p>
-     * Specify whether you want Elastic Transcoder to write your HLS license key
-     * to an Amazon S3 bucket. If you choose <code>WithVariantPlaylists</code>,
-     * <code>LicenseAcquisitionUrl</code> must be left blank and Elastic
-     * Transcoder writes your data key into the same bucket as the associated
-     * playlist.
+     * Specify whether you want Elastic Transcoder to write your HLS license key to an Amazon S3 bucket. If you choose
+     * <code>WithVariantPlaylists</code>, <code>LicenseAcquisitionUrl</code> must be left blank and Elastic Transcoder
+     * writes your data key into the same bucket as the associated playlist.
      * </p>
      */
     private String keyStoragePolicy;
 
     /**
      * <p>
-     * The content protection method for your output. The only valid value is:
-     * <code>aes-128</code>.
+     * The content protection method for your output. The only valid value is: <code>aes-128</code>.
      * </p>
      * <p>
-     * This value will be written into the method attribute of the
-     * <code>EXT-X-KEY</code> metadata tag in the output playlist.
+     * This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
+     * playlist.
      * </p>
      * 
      * @param method
-     *        The content protection method for your output. The only valid
-     *        value is: <code>aes-128</code>.</p>
+     *        The content protection method for your output. The only valid value is: <code>aes-128</code>.</p>
      *        <p>
-     *        This value will be written into the method attribute of the
-     *        <code>EXT-X-KEY</code> metadata tag in the output playlist.
+     *        This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the
+     *        output playlist.
      */
 
     public void setMethod(String method) {
@@ -121,19 +104,17 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The content protection method for your output. The only valid value is:
-     * <code>aes-128</code>.
+     * The content protection method for your output. The only valid value is: <code>aes-128</code>.
      * </p>
      * <p>
-     * This value will be written into the method attribute of the
-     * <code>EXT-X-KEY</code> metadata tag in the output playlist.
+     * This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
+     * playlist.
      * </p>
      * 
-     * @return The content protection method for your output. The only valid
-     *         value is: <code>aes-128</code>.</p>
+     * @return The content protection method for your output. The only valid value is: <code>aes-128</code>.</p>
      *         <p>
-     *         This value will be written into the method attribute of the
-     *         <code>EXT-X-KEY</code> metadata tag in the output playlist.
+     *         This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the
+     *         output playlist.
      */
 
     public String getMethod() {
@@ -142,22 +123,19 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The content protection method for your output. The only valid value is:
-     * <code>aes-128</code>.
+     * The content protection method for your output. The only valid value is: <code>aes-128</code>.
      * </p>
      * <p>
-     * This value will be written into the method attribute of the
-     * <code>EXT-X-KEY</code> metadata tag in the output playlist.
+     * This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
+     * playlist.
      * </p>
      * 
      * @param method
-     *        The content protection method for your output. The only valid
-     *        value is: <code>aes-128</code>.</p>
+     *        The content protection method for your output. The only valid value is: <code>aes-128</code>.</p>
      *        <p>
-     *        This value will be written into the method attribute of the
-     *        <code>EXT-X-KEY</code> metadata tag in the output playlist.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the
+     *        output playlist.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HlsContentProtection withMethod(String method) {
@@ -167,25 +145,21 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you want Elastic Transcoder to generate a key for you, leave this
-     * field blank.
+     * If you want Elastic Transcoder to generate a key for you, leave this field blank.
      * </p>
      * <p>
-     * If you choose to supply your own key, you must encrypt the key by using
-     * AWS KMS. The key must be base64-encoded, and it must be one of the
-     * following bit lengths before being base64-encoded:
+     * If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be base64-encoded,
+     * and it must be one of the following bit lengths before being base64-encoded:
      * </p>
      * <p>
      * <code>128</code>, <code>192</code>, or <code>256</code>.
      * </p>
      * 
      * @param key
-     *        If you want Elastic Transcoder to generate a key for you, leave
-     *        this field blank.</p>
+     *        If you want Elastic Transcoder to generate a key for you, leave this field blank.</p>
      *        <p>
-     *        If you choose to supply your own key, you must encrypt the key by
-     *        using AWS KMS. The key must be base64-encoded, and it must be one
-     *        of the following bit lengths before being base64-encoded:
+     *        If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be
+     *        base64-encoded, and it must be one of the following bit lengths before being base64-encoded:
      *        </p>
      *        <p>
      *        <code>128</code>, <code>192</code>, or <code>256</code>.
@@ -197,24 +171,20 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you want Elastic Transcoder to generate a key for you, leave this
-     * field blank.
+     * If you want Elastic Transcoder to generate a key for you, leave this field blank.
      * </p>
      * <p>
-     * If you choose to supply your own key, you must encrypt the key by using
-     * AWS KMS. The key must be base64-encoded, and it must be one of the
-     * following bit lengths before being base64-encoded:
+     * If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be base64-encoded,
+     * and it must be one of the following bit lengths before being base64-encoded:
      * </p>
      * <p>
      * <code>128</code>, <code>192</code>, or <code>256</code>.
      * </p>
      * 
-     * @return If you want Elastic Transcoder to generate a key for you, leave
-     *         this field blank.</p>
+     * @return If you want Elastic Transcoder to generate a key for you, leave this field blank.</p>
      *         <p>
-     *         If you choose to supply your own key, you must encrypt the key by
-     *         using AWS KMS. The key must be base64-encoded, and it must be one
-     *         of the following bit lengths before being base64-encoded:
+     *         If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be
+     *         base64-encoded, and it must be one of the following bit lengths before being base64-encoded:
      *         </p>
      *         <p>
      *         <code>128</code>, <code>192</code>, or <code>256</code>.
@@ -226,30 +196,25 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you want Elastic Transcoder to generate a key for you, leave this
-     * field blank.
+     * If you want Elastic Transcoder to generate a key for you, leave this field blank.
      * </p>
      * <p>
-     * If you choose to supply your own key, you must encrypt the key by using
-     * AWS KMS. The key must be base64-encoded, and it must be one of the
-     * following bit lengths before being base64-encoded:
+     * If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be base64-encoded,
+     * and it must be one of the following bit lengths before being base64-encoded:
      * </p>
      * <p>
      * <code>128</code>, <code>192</code>, or <code>256</code>.
      * </p>
      * 
      * @param key
-     *        If you want Elastic Transcoder to generate a key for you, leave
-     *        this field blank.</p>
+     *        If you want Elastic Transcoder to generate a key for you, leave this field blank.</p>
      *        <p>
-     *        If you choose to supply your own key, you must encrypt the key by
-     *        using AWS KMS. The key must be base64-encoded, and it must be one
-     *        of the following bit lengths before being base64-encoded:
+     *        If you choose to supply your own key, you must encrypt the key by using AWS KMS. The key must be
+     *        base64-encoded, and it must be one of the following bit lengths before being base64-encoded:
      *        </p>
      *        <p>
      *        <code>128</code>, <code>192</code>, or <code>256</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HlsContentProtection withKey(String key) {
@@ -259,26 +224,20 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If Elastic Transcoder is generating your key for you, you must leave this
-     * field blank.
+     * If Elastic Transcoder is generating your key for you, you must leave this field blank.
      * </p>
      * <p>
-     * The MD5 digest of the key that you want Elastic Transcoder to use to
-     * encrypt your output file, and that you want Elastic Transcoder to use as
-     * a checksum to make sure your key was not corrupted in transit. The key
-     * MD5 must be base64-encoded, and it must be exactly 16 bytes before being
-     * base64- encoded.
+     * The MD5 digest of the key that you want Elastic Transcoder to use to encrypt your output file, and that you want
+     * Elastic Transcoder to use as a checksum to make sure your key was not corrupted in transit. The key MD5 must be
+     * base64-encoded, and it must be exactly 16 bytes before being base64- encoded.
      * </p>
      * 
      * @param keyMd5
-     *        If Elastic Transcoder is generating your key for you, you must
-     *        leave this field blank.</p>
+     *        If Elastic Transcoder is generating your key for you, you must leave this field blank.</p>
      *        <p>
-     *        The MD5 digest of the key that you want Elastic Transcoder to use
-     *        to encrypt your output file, and that you want Elastic Transcoder
-     *        to use as a checksum to make sure your key was not corrupted in
-     *        transit. The key MD5 must be base64-encoded, and it must be
-     *        exactly 16 bytes before being base64- encoded.
+     *        The MD5 digest of the key that you want Elastic Transcoder to use to encrypt your output file, and that
+     *        you want Elastic Transcoder to use as a checksum to make sure your key was not corrupted in transit. The
+     *        key MD5 must be base64-encoded, and it must be exactly 16 bytes before being base64- encoded.
      */
 
     public void setKeyMd5(String keyMd5) {
@@ -287,25 +246,19 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If Elastic Transcoder is generating your key for you, you must leave this
-     * field blank.
+     * If Elastic Transcoder is generating your key for you, you must leave this field blank.
      * </p>
      * <p>
-     * The MD5 digest of the key that you want Elastic Transcoder to use to
-     * encrypt your output file, and that you want Elastic Transcoder to use as
-     * a checksum to make sure your key was not corrupted in transit. The key
-     * MD5 must be base64-encoded, and it must be exactly 16 bytes before being
-     * base64- encoded.
+     * The MD5 digest of the key that you want Elastic Transcoder to use to encrypt your output file, and that you want
+     * Elastic Transcoder to use as a checksum to make sure your key was not corrupted in transit. The key MD5 must be
+     * base64-encoded, and it must be exactly 16 bytes before being base64- encoded.
      * </p>
      * 
-     * @return If Elastic Transcoder is generating your key for you, you must
-     *         leave this field blank.</p>
+     * @return If Elastic Transcoder is generating your key for you, you must leave this field blank.</p>
      *         <p>
-     *         The MD5 digest of the key that you want Elastic Transcoder to use
-     *         to encrypt your output file, and that you want Elastic Transcoder
-     *         to use as a checksum to make sure your key was not corrupted in
-     *         transit. The key MD5 must be base64-encoded, and it must be
-     *         exactly 16 bytes before being base64- encoded.
+     *         The MD5 digest of the key that you want Elastic Transcoder to use to encrypt your output file, and that
+     *         you want Elastic Transcoder to use as a checksum to make sure your key was not corrupted in transit. The
+     *         key MD5 must be base64-encoded, and it must be exactly 16 bytes before being base64- encoded.
      */
 
     public String getKeyMd5() {
@@ -314,28 +267,21 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If Elastic Transcoder is generating your key for you, you must leave this
-     * field blank.
+     * If Elastic Transcoder is generating your key for you, you must leave this field blank.
      * </p>
      * <p>
-     * The MD5 digest of the key that you want Elastic Transcoder to use to
-     * encrypt your output file, and that you want Elastic Transcoder to use as
-     * a checksum to make sure your key was not corrupted in transit. The key
-     * MD5 must be base64-encoded, and it must be exactly 16 bytes before being
-     * base64- encoded.
+     * The MD5 digest of the key that you want Elastic Transcoder to use to encrypt your output file, and that you want
+     * Elastic Transcoder to use as a checksum to make sure your key was not corrupted in transit. The key MD5 must be
+     * base64-encoded, and it must be exactly 16 bytes before being base64- encoded.
      * </p>
      * 
      * @param keyMd5
-     *        If Elastic Transcoder is generating your key for you, you must
-     *        leave this field blank.</p>
+     *        If Elastic Transcoder is generating your key for you, you must leave this field blank.</p>
      *        <p>
-     *        The MD5 digest of the key that you want Elastic Transcoder to use
-     *        to encrypt your output file, and that you want Elastic Transcoder
-     *        to use as a checksum to make sure your key was not corrupted in
-     *        transit. The key MD5 must be base64-encoded, and it must be
-     *        exactly 16 bytes before being base64- encoded.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The MD5 digest of the key that you want Elastic Transcoder to use to encrypt your output file, and that
+     *        you want Elastic Transcoder to use as a checksum to make sure your key was not corrupted in transit. The
+     *        key MD5 must be base64-encoded, and it must be exactly 16 bytes before being base64- encoded.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HlsContentProtection withKeyMd5(String keyMd5) {
@@ -345,26 +291,20 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If Elastic Transcoder is generating your key for you, you must leave this
-     * field blank.
+     * If Elastic Transcoder is generating your key for you, you must leave this field blank.
      * </p>
      * <p>
-     * The series of random bits created by a random bit generator, unique for
-     * every encryption operation, that you want Elastic Transcoder to use to
-     * encrypt your output files. The initialization vector must be
-     * base64-encoded, and it must be exactly 16 bytes before being
-     * base64-encoded.
+     * The series of random bits created by a random bit generator, unique for every encryption operation, that you want
+     * Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it
+     * must be exactly 16 bytes before being base64-encoded.
      * </p>
      * 
      * @param initializationVector
-     *        If Elastic Transcoder is generating your key for you, you must
-     *        leave this field blank.</p>
+     *        If Elastic Transcoder is generating your key for you, you must leave this field blank.</p>
      *        <p>
-     *        The series of random bits created by a random bit generator,
-     *        unique for every encryption operation, that you want Elastic
-     *        Transcoder to use to encrypt your output files. The initialization
-     *        vector must be base64-encoded, and it must be exactly 16 bytes
-     *        before being base64-encoded.
+     *        The series of random bits created by a random bit generator, unique for every encryption operation, that
+     *        you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be
+     *        base64-encoded, and it must be exactly 16 bytes before being base64-encoded.
      */
 
     public void setInitializationVector(String initializationVector) {
@@ -373,25 +313,19 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If Elastic Transcoder is generating your key for you, you must leave this
-     * field blank.
+     * If Elastic Transcoder is generating your key for you, you must leave this field blank.
      * </p>
      * <p>
-     * The series of random bits created by a random bit generator, unique for
-     * every encryption operation, that you want Elastic Transcoder to use to
-     * encrypt your output files. The initialization vector must be
-     * base64-encoded, and it must be exactly 16 bytes before being
-     * base64-encoded.
+     * The series of random bits created by a random bit generator, unique for every encryption operation, that you want
+     * Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it
+     * must be exactly 16 bytes before being base64-encoded.
      * </p>
      * 
-     * @return If Elastic Transcoder is generating your key for you, you must
-     *         leave this field blank.</p>
+     * @return If Elastic Transcoder is generating your key for you, you must leave this field blank.</p>
      *         <p>
-     *         The series of random bits created by a random bit generator,
-     *         unique for every encryption operation, that you want Elastic
-     *         Transcoder to use to encrypt your output files. The
-     *         initialization vector must be base64-encoded, and it must be
-     *         exactly 16 bytes before being base64-encoded.
+     *         The series of random bits created by a random bit generator, unique for every encryption operation, that
+     *         you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be
+     *         base64-encoded, and it must be exactly 16 bytes before being base64-encoded.
      */
 
     public String getInitializationVector() {
@@ -400,48 +334,37 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If Elastic Transcoder is generating your key for you, you must leave this
-     * field blank.
+     * If Elastic Transcoder is generating your key for you, you must leave this field blank.
      * </p>
      * <p>
-     * The series of random bits created by a random bit generator, unique for
-     * every encryption operation, that you want Elastic Transcoder to use to
-     * encrypt your output files. The initialization vector must be
-     * base64-encoded, and it must be exactly 16 bytes before being
-     * base64-encoded.
+     * The series of random bits created by a random bit generator, unique for every encryption operation, that you want
+     * Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it
+     * must be exactly 16 bytes before being base64-encoded.
      * </p>
      * 
      * @param initializationVector
-     *        If Elastic Transcoder is generating your key for you, you must
-     *        leave this field blank.</p>
+     *        If Elastic Transcoder is generating your key for you, you must leave this field blank.</p>
      *        <p>
-     *        The series of random bits created by a random bit generator,
-     *        unique for every encryption operation, that you want Elastic
-     *        Transcoder to use to encrypt your output files. The initialization
-     *        vector must be base64-encoded, and it must be exactly 16 bytes
-     *        before being base64-encoded.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The series of random bits created by a random bit generator, unique for every encryption operation, that
+     *        you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be
+     *        base64-encoded, and it must be exactly 16 bytes before being base64-encoded.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public HlsContentProtection withInitializationVector(
-            String initializationVector) {
+    public HlsContentProtection withInitializationVector(String initializationVector) {
         setInitializationVector(initializationVector);
         return this;
     }
 
     /**
      * <p>
-     * The location of the license key required to decrypt your HLS playlist.
-     * The URL must be an absolute path, and is referenced in the URI attribute
-     * of the EXT-X-KEY metadata tag in the playlist file.
+     * The location of the license key required to decrypt your HLS playlist. The URL must be an absolute path, and is
+     * referenced in the URI attribute of the EXT-X-KEY metadata tag in the playlist file.
      * </p>
      * 
      * @param licenseAcquisitionUrl
-     *        The location of the license key required to decrypt your HLS
-     *        playlist. The URL must be an absolute path, and is referenced in
-     *        the URI attribute of the EXT-X-KEY metadata tag in the playlist
-     *        file.
+     *        The location of the license key required to decrypt your HLS playlist. The URL must be an absolute path,
+     *        and is referenced in the URI attribute of the EXT-X-KEY metadata tag in the playlist file.
      */
 
     public void setLicenseAcquisitionUrl(String licenseAcquisitionUrl) {
@@ -450,15 +373,12 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location of the license key required to decrypt your HLS playlist.
-     * The URL must be an absolute path, and is referenced in the URI attribute
-     * of the EXT-X-KEY metadata tag in the playlist file.
+     * The location of the license key required to decrypt your HLS playlist. The URL must be an absolute path, and is
+     * referenced in the URI attribute of the EXT-X-KEY metadata tag in the playlist file.
      * </p>
      * 
-     * @return The location of the license key required to decrypt your HLS
-     *         playlist. The URL must be an absolute path, and is referenced in
-     *         the URI attribute of the EXT-X-KEY metadata tag in the playlist
-     *         file.
+     * @return The location of the license key required to decrypt your HLS playlist. The URL must be an absolute path,
+     *         and is referenced in the URI attribute of the EXT-X-KEY metadata tag in the playlist file.
      */
 
     public String getLicenseAcquisitionUrl() {
@@ -467,42 +387,32 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location of the license key required to decrypt your HLS playlist.
-     * The URL must be an absolute path, and is referenced in the URI attribute
-     * of the EXT-X-KEY metadata tag in the playlist file.
+     * The location of the license key required to decrypt your HLS playlist. The URL must be an absolute path, and is
+     * referenced in the URI attribute of the EXT-X-KEY metadata tag in the playlist file.
      * </p>
      * 
      * @param licenseAcquisitionUrl
-     *        The location of the license key required to decrypt your HLS
-     *        playlist. The URL must be an absolute path, and is referenced in
-     *        the URI attribute of the EXT-X-KEY metadata tag in the playlist
-     *        file.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The location of the license key required to decrypt your HLS playlist. The URL must be an absolute path,
+     *        and is referenced in the URI attribute of the EXT-X-KEY metadata tag in the playlist file.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public HlsContentProtection withLicenseAcquisitionUrl(
-            String licenseAcquisitionUrl) {
+    public HlsContentProtection withLicenseAcquisitionUrl(String licenseAcquisitionUrl) {
         setLicenseAcquisitionUrl(licenseAcquisitionUrl);
         return this;
     }
 
     /**
      * <p>
-     * Specify whether you want Elastic Transcoder to write your HLS license key
-     * to an Amazon S3 bucket. If you choose <code>WithVariantPlaylists</code>,
-     * <code>LicenseAcquisitionUrl</code> must be left blank and Elastic
-     * Transcoder writes your data key into the same bucket as the associated
-     * playlist.
+     * Specify whether you want Elastic Transcoder to write your HLS license key to an Amazon S3 bucket. If you choose
+     * <code>WithVariantPlaylists</code>, <code>LicenseAcquisitionUrl</code> must be left blank and Elastic Transcoder
+     * writes your data key into the same bucket as the associated playlist.
      * </p>
      * 
      * @param keyStoragePolicy
-     *        Specify whether you want Elastic Transcoder to write your HLS
-     *        license key to an Amazon S3 bucket. If you choose
-     *        <code>WithVariantPlaylists</code>,
-     *        <code>LicenseAcquisitionUrl</code> must be left blank and Elastic
-     *        Transcoder writes your data key into the same bucket as the
-     *        associated playlist.
+     *        Specify whether you want Elastic Transcoder to write your HLS license key to an Amazon S3 bucket. If you
+     *        choose <code>WithVariantPlaylists</code>, <code>LicenseAcquisitionUrl</code> must be left blank and
+     *        Elastic Transcoder writes your data key into the same bucket as the associated playlist.
      */
 
     public void setKeyStoragePolicy(String keyStoragePolicy) {
@@ -511,19 +421,14 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify whether you want Elastic Transcoder to write your HLS license key
-     * to an Amazon S3 bucket. If you choose <code>WithVariantPlaylists</code>,
-     * <code>LicenseAcquisitionUrl</code> must be left blank and Elastic
-     * Transcoder writes your data key into the same bucket as the associated
-     * playlist.
+     * Specify whether you want Elastic Transcoder to write your HLS license key to an Amazon S3 bucket. If you choose
+     * <code>WithVariantPlaylists</code>, <code>LicenseAcquisitionUrl</code> must be left blank and Elastic Transcoder
+     * writes your data key into the same bucket as the associated playlist.
      * </p>
      * 
-     * @return Specify whether you want Elastic Transcoder to write your HLS
-     *         license key to an Amazon S3 bucket. If you choose
-     *         <code>WithVariantPlaylists</code>,
-     *         <code>LicenseAcquisitionUrl</code> must be left blank and Elastic
-     *         Transcoder writes your data key into the same bucket as the
-     *         associated playlist.
+     * @return Specify whether you want Elastic Transcoder to write your HLS license key to an Amazon S3 bucket. If you
+     *         choose <code>WithVariantPlaylists</code>, <code>LicenseAcquisitionUrl</code> must be left blank and
+     *         Elastic Transcoder writes your data key into the same bucket as the associated playlist.
      */
 
     public String getKeyStoragePolicy() {
@@ -532,22 +437,16 @@ public class HlsContentProtection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify whether you want Elastic Transcoder to write your HLS license key
-     * to an Amazon S3 bucket. If you choose <code>WithVariantPlaylists</code>,
-     * <code>LicenseAcquisitionUrl</code> must be left blank and Elastic
-     * Transcoder writes your data key into the same bucket as the associated
-     * playlist.
+     * Specify whether you want Elastic Transcoder to write your HLS license key to an Amazon S3 bucket. If you choose
+     * <code>WithVariantPlaylists</code>, <code>LicenseAcquisitionUrl</code> must be left blank and Elastic Transcoder
+     * writes your data key into the same bucket as the associated playlist.
      * </p>
      * 
      * @param keyStoragePolicy
-     *        Specify whether you want Elastic Transcoder to write your HLS
-     *        license key to an Amazon S3 bucket. If you choose
-     *        <code>WithVariantPlaylists</code>,
-     *        <code>LicenseAcquisitionUrl</code> must be left blank and Elastic
-     *        Transcoder writes your data key into the same bucket as the
-     *        associated playlist.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specify whether you want Elastic Transcoder to write your HLS license key to an Amazon S3 bucket. If you
+     *        choose <code>WithVariantPlaylists</code>, <code>LicenseAcquisitionUrl</code> must be left blank and
+     *        Elastic Transcoder writes your data key into the same bucket as the associated playlist.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HlsContentProtection withKeyStoragePolicy(String keyStoragePolicy) {
@@ -556,8 +455,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -574,11 +472,9 @@ public class HlsContentProtection implements Serializable, Cloneable {
         if (getKeyMd5() != null)
             sb.append("KeyMd5: " + getKeyMd5() + ",");
         if (getInitializationVector() != null)
-            sb.append("InitializationVector: " + getInitializationVector()
-                    + ",");
+            sb.append("InitializationVector: " + getInitializationVector() + ",");
         if (getLicenseAcquisitionUrl() != null)
-            sb.append("LicenseAcquisitionUrl: " + getLicenseAcquisitionUrl()
-                    + ",");
+            sb.append("LicenseAcquisitionUrl: " + getLicenseAcquisitionUrl() + ",");
         if (getKeyStoragePolicy() != null)
             sb.append("KeyStoragePolicy: " + getKeyStoragePolicy());
         sb.append("}");
@@ -597,39 +493,27 @@ public class HlsContentProtection implements Serializable, Cloneable {
         HlsContentProtection other = (HlsContentProtection) obj;
         if (other.getMethod() == null ^ this.getMethod() == null)
             return false;
-        if (other.getMethod() != null
-                && other.getMethod().equals(this.getMethod()) == false)
+        if (other.getMethod() != null && other.getMethod().equals(this.getMethod()) == false)
             return false;
         if (other.getKey() == null ^ this.getKey() == null)
             return false;
-        if (other.getKey() != null
-                && other.getKey().equals(this.getKey()) == false)
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
             return false;
         if (other.getKeyMd5() == null ^ this.getKeyMd5() == null)
             return false;
-        if (other.getKeyMd5() != null
-                && other.getKeyMd5().equals(this.getKeyMd5()) == false)
+        if (other.getKeyMd5() != null && other.getKeyMd5().equals(this.getKeyMd5()) == false)
             return false;
-        if (other.getInitializationVector() == null
-                ^ this.getInitializationVector() == null)
+        if (other.getInitializationVector() == null ^ this.getInitializationVector() == null)
             return false;
-        if (other.getInitializationVector() != null
-                && other.getInitializationVector().equals(
-                        this.getInitializationVector()) == false)
+        if (other.getInitializationVector() != null && other.getInitializationVector().equals(this.getInitializationVector()) == false)
             return false;
-        if (other.getLicenseAcquisitionUrl() == null
-                ^ this.getLicenseAcquisitionUrl() == null)
+        if (other.getLicenseAcquisitionUrl() == null ^ this.getLicenseAcquisitionUrl() == null)
             return false;
-        if (other.getLicenseAcquisitionUrl() != null
-                && other.getLicenseAcquisitionUrl().equals(
-                        this.getLicenseAcquisitionUrl()) == false)
+        if (other.getLicenseAcquisitionUrl() != null && other.getLicenseAcquisitionUrl().equals(this.getLicenseAcquisitionUrl()) == false)
             return false;
-        if (other.getKeyStoragePolicy() == null
-                ^ this.getKeyStoragePolicy() == null)
+        if (other.getKeyStoragePolicy() == null ^ this.getKeyStoragePolicy() == null)
             return false;
-        if (other.getKeyStoragePolicy() != null
-                && other.getKeyStoragePolicy().equals(
-                        this.getKeyStoragePolicy()) == false)
+        if (other.getKeyStoragePolicy() != null && other.getKeyStoragePolicy().equals(this.getKeyStoragePolicy()) == false)
             return false;
         return true;
     }
@@ -639,24 +523,12 @@ public class HlsContentProtection implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMethod() == null) ? 0 : getMethod().hashCode());
-        hashCode = prime * hashCode
-                + ((getKey() == null) ? 0 : getKey().hashCode());
-        hashCode = prime * hashCode
-                + ((getKeyMd5() == null) ? 0 : getKeyMd5().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInitializationVector() == null) ? 0
-                        : getInitializationVector().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLicenseAcquisitionUrl() == null) ? 0
-                        : getLicenseAcquisitionUrl().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getKeyStoragePolicy() == null) ? 0 : getKeyStoragePolicy()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getMethod() == null) ? 0 : getMethod().hashCode());
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
+        hashCode = prime * hashCode + ((getKeyMd5() == null) ? 0 : getKeyMd5().hashCode());
+        hashCode = prime * hashCode + ((getInitializationVector() == null) ? 0 : getInitializationVector().hashCode());
+        hashCode = prime * hashCode + ((getLicenseAcquisitionUrl() == null) ? 0 : getLicenseAcquisitionUrl().hashCode());
+        hashCode = prime * hashCode + ((getKeyStoragePolicy() == null) ? 0 : getKeyStoragePolicy().hashCode());
         return hashCode;
     }
 
@@ -665,9 +537,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
         try {
             return (HlsContentProtection) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

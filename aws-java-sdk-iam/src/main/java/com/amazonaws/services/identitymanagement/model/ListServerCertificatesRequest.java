@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -20,86 +18,67 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListServerCertificatesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListServerCertificatesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The path prefix for filtering the results. For example:
-     * <code>/company/servercerts</code> would get all server certificates for
-     * which the path starts with <code>/company/servercerts</code>.
+     * The path prefix for filtering the results. For example: <code>/company/servercerts</code> would get all server
+     * certificates for which the path starts with <code>/company/servercerts</code>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash
-     * (/), listing all server certificates. The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * This parameter is optional. If it is not included, it defaults to a slash (/), listing all server certificates.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      */
     private String pathPrefix;
     /**
      * <p>
-     * Use this parameter only when paginating results and only after you
-     * receive a response indicating that the results are truncated. Set it to
-     * the value of the <code>Marker</code> element in the response that you
-     * received to indicate where the next call should start.
+     * Use this parameter only when paginating results and only after you receive a response indicating that the results
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of
-     * items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
      * <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more
-     * results available. In that case, the <code>IsTruncated</code> response
-     * element returns <code>true</code> and <code>Marker</code> contains a
-     * value to include in the subsequent call that tells the service where to
-     * continue from.
+     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      */
     private Integer maxItems;
 
     /**
      * <p>
-     * The path prefix for filtering the results. For example:
-     * <code>/company/servercerts</code> would get all server certificates for
-     * which the path starts with <code>/company/servercerts</code>.
+     * The path prefix for filtering the results. For example: <code>/company/servercerts</code> would get all server
+     * certificates for which the path starts with <code>/company/servercerts</code>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash
-     * (/), listing all server certificates. The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * This parameter is optional. If it is not included, it defaults to a slash (/), listing all server certificates.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param pathPrefix
-     *        The path prefix for filtering the results. For example:
-     *        <code>/company/servercerts</code> would get all server
-     *        certificates for which the path starts with
-     *        <code>/company/servercerts</code>.</p>
+     *        The path prefix for filtering the results. For example: <code>/company/servercerts</code> would get all
+     *        server certificates for which the path starts with <code>/company/servercerts</code>.</p>
      *        <p>
-     *        This parameter is optional. If it is not included, it defaults to
-     *        a slash (/), listing all server certificates. The <a
-     *        href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     *        parameter is a string of characters consisting of either a forward
-     *        slash (/) by itself or a string that must begin and end with
-     *        forward slashes, containing any ASCII character from the !
-     *        (\u0021) thru the DEL character (\u007F), including most
-     *        punctuation characters, digits, and upper and lowercased letters.
+     *        This parameter is optional. If it is not included, it defaults to a slash (/), listing all server
+     *        certificates. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     *        string of characters consisting of either a forward slash (/) by itself or a string that must begin and
+     *        end with forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character
+     *        (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
 
     public void setPathPrefix(String pathPrefix) {
@@ -108,34 +87,25 @@ public class ListServerCertificatesRequest extends
 
     /**
      * <p>
-     * The path prefix for filtering the results. For example:
-     * <code>/company/servercerts</code> would get all server certificates for
-     * which the path starts with <code>/company/servercerts</code>.
+     * The path prefix for filtering the results. For example: <code>/company/servercerts</code> would get all server
+     * certificates for which the path starts with <code>/company/servercerts</code>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash
-     * (/), listing all server certificates. The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * This parameter is optional. If it is not included, it defaults to a slash (/), listing all server certificates.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      * 
-     * @return The path prefix for filtering the results. For example:
-     *         <code>/company/servercerts</code> would get all server
-     *         certificates for which the path starts with
-     *         <code>/company/servercerts</code>.</p>
+     * @return The path prefix for filtering the results. For example: <code>/company/servercerts</code> would get all
+     *         server certificates for which the path starts with <code>/company/servercerts</code>.</p>
      *         <p>
-     *         This parameter is optional. If it is not included, it defaults to
-     *         a slash (/), listing all server certificates. The <a
-     *         href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     *         parameter is a string of characters consisting of either a
-     *         forward slash (/) by itself or a string that must begin and end
-     *         with forward slashes, containing any ASCII character from the !
-     *         (\u0021) thru the DEL character (\u007F), including most
-     *         punctuation characters, digits, and upper and lowercased letters.
+     *         This parameter is optional. If it is not included, it defaults to a slash (/), listing all server
+     *         certificates. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     *         string of characters consisting of either a forward slash (/) by itself or a string that must begin and
+     *         end with forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character
+     *         (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
 
     public String getPathPrefix() {
@@ -144,37 +114,27 @@ public class ListServerCertificatesRequest extends
 
     /**
      * <p>
-     * The path prefix for filtering the results. For example:
-     * <code>/company/servercerts</code> would get all server certificates for
-     * which the path starts with <code>/company/servercerts</code>.
+     * The path prefix for filtering the results. For example: <code>/company/servercerts</code> would get all server
+     * certificates for which the path starts with <code>/company/servercerts</code>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash
-     * (/), listing all server certificates. The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * This parameter is optional. If it is not included, it defaults to a slash (/), listing all server certificates.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param pathPrefix
-     *        The path prefix for filtering the results. For example:
-     *        <code>/company/servercerts</code> would get all server
-     *        certificates for which the path starts with
-     *        <code>/company/servercerts</code>.</p>
+     *        The path prefix for filtering the results. For example: <code>/company/servercerts</code> would get all
+     *        server certificates for which the path starts with <code>/company/servercerts</code>.</p>
      *        <p>
-     *        This parameter is optional. If it is not included, it defaults to
-     *        a slash (/), listing all server certificates. The <a
-     *        href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     *        parameter is a string of characters consisting of either a forward
-     *        slash (/) by itself or a string that must begin and end with
-     *        forward slashes, containing any ASCII character from the !
-     *        (\u0021) thru the DEL character (\u007F), including most
-     *        punctuation characters, digits, and upper and lowercased letters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter is optional. If it is not included, it defaults to a slash (/), listing all server
+     *        certificates. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     *        string of characters consisting of either a forward slash (/) by itself or a string that must begin and
+     *        end with forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character
+     *        (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListServerCertificatesRequest withPathPrefix(String pathPrefix) {
@@ -184,17 +144,15 @@ public class ListServerCertificatesRequest extends
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only after you
-     * receive a response indicating that the results are truncated. Set it to
-     * the value of the <code>Marker</code> element in the response that you
-     * received to indicate where the next call should start.
+     * Use this parameter only when paginating results and only after you receive a response indicating that the results
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only after you
-     *        receive a response indicating that the results are truncated. Set
-     *        it to the value of the <code>Marker</code> element in the response
-     *        that you received to indicate where the next call should start.
+     *        Use this parameter only when paginating results and only after you receive a response indicating that the
+     *        results are truncated. Set it to the value of the <code>Marker</code> element in the response that you
+     *        received to indicate where the next call should start.
      */
 
     public void setMarker(String marker) {
@@ -203,17 +161,14 @@ public class ListServerCertificatesRequest extends
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only after you
-     * receive a response indicating that the results are truncated. Set it to
-     * the value of the <code>Marker</code> element in the response that you
-     * received to indicate where the next call should start.
+     * Use this parameter only when paginating results and only after you receive a response indicating that the results
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      * 
-     * @return Use this parameter only when paginating results and only after
-     *         you receive a response indicating that the results are truncated.
-     *         Set it to the value of the <code>Marker</code> element in the
-     *         response that you received to indicate where the next call should
-     *         start.
+     * @return Use this parameter only when paginating results and only after you receive a response indicating that the
+     *         results are truncated. Set it to the value of the <code>Marker</code> element in the response that you
+     *         received to indicate where the next call should start.
      */
 
     public String getMarker() {
@@ -222,19 +177,16 @@ public class ListServerCertificatesRequest extends
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only after you
-     * receive a response indicating that the results are truncated. Set it to
-     * the value of the <code>Marker</code> element in the response that you
-     * received to indicate where the next call should start.
+     * Use this parameter only when paginating results and only after you receive a response indicating that the results
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only after you
-     *        receive a response indicating that the results are truncated. Set
-     *        it to the value of the <code>Marker</code> element in the response
-     *        that you received to indicate where the next call should start.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Use this parameter only when paginating results and only after you receive a response indicating that the
+     *        results are truncated. Set it to the value of the <code>Marker</code> element in the response that you
+     *        received to indicate where the next call should start.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListServerCertificatesRequest withMarker(String marker) {
@@ -244,33 +196,26 @@ public class ListServerCertificatesRequest extends
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of
-     * items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
      * <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more
-     * results available. In that case, the <code>IsTruncated</code> response
-     * element returns <code>true</code> and <code>Marker</code> contains a
-     * value to include in the subsequent call that tells the service where to
-     * continue from.
+     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        Use this only when paginating results to indicate the maximum
-     *        number of items you want in the response. If additional items
-     *        exist beyond the maximum you specify, the <code>IsTruncated</code>
-     *        response element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        This parameter is optional. If you do not include it, it defaults
-     *        to 100. Note that IAM might return fewer results, even when there
-     *        are more results available. In that case, the
-     *        <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to
-     *        include in the subsequent call that tells the service where to
-     *        continue from.
+     *        This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
+     *        results, even when there are more results available. In that case, the <code>IsTruncated</code> response
+     *        element returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent
+     *        call that tells the service where to continue from.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -279,33 +224,25 @@ public class ListServerCertificatesRequest extends
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of
-     * items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
      * <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more
-     * results available. In that case, the <code>IsTruncated</code> response
-     * element returns <code>true</code> and <code>Marker</code> contains a
-     * value to include in the subsequent call that tells the service where to
-     * continue from.
+     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
-     * @return Use this only when paginating results to indicate the maximum
-     *         number of items you want in the response. If additional items
-     *         exist beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>
-     *         .</p>
+     * @return Use this only when paginating results to indicate the maximum number of items you want in the response.
+     *         If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>.</p>
      *         <p>
-     *         This parameter is optional. If you do not include it, it defaults
-     *         to 100. Note that IAM might return fewer results, even when there
-     *         are more results available. In that case, the
-     *         <code>IsTruncated</code> response element returns
-     *         <code>true</code> and <code>Marker</code> contains a value to
-     *         include in the subsequent call that tells the service where to
-     *         continue from.
+     *         This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return
+     *         fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *         response element returns <code>true</code> and <code>Marker</code> contains a value to include in the
+     *         subsequent call that tells the service where to continue from.
      */
 
     public Integer getMaxItems() {
@@ -314,35 +251,27 @@ public class ListServerCertificatesRequest extends
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of
-     * items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
      * <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more
-     * results available. In that case, the <code>IsTruncated</code> response
-     * element returns <code>true</code> and <code>Marker</code> contains a
-     * value to include in the subsequent call that tells the service where to
-     * continue from.
+     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        Use this only when paginating results to indicate the maximum
-     *        number of items you want in the response. If additional items
-     *        exist beyond the maximum you specify, the <code>IsTruncated</code>
-     *        response element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        This parameter is optional. If you do not include it, it defaults
-     *        to 100. Note that IAM might return fewer results, even when there
-     *        are more results available. In that case, the
-     *        <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to
-     *        include in the subsequent call that tells the service where to
-     *        continue from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
+     *        results, even when there are more results available. In that case, the <code>IsTruncated</code> response
+     *        element returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent
+     *        call that tells the service where to continue from.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListServerCertificatesRequest withMaxItems(Integer maxItems) {
@@ -351,8 +280,7 @@ public class ListServerCertificatesRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -384,18 +312,15 @@ public class ListServerCertificatesRequest extends
         ListServerCertificatesRequest other = (ListServerCertificatesRequest) obj;
         if (other.getPathPrefix() == null ^ this.getPathPrefix() == null)
             return false;
-        if (other.getPathPrefix() != null
-                && other.getPathPrefix().equals(this.getPathPrefix()) == false)
+        if (other.getPathPrefix() != null && other.getPathPrefix().equals(this.getPathPrefix()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         return true;
     }
@@ -405,12 +330,9 @@ public class ListServerCertificatesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPathPrefix() == null) ? 0 : getPathPrefix().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getPathPrefix() == null) ? 0 : getPathPrefix().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
 

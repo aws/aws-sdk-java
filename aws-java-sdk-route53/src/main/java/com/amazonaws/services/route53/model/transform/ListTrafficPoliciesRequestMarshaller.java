@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model.transform;
 
@@ -39,20 +37,15 @@ import com.amazonaws.util.SdkHttpUtils;
  * ListTrafficPoliciesRequest Marshaller
  */
 
-public class ListTrafficPoliciesRequestMarshaller
-        implements
-        Marshaller<Request<ListTrafficPoliciesRequest>, ListTrafficPoliciesRequest> {
+public class ListTrafficPoliciesRequestMarshaller implements Marshaller<Request<ListTrafficPoliciesRequest>, ListTrafficPoliciesRequest> {
 
-    public Request<ListTrafficPoliciesRequest> marshall(
-            ListTrafficPoliciesRequest listTrafficPoliciesRequest) {
+    public Request<ListTrafficPoliciesRequest> marshall(ListTrafficPoliciesRequest listTrafficPoliciesRequest) {
 
         if (listTrafficPoliciesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListTrafficPoliciesRequest> request = new DefaultRequest<ListTrafficPoliciesRequest>(
-                listTrafficPoliciesRequest, "AmazonRoute53");
+        Request<ListTrafficPoliciesRequest> request = new DefaultRequest<ListTrafficPoliciesRequest>(listTrafficPoliciesRequest, "AmazonRoute53");
 
         request.setHttpMethod(HttpMethodName.GET);
 
@@ -61,14 +54,11 @@ public class ListTrafficPoliciesRequestMarshaller
         request.setResourcePath(uriResourcePath);
 
         if (listTrafficPoliciesRequest.getTrafficPolicyIdMarker() != null) {
-            request.addParameter("trafficpolicyid", StringUtils
-                    .fromString(listTrafficPoliciesRequest
-                            .getTrafficPolicyIdMarker()));
+            request.addParameter("trafficpolicyid", StringUtils.fromString(listTrafficPoliciesRequest.getTrafficPolicyIdMarker()));
         }
 
         if (listTrafficPoliciesRequest.getMaxItems() != null) {
-            request.addParameter("maxitems", StringUtils
-                    .fromString(listTrafficPoliciesRequest.getMaxItems()));
+            request.addParameter("maxitems", StringUtils.fromString(listTrafficPoliciesRequest.getMaxItems()));
         }
 
         return request;

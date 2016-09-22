@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model.transform;
 
@@ -35,27 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeFleetEventsRequest Marshaller
  */
-public class DescribeFleetEventsRequestMarshaller
-        implements
-        Marshaller<Request<DescribeFleetEventsRequest>, DescribeFleetEventsRequest> {
+public class DescribeFleetEventsRequestMarshaller implements Marshaller<Request<DescribeFleetEventsRequest>, DescribeFleetEventsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeFleetEventsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeFleetEventsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeFleetEventsRequest> marshall(
-            DescribeFleetEventsRequest describeFleetEventsRequest) {
+    public Request<DescribeFleetEventsRequest> marshall(DescribeFleetEventsRequest describeFleetEventsRequest) {
 
         if (describeFleetEventsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeFleetEventsRequest> request = new DefaultRequest<DescribeFleetEventsRequest>(
-                describeFleetEventsRequest, "AmazonGameLift");
+        Request<DescribeFleetEventsRequest> request = new DefaultRequest<DescribeFleetEventsRequest>(describeFleetEventsRequest, "AmazonGameLift");
         request.addHeader("X-Amz-Target", "GameLift.DescribeFleetEvents");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -63,42 +55,34 @@ public class DescribeFleetEventsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (describeFleetEventsRequest.getFleetId() != null) {
-                jsonGenerator.writeFieldName("FleetId").writeValue(
-                        describeFleetEventsRequest.getFleetId());
+                jsonGenerator.writeFieldName("FleetId").writeValue(describeFleetEventsRequest.getFleetId());
             }
             if (describeFleetEventsRequest.getStartTime() != null) {
-                jsonGenerator.writeFieldName("StartTime").writeValue(
-                        describeFleetEventsRequest.getStartTime());
+                jsonGenerator.writeFieldName("StartTime").writeValue(describeFleetEventsRequest.getStartTime());
             }
             if (describeFleetEventsRequest.getEndTime() != null) {
-                jsonGenerator.writeFieldName("EndTime").writeValue(
-                        describeFleetEventsRequest.getEndTime());
+                jsonGenerator.writeFieldName("EndTime").writeValue(describeFleetEventsRequest.getEndTime());
             }
             if (describeFleetEventsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(
-                        describeFleetEventsRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(describeFleetEventsRequest.getLimit());
             }
             if (describeFleetEventsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(
-                        describeFleetEventsRequest.getNextToken());
+                jsonGenerator.writeFieldName("NextToken").writeValue(describeFleetEventsRequest.getNextToken());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

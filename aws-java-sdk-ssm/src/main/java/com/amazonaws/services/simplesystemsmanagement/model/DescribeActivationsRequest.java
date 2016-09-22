@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeActivationsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeActivationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,9 +28,8 @@ public class DescribeActivationsRequest extends
     private com.amazonaws.internal.SdkInternalList<DescribeActivationsFilter> filters;
     /**
      * <p>
-     * The maximum number of items to return for this call. The call also
-     * returns a token that you can specify in a subsequent call to get the next
-     * set of results.
+     * The maximum number of items to return for this call. The call also returns a token that you can specify in a
+     * subsequent call to get the next set of results.
      * </p>
      */
     private Integer maxResults;
@@ -69,15 +64,13 @@ public class DescribeActivationsRequest extends
      *        A filter to view information about your activations.
      */
 
-    public void setFilters(
-            java.util.Collection<DescribeActivationsFilter> filters) {
+    public void setFilters(java.util.Collection<DescribeActivationsFilter> filters) {
         if (filters == null) {
             this.filters = null;
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<DescribeActivationsFilter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<DescribeActivationsFilter>(filters);
     }
 
     /**
@@ -85,23 +78,19 @@ public class DescribeActivationsRequest extends
      * A filter to view information about your activations.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
      *        A filter to view information about your activations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeActivationsRequest withFilters(
-            DescribeActivationsFilter... filters) {
+    public DescribeActivationsRequest withFilters(DescribeActivationsFilter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<DescribeActivationsFilter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<DescribeActivationsFilter>(filters.length));
         }
         for (DescribeActivationsFilter ele : filters) {
             this.filters.add(ele);
@@ -116,27 +105,23 @@ public class DescribeActivationsRequest extends
      * 
      * @param filters
      *        A filter to view information about your activations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeActivationsRequest withFilters(
-            java.util.Collection<DescribeActivationsFilter> filters) {
+    public DescribeActivationsRequest withFilters(java.util.Collection<DescribeActivationsFilter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of items to return for this call. The call also
-     * returns a token that you can specify in a subsequent call to get the next
-     * set of results.
+     * The maximum number of items to return for this call. The call also returns a token that you can specify in a
+     * subsequent call to get the next set of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this call. The call also
-     *        returns a token that you can specify in a subsequent call to get
-     *        the next set of results.
+     *        The maximum number of items to return for this call. The call also returns a token that you can specify in
+     *        a subsequent call to get the next set of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -145,14 +130,12 @@ public class DescribeActivationsRequest extends
 
     /**
      * <p>
-     * The maximum number of items to return for this call. The call also
-     * returns a token that you can specify in a subsequent call to get the next
-     * set of results.
+     * The maximum number of items to return for this call. The call also returns a token that you can specify in a
+     * subsequent call to get the next set of results.
      * </p>
      * 
-     * @return The maximum number of items to return for this call. The call
-     *         also returns a token that you can specify in a subsequent call to
-     *         get the next set of results.
+     * @return The maximum number of items to return for this call. The call also returns a token that you can specify
+     *         in a subsequent call to get the next set of results.
      */
 
     public Integer getMaxResults() {
@@ -161,17 +144,14 @@ public class DescribeActivationsRequest extends
 
     /**
      * <p>
-     * The maximum number of items to return for this call. The call also
-     * returns a token that you can specify in a subsequent call to get the next
-     * set of results.
+     * The maximum number of items to return for this call. The call also returns a token that you can specify in a
+     * subsequent call to get the next set of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this call. The call also
-     *        returns a token that you can specify in a subsequent call to get
-     *        the next set of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of items to return for this call. The call also returns a token that you can specify in
+     *        a subsequent call to get the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeActivationsRequest withMaxResults(Integer maxResults) {
@@ -185,8 +165,7 @@ public class DescribeActivationsRequest extends
      * </p>
      * 
      * @param nextToken
-     *        A token to start the list. Use this token to get the next set of
-     *        results.
+     *        A token to start the list. Use this token to get the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -198,8 +177,7 @@ public class DescribeActivationsRequest extends
      * A token to start the list. Use this token to get the next set of results.
      * </p>
      * 
-     * @return A token to start the list. Use this token to get the next set of
-     *         results.
+     * @return A token to start the list. Use this token to get the next set of results.
      */
 
     public String getNextToken() {
@@ -212,10 +190,8 @@ public class DescribeActivationsRequest extends
      * </p>
      * 
      * @param nextToken
-     *        A token to start the list. Use this token to get the next set of
-     *        results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A token to start the list. Use this token to get the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeActivationsRequest withNextToken(String nextToken) {
@@ -224,8 +200,7 @@ public class DescribeActivationsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -257,18 +232,15 @@ public class DescribeActivationsRequest extends
         DescribeActivationsRequest other = (DescribeActivationsRequest) obj;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -278,12 +250,9 @@ public class DescribeActivationsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

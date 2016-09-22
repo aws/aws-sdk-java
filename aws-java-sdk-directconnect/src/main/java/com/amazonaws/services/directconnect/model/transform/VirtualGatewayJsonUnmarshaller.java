@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * VirtualGateway JSON Unmarshaller
  */
-public class VirtualGatewayJsonUnmarshaller implements
-        Unmarshaller<VirtualGateway, JsonUnmarshallerContext> {
+public class VirtualGatewayJsonUnmarshaller implements Unmarshaller<VirtualGateway, JsonUnmarshallerContext> {
 
-    public VirtualGateway unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public VirtualGateway unmarshall(JsonUnmarshallerContext context) throws Exception {
         VirtualGateway virtualGateway = new VirtualGateway();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,18 +49,14 @@ public class VirtualGatewayJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
                     context.nextToken();
-                    virtualGateway.setVirtualGatewayId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    virtualGateway.setVirtualGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualGatewayState", targetDepth)) {
                     context.nextToken();
-                    virtualGateway.setVirtualGatewayState(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    virtualGateway.setVirtualGatewayState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

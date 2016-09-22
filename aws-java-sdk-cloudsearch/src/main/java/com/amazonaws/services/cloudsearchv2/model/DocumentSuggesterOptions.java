@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchv2.model;
 
@@ -31,25 +29,20 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
     private String sourceField;
     /**
      * <p>
-     * The level of fuzziness allowed when suggesting matches for a string:
-     * <code>none</code>, <code>low</code>, or <code>high</code>. With none, the
-     * specified string is treated as an exact prefix. With low, suggestions
-     * must differ from the specified string by no more than one character. With
-     * high, suggestions can differ by up to two characters. The default is
-     * none.
+     * The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or
+     * <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must
+     * differ from the specified string by no more than one character. With high, suggestions can differ by up to two
+     * characters. The default is none.
      * </p>
      */
     private String fuzzyMatching;
     /**
      * <p>
-     * An expression that computes a score for each suggestion to control how
-     * they are sorted. The scores are rounded to the nearest integer, with a
-     * floor of 0 and a ceiling of 2^31-1. A document's relevance score is not
-     * computed for suggestions, so sort expressions cannot reference the
-     * <code>_score</code> value. To sort suggestions using a numeric field or
-     * existing expression, simply specify the name of the field or expression.
-     * If no expression is configured for the suggester, the suggestions are
-     * sorted with the closest matches listed first.
+     * An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to
+     * the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for
+     * suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a
+     * numeric field or existing expression, simply specify the name of the field or expression. If no expression is
+     * configured for the suggester, the suggestions are sorted with the closest matches listed first.
      * </p>
      */
     private String sortExpression;
@@ -86,8 +79,7 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
      * 
      * @param sourceField
      *        The name of the index field you want to use for suggestions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DocumentSuggesterOptions withSourceField(String sourceField) {
@@ -97,21 +89,17 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The level of fuzziness allowed when suggesting matches for a string:
-     * <code>none</code>, <code>low</code>, or <code>high</code>. With none, the
-     * specified string is treated as an exact prefix. With low, suggestions
-     * must differ from the specified string by no more than one character. With
-     * high, suggestions can differ by up to two characters. The default is
-     * none.
+     * The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or
+     * <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must
+     * differ from the specified string by no more than one character. With high, suggestions can differ by up to two
+     * characters. The default is none.
      * </p>
      * 
      * @param fuzzyMatching
-     *        The level of fuzziness allowed when suggesting matches for a
-     *        string: <code>none</code>, <code>low</code>, or <code>high</code>.
-     *        With none, the specified string is treated as an exact prefix.
-     *        With low, suggestions must differ from the specified string by no
-     *        more than one character. With high, suggestions can differ by up
-     *        to two characters. The default is none.
+     *        The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>,
+     *        or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions
+     *        must differ from the specified string by no more than one character. With high, suggestions can differ by
+     *        up to two characters. The default is none.
      * @see SuggesterFuzzyMatching
      */
 
@@ -121,20 +109,16 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The level of fuzziness allowed when suggesting matches for a string:
-     * <code>none</code>, <code>low</code>, or <code>high</code>. With none, the
-     * specified string is treated as an exact prefix. With low, suggestions
-     * must differ from the specified string by no more than one character. With
-     * high, suggestions can differ by up to two characters. The default is
-     * none.
+     * The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or
+     * <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must
+     * differ from the specified string by no more than one character. With high, suggestions can differ by up to two
+     * characters. The default is none.
      * </p>
      * 
-     * @return The level of fuzziness allowed when suggesting matches for a
-     *         string: <code>none</code>, <code>low</code>, or <code>high</code>
-     *         . With none, the specified string is treated as an exact prefix.
-     *         With low, suggestions must differ from the specified string by no
-     *         more than one character. With high, suggestions can differ by up
-     *         to two characters. The default is none.
+     * @return The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>,
+     *         or <code>high</code>. With none, the specified string is treated as an exact prefix. With low,
+     *         suggestions must differ from the specified string by no more than one character. With high, suggestions
+     *         can differ by up to two characters. The default is none.
      * @see SuggesterFuzzyMatching
      */
 
@@ -144,23 +128,18 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The level of fuzziness allowed when suggesting matches for a string:
-     * <code>none</code>, <code>low</code>, or <code>high</code>. With none, the
-     * specified string is treated as an exact prefix. With low, suggestions
-     * must differ from the specified string by no more than one character. With
-     * high, suggestions can differ by up to two characters. The default is
-     * none.
+     * The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or
+     * <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must
+     * differ from the specified string by no more than one character. With high, suggestions can differ by up to two
+     * characters. The default is none.
      * </p>
      * 
      * @param fuzzyMatching
-     *        The level of fuzziness allowed when suggesting matches for a
-     *        string: <code>none</code>, <code>low</code>, or <code>high</code>.
-     *        With none, the specified string is treated as an exact prefix.
-     *        With low, suggestions must differ from the specified string by no
-     *        more than one character. With high, suggestions can differ by up
-     *        to two characters. The default is none.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>,
+     *        or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions
+     *        must differ from the specified string by no more than one character. With high, suggestions can differ by
+     *        up to two characters. The default is none.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see SuggesterFuzzyMatching
      */
 
@@ -171,21 +150,17 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The level of fuzziness allowed when suggesting matches for a string:
-     * <code>none</code>, <code>low</code>, or <code>high</code>. With none, the
-     * specified string is treated as an exact prefix. With low, suggestions
-     * must differ from the specified string by no more than one character. With
-     * high, suggestions can differ by up to two characters. The default is
-     * none.
+     * The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or
+     * <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must
+     * differ from the specified string by no more than one character. With high, suggestions can differ by up to two
+     * characters. The default is none.
      * </p>
      * 
      * @param fuzzyMatching
-     *        The level of fuzziness allowed when suggesting matches for a
-     *        string: <code>none</code>, <code>low</code>, or <code>high</code>.
-     *        With none, the specified string is treated as an exact prefix.
-     *        With low, suggestions must differ from the specified string by no
-     *        more than one character. With high, suggestions can differ by up
-     *        to two characters. The default is none.
+     *        The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>,
+     *        or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions
+     *        must differ from the specified string by no more than one character. With high, suggestions can differ by
+     *        up to two characters. The default is none.
      * @see SuggesterFuzzyMatching
      */
 
@@ -195,54 +170,42 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The level of fuzziness allowed when suggesting matches for a string:
-     * <code>none</code>, <code>low</code>, or <code>high</code>. With none, the
-     * specified string is treated as an exact prefix. With low, suggestions
-     * must differ from the specified string by no more than one character. With
-     * high, suggestions can differ by up to two characters. The default is
-     * none.
+     * The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or
+     * <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must
+     * differ from the specified string by no more than one character. With high, suggestions can differ by up to two
+     * characters. The default is none.
      * </p>
      * 
      * @param fuzzyMatching
-     *        The level of fuzziness allowed when suggesting matches for a
-     *        string: <code>none</code>, <code>low</code>, or <code>high</code>.
-     *        With none, the specified string is treated as an exact prefix.
-     *        With low, suggestions must differ from the specified string by no
-     *        more than one character. With high, suggestions can differ by up
-     *        to two characters. The default is none.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>,
+     *        or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions
+     *        must differ from the specified string by no more than one character. With high, suggestions can differ by
+     *        up to two characters. The default is none.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see SuggesterFuzzyMatching
      */
 
-    public DocumentSuggesterOptions withFuzzyMatching(
-            SuggesterFuzzyMatching fuzzyMatching) {
+    public DocumentSuggesterOptions withFuzzyMatching(SuggesterFuzzyMatching fuzzyMatching) {
         setFuzzyMatching(fuzzyMatching);
         return this;
     }
 
     /**
      * <p>
-     * An expression that computes a score for each suggestion to control how
-     * they are sorted. The scores are rounded to the nearest integer, with a
-     * floor of 0 and a ceiling of 2^31-1. A document's relevance score is not
-     * computed for suggestions, so sort expressions cannot reference the
-     * <code>_score</code> value. To sort suggestions using a numeric field or
-     * existing expression, simply specify the name of the field or expression.
-     * If no expression is configured for the suggester, the suggestions are
-     * sorted with the closest matches listed first.
+     * An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to
+     * the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for
+     * suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a
+     * numeric field or existing expression, simply specify the name of the field or expression. If no expression is
+     * configured for the suggester, the suggestions are sorted with the closest matches listed first.
      * </p>
      * 
      * @param sortExpression
-     *        An expression that computes a score for each suggestion to control
-     *        how they are sorted. The scores are rounded to the nearest
-     *        integer, with a floor of 0 and a ceiling of 2^31-1. A document's
-     *        relevance score is not computed for suggestions, so sort
-     *        expressions cannot reference the <code>_score</code> value. To
-     *        sort suggestions using a numeric field or existing expression,
-     *        simply specify the name of the field or expression. If no
-     *        expression is configured for the suggester, the suggestions are
-     *        sorted with the closest matches listed first.
+     *        An expression that computes a score for each suggestion to control how they are sorted. The scores are
+     *        rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is
+     *        not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort
+     *        suggestions using a numeric field or existing expression, simply specify the name of the field or
+     *        expression. If no expression is configured for the suggester, the suggestions are sorted with the closest
+     *        matches listed first.
      */
 
     public void setSortExpression(String sortExpression) {
@@ -251,25 +214,19 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An expression that computes a score for each suggestion to control how
-     * they are sorted. The scores are rounded to the nearest integer, with a
-     * floor of 0 and a ceiling of 2^31-1. A document's relevance score is not
-     * computed for suggestions, so sort expressions cannot reference the
-     * <code>_score</code> value. To sort suggestions using a numeric field or
-     * existing expression, simply specify the name of the field or expression.
-     * If no expression is configured for the suggester, the suggestions are
-     * sorted with the closest matches listed first.
+     * An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to
+     * the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for
+     * suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a
+     * numeric field or existing expression, simply specify the name of the field or expression. If no expression is
+     * configured for the suggester, the suggestions are sorted with the closest matches listed first.
      * </p>
      * 
-     * @return An expression that computes a score for each suggestion to
-     *         control how they are sorted. The scores are rounded to the
-     *         nearest integer, with a floor of 0 and a ceiling of 2^31-1. A
-     *         document's relevance score is not computed for suggestions, so
-     *         sort expressions cannot reference the <code>_score</code> value.
-     *         To sort suggestions using a numeric field or existing expression,
-     *         simply specify the name of the field or expression. If no
-     *         expression is configured for the suggester, the suggestions are
-     *         sorted with the closest matches listed first.
+     * @return An expression that computes a score for each suggestion to control how they are sorted. The scores are
+     *         rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score
+     *         is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To
+     *         sort suggestions using a numeric field or existing expression, simply specify the name of the field or
+     *         expression. If no expression is configured for the suggester, the suggestions are sorted with the closest
+     *         matches listed first.
      */
 
     public String getSortExpression() {
@@ -278,28 +235,21 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An expression that computes a score for each suggestion to control how
-     * they are sorted. The scores are rounded to the nearest integer, with a
-     * floor of 0 and a ceiling of 2^31-1. A document's relevance score is not
-     * computed for suggestions, so sort expressions cannot reference the
-     * <code>_score</code> value. To sort suggestions using a numeric field or
-     * existing expression, simply specify the name of the field or expression.
-     * If no expression is configured for the suggester, the suggestions are
-     * sorted with the closest matches listed first.
+     * An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to
+     * the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for
+     * suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a
+     * numeric field or existing expression, simply specify the name of the field or expression. If no expression is
+     * configured for the suggester, the suggestions are sorted with the closest matches listed first.
      * </p>
      * 
      * @param sortExpression
-     *        An expression that computes a score for each suggestion to control
-     *        how they are sorted. The scores are rounded to the nearest
-     *        integer, with a floor of 0 and a ceiling of 2^31-1. A document's
-     *        relevance score is not computed for suggestions, so sort
-     *        expressions cannot reference the <code>_score</code> value. To
-     *        sort suggestions using a numeric field or existing expression,
-     *        simply specify the name of the field or expression. If no
-     *        expression is configured for the suggester, the suggestions are
-     *        sorted with the closest matches listed first.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An expression that computes a score for each suggestion to control how they are sorted. The scores are
+     *        rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is
+     *        not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort
+     *        suggestions using a numeric field or existing expression, simply specify the name of the field or
+     *        expression. If no expression is configured for the suggester, the suggestions are sorted with the closest
+     *        matches listed first.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DocumentSuggesterOptions withSortExpression(String sortExpression) {
@@ -308,8 +258,7 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -341,19 +290,15 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
         DocumentSuggesterOptions other = (DocumentSuggesterOptions) obj;
         if (other.getSourceField() == null ^ this.getSourceField() == null)
             return false;
-        if (other.getSourceField() != null
-                && other.getSourceField().equals(this.getSourceField()) == false)
+        if (other.getSourceField() != null && other.getSourceField().equals(this.getSourceField()) == false)
             return false;
         if (other.getFuzzyMatching() == null ^ this.getFuzzyMatching() == null)
             return false;
-        if (other.getFuzzyMatching() != null
-                && other.getFuzzyMatching().equals(this.getFuzzyMatching()) == false)
+        if (other.getFuzzyMatching() != null && other.getFuzzyMatching().equals(this.getFuzzyMatching()) == false)
             return false;
-        if (other.getSortExpression() == null
-                ^ this.getSortExpression() == null)
+        if (other.getSortExpression() == null ^ this.getSortExpression() == null)
             return false;
-        if (other.getSortExpression() != null
-                && other.getSortExpression().equals(this.getSortExpression()) == false)
+        if (other.getSortExpression() != null && other.getSortExpression().equals(this.getSortExpression()) == false)
             return false;
         return true;
     }
@@ -363,17 +308,9 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSourceField() == null) ? 0 : getSourceField().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFuzzyMatching() == null) ? 0 : getFuzzyMatching()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSortExpression() == null) ? 0 : getSortExpression()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getSourceField() == null) ? 0 : getSourceField().hashCode());
+        hashCode = prime * hashCode + ((getFuzzyMatching() == null) ? 0 : getFuzzyMatching().hashCode());
+        hashCode = prime * hashCode + ((getSortExpression() == null) ? 0 : getSortExpression().hashCode());
         return hashCode;
     }
 
@@ -382,9 +319,7 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
         try {
             return (DocumentSuggesterOptions) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -22,9 +20,7 @@ import java.io.Serializable;
  * </p>
  */
 @Deprecated
-public class ListChangeBatchesByRRSetResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListChangeBatchesByRRSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -89,8 +85,7 @@ public class ListChangeBatchesByRRSetResult extends
      * 
      * @param maxItems
      *        The maximum number of items on a page.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByRRSetResult withMaxItems(String maxItems) {
@@ -130,8 +125,7 @@ public class ListChangeBatchesByRRSetResult extends
      * 
      * @param marker
      *        The page marker.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByRRSetResult withMarker(String marker) {
@@ -171,8 +165,7 @@ public class ListChangeBatchesByRRSetResult extends
      * 
      * @param isTruncated
      *        A flag that indicates if there are more change batches to list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByRRSetResult withIsTruncated(Boolean isTruncated) {
@@ -216,15 +209,13 @@ public class ListChangeBatchesByRRSetResult extends
      *        The change batches within the given hosted zone and time period.
      */
 
-    public void setChangeBatchRecords(
-            java.util.Collection<ChangeBatchRecord> changeBatchRecords) {
+    public void setChangeBatchRecords(java.util.Collection<ChangeBatchRecord> changeBatchRecords) {
         if (changeBatchRecords == null) {
             this.changeBatchRecords = null;
             return;
         }
 
-        this.changeBatchRecords = new com.amazonaws.internal.SdkInternalList<ChangeBatchRecord>(
-                changeBatchRecords);
+        this.changeBatchRecords = new com.amazonaws.internal.SdkInternalList<ChangeBatchRecord>(changeBatchRecords);
     }
 
     /**
@@ -232,23 +223,19 @@ public class ListChangeBatchesByRRSetResult extends
      * The change batches within the given hosted zone and time period.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setChangeBatchRecords(java.util.Collection)} or
-     * {@link #withChangeBatchRecords(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setChangeBatchRecords(java.util.Collection)} or {@link #withChangeBatchRecords(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param changeBatchRecords
      *        The change batches within the given hosted zone and time period.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListChangeBatchesByRRSetResult withChangeBatchRecords(
-            ChangeBatchRecord... changeBatchRecords) {
+    public ListChangeBatchesByRRSetResult withChangeBatchRecords(ChangeBatchRecord... changeBatchRecords) {
         if (this.changeBatchRecords == null) {
-            setChangeBatchRecords(new com.amazonaws.internal.SdkInternalList<ChangeBatchRecord>(
-                    changeBatchRecords.length));
+            setChangeBatchRecords(new com.amazonaws.internal.SdkInternalList<ChangeBatchRecord>(changeBatchRecords.length));
         }
         for (ChangeBatchRecord ele : changeBatchRecords) {
             this.changeBatchRecords.add(ele);
@@ -263,12 +250,10 @@ public class ListChangeBatchesByRRSetResult extends
      * 
      * @param changeBatchRecords
      *        The change batches within the given hosted zone and time period.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListChangeBatchesByRRSetResult withChangeBatchRecords(
-            java.util.Collection<ChangeBatchRecord> changeBatchRecords) {
+    public ListChangeBatchesByRRSetResult withChangeBatchRecords(java.util.Collection<ChangeBatchRecord> changeBatchRecords) {
         setChangeBatchRecords(changeBatchRecords);
         return this;
     }
@@ -305,8 +290,7 @@ public class ListChangeBatchesByRRSetResult extends
      * 
      * @param nextMarker
      *        The next page marker.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByRRSetResult withNextMarker(String nextMarker) {
@@ -315,8 +299,7 @@ public class ListChangeBatchesByRRSetResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -352,30 +335,23 @@ public class ListChangeBatchesByRRSetResult extends
         ListChangeBatchesByRRSetResult other = (ListChangeBatchesByRRSetResult) obj;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getIsTruncated() == null ^ this.getIsTruncated() == null)
             return false;
-        if (other.getIsTruncated() != null
-                && other.getIsTruncated().equals(this.getIsTruncated()) == false)
+        if (other.getIsTruncated() != null && other.getIsTruncated().equals(this.getIsTruncated()) == false)
             return false;
-        if (other.getChangeBatchRecords() == null
-                ^ this.getChangeBatchRecords() == null)
+        if (other.getChangeBatchRecords() == null ^ this.getChangeBatchRecords() == null)
             return false;
-        if (other.getChangeBatchRecords() != null
-                && other.getChangeBatchRecords().equals(
-                        this.getChangeBatchRecords()) == false)
+        if (other.getChangeBatchRecords() != null && other.getChangeBatchRecords().equals(this.getChangeBatchRecords()) == false)
             return false;
         if (other.getNextMarker() == null ^ this.getNextMarker() == null)
             return false;
-        if (other.getNextMarker() != null
-                && other.getNextMarker().equals(this.getNextMarker()) == false)
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false)
             return false;
         return true;
     }
@@ -385,19 +361,11 @@ public class ListChangeBatchesByRRSetResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getChangeBatchRecords() == null) ? 0
-                        : getChangeBatchRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
+        hashCode = prime * hashCode + ((getChangeBatchRecords() == null) ? 0 : getChangeBatchRecords().hashCode());
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
         return hashCode;
     }
 
@@ -406,9 +374,7 @@ public class ListChangeBatchesByRRSetResult extends
         try {
             return (ListChangeBatchesByRRSetResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

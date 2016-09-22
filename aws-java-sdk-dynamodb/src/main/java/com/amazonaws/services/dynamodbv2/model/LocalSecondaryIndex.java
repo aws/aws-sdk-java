@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model;
 
@@ -25,15 +23,14 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the local secondary index. The name must be unique among all
-     * other indexes on this table.
+     * The name of the local secondary index. The name must be unique among all other indexes on this table.
      * </p>
      */
     private String indexName;
     /**
      * <p>
-     * The complete key schema for the local secondary index, consisting of one
-     * or more pairs of attribute names and key types:
+     * The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key
+     * types:
      * </p>
      * <ul>
      * <li>
@@ -49,16 +46,14 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * </ul>
      * <note>
      * <p>
-     * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB' usage of an internal
-     * hash function to evenly distribute data items across partitions, based on
-     * their partition key values.
+     * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * partition key values.
      * </p>
      * <p>
-     * The sort key of an item is also known as its <i>range attribute</i>. The
-     * term "range attribute" derives from the way DynamoDB stores items with
-     * the same partition key physically close together, in sorted order by the
-     * sort key value.
+     * The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the
+     * way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key
+     * value.
      * </p>
      * </note>
      */
@@ -68,13 +63,11 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the local secondary index. The name must be unique among all
-     * other indexes on this table.
+     * The name of the local secondary index. The name must be unique among all other indexes on this table.
      * </p>
      * 
      * @param indexName
-     *        The name of the local secondary index. The name must be unique
-     *        among all other indexes on this table.
+     *        The name of the local secondary index. The name must be unique among all other indexes on this table.
      */
 
     public void setIndexName(String indexName) {
@@ -83,12 +76,10 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the local secondary index. The name must be unique among all
-     * other indexes on this table.
+     * The name of the local secondary index. The name must be unique among all other indexes on this table.
      * </p>
      * 
-     * @return The name of the local secondary index. The name must be unique
-     *         among all other indexes on this table.
+     * @return The name of the local secondary index. The name must be unique among all other indexes on this table.
      */
 
     public String getIndexName() {
@@ -97,15 +88,12 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the local secondary index. The name must be unique among all
-     * other indexes on this table.
+     * The name of the local secondary index. The name must be unique among all other indexes on this table.
      * </p>
      * 
      * @param indexName
-     *        The name of the local secondary index. The name must be unique
-     *        among all other indexes on this table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the local secondary index. The name must be unique among all other indexes on this table.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LocalSecondaryIndex withIndexName(String indexName) {
@@ -115,8 +103,8 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The complete key schema for the local secondary index, consisting of one
-     * or more pairs of attribute names and key types:
+     * The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key
+     * types:
      * </p>
      * <ul>
      * <li>
@@ -132,21 +120,19 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * </ul>
      * <note>
      * <p>
-     * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB' usage of an internal
-     * hash function to evenly distribute data items across partitions, based on
-     * their partition key values.
+     * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * partition key values.
      * </p>
      * <p>
-     * The sort key of an item is also known as its <i>range attribute</i>. The
-     * term "range attribute" derives from the way DynamoDB stores items with
-     * the same partition key physically close together, in sorted order by the
-     * sort key value.
+     * The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the
+     * way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key
+     * value.
      * </p>
      * </note>
      * 
-     * @return The complete key schema for the local secondary index, consisting
-     *         of one or more pairs of attribute names and key types:</p>
+     * @return The complete key schema for the local secondary index, consisting of one or more pairs of attribute names
+     *         and key types:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -161,16 +147,14 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      *         </ul>
      *         <note>
      *         <p>
-     *         The partition key of an item is also known as its <i>hash
-     *         attribute</i>. The term "hash attribute" derives from DynamoDB'
-     *         usage of an internal hash function to evenly distribute data
-     *         items across partitions, based on their partition key values.
+     *         The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute"
+     *         derives from DynamoDB' usage of an internal hash function to evenly distribute data items across
+     *         partitions, based on their partition key values.
      *         </p>
      *         <p>
-     *         The sort key of an item is also known as its <i>range
-     *         attribute</i>. The term "range attribute" derives from the way
-     *         DynamoDB stores items with the same partition key physically
-     *         close together, in sorted order by the sort key value.
+     *         The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
+     *         from the way DynamoDB stores items with the same partition key physically close together, in sorted order
+     *         by the sort key value.
      *         </p>
      */
 
@@ -180,8 +164,8 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The complete key schema for the local secondary index, consisting of one
-     * or more pairs of attribute names and key types:
+     * The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key
+     * types:
      * </p>
      * <ul>
      * <li>
@@ -197,22 +181,20 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * </ul>
      * <note>
      * <p>
-     * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB' usage of an internal
-     * hash function to evenly distribute data items across partitions, based on
-     * their partition key values.
+     * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * partition key values.
      * </p>
      * <p>
-     * The sort key of an item is also known as its <i>range attribute</i>. The
-     * term "range attribute" derives from the way DynamoDB stores items with
-     * the same partition key physically close together, in sorted order by the
-     * sort key value.
+     * The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the
+     * way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key
+     * value.
      * </p>
      * </note>
      * 
      * @param keySchema
-     *        The complete key schema for the local secondary index, consisting
-     *        of one or more pairs of attribute names and key types:</p>
+     *        The complete key schema for the local secondary index, consisting of one or more pairs of attribute names
+     *        and key types:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -227,16 +209,14 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      *        </ul>
      *        <note>
      *        <p>
-     *        The partition key of an item is also known as its <i>hash
-     *        attribute</i>. The term "hash attribute" derives from DynamoDB'
-     *        usage of an internal hash function to evenly distribute data items
-     *        across partitions, based on their partition key values.
+     *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
+     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
+     *        on their partition key values.
      *        </p>
      *        <p>
-     *        The sort key of an item is also known as its <i>range
-     *        attribute</i>. The term "range attribute" derives from the way
-     *        DynamoDB stores items with the same partition key physically close
-     *        together, in sorted order by the sort key value.
+     *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
+     *        from the way DynamoDB stores items with the same partition key physically close together, in sorted order
+     *        by the sort key value.
      *        </p>
      */
 
@@ -251,8 +231,8 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The complete key schema for the local secondary index, consisting of one
-     * or more pairs of attribute names and key types:
+     * The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key
+     * types:
      * </p>
      * <ul>
      * <li>
@@ -268,28 +248,25 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * </ul>
      * <note>
      * <p>
-     * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB' usage of an internal
-     * hash function to evenly distribute data items across partitions, based on
-     * their partition key values.
+     * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * partition key values.
      * </p>
      * <p>
-     * The sort key of an item is also known as its <i>range attribute</i>. The
-     * term "range attribute" derives from the way DynamoDB stores items with
-     * the same partition key physically close together, in sorted order by the
-     * sort key value.
+     * The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the
+     * way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key
+     * value.
      * </p>
      * </note>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setKeySchema(java.util.Collection)} or
-     * {@link #withKeySchema(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setKeySchema(java.util.Collection)} or {@link #withKeySchema(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param keySchema
-     *        The complete key schema for the local secondary index, consisting
-     *        of one or more pairs of attribute names and key types:</p>
+     *        The complete key schema for the local secondary index, consisting of one or more pairs of attribute names
+     *        and key types:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -304,25 +281,21 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      *        </ul>
      *        <note>
      *        <p>
-     *        The partition key of an item is also known as its <i>hash
-     *        attribute</i>. The term "hash attribute" derives from DynamoDB'
-     *        usage of an internal hash function to evenly distribute data items
-     *        across partitions, based on their partition key values.
+     *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
+     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
+     *        on their partition key values.
      *        </p>
      *        <p>
-     *        The sort key of an item is also known as its <i>range
-     *        attribute</i>. The term "range attribute" derives from the way
-     *        DynamoDB stores items with the same partition key physically close
-     *        together, in sorted order by the sort key value.
+     *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
+     *        from the way DynamoDB stores items with the same partition key physically close together, in sorted order
+     *        by the sort key value.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LocalSecondaryIndex withKeySchema(KeySchemaElement... keySchema) {
         if (this.keySchema == null) {
-            setKeySchema(new java.util.ArrayList<KeySchemaElement>(
-                    keySchema.length));
+            setKeySchema(new java.util.ArrayList<KeySchemaElement>(keySchema.length));
         }
         for (KeySchemaElement ele : keySchema) {
             this.keySchema.add(ele);
@@ -332,8 +305,8 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The complete key schema for the local secondary index, consisting of one
-     * or more pairs of attribute names and key types:
+     * The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key
+     * types:
      * </p>
      * <ul>
      * <li>
@@ -349,22 +322,20 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * </ul>
      * <note>
      * <p>
-     * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB' usage of an internal
-     * hash function to evenly distribute data items across partitions, based on
-     * their partition key values.
+     * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * partition key values.
      * </p>
      * <p>
-     * The sort key of an item is also known as its <i>range attribute</i>. The
-     * term "range attribute" derives from the way DynamoDB stores items with
-     * the same partition key physically close together, in sorted order by the
-     * sort key value.
+     * The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the
+     * way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key
+     * value.
      * </p>
      * </note>
      * 
      * @param keySchema
-     *        The complete key schema for the local secondary index, consisting
-     *        of one or more pairs of attribute names and key types:</p>
+     *        The complete key schema for the local secondary index, consisting of one or more pairs of attribute names
+     *        and key types:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -379,23 +350,19 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      *        </ul>
      *        <note>
      *        <p>
-     *        The partition key of an item is also known as its <i>hash
-     *        attribute</i>. The term "hash attribute" derives from DynamoDB'
-     *        usage of an internal hash function to evenly distribute data items
-     *        across partitions, based on their partition key values.
+     *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
+     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
+     *        on their partition key values.
      *        </p>
      *        <p>
-     *        The sort key of an item is also known as its <i>range
-     *        attribute</i>. The term "range attribute" derives from the way
-     *        DynamoDB stores items with the same partition key physically close
-     *        together, in sorted order by the sort key value.
+     *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
+     *        from the way DynamoDB stores items with the same partition key physically close together, in sorted order
+     *        by the sort key value.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LocalSecondaryIndex withKeySchema(
-            java.util.Collection<KeySchemaElement> keySchema) {
+    public LocalSecondaryIndex withKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         setKeySchema(keySchema);
         return this;
     }
@@ -418,8 +385,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
 
     /**
      * @param projection
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LocalSecondaryIndex withProjection(Projection projection) {
@@ -428,8 +394,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -461,18 +426,15 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
         LocalSecondaryIndex other = (LocalSecondaryIndex) obj;
         if (other.getIndexName() == null ^ this.getIndexName() == null)
             return false;
-        if (other.getIndexName() != null
-                && other.getIndexName().equals(this.getIndexName()) == false)
+        if (other.getIndexName() != null && other.getIndexName().equals(this.getIndexName()) == false)
             return false;
         if (other.getKeySchema() == null ^ this.getKeySchema() == null)
             return false;
-        if (other.getKeySchema() != null
-                && other.getKeySchema().equals(this.getKeySchema()) == false)
+        if (other.getKeySchema() != null && other.getKeySchema().equals(this.getKeySchema()) == false)
             return false;
         if (other.getProjection() == null ^ this.getProjection() == null)
             return false;
-        if (other.getProjection() != null
-                && other.getProjection().equals(this.getProjection()) == false)
+        if (other.getProjection() != null && other.getProjection().equals(this.getProjection()) == false)
             return false;
         return true;
     }
@@ -482,12 +444,9 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
-        hashCode = prime * hashCode
-                + ((getKeySchema() == null) ? 0 : getKeySchema().hashCode());
-        hashCode = prime * hashCode
-                + ((getProjection() == null) ? 0 : getProjection().hashCode());
+        hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
+        hashCode = prime * hashCode + ((getKeySchema() == null) ? 0 : getKeySchema().hashCode());
+        hashCode = prime * hashCode + ((getProjection() == null) ? 0 : getProjection().hashCode());
         return hashCode;
     }
 
@@ -496,9 +455,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
         try {
             return (LocalSecondaryIndex) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

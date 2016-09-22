@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for SetLoadBalancerPoliciesForBackendServer.
  * </p>
  */
-public class SetLoadBalancerPoliciesForBackendServerRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class SetLoadBalancerPoliciesForBackendServerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -40,8 +36,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
     private Integer instancePort;
     /**
      * <p>
-     * The names of the policies. If the list is empty, then all current polices
-     * are removed from the EC2 instance.
+     * The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyNames;
@@ -78,12 +73,10 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
      * 
      * @param loadBalancerName
      *        The name of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetLoadBalancerPoliciesForBackendServerRequest withLoadBalancerName(
-            String loadBalancerName) {
+    public SetLoadBalancerPoliciesForBackendServerRequest withLoadBalancerName(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
         return this;
     }
@@ -120,24 +113,21 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
      * 
      * @param instancePort
      *        The port number associated with the EC2 instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetLoadBalancerPoliciesForBackendServerRequest withInstancePort(
-            Integer instancePort) {
+    public SetLoadBalancerPoliciesForBackendServerRequest withInstancePort(Integer instancePort) {
         setInstancePort(instancePort);
         return this;
     }
 
     /**
      * <p>
-     * The names of the policies. If the list is empty, then all current polices
-     * are removed from the EC2 instance.
+     * The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.
      * </p>
      * 
-     * @return The names of the policies. If the list is empty, then all current
-     *         polices are removed from the EC2 instance.
+     * @return The names of the policies. If the list is empty, then all current polices are removed from the EC2
+     *         instance.
      */
 
     public java.util.List<String> getPolicyNames() {
@@ -149,13 +139,12 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
 
     /**
      * <p>
-     * The names of the policies. If the list is empty, then all current polices
-     * are removed from the EC2 instance.
+     * The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.
      * </p>
      * 
      * @param policyNames
-     *        The names of the policies. If the list is empty, then all current
-     *        polices are removed from the EC2 instance.
+     *        The names of the policies. If the list is empty, then all current polices are removed from the EC2
+     *        instance.
      */
 
     public void setPolicyNames(java.util.Collection<String> policyNames) {
@@ -164,34 +153,28 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
             return;
         }
 
-        this.policyNames = new com.amazonaws.internal.SdkInternalList<String>(
-                policyNames);
+        this.policyNames = new com.amazonaws.internal.SdkInternalList<String>(policyNames);
     }
 
     /**
      * <p>
-     * The names of the policies. If the list is empty, then all current polices
-     * are removed from the EC2 instance.
+     * The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPolicyNames(java.util.Collection)} or
-     * {@link #withPolicyNames(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPolicyNames(java.util.Collection)} or {@link #withPolicyNames(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param policyNames
-     *        The names of the policies. If the list is empty, then all current
-     *        polices are removed from the EC2 instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the policies. If the list is empty, then all current polices are removed from the EC2
+     *        instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetLoadBalancerPoliciesForBackendServerRequest withPolicyNames(
-            String... policyNames) {
+    public SetLoadBalancerPoliciesForBackendServerRequest withPolicyNames(String... policyNames) {
         if (this.policyNames == null) {
-            setPolicyNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    policyNames.length));
+            setPolicyNames(new com.amazonaws.internal.SdkInternalList<String>(policyNames.length));
         }
         for (String ele : policyNames) {
             this.policyNames.add(ele);
@@ -201,26 +184,22 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
 
     /**
      * <p>
-     * The names of the policies. If the list is empty, then all current polices
-     * are removed from the EC2 instance.
+     * The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.
      * </p>
      * 
      * @param policyNames
-     *        The names of the policies. If the list is empty, then all current
-     *        polices are removed from the EC2 instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the policies. If the list is empty, then all current polices are removed from the EC2
+     *        instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetLoadBalancerPoliciesForBackendServerRequest withPolicyNames(
-            java.util.Collection<String> policyNames) {
+    public SetLoadBalancerPoliciesForBackendServerRequest withPolicyNames(java.util.Collection<String> policyNames) {
         setPolicyNames(policyNames);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -250,22 +229,17 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
         if (obj instanceof SetLoadBalancerPoliciesForBackendServerRequest == false)
             return false;
         SetLoadBalancerPoliciesForBackendServerRequest other = (SetLoadBalancerPoliciesForBackendServerRequest) obj;
-        if (other.getLoadBalancerName() == null
-                ^ this.getLoadBalancerName() == null)
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null)
             return false;
-        if (other.getLoadBalancerName() != null
-                && other.getLoadBalancerName().equals(
-                        this.getLoadBalancerName()) == false)
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false)
             return false;
         if (other.getInstancePort() == null ^ this.getInstancePort() == null)
             return false;
-        if (other.getInstancePort() != null
-                && other.getInstancePort().equals(this.getInstancePort()) == false)
+        if (other.getInstancePort() != null && other.getInstancePort().equals(this.getInstancePort()) == false)
             return false;
         if (other.getPolicyNames() == null ^ this.getPolicyNames() == null)
             return false;
-        if (other.getPolicyNames() != null
-                && other.getPolicyNames().equals(this.getPolicyNames()) == false)
+        if (other.getPolicyNames() != null && other.getPolicyNames().equals(this.getPolicyNames()) == false)
             return false;
         return true;
     }
@@ -275,17 +249,9 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstancePort() == null) ? 0 : getInstancePort()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPolicyNames() == null) ? 0 : getPolicyNames().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode());
+        hashCode = prime * hashCode + ((getInstancePort() == null) ? 0 : getInstancePort().hashCode());
+        hashCode = prime * hashCode + ((getPolicyNames() == null) ? 0 : getPolicyNames().hashCode());
         return hashCode;
     }
 

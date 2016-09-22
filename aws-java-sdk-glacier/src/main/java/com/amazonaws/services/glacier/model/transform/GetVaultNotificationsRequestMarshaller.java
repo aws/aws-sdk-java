@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model.transform;
 
@@ -43,48 +41,34 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetVaultNotificationsRequest Marshaller
  */
-public class GetVaultNotificationsRequestMarshaller
-        implements
-        Marshaller<Request<GetVaultNotificationsRequest>, GetVaultNotificationsRequest> {
+public class GetVaultNotificationsRequestMarshaller implements Marshaller<Request<GetVaultNotificationsRequest>, GetVaultNotificationsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public GetVaultNotificationsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public GetVaultNotificationsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<GetVaultNotificationsRequest> marshall(
-            GetVaultNotificationsRequest getVaultNotificationsRequest) {
+    public Request<GetVaultNotificationsRequest> marshall(GetVaultNotificationsRequest getVaultNotificationsRequest) {
 
         if (getVaultNotificationsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetVaultNotificationsRequest> request = new DefaultRequest<GetVaultNotificationsRequest>(
-                getVaultNotificationsRequest, "AmazonGlacier");
+        Request<GetVaultNotificationsRequest> request = new DefaultRequest<GetVaultNotificationsRequest>(getVaultNotificationsRequest, "AmazonGlacier");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{accountId}",
-                        (getVaultNotificationsRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(getVaultNotificationsRequest
-                                                .getAccountId()), false)
-                                : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{vaultName}",
-                        (getVaultNotificationsRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(getVaultNotificationsRequest
-                                                .getVaultName()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{accountId}",
+                (getVaultNotificationsRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(getVaultNotificationsRequest.getAccountId()), false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{vaultName}",
+                (getVaultNotificationsRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(getVaultNotificationsRequest.getVaultName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

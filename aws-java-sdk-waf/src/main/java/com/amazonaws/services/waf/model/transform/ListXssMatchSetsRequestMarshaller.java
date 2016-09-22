@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model.transform;
 
@@ -35,26 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * ListXssMatchSetsRequest Marshaller
  */
-public class ListXssMatchSetsRequestMarshaller implements
-        Marshaller<Request<ListXssMatchSetsRequest>, ListXssMatchSetsRequest> {
+public class ListXssMatchSetsRequestMarshaller implements Marshaller<Request<ListXssMatchSetsRequest>, ListXssMatchSetsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public ListXssMatchSetsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public ListXssMatchSetsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<ListXssMatchSetsRequest> marshall(
-            ListXssMatchSetsRequest listXssMatchSetsRequest) {
+    public Request<ListXssMatchSetsRequest> marshall(ListXssMatchSetsRequest listXssMatchSetsRequest) {
 
         if (listXssMatchSetsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListXssMatchSetsRequest> request = new DefaultRequest<ListXssMatchSetsRequest>(
-                listXssMatchSetsRequest, "AWSWAF");
+        Request<ListXssMatchSetsRequest> request = new DefaultRequest<ListXssMatchSetsRequest>(listXssMatchSetsRequest, "AWSWAF");
         request.addHeader("X-Amz-Target", "AWSWAF_20150824.ListXssMatchSets");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -62,30 +55,25 @@ public class ListXssMatchSetsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (listXssMatchSetsRequest.getNextMarker() != null) {
-                jsonGenerator.writeFieldName("NextMarker").writeValue(
-                        listXssMatchSetsRequest.getNextMarker());
+                jsonGenerator.writeFieldName("NextMarker").writeValue(listXssMatchSetsRequest.getNextMarker());
             }
             if (listXssMatchSetsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(
-                        listXssMatchSetsRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(listXssMatchSetsRequest.getLimit());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

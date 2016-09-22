@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect;
 
@@ -19,50 +17,40 @@ import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
- * Interface for accessing AWS Direct Connect asynchronously. Each asynchronous
- * method will return a Java Future object representing the asynchronous
- * operation; overloads which accept an {@code AsyncHandler} can be used to
- * receive notification when an asynchronous operation completes.
+ * Interface for accessing AWS Direct Connect asynchronously. Each asynchronous method will return a Java Future object
+ * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
+ * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * AWS Direct Connect links your internal network to an AWS Direct Connect
- * location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic cable.
- * One end of the cable is connected to your router, the other to an AWS Direct
- * Connect router. With this connection in place, you can create virtual
- * interfaces directly to the AWS cloud (for example, to Amazon Elastic Compute
- * Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3)) and to
- * Amazon Virtual Private Cloud (Amazon VPC), bypassing Internet service
- * providers in your network path. An AWS Direct Connect location provides
- * access to AWS in the region it is associated with, as well as access to other
- * US regions. For example, you can provision a single connection to any AWS
- * Direct Connect location in the US and use it to access public AWS services in
- * all US Regions and AWS GovCloud (US).
+ * AWS Direct Connect links your internal network to an AWS Direct Connect location over a standard 1 gigabit or 10
+ * gigabit Ethernet fiber-optic cable. One end of the cable is connected to your router, the other to an AWS Direct
+ * Connect router. With this connection in place, you can create virtual interfaces directly to the AWS cloud (for
+ * example, to Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3)) and to Amazon
+ * Virtual Private Cloud (Amazon VPC), bypassing Internet service providers in your network path. An AWS Direct Connect
+ * location provides access to AWS in the region it is associated with, as well as access to other US regions. For
+ * example, you can provision a single connection to any AWS Direct Connect location in the US and use it to access
+ * public AWS services in all US Regions and AWS GovCloud (US).
  * </p>
  */
 @ThreadSafe
-public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
-        implements AmazonDirectConnectAsync {
+public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient implements AmazonDirectConnectAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
     private final java.util.concurrent.ExecutorService executorService;
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on AWS
-     * Direct Connect. A credentials provider chain will be used that searches
-     * for credentials in this order:
+     * Constructs a new asynchronous client to invoke service methods on AWS Direct Connect. A credentials provider
+     * chain will be used that searches for credentials in this order:
      * <ul>
      * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
      * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
-     * <li>Credential profiles file at the default location (~/.aws/credentials)
-     * shared by all AWS SDKs and the AWS CLI</li>
-     * <li>Instance profile credentials delivered through the Amazon EC2
-     * metadata service</li>
+     * <li>Credential profiles file at the default location (~/.aws/credentials) shared by all AWS SDKs and the AWS CLI</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2 metadata service</li>
      * </ul>
      * <p>
-     * Asynchronous methods are delegated to a fixed-size thread pool containing
-     * 50 threads (to match the default maximum number of concurrent connections
-     * to the service).
+     * Asynchronous methods are delegated to a fixed-size thread pool containing 50 threads (to match the default
+     * maximum number of concurrent connections to the service).
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
@@ -72,94 +60,71 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on AWS
-     * Direct Connect. A credentials provider chain will be used that searches
-     * for credentials in this order:
+     * Constructs a new asynchronous client to invoke service methods on AWS Direct Connect. A credentials provider
+     * chain will be used that searches for credentials in this order:
      * <ul>
      * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
      * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
-     * <li>Credential profiles file at the default location (~/.aws/credentials)
-     * shared by all AWS SDKs and the AWS CLI</li>
-     * <li>Instance profile credentials delivered through the Amazon EC2
-     * metadata service</li>
+     * <li>Credential profiles file at the default location (~/.aws/credentials) shared by all AWS SDKs and the AWS CLI</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2 metadata service</li>
      * </ul>
      * <p>
-     * Asynchronous methods are delegated to a fixed-size thread pool containing
-     * a number of threads equal to the maximum number of concurrent connections
-     * configured via {@code ClientConfiguration.getMaxConnections()}.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing a number of threads equal to the
+     * maximum number of concurrent connections configured via {@code ClientConfiguration.getMaxConnections()}.
      *
      * @param clientConfiguration
-     *        The client configuration options controlling how this client
-     *        connects to AWS Direct Connect (ex: proxy settings, retry counts,
-     *        etc).
+     *        The client configuration options controlling how this client connects to AWS Direct Connect (ex: proxy
+     *        settings, retry counts, etc).
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
-    public AmazonDirectConnectAsyncClient(
-            com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(),
-                clientConfiguration, java.util.concurrent.Executors
-                        .newFixedThreadPool(clientConfiguration
-                                .getMaxConnections()));
+    public AmazonDirectConnectAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
+        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+                .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on AWS
-     * Direct Connect using the specified AWS account credentials.
+     * Constructs a new asynchronous client to invoke service methods on AWS Direct Connect using the specified AWS
+     * account credentials.
      * <p>
-     * Asynchronous methods are delegated to a fixed-size thread pool containing
-     * 50 threads (to match the default maximum number of concurrent connections
-     * to the service).
+     * Asynchronous methods are delegated to a fixed-size thread pool containing 50 threads (to match the default
+     * maximum number of concurrent connections to the service).
      *
      * @param awsCredentials
-     *        The AWS credentials (access key ID and secret key) to use when
-     *        authenticating with AWS services.
+     *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
-    public AmazonDirectConnectAsyncClient(
-            com.amazonaws.auth.AWSCredentials awsCredentials) {
-        this(awsCredentials, java.util.concurrent.Executors
-                .newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    public AmazonDirectConnectAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials) {
+        this(awsCredentials, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on AWS
-     * Direct Connect using the specified AWS account credentials and executor
-     * service. Default client settings will be used.
+     * Constructs a new asynchronous client to invoke service methods on AWS Direct Connect using the specified AWS
+     * account credentials and executor service. Default client settings will be used.
      *
      * @param awsCredentials
-     *        The AWS credentials (access key ID and secret key) to use when
-     *        authenticating with AWS services.
+     *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @param executorService
-     *        The executor service by which all asynchronous requests will be
-     *        executed.
+     *        The executor service by which all asynchronous requests will be executed.
      */
-    public AmazonDirectConnectAsyncClient(
-            com.amazonaws.auth.AWSCredentials awsCredentials,
-            java.util.concurrent.ExecutorService executorService) {
+    public AmazonDirectConnectAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, java.util.concurrent.ExecutorService executorService) {
 
         this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on AWS
-     * Direct Connect using the specified AWS account credentials, executor
-     * service, and client configuration options.
+     * Constructs a new asynchronous client to invoke service methods on AWS Direct Connect using the specified AWS
+     * account credentials, executor service, and client configuration options.
      *
      * @param awsCredentials
-     *        The AWS credentials (access key ID and secret key) to use when
-     *        authenticating with AWS services.
+     *        The AWS credentials (access key ID and secret key) to use when authenticating with AWS services.
      * @param clientConfiguration
-     *        Client configuration options (ex: max retry limit, proxy settings,
-     *        etc).
+     *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
-     *        The executor service by which all asynchronous requests will be
-     *        executed.
+     *        The executor service by which all asynchronous requests will be executed.
      */
-    public AmazonDirectConnectAsyncClient(
-            com.amazonaws.auth.AWSCredentials awsCredentials,
-            com.amazonaws.ClientConfiguration clientConfiguration,
+    public AmazonDirectConnectAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials, com.amazonaws.ClientConfiguration clientConfiguration,
             java.util.concurrent.ExecutorService executorService) {
 
         super(awsCredentials, clientConfiguration);
@@ -167,100 +132,76 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on AWS
-     * Direct Connect using the specified AWS account credentials provider.
-     * Default client settings will be used.
+     * Constructs a new asynchronous client to invoke service methods on AWS Direct Connect using the specified AWS
+     * account credentials provider. Default client settings will be used.
      * <p>
-     * Asynchronous methods are delegated to a fixed-size thread pool containing
-     * 50 threads (to match the default maximum number of concurrent connections
-     * to the service).
+     * Asynchronous methods are delegated to a fixed-size thread pool containing 50 threads (to match the default
+     * maximum number of concurrent connections to the service).
      *
      * @param awsCredentialsProvider
-     *        The AWS credentials provider which will provide credentials to
-     *        authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
-    public AmazonDirectConnectAsyncClient(
-            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, java.util.concurrent.Executors
-                .newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    public AmazonDirectConnectAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, java.util.concurrent.Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on AWS
-     * Direct Connect using the provided AWS account credentials provider and
-     * client configuration options.
+     * Constructs a new asynchronous client to invoke service methods on AWS Direct Connect using the provided AWS
+     * account credentials provider and client configuration options.
      * <p>
-     * Asynchronous methods are delegated to a fixed-size thread pool containing
-     * a number of threads equal to the maximum number of concurrent connections
-     * configured via {@code ClientConfiguration.getMaxConnections()}.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing a number of threads equal to the
+     * maximum number of concurrent connections configured via {@code ClientConfiguration.getMaxConnections()}.
      *
      * @param awsCredentialsProvider
-     *        The AWS credentials provider which will provide credentials to
-     *        authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @param clientConfiguration
-     *        Client configuration options (ex: max retry limit, proxy settings,
-     *        etc).
+     *        Client configuration options (ex: max retry limit, proxy settings, etc).
      *
      * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
-    public AmazonDirectConnectAsyncClient(
-            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
+    public AmazonDirectConnectAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             com.amazonaws.ClientConfiguration clientConfiguration) {
 
-        this(awsCredentialsProvider, clientConfiguration,
-                java.util.concurrent.Executors
-                        .newFixedThreadPool(clientConfiguration
-                                .getMaxConnections()));
+        this(awsCredentialsProvider, clientConfiguration, java.util.concurrent.Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on AWS
-     * Direct Connect using the specified AWS account credentials provider and
-     * executor service. Default client settings will be used.
+     * Constructs a new asynchronous client to invoke service methods on AWS Direct Connect using the specified AWS
+     * account credentials provider and executor service. Default client settings will be used.
      *
      * @param awsCredentialsProvider
-     *        The AWS credentials provider which will provide credentials to
-     *        authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @param executorService
-     *        The executor service by which all asynchronous requests will be
-     *        executed.
+     *        The executor service by which all asynchronous requests will be executed.
      */
-    public AmazonDirectConnectAsyncClient(
-            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            java.util.concurrent.ExecutorService executorService) {
+    public AmazonDirectConnectAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider, java.util.concurrent.ExecutorService executorService) {
 
         this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on AWS
-     * Direct Connect using the specified AWS account credentials provider,
-     * executor service, and client configuration options.
+     * Constructs a new asynchronous client to invoke service methods on AWS Direct Connect using the specified AWS
+     * account credentials provider, executor service, and client configuration options.
      *
      * @param awsCredentialsProvider
-     *        The AWS credentials provider which will provide credentials to
-     *        authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
      * @param clientConfiguration
-     *        Client configuration options (ex: max retry limit, proxy settings,
-     *        etc).
+     *        Client configuration options (ex: max retry limit, proxy settings, etc).
      * @param executorService
-     *        The executor service by which all asynchronous requests will be
-     *        executed.
+     *        The executor service by which all asynchronous requests will be executed.
      */
-    public AmazonDirectConnectAsyncClient(
-            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
-            com.amazonaws.ClientConfiguration clientConfiguration,
-            java.util.concurrent.ExecutorService executorService) {
+    public AmazonDirectConnectAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
+            com.amazonaws.ClientConfiguration clientConfiguration, java.util.concurrent.ExecutorService executorService) {
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on AWS
-     * Direct Connect using the specified parameters.
+     * Constructs a new asynchronous client to invoke service methods on AWS Direct Connect using the specified
+     * parameters.
      *
      * @param asyncClientParams
      *        Object providing client parameters.
@@ -271,11 +212,9 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
     }
 
     /**
-     * Returns the executor service used by this client to execute async
-     * requests.
+     * Returns the executor service used by this client to execute async requests.
      *
-     * @return The executor service used by this client to execute async
-     *         requests.
+     * @return The executor service used by this client to execute async requests.
      */
     public java.util.concurrent.ExecutorService getExecutorService() {
         return executorService;
@@ -293,28 +232,26 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
             final AllocateConnectionOnInterconnectRequest request,
             final com.amazonaws.handlers.AsyncHandler<AllocateConnectionOnInterconnectRequest, AllocateConnectionOnInterconnectResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<AllocateConnectionOnInterconnectResult>() {
-                    @Override
-                    public AllocateConnectionOnInterconnectResult call()
-                            throws Exception {
-                        AllocateConnectionOnInterconnectResult result;
+        return executorService.submit(new java.util.concurrent.Callable<AllocateConnectionOnInterconnectResult>() {
+            @Override
+            public AllocateConnectionOnInterconnectResult call() throws Exception {
+                AllocateConnectionOnInterconnectResult result;
 
-                        try {
-                            result = allocateConnectionOnInterconnect(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = allocateConnectionOnInterconnect(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -329,33 +266,30 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
             final AllocatePrivateVirtualInterfaceRequest request,
             final com.amazonaws.handlers.AsyncHandler<AllocatePrivateVirtualInterfaceRequest, AllocatePrivateVirtualInterfaceResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<AllocatePrivateVirtualInterfaceResult>() {
-                    @Override
-                    public AllocatePrivateVirtualInterfaceResult call()
-                            throws Exception {
-                        AllocatePrivateVirtualInterfaceResult result;
+        return executorService.submit(new java.util.concurrent.Callable<AllocatePrivateVirtualInterfaceResult>() {
+            @Override
+            public AllocatePrivateVirtualInterfaceResult call() throws Exception {
+                AllocatePrivateVirtualInterfaceResult result;
 
-                        try {
-                            result = allocatePrivateVirtualInterface(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = allocatePrivateVirtualInterface(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<AllocatePublicVirtualInterfaceResult> allocatePublicVirtualInterfaceAsync(
-            AllocatePublicVirtualInterfaceRequest request) {
+    public java.util.concurrent.Future<AllocatePublicVirtualInterfaceResult> allocatePublicVirtualInterfaceAsync(AllocatePublicVirtualInterfaceRequest request) {
 
         return allocatePublicVirtualInterfaceAsync(request, null);
     }
@@ -365,68 +299,62 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
             final AllocatePublicVirtualInterfaceRequest request,
             final com.amazonaws.handlers.AsyncHandler<AllocatePublicVirtualInterfaceRequest, AllocatePublicVirtualInterfaceResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<AllocatePublicVirtualInterfaceResult>() {
-                    @Override
-                    public AllocatePublicVirtualInterfaceResult call()
-                            throws Exception {
-                        AllocatePublicVirtualInterfaceResult result;
+        return executorService.submit(new java.util.concurrent.Callable<AllocatePublicVirtualInterfaceResult>() {
+            @Override
+            public AllocatePublicVirtualInterfaceResult call() throws Exception {
+                AllocatePublicVirtualInterfaceResult result;
 
-                        try {
-                            result = allocatePublicVirtualInterface(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = allocatePublicVirtualInterface(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<ConfirmConnectionResult> confirmConnectionAsync(
-            ConfirmConnectionRequest request) {
+    public java.util.concurrent.Future<ConfirmConnectionResult> confirmConnectionAsync(ConfirmConnectionRequest request) {
 
         return confirmConnectionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<ConfirmConnectionResult> confirmConnectionAsync(
-            final ConfirmConnectionRequest request,
+    public java.util.concurrent.Future<ConfirmConnectionResult> confirmConnectionAsync(final ConfirmConnectionRequest request,
             final com.amazonaws.handlers.AsyncHandler<ConfirmConnectionRequest, ConfirmConnectionResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ConfirmConnectionResult>() {
-                    @Override
-                    public ConfirmConnectionResult call() throws Exception {
-                        ConfirmConnectionResult result;
+        return executorService.submit(new java.util.concurrent.Callable<ConfirmConnectionResult>() {
+            @Override
+            public ConfirmConnectionResult call() throws Exception {
+                ConfirmConnectionResult result;
 
-                        try {
-                            result = confirmConnection(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = confirmConnection(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<ConfirmPrivateVirtualInterfaceResult> confirmPrivateVirtualInterfaceAsync(
-            ConfirmPrivateVirtualInterfaceRequest request) {
+    public java.util.concurrent.Future<ConfirmPrivateVirtualInterfaceResult> confirmPrivateVirtualInterfaceAsync(ConfirmPrivateVirtualInterfaceRequest request) {
 
         return confirmPrivateVirtualInterfaceAsync(request, null);
     }
@@ -436,33 +364,30 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
             final ConfirmPrivateVirtualInterfaceRequest request,
             final com.amazonaws.handlers.AsyncHandler<ConfirmPrivateVirtualInterfaceRequest, ConfirmPrivateVirtualInterfaceResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ConfirmPrivateVirtualInterfaceResult>() {
-                    @Override
-                    public ConfirmPrivateVirtualInterfaceResult call()
-                            throws Exception {
-                        ConfirmPrivateVirtualInterfaceResult result;
+        return executorService.submit(new java.util.concurrent.Callable<ConfirmPrivateVirtualInterfaceResult>() {
+            @Override
+            public ConfirmPrivateVirtualInterfaceResult call() throws Exception {
+                ConfirmPrivateVirtualInterfaceResult result;
 
-                        try {
-                            result = confirmPrivateVirtualInterface(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = confirmPrivateVirtualInterface(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<ConfirmPublicVirtualInterfaceResult> confirmPublicVirtualInterfaceAsync(
-            ConfirmPublicVirtualInterfaceRequest request) {
+    public java.util.concurrent.Future<ConfirmPublicVirtualInterfaceResult> confirmPublicVirtualInterfaceAsync(ConfirmPublicVirtualInterfaceRequest request) {
 
         return confirmPublicVirtualInterfaceAsync(request, null);
     }
@@ -472,103 +397,94 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
             final ConfirmPublicVirtualInterfaceRequest request,
             final com.amazonaws.handlers.AsyncHandler<ConfirmPublicVirtualInterfaceRequest, ConfirmPublicVirtualInterfaceResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ConfirmPublicVirtualInterfaceResult>() {
-                    @Override
-                    public ConfirmPublicVirtualInterfaceResult call()
-                            throws Exception {
-                        ConfirmPublicVirtualInterfaceResult result;
+        return executorService.submit(new java.util.concurrent.Callable<ConfirmPublicVirtualInterfaceResult>() {
+            @Override
+            public ConfirmPublicVirtualInterfaceResult call() throws Exception {
+                ConfirmPublicVirtualInterfaceResult result;
 
-                        try {
-                            result = confirmPublicVirtualInterface(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = confirmPublicVirtualInterface(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(
-            CreateConnectionRequest request) {
+    public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest request) {
 
         return createConnectionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(
-            final CreateConnectionRequest request,
+    public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(final CreateConnectionRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<CreateConnectionResult>() {
-                    @Override
-                    public CreateConnectionResult call() throws Exception {
-                        CreateConnectionResult result;
+        return executorService.submit(new java.util.concurrent.Callable<CreateConnectionResult>() {
+            @Override
+            public CreateConnectionResult call() throws Exception {
+                CreateConnectionResult result;
 
-                        try {
-                            result = createConnection(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = createConnection(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<CreateInterconnectResult> createInterconnectAsync(
-            CreateInterconnectRequest request) {
+    public java.util.concurrent.Future<CreateInterconnectResult> createInterconnectAsync(CreateInterconnectRequest request) {
 
         return createInterconnectAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CreateInterconnectResult> createInterconnectAsync(
-            final CreateInterconnectRequest request,
+    public java.util.concurrent.Future<CreateInterconnectResult> createInterconnectAsync(final CreateInterconnectRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateInterconnectRequest, CreateInterconnectResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<CreateInterconnectResult>() {
-                    @Override
-                    public CreateInterconnectResult call() throws Exception {
-                        CreateInterconnectResult result;
+        return executorService.submit(new java.util.concurrent.Callable<CreateInterconnectResult>() {
+            @Override
+            public CreateInterconnectResult call() throws Exception {
+                CreateInterconnectResult result;
 
-                        try {
-                            result = createInterconnect(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = createInterconnect(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<CreatePrivateVirtualInterfaceResult> createPrivateVirtualInterfaceAsync(
-            CreatePrivateVirtualInterfaceRequest request) {
+    public java.util.concurrent.Future<CreatePrivateVirtualInterfaceResult> createPrivateVirtualInterfaceAsync(CreatePrivateVirtualInterfaceRequest request) {
 
         return createPrivateVirtualInterfaceAsync(request, null);
     }
@@ -578,239 +494,218 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
             final CreatePrivateVirtualInterfaceRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreatePrivateVirtualInterfaceRequest, CreatePrivateVirtualInterfaceResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<CreatePrivateVirtualInterfaceResult>() {
-                    @Override
-                    public CreatePrivateVirtualInterfaceResult call()
-                            throws Exception {
-                        CreatePrivateVirtualInterfaceResult result;
+        return executorService.submit(new java.util.concurrent.Callable<CreatePrivateVirtualInterfaceResult>() {
+            @Override
+            public CreatePrivateVirtualInterfaceResult call() throws Exception {
+                CreatePrivateVirtualInterfaceResult result;
 
-                        try {
-                            result = createPrivateVirtualInterface(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = createPrivateVirtualInterface(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<CreatePublicVirtualInterfaceResult> createPublicVirtualInterfaceAsync(
-            CreatePublicVirtualInterfaceRequest request) {
+    public java.util.concurrent.Future<CreatePublicVirtualInterfaceResult> createPublicVirtualInterfaceAsync(CreatePublicVirtualInterfaceRequest request) {
 
         return createPublicVirtualInterfaceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CreatePublicVirtualInterfaceResult> createPublicVirtualInterfaceAsync(
-            final CreatePublicVirtualInterfaceRequest request,
+    public java.util.concurrent.Future<CreatePublicVirtualInterfaceResult> createPublicVirtualInterfaceAsync(final CreatePublicVirtualInterfaceRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreatePublicVirtualInterfaceRequest, CreatePublicVirtualInterfaceResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<CreatePublicVirtualInterfaceResult>() {
-                    @Override
-                    public CreatePublicVirtualInterfaceResult call()
-                            throws Exception {
-                        CreatePublicVirtualInterfaceResult result;
+        return executorService.submit(new java.util.concurrent.Callable<CreatePublicVirtualInterfaceResult>() {
+            @Override
+            public CreatePublicVirtualInterfaceResult call() throws Exception {
+                CreatePublicVirtualInterfaceResult result;
 
-                        try {
-                            result = createPublicVirtualInterface(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = createPublicVirtualInterface(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(
-            DeleteConnectionRequest request) {
+    public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request) {
 
         return deleteConnectionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(
-            final DeleteConnectionRequest request,
+    public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(final DeleteConnectionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DeleteConnectionResult>() {
-                    @Override
-                    public DeleteConnectionResult call() throws Exception {
-                        DeleteConnectionResult result;
+        return executorService.submit(new java.util.concurrent.Callable<DeleteConnectionResult>() {
+            @Override
+            public DeleteConnectionResult call() throws Exception {
+                DeleteConnectionResult result;
 
-                        try {
-                            result = deleteConnection(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = deleteConnection(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteInterconnectResult> deleteInterconnectAsync(
-            DeleteInterconnectRequest request) {
+    public java.util.concurrent.Future<DeleteInterconnectResult> deleteInterconnectAsync(DeleteInterconnectRequest request) {
 
         return deleteInterconnectAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteInterconnectResult> deleteInterconnectAsync(
-            final DeleteInterconnectRequest request,
+    public java.util.concurrent.Future<DeleteInterconnectResult> deleteInterconnectAsync(final DeleteInterconnectRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteInterconnectRequest, DeleteInterconnectResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DeleteInterconnectResult>() {
-                    @Override
-                    public DeleteInterconnectResult call() throws Exception {
-                        DeleteInterconnectResult result;
+        return executorService.submit(new java.util.concurrent.Callable<DeleteInterconnectResult>() {
+            @Override
+            public DeleteInterconnectResult call() throws Exception {
+                DeleteInterconnectResult result;
 
-                        try {
-                            result = deleteInterconnect(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = deleteInterconnect(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteVirtualInterfaceResult> deleteVirtualInterfaceAsync(
-            DeleteVirtualInterfaceRequest request) {
+    public java.util.concurrent.Future<DeleteVirtualInterfaceResult> deleteVirtualInterfaceAsync(DeleteVirtualInterfaceRequest request) {
 
         return deleteVirtualInterfaceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteVirtualInterfaceResult> deleteVirtualInterfaceAsync(
-            final DeleteVirtualInterfaceRequest request,
+    public java.util.concurrent.Future<DeleteVirtualInterfaceResult> deleteVirtualInterfaceAsync(final DeleteVirtualInterfaceRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DeleteVirtualInterfaceResult>() {
-                    @Override
-                    public DeleteVirtualInterfaceResult call() throws Exception {
-                        DeleteVirtualInterfaceResult result;
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVirtualInterfaceResult>() {
+            @Override
+            public DeleteVirtualInterfaceResult call() throws Exception {
+                DeleteVirtualInterfaceResult result;
 
-                        try {
-                            result = deleteVirtualInterface(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = deleteVirtualInterface(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeConnectionLoaResult> describeConnectionLoaAsync(
-            DescribeConnectionLoaRequest request) {
+    public java.util.concurrent.Future<DescribeConnectionLoaResult> describeConnectionLoaAsync(DescribeConnectionLoaRequest request) {
 
         return describeConnectionLoaAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeConnectionLoaResult> describeConnectionLoaAsync(
-            final DescribeConnectionLoaRequest request,
+    public java.util.concurrent.Future<DescribeConnectionLoaResult> describeConnectionLoaAsync(final DescribeConnectionLoaRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeConnectionLoaRequest, DescribeConnectionLoaResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DescribeConnectionLoaResult>() {
-                    @Override
-                    public DescribeConnectionLoaResult call() throws Exception {
-                        DescribeConnectionLoaResult result;
+        return executorService.submit(new java.util.concurrent.Callable<DescribeConnectionLoaResult>() {
+            @Override
+            public DescribeConnectionLoaResult call() throws Exception {
+                DescribeConnectionLoaResult result;
 
-                        try {
-                            result = describeConnectionLoa(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = describeConnectionLoa(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeConnectionsResult> describeConnectionsAsync(
-            DescribeConnectionsRequest request) {
+    public java.util.concurrent.Future<DescribeConnectionsResult> describeConnectionsAsync(DescribeConnectionsRequest request) {
 
         return describeConnectionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeConnectionsResult> describeConnectionsAsync(
-            final DescribeConnectionsRequest request,
+    public java.util.concurrent.Future<DescribeConnectionsResult> describeConnectionsAsync(final DescribeConnectionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeConnectionsRequest, DescribeConnectionsResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DescribeConnectionsResult>() {
-                    @Override
-                    public DescribeConnectionsResult call() throws Exception {
-                        DescribeConnectionsResult result;
+        return executorService.submit(new java.util.concurrent.Callable<DescribeConnectionsResult>() {
+            @Override
+            public DescribeConnectionsResult call() throws Exception {
+                DescribeConnectionsResult result;
 
-                        try {
-                            result = describeConnections(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = describeConnections(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     /**
@@ -825,17 +720,14 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
     }
 
     /**
-     * Simplified method form for invoking the DescribeConnections operation
-     * with an AsyncHandler.
+     * Simplified method form for invoking the DescribeConnections operation with an AsyncHandler.
      *
-     * @see #describeConnectionsAsync(DescribeConnectionsRequest,
-     *      com.amazonaws.handlers.AsyncHandler)
+     * @see #describeConnectionsAsync(DescribeConnectionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
     public java.util.concurrent.Future<DescribeConnectionsResult> describeConnectionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeConnectionsRequest, DescribeConnectionsResult> asyncHandler) {
 
-        return describeConnectionsAsync(new DescribeConnectionsRequest(),
-                asyncHandler);
+        return describeConnectionsAsync(new DescribeConnectionsRequest(), asyncHandler);
     }
 
     @Override
@@ -850,99 +742,90 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
             final DescribeConnectionsOnInterconnectRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeConnectionsOnInterconnectRequest, DescribeConnectionsOnInterconnectResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DescribeConnectionsOnInterconnectResult>() {
-                    @Override
-                    public DescribeConnectionsOnInterconnectResult call()
-                            throws Exception {
-                        DescribeConnectionsOnInterconnectResult result;
+        return executorService.submit(new java.util.concurrent.Callable<DescribeConnectionsOnInterconnectResult>() {
+            @Override
+            public DescribeConnectionsOnInterconnectResult call() throws Exception {
+                DescribeConnectionsOnInterconnectResult result;
 
-                        try {
-                            result = describeConnectionsOnInterconnect(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = describeConnectionsOnInterconnect(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(
-            DescribeInterconnectLoaRequest request) {
+    public java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(DescribeInterconnectLoaRequest request) {
 
         return describeInterconnectLoaAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(
-            final DescribeInterconnectLoaRequest request,
+    public java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(final DescribeInterconnectLoaRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeInterconnectLoaRequest, DescribeInterconnectLoaResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DescribeInterconnectLoaResult>() {
-                    @Override
-                    public DescribeInterconnectLoaResult call()
-                            throws Exception {
-                        DescribeInterconnectLoaResult result;
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInterconnectLoaResult>() {
+            @Override
+            public DescribeInterconnectLoaResult call() throws Exception {
+                DescribeInterconnectLoaResult result;
 
-                        try {
-                            result = describeInterconnectLoa(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = describeInterconnectLoa(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeInterconnectsResult> describeInterconnectsAsync(
-            DescribeInterconnectsRequest request) {
+    public java.util.concurrent.Future<DescribeInterconnectsResult> describeInterconnectsAsync(DescribeInterconnectsRequest request) {
 
         return describeInterconnectsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeInterconnectsResult> describeInterconnectsAsync(
-            final DescribeInterconnectsRequest request,
+    public java.util.concurrent.Future<DescribeInterconnectsResult> describeInterconnectsAsync(final DescribeInterconnectsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeInterconnectsRequest, DescribeInterconnectsResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DescribeInterconnectsResult>() {
-                    @Override
-                    public DescribeInterconnectsResult call() throws Exception {
-                        DescribeInterconnectsResult result;
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInterconnectsResult>() {
+            @Override
+            public DescribeInterconnectsResult call() throws Exception {
+                DescribeInterconnectsResult result;
 
-                        try {
-                            result = describeInterconnects(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = describeInterconnects(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     /**
@@ -957,52 +840,46 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
     }
 
     /**
-     * Simplified method form for invoking the DescribeInterconnects operation
-     * with an AsyncHandler.
+     * Simplified method form for invoking the DescribeInterconnects operation with an AsyncHandler.
      *
-     * @see #describeInterconnectsAsync(DescribeInterconnectsRequest,
-     *      com.amazonaws.handlers.AsyncHandler)
+     * @see #describeInterconnectsAsync(DescribeInterconnectsRequest, com.amazonaws.handlers.AsyncHandler)
      */
     public java.util.concurrent.Future<DescribeInterconnectsResult> describeInterconnectsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeInterconnectsRequest, DescribeInterconnectsResult> asyncHandler) {
 
-        return describeInterconnectsAsync(new DescribeInterconnectsRequest(),
-                asyncHandler);
+        return describeInterconnectsAsync(new DescribeInterconnectsRequest(), asyncHandler);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeLocationsResult> describeLocationsAsync(
-            DescribeLocationsRequest request) {
+    public java.util.concurrent.Future<DescribeLocationsResult> describeLocationsAsync(DescribeLocationsRequest request) {
 
         return describeLocationsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeLocationsResult> describeLocationsAsync(
-            final DescribeLocationsRequest request,
+    public java.util.concurrent.Future<DescribeLocationsResult> describeLocationsAsync(final DescribeLocationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeLocationsRequest, DescribeLocationsResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DescribeLocationsResult>() {
-                    @Override
-                    public DescribeLocationsResult call() throws Exception {
-                        DescribeLocationsResult result;
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLocationsResult>() {
+            @Override
+            public DescribeLocationsResult call() throws Exception {
+                DescribeLocationsResult result;
 
-                        try {
-                            result = describeLocations(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = describeLocations(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     /**
@@ -1017,58 +894,50 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
     }
 
     /**
-     * Simplified method form for invoking the DescribeLocations operation with
-     * an AsyncHandler.
+     * Simplified method form for invoking the DescribeLocations operation with an AsyncHandler.
      *
-     * @see #describeLocationsAsync(DescribeLocationsRequest,
-     *      com.amazonaws.handlers.AsyncHandler)
+     * @see #describeLocationsAsync(DescribeLocationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
     public java.util.concurrent.Future<DescribeLocationsResult> describeLocationsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeLocationsRequest, DescribeLocationsResult> asyncHandler) {
 
-        return describeLocationsAsync(new DescribeLocationsRequest(),
-                asyncHandler);
+        return describeLocationsAsync(new DescribeLocationsRequest(), asyncHandler);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeVirtualGatewaysResult> describeVirtualGatewaysAsync(
-            DescribeVirtualGatewaysRequest request) {
+    public java.util.concurrent.Future<DescribeVirtualGatewaysResult> describeVirtualGatewaysAsync(DescribeVirtualGatewaysRequest request) {
 
         return describeVirtualGatewaysAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeVirtualGatewaysResult> describeVirtualGatewaysAsync(
-            final DescribeVirtualGatewaysRequest request,
+    public java.util.concurrent.Future<DescribeVirtualGatewaysResult> describeVirtualGatewaysAsync(final DescribeVirtualGatewaysRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeVirtualGatewaysRequest, DescribeVirtualGatewaysResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DescribeVirtualGatewaysResult>() {
-                    @Override
-                    public DescribeVirtualGatewaysResult call()
-                            throws Exception {
-                        DescribeVirtualGatewaysResult result;
+        return executorService.submit(new java.util.concurrent.Callable<DescribeVirtualGatewaysResult>() {
+            @Override
+            public DescribeVirtualGatewaysResult call() throws Exception {
+                DescribeVirtualGatewaysResult result;
 
-                        try {
-                            result = describeVirtualGateways(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = describeVirtualGateways(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     /**
-     * Simplified method form for invoking the DescribeVirtualGateways
-     * operation.
+     * Simplified method form for invoking the DescribeVirtualGateways operation.
      *
      * @see #describeVirtualGatewaysAsync(DescribeVirtualGatewaysRequest)
      */
@@ -1079,58 +948,50 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
     }
 
     /**
-     * Simplified method form for invoking the DescribeVirtualGateways operation
-     * with an AsyncHandler.
+     * Simplified method form for invoking the DescribeVirtualGateways operation with an AsyncHandler.
      *
-     * @see #describeVirtualGatewaysAsync(DescribeVirtualGatewaysRequest,
-     *      com.amazonaws.handlers.AsyncHandler)
+     * @see #describeVirtualGatewaysAsync(DescribeVirtualGatewaysRequest, com.amazonaws.handlers.AsyncHandler)
      */
     public java.util.concurrent.Future<DescribeVirtualGatewaysResult> describeVirtualGatewaysAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVirtualGatewaysRequest, DescribeVirtualGatewaysResult> asyncHandler) {
 
-        return describeVirtualGatewaysAsync(
-                new DescribeVirtualGatewaysRequest(), asyncHandler);
+        return describeVirtualGatewaysAsync(new DescribeVirtualGatewaysRequest(), asyncHandler);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeVirtualInterfacesResult> describeVirtualInterfacesAsync(
-            DescribeVirtualInterfacesRequest request) {
+    public java.util.concurrent.Future<DescribeVirtualInterfacesResult> describeVirtualInterfacesAsync(DescribeVirtualInterfacesRequest request) {
 
         return describeVirtualInterfacesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeVirtualInterfacesResult> describeVirtualInterfacesAsync(
-            final DescribeVirtualInterfacesRequest request,
+    public java.util.concurrent.Future<DescribeVirtualInterfacesResult> describeVirtualInterfacesAsync(final DescribeVirtualInterfacesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeVirtualInterfacesRequest, DescribeVirtualInterfacesResult> asyncHandler) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DescribeVirtualInterfacesResult>() {
-                    @Override
-                    public DescribeVirtualInterfacesResult call()
-                            throws Exception {
-                        DescribeVirtualInterfacesResult result;
+        return executorService.submit(new java.util.concurrent.Callable<DescribeVirtualInterfacesResult>() {
+            @Override
+            public DescribeVirtualInterfacesResult call() throws Exception {
+                DescribeVirtualInterfacesResult result;
 
-                        try {
-                            result = describeVirtualInterfaces(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
+                try {
+                    result = describeVirtualInterfaces(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
                     }
-                });
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     /**
-     * Simplified method form for invoking the DescribeVirtualInterfaces
-     * operation.
+     * Simplified method form for invoking the DescribeVirtualInterfaces operation.
      *
      * @see #describeVirtualInterfacesAsync(DescribeVirtualInterfacesRequest)
      */
@@ -1141,26 +1002,21 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
     }
 
     /**
-     * Simplified method form for invoking the DescribeVirtualInterfaces
-     * operation with an AsyncHandler.
+     * Simplified method form for invoking the DescribeVirtualInterfaces operation with an AsyncHandler.
      *
-     * @see #describeVirtualInterfacesAsync(DescribeVirtualInterfacesRequest,
-     *      com.amazonaws.handlers.AsyncHandler)
+     * @see #describeVirtualInterfacesAsync(DescribeVirtualInterfacesRequest, com.amazonaws.handlers.AsyncHandler)
      */
     public java.util.concurrent.Future<DescribeVirtualInterfacesResult> describeVirtualInterfacesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVirtualInterfacesRequest, DescribeVirtualInterfacesResult> asyncHandler) {
 
-        return describeVirtualInterfacesAsync(
-                new DescribeVirtualInterfacesRequest(), asyncHandler);
+        return describeVirtualInterfacesAsync(new DescribeVirtualInterfacesRequest(), asyncHandler);
     }
 
     /**
-     * Shuts down the client, releasing all managed resources. This includes
-     * forcibly terminating all pending asynchronous service calls. Clients who
-     * wish to give pending asynchronous service calls time to complete should
-     * call {@code getExecutorService().shutdown()} followed by
-     * {@code getExecutorService().awaitTermination()} prior to calling this
-     * method.
+     * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
+     * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should
+     * call {@code getExecutorService().shutdown()} followed by {@code getExecutorService().awaitTermination()} prior to
+     * calling this method.
      */
     @Override
     public void shutdown() {

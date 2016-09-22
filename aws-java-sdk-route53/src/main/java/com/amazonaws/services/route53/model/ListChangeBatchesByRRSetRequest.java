@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for a ListChangeBatchesByRRSet request.
  * </p>
  */
-public class ListChangeBatchesByRRSetRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListChangeBatchesByRRSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -107,8 +103,7 @@ public class ListChangeBatchesByRRSetRequest extends
      * 
      * @param hostedZoneId
      *        The ID of the hosted zone that you want to see changes for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByRRSetRequest withHostedZoneId(String hostedZoneId) {
@@ -148,8 +143,7 @@ public class ListChangeBatchesByRRSetRequest extends
      * 
      * @param name
      *        The name of the RRSet that you want to see changes for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByRRSetRequest withName(String name) {
@@ -191,8 +185,7 @@ public class ListChangeBatchesByRRSetRequest extends
      * 
      * @param type
      *        The type of the RRSet that you want to see changes for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
 
@@ -222,8 +215,7 @@ public class ListChangeBatchesByRRSetRequest extends
      * 
      * @param type
      *        The type of the RRSet that you want to see changes for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
 
@@ -264,12 +256,10 @@ public class ListChangeBatchesByRRSetRequest extends
      * 
      * @param setIdentifier
      *        The identifier of the RRSet that you want to see changes for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListChangeBatchesByRRSetRequest withSetIdentifier(
-            String setIdentifier) {
+    public ListChangeBatchesByRRSetRequest withSetIdentifier(String setIdentifier) {
         setSetIdentifier(setIdentifier);
         return this;
     }
@@ -306,8 +296,7 @@ public class ListChangeBatchesByRRSetRequest extends
      * 
      * @param startDate
      *        The start of the time period you want to see changes for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByRRSetRequest withStartDate(String startDate) {
@@ -347,8 +336,7 @@ public class ListChangeBatchesByRRSetRequest extends
      * 
      * @param endDate
      *        The end of the time period you want to see changes for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByRRSetRequest withEndDate(String endDate) {
@@ -388,8 +376,7 @@ public class ListChangeBatchesByRRSetRequest extends
      * 
      * @param maxItems
      *        The maximum number of items on a page.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByRRSetRequest withMaxItems(String maxItems) {
@@ -429,8 +416,7 @@ public class ListChangeBatchesByRRSetRequest extends
      * 
      * @param marker
      *        The page marker.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeBatchesByRRSetRequest withMarker(String marker) {
@@ -439,8 +425,7 @@ public class ListChangeBatchesByRRSetRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -482,43 +467,35 @@ public class ListChangeBatchesByRRSetRequest extends
         ListChangeBatchesByRRSetRequest other = (ListChangeBatchesByRRSetRequest) obj;
         if (other.getHostedZoneId() == null ^ this.getHostedZoneId() == null)
             return false;
-        if (other.getHostedZoneId() != null
-                && other.getHostedZoneId().equals(this.getHostedZoneId()) == false)
+        if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getSetIdentifier() == null ^ this.getSetIdentifier() == null)
             return false;
-        if (other.getSetIdentifier() != null
-                && other.getSetIdentifier().equals(this.getSetIdentifier()) == false)
+        if (other.getSetIdentifier() != null && other.getSetIdentifier().equals(this.getSetIdentifier()) == false)
             return false;
         if (other.getStartDate() == null ^ this.getStartDate() == null)
             return false;
-        if (other.getStartDate() != null
-                && other.getStartDate().equals(this.getStartDate()) == false)
+        if (other.getStartDate() != null && other.getStartDate().equals(this.getStartDate()) == false)
             return false;
         if (other.getEndDate() == null ^ this.getEndDate() == null)
             return false;
-        if (other.getEndDate() != null
-                && other.getEndDate().equals(this.getEndDate()) == false)
+        if (other.getEndDate() != null && other.getEndDate().equals(this.getEndDate()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -528,26 +505,14 @@ public class ListChangeBatchesByRRSetRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getHostedZoneId() == null) ? 0 : getHostedZoneId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSetIdentifier() == null) ? 0 : getSetIdentifier()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getSetIdentifier() == null) ? 0 : getSetIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
+        hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to create a new streaming distribution with tags.
  */
-public class CreateStreamingDistributionWithTagsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateStreamingDistributionWithTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /** The streaming distribution's configuration information. */
     private StreamingDistributionConfigWithTags streamingDistributionConfigWithTags;
@@ -34,8 +30,7 @@ public class CreateStreamingDistributionWithTagsRequest extends
      *        The streaming distribution's configuration information.
      */
 
-    public void setStreamingDistributionConfigWithTags(
-            StreamingDistributionConfigWithTags streamingDistributionConfigWithTags) {
+    public void setStreamingDistributionConfigWithTags(StreamingDistributionConfigWithTags streamingDistributionConfigWithTags) {
         this.streamingDistributionConfigWithTags = streamingDistributionConfigWithTags;
     }
 
@@ -54,8 +49,7 @@ public class CreateStreamingDistributionWithTagsRequest extends
      * 
      * @param streamingDistributionConfigWithTags
      *        The streaming distribution's configuration information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateStreamingDistributionWithTagsRequest withStreamingDistributionConfigWithTags(
@@ -65,8 +59,7 @@ public class CreateStreamingDistributionWithTagsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -77,8 +70,7 @@ public class CreateStreamingDistributionWithTagsRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamingDistributionConfigWithTags() != null)
-            sb.append("StreamingDistributionConfigWithTags: "
-                    + getStreamingDistributionConfigWithTags());
+            sb.append("StreamingDistributionConfigWithTags: " + getStreamingDistributionConfigWithTags());
         sb.append("}");
         return sb.toString();
     }
@@ -93,12 +85,10 @@ public class CreateStreamingDistributionWithTagsRequest extends
         if (obj instanceof CreateStreamingDistributionWithTagsRequest == false)
             return false;
         CreateStreamingDistributionWithTagsRequest other = (CreateStreamingDistributionWithTagsRequest) obj;
-        if (other.getStreamingDistributionConfigWithTags() == null
-                ^ this.getStreamingDistributionConfigWithTags() == null)
+        if (other.getStreamingDistributionConfigWithTags() == null ^ this.getStreamingDistributionConfigWithTags() == null)
             return false;
         if (other.getStreamingDistributionConfigWithTags() != null
-                && other.getStreamingDistributionConfigWithTags().equals(
-                        this.getStreamingDistributionConfigWithTags()) == false)
+                && other.getStreamingDistributionConfigWithTags().equals(this.getStreamingDistributionConfigWithTags()) == false)
             return false;
         return true;
     }
@@ -108,10 +98,7 @@ public class CreateStreamingDistributionWithTagsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getStreamingDistributionConfigWithTags() == null) ? 0
-                        : getStreamingDistributionConfigWithTags().hashCode());
+        hashCode = prime * hashCode + ((getStreamingDistributionConfigWithTags() == null) ? 0 : getStreamingDistributionConfigWithTags().hashCode());
         return hashCode;
     }
 

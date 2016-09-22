@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DescribeLoggingStatusRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeLoggingStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -43,8 +39,7 @@ public class DescribeLoggingStatusRequest extends
      * </p>
      * 
      * @param clusterIdentifier
-     *        The identifier of the cluster from which to get the logging
-     *        status.</p>
+     *        The identifier of the cluster from which to get the logging status.</p>
      *        <p>
      *        Example: <code>examplecluster</code>
      */
@@ -61,8 +56,7 @@ public class DescribeLoggingStatusRequest extends
      * Example: <code>examplecluster</code>
      * </p>
      * 
-     * @return The identifier of the cluster from which to get the logging
-     *         status.</p>
+     * @return The identifier of the cluster from which to get the logging status.</p>
      *         <p>
      *         Example: <code>examplecluster</code>
      */
@@ -80,23 +74,19 @@ public class DescribeLoggingStatusRequest extends
      * </p>
      * 
      * @param clusterIdentifier
-     *        The identifier of the cluster from which to get the logging
-     *        status.</p>
+     *        The identifier of the cluster from which to get the logging status.</p>
      *        <p>
      *        Example: <code>examplecluster</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLoggingStatusRequest withClusterIdentifier(
-            String clusterIdentifier) {
+    public DescribeLoggingStatusRequest withClusterIdentifier(String clusterIdentifier) {
         setClusterIdentifier(clusterIdentifier);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -122,12 +112,9 @@ public class DescribeLoggingStatusRequest extends
         if (obj instanceof DescribeLoggingStatusRequest == false)
             return false;
         DescribeLoggingStatusRequest other = (DescribeLoggingStatusRequest) obj;
-        if (other.getClusterIdentifier() == null
-                ^ this.getClusterIdentifier() == null)
+        if (other.getClusterIdentifier() == null ^ this.getClusterIdentifier() == null)
             return false;
-        if (other.getClusterIdentifier() != null
-                && other.getClusterIdentifier().equals(
-                        this.getClusterIdentifier()) == false)
+        if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false)
             return false;
         return true;
     }
@@ -137,10 +124,7 @@ public class DescribeLoggingStatusRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getClusterIdentifier() == null) ? 0
-                        : getClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
         return hashCode;
     }
 

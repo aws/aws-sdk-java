@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ChangeSetSummary StAX Unmarshaller
  */
-public class ChangeSetSummaryStaxUnmarshaller implements
-        Unmarshaller<ChangeSetSummary, StaxUnmarshallerContext> {
+public class ChangeSetSummaryStaxUnmarshaller implements Unmarshaller<ChangeSetSummary, StaxUnmarshallerContext> {
 
-    public ChangeSetSummary unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public ChangeSetSummary unmarshall(StaxUnmarshallerContext context) throws Exception {
         ChangeSetSummary changeSetSummary = new ChangeSetSummary();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,56 +46,47 @@ public class ChangeSetSummaryStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("StackId", targetDepth)) {
-                    changeSetSummary.setStackId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    changeSetSummary.setStackId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("StackName", targetDepth)) {
-                    changeSetSummary.setStackName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    changeSetSummary.setStackName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ChangeSetId", targetDepth)) {
-                    changeSetSummary.setChangeSetId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    changeSetSummary.setChangeSetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ChangeSetName", targetDepth)) {
-                    changeSetSummary.setChangeSetName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    changeSetSummary.setChangeSetName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ExecutionStatus", targetDepth)) {
-                    changeSetSummary.setExecutionStatus(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    changeSetSummary.setExecutionStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Status", targetDepth)) {
-                    changeSetSummary.setStatus(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    changeSetSummary.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("StatusReason", targetDepth)) {
-                    changeSetSummary.setStatusReason(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    changeSetSummary.setStatusReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("CreationTime", targetDepth)) {
-                    changeSetSummary.setCreationTime(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    changeSetSummary.setCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Description", targetDepth)) {
-                    changeSetSummary.setDescription(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    changeSetSummary.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -21,26 +19,22 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeElasticLoadBalancers</code> request.
  * </p>
  */
-public class DescribeElasticLoadBalancersResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeElasticLoadBalancersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code>ElasticLoadBalancer</code> objects that describe the
-     * specified Elastic Load Balancing instances.
+     * A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ElasticLoadBalancer> elasticLoadBalancers;
 
     /**
      * <p>
-     * A list of <code>ElasticLoadBalancer</code> objects that describe the
-     * specified Elastic Load Balancing instances.
+     * A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.
      * </p>
      * 
-     * @return A list of <code>ElasticLoadBalancer</code> objects that describe
-     *         the specified Elastic Load Balancing instances.
+     * @return A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing
+     *         instances.
      */
 
     public java.util.List<ElasticLoadBalancer> getElasticLoadBalancers() {
@@ -52,50 +46,42 @@ public class DescribeElasticLoadBalancersResult extends
 
     /**
      * <p>
-     * A list of <code>ElasticLoadBalancer</code> objects that describe the
-     * specified Elastic Load Balancing instances.
+     * A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.
      * </p>
      * 
      * @param elasticLoadBalancers
-     *        A list of <code>ElasticLoadBalancer</code> objects that describe
-     *        the specified Elastic Load Balancing instances.
+     *        A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing
+     *        instances.
      */
 
-    public void setElasticLoadBalancers(
-            java.util.Collection<ElasticLoadBalancer> elasticLoadBalancers) {
+    public void setElasticLoadBalancers(java.util.Collection<ElasticLoadBalancer> elasticLoadBalancers) {
         if (elasticLoadBalancers == null) {
             this.elasticLoadBalancers = null;
             return;
         }
 
-        this.elasticLoadBalancers = new com.amazonaws.internal.SdkInternalList<ElasticLoadBalancer>(
-                elasticLoadBalancers);
+        this.elasticLoadBalancers = new com.amazonaws.internal.SdkInternalList<ElasticLoadBalancer>(elasticLoadBalancers);
     }
 
     /**
      * <p>
-     * A list of <code>ElasticLoadBalancer</code> objects that describe the
-     * specified Elastic Load Balancing instances.
+     * A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setElasticLoadBalancers(java.util.Collection)} or
-     * {@link #withElasticLoadBalancers(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setElasticLoadBalancers(java.util.Collection)} or {@link #withElasticLoadBalancers(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param elasticLoadBalancers
-     *        A list of <code>ElasticLoadBalancer</code> objects that describe
-     *        the specified Elastic Load Balancing instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing
+     *        instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeElasticLoadBalancersResult withElasticLoadBalancers(
-            ElasticLoadBalancer... elasticLoadBalancers) {
+    public DescribeElasticLoadBalancersResult withElasticLoadBalancers(ElasticLoadBalancer... elasticLoadBalancers) {
         if (this.elasticLoadBalancers == null) {
-            setElasticLoadBalancers(new com.amazonaws.internal.SdkInternalList<ElasticLoadBalancer>(
-                    elasticLoadBalancers.length));
+            setElasticLoadBalancers(new com.amazonaws.internal.SdkInternalList<ElasticLoadBalancer>(elasticLoadBalancers.length));
         }
         for (ElasticLoadBalancer ele : elasticLoadBalancers) {
             this.elasticLoadBalancers.add(ele);
@@ -105,26 +91,22 @@ public class DescribeElasticLoadBalancersResult extends
 
     /**
      * <p>
-     * A list of <code>ElasticLoadBalancer</code> objects that describe the
-     * specified Elastic Load Balancing instances.
+     * A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.
      * </p>
      * 
      * @param elasticLoadBalancers
-     *        A list of <code>ElasticLoadBalancer</code> objects that describe
-     *        the specified Elastic Load Balancing instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing
+     *        instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeElasticLoadBalancersResult withElasticLoadBalancers(
-            java.util.Collection<ElasticLoadBalancer> elasticLoadBalancers) {
+    public DescribeElasticLoadBalancersResult withElasticLoadBalancers(java.util.Collection<ElasticLoadBalancer> elasticLoadBalancers) {
         setElasticLoadBalancers(elasticLoadBalancers);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -150,12 +132,9 @@ public class DescribeElasticLoadBalancersResult extends
         if (obj instanceof DescribeElasticLoadBalancersResult == false)
             return false;
         DescribeElasticLoadBalancersResult other = (DescribeElasticLoadBalancersResult) obj;
-        if (other.getElasticLoadBalancers() == null
-                ^ this.getElasticLoadBalancers() == null)
+        if (other.getElasticLoadBalancers() == null ^ this.getElasticLoadBalancers() == null)
             return false;
-        if (other.getElasticLoadBalancers() != null
-                && other.getElasticLoadBalancers().equals(
-                        this.getElasticLoadBalancers()) == false)
+        if (other.getElasticLoadBalancers() != null && other.getElasticLoadBalancers().equals(this.getElasticLoadBalancers()) == false)
             return false;
         return true;
     }
@@ -165,10 +144,7 @@ public class DescribeElasticLoadBalancersResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getElasticLoadBalancers() == null) ? 0
-                        : getElasticLoadBalancers().hashCode());
+        hashCode = prime * hashCode + ((getElasticLoadBalancers() == null) ? 0 : getElasticLoadBalancers().hashCode());
         return hashCode;
     }
 
@@ -177,9 +153,7 @@ public class DescribeElasticLoadBalancersResult extends
         try {
             return (DescribeElasticLoadBalancersResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

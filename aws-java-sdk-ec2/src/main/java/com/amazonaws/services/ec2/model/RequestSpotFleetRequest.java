@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,9 +22,7 @@ import com.amazonaws.services.ec2.model.transform.RequestSpotFleetRequestMarshal
  * Contains the parameters for RequestSpotFleet.
  * </p>
  */
-public class RequestSpotFleetRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable,
-        DryRunSupportedRequest<RequestSpotFleetRequest> {
+public class RequestSpotFleetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<RequestSpotFleetRequest> {
 
     /**
      * <p>
@@ -44,8 +40,7 @@ public class RequestSpotFleetRequest extends AmazonWebServiceRequest implements
      *        The configuration for the Spot fleet request.
      */
 
-    public void setSpotFleetRequestConfig(
-            SpotFleetRequestConfigData spotFleetRequestConfig) {
+    public void setSpotFleetRequestConfig(SpotFleetRequestConfigData spotFleetRequestConfig) {
         this.spotFleetRequestConfig = spotFleetRequestConfig;
     }
 
@@ -68,32 +63,27 @@ public class RequestSpotFleetRequest extends AmazonWebServiceRequest implements
      * 
      * @param spotFleetRequestConfig
      *        The configuration for the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RequestSpotFleetRequest withSpotFleetRequestConfig(
-            SpotFleetRequestConfigData spotFleetRequestConfig) {
+    public RequestSpotFleetRequest withSpotFleetRequestConfig(SpotFleetRequestConfigData spotFleetRequestConfig) {
         setSpotFleetRequestConfig(spotFleetRequestConfig);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<RequestSpotFleetRequest> getDryRunRequest() {
-        Request<RequestSpotFleetRequest> request = new RequestSpotFleetRequestMarshaller()
-                .marshall(this);
+        Request<RequestSpotFleetRequest> request = new RequestSpotFleetRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -119,12 +109,9 @@ public class RequestSpotFleetRequest extends AmazonWebServiceRequest implements
         if (obj instanceof RequestSpotFleetRequest == false)
             return false;
         RequestSpotFleetRequest other = (RequestSpotFleetRequest) obj;
-        if (other.getSpotFleetRequestConfig() == null
-                ^ this.getSpotFleetRequestConfig() == null)
+        if (other.getSpotFleetRequestConfig() == null ^ this.getSpotFleetRequestConfig() == null)
             return false;
-        if (other.getSpotFleetRequestConfig() != null
-                && other.getSpotFleetRequestConfig().equals(
-                        this.getSpotFleetRequestConfig()) == false)
+        if (other.getSpotFleetRequestConfig() != null && other.getSpotFleetRequestConfig().equals(this.getSpotFleetRequestConfig()) == false)
             return false;
         return true;
     }
@@ -134,10 +121,7 @@ public class RequestSpotFleetRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSpotFleetRequestConfig() == null) ? 0
-                        : getSpotFleetRequestConfig().hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestConfig() == null) ? 0 : getSpotFleetRequestConfig().hashCode());
         return hashCode;
     }
 

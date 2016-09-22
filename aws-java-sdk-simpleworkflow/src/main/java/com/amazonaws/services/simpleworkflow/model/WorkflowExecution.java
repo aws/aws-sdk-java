@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
 
@@ -42,8 +40,7 @@ public class WorkflowExecution implements Serializable, Cloneable {
      * </p>
      * 
      * @param workflowId
-     *        The user defined identifier associated with the workflow
-     *        execution.
+     *        The user defined identifier associated with the workflow execution.
      */
 
     public void setWorkflowId(String workflowId) {
@@ -55,8 +52,7 @@ public class WorkflowExecution implements Serializable, Cloneable {
      * The user defined identifier associated with the workflow execution.
      * </p>
      * 
-     * @return The user defined identifier associated with the workflow
-     *         execution.
+     * @return The user defined identifier associated with the workflow execution.
      */
 
     public String getWorkflowId() {
@@ -69,10 +65,8 @@ public class WorkflowExecution implements Serializable, Cloneable {
      * </p>
      * 
      * @param workflowId
-     *        The user defined identifier associated with the workflow
-     *        execution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user defined identifier associated with the workflow execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkflowExecution withWorkflowId(String workflowId) {
@@ -112,8 +106,7 @@ public class WorkflowExecution implements Serializable, Cloneable {
      * 
      * @param runId
      *        A system-generated unique identifier for the workflow execution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkflowExecution withRunId(String runId) {
@@ -122,8 +115,7 @@ public class WorkflowExecution implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -153,13 +145,11 @@ public class WorkflowExecution implements Serializable, Cloneable {
         WorkflowExecution other = (WorkflowExecution) obj;
         if (other.getWorkflowId() == null ^ this.getWorkflowId() == null)
             return false;
-        if (other.getWorkflowId() != null
-                && other.getWorkflowId().equals(this.getWorkflowId()) == false)
+        if (other.getWorkflowId() != null && other.getWorkflowId().equals(this.getWorkflowId()) == false)
             return false;
         if (other.getRunId() == null ^ this.getRunId() == null)
             return false;
-        if (other.getRunId() != null
-                && other.getRunId().equals(this.getRunId()) == false)
+        if (other.getRunId() != null && other.getRunId().equals(this.getRunId()) == false)
             return false;
         return true;
     }
@@ -169,10 +159,8 @@ public class WorkflowExecution implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getWorkflowId() == null) ? 0 : getWorkflowId().hashCode());
-        hashCode = prime * hashCode
-                + ((getRunId() == null) ? 0 : getRunId().hashCode());
+        hashCode = prime * hashCode + ((getWorkflowId() == null) ? 0 : getWorkflowId().hashCode());
+        hashCode = prime * hashCode + ((getRunId() == null) ? 0 : getRunId().hashCode());
         return hashCode;
     }
 
@@ -181,9 +169,7 @@ public class WorkflowExecution implements Serializable, Cloneable {
         try {
             return (WorkflowExecution) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

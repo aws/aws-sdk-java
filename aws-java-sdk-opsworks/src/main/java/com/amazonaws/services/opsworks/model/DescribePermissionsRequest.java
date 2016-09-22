@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -20,15 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribePermissionsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribePermissionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user's IAM ARN. For more information about IAM ARNs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >Using Identifiers</a>.
+     * The user's IAM ARN. For more information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      */
     private String iamUserArn;
@@ -41,16 +36,13 @@ public class DescribePermissionsRequest extends
 
     /**
      * <p>
-     * The user's IAM ARN. For more information about IAM ARNs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >Using Identifiers</a>.
+     * The user's IAM ARN. For more information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param iamUserArn
      *        The user's IAM ARN. For more information about IAM ARNs, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >Using Identifiers</a>.
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
     public void setIamUserArn(String iamUserArn) {
@@ -59,15 +51,12 @@ public class DescribePermissionsRequest extends
 
     /**
      * <p>
-     * The user's IAM ARN. For more information about IAM ARNs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >Using Identifiers</a>.
+     * The user's IAM ARN. For more information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @return The user's IAM ARN. For more information about IAM ARNs, see <a
-     *         href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         >Using Identifiers</a>.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
     public String getIamUserArn() {
@@ -76,18 +65,14 @@ public class DescribePermissionsRequest extends
 
     /**
      * <p>
-     * The user's IAM ARN. For more information about IAM ARNs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >Using Identifiers</a>.
+     * The user's IAM ARN. For more information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param iamUserArn
      *        The user's IAM ARN. For more information about IAM ARNs, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >Using Identifiers</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribePermissionsRequest withIamUserArn(String iamUserArn) {
@@ -127,8 +112,7 @@ public class DescribePermissionsRequest extends
      * 
      * @param stackId
      *        The stack ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribePermissionsRequest withStackId(String stackId) {
@@ -137,8 +121,7 @@ public class DescribePermissionsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -168,13 +151,11 @@ public class DescribePermissionsRequest extends
         DescribePermissionsRequest other = (DescribePermissionsRequest) obj;
         if (other.getIamUserArn() == null ^ this.getIamUserArn() == null)
             return false;
-        if (other.getIamUserArn() != null
-                && other.getIamUserArn().equals(this.getIamUserArn()) == false)
+        if (other.getIamUserArn() != null && other.getIamUserArn().equals(this.getIamUserArn()) == false)
             return false;
         if (other.getStackId() == null ^ this.getStackId() == null)
             return false;
-        if (other.getStackId() != null
-                && other.getStackId().equals(this.getStackId()) == false)
+        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false)
             return false;
         return true;
     }
@@ -184,10 +165,8 @@ public class DescribePermissionsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode());
+        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
         return hashCode;
     }
 

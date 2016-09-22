@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -37,18 +35,16 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private String keyName;
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.
+     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
+     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> securityGroups;
     /**
      * <p>
-     * The user data to make available to the instances. If you are using an AWS
-     * SDK or command line tool, Base64-encoding is performed for you, and you
-     * can load the text from a file. Otherwise, you must provide Base64-encoded
-     * text.
+     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      */
     private String userData;
@@ -96,9 +92,8 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private SpotFleetMonitoring monitoring;
     /**
      * <p>
-     * The ID of the subnet in which to launch the instances. To specify
-     * multiple subnets, separate them using commas; for example,
-     * "subnet-a61dafcf, subnet-65ea5f08".
+     * The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using commas;
+     * for example, "subnet-a61dafcf, subnet-65ea5f08".
      * </p>
      */
     private String subnetId;
@@ -116,11 +111,9 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private IamInstanceProfileSpecification iamInstanceProfile;
     /**
      * <p>
-     * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS Optimized instance.
+     * Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -129,24 +122,20 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private Boolean ebsOptimized;
     /**
      * <p>
-     * The number of units provided by the specified instance type. These are
-     * the same units that you chose to set the target capacity in terms
-     * (instances or a performance characteristic such as vCPUs, memory, or
-     * I/O).
+     * The number of units provided by the specified instance type. These are the same units that you chose to set the
+     * target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).
      * </p>
      * <p>
-     * If the target capacity divided by this value is not a whole number, we
-     * round the number of instances to the next whole number. If this value is
-     * not specified, the default is 1.
+     * If the target capacity divided by this value is not a whole number, we round the number of instances to the next
+     * whole number. If this value is not specified, the default is 1.
      * </p>
      */
     private Double weightedCapacity;
     /**
      * <p>
-     * The bid price per unit hour for the specified instance type. If this
-     * value is not specified, the default is the Spot bid price specified for
-     * the fleet. To determine the bid price per unit hour, divide the Spot bid
-     * price by the value of <code>WeightedCapacity</code>.
+     * The bid price per unit hour for the specified instance type. If this value is not specified, the default is the
+     * Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by
+     * the value of <code>WeightedCapacity</code>.
      * </p>
      */
     private String spotPrice;
@@ -183,8 +172,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param imageId
      *        The ID of the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotFleetLaunchSpecification withImageId(String imageId) {
@@ -224,8 +212,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param keyName
      *        The name of the key pair.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotFleetLaunchSpecification withKeyName(String keyName) {
@@ -235,15 +222,13 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.
+     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
+     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
      * </p>
      * 
-     * @return One or more security groups. When requesting instances in a VPC,
-     *         you must specify the IDs of the security groups. When requesting
-     *         instances in EC2-Classic, you can specify the names or the IDs of
-     *         the security groups.
+     * @return One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security
+     *         groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security
+     *         groups.
      */
 
     public java.util.List<GroupIdentifier> getSecurityGroups() {
@@ -255,56 +240,46 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.
+     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
+     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
      * </p>
      * 
      * @param securityGroups
-     *        One or more security groups. When requesting instances in a VPC,
-     *        you must specify the IDs of the security groups. When requesting
-     *        instances in EC2-Classic, you can specify the names or the IDs of
-     *        the security groups.
+     *        One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security
+     *        groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security
+     *        groups.
      */
 
-    public void setSecurityGroups(
-            java.util.Collection<GroupIdentifier> securityGroups) {
+    public void setSecurityGroups(java.util.Collection<GroupIdentifier> securityGroups) {
         if (securityGroups == null) {
             this.securityGroups = null;
             return;
         }
 
-        this.securityGroups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
-                securityGroups);
+        this.securityGroups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(securityGroups);
     }
 
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.
+     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
+     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroups(java.util.Collection)} or
-     * {@link #withSecurityGroups(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param securityGroups
-     *        One or more security groups. When requesting instances in a VPC,
-     *        you must specify the IDs of the security groups. When requesting
-     *        instances in EC2-Classic, you can specify the names or the IDs of
-     *        the security groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security
+     *        groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security
+     *        groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SpotFleetLaunchSpecification withSecurityGroups(
-            GroupIdentifier... securityGroups) {
+    public SpotFleetLaunchSpecification withSecurityGroups(GroupIdentifier... securityGroups) {
         if (this.securityGroups == null) {
-            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
-                    securityGroups.length));
+            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(securityGroups.length));
         }
         for (GroupIdentifier ele : securityGroups) {
             this.securityGroups.add(ele);
@@ -314,39 +289,33 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.
+     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
+     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
      * </p>
      * 
      * @param securityGroups
-     *        One or more security groups. When requesting instances in a VPC,
-     *        you must specify the IDs of the security groups. When requesting
-     *        instances in EC2-Classic, you can specify the names or the IDs of
-     *        the security groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security
+     *        groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security
+     *        groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SpotFleetLaunchSpecification withSecurityGroups(
-            java.util.Collection<GroupIdentifier> securityGroups) {
+    public SpotFleetLaunchSpecification withSecurityGroups(java.util.Collection<GroupIdentifier> securityGroups) {
         setSecurityGroups(securityGroups);
         return this;
     }
 
     /**
      * <p>
-     * The user data to make available to the instances. If you are using an AWS
-     * SDK or command line tool, Base64-encoding is performed for you, and you
-     * can load the text from a file. Otherwise, you must provide Base64-encoded
-     * text.
+     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instances. If you are using
-     *        an AWS SDK or command line tool, Base64-encoding is performed for
-     *        you, and you can load the text from a file. Otherwise, you must
-     *        provide Base64-encoded text.
+     *        The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     *        Base64-encoded text.
      */
 
     public void setUserData(String userData) {
@@ -355,16 +324,14 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user data to make available to the instances. If you are using an AWS
-     * SDK or command line tool, Base64-encoding is performed for you, and you
-     * can load the text from a file. Otherwise, you must provide Base64-encoded
-     * text.
+     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      * 
-     * @return The user data to make available to the instances. If you are
-     *         using an AWS SDK or command line tool, Base64-encoding is
-     *         performed for you, and you can load the text from a file.
-     *         Otherwise, you must provide Base64-encoded text.
+     * @return The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     *         Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     *         Base64-encoded text.
      */
 
     public String getUserData() {
@@ -373,19 +340,16 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user data to make available to the instances. If you are using an AWS
-     * SDK or command line tool, Base64-encoding is performed for you, and you
-     * can load the text from a file. Otherwise, you must provide Base64-encoded
-     * text.
+     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instances. If you are using
-     *        an AWS SDK or command line tool, Base64-encoding is performed for
-     *        you, and you can load the text from a file. Otherwise, you must
-     *        provide Base64-encoded text.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     *        Base64-encoded text.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotFleetLaunchSpecification withUserData(String userData) {
@@ -425,8 +389,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param addressingType
      *        Deprecated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotFleetLaunchSpecification withAddressingType(String addressingType) {
@@ -468,8 +431,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
@@ -499,13 +461,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
-    public SpotFleetLaunchSpecification withInstanceType(
-            InstanceType instanceType) {
+    public SpotFleetLaunchSpecification withInstanceType(InstanceType instanceType) {
         setInstanceType(instanceType);
         return this;
     }
@@ -542,8 +502,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param placement
      *        The placement information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotFleetLaunchSpecification withPlacement(SpotPlacement placement) {
@@ -583,8 +542,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param kernelId
      *        The ID of the kernel.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotFleetLaunchSpecification withKernelId(String kernelId) {
@@ -624,8 +582,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param ramdiskId
      *        The ID of the RAM disk.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotFleetLaunchSpecification withRamdiskId(String ramdiskId) {
@@ -657,15 +614,13 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *        One or more block device mapping entries.
      */
 
-    public void setBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
             return;
         }
 
-        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                blockDeviceMappings);
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings);
     }
 
     /**
@@ -673,23 +628,19 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * One or more block device mapping entries.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
-     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param blockDeviceMappings
      *        One or more block device mapping entries.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SpotFleetLaunchSpecification withBlockDeviceMappings(
-            BlockDeviceMapping... blockDeviceMappings) {
+    public SpotFleetLaunchSpecification withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
-            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                    blockDeviceMappings.length));
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings.length));
         }
         for (BlockDeviceMapping ele : blockDeviceMappings) {
             this.blockDeviceMappings.add(ele);
@@ -704,12 +655,10 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param blockDeviceMappings
      *        One or more block device mapping entries.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SpotFleetLaunchSpecification withBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public SpotFleetLaunchSpecification withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
         return this;
     }
@@ -746,27 +695,23 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param monitoring
      *        Enable or disable monitoring for the instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SpotFleetLaunchSpecification withMonitoring(
-            SpotFleetMonitoring monitoring) {
+    public SpotFleetLaunchSpecification withMonitoring(SpotFleetMonitoring monitoring) {
         setMonitoring(monitoring);
         return this;
     }
 
     /**
      * <p>
-     * The ID of the subnet in which to launch the instances. To specify
-     * multiple subnets, separate them using commas; for example,
-     * "subnet-a61dafcf, subnet-65ea5f08".
+     * The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using commas;
+     * for example, "subnet-a61dafcf, subnet-65ea5f08".
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet in which to launch the instances. To specify
-     *        multiple subnets, separate them using commas; for example,
-     *        "subnet-a61dafcf, subnet-65ea5f08".
+     *        The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using
+     *        commas; for example, "subnet-a61dafcf, subnet-65ea5f08".
      */
 
     public void setSubnetId(String subnetId) {
@@ -775,14 +720,12 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the subnet in which to launch the instances. To specify
-     * multiple subnets, separate them using commas; for example,
-     * "subnet-a61dafcf, subnet-65ea5f08".
+     * The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using commas;
+     * for example, "subnet-a61dafcf, subnet-65ea5f08".
      * </p>
      * 
-     * @return The ID of the subnet in which to launch the instances. To specify
-     *         multiple subnets, separate them using commas; for example,
-     *         "subnet-a61dafcf, subnet-65ea5f08".
+     * @return The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using
+     *         commas; for example, "subnet-a61dafcf, subnet-65ea5f08".
      */
 
     public String getSubnetId() {
@@ -791,17 +734,14 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the subnet in which to launch the instances. To specify
-     * multiple subnets, separate them using commas; for example,
-     * "subnet-a61dafcf, subnet-65ea5f08".
+     * The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using commas;
+     * for example, "subnet-a61dafcf, subnet-65ea5f08".
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet in which to launch the instances. To specify
-     *        multiple subnets, separate them using commas; for example,
-     *        "subnet-a61dafcf, subnet-65ea5f08".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using
+     *        commas; for example, "subnet-a61dafcf, subnet-65ea5f08".
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotFleetLaunchSpecification withSubnetId(String subnetId) {
@@ -833,15 +773,13 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *        One or more network interfaces.
      */
 
-    public void setNetworkInterfaces(
-            java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+    public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         if (networkInterfaces == null) {
             this.networkInterfaces = null;
             return;
         }
 
-        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(
-                networkInterfaces);
+        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces);
     }
 
     /**
@@ -849,23 +787,19 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * One or more network interfaces.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNetworkInterfaces(java.util.Collection)} or
-     * {@link #withNetworkInterfaces(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param networkInterfaces
      *        One or more network interfaces.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SpotFleetLaunchSpecification withNetworkInterfaces(
-            InstanceNetworkInterfaceSpecification... networkInterfaces) {
+    public SpotFleetLaunchSpecification withNetworkInterfaces(InstanceNetworkInterfaceSpecification... networkInterfaces) {
         if (this.networkInterfaces == null) {
-            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(
-                    networkInterfaces.length));
+            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces.length));
         }
         for (InstanceNetworkInterfaceSpecification ele : networkInterfaces) {
             this.networkInterfaces.add(ele);
@@ -880,12 +814,10 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param networkInterfaces
      *        One or more network interfaces.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SpotFleetLaunchSpecification withNetworkInterfaces(
-            java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+    public SpotFleetLaunchSpecification withNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         setNetworkInterfaces(networkInterfaces);
         return this;
     }
@@ -899,8 +831,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *        The IAM instance profile.
      */
 
-    public void setIamInstanceProfile(
-            IamInstanceProfileSpecification iamInstanceProfile) {
+    public void setIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
     }
 
@@ -923,35 +854,29 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param iamInstanceProfile
      *        The IAM instance profile.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SpotFleetLaunchSpecification withIamInstanceProfile(
-            IamInstanceProfileSpecification iamInstanceProfile) {
+    public SpotFleetLaunchSpecification withIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
         setIamInstanceProfile(iamInstanceProfile);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS Optimized instance.
+     * Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instances are optimized for EBS I/O. This
-     *        optimization provides dedicated throughput to Amazon EBS and an
-     *        optimized configuration stack to provide optimal EBS I/O
-     *        performance. This optimization isn't available with all instance
-     *        types. Additional usage charges apply when using an EBS Optimized
-     *        instance.</p>
+     *        Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput
+     *        to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
+     *        optimization isn't available with all instance types. Additional usage charges apply when using an EBS
+     *        Optimized instance.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -962,22 +887,18 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS Optimized instance.
+     * Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the instances are optimized for EBS I/O. This
-     *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal EBS I/O
-     *         performance. This optimization isn't available with all instance
-     *         types. Additional usage charges apply when using an EBS Optimized
-     *         instance.</p>
+     * @return Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated
+     *         throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance.
+     *         This optimization isn't available with all instance types. Additional usage charges apply when using an
+     *         EBS Optimized instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -988,27 +909,22 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS Optimized instance.
+     * Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instances are optimized for EBS I/O. This
-     *        optimization provides dedicated throughput to Amazon EBS and an
-     *        optimized configuration stack to provide optimal EBS I/O
-     *        performance. This optimization isn't available with all instance
-     *        types. Additional usage charges apply when using an EBS Optimized
-     *        instance.</p>
+     *        Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput
+     *        to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
+     *        optimization isn't available with all instance types. Additional usage charges apply when using an EBS
+     *        Optimized instance.</p>
      *        <p>
      *        Default: <code>false</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotFleetLaunchSpecification withEbsOptimized(Boolean ebsOptimized) {
@@ -1018,22 +934,18 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS Optimized instance.
+     * Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the instances are optimized for EBS I/O. This
-     *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal EBS I/O
-     *         performance. This optimization isn't available with all instance
-     *         types. Additional usage charges apply when using an EBS Optimized
-     *         instance.</p>
+     * @return Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated
+     *         throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance.
+     *         This optimization isn't available with all instance types. Additional usage charges apply when using an
+     *         EBS Optimized instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -1044,26 +956,21 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of units provided by the specified instance type. These are
-     * the same units that you chose to set the target capacity in terms
-     * (instances or a performance characteristic such as vCPUs, memory, or
-     * I/O).
+     * The number of units provided by the specified instance type. These are the same units that you chose to set the
+     * target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).
      * </p>
      * <p>
-     * If the target capacity divided by this value is not a whole number, we
-     * round the number of instances to the next whole number. If this value is
-     * not specified, the default is 1.
+     * If the target capacity divided by this value is not a whole number, we round the number of instances to the next
+     * whole number. If this value is not specified, the default is 1.
      * </p>
      * 
      * @param weightedCapacity
-     *        The number of units provided by the specified instance type. These
-     *        are the same units that you chose to set the target capacity in
-     *        terms (instances or a performance characteristic such as vCPUs,
-     *        memory, or I/O).</p>
+     *        The number of units provided by the specified instance type. These are the same units that you chose to
+     *        set the target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or
+     *        I/O).</p>
      *        <p>
-     *        If the target capacity divided by this value is not a whole
-     *        number, we round the number of instances to the next whole number.
-     *        If this value is not specified, the default is 1.
+     *        If the target capacity divided by this value is not a whole number, we round the number of instances to
+     *        the next whole number. If this value is not specified, the default is 1.
      */
 
     public void setWeightedCapacity(Double weightedCapacity) {
@@ -1072,25 +979,20 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of units provided by the specified instance type. These are
-     * the same units that you chose to set the target capacity in terms
-     * (instances or a performance characteristic such as vCPUs, memory, or
-     * I/O).
+     * The number of units provided by the specified instance type. These are the same units that you chose to set the
+     * target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).
      * </p>
      * <p>
-     * If the target capacity divided by this value is not a whole number, we
-     * round the number of instances to the next whole number. If this value is
-     * not specified, the default is 1.
+     * If the target capacity divided by this value is not a whole number, we round the number of instances to the next
+     * whole number. If this value is not specified, the default is 1.
      * </p>
      * 
-     * @return The number of units provided by the specified instance type.
-     *         These are the same units that you chose to set the target
-     *         capacity in terms (instances or a performance characteristic such
-     *         as vCPUs, memory, or I/O).</p>
+     * @return The number of units provided by the specified instance type. These are the same units that you chose to
+     *         set the target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or
+     *         I/O).</p>
      *         <p>
-     *         If the target capacity divided by this value is not a whole
-     *         number, we round the number of instances to the next whole
-     *         number. If this value is not specified, the default is 1.
+     *         If the target capacity divided by this value is not a whole number, we round the number of instances to
+     *         the next whole number. If this value is not specified, the default is 1.
      */
 
     public Double getWeightedCapacity() {
@@ -1099,50 +1001,40 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of units provided by the specified instance type. These are
-     * the same units that you chose to set the target capacity in terms
-     * (instances or a performance characteristic such as vCPUs, memory, or
-     * I/O).
+     * The number of units provided by the specified instance type. These are the same units that you chose to set the
+     * target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).
      * </p>
      * <p>
-     * If the target capacity divided by this value is not a whole number, we
-     * round the number of instances to the next whole number. If this value is
-     * not specified, the default is 1.
+     * If the target capacity divided by this value is not a whole number, we round the number of instances to the next
+     * whole number. If this value is not specified, the default is 1.
      * </p>
      * 
      * @param weightedCapacity
-     *        The number of units provided by the specified instance type. These
-     *        are the same units that you chose to set the target capacity in
-     *        terms (instances or a performance characteristic such as vCPUs,
-     *        memory, or I/O).</p>
+     *        The number of units provided by the specified instance type. These are the same units that you chose to
+     *        set the target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or
+     *        I/O).</p>
      *        <p>
-     *        If the target capacity divided by this value is not a whole
-     *        number, we round the number of instances to the next whole number.
-     *        If this value is not specified, the default is 1.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the target capacity divided by this value is not a whole number, we round the number of instances to
+     *        the next whole number. If this value is not specified, the default is 1.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SpotFleetLaunchSpecification withWeightedCapacity(
-            Double weightedCapacity) {
+    public SpotFleetLaunchSpecification withWeightedCapacity(Double weightedCapacity) {
         setWeightedCapacity(weightedCapacity);
         return this;
     }
 
     /**
      * <p>
-     * The bid price per unit hour for the specified instance type. If this
-     * value is not specified, the default is the Spot bid price specified for
-     * the fleet. To determine the bid price per unit hour, divide the Spot bid
-     * price by the value of <code>WeightedCapacity</code>.
+     * The bid price per unit hour for the specified instance type. If this value is not specified, the default is the
+     * Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by
+     * the value of <code>WeightedCapacity</code>.
      * </p>
      * 
      * @param spotPrice
-     *        The bid price per unit hour for the specified instance type. If
-     *        this value is not specified, the default is the Spot bid price
-     *        specified for the fleet. To determine the bid price per unit hour,
-     *        divide the Spot bid price by the value of
-     *        <code>WeightedCapacity</code>.
+     *        The bid price per unit hour for the specified instance type. If this value is not specified, the default
+     *        is the Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot
+     *        bid price by the value of <code>WeightedCapacity</code>.
      */
 
     public void setSpotPrice(String spotPrice) {
@@ -1151,17 +1043,14 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bid price per unit hour for the specified instance type. If this
-     * value is not specified, the default is the Spot bid price specified for
-     * the fleet. To determine the bid price per unit hour, divide the Spot bid
-     * price by the value of <code>WeightedCapacity</code>.
+     * The bid price per unit hour for the specified instance type. If this value is not specified, the default is the
+     * Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by
+     * the value of <code>WeightedCapacity</code>.
      * </p>
      * 
-     * @return The bid price per unit hour for the specified instance type. If
-     *         this value is not specified, the default is the Spot bid price
-     *         specified for the fleet. To determine the bid price per unit
-     *         hour, divide the Spot bid price by the value of
-     *         <code>WeightedCapacity</code>.
+     * @return The bid price per unit hour for the specified instance type. If this value is not specified, the default
+     *         is the Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot
+     *         bid price by the value of <code>WeightedCapacity</code>.
      */
 
     public String getSpotPrice() {
@@ -1170,20 +1059,16 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bid price per unit hour for the specified instance type. If this
-     * value is not specified, the default is the Spot bid price specified for
-     * the fleet. To determine the bid price per unit hour, divide the Spot bid
-     * price by the value of <code>WeightedCapacity</code>.
+     * The bid price per unit hour for the specified instance type. If this value is not specified, the default is the
+     * Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by
+     * the value of <code>WeightedCapacity</code>.
      * </p>
      * 
      * @param spotPrice
-     *        The bid price per unit hour for the specified instance type. If
-     *        this value is not specified, the default is the Spot bid price
-     *        specified for the fleet. To determine the bid price per unit hour,
-     *        divide the Spot bid price by the value of
-     *        <code>WeightedCapacity</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The bid price per unit hour for the specified instance type. If this value is not specified, the default
+     *        is the Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot
+     *        bid price by the value of <code>WeightedCapacity</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotFleetLaunchSpecification withSpotPrice(String spotPrice) {
@@ -1192,8 +1077,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1253,98 +1137,71 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
         SpotFleetLaunchSpecification other = (SpotFleetLaunchSpecification) obj;
         if (other.getImageId() == null ^ this.getImageId() == null)
             return false;
-        if (other.getImageId() != null
-                && other.getImageId().equals(this.getImageId()) == false)
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
             return false;
         if (other.getKeyName() == null ^ this.getKeyName() == null)
             return false;
-        if (other.getKeyName() != null
-                && other.getKeyName().equals(this.getKeyName()) == false)
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
-        if (other.getSecurityGroups() == null
-                ^ this.getSecurityGroups() == null)
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
             return false;
-        if (other.getSecurityGroups() != null
-                && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
         if (other.getUserData() == null ^ this.getUserData() == null)
             return false;
-        if (other.getUserData() != null
-                && other.getUserData().equals(this.getUserData()) == false)
+        if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false)
             return false;
-        if (other.getAddressingType() == null
-                ^ this.getAddressingType() == null)
+        if (other.getAddressingType() == null ^ this.getAddressingType() == null)
             return false;
-        if (other.getAddressingType() != null
-                && other.getAddressingType().equals(this.getAddressingType()) == false)
+        if (other.getAddressingType() != null && other.getAddressingType().equals(this.getAddressingType()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getPlacement() == null ^ this.getPlacement() == null)
             return false;
-        if (other.getPlacement() != null
-                && other.getPlacement().equals(this.getPlacement()) == false)
+        if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false)
             return false;
         if (other.getKernelId() == null ^ this.getKernelId() == null)
             return false;
-        if (other.getKernelId() != null
-                && other.getKernelId().equals(this.getKernelId()) == false)
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
             return false;
         if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
             return false;
-        if (other.getRamdiskId() != null
-                && other.getRamdiskId().equals(this.getRamdiskId()) == false)
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
             return false;
-        if (other.getBlockDeviceMappings() == null
-                ^ this.getBlockDeviceMappings() == null)
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
             return false;
-        if (other.getBlockDeviceMappings() != null
-                && other.getBlockDeviceMappings().equals(
-                        this.getBlockDeviceMappings()) == false)
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
         if (other.getMonitoring() == null ^ this.getMonitoring() == null)
             return false;
-        if (other.getMonitoring() != null
-                && other.getMonitoring().equals(this.getMonitoring()) == false)
+        if (other.getMonitoring() != null && other.getMonitoring().equals(this.getMonitoring()) == false)
             return false;
         if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
-        if (other.getSubnetId() != null
-                && other.getSubnetId().equals(this.getSubnetId()) == false)
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
-        if (other.getNetworkInterfaces() == null
-                ^ this.getNetworkInterfaces() == null)
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
             return false;
-        if (other.getNetworkInterfaces() != null
-                && other.getNetworkInterfaces().equals(
-                        this.getNetworkInterfaces()) == false)
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
             return false;
-        if (other.getIamInstanceProfile() == null
-                ^ this.getIamInstanceProfile() == null)
+        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null)
             return false;
-        if (other.getIamInstanceProfile() != null
-                && other.getIamInstanceProfile().equals(
-                        this.getIamInstanceProfile()) == false)
+        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false)
             return false;
         if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
             return false;
-        if (other.getEbsOptimized() != null
-                && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
+        if (other.getEbsOptimized() != null && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
             return false;
-        if (other.getWeightedCapacity() == null
-                ^ this.getWeightedCapacity() == null)
+        if (other.getWeightedCapacity() == null ^ this.getWeightedCapacity() == null)
             return false;
-        if (other.getWeightedCapacity() != null
-                && other.getWeightedCapacity().equals(
-                        this.getWeightedCapacity()) == false)
+        if (other.getWeightedCapacity() != null && other.getWeightedCapacity().equals(this.getWeightedCapacity()) == false)
             return false;
         if (other.getSpotPrice() == null ^ this.getSpotPrice() == null)
             return false;
-        if (other.getSpotPrice() != null
-                && other.getSpotPrice().equals(this.getSpotPrice()) == false)
+        if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false)
             return false;
         return true;
     }
@@ -1354,56 +1211,23 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getImageId() == null) ? 0 : getImageId().hashCode());
-        hashCode = prime * hashCode
-                + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroups() == null) ? 0 : getSecurityGroups()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getUserData() == null) ? 0 : getUserData().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAddressingType() == null) ? 0 : getAddressingType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
-        hashCode = prime * hashCode
-                + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
-        hashCode = prime * hashCode
-                + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBlockDeviceMappings() == null) ? 0
-                        : getBlockDeviceMappings().hashCode());
-        hashCode = prime * hashCode
-                + ((getMonitoring() == null) ? 0 : getMonitoring().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaces() == null) ? 0
-                        : getNetworkInterfaces().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIamInstanceProfile() == null) ? 0
-                        : getIamInstanceProfile().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEbsOptimized() == null) ? 0 : getEbsOptimized()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getWeightedCapacity() == null) ? 0 : getWeightedCapacity()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
+        hashCode = prime * hashCode + ((getAddressingType() == null) ? 0 : getAddressingType().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
+        hashCode = prime * hashCode + ((getMonitoring() == null) ? 0 : getMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
+        hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
+        hashCode = prime * hashCode + ((getWeightedCapacity() == null) ? 0 : getWeightedCapacity().hashCode());
+        hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode());
         return hashCode;
     }
 
@@ -1412,9 +1236,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
         try {
             return (SpotFleetLaunchSpecification) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

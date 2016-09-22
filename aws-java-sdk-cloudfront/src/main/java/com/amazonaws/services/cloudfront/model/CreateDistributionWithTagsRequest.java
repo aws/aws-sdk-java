@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to create a new distribution with tags
  */
-public class CreateDistributionWithTagsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateDistributionWithTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /** The distribution's configuration information. */
     private DistributionConfigWithTags distributionConfigWithTags;
@@ -34,8 +30,7 @@ public class CreateDistributionWithTagsRequest extends
      *        The distribution's configuration information.
      */
 
-    public void setDistributionConfigWithTags(
-            DistributionConfigWithTags distributionConfigWithTags) {
+    public void setDistributionConfigWithTags(DistributionConfigWithTags distributionConfigWithTags) {
         this.distributionConfigWithTags = distributionConfigWithTags;
     }
 
@@ -54,19 +49,16 @@ public class CreateDistributionWithTagsRequest extends
      * 
      * @param distributionConfigWithTags
      *        The distribution's configuration information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDistributionWithTagsRequest withDistributionConfigWithTags(
-            DistributionConfigWithTags distributionConfigWithTags) {
+    public CreateDistributionWithTagsRequest withDistributionConfigWithTags(DistributionConfigWithTags distributionConfigWithTags) {
         setDistributionConfigWithTags(distributionConfigWithTags);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -77,8 +69,7 @@ public class CreateDistributionWithTagsRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDistributionConfigWithTags() != null)
-            sb.append("DistributionConfigWithTags: "
-                    + getDistributionConfigWithTags());
+            sb.append("DistributionConfigWithTags: " + getDistributionConfigWithTags());
         sb.append("}");
         return sb.toString();
     }
@@ -93,12 +84,9 @@ public class CreateDistributionWithTagsRequest extends
         if (obj instanceof CreateDistributionWithTagsRequest == false)
             return false;
         CreateDistributionWithTagsRequest other = (CreateDistributionWithTagsRequest) obj;
-        if (other.getDistributionConfigWithTags() == null
-                ^ this.getDistributionConfigWithTags() == null)
+        if (other.getDistributionConfigWithTags() == null ^ this.getDistributionConfigWithTags() == null)
             return false;
-        if (other.getDistributionConfigWithTags() != null
-                && other.getDistributionConfigWithTags().equals(
-                        this.getDistributionConfigWithTags()) == false)
+        if (other.getDistributionConfigWithTags() != null && other.getDistributionConfigWithTags().equals(this.getDistributionConfigWithTags()) == false)
             return false;
         return true;
     }
@@ -108,10 +96,7 @@ public class CreateDistributionWithTagsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDistributionConfigWithTags() == null) ? 0
-                        : getDistributionConfigWithTags().hashCode());
+        hashCode = prime * hashCode + ((getDistributionConfigWithTags() == null) ? 0 : getDistributionConfigWithTags().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -20,35 +18,31 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateAssessmentTargetRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateAssessmentTargetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-defined name that identifies the assessment target that you want
-     * to create. The name must be unique within the AWS account.
+     * The user-defined name that identifies the assessment target that you want to create. The name must be unique
+     * within the AWS account.
      * </p>
      */
     private String assessmentTargetName;
     /**
      * <p>
-     * The ARN that specifies the resource group that is used to create the
-     * assessment target.
+     * The ARN that specifies the resource group that is used to create the assessment target.
      * </p>
      */
     private String resourceGroupArn;
 
     /**
      * <p>
-     * The user-defined name that identifies the assessment target that you want
-     * to create. The name must be unique within the AWS account.
+     * The user-defined name that identifies the assessment target that you want to create. The name must be unique
+     * within the AWS account.
      * </p>
      * 
      * @param assessmentTargetName
-     *        The user-defined name that identifies the assessment target that
-     *        you want to create. The name must be unique within the AWS
-     *        account.
+     *        The user-defined name that identifies the assessment target that you want to create. The name must be
+     *        unique within the AWS account.
      */
 
     public void setAssessmentTargetName(String assessmentTargetName) {
@@ -57,13 +51,12 @@ public class CreateAssessmentTargetRequest extends
 
     /**
      * <p>
-     * The user-defined name that identifies the assessment target that you want
-     * to create. The name must be unique within the AWS account.
+     * The user-defined name that identifies the assessment target that you want to create. The name must be unique
+     * within the AWS account.
      * </p>
      * 
-     * @return The user-defined name that identifies the assessment target that
-     *         you want to create. The name must be unique within the AWS
-     *         account.
+     * @return The user-defined name that identifies the assessment target that you want to create. The name must be
+     *         unique within the AWS account.
      */
 
     public String getAssessmentTargetName() {
@@ -72,33 +65,28 @@ public class CreateAssessmentTargetRequest extends
 
     /**
      * <p>
-     * The user-defined name that identifies the assessment target that you want
-     * to create. The name must be unique within the AWS account.
+     * The user-defined name that identifies the assessment target that you want to create. The name must be unique
+     * within the AWS account.
      * </p>
      * 
      * @param assessmentTargetName
-     *        The user-defined name that identifies the assessment target that
-     *        you want to create. The name must be unique within the AWS
-     *        account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user-defined name that identifies the assessment target that you want to create. The name must be
+     *        unique within the AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateAssessmentTargetRequest withAssessmentTargetName(
-            String assessmentTargetName) {
+    public CreateAssessmentTargetRequest withAssessmentTargetName(String assessmentTargetName) {
         setAssessmentTargetName(assessmentTargetName);
         return this;
     }
 
     /**
      * <p>
-     * The ARN that specifies the resource group that is used to create the
-     * assessment target.
+     * The ARN that specifies the resource group that is used to create the assessment target.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The ARN that specifies the resource group that is used to create
-     *        the assessment target.
+     *        The ARN that specifies the resource group that is used to create the assessment target.
      */
 
     public void setResourceGroupArn(String resourceGroupArn) {
@@ -107,12 +95,10 @@ public class CreateAssessmentTargetRequest extends
 
     /**
      * <p>
-     * The ARN that specifies the resource group that is used to create the
-     * assessment target.
+     * The ARN that specifies the resource group that is used to create the assessment target.
      * </p>
      * 
-     * @return The ARN that specifies the resource group that is used to create
-     *         the assessment target.
+     * @return The ARN that specifies the resource group that is used to create the assessment target.
      */
 
     public String getResourceGroupArn() {
@@ -121,26 +107,21 @@ public class CreateAssessmentTargetRequest extends
 
     /**
      * <p>
-     * The ARN that specifies the resource group that is used to create the
-     * assessment target.
+     * The ARN that specifies the resource group that is used to create the assessment target.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The ARN that specifies the resource group that is used to create
-     *        the assessment target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN that specifies the resource group that is used to create the assessment target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateAssessmentTargetRequest withResourceGroupArn(
-            String resourceGroupArn) {
+    public CreateAssessmentTargetRequest withResourceGroupArn(String resourceGroupArn) {
         setResourceGroupArn(resourceGroupArn);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -151,8 +132,7 @@ public class CreateAssessmentTargetRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTargetName() != null)
-            sb.append("AssessmentTargetName: " + getAssessmentTargetName()
-                    + ",");
+            sb.append("AssessmentTargetName: " + getAssessmentTargetName() + ",");
         if (getResourceGroupArn() != null)
             sb.append("ResourceGroupArn: " + getResourceGroupArn());
         sb.append("}");
@@ -169,19 +149,13 @@ public class CreateAssessmentTargetRequest extends
         if (obj instanceof CreateAssessmentTargetRequest == false)
             return false;
         CreateAssessmentTargetRequest other = (CreateAssessmentTargetRequest) obj;
-        if (other.getAssessmentTargetName() == null
-                ^ this.getAssessmentTargetName() == null)
+        if (other.getAssessmentTargetName() == null ^ this.getAssessmentTargetName() == null)
             return false;
-        if (other.getAssessmentTargetName() != null
-                && other.getAssessmentTargetName().equals(
-                        this.getAssessmentTargetName()) == false)
+        if (other.getAssessmentTargetName() != null && other.getAssessmentTargetName().equals(this.getAssessmentTargetName()) == false)
             return false;
-        if (other.getResourceGroupArn() == null
-                ^ this.getResourceGroupArn() == null)
+        if (other.getResourceGroupArn() == null ^ this.getResourceGroupArn() == null)
             return false;
-        if (other.getResourceGroupArn() != null
-                && other.getResourceGroupArn().equals(
-                        this.getResourceGroupArn()) == false)
+        if (other.getResourceGroupArn() != null && other.getResourceGroupArn().equals(this.getResourceGroupArn()) == false)
             return false;
         return true;
     }
@@ -191,14 +165,8 @@ public class CreateAssessmentTargetRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAssessmentTargetName() == null) ? 0
-                        : getAssessmentTargetName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResourceGroupArn() == null) ? 0 : getResourceGroupArn()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAssessmentTargetName() == null) ? 0 : getAssessmentTargetName().hashCode());
+        hashCode = prime * hashCode + ((getResourceGroupArn() == null) ? 0 : getResourceGroupArn().hashCode());
         return hashCode;
     }
 

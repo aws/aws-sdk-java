@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model.transform;
 
@@ -34,20 +32,17 @@ public class AssessmentRunFilterJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(AssessmentRunFilter assessmentRunFilter,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(AssessmentRunFilter assessmentRunFilter, StructuredJsonGenerator jsonGenerator) {
 
         if (assessmentRunFilter == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (assessmentRunFilter.getNamePattern() != null) {
-                jsonGenerator.writeFieldName("namePattern").writeValue(
-                        assessmentRunFilter.getNamePattern());
+                jsonGenerator.writeFieldName("namePattern").writeValue(assessmentRunFilter.getNamePattern());
             }
 
             java.util.List<String> statesList = assessmentRunFilter.getStates();
@@ -63,12 +58,10 @@ public class AssessmentRunFilterJsonMarshaller {
             }
             if (assessmentRunFilter.getDurationRange() != null) {
                 jsonGenerator.writeFieldName("durationRange");
-                DurationRangeJsonMarshaller.getInstance().marshall(
-                        assessmentRunFilter.getDurationRange(), jsonGenerator);
+                DurationRangeJsonMarshaller.getInstance().marshall(assessmentRunFilter.getDurationRange(), jsonGenerator);
             }
 
-            java.util.List<String> rulesPackageArnsList = assessmentRunFilter
-                    .getRulesPackageArns();
+            java.util.List<String> rulesPackageArnsList = assessmentRunFilter.getRulesPackageArns();
             if (rulesPackageArnsList != null) {
                 jsonGenerator.writeFieldName("rulesPackageArns");
                 jsonGenerator.writeStartArray();
@@ -81,26 +74,20 @@ public class AssessmentRunFilterJsonMarshaller {
             }
             if (assessmentRunFilter.getStartTimeRange() != null) {
                 jsonGenerator.writeFieldName("startTimeRange");
-                TimestampRangeJsonMarshaller.getInstance().marshall(
-                        assessmentRunFilter.getStartTimeRange(), jsonGenerator);
+                TimestampRangeJsonMarshaller.getInstance().marshall(assessmentRunFilter.getStartTimeRange(), jsonGenerator);
             }
             if (assessmentRunFilter.getCompletionTimeRange() != null) {
                 jsonGenerator.writeFieldName("completionTimeRange");
-                TimestampRangeJsonMarshaller.getInstance().marshall(
-                        assessmentRunFilter.getCompletionTimeRange(),
-                        jsonGenerator);
+                TimestampRangeJsonMarshaller.getInstance().marshall(assessmentRunFilter.getCompletionTimeRange(), jsonGenerator);
             }
             if (assessmentRunFilter.getStateChangeTimeRange() != null) {
                 jsonGenerator.writeFieldName("stateChangeTimeRange");
-                TimestampRangeJsonMarshaller.getInstance().marshall(
-                        assessmentRunFilter.getStateChangeTimeRange(),
-                        jsonGenerator);
+                TimestampRangeJsonMarshaller.getInstance().marshall(assessmentRunFilter.getStateChangeTimeRange(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

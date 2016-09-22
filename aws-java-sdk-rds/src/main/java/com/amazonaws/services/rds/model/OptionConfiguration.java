@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -92,8 +90,7 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * 
      * @param optionName
      *        The configuration of options to include in a group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OptionConfiguration withOptionName(String optionName) {
@@ -133,8 +130,7 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * 
      * @param port
      *        The optional port for the option.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OptionConfiguration withPort(Integer port) {
@@ -174,8 +170,7 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * 
      * @param optionVersion
      *        The version for the option.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OptionConfiguration withOptionVersion(String optionVersion) {
@@ -188,8 +183,7 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * A list of DBSecurityGroupMemebrship name strings used for this option.
      * </p>
      * 
-     * @return A list of DBSecurityGroupMemebrship name strings used for this
-     *         option.
+     * @return A list of DBSecurityGroupMemebrship name strings used for this option.
      */
 
     public java.util.List<String> getDBSecurityGroupMemberships() {
@@ -205,19 +199,16 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param dBSecurityGroupMemberships
-     *        A list of DBSecurityGroupMemebrship name strings used for this
-     *        option.
+     *        A list of DBSecurityGroupMemebrship name strings used for this option.
      */
 
-    public void setDBSecurityGroupMemberships(
-            java.util.Collection<String> dBSecurityGroupMemberships) {
+    public void setDBSecurityGroupMemberships(java.util.Collection<String> dBSecurityGroupMemberships) {
         if (dBSecurityGroupMemberships == null) {
             this.dBSecurityGroupMemberships = null;
             return;
         }
 
-        this.dBSecurityGroupMemberships = new com.amazonaws.internal.SdkInternalList<String>(
-                dBSecurityGroupMemberships);
+        this.dBSecurityGroupMemberships = new com.amazonaws.internal.SdkInternalList<String>(dBSecurityGroupMemberships);
     }
 
     /**
@@ -225,24 +216,19 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * A list of DBSecurityGroupMemebrship name strings used for this option.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDBSecurityGroupMemberships(java.util.Collection)} or
-     * {@link #withDBSecurityGroupMemberships(java.util.Collection)} if you want
-     * to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDBSecurityGroupMemberships(java.util.Collection)} or
+     * {@link #withDBSecurityGroupMemberships(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param dBSecurityGroupMemberships
-     *        A list of DBSecurityGroupMemebrship name strings used for this
-     *        option.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of DBSecurityGroupMemebrship name strings used for this option.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OptionConfiguration withDBSecurityGroupMemberships(
-            String... dBSecurityGroupMemberships) {
+    public OptionConfiguration withDBSecurityGroupMemberships(String... dBSecurityGroupMemberships) {
         if (this.dBSecurityGroupMemberships == null) {
-            setDBSecurityGroupMemberships(new com.amazonaws.internal.SdkInternalList<String>(
-                    dBSecurityGroupMemberships.length));
+            setDBSecurityGroupMemberships(new com.amazonaws.internal.SdkInternalList<String>(dBSecurityGroupMemberships.length));
         }
         for (String ele : dBSecurityGroupMemberships) {
             this.dBSecurityGroupMemberships.add(ele);
@@ -256,14 +242,11 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param dBSecurityGroupMemberships
-     *        A list of DBSecurityGroupMemebrship name strings used for this
-     *        option.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of DBSecurityGroupMemebrship name strings used for this option.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OptionConfiguration withDBSecurityGroupMemberships(
-            java.util.Collection<String> dBSecurityGroupMemberships) {
+    public OptionConfiguration withDBSecurityGroupMemberships(java.util.Collection<String> dBSecurityGroupMemberships) {
         setDBSecurityGroupMemberships(dBSecurityGroupMemberships);
         return this;
     }
@@ -273,8 +256,7 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * A list of VpcSecurityGroupMemebrship name strings used for this option.
      * </p>
      * 
-     * @return A list of VpcSecurityGroupMemebrship name strings used for this
-     *         option.
+     * @return A list of VpcSecurityGroupMemebrship name strings used for this option.
      */
 
     public java.util.List<String> getVpcSecurityGroupMemberships() {
@@ -290,19 +272,16 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param vpcSecurityGroupMemberships
-     *        A list of VpcSecurityGroupMemebrship name strings used for this
-     *        option.
+     *        A list of VpcSecurityGroupMemebrship name strings used for this option.
      */
 
-    public void setVpcSecurityGroupMemberships(
-            java.util.Collection<String> vpcSecurityGroupMemberships) {
+    public void setVpcSecurityGroupMemberships(java.util.Collection<String> vpcSecurityGroupMemberships) {
         if (vpcSecurityGroupMemberships == null) {
             this.vpcSecurityGroupMemberships = null;
             return;
         }
 
-        this.vpcSecurityGroupMemberships = new com.amazonaws.internal.SdkInternalList<String>(
-                vpcSecurityGroupMemberships);
+        this.vpcSecurityGroupMemberships = new com.amazonaws.internal.SdkInternalList<String>(vpcSecurityGroupMemberships);
     }
 
     /**
@@ -310,24 +289,19 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * A list of VpcSecurityGroupMemebrship name strings used for this option.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVpcSecurityGroupMemberships(java.util.Collection)}
-     * or {@link #withVpcSecurityGroupMemberships(java.util.Collection)} if you
-     * want to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcSecurityGroupMemberships(java.util.Collection)} or
+     * {@link #withVpcSecurityGroupMemberships(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param vpcSecurityGroupMemberships
-     *        A list of VpcSecurityGroupMemebrship name strings used for this
-     *        option.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of VpcSecurityGroupMemebrship name strings used for this option.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OptionConfiguration withVpcSecurityGroupMemberships(
-            String... vpcSecurityGroupMemberships) {
+    public OptionConfiguration withVpcSecurityGroupMemberships(String... vpcSecurityGroupMemberships) {
         if (this.vpcSecurityGroupMemberships == null) {
-            setVpcSecurityGroupMemberships(new com.amazonaws.internal.SdkInternalList<String>(
-                    vpcSecurityGroupMemberships.length));
+            setVpcSecurityGroupMemberships(new com.amazonaws.internal.SdkInternalList<String>(vpcSecurityGroupMemberships.length));
         }
         for (String ele : vpcSecurityGroupMemberships) {
             this.vpcSecurityGroupMemberships.add(ele);
@@ -341,14 +315,11 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param vpcSecurityGroupMemberships
-     *        A list of VpcSecurityGroupMemebrship name strings used for this
-     *        option.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of VpcSecurityGroupMemebrship name strings used for this option.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OptionConfiguration withVpcSecurityGroupMemberships(
-            java.util.Collection<String> vpcSecurityGroupMemberships) {
+    public OptionConfiguration withVpcSecurityGroupMemberships(java.util.Collection<String> vpcSecurityGroupMemberships) {
         setVpcSecurityGroupMemberships(vpcSecurityGroupMemberships);
         return this;
     }
@@ -377,15 +348,13 @@ public class OptionConfiguration implements Serializable, Cloneable {
      *        The option settings to include in an option group.
      */
 
-    public void setOptionSettings(
-            java.util.Collection<OptionSetting> optionSettings) {
+    public void setOptionSettings(java.util.Collection<OptionSetting> optionSettings) {
         if (optionSettings == null) {
             this.optionSettings = null;
             return;
         }
 
-        this.optionSettings = new com.amazonaws.internal.SdkInternalList<OptionSetting>(
-                optionSettings);
+        this.optionSettings = new com.amazonaws.internal.SdkInternalList<OptionSetting>(optionSettings);
     }
 
     /**
@@ -393,23 +362,19 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * The option settings to include in an option group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOptionSettings(java.util.Collection)} or
-     * {@link #withOptionSettings(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOptionSettings(java.util.Collection)} or {@link #withOptionSettings(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param optionSettings
      *        The option settings to include in an option group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OptionConfiguration withOptionSettings(
-            OptionSetting... optionSettings) {
+    public OptionConfiguration withOptionSettings(OptionSetting... optionSettings) {
         if (this.optionSettings == null) {
-            setOptionSettings(new com.amazonaws.internal.SdkInternalList<OptionSetting>(
-                    optionSettings.length));
+            setOptionSettings(new com.amazonaws.internal.SdkInternalList<OptionSetting>(optionSettings.length));
         }
         for (OptionSetting ele : optionSettings) {
             this.optionSettings.add(ele);
@@ -424,19 +389,16 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * 
      * @param optionSettings
      *        The option settings to include in an option group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OptionConfiguration withOptionSettings(
-            java.util.Collection<OptionSetting> optionSettings) {
+    public OptionConfiguration withOptionSettings(java.util.Collection<OptionSetting> optionSettings) {
         setOptionSettings(optionSettings);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -453,11 +415,9 @@ public class OptionConfiguration implements Serializable, Cloneable {
         if (getOptionVersion() != null)
             sb.append("OptionVersion: " + getOptionVersion() + ",");
         if (getDBSecurityGroupMemberships() != null)
-            sb.append("DBSecurityGroupMemberships: "
-                    + getDBSecurityGroupMemberships() + ",");
+            sb.append("DBSecurityGroupMemberships: " + getDBSecurityGroupMemberships() + ",");
         if (getVpcSecurityGroupMemberships() != null)
-            sb.append("VpcSecurityGroupMemberships: "
-                    + getVpcSecurityGroupMemberships() + ",");
+            sb.append("VpcSecurityGroupMemberships: " + getVpcSecurityGroupMemberships() + ",");
         if (getOptionSettings() != null)
             sb.append("OptionSettings: " + getOptionSettings());
         sb.append("}");
@@ -476,38 +436,27 @@ public class OptionConfiguration implements Serializable, Cloneable {
         OptionConfiguration other = (OptionConfiguration) obj;
         if (other.getOptionName() == null ^ this.getOptionName() == null)
             return false;
-        if (other.getOptionName() != null
-                && other.getOptionName().equals(this.getOptionName()) == false)
+        if (other.getOptionName() != null && other.getOptionName().equals(this.getOptionName()) == false)
             return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
-        if (other.getPort() != null
-                && other.getPort().equals(this.getPort()) == false)
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
         if (other.getOptionVersion() == null ^ this.getOptionVersion() == null)
             return false;
-        if (other.getOptionVersion() != null
-                && other.getOptionVersion().equals(this.getOptionVersion()) == false)
+        if (other.getOptionVersion() != null && other.getOptionVersion().equals(this.getOptionVersion()) == false)
             return false;
-        if (other.getDBSecurityGroupMemberships() == null
-                ^ this.getDBSecurityGroupMemberships() == null)
+        if (other.getDBSecurityGroupMemberships() == null ^ this.getDBSecurityGroupMemberships() == null)
             return false;
-        if (other.getDBSecurityGroupMemberships() != null
-                && other.getDBSecurityGroupMemberships().equals(
-                        this.getDBSecurityGroupMemberships()) == false)
+        if (other.getDBSecurityGroupMemberships() != null && other.getDBSecurityGroupMemberships().equals(this.getDBSecurityGroupMemberships()) == false)
             return false;
-        if (other.getVpcSecurityGroupMemberships() == null
-                ^ this.getVpcSecurityGroupMemberships() == null)
+        if (other.getVpcSecurityGroupMemberships() == null ^ this.getVpcSecurityGroupMemberships() == null)
             return false;
-        if (other.getVpcSecurityGroupMemberships() != null
-                && other.getVpcSecurityGroupMemberships().equals(
-                        this.getVpcSecurityGroupMemberships()) == false)
+        if (other.getVpcSecurityGroupMemberships() != null && other.getVpcSecurityGroupMemberships().equals(this.getVpcSecurityGroupMemberships()) == false)
             return false;
-        if (other.getOptionSettings() == null
-                ^ this.getOptionSettings() == null)
+        if (other.getOptionSettings() == null ^ this.getOptionSettings() == null)
             return false;
-        if (other.getOptionSettings() != null
-                && other.getOptionSettings().equals(this.getOptionSettings()) == false)
+        if (other.getOptionSettings() != null && other.getOptionSettings().equals(this.getOptionSettings()) == false)
             return false;
         return true;
     }
@@ -517,26 +466,12 @@ public class OptionConfiguration implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getOptionName() == null) ? 0 : getOptionName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPort() == null) ? 0 : getPort().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOptionVersion() == null) ? 0 : getOptionVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBSecurityGroupMemberships() == null) ? 0
-                        : getDBSecurityGroupMemberships().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVpcSecurityGroupMemberships() == null) ? 0
-                        : getVpcSecurityGroupMemberships().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOptionSettings() == null) ? 0 : getOptionSettings()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getOptionName() == null) ? 0 : getOptionName().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getOptionVersion() == null) ? 0 : getOptionVersion().hashCode());
+        hashCode = prime * hashCode + ((getDBSecurityGroupMemberships() == null) ? 0 : getDBSecurityGroupMemberships().hashCode());
+        hashCode = prime * hashCode + ((getVpcSecurityGroupMemberships() == null) ? 0 : getVpcSecurityGroupMemberships().hashCode());
+        hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode());
         return hashCode;
     }
 
@@ -545,9 +480,7 @@ public class OptionConfiguration implements Serializable, Cloneable {
         try {
             return (OptionConfiguration) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

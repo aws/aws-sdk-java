@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchv2.model;
 
@@ -18,17 +16,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Options for a field that contains an array of double-precision 64-bit
- * floating point values. Present if <code>IndexFieldType</code> specifies the
- * field is of type <code>double-array</code>. All options are enabled by
+ * Options for a field that contains an array of double-precision 64-bit floating point values. Present if
+ * <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by
  * default.
  * </p>
  */
 public class DoubleArrayOptions implements Serializable, Cloneable {
 
-    /**
-     * A value to use for the field if the field isn't specified for a document.
-     */
+    /** A value to use for the field if the field isn't specified for a document. */
     private Double defaultValue;
     /**
      * <p>
@@ -59,8 +54,7 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
      * A value to use for the field if the field isn't specified for a document.
      * 
      * @param defaultValue
-     *        A value to use for the field if the field isn't specified for a
-     *        document.
+     *        A value to use for the field if the field isn't specified for a document.
      */
 
     public void setDefaultValue(Double defaultValue) {
@@ -70,8 +64,7 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
     /**
      * A value to use for the field if the field isn't specified for a document.
      * 
-     * @return A value to use for the field if the field isn't specified for a
-     *         document.
+     * @return A value to use for the field if the field isn't specified for a document.
      */
 
     public Double getDefaultValue() {
@@ -82,10 +75,8 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
      * A value to use for the field if the field isn't specified for a document.
      * 
      * @param defaultValue
-     *        A value to use for the field if the field isn't specified for a
-     *        document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value to use for the field if the field isn't specified for a document.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DoubleArrayOptions withDefaultValue(Double defaultValue) {
@@ -125,8 +116,7 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
      * 
      * @param sourceFields
      *        A list of source fields to map to the field.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DoubleArrayOptions withSourceFields(String sourceFields) {
@@ -166,8 +156,7 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
      * 
      * @param facetEnabled
      *        Whether facet information can be returned for the field.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DoubleArrayOptions withFacetEnabled(Boolean facetEnabled) {
@@ -219,8 +208,7 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
      * 
      * @param searchEnabled
      *        Whether the contents of the field are searchable.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DoubleArrayOptions withSearchEnabled(Boolean searchEnabled) {
@@ -246,8 +234,7 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
      * </p>
      * 
      * @param returnEnabled
-     *        Whether the contents of the field can be returned in the search
-     *        results.
+     *        Whether the contents of the field can be returned in the search results.
      */
 
     public void setReturnEnabled(Boolean returnEnabled) {
@@ -259,8 +246,7 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
      * Whether the contents of the field can be returned in the search results.
      * </p>
      * 
-     * @return Whether the contents of the field can be returned in the search
-     *         results.
+     * @return Whether the contents of the field can be returned in the search results.
      */
 
     public Boolean getReturnEnabled() {
@@ -273,10 +259,8 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
      * </p>
      * 
      * @param returnEnabled
-     *        Whether the contents of the field can be returned in the search
-     *        results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Whether the contents of the field can be returned in the search results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DoubleArrayOptions withReturnEnabled(Boolean returnEnabled) {
@@ -289,8 +273,7 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
      * Whether the contents of the field can be returned in the search results.
      * </p>
      * 
-     * @return Whether the contents of the field can be returned in the search
-     *         results.
+     * @return Whether the contents of the field can be returned in the search results.
      */
 
     public Boolean isReturnEnabled() {
@@ -298,8 +281,7 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -335,28 +317,23 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
         DoubleArrayOptions other = (DoubleArrayOptions) obj;
         if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
             return false;
-        if (other.getDefaultValue() != null
-                && other.getDefaultValue().equals(this.getDefaultValue()) == false)
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
             return false;
         if (other.getSourceFields() == null ^ this.getSourceFields() == null)
             return false;
-        if (other.getSourceFields() != null
-                && other.getSourceFields().equals(this.getSourceFields()) == false)
+        if (other.getSourceFields() != null && other.getSourceFields().equals(this.getSourceFields()) == false)
             return false;
         if (other.getFacetEnabled() == null ^ this.getFacetEnabled() == null)
             return false;
-        if (other.getFacetEnabled() != null
-                && other.getFacetEnabled().equals(this.getFacetEnabled()) == false)
+        if (other.getFacetEnabled() != null && other.getFacetEnabled().equals(this.getFacetEnabled()) == false)
             return false;
         if (other.getSearchEnabled() == null ^ this.getSearchEnabled() == null)
             return false;
-        if (other.getSearchEnabled() != null
-                && other.getSearchEnabled().equals(this.getSearchEnabled()) == false)
+        if (other.getSearchEnabled() != null && other.getSearchEnabled().equals(this.getSearchEnabled()) == false)
             return false;
         if (other.getReturnEnabled() == null ^ this.getReturnEnabled() == null)
             return false;
-        if (other.getReturnEnabled() != null
-                && other.getReturnEnabled().equals(this.getReturnEnabled()) == false)
+        if (other.getReturnEnabled() != null && other.getReturnEnabled().equals(this.getReturnEnabled()) == false)
             return false;
         return true;
     }
@@ -366,26 +343,11 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDefaultValue() == null) ? 0 : getDefaultValue()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceFields() == null) ? 0 : getSourceFields()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFacetEnabled() == null) ? 0 : getFacetEnabled()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSearchEnabled() == null) ? 0 : getSearchEnabled()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReturnEnabled() == null) ? 0 : getReturnEnabled()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
+        hashCode = prime * hashCode + ((getSourceFields() == null) ? 0 : getSourceFields().hashCode());
+        hashCode = prime * hashCode + ((getFacetEnabled() == null) ? 0 : getFacetEnabled().hashCode());
+        hashCode = prime * hashCode + ((getSearchEnabled() == null) ? 0 : getSearchEnabled().hashCode());
+        hashCode = prime * hashCode + ((getReturnEnabled() == null) ? 0 : getReturnEnabled().hashCode());
         return hashCode;
     }
 
@@ -394,9 +356,7 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
         try {
             return (DoubleArrayOptions) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

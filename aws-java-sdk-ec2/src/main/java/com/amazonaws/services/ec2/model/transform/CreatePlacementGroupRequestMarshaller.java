@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,32 +29,25 @@ import com.amazonaws.util.IdempotentUtils;
  * CreatePlacementGroupRequest Marshaller
  */
 
-public class CreatePlacementGroupRequestMarshaller
-        implements
-        Marshaller<Request<CreatePlacementGroupRequest>, CreatePlacementGroupRequest> {
+public class CreatePlacementGroupRequestMarshaller implements Marshaller<Request<CreatePlacementGroupRequest>, CreatePlacementGroupRequest> {
 
-    public Request<CreatePlacementGroupRequest> marshall(
-            CreatePlacementGroupRequest createPlacementGroupRequest) {
+    public Request<CreatePlacementGroupRequest> marshall(CreatePlacementGroupRequest createPlacementGroupRequest) {
 
         if (createPlacementGroupRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreatePlacementGroupRequest> request = new DefaultRequest<CreatePlacementGroupRequest>(
-                createPlacementGroupRequest, "AmazonEC2");
+        Request<CreatePlacementGroupRequest> request = new DefaultRequest<CreatePlacementGroupRequest>(createPlacementGroupRequest, "AmazonEC2");
         request.addParameter("Action", "CreatePlacementGroup");
         request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createPlacementGroupRequest.getGroupName() != null) {
-            request.addParameter("GroupName", StringUtils
-                    .fromString(createPlacementGroupRequest.getGroupName()));
+            request.addParameter("GroupName", StringUtils.fromString(createPlacementGroupRequest.getGroupName()));
         }
 
         if (createPlacementGroupRequest.getStrategy() != null) {
-            request.addParameter("Strategy", StringUtils
-                    .fromString(createPlacementGroupRequest.getStrategy()));
+            request.addParameter("Strategy", StringUtils.fromString(createPlacementGroupRequest.getStrategy()));
         }
 
         return request;

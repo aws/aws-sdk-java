@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for PutLifecycleHook.
  * </p>
  */
-public class PutLifecycleHookRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,43 +30,37 @@ public class PutLifecycleHookRequest extends
     private String lifecycleHookName;
     /**
      * <p>
-     * The name of the Auto Scaling group to which you want to assign the
-     * lifecycle hook.
+     * The name of the Auto Scaling group to which you want to assign the lifecycle hook.
      * </p>
      */
     private String autoScalingGroupName;
     /**
      * <p>
-     * The instance state to which you want to attach the lifecycle hook. For a
-     * list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.
+     * The instance state to which you want to attach the lifecycle hook. For a list of lifecycle hook types, see
+     * <a>DescribeLifecycleHookTypes</a>.
      * </p>
      * <p>
-     * This parameter is required for new lifecycle hooks, but optional when
-     * updating existing hooks.
+     * This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      */
     private String lifecycleTransition;
     /**
      * <p>
-     * The ARN of the IAM role that allows the Auto Scaling group to publish to
-     * the specified notification target.
+     * The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.
      * </p>
      * <p>
-     * This parameter is required for new lifecycle hooks, but optional when
-     * updating existing hooks.
+     * This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      */
     private String roleARN;
     /**
      * <p>
-     * The ARN of the notification target that Auto Scaling will use to notify
-     * you when an instance is in the transition state for the lifecycle hook.
-     * This target can be either an SQS queue or an SNS topic. If you specify an
-     * empty string, this overrides the current ARN.
+     * The ARN of the notification target that Auto Scaling will use to notify you when an instance is in the transition
+     * state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If you specify an empty
+     * string, this overrides the current ARN.
      * </p>
      * <p>
-     * The notification messages sent to the target include the following
-     * information:
+     * The notification messages sent to the target include the following information:
      * </p>
      * <ul>
      * <li>
@@ -110,40 +100,35 @@ public class PutLifecycleHookRequest extends
      * </li>
      * </ul>
      * <p>
-     * This operation uses the JSON format when sending notifications to an
-     * Amazon SQS queue, and an email key/value pair format when sending
-     * notifications to an Amazon SNS topic.
+     * This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key/value
+     * pair format when sending notifications to an Amazon SNS topic.
      * </p>
      * <p>
-     * When you specify a notification target, Auto Scaling sends it a test
-     * message. Test messages contains the following additional key/value pair:
-     * <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     * When you specify a notification target, Auto Scaling sends it a test message. Test messages contains the
+     * following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      * </p>
      */
     private String notificationTargetARN;
     /**
      * <p>
-     * Contains additional information that you want to include any time Auto
-     * Scaling sends a message to the notification target.
+     * Contains additional information that you want to include any time Auto Scaling sends a message to the
+     * notification target.
      * </p>
      */
     private String notificationMetadata;
     /**
      * <p>
-     * The amount of time, in seconds, that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs the
-     * default action. You can prevent the lifecycle hook from timing out by
-     * calling <a>RecordLifecycleActionHeartbeat</a>. The default is 3600
-     * seconds (1 hour).
+     * The amount of time, in seconds, that can elapse before the lifecycle hook times out. When the lifecycle hook
+     * times out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing out by
+     * calling <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).
      * </p>
      */
     private Integer heartbeatTimeout;
     /**
      * <p>
-     * Defines the action the Auto Scaling group should take when the lifecycle
-     * hook timeout elapses or if an unexpected failure occurs. This parameter
-     * can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default
-     * value is <code>ABANDON</code>.
+     * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
+     * failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
+     * <code>ABANDON</code>.
      * </p>
      */
     private String defaultResult;
@@ -180,25 +165,21 @@ public class PutLifecycleHookRequest extends
      * 
      * @param lifecycleHookName
      *        The name of the lifecycle hook.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutLifecycleHookRequest withLifecycleHookName(
-            String lifecycleHookName) {
+    public PutLifecycleHookRequest withLifecycleHookName(String lifecycleHookName) {
         setLifecycleHookName(lifecycleHookName);
         return this;
     }
 
     /**
      * <p>
-     * The name of the Auto Scaling group to which you want to assign the
-     * lifecycle hook.
+     * The name of the Auto Scaling group to which you want to assign the lifecycle hook.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the Auto Scaling group to which you want to assign the
-     *        lifecycle hook.
+     *        The name of the Auto Scaling group to which you want to assign the lifecycle hook.
      */
 
     public void setAutoScalingGroupName(String autoScalingGroupName) {
@@ -207,12 +188,10 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * The name of the Auto Scaling group to which you want to assign the
-     * lifecycle hook.
+     * The name of the Auto Scaling group to which you want to assign the lifecycle hook.
      * </p>
      * 
-     * @return The name of the Auto Scaling group to which you want to assign
-     *         the lifecycle hook.
+     * @return The name of the Auto Scaling group to which you want to assign the lifecycle hook.
      */
 
     public String getAutoScalingGroupName() {
@@ -221,40 +200,33 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * The name of the Auto Scaling group to which you want to assign the
-     * lifecycle hook.
+     * The name of the Auto Scaling group to which you want to assign the lifecycle hook.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the Auto Scaling group to which you want to assign the
-     *        lifecycle hook.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the Auto Scaling group to which you want to assign the lifecycle hook.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutLifecycleHookRequest withAutoScalingGroupName(
-            String autoScalingGroupName) {
+    public PutLifecycleHookRequest withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
 
     /**
      * <p>
-     * The instance state to which you want to attach the lifecycle hook. For a
-     * list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.
+     * The instance state to which you want to attach the lifecycle hook. For a list of lifecycle hook types, see
+     * <a>DescribeLifecycleHookTypes</a>.
      * </p>
      * <p>
-     * This parameter is required for new lifecycle hooks, but optional when
-     * updating existing hooks.
+     * This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      * 
      * @param lifecycleTransition
-     *        The instance state to which you want to attach the lifecycle hook.
-     *        For a list of lifecycle hook types, see
+     *        The instance state to which you want to attach the lifecycle hook. For a list of lifecycle hook types, see
      *        <a>DescribeLifecycleHookTypes</a>.</p>
      *        <p>
-     *        This parameter is required for new lifecycle hooks, but optional
-     *        when updating existing hooks.
+     *        This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
      */
 
     public void setLifecycleTransition(String lifecycleTransition) {
@@ -263,20 +235,17 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * The instance state to which you want to attach the lifecycle hook. For a
-     * list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.
+     * The instance state to which you want to attach the lifecycle hook. For a list of lifecycle hook types, see
+     * <a>DescribeLifecycleHookTypes</a>.
      * </p>
      * <p>
-     * This parameter is required for new lifecycle hooks, but optional when
-     * updating existing hooks.
+     * This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      * 
-     * @return The instance state to which you want to attach the lifecycle
-     *         hook. For a list of lifecycle hook types, see
-     *         <a>DescribeLifecycleHookTypes</a>.</p>
+     * @return The instance state to which you want to attach the lifecycle hook. For a list of lifecycle hook types,
+     *         see <a>DescribeLifecycleHookTypes</a>.</p>
      *         <p>
-     *         This parameter is required for new lifecycle hooks, but optional
-     *         when updating existing hooks.
+     *         This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
      */
 
     public String getLifecycleTransition() {
@@ -285,47 +254,39 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * The instance state to which you want to attach the lifecycle hook. For a
-     * list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.
+     * The instance state to which you want to attach the lifecycle hook. For a list of lifecycle hook types, see
+     * <a>DescribeLifecycleHookTypes</a>.
      * </p>
      * <p>
-     * This parameter is required for new lifecycle hooks, but optional when
-     * updating existing hooks.
+     * This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      * 
      * @param lifecycleTransition
-     *        The instance state to which you want to attach the lifecycle hook.
-     *        For a list of lifecycle hook types, see
+     *        The instance state to which you want to attach the lifecycle hook. For a list of lifecycle hook types, see
      *        <a>DescribeLifecycleHookTypes</a>.</p>
      *        <p>
-     *        This parameter is required for new lifecycle hooks, but optional
-     *        when updating existing hooks.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutLifecycleHookRequest withLifecycleTransition(
-            String lifecycleTransition) {
+    public PutLifecycleHookRequest withLifecycleTransition(String lifecycleTransition) {
         setLifecycleTransition(lifecycleTransition);
         return this;
     }
 
     /**
      * <p>
-     * The ARN of the IAM role that allows the Auto Scaling group to publish to
-     * the specified notification target.
+     * The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.
      * </p>
      * <p>
-     * This parameter is required for new lifecycle hooks, but optional when
-     * updating existing hooks.
+     * This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the IAM role that allows the Auto Scaling group to
-     *        publish to the specified notification target.</p>
+     *        The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
+     *        target.</p>
      *        <p>
-     *        This parameter is required for new lifecycle hooks, but optional
-     *        when updating existing hooks.
+     *        This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
      */
 
     public void setRoleARN(String roleARN) {
@@ -334,19 +295,16 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * The ARN of the IAM role that allows the Auto Scaling group to publish to
-     * the specified notification target.
+     * The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.
      * </p>
      * <p>
-     * This parameter is required for new lifecycle hooks, but optional when
-     * updating existing hooks.
+     * This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      * 
-     * @return The ARN of the IAM role that allows the Auto Scaling group to
-     *         publish to the specified notification target.</p>
+     * @return The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
+     *         target.</p>
      *         <p>
-     *         This parameter is required for new lifecycle hooks, but optional
-     *         when updating existing hooks.
+     *         This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
      */
 
     public String getRoleARN() {
@@ -355,22 +313,18 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * The ARN of the IAM role that allows the Auto Scaling group to publish to
-     * the specified notification target.
+     * The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.
      * </p>
      * <p>
-     * This parameter is required for new lifecycle hooks, but optional when
-     * updating existing hooks.
+     * This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the IAM role that allows the Auto Scaling group to
-     *        publish to the specified notification target.</p>
+     *        The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
+     *        target.</p>
      *        <p>
-     *        This parameter is required for new lifecycle hooks, but optional
-     *        when updating existing hooks.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutLifecycleHookRequest withRoleARN(String roleARN) {
@@ -380,14 +334,12 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * The ARN of the notification target that Auto Scaling will use to notify
-     * you when an instance is in the transition state for the lifecycle hook.
-     * This target can be either an SQS queue or an SNS topic. If you specify an
-     * empty string, this overrides the current ARN.
+     * The ARN of the notification target that Auto Scaling will use to notify you when an instance is in the transition
+     * state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If you specify an empty
+     * string, this overrides the current ARN.
      * </p>
      * <p>
-     * The notification messages sent to the target include the following
-     * information:
+     * The notification messages sent to the target include the following information:
      * </p>
      * <ul>
      * <li>
@@ -427,25 +379,20 @@ public class PutLifecycleHookRequest extends
      * </li>
      * </ul>
      * <p>
-     * This operation uses the JSON format when sending notifications to an
-     * Amazon SQS queue, and an email key/value pair format when sending
-     * notifications to an Amazon SNS topic.
+     * This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key/value
+     * pair format when sending notifications to an Amazon SNS topic.
      * </p>
      * <p>
-     * When you specify a notification target, Auto Scaling sends it a test
-     * message. Test messages contains the following additional key/value pair:
-     * <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     * When you specify a notification target, Auto Scaling sends it a test message. Test messages contains the
+     * following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      * </p>
      * 
      * @param notificationTargetARN
-     *        The ARN of the notification target that Auto Scaling will use to
-     *        notify you when an instance is in the transition state for the
-     *        lifecycle hook. This target can be either an SQS queue or an SNS
-     *        topic. If you specify an empty string, this overrides the current
-     *        ARN.</p>
+     *        The ARN of the notification target that Auto Scaling will use to notify you when an instance is in the
+     *        transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If you
+     *        specify an empty string, this overrides the current ARN.</p>
      *        <p>
-     *        The notification messages sent to the target include the following
-     *        information:
+     *        The notification messages sent to the target include the following information:
      *        </p>
      *        <ul>
      *        <li>
@@ -485,15 +432,12 @@ public class PutLifecycleHookRequest extends
      *        </li>
      *        </ul>
      *        <p>
-     *        This operation uses the JSON format when sending notifications to
-     *        an Amazon SQS queue, and an email key/value pair format when
-     *        sending notifications to an Amazon SNS topic.
+     *        This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email
+     *        key/value pair format when sending notifications to an Amazon SNS topic.
      *        </p>
      *        <p>
-     *        When you specify a notification target, Auto Scaling sends it a
-     *        test message. Test messages contains the following additional
-     *        key/value pair:
-     *        <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     *        When you specify a notification target, Auto Scaling sends it a test message. Test messages contains the
+     *        following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      */
 
     public void setNotificationTargetARN(String notificationTargetARN) {
@@ -502,14 +446,12 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * The ARN of the notification target that Auto Scaling will use to notify
-     * you when an instance is in the transition state for the lifecycle hook.
-     * This target can be either an SQS queue or an SNS topic. If you specify an
-     * empty string, this overrides the current ARN.
+     * The ARN of the notification target that Auto Scaling will use to notify you when an instance is in the transition
+     * state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If you specify an empty
+     * string, this overrides the current ARN.
      * </p>
      * <p>
-     * The notification messages sent to the target include the following
-     * information:
+     * The notification messages sent to the target include the following information:
      * </p>
      * <ul>
      * <li>
@@ -549,24 +491,19 @@ public class PutLifecycleHookRequest extends
      * </li>
      * </ul>
      * <p>
-     * This operation uses the JSON format when sending notifications to an
-     * Amazon SQS queue, and an email key/value pair format when sending
-     * notifications to an Amazon SNS topic.
+     * This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key/value
+     * pair format when sending notifications to an Amazon SNS topic.
      * </p>
      * <p>
-     * When you specify a notification target, Auto Scaling sends it a test
-     * message. Test messages contains the following additional key/value pair:
-     * <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     * When you specify a notification target, Auto Scaling sends it a test message. Test messages contains the
+     * following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      * </p>
      * 
-     * @return The ARN of the notification target that Auto Scaling will use to
-     *         notify you when an instance is in the transition state for the
-     *         lifecycle hook. This target can be either an SQS queue or an SNS
-     *         topic. If you specify an empty string, this overrides the current
-     *         ARN.</p>
+     * @return The ARN of the notification target that Auto Scaling will use to notify you when an instance is in the
+     *         transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If you
+     *         specify an empty string, this overrides the current ARN.</p>
      *         <p>
-     *         The notification messages sent to the target include the
-     *         following information:
+     *         The notification messages sent to the target include the following information:
      *         </p>
      *         <ul>
      *         <li>
@@ -606,15 +543,12 @@ public class PutLifecycleHookRequest extends
      *         </li>
      *         </ul>
      *         <p>
-     *         This operation uses the JSON format when sending notifications to
-     *         an Amazon SQS queue, and an email key/value pair format when
-     *         sending notifications to an Amazon SNS topic.
+     *         This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email
+     *         key/value pair format when sending notifications to an Amazon SNS topic.
      *         </p>
      *         <p>
-     *         When you specify a notification target, Auto Scaling sends it a
-     *         test message. Test messages contains the following additional
-     *         key/value pair:
-     *         <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     *         When you specify a notification target, Auto Scaling sends it a test message. Test messages contains the
+     *         following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      */
 
     public String getNotificationTargetARN() {
@@ -623,14 +557,12 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * The ARN of the notification target that Auto Scaling will use to notify
-     * you when an instance is in the transition state for the lifecycle hook.
-     * This target can be either an SQS queue or an SNS topic. If you specify an
-     * empty string, this overrides the current ARN.
+     * The ARN of the notification target that Auto Scaling will use to notify you when an instance is in the transition
+     * state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If you specify an empty
+     * string, this overrides the current ARN.
      * </p>
      * <p>
-     * The notification messages sent to the target include the following
-     * information:
+     * The notification messages sent to the target include the following information:
      * </p>
      * <ul>
      * <li>
@@ -670,25 +602,20 @@ public class PutLifecycleHookRequest extends
      * </li>
      * </ul>
      * <p>
-     * This operation uses the JSON format when sending notifications to an
-     * Amazon SQS queue, and an email key/value pair format when sending
-     * notifications to an Amazon SNS topic.
+     * This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key/value
+     * pair format when sending notifications to an Amazon SNS topic.
      * </p>
      * <p>
-     * When you specify a notification target, Auto Scaling sends it a test
-     * message. Test messages contains the following additional key/value pair:
-     * <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     * When you specify a notification target, Auto Scaling sends it a test message. Test messages contains the
+     * following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      * </p>
      * 
      * @param notificationTargetARN
-     *        The ARN of the notification target that Auto Scaling will use to
-     *        notify you when an instance is in the transition state for the
-     *        lifecycle hook. This target can be either an SQS queue or an SNS
-     *        topic. If you specify an empty string, this overrides the current
-     *        ARN.</p>
+     *        The ARN of the notification target that Auto Scaling will use to notify you when an instance is in the
+     *        transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If you
+     *        specify an empty string, this overrides the current ARN.</p>
      *        <p>
-     *        The notification messages sent to the target include the following
-     *        information:
+     *        The notification messages sent to the target include the following information:
      *        </p>
      *        <ul>
      *        <li>
@@ -728,34 +655,29 @@ public class PutLifecycleHookRequest extends
      *        </li>
      *        </ul>
      *        <p>
-     *        This operation uses the JSON format when sending notifications to
-     *        an Amazon SQS queue, and an email key/value pair format when
-     *        sending notifications to an Amazon SNS topic.
+     *        This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email
+     *        key/value pair format when sending notifications to an Amazon SNS topic.
      *        </p>
      *        <p>
-     *        When you specify a notification target, Auto Scaling sends it a
-     *        test message. Test messages contains the following additional
-     *        key/value pair:
-     *        <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When you specify a notification target, Auto Scaling sends it a test message. Test messages contains the
+     *        following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutLifecycleHookRequest withNotificationTargetARN(
-            String notificationTargetARN) {
+    public PutLifecycleHookRequest withNotificationTargetARN(String notificationTargetARN) {
         setNotificationTargetARN(notificationTargetARN);
         return this;
     }
 
     /**
      * <p>
-     * Contains additional information that you want to include any time Auto
-     * Scaling sends a message to the notification target.
+     * Contains additional information that you want to include any time Auto Scaling sends a message to the
+     * notification target.
      * </p>
      * 
      * @param notificationMetadata
-     *        Contains additional information that you want to include any time
-     *        Auto Scaling sends a message to the notification target.
+     *        Contains additional information that you want to include any time Auto Scaling sends a message to the
+     *        notification target.
      */
 
     public void setNotificationMetadata(String notificationMetadata) {
@@ -764,12 +686,12 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * Contains additional information that you want to include any time Auto
-     * Scaling sends a message to the notification target.
+     * Contains additional information that you want to include any time Auto Scaling sends a message to the
+     * notification target.
      * </p>
      * 
-     * @return Contains additional information that you want to include any time
-     *         Auto Scaling sends a message to the notification target.
+     * @return Contains additional information that you want to include any time Auto Scaling sends a message to the
+     *         notification target.
      */
 
     public String getNotificationMetadata() {
@@ -778,39 +700,32 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * Contains additional information that you want to include any time Auto
-     * Scaling sends a message to the notification target.
+     * Contains additional information that you want to include any time Auto Scaling sends a message to the
+     * notification target.
      * </p>
      * 
      * @param notificationMetadata
-     *        Contains additional information that you want to include any time
-     *        Auto Scaling sends a message to the notification target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Contains additional information that you want to include any time Auto Scaling sends a message to the
+     *        notification target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutLifecycleHookRequest withNotificationMetadata(
-            String notificationMetadata) {
+    public PutLifecycleHookRequest withNotificationMetadata(String notificationMetadata) {
         setNotificationMetadata(notificationMetadata);
         return this;
     }
 
     /**
      * <p>
-     * The amount of time, in seconds, that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs the
-     * default action. You can prevent the lifecycle hook from timing out by
-     * calling <a>RecordLifecycleActionHeartbeat</a>. The default is 3600
-     * seconds (1 hour).
+     * The amount of time, in seconds, that can elapse before the lifecycle hook times out. When the lifecycle hook
+     * times out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing out by
+     * calling <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).
      * </p>
      * 
      * @param heartbeatTimeout
-     *        The amount of time, in seconds, that can elapse before the
-     *        lifecycle hook times out. When the lifecycle hook times out, Auto
-     *        Scaling performs the default action. You can prevent the lifecycle
-     *        hook from timing out by calling
-     *        <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds
-     *        (1 hour).
+     *        The amount of time, in seconds, that can elapse before the lifecycle hook times out. When the lifecycle
+     *        hook times out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing
+     *        out by calling <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).
      */
 
     public void setHeartbeatTimeout(Integer heartbeatTimeout) {
@@ -819,19 +734,14 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * The amount of time, in seconds, that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs the
-     * default action. You can prevent the lifecycle hook from timing out by
-     * calling <a>RecordLifecycleActionHeartbeat</a>. The default is 3600
-     * seconds (1 hour).
+     * The amount of time, in seconds, that can elapse before the lifecycle hook times out. When the lifecycle hook
+     * times out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing out by
+     * calling <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).
      * </p>
      * 
-     * @return The amount of time, in seconds, that can elapse before the
-     *         lifecycle hook times out. When the lifecycle hook times out, Auto
-     *         Scaling performs the default action. You can prevent the
-     *         lifecycle hook from timing out by calling
-     *         <a>RecordLifecycleActionHeartbeat</a>. The default is 3600
-     *         seconds (1 hour).
+     * @return The amount of time, in seconds, that can elapse before the lifecycle hook times out. When the lifecycle
+     *         hook times out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing
+     *         out by calling <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).
      */
 
     public Integer getHeartbeatTimeout() {
@@ -840,22 +750,16 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * The amount of time, in seconds, that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs the
-     * default action. You can prevent the lifecycle hook from timing out by
-     * calling <a>RecordLifecycleActionHeartbeat</a>. The default is 3600
-     * seconds (1 hour).
+     * The amount of time, in seconds, that can elapse before the lifecycle hook times out. When the lifecycle hook
+     * times out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing out by
+     * calling <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).
      * </p>
      * 
      * @param heartbeatTimeout
-     *        The amount of time, in seconds, that can elapse before the
-     *        lifecycle hook times out. When the lifecycle hook times out, Auto
-     *        Scaling performs the default action. You can prevent the lifecycle
-     *        hook from timing out by calling
-     *        <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds
-     *        (1 hour).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The amount of time, in seconds, that can elapse before the lifecycle hook times out. When the lifecycle
+     *        hook times out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing
+     *        out by calling <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutLifecycleHookRequest withHeartbeatTimeout(Integer heartbeatTimeout) {
@@ -865,17 +769,15 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * Defines the action the Auto Scaling group should take when the lifecycle
-     * hook timeout elapses or if an unexpected failure occurs. This parameter
-     * can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default
-     * value is <code>ABANDON</code>.
+     * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
+     * failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
+     * <code>ABANDON</code>.
      * </p>
      * 
      * @param defaultResult
-     *        Defines the action the Auto Scaling group should take when the
-     *        lifecycle hook timeout elapses or if an unexpected failure occurs.
-     *        This parameter can be either <code>CONTINUE</code> or
-     *        <code>ABANDON</code>. The default value is <code>ABANDON</code>.
+     *        Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an
+     *        unexpected failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The
+     *        default value is <code>ABANDON</code>.
      */
 
     public void setDefaultResult(String defaultResult) {
@@ -884,16 +786,14 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * Defines the action the Auto Scaling group should take when the lifecycle
-     * hook timeout elapses or if an unexpected failure occurs. This parameter
-     * can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default
-     * value is <code>ABANDON</code>.
+     * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
+     * failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
+     * <code>ABANDON</code>.
      * </p>
      * 
-     * @return Defines the action the Auto Scaling group should take when the
-     *         lifecycle hook timeout elapses or if an unexpected failure
-     *         occurs. This parameter can be either <code>CONTINUE</code> or
-     *         <code>ABANDON</code>. The default value is <code>ABANDON</code>.
+     * @return Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an
+     *         unexpected failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.
+     *         The default value is <code>ABANDON</code>.
      */
 
     public String getDefaultResult() {
@@ -902,19 +802,16 @@ public class PutLifecycleHookRequest extends
 
     /**
      * <p>
-     * Defines the action the Auto Scaling group should take when the lifecycle
-     * hook timeout elapses or if an unexpected failure occurs. This parameter
-     * can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default
-     * value is <code>ABANDON</code>.
+     * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
+     * failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
+     * <code>ABANDON</code>.
      * </p>
      * 
      * @param defaultResult
-     *        Defines the action the Auto Scaling group should take when the
-     *        lifecycle hook timeout elapses or if an unexpected failure occurs.
-     *        This parameter can be either <code>CONTINUE</code> or
-     *        <code>ABANDON</code>. The default value is <code>ABANDON</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an
+     *        unexpected failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The
+     *        default value is <code>ABANDON</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutLifecycleHookRequest withDefaultResult(String defaultResult) {
@@ -923,8 +820,7 @@ public class PutLifecycleHookRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -937,18 +833,15 @@ public class PutLifecycleHookRequest extends
         if (getLifecycleHookName() != null)
             sb.append("LifecycleHookName: " + getLifecycleHookName() + ",");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
         if (getLifecycleTransition() != null)
             sb.append("LifecycleTransition: " + getLifecycleTransition() + ",");
         if (getRoleARN() != null)
             sb.append("RoleARN: " + getRoleARN() + ",");
         if (getNotificationTargetARN() != null)
-            sb.append("NotificationTargetARN: " + getNotificationTargetARN()
-                    + ",");
+            sb.append("NotificationTargetARN: " + getNotificationTargetARN() + ",");
         if (getNotificationMetadata() != null)
-            sb.append("NotificationMetadata: " + getNotificationMetadata()
-                    + ",");
+            sb.append("NotificationMetadata: " + getNotificationMetadata() + ",");
         if (getHeartbeatTimeout() != null)
             sb.append("HeartbeatTimeout: " + getHeartbeatTimeout() + ",");
         if (getDefaultResult() != null)
@@ -967,57 +860,37 @@ public class PutLifecycleHookRequest extends
         if (obj instanceof PutLifecycleHookRequest == false)
             return false;
         PutLifecycleHookRequest other = (PutLifecycleHookRequest) obj;
-        if (other.getLifecycleHookName() == null
-                ^ this.getLifecycleHookName() == null)
+        if (other.getLifecycleHookName() == null ^ this.getLifecycleHookName() == null)
             return false;
-        if (other.getLifecycleHookName() != null
-                && other.getLifecycleHookName().equals(
-                        this.getLifecycleHookName()) == false)
+        if (other.getLifecycleHookName() != null && other.getLifecycleHookName().equals(this.getLifecycleHookName()) == false)
             return false;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
-        if (other.getLifecycleTransition() == null
-                ^ this.getLifecycleTransition() == null)
+        if (other.getLifecycleTransition() == null ^ this.getLifecycleTransition() == null)
             return false;
-        if (other.getLifecycleTransition() != null
-                && other.getLifecycleTransition().equals(
-                        this.getLifecycleTransition()) == false)
+        if (other.getLifecycleTransition() != null && other.getLifecycleTransition().equals(this.getLifecycleTransition()) == false)
             return false;
         if (other.getRoleARN() == null ^ this.getRoleARN() == null)
             return false;
-        if (other.getRoleARN() != null
-                && other.getRoleARN().equals(this.getRoleARN()) == false)
+        if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false)
             return false;
-        if (other.getNotificationTargetARN() == null
-                ^ this.getNotificationTargetARN() == null)
+        if (other.getNotificationTargetARN() == null ^ this.getNotificationTargetARN() == null)
             return false;
-        if (other.getNotificationTargetARN() != null
-                && other.getNotificationTargetARN().equals(
-                        this.getNotificationTargetARN()) == false)
+        if (other.getNotificationTargetARN() != null && other.getNotificationTargetARN().equals(this.getNotificationTargetARN()) == false)
             return false;
-        if (other.getNotificationMetadata() == null
-                ^ this.getNotificationMetadata() == null)
+        if (other.getNotificationMetadata() == null ^ this.getNotificationMetadata() == null)
             return false;
-        if (other.getNotificationMetadata() != null
-                && other.getNotificationMetadata().equals(
-                        this.getNotificationMetadata()) == false)
+        if (other.getNotificationMetadata() != null && other.getNotificationMetadata().equals(this.getNotificationMetadata()) == false)
             return false;
-        if (other.getHeartbeatTimeout() == null
-                ^ this.getHeartbeatTimeout() == null)
+        if (other.getHeartbeatTimeout() == null ^ this.getHeartbeatTimeout() == null)
             return false;
-        if (other.getHeartbeatTimeout() != null
-                && other.getHeartbeatTimeout().equals(
-                        this.getHeartbeatTimeout()) == false)
+        if (other.getHeartbeatTimeout() != null && other.getHeartbeatTimeout().equals(this.getHeartbeatTimeout()) == false)
             return false;
         if (other.getDefaultResult() == null ^ this.getDefaultResult() == null)
             return false;
-        if (other.getDefaultResult() != null
-                && other.getDefaultResult().equals(this.getDefaultResult()) == false)
+        if (other.getDefaultResult() != null && other.getDefaultResult().equals(this.getDefaultResult()) == false)
             return false;
         return true;
     }
@@ -1027,36 +900,14 @@ public class PutLifecycleHookRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLifecycleHookName() == null) ? 0
-                        : getLifecycleHookName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLifecycleTransition() == null) ? 0
-                        : getLifecycleTransition().hashCode());
-        hashCode = prime * hashCode
-                + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNotificationTargetARN() == null) ? 0
-                        : getNotificationTargetARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNotificationMetadata() == null) ? 0
-                        : getNotificationMetadata().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHeartbeatTimeout() == null) ? 0 : getHeartbeatTimeout()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultResult() == null) ? 0 : getDefaultResult()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getLifecycleHookName() == null) ? 0 : getLifecycleHookName().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleTransition() == null) ? 0 : getLifecycleTransition().hashCode());
+        hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
+        hashCode = prime * hashCode + ((getNotificationTargetARN() == null) ? 0 : getNotificationTargetARN().hashCode());
+        hashCode = prime * hashCode + ((getNotificationMetadata() == null) ? 0 : getNotificationMetadata().hashCode());
+        hashCode = prime * hashCode + ((getHeartbeatTimeout() == null) ? 0 : getHeartbeatTimeout().hashCode());
+        hashCode = prime * hashCode + ((getDefaultResult() == null) ? 0 : getDefaultResult().hashCode());
         return hashCode;
     }
 

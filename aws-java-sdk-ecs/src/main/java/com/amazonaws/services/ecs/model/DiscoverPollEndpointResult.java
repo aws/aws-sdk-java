@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecs.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DiscoverPollEndpointResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DiscoverPollEndpointResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -68,8 +64,7 @@ public class DiscoverPollEndpointResult extends
      * 
      * @param endpoint
      *        The endpoint for the Amazon ECS agent to poll.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DiscoverPollEndpointResult withEndpoint(String endpoint) {
@@ -109,19 +104,16 @@ public class DiscoverPollEndpointResult extends
      * 
      * @param telemetryEndpoint
      *        The telemetry endpoint for the Amazon ECS agent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DiscoverPollEndpointResult withTelemetryEndpoint(
-            String telemetryEndpoint) {
+    public DiscoverPollEndpointResult withTelemetryEndpoint(String telemetryEndpoint) {
         setTelemetryEndpoint(telemetryEndpoint);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -151,15 +143,11 @@ public class DiscoverPollEndpointResult extends
         DiscoverPollEndpointResult other = (DiscoverPollEndpointResult) obj;
         if (other.getEndpoint() == null ^ this.getEndpoint() == null)
             return false;
-        if (other.getEndpoint() != null
-                && other.getEndpoint().equals(this.getEndpoint()) == false)
+        if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false)
             return false;
-        if (other.getTelemetryEndpoint() == null
-                ^ this.getTelemetryEndpoint() == null)
+        if (other.getTelemetryEndpoint() == null ^ this.getTelemetryEndpoint() == null)
             return false;
-        if (other.getTelemetryEndpoint() != null
-                && other.getTelemetryEndpoint().equals(
-                        this.getTelemetryEndpoint()) == false)
+        if (other.getTelemetryEndpoint() != null && other.getTelemetryEndpoint().equals(this.getTelemetryEndpoint()) == false)
             return false;
         return true;
     }
@@ -169,12 +157,8 @@ public class DiscoverPollEndpointResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTelemetryEndpoint() == null) ? 0
-                        : getTelemetryEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getTelemetryEndpoint() == null) ? 0 : getTelemetryEndpoint().hashCode());
         return hashCode;
     }
 
@@ -183,9 +167,7 @@ public class DiscoverPollEndpointResult extends
         try {
             return (DiscoverPollEndpointResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

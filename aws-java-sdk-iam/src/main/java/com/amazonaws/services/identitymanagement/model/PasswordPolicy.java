@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -21,8 +19,7 @@ import java.io.Serializable;
  * Contains information about the account password policy.
  * </p>
  * <p>
- * This data type is used as a response element in the
- * <a>GetAccountPasswordPolicy</a> action.
+ * This data type is used as a response element in the <a>GetAccountPasswordPolicy</a> action.
  * </p>
  */
 public class PasswordPolicy implements Serializable, Cloneable {
@@ -65,9 +62,8 @@ public class PasswordPolicy implements Serializable, Cloneable {
     private Boolean allowUsersToChangePassword;
     /**
      * <p>
-     * Indicates whether passwords in the account expire. Returns true if
-     * MaxPasswordAge is contains a value greater than 0. Returns false if
-     * MaxPasswordAge is 0 or not present.
+     * Indicates whether passwords in the account expire. Returns true if MaxPasswordAge is contains a value greater
+     * than 0. Returns false if MaxPasswordAge is 0 or not present.
      * </p>
      */
     private Boolean expirePasswords;
@@ -79,15 +75,13 @@ public class PasswordPolicy implements Serializable, Cloneable {
     private Integer maxPasswordAge;
     /**
      * <p>
-     * Specifies the number of previous passwords that IAM users are prevented
-     * from reusing.
+     * Specifies the number of previous passwords that IAM users are prevented from reusing.
      * </p>
      */
     private Integer passwordReusePrevention;
     /**
      * <p>
-     * Specifies whether IAM users are prevented from setting a new password
-     * after their password has expired.
+     * Specifies whether IAM users are prevented from setting a new password after their password has expired.
      * </p>
      */
     private Boolean hardExpiry;
@@ -124,12 +118,10 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * 
      * @param minimumPasswordLength
      *        Minimum length to require for IAM user passwords.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PasswordPolicy withMinimumPasswordLength(
-            Integer minimumPasswordLength) {
+    public PasswordPolicy withMinimumPasswordLength(Integer minimumPasswordLength) {
         setMinimumPasswordLength(minimumPasswordLength);
         return this;
     }
@@ -166,8 +158,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * 
      * @param requireSymbols
      *        Specifies whether to require symbols for IAM user passwords.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PasswordPolicy withRequireSymbols(Boolean requireSymbols) {
@@ -219,8 +210,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * 
      * @param requireNumbers
      *        Specifies whether to require numbers for IAM user passwords.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PasswordPolicy withRequireNumbers(Boolean requireNumbers) {
@@ -246,8 +236,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * </p>
      * 
      * @param requireUppercaseCharacters
-     *        Specifies whether to require uppercase characters for IAM user
-     *        passwords.
+     *        Specifies whether to require uppercase characters for IAM user passwords.
      */
 
     public void setRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
@@ -259,8 +248,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * Specifies whether to require uppercase characters for IAM user passwords.
      * </p>
      * 
-     * @return Specifies whether to require uppercase characters for IAM user
-     *         passwords.
+     * @return Specifies whether to require uppercase characters for IAM user passwords.
      */
 
     public Boolean getRequireUppercaseCharacters() {
@@ -273,14 +261,11 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * </p>
      * 
      * @param requireUppercaseCharacters
-     *        Specifies whether to require uppercase characters for IAM user
-     *        passwords.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether to require uppercase characters for IAM user passwords.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PasswordPolicy withRequireUppercaseCharacters(
-            Boolean requireUppercaseCharacters) {
+    public PasswordPolicy withRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
         setRequireUppercaseCharacters(requireUppercaseCharacters);
         return this;
     }
@@ -290,8 +275,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * Specifies whether to require uppercase characters for IAM user passwords.
      * </p>
      * 
-     * @return Specifies whether to require uppercase characters for IAM user
-     *         passwords.
+     * @return Specifies whether to require uppercase characters for IAM user passwords.
      */
 
     public Boolean isRequireUppercaseCharacters() {
@@ -304,8 +288,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * </p>
      * 
      * @param requireLowercaseCharacters
-     *        Specifies whether to require lowercase characters for IAM user
-     *        passwords.
+     *        Specifies whether to require lowercase characters for IAM user passwords.
      */
 
     public void setRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
@@ -317,8 +300,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * Specifies whether to require lowercase characters for IAM user passwords.
      * </p>
      * 
-     * @return Specifies whether to require lowercase characters for IAM user
-     *         passwords.
+     * @return Specifies whether to require lowercase characters for IAM user passwords.
      */
 
     public Boolean getRequireLowercaseCharacters() {
@@ -331,14 +313,11 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * </p>
      * 
      * @param requireLowercaseCharacters
-     *        Specifies whether to require lowercase characters for IAM user
-     *        passwords.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether to require lowercase characters for IAM user passwords.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PasswordPolicy withRequireLowercaseCharacters(
-            Boolean requireLowercaseCharacters) {
+    public PasswordPolicy withRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
         setRequireLowercaseCharacters(requireLowercaseCharacters);
         return this;
     }
@@ -348,8 +327,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * Specifies whether to require lowercase characters for IAM user passwords.
      * </p>
      * 
-     * @return Specifies whether to require lowercase characters for IAM user
-     *         passwords.
+     * @return Specifies whether to require lowercase characters for IAM user passwords.
      */
 
     public Boolean isRequireLowercaseCharacters() {
@@ -362,8 +340,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * </p>
      * 
      * @param allowUsersToChangePassword
-     *        Specifies whether IAM users are allowed to change their own
-     *        password.
+     *        Specifies whether IAM users are allowed to change their own password.
      */
 
     public void setAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
@@ -375,8 +352,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * Specifies whether IAM users are allowed to change their own password.
      * </p>
      * 
-     * @return Specifies whether IAM users are allowed to change their own
-     *         password.
+     * @return Specifies whether IAM users are allowed to change their own password.
      */
 
     public Boolean getAllowUsersToChangePassword() {
@@ -389,14 +365,11 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * </p>
      * 
      * @param allowUsersToChangePassword
-     *        Specifies whether IAM users are allowed to change their own
-     *        password.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether IAM users are allowed to change their own password.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PasswordPolicy withAllowUsersToChangePassword(
-            Boolean allowUsersToChangePassword) {
+    public PasswordPolicy withAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
         setAllowUsersToChangePassword(allowUsersToChangePassword);
         return this;
     }
@@ -406,8 +379,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * Specifies whether IAM users are allowed to change their own password.
      * </p>
      * 
-     * @return Specifies whether IAM users are allowed to change their own
-     *         password.
+     * @return Specifies whether IAM users are allowed to change their own password.
      */
 
     public Boolean isAllowUsersToChangePassword() {
@@ -416,15 +388,13 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether passwords in the account expire. Returns true if
-     * MaxPasswordAge is contains a value greater than 0. Returns false if
-     * MaxPasswordAge is 0 or not present.
+     * Indicates whether passwords in the account expire. Returns true if MaxPasswordAge is contains a value greater
+     * than 0. Returns false if MaxPasswordAge is 0 or not present.
      * </p>
      * 
      * @param expirePasswords
-     *        Indicates whether passwords in the account expire. Returns true if
-     *        MaxPasswordAge is contains a value greater than 0. Returns false
-     *        if MaxPasswordAge is 0 or not present.
+     *        Indicates whether passwords in the account expire. Returns true if MaxPasswordAge is contains a value
+     *        greater than 0. Returns false if MaxPasswordAge is 0 or not present.
      */
 
     public void setExpirePasswords(Boolean expirePasswords) {
@@ -433,14 +403,12 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether passwords in the account expire. Returns true if
-     * MaxPasswordAge is contains a value greater than 0. Returns false if
-     * MaxPasswordAge is 0 or not present.
+     * Indicates whether passwords in the account expire. Returns true if MaxPasswordAge is contains a value greater
+     * than 0. Returns false if MaxPasswordAge is 0 or not present.
      * </p>
      * 
-     * @return Indicates whether passwords in the account expire. Returns true
-     *         if MaxPasswordAge is contains a value greater than 0. Returns
-     *         false if MaxPasswordAge is 0 or not present.
+     * @return Indicates whether passwords in the account expire. Returns true if MaxPasswordAge is contains a value
+     *         greater than 0. Returns false if MaxPasswordAge is 0 or not present.
      */
 
     public Boolean getExpirePasswords() {
@@ -449,17 +417,14 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether passwords in the account expire. Returns true if
-     * MaxPasswordAge is contains a value greater than 0. Returns false if
-     * MaxPasswordAge is 0 or not present.
+     * Indicates whether passwords in the account expire. Returns true if MaxPasswordAge is contains a value greater
+     * than 0. Returns false if MaxPasswordAge is 0 or not present.
      * </p>
      * 
      * @param expirePasswords
-     *        Indicates whether passwords in the account expire. Returns true if
-     *        MaxPasswordAge is contains a value greater than 0. Returns false
-     *        if MaxPasswordAge is 0 or not present.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether passwords in the account expire. Returns true if MaxPasswordAge is contains a value
+     *        greater than 0. Returns false if MaxPasswordAge is 0 or not present.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PasswordPolicy withExpirePasswords(Boolean expirePasswords) {
@@ -469,14 +434,12 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether passwords in the account expire. Returns true if
-     * MaxPasswordAge is contains a value greater than 0. Returns false if
-     * MaxPasswordAge is 0 or not present.
+     * Indicates whether passwords in the account expire. Returns true if MaxPasswordAge is contains a value greater
+     * than 0. Returns false if MaxPasswordAge is 0 or not present.
      * </p>
      * 
-     * @return Indicates whether passwords in the account expire. Returns true
-     *         if MaxPasswordAge is contains a value greater than 0. Returns
-     *         false if MaxPasswordAge is 0 or not present.
+     * @return Indicates whether passwords in the account expire. Returns true if MaxPasswordAge is contains a value
+     *         greater than 0. Returns false if MaxPasswordAge is 0 or not present.
      */
 
     public Boolean isExpirePasswords() {
@@ -515,8 +478,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * 
      * @param maxPasswordAge
      *        The number of days that an IAM user password is valid.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PasswordPolicy withMaxPasswordAge(Integer maxPasswordAge) {
@@ -526,13 +488,11 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the number of previous passwords that IAM users are prevented
-     * from reusing.
+     * Specifies the number of previous passwords that IAM users are prevented from reusing.
      * </p>
      * 
      * @param passwordReusePrevention
-     *        Specifies the number of previous passwords that IAM users are
-     *        prevented from reusing.
+     *        Specifies the number of previous passwords that IAM users are prevented from reusing.
      */
 
     public void setPasswordReusePrevention(Integer passwordReusePrevention) {
@@ -541,12 +501,10 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the number of previous passwords that IAM users are prevented
-     * from reusing.
+     * Specifies the number of previous passwords that IAM users are prevented from reusing.
      * </p>
      * 
-     * @return Specifies the number of previous passwords that IAM users are
-     *         prevented from reusing.
+     * @return Specifies the number of previous passwords that IAM users are prevented from reusing.
      */
 
     public Integer getPasswordReusePrevention() {
@@ -555,32 +513,26 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the number of previous passwords that IAM users are prevented
-     * from reusing.
+     * Specifies the number of previous passwords that IAM users are prevented from reusing.
      * </p>
      * 
      * @param passwordReusePrevention
-     *        Specifies the number of previous passwords that IAM users are
-     *        prevented from reusing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the number of previous passwords that IAM users are prevented from reusing.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PasswordPolicy withPasswordReusePrevention(
-            Integer passwordReusePrevention) {
+    public PasswordPolicy withPasswordReusePrevention(Integer passwordReusePrevention) {
         setPasswordReusePrevention(passwordReusePrevention);
         return this;
     }
 
     /**
      * <p>
-     * Specifies whether IAM users are prevented from setting a new password
-     * after their password has expired.
+     * Specifies whether IAM users are prevented from setting a new password after their password has expired.
      * </p>
      * 
      * @param hardExpiry
-     *        Specifies whether IAM users are prevented from setting a new
-     *        password after their password has expired.
+     *        Specifies whether IAM users are prevented from setting a new password after their password has expired.
      */
 
     public void setHardExpiry(Boolean hardExpiry) {
@@ -589,12 +541,10 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether IAM users are prevented from setting a new password
-     * after their password has expired.
+     * Specifies whether IAM users are prevented from setting a new password after their password has expired.
      * </p>
      * 
-     * @return Specifies whether IAM users are prevented from setting a new
-     *         password after their password has expired.
+     * @return Specifies whether IAM users are prevented from setting a new password after their password has expired.
      */
 
     public Boolean getHardExpiry() {
@@ -603,15 +553,12 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether IAM users are prevented from setting a new password
-     * after their password has expired.
+     * Specifies whether IAM users are prevented from setting a new password after their password has expired.
      * </p>
      * 
      * @param hardExpiry
-     *        Specifies whether IAM users are prevented from setting a new
-     *        password after their password has expired.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether IAM users are prevented from setting a new password after their password has expired.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PasswordPolicy withHardExpiry(Boolean hardExpiry) {
@@ -621,12 +568,10 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether IAM users are prevented from setting a new password
-     * after their password has expired.
+     * Specifies whether IAM users are prevented from setting a new password after their password has expired.
      * </p>
      * 
-     * @return Specifies whether IAM users are prevented from setting a new
-     *         password after their password has expired.
+     * @return Specifies whether IAM users are prevented from setting a new password after their password has expired.
      */
 
     public Boolean isHardExpiry() {
@@ -634,8 +579,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -646,28 +590,23 @@ public class PasswordPolicy implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMinimumPasswordLength() != null)
-            sb.append("MinimumPasswordLength: " + getMinimumPasswordLength()
-                    + ",");
+            sb.append("MinimumPasswordLength: " + getMinimumPasswordLength() + ",");
         if (getRequireSymbols() != null)
             sb.append("RequireSymbols: " + getRequireSymbols() + ",");
         if (getRequireNumbers() != null)
             sb.append("RequireNumbers: " + getRequireNumbers() + ",");
         if (getRequireUppercaseCharacters() != null)
-            sb.append("RequireUppercaseCharacters: "
-                    + getRequireUppercaseCharacters() + ",");
+            sb.append("RequireUppercaseCharacters: " + getRequireUppercaseCharacters() + ",");
         if (getRequireLowercaseCharacters() != null)
-            sb.append("RequireLowercaseCharacters: "
-                    + getRequireLowercaseCharacters() + ",");
+            sb.append("RequireLowercaseCharacters: " + getRequireLowercaseCharacters() + ",");
         if (getAllowUsersToChangePassword() != null)
-            sb.append("AllowUsersToChangePassword: "
-                    + getAllowUsersToChangePassword() + ",");
+            sb.append("AllowUsersToChangePassword: " + getAllowUsersToChangePassword() + ",");
         if (getExpirePasswords() != null)
             sb.append("ExpirePasswords: " + getExpirePasswords() + ",");
         if (getMaxPasswordAge() != null)
             sb.append("MaxPasswordAge: " + getMaxPasswordAge() + ",");
         if (getPasswordReusePrevention() != null)
-            sb.append("PasswordReusePrevention: "
-                    + getPasswordReusePrevention() + ",");
+            sb.append("PasswordReusePrevention: " + getPasswordReusePrevention() + ",");
         if (getHardExpiry() != null)
             sb.append("HardExpiry: " + getHardExpiry());
         sb.append("}");
@@ -684,69 +623,45 @@ public class PasswordPolicy implements Serializable, Cloneable {
         if (obj instanceof PasswordPolicy == false)
             return false;
         PasswordPolicy other = (PasswordPolicy) obj;
-        if (other.getMinimumPasswordLength() == null
-                ^ this.getMinimumPasswordLength() == null)
+        if (other.getMinimumPasswordLength() == null ^ this.getMinimumPasswordLength() == null)
             return false;
-        if (other.getMinimumPasswordLength() != null
-                && other.getMinimumPasswordLength().equals(
-                        this.getMinimumPasswordLength()) == false)
+        if (other.getMinimumPasswordLength() != null && other.getMinimumPasswordLength().equals(this.getMinimumPasswordLength()) == false)
             return false;
-        if (other.getRequireSymbols() == null
-                ^ this.getRequireSymbols() == null)
+        if (other.getRequireSymbols() == null ^ this.getRequireSymbols() == null)
             return false;
-        if (other.getRequireSymbols() != null
-                && other.getRequireSymbols().equals(this.getRequireSymbols()) == false)
+        if (other.getRequireSymbols() != null && other.getRequireSymbols().equals(this.getRequireSymbols()) == false)
             return false;
-        if (other.getRequireNumbers() == null
-                ^ this.getRequireNumbers() == null)
+        if (other.getRequireNumbers() == null ^ this.getRequireNumbers() == null)
             return false;
-        if (other.getRequireNumbers() != null
-                && other.getRequireNumbers().equals(this.getRequireNumbers()) == false)
+        if (other.getRequireNumbers() != null && other.getRequireNumbers().equals(this.getRequireNumbers()) == false)
             return false;
-        if (other.getRequireUppercaseCharacters() == null
-                ^ this.getRequireUppercaseCharacters() == null)
+        if (other.getRequireUppercaseCharacters() == null ^ this.getRequireUppercaseCharacters() == null)
             return false;
-        if (other.getRequireUppercaseCharacters() != null
-                && other.getRequireUppercaseCharacters().equals(
-                        this.getRequireUppercaseCharacters()) == false)
+        if (other.getRequireUppercaseCharacters() != null && other.getRequireUppercaseCharacters().equals(this.getRequireUppercaseCharacters()) == false)
             return false;
-        if (other.getRequireLowercaseCharacters() == null
-                ^ this.getRequireLowercaseCharacters() == null)
+        if (other.getRequireLowercaseCharacters() == null ^ this.getRequireLowercaseCharacters() == null)
             return false;
-        if (other.getRequireLowercaseCharacters() != null
-                && other.getRequireLowercaseCharacters().equals(
-                        this.getRequireLowercaseCharacters()) == false)
+        if (other.getRequireLowercaseCharacters() != null && other.getRequireLowercaseCharacters().equals(this.getRequireLowercaseCharacters()) == false)
             return false;
-        if (other.getAllowUsersToChangePassword() == null
-                ^ this.getAllowUsersToChangePassword() == null)
+        if (other.getAllowUsersToChangePassword() == null ^ this.getAllowUsersToChangePassword() == null)
             return false;
-        if (other.getAllowUsersToChangePassword() != null
-                && other.getAllowUsersToChangePassword().equals(
-                        this.getAllowUsersToChangePassword()) == false)
+        if (other.getAllowUsersToChangePassword() != null && other.getAllowUsersToChangePassword().equals(this.getAllowUsersToChangePassword()) == false)
             return false;
-        if (other.getExpirePasswords() == null
-                ^ this.getExpirePasswords() == null)
+        if (other.getExpirePasswords() == null ^ this.getExpirePasswords() == null)
             return false;
-        if (other.getExpirePasswords() != null
-                && other.getExpirePasswords().equals(this.getExpirePasswords()) == false)
+        if (other.getExpirePasswords() != null && other.getExpirePasswords().equals(this.getExpirePasswords()) == false)
             return false;
-        if (other.getMaxPasswordAge() == null
-                ^ this.getMaxPasswordAge() == null)
+        if (other.getMaxPasswordAge() == null ^ this.getMaxPasswordAge() == null)
             return false;
-        if (other.getMaxPasswordAge() != null
-                && other.getMaxPasswordAge().equals(this.getMaxPasswordAge()) == false)
+        if (other.getMaxPasswordAge() != null && other.getMaxPasswordAge().equals(this.getMaxPasswordAge()) == false)
             return false;
-        if (other.getPasswordReusePrevention() == null
-                ^ this.getPasswordReusePrevention() == null)
+        if (other.getPasswordReusePrevention() == null ^ this.getPasswordReusePrevention() == null)
             return false;
-        if (other.getPasswordReusePrevention() != null
-                && other.getPasswordReusePrevention().equals(
-                        this.getPasswordReusePrevention()) == false)
+        if (other.getPasswordReusePrevention() != null && other.getPasswordReusePrevention().equals(this.getPasswordReusePrevention()) == false)
             return false;
         if (other.getHardExpiry() == null ^ this.getHardExpiry() == null)
             return false;
-        if (other.getHardExpiry() != null
-                && other.getHardExpiry().equals(this.getHardExpiry()) == false)
+        if (other.getHardExpiry() != null && other.getHardExpiry().equals(this.getHardExpiry()) == false)
             return false;
         return true;
     }
@@ -756,44 +671,16 @@ public class PasswordPolicy implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getMinimumPasswordLength() == null) ? 0
-                        : getMinimumPasswordLength().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRequireSymbols() == null) ? 0 : getRequireSymbols()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRequireNumbers() == null) ? 0 : getRequireNumbers()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRequireUppercaseCharacters() == null) ? 0
-                        : getRequireUppercaseCharacters().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRequireLowercaseCharacters() == null) ? 0
-                        : getRequireLowercaseCharacters().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAllowUsersToChangePassword() == null) ? 0
-                        : getAllowUsersToChangePassword().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExpirePasswords() == null) ? 0 : getExpirePasswords()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMaxPasswordAge() == null) ? 0 : getMaxPasswordAge()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPasswordReusePrevention() == null) ? 0
-                        : getPasswordReusePrevention().hashCode());
-        hashCode = prime * hashCode
-                + ((getHardExpiry() == null) ? 0 : getHardExpiry().hashCode());
+        hashCode = prime * hashCode + ((getMinimumPasswordLength() == null) ? 0 : getMinimumPasswordLength().hashCode());
+        hashCode = prime * hashCode + ((getRequireSymbols() == null) ? 0 : getRequireSymbols().hashCode());
+        hashCode = prime * hashCode + ((getRequireNumbers() == null) ? 0 : getRequireNumbers().hashCode());
+        hashCode = prime * hashCode + ((getRequireUppercaseCharacters() == null) ? 0 : getRequireUppercaseCharacters().hashCode());
+        hashCode = prime * hashCode + ((getRequireLowercaseCharacters() == null) ? 0 : getRequireLowercaseCharacters().hashCode());
+        hashCode = prime * hashCode + ((getAllowUsersToChangePassword() == null) ? 0 : getAllowUsersToChangePassword().hashCode());
+        hashCode = prime * hashCode + ((getExpirePasswords() == null) ? 0 : getExpirePasswords().hashCode());
+        hashCode = prime * hashCode + ((getMaxPasswordAge() == null) ? 0 : getMaxPasswordAge().hashCode());
+        hashCode = prime * hashCode + ((getPasswordReusePrevention() == null) ? 0 : getPasswordReusePrevention().hashCode());
+        hashCode = prime * hashCode + ((getHardExpiry() == null) ? 0 : getHardExpiry().hashCode());
         return hashCode;
     }
 
@@ -802,9 +689,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
         try {
             return (PasswordPolicy) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

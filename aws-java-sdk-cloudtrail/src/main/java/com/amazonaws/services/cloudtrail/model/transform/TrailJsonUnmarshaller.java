@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudtrail.model.transform;
 
@@ -29,8 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Trail JSON Unmarshaller
  */
-public class TrailJsonUnmarshaller implements
-        Unmarshaller<Trail, JsonUnmarshallerContext> {
+public class TrailJsonUnmarshaller implements Unmarshaller<Trail, JsonUnmarshallerContext> {
 
     public Trail unmarshall(JsonUnmarshallerContext context) throws Exception {
         Trail trail = new Trail();
@@ -52,77 +49,58 @@ public class TrailJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    trail.setName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    trail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BucketName", targetDepth)) {
                     context.nextToken();
-                    trail.setS3BucketName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    trail.setS3BucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3KeyPrefix", targetDepth)) {
                     context.nextToken();
-                    trail.setS3KeyPrefix(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    trail.setS3KeyPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnsTopicName", targetDepth)) {
                     context.nextToken();
-                    trail.setSnsTopicName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    trail.setSnsTopicName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnsTopicARN", targetDepth)) {
                     context.nextToken();
-                    trail.setSnsTopicARN(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    trail.setSnsTopicARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("IncludeGlobalServiceEvents",
-                        targetDepth)) {
+                if (context.testExpression("IncludeGlobalServiceEvents", targetDepth)) {
                     context.nextToken();
-                    trail.setIncludeGlobalServiceEvents(context
-                            .getUnmarshaller(Boolean.class).unmarshall(context));
+                    trail.setIncludeGlobalServiceEvents(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IsMultiRegionTrail", targetDepth)) {
                     context.nextToken();
-                    trail.setIsMultiRegionTrail(context.getUnmarshaller(
-                            Boolean.class).unmarshall(context));
+                    trail.setIsMultiRegionTrail(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("HomeRegion", targetDepth)) {
                     context.nextToken();
-                    trail.setHomeRegion(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    trail.setHomeRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrailARN", targetDepth)) {
                     context.nextToken();
-                    trail.setTrailARN(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    trail.setTrailARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("LogFileValidationEnabled",
-                        targetDepth)) {
+                if (context.testExpression("LogFileValidationEnabled", targetDepth)) {
                     context.nextToken();
-                    trail.setLogFileValidationEnabled(context.getUnmarshaller(
-                            Boolean.class).unmarshall(context));
+                    trail.setLogFileValidationEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
-                if (context.testExpression("CloudWatchLogsLogGroupArn",
-                        targetDepth)) {
+                if (context.testExpression("CloudWatchLogsLogGroupArn", targetDepth)) {
                     context.nextToken();
-                    trail.setCloudWatchLogsLogGroupArn(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    trail.setCloudWatchLogsLogGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context
-                        .testExpression("CloudWatchLogsRoleArn", targetDepth)) {
+                if (context.testExpression("CloudWatchLogsRoleArn", targetDepth)) {
                     context.nextToken();
-                    trail.setCloudWatchLogsRoleArn(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    trail.setCloudWatchLogsRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
                     context.nextToken();
-                    trail.setKmsKeyId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    trail.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

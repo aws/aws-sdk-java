@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model.transform;
 
@@ -34,12 +32,10 @@ public class FindingFilterJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(FindingFilter findingFilter,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(FindingFilter findingFilter, StructuredJsonGenerator jsonGenerator) {
 
         if (findingFilter == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -57,8 +53,7 @@ public class FindingFilterJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
 
-            java.util.List<String> autoScalingGroupsList = findingFilter
-                    .getAutoScalingGroups();
+            java.util.List<String> autoScalingGroupsList = findingFilter.getAutoScalingGroups();
             if (autoScalingGroupsList != null) {
                 jsonGenerator.writeFieldName("autoScalingGroups");
                 jsonGenerator.writeStartArray();
@@ -82,8 +77,7 @@ public class FindingFilterJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
 
-            java.util.List<String> severitiesList = findingFilter
-                    .getSeverities();
+            java.util.List<String> severitiesList = findingFilter.getSeverities();
             if (severitiesList != null) {
                 jsonGenerator.writeFieldName("severities");
                 jsonGenerator.writeStartArray();
@@ -95,8 +89,7 @@ public class FindingFilterJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
 
-            java.util.List<String> rulesPackageArnsList = findingFilter
-                    .getRulesPackageArns();
+            java.util.List<String> rulesPackageArnsList = findingFilter.getRulesPackageArns();
             if (rulesPackageArnsList != null) {
                 jsonGenerator.writeFieldName("rulesPackageArns");
                 jsonGenerator.writeStartArray();
@@ -108,45 +101,39 @@ public class FindingFilterJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
 
-            java.util.List<Attribute> attributesList = findingFilter
-                    .getAttributes();
+            java.util.List<Attribute> attributesList = findingFilter.getAttributes();
             if (attributesList != null) {
                 jsonGenerator.writeFieldName("attributes");
                 jsonGenerator.writeStartArray();
                 for (Attribute attributesListValue : attributesList) {
                     if (attributesListValue != null) {
 
-                        AttributeJsonMarshaller.getInstance().marshall(
-                                attributesListValue, jsonGenerator);
+                        AttributeJsonMarshaller.getInstance().marshall(attributesListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
 
-            java.util.List<Attribute> userAttributesList = findingFilter
-                    .getUserAttributes();
+            java.util.List<Attribute> userAttributesList = findingFilter.getUserAttributes();
             if (userAttributesList != null) {
                 jsonGenerator.writeFieldName("userAttributes");
                 jsonGenerator.writeStartArray();
                 for (Attribute userAttributesListValue : userAttributesList) {
                     if (userAttributesListValue != null) {
 
-                        AttributeJsonMarshaller.getInstance().marshall(
-                                userAttributesListValue, jsonGenerator);
+                        AttributeJsonMarshaller.getInstance().marshall(userAttributesListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (findingFilter.getCreationTimeRange() != null) {
                 jsonGenerator.writeFieldName("creationTimeRange");
-                TimestampRangeJsonMarshaller.getInstance().marshall(
-                        findingFilter.getCreationTimeRange(), jsonGenerator);
+                TimestampRangeJsonMarshaller.getInstance().marshall(findingFilter.getCreationTimeRange(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

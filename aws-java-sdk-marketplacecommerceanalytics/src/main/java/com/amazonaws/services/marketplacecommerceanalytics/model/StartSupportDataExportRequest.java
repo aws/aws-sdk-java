@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.marketplacecommerceanalytics.model;
 
@@ -20,109 +18,90 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the StartSupportDataExport operation.
  */
-public class StartSupportDataExportRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the data set type to be written to the output csv file. The
-     * data set types customer_support_contacts_data and
-     * test_customer_support_contacts_data both result in a csv file containing
-     * the following fields: Product Id, Customer Guid, Subscription Guid,
-     * Subscription Start Date, Organization, AWS Account Id, Given Name,
-     * Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
-     * Operation Type, and Operation Time. Currently, only the
-     * test_customer_support_contacts_data value is supported
+     * Specifies the data set type to be written to the output csv file. The data set types
+     * customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the
+     * following fields: Product Id, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS
+     * Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and
+     * Operation Time. Currently, only the test_customer_support_contacts_data value is supported
      * </p>
      * <p>
      * <ul>
-     * <li><i>customer_support_contacts_data</i> Customer support contact data.
-     * The data set will contain all changes (Creates, Updates, and Deletes) to
-     * customer support contact data from the date specified in the from_date
+     * <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes
+     * (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date
      * parameter.</li>
-     * <li><i>test_customer_support_contacts_data</i> An example data set
-     * containing static test data in the same format as
-     * customer_support_contacts_data</li>
+     * <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format
+     * as customer_support_contacts_data</li>
      * </ul>
      * </p>
      */
     private String dataSetType;
     /**
-     * The start date from which to retrieve the data set. This parameter only
-     * affects the customer_support_contacts_data data set type.
+     * The start date from which to retrieve the data set. This parameter only affects the
+     * customer_support_contacts_data data set type.
      */
     private java.util.Date fromDate;
     /**
-     * The Amazon Resource Name (ARN) of the Role with an attached permissions
-     * policy to interact with the provided AWS services.
+     * The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS
+     * services.
      */
     private String roleNameArn;
     /** The name (friendly name, not ARN) of the destination S3 bucket. */
     private String destinationS3BucketName;
     /**
-     * (Optional) The desired S3 prefix for the published data set, similar to a
-     * directory path in standard file systems. For example, if given the bucket
-     * name "mybucket" and the prefix "myprefix/mydatasets", the output file
-     * "outputfile" would be published to
-     * "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory
-     * structure does not exist, it will be created. If no prefix is provided,
-     * the data set will be published to the S3 bucket root.
+     * (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
+     * systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
+     * "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory
+     * structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3
+     * bucket root.
      */
     private String destinationS3Prefix;
     /**
-     * Amazon Resource Name (ARN) for the SNS Topic that will be notified when
-     * the data set has been published or if an error has occurred.
+     * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
+     * error has occurred.
      */
     private String snsTopicArn;
     /**
-     * (Optional) Key-value pairs which will be returned, unmodified, in the
-     * Amazon SNS notification message and the data set metadata file.
+     * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the
+     * data set metadata file.
      */
     private java.util.Map<String, String> customerDefinedValues;
 
     /**
      * <p>
-     * Specifies the data set type to be written to the output csv file. The
-     * data set types customer_support_contacts_data and
-     * test_customer_support_contacts_data both result in a csv file containing
-     * the following fields: Product Id, Customer Guid, Subscription Guid,
-     * Subscription Start Date, Organization, AWS Account Id, Given Name,
-     * Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
-     * Operation Type, and Operation Time. Currently, only the
-     * test_customer_support_contacts_data value is supported
+     * Specifies the data set type to be written to the output csv file. The data set types
+     * customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the
+     * following fields: Product Id, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS
+     * Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and
+     * Operation Time. Currently, only the test_customer_support_contacts_data value is supported
      * </p>
      * <p>
      * <ul>
-     * <li><i>customer_support_contacts_data</i> Customer support contact data.
-     * The data set will contain all changes (Creates, Updates, and Deletes) to
-     * customer support contact data from the date specified in the from_date
+     * <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes
+     * (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date
      * parameter.</li>
-     * <li><i>test_customer_support_contacts_data</i> An example data set
-     * containing static test data in the same format as
-     * customer_support_contacts_data</li>
+     * <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format
+     * as customer_support_contacts_data</li>
      * </ul>
      * </p>
      * 
      * @param dataSetType
-     *        Specifies the data set type to be written to the output csv file.
-     *        The data set types customer_support_contacts_data and
-     *        test_customer_support_contacts_data both result in a csv file
-     *        containing the following fields: Product Id, Customer Guid,
-     *        Subscription Guid, Subscription Start Date, Organization, AWS
-     *        Account Id, Given Name, Surname, Telephone Number, Email, Title,
-     *        Country Code, ZIP Code, Operation Type, and Operation Time.
-     *        Currently, only the test_customer_support_contacts_data value is
+     *        Specifies the data set type to be written to the output csv file. The data set types
+     *        customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
+     *        containing the following fields: Product Id, Customer Guid, Subscription Guid, Subscription Start Date,
+     *        Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
+     *        Operation Type, and Operation Time. Currently, only the test_customer_support_contacts_data value is
      *        supported </p>
      *        <p>
      *        <ul>
-     *        <li><i>customer_support_contacts_data</i> Customer support contact
-     *        data. The data set will contain all changes (Creates, Updates, and
-     *        Deletes) to customer support contact data from the date specified
-     *        in the from_date parameter.</li>
-     *        <li><i>test_customer_support_contacts_data</i> An example data set
-     *        containing static test data in the same format as
-     *        customer_support_contacts_data</li>
+     *        <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all
+     *        changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the
+     *        from_date parameter.</li>
+     *        <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same
+     *        format as customer_support_contacts_data</li>
      *        </ul>
      * @see SupportDataSetType
      */
@@ -133,45 +112,35 @@ public class StartSupportDataExportRequest extends
 
     /**
      * <p>
-     * Specifies the data set type to be written to the output csv file. The
-     * data set types customer_support_contacts_data and
-     * test_customer_support_contacts_data both result in a csv file containing
-     * the following fields: Product Id, Customer Guid, Subscription Guid,
-     * Subscription Start Date, Organization, AWS Account Id, Given Name,
-     * Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
-     * Operation Type, and Operation Time. Currently, only the
-     * test_customer_support_contacts_data value is supported
+     * Specifies the data set type to be written to the output csv file. The data set types
+     * customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the
+     * following fields: Product Id, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS
+     * Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and
+     * Operation Time. Currently, only the test_customer_support_contacts_data value is supported
      * </p>
      * <p>
      * <ul>
-     * <li><i>customer_support_contacts_data</i> Customer support contact data.
-     * The data set will contain all changes (Creates, Updates, and Deletes) to
-     * customer support contact data from the date specified in the from_date
+     * <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes
+     * (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date
      * parameter.</li>
-     * <li><i>test_customer_support_contacts_data</i> An example data set
-     * containing static test data in the same format as
-     * customer_support_contacts_data</li>
+     * <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format
+     * as customer_support_contacts_data</li>
      * </ul>
      * </p>
      * 
-     * @return Specifies the data set type to be written to the output csv file.
-     *         The data set types customer_support_contacts_data and
-     *         test_customer_support_contacts_data both result in a csv file
-     *         containing the following fields: Product Id, Customer Guid,
-     *         Subscription Guid, Subscription Start Date, Organization, AWS
-     *         Account Id, Given Name, Surname, Telephone Number, Email, Title,
-     *         Country Code, ZIP Code, Operation Type, and Operation Time.
-     *         Currently, only the test_customer_support_contacts_data value is
-     *         supported </p>
+     * @return Specifies the data set type to be written to the output csv file. The data set types
+     *         customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
+     *         containing the following fields: Product Id, Customer Guid, Subscription Guid, Subscription Start Date,
+     *         Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP
+     *         Code, Operation Type, and Operation Time. Currently, only the test_customer_support_contacts_data value
+     *         is supported </p>
      *         <p>
      *         <ul>
-     *         <li><i>customer_support_contacts_data</i> Customer support
-     *         contact data. The data set will contain all changes (Creates,
-     *         Updates, and Deletes) to customer support contact data from the
-     *         date specified in the from_date parameter.</li>
-     *         <li><i>test_customer_support_contacts_data</i> An example data
-     *         set containing static test data in the same format as
-     *         customer_support_contacts_data</li>
+     *         <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all
+     *         changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the
+     *         from_date parameter.</li>
+     *         <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the
+     *         same format as customer_support_contacts_data</li>
      *         </ul>
      * @see SupportDataSetType
      */
@@ -182,49 +151,38 @@ public class StartSupportDataExportRequest extends
 
     /**
      * <p>
-     * Specifies the data set type to be written to the output csv file. The
-     * data set types customer_support_contacts_data and
-     * test_customer_support_contacts_data both result in a csv file containing
-     * the following fields: Product Id, Customer Guid, Subscription Guid,
-     * Subscription Start Date, Organization, AWS Account Id, Given Name,
-     * Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
-     * Operation Type, and Operation Time. Currently, only the
-     * test_customer_support_contacts_data value is supported
+     * Specifies the data set type to be written to the output csv file. The data set types
+     * customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the
+     * following fields: Product Id, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS
+     * Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and
+     * Operation Time. Currently, only the test_customer_support_contacts_data value is supported
      * </p>
      * <p>
      * <ul>
-     * <li><i>customer_support_contacts_data</i> Customer support contact data.
-     * The data set will contain all changes (Creates, Updates, and Deletes) to
-     * customer support contact data from the date specified in the from_date
+     * <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes
+     * (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date
      * parameter.</li>
-     * <li><i>test_customer_support_contacts_data</i> An example data set
-     * containing static test data in the same format as
-     * customer_support_contacts_data</li>
+     * <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format
+     * as customer_support_contacts_data</li>
      * </ul>
      * </p>
      * 
      * @param dataSetType
-     *        Specifies the data set type to be written to the output csv file.
-     *        The data set types customer_support_contacts_data and
-     *        test_customer_support_contacts_data both result in a csv file
-     *        containing the following fields: Product Id, Customer Guid,
-     *        Subscription Guid, Subscription Start Date, Organization, AWS
-     *        Account Id, Given Name, Surname, Telephone Number, Email, Title,
-     *        Country Code, ZIP Code, Operation Type, and Operation Time.
-     *        Currently, only the test_customer_support_contacts_data value is
+     *        Specifies the data set type to be written to the output csv file. The data set types
+     *        customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
+     *        containing the following fields: Product Id, Customer Guid, Subscription Guid, Subscription Start Date,
+     *        Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
+     *        Operation Type, and Operation Time. Currently, only the test_customer_support_contacts_data value is
      *        supported </p>
      *        <p>
      *        <ul>
-     *        <li><i>customer_support_contacts_data</i> Customer support contact
-     *        data. The data set will contain all changes (Creates, Updates, and
-     *        Deletes) to customer support contact data from the date specified
-     *        in the from_date parameter.</li>
-     *        <li><i>test_customer_support_contacts_data</i> An example data set
-     *        containing static test data in the same format as
-     *        customer_support_contacts_data</li>
+     *        <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all
+     *        changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the
+     *        from_date parameter.</li>
+     *        <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same
+     *        format as customer_support_contacts_data</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see SupportDataSetType
      */
 
@@ -235,46 +193,36 @@ public class StartSupportDataExportRequest extends
 
     /**
      * <p>
-     * Specifies the data set type to be written to the output csv file. The
-     * data set types customer_support_contacts_data and
-     * test_customer_support_contacts_data both result in a csv file containing
-     * the following fields: Product Id, Customer Guid, Subscription Guid,
-     * Subscription Start Date, Organization, AWS Account Id, Given Name,
-     * Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
-     * Operation Type, and Operation Time. Currently, only the
-     * test_customer_support_contacts_data value is supported
+     * Specifies the data set type to be written to the output csv file. The data set types
+     * customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the
+     * following fields: Product Id, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS
+     * Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and
+     * Operation Time. Currently, only the test_customer_support_contacts_data value is supported
      * </p>
      * <p>
      * <ul>
-     * <li><i>customer_support_contacts_data</i> Customer support contact data.
-     * The data set will contain all changes (Creates, Updates, and Deletes) to
-     * customer support contact data from the date specified in the from_date
+     * <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes
+     * (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date
      * parameter.</li>
-     * <li><i>test_customer_support_contacts_data</i> An example data set
-     * containing static test data in the same format as
-     * customer_support_contacts_data</li>
+     * <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format
+     * as customer_support_contacts_data</li>
      * </ul>
      * </p>
      * 
      * @param dataSetType
-     *        Specifies the data set type to be written to the output csv file.
-     *        The data set types customer_support_contacts_data and
-     *        test_customer_support_contacts_data both result in a csv file
-     *        containing the following fields: Product Id, Customer Guid,
-     *        Subscription Guid, Subscription Start Date, Organization, AWS
-     *        Account Id, Given Name, Surname, Telephone Number, Email, Title,
-     *        Country Code, ZIP Code, Operation Type, and Operation Time.
-     *        Currently, only the test_customer_support_contacts_data value is
+     *        Specifies the data set type to be written to the output csv file. The data set types
+     *        customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
+     *        containing the following fields: Product Id, Customer Guid, Subscription Guid, Subscription Start Date,
+     *        Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
+     *        Operation Type, and Operation Time. Currently, only the test_customer_support_contacts_data value is
      *        supported </p>
      *        <p>
      *        <ul>
-     *        <li><i>customer_support_contacts_data</i> Customer support contact
-     *        data. The data set will contain all changes (Creates, Updates, and
-     *        Deletes) to customer support contact data from the date specified
-     *        in the from_date parameter.</li>
-     *        <li><i>test_customer_support_contacts_data</i> An example data set
-     *        containing static test data in the same format as
-     *        customer_support_contacts_data</li>
+     *        <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all
+     *        changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the
+     *        from_date parameter.</li>
+     *        <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same
+     *        format as customer_support_contacts_data</li>
      *        </ul>
      * @see SupportDataSetType
      */
@@ -285,65 +233,53 @@ public class StartSupportDataExportRequest extends
 
     /**
      * <p>
-     * Specifies the data set type to be written to the output csv file. The
-     * data set types customer_support_contacts_data and
-     * test_customer_support_contacts_data both result in a csv file containing
-     * the following fields: Product Id, Customer Guid, Subscription Guid,
-     * Subscription Start Date, Organization, AWS Account Id, Given Name,
-     * Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
-     * Operation Type, and Operation Time. Currently, only the
-     * test_customer_support_contacts_data value is supported
+     * Specifies the data set type to be written to the output csv file. The data set types
+     * customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the
+     * following fields: Product Id, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS
+     * Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and
+     * Operation Time. Currently, only the test_customer_support_contacts_data value is supported
      * </p>
      * <p>
      * <ul>
-     * <li><i>customer_support_contacts_data</i> Customer support contact data.
-     * The data set will contain all changes (Creates, Updates, and Deletes) to
-     * customer support contact data from the date specified in the from_date
+     * <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes
+     * (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date
      * parameter.</li>
-     * <li><i>test_customer_support_contacts_data</i> An example data set
-     * containing static test data in the same format as
-     * customer_support_contacts_data</li>
+     * <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format
+     * as customer_support_contacts_data</li>
      * </ul>
      * </p>
      * 
      * @param dataSetType
-     *        Specifies the data set type to be written to the output csv file.
-     *        The data set types customer_support_contacts_data and
-     *        test_customer_support_contacts_data both result in a csv file
-     *        containing the following fields: Product Id, Customer Guid,
-     *        Subscription Guid, Subscription Start Date, Organization, AWS
-     *        Account Id, Given Name, Surname, Telephone Number, Email, Title,
-     *        Country Code, ZIP Code, Operation Type, and Operation Time.
-     *        Currently, only the test_customer_support_contacts_data value is
+     *        Specifies the data set type to be written to the output csv file. The data set types
+     *        customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
+     *        containing the following fields: Product Id, Customer Guid, Subscription Guid, Subscription Start Date,
+     *        Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
+     *        Operation Type, and Operation Time. Currently, only the test_customer_support_contacts_data value is
      *        supported </p>
      *        <p>
      *        <ul>
-     *        <li><i>customer_support_contacts_data</i> Customer support contact
-     *        data. The data set will contain all changes (Creates, Updates, and
-     *        Deletes) to customer support contact data from the date specified
-     *        in the from_date parameter.</li>
-     *        <li><i>test_customer_support_contacts_data</i> An example data set
-     *        containing static test data in the same format as
-     *        customer_support_contacts_data</li>
+     *        <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all
+     *        changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the
+     *        from_date parameter.</li>
+     *        <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same
+     *        format as customer_support_contacts_data</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see SupportDataSetType
      */
 
-    public StartSupportDataExportRequest withDataSetType(
-            SupportDataSetType dataSetType) {
+    public StartSupportDataExportRequest withDataSetType(SupportDataSetType dataSetType) {
         setDataSetType(dataSetType);
         return this;
     }
 
     /**
-     * The start date from which to retrieve the data set. This parameter only
-     * affects the customer_support_contacts_data data set type.
+     * The start date from which to retrieve the data set. This parameter only affects the
+     * customer_support_contacts_data data set type.
      * 
      * @param fromDate
-     *        The start date from which to retrieve the data set. This parameter
-     *        only affects the customer_support_contacts_data data set type.
+     *        The start date from which to retrieve the data set. This parameter only affects the
+     *        customer_support_contacts_data data set type.
      */
 
     public void setFromDate(java.util.Date fromDate) {
@@ -351,12 +287,11 @@ public class StartSupportDataExportRequest extends
     }
 
     /**
-     * The start date from which to retrieve the data set. This parameter only
-     * affects the customer_support_contacts_data data set type.
+     * The start date from which to retrieve the data set. This parameter only affects the
+     * customer_support_contacts_data data set type.
      * 
-     * @return The start date from which to retrieve the data set. This
-     *         parameter only affects the customer_support_contacts_data data
-     *         set type.
+     * @return The start date from which to retrieve the data set. This parameter only affects the
+     *         customer_support_contacts_data data set type.
      */
 
     public java.util.Date getFromDate() {
@@ -364,14 +299,13 @@ public class StartSupportDataExportRequest extends
     }
 
     /**
-     * The start date from which to retrieve the data set. This parameter only
-     * affects the customer_support_contacts_data data set type.
+     * The start date from which to retrieve the data set. This parameter only affects the
+     * customer_support_contacts_data data set type.
      * 
      * @param fromDate
-     *        The start date from which to retrieve the data set. This parameter
-     *        only affects the customer_support_contacts_data data set type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The start date from which to retrieve the data set. This parameter only affects the
+     *        customer_support_contacts_data data set type.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StartSupportDataExportRequest withFromDate(java.util.Date fromDate) {
@@ -380,12 +314,12 @@ public class StartSupportDataExportRequest extends
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the Role with an attached permissions
-     * policy to interact with the provided AWS services.
+     * The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS
+     * services.
      * 
      * @param roleNameArn
-     *        The Amazon Resource Name (ARN) of the Role with an attached
-     *        permissions policy to interact with the provided AWS services.
+     *        The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the
+     *        provided AWS services.
      */
 
     public void setRoleNameArn(String roleNameArn) {
@@ -393,11 +327,11 @@ public class StartSupportDataExportRequest extends
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the Role with an attached permissions
-     * policy to interact with the provided AWS services.
+     * The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS
+     * services.
      * 
-     * @return The Amazon Resource Name (ARN) of the Role with an attached
-     *         permissions policy to interact with the provided AWS services.
+     * @return The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the
+     *         provided AWS services.
      */
 
     public String getRoleNameArn() {
@@ -405,14 +339,13 @@ public class StartSupportDataExportRequest extends
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the Role with an attached permissions
-     * policy to interact with the provided AWS services.
+     * The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS
+     * services.
      * 
      * @param roleNameArn
-     *        The Amazon Resource Name (ARN) of the Role with an attached
-     *        permissions policy to interact with the provided AWS services.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the
+     *        provided AWS services.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StartSupportDataExportRequest withRoleNameArn(String roleNameArn) {
@@ -446,34 +379,27 @@ public class StartSupportDataExportRequest extends
      * 
      * @param destinationS3BucketName
      *        The name (friendly name, not ARN) of the destination S3 bucket.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartSupportDataExportRequest withDestinationS3BucketName(
-            String destinationS3BucketName) {
+    public StartSupportDataExportRequest withDestinationS3BucketName(String destinationS3BucketName) {
         setDestinationS3BucketName(destinationS3BucketName);
         return this;
     }
 
     /**
-     * (Optional) The desired S3 prefix for the published data set, similar to a
-     * directory path in standard file systems. For example, if given the bucket
-     * name "mybucket" and the prefix "myprefix/mydatasets", the output file
-     * "outputfile" would be published to
-     * "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory
-     * structure does not exist, it will be created. If no prefix is provided,
-     * the data set will be published to the S3 bucket root.
+     * (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
+     * systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
+     * "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory
+     * structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3
+     * bucket root.
      * 
      * @param destinationS3Prefix
-     *        (Optional) The desired S3 prefix for the published data set,
-     *        similar to a directory path in standard file systems. For example,
-     *        if given the bucket name "mybucket" and the prefix
-     *        "myprefix/mydatasets", the output file "outputfile" would be
-     *        published to "s3://mybucket/myprefix/mydatasets/outputfile". If
-     *        the prefix directory structure does not exist, it will be created.
-     *        If no prefix is provided, the data set will be published to the S3
-     *        bucket root.
+     *        (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
+     *        systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output
+     *        file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix
+     *        directory structure does not exist, it will be created. If no prefix is provided, the data set will be
+     *        published to the S3 bucket root.
      */
 
     public void setDestinationS3Prefix(String destinationS3Prefix) {
@@ -481,22 +407,17 @@ public class StartSupportDataExportRequest extends
     }
 
     /**
-     * (Optional) The desired S3 prefix for the published data set, similar to a
-     * directory path in standard file systems. For example, if given the bucket
-     * name "mybucket" and the prefix "myprefix/mydatasets", the output file
-     * "outputfile" would be published to
-     * "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory
-     * structure does not exist, it will be created. If no prefix is provided,
-     * the data set will be published to the S3 bucket root.
+     * (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
+     * systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
+     * "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory
+     * structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3
+     * bucket root.
      * 
-     * @return (Optional) The desired S3 prefix for the published data set,
-     *         similar to a directory path in standard file systems. For
-     *         example, if given the bucket name "mybucket" and the prefix
-     *         "myprefix/mydatasets", the output file "outputfile" would be
-     *         published to "s3://mybucket/myprefix/mydatasets/outputfile". If
-     *         the prefix directory structure does not exist, it will be
-     *         created. If no prefix is provided, the data set will be published
-     *         to the S3 bucket root.
+     * @return (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
+     *         systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the
+     *         output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the
+     *         prefix directory structure does not exist, it will be created. If no prefix is provided, the data set
+     *         will be published to the S3 bucket root.
      */
 
     public String getDestinationS3Prefix() {
@@ -504,40 +425,33 @@ public class StartSupportDataExportRequest extends
     }
 
     /**
-     * (Optional) The desired S3 prefix for the published data set, similar to a
-     * directory path in standard file systems. For example, if given the bucket
-     * name "mybucket" and the prefix "myprefix/mydatasets", the output file
-     * "outputfile" would be published to
-     * "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory
-     * structure does not exist, it will be created. If no prefix is provided,
-     * the data set will be published to the S3 bucket root.
+     * (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
+     * systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
+     * "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory
+     * structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3
+     * bucket root.
      * 
      * @param destinationS3Prefix
-     *        (Optional) The desired S3 prefix for the published data set,
-     *        similar to a directory path in standard file systems. For example,
-     *        if given the bucket name "mybucket" and the prefix
-     *        "myprefix/mydatasets", the output file "outputfile" would be
-     *        published to "s3://mybucket/myprefix/mydatasets/outputfile". If
-     *        the prefix directory structure does not exist, it will be created.
-     *        If no prefix is provided, the data set will be published to the S3
-     *        bucket root.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
+     *        systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output
+     *        file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix
+     *        directory structure does not exist, it will be created. If no prefix is provided, the data set will be
+     *        published to the S3 bucket root.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartSupportDataExportRequest withDestinationS3Prefix(
-            String destinationS3Prefix) {
+    public StartSupportDataExportRequest withDestinationS3Prefix(String destinationS3Prefix) {
         setDestinationS3Prefix(destinationS3Prefix);
         return this;
     }
 
     /**
-     * Amazon Resource Name (ARN) for the SNS Topic that will be notified when
-     * the data set has been published or if an error has occurred.
+     * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
+     * error has occurred.
      * 
      * @param snsTopicArn
-     *        Amazon Resource Name (ARN) for the SNS Topic that will be notified
-     *        when the data set has been published or if an error has occurred.
+     *        Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or
+     *        if an error has occurred.
      */
 
     public void setSnsTopicArn(String snsTopicArn) {
@@ -545,12 +459,11 @@ public class StartSupportDataExportRequest extends
     }
 
     /**
-     * Amazon Resource Name (ARN) for the SNS Topic that will be notified when
-     * the data set has been published or if an error has occurred.
+     * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
+     * error has occurred.
      * 
-     * @return Amazon Resource Name (ARN) for the SNS Topic that will be
-     *         notified when the data set has been published or if an error has
-     *         occurred.
+     * @return Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published
+     *         or if an error has occurred.
      */
 
     public String getSnsTopicArn() {
@@ -558,14 +471,13 @@ public class StartSupportDataExportRequest extends
     }
 
     /**
-     * Amazon Resource Name (ARN) for the SNS Topic that will be notified when
-     * the data set has been published or if an error has occurred.
+     * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
+     * error has occurred.
      * 
      * @param snsTopicArn
-     *        Amazon Resource Name (ARN) for the SNS Topic that will be notified
-     *        when the data set has been published or if an error has occurred.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or
+     *        if an error has occurred.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StartSupportDataExportRequest withSnsTopicArn(String snsTopicArn) {
@@ -574,12 +486,11 @@ public class StartSupportDataExportRequest extends
     }
 
     /**
-     * (Optional) Key-value pairs which will be returned, unmodified, in the
-     * Amazon SNS notification message and the data set metadata file.
+     * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the
+     * data set metadata file.
      * 
-     * @return (Optional) Key-value pairs which will be returned, unmodified, in
-     *         the Amazon SNS notification message and the data set metadata
-     *         file.
+     * @return (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and
+     *         the data set metadata file.
      */
 
     public java.util.Map<String, String> getCustomerDefinedValues() {
@@ -587,53 +498,46 @@ public class StartSupportDataExportRequest extends
     }
 
     /**
-     * (Optional) Key-value pairs which will be returned, unmodified, in the
-     * Amazon SNS notification message and the data set metadata file.
+     * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the
+     * data set metadata file.
      * 
      * @param customerDefinedValues
-     *        (Optional) Key-value pairs which will be returned, unmodified, in
-     *        the Amazon SNS notification message and the data set metadata
-     *        file.
+     *        (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and
+     *        the data set metadata file.
      */
 
-    public void setCustomerDefinedValues(
-            java.util.Map<String, String> customerDefinedValues) {
+    public void setCustomerDefinedValues(java.util.Map<String, String> customerDefinedValues) {
         this.customerDefinedValues = customerDefinedValues;
     }
 
     /**
-     * (Optional) Key-value pairs which will be returned, unmodified, in the
-     * Amazon SNS notification message and the data set metadata file.
+     * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the
+     * data set metadata file.
      * 
      * @param customerDefinedValues
-     *        (Optional) Key-value pairs which will be returned, unmodified, in
-     *        the Amazon SNS notification message and the data set metadata
-     *        file.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and
+     *        the data set metadata file.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartSupportDataExportRequest withCustomerDefinedValues(
-            java.util.Map<String, String> customerDefinedValues) {
+    public StartSupportDataExportRequest withCustomerDefinedValues(java.util.Map<String, String> customerDefinedValues) {
         setCustomerDefinedValues(customerDefinedValues);
         return this;
     }
 
-    public StartSupportDataExportRequest addCustomerDefinedValuesEntry(
-            String key, String value) {
+    public StartSupportDataExportRequest addCustomerDefinedValuesEntry(String key, String value) {
         if (null == this.customerDefinedValues) {
             this.customerDefinedValues = new java.util.HashMap<String, String>();
         }
         if (this.customerDefinedValues.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.customerDefinedValues.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into CustomerDefinedValues. &lt;p> Returns
-     * a reference to this object so that method calls can be chained together.
+     * Removes all the entries added into CustomerDefinedValues. &lt;p> Returns a reference to this object so that
+     * method calls can be chained together.
      */
 
     public StartSupportDataExportRequest clearCustomerDefinedValuesEntries() {
@@ -642,8 +546,7 @@ public class StartSupportDataExportRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -660,8 +563,7 @@ public class StartSupportDataExportRequest extends
         if (getRoleNameArn() != null)
             sb.append("RoleNameArn: " + getRoleNameArn() + ",");
         if (getDestinationS3BucketName() != null)
-            sb.append("DestinationS3BucketName: "
-                    + getDestinationS3BucketName() + ",");
+            sb.append("DestinationS3BucketName: " + getDestinationS3BucketName() + ",");
         if (getDestinationS3Prefix() != null)
             sb.append("DestinationS3Prefix: " + getDestinationS3Prefix() + ",");
         if (getSnsTopicArn() != null)
@@ -684,44 +586,31 @@ public class StartSupportDataExportRequest extends
         StartSupportDataExportRequest other = (StartSupportDataExportRequest) obj;
         if (other.getDataSetType() == null ^ this.getDataSetType() == null)
             return false;
-        if (other.getDataSetType() != null
-                && other.getDataSetType().equals(this.getDataSetType()) == false)
+        if (other.getDataSetType() != null && other.getDataSetType().equals(this.getDataSetType()) == false)
             return false;
         if (other.getFromDate() == null ^ this.getFromDate() == null)
             return false;
-        if (other.getFromDate() != null
-                && other.getFromDate().equals(this.getFromDate()) == false)
+        if (other.getFromDate() != null && other.getFromDate().equals(this.getFromDate()) == false)
             return false;
         if (other.getRoleNameArn() == null ^ this.getRoleNameArn() == null)
             return false;
-        if (other.getRoleNameArn() != null
-                && other.getRoleNameArn().equals(this.getRoleNameArn()) == false)
+        if (other.getRoleNameArn() != null && other.getRoleNameArn().equals(this.getRoleNameArn()) == false)
             return false;
-        if (other.getDestinationS3BucketName() == null
-                ^ this.getDestinationS3BucketName() == null)
+        if (other.getDestinationS3BucketName() == null ^ this.getDestinationS3BucketName() == null)
             return false;
-        if (other.getDestinationS3BucketName() != null
-                && other.getDestinationS3BucketName().equals(
-                        this.getDestinationS3BucketName()) == false)
+        if (other.getDestinationS3BucketName() != null && other.getDestinationS3BucketName().equals(this.getDestinationS3BucketName()) == false)
             return false;
-        if (other.getDestinationS3Prefix() == null
-                ^ this.getDestinationS3Prefix() == null)
+        if (other.getDestinationS3Prefix() == null ^ this.getDestinationS3Prefix() == null)
             return false;
-        if (other.getDestinationS3Prefix() != null
-                && other.getDestinationS3Prefix().equals(
-                        this.getDestinationS3Prefix()) == false)
+        if (other.getDestinationS3Prefix() != null && other.getDestinationS3Prefix().equals(this.getDestinationS3Prefix()) == false)
             return false;
         if (other.getSnsTopicArn() == null ^ this.getSnsTopicArn() == null)
             return false;
-        if (other.getSnsTopicArn() != null
-                && other.getSnsTopicArn().equals(this.getSnsTopicArn()) == false)
+        if (other.getSnsTopicArn() != null && other.getSnsTopicArn().equals(this.getSnsTopicArn()) == false)
             return false;
-        if (other.getCustomerDefinedValues() == null
-                ^ this.getCustomerDefinedValues() == null)
+        if (other.getCustomerDefinedValues() == null ^ this.getCustomerDefinedValues() == null)
             return false;
-        if (other.getCustomerDefinedValues() != null
-                && other.getCustomerDefinedValues().equals(
-                        this.getCustomerDefinedValues()) == false)
+        if (other.getCustomerDefinedValues() != null && other.getCustomerDefinedValues().equals(this.getCustomerDefinedValues()) == false)
             return false;
         return true;
     }
@@ -731,29 +620,13 @@ public class StartSupportDataExportRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDataSetType() == null) ? 0 : getDataSetType().hashCode());
-        hashCode = prime * hashCode
-                + ((getFromDate() == null) ? 0 : getFromDate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRoleNameArn() == null) ? 0 : getRoleNameArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDestinationS3BucketName() == null) ? 0
-                        : getDestinationS3BucketName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDestinationS3Prefix() == null) ? 0
-                        : getDestinationS3Prefix().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomerDefinedValues() == null) ? 0
-                        : getCustomerDefinedValues().hashCode());
+        hashCode = prime * hashCode + ((getDataSetType() == null) ? 0 : getDataSetType().hashCode());
+        hashCode = prime * hashCode + ((getFromDate() == null) ? 0 : getFromDate().hashCode());
+        hashCode = prime * hashCode + ((getRoleNameArn() == null) ? 0 : getRoleNameArn().hashCode());
+        hashCode = prime * hashCode + ((getDestinationS3BucketName() == null) ? 0 : getDestinationS3BucketName().hashCode());
+        hashCode = prime * hashCode + ((getDestinationS3Prefix() == null) ? 0 : getDestinationS3Prefix().hashCode());
+        hashCode = prime * hashCode + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode());
+        hashCode = prime * hashCode + ((getCustomerDefinedValues() == null) ? 0 : getCustomerDefinedValues().hashCode());
         return hashCode;
     }
 

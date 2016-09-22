@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model.transform;
 
@@ -39,44 +37,33 @@ import com.amazonaws.util.SdkHttpUtils;
  * ListTrafficPolicyVersionsRequest Marshaller
  */
 
-public class ListTrafficPolicyVersionsRequestMarshaller
-        implements
-        Marshaller<Request<ListTrafficPolicyVersionsRequest>, ListTrafficPolicyVersionsRequest> {
+public class ListTrafficPolicyVersionsRequestMarshaller implements Marshaller<Request<ListTrafficPolicyVersionsRequest>, ListTrafficPolicyVersionsRequest> {
 
-    public Request<ListTrafficPolicyVersionsRequest> marshall(
-            ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest) {
+    public Request<ListTrafficPolicyVersionsRequest> marshall(ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest) {
 
         if (listTrafficPolicyVersionsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListTrafficPolicyVersionsRequest> request = new DefaultRequest<ListTrafficPolicyVersionsRequest>(
-                listTrafficPolicyVersionsRequest, "AmazonRoute53");
+        Request<ListTrafficPolicyVersionsRequest> request = new DefaultRequest<ListTrafficPolicyVersionsRequest>(listTrafficPolicyVersionsRequest,
+                "AmazonRoute53");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2013-04-01/trafficpolicies/{Id}/versions";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{Id}",
-                        (listTrafficPolicyVersionsRequest.getId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(listTrafficPolicyVersionsRequest
-                                                .getId()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{Id}",
+                (listTrafficPolicyVersionsRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listTrafficPolicyVersionsRequest.getId()),
+                        false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (listTrafficPolicyVersionsRequest.getTrafficPolicyVersionMarker() != null) {
-            request.addParameter("trafficpolicyversion", StringUtils
-                    .fromString(listTrafficPolicyVersionsRequest
-                            .getTrafficPolicyVersionMarker()));
+            request.addParameter("trafficpolicyversion", StringUtils.fromString(listTrafficPolicyVersionsRequest.getTrafficPolicyVersionMarker()));
         }
 
         if (listTrafficPolicyVersionsRequest.getMaxItems() != null) {
-            request.addParameter("maxitems", StringUtils
-                    .fromString(listTrafficPolicyVersionsRequest.getMaxItems()));
+            request.addParameter("maxitems", StringUtils.fromString(listTrafficPolicyVersionsRequest.getMaxItems()));
         }
 
         return request;

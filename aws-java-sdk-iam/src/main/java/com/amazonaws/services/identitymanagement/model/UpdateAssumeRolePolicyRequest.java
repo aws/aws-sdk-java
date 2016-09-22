@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -20,18 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateAssumeRolePolicyRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The name of the role to update with the new policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      */
@@ -41,11 +36,10 @@ public class UpdateAssumeRolePolicyRequest extends
      * The policy that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (
-     * ), line feed ( ), and carriage return ( ).
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
+     * ).
      * </p>
      */
     private String policyDocument;
@@ -55,19 +49,17 @@ public class UpdateAssumeRolePolicyRequest extends
      * The name of the role to update with the new policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param roleName
      *        The name of the role to update with the new policy.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
      */
 
     public void setRoleName(String roleName) {
@@ -79,18 +71,16 @@ public class UpdateAssumeRolePolicyRequest extends
      * The name of the role to update with the new policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @return The name of the role to update with the new policy.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of upper
-     *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *         any of the following characters: =,.@-
      */
 
     public String getRoleName() {
@@ -102,21 +92,18 @@ public class UpdateAssumeRolePolicyRequest extends
      * The name of the role to update with the new policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param roleName
      *        The name of the role to update with the new policy.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAssumeRolePolicyRequest withRoleName(String roleName) {
@@ -129,22 +116,18 @@ public class UpdateAssumeRolePolicyRequest extends
      * The policy that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (
-     * ), line feed ( ), and carriage return ( ).
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
+     * ).
      * </p>
      * 
      * @param policyDocument
-     *        The policy that grants an entity permission to assume the
-     *        role.</p>
+     *        The policy that grants an entity permission to assume the role.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of any
-     *        printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range (\u00FF). It also
-     *        includes the special characters tab ( ), line feed ( ), and
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
+     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
      */
 
@@ -157,22 +140,18 @@ public class UpdateAssumeRolePolicyRequest extends
      * The policy that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (
-     * ), line feed ( ), and carriage return ( ).
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
+     * ).
      * </p>
      * 
-     * @return The policy that grants an entity permission to assume the
-     *         role.</p>
+     * @return The policy that grants an entity permission to assume the role.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of any
-     *         printable ASCII character ranging from the space character ( )
-     *         through end of the ASCII character range (\u00FF). It also
-     *         includes the special characters tab ( ), line feed ( ), and
-     *         carriage return ( ).
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
+     *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
+     *         and carriage return ( ).
      */
 
     public String getPolicyDocument() {
@@ -184,36 +163,29 @@ public class UpdateAssumeRolePolicyRequest extends
      * The policy that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (
-     * ), line feed ( ), and carriage return ( ).
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
+     * ).
      * </p>
      * 
      * @param policyDocument
-     *        The policy that grants an entity permission to assume the
-     *        role.</p>
+     *        The policy that grants an entity permission to assume the role.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of any
-     *        printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range (\u00FF). It also
-     *        includes the special characters tab ( ), line feed ( ), and
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
+     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateAssumeRolePolicyRequest withPolicyDocument(
-            String policyDocument) {
+    public UpdateAssumeRolePolicyRequest withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -243,14 +215,11 @@ public class UpdateAssumeRolePolicyRequest extends
         UpdateAssumeRolePolicyRequest other = (UpdateAssumeRolePolicyRequest) obj;
         if (other.getRoleName() == null ^ this.getRoleName() == null)
             return false;
-        if (other.getRoleName() != null
-                && other.getRoleName().equals(this.getRoleName()) == false)
+        if (other.getRoleName() != null && other.getRoleName().equals(this.getRoleName()) == false)
             return false;
-        if (other.getPolicyDocument() == null
-                ^ this.getPolicyDocument() == null)
+        if (other.getPolicyDocument() == null ^ this.getPolicyDocument() == null)
             return false;
-        if (other.getPolicyDocument() != null
-                && other.getPolicyDocument().equals(this.getPolicyDocument()) == false)
+        if (other.getPolicyDocument() != null && other.getPolicyDocument().equals(this.getPolicyDocument()) == false)
             return false;
         return true;
     }
@@ -260,12 +229,8 @@ public class UpdateAssumeRolePolicyRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPolicyDocument() == null) ? 0 : getPolicyDocument()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
+        hashCode = prime * hashCode + ((getPolicyDocument() == null) ? 0 : getPolicyDocument().hashCode());
         return hashCode;
     }
 

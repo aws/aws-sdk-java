@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of DescribeDhcpOptions.
  * </p>
  */
-public class DescribeDhcpOptionsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeDhcpOptionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -63,8 +59,7 @@ public class DescribeDhcpOptionsResult extends
             return;
         }
 
-        this.dhcpOptions = new com.amazonaws.internal.SdkInternalList<DhcpOptions>(
-                dhcpOptions);
+        this.dhcpOptions = new com.amazonaws.internal.SdkInternalList<DhcpOptions>(dhcpOptions);
     }
 
     /**
@@ -72,22 +67,19 @@ public class DescribeDhcpOptionsResult extends
      * Information about one or more DHCP options sets.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDhcpOptions(java.util.Collection)} or
-     * {@link #withDhcpOptions(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDhcpOptions(java.util.Collection)} or {@link #withDhcpOptions(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param dhcpOptions
      *        Information about one or more DHCP options sets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDhcpOptionsResult withDhcpOptions(DhcpOptions... dhcpOptions) {
         if (this.dhcpOptions == null) {
-            setDhcpOptions(new com.amazonaws.internal.SdkInternalList<DhcpOptions>(
-                    dhcpOptions.length));
+            setDhcpOptions(new com.amazonaws.internal.SdkInternalList<DhcpOptions>(dhcpOptions.length));
         }
         for (DhcpOptions ele : dhcpOptions) {
             this.dhcpOptions.add(ele);
@@ -102,19 +94,16 @@ public class DescribeDhcpOptionsResult extends
      * 
      * @param dhcpOptions
      *        Information about one or more DHCP options sets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDhcpOptionsResult withDhcpOptions(
-            java.util.Collection<DhcpOptions> dhcpOptions) {
+    public DescribeDhcpOptionsResult withDhcpOptions(java.util.Collection<DhcpOptions> dhcpOptions) {
         setDhcpOptions(dhcpOptions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -142,8 +131,7 @@ public class DescribeDhcpOptionsResult extends
         DescribeDhcpOptionsResult other = (DescribeDhcpOptionsResult) obj;
         if (other.getDhcpOptions() == null ^ this.getDhcpOptions() == null)
             return false;
-        if (other.getDhcpOptions() != null
-                && other.getDhcpOptions().equals(this.getDhcpOptions()) == false)
+        if (other.getDhcpOptions() != null && other.getDhcpOptions().equals(this.getDhcpOptions()) == false)
             return false;
         return true;
     }
@@ -153,9 +141,7 @@ public class DescribeDhcpOptionsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDhcpOptions() == null) ? 0 : getDhcpOptions().hashCode());
+        hashCode = prime * hashCode + ((getDhcpOptions() == null) ? 0 : getDhcpOptions().hashCode());
         return hashCode;
     }
 
@@ -164,9 +150,7 @@ public class DescribeDhcpOptionsResult extends
         try {
             return (DescribeDhcpOptionsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

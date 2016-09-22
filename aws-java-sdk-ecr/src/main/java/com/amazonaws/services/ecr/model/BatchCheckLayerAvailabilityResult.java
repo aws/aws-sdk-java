@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecr.model;
 
@@ -19,14 +17,11 @@ import java.io.Serializable;
 /**
  * 
  */
-public class BatchCheckLayerAvailabilityResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class BatchCheckLayerAvailabilityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of image layer objects corresponding to the image layer references
-     * in the request.
+     * A list of image layer objects corresponding to the image layer references in the request.
      * </p>
      */
     private java.util.List<Layer> layers;
@@ -39,12 +34,10 @@ public class BatchCheckLayerAvailabilityResult extends
 
     /**
      * <p>
-     * A list of image layer objects corresponding to the image layer references
-     * in the request.
+     * A list of image layer objects corresponding to the image layer references in the request.
      * </p>
      * 
-     * @return A list of image layer objects corresponding to the image layer
-     *         references in the request.
+     * @return A list of image layer objects corresponding to the image layer references in the request.
      */
 
     public java.util.List<Layer> getLayers() {
@@ -53,13 +46,11 @@ public class BatchCheckLayerAvailabilityResult extends
 
     /**
      * <p>
-     * A list of image layer objects corresponding to the image layer references
-     * in the request.
+     * A list of image layer objects corresponding to the image layer references in the request.
      * </p>
      * 
      * @param layers
-     *        A list of image layer objects corresponding to the image layer
-     *        references in the request.
+     *        A list of image layer objects corresponding to the image layer references in the request.
      */
 
     public void setLayers(java.util.Collection<Layer> layers) {
@@ -73,21 +64,17 @@ public class BatchCheckLayerAvailabilityResult extends
 
     /**
      * <p>
-     * A list of image layer objects corresponding to the image layer references
-     * in the request.
+     * A list of image layer objects corresponding to the image layer references in the request.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLayers(java.util.Collection)} or
-     * {@link #withLayers(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLayers(java.util.Collection)} or {@link #withLayers(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param layers
-     *        A list of image layer objects corresponding to the image layer
-     *        references in the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of image layer objects corresponding to the image layer references in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchCheckLayerAvailabilityResult withLayers(Layer... layers) {
@@ -102,19 +89,15 @@ public class BatchCheckLayerAvailabilityResult extends
 
     /**
      * <p>
-     * A list of image layer objects corresponding to the image layer references
-     * in the request.
+     * A list of image layer objects corresponding to the image layer references in the request.
      * </p>
      * 
      * @param layers
-     *        A list of image layer objects corresponding to the image layer
-     *        references in the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of image layer objects corresponding to the image layer references in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchCheckLayerAvailabilityResult withLayers(
-            java.util.Collection<Layer> layers) {
+    public BatchCheckLayerAvailabilityResult withLayers(java.util.Collection<Layer> layers) {
         setLayers(layers);
         return this;
     }
@@ -154,20 +137,17 @@ public class BatchCheckLayerAvailabilityResult extends
      * Any failures associated with the call.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFailures(java.util.Collection)} or
-     * {@link #withFailures(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFailures(java.util.Collection)} or {@link #withFailures(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param failures
      *        Any failures associated with the call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchCheckLayerAvailabilityResult withFailures(
-            LayerFailure... failures) {
+    public BatchCheckLayerAvailabilityResult withFailures(LayerFailure... failures) {
         if (this.failures == null) {
             setFailures(new java.util.ArrayList<LayerFailure>(failures.length));
         }
@@ -184,19 +164,16 @@ public class BatchCheckLayerAvailabilityResult extends
      * 
      * @param failures
      *        Any failures associated with the call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchCheckLayerAvailabilityResult withFailures(
-            java.util.Collection<LayerFailure> failures) {
+    public BatchCheckLayerAvailabilityResult withFailures(java.util.Collection<LayerFailure> failures) {
         setFailures(failures);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -226,13 +203,11 @@ public class BatchCheckLayerAvailabilityResult extends
         BatchCheckLayerAvailabilityResult other = (BatchCheckLayerAvailabilityResult) obj;
         if (other.getLayers() == null ^ this.getLayers() == null)
             return false;
-        if (other.getLayers() != null
-                && other.getLayers().equals(this.getLayers()) == false)
+        if (other.getLayers() != null && other.getLayers().equals(this.getLayers()) == false)
             return false;
         if (other.getFailures() == null ^ this.getFailures() == null)
             return false;
-        if (other.getFailures() != null
-                && other.getFailures().equals(this.getFailures()) == false)
+        if (other.getFailures() != null && other.getFailures().equals(this.getFailures()) == false)
             return false;
         return true;
     }
@@ -242,10 +217,8 @@ public class BatchCheckLayerAvailabilityResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getLayers() == null) ? 0 : getLayers().hashCode());
-        hashCode = prime * hashCode
-                + ((getFailures() == null) ? 0 : getFailures().hashCode());
+        hashCode = prime * hashCode + ((getLayers() == null) ? 0 : getLayers().hashCode());
+        hashCode = prime * hashCode + ((getFailures() == null) ? 0 : getFailures().hashCode());
         return hashCode;
     }
 
@@ -254,9 +227,7 @@ public class BatchCheckLayerAvailabilityResult extends
         try {
             return (BatchCheckLayerAvailabilityResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

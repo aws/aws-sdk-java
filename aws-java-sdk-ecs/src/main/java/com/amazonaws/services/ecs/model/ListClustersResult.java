@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecs.model;
 
@@ -19,36 +17,29 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListClustersResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of full Amazon Resource Name (ARN) entries for each cluster
-     * associated with your account.
+     * The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> clusterArns;
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future
-     * <code>ListClusters</code> request. When the results of a
-     * <code>ListClusters</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a
+     * <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next
+     * page of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The list of full Amazon Resource Name (ARN) entries for each cluster
-     * associated with your account.
+     * The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.
      * </p>
      * 
-     * @return The list of full Amazon Resource Name (ARN) entries for each
-     *         cluster associated with your account.
+     * @return The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.
      */
 
     public java.util.List<String> getClusterArns() {
@@ -60,13 +51,11 @@ public class ListClustersResult extends
 
     /**
      * <p>
-     * The list of full Amazon Resource Name (ARN) entries for each cluster
-     * associated with your account.
+     * The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.
      * </p>
      * 
      * @param clusterArns
-     *        The list of full Amazon Resource Name (ARN) entries for each
-     *        cluster associated with your account.
+     *        The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.
      */
 
     public void setClusterArns(java.util.Collection<String> clusterArns) {
@@ -75,33 +64,27 @@ public class ListClustersResult extends
             return;
         }
 
-        this.clusterArns = new com.amazonaws.internal.SdkInternalList<String>(
-                clusterArns);
+        this.clusterArns = new com.amazonaws.internal.SdkInternalList<String>(clusterArns);
     }
 
     /**
      * <p>
-     * The list of full Amazon Resource Name (ARN) entries for each cluster
-     * associated with your account.
+     * The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setClusterArns(java.util.Collection)} or
-     * {@link #withClusterArns(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setClusterArns(java.util.Collection)} or {@link #withClusterArns(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param clusterArns
-     *        The list of full Amazon Resource Name (ARN) entries for each
-     *        cluster associated with your account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListClustersResult withClusterArns(String... clusterArns) {
         if (this.clusterArns == null) {
-            setClusterArns(new com.amazonaws.internal.SdkInternalList<String>(
-                    clusterArns.length));
+            setClusterArns(new com.amazonaws.internal.SdkInternalList<String>(clusterArns.length));
         }
         for (String ele : clusterArns) {
             this.clusterArns.add(ele);
@@ -111,38 +94,30 @@ public class ListClustersResult extends
 
     /**
      * <p>
-     * The list of full Amazon Resource Name (ARN) entries for each cluster
-     * associated with your account.
+     * The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.
      * </p>
      * 
      * @param clusterArns
-     *        The list of full Amazon Resource Name (ARN) entries for each
-     *        cluster associated with your account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of full Amazon Resource Name (ARN) entries for each cluster associated with your account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListClustersResult withClusterArns(
-            java.util.Collection<String> clusterArns) {
+    public ListClustersResult withClusterArns(java.util.Collection<String> clusterArns) {
         setClusterArns(clusterArns);
         return this;
     }
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future
-     * <code>ListClusters</code> request. When the results of a
-     * <code>ListClusters</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a
+     * <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next
+     * page of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future
-     *        <code>ListClusters</code> request. When the results of a
-     *        <code>ListClusters</code> request exceed <code>maxResults</code>,
-     *        this value can be used to retrieve the next page of results. This
-     *        value is <code>null</code> when there are no more results to
+     *        The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the
+     *        results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to
+     *        retrieve the next page of results. This value is <code>null</code> when there are no more results to
      *        return.
      */
 
@@ -152,18 +127,14 @@ public class ListClustersResult extends
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future
-     * <code>ListClusters</code> request. When the results of a
-     * <code>ListClusters</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a
+     * <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next
+     * page of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
-     * @return The <code>nextToken</code> value to include in a future
-     *         <code>ListClusters</code> request. When the results of a
-     *         <code>ListClusters</code> request exceed <code>maxResults</code>,
-     *         this value can be used to retrieve the next page of results. This
-     *         value is <code>null</code> when there are no more results to
+     * @return The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the
+     *         results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to
+     *         retrieve the next page of results. This value is <code>null</code> when there are no more results to
      *         return.
      */
 
@@ -173,22 +144,17 @@ public class ListClustersResult extends
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future
-     * <code>ListClusters</code> request. When the results of a
-     * <code>ListClusters</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a
+     * <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next
+     * page of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future
-     *        <code>ListClusters</code> request. When the results of a
-     *        <code>ListClusters</code> request exceed <code>maxResults</code>,
-     *        this value can be used to retrieve the next page of results. This
-     *        value is <code>null</code> when there are no more results to
+     *        The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the
+     *        results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to
+     *        retrieve the next page of results. This value is <code>null</code> when there are no more results to
      *        return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListClustersResult withNextToken(String nextToken) {
@@ -197,8 +163,7 @@ public class ListClustersResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -228,13 +193,11 @@ public class ListClustersResult extends
         ListClustersResult other = (ListClustersResult) obj;
         if (other.getClusterArns() == null ^ this.getClusterArns() == null)
             return false;
-        if (other.getClusterArns() != null
-                && other.getClusterArns().equals(this.getClusterArns()) == false)
+        if (other.getClusterArns() != null && other.getClusterArns().equals(this.getClusterArns()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -244,11 +207,8 @@ public class ListClustersResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getClusterArns() == null) ? 0 : getClusterArns().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getClusterArns() == null) ? 0 : getClusterArns().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -257,9 +217,7 @@ public class ListClustersResult extends
         try {
             return (ListClustersResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

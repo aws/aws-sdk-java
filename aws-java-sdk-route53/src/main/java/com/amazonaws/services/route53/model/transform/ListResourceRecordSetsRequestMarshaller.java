@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model.transform;
 
@@ -39,56 +37,40 @@ import com.amazonaws.util.SdkHttpUtils;
  * ListResourceRecordSetsRequest Marshaller
  */
 
-public class ListResourceRecordSetsRequestMarshaller
-        implements
-        Marshaller<Request<ListResourceRecordSetsRequest>, ListResourceRecordSetsRequest> {
+public class ListResourceRecordSetsRequestMarshaller implements Marshaller<Request<ListResourceRecordSetsRequest>, ListResourceRecordSetsRequest> {
 
-    public Request<ListResourceRecordSetsRequest> marshall(
-            ListResourceRecordSetsRequest listResourceRecordSetsRequest) {
+    public Request<ListResourceRecordSetsRequest> marshall(ListResourceRecordSetsRequest listResourceRecordSetsRequest) {
 
         if (listResourceRecordSetsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListResourceRecordSetsRequest> request = new DefaultRequest<ListResourceRecordSetsRequest>(
-                listResourceRecordSetsRequest, "AmazonRoute53");
+        Request<ListResourceRecordSetsRequest> request = new DefaultRequest<ListResourceRecordSetsRequest>(listResourceRecordSetsRequest, "AmazonRoute53");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2013-04-01/hostedzone/{Id}/rrset";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{Id}",
-                        (listResourceRecordSetsRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(listResourceRecordSetsRequest
-                                                .getHostedZoneId()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{Id}",
+                (listResourceRecordSetsRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(listResourceRecordSetsRequest.getHostedZoneId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (listResourceRecordSetsRequest.getStartRecordName() != null) {
-            request.addParameter("name", StringUtils
-                    .fromString(listResourceRecordSetsRequest
-                            .getStartRecordName()));
+            request.addParameter("name", StringUtils.fromString(listResourceRecordSetsRequest.getStartRecordName()));
         }
 
         if (listResourceRecordSetsRequest.getStartRecordType() != null) {
-            request.addParameter("type", StringUtils
-                    .fromString(listResourceRecordSetsRequest
-                            .getStartRecordType()));
+            request.addParameter("type", StringUtils.fromString(listResourceRecordSetsRequest.getStartRecordType()));
         }
 
         if (listResourceRecordSetsRequest.getStartRecordIdentifier() != null) {
-            request.addParameter("identifier", StringUtils
-                    .fromString(listResourceRecordSetsRequest
-                            .getStartRecordIdentifier()));
+            request.addParameter("identifier", StringUtils.fromString(listResourceRecordSetsRequest.getStartRecordIdentifier()));
         }
 
         if (listResourceRecordSetsRequest.getMaxItems() != null) {
-            request.addParameter("maxitems", StringUtils
-                    .fromString(listResourceRecordSetsRequest.getMaxItems()));
+            request.addParameter("maxitems", StringUtils.fromString(listResourceRecordSetsRequest.getMaxItems()));
         }
 
         return request;

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes updates to a specific input configuration (identified by the
- * <code>InputId</code> of an application).
+ * Describes updates to a specific input configuration (identified by the <code>InputId</code> of an application).
  * </p>
  */
 public class InputUpdate implements Serializable, Cloneable {
@@ -32,38 +29,35 @@ public class InputUpdate implements Serializable, Cloneable {
     private String inputId;
     /**
      * <p>
-     * Name prefix for in-application stream(s) that Kinesis Analytics creates
-     * for the specific streaming source.
+     * Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming source.
      * </p>
      */
     private String namePrefixUpdate;
     /**
      * <p>
-     * If a Amazon Kinesis stream is the streaming source to be updated,
-     * provides an updated stream ARN and IAM role ARN.
+     * If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM role
+     * ARN.
      * </p>
      */
     private KinesisStreamsInputUpdate kinesisStreamsInputUpdate;
     /**
      * <p>
-     * If an Amazon Kinesis Firehose delivery stream is the streaming source to
-     * be updated, provides an updated stream Amazon Resource Name (ARN) and IAM
-     * role ARN.
+     * If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated stream
+     * Amazon Resource Name (ARN) and IAM role ARN.
      * </p>
      */
     private KinesisFirehoseInputUpdate kinesisFirehoseInputUpdate;
     /**
      * <p>
-     * Describes the data format on the streaming source, and how record
-     * elements on the streaming source map to columns of the in-application
-     * stream that is created.
+     * Describes the data format on the streaming source, and how record elements on the streaming source map to columns
+     * of the in-application stream that is created.
      * </p>
      */
     private InputSchemaUpdate inputSchemaUpdate;
     /**
      * <p>
-     * Describes the parallelism updates (the number in-application streams
-     * Kinesis Analytics creates for the specific streaming source).
+     * Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the specific
+     * streaming source).
      * </p>
      */
     private InputParallelismUpdate inputParallelismUpdate;
@@ -100,8 +94,7 @@ public class InputUpdate implements Serializable, Cloneable {
      * 
      * @param inputId
      *        Input ID of the application input to be updated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InputUpdate withInputId(String inputId) {
@@ -111,13 +104,11 @@ public class InputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name prefix for in-application stream(s) that Kinesis Analytics creates
-     * for the specific streaming source.
+     * Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming source.
      * </p>
      * 
      * @param namePrefixUpdate
-     *        Name prefix for in-application stream(s) that Kinesis Analytics
-     *        creates for the specific streaming source.
+     *        Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming source.
      */
 
     public void setNamePrefixUpdate(String namePrefixUpdate) {
@@ -126,12 +117,11 @@ public class InputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name prefix for in-application stream(s) that Kinesis Analytics creates
-     * for the specific streaming source.
+     * Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming source.
      * </p>
      * 
-     * @return Name prefix for in-application stream(s) that Kinesis Analytics
-     *         creates for the specific streaming source.
+     * @return Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming
+     *         source.
      */
 
     public String getNamePrefixUpdate() {
@@ -140,15 +130,12 @@ public class InputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name prefix for in-application stream(s) that Kinesis Analytics creates
-     * for the specific streaming source.
+     * Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming source.
      * </p>
      * 
      * @param namePrefixUpdate
-     *        Name prefix for in-application stream(s) that Kinesis Analytics
-     *        creates for the specific streaming source.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming source.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InputUpdate withNamePrefixUpdate(String namePrefixUpdate) {
@@ -158,28 +145,27 @@ public class InputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If a Amazon Kinesis stream is the streaming source to be updated,
-     * provides an updated stream ARN and IAM role ARN.
+     * If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM role
+     * ARN.
      * </p>
      * 
      * @param kinesisStreamsInputUpdate
-     *        If a Amazon Kinesis stream is the streaming source to be updated,
-     *        provides an updated stream ARN and IAM role ARN.
+     *        If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM
+     *        role ARN.
      */
 
-    public void setKinesisStreamsInputUpdate(
-            KinesisStreamsInputUpdate kinesisStreamsInputUpdate) {
+    public void setKinesisStreamsInputUpdate(KinesisStreamsInputUpdate kinesisStreamsInputUpdate) {
         this.kinesisStreamsInputUpdate = kinesisStreamsInputUpdate;
     }
 
     /**
      * <p>
-     * If a Amazon Kinesis stream is the streaming source to be updated,
-     * provides an updated stream ARN and IAM role ARN.
+     * If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM role
+     * ARN.
      * </p>
      * 
-     * @return If a Amazon Kinesis stream is the streaming source to be updated,
-     *         provides an updated stream ARN and IAM role ARN.
+     * @return If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM
+     *         role ARN.
      */
 
     public KinesisStreamsInputUpdate getKinesisStreamsInputUpdate() {
@@ -188,51 +174,44 @@ public class InputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If a Amazon Kinesis stream is the streaming source to be updated,
-     * provides an updated stream ARN and IAM role ARN.
+     * If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM role
+     * ARN.
      * </p>
      * 
      * @param kinesisStreamsInputUpdate
-     *        If a Amazon Kinesis stream is the streaming source to be updated,
-     *        provides an updated stream ARN and IAM role ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM
+     *        role ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InputUpdate withKinesisStreamsInputUpdate(
-            KinesisStreamsInputUpdate kinesisStreamsInputUpdate) {
+    public InputUpdate withKinesisStreamsInputUpdate(KinesisStreamsInputUpdate kinesisStreamsInputUpdate) {
         setKinesisStreamsInputUpdate(kinesisStreamsInputUpdate);
         return this;
     }
 
     /**
      * <p>
-     * If an Amazon Kinesis Firehose delivery stream is the streaming source to
-     * be updated, provides an updated stream Amazon Resource Name (ARN) and IAM
-     * role ARN.
+     * If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated stream
+     * Amazon Resource Name (ARN) and IAM role ARN.
      * </p>
      * 
      * @param kinesisFirehoseInputUpdate
-     *        If an Amazon Kinesis Firehose delivery stream is the streaming
-     *        source to be updated, provides an updated stream Amazon Resource
-     *        Name (ARN) and IAM role ARN.
+     *        If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated
+     *        stream Amazon Resource Name (ARN) and IAM role ARN.
      */
 
-    public void setKinesisFirehoseInputUpdate(
-            KinesisFirehoseInputUpdate kinesisFirehoseInputUpdate) {
+    public void setKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdate kinesisFirehoseInputUpdate) {
         this.kinesisFirehoseInputUpdate = kinesisFirehoseInputUpdate;
     }
 
     /**
      * <p>
-     * If an Amazon Kinesis Firehose delivery stream is the streaming source to
-     * be updated, provides an updated stream Amazon Resource Name (ARN) and IAM
-     * role ARN.
+     * If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated stream
+     * Amazon Resource Name (ARN) and IAM role ARN.
      * </p>
      * 
-     * @return If an Amazon Kinesis Firehose delivery stream is the streaming
-     *         source to be updated, provides an updated stream Amazon Resource
-     *         Name (ARN) and IAM role ARN.
+     * @return If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated
+     *         stream Amazon Resource Name (ARN) and IAM role ARN.
      */
 
     public KinesisFirehoseInputUpdate getKinesisFirehoseInputUpdate() {
@@ -241,36 +220,30 @@ public class InputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If an Amazon Kinesis Firehose delivery stream is the streaming source to
-     * be updated, provides an updated stream Amazon Resource Name (ARN) and IAM
-     * role ARN.
+     * If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated stream
+     * Amazon Resource Name (ARN) and IAM role ARN.
      * </p>
      * 
      * @param kinesisFirehoseInputUpdate
-     *        If an Amazon Kinesis Firehose delivery stream is the streaming
-     *        source to be updated, provides an updated stream Amazon Resource
-     *        Name (ARN) and IAM role ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated
+     *        stream Amazon Resource Name (ARN) and IAM role ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InputUpdate withKinesisFirehoseInputUpdate(
-            KinesisFirehoseInputUpdate kinesisFirehoseInputUpdate) {
+    public InputUpdate withKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdate kinesisFirehoseInputUpdate) {
         setKinesisFirehoseInputUpdate(kinesisFirehoseInputUpdate);
         return this;
     }
 
     /**
      * <p>
-     * Describes the data format on the streaming source, and how record
-     * elements on the streaming source map to columns of the in-application
-     * stream that is created.
+     * Describes the data format on the streaming source, and how record elements on the streaming source map to columns
+     * of the in-application stream that is created.
      * </p>
      * 
      * @param inputSchemaUpdate
-     *        Describes the data format on the streaming source, and how record
-     *        elements on the streaming source map to columns of the
-     *        in-application stream that is created.
+     *        Describes the data format on the streaming source, and how record elements on the streaming source map to
+     *        columns of the in-application stream that is created.
      */
 
     public void setInputSchemaUpdate(InputSchemaUpdate inputSchemaUpdate) {
@@ -279,14 +252,12 @@ public class InputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the data format on the streaming source, and how record
-     * elements on the streaming source map to columns of the in-application
-     * stream that is created.
+     * Describes the data format on the streaming source, and how record elements on the streaming source map to columns
+     * of the in-application stream that is created.
      * </p>
      * 
-     * @return Describes the data format on the streaming source, and how record
-     *         elements on the streaming source map to columns of the
-     *         in-application stream that is created.
+     * @return Describes the data format on the streaming source, and how record elements on the streaming source map to
+     *         columns of the in-application stream that is created.
      */
 
     public InputSchemaUpdate getInputSchemaUpdate() {
@@ -295,17 +266,14 @@ public class InputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the data format on the streaming source, and how record
-     * elements on the streaming source map to columns of the in-application
-     * stream that is created.
+     * Describes the data format on the streaming source, and how record elements on the streaming source map to columns
+     * of the in-application stream that is created.
      * </p>
      * 
      * @param inputSchemaUpdate
-     *        Describes the data format on the streaming source, and how record
-     *        elements on the streaming source map to columns of the
-     *        in-application stream that is created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Describes the data format on the streaming source, and how record elements on the streaming source map to
+     *        columns of the in-application stream that is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InputUpdate withInputSchemaUpdate(InputSchemaUpdate inputSchemaUpdate) {
@@ -315,30 +283,27 @@ public class InputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the parallelism updates (the number in-application streams
-     * Kinesis Analytics creates for the specific streaming source).
+     * Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the specific
+     * streaming source).
      * </p>
      * 
      * @param inputParallelismUpdate
-     *        Describes the parallelism updates (the number in-application
-     *        streams Kinesis Analytics creates for the specific streaming
-     *        source).
+     *        Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the
+     *        specific streaming source).
      */
 
-    public void setInputParallelismUpdate(
-            InputParallelismUpdate inputParallelismUpdate) {
+    public void setInputParallelismUpdate(InputParallelismUpdate inputParallelismUpdate) {
         this.inputParallelismUpdate = inputParallelismUpdate;
     }
 
     /**
      * <p>
-     * Describes the parallelism updates (the number in-application streams
-     * Kinesis Analytics creates for the specific streaming source).
+     * Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the specific
+     * streaming source).
      * </p>
      * 
-     * @return Describes the parallelism updates (the number in-application
-     *         streams Kinesis Analytics creates for the specific streaming
-     *         source).
+     * @return Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the
+     *         specific streaming source).
      */
 
     public InputParallelismUpdate getInputParallelismUpdate() {
@@ -347,27 +312,23 @@ public class InputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the parallelism updates (the number in-application streams
-     * Kinesis Analytics creates for the specific streaming source).
+     * Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the specific
+     * streaming source).
      * </p>
      * 
      * @param inputParallelismUpdate
-     *        Describes the parallelism updates (the number in-application
-     *        streams Kinesis Analytics creates for the specific streaming
-     *        source).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the
+     *        specific streaming source).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InputUpdate withInputParallelismUpdate(
-            InputParallelismUpdate inputParallelismUpdate) {
+    public InputUpdate withInputParallelismUpdate(InputParallelismUpdate inputParallelismUpdate) {
         setInputParallelismUpdate(inputParallelismUpdate);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -382,11 +343,9 @@ public class InputUpdate implements Serializable, Cloneable {
         if (getNamePrefixUpdate() != null)
             sb.append("NamePrefixUpdate: " + getNamePrefixUpdate() + ",");
         if (getKinesisStreamsInputUpdate() != null)
-            sb.append("KinesisStreamsInputUpdate: "
-                    + getKinesisStreamsInputUpdate() + ",");
+            sb.append("KinesisStreamsInputUpdate: " + getKinesisStreamsInputUpdate() + ",");
         if (getKinesisFirehoseInputUpdate() != null)
-            sb.append("KinesisFirehoseInputUpdate: "
-                    + getKinesisFirehoseInputUpdate() + ",");
+            sb.append("KinesisFirehoseInputUpdate: " + getKinesisFirehoseInputUpdate() + ",");
         if (getInputSchemaUpdate() != null)
             sb.append("InputSchemaUpdate: " + getInputSchemaUpdate() + ",");
         if (getInputParallelismUpdate() != null)
@@ -407,43 +366,27 @@ public class InputUpdate implements Serializable, Cloneable {
         InputUpdate other = (InputUpdate) obj;
         if (other.getInputId() == null ^ this.getInputId() == null)
             return false;
-        if (other.getInputId() != null
-                && other.getInputId().equals(this.getInputId()) == false)
+        if (other.getInputId() != null && other.getInputId().equals(this.getInputId()) == false)
             return false;
-        if (other.getNamePrefixUpdate() == null
-                ^ this.getNamePrefixUpdate() == null)
+        if (other.getNamePrefixUpdate() == null ^ this.getNamePrefixUpdate() == null)
             return false;
-        if (other.getNamePrefixUpdate() != null
-                && other.getNamePrefixUpdate().equals(
-                        this.getNamePrefixUpdate()) == false)
+        if (other.getNamePrefixUpdate() != null && other.getNamePrefixUpdate().equals(this.getNamePrefixUpdate()) == false)
             return false;
-        if (other.getKinesisStreamsInputUpdate() == null
-                ^ this.getKinesisStreamsInputUpdate() == null)
+        if (other.getKinesisStreamsInputUpdate() == null ^ this.getKinesisStreamsInputUpdate() == null)
             return false;
-        if (other.getKinesisStreamsInputUpdate() != null
-                && other.getKinesisStreamsInputUpdate().equals(
-                        this.getKinesisStreamsInputUpdate()) == false)
+        if (other.getKinesisStreamsInputUpdate() != null && other.getKinesisStreamsInputUpdate().equals(this.getKinesisStreamsInputUpdate()) == false)
             return false;
-        if (other.getKinesisFirehoseInputUpdate() == null
-                ^ this.getKinesisFirehoseInputUpdate() == null)
+        if (other.getKinesisFirehoseInputUpdate() == null ^ this.getKinesisFirehoseInputUpdate() == null)
             return false;
-        if (other.getKinesisFirehoseInputUpdate() != null
-                && other.getKinesisFirehoseInputUpdate().equals(
-                        this.getKinesisFirehoseInputUpdate()) == false)
+        if (other.getKinesisFirehoseInputUpdate() != null && other.getKinesisFirehoseInputUpdate().equals(this.getKinesisFirehoseInputUpdate()) == false)
             return false;
-        if (other.getInputSchemaUpdate() == null
-                ^ this.getInputSchemaUpdate() == null)
+        if (other.getInputSchemaUpdate() == null ^ this.getInputSchemaUpdate() == null)
             return false;
-        if (other.getInputSchemaUpdate() != null
-                && other.getInputSchemaUpdate().equals(
-                        this.getInputSchemaUpdate()) == false)
+        if (other.getInputSchemaUpdate() != null && other.getInputSchemaUpdate().equals(this.getInputSchemaUpdate()) == false)
             return false;
-        if (other.getInputParallelismUpdate() == null
-                ^ this.getInputParallelismUpdate() == null)
+        if (other.getInputParallelismUpdate() == null ^ this.getInputParallelismUpdate() == null)
             return false;
-        if (other.getInputParallelismUpdate() != null
-                && other.getInputParallelismUpdate().equals(
-                        this.getInputParallelismUpdate()) == false)
+        if (other.getInputParallelismUpdate() != null && other.getInputParallelismUpdate().equals(this.getInputParallelismUpdate()) == false)
             return false;
         return true;
     }
@@ -453,28 +396,12 @@ public class InputUpdate implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInputId() == null) ? 0 : getInputId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNamePrefixUpdate() == null) ? 0 : getNamePrefixUpdate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getKinesisStreamsInputUpdate() == null) ? 0
-                        : getKinesisStreamsInputUpdate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getKinesisFirehoseInputUpdate() == null) ? 0
-                        : getKinesisFirehoseInputUpdate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInputSchemaUpdate() == null) ? 0
-                        : getInputSchemaUpdate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInputParallelismUpdate() == null) ? 0
-                        : getInputParallelismUpdate().hashCode());
+        hashCode = prime * hashCode + ((getInputId() == null) ? 0 : getInputId().hashCode());
+        hashCode = prime * hashCode + ((getNamePrefixUpdate() == null) ? 0 : getNamePrefixUpdate().hashCode());
+        hashCode = prime * hashCode + ((getKinesisStreamsInputUpdate() == null) ? 0 : getKinesisStreamsInputUpdate().hashCode());
+        hashCode = prime * hashCode + ((getKinesisFirehoseInputUpdate() == null) ? 0 : getKinesisFirehoseInputUpdate().hashCode());
+        hashCode = prime * hashCode + ((getInputSchemaUpdate() == null) ? 0 : getInputSchemaUpdate().hashCode());
+        hashCode = prime * hashCode + ((getInputParallelismUpdate() == null) ? 0 : getInputParallelismUpdate().hashCode());
         return hashCode;
     }
 
@@ -483,9 +410,7 @@ public class InputUpdate implements Serializable, Cloneable {
         try {
             return (InputUpdate) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * MetricDatum StAX Unmarshaller
  */
-public class MetricDatumStaxUnmarshaller implements
-        Unmarshaller<MetricDatum, StaxUnmarshallerContext> {
+public class MetricDatumStaxUnmarshaller implements Unmarshaller<MetricDatum, StaxUnmarshallerContext> {
 
-    public MetricDatum unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public MetricDatum unmarshall(StaxUnmarshallerContext context) throws Exception {
         MetricDatum metricDatum = new MetricDatum();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,38 +46,32 @@ public class MetricDatumStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("MetricName", targetDepth)) {
-                    metricDatum.setMetricName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    metricDatum.setMetricName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Dimensions/member", targetDepth)) {
-                    metricDatum.withDimensions(DimensionStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    metricDatum.withDimensions(DimensionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Timestamp", targetDepth)) {
-                    metricDatum.setTimestamp(DateStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    metricDatum.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Value", targetDepth)) {
-                    metricDatum.setValue(DoubleStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    metricDatum.setValue(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("StatisticValues", targetDepth)) {
-                    metricDatum.setStatisticValues(StatisticSetStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    metricDatum.setStatisticValues(StatisticSetStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Unit", targetDepth)) {
-                    metricDatum.setUnit(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    metricDatum.setUnit(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

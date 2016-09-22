@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model.transform;
 
@@ -35,66 +33,51 @@ import com.amazonaws.protocol.json.*;
 /**
  * AddApplicationOutputRequest Marshaller
  */
-public class AddApplicationOutputRequestMarshaller
-        implements
-        Marshaller<Request<AddApplicationOutputRequest>, AddApplicationOutputRequest> {
+public class AddApplicationOutputRequestMarshaller implements Marshaller<Request<AddApplicationOutputRequest>, AddApplicationOutputRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public AddApplicationOutputRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public AddApplicationOutputRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<AddApplicationOutputRequest> marshall(
-            AddApplicationOutputRequest addApplicationOutputRequest) {
+    public Request<AddApplicationOutputRequest> marshall(AddApplicationOutputRequest addApplicationOutputRequest) {
 
         if (addApplicationOutputRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AddApplicationOutputRequest> request = new DefaultRequest<AddApplicationOutputRequest>(
-                addApplicationOutputRequest, "AmazonKinesisAnalytics");
-        request.addHeader("X-Amz-Target",
-                "KinesisAnalytics_20150814.AddApplicationOutput");
+        Request<AddApplicationOutputRequest> request = new DefaultRequest<AddApplicationOutputRequest>(addApplicationOutputRequest, "AmazonKinesisAnalytics");
+        request.addHeader("X-Amz-Target", "KinesisAnalytics_20150814.AddApplicationOutput");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (addApplicationOutputRequest.getApplicationName() != null) {
-                jsonGenerator.writeFieldName("ApplicationName").writeValue(
-                        addApplicationOutputRequest.getApplicationName());
+                jsonGenerator.writeFieldName("ApplicationName").writeValue(addApplicationOutputRequest.getApplicationName());
             }
             if (addApplicationOutputRequest.getCurrentApplicationVersionId() != null) {
-                jsonGenerator.writeFieldName("CurrentApplicationVersionId")
-                        .writeValue(
-                                addApplicationOutputRequest
-                                        .getCurrentApplicationVersionId());
+                jsonGenerator.writeFieldName("CurrentApplicationVersionId").writeValue(addApplicationOutputRequest.getCurrentApplicationVersionId());
             }
             if (addApplicationOutputRequest.getOutput() != null) {
                 jsonGenerator.writeFieldName("Output");
-                OutputJsonMarshaller.getInstance().marshall(
-                        addApplicationOutputRequest.getOutput(), jsonGenerator);
+                OutputJsonMarshaller.getInstance().marshall(addApplicationOutputRequest.getOutput(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.support.model.transform;
 
@@ -35,55 +33,46 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeTrustedAdvisorChecksRequest Marshaller
  */
-public class DescribeTrustedAdvisorChecksRequestMarshaller
-        implements
+public class DescribeTrustedAdvisorChecksRequestMarshaller implements
         Marshaller<Request<DescribeTrustedAdvisorChecksRequest>, DescribeTrustedAdvisorChecksRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeTrustedAdvisorChecksRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeTrustedAdvisorChecksRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeTrustedAdvisorChecksRequest> marshall(
-            DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest) {
+    public Request<DescribeTrustedAdvisorChecksRequest> marshall(DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest) {
 
         if (describeTrustedAdvisorChecksRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeTrustedAdvisorChecksRequest> request = new DefaultRequest<DescribeTrustedAdvisorChecksRequest>(
-                describeTrustedAdvisorChecksRequest, "AWSSupport");
-        request.addHeader("X-Amz-Target",
-                "AWSSupport_20130415.DescribeTrustedAdvisorChecks");
+        Request<DescribeTrustedAdvisorChecksRequest> request = new DefaultRequest<DescribeTrustedAdvisorChecksRequest>(describeTrustedAdvisorChecksRequest,
+                "AWSSupport");
+        request.addHeader("X-Amz-Target", "AWSSupport_20130415.DescribeTrustedAdvisorChecks");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (describeTrustedAdvisorChecksRequest.getLanguage() != null) {
-                jsonGenerator.writeFieldName("language").writeValue(
-                        describeTrustedAdvisorChecksRequest.getLanguage());
+                jsonGenerator.writeFieldName("language").writeValue(describeTrustedAdvisorChecksRequest.getLanguage());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

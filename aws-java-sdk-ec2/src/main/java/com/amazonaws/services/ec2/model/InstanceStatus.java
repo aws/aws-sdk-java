@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -43,23 +41,21 @@ public class InstanceStatus implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<InstanceStatusEvent> events;
     /**
      * <p>
-     * The intended state of the instance. <a>DescribeInstanceStatus</a>
-     * requires that an instance be in the <code>running</code> state.
+     * The intended state of the instance. <a>DescribeInstanceStatus</a> requires that an instance be in the
+     * <code>running</code> state.
      * </p>
      */
     private InstanceState instanceState;
     /**
      * <p>
-     * Reports impaired functionality that stems from issues related to the
-     * systems that support an instance, such as hardware failures and network
-     * connectivity problems.
+     * Reports impaired functionality that stems from issues related to the systems that support an instance, such as
+     * hardware failures and network connectivity problems.
      * </p>
      */
     private InstanceStatusSummary systemStatus;
     /**
      * <p>
-     * Reports impaired functionality that stems from issues internal to the
-     * instance, such as impaired reachability.
+     * Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.
      * </p>
      */
     private InstanceStatusSummary instanceStatus;
@@ -96,8 +92,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * 
      * @param instanceId
      *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceStatus withInstanceId(String instanceId) {
@@ -137,8 +132,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * 
      * @param availabilityZone
      *        The Availability Zone of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceStatus withAvailabilityZone(String availabilityZone) {
@@ -176,8 +170,7 @@ public class InstanceStatus implements Serializable, Cloneable {
             return;
         }
 
-        this.events = new com.amazonaws.internal.SdkInternalList<InstanceStatusEvent>(
-                events);
+        this.events = new com.amazonaws.internal.SdkInternalList<InstanceStatusEvent>(events);
     }
 
     /**
@@ -185,22 +178,19 @@ public class InstanceStatus implements Serializable, Cloneable {
      * Any scheduled events associated with the instance.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEvents(java.util.Collection)} or
-     * {@link #withEvents(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param events
      *        Any scheduled events associated with the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceStatus withEvents(InstanceStatusEvent... events) {
         if (this.events == null) {
-            setEvents(new com.amazonaws.internal.SdkInternalList<InstanceStatusEvent>(
-                    events.length));
+            setEvents(new com.amazonaws.internal.SdkInternalList<InstanceStatusEvent>(events.length));
         }
         for (InstanceStatusEvent ele : events) {
             this.events.add(ele);
@@ -215,25 +205,23 @@ public class InstanceStatus implements Serializable, Cloneable {
      * 
      * @param events
      *        Any scheduled events associated with the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceStatus withEvents(
-            java.util.Collection<InstanceStatusEvent> events) {
+    public InstanceStatus withEvents(java.util.Collection<InstanceStatusEvent> events) {
         setEvents(events);
         return this;
     }
 
     /**
      * <p>
-     * The intended state of the instance. <a>DescribeInstanceStatus</a>
-     * requires that an instance be in the <code>running</code> state.
+     * The intended state of the instance. <a>DescribeInstanceStatus</a> requires that an instance be in the
+     * <code>running</code> state.
      * </p>
      * 
      * @param instanceState
-     *        The intended state of the instance. <a>DescribeInstanceStatus</a>
-     *        requires that an instance be in the <code>running</code> state.
+     *        The intended state of the instance. <a>DescribeInstanceStatus</a> requires that an instance be in the
+     *        <code>running</code> state.
      */
 
     public void setInstanceState(InstanceState instanceState) {
@@ -242,12 +230,12 @@ public class InstanceStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The intended state of the instance. <a>DescribeInstanceStatus</a>
-     * requires that an instance be in the <code>running</code> state.
+     * The intended state of the instance. <a>DescribeInstanceStatus</a> requires that an instance be in the
+     * <code>running</code> state.
      * </p>
      * 
-     * @return The intended state of the instance. <a>DescribeInstanceStatus</a>
-     *         requires that an instance be in the <code>running</code> state.
+     * @return The intended state of the instance. <a>DescribeInstanceStatus</a> requires that an instance be in the
+     *         <code>running</code> state.
      */
 
     public InstanceState getInstanceState() {
@@ -256,15 +244,14 @@ public class InstanceStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The intended state of the instance. <a>DescribeInstanceStatus</a>
-     * requires that an instance be in the <code>running</code> state.
+     * The intended state of the instance. <a>DescribeInstanceStatus</a> requires that an instance be in the
+     * <code>running</code> state.
      * </p>
      * 
      * @param instanceState
-     *        The intended state of the instance. <a>DescribeInstanceStatus</a>
-     *        requires that an instance be in the <code>running</code> state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The intended state of the instance. <a>DescribeInstanceStatus</a> requires that an instance be in the
+     *        <code>running</code> state.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceStatus withInstanceState(InstanceState instanceState) {
@@ -274,15 +261,13 @@ public class InstanceStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reports impaired functionality that stems from issues related to the
-     * systems that support an instance, such as hardware failures and network
-     * connectivity problems.
+     * Reports impaired functionality that stems from issues related to the systems that support an instance, such as
+     * hardware failures and network connectivity problems.
      * </p>
      * 
      * @param systemStatus
-     *        Reports impaired functionality that stems from issues related to
-     *        the systems that support an instance, such as hardware failures
-     *        and network connectivity problems.
+     *        Reports impaired functionality that stems from issues related to the systems that support an instance,
+     *        such as hardware failures and network connectivity problems.
      */
 
     public void setSystemStatus(InstanceStatusSummary systemStatus) {
@@ -291,14 +276,12 @@ public class InstanceStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reports impaired functionality that stems from issues related to the
-     * systems that support an instance, such as hardware failures and network
-     * connectivity problems.
+     * Reports impaired functionality that stems from issues related to the systems that support an instance, such as
+     * hardware failures and network connectivity problems.
      * </p>
      * 
-     * @return Reports impaired functionality that stems from issues related to
-     *         the systems that support an instance, such as hardware failures
-     *         and network connectivity problems.
+     * @return Reports impaired functionality that stems from issues related to the systems that support an instance,
+     *         such as hardware failures and network connectivity problems.
      */
 
     public InstanceStatusSummary getSystemStatus() {
@@ -307,17 +290,14 @@ public class InstanceStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reports impaired functionality that stems from issues related to the
-     * systems that support an instance, such as hardware failures and network
-     * connectivity problems.
+     * Reports impaired functionality that stems from issues related to the systems that support an instance, such as
+     * hardware failures and network connectivity problems.
      * </p>
      * 
      * @param systemStatus
-     *        Reports impaired functionality that stems from issues related to
-     *        the systems that support an instance, such as hardware failures
-     *        and network connectivity problems.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Reports impaired functionality that stems from issues related to the systems that support an instance,
+     *        such as hardware failures and network connectivity problems.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceStatus withSystemStatus(InstanceStatusSummary systemStatus) {
@@ -327,13 +307,12 @@ public class InstanceStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reports impaired functionality that stems from issues internal to the
-     * instance, such as impaired reachability.
+     * Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.
      * </p>
      * 
      * @param instanceStatus
-     *        Reports impaired functionality that stems from issues internal to
-     *        the instance, such as impaired reachability.
+     *        Reports impaired functionality that stems from issues internal to the instance, such as impaired
+     *        reachability.
      */
 
     public void setInstanceStatus(InstanceStatusSummary instanceStatus) {
@@ -342,12 +321,11 @@ public class InstanceStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reports impaired functionality that stems from issues internal to the
-     * instance, such as impaired reachability.
+     * Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.
      * </p>
      * 
-     * @return Reports impaired functionality that stems from issues internal to
-     *         the instance, such as impaired reachability.
+     * @return Reports impaired functionality that stems from issues internal to the instance, such as impaired
+     *         reachability.
      */
 
     public InstanceStatusSummary getInstanceStatus() {
@@ -356,26 +334,22 @@ public class InstanceStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reports impaired functionality that stems from issues internal to the
-     * instance, such as impaired reachability.
+     * Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.
      * </p>
      * 
      * @param instanceStatus
-     *        Reports impaired functionality that stems from issues internal to
-     *        the instance, such as impaired reachability.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Reports impaired functionality that stems from issues internal to the instance, such as impaired
+     *        reachability.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceStatus withInstanceStatus(
-            InstanceStatusSummary instanceStatus) {
+    public InstanceStatus withInstanceStatus(InstanceStatusSummary instanceStatus) {
         setInstanceStatus(instanceStatus);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -413,36 +387,27 @@ public class InstanceStatus implements Serializable, Cloneable {
         InstanceStatus other = (InstanceStatus) obj;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
         if (other.getEvents() == null ^ this.getEvents() == null)
             return false;
-        if (other.getEvents() != null
-                && other.getEvents().equals(this.getEvents()) == false)
+        if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false)
             return false;
         if (other.getInstanceState() == null ^ this.getInstanceState() == null)
             return false;
-        if (other.getInstanceState() != null
-                && other.getInstanceState().equals(this.getInstanceState()) == false)
+        if (other.getInstanceState() != null && other.getInstanceState().equals(this.getInstanceState()) == false)
             return false;
         if (other.getSystemStatus() == null ^ this.getSystemStatus() == null)
             return false;
-        if (other.getSystemStatus() != null
-                && other.getSystemStatus().equals(this.getSystemStatus()) == false)
+        if (other.getSystemStatus() != null && other.getSystemStatus().equals(this.getSystemStatus()) == false)
             return false;
-        if (other.getInstanceStatus() == null
-                ^ this.getInstanceStatus() == null)
+        if (other.getInstanceStatus() == null ^ this.getInstanceStatus() == null)
             return false;
-        if (other.getInstanceStatus() != null
-                && other.getInstanceStatus().equals(this.getInstanceStatus()) == false)
+        if (other.getInstanceStatus() != null && other.getInstanceStatus().equals(this.getInstanceStatus()) == false)
             return false;
         return true;
     }
@@ -452,26 +417,12 @@ public class InstanceStatus implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getEvents() == null) ? 0 : getEvents().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceState() == null) ? 0 : getInstanceState()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSystemStatus() == null) ? 0 : getSystemStatus()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceStatus() == null) ? 0 : getInstanceStatus()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
+        hashCode = prime * hashCode + ((getInstanceState() == null) ? 0 : getInstanceState().hashCode());
+        hashCode = prime * hashCode + ((getSystemStatus() == null) ? 0 : getSystemStatus().hashCode());
+        hashCode = prime * hashCode + ((getInstanceStatus() == null) ? 0 : getInstanceStatus().hashCode());
         return hashCode;
     }
 
@@ -480,9 +431,7 @@ public class InstanceStatus implements Serializable, Cloneable {
         try {
             return (InstanceStatus) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

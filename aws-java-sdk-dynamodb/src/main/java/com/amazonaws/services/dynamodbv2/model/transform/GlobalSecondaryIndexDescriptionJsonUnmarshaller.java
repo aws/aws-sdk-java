@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * GlobalSecondaryIndexDescription JSON Unmarshaller
  */
-public class GlobalSecondaryIndexDescriptionJsonUnmarshaller implements
-        Unmarshaller<GlobalSecondaryIndexDescription, JsonUnmarshallerContext> {
+public class GlobalSecondaryIndexDescriptionJsonUnmarshaller implements Unmarshaller<GlobalSecondaryIndexDescription, JsonUnmarshallerContext> {
 
-    public GlobalSecondaryIndexDescription unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public GlobalSecondaryIndexDescription unmarshall(JsonUnmarshallerContext context) throws Exception {
         GlobalSecondaryIndexDescription globalSecondaryIndexDescription = new GlobalSecondaryIndexDescription();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,59 +49,44 @@ public class GlobalSecondaryIndexDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IndexName", targetDepth)) {
                     context.nextToken();
-                    globalSecondaryIndexDescription.setIndexName(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    globalSecondaryIndexDescription.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
                     context.nextToken();
-                    globalSecondaryIndexDescription
-                            .setKeySchema(new ListUnmarshaller<KeySchemaElement>(
-                                    KeySchemaElementJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    globalSecondaryIndexDescription.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Projection", targetDepth)) {
                     context.nextToken();
-                    globalSecondaryIndexDescription
-                            .setProjection(ProjectionJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    globalSecondaryIndexDescription.setProjection(ProjectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IndexStatus", targetDepth)) {
                     context.nextToken();
-                    globalSecondaryIndexDescription.setIndexStatus(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    globalSecondaryIndexDescription.setIndexStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Backfilling", targetDepth)) {
                     context.nextToken();
-                    globalSecondaryIndexDescription
-                            .setBackfilling(context.getUnmarshaller(
-                                    Boolean.class).unmarshall(context));
+                    globalSecondaryIndexDescription.setBackfilling(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
-                if (context
-                        .testExpression("ProvisionedThroughput", targetDepth)) {
+                if (context.testExpression("ProvisionedThroughput", targetDepth)) {
                     context.nextToken();
                     globalSecondaryIndexDescription
-                            .setProvisionedThroughput(ProvisionedThroughputDescriptionJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setProvisionedThroughput(ProvisionedThroughputDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IndexSizeBytes", targetDepth)) {
                     context.nextToken();
-                    globalSecondaryIndexDescription.setIndexSizeBytes(context
-                            .getUnmarshaller(Long.class).unmarshall(context));
+                    globalSecondaryIndexDescription.setIndexSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ItemCount", targetDepth)) {
                     context.nextToken();
-                    globalSecondaryIndexDescription.setItemCount(context
-                            .getUnmarshaller(Long.class).unmarshall(context));
+                    globalSecondaryIndexDescription.setItemCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexArn", targetDepth)) {
                     context.nextToken();
-                    globalSecondaryIndexDescription.setIndexArn(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    globalSecondaryIndexDescription.setIndexArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

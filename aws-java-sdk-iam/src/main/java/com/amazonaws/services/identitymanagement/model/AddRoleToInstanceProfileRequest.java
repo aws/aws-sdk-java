@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -20,18 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class AddRoleToInstanceProfileRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class AddRoleToInstanceProfileRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The name of the instance profile to update.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      */
@@ -41,9 +36,8 @@ public class AddRoleToInstanceProfileRequest extends
      * The name of the role to add.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      */
@@ -54,19 +48,17 @@ public class AddRoleToInstanceProfileRequest extends
      * The name of the instance profile to update.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param instanceProfileName
      *        The name of the instance profile to update.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
      */
 
     public void setInstanceProfileName(String instanceProfileName) {
@@ -78,18 +70,16 @@ public class AddRoleToInstanceProfileRequest extends
      * The name of the instance profile to update.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @return The name of the instance profile to update.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of upper
-     *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *         any of the following characters: =,.@-
      */
 
     public String getInstanceProfileName() {
@@ -101,25 +91,21 @@ public class AddRoleToInstanceProfileRequest extends
      * The name of the instance profile to update.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param instanceProfileName
      *        The name of the instance profile to update.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AddRoleToInstanceProfileRequest withInstanceProfileName(
-            String instanceProfileName) {
+    public AddRoleToInstanceProfileRequest withInstanceProfileName(String instanceProfileName) {
         setInstanceProfileName(instanceProfileName);
         return this;
     }
@@ -129,19 +115,17 @@ public class AddRoleToInstanceProfileRequest extends
      * The name of the role to add.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param roleName
      *        The name of the role to add.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
      */
 
     public void setRoleName(String roleName) {
@@ -153,18 +137,16 @@ public class AddRoleToInstanceProfileRequest extends
      * The name of the role to add.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @return The name of the role to add.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of upper
-     *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *         any of the following characters: =,.@-
      */
 
     public String getRoleName() {
@@ -176,21 +158,18 @@ public class AddRoleToInstanceProfileRequest extends
      * The name of the role to add.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param roleName
      *        The name of the role to add.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddRoleToInstanceProfileRequest withRoleName(String roleName) {
@@ -199,8 +178,7 @@ public class AddRoleToInstanceProfileRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -228,17 +206,13 @@ public class AddRoleToInstanceProfileRequest extends
         if (obj instanceof AddRoleToInstanceProfileRequest == false)
             return false;
         AddRoleToInstanceProfileRequest other = (AddRoleToInstanceProfileRequest) obj;
-        if (other.getInstanceProfileName() == null
-                ^ this.getInstanceProfileName() == null)
+        if (other.getInstanceProfileName() == null ^ this.getInstanceProfileName() == null)
             return false;
-        if (other.getInstanceProfileName() != null
-                && other.getInstanceProfileName().equals(
-                        this.getInstanceProfileName()) == false)
+        if (other.getInstanceProfileName() != null && other.getInstanceProfileName().equals(this.getInstanceProfileName()) == false)
             return false;
         if (other.getRoleName() == null ^ this.getRoleName() == null)
             return false;
-        if (other.getRoleName() != null
-                && other.getRoleName().equals(this.getRoleName()) == false)
+        if (other.getRoleName() != null && other.getRoleName().equals(this.getRoleName()) == false)
             return false;
         return true;
     }
@@ -248,12 +222,8 @@ public class AddRoleToInstanceProfileRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceProfileName() == null) ? 0
-                        : getInstanceProfileName().hashCode());
-        hashCode = prime * hashCode
-                + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
+        hashCode = prime * hashCode + ((getInstanceProfileName() == null) ? 0 : getInstanceProfileName().hashCode());
+        hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
         return hashCode;
     }
 

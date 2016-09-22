@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
 
@@ -22,16 +20,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the DescribeInterconnectLoa operation.
  * </p>
  */
-public class DescribeInterconnectLoaRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeInterconnectLoaRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String interconnectId;
     /**
      * <p>
-     * The name of the service provider who establishes connectivity on your
-     * behalf. If you supply this parameter, the LOA-CFA lists the provider name
-     * alongside your company name as the requester of the cross connect.
+     * The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the
+     * LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.
      * </p>
      * <p>
      * Default: None
@@ -59,31 +54,27 @@ public class DescribeInterconnectLoaRequest extends
 
     /**
      * @param interconnectId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeInterconnectLoaRequest withInterconnectId(
-            String interconnectId) {
+    public DescribeInterconnectLoaRequest withInterconnectId(String interconnectId) {
         setInterconnectId(interconnectId);
         return this;
     }
 
     /**
      * <p>
-     * The name of the service provider who establishes connectivity on your
-     * behalf. If you supply this parameter, the LOA-CFA lists the provider name
-     * alongside your company name as the requester of the cross connect.
+     * The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the
+     * LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.
      * </p>
      * <p>
      * Default: None
      * </p>
      * 
      * @param providerName
-     *        The name of the service provider who establishes connectivity on
-     *        your behalf. If you supply this parameter, the LOA-CFA lists the
-     *        provider name alongside your company name as the requester of the
-     *        cross connect.</p>
+     *        The name of the service provider who establishes connectivity on your behalf. If you supply this
+     *        parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross
+     *        connect.</p>
      *        <p>
      *        Default: None
      */
@@ -94,18 +85,16 @@ public class DescribeInterconnectLoaRequest extends
 
     /**
      * <p>
-     * The name of the service provider who establishes connectivity on your
-     * behalf. If you supply this parameter, the LOA-CFA lists the provider name
-     * alongside your company name as the requester of the cross connect.
+     * The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the
+     * LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.
      * </p>
      * <p>
      * Default: None
      * </p>
      * 
-     * @return The name of the service provider who establishes connectivity on
-     *         your behalf. If you supply this parameter, the LOA-CFA lists the
-     *         provider name alongside your company name as the requester of the
-     *         cross connect.</p>
+     * @return The name of the service provider who establishes connectivity on your behalf. If you supply this
+     *         parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross
+     *         connect.</p>
      *         <p>
      *         Default: None
      */
@@ -116,23 +105,20 @@ public class DescribeInterconnectLoaRequest extends
 
     /**
      * <p>
-     * The name of the service provider who establishes connectivity on your
-     * behalf. If you supply this parameter, the LOA-CFA lists the provider name
-     * alongside your company name as the requester of the cross connect.
+     * The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the
+     * LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.
      * </p>
      * <p>
      * Default: None
      * </p>
      * 
      * @param providerName
-     *        The name of the service provider who establishes connectivity on
-     *        your behalf. If you supply this parameter, the LOA-CFA lists the
-     *        provider name alongside your company name as the requester of the
-     *        cross connect.</p>
+     *        The name of the service provider who establishes connectivity on your behalf. If you supply this
+     *        parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross
+     *        connect.</p>
      *        <p>
      *        Default: None
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeInterconnectLoaRequest withProviderName(String providerName) {
@@ -160,13 +146,11 @@ public class DescribeInterconnectLoaRequest extends
 
     /**
      * @param loaContentType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoaContentType
      */
 
-    public DescribeInterconnectLoaRequest withLoaContentType(
-            String loaContentType) {
+    public DescribeInterconnectLoaRequest withLoaContentType(String loaContentType) {
         setLoaContentType(loaContentType);
         return this;
     }
@@ -182,20 +166,17 @@ public class DescribeInterconnectLoaRequest extends
 
     /**
      * @param loaContentType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoaContentType
      */
 
-    public DescribeInterconnectLoaRequest withLoaContentType(
-            LoaContentType loaContentType) {
+    public DescribeInterconnectLoaRequest withLoaContentType(LoaContentType loaContentType) {
         setLoaContentType(loaContentType);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -225,22 +206,17 @@ public class DescribeInterconnectLoaRequest extends
         if (obj instanceof DescribeInterconnectLoaRequest == false)
             return false;
         DescribeInterconnectLoaRequest other = (DescribeInterconnectLoaRequest) obj;
-        if (other.getInterconnectId() == null
-                ^ this.getInterconnectId() == null)
+        if (other.getInterconnectId() == null ^ this.getInterconnectId() == null)
             return false;
-        if (other.getInterconnectId() != null
-                && other.getInterconnectId().equals(this.getInterconnectId()) == false)
+        if (other.getInterconnectId() != null && other.getInterconnectId().equals(this.getInterconnectId()) == false)
             return false;
         if (other.getProviderName() == null ^ this.getProviderName() == null)
             return false;
-        if (other.getProviderName() != null
-                && other.getProviderName().equals(this.getProviderName()) == false)
+        if (other.getProviderName() != null && other.getProviderName().equals(this.getProviderName()) == false)
             return false;
-        if (other.getLoaContentType() == null
-                ^ this.getLoaContentType() == null)
+        if (other.getLoaContentType() == null ^ this.getLoaContentType() == null)
             return false;
-        if (other.getLoaContentType() != null
-                && other.getLoaContentType().equals(this.getLoaContentType()) == false)
+        if (other.getLoaContentType() != null && other.getLoaContentType().equals(this.getLoaContentType()) == false)
             return false;
         return true;
     }
@@ -250,18 +226,9 @@ public class DescribeInterconnectLoaRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInterconnectId() == null) ? 0 : getInterconnectId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProviderName() == null) ? 0 : getProviderName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLoaContentType() == null) ? 0 : getLoaContentType()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getInterconnectId() == null) ? 0 : getInterconnectId().hashCode());
+        hashCode = prime * hashCode + ((getProviderName() == null) ? 0 : getProviderName().hashCode());
+        hashCode = prime * hashCode + ((getLoaContentType() == null) ? 0 : getLoaContentType().hashCode());
         return hashCode;
     }
 

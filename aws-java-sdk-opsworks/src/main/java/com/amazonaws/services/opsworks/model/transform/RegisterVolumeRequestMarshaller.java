@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -35,26 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * RegisterVolumeRequest Marshaller
  */
-public class RegisterVolumeRequestMarshaller implements
-        Marshaller<Request<RegisterVolumeRequest>, RegisterVolumeRequest> {
+public class RegisterVolumeRequestMarshaller implements Marshaller<Request<RegisterVolumeRequest>, RegisterVolumeRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public RegisterVolumeRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public RegisterVolumeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<RegisterVolumeRequest> marshall(
-            RegisterVolumeRequest registerVolumeRequest) {
+    public Request<RegisterVolumeRequest> marshall(RegisterVolumeRequest registerVolumeRequest) {
 
         if (registerVolumeRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterVolumeRequest> request = new DefaultRequest<RegisterVolumeRequest>(
-                registerVolumeRequest, "AWSOpsWorks");
+        Request<RegisterVolumeRequest> request = new DefaultRequest<RegisterVolumeRequest>(registerVolumeRequest, "AWSOpsWorks");
         request.addHeader("X-Amz-Target", "OpsWorks_20130218.RegisterVolume");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -62,30 +55,25 @@ public class RegisterVolumeRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (registerVolumeRequest.getEc2VolumeId() != null) {
-                jsonGenerator.writeFieldName("Ec2VolumeId").writeValue(
-                        registerVolumeRequest.getEc2VolumeId());
+                jsonGenerator.writeFieldName("Ec2VolumeId").writeValue(registerVolumeRequest.getEc2VolumeId());
             }
             if (registerVolumeRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(
-                        registerVolumeRequest.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(registerVolumeRequest.getStackId());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

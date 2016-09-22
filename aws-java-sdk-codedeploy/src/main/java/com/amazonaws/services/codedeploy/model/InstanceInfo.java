@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -49,8 +47,7 @@ public class InstanceInfo implements Serializable, Cloneable {
     private java.util.Date registerTime;
     /**
      * <p>
-     * If the on-premises instance was deregistered, the time at which the
-     * on-premises instance was deregistered.
+     * If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.
      * </p>
      */
     private java.util.Date deregisterTime;
@@ -93,8 +90,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @param instanceName
      *        The name of the on-premises instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withInstanceName(String instanceName) {
@@ -134,8 +130,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @param iamUserArn
      *        The IAM user ARN associated with the on-premises instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withIamUserArn(String iamUserArn) {
@@ -175,8 +170,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @param instanceArn
      *        The ARN of the on-premises instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withInstanceArn(String instanceArn) {
@@ -216,8 +210,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @param registerTime
      *        The time at which the on-premises instance was registered.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withRegisterTime(java.util.Date registerTime) {
@@ -227,13 +220,11 @@ public class InstanceInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the on-premises instance was deregistered, the time at which the
-     * on-premises instance was deregistered.
+     * If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.
      * </p>
      * 
      * @param deregisterTime
-     *        If the on-premises instance was deregistered, the time at which
-     *        the on-premises instance was deregistered.
+     *        If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.
      */
 
     public void setDeregisterTime(java.util.Date deregisterTime) {
@@ -242,12 +233,11 @@ public class InstanceInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the on-premises instance was deregistered, the time at which the
-     * on-premises instance was deregistered.
+     * If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.
      * </p>
      * 
-     * @return If the on-premises instance was deregistered, the time at which
-     *         the on-premises instance was deregistered.
+     * @return If the on-premises instance was deregistered, the time at which the on-premises instance was
+     *         deregistered.
      */
 
     public java.util.Date getDeregisterTime() {
@@ -256,15 +246,12 @@ public class InstanceInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the on-premises instance was deregistered, the time at which the
-     * on-premises instance was deregistered.
+     * If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.
      * </p>
      * 
      * @param deregisterTime
-     *        If the on-premises instance was deregistered, the time at which
-     *        the on-premises instance was deregistered.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withDeregisterTime(java.util.Date deregisterTime) {
@@ -310,16 +297,14 @@ public class InstanceInfo implements Serializable, Cloneable {
      * The tags currently associated with the on-premises instance.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        The tags currently associated with the on-premises instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withTags(Tag... tags) {
@@ -339,8 +324,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @param tags
      *        The tags currently associated with the on-premises instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withTags(java.util.Collection<Tag> tags) {
@@ -349,8 +333,7 @@ public class InstanceInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -388,34 +371,27 @@ public class InstanceInfo implements Serializable, Cloneable {
         InstanceInfo other = (InstanceInfo) obj;
         if (other.getInstanceName() == null ^ this.getInstanceName() == null)
             return false;
-        if (other.getInstanceName() != null
-                && other.getInstanceName().equals(this.getInstanceName()) == false)
+        if (other.getInstanceName() != null && other.getInstanceName().equals(this.getInstanceName()) == false)
             return false;
         if (other.getIamUserArn() == null ^ this.getIamUserArn() == null)
             return false;
-        if (other.getIamUserArn() != null
-                && other.getIamUserArn().equals(this.getIamUserArn()) == false)
+        if (other.getIamUserArn() != null && other.getIamUserArn().equals(this.getIamUserArn()) == false)
             return false;
         if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
             return false;
-        if (other.getInstanceArn() != null
-                && other.getInstanceArn().equals(this.getInstanceArn()) == false)
+        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
             return false;
         if (other.getRegisterTime() == null ^ this.getRegisterTime() == null)
             return false;
-        if (other.getRegisterTime() != null
-                && other.getRegisterTime().equals(this.getRegisterTime()) == false)
+        if (other.getRegisterTime() != null && other.getRegisterTime().equals(this.getRegisterTime()) == false)
             return false;
-        if (other.getDeregisterTime() == null
-                ^ this.getDeregisterTime() == null)
+        if (other.getDeregisterTime() == null ^ this.getDeregisterTime() == null)
             return false;
-        if (other.getDeregisterTime() != null
-                && other.getDeregisterTime().equals(this.getDeregisterTime()) == false)
+        if (other.getDeregisterTime() != null && other.getDeregisterTime().equals(this.getDeregisterTime()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -425,25 +401,12 @@ public class InstanceInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceName() == null) ? 0 : getInstanceName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegisterTime() == null) ? 0 : getRegisterTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeregisterTime() == null) ? 0 : getDeregisterTime()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getInstanceName() == null) ? 0 : getInstanceName().hashCode());
+        hashCode = prime * hashCode + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode());
+        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getRegisterTime() == null) ? 0 : getRegisterTime().hashCode());
+        hashCode = prime * hashCode + ((getDeregisterTime() == null) ? 0 : getDeregisterTime().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -452,9 +415,7 @@ public class InstanceInfo implements Serializable, Cloneable {
         try {
             return (InstanceInfo) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudformation;
 
@@ -19,9 +17,8 @@ import com.amazonaws.*;
 import com.amazonaws.services.cloudformation.waiters.AmazonCloudFormationWaiters;
 
 /**
- * Abstract implementation of {@code AmazonCloudFormation}. Convenient method
- * forms pass through to the corresponding overload that takes a request object,
- * which throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonCloudFormation}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
 
@@ -39,14 +36,12 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
-    public CancelUpdateStackResult cancelUpdateStack(
-            CancelUpdateStackRequest request) {
+    public CancelUpdateStackResult cancelUpdateStack(CancelUpdateStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ContinueUpdateRollbackResult continueUpdateRollback(
-            ContinueUpdateRollbackRequest request) {
+    public ContinueUpdateRollbackResult continueUpdateRollback(ContinueUpdateRollbackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,32 +66,27 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
-    public DescribeAccountLimitsResult describeAccountLimits(
-            DescribeAccountLimitsRequest request) {
+    public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeChangeSetResult describeChangeSet(
-            DescribeChangeSetRequest request) {
+    public DescribeChangeSetResult describeChangeSet(DescribeChangeSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeStackEventsResult describeStackEvents(
-            DescribeStackEventsRequest request) {
+    public DescribeStackEventsResult describeStackEvents(DescribeStackEventsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeStackResourceResult describeStackResource(
-            DescribeStackResourceRequest request) {
+    public DescribeStackResourceResult describeStackResource(DescribeStackResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeStackResourcesResult describeStackResources(
-            DescribeStackResourcesRequest request) {
+    public DescribeStackResourcesResult describeStackResources(DescribeStackResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -111,8 +101,7 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
-    public EstimateTemplateCostResult estimateTemplateCost(
-            EstimateTemplateCostRequest request) {
+    public EstimateTemplateCostResult estimateTemplateCost(EstimateTemplateCostRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -122,8 +111,7 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
-    public ExecuteChangeSetResult executeChangeSet(
-            ExecuteChangeSetRequest request) {
+    public ExecuteChangeSetResult executeChangeSet(ExecuteChangeSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -138,8 +126,7 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
-    public GetTemplateSummaryResult getTemplateSummary(
-            GetTemplateSummaryRequest request) {
+    public GetTemplateSummaryResult getTemplateSummary(GetTemplateSummaryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,8 +141,7 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
-    public ListStackResourcesResult listStackResources(
-            ListStackResourcesRequest request) {
+    public ListStackResourcesResult listStackResources(ListStackResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -185,8 +171,7 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
-    public ValidateTemplateResult validateTemplate(
-            ValidateTemplateRequest request) {
+    public ValidateTemplateResult validateTemplate(ValidateTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -196,8 +181,7 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

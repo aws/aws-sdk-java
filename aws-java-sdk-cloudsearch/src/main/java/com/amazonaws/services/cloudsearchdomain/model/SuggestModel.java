@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchdomain.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Container for the suggestion information returned in a
- * <code>SuggestResponse</code>.
+ * Container for the suggestion information returned in a <code>SuggestResponse</code>.
  * </p>
  */
 public class SuggestModel implements Serializable, Cloneable {
@@ -75,8 +72,7 @@ public class SuggestModel implements Serializable, Cloneable {
      * 
      * @param query
      *        The query string specified in the suggest request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SuggestModel withQuery(String query) {
@@ -102,8 +98,7 @@ public class SuggestModel implements Serializable, Cloneable {
      * The number of documents that were found to match the query string.
      * </p>
      * 
-     * @return The number of documents that were found to match the query
-     *         string.
+     * @return The number of documents that were found to match the query string.
      */
 
     public Long getFound() {
@@ -117,8 +112,7 @@ public class SuggestModel implements Serializable, Cloneable {
      * 
      * @param found
      *        The number of documents that were found to match the query string.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SuggestModel withFound(Long found) {
@@ -156,8 +150,7 @@ public class SuggestModel implements Serializable, Cloneable {
             return;
         }
 
-        this.suggestions = new com.amazonaws.internal.SdkInternalList<SuggestionMatch>(
-                suggestions);
+        this.suggestions = new com.amazonaws.internal.SdkInternalList<SuggestionMatch>(suggestions);
     }
 
     /**
@@ -165,22 +158,19 @@ public class SuggestModel implements Serializable, Cloneable {
      * The documents that match the query string.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSuggestions(java.util.Collection)} or
-     * {@link #withSuggestions(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSuggestions(java.util.Collection)} or {@link #withSuggestions(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param suggestions
      *        The documents that match the query string.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SuggestModel withSuggestions(SuggestionMatch... suggestions) {
         if (this.suggestions == null) {
-            setSuggestions(new com.amazonaws.internal.SdkInternalList<SuggestionMatch>(
-                    suggestions.length));
+            setSuggestions(new com.amazonaws.internal.SdkInternalList<SuggestionMatch>(suggestions.length));
         }
         for (SuggestionMatch ele : suggestions) {
             this.suggestions.add(ele);
@@ -195,19 +185,16 @@ public class SuggestModel implements Serializable, Cloneable {
      * 
      * @param suggestions
      *        The documents that match the query string.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SuggestModel withSuggestions(
-            java.util.Collection<SuggestionMatch> suggestions) {
+    public SuggestModel withSuggestions(java.util.Collection<SuggestionMatch> suggestions) {
         setSuggestions(suggestions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -239,18 +226,15 @@ public class SuggestModel implements Serializable, Cloneable {
         SuggestModel other = (SuggestModel) obj;
         if (other.getQuery() == null ^ this.getQuery() == null)
             return false;
-        if (other.getQuery() != null
-                && other.getQuery().equals(this.getQuery()) == false)
+        if (other.getQuery() != null && other.getQuery().equals(this.getQuery()) == false)
             return false;
         if (other.getFound() == null ^ this.getFound() == null)
             return false;
-        if (other.getFound() != null
-                && other.getFound().equals(this.getFound()) == false)
+        if (other.getFound() != null && other.getFound().equals(this.getFound()) == false)
             return false;
         if (other.getSuggestions() == null ^ this.getSuggestions() == null)
             return false;
-        if (other.getSuggestions() != null
-                && other.getSuggestions().equals(this.getSuggestions()) == false)
+        if (other.getSuggestions() != null && other.getSuggestions().equals(this.getSuggestions()) == false)
             return false;
         return true;
     }
@@ -260,13 +244,9 @@ public class SuggestModel implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getQuery() == null) ? 0 : getQuery().hashCode());
-        hashCode = prime * hashCode
-                + ((getFound() == null) ? 0 : getFound().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSuggestions() == null) ? 0 : getSuggestions().hashCode());
+        hashCode = prime * hashCode + ((getQuery() == null) ? 0 : getQuery().hashCode());
+        hashCode = prime * hashCode + ((getFound() == null) ? 0 : getFound().hashCode());
+        hashCode = prime * hashCode + ((getSuggestions() == null) ? 0 : getSuggestions().hashCode());
         return hashCode;
     }
 
@@ -275,9 +255,7 @@ public class SuggestModel implements Serializable, Cloneable {
         try {
             return (SuggestModel) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

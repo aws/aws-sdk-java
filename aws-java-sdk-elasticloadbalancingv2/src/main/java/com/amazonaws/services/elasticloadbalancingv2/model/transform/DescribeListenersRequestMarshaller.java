@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
@@ -31,30 +29,24 @@ import com.amazonaws.util.IdempotentUtils;
  * DescribeListenersRequest Marshaller
  */
 
-public class DescribeListenersRequestMarshaller implements
-        Marshaller<Request<DescribeListenersRequest>, DescribeListenersRequest> {
+public class DescribeListenersRequestMarshaller implements Marshaller<Request<DescribeListenersRequest>, DescribeListenersRequest> {
 
-    public Request<DescribeListenersRequest> marshall(
-            DescribeListenersRequest describeListenersRequest) {
+    public Request<DescribeListenersRequest> marshall(DescribeListenersRequest describeListenersRequest) {
 
         if (describeListenersRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeListenersRequest> request = new DefaultRequest<DescribeListenersRequest>(
-                describeListenersRequest, "AmazonElasticLoadBalancing");
+        Request<DescribeListenersRequest> request = new DefaultRequest<DescribeListenersRequest>(describeListenersRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DescribeListeners");
         request.addParameter("Version", "2015-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeListenersRequest.getLoadBalancerArn() != null) {
-            request.addParameter("LoadBalancerArn", StringUtils
-                    .fromString(describeListenersRequest.getLoadBalancerArn()));
+            request.addParameter("LoadBalancerArn", StringUtils.fromString(describeListenersRequest.getLoadBalancerArn()));
         }
 
-        java.util.List<String> listenerArnsList = describeListenersRequest
-                .getListenerArns();
+        java.util.List<String> listenerArnsList = describeListenersRequest.getListenerArns();
 
         if (listenerArnsList != null) {
             if (listenerArnsList.isEmpty()) {
@@ -64,9 +56,7 @@ public class DescribeListenersRequestMarshaller implements
 
                 for (String listenerArnsListValue : listenerArnsList) {
                     if (listenerArnsListValue != null) {
-                        request.addParameter("ListenerArns.member."
-                                + listenerArnsListIndex,
-                                StringUtils.fromString(listenerArnsListValue));
+                        request.addParameter("ListenerArns.member." + listenerArnsListIndex, StringUtils.fromString(listenerArnsListValue));
                     }
                     listenerArnsListIndex++;
                 }
@@ -74,13 +64,11 @@ public class DescribeListenersRequestMarshaller implements
         }
 
         if (describeListenersRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils
-                    .fromString(describeListenersRequest.getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(describeListenersRequest.getMarker()));
         }
 
         if (describeListenersRequest.getPageSize() != null) {
-            request.addParameter("PageSize", StringUtils
-                    .fromInteger(describeListenersRequest.getPageSize()));
+            request.addParameter("PageSize", StringUtils.fromInteger(describeListenersRequest.getPageSize()));
         }
 
         return request;

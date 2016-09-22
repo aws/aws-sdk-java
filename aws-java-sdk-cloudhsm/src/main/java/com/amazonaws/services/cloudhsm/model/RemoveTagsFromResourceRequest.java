@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudhsm.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class RemoveTagsFromResourceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,8 +31,8 @@ public class RemoveTagsFromResourceRequest extends
      * The tag key or keys to remove.
      * </p>
      * <p>
-     * Specify only the tag key to remove (not the value). To overwrite the
-     * value for an existing tag, use <a>AddTagsToResource</a>.
+     * Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use
+     * <a>AddTagsToResource</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tagKeyList;
@@ -73,8 +69,7 @@ public class RemoveTagsFromResourceRequest extends
      * 
      * @param resourceArn
      *        The Amazon Resource Name (ARN) of the AWS CloudHSM resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTagsFromResourceRequest withResourceArn(String resourceArn) {
@@ -87,14 +82,14 @@ public class RemoveTagsFromResourceRequest extends
      * The tag key or keys to remove.
      * </p>
      * <p>
-     * Specify only the tag key to remove (not the value). To overwrite the
-     * value for an existing tag, use <a>AddTagsToResource</a>.
+     * Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use
+     * <a>AddTagsToResource</a>.
      * </p>
      * 
      * @return The tag key or keys to remove.</p>
      *         <p>
-     *         Specify only the tag key to remove (not the value). To overwrite
-     *         the value for an existing tag, use <a>AddTagsToResource</a>.
+     *         Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use
+     *         <a>AddTagsToResource</a>.
      */
 
     public java.util.List<String> getTagKeyList() {
@@ -109,15 +104,15 @@ public class RemoveTagsFromResourceRequest extends
      * The tag key or keys to remove.
      * </p>
      * <p>
-     * Specify only the tag key to remove (not the value). To overwrite the
-     * value for an existing tag, use <a>AddTagsToResource</a>.
+     * Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use
+     * <a>AddTagsToResource</a>.
      * </p>
      * 
      * @param tagKeyList
      *        The tag key or keys to remove.</p>
      *        <p>
-     *        Specify only the tag key to remove (not the value). To overwrite
-     *        the value for an existing tag, use <a>AddTagsToResource</a>.
+     *        Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use
+     *        <a>AddTagsToResource</a>.
      */
 
     public void setTagKeyList(java.util.Collection<String> tagKeyList) {
@@ -126,8 +121,7 @@ public class RemoveTagsFromResourceRequest extends
             return;
         }
 
-        this.tagKeyList = new com.amazonaws.internal.SdkInternalList<String>(
-                tagKeyList);
+        this.tagKeyList = new com.amazonaws.internal.SdkInternalList<String>(tagKeyList);
     }
 
     /**
@@ -135,29 +129,26 @@ public class RemoveTagsFromResourceRequest extends
      * The tag key or keys to remove.
      * </p>
      * <p>
-     * Specify only the tag key to remove (not the value). To overwrite the
-     * value for an existing tag, use <a>AddTagsToResource</a>.
+     * Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use
+     * <a>AddTagsToResource</a>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagKeyList(java.util.Collection)} or
-     * {@link #withTagKeyList(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param tagKeyList
      *        The tag key or keys to remove.</p>
      *        <p>
-     *        Specify only the tag key to remove (not the value). To overwrite
-     *        the value for an existing tag, use <a>AddTagsToResource</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use
+     *        <a>AddTagsToResource</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTagsFromResourceRequest withTagKeyList(String... tagKeyList) {
         if (this.tagKeyList == null) {
-            setTagKeyList(new com.amazonaws.internal.SdkInternalList<String>(
-                    tagKeyList.length));
+            setTagKeyList(new com.amazonaws.internal.SdkInternalList<String>(tagKeyList.length));
         }
         for (String ele : tagKeyList) {
             this.tagKeyList.add(ele);
@@ -170,28 +161,25 @@ public class RemoveTagsFromResourceRequest extends
      * The tag key or keys to remove.
      * </p>
      * <p>
-     * Specify only the tag key to remove (not the value). To overwrite the
-     * value for an existing tag, use <a>AddTagsToResource</a>.
+     * Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use
+     * <a>AddTagsToResource</a>.
      * </p>
      * 
      * @param tagKeyList
      *        The tag key or keys to remove.</p>
      *        <p>
-     *        Specify only the tag key to remove (not the value). To overwrite
-     *        the value for an existing tag, use <a>AddTagsToResource</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use
+     *        <a>AddTagsToResource</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RemoveTagsFromResourceRequest withTagKeyList(
-            java.util.Collection<String> tagKeyList) {
+    public RemoveTagsFromResourceRequest withTagKeyList(java.util.Collection<String> tagKeyList) {
         setTagKeyList(tagKeyList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -221,13 +209,11 @@ public class RemoveTagsFromResourceRequest extends
         RemoveTagsFromResourceRequest other = (RemoveTagsFromResourceRequest) obj;
         if (other.getResourceArn() == null ^ this.getResourceArn() == null)
             return false;
-        if (other.getResourceArn() != null
-                && other.getResourceArn().equals(this.getResourceArn()) == false)
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
         if (other.getTagKeyList() == null ^ this.getTagKeyList() == null)
             return false;
-        if (other.getTagKeyList() != null
-                && other.getTagKeyList().equals(this.getTagKeyList()) == false)
+        if (other.getTagKeyList() != null && other.getTagKeyList().equals(this.getTagKeyList()) == false)
             return false;
         return true;
     }
@@ -237,11 +223,8 @@ public class RemoveTagsFromResourceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getTagKeyList() == null) ? 0 : getTagKeyList().hashCode());
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getTagKeyList() == null) ? 0 : getTagKeyList().hashCode());
         return hashCode;
     }
 

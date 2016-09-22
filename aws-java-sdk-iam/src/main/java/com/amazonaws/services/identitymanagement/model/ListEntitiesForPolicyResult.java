@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Contains the response to a successful <a>ListEntitiesForPolicy</a> request.
  * </p>
  */
-public class ListEntitiesForPolicyResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListEntitiesForPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -45,21 +41,18 @@ public class ListEntitiesForPolicyResult extends
     private com.amazonaws.internal.SdkInternalList<PolicyRole> policyRoles;
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      */
     private String marker;
@@ -94,8 +87,7 @@ public class ListEntitiesForPolicyResult extends
             return;
         }
 
-        this.policyGroups = new com.amazonaws.internal.SdkInternalList<PolicyGroup>(
-                policyGroups);
+        this.policyGroups = new com.amazonaws.internal.SdkInternalList<PolicyGroup>(policyGroups);
     }
 
     /**
@@ -103,23 +95,19 @@ public class ListEntitiesForPolicyResult extends
      * A list of IAM groups that the policy is attached to.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPolicyGroups(java.util.Collection)} or
-     * {@link #withPolicyGroups(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPolicyGroups(java.util.Collection)} or {@link #withPolicyGroups(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param policyGroups
      *        A list of IAM groups that the policy is attached to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListEntitiesForPolicyResult withPolicyGroups(
-            PolicyGroup... policyGroups) {
+    public ListEntitiesForPolicyResult withPolicyGroups(PolicyGroup... policyGroups) {
         if (this.policyGroups == null) {
-            setPolicyGroups(new com.amazonaws.internal.SdkInternalList<PolicyGroup>(
-                    policyGroups.length));
+            setPolicyGroups(new com.amazonaws.internal.SdkInternalList<PolicyGroup>(policyGroups.length));
         }
         for (PolicyGroup ele : policyGroups) {
             this.policyGroups.add(ele);
@@ -134,12 +122,10 @@ public class ListEntitiesForPolicyResult extends
      * 
      * @param policyGroups
      *        A list of IAM groups that the policy is attached to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListEntitiesForPolicyResult withPolicyGroups(
-            java.util.Collection<PolicyGroup> policyGroups) {
+    public ListEntitiesForPolicyResult withPolicyGroups(java.util.Collection<PolicyGroup> policyGroups) {
         setPolicyGroups(policyGroups);
         return this;
     }
@@ -174,8 +160,7 @@ public class ListEntitiesForPolicyResult extends
             return;
         }
 
-        this.policyUsers = new com.amazonaws.internal.SdkInternalList<PolicyUser>(
-                policyUsers);
+        this.policyUsers = new com.amazonaws.internal.SdkInternalList<PolicyUser>(policyUsers);
     }
 
     /**
@@ -183,23 +168,19 @@ public class ListEntitiesForPolicyResult extends
      * A list of IAM users that the policy is attached to.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPolicyUsers(java.util.Collection)} or
-     * {@link #withPolicyUsers(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPolicyUsers(java.util.Collection)} or {@link #withPolicyUsers(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param policyUsers
      *        A list of IAM users that the policy is attached to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListEntitiesForPolicyResult withPolicyUsers(
-            PolicyUser... policyUsers) {
+    public ListEntitiesForPolicyResult withPolicyUsers(PolicyUser... policyUsers) {
         if (this.policyUsers == null) {
-            setPolicyUsers(new com.amazonaws.internal.SdkInternalList<PolicyUser>(
-                    policyUsers.length));
+            setPolicyUsers(new com.amazonaws.internal.SdkInternalList<PolicyUser>(policyUsers.length));
         }
         for (PolicyUser ele : policyUsers) {
             this.policyUsers.add(ele);
@@ -214,12 +195,10 @@ public class ListEntitiesForPolicyResult extends
      * 
      * @param policyUsers
      *        A list of IAM users that the policy is attached to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListEntitiesForPolicyResult withPolicyUsers(
-            java.util.Collection<PolicyUser> policyUsers) {
+    public ListEntitiesForPolicyResult withPolicyUsers(java.util.Collection<PolicyUser> policyUsers) {
         setPolicyUsers(policyUsers);
         return this;
     }
@@ -254,8 +233,7 @@ public class ListEntitiesForPolicyResult extends
             return;
         }
 
-        this.policyRoles = new com.amazonaws.internal.SdkInternalList<PolicyRole>(
-                policyRoles);
+        this.policyRoles = new com.amazonaws.internal.SdkInternalList<PolicyRole>(policyRoles);
     }
 
     /**
@@ -263,23 +241,19 @@ public class ListEntitiesForPolicyResult extends
      * A list of IAM roles that the policy is attached to.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPolicyRoles(java.util.Collection)} or
-     * {@link #withPolicyRoles(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPolicyRoles(java.util.Collection)} or {@link #withPolicyRoles(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param policyRoles
      *        A list of IAM roles that the policy is attached to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListEntitiesForPolicyResult withPolicyRoles(
-            PolicyRole... policyRoles) {
+    public ListEntitiesForPolicyResult withPolicyRoles(PolicyRole... policyRoles) {
         if (this.policyRoles == null) {
-            setPolicyRoles(new com.amazonaws.internal.SdkInternalList<PolicyRole>(
-                    policyRoles.length));
+            setPolicyRoles(new com.amazonaws.internal.SdkInternalList<PolicyRole>(policyRoles.length));
         }
         for (PolicyRole ele : policyRoles) {
             this.policyRoles.add(ele);
@@ -294,36 +268,29 @@ public class ListEntitiesForPolicyResult extends
      * 
      * @param policyRoles
      *        A list of IAM roles that the policy is attached to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListEntitiesForPolicyResult withPolicyRoles(
-            java.util.Collection<PolicyRole> policyRoles) {
+    public ListEntitiesForPolicyResult withPolicyRoles(java.util.Collection<PolicyRole> policyRoles) {
         setPolicyRoles(policyRoles);
         return this;
     }
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more items to return. If
-     *        your results were truncated, you can make a subsequent pagination
-     *        request using the <code>Marker</code> request parameter to
-     *        retrieve more items. Note that IAM might return fewer than the
-     *        <code>MaxItems</code> number of results even when there are more
-     *        results available. We recommend that you check
-     *        <code>IsTruncated</code> after every call to ensure that you
-     *        receive all of your results.
+     *        A flag that indicates whether there are more items to return. If your results were truncated, you can make
+     *        a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.
+     *        Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more
+     *        results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that
+     *        you receive all of your results.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -332,23 +299,18 @@ public class ListEntitiesForPolicyResult extends
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      * 
-     * @return A flag that indicates whether there are more items to return. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to
-     *         retrieve more items. Note that IAM might return fewer than the
-     *         <code>MaxItems</code> number of results even when there are more
-     *         results available. We recommend that you check
-     *         <code>IsTruncated</code> after every call to ensure that you
-     *         receive all of your results.
+     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can
+     *         make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there
+     *         are more results available. We recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      */
 
     public Boolean getIsTruncated() {
@@ -357,26 +319,20 @@ public class ListEntitiesForPolicyResult extends
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more items to return. If
-     *        your results were truncated, you can make a subsequent pagination
-     *        request using the <code>Marker</code> request parameter to
-     *        retrieve more items. Note that IAM might return fewer than the
-     *        <code>MaxItems</code> number of results even when there are more
-     *        results available. We recommend that you check
-     *        <code>IsTruncated</code> after every call to ensure that you
-     *        receive all of your results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A flag that indicates whether there are more items to return. If your results were truncated, you can make
+     *        a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.
+     *        Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more
+     *        results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that
+     *        you receive all of your results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListEntitiesForPolicyResult withIsTruncated(Boolean isTruncated) {
@@ -386,23 +342,18 @@ public class ListEntitiesForPolicyResult extends
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      * 
-     * @return A flag that indicates whether there are more items to return. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to
-     *         retrieve more items. Note that IAM might return fewer than the
-     *         <code>MaxItems</code> number of results even when there are more
-     *         results available. We recommend that you check
-     *         <code>IsTruncated</code> after every call to ensure that you
-     *         receive all of your results.
+     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can
+     *         make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there
+     *         are more results available. We recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      */
 
     public Boolean isTruncated() {
@@ -411,15 +362,13 @@ public class ListEntitiesForPolicyResult extends
 
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      * 
      * @param marker
-     *        When <code>IsTruncated</code> is <code>true</code>, this element
-     *        is present and contains the value to use for the
-     *        <code>Marker</code> parameter in a subsequent pagination request.
+     *        When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use
+     *        for the <code>Marker</code> parameter in a subsequent pagination request.
      */
 
     public void setMarker(String marker) {
@@ -428,14 +377,12 @@ public class ListEntitiesForPolicyResult extends
 
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      * 
-     * @return When <code>IsTruncated</code> is <code>true</code>, this element
-     *         is present and contains the value to use for the
-     *         <code>Marker</code> parameter in a subsequent pagination request.
+     * @return When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use
+     *         for the <code>Marker</code> parameter in a subsequent pagination request.
      */
 
     public String getMarker() {
@@ -444,17 +391,14 @@ public class ListEntitiesForPolicyResult extends
 
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      * 
      * @param marker
-     *        When <code>IsTruncated</code> is <code>true</code>, this element
-     *        is present and contains the value to use for the
-     *        <code>Marker</code> parameter in a subsequent pagination request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use
+     *        for the <code>Marker</code> parameter in a subsequent pagination request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListEntitiesForPolicyResult withMarker(String marker) {
@@ -463,8 +407,7 @@ public class ListEntitiesForPolicyResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -500,28 +443,23 @@ public class ListEntitiesForPolicyResult extends
         ListEntitiesForPolicyResult other = (ListEntitiesForPolicyResult) obj;
         if (other.getPolicyGroups() == null ^ this.getPolicyGroups() == null)
             return false;
-        if (other.getPolicyGroups() != null
-                && other.getPolicyGroups().equals(this.getPolicyGroups()) == false)
+        if (other.getPolicyGroups() != null && other.getPolicyGroups().equals(this.getPolicyGroups()) == false)
             return false;
         if (other.getPolicyUsers() == null ^ this.getPolicyUsers() == null)
             return false;
-        if (other.getPolicyUsers() != null
-                && other.getPolicyUsers().equals(this.getPolicyUsers()) == false)
+        if (other.getPolicyUsers() != null && other.getPolicyUsers().equals(this.getPolicyUsers()) == false)
             return false;
         if (other.getPolicyRoles() == null ^ this.getPolicyRoles() == null)
             return false;
-        if (other.getPolicyRoles() != null
-                && other.getPolicyRoles().equals(this.getPolicyRoles()) == false)
+        if (other.getPolicyRoles() != null && other.getPolicyRoles().equals(this.getPolicyRoles()) == false)
             return false;
         if (other.getIsTruncated() == null ^ this.getIsTruncated() == null)
             return false;
-        if (other.getIsTruncated() != null
-                && other.getIsTruncated().equals(this.getIsTruncated()) == false)
+        if (other.getIsTruncated() != null && other.getIsTruncated().equals(this.getIsTruncated()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -531,21 +469,11 @@ public class ListEntitiesForPolicyResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPolicyGroups() == null) ? 0 : getPolicyGroups()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPolicyUsers() == null) ? 0 : getPolicyUsers().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPolicyRoles() == null) ? 0 : getPolicyRoles().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getPolicyGroups() == null) ? 0 : getPolicyGroups().hashCode());
+        hashCode = prime * hashCode + ((getPolicyUsers() == null) ? 0 : getPolicyUsers().hashCode());
+        hashCode = prime * hashCode + ((getPolicyRoles() == null) ? 0 : getPolicyRoles().hashCode());
+        hashCode = prime * hashCode + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -554,9 +482,7 @@ public class ListEntitiesForPolicyResult extends
         try {
             return (ListEntitiesForPolicyResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

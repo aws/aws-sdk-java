@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
@@ -31,25 +29,20 @@ import com.amazonaws.util.IdempotentUtils;
  * SetRulePrioritiesRequest Marshaller
  */
 
-public class SetRulePrioritiesRequestMarshaller implements
-        Marshaller<Request<SetRulePrioritiesRequest>, SetRulePrioritiesRequest> {
+public class SetRulePrioritiesRequestMarshaller implements Marshaller<Request<SetRulePrioritiesRequest>, SetRulePrioritiesRequest> {
 
-    public Request<SetRulePrioritiesRequest> marshall(
-            SetRulePrioritiesRequest setRulePrioritiesRequest) {
+    public Request<SetRulePrioritiesRequest> marshall(SetRulePrioritiesRequest setRulePrioritiesRequest) {
 
         if (setRulePrioritiesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetRulePrioritiesRequest> request = new DefaultRequest<SetRulePrioritiesRequest>(
-                setRulePrioritiesRequest, "AmazonElasticLoadBalancing");
+        Request<SetRulePrioritiesRequest> request = new DefaultRequest<SetRulePrioritiesRequest>(setRulePrioritiesRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "SetRulePriorities");
         request.addParameter("Version", "2015-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        java.util.List<RulePriorityPair> rulePrioritiesList = setRulePrioritiesRequest
-                .getRulePriorities();
+        java.util.List<RulePriorityPair> rulePrioritiesList = setRulePrioritiesRequest.getRulePriorities();
 
         if (rulePrioritiesList != null) {
             if (rulePrioritiesList.isEmpty()) {
@@ -60,17 +53,13 @@ public class SetRulePrioritiesRequestMarshaller implements
                 for (RulePriorityPair rulePrioritiesListValue : rulePrioritiesList) {
 
                     if (rulePrioritiesListValue.getRuleArn() != null) {
-                        request.addParameter("RulePriorities.member."
-                                + rulePrioritiesListIndex + ".RuleArn",
-                                StringUtils.fromString(rulePrioritiesListValue
-                                        .getRuleArn()));
+                        request.addParameter("RulePriorities.member." + rulePrioritiesListIndex + ".RuleArn",
+                                StringUtils.fromString(rulePrioritiesListValue.getRuleArn()));
                     }
 
                     if (rulePrioritiesListValue.getPriority() != null) {
-                        request.addParameter("RulePriorities.member."
-                                + rulePrioritiesListIndex + ".Priority",
-                                StringUtils.fromInteger(rulePrioritiesListValue
-                                        .getPriority()));
+                        request.addParameter("RulePriorities.member." + rulePrioritiesListIndex + ".Priority",
+                                StringUtils.fromInteger(rulePrioritiesListValue.getPriority()));
                     }
                     rulePrioritiesListIndex++;
                 }

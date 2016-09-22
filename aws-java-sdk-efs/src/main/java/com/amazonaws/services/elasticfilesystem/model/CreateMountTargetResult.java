@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticfilesystem.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Provides a description of a mount target.
  * </p>
  */
-public class CreateMountTargetResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -63,8 +59,7 @@ public class CreateMountTargetResult extends
     private String ipAddress;
     /**
      * <p>
-     * ID of the network interface that Amazon EFS created when it created the
-     * mount target.
+     * ID of the network interface that Amazon EFS created when it created the mount target.
      * </p>
      */
     private String networkInterfaceId;
@@ -101,8 +96,7 @@ public class CreateMountTargetResult extends
      * 
      * @param ownerId
      *        AWS account ID that owns the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateMountTargetResult withOwnerId(String ownerId) {
@@ -142,8 +136,7 @@ public class CreateMountTargetResult extends
      * 
      * @param mountTargetId
      *        System-assigned mount target ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateMountTargetResult withMountTargetId(String mountTargetId) {
@@ -183,8 +176,7 @@ public class CreateMountTargetResult extends
      * 
      * @param fileSystemId
      *        ID of the file system for which the mount target is intended.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateMountTargetResult withFileSystemId(String fileSystemId) {
@@ -224,8 +216,7 @@ public class CreateMountTargetResult extends
      * 
      * @param subnetId
      *        ID of the mount target's subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateMountTargetResult withSubnetId(String subnetId) {
@@ -267,8 +258,7 @@ public class CreateMountTargetResult extends
      * 
      * @param lifeCycleState
      *        Lifecycle state of the mount target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifeCycleState
      */
 
@@ -298,13 +288,11 @@ public class CreateMountTargetResult extends
      * 
      * @param lifeCycleState
      *        Lifecycle state of the mount target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifeCycleState
      */
 
-    public CreateMountTargetResult withLifeCycleState(
-            LifeCycleState lifeCycleState) {
+    public CreateMountTargetResult withLifeCycleState(LifeCycleState lifeCycleState) {
         setLifeCycleState(lifeCycleState);
         return this;
     }
@@ -315,8 +303,7 @@ public class CreateMountTargetResult extends
      * </p>
      * 
      * @param ipAddress
-     *        Address at which the file system may be mounted via the mount
-     *        target.
+     *        Address at which the file system may be mounted via the mount target.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -328,8 +315,7 @@ public class CreateMountTargetResult extends
      * Address at which the file system may be mounted via the mount target.
      * </p>
      * 
-     * @return Address at which the file system may be mounted via the mount
-     *         target.
+     * @return Address at which the file system may be mounted via the mount target.
      */
 
     public String getIpAddress() {
@@ -342,10 +328,8 @@ public class CreateMountTargetResult extends
      * </p>
      * 
      * @param ipAddress
-     *        Address at which the file system may be mounted via the mount
-     *        target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Address at which the file system may be mounted via the mount target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateMountTargetResult withIpAddress(String ipAddress) {
@@ -355,13 +339,11 @@ public class CreateMountTargetResult extends
 
     /**
      * <p>
-     * ID of the network interface that Amazon EFS created when it created the
-     * mount target.
+     * ID of the network interface that Amazon EFS created when it created the mount target.
      * </p>
      * 
      * @param networkInterfaceId
-     *        ID of the network interface that Amazon EFS created when it
-     *        created the mount target.
+     *        ID of the network interface that Amazon EFS created when it created the mount target.
      */
 
     public void setNetworkInterfaceId(String networkInterfaceId) {
@@ -370,12 +352,10 @@ public class CreateMountTargetResult extends
 
     /**
      * <p>
-     * ID of the network interface that Amazon EFS created when it created the
-     * mount target.
+     * ID of the network interface that Amazon EFS created when it created the mount target.
      * </p>
      * 
-     * @return ID of the network interface that Amazon EFS created when it
-     *         created the mount target.
+     * @return ID of the network interface that Amazon EFS created when it created the mount target.
      */
 
     public String getNetworkInterfaceId() {
@@ -384,26 +364,21 @@ public class CreateMountTargetResult extends
 
     /**
      * <p>
-     * ID of the network interface that Amazon EFS created when it created the
-     * mount target.
+     * ID of the network interface that Amazon EFS created when it created the mount target.
      * </p>
      * 
      * @param networkInterfaceId
-     *        ID of the network interface that Amazon EFS created when it
-     *        created the mount target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        ID of the network interface that Amazon EFS created when it created the mount target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateMountTargetResult withNetworkInterfaceId(
-            String networkInterfaceId) {
+    public CreateMountTargetResult withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -443,41 +418,31 @@ public class CreateMountTargetResult extends
         CreateMountTargetResult other = (CreateMountTargetResult) obj;
         if (other.getOwnerId() == null ^ this.getOwnerId() == null)
             return false;
-        if (other.getOwnerId() != null
-                && other.getOwnerId().equals(this.getOwnerId()) == false)
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
             return false;
         if (other.getMountTargetId() == null ^ this.getMountTargetId() == null)
             return false;
-        if (other.getMountTargetId() != null
-                && other.getMountTargetId().equals(this.getMountTargetId()) == false)
+        if (other.getMountTargetId() != null && other.getMountTargetId().equals(this.getMountTargetId()) == false)
             return false;
         if (other.getFileSystemId() == null ^ this.getFileSystemId() == null)
             return false;
-        if (other.getFileSystemId() != null
-                && other.getFileSystemId().equals(this.getFileSystemId()) == false)
+        if (other.getFileSystemId() != null && other.getFileSystemId().equals(this.getFileSystemId()) == false)
             return false;
         if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
-        if (other.getSubnetId() != null
-                && other.getSubnetId().equals(this.getSubnetId()) == false)
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
-        if (other.getLifeCycleState() == null
-                ^ this.getLifeCycleState() == null)
+        if (other.getLifeCycleState() == null ^ this.getLifeCycleState() == null)
             return false;
-        if (other.getLifeCycleState() != null
-                && other.getLifeCycleState().equals(this.getLifeCycleState()) == false)
+        if (other.getLifeCycleState() != null && other.getLifeCycleState().equals(this.getLifeCycleState()) == false)
             return false;
         if (other.getIpAddress() == null ^ this.getIpAddress() == null)
             return false;
-        if (other.getIpAddress() != null
-                && other.getIpAddress().equals(this.getIpAddress()) == false)
+        if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
             return false;
-        if (other.getNetworkInterfaceId() == null
-                ^ this.getNetworkInterfaceId() == null)
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
-        if (other.getNetworkInterfaceId() != null
-                && other.getNetworkInterfaceId().equals(
-                        this.getNetworkInterfaceId()) == false)
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
         return true;
     }
@@ -487,28 +452,13 @@ public class CreateMountTargetResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMountTargetId() == null) ? 0 : getMountTargetId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFileSystemId() == null) ? 0 : getFileSystemId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLifeCycleState() == null) ? 0 : getLifeCycleState()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaceId() == null) ? 0
-                        : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getMountTargetId() == null) ? 0 : getMountTargetId().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemId() == null) ? 0 : getFileSystemId().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getLifeCycleState() == null) ? 0 : getLifeCycleState().hashCode());
+        hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         return hashCode;
     }
 
@@ -517,9 +467,7 @@ public class CreateMountTargetResult extends
         try {
             return (CreateMountTargetResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

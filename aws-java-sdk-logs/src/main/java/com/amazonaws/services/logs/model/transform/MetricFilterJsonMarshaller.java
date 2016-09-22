@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model.transform;
 
@@ -34,51 +32,42 @@ public class MetricFilterJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(MetricFilter metricFilter,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(MetricFilter metricFilter, StructuredJsonGenerator jsonGenerator) {
 
         if (metricFilter == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (metricFilter.getFilterName() != null) {
-                jsonGenerator.writeFieldName("filterName").writeValue(
-                        metricFilter.getFilterName());
+                jsonGenerator.writeFieldName("filterName").writeValue(metricFilter.getFilterName());
             }
             if (metricFilter.getFilterPattern() != null) {
-                jsonGenerator.writeFieldName("filterPattern").writeValue(
-                        metricFilter.getFilterPattern());
+                jsonGenerator.writeFieldName("filterPattern").writeValue(metricFilter.getFilterPattern());
             }
 
             com.amazonaws.internal.SdkInternalList<MetricTransformation> metricTransformationsList = (com.amazonaws.internal.SdkInternalList<MetricTransformation>) metricFilter
                     .getMetricTransformations();
-            if (!metricTransformationsList.isEmpty()
-                    || !metricTransformationsList.isAutoConstruct()) {
+            if (!metricTransformationsList.isEmpty() || !metricTransformationsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("metricTransformations");
                 jsonGenerator.writeStartArray();
                 for (MetricTransformation metricTransformationsListValue : metricTransformationsList) {
                     if (metricTransformationsListValue != null) {
 
-                        MetricTransformationJsonMarshaller.getInstance()
-                                .marshall(metricTransformationsListValue,
-                                        jsonGenerator);
+                        MetricTransformationJsonMarshaller.getInstance().marshall(metricTransformationsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (metricFilter.getCreationTime() != null) {
-                jsonGenerator.writeFieldName("creationTime").writeValue(
-                        metricFilter.getCreationTime());
+                jsonGenerator.writeFieldName("creationTime").writeValue(metricFilter.getCreationTime());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

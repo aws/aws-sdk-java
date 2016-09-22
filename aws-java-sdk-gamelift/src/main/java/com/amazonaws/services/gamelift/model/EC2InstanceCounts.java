@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -18,11 +16,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Current status of fleet capacity. The number of active instances should match
- * or be in the process of matching the number of desired instances. Pending and
- * terminating counts are non-zero only if fleet capacity is adjusting to an
- * <a>UpdateFleetCapacity</a> request, or if access to resources is temporarily
- * affected.
+ * Current status of fleet capacity. The number of active instances should match or be in the process of matching the
+ * number of desired instances. Pending and terminating counts are non-zero only if fleet capacity is adjusting to an
+ * <a>UpdateFleetCapacity</a> request, or if access to resources is temporarily affected.
  * </p>
  */
 public class EC2InstanceCounts implements Serializable, Cloneable {
@@ -59,15 +55,13 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
     private Integer aCTIVE;
     /**
      * <p>
-     * Number of active instances in the fleet that are not currently hosting a
-     * game session.
+     * Number of active instances in the fleet that are not currently hosting a game session.
      * </p>
      */
     private Integer iDLE;
     /**
      * <p>
-     * Number of instances in the fleet that are no longer active but haven't
-     * yet been terminated.
+     * Number of instances in the fleet that are no longer active but haven't yet been terminated.
      * </p>
      */
     private Integer tERMINATING;
@@ -104,8 +98,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * 
      * @param dESIRED
      *        Ideal number of active instances in the fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EC2InstanceCounts withDESIRED(Integer dESIRED) {
@@ -145,8 +138,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * 
      * @param mINIMUM
      *        Minimum value allowed for the fleet's instance count.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EC2InstanceCounts withMINIMUM(Integer mINIMUM) {
@@ -186,8 +178,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * 
      * @param mAXIMUM
      *        Maximum value allowed for the fleet's instance count.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EC2InstanceCounts withMAXIMUM(Integer mAXIMUM) {
@@ -201,8 +192,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * </p>
      * 
      * @param pENDING
-     *        Number of instances in the fleet that are starting but not yet
-     *        active.
+     *        Number of instances in the fleet that are starting but not yet active.
      */
 
     public void setPENDING(Integer pENDING) {
@@ -214,8 +204,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * Number of instances in the fleet that are starting but not yet active.
      * </p>
      * 
-     * @return Number of instances in the fleet that are starting but not yet
-     *         active.
+     * @return Number of instances in the fleet that are starting but not yet active.
      */
 
     public Integer getPENDING() {
@@ -228,10 +217,8 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * </p>
      * 
      * @param pENDING
-     *        Number of instances in the fleet that are starting but not yet
-     *        active.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Number of instances in the fleet that are starting but not yet active.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EC2InstanceCounts withPENDING(Integer pENDING) {
@@ -271,8 +258,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * 
      * @param aCTIVE
      *        Actual number of active instances in the fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EC2InstanceCounts withACTIVE(Integer aCTIVE) {
@@ -282,13 +268,11 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of active instances in the fleet that are not currently hosting a
-     * game session.
+     * Number of active instances in the fleet that are not currently hosting a game session.
      * </p>
      * 
      * @param iDLE
-     *        Number of active instances in the fleet that are not currently
-     *        hosting a game session.
+     *        Number of active instances in the fleet that are not currently hosting a game session.
      */
 
     public void setIDLE(Integer iDLE) {
@@ -297,12 +281,10 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of active instances in the fleet that are not currently hosting a
-     * game session.
+     * Number of active instances in the fleet that are not currently hosting a game session.
      * </p>
      * 
-     * @return Number of active instances in the fleet that are not currently
-     *         hosting a game session.
+     * @return Number of active instances in the fleet that are not currently hosting a game session.
      */
 
     public Integer getIDLE() {
@@ -311,15 +293,12 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of active instances in the fleet that are not currently hosting a
-     * game session.
+     * Number of active instances in the fleet that are not currently hosting a game session.
      * </p>
      * 
      * @param iDLE
-     *        Number of active instances in the fleet that are not currently
-     *        hosting a game session.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Number of active instances in the fleet that are not currently hosting a game session.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EC2InstanceCounts withIDLE(Integer iDLE) {
@@ -329,13 +308,11 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of instances in the fleet that are no longer active but haven't
-     * yet been terminated.
+     * Number of instances in the fleet that are no longer active but haven't yet been terminated.
      * </p>
      * 
      * @param tERMINATING
-     *        Number of instances in the fleet that are no longer active but
-     *        haven't yet been terminated.
+     *        Number of instances in the fleet that are no longer active but haven't yet been terminated.
      */
 
     public void setTERMINATING(Integer tERMINATING) {
@@ -344,12 +321,10 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of instances in the fleet that are no longer active but haven't
-     * yet been terminated.
+     * Number of instances in the fleet that are no longer active but haven't yet been terminated.
      * </p>
      * 
-     * @return Number of instances in the fleet that are no longer active but
-     *         haven't yet been terminated.
+     * @return Number of instances in the fleet that are no longer active but haven't yet been terminated.
      */
 
     public Integer getTERMINATING() {
@@ -358,15 +333,12 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of instances in the fleet that are no longer active but haven't
-     * yet been terminated.
+     * Number of instances in the fleet that are no longer active but haven't yet been terminated.
      * </p>
      * 
      * @param tERMINATING
-     *        Number of instances in the fleet that are no longer active but
-     *        haven't yet been terminated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Number of instances in the fleet that are no longer active but haven't yet been terminated.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EC2InstanceCounts withTERMINATING(Integer tERMINATING) {
@@ -375,8 +347,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -416,38 +387,31 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
         EC2InstanceCounts other = (EC2InstanceCounts) obj;
         if (other.getDESIRED() == null ^ this.getDESIRED() == null)
             return false;
-        if (other.getDESIRED() != null
-                && other.getDESIRED().equals(this.getDESIRED()) == false)
+        if (other.getDESIRED() != null && other.getDESIRED().equals(this.getDESIRED()) == false)
             return false;
         if (other.getMINIMUM() == null ^ this.getMINIMUM() == null)
             return false;
-        if (other.getMINIMUM() != null
-                && other.getMINIMUM().equals(this.getMINIMUM()) == false)
+        if (other.getMINIMUM() != null && other.getMINIMUM().equals(this.getMINIMUM()) == false)
             return false;
         if (other.getMAXIMUM() == null ^ this.getMAXIMUM() == null)
             return false;
-        if (other.getMAXIMUM() != null
-                && other.getMAXIMUM().equals(this.getMAXIMUM()) == false)
+        if (other.getMAXIMUM() != null && other.getMAXIMUM().equals(this.getMAXIMUM()) == false)
             return false;
         if (other.getPENDING() == null ^ this.getPENDING() == null)
             return false;
-        if (other.getPENDING() != null
-                && other.getPENDING().equals(this.getPENDING()) == false)
+        if (other.getPENDING() != null && other.getPENDING().equals(this.getPENDING()) == false)
             return false;
         if (other.getACTIVE() == null ^ this.getACTIVE() == null)
             return false;
-        if (other.getACTIVE() != null
-                && other.getACTIVE().equals(this.getACTIVE()) == false)
+        if (other.getACTIVE() != null && other.getACTIVE().equals(this.getACTIVE()) == false)
             return false;
         if (other.getIDLE() == null ^ this.getIDLE() == null)
             return false;
-        if (other.getIDLE() != null
-                && other.getIDLE().equals(this.getIDLE()) == false)
+        if (other.getIDLE() != null && other.getIDLE().equals(this.getIDLE()) == false)
             return false;
         if (other.getTERMINATING() == null ^ this.getTERMINATING() == null)
             return false;
-        if (other.getTERMINATING() != null
-                && other.getTERMINATING().equals(this.getTERMINATING()) == false)
+        if (other.getTERMINATING() != null && other.getTERMINATING().equals(this.getTERMINATING()) == false)
             return false;
         return true;
     }
@@ -457,21 +421,13 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDESIRED() == null) ? 0 : getDESIRED().hashCode());
-        hashCode = prime * hashCode
-                + ((getMINIMUM() == null) ? 0 : getMINIMUM().hashCode());
-        hashCode = prime * hashCode
-                + ((getMAXIMUM() == null) ? 0 : getMAXIMUM().hashCode());
-        hashCode = prime * hashCode
-                + ((getPENDING() == null) ? 0 : getPENDING().hashCode());
-        hashCode = prime * hashCode
-                + ((getACTIVE() == null) ? 0 : getACTIVE().hashCode());
-        hashCode = prime * hashCode
-                + ((getIDLE() == null) ? 0 : getIDLE().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTERMINATING() == null) ? 0 : getTERMINATING().hashCode());
+        hashCode = prime * hashCode + ((getDESIRED() == null) ? 0 : getDESIRED().hashCode());
+        hashCode = prime * hashCode + ((getMINIMUM() == null) ? 0 : getMINIMUM().hashCode());
+        hashCode = prime * hashCode + ((getMAXIMUM() == null) ? 0 : getMAXIMUM().hashCode());
+        hashCode = prime * hashCode + ((getPENDING() == null) ? 0 : getPENDING().hashCode());
+        hashCode = prime * hashCode + ((getACTIVE() == null) ? 0 : getACTIVE().hashCode());
+        hashCode = prime * hashCode + ((getIDLE() == null) ? 0 : getIDLE().hashCode());
+        hashCode = prime * hashCode + ((getTERMINATING() == null) ? 0 : getTERMINATING().hashCode());
         return hashCode;
     }
 
@@ -480,9 +436,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
         try {
             return (EC2InstanceCounts) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

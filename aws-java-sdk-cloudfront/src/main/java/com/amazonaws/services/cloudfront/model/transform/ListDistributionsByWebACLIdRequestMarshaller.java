@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model.transform;
 
@@ -39,44 +37,34 @@ import com.amazonaws.util.SdkHttpUtils;
  * ListDistributionsByWebACLIdRequest Marshaller
  */
 
-public class ListDistributionsByWebACLIdRequestMarshaller
-        implements
+public class ListDistributionsByWebACLIdRequestMarshaller implements
         Marshaller<Request<ListDistributionsByWebACLIdRequest>, ListDistributionsByWebACLIdRequest> {
 
-    public Request<ListDistributionsByWebACLIdRequest> marshall(
-            ListDistributionsByWebACLIdRequest listDistributionsByWebACLIdRequest) {
+    public Request<ListDistributionsByWebACLIdRequest> marshall(ListDistributionsByWebACLIdRequest listDistributionsByWebACLIdRequest) {
 
         if (listDistributionsByWebACLIdRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDistributionsByWebACLIdRequest> request = new DefaultRequest<ListDistributionsByWebACLIdRequest>(
-                listDistributionsByWebACLIdRequest, "AmazonCloudFront");
+        Request<ListDistributionsByWebACLIdRequest> request = new DefaultRequest<ListDistributionsByWebACLIdRequest>(listDistributionsByWebACLIdRequest,
+                "AmazonCloudFront");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2016-09-07/distributionsByWebACLId/{WebACLId}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{WebACLId}",
-                        (listDistributionsByWebACLIdRequest.getWebACLId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(listDistributionsByWebACLIdRequest
-                                                .getWebACLId()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{WebACLId}",
+                (listDistributionsByWebACLIdRequest.getWebACLId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(listDistributionsByWebACLIdRequest.getWebACLId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (listDistributionsByWebACLIdRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils
-                    .fromString(listDistributionsByWebACLIdRequest.getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(listDistributionsByWebACLIdRequest.getMarker()));
         }
 
         if (listDistributionsByWebACLIdRequest.getMaxItems() != null) {
-            request.addParameter("MaxItems", StringUtils
-                    .fromString(listDistributionsByWebACLIdRequest
-                            .getMaxItems()));
+            request.addParameter("MaxItems", StringUtils.fromString(listDistributionsByWebACLIdRequest.getMaxItems()));
         }
 
         return request;

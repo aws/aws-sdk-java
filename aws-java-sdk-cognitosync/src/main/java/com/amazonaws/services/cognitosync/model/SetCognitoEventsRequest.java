@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitosync.model;
 
@@ -23,9 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * "
  */
-public class SetCognitoEventsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class SetCognitoEventsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -72,8 +68,7 @@ public class SetCognitoEventsRequest extends
      * 
      * @param identityPoolId
      *        The Cognito Identity Pool to use when configuring Cognito Events
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetCognitoEventsRequest withIdentityPoolId(String identityPoolId) {
@@ -106,9 +101,7 @@ public class SetCognitoEventsRequest extends
      */
 
     public void setEvents(java.util.Map<String, String> events) {
-        this.events = events == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        events);
+        this.events = events == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(events);
     }
 
     /**
@@ -118,12 +111,10 @@ public class SetCognitoEventsRequest extends
      * 
      * @param events
      *        The events to configure
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetCognitoEventsRequest withEvents(
-            java.util.Map<String, String> events) {
+    public SetCognitoEventsRequest withEvents(java.util.Map<String, String> events) {
         setEvents(events);
         return this;
     }
@@ -133,15 +124,14 @@ public class SetCognitoEventsRequest extends
             this.events = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.events.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.events.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Events. &lt;p> Returns a reference to
-     * this object so that method calls can be chained together.
+     * Removes all the entries added into Events. &lt;p> Returns a reference to this object so that method calls can be
+     * chained together.
      */
 
     public SetCognitoEventsRequest clearEventsEntries() {
@@ -150,8 +140,7 @@ public class SetCognitoEventsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -179,16 +168,13 @@ public class SetCognitoEventsRequest extends
         if (obj instanceof SetCognitoEventsRequest == false)
             return false;
         SetCognitoEventsRequest other = (SetCognitoEventsRequest) obj;
-        if (other.getIdentityPoolId() == null
-                ^ this.getIdentityPoolId() == null)
+        if (other.getIdentityPoolId() == null ^ this.getIdentityPoolId() == null)
             return false;
-        if (other.getIdentityPoolId() != null
-                && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
+        if (other.getIdentityPoolId() != null && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
             return false;
         if (other.getEvents() == null ^ this.getEvents() == null)
             return false;
-        if (other.getEvents() != null
-                && other.getEvents().equals(this.getEvents()) == false)
+        if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false)
             return false;
         return true;
     }
@@ -198,12 +184,8 @@ public class SetCognitoEventsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getEvents() == null) ? 0 : getEvents().hashCode());
+        hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode());
+        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
         return hashCode;
     }
 

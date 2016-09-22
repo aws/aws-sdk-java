@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This input determines which instance groups to retrieve.
  * </p>
  */
-public class ListInstanceGroupsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -45,8 +41,7 @@ public class ListInstanceGroupsRequest extends
      * </p>
      * 
      * @param clusterId
-     *        The identifier of the cluster for which to list the instance
-     *        groups.
+     *        The identifier of the cluster for which to list the instance groups.
      */
 
     public void setClusterId(String clusterId) {
@@ -58,8 +53,7 @@ public class ListInstanceGroupsRequest extends
      * The identifier of the cluster for which to list the instance groups.
      * </p>
      * 
-     * @return The identifier of the cluster for which to list the instance
-     *         groups.
+     * @return The identifier of the cluster for which to list the instance groups.
      */
 
     public String getClusterId() {
@@ -72,10 +66,8 @@ public class ListInstanceGroupsRequest extends
      * </p>
      * 
      * @param clusterId
-     *        The identifier of the cluster for which to list the instance
-     *        groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the cluster for which to list the instance groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListInstanceGroupsRequest withClusterId(String clusterId) {
@@ -89,8 +81,7 @@ public class ListInstanceGroupsRequest extends
      * </p>
      * 
      * @param marker
-     *        The pagination token that indicates the next set of results to
-     *        retrieve.
+     *        The pagination token that indicates the next set of results to retrieve.
      */
 
     public void setMarker(String marker) {
@@ -102,8 +93,7 @@ public class ListInstanceGroupsRequest extends
      * The pagination token that indicates the next set of results to retrieve.
      * </p>
      * 
-     * @return The pagination token that indicates the next set of results to
-     *         retrieve.
+     * @return The pagination token that indicates the next set of results to retrieve.
      */
 
     public String getMarker() {
@@ -116,10 +106,8 @@ public class ListInstanceGroupsRequest extends
      * </p>
      * 
      * @param marker
-     *        The pagination token that indicates the next set of results to
-     *        retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The pagination token that indicates the next set of results to retrieve.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListInstanceGroupsRequest withMarker(String marker) {
@@ -128,8 +116,7 @@ public class ListInstanceGroupsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -159,13 +146,11 @@ public class ListInstanceGroupsRequest extends
         ListInstanceGroupsRequest other = (ListInstanceGroupsRequest) obj;
         if (other.getClusterId() == null ^ this.getClusterId() == null)
             return false;
-        if (other.getClusterId() != null
-                && other.getClusterId().equals(this.getClusterId()) == false)
+        if (other.getClusterId() != null && other.getClusterId().equals(this.getClusterId()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -175,10 +160,8 @@ public class ListInstanceGroupsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 

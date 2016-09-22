@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
@@ -21,9 +19,8 @@ import java.io.Serializable;
  * Contains the output of DetachLoadBalancerFromSubnets.
  * </p>
  */
-public class DetachLoadBalancerFromSubnetsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DetachLoadBalancerFromSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -62,8 +59,7 @@ public class DetachLoadBalancerFromSubnetsResult extends
             return;
         }
 
-        this.subnets = new com.amazonaws.internal.SdkInternalList<String>(
-                subnets);
+        this.subnets = new com.amazonaws.internal.SdkInternalList<String>(subnets);
     }
 
     /**
@@ -71,22 +67,19 @@ public class DetachLoadBalancerFromSubnetsResult extends
      * The IDs of the remaining subnets for the load balancer.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnets(java.util.Collection)} or
-     * {@link #withSubnets(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnets(java.util.Collection)} or {@link #withSubnets(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param subnets
      *        The IDs of the remaining subnets for the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetachLoadBalancerFromSubnetsResult withSubnets(String... subnets) {
         if (this.subnets == null) {
-            setSubnets(new com.amazonaws.internal.SdkInternalList<String>(
-                    subnets.length));
+            setSubnets(new com.amazonaws.internal.SdkInternalList<String>(subnets.length));
         }
         for (String ele : subnets) {
             this.subnets.add(ele);
@@ -101,19 +94,16 @@ public class DetachLoadBalancerFromSubnetsResult extends
      * 
      * @param subnets
      *        The IDs of the remaining subnets for the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DetachLoadBalancerFromSubnetsResult withSubnets(
-            java.util.Collection<String> subnets) {
+    public DetachLoadBalancerFromSubnetsResult withSubnets(java.util.Collection<String> subnets) {
         setSubnets(subnets);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -141,8 +131,7 @@ public class DetachLoadBalancerFromSubnetsResult extends
         DetachLoadBalancerFromSubnetsResult other = (DetachLoadBalancerFromSubnetsResult) obj;
         if (other.getSubnets() == null ^ this.getSubnets() == null)
             return false;
-        if (other.getSubnets() != null
-                && other.getSubnets().equals(this.getSubnets()) == false)
+        if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false)
             return false;
         return true;
     }
@@ -152,8 +141,7 @@ public class DetachLoadBalancerFromSubnetsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
+        hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
         return hashCode;
     }
 
@@ -162,9 +150,7 @@ public class DetachLoadBalancerFromSubnetsResult extends
         try {
             return (DetachLoadBalancerFromSubnetsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

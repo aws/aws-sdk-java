@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -37,8 +35,8 @@ public class Image implements Serializable, Cloneable {
     private String imageLocation;
     /**
      * <p>
-     * The current state of the AMI. If the state is <code>available</code>, the
-     * image is successfully registered and can be used to launch an instance.
+     * The current state of the AMI. If the state is <code>available</code>, the image is successfully registered and
+     * can be used to launch an instance.
      * </p>
      */
     private String state;
@@ -56,10 +54,8 @@ public class Image implements Serializable, Cloneable {
     private String creationDate;
     /**
      * <p>
-     * Indicates whether the image has public launch permissions. The value is
-     * <code>true</code> if this image has public launch permissions or
-     * <code>false</code> if it has only implicit and explicit launch
-     * permissions.
+     * Indicates whether the image has public launch permissions. The value is <code>true</code> if this image has
+     * public launch permissions or <code>false</code> if it has only implicit and explicit launch permissions.
      * </p>
      */
     private Boolean publicValue;
@@ -83,15 +79,13 @@ public class Image implements Serializable, Cloneable {
     private String imageType;
     /**
      * <p>
-     * The kernel associated with the image, if any. Only applicable for machine
-     * images.
+     * The kernel associated with the image, if any. Only applicable for machine images.
      * </p>
      */
     private String kernelId;
     /**
      * <p>
-     * The RAM disk associated with the image, if any. Only applicable for
-     * machine images.
+     * The RAM disk associated with the image, if any. Only applicable for machine images.
      * </p>
      */
     private String ramdiskId;
@@ -103,8 +97,7 @@ public class Image implements Serializable, Cloneable {
     private String platform;
     /**
      * <p>
-     * Specifies whether enhanced networking with the Intel 82599 Virtual
-     * Function interface is enabled.
+     * Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      */
     private String sriovNetSupport;
@@ -122,8 +115,8 @@ public class Image implements Serializable, Cloneable {
     private StateReason stateReason;
     /**
      * <p>
-     * The AWS account alias (for example, <code>amazon</code>,
-     * <code>self</code>) or the AWS account ID of the AMI owner.
+     * The AWS account alias (for example, <code>amazon</code>, <code>self</code>) or the AWS account ID of the AMI
+     * owner.
      * </p>
      */
     private String imageOwnerAlias;
@@ -141,15 +134,13 @@ public class Image implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The type of root device used by the AMI. The AMI can use an EBS volume or
-     * an instance store volume.
+     * The type of root device used by the AMI. The AMI can use an EBS volume or an instance store volume.
      * </p>
      */
     private String rootDeviceType;
     /**
      * <p>
-     * The device name of the root device (for example, <code>/dev/sda1</code>
-     * or <code>/dev/xvda</code>).
+     * The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      * </p>
      */
     private String rootDeviceName;
@@ -210,8 +201,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param imageId
      *        The ID of the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withImageId(String imageId) {
@@ -251,8 +241,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param imageLocation
      *        The location of the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withImageLocation(String imageLocation) {
@@ -262,14 +251,13 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the AMI. If the state is <code>available</code>, the
-     * image is successfully registered and can be used to launch an instance.
+     * The current state of the AMI. If the state is <code>available</code>, the image is successfully registered and
+     * can be used to launch an instance.
      * </p>
      * 
      * @param state
-     *        The current state of the AMI. If the state is
-     *        <code>available</code>, the image is successfully registered and
-     *        can be used to launch an instance.
+     *        The current state of the AMI. If the state is <code>available</code>, the image is successfully registered
+     *        and can be used to launch an instance.
      * @see ImageState
      */
 
@@ -279,13 +267,12 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the AMI. If the state is <code>available</code>, the
-     * image is successfully registered and can be used to launch an instance.
+     * The current state of the AMI. If the state is <code>available</code>, the image is successfully registered and
+     * can be used to launch an instance.
      * </p>
      * 
-     * @return The current state of the AMI. If the state is
-     *         <code>available</code>, the image is successfully registered and
-     *         can be used to launch an instance.
+     * @return The current state of the AMI. If the state is <code>available</code>, the image is successfully
+     *         registered and can be used to launch an instance.
      * @see ImageState
      */
 
@@ -295,16 +282,14 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the AMI. If the state is <code>available</code>, the
-     * image is successfully registered and can be used to launch an instance.
+     * The current state of the AMI. If the state is <code>available</code>, the image is successfully registered and
+     * can be used to launch an instance.
      * </p>
      * 
      * @param state
-     *        The current state of the AMI. If the state is
-     *        <code>available</code>, the image is successfully registered and
-     *        can be used to launch an instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The current state of the AMI. If the state is <code>available</code>, the image is successfully registered
+     *        and can be used to launch an instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageState
      */
 
@@ -315,14 +300,13 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the AMI. If the state is <code>available</code>, the
-     * image is successfully registered and can be used to launch an instance.
+     * The current state of the AMI. If the state is <code>available</code>, the image is successfully registered and
+     * can be used to launch an instance.
      * </p>
      * 
      * @param state
-     *        The current state of the AMI. If the state is
-     *        <code>available</code>, the image is successfully registered and
-     *        can be used to launch an instance.
+     *        The current state of the AMI. If the state is <code>available</code>, the image is successfully registered
+     *        and can be used to launch an instance.
      * @see ImageState
      */
 
@@ -332,16 +316,14 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the AMI. If the state is <code>available</code>, the
-     * image is successfully registered and can be used to launch an instance.
+     * The current state of the AMI. If the state is <code>available</code>, the image is successfully registered and
+     * can be used to launch an instance.
      * </p>
      * 
      * @param state
-     *        The current state of the AMI. If the state is
-     *        <code>available</code>, the image is successfully registered and
-     *        can be used to launch an instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The current state of the AMI. If the state is <code>available</code>, the image is successfully registered
+     *        and can be used to launch an instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageState
      */
 
@@ -382,8 +364,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param ownerId
      *        The AWS account ID of the image owner.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withOwnerId(String ownerId) {
@@ -423,8 +404,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param creationDate
      *        The date and time the image was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withCreationDate(String creationDate) {
@@ -434,17 +414,14 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the image has public launch permissions. The value is
-     * <code>true</code> if this image has public launch permissions or
-     * <code>false</code> if it has only implicit and explicit launch
-     * permissions.
+     * Indicates whether the image has public launch permissions. The value is <code>true</code> if this image has
+     * public launch permissions or <code>false</code> if it has only implicit and explicit launch permissions.
      * </p>
      * 
      * @param publicValue
-     *        Indicates whether the image has public launch permissions. The
-     *        value is <code>true</code> if this image has public launch
-     *        permissions or <code>false</code> if it has only implicit and
-     *        explicit launch permissions.
+     *        Indicates whether the image has public launch permissions. The value is <code>true</code> if this image
+     *        has public launch permissions or <code>false</code> if it has only implicit and explicit launch
+     *        permissions.
      */
 
     public void setPublic(Boolean publicValue) {
@@ -453,16 +430,13 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the image has public launch permissions. The value is
-     * <code>true</code> if this image has public launch permissions or
-     * <code>false</code> if it has only implicit and explicit launch
-     * permissions.
+     * Indicates whether the image has public launch permissions. The value is <code>true</code> if this image has
+     * public launch permissions or <code>false</code> if it has only implicit and explicit launch permissions.
      * </p>
      * 
-     * @return Indicates whether the image has public launch permissions. The
-     *         value is <code>true</code> if this image has public launch
-     *         permissions or <code>false</code> if it has only implicit and
-     *         explicit launch permissions.
+     * @return Indicates whether the image has public launch permissions. The value is <code>true</code> if this image
+     *         has public launch permissions or <code>false</code> if it has only implicit and explicit launch
+     *         permissions.
      */
 
     public Boolean getPublic() {
@@ -471,19 +445,15 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the image has public launch permissions. The value is
-     * <code>true</code> if this image has public launch permissions or
-     * <code>false</code> if it has only implicit and explicit launch
-     * permissions.
+     * Indicates whether the image has public launch permissions. The value is <code>true</code> if this image has
+     * public launch permissions or <code>false</code> if it has only implicit and explicit launch permissions.
      * </p>
      * 
      * @param publicValue
-     *        Indicates whether the image has public launch permissions. The
-     *        value is <code>true</code> if this image has public launch
-     *        permissions or <code>false</code> if it has only implicit and
-     *        explicit launch permissions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether the image has public launch permissions. The value is <code>true</code> if this image
+     *        has public launch permissions or <code>false</code> if it has only implicit and explicit launch
+     *        permissions.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withPublic(Boolean publicValue) {
@@ -493,16 +463,13 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the image has public launch permissions. The value is
-     * <code>true</code> if this image has public launch permissions or
-     * <code>false</code> if it has only implicit and explicit launch
-     * permissions.
+     * Indicates whether the image has public launch permissions. The value is <code>true</code> if this image has
+     * public launch permissions or <code>false</code> if it has only implicit and explicit launch permissions.
      * </p>
      * 
-     * @return Indicates whether the image has public launch permissions. The
-     *         value is <code>true</code> if this image has public launch
-     *         permissions or <code>false</code> if it has only implicit and
-     *         explicit launch permissions.
+     * @return Indicates whether the image has public launch permissions. The value is <code>true</code> if this image
+     *         has public launch permissions or <code>false</code> if it has only implicit and explicit launch
+     *         permissions.
      */
 
     public Boolean isPublic() {
@@ -539,8 +506,7 @@ public class Image implements Serializable, Cloneable {
             return;
         }
 
-        this.productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>(
-                productCodes);
+        this.productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>(productCodes);
     }
 
     /**
@@ -548,22 +514,19 @@ public class Image implements Serializable, Cloneable {
      * Any product codes associated with the AMI.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setProductCodes(java.util.Collection)} or
-     * {@link #withProductCodes(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProductCodes(java.util.Collection)} or {@link #withProductCodes(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param productCodes
      *        Any product codes associated with the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withProductCodes(ProductCode... productCodes) {
         if (this.productCodes == null) {
-            setProductCodes(new com.amazonaws.internal.SdkInternalList<ProductCode>(
-                    productCodes.length));
+            setProductCodes(new com.amazonaws.internal.SdkInternalList<ProductCode>(productCodes.length));
         }
         for (ProductCode ele : productCodes) {
             this.productCodes.add(ele);
@@ -578,8 +541,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param productCodes
      *        Any product codes associated with the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withProductCodes(java.util.Collection<ProductCode> productCodes) {
@@ -621,8 +583,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param architecture
      *        The architecture of the image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArchitectureValues
      */
 
@@ -652,8 +613,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param architecture
      *        The architecture of the image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArchitectureValues
      */
 
@@ -696,8 +656,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param imageType
      *        The type of image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageTypeValues
      */
 
@@ -727,8 +686,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param imageType
      *        The type of image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageTypeValues
      */
 
@@ -739,13 +697,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The kernel associated with the image, if any. Only applicable for machine
-     * images.
+     * The kernel associated with the image, if any. Only applicable for machine images.
      * </p>
      * 
      * @param kernelId
-     *        The kernel associated with the image, if any. Only applicable for
-     *        machine images.
+     *        The kernel associated with the image, if any. Only applicable for machine images.
      */
 
     public void setKernelId(String kernelId) {
@@ -754,12 +710,10 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The kernel associated with the image, if any. Only applicable for machine
-     * images.
+     * The kernel associated with the image, if any. Only applicable for machine images.
      * </p>
      * 
-     * @return The kernel associated with the image, if any. Only applicable for
-     *         machine images.
+     * @return The kernel associated with the image, if any. Only applicable for machine images.
      */
 
     public String getKernelId() {
@@ -768,15 +722,12 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The kernel associated with the image, if any. Only applicable for machine
-     * images.
+     * The kernel associated with the image, if any. Only applicable for machine images.
      * </p>
      * 
      * @param kernelId
-     *        The kernel associated with the image, if any. Only applicable for
-     *        machine images.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The kernel associated with the image, if any. Only applicable for machine images.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withKernelId(String kernelId) {
@@ -786,13 +737,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The RAM disk associated with the image, if any. Only applicable for
-     * machine images.
+     * The RAM disk associated with the image, if any. Only applicable for machine images.
      * </p>
      * 
      * @param ramdiskId
-     *        The RAM disk associated with the image, if any. Only applicable
-     *        for machine images.
+     *        The RAM disk associated with the image, if any. Only applicable for machine images.
      */
 
     public void setRamdiskId(String ramdiskId) {
@@ -801,12 +750,10 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The RAM disk associated with the image, if any. Only applicable for
-     * machine images.
+     * The RAM disk associated with the image, if any. Only applicable for machine images.
      * </p>
      * 
-     * @return The RAM disk associated with the image, if any. Only applicable
-     *         for machine images.
+     * @return The RAM disk associated with the image, if any. Only applicable for machine images.
      */
 
     public String getRamdiskId() {
@@ -815,15 +762,12 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The RAM disk associated with the image, if any. Only applicable for
-     * machine images.
+     * The RAM disk associated with the image, if any. Only applicable for machine images.
      * </p>
      * 
      * @param ramdiskId
-     *        The RAM disk associated with the image, if any. Only applicable
-     *        for machine images.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The RAM disk associated with the image, if any. Only applicable for machine images.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withRamdiskId(String ramdiskId) {
@@ -837,8 +781,7 @@ public class Image implements Serializable, Cloneable {
      * </p>
      * 
      * @param platform
-     *        The value is <code>Windows</code> for Windows AMIs; otherwise
-     *        blank.
+     *        The value is <code>Windows</code> for Windows AMIs; otherwise blank.
      * @see PlatformValues
      */
 
@@ -851,8 +794,7 @@ public class Image implements Serializable, Cloneable {
      * The value is <code>Windows</code> for Windows AMIs; otherwise blank.
      * </p>
      * 
-     * @return The value is <code>Windows</code> for Windows AMIs; otherwise
-     *         blank.
+     * @return The value is <code>Windows</code> for Windows AMIs; otherwise blank.
      * @see PlatformValues
      */
 
@@ -866,10 +808,8 @@ public class Image implements Serializable, Cloneable {
      * </p>
      * 
      * @param platform
-     *        The value is <code>Windows</code> for Windows AMIs; otherwise
-     *        blank.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value is <code>Windows</code> for Windows AMIs; otherwise blank.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformValues
      */
 
@@ -884,8 +824,7 @@ public class Image implements Serializable, Cloneable {
      * </p>
      * 
      * @param platform
-     *        The value is <code>Windows</code> for Windows AMIs; otherwise
-     *        blank.
+     *        The value is <code>Windows</code> for Windows AMIs; otherwise blank.
      * @see PlatformValues
      */
 
@@ -899,10 +838,8 @@ public class Image implements Serializable, Cloneable {
      * </p>
      * 
      * @param platform
-     *        The value is <code>Windows</code> for Windows AMIs; otherwise
-     *        blank.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value is <code>Windows</code> for Windows AMIs; otherwise blank.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformValues
      */
 
@@ -913,13 +850,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether enhanced networking with the Intel 82599 Virtual
-     * Function interface is enabled.
+     * Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      * 
      * @param sriovNetSupport
-     *        Specifies whether enhanced networking with the Intel 82599 Virtual
-     *        Function interface is enabled.
+     *        Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      */
 
     public void setSriovNetSupport(String sriovNetSupport) {
@@ -928,12 +863,10 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether enhanced networking with the Intel 82599 Virtual
-     * Function interface is enabled.
+     * Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      * 
-     * @return Specifies whether enhanced networking with the Intel 82599
-     *         Virtual Function interface is enabled.
+     * @return Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      */
 
     public String getSriovNetSupport() {
@@ -942,15 +875,12 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether enhanced networking with the Intel 82599 Virtual
-     * Function interface is enabled.
+     * Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      * 
      * @param sriovNetSupport
-     *        Specifies whether enhanced networking with the Intel 82599 Virtual
-     *        Function interface is enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withSriovNetSupport(String sriovNetSupport) {
@@ -990,8 +920,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param enaSupport
      *        Specifies whether enhanced networking with ENA is enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withEnaSupport(Boolean enaSupport) {
@@ -1043,8 +972,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param stateReason
      *        The reason for the state change.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withStateReason(StateReason stateReason) {
@@ -1054,13 +982,13 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account alias (for example, <code>amazon</code>,
-     * <code>self</code>) or the AWS account ID of the AMI owner.
+     * The AWS account alias (for example, <code>amazon</code>, <code>self</code>) or the AWS account ID of the AMI
+     * owner.
      * </p>
      * 
      * @param imageOwnerAlias
-     *        The AWS account alias (for example, <code>amazon</code>,
-     *        <code>self</code>) or the AWS account ID of the AMI owner.
+     *        The AWS account alias (for example, <code>amazon</code>, <code>self</code>) or the AWS account ID of the
+     *        AMI owner.
      */
 
     public void setImageOwnerAlias(String imageOwnerAlias) {
@@ -1069,12 +997,12 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account alias (for example, <code>amazon</code>,
-     * <code>self</code>) or the AWS account ID of the AMI owner.
+     * The AWS account alias (for example, <code>amazon</code>, <code>self</code>) or the AWS account ID of the AMI
+     * owner.
      * </p>
      * 
-     * @return The AWS account alias (for example, <code>amazon</code>,
-     *         <code>self</code>) or the AWS account ID of the AMI owner.
+     * @return The AWS account alias (for example, <code>amazon</code>, <code>self</code>) or the AWS account ID of the
+     *         AMI owner.
      */
 
     public String getImageOwnerAlias() {
@@ -1083,15 +1011,14 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account alias (for example, <code>amazon</code>,
-     * <code>self</code>) or the AWS account ID of the AMI owner.
+     * The AWS account alias (for example, <code>amazon</code>, <code>self</code>) or the AWS account ID of the AMI
+     * owner.
      * </p>
      * 
      * @param imageOwnerAlias
-     *        The AWS account alias (for example, <code>amazon</code>,
-     *        <code>self</code>) or the AWS account ID of the AMI owner.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS account alias (for example, <code>amazon</code>, <code>self</code>) or the AWS account ID of the
+     *        AMI owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withImageOwnerAlias(String imageOwnerAlias) {
@@ -1131,8 +1058,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the AMI that was provided during image creation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withName(String name) {
@@ -1146,8 +1072,7 @@ public class Image implements Serializable, Cloneable {
      * </p>
      * 
      * @param description
-     *        The description of the AMI that was provided during image
-     *        creation.
+     *        The description of the AMI that was provided during image creation.
      */
 
     public void setDescription(String description) {
@@ -1159,8 +1084,7 @@ public class Image implements Serializable, Cloneable {
      * The description of the AMI that was provided during image creation.
      * </p>
      * 
-     * @return The description of the AMI that was provided during image
-     *         creation.
+     * @return The description of the AMI that was provided during image creation.
      */
 
     public String getDescription() {
@@ -1173,10 +1097,8 @@ public class Image implements Serializable, Cloneable {
      * </p>
      * 
      * @param description
-     *        The description of the AMI that was provided during image
-     *        creation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The description of the AMI that was provided during image creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withDescription(String description) {
@@ -1186,13 +1108,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of root device used by the AMI. The AMI can use an EBS volume or
-     * an instance store volume.
+     * The type of root device used by the AMI. The AMI can use an EBS volume or an instance store volume.
      * </p>
      * 
      * @param rootDeviceType
-     *        The type of root device used by the AMI. The AMI can use an EBS
-     *        volume or an instance store volume.
+     *        The type of root device used by the AMI. The AMI can use an EBS volume or an instance store volume.
      * @see DeviceType
      */
 
@@ -1202,12 +1122,10 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of root device used by the AMI. The AMI can use an EBS volume or
-     * an instance store volume.
+     * The type of root device used by the AMI. The AMI can use an EBS volume or an instance store volume.
      * </p>
      * 
-     * @return The type of root device used by the AMI. The AMI can use an EBS
-     *         volume or an instance store volume.
+     * @return The type of root device used by the AMI. The AMI can use an EBS volume or an instance store volume.
      * @see DeviceType
      */
 
@@ -1217,15 +1135,12 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of root device used by the AMI. The AMI can use an EBS volume or
-     * an instance store volume.
+     * The type of root device used by the AMI. The AMI can use an EBS volume or an instance store volume.
      * </p>
      * 
      * @param rootDeviceType
-     *        The type of root device used by the AMI. The AMI can use an EBS
-     *        volume or an instance store volume.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The type of root device used by the AMI. The AMI can use an EBS volume or an instance store volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceType
      */
 
@@ -1236,13 +1151,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of root device used by the AMI. The AMI can use an EBS volume or
-     * an instance store volume.
+     * The type of root device used by the AMI. The AMI can use an EBS volume or an instance store volume.
      * </p>
      * 
      * @param rootDeviceType
-     *        The type of root device used by the AMI. The AMI can use an EBS
-     *        volume or an instance store volume.
+     *        The type of root device used by the AMI. The AMI can use an EBS volume or an instance store volume.
      * @see DeviceType
      */
 
@@ -1252,15 +1165,12 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of root device used by the AMI. The AMI can use an EBS volume or
-     * an instance store volume.
+     * The type of root device used by the AMI. The AMI can use an EBS volume or an instance store volume.
      * </p>
      * 
      * @param rootDeviceType
-     *        The type of root device used by the AMI. The AMI can use an EBS
-     *        volume or an instance store volume.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The type of root device used by the AMI. The AMI can use an EBS volume or an instance store volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceType
      */
 
@@ -1271,13 +1181,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name of the root device (for example, <code>/dev/sda1</code>
-     * or <code>/dev/xvda</code>).
+     * The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      * </p>
      * 
      * @param rootDeviceName
-     *        The device name of the root device (for example,
-     *        <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     *        The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      */
 
     public void setRootDeviceName(String rootDeviceName) {
@@ -1286,12 +1194,10 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name of the root device (for example, <code>/dev/sda1</code>
-     * or <code>/dev/xvda</code>).
+     * The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      * </p>
      * 
-     * @return The device name of the root device (for example,
-     *         <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     * @return The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      */
 
     public String getRootDeviceName() {
@@ -1300,15 +1206,12 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name of the root device (for example, <code>/dev/sda1</code>
-     * or <code>/dev/xvda</code>).
+     * The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      * </p>
      * 
      * @param rootDeviceName
-     *        The device name of the root device (for example,
-     *        <code>/dev/sda1</code> or <code>/dev/xvda</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withRootDeviceName(String rootDeviceName) {
@@ -1340,15 +1243,13 @@ public class Image implements Serializable, Cloneable {
      *        Any block device mapping entries.
      */
 
-    public void setBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
             return;
         }
 
-        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                blockDeviceMappings);
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings);
     }
 
     /**
@@ -1356,23 +1257,19 @@ public class Image implements Serializable, Cloneable {
      * Any block device mapping entries.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
-     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param blockDeviceMappings
      *        Any block device mapping entries.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Image withBlockDeviceMappings(
-            BlockDeviceMapping... blockDeviceMappings) {
+    public Image withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
-            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                    blockDeviceMappings.length));
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings.length));
         }
         for (BlockDeviceMapping ele : blockDeviceMappings) {
             this.blockDeviceMappings.add(ele);
@@ -1387,12 +1284,10 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param blockDeviceMappings
      *        Any block device mapping entries.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Image withBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public Image withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
         return this;
     }
@@ -1431,8 +1326,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param virtualizationType
      *        The type of virtualization of the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VirtualizationType
      */
 
@@ -1462,8 +1356,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param virtualizationType
      *        The type of virtualization of the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VirtualizationType
      */
 
@@ -1510,16 +1403,14 @@ public class Image implements Serializable, Cloneable {
      * Any tags assigned to the image.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        Any tags assigned to the image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withTags(Tag... tags) {
@@ -1539,8 +1430,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param tags
      *        Any tags assigned to the image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Image withTags(java.util.Collection<Tag> tags) {
@@ -1582,8 +1472,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param hypervisor
      *        The hypervisor type of the image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HypervisorType
      */
 
@@ -1613,8 +1502,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param hypervisor
      *        The hypervisor type of the image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HypervisorType
      */
 
@@ -1624,8 +1512,7 @@ public class Image implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1699,131 +1586,99 @@ public class Image implements Serializable, Cloneable {
         Image other = (Image) obj;
         if (other.getImageId() == null ^ this.getImageId() == null)
             return false;
-        if (other.getImageId() != null
-                && other.getImageId().equals(this.getImageId()) == false)
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
             return false;
         if (other.getImageLocation() == null ^ this.getImageLocation() == null)
             return false;
-        if (other.getImageLocation() != null
-                && other.getImageLocation().equals(this.getImageLocation()) == false)
+        if (other.getImageLocation() != null && other.getImageLocation().equals(this.getImageLocation()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getOwnerId() == null ^ this.getOwnerId() == null)
             return false;
-        if (other.getOwnerId() != null
-                && other.getOwnerId().equals(this.getOwnerId()) == false)
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
-        if (other.getCreationDate() != null
-                && other.getCreationDate().equals(this.getCreationDate()) == false)
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
         if (other.getPublic() == null ^ this.getPublic() == null)
             return false;
-        if (other.getPublic() != null
-                && other.getPublic().equals(this.getPublic()) == false)
+        if (other.getPublic() != null && other.getPublic().equals(this.getPublic()) == false)
             return false;
         if (other.getProductCodes() == null ^ this.getProductCodes() == null)
             return false;
-        if (other.getProductCodes() != null
-                && other.getProductCodes().equals(this.getProductCodes()) == false)
+        if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false)
             return false;
         if (other.getArchitecture() == null ^ this.getArchitecture() == null)
             return false;
-        if (other.getArchitecture() != null
-                && other.getArchitecture().equals(this.getArchitecture()) == false)
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
             return false;
         if (other.getImageType() == null ^ this.getImageType() == null)
             return false;
-        if (other.getImageType() != null
-                && other.getImageType().equals(this.getImageType()) == false)
+        if (other.getImageType() != null && other.getImageType().equals(this.getImageType()) == false)
             return false;
         if (other.getKernelId() == null ^ this.getKernelId() == null)
             return false;
-        if (other.getKernelId() != null
-                && other.getKernelId().equals(this.getKernelId()) == false)
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
             return false;
         if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
             return false;
-        if (other.getRamdiskId() != null
-                && other.getRamdiskId().equals(this.getRamdiskId()) == false)
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
             return false;
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
-        if (other.getPlatform() != null
-                && other.getPlatform().equals(this.getPlatform()) == false)
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
-        if (other.getSriovNetSupport() == null
-                ^ this.getSriovNetSupport() == null)
+        if (other.getSriovNetSupport() == null ^ this.getSriovNetSupport() == null)
             return false;
-        if (other.getSriovNetSupport() != null
-                && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
+        if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
             return false;
         if (other.getEnaSupport() == null ^ this.getEnaSupport() == null)
             return false;
-        if (other.getEnaSupport() != null
-                && other.getEnaSupport().equals(this.getEnaSupport()) == false)
+        if (other.getEnaSupport() != null && other.getEnaSupport().equals(this.getEnaSupport()) == false)
             return false;
         if (other.getStateReason() == null ^ this.getStateReason() == null)
             return false;
-        if (other.getStateReason() != null
-                && other.getStateReason().equals(this.getStateReason()) == false)
+        if (other.getStateReason() != null && other.getStateReason().equals(this.getStateReason()) == false)
             return false;
-        if (other.getImageOwnerAlias() == null
-                ^ this.getImageOwnerAlias() == null)
+        if (other.getImageOwnerAlias() == null ^ this.getImageOwnerAlias() == null)
             return false;
-        if (other.getImageOwnerAlias() != null
-                && other.getImageOwnerAlias().equals(this.getImageOwnerAlias()) == false)
+        if (other.getImageOwnerAlias() != null && other.getImageOwnerAlias().equals(this.getImageOwnerAlias()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getRootDeviceType() == null
-                ^ this.getRootDeviceType() == null)
+        if (other.getRootDeviceType() == null ^ this.getRootDeviceType() == null)
             return false;
-        if (other.getRootDeviceType() != null
-                && other.getRootDeviceType().equals(this.getRootDeviceType()) == false)
+        if (other.getRootDeviceType() != null && other.getRootDeviceType().equals(this.getRootDeviceType()) == false)
             return false;
-        if (other.getRootDeviceName() == null
-                ^ this.getRootDeviceName() == null)
+        if (other.getRootDeviceName() == null ^ this.getRootDeviceName() == null)
             return false;
-        if (other.getRootDeviceName() != null
-                && other.getRootDeviceName().equals(this.getRootDeviceName()) == false)
+        if (other.getRootDeviceName() != null && other.getRootDeviceName().equals(this.getRootDeviceName()) == false)
             return false;
-        if (other.getBlockDeviceMappings() == null
-                ^ this.getBlockDeviceMappings() == null)
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
             return false;
-        if (other.getBlockDeviceMappings() != null
-                && other.getBlockDeviceMappings().equals(
-                        this.getBlockDeviceMappings()) == false)
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
-        if (other.getVirtualizationType() == null
-                ^ this.getVirtualizationType() == null)
+        if (other.getVirtualizationType() == null ^ this.getVirtualizationType() == null)
             return false;
-        if (other.getVirtualizationType() != null
-                && other.getVirtualizationType().equals(
-                        this.getVirtualizationType()) == false)
+        if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getHypervisor() == null ^ this.getHypervisor() == null)
             return false;
-        if (other.getHypervisor() != null
-                && other.getHypervisor().equals(this.getHypervisor()) == false)
+        if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false)
             return false;
         return true;
     }
@@ -1833,76 +1688,30 @@ public class Image implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getImageId() == null) ? 0 : getImageId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getImageLocation() == null) ? 0 : getImageLocation()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime * hashCode
-                + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDate() == null) ? 0 : getCreationDate()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPublic() == null) ? 0 : getPublic().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProductCodes() == null) ? 0 : getProductCodes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getArchitecture() == null) ? 0 : getArchitecture()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getImageType() == null) ? 0 : getImageType().hashCode());
-        hashCode = prime * hashCode
-                + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
-        hashCode = prime * hashCode
-                + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
-        hashCode = prime * hashCode
-                + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStateReason() == null) ? 0 : getStateReason().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getImageOwnerAlias() == null) ? 0 : getImageOwnerAlias()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRootDeviceType() == null) ? 0 : getRootDeviceType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRootDeviceName() == null) ? 0 : getRootDeviceName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBlockDeviceMappings() == null) ? 0
-                        : getBlockDeviceMappings().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVirtualizationType() == null) ? 0
-                        : getVirtualizationType().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode
-                + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode + ((getImageLocation() == null) ? 0 : getImageLocation().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getPublic() == null) ? 0 : getPublic().hashCode());
+        hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode());
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getImageType() == null) ? 0 : getImageType().hashCode());
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode());
+        hashCode = prime * hashCode + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
+        hashCode = prime * hashCode + ((getStateReason() == null) ? 0 : getStateReason().hashCode());
+        hashCode = prime * hashCode + ((getImageOwnerAlias() == null) ? 0 : getImageOwnerAlias().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode());
+        hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode());
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
+        hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
         return hashCode;
     }
 
@@ -1911,9 +1720,7 @@ public class Image implements Serializable, Cloneable {
         try {
             return (Image) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

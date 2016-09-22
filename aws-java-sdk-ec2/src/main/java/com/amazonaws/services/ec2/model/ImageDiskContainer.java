@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -34,15 +32,14 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
-     * <code>OVA</code>
+     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * </p>
      */
     private String format;
     /**
      * <p>
-     * The URL to the Amazon S3-based disk image being imported. The URL can
-     * either be a https URL (https://..) or an Amazon S3 URL (s3://..)
+     * The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..) or an
+     * Amazon S3 URL (s3://..)
      * </p>
      */
     private String url;
@@ -97,8 +94,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * 
      * @param description
      *        The description of the disk image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageDiskContainer withDescription(String description) {
@@ -111,15 +107,13 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
-     * <code>OVA</code>
+     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * </p>
      * 
      * @param format
      *        The format of the disk image being imported.</p>
      *        <p>
-     *        Valid values: <code>RAW</code> | <code>VHD</code> |
-     *        <code>VMDK</code> | <code>OVA</code>
+     *        Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      */
 
     public void setFormat(String format) {
@@ -131,14 +125,12 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
-     * <code>OVA</code>
+     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * </p>
      * 
      * @return The format of the disk image being imported.</p>
      *         <p>
-     *         Valid values: <code>RAW</code> | <code>VHD</code> |
-     *         <code>VMDK</code> | <code>OVA</code>
+     *         Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      */
 
     public String getFormat() {
@@ -150,17 +142,14 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
-     * <code>OVA</code>
+     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * </p>
      * 
      * @param format
      *        The format of the disk image being imported.</p>
      *        <p>
-     *        Valid values: <code>RAW</code> | <code>VHD</code> |
-     *        <code>VMDK</code> | <code>OVA</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageDiskContainer withFormat(String format) {
@@ -170,14 +159,13 @@ public class ImageDiskContainer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URL to the Amazon S3-based disk image being imported. The URL can
-     * either be a https URL (https://..) or an Amazon S3 URL (s3://..)
+     * The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..) or an
+     * Amazon S3 URL (s3://..)
      * </p>
      * 
      * @param url
-     *        The URL to the Amazon S3-based disk image being imported. The URL
-     *        can either be a https URL (https://..) or an Amazon S3 URL
-     *        (s3://..)
+     *        The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..)
+     *        or an Amazon S3 URL (s3://..)
      */
 
     public void setUrl(String url) {
@@ -186,13 +174,12 @@ public class ImageDiskContainer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URL to the Amazon S3-based disk image being imported. The URL can
-     * either be a https URL (https://..) or an Amazon S3 URL (s3://..)
+     * The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..) or an
+     * Amazon S3 URL (s3://..)
      * </p>
      * 
-     * @return The URL to the Amazon S3-based disk image being imported. The URL
-     *         can either be a https URL (https://..) or an Amazon S3 URL
-     *         (s3://..)
+     * @return The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..)
+     *         or an Amazon S3 URL (s3://..)
      */
 
     public String getUrl() {
@@ -201,16 +188,14 @@ public class ImageDiskContainer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URL to the Amazon S3-based disk image being imported. The URL can
-     * either be a https URL (https://..) or an Amazon S3 URL (s3://..)
+     * The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..) or an
+     * Amazon S3 URL (s3://..)
      * </p>
      * 
      * @param url
-     *        The URL to the Amazon S3-based disk image being imported. The URL
-     *        can either be a https URL (https://..) or an Amazon S3 URL
-     *        (s3://..)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..)
+     *        or an Amazon S3 URL (s3://..)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageDiskContainer withUrl(String url) {
@@ -250,8 +235,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * 
      * @param userBucket
      *        The S3 bucket for the disk image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageDiskContainer withUserBucket(UserBucket userBucket) {
@@ -291,8 +275,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * 
      * @param deviceName
      *        The block device mapping for the disk.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageDiskContainer withDeviceName(String deviceName) {
@@ -332,8 +315,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * 
      * @param snapshotId
      *        The ID of the EBS snapshot to be used for importing the snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageDiskContainer withSnapshotId(String snapshotId) {
@@ -342,8 +324,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -381,33 +362,27 @@ public class ImageDiskContainer implements Serializable, Cloneable {
         ImageDiskContainer other = (ImageDiskContainer) obj;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getFormat() == null ^ this.getFormat() == null)
             return false;
-        if (other.getFormat() != null
-                && other.getFormat().equals(this.getFormat()) == false)
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
             return false;
         if (other.getUrl() == null ^ this.getUrl() == null)
             return false;
-        if (other.getUrl() != null
-                && other.getUrl().equals(this.getUrl()) == false)
+        if (other.getUrl() != null && other.getUrl().equals(this.getUrl()) == false)
             return false;
         if (other.getUserBucket() == null ^ this.getUserBucket() == null)
             return false;
-        if (other.getUserBucket() != null
-                && other.getUserBucket().equals(this.getUserBucket()) == false)
+        if (other.getUserBucket() != null && other.getUserBucket().equals(this.getUserBucket()) == false)
             return false;
         if (other.getDeviceName() == null ^ this.getDeviceName() == null)
             return false;
-        if (other.getDeviceName() != null
-                && other.getDeviceName().equals(this.getDeviceName()) == false)
+        if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
             return false;
         if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
             return false;
-        if (other.getSnapshotId() != null
-                && other.getSnapshotId().equals(this.getSnapshotId()) == false)
+        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
             return false;
         return true;
     }
@@ -417,19 +392,12 @@ public class ImageDiskContainer implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getFormat() == null) ? 0 : getFormat().hashCode());
-        hashCode = prime * hashCode
-                + ((getUrl() == null) ? 0 : getUrl().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserBucket() == null) ? 0 : getUserBucket().hashCode());
-        hashCode = prime * hashCode
-                + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
-        hashCode = prime * hashCode
-                + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
+        hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
+        hashCode = prime * hashCode + ((getUserBucket() == null) ? 0 : getUserBucket().hashCode());
+        hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         return hashCode;
     }
 
@@ -438,9 +406,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
         try {
             return (ImageDiskContainer) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

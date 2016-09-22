@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>DeleteCacheSecurityGroup</i> action.
  * </p>
  */
-public class DeleteCacheSecurityGroupRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteCacheSecurityGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -39,17 +35,15 @@ public class DeleteCacheSecurityGroupRequest extends
     private String cacheSecurityGroupName;
 
     /**
-     * Default constructor for DeleteCacheSecurityGroupRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * the object after creating it.
+     * Default constructor for DeleteCacheSecurityGroupRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public DeleteCacheSecurityGroupRequest() {
     }
 
     /**
-     * Constructs a new DeleteCacheSecurityGroupRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new DeleteCacheSecurityGroupRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param cacheSecurityGroupName
      *        The name of the cache security group to delete.</p> <note>
@@ -117,19 +111,16 @@ public class DeleteCacheSecurityGroupRequest extends
      *        <p>
      *        You cannot delete the default security group.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteCacheSecurityGroupRequest withCacheSecurityGroupName(
-            String cacheSecurityGroupName) {
+    public DeleteCacheSecurityGroupRequest withCacheSecurityGroupName(String cacheSecurityGroupName) {
         setCacheSecurityGroupName(cacheSecurityGroupName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -155,12 +146,9 @@ public class DeleteCacheSecurityGroupRequest extends
         if (obj instanceof DeleteCacheSecurityGroupRequest == false)
             return false;
         DeleteCacheSecurityGroupRequest other = (DeleteCacheSecurityGroupRequest) obj;
-        if (other.getCacheSecurityGroupName() == null
-                ^ this.getCacheSecurityGroupName() == null)
+        if (other.getCacheSecurityGroupName() == null ^ this.getCacheSecurityGroupName() == null)
             return false;
-        if (other.getCacheSecurityGroupName() != null
-                && other.getCacheSecurityGroupName().equals(
-                        this.getCacheSecurityGroupName()) == false)
+        if (other.getCacheSecurityGroupName() != null && other.getCacheSecurityGroupName().equals(this.getCacheSecurityGroupName()) == false)
             return false;
         return true;
     }
@@ -170,10 +158,7 @@ public class DeleteCacheSecurityGroupRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCacheSecurityGroupName() == null) ? 0
-                        : getCacheSecurityGroupName().hashCode());
+        hashCode = prime * hashCode + ((getCacheSecurityGroupName() == null) ? 0 : getCacheSecurityGroupName().hashCode());
         return hashCode;
     }
 

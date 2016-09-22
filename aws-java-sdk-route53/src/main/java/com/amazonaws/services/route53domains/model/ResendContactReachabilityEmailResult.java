@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model;
 
@@ -19,9 +17,8 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ResendContactReachabilityEmailResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ResendContactReachabilityEmailResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -31,16 +28,14 @@ public class ResendContactReachabilityEmailResult extends
     private String domainName;
     /**
      * <p>
-     * The email address for the registrant contact at the time that we sent the
-     * verification email.
+     * The email address for the registrant contact at the time that we sent the verification email.
      * </p>
      */
     private String emailAddress;
     /**
      * <p>
-     * True if the email address for the registrant contact has already been
-     * verified, and false otherwise. If the email address has already been
-     * verified, we don't send another confirmation email.
+     * True if the email address for the registrant contact has already been verified, and false otherwise. If the email
+     * address has already been verified, we don't send another confirmation email.
      * </p>
      */
     private Boolean isAlreadyVerified;
@@ -77,8 +72,7 @@ public class ResendContactReachabilityEmailResult extends
      * 
      * @param domainName
      *        The domain name for which you requested a confirmation email.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResendContactReachabilityEmailResult withDomainName(String domainName) {
@@ -88,13 +82,11 @@ public class ResendContactReachabilityEmailResult extends
 
     /**
      * <p>
-     * The email address for the registrant contact at the time that we sent the
-     * verification email.
+     * The email address for the registrant contact at the time that we sent the verification email.
      * </p>
      * 
      * @param emailAddress
-     *        The email address for the registrant contact at the time that we
-     *        sent the verification email.
+     *        The email address for the registrant contact at the time that we sent the verification email.
      */
 
     public void setEmailAddress(String emailAddress) {
@@ -103,12 +95,10 @@ public class ResendContactReachabilityEmailResult extends
 
     /**
      * <p>
-     * The email address for the registrant contact at the time that we sent the
-     * verification email.
+     * The email address for the registrant contact at the time that we sent the verification email.
      * </p>
      * 
-     * @return The email address for the registrant contact at the time that we
-     *         sent the verification email.
+     * @return The email address for the registrant contact at the time that we sent the verification email.
      */
 
     public String getEmailAddress() {
@@ -117,34 +107,28 @@ public class ResendContactReachabilityEmailResult extends
 
     /**
      * <p>
-     * The email address for the registrant contact at the time that we sent the
-     * verification email.
+     * The email address for the registrant contact at the time that we sent the verification email.
      * </p>
      * 
      * @param emailAddress
-     *        The email address for the registrant contact at the time that we
-     *        sent the verification email.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The email address for the registrant contact at the time that we sent the verification email.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResendContactReachabilityEmailResult withEmailAddress(
-            String emailAddress) {
+    public ResendContactReachabilityEmailResult withEmailAddress(String emailAddress) {
         setEmailAddress(emailAddress);
         return this;
     }
 
     /**
      * <p>
-     * True if the email address for the registrant contact has already been
-     * verified, and false otherwise. If the email address has already been
-     * verified, we don't send another confirmation email.
+     * True if the email address for the registrant contact has already been verified, and false otherwise. If the email
+     * address has already been verified, we don't send another confirmation email.
      * </p>
      * 
      * @param isAlreadyVerified
-     *        True if the email address for the registrant contact has already
-     *        been verified, and false otherwise. If the email address has
-     *        already been verified, we don't send another confirmation email.
+     *        True if the email address for the registrant contact has already been verified, and false otherwise. If
+     *        the email address has already been verified, we don't send another confirmation email.
      */
 
     public void setIsAlreadyVerified(Boolean isAlreadyVerified) {
@@ -153,14 +137,12 @@ public class ResendContactReachabilityEmailResult extends
 
     /**
      * <p>
-     * True if the email address for the registrant contact has already been
-     * verified, and false otherwise. If the email address has already been
-     * verified, we don't send another confirmation email.
+     * True if the email address for the registrant contact has already been verified, and false otherwise. If the email
+     * address has already been verified, we don't send another confirmation email.
      * </p>
      * 
-     * @return True if the email address for the registrant contact has already
-     *         been verified, and false otherwise. If the email address has
-     *         already been verified, we don't send another confirmation email.
+     * @return True if the email address for the registrant contact has already been verified, and false otherwise. If
+     *         the email address has already been verified, we don't send another confirmation email.
      */
 
     public Boolean getIsAlreadyVerified() {
@@ -169,35 +151,29 @@ public class ResendContactReachabilityEmailResult extends
 
     /**
      * <p>
-     * True if the email address for the registrant contact has already been
-     * verified, and false otherwise. If the email address has already been
-     * verified, we don't send another confirmation email.
+     * True if the email address for the registrant contact has already been verified, and false otherwise. If the email
+     * address has already been verified, we don't send another confirmation email.
      * </p>
      * 
      * @param isAlreadyVerified
-     *        True if the email address for the registrant contact has already
-     *        been verified, and false otherwise. If the email address has
-     *        already been verified, we don't send another confirmation email.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        True if the email address for the registrant contact has already been verified, and false otherwise. If
+     *        the email address has already been verified, we don't send another confirmation email.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResendContactReachabilityEmailResult withIsAlreadyVerified(
-            Boolean isAlreadyVerified) {
+    public ResendContactReachabilityEmailResult withIsAlreadyVerified(Boolean isAlreadyVerified) {
         setIsAlreadyVerified(isAlreadyVerified);
         return this;
     }
 
     /**
      * <p>
-     * True if the email address for the registrant contact has already been
-     * verified, and false otherwise. If the email address has already been
-     * verified, we don't send another confirmation email.
+     * True if the email address for the registrant contact has already been verified, and false otherwise. If the email
+     * address has already been verified, we don't send another confirmation email.
      * </p>
      * 
-     * @return True if the email address for the registrant contact has already
-     *         been verified, and false otherwise. If the email address has
-     *         already been verified, we don't send another confirmation email.
+     * @return True if the email address for the registrant contact has already been verified, and false otherwise. If
+     *         the email address has already been verified, we don't send another confirmation email.
      */
 
     public Boolean isAlreadyVerified() {
@@ -205,8 +181,7 @@ public class ResendContactReachabilityEmailResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -238,20 +213,15 @@ public class ResendContactReachabilityEmailResult extends
         ResendContactReachabilityEmailResult other = (ResendContactReachabilityEmailResult) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
         if (other.getEmailAddress() == null ^ this.getEmailAddress() == null)
             return false;
-        if (other.getEmailAddress() != null
-                && other.getEmailAddress().equals(this.getEmailAddress()) == false)
+        if (other.getEmailAddress() != null && other.getEmailAddress().equals(this.getEmailAddress()) == false)
             return false;
-        if (other.getIsAlreadyVerified() == null
-                ^ this.getIsAlreadyVerified() == null)
+        if (other.getIsAlreadyVerified() == null ^ this.getIsAlreadyVerified() == null)
             return false;
-        if (other.getIsAlreadyVerified() != null
-                && other.getIsAlreadyVerified().equals(
-                        this.getIsAlreadyVerified()) == false)
+        if (other.getIsAlreadyVerified() != null && other.getIsAlreadyVerified().equals(this.getIsAlreadyVerified()) == false)
             return false;
         return true;
     }
@@ -261,16 +231,9 @@ public class ResendContactReachabilityEmailResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEmailAddress() == null) ? 0 : getEmailAddress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsAlreadyVerified() == null) ? 0
-                        : getIsAlreadyVerified().hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getEmailAddress() == null) ? 0 : getEmailAddress().hashCode());
+        hashCode = prime * hashCode + ((getIsAlreadyVerified() == null) ? 0 : getIsAlreadyVerified().hashCode());
         return hashCode;
     }
 
@@ -279,9 +242,7 @@ public class ResendContactReachabilityEmailResult extends
         try {
             return (ResendContactReachabilityEmailResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

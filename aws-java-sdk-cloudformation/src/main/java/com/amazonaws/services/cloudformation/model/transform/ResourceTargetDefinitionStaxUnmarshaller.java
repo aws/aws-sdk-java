@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ResourceTargetDefinition StAX Unmarshaller
  */
-public class ResourceTargetDefinitionStaxUnmarshaller implements
-        Unmarshaller<ResourceTargetDefinition, StaxUnmarshallerContext> {
+public class ResourceTargetDefinitionStaxUnmarshaller implements Unmarshaller<ResourceTargetDefinition, StaxUnmarshallerContext> {
 
-    public ResourceTargetDefinition unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public ResourceTargetDefinition unmarshall(StaxUnmarshallerContext context) throws Exception {
         ResourceTargetDefinition resourceTargetDefinition = new ResourceTargetDefinition();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,22 +46,17 @@ public class ResourceTargetDefinitionStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Attribute", targetDepth)) {
-                    resourceTargetDefinition
-                            .setAttribute(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    resourceTargetDefinition.setAttribute(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Name", targetDepth)) {
-                    resourceTargetDefinition.setName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resourceTargetDefinition.setName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("RequiresRecreation", targetDepth)) {
-                    resourceTargetDefinition
-                            .setRequiresRecreation(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    resourceTargetDefinition.setRequiresRecreation(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

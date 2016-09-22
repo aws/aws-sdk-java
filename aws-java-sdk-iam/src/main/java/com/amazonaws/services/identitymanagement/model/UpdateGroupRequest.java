@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -20,72 +18,60 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of the IAM group to update. If you're changing the name of the
-     * group, this is the original name.
+     * Name of the IAM group to update. If you're changing the name of the group, this is the original name.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      */
     private String groupName;
     /**
      * <p>
-     * New path for the IAM group. Only include this if changing the group's
-     * path.
+     * New path for the IAM group. Only include this if changing the group's path.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      */
     private String newPath;
     /**
      * <p>
-     * New name for the IAM group. Only include this if changing the group's
-     * name.
+     * New name for the IAM group. Only include this if changing the group's name.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      */
     private String newGroupName;
 
     /**
-     * Default constructor for UpdateGroupRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for UpdateGroupRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public UpdateGroupRequest() {
     }
 
     /**
-     * Constructs a new UpdateGroupRequest object. Callers should use the setter
-     * or fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new UpdateGroupRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param groupName
-     *        Name of the IAM group to update. If you're changing the name of
-     *        the group, this is the original name.</p>
+     *        Name of the IAM group to update. If you're changing the name of the group, this is the original name.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
      */
     public UpdateGroupRequest(String groupName) {
         setGroupName(groupName);
@@ -93,24 +79,20 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Name of the IAM group to update. If you're changing the name of the
-     * group, this is the original name.
+     * Name of the IAM group to update. If you're changing the name of the group, this is the original name.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param groupName
-     *        Name of the IAM group to update. If you're changing the name of
-     *        the group, this is the original name.</p>
+     *        Name of the IAM group to update. If you're changing the name of the group, this is the original name.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
      */
 
     public void setGroupName(String groupName) {
@@ -119,23 +101,19 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Name of the IAM group to update. If you're changing the name of the
-     * group, this is the original name.
+     * Name of the IAM group to update. If you're changing the name of the group, this is the original name.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
-     * @return Name of the IAM group to update. If you're changing the name of
-     *         the group, this is the original name.</p>
+     * @return Name of the IAM group to update. If you're changing the name of the group, this is the original name.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of upper
-     *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *         any of the following characters: =,.@-
      */
 
     public String getGroupName() {
@@ -144,26 +122,21 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Name of the IAM group to update. If you're changing the name of the
-     * group, this is the original name.
+     * Name of the IAM group to update. If you're changing the name of the group, this is the original name.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param groupName
-     *        Name of the IAM group to update. If you're changing the name of
-     *        the group, this is the original name.</p>
+     *        Name of the IAM group to update. If you're changing the name of the group, this is the original name.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateGroupRequest withGroupName(String groupName) {
@@ -173,28 +146,22 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * New path for the IAM group. Only include this if changing the group's
-     * path.
+     * New path for the IAM group. Only include this if changing the group's path.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param newPath
-     *        New path for the IAM group. Only include this if changing the
-     *        group's path.</p>
+     *        New path for the IAM group. Only include this if changing the group's path.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of either
-     *        a forward slash (/) by itself or a string that must begin and end
-     *        with forward slashes, containing any ASCII character from the !
-     *        (\u0021) thru the DEL character (\u007F), including most
-     *        punctuation characters, digits, and upper and lowercased letters.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
+     *        including most punctuation characters, digits, and upper and lowercased letters.
      */
 
     public void setNewPath(String newPath) {
@@ -203,27 +170,21 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * New path for the IAM group. Only include this if changing the group's
-     * path.
+     * New path for the IAM group. Only include this if changing the group's path.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      * 
-     * @return New path for the IAM group. Only include this if changing the
-     *         group's path.</p>
+     * @return New path for the IAM group. Only include this if changing the group's path.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of either
-     *         a forward slash (/) by itself or a string that must begin and end
-     *         with forward slashes, containing any ASCII character from the !
-     *         (\u0021) thru the DEL character (\u007F), including most
-     *         punctuation characters, digits, and upper and lowercased letters.
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *         forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
+     *         including most punctuation characters, digits, and upper and lowercased letters.
      */
 
     public String getNewPath() {
@@ -232,30 +193,23 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * New path for the IAM group. Only include this if changing the group's
-     * path.
+     * New path for the IAM group. Only include this if changing the group's path.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param newPath
-     *        New path for the IAM group. Only include this if changing the
-     *        group's path.</p>
+     *        New path for the IAM group. Only include this if changing the group's path.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of either
-     *        a forward slash (/) by itself or a string that must begin and end
-     *        with forward slashes, containing any ASCII character from the !
-     *        (\u0021) thru the DEL character (\u007F), including most
-     *        punctuation characters, digits, and upper and lowercased letters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
+     *        including most punctuation characters, digits, and upper and lowercased letters.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateGroupRequest withNewPath(String newPath) {
@@ -265,24 +219,20 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * New name for the IAM group. Only include this if changing the group's
-     * name.
+     * New name for the IAM group. Only include this if changing the group's name.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param newGroupName
-     *        New name for the IAM group. Only include this if changing the
-     *        group's name.</p>
+     *        New name for the IAM group. Only include this if changing the group's name.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
      */
 
     public void setNewGroupName(String newGroupName) {
@@ -291,23 +241,19 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * New name for the IAM group. Only include this if changing the group's
-     * name.
+     * New name for the IAM group. Only include this if changing the group's name.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
-     * @return New name for the IAM group. Only include this if changing the
-     *         group's name.</p>
+     * @return New name for the IAM group. Only include this if changing the group's name.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of upper
-     *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *         any of the following characters: =,.@-
      */
 
     public String getNewGroupName() {
@@ -316,26 +262,21 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * New name for the IAM group. Only include this if changing the group's
-     * name.
+     * New name for the IAM group. Only include this if changing the group's name.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param newGroupName
-     *        New name for the IAM group. Only include this if changing the
-     *        group's name.</p>
+     *        New name for the IAM group. Only include this if changing the group's name.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateGroupRequest withNewGroupName(String newGroupName) {
@@ -344,8 +285,7 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -377,18 +317,15 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest
         UpdateGroupRequest other = (UpdateGroupRequest) obj;
         if (other.getGroupName() == null ^ this.getGroupName() == null)
             return false;
-        if (other.getGroupName() != null
-                && other.getGroupName().equals(this.getGroupName()) == false)
+        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
         if (other.getNewPath() == null ^ this.getNewPath() == null)
             return false;
-        if (other.getNewPath() != null
-                && other.getNewPath().equals(this.getNewPath()) == false)
+        if (other.getNewPath() != null && other.getNewPath().equals(this.getNewPath()) == false)
             return false;
         if (other.getNewGroupName() == null ^ this.getNewGroupName() == null)
             return false;
-        if (other.getNewGroupName() != null
-                && other.getNewGroupName().equals(this.getNewGroupName()) == false)
+        if (other.getNewGroupName() != null && other.getNewGroupName().equals(this.getNewGroupName()) == false)
             return false;
         return true;
     }
@@ -398,14 +335,9 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getNewPath() == null) ? 0 : getNewPath().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNewGroupName() == null) ? 0 : getNewGroupName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getNewPath() == null) ? 0 : getNewPath().hashCode());
+        hashCode = prime * hashCode + ((getNewGroupName() == null) ? 0 : getNewGroupName().hashCode());
         return hashCode;
     }
 

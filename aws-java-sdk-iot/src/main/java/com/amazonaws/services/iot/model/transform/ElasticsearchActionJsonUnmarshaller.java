@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ElasticsearchAction JSON Unmarshaller
  */
-public class ElasticsearchActionJsonUnmarshaller implements
-        Unmarshaller<ElasticsearchAction, JsonUnmarshallerContext> {
+public class ElasticsearchActionJsonUnmarshaller implements Unmarshaller<ElasticsearchAction, JsonUnmarshallerContext> {
 
-    public ElasticsearchAction unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ElasticsearchAction unmarshall(JsonUnmarshallerContext context) throws Exception {
         ElasticsearchAction elasticsearchAction = new ElasticsearchAction();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,33 +49,26 @@ public class ElasticsearchActionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    elasticsearchAction.setRoleArn(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    elasticsearchAction.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endpoint", targetDepth)) {
                     context.nextToken();
-                    elasticsearchAction.setEndpoint(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    elasticsearchAction.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("index", targetDepth)) {
                     context.nextToken();
-                    elasticsearchAction.setIndex(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    elasticsearchAction.setIndex(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    elasticsearchAction.setType(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    elasticsearchAction.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    elasticsearchAction.setId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    elasticsearchAction.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

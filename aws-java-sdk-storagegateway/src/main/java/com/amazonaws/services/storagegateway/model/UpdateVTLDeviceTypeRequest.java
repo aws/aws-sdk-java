@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateVTLDeviceTypeRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateVTLDeviceTypeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -46,8 +42,7 @@ public class UpdateVTLDeviceTypeRequest extends
      * </p>
      * 
      * @param vTLDeviceARN
-     *        The Amazon Resource Name (ARN) of the medium changer you want to
-     *        select.
+     *        The Amazon Resource Name (ARN) of the medium changer you want to select.
      */
 
     public void setVTLDeviceARN(String vTLDeviceARN) {
@@ -59,8 +54,7 @@ public class UpdateVTLDeviceTypeRequest extends
      * The Amazon Resource Name (ARN) of the medium changer you want to select.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the medium changer you want to
-     *         select.
+     * @return The Amazon Resource Name (ARN) of the medium changer you want to select.
      */
 
     public String getVTLDeviceARN() {
@@ -73,10 +67,8 @@ public class UpdateVTLDeviceTypeRequest extends
      * </p>
      * 
      * @param vTLDeviceARN
-     *        The Amazon Resource Name (ARN) of the medium changer you want to
-     *        select.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the medium changer you want to select.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateVTLDeviceTypeRequest withVTLDeviceARN(String vTLDeviceARN) {
@@ -131,8 +123,7 @@ public class UpdateVTLDeviceTypeRequest extends
      *        The type of medium changer you want to select.</p>
      *        <p>
      *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateVTLDeviceTypeRequest withDeviceType(String deviceType) {
@@ -141,8 +132,7 @@ public class UpdateVTLDeviceTypeRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -172,13 +162,11 @@ public class UpdateVTLDeviceTypeRequest extends
         UpdateVTLDeviceTypeRequest other = (UpdateVTLDeviceTypeRequest) obj;
         if (other.getVTLDeviceARN() == null ^ this.getVTLDeviceARN() == null)
             return false;
-        if (other.getVTLDeviceARN() != null
-                && other.getVTLDeviceARN().equals(this.getVTLDeviceARN()) == false)
+        if (other.getVTLDeviceARN() != null && other.getVTLDeviceARN().equals(this.getVTLDeviceARN()) == false)
             return false;
         if (other.getDeviceType() == null ^ this.getDeviceType() == null)
             return false;
-        if (other.getDeviceType() != null
-                && other.getDeviceType().equals(this.getDeviceType()) == false)
+        if (other.getDeviceType() != null && other.getDeviceType().equals(this.getDeviceType()) == false)
             return false;
         return true;
     }
@@ -188,12 +176,8 @@ public class UpdateVTLDeviceTypeRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getVTLDeviceARN() == null) ? 0 : getVTLDeviceARN()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getDeviceType() == null) ? 0 : getDeviceType().hashCode());
+        hashCode = prime * hashCode + ((getVTLDeviceARN() == null) ? 0 : getVTLDeviceARN().hashCode());
+        hashCode = prime * hashCode + ((getDeviceType() == null) ? 0 : getDeviceType().hashCode());
         return hashCode;
     }
 

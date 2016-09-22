@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
@@ -34,12 +32,10 @@ public class ActionTypeJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ActionType actionType,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(ActionType actionType, StructuredJsonGenerator jsonGenerator) {
 
         if (actionType == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -47,46 +43,37 @@ public class ActionTypeJsonMarshaller {
 
             if (actionType.getId() != null) {
                 jsonGenerator.writeFieldName("id");
-                ActionTypeIdJsonMarshaller.getInstance().marshall(
-                        actionType.getId(), jsonGenerator);
+                ActionTypeIdJsonMarshaller.getInstance().marshall(actionType.getId(), jsonGenerator);
             }
             if (actionType.getSettings() != null) {
                 jsonGenerator.writeFieldName("settings");
-                ActionTypeSettingsJsonMarshaller.getInstance().marshall(
-                        actionType.getSettings(), jsonGenerator);
+                ActionTypeSettingsJsonMarshaller.getInstance().marshall(actionType.getSettings(), jsonGenerator);
             }
 
-            java.util.List<ActionConfigurationProperty> actionConfigurationPropertiesList = actionType
-                    .getActionConfigurationProperties();
+            java.util.List<ActionConfigurationProperty> actionConfigurationPropertiesList = actionType.getActionConfigurationProperties();
             if (actionConfigurationPropertiesList != null) {
                 jsonGenerator.writeFieldName("actionConfigurationProperties");
                 jsonGenerator.writeStartArray();
                 for (ActionConfigurationProperty actionConfigurationPropertiesListValue : actionConfigurationPropertiesList) {
                     if (actionConfigurationPropertiesListValue != null) {
 
-                        ActionConfigurationPropertyJsonMarshaller.getInstance()
-                                .marshall(
-                                        actionConfigurationPropertiesListValue,
-                                        jsonGenerator);
+                        ActionConfigurationPropertyJsonMarshaller.getInstance().marshall(actionConfigurationPropertiesListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (actionType.getInputArtifactDetails() != null) {
                 jsonGenerator.writeFieldName("inputArtifactDetails");
-                ArtifactDetailsJsonMarshaller.getInstance().marshall(
-                        actionType.getInputArtifactDetails(), jsonGenerator);
+                ArtifactDetailsJsonMarshaller.getInstance().marshall(actionType.getInputArtifactDetails(), jsonGenerator);
             }
             if (actionType.getOutputArtifactDetails() != null) {
                 jsonGenerator.writeFieldName("outputArtifactDetails");
-                ArtifactDetailsJsonMarshaller.getInstance().marshall(
-                        actionType.getOutputArtifactDetails(), jsonGenerator);
+                ArtifactDetailsJsonMarshaller.getInstance().marshall(actionType.getOutputArtifactDetails(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

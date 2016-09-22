@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ConfigurationRecorderStatus JSON Unmarshaller
  */
-public class ConfigurationRecorderStatusJsonUnmarshaller implements
-        Unmarshaller<ConfigurationRecorderStatus, JsonUnmarshallerContext> {
+public class ConfigurationRecorderStatusJsonUnmarshaller implements Unmarshaller<ConfigurationRecorderStatus, JsonUnmarshallerContext> {
 
-    public ConfigurationRecorderStatus unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public ConfigurationRecorderStatus unmarshall(JsonUnmarshallerContext context) throws Exception {
         ConfigurationRecorderStatus configurationRecorderStatus = new ConfigurationRecorderStatus();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,53 +49,38 @@ public class ConfigurationRecorderStatusJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setName(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    configurationRecorderStatus.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStartTime", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setLastStartTime(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    configurationRecorderStatus.setLastStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStopTime", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setLastStopTime(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    configurationRecorderStatus.setLastStopTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("recording", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus
-                            .setRecording(context
-                                    .getUnmarshaller(Boolean.class).unmarshall(
-                                            context));
+                    configurationRecorderStatus.setRecording(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStatus", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setLastStatus(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    configurationRecorderStatus.setLastStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorCode", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setLastErrorCode(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    configurationRecorderStatus.setLastErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorMessage", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setLastErrorMessage(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    configurationRecorderStatus.setLastErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStatusChangeTime", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setLastStatusChangeTime(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    configurationRecorderStatus.setLastStatusChangeTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

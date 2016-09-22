@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -21,16 +19,14 @@ import java.io.Serializable;
  * Contains the user name and password create date for a user.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>CreateLoginProfile</a>
- * and <a>GetLoginProfile</a> actions.
+ * This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> actions.
  * </p>
  */
 public class LoginProfile implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the user, which can be used for signing in to the AWS
-     * Management Console.
+     * The name of the user, which can be used for signing in to the AWS Management Console.
      * </p>
      */
     private String userName;
@@ -42,28 +38,24 @@ public class LoginProfile implements Serializable, Cloneable {
     private java.util.Date createDate;
     /**
      * <p>
-     * Specifies whether the user is required to set a new password on next
-     * sign-in.
+     * Specifies whether the user is required to set a new password on next sign-in.
      * </p>
      */
     private Boolean passwordResetRequired;
 
     /**
-     * Default constructor for LoginProfile object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for LoginProfile object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize the object after creating it.
      */
     public LoginProfile() {
     }
 
     /**
-     * Constructs a new LoginProfile object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new LoginProfile object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param userName
-     *        The name of the user, which can be used for signing in to the AWS
-     *        Management Console.
+     *        The name of the user, which can be used for signing in to the AWS Management Console.
      * @param createDate
      *        The date when the password for the user was created.
      */
@@ -74,13 +66,11 @@ public class LoginProfile implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the user, which can be used for signing in to the AWS
-     * Management Console.
+     * The name of the user, which can be used for signing in to the AWS Management Console.
      * </p>
      * 
      * @param userName
-     *        The name of the user, which can be used for signing in to the AWS
-     *        Management Console.
+     *        The name of the user, which can be used for signing in to the AWS Management Console.
      */
 
     public void setUserName(String userName) {
@@ -89,12 +79,10 @@ public class LoginProfile implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the user, which can be used for signing in to the AWS
-     * Management Console.
+     * The name of the user, which can be used for signing in to the AWS Management Console.
      * </p>
      * 
-     * @return The name of the user, which can be used for signing in to the AWS
-     *         Management Console.
+     * @return The name of the user, which can be used for signing in to the AWS Management Console.
      */
 
     public String getUserName() {
@@ -103,15 +91,12 @@ public class LoginProfile implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the user, which can be used for signing in to the AWS
-     * Management Console.
+     * The name of the user, which can be used for signing in to the AWS Management Console.
      * </p>
      * 
      * @param userName
-     *        The name of the user, which can be used for signing in to the AWS
-     *        Management Console.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the user, which can be used for signing in to the AWS Management Console.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoginProfile withUserName(String userName) {
@@ -151,8 +136,7 @@ public class LoginProfile implements Serializable, Cloneable {
      * 
      * @param createDate
      *        The date when the password for the user was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoginProfile withCreateDate(java.util.Date createDate) {
@@ -162,13 +146,11 @@ public class LoginProfile implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the user is required to set a new password on next
-     * sign-in.
+     * Specifies whether the user is required to set a new password on next sign-in.
      * </p>
      * 
      * @param passwordResetRequired
-     *        Specifies whether the user is required to set a new password on
-     *        next sign-in.
+     *        Specifies whether the user is required to set a new password on next sign-in.
      */
 
     public void setPasswordResetRequired(Boolean passwordResetRequired) {
@@ -177,12 +159,10 @@ public class LoginProfile implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the user is required to set a new password on next
-     * sign-in.
+     * Specifies whether the user is required to set a new password on next sign-in.
      * </p>
      * 
-     * @return Specifies whether the user is required to set a new password on
-     *         next sign-in.
+     * @return Specifies whether the user is required to set a new password on next sign-in.
      */
 
     public Boolean getPasswordResetRequired() {
@@ -191,15 +171,12 @@ public class LoginProfile implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the user is required to set a new password on next
-     * sign-in.
+     * Specifies whether the user is required to set a new password on next sign-in.
      * </p>
      * 
      * @param passwordResetRequired
-     *        Specifies whether the user is required to set a new password on
-     *        next sign-in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether the user is required to set a new password on next sign-in.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoginProfile withPasswordResetRequired(Boolean passwordResetRequired) {
@@ -209,12 +186,10 @@ public class LoginProfile implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the user is required to set a new password on next
-     * sign-in.
+     * Specifies whether the user is required to set a new password on next sign-in.
      * </p>
      * 
-     * @return Specifies whether the user is required to set a new password on
-     *         next sign-in.
+     * @return Specifies whether the user is required to set a new password on next sign-in.
      */
 
     public Boolean isPasswordResetRequired() {
@@ -222,8 +197,7 @@ public class LoginProfile implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -255,20 +229,15 @@ public class LoginProfile implements Serializable, Cloneable {
         LoginProfile other = (LoginProfile) obj;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
-        if (other.getUserName() != null
-                && other.getUserName().equals(this.getUserName()) == false)
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
         if (other.getCreateDate() == null ^ this.getCreateDate() == null)
             return false;
-        if (other.getCreateDate() != null
-                && other.getCreateDate().equals(this.getCreateDate()) == false)
+        if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false)
             return false;
-        if (other.getPasswordResetRequired() == null
-                ^ this.getPasswordResetRequired() == null)
+        if (other.getPasswordResetRequired() == null ^ this.getPasswordResetRequired() == null)
             return false;
-        if (other.getPasswordResetRequired() != null
-                && other.getPasswordResetRequired().equals(
-                        this.getPasswordResetRequired()) == false)
+        if (other.getPasswordResetRequired() != null && other.getPasswordResetRequired().equals(this.getPasswordResetRequired()) == false)
             return false;
         return true;
     }
@@ -278,14 +247,9 @@ public class LoginProfile implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPasswordResetRequired() == null) ? 0
-                        : getPasswordResetRequired().hashCode());
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
+        hashCode = prime * hashCode + ((getPasswordResetRequired() == null) ? 0 : getPasswordResetRequired().hashCode());
         return hashCode;
     }
 
@@ -294,9 +258,7 @@ public class LoginProfile implements Serializable, Cloneable {
         try {
             return (LoginProfile) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

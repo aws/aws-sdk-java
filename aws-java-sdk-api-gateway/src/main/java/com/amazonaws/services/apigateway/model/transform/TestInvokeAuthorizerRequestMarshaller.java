@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,62 +41,46 @@ import com.amazonaws.protocol.json.*;
 /**
  * TestInvokeAuthorizerRequest Marshaller
  */
-public class TestInvokeAuthorizerRequestMarshaller
-        implements
-        Marshaller<Request<TestInvokeAuthorizerRequest>, TestInvokeAuthorizerRequest> {
+public class TestInvokeAuthorizerRequestMarshaller implements Marshaller<Request<TestInvokeAuthorizerRequest>, TestInvokeAuthorizerRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public TestInvokeAuthorizerRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public TestInvokeAuthorizerRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<TestInvokeAuthorizerRequest> marshall(
-            TestInvokeAuthorizerRequest testInvokeAuthorizerRequest) {
+    public Request<TestInvokeAuthorizerRequest> marshall(TestInvokeAuthorizerRequest testInvokeAuthorizerRequest) {
 
         if (testInvokeAuthorizerRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<TestInvokeAuthorizerRequest> request = new DefaultRequest<TestInvokeAuthorizerRequest>(
-                testInvokeAuthorizerRequest, "AmazonApiGateway");
+        Request<TestInvokeAuthorizerRequest> request = new DefaultRequest<TestInvokeAuthorizerRequest>(testInvokeAuthorizerRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/restapis/{restapi_id}/authorizers/{authorizer_id}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{restapi_id}",
-                        (testInvokeAuthorizerRequest.getRestApiId() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(testInvokeAuthorizerRequest
-                                                .getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{authorizer_id}",
-                        (testInvokeAuthorizerRequest.getAuthorizerId() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(testInvokeAuthorizerRequest
-                                                .getAuthorizerId()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{restapi_id}",
+                (testInvokeAuthorizerRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(testInvokeAuthorizerRequest.getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{authorizer_id}",
+                (testInvokeAuthorizerRequest.getAuthorizerId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(testInvokeAuthorizerRequest.getAuthorizerId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
             jsonGenerator.writeStartObject();
 
-            java.util.Map<String, String> headersMap = testInvokeAuthorizerRequest
-                    .getHeaders();
+            java.util.Map<String, String> headersMap = testInvokeAuthorizerRequest.getHeaders();
             if (headersMap != null) {
                 jsonGenerator.writeFieldName("headers");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> headersMapValue : headersMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> headersMapValue : headersMap.entrySet()) {
                     if (headersMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(headersMapValue.getKey());
 
@@ -108,47 +90,37 @@ public class TestInvokeAuthorizerRequestMarshaller
                 jsonGenerator.writeEndObject();
             }
             if (testInvokeAuthorizerRequest.getPathWithQueryString() != null) {
-                jsonGenerator.writeFieldName("pathWithQueryString").writeValue(
-                        testInvokeAuthorizerRequest.getPathWithQueryString());
+                jsonGenerator.writeFieldName("pathWithQueryString").writeValue(testInvokeAuthorizerRequest.getPathWithQueryString());
             }
             if (testInvokeAuthorizerRequest.getBody() != null) {
-                jsonGenerator.writeFieldName("body").writeValue(
-                        testInvokeAuthorizerRequest.getBody());
+                jsonGenerator.writeFieldName("body").writeValue(testInvokeAuthorizerRequest.getBody());
             }
 
-            java.util.Map<String, String> stageVariablesMap = testInvokeAuthorizerRequest
-                    .getStageVariables();
+            java.util.Map<String, String> stageVariablesMap = testInvokeAuthorizerRequest.getStageVariables();
             if (stageVariablesMap != null) {
                 jsonGenerator.writeFieldName("stageVariables");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> stageVariablesMapValue : stageVariablesMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> stageVariablesMapValue : stageVariablesMap.entrySet()) {
                     if (stageVariablesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(stageVariablesMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(stageVariablesMapValue.getKey());
 
-                        jsonGenerator.writeValue(stageVariablesMapValue
-                                .getValue());
+                        jsonGenerator.writeValue(stageVariablesMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
             }
 
-            java.util.Map<String, String> additionalContextMap = testInvokeAuthorizerRequest
-                    .getAdditionalContext();
+            java.util.Map<String, String> additionalContextMap = testInvokeAuthorizerRequest.getAdditionalContext();
             if (additionalContextMap != null) {
                 jsonGenerator.writeFieldName("additionalContext");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> additionalContextMapValue : additionalContextMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> additionalContextMapValue : additionalContextMap.entrySet()) {
                     if (additionalContextMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(additionalContextMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(additionalContextMapValue.getKey());
 
-                        jsonGenerator.writeValue(additionalContextMapValue
-                                .getValue());
+                        jsonGenerator.writeValue(additionalContextMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
@@ -158,15 +130,12 @@ public class TestInvokeAuthorizerRequestMarshaller
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type",
-                        protocolFactory.getContentType());
+                request.addHeader("Content-Type", protocolFactory.getContentType());
             }
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * VpnStaticRoute StAX Unmarshaller
  */
-public class VpnStaticRouteStaxUnmarshaller implements
-        Unmarshaller<VpnStaticRoute, StaxUnmarshallerContext> {
+public class VpnStaticRouteStaxUnmarshaller implements Unmarshaller<VpnStaticRoute, StaxUnmarshallerContext> {
 
-    public VpnStaticRoute unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public VpnStaticRoute unmarshall(StaxUnmarshallerContext context) throws Exception {
         VpnStaticRoute vpnStaticRoute = new VpnStaticRoute();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,21 +46,17 @@ public class VpnStaticRouteStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("destinationCidrBlock", targetDepth)) {
-                    vpnStaticRoute
-                            .setDestinationCidrBlock(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    vpnStaticRoute.setDestinationCidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("source", targetDepth)) {
-                    vpnStaticRoute.setSource(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    vpnStaticRoute.setSource(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("state", targetDepth)) {
-                    vpnStaticRoute.setState(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    vpnStaticRoute.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

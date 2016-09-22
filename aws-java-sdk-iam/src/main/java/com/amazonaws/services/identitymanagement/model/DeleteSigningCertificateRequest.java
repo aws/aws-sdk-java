@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -20,18 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteSigningCertificateRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteSigningCertificateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The name of the user the signing certificate belongs to.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      */
@@ -41,33 +36,28 @@ public class DeleteSigningCertificateRequest extends
      * The ID of the signing certificate to delete.
      * </p>
      * <p>
-     * The format of this parameter, as described by its <a
-     * href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
-     * characters that can be upper- or lower-cased letters or digits.
+     * The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is
+     * a string of characters that can be upper- or lower-cased letters or digits.
      * </p>
      */
     private String certificateId;
 
     /**
-     * Default constructor for DeleteSigningCertificateRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * the object after creating it.
+     * Default constructor for DeleteSigningCertificateRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public DeleteSigningCertificateRequest() {
     }
 
     /**
-     * Constructs a new DeleteSigningCertificateRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new DeleteSigningCertificateRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param certificateId
      *        The ID of the signing certificate to delete.</p>
      *        <p>
-     *        The format of this parameter, as described by its <a
-     *        href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a
-     *        string of characters that can be upper- or lower-cased letters or
-     *        digits.
+     *        The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a>
+     *        pattern, is a string of characters that can be upper- or lower-cased letters or digits.
      */
     public DeleteSigningCertificateRequest(String certificateId) {
         setCertificateId(certificateId);
@@ -78,19 +68,17 @@ public class DeleteSigningCertificateRequest extends
      * The name of the user the signing certificate belongs to.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name of the user the signing certificate belongs to.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
      */
 
     public void setUserName(String userName) {
@@ -102,18 +90,16 @@ public class DeleteSigningCertificateRequest extends
      * The name of the user the signing certificate belongs to.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @return The name of the user the signing certificate belongs to.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of upper
-     *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *         any of the following characters: =,.@-
      */
 
     public String getUserName() {
@@ -125,21 +111,18 @@ public class DeleteSigningCertificateRequest extends
      * The name of the user the signing certificate belongs to.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name of the user the signing certificate belongs to.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteSigningCertificateRequest withUserName(String userName) {
@@ -152,18 +135,15 @@ public class DeleteSigningCertificateRequest extends
      * The ID of the signing certificate to delete.
      * </p>
      * <p>
-     * The format of this parameter, as described by its <a
-     * href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
-     * characters that can be upper- or lower-cased letters or digits.
+     * The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is
+     * a string of characters that can be upper- or lower-cased letters or digits.
      * </p>
      * 
      * @param certificateId
      *        The ID of the signing certificate to delete.</p>
      *        <p>
-     *        The format of this parameter, as described by its <a
-     *        href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a
-     *        string of characters that can be upper- or lower-cased letters or
-     *        digits.
+     *        The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a>
+     *        pattern, is a string of characters that can be upper- or lower-cased letters or digits.
      */
 
     public void setCertificateId(String certificateId) {
@@ -175,17 +155,14 @@ public class DeleteSigningCertificateRequest extends
      * The ID of the signing certificate to delete.
      * </p>
      * <p>
-     * The format of this parameter, as described by its <a
-     * href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
-     * characters that can be upper- or lower-cased letters or digits.
+     * The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is
+     * a string of characters that can be upper- or lower-cased letters or digits.
      * </p>
      * 
      * @return The ID of the signing certificate to delete.</p>
      *         <p>
-     *         The format of this parameter, as described by its <a
-     *         href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a
-     *         string of characters that can be upper- or lower-cased letters or
-     *         digits.
+     *         The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a>
+     *         pattern, is a string of characters that can be upper- or lower-cased letters or digits.
      */
 
     public String getCertificateId() {
@@ -197,31 +174,25 @@ public class DeleteSigningCertificateRequest extends
      * The ID of the signing certificate to delete.
      * </p>
      * <p>
-     * The format of this parameter, as described by its <a
-     * href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
-     * characters that can be upper- or lower-cased letters or digits.
+     * The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is
+     * a string of characters that can be upper- or lower-cased letters or digits.
      * </p>
      * 
      * @param certificateId
      *        The ID of the signing certificate to delete.</p>
      *        <p>
-     *        The format of this parameter, as described by its <a
-     *        href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a
-     *        string of characters that can be upper- or lower-cased letters or
-     *        digits.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a>
+     *        pattern, is a string of characters that can be upper- or lower-cased letters or digits.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteSigningCertificateRequest withCertificateId(
-            String certificateId) {
+    public DeleteSigningCertificateRequest withCertificateId(String certificateId) {
         setCertificateId(certificateId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -251,13 +222,11 @@ public class DeleteSigningCertificateRequest extends
         DeleteSigningCertificateRequest other = (DeleteSigningCertificateRequest) obj;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
-        if (other.getUserName() != null
-                && other.getUserName().equals(this.getUserName()) == false)
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
         if (other.getCertificateId() == null ^ this.getCertificateId() == null)
             return false;
-        if (other.getCertificateId() != null
-                && other.getCertificateId().equals(this.getCertificateId()) == false)
+        if (other.getCertificateId() != null && other.getCertificateId().equals(this.getCertificateId()) == false)
             return false;
         return true;
     }
@@ -267,12 +236,8 @@ public class DeleteSigningCertificateRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCertificateId() == null) ? 0 : getCertificateId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getCertificateId() == null) ? 0 : getCertificateId().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -45,8 +43,7 @@ public class Cluster implements Serializable, Cloneable {
     private Ec2InstanceAttributes ec2InstanceAttributes;
     /**
      * <p>
-     * The path to the Amazon S3 location where logs for this cluster are
-     * stored.
+     * The path to the Amazon S3 location where logs for this cluster are stored.
      * </p>
      */
     private String logUri;
@@ -64,35 +61,30 @@ public class Cluster implements Serializable, Cloneable {
     private String runningAmiVersion;
     /**
      * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use amiVersion instead instead of ReleaseLabel.
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
+     * ReleaseLabel.
      * </p>
      */
     private String releaseLabel;
     /**
      * <p>
-     * Specifies whether the cluster should terminate after completing all
-     * steps.
+     * Specifies whether the cluster should terminate after completing all steps.
      * </p>
      */
     private Boolean autoTerminate;
     /**
      * <p>
-     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     * instances from being terminated by an API call or user intervention, or
-     * in the event of a cluster error.
+     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API
+     * call or user intervention, or in the event of a cluster error.
      * </p>
      */
     private Boolean terminationProtected;
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS
-     * account associated with the job flow. If this value is set to
-     * <code>true</code>, all IAM users of that AWS account can view and manage
-     * the job flow if they have the proper policy permissions set. If this
-     * value is <code>false</code>, only the IAM user that created the cluster
-     * can view and manage it. This value can be changed using the
-     * <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
+     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
+     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
+     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      */
     private Boolean visibleToAllUsers;
@@ -110,19 +102,16 @@ public class Cluster implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The IAM role that will be assumed by the Amazon EMR service to access AWS
-     * resources on your behalf.
+     * The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.
      * </p>
      */
     private String serviceRole;
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in
-     * m1.small/hours. This value is incremented one time for every hour an
-     * m1.small instance runs. Larger instances are weighted more, so an EC2
-     * instance that is roughly four times more expensive would result in the
-     * normalized instance hours being incremented by four. This result is only
-     * an approximation and does not reflect the actual billing rate.
+     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
+     * four times more expensive would result in the normalized instance hours being incremented by four. This result is
+     * only an approximation and does not reflect the actual billing rate.
      * </p>
      */
     private Integer normalizedInstanceHours;
@@ -182,8 +171,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @param id
      *        The unique identifier for the cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withId(String id) {
@@ -223,8 +211,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withName(String name) {
@@ -264,8 +251,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @param status
      *        The current status details about the cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withStatus(ClusterStatus status) {
@@ -277,8 +263,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param ec2InstanceAttributes
      */
 
-    public void setEc2InstanceAttributes(
-            Ec2InstanceAttributes ec2InstanceAttributes) {
+    public void setEc2InstanceAttributes(Ec2InstanceAttributes ec2InstanceAttributes) {
         this.ec2InstanceAttributes = ec2InstanceAttributes;
     }
 
@@ -292,25 +277,21 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * @param ec2InstanceAttributes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Cluster withEc2InstanceAttributes(
-            Ec2InstanceAttributes ec2InstanceAttributes) {
+    public Cluster withEc2InstanceAttributes(Ec2InstanceAttributes ec2InstanceAttributes) {
         setEc2InstanceAttributes(ec2InstanceAttributes);
         return this;
     }
 
     /**
      * <p>
-     * The path to the Amazon S3 location where logs for this cluster are
-     * stored.
+     * The path to the Amazon S3 location where logs for this cluster are stored.
      * </p>
      * 
      * @param logUri
-     *        The path to the Amazon S3 location where logs for this cluster are
-     *        stored.
+     *        The path to the Amazon S3 location where logs for this cluster are stored.
      */
 
     public void setLogUri(String logUri) {
@@ -319,12 +300,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The path to the Amazon S3 location where logs for this cluster are
-     * stored.
+     * The path to the Amazon S3 location where logs for this cluster are stored.
      * </p>
      * 
-     * @return The path to the Amazon S3 location where logs for this cluster
-     *         are stored.
+     * @return The path to the Amazon S3 location where logs for this cluster are stored.
      */
 
     public String getLogUri() {
@@ -333,15 +312,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The path to the Amazon S3 location where logs for this cluster are
-     * stored.
+     * The path to the Amazon S3 location where logs for this cluster are stored.
      * </p>
      * 
      * @param logUri
-     *        The path to the Amazon S3 location where logs for this cluster are
-     *        stored.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The path to the Amazon S3 location where logs for this cluster are stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withLogUri(String logUri) {
@@ -381,8 +357,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @param requestedAmiVersion
      *        The AMI version requested for this cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withRequestedAmiVersion(String requestedAmiVersion) {
@@ -422,8 +397,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @param runningAmiVersion
      *        The AMI version running on this cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withRunningAmiVersion(String runningAmiVersion) {
@@ -433,13 +407,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use amiVersion instead instead of ReleaseLabel.
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
+     * ReleaseLabel.
      * </p>
      * 
      * @param releaseLabel
-     *        The release label for the Amazon EMR release. For Amazon EMR 3.x
-     *        and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
+     *        The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
+     *        instead of ReleaseLabel.
      */
 
     public void setReleaseLabel(String releaseLabel) {
@@ -448,12 +422,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use amiVersion instead instead of ReleaseLabel.
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
+     * ReleaseLabel.
      * </p>
      * 
-     * @return The release label for the Amazon EMR release. For Amazon EMR 3.x
-     *         and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
+     * @return The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
+     *         instead of ReleaseLabel.
      */
 
     public String getReleaseLabel() {
@@ -462,15 +436,14 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use amiVersion instead instead of ReleaseLabel.
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
+     * ReleaseLabel.
      * </p>
      * 
      * @param releaseLabel
-     *        The release label for the Amazon EMR release. For Amazon EMR 3.x
-     *        and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
+     *        instead of ReleaseLabel.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withReleaseLabel(String releaseLabel) {
@@ -480,13 +453,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the cluster should terminate after completing all
-     * steps.
+     * Specifies whether the cluster should terminate after completing all steps.
      * </p>
      * 
      * @param autoTerminate
-     *        Specifies whether the cluster should terminate after completing
-     *        all steps.
+     *        Specifies whether the cluster should terminate after completing all steps.
      */
 
     public void setAutoTerminate(Boolean autoTerminate) {
@@ -495,12 +466,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the cluster should terminate after completing all
-     * steps.
+     * Specifies whether the cluster should terminate after completing all steps.
      * </p>
      * 
-     * @return Specifies whether the cluster should terminate after completing
-     *         all steps.
+     * @return Specifies whether the cluster should terminate after completing all steps.
      */
 
     public Boolean getAutoTerminate() {
@@ -509,15 +478,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the cluster should terminate after completing all
-     * steps.
+     * Specifies whether the cluster should terminate after completing all steps.
      * </p>
      * 
      * @param autoTerminate
-     *        Specifies whether the cluster should terminate after completing
-     *        all steps.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether the cluster should terminate after completing all steps.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withAutoTerminate(Boolean autoTerminate) {
@@ -527,12 +493,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the cluster should terminate after completing all
-     * steps.
+     * Specifies whether the cluster should terminate after completing all steps.
      * </p>
      * 
-     * @return Specifies whether the cluster should terminate after completing
-     *         all steps.
+     * @return Specifies whether the cluster should terminate after completing all steps.
      */
 
     public Boolean isAutoTerminate() {
@@ -541,15 +505,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     * instances from being terminated by an API call or user intervention, or
-     * in the event of a cluster error.
+     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API
+     * call or user intervention, or in the event of a cluster error.
      * </p>
      * 
      * @param terminationProtected
-     *        Indicates whether Amazon EMR will lock the cluster to prevent the
-     *        EC2 instances from being terminated by an API call or user
-     *        intervention, or in the event of a cluster error.
+     *        Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by
+     *        an API call or user intervention, or in the event of a cluster error.
      */
 
     public void setTerminationProtected(Boolean terminationProtected) {
@@ -558,14 +520,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     * instances from being terminated by an API call or user intervention, or
-     * in the event of a cluster error.
+     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API
+     * call or user intervention, or in the event of a cluster error.
      * </p>
      * 
-     * @return Indicates whether Amazon EMR will lock the cluster to prevent the
-     *         EC2 instances from being terminated by an API call or user
-     *         intervention, or in the event of a cluster error.
+     * @return Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by
+     *         an API call or user intervention, or in the event of a cluster error.
      */
 
     public Boolean getTerminationProtected() {
@@ -574,17 +534,14 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     * instances from being terminated by an API call or user intervention, or
-     * in the event of a cluster error.
+     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API
+     * call or user intervention, or in the event of a cluster error.
      * </p>
      * 
      * @param terminationProtected
-     *        Indicates whether Amazon EMR will lock the cluster to prevent the
-     *        EC2 instances from being terminated by an API call or user
-     *        intervention, or in the event of a cluster error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by
+     *        an API call or user intervention, or in the event of a cluster error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withTerminationProtected(Boolean terminationProtected) {
@@ -594,14 +551,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2
-     * instances from being terminated by an API call or user intervention, or
-     * in the event of a cluster error.
+     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API
+     * call or user intervention, or in the event of a cluster error.
      * </p>
      * 
-     * @return Indicates whether Amazon EMR will lock the cluster to prevent the
-     *         EC2 instances from being terminated by an API call or user
-     *         intervention, or in the event of a cluster error.
+     * @return Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by
+     *         an API call or user intervention, or in the event of a cluster error.
      */
 
     public Boolean isTerminationProtected() {
@@ -610,23 +565,18 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS
-     * account associated with the job flow. If this value is set to
-     * <code>true</code>, all IAM users of that AWS account can view and manage
-     * the job flow if they have the proper policy permissions set. If this
-     * value is <code>false</code>, only the IAM user that created the cluster
-     * can view and manage it. This value can be changed using the
-     * <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
+     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
+     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
+     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Indicates whether the job flow is visible to all IAM users of the
-     *        AWS account associated with the job flow. If this value is set to
-     *        <code>true</code>, all IAM users of that AWS account can view and
-     *        manage the job flow if they have the proper policy permissions
-     *        set. If this value is <code>false</code>, only the IAM user that
-     *        created the cluster can view and manage it. This value can be
-     *        changed using the <a>SetVisibleToAllUsers</a> action.
+     *        Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job
+     *        flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
+     *        job flow if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
+     *        user that created the cluster can view and manage it. This value can be changed using the
+     *        <a>SetVisibleToAllUsers</a> action.
      */
 
     public void setVisibleToAllUsers(Boolean visibleToAllUsers) {
@@ -635,22 +585,17 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS
-     * account associated with the job flow. If this value is set to
-     * <code>true</code>, all IAM users of that AWS account can view and manage
-     * the job flow if they have the proper policy permissions set. If this
-     * value is <code>false</code>, only the IAM user that created the cluster
-     * can view and manage it. This value can be changed using the
-     * <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
+     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
+     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
+     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
-     * @return Indicates whether the job flow is visible to all IAM users of the
-     *         AWS account associated with the job flow. If this value is set to
-     *         <code>true</code>, all IAM users of that AWS account can view and
-     *         manage the job flow if they have the proper policy permissions
-     *         set. If this value is <code>false</code>, only the IAM user that
-     *         created the cluster can view and manage it. This value can be
-     *         changed using the <a>SetVisibleToAllUsers</a> action.
+     * @return Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job
+     *         flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage
+     *         the job flow if they have the proper policy permissions set. If this value is <code>false</code>, only
+     *         the IAM user that created the cluster can view and manage it. This value can be changed using the
+     *         <a>SetVisibleToAllUsers</a> action.
      */
 
     public Boolean getVisibleToAllUsers() {
@@ -659,25 +604,19 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS
-     * account associated with the job flow. If this value is set to
-     * <code>true</code>, all IAM users of that AWS account can view and manage
-     * the job flow if they have the proper policy permissions set. If this
-     * value is <code>false</code>, only the IAM user that created the cluster
-     * can view and manage it. This value can be changed using the
-     * <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
+     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
+     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
+     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Indicates whether the job flow is visible to all IAM users of the
-     *        AWS account associated with the job flow. If this value is set to
-     *        <code>true</code>, all IAM users of that AWS account can view and
-     *        manage the job flow if they have the proper policy permissions
-     *        set. If this value is <code>false</code>, only the IAM user that
-     *        created the cluster can view and manage it. This value can be
-     *        changed using the <a>SetVisibleToAllUsers</a> action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job
+     *        flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
+     *        job flow if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
+     *        user that created the cluster can view and manage it. This value can be changed using the
+     *        <a>SetVisibleToAllUsers</a> action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withVisibleToAllUsers(Boolean visibleToAllUsers) {
@@ -687,22 +626,17 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS
-     * account associated with the job flow. If this value is set to
-     * <code>true</code>, all IAM users of that AWS account can view and manage
-     * the job flow if they have the proper policy permissions set. If this
-     * value is <code>false</code>, only the IAM user that created the cluster
-     * can view and manage it. This value can be changed using the
-     * <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
+     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
+     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
+     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
-     * @return Indicates whether the job flow is visible to all IAM users of the
-     *         AWS account associated with the job flow. If this value is set to
-     *         <code>true</code>, all IAM users of that AWS account can view and
-     *         manage the job flow if they have the proper policy permissions
-     *         set. If this value is <code>false</code>, only the IAM user that
-     *         created the cluster can view and manage it. This value can be
-     *         changed using the <a>SetVisibleToAllUsers</a> action.
+     * @return Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job
+     *         flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage
+     *         the job flow if they have the proper policy permissions set. If this value is <code>false</code>, only
+     *         the IAM user that created the cluster can view and manage it. This value can be changed using the
+     *         <a>SetVisibleToAllUsers</a> action.
      */
 
     public Boolean isVisibleToAllUsers() {
@@ -739,8 +673,7 @@ public class Cluster implements Serializable, Cloneable {
             return;
         }
 
-        this.applications = new com.amazonaws.internal.SdkInternalList<Application>(
-                applications);
+        this.applications = new com.amazonaws.internal.SdkInternalList<Application>(applications);
     }
 
     /**
@@ -748,22 +681,19 @@ public class Cluster implements Serializable, Cloneable {
      * The applications installed on this cluster.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setApplications(java.util.Collection)} or
-     * {@link #withApplications(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setApplications(java.util.Collection)} or {@link #withApplications(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param applications
      *        The applications installed on this cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withApplications(Application... applications) {
         if (this.applications == null) {
-            setApplications(new com.amazonaws.internal.SdkInternalList<Application>(
-                    applications.length));
+            setApplications(new com.amazonaws.internal.SdkInternalList<Application>(applications.length));
         }
         for (Application ele : applications) {
             this.applications.add(ele);
@@ -778,12 +708,10 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @param applications
      *        The applications installed on this cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Cluster withApplications(
-            java.util.Collection<Application> applications) {
+    public Cluster withApplications(java.util.Collection<Application> applications) {
         setApplications(applications);
         return this;
     }
@@ -826,16 +754,14 @@ public class Cluster implements Serializable, Cloneable {
      * A list of tags associated with a cluster.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        A list of tags associated with a cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withTags(Tag... tags) {
@@ -855,8 +781,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @param tags
      *        A list of tags associated with a cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withTags(java.util.Collection<Tag> tags) {
@@ -866,13 +791,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM role that will be assumed by the Amazon EMR service to access AWS
-     * resources on your behalf.
+     * The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.
      * </p>
      * 
      * @param serviceRole
-     *        The IAM role that will be assumed by the Amazon EMR service to
-     *        access AWS resources on your behalf.
+     *        The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.
      */
 
     public void setServiceRole(String serviceRole) {
@@ -881,12 +804,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM role that will be assumed by the Amazon EMR service to access AWS
-     * resources on your behalf.
+     * The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.
      * </p>
      * 
-     * @return The IAM role that will be assumed by the Amazon EMR service to
-     *         access AWS resources on your behalf.
+     * @return The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.
      */
 
     public String getServiceRole() {
@@ -895,15 +816,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM role that will be assumed by the Amazon EMR service to access AWS
-     * resources on your behalf.
+     * The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.
      * </p>
      * 
      * @param serviceRole
-     *        The IAM role that will be assumed by the Amazon EMR service to
-     *        access AWS resources on your behalf.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withServiceRole(String serviceRole) {
@@ -913,22 +831,17 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in
-     * m1.small/hours. This value is incremented one time for every hour an
-     * m1.small instance runs. Larger instances are weighted more, so an EC2
-     * instance that is roughly four times more expensive would result in the
-     * normalized instance hours being incremented by four. This result is only
-     * an approximation and does not reflect the actual billing rate.
+     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
+     * four times more expensive would result in the normalized instance hours being incremented by four. This result is
+     * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in
-     *        m1.small/hours. This value is incremented one time for every hour
-     *        an m1.small instance runs. Larger instances are weighted more, so
-     *        an EC2 instance that is roughly four times more expensive would
-     *        result in the normalized instance hours being incremented by four.
-     *        This result is only an approximation and does not reflect the
-     *        actual billing rate.
+     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
+     *        is roughly four times more expensive would result in the normalized instance hours being incremented by
+     *        four. This result is only an approximation and does not reflect the actual billing rate.
      */
 
     public void setNormalizedInstanceHours(Integer normalizedInstanceHours) {
@@ -937,21 +850,16 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in
-     * m1.small/hours. This value is incremented one time for every hour an
-     * m1.small instance runs. Larger instances are weighted more, so an EC2
-     * instance that is roughly four times more expensive would result in the
-     * normalized instance hours being incremented by four. This result is only
-     * an approximation and does not reflect the actual billing rate.
+     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
+     * four times more expensive would result in the normalized instance hours being incremented by four. This result is
+     * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
-     * @return An approximation of the cost of the job flow, represented in
-     *         m1.small/hours. This value is incremented one time for every hour
-     *         an m1.small instance runs. Larger instances are weighted more, so
-     *         an EC2 instance that is roughly four times more expensive would
-     *         result in the normalized instance hours being incremented by
-     *         four. This result is only an approximation and does not reflect
-     *         the actual billing rate.
+     * @return An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented
+     *         one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance
+     *         that is roughly four times more expensive would result in the normalized instance hours being incremented
+     *         by four. This result is only an approximation and does not reflect the actual billing rate.
      */
 
     public Integer getNormalizedInstanceHours() {
@@ -960,24 +868,18 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in
-     * m1.small/hours. This value is incremented one time for every hour an
-     * m1.small instance runs. Larger instances are weighted more, so an EC2
-     * instance that is roughly four times more expensive would result in the
-     * normalized instance hours being incremented by four. This result is only
-     * an approximation and does not reflect the actual billing rate.
+     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
+     * four times more expensive would result in the normalized instance hours being incremented by four. This result is
+     * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in
-     *        m1.small/hours. This value is incremented one time for every hour
-     *        an m1.small instance runs. Larger instances are weighted more, so
-     *        an EC2 instance that is roughly four times more expensive would
-     *        result in the normalized instance hours being incremented by four.
-     *        This result is only an approximation and does not reflect the
-     *        actual billing rate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
+     *        is roughly four times more expensive would result in the normalized instance hours being incremented by
+     *        four. This result is only an approximation and does not reflect the actual billing rate.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withNormalizedInstanceHours(Integer normalizedInstanceHours) {
@@ -1017,8 +919,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @param masterPublicDnsName
      *        The public DNS name of the master EC2 instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withMasterPublicDnsName(String masterPublicDnsName) {
@@ -1070,15 +971,13 @@ public class Cluster implements Serializable, Cloneable {
      *        The list of Configurations supplied to the EMR cluster.
      */
 
-    public void setConfigurations(
-            java.util.Collection<Configuration> configurations) {
+    public void setConfigurations(java.util.Collection<Configuration> configurations) {
         if (configurations == null) {
             this.configurations = null;
             return;
         }
 
-        this.configurations = new com.amazonaws.internal.SdkInternalList<Configuration>(
-                configurations);
+        this.configurations = new com.amazonaws.internal.SdkInternalList<Configuration>(configurations);
     }
 
     /**
@@ -1091,10 +990,9 @@ public class Cluster implements Serializable, Cloneable {
      * The list of Configurations supplied to the EMR cluster.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConfigurations(java.util.Collection)} or
-     * {@link #withConfigurations(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConfigurations(java.util.Collection)} or {@link #withConfigurations(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param configurations
@@ -1104,14 +1002,12 @@ public class Cluster implements Serializable, Cloneable {
      *        </note>
      *        <p>
      *        The list of Configurations supplied to the EMR cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withConfigurations(Configuration... configurations) {
         if (this.configurations == null) {
-            setConfigurations(new com.amazonaws.internal.SdkInternalList<Configuration>(
-                    configurations.length));
+            setConfigurations(new com.amazonaws.internal.SdkInternalList<Configuration>(configurations.length));
         }
         for (Configuration ele : configurations) {
             this.configurations.add(ele);
@@ -1136,12 +1032,10 @@ public class Cluster implements Serializable, Cloneable {
      *        </note>
      *        <p>
      *        The list of Configurations supplied to the EMR cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Cluster withConfigurations(
-            java.util.Collection<Configuration> configurations) {
+    public Cluster withConfigurations(java.util.Collection<Configuration> configurations) {
         setConfigurations(configurations);
         return this;
     }
@@ -1178,8 +1072,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @param securityConfiguration
      *        The name of the security configuration applied to the cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Cluster withSecurityConfiguration(String securityConfiguration) {
@@ -1188,8 +1081,7 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1206,8 +1098,7 @@ public class Cluster implements Serializable, Cloneable {
         if (getStatus() != null)
             sb.append("Status: " + getStatus() + ",");
         if (getEc2InstanceAttributes() != null)
-            sb.append("Ec2InstanceAttributes: " + getEc2InstanceAttributes()
-                    + ",");
+            sb.append("Ec2InstanceAttributes: " + getEc2InstanceAttributes() + ",");
         if (getLogUri() != null)
             sb.append("LogUri: " + getLogUri() + ",");
         if (getRequestedAmiVersion() != null)
@@ -1219,8 +1110,7 @@ public class Cluster implements Serializable, Cloneable {
         if (getAutoTerminate() != null)
             sb.append("AutoTerminate: " + getAutoTerminate() + ",");
         if (getTerminationProtected() != null)
-            sb.append("TerminationProtected: " + getTerminationProtected()
-                    + ",");
+            sb.append("TerminationProtected: " + getTerminationProtected() + ",");
         if (getVisibleToAllUsers() != null)
             sb.append("VisibleToAllUsers: " + getVisibleToAllUsers() + ",");
         if (getApplications() != null)
@@ -1230,8 +1120,7 @@ public class Cluster implements Serializable, Cloneable {
         if (getServiceRole() != null)
             sb.append("ServiceRole: " + getServiceRole() + ",");
         if (getNormalizedInstanceHours() != null)
-            sb.append("NormalizedInstanceHours: "
-                    + getNormalizedInstanceHours() + ",");
+            sb.append("NormalizedInstanceHours: " + getNormalizedInstanceHours() + ",");
         if (getMasterPublicDnsName() != null)
             sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() + ",");
         if (getConfigurations() != null)
@@ -1254,110 +1143,75 @@ public class Cluster implements Serializable, Cloneable {
         Cluster other = (Cluster) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getEc2InstanceAttributes() == null
-                ^ this.getEc2InstanceAttributes() == null)
+        if (other.getEc2InstanceAttributes() == null ^ this.getEc2InstanceAttributes() == null)
             return false;
-        if (other.getEc2InstanceAttributes() != null
-                && other.getEc2InstanceAttributes().equals(
-                        this.getEc2InstanceAttributes()) == false)
+        if (other.getEc2InstanceAttributes() != null && other.getEc2InstanceAttributes().equals(this.getEc2InstanceAttributes()) == false)
             return false;
         if (other.getLogUri() == null ^ this.getLogUri() == null)
             return false;
-        if (other.getLogUri() != null
-                && other.getLogUri().equals(this.getLogUri()) == false)
+        if (other.getLogUri() != null && other.getLogUri().equals(this.getLogUri()) == false)
             return false;
-        if (other.getRequestedAmiVersion() == null
-                ^ this.getRequestedAmiVersion() == null)
+        if (other.getRequestedAmiVersion() == null ^ this.getRequestedAmiVersion() == null)
             return false;
-        if (other.getRequestedAmiVersion() != null
-                && other.getRequestedAmiVersion().equals(
-                        this.getRequestedAmiVersion()) == false)
+        if (other.getRequestedAmiVersion() != null && other.getRequestedAmiVersion().equals(this.getRequestedAmiVersion()) == false)
             return false;
-        if (other.getRunningAmiVersion() == null
-                ^ this.getRunningAmiVersion() == null)
+        if (other.getRunningAmiVersion() == null ^ this.getRunningAmiVersion() == null)
             return false;
-        if (other.getRunningAmiVersion() != null
-                && other.getRunningAmiVersion().equals(
-                        this.getRunningAmiVersion()) == false)
+        if (other.getRunningAmiVersion() != null && other.getRunningAmiVersion().equals(this.getRunningAmiVersion()) == false)
             return false;
         if (other.getReleaseLabel() == null ^ this.getReleaseLabel() == null)
             return false;
-        if (other.getReleaseLabel() != null
-                && other.getReleaseLabel().equals(this.getReleaseLabel()) == false)
+        if (other.getReleaseLabel() != null && other.getReleaseLabel().equals(this.getReleaseLabel()) == false)
             return false;
         if (other.getAutoTerminate() == null ^ this.getAutoTerminate() == null)
             return false;
-        if (other.getAutoTerminate() != null
-                && other.getAutoTerminate().equals(this.getAutoTerminate()) == false)
+        if (other.getAutoTerminate() != null && other.getAutoTerminate().equals(this.getAutoTerminate()) == false)
             return false;
-        if (other.getTerminationProtected() == null
-                ^ this.getTerminationProtected() == null)
+        if (other.getTerminationProtected() == null ^ this.getTerminationProtected() == null)
             return false;
-        if (other.getTerminationProtected() != null
-                && other.getTerminationProtected().equals(
-                        this.getTerminationProtected()) == false)
+        if (other.getTerminationProtected() != null && other.getTerminationProtected().equals(this.getTerminationProtected()) == false)
             return false;
-        if (other.getVisibleToAllUsers() == null
-                ^ this.getVisibleToAllUsers() == null)
+        if (other.getVisibleToAllUsers() == null ^ this.getVisibleToAllUsers() == null)
             return false;
-        if (other.getVisibleToAllUsers() != null
-                && other.getVisibleToAllUsers().equals(
-                        this.getVisibleToAllUsers()) == false)
+        if (other.getVisibleToAllUsers() != null && other.getVisibleToAllUsers().equals(this.getVisibleToAllUsers()) == false)
             return false;
         if (other.getApplications() == null ^ this.getApplications() == null)
             return false;
-        if (other.getApplications() != null
-                && other.getApplications().equals(this.getApplications()) == false)
+        if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getServiceRole() == null ^ this.getServiceRole() == null)
             return false;
-        if (other.getServiceRole() != null
-                && other.getServiceRole().equals(this.getServiceRole()) == false)
+        if (other.getServiceRole() != null && other.getServiceRole().equals(this.getServiceRole()) == false)
             return false;
-        if (other.getNormalizedInstanceHours() == null
-                ^ this.getNormalizedInstanceHours() == null)
+        if (other.getNormalizedInstanceHours() == null ^ this.getNormalizedInstanceHours() == null)
             return false;
-        if (other.getNormalizedInstanceHours() != null
-                && other.getNormalizedInstanceHours().equals(
-                        this.getNormalizedInstanceHours()) == false)
+        if (other.getNormalizedInstanceHours() != null && other.getNormalizedInstanceHours().equals(this.getNormalizedInstanceHours()) == false)
             return false;
-        if (other.getMasterPublicDnsName() == null
-                ^ this.getMasterPublicDnsName() == null)
+        if (other.getMasterPublicDnsName() == null ^ this.getMasterPublicDnsName() == null)
             return false;
-        if (other.getMasterPublicDnsName() != null
-                && other.getMasterPublicDnsName().equals(
-                        this.getMasterPublicDnsName()) == false)
+        if (other.getMasterPublicDnsName() != null && other.getMasterPublicDnsName().equals(this.getMasterPublicDnsName()) == false)
             return false;
-        if (other.getConfigurations() == null
-                ^ this.getConfigurations() == null)
+        if (other.getConfigurations() == null ^ this.getConfigurations() == null)
             return false;
-        if (other.getConfigurations() != null
-                && other.getConfigurations().equals(this.getConfigurations()) == false)
+        if (other.getConfigurations() != null && other.getConfigurations().equals(this.getConfigurations()) == false)
             return false;
-        if (other.getSecurityConfiguration() == null
-                ^ this.getSecurityConfiguration() == null)
+        if (other.getSecurityConfiguration() == null ^ this.getSecurityConfiguration() == null)
             return false;
-        if (other.getSecurityConfiguration() != null
-                && other.getSecurityConfiguration().equals(
-                        this.getSecurityConfiguration()) == false)
+        if (other.getSecurityConfiguration() != null && other.getSecurityConfiguration().equals(this.getSecurityConfiguration()) == false)
             return false;
         return true;
     }
@@ -1367,67 +1221,24 @@ public class Cluster implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEc2InstanceAttributes() == null) ? 0
-                        : getEc2InstanceAttributes().hashCode());
-        hashCode = prime * hashCode
-                + ((getLogUri() == null) ? 0 : getLogUri().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRequestedAmiVersion() == null) ? 0
-                        : getRequestedAmiVersion().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRunningAmiVersion() == null) ? 0
-                        : getRunningAmiVersion().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReleaseLabel() == null) ? 0 : getReleaseLabel()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoTerminate() == null) ? 0 : getAutoTerminate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTerminationProtected() == null) ? 0
-                        : getTerminationProtected().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVisibleToAllUsers() == null) ? 0
-                        : getVisibleToAllUsers().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getApplications() == null) ? 0 : getApplications()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNormalizedInstanceHours() == null) ? 0
-                        : getNormalizedInstanceHours().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMasterPublicDnsName() == null) ? 0
-                        : getMasterPublicDnsName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConfigurations() == null) ? 0 : getConfigurations()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityConfiguration() == null) ? 0
-                        : getSecurityConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getEc2InstanceAttributes() == null) ? 0 : getEc2InstanceAttributes().hashCode());
+        hashCode = prime * hashCode + ((getLogUri() == null) ? 0 : getLogUri().hashCode());
+        hashCode = prime * hashCode + ((getRequestedAmiVersion() == null) ? 0 : getRequestedAmiVersion().hashCode());
+        hashCode = prime * hashCode + ((getRunningAmiVersion() == null) ? 0 : getRunningAmiVersion().hashCode());
+        hashCode = prime * hashCode + ((getReleaseLabel() == null) ? 0 : getReleaseLabel().hashCode());
+        hashCode = prime * hashCode + ((getAutoTerminate() == null) ? 0 : getAutoTerminate().hashCode());
+        hashCode = prime * hashCode + ((getTerminationProtected() == null) ? 0 : getTerminationProtected().hashCode());
+        hashCode = prime * hashCode + ((getVisibleToAllUsers() == null) ? 0 : getVisibleToAllUsers().hashCode());
+        hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
+        hashCode = prime * hashCode + ((getNormalizedInstanceHours() == null) ? 0 : getNormalizedInstanceHours().hashCode());
+        hashCode = prime * hashCode + ((getMasterPublicDnsName() == null) ? 0 : getMasterPublicDnsName().hashCode());
+        hashCode = prime * hashCode + ((getConfigurations() == null) ? 0 : getConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         return hashCode;
     }
 
@@ -1436,9 +1247,7 @@ public class Cluster implements Serializable, Cloneable {
         try {
             return (Cluster) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

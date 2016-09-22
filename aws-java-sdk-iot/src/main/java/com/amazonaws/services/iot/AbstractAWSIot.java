@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot;
 
@@ -18,9 +16,8 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AWSIot}. Convenient method forms pass
- * through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AWSIot}. Convenient method forms pass through to the corresponding overload that
+ * takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAWSIot implements AWSIot {
 
@@ -38,38 +35,32 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public AcceptCertificateTransferResult acceptCertificateTransfer(
-            AcceptCertificateTransferRequest request) {
+    public AcceptCertificateTransferResult acceptCertificateTransfer(AcceptCertificateTransferRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public AttachPrincipalPolicyResult attachPrincipalPolicy(
-            AttachPrincipalPolicyRequest request) {
+    public AttachPrincipalPolicyResult attachPrincipalPolicy(AttachPrincipalPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public AttachThingPrincipalResult attachThingPrincipal(
-            AttachThingPrincipalRequest request) {
+    public AttachThingPrincipalResult attachThingPrincipal(AttachThingPrincipalRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CancelCertificateTransferResult cancelCertificateTransfer(
-            CancelCertificateTransferRequest request) {
+    public CancelCertificateTransferResult cancelCertificateTransfer(CancelCertificateTransferRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateCertificateFromCsrResult createCertificateFromCsr(
-            CreateCertificateFromCsrRequest request) {
+    public CreateCertificateFromCsrResult createCertificateFromCsr(CreateCertificateFromCsrRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateKeysAndCertificateResult createKeysAndCertificate(
-            CreateKeysAndCertificateRequest request) {
+    public CreateKeysAndCertificateResult createKeysAndCertificate(CreateKeysAndCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,8 +70,7 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public CreatePolicyVersionResult createPolicyVersion(
-            CreatePolicyVersionRequest request) {
+    public CreatePolicyVersionResult createPolicyVersion(CreatePolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -100,14 +90,12 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public DeleteCACertificateResult deleteCACertificate(
-            DeleteCACertificateRequest request) {
+    public DeleteCACertificateResult deleteCACertificate(DeleteCACertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteCertificateResult deleteCertificate(
-            DeleteCertificateRequest request) {
+    public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -117,14 +105,12 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public DeletePolicyVersionResult deletePolicyVersion(
-            DeletePolicyVersionRequest request) {
+    public DeletePolicyVersionResult deletePolicyVersion(DeletePolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteRegistrationCodeResult deleteRegistrationCode(
-            DeleteRegistrationCodeRequest request) {
+    public DeleteRegistrationCodeResult deleteRegistrationCode(DeleteRegistrationCodeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,26 +130,22 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public DeprecateThingTypeResult deprecateThingType(
-            DeprecateThingTypeRequest request) {
+    public DeprecateThingTypeResult deprecateThingType(DeprecateThingTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeCACertificateResult describeCACertificate(
-            DescribeCACertificateRequest request) {
+    public DescribeCACertificateResult describeCACertificate(DescribeCACertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeCertificateResult describeCertificate(
-            DescribeCertificateRequest request) {
+    public DescribeCertificateResult describeCertificate(DescribeCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeEndpointResult describeEndpoint(
-            DescribeEndpointRequest request) {
+    public DescribeEndpointResult describeEndpoint(DescribeEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -173,26 +155,22 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public DescribeThingTypeResult describeThingType(
-            DescribeThingTypeRequest request) {
+    public DescribeThingTypeResult describeThingType(DescribeThingTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DetachPrincipalPolicyResult detachPrincipalPolicy(
-            DetachPrincipalPolicyRequest request) {
+    public DetachPrincipalPolicyResult detachPrincipalPolicy(DetachPrincipalPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DetachThingPrincipalResult detachThingPrincipal(
-            DetachThingPrincipalRequest request) {
+    public DetachThingPrincipalResult detachThingPrincipal(DetachThingPrincipalRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DisableTopicRuleResult disableTopicRule(
-            DisableTopicRuleRequest request) {
+    public DisableTopicRuleResult disableTopicRule(DisableTopicRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -202,8 +180,7 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public GetLoggingOptionsResult getLoggingOptions(
-            GetLoggingOptionsRequest request) {
+    public GetLoggingOptionsResult getLoggingOptions(GetLoggingOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -213,14 +190,12 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public GetPolicyVersionResult getPolicyVersion(
-            GetPolicyVersionRequest request) {
+    public GetPolicyVersionResult getPolicyVersion(GetPolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetRegistrationCodeResult getRegistrationCode(
-            GetRegistrationCodeRequest request) {
+    public GetRegistrationCodeResult getRegistrationCode(GetRegistrationCodeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -230,26 +205,22 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public ListCACertificatesResult listCACertificates(
-            ListCACertificatesRequest request) {
+    public ListCACertificatesResult listCACertificates(ListCACertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListCertificatesResult listCertificates(
-            ListCertificatesRequest request) {
+    public ListCertificatesResult listCertificates(ListCertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListCertificatesByCAResult listCertificatesByCA(
-            ListCertificatesByCARequest request) {
+    public ListCertificatesByCAResult listCertificatesByCA(ListCertificatesByCARequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListOutgoingCertificatesResult listOutgoingCertificates(
-            ListOutgoingCertificatesRequest request) {
+    public ListOutgoingCertificatesResult listOutgoingCertificates(ListOutgoingCertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -259,32 +230,27 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public ListPolicyPrincipalsResult listPolicyPrincipals(
-            ListPolicyPrincipalsRequest request) {
+    public ListPolicyPrincipalsResult listPolicyPrincipals(ListPolicyPrincipalsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListPolicyVersionsResult listPolicyVersions(
-            ListPolicyVersionsRequest request) {
+    public ListPolicyVersionsResult listPolicyVersions(ListPolicyVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListPrincipalPoliciesResult listPrincipalPolicies(
-            ListPrincipalPoliciesRequest request) {
+    public ListPrincipalPoliciesResult listPrincipalPolicies(ListPrincipalPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListPrincipalThingsResult listPrincipalThings(
-            ListPrincipalThingsRequest request) {
+    public ListPrincipalThingsResult listPrincipalThings(ListPrincipalThingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListThingPrincipalsResult listThingPrincipals(
-            ListThingPrincipalsRequest request) {
+    public ListThingPrincipalsResult listThingPrincipals(ListThingPrincipalsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -304,56 +270,47 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public RegisterCACertificateResult registerCACertificate(
-            RegisterCACertificateRequest request) {
+    public RegisterCACertificateResult registerCACertificate(RegisterCACertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RegisterCertificateResult registerCertificate(
-            RegisterCertificateRequest request) {
+    public RegisterCertificateResult registerCertificate(RegisterCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RejectCertificateTransferResult rejectCertificateTransfer(
-            RejectCertificateTransferRequest request) {
+    public RejectCertificateTransferResult rejectCertificateTransfer(RejectCertificateTransferRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ReplaceTopicRuleResult replaceTopicRule(
-            ReplaceTopicRuleRequest request) {
+    public ReplaceTopicRuleResult replaceTopicRule(ReplaceTopicRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetDefaultPolicyVersionResult setDefaultPolicyVersion(
-            SetDefaultPolicyVersionRequest request) {
+    public SetDefaultPolicyVersionResult setDefaultPolicyVersion(SetDefaultPolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetLoggingOptionsResult setLoggingOptions(
-            SetLoggingOptionsRequest request) {
+    public SetLoggingOptionsResult setLoggingOptions(SetLoggingOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public TransferCertificateResult transferCertificate(
-            TransferCertificateRequest request) {
+    public TransferCertificateResult transferCertificate(TransferCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateCACertificateResult updateCACertificate(
-            UpdateCACertificateRequest request) {
+    public UpdateCACertificateResult updateCACertificate(UpdateCACertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateCertificateResult updateCertificate(
-            UpdateCertificateRequest request) {
+    public UpdateCertificateResult updateCertificate(UpdateCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -368,8 +325,7 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

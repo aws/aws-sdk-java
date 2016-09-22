@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -21,8 +19,7 @@ import java.io.Serializable;
  * Contains a list of available options for a DB instance
  * </p>
  * <p>
- * This data type is used as a response element in the
- * <a>DescribeOrderableDBInstanceOptions</a> action.
+ * This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action.
  * </p>
  */
 public class OrderableDBInstanceOption implements Serializable, Cloneable {
@@ -95,8 +92,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     private Boolean supportsIops;
     /**
      * <p>
-     * Indicates whether the DB instance supports enhanced monitoring at
-     * intervals from 1 to 60 seconds.
+     * Indicates whether the DB instance supports enhanced monitoring at intervals from 1 to 60 seconds.
      * </p>
      */
     private Boolean supportsEnhancedMonitoring;
@@ -133,8 +129,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * 
      * @param engine
      *        The engine type of the orderable DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OrderableDBInstanceOption withEngine(String engine) {
@@ -174,8 +169,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * 
      * @param engineVersion
      *        The engine version of the orderable DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OrderableDBInstanceOption withEngineVersion(String engineVersion) {
@@ -215,8 +209,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * 
      * @param dBInstanceClass
      *        The DB instance class for the orderable DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OrderableDBInstanceOption withDBInstanceClass(String dBInstanceClass) {
@@ -256,8 +249,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * 
      * @param licenseModel
      *        The license model for the orderable DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OrderableDBInstanceOption withLicenseModel(String licenseModel) {
@@ -289,15 +281,13 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      *        A list of Availability Zones for the orderable DB instance.
      */
 
-    public void setAvailabilityZones(
-            java.util.Collection<AvailabilityZone> availabilityZones) {
+    public void setAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
         if (availabilityZones == null) {
             this.availabilityZones = null;
             return;
         }
 
-        this.availabilityZones = new com.amazonaws.internal.SdkInternalList<AvailabilityZone>(
-                availabilityZones);
+        this.availabilityZones = new com.amazonaws.internal.SdkInternalList<AvailabilityZone>(availabilityZones);
     }
 
     /**
@@ -305,23 +295,19 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * A list of Availability Zones for the orderable DB instance.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
-     * {@link #withAvailabilityZones(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param availabilityZones
      *        A list of Availability Zones for the orderable DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OrderableDBInstanceOption withAvailabilityZones(
-            AvailabilityZone... availabilityZones) {
+    public OrderableDBInstanceOption withAvailabilityZones(AvailabilityZone... availabilityZones) {
         if (this.availabilityZones == null) {
-            setAvailabilityZones(new com.amazonaws.internal.SdkInternalList<AvailabilityZone>(
-                    availabilityZones.length));
+            setAvailabilityZones(new com.amazonaws.internal.SdkInternalList<AvailabilityZone>(availabilityZones.length));
         }
         for (AvailabilityZone ele : availabilityZones) {
             this.availabilityZones.add(ele);
@@ -336,12 +322,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * 
      * @param availabilityZones
      *        A list of Availability Zones for the orderable DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OrderableDBInstanceOption withAvailabilityZones(
-            java.util.Collection<AvailabilityZone> availabilityZones) {
+    public OrderableDBInstanceOption withAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
         setAvailabilityZones(availabilityZones);
         return this;
     }
@@ -378,8 +362,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * 
      * @param multiAZCapable
      *        Indicates whether this orderable DB instance is multi-AZ capable.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OrderableDBInstanceOption withMultiAZCapable(Boolean multiAZCapable) {
@@ -405,8 +388,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * 
      * @param readReplicaCapable
-     *        Indicates whether this orderable DB instance can have a Read
-     *        Replica.
+     *        Indicates whether this orderable DB instance can have a Read Replica.
      */
 
     public void setReadReplicaCapable(Boolean readReplicaCapable) {
@@ -418,8 +400,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * Indicates whether this orderable DB instance can have a Read Replica.
      * </p>
      * 
-     * @return Indicates whether this orderable DB instance can have a Read
-     *         Replica.
+     * @return Indicates whether this orderable DB instance can have a Read Replica.
      */
 
     public Boolean getReadReplicaCapable() {
@@ -432,14 +413,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * 
      * @param readReplicaCapable
-     *        Indicates whether this orderable DB instance can have a Read
-     *        Replica.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether this orderable DB instance can have a Read Replica.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OrderableDBInstanceOption withReadReplicaCapable(
-            Boolean readReplicaCapable) {
+    public OrderableDBInstanceOption withReadReplicaCapable(Boolean readReplicaCapable) {
         setReadReplicaCapable(readReplicaCapable);
         return this;
     }
@@ -449,8 +427,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * Indicates whether this orderable DB instance can have a Read Replica.
      * </p>
      * 
-     * @return Indicates whether this orderable DB instance can have a Read
-     *         Replica.
+     * @return Indicates whether this orderable DB instance can have a Read Replica.
      */
 
     public Boolean isReadReplicaCapable() {
@@ -489,8 +466,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * 
      * @param vpc
      *        Indicates whether this is a VPC orderable DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OrderableDBInstanceOption withVpc(Boolean vpc) {
@@ -516,8 +492,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportsStorageEncryption
-     *        Indicates whether this orderable DB instance supports encrypted
-     *        storage.
+     *        Indicates whether this orderable DB instance supports encrypted storage.
      */
 
     public void setSupportsStorageEncryption(Boolean supportsStorageEncryption) {
@@ -529,8 +504,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * Indicates whether this orderable DB instance supports encrypted storage.
      * </p>
      * 
-     * @return Indicates whether this orderable DB instance supports encrypted
-     *         storage.
+     * @return Indicates whether this orderable DB instance supports encrypted storage.
      */
 
     public Boolean getSupportsStorageEncryption() {
@@ -543,14 +517,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportsStorageEncryption
-     *        Indicates whether this orderable DB instance supports encrypted
-     *        storage.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether this orderable DB instance supports encrypted storage.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OrderableDBInstanceOption withSupportsStorageEncryption(
-            Boolean supportsStorageEncryption) {
+    public OrderableDBInstanceOption withSupportsStorageEncryption(Boolean supportsStorageEncryption) {
         setSupportsStorageEncryption(supportsStorageEncryption);
         return this;
     }
@@ -560,8 +531,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * Indicates whether this orderable DB instance supports encrypted storage.
      * </p>
      * 
-     * @return Indicates whether this orderable DB instance supports encrypted
-     *         storage.
+     * @return Indicates whether this orderable DB instance supports encrypted storage.
      */
 
     public Boolean isSupportsStorageEncryption() {
@@ -600,8 +570,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * 
      * @param storageType
      *        Indicates the storage type for this orderable DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OrderableDBInstanceOption withStorageType(String storageType) {
@@ -615,8 +584,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportsIops
-     *        Indicates whether this orderable DB instance supports provisioned
-     *        IOPS.
+     *        Indicates whether this orderable DB instance supports provisioned IOPS.
      */
 
     public void setSupportsIops(Boolean supportsIops) {
@@ -628,8 +596,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * Indicates whether this orderable DB instance supports provisioned IOPS.
      * </p>
      * 
-     * @return Indicates whether this orderable DB instance supports provisioned
-     *         IOPS.
+     * @return Indicates whether this orderable DB instance supports provisioned IOPS.
      */
 
     public Boolean getSupportsIops() {
@@ -642,10 +609,8 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportsIops
-     *        Indicates whether this orderable DB instance supports provisioned
-     *        IOPS.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether this orderable DB instance supports provisioned IOPS.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OrderableDBInstanceOption withSupportsIops(Boolean supportsIops) {
@@ -658,8 +623,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * Indicates whether this orderable DB instance supports provisioned IOPS.
      * </p>
      * 
-     * @return Indicates whether this orderable DB instance supports provisioned
-     *         IOPS.
+     * @return Indicates whether this orderable DB instance supports provisioned IOPS.
      */
 
     public Boolean isSupportsIops() {
@@ -668,13 +632,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the DB instance supports enhanced monitoring at
-     * intervals from 1 to 60 seconds.
+     * Indicates whether the DB instance supports enhanced monitoring at intervals from 1 to 60 seconds.
      * </p>
      * 
      * @param supportsEnhancedMonitoring
-     *        Indicates whether the DB instance supports enhanced monitoring at
-     *        intervals from 1 to 60 seconds.
+     *        Indicates whether the DB instance supports enhanced monitoring at intervals from 1 to 60 seconds.
      */
 
     public void setSupportsEnhancedMonitoring(Boolean supportsEnhancedMonitoring) {
@@ -683,12 +645,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the DB instance supports enhanced monitoring at
-     * intervals from 1 to 60 seconds.
+     * Indicates whether the DB instance supports enhanced monitoring at intervals from 1 to 60 seconds.
      * </p>
      * 
-     * @return Indicates whether the DB instance supports enhanced monitoring at
-     *         intervals from 1 to 60 seconds.
+     * @return Indicates whether the DB instance supports enhanced monitoring at intervals from 1 to 60 seconds.
      */
 
     public Boolean getSupportsEnhancedMonitoring() {
@@ -697,31 +657,25 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the DB instance supports enhanced monitoring at
-     * intervals from 1 to 60 seconds.
+     * Indicates whether the DB instance supports enhanced monitoring at intervals from 1 to 60 seconds.
      * </p>
      * 
      * @param supportsEnhancedMonitoring
-     *        Indicates whether the DB instance supports enhanced monitoring at
-     *        intervals from 1 to 60 seconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether the DB instance supports enhanced monitoring at intervals from 1 to 60 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OrderableDBInstanceOption withSupportsEnhancedMonitoring(
-            Boolean supportsEnhancedMonitoring) {
+    public OrderableDBInstanceOption withSupportsEnhancedMonitoring(Boolean supportsEnhancedMonitoring) {
         setSupportsEnhancedMonitoring(supportsEnhancedMonitoring);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the DB instance supports enhanced monitoring at
-     * intervals from 1 to 60 seconds.
+     * Indicates whether the DB instance supports enhanced monitoring at intervals from 1 to 60 seconds.
      * </p>
      * 
-     * @return Indicates whether the DB instance supports enhanced monitoring at
-     *         intervals from 1 to 60 seconds.
+     * @return Indicates whether the DB instance supports enhanced monitoring at intervals from 1 to 60 seconds.
      */
 
     public Boolean isSupportsEnhancedMonitoring() {
@@ -729,8 +683,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -757,15 +710,13 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (getVpc() != null)
             sb.append("Vpc: " + getVpc() + ",");
         if (getSupportsStorageEncryption() != null)
-            sb.append("SupportsStorageEncryption: "
-                    + getSupportsStorageEncryption() + ",");
+            sb.append("SupportsStorageEncryption: " + getSupportsStorageEncryption() + ",");
         if (getStorageType() != null)
             sb.append("StorageType: " + getStorageType() + ",");
         if (getSupportsIops() != null)
             sb.append("SupportsIops: " + getSupportsIops() + ",");
         if (getSupportsEnhancedMonitoring() != null)
-            sb.append("SupportsEnhancedMonitoring: "
-                    + getSupportsEnhancedMonitoring());
+            sb.append("SupportsEnhancedMonitoring: " + getSupportsEnhancedMonitoring());
         sb.append("}");
         return sb.toString();
     }
@@ -782,73 +733,51 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         OrderableDBInstanceOption other = (OrderableDBInstanceOption) obj;
         if (other.getEngine() == null ^ this.getEngine() == null)
             return false;
-        if (other.getEngine() != null
-                && other.getEngine().equals(this.getEngine()) == false)
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
             return false;
         if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
             return false;
-        if (other.getEngineVersion() != null
-                && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
-        if (other.getDBInstanceClass() == null
-                ^ this.getDBInstanceClass() == null)
+        if (other.getDBInstanceClass() == null ^ this.getDBInstanceClass() == null)
             return false;
-        if (other.getDBInstanceClass() != null
-                && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false)
+        if (other.getDBInstanceClass() != null && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false)
             return false;
         if (other.getLicenseModel() == null ^ this.getLicenseModel() == null)
             return false;
-        if (other.getLicenseModel() != null
-                && other.getLicenseModel().equals(this.getLicenseModel()) == false)
+        if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false)
             return false;
-        if (other.getAvailabilityZones() == null
-                ^ this.getAvailabilityZones() == null)
+        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null)
             return false;
-        if (other.getAvailabilityZones() != null
-                && other.getAvailabilityZones().equals(
-                        this.getAvailabilityZones()) == false)
+        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false)
             return false;
-        if (other.getMultiAZCapable() == null
-                ^ this.getMultiAZCapable() == null)
+        if (other.getMultiAZCapable() == null ^ this.getMultiAZCapable() == null)
             return false;
-        if (other.getMultiAZCapable() != null
-                && other.getMultiAZCapable().equals(this.getMultiAZCapable()) == false)
+        if (other.getMultiAZCapable() != null && other.getMultiAZCapable().equals(this.getMultiAZCapable()) == false)
             return false;
-        if (other.getReadReplicaCapable() == null
-                ^ this.getReadReplicaCapable() == null)
+        if (other.getReadReplicaCapable() == null ^ this.getReadReplicaCapable() == null)
             return false;
-        if (other.getReadReplicaCapable() != null
-                && other.getReadReplicaCapable().equals(
-                        this.getReadReplicaCapable()) == false)
+        if (other.getReadReplicaCapable() != null && other.getReadReplicaCapable().equals(this.getReadReplicaCapable()) == false)
             return false;
         if (other.getVpc() == null ^ this.getVpc() == null)
             return false;
-        if (other.getVpc() != null
-                && other.getVpc().equals(this.getVpc()) == false)
+        if (other.getVpc() != null && other.getVpc().equals(this.getVpc()) == false)
             return false;
-        if (other.getSupportsStorageEncryption() == null
-                ^ this.getSupportsStorageEncryption() == null)
+        if (other.getSupportsStorageEncryption() == null ^ this.getSupportsStorageEncryption() == null)
             return false;
-        if (other.getSupportsStorageEncryption() != null
-                && other.getSupportsStorageEncryption().equals(
-                        this.getSupportsStorageEncryption()) == false)
+        if (other.getSupportsStorageEncryption() != null && other.getSupportsStorageEncryption().equals(this.getSupportsStorageEncryption()) == false)
             return false;
         if (other.getStorageType() == null ^ this.getStorageType() == null)
             return false;
-        if (other.getStorageType() != null
-                && other.getStorageType().equals(this.getStorageType()) == false)
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
             return false;
         if (other.getSupportsIops() == null ^ this.getSupportsIops() == null)
             return false;
-        if (other.getSupportsIops() != null
-                && other.getSupportsIops().equals(this.getSupportsIops()) == false)
+        if (other.getSupportsIops() != null && other.getSupportsIops().equals(this.getSupportsIops()) == false)
             return false;
-        if (other.getSupportsEnhancedMonitoring() == null
-                ^ this.getSupportsEnhancedMonitoring() == null)
+        if (other.getSupportsEnhancedMonitoring() == null ^ this.getSupportsEnhancedMonitoring() == null)
             return false;
-        if (other.getSupportsEnhancedMonitoring() != null
-                && other.getSupportsEnhancedMonitoring().equals(
-                        this.getSupportsEnhancedMonitoring()) == false)
+        if (other.getSupportsEnhancedMonitoring() != null && other.getSupportsEnhancedMonitoring().equals(this.getSupportsEnhancedMonitoring()) == false)
             return false;
         return true;
     }
@@ -858,49 +787,18 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getEngine() == null) ? 0 : getEngine().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEngineVersion() == null) ? 0 : getEngineVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLicenseModel() == null) ? 0 : getLicenseModel()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZones() == null) ? 0
-                        : getAvailabilityZones().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMultiAZCapable() == null) ? 0 : getMultiAZCapable()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReadReplicaCapable() == null) ? 0
-                        : getReadReplicaCapable().hashCode());
-        hashCode = prime * hashCode
-                + ((getVpc() == null) ? 0 : getVpc().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSupportsStorageEncryption() == null) ? 0
-                        : getSupportsStorageEncryption().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSupportsIops() == null) ? 0 : getSupportsIops()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSupportsEnhancedMonitoring() == null) ? 0
-                        : getSupportsEnhancedMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode());
+        hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZCapable() == null) ? 0 : getMultiAZCapable().hashCode());
+        hashCode = prime * hashCode + ((getReadReplicaCapable() == null) ? 0 : getReadReplicaCapable().hashCode());
+        hashCode = prime * hashCode + ((getVpc() == null) ? 0 : getVpc().hashCode());
+        hashCode = prime * hashCode + ((getSupportsStorageEncryption() == null) ? 0 : getSupportsStorageEncryption().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
+        hashCode = prime * hashCode + ((getSupportsIops() == null) ? 0 : getSupportsIops().hashCode());
+        hashCode = prime * hashCode + ((getSupportsEnhancedMonitoring() == null) ? 0 : getSupportsEnhancedMonitoring().hashCode());
         return hashCode;
     }
 
@@ -909,9 +807,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         try {
             return (OrderableDBInstanceOption) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

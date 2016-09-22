@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model;
 
@@ -126,8 +124,7 @@ public class BillingRecord implements Serializable, Cloneable {
      *        The name of a domain.</p>
      *        <p>
      *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BillingRecord withDomainName(String domainName) {
@@ -238,8 +235,7 @@ public class BillingRecord implements Serializable, Cloneable {
      *        <li><code>RENEW_DOMAIN</code></li>
      *        <li><code>CHANGE_DOMAIN_OWNER</code></li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
 
@@ -315,8 +311,7 @@ public class BillingRecord implements Serializable, Cloneable {
      *        <li><code>RENEW_DOMAIN</code></li>
      *        <li><code>CHANGE_DOMAIN_OWNER</code></li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
 
@@ -334,8 +329,7 @@ public class BillingRecord implements Serializable, Cloneable {
      * </p>
      * 
      * @param invoiceId
-     *        The ID of the invoice that is associated with the billing
-     *        record.</p>
+     *        The ID of the invoice that is associated with the billing record.</p>
      *        <p>
      *        Type: String
      */
@@ -352,8 +346,7 @@ public class BillingRecord implements Serializable, Cloneable {
      * Type: String
      * </p>
      * 
-     * @return The ID of the invoice that is associated with the billing
-     *         record.</p>
+     * @return The ID of the invoice that is associated with the billing record.</p>
      *         <p>
      *         Type: String
      */
@@ -371,12 +364,10 @@ public class BillingRecord implements Serializable, Cloneable {
      * </p>
      * 
      * @param invoiceId
-     *        The ID of the invoice that is associated with the billing
-     *        record.</p>
+     *        The ID of the invoice that is associated with the billing record.</p>
      *        <p>
      *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BillingRecord withInvoiceId(String invoiceId) {
@@ -431,8 +422,7 @@ public class BillingRecord implements Serializable, Cloneable {
      *        The date that the operation was billed, in Unix format.</p>
      *        <p>
      *        Type: Double
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BillingRecord withBillDate(java.util.Date billDate) {
@@ -452,8 +442,7 @@ public class BillingRecord implements Serializable, Cloneable {
      * </p>
      * 
      * @param price
-     *        The price that you were charged for the operation, in US
-     *        dollars.</p>
+     *        The price that you were charged for the operation, in US dollars.</p>
      *        <p>
      *        Type: Double
      *        </p>
@@ -476,8 +465,7 @@ public class BillingRecord implements Serializable, Cloneable {
      * Example value: 12.0
      * </p>
      * 
-     * @return The price that you were charged for the operation, in US
-     *         dollars.</p>
+     * @return The price that you were charged for the operation, in US dollars.</p>
      *         <p>
      *         Type: Double
      *         </p>
@@ -501,15 +489,13 @@ public class BillingRecord implements Serializable, Cloneable {
      * </p>
      * 
      * @param price
-     *        The price that you were charged for the operation, in US
-     *        dollars.</p>
+     *        The price that you were charged for the operation, in US dollars.</p>
      *        <p>
      *        Type: Double
      *        </p>
      *        <p>
      *        Example value: 12.0
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BillingRecord withPrice(Double price) {
@@ -518,8 +504,7 @@ public class BillingRecord implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -555,28 +540,23 @@ public class BillingRecord implements Serializable, Cloneable {
         BillingRecord other = (BillingRecord) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
         if (other.getOperation() == null ^ this.getOperation() == null)
             return false;
-        if (other.getOperation() != null
-                && other.getOperation().equals(this.getOperation()) == false)
+        if (other.getOperation() != null && other.getOperation().equals(this.getOperation()) == false)
             return false;
         if (other.getInvoiceId() == null ^ this.getInvoiceId() == null)
             return false;
-        if (other.getInvoiceId() != null
-                && other.getInvoiceId().equals(this.getInvoiceId()) == false)
+        if (other.getInvoiceId() != null && other.getInvoiceId().equals(this.getInvoiceId()) == false)
             return false;
         if (other.getBillDate() == null ^ this.getBillDate() == null)
             return false;
-        if (other.getBillDate() != null
-                && other.getBillDate().equals(this.getBillDate()) == false)
+        if (other.getBillDate() != null && other.getBillDate().equals(this.getBillDate()) == false)
             return false;
         if (other.getPrice() == null ^ this.getPrice() == null)
             return false;
-        if (other.getPrice() != null
-                && other.getPrice().equals(this.getPrice()) == false)
+        if (other.getPrice() != null && other.getPrice().equals(this.getPrice()) == false)
             return false;
         return true;
     }
@@ -586,16 +566,11 @@ public class BillingRecord implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime * hashCode
-                + ((getOperation() == null) ? 0 : getOperation().hashCode());
-        hashCode = prime * hashCode
-                + ((getInvoiceId() == null) ? 0 : getInvoiceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getBillDate() == null) ? 0 : getBillDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getPrice() == null) ? 0 : getPrice().hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getOperation() == null) ? 0 : getOperation().hashCode());
+        hashCode = prime * hashCode + ((getInvoiceId() == null) ? 0 : getInvoiceId().hashCode());
+        hashCode = prime * hashCode + ((getBillDate() == null) ? 0 : getBillDate().hashCode());
+        hashCode = prime * hashCode + ((getPrice() == null) ? 0 : getPrice().hashCode());
         return hashCode;
     }
 
@@ -604,9 +579,7 @@ public class BillingRecord implements Serializable, Cloneable {
         try {
             return (BillingRecord) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of ModifyReservedInstances.
  * </p>
  */
-public class ModifyReservedInstancesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ModifyReservedInstancesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -42,8 +38,7 @@ public class ModifyReservedInstancesResult extends
      *        The ID for the modification.
      */
 
-    public void setReservedInstancesModificationId(
-            String reservedInstancesModificationId) {
+    public void setReservedInstancesModificationId(String reservedInstancesModificationId) {
         this.reservedInstancesModificationId = reservedInstancesModificationId;
     }
 
@@ -66,19 +61,16 @@ public class ModifyReservedInstancesResult extends
      * 
      * @param reservedInstancesModificationId
      *        The ID for the modification.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyReservedInstancesResult withReservedInstancesModificationId(
-            String reservedInstancesModificationId) {
+    public ModifyReservedInstancesResult withReservedInstancesModificationId(String reservedInstancesModificationId) {
         setReservedInstancesModificationId(reservedInstancesModificationId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -89,8 +81,7 @@ public class ModifyReservedInstancesResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesModificationId() != null)
-            sb.append("ReservedInstancesModificationId: "
-                    + getReservedInstancesModificationId());
+            sb.append("ReservedInstancesModificationId: " + getReservedInstancesModificationId());
         sb.append("}");
         return sb.toString();
     }
@@ -105,12 +96,10 @@ public class ModifyReservedInstancesResult extends
         if (obj instanceof ModifyReservedInstancesResult == false)
             return false;
         ModifyReservedInstancesResult other = (ModifyReservedInstancesResult) obj;
-        if (other.getReservedInstancesModificationId() == null
-                ^ this.getReservedInstancesModificationId() == null)
+        if (other.getReservedInstancesModificationId() == null ^ this.getReservedInstancesModificationId() == null)
             return false;
         if (other.getReservedInstancesModificationId() != null
-                && other.getReservedInstancesModificationId().equals(
-                        this.getReservedInstancesModificationId()) == false)
+                && other.getReservedInstancesModificationId().equals(this.getReservedInstancesModificationId()) == false)
             return false;
         return true;
     }
@@ -120,10 +109,7 @@ public class ModifyReservedInstancesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReservedInstancesModificationId() == null) ? 0
-                        : getReservedInstancesModificationId().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesModificationId() == null) ? 0 : getReservedInstancesModificationId().hashCode());
         return hashCode;
     }
 
@@ -132,9 +118,7 @@ public class ModifyReservedInstancesResult extends
         try {
             return (ModifyReservedInstancesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

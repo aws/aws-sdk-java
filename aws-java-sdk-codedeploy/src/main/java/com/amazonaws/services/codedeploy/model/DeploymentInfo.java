@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -49,8 +47,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
     private String deploymentId;
     /**
      * <p>
-     * Information about the location of stored application artifacts and the
-     * service from which to retrieve them.
+     * Information about the location of stored application artifacts and the service from which to retrieve them.
      * </p>
      */
     private RevisionLocation revision;
@@ -74,13 +71,11 @@ public class DeploymentInfo implements Serializable, Cloneable {
     private java.util.Date createTime;
     /**
      * <p>
-     * A timestamp indicating when the deployment was deployed to the deployment
-     * group.
+     * A timestamp indicating when the deployment was deployed to the deployment group.
      * </p>
      * <p>
-     * In some cases, the reported value of the start time may be later than the
-     * complete time. This is due to differences in the clock settings of
-     * back-end servers that participate in the deployment process.
+     * In some cases, the reported value of the start time may be later than the complete time. This is due to
+     * differences in the clock settings of back-end servers that participate in the deployment process.
      * </p>
      */
     private java.util.Date startTime;
@@ -127,30 +122,26 @@ public class DeploymentInfo implements Serializable, Cloneable {
     private String creator;
     /**
      * <p>
-     * If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to an instance to fail, the deployment to that instance
-     * will not be considered to have failed at that point and will continue on
-     * to the BeforeInstall deployment lifecycle event.
+     * If true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to fail, the
+     * deployment to that instance will not be considered to have failed at that point and will continue on to the
+     * BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
-     * If false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to an instance to fail, the
-     * deployment to that instance will stop, and the deployment to that
-     * instance will be considered to have failed.
+     * If false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to an
+     * instance to fail, the deployment to that instance will stop, and the deployment to that instance will be
+     * considered to have failed.
      * </p>
      */
     private Boolean ignoreApplicationStopFailures;
     /**
      * <p>
-     * Information about the automatic rollback configuration associated with
-     * the deployment.
+     * Information about the automatic rollback configuration associated with the deployment.
      * </p>
      */
     private AutoRollbackConfiguration autoRollbackConfiguration;
     /**
      * <p>
-     * Indicates whether only instances that are not running the latest
-     * application revision are to be deployed to.
+     * Indicates whether only instances that are not running the latest application revision are to be deployed to.
      * </p>
      */
     private Boolean updateOutdatedInstancesOnly;
@@ -193,8 +184,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * 
      * @param applicationName
      *        The application name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentInfo withApplicationName(String applicationName) {
@@ -234,8 +224,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * 
      * @param deploymentGroupName
      *        The deployment group name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentInfo withDeploymentGroupName(String deploymentGroupName) {
@@ -275,8 +264,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * 
      * @param deploymentConfigName
      *        The deployment configuration name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentInfo withDeploymentConfigName(String deploymentConfigName) {
@@ -316,8 +304,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * 
      * @param deploymentId
      *        The deployment ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentInfo withDeploymentId(String deploymentId) {
@@ -327,13 +314,12 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the location of stored application artifacts and the
-     * service from which to retrieve them.
+     * Information about the location of stored application artifacts and the service from which to retrieve them.
      * </p>
      * 
      * @param revision
-     *        Information about the location of stored application artifacts and
-     *        the service from which to retrieve them.
+     *        Information about the location of stored application artifacts and the service from which to retrieve
+     *        them.
      */
 
     public void setRevision(RevisionLocation revision) {
@@ -342,12 +328,11 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the location of stored application artifacts and the
-     * service from which to retrieve them.
+     * Information about the location of stored application artifacts and the service from which to retrieve them.
      * </p>
      * 
-     * @return Information about the location of stored application artifacts
-     *         and the service from which to retrieve them.
+     * @return Information about the location of stored application artifacts and the service from which to retrieve
+     *         them.
      */
 
     public RevisionLocation getRevision() {
@@ -356,15 +341,13 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the location of stored application artifacts and the
-     * service from which to retrieve them.
+     * Information about the location of stored application artifacts and the service from which to retrieve them.
      * </p>
      * 
      * @param revision
-     *        Information about the location of stored application artifacts and
-     *        the service from which to retrieve them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the location of stored application artifacts and the service from which to retrieve
+     *        them.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentInfo withRevision(RevisionLocation revision) {
@@ -406,8 +389,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * 
      * @param status
      *        The current state of the deployment as a whole.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentStatus
      */
 
@@ -437,8 +419,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * 
      * @param status
      *        The current state of the deployment as a whole.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentStatus
      */
 
@@ -479,8 +460,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * 
      * @param errorInformation
      *        Information about any error associated with this deployment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentInfo withErrorInformation(ErrorInformation errorInformation) {
@@ -520,8 +500,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * 
      * @param createTime
      *        A timestamp indicating when the deployment was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentInfo withCreateTime(java.util.Date createTime) {
@@ -531,23 +510,18 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment was deployed to the deployment
-     * group.
+     * A timestamp indicating when the deployment was deployed to the deployment group.
      * </p>
      * <p>
-     * In some cases, the reported value of the start time may be later than the
-     * complete time. This is due to differences in the clock settings of
-     * back-end servers that participate in the deployment process.
+     * In some cases, the reported value of the start time may be later than the complete time. This is due to
+     * differences in the clock settings of back-end servers that participate in the deployment process.
      * </p>
      * 
      * @param startTime
-     *        A timestamp indicating when the deployment was deployed to the
-     *        deployment group.</p>
+     *        A timestamp indicating when the deployment was deployed to the deployment group.</p>
      *        <p>
-     *        In some cases, the reported value of the start time may be later
-     *        than the complete time. This is due to differences in the clock
-     *        settings of back-end servers that participate in the deployment
-     *        process.
+     *        In some cases, the reported value of the start time may be later than the complete time. This is due to
+     *        differences in the clock settings of back-end servers that participate in the deployment process.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -556,22 +530,17 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment was deployed to the deployment
-     * group.
+     * A timestamp indicating when the deployment was deployed to the deployment group.
      * </p>
      * <p>
-     * In some cases, the reported value of the start time may be later than the
-     * complete time. This is due to differences in the clock settings of
-     * back-end servers that participate in the deployment process.
+     * In some cases, the reported value of the start time may be later than the complete time. This is due to
+     * differences in the clock settings of back-end servers that participate in the deployment process.
      * </p>
      * 
-     * @return A timestamp indicating when the deployment was deployed to the
-     *         deployment group.</p>
+     * @return A timestamp indicating when the deployment was deployed to the deployment group.</p>
      *         <p>
-     *         In some cases, the reported value of the start time may be later
-     *         than the complete time. This is due to differences in the clock
-     *         settings of back-end servers that participate in the deployment
-     *         process.
+     *         In some cases, the reported value of the start time may be later than the complete time. This is due to
+     *         differences in the clock settings of back-end servers that participate in the deployment process.
      */
 
     public java.util.Date getStartTime() {
@@ -580,25 +549,19 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment was deployed to the deployment
-     * group.
+     * A timestamp indicating when the deployment was deployed to the deployment group.
      * </p>
      * <p>
-     * In some cases, the reported value of the start time may be later than the
-     * complete time. This is due to differences in the clock settings of
-     * back-end servers that participate in the deployment process.
+     * In some cases, the reported value of the start time may be later than the complete time. This is due to
+     * differences in the clock settings of back-end servers that participate in the deployment process.
      * </p>
      * 
      * @param startTime
-     *        A timestamp indicating when the deployment was deployed to the
-     *        deployment group.</p>
+     *        A timestamp indicating when the deployment was deployed to the deployment group.</p>
      *        <p>
-     *        In some cases, the reported value of the start time may be later
-     *        than the complete time. This is due to differences in the clock
-     *        settings of back-end servers that participate in the deployment
-     *        process.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        In some cases, the reported value of the start time may be later than the complete time. This is due to
+     *        differences in the clock settings of back-end servers that participate in the deployment process.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentInfo withStartTime(java.util.Date startTime) {
@@ -638,8 +601,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * 
      * @param completeTime
      *        A timestamp indicating when the deployment was complete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentInfo withCompleteTime(java.util.Date completeTime) {
@@ -653,8 +615,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param deploymentOverview
-     *        A summary of the deployment status of the instances in the
-     *        deployment.
+     *        A summary of the deployment status of the instances in the deployment.
      */
 
     public void setDeploymentOverview(DeploymentOverview deploymentOverview) {
@@ -666,8 +627,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * A summary of the deployment status of the instances in the deployment.
      * </p>
      * 
-     * @return A summary of the deployment status of the instances in the
-     *         deployment.
+     * @return A summary of the deployment status of the instances in the deployment.
      */
 
     public DeploymentOverview getDeploymentOverview() {
@@ -680,14 +640,11 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param deploymentOverview
-     *        A summary of the deployment status of the instances in the
-     *        deployment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A summary of the deployment status of the instances in the deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeploymentInfo withDeploymentOverview(
-            DeploymentOverview deploymentOverview) {
+    public DeploymentInfo withDeploymentOverview(DeploymentOverview deploymentOverview) {
         setDeploymentOverview(deploymentOverview);
         return this;
     }
@@ -724,8 +681,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * 
      * @param description
      *        A comment about the deployment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentInfo withDescription(String description) {
@@ -866,8 +822,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      *        codeDeployRollback: A rollback process created the deployment.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentCreator
      */
 
@@ -963,8 +918,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      *        codeDeployRollback: A rollback process created the deployment.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentCreator
      */
 
@@ -975,60 +929,49 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to an instance to fail, the deployment to that instance
-     * will not be considered to have failed at that point and will continue on
-     * to the BeforeInstall deployment lifecycle event.
+     * If true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to fail, the
+     * deployment to that instance will not be considered to have failed at that point and will continue on to the
+     * BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
-     * If false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to an instance to fail, the
-     * deployment to that instance will stop, and the deployment to that
-     * instance will be considered to have failed.
+     * If false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to an
+     * instance to fail, the deployment to that instance will stop, and the deployment to that instance will be
+     * considered to have failed.
      * </p>
      * 
      * @param ignoreApplicationStopFailures
-     *        If true, then if the deployment causes the ApplicationStop
-     *        deployment lifecycle event to an instance to fail, the deployment
-     *        to that instance will not be considered to have failed at that
-     *        point and will continue on to the BeforeInstall deployment
-     *        lifecycle event.</p>
+     *        If true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
+     *        fail, the deployment to that instance will not be considered to have failed at that point and will
+     *        continue on to the BeforeInstall deployment lifecycle event.</p>
      *        <p>
-     *        If false or not specified, then if the deployment causes the
-     *        ApplicationStop deployment lifecycle event to an instance to fail,
-     *        the deployment to that instance will stop, and the deployment to
-     *        that instance will be considered to have failed.
+     *        If false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to
+     *        an instance to fail, the deployment to that instance will stop, and the deployment to that instance will
+     *        be considered to have failed.
      */
 
-    public void setIgnoreApplicationStopFailures(
-            Boolean ignoreApplicationStopFailures) {
+    public void setIgnoreApplicationStopFailures(Boolean ignoreApplicationStopFailures) {
         this.ignoreApplicationStopFailures = ignoreApplicationStopFailures;
     }
 
     /**
      * <p>
-     * If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to an instance to fail, the deployment to that instance
-     * will not be considered to have failed at that point and will continue on
-     * to the BeforeInstall deployment lifecycle event.
+     * If true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to fail, the
+     * deployment to that instance will not be considered to have failed at that point and will continue on to the
+     * BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
-     * If false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to an instance to fail, the
-     * deployment to that instance will stop, and the deployment to that
-     * instance will be considered to have failed.
+     * If false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to an
+     * instance to fail, the deployment to that instance will stop, and the deployment to that instance will be
+     * considered to have failed.
      * </p>
      * 
-     * @return If true, then if the deployment causes the ApplicationStop
-     *         deployment lifecycle event to an instance to fail, the deployment
-     *         to that instance will not be considered to have failed at that
-     *         point and will continue on to the BeforeInstall deployment
-     *         lifecycle event.</p>
+     * @return If true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
+     *         fail, the deployment to that instance will not be considered to have failed at that point and will
+     *         continue on to the BeforeInstall deployment lifecycle event.</p>
      *         <p>
-     *         If false or not specified, then if the deployment causes the
-     *         ApplicationStop deployment lifecycle event to an instance to
-     *         fail, the deployment to that instance will stop, and the
-     *         deployment to that instance will be considered to have failed.
+     *         If false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event
+     *         to an instance to fail, the deployment to that instance will stop, and the deployment to that instance
+     *         will be considered to have failed.
      */
 
     public Boolean getIgnoreApplicationStopFailures() {
@@ -1037,63 +980,51 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to an instance to fail, the deployment to that instance
-     * will not be considered to have failed at that point and will continue on
-     * to the BeforeInstall deployment lifecycle event.
+     * If true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to fail, the
+     * deployment to that instance will not be considered to have failed at that point and will continue on to the
+     * BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
-     * If false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to an instance to fail, the
-     * deployment to that instance will stop, and the deployment to that
-     * instance will be considered to have failed.
+     * If false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to an
+     * instance to fail, the deployment to that instance will stop, and the deployment to that instance will be
+     * considered to have failed.
      * </p>
      * 
      * @param ignoreApplicationStopFailures
-     *        If true, then if the deployment causes the ApplicationStop
-     *        deployment lifecycle event to an instance to fail, the deployment
-     *        to that instance will not be considered to have failed at that
-     *        point and will continue on to the BeforeInstall deployment
-     *        lifecycle event.</p>
+     *        If true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
+     *        fail, the deployment to that instance will not be considered to have failed at that point and will
+     *        continue on to the BeforeInstall deployment lifecycle event.</p>
      *        <p>
-     *        If false or not specified, then if the deployment causes the
-     *        ApplicationStop deployment lifecycle event to an instance to fail,
-     *        the deployment to that instance will stop, and the deployment to
-     *        that instance will be considered to have failed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to
+     *        an instance to fail, the deployment to that instance will stop, and the deployment to that instance will
+     *        be considered to have failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeploymentInfo withIgnoreApplicationStopFailures(
-            Boolean ignoreApplicationStopFailures) {
+    public DeploymentInfo withIgnoreApplicationStopFailures(Boolean ignoreApplicationStopFailures) {
         setIgnoreApplicationStopFailures(ignoreApplicationStopFailures);
         return this;
     }
 
     /**
      * <p>
-     * If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to an instance to fail, the deployment to that instance
-     * will not be considered to have failed at that point and will continue on
-     * to the BeforeInstall deployment lifecycle event.
+     * If true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to fail, the
+     * deployment to that instance will not be considered to have failed at that point and will continue on to the
+     * BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
-     * If false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to an instance to fail, the
-     * deployment to that instance will stop, and the deployment to that
-     * instance will be considered to have failed.
+     * If false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to an
+     * instance to fail, the deployment to that instance will stop, and the deployment to that instance will be
+     * considered to have failed.
      * </p>
      * 
-     * @return If true, then if the deployment causes the ApplicationStop
-     *         deployment lifecycle event to an instance to fail, the deployment
-     *         to that instance will not be considered to have failed at that
-     *         point and will continue on to the BeforeInstall deployment
-     *         lifecycle event.</p>
+     * @return If true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
+     *         fail, the deployment to that instance will not be considered to have failed at that point and will
+     *         continue on to the BeforeInstall deployment lifecycle event.</p>
      *         <p>
-     *         If false or not specified, then if the deployment causes the
-     *         ApplicationStop deployment lifecycle event to an instance to
-     *         fail, the deployment to that instance will stop, and the
-     *         deployment to that instance will be considered to have failed.
+     *         If false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event
+     *         to an instance to fail, the deployment to that instance will stop, and the deployment to that instance
+     *         will be considered to have failed.
      */
 
     public Boolean isIgnoreApplicationStopFailures() {
@@ -1102,28 +1033,23 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the automatic rollback configuration associated with
-     * the deployment.
+     * Information about the automatic rollback configuration associated with the deployment.
      * </p>
      * 
      * @param autoRollbackConfiguration
-     *        Information about the automatic rollback configuration associated
-     *        with the deployment.
+     *        Information about the automatic rollback configuration associated with the deployment.
      */
 
-    public void setAutoRollbackConfiguration(
-            AutoRollbackConfiguration autoRollbackConfiguration) {
+    public void setAutoRollbackConfiguration(AutoRollbackConfiguration autoRollbackConfiguration) {
         this.autoRollbackConfiguration = autoRollbackConfiguration;
     }
 
     /**
      * <p>
-     * Information about the automatic rollback configuration associated with
-     * the deployment.
+     * Information about the automatic rollback configuration associated with the deployment.
      * </p>
      * 
-     * @return Information about the automatic rollback configuration associated
-     *         with the deployment.
+     * @return Information about the automatic rollback configuration associated with the deployment.
      */
 
     public AutoRollbackConfiguration getAutoRollbackConfiguration() {
@@ -1132,47 +1058,40 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the automatic rollback configuration associated with
-     * the deployment.
+     * Information about the automatic rollback configuration associated with the deployment.
      * </p>
      * 
      * @param autoRollbackConfiguration
-     *        Information about the automatic rollback configuration associated
-     *        with the deployment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the automatic rollback configuration associated with the deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeploymentInfo withAutoRollbackConfiguration(
-            AutoRollbackConfiguration autoRollbackConfiguration) {
+    public DeploymentInfo withAutoRollbackConfiguration(AutoRollbackConfiguration autoRollbackConfiguration) {
         setAutoRollbackConfiguration(autoRollbackConfiguration);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether only instances that are not running the latest
-     * application revision are to be deployed to.
+     * Indicates whether only instances that are not running the latest application revision are to be deployed to.
      * </p>
      * 
      * @param updateOutdatedInstancesOnly
-     *        Indicates whether only instances that are not running the latest
-     *        application revision are to be deployed to.
+     *        Indicates whether only instances that are not running the latest application revision are to be deployed
+     *        to.
      */
 
-    public void setUpdateOutdatedInstancesOnly(
-            Boolean updateOutdatedInstancesOnly) {
+    public void setUpdateOutdatedInstancesOnly(Boolean updateOutdatedInstancesOnly) {
         this.updateOutdatedInstancesOnly = updateOutdatedInstancesOnly;
     }
 
     /**
      * <p>
-     * Indicates whether only instances that are not running the latest
-     * application revision are to be deployed to.
+     * Indicates whether only instances that are not running the latest application revision are to be deployed to.
      * </p>
      * 
-     * @return Indicates whether only instances that are not running the latest
-     *         application revision are to be deployed to.
+     * @return Indicates whether only instances that are not running the latest application revision are to be deployed
+     *         to.
      */
 
     public Boolean getUpdateOutdatedInstancesOnly() {
@@ -1181,31 +1100,27 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether only instances that are not running the latest
-     * application revision are to be deployed to.
+     * Indicates whether only instances that are not running the latest application revision are to be deployed to.
      * </p>
      * 
      * @param updateOutdatedInstancesOnly
-     *        Indicates whether only instances that are not running the latest
-     *        application revision are to be deployed to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether only instances that are not running the latest application revision are to be deployed
+     *        to.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeploymentInfo withUpdateOutdatedInstancesOnly(
-            Boolean updateOutdatedInstancesOnly) {
+    public DeploymentInfo withUpdateOutdatedInstancesOnly(Boolean updateOutdatedInstancesOnly) {
         setUpdateOutdatedInstancesOnly(updateOutdatedInstancesOnly);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether only instances that are not running the latest
-     * application revision are to be deployed to.
+     * Indicates whether only instances that are not running the latest application revision are to be deployed to.
      * </p>
      * 
-     * @return Indicates whether only instances that are not running the latest
-     *         application revision are to be deployed to.
+     * @return Indicates whether only instances that are not running the latest application revision are to be deployed
+     *         to.
      */
 
     public Boolean isUpdateOutdatedInstancesOnly() {
@@ -1244,8 +1159,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * 
      * @param rollbackInfo
      *        Information about a deployment rollback.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentInfo withRollbackInfo(RollbackInfo rollbackInfo) {
@@ -1254,8 +1168,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1270,8 +1183,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
         if (getDeploymentGroupName() != null)
             sb.append("DeploymentGroupName: " + getDeploymentGroupName() + ",");
         if (getDeploymentConfigName() != null)
-            sb.append("DeploymentConfigName: " + getDeploymentConfigName()
-                    + ",");
+            sb.append("DeploymentConfigName: " + getDeploymentConfigName() + ",");
         if (getDeploymentId() != null)
             sb.append("DeploymentId: " + getDeploymentId() + ",");
         if (getRevision() != null)
@@ -1293,14 +1205,11 @@ public class DeploymentInfo implements Serializable, Cloneable {
         if (getCreator() != null)
             sb.append("Creator: " + getCreator() + ",");
         if (getIgnoreApplicationStopFailures() != null)
-            sb.append("IgnoreApplicationStopFailures: "
-                    + getIgnoreApplicationStopFailures() + ",");
+            sb.append("IgnoreApplicationStopFailures: " + getIgnoreApplicationStopFailures() + ",");
         if (getAutoRollbackConfiguration() != null)
-            sb.append("AutoRollbackConfiguration: "
-                    + getAutoRollbackConfiguration() + ",");
+            sb.append("AutoRollbackConfiguration: " + getAutoRollbackConfiguration() + ",");
         if (getUpdateOutdatedInstancesOnly() != null)
-            sb.append("UpdateOutdatedInstancesOnly: "
-                    + getUpdateOutdatedInstancesOnly() + ",");
+            sb.append("UpdateOutdatedInstancesOnly: " + getUpdateOutdatedInstancesOnly() + ",");
         if (getRollbackInfo() != null)
             sb.append("RollbackInfo: " + getRollbackInfo());
         sb.append("}");
@@ -1317,105 +1226,74 @@ public class DeploymentInfo implements Serializable, Cloneable {
         if (obj instanceof DeploymentInfo == false)
             return false;
         DeploymentInfo other = (DeploymentInfo) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
-        if (other.getDeploymentGroupName() == null
-                ^ this.getDeploymentGroupName() == null)
+        if (other.getDeploymentGroupName() == null ^ this.getDeploymentGroupName() == null)
             return false;
-        if (other.getDeploymentGroupName() != null
-                && other.getDeploymentGroupName().equals(
-                        this.getDeploymentGroupName()) == false)
+        if (other.getDeploymentGroupName() != null && other.getDeploymentGroupName().equals(this.getDeploymentGroupName()) == false)
             return false;
-        if (other.getDeploymentConfigName() == null
-                ^ this.getDeploymentConfigName() == null)
+        if (other.getDeploymentConfigName() == null ^ this.getDeploymentConfigName() == null)
             return false;
-        if (other.getDeploymentConfigName() != null
-                && other.getDeploymentConfigName().equals(
-                        this.getDeploymentConfigName()) == false)
+        if (other.getDeploymentConfigName() != null && other.getDeploymentConfigName().equals(this.getDeploymentConfigName()) == false)
             return false;
         if (other.getDeploymentId() == null ^ this.getDeploymentId() == null)
             return false;
-        if (other.getDeploymentId() != null
-                && other.getDeploymentId().equals(this.getDeploymentId()) == false)
+        if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false)
             return false;
         if (other.getRevision() == null ^ this.getRevision() == null)
             return false;
-        if (other.getRevision() != null
-                && other.getRevision().equals(this.getRevision()) == false)
+        if (other.getRevision() != null && other.getRevision().equals(this.getRevision()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getErrorInformation() == null
-                ^ this.getErrorInformation() == null)
+        if (other.getErrorInformation() == null ^ this.getErrorInformation() == null)
             return false;
-        if (other.getErrorInformation() != null
-                && other.getErrorInformation().equals(
-                        this.getErrorInformation()) == false)
+        if (other.getErrorInformation() != null && other.getErrorInformation().equals(this.getErrorInformation()) == false)
             return false;
         if (other.getCreateTime() == null ^ this.getCreateTime() == null)
             return false;
-        if (other.getCreateTime() != null
-                && other.getCreateTime().equals(this.getCreateTime()) == false)
+        if (other.getCreateTime() != null && other.getCreateTime().equals(this.getCreateTime()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
-        if (other.getStartTime() != null
-                && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         if (other.getCompleteTime() == null ^ this.getCompleteTime() == null)
             return false;
-        if (other.getCompleteTime() != null
-                && other.getCompleteTime().equals(this.getCompleteTime()) == false)
+        if (other.getCompleteTime() != null && other.getCompleteTime().equals(this.getCompleteTime()) == false)
             return false;
-        if (other.getDeploymentOverview() == null
-                ^ this.getDeploymentOverview() == null)
+        if (other.getDeploymentOverview() == null ^ this.getDeploymentOverview() == null)
             return false;
-        if (other.getDeploymentOverview() != null
-                && other.getDeploymentOverview().equals(
-                        this.getDeploymentOverview()) == false)
+        if (other.getDeploymentOverview() != null && other.getDeploymentOverview().equals(this.getDeploymentOverview()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getCreator() == null ^ this.getCreator() == null)
             return false;
-        if (other.getCreator() != null
-                && other.getCreator().equals(this.getCreator()) == false)
+        if (other.getCreator() != null && other.getCreator().equals(this.getCreator()) == false)
             return false;
-        if (other.getIgnoreApplicationStopFailures() == null
-                ^ this.getIgnoreApplicationStopFailures() == null)
+        if (other.getIgnoreApplicationStopFailures() == null ^ this.getIgnoreApplicationStopFailures() == null)
             return false;
         if (other.getIgnoreApplicationStopFailures() != null
-                && other.getIgnoreApplicationStopFailures().equals(
-                        this.getIgnoreApplicationStopFailures()) == false)
+                && other.getIgnoreApplicationStopFailures().equals(this.getIgnoreApplicationStopFailures()) == false)
             return false;
-        if (other.getAutoRollbackConfiguration() == null
-                ^ this.getAutoRollbackConfiguration() == null)
+        if (other.getAutoRollbackConfiguration() == null ^ this.getAutoRollbackConfiguration() == null)
             return false;
-        if (other.getAutoRollbackConfiguration() != null
-                && other.getAutoRollbackConfiguration().equals(
-                        this.getAutoRollbackConfiguration()) == false)
+        if (other.getAutoRollbackConfiguration() != null && other.getAutoRollbackConfiguration().equals(this.getAutoRollbackConfiguration()) == false)
             return false;
-        if (other.getUpdateOutdatedInstancesOnly() == null
-                ^ this.getUpdateOutdatedInstancesOnly() == null)
+        if (other.getUpdateOutdatedInstancesOnly() == null ^ this.getUpdateOutdatedInstancesOnly() == null)
             return false;
-        if (other.getUpdateOutdatedInstancesOnly() != null
-                && other.getUpdateOutdatedInstancesOnly().equals(
-                        this.getUpdateOutdatedInstancesOnly()) == false)
+        if (other.getUpdateOutdatedInstancesOnly() != null && other.getUpdateOutdatedInstancesOnly().equals(this.getUpdateOutdatedInstancesOnly()) == false)
             return false;
         if (other.getRollbackInfo() == null ^ this.getRollbackInfo() == null)
             return false;
-        if (other.getRollbackInfo() != null
-                && other.getRollbackInfo().equals(this.getRollbackInfo()) == false)
+        if (other.getRollbackInfo() != null && other.getRollbackInfo().equals(this.getRollbackInfo()) == false)
             return false;
         return true;
     }
@@ -1425,63 +1303,23 @@ public class DeploymentInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentGroupName() == null) ? 0
-                        : getDeploymentGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentConfigName() == null) ? 0
-                        : getDeploymentConfigName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentId() == null) ? 0 : getDeploymentId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getRevision() == null) ? 0 : getRevision().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getErrorInformation() == null) ? 0 : getErrorInformation()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCompleteTime() == null) ? 0 : getCompleteTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentOverview() == null) ? 0
-                        : getDeploymentOverview().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreator() == null) ? 0 : getCreator().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIgnoreApplicationStopFailures() == null) ? 0
-                        : getIgnoreApplicationStopFailures().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoRollbackConfiguration() == null) ? 0
-                        : getAutoRollbackConfiguration().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUpdateOutdatedInstancesOnly() == null) ? 0
-                        : getUpdateOutdatedInstancesOnly().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRollbackInfo() == null) ? 0 : getRollbackInfo()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentGroupName() == null) ? 0 : getDeploymentGroupName().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentConfigName() == null) ? 0 : getDeploymentConfigName().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
+        hashCode = prime * hashCode + ((getRevision() == null) ? 0 : getRevision().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getErrorInformation() == null) ? 0 : getErrorInformation().hashCode());
+        hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getCompleteTime() == null) ? 0 : getCompleteTime().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentOverview() == null) ? 0 : getDeploymentOverview().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getCreator() == null) ? 0 : getCreator().hashCode());
+        hashCode = prime * hashCode + ((getIgnoreApplicationStopFailures() == null) ? 0 : getIgnoreApplicationStopFailures().hashCode());
+        hashCode = prime * hashCode + ((getAutoRollbackConfiguration() == null) ? 0 : getAutoRollbackConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getUpdateOutdatedInstancesOnly() == null) ? 0 : getUpdateOutdatedInstancesOnly().hashCode());
+        hashCode = prime * hashCode + ((getRollbackInfo() == null) ? 0 : getRollbackInfo().hashCode());
         return hashCode;
     }
 
@@ -1490,9 +1328,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
         try {
             return (DeploymentInfo) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

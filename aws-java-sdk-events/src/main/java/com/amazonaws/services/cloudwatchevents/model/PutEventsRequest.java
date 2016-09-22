@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatchevents.model;
 
@@ -22,28 +20,24 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <a>PutEvents</a> operation.
  * </p>
  */
-public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The entry that defines an event in your system. You can specify several
-     * parameters for the entry such as the source and type of the event,
-     * resources associated with the event, and so on.
+     * The entry that defines an event in your system. You can specify several parameters for the entry such as the
+     * source and type of the event, resources associated with the event, and so on.
      * </p>
      */
     private java.util.List<PutEventsRequestEntry> entries;
 
     /**
      * <p>
-     * The entry that defines an event in your system. You can specify several
-     * parameters for the entry such as the source and type of the event,
-     * resources associated with the event, and so on.
+     * The entry that defines an event in your system. You can specify several parameters for the entry such as the
+     * source and type of the event, resources associated with the event, and so on.
      * </p>
      * 
-     * @return The entry that defines an event in your system. You can specify
-     *         several parameters for the entry such as the source and type of
-     *         the event, resources associated with the event, and so on.
+     * @return The entry that defines an event in your system. You can specify several parameters for the entry such as
+     *         the source and type of the event, resources associated with the event, and so on.
      */
 
     public java.util.List<PutEventsRequestEntry> getEntries() {
@@ -52,15 +46,13 @@ public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The entry that defines an event in your system. You can specify several
-     * parameters for the entry such as the source and type of the event,
-     * resources associated with the event, and so on.
+     * The entry that defines an event in your system. You can specify several parameters for the entry such as the
+     * source and type of the event, resources associated with the event, and so on.
      * </p>
      * 
      * @param entries
-     *        The entry that defines an event in your system. You can specify
-     *        several parameters for the entry such as the source and type of
-     *        the event, resources associated with the event, and so on.
+     *        The entry that defines an event in your system. You can specify several parameters for the entry such as
+     *        the source and type of the event, resources associated with the event, and so on.
      */
 
     public void setEntries(java.util.Collection<PutEventsRequestEntry> entries) {
@@ -74,29 +66,24 @@ public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The entry that defines an event in your system. You can specify several
-     * parameters for the entry such as the source and type of the event,
-     * resources associated with the event, and so on.
+     * The entry that defines an event in your system. You can specify several parameters for the entry such as the
+     * source and type of the event, resources associated with the event, and so on.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEntries(java.util.Collection)} or
-     * {@link #withEntries(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEntries(java.util.Collection)} or {@link #withEntries(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param entries
-     *        The entry that defines an event in your system. You can specify
-     *        several parameters for the entry such as the source and type of
-     *        the event, resources associated with the event, and so on.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The entry that defines an event in your system. You can specify several parameters for the entry such as
+     *        the source and type of the event, resources associated with the event, and so on.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutEventsRequest withEntries(PutEventsRequestEntry... entries) {
         if (this.entries == null) {
-            setEntries(new java.util.ArrayList<PutEventsRequestEntry>(
-                    entries.length));
+            setEntries(new java.util.ArrayList<PutEventsRequestEntry>(entries.length));
         }
         for (PutEventsRequestEntry ele : entries) {
             this.entries.add(ele);
@@ -106,28 +93,23 @@ public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The entry that defines an event in your system. You can specify several
-     * parameters for the entry such as the source and type of the event,
-     * resources associated with the event, and so on.
+     * The entry that defines an event in your system. You can specify several parameters for the entry such as the
+     * source and type of the event, resources associated with the event, and so on.
      * </p>
      * 
      * @param entries
-     *        The entry that defines an event in your system. You can specify
-     *        several parameters for the entry such as the source and type of
-     *        the event, resources associated with the event, and so on.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The entry that defines an event in your system. You can specify several parameters for the entry such as
+     *        the source and type of the event, resources associated with the event, and so on.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutEventsRequest withEntries(
-            java.util.Collection<PutEventsRequestEntry> entries) {
+    public PutEventsRequest withEntries(java.util.Collection<PutEventsRequestEntry> entries) {
         setEntries(entries);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -155,8 +137,7 @@ public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest
         PutEventsRequest other = (PutEventsRequest) obj;
         if (other.getEntries() == null ^ this.getEntries() == null)
             return false;
-        if (other.getEntries() != null
-                && other.getEntries().equals(this.getEntries()) == false)
+        if (other.getEntries() != null && other.getEntries().equals(this.getEntries()) == false)
             return false;
         return true;
     }
@@ -166,8 +147,7 @@ public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getEntries() == null) ? 0 : getEntries().hashCode());
+        hashCode = prime * hashCode + ((getEntries() == null) ? 0 : getEntries().hashCode());
         return hashCode;
     }
 

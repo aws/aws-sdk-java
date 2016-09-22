@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
@@ -29,12 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ActivityTaskStartedEventAttributes JSON Unmarshaller
  */
-public class ActivityTaskStartedEventAttributesJsonUnmarshaller
-        implements
-        Unmarshaller<ActivityTaskStartedEventAttributes, JsonUnmarshallerContext> {
+public class ActivityTaskStartedEventAttributesJsonUnmarshaller implements Unmarshaller<ActivityTaskStartedEventAttributes, JsonUnmarshallerContext> {
 
-    public ActivityTaskStartedEventAttributes unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public ActivityTaskStartedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActivityTaskStartedEventAttributes activityTaskStartedEventAttributes = new ActivityTaskStartedEventAttributes();
 
         int originalDepth = context.getCurrentDepth();
@@ -54,19 +49,14 @@ public class ActivityTaskStartedEventAttributesJsonUnmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("identity", targetDepth)) {
                     context.nextToken();
-                    activityTaskStartedEventAttributes.setIdentity(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    activityTaskStartedEventAttributes.setIdentity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scheduledEventId", targetDepth)) {
                     context.nextToken();
-                    activityTaskStartedEventAttributes
-                            .setScheduledEventId(context.getUnmarshaller(
-                                    Long.class).unmarshall(context));
+                    activityTaskStartedEventAttributes.setScheduledEventId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,34 +29,27 @@ import com.amazonaws.util.IdempotentUtils;
  * DescribeVpcEndpointServicesRequest Marshaller
  */
 
-public class DescribeVpcEndpointServicesRequestMarshaller
-        implements
+public class DescribeVpcEndpointServicesRequestMarshaller implements
         Marshaller<Request<DescribeVpcEndpointServicesRequest>, DescribeVpcEndpointServicesRequest> {
 
-    public Request<DescribeVpcEndpointServicesRequest> marshall(
-            DescribeVpcEndpointServicesRequest describeVpcEndpointServicesRequest) {
+    public Request<DescribeVpcEndpointServicesRequest> marshall(DescribeVpcEndpointServicesRequest describeVpcEndpointServicesRequest) {
 
         if (describeVpcEndpointServicesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeVpcEndpointServicesRequest> request = new DefaultRequest<DescribeVpcEndpointServicesRequest>(
-                describeVpcEndpointServicesRequest, "AmazonEC2");
+        Request<DescribeVpcEndpointServicesRequest> request = new DefaultRequest<DescribeVpcEndpointServicesRequest>(describeVpcEndpointServicesRequest,
+                "AmazonEC2");
         request.addParameter("Action", "DescribeVpcEndpointServices");
         request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeVpcEndpointServicesRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils
-                    .fromInteger(describeVpcEndpointServicesRequest
-                            .getMaxResults()));
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeVpcEndpointServicesRequest.getMaxResults()));
         }
 
         if (describeVpcEndpointServicesRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils
-                    .fromString(describeVpcEndpointServicesRequest
-                            .getNextToken()));
+            request.addParameter("NextToken", StringUtils.fromString(describeVpcEndpointServicesRequest.getNextToken()));
         }
 
         return request;

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -31,8 +29,7 @@ public class FailedItemDetails implements Serializable, Cloneable {
     private String failureCode;
     /**
      * <p>
-     * Indicates whether you can immediately retry a request for this item for a
-     * specified resource.
+     * Indicates whether you can immediately retry a request for this item for a specified resource.
      * </p>
      */
     private Boolean retryable;
@@ -71,8 +68,7 @@ public class FailedItemDetails implements Serializable, Cloneable {
      * 
      * @param failureCode
      *        The status code of a failed item.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see FailedItemErrorCode
      */
 
@@ -102,8 +98,7 @@ public class FailedItemDetails implements Serializable, Cloneable {
      * 
      * @param failureCode
      *        The status code of a failed item.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see FailedItemErrorCode
      */
 
@@ -114,13 +109,11 @@ public class FailedItemDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether you can immediately retry a request for this item for a
-     * specified resource.
+     * Indicates whether you can immediately retry a request for this item for a specified resource.
      * </p>
      * 
      * @param retryable
-     *        Indicates whether you can immediately retry a request for this
-     *        item for a specified resource.
+     *        Indicates whether you can immediately retry a request for this item for a specified resource.
      */
 
     public void setRetryable(Boolean retryable) {
@@ -129,12 +122,10 @@ public class FailedItemDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether you can immediately retry a request for this item for a
-     * specified resource.
+     * Indicates whether you can immediately retry a request for this item for a specified resource.
      * </p>
      * 
-     * @return Indicates whether you can immediately retry a request for this
-     *         item for a specified resource.
+     * @return Indicates whether you can immediately retry a request for this item for a specified resource.
      */
 
     public Boolean getRetryable() {
@@ -143,15 +134,12 @@ public class FailedItemDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether you can immediately retry a request for this item for a
-     * specified resource.
+     * Indicates whether you can immediately retry a request for this item for a specified resource.
      * </p>
      * 
      * @param retryable
-     *        Indicates whether you can immediately retry a request for this
-     *        item for a specified resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether you can immediately retry a request for this item for a specified resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FailedItemDetails withRetryable(Boolean retryable) {
@@ -161,12 +149,10 @@ public class FailedItemDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether you can immediately retry a request for this item for a
-     * specified resource.
+     * Indicates whether you can immediately retry a request for this item for a specified resource.
      * </p>
      * 
-     * @return Indicates whether you can immediately retry a request for this
-     *         item for a specified resource.
+     * @return Indicates whether you can immediately retry a request for this item for a specified resource.
      */
 
     public Boolean isRetryable() {
@@ -174,8 +160,7 @@ public class FailedItemDetails implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -205,13 +190,11 @@ public class FailedItemDetails implements Serializable, Cloneable {
         FailedItemDetails other = (FailedItemDetails) obj;
         if (other.getFailureCode() == null ^ this.getFailureCode() == null)
             return false;
-        if (other.getFailureCode() != null
-                && other.getFailureCode().equals(this.getFailureCode()) == false)
+        if (other.getFailureCode() != null && other.getFailureCode().equals(this.getFailureCode()) == false)
             return false;
         if (other.getRetryable() == null ^ this.getRetryable() == null)
             return false;
-        if (other.getRetryable() != null
-                && other.getRetryable().equals(this.getRetryable()) == false)
+        if (other.getRetryable() != null && other.getRetryable().equals(this.getRetryable()) == false)
             return false;
         return true;
     }
@@ -221,11 +204,8 @@ public class FailedItemDetails implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());
-        hashCode = prime * hashCode
-                + ((getRetryable() == null) ? 0 : getRetryable().hashCode());
+        hashCode = prime * hashCode + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());
+        hashCode = prime * hashCode + ((getRetryable() == null) ? 0 : getRetryable().hashCode());
         return hashCode;
     }
 
@@ -234,9 +214,7 @@ public class FailedItemDetails implements Serializable, Cloneable {
         try {
             return (FailedItemDetails) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

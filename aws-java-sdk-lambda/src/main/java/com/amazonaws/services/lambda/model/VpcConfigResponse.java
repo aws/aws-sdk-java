@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model;
 
@@ -72,8 +70,7 @@ public class VpcConfigResponse implements Serializable, Cloneable {
             return;
         }
 
-        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(
-                subnetIds);
+        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(subnetIds);
     }
 
     /**
@@ -81,22 +78,19 @@ public class VpcConfigResponse implements Serializable, Cloneable {
      * A list of subnet IDs associated with the Lambda function.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnetIds(java.util.Collection)} or
-     * {@link #withSubnetIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param subnetIds
      *        A list of subnet IDs associated with the Lambda function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpcConfigResponse withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
-            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    subnetIds.length));
+            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(subnetIds.length));
         }
         for (String ele : subnetIds) {
             this.subnetIds.add(ele);
@@ -111,12 +105,10 @@ public class VpcConfigResponse implements Serializable, Cloneable {
      * 
      * @param subnetIds
      *        A list of subnet IDs associated with the Lambda function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VpcConfigResponse withSubnetIds(
-            java.util.Collection<String> subnetIds) {
+    public VpcConfigResponse withSubnetIds(java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
         return this;
     }
@@ -145,15 +137,13 @@ public class VpcConfigResponse implements Serializable, Cloneable {
      *        A list of security group IDs associated with the Lambda function.
      */
 
-    public void setSecurityGroupIds(
-            java.util.Collection<String> securityGroupIds) {
+    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         if (securityGroupIds == null) {
             this.securityGroupIds = null;
             return;
         }
 
-        this.securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(
-                securityGroupIds);
+        this.securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(securityGroupIds);
     }
 
     /**
@@ -161,22 +151,19 @@ public class VpcConfigResponse implements Serializable, Cloneable {
      * A list of security group IDs associated with the Lambda function.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or
-     * {@link #withSecurityGroupIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param securityGroupIds
      *        A list of security group IDs associated with the Lambda function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpcConfigResponse withSecurityGroupIds(String... securityGroupIds) {
         if (this.securityGroupIds == null) {
-            setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    securityGroupIds.length));
+            setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(securityGroupIds.length));
         }
         for (String ele : securityGroupIds) {
             this.securityGroupIds.add(ele);
@@ -191,12 +178,10 @@ public class VpcConfigResponse implements Serializable, Cloneable {
      * 
      * @param securityGroupIds
      *        A list of security group IDs associated with the Lambda function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VpcConfigResponse withSecurityGroupIds(
-            java.util.Collection<String> securityGroupIds) {
+    public VpcConfigResponse withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         setSecurityGroupIds(securityGroupIds);
         return this;
     }
@@ -233,8 +218,7 @@ public class VpcConfigResponse implements Serializable, Cloneable {
      * 
      * @param vpcId
      *        The VPC ID associated with you Lambda function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpcConfigResponse withVpcId(String vpcId) {
@@ -243,8 +227,7 @@ public class VpcConfigResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -276,20 +259,15 @@ public class VpcConfigResponse implements Serializable, Cloneable {
         VpcConfigResponse other = (VpcConfigResponse) obj;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
-        if (other.getSubnetIds() != null
-                && other.getSubnetIds().equals(this.getSubnetIds()) == false)
+        if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
             return false;
-        if (other.getSecurityGroupIds() == null
-                ^ this.getSecurityGroupIds() == null)
+        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null)
             return false;
-        if (other.getSecurityGroupIds() != null
-                && other.getSecurityGroupIds().equals(
-                        this.getSecurityGroupIds()) == false)
+        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
             return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         return true;
     }
@@ -299,14 +277,9 @@ public class VpcConfigResponse implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 
@@ -315,9 +288,7 @@ public class VpcConfigResponse implements Serializable, Cloneable {
         try {
             return (VpcConfigResponse) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

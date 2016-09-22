@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
 
@@ -19,14 +17,11 @@ import java.io.Serializable;
 /**
  * <p>
  * <p>
- * Identity information for the EC2 instance that is hosting the task runner.
- * You can get this value by calling a metadata URI from the EC2 instance. For
- * more information, see <a href=
- * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html"
- * >Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
- * Passing in this value proves that your task runner is running on an EC2
- * instance, and ensures the proper AWS Data Pipeline service charges are
- * applied to your pipeline.
+ * Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a
+ * metadata URI from the EC2 instance. For more information, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in
+ * the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on
+ * an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.
  * </p>
  * </p>
  */
@@ -34,32 +29,28 @@ public class InstanceIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of an EC2 instance that is generated when the instance is
-     * launched and exposed to the instance via the instance metadata service in
-     * the form of a JSON representation of an object.
+     * A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via
+     * the instance metadata service in the form of a JSON representation of an object.
      * </p>
      */
     private String document;
     /**
      * <p>
-     * A signature which can be used to verify the accuracy and authenticity of
-     * the information provided in the instance identity document.
+     * A signature which can be used to verify the accuracy and authenticity of the information provided in the instance
+     * identity document.
      * </p>
      */
     private String signature;
 
     /**
      * <p>
-     * A description of an EC2 instance that is generated when the instance is
-     * launched and exposed to the instance via the instance metadata service in
-     * the form of a JSON representation of an object.
+     * A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via
+     * the instance metadata service in the form of a JSON representation of an object.
      * </p>
      * 
      * @param document
-     *        A description of an EC2 instance that is generated when the
-     *        instance is launched and exposed to the instance via the instance
-     *        metadata service in the form of a JSON representation of an
-     *        object.
+     *        A description of an EC2 instance that is generated when the instance is launched and exposed to the
+     *        instance via the instance metadata service in the form of a JSON representation of an object.
      */
 
     public void setDocument(String document) {
@@ -68,15 +59,12 @@ public class InstanceIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of an EC2 instance that is generated when the instance is
-     * launched and exposed to the instance via the instance metadata service in
-     * the form of a JSON representation of an object.
+     * A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via
+     * the instance metadata service in the form of a JSON representation of an object.
      * </p>
      * 
-     * @return A description of an EC2 instance that is generated when the
-     *         instance is launched and exposed to the instance via the instance
-     *         metadata service in the form of a JSON representation of an
-     *         object.
+     * @return A description of an EC2 instance that is generated when the instance is launched and exposed to the
+     *         instance via the instance metadata service in the form of a JSON representation of an object.
      */
 
     public String getDocument() {
@@ -85,18 +73,14 @@ public class InstanceIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of an EC2 instance that is generated when the instance is
-     * launched and exposed to the instance via the instance metadata service in
-     * the form of a JSON representation of an object.
+     * A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via
+     * the instance metadata service in the form of a JSON representation of an object.
      * </p>
      * 
      * @param document
-     *        A description of an EC2 instance that is generated when the
-     *        instance is launched and exposed to the instance via the instance
-     *        metadata service in the form of a JSON representation of an
-     *        object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A description of an EC2 instance that is generated when the instance is launched and exposed to the
+     *        instance via the instance metadata service in the form of a JSON representation of an object.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceIdentity withDocument(String document) {
@@ -106,14 +90,13 @@ public class InstanceIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A signature which can be used to verify the accuracy and authenticity of
-     * the information provided in the instance identity document.
+     * A signature which can be used to verify the accuracy and authenticity of the information provided in the instance
+     * identity document.
      * </p>
      * 
      * @param signature
-     *        A signature which can be used to verify the accuracy and
-     *        authenticity of the information provided in the instance identity
-     *        document.
+     *        A signature which can be used to verify the accuracy and authenticity of the information provided in the
+     *        instance identity document.
      */
 
     public void setSignature(String signature) {
@@ -122,13 +105,12 @@ public class InstanceIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A signature which can be used to verify the accuracy and authenticity of
-     * the information provided in the instance identity document.
+     * A signature which can be used to verify the accuracy and authenticity of the information provided in the instance
+     * identity document.
      * </p>
      * 
-     * @return A signature which can be used to verify the accuracy and
-     *         authenticity of the information provided in the instance identity
-     *         document.
+     * @return A signature which can be used to verify the accuracy and authenticity of the information provided in the
+     *         instance identity document.
      */
 
     public String getSignature() {
@@ -137,16 +119,14 @@ public class InstanceIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A signature which can be used to verify the accuracy and authenticity of
-     * the information provided in the instance identity document.
+     * A signature which can be used to verify the accuracy and authenticity of the information provided in the instance
+     * identity document.
      * </p>
      * 
      * @param signature
-     *        A signature which can be used to verify the accuracy and
-     *        authenticity of the information provided in the instance identity
-     *        document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A signature which can be used to verify the accuracy and authenticity of the information provided in the
+     *        instance identity document.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceIdentity withSignature(String signature) {
@@ -155,8 +135,7 @@ public class InstanceIdentity implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -186,13 +165,11 @@ public class InstanceIdentity implements Serializable, Cloneable {
         InstanceIdentity other = (InstanceIdentity) obj;
         if (other.getDocument() == null ^ this.getDocument() == null)
             return false;
-        if (other.getDocument() != null
-                && other.getDocument().equals(this.getDocument()) == false)
+        if (other.getDocument() != null && other.getDocument().equals(this.getDocument()) == false)
             return false;
         if (other.getSignature() == null ^ this.getSignature() == null)
             return false;
-        if (other.getSignature() != null
-                && other.getSignature().equals(this.getSignature()) == false)
+        if (other.getSignature() != null && other.getSignature().equals(this.getSignature()) == false)
             return false;
         return true;
     }
@@ -202,10 +179,8 @@ public class InstanceIdentity implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDocument() == null) ? 0 : getDocument().hashCode());
-        hashCode = prime * hashCode
-                + ((getSignature() == null) ? 0 : getSignature().hashCode());
+        hashCode = prime * hashCode + ((getDocument() == null) ? 0 : getDocument().hashCode());
+        hashCode = prime * hashCode + ((getSignature() == null) ? 0 : getSignature().hashCode());
         return hashCode;
     }
 
@@ -214,9 +189,7 @@ public class InstanceIdentity implements Serializable, Cloneable {
         try {
             return (InstanceIdentity) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

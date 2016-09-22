@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -51,8 +49,7 @@ public class LogGroup implements Serializable, Cloneable {
 
     /**
      * @param logGroupName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withLogGroupName(String logGroupName) {
@@ -78,8 +75,7 @@ public class LogGroup implements Serializable, Cloneable {
 
     /**
      * @param creationTime
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withCreationTime(Long creationTime) {
@@ -105,8 +101,7 @@ public class LogGroup implements Serializable, Cloneable {
 
     /**
      * @param retentionInDays
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withRetentionInDays(Integer retentionInDays) {
@@ -132,8 +127,7 @@ public class LogGroup implements Serializable, Cloneable {
 
     /**
      * @param metricFilterCount
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withMetricFilterCount(Integer metricFilterCount) {
@@ -159,8 +153,7 @@ public class LogGroup implements Serializable, Cloneable {
 
     /**
      * @param arn
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withArn(String arn) {
@@ -186,8 +179,7 @@ public class LogGroup implements Serializable, Cloneable {
 
     /**
      * @param storedBytes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withStoredBytes(Long storedBytes) {
@@ -196,8 +188,7 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -235,36 +226,27 @@ public class LogGroup implements Serializable, Cloneable {
         LogGroup other = (LogGroup) obj;
         if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
             return false;
-        if (other.getLogGroupName() != null
-                && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
             return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getCreationTime() != null
-                && other.getCreationTime().equals(this.getCreationTime()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
-        if (other.getRetentionInDays() == null
-                ^ this.getRetentionInDays() == null)
+        if (other.getRetentionInDays() == null ^ this.getRetentionInDays() == null)
             return false;
-        if (other.getRetentionInDays() != null
-                && other.getRetentionInDays().equals(this.getRetentionInDays()) == false)
+        if (other.getRetentionInDays() != null && other.getRetentionInDays().equals(this.getRetentionInDays()) == false)
             return false;
-        if (other.getMetricFilterCount() == null
-                ^ this.getMetricFilterCount() == null)
+        if (other.getMetricFilterCount() == null ^ this.getMetricFilterCount() == null)
             return false;
-        if (other.getMetricFilterCount() != null
-                && other.getMetricFilterCount().equals(
-                        this.getMetricFilterCount()) == false)
+        if (other.getMetricFilterCount() != null && other.getMetricFilterCount().equals(this.getMetricFilterCount()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getStoredBytes() == null ^ this.getStoredBytes() == null)
             return false;
-        if (other.getStoredBytes() != null
-                && other.getStoredBytes().equals(this.getStoredBytes()) == false)
+        if (other.getStoredBytes() != null && other.getStoredBytes().equals(this.getStoredBytes()) == false)
             return false;
         return true;
     }
@@ -274,27 +256,12 @@ public class LogGroup implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLogGroupName() == null) ? 0 : getLogGroupName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationTime() == null) ? 0 : getCreationTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRetentionInDays() == null) ? 0 : getRetentionInDays()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMetricFilterCount() == null) ? 0
-                        : getMetricFilterCount().hashCode());
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStoredBytes() == null) ? 0 : getStoredBytes().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getRetentionInDays() == null) ? 0 : getRetentionInDays().hashCode());
+        hashCode = prime * hashCode + ((getMetricFilterCount() == null) ? 0 : getMetricFilterCount().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getStoredBytes() == null) ? 0 : getStoredBytes().hashCode());
         return hashCode;
     }
 
@@ -303,9 +270,7 @@ public class LogGroup implements Serializable, Cloneable {
         try {
             return (LogGroup) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.ImportInstanceRequestMarshalle
  * Contains the parameters for ImportInstance.
  * </p>
  */
-public class ImportInstanceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<ImportInstanceRequest> {
+public class ImportInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ImportInstanceRequest> {
 
     /**
      * <p>
@@ -84,8 +81,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param description
      *        A description for the instance being imported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportInstanceRequest withDescription(String description) {
@@ -102,8 +98,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      *        The launch specification.
      */
 
-    public void setLaunchSpecification(
-            ImportInstanceLaunchSpecification launchSpecification) {
+    public void setLaunchSpecification(ImportInstanceLaunchSpecification launchSpecification) {
         this.launchSpecification = launchSpecification;
     }
 
@@ -126,12 +121,10 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param launchSpecification
      *        The launch specification.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportInstanceRequest withLaunchSpecification(
-            ImportInstanceLaunchSpecification launchSpecification) {
+    public ImportInstanceRequest withLaunchSpecification(ImportInstanceLaunchSpecification launchSpecification) {
         setLaunchSpecification(launchSpecification);
         return this;
     }
@@ -166,8 +159,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.diskImages = new com.amazonaws.internal.SdkInternalList<DiskImage>(
-                diskImages);
+        this.diskImages = new com.amazonaws.internal.SdkInternalList<DiskImage>(diskImages);
     }
 
     /**
@@ -175,22 +167,19 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * The disk image.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDiskImages(java.util.Collection)} or
-     * {@link #withDiskImages(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDiskImages(java.util.Collection)} or {@link #withDiskImages(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param diskImages
      *        The disk image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportInstanceRequest withDiskImages(DiskImage... diskImages) {
         if (this.diskImages == null) {
-            setDiskImages(new com.amazonaws.internal.SdkInternalList<DiskImage>(
-                    diskImages.length));
+            setDiskImages(new com.amazonaws.internal.SdkInternalList<DiskImage>(diskImages.length));
         }
         for (DiskImage ele : diskImages) {
             this.diskImages.add(ele);
@@ -205,12 +194,10 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param diskImages
      *        The disk image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportInstanceRequest withDiskImages(
-            java.util.Collection<DiskImage> diskImages) {
+    public ImportInstanceRequest withDiskImages(java.util.Collection<DiskImage> diskImages) {
         setDiskImages(diskImages);
         return this;
     }
@@ -249,8 +236,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param platform
      *        The instance operating system.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformValues
      */
 
@@ -280,8 +266,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param platform
      *        The instance operating system.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformValues
      */
 
@@ -291,21 +276,18 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<ImportInstanceRequest> getDryRunRequest() {
-        Request<ImportInstanceRequest> request = new ImportInstanceRequestMarshaller()
-                .marshall(this);
+        Request<ImportInstanceRequest> request = new ImportInstanceRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -339,25 +321,19 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
         ImportInstanceRequest other = (ImportInstanceRequest) obj;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getLaunchSpecification() == null
-                ^ this.getLaunchSpecification() == null)
+        if (other.getLaunchSpecification() == null ^ this.getLaunchSpecification() == null)
             return false;
-        if (other.getLaunchSpecification() != null
-                && other.getLaunchSpecification().equals(
-                        this.getLaunchSpecification()) == false)
+        if (other.getLaunchSpecification() != null && other.getLaunchSpecification().equals(this.getLaunchSpecification()) == false)
             return false;
         if (other.getDiskImages() == null ^ this.getDiskImages() == null)
             return false;
-        if (other.getDiskImages() != null
-                && other.getDiskImages().equals(this.getDiskImages()) == false)
+        if (other.getDiskImages() != null && other.getDiskImages().equals(this.getDiskImages()) == false)
             return false;
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
-        if (other.getPlatform() != null
-                && other.getPlatform().equals(this.getPlatform()) == false)
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
         return true;
     }
@@ -367,17 +343,10 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLaunchSpecification() == null) ? 0
-                        : getLaunchSpecification().hashCode());
-        hashCode = prime * hashCode
-                + ((getDiskImages() == null) ? 0 : getDiskImages().hashCode());
-        hashCode = prime * hashCode
-                + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getLaunchSpecification() == null) ? 0 : getLaunchSpecification().hashCode());
+        hashCode = prime * hashCode + ((getDiskImages() == null) ? 0 : getDiskImages().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class RestoreDBClusterToPointInTimeRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -86,8 +82,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * The date and time to restore the DB cluster to.
      * </p>
      * <p>
-     * Valid Values: Value must be a time in Universal Coordinated Time (UTC)
-     * format
+     * Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
      * </p>
      * <p>
      * Constraints:
@@ -100,8 +95,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * </li>
      * <li>
      * <p>
-     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true
+     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
      * </p>
      * </li>
      * </ul>
@@ -112,15 +106,14 @@ public class RestoreDBClusterToPointInTimeRequest extends
     private java.util.Date restoreToTime;
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the
-     * latest restorable backup time, and <code>false</code> otherwise.
+     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
+     * <code>false</code> otherwise.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * <p>
-     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter
-     * is provided.
+     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      */
     private Boolean useLatestRestorableTime;
@@ -141,8 +134,8 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * The DB subnet group name to use for the new DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.
+     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     * Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -165,43 +158,37 @@ public class RestoreDBClusterToPointInTimeRequest extends
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster.
+     * The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-     * encryption key. If you are restoring a DB cluster with the same AWS
-     * account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the
-     * KMS encryption key.
+     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
+     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
+     * can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
-     * You can restore to a new DB cluster and encrypt the new DB cluster with a
-     * KMS key that is different than the KMS key used to encrypt the source DB
-     * cluster. The new DB cluster will be encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.
+     * You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS
+     * key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key identified by
+     * the <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
-     * If you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then the following will occur:
+     * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If the DB cluster is encrypted, then the restored DB cluster is encrypted
-     * using the KMS key that was used to encrypt the source DB cluster.
+     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to
+     * encrypt the source DB cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the DB cluster is not encrypted, then the restored DB cluster is not
-     * encrypted.
+     * If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is note
-     * encrypted, then the restore request is rejected.
+     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted, then the restore request is
+     * rejected.
      * </p>
      */
     private String kmsKeyId;
@@ -355,12 +342,10 @@ public class RestoreDBClusterToPointInTimeRequest extends
      *        Cannot end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RestoreDBClusterToPointInTimeRequest withDBClusterIdentifier(
-            String dBClusterIdentifier) {
+    public RestoreDBClusterToPointInTimeRequest withDBClusterIdentifier(String dBClusterIdentifier) {
         setDBClusterIdentifier(dBClusterIdentifier);
         return this;
     }
@@ -457,8 +442,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * </li>
      * </ul>
      * 
-     * @return The identifier of the source DB cluster from which to
-     *         restore.</p>
+     * @return The identifier of the source DB cluster from which to restore.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -545,12 +529,10 @@ public class RestoreDBClusterToPointInTimeRequest extends
      *        Cannot end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RestoreDBClusterToPointInTimeRequest withSourceDBClusterIdentifier(
-            String sourceDBClusterIdentifier) {
+    public RestoreDBClusterToPointInTimeRequest withSourceDBClusterIdentifier(String sourceDBClusterIdentifier) {
         setSourceDBClusterIdentifier(sourceDBClusterIdentifier);
         return this;
     }
@@ -560,8 +542,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * The date and time to restore the DB cluster to.
      * </p>
      * <p>
-     * Valid Values: Value must be a time in Universal Coordinated Time (UTC)
-     * format
+     * Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
      * </p>
      * <p>
      * Constraints:
@@ -574,8 +555,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * </li>
      * <li>
      * <p>
-     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true
+     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
      * </p>
      * </li>
      * </ul>
@@ -586,8 +566,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * @param restoreToTime
      *        The date and time to restore the DB cluster to.</p>
      *        <p>
-     *        Valid Values: Value must be a time in Universal Coordinated Time
-     *        (UTC) format
+     *        Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
      *        </p>
      *        <p>
      *        Constraints:
@@ -600,8 +579,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be specified if <code>UseLatestRestorableTime</code>
-     *        parameter is true
+     *        Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
      *        </p>
      *        </li>
      *        </ul>
@@ -618,8 +596,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * The date and time to restore the DB cluster to.
      * </p>
      * <p>
-     * Valid Values: Value must be a time in Universal Coordinated Time (UTC)
-     * format
+     * Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
      * </p>
      * <p>
      * Constraints:
@@ -632,8 +609,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * </li>
      * <li>
      * <p>
-     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true
+     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
      * </p>
      * </li>
      * </ul>
@@ -643,8 +619,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * 
      * @return The date and time to restore the DB cluster to.</p>
      *         <p>
-     *         Valid Values: Value must be a time in Universal Coordinated Time
-     *         (UTC) format
+     *         Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
      *         </p>
      *         <p>
      *         Constraints:
@@ -657,8 +632,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot be specified if <code>UseLatestRestorableTime</code>
-     *         parameter is true
+     *         Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
      *         </p>
      *         </li>
      *         </ul>
@@ -675,8 +649,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * The date and time to restore the DB cluster to.
      * </p>
      * <p>
-     * Valid Values: Value must be a time in Universal Coordinated Time (UTC)
-     * format
+     * Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
      * </p>
      * <p>
      * Constraints:
@@ -689,8 +662,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * </li>
      * <li>
      * <p>
-     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true
+     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
      * </p>
      * </li>
      * </ul>
@@ -701,8 +673,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * @param restoreToTime
      *        The date and time to restore the DB cluster to.</p>
      *        <p>
-     *        Valid Values: Value must be a time in Universal Coordinated Time
-     *        (UTC) format
+     *        Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
      *        </p>
      *        <p>
      *        Constraints:
@@ -715,46 +686,40 @@ public class RestoreDBClusterToPointInTimeRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be specified if <code>UseLatestRestorableTime</code>
-     *        parameter is true
+     *        Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>2015-03-07T23:45:00Z</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RestoreDBClusterToPointInTimeRequest withRestoreToTime(
-            java.util.Date restoreToTime) {
+    public RestoreDBClusterToPointInTimeRequest withRestoreToTime(java.util.Date restoreToTime) {
         setRestoreToTime(restoreToTime);
         return this;
     }
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the
-     * latest restorable backup time, and <code>false</code> otherwise.
+     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
+     * <code>false</code> otherwise.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * <p>
-     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter
-     * is provided.
+     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
      * @param useLatestRestorableTime
-     *        A value that is set to <code>true</code> to restore the DB cluster
-     *        to the latest restorable backup time, and <code>false</code>
-     *        otherwise. </p>
+     *        A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
+     *        and <code>false</code> otherwise. </p>
      *        <p>
      *        Default: <code>false</code>
      *        </p>
      *        <p>
-     *        Constraints: Cannot be specified if <code>RestoreToTime</code>
-     *        parameter is provided.
+     *        Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
      */
 
     public void setUseLatestRestorableTime(Boolean useLatestRestorableTime) {
@@ -763,26 +728,23 @@ public class RestoreDBClusterToPointInTimeRequest extends
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the
-     * latest restorable backup time, and <code>false</code> otherwise.
+     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
+     * <code>false</code> otherwise.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * <p>
-     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter
-     * is provided.
+     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
-     * @return A value that is set to <code>true</code> to restore the DB
-     *         cluster to the latest restorable backup time, and
-     *         <code>false</code> otherwise. </p>
+     * @return A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
+     *         and <code>false</code> otherwise. </p>
      *         <p>
      *         Default: <code>false</code>
      *         </p>
      *         <p>
-     *         Constraints: Cannot be specified if <code>RestoreToTime</code>
-     *         parameter is provided.
+     *         Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
      */
 
     public Boolean getUseLatestRestorableTime() {
@@ -791,59 +753,51 @@ public class RestoreDBClusterToPointInTimeRequest extends
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the
-     * latest restorable backup time, and <code>false</code> otherwise.
+     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
+     * <code>false</code> otherwise.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * <p>
-     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter
-     * is provided.
+     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
      * @param useLatestRestorableTime
-     *        A value that is set to <code>true</code> to restore the DB cluster
-     *        to the latest restorable backup time, and <code>false</code>
-     *        otherwise. </p>
+     *        A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
+     *        and <code>false</code> otherwise. </p>
      *        <p>
      *        Default: <code>false</code>
      *        </p>
      *        <p>
-     *        Constraints: Cannot be specified if <code>RestoreToTime</code>
-     *        parameter is provided.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RestoreDBClusterToPointInTimeRequest withUseLatestRestorableTime(
-            Boolean useLatestRestorableTime) {
+    public RestoreDBClusterToPointInTimeRequest withUseLatestRestorableTime(Boolean useLatestRestorableTime) {
         setUseLatestRestorableTime(useLatestRestorableTime);
         return this;
     }
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the
-     * latest restorable backup time, and <code>false</code> otherwise.
+     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
+     * <code>false</code> otherwise.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * <p>
-     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter
-     * is provided.
+     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
-     * @return A value that is set to <code>true</code> to restore the DB
-     *         cluster to the latest restorable backup time, and
-     *         <code>false</code> otherwise. </p>
+     * @return A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
+     *         and <code>false</code> otherwise. </p>
      *         <p>
      *         Default: <code>false</code>
      *         </p>
      *         <p>
-     *         Constraints: Cannot be specified if <code>RestoreToTime</code>
-     *         parameter is provided.
+     *         Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
      */
 
     public Boolean isUseLatestRestorableTime() {
@@ -862,8 +816,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * </p>
      * 
      * @param port
-     *        The port number on which the new DB cluster accepts
-     *        connections.</p>
+     *        The port number on which the new DB cluster accepts connections.</p>
      *        <p>
      *        Constraints: Value must be <code>1150-65535</code>
      *        </p>
@@ -886,8 +839,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Default: The same port as the original DB cluster.
      * </p>
      * 
-     * @return The port number on which the new DB cluster accepts
-     *         connections.</p>
+     * @return The port number on which the new DB cluster accepts connections.</p>
      *         <p>
      *         Constraints: Value must be <code>1150-65535</code>
      *         </p>
@@ -911,15 +863,13 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * </p>
      * 
      * @param port
-     *        The port number on which the new DB cluster accepts
-     *        connections.</p>
+     *        The port number on which the new DB cluster accepts connections.</p>
      *        <p>
      *        Constraints: Value must be <code>1150-65535</code>
      *        </p>
      *        <p>
      *        Default: The same port as the original DB cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RestoreDBClusterToPointInTimeRequest withPort(Integer port) {
@@ -932,8 +882,8 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * The DB subnet group name to use for the new DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.
+     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     * Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -942,9 +892,8 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * @param dBSubnetGroupName
      *        The DB subnet group name to use for the new DB cluster.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric
-     *        characters, periods, underscores, spaces, or hyphens. Must not be
-     *        default.
+     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
+     *        hyphens. Must not be default.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -959,8 +908,8 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * The DB subnet group name to use for the new DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.
+     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     * Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -968,9 +917,8 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * 
      * @return The DB subnet group name to use for the new DB cluster.</p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric
-     *         characters, periods, underscores, spaces, or hyphens. Must not be
-     *         default.
+     *         Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
+     *         hyphens. Must not be default.
      *         </p>
      *         <p>
      *         Example: <code>mySubnetgroup</code>
@@ -985,8 +933,8 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * The DB subnet group name to use for the new DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.
+     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     * Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -995,18 +943,15 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * @param dBSubnetGroupName
      *        The DB subnet group name to use for the new DB cluster.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric
-     *        characters, periods, underscores, spaces, or hyphens. Must not be
-     *        default.
+     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
+     *        hyphens. Must not be default.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RestoreDBClusterToPointInTimeRequest withDBSubnetGroupName(
-            String dBSubnetGroupName) {
+    public RestoreDBClusterToPointInTimeRequest withDBSubnetGroupName(String dBSubnetGroupName) {
         setDBSubnetGroupName(dBSubnetGroupName);
         return this;
     }
@@ -1043,12 +988,10 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * 
      * @param optionGroupName
      *        The name of the option group for the new DB cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RestoreDBClusterToPointInTimeRequest withOptionGroupName(
-            String optionGroupName) {
+    public RestoreDBClusterToPointInTimeRequest withOptionGroupName(String optionGroupName) {
         setOptionGroupName(optionGroupName);
         return this;
     }
@@ -1077,15 +1020,13 @@ public class RestoreDBClusterToPointInTimeRequest extends
      *        A lst of VPC security groups that the new DB cluster belongs to.
      */
 
-    public void setVpcSecurityGroupIds(
-            java.util.Collection<String> vpcSecurityGroupIds) {
+    public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
         if (vpcSecurityGroupIds == null) {
             this.vpcSecurityGroupIds = null;
             return;
         }
 
-        this.vpcSecurityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(
-                vpcSecurityGroupIds);
+        this.vpcSecurityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(vpcSecurityGroupIds);
     }
 
     /**
@@ -1093,23 +1034,19 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * A lst of VPC security groups that the new DB cluster belongs to.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVpcSecurityGroupIds(java.util.Collection)} or
-     * {@link #withVpcSecurityGroupIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcSecurityGroupIds(java.util.Collection)} or {@link #withVpcSecurityGroupIds(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param vpcSecurityGroupIds
      *        A lst of VPC security groups that the new DB cluster belongs to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RestoreDBClusterToPointInTimeRequest withVpcSecurityGroupIds(
-            String... vpcSecurityGroupIds) {
+    public RestoreDBClusterToPointInTimeRequest withVpcSecurityGroupIds(String... vpcSecurityGroupIds) {
         if (this.vpcSecurityGroupIds == null) {
-            setVpcSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    vpcSecurityGroupIds.length));
+            setVpcSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(vpcSecurityGroupIds.length));
         }
         for (String ele : vpcSecurityGroupIds) {
             this.vpcSecurityGroupIds.add(ele);
@@ -1124,12 +1061,10 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * 
      * @param vpcSecurityGroupIds
      *        A lst of VPC security groups that the new DB cluster belongs to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RestoreDBClusterToPointInTimeRequest withVpcSecurityGroupIds(
-            java.util.Collection<String> vpcSecurityGroupIds) {
+    public RestoreDBClusterToPointInTimeRequest withVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
         setVpcSecurityGroupIds(vpcSecurityGroupIds);
         return this;
     }
@@ -1160,15 +1095,13 @@ public class RestoreDBClusterToPointInTimeRequest extends
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RestoreDBClusterToPointInTimeRequest withTags(Tag... tags) {
@@ -1183,95 +1116,80 @@ public class RestoreDBClusterToPointInTimeRequest extends
 
     /**
      * @param tags
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RestoreDBClusterToPointInTimeRequest withTags(
-            java.util.Collection<Tag> tags) {
+    public RestoreDBClusterToPointInTimeRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
     }
 
     /**
      * <p>
-     * The KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster.
+     * The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-     * encryption key. If you are restoring a DB cluster with the same AWS
-     * account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the
-     * KMS encryption key.
+     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
+     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
+     * can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
-     * You can restore to a new DB cluster and encrypt the new DB cluster with a
-     * KMS key that is different than the KMS key used to encrypt the source DB
-     * cluster. The new DB cluster will be encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.
+     * You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS
+     * key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key identified by
+     * the <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
-     * If you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then the following will occur:
+     * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If the DB cluster is encrypted, then the restored DB cluster is encrypted
-     * using the KMS key that was used to encrypt the source DB cluster.
+     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to
+     * encrypt the source DB cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the DB cluster is not encrypted, then the restored DB cluster is not
-     * encrypted.
+     * If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is note
-     * encrypted, then the restore request is rejected.
+     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted, then the restore request is
+     * rejected.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier to use when restoring an encrypted DB
-     *        cluster from an encrypted DB cluster.</p>
+     *        The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
      *        <p>
-     *        The KMS key identifier is the Amazon Resource Name (ARN) for the
-     *        KMS encryption key. If you are restoring a DB cluster with the
-     *        same AWS account that owns the KMS encryption key used to encrypt
-     *        the new DB cluster, then you can use the KMS key alias instead of
-     *        the ARN for the KMS encryption key.
+     *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
+     *        a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB
+     *        cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
      *        </p>
      *        <p>
-     *        You can restore to a new DB cluster and encrypt the new DB cluster
-     *        with a KMS key that is different than the KMS key used to encrypt
-     *        the source DB cluster. The new DB cluster will be encrypted with
-     *        the KMS key identified by the <code>KmsKeyId</code> parameter.
+     *        You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than
+     *        the KMS key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key
+     *        identified by the <code>KmsKeyId</code> parameter.
      *        </p>
      *        <p>
-     *        If you do not specify a value for the <code>KmsKeyId</code>
-     *        parameter, then the following will occur:
+     *        If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If the DB cluster is encrypted, then the restored DB cluster is
-     *        encrypted using the KMS key that was used to encrypt the source DB
-     *        cluster.
+     *        If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used
+     *        to encrypt the source DB cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the DB cluster is not encrypted, then the restored DB cluster
-     *        is not encrypted.
+     *        If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If <code>DBClusterIdentifier</code> refers to a DB cluster that is
-     *        note encrypted, then the restore request is rejected.
+     *        If <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted, then the restore
+     *        request is rejected.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1280,83 +1198,69 @@ public class RestoreDBClusterToPointInTimeRequest extends
 
     /**
      * <p>
-     * The KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster.
+     * The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-     * encryption key. If you are restoring a DB cluster with the same AWS
-     * account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the
-     * KMS encryption key.
+     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
+     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
+     * can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
-     * You can restore to a new DB cluster and encrypt the new DB cluster with a
-     * KMS key that is different than the KMS key used to encrypt the source DB
-     * cluster. The new DB cluster will be encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.
+     * You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS
+     * key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key identified by
+     * the <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
-     * If you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then the following will occur:
+     * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If the DB cluster is encrypted, then the restored DB cluster is encrypted
-     * using the KMS key that was used to encrypt the source DB cluster.
+     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to
+     * encrypt the source DB cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the DB cluster is not encrypted, then the restored DB cluster is not
-     * encrypted.
+     * If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is note
-     * encrypted, then the restore request is rejected.
+     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted, then the restore request is
+     * rejected.
      * </p>
      * 
-     * @return The KMS key identifier to use when restoring an encrypted DB
-     *         cluster from an encrypted DB cluster.</p>
+     * @return The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
      *         <p>
-     *         The KMS key identifier is the Amazon Resource Name (ARN) for the
-     *         KMS encryption key. If you are restoring a DB cluster with the
-     *         same AWS account that owns the KMS encryption key used to encrypt
-     *         the new DB cluster, then you can use the KMS key alias instead of
-     *         the ARN for the KMS encryption key.
+     *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
+     *         a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB
+     *         cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
      *         </p>
      *         <p>
-     *         You can restore to a new DB cluster and encrypt the new DB
-     *         cluster with a KMS key that is different than the KMS key used to
-     *         encrypt the source DB cluster. The new DB cluster will be
-     *         encrypted with the KMS key identified by the
-     *         <code>KmsKeyId</code> parameter.
+     *         You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than
+     *         the KMS key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key
+     *         identified by the <code>KmsKeyId</code> parameter.
      *         </p>
      *         <p>
-     *         If you do not specify a value for the <code>KmsKeyId</code>
-     *         parameter, then the following will occur:
+     *         If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If the DB cluster is encrypted, then the restored DB cluster is
-     *         encrypted using the KMS key that was used to encrypt the source
-     *         DB cluster.
+     *         If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used
+     *         to encrypt the source DB cluster.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the DB cluster is not encrypted, then the restored DB cluster
-     *         is not encrypted.
+     *         If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If <code>DBClusterIdentifier</code> refers to a DB cluster that
-     *         is note encrypted, then the restore request is rejected.
+     *         If <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted, then the restore
+     *         request is rejected.
      */
 
     public String getKmsKeyId() {
@@ -1365,85 +1269,71 @@ public class RestoreDBClusterToPointInTimeRequest extends
 
     /**
      * <p>
-     * The KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster.
+     * The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-     * encryption key. If you are restoring a DB cluster with the same AWS
-     * account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the
-     * KMS encryption key.
+     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
+     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
+     * can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
-     * You can restore to a new DB cluster and encrypt the new DB cluster with a
-     * KMS key that is different than the KMS key used to encrypt the source DB
-     * cluster. The new DB cluster will be encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.
+     * You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS
+     * key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key identified by
+     * the <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
-     * If you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then the following will occur:
+     * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If the DB cluster is encrypted, then the restored DB cluster is encrypted
-     * using the KMS key that was used to encrypt the source DB cluster.
+     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to
+     * encrypt the source DB cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the DB cluster is not encrypted, then the restored DB cluster is not
-     * encrypted.
+     * If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is note
-     * encrypted, then the restore request is rejected.
+     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted, then the restore request is
+     * rejected.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier to use when restoring an encrypted DB
-     *        cluster from an encrypted DB cluster.</p>
+     *        The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
      *        <p>
-     *        The KMS key identifier is the Amazon Resource Name (ARN) for the
-     *        KMS encryption key. If you are restoring a DB cluster with the
-     *        same AWS account that owns the KMS encryption key used to encrypt
-     *        the new DB cluster, then you can use the KMS key alias instead of
-     *        the ARN for the KMS encryption key.
+     *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
+     *        a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB
+     *        cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
      *        </p>
      *        <p>
-     *        You can restore to a new DB cluster and encrypt the new DB cluster
-     *        with a KMS key that is different than the KMS key used to encrypt
-     *        the source DB cluster. The new DB cluster will be encrypted with
-     *        the KMS key identified by the <code>KmsKeyId</code> parameter.
+     *        You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than
+     *        the KMS key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key
+     *        identified by the <code>KmsKeyId</code> parameter.
      *        </p>
      *        <p>
-     *        If you do not specify a value for the <code>KmsKeyId</code>
-     *        parameter, then the following will occur:
+     *        If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If the DB cluster is encrypted, then the restored DB cluster is
-     *        encrypted using the KMS key that was used to encrypt the source DB
-     *        cluster.
+     *        If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used
+     *        to encrypt the source DB cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the DB cluster is not encrypted, then the restored DB cluster
-     *        is not encrypted.
+     *        If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If <code>DBClusterIdentifier</code> refers to a DB cluster that is
-     *        note encrypted, then the restore request is rejected.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted, then the restore
+     *        request is rejected.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RestoreDBClusterToPointInTimeRequest withKmsKeyId(String kmsKeyId) {
@@ -1452,8 +1342,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1466,13 +1355,11 @@ public class RestoreDBClusterToPointInTimeRequest extends
         if (getDBClusterIdentifier() != null)
             sb.append("DBClusterIdentifier: " + getDBClusterIdentifier() + ",");
         if (getSourceDBClusterIdentifier() != null)
-            sb.append("SourceDBClusterIdentifier: "
-                    + getSourceDBClusterIdentifier() + ",");
+            sb.append("SourceDBClusterIdentifier: " + getSourceDBClusterIdentifier() + ",");
         if (getRestoreToTime() != null)
             sb.append("RestoreToTime: " + getRestoreToTime() + ",");
         if (getUseLatestRestorableTime() != null)
-            sb.append("UseLatestRestorableTime: "
-                    + getUseLatestRestorableTime() + ",");
+            sb.append("UseLatestRestorableTime: " + getUseLatestRestorableTime() + ",");
         if (getPort() != null)
             sb.append("Port: " + getPort() + ",");
         if (getDBSubnetGroupName() != null)
@@ -1499,66 +1386,45 @@ public class RestoreDBClusterToPointInTimeRequest extends
         if (obj instanceof RestoreDBClusterToPointInTimeRequest == false)
             return false;
         RestoreDBClusterToPointInTimeRequest other = (RestoreDBClusterToPointInTimeRequest) obj;
-        if (other.getDBClusterIdentifier() == null
-                ^ this.getDBClusterIdentifier() == null)
+        if (other.getDBClusterIdentifier() == null ^ this.getDBClusterIdentifier() == null)
             return false;
-        if (other.getDBClusterIdentifier() != null
-                && other.getDBClusterIdentifier().equals(
-                        this.getDBClusterIdentifier()) == false)
+        if (other.getDBClusterIdentifier() != null && other.getDBClusterIdentifier().equals(this.getDBClusterIdentifier()) == false)
             return false;
-        if (other.getSourceDBClusterIdentifier() == null
-                ^ this.getSourceDBClusterIdentifier() == null)
+        if (other.getSourceDBClusterIdentifier() == null ^ this.getSourceDBClusterIdentifier() == null)
             return false;
-        if (other.getSourceDBClusterIdentifier() != null
-                && other.getSourceDBClusterIdentifier().equals(
-                        this.getSourceDBClusterIdentifier()) == false)
+        if (other.getSourceDBClusterIdentifier() != null && other.getSourceDBClusterIdentifier().equals(this.getSourceDBClusterIdentifier()) == false)
             return false;
         if (other.getRestoreToTime() == null ^ this.getRestoreToTime() == null)
             return false;
-        if (other.getRestoreToTime() != null
-                && other.getRestoreToTime().equals(this.getRestoreToTime()) == false)
+        if (other.getRestoreToTime() != null && other.getRestoreToTime().equals(this.getRestoreToTime()) == false)
             return false;
-        if (other.getUseLatestRestorableTime() == null
-                ^ this.getUseLatestRestorableTime() == null)
+        if (other.getUseLatestRestorableTime() == null ^ this.getUseLatestRestorableTime() == null)
             return false;
-        if (other.getUseLatestRestorableTime() != null
-                && other.getUseLatestRestorableTime().equals(
-                        this.getUseLatestRestorableTime()) == false)
+        if (other.getUseLatestRestorableTime() != null && other.getUseLatestRestorableTime().equals(this.getUseLatestRestorableTime()) == false)
             return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
-        if (other.getPort() != null
-                && other.getPort().equals(this.getPort()) == false)
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
-        if (other.getDBSubnetGroupName() == null
-                ^ this.getDBSubnetGroupName() == null)
+        if (other.getDBSubnetGroupName() == null ^ this.getDBSubnetGroupName() == null)
             return false;
-        if (other.getDBSubnetGroupName() != null
-                && other.getDBSubnetGroupName().equals(
-                        this.getDBSubnetGroupName()) == false)
+        if (other.getDBSubnetGroupName() != null && other.getDBSubnetGroupName().equals(this.getDBSubnetGroupName()) == false)
             return false;
-        if (other.getOptionGroupName() == null
-                ^ this.getOptionGroupName() == null)
+        if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null)
             return false;
-        if (other.getOptionGroupName() != null
-                && other.getOptionGroupName().equals(this.getOptionGroupName()) == false)
+        if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false)
             return false;
-        if (other.getVpcSecurityGroupIds() == null
-                ^ this.getVpcSecurityGroupIds() == null)
+        if (other.getVpcSecurityGroupIds() == null ^ this.getVpcSecurityGroupIds() == null)
             return false;
-        if (other.getVpcSecurityGroupIds() != null
-                && other.getVpcSecurityGroupIds().equals(
-                        this.getVpcSecurityGroupIds()) == false)
+        if (other.getVpcSecurityGroupIds() != null && other.getVpcSecurityGroupIds().equals(this.getVpcSecurityGroupIds()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
-        if (other.getKmsKeyId() != null
-                && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         return true;
     }
@@ -1568,40 +1434,16 @@ public class RestoreDBClusterToPointInTimeRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDBClusterIdentifier() == null) ? 0
-                        : getDBClusterIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceDBClusterIdentifier() == null) ? 0
-                        : getSourceDBClusterIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRestoreToTime() == null) ? 0 : getRestoreToTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUseLatestRestorableTime() == null) ? 0
-                        : getUseLatestRestorableTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getPort() == null) ? 0 : getPort().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBSubnetGroupName() == null) ? 0
-                        : getDBSubnetGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOptionGroupName() == null) ? 0 : getOptionGroupName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVpcSecurityGroupIds() == null) ? 0
-                        : getVpcSecurityGroupIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode
-                + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSourceDBClusterIdentifier() == null) ? 0 : getSourceDBClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getRestoreToTime() == null) ? 0 : getRestoreToTime().hashCode());
+        hashCode = prime * hashCode + ((getUseLatestRestorableTime() == null) ? 0 : getUseLatestRestorableTime().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getDBSubnetGroupName() == null) ? 0 : getDBSubnetGroupName().hashCode());
+        hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode());
+        hashCode = prime * hashCode + ((getVpcSecurityGroupIds() == null) ? 0 : getVpcSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

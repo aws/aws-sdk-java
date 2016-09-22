@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -25,9 +23,8 @@ public class ThrottleSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The API request burst limit, the maximum rate limit over a time ranging
-     * from one to a few seconds, depending upon whether the underlying token
-     * bucket is at its full capacity.
+     * The API request burst limit, the maximum rate limit over a time ranging from one to a few seconds, depending upon
+     * whether the underlying token bucket is at its full capacity.
      * </p>
      */
     private Integer burstLimit;
@@ -40,15 +37,13 @@ public class ThrottleSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The API request burst limit, the maximum rate limit over a time ranging
-     * from one to a few seconds, depending upon whether the underlying token
-     * bucket is at its full capacity.
+     * The API request burst limit, the maximum rate limit over a time ranging from one to a few seconds, depending upon
+     * whether the underlying token bucket is at its full capacity.
      * </p>
      * 
      * @param burstLimit
-     *        The API request burst limit, the maximum rate limit over a time
-     *        ranging from one to a few seconds, depending upon whether the
-     *        underlying token bucket is at its full capacity.
+     *        The API request burst limit, the maximum rate limit over a time ranging from one to a few seconds,
+     *        depending upon whether the underlying token bucket is at its full capacity.
      */
 
     public void setBurstLimit(Integer burstLimit) {
@@ -57,14 +52,12 @@ public class ThrottleSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The API request burst limit, the maximum rate limit over a time ranging
-     * from one to a few seconds, depending upon whether the underlying token
-     * bucket is at its full capacity.
+     * The API request burst limit, the maximum rate limit over a time ranging from one to a few seconds, depending upon
+     * whether the underlying token bucket is at its full capacity.
      * </p>
      * 
-     * @return The API request burst limit, the maximum rate limit over a time
-     *         ranging from one to a few seconds, depending upon whether the
-     *         underlying token bucket is at its full capacity.
+     * @return The API request burst limit, the maximum rate limit over a time ranging from one to a few seconds,
+     *         depending upon whether the underlying token bucket is at its full capacity.
      */
 
     public Integer getBurstLimit() {
@@ -73,17 +66,14 @@ public class ThrottleSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The API request burst limit, the maximum rate limit over a time ranging
-     * from one to a few seconds, depending upon whether the underlying token
-     * bucket is at its full capacity.
+     * The API request burst limit, the maximum rate limit over a time ranging from one to a few seconds, depending upon
+     * whether the underlying token bucket is at its full capacity.
      * </p>
      * 
      * @param burstLimit
-     *        The API request burst limit, the maximum rate limit over a time
-     *        ranging from one to a few seconds, depending upon whether the
-     *        underlying token bucket is at its full capacity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The API request burst limit, the maximum rate limit over a time ranging from one to a few seconds,
+     *        depending upon whether the underlying token bucket is at its full capacity.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ThrottleSettings withBurstLimit(Integer burstLimit) {
@@ -123,8 +113,7 @@ public class ThrottleSettings implements Serializable, Cloneable {
      * 
      * @param rateLimit
      *        The API request steady-state rate limit.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ThrottleSettings withRateLimit(Double rateLimit) {
@@ -133,8 +122,7 @@ public class ThrottleSettings implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -164,13 +152,11 @@ public class ThrottleSettings implements Serializable, Cloneable {
         ThrottleSettings other = (ThrottleSettings) obj;
         if (other.getBurstLimit() == null ^ this.getBurstLimit() == null)
             return false;
-        if (other.getBurstLimit() != null
-                && other.getBurstLimit().equals(this.getBurstLimit()) == false)
+        if (other.getBurstLimit() != null && other.getBurstLimit().equals(this.getBurstLimit()) == false)
             return false;
         if (other.getRateLimit() == null ^ this.getRateLimit() == null)
             return false;
-        if (other.getRateLimit() != null
-                && other.getRateLimit().equals(this.getRateLimit()) == false)
+        if (other.getRateLimit() != null && other.getRateLimit().equals(this.getRateLimit()) == false)
             return false;
         return true;
     }
@@ -180,10 +166,8 @@ public class ThrottleSettings implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getBurstLimit() == null) ? 0 : getBurstLimit().hashCode());
-        hashCode = prime * hashCode
-                + ((getRateLimit() == null) ? 0 : getRateLimit().hashCode());
+        hashCode = prime * hashCode + ((getBurstLimit() == null) ? 0 : getBurstLimit().hashCode());
+        hashCode = prime * hashCode + ((getRateLimit() == null) ? 0 : getRateLimit().hashCode());
         return hashCode;
     }
 
@@ -192,9 +176,7 @@ public class ThrottleSettings implements Serializable, Cloneable {
         try {
             return (ThrottleSettings) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

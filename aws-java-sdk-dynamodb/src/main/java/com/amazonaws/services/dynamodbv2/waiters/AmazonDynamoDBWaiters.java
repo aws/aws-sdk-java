@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.waiters;
 
@@ -29,8 +27,7 @@ public class AmazonDynamoDBWaiters {
      */
     private final AmazonDynamoDB client;
 
-    private final ExecutorService executorService = Executors
-            .newFixedThreadPool(50);
+    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
 
     /**
      * Constructs a new AmazonDynamoDBWaiters with the given client
@@ -44,40 +41,28 @@ public class AmazonDynamoDBWaiters {
     }
 
     /**
-     * Builds a TableExists waiter by using custom parameters waiterParameters
-     * and other parameters defined in the waiters specification, and then polls
-     * until it determines whether the resource entered the desired state or
-     * not, where polling criteria is bound by either default polling strategy
-     * or custom polling strategy.
+     * Builds a TableExists waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
      */
     public Waiter<DescribeTableRequest> tableExists() {
 
-        return new WaiterBuilder<DescribeTableRequest, DescribeTableResult>()
-                .withSdkFunction(new DescribeTableFunction(client))
-                .withAcceptors(new TableExists.IsACTIVEMatcher(),
-                        new TableExists.IsResourceNotFoundExceptionMatcher())
-                .withDefaultPollingStrategy(
-                        new PollingStrategy(new MaxAttemptsRetryStrategy(25),
-                                new FixedDelayStrategy(20)))
+        return new WaiterBuilder<DescribeTableRequest, DescribeTableResult>().withSdkFunction(new DescribeTableFunction(client))
+                .withAcceptors(new TableExists.IsACTIVEMatcher(), new TableExists.IsResourceNotFoundExceptionMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(25), new FixedDelayStrategy(20)))
                 .withExecutorService(executorService).build();
     }
 
     /**
-     * Builds a TableNotExists waiter by using custom parameters
-     * waiterParameters and other parameters defined in the waiters
-     * specification, and then polls until it determines whether the resource
-     * entered the desired state or not, where polling criteria is bound by
-     * either default polling strategy or custom polling strategy.
+     * Builds a TableNotExists waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
      */
     public Waiter<DescribeTableRequest> tableNotExists() {
 
-        return new WaiterBuilder<DescribeTableRequest, DescribeTableResult>()
-                .withSdkFunction(new DescribeTableFunction(client))
-                .withAcceptors(
-                        new TableNotExists.IsResourceNotFoundExceptionMatcher())
-                .withDefaultPollingStrategy(
-                        new PollingStrategy(new MaxAttemptsRetryStrategy(25),
-                                new FixedDelayStrategy(20)))
+        return new WaiterBuilder<DescribeTableRequest, DescribeTableResult>().withSdkFunction(new DescribeTableFunction(client))
+                .withAcceptors(new TableNotExists.IsResourceNotFoundExceptionMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(25), new FixedDelayStrategy(20)))
                 .withExecutorService(executorService).build();
     }
 

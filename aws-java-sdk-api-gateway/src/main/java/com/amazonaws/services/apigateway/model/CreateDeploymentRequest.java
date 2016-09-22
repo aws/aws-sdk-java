@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -22,28 +20,23 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Requests Amazon API Gateway to create a <a>Deployment</a> resource.
  * </p>
  */
-public class CreateDeploymentRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <a>RestApi</a> resource identifier for the <a>Deployment</a> resource
-     * to create.
+     * The <a>RestApi</a> resource identifier for the <a>Deployment</a> resource to create.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The name of the <a>Stage</a> resource for the <a>Deployment</a> resource
-     * to create.
+     * The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
      * </p>
      */
     private String stageName;
     /**
      * <p>
-     * The description of the <a>Stage</a> resource for the <a>Deployment</a>
-     * resource to create.
+     * The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
      * </p>
      */
     private String stageDescription;
@@ -55,23 +48,21 @@ public class CreateDeploymentRequest extends
     private String description;
     /**
      * <p>
-     * Enables a cache cluster for the <a>Stage</a> resource specified in the
-     * input.
+     * Enables a cache cluster for the <a>Stage</a> resource specified in the input.
      * </p>
      */
     private Boolean cacheClusterEnabled;
     /**
      * <p>
-     * Specifies the cache cluster size for the <a>Stage</a> resource specified
-     * in the input, if a cache cluster is enabled.
+     * Specifies the cache cluster size for the <a>Stage</a> resource specified in the input, if a cache cluster is
+     * enabled.
      * </p>
      */
     private String cacheClusterSize;
     /**
      * <p>
-     * A map that defines the stage variables for the <a>Stage</a> resource that
-     * is associated with the new deployment. Variable names can have
-     * alphanumeric and underscore characters, and the values must match
+     * A map that defines the stage variables for the <a>Stage</a> resource that is associated with the new deployment.
+     * Variable names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      */
@@ -79,13 +70,11 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * The <a>RestApi</a> resource identifier for the <a>Deployment</a> resource
-     * to create.
+     * The <a>RestApi</a> resource identifier for the <a>Deployment</a> resource to create.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> resource identifier for the <a>Deployment</a>
-     *        resource to create.
+     *        The <a>RestApi</a> resource identifier for the <a>Deployment</a> resource to create.
      */
 
     public void setRestApiId(String restApiId) {
@@ -94,12 +83,10 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * The <a>RestApi</a> resource identifier for the <a>Deployment</a> resource
-     * to create.
+     * The <a>RestApi</a> resource identifier for the <a>Deployment</a> resource to create.
      * </p>
      * 
-     * @return The <a>RestApi</a> resource identifier for the <a>Deployment</a>
-     *         resource to create.
+     * @return The <a>RestApi</a> resource identifier for the <a>Deployment</a> resource to create.
      */
 
     public String getRestApiId() {
@@ -108,15 +95,12 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * The <a>RestApi</a> resource identifier for the <a>Deployment</a> resource
-     * to create.
+     * The <a>RestApi</a> resource identifier for the <a>Deployment</a> resource to create.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> resource identifier for the <a>Deployment</a>
-     *        resource to create.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <a>RestApi</a> resource identifier for the <a>Deployment</a> resource to create.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withRestApiId(String restApiId) {
@@ -126,13 +110,11 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * The name of the <a>Stage</a> resource for the <a>Deployment</a> resource
-     * to create.
+     * The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
      * </p>
      * 
      * @param stageName
-     *        The name of the <a>Stage</a> resource for the <a>Deployment</a>
-     *        resource to create.
+     *        The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
      */
 
     public void setStageName(String stageName) {
@@ -141,12 +123,10 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * The name of the <a>Stage</a> resource for the <a>Deployment</a> resource
-     * to create.
+     * The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
      * </p>
      * 
-     * @return The name of the <a>Stage</a> resource for the <a>Deployment</a>
-     *         resource to create.
+     * @return The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
      */
 
     public String getStageName() {
@@ -155,15 +135,12 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * The name of the <a>Stage</a> resource for the <a>Deployment</a> resource
-     * to create.
+     * The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
      * </p>
      * 
      * @param stageName
-     *        The name of the <a>Stage</a> resource for the <a>Deployment</a>
-     *        resource to create.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withStageName(String stageName) {
@@ -173,13 +150,11 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * The description of the <a>Stage</a> resource for the <a>Deployment</a>
-     * resource to create.
+     * The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
      * </p>
      * 
      * @param stageDescription
-     *        The description of the <a>Stage</a> resource for the
-     *        <a>Deployment</a> resource to create.
+     *        The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
      */
 
     public void setStageDescription(String stageDescription) {
@@ -188,12 +163,10 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * The description of the <a>Stage</a> resource for the <a>Deployment</a>
-     * resource to create.
+     * The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
      * </p>
      * 
-     * @return The description of the <a>Stage</a> resource for the
-     *         <a>Deployment</a> resource to create.
+     * @return The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
      */
 
     public String getStageDescription() {
@@ -202,15 +175,12 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * The description of the <a>Stage</a> resource for the <a>Deployment</a>
-     * resource to create.
+     * The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
      * </p>
      * 
      * @param stageDescription
-     *        The description of the <a>Stage</a> resource for the
-     *        <a>Deployment</a> resource to create.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withStageDescription(String stageDescription) {
@@ -250,8 +220,7 @@ public class CreateDeploymentRequest extends
      * 
      * @param description
      *        The description for the <a>Deployment</a> resource to create.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withDescription(String description) {
@@ -261,13 +230,11 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * Enables a cache cluster for the <a>Stage</a> resource specified in the
-     * input.
+     * Enables a cache cluster for the <a>Stage</a> resource specified in the input.
      * </p>
      * 
      * @param cacheClusterEnabled
-     *        Enables a cache cluster for the <a>Stage</a> resource specified in
-     *        the input.
+     *        Enables a cache cluster for the <a>Stage</a> resource specified in the input.
      */
 
     public void setCacheClusterEnabled(Boolean cacheClusterEnabled) {
@@ -276,12 +243,10 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * Enables a cache cluster for the <a>Stage</a> resource specified in the
-     * input.
+     * Enables a cache cluster for the <a>Stage</a> resource specified in the input.
      * </p>
      * 
-     * @return Enables a cache cluster for the <a>Stage</a> resource specified
-     *         in the input.
+     * @return Enables a cache cluster for the <a>Stage</a> resource specified in the input.
      */
 
     public Boolean getCacheClusterEnabled() {
@@ -290,31 +255,25 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * Enables a cache cluster for the <a>Stage</a> resource specified in the
-     * input.
+     * Enables a cache cluster for the <a>Stage</a> resource specified in the input.
      * </p>
      * 
      * @param cacheClusterEnabled
-     *        Enables a cache cluster for the <a>Stage</a> resource specified in
-     *        the input.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Enables a cache cluster for the <a>Stage</a> resource specified in the input.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDeploymentRequest withCacheClusterEnabled(
-            Boolean cacheClusterEnabled) {
+    public CreateDeploymentRequest withCacheClusterEnabled(Boolean cacheClusterEnabled) {
         setCacheClusterEnabled(cacheClusterEnabled);
         return this;
     }
 
     /**
      * <p>
-     * Enables a cache cluster for the <a>Stage</a> resource specified in the
-     * input.
+     * Enables a cache cluster for the <a>Stage</a> resource specified in the input.
      * </p>
      * 
-     * @return Enables a cache cluster for the <a>Stage</a> resource specified
-     *         in the input.
+     * @return Enables a cache cluster for the <a>Stage</a> resource specified in the input.
      */
 
     public Boolean isCacheClusterEnabled() {
@@ -323,13 +282,13 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * Specifies the cache cluster size for the <a>Stage</a> resource specified
-     * in the input, if a cache cluster is enabled.
+     * Specifies the cache cluster size for the <a>Stage</a> resource specified in the input, if a cache cluster is
+     * enabled.
      * </p>
      * 
      * @param cacheClusterSize
-     *        Specifies the cache cluster size for the <a>Stage</a> resource
-     *        specified in the input, if a cache cluster is enabled.
+     *        Specifies the cache cluster size for the <a>Stage</a> resource specified in the input, if a cache cluster
+     *        is enabled.
      */
 
     public void setCacheClusterSize(String cacheClusterSize) {
@@ -338,12 +297,12 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * Specifies the cache cluster size for the <a>Stage</a> resource specified
-     * in the input, if a cache cluster is enabled.
+     * Specifies the cache cluster size for the <a>Stage</a> resource specified in the input, if a cache cluster is
+     * enabled.
      * </p>
      * 
-     * @return Specifies the cache cluster size for the <a>Stage</a> resource
-     *         specified in the input, if a cache cluster is enabled.
+     * @return Specifies the cache cluster size for the <a>Stage</a> resource specified in the input, if a cache cluster
+     *         is enabled.
      */
 
     public String getCacheClusterSize() {
@@ -352,15 +311,14 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * Specifies the cache cluster size for the <a>Stage</a> resource specified
-     * in the input, if a cache cluster is enabled.
+     * Specifies the cache cluster size for the <a>Stage</a> resource specified in the input, if a cache cluster is
+     * enabled.
      * </p>
      * 
      * @param cacheClusterSize
-     *        Specifies the cache cluster size for the <a>Stage</a> resource
-     *        specified in the input, if a cache cluster is enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the cache cluster size for the <a>Stage</a> resource specified in the input, if a cache cluster
+     *        is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withCacheClusterSize(String cacheClusterSize) {
@@ -370,16 +328,14 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * A map that defines the stage variables for the <a>Stage</a> resource that
-     * is associated with the new deployment. Variable names can have
-     * alphanumeric and underscore characters, and the values must match
+     * A map that defines the stage variables for the <a>Stage</a> resource that is associated with the new deployment.
+     * Variable names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
-     * @return A map that defines the stage variables for the <a>Stage</a>
-     *         resource that is associated with the new deployment. Variable
-     *         names can have alphanumeric and underscore characters, and the
-     *         values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * @return A map that defines the stage variables for the <a>Stage</a> resource that is associated with the new
+     *         deployment. Variable names can have alphanumeric and underscore characters, and the values must match
+     *         <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
 
     public java.util.Map<String, String> getVariables() {
@@ -388,17 +344,15 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * A map that defines the stage variables for the <a>Stage</a> resource that
-     * is associated with the new deployment. Variable names can have
-     * alphanumeric and underscore characters, and the values must match
+     * A map that defines the stage variables for the <a>Stage</a> resource that is associated with the new deployment.
+     * Variable names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
-     *        A map that defines the stage variables for the <a>Stage</a>
-     *        resource that is associated with the new deployment. Variable
-     *        names can have alphanumeric and underscore characters, and the
-     *        values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     *        A map that defines the stage variables for the <a>Stage</a> resource that is associated with the new
+     *        deployment. Variable names can have alphanumeric and underscore characters, and the values must match
+     *        <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
 
     public void setVariables(java.util.Map<String, String> variables) {
@@ -407,23 +361,19 @@ public class CreateDeploymentRequest extends
 
     /**
      * <p>
-     * A map that defines the stage variables for the <a>Stage</a> resource that
-     * is associated with the new deployment. Variable names can have
-     * alphanumeric and underscore characters, and the values must match
+     * A map that defines the stage variables for the <a>Stage</a> resource that is associated with the new deployment.
+     * Variable names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
-     *        A map that defines the stage variables for the <a>Stage</a>
-     *        resource that is associated with the new deployment. Variable
-     *        names can have alphanumeric and underscore characters, and the
-     *        values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A map that defines the stage variables for the <a>Stage</a> resource that is associated with the new
+     *        deployment. Variable names can have alphanumeric and underscore characters, and the values must match
+     *        <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDeploymentRequest withVariables(
-            java.util.Map<String, String> variables) {
+    public CreateDeploymentRequest withVariables(java.util.Map<String, String> variables) {
         setVariables(variables);
         return this;
     }
@@ -433,15 +383,14 @@ public class CreateDeploymentRequest extends
             this.variables = new java.util.HashMap<String, String>();
         }
         if (this.variables.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.variables.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Variables. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into Variables. &lt;p> Returns a reference to this object so that method calls can
+     * be chained together.
      */
 
     public CreateDeploymentRequest clearVariablesEntries() {
@@ -450,8 +399,7 @@ public class CreateDeploymentRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -491,44 +439,31 @@ public class CreateDeploymentRequest extends
         CreateDeploymentRequest other = (CreateDeploymentRequest) obj;
         if (other.getRestApiId() == null ^ this.getRestApiId() == null)
             return false;
-        if (other.getRestApiId() != null
-                && other.getRestApiId().equals(this.getRestApiId()) == false)
+        if (other.getRestApiId() != null && other.getRestApiId().equals(this.getRestApiId()) == false)
             return false;
         if (other.getStageName() == null ^ this.getStageName() == null)
             return false;
-        if (other.getStageName() != null
-                && other.getStageName().equals(this.getStageName()) == false)
+        if (other.getStageName() != null && other.getStageName().equals(this.getStageName()) == false)
             return false;
-        if (other.getStageDescription() == null
-                ^ this.getStageDescription() == null)
+        if (other.getStageDescription() == null ^ this.getStageDescription() == null)
             return false;
-        if (other.getStageDescription() != null
-                && other.getStageDescription().equals(
-                        this.getStageDescription()) == false)
+        if (other.getStageDescription() != null && other.getStageDescription().equals(this.getStageDescription()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getCacheClusterEnabled() == null
-                ^ this.getCacheClusterEnabled() == null)
+        if (other.getCacheClusterEnabled() == null ^ this.getCacheClusterEnabled() == null)
             return false;
-        if (other.getCacheClusterEnabled() != null
-                && other.getCacheClusterEnabled().equals(
-                        this.getCacheClusterEnabled()) == false)
+        if (other.getCacheClusterEnabled() != null && other.getCacheClusterEnabled().equals(this.getCacheClusterEnabled()) == false)
             return false;
-        if (other.getCacheClusterSize() == null
-                ^ this.getCacheClusterSize() == null)
+        if (other.getCacheClusterSize() == null ^ this.getCacheClusterSize() == null)
             return false;
-        if (other.getCacheClusterSize() != null
-                && other.getCacheClusterSize().equals(
-                        this.getCacheClusterSize()) == false)
+        if (other.getCacheClusterSize() != null && other.getCacheClusterSize().equals(this.getCacheClusterSize()) == false)
             return false;
         if (other.getVariables() == null ^ this.getVariables() == null)
             return false;
-        if (other.getVariables() != null
-                && other.getVariables().equals(this.getVariables()) == false)
+        if (other.getVariables() != null && other.getVariables().equals(this.getVariables()) == false)
             return false;
         return true;
     }
@@ -538,27 +473,13 @@ public class CreateDeploymentRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStageName() == null) ? 0 : getStageName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStageDescription() == null) ? 0 : getStageDescription()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheClusterEnabled() == null) ? 0
-                        : getCacheClusterEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheClusterSize() == null) ? 0 : getCacheClusterSize()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getVariables() == null) ? 0 : getVariables().hashCode());
+        hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
+        hashCode = prime * hashCode + ((getStageName() == null) ? 0 : getStageName().hashCode());
+        hashCode = prime * hashCode + ((getStageDescription() == null) ? 0 : getStageDescription().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getCacheClusterEnabled() == null) ? 0 : getCacheClusterEnabled().hashCode());
+        hashCode = prime * hashCode + ((getCacheClusterSize() == null) ? 0 : getCacheClusterSize().hashCode());
+        hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
         return hashCode;
     }
 

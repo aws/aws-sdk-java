@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -43,45 +41,34 @@ import com.amazonaws.protocol.json.*;
 /**
  * DetachPrincipalPolicyRequest Marshaller
  */
-public class DetachPrincipalPolicyRequestMarshaller
-        implements
-        Marshaller<Request<DetachPrincipalPolicyRequest>, DetachPrincipalPolicyRequest> {
+public class DetachPrincipalPolicyRequestMarshaller implements Marshaller<Request<DetachPrincipalPolicyRequest>, DetachPrincipalPolicyRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DetachPrincipalPolicyRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DetachPrincipalPolicyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DetachPrincipalPolicyRequest> marshall(
-            DetachPrincipalPolicyRequest detachPrincipalPolicyRequest) {
+    public Request<DetachPrincipalPolicyRequest> marshall(DetachPrincipalPolicyRequest detachPrincipalPolicyRequest) {
 
         if (detachPrincipalPolicyRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DetachPrincipalPolicyRequest> request = new DefaultRequest<DetachPrincipalPolicyRequest>(
-                detachPrincipalPolicyRequest, "AWSIot");
+        Request<DetachPrincipalPolicyRequest> request = new DefaultRequest<DetachPrincipalPolicyRequest>(detachPrincipalPolicyRequest, "AWSIot");
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
         if (detachPrincipalPolicyRequest.getPrincipal() != null) {
-            request.addHeader("x-amzn-iot-principal", StringUtils
-                    .fromString(detachPrincipalPolicyRequest.getPrincipal()));
+            request.addHeader("x-amzn-iot-principal", StringUtils.fromString(detachPrincipalPolicyRequest.getPrincipal()));
         }
 
         String uriResourcePath = "/principal-policies/{policyName}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{policyName}",
-                        (detachPrincipalPolicyRequest.getPolicyName() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(detachPrincipalPolicyRequest
-                                                .getPolicyName()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{policyName}",
+                (detachPrincipalPolicyRequest.getPolicyName() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(detachPrincipalPolicyRequest.getPolicyName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

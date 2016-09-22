@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.applicationdiscovery.model;
 
@@ -25,8 +23,7 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the filter. The following filter names are allowed for
-     * <code>SERVER</code> configuration items.
+     * The name of the filter. The following filter names are allowed for <code>SERVER</code> configuration items.
      * </p>
      * <p class="title">
      * <b>Server</b>
@@ -59,8 +56,7 @@ public class Filter implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The name of the filter. The following filter names are allowed for
-     * <code>PROCESS</code> configuration items.
+     * The name of the filter. The following filter names are allowed for <code>PROCESS</code> configuration items.
      * </p>
      * <p class="title">
      * <b>Process</b>
@@ -108,8 +104,7 @@ public class Filter implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The name of the filter. The following filter names are allowed for
-     * <code>CONNECTION</code> configuration items.
+     * The name of the filter. The following filter names are allowed for <code>CONNECTION</code> configuration items.
      * </p>
      * <p class="title">
      * <b>Connection</b>
@@ -216,28 +211,23 @@ public class Filter implements Serializable, Cloneable {
     /**
      * <p>
      * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify
-     * <code>Ubuntu</code> for the value.
+     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      */
     private java.util.List<String> values;
     /**
      * <p>
-     * A conditional operator. The following operators are valid: EQUALS,
-     * NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the
-     * system utilizes all filters as though concatenated by <i>AND</i>. If you
-     * specify multiple values for a particular filter, the system
-     * differentiates the values using <i>OR</i>. Calling either
-     * <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns
-     * attributes of matching configuration items.
+     * A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you
+     * specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify
+     * multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either
+     * <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.
      * </p>
      */
     private String condition;
 
     /**
      * <p>
-     * The name of the filter. The following filter names are allowed for
-     * <code>SERVER</code> configuration items.
+     * The name of the filter. The following filter names are allowed for <code>SERVER</code> configuration items.
      * </p>
      * <p class="title">
      * <b>Server</b>
@@ -270,8 +260,7 @@ public class Filter implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The name of the filter. The following filter names are allowed for
-     * <code>PROCESS</code> configuration items.
+     * The name of the filter. The following filter names are allowed for <code>PROCESS</code> configuration items.
      * </p>
      * <p class="title">
      * <b>Process</b>
@@ -319,8 +308,7 @@ public class Filter implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The name of the filter. The following filter names are allowed for
-     * <code>CONNECTION</code> configuration items.
+     * The name of the filter. The following filter names are allowed for <code>CONNECTION</code> configuration items.
      * </p>
      * <p class="title">
      * <b>Connection</b>
@@ -424,8 +412,8 @@ public class Filter implements Serializable, Cloneable {
      * </ul>
      * 
      * @param name
-     *        The name of the filter. The following filter names are allowed for
-     *        <code>SERVER</code> configuration items.</p>
+     *        The name of the filter. The following filter names are allowed for <code>SERVER</code> configuration
+     *        items.</p>
      *        <p class="title">
      *        <b>Server</b>
      *        </p>
@@ -457,8 +445,8 @@ public class Filter implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The name of the filter. The following filter names are allowed for
-     *        <code>PROCESS</code> configuration items.
+     *        The name of the filter. The following filter names are allowed for <code>PROCESS</code> configuration
+     *        items.
      *        </p>
      *        <p class="title">
      *        <b>Process</b>
@@ -506,8 +494,8 @@ public class Filter implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The name of the filter. The following filter names are allowed for
-     *        <code>CONNECTION</code> configuration items.
+     *        The name of the filter. The following filter names are allowed for <code>CONNECTION</code> configuration
+     *        items.
      *        </p>
      *        <p class="title">
      *        <b>Connection</b>
@@ -616,8 +604,7 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the filter. The following filter names are allowed for
-     * <code>SERVER</code> configuration items.
+     * The name of the filter. The following filter names are allowed for <code>SERVER</code> configuration items.
      * </p>
      * <p class="title">
      * <b>Server</b>
@@ -650,8 +637,7 @@ public class Filter implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The name of the filter. The following filter names are allowed for
-     * <code>PROCESS</code> configuration items.
+     * The name of the filter. The following filter names are allowed for <code>PROCESS</code> configuration items.
      * </p>
      * <p class="title">
      * <b>Process</b>
@@ -699,8 +685,7 @@ public class Filter implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The name of the filter. The following filter names are allowed for
-     * <code>CONNECTION</code> configuration items.
+     * The name of the filter. The following filter names are allowed for <code>CONNECTION</code> configuration items.
      * </p>
      * <p class="title">
      * <b>Connection</b>
@@ -803,8 +788,8 @@ public class Filter implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The name of the filter. The following filter names are allowed
-     *         for <code>SERVER</code> configuration items.</p>
+     * @return The name of the filter. The following filter names are allowed for <code>SERVER</code> configuration
+     *         items.</p>
      *         <p class="title">
      *         <b>Server</b>
      *         </p>
@@ -836,8 +821,8 @@ public class Filter implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         The name of the filter. The following filter names are allowed
-     *         for <code>PROCESS</code> configuration items.
+     *         The name of the filter. The following filter names are allowed for <code>PROCESS</code> configuration
+     *         items.
      *         </p>
      *         <p class="title">
      *         <b>Process</b>
@@ -885,8 +870,8 @@ public class Filter implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         The name of the filter. The following filter names are allowed
-     *         for <code>CONNECTION</code> configuration items.
+     *         The name of the filter. The following filter names are allowed for <code>CONNECTION</code> configuration
+     *         items.
      *         </p>
      *         <p class="title">
      *         <b>Connection</b>
@@ -995,8 +980,7 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the filter. The following filter names are allowed for
-     * <code>SERVER</code> configuration items.
+     * The name of the filter. The following filter names are allowed for <code>SERVER</code> configuration items.
      * </p>
      * <p class="title">
      * <b>Server</b>
@@ -1029,8 +1013,7 @@ public class Filter implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The name of the filter. The following filter names are allowed for
-     * <code>PROCESS</code> configuration items.
+     * The name of the filter. The following filter names are allowed for <code>PROCESS</code> configuration items.
      * </p>
      * <p class="title">
      * <b>Process</b>
@@ -1078,8 +1061,7 @@ public class Filter implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The name of the filter. The following filter names are allowed for
-     * <code>CONNECTION</code> configuration items.
+     * The name of the filter. The following filter names are allowed for <code>CONNECTION</code> configuration items.
      * </p>
      * <p class="title">
      * <b>Connection</b>
@@ -1183,8 +1165,8 @@ public class Filter implements Serializable, Cloneable {
      * </ul>
      * 
      * @param name
-     *        The name of the filter. The following filter names are allowed for
-     *        <code>SERVER</code> configuration items.</p>
+     *        The name of the filter. The following filter names are allowed for <code>SERVER</code> configuration
+     *        items.</p>
      *        <p class="title">
      *        <b>Server</b>
      *        </p>
@@ -1216,8 +1198,8 @@ public class Filter implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The name of the filter. The following filter names are allowed for
-     *        <code>PROCESS</code> configuration items.
+     *        The name of the filter. The following filter names are allowed for <code>PROCESS</code> configuration
+     *        items.
      *        </p>
      *        <p class="title">
      *        <b>Process</b>
@@ -1265,8 +1247,8 @@ public class Filter implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The name of the filter. The following filter names are allowed for
-     *        <code>CONNECTION</code> configuration items.
+     *        The name of the filter. The following filter names are allowed for <code>CONNECTION</code> configuration
+     *        items.
      *        </p>
      *        <p class="title">
      *        <b>Connection</b>
@@ -1367,8 +1349,7 @@ public class Filter implements Serializable, Cloneable {
      *        <code>destinationServer.agentId</code>
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Filter withName(String name) {
@@ -1379,13 +1360,12 @@ public class Filter implements Serializable, Cloneable {
     /**
      * <p>
      * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify
-     * <code>Ubuntu</code> for the value.
+     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      * 
-     * @return A string value that you want to filter on. For example, if you
-     *         choose the <code>destinationServer.osVersion</code> filter name,
-     *         you could specify <code>Ubuntu</code> for the value.
+     * @return A string value that you want to filter on. For example, if you choose the
+     *         <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the
+     *         value.
      */
 
     public java.util.List<String> getValues() {
@@ -1395,14 +1375,12 @@ public class Filter implements Serializable, Cloneable {
     /**
      * <p>
      * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify
-     * <code>Ubuntu</code> for the value.
+     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      * 
      * @param values
-     *        A string value that you want to filter on. For example, if you
-     *        choose the <code>destinationServer.osVersion</code> filter name,
-     *        you could specify <code>Ubuntu</code> for the value.
+     *        A string value that you want to filter on. For example, if you choose the
+     *        <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -1417,22 +1395,18 @@ public class Filter implements Serializable, Cloneable {
     /**
      * <p>
      * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify
-     * <code>Ubuntu</code> for the value.
+     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setValues(java.util.Collection)} or
-     * {@link #withValues(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param values
-     *        A string value that you want to filter on. For example, if you
-     *        choose the <code>destinationServer.osVersion</code> filter name,
-     *        you could specify <code>Ubuntu</code> for the value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A string value that you want to filter on. For example, if you choose the
+     *        <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Filter withValues(String... values) {
@@ -1448,16 +1422,13 @@ public class Filter implements Serializable, Cloneable {
     /**
      * <p>
      * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify
-     * <code>Ubuntu</code> for the value.
+     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      * 
      * @param values
-     *        A string value that you want to filter on. For example, if you
-     *        choose the <code>destinationServer.osVersion</code> filter name,
-     *        you could specify <code>Ubuntu</code> for the value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A string value that you want to filter on. For example, if you choose the
+     *        <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Filter withValues(java.util.Collection<String> values) {
@@ -1467,23 +1438,17 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A conditional operator. The following operators are valid: EQUALS,
-     * NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the
-     * system utilizes all filters as though concatenated by <i>AND</i>. If you
-     * specify multiple values for a particular filter, the system
-     * differentiates the values using <i>OR</i>. Calling either
-     * <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns
-     * attributes of matching configuration items.
+     * A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you
+     * specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify
+     * multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either
+     * <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.
      * </p>
      * 
      * @param condition
-     *        A conditional operator. The following operators are valid: EQUALS,
-     *        NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple
-     *        filters, the system utilizes all filters as though concatenated by
-     *        <i>AND</i>. If you specify multiple values for a particular
-     *        filter, the system differentiates the values using <i>OR</i>.
-     *        Calling either <i>DescribeConfigurations</i> or
-     *        <i>ListConfigurations</i> returns attributes of matching
+     *        A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If
+     *        you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you
+     *        specify multiple values for a particular filter, the system differentiates the values using <i>OR</i>.
+     *        Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching
      *        configuration items.
      */
 
@@ -1493,23 +1458,17 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A conditional operator. The following operators are valid: EQUALS,
-     * NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the
-     * system utilizes all filters as though concatenated by <i>AND</i>. If you
-     * specify multiple values for a particular filter, the system
-     * differentiates the values using <i>OR</i>. Calling either
-     * <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns
-     * attributes of matching configuration items.
+     * A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you
+     * specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify
+     * multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either
+     * <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.
      * </p>
      * 
-     * @return A conditional operator. The following operators are valid:
-     *         EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify
-     *         multiple filters, the system utilizes all filters as though
-     *         concatenated by <i>AND</i>. If you specify multiple values for a
-     *         particular filter, the system differentiates the values using
-     *         <i>OR</i>. Calling either <i>DescribeConfigurations</i> or
-     *         <i>ListConfigurations</i> returns attributes of matching
-     *         configuration items.
+     * @return A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If
+     *         you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If
+     *         you specify multiple values for a particular filter, the system differentiates the values using
+     *         <i>OR</i>. Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes
+     *         of matching configuration items.
      */
 
     public String getCondition() {
@@ -1518,26 +1477,19 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A conditional operator. The following operators are valid: EQUALS,
-     * NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the
-     * system utilizes all filters as though concatenated by <i>AND</i>. If you
-     * specify multiple values for a particular filter, the system
-     * differentiates the values using <i>OR</i>. Calling either
-     * <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns
-     * attributes of matching configuration items.
+     * A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you
+     * specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify
+     * multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either
+     * <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.
      * </p>
      * 
      * @param condition
-     *        A conditional operator. The following operators are valid: EQUALS,
-     *        NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple
-     *        filters, the system utilizes all filters as though concatenated by
-     *        <i>AND</i>. If you specify multiple values for a particular
-     *        filter, the system differentiates the values using <i>OR</i>.
-     *        Calling either <i>DescribeConfigurations</i> or
-     *        <i>ListConfigurations</i> returns attributes of matching
+     *        A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If
+     *        you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you
+     *        specify multiple values for a particular filter, the system differentiates the values using <i>OR</i>.
+     *        Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching
      *        configuration items.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Filter withCondition(String condition) {
@@ -1546,8 +1498,7 @@ public class Filter implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1579,18 +1530,15 @@ public class Filter implements Serializable, Cloneable {
         Filter other = (Filter) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getValues() == null ^ this.getValues() == null)
             return false;
-        if (other.getValues() != null
-                && other.getValues().equals(this.getValues()) == false)
+        if (other.getValues() != null && other.getValues().equals(this.getValues()) == false)
             return false;
         if (other.getCondition() == null ^ this.getCondition() == null)
             return false;
-        if (other.getCondition() != null
-                && other.getCondition().equals(this.getCondition()) == false)
+        if (other.getCondition() != null && other.getCondition().equals(this.getCondition()) == false)
             return false;
         return true;
     }
@@ -1600,12 +1548,9 @@ public class Filter implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getValues() == null) ? 0 : getValues().hashCode());
-        hashCode = prime * hashCode
-                + ((getCondition() == null) ? 0 : getCondition().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getValues() == null) ? 0 : getValues().hashCode());
+        hashCode = prime * hashCode + ((getCondition() == null) ? 0 : getCondition().hashCode());
         return hashCode;
     }
 
@@ -1614,9 +1559,7 @@ public class Filter implements Serializable, Cloneable {
         try {
             return (Filter) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

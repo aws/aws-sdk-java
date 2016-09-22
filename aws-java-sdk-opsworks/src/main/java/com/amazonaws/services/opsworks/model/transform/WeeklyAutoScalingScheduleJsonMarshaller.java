@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -34,12 +32,10 @@ public class WeeklyAutoScalingScheduleJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(WeeklyAutoScalingSchedule weeklyAutoScalingSchedule,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(WeeklyAutoScalingSchedule weeklyAutoScalingSchedule, StructuredJsonGenerator jsonGenerator) {
 
         if (weeklyAutoScalingSchedule == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -51,8 +47,7 @@ public class WeeklyAutoScalingScheduleJsonMarshaller {
                 jsonGenerator.writeFieldName("Monday");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> mondayMapValue : mondayMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> mondayMapValue : mondayMap.entrySet()) {
                     if (mondayMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(mondayMapValue.getKey());
 
@@ -68,8 +63,7 @@ public class WeeklyAutoScalingScheduleJsonMarshaller {
                 jsonGenerator.writeFieldName("Tuesday");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> tuesdayMapValue : tuesdayMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> tuesdayMapValue : tuesdayMap.entrySet()) {
                     if (tuesdayMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(tuesdayMapValue.getKey());
 
@@ -85,11 +79,9 @@ public class WeeklyAutoScalingScheduleJsonMarshaller {
                 jsonGenerator.writeFieldName("Wednesday");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> wednesdayMapValue : wednesdayMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> wednesdayMapValue : wednesdayMap.entrySet()) {
                     if (wednesdayMapValue.getValue() != null) {
-                        jsonGenerator
-                                .writeFieldName(wednesdayMapValue.getKey());
+                        jsonGenerator.writeFieldName(wednesdayMapValue.getKey());
 
                         jsonGenerator.writeValue(wednesdayMapValue.getValue());
                     }
@@ -103,8 +95,7 @@ public class WeeklyAutoScalingScheduleJsonMarshaller {
                 jsonGenerator.writeFieldName("Thursday");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> thursdayMapValue : thursdayMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> thursdayMapValue : thursdayMap.entrySet()) {
                     if (thursdayMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(thursdayMapValue.getKey());
 
@@ -120,8 +111,7 @@ public class WeeklyAutoScalingScheduleJsonMarshaller {
                 jsonGenerator.writeFieldName("Friday");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> fridayMapValue : fridayMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> fridayMapValue : fridayMap.entrySet()) {
                     if (fridayMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(fridayMapValue.getKey());
 
@@ -137,8 +127,7 @@ public class WeeklyAutoScalingScheduleJsonMarshaller {
                 jsonGenerator.writeFieldName("Saturday");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> saturdayMapValue : saturdayMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> saturdayMapValue : saturdayMap.entrySet()) {
                     if (saturdayMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(saturdayMapValue.getKey());
 
@@ -154,8 +143,7 @@ public class WeeklyAutoScalingScheduleJsonMarshaller {
                 jsonGenerator.writeFieldName("Sunday");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> sundayMapValue : sundayMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> sundayMapValue : sundayMap.entrySet()) {
                     if (sundayMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(sundayMapValue.getKey());
 
@@ -167,8 +155,7 @@ public class WeeklyAutoScalingScheduleJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

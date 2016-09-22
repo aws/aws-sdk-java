@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidentity.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to the <code>SetIdentityPoolRoles</code> action.
  * </p>
  */
-public class SetIdentityPoolRolesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class SetIdentityPoolRolesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,9 +30,8 @@ public class SetIdentityPoolRolesRequest extends
     private String identityPoolId;
     /**
      * <p>
-     * The map of roles associated with this pool. For a given role, the key
-     * will be either "authenticated" or "unauthenticated" and the value will be
-     * the Role ARN.
+     * The map of roles associated with this pool. For a given role, the key will be either "authenticated" or
+     * "unauthenticated" and the value will be the Role ARN.
      * </p>
      */
     private java.util.Map<String, String> roles;
@@ -73,8 +68,7 @@ public class SetIdentityPoolRolesRequest extends
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetIdentityPoolRolesRequest withIdentityPoolId(String identityPoolId) {
@@ -84,14 +78,12 @@ public class SetIdentityPoolRolesRequest extends
 
     /**
      * <p>
-     * The map of roles associated with this pool. For a given role, the key
-     * will be either "authenticated" or "unauthenticated" and the value will be
-     * the Role ARN.
+     * The map of roles associated with this pool. For a given role, the key will be either "authenticated" or
+     * "unauthenticated" and the value will be the Role ARN.
      * </p>
      * 
-     * @return The map of roles associated with this pool. For a given role, the
-     *         key will be either "authenticated" or "unauthenticated" and the
-     *         value will be the Role ARN.
+     * @return The map of roles associated with this pool. For a given role, the key will be either "authenticated" or
+     *         "unauthenticated" and the value will be the Role ARN.
      */
 
     public java.util.Map<String, String> getRoles() {
@@ -100,15 +92,13 @@ public class SetIdentityPoolRolesRequest extends
 
     /**
      * <p>
-     * The map of roles associated with this pool. For a given role, the key
-     * will be either "authenticated" or "unauthenticated" and the value will be
-     * the Role ARN.
+     * The map of roles associated with this pool. For a given role, the key will be either "authenticated" or
+     * "unauthenticated" and the value will be the Role ARN.
      * </p>
      * 
      * @param roles
-     *        The map of roles associated with this pool. For a given role, the
-     *        key will be either "authenticated" or "unauthenticated" and the
-     *        value will be the Role ARN.
+     *        The map of roles associated with this pool. For a given role, the key will be either "authenticated" or
+     *        "unauthenticated" and the value will be the Role ARN.
      */
 
     public void setRoles(java.util.Map<String, String> roles) {
@@ -117,21 +107,17 @@ public class SetIdentityPoolRolesRequest extends
 
     /**
      * <p>
-     * The map of roles associated with this pool. For a given role, the key
-     * will be either "authenticated" or "unauthenticated" and the value will be
-     * the Role ARN.
+     * The map of roles associated with this pool. For a given role, the key will be either "authenticated" or
+     * "unauthenticated" and the value will be the Role ARN.
      * </p>
      * 
      * @param roles
-     *        The map of roles associated with this pool. For a given role, the
-     *        key will be either "authenticated" or "unauthenticated" and the
-     *        value will be the Role ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The map of roles associated with this pool. For a given role, the key will be either "authenticated" or
+     *        "unauthenticated" and the value will be the Role ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetIdentityPoolRolesRequest withRoles(
-            java.util.Map<String, String> roles) {
+    public SetIdentityPoolRolesRequest withRoles(java.util.Map<String, String> roles) {
         setRoles(roles);
         return this;
     }
@@ -141,15 +127,14 @@ public class SetIdentityPoolRolesRequest extends
             this.roles = new java.util.HashMap<String, String>();
         }
         if (this.roles.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.roles.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Roles. &lt;p> Returns a reference to
-     * this object so that method calls can be chained together.
+     * Removes all the entries added into Roles. &lt;p> Returns a reference to this object so that method calls can be
+     * chained together.
      */
 
     public SetIdentityPoolRolesRequest clearRolesEntries() {
@@ -158,8 +143,7 @@ public class SetIdentityPoolRolesRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -187,16 +171,13 @@ public class SetIdentityPoolRolesRequest extends
         if (obj instanceof SetIdentityPoolRolesRequest == false)
             return false;
         SetIdentityPoolRolesRequest other = (SetIdentityPoolRolesRequest) obj;
-        if (other.getIdentityPoolId() == null
-                ^ this.getIdentityPoolId() == null)
+        if (other.getIdentityPoolId() == null ^ this.getIdentityPoolId() == null)
             return false;
-        if (other.getIdentityPoolId() != null
-                && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
+        if (other.getIdentityPoolId() != null && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
             return false;
         if (other.getRoles() == null ^ this.getRoles() == null)
             return false;
-        if (other.getRoles() != null
-                && other.getRoles().equals(this.getRoles()) == false)
+        if (other.getRoles() != null && other.getRoles().equals(this.getRoles()) == false)
             return false;
         return true;
     }
@@ -206,12 +187,8 @@ public class SetIdentityPoolRolesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getRoles() == null) ? 0 : getRoles().hashCode());
+        hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode());
+        hashCode = prime * hashCode + ((getRoles() == null) ? 0 : getRoles().hashCode());
         return hashCode;
     }
 

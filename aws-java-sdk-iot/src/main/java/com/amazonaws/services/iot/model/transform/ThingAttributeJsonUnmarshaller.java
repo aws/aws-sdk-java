@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ThingAttribute JSON Unmarshaller
  */
-public class ThingAttributeJsonUnmarshaller implements
-        Unmarshaller<ThingAttribute, JsonUnmarshallerContext> {
+public class ThingAttributeJsonUnmarshaller implements Unmarshaller<ThingAttribute, JsonUnmarshallerContext> {
 
-    public ThingAttribute unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ThingAttribute unmarshall(JsonUnmarshallerContext context) throws Exception {
         ThingAttribute thingAttribute = new ThingAttribute();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,31 +49,23 @@ public class ThingAttributeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("thingName", targetDepth)) {
                     context.nextToken();
-                    thingAttribute.setThingName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    thingAttribute.setThingName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingTypeName", targetDepth)) {
                     context.nextToken();
-                    thingAttribute.setThingTypeName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    thingAttribute.setThingTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
-                    thingAttribute
-                            .setAttributes(new MapUnmarshaller<String, String>(
-                                    context.getUnmarshaller(String.class),
-                                    context.getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    thingAttribute.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();
-                    thingAttribute.setVersion(context.getUnmarshaller(
-                            Long.class).unmarshall(context));
+                    thingAttribute.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

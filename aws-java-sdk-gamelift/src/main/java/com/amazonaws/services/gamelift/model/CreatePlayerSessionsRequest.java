@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for a request action.
  * </p>
  */
-public class CreatePlayerSessionsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreatePlayerSessionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -71,8 +67,7 @@ public class CreatePlayerSessionsRequest extends
      * 
      * @param gameSessionId
      *        Unique identifier for a game session.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreatePlayerSessionsRequest withGameSessionId(String gameSessionId) {
@@ -115,16 +110,14 @@ public class CreatePlayerSessionsRequest extends
      * List of unique identifiers for the players to be added.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPlayerIds(java.util.Collection)} or
-     * {@link #withPlayerIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlayerIds(java.util.Collection)} or {@link #withPlayerIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param playerIds
      *        List of unique identifiers for the players to be added.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreatePlayerSessionsRequest withPlayerIds(String... playerIds) {
@@ -144,19 +137,16 @@ public class CreatePlayerSessionsRequest extends
      * 
      * @param playerIds
      *        List of unique identifiers for the players to be added.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreatePlayerSessionsRequest withPlayerIds(
-            java.util.Collection<String> playerIds) {
+    public CreatePlayerSessionsRequest withPlayerIds(java.util.Collection<String> playerIds) {
         setPlayerIds(playerIds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -186,13 +176,11 @@ public class CreatePlayerSessionsRequest extends
         CreatePlayerSessionsRequest other = (CreatePlayerSessionsRequest) obj;
         if (other.getGameSessionId() == null ^ this.getGameSessionId() == null)
             return false;
-        if (other.getGameSessionId() != null
-                && other.getGameSessionId().equals(this.getGameSessionId()) == false)
+        if (other.getGameSessionId() != null && other.getGameSessionId().equals(this.getGameSessionId()) == false)
             return false;
         if (other.getPlayerIds() == null ^ this.getPlayerIds() == null)
             return false;
-        if (other.getPlayerIds() != null
-                && other.getPlayerIds().equals(this.getPlayerIds()) == false)
+        if (other.getPlayerIds() != null && other.getPlayerIds().equals(this.getPlayerIds()) == false)
             return false;
         return true;
     }
@@ -202,12 +190,8 @@ public class CreatePlayerSessionsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getGameSessionId() == null) ? 0 : getGameSessionId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPlayerIds() == null) ? 0 : getPlayerIds().hashCode());
+        hashCode = prime * hashCode + ((getGameSessionId() == null) ? 0 : getGameSessionId().hashCode());
+        hashCode = prime * hashCode + ((getPlayerIds() == null) ? 0 : getPlayerIds().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -18,12 +16,12 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains a reference to a <code>Statement</code> element in a policy document
- * that determines the result of the simulation.
+ * Contains a reference to a <code>Statement</code> element in a policy document that determines the result of the
+ * simulation.
  * </p>
  * <p>
- * This data type is used by the <code>MatchedStatements</code> member of the
- * <code> <a>EvaluationResult</a> </code> type.
+ * This data type is used by the <code>MatchedStatements</code> member of the <code> <a>EvaluationResult</a> </code>
+ * type.
  * </p>
  */
 public class Statement implements Serializable, Cloneable {
@@ -42,15 +40,13 @@ public class Statement implements Serializable, Cloneable {
     private String sourcePolicyType;
     /**
      * <p>
-     * The row and column of the beginning of the <code>Statement</code> in an
-     * IAM policy.
+     * The row and column of the beginning of the <code>Statement</code> in an IAM policy.
      * </p>
      */
     private Position startPosition;
     /**
      * <p>
-     * The row and column of the end of a <code>Statement</code> in an IAM
-     * policy.
+     * The row and column of the end of a <code>Statement</code> in an IAM policy.
      * </p>
      */
     private Position endPosition;
@@ -87,8 +83,7 @@ public class Statement implements Serializable, Cloneable {
      * 
      * @param sourcePolicyId
      *        The identifier of the policy that was provided as an input.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Statement withSourcePolicyId(String sourcePolicyId) {
@@ -130,8 +125,7 @@ public class Statement implements Serializable, Cloneable {
      * 
      * @param sourcePolicyType
      *        The type of the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicySourceType
      */
 
@@ -161,8 +155,7 @@ public class Statement implements Serializable, Cloneable {
      * 
      * @param sourcePolicyType
      *        The type of the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicySourceType
      */
 
@@ -173,13 +166,11 @@ public class Statement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The row and column of the beginning of the <code>Statement</code> in an
-     * IAM policy.
+     * The row and column of the beginning of the <code>Statement</code> in an IAM policy.
      * </p>
      * 
      * @param startPosition
-     *        The row and column of the beginning of the <code>Statement</code>
-     *        in an IAM policy.
+     *        The row and column of the beginning of the <code>Statement</code> in an IAM policy.
      */
 
     public void setStartPosition(Position startPosition) {
@@ -188,12 +179,10 @@ public class Statement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The row and column of the beginning of the <code>Statement</code> in an
-     * IAM policy.
+     * The row and column of the beginning of the <code>Statement</code> in an IAM policy.
      * </p>
      * 
-     * @return The row and column of the beginning of the <code>Statement</code>
-     *         in an IAM policy.
+     * @return The row and column of the beginning of the <code>Statement</code> in an IAM policy.
      */
 
     public Position getStartPosition() {
@@ -202,15 +191,12 @@ public class Statement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The row and column of the beginning of the <code>Statement</code> in an
-     * IAM policy.
+     * The row and column of the beginning of the <code>Statement</code> in an IAM policy.
      * </p>
      * 
      * @param startPosition
-     *        The row and column of the beginning of the <code>Statement</code>
-     *        in an IAM policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The row and column of the beginning of the <code>Statement</code> in an IAM policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Statement withStartPosition(Position startPosition) {
@@ -220,13 +206,11 @@ public class Statement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The row and column of the end of a <code>Statement</code> in an IAM
-     * policy.
+     * The row and column of the end of a <code>Statement</code> in an IAM policy.
      * </p>
      * 
      * @param endPosition
-     *        The row and column of the end of a <code>Statement</code> in an
-     *        IAM policy.
+     *        The row and column of the end of a <code>Statement</code> in an IAM policy.
      */
 
     public void setEndPosition(Position endPosition) {
@@ -235,12 +219,10 @@ public class Statement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The row and column of the end of a <code>Statement</code> in an IAM
-     * policy.
+     * The row and column of the end of a <code>Statement</code> in an IAM policy.
      * </p>
      * 
-     * @return The row and column of the end of a <code>Statement</code> in an
-     *         IAM policy.
+     * @return The row and column of the end of a <code>Statement</code> in an IAM policy.
      */
 
     public Position getEndPosition() {
@@ -249,15 +231,12 @@ public class Statement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The row and column of the end of a <code>Statement</code> in an IAM
-     * policy.
+     * The row and column of the end of a <code>Statement</code> in an IAM policy.
      * </p>
      * 
      * @param endPosition
-     *        The row and column of the end of a <code>Statement</code> in an
-     *        IAM policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The row and column of the end of a <code>Statement</code> in an IAM policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Statement withEndPosition(Position endPosition) {
@@ -266,8 +245,7 @@ public class Statement implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -299,28 +277,21 @@ public class Statement implements Serializable, Cloneable {
         if (obj instanceof Statement == false)
             return false;
         Statement other = (Statement) obj;
-        if (other.getSourcePolicyId() == null
-                ^ this.getSourcePolicyId() == null)
+        if (other.getSourcePolicyId() == null ^ this.getSourcePolicyId() == null)
             return false;
-        if (other.getSourcePolicyId() != null
-                && other.getSourcePolicyId().equals(this.getSourcePolicyId()) == false)
+        if (other.getSourcePolicyId() != null && other.getSourcePolicyId().equals(this.getSourcePolicyId()) == false)
             return false;
-        if (other.getSourcePolicyType() == null
-                ^ this.getSourcePolicyType() == null)
+        if (other.getSourcePolicyType() == null ^ this.getSourcePolicyType() == null)
             return false;
-        if (other.getSourcePolicyType() != null
-                && other.getSourcePolicyType().equals(
-                        this.getSourcePolicyType()) == false)
+        if (other.getSourcePolicyType() != null && other.getSourcePolicyType().equals(this.getSourcePolicyType()) == false)
             return false;
         if (other.getStartPosition() == null ^ this.getStartPosition() == null)
             return false;
-        if (other.getStartPosition() != null
-                && other.getStartPosition().equals(this.getStartPosition()) == false)
+        if (other.getStartPosition() != null && other.getStartPosition().equals(this.getStartPosition()) == false)
             return false;
         if (other.getEndPosition() == null ^ this.getEndPosition() == null)
             return false;
-        if (other.getEndPosition() != null
-                && other.getEndPosition().equals(this.getEndPosition()) == false)
+        if (other.getEndPosition() != null && other.getEndPosition().equals(this.getEndPosition()) == false)
             return false;
         return true;
     }
@@ -330,21 +301,10 @@ public class Statement implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSourcePolicyId() == null) ? 0 : getSourcePolicyId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourcePolicyType() == null) ? 0 : getSourcePolicyType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStartPosition() == null) ? 0 : getStartPosition()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEndPosition() == null) ? 0 : getEndPosition().hashCode());
+        hashCode = prime * hashCode + ((getSourcePolicyId() == null) ? 0 : getSourcePolicyId().hashCode());
+        hashCode = prime * hashCode + ((getSourcePolicyType() == null) ? 0 : getSourcePolicyType().hashCode());
+        hashCode = prime * hashCode + ((getStartPosition() == null) ? 0 : getStartPosition().hashCode());
+        hashCode = prime * hashCode + ((getEndPosition() == null) ? 0 : getEndPosition().hashCode());
         return hashCode;
     }
 
@@ -353,9 +313,7 @@ public class Statement implements Serializable, Cloneable {
         try {
             return (Statement) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

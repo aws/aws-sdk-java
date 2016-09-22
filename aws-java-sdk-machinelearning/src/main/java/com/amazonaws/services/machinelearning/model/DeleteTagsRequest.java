@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.machinelearning.model;
 
@@ -20,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -72,8 +69,7 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
             return;
         }
 
-        this.tagKeys = new com.amazonaws.internal.SdkInternalList<String>(
-                tagKeys);
+        this.tagKeys = new com.amazonaws.internal.SdkInternalList<String>(tagKeys);
     }
 
     /**
@@ -81,22 +77,19 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * One or more tags to delete.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagKeys(java.util.Collection)} or
-     * {@link #withTagKeys(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param tagKeys
      *        One or more tags to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteTagsRequest withTagKeys(String... tagKeys) {
         if (this.tagKeys == null) {
-            setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(
-                    tagKeys.length));
+            setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(tagKeys.length));
         }
         for (String ele : tagKeys) {
             this.tagKeys.add(ele);
@@ -111,8 +104,7 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param tagKeys
      *        One or more tags to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteTagsRequest withTagKeys(java.util.Collection<String> tagKeys) {
@@ -126,8 +118,7 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param resourceId
-     *        The ID of the tagged ML object. For example,
-     *        <code>exampleModelId</code>.
+     *        The ID of the tagged ML object. For example, <code>exampleModelId</code>.
      */
 
     public void setResourceId(String resourceId) {
@@ -139,8 +130,7 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * The ID of the tagged ML object. For example, <code>exampleModelId</code>.
      * </p>
      * 
-     * @return The ID of the tagged ML object. For example,
-     *         <code>exampleModelId</code>.
+     * @return The ID of the tagged ML object. For example, <code>exampleModelId</code>.
      */
 
     public String getResourceId() {
@@ -153,10 +143,8 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param resourceId
-     *        The ID of the tagged ML object. For example,
-     *        <code>exampleModelId</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the tagged ML object. For example, <code>exampleModelId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteTagsRequest withResourceId(String resourceId) {
@@ -198,8 +186,7 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param resourceType
      *        The type of the tagged ML object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaggableResourceType
      */
 
@@ -229,8 +216,7 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param resourceType
      *        The type of the tagged ML object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaggableResourceType
      */
 
@@ -240,8 +226,7 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -273,18 +258,15 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
         DeleteTagsRequest other = (DeleteTagsRequest) obj;
         if (other.getTagKeys() == null ^ this.getTagKeys() == null)
             return false;
-        if (other.getTagKeys() != null
-                && other.getTagKeys().equals(this.getTagKeys()) == false)
+        if (other.getTagKeys() != null && other.getTagKeys().equals(this.getTagKeys()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
-        if (other.getResourceType() != null
-                && other.getResourceType().equals(this.getResourceType()) == false)
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
         return true;
     }
@@ -294,14 +276,9 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResourceType() == null) ? 0 : getResourceType()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         return hashCode;
     }
 

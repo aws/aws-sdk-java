@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model.transform;
 
@@ -31,16 +29,13 @@ import com.amazonaws.util.IdempotentUtils;
  * DescribeEngineDefaultParametersRequest Marshaller
  */
 
-public class DescribeEngineDefaultParametersRequestMarshaller
-        implements
+public class DescribeEngineDefaultParametersRequestMarshaller implements
         Marshaller<Request<DescribeEngineDefaultParametersRequest>, DescribeEngineDefaultParametersRequest> {
 
-    public Request<DescribeEngineDefaultParametersRequest> marshall(
-            DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
+    public Request<DescribeEngineDefaultParametersRequest> marshall(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
 
         if (describeEngineDefaultParametersRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DescribeEngineDefaultParametersRequest> request = new DefaultRequest<DescribeEngineDefaultParametersRequest>(
@@ -50,9 +45,7 @@ public class DescribeEngineDefaultParametersRequestMarshaller
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeEngineDefaultParametersRequest.getDBParameterGroupFamily() != null) {
-            request.addParameter("DBParameterGroupFamily", StringUtils
-                    .fromString(describeEngineDefaultParametersRequest
-                            .getDBParameterGroupFamily()));
+            request.addParameter("DBParameterGroupFamily", StringUtils.fromString(describeEngineDefaultParametersRequest.getDBParameterGroupFamily()));
         }
 
         com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeEngineDefaultParametersRequest
@@ -63,21 +56,16 @@ public class DescribeEngineDefaultParametersRequestMarshaller
             for (Filter filtersListValue : filtersList) {
 
                 if (filtersListValue.getName() != null) {
-                    request.addParameter("Filters.Filter." + filtersListIndex
-                            + ".Name",
-                            StringUtils.fromString(filtersListValue.getName()));
+                    request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue
-                        .getValues();
+                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
                 if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
-                            request.addParameter("Filters.Filter."
-                                    + filtersListIndex + ".Values.Value."
-                                    + valuesListIndex,
+                            request.addParameter("Filters.Filter." + filtersListIndex + ".Values.Value." + valuesListIndex,
                                     StringUtils.fromString(valuesListValue));
                         }
                         valuesListIndex++;
@@ -88,15 +76,11 @@ public class DescribeEngineDefaultParametersRequestMarshaller
         }
 
         if (describeEngineDefaultParametersRequest.getMaxRecords() != null) {
-            request.addParameter("MaxRecords", StringUtils
-                    .fromInteger(describeEngineDefaultParametersRequest
-                            .getMaxRecords()));
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeEngineDefaultParametersRequest.getMaxRecords()));
         }
 
         if (describeEngineDefaultParametersRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils
-                    .fromString(describeEngineDefaultParametersRequest
-                            .getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(describeEngineDefaultParametersRequest.getMarker()));
         }
 
         return request;

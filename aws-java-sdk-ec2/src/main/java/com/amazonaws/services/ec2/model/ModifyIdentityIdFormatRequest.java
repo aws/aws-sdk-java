@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,14 +22,13 @@ import com.amazonaws.services.ec2.model.transform.ModifyIdentityIdFormatRequestM
  * Contains the parameters of ModifyIdentityIdFormat.
  * </p>
  */
-public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<ModifyIdentityIdFormatRequest> {
 
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>
+     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
+     * <code>volume</code>
      * </p>
      */
     private String resource;
@@ -43,22 +40,20 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
     private Boolean useLongIds;
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. Specify <code>all</code> to modify the ID format for all IAM users,
-     * IAM roles, and the root user of the account.
+     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to
+     * modify the ID format for all IAM users, IAM roles, and the root user of the account.
      * </p>
      */
     private String principalArn;
 
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>
+     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
+     * <code>volume</code>
      * </p>
      * 
      * @param resource
-     *        The type of resource: <code>instance</code> |
-     *        <code>reservation</code> | <code>snapshot</code> |
+     *        The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
      *        <code>volume</code>
      */
 
@@ -68,12 +63,11 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>
+     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
+     * <code>volume</code>
      * </p>
      * 
-     * @return The type of resource: <code>instance</code> |
-     *         <code>reservation</code> | <code>snapshot</code> |
+     * @return The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
      *         <code>volume</code>
      */
 
@@ -83,16 +77,14 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>
+     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
+     * <code>volume</code>
      * </p>
      * 
      * @param resource
-     *        The type of resource: <code>instance</code> |
-     *        <code>reservation</code> | <code>snapshot</code> |
+     *        The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
      *        <code>volume</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyIdentityIdFormatRequest withResource(String resource) {
@@ -106,8 +98,7 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param useLongIds
-     *        Indicates whether the resource should use longer IDs (17-character
-     *        IDs)
+     *        Indicates whether the resource should use longer IDs (17-character IDs)
      */
 
     public void setUseLongIds(Boolean useLongIds) {
@@ -119,8 +110,7 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
      * Indicates whether the resource should use longer IDs (17-character IDs)
      * </p>
      * 
-     * @return Indicates whether the resource should use longer IDs
-     *         (17-character IDs)
+     * @return Indicates whether the resource should use longer IDs (17-character IDs)
      */
 
     public Boolean getUseLongIds() {
@@ -133,10 +123,8 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param useLongIds
-     *        Indicates whether the resource should use longer IDs (17-character
-     *        IDs)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether the resource should use longer IDs (17-character IDs)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyIdentityIdFormatRequest withUseLongIds(Boolean useLongIds) {
@@ -149,8 +137,7 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
      * Indicates whether the resource should use longer IDs (17-character IDs)
      * </p>
      * 
-     * @return Indicates whether the resource should use longer IDs
-     *         (17-character IDs)
+     * @return Indicates whether the resource should use longer IDs (17-character IDs)
      */
 
     public Boolean isUseLongIds() {
@@ -159,15 +146,13 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. Specify <code>all</code> to modify the ID format for all IAM users,
-     * IAM roles, and the root user of the account.
+     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to
+     * modify the ID format for all IAM users, IAM roles, and the root user of the account.
      * </p>
      * 
      * @param principalArn
-     *        The ARN of the principal, which can be an IAM user, IAM role, or
-     *        the root user. Specify <code>all</code> to modify the ID format
-     *        for all IAM users, IAM roles, and the root user of the account.
+     *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code>
+     *        to modify the ID format for all IAM users, IAM roles, and the root user of the account.
      */
 
     public void setPrincipalArn(String principalArn) {
@@ -176,14 +161,12 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. Specify <code>all</code> to modify the ID format for all IAM users,
-     * IAM roles, and the root user of the account.
+     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to
+     * modify the ID format for all IAM users, IAM roles, and the root user of the account.
      * </p>
      * 
-     * @return The ARN of the principal, which can be an IAM user, IAM role, or
-     *         the root user. Specify <code>all</code> to modify the ID format
-     *         for all IAM users, IAM roles, and the root user of the account.
+     * @return The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code>
+     *         to modify the ID format for all IAM users, IAM roles, and the root user of the account.
      */
 
     public String getPrincipalArn() {
@@ -192,17 +175,14 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. Specify <code>all</code> to modify the ID format for all IAM users,
-     * IAM roles, and the root user of the account.
+     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to
+     * modify the ID format for all IAM users, IAM roles, and the root user of the account.
      * </p>
      * 
      * @param principalArn
-     *        The ARN of the principal, which can be an IAM user, IAM role, or
-     *        the root user. Specify <code>all</code> to modify the ID format
-     *        for all IAM users, IAM roles, and the root user of the account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code>
+     *        to modify the ID format for all IAM users, IAM roles, and the root user of the account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyIdentityIdFormatRequest withPrincipalArn(String principalArn) {
@@ -211,21 +191,18 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<ModifyIdentityIdFormatRequest> getDryRunRequest() {
-        Request<ModifyIdentityIdFormatRequest> request = new ModifyIdentityIdFormatRequestMarshaller()
-                .marshall(this);
+        Request<ModifyIdentityIdFormatRequest> request = new ModifyIdentityIdFormatRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -257,18 +234,15 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
         ModifyIdentityIdFormatRequest other = (ModifyIdentityIdFormatRequest) obj;
         if (other.getResource() == null ^ this.getResource() == null)
             return false;
-        if (other.getResource() != null
-                && other.getResource().equals(this.getResource()) == false)
+        if (other.getResource() != null && other.getResource().equals(this.getResource()) == false)
             return false;
         if (other.getUseLongIds() == null ^ this.getUseLongIds() == null)
             return false;
-        if (other.getUseLongIds() != null
-                && other.getUseLongIds().equals(this.getUseLongIds()) == false)
+        if (other.getUseLongIds() != null && other.getUseLongIds().equals(this.getUseLongIds()) == false)
             return false;
         if (other.getPrincipalArn() == null ^ this.getPrincipalArn() == null)
             return false;
-        if (other.getPrincipalArn() != null
-                && other.getPrincipalArn().equals(this.getPrincipalArn()) == false)
+        if (other.getPrincipalArn() != null && other.getPrincipalArn().equals(this.getPrincipalArn()) == false)
             return false;
         return true;
     }
@@ -278,14 +252,9 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getResource() == null) ? 0 : getResource().hashCode());
-        hashCode = prime * hashCode
-                + ((getUseLongIds() == null) ? 0 : getUseLongIds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrincipalArn() == null) ? 0 : getPrincipalArn()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
+        hashCode = prime * hashCode + ((getUseLongIds() == null) ? 0 : getUseLongIds().hashCode());
+        hashCode = prime * hashCode + ((getPrincipalArn() == null) ? 0 : getPrincipalArn().hashCode());
         return hashCode;
     }
 

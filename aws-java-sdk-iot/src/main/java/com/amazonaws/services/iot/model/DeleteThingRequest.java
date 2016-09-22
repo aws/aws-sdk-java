@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -22,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DeleteThing operation.
  * </p>
  */
-public class DeleteThingRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteThingRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,10 +30,9 @@ public class DeleteThingRequest extends com.amazonaws.AmazonWebServiceRequest
     private String thingName;
     /**
      * <p>
-     * The expected version of the thing record in the registry. If the version
-     * of the record in the registry does not match the expected version
-     * specified in the request, the <code>DeleteThing</code> request is
-     * rejected with a <code>VersionConflictException</code>.
+     * The expected version of the thing record in the registry. If the version of the record in the registry does not
+     * match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a
+     * <code>VersionConflictException</code>.
      * </p>
      */
     private Long expectedVersion;
@@ -73,8 +69,7 @@ public class DeleteThingRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param thingName
      *        The name of the thing to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteThingRequest withThingName(String thingName) {
@@ -84,17 +79,15 @@ public class DeleteThingRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The expected version of the thing record in the registry. If the version
-     * of the record in the registry does not match the expected version
-     * specified in the request, the <code>DeleteThing</code> request is
-     * rejected with a <code>VersionConflictException</code>.
+     * The expected version of the thing record in the registry. If the version of the record in the registry does not
+     * match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a
+     * <code>VersionConflictException</code>.
      * </p>
      * 
      * @param expectedVersion
-     *        The expected version of the thing record in the registry. If the
-     *        version of the record in the registry does not match the expected
-     *        version specified in the request, the <code>DeleteThing</code>
-     *        request is rejected with a <code>VersionConflictException</code>.
+     *        The expected version of the thing record in the registry. If the version of the record in the registry
+     *        does not match the expected version specified in the request, the <code>DeleteThing</code> request is
+     *        rejected with a <code>VersionConflictException</code>.
      */
 
     public void setExpectedVersion(Long expectedVersion) {
@@ -103,16 +96,14 @@ public class DeleteThingRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The expected version of the thing record in the registry. If the version
-     * of the record in the registry does not match the expected version
-     * specified in the request, the <code>DeleteThing</code> request is
-     * rejected with a <code>VersionConflictException</code>.
+     * The expected version of the thing record in the registry. If the version of the record in the registry does not
+     * match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a
+     * <code>VersionConflictException</code>.
      * </p>
      * 
-     * @return The expected version of the thing record in the registry. If the
-     *         version of the record in the registry does not match the expected
-     *         version specified in the request, the <code>DeleteThing</code>
-     *         request is rejected with a <code>VersionConflictException</code>.
+     * @return The expected version of the thing record in the registry. If the version of the record in the registry
+     *         does not match the expected version specified in the request, the <code>DeleteThing</code> request is
+     *         rejected with a <code>VersionConflictException</code>.
      */
 
     public Long getExpectedVersion() {
@@ -121,19 +112,16 @@ public class DeleteThingRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The expected version of the thing record in the registry. If the version
-     * of the record in the registry does not match the expected version
-     * specified in the request, the <code>DeleteThing</code> request is
-     * rejected with a <code>VersionConflictException</code>.
+     * The expected version of the thing record in the registry. If the version of the record in the registry does not
+     * match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a
+     * <code>VersionConflictException</code>.
      * </p>
      * 
      * @param expectedVersion
-     *        The expected version of the thing record in the registry. If the
-     *        version of the record in the registry does not match the expected
-     *        version specified in the request, the <code>DeleteThing</code>
-     *        request is rejected with a <code>VersionConflictException</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The expected version of the thing record in the registry. If the version of the record in the registry
+     *        does not match the expected version specified in the request, the <code>DeleteThing</code> request is
+     *        rejected with a <code>VersionConflictException</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteThingRequest withExpectedVersion(Long expectedVersion) {
@@ -142,8 +130,7 @@ public class DeleteThingRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -173,14 +160,11 @@ public class DeleteThingRequest extends com.amazonaws.AmazonWebServiceRequest
         DeleteThingRequest other = (DeleteThingRequest) obj;
         if (other.getThingName() == null ^ this.getThingName() == null)
             return false;
-        if (other.getThingName() != null
-                && other.getThingName().equals(this.getThingName()) == false)
+        if (other.getThingName() != null && other.getThingName().equals(this.getThingName()) == false)
             return false;
-        if (other.getExpectedVersion() == null
-                ^ this.getExpectedVersion() == null)
+        if (other.getExpectedVersion() == null ^ this.getExpectedVersion() == null)
             return false;
-        if (other.getExpectedVersion() != null
-                && other.getExpectedVersion().equals(this.getExpectedVersion()) == false)
+        if (other.getExpectedVersion() != null && other.getExpectedVersion().equals(this.getExpectedVersion()) == false)
             return false;
         return true;
     }
@@ -190,12 +174,8 @@ public class DeleteThingRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getThingName() == null) ? 0 : getThingName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExpectedVersion() == null) ? 0 : getExpectedVersion()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
+        hashCode = prime * hashCode + ((getExpectedVersion() == null) ? 0 : getExpectedVersion().hashCode());
         return hashCode;
     }
 

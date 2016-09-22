@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -20,15 +18,13 @@ import java.io.Serializable;
  * <p>
  * Represents the usage data of a usage plan.
  * </p>
- * <div class="remarks"/> <div class="seeAlso"> <a href=
- * "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html"
- * >Create and Use Usage Plans</a>, <a href=
+ * <div class="remarks"/> <div class="seeAlso"> <a
+ * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use
+ * Usage Plans</a>, <a href=
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-usage-plans-with-console.html#api-gateway-usage-plan-manage-usage"
  * >Manage Usage in a Usage Plan</a> </div>
  */
-public class GetUsageResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetUsageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -52,12 +48,10 @@ public class GetUsageResult extends
     private String position;
     /**
      * <p>
-     * The usage data, as daily logs of used and remaining quotas, over the
-     * specified time interval indexed over the API keys in a usage plan. For
-     * example,
-     * <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>
-     * , where <code>{api_key}</code> stands for an API key value and the daily
-     * log entry is of the format <code>[used quota, remaining quota]</code>.
+     * The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API
+     * keys in a usage plan. For example,
+     * <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code>
+     * stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.
      * </p>
      */
     private java.util.Map<String, java.util.List<java.util.List<Long>>> items;
@@ -94,8 +88,7 @@ public class GetUsageResult extends
      * 
      * @param usagePlanId
      *        The plan Id associated with this usage data.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetUsageResult withUsagePlanId(String usagePlanId) {
@@ -135,8 +128,7 @@ public class GetUsageResult extends
      * 
      * @param startDate
      *        The starting date of the usage data.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetUsageResult withStartDate(String startDate) {
@@ -176,8 +168,7 @@ public class GetUsageResult extends
      * 
      * @param endDate
      *        The ending date of the usage data.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetUsageResult withEndDate(String endDate) {
@@ -203,8 +194,7 @@ public class GetUsageResult extends
 
     /**
      * @param position
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetUsageResult withPosition(String position) {
@@ -214,20 +204,16 @@ public class GetUsageResult extends
 
     /**
      * <p>
-     * The usage data, as daily logs of used and remaining quotas, over the
-     * specified time interval indexed over the API keys in a usage plan. For
-     * example,
-     * <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>
-     * , where <code>{api_key}</code> stands for an API key value and the daily
-     * log entry is of the format <code>[used quota, remaining quota]</code>.
+     * The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API
+     * keys in a usage plan. For example,
+     * <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code>
+     * stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.
      * </p>
      * 
-     * @return The usage data, as daily logs of used and remaining quotas, over
-     *         the specified time interval indexed over the API keys in a usage
-     *         plan. For example,
-     *         <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>
-     *         , where <code>{api_key}</code> stands for an API key value and
-     *         the daily log entry is of the format
+     * @return The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over
+     *         the API keys in a usage plan. For example,
+     *         <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where
+     *         <code>{api_key}</code> stands for an API key value and the daily log entry is of the format
      *         <code>[used quota, remaining quota]</code>.
      */
 
@@ -237,72 +223,59 @@ public class GetUsageResult extends
 
     /**
      * <p>
-     * The usage data, as daily logs of used and remaining quotas, over the
-     * specified time interval indexed over the API keys in a usage plan. For
-     * example,
-     * <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>
-     * , where <code>{api_key}</code> stands for an API key value and the daily
-     * log entry is of the format <code>[used quota, remaining quota]</code>.
+     * The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API
+     * keys in a usage plan. For example,
+     * <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code>
+     * stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.
      * </p>
      * 
      * @param items
-     *        The usage data, as daily logs of used and remaining quotas, over
-     *        the specified time interval indexed over the API keys in a usage
-     *        plan. For example,
-     *        <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>
-     *        , where <code>{api_key}</code> stands for an API key value and the
-     *        daily log entry is of the format
+     *        The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over
+     *        the API keys in a usage plan. For example,
+     *        <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where
+     *        <code>{api_key}</code> stands for an API key value and the daily log entry is of the format
      *        <code>[used quota, remaining quota]</code>.
      */
 
-    public void setItems(
-            java.util.Map<String, java.util.List<java.util.List<Long>>> items) {
+    public void setItems(java.util.Map<String, java.util.List<java.util.List<Long>>> items) {
         this.items = items;
     }
 
     /**
      * <p>
-     * The usage data, as daily logs of used and remaining quotas, over the
-     * specified time interval indexed over the API keys in a usage plan. For
-     * example,
-     * <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>
-     * , where <code>{api_key}</code> stands for an API key value and the daily
-     * log entry is of the format <code>[used quota, remaining quota]</code>.
+     * The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API
+     * keys in a usage plan. For example,
+     * <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code>
+     * stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.
      * </p>
      * 
      * @param items
-     *        The usage data, as daily logs of used and remaining quotas, over
-     *        the specified time interval indexed over the API keys in a usage
-     *        plan. For example,
-     *        <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>
-     *        , where <code>{api_key}</code> stands for an API key value and the
-     *        daily log entry is of the format
+     *        The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over
+     *        the API keys in a usage plan. For example,
+     *        <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where
+     *        <code>{api_key}</code> stands for an API key value and the daily log entry is of the format
      *        <code>[used quota, remaining quota]</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetUsageResult withItems(
-            java.util.Map<String, java.util.List<java.util.List<Long>>> items) {
+    public GetUsageResult withItems(java.util.Map<String, java.util.List<java.util.List<Long>>> items) {
         setItems(items);
         return this;
     }
 
-    public GetUsageResult addItemsEntry(String key,
-            java.util.List<java.util.List<Long>> value) {
+    public GetUsageResult addItemsEntry(String key, java.util.List<java.util.List<Long>> value) {
         if (null == this.items) {
             this.items = new java.util.HashMap<String, java.util.List<java.util.List<Long>>>();
         }
         if (this.items.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.items.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Items. &lt;p> Returns a reference to
-     * this object so that method calls can be chained together.
+     * Removes all the entries added into Items. &lt;p> Returns a reference to this object so that method calls can be
+     * chained together.
      */
 
     public GetUsageResult clearItemsEntries() {
@@ -311,8 +284,7 @@ public class GetUsageResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -348,28 +320,23 @@ public class GetUsageResult extends
         GetUsageResult other = (GetUsageResult) obj;
         if (other.getUsagePlanId() == null ^ this.getUsagePlanId() == null)
             return false;
-        if (other.getUsagePlanId() != null
-                && other.getUsagePlanId().equals(this.getUsagePlanId()) == false)
+        if (other.getUsagePlanId() != null && other.getUsagePlanId().equals(this.getUsagePlanId()) == false)
             return false;
         if (other.getStartDate() == null ^ this.getStartDate() == null)
             return false;
-        if (other.getStartDate() != null
-                && other.getStartDate().equals(this.getStartDate()) == false)
+        if (other.getStartDate() != null && other.getStartDate().equals(this.getStartDate()) == false)
             return false;
         if (other.getEndDate() == null ^ this.getEndDate() == null)
             return false;
-        if (other.getEndDate() != null
-                && other.getEndDate().equals(this.getEndDate()) == false)
+        if (other.getEndDate() != null && other.getEndDate().equals(this.getEndDate()) == false)
             return false;
         if (other.getPosition() == null ^ this.getPosition() == null)
             return false;
-        if (other.getPosition() != null
-                && other.getPosition().equals(this.getPosition()) == false)
+        if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
             return false;
         if (other.getItems() == null ^ this.getItems() == null)
             return false;
-        if (other.getItems() != null
-                && other.getItems().equals(this.getItems()) == false)
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false)
             return false;
         return true;
     }
@@ -379,17 +346,11 @@ public class GetUsageResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getUsagePlanId() == null) ? 0 : getUsagePlanId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getPosition() == null) ? 0 : getPosition().hashCode());
-        hashCode = prime * hashCode
-                + ((getItems() == null) ? 0 : getItems().hashCode());
+        hashCode = prime * hashCode + ((getUsagePlanId() == null) ? 0 : getUsagePlanId().hashCode());
+        hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
+        hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
+        hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());
         return hashCode;
     }
 
@@ -398,9 +359,7 @@ public class GetUsageResult extends
         try {
             return (GetUsageResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

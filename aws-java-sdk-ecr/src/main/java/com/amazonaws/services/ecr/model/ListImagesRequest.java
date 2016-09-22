@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecr.model;
 
@@ -20,14 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository to list images in. If you do not specify a registry, the
-     * default registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository to list images in. If you do not
+     * specify a registry, the default registry is assumed.
      * </p>
      */
     private String registryId;
@@ -39,55 +35,46 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String repositoryName;
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListImages</code> request where <code>maxResults</code> was used
-     * and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the
-     * <code>nextToken</code> value. This value is <code>null</code> when there
-     * are no more results to return.
+     * The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where
+     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
+     * when there are no more results to return.
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to
-     * retrieve the next items in a list and not for other programmatic
-     * purposes.
+     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * not for other programmatic purposes.
      * </p>
      * </note>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of image results returned by <code>ListImages</code>
-     * in paginated output. When this parameter is used, <code>ListImages</code>
-     * only returns <code>maxResults</code> results in a single page along with
-     * a <code>nextToken</code> response element. The remaining results of the
-     * initial request can be seen by sending another <code>ListImages</code>
-     * request with the returned <code>nextToken</code> value. This value can be
-     * between 1 and 100. If this parameter is not used, then
-     * <code>ListImages</code> returns up to 100 results and a
+     * The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter
+     * is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+     * another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between
+     * 1 and 100. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a
      * <code>nextToken</code> value, if applicable.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The filter key and value with which to filter your
-     * <code>ListImages</code> results.
+     * The filter key and value with which to filter your <code>ListImages</code> results.
      * </p>
      */
     private ListImagesFilter filter;
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository to list images in. If you do not specify a registry, the
-     * default registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository to list images in. If you do not
+     * specify a registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the
-     *        repository to list images in. If you do not specify a registry,
-     *        the default registry is assumed.
+     *        The AWS account ID associated with the registry that contains the repository to list images in. If you do
+     *        not specify a registry, the default registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -96,14 +83,12 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository to list images in. If you do not specify a registry, the
-     * default registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository to list images in. If you do not
+     * specify a registry, the default registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry that contains the
-     *         repository to list images in. If you do not specify a registry,
-     *         the default registry is assumed.
+     * @return The AWS account ID associated with the registry that contains the repository to list images in. If you do
+     *         not specify a registry, the default registry is assumed.
      */
 
     public String getRegistryId() {
@@ -112,17 +97,14 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository to list images in. If you do not specify a registry, the
-     * default registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository to list images in. If you do not
+     * specify a registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the
-     *        repository to list images in. If you do not specify a registry,
-     *        the default registry is assumed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS account ID associated with the registry that contains the repository to list images in. If you do
+     *        not specify a registry, the default registry is assumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListImagesRequest withRegistryId(String registryId) {
@@ -162,8 +144,7 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param repositoryName
      *        The repository whose image IDs are to be listed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListImagesRequest withRepositoryName(String repositoryName) {
@@ -173,33 +154,26 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListImages</code> request where <code>maxResults</code> was used
-     * and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the
-     * <code>nextToken</code> value. This value is <code>null</code> when there
-     * are no more results to return.
+     * The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where
+     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
+     * when there are no more results to return.
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to
-     * retrieve the next items in a list and not for other programmatic
-     * purposes.
+     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * not for other programmatic purposes.
      * </p>
      * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous
-     *        paginated <code>ListImages</code> request where
-     *        <code>maxResults</code> was used and the results exceeded the
-     *        value of that parameter. Pagination continues from the end of the
-     *        previous results that returned the <code>nextToken</code> value.
-     *        This value is <code>null</code> when there are no more results to
-     *        return.</p> <note>
+     *        The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where
+     *        <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     *        continues from the end of the previous results that returned the <code>nextToken</code> value. This value
+     *        is <code>null</code> when there are no more results to return.</p> <note>
      *        <p>
-     *        This token should be treated as an opaque identifier that is only
-     *        used to retrieve the next items in a list and not for other
-     *        programmatic purposes.
+     *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *        list and not for other programmatic purposes.
      *        </p>
      */
 
@@ -209,32 +183,25 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListImages</code> request where <code>maxResults</code> was used
-     * and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the
-     * <code>nextToken</code> value. This value is <code>null</code> when there
-     * are no more results to return.
+     * The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where
+     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
+     * when there are no more results to return.
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to
-     * retrieve the next items in a list and not for other programmatic
-     * purposes.
+     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * not for other programmatic purposes.
      * </p>
      * </note>
      * 
-     * @return The <code>nextToken</code> value returned from a previous
-     *         paginated <code>ListImages</code> request where
-     *         <code>maxResults</code> was used and the results exceeded the
-     *         value of that parameter. Pagination continues from the end of the
-     *         previous results that returned the <code>nextToken</code> value.
-     *         This value is <code>null</code> when there are no more results to
-     *         return.</p> <note>
+     * @return The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where
+     *         <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     *         continues from the end of the previous results that returned the <code>nextToken</code> value. This value
+     *         is <code>null</code> when there are no more results to return.</p> <note>
      *         <p>
-     *         This token should be treated as an opaque identifier that is only
-     *         used to retrieve the next items in a list and not for other
-     *         programmatic purposes.
+     *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *         list and not for other programmatic purposes.
      *         </p>
      */
 
@@ -244,36 +211,28 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListImages</code> request where <code>maxResults</code> was used
-     * and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the
-     * <code>nextToken</code> value. This value is <code>null</code> when there
-     * are no more results to return.
+     * The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where
+     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
+     * when there are no more results to return.
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to
-     * retrieve the next items in a list and not for other programmatic
-     * purposes.
+     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * not for other programmatic purposes.
      * </p>
      * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous
-     *        paginated <code>ListImages</code> request where
-     *        <code>maxResults</code> was used and the results exceeded the
-     *        value of that parameter. Pagination continues from the end of the
-     *        previous results that returned the <code>nextToken</code> value.
-     *        This value is <code>null</code> when there are no more results to
-     *        return.</p> <note>
+     *        The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where
+     *        <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     *        continues from the end of the previous results that returned the <code>nextToken</code> value. This value
+     *        is <code>null</code> when there are no more results to return.</p> <note>
      *        <p>
-     *        This token should be treated as an opaque identifier that is only
-     *        used to retrieve the next items in a list and not for other
-     *        programmatic purposes.
+     *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *        list and not for other programmatic purposes.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListImagesRequest withNextToken(String nextToken) {
@@ -283,29 +242,21 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of image results returned by <code>ListImages</code>
-     * in paginated output. When this parameter is used, <code>ListImages</code>
-     * only returns <code>maxResults</code> results in a single page along with
-     * a <code>nextToken</code> response element. The remaining results of the
-     * initial request can be seen by sending another <code>ListImages</code>
-     * request with the returned <code>nextToken</code> value. This value can be
-     * between 1 and 100. If this parameter is not used, then
-     * <code>ListImages</code> returns up to 100 results and a
+     * The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter
+     * is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+     * another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between
+     * 1 and 100. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a
      * <code>nextToken</code> value, if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of image results returned by
-     *        <code>ListImages</code> in paginated output. When this parameter
-     *        is used, <code>ListImages</code> only returns
-     *        <code>maxResults</code> results in a single page along with a
-     *        <code>nextToken</code> response element. The remaining results of
-     *        the initial request can be seen by sending another
-     *        <code>ListImages</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100.
-     *        If this parameter is not used, then <code>ListImages</code>
-     *        returns up to 100 results and a <code>nextToken</code> value, if
-     *        applicable.
+     *        The maximum number of image results returned by <code>ListImages</code> in paginated output. When this
+     *        parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page
+     *        along with a <code>nextToken</code> response element. The remaining results of the initial request can be
+     *        seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value.
+     *        This value can be between 1 and 100. If this parameter is not used, then <code>ListImages</code> returns
+     *        up to 100 results and a <code>nextToken</code> value, if applicable.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -314,28 +265,20 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of image results returned by <code>ListImages</code>
-     * in paginated output. When this parameter is used, <code>ListImages</code>
-     * only returns <code>maxResults</code> results in a single page along with
-     * a <code>nextToken</code> response element. The remaining results of the
-     * initial request can be seen by sending another <code>ListImages</code>
-     * request with the returned <code>nextToken</code> value. This value can be
-     * between 1 and 100. If this parameter is not used, then
-     * <code>ListImages</code> returns up to 100 results and a
+     * The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter
+     * is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+     * another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between
+     * 1 and 100. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a
      * <code>nextToken</code> value, if applicable.
      * </p>
      * 
-     * @return The maximum number of image results returned by
-     *         <code>ListImages</code> in paginated output. When this parameter
-     *         is used, <code>ListImages</code> only returns
-     *         <code>maxResults</code> results in a single page along with a
-     *         <code>nextToken</code> response element. The remaining results of
-     *         the initial request can be seen by sending another
-     *         <code>ListImages</code> request with the returned
-     *         <code>nextToken</code> value. This value can be between 1 and
-     *         100. If this parameter is not used, then <code>ListImages</code>
-     *         returns up to 100 results and a <code>nextToken</code> value, if
-     *         applicable.
+     * @return The maximum number of image results returned by <code>ListImages</code> in paginated output. When this
+     *         parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page
+     *         along with a <code>nextToken</code> response element. The remaining results of the initial request can be
+     *         seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value.
+     *         This value can be between 1 and 100. If this parameter is not used, then <code>ListImages</code> returns
+     *         up to 100 results and a <code>nextToken</code> value, if applicable.
      */
 
     public Integer getMaxResults() {
@@ -344,31 +287,22 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of image results returned by <code>ListImages</code>
-     * in paginated output. When this parameter is used, <code>ListImages</code>
-     * only returns <code>maxResults</code> results in a single page along with
-     * a <code>nextToken</code> response element. The remaining results of the
-     * initial request can be seen by sending another <code>ListImages</code>
-     * request with the returned <code>nextToken</code> value. This value can be
-     * between 1 and 100. If this parameter is not used, then
-     * <code>ListImages</code> returns up to 100 results and a
+     * The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter
+     * is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+     * another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between
+     * 1 and 100. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a
      * <code>nextToken</code> value, if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of image results returned by
-     *        <code>ListImages</code> in paginated output. When this parameter
-     *        is used, <code>ListImages</code> only returns
-     *        <code>maxResults</code> results in a single page along with a
-     *        <code>nextToken</code> response element. The remaining results of
-     *        the initial request can be seen by sending another
-     *        <code>ListImages</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100.
-     *        If this parameter is not used, then <code>ListImages</code>
-     *        returns up to 100 results and a <code>nextToken</code> value, if
-     *        applicable.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of image results returned by <code>ListImages</code> in paginated output. When this
+     *        parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page
+     *        along with a <code>nextToken</code> response element. The remaining results of the initial request can be
+     *        seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value.
+     *        This value can be between 1 and 100. If this parameter is not used, then <code>ListImages</code> returns
+     *        up to 100 results and a <code>nextToken</code> value, if applicable.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListImagesRequest withMaxResults(Integer maxResults) {
@@ -378,13 +312,11 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The filter key and value with which to filter your
-     * <code>ListImages</code> results.
+     * The filter key and value with which to filter your <code>ListImages</code> results.
      * </p>
      * 
      * @param filter
-     *        The filter key and value with which to filter your
-     *        <code>ListImages</code> results.
+     *        The filter key and value with which to filter your <code>ListImages</code> results.
      */
 
     public void setFilter(ListImagesFilter filter) {
@@ -393,12 +325,10 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The filter key and value with which to filter your
-     * <code>ListImages</code> results.
+     * The filter key and value with which to filter your <code>ListImages</code> results.
      * </p>
      * 
-     * @return The filter key and value with which to filter your
-     *         <code>ListImages</code> results.
+     * @return The filter key and value with which to filter your <code>ListImages</code> results.
      */
 
     public ListImagesFilter getFilter() {
@@ -407,15 +337,12 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The filter key and value with which to filter your
-     * <code>ListImages</code> results.
+     * The filter key and value with which to filter your <code>ListImages</code> results.
      * </p>
      * 
      * @param filter
-     *        The filter key and value with which to filter your
-     *        <code>ListImages</code> results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The filter key and value with which to filter your <code>ListImages</code> results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListImagesRequest withFilter(ListImagesFilter filter) {
@@ -424,8 +351,7 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -461,29 +387,23 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
         ListImagesRequest other = (ListImagesRequest) obj;
         if (other.getRegistryId() == null ^ this.getRegistryId() == null)
             return false;
-        if (other.getRegistryId() != null
-                && other.getRegistryId().equals(this.getRegistryId()) == false)
+        if (other.getRegistryId() != null && other.getRegistryId().equals(this.getRegistryId()) == false)
             return false;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
-        if (other.getFilter() != null
-                && other.getFilter().equals(this.getFilter()) == false)
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
         return true;
     }
@@ -493,18 +413,11 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode
-                + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the GetPolicyVersion operation.
  * </p>
  */
-public class GetPolicyVersionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class GetPolicyVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -71,8 +67,7 @@ public class GetPolicyVersionRequest extends
      * 
      * @param policyName
      *        The name of the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetPolicyVersionRequest withPolicyName(String policyName) {
@@ -112,8 +107,7 @@ public class GetPolicyVersionRequest extends
      * 
      * @param policyVersionId
      *        The policy version ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetPolicyVersionRequest withPolicyVersionId(String policyVersionId) {
@@ -122,8 +116,7 @@ public class GetPolicyVersionRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -153,14 +146,11 @@ public class GetPolicyVersionRequest extends
         GetPolicyVersionRequest other = (GetPolicyVersionRequest) obj;
         if (other.getPolicyName() == null ^ this.getPolicyName() == null)
             return false;
-        if (other.getPolicyName() != null
-                && other.getPolicyName().equals(this.getPolicyName()) == false)
+        if (other.getPolicyName() != null && other.getPolicyName().equals(this.getPolicyName()) == false)
             return false;
-        if (other.getPolicyVersionId() == null
-                ^ this.getPolicyVersionId() == null)
+        if (other.getPolicyVersionId() == null ^ this.getPolicyVersionId() == null)
             return false;
-        if (other.getPolicyVersionId() != null
-                && other.getPolicyVersionId().equals(this.getPolicyVersionId()) == false)
+        if (other.getPolicyVersionId() != null && other.getPolicyVersionId().equals(this.getPolicyVersionId()) == false)
             return false;
         return true;
     }
@@ -170,12 +160,8 @@ public class GetPolicyVersionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPolicyVersionId() == null) ? 0 : getPolicyVersionId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
+        hashCode = prime * hashCode + ((getPolicyVersionId() == null) ? 0 : getPolicyVersionId().hashCode());
         return hashCode;
     }
 

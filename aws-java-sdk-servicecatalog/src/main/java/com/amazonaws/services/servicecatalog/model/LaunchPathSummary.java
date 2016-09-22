@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.servicecatalog.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Summary information about a path for a user to have access to a specified
- * product.
+ * Summary information about a path for a user to have access to a specified product.
  * </p>
  */
 public class LaunchPathSummary implements Serializable, Cloneable {
@@ -81,8 +78,7 @@ public class LaunchPathSummary implements Serializable, Cloneable {
      * 
      * @param id
      *        The unique identifier of the product path.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchPathSummary withId(String id) {
@@ -111,15 +107,13 @@ public class LaunchPathSummary implements Serializable, Cloneable {
      *        List of constraints on the portfolio-product relationship.
      */
 
-    public void setConstraintSummaries(
-            java.util.Collection<ConstraintSummary> constraintSummaries) {
+    public void setConstraintSummaries(java.util.Collection<ConstraintSummary> constraintSummaries) {
         if (constraintSummaries == null) {
             this.constraintSummaries = null;
             return;
         }
 
-        this.constraintSummaries = new java.util.ArrayList<ConstraintSummary>(
-                constraintSummaries);
+        this.constraintSummaries = new java.util.ArrayList<ConstraintSummary>(constraintSummaries);
     }
 
     /**
@@ -127,23 +121,19 @@ public class LaunchPathSummary implements Serializable, Cloneable {
      * List of constraints on the portfolio-product relationship.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConstraintSummaries(java.util.Collection)} or
-     * {@link #withConstraintSummaries(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConstraintSummaries(java.util.Collection)} or {@link #withConstraintSummaries(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param constraintSummaries
      *        List of constraints on the portfolio-product relationship.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchPathSummary withConstraintSummaries(
-            ConstraintSummary... constraintSummaries) {
+    public LaunchPathSummary withConstraintSummaries(ConstraintSummary... constraintSummaries) {
         if (this.constraintSummaries == null) {
-            setConstraintSummaries(new java.util.ArrayList<ConstraintSummary>(
-                    constraintSummaries.length));
+            setConstraintSummaries(new java.util.ArrayList<ConstraintSummary>(constraintSummaries.length));
         }
         for (ConstraintSummary ele : constraintSummaries) {
             this.constraintSummaries.add(ele);
@@ -158,12 +148,10 @@ public class LaunchPathSummary implements Serializable, Cloneable {
      * 
      * @param constraintSummaries
      *        List of constraints on the portfolio-product relationship.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchPathSummary withConstraintSummaries(
-            java.util.Collection<ConstraintSummary> constraintSummaries) {
+    public LaunchPathSummary withConstraintSummaries(java.util.Collection<ConstraintSummary> constraintSummaries) {
         setConstraintSummaries(constraintSummaries);
         return this;
     }
@@ -203,16 +191,14 @@ public class LaunchPathSummary implements Serializable, Cloneable {
      * List of tags used by this launch path.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        List of tags used by this launch path.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchPathSummary withTags(Tag... tags) {
@@ -232,8 +218,7 @@ public class LaunchPathSummary implements Serializable, Cloneable {
      * 
      * @param tags
      *        List of tags used by this launch path.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchPathSummary withTags(java.util.Collection<Tag> tags) {
@@ -247,8 +232,7 @@ public class LaunchPathSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @param name
-     *        Corresponds to the name of the portfolio to which the user was
-     *        assigned.
+     *        Corresponds to the name of the portfolio to which the user was assigned.
      */
 
     public void setName(String name) {
@@ -260,8 +244,7 @@ public class LaunchPathSummary implements Serializable, Cloneable {
      * Corresponds to the name of the portfolio to which the user was assigned.
      * </p>
      * 
-     * @return Corresponds to the name of the portfolio to which the user was
-     *         assigned.
+     * @return Corresponds to the name of the portfolio to which the user was assigned.
      */
 
     public String getName() {
@@ -274,10 +257,8 @@ public class LaunchPathSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @param name
-     *        Corresponds to the name of the portfolio to which the user was
-     *        assigned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Corresponds to the name of the portfolio to which the user was assigned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchPathSummary withName(String name) {
@@ -286,8 +267,7 @@ public class LaunchPathSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -321,25 +301,19 @@ public class LaunchPathSummary implements Serializable, Cloneable {
         LaunchPathSummary other = (LaunchPathSummary) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
-        if (other.getConstraintSummaries() == null
-                ^ this.getConstraintSummaries() == null)
+        if (other.getConstraintSummaries() == null ^ this.getConstraintSummaries() == null)
             return false;
-        if (other.getConstraintSummaries() != null
-                && other.getConstraintSummaries().equals(
-                        this.getConstraintSummaries()) == false)
+        if (other.getConstraintSummaries() != null && other.getConstraintSummaries().equals(this.getConstraintSummaries()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -349,16 +323,10 @@ public class LaunchPathSummary implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConstraintSummaries() == null) ? 0
-                        : getConstraintSummaries().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getConstraintSummaries() == null) ? 0 : getConstraintSummaries().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 
@@ -367,9 +335,7 @@ public class LaunchPathSummary implements Serializable, Cloneable {
         try {
             return (LaunchPathSummary) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

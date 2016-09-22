@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
@@ -37,8 +35,7 @@ public class JobJsonMarshaller {
     public void marshall(Job job, StructuredJsonGenerator jsonGenerator) {
 
         if (job == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -51,87 +48,72 @@ public class JobJsonMarshaller {
                 jsonGenerator.writeFieldName("Arn").writeValue(job.getArn());
             }
             if (job.getPipelineId() != null) {
-                jsonGenerator.writeFieldName("PipelineId").writeValue(
-                        job.getPipelineId());
+                jsonGenerator.writeFieldName("PipelineId").writeValue(job.getPipelineId());
             }
             if (job.getInput() != null) {
                 jsonGenerator.writeFieldName("Input");
-                JobInputJsonMarshaller.getInstance().marshall(job.getInput(),
-                        jsonGenerator);
+                JobInputJsonMarshaller.getInstance().marshall(job.getInput(), jsonGenerator);
             }
             if (job.getOutput() != null) {
                 jsonGenerator.writeFieldName("Output");
-                JobOutputJsonMarshaller.getInstance().marshall(job.getOutput(),
-                        jsonGenerator);
+                JobOutputJsonMarshaller.getInstance().marshall(job.getOutput(), jsonGenerator);
             }
 
-            com.amazonaws.internal.SdkInternalList<JobOutput> outputsList = (com.amazonaws.internal.SdkInternalList<JobOutput>) job
-                    .getOutputs();
+            com.amazonaws.internal.SdkInternalList<JobOutput> outputsList = (com.amazonaws.internal.SdkInternalList<JobOutput>) job.getOutputs();
             if (!outputsList.isEmpty() || !outputsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("Outputs");
                 jsonGenerator.writeStartArray();
                 for (JobOutput outputsListValue : outputsList) {
                     if (outputsListValue != null) {
 
-                        JobOutputJsonMarshaller.getInstance().marshall(
-                                outputsListValue, jsonGenerator);
+                        JobOutputJsonMarshaller.getInstance().marshall(outputsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (job.getOutputKeyPrefix() != null) {
-                jsonGenerator.writeFieldName("OutputKeyPrefix").writeValue(
-                        job.getOutputKeyPrefix());
+                jsonGenerator.writeFieldName("OutputKeyPrefix").writeValue(job.getOutputKeyPrefix());
             }
 
-            com.amazonaws.internal.SdkInternalList<Playlist> playlistsList = (com.amazonaws.internal.SdkInternalList<Playlist>) job
-                    .getPlaylists();
+            com.amazonaws.internal.SdkInternalList<Playlist> playlistsList = (com.amazonaws.internal.SdkInternalList<Playlist>) job.getPlaylists();
             if (!playlistsList.isEmpty() || !playlistsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("Playlists");
                 jsonGenerator.writeStartArray();
                 for (Playlist playlistsListValue : playlistsList) {
                     if (playlistsListValue != null) {
 
-                        PlaylistJsonMarshaller.getInstance().marshall(
-                                playlistsListValue, jsonGenerator);
+                        PlaylistJsonMarshaller.getInstance().marshall(playlistsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (job.getStatus() != null) {
-                jsonGenerator.writeFieldName("Status").writeValue(
-                        job.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(job.getStatus());
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> userMetadataMap = (com.amazonaws.internal.SdkInternalMap<String, String>) job
                     .getUserMetadata();
-            if (!userMetadataMap.isEmpty()
-                    || !userMetadataMap.isAutoConstruct()) {
+            if (!userMetadataMap.isEmpty() || !userMetadataMap.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("UserMetadata");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> userMetadataMapValue : userMetadataMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> userMetadataMapValue : userMetadataMap.entrySet()) {
                     if (userMetadataMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(userMetadataMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(userMetadataMapValue.getKey());
 
-                        jsonGenerator.writeValue(userMetadataMapValue
-                                .getValue());
+                        jsonGenerator.writeValue(userMetadataMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
             }
             if (job.getTiming() != null) {
                 jsonGenerator.writeFieldName("Timing");
-                TimingJsonMarshaller.getInstance().marshall(job.getTiming(),
-                        jsonGenerator);
+                TimingJsonMarshaller.getInstance().marshall(job.getTiming(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

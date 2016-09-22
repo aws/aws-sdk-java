@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchv2.model;
 
@@ -18,16 +16,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Options for text field. Present if <code>IndexFieldType</code> specifies the
- * field is of type <code>text</code>. A <code>text</code> field is always
- * searchable. All options are enabled by default.
+ * Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A
+ * <code>text</code> field is always searchable. All options are enabled by default.
  * </p>
  */
 public class TextOptions implements Serializable, Cloneable {
 
-    /**
-     * A value to use for the field if the field isn't specified for a document.
-     */
+    /** A value to use for the field if the field isn't specified for a document. */
     private String defaultValue;
 
     private String sourceField;
@@ -60,8 +55,7 @@ public class TextOptions implements Serializable, Cloneable {
      * A value to use for the field if the field isn't specified for a document.
      * 
      * @param defaultValue
-     *        A value to use for the field if the field isn't specified for a
-     *        document.
+     *        A value to use for the field if the field isn't specified for a document.
      */
 
     public void setDefaultValue(String defaultValue) {
@@ -71,8 +65,7 @@ public class TextOptions implements Serializable, Cloneable {
     /**
      * A value to use for the field if the field isn't specified for a document.
      * 
-     * @return A value to use for the field if the field isn't specified for a
-     *         document.
+     * @return A value to use for the field if the field isn't specified for a document.
      */
 
     public String getDefaultValue() {
@@ -83,10 +76,8 @@ public class TextOptions implements Serializable, Cloneable {
      * A value to use for the field if the field isn't specified for a document.
      * 
      * @param defaultValue
-     *        A value to use for the field if the field isn't specified for a
-     *        document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value to use for the field if the field isn't specified for a document.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TextOptions withDefaultValue(String defaultValue) {
@@ -112,8 +103,7 @@ public class TextOptions implements Serializable, Cloneable {
 
     /**
      * @param sourceField
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TextOptions withSourceField(String sourceField) {
@@ -127,8 +117,7 @@ public class TextOptions implements Serializable, Cloneable {
      * </p>
      * 
      * @param returnEnabled
-     *        Whether the contents of the field can be returned in the search
-     *        results.
+     *        Whether the contents of the field can be returned in the search results.
      */
 
     public void setReturnEnabled(Boolean returnEnabled) {
@@ -140,8 +129,7 @@ public class TextOptions implements Serializable, Cloneable {
      * Whether the contents of the field can be returned in the search results.
      * </p>
      * 
-     * @return Whether the contents of the field can be returned in the search
-     *         results.
+     * @return Whether the contents of the field can be returned in the search results.
      */
 
     public Boolean getReturnEnabled() {
@@ -154,10 +142,8 @@ public class TextOptions implements Serializable, Cloneable {
      * </p>
      * 
      * @param returnEnabled
-     *        Whether the contents of the field can be returned in the search
-     *        results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Whether the contents of the field can be returned in the search results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TextOptions withReturnEnabled(Boolean returnEnabled) {
@@ -170,8 +156,7 @@ public class TextOptions implements Serializable, Cloneable {
      * Whether the contents of the field can be returned in the search results.
      * </p>
      * 
-     * @return Whether the contents of the field can be returned in the search
-     *         results.
+     * @return Whether the contents of the field can be returned in the search results.
      */
 
     public Boolean isReturnEnabled() {
@@ -210,8 +195,7 @@ public class TextOptions implements Serializable, Cloneable {
      * 
      * @param sortEnabled
      *        Whether the field can be used to sort the search results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TextOptions withSortEnabled(Boolean sortEnabled) {
@@ -263,8 +247,7 @@ public class TextOptions implements Serializable, Cloneable {
      * 
      * @param highlightEnabled
      *        Whether highlights can be returned for the field.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TextOptions withHighlightEnabled(Boolean highlightEnabled) {
@@ -316,8 +299,7 @@ public class TextOptions implements Serializable, Cloneable {
      * 
      * @param analysisScheme
      *        The name of an analysis scheme for a <code>text</code> field.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TextOptions withAnalysisScheme(String analysisScheme) {
@@ -326,8 +308,7 @@ public class TextOptions implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -365,36 +346,27 @@ public class TextOptions implements Serializable, Cloneable {
         TextOptions other = (TextOptions) obj;
         if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
             return false;
-        if (other.getDefaultValue() != null
-                && other.getDefaultValue().equals(this.getDefaultValue()) == false)
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
             return false;
         if (other.getSourceField() == null ^ this.getSourceField() == null)
             return false;
-        if (other.getSourceField() != null
-                && other.getSourceField().equals(this.getSourceField()) == false)
+        if (other.getSourceField() != null && other.getSourceField().equals(this.getSourceField()) == false)
             return false;
         if (other.getReturnEnabled() == null ^ this.getReturnEnabled() == null)
             return false;
-        if (other.getReturnEnabled() != null
-                && other.getReturnEnabled().equals(this.getReturnEnabled()) == false)
+        if (other.getReturnEnabled() != null && other.getReturnEnabled().equals(this.getReturnEnabled()) == false)
             return false;
         if (other.getSortEnabled() == null ^ this.getSortEnabled() == null)
             return false;
-        if (other.getSortEnabled() != null
-                && other.getSortEnabled().equals(this.getSortEnabled()) == false)
+        if (other.getSortEnabled() != null && other.getSortEnabled().equals(this.getSortEnabled()) == false)
             return false;
-        if (other.getHighlightEnabled() == null
-                ^ this.getHighlightEnabled() == null)
+        if (other.getHighlightEnabled() == null ^ this.getHighlightEnabled() == null)
             return false;
-        if (other.getHighlightEnabled() != null
-                && other.getHighlightEnabled().equals(
-                        this.getHighlightEnabled()) == false)
+        if (other.getHighlightEnabled() != null && other.getHighlightEnabled().equals(this.getHighlightEnabled()) == false)
             return false;
-        if (other.getAnalysisScheme() == null
-                ^ this.getAnalysisScheme() == null)
+        if (other.getAnalysisScheme() == null ^ this.getAnalysisScheme() == null)
             return false;
-        if (other.getAnalysisScheme() != null
-                && other.getAnalysisScheme().equals(this.getAnalysisScheme()) == false)
+        if (other.getAnalysisScheme() != null && other.getAnalysisScheme().equals(this.getAnalysisScheme()) == false)
             return false;
         return true;
     }
@@ -404,28 +376,12 @@ public class TextOptions implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDefaultValue() == null) ? 0 : getDefaultValue()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceField() == null) ? 0 : getSourceField().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReturnEnabled() == null) ? 0 : getReturnEnabled()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSortEnabled() == null) ? 0 : getSortEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHighlightEnabled() == null) ? 0 : getHighlightEnabled()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAnalysisScheme() == null) ? 0 : getAnalysisScheme()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
+        hashCode = prime * hashCode + ((getSourceField() == null) ? 0 : getSourceField().hashCode());
+        hashCode = prime * hashCode + ((getReturnEnabled() == null) ? 0 : getReturnEnabled().hashCode());
+        hashCode = prime * hashCode + ((getSortEnabled() == null) ? 0 : getSortEnabled().hashCode());
+        hashCode = prime * hashCode + ((getHighlightEnabled() == null) ? 0 : getHighlightEnabled().hashCode());
+        hashCode = prime * hashCode + ((getAnalysisScheme() == null) ? 0 : getAnalysisScheme().hashCode());
         return hashCode;
     }
 
@@ -434,9 +390,7 @@ public class TextOptions implements Serializable, Cloneable {
         try {
             return (TextOptions) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

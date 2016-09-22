@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,45 +41,35 @@ import com.amazonaws.protocol.json.*;
 /**
  * DeleteDeploymentRequest Marshaller
  */
-public class DeleteDeploymentRequestMarshaller implements
-        Marshaller<Request<DeleteDeploymentRequest>, DeleteDeploymentRequest> {
+public class DeleteDeploymentRequestMarshaller implements Marshaller<Request<DeleteDeploymentRequest>, DeleteDeploymentRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DeleteDeploymentRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DeleteDeploymentRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DeleteDeploymentRequest> marshall(
-            DeleteDeploymentRequest deleteDeploymentRequest) {
+    public Request<DeleteDeploymentRequest> marshall(DeleteDeploymentRequest deleteDeploymentRequest) {
 
         if (deleteDeploymentRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteDeploymentRequest> request = new DefaultRequest<DeleteDeploymentRequest>(
-                deleteDeploymentRequest, "AmazonApiGateway");
+        Request<DeleteDeploymentRequest> request = new DefaultRequest<DeleteDeploymentRequest>(deleteDeploymentRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/restapis/{restapi_id}/deployments/{deployment_id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (deleteDeploymentRequest.getRestApiId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils
-                                .fromString(deleteDeploymentRequest
-                                        .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath
                 .replace(
-                        "{deployment_id}",
-                        (deleteDeploymentRequest.getDeploymentId() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(deleteDeploymentRequest
-                                                .getDeploymentId()), false)
-                                : "");
+                        "{restapi_id}",
+                        (deleteDeploymentRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils.fromString(deleteDeploymentRequest.getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{deployment_id}",
+                (deleteDeploymentRequest.getDeploymentId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteDeploymentRequest.getDeploymentId()),
+                        false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

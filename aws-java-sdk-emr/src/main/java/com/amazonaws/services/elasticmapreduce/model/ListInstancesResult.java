@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * This output contains the list of instances.
  * </p>
  */
-public class ListInstancesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListInstancesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -68,8 +64,7 @@ public class ListInstancesResult extends
             return;
         }
 
-        this.instances = new com.amazonaws.internal.SdkInternalList<Instance>(
-                instances);
+        this.instances = new com.amazonaws.internal.SdkInternalList<Instance>(instances);
     }
 
     /**
@@ -77,22 +72,19 @@ public class ListInstancesResult extends
      * The list of instances for the cluster and given filters.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstances(java.util.Collection)} or
-     * {@link #withInstances(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstances(java.util.Collection)} or {@link #withInstances(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param instances
      *        The list of instances for the cluster and given filters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListInstancesResult withInstances(Instance... instances) {
         if (this.instances == null) {
-            setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(
-                    instances.length));
+            setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(instances.length));
         }
         for (Instance ele : instances) {
             this.instances.add(ele);
@@ -107,12 +99,10 @@ public class ListInstancesResult extends
      * 
      * @param instances
      *        The list of instances for the cluster and given filters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListInstancesResult withInstances(
-            java.util.Collection<Instance> instances) {
+    public ListInstancesResult withInstances(java.util.Collection<Instance> instances) {
         setInstances(instances);
         return this;
     }
@@ -123,8 +113,7 @@ public class ListInstancesResult extends
      * </p>
      * 
      * @param marker
-     *        The pagination token that indicates the next set of results to
-     *        retrieve.
+     *        The pagination token that indicates the next set of results to retrieve.
      */
 
     public void setMarker(String marker) {
@@ -136,8 +125,7 @@ public class ListInstancesResult extends
      * The pagination token that indicates the next set of results to retrieve.
      * </p>
      * 
-     * @return The pagination token that indicates the next set of results to
-     *         retrieve.
+     * @return The pagination token that indicates the next set of results to retrieve.
      */
 
     public String getMarker() {
@@ -150,10 +138,8 @@ public class ListInstancesResult extends
      * </p>
      * 
      * @param marker
-     *        The pagination token that indicates the next set of results to
-     *        retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The pagination token that indicates the next set of results to retrieve.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListInstancesResult withMarker(String marker) {
@@ -162,8 +148,7 @@ public class ListInstancesResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -193,13 +178,11 @@ public class ListInstancesResult extends
         ListInstancesResult other = (ListInstancesResult) obj;
         if (other.getInstances() == null ^ this.getInstances() == null)
             return false;
-        if (other.getInstances() != null
-                && other.getInstances().equals(this.getInstances()) == false)
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -209,10 +192,8 @@ public class ListInstancesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstances() == null) ? 0 : getInstances().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -221,9 +202,7 @@ public class ListInstancesResult extends
         try {
             return (ListInstancesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

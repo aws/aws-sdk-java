@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -68,8 +66,7 @@ public class CacheNodeTypeSpecificValue implements Serializable, Cloneable {
      * 
      * @param cacheNodeType
      *        The cache node type for which this value applies.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CacheNodeTypeSpecificValue withCacheNodeType(String cacheNodeType) {
@@ -109,8 +106,7 @@ public class CacheNodeTypeSpecificValue implements Serializable, Cloneable {
      * 
      * @param value
      *        The value for the cache node type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CacheNodeTypeSpecificValue withValue(String value) {
@@ -119,8 +115,7 @@ public class CacheNodeTypeSpecificValue implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -150,13 +145,11 @@ public class CacheNodeTypeSpecificValue implements Serializable, Cloneable {
         CacheNodeTypeSpecificValue other = (CacheNodeTypeSpecificValue) obj;
         if (other.getCacheNodeType() == null ^ this.getCacheNodeType() == null)
             return false;
-        if (other.getCacheNodeType() != null
-                && other.getCacheNodeType().equals(this.getCacheNodeType()) == false)
+        if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false)
             return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
-        if (other.getValue() != null
-                && other.getValue().equals(this.getValue()) == false)
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
         return true;
     }
@@ -166,12 +159,8 @@ public class CacheNodeTypeSpecificValue implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCacheNodeType() == null) ? 0 : getCacheNodeType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode());
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         return hashCode;
     }
 
@@ -180,9 +169,7 @@ public class CacheNodeTypeSpecificValue implements Serializable, Cloneable {
         try {
             return (CacheNodeTypeSpecificValue) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

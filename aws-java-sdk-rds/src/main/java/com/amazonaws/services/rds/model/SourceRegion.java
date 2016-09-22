@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains an AWS Region name as the result of a successful call to the
- * <a>DescribeSourceRegions</a> action.
+ * Contains an AWS Region name as the result of a successful call to the <a>DescribeSourceRegions</a> action.
  * </p>
  */
 public class SourceRegion implements Serializable, Cloneable {
@@ -75,8 +72,7 @@ public class SourceRegion implements Serializable, Cloneable {
      * 
      * @param regionName
      *        The source region name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SourceRegion withRegionName(String regionName) {
@@ -116,8 +112,7 @@ public class SourceRegion implements Serializable, Cloneable {
      * 
      * @param endpoint
      *        The source region endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SourceRegion withEndpoint(String endpoint) {
@@ -157,8 +152,7 @@ public class SourceRegion implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the source region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SourceRegion withStatus(String status) {
@@ -167,8 +161,7 @@ public class SourceRegion implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -200,18 +193,15 @@ public class SourceRegion implements Serializable, Cloneable {
         SourceRegion other = (SourceRegion) obj;
         if (other.getRegionName() == null ^ this.getRegionName() == null)
             return false;
-        if (other.getRegionName() != null
-                && other.getRegionName().equals(this.getRegionName()) == false)
+        if (other.getRegionName() != null && other.getRegionName().equals(this.getRegionName()) == false)
             return false;
         if (other.getEndpoint() == null ^ this.getEndpoint() == null)
             return false;
-        if (other.getEndpoint() != null
-                && other.getEndpoint().equals(this.getEndpoint()) == false)
+        if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -221,12 +211,9 @@ public class SourceRegion implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
+        hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 
@@ -235,9 +222,7 @@ public class SourceRegion implements Serializable, Cloneable {
         try {
             return (SourceRegion) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

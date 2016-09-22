@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,41 +41,32 @@ import com.amazonaws.protocol.json.*;
 /**
  * DeleteResourceRequest Marshaller
  */
-public class DeleteResourceRequestMarshaller implements
-        Marshaller<Request<DeleteResourceRequest>, DeleteResourceRequest> {
+public class DeleteResourceRequestMarshaller implements Marshaller<Request<DeleteResourceRequest>, DeleteResourceRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DeleteResourceRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DeleteResourceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DeleteResourceRequest> marshall(
-            DeleteResourceRequest deleteResourceRequest) {
+    public Request<DeleteResourceRequest> marshall(DeleteResourceRequest deleteResourceRequest) {
 
         if (deleteResourceRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteResourceRequest> request = new DefaultRequest<DeleteResourceRequest>(
-                deleteResourceRequest, "AmazonApiGateway");
+        Request<DeleteResourceRequest> request = new DefaultRequest<DeleteResourceRequest>(deleteResourceRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (deleteResourceRequest.getRestApiId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(deleteResourceRequest
-                                .getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (deleteResourceRequest.getResourceId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(deleteResourceRequest
-                                .getResourceId()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{restapi_id}",
+                (deleteResourceRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteResourceRequest.getRestApiId()), false)
+                        : "");
+        uriResourcePath = uriResourcePath.replace("{resource_id}",
+                (deleteResourceRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteResourceRequest.getResourceId()), false)
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

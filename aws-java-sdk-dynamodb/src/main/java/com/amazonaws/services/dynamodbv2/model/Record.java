@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model;
 
@@ -25,8 +23,7 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A globally unique identifier for the event that was recorded in this
-     * stream record.
+     * A globally unique identifier for the event that was recorded in this stream record.
      * </p>
      */
     private String eventID;
@@ -42,8 +39,7 @@ public class Record implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>MODIFY</code> - one or more of an existing item's attributes were
-     * modified.
+     * <code>MODIFY</code> - one or more of an existing item's attributes were modified.
      * </p>
      * </li>
      * <li>
@@ -56,21 +52,19 @@ public class Record implements Serializable, Cloneable {
     private String eventName;
     /**
      * <p>
-     * The version number of the stream record format. This number is updated
-     * whenever the structure of <i>Record</i> is modified.
+     * The version number of the stream record format. This number is updated whenever the structure of <i>Record</i> is
+     * modified.
      * </p>
      * <p>
-     * Client applications must not assume that <i>eventVersion</i> will remain
-     * at a particular value, as this number is subject to change at any time.
-     * In general, <i>eventVersion</i> will only increase as the low-level
-     * DynamoDB Streams API evolves.
+     * Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this number is
+     * subject to change at any time. In general, <i>eventVersion</i> will only increase as the low-level DynamoDB
+     * Streams API evolves.
      * </p>
      */
     private String eventVersion;
     /**
      * <p>
-     * The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <i>aws:dynamodb</i>.
+     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <i>aws:dynamodb</i>.
      * </p>
      */
     private String eventSource;
@@ -82,21 +76,18 @@ public class Record implements Serializable, Cloneable {
     private String awsRegion;
     /**
      * <p>
-     * The main body of the stream record, containing all of the
-     * DynamoDB-specific fields.
+     * The main body of the stream record, containing all of the DynamoDB-specific fields.
      * </p>
      */
     private StreamRecord dynamodb;
 
     /**
      * <p>
-     * A globally unique identifier for the event that was recorded in this
-     * stream record.
+     * A globally unique identifier for the event that was recorded in this stream record.
      * </p>
      * 
      * @param eventID
-     *        A globally unique identifier for the event that was recorded in
-     *        this stream record.
+     *        A globally unique identifier for the event that was recorded in this stream record.
      */
 
     public void setEventID(String eventID) {
@@ -105,12 +96,10 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A globally unique identifier for the event that was recorded in this
-     * stream record.
+     * A globally unique identifier for the event that was recorded in this stream record.
      * </p>
      * 
-     * @return A globally unique identifier for the event that was recorded in
-     *         this stream record.
+     * @return A globally unique identifier for the event that was recorded in this stream record.
      */
 
     public String getEventID() {
@@ -119,15 +108,12 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A globally unique identifier for the event that was recorded in this
-     * stream record.
+     * A globally unique identifier for the event that was recorded in this stream record.
      * </p>
      * 
      * @param eventID
-     *        A globally unique identifier for the event that was recorded in
-     *        this stream record.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A globally unique identifier for the event that was recorded in this stream record.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Record withEventID(String eventID) {
@@ -147,8 +133,7 @@ public class Record implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>MODIFY</code> - one or more of an existing item's attributes were
-     * modified.
+     * <code>MODIFY</code> - one or more of an existing item's attributes were modified.
      * </p>
      * </li>
      * <li>
@@ -159,8 +144,7 @@ public class Record implements Serializable, Cloneable {
      * </ul>
      * 
      * @param eventName
-     *        The type of data modification that was performed on the DynamoDB
-     *        table:</p>
+     *        The type of data modification that was performed on the DynamoDB table:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -169,8 +153,7 @@ public class Record implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MODIFY</code> - one or more of an existing item's attributes
-     *        were modified.
+     *        <code>MODIFY</code> - one or more of an existing item's attributes were modified.
      *        </p>
      *        </li>
      *        <li>
@@ -197,8 +180,7 @@ public class Record implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>MODIFY</code> - one or more of an existing item's attributes were
-     * modified.
+     * <code>MODIFY</code> - one or more of an existing item's attributes were modified.
      * </p>
      * </li>
      * <li>
@@ -208,8 +190,7 @@ public class Record implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The type of data modification that was performed on the DynamoDB
-     *         table:</p>
+     * @return The type of data modification that was performed on the DynamoDB table:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -218,8 +199,7 @@ public class Record implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MODIFY</code> - one or more of an existing item's
-     *         attributes were modified.
+     *         <code>MODIFY</code> - one or more of an existing item's attributes were modified.
      *         </p>
      *         </li>
      *         <li>
@@ -246,8 +226,7 @@ public class Record implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>MODIFY</code> - one or more of an existing item's attributes were
-     * modified.
+     * <code>MODIFY</code> - one or more of an existing item's attributes were modified.
      * </p>
      * </li>
      * <li>
@@ -258,8 +237,7 @@ public class Record implements Serializable, Cloneable {
      * </ul>
      * 
      * @param eventName
-     *        The type of data modification that was performed on the DynamoDB
-     *        table:</p>
+     *        The type of data modification that was performed on the DynamoDB table:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -268,8 +246,7 @@ public class Record implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MODIFY</code> - one or more of an existing item's attributes
-     *        were modified.
+     *        <code>MODIFY</code> - one or more of an existing item's attributes were modified.
      *        </p>
      *        </li>
      *        <li>
@@ -277,8 +254,7 @@ public class Record implements Serializable, Cloneable {
      *        <code>REMOVE</code> - the item was deleted from the table
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
 
@@ -299,8 +275,7 @@ public class Record implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>MODIFY</code> - one or more of an existing item's attributes were
-     * modified.
+     * <code>MODIFY</code> - one or more of an existing item's attributes were modified.
      * </p>
      * </li>
      * <li>
@@ -311,8 +286,7 @@ public class Record implements Serializable, Cloneable {
      * </ul>
      * 
      * @param eventName
-     *        The type of data modification that was performed on the DynamoDB
-     *        table:</p>
+     *        The type of data modification that was performed on the DynamoDB table:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -321,8 +295,7 @@ public class Record implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MODIFY</code> - one or more of an existing item's attributes
-     *        were modified.
+     *        <code>MODIFY</code> - one or more of an existing item's attributes were modified.
      *        </p>
      *        </li>
      *        <li>
@@ -349,8 +322,7 @@ public class Record implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>MODIFY</code> - one or more of an existing item's attributes were
-     * modified.
+     * <code>MODIFY</code> - one or more of an existing item's attributes were modified.
      * </p>
      * </li>
      * <li>
@@ -361,8 +333,7 @@ public class Record implements Serializable, Cloneable {
      * </ul>
      * 
      * @param eventName
-     *        The type of data modification that was performed on the DynamoDB
-     *        table:</p>
+     *        The type of data modification that was performed on the DynamoDB table:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -371,8 +342,7 @@ public class Record implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MODIFY</code> - one or more of an existing item's attributes
-     *        were modified.
+     *        <code>MODIFY</code> - one or more of an existing item's attributes were modified.
      *        </p>
      *        </li>
      *        <li>
@@ -380,8 +350,7 @@ public class Record implements Serializable, Cloneable {
      *        <code>REMOVE</code> - the item was deleted from the table
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
 
@@ -392,24 +361,22 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version number of the stream record format. This number is updated
-     * whenever the structure of <i>Record</i> is modified.
+     * The version number of the stream record format. This number is updated whenever the structure of <i>Record</i> is
+     * modified.
      * </p>
      * <p>
-     * Client applications must not assume that <i>eventVersion</i> will remain
-     * at a particular value, as this number is subject to change at any time.
-     * In general, <i>eventVersion</i> will only increase as the low-level
-     * DynamoDB Streams API evolves.
+     * Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this number is
+     * subject to change at any time. In general, <i>eventVersion</i> will only increase as the low-level DynamoDB
+     * Streams API evolves.
      * </p>
      * 
      * @param eventVersion
-     *        The version number of the stream record format. This number is
-     *        updated whenever the structure of <i>Record</i> is modified.</p>
+     *        The version number of the stream record format. This number is updated whenever the structure of
+     *        <i>Record</i> is modified.</p>
      *        <p>
-     *        Client applications must not assume that <i>eventVersion</i> will
-     *        remain at a particular value, as this number is subject to change
-     *        at any time. In general, <i>eventVersion</i> will only increase as
-     *        the low-level DynamoDB Streams API evolves.
+     *        Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this
+     *        number is subject to change at any time. In general, <i>eventVersion</i> will only increase as the
+     *        low-level DynamoDB Streams API evolves.
      */
 
     public void setEventVersion(String eventVersion) {
@@ -418,23 +385,21 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version number of the stream record format. This number is updated
-     * whenever the structure of <i>Record</i> is modified.
+     * The version number of the stream record format. This number is updated whenever the structure of <i>Record</i> is
+     * modified.
      * </p>
      * <p>
-     * Client applications must not assume that <i>eventVersion</i> will remain
-     * at a particular value, as this number is subject to change at any time.
-     * In general, <i>eventVersion</i> will only increase as the low-level
-     * DynamoDB Streams API evolves.
+     * Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this number is
+     * subject to change at any time. In general, <i>eventVersion</i> will only increase as the low-level DynamoDB
+     * Streams API evolves.
      * </p>
      * 
-     * @return The version number of the stream record format. This number is
-     *         updated whenever the structure of <i>Record</i> is modified.</p>
+     * @return The version number of the stream record format. This number is updated whenever the structure of
+     *         <i>Record</i> is modified.</p>
      *         <p>
-     *         Client applications must not assume that <i>eventVersion</i> will
-     *         remain at a particular value, as this number is subject to change
-     *         at any time. In general, <i>eventVersion</i> will only increase
-     *         as the low-level DynamoDB Streams API evolves.
+     *         Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this
+     *         number is subject to change at any time. In general, <i>eventVersion</i> will only increase as the
+     *         low-level DynamoDB Streams API evolves.
      */
 
     public String getEventVersion() {
@@ -443,26 +408,23 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version number of the stream record format. This number is updated
-     * whenever the structure of <i>Record</i> is modified.
+     * The version number of the stream record format. This number is updated whenever the structure of <i>Record</i> is
+     * modified.
      * </p>
      * <p>
-     * Client applications must not assume that <i>eventVersion</i> will remain
-     * at a particular value, as this number is subject to change at any time.
-     * In general, <i>eventVersion</i> will only increase as the low-level
-     * DynamoDB Streams API evolves.
+     * Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this number is
+     * subject to change at any time. In general, <i>eventVersion</i> will only increase as the low-level DynamoDB
+     * Streams API evolves.
      * </p>
      * 
      * @param eventVersion
-     *        The version number of the stream record format. This number is
-     *        updated whenever the structure of <i>Record</i> is modified.</p>
+     *        The version number of the stream record format. This number is updated whenever the structure of
+     *        <i>Record</i> is modified.</p>
      *        <p>
-     *        Client applications must not assume that <i>eventVersion</i> will
-     *        remain at a particular value, as this number is subject to change
-     *        at any time. In general, <i>eventVersion</i> will only increase as
-     *        the low-level DynamoDB Streams API evolves.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this
+     *        number is subject to change at any time. In general, <i>eventVersion</i> will only increase as the
+     *        low-level DynamoDB Streams API evolves.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Record withEventVersion(String eventVersion) {
@@ -472,13 +434,12 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <i>aws:dynamodb</i>.
+     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <i>aws:dynamodb</i>.
      * </p>
      * 
      * @param eventSource
-     *        The AWS service from which the stream record originated. For
-     *        DynamoDB Streams, this is <i>aws:dynamodb</i>.
+     *        The AWS service from which the stream record originated. For DynamoDB Streams, this is
+     *        <i>aws:dynamodb</i>.
      */
 
     public void setEventSource(String eventSource) {
@@ -487,12 +448,11 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <i>aws:dynamodb</i>.
+     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <i>aws:dynamodb</i>.
      * </p>
      * 
-     * @return The AWS service from which the stream record originated. For
-     *         DynamoDB Streams, this is <i>aws:dynamodb</i>.
+     * @return The AWS service from which the stream record originated. For DynamoDB Streams, this is
+     *         <i>aws:dynamodb</i>.
      */
 
     public String getEventSource() {
@@ -501,15 +461,13 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <i>aws:dynamodb</i>.
+     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <i>aws:dynamodb</i>.
      * </p>
      * 
      * @param eventSource
-     *        The AWS service from which the stream record originated. For
-     *        DynamoDB Streams, this is <i>aws:dynamodb</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS service from which the stream record originated. For DynamoDB Streams, this is
+     *        <i>aws:dynamodb</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Record withEventSource(String eventSource) {
@@ -549,8 +507,7 @@ public class Record implements Serializable, Cloneable {
      * 
      * @param awsRegion
      *        The region in which the <i>GetRecords</i> request was received.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Record withAwsRegion(String awsRegion) {
@@ -560,13 +517,11 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The main body of the stream record, containing all of the
-     * DynamoDB-specific fields.
+     * The main body of the stream record, containing all of the DynamoDB-specific fields.
      * </p>
      * 
      * @param dynamodb
-     *        The main body of the stream record, containing all of the
-     *        DynamoDB-specific fields.
+     *        The main body of the stream record, containing all of the DynamoDB-specific fields.
      */
 
     public void setDynamodb(StreamRecord dynamodb) {
@@ -575,12 +530,10 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The main body of the stream record, containing all of the
-     * DynamoDB-specific fields.
+     * The main body of the stream record, containing all of the DynamoDB-specific fields.
      * </p>
      * 
-     * @return The main body of the stream record, containing all of the
-     *         DynamoDB-specific fields.
+     * @return The main body of the stream record, containing all of the DynamoDB-specific fields.
      */
 
     public StreamRecord getDynamodb() {
@@ -589,15 +542,12 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The main body of the stream record, containing all of the
-     * DynamoDB-specific fields.
+     * The main body of the stream record, containing all of the DynamoDB-specific fields.
      * </p>
      * 
      * @param dynamodb
-     *        The main body of the stream record, containing all of the
-     *        DynamoDB-specific fields.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The main body of the stream record, containing all of the DynamoDB-specific fields.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Record withDynamodb(StreamRecord dynamodb) {
@@ -606,8 +556,7 @@ public class Record implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -645,33 +594,27 @@ public class Record implements Serializable, Cloneable {
         Record other = (Record) obj;
         if (other.getEventID() == null ^ this.getEventID() == null)
             return false;
-        if (other.getEventID() != null
-                && other.getEventID().equals(this.getEventID()) == false)
+        if (other.getEventID() != null && other.getEventID().equals(this.getEventID()) == false)
             return false;
         if (other.getEventName() == null ^ this.getEventName() == null)
             return false;
-        if (other.getEventName() != null
-                && other.getEventName().equals(this.getEventName()) == false)
+        if (other.getEventName() != null && other.getEventName().equals(this.getEventName()) == false)
             return false;
         if (other.getEventVersion() == null ^ this.getEventVersion() == null)
             return false;
-        if (other.getEventVersion() != null
-                && other.getEventVersion().equals(this.getEventVersion()) == false)
+        if (other.getEventVersion() != null && other.getEventVersion().equals(this.getEventVersion()) == false)
             return false;
         if (other.getEventSource() == null ^ this.getEventSource() == null)
             return false;
-        if (other.getEventSource() != null
-                && other.getEventSource().equals(this.getEventSource()) == false)
+        if (other.getEventSource() != null && other.getEventSource().equals(this.getEventSource()) == false)
             return false;
         if (other.getAwsRegion() == null ^ this.getAwsRegion() == null)
             return false;
-        if (other.getAwsRegion() != null
-                && other.getAwsRegion().equals(this.getAwsRegion()) == false)
+        if (other.getAwsRegion() != null && other.getAwsRegion().equals(this.getAwsRegion()) == false)
             return false;
         if (other.getDynamodb() == null ^ this.getDynamodb() == null)
             return false;
-        if (other.getDynamodb() != null
-                && other.getDynamodb().equals(this.getDynamodb()) == false)
+        if (other.getDynamodb() != null && other.getDynamodb().equals(this.getDynamodb()) == false)
             return false;
         return true;
     }
@@ -681,21 +624,12 @@ public class Record implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getEventID() == null) ? 0 : getEventID().hashCode());
-        hashCode = prime * hashCode
-                + ((getEventName() == null) ? 0 : getEventName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEventVersion() == null) ? 0 : getEventVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEventSource() == null) ? 0 : getEventSource().hashCode());
-        hashCode = prime * hashCode
-                + ((getAwsRegion() == null) ? 0 : getAwsRegion().hashCode());
-        hashCode = prime * hashCode
-                + ((getDynamodb() == null) ? 0 : getDynamodb().hashCode());
+        hashCode = prime * hashCode + ((getEventID() == null) ? 0 : getEventID().hashCode());
+        hashCode = prime * hashCode + ((getEventName() == null) ? 0 : getEventName().hashCode());
+        hashCode = prime * hashCode + ((getEventVersion() == null) ? 0 : getEventVersion().hashCode());
+        hashCode = prime * hashCode + ((getEventSource() == null) ? 0 : getEventSource().hashCode());
+        hashCode = prime * hashCode + ((getAwsRegion() == null) ? 0 : getAwsRegion().hashCode());
+        hashCode = prime * hashCode + ((getDynamodb() == null) ? 0 : getDynamodb().hashCode());
         return hashCode;
     }
 
@@ -704,9 +638,7 @@ public class Record implements Serializable, Cloneable {
         try {
             return (Record) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

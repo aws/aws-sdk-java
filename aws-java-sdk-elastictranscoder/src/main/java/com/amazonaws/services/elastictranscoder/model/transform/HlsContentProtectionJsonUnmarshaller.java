@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * HlsContentProtection JSON Unmarshaller
  */
-public class HlsContentProtectionJsonUnmarshaller implements
-        Unmarshaller<HlsContentProtection, JsonUnmarshallerContext> {
+public class HlsContentProtectionJsonUnmarshaller implements Unmarshaller<HlsContentProtection, JsonUnmarshallerContext> {
 
-    public HlsContentProtection unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public HlsContentProtection unmarshall(JsonUnmarshallerContext context) throws Exception {
         HlsContentProtection hlsContentProtection = new HlsContentProtection();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,39 +49,30 @@ public class HlsContentProtectionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Method", targetDepth)) {
                     context.nextToken();
-                    hlsContentProtection.setMethod(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    hlsContentProtection.setMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
-                    hlsContentProtection.setKey(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    hlsContentProtection.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyMd5", targetDepth)) {
                     context.nextToken();
-                    hlsContentProtection.setKeyMd5(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    hlsContentProtection.setKeyMd5(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitializationVector", targetDepth)) {
                     context.nextToken();
-                    hlsContentProtection.setInitializationVector(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    hlsContentProtection.setInitializationVector(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context
-                        .testExpression("LicenseAcquisitionUrl", targetDepth)) {
+                if (context.testExpression("LicenseAcquisitionUrl", targetDepth)) {
                     context.nextToken();
-                    hlsContentProtection.setLicenseAcquisitionUrl(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    hlsContentProtection.setLicenseAcquisitionUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyStoragePolicy", targetDepth)) {
                     context.nextToken();
-                    hlsContentProtection.setKeyStoragePolicy(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    hlsContentProtection.setKeyStoragePolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

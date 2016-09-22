@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateApplicationRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,8 +28,7 @@ public class UpdateApplicationRequest extends
     private String applicationName;
     /**
      * <p>
-     * The current application version ID. You can use the
-     * <a>DescribeApplication</a> operation to get this value.
+     * The current application version ID. You can use the <a>DescribeApplication</a> operation to get this value.
      * </p>
      */
     private Long currentApplicationVersionId;
@@ -76,8 +71,7 @@ public class UpdateApplicationRequest extends
      * 
      * @param applicationName
      *        Name of the Kinesis Analytics application to update.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateApplicationRequest withApplicationName(String applicationName) {
@@ -87,13 +81,12 @@ public class UpdateApplicationRequest extends
 
     /**
      * <p>
-     * The current application version ID. You can use the
-     * <a>DescribeApplication</a> operation to get this value.
+     * The current application version ID. You can use the <a>DescribeApplication</a> operation to get this value.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The current application version ID. You can use the
-     *        <a>DescribeApplication</a> operation to get this value.
+     *        The current application version ID. You can use the <a>DescribeApplication</a> operation to get this
+     *        value.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -102,12 +95,11 @@ public class UpdateApplicationRequest extends
 
     /**
      * <p>
-     * The current application version ID. You can use the
-     * <a>DescribeApplication</a> operation to get this value.
+     * The current application version ID. You can use the <a>DescribeApplication</a> operation to get this value.
      * </p>
      * 
-     * @return The current application version ID. You can use the
-     *         <a>DescribeApplication</a> operation to get this value.
+     * @return The current application version ID. You can use the <a>DescribeApplication</a> operation to get this
+     *         value.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -116,19 +108,16 @@ public class UpdateApplicationRequest extends
 
     /**
      * <p>
-     * The current application version ID. You can use the
-     * <a>DescribeApplication</a> operation to get this value.
+     * The current application version ID. You can use the <a>DescribeApplication</a> operation to get this value.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The current application version ID. You can use the
-     *        <a>DescribeApplication</a> operation to get this value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The current application version ID. You can use the <a>DescribeApplication</a> operation to get this
+     *        value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateApplicationRequest withCurrentApplicationVersionId(
-            Long currentApplicationVersionId) {
+    public UpdateApplicationRequest withCurrentApplicationVersionId(Long currentApplicationVersionId) {
         setCurrentApplicationVersionId(currentApplicationVersionId);
         return this;
     }
@@ -165,19 +154,16 @@ public class UpdateApplicationRequest extends
      * 
      * @param applicationUpdate
      *        Describes application updates.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateApplicationRequest withApplicationUpdate(
-            ApplicationUpdate applicationUpdate) {
+    public UpdateApplicationRequest withApplicationUpdate(ApplicationUpdate applicationUpdate) {
         setApplicationUpdate(applicationUpdate);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -190,8 +176,7 @@ public class UpdateApplicationRequest extends
         if (getApplicationName() != null)
             sb.append("ApplicationName: " + getApplicationName() + ",");
         if (getCurrentApplicationVersionId() != null)
-            sb.append("CurrentApplicationVersionId: "
-                    + getCurrentApplicationVersionId() + ",");
+            sb.append("CurrentApplicationVersionId: " + getCurrentApplicationVersionId() + ",");
         if (getApplicationUpdate() != null)
             sb.append("ApplicationUpdate: " + getApplicationUpdate());
         sb.append("}");
@@ -208,25 +193,17 @@ public class UpdateApplicationRequest extends
         if (obj instanceof UpdateApplicationRequest == false)
             return false;
         UpdateApplicationRequest other = (UpdateApplicationRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
-        if (other.getCurrentApplicationVersionId() == null
-                ^ this.getCurrentApplicationVersionId() == null)
+        if (other.getCurrentApplicationVersionId() == null ^ this.getCurrentApplicationVersionId() == null)
             return false;
-        if (other.getCurrentApplicationVersionId() != null
-                && other.getCurrentApplicationVersionId().equals(
-                        this.getCurrentApplicationVersionId()) == false)
+        if (other.getCurrentApplicationVersionId() != null && other.getCurrentApplicationVersionId().equals(this.getCurrentApplicationVersionId()) == false)
             return false;
-        if (other.getApplicationUpdate() == null
-                ^ this.getApplicationUpdate() == null)
+        if (other.getApplicationUpdate() == null ^ this.getApplicationUpdate() == null)
             return false;
-        if (other.getApplicationUpdate() != null
-                && other.getApplicationUpdate().equals(
-                        this.getApplicationUpdate()) == false)
+        if (other.getApplicationUpdate() != null && other.getApplicationUpdate().equals(this.getApplicationUpdate()) == false)
             return false;
         return true;
     }
@@ -236,18 +213,9 @@ public class UpdateApplicationRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCurrentApplicationVersionId() == null) ? 0
-                        : getCurrentApplicationVersionId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getApplicationUpdate() == null) ? 0
-                        : getApplicationUpdate().hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getCurrentApplicationVersionId() == null) ? 0 : getCurrentApplicationVersionId().hashCode());
+        hashCode = prime * hashCode + ((getApplicationUpdate() == null) ? 0 : getApplicationUpdate().hashCode());
         return hashCode;
     }
 

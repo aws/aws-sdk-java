@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>DescribeCacheParameters</i> action.
  * </p>
  */
-public class DescribeCacheParametersRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeCacheParametersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -37,16 +33,14 @@ public class DescribeCacheParametersRequest extends
      * The parameter types to return.
      * </p>
      * <p>
-     * Valid values: <code>user</code> | <code>system</code> |
-     * <code>engine-default</code>
+     * Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code>
      * </p>
      */
     private String source;
     /**
      * <p>
-     * The maximum number of brecords to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a marker
-     * is included in the response so that the remaining results can be
+     * The maximum number of brecords to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
      * retrieved.
      * </p>
      * <p>
@@ -59,30 +53,26 @@ public class DescribeCacheParametersRequest extends
     private Integer maxRecords;
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
+     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.
      * </p>
      */
     private String marker;
 
     /**
-     * Default constructor for DescribeCacheParametersRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * the object after creating it.
+     * Default constructor for DescribeCacheParametersRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public DescribeCacheParametersRequest() {
     }
 
     /**
-     * Constructs a new DescribeCacheParametersRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new DescribeCacheParametersRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param cacheParameterGroupName
-     *        The name of a specific cache parameter group to return details
-     *        for.
+     *        The name of a specific cache parameter group to return details for.
      */
     public DescribeCacheParametersRequest(String cacheParameterGroupName) {
         setCacheParameterGroupName(cacheParameterGroupName);
@@ -94,8 +84,7 @@ public class DescribeCacheParametersRequest extends
      * </p>
      * 
      * @param cacheParameterGroupName
-     *        The name of a specific cache parameter group to return details
-     *        for.
+     *        The name of a specific cache parameter group to return details for.
      */
 
     public void setCacheParameterGroupName(String cacheParameterGroupName) {
@@ -107,8 +96,7 @@ public class DescribeCacheParametersRequest extends
      * The name of a specific cache parameter group to return details for.
      * </p>
      * 
-     * @return The name of a specific cache parameter group to return details
-     *         for.
+     * @return The name of a specific cache parameter group to return details for.
      */
 
     public String getCacheParameterGroupName() {
@@ -121,14 +109,11 @@ public class DescribeCacheParametersRequest extends
      * </p>
      * 
      * @param cacheParameterGroupName
-     *        The name of a specific cache parameter group to return details
-     *        for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of a specific cache parameter group to return details for.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCacheParametersRequest withCacheParameterGroupName(
-            String cacheParameterGroupName) {
+    public DescribeCacheParametersRequest withCacheParameterGroupName(String cacheParameterGroupName) {
         setCacheParameterGroupName(cacheParameterGroupName);
         return this;
     }
@@ -138,15 +123,13 @@ public class DescribeCacheParametersRequest extends
      * The parameter types to return.
      * </p>
      * <p>
-     * Valid values: <code>user</code> | <code>system</code> |
-     * <code>engine-default</code>
+     * Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code>
      * </p>
      * 
      * @param source
      *        The parameter types to return.</p>
      *        <p>
-     *        Valid values: <code>user</code> | <code>system</code> |
-     *        <code>engine-default</code>
+     *        Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code>
      */
 
     public void setSource(String source) {
@@ -158,14 +141,12 @@ public class DescribeCacheParametersRequest extends
      * The parameter types to return.
      * </p>
      * <p>
-     * Valid values: <code>user</code> | <code>system</code> |
-     * <code>engine-default</code>
+     * Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code>
      * </p>
      * 
      * @return The parameter types to return.</p>
      *         <p>
-     *         Valid values: <code>user</code> | <code>system</code> |
-     *         <code>engine-default</code>
+     *         Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code>
      */
 
     public String getSource() {
@@ -177,17 +158,14 @@ public class DescribeCacheParametersRequest extends
      * The parameter types to return.
      * </p>
      * <p>
-     * Valid values: <code>user</code> | <code>system</code> |
-     * <code>engine-default</code>
+     * Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code>
      * </p>
      * 
      * @param source
      *        The parameter types to return.</p>
      *        <p>
-     *        Valid values: <code>user</code> | <code>system</code> |
-     *        <code>engine-default</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCacheParametersRequest withSource(String source) {
@@ -197,9 +175,8 @@ public class DescribeCacheParametersRequest extends
 
     /**
      * <p>
-     * The maximum number of brecords to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a marker
-     * is included in the response so that the remaining results can be
+     * The maximum number of brecords to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
      * retrieved.
      * </p>
      * <p>
@@ -210,10 +187,9 @@ public class DescribeCacheParametersRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of brecords to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        marker is included in the response so that the remaining results
-     *        can be retrieved.</p>
+     *        The maximum number of brecords to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     *        retrieved.</p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -227,9 +203,8 @@ public class DescribeCacheParametersRequest extends
 
     /**
      * <p>
-     * The maximum number of brecords to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a marker
-     * is included in the response so that the remaining results can be
+     * The maximum number of brecords to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
      * retrieved.
      * </p>
      * <p>
@@ -239,10 +214,9 @@ public class DescribeCacheParametersRequest extends
      * Constraints: minimum 20; maximum 100.
      * </p>
      * 
-     * @return The maximum number of brecords to include in the response. If
-     *         more records exist than the specified <code>MaxRecords</code>
-     *         value, a marker is included in the response so that the remaining
-     *         results can be retrieved.</p>
+     * @return The maximum number of brecords to include in the response. If more records exist than the specified
+     *         <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     *         retrieved.</p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -256,9 +230,8 @@ public class DescribeCacheParametersRequest extends
 
     /**
      * <p>
-     * The maximum number of brecords to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a marker
-     * is included in the response so that the remaining results can be
+     * The maximum number of brecords to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
      * retrieved.
      * </p>
      * <p>
@@ -269,17 +242,15 @@ public class DescribeCacheParametersRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of brecords to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        marker is included in the response so that the remaining results
-     *        can be retrieved.</p>
+     *        The maximum number of brecords to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     *        retrieved.</p>
      *        <p>
      *        Default: 100
      *        </p>
      *        <p>
      *        Constraints: minimum 20; maximum 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCacheParametersRequest withMaxRecords(Integer maxRecords) {
@@ -289,17 +260,15 @@ public class DescribeCacheParametersRequest extends
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
+     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.
      * </p>
      * 
      * @param marker
-     *        An optional marker returned from a prior request. Use this marker
-     *        for pagination of results from this action. If this parameter is
-     *        specified, the response includes only records beyond the marker,
-     *        up to the value specified by <i>MaxRecords</i>.
+     *        An optional marker returned from a prior request. Use this marker for pagination of results from this
+     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <i>MaxRecords</i>.
      */
 
     public void setMarker(String marker) {
@@ -308,16 +277,14 @@ public class DescribeCacheParametersRequest extends
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
+     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.
      * </p>
      * 
-     * @return An optional marker returned from a prior request. Use this marker
-     *         for pagination of results from this action. If this parameter is
-     *         specified, the response includes only records beyond the marker,
-     *         up to the value specified by <i>MaxRecords</i>.
+     * @return An optional marker returned from a prior request. Use this marker for pagination of results from this
+     *         action. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *         value specified by <i>MaxRecords</i>.
      */
 
     public String getMarker() {
@@ -326,19 +293,16 @@ public class DescribeCacheParametersRequest extends
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
+     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.
      * </p>
      * 
      * @param marker
-     *        An optional marker returned from a prior request. Use this marker
-     *        for pagination of results from this action. If this parameter is
-     *        specified, the response includes only records beyond the marker,
-     *        up to the value specified by <i>MaxRecords</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional marker returned from a prior request. Use this marker for pagination of results from this
+     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <i>MaxRecords</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCacheParametersRequest withMarker(String marker) {
@@ -347,8 +311,7 @@ public class DescribeCacheParametersRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -359,8 +322,7 @@ public class DescribeCacheParametersRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheParameterGroupName() != null)
-            sb.append("CacheParameterGroupName: "
-                    + getCacheParameterGroupName() + ",");
+            sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
         if (getSource() != null)
             sb.append("Source: " + getSource() + ",");
         if (getMaxRecords() != null)
@@ -381,27 +343,21 @@ public class DescribeCacheParametersRequest extends
         if (obj instanceof DescribeCacheParametersRequest == false)
             return false;
         DescribeCacheParametersRequest other = (DescribeCacheParametersRequest) obj;
-        if (other.getCacheParameterGroupName() == null
-                ^ this.getCacheParameterGroupName() == null)
+        if (other.getCacheParameterGroupName() == null ^ this.getCacheParameterGroupName() == null)
             return false;
-        if (other.getCacheParameterGroupName() != null
-                && other.getCacheParameterGroupName().equals(
-                        this.getCacheParameterGroupName()) == false)
+        if (other.getCacheParameterGroupName() != null && other.getCacheParameterGroupName().equals(this.getCacheParameterGroupName()) == false)
             return false;
         if (other.getSource() == null ^ this.getSource() == null)
             return false;
-        if (other.getSource() != null
-                && other.getSource().equals(this.getSource()) == false)
+        if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -411,16 +367,10 @@ public class DescribeCacheParametersRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCacheParameterGroupName() == null) ? 0
-                        : getCacheParameterGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getSource() == null) ? 0 : getSource().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getCacheParameterGroupName() == null) ? 0 : getCacheParameterGroupName().hashCode());
+        hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 

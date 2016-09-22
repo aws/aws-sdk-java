@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeMovingAddressesRequest
  * Contains the parameters for DescribeMovingAddresses.
  * </p>
  */
-public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeMovingAddressesRequest> {
 
     /**
@@ -47,8 +44,8 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>moving-status</code> - The status of the Elastic IP address (
-     * <code>MovingToVpc</code> | <code>RestoringToClassic</code>).
+     * <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> |
+     * <code>RestoringToClassic</code>).
      * </p>
      * </li>
      * </ul>
@@ -56,11 +53,9 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page.
-     * The remaining results of the initial request can be seen by sending
-     * another request with the returned <code>NextToken</code> value. This
-     * value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     * value outside of this range, an error is returned.
+     * The maximum number of results to return for the request in a single page. The remaining results of the initial
+     * request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be
+     * between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.
      * </p>
      * <p>
      * Default: If no value is provided, the default is 1000.
@@ -98,8 +93,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.publicIps = new com.amazonaws.internal.SdkInternalList<String>(
-                publicIps);
+        this.publicIps = new com.amazonaws.internal.SdkInternalList<String>(publicIps);
     }
 
     /**
@@ -107,22 +101,19 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * One or more Elastic IP addresses.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPublicIps(java.util.Collection)} or
-     * {@link #withPublicIps(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPublicIps(java.util.Collection)} or {@link #withPublicIps(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param publicIps
      *        One or more Elastic IP addresses.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMovingAddressesRequest withPublicIps(String... publicIps) {
         if (this.publicIps == null) {
-            setPublicIps(new com.amazonaws.internal.SdkInternalList<String>(
-                    publicIps.length));
+            setPublicIps(new com.amazonaws.internal.SdkInternalList<String>(publicIps.length));
         }
         for (String ele : publicIps) {
             this.publicIps.add(ele);
@@ -137,12 +128,10 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * 
      * @param publicIps
      *        One or more Elastic IP addresses.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeMovingAddressesRequest withPublicIps(
-            java.util.Collection<String> publicIps) {
+    public DescribeMovingAddressesRequest withPublicIps(java.util.Collection<String> publicIps) {
         setPublicIps(publicIps);
         return this;
     }
@@ -179,8 +168,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * 
      * @param nextToken
      *        The token to use to retrieve the next page of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMovingAddressesRequest withNextToken(String nextToken) {
@@ -195,8 +183,8 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>moving-status</code> - The status of the Elastic IP address (
-     * <code>MovingToVpc</code> | <code>RestoringToClassic</code>).
+     * <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> |
+     * <code>RestoringToClassic</code>).
      * </p>
      * </li>
      * </ul>
@@ -205,8 +193,8 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>moving-status</code> - The status of the Elastic IP address
-     *         (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).
+     *         <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> |
+     *         <code>RestoringToClassic</code>).
      *         </p>
      *         </li>
      */
@@ -225,8 +213,8 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>moving-status</code> - The status of the Elastic IP address (
-     * <code>MovingToVpc</code> | <code>RestoringToClassic</code>).
+     * <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> |
+     * <code>RestoringToClassic</code>).
      * </p>
      * </li>
      * </ul>
@@ -236,8 +224,8 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>moving-status</code> - The status of the Elastic IP address
-     *        (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).
+     *        <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> |
+     *        <code>RestoringToClassic</code>).
      *        </p>
      *        </li>
      */
@@ -248,8 +236,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -259,16 +246,15 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>moving-status</code> - The status of the Elastic IP address (
-     * <code>MovingToVpc</code> | <code>RestoringToClassic</code>).
+     * <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> |
+     * <code>RestoringToClassic</code>).
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
@@ -276,18 +262,16 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>moving-status</code> - The status of the Elastic IP address
-     *        (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).
+     *        <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> |
+     *        <code>RestoringToClassic</code>).
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMovingAddressesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -302,8 +286,8 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>moving-status</code> - The status of the Elastic IP address (
-     * <code>MovingToVpc</code> | <code>RestoringToClassic</code>).
+     * <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> |
+     * <code>RestoringToClassic</code>).
      * </p>
      * </li>
      * </ul>
@@ -313,39 +297,33 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>moving-status</code> - The status of the Elastic IP address
-     *        (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).
+     *        <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> |
+     *        <code>RestoringToClassic</code>).
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeMovingAddressesRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeMovingAddressesRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page.
-     * The remaining results of the initial request can be seen by sending
-     * another request with the returned <code>NextToken</code> value. This
-     * value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     * value outside of this range, an error is returned.
+     * The maximum number of results to return for the request in a single page. The remaining results of the initial
+     * request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be
+     * between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.
      * </p>
      * <p>
      * Default: If no value is provided, the default is 1000.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a
-     *        single page. The remaining results of the initial request can be
-     *        seen by sending another request with the returned
-     *        <code>NextToken</code> value. This value can be between 5 and
-     *        1000; if <code>MaxResults</code> is given a value outside of this
-     *        range, an error is returned.</p>
+     *        The maximum number of results to return for the request in a single page. The remaining results of the
+     *        initial request can be seen by sending another request with the returned <code>NextToken</code> value.
+     *        This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range,
+     *        an error is returned.</p>
      *        <p>
      *        Default: If no value is provided, the default is 1000.
      */
@@ -356,22 +334,18 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page.
-     * The remaining results of the initial request can be seen by sending
-     * another request with the returned <code>NextToken</code> value. This
-     * value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     * value outside of this range, an error is returned.
+     * The maximum number of results to return for the request in a single page. The remaining results of the initial
+     * request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be
+     * between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.
      * </p>
      * <p>
      * Default: If no value is provided, the default is 1000.
      * </p>
      * 
-     * @return The maximum number of results to return for the request in a
-     *         single page. The remaining results of the initial request can be
-     *         seen by sending another request with the returned
-     *         <code>NextToken</code> value. This value can be between 5 and
-     *         1000; if <code>MaxResults</code> is given a value outside of this
-     *         range, an error is returned.</p>
+     * @return The maximum number of results to return for the request in a single page. The remaining results of the
+     *         initial request can be seen by sending another request with the returned <code>NextToken</code> value.
+     *         This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range,
+     *         an error is returned.</p>
      *         <p>
      *         Default: If no value is provided, the default is 1000.
      */
@@ -382,27 +356,22 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page.
-     * The remaining results of the initial request can be seen by sending
-     * another request with the returned <code>NextToken</code> value. This
-     * value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     * value outside of this range, an error is returned.
+     * The maximum number of results to return for the request in a single page. The remaining results of the initial
+     * request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be
+     * between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.
      * </p>
      * <p>
      * Default: If no value is provided, the default is 1000.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a
-     *        single page. The remaining results of the initial request can be
-     *        seen by sending another request with the returned
-     *        <code>NextToken</code> value. This value can be between 5 and
-     *        1000; if <code>MaxResults</code> is given a value outside of this
-     *        range, an error is returned.</p>
+     *        The maximum number of results to return for the request in a single page. The remaining results of the
+     *        initial request can be seen by sending another request with the returned <code>NextToken</code> value.
+     *        This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range,
+     *        an error is returned.</p>
      *        <p>
      *        Default: If no value is provided, the default is 1000.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMovingAddressesRequest withMaxResults(Integer maxResults) {
@@ -411,21 +380,18 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeMovingAddressesRequest> getDryRunRequest() {
-        Request<DescribeMovingAddressesRequest> request = new DescribeMovingAddressesRequestMarshaller()
-                .marshall(this);
+        Request<DescribeMovingAddressesRequest> request = new DescribeMovingAddressesRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -459,23 +425,19 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
         DescribeMovingAddressesRequest other = (DescribeMovingAddressesRequest) obj;
         if (other.getPublicIps() == null ^ this.getPublicIps() == null)
             return false;
-        if (other.getPublicIps() != null
-                && other.getPublicIps().equals(this.getPublicIps()) == false)
+        if (other.getPublicIps() != null && other.getPublicIps().equals(this.getPublicIps()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -485,14 +447,10 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPublicIps() == null) ? 0 : getPublicIps().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getPublicIps() == null) ? 0 : getPublicIps().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model;
 
@@ -21,15 +19,12 @@ import java.io.Serializable;
  * Represents the output of a <i>Query</i> operation.
  * </p>
  */
-public class QueryResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of item attributes that match the query criteria. Each element
-     * in this array consists of an attribute name and the value for that
-     * attribute.
+     * An array of item attributes that match the query criteria. Each element in this array consists of an attribute
+     * name and the value for that attribute.
      * </p>
      */
     private java.util.List<java.util.Map<String, AttributeValue>> items;
@@ -38,48 +33,38 @@ public class QueryResult extends
      * The number of items in the response.
      * </p>
      * <p>
-     * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the
-     * number of items returned after the filter was applied, and
-     * <i>ScannedCount</i> is the number of matching items before the filter was
-     * applied.
+     * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after the
+     * filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was applied.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>Count</i> and
-     * <i>ScannedCount</i> are the same.
+     * If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
      * </p>
      */
     private Integer count;
     /**
      * <p>
-     * The number of items evaluated, before any <i>QueryFilter</i> is applied.
-     * A high <i>ScannedCount</i> value with few, or no, <i>Count</i> results
-     * indicates an inefficient <i>Query</i> operation. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count"
-     * >Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.
+     * The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value with
+     * few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     * ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>ScannedCount</i> is
-     * the same as <i>Count</i>.
+     * If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
      * </p>
      */
     private Integer scannedCount;
     /**
      * <p>
-     * The primary key of the item where the operation stopped, inclusive of the
-     * previous result set. Use this value to start a new operation, excluding
-     * this value in the new request.
+     * The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to
+     * start a new operation, excluding this value in the new request.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has
-     * been processed and there is no more data to be retrieved.
+     * If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data
+     * to be retrieved.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean
-     * that there is more data in the result set. The only way to know when you
-     * have reached the end of the result set is when <i>LastEvaluatedKey</i> is
-     * empty.
+     * If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set.
+     * The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.
      * </p>
      */
     private java.util.Map<String, AttributeValue> lastEvaluatedKey;
@@ -88,14 +73,12 @@ public class QueryResult extends
 
     /**
      * <p>
-     * An array of item attributes that match the query criteria. Each element
-     * in this array consists of an attribute name and the value for that
-     * attribute.
+     * An array of item attributes that match the query criteria. Each element in this array consists of an attribute
+     * name and the value for that attribute.
      * </p>
      * 
-     * @return An array of item attributes that match the query criteria. Each
-     *         element in this array consists of an attribute name and the value
-     *         for that attribute.
+     * @return An array of item attributes that match the query criteria. Each element in this array consists of an
+     *         attribute name and the value for that attribute.
      */
 
     public java.util.List<java.util.Map<String, AttributeValue>> getItems() {
@@ -104,53 +87,44 @@ public class QueryResult extends
 
     /**
      * <p>
-     * An array of item attributes that match the query criteria. Each element
-     * in this array consists of an attribute name and the value for that
-     * attribute.
+     * An array of item attributes that match the query criteria. Each element in this array consists of an attribute
+     * name and the value for that attribute.
      * </p>
      * 
      * @param items
-     *        An array of item attributes that match the query criteria. Each
-     *        element in this array consists of an attribute name and the value
-     *        for that attribute.
+     *        An array of item attributes that match the query criteria. Each element in this array consists of an
+     *        attribute name and the value for that attribute.
      */
 
-    public void setItems(
-            java.util.Collection<java.util.Map<String, AttributeValue>> items) {
+    public void setItems(java.util.Collection<java.util.Map<String, AttributeValue>> items) {
         if (items == null) {
             this.items = null;
             return;
         }
 
-        this.items = new java.util.ArrayList<java.util.Map<String, AttributeValue>>(
-                items);
+        this.items = new java.util.ArrayList<java.util.Map<String, AttributeValue>>(items);
     }
 
     /**
      * <p>
-     * An array of item attributes that match the query criteria. Each element
-     * in this array consists of an attribute name and the value for that
-     * attribute.
+     * An array of item attributes that match the query criteria. Each element in this array consists of an attribute
+     * name and the value for that attribute.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setItems(java.util.Collection)} or
-     * {@link #withItems(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param items
-     *        An array of item attributes that match the query criteria. Each
-     *        element in this array consists of an attribute name and the value
-     *        for that attribute.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of item attributes that match the query criteria. Each element in this array consists of an
+     *        attribute name and the value for that attribute.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryResult withItems(java.util.Map<String, AttributeValue>... items) {
         if (this.items == null) {
-            setItems(new java.util.ArrayList<java.util.Map<String, AttributeValue>>(
-                    items.length));
+            setItems(new java.util.ArrayList<java.util.Map<String, AttributeValue>>(items.length));
         }
         for (java.util.Map<String, AttributeValue> ele : items) {
             this.items.add(ele);
@@ -160,21 +134,17 @@ public class QueryResult extends
 
     /**
      * <p>
-     * An array of item attributes that match the query criteria. Each element
-     * in this array consists of an attribute name and the value for that
-     * attribute.
+     * An array of item attributes that match the query criteria. Each element in this array consists of an attribute
+     * name and the value for that attribute.
      * </p>
      * 
      * @param items
-     *        An array of item attributes that match the query criteria. Each
-     *        element in this array consists of an attribute name and the value
-     *        for that attribute.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of item attributes that match the query criteria. Each element in this array consists of an
+     *        attribute name and the value for that attribute.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public QueryResult withItems(
-            java.util.Collection<java.util.Map<String, AttributeValue>> items) {
+    public QueryResult withItems(java.util.Collection<java.util.Map<String, AttributeValue>> items) {
         setItems(items);
         return this;
     }
@@ -184,27 +154,22 @@ public class QueryResult extends
      * The number of items in the response.
      * </p>
      * <p>
-     * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the
-     * number of items returned after the filter was applied, and
-     * <i>ScannedCount</i> is the number of matching items before the filter was
-     * applied.
+     * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after the
+     * filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was applied.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>Count</i> and
-     * <i>ScannedCount</i> are the same.
+     * If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
      * </p>
      * 
      * @param count
      *        The number of items in the response.</p>
      *        <p>
-     *        If you used a <i>QueryFilter</i> in the request, then <i>Count</i>
-     *        is the number of items returned after the filter was applied, and
-     *        <i>ScannedCount</i> is the number of matching items before the
-     *        filter was applied.
+     *        If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after
+     *        the filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was
+     *        applied.
      *        </p>
      *        <p>
-     *        If you did not use a filter in the request, then <i>Count</i> and
-     *        <i>ScannedCount</i> are the same.
+     *        If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
      */
 
     public void setCount(Integer count) {
@@ -216,26 +181,21 @@ public class QueryResult extends
      * The number of items in the response.
      * </p>
      * <p>
-     * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the
-     * number of items returned after the filter was applied, and
-     * <i>ScannedCount</i> is the number of matching items before the filter was
-     * applied.
+     * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after the
+     * filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was applied.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>Count</i> and
-     * <i>ScannedCount</i> are the same.
+     * If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
      * </p>
      * 
      * @return The number of items in the response.</p>
      *         <p>
-     *         If you used a <i>QueryFilter</i> in the request, then
-     *         <i>Count</i> is the number of items returned after the filter was
-     *         applied, and <i>ScannedCount</i> is the number of matching items
-     *         before the filter was applied.
+     *         If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after
+     *         the filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was
+     *         applied.
      *         </p>
      *         <p>
-     *         If you did not use a filter in the request, then <i>Count</i> and
-     *         <i>ScannedCount</i> are the same.
+     *         If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
      */
 
     public Integer getCount() {
@@ -247,29 +207,23 @@ public class QueryResult extends
      * The number of items in the response.
      * </p>
      * <p>
-     * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the
-     * number of items returned after the filter was applied, and
-     * <i>ScannedCount</i> is the number of matching items before the filter was
-     * applied.
+     * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after the
+     * filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was applied.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>Count</i> and
-     * <i>ScannedCount</i> are the same.
+     * If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
      * </p>
      * 
      * @param count
      *        The number of items in the response.</p>
      *        <p>
-     *        If you used a <i>QueryFilter</i> in the request, then <i>Count</i>
-     *        is the number of items returned after the filter was applied, and
-     *        <i>ScannedCount</i> is the number of matching items before the
-     *        filter was applied.
+     *        If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of items returned after
+     *        the filter was applied, and <i>ScannedCount</i> is the number of matching items before the filter was
+     *        applied.
      *        </p>
      *        <p>
-     *        If you did not use a filter in the request, then <i>Count</i> and
-     *        <i>ScannedCount</i> are the same.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i> are the same.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryResult withCount(Integer count) {
@@ -279,30 +233,23 @@ public class QueryResult extends
 
     /**
      * <p>
-     * The number of items evaluated, before any <i>QueryFilter</i> is applied.
-     * A high <i>ScannedCount</i> value with few, or no, <i>Count</i> results
-     * indicates an inefficient <i>Query</i> operation. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count"
-     * >Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.
+     * The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value with
+     * few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     * ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>ScannedCount</i> is
-     * the same as <i>Count</i>.
+     * If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
      * </p>
      * 
      * @param scannedCount
-     *        The number of items evaluated, before any <i>QueryFilter</i> is
-     *        applied. A high <i>ScannedCount</i> value with few, or no,
-     *        <i>Count</i> results indicates an inefficient <i>Query</i>
-     *        operation. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count"
-     *        >Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer
-     *        Guide</i>.</p>
+     *        The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value
+     *        with few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     *        ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
-     *        If you did not use a filter in the request, then
-     *        <i>ScannedCount</i> is the same as <i>Count</i>.
+     *        If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
      */
 
     public void setScannedCount(Integer scannedCount) {
@@ -311,29 +258,22 @@ public class QueryResult extends
 
     /**
      * <p>
-     * The number of items evaluated, before any <i>QueryFilter</i> is applied.
-     * A high <i>ScannedCount</i> value with few, or no, <i>Count</i> results
-     * indicates an inefficient <i>Query</i> operation. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count"
-     * >Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.
+     * The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value with
+     * few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     * ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>ScannedCount</i> is
-     * the same as <i>Count</i>.
+     * If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
      * </p>
      * 
-     * @return The number of items evaluated, before any <i>QueryFilter</i> is
-     *         applied. A high <i>ScannedCount</i> value with few, or no,
-     *         <i>Count</i> results indicates an inefficient <i>Query</i>
-     *         operation. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count"
-     *         >Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer
-     *         Guide</i>.</p>
+     * @return The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value
+     *         with few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     *         ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *         <p>
-     *         If you did not use a filter in the request, then
-     *         <i>ScannedCount</i> is the same as <i>Count</i>.
+     *         If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
      */
 
     public Integer getScannedCount() {
@@ -342,32 +282,24 @@ public class QueryResult extends
 
     /**
      * <p>
-     * The number of items evaluated, before any <i>QueryFilter</i> is applied.
-     * A high <i>ScannedCount</i> value with few, or no, <i>Count</i> results
-     * indicates an inefficient <i>Query</i> operation. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count"
-     * >Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.
+     * The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value with
+     * few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     * ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
-     * If you did not use a filter in the request, then <i>ScannedCount</i> is
-     * the same as <i>Count</i>.
+     * If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
      * </p>
      * 
      * @param scannedCount
-     *        The number of items evaluated, before any <i>QueryFilter</i> is
-     *        applied. A high <i>ScannedCount</i> value with few, or no,
-     *        <i>Count</i> results indicates an inefficient <i>Query</i>
-     *        operation. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count"
-     *        >Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer
-     *        Guide</i>.</p>
+     *        The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i> value
+     *        with few, or no, <i>Count</i> results indicates an inefficient <i>Query</i> operation. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     *        ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
-     *        If you did not use a filter in the request, then
-     *        <i>ScannedCount</i> is the same as <i>Count</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you did not use a filter in the request, then <i>ScannedCount</i> is the same as <i>Count</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryResult withScannedCount(Integer scannedCount) {
@@ -377,33 +309,27 @@ public class QueryResult extends
 
     /**
      * <p>
-     * The primary key of the item where the operation stopped, inclusive of the
-     * previous result set. Use this value to start a new operation, excluding
-     * this value in the new request.
+     * The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to
+     * start a new operation, excluding this value in the new request.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has
-     * been processed and there is no more data to be retrieved.
+     * If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data
+     * to be retrieved.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean
-     * that there is more data in the result set. The only way to know when you
-     * have reached the end of the result set is when <i>LastEvaluatedKey</i> is
-     * empty.
+     * If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set.
+     * The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.
      * </p>
      * 
-     * @return The primary key of the item where the operation stopped,
-     *         inclusive of the previous result set. Use this value to start a
-     *         new operation, excluding this value in the new request.</p>
+     * @return The primary key of the item where the operation stopped, inclusive of the previous result set. Use this
+     *         value to start a new operation, excluding this value in the new request.</p>
      *         <p>
-     *         If <i>LastEvaluatedKey</i> is empty, then the "last page" of
-     *         results has been processed and there is no more data to be
-     *         retrieved.
+     *         If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no
+     *         more data to be retrieved.
      *         </p>
      *         <p>
-     *         If <i>LastEvaluatedKey</i> is not empty, it does not necessarily
-     *         mean that there is more data in the result set. The only way to
-     *         know when you have reached the end of the result set is when
+     *         If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the
+     *         result set. The only way to know when you have reached the end of the result set is when
      *         <i>LastEvaluatedKey</i> is empty.
      */
 
@@ -413,79 +339,64 @@ public class QueryResult extends
 
     /**
      * <p>
-     * The primary key of the item where the operation stopped, inclusive of the
-     * previous result set. Use this value to start a new operation, excluding
-     * this value in the new request.
+     * The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to
+     * start a new operation, excluding this value in the new request.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has
-     * been processed and there is no more data to be retrieved.
+     * If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data
+     * to be retrieved.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean
-     * that there is more data in the result set. The only way to know when you
-     * have reached the end of the result set is when <i>LastEvaluatedKey</i> is
-     * empty.
+     * If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set.
+     * The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.
      * </p>
      * 
      * @param lastEvaluatedKey
-     *        The primary key of the item where the operation stopped, inclusive
-     *        of the previous result set. Use this value to start a new
-     *        operation, excluding this value in the new request.</p>
+     *        The primary key of the item where the operation stopped, inclusive of the previous result set. Use this
+     *        value to start a new operation, excluding this value in the new request.</p>
      *        <p>
-     *        If <i>LastEvaluatedKey</i> is empty, then the "last page" of
-     *        results has been processed and there is no more data to be
-     *        retrieved.
+     *        If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no
+     *        more data to be retrieved.
      *        </p>
      *        <p>
-     *        If <i>LastEvaluatedKey</i> is not empty, it does not necessarily
-     *        mean that there is more data in the result set. The only way to
-     *        know when you have reached the end of the result set is when
+     *        If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the
+     *        result set. The only way to know when you have reached the end of the result set is when
      *        <i>LastEvaluatedKey</i> is empty.
      */
 
-    public void setLastEvaluatedKey(
-            java.util.Map<String, AttributeValue> lastEvaluatedKey) {
+    public void setLastEvaluatedKey(java.util.Map<String, AttributeValue> lastEvaluatedKey) {
         this.lastEvaluatedKey = lastEvaluatedKey;
     }
 
     /**
      * <p>
-     * The primary key of the item where the operation stopped, inclusive of the
-     * previous result set. Use this value to start a new operation, excluding
-     * this value in the new request.
+     * The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to
+     * start a new operation, excluding this value in the new request.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has
-     * been processed and there is no more data to be retrieved.
+     * If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no more data
+     * to be retrieved.
      * </p>
      * <p>
-     * If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean
-     * that there is more data in the result set. The only way to know when you
-     * have reached the end of the result set is when <i>LastEvaluatedKey</i> is
-     * empty.
+     * If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the result set.
+     * The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is empty.
      * </p>
      * 
      * @param lastEvaluatedKey
-     *        The primary key of the item where the operation stopped, inclusive
-     *        of the previous result set. Use this value to start a new
-     *        operation, excluding this value in the new request.</p>
+     *        The primary key of the item where the operation stopped, inclusive of the previous result set. Use this
+     *        value to start a new operation, excluding this value in the new request.</p>
      *        <p>
-     *        If <i>LastEvaluatedKey</i> is empty, then the "last page" of
-     *        results has been processed and there is no more data to be
-     *        retrieved.
+     *        If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed and there is no
+     *        more data to be retrieved.
      *        </p>
      *        <p>
-     *        If <i>LastEvaluatedKey</i> is not empty, it does not necessarily
-     *        mean that there is more data in the result set. The only way to
-     *        know when you have reached the end of the result set is when
+     *        If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is more data in the
+     *        result set. The only way to know when you have reached the end of the result set is when
      *        <i>LastEvaluatedKey</i> is empty.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public QueryResult withLastEvaluatedKey(
-            java.util.Map<String, AttributeValue> lastEvaluatedKey) {
+    public QueryResult withLastEvaluatedKey(java.util.Map<String, AttributeValue> lastEvaluatedKey) {
         setLastEvaluatedKey(lastEvaluatedKey);
         return this;
     }
@@ -495,15 +406,14 @@ public class QueryResult extends
             this.lastEvaluatedKey = new java.util.HashMap<String, AttributeValue>();
         }
         if (this.lastEvaluatedKey.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.lastEvaluatedKey.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into LastEvaluatedKey. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into LastEvaluatedKey. &lt;p> Returns a reference to this object so that method
+     * calls can be chained together.
      */
 
     public QueryResult clearLastEvaluatedKeyEntries() {
@@ -529,8 +439,7 @@ public class QueryResult extends
 
     /**
      * @param consumedCapacity
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
@@ -539,8 +448,7 @@ public class QueryResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -576,32 +484,23 @@ public class QueryResult extends
         QueryResult other = (QueryResult) obj;
         if (other.getItems() == null ^ this.getItems() == null)
             return false;
-        if (other.getItems() != null
-                && other.getItems().equals(this.getItems()) == false)
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false)
             return false;
         if (other.getCount() == null ^ this.getCount() == null)
             return false;
-        if (other.getCount() != null
-                && other.getCount().equals(this.getCount()) == false)
+        if (other.getCount() != null && other.getCount().equals(this.getCount()) == false)
             return false;
         if (other.getScannedCount() == null ^ this.getScannedCount() == null)
             return false;
-        if (other.getScannedCount() != null
-                && other.getScannedCount().equals(this.getScannedCount()) == false)
+        if (other.getScannedCount() != null && other.getScannedCount().equals(this.getScannedCount()) == false)
             return false;
-        if (other.getLastEvaluatedKey() == null
-                ^ this.getLastEvaluatedKey() == null)
+        if (other.getLastEvaluatedKey() == null ^ this.getLastEvaluatedKey() == null)
             return false;
-        if (other.getLastEvaluatedKey() != null
-                && other.getLastEvaluatedKey().equals(
-                        this.getLastEvaluatedKey()) == false)
+        if (other.getLastEvaluatedKey() != null && other.getLastEvaluatedKey().equals(this.getLastEvaluatedKey()) == false)
             return false;
-        if (other.getConsumedCapacity() == null
-                ^ this.getConsumedCapacity() == null)
+        if (other.getConsumedCapacity() == null ^ this.getConsumedCapacity() == null)
             return false;
-        if (other.getConsumedCapacity() != null
-                && other.getConsumedCapacity().equals(
-                        this.getConsumedCapacity()) == false)
+        if (other.getConsumedCapacity() != null && other.getConsumedCapacity().equals(this.getConsumedCapacity()) == false)
             return false;
         return true;
     }
@@ -611,22 +510,11 @@ public class QueryResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getItems() == null) ? 0 : getItems().hashCode());
-        hashCode = prime * hashCode
-                + ((getCount() == null) ? 0 : getCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getScannedCount() == null) ? 0 : getScannedCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastEvaluatedKey() == null) ? 0 : getLastEvaluatedKey()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConsumedCapacity() == null) ? 0 : getConsumedCapacity()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());
+        hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
+        hashCode = prime * hashCode + ((getScannedCount() == null) ? 0 : getScannedCount().hashCode());
+        hashCode = prime * hashCode + ((getLastEvaluatedKey() == null) ? 0 : getLastEvaluatedKey().hashCode());
+        hashCode = prime * hashCode + ((getConsumedCapacity() == null) ? 0 : getConsumedCapacity().hashCode());
         return hashCode;
     }
 
@@ -635,9 +523,7 @@ public class QueryResult extends
         try {
             return (QueryResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

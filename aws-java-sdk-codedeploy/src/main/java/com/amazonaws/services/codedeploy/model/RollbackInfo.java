@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -31,16 +29,15 @@ public class RollbackInfo implements Serializable, Cloneable {
     private String rollbackDeploymentId;
     /**
      * <p>
-     * The deployment ID of the deployment that was underway and triggered a
-     * rollback deployment because it failed or was stopped.
+     * The deployment ID of the deployment that was underway and triggered a rollback deployment because it failed or
+     * was stopped.
      * </p>
      */
     private String rollbackTriggeringDeploymentId;
     /**
      * <p>
-     * Information describing the status of a deployment rollback; for example,
-     * whether the deployment can't be rolled back, is in progress, failed, or
-     * succeeded.
+     * Information describing the status of a deployment rollback; for example, whether the deployment can't be rolled
+     * back, is in progress, failed, or succeeded.
      * </p>
      */
     private String rollbackMessage;
@@ -77,8 +74,7 @@ public class RollbackInfo implements Serializable, Cloneable {
      * 
      * @param rollbackDeploymentId
      *        The ID of the deployment rollback.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RollbackInfo withRollbackDeploymentId(String rollbackDeploymentId) {
@@ -88,28 +84,27 @@ public class RollbackInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The deployment ID of the deployment that was underway and triggered a
-     * rollback deployment because it failed or was stopped.
+     * The deployment ID of the deployment that was underway and triggered a rollback deployment because it failed or
+     * was stopped.
      * </p>
      * 
      * @param rollbackTriggeringDeploymentId
-     *        The deployment ID of the deployment that was underway and
-     *        triggered a rollback deployment because it failed or was stopped.
+     *        The deployment ID of the deployment that was underway and triggered a rollback deployment because it
+     *        failed or was stopped.
      */
 
-    public void setRollbackTriggeringDeploymentId(
-            String rollbackTriggeringDeploymentId) {
+    public void setRollbackTriggeringDeploymentId(String rollbackTriggeringDeploymentId) {
         this.rollbackTriggeringDeploymentId = rollbackTriggeringDeploymentId;
     }
 
     /**
      * <p>
-     * The deployment ID of the deployment that was underway and triggered a
-     * rollback deployment because it failed or was stopped.
+     * The deployment ID of the deployment that was underway and triggered a rollback deployment because it failed or
+     * was stopped.
      * </p>
      * 
-     * @return The deployment ID of the deployment that was underway and
-     *         triggered a rollback deployment because it failed or was stopped.
+     * @return The deployment ID of the deployment that was underway and triggered a rollback deployment because it
+     *         failed or was stopped.
      */
 
     public String getRollbackTriggeringDeploymentId() {
@@ -118,34 +113,30 @@ public class RollbackInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The deployment ID of the deployment that was underway and triggered a
-     * rollback deployment because it failed or was stopped.
+     * The deployment ID of the deployment that was underway and triggered a rollback deployment because it failed or
+     * was stopped.
      * </p>
      * 
      * @param rollbackTriggeringDeploymentId
-     *        The deployment ID of the deployment that was underway and
-     *        triggered a rollback deployment because it failed or was stopped.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The deployment ID of the deployment that was underway and triggered a rollback deployment because it
+     *        failed or was stopped.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RollbackInfo withRollbackTriggeringDeploymentId(
-            String rollbackTriggeringDeploymentId) {
+    public RollbackInfo withRollbackTriggeringDeploymentId(String rollbackTriggeringDeploymentId) {
         setRollbackTriggeringDeploymentId(rollbackTriggeringDeploymentId);
         return this;
     }
 
     /**
      * <p>
-     * Information describing the status of a deployment rollback; for example,
-     * whether the deployment can't be rolled back, is in progress, failed, or
-     * succeeded.
+     * Information describing the status of a deployment rollback; for example, whether the deployment can't be rolled
+     * back, is in progress, failed, or succeeded.
      * </p>
      * 
      * @param rollbackMessage
-     *        Information describing the status of a deployment rollback; for
-     *        example, whether the deployment can't be rolled back, is in
-     *        progress, failed, or succeeded.
+     *        Information describing the status of a deployment rollback; for example, whether the deployment can't be
+     *        rolled back, is in progress, failed, or succeeded.
      */
 
     public void setRollbackMessage(String rollbackMessage) {
@@ -154,14 +145,12 @@ public class RollbackInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information describing the status of a deployment rollback; for example,
-     * whether the deployment can't be rolled back, is in progress, failed, or
-     * succeeded.
+     * Information describing the status of a deployment rollback; for example, whether the deployment can't be rolled
+     * back, is in progress, failed, or succeeded.
      * </p>
      * 
-     * @return Information describing the status of a deployment rollback; for
-     *         example, whether the deployment can't be rolled back, is in
-     *         progress, failed, or succeeded.
+     * @return Information describing the status of a deployment rollback; for example, whether the deployment can't be
+     *         rolled back, is in progress, failed, or succeeded.
      */
 
     public String getRollbackMessage() {
@@ -170,17 +159,14 @@ public class RollbackInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information describing the status of a deployment rollback; for example,
-     * whether the deployment can't be rolled back, is in progress, failed, or
-     * succeeded.
+     * Information describing the status of a deployment rollback; for example, whether the deployment can't be rolled
+     * back, is in progress, failed, or succeeded.
      * </p>
      * 
      * @param rollbackMessage
-     *        Information describing the status of a deployment rollback; for
-     *        example, whether the deployment can't be rolled back, is in
-     *        progress, failed, or succeeded.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information describing the status of a deployment rollback; for example, whether the deployment can't be
+     *        rolled back, is in progress, failed, or succeeded.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RollbackInfo withRollbackMessage(String rollbackMessage) {
@@ -189,8 +175,7 @@ public class RollbackInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -201,11 +186,9 @@ public class RollbackInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRollbackDeploymentId() != null)
-            sb.append("RollbackDeploymentId: " + getRollbackDeploymentId()
-                    + ",");
+            sb.append("RollbackDeploymentId: " + getRollbackDeploymentId() + ",");
         if (getRollbackTriggeringDeploymentId() != null)
-            sb.append("RollbackTriggeringDeploymentId: "
-                    + getRollbackTriggeringDeploymentId() + ",");
+            sb.append("RollbackTriggeringDeploymentId: " + getRollbackTriggeringDeploymentId() + ",");
         if (getRollbackMessage() != null)
             sb.append("RollbackMessage: " + getRollbackMessage());
         sb.append("}");
@@ -222,25 +205,18 @@ public class RollbackInfo implements Serializable, Cloneable {
         if (obj instanceof RollbackInfo == false)
             return false;
         RollbackInfo other = (RollbackInfo) obj;
-        if (other.getRollbackDeploymentId() == null
-                ^ this.getRollbackDeploymentId() == null)
+        if (other.getRollbackDeploymentId() == null ^ this.getRollbackDeploymentId() == null)
             return false;
-        if (other.getRollbackDeploymentId() != null
-                && other.getRollbackDeploymentId().equals(
-                        this.getRollbackDeploymentId()) == false)
+        if (other.getRollbackDeploymentId() != null && other.getRollbackDeploymentId().equals(this.getRollbackDeploymentId()) == false)
             return false;
-        if (other.getRollbackTriggeringDeploymentId() == null
-                ^ this.getRollbackTriggeringDeploymentId() == null)
+        if (other.getRollbackTriggeringDeploymentId() == null ^ this.getRollbackTriggeringDeploymentId() == null)
             return false;
         if (other.getRollbackTriggeringDeploymentId() != null
-                && other.getRollbackTriggeringDeploymentId().equals(
-                        this.getRollbackTriggeringDeploymentId()) == false)
+                && other.getRollbackTriggeringDeploymentId().equals(this.getRollbackTriggeringDeploymentId()) == false)
             return false;
-        if (other.getRollbackMessage() == null
-                ^ this.getRollbackMessage() == null)
+        if (other.getRollbackMessage() == null ^ this.getRollbackMessage() == null)
             return false;
-        if (other.getRollbackMessage() != null
-                && other.getRollbackMessage().equals(this.getRollbackMessage()) == false)
+        if (other.getRollbackMessage() != null && other.getRollbackMessage().equals(this.getRollbackMessage()) == false)
             return false;
         return true;
     }
@@ -250,18 +226,9 @@ public class RollbackInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRollbackDeploymentId() == null) ? 0
-                        : getRollbackDeploymentId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRollbackTriggeringDeploymentId() == null) ? 0
-                        : getRollbackTriggeringDeploymentId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRollbackMessage() == null) ? 0 : getRollbackMessage()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRollbackDeploymentId() == null) ? 0 : getRollbackDeploymentId().hashCode());
+        hashCode = prime * hashCode + ((getRollbackTriggeringDeploymentId() == null) ? 0 : getRollbackTriggeringDeploymentId().hashCode());
+        hashCode = prime * hashCode + ((getRollbackMessage() == null) ? 0 : getRollbackMessage().hashCode());
         return hashCode;
     }
 
@@ -270,9 +237,7 @@ public class RollbackInfo implements Serializable, Cloneable {
         try {
             return (RollbackInfo) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetDomainNameRequest Marshaller
  */
-public class GetDomainNameRequestMarshaller implements
-        Marshaller<Request<GetDomainNameRequest>, GetDomainNameRequest> {
+public class GetDomainNameRequestMarshaller implements Marshaller<Request<GetDomainNameRequest>, GetDomainNameRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,26 +49,21 @@ public class GetDomainNameRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<GetDomainNameRequest> marshall(
-            GetDomainNameRequest getDomainNameRequest) {
+    public Request<GetDomainNameRequest> marshall(GetDomainNameRequest getDomainNameRequest) {
 
         if (getDomainNameRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDomainNameRequest> request = new DefaultRequest<GetDomainNameRequest>(
-                getDomainNameRequest, "AmazonApiGateway");
+        Request<GetDomainNameRequest> request = new DefaultRequest<GetDomainNameRequest>(getDomainNameRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/domainnames/{domain_name}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{domain_name}",
-                (getDomainNameRequest.getDomainName() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(getDomainNameRequest
-                                .getDomainName()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{domain_name}",
+                (getDomainNameRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getDomainNameRequest.getDomainName()), false)
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

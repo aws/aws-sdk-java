@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class DescribeTableStatisticsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeTableStatisticsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -37,9 +33,8 @@ public class DescribeTableStatisticsResult extends
     private java.util.List<TableStatistics> tableStatistics;
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
@@ -76,12 +71,10 @@ public class DescribeTableStatisticsResult extends
      * 
      * @param replicationTaskArn
      *        The Amazon Resource Name (ARN) of the replication task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTableStatisticsResult withReplicationTaskArn(
-            String replicationTaskArn) {
+    public DescribeTableStatisticsResult withReplicationTaskArn(String replicationTaskArn) {
         setReplicationTaskArn(replicationTaskArn);
         return this;
     }
@@ -107,15 +100,13 @@ public class DescribeTableStatisticsResult extends
      *        The table statistics.
      */
 
-    public void setTableStatistics(
-            java.util.Collection<TableStatistics> tableStatistics) {
+    public void setTableStatistics(java.util.Collection<TableStatistics> tableStatistics) {
         if (tableStatistics == null) {
             this.tableStatistics = null;
             return;
         }
 
-        this.tableStatistics = new java.util.ArrayList<TableStatistics>(
-                tableStatistics);
+        this.tableStatistics = new java.util.ArrayList<TableStatistics>(tableStatistics);
     }
 
     /**
@@ -123,23 +114,19 @@ public class DescribeTableStatisticsResult extends
      * The table statistics.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTableStatistics(java.util.Collection)} or
-     * {@link #withTableStatistics(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTableStatistics(java.util.Collection)} or {@link #withTableStatistics(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param tableStatistics
      *        The table statistics.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTableStatisticsResult withTableStatistics(
-            TableStatistics... tableStatistics) {
+    public DescribeTableStatisticsResult withTableStatistics(TableStatistics... tableStatistics) {
         if (this.tableStatistics == null) {
-            setTableStatistics(new java.util.ArrayList<TableStatistics>(
-                    tableStatistics.length));
+            setTableStatistics(new java.util.ArrayList<TableStatistics>(tableStatistics.length));
         }
         for (TableStatistics ele : tableStatistics) {
             this.tableStatistics.add(ele);
@@ -154,28 +141,23 @@ public class DescribeTableStatisticsResult extends
      * 
      * @param tableStatistics
      *        The table statistics.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTableStatisticsResult withTableStatistics(
-            java.util.Collection<TableStatistics> tableStatistics) {
+    public DescribeTableStatisticsResult withTableStatistics(java.util.Collection<TableStatistics> tableStatistics) {
         setTableStatistics(tableStatistics);
         return this;
     }
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous request. If
-     *        this parameter is specified, the response includes only records
-     *        beyond the marker, up to the value specified by
-     *        <code>MaxRecords</code>.
+     *        An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *        includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -184,15 +166,12 @@ public class DescribeTableStatisticsResult extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
-     * @return An optional pagination token provided by a previous request. If
-     *         this parameter is specified, the response includes only records
-     *         beyond the marker, up to the value specified by
-     *         <code>MaxRecords</code>.
+     * @return An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *         includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -201,18 +180,14 @@ public class DescribeTableStatisticsResult extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous request. If
-     *        this parameter is specified, the response includes only records
-     *        beyond the marker, up to the value specified by
-     *        <code>MaxRecords</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *        includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTableStatisticsResult withMarker(String marker) {
@@ -221,8 +196,7 @@ public class DescribeTableStatisticsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -252,23 +226,17 @@ public class DescribeTableStatisticsResult extends
         if (obj instanceof DescribeTableStatisticsResult == false)
             return false;
         DescribeTableStatisticsResult other = (DescribeTableStatisticsResult) obj;
-        if (other.getReplicationTaskArn() == null
-                ^ this.getReplicationTaskArn() == null)
+        if (other.getReplicationTaskArn() == null ^ this.getReplicationTaskArn() == null)
             return false;
-        if (other.getReplicationTaskArn() != null
-                && other.getReplicationTaskArn().equals(
-                        this.getReplicationTaskArn()) == false)
+        if (other.getReplicationTaskArn() != null && other.getReplicationTaskArn().equals(this.getReplicationTaskArn()) == false)
             return false;
-        if (other.getTableStatistics() == null
-                ^ this.getTableStatistics() == null)
+        if (other.getTableStatistics() == null ^ this.getTableStatistics() == null)
             return false;
-        if (other.getTableStatistics() != null
-                && other.getTableStatistics().equals(this.getTableStatistics()) == false)
+        if (other.getTableStatistics() != null && other.getTableStatistics().equals(this.getTableStatistics()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -278,16 +246,9 @@ public class DescribeTableStatisticsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReplicationTaskArn() == null) ? 0
-                        : getReplicationTaskArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTableStatistics() == null) ? 0 : getTableStatistics()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getReplicationTaskArn() == null) ? 0 : getReplicationTaskArn().hashCode());
+        hashCode = prime * hashCode + ((getTableStatistics() == null) ? 0 : getTableStatistics().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -296,9 +257,7 @@ public class DescribeTableStatisticsResult extends
         try {
             return (DescribeTableStatisticsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

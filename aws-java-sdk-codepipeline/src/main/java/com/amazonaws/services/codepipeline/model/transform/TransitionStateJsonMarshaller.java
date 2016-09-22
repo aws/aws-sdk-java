@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
@@ -34,38 +32,31 @@ public class TransitionStateJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(TransitionState transitionState,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(TransitionState transitionState, StructuredJsonGenerator jsonGenerator) {
 
         if (transitionState == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (transitionState.getEnabled() != null) {
-                jsonGenerator.writeFieldName("enabled").writeValue(
-                        transitionState.getEnabled());
+                jsonGenerator.writeFieldName("enabled").writeValue(transitionState.getEnabled());
             }
             if (transitionState.getLastChangedBy() != null) {
-                jsonGenerator.writeFieldName("lastChangedBy").writeValue(
-                        transitionState.getLastChangedBy());
+                jsonGenerator.writeFieldName("lastChangedBy").writeValue(transitionState.getLastChangedBy());
             }
             if (transitionState.getLastChangedAt() != null) {
-                jsonGenerator.writeFieldName("lastChangedAt").writeValue(
-                        transitionState.getLastChangedAt());
+                jsonGenerator.writeFieldName("lastChangedAt").writeValue(transitionState.getLastChangedAt());
             }
             if (transitionState.getDisabledReason() != null) {
-                jsonGenerator.writeFieldName("disabledReason").writeValue(
-                        transitionState.getDisabledReason());
+                jsonGenerator.writeFieldName("disabledReason").writeValue(transitionState.getDisabledReason());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

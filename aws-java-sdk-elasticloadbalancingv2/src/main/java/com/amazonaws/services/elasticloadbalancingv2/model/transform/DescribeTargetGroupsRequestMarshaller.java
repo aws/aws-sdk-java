@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
@@ -31,32 +29,25 @@ import com.amazonaws.util.IdempotentUtils;
  * DescribeTargetGroupsRequest Marshaller
  */
 
-public class DescribeTargetGroupsRequestMarshaller
-        implements
-        Marshaller<Request<DescribeTargetGroupsRequest>, DescribeTargetGroupsRequest> {
+public class DescribeTargetGroupsRequestMarshaller implements Marshaller<Request<DescribeTargetGroupsRequest>, DescribeTargetGroupsRequest> {
 
-    public Request<DescribeTargetGroupsRequest> marshall(
-            DescribeTargetGroupsRequest describeTargetGroupsRequest) {
+    public Request<DescribeTargetGroupsRequest> marshall(DescribeTargetGroupsRequest describeTargetGroupsRequest) {
 
         if (describeTargetGroupsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeTargetGroupsRequest> request = new DefaultRequest<DescribeTargetGroupsRequest>(
-                describeTargetGroupsRequest, "AmazonElasticLoadBalancing");
+        Request<DescribeTargetGroupsRequest> request = new DefaultRequest<DescribeTargetGroupsRequest>(describeTargetGroupsRequest,
+                "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DescribeTargetGroups");
         request.addParameter("Version", "2015-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeTargetGroupsRequest.getLoadBalancerArn() != null) {
-            request.addParameter("LoadBalancerArn", StringUtils
-                    .fromString(describeTargetGroupsRequest
-                            .getLoadBalancerArn()));
+            request.addParameter("LoadBalancerArn", StringUtils.fromString(describeTargetGroupsRequest.getLoadBalancerArn()));
         }
 
-        java.util.List<String> targetGroupArnsList = describeTargetGroupsRequest
-                .getTargetGroupArns();
+        java.util.List<String> targetGroupArnsList = describeTargetGroupsRequest.getTargetGroupArns();
 
         if (targetGroupArnsList != null) {
             if (targetGroupArnsList.isEmpty()) {
@@ -66,17 +57,14 @@ public class DescribeTargetGroupsRequestMarshaller
 
                 for (String targetGroupArnsListValue : targetGroupArnsList) {
                     if (targetGroupArnsListValue != null) {
-                        request.addParameter("TargetGroupArns.member."
-                                + targetGroupArnsListIndex, StringUtils
-                                .fromString(targetGroupArnsListValue));
+                        request.addParameter("TargetGroupArns.member." + targetGroupArnsListIndex, StringUtils.fromString(targetGroupArnsListValue));
                     }
                     targetGroupArnsListIndex++;
                 }
             }
         }
 
-        java.util.List<String> namesList = describeTargetGroupsRequest
-                .getNames();
+        java.util.List<String> namesList = describeTargetGroupsRequest.getNames();
 
         if (namesList != null) {
             if (namesList.isEmpty()) {
@@ -86,8 +74,7 @@ public class DescribeTargetGroupsRequestMarshaller
 
                 for (String namesListValue : namesList) {
                     if (namesListValue != null) {
-                        request.addParameter("Names.member." + namesListIndex,
-                                StringUtils.fromString(namesListValue));
+                        request.addParameter("Names.member." + namesListIndex, StringUtils.fromString(namesListValue));
                     }
                     namesListIndex++;
                 }
@@ -95,13 +82,11 @@ public class DescribeTargetGroupsRequestMarshaller
         }
 
         if (describeTargetGroupsRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils
-                    .fromString(describeTargetGroupsRequest.getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(describeTargetGroupsRequest.getMarker()));
         }
 
         if (describeTargetGroupsRequest.getPageSize() != null) {
-            request.addParameter("PageSize", StringUtils
-                    .fromInteger(describeTargetGroupsRequest.getPageSize()));
+            request.addParameter("PageSize", StringUtils.fromInteger(describeTargetGroupsRequest.getPageSize()));
         }
 
         return request;

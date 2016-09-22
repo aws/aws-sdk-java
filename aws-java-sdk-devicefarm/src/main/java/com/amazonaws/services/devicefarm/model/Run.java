@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model;
 
@@ -50,9 +48,8 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
-     * Android app, interacting with it and capturing screenshots at the same
-     * time.
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     * capturing screenshots at the same time.
      * </p>
      * </li>
      * <li>
@@ -285,9 +282,8 @@ public class Run implements Serializable, Cloneable {
     private Integer completedJobs;
     /**
      * <p>
-     * Specifies the billing method for a test run: <code>metered</code> or
-     * <code>unmetered</code>. If the parameter is not specified, the default
-     * value is <code>unmetered</code>.
+     * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
+     * not specified, the default value is <code>unmetered</code>.
      * </p>
      */
     private String billingMethod;
@@ -330,8 +326,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @param arn
      *        The run's ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Run withArn(String arn) {
@@ -371,8 +366,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @param name
      *        The run's name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Run withName(String name) {
@@ -395,9 +389,8 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
-     * Android app, interacting with it and capturing screenshots at the same
-     * time.
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     * capturing screenshots at the same time.
      * </p>
      * </li>
      * <li>
@@ -475,9 +468,8 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
-     *        an Android app, interacting with it and capturing screenshots at
-     *        the same time.
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
@@ -562,9 +554,8 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
-     * Android app, interacting with it and capturing screenshots at the same
-     * time.
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     * capturing screenshots at the same time.
      * </p>
      * </li>
      * <li>
@@ -641,9 +632,8 @@ public class Run implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         BUILTIN_EXPLORER: For Android, an app explorer that will traverse
-     *         an Android app, interacting with it and capturing screenshots at
-     *         the same time.
+     *         BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *         capturing screenshots at the same time.
      *         </p>
      *         </li>
      *         <li>
@@ -728,9 +718,8 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
-     * Android app, interacting with it and capturing screenshots at the same
-     * time.
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     * capturing screenshots at the same time.
      * </p>
      * </li>
      * <li>
@@ -808,9 +797,8 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
-     *        an Android app, interacting with it and capturing screenshots at
-     *        the same time.
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
@@ -873,8 +861,7 @@ public class Run implements Serializable, Cloneable {
      *        XCTEST_UI: The XCode UI test type.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TestType
      */
 
@@ -898,9 +885,8 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
-     * Android app, interacting with it and capturing screenshots at the same
-     * time.
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     * capturing screenshots at the same time.
      * </p>
      * </li>
      * <li>
@@ -978,9 +964,8 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
-     *        an Android app, interacting with it and capturing screenshots at
-     *        the same time.
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
@@ -1065,9 +1050,8 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
-     * Android app, interacting with it and capturing screenshots at the same
-     * time.
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     * capturing screenshots at the same time.
      * </p>
      * </li>
      * <li>
@@ -1145,9 +1129,8 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
-     *        an Android app, interacting with it and capturing screenshots at
-     *        the same time.
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
@@ -1210,8 +1193,7 @@ public class Run implements Serializable, Cloneable {
      *        XCTEST_UI: The XCode UI test type.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TestType
      */
 
@@ -1341,8 +1323,7 @@ public class Run implements Serializable, Cloneable {
      *        IOS: The iOS platform.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DevicePlatform
      */
 
@@ -1430,8 +1411,7 @@ public class Run implements Serializable, Cloneable {
      *        IOS: The iOS platform.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DevicePlatform
      */
 
@@ -1472,8 +1452,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @param created
      *        When the run was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Run withCreated(java.util.Date created) {
@@ -1812,8 +1791,7 @@ public class Run implements Serializable, Cloneable {
      *        STOPPING: A stopping status.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutionStatus
      */
 
@@ -2041,8 +2019,7 @@ public class Run implements Serializable, Cloneable {
      *        STOPPING: A stopping status.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutionStatus
      */
 
@@ -2322,8 +2299,7 @@ public class Run implements Serializable, Cloneable {
      *        STOPPED: A stopped condition.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutionResult
      */
 
@@ -2511,8 +2487,7 @@ public class Run implements Serializable, Cloneable {
      *        STOPPED: A stopped condition.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutionResult
      */
 
@@ -2553,8 +2528,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @param started
      *        The run's start time.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Run withStarted(java.util.Date started) {
@@ -2594,8 +2568,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @param stopped
      *        The run's stop time.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Run withStopped(java.util.Date stopped) {
@@ -2635,8 +2608,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @param counters
      *        The run's result counters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Run withCounters(Counters counters) {
@@ -2676,8 +2648,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @param message
      *        A message about the run's result.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Run withMessage(String message) {
@@ -2717,8 +2688,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @param totalJobs
      *        The total number of jobs for the run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Run withTotalJobs(Integer totalJobs) {
@@ -2758,8 +2728,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @param completedJobs
      *        The total number of completed jobs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Run withCompletedJobs(Integer completedJobs) {
@@ -2769,15 +2738,13 @@ public class Run implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the billing method for a test run: <code>metered</code> or
-     * <code>unmetered</code>. If the parameter is not specified, the default
-     * value is <code>unmetered</code>.
+     * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
+     * not specified, the default value is <code>unmetered</code>.
      * </p>
      * 
      * @param billingMethod
-     *        Specifies the billing method for a test run: <code>metered</code>
-     *        or <code>unmetered</code>. If the parameter is not specified, the
-     *        default value is <code>unmetered</code>.
+     *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
+     *        parameter is not specified, the default value is <code>unmetered</code>.
      * @see BillingMethod
      */
 
@@ -2787,14 +2754,12 @@ public class Run implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the billing method for a test run: <code>metered</code> or
-     * <code>unmetered</code>. If the parameter is not specified, the default
-     * value is <code>unmetered</code>.
+     * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
+     * not specified, the default value is <code>unmetered</code>.
      * </p>
      * 
-     * @return Specifies the billing method for a test run: <code>metered</code>
-     *         or <code>unmetered</code>. If the parameter is not specified, the
-     *         default value is <code>unmetered</code>.
+     * @return Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
+     *         parameter is not specified, the default value is <code>unmetered</code>.
      * @see BillingMethod
      */
 
@@ -2804,17 +2769,14 @@ public class Run implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the billing method for a test run: <code>metered</code> or
-     * <code>unmetered</code>. If the parameter is not specified, the default
-     * value is <code>unmetered</code>.
+     * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
+     * not specified, the default value is <code>unmetered</code>.
      * </p>
      * 
      * @param billingMethod
-     *        Specifies the billing method for a test run: <code>metered</code>
-     *        or <code>unmetered</code>. If the parameter is not specified, the
-     *        default value is <code>unmetered</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
+     *        parameter is not specified, the default value is <code>unmetered</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingMethod
      */
 
@@ -2825,15 +2787,13 @@ public class Run implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the billing method for a test run: <code>metered</code> or
-     * <code>unmetered</code>. If the parameter is not specified, the default
-     * value is <code>unmetered</code>.
+     * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
+     * not specified, the default value is <code>unmetered</code>.
      * </p>
      * 
      * @param billingMethod
-     *        Specifies the billing method for a test run: <code>metered</code>
-     *        or <code>unmetered</code>. If the parameter is not specified, the
-     *        default value is <code>unmetered</code>.
+     *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
+     *        parameter is not specified, the default value is <code>unmetered</code>.
      * @see BillingMethod
      */
 
@@ -2843,17 +2803,14 @@ public class Run implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the billing method for a test run: <code>metered</code> or
-     * <code>unmetered</code>. If the parameter is not specified, the default
-     * value is <code>unmetered</code>.
+     * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
+     * not specified, the default value is <code>unmetered</code>.
      * </p>
      * 
      * @param billingMethod
-     *        Specifies the billing method for a test run: <code>metered</code>
-     *        or <code>unmetered</code>. If the parameter is not specified, the
-     *        default value is <code>unmetered</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
+     *        parameter is not specified, the default value is <code>unmetered</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingMethod
      */
 
@@ -2868,8 +2825,7 @@ public class Run implements Serializable, Cloneable {
      * </p>
      * 
      * @param deviceMinutes
-     *        Represents the total (metered or unmetered) minutes used by the
-     *        test run.
+     *        Represents the total (metered or unmetered) minutes used by the test run.
      */
 
     public void setDeviceMinutes(DeviceMinutes deviceMinutes) {
@@ -2881,8 +2837,7 @@ public class Run implements Serializable, Cloneable {
      * Represents the total (metered or unmetered) minutes used by the test run.
      * </p>
      * 
-     * @return Represents the total (metered or unmetered) minutes used by the
-     *         test run.
+     * @return Represents the total (metered or unmetered) minutes used by the test run.
      */
 
     public DeviceMinutes getDeviceMinutes() {
@@ -2895,10 +2850,8 @@ public class Run implements Serializable, Cloneable {
      * </p>
      * 
      * @param deviceMinutes
-     *        Represents the total (metered or unmetered) minutes used by the
-     *        test run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Represents the total (metered or unmetered) minutes used by the test run.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Run withDeviceMinutes(DeviceMinutes deviceMinutes) {
@@ -2907,8 +2860,7 @@ public class Run implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -2964,78 +2916,63 @@ public class Run implements Serializable, Cloneable {
         Run other = (Run) obj;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
-        if (other.getPlatform() != null
-                && other.getPlatform().equals(this.getPlatform()) == false)
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
         if (other.getCreated() == null ^ this.getCreated() == null)
             return false;
-        if (other.getCreated() != null
-                && other.getCreated().equals(this.getCreated()) == false)
+        if (other.getCreated() != null && other.getCreated().equals(this.getCreated()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getResult() == null ^ this.getResult() == null)
             return false;
-        if (other.getResult() != null
-                && other.getResult().equals(this.getResult()) == false)
+        if (other.getResult() != null && other.getResult().equals(this.getResult()) == false)
             return false;
         if (other.getStarted() == null ^ this.getStarted() == null)
             return false;
-        if (other.getStarted() != null
-                && other.getStarted().equals(this.getStarted()) == false)
+        if (other.getStarted() != null && other.getStarted().equals(this.getStarted()) == false)
             return false;
         if (other.getStopped() == null ^ this.getStopped() == null)
             return false;
-        if (other.getStopped() != null
-                && other.getStopped().equals(this.getStopped()) == false)
+        if (other.getStopped() != null && other.getStopped().equals(this.getStopped()) == false)
             return false;
         if (other.getCounters() == null ^ this.getCounters() == null)
             return false;
-        if (other.getCounters() != null
-                && other.getCounters().equals(this.getCounters()) == false)
+        if (other.getCounters() != null && other.getCounters().equals(this.getCounters()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         if (other.getTotalJobs() == null ^ this.getTotalJobs() == null)
             return false;
-        if (other.getTotalJobs() != null
-                && other.getTotalJobs().equals(this.getTotalJobs()) == false)
+        if (other.getTotalJobs() != null && other.getTotalJobs().equals(this.getTotalJobs()) == false)
             return false;
         if (other.getCompletedJobs() == null ^ this.getCompletedJobs() == null)
             return false;
-        if (other.getCompletedJobs() != null
-                && other.getCompletedJobs().equals(this.getCompletedJobs()) == false)
+        if (other.getCompletedJobs() != null && other.getCompletedJobs().equals(this.getCompletedJobs()) == false)
             return false;
         if (other.getBillingMethod() == null ^ this.getBillingMethod() == null)
             return false;
-        if (other.getBillingMethod() != null
-                && other.getBillingMethod().equals(this.getBillingMethod()) == false)
+        if (other.getBillingMethod() != null && other.getBillingMethod().equals(this.getBillingMethod()) == false)
             return false;
         if (other.getDeviceMinutes() == null ^ this.getDeviceMinutes() == null)
             return false;
-        if (other.getDeviceMinutes() != null
-                && other.getDeviceMinutes().equals(this.getDeviceMinutes()) == false)
+        if (other.getDeviceMinutes() != null && other.getDeviceMinutes().equals(this.getDeviceMinutes()) == false)
             return false;
         return true;
     }
@@ -3045,42 +2982,21 @@ public class Run implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode
-                + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreated() == null) ? 0 : getCreated().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getResult() == null) ? 0 : getResult().hashCode());
-        hashCode = prime * hashCode
-                + ((getStarted() == null) ? 0 : getStarted().hashCode());
-        hashCode = prime * hashCode
-                + ((getStopped() == null) ? 0 : getStopped().hashCode());
-        hashCode = prime * hashCode
-                + ((getCounters() == null) ? 0 : getCounters().hashCode());
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
-        hashCode = prime * hashCode
-                + ((getTotalJobs() == null) ? 0 : getTotalJobs().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCompletedJobs() == null) ? 0 : getCompletedJobs()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBillingMethod() == null) ? 0 : getBillingMethod()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeviceMinutes() == null) ? 0 : getDeviceMinutes()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getResult() == null) ? 0 : getResult().hashCode());
+        hashCode = prime * hashCode + ((getStarted() == null) ? 0 : getStarted().hashCode());
+        hashCode = prime * hashCode + ((getStopped() == null) ? 0 : getStopped().hashCode());
+        hashCode = prime * hashCode + ((getCounters() == null) ? 0 : getCounters().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getTotalJobs() == null) ? 0 : getTotalJobs().hashCode());
+        hashCode = prime * hashCode + ((getCompletedJobs() == null) ? 0 : getCompletedJobs().hashCode());
+        hashCode = prime * hashCode + ((getBillingMethod() == null) ? 0 : getBillingMethod().hashCode());
+        hashCode = prime * hashCode + ((getDeviceMinutes() == null) ? 0 : getDeviceMinutes().hashCode());
         return hashCode;
     }
 
@@ -3089,9 +3005,7 @@ public class Run implements Serializable, Cloneable {
         try {
             return (Run) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

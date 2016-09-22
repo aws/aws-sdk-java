@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -18,9 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents health information from the specified instance that belongs to the
- * AWS Elastic Beanstalk environment. Use the <code>InstanceId</code> property
- * to specify the application instance for which you'd like to return data.
+ * Represents health information from the specified instance that belongs to the AWS Elastic Beanstalk environment. Use
+ * the <code>InstanceId</code> property to specify the application instance for which you'd like to return data.
  * </p>
  */
 public class SingleInstanceHealth implements Serializable, Cloneable {
@@ -33,26 +30,24 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     private String instanceId;
     /**
      * <p>
-     * Returns the health status of the specified instance. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the health status of the specified instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      */
     private String healthStatus;
     /**
      * <p>
-     * Represents the color indicator that gives you information about the
-     * health of the EC2 instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Represents the color indicator that gives you information about the health of the EC2 instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      */
     private String color;
     /**
      * <p>
-     * Represents the causes, which provide more information about the current
-     * health status.
+     * Represents the causes, which provide more information about the current health status.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> causes;
@@ -117,8 +112,7 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
      * 
      * @param instanceId
      *        The ID of the Amazon EC2 instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SingleInstanceHealth withInstanceId(String instanceId) {
@@ -128,17 +122,15 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the health status of the specified instance. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the health status of the specified instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
-     *        Returns the health status of the specified instance. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *        >Health Colors and Statuses</a>.
+     *        Returns the health status of the specified instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     *        Statuses</a>.
      */
 
     public void setHealthStatus(String healthStatus) {
@@ -147,16 +139,14 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the health status of the specified instance. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the health status of the specified instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
-     * @return Returns the health status of the specified instance. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *         >Health Colors and Statuses</a>.
+     * @return Returns the health status of the specified instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *         and Statuses</a>.
      */
 
     public String getHealthStatus() {
@@ -165,19 +155,16 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the health status of the specified instance. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the health status of the specified instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
-     *        Returns the health status of the specified instance. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *        >Health Colors and Statuses</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Returns the health status of the specified instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     *        Statuses</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SingleInstanceHealth withHealthStatus(String healthStatus) {
@@ -187,17 +174,17 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents the color indicator that gives you information about the
-     * health of the EC2 instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Represents the color indicator that gives you information about the health of the EC2 instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
      * @param color
-     *        Represents the color indicator that gives you information about
-     *        the health of the EC2 instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *        >Health Colors and Statuses</a>.
+     *        Represents the color indicator that gives you information about the health of the EC2 instance. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     *        Statuses</a>.
      */
 
     public void setColor(String color) {
@@ -206,17 +193,16 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents the color indicator that gives you information about the
-     * health of the EC2 instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Represents the color indicator that gives you information about the health of the EC2 instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
-     * @return Represents the color indicator that gives you information about
-     *         the health of the EC2 instance. For more information, see <a
-     *         href=
-     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *         >Health Colors and Statuses</a>.
+     * @return Represents the color indicator that gives you information about the health of the EC2 instance. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *         and Statuses</a>.
      */
 
     public String getColor() {
@@ -225,19 +211,18 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents the color indicator that gives you information about the
-     * health of the EC2 instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Represents the color indicator that gives you information about the health of the EC2 instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
      * @param color
-     *        Represents the color indicator that gives you information about
-     *        the health of the EC2 instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *        >Health Colors and Statuses</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Represents the color indicator that gives you information about the health of the EC2 instance. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     *        Statuses</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SingleInstanceHealth withColor(String color) {
@@ -247,12 +232,10 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents the causes, which provide more information about the current
-     * health status.
+     * Represents the causes, which provide more information about the current health status.
      * </p>
      * 
-     * @return Represents the causes, which provide more information about the
-     *         current health status.
+     * @return Represents the causes, which provide more information about the current health status.
      */
 
     public java.util.List<String> getCauses() {
@@ -264,13 +247,11 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents the causes, which provide more information about the current
-     * health status.
+     * Represents the causes, which provide more information about the current health status.
      * </p>
      * 
      * @param causes
-     *        Represents the causes, which provide more information about the
-     *        current health status.
+     *        Represents the causes, which provide more information about the current health status.
      */
 
     public void setCauses(java.util.Collection<String> causes) {
@@ -284,27 +265,22 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents the causes, which provide more information about the current
-     * health status.
+     * Represents the causes, which provide more information about the current health status.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCauses(java.util.Collection)} or
-     * {@link #withCauses(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCauses(java.util.Collection)} or {@link #withCauses(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param causes
-     *        Represents the causes, which provide more information about the
-     *        current health status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Represents the causes, which provide more information about the current health status.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SingleInstanceHealth withCauses(String... causes) {
         if (this.causes == null) {
-            setCauses(new com.amazonaws.internal.SdkInternalList<String>(
-                    causes.length));
+            setCauses(new com.amazonaws.internal.SdkInternalList<String>(causes.length));
         }
         for (String ele : causes) {
             this.causes.add(ele);
@@ -314,15 +290,12 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents the causes, which provide more information about the current
-     * health status.
+     * Represents the causes, which provide more information about the current health status.
      * </p>
      * 
      * @param causes
-     *        Represents the causes, which provide more information about the
-     *        current health status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Represents the causes, which provide more information about the current health status.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SingleInstanceHealth withCauses(java.util.Collection<String> causes) {
@@ -362,8 +335,7 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
      * 
      * @param launchedAt
      *        The time at which the EC2 instance was launched.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SingleInstanceHealth withLaunchedAt(java.util.Date launchedAt) {
@@ -389,12 +361,10 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
 
     /**
      * @param applicationMetrics
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SingleInstanceHealth withApplicationMetrics(
-            ApplicationMetrics applicationMetrics) {
+    public SingleInstanceHealth withApplicationMetrics(ApplicationMetrics applicationMetrics) {
         setApplicationMetrics(applicationMetrics);
         return this;
     }
@@ -417,8 +387,7 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
 
     /**
      * @param system
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SingleInstanceHealth withSystem(SystemStatus system) {
@@ -458,8 +427,7 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
      * 
      * @param deployment
      *        Information about the most recent deployment to an instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SingleInstanceHealth withDeployment(Deployment deployment) {
@@ -499,8 +467,7 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
      * 
      * @param availabilityZone
      *        The availability zone in which the instance runs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SingleInstanceHealth withAvailabilityZone(String availabilityZone) {
@@ -540,8 +507,7 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance's type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SingleInstanceHealth withInstanceType(String instanceType) {
@@ -550,8 +516,7 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -597,57 +562,43 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
         SingleInstanceHealth other = (SingleInstanceHealth) obj;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         if (other.getHealthStatus() == null ^ this.getHealthStatus() == null)
             return false;
-        if (other.getHealthStatus() != null
-                && other.getHealthStatus().equals(this.getHealthStatus()) == false)
+        if (other.getHealthStatus() != null && other.getHealthStatus().equals(this.getHealthStatus()) == false)
             return false;
         if (other.getColor() == null ^ this.getColor() == null)
             return false;
-        if (other.getColor() != null
-                && other.getColor().equals(this.getColor()) == false)
+        if (other.getColor() != null && other.getColor().equals(this.getColor()) == false)
             return false;
         if (other.getCauses() == null ^ this.getCauses() == null)
             return false;
-        if (other.getCauses() != null
-                && other.getCauses().equals(this.getCauses()) == false)
+        if (other.getCauses() != null && other.getCauses().equals(this.getCauses()) == false)
             return false;
         if (other.getLaunchedAt() == null ^ this.getLaunchedAt() == null)
             return false;
-        if (other.getLaunchedAt() != null
-                && other.getLaunchedAt().equals(this.getLaunchedAt()) == false)
+        if (other.getLaunchedAt() != null && other.getLaunchedAt().equals(this.getLaunchedAt()) == false)
             return false;
-        if (other.getApplicationMetrics() == null
-                ^ this.getApplicationMetrics() == null)
+        if (other.getApplicationMetrics() == null ^ this.getApplicationMetrics() == null)
             return false;
-        if (other.getApplicationMetrics() != null
-                && other.getApplicationMetrics().equals(
-                        this.getApplicationMetrics()) == false)
+        if (other.getApplicationMetrics() != null && other.getApplicationMetrics().equals(this.getApplicationMetrics()) == false)
             return false;
         if (other.getSystem() == null ^ this.getSystem() == null)
             return false;
-        if (other.getSystem() != null
-                && other.getSystem().equals(this.getSystem()) == false)
+        if (other.getSystem() != null && other.getSystem().equals(this.getSystem()) == false)
             return false;
         if (other.getDeployment() == null ^ this.getDeployment() == null)
             return false;
-        if (other.getDeployment() != null
-                && other.getDeployment().equals(this.getDeployment()) == false)
+        if (other.getDeployment() != null && other.getDeployment().equals(this.getDeployment()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         return true;
     }
@@ -657,34 +608,16 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthStatus() == null) ? 0 : getHealthStatus()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getColor() == null) ? 0 : getColor().hashCode());
-        hashCode = prime * hashCode
-                + ((getCauses() == null) ? 0 : getCauses().hashCode());
-        hashCode = prime * hashCode
-                + ((getLaunchedAt() == null) ? 0 : getLaunchedAt().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getApplicationMetrics() == null) ? 0
-                        : getApplicationMetrics().hashCode());
-        hashCode = prime * hashCode
-                + ((getSystem() == null) ? 0 : getSystem().hashCode());
-        hashCode = prime * hashCode
-                + ((getDeployment() == null) ? 0 : getDeployment().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
+        hashCode = prime * hashCode + ((getColor() == null) ? 0 : getColor().hashCode());
+        hashCode = prime * hashCode + ((getCauses() == null) ? 0 : getCauses().hashCode());
+        hashCode = prime * hashCode + ((getLaunchedAt() == null) ? 0 : getLaunchedAt().hashCode());
+        hashCode = prime * hashCode + ((getApplicationMetrics() == null) ? 0 : getApplicationMetrics().hashCode());
+        hashCode = prime * hashCode + ((getSystem() == null) ? 0 : getSystem().hashCode());
+        hashCode = prime * hashCode + ((getDeployment() == null) ? 0 : getDeployment().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         return hashCode;
     }
 
@@ -693,9 +626,7 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
         try {
             return (SingleInstanceHealth) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

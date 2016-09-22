@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
@@ -30,8 +28,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Action StAX Unmarshaller
  */
-public class ActionStaxUnmarshaller implements
-        Unmarshaller<Action, StaxUnmarshallerContext> {
+public class ActionStaxUnmarshaller implements Unmarshaller<Action, StaxUnmarshallerContext> {
 
     public Action unmarshall(StaxUnmarshallerContext context) throws Exception {
         Action action = new Action();
@@ -49,14 +46,12 @@ public class ActionStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Type", targetDepth)) {
-                    action.setType(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    action.setType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("TargetGroupArn", targetDepth)) {
-                    action.setTargetGroupArn(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    action.setTargetGroupArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

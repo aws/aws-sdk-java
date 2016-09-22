@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
 
@@ -18,26 +16,21 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A structure that represents a decision task. Decision tasks are sent to
- * deciders in order for them to make decisions.
+ * A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions.
  * </p>
  */
-public class DecisionTask extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DecisionTask extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The opaque string used as a handle on the task. This token is used by
-     * workers to communicate progress and response information back to the
-     * system about the task.
+     * The opaque string used as a handle on the task. This token is used by workers to communicate progress and
+     * response information back to the system about the task.
      * </p>
      */
     private String taskToken;
     /**
      * <p>
-     * The ID of the <code>DecisionTaskStarted</code> event recorded in the
-     * history.
+     * The ID of the <code>DecisionTaskStarted</code> event recorded in the history.
      * </p>
      */
     private Long startedEventId;
@@ -49,36 +42,32 @@ public class DecisionTask extends
     private WorkflowExecution workflowExecution;
     /**
      * <p>
-     * The type of the workflow execution for which this decision task was
-     * created.
+     * The type of the workflow execution for which this decision task was created.
      * </p>
      */
     private WorkflowType workflowType;
     /**
      * <p>
-     * A paginated list of history events of the workflow execution. The decider
-     * uses this during the processing of the decision task.
+     * A paginated list of history events of the workflow execution. The decider uses this during the processing of the
+     * decision task.
      * </p>
      */
     private java.util.List<HistoryEvent> events;
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      */
     private String nextPageToken;
     /**
      * <p>
-     * The ID of the DecisionTaskStarted event of the previous decision task of
-     * this workflow execution that was processed by the decider. This can be
-     * used to determine the events in the history new since the last decision
+     * The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was
+     * processed by the decider. This can be used to determine the events in the history new since the last decision
      * task received by the decider.
      * </p>
      */
@@ -86,15 +75,13 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * The opaque string used as a handle on the task. This token is used by
-     * workers to communicate progress and response information back to the
-     * system about the task.
+     * The opaque string used as a handle on the task. This token is used by workers to communicate progress and
+     * response information back to the system about the task.
      * </p>
      * 
      * @param taskToken
-     *        The opaque string used as a handle on the task. This token is used
-     *        by workers to communicate progress and response information back
-     *        to the system about the task.
+     *        The opaque string used as a handle on the task. This token is used by workers to communicate progress and
+     *        response information back to the system about the task.
      */
 
     public void setTaskToken(String taskToken) {
@@ -103,14 +90,12 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * The opaque string used as a handle on the task. This token is used by
-     * workers to communicate progress and response information back to the
-     * system about the task.
+     * The opaque string used as a handle on the task. This token is used by workers to communicate progress and
+     * response information back to the system about the task.
      * </p>
      * 
-     * @return The opaque string used as a handle on the task. This token is
-     *         used by workers to communicate progress and response information
-     *         back to the system about the task.
+     * @return The opaque string used as a handle on the task. This token is used by workers to communicate progress and
+     *         response information back to the system about the task.
      */
 
     public String getTaskToken() {
@@ -119,17 +104,14 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * The opaque string used as a handle on the task. This token is used by
-     * workers to communicate progress and response information back to the
-     * system about the task.
+     * The opaque string used as a handle on the task. This token is used by workers to communicate progress and
+     * response information back to the system about the task.
      * </p>
      * 
      * @param taskToken
-     *        The opaque string used as a handle on the task. This token is used
-     *        by workers to communicate progress and response information back
-     *        to the system about the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The opaque string used as a handle on the task. This token is used by workers to communicate progress and
+     *        response information back to the system about the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DecisionTask withTaskToken(String taskToken) {
@@ -139,13 +121,11 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * The ID of the <code>DecisionTaskStarted</code> event recorded in the
-     * history.
+     * The ID of the <code>DecisionTaskStarted</code> event recorded in the history.
      * </p>
      * 
      * @param startedEventId
-     *        The ID of the <code>DecisionTaskStarted</code> event recorded in
-     *        the history.
+     *        The ID of the <code>DecisionTaskStarted</code> event recorded in the history.
      */
 
     public void setStartedEventId(Long startedEventId) {
@@ -154,12 +134,10 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * The ID of the <code>DecisionTaskStarted</code> event recorded in the
-     * history.
+     * The ID of the <code>DecisionTaskStarted</code> event recorded in the history.
      * </p>
      * 
-     * @return The ID of the <code>DecisionTaskStarted</code> event recorded in
-     *         the history.
+     * @return The ID of the <code>DecisionTaskStarted</code> event recorded in the history.
      */
 
     public Long getStartedEventId() {
@@ -168,15 +146,12 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * The ID of the <code>DecisionTaskStarted</code> event recorded in the
-     * history.
+     * The ID of the <code>DecisionTaskStarted</code> event recorded in the history.
      * </p>
      * 
      * @param startedEventId
-     *        The ID of the <code>DecisionTaskStarted</code> event recorded in
-     *        the history.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the <code>DecisionTaskStarted</code> event recorded in the history.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DecisionTask withStartedEventId(Long startedEventId) {
@@ -216,25 +191,21 @@ public class DecisionTask extends
      * 
      * @param workflowExecution
      *        The workflow execution for which this decision task was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DecisionTask withWorkflowExecution(
-            WorkflowExecution workflowExecution) {
+    public DecisionTask withWorkflowExecution(WorkflowExecution workflowExecution) {
         setWorkflowExecution(workflowExecution);
         return this;
     }
 
     /**
      * <p>
-     * The type of the workflow execution for which this decision task was
-     * created.
+     * The type of the workflow execution for which this decision task was created.
      * </p>
      * 
      * @param workflowType
-     *        The type of the workflow execution for which this decision task
-     *        was created.
+     *        The type of the workflow execution for which this decision task was created.
      */
 
     public void setWorkflowType(WorkflowType workflowType) {
@@ -243,12 +214,10 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * The type of the workflow execution for which this decision task was
-     * created.
+     * The type of the workflow execution for which this decision task was created.
      * </p>
      * 
-     * @return The type of the workflow execution for which this decision task
-     *         was created.
+     * @return The type of the workflow execution for which this decision task was created.
      */
 
     public WorkflowType getWorkflowType() {
@@ -257,15 +226,12 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * The type of the workflow execution for which this decision task was
-     * created.
+     * The type of the workflow execution for which this decision task was created.
      * </p>
      * 
      * @param workflowType
-     *        The type of the workflow execution for which this decision task
-     *        was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The type of the workflow execution for which this decision task was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DecisionTask withWorkflowType(WorkflowType workflowType) {
@@ -275,12 +241,12 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * A paginated list of history events of the workflow execution. The decider
-     * uses this during the processing of the decision task.
+     * A paginated list of history events of the workflow execution. The decider uses this during the processing of the
+     * decision task.
      * </p>
      * 
-     * @return A paginated list of history events of the workflow execution. The
-     *         decider uses this during the processing of the decision task.
+     * @return A paginated list of history events of the workflow execution. The decider uses this during the processing
+     *         of the decision task.
      */
 
     public java.util.List<HistoryEvent> getEvents() {
@@ -289,13 +255,13 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * A paginated list of history events of the workflow execution. The decider
-     * uses this during the processing of the decision task.
+     * A paginated list of history events of the workflow execution. The decider uses this during the processing of the
+     * decision task.
      * </p>
      * 
      * @param events
-     *        A paginated list of history events of the workflow execution. The
-     *        decider uses this during the processing of the decision task.
+     *        A paginated list of history events of the workflow execution. The decider uses this during the processing
+     *        of the decision task.
      */
 
     public void setEvents(java.util.Collection<HistoryEvent> events) {
@@ -309,21 +275,19 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * A paginated list of history events of the workflow execution. The decider
-     * uses this during the processing of the decision task.
+     * A paginated list of history events of the workflow execution. The decider uses this during the processing of the
+     * decision task.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEvents(java.util.Collection)} or
-     * {@link #withEvents(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param events
-     *        A paginated list of history events of the workflow execution. The
-     *        decider uses this during the processing of the decision task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A paginated list of history events of the workflow execution. The decider uses this during the processing
+     *        of the decision task.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DecisionTask withEvents(HistoryEvent... events) {
@@ -338,15 +302,14 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * A paginated list of history events of the workflow execution. The decider
-     * uses this during the processing of the decision task.
+     * A paginated list of history events of the workflow execution. The decider uses this during the processing of the
+     * decision task.
      * </p>
      * 
      * @param events
-     *        A paginated list of history events of the workflow execution. The
-     *        decider uses this during the processing of the decision task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A paginated list of history events of the workflow execution. The decider uses this during the processing
+     *        of the decision task.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DecisionTask withEvents(java.util.Collection<HistoryEvent> events) {
@@ -356,25 +319,20 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call,
-     *        there are more results available. To retrieve the next page of
-     *        results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments
-     *        unchanged.</p>
+     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
+     *        retrieve the next page of results, make the call again using the returned token in
+     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
      *        <p>
-     *        The configured <code>maximumPageSize</code> determines how many
-     *        results can be returned in a single call.
+     *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -383,24 +341,19 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
-     * @return If a <code>NextPageToken</code> was returned by a previous call,
-     *         there are more results available. To retrieve the next page of
-     *         results, make the call again using the returned token in
-     *         <code>nextPageToken</code>. Keep all other arguments
-     *         unchanged.</p>
+     * @return If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
+     *         retrieve the next page of results, make the call again using the returned token in
+     *         <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
      *         <p>
-     *         The configured <code>maximumPageSize</code> determines how many
-     *         results can be returned in a single call.
+     *         The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      */
 
     public String getNextPageToken() {
@@ -409,27 +362,21 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call,
-     *        there are more results available. To retrieve the next page of
-     *        results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments
-     *        unchanged.</p>
+     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
+     *        retrieve the next page of results, make the call again using the returned token in
+     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
      *        <p>
-     *        The configured <code>maximumPageSize</code> determines how many
-     *        results can be returned in a single call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DecisionTask withNextPageToken(String nextPageToken) {
@@ -439,17 +386,15 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * The ID of the DecisionTaskStarted event of the previous decision task of
-     * this workflow execution that was processed by the decider. This can be
-     * used to determine the events in the history new since the last decision
+     * The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was
+     * processed by the decider. This can be used to determine the events in the history new since the last decision
      * task received by the decider.
      * </p>
      * 
      * @param previousStartedEventId
-     *        The ID of the DecisionTaskStarted event of the previous decision
-     *        task of this workflow execution that was processed by the decider.
-     *        This can be used to determine the events in the history new since
-     *        the last decision task received by the decider.
+     *        The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was
+     *        processed by the decider. This can be used to determine the events in the history new since the last
+     *        decision task received by the decider.
      */
 
     public void setPreviousStartedEventId(Long previousStartedEventId) {
@@ -458,16 +403,14 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * The ID of the DecisionTaskStarted event of the previous decision task of
-     * this workflow execution that was processed by the decider. This can be
-     * used to determine the events in the history new since the last decision
+     * The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was
+     * processed by the decider. This can be used to determine the events in the history new since the last decision
      * task received by the decider.
      * </p>
      * 
-     * @return The ID of the DecisionTaskStarted event of the previous decision
-     *         task of this workflow execution that was processed by the
-     *         decider. This can be used to determine the events in the history
-     *         new since the last decision task received by the decider.
+     * @return The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was
+     *         processed by the decider. This can be used to determine the events in the history new since the last
+     *         decision task received by the decider.
      */
 
     public Long getPreviousStartedEventId() {
@@ -476,19 +419,16 @@ public class DecisionTask extends
 
     /**
      * <p>
-     * The ID of the DecisionTaskStarted event of the previous decision task of
-     * this workflow execution that was processed by the decider. This can be
-     * used to determine the events in the history new since the last decision
+     * The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was
+     * processed by the decider. This can be used to determine the events in the history new since the last decision
      * task received by the decider.
      * </p>
      * 
      * @param previousStartedEventId
-     *        The ID of the DecisionTaskStarted event of the previous decision
-     *        task of this workflow execution that was processed by the decider.
-     *        This can be used to determine the events in the history new since
-     *        the last decision task received by the decider.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was
+     *        processed by the decider. This can be used to determine the events in the history new since the last
+     *        decision task received by the decider.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DecisionTask withPreviousStartedEventId(Long previousStartedEventId) {
@@ -497,8 +437,7 @@ public class DecisionTask extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -538,43 +477,31 @@ public class DecisionTask extends
         DecisionTask other = (DecisionTask) obj;
         if (other.getTaskToken() == null ^ this.getTaskToken() == null)
             return false;
-        if (other.getTaskToken() != null
-                && other.getTaskToken().equals(this.getTaskToken()) == false)
+        if (other.getTaskToken() != null && other.getTaskToken().equals(this.getTaskToken()) == false)
             return false;
-        if (other.getStartedEventId() == null
-                ^ this.getStartedEventId() == null)
+        if (other.getStartedEventId() == null ^ this.getStartedEventId() == null)
             return false;
-        if (other.getStartedEventId() != null
-                && other.getStartedEventId().equals(this.getStartedEventId()) == false)
+        if (other.getStartedEventId() != null && other.getStartedEventId().equals(this.getStartedEventId()) == false)
             return false;
-        if (other.getWorkflowExecution() == null
-                ^ this.getWorkflowExecution() == null)
+        if (other.getWorkflowExecution() == null ^ this.getWorkflowExecution() == null)
             return false;
-        if (other.getWorkflowExecution() != null
-                && other.getWorkflowExecution().equals(
-                        this.getWorkflowExecution()) == false)
+        if (other.getWorkflowExecution() != null && other.getWorkflowExecution().equals(this.getWorkflowExecution()) == false)
             return false;
         if (other.getWorkflowType() == null ^ this.getWorkflowType() == null)
             return false;
-        if (other.getWorkflowType() != null
-                && other.getWorkflowType().equals(this.getWorkflowType()) == false)
+        if (other.getWorkflowType() != null && other.getWorkflowType().equals(this.getWorkflowType()) == false)
             return false;
         if (other.getEvents() == null ^ this.getEvents() == null)
             return false;
-        if (other.getEvents() != null
-                && other.getEvents().equals(this.getEvents()) == false)
+        if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false)
             return false;
         if (other.getNextPageToken() == null ^ this.getNextPageToken() == null)
             return false;
-        if (other.getNextPageToken() != null
-                && other.getNextPageToken().equals(this.getNextPageToken()) == false)
+        if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false)
             return false;
-        if (other.getPreviousStartedEventId() == null
-                ^ this.getPreviousStartedEventId() == null)
+        if (other.getPreviousStartedEventId() == null ^ this.getPreviousStartedEventId() == null)
             return false;
-        if (other.getPreviousStartedEventId() != null
-                && other.getPreviousStartedEventId().equals(
-                        this.getPreviousStartedEventId()) == false)
+        if (other.getPreviousStartedEventId() != null && other.getPreviousStartedEventId().equals(this.getPreviousStartedEventId()) == false)
             return false;
         return true;
     }
@@ -584,30 +511,13 @@ public class DecisionTask extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTaskToken() == null) ? 0 : getTaskToken().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStartedEventId() == null) ? 0 : getStartedEventId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getWorkflowExecution() == null) ? 0
-                        : getWorkflowExecution().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getWorkflowType() == null) ? 0 : getWorkflowType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getEvents() == null) ? 0 : getEvents().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextPageToken() == null) ? 0 : getNextPageToken()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPreviousStartedEventId() == null) ? 0
-                        : getPreviousStartedEventId().hashCode());
+        hashCode = prime * hashCode + ((getTaskToken() == null) ? 0 : getTaskToken().hashCode());
+        hashCode = prime * hashCode + ((getStartedEventId() == null) ? 0 : getStartedEventId().hashCode());
+        hashCode = prime * hashCode + ((getWorkflowExecution() == null) ? 0 : getWorkflowExecution().hashCode());
+        hashCode = prime * hashCode + ((getWorkflowType() == null) ? 0 : getWorkflowType().hashCode());
+        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
+        hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
+        hashCode = prime * hashCode + ((getPreviousStartedEventId() == null) ? 0 : getPreviousStartedEventId().hashCode());
         return hashCode;
     }
 
@@ -616,9 +526,7 @@ public class DecisionTask extends
         try {
             return (DecisionTask) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

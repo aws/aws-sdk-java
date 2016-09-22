@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -18,10 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an Amazon EBS volume. This data type maps directly to the Amazon
- * EC2 <a href=
- * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
- * >EbsBlockDevice</a> data type.
+ * Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a> data type.
  * </p>
  */
 public class EbsBlockDevice implements Serializable, Cloneable {
@@ -34,26 +30,22 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     private String snapshotId;
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     * >EbsBlockDevice</a>.
+     * The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      */
     private Integer iops;
     /**
      * <p>
-     * The volume size, in GiB. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     * >EbsBlockDevice</a>.
+     * The volume size, in GiB. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      */
     private Integer volumeSize;
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
-     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
+     * volumes, and <code>standard</code> for Magnetic volumes.
      * </p>
      */
     private String volumeType;
@@ -96,8 +88,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * 
      * @param snapshotId
      *        The snapshot ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EbsBlockDevice withSnapshotId(String snapshotId) {
@@ -107,17 +98,13 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     * >EbsBlockDevice</a>.
+     * The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) that the volume
-     *        supports. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     *        >EbsBlockDevice</a>.
+     *        The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      */
 
     public void setIops(Integer iops) {
@@ -126,16 +113,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     * >EbsBlockDevice</a>.
+     * The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
-     * @return The number of I/O operations per second (IOPS) that the volume
-     *         supports. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     *         >EbsBlockDevice</a>.
+     * @return The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      */
 
     public Integer getIops() {
@@ -144,19 +127,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     * >EbsBlockDevice</a>.
+     * The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) that the volume
-     *        supports. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     *        >EbsBlockDevice</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EbsBlockDevice withIops(Integer iops) {
@@ -166,15 +144,13 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in GiB. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     * >EbsBlockDevice</a>.
+     * The volume size, in GiB. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @param volumeSize
-     *        The volume size, in GiB. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     *        >EbsBlockDevice</a>.
+     *        The volume size, in GiB. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      */
 
     public void setVolumeSize(Integer volumeSize) {
@@ -183,14 +159,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in GiB. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     * >EbsBlockDevice</a>.
+     * The volume size, in GiB. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
-     * @return The volume size, in GiB. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     *         >EbsBlockDevice</a>.
+     * @return The volume size, in GiB. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      */
 
     public Integer getVolumeSize() {
@@ -199,17 +173,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in GiB. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     * >EbsBlockDevice</a>.
+     * The volume size, in GiB. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @param volumeSize
-     *        The volume size, in GiB. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html"
-     *        >EbsBlockDevice</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The volume size, in GiB. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EbsBlockDevice withVolumeSize(Integer volumeSize) {
@@ -219,15 +190,13 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
-     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
+     * volumes, and <code>standard</code> for Magnetic volumes.
      * </p>
      * 
      * @param volumeType
-     *        The volume type. <code>gp2</code> for General Purpose (SSD)
-     *        volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, and
-     *        <code>standard</code> for Magnetic volumes.
+     *        The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS
+     *        (SSD) volumes, and <code>standard</code> for Magnetic volumes.
      * @see VolumeType
      */
 
@@ -237,14 +206,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
-     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
+     * volumes, and <code>standard</code> for Magnetic volumes.
      * </p>
      * 
-     * @return The volume type. <code>gp2</code> for General Purpose (SSD)
-     *         volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, and
-     *         <code>standard</code> for Magnetic volumes.
+     * @return The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned
+     *         IOPS (SSD) volumes, and <code>standard</code> for Magnetic volumes.
      * @see VolumeType
      */
 
@@ -254,17 +221,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
-     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
+     * volumes, and <code>standard</code> for Magnetic volumes.
      * </p>
      * 
      * @param volumeType
-     *        The volume type. <code>gp2</code> for General Purpose (SSD)
-     *        volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, and
-     *        <code>standard</code> for Magnetic volumes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS
+     *        (SSD) volumes, and <code>standard</code> for Magnetic volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
 
@@ -275,15 +239,13 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
-     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
+     * volumes, and <code>standard</code> for Magnetic volumes.
      * </p>
      * 
      * @param volumeType
-     *        The volume type. <code>gp2</code> for General Purpose (SSD)
-     *        volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, and
-     *        <code>standard</code> for Magnetic volumes.
+     *        The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS
+     *        (SSD) volumes, and <code>standard</code> for Magnetic volumes.
      * @see VolumeType
      */
 
@@ -293,17 +255,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
-     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
+     * volumes, and <code>standard</code> for Magnetic volumes.
      * </p>
      * 
      * @param volumeType
-     *        The volume type. <code>gp2</code> for General Purpose (SSD)
-     *        volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, and
-     *        <code>standard</code> for Magnetic volumes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS
+     *        (SSD) volumes, and <code>standard</code> for Magnetic volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
 
@@ -344,8 +303,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * 
      * @param deleteOnTermination
      *        Whether the volume is deleted on instance termination.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EbsBlockDevice withDeleteOnTermination(Boolean deleteOnTermination) {
@@ -366,8 +324,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -403,30 +360,23 @@ public class EbsBlockDevice implements Serializable, Cloneable {
         EbsBlockDevice other = (EbsBlockDevice) obj;
         if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
             return false;
-        if (other.getSnapshotId() != null
-                && other.getSnapshotId().equals(this.getSnapshotId()) == false)
+        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
             return false;
         if (other.getIops() == null ^ this.getIops() == null)
             return false;
-        if (other.getIops() != null
-                && other.getIops().equals(this.getIops()) == false)
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
             return false;
         if (other.getVolumeSize() == null ^ this.getVolumeSize() == null)
             return false;
-        if (other.getVolumeSize() != null
-                && other.getVolumeSize().equals(this.getVolumeSize()) == false)
+        if (other.getVolumeSize() != null && other.getVolumeSize().equals(this.getVolumeSize()) == false)
             return false;
         if (other.getVolumeType() == null ^ this.getVolumeType() == null)
             return false;
-        if (other.getVolumeType() != null
-                && other.getVolumeType().equals(this.getVolumeType()) == false)
+        if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false)
             return false;
-        if (other.getDeleteOnTermination() == null
-                ^ this.getDeleteOnTermination() == null)
+        if (other.getDeleteOnTermination() == null ^ this.getDeleteOnTermination() == null)
             return false;
-        if (other.getDeleteOnTermination() != null
-                && other.getDeleteOnTermination().equals(
-                        this.getDeleteOnTermination()) == false)
+        if (other.getDeleteOnTermination() != null && other.getDeleteOnTermination().equals(this.getDeleteOnTermination()) == false)
             return false;
         return true;
     }
@@ -436,18 +386,11 @@ public class EbsBlockDevice implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
-        hashCode = prime * hashCode
-                + ((getIops() == null) ? 0 : getIops().hashCode());
-        hashCode = prime * hashCode
-                + ((getVolumeSize() == null) ? 0 : getVolumeSize().hashCode());
-        hashCode = prime * hashCode
-                + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeleteOnTermination() == null) ? 0
-                        : getDeleteOnTermination().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
+        hashCode = prime * hashCode + ((getVolumeSize() == null) ? 0 : getVolumeSize().hashCode());
+        hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
+        hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
         return hashCode;
     }
 
@@ -456,9 +399,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
         try {
             return (EbsBlockDevice) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

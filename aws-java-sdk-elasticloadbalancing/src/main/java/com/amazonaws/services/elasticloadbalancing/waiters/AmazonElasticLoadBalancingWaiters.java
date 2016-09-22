@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.waiters;
 
@@ -29,8 +27,7 @@ public class AmazonElasticLoadBalancingWaiters {
      */
     private final AmazonElasticLoadBalancing client;
 
-    private final ExecutorService executorService = Executors
-            .newFixedThreadPool(50);
+    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
 
     /**
      * Constructs a new AmazonElasticLoadBalancingWaiters with the given client
@@ -44,58 +41,41 @@ public class AmazonElasticLoadBalancingWaiters {
     }
 
     /**
-     * Builds a AnyInstanceInService waiter by using custom parameters
-     * waiterParameters and other parameters defined in the waiters
-     * specification, and then polls until it determines whether the resource
-     * entered the desired state or not, where polling criteria is bound by
-     * either default polling strategy or custom polling strategy.
+     * Builds a AnyInstanceInService waiter by using custom parameters waiterParameters and other parameters defined in
+     * the waiters specification, and then polls until it determines whether the resource entered the desired state or
+     * not, where polling criteria is bound by either default polling strategy or custom polling strategy.
      */
     public Waiter<DescribeInstanceHealthRequest> anyInstanceInService() {
 
-        return new WaiterBuilder<DescribeInstanceHealthRequest, DescribeInstanceHealthResult>()
-                .withSdkFunction(new DescribeInstanceHealthFunction(client))
+        return new WaiterBuilder<DescribeInstanceHealthRequest, DescribeInstanceHealthResult>().withSdkFunction(new DescribeInstanceHealthFunction(client))
                 .withAcceptors(new AnyInstanceInService.IsInServiceMatcher())
-                .withDefaultPollingStrategy(
-                        new PollingStrategy(new MaxAttemptsRetryStrategy(40),
-                                new FixedDelayStrategy(15)))
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
                 .withExecutorService(executorService).build();
     }
 
     /**
-     * Builds a InstanceDeregistered waiter by using custom parameters
-     * waiterParameters and other parameters defined in the waiters
-     * specification, and then polls until it determines whether the resource
-     * entered the desired state or not, where polling criteria is bound by
-     * either default polling strategy or custom polling strategy.
+     * Builds a InstanceDeregistered waiter by using custom parameters waiterParameters and other parameters defined in
+     * the waiters specification, and then polls until it determines whether the resource entered the desired state or
+     * not, where polling criteria is bound by either default polling strategy or custom polling strategy.
      */
     public Waiter<DescribeInstanceHealthRequest> instanceDeregistered() {
 
-        return new WaiterBuilder<DescribeInstanceHealthRequest, DescribeInstanceHealthResult>()
-                .withSdkFunction(new DescribeInstanceHealthFunction(client))
-                .withAcceptors(
-                        new InstanceDeregistered.IsOutOfServiceMatcher(),
-                        new InstanceDeregistered.IsInvalidInstanceMatcher())
-                .withDefaultPollingStrategy(
-                        new PollingStrategy(new MaxAttemptsRetryStrategy(40),
-                                new FixedDelayStrategy(15)))
+        return new WaiterBuilder<DescribeInstanceHealthRequest, DescribeInstanceHealthResult>().withSdkFunction(new DescribeInstanceHealthFunction(client))
+                .withAcceptors(new InstanceDeregistered.IsOutOfServiceMatcher(), new InstanceDeregistered.IsInvalidInstanceMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
                 .withExecutorService(executorService).build();
     }
 
     /**
-     * Builds a InstanceInService waiter by using custom parameters
-     * waiterParameters and other parameters defined in the waiters
-     * specification, and then polls until it determines whether the resource
-     * entered the desired state or not, where polling criteria is bound by
-     * either default polling strategy or custom polling strategy.
+     * Builds a InstanceInService waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
      */
     public Waiter<DescribeInstanceHealthRequest> instanceInService() {
 
-        return new WaiterBuilder<DescribeInstanceHealthRequest, DescribeInstanceHealthResult>()
-                .withSdkFunction(new DescribeInstanceHealthFunction(client))
+        return new WaiterBuilder<DescribeInstanceHealthRequest, DescribeInstanceHealthResult>().withSdkFunction(new DescribeInstanceHealthFunction(client))
                 .withAcceptors(new InstanceInService.IsInServiceMatcher())
-                .withDefaultPollingStrategy(
-                        new PollingStrategy(new MaxAttemptsRetryStrategy(40),
-                                new FixedDelayStrategy(15)))
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
                 .withExecutorService(executorService).build();
     }
 

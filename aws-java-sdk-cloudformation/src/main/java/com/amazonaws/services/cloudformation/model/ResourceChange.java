@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
 
@@ -18,18 +16,16 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>ResourceChange</code> structure describes the resource and the
- * action that AWS CloudFormation will perform on it if you execute this change
- * set.
+ * The <code>ResourceChange</code> structure describes the resource and the action that AWS CloudFormation will perform
+ * on it if you execute this change set.
  * </p>
  */
 public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action that AWS CloudFormation takes on the resource, such as
-     * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).
+     * The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
+     * <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
      * </p>
      */
     private String action;
@@ -41,69 +37,57 @@ public class ResourceChange implements Serializable, Cloneable {
     private String logicalResourceId;
     /**
      * <p>
-     * The resource's physical ID (resource name). Resources that you are adding
-     * don't have physical IDs because they haven't been created.
+     * The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because they
+     * haven't been created.
      * </p>
      */
     private String physicalResourceId;
     /**
      * <p>
-     * The type of AWS CloudFormation resource, such as
-     * <code>AWS::S3::Bucket</code>.
+     * The type of AWS CloudFormation resource, such as <code>AWS::S3::Bucket</code>.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * For the <code>Modify</code> action, indicates whether AWS CloudFormation
-     * will replace the resource by creating a new one and deleting the old one.
-     * This value depends on the value of the <code>RequiresRecreation</code>
-     * property in the <code>ResourceTargetDefinition</code> structure. For
-     * example, if the <code>RequiresRecreation</code> field is
-     * <code>Always</code> and the <code>Evaluation</code> field is
-     * <code>Static</code>, <code>Replacement</code> is <code>True</code>. If
-     * the <code>RequiresRecreation</code> field is <code>Always</code> and the
-     * <code>Evaluation</code> field is <code>Dynamic</code>,
-     * <code>Replacement</code> is <code>Conditionally</code>.
+     * For the <code>Modify</code> action, indicates whether AWS CloudFormation will replace the resource by creating a
+     * new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property
+     * in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field
+     * is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is
+     * <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the
+     * <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.
      * </p>
      * <p>
-     * If you have multiple changes with different
-     * <code>RequiresRecreation</code> values, the <code>Replacement</code>
-     * value depends on the change with the most impact. A
-     * <code>RequiresRecreation</code> value of <code>Always</code> has the most
-     * impact, followed by <code>Conditionally</code>, and then
-     * <code>Never</code>.
+     * If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code>
+     * value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code>
+     * has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.
      * </p>
      */
     private String replacement;
     /**
      * <p>
-     * For the <code>Modify</code> action, indicates which resource attribute is
-     * triggering this update, such as a change in the resource attribute's
-     * <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
+     * For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a
+     * change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> scope;
     /**
      * <p>
-     * For the <code>Modify</code> action, a list of
-     * <code>ResourceChangeDetail</code> structures that describes the changes
-     * that AWS CloudFormation will make to the resource.
+     * For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the
+     * changes that AWS CloudFormation will make to the resource.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceChangeDetail> details;
 
     /**
      * <p>
-     * The action that AWS CloudFormation takes on the resource, such as
-     * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).
+     * The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
+     * <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
      * </p>
      * 
      * @param action
-     *        The action that AWS CloudFormation takes on the resource, such as
-     *        <code>Add</code> (adds a new resource), <code>Modify</code>
-     *        (changes a resource), or <code>Remove</code> (deletes a resource).
+     *        The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
+     *        <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
      * @see ChangeAction
      */
 
@@ -113,15 +97,12 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action that AWS CloudFormation takes on the resource, such as
-     * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).
+     * The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
+     * <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
      * </p>
      * 
-     * @return The action that AWS CloudFormation takes on the resource, such as
-     *         <code>Add</code> (adds a new resource), <code>Modify</code>
-     *         (changes a resource), or <code>Remove</code> (deletes a
-     *         resource).
+     * @return The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
+     *         <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
      * @see ChangeAction
      */
 
@@ -131,17 +112,14 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action that AWS CloudFormation takes on the resource, such as
-     * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).
+     * The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
+     * <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
      * </p>
      * 
      * @param action
-     *        The action that AWS CloudFormation takes on the resource, such as
-     *        <code>Add</code> (adds a new resource), <code>Modify</code>
-     *        (changes a resource), or <code>Remove</code> (deletes a resource).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
+     *        <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeAction
      */
 
@@ -152,15 +130,13 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action that AWS CloudFormation takes on the resource, such as
-     * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).
+     * The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
+     * <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
      * </p>
      * 
      * @param action
-     *        The action that AWS CloudFormation takes on the resource, such as
-     *        <code>Add</code> (adds a new resource), <code>Modify</code>
-     *        (changes a resource), or <code>Remove</code> (deletes a resource).
+     *        The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
+     *        <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
      * @see ChangeAction
      */
 
@@ -170,17 +146,14 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action that AWS CloudFormation takes on the resource, such as
-     * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).
+     * The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
+     * <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
      * </p>
      * 
      * @param action
-     *        The action that AWS CloudFormation takes on the resource, such as
-     *        <code>Add</code> (adds a new resource), <code>Modify</code>
-     *        (changes a resource), or <code>Remove</code> (deletes a resource).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
+     *        <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeAction
      */
 
@@ -195,8 +168,7 @@ public class ResourceChange implements Serializable, Cloneable {
      * </p>
      * 
      * @param logicalResourceId
-     *        The resource's logical ID, which is defined in the stack's
-     *        template.
+     *        The resource's logical ID, which is defined in the stack's template.
      */
 
     public void setLogicalResourceId(String logicalResourceId) {
@@ -208,8 +180,7 @@ public class ResourceChange implements Serializable, Cloneable {
      * The resource's logical ID, which is defined in the stack's template.
      * </p>
      * 
-     * @return The resource's logical ID, which is defined in the stack's
-     *         template.
+     * @return The resource's logical ID, which is defined in the stack's template.
      */
 
     public String getLogicalResourceId() {
@@ -222,10 +193,8 @@ public class ResourceChange implements Serializable, Cloneable {
      * </p>
      * 
      * @param logicalResourceId
-     *        The resource's logical ID, which is defined in the stack's
-     *        template.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The resource's logical ID, which is defined in the stack's template.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceChange withLogicalResourceId(String logicalResourceId) {
@@ -235,13 +204,13 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The resource's physical ID (resource name). Resources that you are adding
-     * don't have physical IDs because they haven't been created.
+     * The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because they
+     * haven't been created.
      * </p>
      * 
      * @param physicalResourceId
-     *        The resource's physical ID (resource name). Resources that you are
-     *        adding don't have physical IDs because they haven't been created.
+     *        The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because
+     *        they haven't been created.
      */
 
     public void setPhysicalResourceId(String physicalResourceId) {
@@ -250,13 +219,12 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The resource's physical ID (resource name). Resources that you are adding
-     * don't have physical IDs because they haven't been created.
+     * The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because they
+     * haven't been created.
      * </p>
      * 
-     * @return The resource's physical ID (resource name). Resources that you
-     *         are adding don't have physical IDs because they haven't been
-     *         created.
+     * @return The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because
+     *         they haven't been created.
      */
 
     public String getPhysicalResourceId() {
@@ -265,15 +233,14 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The resource's physical ID (resource name). Resources that you are adding
-     * don't have physical IDs because they haven't been created.
+     * The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because they
+     * haven't been created.
      * </p>
      * 
      * @param physicalResourceId
-     *        The resource's physical ID (resource name). Resources that you are
-     *        adding don't have physical IDs because they haven't been created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because
+     *        they haven't been created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceChange withPhysicalResourceId(String physicalResourceId) {
@@ -283,13 +250,11 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of AWS CloudFormation resource, such as
-     * <code>AWS::S3::Bucket</code>.
+     * The type of AWS CloudFormation resource, such as <code>AWS::S3::Bucket</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of AWS CloudFormation resource, such as
-     *        <code>AWS::S3::Bucket</code>.
+     *        The type of AWS CloudFormation resource, such as <code>AWS::S3::Bucket</code>.
      */
 
     public void setResourceType(String resourceType) {
@@ -298,12 +263,10 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of AWS CloudFormation resource, such as
-     * <code>AWS::S3::Bucket</code>.
+     * The type of AWS CloudFormation resource, such as <code>AWS::S3::Bucket</code>.
      * </p>
      * 
-     * @return The type of AWS CloudFormation resource, such as
-     *         <code>AWS::S3::Bucket</code>.
+     * @return The type of AWS CloudFormation resource, such as <code>AWS::S3::Bucket</code>.
      */
 
     public String getResourceType() {
@@ -312,15 +275,12 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of AWS CloudFormation resource, such as
-     * <code>AWS::S3::Bucket</code>.
+     * The type of AWS CloudFormation resource, such as <code>AWS::S3::Bucket</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of AWS CloudFormation resource, such as
-     *        <code>AWS::S3::Bucket</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The type of AWS CloudFormation resource, such as <code>AWS::S3::Bucket</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceChange withResourceType(String resourceType) {
@@ -330,44 +290,31 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For the <code>Modify</code> action, indicates whether AWS CloudFormation
-     * will replace the resource by creating a new one and deleting the old one.
-     * This value depends on the value of the <code>RequiresRecreation</code>
-     * property in the <code>ResourceTargetDefinition</code> structure. For
-     * example, if the <code>RequiresRecreation</code> field is
-     * <code>Always</code> and the <code>Evaluation</code> field is
-     * <code>Static</code>, <code>Replacement</code> is <code>True</code>. If
-     * the <code>RequiresRecreation</code> field is <code>Always</code> and the
-     * <code>Evaluation</code> field is <code>Dynamic</code>,
-     * <code>Replacement</code> is <code>Conditionally</code>.
+     * For the <code>Modify</code> action, indicates whether AWS CloudFormation will replace the resource by creating a
+     * new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property
+     * in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field
+     * is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is
+     * <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the
+     * <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.
      * </p>
      * <p>
-     * If you have multiple changes with different
-     * <code>RequiresRecreation</code> values, the <code>Replacement</code>
-     * value depends on the change with the most impact. A
-     * <code>RequiresRecreation</code> value of <code>Always</code> has the most
-     * impact, followed by <code>Conditionally</code>, and then
-     * <code>Never</code>.
+     * If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code>
+     * value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code>
+     * has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.
      * </p>
      * 
      * @param replacement
-     *        For the <code>Modify</code> action, indicates whether AWS
-     *        CloudFormation will replace the resource by creating a new one and
-     *        deleting the old one. This value depends on the value of the
-     *        <code>RequiresRecreation</code> property in the
-     *        <code>ResourceTargetDefinition</code> structure. For example, if
-     *        the <code>RequiresRecreation</code> field is <code>Always</code>
-     *        and the <code>Evaluation</code> field is <code>Static</code>,
-     *        <code>Replacement</code> is <code>True</code>. If the
-     *        <code>RequiresRecreation</code> field is <code>Always</code> and
-     *        the <code>Evaluation</code> field is <code>Dynamic</code>,
-     *        <code>Replacement</code> is <code>Conditionally</code>.</p>
+     *        For the <code>Modify</code> action, indicates whether AWS CloudFormation will replace the resource by
+     *        creating a new one and deleting the old one. This value depends on the value of the
+     *        <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For
+     *        example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the
+     *        <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If
+     *        the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is
+     *        <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
      *        <p>
-     *        If you have multiple changes with different
-     *        <code>RequiresRecreation</code> values, the
-     *        <code>Replacement</code> value depends on the change with the most
-     *        impact. A <code>RequiresRecreation</code> value of
-     *        <code>Always</code> has the most impact, followed by
+     *        If you have multiple changes with different <code>RequiresRecreation</code> values, the
+     *        <code>Replacement</code> value depends on the change with the most impact. A
+     *        <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by
      *        <code>Conditionally</code>, and then <code>Never</code>.
      * @see Replacement
      */
@@ -378,43 +325,30 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For the <code>Modify</code> action, indicates whether AWS CloudFormation
-     * will replace the resource by creating a new one and deleting the old one.
-     * This value depends on the value of the <code>RequiresRecreation</code>
-     * property in the <code>ResourceTargetDefinition</code> structure. For
-     * example, if the <code>RequiresRecreation</code> field is
-     * <code>Always</code> and the <code>Evaluation</code> field is
-     * <code>Static</code>, <code>Replacement</code> is <code>True</code>. If
-     * the <code>RequiresRecreation</code> field is <code>Always</code> and the
-     * <code>Evaluation</code> field is <code>Dynamic</code>,
-     * <code>Replacement</code> is <code>Conditionally</code>.
+     * For the <code>Modify</code> action, indicates whether AWS CloudFormation will replace the resource by creating a
+     * new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property
+     * in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field
+     * is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is
+     * <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the
+     * <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.
      * </p>
      * <p>
-     * If you have multiple changes with different
-     * <code>RequiresRecreation</code> values, the <code>Replacement</code>
-     * value depends on the change with the most impact. A
-     * <code>RequiresRecreation</code> value of <code>Always</code> has the most
-     * impact, followed by <code>Conditionally</code>, and then
-     * <code>Never</code>.
+     * If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code>
+     * value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code>
+     * has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.
      * </p>
      * 
-     * @return For the <code>Modify</code> action, indicates whether AWS
-     *         CloudFormation will replace the resource by creating a new one
-     *         and deleting the old one. This value depends on the value of the
-     *         <code>RequiresRecreation</code> property in the
-     *         <code>ResourceTargetDefinition</code> structure. For example, if
-     *         the <code>RequiresRecreation</code> field is <code>Always</code>
-     *         and the <code>Evaluation</code> field is <code>Static</code>,
-     *         <code>Replacement</code> is <code>True</code>. If the
-     *         <code>RequiresRecreation</code> field is <code>Always</code> and
-     *         the <code>Evaluation</code> field is <code>Dynamic</code>,
-     *         <code>Replacement</code> is <code>Conditionally</code>.</p>
+     * @return For the <code>Modify</code> action, indicates whether AWS CloudFormation will replace the resource by
+     *         creating a new one and deleting the old one. This value depends on the value of the
+     *         <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For
+     *         example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the
+     *         <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If
+     *         the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is
+     *         <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
      *         <p>
-     *         If you have multiple changes with different
-     *         <code>RequiresRecreation</code> values, the
-     *         <code>Replacement</code> value depends on the change with the
-     *         most impact. A <code>RequiresRecreation</code> value of
-     *         <code>Always</code> has the most impact, followed by
+     *         If you have multiple changes with different <code>RequiresRecreation</code> values, the
+     *         <code>Replacement</code> value depends on the change with the most impact. A
+     *         <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by
      *         <code>Conditionally</code>, and then <code>Never</code>.
      * @see Replacement
      */
@@ -425,47 +359,33 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For the <code>Modify</code> action, indicates whether AWS CloudFormation
-     * will replace the resource by creating a new one and deleting the old one.
-     * This value depends on the value of the <code>RequiresRecreation</code>
-     * property in the <code>ResourceTargetDefinition</code> structure. For
-     * example, if the <code>RequiresRecreation</code> field is
-     * <code>Always</code> and the <code>Evaluation</code> field is
-     * <code>Static</code>, <code>Replacement</code> is <code>True</code>. If
-     * the <code>RequiresRecreation</code> field is <code>Always</code> and the
-     * <code>Evaluation</code> field is <code>Dynamic</code>,
-     * <code>Replacement</code> is <code>Conditionally</code>.
+     * For the <code>Modify</code> action, indicates whether AWS CloudFormation will replace the resource by creating a
+     * new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property
+     * in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field
+     * is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is
+     * <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the
+     * <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.
      * </p>
      * <p>
-     * If you have multiple changes with different
-     * <code>RequiresRecreation</code> values, the <code>Replacement</code>
-     * value depends on the change with the most impact. A
-     * <code>RequiresRecreation</code> value of <code>Always</code> has the most
-     * impact, followed by <code>Conditionally</code>, and then
-     * <code>Never</code>.
+     * If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code>
+     * value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code>
+     * has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.
      * </p>
      * 
      * @param replacement
-     *        For the <code>Modify</code> action, indicates whether AWS
-     *        CloudFormation will replace the resource by creating a new one and
-     *        deleting the old one. This value depends on the value of the
-     *        <code>RequiresRecreation</code> property in the
-     *        <code>ResourceTargetDefinition</code> structure. For example, if
-     *        the <code>RequiresRecreation</code> field is <code>Always</code>
-     *        and the <code>Evaluation</code> field is <code>Static</code>,
-     *        <code>Replacement</code> is <code>True</code>. If the
-     *        <code>RequiresRecreation</code> field is <code>Always</code> and
-     *        the <code>Evaluation</code> field is <code>Dynamic</code>,
-     *        <code>Replacement</code> is <code>Conditionally</code>.</p>
+     *        For the <code>Modify</code> action, indicates whether AWS CloudFormation will replace the resource by
+     *        creating a new one and deleting the old one. This value depends on the value of the
+     *        <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For
+     *        example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the
+     *        <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If
+     *        the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is
+     *        <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
      *        <p>
-     *        If you have multiple changes with different
-     *        <code>RequiresRecreation</code> values, the
-     *        <code>Replacement</code> value depends on the change with the most
-     *        impact. A <code>RequiresRecreation</code> value of
-     *        <code>Always</code> has the most impact, followed by
+     *        If you have multiple changes with different <code>RequiresRecreation</code> values, the
+     *        <code>Replacement</code> value depends on the change with the most impact. A
+     *        <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by
      *        <code>Conditionally</code>, and then <code>Never</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Replacement
      */
 
@@ -476,44 +396,31 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For the <code>Modify</code> action, indicates whether AWS CloudFormation
-     * will replace the resource by creating a new one and deleting the old one.
-     * This value depends on the value of the <code>RequiresRecreation</code>
-     * property in the <code>ResourceTargetDefinition</code> structure. For
-     * example, if the <code>RequiresRecreation</code> field is
-     * <code>Always</code> and the <code>Evaluation</code> field is
-     * <code>Static</code>, <code>Replacement</code> is <code>True</code>. If
-     * the <code>RequiresRecreation</code> field is <code>Always</code> and the
-     * <code>Evaluation</code> field is <code>Dynamic</code>,
-     * <code>Replacement</code> is <code>Conditionally</code>.
+     * For the <code>Modify</code> action, indicates whether AWS CloudFormation will replace the resource by creating a
+     * new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property
+     * in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field
+     * is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is
+     * <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the
+     * <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.
      * </p>
      * <p>
-     * If you have multiple changes with different
-     * <code>RequiresRecreation</code> values, the <code>Replacement</code>
-     * value depends on the change with the most impact. A
-     * <code>RequiresRecreation</code> value of <code>Always</code> has the most
-     * impact, followed by <code>Conditionally</code>, and then
-     * <code>Never</code>.
+     * If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code>
+     * value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code>
+     * has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.
      * </p>
      * 
      * @param replacement
-     *        For the <code>Modify</code> action, indicates whether AWS
-     *        CloudFormation will replace the resource by creating a new one and
-     *        deleting the old one. This value depends on the value of the
-     *        <code>RequiresRecreation</code> property in the
-     *        <code>ResourceTargetDefinition</code> structure. For example, if
-     *        the <code>RequiresRecreation</code> field is <code>Always</code>
-     *        and the <code>Evaluation</code> field is <code>Static</code>,
-     *        <code>Replacement</code> is <code>True</code>. If the
-     *        <code>RequiresRecreation</code> field is <code>Always</code> and
-     *        the <code>Evaluation</code> field is <code>Dynamic</code>,
-     *        <code>Replacement</code> is <code>Conditionally</code>.</p>
+     *        For the <code>Modify</code> action, indicates whether AWS CloudFormation will replace the resource by
+     *        creating a new one and deleting the old one. This value depends on the value of the
+     *        <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For
+     *        example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the
+     *        <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If
+     *        the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is
+     *        <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
      *        <p>
-     *        If you have multiple changes with different
-     *        <code>RequiresRecreation</code> values, the
-     *        <code>Replacement</code> value depends on the change with the most
-     *        impact. A <code>RequiresRecreation</code> value of
-     *        <code>Always</code> has the most impact, followed by
+     *        If you have multiple changes with different <code>RequiresRecreation</code> values, the
+     *        <code>Replacement</code> value depends on the change with the most impact. A
+     *        <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by
      *        <code>Conditionally</code>, and then <code>Never</code>.
      * @see Replacement
      */
@@ -524,47 +431,33 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For the <code>Modify</code> action, indicates whether AWS CloudFormation
-     * will replace the resource by creating a new one and deleting the old one.
-     * This value depends on the value of the <code>RequiresRecreation</code>
-     * property in the <code>ResourceTargetDefinition</code> structure. For
-     * example, if the <code>RequiresRecreation</code> field is
-     * <code>Always</code> and the <code>Evaluation</code> field is
-     * <code>Static</code>, <code>Replacement</code> is <code>True</code>. If
-     * the <code>RequiresRecreation</code> field is <code>Always</code> and the
-     * <code>Evaluation</code> field is <code>Dynamic</code>,
-     * <code>Replacement</code> is <code>Conditionally</code>.
+     * For the <code>Modify</code> action, indicates whether AWS CloudFormation will replace the resource by creating a
+     * new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property
+     * in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field
+     * is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is
+     * <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the
+     * <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.
      * </p>
      * <p>
-     * If you have multiple changes with different
-     * <code>RequiresRecreation</code> values, the <code>Replacement</code>
-     * value depends on the change with the most impact. A
-     * <code>RequiresRecreation</code> value of <code>Always</code> has the most
-     * impact, followed by <code>Conditionally</code>, and then
-     * <code>Never</code>.
+     * If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code>
+     * value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code>
+     * has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.
      * </p>
      * 
      * @param replacement
-     *        For the <code>Modify</code> action, indicates whether AWS
-     *        CloudFormation will replace the resource by creating a new one and
-     *        deleting the old one. This value depends on the value of the
-     *        <code>RequiresRecreation</code> property in the
-     *        <code>ResourceTargetDefinition</code> structure. For example, if
-     *        the <code>RequiresRecreation</code> field is <code>Always</code>
-     *        and the <code>Evaluation</code> field is <code>Static</code>,
-     *        <code>Replacement</code> is <code>True</code>. If the
-     *        <code>RequiresRecreation</code> field is <code>Always</code> and
-     *        the <code>Evaluation</code> field is <code>Dynamic</code>,
-     *        <code>Replacement</code> is <code>Conditionally</code>.</p>
+     *        For the <code>Modify</code> action, indicates whether AWS CloudFormation will replace the resource by
+     *        creating a new one and deleting the old one. This value depends on the value of the
+     *        <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For
+     *        example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the
+     *        <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If
+     *        the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is
+     *        <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
      *        <p>
-     *        If you have multiple changes with different
-     *        <code>RequiresRecreation</code> values, the
-     *        <code>Replacement</code> value depends on the change with the most
-     *        impact. A <code>RequiresRecreation</code> value of
-     *        <code>Always</code> has the most impact, followed by
+     *        If you have multiple changes with different <code>RequiresRecreation</code> values, the
+     *        <code>Replacement</code> value depends on the change with the most impact. A
+     *        <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by
      *        <code>Conditionally</code>, and then <code>Never</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Replacement
      */
 
@@ -575,15 +468,13 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For the <code>Modify</code> action, indicates which resource attribute is
-     * triggering this update, such as a change in the resource attribute's
-     * <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
+     * For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a
+     * change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
      * </p>
      * 
-     * @return For the <code>Modify</code> action, indicates which resource
-     *         attribute is triggering this update, such as a change in the
-     *         resource attribute's <code>Metadata</code>,
-     *         <code>Properties</code>, or <code>Tags</code>.
+     * @return For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as
+     *         a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>
+     *         .
      * @see ResourceAttribute
      */
 
@@ -596,16 +487,13 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For the <code>Modify</code> action, indicates which resource attribute is
-     * triggering this update, such as a change in the resource attribute's
-     * <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
+     * For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a
+     * change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
      * </p>
      * 
      * @param scope
-     *        For the <code>Modify</code> action, indicates which resource
-     *        attribute is triggering this update, such as a change in the
-     *        resource attribute's <code>Metadata</code>,
-     *        <code>Properties</code>, or <code>Tags</code>.
+     *        For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as
+     *        a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
      * @see ResourceAttribute
      */
 
@@ -620,31 +508,25 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For the <code>Modify</code> action, indicates which resource attribute is
-     * triggering this update, such as a change in the resource attribute's
-     * <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
+     * For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a
+     * change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setScope(java.util.Collection)} or
-     * {@link #withScope(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setScope(java.util.Collection)} or {@link #withScope(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param scope
-     *        For the <code>Modify</code> action, indicates which resource
-     *        attribute is triggering this update, such as a change in the
-     *        resource attribute's <code>Metadata</code>,
-     *        <code>Properties</code>, or <code>Tags</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as
+     *        a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceAttribute
      */
 
     public ResourceChange withScope(String... scope) {
         if (this.scope == null) {
-            setScope(new com.amazonaws.internal.SdkInternalList<String>(
-                    scope.length));
+            setScope(new com.amazonaws.internal.SdkInternalList<String>(scope.length));
         }
         for (String ele : scope) {
             this.scope.add(ele);
@@ -654,18 +536,14 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For the <code>Modify</code> action, indicates which resource attribute is
-     * triggering this update, such as a change in the resource attribute's
-     * <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
+     * For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a
+     * change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
      * </p>
      * 
      * @param scope
-     *        For the <code>Modify</code> action, indicates which resource
-     *        attribute is triggering this update, such as a change in the
-     *        resource attribute's <code>Metadata</code>,
-     *        <code>Properties</code>, or <code>Tags</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as
+     *        a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceAttribute
      */
 
@@ -676,24 +554,19 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For the <code>Modify</code> action, indicates which resource attribute is
-     * triggering this update, such as a change in the resource attribute's
-     * <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
+     * For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a
+     * change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
      * </p>
      * 
      * @param scope
-     *        For the <code>Modify</code> action, indicates which resource
-     *        attribute is triggering this update, such as a change in the
-     *        resource attribute's <code>Metadata</code>,
-     *        <code>Properties</code>, or <code>Tags</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as
+     *        a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceAttribute
      */
 
     public ResourceChange withScope(ResourceAttribute... scope) {
-        com.amazonaws.internal.SdkInternalList<String> scopeCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                scope.length);
+        com.amazonaws.internal.SdkInternalList<String> scopeCopy = new com.amazonaws.internal.SdkInternalList<String>(scope.length);
         for (ResourceAttribute value : scope) {
             scopeCopy.add(value.toString());
         }
@@ -707,14 +580,12 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For the <code>Modify</code> action, a list of
-     * <code>ResourceChangeDetail</code> structures that describes the changes
-     * that AWS CloudFormation will make to the resource.
+     * For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the
+     * changes that AWS CloudFormation will make to the resource.
      * </p>
      * 
-     * @return For the <code>Modify</code> action, a list of
-     *         <code>ResourceChangeDetail</code> structures that describes the
-     *         changes that AWS CloudFormation will make to the resource.
+     * @return For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes
+     *         the changes that AWS CloudFormation will make to the resource.
      */
 
     public java.util.List<ResourceChangeDetail> getDetails() {
@@ -726,15 +597,13 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For the <code>Modify</code> action, a list of
-     * <code>ResourceChangeDetail</code> structures that describes the changes
-     * that AWS CloudFormation will make to the resource.
+     * For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the
+     * changes that AWS CloudFormation will make to the resource.
      * </p>
      * 
      * @param details
-     *        For the <code>Modify</code> action, a list of
-     *        <code>ResourceChangeDetail</code> structures that describes the
-     *        changes that AWS CloudFormation will make to the resource.
+     *        For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes
+     *        the changes that AWS CloudFormation will make to the resource.
      */
 
     public void setDetails(java.util.Collection<ResourceChangeDetail> details) {
@@ -743,35 +612,29 @@ public class ResourceChange implements Serializable, Cloneable {
             return;
         }
 
-        this.details = new com.amazonaws.internal.SdkInternalList<ResourceChangeDetail>(
-                details);
+        this.details = new com.amazonaws.internal.SdkInternalList<ResourceChangeDetail>(details);
     }
 
     /**
      * <p>
-     * For the <code>Modify</code> action, a list of
-     * <code>ResourceChangeDetail</code> structures that describes the changes
-     * that AWS CloudFormation will make to the resource.
+     * For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the
+     * changes that AWS CloudFormation will make to the resource.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDetails(java.util.Collection)} or
-     * {@link #withDetails(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDetails(java.util.Collection)} or {@link #withDetails(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param details
-     *        For the <code>Modify</code> action, a list of
-     *        <code>ResourceChangeDetail</code> structures that describes the
-     *        changes that AWS CloudFormation will make to the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes
+     *        the changes that AWS CloudFormation will make to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceChange withDetails(ResourceChangeDetail... details) {
         if (this.details == null) {
-            setDetails(new com.amazonaws.internal.SdkInternalList<ResourceChangeDetail>(
-                    details.length));
+            setDetails(new com.amazonaws.internal.SdkInternalList<ResourceChangeDetail>(details.length));
         }
         for (ResourceChangeDetail ele : details) {
             this.details.add(ele);
@@ -781,28 +644,23 @@ public class ResourceChange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For the <code>Modify</code> action, a list of
-     * <code>ResourceChangeDetail</code> structures that describes the changes
-     * that AWS CloudFormation will make to the resource.
+     * For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the
+     * changes that AWS CloudFormation will make to the resource.
      * </p>
      * 
      * @param details
-     *        For the <code>Modify</code> action, a list of
-     *        <code>ResourceChangeDetail</code> structures that describes the
-     *        changes that AWS CloudFormation will make to the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes
+     *        the changes that AWS CloudFormation will make to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResourceChange withDetails(
-            java.util.Collection<ResourceChangeDetail> details) {
+    public ResourceChange withDetails(java.util.Collection<ResourceChangeDetail> details) {
         setDetails(details);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -842,42 +700,31 @@ public class ResourceChange implements Serializable, Cloneable {
         ResourceChange other = (ResourceChange) obj;
         if (other.getAction() == null ^ this.getAction() == null)
             return false;
-        if (other.getAction() != null
-                && other.getAction().equals(this.getAction()) == false)
+        if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
             return false;
-        if (other.getLogicalResourceId() == null
-                ^ this.getLogicalResourceId() == null)
+        if (other.getLogicalResourceId() == null ^ this.getLogicalResourceId() == null)
             return false;
-        if (other.getLogicalResourceId() != null
-                && other.getLogicalResourceId().equals(
-                        this.getLogicalResourceId()) == false)
+        if (other.getLogicalResourceId() != null && other.getLogicalResourceId().equals(this.getLogicalResourceId()) == false)
             return false;
-        if (other.getPhysicalResourceId() == null
-                ^ this.getPhysicalResourceId() == null)
+        if (other.getPhysicalResourceId() == null ^ this.getPhysicalResourceId() == null)
             return false;
-        if (other.getPhysicalResourceId() != null
-                && other.getPhysicalResourceId().equals(
-                        this.getPhysicalResourceId()) == false)
+        if (other.getPhysicalResourceId() != null && other.getPhysicalResourceId().equals(this.getPhysicalResourceId()) == false)
             return false;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
-        if (other.getResourceType() != null
-                && other.getResourceType().equals(this.getResourceType()) == false)
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
         if (other.getReplacement() == null ^ this.getReplacement() == null)
             return false;
-        if (other.getReplacement() != null
-                && other.getReplacement().equals(this.getReplacement()) == false)
+        if (other.getReplacement() != null && other.getReplacement().equals(this.getReplacement()) == false)
             return false;
         if (other.getScope() == null ^ this.getScope() == null)
             return false;
-        if (other.getScope() != null
-                && other.getScope().equals(this.getScope()) == false)
+        if (other.getScope() != null && other.getScope().equals(this.getScope()) == false)
             return false;
         if (other.getDetails() == null ^ this.getDetails() == null)
             return false;
-        if (other.getDetails() != null
-                && other.getDetails().equals(this.getDetails()) == false)
+        if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
             return false;
         return true;
     }
@@ -887,27 +734,13 @@ public class ResourceChange implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAction() == null) ? 0 : getAction().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLogicalResourceId() == null) ? 0
-                        : getLogicalResourceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPhysicalResourceId() == null) ? 0
-                        : getPhysicalResourceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResourceType() == null) ? 0 : getResourceType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReplacement() == null) ? 0 : getReplacement().hashCode());
-        hashCode = prime * hashCode
-                + ((getScope() == null) ? 0 : getScope().hashCode());
-        hashCode = prime * hashCode
-                + ((getDetails() == null) ? 0 : getDetails().hashCode());
+        hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getLogicalResourceId() == null) ? 0 : getLogicalResourceId().hashCode());
+        hashCode = prime * hashCode + ((getPhysicalResourceId() == null) ? 0 : getPhysicalResourceId().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getReplacement() == null) ? 0 : getReplacement().hashCode());
+        hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
+        hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
         return hashCode;
     }
 
@@ -916,9 +749,7 @@ public class ResourceChange implements Serializable, Cloneable {
         try {
             return (ResourceChange) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

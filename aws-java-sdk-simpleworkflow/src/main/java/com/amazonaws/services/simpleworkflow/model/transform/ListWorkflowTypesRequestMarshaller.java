@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
@@ -35,74 +33,59 @@ import com.amazonaws.protocol.json.*;
 /**
  * ListWorkflowTypesRequest Marshaller
  */
-public class ListWorkflowTypesRequestMarshaller implements
-        Marshaller<Request<ListWorkflowTypesRequest>, ListWorkflowTypesRequest> {
+public class ListWorkflowTypesRequestMarshaller implements Marshaller<Request<ListWorkflowTypesRequest>, ListWorkflowTypesRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public ListWorkflowTypesRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public ListWorkflowTypesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<ListWorkflowTypesRequest> marshall(
-            ListWorkflowTypesRequest listWorkflowTypesRequest) {
+    public Request<ListWorkflowTypesRequest> marshall(ListWorkflowTypesRequest listWorkflowTypesRequest) {
 
         if (listWorkflowTypesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListWorkflowTypesRequest> request = new DefaultRequest<ListWorkflowTypesRequest>(
-                listWorkflowTypesRequest, "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target",
-                "SimpleWorkflowService.ListWorkflowTypes");
+        Request<ListWorkflowTypesRequest> request = new DefaultRequest<ListWorkflowTypesRequest>(listWorkflowTypesRequest, "AmazonSimpleWorkflow");
+        request.addHeader("X-Amz-Target", "SimpleWorkflowService.ListWorkflowTypes");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (listWorkflowTypesRequest.getDomain() != null) {
-                jsonGenerator.writeFieldName("domain").writeValue(
-                        listWorkflowTypesRequest.getDomain());
+                jsonGenerator.writeFieldName("domain").writeValue(listWorkflowTypesRequest.getDomain());
             }
             if (listWorkflowTypesRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(
-                        listWorkflowTypesRequest.getName());
+                jsonGenerator.writeFieldName("name").writeValue(listWorkflowTypesRequest.getName());
             }
             if (listWorkflowTypesRequest.getRegistrationStatus() != null) {
-                jsonGenerator.writeFieldName("registrationStatus").writeValue(
-                        listWorkflowTypesRequest.getRegistrationStatus());
+                jsonGenerator.writeFieldName("registrationStatus").writeValue(listWorkflowTypesRequest.getRegistrationStatus());
             }
             if (listWorkflowTypesRequest.getNextPageToken() != null) {
-                jsonGenerator.writeFieldName("nextPageToken").writeValue(
-                        listWorkflowTypesRequest.getNextPageToken());
+                jsonGenerator.writeFieldName("nextPageToken").writeValue(listWorkflowTypesRequest.getNextPageToken());
             }
             if (listWorkflowTypesRequest.getMaximumPageSize() != null) {
-                jsonGenerator.writeFieldName("maximumPageSize").writeValue(
-                        listWorkflowTypesRequest.getMaximumPageSize());
+                jsonGenerator.writeFieldName("maximumPageSize").writeValue(listWorkflowTypesRequest.getMaximumPageSize());
             }
             if (listWorkflowTypesRequest.getReverseOrder() != null) {
-                jsonGenerator.writeFieldName("reverseOrder").writeValue(
-                        listWorkflowTypesRequest.getReverseOrder());
+                jsonGenerator.writeFieldName("reverseOrder").writeValue(listWorkflowTypesRequest.getReverseOrder());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

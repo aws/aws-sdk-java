@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The output for the <a>GetResourceConfigHistory</a> action.
  * </p>
  */
-public class GetResourceConfigHistoryResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetResourceConfigHistoryResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,7 @@ public class GetResourceConfigHistoryResult extends
     private com.amazonaws.internal.SdkInternalList<ConfigurationItem> configurationItems;
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      */
     private String nextToken;
@@ -44,8 +39,7 @@ public class GetResourceConfigHistoryResult extends
      * A list that contains the configuration history of one or more resources.
      * </p>
      * 
-     * @return A list that contains the configuration history of one or more
-     *         resources.
+     * @return A list that contains the configuration history of one or more resources.
      */
 
     public java.util.List<ConfigurationItem> getConfigurationItems() {
@@ -61,19 +55,16 @@ public class GetResourceConfigHistoryResult extends
      * </p>
      * 
      * @param configurationItems
-     *        A list that contains the configuration history of one or more
-     *        resources.
+     *        A list that contains the configuration history of one or more resources.
      */
 
-    public void setConfigurationItems(
-            java.util.Collection<ConfigurationItem> configurationItems) {
+    public void setConfigurationItems(java.util.Collection<ConfigurationItem> configurationItems) {
         if (configurationItems == null) {
             this.configurationItems = null;
             return;
         }
 
-        this.configurationItems = new com.amazonaws.internal.SdkInternalList<ConfigurationItem>(
-                configurationItems);
+        this.configurationItems = new com.amazonaws.internal.SdkInternalList<ConfigurationItem>(configurationItems);
     }
 
     /**
@@ -81,24 +72,19 @@ public class GetResourceConfigHistoryResult extends
      * A list that contains the configuration history of one or more resources.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConfigurationItems(java.util.Collection)} or
-     * {@link #withConfigurationItems(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConfigurationItems(java.util.Collection)} or {@link #withConfigurationItems(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param configurationItems
-     *        A list that contains the configuration history of one or more
-     *        resources.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list that contains the configuration history of one or more resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetResourceConfigHistoryResult withConfigurationItems(
-            ConfigurationItem... configurationItems) {
+    public GetResourceConfigHistoryResult withConfigurationItems(ConfigurationItem... configurationItems) {
         if (this.configurationItems == null) {
-            setConfigurationItems(new com.amazonaws.internal.SdkInternalList<ConfigurationItem>(
-                    configurationItems.length));
+            setConfigurationItems(new com.amazonaws.internal.SdkInternalList<ConfigurationItem>(configurationItems.length));
         }
         for (ConfigurationItem ele : configurationItems) {
             this.configurationItems.add(ele);
@@ -112,27 +98,22 @@ public class GetResourceConfigHistoryResult extends
      * </p>
      * 
      * @param configurationItems
-     *        A list that contains the configuration history of one or more
-     *        resources.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list that contains the configuration history of one or more resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetResourceConfigHistoryResult withConfigurationItems(
-            java.util.Collection<ConfigurationItem> configurationItems) {
+    public GetResourceConfigHistoryResult withConfigurationItems(java.util.Collection<ConfigurationItem> configurationItems) {
         setConfigurationItems(configurationItems);
         return this;
     }
 
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next
-     *        page of results in a paginated response.
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -141,12 +122,10 @@ public class GetResourceConfigHistoryResult extends
 
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      * 
-     * @return The string that you use in a subsequent request to get the next
-     *         page of results in a paginated response.
+     * @return The string that you use in a subsequent request to get the next page of results in a paginated response.
      */
 
     public String getNextToken() {
@@ -155,15 +134,12 @@ public class GetResourceConfigHistoryResult extends
 
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next
-     *        page of results in a paginated response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetResourceConfigHistoryResult withNextToken(String nextToken) {
@@ -172,8 +148,7 @@ public class GetResourceConfigHistoryResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -201,17 +176,13 @@ public class GetResourceConfigHistoryResult extends
         if (obj instanceof GetResourceConfigHistoryResult == false)
             return false;
         GetResourceConfigHistoryResult other = (GetResourceConfigHistoryResult) obj;
-        if (other.getConfigurationItems() == null
-                ^ this.getConfigurationItems() == null)
+        if (other.getConfigurationItems() == null ^ this.getConfigurationItems() == null)
             return false;
-        if (other.getConfigurationItems() != null
-                && other.getConfigurationItems().equals(
-                        this.getConfigurationItems()) == false)
+        if (other.getConfigurationItems() != null && other.getConfigurationItems().equals(this.getConfigurationItems()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -221,12 +192,8 @@ public class GetResourceConfigHistoryResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getConfigurationItems() == null) ? 0
-                        : getConfigurationItems().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationItems() == null) ? 0 : getConfigurationItems().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -235,9 +202,7 @@ public class GetResourceConfigHistoryResult extends
         try {
             return (GetResourceConfigHistoryResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

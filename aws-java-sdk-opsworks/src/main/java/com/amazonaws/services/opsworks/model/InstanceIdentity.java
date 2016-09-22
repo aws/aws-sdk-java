@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -18,10 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata
- * service. For more information, see <a
- * href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html"
- * >Instance Metadata and User Data</a>.
+ * Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see <a
+ * href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html">Instance Metadata and User Data</a>.
  * </p>
  */
 public class InstanceIdentity implements Serializable, Cloneable {
@@ -34,8 +30,7 @@ public class InstanceIdentity implements Serializable, Cloneable {
     private String document;
     /**
      * <p>
-     * A signature that can be used to verify the document's accuracy and
-     * authenticity.
+     * A signature that can be used to verify the document's accuracy and authenticity.
      * </p>
      */
     private String signature;
@@ -72,8 +67,7 @@ public class InstanceIdentity implements Serializable, Cloneable {
      * 
      * @param document
      *        A JSON document that contains the metadata.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceIdentity withDocument(String document) {
@@ -83,13 +77,11 @@ public class InstanceIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A signature that can be used to verify the document's accuracy and
-     * authenticity.
+     * A signature that can be used to verify the document's accuracy and authenticity.
      * </p>
      * 
      * @param signature
-     *        A signature that can be used to verify the document's accuracy and
-     *        authenticity.
+     *        A signature that can be used to verify the document's accuracy and authenticity.
      */
 
     public void setSignature(String signature) {
@@ -98,12 +90,10 @@ public class InstanceIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A signature that can be used to verify the document's accuracy and
-     * authenticity.
+     * A signature that can be used to verify the document's accuracy and authenticity.
      * </p>
      * 
-     * @return A signature that can be used to verify the document's accuracy
-     *         and authenticity.
+     * @return A signature that can be used to verify the document's accuracy and authenticity.
      */
 
     public String getSignature() {
@@ -112,15 +102,12 @@ public class InstanceIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A signature that can be used to verify the document's accuracy and
-     * authenticity.
+     * A signature that can be used to verify the document's accuracy and authenticity.
      * </p>
      * 
      * @param signature
-     *        A signature that can be used to verify the document's accuracy and
-     *        authenticity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A signature that can be used to verify the document's accuracy and authenticity.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceIdentity withSignature(String signature) {
@@ -129,8 +116,7 @@ public class InstanceIdentity implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -160,13 +146,11 @@ public class InstanceIdentity implements Serializable, Cloneable {
         InstanceIdentity other = (InstanceIdentity) obj;
         if (other.getDocument() == null ^ this.getDocument() == null)
             return false;
-        if (other.getDocument() != null
-                && other.getDocument().equals(this.getDocument()) == false)
+        if (other.getDocument() != null && other.getDocument().equals(this.getDocument()) == false)
             return false;
         if (other.getSignature() == null ^ this.getSignature() == null)
             return false;
-        if (other.getSignature() != null
-                && other.getSignature().equals(this.getSignature()) == false)
+        if (other.getSignature() != null && other.getSignature().equals(this.getSignature()) == false)
             return false;
         return true;
     }
@@ -176,10 +160,8 @@ public class InstanceIdentity implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDocument() == null) ? 0 : getDocument().hashCode());
-        hashCode = prime * hashCode
-                + ((getSignature() == null) ? 0 : getSignature().hashCode());
+        hashCode = prime * hashCode + ((getDocument() == null) ? 0 : getDocument().hashCode());
+        hashCode = prime * hashCode + ((getSignature() == null) ? 0 : getSignature().hashCode());
         return hashCode;
     }
 
@@ -188,9 +170,7 @@ public class InstanceIdentity implements Serializable, Cloneable {
         try {
             return (InstanceIdentity) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

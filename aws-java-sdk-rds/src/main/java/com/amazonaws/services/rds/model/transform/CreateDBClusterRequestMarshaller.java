@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model.transform;
 
@@ -31,166 +29,129 @@ import com.amazonaws.util.IdempotentUtils;
  * CreateDBClusterRequest Marshaller
  */
 
-public class CreateDBClusterRequestMarshaller implements
-        Marshaller<Request<CreateDBClusterRequest>, CreateDBClusterRequest> {
+public class CreateDBClusterRequestMarshaller implements Marshaller<Request<CreateDBClusterRequest>, CreateDBClusterRequest> {
 
-    public Request<CreateDBClusterRequest> marshall(
-            CreateDBClusterRequest createDBClusterRequest) {
+    public Request<CreateDBClusterRequest> marshall(CreateDBClusterRequest createDBClusterRequest) {
 
         if (createDBClusterRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDBClusterRequest> request = new DefaultRequest<CreateDBClusterRequest>(
-                createDBClusterRequest, "AmazonRDS");
+        Request<CreateDBClusterRequest> request = new DefaultRequest<CreateDBClusterRequest>(createDBClusterRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBCluster");
         request.addParameter("Version", "2014-10-31");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) createDBClusterRequest
                 .getAvailabilityZones();
-        if (!availabilityZonesList.isEmpty()
-                || !availabilityZonesList.isAutoConstruct()) {
+        if (!availabilityZonesList.isEmpty() || !availabilityZonesList.isAutoConstruct()) {
             int availabilityZonesListIndex = 1;
 
             for (String availabilityZonesListValue : availabilityZonesList) {
                 if (availabilityZonesListValue != null) {
-                    request.addParameter("AvailabilityZones.AvailabilityZone."
-                            + availabilityZonesListIndex,
-                            StringUtils.fromString(availabilityZonesListValue));
+                    request.addParameter("AvailabilityZones.AvailabilityZone." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));
                 }
                 availabilityZonesListIndex++;
             }
         }
 
         if (createDBClusterRequest.getBackupRetentionPeriod() != null) {
-            request.addParameter("BackupRetentionPeriod", StringUtils
-                    .fromInteger(createDBClusterRequest
-                            .getBackupRetentionPeriod()));
+            request.addParameter("BackupRetentionPeriod", StringUtils.fromInteger(createDBClusterRequest.getBackupRetentionPeriod()));
         }
 
         if (createDBClusterRequest.getCharacterSetName() != null) {
-            request.addParameter("CharacterSetName", StringUtils
-                    .fromString(createDBClusterRequest.getCharacterSetName()));
+            request.addParameter("CharacterSetName", StringUtils.fromString(createDBClusterRequest.getCharacterSetName()));
         }
 
         if (createDBClusterRequest.getDatabaseName() != null) {
-            request.addParameter("DatabaseName", StringUtils
-                    .fromString(createDBClusterRequest.getDatabaseName()));
+            request.addParameter("DatabaseName", StringUtils.fromString(createDBClusterRequest.getDatabaseName()));
         }
 
         if (createDBClusterRequest.getDBClusterIdentifier() != null) {
-            request.addParameter("DBClusterIdentifier",
-                    StringUtils.fromString(createDBClusterRequest
-                            .getDBClusterIdentifier()));
+            request.addParameter("DBClusterIdentifier", StringUtils.fromString(createDBClusterRequest.getDBClusterIdentifier()));
         }
 
         if (createDBClusterRequest.getDBClusterParameterGroupName() != null) {
-            request.addParameter("DBClusterParameterGroupName", StringUtils
-                    .fromString(createDBClusterRequest
-                            .getDBClusterParameterGroupName()));
+            request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(createDBClusterRequest.getDBClusterParameterGroupName()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDBClusterRequest
                 .getVpcSecurityGroupIds();
-        if (!vpcSecurityGroupIdsList.isEmpty()
-                || !vpcSecurityGroupIdsList.isAutoConstruct()) {
+        if (!vpcSecurityGroupIdsList.isEmpty() || !vpcSecurityGroupIdsList.isAutoConstruct()) {
             int vpcSecurityGroupIdsListIndex = 1;
 
             for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
                 if (vpcSecurityGroupIdsListValue != null) {
-                    request.addParameter(
-                            "VpcSecurityGroupIds.VpcSecurityGroupId."
-                                    + vpcSecurityGroupIdsListIndex, StringUtils
-                                    .fromString(vpcSecurityGroupIdsListValue));
+                    request.addParameter("VpcSecurityGroupIds.VpcSecurityGroupId." + vpcSecurityGroupIdsListIndex,
+                            StringUtils.fromString(vpcSecurityGroupIdsListValue));
                 }
                 vpcSecurityGroupIdsListIndex++;
             }
         }
 
         if (createDBClusterRequest.getDBSubnetGroupName() != null) {
-            request.addParameter("DBSubnetGroupName", StringUtils
-                    .fromString(createDBClusterRequest.getDBSubnetGroupName()));
+            request.addParameter("DBSubnetGroupName", StringUtils.fromString(createDBClusterRequest.getDBSubnetGroupName()));
         }
 
         if (createDBClusterRequest.getEngine() != null) {
-            request.addParameter("Engine",
-                    StringUtils.fromString(createDBClusterRequest.getEngine()));
+            request.addParameter("Engine", StringUtils.fromString(createDBClusterRequest.getEngine()));
         }
 
         if (createDBClusterRequest.getEngineVersion() != null) {
-            request.addParameter("EngineVersion", StringUtils
-                    .fromString(createDBClusterRequest.getEngineVersion()));
+            request.addParameter("EngineVersion", StringUtils.fromString(createDBClusterRequest.getEngineVersion()));
         }
 
         if (createDBClusterRequest.getPort() != null) {
-            request.addParameter("Port",
-                    StringUtils.fromInteger(createDBClusterRequest.getPort()));
+            request.addParameter("Port", StringUtils.fromInteger(createDBClusterRequest.getPort()));
         }
 
         if (createDBClusterRequest.getMasterUsername() != null) {
-            request.addParameter("MasterUsername", StringUtils
-                    .fromString(createDBClusterRequest.getMasterUsername()));
+            request.addParameter("MasterUsername", StringUtils.fromString(createDBClusterRequest.getMasterUsername()));
         }
 
         if (createDBClusterRequest.getMasterUserPassword() != null) {
-            request.addParameter("MasterUserPassword", StringUtils
-                    .fromString(createDBClusterRequest.getMasterUserPassword()));
+            request.addParameter("MasterUserPassword", StringUtils.fromString(createDBClusterRequest.getMasterUserPassword()));
         }
 
         if (createDBClusterRequest.getOptionGroupName() != null) {
-            request.addParameter("OptionGroupName", StringUtils
-                    .fromString(createDBClusterRequest.getOptionGroupName()));
+            request.addParameter("OptionGroupName", StringUtils.fromString(createDBClusterRequest.getOptionGroupName()));
         }
 
         if (createDBClusterRequest.getPreferredBackupWindow() != null) {
-            request.addParameter("PreferredBackupWindow", StringUtils
-                    .fromString(createDBClusterRequest
-                            .getPreferredBackupWindow()));
+            request.addParameter("PreferredBackupWindow", StringUtils.fromString(createDBClusterRequest.getPreferredBackupWindow()));
         }
 
         if (createDBClusterRequest.getPreferredMaintenanceWindow() != null) {
-            request.addParameter("PreferredMaintenanceWindow", StringUtils
-                    .fromString(createDBClusterRequest
-                            .getPreferredMaintenanceWindow()));
+            request.addParameter("PreferredMaintenanceWindow", StringUtils.fromString(createDBClusterRequest.getPreferredMaintenanceWindow()));
         }
 
         if (createDBClusterRequest.getReplicationSourceIdentifier() != null) {
-            request.addParameter("ReplicationSourceIdentifier", StringUtils
-                    .fromString(createDBClusterRequest
-                            .getReplicationSourceIdentifier()));
+            request.addParameter("ReplicationSourceIdentifier", StringUtils.fromString(createDBClusterRequest.getReplicationSourceIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBClusterRequest
-                .getTags();
+        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBClusterRequest.getTags();
         if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
 
                 if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key",
-                            StringUtils.fromString(tagsListValue.getKey()));
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
                 }
 
                 if (tagsListValue.getValue() != null) {
-                    request.addParameter(
-                            "Tags.Tag." + tagsListIndex + ".Value",
-                            StringUtils.fromString(tagsListValue.getValue()));
+                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
                 }
                 tagsListIndex++;
             }
         }
 
         if (createDBClusterRequest.getStorageEncrypted() != null) {
-            request.addParameter("StorageEncrypted", StringUtils
-                    .fromBoolean(createDBClusterRequest.getStorageEncrypted()));
+            request.addParameter("StorageEncrypted", StringUtils.fromBoolean(createDBClusterRequest.getStorageEncrypted()));
         }
 
         if (createDBClusterRequest.getKmsKeyId() != null) {
-            request.addParameter("KmsKeyId", StringUtils
-                    .fromString(createDBClusterRequest.getKmsKeyId()));
+            request.addParameter("KmsKeyId", StringUtils.fromString(createDBClusterRequest.getKmsKeyId()));
         }
 
         return request;

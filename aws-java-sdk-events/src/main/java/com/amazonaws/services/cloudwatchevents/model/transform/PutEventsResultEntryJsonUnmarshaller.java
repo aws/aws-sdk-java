@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatchevents.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * PutEventsResultEntry JSON Unmarshaller
  */
-public class PutEventsResultEntryJsonUnmarshaller implements
-        Unmarshaller<PutEventsResultEntry, JsonUnmarshallerContext> {
+public class PutEventsResultEntryJsonUnmarshaller implements Unmarshaller<PutEventsResultEntry, JsonUnmarshallerContext> {
 
-    public PutEventsResultEntry unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public PutEventsResultEntry unmarshall(JsonUnmarshallerContext context) throws Exception {
         PutEventsResultEntry putEventsResultEntry = new PutEventsResultEntry();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,23 +49,18 @@ public class PutEventsResultEntryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EventId", targetDepth)) {
                     context.nextToken();
-                    putEventsResultEntry.setEventId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    putEventsResultEntry.setEventId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorCode", targetDepth)) {
                     context.nextToken();
-                    putEventsResultEntry.setErrorCode(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    putEventsResultEntry.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();
-                    putEventsResultEntry.setErrorMessage(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    putEventsResultEntry.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

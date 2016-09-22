@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model;
 
@@ -49,22 +47,20 @@ public class ActionDeclaration implements Serializable, Cloneable {
     private java.util.Map<String, String> configuration;
     /**
      * <p>
-     * The name or ID of the result of the action declaration, such as a test or
-     * build artifact.
+     * The name or ID of the result of the action declaration, such as a test or build artifact.
      * </p>
      */
     private java.util.List<OutputArtifact> outputArtifacts;
     /**
      * <p>
-     * The name or ID of the artifact consumed by the action, such as a test or
-     * build artifact.
+     * The name or ID of the artifact consumed by the action, such as a test or build artifact.
      * </p>
      */
     private java.util.List<InputArtifact> inputArtifacts;
     /**
      * <p>
-     * The ARN of the IAM service role that will perform the declared action.
-     * This is assumed through the roleArn for the pipeline.
+     * The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for
+     * the pipeline.
      * </p>
      */
     private String roleArn;
@@ -101,8 +97,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * 
      * @param name
      *        The action declaration's name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ActionDeclaration withName(String name) {
@@ -142,8 +137,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * 
      * @param actionTypeId
      *        The configuration information for the action type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ActionDeclaration withActionTypeId(ActionTypeId actionTypeId) {
@@ -183,8 +177,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * 
      * @param runOrder
      *        The order in which actions are run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ActionDeclaration withRunOrder(Integer runOrder) {
@@ -224,12 +217,10 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * 
      * @param configuration
      *        The action declaration's configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ActionDeclaration withConfiguration(
-            java.util.Map<String, String> configuration) {
+    public ActionDeclaration withConfiguration(java.util.Map<String, String> configuration) {
         setConfiguration(configuration);
         return this;
     }
@@ -239,15 +230,14 @@ public class ActionDeclaration implements Serializable, Cloneable {
             this.configuration = new java.util.HashMap<String, String>();
         }
         if (this.configuration.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.configuration.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Configuration. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into Configuration. &lt;p> Returns a reference to this object so that method calls
+     * can be chained together.
      */
 
     public ActionDeclaration clearConfigurationEntries() {
@@ -257,12 +247,10 @@ public class ActionDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or ID of the result of the action declaration, such as a test or
-     * build artifact.
+     * The name or ID of the result of the action declaration, such as a test or build artifact.
      * </p>
      * 
-     * @return The name or ID of the result of the action declaration, such as a
-     *         test or build artifact.
+     * @return The name or ID of the result of the action declaration, such as a test or build artifact.
      */
 
     public java.util.List<OutputArtifact> getOutputArtifacts() {
@@ -271,50 +259,40 @@ public class ActionDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or ID of the result of the action declaration, such as a test or
-     * build artifact.
+     * The name or ID of the result of the action declaration, such as a test or build artifact.
      * </p>
      * 
      * @param outputArtifacts
-     *        The name or ID of the result of the action declaration, such as a
-     *        test or build artifact.
+     *        The name or ID of the result of the action declaration, such as a test or build artifact.
      */
 
-    public void setOutputArtifacts(
-            java.util.Collection<OutputArtifact> outputArtifacts) {
+    public void setOutputArtifacts(java.util.Collection<OutputArtifact> outputArtifacts) {
         if (outputArtifacts == null) {
             this.outputArtifacts = null;
             return;
         }
 
-        this.outputArtifacts = new java.util.ArrayList<OutputArtifact>(
-                outputArtifacts);
+        this.outputArtifacts = new java.util.ArrayList<OutputArtifact>(outputArtifacts);
     }
 
     /**
      * <p>
-     * The name or ID of the result of the action declaration, such as a test or
-     * build artifact.
+     * The name or ID of the result of the action declaration, such as a test or build artifact.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOutputArtifacts(java.util.Collection)} or
-     * {@link #withOutputArtifacts(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOutputArtifacts(java.util.Collection)} or {@link #withOutputArtifacts(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param outputArtifacts
-     *        The name or ID of the result of the action declaration, such as a
-     *        test or build artifact.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name or ID of the result of the action declaration, such as a test or build artifact.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ActionDeclaration withOutputArtifacts(
-            OutputArtifact... outputArtifacts) {
+    public ActionDeclaration withOutputArtifacts(OutputArtifact... outputArtifacts) {
         if (this.outputArtifacts == null) {
-            setOutputArtifacts(new java.util.ArrayList<OutputArtifact>(
-                    outputArtifacts.length));
+            setOutputArtifacts(new java.util.ArrayList<OutputArtifact>(outputArtifacts.length));
         }
         for (OutputArtifact ele : outputArtifacts) {
             this.outputArtifacts.add(ele);
@@ -324,31 +302,25 @@ public class ActionDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or ID of the result of the action declaration, such as a test or
-     * build artifact.
+     * The name or ID of the result of the action declaration, such as a test or build artifact.
      * </p>
      * 
      * @param outputArtifacts
-     *        The name or ID of the result of the action declaration, such as a
-     *        test or build artifact.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name or ID of the result of the action declaration, such as a test or build artifact.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ActionDeclaration withOutputArtifacts(
-            java.util.Collection<OutputArtifact> outputArtifacts) {
+    public ActionDeclaration withOutputArtifacts(java.util.Collection<OutputArtifact> outputArtifacts) {
         setOutputArtifacts(outputArtifacts);
         return this;
     }
 
     /**
      * <p>
-     * The name or ID of the artifact consumed by the action, such as a test or
-     * build artifact.
+     * The name or ID of the artifact consumed by the action, such as a test or build artifact.
      * </p>
      * 
-     * @return The name or ID of the artifact consumed by the action, such as a
-     *         test or build artifact.
+     * @return The name or ID of the artifact consumed by the action, such as a test or build artifact.
      */
 
     public java.util.List<InputArtifact> getInputArtifacts() {
@@ -357,49 +329,40 @@ public class ActionDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or ID of the artifact consumed by the action, such as a test or
-     * build artifact.
+     * The name or ID of the artifact consumed by the action, such as a test or build artifact.
      * </p>
      * 
      * @param inputArtifacts
-     *        The name or ID of the artifact consumed by the action, such as a
-     *        test or build artifact.
+     *        The name or ID of the artifact consumed by the action, such as a test or build artifact.
      */
 
-    public void setInputArtifacts(
-            java.util.Collection<InputArtifact> inputArtifacts) {
+    public void setInputArtifacts(java.util.Collection<InputArtifact> inputArtifacts) {
         if (inputArtifacts == null) {
             this.inputArtifacts = null;
             return;
         }
 
-        this.inputArtifacts = new java.util.ArrayList<InputArtifact>(
-                inputArtifacts);
+        this.inputArtifacts = new java.util.ArrayList<InputArtifact>(inputArtifacts);
     }
 
     /**
      * <p>
-     * The name or ID of the artifact consumed by the action, such as a test or
-     * build artifact.
+     * The name or ID of the artifact consumed by the action, such as a test or build artifact.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInputArtifacts(java.util.Collection)} or
-     * {@link #withInputArtifacts(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInputArtifacts(java.util.Collection)} or {@link #withInputArtifacts(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param inputArtifacts
-     *        The name or ID of the artifact consumed by the action, such as a
-     *        test or build artifact.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name or ID of the artifact consumed by the action, such as a test or build artifact.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ActionDeclaration withInputArtifacts(InputArtifact... inputArtifacts) {
         if (this.inputArtifacts == null) {
-            setInputArtifacts(new java.util.ArrayList<InputArtifact>(
-                    inputArtifacts.length));
+            setInputArtifacts(new java.util.ArrayList<InputArtifact>(inputArtifacts.length));
         }
         for (InputArtifact ele : inputArtifacts) {
             this.inputArtifacts.add(ele);
@@ -409,32 +372,28 @@ public class ActionDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or ID of the artifact consumed by the action, such as a test or
-     * build artifact.
+     * The name or ID of the artifact consumed by the action, such as a test or build artifact.
      * </p>
      * 
      * @param inputArtifacts
-     *        The name or ID of the artifact consumed by the action, such as a
-     *        test or build artifact.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name or ID of the artifact consumed by the action, such as a test or build artifact.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ActionDeclaration withInputArtifacts(
-            java.util.Collection<InputArtifact> inputArtifacts) {
+    public ActionDeclaration withInputArtifacts(java.util.Collection<InputArtifact> inputArtifacts) {
         setInputArtifacts(inputArtifacts);
         return this;
     }
 
     /**
      * <p>
-     * The ARN of the IAM service role that will perform the declared action.
-     * This is assumed through the roleArn for the pipeline.
+     * The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for
+     * the pipeline.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM service role that will perform the declared
-     *        action. This is assumed through the roleArn for the pipeline.
+     *        The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn
+     *        for the pipeline.
      */
 
     public void setRoleArn(String roleArn) {
@@ -443,12 +402,12 @@ public class ActionDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM service role that will perform the declared action.
-     * This is assumed through the roleArn for the pipeline.
+     * The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for
+     * the pipeline.
      * </p>
      * 
-     * @return The ARN of the IAM service role that will perform the declared
-     *         action. This is assumed through the roleArn for the pipeline.
+     * @return The ARN of the IAM service role that will perform the declared action. This is assumed through the
+     *         roleArn for the pipeline.
      */
 
     public String getRoleArn() {
@@ -457,15 +416,14 @@ public class ActionDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM service role that will perform the declared action.
-     * This is assumed through the roleArn for the pipeline.
+     * The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for
+     * the pipeline.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM service role that will perform the declared
-     *        action. This is assumed through the roleArn for the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn
+     *        for the pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ActionDeclaration withRoleArn(String roleArn) {
@@ -474,8 +432,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -515,40 +472,31 @@ public class ActionDeclaration implements Serializable, Cloneable {
         ActionDeclaration other = (ActionDeclaration) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getActionTypeId() == null ^ this.getActionTypeId() == null)
             return false;
-        if (other.getActionTypeId() != null
-                && other.getActionTypeId().equals(this.getActionTypeId()) == false)
+        if (other.getActionTypeId() != null && other.getActionTypeId().equals(this.getActionTypeId()) == false)
             return false;
         if (other.getRunOrder() == null ^ this.getRunOrder() == null)
             return false;
-        if (other.getRunOrder() != null
-                && other.getRunOrder().equals(this.getRunOrder()) == false)
+        if (other.getRunOrder() != null && other.getRunOrder().equals(this.getRunOrder()) == false)
             return false;
         if (other.getConfiguration() == null ^ this.getConfiguration() == null)
             return false;
-        if (other.getConfiguration() != null
-                && other.getConfiguration().equals(this.getConfiguration()) == false)
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
-        if (other.getOutputArtifacts() == null
-                ^ this.getOutputArtifacts() == null)
+        if (other.getOutputArtifacts() == null ^ this.getOutputArtifacts() == null)
             return false;
-        if (other.getOutputArtifacts() != null
-                && other.getOutputArtifacts().equals(this.getOutputArtifacts()) == false)
+        if (other.getOutputArtifacts() != null && other.getOutputArtifacts().equals(this.getOutputArtifacts()) == false)
             return false;
-        if (other.getInputArtifacts() == null
-                ^ this.getInputArtifacts() == null)
+        if (other.getInputArtifacts() == null ^ this.getInputArtifacts() == null)
             return false;
-        if (other.getInputArtifacts() != null
-                && other.getInputArtifacts().equals(this.getInputArtifacts()) == false)
+        if (other.getInputArtifacts() != null && other.getInputArtifacts().equals(this.getInputArtifacts()) == false)
             return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
-        if (other.getRoleArn() != null
-                && other.getRoleArn().equals(this.getRoleArn()) == false)
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
         return true;
     }
@@ -558,28 +506,13 @@ public class ActionDeclaration implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getActionTypeId() == null) ? 0 : getActionTypeId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getRunOrder() == null) ? 0 : getRunOrder().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConfiguration() == null) ? 0 : getConfiguration()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOutputArtifacts() == null) ? 0 : getOutputArtifacts()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInputArtifacts() == null) ? 0 : getInputArtifacts()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getActionTypeId() == null) ? 0 : getActionTypeId().hashCode());
+        hashCode = prime * hashCode + ((getRunOrder() == null) ? 0 : getRunOrder().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getOutputArtifacts() == null) ? 0 : getOutputArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getInputArtifacts() == null) ? 0 : getInputArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         return hashCode;
     }
 
@@ -588,9 +521,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
         try {
             return (ActionDeclaration) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

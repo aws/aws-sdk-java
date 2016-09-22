@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,9 +22,7 @@ import com.amazonaws.services.ec2.model.transform.CancelImportTaskRequestMarshal
  * Contains the parameters for CancelImportTask.
  * </p>
  */
-public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable,
-        DryRunSupportedRequest<CancelImportTaskRequest> {
+public class CancelImportTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CancelImportTaskRequest> {
 
     /**
      * <p>
@@ -59,8 +55,7 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
      * The ID of the import image or import snapshot task to be canceled.
      * </p>
      * 
-     * @return The ID of the import image or import snapshot task to be
-     *         canceled.
+     * @return The ID of the import image or import snapshot task to be canceled.
      */
 
     public String getImportTaskId() {
@@ -74,8 +69,7 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
      * 
      * @param importTaskId
      *        The ID of the import image or import snapshot task to be canceled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CancelImportTaskRequest withImportTaskId(String importTaskId) {
@@ -115,8 +109,7 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
      * 
      * @param cancelReason
      *        The reason for canceling the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CancelImportTaskRequest withCancelReason(String cancelReason) {
@@ -125,21 +118,18 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<CancelImportTaskRequest> getDryRunRequest() {
-        Request<CancelImportTaskRequest> request = new CancelImportTaskRequestMarshaller()
-                .marshall(this);
+        Request<CancelImportTaskRequest> request = new CancelImportTaskRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -169,13 +159,11 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
         CancelImportTaskRequest other = (CancelImportTaskRequest) obj;
         if (other.getImportTaskId() == null ^ this.getImportTaskId() == null)
             return false;
-        if (other.getImportTaskId() != null
-                && other.getImportTaskId().equals(this.getImportTaskId()) == false)
+        if (other.getImportTaskId() != null && other.getImportTaskId().equals(this.getImportTaskId()) == false)
             return false;
         if (other.getCancelReason() == null ^ this.getCancelReason() == null)
             return false;
-        if (other.getCancelReason() != null
-                && other.getCancelReason().equals(this.getCancelReason()) == false)
+        if (other.getCancelReason() != null && other.getCancelReason().equals(this.getCancelReason()) == false)
             return false;
         return true;
     }
@@ -185,14 +173,8 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getImportTaskId() == null) ? 0 : getImportTaskId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCancelReason() == null) ? 0 : getCancelReason()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getImportTaskId() == null) ? 0 : getImportTaskId().hashCode());
+        hashCode = prime * hashCode + ((getCancelReason() == null) ? 0 : getCancelReason().hashCode());
         return hashCode;
     }
 

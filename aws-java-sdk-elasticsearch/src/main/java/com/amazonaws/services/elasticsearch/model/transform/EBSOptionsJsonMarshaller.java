@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticsearch.model.transform;
 
@@ -34,38 +32,31 @@ public class EBSOptionsJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(EBSOptions eBSOptions,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(EBSOptions eBSOptions, StructuredJsonGenerator jsonGenerator) {
 
         if (eBSOptions == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (eBSOptions.getEBSEnabled() != null) {
-                jsonGenerator.writeFieldName("EBSEnabled").writeValue(
-                        eBSOptions.getEBSEnabled());
+                jsonGenerator.writeFieldName("EBSEnabled").writeValue(eBSOptions.getEBSEnabled());
             }
             if (eBSOptions.getVolumeType() != null) {
-                jsonGenerator.writeFieldName("VolumeType").writeValue(
-                        eBSOptions.getVolumeType());
+                jsonGenerator.writeFieldName("VolumeType").writeValue(eBSOptions.getVolumeType());
             }
             if (eBSOptions.getVolumeSize() != null) {
-                jsonGenerator.writeFieldName("VolumeSize").writeValue(
-                        eBSOptions.getVolumeSize());
+                jsonGenerator.writeFieldName("VolumeSize").writeValue(eBSOptions.getVolumeSize());
             }
             if (eBSOptions.getIops() != null) {
-                jsonGenerator.writeFieldName("Iops").writeValue(
-                        eBSOptions.getIops());
+                jsonGenerator.writeFieldName("Iops").writeValue(eBSOptions.getIops());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

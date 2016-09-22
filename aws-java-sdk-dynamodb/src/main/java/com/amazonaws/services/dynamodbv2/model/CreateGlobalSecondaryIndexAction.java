@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model;
 
@@ -21,8 +19,7 @@ import java.io.Serializable;
  * Represents a new global secondary index to be added to an existing table.
  * </p>
  */
-public class CreateGlobalSecondaryIndexAction implements Serializable,
-        Cloneable {
+public class CreateGlobalSecondaryIndexAction implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -73,8 +70,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * 
      * @param indexName
      *        The name of the global secondary index to be created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateGlobalSecondaryIndexAction withIndexName(String indexName) {
@@ -117,23 +113,19 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * The key schema for the global secondary index.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setKeySchema(java.util.Collection)} or
-     * {@link #withKeySchema(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setKeySchema(java.util.Collection)} or {@link #withKeySchema(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param keySchema
      *        The key schema for the global secondary index.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateGlobalSecondaryIndexAction withKeySchema(
-            KeySchemaElement... keySchema) {
+    public CreateGlobalSecondaryIndexAction withKeySchema(KeySchemaElement... keySchema) {
         if (this.keySchema == null) {
-            setKeySchema(new java.util.ArrayList<KeySchemaElement>(
-                    keySchema.length));
+            setKeySchema(new java.util.ArrayList<KeySchemaElement>(keySchema.length));
         }
         for (KeySchemaElement ele : keySchema) {
             this.keySchema.add(ele);
@@ -148,12 +140,10 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * 
      * @param keySchema
      *        The key schema for the global secondary index.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateGlobalSecondaryIndexAction withKeySchema(
-            java.util.Collection<KeySchemaElement> keySchema) {
+    public CreateGlobalSecondaryIndexAction withKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         setKeySchema(keySchema);
         return this;
     }
@@ -176,8 +166,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
 
     /**
      * @param projection
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateGlobalSecondaryIndexAction withProjection(Projection projection) {
@@ -189,8 +178,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * @param provisionedThroughput
      */
 
-    public void setProvisionedThroughput(
-            ProvisionedThroughput provisionedThroughput) {
+    public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
     }
 
@@ -204,19 +192,16 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
 
     /**
      * @param provisionedThroughput
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateGlobalSecondaryIndexAction withProvisionedThroughput(
-            ProvisionedThroughput provisionedThroughput) {
+    public CreateGlobalSecondaryIndexAction withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
         setProvisionedThroughput(provisionedThroughput);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -250,25 +235,19 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
         CreateGlobalSecondaryIndexAction other = (CreateGlobalSecondaryIndexAction) obj;
         if (other.getIndexName() == null ^ this.getIndexName() == null)
             return false;
-        if (other.getIndexName() != null
-                && other.getIndexName().equals(this.getIndexName()) == false)
+        if (other.getIndexName() != null && other.getIndexName().equals(this.getIndexName()) == false)
             return false;
         if (other.getKeySchema() == null ^ this.getKeySchema() == null)
             return false;
-        if (other.getKeySchema() != null
-                && other.getKeySchema().equals(this.getKeySchema()) == false)
+        if (other.getKeySchema() != null && other.getKeySchema().equals(this.getKeySchema()) == false)
             return false;
         if (other.getProjection() == null ^ this.getProjection() == null)
             return false;
-        if (other.getProjection() != null
-                && other.getProjection().equals(this.getProjection()) == false)
+        if (other.getProjection() != null && other.getProjection().equals(this.getProjection()) == false)
             return false;
-        if (other.getProvisionedThroughput() == null
-                ^ this.getProvisionedThroughput() == null)
+        if (other.getProvisionedThroughput() == null ^ this.getProvisionedThroughput() == null)
             return false;
-        if (other.getProvisionedThroughput() != null
-                && other.getProvisionedThroughput().equals(
-                        this.getProvisionedThroughput()) == false)
+        if (other.getProvisionedThroughput() != null && other.getProvisionedThroughput().equals(this.getProvisionedThroughput()) == false)
             return false;
         return true;
     }
@@ -278,16 +257,10 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
-        hashCode = prime * hashCode
-                + ((getKeySchema() == null) ? 0 : getKeySchema().hashCode());
-        hashCode = prime * hashCode
-                + ((getProjection() == null) ? 0 : getProjection().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProvisionedThroughput() == null) ? 0
-                        : getProvisionedThroughput().hashCode());
+        hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
+        hashCode = prime * hashCode + ((getKeySchema() == null) ? 0 : getKeySchema().hashCode());
+        hashCode = prime * hashCode + ((getProjection() == null) ? 0 : getProjection().hashCode());
+        hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
         return hashCode;
     }
 
@@ -296,9 +269,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
         try {
             return (CreateGlobalSecondaryIndexAction) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

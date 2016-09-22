@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
@@ -19,15 +17,12 @@ import java.io.Serializable;
 /**
  * The returned result of the corresponding request.
  */
-public class CreateDistributionWithTagsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CreateDistributionWithTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /** The distribution's information. */
     private Distribution distribution;
     /**
-     * The fully qualified URI of the new distribution resource just created.
-     * For example:
+     * The fully qualified URI of the new distribution resource just created. For example:
      * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      */
     private String location;
@@ -60,26 +55,21 @@ public class CreateDistributionWithTagsResult extends
      * 
      * @param distribution
      *        The distribution's information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDistributionWithTagsResult withDistribution(
-            Distribution distribution) {
+    public CreateDistributionWithTagsResult withDistribution(Distribution distribution) {
         setDistribution(distribution);
         return this;
     }
 
     /**
-     * The fully qualified URI of the new distribution resource just created.
-     * For example:
+     * The fully qualified URI of the new distribution resource just created. For example:
      * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      * 
      * @param location
-     *        The fully qualified URI of the new distribution resource just
-     *        created. For example:
-     *        https://cloudfront.amazonaws.com/2010-11-01/distribution
-     *        /EDFDVBD632BHDS5.
+     *        The fully qualified URI of the new distribution resource just created. For example:
+     *        https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      */
 
     public void setLocation(String location) {
@@ -87,14 +77,11 @@ public class CreateDistributionWithTagsResult extends
     }
 
     /**
-     * The fully qualified URI of the new distribution resource just created.
-     * For example:
+     * The fully qualified URI of the new distribution resource just created. For example:
      * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      * 
-     * @return The fully qualified URI of the new distribution resource just
-     *         created. For example:
-     *         https://cloudfront.amazonaws.com/2010-11-01/
-     *         distribution/EDFDVBD632BHDS5.
+     * @return The fully qualified URI of the new distribution resource just created. For example:
+     *         https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      */
 
     public String getLocation() {
@@ -102,17 +89,13 @@ public class CreateDistributionWithTagsResult extends
     }
 
     /**
-     * The fully qualified URI of the new distribution resource just created.
-     * For example:
+     * The fully qualified URI of the new distribution resource just created. For example:
      * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      * 
      * @param location
-     *        The fully qualified URI of the new distribution resource just
-     *        created. For example:
-     *        https://cloudfront.amazonaws.com/2010-11-01/distribution
-     *        /EDFDVBD632BHDS5.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The fully qualified URI of the new distribution resource just created. For example:
+     *        https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDistributionWithTagsResult withLocation(String location) {
@@ -146,8 +129,7 @@ public class CreateDistributionWithTagsResult extends
      * 
      * @param eTag
      *        The current version of the distribution created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDistributionWithTagsResult withETag(String eTag) {
@@ -156,8 +138,7 @@ public class CreateDistributionWithTagsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -189,18 +170,15 @@ public class CreateDistributionWithTagsResult extends
         CreateDistributionWithTagsResult other = (CreateDistributionWithTagsResult) obj;
         if (other.getDistribution() == null ^ this.getDistribution() == null)
             return false;
-        if (other.getDistribution() != null
-                && other.getDistribution().equals(this.getDistribution()) == false)
+        if (other.getDistribution() != null && other.getDistribution().equals(this.getDistribution()) == false)
             return false;
         if (other.getLocation() == null ^ this.getLocation() == null)
             return false;
-        if (other.getLocation() != null
-                && other.getLocation().equals(this.getLocation()) == false)
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
         if (other.getETag() == null ^ this.getETag() == null)
             return false;
-        if (other.getETag() != null
-                && other.getETag().equals(this.getETag()) == false)
+        if (other.getETag() != null && other.getETag().equals(this.getETag()) == false)
             return false;
         return true;
     }
@@ -210,14 +188,9 @@ public class CreateDistributionWithTagsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDistribution() == null) ? 0 : getDistribution()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getLocation() == null) ? 0 : getLocation().hashCode());
-        hashCode = prime * hashCode
-                + ((getETag() == null) ? 0 : getETag().hashCode());
+        hashCode = prime * hashCode + ((getDistribution() == null) ? 0 : getDistribution().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getETag() == null) ? 0 : getETag().hashCode());
         return hashCode;
     }
 
@@ -226,9 +199,7 @@ public class CreateDistributionWithTagsResult extends
         try {
             return (CreateDistributionWithTagsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

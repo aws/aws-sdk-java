@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -18,13 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the response from the server from the request to get the specified
- * user as an administrator.
+ * Represents the response from the server from the request to get the specified user as an administrator.
  * </p>
  */
-public class AdminGetUserResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -82,8 +77,7 @@ public class AdminGetUserResult extends
      * </p>
      * 
      * @param username
-     *        The user name of the user about whom you are receiving
-     *        information.
+     *        The user name of the user about whom you are receiving information.
      */
 
     public void setUsername(String username) {
@@ -95,8 +89,7 @@ public class AdminGetUserResult extends
      * The user name of the user about whom you are receiving information.
      * </p>
      * 
-     * @return The user name of the user about whom you are receiving
-     *         information.
+     * @return The user name of the user about whom you are receiving information.
      */
 
     public String getUsername() {
@@ -109,10 +102,8 @@ public class AdminGetUserResult extends
      * </p>
      * 
      * @param username
-     *        The user name of the user about whom you are receiving
-     *        information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user name of the user about whom you are receiving information.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminGetUserResult withUsername(String username) {
@@ -141,15 +132,13 @@ public class AdminGetUserResult extends
      *        An array of name-value pairs representing user attributes.
      */
 
-    public void setUserAttributes(
-            java.util.Collection<AttributeType> userAttributes) {
+    public void setUserAttributes(java.util.Collection<AttributeType> userAttributes) {
         if (userAttributes == null) {
             this.userAttributes = null;
             return;
         }
 
-        this.userAttributes = new java.util.ArrayList<AttributeType>(
-                userAttributes);
+        this.userAttributes = new java.util.ArrayList<AttributeType>(userAttributes);
     }
 
     /**
@@ -157,23 +146,19 @@ public class AdminGetUserResult extends
      * An array of name-value pairs representing user attributes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setUserAttributes(java.util.Collection)} or
-     * {@link #withUserAttributes(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserAttributes(java.util.Collection)} or {@link #withUserAttributes(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param userAttributes
      *        An array of name-value pairs representing user attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AdminGetUserResult withUserAttributes(
-            AttributeType... userAttributes) {
+    public AdminGetUserResult withUserAttributes(AttributeType... userAttributes) {
         if (this.userAttributes == null) {
-            setUserAttributes(new java.util.ArrayList<AttributeType>(
-                    userAttributes.length));
+            setUserAttributes(new java.util.ArrayList<AttributeType>(userAttributes.length));
         }
         for (AttributeType ele : userAttributes) {
             this.userAttributes.add(ele);
@@ -188,12 +173,10 @@ public class AdminGetUserResult extends
      * 
      * @param userAttributes
      *        An array of name-value pairs representing user attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AdminGetUserResult withUserAttributes(
-            java.util.Collection<AttributeType> userAttributes) {
+    public AdminGetUserResult withUserAttributes(java.util.Collection<AttributeType> userAttributes) {
         setUserAttributes(userAttributes);
         return this;
     }
@@ -230,8 +213,7 @@ public class AdminGetUserResult extends
      * 
      * @param userCreateDate
      *        The date the user was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminGetUserResult withUserCreateDate(java.util.Date userCreateDate) {
@@ -271,12 +253,10 @@ public class AdminGetUserResult extends
      * 
      * @param userLastModifiedDate
      *        The date the user was last modified.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AdminGetUserResult withUserLastModifiedDate(
-            java.util.Date userLastModifiedDate) {
+    public AdminGetUserResult withUserLastModifiedDate(java.util.Date userLastModifiedDate) {
         setUserLastModifiedDate(userLastModifiedDate);
         return this;
     }
@@ -313,8 +293,7 @@ public class AdminGetUserResult extends
      * 
      * @param enabled
      *        Indicates that the status is enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminGetUserResult withEnabled(Boolean enabled) {
@@ -352,8 +331,7 @@ public class AdminGetUserResult extends
      *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
      *        <li>CONFIRMED - User has been confirmed.</li>
      *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security
-     *        threat.</li>
+     *        <li>COMPROMISED - User is disabled due to a potential security threat.</li>
      *        <li>UNKNOWN - User status is not known.</li>
      * @see UserStatusType
      */
@@ -379,8 +357,7 @@ public class AdminGetUserResult extends
      *         <li>UNCONFIRMED - User has been created but not confirmed.</li>
      *         <li>CONFIRMED - User has been confirmed.</li>
      *         <li>ARCHIVED - User is no longer active.</li>
-     *         <li>COMPROMISED - User is disabled due to a potential security
-     *         threat.</li>
+     *         <li>COMPROMISED - User is disabled due to a potential security threat.</li>
      *         <li>UNKNOWN - User status is not known.</li>
      * @see UserStatusType
      */
@@ -407,11 +384,9 @@ public class AdminGetUserResult extends
      *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
      *        <li>CONFIRMED - User has been confirmed.</li>
      *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security
-     *        threat.</li>
+     *        <li>COMPROMISED - User is disabled due to a potential security threat.</li>
      *        <li>UNKNOWN - User status is not known.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserStatusType
      */
 
@@ -438,8 +413,7 @@ public class AdminGetUserResult extends
      *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
      *        <li>CONFIRMED - User has been confirmed.</li>
      *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security
-     *        threat.</li>
+     *        <li>COMPROMISED - User is disabled due to a potential security threat.</li>
      *        <li>UNKNOWN - User status is not known.</li>
      * @see UserStatusType
      */
@@ -466,11 +440,9 @@ public class AdminGetUserResult extends
      *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
      *        <li>CONFIRMED - User has been confirmed.</li>
      *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security
-     *        threat.</li>
+     *        <li>COMPROMISED - User is disabled due to a potential security threat.</li>
      *        <li>UNKNOWN - User status is not known.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserStatusType
      */
 
@@ -514,22 +486,19 @@ public class AdminGetUserResult extends
      * Specifies the options for MFA (e.g., email or phone number).
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setMFAOptions(java.util.Collection)} or
-     * {@link #withMFAOptions(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMFAOptions(java.util.Collection)} or {@link #withMFAOptions(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param mFAOptions
      *        Specifies the options for MFA (e.g., email or phone number).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminGetUserResult withMFAOptions(MFAOptionType... mFAOptions) {
         if (this.mFAOptions == null) {
-            setMFAOptions(new java.util.ArrayList<MFAOptionType>(
-                    mFAOptions.length));
+            setMFAOptions(new java.util.ArrayList<MFAOptionType>(mFAOptions.length));
         }
         for (MFAOptionType ele : mFAOptions) {
             this.mFAOptions.add(ele);
@@ -544,19 +513,16 @@ public class AdminGetUserResult extends
      * 
      * @param mFAOptions
      *        Specifies the options for MFA (e.g., email or phone number).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AdminGetUserResult withMFAOptions(
-            java.util.Collection<MFAOptionType> mFAOptions) {
+    public AdminGetUserResult withMFAOptions(java.util.Collection<MFAOptionType> mFAOptions) {
         setMFAOptions(mFAOptions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -573,8 +539,7 @@ public class AdminGetUserResult extends
         if (getUserCreateDate() != null)
             sb.append("UserCreateDate: " + getUserCreateDate() + ",");
         if (getUserLastModifiedDate() != null)
-            sb.append("UserLastModifiedDate: " + getUserLastModifiedDate()
-                    + ",");
+            sb.append("UserLastModifiedDate: " + getUserLastModifiedDate() + ",");
         if (getEnabled() != null)
             sb.append("Enabled: " + getEnabled() + ",");
         if (getUserStatus() != null)
@@ -597,42 +562,31 @@ public class AdminGetUserResult extends
         AdminGetUserResult other = (AdminGetUserResult) obj;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
-        if (other.getUsername() != null
-                && other.getUsername().equals(this.getUsername()) == false)
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
-        if (other.getUserAttributes() == null
-                ^ this.getUserAttributes() == null)
+        if (other.getUserAttributes() == null ^ this.getUserAttributes() == null)
             return false;
-        if (other.getUserAttributes() != null
-                && other.getUserAttributes().equals(this.getUserAttributes()) == false)
+        if (other.getUserAttributes() != null && other.getUserAttributes().equals(this.getUserAttributes()) == false)
             return false;
-        if (other.getUserCreateDate() == null
-                ^ this.getUserCreateDate() == null)
+        if (other.getUserCreateDate() == null ^ this.getUserCreateDate() == null)
             return false;
-        if (other.getUserCreateDate() != null
-                && other.getUserCreateDate().equals(this.getUserCreateDate()) == false)
+        if (other.getUserCreateDate() != null && other.getUserCreateDate().equals(this.getUserCreateDate()) == false)
             return false;
-        if (other.getUserLastModifiedDate() == null
-                ^ this.getUserLastModifiedDate() == null)
+        if (other.getUserLastModifiedDate() == null ^ this.getUserLastModifiedDate() == null)
             return false;
-        if (other.getUserLastModifiedDate() != null
-                && other.getUserLastModifiedDate().equals(
-                        this.getUserLastModifiedDate()) == false)
+        if (other.getUserLastModifiedDate() != null && other.getUserLastModifiedDate().equals(this.getUserLastModifiedDate()) == false)
             return false;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
-        if (other.getEnabled() != null
-                && other.getEnabled().equals(this.getEnabled()) == false)
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
         if (other.getUserStatus() == null ^ this.getUserStatus() == null)
             return false;
-        if (other.getUserStatus() != null
-                && other.getUserStatus().equals(this.getUserStatus()) == false)
+        if (other.getUserStatus() != null && other.getUserStatus().equals(this.getUserStatus()) == false)
             return false;
         if (other.getMFAOptions() == null ^ this.getMFAOptions() == null)
             return false;
-        if (other.getMFAOptions() != null
-                && other.getMFAOptions().equals(this.getMFAOptions()) == false)
+        if (other.getMFAOptions() != null && other.getMFAOptions().equals(this.getMFAOptions()) == false)
             return false;
         return true;
     }
@@ -642,26 +596,13 @@ public class AdminGetUserResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUserAttributes() == null) ? 0 : getUserAttributes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUserCreateDate() == null) ? 0 : getUserCreateDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUserLastModifiedDate() == null) ? 0
-                        : getUserLastModifiedDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserStatus() == null) ? 0 : getUserStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getMFAOptions() == null) ? 0 : getMFAOptions().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getUserAttributes() == null) ? 0 : getUserAttributes().hashCode());
+        hashCode = prime * hashCode + ((getUserCreateDate() == null) ? 0 : getUserCreateDate().hashCode());
+        hashCode = prime * hashCode + ((getUserLastModifiedDate() == null) ? 0 : getUserLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getUserStatus() == null) ? 0 : getUserStatus().hashCode());
+        hashCode = prime * hashCode + ((getMFAOptions() == null) ? 0 : getMFAOptions().hashCode());
         return hashCode;
     }
 
@@ -670,9 +611,7 @@ public class AdminGetUserResult extends
         try {
             return (AdminGetUserResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

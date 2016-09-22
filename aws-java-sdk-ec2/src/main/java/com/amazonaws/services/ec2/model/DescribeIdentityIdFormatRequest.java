@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,34 +22,31 @@ import com.amazonaws.services.ec2.model.transform.DescribeIdentityIdFormatReques
  * Contains the parameters for DescribeIdentityIdFormat.
  * </p>
  */
-public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeIdentityIdFormatRequest> {
 
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>
+     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
+     * <code>volume</code>
      * </p>
      */
     private String resource;
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM role, IAM user, or the root
-     * user.
+     * The ARN of the principal, which can be an IAM role, IAM user, or the root user.
      * </p>
      */
     private String principalArn;
 
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>
+     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
+     * <code>volume</code>
      * </p>
      * 
      * @param resource
-     *        The type of resource: <code>instance</code> |
-     *        <code>reservation</code> | <code>snapshot</code> |
+     *        The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
      *        <code>volume</code>
      */
 
@@ -61,12 +56,11 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>
+     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
+     * <code>volume</code>
      * </p>
      * 
-     * @return The type of resource: <code>instance</code> |
-     *         <code>reservation</code> | <code>snapshot</code> |
+     * @return The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
      *         <code>volume</code>
      */
 
@@ -76,16 +70,14 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>
+     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
+     * <code>volume</code>
      * </p>
      * 
      * @param resource
-     *        The type of resource: <code>instance</code> |
-     *        <code>reservation</code> | <code>snapshot</code> |
+     *        The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
      *        <code>volume</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeIdentityIdFormatRequest withResource(String resource) {
@@ -95,13 +87,11 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM role, IAM user, or the root
-     * user.
+     * The ARN of the principal, which can be an IAM role, IAM user, or the root user.
      * </p>
      * 
      * @param principalArn
-     *        The ARN of the principal, which can be an IAM role, IAM user, or
-     *        the root user.
+     *        The ARN of the principal, which can be an IAM role, IAM user, or the root user.
      */
 
     public void setPrincipalArn(String principalArn) {
@@ -110,12 +100,10 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM role, IAM user, or the root
-     * user.
+     * The ARN of the principal, which can be an IAM role, IAM user, or the root user.
      * </p>
      * 
-     * @return The ARN of the principal, which can be an IAM role, IAM user, or
-     *         the root user.
+     * @return The ARN of the principal, which can be an IAM role, IAM user, or the root user.
      */
 
     public String getPrincipalArn() {
@@ -124,15 +112,12 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM role, IAM user, or the root
-     * user.
+     * The ARN of the principal, which can be an IAM role, IAM user, or the root user.
      * </p>
      * 
      * @param principalArn
-     *        The ARN of the principal, which can be an IAM role, IAM user, or
-     *        the root user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN of the principal, which can be an IAM role, IAM user, or the root user.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeIdentityIdFormatRequest withPrincipalArn(String principalArn) {
@@ -141,21 +126,18 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeIdentityIdFormatRequest> getDryRunRequest() {
-        Request<DescribeIdentityIdFormatRequest> request = new DescribeIdentityIdFormatRequestMarshaller()
-                .marshall(this);
+        Request<DescribeIdentityIdFormatRequest> request = new DescribeIdentityIdFormatRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -185,13 +167,11 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest
         DescribeIdentityIdFormatRequest other = (DescribeIdentityIdFormatRequest) obj;
         if (other.getResource() == null ^ this.getResource() == null)
             return false;
-        if (other.getResource() != null
-                && other.getResource().equals(this.getResource()) == false)
+        if (other.getResource() != null && other.getResource().equals(this.getResource()) == false)
             return false;
         if (other.getPrincipalArn() == null ^ this.getPrincipalArn() == null)
             return false;
-        if (other.getPrincipalArn() != null
-                && other.getPrincipalArn().equals(this.getPrincipalArn()) == false)
+        if (other.getPrincipalArn() != null && other.getPrincipalArn().equals(this.getPrincipalArn()) == false)
             return false;
         return true;
     }
@@ -201,12 +181,8 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getResource() == null) ? 0 : getResource().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrincipalArn() == null) ? 0 : getPrincipalArn()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
+        hashCode = prime * hashCode + ((getPrincipalArn() == null) ? 0 : getPrincipalArn().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -31,16 +29,14 @@ public class IdFormat implements Serializable, Cloneable {
     private String resource;
     /**
      * <p>
-     * Indicates whether longer IDs (17-character IDs) are enabled for the
-     * resource.
+     * Indicates whether longer IDs (17-character IDs) are enabled for the resource.
      * </p>
      */
     private Boolean useLongIds;
     /**
      * <p>
-     * The date in UTC at which you are permanently switched over to using
-     * longer IDs. If a deadline is not yet available for this resource type,
-     * this field is not returned.
+     * The date in UTC at which you are permanently switched over to using longer IDs. If a deadline is not yet
+     * available for this resource type, this field is not returned.
      * </p>
      */
     private java.util.Date deadline;
@@ -77,8 +73,7 @@ public class IdFormat implements Serializable, Cloneable {
      * 
      * @param resource
      *        The type of resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IdFormat withResource(String resource) {
@@ -88,13 +83,11 @@ public class IdFormat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether longer IDs (17-character IDs) are enabled for the
-     * resource.
+     * Indicates whether longer IDs (17-character IDs) are enabled for the resource.
      * </p>
      * 
      * @param useLongIds
-     *        Indicates whether longer IDs (17-character IDs) are enabled for
-     *        the resource.
+     *        Indicates whether longer IDs (17-character IDs) are enabled for the resource.
      */
 
     public void setUseLongIds(Boolean useLongIds) {
@@ -103,12 +96,10 @@ public class IdFormat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether longer IDs (17-character IDs) are enabled for the
-     * resource.
+     * Indicates whether longer IDs (17-character IDs) are enabled for the resource.
      * </p>
      * 
-     * @return Indicates whether longer IDs (17-character IDs) are enabled for
-     *         the resource.
+     * @return Indicates whether longer IDs (17-character IDs) are enabled for the resource.
      */
 
     public Boolean getUseLongIds() {
@@ -117,15 +108,12 @@ public class IdFormat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether longer IDs (17-character IDs) are enabled for the
-     * resource.
+     * Indicates whether longer IDs (17-character IDs) are enabled for the resource.
      * </p>
      * 
      * @param useLongIds
-     *        Indicates whether longer IDs (17-character IDs) are enabled for
-     *        the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether longer IDs (17-character IDs) are enabled for the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IdFormat withUseLongIds(Boolean useLongIds) {
@@ -135,12 +123,10 @@ public class IdFormat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether longer IDs (17-character IDs) are enabled for the
-     * resource.
+     * Indicates whether longer IDs (17-character IDs) are enabled for the resource.
      * </p>
      * 
-     * @return Indicates whether longer IDs (17-character IDs) are enabled for
-     *         the resource.
+     * @return Indicates whether longer IDs (17-character IDs) are enabled for the resource.
      */
 
     public Boolean isUseLongIds() {
@@ -149,15 +135,13 @@ public class IdFormat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date in UTC at which you are permanently switched over to using
-     * longer IDs. If a deadline is not yet available for this resource type,
-     * this field is not returned.
+     * The date in UTC at which you are permanently switched over to using longer IDs. If a deadline is not yet
+     * available for this resource type, this field is not returned.
      * </p>
      * 
      * @param deadline
-     *        The date in UTC at which you are permanently switched over to
-     *        using longer IDs. If a deadline is not yet available for this
-     *        resource type, this field is not returned.
+     *        The date in UTC at which you are permanently switched over to using longer IDs. If a deadline is not yet
+     *        available for this resource type, this field is not returned.
      */
 
     public void setDeadline(java.util.Date deadline) {
@@ -166,14 +150,12 @@ public class IdFormat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date in UTC at which you are permanently switched over to using
-     * longer IDs. If a deadline is not yet available for this resource type,
-     * this field is not returned.
+     * The date in UTC at which you are permanently switched over to using longer IDs. If a deadline is not yet
+     * available for this resource type, this field is not returned.
      * </p>
      * 
-     * @return The date in UTC at which you are permanently switched over to
-     *         using longer IDs. If a deadline is not yet available for this
-     *         resource type, this field is not returned.
+     * @return The date in UTC at which you are permanently switched over to using longer IDs. If a deadline is not yet
+     *         available for this resource type, this field is not returned.
      */
 
     public java.util.Date getDeadline() {
@@ -182,17 +164,14 @@ public class IdFormat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date in UTC at which you are permanently switched over to using
-     * longer IDs. If a deadline is not yet available for this resource type,
-     * this field is not returned.
+     * The date in UTC at which you are permanently switched over to using longer IDs. If a deadline is not yet
+     * available for this resource type, this field is not returned.
      * </p>
      * 
      * @param deadline
-     *        The date in UTC at which you are permanently switched over to
-     *        using longer IDs. If a deadline is not yet available for this
-     *        resource type, this field is not returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The date in UTC at which you are permanently switched over to using longer IDs. If a deadline is not yet
+     *        available for this resource type, this field is not returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IdFormat withDeadline(java.util.Date deadline) {
@@ -201,8 +180,7 @@ public class IdFormat implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -234,18 +212,15 @@ public class IdFormat implements Serializable, Cloneable {
         IdFormat other = (IdFormat) obj;
         if (other.getResource() == null ^ this.getResource() == null)
             return false;
-        if (other.getResource() != null
-                && other.getResource().equals(this.getResource()) == false)
+        if (other.getResource() != null && other.getResource().equals(this.getResource()) == false)
             return false;
         if (other.getUseLongIds() == null ^ this.getUseLongIds() == null)
             return false;
-        if (other.getUseLongIds() != null
-                && other.getUseLongIds().equals(this.getUseLongIds()) == false)
+        if (other.getUseLongIds() != null && other.getUseLongIds().equals(this.getUseLongIds()) == false)
             return false;
         if (other.getDeadline() == null ^ this.getDeadline() == null)
             return false;
-        if (other.getDeadline() != null
-                && other.getDeadline().equals(this.getDeadline()) == false)
+        if (other.getDeadline() != null && other.getDeadline().equals(this.getDeadline()) == false)
             return false;
         return true;
     }
@@ -255,12 +230,9 @@ public class IdFormat implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getResource() == null) ? 0 : getResource().hashCode());
-        hashCode = prime * hashCode
-                + ((getUseLongIds() == null) ? 0 : getUseLongIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getDeadline() == null) ? 0 : getDeadline().hashCode());
+        hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
+        hashCode = prime * hashCode + ((getUseLongIds() == null) ? 0 : getUseLongIds().hashCode());
+        hashCode = prime * hashCode + ((getDeadline() == null) ? 0 : getDeadline().hashCode());
         return hashCode;
     }
 
@@ -269,9 +241,7 @@ public class IdFormat implements Serializable, Cloneable {
         try {
             return (IdFormat) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

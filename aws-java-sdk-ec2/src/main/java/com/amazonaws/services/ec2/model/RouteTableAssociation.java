@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -37,8 +35,7 @@ public class RouteTableAssociation implements Serializable, Cloneable {
     private String routeTableId;
     /**
      * <p>
-     * The ID of the subnet. A subnet ID is not returned for an implicit
-     * association.
+     * The ID of the subnet. A subnet ID is not returned for an implicit association.
      * </p>
      */
     private String subnetId;
@@ -81,12 +78,10 @@ public class RouteTableAssociation implements Serializable, Cloneable {
      * 
      * @param routeTableAssociationId
      *        The ID of the association between a route table and a subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RouteTableAssociation withRouteTableAssociationId(
-            String routeTableAssociationId) {
+    public RouteTableAssociation withRouteTableAssociationId(String routeTableAssociationId) {
         setRouteTableAssociationId(routeTableAssociationId);
         return this;
     }
@@ -123,8 +118,7 @@ public class RouteTableAssociation implements Serializable, Cloneable {
      * 
      * @param routeTableId
      *        The ID of the route table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RouteTableAssociation withRouteTableId(String routeTableId) {
@@ -134,13 +128,11 @@ public class RouteTableAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the subnet. A subnet ID is not returned for an implicit
-     * association.
+     * The ID of the subnet. A subnet ID is not returned for an implicit association.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet. A subnet ID is not returned for an implicit
-     *        association.
+     *        The ID of the subnet. A subnet ID is not returned for an implicit association.
      */
 
     public void setSubnetId(String subnetId) {
@@ -149,12 +141,10 @@ public class RouteTableAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the subnet. A subnet ID is not returned for an implicit
-     * association.
+     * The ID of the subnet. A subnet ID is not returned for an implicit association.
      * </p>
      * 
-     * @return The ID of the subnet. A subnet ID is not returned for an implicit
-     *         association.
+     * @return The ID of the subnet. A subnet ID is not returned for an implicit association.
      */
 
     public String getSubnetId() {
@@ -163,15 +153,12 @@ public class RouteTableAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the subnet. A subnet ID is not returned for an implicit
-     * association.
+     * The ID of the subnet. A subnet ID is not returned for an implicit association.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet. A subnet ID is not returned for an implicit
-     *        association.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the subnet. A subnet ID is not returned for an implicit association.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RouteTableAssociation withSubnetId(String subnetId) {
@@ -211,8 +198,7 @@ public class RouteTableAssociation implements Serializable, Cloneable {
      * 
      * @param main
      *        Indicates whether this is the main route table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RouteTableAssociation withMain(Boolean main) {
@@ -233,8 +219,7 @@ public class RouteTableAssociation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -245,8 +230,7 @@ public class RouteTableAssociation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRouteTableAssociationId() != null)
-            sb.append("RouteTableAssociationId: "
-                    + getRouteTableAssociationId() + ",");
+            sb.append("RouteTableAssociationId: " + getRouteTableAssociationId() + ",");
         if (getRouteTableId() != null)
             sb.append("RouteTableId: " + getRouteTableId() + ",");
         if (getSubnetId() != null)
@@ -267,27 +251,21 @@ public class RouteTableAssociation implements Serializable, Cloneable {
         if (obj instanceof RouteTableAssociation == false)
             return false;
         RouteTableAssociation other = (RouteTableAssociation) obj;
-        if (other.getRouteTableAssociationId() == null
-                ^ this.getRouteTableAssociationId() == null)
+        if (other.getRouteTableAssociationId() == null ^ this.getRouteTableAssociationId() == null)
             return false;
-        if (other.getRouteTableAssociationId() != null
-                && other.getRouteTableAssociationId().equals(
-                        this.getRouteTableAssociationId()) == false)
+        if (other.getRouteTableAssociationId() != null && other.getRouteTableAssociationId().equals(this.getRouteTableAssociationId()) == false)
             return false;
         if (other.getRouteTableId() == null ^ this.getRouteTableId() == null)
             return false;
-        if (other.getRouteTableId() != null
-                && other.getRouteTableId().equals(this.getRouteTableId()) == false)
+        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false)
             return false;
         if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
-        if (other.getSubnetId() != null
-                && other.getSubnetId().equals(this.getSubnetId()) == false)
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
         if (other.getMain() == null ^ this.getMain() == null)
             return false;
-        if (other.getMain() != null
-                && other.getMain().equals(this.getMain()) == false)
+        if (other.getMain() != null && other.getMain().equals(this.getMain()) == false)
             return false;
         return true;
     }
@@ -297,18 +275,10 @@ public class RouteTableAssociation implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRouteTableAssociationId() == null) ? 0
-                        : getRouteTableAssociationId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRouteTableId() == null) ? 0 : getRouteTableId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime * hashCode
-                + ((getMain() == null) ? 0 : getMain().hashCode());
+        hashCode = prime * hashCode + ((getRouteTableAssociationId() == null) ? 0 : getRouteTableAssociationId().hashCode());
+        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getMain() == null) ? 0 : getMain().hashCode());
         return hashCode;
     }
 
@@ -317,9 +287,7 @@ public class RouteTableAssociation implements Serializable, Cloneable {
         try {
             return (RouteTableAssociation) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

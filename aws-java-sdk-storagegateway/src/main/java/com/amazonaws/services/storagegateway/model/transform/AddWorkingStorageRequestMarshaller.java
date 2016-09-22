@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
@@ -35,46 +33,37 @@ import com.amazonaws.protocol.json.*;
 /**
  * AddWorkingStorageRequest Marshaller
  */
-public class AddWorkingStorageRequestMarshaller implements
-        Marshaller<Request<AddWorkingStorageRequest>, AddWorkingStorageRequest> {
+public class AddWorkingStorageRequestMarshaller implements Marshaller<Request<AddWorkingStorageRequest>, AddWorkingStorageRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public AddWorkingStorageRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public AddWorkingStorageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<AddWorkingStorageRequest> marshall(
-            AddWorkingStorageRequest addWorkingStorageRequest) {
+    public Request<AddWorkingStorageRequest> marshall(AddWorkingStorageRequest addWorkingStorageRequest) {
 
         if (addWorkingStorageRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AddWorkingStorageRequest> request = new DefaultRequest<AddWorkingStorageRequest>(
-                addWorkingStorageRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target",
-                "StorageGateway_20130630.AddWorkingStorage");
+        Request<AddWorkingStorageRequest> request = new DefaultRequest<AddWorkingStorageRequest>(addWorkingStorageRequest, "AWSStorageGateway");
+        request.addHeader("X-Amz-Target", "StorageGateway_20130630.AddWorkingStorage");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (addWorkingStorageRequest.getGatewayARN() != null) {
-                jsonGenerator.writeFieldName("GatewayARN").writeValue(
-                        addWorkingStorageRequest.getGatewayARN());
+                jsonGenerator.writeFieldName("GatewayARN").writeValue(addWorkingStorageRequest.getGatewayARN());
             }
 
-            com.amazonaws.internal.SdkInternalList<String> diskIdsList = (com.amazonaws.internal.SdkInternalList<String>) addWorkingStorageRequest
-                    .getDiskIds();
+            com.amazonaws.internal.SdkInternalList<String> diskIdsList = (com.amazonaws.internal.SdkInternalList<String>) addWorkingStorageRequest.getDiskIds();
             if (!diskIdsList.isEmpty() || !diskIdsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("DiskIds");
                 jsonGenerator.writeStartArray();
@@ -90,12 +79,10 @@ public class AddWorkingStorageRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

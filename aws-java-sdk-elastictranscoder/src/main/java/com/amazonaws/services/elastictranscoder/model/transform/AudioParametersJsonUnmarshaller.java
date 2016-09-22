@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * AudioParameters JSON Unmarshaller
  */
-public class AudioParametersJsonUnmarshaller implements
-        Unmarshaller<AudioParameters, JsonUnmarshallerContext> {
+public class AudioParametersJsonUnmarshaller implements Unmarshaller<AudioParameters, JsonUnmarshallerContext> {
 
-    public AudioParameters unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public AudioParameters unmarshall(JsonUnmarshallerContext context) throws Exception {
         AudioParameters audioParameters = new AudioParameters();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,39 +49,30 @@ public class AudioParametersJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Codec", targetDepth)) {
                     context.nextToken();
-                    audioParameters.setCodec(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    audioParameters.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SampleRate", targetDepth)) {
                     context.nextToken();
-                    audioParameters.setSampleRate(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    audioParameters.setSampleRate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BitRate", targetDepth)) {
                     context.nextToken();
-                    audioParameters.setBitRate(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    audioParameters.setBitRate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Channels", targetDepth)) {
                     context.nextToken();
-                    audioParameters.setChannels(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    audioParameters.setChannels(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AudioPackingMode", targetDepth)) {
                     context.nextToken();
-                    audioParameters.setAudioPackingMode(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    audioParameters.setAudioPackingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CodecOptions", targetDepth)) {
                     context.nextToken();
-                    audioParameters
-                            .setCodecOptions(AudioCodecOptionsJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    audioParameters.setCodecOptions(AudioCodecOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

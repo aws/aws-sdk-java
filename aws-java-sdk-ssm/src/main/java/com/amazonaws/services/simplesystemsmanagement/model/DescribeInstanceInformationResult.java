@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeInstanceInformationResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeInstanceInformationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -31,8 +27,8 @@ public class DescribeInstanceInformationResult extends
     private com.amazonaws.internal.SdkInternalList<InstanceInformation> instanceInformationList;
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      */
     private String nextToken;
@@ -61,15 +57,13 @@ public class DescribeInstanceInformationResult extends
      *        The instance information list.
      */
 
-    public void setInstanceInformationList(
-            java.util.Collection<InstanceInformation> instanceInformationList) {
+    public void setInstanceInformationList(java.util.Collection<InstanceInformation> instanceInformationList) {
         if (instanceInformationList == null) {
             this.instanceInformationList = null;
             return;
         }
 
-        this.instanceInformationList = new com.amazonaws.internal.SdkInternalList<InstanceInformation>(
-                instanceInformationList);
+        this.instanceInformationList = new com.amazonaws.internal.SdkInternalList<InstanceInformation>(instanceInformationList);
     }
 
     /**
@@ -77,23 +71,19 @@ public class DescribeInstanceInformationResult extends
      * The instance information list.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstanceInformationList(java.util.Collection)} or
-     * {@link #withInstanceInformationList(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceInformationList(java.util.Collection)} or
+     * {@link #withInstanceInformationList(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param instanceInformationList
      *        The instance information list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeInstanceInformationResult withInstanceInformationList(
-            InstanceInformation... instanceInformationList) {
+    public DescribeInstanceInformationResult withInstanceInformationList(InstanceInformation... instanceInformationList) {
         if (this.instanceInformationList == null) {
-            setInstanceInformationList(new com.amazonaws.internal.SdkInternalList<InstanceInformation>(
-                    instanceInformationList.length));
+            setInstanceInformationList(new com.amazonaws.internal.SdkInternalList<InstanceInformation>(instanceInformationList.length));
         }
         for (InstanceInformation ele : instanceInformationList) {
             this.instanceInformationList.add(ele);
@@ -108,25 +98,23 @@ public class DescribeInstanceInformationResult extends
      * 
      * @param instanceInformationList
      *        The instance information list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeInstanceInformationResult withInstanceInformationList(
-            java.util.Collection<InstanceInformation> instanceInformationList) {
+    public DescribeInstanceInformationResult withInstanceInformationList(java.util.Collection<InstanceInformation> instanceInformationList) {
         setInstanceInformationList(instanceInformationList);
         return this;
     }
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there
-     *        are no additional items to return, the string is empty.
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
      */
 
     public void setNextToken(String nextToken) {
@@ -135,12 +123,12 @@ public class DescribeInstanceInformationResult extends
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
-     * @return The token to use when requesting the next set of items. If there
-     *         are no additional items to return, the string is empty.
+     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
+     *         string is empty.
      */
 
     public String getNextToken() {
@@ -149,15 +137,14 @@ public class DescribeInstanceInformationResult extends
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there
-     *        are no additional items to return, the string is empty.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeInstanceInformationResult withNextToken(String nextToken) {
@@ -166,8 +153,7 @@ public class DescribeInstanceInformationResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -178,8 +164,7 @@ public class DescribeInstanceInformationResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceInformationList() != null)
-            sb.append("InstanceInformationList: "
-                    + getInstanceInformationList() + ",");
+            sb.append("InstanceInformationList: " + getInstanceInformationList() + ",");
         if (getNextToken() != null)
             sb.append("NextToken: " + getNextToken());
         sb.append("}");
@@ -196,17 +181,13 @@ public class DescribeInstanceInformationResult extends
         if (obj instanceof DescribeInstanceInformationResult == false)
             return false;
         DescribeInstanceInformationResult other = (DescribeInstanceInformationResult) obj;
-        if (other.getInstanceInformationList() == null
-                ^ this.getInstanceInformationList() == null)
+        if (other.getInstanceInformationList() == null ^ this.getInstanceInformationList() == null)
             return false;
-        if (other.getInstanceInformationList() != null
-                && other.getInstanceInformationList().equals(
-                        this.getInstanceInformationList()) == false)
+        if (other.getInstanceInformationList() != null && other.getInstanceInformationList().equals(this.getInstanceInformationList()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -216,12 +197,8 @@ public class DescribeInstanceInformationResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceInformationList() == null) ? 0
-                        : getInstanceInformationList().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getInstanceInformationList() == null) ? 0 : getInstanceInformationList().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -230,9 +207,7 @@ public class DescribeInstanceInformationResult extends
         try {
             return (DescribeInstanceInformationResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Describes the settings for a specified configuration set.
  * </p>
  */
-public class DescribeConfigurationOptionsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeConfigurationOptionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -44,8 +40,7 @@ public class DescribeConfigurationOptionsResult extends
      * </p>
      * 
      * @param solutionStackName
-     *        The name of the solution stack these configuration options belong
-     *        to.
+     *        The name of the solution stack these configuration options belong to.
      */
 
     public void setSolutionStackName(String solutionStackName) {
@@ -57,8 +52,7 @@ public class DescribeConfigurationOptionsResult extends
      * The name of the solution stack these configuration options belong to.
      * </p>
      * 
-     * @return The name of the solution stack these configuration options belong
-     *         to.
+     * @return The name of the solution stack these configuration options belong to.
      */
 
     public String getSolutionStackName() {
@@ -71,14 +65,11 @@ public class DescribeConfigurationOptionsResult extends
      * </p>
      * 
      * @param solutionStackName
-     *        The name of the solution stack these configuration options belong
-     *        to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the solution stack these configuration options belong to.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConfigurationOptionsResult withSolutionStackName(
-            String solutionStackName) {
+    public DescribeConfigurationOptionsResult withSolutionStackName(String solutionStackName) {
         setSolutionStackName(solutionStackName);
         return this;
     }
@@ -107,15 +98,13 @@ public class DescribeConfigurationOptionsResult extends
      *        A list of <a>ConfigurationOptionDescription</a>.
      */
 
-    public void setOptions(
-            java.util.Collection<ConfigurationOptionDescription> options) {
+    public void setOptions(java.util.Collection<ConfigurationOptionDescription> options) {
         if (options == null) {
             this.options = null;
             return;
         }
 
-        this.options = new com.amazonaws.internal.SdkInternalList<ConfigurationOptionDescription>(
-                options);
+        this.options = new com.amazonaws.internal.SdkInternalList<ConfigurationOptionDescription>(options);
     }
 
     /**
@@ -123,23 +112,19 @@ public class DescribeConfigurationOptionsResult extends
      * A list of <a>ConfigurationOptionDescription</a>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOptions(java.util.Collection)} or
-     * {@link #withOptions(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOptions(java.util.Collection)} or {@link #withOptions(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param options
      *        A list of <a>ConfigurationOptionDescription</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConfigurationOptionsResult withOptions(
-            ConfigurationOptionDescription... options) {
+    public DescribeConfigurationOptionsResult withOptions(ConfigurationOptionDescription... options) {
         if (this.options == null) {
-            setOptions(new com.amazonaws.internal.SdkInternalList<ConfigurationOptionDescription>(
-                    options.length));
+            setOptions(new com.amazonaws.internal.SdkInternalList<ConfigurationOptionDescription>(options.length));
         }
         for (ConfigurationOptionDescription ele : options) {
             this.options.add(ele);
@@ -154,19 +139,16 @@ public class DescribeConfigurationOptionsResult extends
      * 
      * @param options
      *        A list of <a>ConfigurationOptionDescription</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConfigurationOptionsResult withOptions(
-            java.util.Collection<ConfigurationOptionDescription> options) {
+    public DescribeConfigurationOptionsResult withOptions(java.util.Collection<ConfigurationOptionDescription> options) {
         setOptions(options);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -194,17 +176,13 @@ public class DescribeConfigurationOptionsResult extends
         if (obj instanceof DescribeConfigurationOptionsResult == false)
             return false;
         DescribeConfigurationOptionsResult other = (DescribeConfigurationOptionsResult) obj;
-        if (other.getSolutionStackName() == null
-                ^ this.getSolutionStackName() == null)
+        if (other.getSolutionStackName() == null ^ this.getSolutionStackName() == null)
             return false;
-        if (other.getSolutionStackName() != null
-                && other.getSolutionStackName().equals(
-                        this.getSolutionStackName()) == false)
+        if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false)
             return false;
         if (other.getOptions() == null ^ this.getOptions() == null)
             return false;
-        if (other.getOptions() != null
-                && other.getOptions().equals(this.getOptions()) == false)
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
             return false;
         return true;
     }
@@ -214,12 +192,8 @@ public class DescribeConfigurationOptionsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSolutionStackName() == null) ? 0
-                        : getSolutionStackName().hashCode());
-        hashCode = prime * hashCode
-                + ((getOptions() == null) ? 0 : getOptions().hashCode());
+        hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
     }
 
@@ -228,9 +202,7 @@ public class DescribeConfigurationOptionsResult extends
         try {
             return (DescribeConfigurationOptionsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
@@ -37,47 +35,38 @@ public class ArtworkJsonMarshaller {
     public void marshall(Artwork artwork, StructuredJsonGenerator jsonGenerator) {
 
         if (artwork == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (artwork.getInputKey() != null) {
-                jsonGenerator.writeFieldName("InputKey").writeValue(
-                        artwork.getInputKey());
+                jsonGenerator.writeFieldName("InputKey").writeValue(artwork.getInputKey());
             }
             if (artwork.getMaxWidth() != null) {
-                jsonGenerator.writeFieldName("MaxWidth").writeValue(
-                        artwork.getMaxWidth());
+                jsonGenerator.writeFieldName("MaxWidth").writeValue(artwork.getMaxWidth());
             }
             if (artwork.getMaxHeight() != null) {
-                jsonGenerator.writeFieldName("MaxHeight").writeValue(
-                        artwork.getMaxHeight());
+                jsonGenerator.writeFieldName("MaxHeight").writeValue(artwork.getMaxHeight());
             }
             if (artwork.getSizingPolicy() != null) {
-                jsonGenerator.writeFieldName("SizingPolicy").writeValue(
-                        artwork.getSizingPolicy());
+                jsonGenerator.writeFieldName("SizingPolicy").writeValue(artwork.getSizingPolicy());
             }
             if (artwork.getPaddingPolicy() != null) {
-                jsonGenerator.writeFieldName("PaddingPolicy").writeValue(
-                        artwork.getPaddingPolicy());
+                jsonGenerator.writeFieldName("PaddingPolicy").writeValue(artwork.getPaddingPolicy());
             }
             if (artwork.getAlbumArtFormat() != null) {
-                jsonGenerator.writeFieldName("AlbumArtFormat").writeValue(
-                        artwork.getAlbumArtFormat());
+                jsonGenerator.writeFieldName("AlbumArtFormat").writeValue(artwork.getAlbumArtFormat());
             }
             if (artwork.getEncryption() != null) {
                 jsonGenerator.writeFieldName("Encryption");
-                EncryptionJsonMarshaller.getInstance().marshall(
-                        artwork.getEncryption(), jsonGenerator);
+                EncryptionJsonMarshaller.getInstance().marshall(artwork.getEncryption(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

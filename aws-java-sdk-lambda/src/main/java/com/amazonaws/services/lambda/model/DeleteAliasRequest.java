@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model;
 
@@ -20,13 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Lambda function name for which the alias is created. Deleting an
-     * alias does not delete the function version to which it is pointing.
+     * The Lambda function name for which the alias is created. Deleting an alias does not delete the function version
+     * to which it is pointing.
      * </p>
      */
     private String functionName;
@@ -39,14 +36,13 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Lambda function name for which the alias is created. Deleting an
-     * alias does not delete the function version to which it is pointing.
+     * The Lambda function name for which the alias is created. Deleting an alias does not delete the function version
+     * to which it is pointing.
      * </p>
      * 
      * @param functionName
-     *        The Lambda function name for which the alias is created. Deleting
-     *        an alias does not delete the function version to which it is
-     *        pointing.
+     *        The Lambda function name for which the alias is created. Deleting an alias does not delete the function
+     *        version to which it is pointing.
      */
 
     public void setFunctionName(String functionName) {
@@ -55,13 +51,12 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Lambda function name for which the alias is created. Deleting an
-     * alias does not delete the function version to which it is pointing.
+     * The Lambda function name for which the alias is created. Deleting an alias does not delete the function version
+     * to which it is pointing.
      * </p>
      * 
-     * @return The Lambda function name for which the alias is created. Deleting
-     *         an alias does not delete the function version to which it is
-     *         pointing.
+     * @return The Lambda function name for which the alias is created. Deleting an alias does not delete the function
+     *         version to which it is pointing.
      */
 
     public String getFunctionName() {
@@ -70,16 +65,14 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Lambda function name for which the alias is created. Deleting an
-     * alias does not delete the function version to which it is pointing.
+     * The Lambda function name for which the alias is created. Deleting an alias does not delete the function version
+     * to which it is pointing.
      * </p>
      * 
      * @param functionName
-     *        The Lambda function name for which the alias is created. Deleting
-     *        an alias does not delete the function version to which it is
-     *        pointing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Lambda function name for which the alias is created. Deleting an alias does not delete the function
+     *        version to which it is pointing.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteAliasRequest withFunctionName(String functionName) {
@@ -119,8 +112,7 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param name
      *        Name of the alias to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteAliasRequest withName(String name) {
@@ -129,8 +121,7 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -160,13 +151,11 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest
         DeleteAliasRequest other = (DeleteAliasRequest) obj;
         if (other.getFunctionName() == null ^ this.getFunctionName() == null)
             return false;
-        if (other.getFunctionName() != null
-                && other.getFunctionName().equals(this.getFunctionName()) == false)
+        if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -176,12 +165,8 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFunctionName() == null) ? 0 : getFunctionName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

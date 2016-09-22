@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model.transform;
 
@@ -34,57 +32,43 @@ public class NewPublicVirtualInterfaceAllocationJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(
-            NewPublicVirtualInterfaceAllocation newPublicVirtualInterfaceAllocation,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(NewPublicVirtualInterfaceAllocation newPublicVirtualInterfaceAllocation, StructuredJsonGenerator jsonGenerator) {
 
         if (newPublicVirtualInterfaceAllocation == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (newPublicVirtualInterfaceAllocation.getVirtualInterfaceName() != null) {
-                jsonGenerator.writeFieldName("virtualInterfaceName")
-                        .writeValue(
-                                newPublicVirtualInterfaceAllocation
-                                        .getVirtualInterfaceName());
+                jsonGenerator.writeFieldName("virtualInterfaceName").writeValue(newPublicVirtualInterfaceAllocation.getVirtualInterfaceName());
             }
             if (newPublicVirtualInterfaceAllocation.getVlan() != null) {
-                jsonGenerator.writeFieldName("vlan").writeValue(
-                        newPublicVirtualInterfaceAllocation.getVlan());
+                jsonGenerator.writeFieldName("vlan").writeValue(newPublicVirtualInterfaceAllocation.getVlan());
             }
             if (newPublicVirtualInterfaceAllocation.getAsn() != null) {
-                jsonGenerator.writeFieldName("asn").writeValue(
-                        newPublicVirtualInterfaceAllocation.getAsn());
+                jsonGenerator.writeFieldName("asn").writeValue(newPublicVirtualInterfaceAllocation.getAsn());
             }
             if (newPublicVirtualInterfaceAllocation.getAuthKey() != null) {
-                jsonGenerator.writeFieldName("authKey").writeValue(
-                        newPublicVirtualInterfaceAllocation.getAuthKey());
+                jsonGenerator.writeFieldName("authKey").writeValue(newPublicVirtualInterfaceAllocation.getAuthKey());
             }
             if (newPublicVirtualInterfaceAllocation.getAmazonAddress() != null) {
-                jsonGenerator.writeFieldName("amazonAddress").writeValue(
-                        newPublicVirtualInterfaceAllocation.getAmazonAddress());
+                jsonGenerator.writeFieldName("amazonAddress").writeValue(newPublicVirtualInterfaceAllocation.getAmazonAddress());
             }
             if (newPublicVirtualInterfaceAllocation.getCustomerAddress() != null) {
-                jsonGenerator.writeFieldName("customerAddress").writeValue(
-                        newPublicVirtualInterfaceAllocation
-                                .getCustomerAddress());
+                jsonGenerator.writeFieldName("customerAddress").writeValue(newPublicVirtualInterfaceAllocation.getCustomerAddress());
             }
 
             com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixesList = (com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>) newPublicVirtualInterfaceAllocation
                     .getRouteFilterPrefixes();
-            if (!routeFilterPrefixesList.isEmpty()
-                    || !routeFilterPrefixesList.isAutoConstruct()) {
+            if (!routeFilterPrefixesList.isEmpty() || !routeFilterPrefixesList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("routeFilterPrefixes");
                 jsonGenerator.writeStartArray();
                 for (RouteFilterPrefix routeFilterPrefixesListValue : routeFilterPrefixesList) {
                     if (routeFilterPrefixesListValue != null) {
 
-                        RouteFilterPrefixJsonMarshaller.getInstance().marshall(
-                                routeFilterPrefixesListValue, jsonGenerator);
+                        RouteFilterPrefixJsonMarshaller.getInstance().marshall(routeFilterPrefixesListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
@@ -92,8 +76,7 @@ public class NewPublicVirtualInterfaceAllocationJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

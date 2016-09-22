@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * DeleteArchiveRequest Marshaller
  */
-public class DeleteArchiveRequestMarshaller implements
-        Marshaller<Request<DeleteArchiveRequest>, DeleteArchiveRequest> {
+public class DeleteArchiveRequestMarshaller implements Marshaller<Request<DeleteArchiveRequest>, DeleteArchiveRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,36 +49,33 @@ public class DeleteArchiveRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DeleteArchiveRequest> marshall(
-            DeleteArchiveRequest deleteArchiveRequest) {
+    public Request<DeleteArchiveRequest> marshall(DeleteArchiveRequest deleteArchiveRequest) {
 
         if (deleteArchiveRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteArchiveRequest> request = new DefaultRequest<DeleteArchiveRequest>(
-                deleteArchiveRequest, "AmazonGlacier");
+        Request<DeleteArchiveRequest> request = new DefaultRequest<DeleteArchiveRequest>(deleteArchiveRequest, "AmazonGlacier");
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives/{archiveId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (deleteArchiveRequest.getAccountId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(deleteArchiveRequest
-                                .getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (deleteArchiveRequest.getVaultName() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(deleteArchiveRequest
-                                .getVaultName()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{archiveId}",
-                (deleteArchiveRequest.getArchiveId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(deleteArchiveRequest
-                                .getArchiveId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{accountId}",
+                        (deleteArchiveRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteArchiveRequest.getAccountId()),
+                                false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{vaultName}",
+                        (deleteArchiveRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteArchiveRequest.getVaultName()),
+                                false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{archiveId}",
+                        (deleteArchiveRequest.getArchiveId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteArchiveRequest.getArchiveId()),
+                                false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model;
 
@@ -22,35 +20,29 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of an acknowledge job action.
  * </p>
  */
-public class AcknowledgeJobRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class AcknowledgeJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique system-generated ID of the job for which you want to confirm
-     * receipt.
+     * The unique system-generated ID of the job for which you want to confirm receipt.
      * </p>
      */
     private String jobId;
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure
-     * that the job is being worked on by only one job worker. This number must
-     * be returned in the response.
+     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
+     * job worker. This number must be returned in the response.
      * </p>
      */
     private String nonce;
 
     /**
      * <p>
-     * The unique system-generated ID of the job for which you want to confirm
-     * receipt.
+     * The unique system-generated ID of the job for which you want to confirm receipt.
      * </p>
      * 
      * @param jobId
-     *        The unique system-generated ID of the job for which you want to
-     *        confirm receipt.
+     *        The unique system-generated ID of the job for which you want to confirm receipt.
      */
 
     public void setJobId(String jobId) {
@@ -59,12 +51,10 @@ public class AcknowledgeJobRequest extends
 
     /**
      * <p>
-     * The unique system-generated ID of the job for which you want to confirm
-     * receipt.
+     * The unique system-generated ID of the job for which you want to confirm receipt.
      * </p>
      * 
-     * @return The unique system-generated ID of the job for which you want to
-     *         confirm receipt.
+     * @return The unique system-generated ID of the job for which you want to confirm receipt.
      */
 
     public String getJobId() {
@@ -73,15 +63,12 @@ public class AcknowledgeJobRequest extends
 
     /**
      * <p>
-     * The unique system-generated ID of the job for which you want to confirm
-     * receipt.
+     * The unique system-generated ID of the job for which you want to confirm receipt.
      * </p>
      * 
      * @param jobId
-     *        The unique system-generated ID of the job for which you want to
-     *        confirm receipt.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The unique system-generated ID of the job for which you want to confirm receipt.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AcknowledgeJobRequest withJobId(String jobId) {
@@ -91,15 +78,13 @@ public class AcknowledgeJobRequest extends
 
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure
-     * that the job is being worked on by only one job worker. This number must
-     * be returned in the response.
+     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
+     * job worker. This number must be returned in the response.
      * </p>
      * 
      * @param nonce
-     *        A system-generated random number that AWS CodePipeline uses to
-     *        ensure that the job is being worked on by only one job worker.
-     *        This number must be returned in the response.
+     *        A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
+     *        only one job worker. This number must be returned in the response.
      */
 
     public void setNonce(String nonce) {
@@ -108,14 +93,12 @@ public class AcknowledgeJobRequest extends
 
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure
-     * that the job is being worked on by only one job worker. This number must
-     * be returned in the response.
+     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
+     * job worker. This number must be returned in the response.
      * </p>
      * 
-     * @return A system-generated random number that AWS CodePipeline uses to
-     *         ensure that the job is being worked on by only one job worker.
-     *         This number must be returned in the response.
+     * @return A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
+     *         only one job worker. This number must be returned in the response.
      */
 
     public String getNonce() {
@@ -124,17 +107,14 @@ public class AcknowledgeJobRequest extends
 
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure
-     * that the job is being worked on by only one job worker. This number must
-     * be returned in the response.
+     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
+     * job worker. This number must be returned in the response.
      * </p>
      * 
      * @param nonce
-     *        A system-generated random number that AWS CodePipeline uses to
-     *        ensure that the job is being worked on by only one job worker.
-     *        This number must be returned in the response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
+     *        only one job worker. This number must be returned in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AcknowledgeJobRequest withNonce(String nonce) {
@@ -143,8 +123,7 @@ public class AcknowledgeJobRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -174,13 +153,11 @@ public class AcknowledgeJobRequest extends
         AcknowledgeJobRequest other = (AcknowledgeJobRequest) obj;
         if (other.getJobId() == null ^ this.getJobId() == null)
             return false;
-        if (other.getJobId() != null
-                && other.getJobId().equals(this.getJobId()) == false)
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
         if (other.getNonce() == null ^ this.getNonce() == null)
             return false;
-        if (other.getNonce() != null
-                && other.getNonce().equals(this.getNonce()) == false)
+        if (other.getNonce() != null && other.getNonce().equals(this.getNonce()) == false)
             return false;
         return true;
     }
@@ -190,10 +167,8 @@ public class AcknowledgeJobRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJobId() == null) ? 0 : getJobId().hashCode());
-        hashCode = prime * hashCode
-                + ((getNonce() == null) ? 0 : getNonce().hashCode());
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getNonce() == null) ? 0 : getNonce().hashCode());
         return hashCode;
     }
 

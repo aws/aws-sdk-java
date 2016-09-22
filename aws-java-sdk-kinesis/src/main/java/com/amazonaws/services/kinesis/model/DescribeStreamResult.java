@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesis.model;
 
@@ -21,30 +19,25 @@ import java.io.Serializable;
  * Represents the output for <code>DescribeStream</code>.
  * </p>
  */
-public class DescribeStreamResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeStreamResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current status of the stream, the stream ARN, an array of shard
-     * objects that comprise the stream, and states whether there are more
-     * shards available.
+     * The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and states
+     * whether there are more shards available.
      * </p>
      */
     private StreamDescription streamDescription;
 
     /**
      * <p>
-     * The current status of the stream, the stream ARN, an array of shard
-     * objects that comprise the stream, and states whether there are more
-     * shards available.
+     * The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and states
+     * whether there are more shards available.
      * </p>
      * 
      * @param streamDescription
-     *        The current status of the stream, the stream ARN, an array of
-     *        shard objects that comprise the stream, and states whether there
-     *        are more shards available.
+     *        The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and
+     *        states whether there are more shards available.
      */
 
     public void setStreamDescription(StreamDescription streamDescription) {
@@ -53,14 +46,12 @@ public class DescribeStreamResult extends
 
     /**
      * <p>
-     * The current status of the stream, the stream ARN, an array of shard
-     * objects that comprise the stream, and states whether there are more
-     * shards available.
+     * The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and states
+     * whether there are more shards available.
      * </p>
      * 
-     * @return The current status of the stream, the stream ARN, an array of
-     *         shard objects that comprise the stream, and states whether there
-     *         are more shards available.
+     * @return The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and
+     *         states whether there are more shards available.
      */
 
     public StreamDescription getStreamDescription() {
@@ -69,28 +60,23 @@ public class DescribeStreamResult extends
 
     /**
      * <p>
-     * The current status of the stream, the stream ARN, an array of shard
-     * objects that comprise the stream, and states whether there are more
-     * shards available.
+     * The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and states
+     * whether there are more shards available.
      * </p>
      * 
      * @param streamDescription
-     *        The current status of the stream, the stream ARN, an array of
-     *        shard objects that comprise the stream, and states whether there
-     *        are more shards available.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and
+     *        states whether there are more shards available.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeStreamResult withStreamDescription(
-            StreamDescription streamDescription) {
+    public DescribeStreamResult withStreamDescription(StreamDescription streamDescription) {
         setStreamDescription(streamDescription);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -116,12 +102,9 @@ public class DescribeStreamResult extends
         if (obj instanceof DescribeStreamResult == false)
             return false;
         DescribeStreamResult other = (DescribeStreamResult) obj;
-        if (other.getStreamDescription() == null
-                ^ this.getStreamDescription() == null)
+        if (other.getStreamDescription() == null ^ this.getStreamDescription() == null)
             return false;
-        if (other.getStreamDescription() != null
-                && other.getStreamDescription().equals(
-                        this.getStreamDescription()) == false)
+        if (other.getStreamDescription() != null && other.getStreamDescription().equals(this.getStreamDescription()) == false)
             return false;
         return true;
     }
@@ -131,10 +114,7 @@ public class DescribeStreamResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getStreamDescription() == null) ? 0
-                        : getStreamDescription().hashCode());
+        hashCode = prime * hashCode + ((getStreamDescription() == null) ? 0 : getStreamDescription().hashCode());
         return hashCode;
     }
 
@@ -143,9 +123,7 @@ public class DescribeStreamResult extends
         try {
             return (DescribeStreamResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

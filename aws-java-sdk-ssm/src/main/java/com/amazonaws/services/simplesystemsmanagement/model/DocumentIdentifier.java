@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
@@ -74,8 +72,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the SSM document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DocumentIdentifier withName(String name) {
@@ -115,8 +112,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      * 
      * @param owner
      *        The AWS user account of the person who created the document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DocumentIdentifier withOwner(String owner) {
@@ -156,8 +152,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
             return;
         }
 
-        this.platformTypes = new com.amazonaws.internal.SdkInternalList<String>(
-                platformTypes);
+        this.platformTypes = new com.amazonaws.internal.SdkInternalList<String>(platformTypes);
     }
 
     /**
@@ -165,23 +160,20 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      * The operating system platform.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPlatformTypes(java.util.Collection)} or
-     * {@link #withPlatformTypes(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlatformTypes(java.util.Collection)} or {@link #withPlatformTypes(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param platformTypes
      *        The operating system platform.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformType
      */
 
     public DocumentIdentifier withPlatformTypes(String... platformTypes) {
         if (this.platformTypes == null) {
-            setPlatformTypes(new com.amazonaws.internal.SdkInternalList<String>(
-                    platformTypes.length));
+            setPlatformTypes(new com.amazonaws.internal.SdkInternalList<String>(platformTypes.length));
         }
         for (String ele : platformTypes) {
             this.platformTypes.add(ele);
@@ -196,13 +188,11 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      * 
      * @param platformTypes
      *        The operating system platform.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformType
      */
 
-    public DocumentIdentifier withPlatformTypes(
-            java.util.Collection<String> platformTypes) {
+    public DocumentIdentifier withPlatformTypes(java.util.Collection<String> platformTypes) {
         setPlatformTypes(platformTypes);
         return this;
     }
@@ -214,14 +204,12 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      * 
      * @param platformTypes
      *        The operating system platform.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformType
      */
 
     public DocumentIdentifier withPlatformTypes(PlatformType... platformTypes) {
-        com.amazonaws.internal.SdkInternalList<String> platformTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                platformTypes.length);
+        com.amazonaws.internal.SdkInternalList<String> platformTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(platformTypes.length);
         for (PlatformType value : platformTypes) {
             platformTypesCopy.add(value.toString());
         }
@@ -234,8 +222,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -267,18 +254,15 @@ public class DocumentIdentifier implements Serializable, Cloneable {
         DocumentIdentifier other = (DocumentIdentifier) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getOwner() == null ^ this.getOwner() == null)
             return false;
-        if (other.getOwner() != null
-                && other.getOwner().equals(this.getOwner()) == false)
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
             return false;
         if (other.getPlatformTypes() == null ^ this.getPlatformTypes() == null)
             return false;
-        if (other.getPlatformTypes() != null
-                && other.getPlatformTypes().equals(this.getPlatformTypes()) == false)
+        if (other.getPlatformTypes() != null && other.getPlatformTypes().equals(this.getPlatformTypes()) == false)
             return false;
         return true;
     }
@@ -288,14 +272,9 @@ public class DocumentIdentifier implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getOwner() == null) ? 0 : getOwner().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPlatformTypes() == null) ? 0 : getPlatformTypes()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
+        hashCode = prime * hashCode + ((getPlatformTypes() == null) ? 0 : getPlatformTypes().hashCode());
         return hashCode;
     }
 
@@ -304,9 +283,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
         try {
             return (DocumentIdentifier) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

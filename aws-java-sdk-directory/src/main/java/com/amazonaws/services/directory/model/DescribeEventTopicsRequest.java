@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model;
 
@@ -22,40 +20,35 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes event topics.
  * </p>
  */
-public class DescribeEventTopicsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeEventTopicsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Directory ID for which to get the list of associated SNS topics. If
-     * this member is null, associations for all Directory IDs are returned.
+     * The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all
+     * Directory IDs are returned.
      * </p>
      */
     private String directoryId;
     /**
      * <p>
-     * A list of SNS topic names for which to obtain the information. If this
-     * member is null, all associations for the specified Directory ID are
-     * returned.
+     * A list of SNS topic names for which to obtain the information. If this member is null, all associations for the
+     * specified Directory ID are returned.
      * </p>
      * <p>
-     * An empty list results in an <code>InvalidParameterException</code> being
-     * thrown.
+     * An empty list results in an <code>InvalidParameterException</code> being thrown.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> topicNames;
 
     /**
      * <p>
-     * The Directory ID for which to get the list of associated SNS topics. If
-     * this member is null, associations for all Directory IDs are returned.
+     * The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all
+     * Directory IDs are returned.
      * </p>
      * 
      * @param directoryId
-     *        The Directory ID for which to get the list of associated SNS
-     *        topics. If this member is null, associations for all Directory IDs
-     *        are returned.
+     *        The Directory ID for which to get the list of associated SNS topics. If this member is null, associations
+     *        for all Directory IDs are returned.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -64,13 +57,12 @@ public class DescribeEventTopicsRequest extends
 
     /**
      * <p>
-     * The Directory ID for which to get the list of associated SNS topics. If
-     * this member is null, associations for all Directory IDs are returned.
+     * The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all
+     * Directory IDs are returned.
      * </p>
      * 
-     * @return The Directory ID for which to get the list of associated SNS
-     *         topics. If this member is null, associations for all Directory
-     *         IDs are returned.
+     * @return The Directory ID for which to get the list of associated SNS topics. If this member is null, associations
+     *         for all Directory IDs are returned.
      */
 
     public String getDirectoryId() {
@@ -79,16 +71,14 @@ public class DescribeEventTopicsRequest extends
 
     /**
      * <p>
-     * The Directory ID for which to get the list of associated SNS topics. If
-     * this member is null, associations for all Directory IDs are returned.
+     * The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all
+     * Directory IDs are returned.
      * </p>
      * 
      * @param directoryId
-     *        The Directory ID for which to get the list of associated SNS
-     *        topics. If this member is null, associations for all Directory IDs
-     *        are returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Directory ID for which to get the list of associated SNS topics. If this member is null, associations
+     *        for all Directory IDs are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEventTopicsRequest withDirectoryId(String directoryId) {
@@ -98,21 +88,17 @@ public class DescribeEventTopicsRequest extends
 
     /**
      * <p>
-     * A list of SNS topic names for which to obtain the information. If this
-     * member is null, all associations for the specified Directory ID are
-     * returned.
+     * A list of SNS topic names for which to obtain the information. If this member is null, all associations for the
+     * specified Directory ID are returned.
      * </p>
      * <p>
-     * An empty list results in an <code>InvalidParameterException</code> being
-     * thrown.
+     * An empty list results in an <code>InvalidParameterException</code> being thrown.
      * </p>
      * 
-     * @return A list of SNS topic names for which to obtain the information. If
-     *         this member is null, all associations for the specified Directory
-     *         ID are returned.</p>
+     * @return A list of SNS topic names for which to obtain the information. If this member is null, all associations
+     *         for the specified Directory ID are returned.</p>
      *         <p>
-     *         An empty list results in an
-     *         <code>InvalidParameterException</code> being thrown.
+     *         An empty list results in an <code>InvalidParameterException</code> being thrown.
      */
 
     public java.util.List<String> getTopicNames() {
@@ -124,22 +110,18 @@ public class DescribeEventTopicsRequest extends
 
     /**
      * <p>
-     * A list of SNS topic names for which to obtain the information. If this
-     * member is null, all associations for the specified Directory ID are
-     * returned.
+     * A list of SNS topic names for which to obtain the information. If this member is null, all associations for the
+     * specified Directory ID are returned.
      * </p>
      * <p>
-     * An empty list results in an <code>InvalidParameterException</code> being
-     * thrown.
+     * An empty list results in an <code>InvalidParameterException</code> being thrown.
      * </p>
      * 
      * @param topicNames
-     *        A list of SNS topic names for which to obtain the information. If
-     *        this member is null, all associations for the specified Directory
-     *        ID are returned.</p>
+     *        A list of SNS topic names for which to obtain the information. If this member is null, all associations
+     *        for the specified Directory ID are returned.</p>
      *        <p>
-     *        An empty list results in an <code>InvalidParameterException</code>
-     *        being thrown.
+     *        An empty list results in an <code>InvalidParameterException</code> being thrown.
      */
 
     public void setTopicNames(java.util.Collection<String> topicNames) {
@@ -148,42 +130,34 @@ public class DescribeEventTopicsRequest extends
             return;
         }
 
-        this.topicNames = new com.amazonaws.internal.SdkInternalList<String>(
-                topicNames);
+        this.topicNames = new com.amazonaws.internal.SdkInternalList<String>(topicNames);
     }
 
     /**
      * <p>
-     * A list of SNS topic names for which to obtain the information. If this
-     * member is null, all associations for the specified Directory ID are
-     * returned.
+     * A list of SNS topic names for which to obtain the information. If this member is null, all associations for the
+     * specified Directory ID are returned.
      * </p>
      * <p>
-     * An empty list results in an <code>InvalidParameterException</code> being
-     * thrown.
+     * An empty list results in an <code>InvalidParameterException</code> being thrown.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTopicNames(java.util.Collection)} or
-     * {@link #withTopicNames(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTopicNames(java.util.Collection)} or {@link #withTopicNames(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param topicNames
-     *        A list of SNS topic names for which to obtain the information. If
-     *        this member is null, all associations for the specified Directory
-     *        ID are returned.</p>
+     *        A list of SNS topic names for which to obtain the information. If this member is null, all associations
+     *        for the specified Directory ID are returned.</p>
      *        <p>
-     *        An empty list results in an <code>InvalidParameterException</code>
-     *        being thrown.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An empty list results in an <code>InvalidParameterException</code> being thrown.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEventTopicsRequest withTopicNames(String... topicNames) {
         if (this.topicNames == null) {
-            setTopicNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    topicNames.length));
+            setTopicNames(new com.amazonaws.internal.SdkInternalList<String>(topicNames.length));
         }
         for (String ele : topicNames) {
             this.topicNames.add(ele);
@@ -193,35 +167,28 @@ public class DescribeEventTopicsRequest extends
 
     /**
      * <p>
-     * A list of SNS topic names for which to obtain the information. If this
-     * member is null, all associations for the specified Directory ID are
-     * returned.
+     * A list of SNS topic names for which to obtain the information. If this member is null, all associations for the
+     * specified Directory ID are returned.
      * </p>
      * <p>
-     * An empty list results in an <code>InvalidParameterException</code> being
-     * thrown.
+     * An empty list results in an <code>InvalidParameterException</code> being thrown.
      * </p>
      * 
      * @param topicNames
-     *        A list of SNS topic names for which to obtain the information. If
-     *        this member is null, all associations for the specified Directory
-     *        ID are returned.</p>
+     *        A list of SNS topic names for which to obtain the information. If this member is null, all associations
+     *        for the specified Directory ID are returned.</p>
      *        <p>
-     *        An empty list results in an <code>InvalidParameterException</code>
-     *        being thrown.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An empty list results in an <code>InvalidParameterException</code> being thrown.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEventTopicsRequest withTopicNames(
-            java.util.Collection<String> topicNames) {
+    public DescribeEventTopicsRequest withTopicNames(java.util.Collection<String> topicNames) {
         setTopicNames(topicNames);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -251,13 +218,11 @@ public class DescribeEventTopicsRequest extends
         DescribeEventTopicsRequest other = (DescribeEventTopicsRequest) obj;
         if (other.getDirectoryId() == null ^ this.getDirectoryId() == null)
             return false;
-        if (other.getDirectoryId() != null
-                && other.getDirectoryId().equals(this.getDirectoryId()) == false)
+        if (other.getDirectoryId() != null && other.getDirectoryId().equals(this.getDirectoryId()) == false)
             return false;
         if (other.getTopicNames() == null ^ this.getTopicNames() == null)
             return false;
-        if (other.getTopicNames() != null
-                && other.getTopicNames().equals(this.getTopicNames()) == false)
+        if (other.getTopicNames() != null && other.getTopicNames().equals(this.getTopicNames()) == false)
             return false;
         return true;
     }
@@ -267,11 +232,8 @@ public class DescribeEventTopicsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTopicNames() == null) ? 0 : getTopicNames().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getTopicNames() == null) ? 0 : getTopicNames().hashCode());
         return hashCode;
     }
 

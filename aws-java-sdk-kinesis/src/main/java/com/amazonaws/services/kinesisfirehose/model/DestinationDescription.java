@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisfirehose.model;
 
@@ -80,8 +78,7 @@ public class DestinationDescription implements Serializable, Cloneable {
      * 
      * @param destinationId
      *        The ID of the destination.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DestinationDescription withDestinationId(String destinationId) {
@@ -98,8 +95,7 @@ public class DestinationDescription implements Serializable, Cloneable {
      *        The Amazon S3 destination.
      */
 
-    public void setS3DestinationDescription(
-            S3DestinationDescription s3DestinationDescription) {
+    public void setS3DestinationDescription(S3DestinationDescription s3DestinationDescription) {
         this.s3DestinationDescription = s3DestinationDescription;
     }
 
@@ -122,12 +118,10 @@ public class DestinationDescription implements Serializable, Cloneable {
      * 
      * @param s3DestinationDescription
      *        The Amazon S3 destination.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DestinationDescription withS3DestinationDescription(
-            S3DestinationDescription s3DestinationDescription) {
+    public DestinationDescription withS3DestinationDescription(S3DestinationDescription s3DestinationDescription) {
         setS3DestinationDescription(s3DestinationDescription);
         return this;
     }
@@ -141,8 +135,7 @@ public class DestinationDescription implements Serializable, Cloneable {
      *        The destination in Amazon Redshift.
      */
 
-    public void setRedshiftDestinationDescription(
-            RedshiftDestinationDescription redshiftDestinationDescription) {
+    public void setRedshiftDestinationDescription(RedshiftDestinationDescription redshiftDestinationDescription) {
         this.redshiftDestinationDescription = redshiftDestinationDescription;
     }
 
@@ -165,12 +158,10 @@ public class DestinationDescription implements Serializable, Cloneable {
      * 
      * @param redshiftDestinationDescription
      *        The destination in Amazon Redshift.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DestinationDescription withRedshiftDestinationDescription(
-            RedshiftDestinationDescription redshiftDestinationDescription) {
+    public DestinationDescription withRedshiftDestinationDescription(RedshiftDestinationDescription redshiftDestinationDescription) {
         setRedshiftDestinationDescription(redshiftDestinationDescription);
         return this;
     }
@@ -184,8 +175,7 @@ public class DestinationDescription implements Serializable, Cloneable {
      *        The destination in Amazon ES.
      */
 
-    public void setElasticsearchDestinationDescription(
-            ElasticsearchDestinationDescription elasticsearchDestinationDescription) {
+    public void setElasticsearchDestinationDescription(ElasticsearchDestinationDescription elasticsearchDestinationDescription) {
         this.elasticsearchDestinationDescription = elasticsearchDestinationDescription;
     }
 
@@ -208,19 +198,16 @@ public class DestinationDescription implements Serializable, Cloneable {
      * 
      * @param elasticsearchDestinationDescription
      *        The destination in Amazon ES.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DestinationDescription withElasticsearchDestinationDescription(
-            ElasticsearchDestinationDescription elasticsearchDestinationDescription) {
+    public DestinationDescription withElasticsearchDestinationDescription(ElasticsearchDestinationDescription elasticsearchDestinationDescription) {
         setElasticsearchDestinationDescription(elasticsearchDestinationDescription);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -233,14 +220,11 @@ public class DestinationDescription implements Serializable, Cloneable {
         if (getDestinationId() != null)
             sb.append("DestinationId: " + getDestinationId() + ",");
         if (getS3DestinationDescription() != null)
-            sb.append("S3DestinationDescription: "
-                    + getS3DestinationDescription() + ",");
+            sb.append("S3DestinationDescription: " + getS3DestinationDescription() + ",");
         if (getRedshiftDestinationDescription() != null)
-            sb.append("RedshiftDestinationDescription: "
-                    + getRedshiftDestinationDescription() + ",");
+            sb.append("RedshiftDestinationDescription: " + getRedshiftDestinationDescription() + ",");
         if (getElasticsearchDestinationDescription() != null)
-            sb.append("ElasticsearchDestinationDescription: "
-                    + getElasticsearchDestinationDescription());
+            sb.append("ElasticsearchDestinationDescription: " + getElasticsearchDestinationDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -257,29 +241,21 @@ public class DestinationDescription implements Serializable, Cloneable {
         DestinationDescription other = (DestinationDescription) obj;
         if (other.getDestinationId() == null ^ this.getDestinationId() == null)
             return false;
-        if (other.getDestinationId() != null
-                && other.getDestinationId().equals(this.getDestinationId()) == false)
+        if (other.getDestinationId() != null && other.getDestinationId().equals(this.getDestinationId()) == false)
             return false;
-        if (other.getS3DestinationDescription() == null
-                ^ this.getS3DestinationDescription() == null)
+        if (other.getS3DestinationDescription() == null ^ this.getS3DestinationDescription() == null)
             return false;
-        if (other.getS3DestinationDescription() != null
-                && other.getS3DestinationDescription().equals(
-                        this.getS3DestinationDescription()) == false)
+        if (other.getS3DestinationDescription() != null && other.getS3DestinationDescription().equals(this.getS3DestinationDescription()) == false)
             return false;
-        if (other.getRedshiftDestinationDescription() == null
-                ^ this.getRedshiftDestinationDescription() == null)
+        if (other.getRedshiftDestinationDescription() == null ^ this.getRedshiftDestinationDescription() == null)
             return false;
         if (other.getRedshiftDestinationDescription() != null
-                && other.getRedshiftDestinationDescription().equals(
-                        this.getRedshiftDestinationDescription()) == false)
+                && other.getRedshiftDestinationDescription().equals(this.getRedshiftDestinationDescription()) == false)
             return false;
-        if (other.getElasticsearchDestinationDescription() == null
-                ^ this.getElasticsearchDestinationDescription() == null)
+        if (other.getElasticsearchDestinationDescription() == null ^ this.getElasticsearchDestinationDescription() == null)
             return false;
         if (other.getElasticsearchDestinationDescription() != null
-                && other.getElasticsearchDestinationDescription().equals(
-                        this.getElasticsearchDestinationDescription()) == false)
+                && other.getElasticsearchDestinationDescription().equals(this.getElasticsearchDestinationDescription()) == false)
             return false;
         return true;
     }
@@ -289,22 +265,10 @@ public class DestinationDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDestinationId() == null) ? 0 : getDestinationId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getS3DestinationDescription() == null) ? 0
-                        : getS3DestinationDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRedshiftDestinationDescription() == null) ? 0
-                        : getRedshiftDestinationDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getElasticsearchDestinationDescription() == null) ? 0
-                        : getElasticsearchDestinationDescription().hashCode());
+        hashCode = prime * hashCode + ((getDestinationId() == null) ? 0 : getDestinationId().hashCode());
+        hashCode = prime * hashCode + ((getS3DestinationDescription() == null) ? 0 : getS3DestinationDescription().hashCode());
+        hashCode = prime * hashCode + ((getRedshiftDestinationDescription() == null) ? 0 : getRedshiftDestinationDescription().hashCode());
+        hashCode = prime * hashCode + ((getElasticsearchDestinationDescription() == null) ? 0 : getElasticsearchDestinationDescription().hashCode());
         return hashCode;
     }
 
@@ -313,9 +277,7 @@ public class DestinationDescription implements Serializable, Cloneable {
         try {
             return (DestinationDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

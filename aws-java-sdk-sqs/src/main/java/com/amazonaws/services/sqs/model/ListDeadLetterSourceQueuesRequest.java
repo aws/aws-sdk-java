@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class ListDeadLetterSourceQueuesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,17 +31,15 @@ public class ListDeadLetterSourceQueuesRequest extends
     private String queueUrl;
 
     /**
-     * Default constructor for ListDeadLetterSourceQueuesRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * the object after creating it.
+     * Default constructor for ListDeadLetterSourceQueuesRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public ListDeadLetterSourceQueuesRequest() {
     }
 
     /**
-     * Constructs a new ListDeadLetterSourceQueuesRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new ListDeadLetterSourceQueuesRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize any additional object members.
      * 
      * @param queueUrl
      *        The queue URL of a dead letter queue.</p>
@@ -103,8 +97,7 @@ public class ListDeadLetterSourceQueuesRequest extends
      *        The queue URL of a dead letter queue.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDeadLetterSourceQueuesRequest withQueueUrl(String queueUrl) {
@@ -113,8 +106,7 @@ public class ListDeadLetterSourceQueuesRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -142,8 +134,7 @@ public class ListDeadLetterSourceQueuesRequest extends
         ListDeadLetterSourceQueuesRequest other = (ListDeadLetterSourceQueuesRequest) obj;
         if (other.getQueueUrl() == null ^ this.getQueueUrl() == null)
             return false;
-        if (other.getQueueUrl() != null
-                && other.getQueueUrl().equals(this.getQueueUrl()) == false)
+        if (other.getQueueUrl() != null && other.getQueueUrl().equals(this.getQueueUrl()) == false)
             return false;
         return true;
     }
@@ -153,8 +144,7 @@ public class ListDeadLetterSourceQueuesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getQueueUrl() == null) ? 0 : getQueueUrl().hashCode());
+        hashCode = prime * hashCode + ((getQueueUrl() == null) ? 0 : getQueueUrl().hashCode());
         return hashCode;
     }
 

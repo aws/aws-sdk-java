@@ -187,7 +187,7 @@ final class DownloadCallable implements Callable<File> {
             getPartRequest.setRequesterPays(req.isRequesterPays());
 
             futureFiles.add(
-                    executor.submit(new DownloadPartCallable(s3, getPartRequest.withPartNumber(i), dstfile.getName())));
+                    executor.submit(new DownloadPartCallable(s3, getPartRequest.withPartNumber(i), dstfile)));
         }
 
         combineFiles();
@@ -199,8 +199,16 @@ final class DownloadCallable implements Callable<File> {
     private void combineFiles() throws Exception {
         truncateDestinationFileIfNecessary();
         for (Future<File> f : futureFiles) {
-            ServiceUtils.appendFile(f.get(), dstfile);
+            File partFile = f.get();
+            ServiceUtils.appendFile(partFile, dstfile);
             download.updatePersistableTransfer(++lastFullyMergedPartNumber);
+            try {
+                if (!partFile.delete()) {
+                    LOG.warn("The file " + partFile.getAbsolutePath() + " could not be deleted.");
+                }
+            } catch (SecurityException exception) {
+                LOG.warn("SecurityException denied delete access to file " + partFile.getAbsolutePath());
+            }
         }
     }
 

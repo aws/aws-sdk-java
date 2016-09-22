@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -22,18 +20,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to terminate an environment.
  * </p>
  */
-public class TerminateEnvironmentRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The ID of the environment to terminate.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentName, or both.
-     * If you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      */
     private String environmentId;
@@ -42,28 +37,24 @@ public class TerminateEnvironmentRequest extends
      * The name of the environment to terminate.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentId, or both. If
-     * you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      */
     private String environmentName;
     /**
      * <p>
-     * Indicates whether the associated AWS resources should shut down when the
-     * environment is terminated:
+     * Indicates whether the associated AWS resources should shut down when the environment is terminated:
      * </p>
      * <ul>
-     * <li> <code>true</code>: The specified environment as well as the
-     * associated AWS resources, such as Auto Scaling group and LoadBalancer,
-     * are terminated.</li>
-     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is
-     * removed from the environment, but the AWS resources continue to operate.</li>
+     * <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling
+     * group and LoadBalancer, are terminated.</li>
+     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
+     * resources continue to operate.</li>
      * </ul>
      * <p>
-     * For more information, see the <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
-     * Elastic Beanstalk User Guide. </a>
+     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * Beanstalk User Guide. </a>
      * </p>
      * <p>
      * Default: <code>true</code>
@@ -75,8 +66,7 @@ public class TerminateEnvironmentRequest extends
     private Boolean terminateResources;
     /**
      * <p>
-     * Terminates the target environment even if another environment in the same
-     * group is dependent on it.
+     * Terminates the target environment even if another environment in the same group is dependent on it.
      * </p>
      */
     private Boolean forceTerminate;
@@ -86,17 +76,15 @@ public class TerminateEnvironmentRequest extends
      * The ID of the environment to terminate.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentName, or both.
-     * If you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
      * @param environmentId
      *        The ID of the environment to terminate.</p>
      *        <p>
-     *        Condition: You must specify either this or an EnvironmentName, or
-     *        both. If you do not specify either, AWS Elastic Beanstalk returns
-     *        <code>MissingRequiredParameter</code> error.
+     *        Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS
+     *        Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
      */
 
     public void setEnvironmentId(String environmentId) {
@@ -108,16 +96,14 @@ public class TerminateEnvironmentRequest extends
      * The ID of the environment to terminate.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentName, or both.
-     * If you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
      * @return The ID of the environment to terminate.</p>
      *         <p>
-     *         Condition: You must specify either this or an EnvironmentName, or
-     *         both. If you do not specify either, AWS Elastic Beanstalk returns
-     *         <code>MissingRequiredParameter</code> error.
+     *         Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS
+     *         Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
      */
 
     public String getEnvironmentId() {
@@ -129,19 +115,16 @@ public class TerminateEnvironmentRequest extends
      * The ID of the environment to terminate.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentName, or both.
-     * If you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
      * @param environmentId
      *        The ID of the environment to terminate.</p>
      *        <p>
-     *        Condition: You must specify either this or an EnvironmentName, or
-     *        both. If you do not specify either, AWS Elastic Beanstalk returns
-     *        <code>MissingRequiredParameter</code> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS
+     *        Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TerminateEnvironmentRequest withEnvironmentId(String environmentId) {
@@ -154,17 +137,15 @@ public class TerminateEnvironmentRequest extends
      * The name of the environment to terminate.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentId, or both. If
-     * you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
      * @param environmentName
      *        The name of the environment to terminate.</p>
      *        <p>
-     *        Condition: You must specify either this or an EnvironmentId, or
-     *        both. If you do not specify either, AWS Elastic Beanstalk returns
-     *        <code>MissingRequiredParameter</code> error.
+     *        Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS
+     *        Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
      */
 
     public void setEnvironmentName(String environmentName) {
@@ -176,16 +157,14 @@ public class TerminateEnvironmentRequest extends
      * The name of the environment to terminate.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentId, or both. If
-     * you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
      * @return The name of the environment to terminate.</p>
      *         <p>
-     *         Condition: You must specify either this or an EnvironmentId, or
-     *         both. If you do not specify either, AWS Elastic Beanstalk returns
-     *         <code>MissingRequiredParameter</code> error.
+     *         Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS
+     *         Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
      */
 
     public String getEnvironmentName() {
@@ -197,43 +176,36 @@ public class TerminateEnvironmentRequest extends
      * The name of the environment to terminate.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentId, or both. If
-     * you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
      * @param environmentName
      *        The name of the environment to terminate.</p>
      *        <p>
-     *        Condition: You must specify either this or an EnvironmentId, or
-     *        both. If you do not specify either, AWS Elastic Beanstalk returns
-     *        <code>MissingRequiredParameter</code> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS
+     *        Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TerminateEnvironmentRequest withEnvironmentName(
-            String environmentName) {
+    public TerminateEnvironmentRequest withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the associated AWS resources should shut down when the
-     * environment is terminated:
+     * Indicates whether the associated AWS resources should shut down when the environment is terminated:
      * </p>
      * <ul>
-     * <li> <code>true</code>: The specified environment as well as the
-     * associated AWS resources, such as Auto Scaling group and LoadBalancer,
-     * are terminated.</li>
-     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is
-     * removed from the environment, but the AWS resources continue to operate.</li>
+     * <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling
+     * group and LoadBalancer, are terminated.</li>
+     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
+     * resources continue to operate.</li>
      * </ul>
      * <p>
-     * For more information, see the <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
-     * Elastic Beanstalk User Guide. </a>
+     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * Beanstalk User Guide. </a>
      * </p>
      * <p>
      * Default: <code>true</code>
@@ -243,19 +215,15 @@ public class TerminateEnvironmentRequest extends
      * </p>
      * 
      * @param terminateResources
-     *        Indicates whether the associated AWS resources should shut down
-     *        when the environment is terminated: </p>
+     *        Indicates whether the associated AWS resources should shut down when the environment is terminated: </p>
      *        <ul>
-     *        <li> <code>true</code>: The specified environment as well as the
-     *        associated AWS resources, such as Auto Scaling group and
-     *        LoadBalancer, are terminated.</li>
-     *        <li> <code>false</code>: AWS Elastic Beanstalk resource management
-     *        is removed from the environment, but the AWS resources continue to
-     *        operate.</li>
+     *        <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto
+     *        Scaling group and LoadBalancer, are terminated.</li>
+     *        <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the
+     *        AWS resources continue to operate.</li>
      *        </ul>
      *        <p>
-     *        For more information, see the <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     *        For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
      *        Elastic Beanstalk User Guide. </a>
      *        </p>
      *        <p>
@@ -271,20 +239,17 @@ public class TerminateEnvironmentRequest extends
 
     /**
      * <p>
-     * Indicates whether the associated AWS resources should shut down when the
-     * environment is terminated:
+     * Indicates whether the associated AWS resources should shut down when the environment is terminated:
      * </p>
      * <ul>
-     * <li> <code>true</code>: The specified environment as well as the
-     * associated AWS resources, such as Auto Scaling group and LoadBalancer,
-     * are terminated.</li>
-     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is
-     * removed from the environment, but the AWS resources continue to operate.</li>
+     * <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling
+     * group and LoadBalancer, are terminated.</li>
+     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
+     * resources continue to operate.</li>
      * </ul>
      * <p>
-     * For more information, see the <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
-     * Elastic Beanstalk User Guide. </a>
+     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * Beanstalk User Guide. </a>
      * </p>
      * <p>
      * Default: <code>true</code>
@@ -293,20 +258,16 @@ public class TerminateEnvironmentRequest extends
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the associated AWS resources should shut down
-     *         when the environment is terminated: </p>
+     * @return Indicates whether the associated AWS resources should shut down when the environment is terminated: </p>
      *         <ul>
-     *         <li> <code>true</code>: The specified environment as well as the
-     *         associated AWS resources, such as Auto Scaling group and
-     *         LoadBalancer, are terminated.</li>
-     *         <li> <code>false</code>: AWS Elastic Beanstalk resource management
-     *         is removed from the environment, but the AWS resources continue
-     *         to operate.</li>
+     *         <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto
+     *         Scaling group and LoadBalancer, are terminated.</li>
+     *         <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but
+     *         the AWS resources continue to operate.</li>
      *         </ul>
      *         <p>
-     *         For more information, see the <a
-     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/">
-     *         AWS Elastic Beanstalk User Guide. </a>
+     *         For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     *         Elastic Beanstalk User Guide. </a>
      *         </p>
      *         <p>
      *         Default: <code>true</code>
@@ -321,20 +282,17 @@ public class TerminateEnvironmentRequest extends
 
     /**
      * <p>
-     * Indicates whether the associated AWS resources should shut down when the
-     * environment is terminated:
+     * Indicates whether the associated AWS resources should shut down when the environment is terminated:
      * </p>
      * <ul>
-     * <li> <code>true</code>: The specified environment as well as the
-     * associated AWS resources, such as Auto Scaling group and LoadBalancer,
-     * are terminated.</li>
-     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is
-     * removed from the environment, but the AWS resources continue to operate.</li>
+     * <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling
+     * group and LoadBalancer, are terminated.</li>
+     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
+     * resources continue to operate.</li>
      * </ul>
      * <p>
-     * For more information, see the <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
-     * Elastic Beanstalk User Guide. </a>
+     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * Beanstalk User Guide. </a>
      * </p>
      * <p>
      * Default: <code>true</code>
@@ -344,19 +302,15 @@ public class TerminateEnvironmentRequest extends
      * </p>
      * 
      * @param terminateResources
-     *        Indicates whether the associated AWS resources should shut down
-     *        when the environment is terminated: </p>
+     *        Indicates whether the associated AWS resources should shut down when the environment is terminated: </p>
      *        <ul>
-     *        <li> <code>true</code>: The specified environment as well as the
-     *        associated AWS resources, such as Auto Scaling group and
-     *        LoadBalancer, are terminated.</li>
-     *        <li> <code>false</code>: AWS Elastic Beanstalk resource management
-     *        is removed from the environment, but the AWS resources continue to
-     *        operate.</li>
+     *        <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto
+     *        Scaling group and LoadBalancer, are terminated.</li>
+     *        <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the
+     *        AWS resources continue to operate.</li>
      *        </ul>
      *        <p>
-     *        For more information, see the <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     *        For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
      *        Elastic Beanstalk User Guide. </a>
      *        </p>
      *        <p>
@@ -364,32 +318,27 @@ public class TerminateEnvironmentRequest extends
      *        </p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TerminateEnvironmentRequest withTerminateResources(
-            Boolean terminateResources) {
+    public TerminateEnvironmentRequest withTerminateResources(Boolean terminateResources) {
         setTerminateResources(terminateResources);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the associated AWS resources should shut down when the
-     * environment is terminated:
+     * Indicates whether the associated AWS resources should shut down when the environment is terminated:
      * </p>
      * <ul>
-     * <li> <code>true</code>: The specified environment as well as the
-     * associated AWS resources, such as Auto Scaling group and LoadBalancer,
-     * are terminated.</li>
-     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is
-     * removed from the environment, but the AWS resources continue to operate.</li>
+     * <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling
+     * group and LoadBalancer, are terminated.</li>
+     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
+     * resources continue to operate.</li>
      * </ul>
      * <p>
-     * For more information, see the <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
-     * Elastic Beanstalk User Guide. </a>
+     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * Beanstalk User Guide. </a>
      * </p>
      * <p>
      * Default: <code>true</code>
@@ -398,20 +347,16 @@ public class TerminateEnvironmentRequest extends
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the associated AWS resources should shut down
-     *         when the environment is terminated: </p>
+     * @return Indicates whether the associated AWS resources should shut down when the environment is terminated: </p>
      *         <ul>
-     *         <li> <code>true</code>: The specified environment as well as the
-     *         associated AWS resources, such as Auto Scaling group and
-     *         LoadBalancer, are terminated.</li>
-     *         <li> <code>false</code>: AWS Elastic Beanstalk resource management
-     *         is removed from the environment, but the AWS resources continue
-     *         to operate.</li>
+     *         <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto
+     *         Scaling group and LoadBalancer, are terminated.</li>
+     *         <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but
+     *         the AWS resources continue to operate.</li>
      *         </ul>
      *         <p>
-     *         For more information, see the <a
-     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/">
-     *         AWS Elastic Beanstalk User Guide. </a>
+     *         For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     *         Elastic Beanstalk User Guide. </a>
      *         </p>
      *         <p>
      *         Default: <code>true</code>
@@ -426,13 +371,11 @@ public class TerminateEnvironmentRequest extends
 
     /**
      * <p>
-     * Terminates the target environment even if another environment in the same
-     * group is dependent on it.
+     * Terminates the target environment even if another environment in the same group is dependent on it.
      * </p>
      * 
      * @param forceTerminate
-     *        Terminates the target environment even if another environment in
-     *        the same group is dependent on it.
+     *        Terminates the target environment even if another environment in the same group is dependent on it.
      */
 
     public void setForceTerminate(Boolean forceTerminate) {
@@ -441,12 +384,10 @@ public class TerminateEnvironmentRequest extends
 
     /**
      * <p>
-     * Terminates the target environment even if another environment in the same
-     * group is dependent on it.
+     * Terminates the target environment even if another environment in the same group is dependent on it.
      * </p>
      * 
-     * @return Terminates the target environment even if another environment in
-     *         the same group is dependent on it.
+     * @return Terminates the target environment even if another environment in the same group is dependent on it.
      */
 
     public Boolean getForceTerminate() {
@@ -455,15 +396,12 @@ public class TerminateEnvironmentRequest extends
 
     /**
      * <p>
-     * Terminates the target environment even if another environment in the same
-     * group is dependent on it.
+     * Terminates the target environment even if another environment in the same group is dependent on it.
      * </p>
      * 
      * @param forceTerminate
-     *        Terminates the target environment even if another environment in
-     *        the same group is dependent on it.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Terminates the target environment even if another environment in the same group is dependent on it.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TerminateEnvironmentRequest withForceTerminate(Boolean forceTerminate) {
@@ -473,12 +411,10 @@ public class TerminateEnvironmentRequest extends
 
     /**
      * <p>
-     * Terminates the target environment even if another environment in the same
-     * group is dependent on it.
+     * Terminates the target environment even if another environment in the same group is dependent on it.
      * </p>
      * 
-     * @return Terminates the target environment even if another environment in
-     *         the same group is dependent on it.
+     * @return Terminates the target environment even if another environment in the same group is dependent on it.
      */
 
     public Boolean isForceTerminate() {
@@ -486,8 +422,7 @@ public class TerminateEnvironmentRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -521,27 +456,19 @@ public class TerminateEnvironmentRequest extends
         TerminateEnvironmentRequest other = (TerminateEnvironmentRequest) obj;
         if (other.getEnvironmentId() == null ^ this.getEnvironmentId() == null)
             return false;
-        if (other.getEnvironmentId() != null
-                && other.getEnvironmentId().equals(this.getEnvironmentId()) == false)
+        if (other.getEnvironmentId() != null && other.getEnvironmentId().equals(this.getEnvironmentId()) == false)
             return false;
-        if (other.getEnvironmentName() == null
-                ^ this.getEnvironmentName() == null)
+        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
             return false;
-        if (other.getEnvironmentName() != null
-                && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
+        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
             return false;
-        if (other.getTerminateResources() == null
-                ^ this.getTerminateResources() == null)
+        if (other.getTerminateResources() == null ^ this.getTerminateResources() == null)
             return false;
-        if (other.getTerminateResources() != null
-                && other.getTerminateResources().equals(
-                        this.getTerminateResources()) == false)
+        if (other.getTerminateResources() != null && other.getTerminateResources().equals(this.getTerminateResources()) == false)
             return false;
-        if (other.getForceTerminate() == null
-                ^ this.getForceTerminate() == null)
+        if (other.getForceTerminate() == null ^ this.getForceTerminate() == null)
             return false;
-        if (other.getForceTerminate() != null
-                && other.getForceTerminate().equals(this.getForceTerminate()) == false)
+        if (other.getForceTerminate() != null && other.getForceTerminate().equals(this.getForceTerminate()) == false)
             return false;
         return true;
     }
@@ -551,22 +478,10 @@ public class TerminateEnvironmentRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEnvironmentId() == null) ? 0 : getEnvironmentId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEnvironmentName() == null) ? 0 : getEnvironmentName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTerminateResources() == null) ? 0
-                        : getTerminateResources().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getForceTerminate() == null) ? 0 : getForceTerminate()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
+        hashCode = prime * hashCode + ((getTerminateResources() == null) ? 0 : getTerminateResources().hashCode());
+        hashCode = prime * hashCode + ((getForceTerminate() == null) ? 0 : getForceTerminate().hashCode());
         return hashCode;
     }
 

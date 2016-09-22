@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -21,8 +19,7 @@ import java.io.Serializable;
  * Contains the results of a simulation.
  * </p>
  * <p>
- * This data type is used by the return parameter of
- * <code> <a>SimulateCustomPolicy</a> </code> and
+ * This data type is used by the return parameter of <code> <a>SimulateCustomPolicy</a> </code> and
  * <code> <a>SimulatePrincipalPolicy</a> </code>.
  * </p>
  */
@@ -48,45 +45,36 @@ public class EvaluationResult implements Serializable, Cloneable {
     private String evalDecision;
     /**
      * <p>
-     * A list of the statements in the input policies that determine the result
-     * for this scenario. Remember that even if multiple statements allow the
-     * action on the resource, if only one statement denies that action, then
-     * the explicit deny overrides any allow, and the deny statement is the only
-     * entry included in the result.
+     * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
+     * multiple statements allow the action on the resource, if only one statement denies that action, then the explicit
+     * deny overrides any allow, and the deny statement is the only entry included in the result.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Statement> matchedStatements;
     /**
      * <p>
-     * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. This list is
-     * used when the resource in a simulation is "*", either explicitly, or when
-     * the <code>ResourceArns</code> parameter blank. If you include a list of
-     * resources, then any missing context values are instead included under the
-     * <code>ResourceSpecificResults</code> section. To discover the context
-     * keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.
+     * A list of context keys that are required by the included input policies but that were not provided by one of the
+     * input parameters. This list is used when the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources, then any missing context values
+     * are instead included under the <code>ResourceSpecificResults</code> section. To discover the context keys used by
+     * a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> missingContextValues;
     /**
      * <p>
-     * Additional details about the results of the evaluation decision. When
-     * there are both IAM policies and resource policies, this parameter
-     * explains how each set of policies contributes to the final evaluation
-     * decision. When simulating cross-account access to a resource, both the
-     * resource-based policy and the caller's IAM policy must grant access. See
-     * <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html"
-     * >How IAM Roles Differ from Resource-based Policies</a>
+     * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
+     * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
+     * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
+     * grant access. See <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * Differ from Resource-based Policies</a>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> evalDecisionDetails;
     /**
      * <p>
-     * The individual results of the simulation of the API action specified in
-     * EvalActionName on each resource.
+     * The individual results of the simulation of the API action specified in EvalActionName on each resource.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceSpecificResult> resourceSpecificResults;
@@ -123,8 +111,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * 
      * @param evalActionName
      *        The name of the API action tested on the indicated resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EvaluationResult withEvalActionName(String evalActionName) {
@@ -138,8 +125,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param evalResourceName
-     *        The ARN of the resource that the indicated API action was tested
-     *        on.
+     *        The ARN of the resource that the indicated API action was tested on.
      */
 
     public void setEvalResourceName(String evalResourceName) {
@@ -151,8 +137,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * The ARN of the resource that the indicated API action was tested on.
      * </p>
      * 
-     * @return The ARN of the resource that the indicated API action was tested
-     *         on.
+     * @return The ARN of the resource that the indicated API action was tested on.
      */
 
     public String getEvalResourceName() {
@@ -165,10 +150,8 @@ public class EvaluationResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param evalResourceName
-     *        The ARN of the resource that the indicated API action was tested
-     *        on.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN of the resource that the indicated API action was tested on.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EvaluationResult withEvalResourceName(String evalResourceName) {
@@ -210,8 +193,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * 
      * @param evalDecision
      *        The result of the simulation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyEvaluationDecisionType
      */
 
@@ -241,32 +223,26 @@ public class EvaluationResult implements Serializable, Cloneable {
      * 
      * @param evalDecision
      *        The result of the simulation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyEvaluationDecisionType
      */
 
-    public EvaluationResult withEvalDecision(
-            PolicyEvaluationDecisionType evalDecision) {
+    public EvaluationResult withEvalDecision(PolicyEvaluationDecisionType evalDecision) {
         setEvalDecision(evalDecision);
         return this;
     }
 
     /**
      * <p>
-     * A list of the statements in the input policies that determine the result
-     * for this scenario. Remember that even if multiple statements allow the
-     * action on the resource, if only one statement denies that action, then
-     * the explicit deny overrides any allow, and the deny statement is the only
-     * entry included in the result.
+     * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
+     * multiple statements allow the action on the resource, if only one statement denies that action, then the explicit
+     * deny overrides any allow, and the deny statement is the only entry included in the result.
      * </p>
      * 
-     * @return A list of the statements in the input policies that determine the
-     *         result for this scenario. Remember that even if multiple
-     *         statements allow the action on the resource, if only one
-     *         statement denies that action, then the explicit deny overrides
-     *         any allow, and the deny statement is the only entry included in
-     *         the result.
+     * @return A list of the statements in the input policies that determine the result for this scenario. Remember that
+     *         even if multiple statements allow the action on the resource, if only one statement denies that action,
+     *         then the explicit deny overrides any allow, and the deny statement is the only entry included in the
+     *         result.
      */
 
     public java.util.List<Statement> getMatchedStatements() {
@@ -278,62 +254,50 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the statements in the input policies that determine the result
-     * for this scenario. Remember that even if multiple statements allow the
-     * action on the resource, if only one statement denies that action, then
-     * the explicit deny overrides any allow, and the deny statement is the only
-     * entry included in the result.
+     * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
+     * multiple statements allow the action on the resource, if only one statement denies that action, then the explicit
+     * deny overrides any allow, and the deny statement is the only entry included in the result.
      * </p>
      * 
      * @param matchedStatements
-     *        A list of the statements in the input policies that determine the
-     *        result for this scenario. Remember that even if multiple
-     *        statements allow the action on the resource, if only one statement
-     *        denies that action, then the explicit deny overrides any allow,
-     *        and the deny statement is the only entry included in the result.
+     *        A list of the statements in the input policies that determine the result for this scenario. Remember that
+     *        even if multiple statements allow the action on the resource, if only one statement denies that action,
+     *        then the explicit deny overrides any allow, and the deny statement is the only entry included in the
+     *        result.
      */
 
-    public void setMatchedStatements(
-            java.util.Collection<Statement> matchedStatements) {
+    public void setMatchedStatements(java.util.Collection<Statement> matchedStatements) {
         if (matchedStatements == null) {
             this.matchedStatements = null;
             return;
         }
 
-        this.matchedStatements = new com.amazonaws.internal.SdkInternalList<Statement>(
-                matchedStatements);
+        this.matchedStatements = new com.amazonaws.internal.SdkInternalList<Statement>(matchedStatements);
     }
 
     /**
      * <p>
-     * A list of the statements in the input policies that determine the result
-     * for this scenario. Remember that even if multiple statements allow the
-     * action on the resource, if only one statement denies that action, then
-     * the explicit deny overrides any allow, and the deny statement is the only
-     * entry included in the result.
+     * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
+     * multiple statements allow the action on the resource, if only one statement denies that action, then the explicit
+     * deny overrides any allow, and the deny statement is the only entry included in the result.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setMatchedStatements(java.util.Collection)} or
-     * {@link #withMatchedStatements(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMatchedStatements(java.util.Collection)} or {@link #withMatchedStatements(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param matchedStatements
-     *        A list of the statements in the input policies that determine the
-     *        result for this scenario. Remember that even if multiple
-     *        statements allow the action on the resource, if only one statement
-     *        denies that action, then the explicit deny overrides any allow,
-     *        and the deny statement is the only entry included in the result.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of the statements in the input policies that determine the result for this scenario. Remember that
+     *        even if multiple statements allow the action on the resource, if only one statement denies that action,
+     *        then the explicit deny overrides any allow, and the deny statement is the only entry included in the
+     *        result.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EvaluationResult withMatchedStatements(
-            Statement... matchedStatements) {
+    public EvaluationResult withMatchedStatements(Statement... matchedStatements) {
         if (this.matchedStatements == null) {
-            setMatchedStatements(new com.amazonaws.internal.SdkInternalList<Statement>(
-                    matchedStatements.length));
+            setMatchedStatements(new com.amazonaws.internal.SdkInternalList<Statement>(matchedStatements.length));
         }
         for (Statement ele : matchedStatements) {
             this.matchedStatements.add(ele);
@@ -343,51 +307,38 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the statements in the input policies that determine the result
-     * for this scenario. Remember that even if multiple statements allow the
-     * action on the resource, if only one statement denies that action, then
-     * the explicit deny overrides any allow, and the deny statement is the only
-     * entry included in the result.
+     * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
+     * multiple statements allow the action on the resource, if only one statement denies that action, then the explicit
+     * deny overrides any allow, and the deny statement is the only entry included in the result.
      * </p>
      * 
      * @param matchedStatements
-     *        A list of the statements in the input policies that determine the
-     *        result for this scenario. Remember that even if multiple
-     *        statements allow the action on the resource, if only one statement
-     *        denies that action, then the explicit deny overrides any allow,
-     *        and the deny statement is the only entry included in the result.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of the statements in the input policies that determine the result for this scenario. Remember that
+     *        even if multiple statements allow the action on the resource, if only one statement denies that action,
+     *        then the explicit deny overrides any allow, and the deny statement is the only entry included in the
+     *        result.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EvaluationResult withMatchedStatements(
-            java.util.Collection<Statement> matchedStatements) {
+    public EvaluationResult withMatchedStatements(java.util.Collection<Statement> matchedStatements) {
         setMatchedStatements(matchedStatements);
         return this;
     }
 
     /**
      * <p>
-     * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. This list is
-     * used when the resource in a simulation is "*", either explicitly, or when
-     * the <code>ResourceArns</code> parameter blank. If you include a list of
-     * resources, then any missing context values are instead included under the
-     * <code>ResourceSpecificResults</code> section. To discover the context
-     * keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.
+     * A list of context keys that are required by the included input policies but that were not provided by one of the
+     * input parameters. This list is used when the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources, then any missing context values
+     * are instead included under the <code>ResourceSpecificResults</code> section. To discover the context keys used by
+     * a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
      * 
-     * @return A list of context keys that are required by the included input
-     *         policies but that were not provided by one of the input
-     *         parameters. This list is used when the resource in a simulation
-     *         is "*", either explicitly, or when the <code>ResourceArns</code>
-     *         parameter blank. If you include a list of resources, then any
-     *         missing context values are instead included under the
-     *         <code>ResourceSpecificResults</code> section. To discover the
-     *         context keys used by a set of policies, you can call
-     *         <a>GetContextKeysForCustomPolicy</a> or
+     * @return A list of context keys that are required by the included input policies but that were not provided by one
+     *         of the input parameters. This list is used when the resource in a simulation is "*", either explicitly,
+     *         or when the <code>ResourceArns</code> parameter blank. If you include a list of resources, then any
+     *         missing context values are instead included under the <code>ResourceSpecificResults</code> section. To
+     *         discover the context keys used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
      *         <a>GetContextKeysForPrincipalPolicy</a>.
      */
 
@@ -400,80 +351,58 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. This list is
-     * used when the resource in a simulation is "*", either explicitly, or when
-     * the <code>ResourceArns</code> parameter blank. If you include a list of
-     * resources, then any missing context values are instead included under the
-     * <code>ResourceSpecificResults</code> section. To discover the context
-     * keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.
+     * A list of context keys that are required by the included input policies but that were not provided by one of the
+     * input parameters. This list is used when the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources, then any missing context values
+     * are instead included under the <code>ResourceSpecificResults</code> section. To discover the context keys used by
+     * a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
      * 
      * @param missingContextValues
-     *        A list of context keys that are required by the included input
-     *        policies but that were not provided by one of the input
-     *        parameters. This list is used when the resource in a simulation is
-     *        "*", either explicitly, or when the <code>ResourceArns</code>
-     *        parameter blank. If you include a list of resources, then any
-     *        missing context values are instead included under the
-     *        <code>ResourceSpecificResults</code> section. To discover the
-     *        context keys used by a set of policies, you can call
-     *        <a>GetContextKeysForCustomPolicy</a> or
+     *        A list of context keys that are required by the included input policies but that were not provided by one
+     *        of the input parameters. This list is used when the resource in a simulation is "*", either explicitly, or
+     *        when the <code>ResourceArns</code> parameter blank. If you include a list of resources, then any missing
+     *        context values are instead included under the <code>ResourceSpecificResults</code> section. To discover
+     *        the context keys used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
      *        <a>GetContextKeysForPrincipalPolicy</a>.
      */
 
-    public void setMissingContextValues(
-            java.util.Collection<String> missingContextValues) {
+    public void setMissingContextValues(java.util.Collection<String> missingContextValues) {
         if (missingContextValues == null) {
             this.missingContextValues = null;
             return;
         }
 
-        this.missingContextValues = new com.amazonaws.internal.SdkInternalList<String>(
-                missingContextValues);
+        this.missingContextValues = new com.amazonaws.internal.SdkInternalList<String>(missingContextValues);
     }
 
     /**
      * <p>
-     * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. This list is
-     * used when the resource in a simulation is "*", either explicitly, or when
-     * the <code>ResourceArns</code> parameter blank. If you include a list of
-     * resources, then any missing context values are instead included under the
-     * <code>ResourceSpecificResults</code> section. To discover the context
-     * keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.
+     * A list of context keys that are required by the included input policies but that were not provided by one of the
+     * input parameters. This list is used when the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources, then any missing context values
+     * are instead included under the <code>ResourceSpecificResults</code> section. To discover the context keys used by
+     * a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setMissingContextValues(java.util.Collection)} or
-     * {@link #withMissingContextValues(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMissingContextValues(java.util.Collection)} or {@link #withMissingContextValues(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param missingContextValues
-     *        A list of context keys that are required by the included input
-     *        policies but that were not provided by one of the input
-     *        parameters. This list is used when the resource in a simulation is
-     *        "*", either explicitly, or when the <code>ResourceArns</code>
-     *        parameter blank. If you include a list of resources, then any
-     *        missing context values are instead included under the
-     *        <code>ResourceSpecificResults</code> section. To discover the
-     *        context keys used by a set of policies, you can call
-     *        <a>GetContextKeysForCustomPolicy</a> or
+     *        A list of context keys that are required by the included input policies but that were not provided by one
+     *        of the input parameters. This list is used when the resource in a simulation is "*", either explicitly, or
+     *        when the <code>ResourceArns</code> parameter blank. If you include a list of resources, then any missing
+     *        context values are instead included under the <code>ResourceSpecificResults</code> section. To discover
+     *        the context keys used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
      *        <a>GetContextKeysForPrincipalPolicy</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EvaluationResult withMissingContextValues(
-            String... missingContextValues) {
+    public EvaluationResult withMissingContextValues(String... missingContextValues) {
         if (this.missingContextValues == null) {
-            setMissingContextValues(new com.amazonaws.internal.SdkInternalList<String>(
-                    missingContextValues.length));
+            setMissingContextValues(new com.amazonaws.internal.SdkInternalList<String>(missingContextValues.length));
         }
         for (String ele : missingContextValues) {
             this.missingContextValues.add(ele);
@@ -483,58 +412,44 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. This list is
-     * used when the resource in a simulation is "*", either explicitly, or when
-     * the <code>ResourceArns</code> parameter blank. If you include a list of
-     * resources, then any missing context values are instead included under the
-     * <code>ResourceSpecificResults</code> section. To discover the context
-     * keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.
+     * A list of context keys that are required by the included input policies but that were not provided by one of the
+     * input parameters. This list is used when the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources, then any missing context values
+     * are instead included under the <code>ResourceSpecificResults</code> section. To discover the context keys used by
+     * a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
      * 
      * @param missingContextValues
-     *        A list of context keys that are required by the included input
-     *        policies but that were not provided by one of the input
-     *        parameters. This list is used when the resource in a simulation is
-     *        "*", either explicitly, or when the <code>ResourceArns</code>
-     *        parameter blank. If you include a list of resources, then any
-     *        missing context values are instead included under the
-     *        <code>ResourceSpecificResults</code> section. To discover the
-     *        context keys used by a set of policies, you can call
-     *        <a>GetContextKeysForCustomPolicy</a> or
+     *        A list of context keys that are required by the included input policies but that were not provided by one
+     *        of the input parameters. This list is used when the resource in a simulation is "*", either explicitly, or
+     *        when the <code>ResourceArns</code> parameter blank. If you include a list of resources, then any missing
+     *        context values are instead included under the <code>ResourceSpecificResults</code> section. To discover
+     *        the context keys used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
      *        <a>GetContextKeysForPrincipalPolicy</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EvaluationResult withMissingContextValues(
-            java.util.Collection<String> missingContextValues) {
+    public EvaluationResult withMissingContextValues(java.util.Collection<String> missingContextValues) {
         setMissingContextValues(missingContextValues);
         return this;
     }
 
     /**
      * <p>
-     * Additional details about the results of the evaluation decision. When
-     * there are both IAM policies and resource policies, this parameter
-     * explains how each set of policies contributes to the final evaluation
-     * decision. When simulating cross-account access to a resource, both the
-     * resource-based policy and the caller's IAM policy must grant access. See
-     * <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html"
-     * >How IAM Roles Differ from Resource-based Policies</a>
+     * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
+     * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
+     * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
+     * grant access. See <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * Differ from Resource-based Policies</a>
      * </p>
      * 
-     * @return Additional details about the results of the evaluation decision.
-     *         When there are both IAM policies and resource policies, this
-     *         parameter explains how each set of policies contributes to the
-     *         final evaluation decision. When simulating cross-account access
-     *         to a resource, both the resource-based policy and the caller's
-     *         IAM policy must grant access. See <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html"
-     *         >How IAM Roles Differ from Resource-based Policies</a>
+     * @return Additional details about the results of the evaluation decision. When there are both IAM policies and
+     *         resource policies, this parameter explains how each set of policies contributes to the final evaluation
+     *         decision. When simulating cross-account access to a resource, both the resource-based policy and the
+     *         caller's IAM policy must grant access. See <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
+     *         Roles Differ from Resource-based Policies</a>
      */
 
     public java.util.Map<String, String> getEvalDecisionDetails() {
@@ -546,61 +461,48 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional details about the results of the evaluation decision. When
-     * there are both IAM policies and resource policies, this parameter
-     * explains how each set of policies contributes to the final evaluation
-     * decision. When simulating cross-account access to a resource, both the
-     * resource-based policy and the caller's IAM policy must grant access. See
-     * <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html"
-     * >How IAM Roles Differ from Resource-based Policies</a>
+     * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
+     * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
+     * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
+     * grant access. See <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * Differ from Resource-based Policies</a>
      * </p>
      * 
      * @param evalDecisionDetails
-     *        Additional details about the results of the evaluation decision.
-     *        When there are both IAM policies and resource policies, this
-     *        parameter explains how each set of policies contributes to the
-     *        final evaluation decision. When simulating cross-account access to
-     *        a resource, both the resource-based policy and the caller's IAM
-     *        policy must grant access. See <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html"
-     *        >How IAM Roles Differ from Resource-based Policies</a>
+     *        Additional details about the results of the evaluation decision. When there are both IAM policies and
+     *        resource policies, this parameter explains how each set of policies contributes to the final evaluation
+     *        decision. When simulating cross-account access to a resource, both the resource-based policy and the
+     *        caller's IAM policy must grant access. See <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
+     *        Roles Differ from Resource-based Policies</a>
      */
 
-    public void setEvalDecisionDetails(
-            java.util.Map<String, String> evalDecisionDetails) {
-        this.evalDecisionDetails = evalDecisionDetails == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        evalDecisionDetails);
+    public void setEvalDecisionDetails(java.util.Map<String, String> evalDecisionDetails) {
+        this.evalDecisionDetails = evalDecisionDetails == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(evalDecisionDetails);
     }
 
     /**
      * <p>
-     * Additional details about the results of the evaluation decision. When
-     * there are both IAM policies and resource policies, this parameter
-     * explains how each set of policies contributes to the final evaluation
-     * decision. When simulating cross-account access to a resource, both the
-     * resource-based policy and the caller's IAM policy must grant access. See
-     * <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html"
-     * >How IAM Roles Differ from Resource-based Policies</a>
+     * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
+     * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
+     * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
+     * grant access. See <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * Differ from Resource-based Policies</a>
      * </p>
      * 
      * @param evalDecisionDetails
-     *        Additional details about the results of the evaluation decision.
-     *        When there are both IAM policies and resource policies, this
-     *        parameter explains how each set of policies contributes to the
-     *        final evaluation decision. When simulating cross-account access to
-     *        a resource, both the resource-based policy and the caller's IAM
-     *        policy must grant access. See <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html"
-     *        >How IAM Roles Differ from Resource-based Policies</a>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Additional details about the results of the evaluation decision. When there are both IAM policies and
+     *        resource policies, this parameter explains how each set of policies contributes to the final evaluation
+     *        decision. When simulating cross-account access to a resource, both the resource-based policy and the
+     *        caller's IAM policy must grant access. See <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
+     *        Roles Differ from Resource-based Policies</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EvaluationResult withEvalDecisionDetails(
-            java.util.Map<String, String> evalDecisionDetails) {
+    public EvaluationResult withEvalDecisionDetails(java.util.Map<String, String> evalDecisionDetails) {
         setEvalDecisionDetails(evalDecisionDetails);
         return this;
     }
@@ -610,15 +512,14 @@ public class EvaluationResult implements Serializable, Cloneable {
             this.evalDecisionDetails = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.evalDecisionDetails.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.evalDecisionDetails.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into EvalDecisionDetails. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into EvalDecisionDetails. &lt;p> Returns a reference to this object so that method
+     * calls can be chained together.
      */
 
     public EvaluationResult clearEvalDecisionDetailsEntries() {
@@ -628,12 +529,10 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The individual results of the simulation of the API action specified in
-     * EvalActionName on each resource.
+     * The individual results of the simulation of the API action specified in EvalActionName on each resource.
      * </p>
      * 
-     * @return The individual results of the simulation of the API action
-     *         specified in EvalActionName on each resource.
+     * @return The individual results of the simulation of the API action specified in EvalActionName on each resource.
      */
 
     public java.util.List<ResourceSpecificResult> getResourceSpecificResults() {
@@ -645,50 +544,40 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The individual results of the simulation of the API action specified in
-     * EvalActionName on each resource.
+     * The individual results of the simulation of the API action specified in EvalActionName on each resource.
      * </p>
      * 
      * @param resourceSpecificResults
-     *        The individual results of the simulation of the API action
-     *        specified in EvalActionName on each resource.
+     *        The individual results of the simulation of the API action specified in EvalActionName on each resource.
      */
 
-    public void setResourceSpecificResults(
-            java.util.Collection<ResourceSpecificResult> resourceSpecificResults) {
+    public void setResourceSpecificResults(java.util.Collection<ResourceSpecificResult> resourceSpecificResults) {
         if (resourceSpecificResults == null) {
             this.resourceSpecificResults = null;
             return;
         }
 
-        this.resourceSpecificResults = new com.amazonaws.internal.SdkInternalList<ResourceSpecificResult>(
-                resourceSpecificResults);
+        this.resourceSpecificResults = new com.amazonaws.internal.SdkInternalList<ResourceSpecificResult>(resourceSpecificResults);
     }
 
     /**
      * <p>
-     * The individual results of the simulation of the API action specified in
-     * EvalActionName on each resource.
+     * The individual results of the simulation of the API action specified in EvalActionName on each resource.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setResourceSpecificResults(java.util.Collection)} or
-     * {@link #withResourceSpecificResults(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceSpecificResults(java.util.Collection)} or
+     * {@link #withResourceSpecificResults(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param resourceSpecificResults
-     *        The individual results of the simulation of the API action
-     *        specified in EvalActionName on each resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The individual results of the simulation of the API action specified in EvalActionName on each resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EvaluationResult withResourceSpecificResults(
-            ResourceSpecificResult... resourceSpecificResults) {
+    public EvaluationResult withResourceSpecificResults(ResourceSpecificResult... resourceSpecificResults) {
         if (this.resourceSpecificResults == null) {
-            setResourceSpecificResults(new com.amazonaws.internal.SdkInternalList<ResourceSpecificResult>(
-                    resourceSpecificResults.length));
+            setResourceSpecificResults(new com.amazonaws.internal.SdkInternalList<ResourceSpecificResult>(resourceSpecificResults.length));
         }
         for (ResourceSpecificResult ele : resourceSpecificResults) {
             this.resourceSpecificResults.add(ele);
@@ -698,26 +587,21 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The individual results of the simulation of the API action specified in
-     * EvalActionName on each resource.
+     * The individual results of the simulation of the API action specified in EvalActionName on each resource.
      * </p>
      * 
      * @param resourceSpecificResults
-     *        The individual results of the simulation of the API action
-     *        specified in EvalActionName on each resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The individual results of the simulation of the API action specified in EvalActionName on each resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EvaluationResult withResourceSpecificResults(
-            java.util.Collection<ResourceSpecificResult> resourceSpecificResults) {
+    public EvaluationResult withResourceSpecificResults(java.util.Collection<ResourceSpecificResult> resourceSpecificResults) {
         setResourceSpecificResults(resourceSpecificResults);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -736,13 +620,11 @@ public class EvaluationResult implements Serializable, Cloneable {
         if (getMatchedStatements() != null)
             sb.append("MatchedStatements: " + getMatchedStatements() + ",");
         if (getMissingContextValues() != null)
-            sb.append("MissingContextValues: " + getMissingContextValues()
-                    + ",");
+            sb.append("MissingContextValues: " + getMissingContextValues() + ",");
         if (getEvalDecisionDetails() != null)
             sb.append("EvalDecisionDetails: " + getEvalDecisionDetails() + ",");
         if (getResourceSpecificResults() != null)
-            sb.append("ResourceSpecificResults: "
-                    + getResourceSpecificResults());
+            sb.append("ResourceSpecificResults: " + getResourceSpecificResults());
         sb.append("}");
         return sb.toString();
     }
@@ -757,51 +639,33 @@ public class EvaluationResult implements Serializable, Cloneable {
         if (obj instanceof EvaluationResult == false)
             return false;
         EvaluationResult other = (EvaluationResult) obj;
-        if (other.getEvalActionName() == null
-                ^ this.getEvalActionName() == null)
+        if (other.getEvalActionName() == null ^ this.getEvalActionName() == null)
             return false;
-        if (other.getEvalActionName() != null
-                && other.getEvalActionName().equals(this.getEvalActionName()) == false)
+        if (other.getEvalActionName() != null && other.getEvalActionName().equals(this.getEvalActionName()) == false)
             return false;
-        if (other.getEvalResourceName() == null
-                ^ this.getEvalResourceName() == null)
+        if (other.getEvalResourceName() == null ^ this.getEvalResourceName() == null)
             return false;
-        if (other.getEvalResourceName() != null
-                && other.getEvalResourceName().equals(
-                        this.getEvalResourceName()) == false)
+        if (other.getEvalResourceName() != null && other.getEvalResourceName().equals(this.getEvalResourceName()) == false)
             return false;
         if (other.getEvalDecision() == null ^ this.getEvalDecision() == null)
             return false;
-        if (other.getEvalDecision() != null
-                && other.getEvalDecision().equals(this.getEvalDecision()) == false)
+        if (other.getEvalDecision() != null && other.getEvalDecision().equals(this.getEvalDecision()) == false)
             return false;
-        if (other.getMatchedStatements() == null
-                ^ this.getMatchedStatements() == null)
+        if (other.getMatchedStatements() == null ^ this.getMatchedStatements() == null)
             return false;
-        if (other.getMatchedStatements() != null
-                && other.getMatchedStatements().equals(
-                        this.getMatchedStatements()) == false)
+        if (other.getMatchedStatements() != null && other.getMatchedStatements().equals(this.getMatchedStatements()) == false)
             return false;
-        if (other.getMissingContextValues() == null
-                ^ this.getMissingContextValues() == null)
+        if (other.getMissingContextValues() == null ^ this.getMissingContextValues() == null)
             return false;
-        if (other.getMissingContextValues() != null
-                && other.getMissingContextValues().equals(
-                        this.getMissingContextValues()) == false)
+        if (other.getMissingContextValues() != null && other.getMissingContextValues().equals(this.getMissingContextValues()) == false)
             return false;
-        if (other.getEvalDecisionDetails() == null
-                ^ this.getEvalDecisionDetails() == null)
+        if (other.getEvalDecisionDetails() == null ^ this.getEvalDecisionDetails() == null)
             return false;
-        if (other.getEvalDecisionDetails() != null
-                && other.getEvalDecisionDetails().equals(
-                        this.getEvalDecisionDetails()) == false)
+        if (other.getEvalDecisionDetails() != null && other.getEvalDecisionDetails().equals(this.getEvalDecisionDetails()) == false)
             return false;
-        if (other.getResourceSpecificResults() == null
-                ^ this.getResourceSpecificResults() == null)
+        if (other.getResourceSpecificResults() == null ^ this.getResourceSpecificResults() == null)
             return false;
-        if (other.getResourceSpecificResults() != null
-                && other.getResourceSpecificResults().equals(
-                        this.getResourceSpecificResults()) == false)
+        if (other.getResourceSpecificResults() != null && other.getResourceSpecificResults().equals(this.getResourceSpecificResults()) == false)
             return false;
         return true;
     }
@@ -811,34 +675,13 @@ public class EvaluationResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEvalActionName() == null) ? 0 : getEvalActionName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEvalResourceName() == null) ? 0 : getEvalResourceName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEvalDecision() == null) ? 0 : getEvalDecision()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMatchedStatements() == null) ? 0
-                        : getMatchedStatements().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMissingContextValues() == null) ? 0
-                        : getMissingContextValues().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEvalDecisionDetails() == null) ? 0
-                        : getEvalDecisionDetails().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResourceSpecificResults() == null) ? 0
-                        : getResourceSpecificResults().hashCode());
+        hashCode = prime * hashCode + ((getEvalActionName() == null) ? 0 : getEvalActionName().hashCode());
+        hashCode = prime * hashCode + ((getEvalResourceName() == null) ? 0 : getEvalResourceName().hashCode());
+        hashCode = prime * hashCode + ((getEvalDecision() == null) ? 0 : getEvalDecision().hashCode());
+        hashCode = prime * hashCode + ((getMatchedStatements() == null) ? 0 : getMatchedStatements().hashCode());
+        hashCode = prime * hashCode + ((getMissingContextValues() == null) ? 0 : getMissingContextValues().hashCode());
+        hashCode = prime * hashCode + ((getEvalDecisionDetails() == null) ? 0 : getEvalDecisionDetails().hashCode());
+        hashCode = prime * hashCode + ((getResourceSpecificResults() == null) ? 0 : getResourceSpecificResults().hashCode());
         return hashCode;
     }
 
@@ -847,9 +690,7 @@ public class EvaluationResult implements Serializable, Cloneable {
         try {
             return (EvaluationResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

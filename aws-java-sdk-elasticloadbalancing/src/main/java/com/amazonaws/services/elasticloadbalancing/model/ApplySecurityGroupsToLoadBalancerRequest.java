@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for ApplySecurityGroupsToLoadBalancer.
  * </p>
  */
-public class ApplySecurityGroupsToLoadBalancerRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ApplySecurityGroupsToLoadBalancerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,8 +30,8 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
     private String loadBalancerName;
     /**
      * <p>
-     * The IDs of the security groups to associate with the load balancer. Note
-     * that you cannot specify the name of the security group.
+     * The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the
+     * security group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
@@ -72,25 +68,22 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
      * 
      * @param loadBalancerName
      *        The name of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ApplySecurityGroupsToLoadBalancerRequest withLoadBalancerName(
-            String loadBalancerName) {
+    public ApplySecurityGroupsToLoadBalancerRequest withLoadBalancerName(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
         return this;
     }
 
     /**
      * <p>
-     * The IDs of the security groups to associate with the load balancer. Note
-     * that you cannot specify the name of the security group.
+     * The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the
+     * security group.
      * </p>
      * 
-     * @return The IDs of the security groups to associate with the load
-     *         balancer. Note that you cannot specify the name of the security
-     *         group.
+     * @return The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name
+     *         of the security group.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -102,14 +95,13 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
 
     /**
      * <p>
-     * The IDs of the security groups to associate with the load balancer. Note
-     * that you cannot specify the name of the security group.
+     * The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the
+     * security group.
      * </p>
      * 
      * @param securityGroups
-     *        The IDs of the security groups to associate with the load
-     *        balancer. Note that you cannot specify the name of the security
-     *        group.
+     *        The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name
+     *        of the security group.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -118,35 +110,29 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
             return;
         }
 
-        this.securityGroups = new com.amazonaws.internal.SdkInternalList<String>(
-                securityGroups);
+        this.securityGroups = new com.amazonaws.internal.SdkInternalList<String>(securityGroups);
     }
 
     /**
      * <p>
-     * The IDs of the security groups to associate with the load balancer. Note
-     * that you cannot specify the name of the security group.
+     * The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the
+     * security group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroups(java.util.Collection)} or
-     * {@link #withSecurityGroups(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param securityGroups
-     *        The IDs of the security groups to associate with the load
-     *        balancer. Note that you cannot specify the name of the security
-     *        group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name
+     *        of the security group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ApplySecurityGroupsToLoadBalancerRequest withSecurityGroups(
-            String... securityGroups) {
+    public ApplySecurityGroupsToLoadBalancerRequest withSecurityGroups(String... securityGroups) {
         if (this.securityGroups == null) {
-            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
-                    securityGroups.length));
+            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(securityGroups.length));
         }
         for (String ele : securityGroups) {
             this.securityGroups.add(ele);
@@ -156,27 +142,23 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
 
     /**
      * <p>
-     * The IDs of the security groups to associate with the load balancer. Note
-     * that you cannot specify the name of the security group.
+     * The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the
+     * security group.
      * </p>
      * 
      * @param securityGroups
-     *        The IDs of the security groups to associate with the load
-     *        balancer. Note that you cannot specify the name of the security
-     *        group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name
+     *        of the security group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ApplySecurityGroupsToLoadBalancerRequest withSecurityGroups(
-            java.util.Collection<String> securityGroups) {
+    public ApplySecurityGroupsToLoadBalancerRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -204,18 +186,13 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
         if (obj instanceof ApplySecurityGroupsToLoadBalancerRequest == false)
             return false;
         ApplySecurityGroupsToLoadBalancerRequest other = (ApplySecurityGroupsToLoadBalancerRequest) obj;
-        if (other.getLoadBalancerName() == null
-                ^ this.getLoadBalancerName() == null)
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null)
             return false;
-        if (other.getLoadBalancerName() != null
-                && other.getLoadBalancerName().equals(
-                        this.getLoadBalancerName()) == false)
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false)
             return false;
-        if (other.getSecurityGroups() == null
-                ^ this.getSecurityGroups() == null)
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
             return false;
-        if (other.getSecurityGroups() != null
-                && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
         return true;
     }
@@ -225,14 +202,8 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroups() == null) ? 0 : getSecurityGroups()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -34,36 +32,33 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class CreateSnapshotRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.
+     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway
+     * volumes.
      * </p>
      */
     private String volumeARN;
     /**
      * <p>
-     * Textual description of the snapshot that appears in the Amazon EC2
-     * console, Elastic Block Store snapshots panel in the <b>Description</b>
-     * field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     * <b>Description</b> field
+     * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
+     * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
+     * field
      * </p>
      */
     private String snapshotDescription;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.
+     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway
+     * volumes.
      * </p>
      * 
      * @param volumeARN
-     *        The Amazon Resource Name (ARN) of the volume. Use the
-     *        <a>ListVolumes</a> operation to return a list of gateway volumes.
+     *        The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of
+     *        gateway volumes.
      */
 
     public void setVolumeARN(String volumeARN) {
@@ -72,12 +67,12 @@ public class CreateSnapshotRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.
+     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway
+     * volumes.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the volume. Use the
-     *         <a>ListVolumes</a> operation to return a list of gateway volumes.
+     * @return The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of
+     *         gateway volumes.
      */
 
     public String getVolumeARN() {
@@ -86,15 +81,14 @@ public class CreateSnapshotRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.
+     * The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway
+     * volumes.
      * </p>
      * 
      * @param volumeARN
-     *        The Amazon Resource Name (ARN) of the volume. Use the
-     *        <a>ListVolumes</a> operation to return a list of gateway volumes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of
+     *        gateway volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateSnapshotRequest withVolumeARN(String volumeARN) {
@@ -104,17 +98,15 @@ public class CreateSnapshotRequest extends
 
     /**
      * <p>
-     * Textual description of the snapshot that appears in the Amazon EC2
-     * console, Elastic Block Store snapshots panel in the <b>Description</b>
-     * field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     * <b>Description</b> field
+     * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
+     * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
+     * field
      * </p>
      * 
      * @param snapshotDescription
-     *        Textual description of the snapshot that appears in the Amazon EC2
-     *        console, Elastic Block Store snapshots panel in the
-     *        <b>Description</b> field, and in the AWS Storage Gateway snapshot
-     *        <b>Details</b> pane, <b>Description</b> field
+     *        Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots
+     *        panel in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
+     *        <b>Description</b> field
      */
 
     public void setSnapshotDescription(String snapshotDescription) {
@@ -123,16 +115,14 @@ public class CreateSnapshotRequest extends
 
     /**
      * <p>
-     * Textual description of the snapshot that appears in the Amazon EC2
-     * console, Elastic Block Store snapshots panel in the <b>Description</b>
-     * field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     * <b>Description</b> field
+     * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
+     * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
+     * field
      * </p>
      * 
-     * @return Textual description of the snapshot that appears in the Amazon
-     *         EC2 console, Elastic Block Store snapshots panel in the
-     *         <b>Description</b> field, and in the AWS Storage Gateway snapshot
-     *         <b>Details</b> pane, <b>Description</b> field
+     * @return Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots
+     *         panel in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
+     *         <b>Description</b> field
      */
 
     public String getSnapshotDescription() {
@@ -141,30 +131,25 @@ public class CreateSnapshotRequest extends
 
     /**
      * <p>
-     * Textual description of the snapshot that appears in the Amazon EC2
-     * console, Elastic Block Store snapshots panel in the <b>Description</b>
-     * field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     * <b>Description</b> field
+     * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
+     * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
+     * field
      * </p>
      * 
      * @param snapshotDescription
-     *        Textual description of the snapshot that appears in the Amazon EC2
-     *        console, Elastic Block Store snapshots panel in the
-     *        <b>Description</b> field, and in the AWS Storage Gateway snapshot
-     *        <b>Details</b> pane, <b>Description</b> field
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots
+     *        panel in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
+     *        <b>Description</b> field
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateSnapshotRequest withSnapshotDescription(
-            String snapshotDescription) {
+    public CreateSnapshotRequest withSnapshotDescription(String snapshotDescription) {
         setSnapshotDescription(snapshotDescription);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -194,15 +179,11 @@ public class CreateSnapshotRequest extends
         CreateSnapshotRequest other = (CreateSnapshotRequest) obj;
         if (other.getVolumeARN() == null ^ this.getVolumeARN() == null)
             return false;
-        if (other.getVolumeARN() != null
-                && other.getVolumeARN().equals(this.getVolumeARN()) == false)
+        if (other.getVolumeARN() != null && other.getVolumeARN().equals(this.getVolumeARN()) == false)
             return false;
-        if (other.getSnapshotDescription() == null
-                ^ this.getSnapshotDescription() == null)
+        if (other.getSnapshotDescription() == null ^ this.getSnapshotDescription() == null)
             return false;
-        if (other.getSnapshotDescription() != null
-                && other.getSnapshotDescription().equals(
-                        this.getSnapshotDescription()) == false)
+        if (other.getSnapshotDescription() != null && other.getSnapshotDescription().equals(this.getSnapshotDescription()) == false)
             return false;
         return true;
     }
@@ -212,12 +193,8 @@ public class CreateSnapshotRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotDescription() == null) ? 0
-                        : getSnapshotDescription().hashCode());
+        hashCode = prime * hashCode + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotDescription() == null) ? 0 : getSnapshotDescription().hashCode());
         return hashCode;
     }
 

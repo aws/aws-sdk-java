@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
@@ -20,36 +18,28 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to delete a origin access identity.
  */
-public class DeleteCloudFrontOriginAccessIdentityRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteCloudFrontOriginAccessIdentityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /** The origin access identity's id. */
     private String id;
-    /**
-     * The value of the ETag header you received from a previous GET or PUT
-     * request. For example: E2QWRUHAPOMQZL.
-     */
+    /** The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL. */
     private String ifMatch;
 
     /**
-     * Default constructor for DeleteCloudFrontOriginAccessIdentityRequest
-     * object. Callers should use the setter or fluent setter (with...) methods
-     * to initialize the object after creating it.
+     * Default constructor for DeleteCloudFrontOriginAccessIdentityRequest object. Callers should use the setter or
+     * fluent setter (with...) methods to initialize the object after creating it.
      */
     public DeleteCloudFrontOriginAccessIdentityRequest() {
     }
 
     /**
-     * Constructs a new DeleteCloudFrontOriginAccessIdentityRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new DeleteCloudFrontOriginAccessIdentityRequest object. Callers should use the setter or fluent
+     * setter (with...) methods to initialize any additional object members.
      * 
      * @param id
      *        The origin access identity's id.
      * @param ifMatch
-     *        The value of the ETag header you received from a previous GET or
-     *        PUT request. For example: E2QWRUHAPOMQZL.
+     *        The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
      */
     public DeleteCloudFrontOriginAccessIdentityRequest(String id, String ifMatch) {
         setId(id);
@@ -82,8 +72,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
      * 
      * @param id
      *        The origin access identity's id.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteCloudFrontOriginAccessIdentityRequest withId(String id) {
@@ -92,12 +81,10 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
     }
 
     /**
-     * The value of the ETag header you received from a previous GET or PUT
-     * request. For example: E2QWRUHAPOMQZL.
+     * The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
      * 
      * @param ifMatch
-     *        The value of the ETag header you received from a previous GET or
-     *        PUT request. For example: E2QWRUHAPOMQZL.
+     *        The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
      */
 
     public void setIfMatch(String ifMatch) {
@@ -105,11 +92,10 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
     }
 
     /**
-     * The value of the ETag header you received from a previous GET or PUT
-     * request. For example: E2QWRUHAPOMQZL.
+     * The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
      * 
-     * @return The value of the ETag header you received from a previous GET or
-     *         PUT request. For example: E2QWRUHAPOMQZL.
+     * @return The value of the ETag header you received from a previous GET or PUT request. For example:
+     *         E2QWRUHAPOMQZL.
      */
 
     public String getIfMatch() {
@@ -117,25 +103,20 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
     }
 
     /**
-     * The value of the ETag header you received from a previous GET or PUT
-     * request. For example: E2QWRUHAPOMQZL.
+     * The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
      * 
      * @param ifMatch
-     *        The value of the ETag header you received from a previous GET or
-     *        PUT request. For example: E2QWRUHAPOMQZL.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteCloudFrontOriginAccessIdentityRequest withIfMatch(
-            String ifMatch) {
+    public DeleteCloudFrontOriginAccessIdentityRequest withIfMatch(String ifMatch) {
         setIfMatch(ifMatch);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -165,13 +146,11 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
         DeleteCloudFrontOriginAccessIdentityRequest other = (DeleteCloudFrontOriginAccessIdentityRequest) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getIfMatch() == null ^ this.getIfMatch() == null)
             return false;
-        if (other.getIfMatch() != null
-                && other.getIfMatch().equals(this.getIfMatch()) == false)
+        if (other.getIfMatch() != null && other.getIfMatch().equals(this.getIfMatch()) == false)
             return false;
         return true;
     }
@@ -181,10 +160,8 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getIfMatch() == null) ? 0 : getIfMatch().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getIfMatch() == null) ? 0 : getIfMatch().hashCode());
         return hashCode;
     }
 

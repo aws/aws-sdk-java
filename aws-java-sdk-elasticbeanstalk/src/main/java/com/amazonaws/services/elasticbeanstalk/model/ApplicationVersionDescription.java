@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -98,12 +96,10 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * 
      * @param applicationName
      *        The name of the application associated with this release.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ApplicationVersionDescription withApplicationName(
-            String applicationName) {
+    public ApplicationVersionDescription withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
     }
@@ -140,8 +136,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * 
      * @param description
      *        The description of this application version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationVersionDescription withDescription(String description) {
@@ -155,8 +150,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * </p>
      * 
      * @param versionLabel
-     *        A label uniquely identifying the version for the associated
-     *        application.
+     *        A label uniquely identifying the version for the associated application.
      */
 
     public void setVersionLabel(String versionLabel) {
@@ -168,8 +162,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * A label uniquely identifying the version for the associated application.
      * </p>
      * 
-     * @return A label uniquely identifying the version for the associated
-     *         application.
+     * @return A label uniquely identifying the version for the associated application.
      */
 
     public String getVersionLabel() {
@@ -182,10 +175,8 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * </p>
      * 
      * @param versionLabel
-     *        A label uniquely identifying the version for the associated
-     *        application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A label uniquely identifying the version for the associated application.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationVersionDescription withVersionLabel(String versionLabel) {
@@ -225,12 +216,10 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * 
      * @param sourceBundle
      *        The location where the source bundle is located for this version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ApplicationVersionDescription withSourceBundle(
-            S3Location sourceBundle) {
+    public ApplicationVersionDescription withSourceBundle(S3Location sourceBundle) {
         setSourceBundle(sourceBundle);
         return this;
     }
@@ -267,12 +256,10 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * 
      * @param dateCreated
      *        The creation date of the application version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ApplicationVersionDescription withDateCreated(
-            java.util.Date dateCreated) {
+    public ApplicationVersionDescription withDateCreated(java.util.Date dateCreated) {
         setDateCreated(dateCreated);
         return this;
     }
@@ -309,12 +296,10 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * 
      * @param dateUpdated
      *        The last modified date of the application version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ApplicationVersionDescription withDateUpdated(
-            java.util.Date dateUpdated) {
+    public ApplicationVersionDescription withDateUpdated(java.util.Date dateUpdated) {
         setDateUpdated(dateUpdated);
         return this;
     }
@@ -353,8 +338,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * 
      * @param status
      *        The processing status of the application version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationVersionStatus
      */
 
@@ -384,20 +368,17 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * 
      * @param status
      *        The processing status of the application version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationVersionStatus
      */
 
-    public ApplicationVersionDescription withStatus(
-            ApplicationVersionStatus status) {
+    public ApplicationVersionDescription withStatus(ApplicationVersionStatus status) {
         setStatus(status);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -435,41 +416,33 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
         if (obj instanceof ApplicationVersionDescription == false)
             return false;
         ApplicationVersionDescription other = (ApplicationVersionDescription) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getVersionLabel() == null ^ this.getVersionLabel() == null)
             return false;
-        if (other.getVersionLabel() != null
-                && other.getVersionLabel().equals(this.getVersionLabel()) == false)
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false)
             return false;
         if (other.getSourceBundle() == null ^ this.getSourceBundle() == null)
             return false;
-        if (other.getSourceBundle() != null
-                && other.getSourceBundle().equals(this.getSourceBundle()) == false)
+        if (other.getSourceBundle() != null && other.getSourceBundle().equals(this.getSourceBundle()) == false)
             return false;
         if (other.getDateCreated() == null ^ this.getDateCreated() == null)
             return false;
-        if (other.getDateCreated() != null
-                && other.getDateCreated().equals(this.getDateCreated()) == false)
+        if (other.getDateCreated() != null && other.getDateCreated().equals(this.getDateCreated()) == false)
             return false;
         if (other.getDateUpdated() == null ^ this.getDateUpdated() == null)
             return false;
-        if (other.getDateUpdated() != null
-                && other.getDateUpdated().equals(this.getDateUpdated()) == false)
+        if (other.getDateUpdated() != null && other.getDateUpdated().equals(this.getDateUpdated()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -479,29 +452,13 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVersionLabel() == null) ? 0 : getVersionLabel()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceBundle() == null) ? 0 : getSourceBundle()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
+        hashCode = prime * hashCode + ((getSourceBundle() == null) ? 0 : getSourceBundle().hashCode());
+        hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
+        hashCode = prime * hashCode + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 
@@ -510,9 +467,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
         try {
             return (ApplicationVersionDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

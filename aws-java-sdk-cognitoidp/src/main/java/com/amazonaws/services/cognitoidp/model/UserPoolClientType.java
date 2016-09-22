@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -116,8 +114,7 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * 
      * @param userPoolId
      *        The user pool ID for the user pool client.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolClientType withUserPoolId(String userPoolId) {
@@ -157,8 +154,7 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * 
      * @param clientName
      *        The client name from the user pool request of the client type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolClientType withClientName(String clientName) {
@@ -198,8 +194,7 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * 
      * @param clientId
      *        The ID of the client associated with the user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolClientType withClientId(String clientId) {
@@ -239,8 +234,7 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * 
      * @param clientSecret
      *        The client secret from the user pool request of the client type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolClientType withClientSecret(String clientSecret) {
@@ -254,8 +248,7 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last modified date from the user pool request of the client
-     *        type.
+     *        The last modified date from the user pool request of the client type.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -267,8 +260,7 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * The last modified date from the user pool request of the client type.
      * </p>
      * 
-     * @return The last modified date from the user pool request of the client
-     *         type.
+     * @return The last modified date from the user pool request of the client type.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -281,14 +273,11 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last modified date from the user pool request of the client
-     *        type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The last modified date from the user pool request of the client type.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolClientType withLastModifiedDate(
-            java.util.Date lastModifiedDate) {
+    public UserPoolClientType withLastModifiedDate(java.util.Date lastModifiedDate) {
         setLastModifiedDate(lastModifiedDate);
         return this;
     }
@@ -325,8 +314,7 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * 
      * @param creationDate
      *        The creation date from the user pool request of the client type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolClientType withCreationDate(java.util.Date creationDate) {
@@ -366,12 +354,10 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * 
      * @param refreshTokenValidity
      *        The validity of the refresh token.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolClientType withRefreshTokenValidity(
-            Integer refreshTokenValidity) {
+    public UserPoolClientType withRefreshTokenValidity(Integer refreshTokenValidity) {
         setRefreshTokenValidity(refreshTokenValidity);
         return this;
     }
@@ -411,22 +397,19 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * The Read-only attributes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setReadAttributes(java.util.Collection)} or
-     * {@link #withReadAttributes(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReadAttributes(java.util.Collection)} or {@link #withReadAttributes(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param readAttributes
      *        The Read-only attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolClientType withReadAttributes(String... readAttributes) {
         if (this.readAttributes == null) {
-            setReadAttributes(new java.util.ArrayList<String>(
-                    readAttributes.length));
+            setReadAttributes(new java.util.ArrayList<String>(readAttributes.length));
         }
         for (String ele : readAttributes) {
             this.readAttributes.add(ele);
@@ -441,12 +424,10 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * 
      * @param readAttributes
      *        The Read-only attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolClientType withReadAttributes(
-            java.util.Collection<String> readAttributes) {
+    public UserPoolClientType withReadAttributes(java.util.Collection<String> readAttributes) {
         setReadAttributes(readAttributes);
         return this;
     }
@@ -486,22 +467,19 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * The writeable attributes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setWriteAttributes(java.util.Collection)} or
-     * {@link #withWriteAttributes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWriteAttributes(java.util.Collection)} or {@link #withWriteAttributes(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param writeAttributes
      *        The writeable attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolClientType withWriteAttributes(String... writeAttributes) {
         if (this.writeAttributes == null) {
-            setWriteAttributes(new java.util.ArrayList<String>(
-                    writeAttributes.length));
+            setWriteAttributes(new java.util.ArrayList<String>(writeAttributes.length));
         }
         for (String ele : writeAttributes) {
             this.writeAttributes.add(ele);
@@ -516,12 +494,10 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * 
      * @param writeAttributes
      *        The writeable attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolClientType withWriteAttributes(
-            java.util.Collection<String> writeAttributes) {
+    public UserPoolClientType withWriteAttributes(java.util.Collection<String> writeAttributes) {
         setWriteAttributes(writeAttributes);
         return this;
     }
@@ -549,15 +525,13 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * @see ExplicitAuthFlowsType
      */
 
-    public void setExplicitAuthFlows(
-            java.util.Collection<String> explicitAuthFlows) {
+    public void setExplicitAuthFlows(java.util.Collection<String> explicitAuthFlows) {
         if (explicitAuthFlows == null) {
             this.explicitAuthFlows = null;
             return;
         }
 
-        this.explicitAuthFlows = new java.util.ArrayList<String>(
-                explicitAuthFlows);
+        this.explicitAuthFlows = new java.util.ArrayList<String>(explicitAuthFlows);
     }
 
     /**
@@ -565,23 +539,20 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * The explicit authentication flows.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setExplicitAuthFlows(java.util.Collection)} or
-     * {@link #withExplicitAuthFlows(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExplicitAuthFlows(java.util.Collection)} or {@link #withExplicitAuthFlows(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param explicitAuthFlows
      *        The explicit authentication flows.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExplicitAuthFlowsType
      */
 
     public UserPoolClientType withExplicitAuthFlows(String... explicitAuthFlows) {
         if (this.explicitAuthFlows == null) {
-            setExplicitAuthFlows(new java.util.ArrayList<String>(
-                    explicitAuthFlows.length));
+            setExplicitAuthFlows(new java.util.ArrayList<String>(explicitAuthFlows.length));
         }
         for (String ele : explicitAuthFlows) {
             this.explicitAuthFlows.add(ele);
@@ -596,13 +567,11 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * 
      * @param explicitAuthFlows
      *        The explicit authentication flows.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExplicitAuthFlowsType
      */
 
-    public UserPoolClientType withExplicitAuthFlows(
-            java.util.Collection<String> explicitAuthFlows) {
+    public UserPoolClientType withExplicitAuthFlows(java.util.Collection<String> explicitAuthFlows) {
         setExplicitAuthFlows(explicitAuthFlows);
         return this;
     }
@@ -614,15 +583,12 @@ public class UserPoolClientType implements Serializable, Cloneable {
      * 
      * @param explicitAuthFlows
      *        The explicit authentication flows.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExplicitAuthFlowsType
      */
 
-    public UserPoolClientType withExplicitAuthFlows(
-            ExplicitAuthFlowsType... explicitAuthFlows) {
-        java.util.ArrayList<String> explicitAuthFlowsCopy = new java.util.ArrayList<String>(
-                explicitAuthFlows.length);
+    public UserPoolClientType withExplicitAuthFlows(ExplicitAuthFlowsType... explicitAuthFlows) {
+        java.util.ArrayList<String> explicitAuthFlowsCopy = new java.util.ArrayList<String>(explicitAuthFlows.length);
         for (ExplicitAuthFlowsType value : explicitAuthFlows) {
             explicitAuthFlowsCopy.add(value.toString());
         }
@@ -635,8 +601,7 @@ public class UserPoolClientType implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -659,8 +624,7 @@ public class UserPoolClientType implements Serializable, Cloneable {
         if (getCreationDate() != null)
             sb.append("CreationDate: " + getCreationDate() + ",");
         if (getRefreshTokenValidity() != null)
-            sb.append("RefreshTokenValidity: " + getRefreshTokenValidity()
-                    + ",");
+            sb.append("RefreshTokenValidity: " + getRefreshTokenValidity() + ",");
         if (getReadAttributes() != null)
             sb.append("ReadAttributes: " + getReadAttributes() + ",");
         if (getWriteAttributes() != null)
@@ -683,61 +647,43 @@ public class UserPoolClientType implements Serializable, Cloneable {
         UserPoolClientType other = (UserPoolClientType) obj;
         if (other.getUserPoolId() == null ^ this.getUserPoolId() == null)
             return false;
-        if (other.getUserPoolId() != null
-                && other.getUserPoolId().equals(this.getUserPoolId()) == false)
+        if (other.getUserPoolId() != null && other.getUserPoolId().equals(this.getUserPoolId()) == false)
             return false;
         if (other.getClientName() == null ^ this.getClientName() == null)
             return false;
-        if (other.getClientName() != null
-                && other.getClientName().equals(this.getClientName()) == false)
+        if (other.getClientName() != null && other.getClientName().equals(this.getClientName()) == false)
             return false;
         if (other.getClientId() == null ^ this.getClientId() == null)
             return false;
-        if (other.getClientId() != null
-                && other.getClientId().equals(this.getClientId()) == false)
+        if (other.getClientId() != null && other.getClientId().equals(this.getClientId()) == false)
             return false;
         if (other.getClientSecret() == null ^ this.getClientSecret() == null)
             return false;
-        if (other.getClientSecret() != null
-                && other.getClientSecret().equals(this.getClientSecret()) == false)
+        if (other.getClientSecret() != null && other.getClientSecret().equals(this.getClientSecret()) == false)
             return false;
-        if (other.getLastModifiedDate() == null
-                ^ this.getLastModifiedDate() == null)
+        if (other.getLastModifiedDate() == null ^ this.getLastModifiedDate() == null)
             return false;
-        if (other.getLastModifiedDate() != null
-                && other.getLastModifiedDate().equals(
-                        this.getLastModifiedDate()) == false)
+        if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
-        if (other.getCreationDate() != null
-                && other.getCreationDate().equals(this.getCreationDate()) == false)
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
-        if (other.getRefreshTokenValidity() == null
-                ^ this.getRefreshTokenValidity() == null)
+        if (other.getRefreshTokenValidity() == null ^ this.getRefreshTokenValidity() == null)
             return false;
-        if (other.getRefreshTokenValidity() != null
-                && other.getRefreshTokenValidity().equals(
-                        this.getRefreshTokenValidity()) == false)
+        if (other.getRefreshTokenValidity() != null && other.getRefreshTokenValidity().equals(this.getRefreshTokenValidity()) == false)
             return false;
-        if (other.getReadAttributes() == null
-                ^ this.getReadAttributes() == null)
+        if (other.getReadAttributes() == null ^ this.getReadAttributes() == null)
             return false;
-        if (other.getReadAttributes() != null
-                && other.getReadAttributes().equals(this.getReadAttributes()) == false)
+        if (other.getReadAttributes() != null && other.getReadAttributes().equals(this.getReadAttributes()) == false)
             return false;
-        if (other.getWriteAttributes() == null
-                ^ this.getWriteAttributes() == null)
+        if (other.getWriteAttributes() == null ^ this.getWriteAttributes() == null)
             return false;
-        if (other.getWriteAttributes() != null
-                && other.getWriteAttributes().equals(this.getWriteAttributes()) == false)
+        if (other.getWriteAttributes() != null && other.getWriteAttributes().equals(this.getWriteAttributes()) == false)
             return false;
-        if (other.getExplicitAuthFlows() == null
-                ^ this.getExplicitAuthFlows() == null)
+        if (other.getExplicitAuthFlows() == null ^ this.getExplicitAuthFlows() == null)
             return false;
-        if (other.getExplicitAuthFlows() != null
-                && other.getExplicitAuthFlows().equals(
-                        this.getExplicitAuthFlows()) == false)
+        if (other.getExplicitAuthFlows() != null && other.getExplicitAuthFlows().equals(this.getExplicitAuthFlows()) == false)
             return false;
         return true;
     }
@@ -747,40 +693,16 @@ public class UserPoolClientType implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
-        hashCode = prime * hashCode
-                + ((getClientName() == null) ? 0 : getClientName().hashCode());
-        hashCode = prime * hashCode
-                + ((getClientId() == null) ? 0 : getClientId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClientSecret() == null) ? 0 : getClientSecret()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDate() == null) ? 0 : getCreationDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRefreshTokenValidity() == null) ? 0
-                        : getRefreshTokenValidity().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReadAttributes() == null) ? 0 : getReadAttributes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getWriteAttributes() == null) ? 0 : getWriteAttributes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExplicitAuthFlows() == null) ? 0
-                        : getExplicitAuthFlows().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
+        hashCode = prime * hashCode + ((getClientName() == null) ? 0 : getClientName().hashCode());
+        hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
+        hashCode = prime * hashCode + ((getClientSecret() == null) ? 0 : getClientSecret().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getRefreshTokenValidity() == null) ? 0 : getRefreshTokenValidity().hashCode());
+        hashCode = prime * hashCode + ((getReadAttributes() == null) ? 0 : getReadAttributes().hashCode());
+        hashCode = prime * hashCode + ((getWriteAttributes() == null) ? 0 : getWriteAttributes().hashCode());
+        hashCode = prime * hashCode + ((getExplicitAuthFlows() == null) ? 0 : getExplicitAuthFlows().hashCode());
         return hashCode;
     }
 
@@ -789,9 +711,7 @@ public class UserPoolClientType implements Serializable, Cloneable {
         try {
             return (UserPoolClientType) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

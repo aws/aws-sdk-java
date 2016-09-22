@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitosync.model.transform;
 
@@ -43,40 +41,30 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetBulkPublishDetailsRequest Marshaller
  */
-public class GetBulkPublishDetailsRequestMarshaller
-        implements
-        Marshaller<Request<GetBulkPublishDetailsRequest>, GetBulkPublishDetailsRequest> {
+public class GetBulkPublishDetailsRequestMarshaller implements Marshaller<Request<GetBulkPublishDetailsRequest>, GetBulkPublishDetailsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public GetBulkPublishDetailsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public GetBulkPublishDetailsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<GetBulkPublishDetailsRequest> marshall(
-            GetBulkPublishDetailsRequest getBulkPublishDetailsRequest) {
+    public Request<GetBulkPublishDetailsRequest> marshall(GetBulkPublishDetailsRequest getBulkPublishDetailsRequest) {
 
         if (getBulkPublishDetailsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetBulkPublishDetailsRequest> request = new DefaultRequest<GetBulkPublishDetailsRequest>(
-                getBulkPublishDetailsRequest, "AmazonCognitoSync");
+        Request<GetBulkPublishDetailsRequest> request = new DefaultRequest<GetBulkPublishDetailsRequest>(getBulkPublishDetailsRequest, "AmazonCognitoSync");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/getBulkPublishDetails";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{IdentityPoolId}",
-                        (getBulkPublishDetailsRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(getBulkPublishDetailsRequest
-                                                .getIdentityPoolId()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{IdentityPoolId}",
+                (getBulkPublishDetailsRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(getBulkPublishDetailsRequest.getIdentityPoolId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

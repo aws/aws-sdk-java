@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,56 +29,42 @@ import com.amazonaws.util.IdempotentUtils;
  * AssignPrivateIpAddressesRequest Marshaller
  */
 
-public class AssignPrivateIpAddressesRequestMarshaller
-        implements
-        Marshaller<Request<AssignPrivateIpAddressesRequest>, AssignPrivateIpAddressesRequest> {
+public class AssignPrivateIpAddressesRequestMarshaller implements Marshaller<Request<AssignPrivateIpAddressesRequest>, AssignPrivateIpAddressesRequest> {
 
-    public Request<AssignPrivateIpAddressesRequest> marshall(
-            AssignPrivateIpAddressesRequest assignPrivateIpAddressesRequest) {
+    public Request<AssignPrivateIpAddressesRequest> marshall(AssignPrivateIpAddressesRequest assignPrivateIpAddressesRequest) {
 
         if (assignPrivateIpAddressesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AssignPrivateIpAddressesRequest> request = new DefaultRequest<AssignPrivateIpAddressesRequest>(
-                assignPrivateIpAddressesRequest, "AmazonEC2");
+        Request<AssignPrivateIpAddressesRequest> request = new DefaultRequest<AssignPrivateIpAddressesRequest>(assignPrivateIpAddressesRequest, "AmazonEC2");
         request.addParameter("Action", "AssignPrivateIpAddresses");
         request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (assignPrivateIpAddressesRequest.getNetworkInterfaceId() != null) {
-            request.addParameter("NetworkInterfaceId", StringUtils
-                    .fromString(assignPrivateIpAddressesRequest
-                            .getNetworkInterfaceId()));
+            request.addParameter("NetworkInterfaceId", StringUtils.fromString(assignPrivateIpAddressesRequest.getNetworkInterfaceId()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> privateIpAddressesList = (com.amazonaws.internal.SdkInternalList<String>) assignPrivateIpAddressesRequest
                 .getPrivateIpAddresses();
-        if (!privateIpAddressesList.isEmpty()
-                || !privateIpAddressesList.isAutoConstruct()) {
+        if (!privateIpAddressesList.isEmpty() || !privateIpAddressesList.isAutoConstruct()) {
             int privateIpAddressesListIndex = 1;
 
             for (String privateIpAddressesListValue : privateIpAddressesList) {
                 if (privateIpAddressesListValue != null) {
-                    request.addParameter("PrivateIpAddress."
-                            + privateIpAddressesListIndex,
-                            StringUtils.fromString(privateIpAddressesListValue));
+                    request.addParameter("PrivateIpAddress." + privateIpAddressesListIndex, StringUtils.fromString(privateIpAddressesListValue));
                 }
                 privateIpAddressesListIndex++;
             }
         }
 
         if (assignPrivateIpAddressesRequest.getSecondaryPrivateIpAddressCount() != null) {
-            request.addParameter("SecondaryPrivateIpAddressCount", StringUtils
-                    .fromInteger(assignPrivateIpAddressesRequest
-                            .getSecondaryPrivateIpAddressCount()));
+            request.addParameter("SecondaryPrivateIpAddressCount", StringUtils.fromInteger(assignPrivateIpAddressesRequest.getSecondaryPrivateIpAddressCount()));
         }
 
         if (assignPrivateIpAddressesRequest.getAllowReassignment() != null) {
-            request.addParameter("AllowReassignment", StringUtils
-                    .fromBoolean(assignPrivateIpAddressesRequest
-                            .getAllowReassignment()));
+            request.addParameter("AllowReassignment", StringUtils.fromBoolean(assignPrivateIpAddressesRequest.getAllowReassignment()));
         }
 
         return request;

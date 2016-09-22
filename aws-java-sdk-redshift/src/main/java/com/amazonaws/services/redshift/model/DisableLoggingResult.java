@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Describes the status of logging for a cluster.
  * </p>
  */
-public class DisableLoggingResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DisableLoggingResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -68,8 +64,7 @@ public class DisableLoggingResult extends
      * </p>
      * 
      * @param loggingEnabled
-     *        <code>true</code> if logging is on, <code>false</code> if logging
-     *        is off.
+     *        <code>true</code> if logging is on, <code>false</code> if logging is off.
      */
 
     public void setLoggingEnabled(Boolean loggingEnabled) {
@@ -81,8 +76,7 @@ public class DisableLoggingResult extends
      * <code>true</code> if logging is on, <code>false</code> if logging is off.
      * </p>
      * 
-     * @return <code>true</code> if logging is on, <code>false</code> if logging
-     *         is off.
+     * @return <code>true</code> if logging is on, <code>false</code> if logging is off.
      */
 
     public Boolean getLoggingEnabled() {
@@ -95,10 +89,8 @@ public class DisableLoggingResult extends
      * </p>
      * 
      * @param loggingEnabled
-     *        <code>true</code> if logging is on, <code>false</code> if logging
-     *        is off.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <code>true</code> if logging is on, <code>false</code> if logging is off.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisableLoggingResult withLoggingEnabled(Boolean loggingEnabled) {
@@ -111,8 +103,7 @@ public class DisableLoggingResult extends
      * <code>true</code> if logging is on, <code>false</code> if logging is off.
      * </p>
      * 
-     * @return <code>true</code> if logging is on, <code>false</code> if logging
-     *         is off.
+     * @return <code>true</code> if logging is on, <code>false</code> if logging is off.
      */
 
     public Boolean isLoggingEnabled() {
@@ -151,8 +142,7 @@ public class DisableLoggingResult extends
      * 
      * @param bucketName
      *        The name of the S3 bucket where the log files are stored.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisableLoggingResult withBucketName(String bucketName) {
@@ -192,8 +182,7 @@ public class DisableLoggingResult extends
      * 
      * @param s3KeyPrefix
      *        The prefix applied to the log file names.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisableLoggingResult withS3KeyPrefix(String s3KeyPrefix) {
@@ -210,8 +199,7 @@ public class DisableLoggingResult extends
      *        The last time that logs were delivered.
      */
 
-    public void setLastSuccessfulDeliveryTime(
-            java.util.Date lastSuccessfulDeliveryTime) {
+    public void setLastSuccessfulDeliveryTime(java.util.Date lastSuccessfulDeliveryTime) {
         this.lastSuccessfulDeliveryTime = lastSuccessfulDeliveryTime;
     }
 
@@ -234,12 +222,10 @@ public class DisableLoggingResult extends
      * 
      * @param lastSuccessfulDeliveryTime
      *        The last time that logs were delivered.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DisableLoggingResult withLastSuccessfulDeliveryTime(
-            java.util.Date lastSuccessfulDeliveryTime) {
+    public DisableLoggingResult withLastSuccessfulDeliveryTime(java.util.Date lastSuccessfulDeliveryTime) {
         setLastSuccessfulDeliveryTime(lastSuccessfulDeliveryTime);
         return this;
     }
@@ -276,12 +262,10 @@ public class DisableLoggingResult extends
      * 
      * @param lastFailureTime
      *        The last time when logs failed to be delivered.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DisableLoggingResult withLastFailureTime(
-            java.util.Date lastFailureTime) {
+    public DisableLoggingResult withLastFailureTime(java.util.Date lastFailureTime) {
         setLastFailureTime(lastFailureTime);
         return this;
     }
@@ -318,8 +302,7 @@ public class DisableLoggingResult extends
      * 
      * @param lastFailureMessage
      *        The message indicating that logs failed to be delivered.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisableLoggingResult withLastFailureMessage(String lastFailureMessage) {
@@ -328,8 +311,7 @@ public class DisableLoggingResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -346,8 +328,7 @@ public class DisableLoggingResult extends
         if (getS3KeyPrefix() != null)
             sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
         if (getLastSuccessfulDeliveryTime() != null)
-            sb.append("LastSuccessfulDeliveryTime: "
-                    + getLastSuccessfulDeliveryTime() + ",");
+            sb.append("LastSuccessfulDeliveryTime: " + getLastSuccessfulDeliveryTime() + ",");
         if (getLastFailureTime() != null)
             sb.append("LastFailureTime: " + getLastFailureTime() + ",");
         if (getLastFailureMessage() != null)
@@ -366,41 +347,29 @@ public class DisableLoggingResult extends
         if (obj instanceof DisableLoggingResult == false)
             return false;
         DisableLoggingResult other = (DisableLoggingResult) obj;
-        if (other.getLoggingEnabled() == null
-                ^ this.getLoggingEnabled() == null)
+        if (other.getLoggingEnabled() == null ^ this.getLoggingEnabled() == null)
             return false;
-        if (other.getLoggingEnabled() != null
-                && other.getLoggingEnabled().equals(this.getLoggingEnabled()) == false)
+        if (other.getLoggingEnabled() != null && other.getLoggingEnabled().equals(this.getLoggingEnabled()) == false)
             return false;
         if (other.getBucketName() == null ^ this.getBucketName() == null)
             return false;
-        if (other.getBucketName() != null
-                && other.getBucketName().equals(this.getBucketName()) == false)
+        if (other.getBucketName() != null && other.getBucketName().equals(this.getBucketName()) == false)
             return false;
         if (other.getS3KeyPrefix() == null ^ this.getS3KeyPrefix() == null)
             return false;
-        if (other.getS3KeyPrefix() != null
-                && other.getS3KeyPrefix().equals(this.getS3KeyPrefix()) == false)
+        if (other.getS3KeyPrefix() != null && other.getS3KeyPrefix().equals(this.getS3KeyPrefix()) == false)
             return false;
-        if (other.getLastSuccessfulDeliveryTime() == null
-                ^ this.getLastSuccessfulDeliveryTime() == null)
+        if (other.getLastSuccessfulDeliveryTime() == null ^ this.getLastSuccessfulDeliveryTime() == null)
             return false;
-        if (other.getLastSuccessfulDeliveryTime() != null
-                && other.getLastSuccessfulDeliveryTime().equals(
-                        this.getLastSuccessfulDeliveryTime()) == false)
+        if (other.getLastSuccessfulDeliveryTime() != null && other.getLastSuccessfulDeliveryTime().equals(this.getLastSuccessfulDeliveryTime()) == false)
             return false;
-        if (other.getLastFailureTime() == null
-                ^ this.getLastFailureTime() == null)
+        if (other.getLastFailureTime() == null ^ this.getLastFailureTime() == null)
             return false;
-        if (other.getLastFailureTime() != null
-                && other.getLastFailureTime().equals(this.getLastFailureTime()) == false)
+        if (other.getLastFailureTime() != null && other.getLastFailureTime().equals(this.getLastFailureTime()) == false)
             return false;
-        if (other.getLastFailureMessage() == null
-                ^ this.getLastFailureMessage() == null)
+        if (other.getLastFailureMessage() == null ^ this.getLastFailureMessage() == null)
             return false;
-        if (other.getLastFailureMessage() != null
-                && other.getLastFailureMessage().equals(
-                        this.getLastFailureMessage()) == false)
+        if (other.getLastFailureMessage() != null && other.getLastFailureMessage().equals(this.getLastFailureMessage()) == false)
             return false;
         return true;
     }
@@ -410,27 +379,12 @@ public class DisableLoggingResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLoggingEnabled() == null) ? 0 : getLoggingEnabled()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getBucketName() == null) ? 0 : getBucketName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getS3KeyPrefix() == null) ? 0 : getS3KeyPrefix().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastSuccessfulDeliveryTime() == null) ? 0
-                        : getLastSuccessfulDeliveryTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastFailureTime() == null) ? 0 : getLastFailureTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastFailureMessage() == null) ? 0
-                        : getLastFailureMessage().hashCode());
+        hashCode = prime * hashCode + ((getLoggingEnabled() == null) ? 0 : getLoggingEnabled().hashCode());
+        hashCode = prime * hashCode + ((getBucketName() == null) ? 0 : getBucketName().hashCode());
+        hashCode = prime * hashCode + ((getS3KeyPrefix() == null) ? 0 : getS3KeyPrefix().hashCode());
+        hashCode = prime * hashCode + ((getLastSuccessfulDeliveryTime() == null) ? 0 : getLastSuccessfulDeliveryTime().hashCode());
+        hashCode = prime * hashCode + ((getLastFailureTime() == null) ? 0 : getLastFailureTime().hashCode());
+        hashCode = prime * hashCode + ((getLastFailureMessage() == null) ? 0 : getLastFailureMessage().hashCode());
         return hashCode;
     }
 
@@ -439,9 +393,7 @@ public class DisableLoggingResult extends
         try {
             return (DisableLoggingResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

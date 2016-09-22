@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
@@ -31,31 +29,25 @@ import com.amazonaws.util.IdempotentUtils;
  * AttachRolePolicyRequest Marshaller
  */
 
-public class AttachRolePolicyRequestMarshaller implements
-        Marshaller<Request<AttachRolePolicyRequest>, AttachRolePolicyRequest> {
+public class AttachRolePolicyRequestMarshaller implements Marshaller<Request<AttachRolePolicyRequest>, AttachRolePolicyRequest> {
 
-    public Request<AttachRolePolicyRequest> marshall(
-            AttachRolePolicyRequest attachRolePolicyRequest) {
+    public Request<AttachRolePolicyRequest> marshall(AttachRolePolicyRequest attachRolePolicyRequest) {
 
         if (attachRolePolicyRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AttachRolePolicyRequest> request = new DefaultRequest<AttachRolePolicyRequest>(
-                attachRolePolicyRequest, "AmazonIdentityManagement");
+        Request<AttachRolePolicyRequest> request = new DefaultRequest<AttachRolePolicyRequest>(attachRolePolicyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "AttachRolePolicy");
         request.addParameter("Version", "2010-05-08");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (attachRolePolicyRequest.getRoleName() != null) {
-            request.addParameter("RoleName", StringUtils
-                    .fromString(attachRolePolicyRequest.getRoleName()));
+            request.addParameter("RoleName", StringUtils.fromString(attachRolePolicyRequest.getRoleName()));
         }
 
         if (attachRolePolicyRequest.getPolicyArn() != null) {
-            request.addParameter("PolicyArn", StringUtils
-                    .fromString(attachRolePolicyRequest.getPolicyArn()));
+            request.addParameter("PolicyArn", StringUtils.fromString(attachRolePolicyRequest.getPolicyArn()));
         }
 
         return request;

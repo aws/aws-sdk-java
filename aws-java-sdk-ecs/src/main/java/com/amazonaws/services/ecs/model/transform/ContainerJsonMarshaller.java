@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecs.model.transform;
 
@@ -34,53 +32,43 @@ public class ContainerJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Container container,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(Container container, StructuredJsonGenerator jsonGenerator) {
 
         if (container == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (container.getContainerArn() != null) {
-                jsonGenerator.writeFieldName("containerArn").writeValue(
-                        container.getContainerArn());
+                jsonGenerator.writeFieldName("containerArn").writeValue(container.getContainerArn());
             }
             if (container.getTaskArn() != null) {
-                jsonGenerator.writeFieldName("taskArn").writeValue(
-                        container.getTaskArn());
+                jsonGenerator.writeFieldName("taskArn").writeValue(container.getTaskArn());
             }
             if (container.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(
-                        container.getName());
+                jsonGenerator.writeFieldName("name").writeValue(container.getName());
             }
             if (container.getLastStatus() != null) {
-                jsonGenerator.writeFieldName("lastStatus").writeValue(
-                        container.getLastStatus());
+                jsonGenerator.writeFieldName("lastStatus").writeValue(container.getLastStatus());
             }
             if (container.getExitCode() != null) {
-                jsonGenerator.writeFieldName("exitCode").writeValue(
-                        container.getExitCode());
+                jsonGenerator.writeFieldName("exitCode").writeValue(container.getExitCode());
             }
             if (container.getReason() != null) {
-                jsonGenerator.writeFieldName("reason").writeValue(
-                        container.getReason());
+                jsonGenerator.writeFieldName("reason").writeValue(container.getReason());
             }
 
             com.amazonaws.internal.SdkInternalList<NetworkBinding> networkBindingsList = (com.amazonaws.internal.SdkInternalList<NetworkBinding>) container
                     .getNetworkBindings();
-            if (!networkBindingsList.isEmpty()
-                    || !networkBindingsList.isAutoConstruct()) {
+            if (!networkBindingsList.isEmpty() || !networkBindingsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("networkBindings");
                 jsonGenerator.writeStartArray();
                 for (NetworkBinding networkBindingsListValue : networkBindingsList) {
                     if (networkBindingsListValue != null) {
 
-                        NetworkBindingJsonMarshaller.getInstance().marshall(
-                                networkBindingsListValue, jsonGenerator);
+                        NetworkBindingJsonMarshaller.getInstance().marshall(networkBindingsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
@@ -88,8 +76,7 @@ public class ContainerJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ClusterSnapshotCopyStatus StAX Unmarshaller
  */
-public class ClusterSnapshotCopyStatusStaxUnmarshaller implements
-        Unmarshaller<ClusterSnapshotCopyStatus, StaxUnmarshallerContext> {
+public class ClusterSnapshotCopyStatusStaxUnmarshaller implements Unmarshaller<ClusterSnapshotCopyStatus, StaxUnmarshallerContext> {
 
-    public ClusterSnapshotCopyStatus unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public ClusterSnapshotCopyStatus unmarshall(StaxUnmarshallerContext context) throws Exception {
         ClusterSnapshotCopyStatus clusterSnapshotCopyStatus = new ClusterSnapshotCopyStatus();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,24 +46,17 @@ public class ClusterSnapshotCopyStatusStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("DestinationRegion", targetDepth)) {
-                    clusterSnapshotCopyStatus
-                            .setDestinationRegion(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    clusterSnapshotCopyStatus.setDestinationRegion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("RetentionPeriod", targetDepth)) {
-                    clusterSnapshotCopyStatus
-                            .setRetentionPeriod(LongStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    clusterSnapshotCopyStatus.setRetentionPeriod(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("SnapshotCopyGrantName", targetDepth)) {
-                    clusterSnapshotCopyStatus
-                            .setSnapshotCopyGrantName(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("SnapshotCopyGrantName", targetDepth)) {
+                    clusterSnapshotCopyStatus.setSnapshotCopyGrantName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

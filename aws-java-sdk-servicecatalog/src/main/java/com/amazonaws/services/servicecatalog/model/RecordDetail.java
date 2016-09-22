@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.servicecatalog.model;
 
@@ -49,8 +47,7 @@ public class RecordDetail implements Serializable, Cloneable {
     private java.util.Date createdTime;
     /**
      * <p>
-     * The time when the record for the ProvisionedProduct object was last
-     * updated.
+     * The time when the record for the ProvisionedProduct object was last updated.
      * </p>
      */
     private java.util.Date updatedTime;
@@ -135,8 +132,7 @@ public class RecordDetail implements Serializable, Cloneable {
      * 
      * @param recordId
      *        The identifier of the ProvisionedProduct object record.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordDetail withRecordId(String recordId) {
@@ -176,8 +172,7 @@ public class RecordDetail implements Serializable, Cloneable {
      * 
      * @param provisionedProductName
      *        The user-friendly name of the ProvisionedProduct object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordDetail withProvisionedProductName(String provisionedProductName) {
@@ -219,8 +214,7 @@ public class RecordDetail implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the ProvisionedProduct object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecordStatus
      */
 
@@ -250,8 +244,7 @@ public class RecordDetail implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the ProvisionedProduct object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecordStatus
      */
 
@@ -266,8 +259,7 @@ public class RecordDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param createdTime
-     *        The time when the record for the ProvisionedProduct object was
-     *        created.
+     *        The time when the record for the ProvisionedProduct object was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -279,8 +271,7 @@ public class RecordDetail implements Serializable, Cloneable {
      * The time when the record for the ProvisionedProduct object was created.
      * </p>
      * 
-     * @return The time when the record for the ProvisionedProduct object was
-     *         created.
+     * @return The time when the record for the ProvisionedProduct object was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -293,10 +284,8 @@ public class RecordDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param createdTime
-     *        The time when the record for the ProvisionedProduct object was
-     *        created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time when the record for the ProvisionedProduct object was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordDetail withCreatedTime(java.util.Date createdTime) {
@@ -306,13 +295,11 @@ public class RecordDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when the record for the ProvisionedProduct object was last
-     * updated.
+     * The time when the record for the ProvisionedProduct object was last updated.
      * </p>
      * 
      * @param updatedTime
-     *        The time when the record for the ProvisionedProduct object was
-     *        last updated.
+     *        The time when the record for the ProvisionedProduct object was last updated.
      */
 
     public void setUpdatedTime(java.util.Date updatedTime) {
@@ -321,12 +308,10 @@ public class RecordDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when the record for the ProvisionedProduct object was last
-     * updated.
+     * The time when the record for the ProvisionedProduct object was last updated.
      * </p>
      * 
-     * @return The time when the record for the ProvisionedProduct object was
-     *         last updated.
+     * @return The time when the record for the ProvisionedProduct object was last updated.
      */
 
     public java.util.Date getUpdatedTime() {
@@ -335,15 +320,12 @@ public class RecordDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when the record for the ProvisionedProduct object was last
-     * updated.
+     * The time when the record for the ProvisionedProduct object was last updated.
      * </p>
      * 
      * @param updatedTime
-     *        The time when the record for the ProvisionedProduct object was
-     *        last updated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time when the record for the ProvisionedProduct object was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordDetail withUpdatedTime(java.util.Date updatedTime) {
@@ -383,8 +365,7 @@ public class RecordDetail implements Serializable, Cloneable {
      * 
      * @param provisionedProductType
      *        The type of the ProvisionedProduct object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordDetail withProvisionedProductType(String provisionedProductType) {
@@ -424,8 +405,7 @@ public class RecordDetail implements Serializable, Cloneable {
      * 
      * @param recordType
      *        The record type for this record.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordDetail withRecordType(String recordType) {
@@ -465,8 +445,7 @@ public class RecordDetail implements Serializable, Cloneable {
      * 
      * @param provisionedProductId
      *        The identifier of the ProvisionedProduct object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordDetail withProvisionedProductId(String provisionedProductId) {
@@ -506,8 +485,7 @@ public class RecordDetail implements Serializable, Cloneable {
      * 
      * @param productId
      *        The identifier of the product.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordDetail withProductId(String productId) {
@@ -547,8 +525,7 @@ public class RecordDetail implements Serializable, Cloneable {
      * 
      * @param provisioningArtifactId
      *        The provisioning artifact identifier for this product.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordDetail withProvisioningArtifactId(String provisioningArtifactId) {
@@ -588,8 +565,7 @@ public class RecordDetail implements Serializable, Cloneable {
      * 
      * @param pathId
      *        The identifier of the path for this product's provisioning.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordDetail withPathId(String pathId) {
@@ -632,22 +608,19 @@ public class RecordDetail implements Serializable, Cloneable {
      * A list of errors that occurred while processing the request.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRecordErrors(java.util.Collection)} or
-     * {@link #withRecordErrors(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRecordErrors(java.util.Collection)} or {@link #withRecordErrors(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param recordErrors
      *        A list of errors that occurred while processing the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordDetail withRecordErrors(RecordError... recordErrors) {
         if (this.recordErrors == null) {
-            setRecordErrors(new java.util.ArrayList<RecordError>(
-                    recordErrors.length));
+            setRecordErrors(new java.util.ArrayList<RecordError>(recordErrors.length));
         }
         for (RecordError ele : recordErrors) {
             this.recordErrors.add(ele);
@@ -662,12 +635,10 @@ public class RecordDetail implements Serializable, Cloneable {
      * 
      * @param recordErrors
      *        A list of errors that occurred while processing the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RecordDetail withRecordErrors(
-            java.util.Collection<RecordError> recordErrors) {
+    public RecordDetail withRecordErrors(java.util.Collection<RecordError> recordErrors) {
         setRecordErrors(recordErrors);
         return this;
     }
@@ -707,16 +678,14 @@ public class RecordDetail implements Serializable, Cloneable {
      * List of tags associated with this record.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRecordTags(java.util.Collection)} or
-     * {@link #withRecordTags(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRecordTags(java.util.Collection)} or {@link #withRecordTags(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param recordTags
      *        List of tags associated with this record.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordDetail withRecordTags(RecordTag... recordTags) {
@@ -736,19 +705,16 @@ public class RecordDetail implements Serializable, Cloneable {
      * 
      * @param recordTags
      *        List of tags associated with this record.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RecordDetail withRecordTags(
-            java.util.Collection<RecordTag> recordTags) {
+    public RecordDetail withRecordTags(java.util.Collection<RecordTag> recordTags) {
         setRecordTags(recordTags);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -761,8 +727,7 @@ public class RecordDetail implements Serializable, Cloneable {
         if (getRecordId() != null)
             sb.append("RecordId: " + getRecordId() + ",");
         if (getProvisionedProductName() != null)
-            sb.append("ProvisionedProductName: " + getProvisionedProductName()
-                    + ",");
+            sb.append("ProvisionedProductName: " + getProvisionedProductName() + ",");
         if (getStatus() != null)
             sb.append("Status: " + getStatus() + ",");
         if (getCreatedTime() != null)
@@ -770,18 +735,15 @@ public class RecordDetail implements Serializable, Cloneable {
         if (getUpdatedTime() != null)
             sb.append("UpdatedTime: " + getUpdatedTime() + ",");
         if (getProvisionedProductType() != null)
-            sb.append("ProvisionedProductType: " + getProvisionedProductType()
-                    + ",");
+            sb.append("ProvisionedProductType: " + getProvisionedProductType() + ",");
         if (getRecordType() != null)
             sb.append("RecordType: " + getRecordType() + ",");
         if (getProvisionedProductId() != null)
-            sb.append("ProvisionedProductId: " + getProvisionedProductId()
-                    + ",");
+            sb.append("ProvisionedProductId: " + getProvisionedProductId() + ",");
         if (getProductId() != null)
             sb.append("ProductId: " + getProductId() + ",");
         if (getProvisioningArtifactId() != null)
-            sb.append("ProvisioningArtifactId: " + getProvisioningArtifactId()
-                    + ",");
+            sb.append("ProvisioningArtifactId: " + getProvisioningArtifactId() + ",");
         if (getPathId() != null)
             sb.append("PathId: " + getPathId() + ",");
         if (getRecordErrors() != null)
@@ -804,76 +766,55 @@ public class RecordDetail implements Serializable, Cloneable {
         RecordDetail other = (RecordDetail) obj;
         if (other.getRecordId() == null ^ this.getRecordId() == null)
             return false;
-        if (other.getRecordId() != null
-                && other.getRecordId().equals(this.getRecordId()) == false)
+        if (other.getRecordId() != null && other.getRecordId().equals(this.getRecordId()) == false)
             return false;
-        if (other.getProvisionedProductName() == null
-                ^ this.getProvisionedProductName() == null)
+        if (other.getProvisionedProductName() == null ^ this.getProvisionedProductName() == null)
             return false;
-        if (other.getProvisionedProductName() != null
-                && other.getProvisionedProductName().equals(
-                        this.getProvisionedProductName()) == false)
+        if (other.getProvisionedProductName() != null && other.getProvisionedProductName().equals(this.getProvisionedProductName()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
             return false;
-        if (other.getCreatedTime() != null
-                && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
         if (other.getUpdatedTime() == null ^ this.getUpdatedTime() == null)
             return false;
-        if (other.getUpdatedTime() != null
-                && other.getUpdatedTime().equals(this.getUpdatedTime()) == false)
+        if (other.getUpdatedTime() != null && other.getUpdatedTime().equals(this.getUpdatedTime()) == false)
             return false;
-        if (other.getProvisionedProductType() == null
-                ^ this.getProvisionedProductType() == null)
+        if (other.getProvisionedProductType() == null ^ this.getProvisionedProductType() == null)
             return false;
-        if (other.getProvisionedProductType() != null
-                && other.getProvisionedProductType().equals(
-                        this.getProvisionedProductType()) == false)
+        if (other.getProvisionedProductType() != null && other.getProvisionedProductType().equals(this.getProvisionedProductType()) == false)
             return false;
         if (other.getRecordType() == null ^ this.getRecordType() == null)
             return false;
-        if (other.getRecordType() != null
-                && other.getRecordType().equals(this.getRecordType()) == false)
+        if (other.getRecordType() != null && other.getRecordType().equals(this.getRecordType()) == false)
             return false;
-        if (other.getProvisionedProductId() == null
-                ^ this.getProvisionedProductId() == null)
+        if (other.getProvisionedProductId() == null ^ this.getProvisionedProductId() == null)
             return false;
-        if (other.getProvisionedProductId() != null
-                && other.getProvisionedProductId().equals(
-                        this.getProvisionedProductId()) == false)
+        if (other.getProvisionedProductId() != null && other.getProvisionedProductId().equals(this.getProvisionedProductId()) == false)
             return false;
         if (other.getProductId() == null ^ this.getProductId() == null)
             return false;
-        if (other.getProductId() != null
-                && other.getProductId().equals(this.getProductId()) == false)
+        if (other.getProductId() != null && other.getProductId().equals(this.getProductId()) == false)
             return false;
-        if (other.getProvisioningArtifactId() == null
-                ^ this.getProvisioningArtifactId() == null)
+        if (other.getProvisioningArtifactId() == null ^ this.getProvisioningArtifactId() == null)
             return false;
-        if (other.getProvisioningArtifactId() != null
-                && other.getProvisioningArtifactId().equals(
-                        this.getProvisioningArtifactId()) == false)
+        if (other.getProvisioningArtifactId() != null && other.getProvisioningArtifactId().equals(this.getProvisioningArtifactId()) == false)
             return false;
         if (other.getPathId() == null ^ this.getPathId() == null)
             return false;
-        if (other.getPathId() != null
-                && other.getPathId().equals(this.getPathId()) == false)
+        if (other.getPathId() != null && other.getPathId().equals(this.getPathId()) == false)
             return false;
         if (other.getRecordErrors() == null ^ this.getRecordErrors() == null)
             return false;
-        if (other.getRecordErrors() != null
-                && other.getRecordErrors().equals(this.getRecordErrors()) == false)
+        if (other.getRecordErrors() != null && other.getRecordErrors().equals(this.getRecordErrors()) == false)
             return false;
         if (other.getRecordTags() == null ^ this.getRecordTags() == null)
             return false;
-        if (other.getRecordTags() != null
-                && other.getRecordTags().equals(this.getRecordTags()) == false)
+        if (other.getRecordTags() != null && other.getRecordTags().equals(this.getRecordTags()) == false)
             return false;
         return true;
     }
@@ -883,44 +824,19 @@ public class RecordDetail implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRecordId() == null) ? 0 : getRecordId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProvisionedProductName() == null) ? 0
-                        : getProvisionedProductName().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUpdatedTime() == null) ? 0 : getUpdatedTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProvisionedProductType() == null) ? 0
-                        : getProvisionedProductType().hashCode());
-        hashCode = prime * hashCode
-                + ((getRecordType() == null) ? 0 : getRecordType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProvisionedProductId() == null) ? 0
-                        : getProvisionedProductId().hashCode());
-        hashCode = prime * hashCode
-                + ((getProductId() == null) ? 0 : getProductId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProvisioningArtifactId() == null) ? 0
-                        : getProvisioningArtifactId().hashCode());
-        hashCode = prime * hashCode
-                + ((getPathId() == null) ? 0 : getPathId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRecordErrors() == null) ? 0 : getRecordErrors()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getRecordTags() == null) ? 0 : getRecordTags().hashCode());
+        hashCode = prime * hashCode + ((getRecordId() == null) ? 0 : getRecordId().hashCode());
+        hashCode = prime * hashCode + ((getProvisionedProductName() == null) ? 0 : getProvisionedProductName().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getUpdatedTime() == null) ? 0 : getUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getProvisionedProductType() == null) ? 0 : getProvisionedProductType().hashCode());
+        hashCode = prime * hashCode + ((getRecordType() == null) ? 0 : getRecordType().hashCode());
+        hashCode = prime * hashCode + ((getProvisionedProductId() == null) ? 0 : getProvisionedProductId().hashCode());
+        hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
+        hashCode = prime * hashCode + ((getProvisioningArtifactId() == null) ? 0 : getProvisioningArtifactId().hashCode());
+        hashCode = prime * hashCode + ((getPathId() == null) ? 0 : getPathId().hashCode());
+        hashCode = prime * hashCode + ((getRecordErrors() == null) ? 0 : getRecordErrors().hashCode());
+        hashCode = prime * hashCode + ((getRecordTags() == null) ? 0 : getRecordTags().hashCode());
         return hashCode;
     }
 
@@ -929,9 +845,7 @@ public class RecordDetail implements Serializable, Cloneable {
         try {
             return (RecordDetail) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

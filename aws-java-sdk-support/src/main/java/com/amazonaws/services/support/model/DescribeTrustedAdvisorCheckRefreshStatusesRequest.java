@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.support.model;
 
@@ -20,30 +18,24 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
-     * Specifying the check ID of a check that is automatically refreshed causes
-     * an <code>InvalidParameterValue</code> error.
+     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that
+     * is automatically refreshed causes an <code>InvalidParameterValue</code> error.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> checkIds;
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
-     * Specifying the check ID of a check that is automatically refreshed causes
-     * an <code>InvalidParameterValue</code> error.
+     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that
+     * is automatically refreshed causes an <code>InvalidParameterValue</code> error.
      * </p>
      * 
-     * @return The IDs of the Trusted Advisor checks to get the status of.
-     *         <b>Note:</b> Specifying the check ID of a check that is
-     *         automatically refreshed causes an
-     *         <code>InvalidParameterValue</code> error.
+     * @return The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a
+     *         check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
      */
 
     public java.util.List<String> getCheckIds() {
@@ -55,16 +47,13 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
-     * Specifying the check ID of a check that is automatically refreshed causes
-     * an <code>InvalidParameterValue</code> error.
+     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that
+     * is automatically refreshed causes an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param checkIds
-     *        The IDs of the Trusted Advisor checks to get the status of.
-     *        <b>Note:</b> Specifying the check ID of a check that is
-     *        automatically refreshed causes an
-     *        <code>InvalidParameterValue</code> error.
+     *        The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a
+     *        check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
      */
 
     public void setCheckIds(java.util.Collection<String> checkIds) {
@@ -73,37 +62,29 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
             return;
         }
 
-        this.checkIds = new com.amazonaws.internal.SdkInternalList<String>(
-                checkIds);
+        this.checkIds = new com.amazonaws.internal.SdkInternalList<String>(checkIds);
     }
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
-     * Specifying the check ID of a check that is automatically refreshed causes
-     * an <code>InvalidParameterValue</code> error.
+     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that
+     * is automatically refreshed causes an <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCheckIds(java.util.Collection)} or
-     * {@link #withCheckIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCheckIds(java.util.Collection)} or {@link #withCheckIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param checkIds
-     *        The IDs of the Trusted Advisor checks to get the status of.
-     *        <b>Note:</b> Specifying the check ID of a check that is
-     *        automatically refreshed causes an
-     *        <code>InvalidParameterValue</code> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a
+     *        check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTrustedAdvisorCheckRefreshStatusesRequest withCheckIds(
-            String... checkIds) {
+    public DescribeTrustedAdvisorCheckRefreshStatusesRequest withCheckIds(String... checkIds) {
         if (this.checkIds == null) {
-            setCheckIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    checkIds.length));
+            setCheckIds(new com.amazonaws.internal.SdkInternalList<String>(checkIds.length));
         }
         for (String ele : checkIds) {
             this.checkIds.add(ele);
@@ -113,29 +94,23 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
-     * Specifying the check ID of a check that is automatically refreshed causes
-     * an <code>InvalidParameterValue</code> error.
+     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that
+     * is automatically refreshed causes an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param checkIds
-     *        The IDs of the Trusted Advisor checks to get the status of.
-     *        <b>Note:</b> Specifying the check ID of a check that is
-     *        automatically refreshed causes an
-     *        <code>InvalidParameterValue</code> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a
+     *        check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTrustedAdvisorCheckRefreshStatusesRequest withCheckIds(
-            java.util.Collection<String> checkIds) {
+    public DescribeTrustedAdvisorCheckRefreshStatusesRequest withCheckIds(java.util.Collection<String> checkIds) {
         setCheckIds(checkIds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -163,8 +138,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
         DescribeTrustedAdvisorCheckRefreshStatusesRequest other = (DescribeTrustedAdvisorCheckRefreshStatusesRequest) obj;
         if (other.getCheckIds() == null ^ this.getCheckIds() == null)
             return false;
-        if (other.getCheckIds() != null
-                && other.getCheckIds().equals(this.getCheckIds()) == false)
+        if (other.getCheckIds() != null && other.getCheckIds().equals(this.getCheckIds()) == false)
             return false;
         return true;
     }
@@ -174,14 +148,12 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCheckIds() == null) ? 0 : getCheckIds().hashCode());
+        hashCode = prime * hashCode + ((getCheckIds() == null) ? 0 : getCheckIds().hashCode());
         return hashCode;
     }
 
     @Override
     public DescribeTrustedAdvisorCheckRefreshStatusesRequest clone() {
-        return (DescribeTrustedAdvisorCheckRefreshStatusesRequest) super
-                .clone();
+        return (DescribeTrustedAdvisorCheckRefreshStatusesRequest) super.clone();
     }
 }

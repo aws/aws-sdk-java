@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
 
@@ -55,12 +53,10 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
 
     /**
      * @param virtualInterfaceName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NewPublicVirtualInterface withVirtualInterfaceName(
-            String virtualInterfaceName) {
+    public NewPublicVirtualInterface withVirtualInterfaceName(String virtualInterfaceName) {
         setVirtualInterfaceName(virtualInterfaceName);
         return this;
     }
@@ -83,8 +79,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
 
     /**
      * @param vlan
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NewPublicVirtualInterface withVlan(Integer vlan) {
@@ -110,8 +105,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
 
     /**
      * @param asn
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NewPublicVirtualInterface withAsn(Integer asn) {
@@ -137,8 +131,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
 
     /**
      * @param authKey
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NewPublicVirtualInterface withAuthKey(String authKey) {
@@ -164,8 +157,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
 
     /**
      * @param amazonAddress
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NewPublicVirtualInterface withAmazonAddress(String amazonAddress) {
@@ -191,8 +183,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
 
     /**
      * @param customerAddress
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NewPublicVirtualInterface withCustomerAddress(String customerAddress) {
@@ -215,35 +206,29 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
      * @param routeFilterPrefixes
      */
 
-    public void setRouteFilterPrefixes(
-            java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
+    public void setRouteFilterPrefixes(java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
         if (routeFilterPrefixes == null) {
             this.routeFilterPrefixes = null;
             return;
         }
 
-        this.routeFilterPrefixes = new com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>(
-                routeFilterPrefixes);
+        this.routeFilterPrefixes = new com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>(routeFilterPrefixes);
     }
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRouteFilterPrefixes(java.util.Collection)} or
-     * {@link #withRouteFilterPrefixes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRouteFilterPrefixes(java.util.Collection)} or {@link #withRouteFilterPrefixes(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param routeFilterPrefixes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NewPublicVirtualInterface withRouteFilterPrefixes(
-            RouteFilterPrefix... routeFilterPrefixes) {
+    public NewPublicVirtualInterface withRouteFilterPrefixes(RouteFilterPrefix... routeFilterPrefixes) {
         if (this.routeFilterPrefixes == null) {
-            setRouteFilterPrefixes(new com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>(
-                    routeFilterPrefixes.length));
+            setRouteFilterPrefixes(new com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>(routeFilterPrefixes.length));
         }
         for (RouteFilterPrefix ele : routeFilterPrefixes) {
             this.routeFilterPrefixes.add(ele);
@@ -253,19 +238,16 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
 
     /**
      * @param routeFilterPrefixes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NewPublicVirtualInterface withRouteFilterPrefixes(
-            java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
+    public NewPublicVirtualInterface withRouteFilterPrefixes(java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
         setRouteFilterPrefixes(routeFilterPrefixes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -276,8 +258,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVirtualInterfaceName() != null)
-            sb.append("VirtualInterfaceName: " + getVirtualInterfaceName()
-                    + ",");
+            sb.append("VirtualInterfaceName: " + getVirtualInterfaceName() + ",");
         if (getVlan() != null)
             sb.append("Vlan: " + getVlan() + ",");
         if (getAsn() != null)
@@ -304,45 +285,33 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
         if (obj instanceof NewPublicVirtualInterface == false)
             return false;
         NewPublicVirtualInterface other = (NewPublicVirtualInterface) obj;
-        if (other.getVirtualInterfaceName() == null
-                ^ this.getVirtualInterfaceName() == null)
+        if (other.getVirtualInterfaceName() == null ^ this.getVirtualInterfaceName() == null)
             return false;
-        if (other.getVirtualInterfaceName() != null
-                && other.getVirtualInterfaceName().equals(
-                        this.getVirtualInterfaceName()) == false)
+        if (other.getVirtualInterfaceName() != null && other.getVirtualInterfaceName().equals(this.getVirtualInterfaceName()) == false)
             return false;
         if (other.getVlan() == null ^ this.getVlan() == null)
             return false;
-        if (other.getVlan() != null
-                && other.getVlan().equals(this.getVlan()) == false)
+        if (other.getVlan() != null && other.getVlan().equals(this.getVlan()) == false)
             return false;
         if (other.getAsn() == null ^ this.getAsn() == null)
             return false;
-        if (other.getAsn() != null
-                && other.getAsn().equals(this.getAsn()) == false)
+        if (other.getAsn() != null && other.getAsn().equals(this.getAsn()) == false)
             return false;
         if (other.getAuthKey() == null ^ this.getAuthKey() == null)
             return false;
-        if (other.getAuthKey() != null
-                && other.getAuthKey().equals(this.getAuthKey()) == false)
+        if (other.getAuthKey() != null && other.getAuthKey().equals(this.getAuthKey()) == false)
             return false;
         if (other.getAmazonAddress() == null ^ this.getAmazonAddress() == null)
             return false;
-        if (other.getAmazonAddress() != null
-                && other.getAmazonAddress().equals(this.getAmazonAddress()) == false)
+        if (other.getAmazonAddress() != null && other.getAmazonAddress().equals(this.getAmazonAddress()) == false)
             return false;
-        if (other.getCustomerAddress() == null
-                ^ this.getCustomerAddress() == null)
+        if (other.getCustomerAddress() == null ^ this.getCustomerAddress() == null)
             return false;
-        if (other.getCustomerAddress() != null
-                && other.getCustomerAddress().equals(this.getCustomerAddress()) == false)
+        if (other.getCustomerAddress() != null && other.getCustomerAddress().equals(this.getCustomerAddress()) == false)
             return false;
-        if (other.getRouteFilterPrefixes() == null
-                ^ this.getRouteFilterPrefixes() == null)
+        if (other.getRouteFilterPrefixes() == null ^ this.getRouteFilterPrefixes() == null)
             return false;
-        if (other.getRouteFilterPrefixes() != null
-                && other.getRouteFilterPrefixes().equals(
-                        this.getRouteFilterPrefixes()) == false)
+        if (other.getRouteFilterPrefixes() != null && other.getRouteFilterPrefixes().equals(this.getRouteFilterPrefixes()) == false)
             return false;
         return true;
     }
@@ -352,28 +321,13 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getVirtualInterfaceName() == null) ? 0
-                        : getVirtualInterfaceName().hashCode());
-        hashCode = prime * hashCode
-                + ((getVlan() == null) ? 0 : getVlan().hashCode());
-        hashCode = prime * hashCode
-                + ((getAsn() == null) ? 0 : getAsn().hashCode());
-        hashCode = prime * hashCode
-                + ((getAuthKey() == null) ? 0 : getAuthKey().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAmazonAddress() == null) ? 0 : getAmazonAddress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomerAddress() == null) ? 0 : getCustomerAddress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRouteFilterPrefixes() == null) ? 0
-                        : getRouteFilterPrefixes().hashCode());
+        hashCode = prime * hashCode + ((getVirtualInterfaceName() == null) ? 0 : getVirtualInterfaceName().hashCode());
+        hashCode = prime * hashCode + ((getVlan() == null) ? 0 : getVlan().hashCode());
+        hashCode = prime * hashCode + ((getAsn() == null) ? 0 : getAsn().hashCode());
+        hashCode = prime * hashCode + ((getAuthKey() == null) ? 0 : getAuthKey().hashCode());
+        hashCode = prime * hashCode + ((getAmazonAddress() == null) ? 0 : getAmazonAddress().hashCode());
+        hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
+        hashCode = prime * hashCode + ((getRouteFilterPrefixes() == null) ? 0 : getRouteFilterPrefixes().hashCode());
         return hashCode;
     }
 
@@ -382,9 +336,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
         try {
             return (NewPublicVirtualInterface) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

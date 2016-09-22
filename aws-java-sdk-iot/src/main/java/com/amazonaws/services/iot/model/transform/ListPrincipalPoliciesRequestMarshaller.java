@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -43,33 +41,26 @@ import com.amazonaws.protocol.json.*;
 /**
  * ListPrincipalPoliciesRequest Marshaller
  */
-public class ListPrincipalPoliciesRequestMarshaller
-        implements
-        Marshaller<Request<ListPrincipalPoliciesRequest>, ListPrincipalPoliciesRequest> {
+public class ListPrincipalPoliciesRequestMarshaller implements Marshaller<Request<ListPrincipalPoliciesRequest>, ListPrincipalPoliciesRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public ListPrincipalPoliciesRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public ListPrincipalPoliciesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<ListPrincipalPoliciesRequest> marshall(
-            ListPrincipalPoliciesRequest listPrincipalPoliciesRequest) {
+    public Request<ListPrincipalPoliciesRequest> marshall(ListPrincipalPoliciesRequest listPrincipalPoliciesRequest) {
 
         if (listPrincipalPoliciesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListPrincipalPoliciesRequest> request = new DefaultRequest<ListPrincipalPoliciesRequest>(
-                listPrincipalPoliciesRequest, "AWSIot");
+        Request<ListPrincipalPoliciesRequest> request = new DefaultRequest<ListPrincipalPoliciesRequest>(listPrincipalPoliciesRequest, "AWSIot");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         if (listPrincipalPoliciesRequest.getPrincipal() != null) {
-            request.addHeader("x-amzn-iot-principal", StringUtils
-                    .fromString(listPrincipalPoliciesRequest.getPrincipal()));
+            request.addHeader("x-amzn-iot-principal", StringUtils.fromString(listPrincipalPoliciesRequest.getPrincipal()));
         }
 
         String uriResourcePath = "/principal-policies";
@@ -77,19 +68,15 @@ public class ListPrincipalPoliciesRequestMarshaller
         request.setResourcePath(uriResourcePath);
 
         if (listPrincipalPoliciesRequest.getMarker() != null) {
-            request.addParameter("marker", StringUtils
-                    .fromString(listPrincipalPoliciesRequest.getMarker()));
+            request.addParameter("marker", StringUtils.fromString(listPrincipalPoliciesRequest.getMarker()));
         }
 
         if (listPrincipalPoliciesRequest.getPageSize() != null) {
-            request.addParameter("pageSize", StringUtils
-                    .fromInteger(listPrincipalPoliciesRequest.getPageSize()));
+            request.addParameter("pageSize", StringUtils.fromInteger(listPrincipalPoliciesRequest.getPageSize()));
         }
 
         if (listPrincipalPoliciesRequest.getAscendingOrder() != null) {
-            request.addParameter("isAscendingOrder", StringUtils
-                    .fromBoolean(listPrincipalPoliciesRequest
-                            .getAscendingOrder()));
+            request.addParameter("isAscendingOrder", StringUtils.fromBoolean(listPrincipalPoliciesRequest.getAscendingOrder()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

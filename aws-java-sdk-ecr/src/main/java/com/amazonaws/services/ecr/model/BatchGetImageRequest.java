@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecr.model;
 
@@ -20,14 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the images
-     * to describe. If you do not specify a registry, the default registry is
-     * assumed.
+     * The AWS account ID associated with the registry that contains the images to describe. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      */
     private String registryId;
@@ -39,24 +35,21 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest
     private String repositoryName;
     /**
      * <p>
-     * A list of image ID references that correspond to images to describe. The
-     * format of the <code>imageIds</code> reference is
-     * <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
+     * A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code>
+     * reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
      * </p>
      */
     private java.util.List<ImageIdentifier> imageIds;
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the images
-     * to describe. If you do not specify a registry, the default registry is
-     * assumed.
+     * The AWS account ID associated with the registry that contains the images to describe. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the
-     *        images to describe. If you do not specify a registry, the default
-     *        registry is assumed.
+     *        The AWS account ID associated with the registry that contains the images to describe. If you do not
+     *        specify a registry, the default registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -65,14 +58,12 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the images
-     * to describe. If you do not specify a registry, the default registry is
-     * assumed.
+     * The AWS account ID associated with the registry that contains the images to describe. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry that contains the
-     *         images to describe. If you do not specify a registry, the default
-     *         registry is assumed.
+     * @return The AWS account ID associated with the registry that contains the images to describe. If you do not
+     *         specify a registry, the default registry is assumed.
      */
 
     public String getRegistryId() {
@@ -81,17 +72,14 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the images
-     * to describe. If you do not specify a registry, the default registry is
-     * assumed.
+     * The AWS account ID associated with the registry that contains the images to describe. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the
-     *        images to describe. If you do not specify a registry, the default
-     *        registry is assumed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS account ID associated with the registry that contains the images to describe. If you do not
+     *        specify a registry, the default registry is assumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchGetImageRequest withRegistryId(String registryId) {
@@ -131,8 +119,7 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param repositoryName
      *        The repository that contains the images to describe.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchGetImageRequest withRepositoryName(String repositoryName) {
@@ -142,14 +129,12 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of image ID references that correspond to images to describe. The
-     * format of the <code>imageIds</code> reference is
-     * <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
+     * A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code>
+     * reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
      * </p>
      * 
-     * @return A list of image ID references that correspond to images to
-     *         describe. The format of the <code>imageIds</code> reference is
-     *         <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
+     * @return A list of image ID references that correspond to images to describe. The format of the
+     *         <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
      */
 
     public java.util.List<ImageIdentifier> getImageIds() {
@@ -158,15 +143,13 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of image ID references that correspond to images to describe. The
-     * format of the <code>imageIds</code> reference is
-     * <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
+     * A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code>
+     * reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
      * </p>
      * 
      * @param imageIds
-     *        A list of image ID references that correspond to images to
-     *        describe. The format of the <code>imageIds</code> reference is
-     *        <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
+     *        A list of image ID references that correspond to images to describe. The format of the
+     *        <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
      */
 
     public void setImageIds(java.util.Collection<ImageIdentifier> imageIds) {
@@ -180,29 +163,24 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of image ID references that correspond to images to describe. The
-     * format of the <code>imageIds</code> reference is
-     * <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
+     * A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code>
+     * reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setImageIds(java.util.Collection)} or
-     * {@link #withImageIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setImageIds(java.util.Collection)} or {@link #withImageIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param imageIds
-     *        A list of image ID references that correspond to images to
-     *        describe. The format of the <code>imageIds</code> reference is
-     *        <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of image ID references that correspond to images to describe. The format of the
+     *        <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchGetImageRequest withImageIds(ImageIdentifier... imageIds) {
         if (this.imageIds == null) {
-            setImageIds(new java.util.ArrayList<ImageIdentifier>(
-                    imageIds.length));
+            setImageIds(new java.util.ArrayList<ImageIdentifier>(imageIds.length));
         }
         for (ImageIdentifier ele : imageIds) {
             this.imageIds.add(ele);
@@ -212,28 +190,23 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of image ID references that correspond to images to describe. The
-     * format of the <code>imageIds</code> reference is
-     * <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
+     * A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code>
+     * reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
      * </p>
      * 
      * @param imageIds
-     *        A list of image ID references that correspond to images to
-     *        describe. The format of the <code>imageIds</code> reference is
-     *        <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of image ID references that correspond to images to describe. The format of the
+     *        <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetImageRequest withImageIds(
-            java.util.Collection<ImageIdentifier> imageIds) {
+    public BatchGetImageRequest withImageIds(java.util.Collection<ImageIdentifier> imageIds) {
         setImageIds(imageIds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -265,19 +238,15 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest
         BatchGetImageRequest other = (BatchGetImageRequest) obj;
         if (other.getRegistryId() == null ^ this.getRegistryId() == null)
             return false;
-        if (other.getRegistryId() != null
-                && other.getRegistryId().equals(this.getRegistryId()) == false)
+        if (other.getRegistryId() != null && other.getRegistryId().equals(this.getRegistryId()) == false)
             return false;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
         if (other.getImageIds() == null ^ this.getImageIds() == null)
             return false;
-        if (other.getImageIds() != null
-                && other.getImageIds().equals(this.getImageIds()) == false)
+        if (other.getImageIds() != null && other.getImageIds().equals(this.getImageIds()) == false)
             return false;
         return true;
     }
@@ -287,14 +256,9 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getImageIds() == null) ? 0 : getImageIds().hashCode());
+        hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getImageIds() == null) ? 0 : getImageIds().hashCode());
         return hashCode;
     }
 

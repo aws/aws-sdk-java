@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -74,8 +72,7 @@ public class SqsAction implements Serializable, Cloneable {
      * 
      * @param roleArn
      *        The ARN of the IAM role that grants access.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SqsAction withRoleArn(String roleArn) {
@@ -115,8 +112,7 @@ public class SqsAction implements Serializable, Cloneable {
      * 
      * @param queueUrl
      *        The URL of the Amazon SQS queue.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SqsAction withQueueUrl(String queueUrl) {
@@ -156,8 +152,7 @@ public class SqsAction implements Serializable, Cloneable {
      * 
      * @param useBase64
      *        Specifies whether to use Base64 encoding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SqsAction withUseBase64(Boolean useBase64) {
@@ -178,8 +173,7 @@ public class SqsAction implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -211,18 +205,15 @@ public class SqsAction implements Serializable, Cloneable {
         SqsAction other = (SqsAction) obj;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
-        if (other.getRoleArn() != null
-                && other.getRoleArn().equals(this.getRoleArn()) == false)
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
         if (other.getQueueUrl() == null ^ this.getQueueUrl() == null)
             return false;
-        if (other.getQueueUrl() != null
-                && other.getQueueUrl().equals(this.getQueueUrl()) == false)
+        if (other.getQueueUrl() != null && other.getQueueUrl().equals(this.getQueueUrl()) == false)
             return false;
         if (other.getUseBase64() == null ^ this.getUseBase64() == null)
             return false;
-        if (other.getUseBase64() != null
-                && other.getUseBase64().equals(this.getUseBase64()) == false)
+        if (other.getUseBase64() != null && other.getUseBase64().equals(this.getUseBase64()) == false)
             return false;
         return true;
     }
@@ -232,12 +223,9 @@ public class SqsAction implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getQueueUrl() == null) ? 0 : getQueueUrl().hashCode());
-        hashCode = prime * hashCode
-                + ((getUseBase64() == null) ? 0 : getUseBase64().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getQueueUrl() == null) ? 0 : getQueueUrl().hashCode());
+        hashCode = prime * hashCode + ((getUseBase64() == null) ? 0 : getUseBase64().hashCode());
         return hashCode;
     }
 
@@ -246,9 +234,7 @@ public class SqsAction implements Serializable, Cloneable {
         try {
             return (SqsAction) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

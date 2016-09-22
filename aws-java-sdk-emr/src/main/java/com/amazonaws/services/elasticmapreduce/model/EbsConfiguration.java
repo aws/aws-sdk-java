@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -40,35 +38,29 @@ public class EbsConfiguration implements Serializable, Cloneable {
      * @param ebsBlockDeviceConfigs
      */
 
-    public void setEbsBlockDeviceConfigs(
-            java.util.Collection<EbsBlockDeviceConfig> ebsBlockDeviceConfigs) {
+    public void setEbsBlockDeviceConfigs(java.util.Collection<EbsBlockDeviceConfig> ebsBlockDeviceConfigs) {
         if (ebsBlockDeviceConfigs == null) {
             this.ebsBlockDeviceConfigs = null;
             return;
         }
 
-        this.ebsBlockDeviceConfigs = new com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig>(
-                ebsBlockDeviceConfigs);
+        this.ebsBlockDeviceConfigs = new com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig>(ebsBlockDeviceConfigs);
     }
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEbsBlockDeviceConfigs(java.util.Collection)} or
-     * {@link #withEbsBlockDeviceConfigs(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEbsBlockDeviceConfigs(java.util.Collection)} or
+     * {@link #withEbsBlockDeviceConfigs(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param ebsBlockDeviceConfigs
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EbsConfiguration withEbsBlockDeviceConfigs(
-            EbsBlockDeviceConfig... ebsBlockDeviceConfigs) {
+    public EbsConfiguration withEbsBlockDeviceConfigs(EbsBlockDeviceConfig... ebsBlockDeviceConfigs) {
         if (this.ebsBlockDeviceConfigs == null) {
-            setEbsBlockDeviceConfigs(new com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig>(
-                    ebsBlockDeviceConfigs.length));
+            setEbsBlockDeviceConfigs(new com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig>(ebsBlockDeviceConfigs.length));
         }
         for (EbsBlockDeviceConfig ele : ebsBlockDeviceConfigs) {
             this.ebsBlockDeviceConfigs.add(ele);
@@ -78,12 +70,10 @@ public class EbsConfiguration implements Serializable, Cloneable {
 
     /**
      * @param ebsBlockDeviceConfigs
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EbsConfiguration withEbsBlockDeviceConfigs(
-            java.util.Collection<EbsBlockDeviceConfig> ebsBlockDeviceConfigs) {
+    public EbsConfiguration withEbsBlockDeviceConfigs(java.util.Collection<EbsBlockDeviceConfig> ebsBlockDeviceConfigs) {
         setEbsBlockDeviceConfigs(ebsBlockDeviceConfigs);
         return this;
     }
@@ -106,8 +96,7 @@ public class EbsConfiguration implements Serializable, Cloneable {
 
     /**
      * @param ebsOptimized
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EbsConfiguration withEbsOptimized(Boolean ebsOptimized) {
@@ -124,8 +113,7 @@ public class EbsConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -136,8 +124,7 @@ public class EbsConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEbsBlockDeviceConfigs() != null)
-            sb.append("EbsBlockDeviceConfigs: " + getEbsBlockDeviceConfigs()
-                    + ",");
+            sb.append("EbsBlockDeviceConfigs: " + getEbsBlockDeviceConfigs() + ",");
         if (getEbsOptimized() != null)
             sb.append("EbsOptimized: " + getEbsOptimized());
         sb.append("}");
@@ -154,17 +141,13 @@ public class EbsConfiguration implements Serializable, Cloneable {
         if (obj instanceof EbsConfiguration == false)
             return false;
         EbsConfiguration other = (EbsConfiguration) obj;
-        if (other.getEbsBlockDeviceConfigs() == null
-                ^ this.getEbsBlockDeviceConfigs() == null)
+        if (other.getEbsBlockDeviceConfigs() == null ^ this.getEbsBlockDeviceConfigs() == null)
             return false;
-        if (other.getEbsBlockDeviceConfigs() != null
-                && other.getEbsBlockDeviceConfigs().equals(
-                        this.getEbsBlockDeviceConfigs()) == false)
+        if (other.getEbsBlockDeviceConfigs() != null && other.getEbsBlockDeviceConfigs().equals(this.getEbsBlockDeviceConfigs()) == false)
             return false;
         if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
             return false;
-        if (other.getEbsOptimized() != null
-                && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
+        if (other.getEbsOptimized() != null && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
             return false;
         return true;
     }
@@ -174,14 +157,8 @@ public class EbsConfiguration implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEbsBlockDeviceConfigs() == null) ? 0
-                        : getEbsBlockDeviceConfigs().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEbsOptimized() == null) ? 0 : getEbsOptimized()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getEbsBlockDeviceConfigs() == null) ? 0 : getEbsBlockDeviceConfigs().hashCode());
+        hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
         return hashCode;
     }
 
@@ -190,9 +167,7 @@ public class EbsConfiguration implements Serializable, Cloneable {
         try {
             return (EbsConfiguration) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

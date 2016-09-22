@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
@@ -35,58 +33,47 @@ import com.amazonaws.protocol.json.*;
 /**
  * PurchaseOfferingRequest Marshaller
  */
-public class PurchaseOfferingRequestMarshaller implements
-        Marshaller<Request<PurchaseOfferingRequest>, PurchaseOfferingRequest> {
+public class PurchaseOfferingRequestMarshaller implements Marshaller<Request<PurchaseOfferingRequest>, PurchaseOfferingRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public PurchaseOfferingRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public PurchaseOfferingRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<PurchaseOfferingRequest> marshall(
-            PurchaseOfferingRequest purchaseOfferingRequest) {
+    public Request<PurchaseOfferingRequest> marshall(PurchaseOfferingRequest purchaseOfferingRequest) {
 
         if (purchaseOfferingRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PurchaseOfferingRequest> request = new DefaultRequest<PurchaseOfferingRequest>(
-                purchaseOfferingRequest, "AWSDeviceFarm");
-        request.addHeader("X-Amz-Target",
-                "DeviceFarm_20150623.PurchaseOffering");
+        Request<PurchaseOfferingRequest> request = new DefaultRequest<PurchaseOfferingRequest>(purchaseOfferingRequest, "AWSDeviceFarm");
+        request.addHeader("X-Amz-Target", "DeviceFarm_20150623.PurchaseOffering");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (purchaseOfferingRequest.getOfferingId() != null) {
-                jsonGenerator.writeFieldName("offeringId").writeValue(
-                        purchaseOfferingRequest.getOfferingId());
+                jsonGenerator.writeFieldName("offeringId").writeValue(purchaseOfferingRequest.getOfferingId());
             }
             if (purchaseOfferingRequest.getQuantity() != null) {
-                jsonGenerator.writeFieldName("quantity").writeValue(
-                        purchaseOfferingRequest.getQuantity());
+                jsonGenerator.writeFieldName("quantity").writeValue(purchaseOfferingRequest.getQuantity());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

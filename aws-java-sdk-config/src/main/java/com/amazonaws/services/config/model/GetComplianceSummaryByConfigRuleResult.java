@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model;
 
@@ -19,27 +17,26 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetComplianceSummaryByConfigRuleResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetComplianceSummaryByConfigRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
-     * The number of AWS Config rules that are compliant and the number that are
-     * noncompliant, up to a maximum of 25 for each.
+     * The number of AWS Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for
+     * each.
      * </p>
      */
     private ComplianceSummary complianceSummary;
 
     /**
      * <p>
-     * The number of AWS Config rules that are compliant and the number that are
-     * noncompliant, up to a maximum of 25 for each.
+     * The number of AWS Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for
+     * each.
      * </p>
      * 
      * @param complianceSummary
-     *        The number of AWS Config rules that are compliant and the number
-     *        that are noncompliant, up to a maximum of 25 for each.
+     *        The number of AWS Config rules that are compliant and the number that are noncompliant, up to a maximum of
+     *        25 for each.
      */
 
     public void setComplianceSummary(ComplianceSummary complianceSummary) {
@@ -48,12 +45,12 @@ public class GetComplianceSummaryByConfigRuleResult extends
 
     /**
      * <p>
-     * The number of AWS Config rules that are compliant and the number that are
-     * noncompliant, up to a maximum of 25 for each.
+     * The number of AWS Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for
+     * each.
      * </p>
      * 
-     * @return The number of AWS Config rules that are compliant and the number
-     *         that are noncompliant, up to a maximum of 25 for each.
+     * @return The number of AWS Config rules that are compliant and the number that are noncompliant, up to a maximum
+     *         of 25 for each.
      */
 
     public ComplianceSummary getComplianceSummary() {
@@ -62,26 +59,23 @@ public class GetComplianceSummaryByConfigRuleResult extends
 
     /**
      * <p>
-     * The number of AWS Config rules that are compliant and the number that are
-     * noncompliant, up to a maximum of 25 for each.
+     * The number of AWS Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for
+     * each.
      * </p>
      * 
      * @param complianceSummary
-     *        The number of AWS Config rules that are compliant and the number
-     *        that are noncompliant, up to a maximum of 25 for each.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of AWS Config rules that are compliant and the number that are noncompliant, up to a maximum of
+     *        25 for each.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetComplianceSummaryByConfigRuleResult withComplianceSummary(
-            ComplianceSummary complianceSummary) {
+    public GetComplianceSummaryByConfigRuleResult withComplianceSummary(ComplianceSummary complianceSummary) {
         setComplianceSummary(complianceSummary);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -107,12 +101,9 @@ public class GetComplianceSummaryByConfigRuleResult extends
         if (obj instanceof GetComplianceSummaryByConfigRuleResult == false)
             return false;
         GetComplianceSummaryByConfigRuleResult other = (GetComplianceSummaryByConfigRuleResult) obj;
-        if (other.getComplianceSummary() == null
-                ^ this.getComplianceSummary() == null)
+        if (other.getComplianceSummary() == null ^ this.getComplianceSummary() == null)
             return false;
-        if (other.getComplianceSummary() != null
-                && other.getComplianceSummary().equals(
-                        this.getComplianceSummary()) == false)
+        if (other.getComplianceSummary() != null && other.getComplianceSummary().equals(this.getComplianceSummary()) == false)
             return false;
         return true;
     }
@@ -122,10 +113,7 @@ public class GetComplianceSummaryByConfigRuleResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getComplianceSummary() == null) ? 0
-                        : getComplianceSummary().hashCode());
+        hashCode = prime * hashCode + ((getComplianceSummary() == null) ? 0 : getComplianceSummary().hashCode());
         return hashCode;
     }
 
@@ -134,9 +122,7 @@ public class GetComplianceSummaryByConfigRuleResult extends
         try {
             return (GetComplianceSummaryByConfigRuleResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

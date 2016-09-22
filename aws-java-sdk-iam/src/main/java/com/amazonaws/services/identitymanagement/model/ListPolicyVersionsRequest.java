@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -20,70 +18,58 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListPolicyVersionsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListPolicyVersionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM policy for which you want the
-     * versions.
+     * The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String policyArn;
     /**
      * <p>
-     * Use this parameter only when paginating results and only after you
-     * receive a response indicating that the results are truncated. Set it to
-     * the value of the <code>Marker</code> element in the response that you
-     * received to indicate where the next call should start.
+     * Use this parameter only when paginating results and only after you receive a response indicating that the results
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of
-     * items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
      * <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more
-     * results available. In that case, the <code>IsTruncated</code> response
-     * element returns <code>true</code> and <code>Marker</code> contains a
-     * value to include in the subsequent call that tells the service where to
-     * continue from.
+     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      */
     private Integer maxItems;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM policy for which you want the
-     * versions.
+     * The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the IAM policy for which you
-     *        want the versions.</p>
+     *        The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
-     *        the <i>AWS General Reference</i>.
+     *        For more information about ARNs, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -92,23 +78,19 @@ public class ListPolicyVersionsRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM policy for which you want the
-     * versions.
+     * The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM policy for which you
-     *         want the versions.</p>
+     * @return The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.</p>
      *         <p>
-     *         For more information about ARNs, see <a href=
-     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
-     *         the <i>AWS General Reference</i>.
+     *         For more information about ARNs, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public String getPolicyArn() {
@@ -117,26 +99,21 @@ public class ListPolicyVersionsRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM policy for which you want the
-     * versions.
+     * The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the IAM policy for which you
-     *        want the versions.</p>
+     *        The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
-     *        the <i>AWS General Reference</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information about ARNs, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPolicyVersionsRequest withPolicyArn(String policyArn) {
@@ -146,17 +123,15 @@ public class ListPolicyVersionsRequest extends
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only after you
-     * receive a response indicating that the results are truncated. Set it to
-     * the value of the <code>Marker</code> element in the response that you
-     * received to indicate where the next call should start.
+     * Use this parameter only when paginating results and only after you receive a response indicating that the results
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only after you
-     *        receive a response indicating that the results are truncated. Set
-     *        it to the value of the <code>Marker</code> element in the response
-     *        that you received to indicate where the next call should start.
+     *        Use this parameter only when paginating results and only after you receive a response indicating that the
+     *        results are truncated. Set it to the value of the <code>Marker</code> element in the response that you
+     *        received to indicate where the next call should start.
      */
 
     public void setMarker(String marker) {
@@ -165,17 +140,14 @@ public class ListPolicyVersionsRequest extends
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only after you
-     * receive a response indicating that the results are truncated. Set it to
-     * the value of the <code>Marker</code> element in the response that you
-     * received to indicate where the next call should start.
+     * Use this parameter only when paginating results and only after you receive a response indicating that the results
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      * 
-     * @return Use this parameter only when paginating results and only after
-     *         you receive a response indicating that the results are truncated.
-     *         Set it to the value of the <code>Marker</code> element in the
-     *         response that you received to indicate where the next call should
-     *         start.
+     * @return Use this parameter only when paginating results and only after you receive a response indicating that the
+     *         results are truncated. Set it to the value of the <code>Marker</code> element in the response that you
+     *         received to indicate where the next call should start.
      */
 
     public String getMarker() {
@@ -184,19 +156,16 @@ public class ListPolicyVersionsRequest extends
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only after you
-     * receive a response indicating that the results are truncated. Set it to
-     * the value of the <code>Marker</code> element in the response that you
-     * received to indicate where the next call should start.
+     * Use this parameter only when paginating results and only after you receive a response indicating that the results
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only after you
-     *        receive a response indicating that the results are truncated. Set
-     *        it to the value of the <code>Marker</code> element in the response
-     *        that you received to indicate where the next call should start.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Use this parameter only when paginating results and only after you receive a response indicating that the
+     *        results are truncated. Set it to the value of the <code>Marker</code> element in the response that you
+     *        received to indicate where the next call should start.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPolicyVersionsRequest withMarker(String marker) {
@@ -206,33 +175,26 @@ public class ListPolicyVersionsRequest extends
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of
-     * items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
      * <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more
-     * results available. In that case, the <code>IsTruncated</code> response
-     * element returns <code>true</code> and <code>Marker</code> contains a
-     * value to include in the subsequent call that tells the service where to
-     * continue from.
+     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        Use this only when paginating results to indicate the maximum
-     *        number of items you want in the response. If additional items
-     *        exist beyond the maximum you specify, the <code>IsTruncated</code>
-     *        response element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        This parameter is optional. If you do not include it, it defaults
-     *        to 100. Note that IAM might return fewer results, even when there
-     *        are more results available. In that case, the
-     *        <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to
-     *        include in the subsequent call that tells the service where to
-     *        continue from.
+     *        This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
+     *        results, even when there are more results available. In that case, the <code>IsTruncated</code> response
+     *        element returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent
+     *        call that tells the service where to continue from.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -241,33 +203,25 @@ public class ListPolicyVersionsRequest extends
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of
-     * items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
      * <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more
-     * results available. In that case, the <code>IsTruncated</code> response
-     * element returns <code>true</code> and <code>Marker</code> contains a
-     * value to include in the subsequent call that tells the service where to
-     * continue from.
+     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
-     * @return Use this only when paginating results to indicate the maximum
-     *         number of items you want in the response. If additional items
-     *         exist beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>
-     *         .</p>
+     * @return Use this only when paginating results to indicate the maximum number of items you want in the response.
+     *         If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>.</p>
      *         <p>
-     *         This parameter is optional. If you do not include it, it defaults
-     *         to 100. Note that IAM might return fewer results, even when there
-     *         are more results available. In that case, the
-     *         <code>IsTruncated</code> response element returns
-     *         <code>true</code> and <code>Marker</code> contains a value to
-     *         include in the subsequent call that tells the service where to
-     *         continue from.
+     *         This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return
+     *         fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *         response element returns <code>true</code> and <code>Marker</code> contains a value to include in the
+     *         subsequent call that tells the service where to continue from.
      */
 
     public Integer getMaxItems() {
@@ -276,35 +230,27 @@ public class ListPolicyVersionsRequest extends
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of
-     * items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
      * <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more
-     * results available. In that case, the <code>IsTruncated</code> response
-     * element returns <code>true</code> and <code>Marker</code> contains a
-     * value to include in the subsequent call that tells the service where to
-     * continue from.
+     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        Use this only when paginating results to indicate the maximum
-     *        number of items you want in the response. If additional items
-     *        exist beyond the maximum you specify, the <code>IsTruncated</code>
-     *        response element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        This parameter is optional. If you do not include it, it defaults
-     *        to 100. Note that IAM might return fewer results, even when there
-     *        are more results available. In that case, the
-     *        <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to
-     *        include in the subsequent call that tells the service where to
-     *        continue from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
+     *        results, even when there are more results available. In that case, the <code>IsTruncated</code> response
+     *        element returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent
+     *        call that tells the service where to continue from.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPolicyVersionsRequest withMaxItems(Integer maxItems) {
@@ -313,8 +259,7 @@ public class ListPolicyVersionsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -346,18 +291,15 @@ public class ListPolicyVersionsRequest extends
         ListPolicyVersionsRequest other = (ListPolicyVersionsRequest) obj;
         if (other.getPolicyArn() == null ^ this.getPolicyArn() == null)
             return false;
-        if (other.getPolicyArn() != null
-                && other.getPolicyArn().equals(this.getPolicyArn()) == false)
+        if (other.getPolicyArn() != null && other.getPolicyArn().equals(this.getPolicyArn()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         return true;
     }
@@ -367,12 +309,9 @@ public class ListPolicyVersionsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPolicyArn() == null) ? 0 : getPolicyArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getPolicyArn() == null) ? 0 : getPolicyArn().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
 

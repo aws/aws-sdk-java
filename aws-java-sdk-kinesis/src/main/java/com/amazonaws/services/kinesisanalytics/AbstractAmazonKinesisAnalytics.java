@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics;
 
@@ -18,9 +16,8 @@ import com.amazonaws.services.kinesisanalytics.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AmazonKinesisAnalytics}. Convenient method
- * forms pass through to the corresponding overload that takes a request object,
- * which throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonKinesisAnalytics}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAmazonKinesisAnalytics implements AmazonKinesisAnalytics {
 
@@ -38,68 +35,57 @@ public class AbstractAmazonKinesisAnalytics implements AmazonKinesisAnalytics {
     }
 
     @Override
-    public AddApplicationInputResult addApplicationInput(
-            AddApplicationInputRequest request) {
+    public AddApplicationInputResult addApplicationInput(AddApplicationInputRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public AddApplicationOutputResult addApplicationOutput(
-            AddApplicationOutputRequest request) {
+    public AddApplicationOutputResult addApplicationOutput(AddApplicationOutputRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public AddApplicationReferenceDataSourceResult addApplicationReferenceDataSource(
-            AddApplicationReferenceDataSourceRequest request) {
+    public AddApplicationReferenceDataSourceResult addApplicationReferenceDataSource(AddApplicationReferenceDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateApplicationResult createApplication(
-            CreateApplicationRequest request) {
+    public CreateApplicationResult createApplication(CreateApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteApplicationResult deleteApplication(
-            DeleteApplicationRequest request) {
+    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteApplicationOutputResult deleteApplicationOutput(
-            DeleteApplicationOutputRequest request) {
+    public DeleteApplicationOutputResult deleteApplicationOutput(DeleteApplicationOutputRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteApplicationReferenceDataSourceResult deleteApplicationReferenceDataSource(
-            DeleteApplicationReferenceDataSourceRequest request) {
+    public DeleteApplicationReferenceDataSourceResult deleteApplicationReferenceDataSource(DeleteApplicationReferenceDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeApplicationResult describeApplication(
-            DescribeApplicationRequest request) {
+    public DescribeApplicationResult describeApplication(DescribeApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DiscoverInputSchemaResult discoverInputSchema(
-            DiscoverInputSchemaRequest request) {
+    public DiscoverInputSchemaResult discoverInputSchema(DiscoverInputSchemaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListApplicationsResult listApplications(
-            ListApplicationsRequest request) {
+    public ListApplicationsResult listApplications(ListApplicationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public StartApplicationResult startApplication(
-            StartApplicationRequest request) {
+    public StartApplicationResult startApplication(StartApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,8 +95,7 @@ public class AbstractAmazonKinesisAnalytics implements AmazonKinesisAnalytics {
     }
 
     @Override
-    public UpdateApplicationResult updateApplication(
-            UpdateApplicationRequest request) {
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -120,8 +105,7 @@ public class AbstractAmazonKinesisAnalytics implements AmazonKinesisAnalytics {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

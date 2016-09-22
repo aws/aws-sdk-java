@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeActivationsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeActivationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -31,8 +27,7 @@ public class DescribeActivationsResult extends
     private com.amazonaws.internal.SdkInternalList<Activation> activationList;
     /**
      * <p>
-     * The token for the next set of items to return. Use this token to get the
-     * next set of results.
+     * The token for the next set of items to return. Use this token to get the next set of results.
      * </p>
      */
     private String nextToken;
@@ -61,15 +56,13 @@ public class DescribeActivationsResult extends
      *        A list of activations for your AWS account.
      */
 
-    public void setActivationList(
-            java.util.Collection<Activation> activationList) {
+    public void setActivationList(java.util.Collection<Activation> activationList) {
         if (activationList == null) {
             this.activationList = null;
             return;
         }
 
-        this.activationList = new com.amazonaws.internal.SdkInternalList<Activation>(
-                activationList);
+        this.activationList = new com.amazonaws.internal.SdkInternalList<Activation>(activationList);
     }
 
     /**
@@ -77,23 +70,19 @@ public class DescribeActivationsResult extends
      * A list of activations for your AWS account.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setActivationList(java.util.Collection)} or
-     * {@link #withActivationList(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setActivationList(java.util.Collection)} or {@link #withActivationList(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param activationList
      *        A list of activations for your AWS account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeActivationsResult withActivationList(
-            Activation... activationList) {
+    public DescribeActivationsResult withActivationList(Activation... activationList) {
         if (this.activationList == null) {
-            setActivationList(new com.amazonaws.internal.SdkInternalList<Activation>(
-                    activationList.length));
+            setActivationList(new com.amazonaws.internal.SdkInternalList<Activation>(activationList.length));
         }
         for (Activation ele : activationList) {
             this.activationList.add(ele);
@@ -108,25 +97,21 @@ public class DescribeActivationsResult extends
      * 
      * @param activationList
      *        A list of activations for your AWS account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeActivationsResult withActivationList(
-            java.util.Collection<Activation> activationList) {
+    public DescribeActivationsResult withActivationList(java.util.Collection<Activation> activationList) {
         setActivationList(activationList);
         return this;
     }
 
     /**
      * <p>
-     * The token for the next set of items to return. Use this token to get the
-     * next set of results.
+     * The token for the next set of items to return. Use this token to get the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. Use this token to
-     *        get the next set of results.
+     *        The token for the next set of items to return. Use this token to get the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -135,12 +120,10 @@ public class DescribeActivationsResult extends
 
     /**
      * <p>
-     * The token for the next set of items to return. Use this token to get the
-     * next set of results.
+     * The token for the next set of items to return. Use this token to get the next set of results.
      * </p>
      * 
-     * @return The token for the next set of items to return. Use this token to
-     *         get the next set of results.
+     * @return The token for the next set of items to return. Use this token to get the next set of results.
      */
 
     public String getNextToken() {
@@ -149,15 +132,12 @@ public class DescribeActivationsResult extends
 
     /**
      * <p>
-     * The token for the next set of items to return. Use this token to get the
-     * next set of results.
+     * The token for the next set of items to return. Use this token to get the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. Use this token to
-     *        get the next set of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token for the next set of items to return. Use this token to get the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeActivationsResult withNextToken(String nextToken) {
@@ -166,8 +146,7 @@ public class DescribeActivationsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -195,16 +174,13 @@ public class DescribeActivationsResult extends
         if (obj instanceof DescribeActivationsResult == false)
             return false;
         DescribeActivationsResult other = (DescribeActivationsResult) obj;
-        if (other.getActivationList() == null
-                ^ this.getActivationList() == null)
+        if (other.getActivationList() == null ^ this.getActivationList() == null)
             return false;
-        if (other.getActivationList() != null
-                && other.getActivationList().equals(this.getActivationList()) == false)
+        if (other.getActivationList() != null && other.getActivationList().equals(this.getActivationList()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -214,12 +190,8 @@ public class DescribeActivationsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getActivationList() == null) ? 0 : getActivationList()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getActivationList() == null) ? 0 : getActivationList().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -228,9 +200,7 @@ public class DescribeActivationsResult extends
         try {
             return (DescribeActivationsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

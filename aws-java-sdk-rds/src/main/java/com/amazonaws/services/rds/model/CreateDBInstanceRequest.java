@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -20,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CreateDBInstanceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The meaning of this parameter differs according to the database engine
-     * you use.
+     * The meaning of this parameter differs according to the database engine you use.
      * </p>
      * <p>
      * Type: String
@@ -36,9 +31,8 @@ public class CreateDBInstanceRequest extends
      * <b>MySQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If
-     * this parameter is not specified, no database is created in the DB
-     * instance.
+     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -59,9 +53,8 @@ public class CreateDBInstanceRequest extends
      * <b>MariaDB</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If
-     * this parameter is not specified, no database is created in the DB
-     * instance.
+     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -82,9 +75,8 @@ public class CreateDBInstanceRequest extends
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If
-     * this parameter is not specified, the default "postgres" database is
-     * created in the DB instance.
+     * The name of the database to create when the DB instance is created. If this parameter is not specified, the
+     * default "postgres" database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -97,8 +89,7 @@ public class CreateDBInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * Must begin with a letter or an underscore. Subsequent characters can be
-     * letters, underscores, or digits (0-9).
+     * Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -136,9 +127,8 @@ public class CreateDBInstanceRequest extends
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * The name of the database to create when the primary instance of the DB
-     * cluster is created. If this parameter is not specified, no database is
-     * created in the DB instance.
+     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter is
+     * not specified, no database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -159,8 +149,7 @@ public class CreateDBInstanceRequest extends
     private String dBName;
     /**
      * <p>
-     * The DB instance identifier. This parameter is stored as a lowercase
-     * string.
+     * The DB instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -168,8 +157,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for
-     * SQL Server).
+     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).
      * </p>
      * </li>
      * <li>
@@ -190,8 +178,7 @@ public class CreateDBInstanceRequest extends
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance.
+     * The amount of storage (in gigabytes) to be initially allocated for the database instance.
      * </p>
      * <p>
      * Type: Integer
@@ -224,8 +211,8 @@ public class CreateDBInstanceRequest extends
      * <b>SQL Server</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 200 to 4096 (Standard Edition and
-     * Enterprise Edition) or from 20 to 4096 (Express Edition and Web Edition)
+     * Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to 4096
+     * (Express Edition and Web Edition)
      * </p>
      */
     private Integer allocatedStorage;
@@ -244,12 +231,9 @@ public class CreateDBInstanceRequest extends
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * Valid Values: <code>mysql</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se2</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     * <code>postgres</code> | <code>aurora</code>
+     * Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se2</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
      * </p>
      * <p>
      * Not every database engine is available for every AWS region.
@@ -377,8 +361,7 @@ public class CreateDBInstanceRequest extends
     private String masterUsername;
     /**
      * <p>
-     * The password for the master database user. Can be any printable ASCII
-     * character except "/", """, or "@".
+     * The password for the master database user. Can be any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
      * Type: String
@@ -435,29 +418,26 @@ public class CreateDBInstanceRequest extends
      * A list of EC2 VPC security groups to associate with this DB instance.
      * </p>
      * <p>
-     * Default: The default EC2 VPC security group for the DB subnet group's
-     * VPC.
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance will be created in.
-     * For information on regions and Availability Zones, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
-     * >Regions and Availability Zones</a>.
+     * The EC2 Availability Zone that the database instance will be created in. For information on regions and
+     * Availability Zones, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * and Availability Zones</a>.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
-     * Constraint: The AvailabilityZone parameter cannot be specified if the
-     * MultiAZ parameter is set to <code>true</code>. The specified Availability
-     * Zone must be in the same region as the current endpoint.
+     * Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same region as the current endpoint.
      * </p>
      */
     private String availabilityZone;
@@ -472,21 +452,18 @@ public class CreateDBInstanceRequest extends
     private String dBSubnetGroupName;
     /**
      * <p>
-     * The weekly time range during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC). For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html"
-     * >DB Instance Maintenance</a>.
+     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
+     * Instance Maintenance</a>.
      * </p>
      * <p>
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week. To see the time
-     * blocks available, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     * > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide.</i>
+     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
+     * of the week. To see the time blocks available, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -498,9 +475,8 @@ public class CreateDBInstanceRequest extends
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default DBParameterGroup for the specified
-     * engine will be used.
+     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
+     * DBParameterGroup for the specified engine will be used.
      * </p>
      * <p>
      * Constraints:
@@ -526,9 +502,8 @@ public class CreateDBInstanceRequest extends
     private String dBParameterGroupName;
     /**
      * <p>
-     * The number of days for which automated backups are retained. Setting this
-     * parameter to a positive number enables backups. Setting this parameter to
-     * 0 disables automated backups.
+     * The number of days for which automated backups are retained. Setting this parameter to a positive number enables
+     * backups. Setting this parameter to 0 disables automated backups.
      * </p>
      * <p>
      * Default: 1
@@ -552,19 +527,16 @@ public class CreateDBInstanceRequest extends
     private Integer backupRetentionPeriod;
     /**
      * <p>
-     * The daily time range during which automated backups are created if
-     * automated backups are enabled, using the
-     * <code>BackupRetentionPeriod</code> parameter. For more information, see
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html"
-     * >DB Instance Backups</a>.
+     * The daily time range during which automated backups are created if automated backups are enabled, using the
+     * <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
+     * Instance Backups</a>.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region. To see the time blocks available, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     * > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide.</i>
+     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
+     * available, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -649,9 +621,8 @@ public class CreateDBInstanceRequest extends
      * Default: <code>1433</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code> except for <code>1434</code>,
-     * <code>3389</code>, <code>47001</code>, <code>49152</code>, and
-     * <code>49152</code> through <code>49156</code>.
+     * Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -669,8 +640,8 @@ public class CreateDBInstanceRequest extends
     private Integer port;
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true.
+     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the
+     * MultiAZ parameter is set to true.
      * </p>
      */
     private Boolean multiAZ;
@@ -679,9 +650,8 @@ public class CreateDBInstanceRequest extends
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * The following are the database engines and major and minor versions that
-     * are available with Amazon RDS. Not every database engine is available for
-     * every AWS region.
+     * The following are the database engines and major and minor versions that are available with Amazon RDS. Not every
+     * database engine is available for every AWS region.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -689,9 +659,8 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.6 (only available in AWS regions ap-northeast-1,
-     * ap-northeast-2, ap-south-1, ap-southeast-2, eu-west-1, us-east-1,
-     * us-west-2):</b> <code> 5.6.10a</code>
+     * <b>Version 5.6 (only available in AWS regions ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     * eu-west-1, us-east-1, us-west-2):</b> <code> 5.6.10a</code>
      * </p>
      * </li>
      * </ul>
@@ -701,14 +670,12 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 10.1 (available in all AWS regions except us-gov-west-1):</b>
-     * <code> 10.1.14</code>
+     * <b>Version 10.1 (available in all AWS regions except us-gov-west-1):</b> <code> 10.1.14</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.0 (available in all AWS regions):</b>
-     * <code> 10.0.17 | 10.0.24</code>
+     * <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.17 | 10.0.24</code>
      * </p>
      * </li>
      * </ul>
@@ -735,8 +702,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.00 (available in all AWS regions):</b>
-     * <code> 12.00.4422.0.v1</code>
+     * <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      * </p>
      * </li>
      * <li>
@@ -758,8 +724,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.00 (available in all AWS regions):</b>
-     * <code> 12.00.4422.0.v1</code>
+     * <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      * </p>
      * </li>
      * <li>
@@ -781,8 +746,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.00 (available in all AWS regions):</b>
-     * <code> 12.00.4422.0.v1</code>
+     * <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      * </p>
      * </li>
      * <li>
@@ -804,46 +768,40 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.7 (available in all AWS regions):</b>
-     * <code> 5.7.10 | 5.7.11</code>
+     * <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.10 | 5.7.11</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b>
+     * <b>Version 5.6 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
      * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions except ap-south-1):</b>
-     * <code> 5.6.23</code>
+     * <b>Version 5.6 (available in all AWS regions except ap-south-1):</b> <code> 5.6.23</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions):</b>
-     * <code> 5.6.27 | 5.6.29</code>
+     * <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.27 | 5.6.29</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     * us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code>
+     * <b>Version 5.5 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code>
+     * <b>Version 5.5 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 5.5.40b | 5.5.41</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b>
-     * <code> 5.5.42</code>
+     * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code> 5.5.42</code>
      * </p>
      * </li>
      * <li>
@@ -858,22 +816,19 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b>
-     * <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
+     * <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions):</b>
-     * <code> 12.1.0.2.v1</code>
+     * <b>Version 12.1 (available in all AWS regions):</b> <code> 12.1.0.2.v1</code>
      * </p>
      * </li>
      * <li>
@@ -884,8 +839,7 @@ public class CreateDBInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * <b>Version 11.2 (available in all AWS regions):</b>
-     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      * </p>
      * </li>
      * <li>
@@ -901,22 +855,19 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b>
-     * <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
+     * <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 11.2 (available in all AWS regions):</b>
-     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      * </p>
      * </li>
      * <li>
@@ -932,22 +883,19 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b>
-     * <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
+     * <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 11.2 (available in all AWS regions):</b>
-     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      * </p>
      * </li>
      * <li>
@@ -974,14 +922,12 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b>
-     * <code> 9.5.2</code>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code> 9.5.2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.4 (available in all AWS regions except ap-south-1):</b>
-     * <code> 9.4.1 | 9.4.4</code>
+     * <b>Version 9.4 (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code>
      * </p>
      * </li>
      * <li>
@@ -991,28 +937,25 @@ public class CreateDBInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b>
-     * <code> 9.4.7</code>
+     * <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     * us-gov-west-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code>
+     * <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
+     * <b>Version 9.3 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
+     * <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
      * </p>
      * </li>
      * </ul>
@@ -1020,8 +963,8 @@ public class CreateDBInstanceRequest extends
     private String engineVersion;
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the
-     * DB instance during the maintenance window.
+     * Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance
+     * window.
      * </p>
      * <p>
      * Default: <code>true</code>
@@ -1033,55 +976,48 @@ public class CreateDBInstanceRequest extends
      * License model information for this DB instance.
      * </p>
      * <p>
-     * Valid values: <code>license-included</code> |
-     * <code>bring-your-own-license</code> | <code>general-public-license</code>
+     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
      * </p>
      */
     private String licenseModel;
     /**
      * <p>
-     * The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.
+     * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
+     * instance.
      * </p>
      * <p>
-     * Constraints: Must be a multiple between 3 and 10 of the storage amount
-     * for the DB instance. Must also be an integer multiple of 1000. For
-     * example, if the size of your DB instance is 500 GB, then your
-     * <code>Iops</code> value can be 2000, 3000, 4000, or 5000.
+     * Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be an
+     * integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your <code>Iops</code>
+     * value can be 2000, 3000, 4000, or 5000.
      * </p>
      */
     private Integer iops;
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified
-     * option group.
+     * Indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security
-     * TDE, cannot be removed from an option group, and that option group cannot
-     * be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
+     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
      * </p>
      */
     private String optionGroupName;
     /**
      * <p>
-     * For supported engines, indicates that the DB instance should be
-     * associated with the specified CharacterSet.
+     * For supported engines, indicates that the DB instance should be associated with the specified CharacterSet.
      * </p>
      */
     private String characterSetName;
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS
-     * name, which resolves to a public IP address. A value of false specifies
-     * an internal instance with a DNS name that resolves to a private IP
-     * address.
+     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
+     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
+     * internal instance with a DNS name that resolves to a private IP address.
      * </p>
      * <p>
-     * Default: The default behavior varies depending on whether a VPC has been
-     * requested or not. The following list shows the default behavior in each
-     * case.
+     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
+     * shows the default behavior in each case.
      * </p>
      * <ul>
      * <li>
@@ -1096,11 +1032,9 @@ public class CreateDBInstanceRequest extends
      * </li>
      * </ul>
      * <p>
-     * If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified as
-     * part of the request and the PubliclyAccessible value has not been set,
-     * the DB instance will be private.
+     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
      * </p>
      */
     private Boolean publiclyAccessible;
@@ -1126,26 +1060,22 @@ public class CreateDBInstanceRequest extends
      * Valid values: <code>standard | gp2 | io1</code>
      * </p>
      * <p>
-     * If you specify <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is
-     * specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
      * </p>
      */
     private String storageType;
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE
-     * encryption.
+     * The ARN from the Key Store with which to associate the instance for TDE encryption.
      * </p>
      */
     private String tdeCredentialArn;
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the
-     * device.
+     * The password for the given ARN from the Key Store in order to access the device.
      * </p>
      */
     private String tdeCredentialPassword;
@@ -1163,18 +1093,15 @@ public class CreateDBInstanceRequest extends
      * The KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-     * encryption key. If you are creating a DB instance with the same AWS
-     * account that owns the KMS encryption key used to encrypt the new DB
-     * instance, then you can use the KMS key alias instead of the ARN for the
-     * KM encryption key.
+     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
+     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
+     * can use the KMS key alias instead of the ARN for the KM encryption key.
      * </p>
      * <p>
-     * If the <code>StorageEncrypted</code> parameter is true, and you do not
-     * specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS
-     * will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS region.
+     * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
+     * region.
      * </p>
      */
     private String kmsKeyId;
@@ -1186,20 +1113,19 @@ public class CreateDBInstanceRequest extends
     private String domain;
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB
-     * instance; otherwise false. The default is false.
+     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * false.
      * </p>
      */
     private Boolean copyTagsToSnapshot;
     /**
      * <p>
-     * The interval, in seconds, between points when Enhanced Monitoring metrics
-     * are collected for the DB instance. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 0.
+     * The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To
+     * disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
-     * If <code>MonitoringRoleArn</code> is specified, then you must also set
-     * <code>MonitoringInterval</code> to a value other than 0.
+     * If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value
+     * other than 0.
      * </p>
      * <p>
      * Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
@@ -1208,33 +1134,29 @@ public class CreateDBInstanceRequest extends
     private Integer monitoringInterval;
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send enhanced monitoring
-     * metrics to CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on
-     * creating a monitoring role, go to <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole"
-     * >To create an IAM role for Amazon RDS Enhanced Monitoring</a>.
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For example,
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a>.
      * </p>
      * <p>
-     * If <code>MonitoringInterval</code> is set to a value other than 0, then
-     * you must supply a <code>MonitoringRoleArn</code> value.
+     * If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
+     * <code>MonitoringRoleArn</code> value.
      * </p>
      */
     private String monitoringRoleArn;
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.
+     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
      * </p>
      */
     private String domainIAMRoleName;
     /**
      * <p>
-     * A value that specifies the order in which an Aurora Replica is promoted
-     * to the primary instance after a failure of the existing primary instance.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     * > Fault Tolerance for an Aurora DB Cluster</a>.
+     * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
+     * of the existing primary instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>.
      * </p>
      * <p>
      * Default: 1
@@ -1246,8 +1168,7 @@ public class CreateDBInstanceRequest extends
     private Integer promotionTier;
     /**
      * <p>
-     * The time zone of the DB instance. The time zone parameter is currently
-     * supported only by <a href=
+     * The time zone of the DB instance. The time zone parameter is currently supported only by <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
      * >Microsoft SQL Server</a>.
      * </p>
@@ -1255,29 +1176,25 @@ public class CreateDBInstanceRequest extends
     private String timezone;
 
     /**
-     * Default constructor for CreateDBInstanceRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize the
-     * object after creating it.
+     * Default constructor for CreateDBInstanceRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public CreateDBInstanceRequest() {
     }
 
     /**
-     * Constructs a new CreateDBInstanceRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new CreateDBInstanceRequest object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize any additional object members.
      * 
      * @param dBInstanceIdentifier
-     *        The DB instance identifier. This parameter is stored as a
-     *        lowercase string.</p>
+     *        The DB instance identifier. This parameter is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to
-     *        15 for SQL Server).
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).
      *        </p>
      *        </li>
      *        <li>
@@ -1294,8 +1211,7 @@ public class CreateDBInstanceRequest extends
      *        <p>
      *        Example: <code>mydbinstance</code>
      * @param allocatedStorage
-     *        The amount of storage (in gigabytes) to be initially allocated for
-     *        the database instance.
+     *        The amount of storage (in gigabytes) to be initially allocated for the database instance.
      *        </p>
      *        <p>
      *        Type: Integer
@@ -1328,9 +1244,8 @@ public class CreateDBInstanceRequest extends
      *        <b>SQL Server</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 200 to 4096 (Standard Edition
-     *        and Enterprise Edition) or from 20 to 4096 (Express Edition and
-     *        Web Edition)
+     *        Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to
+     *        4096 (Express Edition and Web Edition)
      * @param dBInstanceClass
      *        The compute and memory capacity of the DB instance.
      *        </p>
@@ -1341,12 +1256,10 @@ public class CreateDBInstanceRequest extends
      *        The name of the database engine to be used for this instance.
      *        </p>
      *        <p>
-     *        Valid Values: <code>mysql</code> | <code>mariadb</code> |
-     *        <code>oracle-se1</code> | <code>oracle-se2</code> |
-     *        <code>oracle-se</code> | <code>oracle-ee</code> |
-     *        <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     *        <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     *        <code>postgres</code> | <code>aurora</code>
+     *        Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     *        <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     *        <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>
+     *        | <code>aurora</code>
      *        </p>
      *        <p>
      *        Not every database engine is available for every AWS region.
@@ -1466,8 +1379,8 @@ public class CreateDBInstanceRequest extends
      *        </p>
      *        </li>
      * @param masterUserPassword
-     *        The password for the master database user. Can be any printable
-     *        ASCII character except "/", """, or "@".</p>
+     *        The password for the master database user. Can be any printable ASCII character except "/",
+     *        """, or "@".</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1507,9 +1420,8 @@ public class CreateDBInstanceRequest extends
      *        <p>
      *        Constraints: Must contain from 8 to 41 characters.
      */
-    public CreateDBInstanceRequest(String dBInstanceIdentifier,
-            Integer allocatedStorage, String dBInstanceClass, String engine,
-            String masterUsername, String masterUserPassword) {
+    public CreateDBInstanceRequest(String dBInstanceIdentifier, Integer allocatedStorage, String dBInstanceClass, String engine, String masterUsername,
+            String masterUserPassword) {
         setDBInstanceIdentifier(dBInstanceIdentifier);
         setAllocatedStorage(allocatedStorage);
         setDBInstanceClass(dBInstanceClass);
@@ -1520,8 +1432,7 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The meaning of this parameter differs according to the database engine
-     * you use.
+     * The meaning of this parameter differs according to the database engine you use.
      * </p>
      * <p>
      * Type: String
@@ -1530,9 +1441,8 @@ public class CreateDBInstanceRequest extends
      * <b>MySQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If
-     * this parameter is not specified, no database is created in the DB
-     * instance.
+     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -1553,9 +1463,8 @@ public class CreateDBInstanceRequest extends
      * <b>MariaDB</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If
-     * this parameter is not specified, no database is created in the DB
-     * instance.
+     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -1576,9 +1485,8 @@ public class CreateDBInstanceRequest extends
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If
-     * this parameter is not specified, the default "postgres" database is
-     * created in the DB instance.
+     * The name of the database to create when the DB instance is created. If this parameter is not specified, the
+     * default "postgres" database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -1591,8 +1499,7 @@ public class CreateDBInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * Must begin with a letter or an underscore. Subsequent characters can be
-     * letters, underscores, or digits (0-9).
+     * Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -1630,9 +1537,8 @@ public class CreateDBInstanceRequest extends
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * The name of the database to create when the primary instance of the DB
-     * cluster is created. If this parameter is not specified, no database is
-     * created in the DB instance.
+     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter is
+     * not specified, no database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -1651,8 +1557,7 @@ public class CreateDBInstanceRequest extends
      * </ul>
      * 
      * @param dBName
-     *        The meaning of this parameter differs according to the database
-     *        engine you use.</p>
+     *        The meaning of this parameter differs according to the database engine you use.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1660,9 +1565,8 @@ public class CreateDBInstanceRequest extends
      *        <b>MySQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is
-     *        created. If this parameter is not specified, no database is
-     *        created in the DB instance.
+     *        The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     *        database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -1683,9 +1587,8 @@ public class CreateDBInstanceRequest extends
      *        <b>MariaDB</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is
-     *        created. If this parameter is not specified, no database is
-     *        created in the DB instance.
+     *        The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     *        database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -1706,9 +1609,8 @@ public class CreateDBInstanceRequest extends
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is
-     *        created. If this parameter is not specified, the default
-     *        "postgres" database is created in the DB instance.
+     *        The name of the database to create when the DB instance is created. If this parameter is not specified,
+     *        the default "postgres" database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -1721,8 +1623,8 @@ public class CreateDBInstanceRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        Must begin with a letter or an underscore. Subsequent characters
-     *        can be letters, underscores, or digits (0-9).
+     *        Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits
+     *        (0-9).
      *        </p>
      *        </li>
      *        <li>
@@ -1760,9 +1662,8 @@ public class CreateDBInstanceRequest extends
      *        <b>Amazon Aurora</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the primary instance of
-     *        the DB cluster is created. If this parameter is not specified, no
-     *        database is created in the DB instance.
+     *        The name of the database to create when the primary instance of the DB cluster is created. If this
+     *        parameter is not specified, no database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -1786,8 +1687,7 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The meaning of this parameter differs according to the database engine
-     * you use.
+     * The meaning of this parameter differs according to the database engine you use.
      * </p>
      * <p>
      * Type: String
@@ -1796,9 +1696,8 @@ public class CreateDBInstanceRequest extends
      * <b>MySQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If
-     * this parameter is not specified, no database is created in the DB
-     * instance.
+     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -1819,9 +1718,8 @@ public class CreateDBInstanceRequest extends
      * <b>MariaDB</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If
-     * this parameter is not specified, no database is created in the DB
-     * instance.
+     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -1842,9 +1740,8 @@ public class CreateDBInstanceRequest extends
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If
-     * this parameter is not specified, the default "postgres" database is
-     * created in the DB instance.
+     * The name of the database to create when the DB instance is created. If this parameter is not specified, the
+     * default "postgres" database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -1857,8 +1754,7 @@ public class CreateDBInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * Must begin with a letter or an underscore. Subsequent characters can be
-     * letters, underscores, or digits (0-9).
+     * Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -1896,9 +1792,8 @@ public class CreateDBInstanceRequest extends
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * The name of the database to create when the primary instance of the DB
-     * cluster is created. If this parameter is not specified, no database is
-     * created in the DB instance.
+     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter is
+     * not specified, no database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -1916,8 +1811,7 @@ public class CreateDBInstanceRequest extends
      * </li>
      * </ul>
      * 
-     * @return The meaning of this parameter differs according to the database
-     *         engine you use.</p>
+     * @return The meaning of this parameter differs according to the database engine you use.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -1925,9 +1819,8 @@ public class CreateDBInstanceRequest extends
      *         <b>MySQL</b>
      *         </p>
      *         <p>
-     *         The name of the database to create when the DB instance is
-     *         created. If this parameter is not specified, no database is
-     *         created in the DB instance.
+     *         The name of the database to create when the DB instance is created. If this parameter is not specified,
+     *         no database is created in the DB instance.
      *         </p>
      *         <p>
      *         Constraints:
@@ -1948,9 +1841,8 @@ public class CreateDBInstanceRequest extends
      *         <b>MariaDB</b>
      *         </p>
      *         <p>
-     *         The name of the database to create when the DB instance is
-     *         created. If this parameter is not specified, no database is
-     *         created in the DB instance.
+     *         The name of the database to create when the DB instance is created. If this parameter is not specified,
+     *         no database is created in the DB instance.
      *         </p>
      *         <p>
      *         Constraints:
@@ -1971,9 +1863,8 @@ public class CreateDBInstanceRequest extends
      *         <b>PostgreSQL</b>
      *         </p>
      *         <p>
-     *         The name of the database to create when the DB instance is
-     *         created. If this parameter is not specified, the default
-     *         "postgres" database is created in the DB instance.
+     *         The name of the database to create when the DB instance is created. If this parameter is not specified,
+     *         the default "postgres" database is created in the DB instance.
      *         </p>
      *         <p>
      *         Constraints:
@@ -1986,8 +1877,8 @@ public class CreateDBInstanceRequest extends
      *         </li>
      *         <li>
      *         <p>
-     *         Must begin with a letter or an underscore. Subsequent characters
-     *         can be letters, underscores, or digits (0-9).
+     *         Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits
+     *         (0-9).
      *         </p>
      *         </li>
      *         <li>
@@ -2025,9 +1916,8 @@ public class CreateDBInstanceRequest extends
      *         <b>Amazon Aurora</b>
      *         </p>
      *         <p>
-     *         The name of the database to create when the primary instance of
-     *         the DB cluster is created. If this parameter is not specified, no
-     *         database is created in the DB instance.
+     *         The name of the database to create when the primary instance of the DB cluster is created. If this
+     *         parameter is not specified, no database is created in the DB instance.
      *         </p>
      *         <p>
      *         Constraints:
@@ -2051,8 +1941,7 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The meaning of this parameter differs according to the database engine
-     * you use.
+     * The meaning of this parameter differs according to the database engine you use.
      * </p>
      * <p>
      * Type: String
@@ -2061,9 +1950,8 @@ public class CreateDBInstanceRequest extends
      * <b>MySQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If
-     * this parameter is not specified, no database is created in the DB
-     * instance.
+     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -2084,9 +1972,8 @@ public class CreateDBInstanceRequest extends
      * <b>MariaDB</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If
-     * this parameter is not specified, no database is created in the DB
-     * instance.
+     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -2107,9 +1994,8 @@ public class CreateDBInstanceRequest extends
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If
-     * this parameter is not specified, the default "postgres" database is
-     * created in the DB instance.
+     * The name of the database to create when the DB instance is created. If this parameter is not specified, the
+     * default "postgres" database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -2122,8 +2008,7 @@ public class CreateDBInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * Must begin with a letter or an underscore. Subsequent characters can be
-     * letters, underscores, or digits (0-9).
+     * Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -2161,9 +2046,8 @@ public class CreateDBInstanceRequest extends
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * The name of the database to create when the primary instance of the DB
-     * cluster is created. If this parameter is not specified, no database is
-     * created in the DB instance.
+     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter is
+     * not specified, no database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -2182,8 +2066,7 @@ public class CreateDBInstanceRequest extends
      * </ul>
      * 
      * @param dBName
-     *        The meaning of this parameter differs according to the database
-     *        engine you use.</p>
+     *        The meaning of this parameter differs according to the database engine you use.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -2191,9 +2074,8 @@ public class CreateDBInstanceRequest extends
      *        <b>MySQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is
-     *        created. If this parameter is not specified, no database is
-     *        created in the DB instance.
+     *        The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     *        database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -2214,9 +2096,8 @@ public class CreateDBInstanceRequest extends
      *        <b>MariaDB</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is
-     *        created. If this parameter is not specified, no database is
-     *        created in the DB instance.
+     *        The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     *        database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -2237,9 +2118,8 @@ public class CreateDBInstanceRequest extends
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is
-     *        created. If this parameter is not specified, the default
-     *        "postgres" database is created in the DB instance.
+     *        The name of the database to create when the DB instance is created. If this parameter is not specified,
+     *        the default "postgres" database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -2252,8 +2132,8 @@ public class CreateDBInstanceRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        Must begin with a letter or an underscore. Subsequent characters
-     *        can be letters, underscores, or digits (0-9).
+     *        Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits
+     *        (0-9).
      *        </p>
      *        </li>
      *        <li>
@@ -2291,9 +2171,8 @@ public class CreateDBInstanceRequest extends
      *        <b>Amazon Aurora</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the primary instance of
-     *        the DB cluster is created. If this parameter is not specified, no
-     *        database is created in the DB instance.
+     *        The name of the database to create when the primary instance of the DB cluster is created. If this
+     *        parameter is not specified, no database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -2309,8 +2188,7 @@ public class CreateDBInstanceRequest extends
      *        Cannot be a word reserved by the specified database engine
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withDBName(String dBName) {
@@ -2320,8 +2198,7 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The DB instance identifier. This parameter is stored as a lowercase
-     * string.
+     * The DB instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -2329,8 +2206,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for
-     * SQL Server).
+     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).
      * </p>
      * </li>
      * <li>
@@ -2349,16 +2225,14 @@ public class CreateDBInstanceRequest extends
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        The DB instance identifier. This parameter is stored as a
-     *        lowercase string.</p>
+     *        The DB instance identifier. This parameter is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to
-     *        15 for SQL Server).
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).
      *        </p>
      *        </li>
      *        <li>
@@ -2382,8 +2256,7 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The DB instance identifier. This parameter is stored as a lowercase
-     * string.
+     * The DB instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -2391,8 +2264,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for
-     * SQL Server).
+     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).
      * </p>
      * </li>
      * <li>
@@ -2410,16 +2282,14 @@ public class CreateDBInstanceRequest extends
      * Example: <code>mydbinstance</code>
      * </p>
      * 
-     * @return The DB instance identifier. This parameter is stored as a
-     *         lowercase string.</p>
+     * @return The DB instance identifier. This parameter is stored as a lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens (1
-     *         to 15 for SQL Server).
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).
      *         </p>
      *         </li>
      *         <li>
@@ -2443,8 +2313,7 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The DB instance identifier. This parameter is stored as a lowercase
-     * string.
+     * The DB instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -2452,8 +2321,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for
-     * SQL Server).
+     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).
      * </p>
      * </li>
      * <li>
@@ -2472,16 +2340,14 @@ public class CreateDBInstanceRequest extends
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        The DB instance identifier. This parameter is stored as a
-     *        lowercase string.</p>
+     *        The DB instance identifier. This parameter is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to
-     *        15 for SQL Server).
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).
      *        </p>
      *        </li>
      *        <li>
@@ -2497,20 +2363,17 @@ public class CreateDBInstanceRequest extends
      *        </ul>
      *        <p>
      *        Example: <code>mydbinstance</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withDBInstanceIdentifier(
-            String dBInstanceIdentifier) {
+    public CreateDBInstanceRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
         setDBInstanceIdentifier(dBInstanceIdentifier);
         return this;
     }
 
     /**
      * <p>
-     * The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance.
+     * The amount of storage (in gigabytes) to be initially allocated for the database instance.
      * </p>
      * <p>
      * Type: Integer
@@ -2543,13 +2406,12 @@ public class CreateDBInstanceRequest extends
      * <b>SQL Server</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 200 to 4096 (Standard Edition and
-     * Enterprise Edition) or from 20 to 4096 (Express Edition and Web Edition)
+     * Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to 4096
+     * (Express Edition and Web Edition)
      * </p>
      * 
      * @param allocatedStorage
-     *        The amount of storage (in gigabytes) to be initially allocated for
-     *        the database instance.</p>
+     *        The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
      *        <p>
      *        Type: Integer
      *        </p>
@@ -2581,9 +2443,8 @@ public class CreateDBInstanceRequest extends
      *        <b>SQL Server</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 200 to 4096 (Standard Edition
-     *        and Enterprise Edition) or from 20 to 4096 (Express Edition and
-     *        Web Edition)
+     *        Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to
+     *        4096 (Express Edition and Web Edition)
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -2592,8 +2453,7 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance.
+     * The amount of storage (in gigabytes) to be initially allocated for the database instance.
      * </p>
      * <p>
      * Type: Integer
@@ -2626,12 +2486,11 @@ public class CreateDBInstanceRequest extends
      * <b>SQL Server</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 200 to 4096 (Standard Edition and
-     * Enterprise Edition) or from 20 to 4096 (Express Edition and Web Edition)
+     * Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to 4096
+     * (Express Edition and Web Edition)
      * </p>
      * 
-     * @return The amount of storage (in gigabytes) to be initially allocated
-     *         for the database instance.</p>
+     * @return The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
      *         <p>
      *         Type: Integer
      *         </p>
@@ -2663,9 +2522,8 @@ public class CreateDBInstanceRequest extends
      *         <b>SQL Server</b>
      *         </p>
      *         <p>
-     *         Constraints: Must be an integer from 200 to 4096 (Standard
-     *         Edition and Enterprise Edition) or from 20 to 4096 (Express
-     *         Edition and Web Edition)
+     *         Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to
+     *         4096 (Express Edition and Web Edition)
      */
 
     public Integer getAllocatedStorage() {
@@ -2674,8 +2532,7 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance.
+     * The amount of storage (in gigabytes) to be initially allocated for the database instance.
      * </p>
      * <p>
      * Type: Integer
@@ -2708,13 +2565,12 @@ public class CreateDBInstanceRequest extends
      * <b>SQL Server</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 200 to 4096 (Standard Edition and
-     * Enterprise Edition) or from 20 to 4096 (Express Edition and Web Edition)
+     * Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to 4096
+     * (Express Edition and Web Edition)
      * </p>
      * 
      * @param allocatedStorage
-     *        The amount of storage (in gigabytes) to be initially allocated for
-     *        the database instance.</p>
+     *        The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
      *        <p>
      *        Type: Integer
      *        </p>
@@ -2746,11 +2602,9 @@ public class CreateDBInstanceRequest extends
      *        <b>SQL Server</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 200 to 4096 (Standard Edition
-     *        and Enterprise Edition) or from 20 to 4096 (Express Edition and
-     *        Web Edition)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to
+     *        4096 (Express Edition and Web Edition)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withAllocatedStorage(Integer allocatedStorage) {
@@ -2811,8 +2665,7 @@ public class CreateDBInstanceRequest extends
      *        <p>
      *        Valid Values:
      *        <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withDBInstanceClass(String dBInstanceClass) {
@@ -2825,12 +2678,9 @@ public class CreateDBInstanceRequest extends
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * Valid Values: <code>mysql</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se2</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     * <code>postgres</code> | <code>aurora</code>
+     * Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se2</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
      * </p>
      * <p>
      * Not every database engine is available for every AWS region.
@@ -2839,12 +2689,10 @@ public class CreateDBInstanceRequest extends
      * @param engine
      *        The name of the database engine to be used for this instance.</p>
      *        <p>
-     *        Valid Values: <code>mysql</code> | <code>mariadb</code> |
-     *        <code>oracle-se1</code> | <code>oracle-se2</code> |
-     *        <code>oracle-se</code> | <code>oracle-ee</code> |
-     *        <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     *        <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     *        <code>postgres</code> | <code>aurora</code>
+     *        Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     *        <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     *        <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>
+     *        | <code>aurora</code>
      *        </p>
      *        <p>
      *        Not every database engine is available for every AWS region.
@@ -2859,12 +2707,9 @@ public class CreateDBInstanceRequest extends
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * Valid Values: <code>mysql</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se2</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     * <code>postgres</code> | <code>aurora</code>
+     * Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se2</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
      * </p>
      * <p>
      * Not every database engine is available for every AWS region.
@@ -2872,11 +2717,9 @@ public class CreateDBInstanceRequest extends
      * 
      * @return The name of the database engine to be used for this instance.</p>
      *         <p>
-     *         Valid Values: <code>mysql</code> | <code>mariadb</code> |
-     *         <code>oracle-se1</code> | <code>oracle-se2</code> |
-     *         <code>oracle-se</code> | <code>oracle-ee</code> |
-     *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     *         Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     *         <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
      *         <code>postgres</code> | <code>aurora</code>
      *         </p>
      *         <p>
@@ -2892,12 +2735,9 @@ public class CreateDBInstanceRequest extends
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * Valid Values: <code>mysql</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se2</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     * <code>postgres</code> | <code>aurora</code>
+     * Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se2</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
      * </p>
      * <p>
      * Not every database engine is available for every AWS region.
@@ -2906,17 +2746,14 @@ public class CreateDBInstanceRequest extends
      * @param engine
      *        The name of the database engine to be used for this instance.</p>
      *        <p>
-     *        Valid Values: <code>mysql</code> | <code>mariadb</code> |
-     *        <code>oracle-se1</code> | <code>oracle-se2</code> |
-     *        <code>oracle-se</code> | <code>oracle-ee</code> |
-     *        <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     *        <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     *        <code>postgres</code> | <code>aurora</code>
+     *        Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     *        <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     *        <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>
+     *        | <code>aurora</code>
      *        </p>
      *        <p>
      *        Not every database engine is available for every AWS region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withEngine(String engine) {
@@ -3631,8 +3468,7 @@ public class CreateDBInstanceRequest extends
      *        Cannot be a reserved word for the chosen database engine.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withMasterUsername(String masterUsername) {
@@ -3642,8 +3478,7 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The password for the master database user. Can be any printable ASCII
-     * character except "/", """, or "@".
+     * The password for the master database user. Can be any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
      * Type: String
@@ -3686,8 +3521,8 @@ public class CreateDBInstanceRequest extends
      * </p>
      * 
      * @param masterUserPassword
-     *        The password for the master database user. Can be any printable
-     *        ASCII character except "/", """, or "@".</p>
+     *        The password for the master database user. Can be any printable ASCII character except "/",
+     *        """, or "@".</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -3734,8 +3569,7 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The password for the master database user. Can be any printable ASCII
-     * character except "/", """, or "@".
+     * The password for the master database user. Can be any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
      * Type: String
@@ -3777,8 +3611,8 @@ public class CreateDBInstanceRequest extends
      * Constraints: Must contain from 8 to 41 characters.
      * </p>
      * 
-     * @return The password for the master database user. Can be any printable
-     *         ASCII character except "/", """, or "@".</p>
+     * @return The password for the master database user. Can be any printable ASCII character except "/",
+     *         """, or "@".</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -3825,8 +3659,7 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The password for the master database user. Can be any printable ASCII
-     * character except "/", """, or "@".
+     * The password for the master database user. Can be any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
      * Type: String
@@ -3869,8 +3702,8 @@ public class CreateDBInstanceRequest extends
      * </p>
      * 
      * @param masterUserPassword
-     *        The password for the master database user. Can be any printable
-     *        ASCII character except "/", """, or "@".</p>
+     *        The password for the master database user. Can be any printable ASCII character except "/",
+     *        """, or "@".</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -3909,12 +3742,10 @@ public class CreateDBInstanceRequest extends
      *        </p>
      *        <p>
      *        Constraints: Must contain from 8 to 41 characters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withMasterUserPassword(
-            String masterUserPassword) {
+    public CreateDBInstanceRequest withMasterUserPassword(String masterUserPassword) {
         setMasterUserPassword(masterUserPassword);
         return this;
     }
@@ -3927,8 +3758,7 @@ public class CreateDBInstanceRequest extends
      * Default: The default DB security group for the database engine.
      * </p>
      * 
-     * @return A list of DB security groups to associate with this DB
-     *         instance.</p>
+     * @return A list of DB security groups to associate with this DB instance.</p>
      *         <p>
      *         Default: The default DB security group for the database engine.
      */
@@ -3949,21 +3779,18 @@ public class CreateDBInstanceRequest extends
      * </p>
      * 
      * @param dBSecurityGroups
-     *        A list of DB security groups to associate with this DB
-     *        instance.</p>
+     *        A list of DB security groups to associate with this DB instance.</p>
      *        <p>
      *        Default: The default DB security group for the database engine.
      */
 
-    public void setDBSecurityGroups(
-            java.util.Collection<String> dBSecurityGroups) {
+    public void setDBSecurityGroups(java.util.Collection<String> dBSecurityGroups) {
         if (dBSecurityGroups == null) {
             this.dBSecurityGroups = null;
             return;
         }
 
-        this.dBSecurityGroups = new com.amazonaws.internal.SdkInternalList<String>(
-                dBSecurityGroups);
+        this.dBSecurityGroups = new com.amazonaws.internal.SdkInternalList<String>(dBSecurityGroups);
     }
 
     /**
@@ -3974,26 +3801,21 @@ public class CreateDBInstanceRequest extends
      * Default: The default DB security group for the database engine.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDBSecurityGroups(java.util.Collection)} or
-     * {@link #withDBSecurityGroups(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDBSecurityGroups(java.util.Collection)} or {@link #withDBSecurityGroups(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param dBSecurityGroups
-     *        A list of DB security groups to associate with this DB
-     *        instance.</p>
+     *        A list of DB security groups to associate with this DB instance.</p>
      *        <p>
      *        Default: The default DB security group for the database engine.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withDBSecurityGroups(
-            String... dBSecurityGroups) {
+    public CreateDBInstanceRequest withDBSecurityGroups(String... dBSecurityGroups) {
         if (this.dBSecurityGroups == null) {
-            setDBSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
-                    dBSecurityGroups.length));
+            setDBSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(dBSecurityGroups.length));
         }
         for (String ele : dBSecurityGroups) {
             this.dBSecurityGroups.add(ele);
@@ -4010,16 +3832,13 @@ public class CreateDBInstanceRequest extends
      * </p>
      * 
      * @param dBSecurityGroups
-     *        A list of DB security groups to associate with this DB
-     *        instance.</p>
+     *        A list of DB security groups to associate with this DB instance.</p>
      *        <p>
      *        Default: The default DB security group for the database engine.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withDBSecurityGroups(
-            java.util.Collection<String> dBSecurityGroups) {
+    public CreateDBInstanceRequest withDBSecurityGroups(java.util.Collection<String> dBSecurityGroups) {
         setDBSecurityGroups(dBSecurityGroups);
         return this;
     }
@@ -4029,15 +3848,12 @@ public class CreateDBInstanceRequest extends
      * A list of EC2 VPC security groups to associate with this DB instance.
      * </p>
      * <p>
-     * Default: The default EC2 VPC security group for the DB subnet group's
-     * VPC.
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
      * </p>
      * 
-     * @return A list of EC2 VPC security groups to associate with this DB
-     *         instance.</p>
+     * @return A list of EC2 VPC security groups to associate with this DB instance.</p>
      *         <p>
-     *         Default: The default EC2 VPC security group for the DB subnet
-     *         group's VPC.
+     *         Default: The default EC2 VPC security group for the DB subnet group's VPC.
      */
 
     public java.util.List<String> getVpcSecurityGroupIds() {
@@ -4052,27 +3868,22 @@ public class CreateDBInstanceRequest extends
      * A list of EC2 VPC security groups to associate with this DB instance.
      * </p>
      * <p>
-     * Default: The default EC2 VPC security group for the DB subnet group's
-     * VPC.
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of EC2 VPC security groups to associate with this DB
-     *        instance.</p>
+     *        A list of EC2 VPC security groups to associate with this DB instance.</p>
      *        <p>
-     *        Default: The default EC2 VPC security group for the DB subnet
-     *        group's VPC.
+     *        Default: The default EC2 VPC security group for the DB subnet group's VPC.
      */
 
-    public void setVpcSecurityGroupIds(
-            java.util.Collection<String> vpcSecurityGroupIds) {
+    public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
         if (vpcSecurityGroupIds == null) {
             this.vpcSecurityGroupIds = null;
             return;
         }
 
-        this.vpcSecurityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(
-                vpcSecurityGroupIds);
+        this.vpcSecurityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(vpcSecurityGroupIds);
     }
 
     /**
@@ -4080,31 +3891,24 @@ public class CreateDBInstanceRequest extends
      * A list of EC2 VPC security groups to associate with this DB instance.
      * </p>
      * <p>
-     * Default: The default EC2 VPC security group for the DB subnet group's
-     * VPC.
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVpcSecurityGroupIds(java.util.Collection)} or
-     * {@link #withVpcSecurityGroupIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcSecurityGroupIds(java.util.Collection)} or {@link #withVpcSecurityGroupIds(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of EC2 VPC security groups to associate with this DB
-     *        instance.</p>
+     *        A list of EC2 VPC security groups to associate with this DB instance.</p>
      *        <p>
-     *        Default: The default EC2 VPC security group for the DB subnet
-     *        group's VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withVpcSecurityGroupIds(
-            String... vpcSecurityGroupIds) {
+    public CreateDBInstanceRequest withVpcSecurityGroupIds(String... vpcSecurityGroupIds) {
         if (this.vpcSecurityGroupIds == null) {
-            setVpcSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    vpcSecurityGroupIds.length));
+            setVpcSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(vpcSecurityGroupIds.length));
         }
         for (String ele : vpcSecurityGroupIds) {
             this.vpcSecurityGroupIds.add(ele);
@@ -4117,64 +3921,53 @@ public class CreateDBInstanceRequest extends
      * A list of EC2 VPC security groups to associate with this DB instance.
      * </p>
      * <p>
-     * Default: The default EC2 VPC security group for the DB subnet group's
-     * VPC.
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of EC2 VPC security groups to associate with this DB
-     *        instance.</p>
+     *        A list of EC2 VPC security groups to associate with this DB instance.</p>
      *        <p>
-     *        Default: The default EC2 VPC security group for the DB subnet
-     *        group's VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withVpcSecurityGroupIds(
-            java.util.Collection<String> vpcSecurityGroupIds) {
+    public CreateDBInstanceRequest withVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
         setVpcSecurityGroupIds(vpcSecurityGroupIds);
         return this;
     }
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance will be created in.
-     * For information on regions and Availability Zones, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
-     * >Regions and Availability Zones</a>.
+     * The EC2 Availability Zone that the database instance will be created in. For information on regions and
+     * Availability Zones, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * and Availability Zones</a>.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
-     * Constraint: The AvailabilityZone parameter cannot be specified if the
-     * MultiAZ parameter is set to <code>true</code>. The specified Availability
-     * Zone must be in the same region as the current endpoint.
+     * Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same region as the current endpoint.
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the database instance will be
-     *        created in. For information on regions and Availability Zones, see
-     *        <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
+     *        The EC2 Availability Zone that the database instance will be created in. For information on regions and
+     *        Availability Zones, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>. </p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the
-     *        endpoint's region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
      *        </p>
      *        <p>
-     *        Constraint: The AvailabilityZone parameter cannot be specified if
-     *        the MultiAZ parameter is set to <code>true</code>. The specified
-     *        Availability Zone must be in the same region as the current
-     *        endpoint.
+     *        Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     *        <code>true</code>. The specified Availability Zone must be in the same region as the current endpoint.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -4183,41 +3976,35 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance will be created in.
-     * For information on regions and Availability Zones, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
-     * >Regions and Availability Zones</a>.
+     * The EC2 Availability Zone that the database instance will be created in. For information on regions and
+     * Availability Zones, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * and Availability Zones</a>.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
-     * Constraint: The AvailabilityZone parameter cannot be specified if the
-     * MultiAZ parameter is set to <code>true</code>. The specified Availability
-     * Zone must be in the same region as the current endpoint.
+     * Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same region as the current endpoint.
      * </p>
      * 
-     * @return The EC2 Availability Zone that the database instance will be
-     *         created in. For information on regions and Availability Zones,
-     *         see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
+     * @return The EC2 Availability Zone that the database instance will be created in. For information on regions and
+     *         Availability Zones, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *         >Regions and Availability Zones</a>. </p>
      *         <p>
-     *         Default: A random, system-chosen Availability Zone in the
-     *         endpoint's region.
+     *         Default: A random, system-chosen Availability Zone in the endpoint's region.
      *         </p>
      *         <p>
      *         Example: <code>us-east-1d</code>
      *         </p>
      *         <p>
-     *         Constraint: The AvailabilityZone parameter cannot be specified if
-     *         the MultiAZ parameter is set to <code>true</code>. The specified
-     *         Availability Zone must be in the same region as the current
-     *         endpoint.
+     *         Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     *         <code>true</code>. The specified Availability Zone must be in the same region as the current endpoint.
      */
 
     public String getAvailabilityZone() {
@@ -4226,44 +4013,37 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance will be created in.
-     * For information on regions and Availability Zones, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
-     * >Regions and Availability Zones</a>.
+     * The EC2 Availability Zone that the database instance will be created in. For information on regions and
+     * Availability Zones, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * and Availability Zones</a>.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
-     * Constraint: The AvailabilityZone parameter cannot be specified if the
-     * MultiAZ parameter is set to <code>true</code>. The specified Availability
-     * Zone must be in the same region as the current endpoint.
+     * Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same region as the current endpoint.
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the database instance will be
-     *        created in. For information on regions and Availability Zones, see
-     *        <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
+     *        The EC2 Availability Zone that the database instance will be created in. For information on regions and
+     *        Availability Zones, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>. </p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the
-     *        endpoint's region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
      *        </p>
      *        <p>
-     *        Constraint: The AvailabilityZone parameter cannot be specified if
-     *        the MultiAZ parameter is set to <code>true</code>. The specified
-     *        Availability Zone must be in the same region as the current
-     *        endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     *        <code>true</code>. The specified Availability Zone must be in the same region as the current endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withAvailabilityZone(String availabilityZone) {
@@ -4318,33 +4098,28 @@ public class CreateDBInstanceRequest extends
      *        A DB subnet group to associate with this DB instance.</p>
      *        <p>
      *        If there is no DB subnet group, then it is a non-VPC DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withDBSubnetGroupName(
-            String dBSubnetGroupName) {
+    public CreateDBInstanceRequest withDBSubnetGroupName(String dBSubnetGroupName) {
         setDBSubnetGroupName(dBSubnetGroupName);
         return this;
     }
 
     /**
      * <p>
-     * The weekly time range during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC). For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html"
-     * >DB Instance Maintenance</a>.
+     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
+     * Instance Maintenance</a>.
      * </p>
      * <p>
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week. To see the time
-     * blocks available, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     * > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide.</i>
+     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
+     * of the week. To see the time blocks available, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -4354,21 +4129,18 @@ public class CreateDBInstanceRequest extends
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        The weekly time range during which system maintenance can occur,
-     *        in Universal Coordinated Time (UTC). For more information, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html"
-     *        >DB Instance Maintenance</a>. </p>
+     *        The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB Instance
+     *        Maintenance</a>. </p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour
-     *        block of time per region, occurring on a random day of the week.
-     *        To see the time blocks available, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     *        > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon
-     *        RDS User Guide.</i>
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *        random day of the week. To see the time blocks available, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
+     *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
      *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -4383,21 +4155,18 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The weekly time range during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC). For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html"
-     * >DB Instance Maintenance</a>.
+     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
+     * Instance Maintenance</a>.
      * </p>
      * <p>
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week. To see the time
-     * blocks available, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     * > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide.</i>
+     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
+     * of the week. To see the time blocks available, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -4406,21 +4175,18 @@ public class CreateDBInstanceRequest extends
      * Constraints: Minimum 30-minute window.
      * </p>
      * 
-     * @return The weekly time range during which system maintenance can occur,
-     *         in Universal Coordinated Time (UTC). For more information, see <a
-     *         href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html"
-     *         >DB Instance Maintenance</a>. </p>
+     * @return The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB Instance
+     *         Maintenance</a>. </p>
      *         <p>
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour
-     *         block of time per region, occurring on a random day of the week.
-     *         To see the time blocks available, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     *         > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon
-     *         RDS User Guide.</i>
+     *         Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *         random day of the week. To see the time blocks available, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
      *         <p>
      *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -4435,21 +4201,18 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The weekly time range during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC). For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html"
-     * >DB Instance Maintenance</a>.
+     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
+     * Instance Maintenance</a>.
      * </p>
      * <p>
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week. To see the time
-     * blocks available, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     * > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide.</i>
+     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
+     * of the week. To see the time blocks available, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -4459,42 +4222,36 @@ public class CreateDBInstanceRequest extends
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        The weekly time range during which system maintenance can occur,
-     *        in Universal Coordinated Time (UTC). For more information, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html"
-     *        >DB Instance Maintenance</a>. </p>
+     *        The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB Instance
+     *        Maintenance</a>. </p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour
-     *        block of time per region, occurring on a random day of the week.
-     *        To see the time blocks available, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     *        > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon
-     *        RDS User Guide.</i>
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *        random day of the week. To see the time blocks available, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
+     *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
      *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
      *        </p>
      *        <p>
      *        Constraints: Minimum 30-minute window.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withPreferredMaintenanceWindow(
-            String preferredMaintenanceWindow) {
+    public CreateDBInstanceRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         setPreferredMaintenanceWindow(preferredMaintenanceWindow);
         return this;
     }
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default DBParameterGroup for the specified
-     * engine will be used.
+     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
+     * DBParameterGroup for the specified engine will be used.
      * </p>
      * <p>
      * Constraints:
@@ -4518,9 +4275,8 @@ public class CreateDBInstanceRequest extends
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group to associate with this DB
-     *        instance. If this argument is omitted, the default
-     *        DBParameterGroup for the specified engine will be used.</p>
+     *        The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
+     *        default DBParameterGroup for the specified engine will be used.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -4548,9 +4304,8 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default DBParameterGroup for the specified
-     * engine will be used.
+     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
+     * DBParameterGroup for the specified engine will be used.
      * </p>
      * <p>
      * Constraints:
@@ -4573,9 +4328,8 @@ public class CreateDBInstanceRequest extends
      * </li>
      * </ul>
      * 
-     * @return The name of the DB parameter group to associate with this DB
-     *         instance. If this argument is omitted, the default
-     *         DBParameterGroup for the specified engine will be used.</p>
+     * @return The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
+     *         default DBParameterGroup for the specified engine will be used.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -4603,9 +4357,8 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default DBParameterGroup for the specified
-     * engine will be used.
+     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
+     * DBParameterGroup for the specified engine will be used.
      * </p>
      * <p>
      * Constraints:
@@ -4629,9 +4382,8 @@ public class CreateDBInstanceRequest extends
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group to associate with this DB
-     *        instance. If this argument is omitted, the default
-     *        DBParameterGroup for the specified engine will be used.</p>
+     *        The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
+     *        default DBParameterGroup for the specified engine will be used.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -4651,21 +4403,18 @@ public class CreateDBInstanceRequest extends
      *        Cannot end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withDBParameterGroupName(
-            String dBParameterGroupName) {
+    public CreateDBInstanceRequest withDBParameterGroupName(String dBParameterGroupName) {
         setDBParameterGroupName(dBParameterGroupName);
         return this;
     }
 
     /**
      * <p>
-     * The number of days for which automated backups are retained. Setting this
-     * parameter to a positive number enables backups. Setting this parameter to
-     * 0 disables automated backups.
+     * The number of days for which automated backups are retained. Setting this parameter to a positive number enables
+     * backups. Setting this parameter to 0 disables automated backups.
      * </p>
      * <p>
      * Default: 1
@@ -4687,9 +4436,8 @@ public class CreateDBInstanceRequest extends
      * </ul>
      * 
      * @param backupRetentionPeriod
-     *        The number of days for which automated backups are retained.
-     *        Setting this parameter to a positive number enables backups.
-     *        Setting this parameter to 0 disables automated backups.</p>
+     *        The number of days for which automated backups are retained. Setting this parameter to a positive number
+     *        enables backups. Setting this parameter to 0 disables automated backups.</p>
      *        <p>
      *        Default: 1
      *        </p>
@@ -4715,9 +4463,8 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The number of days for which automated backups are retained. Setting this
-     * parameter to a positive number enables backups. Setting this parameter to
-     * 0 disables automated backups.
+     * The number of days for which automated backups are retained. Setting this parameter to a positive number enables
+     * backups. Setting this parameter to 0 disables automated backups.
      * </p>
      * <p>
      * Default: 1
@@ -4738,9 +4485,8 @@ public class CreateDBInstanceRequest extends
      * </li>
      * </ul>
      * 
-     * @return The number of days for which automated backups are retained.
-     *         Setting this parameter to a positive number enables backups.
-     *         Setting this parameter to 0 disables automated backups.</p>
+     * @return The number of days for which automated backups are retained. Setting this parameter to a positive number
+     *         enables backups. Setting this parameter to 0 disables automated backups.</p>
      *         <p>
      *         Default: 1
      *         </p>
@@ -4755,8 +4501,7 @@ public class CreateDBInstanceRequest extends
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot be set to 0 if the DB instance is a source to Read
-     *         Replicas
+     *         Cannot be set to 0 if the DB instance is a source to Read Replicas
      *         </p>
      *         </li>
      */
@@ -4767,9 +4512,8 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The number of days for which automated backups are retained. Setting this
-     * parameter to a positive number enables backups. Setting this parameter to
-     * 0 disables automated backups.
+     * The number of days for which automated backups are retained. Setting this parameter to a positive number enables
+     * backups. Setting this parameter to 0 disables automated backups.
      * </p>
      * <p>
      * Default: 1
@@ -4791,9 +4535,8 @@ public class CreateDBInstanceRequest extends
      * </ul>
      * 
      * @param backupRetentionPeriod
-     *        The number of days for which automated backups are retained.
-     *        Setting this parameter to a positive number enables backups.
-     *        Setting this parameter to 0 disables automated backups.</p>
+     *        The number of days for which automated backups are retained. Setting this parameter to a positive number
+     *        enables backups. Setting this parameter to 0 disables automated backups.</p>
      *        <p>
      *        Default: 1
      *        </p>
@@ -4811,31 +4554,26 @@ public class CreateDBInstanceRequest extends
      *        Cannot be set to 0 if the DB instance is a source to Read Replicas
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withBackupRetentionPeriod(
-            Integer backupRetentionPeriod) {
+    public CreateDBInstanceRequest withBackupRetentionPeriod(Integer backupRetentionPeriod) {
         setBackupRetentionPeriod(backupRetentionPeriod);
         return this;
     }
 
     /**
      * <p>
-     * The daily time range during which automated backups are created if
-     * automated backups are enabled, using the
-     * <code>BackupRetentionPeriod</code> parameter. For more information, see
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html"
-     * >DB Instance Backups</a>.
+     * The daily time range during which automated backups are created if automated backups are enabled, using the
+     * <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
+     * Instance Backups</a>.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region. To see the time blocks available, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     * > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide.</i>
+     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
+     * available, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -4864,19 +4602,15 @@ public class CreateDBInstanceRequest extends
      * </ul>
      * 
      * @param preferredBackupWindow
-     *        The daily time range during which automated backups are created if
-     *        automated backups are enabled, using the
-     *        <code>BackupRetentionPeriod</code> parameter. For more
-     *        information, see <a href=
+     *        The daily time range during which automated backups are created if automated backups are enabled, using
+     *        the <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html"
      *        >DB Instance Backups</a>. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour
-     *        block of time per region. To see the time blocks available, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     *        > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon
-     *        RDS User Guide.</i>
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time
+     *        blocks available, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
+     *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints:
@@ -4910,19 +4644,16 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The daily time range during which automated backups are created if
-     * automated backups are enabled, using the
-     * <code>BackupRetentionPeriod</code> parameter. For more information, see
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html"
-     * >DB Instance Backups</a>.
+     * The daily time range during which automated backups are created if automated backups are enabled, using the
+     * <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
+     * Instance Backups</a>.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region. To see the time blocks available, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     * > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide.</i>
+     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
+     * available, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -4950,19 +4681,15 @@ public class CreateDBInstanceRequest extends
      * </li>
      * </ul>
      * 
-     * @return The daily time range during which automated backups are created
-     *         if automated backups are enabled, using the
-     *         <code>BackupRetentionPeriod</code> parameter. For more
-     *         information, see <a href=
+     * @return The daily time range during which automated backups are created if automated backups are enabled, using
+     *         the <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html"
      *         >DB Instance Backups</a>. </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour
-     *         block of time per region. To see the time blocks available, see
-     *         <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     *         > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon
-     *         RDS User Guide.</i>
+     *         Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time
+     *         blocks available, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
      *         <p>
      *         Constraints:
@@ -4996,19 +4723,16 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The daily time range during which automated backups are created if
-     * automated backups are enabled, using the
-     * <code>BackupRetentionPeriod</code> parameter. For more information, see
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html"
-     * >DB Instance Backups</a>.
+     * The daily time range during which automated backups are created if automated backups are enabled, using the
+     * <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
+     * Instance Backups</a>.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region. To see the time blocks available, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     * > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide.</i>
+     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
+     * available, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -5037,19 +4761,15 @@ public class CreateDBInstanceRequest extends
      * </ul>
      * 
      * @param preferredBackupWindow
-     *        The daily time range during which automated backups are created if
-     *        automated backups are enabled, using the
-     *        <code>BackupRetentionPeriod</code> parameter. For more
-     *        information, see <a href=
+     *        The daily time range during which automated backups are created if automated backups are enabled, using
+     *        the <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html"
      *        >DB Instance Backups</a>. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour
-     *        block of time per region. To see the time blocks available, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"
-     *        > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon
-     *        RDS User Guide.</i>
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time
+     *        blocks available, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
+     *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints:
@@ -5075,12 +4795,10 @@ public class CreateDBInstanceRequest extends
      *        Must be at least 30 minutes.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withPreferredBackupWindow(
-            String preferredBackupWindow) {
+    public CreateDBInstanceRequest withPreferredBackupWindow(String preferredBackupWindow) {
         setPreferredBackupWindow(preferredBackupWindow);
         return this;
     }
@@ -5141,9 +4859,8 @@ public class CreateDBInstanceRequest extends
      * Default: <code>1433</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code> except for <code>1434</code>,
-     * <code>3389</code>, <code>47001</code>, <code>49152</code>, and
-     * <code>49152</code> through <code>49156</code>.
+     * Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -5212,8 +4929,8 @@ public class CreateDBInstanceRequest extends
      *        Default: <code>1433</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>, <code>49152</code>, and
-     *        <code>49152</code> through <code>49156</code>.
+     *        Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     *        <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
@@ -5288,9 +5005,8 @@ public class CreateDBInstanceRequest extends
      * Default: <code>1433</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code> except for <code>1434</code>,
-     * <code>3389</code>, <code>47001</code>, <code>49152</code>, and
-     * <code>49152</code> through <code>49156</code>.
+     * Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -5358,10 +5074,7 @@ public class CreateDBInstanceRequest extends
      *         Default: <code>1433</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code> except for
-     *         <code>1434</code>, <code>3389</code>, <code>47001</code>,
-     *         <code>49152</code>, and <code>49152</code> through
-     *         <code>49156</code>.
+     *         Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>, <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      *         </p>
      *         <p>
      *         <b>Amazon Aurora</b>
@@ -5436,9 +5149,8 @@ public class CreateDBInstanceRequest extends
      * Default: <code>1433</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code> except for <code>1434</code>,
-     * <code>3389</code>, <code>47001</code>, <code>49152</code>, and
-     * <code>49152</code> through <code>49156</code>.
+     * Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -5507,8 +5219,8 @@ public class CreateDBInstanceRequest extends
      *        Default: <code>1433</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>, <code>49152</code>, and
-     *        <code>49152</code> through <code>49156</code>.
+     *        Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     *        <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
@@ -5521,8 +5233,7 @@ public class CreateDBInstanceRequest extends
      *        </p>
      *        <p>
      *        Type: Integer
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withPort(Integer port) {
@@ -5532,14 +5243,13 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true.
+     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the
+     * MultiAZ parameter is set to true.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the DB instance is a Multi-AZ deployment. You cannot
-     *        set the AvailabilityZone parameter if the MultiAZ parameter is set
-     *        to true.
+     *        Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if
+     *        the MultiAZ parameter is set to true.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -5548,13 +5258,12 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true.
+     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the
+     * MultiAZ parameter is set to true.
      * </p>
      * 
-     * @return Specifies if the DB instance is a Multi-AZ deployment. You cannot
-     *         set the AvailabilityZone parameter if the MultiAZ parameter is
-     *         set to true.
+     * @return Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if
+     *         the MultiAZ parameter is set to true.
      */
 
     public Boolean getMultiAZ() {
@@ -5563,16 +5272,14 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true.
+     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the
+     * MultiAZ parameter is set to true.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the DB instance is a Multi-AZ deployment. You cannot
-     *        set the AvailabilityZone parameter if the MultiAZ parameter is set
-     *        to true.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if
+     *        the MultiAZ parameter is set to true.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withMultiAZ(Boolean multiAZ) {
@@ -5582,13 +5289,12 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true.
+     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the
+     * MultiAZ parameter is set to true.
      * </p>
      * 
-     * @return Specifies if the DB instance is a Multi-AZ deployment. You cannot
-     *         set the AvailabilityZone parameter if the MultiAZ parameter is
-     *         set to true.
+     * @return Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if
+     *         the MultiAZ parameter is set to true.
      */
 
     public Boolean isMultiAZ() {
@@ -5600,9 +5306,8 @@ public class CreateDBInstanceRequest extends
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * The following are the database engines and major and minor versions that
-     * are available with Amazon RDS. Not every database engine is available for
-     * every AWS region.
+     * The following are the database engines and major and minor versions that are available with Amazon RDS. Not every
+     * database engine is available for every AWS region.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -5610,9 +5315,8 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.6 (only available in AWS regions ap-northeast-1,
-     * ap-northeast-2, ap-south-1, ap-southeast-2, eu-west-1, us-east-1,
-     * us-west-2):</b> <code> 5.6.10a</code>
+     * <b>Version 5.6 (only available in AWS regions ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     * eu-west-1, us-east-1, us-west-2):</b> <code> 5.6.10a</code>
      * </p>
      * </li>
      * </ul>
@@ -5622,14 +5326,12 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 10.1 (available in all AWS regions except us-gov-west-1):</b>
-     * <code> 10.1.14</code>
+     * <b>Version 10.1 (available in all AWS regions except us-gov-west-1):</b> <code> 10.1.14</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.0 (available in all AWS regions):</b>
-     * <code> 10.0.17 | 10.0.24</code>
+     * <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.17 | 10.0.24</code>
      * </p>
      * </li>
      * </ul>
@@ -5656,8 +5358,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.00 (available in all AWS regions):</b>
-     * <code> 12.00.4422.0.v1</code>
+     * <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      * </p>
      * </li>
      * <li>
@@ -5679,8 +5380,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.00 (available in all AWS regions):</b>
-     * <code> 12.00.4422.0.v1</code>
+     * <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      * </p>
      * </li>
      * <li>
@@ -5702,8 +5402,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.00 (available in all AWS regions):</b>
-     * <code> 12.00.4422.0.v1</code>
+     * <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      * </p>
      * </li>
      * <li>
@@ -5725,46 +5424,40 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.7 (available in all AWS regions):</b>
-     * <code> 5.7.10 | 5.7.11</code>
+     * <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.10 | 5.7.11</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b>
+     * <b>Version 5.6 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
      * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions except ap-south-1):</b>
-     * <code> 5.6.23</code>
+     * <b>Version 5.6 (available in all AWS regions except ap-south-1):</b> <code> 5.6.23</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions):</b>
-     * <code> 5.6.27 | 5.6.29</code>
+     * <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.27 | 5.6.29</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     * us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code>
+     * <b>Version 5.5 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code>
+     * <b>Version 5.5 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 5.5.40b | 5.5.41</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b>
-     * <code> 5.5.42</code>
+     * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code> 5.5.42</code>
      * </p>
      * </li>
      * <li>
@@ -5779,22 +5472,19 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b>
-     * <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
+     * <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions):</b>
-     * <code> 12.1.0.2.v1</code>
+     * <b>Version 12.1 (available in all AWS regions):</b> <code> 12.1.0.2.v1</code>
      * </p>
      * </li>
      * <li>
@@ -5805,8 +5495,7 @@ public class CreateDBInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * <b>Version 11.2 (available in all AWS regions):</b>
-     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      * </p>
      * </li>
      * <li>
@@ -5822,22 +5511,19 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b>
-     * <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
+     * <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 11.2 (available in all AWS regions):</b>
-     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      * </p>
      * </li>
      * <li>
@@ -5853,22 +5539,19 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b>
-     * <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
+     * <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 11.2 (available in all AWS regions):</b>
-     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      * </p>
      * </li>
      * <li>
@@ -5895,14 +5578,12 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b>
-     * <code> 9.5.2</code>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code> 9.5.2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.4 (available in all AWS regions except ap-south-1):</b>
-     * <code> 9.4.1 | 9.4.4</code>
+     * <b>Version 9.4 (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code>
      * </p>
      * </li>
      * <li>
@@ -5912,28 +5593,25 @@ public class CreateDBInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b>
-     * <code> 9.4.7</code>
+     * <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     * us-gov-west-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code>
+     * <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
+     * <b>Version 9.3 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
+     * <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
      * </p>
      * </li>
      * </ul>
@@ -5941,9 +5619,8 @@ public class CreateDBInstanceRequest extends
      * @param engineVersion
      *        The version number of the database engine to use.</p>
      *        <p>
-     *        The following are the database engines and major and minor
-     *        versions that are available with Amazon RDS. Not every database
-     *        engine is available for every AWS region.
+     *        The following are the database engines and major and minor versions that are available with Amazon RDS.
+     *        Not every database engine is available for every AWS region.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
@@ -5951,9 +5628,8 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (only available in AWS regions ap-northeast-1,
-     *        ap-northeast-2, ap-south-1, ap-southeast-2, eu-west-1, us-east-1,
-     *        us-west-2):</b> <code> 5.6.10a</code>
+     *        <b>Version 5.6 (only available in AWS regions ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     *        eu-west-1, us-east-1, us-west-2):</b> <code> 5.6.10a</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -5963,14 +5639,12 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 10.1 (available in all AWS regions except
-     *        us-gov-west-1):</b> <code> 10.1.14</code>
+     *        <b>Version 10.1 (available in all AWS regions except us-gov-west-1):</b> <code> 10.1.14</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 10.0 (available in all AWS regions):</b>
-     *        <code> 10.0.17 | 10.0.24</code>
+     *        <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.17 | 10.0.24</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -5997,8 +5671,7 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.00 (available in all AWS regions):</b>
-     *        <code> 12.00.4422.0.v1</code>
+     *        <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      *        </p>
      *        </li>
      *        <li>
@@ -6020,8 +5693,7 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.00 (available in all AWS regions):</b>
-     *        <code> 12.00.4422.0.v1</code>
+     *        <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      *        </p>
      *        </li>
      *        <li>
@@ -6043,8 +5715,7 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.00 (available in all AWS regions):</b>
-     *        <code> 12.00.4422.0.v1</code>
+     *        <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      *        </p>
      *        </li>
      *        <li>
@@ -6066,53 +5737,45 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 5.7 (available in all AWS regions):</b>
-     *        <code> 5.7.10 | 5.7.11</code>
+     *        <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.10 | 5.7.11</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in all AWS regions except ap-south-1,
-     *        ap-northeast-2):</b>
+     *        <b>Version 5.6 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
      *        <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in all AWS regions except
-     *        ap-south-1):</b> <code> 5.6.23</code>
+     *        <b>Version 5.6 (available in all AWS regions except ap-south-1):</b> <code> 5.6.23</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in all AWS regions):</b>
-     *        <code> 5.6.27 | 5.6.29</code>
+     *        <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.27 | 5.6.29</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.5 (only available in AWS regions ap-northeast-1,
-     *        ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     *        us-gov-west-1, us-west-1, us-west-2):</b>
-     *        <code> 5.5.40 | 5.5.40a</code>
+     *        <b>Version 5.5 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     *        sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.5 (available in all AWS regions except ap-south-1,
-     *        ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code>
+     *        <b>Version 5.5 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     *        <code> 5.5.40b | 5.5.41</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.5 (available in all AWS regions except
-     *        ap-south-1):</b> <code> 5.5.42</code>
+     *        <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code> 5.5.42</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.5 (available in all AWS regions):</b>
-     *        <code> 5.5.46</code>
+     *        <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.46</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -6122,41 +5785,36 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     *        ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *        <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     *        <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     *        sa-east-1, us-east-1, us-west-1, us-west-2):</b>
+     *        <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+     *        eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b>
      *        <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (available in all AWS regions):</b>
-     *        <code> 12.1.0.2.v1</code>
+     *        <b>Version 12.1 (available in all AWS regions):</b> <code> 12.1.0.2.v1</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (available in all AWS regions except
-     *        us-gov-west-1):</b>
+     *        <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
      *        <code> 12.1.0.2.v2 | 12.1.0.2.v3 | 12.1.0.2.v4</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 11.2 (available in all AWS regions):</b>
-     *        <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *        <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 11.2 (available in all AWS regions except
-     *        us-gov-west-1):</b>
+     *        <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
      *        <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code>
      *        </p>
      *        </li>
@@ -6167,28 +5825,25 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     *        ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *        <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     *        <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     *        sa-east-1, us-east-1, us-west-1, us-west-2):</b>
+     *        <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+     *        eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b>
      *        <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 11.2 (available in all AWS regions):</b>
-     *        <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *        <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 11.2 (available in all AWS regions except
-     *        us-gov-west-1):</b>
+     *        <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
      *        <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code>
      *        </p>
      *        </li>
@@ -6199,28 +5854,25 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     *        ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *        <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     *        <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     *        sa-east-1, us-east-1, us-west-1, us-west-2):</b>
+     *        <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+     *        eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b>
      *        <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 11.2 (available in all AWS regions):</b>
-     *        <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *        <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 11.2 (available in all AWS regions except
-     *        us-gov-west-1):</b>
+     *        <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
      *        <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code>
      *        </p>
      *        </li>
@@ -6231,8 +5883,7 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (available in all AWS regions except
-     *        us-gov-west-1):</b>
+     *        <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
      *        <code> 12.1.0.2.v2 | 12.1.0.2.v3 | 12.1.0.2.v4</code>
      *        </p>
      *        </li>
@@ -6243,49 +5894,40 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 9.5 (available in all AWS regions except
-     *        us-gov-west-1):</b> <code> 9.5.2</code>
+     *        <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code> 9.5.2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.4 (available in all AWS regions except
-     *        ap-south-1):</b> <code> 9.4.1 | 9.4.4</code>
+     *        <b>Version 9.4 (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.4 (available in all AWS regions):</b>
-     *        <code> 9.4.5</code>
+     *        <b>Version 9.4 (available in all AWS regions):</b> <code> 9.4.5</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.4 (available in all AWS regions except
-     *        us-gov-west-1):</b> <code> 9.4.7</code>
+     *        <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     *        ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     *        us-gov-west-1, us-west-1, us-west-2):</b>
-     *        <code> 9.3.1 | 9.3.2</code>
+     *        <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     *        sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     *        ap-northeast-2):</b>
+     *        <b>Version 9.3 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
      *        <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     *        sa-east-1, us-east-1, us-west-1, us-west-2):</b>
-     *        <code> 9.3.12</code>
+     *        <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+     *        eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
      *        </p>
      *        </li>
      */
@@ -6299,9 +5941,8 @@ public class CreateDBInstanceRequest extends
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * The following are the database engines and major and minor versions that
-     * are available with Amazon RDS. Not every database engine is available for
-     * every AWS region.
+     * The following are the database engines and major and minor versions that are available with Amazon RDS. Not every
+     * database engine is available for every AWS region.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -6309,9 +5950,8 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.6 (only available in AWS regions ap-northeast-1,
-     * ap-northeast-2, ap-south-1, ap-southeast-2, eu-west-1, us-east-1,
-     * us-west-2):</b> <code> 5.6.10a</code>
+     * <b>Version 5.6 (only available in AWS regions ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     * eu-west-1, us-east-1, us-west-2):</b> <code> 5.6.10a</code>
      * </p>
      * </li>
      * </ul>
@@ -6321,14 +5961,12 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 10.1 (available in all AWS regions except us-gov-west-1):</b>
-     * <code> 10.1.14</code>
+     * <b>Version 10.1 (available in all AWS regions except us-gov-west-1):</b> <code> 10.1.14</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.0 (available in all AWS regions):</b>
-     * <code> 10.0.17 | 10.0.24</code>
+     * <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.17 | 10.0.24</code>
      * </p>
      * </li>
      * </ul>
@@ -6355,8 +5993,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.00 (available in all AWS regions):</b>
-     * <code> 12.00.4422.0.v1</code>
+     * <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      * </p>
      * </li>
      * <li>
@@ -6378,8 +6015,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.00 (available in all AWS regions):</b>
-     * <code> 12.00.4422.0.v1</code>
+     * <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      * </p>
      * </li>
      * <li>
@@ -6401,8 +6037,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.00 (available in all AWS regions):</b>
-     * <code> 12.00.4422.0.v1</code>
+     * <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      * </p>
      * </li>
      * <li>
@@ -6424,46 +6059,40 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.7 (available in all AWS regions):</b>
-     * <code> 5.7.10 | 5.7.11</code>
+     * <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.10 | 5.7.11</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b>
+     * <b>Version 5.6 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
      * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions except ap-south-1):</b>
-     * <code> 5.6.23</code>
+     * <b>Version 5.6 (available in all AWS regions except ap-south-1):</b> <code> 5.6.23</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions):</b>
-     * <code> 5.6.27 | 5.6.29</code>
+     * <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.27 | 5.6.29</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     * us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code>
+     * <b>Version 5.5 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code>
+     * <b>Version 5.5 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 5.5.40b | 5.5.41</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b>
-     * <code> 5.5.42</code>
+     * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code> 5.5.42</code>
      * </p>
      * </li>
      * <li>
@@ -6478,22 +6107,19 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b>
-     * <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
+     * <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions):</b>
-     * <code> 12.1.0.2.v1</code>
+     * <b>Version 12.1 (available in all AWS regions):</b> <code> 12.1.0.2.v1</code>
      * </p>
      * </li>
      * <li>
@@ -6504,8 +6130,7 @@ public class CreateDBInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * <b>Version 11.2 (available in all AWS regions):</b>
-     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      * </p>
      * </li>
      * <li>
@@ -6521,22 +6146,19 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b>
-     * <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
+     * <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 11.2 (available in all AWS regions):</b>
-     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      * </p>
      * </li>
      * <li>
@@ -6552,22 +6174,19 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b>
-     * <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
+     * <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 11.2 (available in all AWS regions):</b>
-     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      * </p>
      * </li>
      * <li>
@@ -6594,14 +6213,12 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b>
-     * <code> 9.5.2</code>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code> 9.5.2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.4 (available in all AWS regions except ap-south-1):</b>
-     * <code> 9.4.1 | 9.4.4</code>
+     * <b>Version 9.4 (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code>
      * </p>
      * </li>
      * <li>
@@ -6611,37 +6228,33 @@ public class CreateDBInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b>
-     * <code> 9.4.7</code>
+     * <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     * us-gov-west-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code>
+     * <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
+     * <b>Version 9.3 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
+     * <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @return The version number of the database engine to use.</p>
      *         <p>
-     *         The following are the database engines and major and minor
-     *         versions that are available with Amazon RDS. Not every database
-     *         engine is available for every AWS region.
+     *         The following are the database engines and major and minor versions that are available with Amazon RDS.
+     *         Not every database engine is available for every AWS region.
      *         </p>
      *         <p>
      *         <b>Amazon Aurora</b>
@@ -6649,9 +6262,8 @@ public class CreateDBInstanceRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 5.6 (only available in AWS regions ap-northeast-1,
-     *         ap-northeast-2, ap-south-1, ap-southeast-2, eu-west-1, us-east-1,
-     *         us-west-2):</b> <code> 5.6.10a</code>
+     *         <b>Version 5.6 (only available in AWS regions ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     *         eu-west-1, us-east-1, us-west-2):</b> <code> 5.6.10a</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -6661,14 +6273,12 @@ public class CreateDBInstanceRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 10.1 (available in all AWS regions except
-     *         us-gov-west-1):</b> <code> 10.1.14</code>
+     *         <b>Version 10.1 (available in all AWS regions except us-gov-west-1):</b> <code> 10.1.14</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 10.0 (available in all AWS regions):</b>
-     *         <code> 10.0.17 | 10.0.24</code>
+     *         <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.17 | 10.0.24</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -6695,8 +6305,7 @@ public class CreateDBInstanceRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 12.00 (available in all AWS regions):</b>
-     *         <code> 12.00.4422.0.v1</code>
+     *         <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      *         </p>
      *         </li>
      *         <li>
@@ -6718,8 +6327,7 @@ public class CreateDBInstanceRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 12.00 (available in all AWS regions):</b>
-     *         <code> 12.00.4422.0.v1</code>
+     *         <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      *         </p>
      *         </li>
      *         <li>
@@ -6741,8 +6349,7 @@ public class CreateDBInstanceRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 12.00 (available in all AWS regions):</b>
-     *         <code> 12.00.4422.0.v1</code>
+     *         <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      *         </p>
      *         </li>
      *         <li>
@@ -6764,53 +6371,45 @@ public class CreateDBInstanceRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 5.7 (available in all AWS regions):</b>
-     *         <code> 5.7.10 | 5.7.11</code>
+     *         <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.10 | 5.7.11</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.6 (available in all AWS regions except ap-south-1,
-     *         ap-northeast-2):</b>
+     *         <b>Version 5.6 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
      *         <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.6 (available in all AWS regions except
-     *         ap-south-1):</b> <code> 5.6.23</code>
+     *         <b>Version 5.6 (available in all AWS regions except ap-south-1):</b> <code> 5.6.23</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.6 (available in all AWS regions):</b>
-     *         <code> 5.6.27 | 5.6.29</code>
+     *         <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.27 | 5.6.29</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.5 (only available in AWS regions ap-northeast-1,
-     *         ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     *         us-gov-west-1, us-west-1, us-west-2):</b>
-     *         <code> 5.5.40 | 5.5.40a</code>
+     *         <b>Version 5.5 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     *         sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.5 (available in all AWS regions except ap-south-1,
-     *         ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code>
+     *         <b>Version 5.5 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     *         <code> 5.5.40b | 5.5.41</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.5 (available in all AWS regions except
-     *         ap-south-1):</b> <code> 5.5.42</code>
+     *         <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code> 5.5.42</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.5 (available in all AWS regions):</b>
-     *         <code> 5.5.46</code>
+     *         <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.46</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -6820,41 +6419,36 @@ public class CreateDBInstanceRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     *         ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *         <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     *         <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     *         ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     *         sa-east-1, us-east-1, us-west-1, us-west-2):</b>
+     *         <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+     *         eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b>
      *         <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 12.1 (available in all AWS regions):</b>
-     *         <code> 12.1.0.2.v1</code>
+     *         <b>Version 12.1 (available in all AWS regions):</b> <code> 12.1.0.2.v1</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 12.1 (available in all AWS regions except
-     *         us-gov-west-1):</b>
+     *         <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
      *         <code> 12.1.0.2.v2 | 12.1.0.2.v3 | 12.1.0.2.v4</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 11.2 (available in all AWS regions):</b>
-     *         <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *         <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 11.2 (available in all AWS regions except
-     *         us-gov-west-1):</b>
+     *         <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
      *         <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code>
      *         </p>
      *         </li>
@@ -6865,28 +6459,25 @@ public class CreateDBInstanceRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     *         ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *         <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     *         <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     *         ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     *         sa-east-1, us-east-1, us-west-1, us-west-2):</b>
+     *         <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+     *         eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b>
      *         <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 11.2 (available in all AWS regions):</b>
-     *         <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *         <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 11.2 (available in all AWS regions except
-     *         us-gov-west-1):</b>
+     *         <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
      *         <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code>
      *         </p>
      *         </li>
@@ -6897,28 +6488,25 @@ public class CreateDBInstanceRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     *         ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *         <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     *         <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     *         ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     *         sa-east-1, us-east-1, us-west-1, us-west-2):</b>
+     *         <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+     *         eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b>
      *         <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 11.2 (available in all AWS regions):</b>
-     *         <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *         <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 11.2 (available in all AWS regions except
-     *         us-gov-west-1):</b>
+     *         <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
      *         <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code>
      *         </p>
      *         </li>
@@ -6929,8 +6517,7 @@ public class CreateDBInstanceRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 12.1 (available in all AWS regions except
-     *         us-gov-west-1):</b>
+     *         <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
      *         <code> 12.1.0.2.v2 | 12.1.0.2.v3 | 12.1.0.2.v4</code>
      *         </p>
      *         </li>
@@ -6941,49 +6528,40 @@ public class CreateDBInstanceRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 9.5 (available in all AWS regions except
-     *         us-gov-west-1):</b> <code> 9.5.2</code>
+     *         <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code> 9.5.2</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 9.4 (available in all AWS regions except
-     *         ap-south-1):</b> <code> 9.4.1 | 9.4.4</code>
+     *         <b>Version 9.4 (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 9.4 (available in all AWS regions):</b>
-     *         <code> 9.4.5</code>
+     *         <b>Version 9.4 (available in all AWS regions):</b> <code> 9.4.5</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 9.4 (available in all AWS regions except
-     *         us-gov-west-1):</b> <code> 9.4.7</code>
+     *         <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     *         ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     *         us-gov-west-1, us-west-1, us-west-2):</b>
-     *         <code> 9.3.1 | 9.3.2</code>
+     *         <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     *         sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     *         ap-northeast-2):</b>
+     *         <b>Version 9.3 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
      *         <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     *         ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     *         sa-east-1, us-east-1, us-west-1, us-west-2):</b>
-     *         <code> 9.3.12</code>
+     *         <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+     *         eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
      *         </p>
      *         </li>
      */
@@ -6997,9 +6575,8 @@ public class CreateDBInstanceRequest extends
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * The following are the database engines and major and minor versions that
-     * are available with Amazon RDS. Not every database engine is available for
-     * every AWS region.
+     * The following are the database engines and major and minor versions that are available with Amazon RDS. Not every
+     * database engine is available for every AWS region.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -7007,9 +6584,8 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.6 (only available in AWS regions ap-northeast-1,
-     * ap-northeast-2, ap-south-1, ap-southeast-2, eu-west-1, us-east-1,
-     * us-west-2):</b> <code> 5.6.10a</code>
+     * <b>Version 5.6 (only available in AWS regions ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     * eu-west-1, us-east-1, us-west-2):</b> <code> 5.6.10a</code>
      * </p>
      * </li>
      * </ul>
@@ -7019,14 +6595,12 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 10.1 (available in all AWS regions except us-gov-west-1):</b>
-     * <code> 10.1.14</code>
+     * <b>Version 10.1 (available in all AWS regions except us-gov-west-1):</b> <code> 10.1.14</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.0 (available in all AWS regions):</b>
-     * <code> 10.0.17 | 10.0.24</code>
+     * <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.17 | 10.0.24</code>
      * </p>
      * </li>
      * </ul>
@@ -7053,8 +6627,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.00 (available in all AWS regions):</b>
-     * <code> 12.00.4422.0.v1</code>
+     * <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      * </p>
      * </li>
      * <li>
@@ -7076,8 +6649,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.00 (available in all AWS regions):</b>
-     * <code> 12.00.4422.0.v1</code>
+     * <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      * </p>
      * </li>
      * <li>
@@ -7099,8 +6671,7 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.00 (available in all AWS regions):</b>
-     * <code> 12.00.4422.0.v1</code>
+     * <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      * </p>
      * </li>
      * <li>
@@ -7122,46 +6693,40 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.7 (available in all AWS regions):</b>
-     * <code> 5.7.10 | 5.7.11</code>
+     * <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.10 | 5.7.11</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b>
+     * <b>Version 5.6 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
      * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions except ap-south-1):</b>
-     * <code> 5.6.23</code>
+     * <b>Version 5.6 (available in all AWS regions except ap-south-1):</b> <code> 5.6.23</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions):</b>
-     * <code> 5.6.27 | 5.6.29</code>
+     * <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.27 | 5.6.29</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     * us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code>
+     * <b>Version 5.5 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code>
+     * <b>Version 5.5 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 5.5.40b | 5.5.41</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b>
-     * <code> 5.5.42</code>
+     * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code> 5.5.42</code>
      * </p>
      * </li>
      * <li>
@@ -7176,22 +6741,19 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b>
-     * <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
+     * <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions):</b>
-     * <code> 12.1.0.2.v1</code>
+     * <b>Version 12.1 (available in all AWS regions):</b> <code> 12.1.0.2.v1</code>
      * </p>
      * </li>
      * <li>
@@ -7202,8 +6764,7 @@ public class CreateDBInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * <b>Version 11.2 (available in all AWS regions):</b>
-     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      * </p>
      * </li>
      * <li>
@@ -7219,22 +6780,19 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b>
-     * <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
+     * <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 11.2 (available in all AWS regions):</b>
-     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      * </p>
      * </li>
      * <li>
@@ -7250,22 +6808,19 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b>
-     * <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
+     * <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 11.2 (available in all AWS regions):</b>
-     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      * </p>
      * </li>
      * <li>
@@ -7292,14 +6847,12 @@ public class CreateDBInstanceRequest extends
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b>
-     * <code> 9.5.2</code>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code> 9.5.2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.4 (available in all AWS regions except ap-south-1):</b>
-     * <code> 9.4.1 | 9.4.4</code>
+     * <b>Version 9.4 (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code>
      * </p>
      * </li>
      * <li>
@@ -7309,28 +6862,25 @@ public class CreateDBInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b>
-     * <code> 9.4.7</code>
+     * <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     * us-gov-west-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code>
+     * <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
+     * <b>Version 9.3 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     * <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1,
-     * us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
+     * <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
      * </p>
      * </li>
      * </ul>
@@ -7338,9 +6888,8 @@ public class CreateDBInstanceRequest extends
      * @param engineVersion
      *        The version number of the database engine to use.</p>
      *        <p>
-     *        The following are the database engines and major and minor
-     *        versions that are available with Amazon RDS. Not every database
-     *        engine is available for every AWS region.
+     *        The following are the database engines and major and minor versions that are available with Amazon RDS.
+     *        Not every database engine is available for every AWS region.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
@@ -7348,9 +6897,8 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (only available in AWS regions ap-northeast-1,
-     *        ap-northeast-2, ap-south-1, ap-southeast-2, eu-west-1, us-east-1,
-     *        us-west-2):</b> <code> 5.6.10a</code>
+     *        <b>Version 5.6 (only available in AWS regions ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     *        eu-west-1, us-east-1, us-west-2):</b> <code> 5.6.10a</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -7360,14 +6908,12 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 10.1 (available in all AWS regions except
-     *        us-gov-west-1):</b> <code> 10.1.14</code>
+     *        <b>Version 10.1 (available in all AWS regions except us-gov-west-1):</b> <code> 10.1.14</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 10.0 (available in all AWS regions):</b>
-     *        <code> 10.0.17 | 10.0.24</code>
+     *        <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.17 | 10.0.24</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -7394,8 +6940,7 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.00 (available in all AWS regions):</b>
-     *        <code> 12.00.4422.0.v1</code>
+     *        <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      *        </p>
      *        </li>
      *        <li>
@@ -7417,8 +6962,7 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.00 (available in all AWS regions):</b>
-     *        <code> 12.00.4422.0.v1</code>
+     *        <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      *        </p>
      *        </li>
      *        <li>
@@ -7440,8 +6984,7 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.00 (available in all AWS regions):</b>
-     *        <code> 12.00.4422.0.v1</code>
+     *        <b>Version 12.00 (available in all AWS regions):</b> <code> 12.00.4422.0.v1</code>
      *        </p>
      *        </li>
      *        <li>
@@ -7463,53 +7006,45 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 5.7 (available in all AWS regions):</b>
-     *        <code> 5.7.10 | 5.7.11</code>
+     *        <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.10 | 5.7.11</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in all AWS regions except ap-south-1,
-     *        ap-northeast-2):</b>
+     *        <b>Version 5.6 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
      *        <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in all AWS regions except
-     *        ap-south-1):</b> <code> 5.6.23</code>
+     *        <b>Version 5.6 (available in all AWS regions except ap-south-1):</b> <code> 5.6.23</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in all AWS regions):</b>
-     *        <code> 5.6.27 | 5.6.29</code>
+     *        <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.27 | 5.6.29</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.5 (only available in AWS regions ap-northeast-1,
-     *        ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     *        us-gov-west-1, us-west-1, us-west-2):</b>
-     *        <code> 5.5.40 | 5.5.40a</code>
+     *        <b>Version 5.5 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     *        sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.5 (available in all AWS regions except ap-south-1,
-     *        ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code>
+     *        <b>Version 5.5 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     *        <code> 5.5.40b | 5.5.41</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.5 (available in all AWS regions except
-     *        ap-south-1):</b> <code> 5.5.42</code>
+     *        <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code> 5.5.42</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.5 (available in all AWS regions):</b>
-     *        <code> 5.5.46</code>
+     *        <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.46</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -7519,41 +7054,36 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     *        ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *        <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     *        <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     *        sa-east-1, us-east-1, us-west-1, us-west-2):</b>
+     *        <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+     *        eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b>
      *        <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (available in all AWS regions):</b>
-     *        <code> 12.1.0.2.v1</code>
+     *        <b>Version 12.1 (available in all AWS regions):</b> <code> 12.1.0.2.v1</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (available in all AWS regions except
-     *        us-gov-west-1):</b>
+     *        <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
      *        <code> 12.1.0.2.v2 | 12.1.0.2.v3 | 12.1.0.2.v4</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 11.2 (available in all AWS regions):</b>
-     *        <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *        <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 11.2 (available in all AWS regions except
-     *        us-gov-west-1):</b>
+     *        <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
      *        <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code>
      *        </p>
      *        </li>
@@ -7564,28 +7094,25 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     *        ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *        <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     *        <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     *        sa-east-1, us-east-1, us-west-1, us-west-2):</b>
+     *        <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+     *        eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b>
      *        <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 11.2 (available in all AWS regions):</b>
-     *        <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *        <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 11.2 (available in all AWS regions except
-     *        us-gov-west-1):</b>
+     *        <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
      *        <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code>
      *        </p>
      *        </li>
@@ -7596,28 +7123,25 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (available in all AWS regions except ap-south-1,
-     *        ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *        <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+     *        <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (only available in AWS regions ap-northeast-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     *        sa-east-1, us-east-1, us-west-1, us-west-2):</b>
+     *        <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+     *        eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b>
      *        <code> 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 11.2 (available in all AWS regions):</b>
-     *        <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *        <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 11.2 (available in all AWS regions except
-     *        us-gov-west-1):</b>
+     *        <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
      *        <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code>
      *        </p>
      *        </li>
@@ -7628,8 +7152,7 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 12.1 (available in all AWS regions except
-     *        us-gov-west-1):</b>
+     *        <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
      *        <code> 12.1.0.2.v2 | 12.1.0.2.v3 | 12.1.0.2.v4</code>
      *        </p>
      *        </li>
@@ -7640,53 +7163,43 @@ public class CreateDBInstanceRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 9.5 (available in all AWS regions except
-     *        us-gov-west-1):</b> <code> 9.5.2</code>
+     *        <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code> 9.5.2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.4 (available in all AWS regions except
-     *        ap-south-1):</b> <code> 9.4.1 | 9.4.4</code>
+     *        <b>Version 9.4 (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.4 (available in all AWS regions):</b>
-     *        <code> 9.4.5</code>
+     *        <b>Version 9.4 (available in all AWS regions):</b> <code> 9.4.5</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.4 (available in all AWS regions except
-     *        us-gov-west-1):</b> <code> 9.4.7</code>
+     *        <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     *        ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1,
-     *        us-gov-west-1, us-west-1, us-west-2):</b>
-     *        <code> 9.3.1 | 9.3.2</code>
+     *        <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
+     *        sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     *        ap-northeast-2):</b>
+     *        <b>Version 9.3 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
      *        <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     *        sa-east-1, us-east-1, us-west-1, us-west-2):</b>
-     *        <code> 9.3.12</code>
+     *        <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+     *        eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withEngineVersion(String engineVersion) {
@@ -7696,16 +7209,16 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the
-     * DB instance during the maintenance window.
+     * Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance
+     * window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades will be applied automatically
-     *        to the DB instance during the maintenance window.</p>
+     *        Indicates that minor engine upgrades will be applied automatically to the DB instance during the
+     *        maintenance window.</p>
      *        <p>
      *        Default: <code>true</code>
      */
@@ -7716,16 +7229,15 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the
-     * DB instance during the maintenance window.
+     * Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance
+     * window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates that minor engine upgrades will be applied
-     *         automatically to the DB instance during the maintenance
-     *         window.</p>
+     * @return Indicates that minor engine upgrades will be applied automatically to the DB instance during the
+     *         maintenance window.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -7736,40 +7248,37 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the
-     * DB instance during the maintenance window.
+     * Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance
+     * window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades will be applied automatically
-     *        to the DB instance during the maintenance window.</p>
+     *        Indicates that minor engine upgrades will be applied automatically to the DB instance during the
+     *        maintenance window.</p>
      *        <p>
      *        Default: <code>true</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withAutoMinorVersionUpgrade(
-            Boolean autoMinorVersionUpgrade) {
+    public CreateDBInstanceRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         setAutoMinorVersionUpgrade(autoMinorVersionUpgrade);
         return this;
     }
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the
-     * DB instance during the maintenance window.
+     * Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance
+     * window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates that minor engine upgrades will be applied
-     *         automatically to the DB instance during the maintenance
-     *         window.</p>
+     * @return Indicates that minor engine upgrades will be applied automatically to the DB instance during the
+     *         maintenance window.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -7783,15 +7292,14 @@ public class CreateDBInstanceRequest extends
      * License model information for this DB instance.
      * </p>
      * <p>
-     * Valid values: <code>license-included</code> |
-     * <code>bring-your-own-license</code> | <code>general-public-license</code>
+     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
      * </p>
      * 
      * @param licenseModel
      *        License model information for this DB instance.</p>
      *        <p>
-     *        Valid values: <code>license-included</code> |
-     *        <code>bring-your-own-license</code> |
+     *        Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
      *        <code>general-public-license</code>
      */
 
@@ -7804,14 +7312,13 @@ public class CreateDBInstanceRequest extends
      * License model information for this DB instance.
      * </p>
      * <p>
-     * Valid values: <code>license-included</code> |
-     * <code>bring-your-own-license</code> | <code>general-public-license</code>
+     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
      * </p>
      * 
      * @return License model information for this DB instance.</p>
      *         <p>
-     *         Valid values: <code>license-included</code> |
-     *         <code>bring-your-own-license</code> |
+     *         Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
      *         <code>general-public-license</code>
      */
 
@@ -7824,18 +7331,16 @@ public class CreateDBInstanceRequest extends
      * License model information for this DB instance.
      * </p>
      * <p>
-     * Valid values: <code>license-included</code> |
-     * <code>bring-your-own-license</code> | <code>general-public-license</code>
+     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
      * </p>
      * 
      * @param licenseModel
      *        License model information for this DB instance.</p>
      *        <p>
-     *        Valid values: <code>license-included</code> |
-     *        <code>bring-your-own-license</code> |
+     *        Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
      *        <code>general-public-license</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withLicenseModel(String licenseModel) {
@@ -7845,24 +7350,22 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.
+     * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
+     * instance.
      * </p>
      * <p>
-     * Constraints: Must be a multiple between 3 and 10 of the storage amount
-     * for the DB instance. Must also be an integer multiple of 1000. For
-     * example, if the size of your DB instance is 500 GB, then your
-     * <code>Iops</code> value can be 2000, 3000, 4000, or 5000.
+     * Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be an
+     * integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your <code>Iops</code>
+     * value can be 2000, 3000, 4000, or 5000.
      * </p>
      * 
      * @param iops
-     *        The amount of Provisioned IOPS (input/output operations per
-     *        second) to be initially allocated for the DB instance.</p>
+     *        The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
+     *        instance.</p>
      *        <p>
-     *        Constraints: Must be a multiple between 3 and 10 of the storage
-     *        amount for the DB instance. Must also be an integer multiple of
-     *        1000. For example, if the size of your DB instance is 500 GB, then
-     *        your <code>Iops</code> value can be 2000, 3000, 4000, or 5000.
+     *        Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be
+     *        an integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your
+     *        <code>Iops</code> value can be 2000, 3000, 4000, or 5000.
      */
 
     public void setIops(Integer iops) {
@@ -7871,24 +7374,21 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.
+     * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
+     * instance.
      * </p>
      * <p>
-     * Constraints: Must be a multiple between 3 and 10 of the storage amount
-     * for the DB instance. Must also be an integer multiple of 1000. For
-     * example, if the size of your DB instance is 500 GB, then your
-     * <code>Iops</code> value can be 2000, 3000, 4000, or 5000.
+     * Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be an
+     * integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your <code>Iops</code>
+     * value can be 2000, 3000, 4000, or 5000.
      * </p>
      * 
-     * @return The amount of Provisioned IOPS (input/output operations per
-     *         second) to be initially allocated for the DB instance.</p>
+     * @return The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
+     *         instance.</p>
      *         <p>
-     *         Constraints: Must be a multiple between 3 and 10 of the storage
-     *         amount for the DB instance. Must also be an integer multiple of
-     *         1000. For example, if the size of your DB instance is 500 GB,
-     *         then your <code>Iops</code> value can be 2000, 3000, 4000, or
-     *         5000.
+     *         Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be
+     *         an integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your
+     *         <code>Iops</code> value can be 2000, 3000, 4000, or 5000.
      */
 
     public Integer getIops() {
@@ -7897,26 +7397,23 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.
+     * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
+     * instance.
      * </p>
      * <p>
-     * Constraints: Must be a multiple between 3 and 10 of the storage amount
-     * for the DB instance. Must also be an integer multiple of 1000. For
-     * example, if the size of your DB instance is 500 GB, then your
-     * <code>Iops</code> value can be 2000, 3000, 4000, or 5000.
+     * Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be an
+     * integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your <code>Iops</code>
+     * value can be 2000, 3000, 4000, or 5000.
      * </p>
      * 
      * @param iops
-     *        The amount of Provisioned IOPS (input/output operations per
-     *        second) to be initially allocated for the DB instance.</p>
+     *        The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
+     *        instance.</p>
      *        <p>
-     *        Constraints: Must be a multiple between 3 and 10 of the storage
-     *        amount for the DB instance. Must also be an integer multiple of
-     *        1000. For example, if the size of your DB instance is 500 GB, then
-     *        your <code>Iops</code> value can be 2000, 3000, 4000, or 5000.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be
+     *        an integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your
+     *        <code>Iops</code> value can be 2000, 3000, 4000, or 5000.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withIops(Integer iops) {
@@ -7926,23 +7423,19 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified
-     * option group.
+     * Indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security
-     * TDE, cannot be removed from an option group, and that option group cannot
-     * be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
+     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @param optionGroupName
-     *        Indicates that the DB instance should be associated with the
-     *        specified option group.</p>
+     *        Indicates that the DB instance should be associated with the specified option group.</p>
      *        <p>
-     *        Permanent options, such as the TDE option for Oracle Advanced
-     *        Security TDE, cannot be removed from an option group, and that
-     *        option group cannot be removed from a DB instance once it is
-     *        associated with a DB instance
+     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     *        option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *        instance
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -7951,22 +7444,18 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified
-     * option group.
+     * Indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security
-     * TDE, cannot be removed from an option group, and that option group cannot
-     * be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
+     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
-     * @return Indicates that the DB instance should be associated with the
-     *         specified option group.</p>
+     * @return Indicates that the DB instance should be associated with the specified option group.</p>
      *         <p>
-     *         Permanent options, such as the TDE option for Oracle Advanced
-     *         Security TDE, cannot be removed from an option group, and that
-     *         option group cannot be removed from a DB instance once it is
-     *         associated with a DB instance
+     *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     *         option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *         instance
      */
 
     public String getOptionGroupName() {
@@ -7975,25 +7464,20 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified
-     * option group.
+     * Indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security
-     * TDE, cannot be removed from an option group, and that option group cannot
-     * be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
+     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @param optionGroupName
-     *        Indicates that the DB instance should be associated with the
-     *        specified option group.</p>
+     *        Indicates that the DB instance should be associated with the specified option group.</p>
      *        <p>
-     *        Permanent options, such as the TDE option for Oracle Advanced
-     *        Security TDE, cannot be removed from an option group, and that
-     *        option group cannot be removed from a DB instance once it is
-     *        associated with a DB instance
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     *        option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *        instance
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withOptionGroupName(String optionGroupName) {
@@ -8003,13 +7487,12 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * For supported engines, indicates that the DB instance should be
-     * associated with the specified CharacterSet.
+     * For supported engines, indicates that the DB instance should be associated with the specified CharacterSet.
      * </p>
      * 
      * @param characterSetName
-     *        For supported engines, indicates that the DB instance should be
-     *        associated with the specified CharacterSet.
+     *        For supported engines, indicates that the DB instance should be associated with the specified
+     *        CharacterSet.
      */
 
     public void setCharacterSetName(String characterSetName) {
@@ -8018,12 +7501,11 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * For supported engines, indicates that the DB instance should be
-     * associated with the specified CharacterSet.
+     * For supported engines, indicates that the DB instance should be associated with the specified CharacterSet.
      * </p>
      * 
-     * @return For supported engines, indicates that the DB instance should be
-     *         associated with the specified CharacterSet.
+     * @return For supported engines, indicates that the DB instance should be associated with the specified
+     *         CharacterSet.
      */
 
     public String getCharacterSetName() {
@@ -8032,15 +7514,13 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * For supported engines, indicates that the DB instance should be
-     * associated with the specified CharacterSet.
+     * For supported engines, indicates that the DB instance should be associated with the specified CharacterSet.
      * </p>
      * 
      * @param characterSetName
-     *        For supported engines, indicates that the DB instance should be
-     *        associated with the specified CharacterSet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For supported engines, indicates that the DB instance should be associated with the specified
+     *        CharacterSet.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withCharacterSetName(String characterSetName) {
@@ -8050,16 +7530,13 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS
-     * name, which resolves to a public IP address. A value of false specifies
-     * an internal instance with a DNS name that resolves to a private IP
-     * address.
+     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
+     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
+     * internal instance with a DNS name that resolves to a private IP address.
      * </p>
      * <p>
-     * Default: The default behavior varies depending on whether a VPC has been
-     * requested or not. The following list shows the default behavior in each
-     * case.
+     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
+     * shows the default behavior in each case.
      * </p>
      * <ul>
      * <li>
@@ -8074,23 +7551,18 @@ public class CreateDBInstanceRequest extends
      * </li>
      * </ul>
      * <p>
-     * If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified as
-     * part of the request and the PubliclyAccessible value has not been set,
-     * the DB instance will be private.
+     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies the accessibility options for the DB instance. A value
-     *        of true specifies an Internet-facing instance with a publicly
-     *        resolvable DNS name, which resolves to a public IP address. A
-     *        value of false specifies an internal instance with a DNS name that
-     *        resolves to a private IP address.</p>
+     *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
+     *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
+     *        specifies an internal instance with a DNS name that resolves to a private IP address.</p>
      *        <p>
-     *        Default: The default behavior varies depending on whether a VPC
-     *        has been requested or not. The following list shows the default
-     *        behavior in each case.
+     *        Default: The default behavior varies depending on whether a VPC has been requested or not. The following
+     *        list shows the default behavior in each case.
      *        </p>
      *        <ul>
      *        <li>
@@ -8105,11 +7577,9 @@ public class CreateDBInstanceRequest extends
      *        </li>
      *        </ul>
      *        <p>
-     *        If no DB subnet group has been specified as part of the request
-     *        and the PubliclyAccessible value has not been set, the DB instance
-     *        will be publicly accessible. If a specific DB subnet group has
-     *        been specified as part of the request and the PubliclyAccessible
-     *        value has not been set, the DB instance will be private.
+     *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
+     *        been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as
+     *        part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -8118,16 +7588,13 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS
-     * name, which resolves to a public IP address. A value of false specifies
-     * an internal instance with a DNS name that resolves to a private IP
-     * address.
+     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
+     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
+     * internal instance with a DNS name that resolves to a private IP address.
      * </p>
      * <p>
-     * Default: The default behavior varies depending on whether a VPC has been
-     * requested or not. The following list shows the default behavior in each
-     * case.
+     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
+     * shows the default behavior in each case.
      * </p>
      * <ul>
      * <li>
@@ -8142,22 +7609,17 @@ public class CreateDBInstanceRequest extends
      * </li>
      * </ul>
      * <p>
-     * If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified as
-     * part of the request and the PubliclyAccessible value has not been set,
-     * the DB instance will be private.
+     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
      * </p>
      * 
-     * @return Specifies the accessibility options for the DB instance. A value
-     *         of true specifies an Internet-facing instance with a publicly
-     *         resolvable DNS name, which resolves to a public IP address. A
-     *         value of false specifies an internal instance with a DNS name
-     *         that resolves to a private IP address.</p>
+     * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
+     *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a private IP address.</p>
      *         <p>
-     *         Default: The default behavior varies depending on whether a VPC
-     *         has been requested or not. The following list shows the default
-     *         behavior in each case.
+     *         Default: The default behavior varies depending on whether a VPC has been requested or not. The following
+     *         list shows the default behavior in each case.
      *         </p>
      *         <ul>
      *         <li>
@@ -8172,12 +7634,10 @@ public class CreateDBInstanceRequest extends
      *         </li>
      *         </ul>
      *         <p>
-     *         If no DB subnet group has been specified as part of the request
-     *         and the PubliclyAccessible value has not been set, the DB
-     *         instance will be publicly accessible. If a specific DB subnet
-     *         group has been specified as part of the request and the
-     *         PubliclyAccessible value has not been set, the DB instance will
-     *         be private.
+     *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
+     *         been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been set, the DB instance will be
+     *         private.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -8186,16 +7646,13 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS
-     * name, which resolves to a public IP address. A value of false specifies
-     * an internal instance with a DNS name that resolves to a private IP
-     * address.
+     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
+     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
+     * internal instance with a DNS name that resolves to a private IP address.
      * </p>
      * <p>
-     * Default: The default behavior varies depending on whether a VPC has been
-     * requested or not. The following list shows the default behavior in each
-     * case.
+     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
+     * shows the default behavior in each case.
      * </p>
      * <ul>
      * <li>
@@ -8210,23 +7667,18 @@ public class CreateDBInstanceRequest extends
      * </li>
      * </ul>
      * <p>
-     * If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified as
-     * part of the request and the PubliclyAccessible value has not been set,
-     * the DB instance will be private.
+     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies the accessibility options for the DB instance. A value
-     *        of true specifies an Internet-facing instance with a publicly
-     *        resolvable DNS name, which resolves to a public IP address. A
-     *        value of false specifies an internal instance with a DNS name that
-     *        resolves to a private IP address.</p>
+     *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
+     *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
+     *        specifies an internal instance with a DNS name that resolves to a private IP address.</p>
      *        <p>
-     *        Default: The default behavior varies depending on whether a VPC
-     *        has been requested or not. The following list shows the default
-     *        behavior in each case.
+     *        Default: The default behavior varies depending on whether a VPC has been requested or not. The following
+     *        list shows the default behavior in each case.
      *        </p>
      *        <ul>
      *        <li>
@@ -8241,33 +7693,26 @@ public class CreateDBInstanceRequest extends
      *        </li>
      *        </ul>
      *        <p>
-     *        If no DB subnet group has been specified as part of the request
-     *        and the PubliclyAccessible value has not been set, the DB instance
-     *        will be publicly accessible. If a specific DB subnet group has
-     *        been specified as part of the request and the PubliclyAccessible
-     *        value has not been set, the DB instance will be private.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
+     *        been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as
+     *        part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withPubliclyAccessible(
-            Boolean publiclyAccessible) {
+    public CreateDBInstanceRequest withPubliclyAccessible(Boolean publiclyAccessible) {
         setPubliclyAccessible(publiclyAccessible);
         return this;
     }
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS
-     * name, which resolves to a public IP address. A value of false specifies
-     * an internal instance with a DNS name that resolves to a private IP
-     * address.
+     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
+     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
+     * internal instance with a DNS name that resolves to a private IP address.
      * </p>
      * <p>
-     * Default: The default behavior varies depending on whether a VPC has been
-     * requested or not. The following list shows the default behavior in each
-     * case.
+     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
+     * shows the default behavior in each case.
      * </p>
      * <ul>
      * <li>
@@ -8282,22 +7727,17 @@ public class CreateDBInstanceRequest extends
      * </li>
      * </ul>
      * <p>
-     * If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be
-     * publicly accessible. If a specific DB subnet group has been specified as
-     * part of the request and the PubliclyAccessible value has not been set,
-     * the DB instance will be private.
+     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
      * </p>
      * 
-     * @return Specifies the accessibility options for the DB instance. A value
-     *         of true specifies an Internet-facing instance with a publicly
-     *         resolvable DNS name, which resolves to a public IP address. A
-     *         value of false specifies an internal instance with a DNS name
-     *         that resolves to a private IP address.</p>
+     * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
+     *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a private IP address.</p>
      *         <p>
-     *         Default: The default behavior varies depending on whether a VPC
-     *         has been requested or not. The following list shows the default
-     *         behavior in each case.
+     *         Default: The default behavior varies depending on whether a VPC has been requested or not. The following
+     *         list shows the default behavior in each case.
      *         </p>
      *         <ul>
      *         <li>
@@ -8312,12 +7752,10 @@ public class CreateDBInstanceRequest extends
      *         </li>
      *         </ul>
      *         <p>
-     *         If no DB subnet group has been specified as part of the request
-     *         and the PubliclyAccessible value has not been set, the DB
-     *         instance will be publicly accessible. If a specific DB subnet
-     *         group has been specified as part of the request and the
-     *         PubliclyAccessible value has not been set, the DB instance will
-     *         be private.
+     *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
+     *         been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been set, the DB instance will be
+     *         private.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -8350,15 +7788,13 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withTags(Tag... tags) {
@@ -8373,8 +7809,7 @@ public class CreateDBInstanceRequest extends
 
     /**
      * @param tags
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withTags(java.util.Collection<Tag> tags) {
@@ -8394,11 +7829,9 @@ public class CreateDBInstanceRequest extends
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The identifier of the DB cluster that the instance will belong
-     *        to.</p>
+     *        The identifier of the DB cluster that the instance will belong to.</p>
      *        <p>
-     *        For information on creating a DB cluster, see
-     *        <a>CreateDBCluster</a>.
+     *        For information on creating a DB cluster, see <a>CreateDBCluster</a>.
      *        </p>
      *        <p>
      *        Type: String
@@ -8419,11 +7852,9 @@ public class CreateDBInstanceRequest extends
      * Type: String
      * </p>
      * 
-     * @return The identifier of the DB cluster that the instance will belong
-     *         to.</p>
+     * @return The identifier of the DB cluster that the instance will belong to.</p>
      *         <p>
-     *         For information on creating a DB cluster, see
-     *         <a>CreateDBCluster</a>.
+     *         For information on creating a DB cluster, see <a>CreateDBCluster</a>.
      *         </p>
      *         <p>
      *         Type: String
@@ -8445,20 +7876,16 @@ public class CreateDBInstanceRequest extends
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The identifier of the DB cluster that the instance will belong
-     *        to.</p>
+     *        The identifier of the DB cluster that the instance will belong to.</p>
      *        <p>
-     *        For information on creating a DB cluster, see
-     *        <a>CreateDBCluster</a>.
+     *        For information on creating a DB cluster, see <a>CreateDBCluster</a>.
      *        </p>
      *        <p>
      *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withDBClusterIdentifier(
-            String dBClusterIdentifier) {
+    public CreateDBInstanceRequest withDBClusterIdentifier(String dBClusterIdentifier) {
         setDBClusterIdentifier(dBClusterIdentifier);
         return this;
     }
@@ -8471,27 +7898,22 @@ public class CreateDBInstanceRequest extends
      * Valid values: <code>standard | gp2 | io1</code>
      * </p>
      * <p>
-     * If you specify <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is
-     * specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the DB
-     *        instance.</p>
+     *        Specifies the storage type to be associated with the DB instance.</p>
      *        <p>
      *        Valid values: <code>standard | gp2 | io1</code>
      *        </p>
      *        <p>
-     *        If you specify <code>io1</code>, you must also include a value for
-     *        the <code>Iops</code> parameter.
+     *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *        </p>
      *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is
-     *        specified; otherwise <code>standard</code>
+     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
      */
 
     public void setStorageType(String storageType) {
@@ -8506,26 +7928,22 @@ public class CreateDBInstanceRequest extends
      * Valid values: <code>standard | gp2 | io1</code>
      * </p>
      * <p>
-     * If you specify <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is
-     * specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
      * </p>
      * 
-     * @return Specifies the storage type to be associated with the DB
-     *         instance.</p>
+     * @return Specifies the storage type to be associated with the DB instance.</p>
      *         <p>
      *         Valid values: <code>standard | gp2 | io1</code>
      *         </p>
      *         <p>
-     *         If you specify <code>io1</code>, you must also include a value
-     *         for the <code>Iops</code> parameter.
+     *         If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *         </p>
      *         <p>
-     *         Default: <code>io1</code> if the <code>Iops</code> parameter is
-     *         specified; otherwise <code>standard</code>
+     *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+     *         <code>standard</code>
      */
 
     public String getStorageType() {
@@ -8540,29 +7958,23 @@ public class CreateDBInstanceRequest extends
      * Valid values: <code>standard | gp2 | io1</code>
      * </p>
      * <p>
-     * If you specify <code>io1</code>, you must also include a value for the
-     * <code>Iops</code> parameter.
+     * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is
-     * specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the DB
-     *        instance.</p>
+     *        Specifies the storage type to be associated with the DB instance.</p>
      *        <p>
      *        Valid values: <code>standard | gp2 | io1</code>
      *        </p>
      *        <p>
-     *        If you specify <code>io1</code>, you must also include a value for
-     *        the <code>Iops</code> parameter.
+     *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *        </p>
      *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is
-     *        specified; otherwise <code>standard</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withStorageType(String storageType) {
@@ -8572,13 +7984,11 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE
-     * encryption.
+     * The ARN from the Key Store with which to associate the instance for TDE encryption.
      * </p>
      * 
      * @param tdeCredentialArn
-     *        The ARN from the Key Store with which to associate the instance
-     *        for TDE encryption.
+     *        The ARN from the Key Store with which to associate the instance for TDE encryption.
      */
 
     public void setTdeCredentialArn(String tdeCredentialArn) {
@@ -8587,12 +7997,10 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE
-     * encryption.
+     * The ARN from the Key Store with which to associate the instance for TDE encryption.
      * </p>
      * 
-     * @return The ARN from the Key Store with which to associate the instance
-     *         for TDE encryption.
+     * @return The ARN from the Key Store with which to associate the instance for TDE encryption.
      */
 
     public String getTdeCredentialArn() {
@@ -8601,15 +8009,12 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE
-     * encryption.
+     * The ARN from the Key Store with which to associate the instance for TDE encryption.
      * </p>
      * 
      * @param tdeCredentialArn
-     *        The ARN from the Key Store with which to associate the instance
-     *        for TDE encryption.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withTdeCredentialArn(String tdeCredentialArn) {
@@ -8619,13 +8024,11 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the
-     * device.
+     * The password for the given ARN from the Key Store in order to access the device.
      * </p>
      * 
      * @param tdeCredentialPassword
-     *        The password for the given ARN from the Key Store in order to
-     *        access the device.
+     *        The password for the given ARN from the Key Store in order to access the device.
      */
 
     public void setTdeCredentialPassword(String tdeCredentialPassword) {
@@ -8634,12 +8037,10 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the
-     * device.
+     * The password for the given ARN from the Key Store in order to access the device.
      * </p>
      * 
-     * @return The password for the given ARN from the Key Store in order to
-     *         access the device.
+     * @return The password for the given ARN from the Key Store in order to access the device.
      */
 
     public String getTdeCredentialPassword() {
@@ -8648,19 +8049,15 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the
-     * device.
+     * The password for the given ARN from the Key Store in order to access the device.
      * </p>
      * 
      * @param tdeCredentialPassword
-     *        The password for the given ARN from the Key Store in order to
-     *        access the device.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The password for the given ARN from the Key Store in order to access the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withTdeCredentialPassword(
-            String tdeCredentialPassword) {
+    public CreateDBInstanceRequest withTdeCredentialPassword(String tdeCredentialPassword) {
         setTdeCredentialPassword(tdeCredentialPassword);
         return this;
     }
@@ -8712,8 +8109,7 @@ public class CreateDBInstanceRequest extends
      *        Specifies whether the DB instance is encrypted.</p>
      *        <p>
      *        Default: false
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withStorageEncrypted(Boolean storageEncrypted) {
@@ -8743,35 +8139,29 @@ public class CreateDBInstanceRequest extends
      * The KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-     * encryption key. If you are creating a DB instance with the same AWS
-     * account that owns the KMS encryption key used to encrypt the new DB
-     * instance, then you can use the KMS key alias instead of the ARN for the
-     * KM encryption key.
+     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
+     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
+     * can use the KMS key alias instead of the ARN for the KM encryption key.
      * </p>
      * <p>
-     * If the <code>StorageEncrypted</code> parameter is true, and you do not
-     * specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS
-     * will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS region.
+     * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
+     * region.
      * </p>
      * 
      * @param kmsKeyId
      *        The KMS key identifier for an encrypted DB instance.</p>
      *        <p>
-     *        The KMS key identifier is the Amazon Resource Name (ARN) for the
-     *        KMS encryption key. If you are creating a DB instance with the
-     *        same AWS account that owns the KMS encryption key used to encrypt
-     *        the new DB instance, then you can use the KMS key alias instead of
-     *        the ARN for the KM encryption key.
+     *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
+     *        DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
+     *        instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.
      *        </p>
      *        <p>
-     *        If the <code>StorageEncrypted</code> parameter is true, and you do
-     *        not specify a value for the <code>KmsKeyId</code> parameter, then
-     *        Amazon RDS will use your default encryption key. AWS KMS creates
-     *        the default encryption key for your AWS account. Your AWS account
-     *        has a different default encryption key for each AWS region.
+     *        If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
+     *        <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
+     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
+     *        each AWS region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -8783,35 +8173,28 @@ public class CreateDBInstanceRequest extends
      * The KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-     * encryption key. If you are creating a DB instance with the same AWS
-     * account that owns the KMS encryption key used to encrypt the new DB
-     * instance, then you can use the KMS key alias instead of the ARN for the
-     * KM encryption key.
+     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
+     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
+     * can use the KMS key alias instead of the ARN for the KM encryption key.
      * </p>
      * <p>
-     * If the <code>StorageEncrypted</code> parameter is true, and you do not
-     * specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS
-     * will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS region.
+     * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
+     * region.
      * </p>
      * 
      * @return The KMS key identifier for an encrypted DB instance.</p>
      *         <p>
-     *         The KMS key identifier is the Amazon Resource Name (ARN) for the
-     *         KMS encryption key. If you are creating a DB instance with the
-     *         same AWS account that owns the KMS encryption key used to encrypt
-     *         the new DB instance, then you can use the KMS key alias instead
-     *         of the ARN for the KM encryption key.
+     *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating
+     *         a DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
+     *         instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.
      *         </p>
      *         <p>
-     *         If the <code>StorageEncrypted</code> parameter is true, and you
-     *         do not specify a value for the <code>KmsKeyId</code> parameter,
-     *         then Amazon RDS will use your default encryption key. AWS KMS
-     *         creates the default encryption key for your AWS account. Your AWS
-     *         account has a different default encryption key for each AWS
-     *         region.
+     *         If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
+     *         <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates
+     *         the default encryption key for your AWS account. Your AWS account has a different default encryption key
+     *         for each AWS region.
      */
 
     public String getKmsKeyId() {
@@ -8823,37 +8206,30 @@ public class CreateDBInstanceRequest extends
      * The KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-     * encryption key. If you are creating a DB instance with the same AWS
-     * account that owns the KMS encryption key used to encrypt the new DB
-     * instance, then you can use the KMS key alias instead of the ARN for the
-     * KM encryption key.
+     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
+     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
+     * can use the KMS key alias instead of the ARN for the KM encryption key.
      * </p>
      * <p>
-     * If the <code>StorageEncrypted</code> parameter is true, and you do not
-     * specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS
-     * will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS region.
+     * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
+     * region.
      * </p>
      * 
      * @param kmsKeyId
      *        The KMS key identifier for an encrypted DB instance.</p>
      *        <p>
-     *        The KMS key identifier is the Amazon Resource Name (ARN) for the
-     *        KMS encryption key. If you are creating a DB instance with the
-     *        same AWS account that owns the KMS encryption key used to encrypt
-     *        the new DB instance, then you can use the KMS key alias instead of
-     *        the ARN for the KM encryption key.
+     *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
+     *        DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
+     *        instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.
      *        </p>
      *        <p>
-     *        If the <code>StorageEncrypted</code> parameter is true, and you do
-     *        not specify a value for the <code>KmsKeyId</code> parameter, then
-     *        Amazon RDS will use your default encryption key. AWS KMS creates
-     *        the default encryption key for your AWS account. Your AWS account
-     *        has a different default encryption key for each AWS region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
+     *        <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
+     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
+     *        each AWS region.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withKmsKeyId(String kmsKeyId) {
@@ -8893,8 +8269,7 @@ public class CreateDBInstanceRequest extends
      * 
      * @param domain
      *        Specify the Active Directory Domain to create the instance in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withDomain(String domain) {
@@ -8904,13 +8279,13 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB
-     * instance; otherwise false. The default is false.
+     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the DB instance to snapshots of the DB
-     *        instance; otherwise false. The default is false.
+     *        True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default
+     *        is false.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -8919,12 +8294,12 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB
-     * instance; otherwise false. The default is false.
+     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * false.
      * </p>
      * 
-     * @return True to copy all tags from the DB instance to snapshots of the DB
-     *         instance; otherwise false. The default is false.
+     * @return True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default
+     *         is false.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -8933,31 +8308,29 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB
-     * instance; otherwise false. The default is false.
+     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the DB instance to snapshots of the DB
-     *        instance; otherwise false. The default is false.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default
+     *        is false.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withCopyTagsToSnapshot(
-            Boolean copyTagsToSnapshot) {
+    public CreateDBInstanceRequest withCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
         setCopyTagsToSnapshot(copyTagsToSnapshot);
         return this;
     }
 
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB
-     * instance; otherwise false. The default is false.
+     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * false.
      * </p>
      * 
-     * @return True to copy all tags from the DB instance to snapshots of the DB
-     *         instance; otherwise false. The default is false.
+     * @return True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default
+     *         is false.
      */
 
     public Boolean isCopyTagsToSnapshot() {
@@ -8966,25 +8339,23 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The interval, in seconds, between points when Enhanced Monitoring metrics
-     * are collected for the DB instance. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 0.
+     * The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To
+     * disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
-     * If <code>MonitoringRoleArn</code> is specified, then you must also set
-     * <code>MonitoringInterval</code> to a value other than 0.
+     * If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value
+     * other than 0.
      * </p>
      * <p>
      * Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
      * </p>
      * 
      * @param monitoringInterval
-     *        The interval, in seconds, between points when Enhanced Monitoring
-     *        metrics are collected for the DB instance. To disable collecting
-     *        Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+     *        The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB
+     *        instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
      *        <p>
-     *        If <code>MonitoringRoleArn</code> is specified, then you must also
-     *        set <code>MonitoringInterval</code> to a value other than 0.
+     *        If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to
+     *        a value other than 0.
      *        </p>
      *        <p>
      *        Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
@@ -8996,24 +8367,22 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The interval, in seconds, between points when Enhanced Monitoring metrics
-     * are collected for the DB instance. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 0.
+     * The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To
+     * disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
-     * If <code>MonitoringRoleArn</code> is specified, then you must also set
-     * <code>MonitoringInterval</code> to a value other than 0.
+     * If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value
+     * other than 0.
      * </p>
      * <p>
      * Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
      * </p>
      * 
-     * @return The interval, in seconds, between points when Enhanced Monitoring
-     *         metrics are collected for the DB instance. To disable collecting
-     *         Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+     * @return The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB
+     *         instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
      *         <p>
-     *         If <code>MonitoringRoleArn</code> is specified, then you must
-     *         also set <code>MonitoringInterval</code> to a value other than 0.
+     *         If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to
+     *         a value other than 0.
      *         </p>
      *         <p>
      *         Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
@@ -9025,62 +8394,55 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The interval, in seconds, between points when Enhanced Monitoring metrics
-     * are collected for the DB instance. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 0.
+     * The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To
+     * disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
-     * If <code>MonitoringRoleArn</code> is specified, then you must also set
-     * <code>MonitoringInterval</code> to a value other than 0.
+     * If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value
+     * other than 0.
      * </p>
      * <p>
      * Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
      * </p>
      * 
      * @param monitoringInterval
-     *        The interval, in seconds, between points when Enhanced Monitoring
-     *        metrics are collected for the DB instance. To disable collecting
-     *        Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+     *        The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB
+     *        instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
      *        <p>
-     *        If <code>MonitoringRoleArn</code> is specified, then you must also
-     *        set <code>MonitoringInterval</code> to a value other than 0.
+     *        If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to
+     *        a value other than 0.
      *        </p>
      *        <p>
      *        Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withMonitoringInterval(
-            Integer monitoringInterval) {
+    public CreateDBInstanceRequest withMonitoringInterval(Integer monitoringInterval) {
         setMonitoringInterval(monitoringInterval);
         return this;
     }
 
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send enhanced monitoring
-     * metrics to CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on
-     * creating a monitoring role, go to <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole"
-     * >To create an IAM role for Amazon RDS Enhanced Monitoring</a>.
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For example,
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a>.
      * </p>
      * <p>
-     * If <code>MonitoringInterval</code> is set to a value other than 0, then
-     * you must supply a <code>MonitoringRoleArn</code> value.
+     * If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
+     * <code>MonitoringRoleArn</code> value.
      * </p>
      * 
      * @param monitoringRoleArn
-     *        The ARN for the IAM role that permits RDS to send enhanced
-     *        monitoring metrics to CloudWatch Logs. For example,
-     *        <code>arn:aws:iam:123456789012:role/emaccess</code>. For
-     *        information on creating a monitoring role, go to <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole"
-     *        >To create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p>
+     *        The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For
+     *        example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring
+     *        role, go to <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     *        create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p>
      *        <p>
-     *        If <code>MonitoringInterval</code> is set to a value other than 0,
-     *        then you must supply a <code>MonitoringRoleArn</code> value.
+     *        If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
+     *        <code>MonitoringRoleArn</code> value.
      */
 
     public void setMonitoringRoleArn(String monitoringRoleArn) {
@@ -9089,28 +8451,24 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send enhanced monitoring
-     * metrics to CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on
-     * creating a monitoring role, go to <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole"
-     * >To create an IAM role for Amazon RDS Enhanced Monitoring</a>.
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For example,
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a>.
      * </p>
      * <p>
-     * If <code>MonitoringInterval</code> is set to a value other than 0, then
-     * you must supply a <code>MonitoringRoleArn</code> value.
+     * If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
+     * <code>MonitoringRoleArn</code> value.
      * </p>
      * 
-     * @return The ARN for the IAM role that permits RDS to send enhanced
-     *         monitoring metrics to CloudWatch Logs. For example,
-     *         <code>arn:aws:iam:123456789012:role/emaccess</code>. For
-     *         information on creating a monitoring role, go to <a href=
+     * @return The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For
+     *         example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring
+     *         role, go to <a href=
      *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole"
-     *         >To create an IAM role for Amazon RDS Enhanced
-     *         Monitoring</a>.</p>
+     *         >To create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p>
      *         <p>
-     *         If <code>MonitoringInterval</code> is set to a value other than
-     *         0, then you must supply a <code>MonitoringRoleArn</code> value.
+     *         If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
+     *         <code>MonitoringRoleArn</code> value.
      */
 
     public String getMonitoringRoleArn() {
@@ -9119,47 +8477,40 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send enhanced monitoring
-     * metrics to CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on
-     * creating a monitoring role, go to <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole"
-     * >To create an IAM role for Amazon RDS Enhanced Monitoring</a>.
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For example,
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * create an IAM role for Amazon RDS Enhanced Monitoring</a>.
      * </p>
      * <p>
-     * If <code>MonitoringInterval</code> is set to a value other than 0, then
-     * you must supply a <code>MonitoringRoleArn</code> value.
+     * If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
+     * <code>MonitoringRoleArn</code> value.
      * </p>
      * 
      * @param monitoringRoleArn
-     *        The ARN for the IAM role that permits RDS to send enhanced
-     *        monitoring metrics to CloudWatch Logs. For example,
-     *        <code>arn:aws:iam:123456789012:role/emaccess</code>. For
-     *        information on creating a monitoring role, go to <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole"
-     *        >To create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p>
+     *        The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For
+     *        example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring
+     *        role, go to <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     *        create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p>
      *        <p>
-     *        If <code>MonitoringInterval</code> is set to a value other than 0,
-     *        then you must supply a <code>MonitoringRoleArn</code> value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
+     *        <code>MonitoringRoleArn</code> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withMonitoringRoleArn(
-            String monitoringRoleArn) {
+    public CreateDBInstanceRequest withMonitoringRoleArn(String monitoringRoleArn) {
         setMonitoringRoleArn(monitoringRoleArn);
         return this;
     }
 
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.
+     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
      * </p>
      * 
      * @param domainIAMRoleName
-     *        Specify the name of the IAM role to be used when making API calls
-     *        to the Directory Service.
+     *        Specify the name of the IAM role to be used when making API calls to the Directory Service.
      */
 
     public void setDomainIAMRoleName(String domainIAMRoleName) {
@@ -9168,12 +8519,10 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.
+     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
      * </p>
      * 
-     * @return Specify the name of the IAM role to be used when making API calls
-     *         to the Directory Service.
+     * @return Specify the name of the IAM role to be used when making API calls to the Directory Service.
      */
 
     public String getDomainIAMRoleName() {
@@ -9182,30 +8531,25 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.
+     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
      * </p>
      * 
      * @param domainIAMRoleName
-     *        Specify the name of the IAM role to be used when making API calls
-     *        to the Directory Service.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBInstanceRequest withDomainIAMRoleName(
-            String domainIAMRoleName) {
+    public CreateDBInstanceRequest withDomainIAMRoleName(String domainIAMRoleName) {
         setDomainIAMRoleName(domainIAMRoleName);
         return this;
     }
 
     /**
      * <p>
-     * A value that specifies the order in which an Aurora Replica is promoted
-     * to the primary instance after a failure of the existing primary instance.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     * > Fault Tolerance for an Aurora DB Cluster</a>.
+     * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
+     * of the existing primary instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>.
      * </p>
      * <p>
      * Default: 1
@@ -9215,9 +8559,8 @@ public class CreateDBInstanceRequest extends
      * </p>
      * 
      * @param promotionTier
-     *        A value that specifies the order in which an Aurora Replica is
-     *        promoted to the primary instance after a failure of the existing
-     *        primary instance. For more information, see <a href=
+     *        A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
+     *        failure of the existing primary instance. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
      *        > Fault Tolerance for an Aurora DB Cluster</a>. </p>
      *        <p>
@@ -9233,11 +8576,10 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * A value that specifies the order in which an Aurora Replica is promoted
-     * to the primary instance after a failure of the existing primary instance.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     * > Fault Tolerance for an Aurora DB Cluster</a>.
+     * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
+     * of the existing primary instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>.
      * </p>
      * <p>
      * Default: 1
@@ -9246,9 +8588,8 @@ public class CreateDBInstanceRequest extends
      * Valid Values: 0 - 15
      * </p>
      * 
-     * @return A value that specifies the order in which an Aurora Replica is
-     *         promoted to the primary instance after a failure of the existing
-     *         primary instance. For more information, see <a href=
+     * @return A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
+     *         failure of the existing primary instance. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
      *         > Fault Tolerance for an Aurora DB Cluster</a>. </p>
      *         <p>
@@ -9264,11 +8605,10 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * A value that specifies the order in which an Aurora Replica is promoted
-     * to the primary instance after a failure of the existing primary instance.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     * > Fault Tolerance for an Aurora DB Cluster</a>.
+     * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
+     * of the existing primary instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>.
      * </p>
      * <p>
      * Default: 1
@@ -9278,9 +8618,8 @@ public class CreateDBInstanceRequest extends
      * </p>
      * 
      * @param promotionTier
-     *        A value that specifies the order in which an Aurora Replica is
-     *        promoted to the primary instance after a failure of the existing
-     *        primary instance. For more information, see <a href=
+     *        A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
+     *        failure of the existing primary instance. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
      *        > Fault Tolerance for an Aurora DB Cluster</a>. </p>
      *        <p>
@@ -9288,8 +8627,7 @@ public class CreateDBInstanceRequest extends
      *        </p>
      *        <p>
      *        Valid Values: 0 - 15
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withPromotionTier(Integer promotionTier) {
@@ -9299,15 +8637,13 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The time zone of the DB instance. The time zone parameter is currently
-     * supported only by <a href=
+     * The time zone of the DB instance. The time zone parameter is currently supported only by <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
      * >Microsoft SQL Server</a>.
      * </p>
      * 
      * @param timezone
-     *        The time zone of the DB instance. The time zone parameter is
-     *        currently supported only by <a href=
+     *        The time zone of the DB instance. The time zone parameter is currently supported only by <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
      *        >Microsoft SQL Server</a>.
      */
@@ -9318,14 +8654,12 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The time zone of the DB instance. The time zone parameter is currently
-     * supported only by <a href=
+     * The time zone of the DB instance. The time zone parameter is currently supported only by <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
      * >Microsoft SQL Server</a>.
      * </p>
      * 
-     * @return The time zone of the DB instance. The time zone parameter is
-     *         currently supported only by <a href=
+     * @return The time zone of the DB instance. The time zone parameter is currently supported only by <a href=
      *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
      *         >Microsoft SQL Server</a>.
      */
@@ -9336,19 +8670,16 @@ public class CreateDBInstanceRequest extends
 
     /**
      * <p>
-     * The time zone of the DB instance. The time zone parameter is currently
-     * supported only by <a href=
+     * The time zone of the DB instance. The time zone parameter is currently supported only by <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
      * >Microsoft SQL Server</a>.
      * </p>
      * 
      * @param timezone
-     *        The time zone of the DB instance. The time zone parameter is
-     *        currently supported only by <a href=
+     *        The time zone of the DB instance. The time zone parameter is currently supported only by <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
      *        >Microsoft SQL Server</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withTimezone(String timezone) {
@@ -9357,8 +8688,7 @@ public class CreateDBInstanceRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -9371,8 +8701,7 @@ public class CreateDBInstanceRequest extends
         if (getDBName() != null)
             sb.append("DBName: " + getDBName() + ",");
         if (getDBInstanceIdentifier() != null)
-            sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier()
-                    + ",");
+            sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
         if (getAllocatedStorage() != null)
             sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
         if (getDBInstanceClass() != null)
@@ -9392,17 +8721,13 @@ public class CreateDBInstanceRequest extends
         if (getDBSubnetGroupName() != null)
             sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: "
-                    + getPreferredMaintenanceWindow() + ",");
+            sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
         if (getDBParameterGroupName() != null)
-            sb.append("DBParameterGroupName: " + getDBParameterGroupName()
-                    + ",");
+            sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
         if (getBackupRetentionPeriod() != null)
-            sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod()
-                    + ",");
+            sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");
         if (getPreferredBackupWindow() != null)
-            sb.append("PreferredBackupWindow: " + getPreferredBackupWindow()
-                    + ",");
+            sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");
         if (getPort() != null)
             sb.append("Port: " + getPort() + ",");
         if (getMultiAZ() != null)
@@ -9410,8 +8735,7 @@ public class CreateDBInstanceRequest extends
         if (getEngineVersion() != null)
             sb.append("EngineVersion: " + getEngineVersion() + ",");
         if (getAutoMinorVersionUpgrade() != null)
-            sb.append("AutoMinorVersionUpgrade: "
-                    + getAutoMinorVersionUpgrade() + ",");
+            sb.append("AutoMinorVersionUpgrade: " + getAutoMinorVersionUpgrade() + ",");
         if (getLicenseModel() != null)
             sb.append("LicenseModel: " + getLicenseModel() + ",");
         if (getIops() != null)
@@ -9431,8 +8755,7 @@ public class CreateDBInstanceRequest extends
         if (getTdeCredentialArn() != null)
             sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
         if (getTdeCredentialPassword() != null)
-            sb.append("TdeCredentialPassword: " + getTdeCredentialPassword()
-                    + ",");
+            sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() + ",");
         if (getStorageEncrypted() != null)
             sb.append("StorageEncrypted: " + getStorageEncrypted() + ",");
         if (getKmsKeyId() != null)
@@ -9467,240 +8790,155 @@ public class CreateDBInstanceRequest extends
         CreateDBInstanceRequest other = (CreateDBInstanceRequest) obj;
         if (other.getDBName() == null ^ this.getDBName() == null)
             return false;
-        if (other.getDBName() != null
-                && other.getDBName().equals(this.getDBName()) == false)
+        if (other.getDBName() != null && other.getDBName().equals(this.getDBName()) == false)
             return false;
-        if (other.getDBInstanceIdentifier() == null
-                ^ this.getDBInstanceIdentifier() == null)
+        if (other.getDBInstanceIdentifier() == null ^ this.getDBInstanceIdentifier() == null)
             return false;
-        if (other.getDBInstanceIdentifier() != null
-                && other.getDBInstanceIdentifier().equals(
-                        this.getDBInstanceIdentifier()) == false)
+        if (other.getDBInstanceIdentifier() != null && other.getDBInstanceIdentifier().equals(this.getDBInstanceIdentifier()) == false)
             return false;
-        if (other.getAllocatedStorage() == null
-                ^ this.getAllocatedStorage() == null)
+        if (other.getAllocatedStorage() == null ^ this.getAllocatedStorage() == null)
             return false;
-        if (other.getAllocatedStorage() != null
-                && other.getAllocatedStorage().equals(
-                        this.getAllocatedStorage()) == false)
+        if (other.getAllocatedStorage() != null && other.getAllocatedStorage().equals(this.getAllocatedStorage()) == false)
             return false;
-        if (other.getDBInstanceClass() == null
-                ^ this.getDBInstanceClass() == null)
+        if (other.getDBInstanceClass() == null ^ this.getDBInstanceClass() == null)
             return false;
-        if (other.getDBInstanceClass() != null
-                && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false)
+        if (other.getDBInstanceClass() != null && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false)
             return false;
         if (other.getEngine() == null ^ this.getEngine() == null)
             return false;
-        if (other.getEngine() != null
-                && other.getEngine().equals(this.getEngine()) == false)
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
             return false;
-        if (other.getMasterUsername() == null
-                ^ this.getMasterUsername() == null)
+        if (other.getMasterUsername() == null ^ this.getMasterUsername() == null)
             return false;
-        if (other.getMasterUsername() != null
-                && other.getMasterUsername().equals(this.getMasterUsername()) == false)
+        if (other.getMasterUsername() != null && other.getMasterUsername().equals(this.getMasterUsername()) == false)
             return false;
-        if (other.getMasterUserPassword() == null
-                ^ this.getMasterUserPassword() == null)
+        if (other.getMasterUserPassword() == null ^ this.getMasterUserPassword() == null)
             return false;
-        if (other.getMasterUserPassword() != null
-                && other.getMasterUserPassword().equals(
-                        this.getMasterUserPassword()) == false)
+        if (other.getMasterUserPassword() != null && other.getMasterUserPassword().equals(this.getMasterUserPassword()) == false)
             return false;
-        if (other.getDBSecurityGroups() == null
-                ^ this.getDBSecurityGroups() == null)
+        if (other.getDBSecurityGroups() == null ^ this.getDBSecurityGroups() == null)
             return false;
-        if (other.getDBSecurityGroups() != null
-                && other.getDBSecurityGroups().equals(
-                        this.getDBSecurityGroups()) == false)
+        if (other.getDBSecurityGroups() != null && other.getDBSecurityGroups().equals(this.getDBSecurityGroups()) == false)
             return false;
-        if (other.getVpcSecurityGroupIds() == null
-                ^ this.getVpcSecurityGroupIds() == null)
+        if (other.getVpcSecurityGroupIds() == null ^ this.getVpcSecurityGroupIds() == null)
             return false;
-        if (other.getVpcSecurityGroupIds() != null
-                && other.getVpcSecurityGroupIds().equals(
-                        this.getVpcSecurityGroupIds()) == false)
+        if (other.getVpcSecurityGroupIds() != null && other.getVpcSecurityGroupIds().equals(this.getVpcSecurityGroupIds()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
-        if (other.getDBSubnetGroupName() == null
-                ^ this.getDBSubnetGroupName() == null)
+        if (other.getDBSubnetGroupName() == null ^ this.getDBSubnetGroupName() == null)
             return false;
-        if (other.getDBSubnetGroupName() != null
-                && other.getDBSubnetGroupName().equals(
-                        this.getDBSubnetGroupName()) == false)
+        if (other.getDBSubnetGroupName() != null && other.getDBSubnetGroupName().equals(this.getDBSubnetGroupName()) == false)
             return false;
-        if (other.getPreferredMaintenanceWindow() == null
-                ^ this.getPreferredMaintenanceWindow() == null)
+        if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null)
             return false;
-        if (other.getPreferredMaintenanceWindow() != null
-                && other.getPreferredMaintenanceWindow().equals(
-                        this.getPreferredMaintenanceWindow()) == false)
+        if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false)
             return false;
-        if (other.getDBParameterGroupName() == null
-                ^ this.getDBParameterGroupName() == null)
+        if (other.getDBParameterGroupName() == null ^ this.getDBParameterGroupName() == null)
             return false;
-        if (other.getDBParameterGroupName() != null
-                && other.getDBParameterGroupName().equals(
-                        this.getDBParameterGroupName()) == false)
+        if (other.getDBParameterGroupName() != null && other.getDBParameterGroupName().equals(this.getDBParameterGroupName()) == false)
             return false;
-        if (other.getBackupRetentionPeriod() == null
-                ^ this.getBackupRetentionPeriod() == null)
+        if (other.getBackupRetentionPeriod() == null ^ this.getBackupRetentionPeriod() == null)
             return false;
-        if (other.getBackupRetentionPeriod() != null
-                && other.getBackupRetentionPeriod().equals(
-                        this.getBackupRetentionPeriod()) == false)
+        if (other.getBackupRetentionPeriod() != null && other.getBackupRetentionPeriod().equals(this.getBackupRetentionPeriod()) == false)
             return false;
-        if (other.getPreferredBackupWindow() == null
-                ^ this.getPreferredBackupWindow() == null)
+        if (other.getPreferredBackupWindow() == null ^ this.getPreferredBackupWindow() == null)
             return false;
-        if (other.getPreferredBackupWindow() != null
-                && other.getPreferredBackupWindow().equals(
-                        this.getPreferredBackupWindow()) == false)
+        if (other.getPreferredBackupWindow() != null && other.getPreferredBackupWindow().equals(this.getPreferredBackupWindow()) == false)
             return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
-        if (other.getPort() != null
-                && other.getPort().equals(this.getPort()) == false)
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
         if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
             return false;
-        if (other.getMultiAZ() != null
-                && other.getMultiAZ().equals(this.getMultiAZ()) == false)
+        if (other.getMultiAZ() != null && other.getMultiAZ().equals(this.getMultiAZ()) == false)
             return false;
         if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
             return false;
-        if (other.getEngineVersion() != null
-                && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
-        if (other.getAutoMinorVersionUpgrade() == null
-                ^ this.getAutoMinorVersionUpgrade() == null)
+        if (other.getAutoMinorVersionUpgrade() == null ^ this.getAutoMinorVersionUpgrade() == null)
             return false;
-        if (other.getAutoMinorVersionUpgrade() != null
-                && other.getAutoMinorVersionUpgrade().equals(
-                        this.getAutoMinorVersionUpgrade()) == false)
+        if (other.getAutoMinorVersionUpgrade() != null && other.getAutoMinorVersionUpgrade().equals(this.getAutoMinorVersionUpgrade()) == false)
             return false;
         if (other.getLicenseModel() == null ^ this.getLicenseModel() == null)
             return false;
-        if (other.getLicenseModel() != null
-                && other.getLicenseModel().equals(this.getLicenseModel()) == false)
+        if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false)
             return false;
         if (other.getIops() == null ^ this.getIops() == null)
             return false;
-        if (other.getIops() != null
-                && other.getIops().equals(this.getIops()) == false)
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
             return false;
-        if (other.getOptionGroupName() == null
-                ^ this.getOptionGroupName() == null)
+        if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null)
             return false;
-        if (other.getOptionGroupName() != null
-                && other.getOptionGroupName().equals(this.getOptionGroupName()) == false)
+        if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false)
             return false;
-        if (other.getCharacterSetName() == null
-                ^ this.getCharacterSetName() == null)
+        if (other.getCharacterSetName() == null ^ this.getCharacterSetName() == null)
             return false;
-        if (other.getCharacterSetName() != null
-                && other.getCharacterSetName().equals(
-                        this.getCharacterSetName()) == false)
+        if (other.getCharacterSetName() != null && other.getCharacterSetName().equals(this.getCharacterSetName()) == false)
             return false;
-        if (other.getPubliclyAccessible() == null
-                ^ this.getPubliclyAccessible() == null)
+        if (other.getPubliclyAccessible() == null ^ this.getPubliclyAccessible() == null)
             return false;
-        if (other.getPubliclyAccessible() != null
-                && other.getPubliclyAccessible().equals(
-                        this.getPubliclyAccessible()) == false)
+        if (other.getPubliclyAccessible() != null && other.getPubliclyAccessible().equals(this.getPubliclyAccessible()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getDBClusterIdentifier() == null
-                ^ this.getDBClusterIdentifier() == null)
+        if (other.getDBClusterIdentifier() == null ^ this.getDBClusterIdentifier() == null)
             return false;
-        if (other.getDBClusterIdentifier() != null
-                && other.getDBClusterIdentifier().equals(
-                        this.getDBClusterIdentifier()) == false)
+        if (other.getDBClusterIdentifier() != null && other.getDBClusterIdentifier().equals(this.getDBClusterIdentifier()) == false)
             return false;
         if (other.getStorageType() == null ^ this.getStorageType() == null)
             return false;
-        if (other.getStorageType() != null
-                && other.getStorageType().equals(this.getStorageType()) == false)
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
             return false;
-        if (other.getTdeCredentialArn() == null
-                ^ this.getTdeCredentialArn() == null)
+        if (other.getTdeCredentialArn() == null ^ this.getTdeCredentialArn() == null)
             return false;
-        if (other.getTdeCredentialArn() != null
-                && other.getTdeCredentialArn().equals(
-                        this.getTdeCredentialArn()) == false)
+        if (other.getTdeCredentialArn() != null && other.getTdeCredentialArn().equals(this.getTdeCredentialArn()) == false)
             return false;
-        if (other.getTdeCredentialPassword() == null
-                ^ this.getTdeCredentialPassword() == null)
+        if (other.getTdeCredentialPassword() == null ^ this.getTdeCredentialPassword() == null)
             return false;
-        if (other.getTdeCredentialPassword() != null
-                && other.getTdeCredentialPassword().equals(
-                        this.getTdeCredentialPassword()) == false)
+        if (other.getTdeCredentialPassword() != null && other.getTdeCredentialPassword().equals(this.getTdeCredentialPassword()) == false)
             return false;
-        if (other.getStorageEncrypted() == null
-                ^ this.getStorageEncrypted() == null)
+        if (other.getStorageEncrypted() == null ^ this.getStorageEncrypted() == null)
             return false;
-        if (other.getStorageEncrypted() != null
-                && other.getStorageEncrypted().equals(
-                        this.getStorageEncrypted()) == false)
+        if (other.getStorageEncrypted() != null && other.getStorageEncrypted().equals(this.getStorageEncrypted()) == false)
             return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
-        if (other.getKmsKeyId() != null
-                && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         if (other.getDomain() == null ^ this.getDomain() == null)
             return false;
-        if (other.getDomain() != null
-                && other.getDomain().equals(this.getDomain()) == false)
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
-        if (other.getCopyTagsToSnapshot() == null
-                ^ this.getCopyTagsToSnapshot() == null)
+        if (other.getCopyTagsToSnapshot() == null ^ this.getCopyTagsToSnapshot() == null)
             return false;
-        if (other.getCopyTagsToSnapshot() != null
-                && other.getCopyTagsToSnapshot().equals(
-                        this.getCopyTagsToSnapshot()) == false)
+        if (other.getCopyTagsToSnapshot() != null && other.getCopyTagsToSnapshot().equals(this.getCopyTagsToSnapshot()) == false)
             return false;
-        if (other.getMonitoringInterval() == null
-                ^ this.getMonitoringInterval() == null)
+        if (other.getMonitoringInterval() == null ^ this.getMonitoringInterval() == null)
             return false;
-        if (other.getMonitoringInterval() != null
-                && other.getMonitoringInterval().equals(
-                        this.getMonitoringInterval()) == false)
+        if (other.getMonitoringInterval() != null && other.getMonitoringInterval().equals(this.getMonitoringInterval()) == false)
             return false;
-        if (other.getMonitoringRoleArn() == null
-                ^ this.getMonitoringRoleArn() == null)
+        if (other.getMonitoringRoleArn() == null ^ this.getMonitoringRoleArn() == null)
             return false;
-        if (other.getMonitoringRoleArn() != null
-                && other.getMonitoringRoleArn().equals(
-                        this.getMonitoringRoleArn()) == false)
+        if (other.getMonitoringRoleArn() != null && other.getMonitoringRoleArn().equals(this.getMonitoringRoleArn()) == false)
             return false;
-        if (other.getDomainIAMRoleName() == null
-                ^ this.getDomainIAMRoleName() == null)
+        if (other.getDomainIAMRoleName() == null ^ this.getDomainIAMRoleName() == null)
             return false;
-        if (other.getDomainIAMRoleName() != null
-                && other.getDomainIAMRoleName().equals(
-                        this.getDomainIAMRoleName()) == false)
+        if (other.getDomainIAMRoleName() != null && other.getDomainIAMRoleName().equals(this.getDomainIAMRoleName()) == false)
             return false;
         if (other.getPromotionTier() == null ^ this.getPromotionTier() == null)
             return false;
-        if (other.getPromotionTier() != null
-                && other.getPromotionTier().equals(this.getPromotionTier()) == false)
+        if (other.getPromotionTier() != null && other.getPromotionTier().equals(this.getPromotionTier()) == false)
             return false;
         if (other.getTimezone() == null ^ this.getTimezone() == null)
             return false;
-        if (other.getTimezone() != null
-                && other.getTimezone().equals(this.getTimezone()) == false)
+        if (other.getTimezone() != null && other.getTimezone().equals(this.getTimezone()) == false)
             return false;
         return true;
     }
@@ -9710,139 +8948,44 @@ public class CreateDBInstanceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDBName() == null) ? 0 : getDBName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBInstanceIdentifier() == null) ? 0
-                        : getDBInstanceIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getEngine() == null) ? 0 : getEngine().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMasterUsername() == null) ? 0 : getMasterUsername()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMasterUserPassword() == null) ? 0
-                        : getMasterUserPassword().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBSecurityGroups() == null) ? 0 : getDBSecurityGroups()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVpcSecurityGroupIds() == null) ? 0
-                        : getVpcSecurityGroupIds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBSubnetGroupName() == null) ? 0
-                        : getDBSubnetGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPreferredMaintenanceWindow() == null) ? 0
-                        : getPreferredMaintenanceWindow().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBParameterGroupName() == null) ? 0
-                        : getDBParameterGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBackupRetentionPeriod() == null) ? 0
-                        : getBackupRetentionPeriod().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPreferredBackupWindow() == null) ? 0
-                        : getPreferredBackupWindow().hashCode());
-        hashCode = prime * hashCode
-                + ((getPort() == null) ? 0 : getPort().hashCode());
-        hashCode = prime * hashCode
-                + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEngineVersion() == null) ? 0 : getEngineVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoMinorVersionUpgrade() == null) ? 0
-                        : getAutoMinorVersionUpgrade().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLicenseModel() == null) ? 0 : getLicenseModel()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getIops() == null) ? 0 : getIops().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOptionGroupName() == null) ? 0 : getOptionGroupName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCharacterSetName() == null) ? 0 : getCharacterSetName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPubliclyAccessible() == null) ? 0
-                        : getPubliclyAccessible().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBClusterIdentifier() == null) ? 0
-                        : getDBClusterIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTdeCredentialPassword() == null) ? 0
-                        : getTdeCredentialPassword().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStorageEncrypted() == null) ? 0 : getStorageEncrypted()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
-        hashCode = prime * hashCode
-                + ((getDomain() == null) ? 0 : getDomain().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCopyTagsToSnapshot() == null) ? 0
-                        : getCopyTagsToSnapshot().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMonitoringInterval() == null) ? 0
-                        : getMonitoringInterval().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMonitoringRoleArn() == null) ? 0
-                        : getMonitoringRoleArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDomainIAMRoleName() == null) ? 0
-                        : getDomainIAMRoleName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPromotionTier() == null) ? 0 : getPromotionTier()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
+        hashCode = prime * hashCode + ((getDBName() == null) ? 0 : getDBName().hashCode());
+        hashCode = prime * hashCode + ((getDBInstanceIdentifier() == null) ? 0 : getDBInstanceIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage().hashCode());
+        hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode());
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
+        hashCode = prime * hashCode + ((getMasterUsername() == null) ? 0 : getMasterUsername().hashCode());
+        hashCode = prime * hashCode + ((getMasterUserPassword() == null) ? 0 : getMasterUserPassword().hashCode());
+        hashCode = prime * hashCode + ((getDBSecurityGroups() == null) ? 0 : getDBSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getVpcSecurityGroupIds() == null) ? 0 : getVpcSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getDBSubnetGroupName() == null) ? 0 : getDBSubnetGroupName().hashCode());
+        hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
+        hashCode = prime * hashCode + ((getDBParameterGroupName() == null) ? 0 : getDBParameterGroupName().hashCode());
+        hashCode = prime * hashCode + ((getBackupRetentionPeriod() == null) ? 0 : getBackupRetentionPeriod().hashCode());
+        hashCode = prime * hashCode + ((getPreferredBackupWindow() == null) ? 0 : getPreferredBackupWindow().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
+        hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode());
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
+        hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode());
+        hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode());
+        hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
+        hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode());
+        hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode());
+        hashCode = prime * hashCode + ((getStorageEncrypted() == null) ? 0 : getStorageEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringInterval() == null) ? 0 : getMonitoringInterval().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringRoleArn() == null) ? 0 : getMonitoringRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode());
+        hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode());
+        hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         return hashCode;
     }
 

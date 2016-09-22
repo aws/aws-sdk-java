@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -20,35 +18,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class RemoveSourceIdentifierFromSubscriptionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class RemoveSourceIdentifierFromSubscriptionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the RDS event notification subscription you want to remove a
-     * source identifier from.
+     * The name of the RDS event notification subscription you want to remove a source identifier from.
      * </p>
      */
     private String subscriptionName;
     /**
      * <p>
-     * The source identifier to be removed from the subscription, such as the
-     * <b>DB instance identifier</b> for a DB instance or the name of a security
-     * group.
+     * The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB
+     * instance or the name of a security group.
      * </p>
      */
     private String sourceIdentifier;
 
     /**
      * <p>
-     * The name of the RDS event notification subscription you want to remove a
-     * source identifier from.
+     * The name of the RDS event notification subscription you want to remove a source identifier from.
      * </p>
      * 
      * @param subscriptionName
-     *        The name of the RDS event notification subscription you want to
-     *        remove a source identifier from.
+     *        The name of the RDS event notification subscription you want to remove a source identifier from.
      */
 
     public void setSubscriptionName(String subscriptionName) {
@@ -57,12 +49,10 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends
 
     /**
      * <p>
-     * The name of the RDS event notification subscription you want to remove a
-     * source identifier from.
+     * The name of the RDS event notification subscription you want to remove a source identifier from.
      * </p>
      * 
-     * @return The name of the RDS event notification subscription you want to
-     *         remove a source identifier from.
+     * @return The name of the RDS event notification subscription you want to remove a source identifier from.
      */
 
     public String getSubscriptionName() {
@@ -71,34 +61,28 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends
 
     /**
      * <p>
-     * The name of the RDS event notification subscription you want to remove a
-     * source identifier from.
+     * The name of the RDS event notification subscription you want to remove a source identifier from.
      * </p>
      * 
      * @param subscriptionName
-     *        The name of the RDS event notification subscription you want to
-     *        remove a source identifier from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the RDS event notification subscription you want to remove a source identifier from.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RemoveSourceIdentifierFromSubscriptionRequest withSubscriptionName(
-            String subscriptionName) {
+    public RemoveSourceIdentifierFromSubscriptionRequest withSubscriptionName(String subscriptionName) {
         setSubscriptionName(subscriptionName);
         return this;
     }
 
     /**
      * <p>
-     * The source identifier to be removed from the subscription, such as the
-     * <b>DB instance identifier</b> for a DB instance or the name of a security
-     * group.
+     * The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB
+     * instance or the name of a security group.
      * </p>
      * 
      * @param sourceIdentifier
-     *        The source identifier to be removed from the subscription, such as
-     *        the <b>DB instance identifier</b> for a DB instance or the name of
-     *        a security group.
+     *        The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a
+     *        DB instance or the name of a security group.
      */
 
     public void setSourceIdentifier(String sourceIdentifier) {
@@ -107,14 +91,12 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends
 
     /**
      * <p>
-     * The source identifier to be removed from the subscription, such as the
-     * <b>DB instance identifier</b> for a DB instance or the name of a security
-     * group.
+     * The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB
+     * instance or the name of a security group.
      * </p>
      * 
-     * @return The source identifier to be removed from the subscription, such
-     *         as the <b>DB instance identifier</b> for a DB instance or the
-     *         name of a security group.
+     * @return The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for
+     *         a DB instance or the name of a security group.
      */
 
     public String getSourceIdentifier() {
@@ -123,28 +105,23 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends
 
     /**
      * <p>
-     * The source identifier to be removed from the subscription, such as the
-     * <b>DB instance identifier</b> for a DB instance or the name of a security
-     * group.
+     * The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB
+     * instance or the name of a security group.
      * </p>
      * 
      * @param sourceIdentifier
-     *        The source identifier to be removed from the subscription, such as
-     *        the <b>DB instance identifier</b> for a DB instance or the name of
-     *        a security group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a
+     *        DB instance or the name of a security group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RemoveSourceIdentifierFromSubscriptionRequest withSourceIdentifier(
-            String sourceIdentifier) {
+    public RemoveSourceIdentifierFromSubscriptionRequest withSourceIdentifier(String sourceIdentifier) {
         setSourceIdentifier(sourceIdentifier);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -172,19 +149,13 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends
         if (obj instanceof RemoveSourceIdentifierFromSubscriptionRequest == false)
             return false;
         RemoveSourceIdentifierFromSubscriptionRequest other = (RemoveSourceIdentifierFromSubscriptionRequest) obj;
-        if (other.getSubscriptionName() == null
-                ^ this.getSubscriptionName() == null)
+        if (other.getSubscriptionName() == null ^ this.getSubscriptionName() == null)
             return false;
-        if (other.getSubscriptionName() != null
-                && other.getSubscriptionName().equals(
-                        this.getSubscriptionName()) == false)
+        if (other.getSubscriptionName() != null && other.getSubscriptionName().equals(this.getSubscriptionName()) == false)
             return false;
-        if (other.getSourceIdentifier() == null
-                ^ this.getSourceIdentifier() == null)
+        if (other.getSourceIdentifier() == null ^ this.getSourceIdentifier() == null)
             return false;
-        if (other.getSourceIdentifier() != null
-                && other.getSourceIdentifier().equals(
-                        this.getSourceIdentifier()) == false)
+        if (other.getSourceIdentifier() != null && other.getSourceIdentifier().equals(this.getSourceIdentifier()) == false)
             return false;
         return true;
     }
@@ -194,14 +165,8 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSubscriptionName() == null) ? 0 : getSubscriptionName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getSubscriptionName() == null) ? 0 : getSubscriptionName().hashCode());
+        hashCode = prime * hashCode + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier().hashCode());
         return hashCode;
     }
 

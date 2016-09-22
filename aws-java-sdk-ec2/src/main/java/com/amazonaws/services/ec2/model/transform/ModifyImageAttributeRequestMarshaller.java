@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,48 +29,38 @@ import com.amazonaws.util.IdempotentUtils;
  * ModifyImageAttributeRequest Marshaller
  */
 
-public class ModifyImageAttributeRequestMarshaller
-        implements
-        Marshaller<Request<ModifyImageAttributeRequest>, ModifyImageAttributeRequest> {
+public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request<ModifyImageAttributeRequest>, ModifyImageAttributeRequest> {
 
-    public Request<ModifyImageAttributeRequest> marshall(
-            ModifyImageAttributeRequest modifyImageAttributeRequest) {
+    public Request<ModifyImageAttributeRequest> marshall(ModifyImageAttributeRequest modifyImageAttributeRequest) {
 
         if (modifyImageAttributeRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ModifyImageAttributeRequest> request = new DefaultRequest<ModifyImageAttributeRequest>(
-                modifyImageAttributeRequest, "AmazonEC2");
+        Request<ModifyImageAttributeRequest> request = new DefaultRequest<ModifyImageAttributeRequest>(modifyImageAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyImageAttribute");
         request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifyImageAttributeRequest.getImageId() != null) {
-            request.addParameter("ImageId", StringUtils
-                    .fromString(modifyImageAttributeRequest.getImageId()));
+            request.addParameter("ImageId", StringUtils.fromString(modifyImageAttributeRequest.getImageId()));
         }
 
         if (modifyImageAttributeRequest.getAttribute() != null) {
-            request.addParameter("Attribute", StringUtils
-                    .fromString(modifyImageAttributeRequest.getAttribute()));
+            request.addParameter("Attribute", StringUtils.fromString(modifyImageAttributeRequest.getAttribute()));
         }
 
         if (modifyImageAttributeRequest.getOperationType() != null) {
-            request.addParameter("OperationType", StringUtils
-                    .fromString(modifyImageAttributeRequest.getOperationType()));
+            request.addParameter("OperationType", StringUtils.fromString(modifyImageAttributeRequest.getOperationType()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> userIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyImageAttributeRequest
-                .getUserIds();
+        com.amazonaws.internal.SdkInternalList<String> userIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyImageAttributeRequest.getUserIds();
         if (!userIdsList.isEmpty() || !userIdsList.isAutoConstruct()) {
             int userIdsListIndex = 1;
 
             for (String userIdsListValue : userIdsList) {
                 if (userIdsListValue != null) {
-                    request.addParameter("UserId." + userIdsListIndex,
-                            StringUtils.fromString(userIdsListValue));
+                    request.addParameter("UserId." + userIdsListIndex, StringUtils.fromString(userIdsListValue));
                 }
                 userIdsListIndex++;
             }
@@ -85,8 +73,7 @@ public class ModifyImageAttributeRequestMarshaller
 
             for (String userGroupsListValue : userGroupsList) {
                 if (userGroupsListValue != null) {
-                    request.addParameter("UserGroup." + userGroupsListIndex,
-                            StringUtils.fromString(userGroupsListValue));
+                    request.addParameter("UserGroup." + userGroupsListIndex, StringUtils.fromString(userGroupsListValue));
                 }
                 userGroupsListIndex++;
             }
@@ -99,21 +86,17 @@ public class ModifyImageAttributeRequestMarshaller
 
             for (String productCodesListValue : productCodesList) {
                 if (productCodesListValue != null) {
-                    request.addParameter(
-                            "ProductCode." + productCodesListIndex,
-                            StringUtils.fromString(productCodesListValue));
+                    request.addParameter("ProductCode." + productCodesListIndex, StringUtils.fromString(productCodesListValue));
                 }
                 productCodesListIndex++;
             }
         }
 
         if (modifyImageAttributeRequest.getValue() != null) {
-            request.addParameter("Value", StringUtils
-                    .fromString(modifyImageAttributeRequest.getValue()));
+            request.addParameter("Value", StringUtils.fromString(modifyImageAttributeRequest.getValue()));
         }
 
-        LaunchPermissionModifications launchPermission = modifyImageAttributeRequest
-                .getLaunchPermission();
+        LaunchPermissionModifications launchPermission = modifyImageAttributeRequest.getLaunchPermission();
         if (launchPermission != null) {
 
             com.amazonaws.internal.SdkInternalList<LaunchPermission> addList = (com.amazonaws.internal.SdkInternalList<LaunchPermission>) launchPermission
@@ -124,15 +107,11 @@ public class ModifyImageAttributeRequestMarshaller
                 for (LaunchPermission addListValue : addList) {
 
                     if (addListValue.getUserId() != null) {
-                        request.addParameter("LaunchPermission.Add."
-                                + addListIndex + ".UserId", StringUtils
-                                .fromString(addListValue.getUserId()));
+                        request.addParameter("LaunchPermission.Add." + addListIndex + ".UserId", StringUtils.fromString(addListValue.getUserId()));
                     }
 
                     if (addListValue.getGroup() != null) {
-                        request.addParameter("LaunchPermission.Add."
-                                + addListIndex + ".Group",
-                                StringUtils.fromString(addListValue.getGroup()));
+                        request.addParameter("LaunchPermission.Add." + addListIndex + ".Group", StringUtils.fromString(addListValue.getGroup()));
                     }
                     addListIndex++;
                 }
@@ -146,15 +125,11 @@ public class ModifyImageAttributeRequestMarshaller
                 for (LaunchPermission removeListValue : removeList) {
 
                     if (removeListValue.getUserId() != null) {
-                        request.addParameter("LaunchPermission.Remove."
-                                + removeListIndex + ".UserId", StringUtils
-                                .fromString(removeListValue.getUserId()));
+                        request.addParameter("LaunchPermission.Remove." + removeListIndex + ".UserId", StringUtils.fromString(removeListValue.getUserId()));
                     }
 
                     if (removeListValue.getGroup() != null) {
-                        request.addParameter("LaunchPermission.Remove."
-                                + removeListIndex + ".Group", StringUtils
-                                .fromString(removeListValue.getGroup()));
+                        request.addParameter("LaunchPermission.Remove." + removeListIndex + ".Group", StringUtils.fromString(removeListValue.getGroup()));
                     }
                     removeListIndex++;
                 }
@@ -162,8 +137,7 @@ public class ModifyImageAttributeRequestMarshaller
         }
 
         if (modifyImageAttributeRequest.getDescription() != null) {
-            request.addParameter("Description.Value", StringUtils
-                    .fromString(modifyImageAttributeRequest.getDescription()));
+            request.addParameter("Description.Value", StringUtils.fromString(modifyImageAttributeRequest.getDescription()));
         }
 
         return request;

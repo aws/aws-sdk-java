@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Contains the output of DescribeAutoScalingInstances.
  * </p>
  */
-public class DescribeAutoScalingInstancesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeAutoScalingInstancesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,8 @@ public class DescribeAutoScalingInstancesResult extends
     private com.amazonaws.internal.SdkInternalList<AutoScalingInstanceDetails> autoScalingInstances;
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      */
     private String nextToken;
@@ -63,15 +59,13 @@ public class DescribeAutoScalingInstancesResult extends
      *        The instances.
      */
 
-    public void setAutoScalingInstances(
-            java.util.Collection<AutoScalingInstanceDetails> autoScalingInstances) {
+    public void setAutoScalingInstances(java.util.Collection<AutoScalingInstanceDetails> autoScalingInstances) {
         if (autoScalingInstances == null) {
             this.autoScalingInstances = null;
             return;
         }
 
-        this.autoScalingInstances = new com.amazonaws.internal.SdkInternalList<AutoScalingInstanceDetails>(
-                autoScalingInstances);
+        this.autoScalingInstances = new com.amazonaws.internal.SdkInternalList<AutoScalingInstanceDetails>(autoScalingInstances);
     }
 
     /**
@@ -79,23 +73,19 @@ public class DescribeAutoScalingInstancesResult extends
      * The instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAutoScalingInstances(java.util.Collection)} or
-     * {@link #withAutoScalingInstances(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAutoScalingInstances(java.util.Collection)} or {@link #withAutoScalingInstances(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param autoScalingInstances
      *        The instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAutoScalingInstancesResult withAutoScalingInstances(
-            AutoScalingInstanceDetails... autoScalingInstances) {
+    public DescribeAutoScalingInstancesResult withAutoScalingInstances(AutoScalingInstanceDetails... autoScalingInstances) {
         if (this.autoScalingInstances == null) {
-            setAutoScalingInstances(new com.amazonaws.internal.SdkInternalList<AutoScalingInstanceDetails>(
-                    autoScalingInstances.length));
+            setAutoScalingInstances(new com.amazonaws.internal.SdkInternalList<AutoScalingInstanceDetails>(autoScalingInstances.length));
         }
         for (AutoScalingInstanceDetails ele : autoScalingInstances) {
             this.autoScalingInstances.add(ele);
@@ -110,25 +100,23 @@ public class DescribeAutoScalingInstancesResult extends
      * 
      * @param autoScalingInstances
      *        The instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAutoScalingInstancesResult withAutoScalingInstances(
-            java.util.Collection<AutoScalingInstanceDetails> autoScalingInstances) {
+    public DescribeAutoScalingInstancesResult withAutoScalingInstances(java.util.Collection<AutoScalingInstanceDetails> autoScalingInstances) {
         setAutoScalingInstances(autoScalingInstances);
         return this;
     }
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there
-     *        are no additional items to return, the string is empty.
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
      */
 
     public void setNextToken(String nextToken) {
@@ -137,12 +125,12 @@ public class DescribeAutoScalingInstancesResult extends
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
-     * @return The token to use when requesting the next set of items. If there
-     *         are no additional items to return, the string is empty.
+     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
+     *         string is empty.
      */
 
     public String getNextToken() {
@@ -151,15 +139,14 @@ public class DescribeAutoScalingInstancesResult extends
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there
-     *        are no additional items to return, the string is empty.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAutoScalingInstancesResult withNextToken(String nextToken) {
@@ -168,8 +155,7 @@ public class DescribeAutoScalingInstancesResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -180,8 +166,7 @@ public class DescribeAutoScalingInstancesResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingInstances() != null)
-            sb.append("AutoScalingInstances: " + getAutoScalingInstances()
-                    + ",");
+            sb.append("AutoScalingInstances: " + getAutoScalingInstances() + ",");
         if (getNextToken() != null)
             sb.append("NextToken: " + getNextToken());
         sb.append("}");
@@ -198,17 +183,13 @@ public class DescribeAutoScalingInstancesResult extends
         if (obj instanceof DescribeAutoScalingInstancesResult == false)
             return false;
         DescribeAutoScalingInstancesResult other = (DescribeAutoScalingInstancesResult) obj;
-        if (other.getAutoScalingInstances() == null
-                ^ this.getAutoScalingInstances() == null)
+        if (other.getAutoScalingInstances() == null ^ this.getAutoScalingInstances() == null)
             return false;
-        if (other.getAutoScalingInstances() != null
-                && other.getAutoScalingInstances().equals(
-                        this.getAutoScalingInstances()) == false)
+        if (other.getAutoScalingInstances() != null && other.getAutoScalingInstances().equals(this.getAutoScalingInstances()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -218,12 +199,8 @@ public class DescribeAutoScalingInstancesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingInstances() == null) ? 0
-                        : getAutoScalingInstances().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingInstances() == null) ? 0 : getAutoScalingInstances().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -232,9 +209,7 @@ public class DescribeAutoScalingInstancesResult extends
         try {
             return (DescribeAutoScalingInstancesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

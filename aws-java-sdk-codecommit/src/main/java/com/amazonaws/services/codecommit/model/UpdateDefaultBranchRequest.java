@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codecommit.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of an update default branch operation.
  * </p>
  */
-public class UpdateDefaultBranchRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateDefaultBranchRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -45,8 +41,7 @@ public class UpdateDefaultBranchRequest extends
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository to set or change the default branch
-     *        for.
+     *        The name of the repository to set or change the default branch for.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -58,8 +53,7 @@ public class UpdateDefaultBranchRequest extends
      * The name of the repository to set or change the default branch for.
      * </p>
      * 
-     * @return The name of the repository to set or change the default branch
-     *         for.
+     * @return The name of the repository to set or change the default branch for.
      */
 
     public String getRepositoryName() {
@@ -72,10 +66,8 @@ public class UpdateDefaultBranchRequest extends
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository to set or change the default branch
-     *        for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the repository to set or change the default branch for.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateDefaultBranchRequest withRepositoryName(String repositoryName) {
@@ -115,19 +107,16 @@ public class UpdateDefaultBranchRequest extends
      * 
      * @param defaultBranchName
      *        The name of the branch to set as the default.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateDefaultBranchRequest withDefaultBranchName(
-            String defaultBranchName) {
+    public UpdateDefaultBranchRequest withDefaultBranchName(String defaultBranchName) {
         setDefaultBranchName(defaultBranchName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -155,18 +144,13 @@ public class UpdateDefaultBranchRequest extends
         if (obj instanceof UpdateDefaultBranchRequest == false)
             return false;
         UpdateDefaultBranchRequest other = (UpdateDefaultBranchRequest) obj;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
-        if (other.getDefaultBranchName() == null
-                ^ this.getDefaultBranchName() == null)
+        if (other.getDefaultBranchName() == null ^ this.getDefaultBranchName() == null)
             return false;
-        if (other.getDefaultBranchName() != null
-                && other.getDefaultBranchName().equals(
-                        this.getDefaultBranchName()) == false)
+        if (other.getDefaultBranchName() != null && other.getDefaultBranchName().equals(this.getDefaultBranchName()) == false)
             return false;
         return true;
     }
@@ -176,14 +160,8 @@ public class UpdateDefaultBranchRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultBranchName() == null) ? 0
-                        : getDefaultBranchName().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getDefaultBranchName() == null) ? 0 : getDefaultBranchName().hashCode());
         return hashCode;
     }
 

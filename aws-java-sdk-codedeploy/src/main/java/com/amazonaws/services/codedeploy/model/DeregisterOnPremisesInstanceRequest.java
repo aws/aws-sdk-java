@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a deregister on-premises instance operation.
  * </p>
  */
-public class DeregisterOnPremisesInstanceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeregisterOnPremisesInstanceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -65,19 +61,16 @@ public class DeregisterOnPremisesInstanceRequest extends
      * 
      * @param instanceName
      *        The name of the on-premises instance to deregister.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeregisterOnPremisesInstanceRequest withInstanceName(
-            String instanceName) {
+    public DeregisterOnPremisesInstanceRequest withInstanceName(String instanceName) {
         setInstanceName(instanceName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -105,8 +98,7 @@ public class DeregisterOnPremisesInstanceRequest extends
         DeregisterOnPremisesInstanceRequest other = (DeregisterOnPremisesInstanceRequest) obj;
         if (other.getInstanceName() == null ^ this.getInstanceName() == null)
             return false;
-        if (other.getInstanceName() != null
-                && other.getInstanceName().equals(this.getInstanceName()) == false)
+        if (other.getInstanceName() != null && other.getInstanceName().equals(this.getInstanceName()) == false)
             return false;
         return true;
     }
@@ -116,10 +108,7 @@ public class DeregisterOnPremisesInstanceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceName() == null) ? 0 : getInstanceName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getInstanceName() == null) ? 0 : getInstanceName().hashCode());
         return hashCode;
     }
 

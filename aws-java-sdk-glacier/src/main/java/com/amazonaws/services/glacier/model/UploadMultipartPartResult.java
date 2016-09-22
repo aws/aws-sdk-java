@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class UploadMultipartPartResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class UploadMultipartPartResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -38,8 +34,7 @@ public class UploadMultipartPartResult extends
      * </p>
      * 
      * @param checksum
-     *        The SHA256 tree hash that Amazon Glacier computed for the uploaded
-     *        part.
+     *        The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
      */
 
     public void setChecksum(String checksum) {
@@ -51,8 +46,7 @@ public class UploadMultipartPartResult extends
      * The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
      * </p>
      * 
-     * @return The SHA256 tree hash that Amazon Glacier computed for the
-     *         uploaded part.
+     * @return The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
      */
 
     public String getChecksum() {
@@ -65,10 +59,8 @@ public class UploadMultipartPartResult extends
      * </p>
      * 
      * @param checksum
-     *        The SHA256 tree hash that Amazon Glacier computed for the uploaded
-     *        part.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadMultipartPartResult withChecksum(String checksum) {
@@ -77,8 +69,7 @@ public class UploadMultipartPartResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -106,8 +97,7 @@ public class UploadMultipartPartResult extends
         UploadMultipartPartResult other = (UploadMultipartPartResult) obj;
         if (other.getChecksum() == null ^ this.getChecksum() == null)
             return false;
-        if (other.getChecksum() != null
-                && other.getChecksum().equals(this.getChecksum()) == false)
+        if (other.getChecksum() != null && other.getChecksum().equals(this.getChecksum()) == false)
             return false;
         return true;
     }
@@ -117,8 +107,7 @@ public class UploadMultipartPartResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
+        hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
         return hashCode;
     }
 
@@ -127,9 +116,7 @@ public class UploadMultipartPartResult extends
         try {
             return (UploadMultipartPartResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

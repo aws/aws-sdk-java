@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeReservedInstancesListi
  * Contains the parameters for DescribeReservedInstancesListings.
  * </p>
  */
-public class DescribeReservedInstancesListingsRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable,
+public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeReservedInstancesListingsRequest> {
 
     /**
@@ -52,15 +49,13 @@ public class DescribeReservedInstancesListingsRequest extends
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-listing-id</code> - The ID of the Reserved
-     * Instances listing.
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the Reserved Instance listing (
-     * <code>pending</code> | <code>active</code> | <code>cancelled</code> |
-     * <code>closed</code>).
+     * <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> |
+     * <code>cancelled</code> | <code>closed</code>).
      * </p>
      * </li>
      * <li>
@@ -104,12 +99,10 @@ public class DescribeReservedInstancesListingsRequest extends
      * 
      * @param reservedInstancesId
      *        One or more Reserved Instance IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReservedInstancesListingsRequest withReservedInstancesId(
-            String reservedInstancesId) {
+    public DescribeReservedInstancesListingsRequest withReservedInstancesId(String reservedInstancesId) {
         setReservedInstancesId(reservedInstancesId);
         return this;
     }
@@ -146,12 +139,10 @@ public class DescribeReservedInstancesListingsRequest extends
      * 
      * @param reservedInstancesListingId
      *        One or more Reserved Instance listing IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReservedInstancesListingsRequest withReservedInstancesListingId(
-            String reservedInstancesListingId) {
+    public DescribeReservedInstancesListingsRequest withReservedInstancesListingId(String reservedInstancesListingId) {
         setReservedInstancesListingId(reservedInstancesListingId);
         return this;
     }
@@ -168,15 +159,13 @@ public class DescribeReservedInstancesListingsRequest extends
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-listing-id</code> - The ID of the Reserved
-     * Instances listing.
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the Reserved Instance listing (
-     * <code>pending</code> | <code>active</code> | <code>cancelled</code> |
-     * <code>closed</code>).
+     * <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> |
+     * <code>cancelled</code> | <code>closed</code>).
      * </p>
      * </li>
      * <li>
@@ -190,21 +179,18 @@ public class DescribeReservedInstancesListingsRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>reserved-instances-id</code> - The ID of the Reserved
-     *         Instances.
+     *         <code>reserved-instances-id</code> - The ID of the Reserved Instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>reserved-instances-listing-id</code> - The ID of the
-     *         Reserved Instances listing.
+     *         <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>status</code> - The status of the Reserved Instance listing
-     *         (<code>pending</code> | <code>active</code> |
-     *         <code>cancelled</code> | <code>closed</code>).
+     *         <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> |
+     *         <code>active</code> | <code>cancelled</code> | <code>closed</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -233,15 +219,13 @@ public class DescribeReservedInstancesListingsRequest extends
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-listing-id</code> - The ID of the Reserved
-     * Instances listing.
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the Reserved Instance listing (
-     * <code>pending</code> | <code>active</code> | <code>cancelled</code> |
-     * <code>closed</code>).
+     * <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> |
+     * <code>cancelled</code> | <code>closed</code>).
      * </p>
      * </li>
      * <li>
@@ -256,21 +240,18 @@ public class DescribeReservedInstancesListingsRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>reserved-instances-id</code> - The ID of the Reserved
-     *        Instances.
+     *        <code>reserved-instances-id</code> - The ID of the Reserved Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>reserved-instances-listing-id</code> - The ID of the
-     *        Reserved Instances listing.
+     *        <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> - The status of the Reserved Instance listing
-     *        (<code>pending</code> | <code>active</code> |
-     *        <code>cancelled</code> | <code>closed</code>).
+     *        <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> |
+     *        <code>active</code> | <code>cancelled</code> | <code>closed</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -286,8 +267,7 @@ public class DescribeReservedInstancesListingsRequest extends
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -302,15 +282,13 @@ public class DescribeReservedInstancesListingsRequest extends
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-listing-id</code> - The ID of the Reserved
-     * Instances listing.
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the Reserved Instance listing (
-     * <code>pending</code> | <code>active</code> | <code>cancelled</code> |
-     * <code>closed</code>).
+     * <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> |
+     * <code>cancelled</code> | <code>closed</code>).
      * </p>
      * </li>
      * <li>
@@ -320,10 +298,9 @@ public class DescribeReservedInstancesListingsRequest extends
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
@@ -331,21 +308,18 @@ public class DescribeReservedInstancesListingsRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>reserved-instances-id</code> - The ID of the Reserved
-     *        Instances.
+     *        <code>reserved-instances-id</code> - The ID of the Reserved Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>reserved-instances-listing-id</code> - The ID of the
-     *        Reserved Instances listing.
+     *        <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> - The status of the Reserved Instance listing
-     *        (<code>pending</code> | <code>active</code> |
-     *        <code>cancelled</code> | <code>closed</code>).
+     *        <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> |
+     *        <code>active</code> | <code>cancelled</code> | <code>closed</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -353,15 +327,12 @@ public class DescribeReservedInstancesListingsRequest extends
      *        <code>status-message</code> - The reason for the status.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReservedInstancesListingsRequest withFilters(
-            Filter... filters) {
+    public DescribeReservedInstancesListingsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -381,15 +352,13 @@ public class DescribeReservedInstancesListingsRequest extends
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-listing-id</code> - The ID of the Reserved
-     * Instances listing.
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the Reserved Instance listing (
-     * <code>pending</code> | <code>active</code> | <code>cancelled</code> |
-     * <code>closed</code>).
+     * <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> |
+     * <code>cancelled</code> | <code>closed</code>).
      * </p>
      * </li>
      * <li>
@@ -404,21 +373,18 @@ public class DescribeReservedInstancesListingsRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>reserved-instances-id</code> - The ID of the Reserved
-     *        Instances.
+     *        <code>reserved-instances-id</code> - The ID of the Reserved Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>reserved-instances-listing-id</code> - The ID of the
-     *        Reserved Instances listing.
+     *        <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> - The status of the Reserved Instance listing
-     *        (<code>pending</code> | <code>active</code> |
-     *        <code>cancelled</code> | <code>closed</code>).
+     *        <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> |
+     *        <code>active</code> | <code>cancelled</code> | <code>closed</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -426,32 +392,27 @@ public class DescribeReservedInstancesListingsRequest extends
      *        <code>status-message</code> - The reason for the status.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReservedInstancesListingsRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeReservedInstancesListingsRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeReservedInstancesListingsRequest> getDryRunRequest() {
-        Request<DescribeReservedInstancesListingsRequest> request = new DescribeReservedInstancesListingsRequestMarshaller()
-                .marshall(this);
+        Request<DescribeReservedInstancesListingsRequest> request = new DescribeReservedInstancesListingsRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -464,8 +425,7 @@ public class DescribeReservedInstancesListingsRequest extends
         if (getReservedInstancesId() != null)
             sb.append("ReservedInstancesId: " + getReservedInstancesId() + ",");
         if (getReservedInstancesListingId() != null)
-            sb.append("ReservedInstancesListingId: "
-                    + getReservedInstancesListingId() + ",");
+            sb.append("ReservedInstancesListingId: " + getReservedInstancesListingId() + ",");
         if (getFilters() != null)
             sb.append("Filters: " + getFilters());
         sb.append("}");
@@ -482,24 +442,17 @@ public class DescribeReservedInstancesListingsRequest extends
         if (obj instanceof DescribeReservedInstancesListingsRequest == false)
             return false;
         DescribeReservedInstancesListingsRequest other = (DescribeReservedInstancesListingsRequest) obj;
-        if (other.getReservedInstancesId() == null
-                ^ this.getReservedInstancesId() == null)
+        if (other.getReservedInstancesId() == null ^ this.getReservedInstancesId() == null)
             return false;
-        if (other.getReservedInstancesId() != null
-                && other.getReservedInstancesId().equals(
-                        this.getReservedInstancesId()) == false)
+        if (other.getReservedInstancesId() != null && other.getReservedInstancesId().equals(this.getReservedInstancesId()) == false)
             return false;
-        if (other.getReservedInstancesListingId() == null
-                ^ this.getReservedInstancesListingId() == null)
+        if (other.getReservedInstancesListingId() == null ^ this.getReservedInstancesListingId() == null)
             return false;
-        if (other.getReservedInstancesListingId() != null
-                && other.getReservedInstancesListingId().equals(
-                        this.getReservedInstancesListingId()) == false)
+        if (other.getReservedInstancesListingId() != null && other.getReservedInstancesListingId().equals(this.getReservedInstancesListingId()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         return true;
     }
@@ -509,16 +462,9 @@ public class DescribeReservedInstancesListingsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReservedInstancesId() == null) ? 0
-                        : getReservedInstancesId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReservedInstancesListingId() == null) ? 0
-                        : getReservedInstancesListingId().hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesId() == null) ? 0 : getReservedInstancesId().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesListingId() == null) ? 0 : getReservedInstancesListingId().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

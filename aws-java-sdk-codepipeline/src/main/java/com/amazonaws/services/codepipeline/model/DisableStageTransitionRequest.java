@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model;
 
@@ -22,51 +20,43 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a disable stage transition input action.
  * </p>
  */
-public class DisableStageTransitionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the pipeline in which you want to disable the flow of
-     * artifacts from one stage to another.
+     * The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.
      * </p>
      */
     private String pipelineName;
     /**
      * <p>
-     * The name of the stage where you want to disable the inbound or outbound
-     * transition of artifacts.
+     * The name of the stage where you want to disable the inbound or outbound transition of artifacts.
      * </p>
      */
     private String stageName;
     /**
      * <p>
-     * Specifies whether artifacts will be prevented from transitioning into the
-     * stage and being processed by the actions in that stage (inbound), or
-     * prevented from transitioning from the stage after they have been
-     * processed by the actions in that stage (outbound).
+     * Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     * actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by
+     * the actions in that stage (outbound).
      * </p>
      */
     private String transitionType;
     /**
      * <p>
-     * The reason given to the user why a stage is disabled, such as waiting for
-     * manual approval or manual tests. This message is displayed in the
-     * pipeline console UI.
+     * The reason given to the user why a stage is disabled, such as waiting for manual approval or manual tests. This
+     * message is displayed in the pipeline console UI.
      * </p>
      */
     private String reason;
 
     /**
      * <p>
-     * The name of the pipeline in which you want to disable the flow of
-     * artifacts from one stage to another.
+     * The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.
      * </p>
      * 
      * @param pipelineName
-     *        The name of the pipeline in which you want to disable the flow of
-     *        artifacts from one stage to another.
+     *        The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.
      */
 
     public void setPipelineName(String pipelineName) {
@@ -75,12 +65,10 @@ public class DisableStageTransitionRequest extends
 
     /**
      * <p>
-     * The name of the pipeline in which you want to disable the flow of
-     * artifacts from one stage to another.
+     * The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.
      * </p>
      * 
-     * @return The name of the pipeline in which you want to disable the flow of
-     *         artifacts from one stage to another.
+     * @return The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.
      */
 
     public String getPipelineName() {
@@ -89,15 +77,12 @@ public class DisableStageTransitionRequest extends
 
     /**
      * <p>
-     * The name of the pipeline in which you want to disable the flow of
-     * artifacts from one stage to another.
+     * The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.
      * </p>
      * 
      * @param pipelineName
-     *        The name of the pipeline in which you want to disable the flow of
-     *        artifacts from one stage to another.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisableStageTransitionRequest withPipelineName(String pipelineName) {
@@ -107,13 +92,11 @@ public class DisableStageTransitionRequest extends
 
     /**
      * <p>
-     * The name of the stage where you want to disable the inbound or outbound
-     * transition of artifacts.
+     * The name of the stage where you want to disable the inbound or outbound transition of artifacts.
      * </p>
      * 
      * @param stageName
-     *        The name of the stage where you want to disable the inbound or
-     *        outbound transition of artifacts.
+     *        The name of the stage where you want to disable the inbound or outbound transition of artifacts.
      */
 
     public void setStageName(String stageName) {
@@ -122,12 +105,10 @@ public class DisableStageTransitionRequest extends
 
     /**
      * <p>
-     * The name of the stage where you want to disable the inbound or outbound
-     * transition of artifacts.
+     * The name of the stage where you want to disable the inbound or outbound transition of artifacts.
      * </p>
      * 
-     * @return The name of the stage where you want to disable the inbound or
-     *         outbound transition of artifacts.
+     * @return The name of the stage where you want to disable the inbound or outbound transition of artifacts.
      */
 
     public String getStageName() {
@@ -136,15 +117,12 @@ public class DisableStageTransitionRequest extends
 
     /**
      * <p>
-     * The name of the stage where you want to disable the inbound or outbound
-     * transition of artifacts.
+     * The name of the stage where you want to disable the inbound or outbound transition of artifacts.
      * </p>
      * 
      * @param stageName
-     *        The name of the stage where you want to disable the inbound or
-     *        outbound transition of artifacts.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the stage where you want to disable the inbound or outbound transition of artifacts.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisableStageTransitionRequest withStageName(String stageName) {
@@ -154,17 +132,15 @@ public class DisableStageTransitionRequest extends
 
     /**
      * <p>
-     * Specifies whether artifacts will be prevented from transitioning into the
-     * stage and being processed by the actions in that stage (inbound), or
-     * prevented from transitioning from the stage after they have been
-     * processed by the actions in that stage (outbound).
+     * Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     * actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by
+     * the actions in that stage (outbound).
      * </p>
      * 
      * @param transitionType
-     *        Specifies whether artifacts will be prevented from transitioning
-     *        into the stage and being processed by the actions in that stage
-     *        (inbound), or prevented from transitioning from the stage after
-     *        they have been processed by the actions in that stage (outbound).
+     *        Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     *        actions in that stage (inbound), or prevented from transitioning from the stage after they have been
+     *        processed by the actions in that stage (outbound).
      * @see StageTransitionType
      */
 
@@ -174,16 +150,14 @@ public class DisableStageTransitionRequest extends
 
     /**
      * <p>
-     * Specifies whether artifacts will be prevented from transitioning into the
-     * stage and being processed by the actions in that stage (inbound), or
-     * prevented from transitioning from the stage after they have been
-     * processed by the actions in that stage (outbound).
+     * Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     * actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by
+     * the actions in that stage (outbound).
      * </p>
      * 
-     * @return Specifies whether artifacts will be prevented from transitioning
-     *         into the stage and being processed by the actions in that stage
-     *         (inbound), or prevented from transitioning from the stage after
-     *         they have been processed by the actions in that stage (outbound).
+     * @return Specifies whether artifacts will be prevented from transitioning into the stage and being processed by
+     *         the actions in that stage (inbound), or prevented from transitioning from the stage after they have been
+     *         processed by the actions in that stage (outbound).
      * @see StageTransitionType
      */
 
@@ -193,41 +167,35 @@ public class DisableStageTransitionRequest extends
 
     /**
      * <p>
-     * Specifies whether artifacts will be prevented from transitioning into the
-     * stage and being processed by the actions in that stage (inbound), or
-     * prevented from transitioning from the stage after they have been
-     * processed by the actions in that stage (outbound).
+     * Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     * actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by
+     * the actions in that stage (outbound).
      * </p>
      * 
      * @param transitionType
-     *        Specifies whether artifacts will be prevented from transitioning
-     *        into the stage and being processed by the actions in that stage
-     *        (inbound), or prevented from transitioning from the stage after
-     *        they have been processed by the actions in that stage (outbound).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     *        actions in that stage (inbound), or prevented from transitioning from the stage after they have been
+     *        processed by the actions in that stage (outbound).
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StageTransitionType
      */
 
-    public DisableStageTransitionRequest withTransitionType(
-            String transitionType) {
+    public DisableStageTransitionRequest withTransitionType(String transitionType) {
         setTransitionType(transitionType);
         return this;
     }
 
     /**
      * <p>
-     * Specifies whether artifacts will be prevented from transitioning into the
-     * stage and being processed by the actions in that stage (inbound), or
-     * prevented from transitioning from the stage after they have been
-     * processed by the actions in that stage (outbound).
+     * Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     * actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by
+     * the actions in that stage (outbound).
      * </p>
      * 
      * @param transitionType
-     *        Specifies whether artifacts will be prevented from transitioning
-     *        into the stage and being processed by the actions in that stage
-     *        (inbound), or prevented from transitioning from the stage after
-     *        they have been processed by the actions in that stage (outbound).
+     *        Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     *        actions in that stage (inbound), or prevented from transitioning from the stage after they have been
+     *        processed by the actions in that stage (outbound).
      * @see StageTransitionType
      */
 
@@ -237,39 +205,33 @@ public class DisableStageTransitionRequest extends
 
     /**
      * <p>
-     * Specifies whether artifacts will be prevented from transitioning into the
-     * stage and being processed by the actions in that stage (inbound), or
-     * prevented from transitioning from the stage after they have been
-     * processed by the actions in that stage (outbound).
+     * Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     * actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by
+     * the actions in that stage (outbound).
      * </p>
      * 
      * @param transitionType
-     *        Specifies whether artifacts will be prevented from transitioning
-     *        into the stage and being processed by the actions in that stage
-     *        (inbound), or prevented from transitioning from the stage after
-     *        they have been processed by the actions in that stage (outbound).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     *        actions in that stage (inbound), or prevented from transitioning from the stage after they have been
+     *        processed by the actions in that stage (outbound).
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StageTransitionType
      */
 
-    public DisableStageTransitionRequest withTransitionType(
-            StageTransitionType transitionType) {
+    public DisableStageTransitionRequest withTransitionType(StageTransitionType transitionType) {
         setTransitionType(transitionType);
         return this;
     }
 
     /**
      * <p>
-     * The reason given to the user why a stage is disabled, such as waiting for
-     * manual approval or manual tests. This message is displayed in the
-     * pipeline console UI.
+     * The reason given to the user why a stage is disabled, such as waiting for manual approval or manual tests. This
+     * message is displayed in the pipeline console UI.
      * </p>
      * 
      * @param reason
-     *        The reason given to the user why a stage is disabled, such as
-     *        waiting for manual approval or manual tests. This message is
-     *        displayed in the pipeline console UI.
+     *        The reason given to the user why a stage is disabled, such as waiting for manual approval or manual tests.
+     *        This message is displayed in the pipeline console UI.
      */
 
     public void setReason(String reason) {
@@ -278,14 +240,12 @@ public class DisableStageTransitionRequest extends
 
     /**
      * <p>
-     * The reason given to the user why a stage is disabled, such as waiting for
-     * manual approval or manual tests. This message is displayed in the
-     * pipeline console UI.
+     * The reason given to the user why a stage is disabled, such as waiting for manual approval or manual tests. This
+     * message is displayed in the pipeline console UI.
      * </p>
      * 
-     * @return The reason given to the user why a stage is disabled, such as
-     *         waiting for manual approval or manual tests. This message is
-     *         displayed in the pipeline console UI.
+     * @return The reason given to the user why a stage is disabled, such as waiting for manual approval or manual
+     *         tests. This message is displayed in the pipeline console UI.
      */
 
     public String getReason() {
@@ -294,17 +254,14 @@ public class DisableStageTransitionRequest extends
 
     /**
      * <p>
-     * The reason given to the user why a stage is disabled, such as waiting for
-     * manual approval or manual tests. This message is displayed in the
-     * pipeline console UI.
+     * The reason given to the user why a stage is disabled, such as waiting for manual approval or manual tests. This
+     * message is displayed in the pipeline console UI.
      * </p>
      * 
      * @param reason
-     *        The reason given to the user why a stage is disabled, such as
-     *        waiting for manual approval or manual tests. This message is
-     *        displayed in the pipeline console UI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The reason given to the user why a stage is disabled, such as waiting for manual approval or manual tests.
+     *        This message is displayed in the pipeline console UI.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisableStageTransitionRequest withReason(String reason) {
@@ -313,8 +270,7 @@ public class DisableStageTransitionRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -348,24 +304,19 @@ public class DisableStageTransitionRequest extends
         DisableStageTransitionRequest other = (DisableStageTransitionRequest) obj;
         if (other.getPipelineName() == null ^ this.getPipelineName() == null)
             return false;
-        if (other.getPipelineName() != null
-                && other.getPipelineName().equals(this.getPipelineName()) == false)
+        if (other.getPipelineName() != null && other.getPipelineName().equals(this.getPipelineName()) == false)
             return false;
         if (other.getStageName() == null ^ this.getStageName() == null)
             return false;
-        if (other.getStageName() != null
-                && other.getStageName().equals(this.getStageName()) == false)
+        if (other.getStageName() != null && other.getStageName().equals(this.getStageName()) == false)
             return false;
-        if (other.getTransitionType() == null
-                ^ this.getTransitionType() == null)
+        if (other.getTransitionType() == null ^ this.getTransitionType() == null)
             return false;
-        if (other.getTransitionType() != null
-                && other.getTransitionType().equals(this.getTransitionType()) == false)
+        if (other.getTransitionType() != null && other.getTransitionType().equals(this.getTransitionType()) == false)
             return false;
         if (other.getReason() == null ^ this.getReason() == null)
             return false;
-        if (other.getReason() != null
-                && other.getReason().equals(this.getReason()) == false)
+        if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
         return true;
     }
@@ -375,18 +326,10 @@ public class DisableStageTransitionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPipelineName() == null) ? 0 : getPipelineName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStageName() == null) ? 0 : getStageName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTransitionType() == null) ? 0 : getTransitionType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getReason() == null) ? 0 : getReason().hashCode());
+        hashCode = prime * hashCode + ((getPipelineName() == null) ? 0 : getPipelineName().hashCode());
+        hashCode = prime * hashCode + ((getStageName() == null) ? 0 : getStageName().hashCode());
+        hashCode = prime * hashCode + ((getTransitionType() == null) ? 0 : getTransitionType().hashCode());
+        hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class TestMetricFilterResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class TestMetricFilterResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord> matches;
 
@@ -46,28 +42,23 @@ public class TestMetricFilterResult extends
             return;
         }
 
-        this.matches = new com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>(
-                matches);
+        this.matches = new com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>(matches);
     }
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setMatches(java.util.Collection)} or
-     * {@link #withMatches(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMatches(java.util.Collection)} or {@link #withMatches(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param matches
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TestMetricFilterResult withMatches(
-            MetricFilterMatchRecord... matches) {
+    public TestMetricFilterResult withMatches(MetricFilterMatchRecord... matches) {
         if (this.matches == null) {
-            setMatches(new com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>(
-                    matches.length));
+            setMatches(new com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>(matches.length));
         }
         for (MetricFilterMatchRecord ele : matches) {
             this.matches.add(ele);
@@ -77,19 +68,16 @@ public class TestMetricFilterResult extends
 
     /**
      * @param matches
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TestMetricFilterResult withMatches(
-            java.util.Collection<MetricFilterMatchRecord> matches) {
+    public TestMetricFilterResult withMatches(java.util.Collection<MetricFilterMatchRecord> matches) {
         setMatches(matches);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -117,8 +105,7 @@ public class TestMetricFilterResult extends
         TestMetricFilterResult other = (TestMetricFilterResult) obj;
         if (other.getMatches() == null ^ this.getMatches() == null)
             return false;
-        if (other.getMatches() != null
-                && other.getMatches().equals(this.getMatches()) == false)
+        if (other.getMatches() != null && other.getMatches().equals(this.getMatches()) == false)
             return false;
         return true;
     }
@@ -128,8 +115,7 @@ public class TestMetricFilterResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMatches() == null) ? 0 : getMatches().hashCode());
+        hashCode = prime * hashCode + ((getMatches() == null) ? 0 : getMatches().hashCode());
         return hashCode;
     }
 
@@ -138,9 +124,7 @@ public class TestMetricFilterResult extends
         try {
             return (TestMetricFilterResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

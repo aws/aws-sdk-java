@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.CreateVpcPeeringConnectionRequ
  * Contains the parameters for CreateVpcPeeringConnection.
  * </p>
  */
-public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<CreateVpcPeeringConnectionRequest> {
 
     /**
@@ -82,8 +79,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      * 
      * @param vpcId
      *        The ID of the requester VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateVpcPeeringConnectionRequest withVpcId(String vpcId) {
@@ -97,8 +93,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param peerVpcId
-     *        The ID of the VPC with which you are creating the VPC peering
-     *        connection.
+     *        The ID of the VPC with which you are creating the VPC peering connection.
      */
 
     public void setPeerVpcId(String peerVpcId) {
@@ -110,8 +105,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      * The ID of the VPC with which you are creating the VPC peering connection.
      * </p>
      * 
-     * @return The ID of the VPC with which you are creating the VPC peering
-     *         connection.
+     * @return The ID of the VPC with which you are creating the VPC peering connection.
      */
 
     public String getPeerVpcId() {
@@ -124,10 +118,8 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param peerVpcId
-     *        The ID of the VPC with which you are creating the VPC peering
-     *        connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the VPC with which you are creating the VPC peering connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateVpcPeeringConnectionRequest withPeerVpcId(String peerVpcId) {
@@ -182,8 +174,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      *        The AWS account ID of the owner of the peer VPC.</p>
      *        <p>
      *        Default: Your AWS account ID
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateVpcPeeringConnectionRequest withPeerOwnerId(String peerOwnerId) {
@@ -192,21 +183,18 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<CreateVpcPeeringConnectionRequest> getDryRunRequest() {
-        Request<CreateVpcPeeringConnectionRequest> request = new CreateVpcPeeringConnectionRequestMarshaller()
-                .marshall(this);
+        Request<CreateVpcPeeringConnectionRequest> request = new CreateVpcPeeringConnectionRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -238,18 +226,15 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
         CreateVpcPeeringConnectionRequest other = (CreateVpcPeeringConnectionRequest) obj;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         if (other.getPeerVpcId() == null ^ this.getPeerVpcId() == null)
             return false;
-        if (other.getPeerVpcId() != null
-                && other.getPeerVpcId().equals(this.getPeerVpcId()) == false)
+        if (other.getPeerVpcId() != null && other.getPeerVpcId().equals(this.getPeerVpcId()) == false)
             return false;
         if (other.getPeerOwnerId() == null ^ this.getPeerOwnerId() == null)
             return false;
-        if (other.getPeerOwnerId() != null
-                && other.getPeerOwnerId().equals(this.getPeerOwnerId()) == false)
+        if (other.getPeerOwnerId() != null && other.getPeerOwnerId().equals(this.getPeerOwnerId()) == false)
             return false;
         return true;
     }
@@ -259,13 +244,9 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode
-                + ((getPeerVpcId() == null) ? 0 : getPeerVpcId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPeerOwnerId() == null) ? 0 : getPeerOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getPeerVpcId() == null) ? 0 : getPeerVpcId().hashCode());
+        hashCode = prime * hashCode + ((getPeerOwnerId() == null) ? 0 : getPeerOwnerId().hashCode());
         return hashCode;
     }
 

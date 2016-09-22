@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.support.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeCasesRequest Marshaller
  */
-public class DescribeCasesRequestMarshaller implements
-        Marshaller<Request<DescribeCasesRequest>, DescribeCasesRequest> {
+public class DescribeCasesRequestMarshaller implements Marshaller<Request<DescribeCasesRequest>, DescribeCasesRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -44,16 +41,13 @@ public class DescribeCasesRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeCasesRequest> marshall(
-            DescribeCasesRequest describeCasesRequest) {
+    public Request<DescribeCasesRequest> marshall(DescribeCasesRequest describeCasesRequest) {
 
         if (describeCasesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeCasesRequest> request = new DefaultRequest<DescribeCasesRequest>(
-                describeCasesRequest, "AWSSupport");
+        Request<DescribeCasesRequest> request = new DefaultRequest<DescribeCasesRequest>(describeCasesRequest, "AWSSupport");
         request.addHeader("X-Amz-Target", "AWSSupport_20130415.DescribeCases");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -61,8 +55,7 @@ public class DescribeCasesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
@@ -79,51 +72,38 @@ public class DescribeCasesRequestMarshaller implements
                 jsonGenerator.writeEndArray();
             }
             if (describeCasesRequest.getDisplayId() != null) {
-                jsonGenerator.writeFieldName("displayId").writeValue(
-                        describeCasesRequest.getDisplayId());
+                jsonGenerator.writeFieldName("displayId").writeValue(describeCasesRequest.getDisplayId());
             }
             if (describeCasesRequest.getAfterTime() != null) {
-                jsonGenerator.writeFieldName("afterTime").writeValue(
-                        describeCasesRequest.getAfterTime());
+                jsonGenerator.writeFieldName("afterTime").writeValue(describeCasesRequest.getAfterTime());
             }
             if (describeCasesRequest.getBeforeTime() != null) {
-                jsonGenerator.writeFieldName("beforeTime").writeValue(
-                        describeCasesRequest.getBeforeTime());
+                jsonGenerator.writeFieldName("beforeTime").writeValue(describeCasesRequest.getBeforeTime());
             }
             if (describeCasesRequest.getIncludeResolvedCases() != null) {
-                jsonGenerator.writeFieldName("includeResolvedCases")
-                        .writeValue(
-                                describeCasesRequest.getIncludeResolvedCases());
+                jsonGenerator.writeFieldName("includeResolvedCases").writeValue(describeCasesRequest.getIncludeResolvedCases());
             }
             if (describeCasesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(
-                        describeCasesRequest.getNextToken());
+                jsonGenerator.writeFieldName("nextToken").writeValue(describeCasesRequest.getNextToken());
             }
             if (describeCasesRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("maxResults").writeValue(
-                        describeCasesRequest.getMaxResults());
+                jsonGenerator.writeFieldName("maxResults").writeValue(describeCasesRequest.getMaxResults());
             }
             if (describeCasesRequest.getLanguage() != null) {
-                jsonGenerator.writeFieldName("language").writeValue(
-                        describeCasesRequest.getLanguage());
+                jsonGenerator.writeFieldName("language").writeValue(describeCasesRequest.getLanguage());
             }
             if (describeCasesRequest.getIncludeCommunications() != null) {
-                jsonGenerator
-                        .writeFieldName("includeCommunications")
-                        .writeValue(
-                                describeCasesRequest.getIncludeCommunications());
+                jsonGenerator.writeFieldName("includeCommunications").writeValue(describeCasesRequest.getIncludeCommunications());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

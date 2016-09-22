@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -99,8 +97,7 @@ public class UserType implements Serializable, Cloneable {
      * 
      * @param username
      *        The user name of the user you wish to describe.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserType withUsername(String username) {
@@ -143,22 +140,19 @@ public class UserType implements Serializable, Cloneable {
      * A container with information about the user type attributes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttributes(java.util.Collection)} or
-     * {@link #withAttributes(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param attributes
      *        A container with information about the user type attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserType withAttributes(AttributeType... attributes) {
         if (this.attributes == null) {
-            setAttributes(new java.util.ArrayList<AttributeType>(
-                    attributes.length));
+            setAttributes(new java.util.ArrayList<AttributeType>(attributes.length));
         }
         for (AttributeType ele : attributes) {
             this.attributes.add(ele);
@@ -173,12 +167,10 @@ public class UserType implements Serializable, Cloneable {
      * 
      * @param attributes
      *        A container with information about the user type attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserType withAttributes(
-            java.util.Collection<AttributeType> attributes) {
+    public UserType withAttributes(java.util.Collection<AttributeType> attributes) {
         setAttributes(attributes);
         return this;
     }
@@ -215,8 +207,7 @@ public class UserType implements Serializable, Cloneable {
      * 
      * @param userCreateDate
      *        The creation date of the user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserType withUserCreateDate(java.util.Date userCreateDate) {
@@ -256,8 +247,7 @@ public class UserType implements Serializable, Cloneable {
      * 
      * @param userLastModifiedDate
      *        The last modified date of the user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserType withUserLastModifiedDate(java.util.Date userLastModifiedDate) {
@@ -297,8 +287,7 @@ public class UserType implements Serializable, Cloneable {
      * 
      * @param enabled
      *        Specifies whether the user is enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserType withEnabled(Boolean enabled) {
@@ -336,8 +325,7 @@ public class UserType implements Serializable, Cloneable {
      *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
      *        <li>CONFIRMED - User has been confirmed.</li>
      *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security
-     *        threat.</li>
+     *        <li>COMPROMISED - User is disabled due to a potential security threat.</li>
      *        <li>UNKNOWN - User status is not known.</li>
      * @see UserStatusType
      */
@@ -363,8 +351,7 @@ public class UserType implements Serializable, Cloneable {
      *         <li>UNCONFIRMED - User has been created but not confirmed.</li>
      *         <li>CONFIRMED - User has been confirmed.</li>
      *         <li>ARCHIVED - User is no longer active.</li>
-     *         <li>COMPROMISED - User is disabled due to a potential security
-     *         threat.</li>
+     *         <li>COMPROMISED - User is disabled due to a potential security threat.</li>
      *         <li>UNKNOWN - User status is not known.</li>
      * @see UserStatusType
      */
@@ -391,11 +378,9 @@ public class UserType implements Serializable, Cloneable {
      *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
      *        <li>CONFIRMED - User has been confirmed.</li>
      *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security
-     *        threat.</li>
+     *        <li>COMPROMISED - User is disabled due to a potential security threat.</li>
      *        <li>UNKNOWN - User status is not known.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserStatusType
      */
 
@@ -422,8 +407,7 @@ public class UserType implements Serializable, Cloneable {
      *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
      *        <li>CONFIRMED - User has been confirmed.</li>
      *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security
-     *        threat.</li>
+     *        <li>COMPROMISED - User is disabled due to a potential security threat.</li>
      *        <li>UNKNOWN - User status is not known.</li>
      * @see UserStatusType
      */
@@ -450,11 +434,9 @@ public class UserType implements Serializable, Cloneable {
      *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
      *        <li>CONFIRMED - User has been confirmed.</li>
      *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security
-     *        threat.</li>
+     *        <li>COMPROMISED - User is disabled due to a potential security threat.</li>
      *        <li>UNKNOWN - User status is not known.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserStatusType
      */
 
@@ -464,8 +446,7 @@ public class UserType implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -482,8 +463,7 @@ public class UserType implements Serializable, Cloneable {
         if (getUserCreateDate() != null)
             sb.append("UserCreateDate: " + getUserCreateDate() + ",");
         if (getUserLastModifiedDate() != null)
-            sb.append("UserLastModifiedDate: " + getUserLastModifiedDate()
-                    + ",");
+            sb.append("UserLastModifiedDate: " + getUserLastModifiedDate() + ",");
         if (getEnabled() != null)
             sb.append("Enabled: " + getEnabled() + ",");
         if (getUserStatus() != null)
@@ -504,36 +484,27 @@ public class UserType implements Serializable, Cloneable {
         UserType other = (UserType) obj;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
-        if (other.getUsername() != null
-                && other.getUsername().equals(this.getUsername()) == false)
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
-        if (other.getAttributes() != null
-                && other.getAttributes().equals(this.getAttributes()) == false)
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
-        if (other.getUserCreateDate() == null
-                ^ this.getUserCreateDate() == null)
+        if (other.getUserCreateDate() == null ^ this.getUserCreateDate() == null)
             return false;
-        if (other.getUserCreateDate() != null
-                && other.getUserCreateDate().equals(this.getUserCreateDate()) == false)
+        if (other.getUserCreateDate() != null && other.getUserCreateDate().equals(this.getUserCreateDate()) == false)
             return false;
-        if (other.getUserLastModifiedDate() == null
-                ^ this.getUserLastModifiedDate() == null)
+        if (other.getUserLastModifiedDate() == null ^ this.getUserLastModifiedDate() == null)
             return false;
-        if (other.getUserLastModifiedDate() != null
-                && other.getUserLastModifiedDate().equals(
-                        this.getUserLastModifiedDate()) == false)
+        if (other.getUserLastModifiedDate() != null && other.getUserLastModifiedDate().equals(this.getUserLastModifiedDate()) == false)
             return false;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
-        if (other.getEnabled() != null
-                && other.getEnabled().equals(this.getEnabled()) == false)
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
         if (other.getUserStatus() == null ^ this.getUserStatus() == null)
             return false;
-        if (other.getUserStatus() != null
-                && other.getUserStatus().equals(this.getUserStatus()) == false)
+        if (other.getUserStatus() != null && other.getUserStatus().equals(this.getUserStatus()) == false)
             return false;
         return true;
     }
@@ -543,22 +514,12 @@ public class UserType implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        hashCode = prime * hashCode
-                + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUserCreateDate() == null) ? 0 : getUserCreateDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUserLastModifiedDate() == null) ? 0
-                        : getUserLastModifiedDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserStatus() == null) ? 0 : getUserStatus().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getUserCreateDate() == null) ? 0 : getUserCreateDate().hashCode());
+        hashCode = prime * hashCode + ((getUserLastModifiedDate() == null) ? 0 : getUserLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getUserStatus() == null) ? 0 : getUserStatus().hashCode());
         return hashCode;
     }
 
@@ -567,9 +528,7 @@ public class UserType implements Serializable, Cloneable {
         try {
             return (UserType) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

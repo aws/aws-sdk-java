@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
 
@@ -18,57 +16,50 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Watermarks can be in .png or .jpg format. If you want to display a watermark
- * that is not rectangular, use the .png format, which supports transparency.
+ * Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png
+ * format, which supports transparency.
  * </p>
  */
 public class JobWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the watermark settings that Elastic Transcoder uses to add
-     * watermarks to the video during transcoding. The settings are in the
-     * preset specified by Preset for the current output. In that preset, the
-     * value of Watermarks Id tells Elastic Transcoder which settings to use.
+     * The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during transcoding.
+     * The settings are in the preset specified by Preset for the current output. In that preset, the value of
+     * Watermarks Id tells Elastic Transcoder which settings to use.
      * </p>
      */
     private String presetWatermarkId;
     /**
      * <p>
-     * The name of the .png or .jpg file that you want to use for the watermark.
-     * To determine which Amazon S3 bucket contains the specified file, Elastic
-     * Transcoder checks the pipeline specified by <code>Pipeline</code>; the
+     * The name of the .png or .jpg file that you want to use for the watermark. To determine which Amazon S3 bucket
+     * contains the specified file, Elastic Transcoder checks the pipeline specified by <code>Pipeline</code>; the
      * <code>Input Bucket</code> object in that pipeline identifies the bucket.
      * </p>
      * <p>
-     * If the file name includes a prefix, for example, <b>logos/128x64.png</b>,
-     * include the prefix in the key. If the file isn't in the specified bucket,
-     * Elastic Transcoder returns an error.
+     * If the file name includes a prefix, for example, <b>logos/128x64.png</b>, include the prefix in the key. If the
+     * file isn't in the specified bucket, Elastic Transcoder returns an error.
      * </p>
      */
     private String inputKey;
     /**
      * <p>
-     * The encryption settings, if any, that you want Elastic Transcoder to
-     * apply to your watermarks.
+     * The encryption settings, if any, that you want Elastic Transcoder to apply to your watermarks.
      * </p>
      */
     private Encryption encryption;
 
     /**
      * <p>
-     * The ID of the watermark settings that Elastic Transcoder uses to add
-     * watermarks to the video during transcoding. The settings are in the
-     * preset specified by Preset for the current output. In that preset, the
-     * value of Watermarks Id tells Elastic Transcoder which settings to use.
+     * The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during transcoding.
+     * The settings are in the preset specified by Preset for the current output. In that preset, the value of
+     * Watermarks Id tells Elastic Transcoder which settings to use.
      * </p>
      * 
      * @param presetWatermarkId
-     *        The ID of the watermark settings that Elastic Transcoder uses to
-     *        add watermarks to the video during transcoding. The settings are
-     *        in the preset specified by Preset for the current output. In that
-     *        preset, the value of Watermarks Id tells Elastic Transcoder which
-     *        settings to use.
+     *        The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during
+     *        transcoding. The settings are in the preset specified by Preset for the current output. In that preset,
+     *        the value of Watermarks Id tells Elastic Transcoder which settings to use.
      */
 
     public void setPresetWatermarkId(String presetWatermarkId) {
@@ -77,17 +68,14 @@ public class JobWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the watermark settings that Elastic Transcoder uses to add
-     * watermarks to the video during transcoding. The settings are in the
-     * preset specified by Preset for the current output. In that preset, the
-     * value of Watermarks Id tells Elastic Transcoder which settings to use.
+     * The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during transcoding.
+     * The settings are in the preset specified by Preset for the current output. In that preset, the value of
+     * Watermarks Id tells Elastic Transcoder which settings to use.
      * </p>
      * 
-     * @return The ID of the watermark settings that Elastic Transcoder uses to
-     *         add watermarks to the video during transcoding. The settings are
-     *         in the preset specified by Preset for the current output. In that
-     *         preset, the value of Watermarks Id tells Elastic Transcoder which
-     *         settings to use.
+     * @return The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during
+     *         transcoding. The settings are in the preset specified by Preset for the current output. In that preset,
+     *         the value of Watermarks Id tells Elastic Transcoder which settings to use.
      */
 
     public String getPresetWatermarkId() {
@@ -96,20 +84,16 @@ public class JobWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the watermark settings that Elastic Transcoder uses to add
-     * watermarks to the video during transcoding. The settings are in the
-     * preset specified by Preset for the current output. In that preset, the
-     * value of Watermarks Id tells Elastic Transcoder which settings to use.
+     * The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during transcoding.
+     * The settings are in the preset specified by Preset for the current output. In that preset, the value of
+     * Watermarks Id tells Elastic Transcoder which settings to use.
      * </p>
      * 
      * @param presetWatermarkId
-     *        The ID of the watermark settings that Elastic Transcoder uses to
-     *        add watermarks to the video during transcoding. The settings are
-     *        in the preset specified by Preset for the current output. In that
-     *        preset, the value of Watermarks Id tells Elastic Transcoder which
-     *        settings to use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during
+     *        transcoding. The settings are in the preset specified by Preset for the current output. In that preset,
+     *        the value of Watermarks Id tells Elastic Transcoder which settings to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public JobWatermark withPresetWatermarkId(String presetWatermarkId) {
@@ -119,28 +103,22 @@ public class JobWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the .png or .jpg file that you want to use for the watermark.
-     * To determine which Amazon S3 bucket contains the specified file, Elastic
-     * Transcoder checks the pipeline specified by <code>Pipeline</code>; the
+     * The name of the .png or .jpg file that you want to use for the watermark. To determine which Amazon S3 bucket
+     * contains the specified file, Elastic Transcoder checks the pipeline specified by <code>Pipeline</code>; the
      * <code>Input Bucket</code> object in that pipeline identifies the bucket.
      * </p>
      * <p>
-     * If the file name includes a prefix, for example, <b>logos/128x64.png</b>,
-     * include the prefix in the key. If the file isn't in the specified bucket,
-     * Elastic Transcoder returns an error.
+     * If the file name includes a prefix, for example, <b>logos/128x64.png</b>, include the prefix in the key. If the
+     * file isn't in the specified bucket, Elastic Transcoder returns an error.
      * </p>
      * 
      * @param inputKey
-     *        The name of the .png or .jpg file that you want to use for the
-     *        watermark. To determine which Amazon S3 bucket contains the
-     *        specified file, Elastic Transcoder checks the pipeline specified
-     *        by <code>Pipeline</code>; the <code>Input Bucket</code> object in
-     *        that pipeline identifies the bucket.</p>
+     *        The name of the .png or .jpg file that you want to use for the watermark. To determine which Amazon S3
+     *        bucket contains the specified file, Elastic Transcoder checks the pipeline specified by
+     *        <code>Pipeline</code>; the <code>Input Bucket</code> object in that pipeline identifies the bucket.</p>
      *        <p>
-     *        If the file name includes a prefix, for example,
-     *        <b>logos/128x64.png</b>, include the prefix in the key. If the
-     *        file isn't in the specified bucket, Elastic Transcoder returns an
-     *        error.
+     *        If the file name includes a prefix, for example, <b>logos/128x64.png</b>, include the prefix in the key.
+     *        If the file isn't in the specified bucket, Elastic Transcoder returns an error.
      */
 
     public void setInputKey(String inputKey) {
@@ -149,27 +127,21 @@ public class JobWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the .png or .jpg file that you want to use for the watermark.
-     * To determine which Amazon S3 bucket contains the specified file, Elastic
-     * Transcoder checks the pipeline specified by <code>Pipeline</code>; the
+     * The name of the .png or .jpg file that you want to use for the watermark. To determine which Amazon S3 bucket
+     * contains the specified file, Elastic Transcoder checks the pipeline specified by <code>Pipeline</code>; the
      * <code>Input Bucket</code> object in that pipeline identifies the bucket.
      * </p>
      * <p>
-     * If the file name includes a prefix, for example, <b>logos/128x64.png</b>,
-     * include the prefix in the key. If the file isn't in the specified bucket,
-     * Elastic Transcoder returns an error.
+     * If the file name includes a prefix, for example, <b>logos/128x64.png</b>, include the prefix in the key. If the
+     * file isn't in the specified bucket, Elastic Transcoder returns an error.
      * </p>
      * 
-     * @return The name of the .png or .jpg file that you want to use for the
-     *         watermark. To determine which Amazon S3 bucket contains the
-     *         specified file, Elastic Transcoder checks the pipeline specified
-     *         by <code>Pipeline</code>; the <code>Input Bucket</code> object in
-     *         that pipeline identifies the bucket.</p>
+     * @return The name of the .png or .jpg file that you want to use for the watermark. To determine which Amazon S3
+     *         bucket contains the specified file, Elastic Transcoder checks the pipeline specified by
+     *         <code>Pipeline</code>; the <code>Input Bucket</code> object in that pipeline identifies the bucket.</p>
      *         <p>
-     *         If the file name includes a prefix, for example,
-     *         <b>logos/128x64.png</b>, include the prefix in the key. If the
-     *         file isn't in the specified bucket, Elastic Transcoder returns an
-     *         error.
+     *         If the file name includes a prefix, for example, <b>logos/128x64.png</b>, include the prefix in the key.
+     *         If the file isn't in the specified bucket, Elastic Transcoder returns an error.
      */
 
     public String getInputKey() {
@@ -178,30 +150,23 @@ public class JobWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the .png or .jpg file that you want to use for the watermark.
-     * To determine which Amazon S3 bucket contains the specified file, Elastic
-     * Transcoder checks the pipeline specified by <code>Pipeline</code>; the
+     * The name of the .png or .jpg file that you want to use for the watermark. To determine which Amazon S3 bucket
+     * contains the specified file, Elastic Transcoder checks the pipeline specified by <code>Pipeline</code>; the
      * <code>Input Bucket</code> object in that pipeline identifies the bucket.
      * </p>
      * <p>
-     * If the file name includes a prefix, for example, <b>logos/128x64.png</b>,
-     * include the prefix in the key. If the file isn't in the specified bucket,
-     * Elastic Transcoder returns an error.
+     * If the file name includes a prefix, for example, <b>logos/128x64.png</b>, include the prefix in the key. If the
+     * file isn't in the specified bucket, Elastic Transcoder returns an error.
      * </p>
      * 
      * @param inputKey
-     *        The name of the .png or .jpg file that you want to use for the
-     *        watermark. To determine which Amazon S3 bucket contains the
-     *        specified file, Elastic Transcoder checks the pipeline specified
-     *        by <code>Pipeline</code>; the <code>Input Bucket</code> object in
-     *        that pipeline identifies the bucket.</p>
+     *        The name of the .png or .jpg file that you want to use for the watermark. To determine which Amazon S3
+     *        bucket contains the specified file, Elastic Transcoder checks the pipeline specified by
+     *        <code>Pipeline</code>; the <code>Input Bucket</code> object in that pipeline identifies the bucket.</p>
      *        <p>
-     *        If the file name includes a prefix, for example,
-     *        <b>logos/128x64.png</b>, include the prefix in the key. If the
-     *        file isn't in the specified bucket, Elastic Transcoder returns an
-     *        error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the file name includes a prefix, for example, <b>logos/128x64.png</b>, include the prefix in the key.
+     *        If the file isn't in the specified bucket, Elastic Transcoder returns an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public JobWatermark withInputKey(String inputKey) {
@@ -211,13 +176,11 @@ public class JobWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption settings, if any, that you want Elastic Transcoder to
-     * apply to your watermarks.
+     * The encryption settings, if any, that you want Elastic Transcoder to apply to your watermarks.
      * </p>
      * 
      * @param encryption
-     *        The encryption settings, if any, that you want Elastic Transcoder
-     *        to apply to your watermarks.
+     *        The encryption settings, if any, that you want Elastic Transcoder to apply to your watermarks.
      */
 
     public void setEncryption(Encryption encryption) {
@@ -226,12 +189,10 @@ public class JobWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption settings, if any, that you want Elastic Transcoder to
-     * apply to your watermarks.
+     * The encryption settings, if any, that you want Elastic Transcoder to apply to your watermarks.
      * </p>
      * 
-     * @return The encryption settings, if any, that you want Elastic Transcoder
-     *         to apply to your watermarks.
+     * @return The encryption settings, if any, that you want Elastic Transcoder to apply to your watermarks.
      */
 
     public Encryption getEncryption() {
@@ -240,15 +201,12 @@ public class JobWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption settings, if any, that you want Elastic Transcoder to
-     * apply to your watermarks.
+     * The encryption settings, if any, that you want Elastic Transcoder to apply to your watermarks.
      * </p>
      * 
      * @param encryption
-     *        The encryption settings, if any, that you want Elastic Transcoder
-     *        to apply to your watermarks.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The encryption settings, if any, that you want Elastic Transcoder to apply to your watermarks.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public JobWatermark withEncryption(Encryption encryption) {
@@ -257,8 +215,7 @@ public class JobWatermark implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -288,22 +245,17 @@ public class JobWatermark implements Serializable, Cloneable {
         if (obj instanceof JobWatermark == false)
             return false;
         JobWatermark other = (JobWatermark) obj;
-        if (other.getPresetWatermarkId() == null
-                ^ this.getPresetWatermarkId() == null)
+        if (other.getPresetWatermarkId() == null ^ this.getPresetWatermarkId() == null)
             return false;
-        if (other.getPresetWatermarkId() != null
-                && other.getPresetWatermarkId().equals(
-                        this.getPresetWatermarkId()) == false)
+        if (other.getPresetWatermarkId() != null && other.getPresetWatermarkId().equals(this.getPresetWatermarkId()) == false)
             return false;
         if (other.getInputKey() == null ^ this.getInputKey() == null)
             return false;
-        if (other.getInputKey() != null
-                && other.getInputKey().equals(this.getInputKey()) == false)
+        if (other.getInputKey() != null && other.getInputKey().equals(this.getInputKey()) == false)
             return false;
         if (other.getEncryption() == null ^ this.getEncryption() == null)
             return false;
-        if (other.getEncryption() != null
-                && other.getEncryption().equals(this.getEncryption()) == false)
+        if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false)
             return false;
         return true;
     }
@@ -313,14 +265,9 @@ public class JobWatermark implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPresetWatermarkId() == null) ? 0
-                        : getPresetWatermarkId().hashCode());
-        hashCode = prime * hashCode
-                + ((getInputKey() == null) ? 0 : getInputKey().hashCode());
-        hashCode = prime * hashCode
-                + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
+        hashCode = prime * hashCode + ((getPresetWatermarkId() == null) ? 0 : getPresetWatermarkId().hashCode());
+        hashCode = prime * hashCode + ((getInputKey() == null) ? 0 : getInputKey().hashCode());
+        hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         return hashCode;
     }
 
@@ -329,9 +276,7 @@ public class JobWatermark implements Serializable, Cloneable {
         try {
             return (JobWatermark) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

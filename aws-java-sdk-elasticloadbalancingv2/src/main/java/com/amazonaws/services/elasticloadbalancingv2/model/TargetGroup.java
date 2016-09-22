@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
@@ -67,29 +65,25 @@ public class TargetGroup implements Serializable, Cloneable {
     private String healthCheckPort;
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an
-     * individual target.
+     * The approximate amount of time, in seconds, between health checks of an individual target.
      * </p>
      */
     private Integer healthCheckIntervalSeconds;
     /**
      * <p>
-     * The amount of time, in seconds, during which no response means a failed
-     * health check.
+     * The amount of time, in seconds, during which no response means a failed health check.
      * </p>
      */
     private Integer healthCheckTimeoutSeconds;
     /**
      * <p>
-     * The number of consecutive health checks successes required before
-     * considering an unhealthy target healthy.
+     * The number of consecutive health checks successes required before considering an unhealthy target healthy.
      * </p>
      */
     private Integer healthyThresholdCount;
     /**
      * <p>
-     * The number of consecutive health check failures required before
-     * considering the target unhealthy.
+     * The number of consecutive health check failures required before considering the target unhealthy.
      * </p>
      */
     private Integer unhealthyThresholdCount;
@@ -101,15 +95,13 @@ public class TargetGroup implements Serializable, Cloneable {
     private String healthCheckPath;
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a
-     * target.
+     * The HTTP codes to use when checking for a successful response from a target.
      * </p>
      */
     private Matcher matcher;
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers that route traffic
-     * to this target group.
+     * The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
      * </p>
      */
     private java.util.List<String> loadBalancerArns;
@@ -146,8 +138,7 @@ public class TargetGroup implements Serializable, Cloneable {
      * 
      * @param targetGroupArn
      *        The Amazon Resource Name (ARN) of the target group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TargetGroup withTargetGroupArn(String targetGroupArn) {
@@ -187,8 +178,7 @@ public class TargetGroup implements Serializable, Cloneable {
      * 
      * @param targetGroupName
      *        The name of the target group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TargetGroup withTargetGroupName(String targetGroupName) {
@@ -230,8 +220,7 @@ public class TargetGroup implements Serializable, Cloneable {
      * 
      * @param protocol
      *        The protocol to use for routing traffic to the targets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
 
@@ -261,8 +250,7 @@ public class TargetGroup implements Serializable, Cloneable {
      * 
      * @param protocol
      *        The protocol to use for routing traffic to the targets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
 
@@ -303,8 +291,7 @@ public class TargetGroup implements Serializable, Cloneable {
      * 
      * @param port
      *        The port on which the targets are listening.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TargetGroup withPort(Integer port) {
@@ -344,8 +331,7 @@ public class TargetGroup implements Serializable, Cloneable {
      * 
      * @param vpcId
      *        The ID of the VPC for the targets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TargetGroup withVpcId(String vpcId) {
@@ -387,8 +373,7 @@ public class TargetGroup implements Serializable, Cloneable {
      * 
      * @param healthCheckProtocol
      *        The protocol to use to connect with the target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
 
@@ -418,8 +403,7 @@ public class TargetGroup implements Serializable, Cloneable {
      * 
      * @param healthCheckProtocol
      *        The protocol to use to connect with the target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
 
@@ -460,8 +444,7 @@ public class TargetGroup implements Serializable, Cloneable {
      * 
      * @param healthCheckPort
      *        The port to use to connect with the target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TargetGroup withHealthCheckPort(String healthCheckPort) {
@@ -471,13 +454,11 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an
-     * individual target.
+     * The approximate amount of time, in seconds, between health checks of an individual target.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks
-     *        of an individual target.
+     *        The approximate amount of time, in seconds, between health checks of an individual target.
      */
 
     public void setHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
@@ -486,12 +467,10 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an
-     * individual target.
+     * The approximate amount of time, in seconds, between health checks of an individual target.
      * </p>
      * 
-     * @return The approximate amount of time, in seconds, between health checks
-     *         of an individual target.
+     * @return The approximate amount of time, in seconds, between health checks of an individual target.
      */
 
     public Integer getHealthCheckIntervalSeconds() {
@@ -500,32 +479,26 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an
-     * individual target.
+     * The approximate amount of time, in seconds, between health checks of an individual target.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks
-     *        of an individual target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The approximate amount of time, in seconds, between health checks of an individual target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TargetGroup withHealthCheckIntervalSeconds(
-            Integer healthCheckIntervalSeconds) {
+    public TargetGroup withHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
         setHealthCheckIntervalSeconds(healthCheckIntervalSeconds);
         return this;
     }
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response means a failed
-     * health check.
+     * The amount of time, in seconds, during which no response means a failed health check.
      * </p>
      * 
      * @param healthCheckTimeoutSeconds
-     *        The amount of time, in seconds, during which no response means a
-     *        failed health check.
+     *        The amount of time, in seconds, during which no response means a failed health check.
      */
 
     public void setHealthCheckTimeoutSeconds(Integer healthCheckTimeoutSeconds) {
@@ -534,12 +507,10 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response means a failed
-     * health check.
+     * The amount of time, in seconds, during which no response means a failed health check.
      * </p>
      * 
-     * @return The amount of time, in seconds, during which no response means a
-     *         failed health check.
+     * @return The amount of time, in seconds, during which no response means a failed health check.
      */
 
     public Integer getHealthCheckTimeoutSeconds() {
@@ -548,32 +519,26 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response means a failed
-     * health check.
+     * The amount of time, in seconds, during which no response means a failed health check.
      * </p>
      * 
      * @param healthCheckTimeoutSeconds
-     *        The amount of time, in seconds, during which no response means a
-     *        failed health check.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The amount of time, in seconds, during which no response means a failed health check.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TargetGroup withHealthCheckTimeoutSeconds(
-            Integer healthCheckTimeoutSeconds) {
+    public TargetGroup withHealthCheckTimeoutSeconds(Integer healthCheckTimeoutSeconds) {
         setHealthCheckTimeoutSeconds(healthCheckTimeoutSeconds);
         return this;
     }
 
     /**
      * <p>
-     * The number of consecutive health checks successes required before
-     * considering an unhealthy target healthy.
+     * The number of consecutive health checks successes required before considering an unhealthy target healthy.
      * </p>
      * 
      * @param healthyThresholdCount
-     *        The number of consecutive health checks successes required before
-     *        considering an unhealthy target healthy.
+     *        The number of consecutive health checks successes required before considering an unhealthy target healthy.
      */
 
     public void setHealthyThresholdCount(Integer healthyThresholdCount) {
@@ -582,12 +547,11 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of consecutive health checks successes required before
-     * considering an unhealthy target healthy.
+     * The number of consecutive health checks successes required before considering an unhealthy target healthy.
      * </p>
      * 
-     * @return The number of consecutive health checks successes required before
-     *         considering an unhealthy target healthy.
+     * @return The number of consecutive health checks successes required before considering an unhealthy target
+     *         healthy.
      */
 
     public Integer getHealthyThresholdCount() {
@@ -596,15 +560,12 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of consecutive health checks successes required before
-     * considering an unhealthy target healthy.
+     * The number of consecutive health checks successes required before considering an unhealthy target healthy.
      * </p>
      * 
      * @param healthyThresholdCount
-     *        The number of consecutive health checks successes required before
-     *        considering an unhealthy target healthy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of consecutive health checks successes required before considering an unhealthy target healthy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TargetGroup withHealthyThresholdCount(Integer healthyThresholdCount) {
@@ -614,13 +575,11 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of consecutive health check failures required before
-     * considering the target unhealthy.
+     * The number of consecutive health check failures required before considering the target unhealthy.
      * </p>
      * 
      * @param unhealthyThresholdCount
-     *        The number of consecutive health check failures required before
-     *        considering the target unhealthy.
+     *        The number of consecutive health check failures required before considering the target unhealthy.
      */
 
     public void setUnhealthyThresholdCount(Integer unhealthyThresholdCount) {
@@ -629,12 +588,10 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of consecutive health check failures required before
-     * considering the target unhealthy.
+     * The number of consecutive health check failures required before considering the target unhealthy.
      * </p>
      * 
-     * @return The number of consecutive health check failures required before
-     *         considering the target unhealthy.
+     * @return The number of consecutive health check failures required before considering the target unhealthy.
      */
 
     public Integer getUnhealthyThresholdCount() {
@@ -643,19 +600,15 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of consecutive health check failures required before
-     * considering the target unhealthy.
+     * The number of consecutive health check failures required before considering the target unhealthy.
      * </p>
      * 
      * @param unhealthyThresholdCount
-     *        The number of consecutive health check failures required before
-     *        considering the target unhealthy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of consecutive health check failures required before considering the target unhealthy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TargetGroup withUnhealthyThresholdCount(
-            Integer unhealthyThresholdCount) {
+    public TargetGroup withUnhealthyThresholdCount(Integer unhealthyThresholdCount) {
         setUnhealthyThresholdCount(unhealthyThresholdCount);
         return this;
     }
@@ -692,8 +645,7 @@ public class TargetGroup implements Serializable, Cloneable {
      * 
      * @param healthCheckPath
      *        The destination for the health check request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TargetGroup withHealthCheckPath(String healthCheckPath) {
@@ -703,13 +655,11 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a
-     * target.
+     * The HTTP codes to use when checking for a successful response from a target.
      * </p>
      * 
      * @param matcher
-     *        The HTTP codes to use when checking for a successful response from
-     *        a target.
+     *        The HTTP codes to use when checking for a successful response from a target.
      */
 
     public void setMatcher(Matcher matcher) {
@@ -718,12 +668,10 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a
-     * target.
+     * The HTTP codes to use when checking for a successful response from a target.
      * </p>
      * 
-     * @return The HTTP codes to use when checking for a successful response
-     *         from a target.
+     * @return The HTTP codes to use when checking for a successful response from a target.
      */
 
     public Matcher getMatcher() {
@@ -732,15 +680,12 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a
-     * target.
+     * The HTTP codes to use when checking for a successful response from a target.
      * </p>
      * 
      * @param matcher
-     *        The HTTP codes to use when checking for a successful response from
-     *        a target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The HTTP codes to use when checking for a successful response from a target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TargetGroup withMatcher(Matcher matcher) {
@@ -750,12 +695,10 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers that route traffic
-     * to this target group.
+     * The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of the load balancers that route
-     *         traffic to this target group.
+     * @return The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
      */
 
     public java.util.List<String> getLoadBalancerArns() {
@@ -764,49 +707,40 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers that route traffic
-     * to this target group.
+     * The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
      * </p>
      * 
      * @param loadBalancerArns
-     *        The Amazon Resource Names (ARN) of the load balancers that route
-     *        traffic to this target group.
+     *        The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
      */
 
-    public void setLoadBalancerArns(
-            java.util.Collection<String> loadBalancerArns) {
+    public void setLoadBalancerArns(java.util.Collection<String> loadBalancerArns) {
         if (loadBalancerArns == null) {
             this.loadBalancerArns = null;
             return;
         }
 
-        this.loadBalancerArns = new java.util.ArrayList<String>(
-                loadBalancerArns);
+        this.loadBalancerArns = new java.util.ArrayList<String>(loadBalancerArns);
     }
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers that route traffic
-     * to this target group.
+     * The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLoadBalancerArns(java.util.Collection)} or
-     * {@link #withLoadBalancerArns(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLoadBalancerArns(java.util.Collection)} or {@link #withLoadBalancerArns(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param loadBalancerArns
-     *        The Amazon Resource Names (ARN) of the load balancers that route
-     *        traffic to this target group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TargetGroup withLoadBalancerArns(String... loadBalancerArns) {
         if (this.loadBalancerArns == null) {
-            setLoadBalancerArns(new java.util.ArrayList<String>(
-                    loadBalancerArns.length));
+            setLoadBalancerArns(new java.util.ArrayList<String>(loadBalancerArns.length));
         }
         for (String ele : loadBalancerArns) {
             this.loadBalancerArns.add(ele);
@@ -816,26 +750,21 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers that route traffic
-     * to this target group.
+     * The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
      * </p>
      * 
      * @param loadBalancerArns
-     *        The Amazon Resource Names (ARN) of the load balancers that route
-     *        traffic to this target group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TargetGroup withLoadBalancerArns(
-            java.util.Collection<String> loadBalancerArns) {
+    public TargetGroup withLoadBalancerArns(java.util.Collection<String> loadBalancerArns) {
         setLoadBalancerArns(loadBalancerArns);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -860,17 +789,13 @@ public class TargetGroup implements Serializable, Cloneable {
         if (getHealthCheckPort() != null)
             sb.append("HealthCheckPort: " + getHealthCheckPort() + ",");
         if (getHealthCheckIntervalSeconds() != null)
-            sb.append("HealthCheckIntervalSeconds: "
-                    + getHealthCheckIntervalSeconds() + ",");
+            sb.append("HealthCheckIntervalSeconds: " + getHealthCheckIntervalSeconds() + ",");
         if (getHealthCheckTimeoutSeconds() != null)
-            sb.append("HealthCheckTimeoutSeconds: "
-                    + getHealthCheckTimeoutSeconds() + ",");
+            sb.append("HealthCheckTimeoutSeconds: " + getHealthCheckTimeoutSeconds() + ",");
         if (getHealthyThresholdCount() != null)
-            sb.append("HealthyThresholdCount: " + getHealthyThresholdCount()
-                    + ",");
+            sb.append("HealthyThresholdCount: " + getHealthyThresholdCount() + ",");
         if (getUnhealthyThresholdCount() != null)
-            sb.append("UnhealthyThresholdCount: "
-                    + getUnhealthyThresholdCount() + ",");
+            sb.append("UnhealthyThresholdCount: " + getUnhealthyThresholdCount() + ",");
         if (getHealthCheckPath() != null)
             sb.append("HealthCheckPath: " + getHealthCheckPath() + ",");
         if (getMatcher() != null)
@@ -891,91 +816,61 @@ public class TargetGroup implements Serializable, Cloneable {
         if (obj instanceof TargetGroup == false)
             return false;
         TargetGroup other = (TargetGroup) obj;
-        if (other.getTargetGroupArn() == null
-                ^ this.getTargetGroupArn() == null)
+        if (other.getTargetGroupArn() == null ^ this.getTargetGroupArn() == null)
             return false;
-        if (other.getTargetGroupArn() != null
-                && other.getTargetGroupArn().equals(this.getTargetGroupArn()) == false)
+        if (other.getTargetGroupArn() != null && other.getTargetGroupArn().equals(this.getTargetGroupArn()) == false)
             return false;
-        if (other.getTargetGroupName() == null
-                ^ this.getTargetGroupName() == null)
+        if (other.getTargetGroupName() == null ^ this.getTargetGroupName() == null)
             return false;
-        if (other.getTargetGroupName() != null
-                && other.getTargetGroupName().equals(this.getTargetGroupName()) == false)
+        if (other.getTargetGroupName() != null && other.getTargetGroupName().equals(this.getTargetGroupName()) == false)
             return false;
         if (other.getProtocol() == null ^ this.getProtocol() == null)
             return false;
-        if (other.getProtocol() != null
-                && other.getProtocol().equals(this.getProtocol()) == false)
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
             return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
-        if (other.getPort() != null
-                && other.getPort().equals(this.getPort()) == false)
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
-        if (other.getHealthCheckProtocol() == null
-                ^ this.getHealthCheckProtocol() == null)
+        if (other.getHealthCheckProtocol() == null ^ this.getHealthCheckProtocol() == null)
             return false;
-        if (other.getHealthCheckProtocol() != null
-                && other.getHealthCheckProtocol().equals(
-                        this.getHealthCheckProtocol()) == false)
+        if (other.getHealthCheckProtocol() != null && other.getHealthCheckProtocol().equals(this.getHealthCheckProtocol()) == false)
             return false;
-        if (other.getHealthCheckPort() == null
-                ^ this.getHealthCheckPort() == null)
+        if (other.getHealthCheckPort() == null ^ this.getHealthCheckPort() == null)
             return false;
-        if (other.getHealthCheckPort() != null
-                && other.getHealthCheckPort().equals(this.getHealthCheckPort()) == false)
+        if (other.getHealthCheckPort() != null && other.getHealthCheckPort().equals(this.getHealthCheckPort()) == false)
             return false;
-        if (other.getHealthCheckIntervalSeconds() == null
-                ^ this.getHealthCheckIntervalSeconds() == null)
+        if (other.getHealthCheckIntervalSeconds() == null ^ this.getHealthCheckIntervalSeconds() == null)
             return false;
-        if (other.getHealthCheckIntervalSeconds() != null
-                && other.getHealthCheckIntervalSeconds().equals(
-                        this.getHealthCheckIntervalSeconds()) == false)
+        if (other.getHealthCheckIntervalSeconds() != null && other.getHealthCheckIntervalSeconds().equals(this.getHealthCheckIntervalSeconds()) == false)
             return false;
-        if (other.getHealthCheckTimeoutSeconds() == null
-                ^ this.getHealthCheckTimeoutSeconds() == null)
+        if (other.getHealthCheckTimeoutSeconds() == null ^ this.getHealthCheckTimeoutSeconds() == null)
             return false;
-        if (other.getHealthCheckTimeoutSeconds() != null
-                && other.getHealthCheckTimeoutSeconds().equals(
-                        this.getHealthCheckTimeoutSeconds()) == false)
+        if (other.getHealthCheckTimeoutSeconds() != null && other.getHealthCheckTimeoutSeconds().equals(this.getHealthCheckTimeoutSeconds()) == false)
             return false;
-        if (other.getHealthyThresholdCount() == null
-                ^ this.getHealthyThresholdCount() == null)
+        if (other.getHealthyThresholdCount() == null ^ this.getHealthyThresholdCount() == null)
             return false;
-        if (other.getHealthyThresholdCount() != null
-                && other.getHealthyThresholdCount().equals(
-                        this.getHealthyThresholdCount()) == false)
+        if (other.getHealthyThresholdCount() != null && other.getHealthyThresholdCount().equals(this.getHealthyThresholdCount()) == false)
             return false;
-        if (other.getUnhealthyThresholdCount() == null
-                ^ this.getUnhealthyThresholdCount() == null)
+        if (other.getUnhealthyThresholdCount() == null ^ this.getUnhealthyThresholdCount() == null)
             return false;
-        if (other.getUnhealthyThresholdCount() != null
-                && other.getUnhealthyThresholdCount().equals(
-                        this.getUnhealthyThresholdCount()) == false)
+        if (other.getUnhealthyThresholdCount() != null && other.getUnhealthyThresholdCount().equals(this.getUnhealthyThresholdCount()) == false)
             return false;
-        if (other.getHealthCheckPath() == null
-                ^ this.getHealthCheckPath() == null)
+        if (other.getHealthCheckPath() == null ^ this.getHealthCheckPath() == null)
             return false;
-        if (other.getHealthCheckPath() != null
-                && other.getHealthCheckPath().equals(this.getHealthCheckPath()) == false)
+        if (other.getHealthCheckPath() != null && other.getHealthCheckPath().equals(this.getHealthCheckPath()) == false)
             return false;
         if (other.getMatcher() == null ^ this.getMatcher() == null)
             return false;
-        if (other.getMatcher() != null
-                && other.getMatcher().equals(this.getMatcher()) == false)
+        if (other.getMatcher() != null && other.getMatcher().equals(this.getMatcher()) == false)
             return false;
-        if (other.getLoadBalancerArns() == null
-                ^ this.getLoadBalancerArns() == null)
+        if (other.getLoadBalancerArns() == null ^ this.getLoadBalancerArns() == null)
             return false;
-        if (other.getLoadBalancerArns() != null
-                && other.getLoadBalancerArns().equals(
-                        this.getLoadBalancerArns()) == false)
+        if (other.getLoadBalancerArns() != null && other.getLoadBalancerArns().equals(this.getLoadBalancerArns()) == false)
             return false;
         return true;
     }
@@ -985,54 +880,20 @@ public class TargetGroup implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getTargetGroupArn() == null) ? 0 : getTargetGroupArn()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTargetGroupName() == null) ? 0 : getTargetGroupName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
-        hashCode = prime * hashCode
-                + ((getPort() == null) ? 0 : getPort().hashCode());
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckProtocol() == null) ? 0
-                        : getHealthCheckProtocol().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckPort() == null) ? 0 : getHealthCheckPort()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckIntervalSeconds() == null) ? 0
-                        : getHealthCheckIntervalSeconds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckTimeoutSeconds() == null) ? 0
-                        : getHealthCheckTimeoutSeconds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthyThresholdCount() == null) ? 0
-                        : getHealthyThresholdCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUnhealthyThresholdCount() == null) ? 0
-                        : getUnhealthyThresholdCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckPath() == null) ? 0 : getHealthCheckPath()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMatcher() == null) ? 0 : getMatcher().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerArns() == null) ? 0 : getLoadBalancerArns()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getTargetGroupArn() == null) ? 0 : getTargetGroupArn().hashCode());
+        hashCode = prime * hashCode + ((getTargetGroupName() == null) ? 0 : getTargetGroupName().hashCode());
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckProtocol() == null) ? 0 : getHealthCheckProtocol().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckPort() == null) ? 0 : getHealthCheckPort().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckIntervalSeconds() == null) ? 0 : getHealthCheckIntervalSeconds().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckTimeoutSeconds() == null) ? 0 : getHealthCheckTimeoutSeconds().hashCode());
+        hashCode = prime * hashCode + ((getHealthyThresholdCount() == null) ? 0 : getHealthyThresholdCount().hashCode());
+        hashCode = prime * hashCode + ((getUnhealthyThresholdCount() == null) ? 0 : getUnhealthyThresholdCount().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckPath() == null) ? 0 : getHealthCheckPath().hashCode());
+        hashCode = prime * hashCode + ((getMatcher() == null) ? 0 : getMatcher().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerArns() == null) ? 0 : getLoadBalancerArns().hashCode());
         return hashCode;
     }
 
@@ -1041,9 +902,7 @@ public class TargetGroup implements Serializable, Cloneable {
         try {
             return (TargetGroup) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

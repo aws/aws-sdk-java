@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -35,26 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeInstancesRequest Marshaller
  */
-public class DescribeInstancesRequestMarshaller implements
-        Marshaller<Request<DescribeInstancesRequest>, DescribeInstancesRequest> {
+public class DescribeInstancesRequestMarshaller implements Marshaller<Request<DescribeInstancesRequest>, DescribeInstancesRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeInstancesRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeInstancesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeInstancesRequest> marshall(
-            DescribeInstancesRequest describeInstancesRequest) {
+    public Request<DescribeInstancesRequest> marshall(DescribeInstancesRequest describeInstancesRequest) {
 
         if (describeInstancesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeInstancesRequest> request = new DefaultRequest<DescribeInstancesRequest>(
-                describeInstancesRequest, "AWSOpsWorks");
+        Request<DescribeInstancesRequest> request = new DefaultRequest<DescribeInstancesRequest>(describeInstancesRequest, "AWSOpsWorks");
         request.addHeader("X-Amz-Target", "OpsWorks_20130218.DescribeInstances");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -62,24 +55,20 @@ public class DescribeInstancesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (describeInstancesRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(
-                        describeInstancesRequest.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(describeInstancesRequest.getStackId());
             }
             if (describeInstancesRequest.getLayerId() != null) {
-                jsonGenerator.writeFieldName("LayerId").writeValue(
-                        describeInstancesRequest.getLayerId());
+                jsonGenerator.writeFieldName("LayerId").writeValue(describeInstancesRequest.getLayerId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeInstancesRequest
                     .getInstanceIds();
-            if (!instanceIdsList.isEmpty()
-                    || !instanceIdsList.isAutoConstruct()) {
+            if (!instanceIdsList.isEmpty() || !instanceIdsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("InstanceIds");
                 jsonGenerator.writeStartArray();
                 for (String instanceIdsListValue : instanceIdsList) {
@@ -94,12 +83,10 @@ public class DescribeInstancesRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

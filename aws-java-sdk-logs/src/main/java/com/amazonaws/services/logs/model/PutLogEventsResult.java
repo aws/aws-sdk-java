@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class PutLogEventsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class PutLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String nextSequenceToken;
 
@@ -45,8 +41,7 @@ public class PutLogEventsResult extends
 
     /**
      * @param nextSequenceToken
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutLogEventsResult withNextSequenceToken(String nextSequenceToken) {
@@ -58,8 +53,7 @@ public class PutLogEventsResult extends
      * @param rejectedLogEventsInfo
      */
 
-    public void setRejectedLogEventsInfo(
-            RejectedLogEventsInfo rejectedLogEventsInfo) {
+    public void setRejectedLogEventsInfo(RejectedLogEventsInfo rejectedLogEventsInfo) {
         this.rejectedLogEventsInfo = rejectedLogEventsInfo;
     }
 
@@ -73,19 +67,16 @@ public class PutLogEventsResult extends
 
     /**
      * @param rejectedLogEventsInfo
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutLogEventsResult withRejectedLogEventsInfo(
-            RejectedLogEventsInfo rejectedLogEventsInfo) {
+    public PutLogEventsResult withRejectedLogEventsInfo(RejectedLogEventsInfo rejectedLogEventsInfo) {
         setRejectedLogEventsInfo(rejectedLogEventsInfo);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -113,19 +104,13 @@ public class PutLogEventsResult extends
         if (obj instanceof PutLogEventsResult == false)
             return false;
         PutLogEventsResult other = (PutLogEventsResult) obj;
-        if (other.getNextSequenceToken() == null
-                ^ this.getNextSequenceToken() == null)
+        if (other.getNextSequenceToken() == null ^ this.getNextSequenceToken() == null)
             return false;
-        if (other.getNextSequenceToken() != null
-                && other.getNextSequenceToken().equals(
-                        this.getNextSequenceToken()) == false)
+        if (other.getNextSequenceToken() != null && other.getNextSequenceToken().equals(this.getNextSequenceToken()) == false)
             return false;
-        if (other.getRejectedLogEventsInfo() == null
-                ^ this.getRejectedLogEventsInfo() == null)
+        if (other.getRejectedLogEventsInfo() == null ^ this.getRejectedLogEventsInfo() == null)
             return false;
-        if (other.getRejectedLogEventsInfo() != null
-                && other.getRejectedLogEventsInfo().equals(
-                        this.getRejectedLogEventsInfo()) == false)
+        if (other.getRejectedLogEventsInfo() != null && other.getRejectedLogEventsInfo().equals(this.getRejectedLogEventsInfo()) == false)
             return false;
         return true;
     }
@@ -135,14 +120,8 @@ public class PutLogEventsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNextSequenceToken() == null) ? 0
-                        : getNextSequenceToken().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRejectedLogEventsInfo() == null) ? 0
-                        : getRejectedLogEventsInfo().hashCode());
+        hashCode = prime * hashCode + ((getNextSequenceToken() == null) ? 0 : getNextSequenceToken().hashCode());
+        hashCode = prime * hashCode + ((getRejectedLogEventsInfo() == null) ? 0 : getRejectedLogEventsInfo().hashCode());
         return hashCode;
     }
 
@@ -151,9 +130,7 @@ public class PutLogEventsResult extends
         try {
             return (PutLogEventsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

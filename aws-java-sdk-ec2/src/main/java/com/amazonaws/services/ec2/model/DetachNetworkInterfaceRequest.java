@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DetachNetworkInterfaceRequestM
  * Contains the parameters for DetachNetworkInterface.
  * </p>
  */
-public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DetachNetworkInterfaceRequest> {
 
     /**
@@ -73,8 +70,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * 
      * @param attachmentId
      *        The ID of the attachment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetachNetworkInterfaceRequest withAttachmentId(String attachmentId) {
@@ -114,8 +110,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * 
      * @param force
      *        Specifies whether to force a detachment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetachNetworkInterfaceRequest withForce(Boolean force) {
@@ -136,21 +131,18 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DetachNetworkInterfaceRequest> getDryRunRequest() {
-        Request<DetachNetworkInterfaceRequest> request = new DetachNetworkInterfaceRequestMarshaller()
-                .marshall(this);
+        Request<DetachNetworkInterfaceRequest> request = new DetachNetworkInterfaceRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -180,13 +172,11 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
         DetachNetworkInterfaceRequest other = (DetachNetworkInterfaceRequest) obj;
         if (other.getAttachmentId() == null ^ this.getAttachmentId() == null)
             return false;
-        if (other.getAttachmentId() != null
-                && other.getAttachmentId().equals(this.getAttachmentId()) == false)
+        if (other.getAttachmentId() != null && other.getAttachmentId().equals(this.getAttachmentId()) == false)
             return false;
         if (other.getForce() == null ^ this.getForce() == null)
             return false;
-        if (other.getForce() != null
-                && other.getForce().equals(this.getForce()) == false)
+        if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
             return false;
         return true;
     }
@@ -196,12 +186,8 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAttachmentId() == null) ? 0 : getAttachmentId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getForce() == null) ? 0 : getForce().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentId() == null) ? 0 : getAttachmentId().hashCode());
+        hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * HealthCheck StAX Unmarshaller
  */
-public class HealthCheckStaxUnmarshaller implements
-        Unmarshaller<HealthCheck, StaxUnmarshallerContext> {
+public class HealthCheckStaxUnmarshaller implements Unmarshaller<HealthCheck, StaxUnmarshallerContext> {
 
-    public HealthCheck unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public HealthCheck unmarshall(StaxUnmarshallerContext context) throws Exception {
         HealthCheck healthCheck = new HealthCheck();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,35 +46,27 @@ public class HealthCheckStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Id", targetDepth)) {
-                    healthCheck.setId(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    healthCheck.setId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("CallerReference", targetDepth)) {
-                    healthCheck.setCallerReference(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    healthCheck.setCallerReference(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("HealthCheckConfig", targetDepth)) {
-                    healthCheck
-                            .setHealthCheckConfig(HealthCheckConfigStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    healthCheck.setHealthCheckConfig(HealthCheckConfigStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("HealthCheckVersion", targetDepth)) {
-                    healthCheck.setHealthCheckVersion(LongStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    healthCheck.setHealthCheckVersion(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("CloudWatchAlarmConfiguration",
-                        targetDepth)) {
-                    healthCheck
-                            .setCloudWatchAlarmConfiguration(CloudWatchAlarmConfigurationStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("CloudWatchAlarmConfiguration", targetDepth)) {
+                    healthCheck.setCloudWatchAlarmConfiguration(CloudWatchAlarmConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

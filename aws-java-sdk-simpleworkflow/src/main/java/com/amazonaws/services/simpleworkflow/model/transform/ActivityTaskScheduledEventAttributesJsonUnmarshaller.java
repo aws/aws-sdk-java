@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
@@ -29,12 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ActivityTaskScheduledEventAttributes JSON Unmarshaller
  */
-public class ActivityTaskScheduledEventAttributesJsonUnmarshaller
-        implements
-        Unmarshaller<ActivityTaskScheduledEventAttributes, JsonUnmarshallerContext> {
+public class ActivityTaskScheduledEventAttributesJsonUnmarshaller implements Unmarshaller<ActivityTaskScheduledEventAttributes, JsonUnmarshallerContext> {
 
-    public ActivityTaskScheduledEventAttributes unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public ActivityTaskScheduledEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActivityTaskScheduledEventAttributes activityTaskScheduledEventAttributes = new ActivityTaskScheduledEventAttributes();
 
         int originalDepth = context.getCurrentDepth();
@@ -54,75 +49,50 @@ public class ActivityTaskScheduledEventAttributesJsonUnmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activityType", targetDepth)) {
                     context.nextToken();
-                    activityTaskScheduledEventAttributes
-                            .setActivityType(ActivityTypeJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    activityTaskScheduledEventAttributes.setActivityType(ActivityTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activityId", targetDepth)) {
                     context.nextToken();
-                    activityTaskScheduledEventAttributes.setActivityId(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    activityTaskScheduledEventAttributes.setActivityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("input", targetDepth)) {
                     context.nextToken();
-                    activityTaskScheduledEventAttributes.setInput(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    activityTaskScheduledEventAttributes.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("control", targetDepth)) {
                     context.nextToken();
-                    activityTaskScheduledEventAttributes.setControl(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    activityTaskScheduledEventAttributes.setControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("scheduleToStartTimeout",
-                        targetDepth)) {
+                if (context.testExpression("scheduleToStartTimeout", targetDepth)) {
                     context.nextToken();
-                    activityTaskScheduledEventAttributes
-                            .setScheduleToStartTimeout(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    activityTaskScheduledEventAttributes.setScheduleToStartTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("scheduleToCloseTimeout",
-                        targetDepth)) {
+                if (context.testExpression("scheduleToCloseTimeout", targetDepth)) {
                     context.nextToken();
-                    activityTaskScheduledEventAttributes
-                            .setScheduleToCloseTimeout(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    activityTaskScheduledEventAttributes.setScheduleToCloseTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startToCloseTimeout", targetDepth)) {
                     context.nextToken();
-                    activityTaskScheduledEventAttributes
-                            .setStartToCloseTimeout(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    activityTaskScheduledEventAttributes.setStartToCloseTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskList", targetDepth)) {
                     context.nextToken();
-                    activityTaskScheduledEventAttributes
-                            .setTaskList(TaskListJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    activityTaskScheduledEventAttributes.setTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("taskPriority", targetDepth)) {
                     context.nextToken();
-                    activityTaskScheduledEventAttributes
-                            .setTaskPriority(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    activityTaskScheduledEventAttributes.setTaskPriority(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("decisionTaskCompletedEventId",
-                        targetDepth)) {
+                if (context.testExpression("decisionTaskCompletedEventId", targetDepth)) {
                     context.nextToken();
-                    activityTaskScheduledEventAttributes
-                            .setDecisionTaskCompletedEventId(context
-                                    .getUnmarshaller(Long.class).unmarshall(
-                                            context));
+                    activityTaskScheduledEventAttributes.setDecisionTaskCompletedEventId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("heartbeatTimeout", targetDepth)) {
                     context.nextToken();
-                    activityTaskScheduledEventAttributes
-                            .setHeartbeatTimeout(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    activityTaskScheduledEventAttributes.setHeartbeatTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

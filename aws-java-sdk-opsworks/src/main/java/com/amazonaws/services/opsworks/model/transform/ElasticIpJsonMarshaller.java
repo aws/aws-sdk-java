@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -34,42 +32,34 @@ public class ElasticIpJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ElasticIp elasticIp,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(ElasticIp elasticIp, StructuredJsonGenerator jsonGenerator) {
 
         if (elasticIp == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (elasticIp.getIp() != null) {
-                jsonGenerator.writeFieldName("Ip")
-                        .writeValue(elasticIp.getIp());
+                jsonGenerator.writeFieldName("Ip").writeValue(elasticIp.getIp());
             }
             if (elasticIp.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(
-                        elasticIp.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(elasticIp.getName());
             }
             if (elasticIp.getDomain() != null) {
-                jsonGenerator.writeFieldName("Domain").writeValue(
-                        elasticIp.getDomain());
+                jsonGenerator.writeFieldName("Domain").writeValue(elasticIp.getDomain());
             }
             if (elasticIp.getRegion() != null) {
-                jsonGenerator.writeFieldName("Region").writeValue(
-                        elasticIp.getRegion());
+                jsonGenerator.writeFieldName("Region").writeValue(elasticIp.getRegion());
             }
             if (elasticIp.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(
-                        elasticIp.getInstanceId());
+                jsonGenerator.writeFieldName("InstanceId").writeValue(elasticIp.getInstanceId());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

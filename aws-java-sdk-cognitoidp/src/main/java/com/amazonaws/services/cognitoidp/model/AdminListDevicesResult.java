@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Lists the device's response, as an administrator.
  * </p>
  */
-public class AdminListDevicesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class AdminListDevicesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -73,16 +69,14 @@ public class AdminListDevicesResult extends
      * The devices in the list of devices response.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDevices(java.util.Collection)} or
-     * {@link #withDevices(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDevices(java.util.Collection)} or {@link #withDevices(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param devices
      *        The devices in the list of devices response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminListDevicesResult withDevices(DeviceType... devices) {
@@ -102,12 +96,10 @@ public class AdminListDevicesResult extends
      * 
      * @param devices
      *        The devices in the list of devices response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AdminListDevicesResult withDevices(
-            java.util.Collection<DeviceType> devices) {
+    public AdminListDevicesResult withDevices(java.util.Collection<DeviceType> devices) {
         setDevices(devices);
         return this;
     }
@@ -144,8 +136,7 @@ public class AdminListDevicesResult extends
      * 
      * @param paginationToken
      *        The pagination token.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminListDevicesResult withPaginationToken(String paginationToken) {
@@ -154,8 +145,7 @@ public class AdminListDevicesResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -185,14 +175,11 @@ public class AdminListDevicesResult extends
         AdminListDevicesResult other = (AdminListDevicesResult) obj;
         if (other.getDevices() == null ^ this.getDevices() == null)
             return false;
-        if (other.getDevices() != null
-                && other.getDevices().equals(this.getDevices()) == false)
+        if (other.getDevices() != null && other.getDevices().equals(this.getDevices()) == false)
             return false;
-        if (other.getPaginationToken() == null
-                ^ this.getPaginationToken() == null)
+        if (other.getPaginationToken() == null ^ this.getPaginationToken() == null)
             return false;
-        if (other.getPaginationToken() != null
-                && other.getPaginationToken().equals(this.getPaginationToken()) == false)
+        if (other.getPaginationToken() != null && other.getPaginationToken().equals(this.getPaginationToken()) == false)
             return false;
         return true;
     }
@@ -202,12 +189,8 @@ public class AdminListDevicesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDevices() == null) ? 0 : getDevices().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPaginationToken() == null) ? 0 : getPaginationToken()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDevices() == null) ? 0 : getDevices().hashCode());
+        hashCode = prime * hashCode + ((getPaginationToken() == null) ? 0 : getPaginationToken().hashCode());
         return hashCode;
     }
 
@@ -216,9 +199,7 @@ public class AdminListDevicesResult extends
         try {
             return (AdminListDevicesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

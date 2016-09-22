@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
@@ -20,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CreateReplicationInstanceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication instance identifier. This parameter is stored as a
-     * lowercase string.
+     * The replication instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -56,15 +51,13 @@ public class CreateReplicationInstanceRequest extends
     private String replicationInstanceIdentifier;
     /**
      * <p>
-     * The amount of storage (in gigabytes) to be initially allocated for the
-     * replication instance.
+     * The amount of storage (in gigabytes) to be initially allocated for the replication instance.
      * </p>
      */
     private Integer allocatedStorage;
     /**
      * <p>
-     * The compute and memory capacity of the replication instance as specified
-     * by the replication instance class.
+     * The compute and memory capacity of the replication instance as specified by the replication instance class.
      * </p>
      * <p>
      * Valid Values:
@@ -74,20 +67,17 @@ public class CreateReplicationInstanceRequest extends
     private String replicationInstanceClass;
     /**
      * <p>
-     * Specifies the VPC security group to be used with the replication
-     * instance. The VPC security group must work with the VPC containing the
-     * replication instance.
+     * Specifies the VPC security group to be used with the replication instance. The VPC security group must work with
+     * the VPC containing the replication instance.
      * </p>
      */
     private java.util.List<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * The EC2 Availability Zone that the replication instance will be created
-     * in.
+     * The EC2 Availability Zone that the replication instance will be created in.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
@@ -102,15 +92,14 @@ public class CreateReplicationInstanceRequest extends
     private String replicationSubnetGroupIdentifier;
     /**
      * <p>
-     * The weekly time range during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC).
+     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
      * </p>
      * <p>
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week.
+     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
+     * of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -122,9 +111,8 @@ public class CreateReplicationInstanceRequest extends
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
-     * parameter is set to <code>true</code>.
+     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
+     * parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      */
     private Boolean multiAZ;
@@ -136,8 +124,8 @@ public class CreateReplicationInstanceRequest extends
     private String engineVersion;
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the
-     * replication instance during the maintenance window.
+     * Indicates that minor engine upgrades will be applied automatically to the replication instance during the
+     * maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
@@ -152,19 +140,17 @@ public class CreateReplicationInstanceRequest extends
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId
-     * parameter, then AWS DMS will use your default encryption key. AWS KMS
-     * creates the default encryption key for your AWS account. Your AWS account
-     * has a different default encryption key for each AWS region.
+     * The KMS key identifier that will be used to encrypt the content on the replication instance. If you do not
+     * specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
+     * AWS region.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * Specifies the accessibility options for the replication instance. A value
-     * of <code>true</code> represents an instance with a public IP address. A
-     * value of <code>false</code> represents an instance with a private IP
+     * Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an
+     * instance with a public IP address. A value of <code>false</code> represents an instance with a private IP
      * address. The default value is <code>true</code>.
      * </p>
      */
@@ -172,8 +158,7 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * The replication instance identifier. This parameter is stored as a
-     * lowercase string.
+     * The replication instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -200,8 +185,7 @@ public class CreateReplicationInstanceRequest extends
      * </p>
      * 
      * @param replicationInstanceIdentifier
-     *        The replication instance identifier. This parameter is stored as a
-     *        lowercase string.</p>
+     *        The replication instance identifier. This parameter is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -226,15 +210,13 @@ public class CreateReplicationInstanceRequest extends
      *        Example: <code>myrepinstance</code>
      */
 
-    public void setReplicationInstanceIdentifier(
-            String replicationInstanceIdentifier) {
+    public void setReplicationInstanceIdentifier(String replicationInstanceIdentifier) {
         this.replicationInstanceIdentifier = replicationInstanceIdentifier;
     }
 
     /**
      * <p>
-     * The replication instance identifier. This parameter is stored as a
-     * lowercase string.
+     * The replication instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -260,8 +242,7 @@ public class CreateReplicationInstanceRequest extends
      * Example: <code>myrepinstance</code>
      * </p>
      * 
-     * @return The replication instance identifier. This parameter is stored as
-     *         a lowercase string.</p>
+     * @return The replication instance identifier. This parameter is stored as a lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -292,8 +273,7 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * The replication instance identifier. This parameter is stored as a
-     * lowercase string.
+     * The replication instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -320,8 +300,7 @@ public class CreateReplicationInstanceRequest extends
      * </p>
      * 
      * @param replicationInstanceIdentifier
-     *        The replication instance identifier. This parameter is stored as a
-     *        lowercase string.</p>
+     *        The replication instance identifier. This parameter is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -344,25 +323,21 @@ public class CreateReplicationInstanceRequest extends
      *        </ul>
      *        <p>
      *        Example: <code>myrepinstance</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationInstanceRequest withReplicationInstanceIdentifier(
-            String replicationInstanceIdentifier) {
+    public CreateReplicationInstanceRequest withReplicationInstanceIdentifier(String replicationInstanceIdentifier) {
         setReplicationInstanceIdentifier(replicationInstanceIdentifier);
         return this;
     }
 
     /**
      * <p>
-     * The amount of storage (in gigabytes) to be initially allocated for the
-     * replication instance.
+     * The amount of storage (in gigabytes) to be initially allocated for the replication instance.
      * </p>
      * 
      * @param allocatedStorage
-     *        The amount of storage (in gigabytes) to be initially allocated for
-     *        the replication instance.
+     *        The amount of storage (in gigabytes) to be initially allocated for the replication instance.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -371,12 +346,10 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * The amount of storage (in gigabytes) to be initially allocated for the
-     * replication instance.
+     * The amount of storage (in gigabytes) to be initially allocated for the replication instance.
      * </p>
      * 
-     * @return The amount of storage (in gigabytes) to be initially allocated
-     *         for the replication instance.
+     * @return The amount of storage (in gigabytes) to be initially allocated for the replication instance.
      */
 
     public Integer getAllocatedStorage() {
@@ -385,27 +358,22 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * The amount of storage (in gigabytes) to be initially allocated for the
-     * replication instance.
+     * The amount of storage (in gigabytes) to be initially allocated for the replication instance.
      * </p>
      * 
      * @param allocatedStorage
-     *        The amount of storage (in gigabytes) to be initially allocated for
-     *        the replication instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The amount of storage (in gigabytes) to be initially allocated for the replication instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationInstanceRequest withAllocatedStorage(
-            Integer allocatedStorage) {
+    public CreateReplicationInstanceRequest withAllocatedStorage(Integer allocatedStorage) {
         setAllocatedStorage(allocatedStorage);
         return this;
     }
 
     /**
      * <p>
-     * The compute and memory capacity of the replication instance as specified
-     * by the replication instance class.
+     * The compute and memory capacity of the replication instance as specified by the replication instance class.
      * </p>
      * <p>
      * Valid Values:
@@ -413,8 +381,8 @@ public class CreateReplicationInstanceRequest extends
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance as
-     *        specified by the replication instance class.</p>
+     *        The compute and memory capacity of the replication instance as specified by the replication instance
+     *        class.</p>
      *        <p>
      *        Valid Values:
      *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
@@ -426,16 +394,15 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * The compute and memory capacity of the replication instance as specified
-     * by the replication instance class.
+     * The compute and memory capacity of the replication instance as specified by the replication instance class.
      * </p>
      * <p>
      * Valid Values:
      * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
      * </p>
      * 
-     * @return The compute and memory capacity of the replication instance as
-     *         specified by the replication instance class.</p>
+     * @return The compute and memory capacity of the replication instance as specified by the replication instance
+     *         class.</p>
      *         <p>
      *         Valid Values:
      *         <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
@@ -447,8 +414,7 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * The compute and memory capacity of the replication instance as specified
-     * by the replication instance class.
+     * The compute and memory capacity of the replication instance as specified by the replication instance class.
      * </p>
      * <p>
      * Valid Values:
@@ -456,31 +422,27 @@ public class CreateReplicationInstanceRequest extends
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance as
-     *        specified by the replication instance class.</p>
+     *        The compute and memory capacity of the replication instance as specified by the replication instance
+     *        class.</p>
      *        <p>
      *        Valid Values:
      *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationInstanceRequest withReplicationInstanceClass(
-            String replicationInstanceClass) {
+    public CreateReplicationInstanceRequest withReplicationInstanceClass(String replicationInstanceClass) {
         setReplicationInstanceClass(replicationInstanceClass);
         return this;
     }
 
     /**
      * <p>
-     * Specifies the VPC security group to be used with the replication
-     * instance. The VPC security group must work with the VPC containing the
-     * replication instance.
+     * Specifies the VPC security group to be used with the replication instance. The VPC security group must work with
+     * the VPC containing the replication instance.
      * </p>
      * 
-     * @return Specifies the VPC security group to be used with the replication
-     *         instance. The VPC security group must work with the VPC
-     *         containing the replication instance.
+     * @return Specifies the VPC security group to be used with the replication instance. The VPC security group must
+     *         work with the VPC containing the replication instance.
      */
 
     public java.util.List<String> getVpcSecurityGroupIds() {
@@ -489,54 +451,44 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * Specifies the VPC security group to be used with the replication
-     * instance. The VPC security group must work with the VPC containing the
-     * replication instance.
+     * Specifies the VPC security group to be used with the replication instance. The VPC security group must work with
+     * the VPC containing the replication instance.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        Specifies the VPC security group to be used with the replication
-     *        instance. The VPC security group must work with the VPC containing
-     *        the replication instance.
+     *        Specifies the VPC security group to be used with the replication instance. The VPC security group must
+     *        work with the VPC containing the replication instance.
      */
 
-    public void setVpcSecurityGroupIds(
-            java.util.Collection<String> vpcSecurityGroupIds) {
+    public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
         if (vpcSecurityGroupIds == null) {
             this.vpcSecurityGroupIds = null;
             return;
         }
 
-        this.vpcSecurityGroupIds = new java.util.ArrayList<String>(
-                vpcSecurityGroupIds);
+        this.vpcSecurityGroupIds = new java.util.ArrayList<String>(vpcSecurityGroupIds);
     }
 
     /**
      * <p>
-     * Specifies the VPC security group to be used with the replication
-     * instance. The VPC security group must work with the VPC containing the
-     * replication instance.
+     * Specifies the VPC security group to be used with the replication instance. The VPC security group must work with
+     * the VPC containing the replication instance.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVpcSecurityGroupIds(java.util.Collection)} or
-     * {@link #withVpcSecurityGroupIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcSecurityGroupIds(java.util.Collection)} or {@link #withVpcSecurityGroupIds(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        Specifies the VPC security group to be used with the replication
-     *        instance. The VPC security group must work with the VPC containing
-     *        the replication instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the VPC security group to be used with the replication instance. The VPC security group must
+     *        work with the VPC containing the replication instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationInstanceRequest withVpcSecurityGroupIds(
-            String... vpcSecurityGroupIds) {
+    public CreateReplicationInstanceRequest withVpcSecurityGroupIds(String... vpcSecurityGroupIds) {
         if (this.vpcSecurityGroupIds == null) {
-            setVpcSecurityGroupIds(new java.util.ArrayList<String>(
-                    vpcSecurityGroupIds.length));
+            setVpcSecurityGroupIds(new java.util.ArrayList<String>(vpcSecurityGroupIds.length));
         }
         for (String ele : vpcSecurityGroupIds) {
             this.vpcSecurityGroupIds.add(ele);
@@ -546,44 +498,36 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * Specifies the VPC security group to be used with the replication
-     * instance. The VPC security group must work with the VPC containing the
-     * replication instance.
+     * Specifies the VPC security group to be used with the replication instance. The VPC security group must work with
+     * the VPC containing the replication instance.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        Specifies the VPC security group to be used with the replication
-     *        instance. The VPC security group must work with the VPC containing
-     *        the replication instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the VPC security group to be used with the replication instance. The VPC security group must
+     *        work with the VPC containing the replication instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationInstanceRequest withVpcSecurityGroupIds(
-            java.util.Collection<String> vpcSecurityGroupIds) {
+    public CreateReplicationInstanceRequest withVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
         setVpcSecurityGroupIds(vpcSecurityGroupIds);
         return this;
     }
 
     /**
      * <p>
-     * The EC2 Availability Zone that the replication instance will be created
-     * in.
+     * The EC2 Availability Zone that the replication instance will be created in.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the replication instance will be
-     *        created in.</p>
+     *        The EC2 Availability Zone that the replication instance will be created in.</p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the
-     *        endpoint's region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
@@ -595,22 +539,18 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * The EC2 Availability Zone that the replication instance will be created
-     * in.
+     * The EC2 Availability Zone that the replication instance will be created in.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * 
-     * @return The EC2 Availability Zone that the replication instance will be
-     *         created in.</p>
+     * @return The EC2 Availability Zone that the replication instance will be created in.</p>
      *         <p>
-     *         Default: A random, system-chosen Availability Zone in the
-     *         endpoint's region.
+     *         Default: A random, system-chosen Availability Zone in the endpoint's region.
      *         </p>
      *         <p>
      *         Example: <code>us-east-1d</code>
@@ -622,32 +562,26 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * The EC2 Availability Zone that the replication instance will be created
-     * in.
+     * The EC2 Availability Zone that the replication instance will be created in.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the replication instance will be
-     *        created in.</p>
+     *        The EC2 Availability Zone that the replication instance will be created in.</p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the
-     *        endpoint's region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationInstanceRequest withAvailabilityZone(
-            String availabilityZone) {
+    public CreateReplicationInstanceRequest withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
     }
@@ -661,8 +595,7 @@ public class CreateReplicationInstanceRequest extends
      *        A subnet group to associate with the replication instance.
      */
 
-    public void setReplicationSubnetGroupIdentifier(
-            String replicationSubnetGroupIdentifier) {
+    public void setReplicationSubnetGroupIdentifier(String replicationSubnetGroupIdentifier) {
         this.replicationSubnetGroupIdentifier = replicationSubnetGroupIdentifier;
     }
 
@@ -685,27 +618,24 @@ public class CreateReplicationInstanceRequest extends
      * 
      * @param replicationSubnetGroupIdentifier
      *        A subnet group to associate with the replication instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationInstanceRequest withReplicationSubnetGroupIdentifier(
-            String replicationSubnetGroupIdentifier) {
+    public CreateReplicationInstanceRequest withReplicationSubnetGroupIdentifier(String replicationSubnetGroupIdentifier) {
         setReplicationSubnetGroupIdentifier(replicationSubnetGroupIdentifier);
         return this;
     }
 
     /**
      * <p>
-     * The weekly time range during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC).
+     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
      * </p>
      * <p>
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week.
+     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
+     * of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -715,14 +645,13 @@ public class CreateReplicationInstanceRequest extends
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        The weekly time range during which system maintenance can occur,
-     *        in Universal Coordinated Time (UTC).</p>
+     *        The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour
-     *        block of time per region, occurring on a random day of the week.
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *        random day of the week.
      *        </p>
      *        <p>
      *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -737,15 +666,14 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * The weekly time range during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC).
+     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
      * </p>
      * <p>
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week.
+     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
+     * of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -754,14 +682,13 @@ public class CreateReplicationInstanceRequest extends
      * Constraints: Minimum 30-minute window.
      * </p>
      * 
-     * @return The weekly time range during which system maintenance can occur,
-     *         in Universal Coordinated Time (UTC).</p>
+     * @return The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
      *         <p>
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour
-     *         block of time per region, occurring on a random day of the week.
+     *         Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *         random day of the week.
      *         </p>
      *         <p>
      *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -776,15 +703,14 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * The weekly time range during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC).
+     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
      * </p>
      * <p>
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week.
+     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
+     * of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -794,41 +720,36 @@ public class CreateReplicationInstanceRequest extends
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        The weekly time range during which system maintenance can occur,
-     *        in Universal Coordinated Time (UTC).</p>
+     *        The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour
-     *        block of time per region, occurring on a random day of the week.
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *        random day of the week.
      *        </p>
      *        <p>
      *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
      *        </p>
      *        <p>
      *        Constraints: Minimum 30-minute window.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationInstanceRequest withPreferredMaintenanceWindow(
-            String preferredMaintenanceWindow) {
+    public CreateReplicationInstanceRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         setPreferredMaintenanceWindow(preferredMaintenanceWindow);
         return this;
     }
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
-     * parameter is set to <code>true</code>.
+     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
+     * parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the replication instance is a Multi-AZ deployment.
-     *        You cannot set the <code>AvailabilityZone</code> parameter if the
-     *        Multi-AZ parameter is set to <code>true</code>.
+     *        Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -837,14 +758,12 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
-     * parameter is set to <code>true</code>.
+     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
+     * parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the replication instance is a Multi-AZ deployment.
-     *         You cannot set the <code>AvailabilityZone</code> parameter if the
-     *         Multi-AZ parameter is set to <code>true</code>.
+     * @return Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
     public Boolean getMultiAZ() {
@@ -853,17 +772,14 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
-     * parameter is set to <code>true</code>.
+     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
+     * parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the replication instance is a Multi-AZ deployment.
-     *        You cannot set the <code>AvailabilityZone</code> parameter if the
-     *        Multi-AZ parameter is set to <code>true</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateReplicationInstanceRequest withMultiAZ(Boolean multiAZ) {
@@ -873,14 +789,12 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
-     * parameter is set to <code>true</code>.
+     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
+     * parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the replication instance is a Multi-AZ deployment.
-     *         You cannot set the <code>AvailabilityZone</code> parameter if the
-     *         Multi-AZ parameter is set to <code>true</code>.
+     * @return Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
     public Boolean isMultiAZ() {
@@ -919,28 +833,26 @@ public class CreateReplicationInstanceRequest extends
      * 
      * @param engineVersion
      *        The engine version number of the replication instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationInstanceRequest withEngineVersion(
-            String engineVersion) {
+    public CreateReplicationInstanceRequest withEngineVersion(String engineVersion) {
         setEngineVersion(engineVersion);
         return this;
     }
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the
-     * replication instance during the maintenance window.
+     * Indicates that minor engine upgrades will be applied automatically to the replication instance during the
+     * maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades will be applied automatically
-     *        to the replication instance during the maintenance window.</p>
+     *        Indicates that minor engine upgrades will be applied automatically to the replication instance during the
+     *        maintenance window.</p>
      *        <p>
      *        Default: <code>true</code>
      */
@@ -951,16 +863,15 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the
-     * replication instance during the maintenance window.
+     * Indicates that minor engine upgrades will be applied automatically to the replication instance during the
+     * maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates that minor engine upgrades will be applied
-     *         automatically to the replication instance during the maintenance
-     *         window.</p>
+     * @return Indicates that minor engine upgrades will be applied automatically to the replication instance during the
+     *         maintenance window.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -971,40 +882,37 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the
-     * replication instance during the maintenance window.
+     * Indicates that minor engine upgrades will be applied automatically to the replication instance during the
+     * maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades will be applied automatically
-     *        to the replication instance during the maintenance window.</p>
+     *        Indicates that minor engine upgrades will be applied automatically to the replication instance during the
+     *        maintenance window.</p>
      *        <p>
      *        Default: <code>true</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationInstanceRequest withAutoMinorVersionUpgrade(
-            Boolean autoMinorVersionUpgrade) {
+    public CreateReplicationInstanceRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         setAutoMinorVersionUpgrade(autoMinorVersionUpgrade);
         return this;
     }
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the
-     * replication instance during the maintenance window.
+     * Indicates that minor engine upgrades will be applied automatically to the replication instance during the
+     * maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates that minor engine upgrades will be applied
-     *         automatically to the replication instance during the maintenance
-     *         window.</p>
+     * @return Indicates that minor engine upgrades will be applied automatically to the replication instance during the
+     *         maintenance window.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -1048,16 +956,14 @@ public class CreateReplicationInstanceRequest extends
      * Tags to be associated with the replication instance.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        Tags to be associated with the replication instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateReplicationInstanceRequest withTags(Tag... tags) {
@@ -1077,32 +983,27 @@ public class CreateReplicationInstanceRequest extends
      * 
      * @param tags
      *        Tags to be associated with the replication instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationInstanceRequest withTags(
-            java.util.Collection<Tag> tags) {
+    public CreateReplicationInstanceRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
     }
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId
-     * parameter, then AWS DMS will use your default encryption key. AWS KMS
-     * creates the default encryption key for your AWS account. Your AWS account
-     * has a different default encryption key for each AWS region.
+     * The KMS key identifier that will be used to encrypt the content on the replication instance. If you do not
+     * specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
+     * AWS region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier that will be used to encrypt the content on
-     *        the replication instance. If you do not specify a value for the
-     *        KmsKeyId parameter, then AWS DMS will use your default encryption
-     *        key. AWS KMS creates the default encryption key for your AWS
-     *        account. Your AWS account has a different default encryption key
-     *        for each AWS region.
+     *        The KMS key identifier that will be used to encrypt the content on the replication instance. If you do not
+     *        specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS
+     *        creates the default encryption key for your AWS account. Your AWS account has a different default
+     *        encryption key for each AWS region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1111,18 +1012,15 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId
-     * parameter, then AWS DMS will use your default encryption key. AWS KMS
-     * creates the default encryption key for your AWS account. Your AWS account
-     * has a different default encryption key for each AWS region.
+     * The KMS key identifier that will be used to encrypt the content on the replication instance. If you do not
+     * specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
+     * AWS region.
      * </p>
      * 
-     * @return The KMS key identifier that will be used to encrypt the content
-     *         on the replication instance. If you do not specify a value for
-     *         the KmsKeyId parameter, then AWS DMS will use your default
-     *         encryption key. AWS KMS creates the default encryption key for
-     *         your AWS account. Your AWS account has a different default
+     * @return The KMS key identifier that will be used to encrypt the content on the replication instance. If you do
+     *         not specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS
+     *         KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      *         encryption key for each AWS region.
      */
 
@@ -1132,22 +1030,18 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId
-     * parameter, then AWS DMS will use your default encryption key. AWS KMS
-     * creates the default encryption key for your AWS account. Your AWS account
-     * has a different default encryption key for each AWS region.
+     * The KMS key identifier that will be used to encrypt the content on the replication instance. If you do not
+     * specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
+     * AWS region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier that will be used to encrypt the content on
-     *        the replication instance. If you do not specify a value for the
-     *        KmsKeyId parameter, then AWS DMS will use your default encryption
-     *        key. AWS KMS creates the default encryption key for your AWS
-     *        account. Your AWS account has a different default encryption key
-     *        for each AWS region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The KMS key identifier that will be used to encrypt the content on the replication instance. If you do not
+     *        specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS
+     *        creates the default encryption key for your AWS account. Your AWS account has a different default
+     *        encryption key for each AWS region.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateReplicationInstanceRequest withKmsKeyId(String kmsKeyId) {
@@ -1157,17 +1051,15 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * Specifies the accessibility options for the replication instance. A value
-     * of <code>true</code> represents an instance with a public IP address. A
-     * value of <code>false</code> represents an instance with a private IP
+     * Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an
+     * instance with a public IP address. A value of <code>false</code> represents an instance with a private IP
      * address. The default value is <code>true</code>.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies the accessibility options for the replication instance.
-     *        A value of <code>true</code> represents an instance with a public
-     *        IP address. A value of <code>false</code> represents an instance
-     *        with a private IP address. The default value is <code>true</code>.
+     *        Specifies the accessibility options for the replication instance. A value of <code>true</code> represents
+     *        an instance with a public IP address. A value of <code>false</code> represents an instance with a private
+     *        IP address. The default value is <code>true</code>.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -1176,17 +1068,14 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * Specifies the accessibility options for the replication instance. A value
-     * of <code>true</code> represents an instance with a public IP address. A
-     * value of <code>false</code> represents an instance with a private IP
+     * Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an
+     * instance with a public IP address. A value of <code>false</code> represents an instance with a private IP
      * address. The default value is <code>true</code>.
      * </p>
      * 
-     * @return Specifies the accessibility options for the replication instance.
-     *         A value of <code>true</code> represents an instance with a public
-     *         IP address. A value of <code>false</code> represents an instance
-     *         with a private IP address. The default value is <code>true</code>
-     *         .
+     * @return Specifies the accessibility options for the replication instance. A value of <code>true</code> represents
+     *         an instance with a public IP address. A value of <code>false</code> represents an instance with a private
+     *         IP address. The default value is <code>true</code>.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -1195,40 +1084,33 @@ public class CreateReplicationInstanceRequest extends
 
     /**
      * <p>
-     * Specifies the accessibility options for the replication instance. A value
-     * of <code>true</code> represents an instance with a public IP address. A
-     * value of <code>false</code> represents an instance with a private IP
+     * Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an
+     * instance with a public IP address. A value of <code>false</code> represents an instance with a private IP
      * address. The default value is <code>true</code>.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies the accessibility options for the replication instance.
-     *        A value of <code>true</code> represents an instance with a public
-     *        IP address. A value of <code>false</code> represents an instance
-     *        with a private IP address. The default value is <code>true</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the accessibility options for the replication instance. A value of <code>true</code> represents
+     *        an instance with a public IP address. A value of <code>false</code> represents an instance with a private
+     *        IP address. The default value is <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationInstanceRequest withPubliclyAccessible(
-            Boolean publiclyAccessible) {
+    public CreateReplicationInstanceRequest withPubliclyAccessible(Boolean publiclyAccessible) {
         setPubliclyAccessible(publiclyAccessible);
         return this;
     }
 
     /**
      * <p>
-     * Specifies the accessibility options for the replication instance. A value
-     * of <code>true</code> represents an instance with a public IP address. A
-     * value of <code>false</code> represents an instance with a private IP
+     * Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an
+     * instance with a public IP address. A value of <code>false</code> represents an instance with a private IP
      * address. The default value is <code>true</code>.
      * </p>
      * 
-     * @return Specifies the accessibility options for the replication instance.
-     *         A value of <code>true</code> represents an instance with a public
-     *         IP address. A value of <code>false</code> represents an instance
-     *         with a private IP address. The default value is <code>true</code>
-     *         .
+     * @return Specifies the accessibility options for the replication instance. A value of <code>true</code> represents
+     *         an instance with a public IP address. A value of <code>false</code> represents an instance with a private
+     *         IP address. The default value is <code>true</code>.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -1236,8 +1118,7 @@ public class CreateReplicationInstanceRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1248,30 +1129,25 @@ public class CreateReplicationInstanceRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationInstanceIdentifier() != null)
-            sb.append("ReplicationInstanceIdentifier: "
-                    + getReplicationInstanceIdentifier() + ",");
+            sb.append("ReplicationInstanceIdentifier: " + getReplicationInstanceIdentifier() + ",");
         if (getAllocatedStorage() != null)
             sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
         if (getReplicationInstanceClass() != null)
-            sb.append("ReplicationInstanceClass: "
-                    + getReplicationInstanceClass() + ",");
+            sb.append("ReplicationInstanceClass: " + getReplicationInstanceClass() + ",");
         if (getVpcSecurityGroupIds() != null)
             sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (getReplicationSubnetGroupIdentifier() != null)
-            sb.append("ReplicationSubnetGroupIdentifier: "
-                    + getReplicationSubnetGroupIdentifier() + ",");
+            sb.append("ReplicationSubnetGroupIdentifier: " + getReplicationSubnetGroupIdentifier() + ",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: "
-                    + getPreferredMaintenanceWindow() + ",");
+            sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
         if (getMultiAZ() != null)
             sb.append("MultiAZ: " + getMultiAZ() + ",");
         if (getEngineVersion() != null)
             sb.append("EngineVersion: " + getEngineVersion() + ",");
         if (getAutoMinorVersionUpgrade() != null)
-            sb.append("AutoMinorVersionUpgrade: "
-                    + getAutoMinorVersionUpgrade() + ",");
+            sb.append("AutoMinorVersionUpgrade: " + getAutoMinorVersionUpgrade() + ",");
         if (getTags() != null)
             sb.append("Tags: " + getTags() + ",");
         if (getKmsKeyId() != null)
@@ -1292,88 +1168,59 @@ public class CreateReplicationInstanceRequest extends
         if (obj instanceof CreateReplicationInstanceRequest == false)
             return false;
         CreateReplicationInstanceRequest other = (CreateReplicationInstanceRequest) obj;
-        if (other.getReplicationInstanceIdentifier() == null
-                ^ this.getReplicationInstanceIdentifier() == null)
+        if (other.getReplicationInstanceIdentifier() == null ^ this.getReplicationInstanceIdentifier() == null)
             return false;
         if (other.getReplicationInstanceIdentifier() != null
-                && other.getReplicationInstanceIdentifier().equals(
-                        this.getReplicationInstanceIdentifier()) == false)
+                && other.getReplicationInstanceIdentifier().equals(this.getReplicationInstanceIdentifier()) == false)
             return false;
-        if (other.getAllocatedStorage() == null
-                ^ this.getAllocatedStorage() == null)
+        if (other.getAllocatedStorage() == null ^ this.getAllocatedStorage() == null)
             return false;
-        if (other.getAllocatedStorage() != null
-                && other.getAllocatedStorage().equals(
-                        this.getAllocatedStorage()) == false)
+        if (other.getAllocatedStorage() != null && other.getAllocatedStorage().equals(this.getAllocatedStorage()) == false)
             return false;
-        if (other.getReplicationInstanceClass() == null
-                ^ this.getReplicationInstanceClass() == null)
+        if (other.getReplicationInstanceClass() == null ^ this.getReplicationInstanceClass() == null)
             return false;
-        if (other.getReplicationInstanceClass() != null
-                && other.getReplicationInstanceClass().equals(
-                        this.getReplicationInstanceClass()) == false)
+        if (other.getReplicationInstanceClass() != null && other.getReplicationInstanceClass().equals(this.getReplicationInstanceClass()) == false)
             return false;
-        if (other.getVpcSecurityGroupIds() == null
-                ^ this.getVpcSecurityGroupIds() == null)
+        if (other.getVpcSecurityGroupIds() == null ^ this.getVpcSecurityGroupIds() == null)
             return false;
-        if (other.getVpcSecurityGroupIds() != null
-                && other.getVpcSecurityGroupIds().equals(
-                        this.getVpcSecurityGroupIds()) == false)
+        if (other.getVpcSecurityGroupIds() != null && other.getVpcSecurityGroupIds().equals(this.getVpcSecurityGroupIds()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
-        if (other.getReplicationSubnetGroupIdentifier() == null
-                ^ this.getReplicationSubnetGroupIdentifier() == null)
+        if (other.getReplicationSubnetGroupIdentifier() == null ^ this.getReplicationSubnetGroupIdentifier() == null)
             return false;
         if (other.getReplicationSubnetGroupIdentifier() != null
-                && other.getReplicationSubnetGroupIdentifier().equals(
-                        this.getReplicationSubnetGroupIdentifier()) == false)
+                && other.getReplicationSubnetGroupIdentifier().equals(this.getReplicationSubnetGroupIdentifier()) == false)
             return false;
-        if (other.getPreferredMaintenanceWindow() == null
-                ^ this.getPreferredMaintenanceWindow() == null)
+        if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null)
             return false;
-        if (other.getPreferredMaintenanceWindow() != null
-                && other.getPreferredMaintenanceWindow().equals(
-                        this.getPreferredMaintenanceWindow()) == false)
+        if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false)
             return false;
         if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
             return false;
-        if (other.getMultiAZ() != null
-                && other.getMultiAZ().equals(this.getMultiAZ()) == false)
+        if (other.getMultiAZ() != null && other.getMultiAZ().equals(this.getMultiAZ()) == false)
             return false;
         if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
             return false;
-        if (other.getEngineVersion() != null
-                && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
-        if (other.getAutoMinorVersionUpgrade() == null
-                ^ this.getAutoMinorVersionUpgrade() == null)
+        if (other.getAutoMinorVersionUpgrade() == null ^ this.getAutoMinorVersionUpgrade() == null)
             return false;
-        if (other.getAutoMinorVersionUpgrade() != null
-                && other.getAutoMinorVersionUpgrade().equals(
-                        this.getAutoMinorVersionUpgrade()) == false)
+        if (other.getAutoMinorVersionUpgrade() != null && other.getAutoMinorVersionUpgrade().equals(this.getAutoMinorVersionUpgrade()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
-        if (other.getKmsKeyId() != null
-                && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
-        if (other.getPubliclyAccessible() == null
-                ^ this.getPubliclyAccessible() == null)
+        if (other.getPubliclyAccessible() == null ^ this.getPubliclyAccessible() == null)
             return false;
-        if (other.getPubliclyAccessible() != null
-                && other.getPubliclyAccessible().equals(
-                        this.getPubliclyAccessible()) == false)
+        if (other.getPubliclyAccessible() != null && other.getPubliclyAccessible().equals(this.getPubliclyAccessible()) == false)
             return false;
         return true;
     }
@@ -1383,52 +1230,19 @@ public class CreateReplicationInstanceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReplicationInstanceIdentifier() == null) ? 0
-                        : getReplicationInstanceIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReplicationInstanceClass() == null) ? 0
-                        : getReplicationInstanceClass().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVpcSecurityGroupIds() == null) ? 0
-                        : getVpcSecurityGroupIds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReplicationSubnetGroupIdentifier() == null) ? 0
-                        : getReplicationSubnetGroupIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPreferredMaintenanceWindow() == null) ? 0
-                        : getPreferredMaintenanceWindow().hashCode());
-        hashCode = prime * hashCode
-                + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEngineVersion() == null) ? 0 : getEngineVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoMinorVersionUpgrade() == null) ? 0
-                        : getAutoMinorVersionUpgrade().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode
-                + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPubliclyAccessible() == null) ? 0
-                        : getPubliclyAccessible().hashCode());
+        hashCode = prime * hashCode + ((getReplicationInstanceIdentifier() == null) ? 0 : getReplicationInstanceIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage().hashCode());
+        hashCode = prime * hashCode + ((getReplicationInstanceClass() == null) ? 0 : getReplicationInstanceClass().hashCode());
+        hashCode = prime * hashCode + ((getVpcSecurityGroupIds() == null) ? 0 : getVpcSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getReplicationSubnetGroupIdentifier() == null) ? 0 : getReplicationSubnetGroupIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -21,8 +19,7 @@ import java.io.Serializable;
  * Describes the settings for a configuration set.
  * </p>
  */
-public class ConfigurationSettingsDescription implements Serializable,
-        Cloneable {
+public class ConfigurationSettingsDescription implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -38,8 +35,7 @@ public class ConfigurationSettingsDescription implements Serializable,
     private String applicationName;
     /**
      * <p>
-     * If not <code>null</code>, the name of the configuration template for this
-     * configuration set.
+     * If not <code>null</code>, the name of the configuration template for this configuration set.
      * </p>
      */
     private String templateName;
@@ -51,27 +47,22 @@ public class ConfigurationSettingsDescription implements Serializable,
     private String description;
     /**
      * <p>
-     * If not <code>null</code>, the name of the environment for this
-     * configuration set.
+     * If not <code>null</code>, the name of the environment for this configuration set.
      * </p>
      */
     private String environmentName;
     /**
      * <p>
-     * If this configuration set is associated with an environment, the
-     * <code>DeploymentStatus</code> parameter indicates the deployment status
-     * of this configuration set:
+     * If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
+     * indicates the deployment status of this configuration set:
      * </p>
      * <ul>
-     * <li> <code>null</code>: This configuration is not associated with a
-     * running environment.</li>
-     * <li> <code>pending</code>: This is a draft configuration that is not
-     * deployed to the associated environment but is in the process of
-     * deploying.</li>
-     * <li> <code>deployed</code>: This is the configuration that is currently
-     * deployed to the associated running environment.</li>
-     * <li> <code>failed</code>: This is a draft configuration that failed to
-     * successfully deploy.</li>
+     * <li> <code>null</code>: This configuration is not associated with a running environment.</li>
+     * <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is
+     * in the process of deploying.</li>
+     * <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     * environment.</li>
+     * <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
      * </ul>
      */
     private String deploymentStatus;
@@ -89,8 +80,7 @@ public class ConfigurationSettingsDescription implements Serializable,
     private java.util.Date dateUpdated;
     /**
      * <p>
-     * A list of the configuration options and their values in this
-     * configuration set.
+     * A list of the configuration options and their values in this configuration set.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettings;
@@ -127,12 +117,10 @@ public class ConfigurationSettingsDescription implements Serializable,
      * 
      * @param solutionStackName
      *        The name of the solution stack this configuration set uses.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigurationSettingsDescription withSolutionStackName(
-            String solutionStackName) {
+    public ConfigurationSettingsDescription withSolutionStackName(String solutionStackName) {
         setSolutionStackName(solutionStackName);
         return this;
     }
@@ -143,8 +131,7 @@ public class ConfigurationSettingsDescription implements Serializable,
      * </p>
      * 
      * @param applicationName
-     *        The name of the application associated with this configuration
-     *        set.
+     *        The name of the application associated with this configuration set.
      */
 
     public void setApplicationName(String applicationName) {
@@ -156,8 +143,7 @@ public class ConfigurationSettingsDescription implements Serializable,
      * The name of the application associated with this configuration set.
      * </p>
      * 
-     * @return The name of the application associated with this configuration
-     *         set.
+     * @return The name of the application associated with this configuration set.
      */
 
     public String getApplicationName() {
@@ -170,27 +156,22 @@ public class ConfigurationSettingsDescription implements Serializable,
      * </p>
      * 
      * @param applicationName
-     *        The name of the application associated with this configuration
-     *        set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the application associated with this configuration set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigurationSettingsDescription withApplicationName(
-            String applicationName) {
+    public ConfigurationSettingsDescription withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
     }
 
     /**
      * <p>
-     * If not <code>null</code>, the name of the configuration template for this
-     * configuration set.
+     * If not <code>null</code>, the name of the configuration template for this configuration set.
      * </p>
      * 
      * @param templateName
-     *        If not <code>null</code>, the name of the configuration template
-     *        for this configuration set.
+     *        If not <code>null</code>, the name of the configuration template for this configuration set.
      */
 
     public void setTemplateName(String templateName) {
@@ -199,12 +180,10 @@ public class ConfigurationSettingsDescription implements Serializable,
 
     /**
      * <p>
-     * If not <code>null</code>, the name of the configuration template for this
-     * configuration set.
+     * If not <code>null</code>, the name of the configuration template for this configuration set.
      * </p>
      * 
-     * @return If not <code>null</code>, the name of the configuration template
-     *         for this configuration set.
+     * @return If not <code>null</code>, the name of the configuration template for this configuration set.
      */
 
     public String getTemplateName() {
@@ -213,15 +192,12 @@ public class ConfigurationSettingsDescription implements Serializable,
 
     /**
      * <p>
-     * If not <code>null</code>, the name of the configuration template for this
-     * configuration set.
+     * If not <code>null</code>, the name of the configuration template for this configuration set.
      * </p>
      * 
      * @param templateName
-     *        If not <code>null</code>, the name of the configuration template
-     *        for this configuration set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If not <code>null</code>, the name of the configuration template for this configuration set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfigurationSettingsDescription withTemplateName(String templateName) {
@@ -261,8 +237,7 @@ public class ConfigurationSettingsDescription implements Serializable,
      * 
      * @param description
      *        Describes this configuration set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfigurationSettingsDescription withDescription(String description) {
@@ -272,13 +247,11 @@ public class ConfigurationSettingsDescription implements Serializable,
 
     /**
      * <p>
-     * If not <code>null</code>, the name of the environment for this
-     * configuration set.
+     * If not <code>null</code>, the name of the environment for this configuration set.
      * </p>
      * 
      * @param environmentName
-     *        If not <code>null</code>, the name of the environment for this
-     *        configuration set.
+     *        If not <code>null</code>, the name of the environment for this configuration set.
      */
 
     public void setEnvironmentName(String environmentName) {
@@ -287,12 +260,10 @@ public class ConfigurationSettingsDescription implements Serializable,
 
     /**
      * <p>
-     * If not <code>null</code>, the name of the environment for this
-     * configuration set.
+     * If not <code>null</code>, the name of the environment for this configuration set.
      * </p>
      * 
-     * @return If not <code>null</code>, the name of the environment for this
-     *         configuration set.
+     * @return If not <code>null</code>, the name of the environment for this configuration set.
      */
 
     public String getEnvironmentName() {
@@ -301,55 +272,43 @@ public class ConfigurationSettingsDescription implements Serializable,
 
     /**
      * <p>
-     * If not <code>null</code>, the name of the environment for this
-     * configuration set.
+     * If not <code>null</code>, the name of the environment for this configuration set.
      * </p>
      * 
      * @param environmentName
-     *        If not <code>null</code>, the name of the environment for this
-     *        configuration set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If not <code>null</code>, the name of the environment for this configuration set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigurationSettingsDescription withEnvironmentName(
-            String environmentName) {
+    public ConfigurationSettingsDescription withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
         return this;
     }
 
     /**
      * <p>
-     * If this configuration set is associated with an environment, the
-     * <code>DeploymentStatus</code> parameter indicates the deployment status
-     * of this configuration set:
+     * If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
+     * indicates the deployment status of this configuration set:
      * </p>
      * <ul>
-     * <li> <code>null</code>: This configuration is not associated with a
-     * running environment.</li>
-     * <li> <code>pending</code>: This is a draft configuration that is not
-     * deployed to the associated environment but is in the process of
-     * deploying.</li>
-     * <li> <code>deployed</code>: This is the configuration that is currently
-     * deployed to the associated running environment.</li>
-     * <li> <code>failed</code>: This is a draft configuration that failed to
-     * successfully deploy.</li>
+     * <li> <code>null</code>: This configuration is not associated with a running environment.</li>
+     * <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is
+     * in the process of deploying.</li>
+     * <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     * environment.</li>
+     * <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
      * </ul>
      * 
      * @param deploymentStatus
-     *        If this configuration set is associated with an environment, the
-     *        <code>DeploymentStatus</code> parameter indicates the deployment
-     *        status of this configuration set: </p>
+     *        If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
+     *        indicates the deployment status of this configuration set: </p>
      *        <ul>
-     *        <li> <code>null</code>: This configuration is not associated with a
-     *        running environment.</li>
-     *        <li> <code>pending</code>: This is a draft configuration that is
-     *        not deployed to the associated environment but is in the process
-     *        of deploying.</li>
-     *        <li> <code>deployed</code>: This is the configuration that is
-     *        currently deployed to the associated running environment.</li>
-     *        <li> <code>failed</code>: This is a draft configuration that failed
-     *        to successfully deploy.</li>
+     *        <li> <code>null</code>: This configuration is not associated with a running environment.</li>
+     *        <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment
+     *        but is in the process of deploying.</li>
+     *        <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     *        environment.</li>
+     *        <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
      * @see ConfigurationDeploymentStatus
      */
 
@@ -359,35 +318,27 @@ public class ConfigurationSettingsDescription implements Serializable,
 
     /**
      * <p>
-     * If this configuration set is associated with an environment, the
-     * <code>DeploymentStatus</code> parameter indicates the deployment status
-     * of this configuration set:
+     * If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
+     * indicates the deployment status of this configuration set:
      * </p>
      * <ul>
-     * <li> <code>null</code>: This configuration is not associated with a
-     * running environment.</li>
-     * <li> <code>pending</code>: This is a draft configuration that is not
-     * deployed to the associated environment but is in the process of
-     * deploying.</li>
-     * <li> <code>deployed</code>: This is the configuration that is currently
-     * deployed to the associated running environment.</li>
-     * <li> <code>failed</code>: This is a draft configuration that failed to
-     * successfully deploy.</li>
+     * <li> <code>null</code>: This configuration is not associated with a running environment.</li>
+     * <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is
+     * in the process of deploying.</li>
+     * <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     * environment.</li>
+     * <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
      * </ul>
      * 
-     * @return If this configuration set is associated with an environment, the
-     *         <code>DeploymentStatus</code> parameter indicates the deployment
-     *         status of this configuration set: </p>
+     * @return If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
+     *         indicates the deployment status of this configuration set: </p>
      *         <ul>
-     *         <li> <code>null</code>: This configuration is not associated with
-     *         a running environment.</li>
-     *         <li> <code>pending</code>: This is a draft configuration that is
-     *         not deployed to the associated environment but is in the process
-     *         of deploying.</li>
-     *         <li> <code>deployed</code>: This is the configuration that is
-     *         currently deployed to the associated running environment.</li>
-     *         <li> <code>failed</code>: This is a draft configuration that
-     *         failed to successfully deploy.</li>
+     *         <li> <code>null</code>: This configuration is not associated with a running environment.</li>
+     *         <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated
+     *         environment but is in the process of deploying.</li>
+     *         <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     *         environment.</li>
+     *         <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
      * @see ConfigurationDeploymentStatus
      */
 
@@ -397,126 +348,97 @@ public class ConfigurationSettingsDescription implements Serializable,
 
     /**
      * <p>
-     * If this configuration set is associated with an environment, the
-     * <code>DeploymentStatus</code> parameter indicates the deployment status
-     * of this configuration set:
+     * If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
+     * indicates the deployment status of this configuration set:
      * </p>
      * <ul>
-     * <li> <code>null</code>: This configuration is not associated with a
-     * running environment.</li>
-     * <li> <code>pending</code>: This is a draft configuration that is not
-     * deployed to the associated environment but is in the process of
-     * deploying.</li>
-     * <li> <code>deployed</code>: This is the configuration that is currently
-     * deployed to the associated running environment.</li>
-     * <li> <code>failed</code>: This is a draft configuration that failed to
-     * successfully deploy.</li>
+     * <li> <code>null</code>: This configuration is not associated with a running environment.</li>
+     * <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is
+     * in the process of deploying.</li>
+     * <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     * environment.</li>
+     * <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
      * </ul>
      * 
      * @param deploymentStatus
-     *        If this configuration set is associated with an environment, the
-     *        <code>DeploymentStatus</code> parameter indicates the deployment
-     *        status of this configuration set: </p>
+     *        If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
+     *        indicates the deployment status of this configuration set: </p>
      *        <ul>
-     *        <li> <code>null</code>: This configuration is not associated with a
-     *        running environment.</li>
-     *        <li> <code>pending</code>: This is a draft configuration that is
-     *        not deployed to the associated environment but is in the process
-     *        of deploying.</li>
-     *        <li> <code>deployed</code>: This is the configuration that is
-     *        currently deployed to the associated running environment.</li>
-     *        <li> <code>failed</code>: This is a draft configuration that failed
-     *        to successfully deploy.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li> <code>null</code>: This configuration is not associated with a running environment.</li>
+     *        <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment
+     *        but is in the process of deploying.</li>
+     *        <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     *        environment.</li>
+     *        <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationDeploymentStatus
      */
 
-    public ConfigurationSettingsDescription withDeploymentStatus(
-            String deploymentStatus) {
+    public ConfigurationSettingsDescription withDeploymentStatus(String deploymentStatus) {
         setDeploymentStatus(deploymentStatus);
         return this;
     }
 
     /**
      * <p>
-     * If this configuration set is associated with an environment, the
-     * <code>DeploymentStatus</code> parameter indicates the deployment status
-     * of this configuration set:
+     * If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
+     * indicates the deployment status of this configuration set:
      * </p>
      * <ul>
-     * <li> <code>null</code>: This configuration is not associated with a
-     * running environment.</li>
-     * <li> <code>pending</code>: This is a draft configuration that is not
-     * deployed to the associated environment but is in the process of
-     * deploying.</li>
-     * <li> <code>deployed</code>: This is the configuration that is currently
-     * deployed to the associated running environment.</li>
-     * <li> <code>failed</code>: This is a draft configuration that failed to
-     * successfully deploy.</li>
+     * <li> <code>null</code>: This configuration is not associated with a running environment.</li>
+     * <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is
+     * in the process of deploying.</li>
+     * <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     * environment.</li>
+     * <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
      * </ul>
      * 
      * @param deploymentStatus
-     *        If this configuration set is associated with an environment, the
-     *        <code>DeploymentStatus</code> parameter indicates the deployment
-     *        status of this configuration set: </p>
+     *        If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
+     *        indicates the deployment status of this configuration set: </p>
      *        <ul>
-     *        <li> <code>null</code>: This configuration is not associated with a
-     *        running environment.</li>
-     *        <li> <code>pending</code>: This is a draft configuration that is
-     *        not deployed to the associated environment but is in the process
-     *        of deploying.</li>
-     *        <li> <code>deployed</code>: This is the configuration that is
-     *        currently deployed to the associated running environment.</li>
-     *        <li> <code>failed</code>: This is a draft configuration that failed
-     *        to successfully deploy.</li>
+     *        <li> <code>null</code>: This configuration is not associated with a running environment.</li>
+     *        <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment
+     *        but is in the process of deploying.</li>
+     *        <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     *        environment.</li>
+     *        <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
      * @see ConfigurationDeploymentStatus
      */
 
-    public void setDeploymentStatus(
-            ConfigurationDeploymentStatus deploymentStatus) {
+    public void setDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
         this.deploymentStatus = deploymentStatus.toString();
     }
 
     /**
      * <p>
-     * If this configuration set is associated with an environment, the
-     * <code>DeploymentStatus</code> parameter indicates the deployment status
-     * of this configuration set:
+     * If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
+     * indicates the deployment status of this configuration set:
      * </p>
      * <ul>
-     * <li> <code>null</code>: This configuration is not associated with a
-     * running environment.</li>
-     * <li> <code>pending</code>: This is a draft configuration that is not
-     * deployed to the associated environment but is in the process of
-     * deploying.</li>
-     * <li> <code>deployed</code>: This is the configuration that is currently
-     * deployed to the associated running environment.</li>
-     * <li> <code>failed</code>: This is a draft configuration that failed to
-     * successfully deploy.</li>
+     * <li> <code>null</code>: This configuration is not associated with a running environment.</li>
+     * <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is
+     * in the process of deploying.</li>
+     * <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     * environment.</li>
+     * <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
      * </ul>
      * 
      * @param deploymentStatus
-     *        If this configuration set is associated with an environment, the
-     *        <code>DeploymentStatus</code> parameter indicates the deployment
-     *        status of this configuration set: </p>
+     *        If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
+     *        indicates the deployment status of this configuration set: </p>
      *        <ul>
-     *        <li> <code>null</code>: This configuration is not associated with a
-     *        running environment.</li>
-     *        <li> <code>pending</code>: This is a draft configuration that is
-     *        not deployed to the associated environment but is in the process
-     *        of deploying.</li>
-     *        <li> <code>deployed</code>: This is the configuration that is
-     *        currently deployed to the associated running environment.</li>
-     *        <li> <code>failed</code>: This is a draft configuration that failed
-     *        to successfully deploy.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li> <code>null</code>: This configuration is not associated with a running environment.</li>
+     *        <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment
+     *        but is in the process of deploying.</li>
+     *        <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     *        environment.</li>
+     *        <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationDeploymentStatus
      */
 
-    public ConfigurationSettingsDescription withDeploymentStatus(
-            ConfigurationDeploymentStatus deploymentStatus) {
+    public ConfigurationSettingsDescription withDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
         setDeploymentStatus(deploymentStatus);
         return this;
     }
@@ -553,12 +475,10 @@ public class ConfigurationSettingsDescription implements Serializable,
      * 
      * @param dateCreated
      *        The date (in UTC time) when this configuration set was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigurationSettingsDescription withDateCreated(
-            java.util.Date dateCreated) {
+    public ConfigurationSettingsDescription withDateCreated(java.util.Date dateCreated) {
         setDateCreated(dateCreated);
         return this;
     }
@@ -569,8 +489,7 @@ public class ConfigurationSettingsDescription implements Serializable,
      * </p>
      * 
      * @param dateUpdated
-     *        The date (in UTC time) when this configuration set was last
-     *        modified.
+     *        The date (in UTC time) when this configuration set was last modified.
      */
 
     public void setDateUpdated(java.util.Date dateUpdated) {
@@ -582,8 +501,7 @@ public class ConfigurationSettingsDescription implements Serializable,
      * The date (in UTC time) when this configuration set was last modified.
      * </p>
      * 
-     * @return The date (in UTC time) when this configuration set was last
-     *         modified.
+     * @return The date (in UTC time) when this configuration set was last modified.
      */
 
     public java.util.Date getDateUpdated() {
@@ -596,26 +514,21 @@ public class ConfigurationSettingsDescription implements Serializable,
      * </p>
      * 
      * @param dateUpdated
-     *        The date (in UTC time) when this configuration set was last
-     *        modified.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The date (in UTC time) when this configuration set was last modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigurationSettingsDescription withDateUpdated(
-            java.util.Date dateUpdated) {
+    public ConfigurationSettingsDescription withDateUpdated(java.util.Date dateUpdated) {
         setDateUpdated(dateUpdated);
         return this;
     }
 
     /**
      * <p>
-     * A list of the configuration options and their values in this
-     * configuration set.
+     * A list of the configuration options and their values in this configuration set.
      * </p>
      * 
-     * @return A list of the configuration options and their values in this
-     *         configuration set.
+     * @return A list of the configuration options and their values in this configuration set.
      */
 
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
@@ -627,50 +540,40 @@ public class ConfigurationSettingsDescription implements Serializable,
 
     /**
      * <p>
-     * A list of the configuration options and their values in this
-     * configuration set.
+     * A list of the configuration options and their values in this configuration set.
      * </p>
      * 
      * @param optionSettings
-     *        A list of the configuration options and their values in this
-     *        configuration set.
+     *        A list of the configuration options and their values in this configuration set.
      */
 
-    public void setOptionSettings(
-            java.util.Collection<ConfigurationOptionSetting> optionSettings) {
+    public void setOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         if (optionSettings == null) {
             this.optionSettings = null;
             return;
         }
 
-        this.optionSettings = new com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>(
-                optionSettings);
+        this.optionSettings = new com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>(optionSettings);
     }
 
     /**
      * <p>
-     * A list of the configuration options and their values in this
-     * configuration set.
+     * A list of the configuration options and their values in this configuration set.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOptionSettings(java.util.Collection)} or
-     * {@link #withOptionSettings(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOptionSettings(java.util.Collection)} or {@link #withOptionSettings(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param optionSettings
-     *        A list of the configuration options and their values in this
-     *        configuration set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of the configuration options and their values in this configuration set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigurationSettingsDescription withOptionSettings(
-            ConfigurationOptionSetting... optionSettings) {
+    public ConfigurationSettingsDescription withOptionSettings(ConfigurationOptionSetting... optionSettings) {
         if (this.optionSettings == null) {
-            setOptionSettings(new com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>(
-                    optionSettings.length));
+            setOptionSettings(new com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>(optionSettings.length));
         }
         for (ConfigurationOptionSetting ele : optionSettings) {
             this.optionSettings.add(ele);
@@ -680,26 +583,21 @@ public class ConfigurationSettingsDescription implements Serializable,
 
     /**
      * <p>
-     * A list of the configuration options and their values in this
-     * configuration set.
+     * A list of the configuration options and their values in this configuration set.
      * </p>
      * 
      * @param optionSettings
-     *        A list of the configuration options and their values in this
-     *        configuration set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of the configuration options and their values in this configuration set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigurationSettingsDescription withOptionSettings(
-            java.util.Collection<ConfigurationOptionSetting> optionSettings) {
+    public ConfigurationSettingsDescription withOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         setOptionSettings(optionSettings);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -741,57 +639,41 @@ public class ConfigurationSettingsDescription implements Serializable,
         if (obj instanceof ConfigurationSettingsDescription == false)
             return false;
         ConfigurationSettingsDescription other = (ConfigurationSettingsDescription) obj;
-        if (other.getSolutionStackName() == null
-                ^ this.getSolutionStackName() == null)
+        if (other.getSolutionStackName() == null ^ this.getSolutionStackName() == null)
             return false;
-        if (other.getSolutionStackName() != null
-                && other.getSolutionStackName().equals(
-                        this.getSolutionStackName()) == false)
+        if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false)
             return false;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
         if (other.getTemplateName() == null ^ this.getTemplateName() == null)
             return false;
-        if (other.getTemplateName() != null
-                && other.getTemplateName().equals(this.getTemplateName()) == false)
+        if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getEnvironmentName() == null
-                ^ this.getEnvironmentName() == null)
+        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
             return false;
-        if (other.getEnvironmentName() != null
-                && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
+        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
             return false;
-        if (other.getDeploymentStatus() == null
-                ^ this.getDeploymentStatus() == null)
+        if (other.getDeploymentStatus() == null ^ this.getDeploymentStatus() == null)
             return false;
-        if (other.getDeploymentStatus() != null
-                && other.getDeploymentStatus().equals(
-                        this.getDeploymentStatus()) == false)
+        if (other.getDeploymentStatus() != null && other.getDeploymentStatus().equals(this.getDeploymentStatus()) == false)
             return false;
         if (other.getDateCreated() == null ^ this.getDateCreated() == null)
             return false;
-        if (other.getDateCreated() != null
-                && other.getDateCreated().equals(this.getDateCreated()) == false)
+        if (other.getDateCreated() != null && other.getDateCreated().equals(this.getDateCreated()) == false)
             return false;
         if (other.getDateUpdated() == null ^ this.getDateUpdated() == null)
             return false;
-        if (other.getDateUpdated() != null
-                && other.getDateUpdated().equals(this.getDateUpdated()) == false)
+        if (other.getDateUpdated() != null && other.getDateUpdated().equals(this.getDateUpdated()) == false)
             return false;
-        if (other.getOptionSettings() == null
-                ^ this.getOptionSettings() == null)
+        if (other.getOptionSettings() == null ^ this.getOptionSettings() == null)
             return false;
-        if (other.getOptionSettings() != null
-                && other.getOptionSettings().equals(this.getOptionSettings()) == false)
+        if (other.getOptionSettings() != null && other.getOptionSettings().equals(this.getOptionSettings()) == false)
             return false;
         return true;
     }
@@ -801,39 +683,15 @@ public class ConfigurationSettingsDescription implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSolutionStackName() == null) ? 0
-                        : getSolutionStackName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTemplateName() == null) ? 0 : getTemplateName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEnvironmentName() == null) ? 0 : getEnvironmentName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentStatus() == null) ? 0 : getDeploymentStatus()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOptionSettings() == null) ? 0 : getOptionSettings()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentStatus() == null) ? 0 : getDeploymentStatus().hashCode());
+        hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
+        hashCode = prime * hashCode + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode());
+        hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode());
         return hashCode;
     }
 
@@ -842,9 +700,7 @@ public class ConfigurationSettingsDescription implements Serializable,
         try {
             return (ConfigurationSettingsDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

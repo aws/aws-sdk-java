@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a reserved node. You can call the
- * <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved
+ * Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved
  * node offerings.
  * </p>
  */
@@ -45,8 +42,8 @@ public class ReservedNode implements Serializable, Cloneable {
     private String nodeType;
     /**
      * <p>
-     * The time the reservation started. You purchase a reserved node offering
-     * for a duration. This is the start time of that duration.
+     * The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of
+     * that duration.
      * </p>
      */
     private java.util.Date startTime;
@@ -90,14 +87,13 @@ public class ReservedNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * pending-payment-This reserved node has recently been purchased, and the
-     * sale has been approved, but payment has not yet been confirmed.
+     * pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has
+     * not yet been confirmed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * active-This reserved node is owned by the caller and is available for
-     * use.
+     * active-This reserved node is owned by the caller and is available for use.
      * </p>
      * </li>
      * <li>
@@ -110,8 +106,7 @@ public class ReservedNode implements Serializable, Cloneable {
     private String state;
     /**
      * <p>
-     * The anticipated utilization of the reserved node, as defined in the
-     * reserved node offering.
+     * The anticipated utilization of the reserved node, as defined in the reserved node offering.
      * </p>
      */
     private String offeringType;
@@ -154,8 +149,7 @@ public class ReservedNode implements Serializable, Cloneable {
      * 
      * @param reservedNodeId
      *        The unique identifier for the reservation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedNode withReservedNodeId(String reservedNodeId) {
@@ -195,8 +189,7 @@ public class ReservedNode implements Serializable, Cloneable {
      * 
      * @param reservedNodeOfferingId
      *        The identifier for the reserved node offering.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedNode withReservedNodeOfferingId(String reservedNodeOfferingId) {
@@ -236,8 +229,7 @@ public class ReservedNode implements Serializable, Cloneable {
      * 
      * @param nodeType
      *        The node type of the reserved node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedNode withNodeType(String nodeType) {
@@ -247,13 +239,13 @@ public class ReservedNode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the reservation started. You purchase a reserved node offering
-     * for a duration. This is the start time of that duration.
+     * The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of
+     * that duration.
      * </p>
      * 
      * @param startTime
-     *        The time the reservation started. You purchase a reserved node
-     *        offering for a duration. This is the start time of that duration.
+     *        The time the reservation started. You purchase a reserved node offering for a duration. This is the start
+     *        time of that duration.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -262,12 +254,12 @@ public class ReservedNode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the reservation started. You purchase a reserved node offering
-     * for a duration. This is the start time of that duration.
+     * The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of
+     * that duration.
      * </p>
      * 
-     * @return The time the reservation started. You purchase a reserved node
-     *         offering for a duration. This is the start time of that duration.
+     * @return The time the reservation started. You purchase a reserved node offering for a duration. This is the start
+     *         time of that duration.
      */
 
     public java.util.Date getStartTime() {
@@ -276,15 +268,14 @@ public class ReservedNode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the reservation started. You purchase a reserved node offering
-     * for a duration. This is the start time of that duration.
+     * The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of
+     * that duration.
      * </p>
      * 
      * @param startTime
-     *        The time the reservation started. You purchase a reserved node
-     *        offering for a duration. This is the start time of that duration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time the reservation started. You purchase a reserved node offering for a duration. This is the start
+     *        time of that duration.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedNode withStartTime(java.util.Date startTime) {
@@ -324,8 +315,7 @@ public class ReservedNode implements Serializable, Cloneable {
      * 
      * @param duration
      *        The duration of the node reservation in seconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedNode withDuration(Integer duration) {
@@ -351,8 +341,7 @@ public class ReservedNode implements Serializable, Cloneable {
      * The fixed cost Amazon Redshift charges you for this reserved node.
      * </p>
      * 
-     * @return The fixed cost Amazon Redshift charges you for this reserved
-     *         node.
+     * @return The fixed cost Amazon Redshift charges you for this reserved node.
      */
 
     public Double getFixedPrice() {
@@ -366,8 +355,7 @@ public class ReservedNode implements Serializable, Cloneable {
      * 
      * @param fixedPrice
      *        The fixed cost Amazon Redshift charges you for this reserved node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedNode withFixedPrice(Double fixedPrice) {
@@ -381,8 +369,7 @@ public class ReservedNode implements Serializable, Cloneable {
      * </p>
      * 
      * @param usagePrice
-     *        The hourly rate Amazon Redshift charges you for this reserved
-     *        node.
+     *        The hourly rate Amazon Redshift charges you for this reserved node.
      */
 
     public void setUsagePrice(Double usagePrice) {
@@ -394,8 +381,7 @@ public class ReservedNode implements Serializable, Cloneable {
      * The hourly rate Amazon Redshift charges you for this reserved node.
      * </p>
      * 
-     * @return The hourly rate Amazon Redshift charges you for this reserved
-     *         node.
+     * @return The hourly rate Amazon Redshift charges you for this reserved node.
      */
 
     public Double getUsagePrice() {
@@ -408,10 +394,8 @@ public class ReservedNode implements Serializable, Cloneable {
      * </p>
      * 
      * @param usagePrice
-     *        The hourly rate Amazon Redshift charges you for this reserved
-     *        node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The hourly rate Amazon Redshift charges you for this reserved node.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedNode withUsagePrice(Double usagePrice) {
@@ -451,8 +435,7 @@ public class ReservedNode implements Serializable, Cloneable {
      * 
      * @param currencyCode
      *        The currency code for the reserved cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedNode withCurrencyCode(String currencyCode) {
@@ -492,8 +475,7 @@ public class ReservedNode implements Serializable, Cloneable {
      * 
      * @param nodeCount
      *        The number of reserved compute nodes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedNode withNodeCount(Integer nodeCount) {
@@ -511,14 +493,13 @@ public class ReservedNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * pending-payment-This reserved node has recently been purchased, and the
-     * sale has been approved, but payment has not yet been confirmed.
+     * pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has
+     * not yet been confirmed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * active-This reserved node is owned by the caller and is available for
-     * use.
+     * active-This reserved node is owned by the caller and is available for use.
      * </p>
      * </li>
      * <li>
@@ -536,15 +517,13 @@ public class ReservedNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        pending-payment-This reserved node has recently been purchased,
-     *        and the sale has been approved, but payment has not yet been
-     *        confirmed.
+     *        pending-payment-This reserved node has recently been purchased, and the sale has been approved, but
+     *        payment has not yet been confirmed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        active-This reserved node is owned by the caller and is available
-     *        for use.
+     *        active-This reserved node is owned by the caller and is available for use.
      *        </p>
      *        </li>
      *        <li>
@@ -568,14 +547,13 @@ public class ReservedNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * pending-payment-This reserved node has recently been purchased, and the
-     * sale has been approved, but payment has not yet been confirmed.
+     * pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has
+     * not yet been confirmed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * active-This reserved node is owned by the caller and is available for
-     * use.
+     * active-This reserved node is owned by the caller and is available for use.
      * </p>
      * </li>
      * <li>
@@ -592,15 +570,13 @@ public class ReservedNode implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         pending-payment-This reserved node has recently been purchased,
-     *         and the sale has been approved, but payment has not yet been
-     *         confirmed.
+     *         pending-payment-This reserved node has recently been purchased, and the sale has been approved, but
+     *         payment has not yet been confirmed.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         active-This reserved node is owned by the caller and is available
-     *         for use.
+     *         active-This reserved node is owned by the caller and is available for use.
      *         </p>
      *         </li>
      *         <li>
@@ -624,14 +600,13 @@ public class ReservedNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * pending-payment-This reserved node has recently been purchased, and the
-     * sale has been approved, but payment has not yet been confirmed.
+     * pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has
+     * not yet been confirmed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * active-This reserved node is owned by the caller and is available for
-     * use.
+     * active-This reserved node is owned by the caller and is available for use.
      * </p>
      * </li>
      * <li>
@@ -649,15 +624,13 @@ public class ReservedNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        pending-payment-This reserved node has recently been purchased,
-     *        and the sale has been approved, but payment has not yet been
-     *        confirmed.
+     *        pending-payment-This reserved node has recently been purchased, and the sale has been approved, but
+     *        payment has not yet been confirmed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        active-This reserved node is owned by the caller and is available
-     *        for use.
+     *        active-This reserved node is owned by the caller and is available for use.
      *        </p>
      *        </li>
      *        <li>
@@ -665,8 +638,7 @@ public class ReservedNode implements Serializable, Cloneable {
      *        payment-failed-Payment failed for the purchase attempt.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedNode withState(String state) {
@@ -676,13 +648,11 @@ public class ReservedNode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The anticipated utilization of the reserved node, as defined in the
-     * reserved node offering.
+     * The anticipated utilization of the reserved node, as defined in the reserved node offering.
      * </p>
      * 
      * @param offeringType
-     *        The anticipated utilization of the reserved node, as defined in
-     *        the reserved node offering.
+     *        The anticipated utilization of the reserved node, as defined in the reserved node offering.
      */
 
     public void setOfferingType(String offeringType) {
@@ -691,12 +661,10 @@ public class ReservedNode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The anticipated utilization of the reserved node, as defined in the
-     * reserved node offering.
+     * The anticipated utilization of the reserved node, as defined in the reserved node offering.
      * </p>
      * 
-     * @return The anticipated utilization of the reserved node, as defined in
-     *         the reserved node offering.
+     * @return The anticipated utilization of the reserved node, as defined in the reserved node offering.
      */
 
     public String getOfferingType() {
@@ -705,15 +673,12 @@ public class ReservedNode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The anticipated utilization of the reserved node, as defined in the
-     * reserved node offering.
+     * The anticipated utilization of the reserved node, as defined in the reserved node offering.
      * </p>
      * 
      * @param offeringType
-     *        The anticipated utilization of the reserved node, as defined in
-     *        the reserved node offering.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The anticipated utilization of the reserved node, as defined in the reserved node offering.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedNode withOfferingType(String offeringType) {
@@ -745,15 +710,13 @@ public class ReservedNode implements Serializable, Cloneable {
      *        The recurring charges for the reserved node.
      */
 
-    public void setRecurringCharges(
-            java.util.Collection<RecurringCharge> recurringCharges) {
+    public void setRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         if (recurringCharges == null) {
             this.recurringCharges = null;
             return;
         }
 
-        this.recurringCharges = new com.amazonaws.internal.SdkInternalList<RecurringCharge>(
-                recurringCharges);
+        this.recurringCharges = new com.amazonaws.internal.SdkInternalList<RecurringCharge>(recurringCharges);
     }
 
     /**
@@ -761,23 +724,19 @@ public class ReservedNode implements Serializable, Cloneable {
      * The recurring charges for the reserved node.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRecurringCharges(java.util.Collection)} or
-     * {@link #withRecurringCharges(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRecurringCharges(java.util.Collection)} or {@link #withRecurringCharges(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param recurringCharges
      *        The recurring charges for the reserved node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedNode withRecurringCharges(
-            RecurringCharge... recurringCharges) {
+    public ReservedNode withRecurringCharges(RecurringCharge... recurringCharges) {
         if (this.recurringCharges == null) {
-            setRecurringCharges(new com.amazonaws.internal.SdkInternalList<RecurringCharge>(
-                    recurringCharges.length));
+            setRecurringCharges(new com.amazonaws.internal.SdkInternalList<RecurringCharge>(recurringCharges.length));
         }
         for (RecurringCharge ele : recurringCharges) {
             this.recurringCharges.add(ele);
@@ -792,19 +751,16 @@ public class ReservedNode implements Serializable, Cloneable {
      * 
      * @param recurringCharges
      *        The recurring charges for the reserved node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedNode withRecurringCharges(
-            java.util.Collection<RecurringCharge> recurringCharges) {
+    public ReservedNode withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         setRecurringCharges(recurringCharges);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -817,8 +773,7 @@ public class ReservedNode implements Serializable, Cloneable {
         if (getReservedNodeId() != null)
             sb.append("ReservedNodeId: " + getReservedNodeId() + ",");
         if (getReservedNodeOfferingId() != null)
-            sb.append("ReservedNodeOfferingId: " + getReservedNodeOfferingId()
-                    + ",");
+            sb.append("ReservedNodeOfferingId: " + getReservedNodeOfferingId() + ",");
         if (getNodeType() != null)
             sb.append("NodeType: " + getNodeType() + ",");
         if (getStartTime() != null)
@@ -853,70 +808,53 @@ public class ReservedNode implements Serializable, Cloneable {
         if (obj instanceof ReservedNode == false)
             return false;
         ReservedNode other = (ReservedNode) obj;
-        if (other.getReservedNodeId() == null
-                ^ this.getReservedNodeId() == null)
+        if (other.getReservedNodeId() == null ^ this.getReservedNodeId() == null)
             return false;
-        if (other.getReservedNodeId() != null
-                && other.getReservedNodeId().equals(this.getReservedNodeId()) == false)
+        if (other.getReservedNodeId() != null && other.getReservedNodeId().equals(this.getReservedNodeId()) == false)
             return false;
-        if (other.getReservedNodeOfferingId() == null
-                ^ this.getReservedNodeOfferingId() == null)
+        if (other.getReservedNodeOfferingId() == null ^ this.getReservedNodeOfferingId() == null)
             return false;
-        if (other.getReservedNodeOfferingId() != null
-                && other.getReservedNodeOfferingId().equals(
-                        this.getReservedNodeOfferingId()) == false)
+        if (other.getReservedNodeOfferingId() != null && other.getReservedNodeOfferingId().equals(this.getReservedNodeOfferingId()) == false)
             return false;
         if (other.getNodeType() == null ^ this.getNodeType() == null)
             return false;
-        if (other.getNodeType() != null
-                && other.getNodeType().equals(this.getNodeType()) == false)
+        if (other.getNodeType() != null && other.getNodeType().equals(this.getNodeType()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
-        if (other.getStartTime() != null
-                && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         if (other.getDuration() == null ^ this.getDuration() == null)
             return false;
-        if (other.getDuration() != null
-                && other.getDuration().equals(this.getDuration()) == false)
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
             return false;
         if (other.getFixedPrice() == null ^ this.getFixedPrice() == null)
             return false;
-        if (other.getFixedPrice() != null
-                && other.getFixedPrice().equals(this.getFixedPrice()) == false)
+        if (other.getFixedPrice() != null && other.getFixedPrice().equals(this.getFixedPrice()) == false)
             return false;
         if (other.getUsagePrice() == null ^ this.getUsagePrice() == null)
             return false;
-        if (other.getUsagePrice() != null
-                && other.getUsagePrice().equals(this.getUsagePrice()) == false)
+        if (other.getUsagePrice() != null && other.getUsagePrice().equals(this.getUsagePrice()) == false)
             return false;
         if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
             return false;
-        if (other.getCurrencyCode() != null
-                && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
+        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
             return false;
         if (other.getNodeCount() == null ^ this.getNodeCount() == null)
             return false;
-        if (other.getNodeCount() != null
-                && other.getNodeCount().equals(this.getNodeCount()) == false)
+        if (other.getNodeCount() != null && other.getNodeCount().equals(this.getNodeCount()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getOfferingType() == null ^ this.getOfferingType() == null)
             return false;
-        if (other.getOfferingType() != null
-                && other.getOfferingType().equals(this.getOfferingType()) == false)
+        if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false)
             return false;
-        if (other.getRecurringCharges() == null
-                ^ this.getRecurringCharges() == null)
+        if (other.getRecurringCharges() == null ^ this.getRecurringCharges() == null)
             return false;
-        if (other.getRecurringCharges() != null
-                && other.getRecurringCharges().equals(
-                        this.getRecurringCharges()) == false)
+        if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false)
             return false;
         return true;
     }
@@ -926,40 +864,18 @@ public class ReservedNode implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReservedNodeId() == null) ? 0 : getReservedNodeId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReservedNodeOfferingId() == null) ? 0
-                        : getReservedNodeOfferingId().hashCode());
-        hashCode = prime * hashCode
-                + ((getNodeType() == null) ? 0 : getNodeType().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getDuration() == null) ? 0 : getDuration().hashCode());
-        hashCode = prime * hashCode
-                + ((getFixedPrice() == null) ? 0 : getFixedPrice().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCurrencyCode() == null) ? 0 : getCurrencyCode()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNodeCount() == null) ? 0 : getNodeCount().hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOfferingType() == null) ? 0 : getOfferingType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRecurringCharges() == null) ? 0 : getRecurringCharges()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getReservedNodeId() == null) ? 0 : getReservedNodeId().hashCode());
+        hashCode = prime * hashCode + ((getReservedNodeOfferingId() == null) ? 0 : getReservedNodeOfferingId().hashCode());
+        hashCode = prime * hashCode + ((getNodeType() == null) ? 0 : getNodeType().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
+        hashCode = prime * hashCode + ((getFixedPrice() == null) ? 0 : getFixedPrice().hashCode());
+        hashCode = prime * hashCode + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode());
+        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
+        hashCode = prime * hashCode + ((getNodeCount() == null) ? 0 : getNodeCount().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
+        hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode());
         return hashCode;
     }
 
@@ -968,9 +884,7 @@ public class ReservedNode implements Serializable, Cloneable {
         try {
             return (ReservedNode) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

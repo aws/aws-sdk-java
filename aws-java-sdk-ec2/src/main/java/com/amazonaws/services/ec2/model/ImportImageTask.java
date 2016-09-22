@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -128,8 +126,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      * 
      * @param importTaskId
      *        The ID of the import image task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageTask withImportTaskId(String importTaskId) {
@@ -184,8 +181,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      *        The architecture of the virtual machine.</p>
      *        <p>
      *        Valid values: <code>i386</code> | <code>x86_64</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageTask withArchitecture(String architecture) {
@@ -225,8 +221,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      * 
      * @param licenseType
      *        The license type of the virtual machine.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageTask withLicenseType(String licenseType) {
@@ -266,8 +261,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      * 
      * @param platform
      *        The description string for the import image task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageTask withPlatform(String platform) {
@@ -322,8 +316,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      *        The target hypervisor for the import task.</p>
      *        <p>
      *        Valid values: <code>xen</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageTask withHypervisor(String hypervisor) {
@@ -363,8 +356,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      * 
      * @param description
      *        A description of the import task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageTask withDescription(String description) {
@@ -396,15 +388,13 @@ public class ImportImageTask implements Serializable, Cloneable {
      *        Information about the snapshots.
      */
 
-    public void setSnapshotDetails(
-            java.util.Collection<SnapshotDetail> snapshotDetails) {
+    public void setSnapshotDetails(java.util.Collection<SnapshotDetail> snapshotDetails) {
         if (snapshotDetails == null) {
             this.snapshotDetails = null;
             return;
         }
 
-        this.snapshotDetails = new com.amazonaws.internal.SdkInternalList<SnapshotDetail>(
-                snapshotDetails);
+        this.snapshotDetails = new com.amazonaws.internal.SdkInternalList<SnapshotDetail>(snapshotDetails);
     }
 
     /**
@@ -412,23 +402,19 @@ public class ImportImageTask implements Serializable, Cloneable {
      * Information about the snapshots.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSnapshotDetails(java.util.Collection)} or
-     * {@link #withSnapshotDetails(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSnapshotDetails(java.util.Collection)} or {@link #withSnapshotDetails(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param snapshotDetails
      *        Information about the snapshots.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportImageTask withSnapshotDetails(
-            SnapshotDetail... snapshotDetails) {
+    public ImportImageTask withSnapshotDetails(SnapshotDetail... snapshotDetails) {
         if (this.snapshotDetails == null) {
-            setSnapshotDetails(new com.amazonaws.internal.SdkInternalList<SnapshotDetail>(
-                    snapshotDetails.length));
+            setSnapshotDetails(new com.amazonaws.internal.SdkInternalList<SnapshotDetail>(snapshotDetails.length));
         }
         for (SnapshotDetail ele : snapshotDetails) {
             this.snapshotDetails.add(ele);
@@ -443,12 +429,10 @@ public class ImportImageTask implements Serializable, Cloneable {
      * 
      * @param snapshotDetails
      *        Information about the snapshots.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportImageTask withSnapshotDetails(
-            java.util.Collection<SnapshotDetail> snapshotDetails) {
+    public ImportImageTask withSnapshotDetails(java.util.Collection<SnapshotDetail> snapshotDetails) {
         setSnapshotDetails(snapshotDetails);
         return this;
     }
@@ -459,8 +443,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      * </p>
      * 
      * @param imageId
-     *        The ID of the Amazon Machine Image (AMI) of the imported virtual
-     *        machine.
+     *        The ID of the Amazon Machine Image (AMI) of the imported virtual machine.
      */
 
     public void setImageId(String imageId) {
@@ -472,8 +455,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      * The ID of the Amazon Machine Image (AMI) of the imported virtual machine.
      * </p>
      * 
-     * @return The ID of the Amazon Machine Image (AMI) of the imported virtual
-     *         machine.
+     * @return The ID of the Amazon Machine Image (AMI) of the imported virtual machine.
      */
 
     public String getImageId() {
@@ -486,10 +468,8 @@ public class ImportImageTask implements Serializable, Cloneable {
      * </p>
      * 
      * @param imageId
-     *        The ID of the Amazon Machine Image (AMI) of the imported virtual
-     *        machine.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the Amazon Machine Image (AMI) of the imported virtual machine.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageTask withImageId(String imageId) {
@@ -529,8 +509,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      * 
      * @param progress
      *        The percentage of progress of the import image task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageTask withProgress(String progress) {
@@ -570,8 +549,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      * 
      * @param statusMessage
      *        A descriptive status message for the import image task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageTask withStatusMessage(String statusMessage) {
@@ -611,8 +589,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      * 
      * @param status
      *        A brief status for the import image task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageTask withStatus(String status) {
@@ -621,8 +598,7 @@ public class ImportImageTask implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -670,59 +646,47 @@ public class ImportImageTask implements Serializable, Cloneable {
         ImportImageTask other = (ImportImageTask) obj;
         if (other.getImportTaskId() == null ^ this.getImportTaskId() == null)
             return false;
-        if (other.getImportTaskId() != null
-                && other.getImportTaskId().equals(this.getImportTaskId()) == false)
+        if (other.getImportTaskId() != null && other.getImportTaskId().equals(this.getImportTaskId()) == false)
             return false;
         if (other.getArchitecture() == null ^ this.getArchitecture() == null)
             return false;
-        if (other.getArchitecture() != null
-                && other.getArchitecture().equals(this.getArchitecture()) == false)
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
             return false;
         if (other.getLicenseType() == null ^ this.getLicenseType() == null)
             return false;
-        if (other.getLicenseType() != null
-                && other.getLicenseType().equals(this.getLicenseType()) == false)
+        if (other.getLicenseType() != null && other.getLicenseType().equals(this.getLicenseType()) == false)
             return false;
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
-        if (other.getPlatform() != null
-                && other.getPlatform().equals(this.getPlatform()) == false)
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
         if (other.getHypervisor() == null ^ this.getHypervisor() == null)
             return false;
-        if (other.getHypervisor() != null
-                && other.getHypervisor().equals(this.getHypervisor()) == false)
+        if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getSnapshotDetails() == null
-                ^ this.getSnapshotDetails() == null)
+        if (other.getSnapshotDetails() == null ^ this.getSnapshotDetails() == null)
             return false;
-        if (other.getSnapshotDetails() != null
-                && other.getSnapshotDetails().equals(this.getSnapshotDetails()) == false)
+        if (other.getSnapshotDetails() != null && other.getSnapshotDetails().equals(this.getSnapshotDetails()) == false)
             return false;
         if (other.getImageId() == null ^ this.getImageId() == null)
             return false;
-        if (other.getImageId() != null
-                && other.getImageId().equals(this.getImageId()) == false)
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
             return false;
         if (other.getProgress() == null ^ this.getProgress() == null)
             return false;
-        if (other.getProgress() != null
-                && other.getProgress().equals(this.getProgress()) == false)
+        if (other.getProgress() != null && other.getProgress().equals(this.getProgress()) == false)
             return false;
         if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
-        if (other.getStatusMessage() != null
-                && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -732,38 +696,17 @@ public class ImportImageTask implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getImportTaskId() == null) ? 0 : getImportTaskId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getArchitecture() == null) ? 0 : getArchitecture()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
-        hashCode = prime * hashCode
-                + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
-        hashCode = prime * hashCode
-                + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotDetails() == null) ? 0 : getSnapshotDetails()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getImageId() == null) ? 0 : getImageId().hashCode());
-        hashCode = prime * hashCode
-                + ((getProgress() == null) ? 0 : getProgress().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStatusMessage() == null) ? 0 : getStatusMessage()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getImportTaskId() == null) ? 0 : getImportTaskId().hashCode());
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotDetails() == null) ? 0 : getSnapshotDetails().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 
@@ -772,9 +715,7 @@ public class ImportImageTask implements Serializable, Cloneable {
         try {
             return (ImportImageTask) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

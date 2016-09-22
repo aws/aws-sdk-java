@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -18,19 +16,16 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * <a>DescribeReservedDBInstancesOfferings</a> action.
+ * Contains the result of a successful invocation of the <a>DescribeReservedDBInstancesOfferings</a> action.
  * </p>
  */
-public class DescribeReservedDBInstancesOfferingsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeReservedDBInstancesOfferingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
@@ -43,16 +38,13 @@ public class DescribeReservedDBInstancesOfferingsResult extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous request. If
-     *        this parameter is specified, the response includes only records
-     *        beyond the marker, up to the value specified by
-     *        <code>MaxRecords</code>.
+     *        An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *        includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -61,15 +53,12 @@ public class DescribeReservedDBInstancesOfferingsResult extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
-     * @return An optional pagination token provided by a previous request. If
-     *         this parameter is specified, the response includes only records
-     *         beyond the marker, up to the value specified by
-     *         <code>MaxRecords</code>.
+     * @return An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *         includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -78,18 +67,14 @@ public class DescribeReservedDBInstancesOfferingsResult extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous request. If
-     *        this parameter is specified, the response includes only records
-     *        beyond the marker, up to the value specified by
-     *        <code>MaxRecords</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *        includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeReservedDBInstancesOfferingsResult withMarker(String marker) {
@@ -121,15 +106,13 @@ public class DescribeReservedDBInstancesOfferingsResult extends
      *        A list of reserved DB instance offerings.
      */
 
-    public void setReservedDBInstancesOfferings(
-            java.util.Collection<ReservedDBInstancesOffering> reservedDBInstancesOfferings) {
+    public void setReservedDBInstancesOfferings(java.util.Collection<ReservedDBInstancesOffering> reservedDBInstancesOfferings) {
         if (reservedDBInstancesOfferings == null) {
             this.reservedDBInstancesOfferings = null;
             return;
         }
 
-        this.reservedDBInstancesOfferings = new com.amazonaws.internal.SdkInternalList<ReservedDBInstancesOffering>(
-                reservedDBInstancesOfferings);
+        this.reservedDBInstancesOfferings = new com.amazonaws.internal.SdkInternalList<ReservedDBInstancesOffering>(reservedDBInstancesOfferings);
     }
 
     /**
@@ -137,23 +120,19 @@ public class DescribeReservedDBInstancesOfferingsResult extends
      * A list of reserved DB instance offerings.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setReservedDBInstancesOfferings(java.util.Collection)}
-     * or {@link #withReservedDBInstancesOfferings(java.util.Collection)} if you
-     * want to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReservedDBInstancesOfferings(java.util.Collection)} or
+     * {@link #withReservedDBInstancesOfferings(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param reservedDBInstancesOfferings
      *        A list of reserved DB instance offerings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReservedDBInstancesOfferingsResult withReservedDBInstancesOfferings(
-            ReservedDBInstancesOffering... reservedDBInstancesOfferings) {
+    public DescribeReservedDBInstancesOfferingsResult withReservedDBInstancesOfferings(ReservedDBInstancesOffering... reservedDBInstancesOfferings) {
         if (this.reservedDBInstancesOfferings == null) {
-            setReservedDBInstancesOfferings(new com.amazonaws.internal.SdkInternalList<ReservedDBInstancesOffering>(
-                    reservedDBInstancesOfferings.length));
+            setReservedDBInstancesOfferings(new com.amazonaws.internal.SdkInternalList<ReservedDBInstancesOffering>(reservedDBInstancesOfferings.length));
         }
         for (ReservedDBInstancesOffering ele : reservedDBInstancesOfferings) {
             this.reservedDBInstancesOfferings.add(ele);
@@ -168,8 +147,7 @@ public class DescribeReservedDBInstancesOfferingsResult extends
      * 
      * @param reservedDBInstancesOfferings
      *        A list of reserved DB instance offerings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeReservedDBInstancesOfferingsResult withReservedDBInstancesOfferings(
@@ -179,8 +157,7 @@ public class DescribeReservedDBInstancesOfferingsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -193,8 +170,7 @@ public class DescribeReservedDBInstancesOfferingsResult extends
         if (getMarker() != null)
             sb.append("Marker: " + getMarker() + ",");
         if (getReservedDBInstancesOfferings() != null)
-            sb.append("ReservedDBInstancesOfferings: "
-                    + getReservedDBInstancesOfferings());
+            sb.append("ReservedDBInstancesOfferings: " + getReservedDBInstancesOfferings());
         sb.append("}");
         return sb.toString();
     }
@@ -211,15 +187,11 @@ public class DescribeReservedDBInstancesOfferingsResult extends
         DescribeReservedDBInstancesOfferingsResult other = (DescribeReservedDBInstancesOfferingsResult) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
-        if (other.getReservedDBInstancesOfferings() == null
-                ^ this.getReservedDBInstancesOfferings() == null)
+        if (other.getReservedDBInstancesOfferings() == null ^ this.getReservedDBInstancesOfferings() == null)
             return false;
-        if (other.getReservedDBInstancesOfferings() != null
-                && other.getReservedDBInstancesOfferings().equals(
-                        this.getReservedDBInstancesOfferings()) == false)
+        if (other.getReservedDBInstancesOfferings() != null && other.getReservedDBInstancesOfferings().equals(this.getReservedDBInstancesOfferings()) == false)
             return false;
         return true;
     }
@@ -229,12 +201,8 @@ public class DescribeReservedDBInstancesOfferingsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReservedDBInstancesOfferings() == null) ? 0
-                        : getReservedDBInstancesOfferings().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getReservedDBInstancesOfferings() == null) ? 0 : getReservedDBInstancesOfferings().hashCode());
         return hashCode;
     }
 
@@ -243,9 +211,7 @@ public class DescribeReservedDBInstancesOfferingsResult extends
         try {
             return (DescribeReservedDBInstancesOfferingsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

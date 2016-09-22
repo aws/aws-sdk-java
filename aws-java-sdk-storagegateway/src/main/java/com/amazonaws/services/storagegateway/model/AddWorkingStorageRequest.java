@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -29,17 +27,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class AddWorkingStorageRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class AddWorkingStorageRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String gatewayARN;
     /**
      * <p>
-     * An array of strings that identify disks that are to be configured as
-     * working storage. Each string have a minimum length of 1 and maximum
-     * length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
-     * API.
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> diskIds;
@@ -62,8 +56,7 @@ public class AddWorkingStorageRequest extends
 
     /**
      * @param gatewayARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddWorkingStorageRequest withGatewayARN(String gatewayARN) {
@@ -73,16 +66,13 @@ public class AddWorkingStorageRequest extends
 
     /**
      * <p>
-     * An array of strings that identify disks that are to be configured as
-     * working storage. Each string have a minimum length of 1 and maximum
-     * length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
-     * API.
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
      * </p>
      * 
-     * @return An array of strings that identify disks that are to be configured
-     *         as working storage. Each string have a minimum length of 1 and
-     *         maximum length of 300. You can get the disk IDs from the
-     *         <a>ListLocalDisks</a> API.
+     * @return An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *         minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
+     *         API.
      */
 
     public java.util.List<String> getDiskIds() {
@@ -94,17 +84,14 @@ public class AddWorkingStorageRequest extends
 
     /**
      * <p>
-     * An array of strings that identify disks that are to be configured as
-     * working storage. Each string have a minimum length of 1 and maximum
-     * length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
-     * API.
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
      * </p>
      * 
      * @param diskIds
-     *        An array of strings that identify disks that are to be configured
-     *        as working storage. Each string have a minimum length of 1 and
-     *        maximum length of 300. You can get the disk IDs from the
-     *        <a>ListLocalDisks</a> API.
+     *        An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *        minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
+     *        API.
      */
 
     public void setDiskIds(java.util.Collection<String> diskIds) {
@@ -113,37 +100,30 @@ public class AddWorkingStorageRequest extends
             return;
         }
 
-        this.diskIds = new com.amazonaws.internal.SdkInternalList<String>(
-                diskIds);
+        this.diskIds = new com.amazonaws.internal.SdkInternalList<String>(diskIds);
     }
 
     /**
      * <p>
-     * An array of strings that identify disks that are to be configured as
-     * working storage. Each string have a minimum length of 1 and maximum
-     * length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
-     * API.
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDiskIds(java.util.Collection)} or
-     * {@link #withDiskIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDiskIds(java.util.Collection)} or {@link #withDiskIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param diskIds
-     *        An array of strings that identify disks that are to be configured
-     *        as working storage. Each string have a minimum length of 1 and
-     *        maximum length of 300. You can get the disk IDs from the
-     *        <a>ListLocalDisks</a> API.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *        minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
+     *        API.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddWorkingStorageRequest withDiskIds(String... diskIds) {
         if (this.diskIds == null) {
-            setDiskIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    diskIds.length));
+            setDiskIds(new com.amazonaws.internal.SdkInternalList<String>(diskIds.length));
         }
         for (String ele : diskIds) {
             this.diskIds.add(ele);
@@ -153,30 +133,24 @@ public class AddWorkingStorageRequest extends
 
     /**
      * <p>
-     * An array of strings that identify disks that are to be configured as
-     * working storage. Each string have a minimum length of 1 and maximum
-     * length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
-     * API.
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
      * </p>
      * 
      * @param diskIds
-     *        An array of strings that identify disks that are to be configured
-     *        as working storage. Each string have a minimum length of 1 and
-     *        maximum length of 300. You can get the disk IDs from the
-     *        <a>ListLocalDisks</a> API.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *        minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
+     *        API.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AddWorkingStorageRequest withDiskIds(
-            java.util.Collection<String> diskIds) {
+    public AddWorkingStorageRequest withDiskIds(java.util.Collection<String> diskIds) {
         setDiskIds(diskIds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -206,13 +180,11 @@ public class AddWorkingStorageRequest extends
         AddWorkingStorageRequest other = (AddWorkingStorageRequest) obj;
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null)
             return false;
-        if (other.getGatewayARN() != null
-                && other.getGatewayARN().equals(this.getGatewayARN()) == false)
+        if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
         if (other.getDiskIds() == null ^ this.getDiskIds() == null)
             return false;
-        if (other.getDiskIds() != null
-                && other.getDiskIds().equals(this.getDiskIds()) == false)
+        if (other.getDiskIds() != null && other.getDiskIds().equals(this.getDiskIds()) == false)
             return false;
         return true;
     }
@@ -222,10 +194,8 @@ public class AddWorkingStorageRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getDiskIds() == null) ? 0 : getDiskIds().hashCode());
+        hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getDiskIds() == null) ? 0 : getDiskIds().hashCode());
         return hashCode;
     }
 

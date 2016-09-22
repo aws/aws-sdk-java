@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.machinelearning.model.transform;
 
@@ -35,59 +33,47 @@ import com.amazonaws.protocol.json.*;
 /**
  * UpdateBatchPredictionRequest Marshaller
  */
-public class UpdateBatchPredictionRequestMarshaller
-        implements
-        Marshaller<Request<UpdateBatchPredictionRequest>, UpdateBatchPredictionRequest> {
+public class UpdateBatchPredictionRequestMarshaller implements Marshaller<Request<UpdateBatchPredictionRequest>, UpdateBatchPredictionRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public UpdateBatchPredictionRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public UpdateBatchPredictionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<UpdateBatchPredictionRequest> marshall(
-            UpdateBatchPredictionRequest updateBatchPredictionRequest) {
+    public Request<UpdateBatchPredictionRequest> marshall(UpdateBatchPredictionRequest updateBatchPredictionRequest) {
 
         if (updateBatchPredictionRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateBatchPredictionRequest> request = new DefaultRequest<UpdateBatchPredictionRequest>(
-                updateBatchPredictionRequest, "AmazonMachineLearning");
-        request.addHeader("X-Amz-Target",
-                "AmazonML_20141212.UpdateBatchPrediction");
+        Request<UpdateBatchPredictionRequest> request = new DefaultRequest<UpdateBatchPredictionRequest>(updateBatchPredictionRequest, "AmazonMachineLearning");
+        request.addHeader("X-Amz-Target", "AmazonML_20141212.UpdateBatchPrediction");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (updateBatchPredictionRequest.getBatchPredictionId() != null) {
-                jsonGenerator.writeFieldName("BatchPredictionId").writeValue(
-                        updateBatchPredictionRequest.getBatchPredictionId());
+                jsonGenerator.writeFieldName("BatchPredictionId").writeValue(updateBatchPredictionRequest.getBatchPredictionId());
             }
             if (updateBatchPredictionRequest.getBatchPredictionName() != null) {
-                jsonGenerator.writeFieldName("BatchPredictionName").writeValue(
-                        updateBatchPredictionRequest.getBatchPredictionName());
+                jsonGenerator.writeFieldName("BatchPredictionName").writeValue(updateBatchPredictionRequest.getBatchPredictionName());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

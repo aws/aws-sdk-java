@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -20,9 +18,8 @@ import com.amazonaws.AmazonWebServiceResult;
 /**
  * 
  */
-public class DescribeHostReservationOfferingsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeHostReservationOfferingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -32,8 +29,8 @@ public class DescribeHostReservationOfferingsResult extends
     private com.amazonaws.internal.SdkInternalList<HostOffering> offeringSet;
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      */
     private String nextToken;
@@ -68,8 +65,7 @@ public class DescribeHostReservationOfferingsResult extends
             return;
         }
 
-        this.offeringSet = new com.amazonaws.internal.SdkInternalList<HostOffering>(
-                offeringSet);
+        this.offeringSet = new com.amazonaws.internal.SdkInternalList<HostOffering>(offeringSet);
     }
 
     /**
@@ -77,23 +73,19 @@ public class DescribeHostReservationOfferingsResult extends
      * Information about the offerings.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOfferingSet(java.util.Collection)} or
-     * {@link #withOfferingSet(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOfferingSet(java.util.Collection)} or {@link #withOfferingSet(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param offeringSet
      *        Information about the offerings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeHostReservationOfferingsResult withOfferingSet(
-            HostOffering... offeringSet) {
+    public DescribeHostReservationOfferingsResult withOfferingSet(HostOffering... offeringSet) {
         if (this.offeringSet == null) {
-            setOfferingSet(new com.amazonaws.internal.SdkInternalList<HostOffering>(
-                    offeringSet.length));
+            setOfferingSet(new com.amazonaws.internal.SdkInternalList<HostOffering>(offeringSet.length));
         }
         for (HostOffering ele : offeringSet) {
             this.offeringSet.add(ele);
@@ -108,25 +100,23 @@ public class DescribeHostReservationOfferingsResult extends
      * 
      * @param offeringSet
      *        Information about the offerings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeHostReservationOfferingsResult withOfferingSet(
-            java.util.Collection<HostOffering> offeringSet) {
+    public DescribeHostReservationOfferingsResult withOfferingSet(java.util.Collection<HostOffering> offeringSet) {
         setOfferingSet(offeringSet);
         return this;
     }
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value
-     *        is <code>null</code> when there are no more results to return.
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -135,12 +125,12 @@ public class DescribeHostReservationOfferingsResult extends
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
-     * @return The token to use to retrieve the next page of results. This value
-     *         is <code>null</code> when there are no more results to return.
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
      */
 
     public String getNextToken() {
@@ -149,15 +139,14 @@ public class DescribeHostReservationOfferingsResult extends
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value
-     *        is <code>null</code> when there are no more results to return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeHostReservationOfferingsResult withNextToken(String nextToken) {
@@ -166,8 +155,7 @@ public class DescribeHostReservationOfferingsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -197,13 +185,11 @@ public class DescribeHostReservationOfferingsResult extends
         DescribeHostReservationOfferingsResult other = (DescribeHostReservationOfferingsResult) obj;
         if (other.getOfferingSet() == null ^ this.getOfferingSet() == null)
             return false;
-        if (other.getOfferingSet() != null
-                && other.getOfferingSet().equals(this.getOfferingSet()) == false)
+        if (other.getOfferingSet() != null && other.getOfferingSet().equals(this.getOfferingSet()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -213,11 +199,8 @@ public class DescribeHostReservationOfferingsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getOfferingSet() == null) ? 0 : getOfferingSet().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getOfferingSet() == null) ? 0 : getOfferingSet().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -226,9 +209,7 @@ public class DescribeHostReservationOfferingsResult extends
         try {
             return (DescribeHostReservationOfferingsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -21,8 +19,7 @@ import java.io.Serializable;
  * Describes the launch specification for VM import.
  * </p>
  */
-public class ImportInstanceLaunchSpecification implements Serializable,
-        Cloneable {
+public class ImportInstanceLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -50,18 +47,16 @@ public class ImportInstanceLaunchSpecification implements Serializable,
     private String additionalInfo;
     /**
      * <p>
-     * The user data to make available to the instance. If you are using an AWS
-     * SDK or command line tool, Base64-encoding is performed for you, and you
-     * can load the text from a file. Otherwise, you must provide Base64-encoded
-     * text.
+     * The user data to make available to the instance. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      */
     private UserData userData;
     /**
      * <p>
-     * The instance type. For more information about the instance types that you
-     * can import, see <a href=
-     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     * The instance type. For more information about the instance types that you can import, see <a
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
      * >Instance Types</a> in the VM Import/Export User Guide.
      * </p>
      */
@@ -86,16 +81,14 @@ public class ImportInstanceLaunchSpecification implements Serializable,
     private String subnetId;
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      */
     private String instanceInitiatedShutdownBehavior;
     /**
      * <p>
-     * [EC2-VPC] An available IP address from the IP address range of the
-     * subnet.
+     * [EC2-VPC] An available IP address from the IP address range of the subnet.
      * </p>
      */
     private String privateIpAddress;
@@ -134,13 +127,11 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @param architecture
      *        The architecture of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArchitectureValues
      */
 
-    public ImportInstanceLaunchSpecification withArchitecture(
-            String architecture) {
+    public ImportInstanceLaunchSpecification withArchitecture(String architecture) {
         setArchitecture(architecture);
         return this;
     }
@@ -166,13 +157,11 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @param architecture
      *        The architecture of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArchitectureValues
      */
 
-    public ImportInstanceLaunchSpecification withArchitecture(
-            ArchitectureValues architecture) {
+    public ImportInstanceLaunchSpecification withArchitecture(ArchitectureValues architecture) {
         setArchitecture(architecture);
         return this;
     }
@@ -207,8 +196,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
             return;
         }
 
-        this.groupNames = new com.amazonaws.internal.SdkInternalList<String>(
-                groupNames);
+        this.groupNames = new com.amazonaws.internal.SdkInternalList<String>(groupNames);
     }
 
     /**
@@ -216,23 +204,19 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * One or more security group names.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGroupNames(java.util.Collection)} or
-     * {@link #withGroupNames(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroupNames(java.util.Collection)} or {@link #withGroupNames(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param groupNames
      *        One or more security group names.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportInstanceLaunchSpecification withGroupNames(
-            String... groupNames) {
+    public ImportInstanceLaunchSpecification withGroupNames(String... groupNames) {
         if (this.groupNames == null) {
-            setGroupNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    groupNames.length));
+            setGroupNames(new com.amazonaws.internal.SdkInternalList<String>(groupNames.length));
         }
         for (String ele : groupNames) {
             this.groupNames.add(ele);
@@ -247,12 +231,10 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @param groupNames
      *        One or more security group names.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportInstanceLaunchSpecification withGroupNames(
-            java.util.Collection<String> groupNames) {
+    public ImportInstanceLaunchSpecification withGroupNames(java.util.Collection<String> groupNames) {
         setGroupNames(groupNames);
         return this;
     }
@@ -287,8 +269,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
             return;
         }
 
-        this.groupIds = new com.amazonaws.internal.SdkInternalList<String>(
-                groupIds);
+        this.groupIds = new com.amazonaws.internal.SdkInternalList<String>(groupIds);
     }
 
     /**
@@ -296,22 +277,19 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * One or more security group IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGroupIds(java.util.Collection)} or
-     * {@link #withGroupIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroupIds(java.util.Collection)} or {@link #withGroupIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param groupIds
      *        One or more security group IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportInstanceLaunchSpecification withGroupIds(String... groupIds) {
         if (this.groupIds == null) {
-            setGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    groupIds.length));
+            setGroupIds(new com.amazonaws.internal.SdkInternalList<String>(groupIds.length));
         }
         for (String ele : groupIds) {
             this.groupIds.add(ele);
@@ -326,12 +304,10 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @param groupIds
      *        One or more security group IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportInstanceLaunchSpecification withGroupIds(
-            java.util.Collection<String> groupIds) {
+    public ImportInstanceLaunchSpecification withGroupIds(java.util.Collection<String> groupIds) {
         setGroupIds(groupIds);
         return this;
     }
@@ -368,29 +344,25 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @param additionalInfo
      *        Reserved.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportInstanceLaunchSpecification withAdditionalInfo(
-            String additionalInfo) {
+    public ImportInstanceLaunchSpecification withAdditionalInfo(String additionalInfo) {
         setAdditionalInfo(additionalInfo);
         return this;
     }
 
     /**
      * <p>
-     * The user data to make available to the instance. If you are using an AWS
-     * SDK or command line tool, Base64-encoding is performed for you, and you
-     * can load the text from a file. Otherwise, you must provide Base64-encoded
-     * text.
+     * The user data to make available to the instance. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instance. If you are using
-     *        an AWS SDK or command line tool, Base64-encoding is performed for
-     *        you, and you can load the text from a file. Otherwise, you must
-     *        provide Base64-encoded text.
+     *        The user data to make available to the instance. If you are using an AWS SDK or command line tool,
+     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     *        Base64-encoded text.
      */
 
     public void setUserData(UserData userData) {
@@ -399,16 +371,14 @@ public class ImportInstanceLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * The user data to make available to the instance. If you are using an AWS
-     * SDK or command line tool, Base64-encoding is performed for you, and you
-     * can load the text from a file. Otherwise, you must provide Base64-encoded
-     * text.
+     * The user data to make available to the instance. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      * 
-     * @return The user data to make available to the instance. If you are using
-     *         an AWS SDK or command line tool, Base64-encoding is performed for
-     *         you, and you can load the text from a file. Otherwise, you must
-     *         provide Base64-encoded text.
+     * @return The user data to make available to the instance. If you are using an AWS SDK or command line tool,
+     *         Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     *         Base64-encoded text.
      */
 
     public UserData getUserData() {
@@ -417,19 +387,16 @@ public class ImportInstanceLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * The user data to make available to the instance. If you are using an AWS
-     * SDK or command line tool, Base64-encoding is performed for you, and you
-     * can load the text from a file. Otherwise, you must provide Base64-encoded
-     * text.
+     * The user data to make available to the instance. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instance. If you are using
-     *        an AWS SDK or command line tool, Base64-encoding is performed for
-     *        you, and you can load the text from a file. Otherwise, you must
-     *        provide Base64-encoded text.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user data to make available to the instance. If you are using an AWS SDK or command line tool,
+     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     *        Base64-encoded text.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportInstanceLaunchSpecification withUserData(UserData userData) {
@@ -439,15 +406,13 @@ public class ImportInstanceLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * The instance type. For more information about the instance types that you
-     * can import, see <a href=
-     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     * The instance type. For more information about the instance types that you can import, see <a
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
      * >Instance Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. For more information about the instance types
-     *        that you can import, see <a href=
+     *        The instance type. For more information about the instance types that you can import, see <a href=
      *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
      *        >Instance Types</a> in the VM Import/Export User Guide.
      * @see InstanceType
@@ -459,15 +424,13 @@ public class ImportInstanceLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * The instance type. For more information about the instance types that you
-     * can import, see <a href=
-     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     * The instance type. For more information about the instance types that you can import, see <a
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
      * >Instance Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
-     * @return The instance type. For more information about the instance types
-     *         that you can import, see <a href=
-     *         "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     * @return The instance type. For more information about the instance types that you can import, see <a
+     *         href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
      *         >Instance Types</a> in the VM Import/Export User Guide.
      * @see InstanceType
      */
@@ -478,39 +441,33 @@ public class ImportInstanceLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * The instance type. For more information about the instance types that you
-     * can import, see <a href=
-     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     * The instance type. For more information about the instance types that you can import, see <a
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
      * >Instance Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. For more information about the instance types
-     *        that you can import, see <a href=
+     *        The instance type. For more information about the instance types that you can import, see <a href=
      *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
      *        >Instance Types</a> in the VM Import/Export User Guide.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
-    public ImportInstanceLaunchSpecification withInstanceType(
-            String instanceType) {
+    public ImportInstanceLaunchSpecification withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
     }
 
     /**
      * <p>
-     * The instance type. For more information about the instance types that you
-     * can import, see <a href=
-     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     * The instance type. For more information about the instance types that you can import, see <a
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
      * >Instance Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. For more information about the instance types
-     *        that you can import, see <a href=
+     *        The instance type. For more information about the instance types that you can import, see <a href=
      *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
      *        >Instance Types</a> in the VM Import/Export User Guide.
      * @see InstanceType
@@ -522,24 +479,20 @@ public class ImportInstanceLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * The instance type. For more information about the instance types that you
-     * can import, see <a href=
-     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     * The instance type. For more information about the instance types that you can import, see <a
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
      * >Instance Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. For more information about the instance types
-     *        that you can import, see <a href=
+     *        The instance type. For more information about the instance types that you can import, see <a href=
      *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
      *        >Instance Types</a> in the VM Import/Export User Guide.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
-    public ImportInstanceLaunchSpecification withInstanceType(
-            InstanceType instanceType) {
+    public ImportInstanceLaunchSpecification withInstanceType(InstanceType instanceType) {
         setInstanceType(instanceType);
         return this;
     }
@@ -576,8 +529,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @param placement
      *        The placement information for the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportInstanceLaunchSpecification withPlacement(Placement placement) {
@@ -617,8 +569,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @param monitoring
      *        Indicates whether monitoring is enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportInstanceLaunchSpecification withMonitoring(Boolean monitoring) {
@@ -670,8 +621,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @param subnetId
      *        [EC2-VPC] The ID of the subnet in which to launch the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportInstanceLaunchSpecification withSubnetId(String subnetId) {
@@ -681,33 +631,28 @@ public class ImportInstanceLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * 
      * @param instanceInitiatedShutdownBehavior
-     *        Indicates whether an instance stops or terminates when you
-     *        initiate shutdown from the instance (using the operating system
-     *        command for system shutdown).
+     *        Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     *        operating system command for system shutdown).
      * @see ShutdownBehavior
      */
 
-    public void setInstanceInitiatedShutdownBehavior(
-            String instanceInitiatedShutdownBehavior) {
+    public void setInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
     }
 
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * 
-     * @return Indicates whether an instance stops or terminates when you
-     *         initiate shutdown from the instance (using the operating system
-     *         command for system shutdown).
+     * @return Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     *         operating system command for system shutdown).
      * @see ShutdownBehavior
      */
 
@@ -717,77 +662,63 @@ public class ImportInstanceLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * 
      * @param instanceInitiatedShutdownBehavior
-     *        Indicates whether an instance stops or terminates when you
-     *        initiate shutdown from the instance (using the operating system
-     *        command for system shutdown).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     *        operating system command for system shutdown).
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShutdownBehavior
      */
 
-    public ImportInstanceLaunchSpecification withInstanceInitiatedShutdownBehavior(
-            String instanceInitiatedShutdownBehavior) {
+    public ImportInstanceLaunchSpecification withInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
         setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * 
      * @param instanceInitiatedShutdownBehavior
-     *        Indicates whether an instance stops or terminates when you
-     *        initiate shutdown from the instance (using the operating system
-     *        command for system shutdown).
+     *        Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     *        operating system command for system shutdown).
      * @see ShutdownBehavior
      */
 
-    public void setInstanceInitiatedShutdownBehavior(
-            ShutdownBehavior instanceInitiatedShutdownBehavior) {
-        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior
-                .toString();
+    public void setInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
+        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
     }
 
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * 
      * @param instanceInitiatedShutdownBehavior
-     *        Indicates whether an instance stops or terminates when you
-     *        initiate shutdown from the instance (using the operating system
-     *        command for system shutdown).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     *        operating system command for system shutdown).
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShutdownBehavior
      */
 
-    public ImportInstanceLaunchSpecification withInstanceInitiatedShutdownBehavior(
-            ShutdownBehavior instanceInitiatedShutdownBehavior) {
+    public ImportInstanceLaunchSpecification withInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
         setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
         return this;
     }
 
     /**
      * <p>
-     * [EC2-VPC] An available IP address from the IP address range of the
-     * subnet.
+     * [EC2-VPC] An available IP address from the IP address range of the subnet.
      * </p>
      * 
      * @param privateIpAddress
-     *        [EC2-VPC] An available IP address from the IP address range of the
-     *        subnet.
+     *        [EC2-VPC] An available IP address from the IP address range of the subnet.
      */
 
     public void setPrivateIpAddress(String privateIpAddress) {
@@ -796,12 +727,10 @@ public class ImportInstanceLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * [EC2-VPC] An available IP address from the IP address range of the
-     * subnet.
+     * [EC2-VPC] An available IP address from the IP address range of the subnet.
      * </p>
      * 
-     * @return [EC2-VPC] An available IP address from the IP address range of
-     *         the subnet.
+     * @return [EC2-VPC] An available IP address from the IP address range of the subnet.
      */
 
     public String getPrivateIpAddress() {
@@ -810,26 +739,21 @@ public class ImportInstanceLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * [EC2-VPC] An available IP address from the IP address range of the
-     * subnet.
+     * [EC2-VPC] An available IP address from the IP address range of the subnet.
      * </p>
      * 
      * @param privateIpAddress
-     *        [EC2-VPC] An available IP address from the IP address range of the
-     *        subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [EC2-VPC] An available IP address from the IP address range of the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportInstanceLaunchSpecification withPrivateIpAddress(
-            String privateIpAddress) {
+    public ImportInstanceLaunchSpecification withPrivateIpAddress(String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -858,8 +782,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
         if (getSubnetId() != null)
             sb.append("SubnetId: " + getSubnetId() + ",");
         if (getInstanceInitiatedShutdownBehavior() != null)
-            sb.append("InstanceInitiatedShutdownBehavior: "
-                    + getInstanceInitiatedShutdownBehavior() + ",");
+            sb.append("InstanceInitiatedShutdownBehavior: " + getInstanceInitiatedShutdownBehavior() + ",");
         if (getPrivateIpAddress() != null)
             sb.append("PrivateIpAddress: " + getPrivateIpAddress());
         sb.append("}");
@@ -878,63 +801,48 @@ public class ImportInstanceLaunchSpecification implements Serializable,
         ImportInstanceLaunchSpecification other = (ImportInstanceLaunchSpecification) obj;
         if (other.getArchitecture() == null ^ this.getArchitecture() == null)
             return false;
-        if (other.getArchitecture() != null
-                && other.getArchitecture().equals(this.getArchitecture()) == false)
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
             return false;
         if (other.getGroupNames() == null ^ this.getGroupNames() == null)
             return false;
-        if (other.getGroupNames() != null
-                && other.getGroupNames().equals(this.getGroupNames()) == false)
+        if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false)
             return false;
         if (other.getGroupIds() == null ^ this.getGroupIds() == null)
             return false;
-        if (other.getGroupIds() != null
-                && other.getGroupIds().equals(this.getGroupIds()) == false)
+        if (other.getGroupIds() != null && other.getGroupIds().equals(this.getGroupIds()) == false)
             return false;
-        if (other.getAdditionalInfo() == null
-                ^ this.getAdditionalInfo() == null)
+        if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null)
             return false;
-        if (other.getAdditionalInfo() != null
-                && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false)
+        if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false)
             return false;
         if (other.getUserData() == null ^ this.getUserData() == null)
             return false;
-        if (other.getUserData() != null
-                && other.getUserData().equals(this.getUserData()) == false)
+        if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getPlacement() == null ^ this.getPlacement() == null)
             return false;
-        if (other.getPlacement() != null
-                && other.getPlacement().equals(this.getPlacement()) == false)
+        if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false)
             return false;
         if (other.getMonitoring() == null ^ this.getMonitoring() == null)
             return false;
-        if (other.getMonitoring() != null
-                && other.getMonitoring().equals(this.getMonitoring()) == false)
+        if (other.getMonitoring() != null && other.getMonitoring().equals(this.getMonitoring()) == false)
             return false;
         if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
-        if (other.getSubnetId() != null
-                && other.getSubnetId().equals(this.getSubnetId()) == false)
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
-        if (other.getInstanceInitiatedShutdownBehavior() == null
-                ^ this.getInstanceInitiatedShutdownBehavior() == null)
+        if (other.getInstanceInitiatedShutdownBehavior() == null ^ this.getInstanceInitiatedShutdownBehavior() == null)
             return false;
         if (other.getInstanceInitiatedShutdownBehavior() != null
-                && other.getInstanceInitiatedShutdownBehavior().equals(
-                        this.getInstanceInitiatedShutdownBehavior()) == false)
+                && other.getInstanceInitiatedShutdownBehavior().equals(this.getInstanceInitiatedShutdownBehavior()) == false)
             return false;
-        if (other.getPrivateIpAddress() == null
-                ^ this.getPrivateIpAddress() == null)
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
             return false;
-        if (other.getPrivateIpAddress() != null
-                && other.getPrivateIpAddress().equals(
-                        this.getPrivateIpAddress()) == false)
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
             return false;
         return true;
     }
@@ -944,38 +852,17 @@ public class ImportInstanceLaunchSpecification implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getArchitecture() == null) ? 0 : getArchitecture()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode());
-        hashCode = prime * hashCode
-                + ((getGroupIds() == null) ? 0 : getGroupIds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getUserData() == null) ? 0 : getUserData().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
-        hashCode = prime * hashCode
-                + ((getMonitoring() == null) ? 0 : getMonitoring().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceInitiatedShutdownBehavior() == null) ? 0
-                        : getInstanceInitiatedShutdownBehavior().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode());
+        hashCode = prime * hashCode + ((getGroupIds() == null) ? 0 : getGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode());
+        hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
+        hashCode = prime * hashCode + ((getMonitoring() == null) ? 0 : getMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceInitiatedShutdownBehavior() == null) ? 0 : getInstanceInitiatedShutdownBehavior().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         return hashCode;
     }
 
@@ -984,9 +871,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
         try {
             return (ImportInstanceLaunchSpecification) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

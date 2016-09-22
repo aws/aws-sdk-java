@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model.transform;
 
@@ -34,35 +32,28 @@ public class S3ReferenceDataSourceDescriptionJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(
-            S3ReferenceDataSourceDescription s3ReferenceDataSourceDescription,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(S3ReferenceDataSourceDescription s3ReferenceDataSourceDescription, StructuredJsonGenerator jsonGenerator) {
 
         if (s3ReferenceDataSourceDescription == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (s3ReferenceDataSourceDescription.getBucketARN() != null) {
-                jsonGenerator.writeFieldName("BucketARN").writeValue(
-                        s3ReferenceDataSourceDescription.getBucketARN());
+                jsonGenerator.writeFieldName("BucketARN").writeValue(s3ReferenceDataSourceDescription.getBucketARN());
             }
             if (s3ReferenceDataSourceDescription.getFileKey() != null) {
-                jsonGenerator.writeFieldName("FileKey").writeValue(
-                        s3ReferenceDataSourceDescription.getFileKey());
+                jsonGenerator.writeFieldName("FileKey").writeValue(s3ReferenceDataSourceDescription.getFileKey());
             }
             if (s3ReferenceDataSourceDescription.getReferenceRoleARN() != null) {
-                jsonGenerator.writeFieldName("ReferenceRoleARN").writeValue(
-                        s3ReferenceDataSourceDescription.getReferenceRoleARN());
+                jsonGenerator.writeFieldName("ReferenceRoleARN").writeValue(s3ReferenceDataSourceDescription.getReferenceRoleARN());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model.transform;
 
@@ -43,38 +41,31 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetEventSourceMappingRequest Marshaller
  */
-public class GetEventSourceMappingRequestMarshaller
-        implements
-        Marshaller<Request<GetEventSourceMappingRequest>, GetEventSourceMappingRequest> {
+public class GetEventSourceMappingRequestMarshaller implements Marshaller<Request<GetEventSourceMappingRequest>, GetEventSourceMappingRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public GetEventSourceMappingRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public GetEventSourceMappingRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<GetEventSourceMappingRequest> marshall(
-            GetEventSourceMappingRequest getEventSourceMappingRequest) {
+    public Request<GetEventSourceMappingRequest> marshall(GetEventSourceMappingRequest getEventSourceMappingRequest) {
 
         if (getEventSourceMappingRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetEventSourceMappingRequest> request = new DefaultRequest<GetEventSourceMappingRequest>(
-                getEventSourceMappingRequest, "AWSLambda");
+        Request<GetEventSourceMappingRequest> request = new DefaultRequest<GetEventSourceMappingRequest>(getEventSourceMappingRequest, "AWSLambda");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2015-03-31/event-source-mappings/{UUID}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{UUID}",
-                (getEventSourceMappingRequest.getUUID() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils
-                                .fromString(getEventSourceMappingRequest
-                                        .getUUID()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{UUID}",
+                        (getEventSourceMappingRequest.getUUID() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils.fromString(getEventSourceMappingRequest.getUUID()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
 
@@ -22,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes the inputs for ListMetrics.
  * </p>
  */
-public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -45,8 +42,7 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<DimensionFilter> dimensions;
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      */
     private String nextToken;
@@ -83,8 +79,7 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param namespace
      *        The namespace to filter against.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListMetricsRequest withNamespace(String namespace) {
@@ -124,8 +119,7 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param metricName
      *        The name of the metric to filter against.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListMetricsRequest withMetricName(String metricName) {
@@ -163,8 +157,7 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest
             return;
         }
 
-        this.dimensions = new com.amazonaws.internal.SdkInternalList<DimensionFilter>(
-                dimensions);
+        this.dimensions = new com.amazonaws.internal.SdkInternalList<DimensionFilter>(dimensions);
     }
 
     /**
@@ -172,22 +165,19 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of dimensions to filter against.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDimensions(java.util.Collection)} or
-     * {@link #withDimensions(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDimensions(java.util.Collection)} or {@link #withDimensions(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param dimensions
      *        A list of dimensions to filter against.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListMetricsRequest withDimensions(DimensionFilter... dimensions) {
         if (this.dimensions == null) {
-            setDimensions(new com.amazonaws.internal.SdkInternalList<DimensionFilter>(
-                    dimensions.length));
+            setDimensions(new com.amazonaws.internal.SdkInternalList<DimensionFilter>(dimensions.length));
         }
         for (DimensionFilter ele : dimensions) {
             this.dimensions.add(ele);
@@ -202,25 +192,21 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param dimensions
      *        A list of dimensions to filter against.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListMetricsRequest withDimensions(
-            java.util.Collection<DimensionFilter> dimensions) {
+    public ListMetricsRequest withDimensions(java.util.Collection<DimensionFilter> dimensions) {
         setDimensions(dimensions);
         return this;
     }
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      * 
      * @param nextToken
-     *        The token returned by a previous call to indicate that there is
-     *        more data available.
+     *        The token returned by a previous call to indicate that there is more data available.
      */
 
     public void setNextToken(String nextToken) {
@@ -229,12 +215,10 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      * 
-     * @return The token returned by a previous call to indicate that there is
-     *         more data available.
+     * @return The token returned by a previous call to indicate that there is more data available.
      */
 
     public String getNextToken() {
@@ -243,15 +227,12 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      * 
      * @param nextToken
-     *        The token returned by a previous call to indicate that there is
-     *        more data available.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token returned by a previous call to indicate that there is more data available.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListMetricsRequest withNextToken(String nextToken) {
@@ -260,8 +241,7 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -295,23 +275,19 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest
         ListMetricsRequest other = (ListMetricsRequest) obj;
         if (other.getNamespace() == null ^ this.getNamespace() == null)
             return false;
-        if (other.getNamespace() != null
-                && other.getNamespace().equals(this.getNamespace()) == false)
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
             return false;
         if (other.getMetricName() == null ^ this.getMetricName() == null)
             return false;
-        if (other.getMetricName() != null
-                && other.getMetricName().equals(this.getMetricName()) == false)
+        if (other.getMetricName() != null && other.getMetricName().equals(this.getMetricName()) == false)
             return false;
         if (other.getDimensions() == null ^ this.getDimensions() == null)
             return false;
-        if (other.getDimensions() != null
-                && other.getDimensions().equals(this.getDimensions()) == false)
+        if (other.getDimensions() != null && other.getDimensions().equals(this.getDimensions()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -321,14 +297,10 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
-        hashCode = prime * hashCode
-                + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
-        hashCode = prime * hashCode
-                + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
+        hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
+        hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

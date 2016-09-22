@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -20,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CreateDBSecurityGroupRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name for the DB security group. This value is stored as a lowercase
-     * string.
+     * The name for the DB security group. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -69,21 +64,18 @@ public class CreateDBSecurityGroupRequest extends
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
-     * Default constructor for CreateDBSecurityGroupRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * the object after creating it.
+     * Default constructor for CreateDBSecurityGroupRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public CreateDBSecurityGroupRequest() {
     }
 
     /**
-     * Constructs a new CreateDBSecurityGroupRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new CreateDBSecurityGroupRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param dBSecurityGroupName
-     *        The name for the DB security group. This value is stored as a
-     *        lowercase string.</p>
+     *        The name for the DB security group. This value is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -114,16 +106,14 @@ public class CreateDBSecurityGroupRequest extends
      * @param dBSecurityGroupDescription
      *        The description for the DB security group.
      */
-    public CreateDBSecurityGroupRequest(String dBSecurityGroupName,
-            String dBSecurityGroupDescription) {
+    public CreateDBSecurityGroupRequest(String dBSecurityGroupName, String dBSecurityGroupDescription) {
         setDBSecurityGroupName(dBSecurityGroupName);
         setDBSecurityGroupDescription(dBSecurityGroupDescription);
     }
 
     /**
      * <p>
-     * The name for the DB security group. This value is stored as a lowercase
-     * string.
+     * The name for the DB security group. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -155,8 +145,7 @@ public class CreateDBSecurityGroupRequest extends
      * </p>
      * 
      * @param dBSecurityGroupName
-     *        The name for the DB security group. This value is stored as a
-     *        lowercase string.</p>
+     *        The name for the DB security group. This value is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -192,8 +181,7 @@ public class CreateDBSecurityGroupRequest extends
 
     /**
      * <p>
-     * The name for the DB security group. This value is stored as a lowercase
-     * string.
+     * The name for the DB security group. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -224,8 +212,7 @@ public class CreateDBSecurityGroupRequest extends
      * Example: <code>mysecuritygroup</code>
      * </p>
      * 
-     * @return The name for the DB security group. This value is stored as a
-     *         lowercase string.</p>
+     * @return The name for the DB security group. This value is stored as a lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -261,8 +248,7 @@ public class CreateDBSecurityGroupRequest extends
 
     /**
      * <p>
-     * The name for the DB security group. This value is stored as a lowercase
-     * string.
+     * The name for the DB security group. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -294,8 +280,7 @@ public class CreateDBSecurityGroupRequest extends
      * </p>
      * 
      * @param dBSecurityGroupName
-     *        The name for the DB security group. This value is stored as a
-     *        lowercase string.</p>
+     *        The name for the DB security group. This value is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -323,12 +308,10 @@ public class CreateDBSecurityGroupRequest extends
      *        </ul>
      *        <p>
      *        Example: <code>mysecuritygroup</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBSecurityGroupRequest withDBSecurityGroupName(
-            String dBSecurityGroupName) {
+    public CreateDBSecurityGroupRequest withDBSecurityGroupName(String dBSecurityGroupName) {
         setDBSecurityGroupName(dBSecurityGroupName);
         return this;
     }
@@ -365,12 +348,10 @@ public class CreateDBSecurityGroupRequest extends
      * 
      * @param dBSecurityGroupDescription
      *        The description for the DB security group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDBSecurityGroupRequest withDBSecurityGroupDescription(
-            String dBSecurityGroupDescription) {
+    public CreateDBSecurityGroupRequest withDBSecurityGroupDescription(String dBSecurityGroupDescription) {
         setDBSecurityGroupDescription(dBSecurityGroupDescription);
         return this;
     }
@@ -401,15 +382,13 @@ public class CreateDBSecurityGroupRequest extends
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBSecurityGroupRequest withTags(Tag... tags) {
@@ -424,8 +403,7 @@ public class CreateDBSecurityGroupRequest extends
 
     /**
      * @param tags
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBSecurityGroupRequest withTags(java.util.Collection<Tag> tags) {
@@ -434,8 +412,7 @@ public class CreateDBSecurityGroupRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -448,8 +425,7 @@ public class CreateDBSecurityGroupRequest extends
         if (getDBSecurityGroupName() != null)
             sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ",");
         if (getDBSecurityGroupDescription() != null)
-            sb.append("DBSecurityGroupDescription: "
-                    + getDBSecurityGroupDescription() + ",");
+            sb.append("DBSecurityGroupDescription: " + getDBSecurityGroupDescription() + ",");
         if (getTags() != null)
             sb.append("Tags: " + getTags());
         sb.append("}");
@@ -466,24 +442,17 @@ public class CreateDBSecurityGroupRequest extends
         if (obj instanceof CreateDBSecurityGroupRequest == false)
             return false;
         CreateDBSecurityGroupRequest other = (CreateDBSecurityGroupRequest) obj;
-        if (other.getDBSecurityGroupName() == null
-                ^ this.getDBSecurityGroupName() == null)
+        if (other.getDBSecurityGroupName() == null ^ this.getDBSecurityGroupName() == null)
             return false;
-        if (other.getDBSecurityGroupName() != null
-                && other.getDBSecurityGroupName().equals(
-                        this.getDBSecurityGroupName()) == false)
+        if (other.getDBSecurityGroupName() != null && other.getDBSecurityGroupName().equals(this.getDBSecurityGroupName()) == false)
             return false;
-        if (other.getDBSecurityGroupDescription() == null
-                ^ this.getDBSecurityGroupDescription() == null)
+        if (other.getDBSecurityGroupDescription() == null ^ this.getDBSecurityGroupDescription() == null)
             return false;
-        if (other.getDBSecurityGroupDescription() != null
-                && other.getDBSecurityGroupDescription().equals(
-                        this.getDBSecurityGroupDescription()) == false)
+        if (other.getDBSecurityGroupDescription() != null && other.getDBSecurityGroupDescription().equals(this.getDBSecurityGroupDescription()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -493,16 +462,9 @@ public class CreateDBSecurityGroupRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDBSecurityGroupName() == null) ? 0
-                        : getDBSecurityGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBSecurityGroupDescription() == null) ? 0
-                        : getDBSecurityGroupDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDBSecurityGroupName() == null) ? 0 : getDBSecurityGroupName().hashCode());
+        hashCode = prime * hashCode + ((getDBSecurityGroupDescription() == null) ? 0 : getDBSecurityGroupDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -74,8 +72,7 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
      * 
      * @param schemaVersion
      *        The schema version of this data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InspectorServiceAttributes withSchemaVersion(Integer schemaVersion) {
@@ -89,8 +86,7 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
      * </p>
      * 
      * @param assessmentRunArn
-     *        The ARN of the assessment run during which the finding is
-     *        generated.
+     *        The ARN of the assessment run during which the finding is generated.
      */
 
     public void setAssessmentRunArn(String assessmentRunArn) {
@@ -102,8 +98,7 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
      * The ARN of the assessment run during which the finding is generated.
      * </p>
      * 
-     * @return The ARN of the assessment run during which the finding is
-     *         generated.
+     * @return The ARN of the assessment run during which the finding is generated.
      */
 
     public String getAssessmentRunArn() {
@@ -116,14 +111,11 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
      * </p>
      * 
      * @param assessmentRunArn
-     *        The ARN of the assessment run during which the finding is
-     *        generated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN of the assessment run during which the finding is generated.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InspectorServiceAttributes withAssessmentRunArn(
-            String assessmentRunArn) {
+    public InspectorServiceAttributes withAssessmentRunArn(String assessmentRunArn) {
         setAssessmentRunArn(assessmentRunArn);
         return this;
     }
@@ -146,8 +138,7 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
      * The ARN of the rules package that is used to generate the finding.
      * </p>
      * 
-     * @return The ARN of the rules package that is used to generate the
-     *         finding.
+     * @return The ARN of the rules package that is used to generate the finding.
      */
 
     public String getRulesPackageArn() {
@@ -161,8 +152,7 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
      * 
      * @param rulesPackageArn
      *        The ARN of the rules package that is used to generate the finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InspectorServiceAttributes withRulesPackageArn(String rulesPackageArn) {
@@ -171,8 +161,7 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -204,21 +193,15 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
         InspectorServiceAttributes other = (InspectorServiceAttributes) obj;
         if (other.getSchemaVersion() == null ^ this.getSchemaVersion() == null)
             return false;
-        if (other.getSchemaVersion() != null
-                && other.getSchemaVersion().equals(this.getSchemaVersion()) == false)
+        if (other.getSchemaVersion() != null && other.getSchemaVersion().equals(this.getSchemaVersion()) == false)
             return false;
-        if (other.getAssessmentRunArn() == null
-                ^ this.getAssessmentRunArn() == null)
+        if (other.getAssessmentRunArn() == null ^ this.getAssessmentRunArn() == null)
             return false;
-        if (other.getAssessmentRunArn() != null
-                && other.getAssessmentRunArn().equals(
-                        this.getAssessmentRunArn()) == false)
+        if (other.getAssessmentRunArn() != null && other.getAssessmentRunArn().equals(this.getAssessmentRunArn()) == false)
             return false;
-        if (other.getRulesPackageArn() == null
-                ^ this.getRulesPackageArn() == null)
+        if (other.getRulesPackageArn() == null ^ this.getRulesPackageArn() == null)
             return false;
-        if (other.getRulesPackageArn() != null
-                && other.getRulesPackageArn().equals(this.getRulesPackageArn()) == false)
+        if (other.getRulesPackageArn() != null && other.getRulesPackageArn().equals(this.getRulesPackageArn()) == false)
             return false;
         return true;
     }
@@ -228,18 +211,9 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSchemaVersion() == null) ? 0 : getSchemaVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAssessmentRunArn() == null) ? 0 : getAssessmentRunArn()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRulesPackageArn() == null) ? 0 : getRulesPackageArn()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getSchemaVersion() == null) ? 0 : getSchemaVersion().hashCode());
+        hashCode = prime * hashCode + ((getAssessmentRunArn() == null) ? 0 : getAssessmentRunArn().hashCode());
+        hashCode = prime * hashCode + ((getRulesPackageArn() == null) ? 0 : getRulesPackageArn().hashCode());
         return hashCode;
     }
 
@@ -248,9 +222,7 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
         try {
             return (InspectorServiceAttributes) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

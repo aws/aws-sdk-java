@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Represents the result of a list unique problems request.
  * </p>
  */
-public class ListUniqueProblemsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListUniqueProblemsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -73,9 +69,8 @@ public class ListUniqueProblemsResult extends
     private java.util.Map<String, java.util.List<UniqueProblem>> uniqueProblems;
     /**
      * <p>
-     * If the number of items that are returned is significantly large, this is
-     * an identifier that is also returned, which can be used in a subsequent
-     * call to this operation to return the next set of items in the list.
+     * If the number of items that are returned is significantly large, this is an identifier that is also returned,
+     * which can be used in a subsequent call to this operation to return the next set of items in the list.
      * </p>
      */
     private String nextToken;
@@ -259,8 +254,7 @@ public class ListUniqueProblemsResult extends
      *        </li>
      */
 
-    public void setUniqueProblems(
-            java.util.Map<String, java.util.List<UniqueProblem>> uniqueProblems) {
+    public void setUniqueProblems(java.util.Map<String, java.util.List<UniqueProblem>> uniqueProblems) {
         this.uniqueProblems = uniqueProblems;
     }
 
@@ -350,31 +344,27 @@ public class ListUniqueProblemsResult extends
      *        STOPPED: A stopped condition.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListUniqueProblemsResult withUniqueProblems(
-            java.util.Map<String, java.util.List<UniqueProblem>> uniqueProblems) {
+    public ListUniqueProblemsResult withUniqueProblems(java.util.Map<String, java.util.List<UniqueProblem>> uniqueProblems) {
         setUniqueProblems(uniqueProblems);
         return this;
     }
 
-    public ListUniqueProblemsResult addUniqueProblemsEntry(String key,
-            java.util.List<UniqueProblem> value) {
+    public ListUniqueProblemsResult addUniqueProblemsEntry(String key, java.util.List<UniqueProblem> value) {
         if (null == this.uniqueProblems) {
             this.uniqueProblems = new java.util.HashMap<String, java.util.List<UniqueProblem>>();
         }
         if (this.uniqueProblems.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.uniqueProblems.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into UniqueProblems. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into UniqueProblems. &lt;p> Returns a reference to this object so that method calls
+     * can be chained together.
      */
 
     public ListUniqueProblemsResult clearUniqueProblemsEntries() {
@@ -384,16 +374,14 @@ public class ListUniqueProblemsResult extends
 
     /**
      * <p>
-     * If the number of items that are returned is significantly large, this is
-     * an identifier that is also returned, which can be used in a subsequent
-     * call to this operation to return the next set of items in the list.
+     * If the number of items that are returned is significantly large, this is an identifier that is also returned,
+     * which can be used in a subsequent call to this operation to return the next set of items in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the number of items that are returned is significantly large,
-     *        this is an identifier that is also returned, which can be used in
-     *        a subsequent call to this operation to return the next set of
-     *        items in the list.
+     *        If the number of items that are returned is significantly large, this is an identifier that is also
+     *        returned, which can be used in a subsequent call to this operation to return the next set of items in the
+     *        list.
      */
 
     public void setNextToken(String nextToken) {
@@ -402,15 +390,13 @@ public class ListUniqueProblemsResult extends
 
     /**
      * <p>
-     * If the number of items that are returned is significantly large, this is
-     * an identifier that is also returned, which can be used in a subsequent
-     * call to this operation to return the next set of items in the list.
+     * If the number of items that are returned is significantly large, this is an identifier that is also returned,
+     * which can be used in a subsequent call to this operation to return the next set of items in the list.
      * </p>
      * 
-     * @return If the number of items that are returned is significantly large,
-     *         this is an identifier that is also returned, which can be used in
-     *         a subsequent call to this operation to return the next set of
-     *         items in the list.
+     * @return If the number of items that are returned is significantly large, this is an identifier that is also
+     *         returned, which can be used in a subsequent call to this operation to return the next set of items in the
+     *         list.
      */
 
     public String getNextToken() {
@@ -419,18 +405,15 @@ public class ListUniqueProblemsResult extends
 
     /**
      * <p>
-     * If the number of items that are returned is significantly large, this is
-     * an identifier that is also returned, which can be used in a subsequent
-     * call to this operation to return the next set of items in the list.
+     * If the number of items that are returned is significantly large, this is an identifier that is also returned,
+     * which can be used in a subsequent call to this operation to return the next set of items in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the number of items that are returned is significantly large,
-     *        this is an identifier that is also returned, which can be used in
-     *        a subsequent call to this operation to return the next set of
-     *        items in the list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the number of items that are returned is significantly large, this is an identifier that is also
+     *        returned, which can be used in a subsequent call to this operation to return the next set of items in the
+     *        list.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListUniqueProblemsResult withNextToken(String nextToken) {
@@ -439,8 +422,7 @@ public class ListUniqueProblemsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -468,16 +450,13 @@ public class ListUniqueProblemsResult extends
         if (obj instanceof ListUniqueProblemsResult == false)
             return false;
         ListUniqueProblemsResult other = (ListUniqueProblemsResult) obj;
-        if (other.getUniqueProblems() == null
-                ^ this.getUniqueProblems() == null)
+        if (other.getUniqueProblems() == null ^ this.getUniqueProblems() == null)
             return false;
-        if (other.getUniqueProblems() != null
-                && other.getUniqueProblems().equals(this.getUniqueProblems()) == false)
+        if (other.getUniqueProblems() != null && other.getUniqueProblems().equals(this.getUniqueProblems()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -487,12 +466,8 @@ public class ListUniqueProblemsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getUniqueProblems() == null) ? 0 : getUniqueProblems()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getUniqueProblems() == null) ? 0 : getUniqueProblems().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -501,9 +476,7 @@ public class ListUniqueProblemsResult extends
         try {
             return (ListUniqueProblemsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

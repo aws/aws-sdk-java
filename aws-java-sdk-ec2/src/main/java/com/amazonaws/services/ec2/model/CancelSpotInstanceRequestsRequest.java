@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.CancelSpotInstanceRequestsRequ
  * Contains the parameters for CancelSpotInstanceRequests.
  * </p>
  */
-public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<CancelSpotInstanceRequestsRequest> {
 
     /**
@@ -36,23 +33,20 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<String> spotInstanceRequestIds;
 
     /**
-     * Default constructor for CancelSpotInstanceRequestsRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * the object after creating it.
+     * Default constructor for CancelSpotInstanceRequestsRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public CancelSpotInstanceRequestsRequest() {
     }
 
     /**
-     * Constructs a new CancelSpotInstanceRequestsRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new CancelSpotInstanceRequestsRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize any additional object members.
      * 
      * @param spotInstanceRequestIds
      *        One or more Spot instance request IDs.
      */
-    public CancelSpotInstanceRequestsRequest(
-            java.util.List<String> spotInstanceRequestIds) {
+    public CancelSpotInstanceRequestsRequest(java.util.List<String> spotInstanceRequestIds) {
         setSpotInstanceRequestIds(spotInstanceRequestIds);
     }
 
@@ -80,15 +74,13 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        One or more Spot instance request IDs.
      */
 
-    public void setSpotInstanceRequestIds(
-            java.util.Collection<String> spotInstanceRequestIds) {
+    public void setSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {
         if (spotInstanceRequestIds == null) {
             this.spotInstanceRequestIds = null;
             return;
         }
 
-        this.spotInstanceRequestIds = new com.amazonaws.internal.SdkInternalList<String>(
-                spotInstanceRequestIds);
+        this.spotInstanceRequestIds = new com.amazonaws.internal.SdkInternalList<String>(spotInstanceRequestIds);
     }
 
     /**
@@ -96,23 +88,19 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * One or more Spot instance request IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSpotInstanceRequestIds(java.util.Collection)} or
-     * {@link #withSpotInstanceRequestIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSpotInstanceRequestIds(java.util.Collection)} or
+     * {@link #withSpotInstanceRequestIds(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param spotInstanceRequestIds
      *        One or more Spot instance request IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CancelSpotInstanceRequestsRequest withSpotInstanceRequestIds(
-            String... spotInstanceRequestIds) {
+    public CancelSpotInstanceRequestsRequest withSpotInstanceRequestIds(String... spotInstanceRequestIds) {
         if (this.spotInstanceRequestIds == null) {
-            setSpotInstanceRequestIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    spotInstanceRequestIds.length));
+            setSpotInstanceRequestIds(new com.amazonaws.internal.SdkInternalList<String>(spotInstanceRequestIds.length));
         }
         for (String ele : spotInstanceRequestIds) {
             this.spotInstanceRequestIds.add(ele);
@@ -127,32 +115,27 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * 
      * @param spotInstanceRequestIds
      *        One or more Spot instance request IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CancelSpotInstanceRequestsRequest withSpotInstanceRequestIds(
-            java.util.Collection<String> spotInstanceRequestIds) {
+    public CancelSpotInstanceRequestsRequest withSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {
         setSpotInstanceRequestIds(spotInstanceRequestIds);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<CancelSpotInstanceRequestsRequest> getDryRunRequest() {
-        Request<CancelSpotInstanceRequestsRequest> request = new CancelSpotInstanceRequestsRequestMarshaller()
-                .marshall(this);
+        Request<CancelSpotInstanceRequestsRequest> request = new CancelSpotInstanceRequestsRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -178,12 +161,9 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest
         if (obj instanceof CancelSpotInstanceRequestsRequest == false)
             return false;
         CancelSpotInstanceRequestsRequest other = (CancelSpotInstanceRequestsRequest) obj;
-        if (other.getSpotInstanceRequestIds() == null
-                ^ this.getSpotInstanceRequestIds() == null)
+        if (other.getSpotInstanceRequestIds() == null ^ this.getSpotInstanceRequestIds() == null)
             return false;
-        if (other.getSpotInstanceRequestIds() != null
-                && other.getSpotInstanceRequestIds().equals(
-                        this.getSpotInstanceRequestIds()) == false)
+        if (other.getSpotInstanceRequestIds() != null && other.getSpotInstanceRequestIds().equals(this.getSpotInstanceRequestIds()) == false)
             return false;
         return true;
     }
@@ -193,10 +173,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSpotInstanceRequestIds() == null) ? 0
-                        : getSpotInstanceRequestIds().hashCode());
+        hashCode = prime * hashCode + ((getSpotInstanceRequestIds() == null) ? 0 : getSpotInstanceRequestIds().hashCode());
         return hashCode;
     }
 

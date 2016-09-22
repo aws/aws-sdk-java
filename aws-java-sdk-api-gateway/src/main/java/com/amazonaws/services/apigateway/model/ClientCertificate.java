@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -18,14 +16,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a client certificate used to configure client-side SSL
- * authentication while sending requests to the integration endpoint.
+ * Represents a client certificate used to configure client-side SSL authentication while sending requests to the
+ * integration endpoint.
  * </p>
- * <div class="remarks">Client certificates are used authenticate an API by the
- * back-end server. To authenticate an API client (or user), use a custom
- * <a>Authorizer</a>.</div> <div class="seeAlso"> <a href=
- * "http://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html"
- * >Use Client-Side Certificate</a> </div>
+ * <div class="remarks">Client certificates are used authenticate an API by the back-end server. To authenticate an API
+ * client (or user), use a custom <a>Authorizer</a>.</div> <div class="seeAlso"> <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">Use
+ * Client-Side Certificate</a> </div>
  */
 public class ClientCertificate implements Serializable, Cloneable {
 
@@ -43,23 +40,21 @@ public class ClientCertificate implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The PEM-encoded public key of the client certificate, which can be used
-     * to configure certificate authentication in the integration endpoint .
+     * The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication
+     * in the integration endpoint .
      * </p>
      */
     private String pemEncodedCertificate;
     /**
      * <p>
-     * The date when the client certificate was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date when the client certificate was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      */
     private java.util.Date createdDate;
     /**
      * <p>
-     * The date when the client certificate will expire, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date when the client certificate will expire, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      */
@@ -97,8 +92,7 @@ public class ClientCertificate implements Serializable, Cloneable {
      * 
      * @param clientCertificateId
      *        The identifier of the client certificate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClientCertificate withClientCertificateId(String clientCertificateId) {
@@ -138,8 +132,7 @@ public class ClientCertificate implements Serializable, Cloneable {
      * 
      * @param description
      *        The description of the client certificate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClientCertificate withDescription(String description) {
@@ -149,14 +142,13 @@ public class ClientCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The PEM-encoded public key of the client certificate, which can be used
-     * to configure certificate authentication in the integration endpoint .
+     * The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication
+     * in the integration endpoint .
      * </p>
      * 
      * @param pemEncodedCertificate
-     *        The PEM-encoded public key of the client certificate, which can be
-     *        used to configure certificate authentication in the integration
-     *        endpoint .
+     *        The PEM-encoded public key of the client certificate, which can be used to configure certificate
+     *        authentication in the integration endpoint .
      */
 
     public void setPemEncodedCertificate(String pemEncodedCertificate) {
@@ -165,13 +157,12 @@ public class ClientCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The PEM-encoded public key of the client certificate, which can be used
-     * to configure certificate authentication in the integration endpoint .
+     * The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication
+     * in the integration endpoint .
      * </p>
      * 
-     * @return The PEM-encoded public key of the client certificate, which can
-     *         be used to configure certificate authentication in the
-     *         integration endpoint .
+     * @return The PEM-encoded public key of the client certificate, which can be used to configure certificate
+     *         authentication in the integration endpoint .
      */
 
     public String getPemEncodedCertificate() {
@@ -180,35 +171,30 @@ public class ClientCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The PEM-encoded public key of the client certificate, which can be used
-     * to configure certificate authentication in the integration endpoint .
+     * The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication
+     * in the integration endpoint .
      * </p>
      * 
      * @param pemEncodedCertificate
-     *        The PEM-encoded public key of the client certificate, which can be
-     *        used to configure certificate authentication in the integration
-     *        endpoint .
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The PEM-encoded public key of the client certificate, which can be used to configure certificate
+     *        authentication in the integration endpoint .
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ClientCertificate withPemEncodedCertificate(
-            String pemEncodedCertificate) {
+    public ClientCertificate withPemEncodedCertificate(String pemEncodedCertificate) {
         setPemEncodedCertificate(pemEncodedCertificate);
         return this;
     }
 
     /**
      * <p>
-     * The date when the client certificate was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date when the client certificate was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
      *        The date when the client certificate was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -217,14 +203,12 @@ public class ClientCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the client certificate was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date when the client certificate was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @return The date when the client certificate was created, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *         target="_blank">ISO 8601 format</a>.
+     *         href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
      */
 
     public java.util.Date getCreatedDate() {
@@ -233,17 +217,14 @@ public class ClientCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the client certificate was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date when the client certificate was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
      *        The date when the client certificate was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClientCertificate withCreatedDate(java.util.Date createdDate) {
@@ -253,15 +234,13 @@ public class ClientCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the client certificate will expire, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date when the client certificate will expire, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param expirationDate
      *        The date when the client certificate will expire, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
      */
 
     public void setExpirationDate(java.util.Date expirationDate) {
@@ -270,14 +249,12 @@ public class ClientCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the client certificate will expire, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date when the client certificate will expire, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @return The date when the client certificate will expire, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *         target="_blank">ISO 8601 format</a>.
+     *         href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
      */
 
     public java.util.Date getExpirationDate() {
@@ -286,17 +263,14 @@ public class ClientCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the client certificate will expire, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date when the client certificate will expire, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param expirationDate
      *        The date when the client certificate will expire, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClientCertificate withExpirationDate(java.util.Date expirationDate) {
@@ -305,8 +279,7 @@ public class ClientCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -321,8 +294,7 @@ public class ClientCertificate implements Serializable, Cloneable {
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
         if (getPemEncodedCertificate() != null)
-            sb.append("PemEncodedCertificate: " + getPemEncodedCertificate()
-                    + ",");
+            sb.append("PemEncodedCertificate: " + getPemEncodedCertificate() + ",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: " + getCreatedDate() + ",");
         if (getExpirationDate() != null)
@@ -341,35 +313,25 @@ public class ClientCertificate implements Serializable, Cloneable {
         if (obj instanceof ClientCertificate == false)
             return false;
         ClientCertificate other = (ClientCertificate) obj;
-        if (other.getClientCertificateId() == null
-                ^ this.getClientCertificateId() == null)
+        if (other.getClientCertificateId() == null ^ this.getClientCertificateId() == null)
             return false;
-        if (other.getClientCertificateId() != null
-                && other.getClientCertificateId().equals(
-                        this.getClientCertificateId()) == false)
+        if (other.getClientCertificateId() != null && other.getClientCertificateId().equals(this.getClientCertificateId()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getPemEncodedCertificate() == null
-                ^ this.getPemEncodedCertificate() == null)
+        if (other.getPemEncodedCertificate() == null ^ this.getPemEncodedCertificate() == null)
             return false;
-        if (other.getPemEncodedCertificate() != null
-                && other.getPemEncodedCertificate().equals(
-                        this.getPemEncodedCertificate()) == false)
+        if (other.getPemEncodedCertificate() != null && other.getPemEncodedCertificate().equals(this.getPemEncodedCertificate()) == false)
             return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
-        if (other.getCreatedDate() != null
-                && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
             return false;
-        if (other.getExpirationDate() == null
-                ^ this.getExpirationDate() == null)
+        if (other.getExpirationDate() == null ^ this.getExpirationDate() == null)
             return false;
-        if (other.getExpirationDate() != null
-                && other.getExpirationDate().equals(this.getExpirationDate()) == false)
+        if (other.getExpirationDate() != null && other.getExpirationDate().equals(this.getExpirationDate()) == false)
             return false;
         return true;
     }
@@ -379,24 +341,11 @@ public class ClientCertificate implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getClientCertificateId() == null) ? 0
-                        : getClientCertificateId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPemEncodedCertificate() == null) ? 0
-                        : getPemEncodedCertificate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExpirationDate() == null) ? 0 : getExpirationDate()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getClientCertificateId() == null) ? 0 : getClientCertificateId().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getPemEncodedCertificate() == null) ? 0 : getPemEncodedCertificate().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getExpirationDate() == null) ? 0 : getExpirationDate().hashCode());
         return hashCode;
     }
 
@@ -405,9 +354,7 @@ public class ClientCertificate implements Serializable, Cloneable {
         try {
             return (ClientCertificate) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

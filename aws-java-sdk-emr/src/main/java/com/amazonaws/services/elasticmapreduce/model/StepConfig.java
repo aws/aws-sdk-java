@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -43,17 +41,15 @@ public class StepConfig implements Serializable, Cloneable {
     private HadoopJarStepConfig hadoopJarStep;
 
     /**
-     * Default constructor for StepConfig object. Callers should use the setter
-     * or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for StepConfig object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize the object after creating it.
      */
     public StepConfig() {
     }
 
     /**
-     * Constructs a new StepConfig object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new StepConfig object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param name
      *        The name of the job flow step.
@@ -97,8 +93,7 @@ public class StepConfig implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the job flow step.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StepConfig withName(String name) {
@@ -140,8 +135,7 @@ public class StepConfig implements Serializable, Cloneable {
      * 
      * @param actionOnFailure
      *        The action to take if the job flow step fails.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionOnFailure
      */
 
@@ -171,8 +165,7 @@ public class StepConfig implements Serializable, Cloneable {
      * 
      * @param actionOnFailure
      *        The action to take if the job flow step fails.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionOnFailure
      */
 
@@ -213,8 +206,7 @@ public class StepConfig implements Serializable, Cloneable {
      * 
      * @param hadoopJarStep
      *        The JAR file used for the job flow step.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StepConfig withHadoopJarStep(HadoopJarStepConfig hadoopJarStep) {
@@ -223,8 +215,7 @@ public class StepConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -256,19 +247,15 @@ public class StepConfig implements Serializable, Cloneable {
         StepConfig other = (StepConfig) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getActionOnFailure() == null
-                ^ this.getActionOnFailure() == null)
+        if (other.getActionOnFailure() == null ^ this.getActionOnFailure() == null)
             return false;
-        if (other.getActionOnFailure() != null
-                && other.getActionOnFailure().equals(this.getActionOnFailure()) == false)
+        if (other.getActionOnFailure() != null && other.getActionOnFailure().equals(this.getActionOnFailure()) == false)
             return false;
         if (other.getHadoopJarStep() == null ^ this.getHadoopJarStep() == null)
             return false;
-        if (other.getHadoopJarStep() != null
-                && other.getHadoopJarStep().equals(this.getHadoopJarStep()) == false)
+        if (other.getHadoopJarStep() != null && other.getHadoopJarStep().equals(this.getHadoopJarStep()) == false)
             return false;
         return true;
     }
@@ -278,16 +265,9 @@ public class StepConfig implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getActionOnFailure() == null) ? 0 : getActionOnFailure()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHadoopJarStep() == null) ? 0 : getHadoopJarStep()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getActionOnFailure() == null) ? 0 : getActionOnFailure().hashCode());
+        hashCode = prime * hashCode + ((getHadoopJarStep() == null) ? 0 : getHadoopJarStep().hashCode());
         return hashCode;
     }
 
@@ -296,9 +276,7 @@ public class StepConfig implements Serializable, Cloneable {
         try {
             return (StepConfig) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

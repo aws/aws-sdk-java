@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
@@ -31,26 +29,21 @@ import com.amazonaws.util.IdempotentUtils;
  * GetSAMLProviderRequest Marshaller
  */
 
-public class GetSAMLProviderRequestMarshaller implements
-        Marshaller<Request<GetSAMLProviderRequest>, GetSAMLProviderRequest> {
+public class GetSAMLProviderRequestMarshaller implements Marshaller<Request<GetSAMLProviderRequest>, GetSAMLProviderRequest> {
 
-    public Request<GetSAMLProviderRequest> marshall(
-            GetSAMLProviderRequest getSAMLProviderRequest) {
+    public Request<GetSAMLProviderRequest> marshall(GetSAMLProviderRequest getSAMLProviderRequest) {
 
         if (getSAMLProviderRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetSAMLProviderRequest> request = new DefaultRequest<GetSAMLProviderRequest>(
-                getSAMLProviderRequest, "AmazonIdentityManagement");
+        Request<GetSAMLProviderRequest> request = new DefaultRequest<GetSAMLProviderRequest>(getSAMLProviderRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "GetSAMLProvider");
         request.addParameter("Version", "2010-05-08");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (getSAMLProviderRequest.getSAMLProviderArn() != null) {
-            request.addParameter("SAMLProviderArn", StringUtils
-                    .fromString(getSAMLProviderRequest.getSAMLProviderArn()));
+            request.addParameter("SAMLProviderArn", StringUtils.fromString(getSAMLProviderRequest.getSAMLProviderArn()));
         }
 
         return request;

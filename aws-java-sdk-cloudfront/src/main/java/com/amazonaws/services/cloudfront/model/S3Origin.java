@@ -1,24 +1,22 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 
 /**
- * A complex type that contains information about the Amazon S3 bucket from
- * which you want CloudFront to get your media files for distribution.
+ * A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media
+ * files for distribution.
  */
 public class S3Origin implements Serializable, Cloneable {
 
@@ -28,16 +26,15 @@ public class S3Origin implements Serializable, Cloneable {
     private String originAccessIdentity;
 
     /**
-     * Default constructor for S3Origin object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize the object after creating
-     * it.
+     * Default constructor for S3Origin object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize the object after creating it.
      */
     public S3Origin() {
     }
 
     /**
-     * Constructs a new S3Origin object. Callers should use the setter or fluent
-     * setter (with...) methods to initialize any additional object members.
+     * Constructs a new S3Origin object. Callers should use the setter or fluent setter (with...) methods to initialize
+     * any additional object members.
      * 
      * @param domainName
      *        The DNS name of the S3 origin.
@@ -47,8 +44,8 @@ public class S3Origin implements Serializable, Cloneable {
     }
 
     /**
-     * Constructs a new S3Origin object. Callers should use the setter or fluent
-     * setter (with...) methods to initialize any additional object members.
+     * Constructs a new S3Origin object. Callers should use the setter or fluent setter (with...) methods to initialize
+     * any additional object members.
      * 
      * @param domainName
      *        The DNS name of the S3 origin.
@@ -86,8 +83,7 @@ public class S3Origin implements Serializable, Cloneable {
      * 
      * @param domainName
      *        The DNS name of the S3 origin.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public S3Origin withDomainName(String domainName) {
@@ -121,8 +117,7 @@ public class S3Origin implements Serializable, Cloneable {
      * 
      * @param originAccessIdentity
      *        Your S3 origin's origin access identity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public S3Origin withOriginAccessIdentity(String originAccessIdentity) {
@@ -131,8 +126,7 @@ public class S3Origin implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -162,15 +156,11 @@ public class S3Origin implements Serializable, Cloneable {
         S3Origin other = (S3Origin) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
-        if (other.getOriginAccessIdentity() == null
-                ^ this.getOriginAccessIdentity() == null)
+        if (other.getOriginAccessIdentity() == null ^ this.getOriginAccessIdentity() == null)
             return false;
-        if (other.getOriginAccessIdentity() != null
-                && other.getOriginAccessIdentity().equals(
-                        this.getOriginAccessIdentity()) == false)
+        if (other.getOriginAccessIdentity() != null && other.getOriginAccessIdentity().equals(this.getOriginAccessIdentity()) == false)
             return false;
         return true;
     }
@@ -180,12 +170,8 @@ public class S3Origin implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOriginAccessIdentity() == null) ? 0
-                        : getOriginAccessIdentity().hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getOriginAccessIdentity() == null) ? 0 : getOriginAccessIdentity().hashCode());
         return hashCode;
     }
 
@@ -194,9 +180,7 @@ public class S3Origin implements Serializable, Cloneable {
         try {
             return (S3Origin) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

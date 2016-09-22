@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * StreamDescription JSON Unmarshaller
  */
-public class StreamDescriptionJsonUnmarshaller implements
-        Unmarshaller<StreamDescription, JsonUnmarshallerContext> {
+public class StreamDescriptionJsonUnmarshaller implements Unmarshaller<StreamDescription, JsonUnmarshallerContext> {
 
-    public StreamDescription unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public StreamDescription unmarshall(JsonUnmarshallerContext context) throws Exception {
         StreamDescription streamDescription = new StreamDescription();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,58 +49,42 @@ public class StreamDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StreamArn", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamArn(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    streamDescription.setStreamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamLabel", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamLabel(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    streamDescription.setStreamLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamStatus", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamStatus(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    streamDescription.setStreamStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamViewType", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamViewType(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    streamDescription.setStreamViewType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("CreationRequestDateTime",
-                        targetDepth)) {
+                if (context.testExpression("CreationRequestDateTime", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setCreationRequestDateTime(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    streamDescription.setCreationRequestDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setTableName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    streamDescription.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
                     context.nextToken();
-                    streamDescription
-                            .setKeySchema(new ListUnmarshaller<KeySchemaElement>(
-                                    KeySchemaElementJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    streamDescription.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Shards", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setShards(new ListUnmarshaller<Shard>(
-                            ShardJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    streamDescription.setShards(new ListUnmarshaller<Shard>(ShardJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedShardId", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setLastEvaluatedShardId(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    streamDescription.setLastEvaluatedShardId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

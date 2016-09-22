@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.machinelearning.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * RDSDataSpec JSON Unmarshaller
  */
-public class RDSDataSpecJsonUnmarshaller implements
-        Unmarshaller<RDSDataSpec, JsonUnmarshallerContext> {
+public class RDSDataSpecJsonUnmarshaller implements Unmarshaller<RDSDataSpec, JsonUnmarshallerContext> {
 
-    public RDSDataSpec unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public RDSDataSpec unmarshall(JsonUnmarshallerContext context) throws Exception {
         RDSDataSpec rDSDataSpec = new RDSDataSpec();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,67 +49,50 @@ public class RDSDataSpecJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatabaseInformation", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec
-                            .setDatabaseInformation(RDSDatabaseJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    rDSDataSpec.setDatabaseInformation(RDSDatabaseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SelectSqlQuery", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setSelectSqlQuery(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    rDSDataSpec.setSelectSqlQuery(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseCredentials", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec
-                            .setDatabaseCredentials(RDSDatabaseCredentialsJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    rDSDataSpec.setDatabaseCredentials(RDSDatabaseCredentialsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3StagingLocation", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setS3StagingLocation(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    rDSDataSpec.setS3StagingLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataRearrangement", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setDataRearrangement(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    rDSDataSpec.setDataRearrangement(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSchema", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setDataSchema(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    rDSDataSpec.setDataSchema(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSchemaUri", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setDataSchemaUri(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    rDSDataSpec.setDataSchemaUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceRole", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setResourceRole(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    rDSDataSpec.setResourceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setServiceRole(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    rDSDataSpec.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setSubnetId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    rDSDataSpec.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec
-                            .setSecurityGroupIds(new ListUnmarshaller<String>(
-                                    context.getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    rDSDataSpec.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

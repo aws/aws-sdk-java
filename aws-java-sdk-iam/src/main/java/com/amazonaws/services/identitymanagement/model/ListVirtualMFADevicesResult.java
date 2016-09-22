@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -21,47 +19,41 @@ import java.io.Serializable;
  * Contains the response to a successful <a>ListVirtualMFADevices</a> request.
  * </p>
  */
-public class ListVirtualMFADevicesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListVirtualMFADevicesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of virtual MFA devices in the current account that match the
-     * <code>AssignmentStatus</code> value that was passed in the request.
+     * The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that
+     * was passed in the request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VirtualMFADevice> virtualMFADevices;
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      */
     private String marker;
 
     /**
      * <p>
-     * The list of virtual MFA devices in the current account that match the
-     * <code>AssignmentStatus</code> value that was passed in the request.
+     * The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that
+     * was passed in the request.
      * </p>
      * 
-     * @return The list of virtual MFA devices in the current account that match
-     *         the <code>AssignmentStatus</code> value that was passed in the
-     *         request.
+     * @return The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value
+     *         that was passed in the request.
      */
 
     public java.util.List<VirtualMFADevice> getVirtualMFADevices() {
@@ -73,52 +65,44 @@ public class ListVirtualMFADevicesResult extends
 
     /**
      * <p>
-     * The list of virtual MFA devices in the current account that match the
-     * <code>AssignmentStatus</code> value that was passed in the request.
+     * The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that
+     * was passed in the request.
      * </p>
      * 
      * @param virtualMFADevices
-     *        The list of virtual MFA devices in the current account that match
-     *        the <code>AssignmentStatus</code> value that was passed in the
-     *        request.
+     *        The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value
+     *        that was passed in the request.
      */
 
-    public void setVirtualMFADevices(
-            java.util.Collection<VirtualMFADevice> virtualMFADevices) {
+    public void setVirtualMFADevices(java.util.Collection<VirtualMFADevice> virtualMFADevices) {
         if (virtualMFADevices == null) {
             this.virtualMFADevices = null;
             return;
         }
 
-        this.virtualMFADevices = new com.amazonaws.internal.SdkInternalList<VirtualMFADevice>(
-                virtualMFADevices);
+        this.virtualMFADevices = new com.amazonaws.internal.SdkInternalList<VirtualMFADevice>(virtualMFADevices);
     }
 
     /**
      * <p>
-     * The list of virtual MFA devices in the current account that match the
-     * <code>AssignmentStatus</code> value that was passed in the request.
+     * The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that
+     * was passed in the request.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVirtualMFADevices(java.util.Collection)} or
-     * {@link #withVirtualMFADevices(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVirtualMFADevices(java.util.Collection)} or {@link #withVirtualMFADevices(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param virtualMFADevices
-     *        The list of virtual MFA devices in the current account that match
-     *        the <code>AssignmentStatus</code> value that was passed in the
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value
+     *        that was passed in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListVirtualMFADevicesResult withVirtualMFADevices(
-            VirtualMFADevice... virtualMFADevices) {
+    public ListVirtualMFADevicesResult withVirtualMFADevices(VirtualMFADevice... virtualMFADevices) {
         if (this.virtualMFADevices == null) {
-            setVirtualMFADevices(new com.amazonaws.internal.SdkInternalList<VirtualMFADevice>(
-                    virtualMFADevices.length));
+            setVirtualMFADevices(new com.amazonaws.internal.SdkInternalList<VirtualMFADevice>(virtualMFADevices.length));
         }
         for (VirtualMFADevice ele : virtualMFADevices) {
             this.virtualMFADevices.add(ele);
@@ -128,44 +112,36 @@ public class ListVirtualMFADevicesResult extends
 
     /**
      * <p>
-     * The list of virtual MFA devices in the current account that match the
-     * <code>AssignmentStatus</code> value that was passed in the request.
+     * The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that
+     * was passed in the request.
      * </p>
      * 
      * @param virtualMFADevices
-     *        The list of virtual MFA devices in the current account that match
-     *        the <code>AssignmentStatus</code> value that was passed in the
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value
+     *        that was passed in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListVirtualMFADevicesResult withVirtualMFADevices(
-            java.util.Collection<VirtualMFADevice> virtualMFADevices) {
+    public ListVirtualMFADevicesResult withVirtualMFADevices(java.util.Collection<VirtualMFADevice> virtualMFADevices) {
         setVirtualMFADevices(virtualMFADevices);
         return this;
     }
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more items to return. If
-     *        your results were truncated, you can make a subsequent pagination
-     *        request using the <code>Marker</code> request parameter to
-     *        retrieve more items. Note that IAM might return fewer than the
-     *        <code>MaxItems</code> number of results even when there are more
-     *        results available. We recommend that you check
-     *        <code>IsTruncated</code> after every call to ensure that you
-     *        receive all of your results.
+     *        A flag that indicates whether there are more items to return. If your results were truncated, you can make
+     *        a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.
+     *        Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more
+     *        results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that
+     *        you receive all of your results.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -174,23 +150,18 @@ public class ListVirtualMFADevicesResult extends
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      * 
-     * @return A flag that indicates whether there are more items to return. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to
-     *         retrieve more items. Note that IAM might return fewer than the
-     *         <code>MaxItems</code> number of results even when there are more
-     *         results available. We recommend that you check
-     *         <code>IsTruncated</code> after every call to ensure that you
-     *         receive all of your results.
+     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can
+     *         make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there
+     *         are more results available. We recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      */
 
     public Boolean getIsTruncated() {
@@ -199,26 +170,20 @@ public class ListVirtualMFADevicesResult extends
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more items to return. If
-     *        your results were truncated, you can make a subsequent pagination
-     *        request using the <code>Marker</code> request parameter to
-     *        retrieve more items. Note that IAM might return fewer than the
-     *        <code>MaxItems</code> number of results even when there are more
-     *        results available. We recommend that you check
-     *        <code>IsTruncated</code> after every call to ensure that you
-     *        receive all of your results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A flag that indicates whether there are more items to return. If your results were truncated, you can make
+     *        a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.
+     *        Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more
+     *        results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that
+     *        you receive all of your results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListVirtualMFADevicesResult withIsTruncated(Boolean isTruncated) {
@@ -228,23 +193,18 @@ public class ListVirtualMFADevicesResult extends
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      * 
-     * @return A flag that indicates whether there are more items to return. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to
-     *         retrieve more items. Note that IAM might return fewer than the
-     *         <code>MaxItems</code> number of results even when there are more
-     *         results available. We recommend that you check
-     *         <code>IsTruncated</code> after every call to ensure that you
-     *         receive all of your results.
+     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can
+     *         make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there
+     *         are more results available. We recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      */
 
     public Boolean isTruncated() {
@@ -253,15 +213,13 @@ public class ListVirtualMFADevicesResult extends
 
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      * 
      * @param marker
-     *        When <code>IsTruncated</code> is <code>true</code>, this element
-     *        is present and contains the value to use for the
-     *        <code>Marker</code> parameter in a subsequent pagination request.
+     *        When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use
+     *        for the <code>Marker</code> parameter in a subsequent pagination request.
      */
 
     public void setMarker(String marker) {
@@ -270,14 +228,12 @@ public class ListVirtualMFADevicesResult extends
 
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      * 
-     * @return When <code>IsTruncated</code> is <code>true</code>, this element
-     *         is present and contains the value to use for the
-     *         <code>Marker</code> parameter in a subsequent pagination request.
+     * @return When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use
+     *         for the <code>Marker</code> parameter in a subsequent pagination request.
      */
 
     public String getMarker() {
@@ -286,17 +242,14 @@ public class ListVirtualMFADevicesResult extends
 
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      * 
      * @param marker
-     *        When <code>IsTruncated</code> is <code>true</code>, this element
-     *        is present and contains the value to use for the
-     *        <code>Marker</code> parameter in a subsequent pagination request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use
+     *        for the <code>Marker</code> parameter in a subsequent pagination request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListVirtualMFADevicesResult withMarker(String marker) {
@@ -305,8 +258,7 @@ public class ListVirtualMFADevicesResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -336,22 +288,17 @@ public class ListVirtualMFADevicesResult extends
         if (obj instanceof ListVirtualMFADevicesResult == false)
             return false;
         ListVirtualMFADevicesResult other = (ListVirtualMFADevicesResult) obj;
-        if (other.getVirtualMFADevices() == null
-                ^ this.getVirtualMFADevices() == null)
+        if (other.getVirtualMFADevices() == null ^ this.getVirtualMFADevices() == null)
             return false;
-        if (other.getVirtualMFADevices() != null
-                && other.getVirtualMFADevices().equals(
-                        this.getVirtualMFADevices()) == false)
+        if (other.getVirtualMFADevices() != null && other.getVirtualMFADevices().equals(this.getVirtualMFADevices()) == false)
             return false;
         if (other.getIsTruncated() == null ^ this.getIsTruncated() == null)
             return false;
-        if (other.getIsTruncated() != null
-                && other.getIsTruncated().equals(this.getIsTruncated()) == false)
+        if (other.getIsTruncated() != null && other.getIsTruncated().equals(this.getIsTruncated()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -361,15 +308,9 @@ public class ListVirtualMFADevicesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getVirtualMFADevices() == null) ? 0
-                        : getVirtualMFADevices().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getVirtualMFADevices() == null) ? 0 : getVirtualMFADevices().hashCode());
+        hashCode = prime * hashCode + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -378,9 +319,7 @@ public class ListVirtualMFADevicesResult extends
         try {
             return (ListVirtualMFADevicesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

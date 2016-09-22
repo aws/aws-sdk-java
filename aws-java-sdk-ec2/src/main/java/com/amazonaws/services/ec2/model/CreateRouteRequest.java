@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteRequestMarshaller;
  * Contains the parameters for CreateRoute.
  * </p>
  */
-public class CreateRouteRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<CreateRouteRequest> {
+public class CreateRouteRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateRouteRequest> {
 
     /**
      * <p>
@@ -35,22 +32,20 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
     private String routeTableId;
     /**
      * <p>
-     * The CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.
+     * The CIDR address block used for the destination match. Routing decisions are based on the most specific match.
      * </p>
      */
     private String destinationCidrBlock;
     /**
      * <p>
-     * The ID of an Internet gateway or virtual private gateway attached to your
-     * VPC.
+     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
      * </p>
      */
     private String gatewayId;
     /**
      * <p>
-     * The ID of a NAT instance in your VPC. The operation fails if you specify
-     * an instance ID unless exactly one network interface is attached.
+     * The ID of a NAT instance in your VPC. The operation fails if you specify an instance ID unless exactly one
+     * network interface is attached.
      * </p>
      */
     private String instanceId;
@@ -105,8 +100,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * 
      * @param routeTableId
      *        The ID of the route table for the route.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateRouteRequest withRouteTableId(String routeTableId) {
@@ -116,13 +110,12 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.
+     * The CIDR address block used for the destination match. Routing decisions are based on the most specific match.
      * </p>
      * 
      * @param destinationCidrBlock
-     *        The CIDR address block used for the destination match. Routing
-     *        decisions are based on the most specific match.
+     *        The CIDR address block used for the destination match. Routing decisions are based on the most specific
+     *        match.
      */
 
     public void setDestinationCidrBlock(String destinationCidrBlock) {
@@ -131,12 +124,11 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.
+     * The CIDR address block used for the destination match. Routing decisions are based on the most specific match.
      * </p>
      * 
-     * @return The CIDR address block used for the destination match. Routing
-     *         decisions are based on the most specific match.
+     * @return The CIDR address block used for the destination match. Routing decisions are based on the most specific
+     *         match.
      */
 
     public String getDestinationCidrBlock() {
@@ -145,32 +137,27 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.
+     * The CIDR address block used for the destination match. Routing decisions are based on the most specific match.
      * </p>
      * 
      * @param destinationCidrBlock
-     *        The CIDR address block used for the destination match. Routing
-     *        decisions are based on the most specific match.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The CIDR address block used for the destination match. Routing decisions are based on the most specific
+     *        match.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateRouteRequest withDestinationCidrBlock(
-            String destinationCidrBlock) {
+    public CreateRouteRequest withDestinationCidrBlock(String destinationCidrBlock) {
         setDestinationCidrBlock(destinationCidrBlock);
         return this;
     }
 
     /**
      * <p>
-     * The ID of an Internet gateway or virtual private gateway attached to your
-     * VPC.
+     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
      * </p>
      * 
      * @param gatewayId
-     *        The ID of an Internet gateway or virtual private gateway attached
-     *        to your VPC.
+     *        The ID of an Internet gateway or virtual private gateway attached to your VPC.
      */
 
     public void setGatewayId(String gatewayId) {
@@ -179,12 +166,10 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of an Internet gateway or virtual private gateway attached to your
-     * VPC.
+     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
      * </p>
      * 
-     * @return The ID of an Internet gateway or virtual private gateway attached
-     *         to your VPC.
+     * @return The ID of an Internet gateway or virtual private gateway attached to your VPC.
      */
 
     public String getGatewayId() {
@@ -193,15 +178,12 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of an Internet gateway or virtual private gateway attached to your
-     * VPC.
+     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
      * </p>
      * 
      * @param gatewayId
-     *        The ID of an Internet gateway or virtual private gateway attached
-     *        to your VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateRouteRequest withGatewayId(String gatewayId) {
@@ -211,14 +193,13 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of a NAT instance in your VPC. The operation fails if you specify
-     * an instance ID unless exactly one network interface is attached.
+     * The ID of a NAT instance in your VPC. The operation fails if you specify an instance ID unless exactly one
+     * network interface is attached.
      * </p>
      * 
      * @param instanceId
-     *        The ID of a NAT instance in your VPC. The operation fails if you
-     *        specify an instance ID unless exactly one network interface is
-     *        attached.
+     *        The ID of a NAT instance in your VPC. The operation fails if you specify an instance ID unless exactly one
+     *        network interface is attached.
      */
 
     public void setInstanceId(String instanceId) {
@@ -227,13 +208,12 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of a NAT instance in your VPC. The operation fails if you specify
-     * an instance ID unless exactly one network interface is attached.
+     * The ID of a NAT instance in your VPC. The operation fails if you specify an instance ID unless exactly one
+     * network interface is attached.
      * </p>
      * 
-     * @return The ID of a NAT instance in your VPC. The operation fails if you
-     *         specify an instance ID unless exactly one network interface is
-     *         attached.
+     * @return The ID of a NAT instance in your VPC. The operation fails if you specify an instance ID unless exactly
+     *         one network interface is attached.
      */
 
     public String getInstanceId() {
@@ -242,16 +222,14 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of a NAT instance in your VPC. The operation fails if you specify
-     * an instance ID unless exactly one network interface is attached.
+     * The ID of a NAT instance in your VPC. The operation fails if you specify an instance ID unless exactly one
+     * network interface is attached.
      * </p>
      * 
      * @param instanceId
-     *        The ID of a NAT instance in your VPC. The operation fails if you
-     *        specify an instance ID unless exactly one network interface is
-     *        attached.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of a NAT instance in your VPC. The operation fails if you specify an instance ID unless exactly one
+     *        network interface is attached.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateRouteRequest withInstanceId(String instanceId) {
@@ -291,8 +269,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * 
      * @param networkInterfaceId
      *        The ID of a network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateRouteRequest withNetworkInterfaceId(String networkInterfaceId) {
@@ -332,12 +309,10 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * 
      * @param vpcPeeringConnectionId
      *        The ID of a VPC peering connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateRouteRequest withVpcPeeringConnectionId(
-            String vpcPeeringConnectionId) {
+    public CreateRouteRequest withVpcPeeringConnectionId(String vpcPeeringConnectionId) {
         setVpcPeeringConnectionId(vpcPeeringConnectionId);
         return this;
     }
@@ -374,8 +349,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * 
      * @param natGatewayId
      *        The ID of a NAT gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateRouteRequest withNatGatewayId(String natGatewayId) {
@@ -384,21 +358,18 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<CreateRouteRequest> getDryRunRequest() {
-        Request<CreateRouteRequest> request = new CreateRouteRequestMarshaller()
-                .marshall(this);
+        Request<CreateRouteRequest> request = new CreateRouteRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -411,8 +382,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
         if (getRouteTableId() != null)
             sb.append("RouteTableId: " + getRouteTableId() + ",");
         if (getDestinationCidrBlock() != null)
-            sb.append("DestinationCidrBlock: " + getDestinationCidrBlock()
-                    + ",");
+            sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ",");
         if (getGatewayId() != null)
             sb.append("GatewayId: " + getGatewayId() + ",");
         if (getInstanceId() != null)
@@ -420,8 +390,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
         if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId()
-                    + ",");
+            sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId() + ",");
         if (getNatGatewayId() != null)
             sb.append("NatGatewayId: " + getNatGatewayId());
         sb.append("}");
@@ -440,44 +409,31 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
         CreateRouteRequest other = (CreateRouteRequest) obj;
         if (other.getRouteTableId() == null ^ this.getRouteTableId() == null)
             return false;
-        if (other.getRouteTableId() != null
-                && other.getRouteTableId().equals(this.getRouteTableId()) == false)
+        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false)
             return false;
-        if (other.getDestinationCidrBlock() == null
-                ^ this.getDestinationCidrBlock() == null)
+        if (other.getDestinationCidrBlock() == null ^ this.getDestinationCidrBlock() == null)
             return false;
-        if (other.getDestinationCidrBlock() != null
-                && other.getDestinationCidrBlock().equals(
-                        this.getDestinationCidrBlock()) == false)
+        if (other.getDestinationCidrBlock() != null && other.getDestinationCidrBlock().equals(this.getDestinationCidrBlock()) == false)
             return false;
         if (other.getGatewayId() == null ^ this.getGatewayId() == null)
             return false;
-        if (other.getGatewayId() != null
-                && other.getGatewayId().equals(this.getGatewayId()) == false)
+        if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
-        if (other.getNetworkInterfaceId() == null
-                ^ this.getNetworkInterfaceId() == null)
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
-        if (other.getNetworkInterfaceId() != null
-                && other.getNetworkInterfaceId().equals(
-                        this.getNetworkInterfaceId()) == false)
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
-        if (other.getVpcPeeringConnectionId() == null
-                ^ this.getVpcPeeringConnectionId() == null)
+        if (other.getVpcPeeringConnectionId() == null ^ this.getVpcPeeringConnectionId() == null)
             return false;
-        if (other.getVpcPeeringConnectionId() != null
-                && other.getVpcPeeringConnectionId().equals(
-                        this.getVpcPeeringConnectionId()) == false)
+        if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false)
             return false;
         if (other.getNatGatewayId() == null ^ this.getNatGatewayId() == null)
             return false;
-        if (other.getNatGatewayId() != null
-                && other.getNatGatewayId().equals(this.getNatGatewayId()) == false)
+        if (other.getNatGatewayId() != null && other.getNatGatewayId().equals(this.getNatGatewayId()) == false)
             return false;
         return true;
     }
@@ -487,30 +443,13 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRouteTableId() == null) ? 0 : getRouteTableId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDestinationCidrBlock() == null) ? 0
-                        : getDestinationCidrBlock().hashCode());
-        hashCode = prime * hashCode
-                + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaceId() == null) ? 0
-                        : getNetworkInterfaceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVpcPeeringConnectionId() == null) ? 0
-                        : getVpcPeeringConnectionId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNatGatewayId() == null) ? 0 : getNatGatewayId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
+        hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());
+        hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
         return hashCode;
     }
 

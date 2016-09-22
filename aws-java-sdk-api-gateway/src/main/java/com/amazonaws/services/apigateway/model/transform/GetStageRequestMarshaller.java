@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetStageRequest Marshaller
  */
-public class GetStageRequestMarshaller implements
-        Marshaller<Request<GetStageRequest>, GetStageRequest> {
+public class GetStageRequestMarshaller implements Marshaller<Request<GetStageRequest>, GetStageRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -55,27 +52,19 @@ public class GetStageRequestMarshaller implements
     public Request<GetStageRequest> marshall(GetStageRequest getStageRequest) {
 
         if (getStageRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetStageRequest> request = new DefaultRequest<GetStageRequest>(
-                getStageRequest, "AmazonApiGateway");
+        Request<GetStageRequest> request = new DefaultRequest<GetStageRequest>(getStageRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (getStageRequest.getRestApiId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(getStageRequest
-                                .getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{stage_name}",
-                (getStageRequest.getStageName() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(getStageRequest
-                                .getStageName()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{restapi_id}",
+                (getStageRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getStageRequest.getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{stage_name}",
+                (getStageRequest.getStageName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getStageRequest.getStageName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

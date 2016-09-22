@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteKeyPairRequestMarshaller
  * Contains the parameters for DeleteKeyPair.
  * </p>
  */
-public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<DeleteKeyPairRequest> {
+public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteKeyPairRequest> {
 
     /**
      * <p>
@@ -35,17 +32,15 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements
     private String keyName;
 
     /**
-     * Default constructor for DeleteKeyPairRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for DeleteKeyPairRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public DeleteKeyPairRequest() {
     }
 
     /**
-     * Constructs a new DeleteKeyPairRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new DeleteKeyPairRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param keyName
      *        The name of the key pair.
@@ -86,8 +81,7 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements
      * 
      * @param keyName
      *        The name of the key pair.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteKeyPairRequest withKeyName(String keyName) {
@@ -96,21 +90,18 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DeleteKeyPairRequest> getDryRunRequest() {
-        Request<DeleteKeyPairRequest> request = new DeleteKeyPairRequestMarshaller()
-                .marshall(this);
+        Request<DeleteKeyPairRequest> request = new DeleteKeyPairRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -138,8 +129,7 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements
         DeleteKeyPairRequest other = (DeleteKeyPairRequest) obj;
         if (other.getKeyName() == null ^ this.getKeyName() == null)
             return false;
-        if (other.getKeyName() != null
-                && other.getKeyName().equals(this.getKeyName()) == false)
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
         return true;
     }
@@ -149,8 +139,7 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
         return hashCode;
     }
 

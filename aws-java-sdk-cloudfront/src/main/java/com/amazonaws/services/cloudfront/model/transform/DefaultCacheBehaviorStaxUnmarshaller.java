@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * DefaultCacheBehavior StAX Unmarshaller
  */
-public class DefaultCacheBehaviorStaxUnmarshaller implements
-        Unmarshaller<DefaultCacheBehavior, StaxUnmarshallerContext> {
+public class DefaultCacheBehaviorStaxUnmarshaller implements Unmarshaller<DefaultCacheBehavior, StaxUnmarshallerContext> {
 
-    public DefaultCacheBehavior unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public DefaultCacheBehavior unmarshall(StaxUnmarshallerContext context) throws Exception {
         DefaultCacheBehavior defaultCacheBehavior = new DefaultCacheBehavior();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,68 +46,52 @@ public class DefaultCacheBehaviorStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("TargetOriginId", targetDepth)) {
-                    defaultCacheBehavior
-                            .setTargetOriginId(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    defaultCacheBehavior.setTargetOriginId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ForwardedValues", targetDepth)) {
-                    defaultCacheBehavior
-                            .setForwardedValues(ForwardedValuesStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    defaultCacheBehavior.setForwardedValues(ForwardedValuesStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("TrustedSigners", targetDepth)) {
-                    defaultCacheBehavior
-                            .setTrustedSigners(TrustedSignersStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    defaultCacheBehavior.setTrustedSigners(TrustedSignersStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ViewerProtocolPolicy", targetDepth)) {
-                    defaultCacheBehavior
-                            .setViewerProtocolPolicy(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    defaultCacheBehavior.setViewerProtocolPolicy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MinTTL", targetDepth)) {
-                    defaultCacheBehavior.setMinTTL(LongStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    defaultCacheBehavior.setMinTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("AllowedMethods", targetDepth)) {
-                    defaultCacheBehavior
-                            .setAllowedMethods(AllowedMethodsStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    defaultCacheBehavior.setAllowedMethods(AllowedMethodsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("SmoothStreaming", targetDepth)) {
-                    defaultCacheBehavior
-                            .setSmoothStreaming(BooleanStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    defaultCacheBehavior.setSmoothStreaming(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DefaultTTL", targetDepth)) {
-                    defaultCacheBehavior.setDefaultTTL(LongStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    defaultCacheBehavior.setDefaultTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MaxTTL", targetDepth)) {
-                    defaultCacheBehavior.setMaxTTL(LongStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    defaultCacheBehavior.setMaxTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Compress", targetDepth)) {
-                    defaultCacheBehavior.setCompress(BooleanStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    defaultCacheBehavior.setCompress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

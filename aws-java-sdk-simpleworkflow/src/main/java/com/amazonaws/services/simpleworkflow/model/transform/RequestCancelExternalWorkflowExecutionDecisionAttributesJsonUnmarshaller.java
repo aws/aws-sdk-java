@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
@@ -29,12 +27,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * RequestCancelExternalWorkflowExecutionDecisionAttributes JSON Unmarshaller
  */
-public class RequestCancelExternalWorkflowExecutionDecisionAttributesJsonUnmarshaller
-        implements
+public class RequestCancelExternalWorkflowExecutionDecisionAttributesJsonUnmarshaller implements
         Unmarshaller<RequestCancelExternalWorkflowExecutionDecisionAttributes, JsonUnmarshallerContext> {
 
-    public RequestCancelExternalWorkflowExecutionDecisionAttributes unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public RequestCancelExternalWorkflowExecutionDecisionAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         RequestCancelExternalWorkflowExecutionDecisionAttributes requestCancelExternalWorkflowExecutionDecisionAttributes = new RequestCancelExternalWorkflowExecutionDecisionAttributes();
 
         int originalDepth = context.getCurrentDepth();
@@ -54,27 +50,18 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributesJsonUnmarsh
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowId", targetDepth)) {
                     context.nextToken();
-                    requestCancelExternalWorkflowExecutionDecisionAttributes
-                            .setWorkflowId(context
-                                    .getUnmarshaller(String.class).unmarshall(
-                                            context));
+                    requestCancelExternalWorkflowExecutionDecisionAttributes.setWorkflowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("runId", targetDepth)) {
                     context.nextToken();
-                    requestCancelExternalWorkflowExecutionDecisionAttributes
-                            .setRunId(context.getUnmarshaller(String.class)
-                                    .unmarshall(context));
+                    requestCancelExternalWorkflowExecutionDecisionAttributes.setRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("control", targetDepth)) {
                     context.nextToken();
-                    requestCancelExternalWorkflowExecutionDecisionAttributes
-                            .setControl(context.getUnmarshaller(String.class)
-                                    .unmarshall(context));
+                    requestCancelExternalWorkflowExecutionDecisionAttributes.setControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * GameSession JSON Unmarshaller
  */
-public class GameSessionJsonUnmarshaller implements
-        Unmarshaller<GameSession, JsonUnmarshallerContext> {
+public class GameSessionJsonUnmarshaller implements Unmarshaller<GameSession, JsonUnmarshallerContext> {
 
-    public GameSession unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public GameSession unmarshall(JsonUnmarshallerContext context) throws Exception {
         GameSession gameSession = new GameSession();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,77 +49,54 @@ public class GameSessionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GameSessionId", targetDepth)) {
                     context.nextToken();
-                    gameSession.setGameSessionId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    gameSession.setGameSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    gameSession.setName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    gameSession.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FleetId", targetDepth)) {
                     context.nextToken();
-                    gameSession.setFleetId(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    gameSession.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    gameSession.setCreationTime(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    gameSession.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("TerminationTime", targetDepth)) {
                     context.nextToken();
-                    gameSession.setTerminationTime(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    gameSession.setTerminationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
-                if (context.testExpression("CurrentPlayerSessionCount",
-                        targetDepth)) {
+                if (context.testExpression("CurrentPlayerSessionCount", targetDepth)) {
                     context.nextToken();
-                    gameSession
-                            .setCurrentPlayerSessionCount(context
-                                    .getUnmarshaller(Integer.class).unmarshall(
-                                            context));
+                    gameSession.setCurrentPlayerSessionCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context.testExpression("MaximumPlayerSessionCount",
-                        targetDepth)) {
+                if (context.testExpression("MaximumPlayerSessionCount", targetDepth)) {
                     context.nextToken();
-                    gameSession
-                            .setMaximumPlayerSessionCount(context
-                                    .getUnmarshaller(Integer.class).unmarshall(
-                                            context));
+                    gameSession.setMaximumPlayerSessionCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    gameSession.setStatus(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    gameSession.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GameProperties", targetDepth)) {
                     context.nextToken();
-                    gameSession
-                            .setGameProperties(new ListUnmarshaller<GameProperty>(
-                                    GamePropertyJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+                    gameSession.setGameProperties(new ListUnmarshaller<GameProperty>(GamePropertyJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
                     context.nextToken();
-                    gameSession.setIpAddress(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    gameSession.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
                     context.nextToken();
-                    gameSession.setPort(context.getUnmarshaller(Integer.class)
-                            .unmarshall(context));
+                    gameSession.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context.testExpression("PlayerSessionCreationPolicy",
-                        targetDepth)) {
+                if (context.testExpression("PlayerSessionCreationPolicy", targetDepth)) {
                     context.nextToken();
-                    gameSession.setPlayerSessionCreationPolicy(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    gameSession.setPlayerSessionCreationPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -80,8 +78,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * 
      * @param iamUserArn
      *        The user's IAM ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SelfUserProfile withIamUserArn(String iamUserArn) {
@@ -121,8 +118,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * 
      * @param name
      *        The user's name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SelfUserProfile withName(String name) {
@@ -162,8 +158,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * 
      * @param sshUsername
      *        The user's SSH user name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SelfUserProfile withSshUsername(String sshUsername) {
@@ -203,8 +198,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * 
      * @param sshPublicKey
      *        The user's SSH public key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SelfUserProfile withSshPublicKey(String sshPublicKey) {
@@ -213,8 +207,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -248,23 +241,19 @@ public class SelfUserProfile implements Serializable, Cloneable {
         SelfUserProfile other = (SelfUserProfile) obj;
         if (other.getIamUserArn() == null ^ this.getIamUserArn() == null)
             return false;
-        if (other.getIamUserArn() != null
-                && other.getIamUserArn().equals(this.getIamUserArn()) == false)
+        if (other.getIamUserArn() != null && other.getIamUserArn().equals(this.getIamUserArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getSshUsername() == null ^ this.getSshUsername() == null)
             return false;
-        if (other.getSshUsername() != null
-                && other.getSshUsername().equals(this.getSshUsername()) == false)
+        if (other.getSshUsername() != null && other.getSshUsername().equals(this.getSshUsername()) == false)
             return false;
         if (other.getSshPublicKey() == null ^ this.getSshPublicKey() == null)
             return false;
-        if (other.getSshPublicKey() != null
-                && other.getSshPublicKey().equals(this.getSshPublicKey()) == false)
+        if (other.getSshPublicKey() != null && other.getSshPublicKey().equals(this.getSshPublicKey()) == false)
             return false;
         return true;
     }
@@ -274,17 +263,10 @@ public class SelfUserProfile implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSshUsername() == null) ? 0 : getSshUsername().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSshPublicKey() == null) ? 0 : getSshPublicKey()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getSshUsername() == null) ? 0 : getSshUsername().hashCode());
+        hashCode = prime * hashCode + ((getSshPublicKey() == null) ? 0 : getSshPublicKey().hashCode());
         return hashCode;
     }
 
@@ -293,9 +275,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
         try {
             return (SelfUserProfile) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

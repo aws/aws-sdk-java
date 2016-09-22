@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -21,27 +19,22 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeMyUserProfile</code> request.
  * </p>
  */
-public class DescribeMyUserProfileResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeMyUserProfileResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <code>UserProfile</code> object that describes the user's SSH
-     * information.
+     * A <code>UserProfile</code> object that describes the user's SSH information.
      * </p>
      */
     private SelfUserProfile userProfile;
 
     /**
      * <p>
-     * A <code>UserProfile</code> object that describes the user's SSH
-     * information.
+     * A <code>UserProfile</code> object that describes the user's SSH information.
      * </p>
      * 
      * @param userProfile
-     *        A <code>UserProfile</code> object that describes the user's SSH
-     *        information.
+     *        A <code>UserProfile</code> object that describes the user's SSH information.
      */
 
     public void setUserProfile(SelfUserProfile userProfile) {
@@ -50,12 +43,10 @@ public class DescribeMyUserProfileResult extends
 
     /**
      * <p>
-     * A <code>UserProfile</code> object that describes the user's SSH
-     * information.
+     * A <code>UserProfile</code> object that describes the user's SSH information.
      * </p>
      * 
-     * @return A <code>UserProfile</code> object that describes the user's SSH
-     *         information.
+     * @return A <code>UserProfile</code> object that describes the user's SSH information.
      */
 
     public SelfUserProfile getUserProfile() {
@@ -64,26 +55,21 @@ public class DescribeMyUserProfileResult extends
 
     /**
      * <p>
-     * A <code>UserProfile</code> object that describes the user's SSH
-     * information.
+     * A <code>UserProfile</code> object that describes the user's SSH information.
      * </p>
      * 
      * @param userProfile
-     *        A <code>UserProfile</code> object that describes the user's SSH
-     *        information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <code>UserProfile</code> object that describes the user's SSH information.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeMyUserProfileResult withUserProfile(
-            SelfUserProfile userProfile) {
+    public DescribeMyUserProfileResult withUserProfile(SelfUserProfile userProfile) {
         setUserProfile(userProfile);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -111,8 +97,7 @@ public class DescribeMyUserProfileResult extends
         DescribeMyUserProfileResult other = (DescribeMyUserProfileResult) obj;
         if (other.getUserProfile() == null ^ this.getUserProfile() == null)
             return false;
-        if (other.getUserProfile() != null
-                && other.getUserProfile().equals(this.getUserProfile()) == false)
+        if (other.getUserProfile() != null && other.getUserProfile().equals(this.getUserProfile()) == false)
             return false;
         return true;
     }
@@ -122,9 +107,7 @@ public class DescribeMyUserProfileResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getUserProfile() == null) ? 0 : getUserProfile().hashCode());
+        hashCode = prime * hashCode + ((getUserProfile() == null) ? 0 : getUserProfile().hashCode());
         return hashCode;
     }
 
@@ -133,9 +116,7 @@ public class DescribeMyUserProfileResult extends
         try {
             return (DescribeMyUserProfileResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

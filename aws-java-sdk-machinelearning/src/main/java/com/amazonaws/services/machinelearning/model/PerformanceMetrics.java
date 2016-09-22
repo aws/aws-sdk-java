@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.machinelearning.model;
 
@@ -18,35 +16,30 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Measurements of how well the <code>MLModel</code> performed on known
- * observations. One of the following metrics is returned, based on the type of
- * the <code>MLModel</code>:
+ * Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is
+ * returned, based on the type of the <code>MLModel</code>:
  * </p>
  * <ul>
  * <li>
  * <p>
- * BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve
- * (AUC) technique to measure performance.
+ * BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.
  * </p>
  * </li>
  * <li>
  * <p>
- * RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square
- * Error (RMSE) technique to measure performance. RMSE measures the difference
- * between predicted and actual values for a single variable.
+ * RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure
+ * performance. RMSE measures the difference between predicted and actual values for a single variable.
  * </p>
  * </li>
  * <li>
  * <p>
- * MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score
- * technique to measure performance.
+ * MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance.
  * </p>
  * </li>
  * </ul>
  * <p>
  * For more information about performance metrics, please see the <a
- * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
- * Learning Developer Guide</a>.
+ * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.
  * </p>
  */
 public class PerformanceMetrics implements Serializable, Cloneable {
@@ -69,19 +62,15 @@ public class PerformanceMetrics implements Serializable, Cloneable {
      */
 
     public void setProperties(java.util.Map<String, String> properties) {
-        this.properties = properties == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        properties);
+        this.properties = properties == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(properties);
     }
 
     /**
      * @param properties
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PerformanceMetrics withProperties(
-            java.util.Map<String, String> properties) {
+    public PerformanceMetrics withProperties(java.util.Map<String, String> properties) {
         setProperties(properties);
         return this;
     }
@@ -91,15 +80,14 @@ public class PerformanceMetrics implements Serializable, Cloneable {
             this.properties = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.properties.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.properties.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Properties. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into Properties. &lt;p> Returns a reference to this object so that method calls can
+     * be chained together.
      */
 
     public PerformanceMetrics clearPropertiesEntries() {
@@ -108,8 +96,7 @@ public class PerformanceMetrics implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -137,8 +124,7 @@ public class PerformanceMetrics implements Serializable, Cloneable {
         PerformanceMetrics other = (PerformanceMetrics) obj;
         if (other.getProperties() == null ^ this.getProperties() == null)
             return false;
-        if (other.getProperties() != null
-                && other.getProperties().equals(this.getProperties()) == false)
+        if (other.getProperties() != null && other.getProperties().equals(this.getProperties()) == false)
             return false;
         return true;
     }
@@ -148,8 +134,7 @@ public class PerformanceMetrics implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getProperties() == null) ? 0 : getProperties().hashCode());
+        hashCode = prime * hashCode + ((getProperties() == null) ? 0 : getProperties().hashCode());
         return hashCode;
     }
 
@@ -158,9 +143,7 @@ public class PerformanceMetrics implements Serializable, Cloneable {
         try {
             return (PerformanceMetrics) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

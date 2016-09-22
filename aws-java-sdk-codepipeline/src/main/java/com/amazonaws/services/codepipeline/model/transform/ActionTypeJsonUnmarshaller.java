@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ActionType JSON Unmarshaller
  */
-public class ActionTypeJsonUnmarshaller implements
-        Unmarshaller<ActionType, JsonUnmarshallerContext> {
+public class ActionTypeJsonUnmarshaller implements Unmarshaller<ActionType, JsonUnmarshallerContext> {
 
-    public ActionType unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ActionType unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActionType actionType = new ActionType();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,39 +49,27 @@ public class ActionTypeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    actionType.setId(ActionTypeIdJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    actionType.setId(ActionTypeIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("settings", targetDepth)) {
                     context.nextToken();
-                    actionType.setSettings(ActionTypeSettingsJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionType.setSettings(ActionTypeSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("actionConfigurationProperties",
-                        targetDepth)) {
+                if (context.testExpression("actionConfigurationProperties", targetDepth)) {
                     context.nextToken();
-                    actionType
-                            .setActionConfigurationProperties(new ListUnmarshaller<ActionConfigurationProperty>(
-                                    ActionConfigurationPropertyJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    actionType.setActionConfigurationProperties(new ListUnmarshaller<ActionConfigurationProperty>(ActionConfigurationPropertyJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("inputArtifactDetails", targetDepth)) {
                     context.nextToken();
-                    actionType
-                            .setInputArtifactDetails(ArtifactDetailsJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    actionType.setInputArtifactDetails(ArtifactDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context
-                        .testExpression("outputArtifactDetails", targetDepth)) {
+                if (context.testExpression("outputArtifactDetails", targetDepth)) {
                     context.nextToken();
-                    actionType
-                            .setOutputArtifactDetails(ArtifactDetailsJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    actionType.setOutputArtifactDetails(ArtifactDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

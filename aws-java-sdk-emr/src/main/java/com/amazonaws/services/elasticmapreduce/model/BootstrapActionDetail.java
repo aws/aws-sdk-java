@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -31,17 +29,15 @@ public class BootstrapActionDetail implements Serializable, Cloneable {
     private BootstrapActionConfig bootstrapActionConfig;
 
     /**
-     * Default constructor for BootstrapActionDetail object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for BootstrapActionDetail object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public BootstrapActionDetail() {
     }
 
     /**
-     * Constructs a new BootstrapActionDetail object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new BootstrapActionDetail object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize any additional object members.
      * 
      * @param bootstrapActionConfig
      *        A description of the bootstrap action.
@@ -59,8 +55,7 @@ public class BootstrapActionDetail implements Serializable, Cloneable {
      *        A description of the bootstrap action.
      */
 
-    public void setBootstrapActionConfig(
-            BootstrapActionConfig bootstrapActionConfig) {
+    public void setBootstrapActionConfig(BootstrapActionConfig bootstrapActionConfig) {
         this.bootstrapActionConfig = bootstrapActionConfig;
     }
 
@@ -83,19 +78,16 @@ public class BootstrapActionDetail implements Serializable, Cloneable {
      * 
      * @param bootstrapActionConfig
      *        A description of the bootstrap action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BootstrapActionDetail withBootstrapActionConfig(
-            BootstrapActionConfig bootstrapActionConfig) {
+    public BootstrapActionDetail withBootstrapActionConfig(BootstrapActionConfig bootstrapActionConfig) {
         setBootstrapActionConfig(bootstrapActionConfig);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -121,12 +113,9 @@ public class BootstrapActionDetail implements Serializable, Cloneable {
         if (obj instanceof BootstrapActionDetail == false)
             return false;
         BootstrapActionDetail other = (BootstrapActionDetail) obj;
-        if (other.getBootstrapActionConfig() == null
-                ^ this.getBootstrapActionConfig() == null)
+        if (other.getBootstrapActionConfig() == null ^ this.getBootstrapActionConfig() == null)
             return false;
-        if (other.getBootstrapActionConfig() != null
-                && other.getBootstrapActionConfig().equals(
-                        this.getBootstrapActionConfig()) == false)
+        if (other.getBootstrapActionConfig() != null && other.getBootstrapActionConfig().equals(this.getBootstrapActionConfig()) == false)
             return false;
         return true;
     }
@@ -136,10 +125,7 @@ public class BootstrapActionDetail implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getBootstrapActionConfig() == null) ? 0
-                        : getBootstrapActionConfig().hashCode());
+        hashCode = prime * hashCode + ((getBootstrapActionConfig() == null) ? 0 : getBootstrapActionConfig().hashCode());
         return hashCode;
     }
 
@@ -148,9 +134,7 @@ public class BootstrapActionDetail implements Serializable, Cloneable {
         try {
             return (BootstrapActionDetail) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

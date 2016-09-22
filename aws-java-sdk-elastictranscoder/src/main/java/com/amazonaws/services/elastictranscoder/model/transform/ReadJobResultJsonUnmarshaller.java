@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ReadJobResult JSON Unmarshaller
  */
-public class ReadJobResultJsonUnmarshaller implements
-        Unmarshaller<ReadJobResult, JsonUnmarshallerContext> {
+public class ReadJobResultJsonUnmarshaller implements Unmarshaller<ReadJobResult, JsonUnmarshallerContext> {
 
-    public ReadJobResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ReadJobResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ReadJobResult readJobResult = new ReadJobResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,13 +49,10 @@ public class ReadJobResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Job", targetDepth)) {
                     context.nextToken();
-                    readJobResult.setJob(JobJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    readJobResult.setJob(JobJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

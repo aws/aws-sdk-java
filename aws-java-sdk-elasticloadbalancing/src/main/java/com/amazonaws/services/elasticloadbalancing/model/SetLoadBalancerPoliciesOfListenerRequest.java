@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for SetLoadBalancePoliciesOfListener.
  * </p>
  */
-public class SetLoadBalancerPoliciesOfListenerRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class SetLoadBalancerPoliciesOfListenerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -40,37 +36,32 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
     private Integer loadBalancerPort;
     /**
      * <p>
-     * The names of the policies. This list must include all policies to be
-     * enabled. If you omit a policy that is currently enabled, it is disabled.
-     * If the list is empty, all current policies are disabled.
+     * The names of the policies. This list must include all policies to be enabled. If you omit a policy that is
+     * currently enabled, it is disabled. If the list is empty, all current policies are disabled.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyNames;
 
     /**
-     * Default constructor for SetLoadBalancerPoliciesOfListenerRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize the object after creating it.
+     * Default constructor for SetLoadBalancerPoliciesOfListenerRequest object. Callers should use the setter or fluent
+     * setter (with...) methods to initialize the object after creating it.
      */
     public SetLoadBalancerPoliciesOfListenerRequest() {
     }
 
     /**
-     * Constructs a new SetLoadBalancerPoliciesOfListenerRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * any additional object members.
+     * Constructs a new SetLoadBalancerPoliciesOfListenerRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize any additional object members.
      * 
      * @param loadBalancerName
      *        The name of the load balancer.
      * @param loadBalancerPort
      *        The external port of the load balancer.
      * @param policyNames
-     *        The names of the policies. This list must include all policies to
-     *        be enabled. If you omit a policy that is currently enabled, it is
-     *        disabled. If the list is empty, all current policies are disabled.
+     *        The names of the policies. This list must include all policies to be enabled. If you omit a policy that is
+     *        currently enabled, it is disabled. If the list is empty, all current policies are disabled.
      */
-    public SetLoadBalancerPoliciesOfListenerRequest(String loadBalancerName,
-            Integer loadBalancerPort, java.util.List<String> policyNames) {
+    public SetLoadBalancerPoliciesOfListenerRequest(String loadBalancerName, Integer loadBalancerPort, java.util.List<String> policyNames) {
         setLoadBalancerName(loadBalancerName);
         setLoadBalancerPort(loadBalancerPort);
         setPolicyNames(policyNames);
@@ -108,12 +99,10 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
      * 
      * @param loadBalancerName
      *        The name of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetLoadBalancerPoliciesOfListenerRequest withLoadBalancerName(
-            String loadBalancerName) {
+    public SetLoadBalancerPoliciesOfListenerRequest withLoadBalancerName(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
         return this;
     }
@@ -150,27 +139,22 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
      * 
      * @param loadBalancerPort
      *        The external port of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetLoadBalancerPoliciesOfListenerRequest withLoadBalancerPort(
-            Integer loadBalancerPort) {
+    public SetLoadBalancerPoliciesOfListenerRequest withLoadBalancerPort(Integer loadBalancerPort) {
         setLoadBalancerPort(loadBalancerPort);
         return this;
     }
 
     /**
      * <p>
-     * The names of the policies. This list must include all policies to be
-     * enabled. If you omit a policy that is currently enabled, it is disabled.
-     * If the list is empty, all current policies are disabled.
+     * The names of the policies. This list must include all policies to be enabled. If you omit a policy that is
+     * currently enabled, it is disabled. If the list is empty, all current policies are disabled.
      * </p>
      * 
-     * @return The names of the policies. This list must include all policies to
-     *         be enabled. If you omit a policy that is currently enabled, it is
-     *         disabled. If the list is empty, all current policies are
-     *         disabled.
+     * @return The names of the policies. This list must include all policies to be enabled. If you omit a policy that
+     *         is currently enabled, it is disabled. If the list is empty, all current policies are disabled.
      */
 
     public java.util.List<String> getPolicyNames() {
@@ -182,15 +166,13 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
 
     /**
      * <p>
-     * The names of the policies. This list must include all policies to be
-     * enabled. If you omit a policy that is currently enabled, it is disabled.
-     * If the list is empty, all current policies are disabled.
+     * The names of the policies. This list must include all policies to be enabled. If you omit a policy that is
+     * currently enabled, it is disabled. If the list is empty, all current policies are disabled.
      * </p>
      * 
      * @param policyNames
-     *        The names of the policies. This list must include all policies to
-     *        be enabled. If you omit a policy that is currently enabled, it is
-     *        disabled. If the list is empty, all current policies are disabled.
+     *        The names of the policies. This list must include all policies to be enabled. If you omit a policy that is
+     *        currently enabled, it is disabled. If the list is empty, all current policies are disabled.
      */
 
     public void setPolicyNames(java.util.Collection<String> policyNames) {
@@ -199,36 +181,29 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
             return;
         }
 
-        this.policyNames = new com.amazonaws.internal.SdkInternalList<String>(
-                policyNames);
+        this.policyNames = new com.amazonaws.internal.SdkInternalList<String>(policyNames);
     }
 
     /**
      * <p>
-     * The names of the policies. This list must include all policies to be
-     * enabled. If you omit a policy that is currently enabled, it is disabled.
-     * If the list is empty, all current policies are disabled.
+     * The names of the policies. This list must include all policies to be enabled. If you omit a policy that is
+     * currently enabled, it is disabled. If the list is empty, all current policies are disabled.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPolicyNames(java.util.Collection)} or
-     * {@link #withPolicyNames(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPolicyNames(java.util.Collection)} or {@link #withPolicyNames(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param policyNames
-     *        The names of the policies. This list must include all policies to
-     *        be enabled. If you omit a policy that is currently enabled, it is
-     *        disabled. If the list is empty, all current policies are disabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the policies. This list must include all policies to be enabled. If you omit a policy that is
+     *        currently enabled, it is disabled. If the list is empty, all current policies are disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetLoadBalancerPoliciesOfListenerRequest withPolicyNames(
-            String... policyNames) {
+    public SetLoadBalancerPoliciesOfListenerRequest withPolicyNames(String... policyNames) {
         if (this.policyNames == null) {
-            setPolicyNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    policyNames.length));
+            setPolicyNames(new com.amazonaws.internal.SdkInternalList<String>(policyNames.length));
         }
         for (String ele : policyNames) {
             this.policyNames.add(ele);
@@ -238,28 +213,23 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
 
     /**
      * <p>
-     * The names of the policies. This list must include all policies to be
-     * enabled. If you omit a policy that is currently enabled, it is disabled.
-     * If the list is empty, all current policies are disabled.
+     * The names of the policies. This list must include all policies to be enabled. If you omit a policy that is
+     * currently enabled, it is disabled. If the list is empty, all current policies are disabled.
      * </p>
      * 
      * @param policyNames
-     *        The names of the policies. This list must include all policies to
-     *        be enabled. If you omit a policy that is currently enabled, it is
-     *        disabled. If the list is empty, all current policies are disabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the policies. This list must include all policies to be enabled. If you omit a policy that is
+     *        currently enabled, it is disabled. If the list is empty, all current policies are disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetLoadBalancerPoliciesOfListenerRequest withPolicyNames(
-            java.util.Collection<String> policyNames) {
+    public SetLoadBalancerPoliciesOfListenerRequest withPolicyNames(java.util.Collection<String> policyNames) {
         setPolicyNames(policyNames);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -289,24 +259,17 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
         if (obj instanceof SetLoadBalancerPoliciesOfListenerRequest == false)
             return false;
         SetLoadBalancerPoliciesOfListenerRequest other = (SetLoadBalancerPoliciesOfListenerRequest) obj;
-        if (other.getLoadBalancerName() == null
-                ^ this.getLoadBalancerName() == null)
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null)
             return false;
-        if (other.getLoadBalancerName() != null
-                && other.getLoadBalancerName().equals(
-                        this.getLoadBalancerName()) == false)
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false)
             return false;
-        if (other.getLoadBalancerPort() == null
-                ^ this.getLoadBalancerPort() == null)
+        if (other.getLoadBalancerPort() == null ^ this.getLoadBalancerPort() == null)
             return false;
-        if (other.getLoadBalancerPort() != null
-                && other.getLoadBalancerPort().equals(
-                        this.getLoadBalancerPort()) == false)
+        if (other.getLoadBalancerPort() != null && other.getLoadBalancerPort().equals(this.getLoadBalancerPort()) == false)
             return false;
         if (other.getPolicyNames() == null ^ this.getPolicyNames() == null)
             return false;
-        if (other.getPolicyNames() != null
-                && other.getPolicyNames().equals(this.getPolicyNames()) == false)
+        if (other.getPolicyNames() != null && other.getPolicyNames().equals(this.getPolicyNames()) == false)
             return false;
         return true;
     }
@@ -316,17 +279,9 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerPort() == null) ? 0 : getLoadBalancerPort()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPolicyNames() == null) ? 0 : getPolicyNames().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerPort() == null) ? 0 : getLoadBalancerPort().hashCode());
+        hashCode = prime * hashCode + ((getPolicyNames() == null) ? 0 : getPolicyNames().hashCode());
         return hashCode;
     }
 

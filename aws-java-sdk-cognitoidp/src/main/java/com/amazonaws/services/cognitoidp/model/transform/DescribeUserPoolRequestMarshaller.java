@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
@@ -35,54 +33,44 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeUserPoolRequest Marshaller
  */
-public class DescribeUserPoolRequestMarshaller implements
-        Marshaller<Request<DescribeUserPoolRequest>, DescribeUserPoolRequest> {
+public class DescribeUserPoolRequestMarshaller implements Marshaller<Request<DescribeUserPoolRequest>, DescribeUserPoolRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeUserPoolRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeUserPoolRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeUserPoolRequest> marshall(
-            DescribeUserPoolRequest describeUserPoolRequest) {
+    public Request<DescribeUserPoolRequest> marshall(DescribeUserPoolRequest describeUserPoolRequest) {
 
         if (describeUserPoolRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeUserPoolRequest> request = new DefaultRequest<DescribeUserPoolRequest>(
-                describeUserPoolRequest, "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target",
-                "AWSCognitoIdentityProviderService.DescribeUserPool");
+        Request<DescribeUserPoolRequest> request = new DefaultRequest<DescribeUserPoolRequest>(describeUserPoolRequest, "AWSCognitoIdentityProvider");
+        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.DescribeUserPool");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (describeUserPoolRequest.getUserPoolId() != null) {
-                jsonGenerator.writeFieldName("UserPoolId").writeValue(
-                        describeUserPoolRequest.getUserPoolId());
+                jsonGenerator.writeFieldName("UserPoolId").writeValue(describeUserPoolRequest.getUserPoolId());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

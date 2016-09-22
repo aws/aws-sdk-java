@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.servicecatalog.model;
 
@@ -20,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListLaunchPathsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are
-     * as follows:
+     * The language code to use for this operation. Supported language codes are as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -45,31 +40,27 @@ public class ListLaunchPathsRequest extends
     private String acceptLanguage;
     /**
      * <p>
-     * Identifies the product for which to retrieve
-     * <code>LaunchPathSummaries</code> information.
+     * Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
      * </p>
      */
     private String productId;
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results
-     * exist than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return in the results. If more results exist than fit in the specified
+     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
      * </p>
      */
     private Integer pageSize;
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the
-     * first page of size <code>PageSize</code>.
+     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
      * </p>
      */
     private String pageToken;
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are
-     * as follows:
+     * The language code to use for this operation. Supported language codes are as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -85,8 +76,7 @@ public class ListLaunchPathsRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language
-     *        codes are as follows:</p>
+     *        The language code to use for this operation. Supported language codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -106,8 +96,7 @@ public class ListLaunchPathsRequest extends
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are
-     * as follows:
+     * The language code to use for this operation. Supported language codes are as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -122,8 +111,7 @@ public class ListLaunchPathsRequest extends
      * If no code is specified, "en" is used as the default.
      * </p>
      * 
-     * @return The language code to use for this operation. Supported language
-     *         codes are as follows:</p>
+     * @return The language code to use for this operation. Supported language codes are as follows:</p>
      *         <p>
      *         "en" (English)
      *         </p>
@@ -143,8 +131,7 @@ public class ListLaunchPathsRequest extends
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are
-     * as follows:
+     * The language code to use for this operation. Supported language codes are as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -160,8 +147,7 @@ public class ListLaunchPathsRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language
-     *        codes are as follows:</p>
+     *        The language code to use for this operation. Supported language codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -173,8 +159,7 @@ public class ListLaunchPathsRequest extends
      *        </p>
      *        <p>
      *        If no code is specified, "en" is used as the default.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListLaunchPathsRequest withAcceptLanguage(String acceptLanguage) {
@@ -184,13 +169,11 @@ public class ListLaunchPathsRequest extends
 
     /**
      * <p>
-     * Identifies the product for which to retrieve
-     * <code>LaunchPathSummaries</code> information.
+     * Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
      * </p>
      * 
      * @param productId
-     *        Identifies the product for which to retrieve
-     *        <code>LaunchPathSummaries</code> information.
+     *        Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
      */
 
     public void setProductId(String productId) {
@@ -199,12 +182,10 @@ public class ListLaunchPathsRequest extends
 
     /**
      * <p>
-     * Identifies the product for which to retrieve
-     * <code>LaunchPathSummaries</code> information.
+     * Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
      * </p>
      * 
-     * @return Identifies the product for which to retrieve
-     *         <code>LaunchPathSummaries</code> information.
+     * @return Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
      */
 
     public String getProductId() {
@@ -213,15 +194,12 @@ public class ListLaunchPathsRequest extends
 
     /**
      * <p>
-     * Identifies the product for which to retrieve
-     * <code>LaunchPathSummaries</code> information.
+     * Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
      * </p>
      * 
      * @param productId
-     *        Identifies the product for which to retrieve
-     *        <code>LaunchPathSummaries</code> information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListLaunchPathsRequest withProductId(String productId) {
@@ -231,15 +209,13 @@ public class ListLaunchPathsRequest extends
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results
-     * exist than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return in the results. If more results exist than fit in the specified
+     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more
-     *        results exist than fit in the specified <code>PageSize</code>, the
-     *        value of <code>NextPageToken</code> in the response is non-null.
+     *        The maximum number of items to return in the results. If more results exist than fit in the specified
+     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
      */
 
     public void setPageSize(Integer pageSize) {
@@ -248,15 +224,12 @@ public class ListLaunchPathsRequest extends
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results
-     * exist than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return in the results. If more results exist than fit in the specified
+     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
      * </p>
      * 
-     * @return The maximum number of items to return in the results. If more
-     *         results exist than fit in the specified <code>PageSize</code>,
-     *         the value of <code>NextPageToken</code> in the response is
-     *         non-null.
+     * @return The maximum number of items to return in the results. If more results exist than fit in the specified
+     *         <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
      */
 
     public Integer getPageSize() {
@@ -265,17 +238,14 @@ public class ListLaunchPathsRequest extends
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results
-     * exist than fit in the specified <code>PageSize</code>, the value of
-     * <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return in the results. If more results exist than fit in the specified
+     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more
-     *        results exist than fit in the specified <code>PageSize</code>, the
-     *        value of <code>NextPageToken</code> in the response is non-null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of items to return in the results. If more results exist than fit in the specified
+     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListLaunchPathsRequest withPageSize(Integer pageSize) {
@@ -285,13 +255,12 @@ public class ListLaunchPathsRequest extends
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the
-     * first page of size <code>PageSize</code>.
+     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this
-     *        retrieves the first page of size <code>PageSize</code>.
+     *        The page token of the first page retrieved. If null, this retrieves the first page of size
+     *        <code>PageSize</code>.
      */
 
     public void setPageToken(String pageToken) {
@@ -300,12 +269,11 @@ public class ListLaunchPathsRequest extends
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the
-     * first page of size <code>PageSize</code>.
+     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
      * </p>
      * 
-     * @return The page token of the first page retrieved. If null, this
-     *         retrieves the first page of size <code>PageSize</code>.
+     * @return The page token of the first page retrieved. If null, this retrieves the first page of size
+     *         <code>PageSize</code>.
      */
 
     public String getPageToken() {
@@ -314,15 +282,13 @@ public class ListLaunchPathsRequest extends
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the
-     * first page of size <code>PageSize</code>.
+     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this
-     *        retrieves the first page of size <code>PageSize</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The page token of the first page retrieved. If null, this retrieves the first page of size
+     *        <code>PageSize</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListLaunchPathsRequest withPageToken(String pageToken) {
@@ -331,8 +297,7 @@ public class ListLaunchPathsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -364,26 +329,21 @@ public class ListLaunchPathsRequest extends
         if (obj instanceof ListLaunchPathsRequest == false)
             return false;
         ListLaunchPathsRequest other = (ListLaunchPathsRequest) obj;
-        if (other.getAcceptLanguage() == null
-                ^ this.getAcceptLanguage() == null)
+        if (other.getAcceptLanguage() == null ^ this.getAcceptLanguage() == null)
             return false;
-        if (other.getAcceptLanguage() != null
-                && other.getAcceptLanguage().equals(this.getAcceptLanguage()) == false)
+        if (other.getAcceptLanguage() != null && other.getAcceptLanguage().equals(this.getAcceptLanguage()) == false)
             return false;
         if (other.getProductId() == null ^ this.getProductId() == null)
             return false;
-        if (other.getProductId() != null
-                && other.getProductId().equals(this.getProductId()) == false)
+        if (other.getProductId() != null && other.getProductId().equals(this.getProductId()) == false)
             return false;
         if (other.getPageSize() == null ^ this.getPageSize() == null)
             return false;
-        if (other.getPageSize() != null
-                && other.getPageSize().equals(this.getPageSize()) == false)
+        if (other.getPageSize() != null && other.getPageSize().equals(this.getPageSize()) == false)
             return false;
         if (other.getPageToken() == null ^ this.getPageToken() == null)
             return false;
-        if (other.getPageToken() != null
-                && other.getPageToken().equals(this.getPageToken()) == false)
+        if (other.getPageToken() != null && other.getPageToken().equals(this.getPageToken()) == false)
             return false;
         return true;
     }
@@ -393,16 +353,10 @@ public class ListLaunchPathsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getProductId() == null) ? 0 : getProductId().hashCode());
-        hashCode = prime * hashCode
-                + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
-        hashCode = prime * hashCode
-                + ((getPageToken() == null) ? 0 : getPageToken().hashCode());
+        hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
+        hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
+        hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
+        hashCode = prime * hashCode + ((getPageToken() == null) ? 0 : getPageToken().hashCode());
         return hashCode;
     }
 

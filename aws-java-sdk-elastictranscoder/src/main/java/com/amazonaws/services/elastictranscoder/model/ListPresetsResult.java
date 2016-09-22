@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The <code>ListPresetsResponse</code> structure.
  * </p>
  */
-public class ListPresetsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListPresetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,9 +29,8 @@ public class ListPresetsResult extends
     private com.amazonaws.internal.SdkInternalList<Preset> presets;
     /**
      * <p>
-     * A value that you use to access the second and subsequent pages of
-     * results, if any. When the presets fit on one page or when you've reached
-     * the last page of results, the value of <code>NextPageToken</code> is
+     * A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one
+     * page or when you've reached the last page of results, the value of <code>NextPageToken</code> is
      * <code>null</code>.
      * </p>
      */
@@ -71,8 +66,7 @@ public class ListPresetsResult extends
             return;
         }
 
-        this.presets = new com.amazonaws.internal.SdkInternalList<Preset>(
-                presets);
+        this.presets = new com.amazonaws.internal.SdkInternalList<Preset>(presets);
     }
 
     /**
@@ -80,22 +74,19 @@ public class ListPresetsResult extends
      * An array of <code>Preset</code> objects.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPresets(java.util.Collection)} or
-     * {@link #withPresets(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPresets(java.util.Collection)} or {@link #withPresets(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param presets
      *        An array of <code>Preset</code> objects.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPresetsResult withPresets(Preset... presets) {
         if (this.presets == null) {
-            setPresets(new com.amazonaws.internal.SdkInternalList<Preset>(
-                    presets.length));
+            setPresets(new com.amazonaws.internal.SdkInternalList<Preset>(presets.length));
         }
         for (Preset ele : presets) {
             this.presets.add(ele);
@@ -110,8 +101,7 @@ public class ListPresetsResult extends
      * 
      * @param presets
      *        An array of <code>Preset</code> objects.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPresetsResult withPresets(java.util.Collection<Preset> presets) {
@@ -121,17 +111,15 @@ public class ListPresetsResult extends
 
     /**
      * <p>
-     * A value that you use to access the second and subsequent pages of
-     * results, if any. When the presets fit on one page or when you've reached
-     * the last page of results, the value of <code>NextPageToken</code> is
+     * A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one
+     * page or when you've reached the last page of results, the value of <code>NextPageToken</code> is
      * <code>null</code>.
      * </p>
      * 
      * @param nextPageToken
-     *        A value that you use to access the second and subsequent pages of
-     *        results, if any. When the presets fit on one page or when you've
-     *        reached the last page of results, the value of
-     *        <code>NextPageToken</code> is <code>null</code>.
+     *        A value that you use to access the second and subsequent pages of results, if any. When the presets fit on
+     *        one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is
+     *        <code>null</code>.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -140,16 +128,14 @@ public class ListPresetsResult extends
 
     /**
      * <p>
-     * A value that you use to access the second and subsequent pages of
-     * results, if any. When the presets fit on one page or when you've reached
-     * the last page of results, the value of <code>NextPageToken</code> is
+     * A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one
+     * page or when you've reached the last page of results, the value of <code>NextPageToken</code> is
      * <code>null</code>.
      * </p>
      * 
-     * @return A value that you use to access the second and subsequent pages of
-     *         results, if any. When the presets fit on one page or when you've
-     *         reached the last page of results, the value of
-     *         <code>NextPageToken</code> is <code>null</code>.
+     * @return A value that you use to access the second and subsequent pages of results, if any. When the presets fit
+     *         on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is
+     *         <code>null</code>.
      */
 
     public String getNextPageToken() {
@@ -158,19 +144,16 @@ public class ListPresetsResult extends
 
     /**
      * <p>
-     * A value that you use to access the second and subsequent pages of
-     * results, if any. When the presets fit on one page or when you've reached
-     * the last page of results, the value of <code>NextPageToken</code> is
+     * A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one
+     * page or when you've reached the last page of results, the value of <code>NextPageToken</code> is
      * <code>null</code>.
      * </p>
      * 
      * @param nextPageToken
-     *        A value that you use to access the second and subsequent pages of
-     *        results, if any. When the presets fit on one page or when you've
-     *        reached the last page of results, the value of
-     *        <code>NextPageToken</code> is <code>null</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value that you use to access the second and subsequent pages of results, if any. When the presets fit on
+     *        one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is
+     *        <code>null</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPresetsResult withNextPageToken(String nextPageToken) {
@@ -179,8 +162,7 @@ public class ListPresetsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -210,13 +192,11 @@ public class ListPresetsResult extends
         ListPresetsResult other = (ListPresetsResult) obj;
         if (other.getPresets() == null ^ this.getPresets() == null)
             return false;
-        if (other.getPresets() != null
-                && other.getPresets().equals(this.getPresets()) == false)
+        if (other.getPresets() != null && other.getPresets().equals(this.getPresets()) == false)
             return false;
         if (other.getNextPageToken() == null ^ this.getNextPageToken() == null)
             return false;
-        if (other.getNextPageToken() != null
-                && other.getNextPageToken().equals(this.getNextPageToken()) == false)
+        if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false)
             return false;
         return true;
     }
@@ -226,12 +206,8 @@ public class ListPresetsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPresets() == null) ? 0 : getPresets().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextPageToken() == null) ? 0 : getNextPageToken()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPresets() == null) ? 0 : getPresets().hashCode());
+        hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
         return hashCode;
     }
 
@@ -240,9 +216,7 @@ public class ListPresetsResult extends
         try {
             return (ListPresetsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model;
 
@@ -18,45 +16,39 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A combination of <a>ByteMatchSet</a>, <a>IPSet</a>, and/or
- * <a>SqlInjectionMatchSet</a> objects that identify the web requests that you
- * want to allow, block, or count. For example, you might create a
- * <code>Rule</code> that includes the following predicates:
+ * A combination of <a>ByteMatchSet</a>, <a>IPSet</a>, and/or <a>SqlInjectionMatchSet</a> objects that identify the web
+ * requests that you want to allow, block, or count. For example, you might create a <code>Rule</code> that includes the
+ * following predicates:
  * </p>
  * <ul>
- * <li>An <code>IPSet</code> that causes AWS WAF to search for web requests that
- * originate from the IP address <code>192.0.2.44</code></li>
- * <li>A <code>ByteMatchSet</code> that causes AWS WAF to search for web
- * requests for which the value of the <code>User-Agent</code> header is
- * <code>BadBot</code>.</li>
+ * <li>An <code>IPSet</code> that causes AWS WAF to search for web requests that originate from the IP address
+ * <code>192.0.2.44</code></li>
+ * <li>A <code>ByteMatchSet</code> that causes AWS WAF to search for web requests for which the value of the
+ * <code>User-Agent</code> header is <code>BadBot</code>.</li>
  * </ul>
  * <p>
- * To match the settings in this <code>Rule</code>, a request must originate
- * from <code>192.0.2.44</code> AND include a <code>User-Agent</code> header for
- * which the value is <code>BadBot</code>.
+ * To match the settings in this <code>Rule</code>, a request must originate from <code>192.0.2.44</code> AND include a
+ * <code>User-Agent</code> header for which the value is <code>BadBot</code>.
  * </p>
  */
 public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for a <code>Rule</code>. You use <code>RuleId</code>
-     * to get more information about a <code>Rule</code> (see <a>GetRule</a>),
-     * update a <code>Rule</code> (see <a>UpdateRule</a>), insert a
-     * <code>Rule</code> into a <code>WebACL</code> or delete a one from a
-     * <code>WebACL</code> (see <a>UpdateWebACL</a>), or delete a
-     * <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).
+     * A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a
+     * <code>Rule</code> (see <a>GetRule</a>), update a <code>Rule</code> (see <a>UpdateRule</a>), insert a
+     * <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).
      * </p>
      * <p>
-     * <code>RuleId</code> is returned by <a>CreateRule</a> and by
-     * <a>ListRules</a>.
+     * <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
      * </p>
      */
     private String ruleId;
     /**
      * <p>
-     * The friendly name or description for the <code>Rule</code>. You can't
-     * change the name of a <code>Rule</code> after you create it.
+     * The friendly name or description for the <code>Rule</code>. You can't change the name of a <code>Rule</code>
+     * after you create it.
      * </p>
      */
     private String name;
@@ -64,39 +56,30 @@ public class Rule implements Serializable, Cloneable {
     private String metricName;
     /**
      * <p>
-     * The <code>Predicates</code> object contains one <code>Predicate</code>
-     * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
-     * <a>SqlInjectionMatchSet</a> object that you want to include in a
-     * <code>Rule</code>.
+     * The <code>Predicates</code> object contains one <code>Predicate</code> element for each <a>ByteMatchSet</a>,
+     * <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want to include in a <code>Rule</code>.
      * </p>
      */
     private java.util.List<Predicate> predicates;
 
     /**
      * <p>
-     * A unique identifier for a <code>Rule</code>. You use <code>RuleId</code>
-     * to get more information about a <code>Rule</code> (see <a>GetRule</a>),
-     * update a <code>Rule</code> (see <a>UpdateRule</a>), insert a
-     * <code>Rule</code> into a <code>WebACL</code> or delete a one from a
-     * <code>WebACL</code> (see <a>UpdateWebACL</a>), or delete a
-     * <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).
+     * A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a
+     * <code>Rule</code> (see <a>GetRule</a>), update a <code>Rule</code> (see <a>UpdateRule</a>), insert a
+     * <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).
      * </p>
      * <p>
-     * <code>RuleId</code> is returned by <a>CreateRule</a> and by
-     * <a>ListRules</a>.
+     * <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
      * </p>
      * 
      * @param ruleId
-     *        A unique identifier for a <code>Rule</code>. You use
-     *        <code>RuleId</code> to get more information about a
-     *        <code>Rule</code> (see <a>GetRule</a>), update a <code>Rule</code>
-     *        (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     *        <code>WebACL</code> or delete a one from a <code>WebACL</code>
-     *        (see <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS
-     *        WAF (see <a>DeleteRule</a>).</p>
+     *        A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a
+     *        <code>Rule</code> (see <a>GetRule</a>), update a <code>Rule</code> (see <a>UpdateRule</a>), insert a
+     *        <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
+     *        <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).</p>
      *        <p>
-     *        <code>RuleId</code> is returned by <a>CreateRule</a> and by
-     *        <a>ListRules</a>.
+     *        <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
      */
 
     public void setRuleId(String ruleId) {
@@ -105,28 +88,21 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for a <code>Rule</code>. You use <code>RuleId</code>
-     * to get more information about a <code>Rule</code> (see <a>GetRule</a>),
-     * update a <code>Rule</code> (see <a>UpdateRule</a>), insert a
-     * <code>Rule</code> into a <code>WebACL</code> or delete a one from a
-     * <code>WebACL</code> (see <a>UpdateWebACL</a>), or delete a
-     * <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).
+     * A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a
+     * <code>Rule</code> (see <a>GetRule</a>), update a <code>Rule</code> (see <a>UpdateRule</a>), insert a
+     * <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).
      * </p>
      * <p>
-     * <code>RuleId</code> is returned by <a>CreateRule</a> and by
-     * <a>ListRules</a>.
+     * <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
      * </p>
      * 
-     * @return A unique identifier for a <code>Rule</code>. You use
-     *         <code>RuleId</code> to get more information about a
-     *         <code>Rule</code> (see <a>GetRule</a>), update a
-     *         <code>Rule</code> (see <a>UpdateRule</a>), insert a
-     *         <code>Rule</code> into a <code>WebACL</code> or delete a one from
-     *         a <code>WebACL</code> (see <a>UpdateWebACL</a>), or delete a
-     *         <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).</p>
+     * @return A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a
+     *         <code>Rule</code> (see <a>GetRule</a>), update a <code>Rule</code> (see <a>UpdateRule</a>), insert a
+     *         <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
+     *         <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).</p>
      *         <p>
-     *         <code>RuleId</code> is returned by <a>CreateRule</a> and by
-     *         <a>ListRules</a>.
+     *         <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
      */
 
     public String getRuleId() {
@@ -135,31 +111,23 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for a <code>Rule</code>. You use <code>RuleId</code>
-     * to get more information about a <code>Rule</code> (see <a>GetRule</a>),
-     * update a <code>Rule</code> (see <a>UpdateRule</a>), insert a
-     * <code>Rule</code> into a <code>WebACL</code> or delete a one from a
-     * <code>WebACL</code> (see <a>UpdateWebACL</a>), or delete a
-     * <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).
+     * A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a
+     * <code>Rule</code> (see <a>GetRule</a>), update a <code>Rule</code> (see <a>UpdateRule</a>), insert a
+     * <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).
      * </p>
      * <p>
-     * <code>RuleId</code> is returned by <a>CreateRule</a> and by
-     * <a>ListRules</a>.
+     * <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
      * </p>
      * 
      * @param ruleId
-     *        A unique identifier for a <code>Rule</code>. You use
-     *        <code>RuleId</code> to get more information about a
-     *        <code>Rule</code> (see <a>GetRule</a>), update a <code>Rule</code>
-     *        (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     *        <code>WebACL</code> or delete a one from a <code>WebACL</code>
-     *        (see <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS
-     *        WAF (see <a>DeleteRule</a>).</p>
+     *        A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a
+     *        <code>Rule</code> (see <a>GetRule</a>), update a <code>Rule</code> (see <a>UpdateRule</a>), insert a
+     *        <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
+     *        <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).</p>
      *        <p>
-     *        <code>RuleId</code> is returned by <a>CreateRule</a> and by
-     *        <a>ListRules</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withRuleId(String ruleId) {
@@ -169,13 +137,13 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The friendly name or description for the <code>Rule</code>. You can't
-     * change the name of a <code>Rule</code> after you create it.
+     * The friendly name or description for the <code>Rule</code>. You can't change the name of a <code>Rule</code>
+     * after you create it.
      * </p>
      * 
      * @param name
-     *        The friendly name or description for the <code>Rule</code>. You
-     *        can't change the name of a <code>Rule</code> after you create it.
+     *        The friendly name or description for the <code>Rule</code>. You can't change the name of a
+     *        <code>Rule</code> after you create it.
      */
 
     public void setName(String name) {
@@ -184,12 +152,12 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The friendly name or description for the <code>Rule</code>. You can't
-     * change the name of a <code>Rule</code> after you create it.
+     * The friendly name or description for the <code>Rule</code>. You can't change the name of a <code>Rule</code>
+     * after you create it.
      * </p>
      * 
-     * @return The friendly name or description for the <code>Rule</code>. You
-     *         can't change the name of a <code>Rule</code> after you create it.
+     * @return The friendly name or description for the <code>Rule</code>. You can't change the name of a
+     *         <code>Rule</code> after you create it.
      */
 
     public String getName() {
@@ -198,15 +166,14 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The friendly name or description for the <code>Rule</code>. You can't
-     * change the name of a <code>Rule</code> after you create it.
+     * The friendly name or description for the <code>Rule</code>. You can't change the name of a <code>Rule</code>
+     * after you create it.
      * </p>
      * 
      * @param name
-     *        The friendly name or description for the <code>Rule</code>. You
-     *        can't change the name of a <code>Rule</code> after you create it.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The friendly name or description for the <code>Rule</code>. You can't change the name of a
+     *        <code>Rule</code> after you create it.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withName(String name) {
@@ -232,8 +199,7 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * @param metricName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withMetricName(String metricName) {
@@ -243,16 +209,13 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>Predicates</code> object contains one <code>Predicate</code>
-     * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
-     * <a>SqlInjectionMatchSet</a> object that you want to include in a
-     * <code>Rule</code>.
+     * The <code>Predicates</code> object contains one <code>Predicate</code> element for each <a>ByteMatchSet</a>,
+     * <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want to include in a <code>Rule</code>.
      * </p>
      * 
-     * @return The <code>Predicates</code> object contains one
-     *         <code>Predicate</code> element for each <a>ByteMatchSet</a>,
-     *         <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want
-     *         to include in a <code>Rule</code>.
+     * @return The <code>Predicates</code> object contains one <code>Predicate</code> element for each
+     *         <a>ByteMatchSet</a>, <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want to include in a
+     *         <code>Rule</code>.
      */
 
     public java.util.List<Predicate> getPredicates() {
@@ -261,17 +224,14 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>Predicates</code> object contains one <code>Predicate</code>
-     * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
-     * <a>SqlInjectionMatchSet</a> object that you want to include in a
-     * <code>Rule</code>.
+     * The <code>Predicates</code> object contains one <code>Predicate</code> element for each <a>ByteMatchSet</a>,
+     * <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want to include in a <code>Rule</code>.
      * </p>
      * 
      * @param predicates
-     *        The <code>Predicates</code> object contains one
-     *        <code>Predicate</code> element for each <a>ByteMatchSet</a>,
-     *        <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want
-     *        to include in a <code>Rule</code>.
+     *        The <code>Predicates</code> object contains one <code>Predicate</code> element for each
+     *        <a>ByteMatchSet</a>, <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want to include in a
+     *        <code>Rule</code>.
      */
 
     public void setPredicates(java.util.Collection<Predicate> predicates) {
@@ -285,25 +245,20 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>Predicates</code> object contains one <code>Predicate</code>
-     * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
-     * <a>SqlInjectionMatchSet</a> object that you want to include in a
-     * <code>Rule</code>.
+     * The <code>Predicates</code> object contains one <code>Predicate</code> element for each <a>ByteMatchSet</a>,
+     * <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want to include in a <code>Rule</code>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPredicates(java.util.Collection)} or
-     * {@link #withPredicates(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPredicates(java.util.Collection)} or {@link #withPredicates(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param predicates
-     *        The <code>Predicates</code> object contains one
-     *        <code>Predicate</code> element for each <a>ByteMatchSet</a>,
-     *        <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want
-     *        to include in a <code>Rule</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>Predicates</code> object contains one <code>Predicate</code> element for each
+     *        <a>ByteMatchSet</a>, <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want to include in a
+     *        <code>Rule</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withPredicates(Predicate... predicates) {
@@ -318,19 +273,15 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>Predicates</code> object contains one <code>Predicate</code>
-     * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
-     * <a>SqlInjectionMatchSet</a> object that you want to include in a
-     * <code>Rule</code>.
+     * The <code>Predicates</code> object contains one <code>Predicate</code> element for each <a>ByteMatchSet</a>,
+     * <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want to include in a <code>Rule</code>.
      * </p>
      * 
      * @param predicates
-     *        The <code>Predicates</code> object contains one
-     *        <code>Predicate</code> element for each <a>ByteMatchSet</a>,
-     *        <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want
-     *        to include in a <code>Rule</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>Predicates</code> object contains one <code>Predicate</code> element for each
+     *        <a>ByteMatchSet</a>, <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want to include in a
+     *        <code>Rule</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withPredicates(java.util.Collection<Predicate> predicates) {
@@ -339,8 +290,7 @@ public class Rule implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -374,23 +324,19 @@ public class Rule implements Serializable, Cloneable {
         Rule other = (Rule) obj;
         if (other.getRuleId() == null ^ this.getRuleId() == null)
             return false;
-        if (other.getRuleId() != null
-                && other.getRuleId().equals(this.getRuleId()) == false)
+        if (other.getRuleId() != null && other.getRuleId().equals(this.getRuleId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getMetricName() == null ^ this.getMetricName() == null)
             return false;
-        if (other.getMetricName() != null
-                && other.getMetricName().equals(this.getMetricName()) == false)
+        if (other.getMetricName() != null && other.getMetricName().equals(this.getMetricName()) == false)
             return false;
         if (other.getPredicates() == null ^ this.getPredicates() == null)
             return false;
-        if (other.getPredicates() != null
-                && other.getPredicates().equals(this.getPredicates()) == false)
+        if (other.getPredicates() != null && other.getPredicates().equals(this.getPredicates()) == false)
             return false;
         return true;
     }
@@ -400,14 +346,10 @@ public class Rule implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRuleId() == null) ? 0 : getRuleId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPredicates() == null) ? 0 : getPredicates().hashCode());
+        hashCode = prime * hashCode + ((getRuleId() == null) ? 0 : getRuleId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
+        hashCode = prime * hashCode + ((getPredicates() == null) ? 0 : getPredicates().hashCode());
         return hashCode;
     }
 
@@ -416,9 +358,7 @@ public class Rule implements Serializable, Cloneable {
         try {
             return (Rule) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

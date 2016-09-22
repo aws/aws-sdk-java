@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model.transform;
 
@@ -31,35 +29,27 @@ import com.amazonaws.util.IdempotentUtils;
  * ResetDBClusterParameterGroupRequest Marshaller
  */
 
-public class ResetDBClusterParameterGroupRequestMarshaller
-        implements
+public class ResetDBClusterParameterGroupRequestMarshaller implements
         Marshaller<Request<ResetDBClusterParameterGroupRequest>, ResetDBClusterParameterGroupRequest> {
 
-    public Request<ResetDBClusterParameterGroupRequest> marshall(
-            ResetDBClusterParameterGroupRequest resetDBClusterParameterGroupRequest) {
+    public Request<ResetDBClusterParameterGroupRequest> marshall(ResetDBClusterParameterGroupRequest resetDBClusterParameterGroupRequest) {
 
         if (resetDBClusterParameterGroupRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ResetDBClusterParameterGroupRequest> request = new DefaultRequest<ResetDBClusterParameterGroupRequest>(
-                resetDBClusterParameterGroupRequest, "AmazonRDS");
+        Request<ResetDBClusterParameterGroupRequest> request = new DefaultRequest<ResetDBClusterParameterGroupRequest>(resetDBClusterParameterGroupRequest,
+                "AmazonRDS");
         request.addParameter("Action", "ResetDBClusterParameterGroup");
         request.addParameter("Version", "2014-10-31");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (resetDBClusterParameterGroupRequest
-                .getDBClusterParameterGroupName() != null) {
-            request.addParameter("DBClusterParameterGroupName", StringUtils
-                    .fromString(resetDBClusterParameterGroupRequest
-                            .getDBClusterParameterGroupName()));
+        if (resetDBClusterParameterGroupRequest.getDBClusterParameterGroupName() != null) {
+            request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(resetDBClusterParameterGroupRequest.getDBClusterParameterGroupName()));
         }
 
         if (resetDBClusterParameterGroupRequest.getResetAllParameters() != null) {
-            request.addParameter("ResetAllParameters", StringUtils
-                    .fromBoolean(resetDBClusterParameterGroupRequest
-                            .getResetAllParameters()));
+            request.addParameter("ResetAllParameters", StringUtils.fromBoolean(resetDBClusterParameterGroupRequest.getResetAllParameters()));
         }
 
         com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) resetDBClusterParameterGroupRequest
@@ -70,68 +60,51 @@ public class ResetDBClusterParameterGroupRequestMarshaller
             for (Parameter parametersListValue : parametersList) {
 
                 if (parametersListValue.getParameterName() != null) {
-                    request.addParameter("Parameters.Parameter."
-                            + parametersListIndex + ".ParameterName",
-                            StringUtils.fromString(parametersListValue
-                                    .getParameterName()));
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".ParameterName",
+                            StringUtils.fromString(parametersListValue.getParameterName()));
                 }
 
                 if (parametersListValue.getParameterValue() != null) {
-                    request.addParameter("Parameters.Parameter."
-                            + parametersListIndex + ".ParameterValue",
-                            StringUtils.fromString(parametersListValue
-                                    .getParameterValue()));
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".ParameterValue",
+                            StringUtils.fromString(parametersListValue.getParameterValue()));
                 }
 
                 if (parametersListValue.getDescription() != null) {
-                    request.addParameter("Parameters.Parameter."
-                            + parametersListIndex + ".Description", StringUtils
-                            .fromString(parametersListValue.getDescription()));
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".Description",
+                            StringUtils.fromString(parametersListValue.getDescription()));
                 }
 
                 if (parametersListValue.getSource() != null) {
-                    request.addParameter("Parameters.Parameter."
-                            + parametersListIndex + ".Source", StringUtils
-                            .fromString(parametersListValue.getSource()));
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".Source", StringUtils.fromString(parametersListValue.getSource()));
                 }
 
                 if (parametersListValue.getApplyType() != null) {
-                    request.addParameter("Parameters.Parameter."
-                            + parametersListIndex + ".ApplyType", StringUtils
-                            .fromString(parametersListValue.getApplyType()));
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".ApplyType",
+                            StringUtils.fromString(parametersListValue.getApplyType()));
                 }
 
                 if (parametersListValue.getDataType() != null) {
-                    request.addParameter("Parameters.Parameter."
-                            + parametersListIndex + ".DataType", StringUtils
-                            .fromString(parametersListValue.getDataType()));
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".DataType", StringUtils.fromString(parametersListValue.getDataType()));
                 }
 
                 if (parametersListValue.getAllowedValues() != null) {
-                    request.addParameter("Parameters.Parameter."
-                            + parametersListIndex + ".AllowedValues",
-                            StringUtils.fromString(parametersListValue
-                                    .getAllowedValues()));
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".AllowedValues",
+                            StringUtils.fromString(parametersListValue.getAllowedValues()));
                 }
 
                 if (parametersListValue.getIsModifiable() != null) {
-                    request.addParameter("Parameters.Parameter."
-                            + parametersListIndex + ".IsModifiable",
-                            StringUtils.fromBoolean(parametersListValue
-                                    .getIsModifiable()));
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".IsModifiable",
+                            StringUtils.fromBoolean(parametersListValue.getIsModifiable()));
                 }
 
                 if (parametersListValue.getMinimumEngineVersion() != null) {
-                    request.addParameter("Parameters.Parameter."
-                            + parametersListIndex + ".MinimumEngineVersion",
-                            StringUtils.fromString(parametersListValue
-                                    .getMinimumEngineVersion()));
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".MinimumEngineVersion",
+                            StringUtils.fromString(parametersListValue.getMinimumEngineVersion()));
                 }
 
                 if (parametersListValue.getApplyMethod() != null) {
-                    request.addParameter("Parameters.Parameter."
-                            + parametersListIndex + ".ApplyMethod", StringUtils
-                            .fromString(parametersListValue.getApplyMethod()));
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".ApplyMethod",
+                            StringUtils.fromString(parametersListValue.getApplyMethod()));
                 }
                 parametersListIndex++;
             }

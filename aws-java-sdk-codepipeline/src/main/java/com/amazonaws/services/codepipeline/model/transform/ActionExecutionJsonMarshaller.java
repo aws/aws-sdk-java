@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
@@ -34,59 +32,47 @@ public class ActionExecutionJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ActionExecution actionExecution,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(ActionExecution actionExecution, StructuredJsonGenerator jsonGenerator) {
 
         if (actionExecution == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (actionExecution.getStatus() != null) {
-                jsonGenerator.writeFieldName("status").writeValue(
-                        actionExecution.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(actionExecution.getStatus());
             }
             if (actionExecution.getSummary() != null) {
-                jsonGenerator.writeFieldName("summary").writeValue(
-                        actionExecution.getSummary());
+                jsonGenerator.writeFieldName("summary").writeValue(actionExecution.getSummary());
             }
             if (actionExecution.getLastStatusChange() != null) {
-                jsonGenerator.writeFieldName("lastStatusChange").writeValue(
-                        actionExecution.getLastStatusChange());
+                jsonGenerator.writeFieldName("lastStatusChange").writeValue(actionExecution.getLastStatusChange());
             }
             if (actionExecution.getToken() != null) {
-                jsonGenerator.writeFieldName("token").writeValue(
-                        actionExecution.getToken());
+                jsonGenerator.writeFieldName("token").writeValue(actionExecution.getToken());
             }
             if (actionExecution.getLastUpdatedBy() != null) {
-                jsonGenerator.writeFieldName("lastUpdatedBy").writeValue(
-                        actionExecution.getLastUpdatedBy());
+                jsonGenerator.writeFieldName("lastUpdatedBy").writeValue(actionExecution.getLastUpdatedBy());
             }
             if (actionExecution.getExternalExecutionId() != null) {
-                jsonGenerator.writeFieldName("externalExecutionId").writeValue(
-                        actionExecution.getExternalExecutionId());
+                jsonGenerator.writeFieldName("externalExecutionId").writeValue(actionExecution.getExternalExecutionId());
             }
             if (actionExecution.getExternalExecutionUrl() != null) {
-                jsonGenerator.writeFieldName("externalExecutionUrl")
-                        .writeValue(actionExecution.getExternalExecutionUrl());
+                jsonGenerator.writeFieldName("externalExecutionUrl").writeValue(actionExecution.getExternalExecutionUrl());
             }
             if (actionExecution.getPercentComplete() != null) {
-                jsonGenerator.writeFieldName("percentComplete").writeValue(
-                        actionExecution.getPercentComplete());
+                jsonGenerator.writeFieldName("percentComplete").writeValue(actionExecution.getPercentComplete());
             }
             if (actionExecution.getErrorDetails() != null) {
                 jsonGenerator.writeFieldName("errorDetails");
-                ErrorDetailsJsonMarshaller.getInstance().marshall(
-                        actionExecution.getErrorDetails(), jsonGenerator);
+                ErrorDetailsJsonMarshaller.getInstance().marshall(actionExecution.getErrorDetails(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

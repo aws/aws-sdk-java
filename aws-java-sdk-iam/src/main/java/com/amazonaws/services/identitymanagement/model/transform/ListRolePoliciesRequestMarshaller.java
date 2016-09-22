@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
@@ -31,36 +29,29 @@ import com.amazonaws.util.IdempotentUtils;
  * ListRolePoliciesRequest Marshaller
  */
 
-public class ListRolePoliciesRequestMarshaller implements
-        Marshaller<Request<ListRolePoliciesRequest>, ListRolePoliciesRequest> {
+public class ListRolePoliciesRequestMarshaller implements Marshaller<Request<ListRolePoliciesRequest>, ListRolePoliciesRequest> {
 
-    public Request<ListRolePoliciesRequest> marshall(
-            ListRolePoliciesRequest listRolePoliciesRequest) {
+    public Request<ListRolePoliciesRequest> marshall(ListRolePoliciesRequest listRolePoliciesRequest) {
 
         if (listRolePoliciesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListRolePoliciesRequest> request = new DefaultRequest<ListRolePoliciesRequest>(
-                listRolePoliciesRequest, "AmazonIdentityManagement");
+        Request<ListRolePoliciesRequest> request = new DefaultRequest<ListRolePoliciesRequest>(listRolePoliciesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListRolePolicies");
         request.addParameter("Version", "2010-05-08");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (listRolePoliciesRequest.getRoleName() != null) {
-            request.addParameter("RoleName", StringUtils
-                    .fromString(listRolePoliciesRequest.getRoleName()));
+            request.addParameter("RoleName", StringUtils.fromString(listRolePoliciesRequest.getRoleName()));
         }
 
         if (listRolePoliciesRequest.getMarker() != null) {
-            request.addParameter("Marker",
-                    StringUtils.fromString(listRolePoliciesRequest.getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(listRolePoliciesRequest.getMarker()));
         }
 
         if (listRolePoliciesRequest.getMaxItems() != null) {
-            request.addParameter("MaxItems", StringUtils
-                    .fromInteger(listRolePoliciesRequest.getMaxItems()));
+            request.addParameter("MaxItems", StringUtils.fromInteger(listRolePoliciesRequest.getMaxItems()));
         }
 
         return request;

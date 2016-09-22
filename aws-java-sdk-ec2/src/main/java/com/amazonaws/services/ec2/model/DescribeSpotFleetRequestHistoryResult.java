@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,8 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of DescribeSpotFleetRequestHistory.
  * </p>
  */
-public class DescribeSpotFleetRequestHistoryResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -42,12 +39,10 @@ public class DescribeSpotFleetRequestHistoryResult extends
     /**
      * <p>
      * The last date and time for the events, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All
-     * records up to this time were retrieved.
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.
      * </p>
      * <p>
-     * If <code>nextToken</code> indicates that there are more results, this
-     * value is not present.
+     * If <code>nextToken</code> indicates that there are more results, this value is not present.
      * </p>
      */
     private java.util.Date lastEvaluatedTime;
@@ -59,8 +54,8 @@ public class DescribeSpotFleetRequestHistoryResult extends
     private com.amazonaws.internal.SdkInternalList<HistoryRecord> historyRecords;
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      */
     private String nextToken;
@@ -97,12 +92,10 @@ public class DescribeSpotFleetRequestHistoryResult extends
      * 
      * @param spotFleetRequestId
      *        The ID of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSpotFleetRequestHistoryResult withSpotFleetRequestId(
-            String spotFleetRequestId) {
+    public DescribeSpotFleetRequestHistoryResult withSpotFleetRequestId(String spotFleetRequestId) {
         setSpotFleetRequestId(spotFleetRequestId);
         return this;
     }
@@ -114,8 +107,7 @@ public class DescribeSpotFleetRequestHistoryResult extends
      * </p>
      * 
      * @param startTime
-     *        The starting date and time for the events, in UTC format (for
-     *        example,
+     *        The starting date and time for the events, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
 
@@ -129,8 +121,7 @@ public class DescribeSpotFleetRequestHistoryResult extends
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      * 
-     * @return The starting date and time for the events, in UTC format (for
-     *         example,
+     * @return The starting date and time for the events, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
 
@@ -145,15 +136,12 @@ public class DescribeSpotFleetRequestHistoryResult extends
      * </p>
      * 
      * @param startTime
-     *        The starting date and time for the events, in UTC format (for
-     *        example,
+     *        The starting date and time for the events, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSpotFleetRequestHistoryResult withStartTime(
-            java.util.Date startTime) {
+    public DescribeSpotFleetRequestHistoryResult withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
     }
@@ -161,21 +149,18 @@ public class DescribeSpotFleetRequestHistoryResult extends
     /**
      * <p>
      * The last date and time for the events, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All
-     * records up to this time were retrieved.
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.
      * </p>
      * <p>
-     * If <code>nextToken</code> indicates that there are more results, this
-     * value is not present.
+     * If <code>nextToken</code> indicates that there are more results, this value is not present.
      * </p>
      * 
      * @param lastEvaluatedTime
      *        The last date and time for the events, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     *        All records up to this time were retrieved.</p>
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were
+     *        retrieved.</p>
      *        <p>
-     *        If <code>nextToken</code> indicates that there are more results,
-     *        this value is not present.
+     *        If <code>nextToken</code> indicates that there are more results, this value is not present.
      */
 
     public void setLastEvaluatedTime(java.util.Date lastEvaluatedTime) {
@@ -185,21 +170,17 @@ public class DescribeSpotFleetRequestHistoryResult extends
     /**
      * <p>
      * The last date and time for the events, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All
-     * records up to this time were retrieved.
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.
      * </p>
      * <p>
-     * If <code>nextToken</code> indicates that there are more results, this
-     * value is not present.
+     * If <code>nextToken</code> indicates that there are more results, this value is not present.
      * </p>
      * 
-     * @return The last date and time for the events, in UTC format (for
-     *         example,
-     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     *         All records up to this time were retrieved.</p>
+     * @return The last date and time for the events, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were
+     *         retrieved.</p>
      *         <p>
-     *         If <code>nextToken</code> indicates that there are more results,
-     *         this value is not present.
+     *         If <code>nextToken</code> indicates that there are more results, this value is not present.
      */
 
     public java.util.Date getLastEvaluatedTime() {
@@ -209,27 +190,22 @@ public class DescribeSpotFleetRequestHistoryResult extends
     /**
      * <p>
      * The last date and time for the events, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All
-     * records up to this time were retrieved.
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.
      * </p>
      * <p>
-     * If <code>nextToken</code> indicates that there are more results, this
-     * value is not present.
+     * If <code>nextToken</code> indicates that there are more results, this value is not present.
      * </p>
      * 
      * @param lastEvaluatedTime
      *        The last date and time for the events, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     *        All records up to this time were retrieved.</p>
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were
+     *        retrieved.</p>
      *        <p>
-     *        If <code>nextToken</code> indicates that there are more results,
-     *        this value is not present.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If <code>nextToken</code> indicates that there are more results, this value is not present.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSpotFleetRequestHistoryResult withLastEvaluatedTime(
-            java.util.Date lastEvaluatedTime) {
+    public DescribeSpotFleetRequestHistoryResult withLastEvaluatedTime(java.util.Date lastEvaluatedTime) {
         setLastEvaluatedTime(lastEvaluatedTime);
         return this;
     }
@@ -239,8 +215,7 @@ public class DescribeSpotFleetRequestHistoryResult extends
      * Information about the events in the history of the Spot fleet request.
      * </p>
      * 
-     * @return Information about the events in the history of the Spot fleet
-     *         request.
+     * @return Information about the events in the history of the Spot fleet request.
      */
 
     public java.util.List<HistoryRecord> getHistoryRecords() {
@@ -256,19 +231,16 @@ public class DescribeSpotFleetRequestHistoryResult extends
      * </p>
      * 
      * @param historyRecords
-     *        Information about the events in the history of the Spot fleet
-     *        request.
+     *        Information about the events in the history of the Spot fleet request.
      */
 
-    public void setHistoryRecords(
-            java.util.Collection<HistoryRecord> historyRecords) {
+    public void setHistoryRecords(java.util.Collection<HistoryRecord> historyRecords) {
         if (historyRecords == null) {
             this.historyRecords = null;
             return;
         }
 
-        this.historyRecords = new com.amazonaws.internal.SdkInternalList<HistoryRecord>(
-                historyRecords);
+        this.historyRecords = new com.amazonaws.internal.SdkInternalList<HistoryRecord>(historyRecords);
     }
 
     /**
@@ -276,24 +248,19 @@ public class DescribeSpotFleetRequestHistoryResult extends
      * Information about the events in the history of the Spot fleet request.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setHistoryRecords(java.util.Collection)} or
-     * {@link #withHistoryRecords(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHistoryRecords(java.util.Collection)} or {@link #withHistoryRecords(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param historyRecords
-     *        Information about the events in the history of the Spot fleet
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the events in the history of the Spot fleet request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSpotFleetRequestHistoryResult withHistoryRecords(
-            HistoryRecord... historyRecords) {
+    public DescribeSpotFleetRequestHistoryResult withHistoryRecords(HistoryRecord... historyRecords) {
         if (this.historyRecords == null) {
-            setHistoryRecords(new com.amazonaws.internal.SdkInternalList<HistoryRecord>(
-                    historyRecords.length));
+            setHistoryRecords(new com.amazonaws.internal.SdkInternalList<HistoryRecord>(historyRecords.length));
         }
         for (HistoryRecord ele : historyRecords) {
             this.historyRecords.add(ele);
@@ -307,27 +274,24 @@ public class DescribeSpotFleetRequestHistoryResult extends
      * </p>
      * 
      * @param historyRecords
-     *        Information about the events in the history of the Spot fleet
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the events in the history of the Spot fleet request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSpotFleetRequestHistoryResult withHistoryRecords(
-            java.util.Collection<HistoryRecord> historyRecords) {
+    public DescribeSpotFleetRequestHistoryResult withHistoryRecords(java.util.Collection<HistoryRecord> historyRecords) {
         setHistoryRecords(historyRecords);
         return this;
     }
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token required to retrieve the next set of results. This value
-     *        is <code>null</code> when there are no more results to return.
+     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
+     *        more results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -336,13 +300,12 @@ public class DescribeSpotFleetRequestHistoryResult extends
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
-     * @return The token required to retrieve the next set of results. This
-     *         value is <code>null</code> when there are no more results to
-     *         return.
+     * @return The token required to retrieve the next set of results. This value is <code>null</code> when there are no
+     *         more results to return.
      */
 
     public String getNextToken() {
@@ -351,15 +314,14 @@ public class DescribeSpotFleetRequestHistoryResult extends
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token required to retrieve the next set of results. This value
-     *        is <code>null</code> when there are no more results to return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSpotFleetRequestHistoryResult withNextToken(String nextToken) {
@@ -368,8 +330,7 @@ public class DescribeSpotFleetRequestHistoryResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -403,35 +364,25 @@ public class DescribeSpotFleetRequestHistoryResult extends
         if (obj instanceof DescribeSpotFleetRequestHistoryResult == false)
             return false;
         DescribeSpotFleetRequestHistoryResult other = (DescribeSpotFleetRequestHistoryResult) obj;
-        if (other.getSpotFleetRequestId() == null
-                ^ this.getSpotFleetRequestId() == null)
+        if (other.getSpotFleetRequestId() == null ^ this.getSpotFleetRequestId() == null)
             return false;
-        if (other.getSpotFleetRequestId() != null
-                && other.getSpotFleetRequestId().equals(
-                        this.getSpotFleetRequestId()) == false)
+        if (other.getSpotFleetRequestId() != null && other.getSpotFleetRequestId().equals(this.getSpotFleetRequestId()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
-        if (other.getStartTime() != null
-                && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
-        if (other.getLastEvaluatedTime() == null
-                ^ this.getLastEvaluatedTime() == null)
+        if (other.getLastEvaluatedTime() == null ^ this.getLastEvaluatedTime() == null)
             return false;
-        if (other.getLastEvaluatedTime() != null
-                && other.getLastEvaluatedTime().equals(
-                        this.getLastEvaluatedTime()) == false)
+        if (other.getLastEvaluatedTime() != null && other.getLastEvaluatedTime().equals(this.getLastEvaluatedTime()) == false)
             return false;
-        if (other.getHistoryRecords() == null
-                ^ this.getHistoryRecords() == null)
+        if (other.getHistoryRecords() == null ^ this.getHistoryRecords() == null)
             return false;
-        if (other.getHistoryRecords() != null
-                && other.getHistoryRecords().equals(this.getHistoryRecords()) == false)
+        if (other.getHistoryRecords() != null && other.getHistoryRecords().equals(this.getHistoryRecords()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -441,22 +392,11 @@ public class DescribeSpotFleetRequestHistoryResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSpotFleetRequestId() == null) ? 0
-                        : getSpotFleetRequestId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastEvaluatedTime() == null) ? 0
-                        : getLastEvaluatedTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHistoryRecords() == null) ? 0 : getHistoryRecords()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getLastEvaluatedTime() == null) ? 0 : getLastEvaluatedTime().hashCode());
+        hashCode = prime * hashCode + ((getHistoryRecords() == null) ? 0 : getHistoryRecords().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -465,9 +405,7 @@ public class DescribeSpotFleetRequestHistoryResult extends
         try {
             return (DescribeSpotFleetRequestHistoryResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

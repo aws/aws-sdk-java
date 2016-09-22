@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -22,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to add a method to an existing <a>Resource</a> resource.
  * </p>
  */
-public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -51,8 +48,7 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
     private String authorizationType;
     /**
      * <p>
-     * Specifies the identifier of an <a>Authorizer</a> to use on this Method,
-     * if the type is CUSTOM.
+     * Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM.
      * </p>
      */
     private String authorizerId;
@@ -64,25 +60,20 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
     private Boolean apiKeyRequired;
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters
-     * that can be accepted by Amazon API Gateway. A key defines a method
-     * request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where
-     * <code>location</code> is <code>querystring</code>, <code>path</code>, or
-     * <code>header</code> and <code>name</code> is a valid and unique parameter
-     * name. The value associated with the key is a Boolean flag indicating
-     * whether the parameter is required (<code>true</code>) or optional (
-     * <code>false</code>). The method request parameter names defined here are
-     * available in <a>Integration</a> to be mapped to integration request
-     * parameters or body-mapping templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
+     * Gateway. A key defines a method request parameter name matching the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
+     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
+     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
+     * optional (<code>false</code>). The method request parameter names defined here are available in
+     * <a>Integration</a> to be mapped to integration request parameters or body-mapping templates.
      * </p>
      */
     private java.util.Map<String, Boolean> requestParameters;
     /**
      * <p>
-     * Specifies the <a>Model</a> resources used for the request's content type.
-     * Request models are represented as a key/value map, with a content type as
-     * the key and a <a>Model</a> name as the value.
+     * Specifies the <a>Model</a> resources used for the request's content type. Request models are represented as a
+     * key/value map, with a content type as the key and a <a>Model</a> name as the value.
      * </p>
      */
     private java.util.Map<String, String> requestModels;
@@ -119,8 +110,7 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param restApiId
      *        The <a>RestApi</a> identifier for the new <a>Method</a> resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutMethodRequest withRestApiId(String restApiId) {
@@ -146,8 +136,7 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
      * The <a>Resource</a> identifier for the new <a>Method</a> resource.
      * </p>
      * 
-     * @return The <a>Resource</a> identifier for the new <a>Method</a>
-     *         resource.
+     * @return The <a>Resource</a> identifier for the new <a>Method</a> resource.
      */
 
     public String getResourceId() {
@@ -161,8 +150,7 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param resourceId
      *        The <a>Resource</a> identifier for the new <a>Method</a> resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutMethodRequest withResourceId(String resourceId) {
@@ -202,8 +190,7 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param httpMethod
      *        Specifies the method request's HTTP method type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutMethodRequest withHttpMethod(String httpMethod) {
@@ -243,8 +230,7 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param authorizationType
      *        Specifies the type of authorization used for the method.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutMethodRequest withAuthorizationType(String authorizationType) {
@@ -254,13 +240,11 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the identifier of an <a>Authorizer</a> to use on this Method,
-     * if the type is CUSTOM.
+     * Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM.
      * </p>
      * 
      * @param authorizerId
-     *        Specifies the identifier of an <a>Authorizer</a> to use on this
-     *        Method, if the type is CUSTOM.
+     *        Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM.
      */
 
     public void setAuthorizerId(String authorizerId) {
@@ -269,12 +253,10 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the identifier of an <a>Authorizer</a> to use on this Method,
-     * if the type is CUSTOM.
+     * Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM.
      * </p>
      * 
-     * @return Specifies the identifier of an <a>Authorizer</a> to use on this
-     *         Method, if the type is CUSTOM.
+     * @return Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM.
      */
 
     public String getAuthorizerId() {
@@ -283,15 +265,12 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the identifier of an <a>Authorizer</a> to use on this Method,
-     * if the type is CUSTOM.
+     * Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM.
      * </p>
      * 
      * @param authorizerId
-     *        Specifies the identifier of an <a>Authorizer</a> to use on this
-     *        Method, if the type is CUSTOM.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutMethodRequest withAuthorizerId(String authorizerId) {
@@ -331,8 +310,7 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param apiKeyRequired
      *        Specifies whether the method required a valid <a>ApiKey</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutMethodRequest withApiKeyRequired(Boolean apiKeyRequired) {
@@ -354,31 +332,22 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters
-     * that can be accepted by Amazon API Gateway. A key defines a method
-     * request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where
-     * <code>location</code> is <code>querystring</code>, <code>path</code>, or
-     * <code>header</code> and <code>name</code> is a valid and unique parameter
-     * name. The value associated with the key is a Boolean flag indicating
-     * whether the parameter is required (<code>true</code>) or optional (
-     * <code>false</code>). The method request parameter names defined here are
-     * available in <a>Integration</a> to be mapped to integration request
-     * parameters or body-mapping templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
+     * Gateway. A key defines a method request parameter name matching the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
+     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
+     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
+     * optional (<code>false</code>). The method request parameter names defined here are available in
+     * <a>Integration</a> to be mapped to integration request parameters or body-mapping templates.
      * </p>
      * 
-     * @return A key-value map defining required or optional method request
-     *         parameters that can be accepted by Amazon API Gateway. A key
-     *         defines a method request parameter name matching the pattern of
-     *         <code>method.request.{location}.{name}</code>, where
-     *         <code>location</code> is <code>querystring</code>,
-     *         <code>path</code>, or <code>header</code> and <code>name</code>
-     *         is a valid and unique parameter name. The value associated with
-     *         the key is a Boolean flag indicating whether the parameter is
-     *         required (<code>true</code>) or optional (<code>false</code>).
-     *         The method request parameter names defined here are available in
-     *         <a>Integration</a> to be mapped to integration request parameters
-     *         or body-mapping templates.
+     * @return A key-value map defining required or optional method request parameters that can be accepted by Amazon
+     *         API Gateway. A key defines a method request parameter name matching the pattern of
+     *         <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
+     *         <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The
+     *         value associated with the key is a Boolean flag indicating whether the parameter is required (
+     *         <code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are
+     *         available in <a>Integration</a> to be mapped to integration request parameters or body-mapping templates.
      */
 
     public java.util.Map<String, Boolean> getRequestParameters() {
@@ -387,73 +356,52 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters
-     * that can be accepted by Amazon API Gateway. A key defines a method
-     * request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where
-     * <code>location</code> is <code>querystring</code>, <code>path</code>, or
-     * <code>header</code> and <code>name</code> is a valid and unique parameter
-     * name. The value associated with the key is a Boolean flag indicating
-     * whether the parameter is required (<code>true</code>) or optional (
-     * <code>false</code>). The method request parameter names defined here are
-     * available in <a>Integration</a> to be mapped to integration request
-     * parameters or body-mapping templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
+     * Gateway. A key defines a method request parameter name matching the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
+     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
+     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
+     * optional (<code>false</code>). The method request parameter names defined here are available in
+     * <a>Integration</a> to be mapped to integration request parameters or body-mapping templates.
      * </p>
      * 
      * @param requestParameters
-     *        A key-value map defining required or optional method request
-     *        parameters that can be accepted by Amazon API Gateway. A key
-     *        defines a method request parameter name matching the pattern of
-     *        <code>method.request.{location}.{name}</code>, where
-     *        <code>location</code> is <code>querystring</code>,
-     *        <code>path</code>, or <code>header</code> and <code>name</code> is
-     *        a valid and unique parameter name. The value associated with the
-     *        key is a Boolean flag indicating whether the parameter is required
-     *        (<code>true</code>) or optional (<code>false</code>). The method
-     *        request parameter names defined here are available in
-     *        <a>Integration</a> to be mapped to integration request parameters
-     *        or body-mapping templates.
+     *        A key-value map defining required or optional method request parameters that can be accepted by Amazon API
+     *        Gateway. A key defines a method request parameter name matching the pattern of
+     *        <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
+     *        <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The
+     *        value associated with the key is a Boolean flag indicating whether the parameter is required (
+     *        <code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are
+     *        available in <a>Integration</a> to be mapped to integration request parameters or body-mapping templates.
      */
 
-    public void setRequestParameters(
-            java.util.Map<String, Boolean> requestParameters) {
+    public void setRequestParameters(java.util.Map<String, Boolean> requestParameters) {
         this.requestParameters = requestParameters;
     }
 
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters
-     * that can be accepted by Amazon API Gateway. A key defines a method
-     * request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where
-     * <code>location</code> is <code>querystring</code>, <code>path</code>, or
-     * <code>header</code> and <code>name</code> is a valid and unique parameter
-     * name. The value associated with the key is a Boolean flag indicating
-     * whether the parameter is required (<code>true</code>) or optional (
-     * <code>false</code>). The method request parameter names defined here are
-     * available in <a>Integration</a> to be mapped to integration request
-     * parameters or body-mapping templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
+     * Gateway. A key defines a method request parameter name matching the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
+     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
+     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
+     * optional (<code>false</code>). The method request parameter names defined here are available in
+     * <a>Integration</a> to be mapped to integration request parameters or body-mapping templates.
      * </p>
      * 
      * @param requestParameters
-     *        A key-value map defining required or optional method request
-     *        parameters that can be accepted by Amazon API Gateway. A key
-     *        defines a method request parameter name matching the pattern of
-     *        <code>method.request.{location}.{name}</code>, where
-     *        <code>location</code> is <code>querystring</code>,
-     *        <code>path</code>, or <code>header</code> and <code>name</code> is
-     *        a valid and unique parameter name. The value associated with the
-     *        key is a Boolean flag indicating whether the parameter is required
-     *        (<code>true</code>) or optional (<code>false</code>). The method
-     *        request parameter names defined here are available in
-     *        <a>Integration</a> to be mapped to integration request parameters
-     *        or body-mapping templates.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A key-value map defining required or optional method request parameters that can be accepted by Amazon API
+     *        Gateway. A key defines a method request parameter name matching the pattern of
+     *        <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
+     *        <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The
+     *        value associated with the key is a Boolean flag indicating whether the parameter is required (
+     *        <code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are
+     *        available in <a>Integration</a> to be mapped to integration request parameters or body-mapping templates.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutMethodRequest withRequestParameters(
-            java.util.Map<String, Boolean> requestParameters) {
+    public PutMethodRequest withRequestParameters(java.util.Map<String, Boolean> requestParameters) {
         setRequestParameters(requestParameters);
         return this;
     }
@@ -463,15 +411,14 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
             this.requestParameters = new java.util.HashMap<String, Boolean>();
         }
         if (this.requestParameters.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.requestParameters.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into RequestParameters. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into RequestParameters. &lt;p> Returns a reference to this object so that method
+     * calls can be chained together.
      */
 
     public PutMethodRequest clearRequestParametersEntries() {
@@ -481,15 +428,12 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the <a>Model</a> resources used for the request's content type.
-     * Request models are represented as a key/value map, with a content type as
-     * the key and a <a>Model</a> name as the value.
+     * Specifies the <a>Model</a> resources used for the request's content type. Request models are represented as a
+     * key/value map, with a content type as the key and a <a>Model</a> name as the value.
      * </p>
      * 
-     * @return Specifies the <a>Model</a> resources used for the request's
-     *         content type. Request models are represented as a key/value map,
-     *         with a content type as the key and a <a>Model</a> name as the
-     *         value.
+     * @return Specifies the <a>Model</a> resources used for the request's content type. Request models are represented
+     *         as a key/value map, with a content type as the key and a <a>Model</a> name as the value.
      */
 
     public java.util.Map<String, String> getRequestModels() {
@@ -498,16 +442,13 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the <a>Model</a> resources used for the request's content type.
-     * Request models are represented as a key/value map, with a content type as
-     * the key and a <a>Model</a> name as the value.
+     * Specifies the <a>Model</a> resources used for the request's content type. Request models are represented as a
+     * key/value map, with a content type as the key and a <a>Model</a> name as the value.
      * </p>
      * 
      * @param requestModels
-     *        Specifies the <a>Model</a> resources used for the request's
-     *        content type. Request models are represented as a key/value map,
-     *        with a content type as the key and a <a>Model</a> name as the
-     *        value.
+     *        Specifies the <a>Model</a> resources used for the request's content type. Request models are represented
+     *        as a key/value map, with a content type as the key and a <a>Model</a> name as the value.
      */
 
     public void setRequestModels(java.util.Map<String, String> requestModels) {
@@ -516,22 +457,17 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the <a>Model</a> resources used for the request's content type.
-     * Request models are represented as a key/value map, with a content type as
-     * the key and a <a>Model</a> name as the value.
+     * Specifies the <a>Model</a> resources used for the request's content type. Request models are represented as a
+     * key/value map, with a content type as the key and a <a>Model</a> name as the value.
      * </p>
      * 
      * @param requestModels
-     *        Specifies the <a>Model</a> resources used for the request's
-     *        content type. Request models are represented as a key/value map,
-     *        with a content type as the key and a <a>Model</a> name as the
-     *        value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the <a>Model</a> resources used for the request's content type. Request models are represented
+     *        as a key/value map, with a content type as the key and a <a>Model</a> name as the value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutMethodRequest withRequestModels(
-            java.util.Map<String, String> requestModels) {
+    public PutMethodRequest withRequestModels(java.util.Map<String, String> requestModels) {
         setRequestModels(requestModels);
         return this;
     }
@@ -541,15 +477,14 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
             this.requestModels = new java.util.HashMap<String, String>();
         }
         if (this.requestModels.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.requestModels.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into RequestModels. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into RequestModels. &lt;p> Returns a reference to this object so that method calls
+     * can be chained together.
      */
 
     public PutMethodRequest clearRequestModelsEntries() {
@@ -558,8 +493,7 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -601,48 +535,35 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
         PutMethodRequest other = (PutMethodRequest) obj;
         if (other.getRestApiId() == null ^ this.getRestApiId() == null)
             return false;
-        if (other.getRestApiId() != null
-                && other.getRestApiId().equals(this.getRestApiId()) == false)
+        if (other.getRestApiId() != null && other.getRestApiId().equals(this.getRestApiId()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getHttpMethod() == null ^ this.getHttpMethod() == null)
             return false;
-        if (other.getHttpMethod() != null
-                && other.getHttpMethod().equals(this.getHttpMethod()) == false)
+        if (other.getHttpMethod() != null && other.getHttpMethod().equals(this.getHttpMethod()) == false)
             return false;
-        if (other.getAuthorizationType() == null
-                ^ this.getAuthorizationType() == null)
+        if (other.getAuthorizationType() == null ^ this.getAuthorizationType() == null)
             return false;
-        if (other.getAuthorizationType() != null
-                && other.getAuthorizationType().equals(
-                        this.getAuthorizationType()) == false)
+        if (other.getAuthorizationType() != null && other.getAuthorizationType().equals(this.getAuthorizationType()) == false)
             return false;
         if (other.getAuthorizerId() == null ^ this.getAuthorizerId() == null)
             return false;
-        if (other.getAuthorizerId() != null
-                && other.getAuthorizerId().equals(this.getAuthorizerId()) == false)
+        if (other.getAuthorizerId() != null && other.getAuthorizerId().equals(this.getAuthorizerId()) == false)
             return false;
-        if (other.getApiKeyRequired() == null
-                ^ this.getApiKeyRequired() == null)
+        if (other.getApiKeyRequired() == null ^ this.getApiKeyRequired() == null)
             return false;
-        if (other.getApiKeyRequired() != null
-                && other.getApiKeyRequired().equals(this.getApiKeyRequired()) == false)
+        if (other.getApiKeyRequired() != null && other.getApiKeyRequired().equals(this.getApiKeyRequired()) == false)
             return false;
-        if (other.getRequestParameters() == null
-                ^ this.getRequestParameters() == null)
+        if (other.getRequestParameters() == null ^ this.getRequestParameters() == null)
             return false;
-        if (other.getRequestParameters() != null
-                && other.getRequestParameters().equals(
-                        this.getRequestParameters()) == false)
+        if (other.getRequestParameters() != null && other.getRequestParameters().equals(this.getRequestParameters()) == false)
             return false;
         if (other.getRequestModels() == null ^ this.getRequestModels() == null)
             return false;
-        if (other.getRequestModels() != null
-                && other.getRequestModels().equals(this.getRequestModels()) == false)
+        if (other.getRequestModels() != null && other.getRequestModels().equals(this.getRequestModels()) == false)
             return false;
         return true;
     }
@@ -652,32 +573,14 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getHttpMethod() == null) ? 0 : getHttpMethod().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAuthorizationType() == null) ? 0
-                        : getAuthorizationType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAuthorizerId() == null) ? 0 : getAuthorizerId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getApiKeyRequired() == null) ? 0 : getApiKeyRequired()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRequestParameters() == null) ? 0
-                        : getRequestParameters().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRequestModels() == null) ? 0 : getRequestModels()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getHttpMethod() == null) ? 0 : getHttpMethod().hashCode());
+        hashCode = prime * hashCode + ((getAuthorizationType() == null) ? 0 : getAuthorizationType().hashCode());
+        hashCode = prime * hashCode + ((getAuthorizerId() == null) ? 0 : getAuthorizerId().hashCode());
+        hashCode = prime * hashCode + ((getApiKeyRequired() == null) ? 0 : getApiKeyRequired().hashCode());
+        hashCode = prime * hashCode + ((getRequestParameters() == null) ? 0 : getRequestParameters().hashCode());
+        hashCode = prime * hashCode + ((getRequestModels() == null) ? 0 : getRequestModels().hashCode());
         return hashCode;
     }
 

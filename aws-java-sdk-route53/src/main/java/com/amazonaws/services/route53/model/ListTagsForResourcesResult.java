@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -21,26 +19,21 @@ import java.io.Serializable;
  * A complex type containing tags for the specified resources.
  * </p>
  */
-public class ListTagsForResourcesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListTagsForResourcesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code>ResourceTagSet</code>s containing tags associated with
-     * the specified resources.
+     * A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceTagSet> resourceTagSets;
 
     /**
      * <p>
-     * A list of <code>ResourceTagSet</code>s containing tags associated with
-     * the specified resources.
+     * A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.
      * </p>
      * 
-     * @return A list of <code>ResourceTagSet</code>s containing tags associated
-     *         with the specified resources.
+     * @return A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.
      */
 
     public java.util.List<ResourceTagSet> getResourceTagSets() {
@@ -52,50 +45,40 @@ public class ListTagsForResourcesResult extends
 
     /**
      * <p>
-     * A list of <code>ResourceTagSet</code>s containing tags associated with
-     * the specified resources.
+     * A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.
      * </p>
      * 
      * @param resourceTagSets
-     *        A list of <code>ResourceTagSet</code>s containing tags associated
-     *        with the specified resources.
+     *        A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.
      */
 
-    public void setResourceTagSets(
-            java.util.Collection<ResourceTagSet> resourceTagSets) {
+    public void setResourceTagSets(java.util.Collection<ResourceTagSet> resourceTagSets) {
         if (resourceTagSets == null) {
             this.resourceTagSets = null;
             return;
         }
 
-        this.resourceTagSets = new com.amazonaws.internal.SdkInternalList<ResourceTagSet>(
-                resourceTagSets);
+        this.resourceTagSets = new com.amazonaws.internal.SdkInternalList<ResourceTagSet>(resourceTagSets);
     }
 
     /**
      * <p>
-     * A list of <code>ResourceTagSet</code>s containing tags associated with
-     * the specified resources.
+     * A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setResourceTagSets(java.util.Collection)} or
-     * {@link #withResourceTagSets(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceTagSets(java.util.Collection)} or {@link #withResourceTagSets(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param resourceTagSets
-     *        A list of <code>ResourceTagSet</code>s containing tags associated
-     *        with the specified resources.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListTagsForResourcesResult withResourceTagSets(
-            ResourceTagSet... resourceTagSets) {
+    public ListTagsForResourcesResult withResourceTagSets(ResourceTagSet... resourceTagSets) {
         if (this.resourceTagSets == null) {
-            setResourceTagSets(new com.amazonaws.internal.SdkInternalList<ResourceTagSet>(
-                    resourceTagSets.length));
+            setResourceTagSets(new com.amazonaws.internal.SdkInternalList<ResourceTagSet>(resourceTagSets.length));
         }
         for (ResourceTagSet ele : resourceTagSets) {
             this.resourceTagSets.add(ele);
@@ -105,26 +88,21 @@ public class ListTagsForResourcesResult extends
 
     /**
      * <p>
-     * A list of <code>ResourceTagSet</code>s containing tags associated with
-     * the specified resources.
+     * A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.
      * </p>
      * 
      * @param resourceTagSets
-     *        A list of <code>ResourceTagSet</code>s containing tags associated
-     *        with the specified resources.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListTagsForResourcesResult withResourceTagSets(
-            java.util.Collection<ResourceTagSet> resourceTagSets) {
+    public ListTagsForResourcesResult withResourceTagSets(java.util.Collection<ResourceTagSet> resourceTagSets) {
         setResourceTagSets(resourceTagSets);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -150,11 +128,9 @@ public class ListTagsForResourcesResult extends
         if (obj instanceof ListTagsForResourcesResult == false)
             return false;
         ListTagsForResourcesResult other = (ListTagsForResourcesResult) obj;
-        if (other.getResourceTagSets() == null
-                ^ this.getResourceTagSets() == null)
+        if (other.getResourceTagSets() == null ^ this.getResourceTagSets() == null)
             return false;
-        if (other.getResourceTagSets() != null
-                && other.getResourceTagSets().equals(this.getResourceTagSets()) == false)
+        if (other.getResourceTagSets() != null && other.getResourceTagSets().equals(this.getResourceTagSets()) == false)
             return false;
         return true;
     }
@@ -164,10 +140,7 @@ public class ListTagsForResourcesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceTagSets() == null) ? 0 : getResourceTagSets()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getResourceTagSets() == null) ? 0 : getResourceTagSets().hashCode());
         return hashCode;
     }
 
@@ -176,9 +149,7 @@ public class ListTagsForResourcesResult extends
         try {
             return (ListTagsForResourcesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

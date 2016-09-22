@@ -22,19 +22,20 @@ import java.lang.annotation.Target;
 /**
  * Annotation to convert the enumeration value to a string.
  *
- * Please note, there are some risks in distributed systems when using
+ * <p>Alternately, the {@link DynamoDBTyped} annotation may be used,</p>
+ * <pre class="brush: java">
+ * public static enum Status { OPEN, PENDING, CLOSED }
+ *
+ * &#064;DynamoDBTyped(DynamoDBAttributeType.S)
+ * public Status getStatus()
+ * </pre>
+ *
+ * <p>Please note, there are some risks in distributed systems when using
  * enumerations as attributes intead of simply using a String.
  * When adding new values to the enumeration, the enum only changes must
  * be deployed before the enumeration value can be persisted. This will
  * ensure that all systems have the correct code to map it from the item
- * record in DynamoDB to your objects.
- *
- * <pre class="brush: java">
- * public static enum Status { OPEN, PENDING, CLOSED }
- *
- * &#064;DynamoDBTypeConvertedEnum
- * public Status getStatus()
- * </pre>
+ * record in DynamoDB to your objects.</p>
  *
  * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverted
  */

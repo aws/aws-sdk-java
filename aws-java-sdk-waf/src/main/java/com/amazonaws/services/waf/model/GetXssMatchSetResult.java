@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model;
 
@@ -21,57 +19,45 @@ import java.io.Serializable;
  * The response to a <a>GetXssMatchSet</a> request.
  * </p>
  */
-public class GetXssMatchSetResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetXssMatchSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the <a>XssMatchSet</a> that you specified in the
-     * <code>GetXssMatchSet</code> request. For more information, see the
-     * following topics:
+     * Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code> request. For more
+     * information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>XssMatchSet</a>: Contains <code>Name</code>,
-     * <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code>
-     * objects</li>
-     * <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains
-     * <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-     * </li>
+     * <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
+     * <code>XssMatchTuple</code> objects</li>
+     * <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code></li>
+     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
      * </ul>
      */
     private XssMatchSet xssMatchSet;
 
     /**
      * <p>
-     * Information about the <a>XssMatchSet</a> that you specified in the
-     * <code>GetXssMatchSet</code> request. For more information, see the
-     * following topics:
+     * Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code> request. For more
+     * information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>XssMatchSet</a>: Contains <code>Name</code>,
-     * <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code>
-     * objects</li>
-     * <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains
-     * <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-     * </li>
+     * <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
+     * <code>XssMatchTuple</code> objects</li>
+     * <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code></li>
+     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
      * </ul>
      * 
      * @param xssMatchSet
-     *        Information about the <a>XssMatchSet</a> that you specified in the
-     *        <code>GetXssMatchSet</code> request. For more information, see the
-     *        following topics:</p>
+     *        Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code> request.
+     *        For more information, see the following topics:</p>
      *        <ul>
-     *        <li><a>XssMatchSet</a>: Contains <code>Name</code>,
-     *        <code>XssMatchSetId</code>, and an array of
+     *        <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
      *        <code>XssMatchTuple</code> objects</li>
-     *        <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object
-     *        contains <code>FieldToMatch</code> and
+     *        <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
      *        <code>TextTransformation</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and
-     *        <code>Type</code></li>
+     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
      */
 
     public void setXssMatchSet(XssMatchSet xssMatchSet) {
@@ -80,32 +66,25 @@ public class GetXssMatchSetResult extends
 
     /**
      * <p>
-     * Information about the <a>XssMatchSet</a> that you specified in the
-     * <code>GetXssMatchSet</code> request. For more information, see the
-     * following topics:
+     * Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code> request. For more
+     * information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>XssMatchSet</a>: Contains <code>Name</code>,
-     * <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code>
-     * objects</li>
-     * <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains
-     * <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-     * </li>
+     * <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
+     * <code>XssMatchTuple</code> objects</li>
+     * <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code></li>
+     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
      * </ul>
      * 
-     * @return Information about the <a>XssMatchSet</a> that you specified in
-     *         the <code>GetXssMatchSet</code> request. For more information,
-     *         see the following topics:</p>
+     * @return Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code> request.
+     *         For more information, see the following topics:</p>
      *         <ul>
-     *         <li><a>XssMatchSet</a>: Contains <code>Name</code>,
-     *         <code>XssMatchSetId</code>, and an array of
+     *         <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
      *         <code>XssMatchTuple</code> objects</li>
-     *         <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object
-     *         contains <code>FieldToMatch</code> and
+     *         <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
      *         <code>TextTransformation</code></li>
-     *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and
-     *         <code>Type</code></li>
+     *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
      */
 
     public XssMatchSet getXssMatchSet() {
@@ -114,35 +93,27 @@ public class GetXssMatchSetResult extends
 
     /**
      * <p>
-     * Information about the <a>XssMatchSet</a> that you specified in the
-     * <code>GetXssMatchSet</code> request. For more information, see the
-     * following topics:
+     * Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code> request. For more
+     * information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>XssMatchSet</a>: Contains <code>Name</code>,
-     * <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code>
-     * objects</li>
-     * <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains
-     * <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-     * </li>
+     * <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
+     * <code>XssMatchTuple</code> objects</li>
+     * <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code></li>
+     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
      * </ul>
      * 
      * @param xssMatchSet
-     *        Information about the <a>XssMatchSet</a> that you specified in the
-     *        <code>GetXssMatchSet</code> request. For more information, see the
-     *        following topics:</p>
+     *        Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code> request.
+     *        For more information, see the following topics:</p>
      *        <ul>
-     *        <li><a>XssMatchSet</a>: Contains <code>Name</code>,
-     *        <code>XssMatchSetId</code>, and an array of
+     *        <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
      *        <code>XssMatchTuple</code> objects</li>
-     *        <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object
-     *        contains <code>FieldToMatch</code> and
+     *        <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
      *        <code>TextTransformation</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and
-     *        <code>Type</code></li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetXssMatchSetResult withXssMatchSet(XssMatchSet xssMatchSet) {
@@ -151,8 +122,7 @@ public class GetXssMatchSetResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -180,8 +150,7 @@ public class GetXssMatchSetResult extends
         GetXssMatchSetResult other = (GetXssMatchSetResult) obj;
         if (other.getXssMatchSet() == null ^ this.getXssMatchSet() == null)
             return false;
-        if (other.getXssMatchSet() != null
-                && other.getXssMatchSet().equals(this.getXssMatchSet()) == false)
+        if (other.getXssMatchSet() != null && other.getXssMatchSet().equals(this.getXssMatchSet()) == false)
             return false;
         return true;
     }
@@ -191,9 +160,7 @@ public class GetXssMatchSetResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getXssMatchSet() == null) ? 0 : getXssMatchSet().hashCode());
+        hashCode = prime * hashCode + ((getXssMatchSet() == null) ? 0 : getXssMatchSet().hashCode());
         return hashCode;
     }
 
@@ -202,9 +169,7 @@ public class GetXssMatchSetResult extends
         try {
             return (GetXssMatchSetResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

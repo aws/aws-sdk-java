@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model.transform;
 
@@ -35,27 +33,22 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeGameSessionDetailsRequest Marshaller
  */
-public class DescribeGameSessionDetailsRequestMarshaller
-        implements
-        Marshaller<Request<DescribeGameSessionDetailsRequest>, DescribeGameSessionDetailsRequest> {
+public class DescribeGameSessionDetailsRequestMarshaller implements Marshaller<Request<DescribeGameSessionDetailsRequest>, DescribeGameSessionDetailsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeGameSessionDetailsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeGameSessionDetailsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeGameSessionDetailsRequest> marshall(
-            DescribeGameSessionDetailsRequest describeGameSessionDetailsRequest) {
+    public Request<DescribeGameSessionDetailsRequest> marshall(DescribeGameSessionDetailsRequest describeGameSessionDetailsRequest) {
 
         if (describeGameSessionDetailsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeGameSessionDetailsRequest> request = new DefaultRequest<DescribeGameSessionDetailsRequest>(
-                describeGameSessionDetailsRequest, "AmazonGameLift");
+        Request<DescribeGameSessionDetailsRequest> request = new DefaultRequest<DescribeGameSessionDetailsRequest>(describeGameSessionDetailsRequest,
+                "AmazonGameLift");
         request.addHeader("X-Amz-Target", "GameLift.DescribeGameSessionDetails");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -63,46 +56,37 @@ public class DescribeGameSessionDetailsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (describeGameSessionDetailsRequest.getFleetId() != null) {
-                jsonGenerator.writeFieldName("FleetId").writeValue(
-                        describeGameSessionDetailsRequest.getFleetId());
+                jsonGenerator.writeFieldName("FleetId").writeValue(describeGameSessionDetailsRequest.getFleetId());
             }
             if (describeGameSessionDetailsRequest.getGameSessionId() != null) {
-                jsonGenerator.writeFieldName("GameSessionId").writeValue(
-                        describeGameSessionDetailsRequest.getGameSessionId());
+                jsonGenerator.writeFieldName("GameSessionId").writeValue(describeGameSessionDetailsRequest.getGameSessionId());
             }
             if (describeGameSessionDetailsRequest.getAliasId() != null) {
-                jsonGenerator.writeFieldName("AliasId").writeValue(
-                        describeGameSessionDetailsRequest.getAliasId());
+                jsonGenerator.writeFieldName("AliasId").writeValue(describeGameSessionDetailsRequest.getAliasId());
             }
             if (describeGameSessionDetailsRequest.getStatusFilter() != null) {
-                jsonGenerator.writeFieldName("StatusFilter").writeValue(
-                        describeGameSessionDetailsRequest.getStatusFilter());
+                jsonGenerator.writeFieldName("StatusFilter").writeValue(describeGameSessionDetailsRequest.getStatusFilter());
             }
             if (describeGameSessionDetailsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(
-                        describeGameSessionDetailsRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(describeGameSessionDetailsRequest.getLimit());
             }
             if (describeGameSessionDetailsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(
-                        describeGameSessionDetailsRequest.getNextToken());
+                jsonGenerator.writeFieldName("NextToken").writeValue(describeGameSessionDetailsRequest.getNextToken());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

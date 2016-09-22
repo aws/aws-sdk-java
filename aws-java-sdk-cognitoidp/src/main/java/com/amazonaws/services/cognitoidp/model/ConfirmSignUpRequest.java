@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -22,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to confirm registration of a user.
  * </p>
  */
-public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,9 +30,8 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
     private String clientId;
     /**
      * <p>
-     * A keyed-hash message authentication code (HMAC) calculated using the
-     * secret key of a user pool client and username plus the client ID in the
-     * message.
+     * A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     * username plus the client ID in the message.
      * </p>
      */
     private String secretHash;
@@ -53,12 +49,10 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
     private String confirmationCode;
     /**
      * <p>
-     * Boolean to be specified to force user confirmation irrespective of
-     * existing alias. By default set to False. If this parameter is set to True
-     * and the phone number/email used for sign up confirmation already exists
-     * as an alias with a different user, the API call will migrate the alias
-     * from the previous user to the newly created user being confirmed. If set
-     * to False, the API will throw an <b>AliasExistsException</b> error.
+     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to False. If
+     * this parameter is set to True and the phone number/email used for sign up confirmation already exists as an alias
+     * with a different user, the API call will migrate the alias from the previous user to the newly created user being
+     * confirmed. If set to False, the API will throw an <b>AliasExistsException</b> error.
      * </p>
      */
     private Boolean forceAliasCreation;
@@ -95,8 +89,7 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param clientId
      *        The ID of the client associated with the user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfirmSignUpRequest withClientId(String clientId) {
@@ -106,15 +99,13 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A keyed-hash message authentication code (HMAC) calculated using the
-     * secret key of a user pool client and username plus the client ID in the
-     * message.
+     * A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     * username plus the client ID in the message.
      * </p>
      * 
      * @param secretHash
-     *        A keyed-hash message authentication code (HMAC) calculated using
-     *        the secret key of a user pool client and username plus the client
-     *        ID in the message.
+     *        A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     *        username plus the client ID in the message.
      */
 
     public void setSecretHash(String secretHash) {
@@ -123,14 +114,12 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A keyed-hash message authentication code (HMAC) calculated using the
-     * secret key of a user pool client and username plus the client ID in the
-     * message.
+     * A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     * username plus the client ID in the message.
      * </p>
      * 
-     * @return A keyed-hash message authentication code (HMAC) calculated using
-     *         the secret key of a user pool client and username plus the client
-     *         ID in the message.
+     * @return A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     *         username plus the client ID in the message.
      */
 
     public String getSecretHash() {
@@ -139,17 +128,14 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A keyed-hash message authentication code (HMAC) calculated using the
-     * secret key of a user pool client and username plus the client ID in the
-     * message.
+     * A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     * username plus the client ID in the message.
      * </p>
      * 
      * @param secretHash
-     *        A keyed-hash message authentication code (HMAC) calculated using
-     *        the secret key of a user pool client and username plus the client
-     *        ID in the message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     *        username plus the client ID in the message.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfirmSignUpRequest withSecretHash(String secretHash) {
@@ -189,8 +175,7 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param username
      *        The user name of the user whose registration you wish to confirm.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfirmSignUpRequest withUsername(String username) {
@@ -204,8 +189,7 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param confirmationCode
-     *        The confirmation code sent by a user's request to confirm
-     *        registration.
+     *        The confirmation code sent by a user's request to confirm registration.
      */
 
     public void setConfirmationCode(String confirmationCode) {
@@ -217,8 +201,7 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
      * The confirmation code sent by a user's request to confirm registration.
      * </p>
      * 
-     * @return The confirmation code sent by a user's request to confirm
-     *         registration.
+     * @return The confirmation code sent by a user's request to confirm registration.
      */
 
     public String getConfirmationCode() {
@@ -231,10 +214,8 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param confirmationCode
-     *        The confirmation code sent by a user's request to confirm
-     *        registration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The confirmation code sent by a user's request to confirm registration.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfirmSignUpRequest withConfirmationCode(String confirmationCode) {
@@ -244,22 +225,18 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Boolean to be specified to force user confirmation irrespective of
-     * existing alias. By default set to False. If this parameter is set to True
-     * and the phone number/email used for sign up confirmation already exists
-     * as an alias with a different user, the API call will migrate the alias
-     * from the previous user to the newly created user being confirmed. If set
-     * to False, the API will throw an <b>AliasExistsException</b> error.
+     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to False. If
+     * this parameter is set to True and the phone number/email used for sign up confirmation already exists as an alias
+     * with a different user, the API call will migrate the alias from the previous user to the newly created user being
+     * confirmed. If set to False, the API will throw an <b>AliasExistsException</b> error.
      * </p>
      * 
      * @param forceAliasCreation
-     *        Boolean to be specified to force user confirmation irrespective of
-     *        existing alias. By default set to False. If this parameter is set
-     *        to True and the phone number/email used for sign up confirmation
-     *        already exists as an alias with a different user, the API call
-     *        will migrate the alias from the previous user to the newly created
-     *        user being confirmed. If set to False, the API will throw an
-     *        <b>AliasExistsException</b> error.
+     *        Boolean to be specified to force user confirmation irrespective of existing alias. By default set to
+     *        False. If this parameter is set to True and the phone number/email used for sign up confirmation already
+     *        exists as an alias with a different user, the API call will migrate the alias from the previous user to
+     *        the newly created user being confirmed. If set to False, the API will throw an <b>AliasExistsException</b>
+     *        error.
      */
 
     public void setForceAliasCreation(Boolean forceAliasCreation) {
@@ -268,21 +245,17 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Boolean to be specified to force user confirmation irrespective of
-     * existing alias. By default set to False. If this parameter is set to True
-     * and the phone number/email used for sign up confirmation already exists
-     * as an alias with a different user, the API call will migrate the alias
-     * from the previous user to the newly created user being confirmed. If set
-     * to False, the API will throw an <b>AliasExistsException</b> error.
+     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to False. If
+     * this parameter is set to True and the phone number/email used for sign up confirmation already exists as an alias
+     * with a different user, the API call will migrate the alias from the previous user to the newly created user being
+     * confirmed. If set to False, the API will throw an <b>AliasExistsException</b> error.
      * </p>
      * 
-     * @return Boolean to be specified to force user confirmation irrespective
-     *         of existing alias. By default set to False. If this parameter is
-     *         set to True and the phone number/email used for sign up
-     *         confirmation already exists as an alias with a different user,
-     *         the API call will migrate the alias from the previous user to the
-     *         newly created user being confirmed. If set to False, the API will
-     *         throw an <b>AliasExistsException</b> error.
+     * @return Boolean to be specified to force user confirmation irrespective of existing alias. By default set to
+     *         False. If this parameter is set to True and the phone number/email used for sign up confirmation already
+     *         exists as an alias with a different user, the API call will migrate the alias from the previous user to
+     *         the newly created user being confirmed. If set to False, the API will throw an
+     *         <b>AliasExistsException</b> error.
      */
 
     public Boolean getForceAliasCreation() {
@@ -291,49 +264,39 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Boolean to be specified to force user confirmation irrespective of
-     * existing alias. By default set to False. If this parameter is set to True
-     * and the phone number/email used for sign up confirmation already exists
-     * as an alias with a different user, the API call will migrate the alias
-     * from the previous user to the newly created user being confirmed. If set
-     * to False, the API will throw an <b>AliasExistsException</b> error.
+     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to False. If
+     * this parameter is set to True and the phone number/email used for sign up confirmation already exists as an alias
+     * with a different user, the API call will migrate the alias from the previous user to the newly created user being
+     * confirmed. If set to False, the API will throw an <b>AliasExistsException</b> error.
      * </p>
      * 
      * @param forceAliasCreation
-     *        Boolean to be specified to force user confirmation irrespective of
-     *        existing alias. By default set to False. If this parameter is set
-     *        to True and the phone number/email used for sign up confirmation
-     *        already exists as an alias with a different user, the API call
-     *        will migrate the alias from the previous user to the newly created
-     *        user being confirmed. If set to False, the API will throw an
-     *        <b>AliasExistsException</b> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Boolean to be specified to force user confirmation irrespective of existing alias. By default set to
+     *        False. If this parameter is set to True and the phone number/email used for sign up confirmation already
+     *        exists as an alias with a different user, the API call will migrate the alias from the previous user to
+     *        the newly created user being confirmed. If set to False, the API will throw an <b>AliasExistsException</b>
+     *        error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfirmSignUpRequest withForceAliasCreation(
-            Boolean forceAliasCreation) {
+    public ConfirmSignUpRequest withForceAliasCreation(Boolean forceAliasCreation) {
         setForceAliasCreation(forceAliasCreation);
         return this;
     }
 
     /**
      * <p>
-     * Boolean to be specified to force user confirmation irrespective of
-     * existing alias. By default set to False. If this parameter is set to True
-     * and the phone number/email used for sign up confirmation already exists
-     * as an alias with a different user, the API call will migrate the alias
-     * from the previous user to the newly created user being confirmed. If set
-     * to False, the API will throw an <b>AliasExistsException</b> error.
+     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to False. If
+     * this parameter is set to True and the phone number/email used for sign up confirmation already exists as an alias
+     * with a different user, the API call will migrate the alias from the previous user to the newly created user being
+     * confirmed. If set to False, the API will throw an <b>AliasExistsException</b> error.
      * </p>
      * 
-     * @return Boolean to be specified to force user confirmation irrespective
-     *         of existing alias. By default set to False. If this parameter is
-     *         set to True and the phone number/email used for sign up
-     *         confirmation already exists as an alias with a different user,
-     *         the API call will migrate the alias from the previous user to the
-     *         newly created user being confirmed. If set to False, the API will
-     *         throw an <b>AliasExistsException</b> error.
+     * @return Boolean to be specified to force user confirmation irrespective of existing alias. By default set to
+     *         False. If this parameter is set to True and the phone number/email used for sign up confirmation already
+     *         exists as an alias with a different user, the API call will migrate the alias from the previous user to
+     *         the newly created user being confirmed. If set to False, the API will throw an
+     *         <b>AliasExistsException</b> error.
      */
 
     public Boolean isForceAliasCreation() {
@@ -341,8 +304,7 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -378,32 +340,23 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
         ConfirmSignUpRequest other = (ConfirmSignUpRequest) obj;
         if (other.getClientId() == null ^ this.getClientId() == null)
             return false;
-        if (other.getClientId() != null
-                && other.getClientId().equals(this.getClientId()) == false)
+        if (other.getClientId() != null && other.getClientId().equals(this.getClientId()) == false)
             return false;
         if (other.getSecretHash() == null ^ this.getSecretHash() == null)
             return false;
-        if (other.getSecretHash() != null
-                && other.getSecretHash().equals(this.getSecretHash()) == false)
+        if (other.getSecretHash() != null && other.getSecretHash().equals(this.getSecretHash()) == false)
             return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
-        if (other.getUsername() != null
-                && other.getUsername().equals(this.getUsername()) == false)
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
-        if (other.getConfirmationCode() == null
-                ^ this.getConfirmationCode() == null)
+        if (other.getConfirmationCode() == null ^ this.getConfirmationCode() == null)
             return false;
-        if (other.getConfirmationCode() != null
-                && other.getConfirmationCode().equals(
-                        this.getConfirmationCode()) == false)
+        if (other.getConfirmationCode() != null && other.getConfirmationCode().equals(this.getConfirmationCode()) == false)
             return false;
-        if (other.getForceAliasCreation() == null
-                ^ this.getForceAliasCreation() == null)
+        if (other.getForceAliasCreation() == null ^ this.getForceAliasCreation() == null)
             return false;
-        if (other.getForceAliasCreation() != null
-                && other.getForceAliasCreation().equals(
-                        this.getForceAliasCreation()) == false)
+        if (other.getForceAliasCreation() != null && other.getForceAliasCreation().equals(this.getForceAliasCreation()) == false)
             return false;
         return true;
     }
@@ -413,20 +366,11 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getClientId() == null) ? 0 : getClientId().hashCode());
-        hashCode = prime * hashCode
-                + ((getSecretHash() == null) ? 0 : getSecretHash().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConfirmationCode() == null) ? 0 : getConfirmationCode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getForceAliasCreation() == null) ? 0
-                        : getForceAliasCreation().hashCode());
+        hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
+        hashCode = prime * hashCode + ((getSecretHash() == null) ? 0 : getSecretHash().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getConfirmationCode() == null) ? 0 : getConfirmationCode().hashCode());
+        hashCode = prime * hashCode + ((getForceAliasCreation() == null) ? 0 : getForceAliasCreation().hashCode());
         return hashCode;
     }
 

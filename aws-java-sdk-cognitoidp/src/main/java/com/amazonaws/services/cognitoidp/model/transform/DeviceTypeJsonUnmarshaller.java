@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DeviceType JSON Unmarshaller
  */
-public class DeviceTypeJsonUnmarshaller implements
-        Unmarshaller<DeviceType, JsonUnmarshallerContext> {
+public class DeviceTypeJsonUnmarshaller implements Unmarshaller<DeviceType, JsonUnmarshallerContext> {
 
-    public DeviceType unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public DeviceType unmarshall(JsonUnmarshallerContext context) throws Exception {
         DeviceType deviceType = new DeviceType();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,39 +49,26 @@ public class DeviceTypeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeviceKey", targetDepth)) {
                     context.nextToken();
-                    deviceType.setDeviceKey(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    deviceType.setDeviceKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceAttributes", targetDepth)) {
                     context.nextToken();
-                    deviceType
-                            .setDeviceAttributes(new ListUnmarshaller<AttributeType>(
-                                    AttributeTypeJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+                    deviceType.setDeviceAttributes(new ListUnmarshaller<AttributeType>(AttributeTypeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("DeviceCreateDate", targetDepth)) {
                     context.nextToken();
-                    deviceType.setDeviceCreateDate(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    deviceType.setDeviceCreateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
-                if (context.testExpression("DeviceLastModifiedDate",
-                        targetDepth)) {
+                if (context.testExpression("DeviceLastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    deviceType.setDeviceLastModifiedDate(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    deviceType.setDeviceLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
-                if (context.testExpression("DeviceLastAuthenticatedDate",
-                        targetDepth)) {
+                if (context.testExpression("DeviceLastAuthenticatedDate", targetDepth)) {
                     context.nextToken();
-                    deviceType.setDeviceLastAuthenticatedDate(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    deviceType.setDeviceLastAuthenticatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

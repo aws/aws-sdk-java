@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of DescribeNatGateways.
  * </p>
  */
-public class DescribeNatGatewaysResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeNatGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,8 +30,8 @@ public class DescribeNatGatewaysResult extends
     private com.amazonaws.internal.SdkInternalList<NatGateway> natGateways;
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      */
     private String nextToken;
@@ -70,8 +66,7 @@ public class DescribeNatGatewaysResult extends
             return;
         }
 
-        this.natGateways = new com.amazonaws.internal.SdkInternalList<NatGateway>(
-                natGateways);
+        this.natGateways = new com.amazonaws.internal.SdkInternalList<NatGateway>(natGateways);
     }
 
     /**
@@ -79,22 +74,19 @@ public class DescribeNatGatewaysResult extends
      * Information about the NAT gateways.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNatGateways(java.util.Collection)} or
-     * {@link #withNatGateways(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNatGateways(java.util.Collection)} or {@link #withNatGateways(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param natGateways
      *        Information about the NAT gateways.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeNatGatewaysResult withNatGateways(NatGateway... natGateways) {
         if (this.natGateways == null) {
-            setNatGateways(new com.amazonaws.internal.SdkInternalList<NatGateway>(
-                    natGateways.length));
+            setNatGateways(new com.amazonaws.internal.SdkInternalList<NatGateway>(natGateways.length));
         }
         for (NatGateway ele : natGateways) {
             this.natGateways.add(ele);
@@ -109,25 +101,23 @@ public class DescribeNatGatewaysResult extends
      * 
      * @param natGateways
      *        Information about the NAT gateways.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNatGatewaysResult withNatGateways(
-            java.util.Collection<NatGateway> natGateways) {
+    public DescribeNatGatewaysResult withNatGateways(java.util.Collection<NatGateway> natGateways) {
         setNatGateways(natGateways);
         return this;
     }
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value
-     *        is <code>null</code> when there are no more results to return.
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -136,12 +126,12 @@ public class DescribeNatGatewaysResult extends
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
-     * @return The token to use to retrieve the next page of results. This value
-     *         is <code>null</code> when there are no more results to return.
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
      */
 
     public String getNextToken() {
@@ -150,15 +140,14 @@ public class DescribeNatGatewaysResult extends
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value
-     *        is <code>null</code> when there are no more results to return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeNatGatewaysResult withNextToken(String nextToken) {
@@ -167,8 +156,7 @@ public class DescribeNatGatewaysResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -198,13 +186,11 @@ public class DescribeNatGatewaysResult extends
         DescribeNatGatewaysResult other = (DescribeNatGatewaysResult) obj;
         if (other.getNatGateways() == null ^ this.getNatGateways() == null)
             return false;
-        if (other.getNatGateways() != null
-                && other.getNatGateways().equals(this.getNatGateways()) == false)
+        if (other.getNatGateways() != null && other.getNatGateways().equals(this.getNatGateways()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -214,11 +200,8 @@ public class DescribeNatGatewaysResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNatGateways() == null) ? 0 : getNatGateways().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getNatGateways() == null) ? 0 : getNatGateways().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -227,9 +210,7 @@ public class DescribeNatGatewaysResult extends
         try {
             return (DescribeNatGatewaysResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -104,8 +102,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * 
      * @param actionId
      *        A unique identifier for the managed action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedActionHistoryItem withActionId(String actionId) {
@@ -147,8 +144,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * 
      * @param actionType
      *        The type of the managed action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionType
      */
 
@@ -178,8 +174,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * 
      * @param actionType
      *        The type of the managed action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionType
      */
 
@@ -220,12 +215,10 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * 
      * @param actionDescription
      *        A description of the managed action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ManagedActionHistoryItem withActionDescription(
-            String actionDescription) {
+    public ManagedActionHistoryItem withActionDescription(String actionDescription) {
         setActionDescription(actionDescription);
         return this;
     }
@@ -264,8 +257,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * 
      * @param failureType
      *        If the action failed, the type of failure.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see FailureType
      */
 
@@ -295,8 +287,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * 
      * @param failureType
      *        If the action failed, the type of failure.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see FailureType
      */
 
@@ -339,8 +330,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionHistoryStatus
      */
 
@@ -370,8 +360,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionHistoryStatus
      */
 
@@ -412,12 +401,10 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * 
      * @param failureDescription
      *        If the action failed, a description of the failure.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ManagedActionHistoryItem withFailureDescription(
-            String failureDescription) {
+    public ManagedActionHistoryItem withFailureDescription(String failureDescription) {
         setFailureDescription(failureDescription);
         return this;
     }
@@ -454,8 +441,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * 
      * @param executedTime
      *        The date and time that the action started executing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedActionHistoryItem withExecutedTime(java.util.Date executedTime) {
@@ -495,8 +481,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * 
      * @param finishedTime
      *        The date and time that the action finished executing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedActionHistoryItem withFinishedTime(java.util.Date finishedTime) {
@@ -505,8 +490,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -548,47 +532,35 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
         ManagedActionHistoryItem other = (ManagedActionHistoryItem) obj;
         if (other.getActionId() == null ^ this.getActionId() == null)
             return false;
-        if (other.getActionId() != null
-                && other.getActionId().equals(this.getActionId()) == false)
+        if (other.getActionId() != null && other.getActionId().equals(this.getActionId()) == false)
             return false;
         if (other.getActionType() == null ^ this.getActionType() == null)
             return false;
-        if (other.getActionType() != null
-                && other.getActionType().equals(this.getActionType()) == false)
+        if (other.getActionType() != null && other.getActionType().equals(this.getActionType()) == false)
             return false;
-        if (other.getActionDescription() == null
-                ^ this.getActionDescription() == null)
+        if (other.getActionDescription() == null ^ this.getActionDescription() == null)
             return false;
-        if (other.getActionDescription() != null
-                && other.getActionDescription().equals(
-                        this.getActionDescription()) == false)
+        if (other.getActionDescription() != null && other.getActionDescription().equals(this.getActionDescription()) == false)
             return false;
         if (other.getFailureType() == null ^ this.getFailureType() == null)
             return false;
-        if (other.getFailureType() != null
-                && other.getFailureType().equals(this.getFailureType()) == false)
+        if (other.getFailureType() != null && other.getFailureType().equals(this.getFailureType()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getFailureDescription() == null
-                ^ this.getFailureDescription() == null)
+        if (other.getFailureDescription() == null ^ this.getFailureDescription() == null)
             return false;
-        if (other.getFailureDescription() != null
-                && other.getFailureDescription().equals(
-                        this.getFailureDescription()) == false)
+        if (other.getFailureDescription() != null && other.getFailureDescription().equals(this.getFailureDescription()) == false)
             return false;
         if (other.getExecutedTime() == null ^ this.getExecutedTime() == null)
             return false;
-        if (other.getExecutedTime() != null
-                && other.getExecutedTime().equals(this.getExecutedTime()) == false)
+        if (other.getExecutedTime() != null && other.getExecutedTime().equals(this.getExecutedTime()) == false)
             return false;
         if (other.getFinishedTime() == null ^ this.getFinishedTime() == null)
             return false;
-        if (other.getFinishedTime() != null
-                && other.getFinishedTime().equals(this.getFinishedTime()) == false)
+        if (other.getFinishedTime() != null && other.getFinishedTime().equals(this.getFinishedTime()) == false)
             return false;
         return true;
     }
@@ -598,31 +570,14 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getActionId() == null) ? 0 : getActionId().hashCode());
-        hashCode = prime * hashCode
-                + ((getActionType() == null) ? 0 : getActionType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getActionDescription() == null) ? 0
-                        : getActionDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFailureType() == null) ? 0 : getFailureType().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFailureDescription() == null) ? 0
-                        : getFailureDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExecutedTime() == null) ? 0 : getExecutedTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFinishedTime() == null) ? 0 : getFinishedTime()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getActionId() == null) ? 0 : getActionId().hashCode());
+        hashCode = prime * hashCode + ((getActionType() == null) ? 0 : getActionType().hashCode());
+        hashCode = prime * hashCode + ((getActionDescription() == null) ? 0 : getActionDescription().hashCode());
+        hashCode = prime * hashCode + ((getFailureType() == null) ? 0 : getFailureType().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getFailureDescription() == null) ? 0 : getFailureDescription().hashCode());
+        hashCode = prime * hashCode + ((getExecutedTime() == null) ? 0 : getExecutedTime().hashCode());
+        hashCode = prime * hashCode + ((getFinishedTime() == null) ? 0 : getFinishedTime().hashCode());
         return hashCode;
     }
 
@@ -631,9 +586,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
         try {
             return (ManagedActionHistoryItem) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

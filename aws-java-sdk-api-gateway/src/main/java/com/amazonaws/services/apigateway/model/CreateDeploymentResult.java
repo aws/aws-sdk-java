@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -18,22 +16,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An immutable representation of a <a>RestApi</a> resource that can be called
- * by users using <a>Stages</a>. A deployment must be associated with a
- * <a>Stage</a> for it to be callable over the Internet.
+ * An immutable representation of a <a>RestApi</a> resource that can be called by users using <a>Stages</a>. A
+ * deployment must be associated with a <a>Stage</a> for it to be callable over the Internet.
  * </p>
- * <div class="remarks">To create a deployment, call <code>POST</code> on the
- * <a>Deployments</a> resource of a <a>RestApi</a>. To view, update, or delete a
- * deployment, call <code>GET</code>, <code>PATCH</code>, or <code>DELETE</code>
- * on the specified deployment resource (
- * <code>/restapis/{restapi_id}/deployments/{deployment_id}</code>).</div> <div
- * class="seeAlso"><a>RestApi</a>, <a>Deployments</a>, <a>Stage</a>, <a href=
- * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html"
- * >AWS CLI</a>, <a href="https://aws.amazon.com/tools/">AWS SDKs</a> </div>
+ * <div class="remarks">To create a deployment, call <code>POST</code> on the <a>Deployments</a> resource of a
+ * <a>RestApi</a>. To view, update, or delete a deployment, call <code>GET</code>, <code>PATCH</code>, or
+ * <code>DELETE</code> on the specified deployment resource (
+ * <code>/restapis/{restapi_id}/deployments/{deployment_id}</code>).</div> <div class="seeAlso"><a>RestApi</a>,
+ * <a>Deployments</a>, <a>Stage</a>, <a
+ * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS CLI</a>, <a
+ * href="https://aws.amazon.com/tools/">AWS SDKs</a> </div>
  */
-public class CreateDeploymentResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -55,8 +49,7 @@ public class CreateDeploymentResult extends
     private java.util.Date createdDate;
     /**
      * <p>
-     * A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.
+     * A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
      * </p>
      */
     private java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary;
@@ -93,8 +86,7 @@ public class CreateDeploymentResult extends
      * 
      * @param id
      *        The identifier for the deployment resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentResult withId(String id) {
@@ -134,8 +126,7 @@ public class CreateDeploymentResult extends
      * 
      * @param description
      *        The description for the deployment resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentResult withDescription(String description) {
@@ -175,8 +166,7 @@ public class CreateDeploymentResult extends
      * 
      * @param createdDate
      *        The date and time that the deployment resource was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentResult withCreatedDate(java.util.Date createdDate) {
@@ -186,12 +176,10 @@ public class CreateDeploymentResult extends
 
     /**
      * <p>
-     * A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.
+     * A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
      * </p>
      * 
-     * @return A summary of the <a>RestApi</a> at the date and time that the
-     *         deployment resource was created.
+     * @return A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
      */
 
     public java.util.Map<String, java.util.Map<String, MethodSnapshot>> getApiSummary() {
@@ -200,54 +188,45 @@ public class CreateDeploymentResult extends
 
     /**
      * <p>
-     * A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.
+     * A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
      * </p>
      * 
      * @param apiSummary
-     *        A summary of the <a>RestApi</a> at the date and time that the
-     *        deployment resource was created.
+     *        A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
      */
 
-    public void setApiSummary(
-            java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary) {
+    public void setApiSummary(java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary) {
         this.apiSummary = apiSummary;
     }
 
     /**
      * <p>
-     * A summary of the <a>RestApi</a> at the date and time that the deployment
-     * resource was created.
+     * A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
      * </p>
      * 
      * @param apiSummary
-     *        A summary of the <a>RestApi</a> at the date and time that the
-     *        deployment resource was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDeploymentResult withApiSummary(
-            java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary) {
+    public CreateDeploymentResult withApiSummary(java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary) {
         setApiSummary(apiSummary);
         return this;
     }
 
-    public CreateDeploymentResult addApiSummaryEntry(String key,
-            java.util.Map<String, MethodSnapshot> value) {
+    public CreateDeploymentResult addApiSummaryEntry(String key, java.util.Map<String, MethodSnapshot> value) {
         if (null == this.apiSummary) {
             this.apiSummary = new java.util.HashMap<String, java.util.Map<String, MethodSnapshot>>();
         }
         if (this.apiSummary.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.apiSummary.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into ApiSummary. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into ApiSummary. &lt;p> Returns a reference to this object so that method calls can
+     * be chained together.
      */
 
     public CreateDeploymentResult clearApiSummaryEntries() {
@@ -256,8 +235,7 @@ public class CreateDeploymentResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -291,23 +269,19 @@ public class CreateDeploymentResult extends
         CreateDeploymentResult other = (CreateDeploymentResult) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
-        if (other.getCreatedDate() != null
-                && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
             return false;
         if (other.getApiSummary() == null ^ this.getApiSummary() == null)
             return false;
-        if (other.getApiSummary() != null
-                && other.getApiSummary().equals(this.getApiSummary()) == false)
+        if (other.getApiSummary() != null && other.getApiSummary().equals(this.getApiSummary()) == false)
             return false;
         return true;
     }
@@ -317,16 +291,10 @@ public class CreateDeploymentResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getApiSummary() == null) ? 0 : getApiSummary().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getApiSummary() == null) ? 0 : getApiSummary().hashCode());
         return hashCode;
     }
 
@@ -335,9 +303,7 @@ public class CreateDeploymentResult extends
         try {
             return (CreateDeploymentResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

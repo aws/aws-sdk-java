@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,35 +29,27 @@ import com.amazonaws.util.IdempotentUtils;
  * DescribeNetworkInterfacesRequest Marshaller
  */
 
-public class DescribeNetworkInterfacesRequestMarshaller
-        implements
-        Marshaller<Request<DescribeNetworkInterfacesRequest>, DescribeNetworkInterfacesRequest> {
+public class DescribeNetworkInterfacesRequestMarshaller implements Marshaller<Request<DescribeNetworkInterfacesRequest>, DescribeNetworkInterfacesRequest> {
 
-    public Request<DescribeNetworkInterfacesRequest> marshall(
-            DescribeNetworkInterfacesRequest describeNetworkInterfacesRequest) {
+    public Request<DescribeNetworkInterfacesRequest> marshall(DescribeNetworkInterfacesRequest describeNetworkInterfacesRequest) {
 
         if (describeNetworkInterfacesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeNetworkInterfacesRequest> request = new DefaultRequest<DescribeNetworkInterfacesRequest>(
-                describeNetworkInterfacesRequest, "AmazonEC2");
+        Request<DescribeNetworkInterfacesRequest> request = new DefaultRequest<DescribeNetworkInterfacesRequest>(describeNetworkInterfacesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeNetworkInterfaces");
         request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> networkInterfaceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkInterfacesRequest
                 .getNetworkInterfaceIds();
-        if (!networkInterfaceIdsList.isEmpty()
-                || !networkInterfaceIdsList.isAutoConstruct()) {
+        if (!networkInterfaceIdsList.isEmpty() || !networkInterfaceIdsList.isAutoConstruct()) {
             int networkInterfaceIdsListIndex = 1;
 
             for (String networkInterfaceIdsListValue : networkInterfaceIdsList) {
                 if (networkInterfaceIdsListValue != null) {
-                    request.addParameter("NetworkInterfaceId."
-                            + networkInterfaceIdsListIndex, StringUtils
-                            .fromString(networkInterfaceIdsListValue));
+                    request.addParameter("NetworkInterfaceId." + networkInterfaceIdsListIndex, StringUtils.fromString(networkInterfaceIdsListValue));
                 }
                 networkInterfaceIdsListIndex++;
             }
@@ -73,21 +63,16 @@ public class DescribeNetworkInterfacesRequestMarshaller
             for (Filter filtersListValue : filtersList) {
 
                 if (filtersListValue.getName() != null) {
-                    request.addParameter(
-                            "Filter." + filtersListIndex + ".Name",
-                            StringUtils.fromString(filtersListValue.getName()));
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue
-                        .getValues();
+                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
                 if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex
-                                    + ".Value." + valuesListIndex,
-                                    StringUtils.fromString(valuesListValue));
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
                         }
                         valuesListIndex++;
                     }

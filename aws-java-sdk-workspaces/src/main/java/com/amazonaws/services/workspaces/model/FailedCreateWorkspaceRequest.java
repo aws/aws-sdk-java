@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.workspaces.model;
 
@@ -25,8 +23,8 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that
-     * contains the information about the WorkSpace that could not be created.
+     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the WorkSpace
+     * that could not be created.
      * </p>
      */
     private WorkspaceRequest workspaceRequest;
@@ -45,14 +43,13 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that
-     * contains the information about the WorkSpace that could not be created.
+     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the WorkSpace
+     * that could not be created.
      * </p>
      * 
      * @param workspaceRequest
-     *        A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that
-     *        contains the information about the WorkSpace that could not be
-     *        created.
+     *        A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the
+     *        WorkSpace that could not be created.
      */
 
     public void setWorkspaceRequest(WorkspaceRequest workspaceRequest) {
@@ -61,13 +58,12 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that
-     * contains the information about the WorkSpace that could not be created.
+     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the WorkSpace
+     * that could not be created.
      * </p>
      * 
-     * @return A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object
-     *         that contains the information about the WorkSpace that could not
-     *         be created.
+     * @return A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the
+     *         WorkSpace that could not be created.
      */
 
     public WorkspaceRequest getWorkspaceRequest() {
@@ -76,20 +72,17 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that
-     * contains the information about the WorkSpace that could not be created.
+     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the WorkSpace
+     * that could not be created.
      * </p>
      * 
      * @param workspaceRequest
-     *        A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that
-     *        contains the information about the WorkSpace that could not be
-     *        created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the
+     *        WorkSpace that could not be created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FailedCreateWorkspaceRequest withWorkspaceRequest(
-            WorkspaceRequest workspaceRequest) {
+    public FailedCreateWorkspaceRequest withWorkspaceRequest(WorkspaceRequest workspaceRequest) {
         setWorkspaceRequest(workspaceRequest);
         return this;
     }
@@ -126,8 +119,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
      * 
      * @param errorCode
      *        The error code.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FailedCreateWorkspaceRequest withErrorCode(String errorCode) {
@@ -167,8 +159,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
      * 
      * @param errorMessage
      *        The textual error message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FailedCreateWorkspaceRequest withErrorMessage(String errorMessage) {
@@ -177,8 +168,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -208,22 +198,17 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
         if (obj instanceof FailedCreateWorkspaceRequest == false)
             return false;
         FailedCreateWorkspaceRequest other = (FailedCreateWorkspaceRequest) obj;
-        if (other.getWorkspaceRequest() == null
-                ^ this.getWorkspaceRequest() == null)
+        if (other.getWorkspaceRequest() == null ^ this.getWorkspaceRequest() == null)
             return false;
-        if (other.getWorkspaceRequest() != null
-                && other.getWorkspaceRequest().equals(
-                        this.getWorkspaceRequest()) == false)
+        if (other.getWorkspaceRequest() != null && other.getWorkspaceRequest().equals(this.getWorkspaceRequest()) == false)
             return false;
         if (other.getErrorCode() == null ^ this.getErrorCode() == null)
             return false;
-        if (other.getErrorCode() != null
-                && other.getErrorCode().equals(this.getErrorCode()) == false)
+        if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
             return false;
         if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
             return false;
-        if (other.getErrorMessage() != null
-                && other.getErrorMessage().equals(this.getErrorMessage()) == false)
+        if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
         return true;
     }
@@ -233,16 +218,9 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getWorkspaceRequest() == null) ? 0 : getWorkspaceRequest()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getErrorMessage() == null) ? 0 : getErrorMessage()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getWorkspaceRequest() == null) ? 0 : getWorkspaceRequest().hashCode());
+        hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
+        hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         return hashCode;
     }
 
@@ -251,9 +229,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
         try {
             return (FailedCreateWorkspaceRequest) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

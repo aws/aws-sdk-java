@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.GetConsoleScreenshotRequestMar
  * Contains the parameters for the request.
  * </p>
  */
-public class GetConsoleScreenshotRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class GetConsoleScreenshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<GetConsoleScreenshotRequest> {
 
     /**
@@ -36,8 +33,8 @@ public class GetConsoleScreenshotRequest extends AmazonWebServiceRequest
     private String instanceId;
     /**
      * <p>
-     * When set to <code>true</code>, acts as keystroke input and wakes up an
-     * instance that's in standby or "sleep" mode.
+     * When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or "sleep"
+     * mode.
      * </p>
      */
     private Boolean wakeUp;
@@ -74,8 +71,7 @@ public class GetConsoleScreenshotRequest extends AmazonWebServiceRequest
      * 
      * @param instanceId
      *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetConsoleScreenshotRequest withInstanceId(String instanceId) {
@@ -85,13 +81,13 @@ public class GetConsoleScreenshotRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * When set to <code>true</code>, acts as keystroke input and wakes up an
-     * instance that's in standby or "sleep" mode.
+     * When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or "sleep"
+     * mode.
      * </p>
      * 
      * @param wakeUp
-     *        When set to <code>true</code>, acts as keystroke input and wakes
-     *        up an instance that's in standby or "sleep" mode.
+     *        When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or
+     *        "sleep" mode.
      */
 
     public void setWakeUp(Boolean wakeUp) {
@@ -100,12 +96,12 @@ public class GetConsoleScreenshotRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * When set to <code>true</code>, acts as keystroke input and wakes up an
-     * instance that's in standby or "sleep" mode.
+     * When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or "sleep"
+     * mode.
      * </p>
      * 
-     * @return When set to <code>true</code>, acts as keystroke input and wakes
-     *         up an instance that's in standby or "sleep" mode.
+     * @return When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or
+     *         "sleep" mode.
      */
 
     public Boolean getWakeUp() {
@@ -114,15 +110,14 @@ public class GetConsoleScreenshotRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * When set to <code>true</code>, acts as keystroke input and wakes up an
-     * instance that's in standby or "sleep" mode.
+     * When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or "sleep"
+     * mode.
      * </p>
      * 
      * @param wakeUp
-     *        When set to <code>true</code>, acts as keystroke input and wakes
-     *        up an instance that's in standby or "sleep" mode.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or
+     *        "sleep" mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetConsoleScreenshotRequest withWakeUp(Boolean wakeUp) {
@@ -132,12 +127,12 @@ public class GetConsoleScreenshotRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * When set to <code>true</code>, acts as keystroke input and wakes up an
-     * instance that's in standby or "sleep" mode.
+     * When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or "sleep"
+     * mode.
      * </p>
      * 
-     * @return When set to <code>true</code>, acts as keystroke input and wakes
-     *         up an instance that's in standby or "sleep" mode.
+     * @return When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or
+     *         "sleep" mode.
      */
 
     public Boolean isWakeUp() {
@@ -145,21 +140,18 @@ public class GetConsoleScreenshotRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<GetConsoleScreenshotRequest> getDryRunRequest() {
-        Request<GetConsoleScreenshotRequest> request = new GetConsoleScreenshotRequestMarshaller()
-                .marshall(this);
+        Request<GetConsoleScreenshotRequest> request = new GetConsoleScreenshotRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -189,13 +181,11 @@ public class GetConsoleScreenshotRequest extends AmazonWebServiceRequest
         GetConsoleScreenshotRequest other = (GetConsoleScreenshotRequest) obj;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         if (other.getWakeUp() == null ^ this.getWakeUp() == null)
             return false;
-        if (other.getWakeUp() != null
-                && other.getWakeUp().equals(this.getWakeUp()) == false)
+        if (other.getWakeUp() != null && other.getWakeUp().equals(this.getWakeUp()) == false)
             return false;
         return true;
     }
@@ -205,10 +195,8 @@ public class GetConsoleScreenshotRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getWakeUp() == null) ? 0 : getWakeUp().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getWakeUp() == null) ? 0 : getWakeUp().hashCode());
         return hashCode;
     }
 

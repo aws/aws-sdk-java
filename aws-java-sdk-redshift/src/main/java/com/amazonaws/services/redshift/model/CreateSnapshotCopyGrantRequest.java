@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -22,14 +20,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The result of the <code>CreateSnapshotCopyGrant</code> action.
  * </p>
  */
-public class CreateSnapshotCopyGrantRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the snapshot copy grant. This name must be unique in the
-     * region for the AWS account.
+     * The name of the snapshot copy grant. This name must be unique in the region for the AWS account.
      * </p>
      * <p>
      * Constraints:
@@ -65,9 +60,8 @@ public class CreateSnapshotCopyGrantRequest extends
     private String snapshotCopyGrantName;
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) to which to grant
-     * Amazon Redshift permission. If no key is specified, the default key is
-     * used.
+     * The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is
+     * specified, the default key is used.
      * </p>
      */
     private String kmsKeyId;
@@ -80,8 +74,7 @@ public class CreateSnapshotCopyGrantRequest extends
 
     /**
      * <p>
-     * The name of the snapshot copy grant. This name must be unique in the
-     * region for the AWS account.
+     * The name of the snapshot copy grant. This name must be unique in the region for the AWS account.
      * </p>
      * <p>
      * Constraints:
@@ -115,8 +108,7 @@ public class CreateSnapshotCopyGrantRequest extends
      * </ul>
      * 
      * @param snapshotCopyGrantName
-     *        The name of the snapshot copy grant. This name must be unique in
-     *        the region for the AWS account.</p>
+     *        The name of the snapshot copy grant. This name must be unique in the region for the AWS account.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -154,8 +146,7 @@ public class CreateSnapshotCopyGrantRequest extends
 
     /**
      * <p>
-     * The name of the snapshot copy grant. This name must be unique in the
-     * region for the AWS account.
+     * The name of the snapshot copy grant. This name must be unique in the region for the AWS account.
      * </p>
      * <p>
      * Constraints:
@@ -188,8 +179,7 @@ public class CreateSnapshotCopyGrantRequest extends
      * </li>
      * </ul>
      * 
-     * @return The name of the snapshot copy grant. This name must be unique in
-     *         the region for the AWS account.</p>
+     * @return The name of the snapshot copy grant. This name must be unique in the region for the AWS account.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -227,8 +217,7 @@ public class CreateSnapshotCopyGrantRequest extends
 
     /**
      * <p>
-     * The name of the snapshot copy grant. This name must be unique in the
-     * region for the AWS account.
+     * The name of the snapshot copy grant. This name must be unique in the region for the AWS account.
      * </p>
      * <p>
      * Constraints:
@@ -262,8 +251,7 @@ public class CreateSnapshotCopyGrantRequest extends
      * </ul>
      * 
      * @param snapshotCopyGrantName
-     *        The name of the snapshot copy grant. This name must be unique in
-     *        the region for the AWS account.</p>
+     *        The name of the snapshot copy grant. This name must be unique in the region for the AWS account.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -293,27 +281,23 @@ public class CreateSnapshotCopyGrantRequest extends
      *        Must be unique for all clusters within an AWS account.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateSnapshotCopyGrantRequest withSnapshotCopyGrantName(
-            String snapshotCopyGrantName) {
+    public CreateSnapshotCopyGrantRequest withSnapshotCopyGrantName(String snapshotCopyGrantName) {
         setSnapshotCopyGrantName(snapshotCopyGrantName);
         return this;
     }
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) to which to grant
-     * Amazon Redshift permission. If no key is specified, the default key is
-     * used.
+     * The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is
+     * specified, the default key is used.
      * </p>
      * 
      * @param kmsKeyId
-     *        The unique identifier of the customer master key (CMK) to which to
-     *        grant Amazon Redshift permission. If no key is specified, the
-     *        default key is used.
+     *        The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no
+     *        key is specified, the default key is used.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -322,14 +306,12 @@ public class CreateSnapshotCopyGrantRequest extends
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) to which to grant
-     * Amazon Redshift permission. If no key is specified, the default key is
-     * used.
+     * The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is
+     * specified, the default key is used.
      * </p>
      * 
-     * @return The unique identifier of the customer master key (CMK) to which
-     *         to grant Amazon Redshift permission. If no key is specified, the
-     *         default key is used.
+     * @return The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If
+     *         no key is specified, the default key is used.
      */
 
     public String getKmsKeyId() {
@@ -338,17 +320,14 @@ public class CreateSnapshotCopyGrantRequest extends
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) to which to grant
-     * Amazon Redshift permission. If no key is specified, the default key is
-     * used.
+     * The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is
+     * specified, the default key is used.
      * </p>
      * 
      * @param kmsKeyId
-     *        The unique identifier of the customer master key (CMK) to which to
-     *        grant Amazon Redshift permission. If no key is specified, the
-     *        default key is used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no
+     *        key is specified, the default key is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateSnapshotCopyGrantRequest withKmsKeyId(String kmsKeyId) {
@@ -394,16 +373,14 @@ public class CreateSnapshotCopyGrantRequest extends
      * A list of tag instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        A list of tag instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateSnapshotCopyGrantRequest withTags(Tag... tags) {
@@ -423,19 +400,16 @@ public class CreateSnapshotCopyGrantRequest extends
      * 
      * @param tags
      *        A list of tag instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateSnapshotCopyGrantRequest withTags(
-            java.util.Collection<Tag> tags) {
+    public CreateSnapshotCopyGrantRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -446,8 +420,7 @@ public class CreateSnapshotCopyGrantRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotCopyGrantName() != null)
-            sb.append("SnapshotCopyGrantName: " + getSnapshotCopyGrantName()
-                    + ",");
+            sb.append("SnapshotCopyGrantName: " + getSnapshotCopyGrantName() + ",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: " + getKmsKeyId() + ",");
         if (getTags() != null)
@@ -466,22 +439,17 @@ public class CreateSnapshotCopyGrantRequest extends
         if (obj instanceof CreateSnapshotCopyGrantRequest == false)
             return false;
         CreateSnapshotCopyGrantRequest other = (CreateSnapshotCopyGrantRequest) obj;
-        if (other.getSnapshotCopyGrantName() == null
-                ^ this.getSnapshotCopyGrantName() == null)
+        if (other.getSnapshotCopyGrantName() == null ^ this.getSnapshotCopyGrantName() == null)
             return false;
-        if (other.getSnapshotCopyGrantName() != null
-                && other.getSnapshotCopyGrantName().equals(
-                        this.getSnapshotCopyGrantName()) == false)
+        if (other.getSnapshotCopyGrantName() != null && other.getSnapshotCopyGrantName().equals(this.getSnapshotCopyGrantName()) == false)
             return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
-        if (other.getKmsKeyId() != null
-                && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -491,14 +459,9 @@ public class CreateSnapshotCopyGrantRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotCopyGrantName() == null) ? 0
-                        : getSnapshotCopyGrantName().hashCode());
-        hashCode = prime * hashCode
-                + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotCopyGrantName() == null) ? 0 : getSnapshotCopyGrantName().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

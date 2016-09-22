@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.ImportImageRequestMarshaller;
  * Contains the parameters for ImportImage.
  * </p>
  */
-public class ImportImageRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<ImportImageRequest> {
+public class ImportImageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ImportImageRequest> {
 
     /**
      * <p>
@@ -41,14 +38,12 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<ImageDiskContainer> diskContainers;
     /**
      * <p>
-     * The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.
+     * The license type to be used for the Amazon Machine Image (AMI) after importing.
      * </p>
      * <p>
-     * <b>Note:</b> You may only use BYOL if you have existing licenses with
-     * rights to use these licenses in a third party cloud like AWS. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
+     * party cloud like AWS. For more information, see <a
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
@@ -134,8 +129,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * 
      * @param description
      *        A description string for the import image task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageRequest withDescription(String description) {
@@ -167,15 +161,13 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *        Information about the disk containers.
      */
 
-    public void setDiskContainers(
-            java.util.Collection<ImageDiskContainer> diskContainers) {
+    public void setDiskContainers(java.util.Collection<ImageDiskContainer> diskContainers) {
         if (diskContainers == null) {
             this.diskContainers = null;
             return;
         }
 
-        this.diskContainers = new com.amazonaws.internal.SdkInternalList<ImageDiskContainer>(
-                diskContainers);
+        this.diskContainers = new com.amazonaws.internal.SdkInternalList<ImageDiskContainer>(diskContainers);
     }
 
     /**
@@ -183,23 +175,19 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * Information about the disk containers.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDiskContainers(java.util.Collection)} or
-     * {@link #withDiskContainers(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDiskContainers(java.util.Collection)} or {@link #withDiskContainers(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param diskContainers
      *        Information about the disk containers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportImageRequest withDiskContainers(
-            ImageDiskContainer... diskContainers) {
+    public ImportImageRequest withDiskContainers(ImageDiskContainer... diskContainers) {
         if (this.diskContainers == null) {
-            setDiskContainers(new com.amazonaws.internal.SdkInternalList<ImageDiskContainer>(
-                    diskContainers.length));
+            setDiskContainers(new com.amazonaws.internal.SdkInternalList<ImageDiskContainer>(diskContainers.length));
         }
         for (ImageDiskContainer ele : diskContainers) {
             this.diskContainers.add(ele);
@@ -214,26 +202,22 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * 
      * @param diskContainers
      *        Information about the disk containers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportImageRequest withDiskContainers(
-            java.util.Collection<ImageDiskContainer> diskContainers) {
+    public ImportImageRequest withDiskContainers(java.util.Collection<ImageDiskContainer> diskContainers) {
         setDiskContainers(diskContainers);
         return this;
     }
 
     /**
      * <p>
-     * The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.
+     * The license type to be used for the Amazon Machine Image (AMI) after importing.
      * </p>
      * <p>
-     * <b>Note:</b> You may only use BYOL if you have existing licenses with
-     * rights to use these licenses in a third party cloud like AWS. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
+     * party cloud like AWS. For more information, see <a
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
@@ -241,12 +225,10 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param licenseType
-     *        The license type to be used for the Amazon Machine Image (AMI)
-     *        after importing.</p>
+     *        The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
      *        <p>
-     *        <b>Note:</b> You may only use BYOL if you have existing licenses
-     *        with rights to use these licenses in a third party cloud like AWS.
-     *        For more information, see <a href=
+     *        <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a
+     *        third party cloud like AWS. For more information, see <a href=
      *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      *        >Prerequisites</a> in the VM Import/Export User Guide.
      *        </p>
@@ -260,26 +242,22 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.
+     * The license type to be used for the Amazon Machine Image (AMI) after importing.
      * </p>
      * <p>
-     * <b>Note:</b> You may only use BYOL if you have existing licenses with
-     * rights to use these licenses in a third party cloud like AWS. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
+     * party cloud like AWS. For more information, see <a
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
      * Valid values: <code>AWS</code> | <code>BYOL</code>
      * </p>
      * 
-     * @return The license type to be used for the Amazon Machine Image (AMI)
-     *         after importing.</p>
+     * @return The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
      *         <p>
-     *         <b>Note:</b> You may only use BYOL if you have existing licenses
-     *         with rights to use these licenses in a third party cloud like
-     *         AWS. For more information, see <a href=
+     *         <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a
+     *         third party cloud like AWS. For more information, see <a href=
      *         "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      *         >Prerequisites</a> in the VM Import/Export User Guide.
      *         </p>
@@ -293,14 +271,12 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.
+     * The license type to be used for the Amazon Machine Image (AMI) after importing.
      * </p>
      * <p>
-     * <b>Note:</b> You may only use BYOL if you have existing licenses with
-     * rights to use these licenses in a third party cloud like AWS. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
+     * party cloud like AWS. For more information, see <a
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
@@ -308,19 +284,16 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param licenseType
-     *        The license type to be used for the Amazon Machine Image (AMI)
-     *        after importing.</p>
+     *        The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
      *        <p>
-     *        <b>Note:</b> You may only use BYOL if you have existing licenses
-     *        with rights to use these licenses in a third party cloud like AWS.
-     *        For more information, see <a href=
+     *        <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a
+     *        third party cloud like AWS. For more information, see <a href=
      *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      *        >Prerequisites</a> in the VM Import/Export User Guide.
      *        </p>
      *        <p>
      *        Valid values: <code>AWS</code> | <code>BYOL</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageRequest withLicenseType(String licenseType) {
@@ -375,8 +348,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *        The target hypervisor platform.</p>
      *        <p>
      *        Valid values: <code>xen</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageRequest withHypervisor(String hypervisor) {
@@ -431,8 +403,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *        The architecture of the virtual machine.</p>
      *        <p>
      *        Valid values: <code>i386</code> | <code>x86_64</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageRequest withArchitecture(String architecture) {
@@ -487,8 +458,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *        The operating system of the virtual machine.</p>
      *        <p>
      *        Valid values: <code>Windows</code> | <code>Linux</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageRequest withPlatform(String platform) {
@@ -528,8 +498,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * 
      * @param clientData
      *        The client-specific data.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageRequest withClientData(ClientData clientData) {
@@ -569,8 +538,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * 
      * @param clientToken
      *        The token to enable idempotency for VM import requests.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageRequest withClientToken(String clientToken) {
@@ -584,8 +552,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param roleName
-     *        The name of the role to use when not using the default role,
-     *        'vmimport'.
+     *        The name of the role to use when not using the default role, 'vmimport'.
      */
 
     public void setRoleName(String roleName) {
@@ -597,8 +564,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * The name of the role to use when not using the default role, 'vmimport'.
      * </p>
      * 
-     * @return The name of the role to use when not using the default role,
-     *         'vmimport'.
+     * @return The name of the role to use when not using the default role, 'vmimport'.
      */
 
     public String getRoleName() {
@@ -611,10 +577,8 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param roleName
-     *        The name of the role to use when not using the default role,
-     *        'vmimport'.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the role to use when not using the default role, 'vmimport'.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageRequest withRoleName(String roleName) {
@@ -623,21 +587,18 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<ImportImageRequest> getDryRunRequest() {
-        Request<ImportImageRequest> request = new ImportImageRequestMarshaller()
-                .marshall(this);
+        Request<ImportImageRequest> request = new ImportImageRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -681,49 +642,39 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
         ImportImageRequest other = (ImportImageRequest) obj;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getDiskContainers() == null
-                ^ this.getDiskContainers() == null)
+        if (other.getDiskContainers() == null ^ this.getDiskContainers() == null)
             return false;
-        if (other.getDiskContainers() != null
-                && other.getDiskContainers().equals(this.getDiskContainers()) == false)
+        if (other.getDiskContainers() != null && other.getDiskContainers().equals(this.getDiskContainers()) == false)
             return false;
         if (other.getLicenseType() == null ^ this.getLicenseType() == null)
             return false;
-        if (other.getLicenseType() != null
-                && other.getLicenseType().equals(this.getLicenseType()) == false)
+        if (other.getLicenseType() != null && other.getLicenseType().equals(this.getLicenseType()) == false)
             return false;
         if (other.getHypervisor() == null ^ this.getHypervisor() == null)
             return false;
-        if (other.getHypervisor() != null
-                && other.getHypervisor().equals(this.getHypervisor()) == false)
+        if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false)
             return false;
         if (other.getArchitecture() == null ^ this.getArchitecture() == null)
             return false;
-        if (other.getArchitecture() != null
-                && other.getArchitecture().equals(this.getArchitecture()) == false)
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
             return false;
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
-        if (other.getPlatform() != null
-                && other.getPlatform().equals(this.getPlatform()) == false)
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
         if (other.getClientData() == null ^ this.getClientData() == null)
             return false;
-        if (other.getClientData() != null
-                && other.getClientData().equals(this.getClientData()) == false)
+        if (other.getClientData() != null && other.getClientData().equals(this.getClientData()) == false)
             return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getClientToken() != null
-                && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getRoleName() == null ^ this.getRoleName() == null)
             return false;
-        if (other.getRoleName() != null
-                && other.getRoleName().equals(this.getRoleName()) == false)
+        if (other.getRoleName() != null && other.getRoleName().equals(this.getRoleName()) == false)
             return false;
         return true;
     }
@@ -733,31 +684,15 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDiskContainers() == null) ? 0 : getDiskContainers()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
-        hashCode = prime * hashCode
-                + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getArchitecture() == null) ? 0 : getArchitecture()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
-        hashCode = prime * hashCode
-                + ((getClientData() == null) ? 0 : getClientData().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDiskContainers() == null) ? 0 : getDiskContainers().hashCode());
+        hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
+        hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getClientData() == null) ? 0 : getClientData().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
         return hashCode;
     }
 

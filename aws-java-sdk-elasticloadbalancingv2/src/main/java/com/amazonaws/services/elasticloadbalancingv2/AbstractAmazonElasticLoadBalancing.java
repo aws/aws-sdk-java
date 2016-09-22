@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2;
 
@@ -18,12 +16,10 @@ import com.amazonaws.services.elasticloadbalancingv2.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AmazonElasticLoadBalancing}. Convenient
- * method forms pass through to the corresponding overload that takes a request
- * object, which throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonElasticLoadBalancing}. Convenient method forms pass through to the
+ * corresponding overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
-public class AbstractAmazonElasticLoadBalancing implements
-        AmazonElasticLoadBalancing {
+public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBalancing {
 
     protected AbstractAmazonElasticLoadBalancing() {
     }
@@ -49,8 +45,7 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public CreateLoadBalancerResult createLoadBalancer(
-            CreateLoadBalancerRequest request) {
+    public CreateLoadBalancerResult createLoadBalancer(CreateLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -60,8 +55,7 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public CreateTargetGroupResult createTargetGroup(
-            CreateTargetGroupRequest request) {
+    public CreateTargetGroupResult createTargetGroup(CreateTargetGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,8 +65,7 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public DeleteLoadBalancerResult deleteLoadBalancer(
-            DeleteLoadBalancerRequest request) {
+    public DeleteLoadBalancerResult deleteLoadBalancer(DeleteLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,32 +75,27 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public DeleteTargetGroupResult deleteTargetGroup(
-            DeleteTargetGroupRequest request) {
+    public DeleteTargetGroupResult deleteTargetGroup(DeleteTargetGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeregisterTargetsResult deregisterTargets(
-            DeregisterTargetsRequest request) {
+    public DeregisterTargetsResult deregisterTargets(DeregisterTargetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeListenersResult describeListeners(
-            DescribeListenersRequest request) {
+    public DescribeListenersResult describeListeners(DescribeListenersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeLoadBalancerAttributesResult describeLoadBalancerAttributes(
-            DescribeLoadBalancerAttributesRequest request) {
+    public DescribeLoadBalancerAttributesResult describeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeLoadBalancersResult describeLoadBalancers(
-            DescribeLoadBalancersRequest request) {
+    public DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -117,8 +105,7 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public DescribeSSLPoliciesResult describeSSLPolicies(
-            DescribeSSLPoliciesRequest request) {
+    public DescribeSSLPoliciesResult describeSSLPolicies(DescribeSSLPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -128,20 +115,17 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public DescribeTargetGroupAttributesResult describeTargetGroupAttributes(
-            DescribeTargetGroupAttributesRequest request) {
+    public DescribeTargetGroupAttributesResult describeTargetGroupAttributes(DescribeTargetGroupAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeTargetGroupsResult describeTargetGroups(
-            DescribeTargetGroupsRequest request) {
+    public DescribeTargetGroupsResult describeTargetGroups(DescribeTargetGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeTargetHealthResult describeTargetHealth(
-            DescribeTargetHealthRequest request) {
+    public DescribeTargetHealthResult describeTargetHealth(DescribeTargetHealthRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -151,8 +135,7 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public ModifyLoadBalancerAttributesResult modifyLoadBalancerAttributes(
-            ModifyLoadBalancerAttributesRequest request) {
+    public ModifyLoadBalancerAttributesResult modifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -162,14 +145,12 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public ModifyTargetGroupResult modifyTargetGroup(
-            ModifyTargetGroupRequest request) {
+    public ModifyTargetGroupResult modifyTargetGroup(ModifyTargetGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ModifyTargetGroupAttributesResult modifyTargetGroupAttributes(
-            ModifyTargetGroupAttributesRequest request) {
+    public ModifyTargetGroupAttributesResult modifyTargetGroupAttributes(ModifyTargetGroupAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -184,14 +165,12 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public SetRulePrioritiesResult setRulePriorities(
-            SetRulePrioritiesRequest request) {
+    public SetRulePrioritiesResult setRulePriorities(SetRulePrioritiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetSecurityGroupsResult setSecurityGroups(
-            SetSecurityGroupsRequest request) {
+    public SetSecurityGroupsResult setSecurityGroups(SetSecurityGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -206,8 +185,7 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

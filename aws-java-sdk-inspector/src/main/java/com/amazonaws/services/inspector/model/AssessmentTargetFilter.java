@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -25,9 +23,8 @@ public class AssessmentTargetFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, an explicit value or a string that
-     * contains a wildcard that is specified for this data type property must
-     * match the value of the <b>assessmentTargetName</b> property of the
+     * For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this
+     * data type property must match the value of the <b>assessmentTargetName</b> property of the
      * <a>AssessmentTarget</a> data type.
      * </p>
      */
@@ -35,36 +32,31 @@ public class AssessmentTargetFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, an explicit value or a string that
-     * contains a wildcard that is specified for this data type property must
-     * match the value of the <b>assessmentTargetName</b> property of the
+     * For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this
+     * data type property must match the value of the <b>assessmentTargetName</b> property of the
      * <a>AssessmentTarget</a> data type.
      * </p>
      * 
      * @param assessmentTargetNamePattern
-     *        For a record to match a filter, an explicit value or a string that
-     *        contains a wildcard that is specified for this data type property
-     *        must match the value of the <b>assessmentTargetName</b> property
-     *        of the <a>AssessmentTarget</a> data type.
+     *        For a record to match a filter, an explicit value or a string that contains a wildcard that is specified
+     *        for this data type property must match the value of the <b>assessmentTargetName</b> property of the
+     *        <a>AssessmentTarget</a> data type.
      */
 
-    public void setAssessmentTargetNamePattern(
-            String assessmentTargetNamePattern) {
+    public void setAssessmentTargetNamePattern(String assessmentTargetNamePattern) {
         this.assessmentTargetNamePattern = assessmentTargetNamePattern;
     }
 
     /**
      * <p>
-     * For a record to match a filter, an explicit value or a string that
-     * contains a wildcard that is specified for this data type property must
-     * match the value of the <b>assessmentTargetName</b> property of the
+     * For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this
+     * data type property must match the value of the <b>assessmentTargetName</b> property of the
      * <a>AssessmentTarget</a> data type.
      * </p>
      * 
-     * @return For a record to match a filter, an explicit value or a string
-     *         that contains a wildcard that is specified for this data type
-     *         property must match the value of the <b>assessmentTargetName</b>
-     *         property of the <a>AssessmentTarget</a> data type.
+     * @return For a record to match a filter, an explicit value or a string that contains a wildcard that is specified
+     *         for this data type property must match the value of the <b>assessmentTargetName</b> property of the
+     *         <a>AssessmentTarget</a> data type.
      */
 
     public String getAssessmentTargetNamePattern() {
@@ -73,30 +65,25 @@ public class AssessmentTargetFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, an explicit value or a string that
-     * contains a wildcard that is specified for this data type property must
-     * match the value of the <b>assessmentTargetName</b> property of the
+     * For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this
+     * data type property must match the value of the <b>assessmentTargetName</b> property of the
      * <a>AssessmentTarget</a> data type.
      * </p>
      * 
      * @param assessmentTargetNamePattern
-     *        For a record to match a filter, an explicit value or a string that
-     *        contains a wildcard that is specified for this data type property
-     *        must match the value of the <b>assessmentTargetName</b> property
-     *        of the <a>AssessmentTarget</a> data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For a record to match a filter, an explicit value or a string that contains a wildcard that is specified
+     *        for this data type property must match the value of the <b>assessmentTargetName</b> property of the
+     *        <a>AssessmentTarget</a> data type.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssessmentTargetFilter withAssessmentTargetNamePattern(
-            String assessmentTargetNamePattern) {
+    public AssessmentTargetFilter withAssessmentTargetNamePattern(String assessmentTargetNamePattern) {
         setAssessmentTargetNamePattern(assessmentTargetNamePattern);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -107,8 +94,7 @@ public class AssessmentTargetFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTargetNamePattern() != null)
-            sb.append("AssessmentTargetNamePattern: "
-                    + getAssessmentTargetNamePattern());
+            sb.append("AssessmentTargetNamePattern: " + getAssessmentTargetNamePattern());
         sb.append("}");
         return sb.toString();
     }
@@ -123,12 +109,9 @@ public class AssessmentTargetFilter implements Serializable, Cloneable {
         if (obj instanceof AssessmentTargetFilter == false)
             return false;
         AssessmentTargetFilter other = (AssessmentTargetFilter) obj;
-        if (other.getAssessmentTargetNamePattern() == null
-                ^ this.getAssessmentTargetNamePattern() == null)
+        if (other.getAssessmentTargetNamePattern() == null ^ this.getAssessmentTargetNamePattern() == null)
             return false;
-        if (other.getAssessmentTargetNamePattern() != null
-                && other.getAssessmentTargetNamePattern().equals(
-                        this.getAssessmentTargetNamePattern()) == false)
+        if (other.getAssessmentTargetNamePattern() != null && other.getAssessmentTargetNamePattern().equals(this.getAssessmentTargetNamePattern()) == false)
             return false;
         return true;
     }
@@ -138,10 +121,7 @@ public class AssessmentTargetFilter implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAssessmentTargetNamePattern() == null) ? 0
-                        : getAssessmentTargetNamePattern().hashCode());
+        hashCode = prime * hashCode + ((getAssessmentTargetNamePattern() == null) ? 0 : getAssessmentTargetNamePattern().hashCode());
         return hashCode;
     }
 
@@ -150,9 +130,7 @@ public class AssessmentTargetFilter implements Serializable, Cloneable {
         try {
             return (AssessmentTargetFilter) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

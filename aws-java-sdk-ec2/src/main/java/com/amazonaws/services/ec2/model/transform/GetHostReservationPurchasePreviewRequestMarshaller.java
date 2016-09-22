@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,16 +29,13 @@ import com.amazonaws.util.IdempotentUtils;
  * GetHostReservationPurchasePreviewRequest Marshaller
  */
 
-public class GetHostReservationPurchasePreviewRequestMarshaller
-        implements
+public class GetHostReservationPurchasePreviewRequestMarshaller implements
         Marshaller<Request<GetHostReservationPurchasePreviewRequest>, GetHostReservationPurchasePreviewRequest> {
 
-    public Request<GetHostReservationPurchasePreviewRequest> marshall(
-            GetHostReservationPurchasePreviewRequest getHostReservationPurchasePreviewRequest) {
+    public Request<GetHostReservationPurchasePreviewRequest> marshall(GetHostReservationPurchasePreviewRequest getHostReservationPurchasePreviewRequest) {
 
         if (getHostReservationPurchasePreviewRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<GetHostReservationPurchasePreviewRequest> request = new DefaultRequest<GetHostReservationPurchasePreviewRequest>(
@@ -50,9 +45,7 @@ public class GetHostReservationPurchasePreviewRequestMarshaller
         request.setHttpMethod(HttpMethodName.POST);
 
         if (getHostReservationPurchasePreviewRequest.getOfferingId() != null) {
-            request.addParameter("OfferingId", StringUtils
-                    .fromString(getHostReservationPurchasePreviewRequest
-                            .getOfferingId()));
+            request.addParameter("OfferingId", StringUtils.fromString(getHostReservationPurchasePreviewRequest.getOfferingId()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> hostIdSetList = (com.amazonaws.internal.SdkInternalList<String>) getHostReservationPurchasePreviewRequest
@@ -62,8 +55,7 @@ public class GetHostReservationPurchasePreviewRequestMarshaller
 
             for (String hostIdSetListValue : hostIdSetList) {
                 if (hostIdSetListValue != null) {
-                    request.addParameter("HostIdSet." + hostIdSetListIndex,
-                            StringUtils.fromString(hostIdSetListValue));
+                    request.addParameter("HostIdSet." + hostIdSetListIndex, StringUtils.fromString(hostIdSetListValue));
                 }
                 hostIdSetListIndex++;
             }

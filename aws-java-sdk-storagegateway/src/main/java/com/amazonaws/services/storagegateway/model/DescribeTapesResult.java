@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * DescribeTapesOutput
  * </p>
  */
-public class DescribeTapesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeTapesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,12 +29,11 @@ public class DescribeTapesResult extends
     private com.amazonaws.internal.SdkInternalList<Tape> tapes;
     /**
      * <p>
-     * An opaque string which can be used as part of a subsequent DescribeTapes
-     * call to retrieve the next page of results.
+     * An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page of
+     * results.
      * </p>
      * <p>
-     * If a response does not contain a marker, then there are no more results
-     * to be retrieved.
+     * If a response does not contain a marker, then there are no more results to be retrieved.
      * </p>
      */
     private String marker;
@@ -81,22 +76,19 @@ public class DescribeTapesResult extends
      * An array of virtual tape descriptions.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTapes(java.util.Collection)} or
-     * {@link #withTapes(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTapes(java.util.Collection)} or {@link #withTapes(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tapes
      *        An array of virtual tape descriptions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTapesResult withTapes(Tape... tapes) {
         if (this.tapes == null) {
-            setTapes(new com.amazonaws.internal.SdkInternalList<Tape>(
-                    tapes.length));
+            setTapes(new com.amazonaws.internal.SdkInternalList<Tape>(tapes.length));
         }
         for (Tape ele : tapes) {
             this.tapes.add(ele);
@@ -111,8 +103,7 @@ public class DescribeTapesResult extends
      * 
      * @param tapes
      *        An array of virtual tape descriptions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTapesResult withTapes(java.util.Collection<Tape> tapes) {
@@ -122,20 +113,18 @@ public class DescribeTapesResult extends
 
     /**
      * <p>
-     * An opaque string which can be used as part of a subsequent DescribeTapes
-     * call to retrieve the next page of results.
+     * An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page of
+     * results.
      * </p>
      * <p>
-     * If a response does not contain a marker, then there are no more results
-     * to be retrieved.
+     * If a response does not contain a marker, then there are no more results to be retrieved.
      * </p>
      * 
      * @param marker
-     *        An opaque string which can be used as part of a subsequent
-     *        DescribeTapes call to retrieve the next page of results.</p>
+     *        An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page of
+     *        results.</p>
      *        <p>
-     *        If a response does not contain a marker, then there are no more
-     *        results to be retrieved.
+     *        If a response does not contain a marker, then there are no more results to be retrieved.
      */
 
     public void setMarker(String marker) {
@@ -144,19 +133,17 @@ public class DescribeTapesResult extends
 
     /**
      * <p>
-     * An opaque string which can be used as part of a subsequent DescribeTapes
-     * call to retrieve the next page of results.
+     * An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page of
+     * results.
      * </p>
      * <p>
-     * If a response does not contain a marker, then there are no more results
-     * to be retrieved.
+     * If a response does not contain a marker, then there are no more results to be retrieved.
      * </p>
      * 
-     * @return An opaque string which can be used as part of a subsequent
-     *         DescribeTapes call to retrieve the next page of results.</p>
+     * @return An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page
+     *         of results.</p>
      *         <p>
-     *         If a response does not contain a marker, then there are no more
-     *         results to be retrieved.
+     *         If a response does not contain a marker, then there are no more results to be retrieved.
      */
 
     public String getMarker() {
@@ -165,22 +152,19 @@ public class DescribeTapesResult extends
 
     /**
      * <p>
-     * An opaque string which can be used as part of a subsequent DescribeTapes
-     * call to retrieve the next page of results.
+     * An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page of
+     * results.
      * </p>
      * <p>
-     * If a response does not contain a marker, then there are no more results
-     * to be retrieved.
+     * If a response does not contain a marker, then there are no more results to be retrieved.
      * </p>
      * 
      * @param marker
-     *        An opaque string which can be used as part of a subsequent
-     *        DescribeTapes call to retrieve the next page of results.</p>
+     *        An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page of
+     *        results.</p>
      *        <p>
-     *        If a response does not contain a marker, then there are no more
-     *        results to be retrieved.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If a response does not contain a marker, then there are no more results to be retrieved.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTapesResult withMarker(String marker) {
@@ -189,8 +173,7 @@ public class DescribeTapesResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -220,13 +203,11 @@ public class DescribeTapesResult extends
         DescribeTapesResult other = (DescribeTapesResult) obj;
         if (other.getTapes() == null ^ this.getTapes() == null)
             return false;
-        if (other.getTapes() != null
-                && other.getTapes().equals(this.getTapes()) == false)
+        if (other.getTapes() != null && other.getTapes().equals(this.getTapes()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -236,10 +217,8 @@ public class DescribeTapesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTapes() == null) ? 0 : getTapes().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getTapes() == null) ? 0 : getTapes().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -248,9 +227,7 @@ public class DescribeTapesResult extends
         try {
             return (DescribeTapesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

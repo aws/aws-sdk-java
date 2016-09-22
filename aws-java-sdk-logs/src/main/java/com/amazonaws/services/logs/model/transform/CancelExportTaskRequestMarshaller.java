@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model.transform;
 
@@ -35,26 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * CancelExportTaskRequest Marshaller
  */
-public class CancelExportTaskRequestMarshaller implements
-        Marshaller<Request<CancelExportTaskRequest>, CancelExportTaskRequest> {
+public class CancelExportTaskRequestMarshaller implements Marshaller<Request<CancelExportTaskRequest>, CancelExportTaskRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public CancelExportTaskRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public CancelExportTaskRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<CancelExportTaskRequest> marshall(
-            CancelExportTaskRequest cancelExportTaskRequest) {
+    public Request<CancelExportTaskRequest> marshall(CancelExportTaskRequest cancelExportTaskRequest) {
 
         if (cancelExportTaskRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CancelExportTaskRequest> request = new DefaultRequest<CancelExportTaskRequest>(
-                cancelExportTaskRequest, "AWSLogs");
+        Request<CancelExportTaskRequest> request = new DefaultRequest<CancelExportTaskRequest>(cancelExportTaskRequest, "AWSLogs");
         request.addHeader("X-Amz-Target", "Logs_20140328.CancelExportTask");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -62,26 +55,22 @@ public class CancelExportTaskRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (cancelExportTaskRequest.getTaskId() != null) {
-                jsonGenerator.writeFieldName("taskId").writeValue(
-                        cancelExportTaskRequest.getTaskId());
+                jsonGenerator.writeFieldName("taskId").writeValue(cancelExportTaskRequest.getTaskId());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

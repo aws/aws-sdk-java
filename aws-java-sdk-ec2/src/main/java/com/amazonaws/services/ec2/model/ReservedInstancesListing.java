@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -55,8 +53,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * The reason for the current status of the Reserved Instance listing. The
-     * response can be blank.
+     * The reason for the current status of the Reserved Instance listing. The response can be blank.
      * </p>
      */
     private String statusMessage;
@@ -80,10 +77,10 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      */
     private String clientToken;
@@ -120,12 +117,10 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @param reservedInstancesListingId
      *        The ID of the Reserved Instance listing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedInstancesListing withReservedInstancesListingId(
-            String reservedInstancesListingId) {
+    public ReservedInstancesListing withReservedInstancesListingId(String reservedInstancesListingId) {
         setReservedInstancesListingId(reservedInstancesListingId);
         return this;
     }
@@ -162,12 +157,10 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @param reservedInstancesId
      *        The ID of the Reserved Instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedInstancesListing withReservedInstancesId(
-            String reservedInstancesId) {
+    public ReservedInstancesListing withReservedInstancesId(String reservedInstancesId) {
         setReservedInstancesId(reservedInstancesId);
         return this;
     }
@@ -204,8 +197,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @param createDate
      *        The time the listing was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstancesListing withCreateDate(java.util.Date createDate) {
@@ -245,8 +237,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @param updateDate
      *        The last modified timestamp of the listing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstancesListing withUpdateDate(java.util.Date updateDate) {
@@ -288,8 +279,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the Reserved Instance listing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ListingStatus
      */
 
@@ -319,8 +309,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the Reserved Instance listing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ListingStatus
      */
 
@@ -331,13 +320,11 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason for the current status of the Reserved Instance listing. The
-     * response can be blank.
+     * The reason for the current status of the Reserved Instance listing. The response can be blank.
      * </p>
      * 
      * @param statusMessage
-     *        The reason for the current status of the Reserved Instance
-     *        listing. The response can be blank.
+     *        The reason for the current status of the Reserved Instance listing. The response can be blank.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -346,12 +333,10 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason for the current status of the Reserved Instance listing. The
-     * response can be blank.
+     * The reason for the current status of the Reserved Instance listing. The response can be blank.
      * </p>
      * 
-     * @return The reason for the current status of the Reserved Instance
-     *         listing. The response can be blank.
+     * @return The reason for the current status of the Reserved Instance listing. The response can be blank.
      */
 
     public String getStatusMessage() {
@@ -360,15 +345,12 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason for the current status of the Reserved Instance listing. The
-     * response can be blank.
+     * The reason for the current status of the Reserved Instance listing. The response can be blank.
      * </p>
      * 
      * @param statusMessage
-     *        The reason for the current status of the Reserved Instance
-     *        listing. The response can be blank.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The reason for the current status of the Reserved Instance listing. The response can be blank.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstancesListing withStatusMessage(String statusMessage) {
@@ -400,15 +382,13 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      *        The number of instances in this state.
      */
 
-    public void setInstanceCounts(
-            java.util.Collection<InstanceCount> instanceCounts) {
+    public void setInstanceCounts(java.util.Collection<InstanceCount> instanceCounts) {
         if (instanceCounts == null) {
             this.instanceCounts = null;
             return;
         }
 
-        this.instanceCounts = new com.amazonaws.internal.SdkInternalList<InstanceCount>(
-                instanceCounts);
+        this.instanceCounts = new com.amazonaws.internal.SdkInternalList<InstanceCount>(instanceCounts);
     }
 
     /**
@@ -416,23 +396,19 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * The number of instances in this state.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstanceCounts(java.util.Collection)} or
-     * {@link #withInstanceCounts(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceCounts(java.util.Collection)} or {@link #withInstanceCounts(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param instanceCounts
      *        The number of instances in this state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedInstancesListing withInstanceCounts(
-            InstanceCount... instanceCounts) {
+    public ReservedInstancesListing withInstanceCounts(InstanceCount... instanceCounts) {
         if (this.instanceCounts == null) {
-            setInstanceCounts(new com.amazonaws.internal.SdkInternalList<InstanceCount>(
-                    instanceCounts.length));
+            setInstanceCounts(new com.amazonaws.internal.SdkInternalList<InstanceCount>(instanceCounts.length));
         }
         for (InstanceCount ele : instanceCounts) {
             this.instanceCounts.add(ele);
@@ -447,12 +423,10 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @param instanceCounts
      *        The number of instances in this state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedInstancesListing withInstanceCounts(
-            java.util.Collection<InstanceCount> instanceCounts) {
+    public ReservedInstancesListing withInstanceCounts(java.util.Collection<InstanceCount> instanceCounts) {
         setInstanceCounts(instanceCounts);
         return this;
     }
@@ -481,15 +455,13 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      *        The price of the Reserved Instance listing.
      */
 
-    public void setPriceSchedules(
-            java.util.Collection<PriceSchedule> priceSchedules) {
+    public void setPriceSchedules(java.util.Collection<PriceSchedule> priceSchedules) {
         if (priceSchedules == null) {
             this.priceSchedules = null;
             return;
         }
 
-        this.priceSchedules = new com.amazonaws.internal.SdkInternalList<PriceSchedule>(
-                priceSchedules);
+        this.priceSchedules = new com.amazonaws.internal.SdkInternalList<PriceSchedule>(priceSchedules);
     }
 
     /**
@@ -497,23 +469,19 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * The price of the Reserved Instance listing.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPriceSchedules(java.util.Collection)} or
-     * {@link #withPriceSchedules(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPriceSchedules(java.util.Collection)} or {@link #withPriceSchedules(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param priceSchedules
      *        The price of the Reserved Instance listing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedInstancesListing withPriceSchedules(
-            PriceSchedule... priceSchedules) {
+    public ReservedInstancesListing withPriceSchedules(PriceSchedule... priceSchedules) {
         if (this.priceSchedules == null) {
-            setPriceSchedules(new com.amazonaws.internal.SdkInternalList<PriceSchedule>(
-                    priceSchedules.length));
+            setPriceSchedules(new com.amazonaws.internal.SdkInternalList<PriceSchedule>(priceSchedules.length));
         }
         for (PriceSchedule ele : priceSchedules) {
             this.priceSchedules.add(ele);
@@ -528,12 +496,10 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @param priceSchedules
      *        The price of the Reserved Instance listing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedInstancesListing withPriceSchedules(
-            java.util.Collection<PriceSchedule> priceSchedules) {
+    public ReservedInstancesListing withPriceSchedules(java.util.Collection<PriceSchedule> priceSchedules) {
         setPriceSchedules(priceSchedules);
         return this;
     }
@@ -576,16 +542,14 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * Any tags assigned to the resource.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        Any tags assigned to the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstancesListing withTags(Tag... tags) {
@@ -605,8 +569,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @param tags
      *        Any tags assigned to the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstancesListing withTags(java.util.Collection<Tag> tags) {
@@ -616,17 +579,17 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive key supplied by the client to ensure that
-     *        the request is idempotent. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *        >Ensuring Idempotency</a>.
+     *        A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -635,17 +598,16 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
-     * @return A unique, case-sensitive key supplied by the client to ensure
-     *         that the request is idempotent. For more information, see <a
-     *         href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *         >Ensuring Idempotency</a>.
+     * @return A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.
      */
 
     public String getClientToken() {
@@ -654,19 +616,18 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive key supplied by the client to ensure that
-     *        the request is idempotent. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *        >Ensuring Idempotency</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstancesListing withClientToken(String clientToken) {
@@ -675,8 +636,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -687,8 +647,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesListingId() != null)
-            sb.append("ReservedInstancesListingId: "
-                    + getReservedInstancesListingId() + ",");
+            sb.append("ReservedInstancesListingId: " + getReservedInstancesListingId() + ",");
         if (getReservedInstancesId() != null)
             sb.append("ReservedInstancesId: " + getReservedInstancesId() + ",");
         if (getCreateDate() != null)
@@ -721,61 +680,45 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
         if (obj instanceof ReservedInstancesListing == false)
             return false;
         ReservedInstancesListing other = (ReservedInstancesListing) obj;
-        if (other.getReservedInstancesListingId() == null
-                ^ this.getReservedInstancesListingId() == null)
+        if (other.getReservedInstancesListingId() == null ^ this.getReservedInstancesListingId() == null)
             return false;
-        if (other.getReservedInstancesListingId() != null
-                && other.getReservedInstancesListingId().equals(
-                        this.getReservedInstancesListingId()) == false)
+        if (other.getReservedInstancesListingId() != null && other.getReservedInstancesListingId().equals(this.getReservedInstancesListingId()) == false)
             return false;
-        if (other.getReservedInstancesId() == null
-                ^ this.getReservedInstancesId() == null)
+        if (other.getReservedInstancesId() == null ^ this.getReservedInstancesId() == null)
             return false;
-        if (other.getReservedInstancesId() != null
-                && other.getReservedInstancesId().equals(
-                        this.getReservedInstancesId()) == false)
+        if (other.getReservedInstancesId() != null && other.getReservedInstancesId().equals(this.getReservedInstancesId()) == false)
             return false;
         if (other.getCreateDate() == null ^ this.getCreateDate() == null)
             return false;
-        if (other.getCreateDate() != null
-                && other.getCreateDate().equals(this.getCreateDate()) == false)
+        if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false)
             return false;
         if (other.getUpdateDate() == null ^ this.getUpdateDate() == null)
             return false;
-        if (other.getUpdateDate() != null
-                && other.getUpdateDate().equals(this.getUpdateDate()) == false)
+        if (other.getUpdateDate() != null && other.getUpdateDate().equals(this.getUpdateDate()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
-        if (other.getStatusMessage() != null
-                && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
-        if (other.getInstanceCounts() == null
-                ^ this.getInstanceCounts() == null)
+        if (other.getInstanceCounts() == null ^ this.getInstanceCounts() == null)
             return false;
-        if (other.getInstanceCounts() != null
-                && other.getInstanceCounts().equals(this.getInstanceCounts()) == false)
+        if (other.getInstanceCounts() != null && other.getInstanceCounts().equals(this.getInstanceCounts()) == false)
             return false;
-        if (other.getPriceSchedules() == null
-                ^ this.getPriceSchedules() == null)
+        if (other.getPriceSchedules() == null ^ this.getPriceSchedules() == null)
             return false;
-        if (other.getPriceSchedules() != null
-                && other.getPriceSchedules().equals(this.getPriceSchedules()) == false)
+        if (other.getPriceSchedules() != null && other.getPriceSchedules().equals(this.getPriceSchedules()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getClientToken() != null
-                && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -785,37 +728,16 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReservedInstancesListingId() == null) ? 0
-                        : getReservedInstancesListingId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReservedInstancesId() == null) ? 0
-                        : getReservedInstancesId().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getUpdateDate() == null) ? 0 : getUpdateDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStatusMessage() == null) ? 0 : getStatusMessage()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceCounts() == null) ? 0 : getInstanceCounts()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPriceSchedules() == null) ? 0 : getPriceSchedules()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesListingId() == null) ? 0 : getReservedInstancesListingId().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesId() == null) ? 0 : getReservedInstancesId().hashCode());
+        hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
+        hashCode = prime * hashCode + ((getUpdateDate() == null) ? 0 : getUpdateDate().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getInstanceCounts() == null) ? 0 : getInstanceCounts().hashCode());
+        hashCode = prime * hashCode + ((getPriceSchedules() == null) ? 0 : getPriceSchedules().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 
@@ -824,9 +746,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
         try {
             return (ReservedInstancesListing) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

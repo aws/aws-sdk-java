@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudtrail.model;
 
@@ -22,13 +20,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Specifies a list of trail tags to return.
  * </p>
  */
-public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:
+     * Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a trail
+     * ARN is:
      * </p>
      * <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
@@ -44,15 +41,15 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:
+     * Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a trail
+     * ARN is:
      * </p>
      * <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
-     * @return Specifies a list of trail ARNs whose tags will be listed. The
-     *         list has a limit of 20 ARNs. The format of a trail ARN is:</p>
+     * @return Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of
+     *         a trail ARN is:</p>
      *         <p>
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      */
@@ -66,16 +63,16 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:
+     * Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a trail
+     * ARN is:
      * </p>
      * <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param resourceIdList
-     *        Specifies a list of trail ARNs whose tags will be listed. The list
-     *        has a limit of 20 ARNs. The format of a trail ARN is:</p>
+     *        Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a
+     *        trail ARN is:</p>
      *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      */
@@ -86,38 +83,34 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
             return;
         }
 
-        this.resourceIdList = new com.amazonaws.internal.SdkInternalList<String>(
-                resourceIdList);
+        this.resourceIdList = new com.amazonaws.internal.SdkInternalList<String>(resourceIdList);
     }
 
     /**
      * <p>
-     * Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:
+     * Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a trail
+     * ARN is:
      * </p>
      * <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setResourceIdList(java.util.Collection)} or
-     * {@link #withResourceIdList(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceIdList(java.util.Collection)} or {@link #withResourceIdList(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param resourceIdList
-     *        Specifies a list of trail ARNs whose tags will be listed. The list
-     *        has a limit of 20 ARNs. The format of a trail ARN is:</p>
+     *        Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a
+     *        trail ARN is:</p>
      *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsRequest withResourceIdList(String... resourceIdList) {
         if (this.resourceIdList == null) {
-            setResourceIdList(new com.amazonaws.internal.SdkInternalList<String>(
-                    resourceIdList.length));
+            setResourceIdList(new com.amazonaws.internal.SdkInternalList<String>(resourceIdList.length));
         }
         for (String ele : resourceIdList) {
             this.resourceIdList.add(ele);
@@ -127,24 +120,22 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is:
+     * Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a trail
+     * ARN is:
      * </p>
      * <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param resourceIdList
-     *        Specifies a list of trail ARNs whose tags will be listed. The list
-     *        has a limit of 20 ARNs. The format of a trail ARN is:</p>
+     *        Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a
+     *        trail ARN is:</p>
      *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListTagsRequest withResourceIdList(
-            java.util.Collection<String> resourceIdList) {
+    public ListTagsRequest withResourceIdList(java.util.Collection<String> resourceIdList) {
         setResourceIdList(resourceIdList);
         return this;
     }
@@ -181,8 +172,7 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param nextToken
      *        Reserved for future use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsRequest withNextToken(String nextToken) {
@@ -191,8 +181,7 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -220,16 +209,13 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof ListTagsRequest == false)
             return false;
         ListTagsRequest other = (ListTagsRequest) obj;
-        if (other.getResourceIdList() == null
-                ^ this.getResourceIdList() == null)
+        if (other.getResourceIdList() == null ^ this.getResourceIdList() == null)
             return false;
-        if (other.getResourceIdList() != null
-                && other.getResourceIdList().equals(this.getResourceIdList()) == false)
+        if (other.getResourceIdList() != null && other.getResourceIdList().equals(this.getResourceIdList()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -239,12 +225,8 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceIdList() == null) ? 0 : getResourceIdList()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getResourceIdList() == null) ? 0 : getResourceIdList().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model;
 
@@ -19,33 +17,26 @@ import java.io.Serializable;
 /**
  * 
  */
-public class UpdateSizeConstraintSetResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class UpdateSizeConstraintSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>ChangeToken</code> that you used to submit the
-     * <code>UpdateSizeConstraintSet</code> request. You can also use this value
-     * to query the status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.
+     * The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can
+     * also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.
      * </p>
      */
     private String changeToken;
 
     /**
      * <p>
-     * The <code>ChangeToken</code> that you used to submit the
-     * <code>UpdateSizeConstraintSet</code> request. You can also use this value
-     * to query the status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.
+     * The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can
+     * also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.
      * </p>
      * 
      * @param changeToken
-     *        The <code>ChangeToken</code> that you used to submit the
-     *        <code>UpdateSizeConstraintSet</code> request. You can also use
-     *        this value to query the status of the request. For more
-     *        information, see <a>GetChangeTokenStatus</a>.
+     *        The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You
+     *        can also use this value to query the status of the request. For more information, see
+     *        <a>GetChangeTokenStatus</a>.
      */
 
     public void setChangeToken(String changeToken) {
@@ -54,16 +45,13 @@ public class UpdateSizeConstraintSetResult extends
 
     /**
      * <p>
-     * The <code>ChangeToken</code> that you used to submit the
-     * <code>UpdateSizeConstraintSet</code> request. You can also use this value
-     * to query the status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.
+     * The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can
+     * also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.
      * </p>
      * 
-     * @return The <code>ChangeToken</code> that you used to submit the
-     *         <code>UpdateSizeConstraintSet</code> request. You can also use
-     *         this value to query the status of the request. For more
-     *         information, see <a>GetChangeTokenStatus</a>.
+     * @return The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request.
+     *         You can also use this value to query the status of the request. For more information, see
+     *         <a>GetChangeTokenStatus</a>.
      */
 
     public String getChangeToken() {
@@ -72,19 +60,15 @@ public class UpdateSizeConstraintSetResult extends
 
     /**
      * <p>
-     * The <code>ChangeToken</code> that you used to submit the
-     * <code>UpdateSizeConstraintSet</code> request. You can also use this value
-     * to query the status of the request. For more information, see
-     * <a>GetChangeTokenStatus</a>.
+     * The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can
+     * also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.
      * </p>
      * 
      * @param changeToken
-     *        The <code>ChangeToken</code> that you used to submit the
-     *        <code>UpdateSizeConstraintSet</code> request. You can also use
-     *        this value to query the status of the request. For more
-     *        information, see <a>GetChangeTokenStatus</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You
+     *        can also use this value to query the status of the request. For more information, see
+     *        <a>GetChangeTokenStatus</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateSizeConstraintSetResult withChangeToken(String changeToken) {
@@ -93,8 +77,7 @@ public class UpdateSizeConstraintSetResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -122,8 +105,7 @@ public class UpdateSizeConstraintSetResult extends
         UpdateSizeConstraintSetResult other = (UpdateSizeConstraintSetResult) obj;
         if (other.getChangeToken() == null ^ this.getChangeToken() == null)
             return false;
-        if (other.getChangeToken() != null
-                && other.getChangeToken().equals(this.getChangeToken()) == false)
+        if (other.getChangeToken() != null && other.getChangeToken().equals(this.getChangeToken()) == false)
             return false;
         return true;
     }
@@ -133,9 +115,7 @@ public class UpdateSizeConstraintSetResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getChangeToken() == null) ? 0 : getChangeToken().hashCode());
+        hashCode = prime * hashCode + ((getChangeToken() == null) ? 0 : getChangeToken().hashCode());
         return hashCode;
     }
 
@@ -144,9 +124,7 @@ public class UpdateSizeConstraintSetResult extends
         try {
             return (UpdateSizeConstraintSetResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

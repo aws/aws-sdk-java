@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DisableVpcClassicLinkRequestMa
  * Contains the parameters for DisableVpcClassicLink.
  * </p>
  */
-public class DisableVpcClassicLinkRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class DisableVpcClassicLinkRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DisableVpcClassicLinkRequest> {
 
     /**
@@ -67,8 +64,7 @@ public class DisableVpcClassicLinkRequest extends AmazonWebServiceRequest
      * 
      * @param vpcId
      *        The ID of the VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisableVpcClassicLinkRequest withVpcId(String vpcId) {
@@ -77,21 +73,18 @@ public class DisableVpcClassicLinkRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DisableVpcClassicLinkRequest> getDryRunRequest() {
-        Request<DisableVpcClassicLinkRequest> request = new DisableVpcClassicLinkRequestMarshaller()
-                .marshall(this);
+        Request<DisableVpcClassicLinkRequest> request = new DisableVpcClassicLinkRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -119,8 +112,7 @@ public class DisableVpcClassicLinkRequest extends AmazonWebServiceRequest
         DisableVpcClassicLinkRequest other = (DisableVpcClassicLinkRequest) obj;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         return true;
     }
@@ -130,8 +122,7 @@ public class DisableVpcClassicLinkRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the
- * <a>DescribeReservedDBInstances</a> and
+ * This data type is used as a response element in the <a>DescribeReservedDBInstances</a> and
  * <a>PurchaseReservedDBInstancesOffering</a> actions.
  * </p>
  */
@@ -148,12 +145,10 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param reservedDBInstanceId
      *        The unique identifier for the reservation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedDBInstance withReservedDBInstanceId(
-            String reservedDBInstanceId) {
+    public ReservedDBInstance withReservedDBInstanceId(String reservedDBInstanceId) {
         setReservedDBInstanceId(reservedDBInstanceId);
         return this;
     }
@@ -167,8 +162,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      *        The offering identifier.
      */
 
-    public void setReservedDBInstancesOfferingId(
-            String reservedDBInstancesOfferingId) {
+    public void setReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
     }
 
@@ -191,12 +185,10 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param reservedDBInstancesOfferingId
      *        The offering identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedDBInstance withReservedDBInstancesOfferingId(
-            String reservedDBInstancesOfferingId) {
+    public ReservedDBInstance withReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
         setReservedDBInstancesOfferingId(reservedDBInstancesOfferingId);
         return this;
     }
@@ -233,8 +225,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param dBInstanceClass
      *        The DB instance class for the reserved DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedDBInstance withDBInstanceClass(String dBInstanceClass) {
@@ -274,8 +265,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param startTime
      *        The time the reservation started.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedDBInstance withStartTime(java.util.Date startTime) {
@@ -315,8 +305,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param duration
      *        The duration of the reservation in seconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedDBInstance withDuration(Integer duration) {
@@ -356,8 +345,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param fixedPrice
      *        The fixed price charged for this reserved DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedDBInstance withFixedPrice(Double fixedPrice) {
@@ -397,8 +385,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param usagePrice
      *        The hourly price charged for this reserved DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedDBInstance withUsagePrice(Double usagePrice) {
@@ -438,8 +425,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param currencyCode
      *        The currency code for the reserved DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedDBInstance withCurrencyCode(String currencyCode) {
@@ -479,8 +465,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param dBInstanceCount
      *        The number of reserved DB instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedDBInstance withDBInstanceCount(Integer dBInstanceCount) {
@@ -520,8 +505,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param productDescription
      *        The description of the reserved DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedDBInstance withProductDescription(String productDescription) {
@@ -561,8 +545,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param offeringType
      *        The offering type of this reserved DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedDBInstance withOfferingType(String offeringType) {
@@ -602,8 +585,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param multiAZ
      *        Indicates if the reservation applies to Multi-AZ deployments.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedDBInstance withMultiAZ(Boolean multiAZ) {
@@ -655,8 +637,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the reserved DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedDBInstance withState(String state) {
@@ -688,15 +669,13 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      *        The recurring price charged to run this reserved DB instance.
      */
 
-    public void setRecurringCharges(
-            java.util.Collection<RecurringCharge> recurringCharges) {
+    public void setRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         if (recurringCharges == null) {
             this.recurringCharges = null;
             return;
         }
 
-        this.recurringCharges = new com.amazonaws.internal.SdkInternalList<RecurringCharge>(
-                recurringCharges);
+        this.recurringCharges = new com.amazonaws.internal.SdkInternalList<RecurringCharge>(recurringCharges);
     }
 
     /**
@@ -704,23 +683,19 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * The recurring price charged to run this reserved DB instance.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRecurringCharges(java.util.Collection)} or
-     * {@link #withRecurringCharges(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRecurringCharges(java.util.Collection)} or {@link #withRecurringCharges(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param recurringCharges
      *        The recurring price charged to run this reserved DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedDBInstance withRecurringCharges(
-            RecurringCharge... recurringCharges) {
+    public ReservedDBInstance withRecurringCharges(RecurringCharge... recurringCharges) {
         if (this.recurringCharges == null) {
-            setRecurringCharges(new com.amazonaws.internal.SdkInternalList<RecurringCharge>(
-                    recurringCharges.length));
+            setRecurringCharges(new com.amazonaws.internal.SdkInternalList<RecurringCharge>(recurringCharges.length));
         }
         for (RecurringCharge ele : recurringCharges) {
             this.recurringCharges.add(ele);
@@ -735,12 +710,10 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param recurringCharges
      *        The recurring price charged to run this reserved DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedDBInstance withRecurringCharges(
-            java.util.Collection<RecurringCharge> recurringCharges) {
+    public ReservedDBInstance withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         setRecurringCharges(recurringCharges);
         return this;
     }
@@ -777,19 +750,16 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * 
      * @param reservedDBInstanceArn
      *        The Amazon Resource Name (ARN) for the reserved DB instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedDBInstance withReservedDBInstanceArn(
-            String reservedDBInstanceArn) {
+    public ReservedDBInstance withReservedDBInstanceArn(String reservedDBInstanceArn) {
         setReservedDBInstanceArn(reservedDBInstanceArn);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -800,11 +770,9 @@ public class ReservedDBInstance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedDBInstanceId() != null)
-            sb.append("ReservedDBInstanceId: " + getReservedDBInstanceId()
-                    + ",");
+            sb.append("ReservedDBInstanceId: " + getReservedDBInstanceId() + ",");
         if (getReservedDBInstancesOfferingId() != null)
-            sb.append("ReservedDBInstancesOfferingId: "
-                    + getReservedDBInstancesOfferingId() + ",");
+            sb.append("ReservedDBInstancesOfferingId: " + getReservedDBInstancesOfferingId() + ",");
         if (getDBInstanceClass() != null)
             sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
         if (getStartTime() != null)
@@ -845,92 +813,66 @@ public class ReservedDBInstance implements Serializable, Cloneable {
         if (obj instanceof ReservedDBInstance == false)
             return false;
         ReservedDBInstance other = (ReservedDBInstance) obj;
-        if (other.getReservedDBInstanceId() == null
-                ^ this.getReservedDBInstanceId() == null)
+        if (other.getReservedDBInstanceId() == null ^ this.getReservedDBInstanceId() == null)
             return false;
-        if (other.getReservedDBInstanceId() != null
-                && other.getReservedDBInstanceId().equals(
-                        this.getReservedDBInstanceId()) == false)
+        if (other.getReservedDBInstanceId() != null && other.getReservedDBInstanceId().equals(this.getReservedDBInstanceId()) == false)
             return false;
-        if (other.getReservedDBInstancesOfferingId() == null
-                ^ this.getReservedDBInstancesOfferingId() == null)
+        if (other.getReservedDBInstancesOfferingId() == null ^ this.getReservedDBInstancesOfferingId() == null)
             return false;
         if (other.getReservedDBInstancesOfferingId() != null
-                && other.getReservedDBInstancesOfferingId().equals(
-                        this.getReservedDBInstancesOfferingId()) == false)
+                && other.getReservedDBInstancesOfferingId().equals(this.getReservedDBInstancesOfferingId()) == false)
             return false;
-        if (other.getDBInstanceClass() == null
-                ^ this.getDBInstanceClass() == null)
+        if (other.getDBInstanceClass() == null ^ this.getDBInstanceClass() == null)
             return false;
-        if (other.getDBInstanceClass() != null
-                && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false)
+        if (other.getDBInstanceClass() != null && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
-        if (other.getStartTime() != null
-                && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         if (other.getDuration() == null ^ this.getDuration() == null)
             return false;
-        if (other.getDuration() != null
-                && other.getDuration().equals(this.getDuration()) == false)
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
             return false;
         if (other.getFixedPrice() == null ^ this.getFixedPrice() == null)
             return false;
-        if (other.getFixedPrice() != null
-                && other.getFixedPrice().equals(this.getFixedPrice()) == false)
+        if (other.getFixedPrice() != null && other.getFixedPrice().equals(this.getFixedPrice()) == false)
             return false;
         if (other.getUsagePrice() == null ^ this.getUsagePrice() == null)
             return false;
-        if (other.getUsagePrice() != null
-                && other.getUsagePrice().equals(this.getUsagePrice()) == false)
+        if (other.getUsagePrice() != null && other.getUsagePrice().equals(this.getUsagePrice()) == false)
             return false;
         if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
             return false;
-        if (other.getCurrencyCode() != null
-                && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
+        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
             return false;
-        if (other.getDBInstanceCount() == null
-                ^ this.getDBInstanceCount() == null)
+        if (other.getDBInstanceCount() == null ^ this.getDBInstanceCount() == null)
             return false;
-        if (other.getDBInstanceCount() != null
-                && other.getDBInstanceCount().equals(this.getDBInstanceCount()) == false)
+        if (other.getDBInstanceCount() != null && other.getDBInstanceCount().equals(this.getDBInstanceCount()) == false)
             return false;
-        if (other.getProductDescription() == null
-                ^ this.getProductDescription() == null)
+        if (other.getProductDescription() == null ^ this.getProductDescription() == null)
             return false;
-        if (other.getProductDescription() != null
-                && other.getProductDescription().equals(
-                        this.getProductDescription()) == false)
+        if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false)
             return false;
         if (other.getOfferingType() == null ^ this.getOfferingType() == null)
             return false;
-        if (other.getOfferingType() != null
-                && other.getOfferingType().equals(this.getOfferingType()) == false)
+        if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false)
             return false;
         if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
             return false;
-        if (other.getMultiAZ() != null
-                && other.getMultiAZ().equals(this.getMultiAZ()) == false)
+        if (other.getMultiAZ() != null && other.getMultiAZ().equals(this.getMultiAZ()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
-        if (other.getRecurringCharges() == null
-                ^ this.getRecurringCharges() == null)
+        if (other.getRecurringCharges() == null ^ this.getRecurringCharges() == null)
             return false;
-        if (other.getRecurringCharges() != null
-                && other.getRecurringCharges().equals(
-                        this.getRecurringCharges()) == false)
+        if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false)
             return false;
-        if (other.getReservedDBInstanceArn() == null
-                ^ this.getReservedDBInstanceArn() == null)
+        if (other.getReservedDBInstanceArn() == null ^ this.getReservedDBInstanceArn() == null)
             return false;
-        if (other.getReservedDBInstanceArn() != null
-                && other.getReservedDBInstanceArn().equals(
-                        this.getReservedDBInstanceArn()) == false)
+        if (other.getReservedDBInstanceArn() != null && other.getReservedDBInstanceArn().equals(this.getReservedDBInstanceArn()) == false)
             return false;
         return true;
     }
@@ -940,54 +882,21 @@ public class ReservedDBInstance implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReservedDBInstanceId() == null) ? 0
-                        : getReservedDBInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReservedDBInstancesOfferingId() == null) ? 0
-                        : getReservedDBInstancesOfferingId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getDuration() == null) ? 0 : getDuration().hashCode());
-        hashCode = prime * hashCode
-                + ((getFixedPrice() == null) ? 0 : getFixedPrice().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCurrencyCode() == null) ? 0 : getCurrencyCode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBInstanceCount() == null) ? 0 : getDBInstanceCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProductDescription() == null) ? 0
-                        : getProductDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOfferingType() == null) ? 0 : getOfferingType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRecurringCharges() == null) ? 0 : getRecurringCharges()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReservedDBInstanceArn() == null) ? 0
-                        : getReservedDBInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getReservedDBInstanceId() == null) ? 0 : getReservedDBInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getReservedDBInstancesOfferingId() == null) ? 0 : getReservedDBInstancesOfferingId().hashCode());
+        hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
+        hashCode = prime * hashCode + ((getFixedPrice() == null) ? 0 : getFixedPrice().hashCode());
+        hashCode = prime * hashCode + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode());
+        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
+        hashCode = prime * hashCode + ((getDBInstanceCount() == null) ? 0 : getDBInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode());
+        hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode());
+        hashCode = prime * hashCode + ((getReservedDBInstanceArn() == null) ? 0 : getReservedDBInstanceArn().hashCode());
         return hashCode;
     }
 
@@ -996,9 +905,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
         try {
             return (ReservedDBInstance) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

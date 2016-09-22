@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * AddAttributesToFindingsResult JSON Unmarshaller
  */
-public class AddAttributesToFindingsResultJsonUnmarshaller implements
-        Unmarshaller<AddAttributesToFindingsResult, JsonUnmarshallerContext> {
+public class AddAttributesToFindingsResultJsonUnmarshaller implements Unmarshaller<AddAttributesToFindingsResult, JsonUnmarshallerContext> {
 
-    public AddAttributesToFindingsResult unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public AddAttributesToFindingsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         AddAttributesToFindingsResult addAttributesToFindingsResult = new AddAttributesToFindingsResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,16 +49,11 @@ public class AddAttributesToFindingsResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("failedItems", targetDepth)) {
                     context.nextToken();
-                    addAttributesToFindingsResult
-                            .setFailedItems(new MapUnmarshaller<String, FailedItemDetails>(
-                                    context.getUnmarshaller(String.class),
-                                    FailedItemDetailsJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    addAttributesToFindingsResult.setFailedItems(new MapUnmarshaller<String, FailedItemDetails>(context.getUnmarshaller(String.class),
+                            FailedItemDetailsJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

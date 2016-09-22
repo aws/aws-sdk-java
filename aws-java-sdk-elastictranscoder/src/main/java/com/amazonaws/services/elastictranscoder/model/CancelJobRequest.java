@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
 
@@ -22,17 +20,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The <code>CancelJobRequest</code> structure.
  * </p>
  */
-public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The identifier of the job that you want to cancel.
      * </p>
      * <p>
-     * To get a list of the jobs (including their <code>jobId</code>) that have
-     * a status of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API
-     * action.
+     * To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use
+     * the <a>ListJobsByStatus</a> API action.
      * </p>
      */
     private String id;
@@ -42,17 +38,15 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * The identifier of the job that you want to cancel.
      * </p>
      * <p>
-     * To get a list of the jobs (including their <code>jobId</code>) that have
-     * a status of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API
-     * action.
+     * To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use
+     * the <a>ListJobsByStatus</a> API action.
      * </p>
      * 
      * @param id
      *        The identifier of the job that you want to cancel. </p>
      *        <p>
-     *        To get a list of the jobs (including their <code>jobId</code>)
-     *        that have a status of <code>Submitted</code>, use the
-     *        <a>ListJobsByStatus</a> API action.
+     *        To get a list of the jobs (including their <code>jobId</code>) that have a status of
+     *        <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
      */
 
     public void setId(String id) {
@@ -64,16 +58,14 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * The identifier of the job that you want to cancel.
      * </p>
      * <p>
-     * To get a list of the jobs (including their <code>jobId</code>) that have
-     * a status of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API
-     * action.
+     * To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use
+     * the <a>ListJobsByStatus</a> API action.
      * </p>
      * 
      * @return The identifier of the job that you want to cancel. </p>
      *         <p>
-     *         To get a list of the jobs (including their <code>jobId</code>)
-     *         that have a status of <code>Submitted</code>, use the
-     *         <a>ListJobsByStatus</a> API action.
+     *         To get a list of the jobs (including their <code>jobId</code>) that have a status of
+     *         <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
      */
 
     public String getId() {
@@ -85,19 +77,16 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * The identifier of the job that you want to cancel.
      * </p>
      * <p>
-     * To get a list of the jobs (including their <code>jobId</code>) that have
-     * a status of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API
-     * action.
+     * To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use
+     * the <a>ListJobsByStatus</a> API action.
      * </p>
      * 
      * @param id
      *        The identifier of the job that you want to cancel. </p>
      *        <p>
-     *        To get a list of the jobs (including their <code>jobId</code>)
-     *        that have a status of <code>Submitted</code>, use the
-     *        <a>ListJobsByStatus</a> API action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        To get a list of the jobs (including their <code>jobId</code>) that have a status of
+     *        <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CancelJobRequest withId(String id) {
@@ -106,8 +95,7 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -135,8 +123,7 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest
         CancelJobRequest other = (CancelJobRequest) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         return true;
     }
@@ -146,8 +133,7 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         return hashCode;
     }
 

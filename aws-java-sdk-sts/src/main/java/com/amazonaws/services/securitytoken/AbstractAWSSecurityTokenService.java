@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.securitytoken;
 
@@ -18,9 +16,8 @@ import com.amazonaws.services.securitytoken.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AWSSecurityTokenService}. Convenient method
- * forms pass through to the corresponding overload that takes a request object,
- * which throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AWSSecurityTokenService}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAWSSecurityTokenService implements AWSSecurityTokenService {
 
@@ -43,32 +40,27 @@ public class AbstractAWSSecurityTokenService implements AWSSecurityTokenService 
     }
 
     @Override
-    public AssumeRoleWithSAMLResult assumeRoleWithSAML(
-            AssumeRoleWithSAMLRequest request) {
+    public AssumeRoleWithSAMLResult assumeRoleWithSAML(AssumeRoleWithSAMLRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public AssumeRoleWithWebIdentityResult assumeRoleWithWebIdentity(
-            AssumeRoleWithWebIdentityRequest request) {
+    public AssumeRoleWithWebIdentityResult assumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DecodeAuthorizationMessageResult decodeAuthorizationMessage(
-            DecodeAuthorizationMessageRequest request) {
+    public DecodeAuthorizationMessageResult decodeAuthorizationMessage(DecodeAuthorizationMessageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetCallerIdentityResult getCallerIdentity(
-            GetCallerIdentityRequest request) {
+    public GetCallerIdentityResult getCallerIdentity(GetCallerIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetFederationTokenResult getFederationToken(
-            GetFederationTokenRequest request) {
+    public GetFederationTokenResult getFederationToken(GetFederationTokenRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,8 +80,7 @@ public class AbstractAWSSecurityTokenService implements AWSSecurityTokenService 
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

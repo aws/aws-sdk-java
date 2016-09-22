@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ScheduledInstanceAvailability StAX Unmarshaller
  */
-public class ScheduledInstanceAvailabilityStaxUnmarshaller implements
-        Unmarshaller<ScheduledInstanceAvailability, StaxUnmarshallerContext> {
+public class ScheduledInstanceAvailabilityStaxUnmarshaller implements Unmarshaller<ScheduledInstanceAvailability, StaxUnmarshallerContext> {
 
-    public ScheduledInstanceAvailability unmarshall(
-            StaxUnmarshallerContext context) throws Exception {
+    public ScheduledInstanceAvailability unmarshall(StaxUnmarshallerContext context) throws Exception {
         ScheduledInstanceAvailability scheduledInstanceAvailability = new ScheduledInstanceAvailability();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,97 +46,67 @@ public class ScheduledInstanceAvailabilityStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("instanceType", targetDepth)) {
-                    scheduledInstanceAvailability
-                            .setInstanceType(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduledInstanceAvailability.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("platform", targetDepth)) {
-                    scheduledInstanceAvailability
-                            .setPlatform(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    scheduledInstanceAvailability.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("networkPlatform", targetDepth)) {
-                    scheduledInstanceAvailability
-                            .setNetworkPlatform(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduledInstanceAvailability.setNetworkPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("availabilityZone", targetDepth)) {
-                    scheduledInstanceAvailability
-                            .setAvailabilityZone(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduledInstanceAvailability.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("purchaseToken", targetDepth)) {
-                    scheduledInstanceAvailability
-                            .setPurchaseToken(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduledInstanceAvailability.setPurchaseToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("slotDurationInHours", targetDepth)) {
-                    scheduledInstanceAvailability
-                            .setSlotDurationInHours(IntegerStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduledInstanceAvailability.setSlotDurationInHours(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("recurrence", targetDepth)) {
-                    scheduledInstanceAvailability
-                            .setRecurrence(ScheduledInstanceRecurrenceStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduledInstanceAvailability.setRecurrence(ScheduledInstanceRecurrenceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("firstSlotStartTime", targetDepth)) {
-                    scheduledInstanceAvailability
-                            .setFirstSlotStartTime(DateStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduledInstanceAvailability.setFirstSlotStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("hourlyPrice", targetDepth)) {
-                    scheduledInstanceAvailability
-                            .setHourlyPrice(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduledInstanceAvailability.setHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("totalScheduledInstanceHours",
-                        targetDepth)) {
-                    scheduledInstanceAvailability
-                            .setTotalScheduledInstanceHours(IntegerStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("totalScheduledInstanceHours", targetDepth)) {
+                    scheduledInstanceAvailability.setTotalScheduledInstanceHours(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("availableInstanceCount",
-                        targetDepth)) {
-                    scheduledInstanceAvailability
-                            .setAvailableInstanceCount(IntegerStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("availableInstanceCount", targetDepth)) {
+                    scheduledInstanceAvailability.setAvailableInstanceCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("minTermDurationInDays", targetDepth)) {
-                    scheduledInstanceAvailability
-                            .setMinTermDurationInDays(IntegerStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("minTermDurationInDays", targetDepth)) {
+                    scheduledInstanceAvailability.setMinTermDurationInDays(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("maxTermDurationInDays", targetDepth)) {
-                    scheduledInstanceAvailability
-                            .setMaxTermDurationInDays(IntegerStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("maxTermDurationInDays", targetDepth)) {
+                    scheduledInstanceAvailability.setMaxTermDurationInDays(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
@@ -52,8 +50,7 @@ public class CustomHeaders implements Serializable, Cloneable {
      * 
      * @param quantity
      *        The number of custom headers for this origin.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CustomHeaders withQuantity(Integer quantity) {
@@ -87,29 +84,25 @@ public class CustomHeaders implements Serializable, Cloneable {
             return;
         }
 
-        this.items = new com.amazonaws.internal.SdkInternalList<OriginCustomHeader>(
-                items);
+        this.items = new com.amazonaws.internal.SdkInternalList<OriginCustomHeader>(items);
     }
 
     /**
      * A complex type that contains the custom headers for this Origin.
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setItems(java.util.Collection)} or
-     * {@link #withItems(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param items
      *        A complex type that contains the custom headers for this Origin.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CustomHeaders withItems(OriginCustomHeader... items) {
         if (this.items == null) {
-            setItems(new com.amazonaws.internal.SdkInternalList<OriginCustomHeader>(
-                    items.length));
+            setItems(new com.amazonaws.internal.SdkInternalList<OriginCustomHeader>(items.length));
         }
         for (OriginCustomHeader ele : items) {
             this.items.add(ele);
@@ -122,19 +115,16 @@ public class CustomHeaders implements Serializable, Cloneable {
      * 
      * @param items
      *        A complex type that contains the custom headers for this Origin.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CustomHeaders withItems(
-            java.util.Collection<OriginCustomHeader> items) {
+    public CustomHeaders withItems(java.util.Collection<OriginCustomHeader> items) {
         setItems(items);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -164,13 +154,11 @@ public class CustomHeaders implements Serializable, Cloneable {
         CustomHeaders other = (CustomHeaders) obj;
         if (other.getQuantity() == null ^ this.getQuantity() == null)
             return false;
-        if (other.getQuantity() != null
-                && other.getQuantity().equals(this.getQuantity()) == false)
+        if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false)
             return false;
         if (other.getItems() == null ^ this.getItems() == null)
             return false;
-        if (other.getItems() != null
-                && other.getItems().equals(this.getItems()) == false)
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false)
             return false;
         return true;
     }
@@ -180,10 +168,8 @@ public class CustomHeaders implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
-        hashCode = prime * hashCode
-                + ((getItems() == null) ? 0 : getItems().hashCode());
+        hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());
         return hashCode;
     }
 
@@ -192,9 +178,7 @@ public class CustomHeaders implements Serializable, Cloneable {
         try {
             return (CustomHeaders) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

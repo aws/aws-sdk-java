@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.snowball.model;
 
@@ -19,14 +17,11 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetSnowballUsageResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetSnowballUsageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The service limit for number of Snowballs this account can have at once.
-     * The default service limit is 1 (one).
+     * The service limit for number of Snowballs this account can have at once. The default service limit is 1 (one).
      * </p>
      */
     private Integer snowballLimit;
@@ -39,13 +34,12 @@ public class GetSnowballUsageResult extends
 
     /**
      * <p>
-     * The service limit for number of Snowballs this account can have at once.
-     * The default service limit is 1 (one).
+     * The service limit for number of Snowballs this account can have at once. The default service limit is 1 (one).
      * </p>
      * 
      * @param snowballLimit
-     *        The service limit for number of Snowballs this account can have at
-     *        once. The default service limit is 1 (one).
+     *        The service limit for number of Snowballs this account can have at once. The default service limit is 1
+     *        (one).
      */
 
     public void setSnowballLimit(Integer snowballLimit) {
@@ -54,12 +48,11 @@ public class GetSnowballUsageResult extends
 
     /**
      * <p>
-     * The service limit for number of Snowballs this account can have at once.
-     * The default service limit is 1 (one).
+     * The service limit for number of Snowballs this account can have at once. The default service limit is 1 (one).
      * </p>
      * 
-     * @return The service limit for number of Snowballs this account can have
-     *         at once. The default service limit is 1 (one).
+     * @return The service limit for number of Snowballs this account can have at once. The default service limit is 1
+     *         (one).
      */
 
     public Integer getSnowballLimit() {
@@ -68,15 +61,13 @@ public class GetSnowballUsageResult extends
 
     /**
      * <p>
-     * The service limit for number of Snowballs this account can have at once.
-     * The default service limit is 1 (one).
+     * The service limit for number of Snowballs this account can have at once. The default service limit is 1 (one).
      * </p>
      * 
      * @param snowballLimit
-     *        The service limit for number of Snowballs this account can have at
-     *        once. The default service limit is 1 (one).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The service limit for number of Snowballs this account can have at once. The default service limit is 1
+     *        (one).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetSnowballUsageResult withSnowballLimit(Integer snowballLimit) {
@@ -116,8 +107,7 @@ public class GetSnowballUsageResult extends
      * 
      * @param snowballsInUse
      *        The number of Snowballs that this account is currently using.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetSnowballUsageResult withSnowballsInUse(Integer snowballsInUse) {
@@ -126,8 +116,7 @@ public class GetSnowballUsageResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -157,14 +146,11 @@ public class GetSnowballUsageResult extends
         GetSnowballUsageResult other = (GetSnowballUsageResult) obj;
         if (other.getSnowballLimit() == null ^ this.getSnowballLimit() == null)
             return false;
-        if (other.getSnowballLimit() != null
-                && other.getSnowballLimit().equals(this.getSnowballLimit()) == false)
+        if (other.getSnowballLimit() != null && other.getSnowballLimit().equals(this.getSnowballLimit()) == false)
             return false;
-        if (other.getSnowballsInUse() == null
-                ^ this.getSnowballsInUse() == null)
+        if (other.getSnowballsInUse() == null ^ this.getSnowballsInUse() == null)
             return false;
-        if (other.getSnowballsInUse() != null
-                && other.getSnowballsInUse().equals(this.getSnowballsInUse()) == false)
+        if (other.getSnowballsInUse() != null && other.getSnowballsInUse().equals(this.getSnowballsInUse()) == false)
             return false;
         return true;
     }
@@ -174,14 +160,8 @@ public class GetSnowballUsageResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSnowballLimit() == null) ? 0 : getSnowballLimit()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnowballsInUse() == null) ? 0 : getSnowballsInUse()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getSnowballLimit() == null) ? 0 : getSnowballLimit().hashCode());
+        hashCode = prime * hashCode + ((getSnowballsInUse() == null) ? 0 : getSnowballsInUse().hashCode());
         return hashCode;
     }
 
@@ -190,9 +170,7 @@ public class GetSnowballUsageResult extends
         try {
             return (GetSnowballUsageResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Log entry describing an event involving an Amazon GameLift resource (such as
- * a fleet).
+ * Log entry describing an event involving an Amazon GameLift resource (such as a fleet).
  * </p>
  */
 public class Event implements Serializable, Cloneable {
@@ -50,8 +47,8 @@ public class Event implements Serializable, Cloneable {
     private String message;
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".
      * </p>
      */
     private java.util.Date eventTime;
@@ -88,8 +85,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @param eventId
      *        Unique identifier for a fleet event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Event withEventId(String eventId) {
@@ -129,8 +125,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @param resourceId
      *        Unique identifier for the resource, such as a fleet ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Event withResourceId(String resourceId) {
@@ -172,8 +167,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @param eventCode
      *        Type of event being logged.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventCode
      */
 
@@ -203,8 +197,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @param eventCode
      *        Type of event being logged.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventCode
      */
 
@@ -245,8 +238,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @param message
      *        Additional information related to the event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Event withMessage(String message) {
@@ -256,13 +248,13 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".
      * </p>
      * 
      * @param eventTime
-     *        Time stamp indicating when this event occurred. Format is a number
-     *        expressed in Unix time as milliseconds (ex: "1469498468.057".
+     *        Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
+     *        (ex: "1469498468.057".
      */
 
     public void setEventTime(java.util.Date eventTime) {
@@ -271,13 +263,12 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".
      * </p>
      * 
-     * @return Time stamp indicating when this event occurred. Format is a
-     *         number expressed in Unix time as milliseconds (ex:
-     *         "1469498468.057".
+     * @return Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
+     *         (ex: "1469498468.057".
      */
 
     public java.util.Date getEventTime() {
@@ -286,15 +277,14 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".
      * </p>
      * 
      * @param eventTime
-     *        Time stamp indicating when this event occurred. Format is a number
-     *        expressed in Unix time as milliseconds (ex: "1469498468.057".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
+     *        (ex: "1469498468.057".
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Event withEventTime(java.util.Date eventTime) {
@@ -303,8 +293,7 @@ public class Event implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -340,28 +329,23 @@ public class Event implements Serializable, Cloneable {
         Event other = (Event) obj;
         if (other.getEventId() == null ^ this.getEventId() == null)
             return false;
-        if (other.getEventId() != null
-                && other.getEventId().equals(this.getEventId()) == false)
+        if (other.getEventId() != null && other.getEventId().equals(this.getEventId()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getEventCode() == null ^ this.getEventCode() == null)
             return false;
-        if (other.getEventCode() != null
-                && other.getEventCode().equals(this.getEventCode()) == false)
+        if (other.getEventCode() != null && other.getEventCode().equals(this.getEventCode()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         if (other.getEventTime() == null ^ this.getEventTime() == null)
             return false;
-        if (other.getEventTime() != null
-                && other.getEventTime().equals(this.getEventTime()) == false)
+        if (other.getEventTime() != null && other.getEventTime().equals(this.getEventTime()) == false)
             return false;
         return true;
     }
@@ -371,16 +355,11 @@ public class Event implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getEventId() == null) ? 0 : getEventId().hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getEventCode() == null) ? 0 : getEventCode().hashCode());
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
-        hashCode = prime * hashCode
-                + ((getEventTime() == null) ? 0 : getEventTime().hashCode());
+        hashCode = prime * hashCode + ((getEventId() == null) ? 0 : getEventId().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getEventCode() == null) ? 0 : getEventCode().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getEventTime() == null) ? 0 : getEventTime().hashCode());
         return hashCode;
     }
 
@@ -389,9 +368,7 @@ public class Event implements Serializable, Cloneable {
         try {
             return (Event) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ActionDeclaration JSON Unmarshaller
  */
-public class ActionDeclarationJsonUnmarshaller implements
-        Unmarshaller<ActionDeclaration, JsonUnmarshallerContext> {
+public class ActionDeclarationJsonUnmarshaller implements Unmarshaller<ActionDeclaration, JsonUnmarshallerContext> {
 
-    public ActionDeclaration unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ActionDeclaration unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActionDeclaration actionDeclaration = new ActionDeclaration();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,51 +49,36 @@ public class ActionDeclarationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    actionDeclaration.setName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    actionDeclaration.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actionTypeId", targetDepth)) {
                     context.nextToken();
-                    actionDeclaration
-                            .setActionTypeId(ActionTypeIdJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    actionDeclaration.setActionTypeId(ActionTypeIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("runOrder", targetDepth)) {
                     context.nextToken();
-                    actionDeclaration.setRunOrder(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    actionDeclaration.setRunOrder(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("configuration", targetDepth)) {
                     context.nextToken();
-                    actionDeclaration
-                            .setConfiguration(new MapUnmarshaller<String, String>(
-                                    context.getUnmarshaller(String.class),
-                                    context.getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    actionDeclaration.setConfiguration(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("outputArtifacts", targetDepth)) {
                     context.nextToken();
                     actionDeclaration
-                            .setOutputArtifacts(new ListUnmarshaller<OutputArtifact>(
-                                    OutputArtifactJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                            .setOutputArtifacts(new ListUnmarshaller<OutputArtifact>(OutputArtifactJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("inputArtifacts", targetDepth)) {
                     context.nextToken();
-                    actionDeclaration
-                            .setInputArtifacts(new ListUnmarshaller<InputArtifact>(
-                                    InputArtifactJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+                    actionDeclaration.setInputArtifacts(new ListUnmarshaller<InputArtifact>(InputArtifactJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    actionDeclaration.setRoleArn(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    actionDeclaration.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

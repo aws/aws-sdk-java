@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecs.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeTasksResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeTasksResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -74,22 +70,19 @@ public class DescribeTasksResult extends
      * The list of tasks.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTasks(java.util.Collection)} or
-     * {@link #withTasks(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTasks(java.util.Collection)} or {@link #withTasks(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tasks
      *        The list of tasks.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTasksResult withTasks(Task... tasks) {
         if (this.tasks == null) {
-            setTasks(new com.amazonaws.internal.SdkInternalList<Task>(
-                    tasks.length));
+            setTasks(new com.amazonaws.internal.SdkInternalList<Task>(tasks.length));
         }
         for (Task ele : tasks) {
             this.tasks.add(ele);
@@ -104,8 +97,7 @@ public class DescribeTasksResult extends
      * 
      * @param tasks
      *        The list of tasks.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTasksResult withTasks(java.util.Collection<Task> tasks) {
@@ -143,8 +135,7 @@ public class DescribeTasksResult extends
             return;
         }
 
-        this.failures = new com.amazonaws.internal.SdkInternalList<Failure>(
-                failures);
+        this.failures = new com.amazonaws.internal.SdkInternalList<Failure>(failures);
     }
 
     /**
@@ -152,22 +143,19 @@ public class DescribeTasksResult extends
      * Any failures associated with the call.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFailures(java.util.Collection)} or
-     * {@link #withFailures(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFailures(java.util.Collection)} or {@link #withFailures(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param failures
      *        Any failures associated with the call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTasksResult withFailures(Failure... failures) {
         if (this.failures == null) {
-            setFailures(new com.amazonaws.internal.SdkInternalList<Failure>(
-                    failures.length));
+            setFailures(new com.amazonaws.internal.SdkInternalList<Failure>(failures.length));
         }
         for (Failure ele : failures) {
             this.failures.add(ele);
@@ -182,19 +170,16 @@ public class DescribeTasksResult extends
      * 
      * @param failures
      *        Any failures associated with the call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTasksResult withFailures(
-            java.util.Collection<Failure> failures) {
+    public DescribeTasksResult withFailures(java.util.Collection<Failure> failures) {
         setFailures(failures);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -224,13 +209,11 @@ public class DescribeTasksResult extends
         DescribeTasksResult other = (DescribeTasksResult) obj;
         if (other.getTasks() == null ^ this.getTasks() == null)
             return false;
-        if (other.getTasks() != null
-                && other.getTasks().equals(this.getTasks()) == false)
+        if (other.getTasks() != null && other.getTasks().equals(this.getTasks()) == false)
             return false;
         if (other.getFailures() == null ^ this.getFailures() == null)
             return false;
-        if (other.getFailures() != null
-                && other.getFailures().equals(this.getFailures()) == false)
+        if (other.getFailures() != null && other.getFailures().equals(this.getFailures()) == false)
             return false;
         return true;
     }
@@ -240,10 +223,8 @@ public class DescribeTasksResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTasks() == null) ? 0 : getTasks().hashCode());
-        hashCode = prime * hashCode
-                + ((getFailures() == null) ? 0 : getFailures().hashCode());
+        hashCode = prime * hashCode + ((getTasks() == null) ? 0 : getTasks().hashCode());
+        hashCode = prime * hashCode + ((getFailures() == null) ? 0 : getFailures().hashCode());
         return hashCode;
     }
 
@@ -252,9 +233,7 @@ public class DescribeTasksResult extends
         try {
             return (DescribeTasksResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

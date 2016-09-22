@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -19,26 +17,21 @@ import java.io.Serializable;
 /**
  * 
  */
-public class RemoveAttributesFromFindingsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class RemoveAttributesFromFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Attributes details that cannot be described. An error code is provided
-     * for each failed item.
+     * Attributes details that cannot be described. An error code is provided for each failed item.
      * </p>
      */
     private java.util.Map<String, FailedItemDetails> failedItems;
 
     /**
      * <p>
-     * Attributes details that cannot be described. An error code is provided
-     * for each failed item.
+     * Attributes details that cannot be described. An error code is provided for each failed item.
      * </p>
      * 
-     * @return Attributes details that cannot be described. An error code is
-     *         provided for each failed item.
+     * @return Attributes details that cannot be described. An error code is provided for each failed item.
      */
 
     public java.util.Map<String, FailedItemDetails> getFailedItems() {
@@ -47,54 +40,45 @@ public class RemoveAttributesFromFindingsResult extends
 
     /**
      * <p>
-     * Attributes details that cannot be described. An error code is provided
-     * for each failed item.
+     * Attributes details that cannot be described. An error code is provided for each failed item.
      * </p>
      * 
      * @param failedItems
-     *        Attributes details that cannot be described. An error code is
-     *        provided for each failed item.
+     *        Attributes details that cannot be described. An error code is provided for each failed item.
      */
 
-    public void setFailedItems(
-            java.util.Map<String, FailedItemDetails> failedItems) {
+    public void setFailedItems(java.util.Map<String, FailedItemDetails> failedItems) {
         this.failedItems = failedItems;
     }
 
     /**
      * <p>
-     * Attributes details that cannot be described. An error code is provided
-     * for each failed item.
+     * Attributes details that cannot be described. An error code is provided for each failed item.
      * </p>
      * 
      * @param failedItems
-     *        Attributes details that cannot be described. An error code is
-     *        provided for each failed item.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Attributes details that cannot be described. An error code is provided for each failed item.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RemoveAttributesFromFindingsResult withFailedItems(
-            java.util.Map<String, FailedItemDetails> failedItems) {
+    public RemoveAttributesFromFindingsResult withFailedItems(java.util.Map<String, FailedItemDetails> failedItems) {
         setFailedItems(failedItems);
         return this;
     }
 
-    public RemoveAttributesFromFindingsResult addFailedItemsEntry(String key,
-            FailedItemDetails value) {
+    public RemoveAttributesFromFindingsResult addFailedItemsEntry(String key, FailedItemDetails value) {
         if (null == this.failedItems) {
             this.failedItems = new java.util.HashMap<String, FailedItemDetails>();
         }
         if (this.failedItems.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.failedItems.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into FailedItems. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into FailedItems. &lt;p> Returns a reference to this object so that method calls
+     * can be chained together.
      */
 
     public RemoveAttributesFromFindingsResult clearFailedItemsEntries() {
@@ -103,8 +87,7 @@ public class RemoveAttributesFromFindingsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -132,8 +115,7 @@ public class RemoveAttributesFromFindingsResult extends
         RemoveAttributesFromFindingsResult other = (RemoveAttributesFromFindingsResult) obj;
         if (other.getFailedItems() == null ^ this.getFailedItems() == null)
             return false;
-        if (other.getFailedItems() != null
-                && other.getFailedItems().equals(this.getFailedItems()) == false)
+        if (other.getFailedItems() != null && other.getFailedItems().equals(this.getFailedItems()) == false)
             return false;
         return true;
     }
@@ -143,9 +125,7 @@ public class RemoveAttributesFromFindingsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFailedItems() == null) ? 0 : getFailedItems().hashCode());
+        hashCode = prime * hashCode + ((getFailedItems() == null) ? 0 : getFailedItems().hashCode());
         return hashCode;
     }
 
@@ -154,9 +134,7 @@ public class RemoveAttributesFromFindingsResult extends
         try {
             return (RemoveAttributesFromFindingsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

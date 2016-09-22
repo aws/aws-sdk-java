@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
@@ -86,8 +84,7 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @param ruleArn
      *        The Amazon Resource Name (ARN) of the rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withRuleArn(String ruleArn) {
@@ -127,8 +124,7 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @param priority
      *        The priority.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withPriority(String priority) {
@@ -171,22 +167,19 @@ public class Rule implements Serializable, Cloneable {
      * The conditions.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConditions(java.util.Collection)} or
-     * {@link #withConditions(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConditions(java.util.Collection)} or {@link #withConditions(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param conditions
      *        The conditions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withConditions(RuleCondition... conditions) {
         if (this.conditions == null) {
-            setConditions(new java.util.ArrayList<RuleCondition>(
-                    conditions.length));
+            setConditions(new java.util.ArrayList<RuleCondition>(conditions.length));
         }
         for (RuleCondition ele : conditions) {
             this.conditions.add(ele);
@@ -201,8 +194,7 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @param conditions
      *        The conditions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withConditions(java.util.Collection<RuleCondition> conditions) {
@@ -245,16 +237,14 @@ public class Rule implements Serializable, Cloneable {
      * The actions.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setActions(java.util.Collection)} or
-     * {@link #withActions(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setActions(java.util.Collection)} or {@link #withActions(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param actions
      *        The actions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withActions(Action... actions) {
@@ -274,8 +264,7 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @param actions
      *        The actions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withActions(java.util.Collection<Action> actions) {
@@ -315,8 +304,7 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @param isDefault
      *        Indicates whether this is the default rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withIsDefault(Boolean isDefault) {
@@ -337,8 +325,7 @@ public class Rule implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -374,28 +361,23 @@ public class Rule implements Serializable, Cloneable {
         Rule other = (Rule) obj;
         if (other.getRuleArn() == null ^ this.getRuleArn() == null)
             return false;
-        if (other.getRuleArn() != null
-                && other.getRuleArn().equals(this.getRuleArn()) == false)
+        if (other.getRuleArn() != null && other.getRuleArn().equals(this.getRuleArn()) == false)
             return false;
         if (other.getPriority() == null ^ this.getPriority() == null)
             return false;
-        if (other.getPriority() != null
-                && other.getPriority().equals(this.getPriority()) == false)
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
             return false;
         if (other.getConditions() == null ^ this.getConditions() == null)
             return false;
-        if (other.getConditions() != null
-                && other.getConditions().equals(this.getConditions()) == false)
+        if (other.getConditions() != null && other.getConditions().equals(this.getConditions()) == false)
             return false;
         if (other.getActions() == null ^ this.getActions() == null)
             return false;
-        if (other.getActions() != null
-                && other.getActions().equals(this.getActions()) == false)
+        if (other.getActions() != null && other.getActions().equals(this.getActions()) == false)
             return false;
         if (other.getIsDefault() == null ^ this.getIsDefault() == null)
             return false;
-        if (other.getIsDefault() != null
-                && other.getIsDefault().equals(this.getIsDefault()) == false)
+        if (other.getIsDefault() != null && other.getIsDefault().equals(this.getIsDefault()) == false)
             return false;
         return true;
     }
@@ -405,16 +387,11 @@ public class Rule implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRuleArn() == null) ? 0 : getRuleArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getPriority() == null) ? 0 : getPriority().hashCode());
-        hashCode = prime * hashCode
-                + ((getConditions() == null) ? 0 : getConditions().hashCode());
-        hashCode = prime * hashCode
-                + ((getActions() == null) ? 0 : getActions().hashCode());
-        hashCode = prime * hashCode
-                + ((getIsDefault() == null) ? 0 : getIsDefault().hashCode());
+        hashCode = prime * hashCode + ((getRuleArn() == null) ? 0 : getRuleArn().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
+        hashCode = prime * hashCode + ((getConditions() == null) ? 0 : getConditions().hashCode());
+        hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
+        hashCode = prime * hashCode + ((getIsDefault() == null) ? 0 : getIsDefault().hashCode());
         return hashCode;
     }
 
@@ -423,9 +400,7 @@ public class Rule implements Serializable, Cloneable {
         try {
             return (Rule) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

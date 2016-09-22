@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -21,20 +19,17 @@ import java.io.Serializable;
  * Describes a block device mapping entry.
  * </p>
  */
-public class InstanceBlockDeviceMappingSpecification implements Serializable,
-        Cloneable {
+public class InstanceBlockDeviceMappingSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      */
     private String deviceName;
     /**
      * <p>
-     * Parameters used to automatically set up EBS volumes when the instance is
-     * launched.
+     * Parameters used to automatically set up EBS volumes when the instance is launched.
      * </p>
      */
     private EbsInstanceBlockDeviceSpecification ebs;
@@ -53,13 +48,11 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
 
     /**
      * <p>
-     * The device name exposed to the instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
      * @param deviceName
-     *        The device name exposed to the instance (for example,
-     *        <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
 
     public void setDeviceName(String deviceName) {
@@ -68,12 +61,10 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
 
     /**
      * <p>
-     * The device name exposed to the instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
-     * @return The device name exposed to the instance (for example,
-     *         <code>/dev/sdh</code> or <code>xvdh</code>).
+     * @return The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
 
     public String getDeviceName() {
@@ -82,32 +73,26 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
 
     /**
      * <p>
-     * The device name exposed to the instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
      * @param deviceName
-     *        The device name exposed to the instance (for example,
-     *        <code>/dev/sdh</code> or <code>xvdh</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceBlockDeviceMappingSpecification withDeviceName(
-            String deviceName) {
+    public InstanceBlockDeviceMappingSpecification withDeviceName(String deviceName) {
         setDeviceName(deviceName);
         return this;
     }
 
     /**
      * <p>
-     * Parameters used to automatically set up EBS volumes when the instance is
-     * launched.
+     * Parameters used to automatically set up EBS volumes when the instance is launched.
      * </p>
      * 
      * @param ebs
-     *        Parameters used to automatically set up EBS volumes when the
-     *        instance is launched.
+     *        Parameters used to automatically set up EBS volumes when the instance is launched.
      */
 
     public void setEbs(EbsInstanceBlockDeviceSpecification ebs) {
@@ -116,12 +101,10 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
 
     /**
      * <p>
-     * Parameters used to automatically set up EBS volumes when the instance is
-     * launched.
+     * Parameters used to automatically set up EBS volumes when the instance is launched.
      * </p>
      * 
-     * @return Parameters used to automatically set up EBS volumes when the
-     *         instance is launched.
+     * @return Parameters used to automatically set up EBS volumes when the instance is launched.
      */
 
     public EbsInstanceBlockDeviceSpecification getEbs() {
@@ -130,19 +113,15 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
 
     /**
      * <p>
-     * Parameters used to automatically set up EBS volumes when the instance is
-     * launched.
+     * Parameters used to automatically set up EBS volumes when the instance is launched.
      * </p>
      * 
      * @param ebs
-     *        Parameters used to automatically set up EBS volumes when the
-     *        instance is launched.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Parameters used to automatically set up EBS volumes when the instance is launched.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceBlockDeviceMappingSpecification withEbs(
-            EbsInstanceBlockDeviceSpecification ebs) {
+    public InstanceBlockDeviceMappingSpecification withEbs(EbsInstanceBlockDeviceSpecification ebs) {
         setEbs(ebs);
         return this;
     }
@@ -179,12 +158,10 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      * 
      * @param virtualName
      *        The virtual device name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceBlockDeviceMappingSpecification withVirtualName(
-            String virtualName) {
+    public InstanceBlockDeviceMappingSpecification withVirtualName(String virtualName) {
         setVirtualName(virtualName);
         return this;
     }
@@ -195,8 +172,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      * </p>
      * 
      * @param noDevice
-     *        suppress the specified device included in the block device
-     *        mapping.
+     *        suppress the specified device included in the block device mapping.
      */
 
     public void setNoDevice(String noDevice) {
@@ -208,8 +184,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      * suppress the specified device included in the block device mapping.
      * </p>
      * 
-     * @return suppress the specified device included in the block device
-     *         mapping.
+     * @return suppress the specified device included in the block device mapping.
      */
 
     public String getNoDevice() {
@@ -222,10 +197,8 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      * </p>
      * 
      * @param noDevice
-     *        suppress the specified device included in the block device
-     *        mapping.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        suppress the specified device included in the block device mapping.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceBlockDeviceMappingSpecification withNoDevice(String noDevice) {
@@ -234,8 +207,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -269,23 +241,19 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
         InstanceBlockDeviceMappingSpecification other = (InstanceBlockDeviceMappingSpecification) obj;
         if (other.getDeviceName() == null ^ this.getDeviceName() == null)
             return false;
-        if (other.getDeviceName() != null
-                && other.getDeviceName().equals(this.getDeviceName()) == false)
+        if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
             return false;
         if (other.getEbs() == null ^ this.getEbs() == null)
             return false;
-        if (other.getEbs() != null
-                && other.getEbs().equals(this.getEbs()) == false)
+        if (other.getEbs() != null && other.getEbs().equals(this.getEbs()) == false)
             return false;
         if (other.getVirtualName() == null ^ this.getVirtualName() == null)
             return false;
-        if (other.getVirtualName() != null
-                && other.getVirtualName().equals(this.getVirtualName()) == false)
+        if (other.getVirtualName() != null && other.getVirtualName().equals(this.getVirtualName()) == false)
             return false;
         if (other.getNoDevice() == null ^ this.getNoDevice() == null)
             return false;
-        if (other.getNoDevice() != null
-                && other.getNoDevice().equals(this.getNoDevice()) == false)
+        if (other.getNoDevice() != null && other.getNoDevice().equals(this.getNoDevice()) == false)
             return false;
         return true;
     }
@@ -295,15 +263,10 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
-        hashCode = prime * hashCode
-                + ((getEbs() == null) ? 0 : getEbs().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVirtualName() == null) ? 0 : getVirtualName().hashCode());
-        hashCode = prime * hashCode
-                + ((getNoDevice() == null) ? 0 : getNoDevice().hashCode());
+        hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
+        hashCode = prime * hashCode + ((getEbs() == null) ? 0 : getEbs().hashCode());
+        hashCode = prime * hashCode + ((getVirtualName() == null) ? 0 : getVirtualName().hashCode());
+        hashCode = prime * hashCode + ((getNoDevice() == null) ? 0 : getNoDevice().hashCode());
         return hashCode;
     }
 
@@ -312,9 +275,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
         try {
             return (InstanceBlockDeviceMappingSpecification) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

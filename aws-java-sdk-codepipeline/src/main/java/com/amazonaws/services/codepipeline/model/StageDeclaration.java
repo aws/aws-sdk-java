@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model;
 
@@ -74,8 +72,7 @@ public class StageDeclaration implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the stage.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StageDeclaration withName(String name) {
@@ -118,22 +115,19 @@ public class StageDeclaration implements Serializable, Cloneable {
      * Reserved for future use.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBlockers(java.util.Collection)} or
-     * {@link #withBlockers(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlockers(java.util.Collection)} or {@link #withBlockers(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param blockers
      *        Reserved for future use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StageDeclaration withBlockers(BlockerDeclaration... blockers) {
         if (this.blockers == null) {
-            setBlockers(new java.util.ArrayList<BlockerDeclaration>(
-                    blockers.length));
+            setBlockers(new java.util.ArrayList<BlockerDeclaration>(blockers.length));
         }
         for (BlockerDeclaration ele : blockers) {
             this.blockers.add(ele);
@@ -148,12 +142,10 @@ public class StageDeclaration implements Serializable, Cloneable {
      * 
      * @param blockers
      *        Reserved for future use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StageDeclaration withBlockers(
-            java.util.Collection<BlockerDeclaration> blockers) {
+    public StageDeclaration withBlockers(java.util.Collection<BlockerDeclaration> blockers) {
         setBlockers(blockers);
         return this;
     }
@@ -193,22 +185,19 @@ public class StageDeclaration implements Serializable, Cloneable {
      * The actions included in a stage.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setActions(java.util.Collection)} or
-     * {@link #withActions(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setActions(java.util.Collection)} or {@link #withActions(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param actions
      *        The actions included in a stage.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StageDeclaration withActions(ActionDeclaration... actions) {
         if (this.actions == null) {
-            setActions(new java.util.ArrayList<ActionDeclaration>(
-                    actions.length));
+            setActions(new java.util.ArrayList<ActionDeclaration>(actions.length));
         }
         for (ActionDeclaration ele : actions) {
             this.actions.add(ele);
@@ -223,19 +212,16 @@ public class StageDeclaration implements Serializable, Cloneable {
      * 
      * @param actions
      *        The actions included in a stage.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StageDeclaration withActions(
-            java.util.Collection<ActionDeclaration> actions) {
+    public StageDeclaration withActions(java.util.Collection<ActionDeclaration> actions) {
         setActions(actions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -267,18 +253,15 @@ public class StageDeclaration implements Serializable, Cloneable {
         StageDeclaration other = (StageDeclaration) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getBlockers() == null ^ this.getBlockers() == null)
             return false;
-        if (other.getBlockers() != null
-                && other.getBlockers().equals(this.getBlockers()) == false)
+        if (other.getBlockers() != null && other.getBlockers().equals(this.getBlockers()) == false)
             return false;
         if (other.getActions() == null ^ this.getActions() == null)
             return false;
-        if (other.getActions() != null
-                && other.getActions().equals(this.getActions()) == false)
+        if (other.getActions() != null && other.getActions().equals(this.getActions()) == false)
             return false;
         return true;
     }
@@ -288,12 +271,9 @@ public class StageDeclaration implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getBlockers() == null) ? 0 : getBlockers().hashCode());
-        hashCode = prime * hashCode
-                + ((getActions() == null) ? 0 : getActions().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getBlockers() == null) ? 0 : getBlockers().hashCode());
+        hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         return hashCode;
     }
 
@@ -302,9 +282,7 @@ public class StageDeclaration implements Serializable, Cloneable {
         try {
             return (StageDeclaration) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

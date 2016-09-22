@@ -109,6 +109,15 @@ public class QueueBufferConfig {
 
     public static final int LONGPOLL_WAIT_TIMEOUT_SECONDS_DEFAULT = 20;
 
+    /**
+     * Option to configure flushOnShutdown. Enabling this option will flush the pending requests in the
+     * {@link SendQueueBuffer} during shutdown.
+     * <p>
+     * The default value is false which indicates flushOnShutdown is disabled.
+     * </p>
+     */
+    private boolean flushOnShutdown = false;
+
     public QueueBufferConfig(long maxBatchOpenMs, int maxInflightOutboundBatches, int maxInflightReceiveBatches,
             int maxDoneReceiveBatches, boolean paramLongPoll, long maxBatchSizeBytes, int visibilityTimeout,
             int longPollTimeout, int maxBatch) {
@@ -426,6 +435,41 @@ public class QueueBufferConfig {
      */
     public QueueBufferConfig withMaxBatchSize(int maxBatchSize) {
         setMaxBatchSize(maxBatchSize);
+        return this;
+    }
+
+    /**
+     * Returns the flushOnShutdown value. The default value is false which indicates flushOnShutdown is disabled.
+     *
+     * Enabling this option will flush the pending requests in the {@link SendQueueBuffer} during shutdown.
+     *
+     * @return true if flushOnShutdown is enabled, otherwise false.
+     */
+    public boolean isFlushOnShutdown() {
+        return flushOnShutdown;
+    }
+
+    /**
+     * Sets the flushOnShutdown option. The default value is false which indicates flushOnShutdown is disabled.
+     *
+     * Enabling this option will flush the pending requests in the {@link SendQueueBuffer} during shutdown.
+     *
+     * @param flushOnShutdown boolean value to configure flushOnShutdown.
+     */
+    public void setFlushOnShutdown(boolean flushOnShutdown) {
+        this.flushOnShutdown = flushOnShutdown;
+    }
+
+    /**
+     * Sets the flushOnShutdown option. The default value is false which indicates flushOnShutdown is disabled.
+     *
+     * Enabling this option will flush the pending requests in the {@link SendQueueBuffer} during shutdown.
+     *
+     * @param flushOnShutdown boolean value to configure flushOnShutdown.
+     * @return This object for method chaining.
+     */
+    public QueueBufferConfig withFlushOnShutdown(boolean flushOnShutdown) {
+        setFlushOnShutdown(flushOnShutdown);
         return this;
     }
 

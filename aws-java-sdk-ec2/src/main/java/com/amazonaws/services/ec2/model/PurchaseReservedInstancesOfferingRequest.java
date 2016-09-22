@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.PurchaseReservedInstancesOffer
  * Contains the parameters for PurchaseReservedInstancesOffering.
  * </p>
  */
-public class PurchaseReservedInstancesOfferingRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable,
+public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<PurchaseReservedInstancesOfferingRequest> {
 
     /**
@@ -42,33 +39,29 @@ public class PurchaseReservedInstancesOfferingRequest extends
     private Integer instanceCount;
     /**
      * <p>
-     * Specified for Reserved Instance Marketplace offerings to limit the total
-     * order and ensure that the Reserved Instances are not purchased at
-     * unexpected prices.
+     * Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved
+     * Instances are not purchased at unexpected prices.
      * </p>
      */
     private ReservedInstanceLimitPrice limitPrice;
 
     /**
-     * Default constructor for PurchaseReservedInstancesOfferingRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize the object after creating it.
+     * Default constructor for PurchaseReservedInstancesOfferingRequest object. Callers should use the setter or fluent
+     * setter (with...) methods to initialize the object after creating it.
      */
     public PurchaseReservedInstancesOfferingRequest() {
     }
 
     /**
-     * Constructs a new PurchaseReservedInstancesOfferingRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * any additional object members.
+     * Constructs a new PurchaseReservedInstancesOfferingRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize any additional object members.
      * 
      * @param reservedInstancesOfferingId
      *        The ID of the Reserved Instance offering to purchase.
      * @param instanceCount
      *        The number of Reserved Instances to purchase.
      */
-    public PurchaseReservedInstancesOfferingRequest(
-            String reservedInstancesOfferingId, Integer instanceCount) {
+    public PurchaseReservedInstancesOfferingRequest(String reservedInstancesOfferingId, Integer instanceCount) {
         setReservedInstancesOfferingId(reservedInstancesOfferingId);
         setInstanceCount(instanceCount);
     }
@@ -82,8 +75,7 @@ public class PurchaseReservedInstancesOfferingRequest extends
      *        The ID of the Reserved Instance offering to purchase.
      */
 
-    public void setReservedInstancesOfferingId(
-            String reservedInstancesOfferingId) {
+    public void setReservedInstancesOfferingId(String reservedInstancesOfferingId) {
         this.reservedInstancesOfferingId = reservedInstancesOfferingId;
     }
 
@@ -106,12 +98,10 @@ public class PurchaseReservedInstancesOfferingRequest extends
      * 
      * @param reservedInstancesOfferingId
      *        The ID of the Reserved Instance offering to purchase.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PurchaseReservedInstancesOfferingRequest withReservedInstancesOfferingId(
-            String reservedInstancesOfferingId) {
+    public PurchaseReservedInstancesOfferingRequest withReservedInstancesOfferingId(String reservedInstancesOfferingId) {
         setReservedInstancesOfferingId(reservedInstancesOfferingId);
         return this;
     }
@@ -148,27 +138,23 @@ public class PurchaseReservedInstancesOfferingRequest extends
      * 
      * @param instanceCount
      *        The number of Reserved Instances to purchase.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PurchaseReservedInstancesOfferingRequest withInstanceCount(
-            Integer instanceCount) {
+    public PurchaseReservedInstancesOfferingRequest withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
         return this;
     }
 
     /**
      * <p>
-     * Specified for Reserved Instance Marketplace offerings to limit the total
-     * order and ensure that the Reserved Instances are not purchased at
-     * unexpected prices.
+     * Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved
+     * Instances are not purchased at unexpected prices.
      * </p>
      * 
      * @param limitPrice
-     *        Specified for Reserved Instance Marketplace offerings to limit the
-     *        total order and ensure that the Reserved Instances are not
-     *        purchased at unexpected prices.
+     *        Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the
+     *        Reserved Instances are not purchased at unexpected prices.
      */
 
     public void setLimitPrice(ReservedInstanceLimitPrice limitPrice) {
@@ -177,14 +163,12 @@ public class PurchaseReservedInstancesOfferingRequest extends
 
     /**
      * <p>
-     * Specified for Reserved Instance Marketplace offerings to limit the total
-     * order and ensure that the Reserved Instances are not purchased at
-     * unexpected prices.
+     * Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved
+     * Instances are not purchased at unexpected prices.
      * </p>
      * 
-     * @return Specified for Reserved Instance Marketplace offerings to limit
-     *         the total order and ensure that the Reserved Instances are not
-     *         purchased at unexpected prices.
+     * @return Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the
+     *         Reserved Instances are not purchased at unexpected prices.
      */
 
     public ReservedInstanceLimitPrice getLimitPrice() {
@@ -193,41 +177,34 @@ public class PurchaseReservedInstancesOfferingRequest extends
 
     /**
      * <p>
-     * Specified for Reserved Instance Marketplace offerings to limit the total
-     * order and ensure that the Reserved Instances are not purchased at
-     * unexpected prices.
+     * Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved
+     * Instances are not purchased at unexpected prices.
      * </p>
      * 
      * @param limitPrice
-     *        Specified for Reserved Instance Marketplace offerings to limit the
-     *        total order and ensure that the Reserved Instances are not
-     *        purchased at unexpected prices.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the
+     *        Reserved Instances are not purchased at unexpected prices.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PurchaseReservedInstancesOfferingRequest withLimitPrice(
-            ReservedInstanceLimitPrice limitPrice) {
+    public PurchaseReservedInstancesOfferingRequest withLimitPrice(ReservedInstanceLimitPrice limitPrice) {
         setLimitPrice(limitPrice);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<PurchaseReservedInstancesOfferingRequest> getDryRunRequest() {
-        Request<PurchaseReservedInstancesOfferingRequest> request = new PurchaseReservedInstancesOfferingRequestMarshaller()
-                .marshall(this);
+        Request<PurchaseReservedInstancesOfferingRequest> request = new PurchaseReservedInstancesOfferingRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -238,8 +215,7 @@ public class PurchaseReservedInstancesOfferingRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesOfferingId() != null)
-            sb.append("ReservedInstancesOfferingId: "
-                    + getReservedInstancesOfferingId() + ",");
+            sb.append("ReservedInstancesOfferingId: " + getReservedInstancesOfferingId() + ",");
         if (getInstanceCount() != null)
             sb.append("InstanceCount: " + getInstanceCount() + ",");
         if (getLimitPrice() != null)
@@ -258,22 +234,17 @@ public class PurchaseReservedInstancesOfferingRequest extends
         if (obj instanceof PurchaseReservedInstancesOfferingRequest == false)
             return false;
         PurchaseReservedInstancesOfferingRequest other = (PurchaseReservedInstancesOfferingRequest) obj;
-        if (other.getReservedInstancesOfferingId() == null
-                ^ this.getReservedInstancesOfferingId() == null)
+        if (other.getReservedInstancesOfferingId() == null ^ this.getReservedInstancesOfferingId() == null)
             return false;
-        if (other.getReservedInstancesOfferingId() != null
-                && other.getReservedInstancesOfferingId().equals(
-                        this.getReservedInstancesOfferingId()) == false)
+        if (other.getReservedInstancesOfferingId() != null && other.getReservedInstancesOfferingId().equals(this.getReservedInstancesOfferingId()) == false)
             return false;
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
-        if (other.getInstanceCount() != null
-                && other.getInstanceCount().equals(this.getInstanceCount()) == false)
+        if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
             return false;
         if (other.getLimitPrice() == null ^ this.getLimitPrice() == null)
             return false;
-        if (other.getLimitPrice() != null
-                && other.getLimitPrice().equals(this.getLimitPrice()) == false)
+        if (other.getLimitPrice() != null && other.getLimitPrice().equals(this.getLimitPrice()) == false)
             return false;
         return true;
     }
@@ -283,16 +254,9 @@ public class PurchaseReservedInstancesOfferingRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReservedInstancesOfferingId() == null) ? 0
-                        : getReservedInstancesOfferingId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceCount() == null) ? 0 : getInstanceCount()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getLimitPrice() == null) ? 0 : getLimitPrice().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesOfferingId() == null) ? 0 : getReservedInstancesOfferingId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getLimitPrice() == null) ? 0 : getLimitPrice().hashCode());
         return hashCode;
     }
 

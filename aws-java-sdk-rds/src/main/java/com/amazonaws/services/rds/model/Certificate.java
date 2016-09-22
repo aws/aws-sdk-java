@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -92,8 +90,7 @@ public class Certificate implements Serializable, Cloneable {
      * 
      * @param certificateIdentifier
      *        The unique key that identifies a certificate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Certificate withCertificateIdentifier(String certificateIdentifier) {
@@ -133,8 +130,7 @@ public class Certificate implements Serializable, Cloneable {
      * 
      * @param certificateType
      *        The type of the certificate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Certificate withCertificateType(String certificateType) {
@@ -174,8 +170,7 @@ public class Certificate implements Serializable, Cloneable {
      * 
      * @param thumbprint
      *        The thumbprint of the certificate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Certificate withThumbprint(String thumbprint) {
@@ -215,8 +210,7 @@ public class Certificate implements Serializable, Cloneable {
      * 
      * @param validFrom
      *        The starting date from which the certificate is valid.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Certificate withValidFrom(java.util.Date validFrom) {
@@ -256,8 +250,7 @@ public class Certificate implements Serializable, Cloneable {
      * 
      * @param validTill
      *        The final date that the certificate continues to be valid.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Certificate withValidTill(java.util.Date validTill) {
@@ -297,8 +290,7 @@ public class Certificate implements Serializable, Cloneable {
      * 
      * @param certificateArn
      *        The Amazon Resource Name (ARN) for the certificate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Certificate withCertificateArn(String certificateArn) {
@@ -307,8 +299,7 @@ public class Certificate implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -319,8 +310,7 @@ public class Certificate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateIdentifier() != null)
-            sb.append("CertificateIdentifier: " + getCertificateIdentifier()
-                    + ",");
+            sb.append("CertificateIdentifier: " + getCertificateIdentifier() + ",");
         if (getCertificateType() != null)
             sb.append("CertificateType: " + getCertificateType() + ",");
         if (getThumbprint() != null)
@@ -345,39 +335,29 @@ public class Certificate implements Serializable, Cloneable {
         if (obj instanceof Certificate == false)
             return false;
         Certificate other = (Certificate) obj;
-        if (other.getCertificateIdentifier() == null
-                ^ this.getCertificateIdentifier() == null)
+        if (other.getCertificateIdentifier() == null ^ this.getCertificateIdentifier() == null)
             return false;
-        if (other.getCertificateIdentifier() != null
-                && other.getCertificateIdentifier().equals(
-                        this.getCertificateIdentifier()) == false)
+        if (other.getCertificateIdentifier() != null && other.getCertificateIdentifier().equals(this.getCertificateIdentifier()) == false)
             return false;
-        if (other.getCertificateType() == null
-                ^ this.getCertificateType() == null)
+        if (other.getCertificateType() == null ^ this.getCertificateType() == null)
             return false;
-        if (other.getCertificateType() != null
-                && other.getCertificateType().equals(this.getCertificateType()) == false)
+        if (other.getCertificateType() != null && other.getCertificateType().equals(this.getCertificateType()) == false)
             return false;
         if (other.getThumbprint() == null ^ this.getThumbprint() == null)
             return false;
-        if (other.getThumbprint() != null
-                && other.getThumbprint().equals(this.getThumbprint()) == false)
+        if (other.getThumbprint() != null && other.getThumbprint().equals(this.getThumbprint()) == false)
             return false;
         if (other.getValidFrom() == null ^ this.getValidFrom() == null)
             return false;
-        if (other.getValidFrom() != null
-                && other.getValidFrom().equals(this.getValidFrom()) == false)
+        if (other.getValidFrom() != null && other.getValidFrom().equals(this.getValidFrom()) == false)
             return false;
         if (other.getValidTill() == null ^ this.getValidTill() == null)
             return false;
-        if (other.getValidTill() != null
-                && other.getValidTill().equals(this.getValidTill()) == false)
+        if (other.getValidTill() != null && other.getValidTill().equals(this.getValidTill()) == false)
             return false;
-        if (other.getCertificateArn() == null
-                ^ this.getCertificateArn() == null)
+        if (other.getCertificateArn() == null ^ this.getCertificateArn() == null)
             return false;
-        if (other.getCertificateArn() != null
-                && other.getCertificateArn().equals(this.getCertificateArn()) == false)
+        if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
             return false;
         return true;
     }
@@ -387,24 +367,12 @@ public class Certificate implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCertificateIdentifier() == null) ? 0
-                        : getCertificateIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCertificateType() == null) ? 0 : getCertificateType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getThumbprint() == null) ? 0 : getThumbprint().hashCode());
-        hashCode = prime * hashCode
-                + ((getValidFrom() == null) ? 0 : getValidFrom().hashCode());
-        hashCode = prime * hashCode
-                + ((getValidTill() == null) ? 0 : getValidTill().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCertificateArn() == null) ? 0 : getCertificateArn()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getCertificateIdentifier() == null) ? 0 : getCertificateIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getCertificateType() == null) ? 0 : getCertificateType().hashCode());
+        hashCode = prime * hashCode + ((getThumbprint() == null) ? 0 : getThumbprint().hashCode());
+        hashCode = prime * hashCode + ((getValidFrom() == null) ? 0 : getValidFrom().hashCode());
+        hashCode = prime * hashCode + ((getValidTill() == null) ? 0 : getValidTill().hashCode());
+        hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         return hashCode;
     }
 
@@ -413,9 +381,7 @@ public class Certificate implements Serializable, Cloneable {
         try {
             return (Certificate) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

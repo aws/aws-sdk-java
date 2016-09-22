@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kms.model.transform;
 
@@ -35,26 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * GenerateDataKeyRequest Marshaller
  */
-public class GenerateDataKeyRequestMarshaller implements
-        Marshaller<Request<GenerateDataKeyRequest>, GenerateDataKeyRequest> {
+public class GenerateDataKeyRequestMarshaller implements Marshaller<Request<GenerateDataKeyRequest>, GenerateDataKeyRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public GenerateDataKeyRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public GenerateDataKeyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<GenerateDataKeyRequest> marshall(
-            GenerateDataKeyRequest generateDataKeyRequest) {
+    public Request<GenerateDataKeyRequest> marshall(GenerateDataKeyRequest generateDataKeyRequest) {
 
         if (generateDataKeyRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GenerateDataKeyRequest> request = new DefaultRequest<GenerateDataKeyRequest>(
-                generateDataKeyRequest, "AWSKMS");
+        Request<GenerateDataKeyRequest> request = new DefaultRequest<GenerateDataKeyRequest>(generateDataKeyRequest, "AWSKMS");
         request.addHeader("X-Amz-Target", "TrentService.GenerateDataKey");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -62,48 +55,39 @@ public class GenerateDataKeyRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (generateDataKeyRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(
-                        generateDataKeyRequest.getKeyId());
+                jsonGenerator.writeFieldName("KeyId").writeValue(generateDataKeyRequest.getKeyId());
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> encryptionContextMap = (com.amazonaws.internal.SdkInternalMap<String, String>) generateDataKeyRequest
                     .getEncryptionContext();
-            if (!encryptionContextMap.isEmpty()
-                    || !encryptionContextMap.isAutoConstruct()) {
+            if (!encryptionContextMap.isEmpty() || !encryptionContextMap.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("EncryptionContext");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> encryptionContextMapValue : encryptionContextMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> encryptionContextMapValue : encryptionContextMap.entrySet()) {
                     if (encryptionContextMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(encryptionContextMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(encryptionContextMapValue.getKey());
 
-                        jsonGenerator.writeValue(encryptionContextMapValue
-                                .getValue());
+                        jsonGenerator.writeValue(encryptionContextMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
             }
             if (generateDataKeyRequest.getNumberOfBytes() != null) {
-                jsonGenerator.writeFieldName("NumberOfBytes").writeValue(
-                        generateDataKeyRequest.getNumberOfBytes());
+                jsonGenerator.writeFieldName("NumberOfBytes").writeValue(generateDataKeyRequest.getNumberOfBytes());
             }
             if (generateDataKeyRequest.getKeySpec() != null) {
-                jsonGenerator.writeFieldName("KeySpec").writeValue(
-                        generateDataKeyRequest.getKeySpec());
+                jsonGenerator.writeFieldName("KeySpec").writeValue(generateDataKeyRequest.getKeySpec());
             }
 
             com.amazonaws.internal.SdkInternalList<String> grantTokensList = (com.amazonaws.internal.SdkInternalList<String>) generateDataKeyRequest
                     .getGrantTokens();
-            if (!grantTokensList.isEmpty()
-                    || !grantTokensList.isAutoConstruct()) {
+            if (!grantTokensList.isEmpty() || !grantTokensList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("GrantTokens");
                 jsonGenerator.writeStartArray();
                 for (String grantTokensListValue : grantTokensList) {
@@ -118,12 +102,10 @@ public class GenerateDataKeyRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

@@ -25,27 +25,15 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 /**
  * A simple JSON converter that uses the Jackson JSON processor.
  *
- * It shares all limitations of that library.
- * For more information about Jackson, see: http://wiki.fasterxml.com/JacksonHome
+ * <p>It shares all limitations of that library. For more information about
+ * Jackson, see: http://wiki.fasterxml.com/JacksonHome</p>
  *
- * A minimal example using getter annotations,
  * <pre class="brush: java">
- * &#064;DynamoDBTable(tableName=&quot;TestTable&quot;)
- * public class TestClass {
- *     private String key;
- *     private Currency currency;
- *
- *     &#064;DynamoDBHashKey
- *     public String getKey() { return key; }
- *     public void setKey(String key) { this.key = key; }
- *
- *     &#064;DynamoDBTypeConvertedJson
- *     public Currency getCurrency() { return currency; }
- *     public void setCurrency(Currency currency) { this.currency = currency; }
- * }
+ * &#064;DynamoDBTypeConvertedJson
+ * public Currency getCurrency()
  * </pre>
  *
- * With the following complex type to convert,
+ * <p>Where,</p>
  * <pre class="brush: java">
  * public class Currency {
  *     private Double amount;
@@ -59,7 +47,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
  * }
  * </pre>
  *
- * Would write the following value to DynamoDB given,
+ * <p>Would write the following value to DynamoDB given,</p>
  * <ul>
  *     <li><code>Currency(79.99,"USD")</code> = <code> "{\"amount\":79.99,\"unit\":\"USD\"}"</code></li>
  * </ul>

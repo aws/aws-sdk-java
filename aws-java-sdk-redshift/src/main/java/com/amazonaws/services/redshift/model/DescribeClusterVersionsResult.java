@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -21,18 +19,14 @@ import java.io.Serializable;
  * Contains the output from the <a>DescribeClusterVersions</a> action.
  * </p>
  */
-public class DescribeClusterVersionsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeClusterVersionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      */
     private String marker;
@@ -45,22 +39,17 @@ public class DescribeClusterVersionsResult extends
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      * 
      * @param marker
-     *        A value that indicates the starting point for the next set of
-     *        response records in a subsequent request. If a value is returned
-     *        in a response, you can retrieve the next set of records by
-     *        providing this returned marker value in the <code>Marker</code>
-     *        parameter and retrying the command. If the <code>Marker</code>
-     *        field is empty, all response records have been retrieved for the
-     *        request.
+     *        A value that indicates the starting point for the next set of response records in a subsequent request. If
+     *        a value is returned in a response, you can retrieve the next set of records by providing this returned
+     *        marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+     *        field is empty, all response records have been retrieved for the request.
      */
 
     public void setMarker(String marker) {
@@ -69,21 +58,16 @@ public class DescribeClusterVersionsResult extends
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      * 
-     * @return A value that indicates the starting point for the next set of
-     *         response records in a subsequent request. If a value is returned
-     *         in a response, you can retrieve the next set of records by
-     *         providing this returned marker value in the <code>Marker</code>
-     *         parameter and retrying the command. If the <code>Marker</code>
-     *         field is empty, all response records have been retrieved for the
-     *         request.
+     * @return A value that indicates the starting point for the next set of response records in a subsequent request.
+     *         If a value is returned in a response, you can retrieve the next set of records by providing this returned
+     *         marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+     *         field is empty, all response records have been retrieved for the request.
      */
 
     public String getMarker() {
@@ -92,24 +76,18 @@ public class DescribeClusterVersionsResult extends
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      * 
      * @param marker
-     *        A value that indicates the starting point for the next set of
-     *        response records in a subsequent request. If a value is returned
-     *        in a response, you can retrieve the next set of records by
-     *        providing this returned marker value in the <code>Marker</code>
-     *        parameter and retrying the command. If the <code>Marker</code>
-     *        field is empty, all response records have been retrieved for the
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value that indicates the starting point for the next set of response records in a subsequent request. If
+     *        a value is returned in a response, you can retrieve the next set of records by providing this returned
+     *        marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+     *        field is empty, all response records have been retrieved for the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeClusterVersionsResult withMarker(String marker) {
@@ -141,15 +119,13 @@ public class DescribeClusterVersionsResult extends
      *        A list of <code>Version</code> elements.
      */
 
-    public void setClusterVersions(
-            java.util.Collection<ClusterVersion> clusterVersions) {
+    public void setClusterVersions(java.util.Collection<ClusterVersion> clusterVersions) {
         if (clusterVersions == null) {
             this.clusterVersions = null;
             return;
         }
 
-        this.clusterVersions = new com.amazonaws.internal.SdkInternalList<ClusterVersion>(
-                clusterVersions);
+        this.clusterVersions = new com.amazonaws.internal.SdkInternalList<ClusterVersion>(clusterVersions);
     }
 
     /**
@@ -157,23 +133,19 @@ public class DescribeClusterVersionsResult extends
      * A list of <code>Version</code> elements.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setClusterVersions(java.util.Collection)} or
-     * {@link #withClusterVersions(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setClusterVersions(java.util.Collection)} or {@link #withClusterVersions(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param clusterVersions
      *        A list of <code>Version</code> elements.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeClusterVersionsResult withClusterVersions(
-            ClusterVersion... clusterVersions) {
+    public DescribeClusterVersionsResult withClusterVersions(ClusterVersion... clusterVersions) {
         if (this.clusterVersions == null) {
-            setClusterVersions(new com.amazonaws.internal.SdkInternalList<ClusterVersion>(
-                    clusterVersions.length));
+            setClusterVersions(new com.amazonaws.internal.SdkInternalList<ClusterVersion>(clusterVersions.length));
         }
         for (ClusterVersion ele : clusterVersions) {
             this.clusterVersions.add(ele);
@@ -188,19 +160,16 @@ public class DescribeClusterVersionsResult extends
      * 
      * @param clusterVersions
      *        A list of <code>Version</code> elements.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeClusterVersionsResult withClusterVersions(
-            java.util.Collection<ClusterVersion> clusterVersions) {
+    public DescribeClusterVersionsResult withClusterVersions(java.util.Collection<ClusterVersion> clusterVersions) {
         setClusterVersions(clusterVersions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -230,14 +199,11 @@ public class DescribeClusterVersionsResult extends
         DescribeClusterVersionsResult other = (DescribeClusterVersionsResult) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
-        if (other.getClusterVersions() == null
-                ^ this.getClusterVersions() == null)
+        if (other.getClusterVersions() == null ^ this.getClusterVersions() == null)
             return false;
-        if (other.getClusterVersions() != null
-                && other.getClusterVersions().equals(this.getClusterVersions()) == false)
+        if (other.getClusterVersions() != null && other.getClusterVersions().equals(this.getClusterVersions()) == false)
             return false;
         return true;
     }
@@ -247,12 +213,8 @@ public class DescribeClusterVersionsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClusterVersions() == null) ? 0 : getClusterVersions()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getClusterVersions() == null) ? 0 : getClusterVersions().hashCode());
         return hashCode;
     }
 
@@ -261,9 +223,7 @@ public class DescribeClusterVersionsResult extends
         try {
             return (DescribeClusterVersionsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

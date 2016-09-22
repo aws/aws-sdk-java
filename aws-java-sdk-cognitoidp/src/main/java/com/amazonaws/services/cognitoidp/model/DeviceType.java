@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -86,8 +84,7 @@ public class DeviceType implements Serializable, Cloneable {
      * 
      * @param deviceKey
      *        The device key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeviceType withDeviceKey(String deviceKey) {
@@ -116,15 +113,13 @@ public class DeviceType implements Serializable, Cloneable {
      *        The device attributes.
      */
 
-    public void setDeviceAttributes(
-            java.util.Collection<AttributeType> deviceAttributes) {
+    public void setDeviceAttributes(java.util.Collection<AttributeType> deviceAttributes) {
         if (deviceAttributes == null) {
             this.deviceAttributes = null;
             return;
         }
 
-        this.deviceAttributes = new java.util.ArrayList<AttributeType>(
-                deviceAttributes);
+        this.deviceAttributes = new java.util.ArrayList<AttributeType>(deviceAttributes);
     }
 
     /**
@@ -132,22 +127,19 @@ public class DeviceType implements Serializable, Cloneable {
      * The device attributes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDeviceAttributes(java.util.Collection)} or
-     * {@link #withDeviceAttributes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeviceAttributes(java.util.Collection)} or {@link #withDeviceAttributes(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param deviceAttributes
      *        The device attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeviceType withDeviceAttributes(AttributeType... deviceAttributes) {
         if (this.deviceAttributes == null) {
-            setDeviceAttributes(new java.util.ArrayList<AttributeType>(
-                    deviceAttributes.length));
+            setDeviceAttributes(new java.util.ArrayList<AttributeType>(deviceAttributes.length));
         }
         for (AttributeType ele : deviceAttributes) {
             this.deviceAttributes.add(ele);
@@ -162,12 +154,10 @@ public class DeviceType implements Serializable, Cloneable {
      * 
      * @param deviceAttributes
      *        The device attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeviceType withDeviceAttributes(
-            java.util.Collection<AttributeType> deviceAttributes) {
+    public DeviceType withDeviceAttributes(java.util.Collection<AttributeType> deviceAttributes) {
         setDeviceAttributes(deviceAttributes);
         return this;
     }
@@ -204,8 +194,7 @@ public class DeviceType implements Serializable, Cloneable {
      * 
      * @param deviceCreateDate
      *        The creation date of the device.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeviceType withDeviceCreateDate(java.util.Date deviceCreateDate) {
@@ -245,12 +234,10 @@ public class DeviceType implements Serializable, Cloneable {
      * 
      * @param deviceLastModifiedDate
      *        The last modified date of the device.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeviceType withDeviceLastModifiedDate(
-            java.util.Date deviceLastModifiedDate) {
+    public DeviceType withDeviceLastModifiedDate(java.util.Date deviceLastModifiedDate) {
         setDeviceLastModifiedDate(deviceLastModifiedDate);
         return this;
     }
@@ -264,8 +251,7 @@ public class DeviceType implements Serializable, Cloneable {
      *        The date in which the device was last authenticated.
      */
 
-    public void setDeviceLastAuthenticatedDate(
-            java.util.Date deviceLastAuthenticatedDate) {
+    public void setDeviceLastAuthenticatedDate(java.util.Date deviceLastAuthenticatedDate) {
         this.deviceLastAuthenticatedDate = deviceLastAuthenticatedDate;
     }
 
@@ -288,19 +274,16 @@ public class DeviceType implements Serializable, Cloneable {
      * 
      * @param deviceLastAuthenticatedDate
      *        The date in which the device was last authenticated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeviceType withDeviceLastAuthenticatedDate(
-            java.util.Date deviceLastAuthenticatedDate) {
+    public DeviceType withDeviceLastAuthenticatedDate(java.util.Date deviceLastAuthenticatedDate) {
         setDeviceLastAuthenticatedDate(deviceLastAuthenticatedDate);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -317,11 +300,9 @@ public class DeviceType implements Serializable, Cloneable {
         if (getDeviceCreateDate() != null)
             sb.append("DeviceCreateDate: " + getDeviceCreateDate() + ",");
         if (getDeviceLastModifiedDate() != null)
-            sb.append("DeviceLastModifiedDate: " + getDeviceLastModifiedDate()
-                    + ",");
+            sb.append("DeviceLastModifiedDate: " + getDeviceLastModifiedDate() + ",");
         if (getDeviceLastAuthenticatedDate() != null)
-            sb.append("DeviceLastAuthenticatedDate: "
-                    + getDeviceLastAuthenticatedDate());
+            sb.append("DeviceLastAuthenticatedDate: " + getDeviceLastAuthenticatedDate());
         sb.append("}");
         return sb.toString();
     }
@@ -338,36 +319,23 @@ public class DeviceType implements Serializable, Cloneable {
         DeviceType other = (DeviceType) obj;
         if (other.getDeviceKey() == null ^ this.getDeviceKey() == null)
             return false;
-        if (other.getDeviceKey() != null
-                && other.getDeviceKey().equals(this.getDeviceKey()) == false)
+        if (other.getDeviceKey() != null && other.getDeviceKey().equals(this.getDeviceKey()) == false)
             return false;
-        if (other.getDeviceAttributes() == null
-                ^ this.getDeviceAttributes() == null)
+        if (other.getDeviceAttributes() == null ^ this.getDeviceAttributes() == null)
             return false;
-        if (other.getDeviceAttributes() != null
-                && other.getDeviceAttributes().equals(
-                        this.getDeviceAttributes()) == false)
+        if (other.getDeviceAttributes() != null && other.getDeviceAttributes().equals(this.getDeviceAttributes()) == false)
             return false;
-        if (other.getDeviceCreateDate() == null
-                ^ this.getDeviceCreateDate() == null)
+        if (other.getDeviceCreateDate() == null ^ this.getDeviceCreateDate() == null)
             return false;
-        if (other.getDeviceCreateDate() != null
-                && other.getDeviceCreateDate().equals(
-                        this.getDeviceCreateDate()) == false)
+        if (other.getDeviceCreateDate() != null && other.getDeviceCreateDate().equals(this.getDeviceCreateDate()) == false)
             return false;
-        if (other.getDeviceLastModifiedDate() == null
-                ^ this.getDeviceLastModifiedDate() == null)
+        if (other.getDeviceLastModifiedDate() == null ^ this.getDeviceLastModifiedDate() == null)
             return false;
-        if (other.getDeviceLastModifiedDate() != null
-                && other.getDeviceLastModifiedDate().equals(
-                        this.getDeviceLastModifiedDate()) == false)
+        if (other.getDeviceLastModifiedDate() != null && other.getDeviceLastModifiedDate().equals(this.getDeviceLastModifiedDate()) == false)
             return false;
-        if (other.getDeviceLastAuthenticatedDate() == null
-                ^ this.getDeviceLastAuthenticatedDate() == null)
+        if (other.getDeviceLastAuthenticatedDate() == null ^ this.getDeviceLastAuthenticatedDate() == null)
             return false;
-        if (other.getDeviceLastAuthenticatedDate() != null
-                && other.getDeviceLastAuthenticatedDate().equals(
-                        this.getDeviceLastAuthenticatedDate()) == false)
+        if (other.getDeviceLastAuthenticatedDate() != null && other.getDeviceLastAuthenticatedDate().equals(this.getDeviceLastAuthenticatedDate()) == false)
             return false;
         return true;
     }
@@ -377,24 +345,11 @@ public class DeviceType implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDeviceKey() == null) ? 0 : getDeviceKey().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeviceAttributes() == null) ? 0 : getDeviceAttributes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeviceCreateDate() == null) ? 0 : getDeviceCreateDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeviceLastModifiedDate() == null) ? 0
-                        : getDeviceLastModifiedDate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeviceLastAuthenticatedDate() == null) ? 0
-                        : getDeviceLastAuthenticatedDate().hashCode());
+        hashCode = prime * hashCode + ((getDeviceKey() == null) ? 0 : getDeviceKey().hashCode());
+        hashCode = prime * hashCode + ((getDeviceAttributes() == null) ? 0 : getDeviceAttributes().hashCode());
+        hashCode = prime * hashCode + ((getDeviceCreateDate() == null) ? 0 : getDeviceCreateDate().hashCode());
+        hashCode = prime * hashCode + ((getDeviceLastModifiedDate() == null) ? 0 : getDeviceLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getDeviceLastAuthenticatedDate() == null) ? 0 : getDeviceLastAuthenticatedDate().hashCode());
         return hashCode;
     }
 
@@ -403,9 +358,7 @@ public class DeviceType implements Serializable, Cloneable {
         try {
             return (DeviceType) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

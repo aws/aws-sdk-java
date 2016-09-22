@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeImagesRequestMarshalle
  * Contains the parameters for DescribeImages.
  * </p>
  */
-public class DescribeImagesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<DescribeImagesRequest> {
+public class DescribeImagesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeImagesRequest> {
 
     /**
      * <p>
@@ -38,20 +35,17 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> imageIds;
     /**
      * <p>
-     * Filters the images by the owner. Specify an AWS account ID,
-     * <code>self</code> (owner is the sender of the request), or an AWS owner
-     * alias (valid values are <code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>). Omitting this
-     * option returns all images for which you have launch permissions,
+     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
      * regardless of ownership.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> owners;
     /**
      * <p>
-     * Scopes the images by users with explicit launch permissions. Specify an
-     * AWS account ID, <code>self</code> (the sender of the request), or
-     * <code>all</code> (public AMIs).
+     * Scopes the images by users with explicit launch permissions. Specify an AWS account ID, <code>self</code> (the
+     * sender of the request), or <code>all</code> (public AMIs).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> executableUsers;
@@ -62,52 +56,45 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>architecture</code> - The image architecture (<code>i386</code> |
-     * <code>x86_64</code>).
+     * <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.delete-on-termination</code> - A Boolean value
-     * that indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates whether the Amazon EBS
+     * volume is deleted on instance termination.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.device-name</code> - The device name for the
-     * EBS volume (for example, <code>/dev/sdh</code>).
+     * <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
+     * <code>/dev/sdh</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot
-     * used for the EBS volume.
+     * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.volume-size</code> - The volume size of the
-     * EBS volume, in GiB.
+     * <code>block-device-mapping.volume-size</code> - The volume size of the EBS volume, in GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.volume-type</code> - The volume type of the
-     * EBS volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
-     * <code>sc1</code> | <code>standard</code>).
+     * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
+     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>description</code> - The description of the image (provided during
-     * image creation).
+     * <code>description</code> - The description of the image (provided during image creation).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     * <code>xen</code>).
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -117,14 +104,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>image-type</code> - The image type (<code>machine</code> |
-     * <code>kernel</code> | <code>ramdisk</code>).
+     * <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>is-public</code> - A Boolean that indicates whether the image is
-     * public.
+     * <code>is-public</code> - A Boolean that indicates whether the image is public.
      * </p>
      * </li>
      * <li>
@@ -144,9 +129,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - String value from an Amazon-maintained list (
-     * <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     * <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
      * user-configured AWS account alias, which is set from the IAM console.
      * </p>
      * </li>
@@ -157,8 +141,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform. To only list Windows-based AMIs,
-     * use <code>windows</code>.
+     * <code>platform</code> - The platform. To only list Windows-based AMIs, use <code>windows</code>.
      * </p>
      * </li>
      * <li>
@@ -168,8 +151,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>product-code.type</code> - The type of the product code (
-     * <code>devpay</code> | <code>marketplace</code>).
+     * <code>product-code.type</code> - The type of the product code (<code>devpay</code> | <code>marketplace</code>).
      * </p>
      * </li>
      * <li>
@@ -179,20 +161,19 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>root-device-name</code> - The name of the root device volume (for
-     * example, <code>/dev/sda1</code>).
+     * <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>root-device-type</code> - The type of the root device volume (
-     * <code>ebs</code> | <code>instance-store</code>).
+     * <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |
+     * <code>instance-store</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the image (<code>available</code> |
-     * <code>pending</code> | <code>failed</code>).
+     * <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>
+     * ).
      * </p>
      * </li>
      * <li>
@@ -207,31 +188,27 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a
-     * tag assigned to the resource.
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This
-     * filter is independent of the tag-value filter. For example, if you use
-     * both the filter "tag-key=Purpose" and the filter "tag-value=X", you get
-     * any resources assigned both the tag key Purpose (regardless of what the
-     * tag's value is), and the tag value X (regardless of what the tag's key
-     * is). If you want to list only resources where Purpose is X, see the
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the tag-value
+     * filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any
+     * resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the
      * <code>tag</code>:<i>key</i>=<i>value</i> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource.
-     * This filter is independent of the <code>tag-key</code> filter.
+     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-key</code> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>virtualization-type</code> - The virtualization type (
-     * <code>paravirtual</code> | <code>hvm</code>).
+     * <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).
      * </p>
      * </li>
      * </ul>
@@ -278,8 +255,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.imageIds = new com.amazonaws.internal.SdkInternalList<String>(
-                imageIds);
+        this.imageIds = new com.amazonaws.internal.SdkInternalList<String>(imageIds);
     }
 
     /**
@@ -290,24 +266,21 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * Default: Describes all images available to you.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setImageIds(java.util.Collection)} or
-     * {@link #withImageIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setImageIds(java.util.Collection)} or {@link #withImageIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param imageIds
      *        One or more image IDs.</p>
      *        <p>
      *        Default: Describes all images available to you.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeImagesRequest withImageIds(String... imageIds) {
         if (this.imageIds == null) {
-            setImageIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    imageIds.length));
+            setImageIds(new com.amazonaws.internal.SdkInternalList<String>(imageIds.length));
         }
         for (String ele : imageIds) {
             this.imageIds.add(ele);
@@ -327,32 +300,26 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        One or more image IDs.</p>
      *        <p>
      *        Default: Describes all images available to you.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeImagesRequest withImageIds(
-            java.util.Collection<String> imageIds) {
+    public DescribeImagesRequest withImageIds(java.util.Collection<String> imageIds) {
         setImageIds(imageIds);
         return this;
     }
 
     /**
      * <p>
-     * Filters the images by the owner. Specify an AWS account ID,
-     * <code>self</code> (owner is the sender of the request), or an AWS owner
-     * alias (valid values are <code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>). Omitting this
-     * option returns all images for which you have launch permissions,
+     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
      * regardless of ownership.
      * </p>
      * 
-     * @return Filters the images by the owner. Specify an AWS account ID,
-     *         <code>self</code> (owner is the sender of the request), or an AWS
-     *         owner alias (valid values are <code>amazon</code> |
-     *         <code>aws-marketplace</code> | <code>microsoft</code>). Omitting
-     *         this option returns all images for which you have launch
-     *         permissions, regardless of ownership.
+     * @return Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     *         request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     *         <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
+     *         regardless of ownership.
      */
 
     public java.util.List<String> getOwners() {
@@ -364,21 +331,17 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Filters the images by the owner. Specify an AWS account ID,
-     * <code>self</code> (owner is the sender of the request), or an AWS owner
-     * alias (valid values are <code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>). Omitting this
-     * option returns all images for which you have launch permissions,
+     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
      * regardless of ownership.
      * </p>
      * 
      * @param owners
-     *        Filters the images by the owner. Specify an AWS account ID,
-     *        <code>self</code> (owner is the sender of the request), or an AWS
-     *        owner alias (valid values are <code>amazon</code> |
-     *        <code>aws-marketplace</code> | <code>microsoft</code>). Omitting
-     *        this option returns all images for which you have launch
-     *        permissions, regardless of ownership.
+     *        Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     *        request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     *        <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
+     *        regardless of ownership.
      */
 
     public void setOwners(java.util.Collection<String> owners) {
@@ -392,35 +355,28 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Filters the images by the owner. Specify an AWS account ID,
-     * <code>self</code> (owner is the sender of the request), or an AWS owner
-     * alias (valid values are <code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>). Omitting this
-     * option returns all images for which you have launch permissions,
+     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
      * regardless of ownership.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOwners(java.util.Collection)} or
-     * {@link #withOwners(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOwners(java.util.Collection)} or {@link #withOwners(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param owners
-     *        Filters the images by the owner. Specify an AWS account ID,
-     *        <code>self</code> (owner is the sender of the request), or an AWS
-     *        owner alias (valid values are <code>amazon</code> |
-     *        <code>aws-marketplace</code> | <code>microsoft</code>). Omitting
-     *        this option returns all images for which you have launch
-     *        permissions, regardless of ownership.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     *        request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     *        <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
+     *        regardless of ownership.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeImagesRequest withOwners(String... owners) {
         if (this.owners == null) {
-            setOwners(new com.amazonaws.internal.SdkInternalList<String>(
-                    owners.length));
+            setOwners(new com.amazonaws.internal.SdkInternalList<String>(owners.length));
         }
         for (String ele : owners) {
             this.owners.add(ele);
@@ -430,23 +386,18 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Filters the images by the owner. Specify an AWS account ID,
-     * <code>self</code> (owner is the sender of the request), or an AWS owner
-     * alias (valid values are <code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>). Omitting this
-     * option returns all images for which you have launch permissions,
+     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
      * regardless of ownership.
      * </p>
      * 
      * @param owners
-     *        Filters the images by the owner. Specify an AWS account ID,
-     *        <code>self</code> (owner is the sender of the request), or an AWS
-     *        owner alias (valid values are <code>amazon</code> |
-     *        <code>aws-marketplace</code> | <code>microsoft</code>). Omitting
-     *        this option returns all images for which you have launch
-     *        permissions, regardless of ownership.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     *        request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     *        <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
+     *        regardless of ownership.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeImagesRequest withOwners(java.util.Collection<String> owners) {
@@ -456,14 +407,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Scopes the images by users with explicit launch permissions. Specify an
-     * AWS account ID, <code>self</code> (the sender of the request), or
-     * <code>all</code> (public AMIs).
+     * Scopes the images by users with explicit launch permissions. Specify an AWS account ID, <code>self</code> (the
+     * sender of the request), or <code>all</code> (public AMIs).
      * </p>
      * 
-     * @return Scopes the images by users with explicit launch permissions.
-     *         Specify an AWS account ID, <code>self</code> (the sender of the
-     *         request), or <code>all</code> (public AMIs).
+     * @return Scopes the images by users with explicit launch permissions. Specify an AWS account ID, <code>self</code>
+     *         (the sender of the request), or <code>all</code> (public AMIs).
      */
 
     public java.util.List<String> getExecutableUsers() {
@@ -475,15 +424,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Scopes the images by users with explicit launch permissions. Specify an
-     * AWS account ID, <code>self</code> (the sender of the request), or
-     * <code>all</code> (public AMIs).
+     * Scopes the images by users with explicit launch permissions. Specify an AWS account ID, <code>self</code> (the
+     * sender of the request), or <code>all</code> (public AMIs).
      * </p>
      * 
      * @param executableUsers
-     *        Scopes the images by users with explicit launch permissions.
-     *        Specify an AWS account ID, <code>self</code> (the sender of the
-     *        request), or <code>all</code> (public AMIs).
+     *        Scopes the images by users with explicit launch permissions. Specify an AWS account ID, <code>self</code>
+     *        (the sender of the request), or <code>all</code> (public AMIs).
      */
 
     public void setExecutableUsers(java.util.Collection<String> executableUsers) {
@@ -492,35 +439,29 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.executableUsers = new com.amazonaws.internal.SdkInternalList<String>(
-                executableUsers);
+        this.executableUsers = new com.amazonaws.internal.SdkInternalList<String>(executableUsers);
     }
 
     /**
      * <p>
-     * Scopes the images by users with explicit launch permissions. Specify an
-     * AWS account ID, <code>self</code> (the sender of the request), or
-     * <code>all</code> (public AMIs).
+     * Scopes the images by users with explicit launch permissions. Specify an AWS account ID, <code>self</code> (the
+     * sender of the request), or <code>all</code> (public AMIs).
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setExecutableUsers(java.util.Collection)} or
-     * {@link #withExecutableUsers(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExecutableUsers(java.util.Collection)} or {@link #withExecutableUsers(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param executableUsers
-     *        Scopes the images by users with explicit launch permissions.
-     *        Specify an AWS account ID, <code>self</code> (the sender of the
-     *        request), or <code>all</code> (public AMIs).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Scopes the images by users with explicit launch permissions. Specify an AWS account ID, <code>self</code>
+     *        (the sender of the request), or <code>all</code> (public AMIs).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeImagesRequest withExecutableUsers(String... executableUsers) {
         if (this.executableUsers == null) {
-            setExecutableUsers(new com.amazonaws.internal.SdkInternalList<String>(
-                    executableUsers.length));
+            setExecutableUsers(new com.amazonaws.internal.SdkInternalList<String>(executableUsers.length));
         }
         for (String ele : executableUsers) {
             this.executableUsers.add(ele);
@@ -530,21 +471,17 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Scopes the images by users with explicit launch permissions. Specify an
-     * AWS account ID, <code>self</code> (the sender of the request), or
-     * <code>all</code> (public AMIs).
+     * Scopes the images by users with explicit launch permissions. Specify an AWS account ID, <code>self</code> (the
+     * sender of the request), or <code>all</code> (public AMIs).
      * </p>
      * 
      * @param executableUsers
-     *        Scopes the images by users with explicit launch permissions.
-     *        Specify an AWS account ID, <code>self</code> (the sender of the
-     *        request), or <code>all</code> (public AMIs).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Scopes the images by users with explicit launch permissions. Specify an AWS account ID, <code>self</code>
+     *        (the sender of the request), or <code>all</code> (public AMIs).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeImagesRequest withExecutableUsers(
-            java.util.Collection<String> executableUsers) {
+    public DescribeImagesRequest withExecutableUsers(java.util.Collection<String> executableUsers) {
         setExecutableUsers(executableUsers);
         return this;
     }
@@ -556,52 +493,45 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>architecture</code> - The image architecture (<code>i386</code> |
-     * <code>x86_64</code>).
+     * <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.delete-on-termination</code> - A Boolean value
-     * that indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates whether the Amazon EBS
+     * volume is deleted on instance termination.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.device-name</code> - The device name for the
-     * EBS volume (for example, <code>/dev/sdh</code>).
+     * <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
+     * <code>/dev/sdh</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot
-     * used for the EBS volume.
+     * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.volume-size</code> - The volume size of the
-     * EBS volume, in GiB.
+     * <code>block-device-mapping.volume-size</code> - The volume size of the EBS volume, in GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.volume-type</code> - The volume type of the
-     * EBS volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
-     * <code>sc1</code> | <code>standard</code>).
+     * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
+     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>description</code> - The description of the image (provided during
-     * image creation).
+     * <code>description</code> - The description of the image (provided during image creation).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     * <code>xen</code>).
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -611,14 +541,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>image-type</code> - The image type (<code>machine</code> |
-     * <code>kernel</code> | <code>ramdisk</code>).
+     * <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>is-public</code> - A Boolean that indicates whether the image is
-     * public.
+     * <code>is-public</code> - A Boolean that indicates whether the image is public.
      * </p>
      * </li>
      * <li>
@@ -638,9 +566,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - String value from an Amazon-maintained list (
-     * <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     * <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
      * user-configured AWS account alias, which is set from the IAM console.
      * </p>
      * </li>
@@ -651,8 +578,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform. To only list Windows-based AMIs,
-     * use <code>windows</code>.
+     * <code>platform</code> - The platform. To only list Windows-based AMIs, use <code>windows</code>.
      * </p>
      * </li>
      * <li>
@@ -662,8 +588,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>product-code.type</code> - The type of the product code (
-     * <code>devpay</code> | <code>marketplace</code>).
+     * <code>product-code.type</code> - The type of the product code (<code>devpay</code> | <code>marketplace</code>).
      * </p>
      * </li>
      * <li>
@@ -673,20 +598,19 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>root-device-name</code> - The name of the root device volume (for
-     * example, <code>/dev/sda1</code>).
+     * <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>root-device-type</code> - The type of the root device volume (
-     * <code>ebs</code> | <code>instance-store</code>).
+     * <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |
+     * <code>instance-store</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the image (<code>available</code> |
-     * <code>pending</code> | <code>failed</code>).
+     * <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>
+     * ).
      * </p>
      * </li>
      * <li>
@@ -701,31 +625,27 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a
-     * tag assigned to the resource.
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This
-     * filter is independent of the tag-value filter. For example, if you use
-     * both the filter "tag-key=Purpose" and the filter "tag-value=X", you get
-     * any resources assigned both the tag key Purpose (regardless of what the
-     * tag's value is), and the tag value X (regardless of what the tag's key
-     * is). If you want to list only resources where Purpose is X, see the
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the tag-value
+     * filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any
+     * resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the
      * <code>tag</code>:<i>key</i>=<i>value</i> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource.
-     * This filter is independent of the <code>tag-key</code> filter.
+     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-key</code> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>virtualization-type</code> - The virtualization type (
-     * <code>paravirtual</code> | <code>hvm</code>).
+     * <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).
      * </p>
      * </li>
      * </ul>
@@ -734,52 +654,45 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>architecture</code> - The image architecture (
-     *         <code>i386</code> | <code>x86_64</code>).
+     *         <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>block-device-mapping.delete-on-termination</code> - A
-     *         Boolean value that indicates whether the Amazon EBS volume is
-     *         deleted on instance termination.
+     *         <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates whether the
+     *         Amazon EBS volume is deleted on instance termination.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>block-device-mapping.device-name</code> - The device name
-     *         for the EBS volume (for example, <code>/dev/sdh</code>).
+     *         <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
+     *         <code>/dev/sdh</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>block-device-mapping.snapshot-id</code> - The ID of the
-     *         snapshot used for the EBS volume.
+     *         <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the EBS volume.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>block-device-mapping.volume-size</code> - The volume size
-     *         of the EBS volume, in GiB.
+     *         <code>block-device-mapping.volume-size</code> - The volume size of the EBS volume, in GiB.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>block-device-mapping.volume-type</code> - The volume type
-     *         of the EBS volume (<code>gp2</code> | <code>io1</code> |
-     *         <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     *         <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
+     *         <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>description</code> - The description of the image (provided
-     *         during image creation).
+     *         <code>description</code> - The description of the image (provided during image creation).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     *         <code>xen</code>).
+     *         <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -789,14 +702,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>image-type</code> - The image type (<code>machine</code> |
-     *         <code>kernel</code> | <code>ramdisk</code>).
+     *         <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> |
+     *         <code>ramdisk</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>is-public</code> - A Boolean that indicates whether the
-     *         image is public.
+     *         <code>is-public</code> - A Boolean that indicates whether the image is public.
      *         </p>
      *         </li>
      *         <li>
@@ -806,23 +718,19 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>manifest-location</code> - The location of the image
-     *         manifest.
+     *         <code>manifest-location</code> - The location of the image manifest.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>name</code> - The name of the AMI (provided during image
-     *         creation).
+     *         <code>name</code> - The name of the AMI (provided during image creation).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-alias</code> - String value from an Amazon-maintained
-     *         list (<code>amazon</code> | <code>aws-marketplace</code> |
-     *         <code>microsoft</code>) of snapshot owners. Not to be confused
-     *         with the user-configured AWS account alias, which is set from the
-     *         IAM console.
+     *         <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
+     *         <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     *         user-configured AWS account alias, which is set from the IAM console.
      *         </p>
      *         </li>
      *         <li>
@@ -832,8 +740,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>platform</code> - The platform. To only list Windows-based
-     *         AMIs, use <code>windows</code>.
+     *         <code>platform</code> - The platform. To only list Windows-based AMIs, use <code>windows</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -843,8 +750,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>product-code.type</code> - The type of the product code (
-     *         <code>devpay</code> | <code>marketplace</code>).
+     *         <code>product-code.type</code> - The type of the product code (<code>devpay</code> |
+     *         <code>marketplace</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -854,64 +761,54 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>root-device-name</code> - The name of the root device
-     *         volume (for example, <code>/dev/sda1</code>).
+     *         <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>root-device-type</code> - The type of the root device
-     *         volume (<code>ebs</code> | <code>instance-store</code>).
+     *         <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |
+     *         <code>instance-store</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>state</code> - The state of the image (
-     *         <code>available</code> | <code>pending</code> |
+     *         <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> |
      *         <code>failed</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>state-reason-code</code> - The reason code for the state
-     *         change.
+     *         <code>state-reason-code</code> - The reason code for the state change.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>state-reason-message</code> - The message for the state
-     *         change.
+     *         <code>state-reason-message</code> - The message for the state change.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     *         combination of a tag assigned to the resource.
+     *         <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag-key</code> - The key of a tag assigned to the resource.
-     *         This filter is independent of the tag-value filter. For example,
-     *         if you use both the filter "tag-key=Purpose" and the filter
-     *         "tag-value=X", you get any resources assigned both the tag key
-     *         Purpose (regardless of what the tag's value is), and the tag
-     *         value X (regardless of what the tag's key is). If you want to
-     *         list only resources where Purpose is X, see the <code>tag</code>
-     *         :<i>key</i>=<i>value</i> filter.
+     *         <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
+     *         tag-value filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X",
+     *         you get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the
+     *         tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
+     *         see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag-value</code> - The value of a tag assigned to the
-     *         resource. This filter is independent of the <code>tag-key</code>
-     *         filter.
+     *         <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     *         <code>tag-key</code> filter.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>virtualization-type</code> - The virtualization type (
-     *         <code>paravirtual</code> | <code>hvm</code>).
+     *         <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).
      *         </p>
      *         </li>
      */
@@ -930,52 +827,45 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>architecture</code> - The image architecture (<code>i386</code> |
-     * <code>x86_64</code>).
+     * <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.delete-on-termination</code> - A Boolean value
-     * that indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates whether the Amazon EBS
+     * volume is deleted on instance termination.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.device-name</code> - The device name for the
-     * EBS volume (for example, <code>/dev/sdh</code>).
+     * <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
+     * <code>/dev/sdh</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot
-     * used for the EBS volume.
+     * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.volume-size</code> - The volume size of the
-     * EBS volume, in GiB.
+     * <code>block-device-mapping.volume-size</code> - The volume size of the EBS volume, in GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.volume-type</code> - The volume type of the
-     * EBS volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
-     * <code>sc1</code> | <code>standard</code>).
+     * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
+     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>description</code> - The description of the image (provided during
-     * image creation).
+     * <code>description</code> - The description of the image (provided during image creation).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     * <code>xen</code>).
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -985,14 +875,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>image-type</code> - The image type (<code>machine</code> |
-     * <code>kernel</code> | <code>ramdisk</code>).
+     * <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>is-public</code> - A Boolean that indicates whether the image is
-     * public.
+     * <code>is-public</code> - A Boolean that indicates whether the image is public.
      * </p>
      * </li>
      * <li>
@@ -1012,9 +900,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - String value from an Amazon-maintained list (
-     * <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     * <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
      * user-configured AWS account alias, which is set from the IAM console.
      * </p>
      * </li>
@@ -1025,8 +912,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform. To only list Windows-based AMIs,
-     * use <code>windows</code>.
+     * <code>platform</code> - The platform. To only list Windows-based AMIs, use <code>windows</code>.
      * </p>
      * </li>
      * <li>
@@ -1036,8 +922,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>product-code.type</code> - The type of the product code (
-     * <code>devpay</code> | <code>marketplace</code>).
+     * <code>product-code.type</code> - The type of the product code (<code>devpay</code> | <code>marketplace</code>).
      * </p>
      * </li>
      * <li>
@@ -1047,20 +932,19 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>root-device-name</code> - The name of the root device volume (for
-     * example, <code>/dev/sda1</code>).
+     * <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>root-device-type</code> - The type of the root device volume (
-     * <code>ebs</code> | <code>instance-store</code>).
+     * <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |
+     * <code>instance-store</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the image (<code>available</code> |
-     * <code>pending</code> | <code>failed</code>).
+     * <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>
+     * ).
      * </p>
      * </li>
      * <li>
@@ -1075,31 +959,27 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a
-     * tag assigned to the resource.
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This
-     * filter is independent of the tag-value filter. For example, if you use
-     * both the filter "tag-key=Purpose" and the filter "tag-value=X", you get
-     * any resources assigned both the tag key Purpose (regardless of what the
-     * tag's value is), and the tag value X (regardless of what the tag's key
-     * is). If you want to list only resources where Purpose is X, see the
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the tag-value
+     * filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any
+     * resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the
      * <code>tag</code>:<i>key</i>=<i>value</i> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource.
-     * This filter is independent of the <code>tag-key</code> filter.
+     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-key</code> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>virtualization-type</code> - The virtualization type (
-     * <code>paravirtual</code> | <code>hvm</code>).
+     * <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).
      * </p>
      * </li>
      * </ul>
@@ -1109,52 +989,45 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>architecture</code> - The image architecture (
-     *        <code>i386</code> | <code>x86_64</code>).
+     *        <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.delete-on-termination</code> - A
-     *        Boolean value that indicates whether the Amazon EBS volume is
-     *        deleted on instance termination.
+     *        <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates whether the
+     *        Amazon EBS volume is deleted on instance termination.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.device-name</code> - The device name
-     *        for the EBS volume (for example, <code>/dev/sdh</code>).
+     *        <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
+     *        <code>/dev/sdh</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.snapshot-id</code> - The ID of the
-     *        snapshot used for the EBS volume.
+     *        <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the EBS volume.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.volume-size</code> - The volume size of
-     *        the EBS volume, in GiB.
+     *        <code>block-device-mapping.volume-size</code> - The volume size of the EBS volume, in GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.volume-type</code> - The volume type of
-     *        the EBS volume (<code>gp2</code> | <code>io1</code> |
-     *        <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     *        <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
+     *        <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>description</code> - The description of the image (provided
-     *        during image creation).
+     *        <code>description</code> - The description of the image (provided during image creation).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     *        <code>xen</code>).
+     *        <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1164,14 +1037,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>image-type</code> - The image type (<code>machine</code> |
-     *        <code>kernel</code> | <code>ramdisk</code>).
+     *        <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> |
+     *        <code>ramdisk</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>is-public</code> - A Boolean that indicates whether the
-     *        image is public.
+     *        <code>is-public</code> - A Boolean that indicates whether the image is public.
      *        </p>
      *        </li>
      *        <li>
@@ -1181,23 +1053,19 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>manifest-location</code> - The location of the image
-     *        manifest.
+     *        <code>manifest-location</code> - The location of the image manifest.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>name</code> - The name of the AMI (provided during image
-     *        creation).
+     *        <code>name</code> - The name of the AMI (provided during image creation).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-alias</code> - String value from an Amazon-maintained
-     *        list (<code>amazon</code> | <code>aws-marketplace</code> |
-     *        <code>microsoft</code>) of snapshot owners. Not to be confused
-     *        with the user-configured AWS account alias, which is set from the
-     *        IAM console.
+     *        <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
+     *        <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     *        user-configured AWS account alias, which is set from the IAM console.
      *        </p>
      *        </li>
      *        <li>
@@ -1207,8 +1075,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>platform</code> - The platform. To only list Windows-based
-     *        AMIs, use <code>windows</code>.
+     *        <code>platform</code> - The platform. To only list Windows-based AMIs, use <code>windows</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1218,8 +1085,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>product-code.type</code> - The type of the product code (
-     *        <code>devpay</code> | <code>marketplace</code>).
+     *        <code>product-code.type</code> - The type of the product code (<code>devpay</code> |
+     *        <code>marketplace</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1229,64 +1096,54 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>root-device-name</code> - The name of the root device volume
-     *        (for example, <code>/dev/sda1</code>).
+     *        <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>root-device-type</code> - The type of the root device volume
-     *        (<code>ebs</code> | <code>instance-store</code>).
+     *        <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |
+     *        <code>instance-store</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the image (
-     *        <code>available</code> | <code>pending</code> |
+     *        <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> |
      *        <code>failed</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state-reason-code</code> - The reason code for the state
-     *        change.
+     *        <code>state-reason-code</code> - The reason code for the state change.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state-reason-message</code> - The message for the state
-     *        change.
+     *        <code>state-reason-message</code> - The message for the state change.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     *        combination of a tag assigned to the resource.
+     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource.
-     *        This filter is independent of the tag-value filter. For example,
-     *        if you use both the filter "tag-key=Purpose" and the filter
-     *        "tag-value=X", you get any resources assigned both the tag key
-     *        Purpose (regardless of what the tag's value is), and the tag value
-     *        X (regardless of what the tag's key is). If you want to list only
-     *        resources where Purpose is X, see the <code>tag</code>
-     *        :<i>key</i>=<i>value</i> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
+     *        tag-value filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X",
+     *        you get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the
+     *        tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
+     *        see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the
-     *        resource. This filter is independent of the <code>tag-key</code>
-     *        filter.
+     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     *        <code>tag-key</code> filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>virtualization-type</code> - The virtualization type (
-     *        <code>paravirtual</code> | <code>hvm</code>).
+     *        <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).
      *        </p>
      *        </li>
      */
@@ -1297,8 +1154,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -1308,52 +1164,45 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>architecture</code> - The image architecture (<code>i386</code> |
-     * <code>x86_64</code>).
+     * <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.delete-on-termination</code> - A Boolean value
-     * that indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates whether the Amazon EBS
+     * volume is deleted on instance termination.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.device-name</code> - The device name for the
-     * EBS volume (for example, <code>/dev/sdh</code>).
+     * <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
+     * <code>/dev/sdh</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot
-     * used for the EBS volume.
+     * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.volume-size</code> - The volume size of the
-     * EBS volume, in GiB.
+     * <code>block-device-mapping.volume-size</code> - The volume size of the EBS volume, in GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.volume-type</code> - The volume type of the
-     * EBS volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
-     * <code>sc1</code> | <code>standard</code>).
+     * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
+     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>description</code> - The description of the image (provided during
-     * image creation).
+     * <code>description</code> - The description of the image (provided during image creation).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     * <code>xen</code>).
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -1363,14 +1212,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>image-type</code> - The image type (<code>machine</code> |
-     * <code>kernel</code> | <code>ramdisk</code>).
+     * <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>is-public</code> - A Boolean that indicates whether the image is
-     * public.
+     * <code>is-public</code> - A Boolean that indicates whether the image is public.
      * </p>
      * </li>
      * <li>
@@ -1390,9 +1237,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - String value from an Amazon-maintained list (
-     * <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     * <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
      * user-configured AWS account alias, which is set from the IAM console.
      * </p>
      * </li>
@@ -1403,8 +1249,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform. To only list Windows-based AMIs,
-     * use <code>windows</code>.
+     * <code>platform</code> - The platform. To only list Windows-based AMIs, use <code>windows</code>.
      * </p>
      * </li>
      * <li>
@@ -1414,8 +1259,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>product-code.type</code> - The type of the product code (
-     * <code>devpay</code> | <code>marketplace</code>).
+     * <code>product-code.type</code> - The type of the product code (<code>devpay</code> | <code>marketplace</code>).
      * </p>
      * </li>
      * <li>
@@ -1425,20 +1269,19 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>root-device-name</code> - The name of the root device volume (for
-     * example, <code>/dev/sda1</code>).
+     * <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>root-device-type</code> - The type of the root device volume (
-     * <code>ebs</code> | <code>instance-store</code>).
+     * <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |
+     * <code>instance-store</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the image (<code>available</code> |
-     * <code>pending</code> | <code>failed</code>).
+     * <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>
+     * ).
      * </p>
      * </li>
      * <li>
@@ -1453,39 +1296,34 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a
-     * tag assigned to the resource.
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This
-     * filter is independent of the tag-value filter. For example, if you use
-     * both the filter "tag-key=Purpose" and the filter "tag-value=X", you get
-     * any resources assigned both the tag key Purpose (regardless of what the
-     * tag's value is), and the tag value X (regardless of what the tag's key
-     * is). If you want to list only resources where Purpose is X, see the
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the tag-value
+     * filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any
+     * resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the
      * <code>tag</code>:<i>key</i>=<i>value</i> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource.
-     * This filter is independent of the <code>tag-key</code> filter.
+     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-key</code> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>virtualization-type</code> - The virtualization type (
-     * <code>paravirtual</code> | <code>hvm</code>).
+     * <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
@@ -1493,52 +1331,45 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>architecture</code> - The image architecture (
-     *        <code>i386</code> | <code>x86_64</code>).
+     *        <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.delete-on-termination</code> - A
-     *        Boolean value that indicates whether the Amazon EBS volume is
-     *        deleted on instance termination.
+     *        <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates whether the
+     *        Amazon EBS volume is deleted on instance termination.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.device-name</code> - The device name
-     *        for the EBS volume (for example, <code>/dev/sdh</code>).
+     *        <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
+     *        <code>/dev/sdh</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.snapshot-id</code> - The ID of the
-     *        snapshot used for the EBS volume.
+     *        <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the EBS volume.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.volume-size</code> - The volume size of
-     *        the EBS volume, in GiB.
+     *        <code>block-device-mapping.volume-size</code> - The volume size of the EBS volume, in GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.volume-type</code> - The volume type of
-     *        the EBS volume (<code>gp2</code> | <code>io1</code> |
-     *        <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     *        <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
+     *        <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>description</code> - The description of the image (provided
-     *        during image creation).
+     *        <code>description</code> - The description of the image (provided during image creation).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     *        <code>xen</code>).
+     *        <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1548,14 +1379,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>image-type</code> - The image type (<code>machine</code> |
-     *        <code>kernel</code> | <code>ramdisk</code>).
+     *        <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> |
+     *        <code>ramdisk</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>is-public</code> - A Boolean that indicates whether the
-     *        image is public.
+     *        <code>is-public</code> - A Boolean that indicates whether the image is public.
      *        </p>
      *        </li>
      *        <li>
@@ -1565,23 +1395,19 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>manifest-location</code> - The location of the image
-     *        manifest.
+     *        <code>manifest-location</code> - The location of the image manifest.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>name</code> - The name of the AMI (provided during image
-     *        creation).
+     *        <code>name</code> - The name of the AMI (provided during image creation).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-alias</code> - String value from an Amazon-maintained
-     *        list (<code>amazon</code> | <code>aws-marketplace</code> |
-     *        <code>microsoft</code>) of snapshot owners. Not to be confused
-     *        with the user-configured AWS account alias, which is set from the
-     *        IAM console.
+     *        <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
+     *        <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     *        user-configured AWS account alias, which is set from the IAM console.
      *        </p>
      *        </li>
      *        <li>
@@ -1591,8 +1417,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>platform</code> - The platform. To only list Windows-based
-     *        AMIs, use <code>windows</code>.
+     *        <code>platform</code> - The platform. To only list Windows-based AMIs, use <code>windows</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1602,8 +1427,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>product-code.type</code> - The type of the product code (
-     *        <code>devpay</code> | <code>marketplace</code>).
+     *        <code>product-code.type</code> - The type of the product code (<code>devpay</code> |
+     *        <code>marketplace</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1613,74 +1438,62 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>root-device-name</code> - The name of the root device volume
-     *        (for example, <code>/dev/sda1</code>).
+     *        <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>root-device-type</code> - The type of the root device volume
-     *        (<code>ebs</code> | <code>instance-store</code>).
+     *        <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |
+     *        <code>instance-store</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the image (
-     *        <code>available</code> | <code>pending</code> |
+     *        <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> |
      *        <code>failed</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state-reason-code</code> - The reason code for the state
-     *        change.
+     *        <code>state-reason-code</code> - The reason code for the state change.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state-reason-message</code> - The message for the state
-     *        change.
+     *        <code>state-reason-message</code> - The message for the state change.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     *        combination of a tag assigned to the resource.
+     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource.
-     *        This filter is independent of the tag-value filter. For example,
-     *        if you use both the filter "tag-key=Purpose" and the filter
-     *        "tag-value=X", you get any resources assigned both the tag key
-     *        Purpose (regardless of what the tag's value is), and the tag value
-     *        X (regardless of what the tag's key is). If you want to list only
-     *        resources where Purpose is X, see the <code>tag</code>
-     *        :<i>key</i>=<i>value</i> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
+     *        tag-value filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X",
+     *        you get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the
+     *        tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
+     *        see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the
-     *        resource. This filter is independent of the <code>tag-key</code>
-     *        filter.
+     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     *        <code>tag-key</code> filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>virtualization-type</code> - The virtualization type (
-     *        <code>paravirtual</code> | <code>hvm</code>).
+     *        <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeImagesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -1695,52 +1508,45 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>architecture</code> - The image architecture (<code>i386</code> |
-     * <code>x86_64</code>).
+     * <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.delete-on-termination</code> - A Boolean value
-     * that indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates whether the Amazon EBS
+     * volume is deleted on instance termination.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.device-name</code> - The device name for the
-     * EBS volume (for example, <code>/dev/sdh</code>).
+     * <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
+     * <code>/dev/sdh</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot
-     * used for the EBS volume.
+     * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.volume-size</code> - The volume size of the
-     * EBS volume, in GiB.
+     * <code>block-device-mapping.volume-size</code> - The volume size of the EBS volume, in GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.volume-type</code> - The volume type of the
-     * EBS volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
-     * <code>sc1</code> | <code>standard</code>).
+     * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
+     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>description</code> - The description of the image (provided during
-     * image creation).
+     * <code>description</code> - The description of the image (provided during image creation).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     * <code>xen</code>).
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -1750,14 +1556,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>image-type</code> - The image type (<code>machine</code> |
-     * <code>kernel</code> | <code>ramdisk</code>).
+     * <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>is-public</code> - A Boolean that indicates whether the image is
-     * public.
+     * <code>is-public</code> - A Boolean that indicates whether the image is public.
      * </p>
      * </li>
      * <li>
@@ -1777,9 +1581,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - String value from an Amazon-maintained list (
-     * <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     * <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
      * user-configured AWS account alias, which is set from the IAM console.
      * </p>
      * </li>
@@ -1790,8 +1593,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform. To only list Windows-based AMIs,
-     * use <code>windows</code>.
+     * <code>platform</code> - The platform. To only list Windows-based AMIs, use <code>windows</code>.
      * </p>
      * </li>
      * <li>
@@ -1801,8 +1603,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>product-code.type</code> - The type of the product code (
-     * <code>devpay</code> | <code>marketplace</code>).
+     * <code>product-code.type</code> - The type of the product code (<code>devpay</code> | <code>marketplace</code>).
      * </p>
      * </li>
      * <li>
@@ -1812,20 +1613,19 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>root-device-name</code> - The name of the root device volume (for
-     * example, <code>/dev/sda1</code>).
+     * <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>root-device-type</code> - The type of the root device volume (
-     * <code>ebs</code> | <code>instance-store</code>).
+     * <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |
+     * <code>instance-store</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the image (<code>available</code> |
-     * <code>pending</code> | <code>failed</code>).
+     * <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>
+     * ).
      * </p>
      * </li>
      * <li>
@@ -1840,31 +1640,27 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a
-     * tag assigned to the resource.
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This
-     * filter is independent of the tag-value filter. For example, if you use
-     * both the filter "tag-key=Purpose" and the filter "tag-value=X", you get
-     * any resources assigned both the tag key Purpose (regardless of what the
-     * tag's value is), and the tag value X (regardless of what the tag's key
-     * is). If you want to list only resources where Purpose is X, see the
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the tag-value
+     * filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any
+     * resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X
+     * (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the
      * <code>tag</code>:<i>key</i>=<i>value</i> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource.
-     * This filter is independent of the <code>tag-key</code> filter.
+     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-key</code> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>virtualization-type</code> - The virtualization type (
-     * <code>paravirtual</code> | <code>hvm</code>).
+     * <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).
      * </p>
      * </li>
      * </ul>
@@ -1874,52 +1670,45 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>architecture</code> - The image architecture (
-     *        <code>i386</code> | <code>x86_64</code>).
+     *        <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.delete-on-termination</code> - A
-     *        Boolean value that indicates whether the Amazon EBS volume is
-     *        deleted on instance termination.
+     *        <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates whether the
+     *        Amazon EBS volume is deleted on instance termination.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.device-name</code> - The device name
-     *        for the EBS volume (for example, <code>/dev/sdh</code>).
+     *        <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
+     *        <code>/dev/sdh</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.snapshot-id</code> - The ID of the
-     *        snapshot used for the EBS volume.
+     *        <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the EBS volume.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.volume-size</code> - The volume size of
-     *        the EBS volume, in GiB.
+     *        <code>block-device-mapping.volume-size</code> - The volume size of the EBS volume, in GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.volume-type</code> - The volume type of
-     *        the EBS volume (<code>gp2</code> | <code>io1</code> |
-     *        <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     *        <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
+     *        <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>description</code> - The description of the image (provided
-     *        during image creation).
+     *        <code>description</code> - The description of the image (provided during image creation).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     *        <code>xen</code>).
+     *        <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1929,14 +1718,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>image-type</code> - The image type (<code>machine</code> |
-     *        <code>kernel</code> | <code>ramdisk</code>).
+     *        <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> |
+     *        <code>ramdisk</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>is-public</code> - A Boolean that indicates whether the
-     *        image is public.
+     *        <code>is-public</code> - A Boolean that indicates whether the image is public.
      *        </p>
      *        </li>
      *        <li>
@@ -1946,23 +1734,19 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>manifest-location</code> - The location of the image
-     *        manifest.
+     *        <code>manifest-location</code> - The location of the image manifest.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>name</code> - The name of the AMI (provided during image
-     *        creation).
+     *        <code>name</code> - The name of the AMI (provided during image creation).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-alias</code> - String value from an Amazon-maintained
-     *        list (<code>amazon</code> | <code>aws-marketplace</code> |
-     *        <code>microsoft</code>) of snapshot owners. Not to be confused
-     *        with the user-configured AWS account alias, which is set from the
-     *        IAM console.
+     *        <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
+     *        <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     *        user-configured AWS account alias, which is set from the IAM console.
      *        </p>
      *        </li>
      *        <li>
@@ -1972,8 +1756,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>platform</code> - The platform. To only list Windows-based
-     *        AMIs, use <code>windows</code>.
+     *        <code>platform</code> - The platform. To only list Windows-based AMIs, use <code>windows</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1983,8 +1766,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>product-code.type</code> - The type of the product code (
-     *        <code>devpay</code> | <code>marketplace</code>).
+     *        <code>product-code.type</code> - The type of the product code (<code>devpay</code> |
+     *        <code>marketplace</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1994,92 +1777,77 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>root-device-name</code> - The name of the root device volume
-     *        (for example, <code>/dev/sda1</code>).
+     *        <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>root-device-type</code> - The type of the root device volume
-     *        (<code>ebs</code> | <code>instance-store</code>).
+     *        <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |
+     *        <code>instance-store</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the image (
-     *        <code>available</code> | <code>pending</code> |
+     *        <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> |
      *        <code>failed</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state-reason-code</code> - The reason code for the state
-     *        change.
+     *        <code>state-reason-code</code> - The reason code for the state change.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state-reason-message</code> - The message for the state
-     *        change.
+     *        <code>state-reason-message</code> - The message for the state change.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     *        combination of a tag assigned to the resource.
+     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource.
-     *        This filter is independent of the tag-value filter. For example,
-     *        if you use both the filter "tag-key=Purpose" and the filter
-     *        "tag-value=X", you get any resources assigned both the tag key
-     *        Purpose (regardless of what the tag's value is), and the tag value
-     *        X (regardless of what the tag's key is). If you want to list only
-     *        resources where Purpose is X, see the <code>tag</code>
-     *        :<i>key</i>=<i>value</i> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
+     *        tag-value filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X",
+     *        you get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the
+     *        tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
+     *        see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the
-     *        resource. This filter is independent of the <code>tag-key</code>
-     *        filter.
+     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     *        <code>tag-key</code> filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>virtualization-type</code> - The virtualization type (
-     *        <code>paravirtual</code> | <code>hvm</code>).
+     *        <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeImagesRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeImagesRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeImagesRequest> getDryRunRequest() {
-        Request<DescribeImagesRequest> request = new DescribeImagesRequestMarshaller()
-                .marshall(this);
+        Request<DescribeImagesRequest> request = new DescribeImagesRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -2113,24 +1881,19 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
         DescribeImagesRequest other = (DescribeImagesRequest) obj;
         if (other.getImageIds() == null ^ this.getImageIds() == null)
             return false;
-        if (other.getImageIds() != null
-                && other.getImageIds().equals(this.getImageIds()) == false)
+        if (other.getImageIds() != null && other.getImageIds().equals(this.getImageIds()) == false)
             return false;
         if (other.getOwners() == null ^ this.getOwners() == null)
             return false;
-        if (other.getOwners() != null
-                && other.getOwners().equals(this.getOwners()) == false)
+        if (other.getOwners() != null && other.getOwners().equals(this.getOwners()) == false)
             return false;
-        if (other.getExecutableUsers() == null
-                ^ this.getExecutableUsers() == null)
+        if (other.getExecutableUsers() == null ^ this.getExecutableUsers() == null)
             return false;
-        if (other.getExecutableUsers() != null
-                && other.getExecutableUsers().equals(this.getExecutableUsers()) == false)
+        if (other.getExecutableUsers() != null && other.getExecutableUsers().equals(this.getExecutableUsers()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         return true;
     }
@@ -2140,16 +1903,10 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getImageIds() == null) ? 0 : getImageIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getOwners() == null) ? 0 : getOwners().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExecutableUsers() == null) ? 0 : getExecutableUsers()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getImageIds() == null) ? 0 : getImageIds().hashCode());
+        hashCode = prime * hashCode + ((getOwners() == null) ? 0 : getOwners().hashCode());
+        hashCode = prime * hashCode + ((getExecutableUsers() == null) ? 0 : getExecutableUsers().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

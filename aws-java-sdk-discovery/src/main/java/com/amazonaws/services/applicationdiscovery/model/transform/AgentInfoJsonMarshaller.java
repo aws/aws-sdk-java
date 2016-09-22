@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.applicationdiscovery.model.transform;
 
@@ -34,57 +32,47 @@ public class AgentInfoJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(AgentInfo agentInfo,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(AgentInfo agentInfo, StructuredJsonGenerator jsonGenerator) {
 
         if (agentInfo == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (agentInfo.getAgentId() != null) {
-                jsonGenerator.writeFieldName("agentId").writeValue(
-                        agentInfo.getAgentId());
+                jsonGenerator.writeFieldName("agentId").writeValue(agentInfo.getAgentId());
             }
             if (agentInfo.getHostName() != null) {
-                jsonGenerator.writeFieldName("hostName").writeValue(
-                        agentInfo.getHostName());
+                jsonGenerator.writeFieldName("hostName").writeValue(agentInfo.getHostName());
             }
 
-            java.util.List<AgentNetworkInfo> agentNetworkInfoListList = agentInfo
-                    .getAgentNetworkInfoList();
+            java.util.List<AgentNetworkInfo> agentNetworkInfoListList = agentInfo.getAgentNetworkInfoList();
             if (agentNetworkInfoListList != null) {
                 jsonGenerator.writeFieldName("agentNetworkInfoList");
                 jsonGenerator.writeStartArray();
                 for (AgentNetworkInfo agentNetworkInfoListListValue : agentNetworkInfoListList) {
                     if (agentNetworkInfoListListValue != null) {
 
-                        AgentNetworkInfoJsonMarshaller.getInstance().marshall(
-                                agentNetworkInfoListListValue, jsonGenerator);
+                        AgentNetworkInfoJsonMarshaller.getInstance().marshall(agentNetworkInfoListListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (agentInfo.getConnectorId() != null) {
-                jsonGenerator.writeFieldName("connectorId").writeValue(
-                        agentInfo.getConnectorId());
+                jsonGenerator.writeFieldName("connectorId").writeValue(agentInfo.getConnectorId());
             }
             if (agentInfo.getVersion() != null) {
-                jsonGenerator.writeFieldName("version").writeValue(
-                        agentInfo.getVersion());
+                jsonGenerator.writeFieldName("version").writeValue(agentInfo.getVersion());
             }
             if (agentInfo.getHealth() != null) {
-                jsonGenerator.writeFieldName("health").writeValue(
-                        agentInfo.getHealth());
+                jsonGenerator.writeFieldName("health").writeValue(agentInfo.getHealth());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -20,18 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UploadSigningCertificateRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UploadSigningCertificateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The name of the user the signing certificate is for.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      */
@@ -41,36 +36,31 @@ public class UploadSigningCertificateRequest extends
      * The contents of the signing certificate.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (
-     * ), line feed ( ), and carriage return ( ).
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
+     * ).
      * </p>
      */
     private String certificateBody;
 
     /**
-     * Default constructor for UploadSigningCertificateRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * the object after creating it.
+     * Default constructor for UploadSigningCertificateRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public UploadSigningCertificateRequest() {
     }
 
     /**
-     * Constructs a new UploadSigningCertificateRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new UploadSigningCertificateRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param certificateBody
      *        The contents of the signing certificate.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of any
-     *        printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range (\u00FF). It also
-     *        includes the special characters tab ( ), line feed ( ), and
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
+     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
      */
     public UploadSigningCertificateRequest(String certificateBody) {
@@ -82,19 +72,17 @@ public class UploadSigningCertificateRequest extends
      * The name of the user the signing certificate is for.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name of the user the signing certificate is for.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
      */
 
     public void setUserName(String userName) {
@@ -106,18 +94,16 @@ public class UploadSigningCertificateRequest extends
      * The name of the user the signing certificate is for.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @return The name of the user the signing certificate is for.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of upper
-     *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *         any of the following characters: =,.@-
      */
 
     public String getUserName() {
@@ -129,21 +115,18 @@ public class UploadSigningCertificateRequest extends
      * The name of the user the signing certificate is for.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name of the user the signing certificate is for.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadSigningCertificateRequest withUserName(String userName) {
@@ -156,21 +139,18 @@ public class UploadSigningCertificateRequest extends
      * The contents of the signing certificate.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (
-     * ), line feed ( ), and carriage return ( ).
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
+     * ).
      * </p>
      * 
      * @param certificateBody
      *        The contents of the signing certificate.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of any
-     *        printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range (\u00FF). It also
-     *        includes the special characters tab ( ), line feed ( ), and
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
+     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
      */
 
@@ -183,21 +163,18 @@ public class UploadSigningCertificateRequest extends
      * The contents of the signing certificate.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (
-     * ), line feed ( ), and carriage return ( ).
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
+     * ).
      * </p>
      * 
      * @return The contents of the signing certificate.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of any
-     *         printable ASCII character ranging from the space character ( )
-     *         through end of the ASCII character range (\u00FF). It also
-     *         includes the special characters tab ( ), line feed ( ), and
-     *         carriage return ( ).
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
+     *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
+     *         and carriage return ( ).
      */
 
     public String getCertificateBody() {
@@ -209,35 +186,29 @@ public class UploadSigningCertificateRequest extends
      * The contents of the signing certificate.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (
-     * ), line feed ( ), and carriage return ( ).
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
+     * ).
      * </p>
      * 
      * @param certificateBody
      *        The contents of the signing certificate.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of any
-     *        printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range (\u00FF). It also
-     *        includes the special characters tab ( ), line feed ( ), and
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
+     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UploadSigningCertificateRequest withCertificateBody(
-            String certificateBody) {
+    public UploadSigningCertificateRequest withCertificateBody(String certificateBody) {
         setCertificateBody(certificateBody);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -267,14 +238,11 @@ public class UploadSigningCertificateRequest extends
         UploadSigningCertificateRequest other = (UploadSigningCertificateRequest) obj;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
-        if (other.getUserName() != null
-                && other.getUserName().equals(this.getUserName()) == false)
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
-        if (other.getCertificateBody() == null
-                ^ this.getCertificateBody() == null)
+        if (other.getCertificateBody() == null ^ this.getCertificateBody() == null)
             return false;
-        if (other.getCertificateBody() != null
-                && other.getCertificateBody().equals(this.getCertificateBody()) == false)
+        if (other.getCertificateBody() != null && other.getCertificateBody().equals(this.getCertificateBody()) == false)
             return false;
         return true;
     }
@@ -284,12 +252,8 @@ public class UploadSigningCertificateRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCertificateBody() == null) ? 0 : getCertificateBody()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getCertificateBody() == null) ? 0 : getCertificateBody().hashCode());
         return hashCode;
     }
 

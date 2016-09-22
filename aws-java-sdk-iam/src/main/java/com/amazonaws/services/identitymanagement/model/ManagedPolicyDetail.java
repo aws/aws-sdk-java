@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -18,18 +16,16 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about a managed policy, including the policy's ARN,
- * versions, and the number of principal entities (users, groups, and roles)
- * that the policy is attached to.
+ * Contains information about a managed policy, including the policy's ARN, versions, and the number of principal
+ * entities (users, groups, and roles) that the policy is attached to.
  * </p>
  * <p>
- * This data type is used as a response element in the
- * <a>GetAccountAuthorizationDetails</a> action.
+ * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.
  * </p>
  * <p>
- * For more information about managed policies, see <a href=
- * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
- * >Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+ * For more information about managed policies, see <a
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline
+ * Policies</a> in the <i>Using IAM</i> guide.
  * </p>
  */
 public class ManagedPolicyDetail implements Serializable, Cloneable {
@@ -45,9 +41,9 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * The stable and unique string identifying the policy.
      * </p>
      * <p>
-     * For more information about IDs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * For more information about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      */
     private String policyId;
@@ -58,35 +54,32 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * The path to the policy.
      * </p>
      * <p>
-     * For more information about paths, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      */
     private String path;
     /**
      * <p>
-     * The identifier for the version of the policy that is set as the default
-     * (operative) version.
+     * The identifier for the version of the policy that is set as the default (operative) version.
      * </p>
      * <p>
-     * For more information about policy versions, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     * >Versioning for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * For more information about policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * Policies</a> in the <i>Using IAM</i> guide.
      * </p>
      */
     private String defaultVersionId;
     /**
      * <p>
-     * The number of principal entities (users, groups, and roles) that the
-     * policy is attached to.
+     * The number of principal entities (users, groups, and roles) that the policy is attached to.
      * </p>
      */
     private Integer attachmentCount;
     /**
      * <p>
-     * Specifies whether the policy can be attached to an IAM user, group, or
-     * role.
+     * Specifies whether the policy can be attached to an IAM user, group, or role.
      * </p>
      */
     private Boolean isAttachable;
@@ -98,21 +91,20 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the policy was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was
+     * created.
      * </p>
      */
     private java.util.Date createDate;
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the policy was last updated.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was
+     * last updated.
      * </p>
      * <p>
-     * When a policy has only one version, this field contains the date and time
-     * when the policy was created. When a policy has more than one version,
-     * this field contains the date and time when the most recent policy version
-     * was created.
+     * When a policy has only one version, this field contains the date and time when the policy was created. When a
+     * policy has more than one version, this field contains the date and time when the most recent policy version was
+     * created.
      * </p>
      */
     private java.util.Date updateDate;
@@ -155,8 +147,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * 
      * @param policyName
      *        The friendly name (not ARN) identifying the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedPolicyDetail withPolicyName(String policyName) {
@@ -169,17 +160,17 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * The stable and unique string identifying the policy.
      * </p>
      * <p>
-     * For more information about IDs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * For more information about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      * 
      * @param policyId
      *        The stable and unique string identifying the policy.</p>
      *        <p>
-     *        For more information about IDs, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     *        For more information about IDs, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        <i>Using IAM</i> guide.
      */
 
     public void setPolicyId(String policyId) {
@@ -191,16 +182,16 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * The stable and unique string identifying the policy.
      * </p>
      * <p>
-     * For more information about IDs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * For more information about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      * 
      * @return The stable and unique string identifying the policy.</p>
      *         <p>
-     *         For more information about IDs, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     *         For more information about IDs, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         <i>Using IAM</i> guide.
      */
 
     public String getPolicyId() {
@@ -212,19 +203,18 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * The stable and unique string identifying the policy.
      * </p>
      * <p>
-     * For more information about IDs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * For more information about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      * 
      * @param policyId
      *        The stable and unique string identifying the policy.</p>
      *        <p>
-     *        For more information about IDs, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information about IDs, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        <i>Using IAM</i> guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedPolicyDetail withPolicyId(String policyId) {
@@ -250,8 +240,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * @param arn
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedPolicyDetail withArn(String arn) {
@@ -264,17 +253,17 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * The path to the policy.
      * </p>
      * <p>
-     * For more information about paths, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      * 
      * @param path
      *        The path to the policy.</p>
      *        <p>
-     *        For more information about paths, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     *        For more information about paths, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        <i>Using IAM</i> guide.
      */
 
     public void setPath(String path) {
@@ -286,16 +275,16 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * The path to the policy.
      * </p>
      * <p>
-     * For more information about paths, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      * 
      * @return The path to the policy.</p>
      *         <p>
-     *         For more information about paths, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     *         For more information about paths, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         <i>Using IAM</i> guide.
      */
 
     public String getPath() {
@@ -307,19 +296,18 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * The path to the policy.
      * </p>
      * <p>
-     * For more information about paths, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
+     * IAM</i> guide.
      * </p>
      * 
      * @param path
      *        The path to the policy.</p>
      *        <p>
-     *        For more information about paths, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information about paths, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        <i>Using IAM</i> guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedPolicyDetail withPath(String path) {
@@ -329,23 +317,20 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the version of the policy that is set as the default
-     * (operative) version.
+     * The identifier for the version of the policy that is set as the default (operative) version.
      * </p>
      * <p>
-     * For more information about policy versions, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     * >Versioning for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * For more information about policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * Policies</a> in the <i>Using IAM</i> guide.
      * </p>
      * 
      * @param defaultVersionId
-     *        The identifier for the version of the policy that is set as the
-     *        default (operative) version.</p>
+     *        The identifier for the version of the policy that is set as the default (operative) version.</p>
      *        <p>
-     *        For more information about policy versions, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     *        >Versioning for Managed Policies</a> in the <i>Using IAM</i>
-     *        guide.
+     *        For more information about policy versions, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *        Managed Policies</a> in the <i>Using IAM</i> guide.
      */
 
     public void setDefaultVersionId(String defaultVersionId) {
@@ -354,22 +339,19 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the version of the policy that is set as the default
-     * (operative) version.
+     * The identifier for the version of the policy that is set as the default (operative) version.
      * </p>
      * <p>
-     * For more information about policy versions, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     * >Versioning for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * For more information about policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * Policies</a> in the <i>Using IAM</i> guide.
      * </p>
      * 
-     * @return The identifier for the version of the policy that is set as the
-     *         default (operative) version.</p>
+     * @return The identifier for the version of the policy that is set as the default (operative) version.</p>
      *         <p>
-     *         For more information about policy versions, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     *         >Versioning for Managed Policies</a> in the <i>Using IAM</i>
-     *         guide.
+     *         For more information about policy versions, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *         Managed Policies</a> in the <i>Using IAM</i> guide.
      */
 
     public String getDefaultVersionId() {
@@ -378,25 +360,21 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the version of the policy that is set as the default
-     * (operative) version.
+     * The identifier for the version of the policy that is set as the default (operative) version.
      * </p>
      * <p>
-     * For more information about policy versions, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     * >Versioning for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * For more information about policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * Policies</a> in the <i>Using IAM</i> guide.
      * </p>
      * 
      * @param defaultVersionId
-     *        The identifier for the version of the policy that is set as the
-     *        default (operative) version.</p>
+     *        The identifier for the version of the policy that is set as the default (operative) version.</p>
      *        <p>
-     *        For more information about policy versions, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     *        >Versioning for Managed Policies</a> in the <i>Using IAM</i>
-     *        guide.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information about policy versions, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *        Managed Policies</a> in the <i>Using IAM</i> guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedPolicyDetail withDefaultVersionId(String defaultVersionId) {
@@ -406,13 +384,11 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of principal entities (users, groups, and roles) that the
-     * policy is attached to.
+     * The number of principal entities (users, groups, and roles) that the policy is attached to.
      * </p>
      * 
      * @param attachmentCount
-     *        The number of principal entities (users, groups, and roles) that
-     *        the policy is attached to.
+     *        The number of principal entities (users, groups, and roles) that the policy is attached to.
      */
 
     public void setAttachmentCount(Integer attachmentCount) {
@@ -421,12 +397,10 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of principal entities (users, groups, and roles) that the
-     * policy is attached to.
+     * The number of principal entities (users, groups, and roles) that the policy is attached to.
      * </p>
      * 
-     * @return The number of principal entities (users, groups, and roles) that
-     *         the policy is attached to.
+     * @return The number of principal entities (users, groups, and roles) that the policy is attached to.
      */
 
     public Integer getAttachmentCount() {
@@ -435,15 +409,12 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of principal entities (users, groups, and roles) that the
-     * policy is attached to.
+     * The number of principal entities (users, groups, and roles) that the policy is attached to.
      * </p>
      * 
      * @param attachmentCount
-     *        The number of principal entities (users, groups, and roles) that
-     *        the policy is attached to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of principal entities (users, groups, and roles) that the policy is attached to.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedPolicyDetail withAttachmentCount(Integer attachmentCount) {
@@ -453,13 +424,11 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the policy can be attached to an IAM user, group, or
-     * role.
+     * Specifies whether the policy can be attached to an IAM user, group, or role.
      * </p>
      * 
      * @param isAttachable
-     *        Specifies whether the policy can be attached to an IAM user,
-     *        group, or role.
+     *        Specifies whether the policy can be attached to an IAM user, group, or role.
      */
 
     public void setIsAttachable(Boolean isAttachable) {
@@ -468,12 +437,10 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the policy can be attached to an IAM user, group, or
-     * role.
+     * Specifies whether the policy can be attached to an IAM user, group, or role.
      * </p>
      * 
-     * @return Specifies whether the policy can be attached to an IAM user,
-     *         group, or role.
+     * @return Specifies whether the policy can be attached to an IAM user, group, or role.
      */
 
     public Boolean getIsAttachable() {
@@ -482,15 +449,12 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the policy can be attached to an IAM user, group, or
-     * role.
+     * Specifies whether the policy can be attached to an IAM user, group, or role.
      * </p>
      * 
      * @param isAttachable
-     *        Specifies whether the policy can be attached to an IAM user,
-     *        group, or role.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether the policy can be attached to an IAM user, group, or role.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedPolicyDetail withIsAttachable(Boolean isAttachable) {
@@ -500,12 +464,10 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the policy can be attached to an IAM user, group, or
-     * role.
+     * Specifies whether the policy can be attached to an IAM user, group, or role.
      * </p>
      * 
-     * @return Specifies whether the policy can be attached to an IAM user,
-     *         group, or role.
+     * @return Specifies whether the policy can be attached to an IAM user, group, or role.
      */
 
     public Boolean isAttachable() {
@@ -544,8 +506,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * 
      * @param description
      *        A friendly description of the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedPolicyDetail withDescription(String description) {
@@ -555,13 +516,13 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the policy was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was
+     * created.
      * </p>
      * 
      * @param createDate
-     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *        8601 date-time format</a>, when the policy was created.
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *        policy was created.
      */
 
     public void setCreateDate(java.util.Date createDate) {
@@ -570,13 +531,12 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the policy was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was
+     * created.
      * </p>
      * 
-     * @return The date and time, in <a
-     *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
-     *         format</a>, when the policy was created.
+     * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *         policy was created.
      */
 
     public java.util.Date getCreateDate() {
@@ -585,15 +545,14 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the policy was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was
+     * created.
      * </p>
      * 
      * @param createDate
-     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *        8601 date-time format</a>, when the policy was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *        policy was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedPolicyDetail withCreateDate(java.util.Date createDate) {
@@ -603,24 +562,22 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the policy was last updated.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was
+     * last updated.
      * </p>
      * <p>
-     * When a policy has only one version, this field contains the date and time
-     * when the policy was created. When a policy has more than one version,
-     * this field contains the date and time when the most recent policy version
-     * was created.
+     * When a policy has only one version, this field contains the date and time when the policy was created. When a
+     * policy has more than one version, this field contains the date and time when the most recent policy version was
+     * created.
      * </p>
      * 
      * @param updateDate
-     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *        8601 date-time format</a>, when the policy was last updated.</p>
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *        policy was last updated.</p>
      *        <p>
-     *        When a policy has only one version, this field contains the date
-     *        and time when the policy was created. When a policy has more than
-     *        one version, this field contains the date and time when the most
-     *        recent policy version was created.
+     *        When a policy has only one version, this field contains the date and time when the policy was created.
+     *        When a policy has more than one version, this field contains the date and time when the most recent policy
+     *        version was created.
      */
 
     public void setUpdateDate(java.util.Date updateDate) {
@@ -629,24 +586,21 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the policy was last updated.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was
+     * last updated.
      * </p>
      * <p>
-     * When a policy has only one version, this field contains the date and time
-     * when the policy was created. When a policy has more than one version,
-     * this field contains the date and time when the most recent policy version
-     * was created.
+     * When a policy has only one version, this field contains the date and time when the policy was created. When a
+     * policy has more than one version, this field contains the date and time when the most recent policy version was
+     * created.
      * </p>
      * 
-     * @return The date and time, in <a
-     *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
-     *         format</a>, when the policy was last updated.</p>
+     * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *         policy was last updated.</p>
      *         <p>
-     *         When a policy has only one version, this field contains the date
-     *         and time when the policy was created. When a policy has more than
-     *         one version, this field contains the date and time when the most
-     *         recent policy version was created.
+     *         When a policy has only one version, this field contains the date and time when the policy was created.
+     *         When a policy has more than one version, this field contains the date and time when the most recent
+     *         policy version was created.
      */
 
     public java.util.Date getUpdateDate() {
@@ -655,26 +609,23 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the policy was last updated.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was
+     * last updated.
      * </p>
      * <p>
-     * When a policy has only one version, this field contains the date and time
-     * when the policy was created. When a policy has more than one version,
-     * this field contains the date and time when the most recent policy version
-     * was created.
+     * When a policy has only one version, this field contains the date and time when the policy was created. When a
+     * policy has more than one version, this field contains the date and time when the most recent policy version was
+     * created.
      * </p>
      * 
      * @param updateDate
-     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *        8601 date-time format</a>, when the policy was last updated.</p>
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *        policy was last updated.</p>
      *        <p>
-     *        When a policy has only one version, this field contains the date
-     *        and time when the policy was created. When a policy has more than
-     *        one version, this field contains the date and time when the most
-     *        recent policy version was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When a policy has only one version, this field contains the date and time when the policy was created.
+     *        When a policy has more than one version, this field contains the date and time when the most recent policy
+     *        version was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedPolicyDetail withUpdateDate(java.util.Date updateDate) {
@@ -706,15 +657,13 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        A list containing information about the versions of the policy.
      */
 
-    public void setPolicyVersionList(
-            java.util.Collection<PolicyVersion> policyVersionList) {
+    public void setPolicyVersionList(java.util.Collection<PolicyVersion> policyVersionList) {
         if (policyVersionList == null) {
             this.policyVersionList = null;
             return;
         }
 
-        this.policyVersionList = new com.amazonaws.internal.SdkInternalList<PolicyVersion>(
-                policyVersionList);
+        this.policyVersionList = new com.amazonaws.internal.SdkInternalList<PolicyVersion>(policyVersionList);
     }
 
     /**
@@ -722,23 +671,19 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * A list containing information about the versions of the policy.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPolicyVersionList(java.util.Collection)} or
-     * {@link #withPolicyVersionList(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPolicyVersionList(java.util.Collection)} or {@link #withPolicyVersionList(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param policyVersionList
      *        A list containing information about the versions of the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ManagedPolicyDetail withPolicyVersionList(
-            PolicyVersion... policyVersionList) {
+    public ManagedPolicyDetail withPolicyVersionList(PolicyVersion... policyVersionList) {
         if (this.policyVersionList == null) {
-            setPolicyVersionList(new com.amazonaws.internal.SdkInternalList<PolicyVersion>(
-                    policyVersionList.length));
+            setPolicyVersionList(new com.amazonaws.internal.SdkInternalList<PolicyVersion>(policyVersionList.length));
         }
         for (PolicyVersion ele : policyVersionList) {
             this.policyVersionList.add(ele);
@@ -753,19 +698,16 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * 
      * @param policyVersionList
      *        A list containing information about the versions of the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ManagedPolicyDetail withPolicyVersionList(
-            java.util.Collection<PolicyVersion> policyVersionList) {
+    public ManagedPolicyDetail withPolicyVersionList(java.util.Collection<PolicyVersion> policyVersionList) {
         setPolicyVersionList(policyVersionList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -813,63 +755,47 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
         ManagedPolicyDetail other = (ManagedPolicyDetail) obj;
         if (other.getPolicyName() == null ^ this.getPolicyName() == null)
             return false;
-        if (other.getPolicyName() != null
-                && other.getPolicyName().equals(this.getPolicyName()) == false)
+        if (other.getPolicyName() != null && other.getPolicyName().equals(this.getPolicyName()) == false)
             return false;
         if (other.getPolicyId() == null ^ this.getPolicyId() == null)
             return false;
-        if (other.getPolicyId() != null
-                && other.getPolicyId().equals(this.getPolicyId()) == false)
+        if (other.getPolicyId() != null && other.getPolicyId().equals(this.getPolicyId()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getPath() == null ^ this.getPath() == null)
             return false;
-        if (other.getPath() != null
-                && other.getPath().equals(this.getPath()) == false)
+        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false)
             return false;
-        if (other.getDefaultVersionId() == null
-                ^ this.getDefaultVersionId() == null)
+        if (other.getDefaultVersionId() == null ^ this.getDefaultVersionId() == null)
             return false;
-        if (other.getDefaultVersionId() != null
-                && other.getDefaultVersionId().equals(
-                        this.getDefaultVersionId()) == false)
+        if (other.getDefaultVersionId() != null && other.getDefaultVersionId().equals(this.getDefaultVersionId()) == false)
             return false;
-        if (other.getAttachmentCount() == null
-                ^ this.getAttachmentCount() == null)
+        if (other.getAttachmentCount() == null ^ this.getAttachmentCount() == null)
             return false;
-        if (other.getAttachmentCount() != null
-                && other.getAttachmentCount().equals(this.getAttachmentCount()) == false)
+        if (other.getAttachmentCount() != null && other.getAttachmentCount().equals(this.getAttachmentCount()) == false)
             return false;
         if (other.getIsAttachable() == null ^ this.getIsAttachable() == null)
             return false;
-        if (other.getIsAttachable() != null
-                && other.getIsAttachable().equals(this.getIsAttachable()) == false)
+        if (other.getIsAttachable() != null && other.getIsAttachable().equals(this.getIsAttachable()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getCreateDate() == null ^ this.getCreateDate() == null)
             return false;
-        if (other.getCreateDate() != null
-                && other.getCreateDate().equals(this.getCreateDate()) == false)
+        if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false)
             return false;
         if (other.getUpdateDate() == null ^ this.getUpdateDate() == null)
             return false;
-        if (other.getUpdateDate() != null
-                && other.getUpdateDate().equals(this.getUpdateDate()) == false)
+        if (other.getUpdateDate() != null && other.getUpdateDate().equals(this.getUpdateDate()) == false)
             return false;
-        if (other.getPolicyVersionList() == null
-                ^ this.getPolicyVersionList() == null)
+        if (other.getPolicyVersionList() == null ^ this.getPolicyVersionList() == null)
             return false;
-        if (other.getPolicyVersionList() != null
-                && other.getPolicyVersionList().equals(
-                        this.getPolicyVersionList()) == false)
+        if (other.getPolicyVersionList() != null && other.getPolicyVersionList().equals(this.getPolicyVersionList()) == false)
             return false;
         return true;
     }
@@ -879,37 +805,17 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPolicyId() == null) ? 0 : getPolicyId().hashCode());
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getPath() == null) ? 0 : getPath().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultVersionId() == null) ? 0 : getDefaultVersionId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttachmentCount() == null) ? 0 : getAttachmentCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsAttachable() == null) ? 0 : getIsAttachable()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getUpdateDate() == null) ? 0 : getUpdateDate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPolicyVersionList() == null) ? 0
-                        : getPolicyVersionList().hashCode());
+        hashCode = prime * hashCode + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
+        hashCode = prime * hashCode + ((getPolicyId() == null) ? 0 : getPolicyId().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime * hashCode + ((getDefaultVersionId() == null) ? 0 : getDefaultVersionId().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentCount() == null) ? 0 : getAttachmentCount().hashCode());
+        hashCode = prime * hashCode + ((getIsAttachable() == null) ? 0 : getIsAttachable().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
+        hashCode = prime * hashCode + ((getUpdateDate() == null) ? 0 : getUpdateDate().hashCode());
+        hashCode = prime * hashCode + ((getPolicyVersionList() == null) ? 0 : getPolicyVersionList().hashCode());
         return hashCode;
     }
 
@@ -918,9 +824,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
         try {
             return (ManagedPolicyDetail) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

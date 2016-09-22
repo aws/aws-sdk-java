@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -19,16 +17,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents a request to reorder the receipt rules within a receipt rule set.
- * You use receipt rule sets to receive email with Amazon SES. For more
- * information, see the <a href=
- * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
- * >Amazon SES Developer Guide</a>.
+ * Represents a request to reorder the receipt rules within a receipt rule set. You use receipt rule sets to receive
+ * email with Amazon SES. For more information, see the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
+ * Guide</a>.
  * </p>
  */
-public class ReorderReceiptRuleSetRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ReorderReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -38,8 +33,7 @@ public class ReorderReceiptRuleSetRequest extends
     private String ruleSetName;
     /**
      * <p>
-     * A list of the specified receipt rule set's receipt rules in the order
-     * that you want to put them.
+     * A list of the specified receipt rule set's receipt rules in the order that you want to put them.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ruleNames;
@@ -76,8 +70,7 @@ public class ReorderReceiptRuleSetRequest extends
      * 
      * @param ruleSetName
      *        The name of the receipt rule set to reorder.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReorderReceiptRuleSetRequest withRuleSetName(String ruleSetName) {
@@ -87,12 +80,10 @@ public class ReorderReceiptRuleSetRequest extends
 
     /**
      * <p>
-     * A list of the specified receipt rule set's receipt rules in the order
-     * that you want to put them.
+     * A list of the specified receipt rule set's receipt rules in the order that you want to put them.
      * </p>
      * 
-     * @return A list of the specified receipt rule set's receipt rules in the
-     *         order that you want to put them.
+     * @return A list of the specified receipt rule set's receipt rules in the order that you want to put them.
      */
 
     public java.util.List<String> getRuleNames() {
@@ -104,13 +95,11 @@ public class ReorderReceiptRuleSetRequest extends
 
     /**
      * <p>
-     * A list of the specified receipt rule set's receipt rules in the order
-     * that you want to put them.
+     * A list of the specified receipt rule set's receipt rules in the order that you want to put them.
      * </p>
      * 
      * @param ruleNames
-     *        A list of the specified receipt rule set's receipt rules in the
-     *        order that you want to put them.
+     *        A list of the specified receipt rule set's receipt rules in the order that you want to put them.
      */
 
     public void setRuleNames(java.util.Collection<String> ruleNames) {
@@ -119,33 +108,27 @@ public class ReorderReceiptRuleSetRequest extends
             return;
         }
 
-        this.ruleNames = new com.amazonaws.internal.SdkInternalList<String>(
-                ruleNames);
+        this.ruleNames = new com.amazonaws.internal.SdkInternalList<String>(ruleNames);
     }
 
     /**
      * <p>
-     * A list of the specified receipt rule set's receipt rules in the order
-     * that you want to put them.
+     * A list of the specified receipt rule set's receipt rules in the order that you want to put them.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRuleNames(java.util.Collection)} or
-     * {@link #withRuleNames(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRuleNames(java.util.Collection)} or {@link #withRuleNames(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param ruleNames
-     *        A list of the specified receipt rule set's receipt rules in the
-     *        order that you want to put them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of the specified receipt rule set's receipt rules in the order that you want to put them.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReorderReceiptRuleSetRequest withRuleNames(String... ruleNames) {
         if (this.ruleNames == null) {
-            setRuleNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    ruleNames.length));
+            setRuleNames(new com.amazonaws.internal.SdkInternalList<String>(ruleNames.length));
         }
         for (String ele : ruleNames) {
             this.ruleNames.add(ele);
@@ -155,26 +138,21 @@ public class ReorderReceiptRuleSetRequest extends
 
     /**
      * <p>
-     * A list of the specified receipt rule set's receipt rules in the order
-     * that you want to put them.
+     * A list of the specified receipt rule set's receipt rules in the order that you want to put them.
      * </p>
      * 
      * @param ruleNames
-     *        A list of the specified receipt rule set's receipt rules in the
-     *        order that you want to put them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of the specified receipt rule set's receipt rules in the order that you want to put them.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReorderReceiptRuleSetRequest withRuleNames(
-            java.util.Collection<String> ruleNames) {
+    public ReorderReceiptRuleSetRequest withRuleNames(java.util.Collection<String> ruleNames) {
         setRuleNames(ruleNames);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -204,13 +182,11 @@ public class ReorderReceiptRuleSetRequest extends
         ReorderReceiptRuleSetRequest other = (ReorderReceiptRuleSetRequest) obj;
         if (other.getRuleSetName() == null ^ this.getRuleSetName() == null)
             return false;
-        if (other.getRuleSetName() != null
-                && other.getRuleSetName().equals(this.getRuleSetName()) == false)
+        if (other.getRuleSetName() != null && other.getRuleSetName().equals(this.getRuleSetName()) == false)
             return false;
         if (other.getRuleNames() == null ^ this.getRuleNames() == null)
             return false;
-        if (other.getRuleNames() != null
-                && other.getRuleNames().equals(this.getRuleNames()) == false)
+        if (other.getRuleNames() != null && other.getRuleNames().equals(this.getRuleNames()) == false)
             return false;
         return true;
     }
@@ -220,11 +196,8 @@ public class ReorderReceiptRuleSetRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRuleSetName() == null) ? 0 : getRuleSetName().hashCode());
-        hashCode = prime * hashCode
-                + ((getRuleNames() == null) ? 0 : getRuleNames().hashCode());
+        hashCode = prime * hashCode + ((getRuleSetName() == null) ? 0 : getRuleSetName().hashCode());
+        hashCode = prime * hashCode + ((getRuleNames() == null) ? 0 : getRuleNames().hashCode());
         return hashCode;
     }
 

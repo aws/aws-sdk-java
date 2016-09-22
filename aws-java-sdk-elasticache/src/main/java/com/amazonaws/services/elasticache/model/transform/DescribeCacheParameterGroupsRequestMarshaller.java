@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model.transform;
 
@@ -31,40 +29,31 @@ import com.amazonaws.util.IdempotentUtils;
  * DescribeCacheParameterGroupsRequest Marshaller
  */
 
-public class DescribeCacheParameterGroupsRequestMarshaller
-        implements
+public class DescribeCacheParameterGroupsRequestMarshaller implements
         Marshaller<Request<DescribeCacheParameterGroupsRequest>, DescribeCacheParameterGroupsRequest> {
 
-    public Request<DescribeCacheParameterGroupsRequest> marshall(
-            DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest) {
+    public Request<DescribeCacheParameterGroupsRequest> marshall(DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest) {
 
         if (describeCacheParameterGroupsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeCacheParameterGroupsRequest> request = new DefaultRequest<DescribeCacheParameterGroupsRequest>(
-                describeCacheParameterGroupsRequest, "AmazonElastiCache");
+        Request<DescribeCacheParameterGroupsRequest> request = new DefaultRequest<DescribeCacheParameterGroupsRequest>(describeCacheParameterGroupsRequest,
+                "AmazonElastiCache");
         request.addParameter("Action", "DescribeCacheParameterGroups");
         request.addParameter("Version", "2015-02-02");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeCacheParameterGroupsRequest.getCacheParameterGroupName() != null) {
-            request.addParameter("CacheParameterGroupName", StringUtils
-                    .fromString(describeCacheParameterGroupsRequest
-                            .getCacheParameterGroupName()));
+            request.addParameter("CacheParameterGroupName", StringUtils.fromString(describeCacheParameterGroupsRequest.getCacheParameterGroupName()));
         }
 
         if (describeCacheParameterGroupsRequest.getMaxRecords() != null) {
-            request.addParameter("MaxRecords", StringUtils
-                    .fromInteger(describeCacheParameterGroupsRequest
-                            .getMaxRecords()));
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeCacheParameterGroupsRequest.getMaxRecords()));
         }
 
         if (describeCacheParameterGroupsRequest.getMarker() != null) {
-            request.addParameter("Marker",
-                    StringUtils.fromString(describeCacheParameterGroupsRequest
-                            .getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(describeCacheParameterGroupsRequest.getMarker()));
         }
 
         return request;

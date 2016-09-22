@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.importexport.model.transform;
 
@@ -31,30 +29,25 @@ import com.amazonaws.util.IdempotentUtils;
  * GetStatusRequest Marshaller
  */
 
-public class GetStatusRequestMarshaller implements
-        Marshaller<Request<GetStatusRequest>, GetStatusRequest> {
+public class GetStatusRequestMarshaller implements Marshaller<Request<GetStatusRequest>, GetStatusRequest> {
 
     public Request<GetStatusRequest> marshall(GetStatusRequest getStatusRequest) {
 
         if (getStatusRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetStatusRequest> request = new DefaultRequest<GetStatusRequest>(
-                getStatusRequest, "AmazonImportExport");
+        Request<GetStatusRequest> request = new DefaultRequest<GetStatusRequest>(getStatusRequest, "AmazonImportExport");
         request.addParameter("Action", "GetStatus");
         request.addParameter("Version", "2010-06-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (getStatusRequest.getJobId() != null) {
-            request.addParameter("JobId",
-                    StringUtils.fromString(getStatusRequest.getJobId()));
+            request.addParameter("JobId", StringUtils.fromString(getStatusRequest.getJobId()));
         }
 
         if (getStatusRequest.getAPIVersion() != null) {
-            request.addParameter("APIVersion",
-                    StringUtils.fromString(getStatusRequest.getAPIVersion()));
+            request.addParameter("APIVersion", StringUtils.fromString(getStatusRequest.getAPIVersion()));
         }
 
         return request;

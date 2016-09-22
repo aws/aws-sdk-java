@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -19,13 +17,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the request to get a geo
- * location.
+ * A complex type that contains information about the request to get a geo location.
  * </p>
  */
-public class GetGeoLocationRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -72,20 +67,17 @@ public class GetGeoLocationRequest extends
     private String continentCode;
     /**
      * <p>
-     * Amazon Route 53 uses the two-letter country codes that are specified in
-     * <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard
-     * 3166-1 alpha-2</a>.
+     * Amazon Route 53 uses the two-letter country codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      * </p>
      */
     private String countryCode;
     /**
      * <p>
-     * Amazon Route 53 uses the one- to three-letter subdivision codes that are
-     * specified in <a
-     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard
-     * 3166-1 alpha-2</a>. Amazon Route 53 doesn't support subdivision codes for
-     * all countries. If you specify <code>SubdivisionCode</code>, you must also
-     * specify <code>CountryCode</code>.
+     * Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't
+     * support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you must also specify
+     * <code>CountryCode</code>.
      * </p>
      */
     private String subdivisionCode;
@@ -341,8 +333,7 @@ public class GetGeoLocationRequest extends
      *        <b>SA</b>: South America
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetGeoLocationRequest withContinentCode(String continentCode) {
@@ -352,16 +343,13 @@ public class GetGeoLocationRequest extends
 
     /**
      * <p>
-     * Amazon Route 53 uses the two-letter country codes that are specified in
-     * <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard
-     * 3166-1 alpha-2</a>.
+     * Amazon Route 53 uses the two-letter country codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      * </p>
      * 
      * @param countryCode
-     *        Amazon Route 53 uses the two-letter country codes that are
-     *        specified in <a
-     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
-     *        standard 3166-1 alpha-2</a>.
+     *        Amazon Route 53 uses the two-letter country codes that are specified in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      */
 
     public void setCountryCode(String countryCode) {
@@ -370,15 +358,12 @@ public class GetGeoLocationRequest extends
 
     /**
      * <p>
-     * Amazon Route 53 uses the two-letter country codes that are specified in
-     * <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard
-     * 3166-1 alpha-2</a>.
+     * Amazon Route 53 uses the two-letter country codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      * </p>
      * 
-     * @return Amazon Route 53 uses the two-letter country codes that are
-     *         specified in <a
-     *         href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
-     *         standard 3166-1 alpha-2</a>.
+     * @return Amazon Route 53 uses the two-letter country codes that are specified in <a
+     *         href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      */
 
     public String getCountryCode() {
@@ -387,18 +372,14 @@ public class GetGeoLocationRequest extends
 
     /**
      * <p>
-     * Amazon Route 53 uses the two-letter country codes that are specified in
-     * <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard
-     * 3166-1 alpha-2</a>.
+     * Amazon Route 53 uses the two-letter country codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      * </p>
      * 
      * @param countryCode
-     *        Amazon Route 53 uses the two-letter country codes that are
-     *        specified in <a
-     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
-     *        standard 3166-1 alpha-2</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Amazon Route 53 uses the two-letter country codes that are specified in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetGeoLocationRequest withCountryCode(String countryCode) {
@@ -408,22 +389,17 @@ public class GetGeoLocationRequest extends
 
     /**
      * <p>
-     * Amazon Route 53 uses the one- to three-letter subdivision codes that are
-     * specified in <a
-     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard
-     * 3166-1 alpha-2</a>. Amazon Route 53 doesn't support subdivision codes for
-     * all countries. If you specify <code>SubdivisionCode</code>, you must also
-     * specify <code>CountryCode</code>.
+     * Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't
+     * support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you must also specify
+     * <code>CountryCode</code>.
      * </p>
      * 
      * @param subdivisionCode
-     *        Amazon Route 53 uses the one- to three-letter subdivision codes
-     *        that are specified in <a
-     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
-     *        standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't support
-     *        subdivision codes for all countries. If you specify
-     *        <code>SubdivisionCode</code>, you must also specify
-     *        <code>CountryCode</code>.
+     *        Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53
+     *        doesn't support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you must
+     *        also specify <code>CountryCode</code>.
      */
 
     public void setSubdivisionCode(String subdivisionCode) {
@@ -432,21 +408,16 @@ public class GetGeoLocationRequest extends
 
     /**
      * <p>
-     * Amazon Route 53 uses the one- to three-letter subdivision codes that are
-     * specified in <a
-     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard
-     * 3166-1 alpha-2</a>. Amazon Route 53 doesn't support subdivision codes for
-     * all countries. If you specify <code>SubdivisionCode</code>, you must also
-     * specify <code>CountryCode</code>.
+     * Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't
+     * support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you must also specify
+     * <code>CountryCode</code>.
      * </p>
      * 
-     * @return Amazon Route 53 uses the one- to three-letter subdivision codes
-     *         that are specified in <a
-     *         href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
-     *         standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't support
-     *         subdivision codes for all countries. If you specify
-     *         <code>SubdivisionCode</code>, you must also specify
-     *         <code>CountryCode</code>.
+     * @return Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     *         href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53
+     *         doesn't support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you
+     *         must also specify <code>CountryCode</code>.
      */
 
     public String getSubdivisionCode() {
@@ -455,24 +426,18 @@ public class GetGeoLocationRequest extends
 
     /**
      * <p>
-     * Amazon Route 53 uses the one- to three-letter subdivision codes that are
-     * specified in <a
-     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard
-     * 3166-1 alpha-2</a>. Amazon Route 53 doesn't support subdivision codes for
-     * all countries. If you specify <code>SubdivisionCode</code>, you must also
-     * specify <code>CountryCode</code>.
+     * Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't
+     * support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you must also specify
+     * <code>CountryCode</code>.
      * </p>
      * 
      * @param subdivisionCode
-     *        Amazon Route 53 uses the one- to three-letter subdivision codes
-     *        that are specified in <a
-     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
-     *        standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't support
-     *        subdivision codes for all countries. If you specify
-     *        <code>SubdivisionCode</code>, you must also specify
-     *        <code>CountryCode</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53
+     *        doesn't support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you must
+     *        also specify <code>CountryCode</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetGeoLocationRequest withSubdivisionCode(String subdivisionCode) {
@@ -481,8 +446,7 @@ public class GetGeoLocationRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -514,19 +478,15 @@ public class GetGeoLocationRequest extends
         GetGeoLocationRequest other = (GetGeoLocationRequest) obj;
         if (other.getContinentCode() == null ^ this.getContinentCode() == null)
             return false;
-        if (other.getContinentCode() != null
-                && other.getContinentCode().equals(this.getContinentCode()) == false)
+        if (other.getContinentCode() != null && other.getContinentCode().equals(this.getContinentCode()) == false)
             return false;
         if (other.getCountryCode() == null ^ this.getCountryCode() == null)
             return false;
-        if (other.getCountryCode() != null
-                && other.getCountryCode().equals(this.getCountryCode()) == false)
+        if (other.getCountryCode() != null && other.getCountryCode().equals(this.getCountryCode()) == false)
             return false;
-        if (other.getSubdivisionCode() == null
-                ^ this.getSubdivisionCode() == null)
+        if (other.getSubdivisionCode() == null ^ this.getSubdivisionCode() == null)
             return false;
-        if (other.getSubdivisionCode() != null
-                && other.getSubdivisionCode().equals(this.getSubdivisionCode()) == false)
+        if (other.getSubdivisionCode() != null && other.getSubdivisionCode().equals(this.getSubdivisionCode()) == false)
             return false;
         return true;
     }
@@ -536,17 +496,9 @@ public class GetGeoLocationRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getContinentCode() == null) ? 0 : getContinentCode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCountryCode() == null) ? 0 : getCountryCode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSubdivisionCode() == null) ? 0 : getSubdivisionCode()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getContinentCode() == null) ? 0 : getContinentCode().hashCode());
+        hashCode = prime * hashCode + ((getCountryCode() == null) ? 0 : getCountryCode().hashCode());
+        hashCode = prime * hashCode + ((getSubdivisionCode() == null) ? 0 : getSubdivisionCode().hashCode());
         return hashCode;
     }
 

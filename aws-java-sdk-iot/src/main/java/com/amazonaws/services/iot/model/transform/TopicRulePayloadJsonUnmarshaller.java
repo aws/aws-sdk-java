@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * TopicRulePayload JSON Unmarshaller
  */
-public class TopicRulePayloadJsonUnmarshaller implements
-        Unmarshaller<TopicRulePayload, JsonUnmarshallerContext> {
+public class TopicRulePayloadJsonUnmarshaller implements Unmarshaller<TopicRulePayload, JsonUnmarshallerContext> {
 
-    public TopicRulePayload unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public TopicRulePayload unmarshall(JsonUnmarshallerContext context) throws Exception {
         TopicRulePayload topicRulePayload = new TopicRulePayload();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,34 +49,26 @@ public class TopicRulePayloadJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sql", targetDepth)) {
                     context.nextToken();
-                    topicRulePayload.setSql(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    topicRulePayload.setSql(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    topicRulePayload.setDescription(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    topicRulePayload.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
-                    topicRulePayload.setActions(new ListUnmarshaller<Action>(
-                            ActionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    topicRulePayload.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("ruleDisabled", targetDepth)) {
                     context.nextToken();
-                    topicRulePayload.setRuleDisabled(context.getUnmarshaller(
-                            Boolean.class).unmarshall(context));
+                    topicRulePayload.setRuleDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("awsIotSqlVersion", targetDepth)) {
                     context.nextToken();
-                    topicRulePayload.setAwsIotSqlVersion(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    topicRulePayload.setAwsIotSqlVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

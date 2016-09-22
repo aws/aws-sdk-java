@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -22,14 +20,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a list deployments operation.
  * </p>
  */
-public class ListDeploymentsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable
-     * IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
      * </p>
      */
     private String applicationName;
@@ -79,28 +74,25 @@ public class ListDeploymentsRequest extends
     private com.amazonaws.internal.SdkInternalList<String> includeOnlyStatuses;
     /**
      * <p>
-     * A time range (start and end) for returning a subset of the list of
-     * deployments.
+     * A time range (start and end) for returning a subset of the list of deployments.
      * </p>
      */
     private TimeRange createTimeRange;
     /**
      * <p>
-     * An identifier returned from the previous list deployments call. It can be
-     * used to return the next set of deployments in the list.
+     * An identifier returned from the previous list deployments call. It can be used to return the next set of
+     * deployments in the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable
-     * IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the
-     *        applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -109,12 +101,10 @@ public class ListDeploymentsRequest extends
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable
-     * IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
      * </p>
      * 
-     * @return The name of an AWS CodeDeploy application associated with the
-     *         applicable IAM user or AWS account.
+     * @return The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
      */
 
     public String getApplicationName() {
@@ -123,15 +113,12 @@ public class ListDeploymentsRequest extends
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable
-     * IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the
-     *        applicable IAM user or AWS account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDeploymentsRequest withApplicationName(String applicationName) {
@@ -145,8 +132,7 @@ public class ListDeploymentsRequest extends
      * </p>
      * 
      * @param deploymentGroupName
-     *        The name of an existing deployment group for the specified
-     *        application.
+     *        The name of an existing deployment group for the specified application.
      */
 
     public void setDeploymentGroupName(String deploymentGroupName) {
@@ -158,8 +144,7 @@ public class ListDeploymentsRequest extends
      * The name of an existing deployment group for the specified application.
      * </p>
      * 
-     * @return The name of an existing deployment group for the specified
-     *         application.
+     * @return The name of an existing deployment group for the specified application.
      */
 
     public String getDeploymentGroupName() {
@@ -172,14 +157,11 @@ public class ListDeploymentsRequest extends
      * </p>
      * 
      * @param deploymentGroupName
-     *        The name of an existing deployment group for the specified
-     *        application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of an existing deployment group for the specified application.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListDeploymentsRequest withDeploymentGroupName(
-            String deploymentGroupName) {
+    public ListDeploymentsRequest withDeploymentGroupName(String deploymentGroupName) {
         setDeploymentGroupName(deploymentGroupName);
         return this;
     }
@@ -235,8 +217,7 @@ public class ListDeploymentsRequest extends
      *         </li>
      *         <li>
      *         <p>
-     *         In Progress: Include in-progress deployments in the resulting
-     *         list.
+     *         In Progress: Include in-progress deployments in the resulting list.
      *         </p>
      *         </li>
      *         <li>
@@ -316,8 +297,7 @@ public class ListDeploymentsRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: Include in-progress deployments in the resulting
-     *        list.
+     *        In Progress: Include in-progress deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
@@ -338,15 +318,13 @@ public class ListDeploymentsRequest extends
      * @see DeploymentStatus
      */
 
-    public void setIncludeOnlyStatuses(
-            java.util.Collection<String> includeOnlyStatuses) {
+    public void setIncludeOnlyStatuses(java.util.Collection<String> includeOnlyStatuses) {
         if (includeOnlyStatuses == null) {
             this.includeOnlyStatuses = null;
             return;
         }
 
-        this.includeOnlyStatuses = new com.amazonaws.internal.SdkInternalList<String>(
-                includeOnlyStatuses);
+        this.includeOnlyStatuses = new com.amazonaws.internal.SdkInternalList<String>(includeOnlyStatuses);
     }
 
     /**
@@ -386,10 +364,9 @@ public class ListDeploymentsRequest extends
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setIncludeOnlyStatuses(java.util.Collection)} or
-     * {@link #withIncludeOnlyStatuses(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIncludeOnlyStatuses(java.util.Collection)} or {@link #withIncludeOnlyStatuses(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param includeOnlyStatuses
@@ -407,8 +384,7 @@ public class ListDeploymentsRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: Include in-progress deployments in the resulting
-     *        list.
+     *        In Progress: Include in-progress deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
@@ -426,16 +402,13 @@ public class ListDeploymentsRequest extends
      *        Stopped: Include stopped deployments in the resulting list.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentStatus
      */
 
-    public ListDeploymentsRequest withIncludeOnlyStatuses(
-            String... includeOnlyStatuses) {
+    public ListDeploymentsRequest withIncludeOnlyStatuses(String... includeOnlyStatuses) {
         if (this.includeOnlyStatuses == null) {
-            setIncludeOnlyStatuses(new com.amazonaws.internal.SdkInternalList<String>(
-                    includeOnlyStatuses.length));
+            setIncludeOnlyStatuses(new com.amazonaws.internal.SdkInternalList<String>(includeOnlyStatuses.length));
         }
         for (String ele : includeOnlyStatuses) {
             this.includeOnlyStatuses.add(ele);
@@ -495,8 +468,7 @@ public class ListDeploymentsRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: Include in-progress deployments in the resulting
-     *        list.
+     *        In Progress: Include in-progress deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
@@ -514,13 +486,11 @@ public class ListDeploymentsRequest extends
      *        Stopped: Include stopped deployments in the resulting list.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentStatus
      */
 
-    public ListDeploymentsRequest withIncludeOnlyStatuses(
-            java.util.Collection<String> includeOnlyStatuses) {
+    public ListDeploymentsRequest withIncludeOnlyStatuses(java.util.Collection<String> includeOnlyStatuses) {
         setIncludeOnlyStatuses(includeOnlyStatuses);
         return this;
     }
@@ -577,8 +547,7 @@ public class ListDeploymentsRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: Include in-progress deployments in the resulting
-     *        list.
+     *        In Progress: Include in-progress deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
@@ -596,15 +565,12 @@ public class ListDeploymentsRequest extends
      *        Stopped: Include stopped deployments in the resulting list.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentStatus
      */
 
-    public ListDeploymentsRequest withIncludeOnlyStatuses(
-            DeploymentStatus... includeOnlyStatuses) {
-        com.amazonaws.internal.SdkInternalList<String> includeOnlyStatusesCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                includeOnlyStatuses.length);
+    public ListDeploymentsRequest withIncludeOnlyStatuses(DeploymentStatus... includeOnlyStatuses) {
+        com.amazonaws.internal.SdkInternalList<String> includeOnlyStatusesCopy = new com.amazonaws.internal.SdkInternalList<String>(includeOnlyStatuses.length);
         for (DeploymentStatus value : includeOnlyStatuses) {
             includeOnlyStatusesCopy.add(value.toString());
         }
@@ -618,13 +584,11 @@ public class ListDeploymentsRequest extends
 
     /**
      * <p>
-     * A time range (start and end) for returning a subset of the list of
-     * deployments.
+     * A time range (start and end) for returning a subset of the list of deployments.
      * </p>
      * 
      * @param createTimeRange
-     *        A time range (start and end) for returning a subset of the list of
-     *        deployments.
+     *        A time range (start and end) for returning a subset of the list of deployments.
      */
 
     public void setCreateTimeRange(TimeRange createTimeRange) {
@@ -633,12 +597,10 @@ public class ListDeploymentsRequest extends
 
     /**
      * <p>
-     * A time range (start and end) for returning a subset of the list of
-     * deployments.
+     * A time range (start and end) for returning a subset of the list of deployments.
      * </p>
      * 
-     * @return A time range (start and end) for returning a subset of the list
-     *         of deployments.
+     * @return A time range (start and end) for returning a subset of the list of deployments.
      */
 
     public TimeRange getCreateTimeRange() {
@@ -647,15 +609,12 @@ public class ListDeploymentsRequest extends
 
     /**
      * <p>
-     * A time range (start and end) for returning a subset of the list of
-     * deployments.
+     * A time range (start and end) for returning a subset of the list of deployments.
      * </p>
      * 
      * @param createTimeRange
-     *        A time range (start and end) for returning a subset of the list of
-     *        deployments.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A time range (start and end) for returning a subset of the list of deployments.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDeploymentsRequest withCreateTimeRange(TimeRange createTimeRange) {
@@ -665,13 +624,13 @@ public class ListDeploymentsRequest extends
 
     /**
      * <p>
-     * An identifier returned from the previous list deployments call. It can be
-     * used to return the next set of deployments in the list.
+     * An identifier returned from the previous list deployments call. It can be used to return the next set of
+     * deployments in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier returned from the previous list deployments call. It
-     *        can be used to return the next set of deployments in the list.
+     *        An identifier returned from the previous list deployments call. It can be used to return the next set of
+     *        deployments in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -680,12 +639,12 @@ public class ListDeploymentsRequest extends
 
     /**
      * <p>
-     * An identifier returned from the previous list deployments call. It can be
-     * used to return the next set of deployments in the list.
+     * An identifier returned from the previous list deployments call. It can be used to return the next set of
+     * deployments in the list.
      * </p>
      * 
-     * @return An identifier returned from the previous list deployments call.
-     *         It can be used to return the next set of deployments in the list.
+     * @return An identifier returned from the previous list deployments call. It can be used to return the next set of
+     *         deployments in the list.
      */
 
     public String getNextToken() {
@@ -694,15 +653,14 @@ public class ListDeploymentsRequest extends
 
     /**
      * <p>
-     * An identifier returned from the previous list deployments call. It can be
-     * used to return the next set of deployments in the list.
+     * An identifier returned from the previous list deployments call. It can be used to return the next set of
+     * deployments in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier returned from the previous list deployments call. It
-     *        can be used to return the next set of deployments in the list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An identifier returned from the previous list deployments call. It can be used to return the next set of
+     *        deployments in the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDeploymentsRequest withNextToken(String nextToken) {
@@ -711,8 +669,7 @@ public class ListDeploymentsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -746,36 +703,25 @@ public class ListDeploymentsRequest extends
         if (obj instanceof ListDeploymentsRequest == false)
             return false;
         ListDeploymentsRequest other = (ListDeploymentsRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
-        if (other.getDeploymentGroupName() == null
-                ^ this.getDeploymentGroupName() == null)
+        if (other.getDeploymentGroupName() == null ^ this.getDeploymentGroupName() == null)
             return false;
-        if (other.getDeploymentGroupName() != null
-                && other.getDeploymentGroupName().equals(
-                        this.getDeploymentGroupName()) == false)
+        if (other.getDeploymentGroupName() != null && other.getDeploymentGroupName().equals(this.getDeploymentGroupName()) == false)
             return false;
-        if (other.getIncludeOnlyStatuses() == null
-                ^ this.getIncludeOnlyStatuses() == null)
+        if (other.getIncludeOnlyStatuses() == null ^ this.getIncludeOnlyStatuses() == null)
             return false;
-        if (other.getIncludeOnlyStatuses() != null
-                && other.getIncludeOnlyStatuses().equals(
-                        this.getIncludeOnlyStatuses()) == false)
+        if (other.getIncludeOnlyStatuses() != null && other.getIncludeOnlyStatuses().equals(this.getIncludeOnlyStatuses()) == false)
             return false;
-        if (other.getCreateTimeRange() == null
-                ^ this.getCreateTimeRange() == null)
+        if (other.getCreateTimeRange() == null ^ this.getCreateTimeRange() == null)
             return false;
-        if (other.getCreateTimeRange() != null
-                && other.getCreateTimeRange().equals(this.getCreateTimeRange()) == false)
+        if (other.getCreateTimeRange() != null && other.getCreateTimeRange().equals(this.getCreateTimeRange()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -785,24 +731,11 @@ public class ListDeploymentsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentGroupName() == null) ? 0
-                        : getDeploymentGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIncludeOnlyStatuses() == null) ? 0
-                        : getIncludeOnlyStatuses().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreateTimeRange() == null) ? 0 : getCreateTimeRange()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentGroupName() == null) ? 0 : getDeploymentGroupName().hashCode());
+        hashCode = prime * hashCode + ((getIncludeOnlyStatuses() == null) ? 0 : getIncludeOnlyStatuses().hashCode());
+        hashCode = prime * hashCode + ((getCreateTimeRange() == null) ? 0 : getCreateTimeRange().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

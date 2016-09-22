@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DeleteApplicationRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteApplicationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,8 +28,7 @@ public class DeleteApplicationRequest extends
     private String applicationName;
     /**
      * <p>
-     * You can use the <code>DescribeApplication</code> operation to get this
-     * value.
+     * You can use the <code>DescribeApplication</code> operation to get this value.
      * </p>
      */
     private java.util.Date createTimestamp;
@@ -70,8 +65,7 @@ public class DeleteApplicationRequest extends
      * 
      * @param applicationName
      *        Name of the Amazon Kinesis Analytics application to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteApplicationRequest withApplicationName(String applicationName) {
@@ -81,13 +75,11 @@ public class DeleteApplicationRequest extends
 
     /**
      * <p>
-     * You can use the <code>DescribeApplication</code> operation to get this
-     * value.
+     * You can use the <code>DescribeApplication</code> operation to get this value.
      * </p>
      * 
      * @param createTimestamp
-     *        You can use the <code>DescribeApplication</code> operation to get
-     *        this value.
+     *        You can use the <code>DescribeApplication</code> operation to get this value.
      */
 
     public void setCreateTimestamp(java.util.Date createTimestamp) {
@@ -96,12 +88,10 @@ public class DeleteApplicationRequest extends
 
     /**
      * <p>
-     * You can use the <code>DescribeApplication</code> operation to get this
-     * value.
+     * You can use the <code>DescribeApplication</code> operation to get this value.
      * </p>
      * 
-     * @return You can use the <code>DescribeApplication</code> operation to get
-     *         this value.
+     * @return You can use the <code>DescribeApplication</code> operation to get this value.
      */
 
     public java.util.Date getCreateTimestamp() {
@@ -110,26 +100,21 @@ public class DeleteApplicationRequest extends
 
     /**
      * <p>
-     * You can use the <code>DescribeApplication</code> operation to get this
-     * value.
+     * You can use the <code>DescribeApplication</code> operation to get this value.
      * </p>
      * 
      * @param createTimestamp
-     *        You can use the <code>DescribeApplication</code> operation to get
-     *        this value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        You can use the <code>DescribeApplication</code> operation to get this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteApplicationRequest withCreateTimestamp(
-            java.util.Date createTimestamp) {
+    public DeleteApplicationRequest withCreateTimestamp(java.util.Date createTimestamp) {
         setCreateTimestamp(createTimestamp);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -157,17 +142,13 @@ public class DeleteApplicationRequest extends
         if (obj instanceof DeleteApplicationRequest == false)
             return false;
         DeleteApplicationRequest other = (DeleteApplicationRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
-        if (other.getCreateTimestamp() == null
-                ^ this.getCreateTimestamp() == null)
+        if (other.getCreateTimestamp() == null ^ this.getCreateTimestamp() == null)
             return false;
-        if (other.getCreateTimestamp() != null
-                && other.getCreateTimestamp().equals(this.getCreateTimestamp()) == false)
+        if (other.getCreateTimestamp() != null && other.getCreateTimestamp().equals(this.getCreateTimestamp()) == false)
             return false;
         return true;
     }
@@ -177,14 +158,8 @@ public class DeleteApplicationRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreateTimestamp() == null) ? 0 : getCreateTimestamp()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getCreateTimestamp() == null) ? 0 : getCreateTimestamp().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
 
@@ -22,40 +20,35 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for CreateTopic action.
  * </p>
  */
-public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The name of the topic you want to create.
      * </p>
      * <p>
-     * Constraints: Topic names must be made up of only uppercase and lowercase
-     * ASCII letters, numbers, underscores, and hyphens, and must be between 1
-     * and 256 characters long.
+     * Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and
+     * hyphens, and must be between 1 and 256 characters long.
      * </p>
      */
     private String name;
 
     /**
-     * Default constructor for CreateTopicRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for CreateTopicRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public CreateTopicRequest() {
     }
 
     /**
-     * Constructs a new CreateTopicRequest object. Callers should use the setter
-     * or fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new CreateTopicRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param name
      *        The name of the topic you want to create.</p>
      *        <p>
-     *        Constraints: Topic names must be made up of only uppercase and
-     *        lowercase ASCII letters, numbers, underscores, and hyphens, and
-     *        must be between 1 and 256 characters long.
+     *        Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers,
+     *        underscores, and hyphens, and must be between 1 and 256 characters long.
      */
     public CreateTopicRequest(String name) {
         setName(name);
@@ -66,17 +59,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the topic you want to create.
      * </p>
      * <p>
-     * Constraints: Topic names must be made up of only uppercase and lowercase
-     * ASCII letters, numbers, underscores, and hyphens, and must be between 1
-     * and 256 characters long.
+     * Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and
+     * hyphens, and must be between 1 and 256 characters long.
      * </p>
      * 
      * @param name
      *        The name of the topic you want to create.</p>
      *        <p>
-     *        Constraints: Topic names must be made up of only uppercase and
-     *        lowercase ASCII letters, numbers, underscores, and hyphens, and
-     *        must be between 1 and 256 characters long.
+     *        Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers,
+     *        underscores, and hyphens, and must be between 1 and 256 characters long.
      */
 
     public void setName(String name) {
@@ -88,16 +79,14 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the topic you want to create.
      * </p>
      * <p>
-     * Constraints: Topic names must be made up of only uppercase and lowercase
-     * ASCII letters, numbers, underscores, and hyphens, and must be between 1
-     * and 256 characters long.
+     * Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and
+     * hyphens, and must be between 1 and 256 characters long.
      * </p>
      * 
      * @return The name of the topic you want to create.</p>
      *         <p>
-     *         Constraints: Topic names must be made up of only uppercase and
-     *         lowercase ASCII letters, numbers, underscores, and hyphens, and
-     *         must be between 1 and 256 characters long.
+     *         Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers,
+     *         underscores, and hyphens, and must be between 1 and 256 characters long.
      */
 
     public String getName() {
@@ -109,19 +98,16 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the topic you want to create.
      * </p>
      * <p>
-     * Constraints: Topic names must be made up of only uppercase and lowercase
-     * ASCII letters, numbers, underscores, and hyphens, and must be between 1
-     * and 256 characters long.
+     * Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and
+     * hyphens, and must be between 1 and 256 characters long.
      * </p>
      * 
      * @param name
      *        The name of the topic you want to create.</p>
      *        <p>
-     *        Constraints: Topic names must be made up of only uppercase and
-     *        lowercase ASCII letters, numbers, underscores, and hyphens, and
-     *        must be between 1 and 256 characters long.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers,
+     *        underscores, and hyphens, and must be between 1 and 256 characters long.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTopicRequest withName(String name) {
@@ -130,8 +116,7 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -159,8 +144,7 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest
         CreateTopicRequest other = (CreateTopicRequest) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -170,8 +154,7 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

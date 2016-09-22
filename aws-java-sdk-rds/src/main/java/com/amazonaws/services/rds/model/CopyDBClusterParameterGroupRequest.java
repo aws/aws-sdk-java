@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -20,16 +18,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CopyDBClusterParameterGroupRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier or Amazon Resource Name (ARN) for the source DB cluster
-     * parameter group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     * > Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
+     * creating an ARN, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
      * Constraints:
@@ -42,17 +38,14 @@ public class CopyDBClusterParameterGroupRequest extends
      * </li>
      * <li>
      * <p>
-     * If the source DB cluster parameter group is in the same region as the
-     * copy, specify a valid DB parameter group identifier, for example
-     * <code>my-db-cluster-param-group</code>, or a valid ARN.
+     * If the source DB cluster parameter group is in the same region as the copy, specify a valid DB parameter group
+     * identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source DB parameter group is in a different region than the copy,
-     * specify a valid DB cluster parameter group ARN, for example
-     * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>
-     * .
+     * If the source DB parameter group is in a different region than the copy, specify a valid DB cluster parameter
+     * group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
      * </p>
      * </li>
      * </ul>
@@ -103,10 +96,10 @@ public class CopyDBClusterParameterGroupRequest extends
 
     /**
      * <p>
-     * The identifier or Amazon Resource Name (ARN) for the source DB cluster
-     * parameter group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     * > Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
+     * creating an ARN, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
      * Constraints:
@@ -119,25 +112,21 @@ public class CopyDBClusterParameterGroupRequest extends
      * </li>
      * <li>
      * <p>
-     * If the source DB cluster parameter group is in the same region as the
-     * copy, specify a valid DB parameter group identifier, for example
-     * <code>my-db-cluster-param-group</code>, or a valid ARN.
+     * If the source DB cluster parameter group is in the same region as the copy, specify a valid DB parameter group
+     * identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source DB parameter group is in a different region than the copy,
-     * specify a valid DB cluster parameter group ARN, for example
-     * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>
-     * .
+     * If the source DB parameter group is in a different region than the copy, specify a valid DB cluster parameter
+     * group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param sourceDBClusterParameterGroupIdentifier
-     *        The identifier or Amazon Resource Name (ARN) for the source DB
-     *        cluster parameter group. For information about creating an ARN,
-     *        see <a href=
+     *        The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information
+     *        about creating an ARN, see <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
      *        <p>
@@ -151,32 +140,29 @@ public class CopyDBClusterParameterGroupRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        If the source DB cluster parameter group is in the same region as
-     *        the copy, specify a valid DB parameter group identifier, for
-     *        example <code>my-db-cluster-param-group</code>, or a valid ARN.
+     *        If the source DB cluster parameter group is in the same region as the copy, specify a valid DB parameter
+     *        group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source DB parameter group is in a different region than the
-     *        copy, specify a valid DB cluster parameter group ARN, for example
-     *        <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>
-     *        .
+     *        If the source DB parameter group is in a different region than the copy, specify a valid DB cluster
+     *        parameter group ARN, for example
+     *        <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
      *        </p>
      *        </li>
      */
 
-    public void setSourceDBClusterParameterGroupIdentifier(
-            String sourceDBClusterParameterGroupIdentifier) {
+    public void setSourceDBClusterParameterGroupIdentifier(String sourceDBClusterParameterGroupIdentifier) {
         this.sourceDBClusterParameterGroupIdentifier = sourceDBClusterParameterGroupIdentifier;
     }
 
     /**
      * <p>
-     * The identifier or Amazon Resource Name (ARN) for the source DB cluster
-     * parameter group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     * > Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
+     * creating an ARN, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
      * Constraints:
@@ -189,24 +175,20 @@ public class CopyDBClusterParameterGroupRequest extends
      * </li>
      * <li>
      * <p>
-     * If the source DB cluster parameter group is in the same region as the
-     * copy, specify a valid DB parameter group identifier, for example
-     * <code>my-db-cluster-param-group</code>, or a valid ARN.
+     * If the source DB cluster parameter group is in the same region as the copy, specify a valid DB parameter group
+     * identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source DB parameter group is in a different region than the copy,
-     * specify a valid DB cluster parameter group ARN, for example
-     * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>
-     * .
+     * If the source DB parameter group is in a different region than the copy, specify a valid DB cluster parameter
+     * group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The identifier or Amazon Resource Name (ARN) for the source DB
-     *         cluster parameter group. For information about creating an ARN,
-     *         see <a href=
+     * @return The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information
+     *         about creating an ARN, see <a href=
      *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *         > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
      *         <p>
@@ -220,18 +202,15 @@ public class CopyDBClusterParameterGroupRequest extends
      *         </li>
      *         <li>
      *         <p>
-     *         If the source DB cluster parameter group is in the same region as
-     *         the copy, specify a valid DB parameter group identifier, for
-     *         example <code>my-db-cluster-param-group</code>, or a valid ARN.
+     *         If the source DB cluster parameter group is in the same region as the copy, specify a valid DB parameter
+     *         group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source DB parameter group is in a different region than
-     *         the copy, specify a valid DB cluster parameter group ARN, for
-     *         example
-     *         <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>
-     *         .
+     *         If the source DB parameter group is in a different region than the copy, specify a valid DB cluster
+     *         parameter group ARN, for example
+     *         <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
      *         </p>
      *         </li>
      */
@@ -242,10 +221,10 @@ public class CopyDBClusterParameterGroupRequest extends
 
     /**
      * <p>
-     * The identifier or Amazon Resource Name (ARN) for the source DB cluster
-     * parameter group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     * > Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
+     * creating an ARN, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
      * Constraints:
@@ -258,25 +237,21 @@ public class CopyDBClusterParameterGroupRequest extends
      * </li>
      * <li>
      * <p>
-     * If the source DB cluster parameter group is in the same region as the
-     * copy, specify a valid DB parameter group identifier, for example
-     * <code>my-db-cluster-param-group</code>, or a valid ARN.
+     * If the source DB cluster parameter group is in the same region as the copy, specify a valid DB parameter group
+     * identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source DB parameter group is in a different region than the copy,
-     * specify a valid DB cluster parameter group ARN, for example
-     * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>
-     * .
+     * If the source DB parameter group is in a different region than the copy, specify a valid DB cluster parameter
+     * group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param sourceDBClusterParameterGroupIdentifier
-     *        The identifier or Amazon Resource Name (ARN) for the source DB
-     *        cluster parameter group. For information about creating an ARN,
-     *        see <a href=
+     *        The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information
+     *        about creating an ARN, see <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
      *        <p>
@@ -290,25 +265,21 @@ public class CopyDBClusterParameterGroupRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        If the source DB cluster parameter group is in the same region as
-     *        the copy, specify a valid DB parameter group identifier, for
-     *        example <code>my-db-cluster-param-group</code>, or a valid ARN.
+     *        If the source DB cluster parameter group is in the same region as the copy, specify a valid DB parameter
+     *        group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source DB parameter group is in a different region than the
-     *        copy, specify a valid DB cluster parameter group ARN, for example
-     *        <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>
-     *        .
+     *        If the source DB parameter group is in a different region than the copy, specify a valid DB cluster
+     *        parameter group ARN, for example
+     *        <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CopyDBClusterParameterGroupRequest withSourceDBClusterParameterGroupIdentifier(
-            String sourceDBClusterParameterGroupIdentifier) {
+    public CopyDBClusterParameterGroupRequest withSourceDBClusterParameterGroupIdentifier(String sourceDBClusterParameterGroupIdentifier) {
         setSourceDBClusterParameterGroupIdentifier(sourceDBClusterParameterGroupIdentifier);
         return this;
     }
@@ -377,8 +348,7 @@ public class CopyDBClusterParameterGroupRequest extends
      *        Example: <code>my-cluster-param-group1</code>
      */
 
-    public void setTargetDBClusterParameterGroupIdentifier(
-            String targetDBClusterParameterGroupIdentifier) {
+    public void setTargetDBClusterParameterGroupIdentifier(String targetDBClusterParameterGroupIdentifier) {
         this.targetDBClusterParameterGroupIdentifier = targetDBClusterParameterGroupIdentifier;
     }
 
@@ -511,12 +481,10 @@ public class CopyDBClusterParameterGroupRequest extends
      *        </ul>
      *        <p>
      *        Example: <code>my-cluster-param-group1</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CopyDBClusterParameterGroupRequest withTargetDBClusterParameterGroupIdentifier(
-            String targetDBClusterParameterGroupIdentifier) {
+    public CopyDBClusterParameterGroupRequest withTargetDBClusterParameterGroupIdentifier(String targetDBClusterParameterGroupIdentifier) {
         setTargetDBClusterParameterGroupIdentifier(targetDBClusterParameterGroupIdentifier);
         return this;
     }
@@ -530,8 +498,7 @@ public class CopyDBClusterParameterGroupRequest extends
      *        A description for the copied DB cluster parameter group.
      */
 
-    public void setTargetDBClusterParameterGroupDescription(
-            String targetDBClusterParameterGroupDescription) {
+    public void setTargetDBClusterParameterGroupDescription(String targetDBClusterParameterGroupDescription) {
         this.targetDBClusterParameterGroupDescription = targetDBClusterParameterGroupDescription;
     }
 
@@ -554,12 +521,10 @@ public class CopyDBClusterParameterGroupRequest extends
      * 
      * @param targetDBClusterParameterGroupDescription
      *        A description for the copied DB cluster parameter group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CopyDBClusterParameterGroupRequest withTargetDBClusterParameterGroupDescription(
-            String targetDBClusterParameterGroupDescription) {
+    public CopyDBClusterParameterGroupRequest withTargetDBClusterParameterGroupDescription(String targetDBClusterParameterGroupDescription) {
         setTargetDBClusterParameterGroupDescription(targetDBClusterParameterGroupDescription);
         return this;
     }
@@ -590,15 +555,13 @@ public class CopyDBClusterParameterGroupRequest extends
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CopyDBClusterParameterGroupRequest withTags(Tag... tags) {
@@ -613,19 +576,16 @@ public class CopyDBClusterParameterGroupRequest extends
 
     /**
      * @param tags
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CopyDBClusterParameterGroupRequest withTags(
-            java.util.Collection<Tag> tags) {
+    public CopyDBClusterParameterGroupRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -636,14 +596,11 @@ public class CopyDBClusterParameterGroupRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceDBClusterParameterGroupIdentifier() != null)
-            sb.append("SourceDBClusterParameterGroupIdentifier: "
-                    + getSourceDBClusterParameterGroupIdentifier() + ",");
+            sb.append("SourceDBClusterParameterGroupIdentifier: " + getSourceDBClusterParameterGroupIdentifier() + ",");
         if (getTargetDBClusterParameterGroupIdentifier() != null)
-            sb.append("TargetDBClusterParameterGroupIdentifier: "
-                    + getTargetDBClusterParameterGroupIdentifier() + ",");
+            sb.append("TargetDBClusterParameterGroupIdentifier: " + getTargetDBClusterParameterGroupIdentifier() + ",");
         if (getTargetDBClusterParameterGroupDescription() != null)
-            sb.append("TargetDBClusterParameterGroupDescription: "
-                    + getTargetDBClusterParameterGroupDescription() + ",");
+            sb.append("TargetDBClusterParameterGroupDescription: " + getTargetDBClusterParameterGroupDescription() + ",");
         if (getTags() != null)
             sb.append("Tags: " + getTags());
         sb.append("}");
@@ -660,31 +617,24 @@ public class CopyDBClusterParameterGroupRequest extends
         if (obj instanceof CopyDBClusterParameterGroupRequest == false)
             return false;
         CopyDBClusterParameterGroupRequest other = (CopyDBClusterParameterGroupRequest) obj;
-        if (other.getSourceDBClusterParameterGroupIdentifier() == null
-                ^ this.getSourceDBClusterParameterGroupIdentifier() == null)
+        if (other.getSourceDBClusterParameterGroupIdentifier() == null ^ this.getSourceDBClusterParameterGroupIdentifier() == null)
             return false;
         if (other.getSourceDBClusterParameterGroupIdentifier() != null
-                && other.getSourceDBClusterParameterGroupIdentifier().equals(
-                        this.getSourceDBClusterParameterGroupIdentifier()) == false)
+                && other.getSourceDBClusterParameterGroupIdentifier().equals(this.getSourceDBClusterParameterGroupIdentifier()) == false)
             return false;
-        if (other.getTargetDBClusterParameterGroupIdentifier() == null
-                ^ this.getTargetDBClusterParameterGroupIdentifier() == null)
+        if (other.getTargetDBClusterParameterGroupIdentifier() == null ^ this.getTargetDBClusterParameterGroupIdentifier() == null)
             return false;
         if (other.getTargetDBClusterParameterGroupIdentifier() != null
-                && other.getTargetDBClusterParameterGroupIdentifier().equals(
-                        this.getTargetDBClusterParameterGroupIdentifier()) == false)
+                && other.getTargetDBClusterParameterGroupIdentifier().equals(this.getTargetDBClusterParameterGroupIdentifier()) == false)
             return false;
-        if (other.getTargetDBClusterParameterGroupDescription() == null
-                ^ this.getTargetDBClusterParameterGroupDescription() == null)
+        if (other.getTargetDBClusterParameterGroupDescription() == null ^ this.getTargetDBClusterParameterGroupDescription() == null)
             return false;
         if (other.getTargetDBClusterParameterGroupDescription() != null
-                && other.getTargetDBClusterParameterGroupDescription().equals(
-                        this.getTargetDBClusterParameterGroupDescription()) == false)
+                && other.getTargetDBClusterParameterGroupDescription().equals(this.getTargetDBClusterParameterGroupDescription()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -694,23 +644,10 @@ public class CopyDBClusterParameterGroupRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSourceDBClusterParameterGroupIdentifier() == null) ? 0
-                        : getSourceDBClusterParameterGroupIdentifier()
-                                .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTargetDBClusterParameterGroupIdentifier() == null) ? 0
-                        : getTargetDBClusterParameterGroupIdentifier()
-                                .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTargetDBClusterParameterGroupDescription() == null) ? 0
-                        : getTargetDBClusterParameterGroupDescription()
-                                .hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSourceDBClusterParameterGroupIdentifier() == null) ? 0 : getSourceDBClusterParameterGroupIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getTargetDBClusterParameterGroupIdentifier() == null) ? 0 : getTargetDBClusterParameterGroupIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getTargetDBClusterParameterGroupDescription() == null) ? 0 : getTargetDBClusterParameterGroupDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

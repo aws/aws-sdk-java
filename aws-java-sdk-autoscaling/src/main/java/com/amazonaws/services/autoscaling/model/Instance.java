@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -37,17 +35,14 @@ public class Instance implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * A description of the current lifecycle state. Note that the
-     * <code>Quarantined</code> state is not used.
+     * A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
      * </p>
      */
     private String lifecycleState;
     /**
      * <p>
-     * The last reported health status of the instance. "Healthy" means that the
-     * instance is healthy and should remain in service. "Unhealthy" means that
-     * the instance is unhealthy and Auto Scaling should terminate and replace
-     * it.
+     * The last reported health status of the instance. "Healthy" means that the instance is healthy and should remain
+     * in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.
      * </p>
      */
     private String healthStatus;
@@ -59,8 +54,7 @@ public class Instance implements Serializable, Cloneable {
     private String launchConfigurationName;
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto
-     * Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      * </p>
      */
     private Boolean protectedFromScaleIn;
@@ -97,8 +91,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param instanceId
      *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withInstanceId(String instanceId) {
@@ -138,8 +131,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param availabilityZone
      *        The Availability Zone in which the instance is running.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withAvailabilityZone(String availabilityZone) {
@@ -149,13 +141,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the current lifecycle state. Note that the
-     * <code>Quarantined</code> state is not used.
+     * A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
      * </p>
      * 
      * @param lifecycleState
-     *        A description of the current lifecycle state. Note that the
-     *        <code>Quarantined</code> state is not used.
+     *        A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
      * @see LifecycleState
      */
 
@@ -165,12 +155,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the current lifecycle state. Note that the
-     * <code>Quarantined</code> state is not used.
+     * A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
      * </p>
      * 
-     * @return A description of the current lifecycle state. Note that the
-     *         <code>Quarantined</code> state is not used.
+     * @return A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
      * @see LifecycleState
      */
 
@@ -180,15 +168,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the current lifecycle state. Note that the
-     * <code>Quarantined</code> state is not used.
+     * A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
      * </p>
      * 
      * @param lifecycleState
-     *        A description of the current lifecycle state. Note that the
-     *        <code>Quarantined</code> state is not used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifecycleState
      */
 
@@ -199,13 +184,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the current lifecycle state. Note that the
-     * <code>Quarantined</code> state is not used.
+     * A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
      * </p>
      * 
      * @param lifecycleState
-     *        A description of the current lifecycle state. Note that the
-     *        <code>Quarantined</code> state is not used.
+     *        A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
      * @see LifecycleState
      */
 
@@ -215,15 +198,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the current lifecycle state. Note that the
-     * <code>Quarantined</code> state is not used.
+     * A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
      * </p>
      * 
      * @param lifecycleState
-     *        A description of the current lifecycle state. Note that the
-     *        <code>Quarantined</code> state is not used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifecycleState
      */
 
@@ -234,17 +214,14 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last reported health status of the instance. "Healthy" means that the
-     * instance is healthy and should remain in service. "Unhealthy" means that
-     * the instance is unhealthy and Auto Scaling should terminate and replace
-     * it.
+     * The last reported health status of the instance. "Healthy" means that the instance is healthy and should remain
+     * in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.
      * </p>
      * 
      * @param healthStatus
-     *        The last reported health status of the instance. "Healthy" means
-     *        that the instance is healthy and should remain in service.
-     *        "Unhealthy" means that the instance is unhealthy and Auto Scaling
-     *        should terminate and replace it.
+     *        The last reported health status of the instance. "Healthy" means that the instance is healthy and should
+     *        remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and
+     *        replace it.
      */
 
     public void setHealthStatus(String healthStatus) {
@@ -253,16 +230,13 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last reported health status of the instance. "Healthy" means that the
-     * instance is healthy and should remain in service. "Unhealthy" means that
-     * the instance is unhealthy and Auto Scaling should terminate and replace
-     * it.
+     * The last reported health status of the instance. "Healthy" means that the instance is healthy and should remain
+     * in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.
      * </p>
      * 
-     * @return The last reported health status of the instance. "Healthy" means
-     *         that the instance is healthy and should remain in service.
-     *         "Unhealthy" means that the instance is unhealthy and Auto Scaling
-     *         should terminate and replace it.
+     * @return The last reported health status of the instance. "Healthy" means that the instance is healthy and should
+     *         remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and
+     *         replace it.
      */
 
     public String getHealthStatus() {
@@ -271,19 +245,15 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last reported health status of the instance. "Healthy" means that the
-     * instance is healthy and should remain in service. "Unhealthy" means that
-     * the instance is unhealthy and Auto Scaling should terminate and replace
-     * it.
+     * The last reported health status of the instance. "Healthy" means that the instance is healthy and should remain
+     * in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.
      * </p>
      * 
      * @param healthStatus
-     *        The last reported health status of the instance. "Healthy" means
-     *        that the instance is healthy and should remain in service.
-     *        "Unhealthy" means that the instance is unhealthy and Auto Scaling
-     *        should terminate and replace it.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The last reported health status of the instance. "Healthy" means that the instance is healthy and should
+     *        remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and
+     *        replace it.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withHealthStatus(String healthStatus) {
@@ -323,8 +293,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param launchConfigurationName
      *        The launch configuration associated with the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withLaunchConfigurationName(String launchConfigurationName) {
@@ -334,13 +303,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto
-     * Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      * </p>
      * 
      * @param protectedFromScaleIn
-     *        Indicates whether the instance is protected from termination by
-     *        Auto Scaling when scaling in.
+     *        Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      */
 
     public void setProtectedFromScaleIn(Boolean protectedFromScaleIn) {
@@ -349,12 +316,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto
-     * Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      * </p>
      * 
-     * @return Indicates whether the instance is protected from termination by
-     *         Auto Scaling when scaling in.
+     * @return Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      */
 
     public Boolean getProtectedFromScaleIn() {
@@ -363,15 +328,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto
-     * Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      * </p>
      * 
      * @param protectedFromScaleIn
-     *        Indicates whether the instance is protected from termination by
-     *        Auto Scaling when scaling in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withProtectedFromScaleIn(Boolean protectedFromScaleIn) {
@@ -381,12 +343,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto
-     * Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      * </p>
      * 
-     * @return Indicates whether the instance is protected from termination by
-     *         Auto Scaling when scaling in.
+     * @return Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      */
 
     public Boolean isProtectedFromScaleIn() {
@@ -394,8 +354,7 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -414,8 +373,7 @@ public class Instance implements Serializable, Cloneable {
         if (getHealthStatus() != null)
             sb.append("HealthStatus: " + getHealthStatus() + ",");
         if (getLaunchConfigurationName() != null)
-            sb.append("LaunchConfigurationName: "
-                    + getLaunchConfigurationName() + ",");
+            sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ",");
         if (getProtectedFromScaleIn() != null)
             sb.append("ProtectedFromScaleIn: " + getProtectedFromScaleIn());
         sb.append("}");
@@ -434,40 +392,27 @@ public class Instance implements Serializable, Cloneable {
         Instance other = (Instance) obj;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
-        if (other.getLifecycleState() == null
-                ^ this.getLifecycleState() == null)
+        if (other.getLifecycleState() == null ^ this.getLifecycleState() == null)
             return false;
-        if (other.getLifecycleState() != null
-                && other.getLifecycleState().equals(this.getLifecycleState()) == false)
+        if (other.getLifecycleState() != null && other.getLifecycleState().equals(this.getLifecycleState()) == false)
             return false;
         if (other.getHealthStatus() == null ^ this.getHealthStatus() == null)
             return false;
-        if (other.getHealthStatus() != null
-                && other.getHealthStatus().equals(this.getHealthStatus()) == false)
+        if (other.getHealthStatus() != null && other.getHealthStatus().equals(this.getHealthStatus()) == false)
             return false;
-        if (other.getLaunchConfigurationName() == null
-                ^ this.getLaunchConfigurationName() == null)
+        if (other.getLaunchConfigurationName() == null ^ this.getLaunchConfigurationName() == null)
             return false;
-        if (other.getLaunchConfigurationName() != null
-                && other.getLaunchConfigurationName().equals(
-                        this.getLaunchConfigurationName()) == false)
+        if (other.getLaunchConfigurationName() != null && other.getLaunchConfigurationName().equals(this.getLaunchConfigurationName()) == false)
             return false;
-        if (other.getProtectedFromScaleIn() == null
-                ^ this.getProtectedFromScaleIn() == null)
+        if (other.getProtectedFromScaleIn() == null ^ this.getProtectedFromScaleIn() == null)
             return false;
-        if (other.getProtectedFromScaleIn() != null
-                && other.getProtectedFromScaleIn().equals(
-                        this.getProtectedFromScaleIn()) == false)
+        if (other.getProtectedFromScaleIn() != null && other.getProtectedFromScaleIn().equals(this.getProtectedFromScaleIn()) == false)
             return false;
         return true;
     }
@@ -477,28 +422,12 @@ public class Instance implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLifecycleState() == null) ? 0 : getLifecycleState()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthStatus() == null) ? 0 : getHealthStatus()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLaunchConfigurationName() == null) ? 0
-                        : getLaunchConfigurationName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProtectedFromScaleIn() == null) ? 0
-                        : getProtectedFromScaleIn().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleState() == null) ? 0 : getLifecycleState().hashCode());
+        hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
+        hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode());
+        hashCode = prime * hashCode + ((getProtectedFromScaleIn() == null) ? 0 : getProtectedFromScaleIn().hashCode());
         return hashCode;
     }
 
@@ -507,9 +436,7 @@ public class Instance implements Serializable, Cloneable {
         try {
             return (Instance) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

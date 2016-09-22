@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticsearch.model.transform;
 
@@ -34,91 +32,65 @@ public class ElasticsearchDomainStatusJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ElasticsearchDomainStatus elasticsearchDomainStatus,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(ElasticsearchDomainStatus elasticsearchDomainStatus, StructuredJsonGenerator jsonGenerator) {
 
         if (elasticsearchDomainStatus == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (elasticsearchDomainStatus.getDomainId() != null) {
-                jsonGenerator.writeFieldName("DomainId").writeValue(
-                        elasticsearchDomainStatus.getDomainId());
+                jsonGenerator.writeFieldName("DomainId").writeValue(elasticsearchDomainStatus.getDomainId());
             }
             if (elasticsearchDomainStatus.getDomainName() != null) {
-                jsonGenerator.writeFieldName("DomainName").writeValue(
-                        elasticsearchDomainStatus.getDomainName());
+                jsonGenerator.writeFieldName("DomainName").writeValue(elasticsearchDomainStatus.getDomainName());
             }
             if (elasticsearchDomainStatus.getARN() != null) {
-                jsonGenerator.writeFieldName("ARN").writeValue(
-                        elasticsearchDomainStatus.getARN());
+                jsonGenerator.writeFieldName("ARN").writeValue(elasticsearchDomainStatus.getARN());
             }
             if (elasticsearchDomainStatus.getCreated() != null) {
-                jsonGenerator.writeFieldName("Created").writeValue(
-                        elasticsearchDomainStatus.getCreated());
+                jsonGenerator.writeFieldName("Created").writeValue(elasticsearchDomainStatus.getCreated());
             }
             if (elasticsearchDomainStatus.getDeleted() != null) {
-                jsonGenerator.writeFieldName("Deleted").writeValue(
-                        elasticsearchDomainStatus.getDeleted());
+                jsonGenerator.writeFieldName("Deleted").writeValue(elasticsearchDomainStatus.getDeleted());
             }
             if (elasticsearchDomainStatus.getEndpoint() != null) {
-                jsonGenerator.writeFieldName("Endpoint").writeValue(
-                        elasticsearchDomainStatus.getEndpoint());
+                jsonGenerator.writeFieldName("Endpoint").writeValue(elasticsearchDomainStatus.getEndpoint());
             }
             if (elasticsearchDomainStatus.getProcessing() != null) {
-                jsonGenerator.writeFieldName("Processing").writeValue(
-                        elasticsearchDomainStatus.getProcessing());
+                jsonGenerator.writeFieldName("Processing").writeValue(elasticsearchDomainStatus.getProcessing());
             }
             if (elasticsearchDomainStatus.getElasticsearchVersion() != null) {
-                jsonGenerator.writeFieldName("ElasticsearchVersion")
-                        .writeValue(
-                                elasticsearchDomainStatus
-                                        .getElasticsearchVersion());
+                jsonGenerator.writeFieldName("ElasticsearchVersion").writeValue(elasticsearchDomainStatus.getElasticsearchVersion());
             }
             if (elasticsearchDomainStatus.getElasticsearchClusterConfig() != null) {
                 jsonGenerator.writeFieldName("ElasticsearchClusterConfig");
-                ElasticsearchClusterConfigJsonMarshaller
-                        .getInstance()
-                        .marshall(
-                                elasticsearchDomainStatus
-                                        .getElasticsearchClusterConfig(),
-                                jsonGenerator);
+                ElasticsearchClusterConfigJsonMarshaller.getInstance().marshall(elasticsearchDomainStatus.getElasticsearchClusterConfig(), jsonGenerator);
             }
             if (elasticsearchDomainStatus.getEBSOptions() != null) {
                 jsonGenerator.writeFieldName("EBSOptions");
-                EBSOptionsJsonMarshaller.getInstance().marshall(
-                        elasticsearchDomainStatus.getEBSOptions(),
-                        jsonGenerator);
+                EBSOptionsJsonMarshaller.getInstance().marshall(elasticsearchDomainStatus.getEBSOptions(), jsonGenerator);
             }
             if (elasticsearchDomainStatus.getAccessPolicies() != null) {
-                jsonGenerator.writeFieldName("AccessPolicies").writeValue(
-                        elasticsearchDomainStatus.getAccessPolicies());
+                jsonGenerator.writeFieldName("AccessPolicies").writeValue(elasticsearchDomainStatus.getAccessPolicies());
             }
             if (elasticsearchDomainStatus.getSnapshotOptions() != null) {
                 jsonGenerator.writeFieldName("SnapshotOptions");
-                SnapshotOptionsJsonMarshaller.getInstance().marshall(
-                        elasticsearchDomainStatus.getSnapshotOptions(),
-                        jsonGenerator);
+                SnapshotOptionsJsonMarshaller.getInstance().marshall(elasticsearchDomainStatus.getSnapshotOptions(), jsonGenerator);
             }
 
-            java.util.Map<String, String> advancedOptionsMap = elasticsearchDomainStatus
-                    .getAdvancedOptions();
+            java.util.Map<String, String> advancedOptionsMap = elasticsearchDomainStatus.getAdvancedOptions();
             if (advancedOptionsMap != null) {
                 jsonGenerator.writeFieldName("AdvancedOptions");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> advancedOptionsMapValue : advancedOptionsMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> advancedOptionsMapValue : advancedOptionsMap.entrySet()) {
                     if (advancedOptionsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(advancedOptionsMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(advancedOptionsMapValue.getKey());
 
-                        jsonGenerator.writeValue(advancedOptionsMapValue
-                                .getValue());
+                        jsonGenerator.writeValue(advancedOptionsMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
@@ -126,8 +98,7 @@ public class ElasticsearchDomainStatusJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

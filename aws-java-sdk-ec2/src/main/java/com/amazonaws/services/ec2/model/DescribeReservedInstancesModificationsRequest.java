@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeReservedInstancesModif
  * Contains the parameters for DescribeReservedInstancesModifications.
  * </p>
  */
-public class DescribeReservedInstancesModificationsRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable,
+public class DescribeReservedInstancesModificationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeReservedInstancesModificationsRequest> {
 
     /**
@@ -47,72 +44,62 @@ public class DescribeReservedInstancesModificationsRequest extends
      * <ul>
      * <li>
      * <p>
-     * <code>client-token</code> - The idempotency token for the modification
-     * request.
+     * <code>client-token</code> - The idempotency token for the modification request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>create-date</code> - The time when the modification request was
-     * created.
+     * <code>create-date</code> - The time when the modification request was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>effective-date</code> - The time when the modification becomes
-     * effective.
+     * <code>effective-date</code> - The time when the modification becomes effective.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.reserved-instances-id</code> - The ID for the
-     * Reserved Instances created as part of the modification request. This ID
-     * is only available when the status of the modification is
-     * <code>fulfilled</code>.
+     * <code>modification-result.reserved-instances-id</code> - The ID for the Reserved Instances created as part of the
+     * modification request. This ID is only available when the status of the modification is <code>fulfilled</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.availability-zone</code> -
-     * The Availability Zone for the new Reserved Instances.
+     * <code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the new
+     * Reserved Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.instance-count </code> -
-     * The number of new Reserved Instances.
+     * <code>modification-result.target-configuration.instance-count </code> - The number of new Reserved Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.instance-type</code> - The
-     * instance type of the new Reserved Instances.
+     * <code>modification-result.target-configuration.instance-type</code> - The instance type of the new Reserved
+     * Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.platform</code> - The
-     * network platform of the new Reserved Instances (<code>EC2-Classic</code>
-     * | <code>EC2-VPC</code>).
+     * <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
+     * Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-id</code> - The ID of the Reserved Instances
-     * modified.
+     * <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-modification-id</code> - The ID of the
-     * modification request.
+     * <code>reserved-instances-modification-id</code> - The ID of the modification request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the Reserved Instances modification
-     * request (<code>processing</code> | <code>fulfilled</code> |
-     * <code>failed</code>).
+     * <code>status</code> - The status of the Reserved Instances modification request (<code>processing</code> |
+     * <code>fulfilled</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
@@ -122,8 +109,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      * </li>
      * <li>
      * <p>
-     * <code>update-date</code> - The time when the modification request was
-     * last updated.
+     * <code>update-date</code> - The time when the modification request was last updated.
      * </p>
      * </li>
      * </ul>
@@ -154,15 +140,13 @@ public class DescribeReservedInstancesModificationsRequest extends
      *        IDs for the submitted modification request.
      */
 
-    public void setReservedInstancesModificationIds(
-            java.util.Collection<String> reservedInstancesModificationIds) {
+    public void setReservedInstancesModificationIds(java.util.Collection<String> reservedInstancesModificationIds) {
         if (reservedInstancesModificationIds == null) {
             this.reservedInstancesModificationIds = null;
             return;
         }
 
-        this.reservedInstancesModificationIds = new com.amazonaws.internal.SdkInternalList<String>(
-                reservedInstancesModificationIds);
+        this.reservedInstancesModificationIds = new com.amazonaws.internal.SdkInternalList<String>(reservedInstancesModificationIds);
     }
 
     /**
@@ -170,24 +154,19 @@ public class DescribeReservedInstancesModificationsRequest extends
      * IDs for the submitted modification request.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setReservedInstancesModificationIds(java.util.Collection)} or
-     * {@link #withReservedInstancesModificationIds(java.util.Collection)} if
-     * you want to override the existing values.
+     * {@link #withReservedInstancesModificationIds(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param reservedInstancesModificationIds
      *        IDs for the submitted modification request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReservedInstancesModificationsRequest withReservedInstancesModificationIds(
-            String... reservedInstancesModificationIds) {
+    public DescribeReservedInstancesModificationsRequest withReservedInstancesModificationIds(String... reservedInstancesModificationIds) {
         if (this.reservedInstancesModificationIds == null) {
-            setReservedInstancesModificationIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    reservedInstancesModificationIds.length));
+            setReservedInstancesModificationIds(new com.amazonaws.internal.SdkInternalList<String>(reservedInstancesModificationIds.length));
         }
         for (String ele : reservedInstancesModificationIds) {
             this.reservedInstancesModificationIds.add(ele);
@@ -202,12 +181,10 @@ public class DescribeReservedInstancesModificationsRequest extends
      * 
      * @param reservedInstancesModificationIds
      *        IDs for the submitted modification request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReservedInstancesModificationsRequest withReservedInstancesModificationIds(
-            java.util.Collection<String> reservedInstancesModificationIds) {
+    public DescribeReservedInstancesModificationsRequest withReservedInstancesModificationIds(java.util.Collection<String> reservedInstancesModificationIds) {
         setReservedInstancesModificationIds(reservedInstancesModificationIds);
         return this;
     }
@@ -244,12 +221,10 @@ public class DescribeReservedInstancesModificationsRequest extends
      * 
      * @param nextToken
      *        The token to retrieve the next page of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReservedInstancesModificationsRequest withNextToken(
-            String nextToken) {
+    public DescribeReservedInstancesModificationsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
     }
@@ -261,72 +236,62 @@ public class DescribeReservedInstancesModificationsRequest extends
      * <ul>
      * <li>
      * <p>
-     * <code>client-token</code> - The idempotency token for the modification
-     * request.
+     * <code>client-token</code> - The idempotency token for the modification request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>create-date</code> - The time when the modification request was
-     * created.
+     * <code>create-date</code> - The time when the modification request was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>effective-date</code> - The time when the modification becomes
-     * effective.
+     * <code>effective-date</code> - The time when the modification becomes effective.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.reserved-instances-id</code> - The ID for the
-     * Reserved Instances created as part of the modification request. This ID
-     * is only available when the status of the modification is
-     * <code>fulfilled</code>.
+     * <code>modification-result.reserved-instances-id</code> - The ID for the Reserved Instances created as part of the
+     * modification request. This ID is only available when the status of the modification is <code>fulfilled</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.availability-zone</code> -
-     * The Availability Zone for the new Reserved Instances.
+     * <code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the new
+     * Reserved Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.instance-count </code> -
-     * The number of new Reserved Instances.
+     * <code>modification-result.target-configuration.instance-count </code> - The number of new Reserved Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.instance-type</code> - The
-     * instance type of the new Reserved Instances.
+     * <code>modification-result.target-configuration.instance-type</code> - The instance type of the new Reserved
+     * Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.platform</code> - The
-     * network platform of the new Reserved Instances (<code>EC2-Classic</code>
-     * | <code>EC2-VPC</code>).
+     * <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
+     * Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-id</code> - The ID of the Reserved Instances
-     * modified.
+     * <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-modification-id</code> - The ID of the
-     * modification request.
+     * <code>reserved-instances-modification-id</code> - The ID of the modification request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the Reserved Instances modification
-     * request (<code>processing</code> | <code>fulfilled</code> |
-     * <code>failed</code>).
+     * <code>status</code> - The status of the Reserved Instances modification request (<code>processing</code> |
+     * <code>fulfilled</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
@@ -336,8 +301,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      * </li>
      * <li>
      * <p>
-     * <code>update-date</code> - The time when the modification request was
-     * last updated.
+     * <code>update-date</code> - The time when the modification request was last updated.
      * </p>
      * </li>
      * </ul>
@@ -346,72 +310,64 @@ public class DescribeReservedInstancesModificationsRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>client-token</code> - The idempotency token for the
-     *         modification request.
+     *         <code>client-token</code> - The idempotency token for the modification request.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>create-date</code> - The time when the modification request
-     *         was created.
+     *         <code>create-date</code> - The time when the modification request was created.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>effective-date</code> - The time when the modification
-     *         becomes effective.
+     *         <code>effective-date</code> - The time when the modification becomes effective.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>modification-result.reserved-instances-id</code> - The ID
-     *         for the Reserved Instances created as part of the modification
-     *         request. This ID is only available when the status of the
-     *         modification is <code>fulfilled</code>.
+     *         <code>modification-result.reserved-instances-id</code> - The ID for the Reserved Instances created as
+     *         part of the modification request. This ID is only available when the status of the modification is
+     *         <code>fulfilled</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>modification-result.target-configuration.availability-zone</code>
-     *         - The Availability Zone for the new Reserved Instances.
+     *         <code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the
+     *         new Reserved Instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>modification-result.target-configuration.instance-count </code>
-     *         - The number of new Reserved Instances.
+     *         <code>modification-result.target-configuration.instance-count </code> - The number of new Reserved
+     *         Instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>modification-result.target-configuration.instance-type</code>
-     *         - The instance type of the new Reserved Instances.
+     *         <code>modification-result.target-configuration.instance-type</code> - The instance type of the new
+     *         Reserved Instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>modification-result.target-configuration.platform</code> -
-     *         The network platform of the new Reserved Instances (
-     *         <code>EC2-Classic</code> | <code>EC2-VPC</code>).
+     *         <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
+     *         Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>reserved-instances-id</code> - The ID of the Reserved
-     *         Instances modified.
+     *         <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>reserved-instances-modification-id</code> - The ID of the
-     *         modification request.
+     *         <code>reserved-instances-modification-id</code> - The ID of the modification request.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>status</code> - The status of the Reserved Instances
-     *         modification request (<code>processing</code> |
-     *         <code>fulfilled</code> | <code>failed</code>).
+     *         <code>status</code> - The status of the Reserved Instances modification request (<code>processing</code>
+     *         | <code>fulfilled</code> | <code>failed</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -421,8 +377,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      *         </li>
      *         <li>
      *         <p>
-     *         <code>update-date</code> - The time when the modification request
-     *         was last updated.
+     *         <code>update-date</code> - The time when the modification request was last updated.
      *         </p>
      *         </li>
      */
@@ -441,72 +396,62 @@ public class DescribeReservedInstancesModificationsRequest extends
      * <ul>
      * <li>
      * <p>
-     * <code>client-token</code> - The idempotency token for the modification
-     * request.
+     * <code>client-token</code> - The idempotency token for the modification request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>create-date</code> - The time when the modification request was
-     * created.
+     * <code>create-date</code> - The time when the modification request was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>effective-date</code> - The time when the modification becomes
-     * effective.
+     * <code>effective-date</code> - The time when the modification becomes effective.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.reserved-instances-id</code> - The ID for the
-     * Reserved Instances created as part of the modification request. This ID
-     * is only available when the status of the modification is
-     * <code>fulfilled</code>.
+     * <code>modification-result.reserved-instances-id</code> - The ID for the Reserved Instances created as part of the
+     * modification request. This ID is only available when the status of the modification is <code>fulfilled</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.availability-zone</code> -
-     * The Availability Zone for the new Reserved Instances.
+     * <code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the new
+     * Reserved Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.instance-count </code> -
-     * The number of new Reserved Instances.
+     * <code>modification-result.target-configuration.instance-count </code> - The number of new Reserved Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.instance-type</code> - The
-     * instance type of the new Reserved Instances.
+     * <code>modification-result.target-configuration.instance-type</code> - The instance type of the new Reserved
+     * Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.platform</code> - The
-     * network platform of the new Reserved Instances (<code>EC2-Classic</code>
-     * | <code>EC2-VPC</code>).
+     * <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
+     * Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-id</code> - The ID of the Reserved Instances
-     * modified.
+     * <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-modification-id</code> - The ID of the
-     * modification request.
+     * <code>reserved-instances-modification-id</code> - The ID of the modification request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the Reserved Instances modification
-     * request (<code>processing</code> | <code>fulfilled</code> |
-     * <code>failed</code>).
+     * <code>status</code> - The status of the Reserved Instances modification request (<code>processing</code> |
+     * <code>fulfilled</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
@@ -516,8 +461,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      * </li>
      * <li>
      * <p>
-     * <code>update-date</code> - The time when the modification request was
-     * last updated.
+     * <code>update-date</code> - The time when the modification request was last updated.
      * </p>
      * </li>
      * </ul>
@@ -527,71 +471,63 @@ public class DescribeReservedInstancesModificationsRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>client-token</code> - The idempotency token for the
-     *        modification request.
+     *        <code>client-token</code> - The idempotency token for the modification request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>create-date</code> - The time when the modification request
-     *        was created.
+     *        <code>create-date</code> - The time when the modification request was created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>effective-date</code> - The time when the modification
-     *        becomes effective.
+     *        <code>effective-date</code> - The time when the modification becomes effective.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.reserved-instances-id</code> - The ID
-     *        for the Reserved Instances created as part of the modification
-     *        request. This ID is only available when the status of the
-     *        modification is <code>fulfilled</code>.
+     *        <code>modification-result.reserved-instances-id</code> - The ID for the Reserved Instances created as part
+     *        of the modification request. This ID is only available when the status of the modification is
+     *        <code>fulfilled</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.target-configuration.availability-zone</code>
-     *        - The Availability Zone for the new Reserved Instances.
+     *        <code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the
+     *        new Reserved Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.target-configuration.instance-count </code>
-     *        - The number of new Reserved Instances.
+     *        <code>modification-result.target-configuration.instance-count </code> - The number of new Reserved
+     *        Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.target-configuration.instance-type</code>
-     *        - The instance type of the new Reserved Instances.
+     *        <code>modification-result.target-configuration.instance-type</code> - The instance type of the new
+     *        Reserved Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.target-configuration.platform</code> -
-     *        The network platform of the new Reserved Instances (
-     *        <code>EC2-Classic</code> | <code>EC2-VPC</code>).
+     *        <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
+     *        Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>reserved-instances-id</code> - The ID of the Reserved
-     *        Instances modified.
+     *        <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>reserved-instances-modification-id</code> - The ID of the
-     *        modification request.
+     *        <code>reserved-instances-modification-id</code> - The ID of the modification request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> - The status of the Reserved Instances
-     *        modification request (<code>processing</code> |
+     *        <code>status</code> - The status of the Reserved Instances modification request (<code>processing</code> |
      *        <code>fulfilled</code> | <code>failed</code>).
      *        </p>
      *        </li>
@@ -602,8 +538,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        <code>update-date</code> - The time when the modification request
-     *        was last updated.
+     *        <code>update-date</code> - The time when the modification request was last updated.
      *        </p>
      *        </li>
      */
@@ -614,8 +549,7 @@ public class DescribeReservedInstancesModificationsRequest extends
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -625,72 +559,62 @@ public class DescribeReservedInstancesModificationsRequest extends
      * <ul>
      * <li>
      * <p>
-     * <code>client-token</code> - The idempotency token for the modification
-     * request.
+     * <code>client-token</code> - The idempotency token for the modification request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>create-date</code> - The time when the modification request was
-     * created.
+     * <code>create-date</code> - The time when the modification request was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>effective-date</code> - The time when the modification becomes
-     * effective.
+     * <code>effective-date</code> - The time when the modification becomes effective.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.reserved-instances-id</code> - The ID for the
-     * Reserved Instances created as part of the modification request. This ID
-     * is only available when the status of the modification is
-     * <code>fulfilled</code>.
+     * <code>modification-result.reserved-instances-id</code> - The ID for the Reserved Instances created as part of the
+     * modification request. This ID is only available when the status of the modification is <code>fulfilled</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.availability-zone</code> -
-     * The Availability Zone for the new Reserved Instances.
+     * <code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the new
+     * Reserved Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.instance-count </code> -
-     * The number of new Reserved Instances.
+     * <code>modification-result.target-configuration.instance-count </code> - The number of new Reserved Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.instance-type</code> - The
-     * instance type of the new Reserved Instances.
+     * <code>modification-result.target-configuration.instance-type</code> - The instance type of the new Reserved
+     * Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.platform</code> - The
-     * network platform of the new Reserved Instances (<code>EC2-Classic</code>
-     * | <code>EC2-VPC</code>).
+     * <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
+     * Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-id</code> - The ID of the Reserved Instances
-     * modified.
+     * <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-modification-id</code> - The ID of the
-     * modification request.
+     * <code>reserved-instances-modification-id</code> - The ID of the modification request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the Reserved Instances modification
-     * request (<code>processing</code> | <code>fulfilled</code> |
-     * <code>failed</code>).
+     * <code>status</code> - The status of the Reserved Instances modification request (<code>processing</code> |
+     * <code>fulfilled</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
@@ -700,16 +624,14 @@ public class DescribeReservedInstancesModificationsRequest extends
      * </li>
      * <li>
      * <p>
-     * <code>update-date</code> - The time when the modification request was
-     * last updated.
+     * <code>update-date</code> - The time when the modification request was last updated.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
@@ -717,71 +639,63 @@ public class DescribeReservedInstancesModificationsRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>client-token</code> - The idempotency token for the
-     *        modification request.
+     *        <code>client-token</code> - The idempotency token for the modification request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>create-date</code> - The time when the modification request
-     *        was created.
+     *        <code>create-date</code> - The time when the modification request was created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>effective-date</code> - The time when the modification
-     *        becomes effective.
+     *        <code>effective-date</code> - The time when the modification becomes effective.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.reserved-instances-id</code> - The ID
-     *        for the Reserved Instances created as part of the modification
-     *        request. This ID is only available when the status of the
-     *        modification is <code>fulfilled</code>.
+     *        <code>modification-result.reserved-instances-id</code> - The ID for the Reserved Instances created as part
+     *        of the modification request. This ID is only available when the status of the modification is
+     *        <code>fulfilled</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.target-configuration.availability-zone</code>
-     *        - The Availability Zone for the new Reserved Instances.
+     *        <code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the
+     *        new Reserved Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.target-configuration.instance-count </code>
-     *        - The number of new Reserved Instances.
+     *        <code>modification-result.target-configuration.instance-count </code> - The number of new Reserved
+     *        Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.target-configuration.instance-type</code>
-     *        - The instance type of the new Reserved Instances.
+     *        <code>modification-result.target-configuration.instance-type</code> - The instance type of the new
+     *        Reserved Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.target-configuration.platform</code> -
-     *        The network platform of the new Reserved Instances (
-     *        <code>EC2-Classic</code> | <code>EC2-VPC</code>).
+     *        <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
+     *        Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>reserved-instances-id</code> - The ID of the Reserved
-     *        Instances modified.
+     *        <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>reserved-instances-modification-id</code> - The ID of the
-     *        modification request.
+     *        <code>reserved-instances-modification-id</code> - The ID of the modification request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> - The status of the Reserved Instances
-     *        modification request (<code>processing</code> |
+     *        <code>status</code> - The status of the Reserved Instances modification request (<code>processing</code> |
      *        <code>fulfilled</code> | <code>failed</code>).
      *        </p>
      *        </li>
@@ -792,19 +706,15 @@ public class DescribeReservedInstancesModificationsRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        <code>update-date</code> - The time when the modification request
-     *        was last updated.
+     *        <code>update-date</code> - The time when the modification request was last updated.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReservedInstancesModificationsRequest withFilters(
-            Filter... filters) {
+    public DescribeReservedInstancesModificationsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -819,72 +729,62 @@ public class DescribeReservedInstancesModificationsRequest extends
      * <ul>
      * <li>
      * <p>
-     * <code>client-token</code> - The idempotency token for the modification
-     * request.
+     * <code>client-token</code> - The idempotency token for the modification request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>create-date</code> - The time when the modification request was
-     * created.
+     * <code>create-date</code> - The time when the modification request was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>effective-date</code> - The time when the modification becomes
-     * effective.
+     * <code>effective-date</code> - The time when the modification becomes effective.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.reserved-instances-id</code> - The ID for the
-     * Reserved Instances created as part of the modification request. This ID
-     * is only available when the status of the modification is
-     * <code>fulfilled</code>.
+     * <code>modification-result.reserved-instances-id</code> - The ID for the Reserved Instances created as part of the
+     * modification request. This ID is only available when the status of the modification is <code>fulfilled</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.availability-zone</code> -
-     * The Availability Zone for the new Reserved Instances.
+     * <code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the new
+     * Reserved Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.instance-count </code> -
-     * The number of new Reserved Instances.
+     * <code>modification-result.target-configuration.instance-count </code> - The number of new Reserved Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.instance-type</code> - The
-     * instance type of the new Reserved Instances.
+     * <code>modification-result.target-configuration.instance-type</code> - The instance type of the new Reserved
+     * Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.platform</code> - The
-     * network platform of the new Reserved Instances (<code>EC2-Classic</code>
-     * | <code>EC2-VPC</code>).
+     * <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
+     * Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-id</code> - The ID of the Reserved Instances
-     * modified.
+     * <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>reserved-instances-modification-id</code> - The ID of the
-     * modification request.
+     * <code>reserved-instances-modification-id</code> - The ID of the modification request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the Reserved Instances modification
-     * request (<code>processing</code> | <code>fulfilled</code> |
-     * <code>failed</code>).
+     * <code>status</code> - The status of the Reserved Instances modification request (<code>processing</code> |
+     * <code>fulfilled</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
@@ -894,8 +794,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      * </li>
      * <li>
      * <p>
-     * <code>update-date</code> - The time when the modification request was
-     * last updated.
+     * <code>update-date</code> - The time when the modification request was last updated.
      * </p>
      * </li>
      * </ul>
@@ -905,71 +804,63 @@ public class DescribeReservedInstancesModificationsRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>client-token</code> - The idempotency token for the
-     *        modification request.
+     *        <code>client-token</code> - The idempotency token for the modification request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>create-date</code> - The time when the modification request
-     *        was created.
+     *        <code>create-date</code> - The time when the modification request was created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>effective-date</code> - The time when the modification
-     *        becomes effective.
+     *        <code>effective-date</code> - The time when the modification becomes effective.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.reserved-instances-id</code> - The ID
-     *        for the Reserved Instances created as part of the modification
-     *        request. This ID is only available when the status of the
-     *        modification is <code>fulfilled</code>.
+     *        <code>modification-result.reserved-instances-id</code> - The ID for the Reserved Instances created as part
+     *        of the modification request. This ID is only available when the status of the modification is
+     *        <code>fulfilled</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.target-configuration.availability-zone</code>
-     *        - The Availability Zone for the new Reserved Instances.
+     *        <code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the
+     *        new Reserved Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.target-configuration.instance-count </code>
-     *        - The number of new Reserved Instances.
+     *        <code>modification-result.target-configuration.instance-count </code> - The number of new Reserved
+     *        Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.target-configuration.instance-type</code>
-     *        - The instance type of the new Reserved Instances.
+     *        <code>modification-result.target-configuration.instance-type</code> - The instance type of the new
+     *        Reserved Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modification-result.target-configuration.platform</code> -
-     *        The network platform of the new Reserved Instances (
-     *        <code>EC2-Classic</code> | <code>EC2-VPC</code>).
+     *        <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
+     *        Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>reserved-instances-id</code> - The ID of the Reserved
-     *        Instances modified.
+     *        <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>reserved-instances-modification-id</code> - The ID of the
-     *        modification request.
+     *        <code>reserved-instances-modification-id</code> - The ID of the modification request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> - The status of the Reserved Instances
-     *        modification request (<code>processing</code> |
+     *        <code>status</code> - The status of the Reserved Instances modification request (<code>processing</code> |
      *        <code>fulfilled</code> | <code>failed</code>).
      *        </p>
      *        </li>
@@ -980,36 +871,30 @@ public class DescribeReservedInstancesModificationsRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        <code>update-date</code> - The time when the modification request
-     *        was last updated.
+     *        <code>update-date</code> - The time when the modification request was last updated.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReservedInstancesModificationsRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeReservedInstancesModificationsRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeReservedInstancesModificationsRequest> getDryRunRequest() {
-        Request<DescribeReservedInstancesModificationsRequest> request = new DescribeReservedInstancesModificationsRequestMarshaller()
-                .marshall(this);
+        Request<DescribeReservedInstancesModificationsRequest> request = new DescribeReservedInstancesModificationsRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1020,8 +905,7 @@ public class DescribeReservedInstancesModificationsRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesModificationIds() != null)
-            sb.append("ReservedInstancesModificationIds: "
-                    + getReservedInstancesModificationIds() + ",");
+            sb.append("ReservedInstancesModificationIds: " + getReservedInstancesModificationIds() + ",");
         if (getNextToken() != null)
             sb.append("NextToken: " + getNextToken() + ",");
         if (getFilters() != null)
@@ -1040,22 +924,18 @@ public class DescribeReservedInstancesModificationsRequest extends
         if (obj instanceof DescribeReservedInstancesModificationsRequest == false)
             return false;
         DescribeReservedInstancesModificationsRequest other = (DescribeReservedInstancesModificationsRequest) obj;
-        if (other.getReservedInstancesModificationIds() == null
-                ^ this.getReservedInstancesModificationIds() == null)
+        if (other.getReservedInstancesModificationIds() == null ^ this.getReservedInstancesModificationIds() == null)
             return false;
         if (other.getReservedInstancesModificationIds() != null
-                && other.getReservedInstancesModificationIds().equals(
-                        this.getReservedInstancesModificationIds()) == false)
+                && other.getReservedInstancesModificationIds().equals(this.getReservedInstancesModificationIds()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         return true;
     }
@@ -1065,14 +945,9 @@ public class DescribeReservedInstancesModificationsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReservedInstancesModificationIds() == null) ? 0
-                        : getReservedInstancesModificationIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesModificationIds() == null) ? 0 : getReservedInstancesModificationIds().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

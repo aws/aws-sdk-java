@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
@@ -18,37 +16,31 @@ import java.io.Serializable;
 
 /**
  * <p>
- * For an application output, describes the Amazon Kinesis Firehose delivery
- * stream configured as its destination.
+ * For an application output, describes the Amazon Kinesis Firehose delivery stream configured as its destination.
  * </p>
  */
-public class KinesisFirehoseOutputDescription implements Serializable,
-        Cloneable {
+public class KinesisFirehoseOutputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery
-     * stream.
+     * Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * ARN of the IAM role that Amazon Kinesis Analytics can assume to access
-     * the stream.
+     * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.
      * </p>
      */
     private String roleARN;
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery
-     * stream.
+     * Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.
      * </p>
      * 
      * @param resourceARN
-     *        Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery
-     *        stream.
+     *        Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -57,12 +49,10 @@ public class KinesisFirehoseOutputDescription implements Serializable,
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery
-     * stream.
+     * Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) of the Amazon Kinesis Firehose
-     *         delivery stream.
+     * @return Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.
      */
 
     public String getResourceARN() {
@@ -71,15 +61,12 @@ public class KinesisFirehoseOutputDescription implements Serializable,
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery
-     * stream.
+     * Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.
      * </p>
      * 
      * @param resourceARN
-     *        Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery
-     *        stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public KinesisFirehoseOutputDescription withResourceARN(String resourceARN) {
@@ -89,13 +76,11 @@ public class KinesisFirehoseOutputDescription implements Serializable,
 
     /**
      * <p>
-     * ARN of the IAM role that Amazon Kinesis Analytics can assume to access
-     * the stream.
+     * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.
      * </p>
      * 
      * @param roleARN
-     *        ARN of the IAM role that Amazon Kinesis Analytics can assume to
-     *        access the stream.
+     *        ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.
      */
 
     public void setRoleARN(String roleARN) {
@@ -104,12 +89,10 @@ public class KinesisFirehoseOutputDescription implements Serializable,
 
     /**
      * <p>
-     * ARN of the IAM role that Amazon Kinesis Analytics can assume to access
-     * the stream.
+     * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.
      * </p>
      * 
-     * @return ARN of the IAM role that Amazon Kinesis Analytics can assume to
-     *         access the stream.
+     * @return ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.
      */
 
     public String getRoleARN() {
@@ -118,15 +101,12 @@ public class KinesisFirehoseOutputDescription implements Serializable,
 
     /**
      * <p>
-     * ARN of the IAM role that Amazon Kinesis Analytics can assume to access
-     * the stream.
+     * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.
      * </p>
      * 
      * @param roleARN
-     *        ARN of the IAM role that Amazon Kinesis Analytics can assume to
-     *        access the stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public KinesisFirehoseOutputDescription withRoleARN(String roleARN) {
@@ -135,8 +115,7 @@ public class KinesisFirehoseOutputDescription implements Serializable,
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -166,13 +145,11 @@ public class KinesisFirehoseOutputDescription implements Serializable,
         KinesisFirehoseOutputDescription other = (KinesisFirehoseOutputDescription) obj;
         if (other.getResourceARN() == null ^ this.getResourceARN() == null)
             return false;
-        if (other.getResourceARN() != null
-                && other.getResourceARN().equals(this.getResourceARN()) == false)
+        if (other.getResourceARN() != null && other.getResourceARN().equals(this.getResourceARN()) == false)
             return false;
         if (other.getRoleARN() == null ^ this.getRoleARN() == null)
             return false;
-        if (other.getRoleARN() != null
-                && other.getRoleARN().equals(this.getRoleARN()) == false)
+        if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false)
             return false;
         return true;
     }
@@ -182,11 +159,8 @@ public class KinesisFirehoseOutputDescription implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
+        hashCode = prime * hashCode + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
+        hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         return hashCode;
     }
 
@@ -195,9 +169,7 @@ public class KinesisFirehoseOutputDescription implements Serializable,
         try {
             return (KinesisFirehoseOutputDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

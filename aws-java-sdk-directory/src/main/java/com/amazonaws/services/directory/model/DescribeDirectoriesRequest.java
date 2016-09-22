@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model;
 
@@ -22,54 +20,46 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>DescribeDirectories</a> operation.
  * </p>
  */
-public class DescribeDirectoriesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeDirectoriesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of identifiers of the directories for which to obtain the
-     * information. If this member is null, all directories that belong to the
-     * current account are returned.
+     * A list of identifiers of the directories for which to obtain the information. If this member is null, all
+     * directories that belong to the current account are returned.
      * </p>
      * <p>
-     * An empty list results in an <code>InvalidParameterException</code> being
-     * thrown.
+     * An empty list results in an <code>InvalidParameterException</code> being thrown.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> directoryIds;
     /**
      * <p>
-     * The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call
-     * to <a>DescribeDirectories</a>. Pass null if this is the first call.
+     * The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>. Pass
+     * null if this is the first call.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items to return. If this value is zero, the maximum
-     * number of items is specified by the limitations of the operation.
+     * The maximum number of items to return. If this value is zero, the maximum number of items is specified by the
+     * limitations of the operation.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * A list of identifiers of the directories for which to obtain the
-     * information. If this member is null, all directories that belong to the
-     * current account are returned.
+     * A list of identifiers of the directories for which to obtain the information. If this member is null, all
+     * directories that belong to the current account are returned.
      * </p>
      * <p>
-     * An empty list results in an <code>InvalidParameterException</code> being
-     * thrown.
+     * An empty list results in an <code>InvalidParameterException</code> being thrown.
      * </p>
      * 
-     * @return A list of identifiers of the directories for which to obtain the
-     *         information. If this member is null, all directories that belong
-     *         to the current account are returned.</p>
+     * @return A list of identifiers of the directories for which to obtain the information. If this member is null, all
+     *         directories that belong to the current account are returned.</p>
      *         <p>
-     *         An empty list results in an
-     *         <code>InvalidParameterException</code> being thrown.
+     *         An empty list results in an <code>InvalidParameterException</code> being thrown.
      */
 
     public java.util.List<String> getDirectoryIds() {
@@ -81,22 +71,18 @@ public class DescribeDirectoriesRequest extends
 
     /**
      * <p>
-     * A list of identifiers of the directories for which to obtain the
-     * information. If this member is null, all directories that belong to the
-     * current account are returned.
+     * A list of identifiers of the directories for which to obtain the information. If this member is null, all
+     * directories that belong to the current account are returned.
      * </p>
      * <p>
-     * An empty list results in an <code>InvalidParameterException</code> being
-     * thrown.
+     * An empty list results in an <code>InvalidParameterException</code> being thrown.
      * </p>
      * 
      * @param directoryIds
-     *        A list of identifiers of the directories for which to obtain the
-     *        information. If this member is null, all directories that belong
-     *        to the current account are returned.</p>
+     *        A list of identifiers of the directories for which to obtain the information. If this member is null, all
+     *        directories that belong to the current account are returned.</p>
      *        <p>
-     *        An empty list results in an <code>InvalidParameterException</code>
-     *        being thrown.
+     *        An empty list results in an <code>InvalidParameterException</code> being thrown.
      */
 
     public void setDirectoryIds(java.util.Collection<String> directoryIds) {
@@ -105,42 +91,34 @@ public class DescribeDirectoriesRequest extends
             return;
         }
 
-        this.directoryIds = new com.amazonaws.internal.SdkInternalList<String>(
-                directoryIds);
+        this.directoryIds = new com.amazonaws.internal.SdkInternalList<String>(directoryIds);
     }
 
     /**
      * <p>
-     * A list of identifiers of the directories for which to obtain the
-     * information. If this member is null, all directories that belong to the
-     * current account are returned.
+     * A list of identifiers of the directories for which to obtain the information. If this member is null, all
+     * directories that belong to the current account are returned.
      * </p>
      * <p>
-     * An empty list results in an <code>InvalidParameterException</code> being
-     * thrown.
+     * An empty list results in an <code>InvalidParameterException</code> being thrown.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDirectoryIds(java.util.Collection)} or
-     * {@link #withDirectoryIds(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDirectoryIds(java.util.Collection)} or {@link #withDirectoryIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param directoryIds
-     *        A list of identifiers of the directories for which to obtain the
-     *        information. If this member is null, all directories that belong
-     *        to the current account are returned.</p>
+     *        A list of identifiers of the directories for which to obtain the information. If this member is null, all
+     *        directories that belong to the current account are returned.</p>
      *        <p>
-     *        An empty list results in an <code>InvalidParameterException</code>
-     *        being thrown.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An empty list results in an <code>InvalidParameterException</code> being thrown.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDirectoriesRequest withDirectoryIds(String... directoryIds) {
         if (this.directoryIds == null) {
-            setDirectoryIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    directoryIds.length));
+            setDirectoryIds(new com.amazonaws.internal.SdkInternalList<String>(directoryIds.length));
         }
         for (String ele : directoryIds) {
             this.directoryIds.add(ele);
@@ -150,42 +128,35 @@ public class DescribeDirectoriesRequest extends
 
     /**
      * <p>
-     * A list of identifiers of the directories for which to obtain the
-     * information. If this member is null, all directories that belong to the
-     * current account are returned.
+     * A list of identifiers of the directories for which to obtain the information. If this member is null, all
+     * directories that belong to the current account are returned.
      * </p>
      * <p>
-     * An empty list results in an <code>InvalidParameterException</code> being
-     * thrown.
+     * An empty list results in an <code>InvalidParameterException</code> being thrown.
      * </p>
      * 
      * @param directoryIds
-     *        A list of identifiers of the directories for which to obtain the
-     *        information. If this member is null, all directories that belong
-     *        to the current account are returned.</p>
+     *        A list of identifiers of the directories for which to obtain the information. If this member is null, all
+     *        directories that belong to the current account are returned.</p>
      *        <p>
-     *        An empty list results in an <code>InvalidParameterException</code>
-     *        being thrown.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An empty list results in an <code>InvalidParameterException</code> being thrown.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDirectoriesRequest withDirectoryIds(
-            java.util.Collection<String> directoryIds) {
+    public DescribeDirectoriesRequest withDirectoryIds(java.util.Collection<String> directoryIds) {
         setDirectoryIds(directoryIds);
         return this;
     }
 
     /**
      * <p>
-     * The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call
-     * to <a>DescribeDirectories</a>. Pass null if this is the first call.
+     * The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>. Pass
+     * null if this is the first call.
      * </p>
      * 
      * @param nextToken
-     *        The <i>DescribeDirectoriesResult.NextToken</i> value from a
-     *        previous call to <a>DescribeDirectories</a>. Pass null if this is
-     *        the first call.
+     *        The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>.
+     *        Pass null if this is the first call.
      */
 
     public void setNextToken(String nextToken) {
@@ -194,13 +165,12 @@ public class DescribeDirectoriesRequest extends
 
     /**
      * <p>
-     * The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call
-     * to <a>DescribeDirectories</a>. Pass null if this is the first call.
+     * The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>. Pass
+     * null if this is the first call.
      * </p>
      * 
-     * @return The <i>DescribeDirectoriesResult.NextToken</i> value from a
-     *         previous call to <a>DescribeDirectories</a>. Pass null if this is
-     *         the first call.
+     * @return The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>.
+     *         Pass null if this is the first call.
      */
 
     public String getNextToken() {
@@ -209,16 +179,14 @@ public class DescribeDirectoriesRequest extends
 
     /**
      * <p>
-     * The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call
-     * to <a>DescribeDirectories</a>. Pass null if this is the first call.
+     * The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>. Pass
+     * null if this is the first call.
      * </p>
      * 
      * @param nextToken
-     *        The <i>DescribeDirectoriesResult.NextToken</i> value from a
-     *        previous call to <a>DescribeDirectories</a>. Pass null if this is
-     *        the first call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>.
+     *        Pass null if this is the first call.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDirectoriesRequest withNextToken(String nextToken) {
@@ -228,14 +196,13 @@ public class DescribeDirectoriesRequest extends
 
     /**
      * <p>
-     * The maximum number of items to return. If this value is zero, the maximum
-     * number of items is specified by the limitations of the operation.
+     * The maximum number of items to return. If this value is zero, the maximum number of items is specified by the
+     * limitations of the operation.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items to return. If this value is zero, the
-     *        maximum number of items is specified by the limitations of the
-     *        operation.
+     *        The maximum number of items to return. If this value is zero, the maximum number of items is specified by
+     *        the limitations of the operation.
      */
 
     public void setLimit(Integer limit) {
@@ -244,13 +211,12 @@ public class DescribeDirectoriesRequest extends
 
     /**
      * <p>
-     * The maximum number of items to return. If this value is zero, the maximum
-     * number of items is specified by the limitations of the operation.
+     * The maximum number of items to return. If this value is zero, the maximum number of items is specified by the
+     * limitations of the operation.
      * </p>
      * 
-     * @return The maximum number of items to return. If this value is zero, the
-     *         maximum number of items is specified by the limitations of the
-     *         operation.
+     * @return The maximum number of items to return. If this value is zero, the maximum number of items is specified by
+     *         the limitations of the operation.
      */
 
     public Integer getLimit() {
@@ -259,16 +225,14 @@ public class DescribeDirectoriesRequest extends
 
     /**
      * <p>
-     * The maximum number of items to return. If this value is zero, the maximum
-     * number of items is specified by the limitations of the operation.
+     * The maximum number of items to return. If this value is zero, the maximum number of items is specified by the
+     * limitations of the operation.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items to return. If this value is zero, the
-     *        maximum number of items is specified by the limitations of the
-     *        operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of items to return. If this value is zero, the maximum number of items is specified by
+     *        the limitations of the operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDirectoriesRequest withLimit(Integer limit) {
@@ -277,8 +241,7 @@ public class DescribeDirectoriesRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -310,18 +273,15 @@ public class DescribeDirectoriesRequest extends
         DescribeDirectoriesRequest other = (DescribeDirectoriesRequest) obj;
         if (other.getDirectoryIds() == null ^ this.getDirectoryIds() == null)
             return false;
-        if (other.getDirectoryIds() != null
-                && other.getDirectoryIds().equals(this.getDirectoryIds()) == false)
+        if (other.getDirectoryIds() != null && other.getDirectoryIds().equals(this.getDirectoryIds()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -331,14 +291,9 @@ public class DescribeDirectoriesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryIds() == null) ? 0 : getDirectoryIds()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryIds() == null) ? 0 : getDirectoryIds().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 

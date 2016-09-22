@@ -25,13 +25,13 @@ public class StandardModelFactoriesOverrideTest extends StandardModelFactoriesV2
         .withConversionSchema(ConversionSchemas.v2Builder("V2Override").build())
         .build();
 
-    private final DynamoDBMapperModelFactory.Factory factory = StandardModelFactories.of(S3Link.Factory.of(null));
-    private final DynamoDBMapperModelFactory models = factory.getModelFactory(config);
+    private final DynamoDBMapperModelFactory factory = StandardModelFactories.of(S3Link.Factory.of(null));
+    private final DynamoDBMapperModelFactory.TableFactory models = factory.getTableFactory(config);
 
     @Override
     protected <T> AttributeValue convert(Class<T> clazz, Method getter, Object value) {
-        final StandardAnnotationMaps.FieldTypedMap<Object> map = StandardAnnotationMaps.of(getter, null);
-        return models.getTableModel(clazz).field(map.attributeName()).convert(value);
+        final StandardAnnotationMaps.FieldMap<Object> map = StandardAnnotationMaps.of(getter, null);
+        return models.getTable(clazz).field(map.attributeName()).convert(value);
     }
 
 }

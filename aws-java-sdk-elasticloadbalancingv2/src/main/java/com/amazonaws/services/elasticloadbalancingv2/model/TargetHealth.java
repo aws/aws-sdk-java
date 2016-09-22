@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
@@ -31,37 +29,32 @@ public class TargetHealth implements Serializable, Cloneable {
     private String state;
     /**
      * <p>
-     * The reason code. If the target state is <code>healthy</code>, a reason
-     * code is not provided.
+     * The reason code. If the target state is <code>healthy</code>, a reason code is not provided.
      * </p>
      * <p>
-     * If the target state is <code>initial</code>, the reason code can be one
-     * of the following values:
+     * If the target state is <code>initial</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Elb.RegistrationInProgress</code> - The target is in the process of
-     * being registered with the load balancer.
+     * <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load
+     * balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Elb.InitialHealthChecking</code> - The load balancer is still
-     * sending the target the minimum number of health checks required to
-     * determine its health status.
+     * <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number of
+     * health checks required to determine its health status.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>unhealthy</code>, the reason code can be one
-     * of the following values:
+     * If the target state is <code>unhealthy</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.ResponseCodeMismatch</code> - The health checks did not
-     * return an expected HTTP code.
+     * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.
      * </p>
      * </li>
      * <li>
@@ -71,53 +64,45 @@ public class TargetHealth implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Target.FailedHealthChecks</code> - The health checks failed because
-     * the connection to the target timed out, the target response was
-     * malformed, or the target failed the health check for an unknown reason.
+     * <code>Target.FailedHealthChecks</code> - The health checks failed because the connection to the target timed out,
+     * the target response was malformed, or the target failed the health check for an unknown reason.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Elb.InternalError</code> - The health checks failed due to an
-     * internal error.
+     * <code>Elb.InternalError</code> - The health checks failed due to an internal error.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>unused</code>, the reason code can be one of
-     * the following values:
+     * If the target state is <code>unused</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.NotRegistered</code> - The target is not registered with the
-     * target group.
+     * <code>Target.NotRegistered</code> - The target is not registered with the target group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.NotInUse</code> - The target group is not used by any load
-     * balancer or the target is in an Availability Zone that is not enabled for
-     * its load balancer.
+     * <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
+     * Availability Zone that is not enabled for its load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.InvalidState</code> - The target is in the stopped or
-     * terminated state.
+     * <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>draining</code>, the reason code can be the
-     * following value:
+     * If the target state is <code>draining</code>, the reason code can be the following value:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.DeregistrationInProgress</code> - The target is in the
-     * process of being deregistered and the deregistration delay period has not
-     * expired.
+     * <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the
+     * deregistration delay period has not expired.
      * </p>
      * </li>
      * </ul>
@@ -125,8 +110,8 @@ public class TargetHealth implements Serializable, Cloneable {
     private String reason;
     /**
      * <p>
-     * A description of the target health that provides additional details. If
-     * the state is <code>healthy</code>, a description is not provided.
+     * A description of the target health that provides additional details. If the state is <code>healthy</code>, a
+     * description is not provided.
      * </p>
      */
     private String description;
@@ -165,8 +150,7 @@ public class TargetHealth implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetHealthStateEnum
      */
 
@@ -196,8 +180,7 @@ public class TargetHealth implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetHealthStateEnum
      */
 
@@ -208,37 +191,32 @@ public class TargetHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason code. If the target state is <code>healthy</code>, a reason
-     * code is not provided.
+     * The reason code. If the target state is <code>healthy</code>, a reason code is not provided.
      * </p>
      * <p>
-     * If the target state is <code>initial</code>, the reason code can be one
-     * of the following values:
+     * If the target state is <code>initial</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Elb.RegistrationInProgress</code> - The target is in the process of
-     * being registered with the load balancer.
+     * <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load
+     * balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Elb.InitialHealthChecking</code> - The load balancer is still
-     * sending the target the minimum number of health checks required to
-     * determine its health status.
+     * <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number of
+     * health checks required to determine its health status.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>unhealthy</code>, the reason code can be one
-     * of the following values:
+     * If the target state is <code>unhealthy</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.ResponseCodeMismatch</code> - The health checks did not
-     * return an expected HTTP code.
+     * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.
      * </p>
      * </li>
      * <li>
@@ -248,88 +226,75 @@ public class TargetHealth implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Target.FailedHealthChecks</code> - The health checks failed because
-     * the connection to the target timed out, the target response was
-     * malformed, or the target failed the health check for an unknown reason.
+     * <code>Target.FailedHealthChecks</code> - The health checks failed because the connection to the target timed out,
+     * the target response was malformed, or the target failed the health check for an unknown reason.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Elb.InternalError</code> - The health checks failed due to an
-     * internal error.
+     * <code>Elb.InternalError</code> - The health checks failed due to an internal error.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>unused</code>, the reason code can be one of
-     * the following values:
+     * If the target state is <code>unused</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.NotRegistered</code> - The target is not registered with the
-     * target group.
+     * <code>Target.NotRegistered</code> - The target is not registered with the target group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.NotInUse</code> - The target group is not used by any load
-     * balancer or the target is in an Availability Zone that is not enabled for
-     * its load balancer.
+     * <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
+     * Availability Zone that is not enabled for its load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.InvalidState</code> - The target is in the stopped or
-     * terminated state.
+     * <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>draining</code>, the reason code can be the
-     * following value:
+     * If the target state is <code>draining</code>, the reason code can be the following value:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.DeregistrationInProgress</code> - The target is in the
-     * process of being deregistered and the deregistration delay period has not
-     * expired.
+     * <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the
+     * deregistration delay period has not expired.
      * </p>
      * </li>
      * </ul>
      * 
      * @param reason
-     *        The reason code. If the target state is <code>healthy</code>, a
-     *        reason code is not provided.</p>
+     *        The reason code. If the target state is <code>healthy</code>, a reason code is not provided.</p>
      *        <p>
-     *        If the target state is <code>initial</code>, the reason code can
-     *        be one of the following values:
+     *        If the target state is <code>initial</code>, the reason code can be one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Elb.RegistrationInProgress</code> - The target is in the
-     *        process of being registered with the load balancer.
+     *        <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load
+     *        balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Elb.InitialHealthChecking</code> - The load balancer is
-     *        still sending the target the minimum number of health checks
-     *        required to determine its health status.
+     *        <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number
+     *        of health checks required to determine its health status.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If the target state is <code>unhealthy</code>, the reason code can
-     *        be one of the following values:
+     *        If the target state is <code>unhealthy</code>, the reason code can be one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Target.ResponseCodeMismatch</code> - The health checks did
-     *        not return an expected HTTP code.
+     *        <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.
      *        </p>
      *        </li>
      *        <li>
@@ -339,54 +304,45 @@ public class TargetHealth implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Target.FailedHealthChecks</code> - The health checks failed
-     *        because the connection to the target timed out, the target
-     *        response was malformed, or the target failed the health check for
-     *        an unknown reason.
+     *        <code>Target.FailedHealthChecks</code> - The health checks failed because the connection to the target
+     *        timed out, the target response was malformed, or the target failed the health check for an unknown reason.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Elb.InternalError</code> - The health checks failed due to
-     *        an internal error.
+     *        <code>Elb.InternalError</code> - The health checks failed due to an internal error.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If the target state is <code>unused</code>, the reason code can be
-     *        one of the following values:
+     *        If the target state is <code>unused</code>, the reason code can be one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Target.NotRegistered</code> - The target is not registered
-     *        with the target group.
+     *        <code>Target.NotRegistered</code> - The target is not registered with the target group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Target.NotInUse</code> - The target group is not used by any
-     *        load balancer or the target is in an Availability Zone that is not
-     *        enabled for its load balancer.
+     *        <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
+     *        Availability Zone that is not enabled for its load balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Target.InvalidState</code> - The target is in the stopped or
-     *        terminated state.
+     *        <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If the target state is <code>draining</code>, the reason code can
-     *        be the following value:
+     *        If the target state is <code>draining</code>, the reason code can be the following value:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Target.DeregistrationInProgress</code> - The target is in
-     *        the process of being deregistered and the deregistration delay
-     *        period has not expired.
+     *        <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the
+     *        deregistration delay period has not expired.
      *        </p>
      *        </li>
      * @see TargetHealthReasonEnum
@@ -398,37 +354,32 @@ public class TargetHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason code. If the target state is <code>healthy</code>, a reason
-     * code is not provided.
+     * The reason code. If the target state is <code>healthy</code>, a reason code is not provided.
      * </p>
      * <p>
-     * If the target state is <code>initial</code>, the reason code can be one
-     * of the following values:
+     * If the target state is <code>initial</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Elb.RegistrationInProgress</code> - The target is in the process of
-     * being registered with the load balancer.
+     * <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load
+     * balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Elb.InitialHealthChecking</code> - The load balancer is still
-     * sending the target the minimum number of health checks required to
-     * determine its health status.
+     * <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number of
+     * health checks required to determine its health status.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>unhealthy</code>, the reason code can be one
-     * of the following values:
+     * If the target state is <code>unhealthy</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.ResponseCodeMismatch</code> - The health checks did not
-     * return an expected HTTP code.
+     * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.
      * </p>
      * </li>
      * <li>
@@ -438,145 +389,123 @@ public class TargetHealth implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Target.FailedHealthChecks</code> - The health checks failed because
-     * the connection to the target timed out, the target response was
-     * malformed, or the target failed the health check for an unknown reason.
+     * <code>Target.FailedHealthChecks</code> - The health checks failed because the connection to the target timed out,
+     * the target response was malformed, or the target failed the health check for an unknown reason.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Elb.InternalError</code> - The health checks failed due to an
-     * internal error.
+     * <code>Elb.InternalError</code> - The health checks failed due to an internal error.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>unused</code>, the reason code can be one of
-     * the following values:
+     * If the target state is <code>unused</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.NotRegistered</code> - The target is not registered with the
-     * target group.
+     * <code>Target.NotRegistered</code> - The target is not registered with the target group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.NotInUse</code> - The target group is not used by any load
-     * balancer or the target is in an Availability Zone that is not enabled for
-     * its load balancer.
+     * <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
+     * Availability Zone that is not enabled for its load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.InvalidState</code> - The target is in the stopped or
-     * terminated state.
+     * <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>draining</code>, the reason code can be the
-     * following value:
+     * If the target state is <code>draining</code>, the reason code can be the following value:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.DeregistrationInProgress</code> - The target is in the
-     * process of being deregistered and the deregistration delay period has not
-     * expired.
+     * <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the
+     * deregistration delay period has not expired.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The reason code. If the target state is <code>healthy</code>, a
-     *         reason code is not provided.</p>
+     * @return The reason code. If the target state is <code>healthy</code>, a reason code is not provided.</p>
      *         <p>
-     *         If the target state is <code>initial</code>, the reason code can
-     *         be one of the following values:
+     *         If the target state is <code>initial</code>, the reason code can be one of the following values:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Elb.RegistrationInProgress</code> - The target is in the
-     *         process of being registered with the load balancer.
+     *         <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load
+     *         balancer.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Elb.InitialHealthChecking</code> - The load balancer is
-     *         still sending the target the minimum number of health checks
-     *         required to determine its health status.
+     *         <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number
+     *         of health checks required to determine its health status.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If the target state is <code>unhealthy</code>, the reason code
-     *         can be one of the following values:
+     *         If the target state is <code>unhealthy</code>, the reason code can be one of the following values:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Target.ResponseCodeMismatch</code> - The health checks did
-     *         not return an expected HTTP code.
+     *         <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Target.Timeout</code> - The health check requests timed
-     *         out.
+     *         <code>Target.Timeout</code> - The health check requests timed out.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Target.FailedHealthChecks</code> - The health checks failed
-     *         because the connection to the target timed out, the target
-     *         response was malformed, or the target failed the health check for
-     *         an unknown reason.
+     *         <code>Target.FailedHealthChecks</code> - The health checks failed because the connection to the target
+     *         timed out, the target response was malformed, or the target failed the health check for an unknown
+     *         reason.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Elb.InternalError</code> - The health checks failed due to
-     *         an internal error.
+     *         <code>Elb.InternalError</code> - The health checks failed due to an internal error.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If the target state is <code>unused</code>, the reason code can
-     *         be one of the following values:
+     *         If the target state is <code>unused</code>, the reason code can be one of the following values:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Target.NotRegistered</code> - The target is not registered
-     *         with the target group.
+     *         <code>Target.NotRegistered</code> - The target is not registered with the target group.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Target.NotInUse</code> - The target group is not used by
-     *         any load balancer or the target is in an Availability Zone that
-     *         is not enabled for its load balancer.
+     *         <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
+     *         Availability Zone that is not enabled for its load balancer.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Target.InvalidState</code> - The target is in the stopped
-     *         or terminated state.
+     *         <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If the target state is <code>draining</code>, the reason code can
-     *         be the following value:
+     *         If the target state is <code>draining</code>, the reason code can be the following value:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Target.DeregistrationInProgress</code> - The target is in
-     *         the process of being deregistered and the deregistration delay
-     *         period has not expired.
+     *         <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the
+     *         deregistration delay period has not expired.
      *         </p>
      *         </li>
      * @see TargetHealthReasonEnum
@@ -588,37 +517,32 @@ public class TargetHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason code. If the target state is <code>healthy</code>, a reason
-     * code is not provided.
+     * The reason code. If the target state is <code>healthy</code>, a reason code is not provided.
      * </p>
      * <p>
-     * If the target state is <code>initial</code>, the reason code can be one
-     * of the following values:
+     * If the target state is <code>initial</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Elb.RegistrationInProgress</code> - The target is in the process of
-     * being registered with the load balancer.
+     * <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load
+     * balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Elb.InitialHealthChecking</code> - The load balancer is still
-     * sending the target the minimum number of health checks required to
-     * determine its health status.
+     * <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number of
+     * health checks required to determine its health status.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>unhealthy</code>, the reason code can be one
-     * of the following values:
+     * If the target state is <code>unhealthy</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.ResponseCodeMismatch</code> - The health checks did not
-     * return an expected HTTP code.
+     * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.
      * </p>
      * </li>
      * <li>
@@ -628,88 +552,75 @@ public class TargetHealth implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Target.FailedHealthChecks</code> - The health checks failed because
-     * the connection to the target timed out, the target response was
-     * malformed, or the target failed the health check for an unknown reason.
+     * <code>Target.FailedHealthChecks</code> - The health checks failed because the connection to the target timed out,
+     * the target response was malformed, or the target failed the health check for an unknown reason.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Elb.InternalError</code> - The health checks failed due to an
-     * internal error.
+     * <code>Elb.InternalError</code> - The health checks failed due to an internal error.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>unused</code>, the reason code can be one of
-     * the following values:
+     * If the target state is <code>unused</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.NotRegistered</code> - The target is not registered with the
-     * target group.
+     * <code>Target.NotRegistered</code> - The target is not registered with the target group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.NotInUse</code> - The target group is not used by any load
-     * balancer or the target is in an Availability Zone that is not enabled for
-     * its load balancer.
+     * <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
+     * Availability Zone that is not enabled for its load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.InvalidState</code> - The target is in the stopped or
-     * terminated state.
+     * <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>draining</code>, the reason code can be the
-     * following value:
+     * If the target state is <code>draining</code>, the reason code can be the following value:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.DeregistrationInProgress</code> - The target is in the
-     * process of being deregistered and the deregistration delay period has not
-     * expired.
+     * <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the
+     * deregistration delay period has not expired.
      * </p>
      * </li>
      * </ul>
      * 
      * @param reason
-     *        The reason code. If the target state is <code>healthy</code>, a
-     *        reason code is not provided.</p>
+     *        The reason code. If the target state is <code>healthy</code>, a reason code is not provided.</p>
      *        <p>
-     *        If the target state is <code>initial</code>, the reason code can
-     *        be one of the following values:
+     *        If the target state is <code>initial</code>, the reason code can be one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Elb.RegistrationInProgress</code> - The target is in the
-     *        process of being registered with the load balancer.
+     *        <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load
+     *        balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Elb.InitialHealthChecking</code> - The load balancer is
-     *        still sending the target the minimum number of health checks
-     *        required to determine its health status.
+     *        <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number
+     *        of health checks required to determine its health status.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If the target state is <code>unhealthy</code>, the reason code can
-     *        be one of the following values:
+     *        If the target state is <code>unhealthy</code>, the reason code can be one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Target.ResponseCodeMismatch</code> - The health checks did
-     *        not return an expected HTTP code.
+     *        <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.
      *        </p>
      *        </li>
      *        <li>
@@ -719,58 +630,48 @@ public class TargetHealth implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Target.FailedHealthChecks</code> - The health checks failed
-     *        because the connection to the target timed out, the target
-     *        response was malformed, or the target failed the health check for
-     *        an unknown reason.
+     *        <code>Target.FailedHealthChecks</code> - The health checks failed because the connection to the target
+     *        timed out, the target response was malformed, or the target failed the health check for an unknown reason.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Elb.InternalError</code> - The health checks failed due to
-     *        an internal error.
+     *        <code>Elb.InternalError</code> - The health checks failed due to an internal error.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If the target state is <code>unused</code>, the reason code can be
-     *        one of the following values:
+     *        If the target state is <code>unused</code>, the reason code can be one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Target.NotRegistered</code> - The target is not registered
-     *        with the target group.
+     *        <code>Target.NotRegistered</code> - The target is not registered with the target group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Target.NotInUse</code> - The target group is not used by any
-     *        load balancer or the target is in an Availability Zone that is not
-     *        enabled for its load balancer.
+     *        <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
+     *        Availability Zone that is not enabled for its load balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Target.InvalidState</code> - The target is in the stopped or
-     *        terminated state.
+     *        <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If the target state is <code>draining</code>, the reason code can
-     *        be the following value:
+     *        If the target state is <code>draining</code>, the reason code can be the following value:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Target.DeregistrationInProgress</code> - The target is in
-     *        the process of being deregistered and the deregistration delay
-     *        period has not expired.
+     *        <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the
+     *        deregistration delay period has not expired.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetHealthReasonEnum
      */
 
@@ -781,37 +682,32 @@ public class TargetHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason code. If the target state is <code>healthy</code>, a reason
-     * code is not provided.
+     * The reason code. If the target state is <code>healthy</code>, a reason code is not provided.
      * </p>
      * <p>
-     * If the target state is <code>initial</code>, the reason code can be one
-     * of the following values:
+     * If the target state is <code>initial</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Elb.RegistrationInProgress</code> - The target is in the process of
-     * being registered with the load balancer.
+     * <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load
+     * balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Elb.InitialHealthChecking</code> - The load balancer is still
-     * sending the target the minimum number of health checks required to
-     * determine its health status.
+     * <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number of
+     * health checks required to determine its health status.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>unhealthy</code>, the reason code can be one
-     * of the following values:
+     * If the target state is <code>unhealthy</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.ResponseCodeMismatch</code> - The health checks did not
-     * return an expected HTTP code.
+     * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.
      * </p>
      * </li>
      * <li>
@@ -821,88 +717,75 @@ public class TargetHealth implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Target.FailedHealthChecks</code> - The health checks failed because
-     * the connection to the target timed out, the target response was
-     * malformed, or the target failed the health check for an unknown reason.
+     * <code>Target.FailedHealthChecks</code> - The health checks failed because the connection to the target timed out,
+     * the target response was malformed, or the target failed the health check for an unknown reason.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Elb.InternalError</code> - The health checks failed due to an
-     * internal error.
+     * <code>Elb.InternalError</code> - The health checks failed due to an internal error.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>unused</code>, the reason code can be one of
-     * the following values:
+     * If the target state is <code>unused</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.NotRegistered</code> - The target is not registered with the
-     * target group.
+     * <code>Target.NotRegistered</code> - The target is not registered with the target group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.NotInUse</code> - The target group is not used by any load
-     * balancer or the target is in an Availability Zone that is not enabled for
-     * its load balancer.
+     * <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
+     * Availability Zone that is not enabled for its load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.InvalidState</code> - The target is in the stopped or
-     * terminated state.
+     * <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>draining</code>, the reason code can be the
-     * following value:
+     * If the target state is <code>draining</code>, the reason code can be the following value:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.DeregistrationInProgress</code> - The target is in the
-     * process of being deregistered and the deregistration delay period has not
-     * expired.
+     * <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the
+     * deregistration delay period has not expired.
      * </p>
      * </li>
      * </ul>
      * 
      * @param reason
-     *        The reason code. If the target state is <code>healthy</code>, a
-     *        reason code is not provided.</p>
+     *        The reason code. If the target state is <code>healthy</code>, a reason code is not provided.</p>
      *        <p>
-     *        If the target state is <code>initial</code>, the reason code can
-     *        be one of the following values:
+     *        If the target state is <code>initial</code>, the reason code can be one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Elb.RegistrationInProgress</code> - The target is in the
-     *        process of being registered with the load balancer.
+     *        <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load
+     *        balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Elb.InitialHealthChecking</code> - The load balancer is
-     *        still sending the target the minimum number of health checks
-     *        required to determine its health status.
+     *        <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number
+     *        of health checks required to determine its health status.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If the target state is <code>unhealthy</code>, the reason code can
-     *        be one of the following values:
+     *        If the target state is <code>unhealthy</code>, the reason code can be one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Target.ResponseCodeMismatch</code> - The health checks did
-     *        not return an expected HTTP code.
+     *        <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.
      *        </p>
      *        </li>
      *        <li>
@@ -912,54 +795,45 @@ public class TargetHealth implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Target.FailedHealthChecks</code> - The health checks failed
-     *        because the connection to the target timed out, the target
-     *        response was malformed, or the target failed the health check for
-     *        an unknown reason.
+     *        <code>Target.FailedHealthChecks</code> - The health checks failed because the connection to the target
+     *        timed out, the target response was malformed, or the target failed the health check for an unknown reason.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Elb.InternalError</code> - The health checks failed due to
-     *        an internal error.
+     *        <code>Elb.InternalError</code> - The health checks failed due to an internal error.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If the target state is <code>unused</code>, the reason code can be
-     *        one of the following values:
+     *        If the target state is <code>unused</code>, the reason code can be one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Target.NotRegistered</code> - The target is not registered
-     *        with the target group.
+     *        <code>Target.NotRegistered</code> - The target is not registered with the target group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Target.NotInUse</code> - The target group is not used by any
-     *        load balancer or the target is in an Availability Zone that is not
-     *        enabled for its load balancer.
+     *        <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
+     *        Availability Zone that is not enabled for its load balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Target.InvalidState</code> - The target is in the stopped or
-     *        terminated state.
+     *        <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If the target state is <code>draining</code>, the reason code can
-     *        be the following value:
+     *        If the target state is <code>draining</code>, the reason code can be the following value:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Target.DeregistrationInProgress</code> - The target is in
-     *        the process of being deregistered and the deregistration delay
-     *        period has not expired.
+     *        <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the
+     *        deregistration delay period has not expired.
      *        </p>
      *        </li>
      * @see TargetHealthReasonEnum
@@ -971,37 +845,32 @@ public class TargetHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason code. If the target state is <code>healthy</code>, a reason
-     * code is not provided.
+     * The reason code. If the target state is <code>healthy</code>, a reason code is not provided.
      * </p>
      * <p>
-     * If the target state is <code>initial</code>, the reason code can be one
-     * of the following values:
+     * If the target state is <code>initial</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Elb.RegistrationInProgress</code> - The target is in the process of
-     * being registered with the load balancer.
+     * <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load
+     * balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Elb.InitialHealthChecking</code> - The load balancer is still
-     * sending the target the minimum number of health checks required to
-     * determine its health status.
+     * <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number of
+     * health checks required to determine its health status.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>unhealthy</code>, the reason code can be one
-     * of the following values:
+     * If the target state is <code>unhealthy</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.ResponseCodeMismatch</code> - The health checks did not
-     * return an expected HTTP code.
+     * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.
      * </p>
      * </li>
      * <li>
@@ -1011,88 +880,75 @@ public class TargetHealth implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Target.FailedHealthChecks</code> - The health checks failed because
-     * the connection to the target timed out, the target response was
-     * malformed, or the target failed the health check for an unknown reason.
+     * <code>Target.FailedHealthChecks</code> - The health checks failed because the connection to the target timed out,
+     * the target response was malformed, or the target failed the health check for an unknown reason.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Elb.InternalError</code> - The health checks failed due to an
-     * internal error.
+     * <code>Elb.InternalError</code> - The health checks failed due to an internal error.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>unused</code>, the reason code can be one of
-     * the following values:
+     * If the target state is <code>unused</code>, the reason code can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.NotRegistered</code> - The target is not registered with the
-     * target group.
+     * <code>Target.NotRegistered</code> - The target is not registered with the target group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.NotInUse</code> - The target group is not used by any load
-     * balancer or the target is in an Availability Zone that is not enabled for
-     * its load balancer.
+     * <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
+     * Availability Zone that is not enabled for its load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.InvalidState</code> - The target is in the stopped or
-     * terminated state.
+     * <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If the target state is <code>draining</code>, the reason code can be the
-     * following value:
+     * If the target state is <code>draining</code>, the reason code can be the following value:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Target.DeregistrationInProgress</code> - The target is in the
-     * process of being deregistered and the deregistration delay period has not
-     * expired.
+     * <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the
+     * deregistration delay period has not expired.
      * </p>
      * </li>
      * </ul>
      * 
      * @param reason
-     *        The reason code. If the target state is <code>healthy</code>, a
-     *        reason code is not provided.</p>
+     *        The reason code. If the target state is <code>healthy</code>, a reason code is not provided.</p>
      *        <p>
-     *        If the target state is <code>initial</code>, the reason code can
-     *        be one of the following values:
+     *        If the target state is <code>initial</code>, the reason code can be one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Elb.RegistrationInProgress</code> - The target is in the
-     *        process of being registered with the load balancer.
+     *        <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load
+     *        balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Elb.InitialHealthChecking</code> - The load balancer is
-     *        still sending the target the minimum number of health checks
-     *        required to determine its health status.
+     *        <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number
+     *        of health checks required to determine its health status.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If the target state is <code>unhealthy</code>, the reason code can
-     *        be one of the following values:
+     *        If the target state is <code>unhealthy</code>, the reason code can be one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Target.ResponseCodeMismatch</code> - The health checks did
-     *        not return an expected HTTP code.
+     *        <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.
      *        </p>
      *        </li>
      *        <li>
@@ -1102,58 +958,48 @@ public class TargetHealth implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Target.FailedHealthChecks</code> - The health checks failed
-     *        because the connection to the target timed out, the target
-     *        response was malformed, or the target failed the health check for
-     *        an unknown reason.
+     *        <code>Target.FailedHealthChecks</code> - The health checks failed because the connection to the target
+     *        timed out, the target response was malformed, or the target failed the health check for an unknown reason.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Elb.InternalError</code> - The health checks failed due to
-     *        an internal error.
+     *        <code>Elb.InternalError</code> - The health checks failed due to an internal error.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If the target state is <code>unused</code>, the reason code can be
-     *        one of the following values:
+     *        If the target state is <code>unused</code>, the reason code can be one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Target.NotRegistered</code> - The target is not registered
-     *        with the target group.
+     *        <code>Target.NotRegistered</code> - The target is not registered with the target group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Target.NotInUse</code> - The target group is not used by any
-     *        load balancer or the target is in an Availability Zone that is not
-     *        enabled for its load balancer.
+     *        <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
+     *        Availability Zone that is not enabled for its load balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Target.InvalidState</code> - The target is in the stopped or
-     *        terminated state.
+     *        <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If the target state is <code>draining</code>, the reason code can
-     *        be the following value:
+     *        If the target state is <code>draining</code>, the reason code can be the following value:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Target.DeregistrationInProgress</code> - The target is in
-     *        the process of being deregistered and the deregistration delay
-     *        period has not expired.
+     *        <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the
+     *        deregistration delay period has not expired.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetHealthReasonEnum
      */
 
@@ -1164,14 +1010,13 @@ public class TargetHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the target health that provides additional details. If
-     * the state is <code>healthy</code>, a description is not provided.
+     * A description of the target health that provides additional details. If the state is <code>healthy</code>, a
+     * description is not provided.
      * </p>
      * 
      * @param description
-     *        A description of the target health that provides additional
-     *        details. If the state is <code>healthy</code>, a description is
-     *        not provided.
+     *        A description of the target health that provides additional details. If the state is <code>healthy</code>,
+     *        a description is not provided.
      */
 
     public void setDescription(String description) {
@@ -1180,13 +1025,12 @@ public class TargetHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the target health that provides additional details. If
-     * the state is <code>healthy</code>, a description is not provided.
+     * A description of the target health that provides additional details. If the state is <code>healthy</code>, a
+     * description is not provided.
      * </p>
      * 
-     * @return A description of the target health that provides additional
-     *         details. If the state is <code>healthy</code>, a description is
-     *         not provided.
+     * @return A description of the target health that provides additional details. If the state is <code>healthy</code>
+     *         , a description is not provided.
      */
 
     public String getDescription() {
@@ -1195,16 +1039,14 @@ public class TargetHealth implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the target health that provides additional details. If
-     * the state is <code>healthy</code>, a description is not provided.
+     * A description of the target health that provides additional details. If the state is <code>healthy</code>, a
+     * description is not provided.
      * </p>
      * 
      * @param description
-     *        A description of the target health that provides additional
-     *        details. If the state is <code>healthy</code>, a description is
-     *        not provided.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A description of the target health that provides additional details. If the state is <code>healthy</code>,
+     *        a description is not provided.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TargetHealth withDescription(String description) {
@@ -1213,8 +1055,7 @@ public class TargetHealth implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1246,18 +1087,15 @@ public class TargetHealth implements Serializable, Cloneable {
         TargetHealth other = (TargetHealth) obj;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getReason() == null ^ this.getReason() == null)
             return false;
-        if (other.getReason() != null
-                && other.getReason().equals(this.getReason()) == false)
+        if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         return true;
     }
@@ -1267,13 +1105,9 @@ public class TargetHealth implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime * hashCode
-                + ((getReason() == null) ? 0 : getReason().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 
@@ -1282,9 +1116,7 @@ public class TargetHealth implements Serializable, Cloneable {
         try {
             return (TargetHealth) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

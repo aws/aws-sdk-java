@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
 
@@ -21,36 +19,28 @@ import java.io.Serializable;
  * Contains the output of PollForTask.
  * </p>
  */
-public class PollForTaskResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class PollForTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The information needed to complete the task that is being assigned to the
-     * task runner. One of the fields returned in this object is
-     * <code>taskId</code>, which contains an identifier for the task being
-     * assigned. The calling task runner uses <code>taskId</code> in subsequent
-     * calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
+     * The information needed to complete the task that is being assigned to the task runner. One of the fields returned
+     * in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task
+     * runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
      * </p>
      */
     private TaskObject taskObject;
 
     /**
      * <p>
-     * The information needed to complete the task that is being assigned to the
-     * task runner. One of the fields returned in this object is
-     * <code>taskId</code>, which contains an identifier for the task being
-     * assigned. The calling task runner uses <code>taskId</code> in subsequent
-     * calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
+     * The information needed to complete the task that is being assigned to the task runner. One of the fields returned
+     * in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task
+     * runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
      * </p>
      * 
      * @param taskObject
-     *        The information needed to complete the task that is being assigned
-     *        to the task runner. One of the fields returned in this object is
-     *        <code>taskId</code>, which contains an identifier for the task
-     *        being assigned. The calling task runner uses <code>taskId</code>
-     *        in subsequent calls to <a>ReportTaskProgress</a> and
+     *        The information needed to complete the task that is being assigned to the task runner. One of the fields
+     *        returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned.
+     *        The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and
      *        <a>SetTaskStatus</a>.
      */
 
@@ -60,19 +50,15 @@ public class PollForTaskResult extends
 
     /**
      * <p>
-     * The information needed to complete the task that is being assigned to the
-     * task runner. One of the fields returned in this object is
-     * <code>taskId</code>, which contains an identifier for the task being
-     * assigned. The calling task runner uses <code>taskId</code> in subsequent
-     * calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
+     * The information needed to complete the task that is being assigned to the task runner. One of the fields returned
+     * in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task
+     * runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
      * </p>
      * 
-     * @return The information needed to complete the task that is being
-     *         assigned to the task runner. One of the fields returned in this
-     *         object is <code>taskId</code>, which contains an identifier for
-     *         the task being assigned. The calling task runner uses
-     *         <code>taskId</code> in subsequent calls to
-     *         <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
+     * @return The information needed to complete the task that is being assigned to the task runner. One of the fields
+     *         returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned.
+     *         The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and
+     *         <a>SetTaskStatus</a>.
      */
 
     public TaskObject getTaskObject() {
@@ -81,22 +67,17 @@ public class PollForTaskResult extends
 
     /**
      * <p>
-     * The information needed to complete the task that is being assigned to the
-     * task runner. One of the fields returned in this object is
-     * <code>taskId</code>, which contains an identifier for the task being
-     * assigned. The calling task runner uses <code>taskId</code> in subsequent
-     * calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
+     * The information needed to complete the task that is being assigned to the task runner. One of the fields returned
+     * in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task
+     * runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
      * </p>
      * 
      * @param taskObject
-     *        The information needed to complete the task that is being assigned
-     *        to the task runner. One of the fields returned in this object is
-     *        <code>taskId</code>, which contains an identifier for the task
-     *        being assigned. The calling task runner uses <code>taskId</code>
-     *        in subsequent calls to <a>ReportTaskProgress</a> and
+     *        The information needed to complete the task that is being assigned to the task runner. One of the fields
+     *        returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned.
+     *        The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and
      *        <a>SetTaskStatus</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PollForTaskResult withTaskObject(TaskObject taskObject) {
@@ -105,8 +86,7 @@ public class PollForTaskResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -134,8 +114,7 @@ public class PollForTaskResult extends
         PollForTaskResult other = (PollForTaskResult) obj;
         if (other.getTaskObject() == null ^ this.getTaskObject() == null)
             return false;
-        if (other.getTaskObject() != null
-                && other.getTaskObject().equals(this.getTaskObject()) == false)
+        if (other.getTaskObject() != null && other.getTaskObject().equals(this.getTaskObject()) == false)
             return false;
         return true;
     }
@@ -145,8 +124,7 @@ public class PollForTaskResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTaskObject() == null) ? 0 : getTaskObject().hashCode());
+        hashCode = prime * hashCode + ((getTaskObject() == null) ? 0 : getTaskObject().hashCode());
         return hashCode;
     }
 
@@ -155,9 +133,7 @@ public class PollForTaskResult extends
         try {
             return (PollForTaskResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

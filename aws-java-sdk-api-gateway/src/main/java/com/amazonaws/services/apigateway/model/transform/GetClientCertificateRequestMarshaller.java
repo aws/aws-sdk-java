@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,40 +41,30 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetClientCertificateRequest Marshaller
  */
-public class GetClientCertificateRequestMarshaller
-        implements
-        Marshaller<Request<GetClientCertificateRequest>, GetClientCertificateRequest> {
+public class GetClientCertificateRequestMarshaller implements Marshaller<Request<GetClientCertificateRequest>, GetClientCertificateRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public GetClientCertificateRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public GetClientCertificateRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<GetClientCertificateRequest> marshall(
-            GetClientCertificateRequest getClientCertificateRequest) {
+    public Request<GetClientCertificateRequest> marshall(GetClientCertificateRequest getClientCertificateRequest) {
 
         if (getClientCertificateRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetClientCertificateRequest> request = new DefaultRequest<GetClientCertificateRequest>(
-                getClientCertificateRequest, "AmazonApiGateway");
+        Request<GetClientCertificateRequest> request = new DefaultRequest<GetClientCertificateRequest>(getClientCertificateRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/clientcertificates/{clientcertificate_id}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{clientcertificate_id}",
-                        (getClientCertificateRequest.getClientCertificateId() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(getClientCertificateRequest
-                                                .getClientCertificateId()),
-                                        false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{clientcertificate_id}",
+                (getClientCertificateRequest.getClientCertificateId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(getClientCertificateRequest.getClientCertificateId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

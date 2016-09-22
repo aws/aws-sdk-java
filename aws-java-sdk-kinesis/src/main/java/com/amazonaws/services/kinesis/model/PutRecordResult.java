@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesis.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Represents the output for <code>PutRecord</code>.
  * </p>
  */
-public class PutRecordResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class PutRecordResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,10 +29,9 @@ public class PutRecordResult extends
     private String shardId;
     /**
      * <p>
-     * The sequence number identifier that was assigned to the put data record.
-     * The sequence number for the record is unique across all records in the
-     * stream. A sequence number is the identifier associated with every record
-     * put into the stream.
+     * The sequence number identifier that was assigned to the put data record. The sequence number for the record is
+     * unique across all records in the stream. A sequence number is the identifier associated with every record put
+     * into the stream.
      * </p>
      */
     private String sequenceNumber;
@@ -73,8 +68,7 @@ public class PutRecordResult extends
      * 
      * @param shardId
      *        The shard ID of the shard where the data record was placed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutRecordResult withShardId(String shardId) {
@@ -84,17 +78,15 @@ public class PutRecordResult extends
 
     /**
      * <p>
-     * The sequence number identifier that was assigned to the put data record.
-     * The sequence number for the record is unique across all records in the
-     * stream. A sequence number is the identifier associated with every record
-     * put into the stream.
+     * The sequence number identifier that was assigned to the put data record. The sequence number for the record is
+     * unique across all records in the stream. A sequence number is the identifier associated with every record put
+     * into the stream.
      * </p>
      * 
      * @param sequenceNumber
-     *        The sequence number identifier that was assigned to the put data
-     *        record. The sequence number for the record is unique across all
-     *        records in the stream. A sequence number is the identifier
-     *        associated with every record put into the stream.
+     *        The sequence number identifier that was assigned to the put data record. The sequence number for the
+     *        record is unique across all records in the stream. A sequence number is the identifier associated with
+     *        every record put into the stream.
      */
 
     public void setSequenceNumber(String sequenceNumber) {
@@ -103,16 +95,14 @@ public class PutRecordResult extends
 
     /**
      * <p>
-     * The sequence number identifier that was assigned to the put data record.
-     * The sequence number for the record is unique across all records in the
-     * stream. A sequence number is the identifier associated with every record
-     * put into the stream.
+     * The sequence number identifier that was assigned to the put data record. The sequence number for the record is
+     * unique across all records in the stream. A sequence number is the identifier associated with every record put
+     * into the stream.
      * </p>
      * 
-     * @return The sequence number identifier that was assigned to the put data
-     *         record. The sequence number for the record is unique across all
-     *         records in the stream. A sequence number is the identifier
-     *         associated with every record put into the stream.
+     * @return The sequence number identifier that was assigned to the put data record. The sequence number for the
+     *         record is unique across all records in the stream. A sequence number is the identifier associated with
+     *         every record put into the stream.
      */
 
     public String getSequenceNumber() {
@@ -121,19 +111,16 @@ public class PutRecordResult extends
 
     /**
      * <p>
-     * The sequence number identifier that was assigned to the put data record.
-     * The sequence number for the record is unique across all records in the
-     * stream. A sequence number is the identifier associated with every record
-     * put into the stream.
+     * The sequence number identifier that was assigned to the put data record. The sequence number for the record is
+     * unique across all records in the stream. A sequence number is the identifier associated with every record put
+     * into the stream.
      * </p>
      * 
      * @param sequenceNumber
-     *        The sequence number identifier that was assigned to the put data
-     *        record. The sequence number for the record is unique across all
-     *        records in the stream. A sequence number is the identifier
-     *        associated with every record put into the stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The sequence number identifier that was assigned to the put data record. The sequence number for the
+     *        record is unique across all records in the stream. A sequence number is the identifier associated with
+     *        every record put into the stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutRecordResult withSequenceNumber(String sequenceNumber) {
@@ -142,8 +129,7 @@ public class PutRecordResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -173,14 +159,11 @@ public class PutRecordResult extends
         PutRecordResult other = (PutRecordResult) obj;
         if (other.getShardId() == null ^ this.getShardId() == null)
             return false;
-        if (other.getShardId() != null
-                && other.getShardId().equals(this.getShardId()) == false)
+        if (other.getShardId() != null && other.getShardId().equals(this.getShardId()) == false)
             return false;
-        if (other.getSequenceNumber() == null
-                ^ this.getSequenceNumber() == null)
+        if (other.getSequenceNumber() == null ^ this.getSequenceNumber() == null)
             return false;
-        if (other.getSequenceNumber() != null
-                && other.getSequenceNumber().equals(this.getSequenceNumber()) == false)
+        if (other.getSequenceNumber() != null && other.getSequenceNumber().equals(this.getSequenceNumber()) == false)
             return false;
         return true;
     }
@@ -190,12 +173,8 @@ public class PutRecordResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getShardId() == null) ? 0 : getShardId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSequenceNumber() == null) ? 0 : getSequenceNumber()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getShardId() == null) ? 0 : getShardId().hashCode());
+        hashCode = prime * hashCode + ((getSequenceNumber() == null) ? 0 : getSequenceNumber().hashCode());
         return hashCode;
     }
 
@@ -204,9 +183,7 @@ public class PutRecordResult extends
         try {
             return (PutRecordResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

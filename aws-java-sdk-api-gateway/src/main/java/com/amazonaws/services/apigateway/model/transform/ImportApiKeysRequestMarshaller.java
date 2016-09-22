@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * ImportApiKeysRequest Marshaller
  */
-public class ImportApiKeysRequestMarshaller implements
-        Marshaller<Request<ImportApiKeysRequest>, ImportApiKeysRequest> {
+public class ImportApiKeysRequestMarshaller implements Marshaller<Request<ImportApiKeysRequest>, ImportApiKeysRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,34 +49,28 @@ public class ImportApiKeysRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<ImportApiKeysRequest> marshall(
-            ImportApiKeysRequest importApiKeysRequest) {
+    public Request<ImportApiKeysRequest> marshall(ImportApiKeysRequest importApiKeysRequest) {
 
         if (importApiKeysRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ImportApiKeysRequest> request = new DefaultRequest<ImportApiKeysRequest>(
-                importApiKeysRequest, "AmazonApiGateway");
+        Request<ImportApiKeysRequest> request = new DefaultRequest<ImportApiKeysRequest>(importApiKeysRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/apikeys?mode=import";
 
-        uriResourcePath = com.amazonaws.util.UriResourcePathUtils
-                .addStaticQueryParamtersToRequest(request, uriResourcePath);
+        uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
 
         request.setResourcePath(uriResourcePath);
 
         if (importApiKeysRequest.getFormat() != null) {
-            request.addParameter("format",
-                    StringUtils.fromString(importApiKeysRequest.getFormat()));
+            request.addParameter("format", StringUtils.fromString(importApiKeysRequest.getFormat()));
         }
 
         if (importApiKeysRequest.getFailOnWarnings() != null) {
-            request.addParameter("failonwarnings", StringUtils
-                    .fromBoolean(importApiKeysRequest.getFailOnWarnings()));
+            request.addParameter("failonwarnings", StringUtils.fromBoolean(importApiKeysRequest.getFailOnWarnings()));
         }
 
         request.setContent(BinaryUtils.toStream(importApiKeysRequest.getBody()));

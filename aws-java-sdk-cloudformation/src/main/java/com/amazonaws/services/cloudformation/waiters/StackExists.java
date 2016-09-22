@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 
 package com.amazonaws.services.cloudformation.waiters;
@@ -31,12 +29,10 @@ import java.io.IOException;
 @SdkInternalApi
 class StackExists {
 
-    static class IsValidationErrorMatcher extends
-            WaiterAcceptor<DescribeStacksResult> {
+    static class IsValidationErrorMatcher extends WaiterAcceptor<DescribeStacksResult> {
         /**
-         * Takes the response exception and determines whether this exception
-         * matches the expected exception, by comparing the respective error
-         * codes.
+         * Takes the response exception and determines whether this exception matches the expected exception, by
+         * comparing the respective error codes.
          * 
          * @param e
          *        Response Exception
@@ -48,8 +44,7 @@ class StackExists {
         }
 
         /**
-         * Represents the current waiter state in the case where resource state
-         * matches the expected state
+         * Represents the current waiter state in the case where resource state matches the expected state
          * 
          * @return Corresponding state of the waiter
          */

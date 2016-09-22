@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudtrail.model;
 
@@ -64,8 +62,7 @@ public class ResourceTag implements Serializable, Cloneable {
      * 
      * @param resourceId
      *        Specifies the ARN of the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceTag withResourceId(String resourceId) {
@@ -94,27 +91,23 @@ public class ResourceTag implements Serializable, Cloneable {
             return;
         }
 
-        this.tagsList = new com.amazonaws.internal.SdkInternalList<Tag>(
-                tagsList);
+        this.tagsList = new com.amazonaws.internal.SdkInternalList<Tag>(tagsList);
     }
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagsList(java.util.Collection)} or
-     * {@link #withTagsList(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagsList(java.util.Collection)} or {@link #withTagsList(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param tagsList
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceTag withTagsList(Tag... tagsList) {
         if (this.tagsList == null) {
-            setTagsList(new com.amazonaws.internal.SdkInternalList<Tag>(
-                    tagsList.length));
+            setTagsList(new com.amazonaws.internal.SdkInternalList<Tag>(tagsList.length));
         }
         for (Tag ele : tagsList) {
             this.tagsList.add(ele);
@@ -124,8 +117,7 @@ public class ResourceTag implements Serializable, Cloneable {
 
     /**
      * @param tagsList
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceTag withTagsList(java.util.Collection<Tag> tagsList) {
@@ -134,8 +126,7 @@ public class ResourceTag implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -165,13 +156,11 @@ public class ResourceTag implements Serializable, Cloneable {
         ResourceTag other = (ResourceTag) obj;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getTagsList() == null ^ this.getTagsList() == null)
             return false;
-        if (other.getTagsList() != null
-                && other.getTagsList().equals(this.getTagsList()) == false)
+        if (other.getTagsList() != null && other.getTagsList().equals(this.getTagsList()) == false)
             return false;
         return true;
     }
@@ -181,10 +170,8 @@ public class ResourceTag implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTagsList() == null) ? 0 : getTagsList().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getTagsList() == null) ? 0 : getTagsList().hashCode());
         return hashCode;
     }
 
@@ -193,9 +180,7 @@ public class ResourceTag implements Serializable, Cloneable {
         try {
             return (ResourceTag) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

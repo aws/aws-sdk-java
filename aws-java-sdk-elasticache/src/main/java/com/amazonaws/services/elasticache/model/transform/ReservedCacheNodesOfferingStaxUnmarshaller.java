@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ReservedCacheNodesOffering StAX Unmarshaller
  */
-public class ReservedCacheNodesOfferingStaxUnmarshaller implements
-        Unmarshaller<ReservedCacheNodesOffering, StaxUnmarshallerContext> {
+public class ReservedCacheNodesOfferingStaxUnmarshaller implements Unmarshaller<ReservedCacheNodesOffering, StaxUnmarshallerContext> {
 
-    public ReservedCacheNodesOffering unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public ReservedCacheNodesOffering unmarshall(StaxUnmarshallerContext context) throws Exception {
         ReservedCacheNodesOffering reservedCacheNodesOffering = new ReservedCacheNodesOffering();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -49,61 +45,43 @@ public class ReservedCacheNodesOfferingStaxUnmarshaller implements
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("ReservedCacheNodesOfferingId",
-                        targetDepth)) {
-                    reservedCacheNodesOffering
-                            .setReservedCacheNodesOfferingId(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("ReservedCacheNodesOfferingId", targetDepth)) {
+                    reservedCacheNodesOffering.setReservedCacheNodesOfferingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("CacheNodeType", targetDepth)) {
-                    reservedCacheNodesOffering
-                            .setCacheNodeType(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    reservedCacheNodesOffering.setCacheNodeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Duration", targetDepth)) {
-                    reservedCacheNodesOffering
-                            .setDuration(IntegerStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    reservedCacheNodesOffering.setDuration(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("FixedPrice", targetDepth)) {
-                    reservedCacheNodesOffering
-                            .setFixedPrice(DoubleStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    reservedCacheNodesOffering.setFixedPrice(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("UsagePrice", targetDepth)) {
-                    reservedCacheNodesOffering
-                            .setUsagePrice(DoubleStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    reservedCacheNodesOffering.setUsagePrice(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ProductDescription", targetDepth)) {
-                    reservedCacheNodesOffering
-                            .setProductDescription(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    reservedCacheNodesOffering.setProductDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("OfferingType", targetDepth)) {
-                    reservedCacheNodesOffering
-                            .setOfferingType(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    reservedCacheNodesOffering.setOfferingType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("RecurringCharges/RecurringCharge",
-                        targetDepth)) {
-                    reservedCacheNodesOffering
-                            .withRecurringCharges(RecurringChargeStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("RecurringCharges/RecurringCharge", targetDepth)) {
+                    reservedCacheNodesOffering.withRecurringCharges(RecurringChargeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -18,36 +16,32 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about an Amazon Inspector agent. This data type is used
- * as a request parameter in the <a>ListAssessmentRunAgents</a> action.
+ * Contains information about an Amazon Inspector agent. This data type is used as a request parameter in the
+ * <a>ListAssessmentRunAgents</a> action.
  * </p>
  */
 public class AgentFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current health state of the agent. Values can be set to
-     * <b>HEALTHY</b> or <b>UNHEALTHY</b>.
+     * The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.
      * </p>
      */
     private java.util.List<String> agentHealths;
     /**
      * <p>
-     * The detailed health state of the agent. Values can be set to <b>IDLE</b>,
-     * <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and
-     * <b>UNKNOWN</b>.
+     * The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>,
+     * <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.
      * </p>
      */
     private java.util.List<String> agentHealthCodes;
 
     /**
      * <p>
-     * The current health state of the agent. Values can be set to
-     * <b>HEALTHY</b> or <b>UNHEALTHY</b>.
+     * The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.
      * </p>
      * 
-     * @return The current health state of the agent. Values can be set to
-     *         <b>HEALTHY</b> or <b>UNHEALTHY</b>.
+     * @return The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.
      * @see AgentHealth
      */
 
@@ -57,13 +51,11 @@ public class AgentFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current health state of the agent. Values can be set to
-     * <b>HEALTHY</b> or <b>UNHEALTHY</b>.
+     * The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.
      * </p>
      * 
      * @param agentHealths
-     *        The current health state of the agent. Values can be set to
-     *        <b>HEALTHY</b> or <b>UNHEALTHY</b>.
+     *        The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.
      * @see AgentHealth
      */
 
@@ -78,21 +70,17 @@ public class AgentFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current health state of the agent. Values can be set to
-     * <b>HEALTHY</b> or <b>UNHEALTHY</b>.
+     * The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAgentHealths(java.util.Collection)} or
-     * {@link #withAgentHealths(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAgentHealths(java.util.Collection)} or {@link #withAgentHealths(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param agentHealths
-     *        The current health state of the agent. Values can be set to
-     *        <b>HEALTHY</b> or <b>UNHEALTHY</b>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentHealth
      */
 
@@ -108,41 +96,33 @@ public class AgentFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current health state of the agent. Values can be set to
-     * <b>HEALTHY</b> or <b>UNHEALTHY</b>.
+     * The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.
      * </p>
      * 
      * @param agentHealths
-     *        The current health state of the agent. Values can be set to
-     *        <b>HEALTHY</b> or <b>UNHEALTHY</b>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentHealth
      */
 
-    public AgentFilter withAgentHealths(
-            java.util.Collection<String> agentHealths) {
+    public AgentFilter withAgentHealths(java.util.Collection<String> agentHealths) {
         setAgentHealths(agentHealths);
         return this;
     }
 
     /**
      * <p>
-     * The current health state of the agent. Values can be set to
-     * <b>HEALTHY</b> or <b>UNHEALTHY</b>.
+     * The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.
      * </p>
      * 
      * @param agentHealths
-     *        The current health state of the agent. Values can be set to
-     *        <b>HEALTHY</b> or <b>UNHEALTHY</b>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentHealth
      */
 
     public AgentFilter withAgentHealths(AgentHealth... agentHealths) {
-        java.util.ArrayList<String> agentHealthsCopy = new java.util.ArrayList<String>(
-                agentHealths.length);
+        java.util.ArrayList<String> agentHealthsCopy = new java.util.ArrayList<String>(agentHealths.length);
         for (AgentHealth value : agentHealths) {
             agentHealthsCopy.add(value.toString());
         }
@@ -156,14 +136,12 @@ public class AgentFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The detailed health state of the agent. Values can be set to <b>IDLE</b>,
-     * <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and
-     * <b>UNKNOWN</b>.
+     * The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>,
+     * <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.
      * </p>
      * 
-     * @return The detailed health state of the agent. Values can be set to
-     *         <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>,
-     *         <b>THROTTLED</b>, and <b>UNKNOWN</b>.
+     * @return The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>,
+     *         <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.
      * @see AgentHealthCode
      */
 
@@ -173,55 +151,46 @@ public class AgentFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The detailed health state of the agent. Values can be set to <b>IDLE</b>,
-     * <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and
-     * <b>UNKNOWN</b>.
+     * The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>,
+     * <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.
      * </p>
      * 
      * @param agentHealthCodes
-     *        The detailed health state of the agent. Values can be set to
-     *        <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>,
-     *        <b>THROTTLED</b>, and <b>UNKNOWN</b>.
+     *        The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>,
+     *        <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.
      * @see AgentHealthCode
      */
 
-    public void setAgentHealthCodes(
-            java.util.Collection<String> agentHealthCodes) {
+    public void setAgentHealthCodes(java.util.Collection<String> agentHealthCodes) {
         if (agentHealthCodes == null) {
             this.agentHealthCodes = null;
             return;
         }
 
-        this.agentHealthCodes = new java.util.ArrayList<String>(
-                agentHealthCodes);
+        this.agentHealthCodes = new java.util.ArrayList<String>(agentHealthCodes);
     }
 
     /**
      * <p>
-     * The detailed health state of the agent. Values can be set to <b>IDLE</b>,
-     * <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and
-     * <b>UNKNOWN</b>.
+     * The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>,
+     * <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAgentHealthCodes(java.util.Collection)} or
-     * {@link #withAgentHealthCodes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAgentHealthCodes(java.util.Collection)} or {@link #withAgentHealthCodes(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param agentHealthCodes
-     *        The detailed health state of the agent. Values can be set to
-     *        <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>,
-     *        <b>THROTTLED</b>, and <b>UNKNOWN</b>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>,
+     *        <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentHealthCode
      */
 
     public AgentFilter withAgentHealthCodes(String... agentHealthCodes) {
         if (this.agentHealthCodes == null) {
-            setAgentHealthCodes(new java.util.ArrayList<String>(
-                    agentHealthCodes.length));
+            setAgentHealthCodes(new java.util.ArrayList<String>(agentHealthCodes.length));
         }
         for (String ele : agentHealthCodes) {
             this.agentHealthCodes.add(ele);
@@ -231,45 +200,37 @@ public class AgentFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The detailed health state of the agent. Values can be set to <b>IDLE</b>,
-     * <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and
-     * <b>UNKNOWN</b>.
+     * The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>,
+     * <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.
      * </p>
      * 
      * @param agentHealthCodes
-     *        The detailed health state of the agent. Values can be set to
-     *        <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>,
-     *        <b>THROTTLED</b>, and <b>UNKNOWN</b>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>,
+     *        <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentHealthCode
      */
 
-    public AgentFilter withAgentHealthCodes(
-            java.util.Collection<String> agentHealthCodes) {
+    public AgentFilter withAgentHealthCodes(java.util.Collection<String> agentHealthCodes) {
         setAgentHealthCodes(agentHealthCodes);
         return this;
     }
 
     /**
      * <p>
-     * The detailed health state of the agent. Values can be set to <b>IDLE</b>,
-     * <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and
-     * <b>UNKNOWN</b>.
+     * The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>,
+     * <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.
      * </p>
      * 
      * @param agentHealthCodes
-     *        The detailed health state of the agent. Values can be set to
-     *        <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>,
-     *        <b>THROTTLED</b>, and <b>UNKNOWN</b>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>,
+     *        <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentHealthCode
      */
 
     public AgentFilter withAgentHealthCodes(AgentHealthCode... agentHealthCodes) {
-        java.util.ArrayList<String> agentHealthCodesCopy = new java.util.ArrayList<String>(
-                agentHealthCodes.length);
+        java.util.ArrayList<String> agentHealthCodesCopy = new java.util.ArrayList<String>(agentHealthCodes.length);
         for (AgentHealthCode value : agentHealthCodes) {
             agentHealthCodesCopy.add(value.toString());
         }
@@ -282,8 +243,7 @@ public class AgentFilter implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -313,15 +273,11 @@ public class AgentFilter implements Serializable, Cloneable {
         AgentFilter other = (AgentFilter) obj;
         if (other.getAgentHealths() == null ^ this.getAgentHealths() == null)
             return false;
-        if (other.getAgentHealths() != null
-                && other.getAgentHealths().equals(this.getAgentHealths()) == false)
+        if (other.getAgentHealths() != null && other.getAgentHealths().equals(this.getAgentHealths()) == false)
             return false;
-        if (other.getAgentHealthCodes() == null
-                ^ this.getAgentHealthCodes() == null)
+        if (other.getAgentHealthCodes() == null ^ this.getAgentHealthCodes() == null)
             return false;
-        if (other.getAgentHealthCodes() != null
-                && other.getAgentHealthCodes().equals(
-                        this.getAgentHealthCodes()) == false)
+        if (other.getAgentHealthCodes() != null && other.getAgentHealthCodes().equals(this.getAgentHealthCodes()) == false)
             return false;
         return true;
     }
@@ -331,14 +287,8 @@ public class AgentFilter implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAgentHealths() == null) ? 0 : getAgentHealths()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAgentHealthCodes() == null) ? 0 : getAgentHealthCodes()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAgentHealths() == null) ? 0 : getAgentHealths().hashCode());
+        hashCode = prime * hashCode + ((getAgentHealthCodes() == null) ? 0 : getAgentHealthCodes().hashCode());
         return hashCode;
     }
 
@@ -347,9 +297,7 @@ public class AgentFilter implements Serializable, Cloneable {
         try {
             return (AgentFilter) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

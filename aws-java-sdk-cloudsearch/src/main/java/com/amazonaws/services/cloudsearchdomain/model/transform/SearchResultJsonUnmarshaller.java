@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchdomain.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * SearchResult JSON Unmarshaller
  */
-public class SearchResultJsonUnmarshaller implements
-        Unmarshaller<SearchResult, JsonUnmarshallerContext> {
+public class SearchResultJsonUnmarshaller implements Unmarshaller<SearchResult, JsonUnmarshallerContext> {
 
-    public SearchResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public SearchResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         SearchResult searchResult = new SearchResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,34 +49,24 @@ public class SearchResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    searchResult.setStatus(SearchStatusJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    searchResult.setStatus(SearchStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hits", targetDepth)) {
                     context.nextToken();
-                    searchResult.setHits(HitsJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    searchResult.setHits(HitsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("facets", targetDepth)) {
                     context.nextToken();
-                    searchResult
-                            .setFacets(new MapUnmarshaller<String, BucketInfo>(
-                                    context.getUnmarshaller(String.class),
-                                    BucketInfoJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+                    searchResult.setFacets(new MapUnmarshaller<String, BucketInfo>(context.getUnmarshaller(String.class), BucketInfoJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("stats", targetDepth)) {
                     context.nextToken();
-                    searchResult
-                            .setStats(new MapUnmarshaller<String, FieldStats>(
-                                    context.getUnmarshaller(String.class),
-                                    FieldStatsJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+                    searchResult.setStats(new MapUnmarshaller<String, FieldStats>(context.getUnmarshaller(String.class), FieldStatsJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

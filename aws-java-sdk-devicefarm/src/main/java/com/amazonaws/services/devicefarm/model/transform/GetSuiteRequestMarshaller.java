@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetSuiteRequest Marshaller
  */
-public class GetSuiteRequestMarshaller implements
-        Marshaller<Request<GetSuiteRequest>, GetSuiteRequest> {
+public class GetSuiteRequestMarshaller implements Marshaller<Request<GetSuiteRequest>, GetSuiteRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -47,12 +44,10 @@ public class GetSuiteRequestMarshaller implements
     public Request<GetSuiteRequest> marshall(GetSuiteRequest getSuiteRequest) {
 
         if (getSuiteRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetSuiteRequest> request = new DefaultRequest<GetSuiteRequest>(
-                getSuiteRequest, "AWSDeviceFarm");
+        Request<GetSuiteRequest> request = new DefaultRequest<GetSuiteRequest>(getSuiteRequest, "AWSDeviceFarm");
         request.addHeader("X-Amz-Target", "DeviceFarm_20150623.GetSuite");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -60,26 +55,22 @@ public class GetSuiteRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (getSuiteRequest.getArn() != null) {
-                jsonGenerator.writeFieldName("arn").writeValue(
-                        getSuiteRequest.getArn());
+                jsonGenerator.writeFieldName("arn").writeValue(getSuiteRequest.getArn());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

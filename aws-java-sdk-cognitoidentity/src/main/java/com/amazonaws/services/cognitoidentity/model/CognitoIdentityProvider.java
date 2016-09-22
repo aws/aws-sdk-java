@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidentity.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A provider representing an Amazon Cognito Identity User Pool and its client
- * ID.
+ * A provider representing an Amazon Cognito Identity User Pool and its client ID.
  * </p>
  */
 public class CognitoIdentityProvider implements Serializable, Cloneable {
@@ -45,10 +42,8 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
      * </p>
      * 
      * @param providerName
-     *        The provider name for an Amazon Cognito Identity User Pool. For
-     *        example,
-     *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
-     *        .
+     *        The provider name for an Amazon Cognito Identity User Pool. For example,
+     *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      */
 
     public void setProviderName(String providerName) {
@@ -61,10 +56,8 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      * </p>
      * 
-     * @return The provider name for an Amazon Cognito Identity User Pool. For
-     *         example,
-     *         <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
-     *         .
+     * @return The provider name for an Amazon Cognito Identity User Pool. For example,
+     *         <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      */
 
     public String getProviderName() {
@@ -78,12 +71,9 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
      * </p>
      * 
      * @param providerName
-     *        The provider name for an Amazon Cognito Identity User Pool. For
-     *        example,
-     *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
-     *        .
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The provider name for an Amazon Cognito Identity User Pool. For example,
+     *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CognitoIdentityProvider withProviderName(String providerName) {
@@ -123,8 +113,7 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
      * 
      * @param clientId
      *        The client ID for the Amazon Cognito Identity User Pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CognitoIdentityProvider withClientId(String clientId) {
@@ -133,8 +122,7 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -164,13 +152,11 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
         CognitoIdentityProvider other = (CognitoIdentityProvider) obj;
         if (other.getProviderName() == null ^ this.getProviderName() == null)
             return false;
-        if (other.getProviderName() != null
-                && other.getProviderName().equals(this.getProviderName()) == false)
+        if (other.getProviderName() != null && other.getProviderName().equals(this.getProviderName()) == false)
             return false;
         if (other.getClientId() == null ^ this.getClientId() == null)
             return false;
-        if (other.getClientId() != null
-                && other.getClientId().equals(this.getClientId()) == false)
+        if (other.getClientId() != null && other.getClientId().equals(this.getClientId()) == false)
             return false;
         return true;
     }
@@ -180,12 +166,8 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getProviderName() == null) ? 0 : getProviderName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getClientId() == null) ? 0 : getClientId().hashCode());
+        hashCode = prime * hashCode + ((getProviderName() == null) ? 0 : getProviderName().hashCode());
+        hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
         return hashCode;
     }
 
@@ -194,9 +176,7 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
         try {
             return (CognitoIdentityProvider) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

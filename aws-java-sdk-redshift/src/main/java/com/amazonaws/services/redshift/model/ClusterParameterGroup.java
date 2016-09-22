@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -31,8 +29,7 @@ public class ClusterParameterGroup implements Serializable, Cloneable {
     private String parameterGroupName;
     /**
      * <p>
-     * The name of the cluster parameter group family that this cluster
-     * parameter group is compatible with.
+     * The name of the cluster parameter group family that this cluster parameter group is compatible with.
      * </p>
      */
     private String parameterGroupFamily;
@@ -81,25 +78,21 @@ public class ClusterParameterGroup implements Serializable, Cloneable {
      * 
      * @param parameterGroupName
      *        The name of the cluster parameter group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ClusterParameterGroup withParameterGroupName(
-            String parameterGroupName) {
+    public ClusterParameterGroup withParameterGroupName(String parameterGroupName) {
         setParameterGroupName(parameterGroupName);
         return this;
     }
 
     /**
      * <p>
-     * The name of the cluster parameter group family that this cluster
-     * parameter group is compatible with.
+     * The name of the cluster parameter group family that this cluster parameter group is compatible with.
      * </p>
      * 
      * @param parameterGroupFamily
-     *        The name of the cluster parameter group family that this cluster
-     *        parameter group is compatible with.
+     *        The name of the cluster parameter group family that this cluster parameter group is compatible with.
      */
 
     public void setParameterGroupFamily(String parameterGroupFamily) {
@@ -108,12 +101,10 @@ public class ClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cluster parameter group family that this cluster
-     * parameter group is compatible with.
+     * The name of the cluster parameter group family that this cluster parameter group is compatible with.
      * </p>
      * 
-     * @return The name of the cluster parameter group family that this cluster
-     *         parameter group is compatible with.
+     * @return The name of the cluster parameter group family that this cluster parameter group is compatible with.
      */
 
     public String getParameterGroupFamily() {
@@ -122,19 +113,15 @@ public class ClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cluster parameter group family that this cluster
-     * parameter group is compatible with.
+     * The name of the cluster parameter group family that this cluster parameter group is compatible with.
      * </p>
      * 
      * @param parameterGroupFamily
-     *        The name of the cluster parameter group family that this cluster
-     *        parameter group is compatible with.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the cluster parameter group family that this cluster parameter group is compatible with.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ClusterParameterGroup withParameterGroupFamily(
-            String parameterGroupFamily) {
+    public ClusterParameterGroup withParameterGroupFamily(String parameterGroupFamily) {
         setParameterGroupFamily(parameterGroupFamily);
         return this;
     }
@@ -171,8 +158,7 @@ public class ClusterParameterGroup implements Serializable, Cloneable {
      * 
      * @param description
      *        The description of the parameter group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterParameterGroup withDescription(String description) {
@@ -218,16 +204,14 @@ public class ClusterParameterGroup implements Serializable, Cloneable {
      * The list of tags for the cluster parameter group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        The list of tags for the cluster parameter group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterParameterGroup withTags(Tag... tags) {
@@ -247,8 +231,7 @@ public class ClusterParameterGroup implements Serializable, Cloneable {
      * 
      * @param tags
      *        The list of tags for the cluster parameter group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterParameterGroup withTags(java.util.Collection<Tag> tags) {
@@ -257,8 +240,7 @@ public class ClusterParameterGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -271,8 +253,7 @@ public class ClusterParameterGroup implements Serializable, Cloneable {
         if (getParameterGroupName() != null)
             sb.append("ParameterGroupName: " + getParameterGroupName() + ",");
         if (getParameterGroupFamily() != null)
-            sb.append("ParameterGroupFamily: " + getParameterGroupFamily()
-                    + ",");
+            sb.append("ParameterGroupFamily: " + getParameterGroupFamily() + ",");
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
         if (getTags() != null)
@@ -291,29 +272,21 @@ public class ClusterParameterGroup implements Serializable, Cloneable {
         if (obj instanceof ClusterParameterGroup == false)
             return false;
         ClusterParameterGroup other = (ClusterParameterGroup) obj;
-        if (other.getParameterGroupName() == null
-                ^ this.getParameterGroupName() == null)
+        if (other.getParameterGroupName() == null ^ this.getParameterGroupName() == null)
             return false;
-        if (other.getParameterGroupName() != null
-                && other.getParameterGroupName().equals(
-                        this.getParameterGroupName()) == false)
+        if (other.getParameterGroupName() != null && other.getParameterGroupName().equals(this.getParameterGroupName()) == false)
             return false;
-        if (other.getParameterGroupFamily() == null
-                ^ this.getParameterGroupFamily() == null)
+        if (other.getParameterGroupFamily() == null ^ this.getParameterGroupFamily() == null)
             return false;
-        if (other.getParameterGroupFamily() != null
-                && other.getParameterGroupFamily().equals(
-                        this.getParameterGroupFamily()) == false)
+        if (other.getParameterGroupFamily() != null && other.getParameterGroupFamily().equals(this.getParameterGroupFamily()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -323,19 +296,10 @@ public class ClusterParameterGroup implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getParameterGroupName() == null) ? 0
-                        : getParameterGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getParameterGroupFamily() == null) ? 0
-                        : getParameterGroupFamily().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getParameterGroupName() == null) ? 0 : getParameterGroupName().hashCode());
+        hashCode = prime * hashCode + ((getParameterGroupFamily() == null) ? 0 : getParameterGroupFamily().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -344,9 +308,7 @@ public class ClusterParameterGroup implements Serializable, Cloneable {
         try {
             return (ClusterParameterGroup) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

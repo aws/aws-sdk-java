@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the <a>DescribeEvents</a>
- * action.
+ * This data type is used as a response element in the <a>DescribeEvents</a> action.
  * </p>
  */
 public class Event implements Serializable, Cloneable {
@@ -93,8 +90,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @param sourceIdentifier
      *        Provides the identifier for the source of the event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Event withSourceIdentifier(String sourceIdentifier) {
@@ -136,8 +132,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @param sourceType
      *        Specifies the source type for this event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
 
@@ -167,8 +162,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @param sourceType
      *        Specifies the source type for this event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
 
@@ -209,8 +203,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @param message
      *        Provides the text of this event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Event withMessage(String message) {
@@ -248,8 +241,7 @@ public class Event implements Serializable, Cloneable {
             return;
         }
 
-        this.eventCategories = new com.amazonaws.internal.SdkInternalList<String>(
-                eventCategories);
+        this.eventCategories = new com.amazonaws.internal.SdkInternalList<String>(eventCategories);
     }
 
     /**
@@ -257,22 +249,19 @@ public class Event implements Serializable, Cloneable {
      * Specifies the category for the event.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEventCategories(java.util.Collection)} or
-     * {@link #withEventCategories(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEventCategories(java.util.Collection)} or {@link #withEventCategories(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param eventCategories
      *        Specifies the category for the event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Event withEventCategories(String... eventCategories) {
         if (this.eventCategories == null) {
-            setEventCategories(new com.amazonaws.internal.SdkInternalList<String>(
-                    eventCategories.length));
+            setEventCategories(new com.amazonaws.internal.SdkInternalList<String>(eventCategories.length));
         }
         for (String ele : eventCategories) {
             this.eventCategories.add(ele);
@@ -287,12 +276,10 @@ public class Event implements Serializable, Cloneable {
      * 
      * @param eventCategories
      *        Specifies the category for the event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Event withEventCategories(
-            java.util.Collection<String> eventCategories) {
+    public Event withEventCategories(java.util.Collection<String> eventCategories) {
         setEventCategories(eventCategories);
         return this;
     }
@@ -329,8 +316,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @param dateValue
      *        Specifies the date and time of the event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Event withDate(java.util.Date dateValue) {
@@ -370,8 +356,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @param sourceArn
      *        The Amazon Resource Name (ARN) for the event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Event withSourceArn(String sourceArn) {
@@ -380,8 +365,7 @@ public class Event implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -417,38 +401,29 @@ public class Event implements Serializable, Cloneable {
         if (obj instanceof Event == false)
             return false;
         Event other = (Event) obj;
-        if (other.getSourceIdentifier() == null
-                ^ this.getSourceIdentifier() == null)
+        if (other.getSourceIdentifier() == null ^ this.getSourceIdentifier() == null)
             return false;
-        if (other.getSourceIdentifier() != null
-                && other.getSourceIdentifier().equals(
-                        this.getSourceIdentifier()) == false)
+        if (other.getSourceIdentifier() != null && other.getSourceIdentifier().equals(this.getSourceIdentifier()) == false)
             return false;
         if (other.getSourceType() == null ^ this.getSourceType() == null)
             return false;
-        if (other.getSourceType() != null
-                && other.getSourceType().equals(this.getSourceType()) == false)
+        if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
-        if (other.getEventCategories() == null
-                ^ this.getEventCategories() == null)
+        if (other.getEventCategories() == null ^ this.getEventCategories() == null)
             return false;
-        if (other.getEventCategories() != null
-                && other.getEventCategories().equals(this.getEventCategories()) == false)
+        if (other.getEventCategories() != null && other.getEventCategories().equals(this.getEventCategories()) == false)
             return false;
         if (other.getDate() == null ^ this.getDate() == null)
             return false;
-        if (other.getDate() != null
-                && other.getDate().equals(this.getDate()) == false)
+        if (other.getDate() != null && other.getDate().equals(this.getDate()) == false)
             return false;
         if (other.getSourceArn() == null ^ this.getSourceArn() == null)
             return false;
-        if (other.getSourceArn() != null
-                && other.getSourceArn().equals(this.getSourceArn()) == false)
+        if (other.getSourceArn() != null && other.getSourceArn().equals(this.getSourceArn()) == false)
             return false;
         return true;
     }
@@ -458,22 +433,12 @@ public class Event implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEventCategories() == null) ? 0 : getEventCategories()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getDate() == null) ? 0 : getDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode());
+        hashCode = prime * hashCode + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getEventCategories() == null) ? 0 : getEventCategories().hashCode());
+        hashCode = prime * hashCode + ((getDate() == null) ? 0 : getDate().hashCode());
+        hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode());
         return hashCode;
     }
 
@@ -482,9 +447,7 @@ public class Event implements Serializable, Cloneable {
         try {
             return (Event) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

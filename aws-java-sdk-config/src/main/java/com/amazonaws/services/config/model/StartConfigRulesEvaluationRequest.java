@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class StartConfigRulesEvaluationRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class StartConfigRulesEvaluationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -36,8 +32,7 @@ public class StartConfigRulesEvaluationRequest extends
      * The list of names of Config rules that you want to run evaluations for.
      * </p>
      * 
-     * @return The list of names of Config rules that you want to run
-     *         evaluations for.
+     * @return The list of names of Config rules that you want to run evaluations for.
      */
 
     public java.util.List<String> getConfigRuleNames() {
@@ -53,8 +48,7 @@ public class StartConfigRulesEvaluationRequest extends
      * </p>
      * 
      * @param configRuleNames
-     *        The list of names of Config rules that you want to run evaluations
-     *        for.
+     *        The list of names of Config rules that you want to run evaluations for.
      */
 
     public void setConfigRuleNames(java.util.Collection<String> configRuleNames) {
@@ -63,8 +57,7 @@ public class StartConfigRulesEvaluationRequest extends
             return;
         }
 
-        this.configRuleNames = new com.amazonaws.internal.SdkInternalList<String>(
-                configRuleNames);
+        this.configRuleNames = new com.amazonaws.internal.SdkInternalList<String>(configRuleNames);
     }
 
     /**
@@ -72,24 +65,19 @@ public class StartConfigRulesEvaluationRequest extends
      * The list of names of Config rules that you want to run evaluations for.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConfigRuleNames(java.util.Collection)} or
-     * {@link #withConfigRuleNames(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConfigRuleNames(java.util.Collection)} or {@link #withConfigRuleNames(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param configRuleNames
-     *        The list of names of Config rules that you want to run evaluations
-     *        for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of names of Config rules that you want to run evaluations for.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartConfigRulesEvaluationRequest withConfigRuleNames(
-            String... configRuleNames) {
+    public StartConfigRulesEvaluationRequest withConfigRuleNames(String... configRuleNames) {
         if (this.configRuleNames == null) {
-            setConfigRuleNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    configRuleNames.length));
+            setConfigRuleNames(new com.amazonaws.internal.SdkInternalList<String>(configRuleNames.length));
         }
         for (String ele : configRuleNames) {
             this.configRuleNames.add(ele);
@@ -103,21 +91,17 @@ public class StartConfigRulesEvaluationRequest extends
      * </p>
      * 
      * @param configRuleNames
-     *        The list of names of Config rules that you want to run evaluations
-     *        for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of names of Config rules that you want to run evaluations for.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartConfigRulesEvaluationRequest withConfigRuleNames(
-            java.util.Collection<String> configRuleNames) {
+    public StartConfigRulesEvaluationRequest withConfigRuleNames(java.util.Collection<String> configRuleNames) {
         setConfigRuleNames(configRuleNames);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -143,11 +127,9 @@ public class StartConfigRulesEvaluationRequest extends
         if (obj instanceof StartConfigRulesEvaluationRequest == false)
             return false;
         StartConfigRulesEvaluationRequest other = (StartConfigRulesEvaluationRequest) obj;
-        if (other.getConfigRuleNames() == null
-                ^ this.getConfigRuleNames() == null)
+        if (other.getConfigRuleNames() == null ^ this.getConfigRuleNames() == null)
             return false;
-        if (other.getConfigRuleNames() != null
-                && other.getConfigRuleNames().equals(this.getConfigRuleNames()) == false)
+        if (other.getConfigRuleNames() != null && other.getConfigRuleNames().equals(this.getConfigRuleNames()) == false)
             return false;
         return true;
     }
@@ -157,10 +139,7 @@ public class StartConfigRulesEvaluationRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getConfigRuleNames() == null) ? 0 : getConfigRuleNames()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getConfigRuleNames() == null) ? 0 : getConfigRuleNames().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -34,23 +32,21 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * A value that describes the current state of the table restore request.
      * </p>
      * <p>
-     * Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     * Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>,
+     * <code>IN_PROGRESS</code>
      * </p>
      */
     private String status;
     /**
      * <p>
-     * A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
+     * A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>,
+     * <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
      * </p>
      */
     private String message;
     /**
      * <p>
-     * The time that the table restore request was made, in Universal
-     * Coordinated Time (UTC).
+     * The time that the table restore request was made, in Universal Coordinated Time (UTC).
      * </p>
      */
     private java.util.Date requestTime;
@@ -68,8 +64,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
     private Long totalDataInMegaBytes;
     /**
      * <p>
-     * The identifier of the Amazon Redshift cluster that the table is being
-     * restored to.
+     * The identifier of the Amazon Redshift cluster that the table is being restored to.
      * </p>
      */
     private String clusterIdentifier;
@@ -148,12 +143,10 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * 
      * @param tableRestoreRequestId
      *        The unique identifier for the table restore request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TableRestoreStatus withTableRestoreRequestId(
-            String tableRestoreRequestId) {
+    public TableRestoreStatus withTableRestoreRequestId(String tableRestoreRequestId) {
         setTableRestoreRequestId(tableRestoreRequestId);
         return this;
     }
@@ -163,16 +156,14 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * A value that describes the current state of the table restore request.
      * </p>
      * <p>
-     * Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     * Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>,
+     * <code>IN_PROGRESS</code>
      * </p>
      * 
      * @param status
-     *        A value that describes the current state of the table restore
-     *        request.</p>
+     *        A value that describes the current state of the table restore request.</p>
      *        <p>
-     *        Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *        <code>CANCELED</code>, <code>PENDING</code>,
+     *        Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>,
      *        <code>IN_PROGRESS</code>
      * @see TableRestoreStatusType
      */
@@ -186,15 +177,13 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * A value that describes the current state of the table restore request.
      * </p>
      * <p>
-     * Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     * Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>,
+     * <code>IN_PROGRESS</code>
      * </p>
      * 
-     * @return A value that describes the current state of the table restore
-     *         request.</p>
+     * @return A value that describes the current state of the table restore request.</p>
      *         <p>
-     *         Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *         <code>CANCELED</code>, <code>PENDING</code>,
+     *         Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>,
      *         <code>IN_PROGRESS</code>
      * @see TableRestoreStatusType
      */
@@ -208,19 +197,16 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * A value that describes the current state of the table restore request.
      * </p>
      * <p>
-     * Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     * Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>,
+     * <code>IN_PROGRESS</code>
      * </p>
      * 
      * @param status
-     *        A value that describes the current state of the table restore
-     *        request.</p>
+     *        A value that describes the current state of the table restore request.</p>
      *        <p>
-     *        Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *        <code>CANCELED</code>, <code>PENDING</code>,
+     *        Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>,
      *        <code>IN_PROGRESS</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TableRestoreStatusType
      */
 
@@ -234,16 +220,14 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * A value that describes the current state of the table restore request.
      * </p>
      * <p>
-     * Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     * Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>,
+     * <code>IN_PROGRESS</code>
      * </p>
      * 
      * @param status
-     *        A value that describes the current state of the table restore
-     *        request.</p>
+     *        A value that describes the current state of the table restore request.</p>
      *        <p>
-     *        Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *        <code>CANCELED</code>, <code>PENDING</code>,
+     *        Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>,
      *        <code>IN_PROGRESS</code>
      * @see TableRestoreStatusType
      */
@@ -257,19 +241,16 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * A value that describes the current state of the table restore request.
      * </p>
      * <p>
-     * Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     * Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>,
+     * <code>IN_PROGRESS</code>
      * </p>
      * 
      * @param status
-     *        A value that describes the current state of the table restore
-     *        request.</p>
+     *        A value that describes the current state of the table restore request.</p>
      *        <p>
-     *        Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *        <code>CANCELED</code>, <code>PENDING</code>,
+     *        Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>,
      *        <code>IN_PROGRESS</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TableRestoreStatusType
      */
 
@@ -280,16 +261,13 @@ public class TableRestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
+     * A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>,
+     * <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
      * </p>
      * 
      * @param message
-     *        A description of the status of the table restore request. Status
-     *        values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *        <code>CANCELED</code>, <code>PENDING</code>,
-     *        <code>IN_PROGRESS</code>.
+     *        A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>,
+     *        <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
      */
 
     public void setMessage(String message) {
@@ -298,15 +276,12 @@ public class TableRestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
+     * A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>,
+     * <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
      * </p>
      * 
-     * @return A description of the status of the table restore request. Status
-     *         values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *         <code>CANCELED</code>, <code>PENDING</code>,
-     *         <code>IN_PROGRESS</code>.
+     * @return A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>,
+     *         <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
      */
 
     public String getMessage() {
@@ -315,18 +290,14 @@ public class TableRestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
+     * A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>,
+     * <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
      * </p>
      * 
      * @param message
-     *        A description of the status of the table restore request. Status
-     *        values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *        <code>CANCELED</code>, <code>PENDING</code>,
-     *        <code>IN_PROGRESS</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>,
+     *        <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableRestoreStatus withMessage(String message) {
@@ -336,13 +307,11 @@ public class TableRestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the table restore request was made, in Universal
-     * Coordinated Time (UTC).
+     * The time that the table restore request was made, in Universal Coordinated Time (UTC).
      * </p>
      * 
      * @param requestTime
-     *        The time that the table restore request was made, in Universal
-     *        Coordinated Time (UTC).
+     *        The time that the table restore request was made, in Universal Coordinated Time (UTC).
      */
 
     public void setRequestTime(java.util.Date requestTime) {
@@ -351,12 +320,10 @@ public class TableRestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the table restore request was made, in Universal
-     * Coordinated Time (UTC).
+     * The time that the table restore request was made, in Universal Coordinated Time (UTC).
      * </p>
      * 
-     * @return The time that the table restore request was made, in Universal
-     *         Coordinated Time (UTC).
+     * @return The time that the table restore request was made, in Universal Coordinated Time (UTC).
      */
 
     public java.util.Date getRequestTime() {
@@ -365,15 +332,12 @@ public class TableRestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the table restore request was made, in Universal
-     * Coordinated Time (UTC).
+     * The time that the table restore request was made, in Universal Coordinated Time (UTC).
      * </p>
      * 
      * @param requestTime
-     *        The time that the table restore request was made, in Universal
-     *        Coordinated Time (UTC).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time that the table restore request was made, in Universal Coordinated Time (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableRestoreStatus withRequestTime(java.util.Date requestTime) {
@@ -387,8 +351,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param progressInMegaBytes
-     *        The amount of data restored to the new table so far, in megabytes
-     *        (MB).
+     *        The amount of data restored to the new table so far, in megabytes (MB).
      */
 
     public void setProgressInMegaBytes(Long progressInMegaBytes) {
@@ -400,8 +363,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * The amount of data restored to the new table so far, in megabytes (MB).
      * </p>
      * 
-     * @return The amount of data restored to the new table so far, in megabytes
-     *         (MB).
+     * @return The amount of data restored to the new table so far, in megabytes (MB).
      */
 
     public Long getProgressInMegaBytes() {
@@ -414,10 +376,8 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param progressInMegaBytes
-     *        The amount of data restored to the new table so far, in megabytes
-     *        (MB).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The amount of data restored to the new table so far, in megabytes (MB).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableRestoreStatus withProgressInMegaBytes(Long progressInMegaBytes) {
@@ -431,8 +391,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param totalDataInMegaBytes
-     *        The total amount of data to restore to the new table, in megabytes
-     *        (MB).
+     *        The total amount of data to restore to the new table, in megabytes (MB).
      */
 
     public void setTotalDataInMegaBytes(Long totalDataInMegaBytes) {
@@ -444,8 +403,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * The total amount of data to restore to the new table, in megabytes (MB).
      * </p>
      * 
-     * @return The total amount of data to restore to the new table, in
-     *         megabytes (MB).
+     * @return The total amount of data to restore to the new table, in megabytes (MB).
      */
 
     public Long getTotalDataInMegaBytes() {
@@ -458,10 +416,8 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param totalDataInMegaBytes
-     *        The total amount of data to restore to the new table, in megabytes
-     *        (MB).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The total amount of data to restore to the new table, in megabytes (MB).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableRestoreStatus withTotalDataInMegaBytes(Long totalDataInMegaBytes) {
@@ -471,13 +427,11 @@ public class TableRestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Amazon Redshift cluster that the table is being
-     * restored to.
+     * The identifier of the Amazon Redshift cluster that the table is being restored to.
      * </p>
      * 
      * @param clusterIdentifier
-     *        The identifier of the Amazon Redshift cluster that the table is
-     *        being restored to.
+     *        The identifier of the Amazon Redshift cluster that the table is being restored to.
      */
 
     public void setClusterIdentifier(String clusterIdentifier) {
@@ -486,12 +440,10 @@ public class TableRestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Amazon Redshift cluster that the table is being
-     * restored to.
+     * The identifier of the Amazon Redshift cluster that the table is being restored to.
      * </p>
      * 
-     * @return The identifier of the Amazon Redshift cluster that the table is
-     *         being restored to.
+     * @return The identifier of the Amazon Redshift cluster that the table is being restored to.
      */
 
     public String getClusterIdentifier() {
@@ -500,15 +452,12 @@ public class TableRestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Amazon Redshift cluster that the table is being
-     * restored to.
+     * The identifier of the Amazon Redshift cluster that the table is being restored to.
      * </p>
      * 
      * @param clusterIdentifier
-     *        The identifier of the Amazon Redshift cluster that the table is
-     *        being restored to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the Amazon Redshift cluster that the table is being restored to.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableRestoreStatus withClusterIdentifier(String clusterIdentifier) {
@@ -522,8 +471,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param snapshotIdentifier
-     *        The identifier of the snapshot that the table is being restored
-     *        from.
+     *        The identifier of the snapshot that the table is being restored from.
      */
 
     public void setSnapshotIdentifier(String snapshotIdentifier) {
@@ -535,8 +483,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * The identifier of the snapshot that the table is being restored from.
      * </p>
      * 
-     * @return The identifier of the snapshot that the table is being restored
-     *         from.
+     * @return The identifier of the snapshot that the table is being restored from.
      */
 
     public String getSnapshotIdentifier() {
@@ -549,10 +496,8 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param snapshotIdentifier
-     *        The identifier of the snapshot that the table is being restored
-     *        from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the snapshot that the table is being restored from.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableRestoreStatus withSnapshotIdentifier(String snapshotIdentifier) {
@@ -566,8 +511,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param sourceDatabaseName
-     *        The name of the source database that contains the table being
-     *        restored.
+     *        The name of the source database that contains the table being restored.
      */
 
     public void setSourceDatabaseName(String sourceDatabaseName) {
@@ -579,8 +523,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * The name of the source database that contains the table being restored.
      * </p>
      * 
-     * @return The name of the source database that contains the table being
-     *         restored.
+     * @return The name of the source database that contains the table being restored.
      */
 
     public String getSourceDatabaseName() {
@@ -593,10 +536,8 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param sourceDatabaseName
-     *        The name of the source database that contains the table being
-     *        restored.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the source database that contains the table being restored.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableRestoreStatus withSourceDatabaseName(String sourceDatabaseName) {
@@ -610,8 +551,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param sourceSchemaName
-     *        The name of the source schema that contains the table being
-     *        restored.
+     *        The name of the source schema that contains the table being restored.
      */
 
     public void setSourceSchemaName(String sourceSchemaName) {
@@ -623,8 +563,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * The name of the source schema that contains the table being restored.
      * </p>
      * 
-     * @return The name of the source schema that contains the table being
-     *         restored.
+     * @return The name of the source schema that contains the table being restored.
      */
 
     public String getSourceSchemaName() {
@@ -637,10 +576,8 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param sourceSchemaName
-     *        The name of the source schema that contains the table being
-     *        restored.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the source schema that contains the table being restored.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableRestoreStatus withSourceSchemaName(String sourceSchemaName) {
@@ -680,8 +617,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * 
      * @param sourceTableName
      *        The name of the source table being restored.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableRestoreStatus withSourceTableName(String sourceTableName) {
@@ -721,8 +657,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * 
      * @param targetDatabaseName
      *        The name of the database to restore the table to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableRestoreStatus withTargetDatabaseName(String targetDatabaseName) {
@@ -762,8 +697,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * 
      * @param targetSchemaName
      *        The name of the schema to restore the table to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableRestoreStatus withTargetSchemaName(String targetSchemaName) {
@@ -777,8 +711,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param newTableName
-     *        The name of the table to create as a result of the table restore
-     *        request.
+     *        The name of the table to create as a result of the table restore request.
      */
 
     public void setNewTableName(String newTableName) {
@@ -790,8 +723,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * The name of the table to create as a result of the table restore request.
      * </p>
      * 
-     * @return The name of the table to create as a result of the table restore
-     *         request.
+     * @return The name of the table to create as a result of the table restore request.
      */
 
     public String getNewTableName() {
@@ -804,10 +736,8 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * </p>
      * 
      * @param newTableName
-     *        The name of the table to create as a result of the table restore
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the table to create as a result of the table restore request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableRestoreStatus withNewTableName(String newTableName) {
@@ -816,8 +746,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -828,8 +757,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableRestoreRequestId() != null)
-            sb.append("TableRestoreRequestId: " + getTableRestoreRequestId()
-                    + ",");
+            sb.append("TableRestoreRequestId: " + getTableRestoreRequestId() + ",");
         if (getStatus() != null)
             sb.append("Status: " + getStatus() + ",");
         if (getMessage() != null)
@@ -839,8 +767,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
         if (getProgressInMegaBytes() != null)
             sb.append("ProgressInMegaBytes: " + getProgressInMegaBytes() + ",");
         if (getTotalDataInMegaBytes() != null)
-            sb.append("TotalDataInMegaBytes: " + getTotalDataInMegaBytes()
-                    + ",");
+            sb.append("TotalDataInMegaBytes: " + getTotalDataInMegaBytes() + ",");
         if (getClusterIdentifier() != null)
             sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
         if (getSnapshotIdentifier() != null)
@@ -871,94 +798,61 @@ public class TableRestoreStatus implements Serializable, Cloneable {
         if (obj instanceof TableRestoreStatus == false)
             return false;
         TableRestoreStatus other = (TableRestoreStatus) obj;
-        if (other.getTableRestoreRequestId() == null
-                ^ this.getTableRestoreRequestId() == null)
+        if (other.getTableRestoreRequestId() == null ^ this.getTableRestoreRequestId() == null)
             return false;
-        if (other.getTableRestoreRequestId() != null
-                && other.getTableRestoreRequestId().equals(
-                        this.getTableRestoreRequestId()) == false)
+        if (other.getTableRestoreRequestId() != null && other.getTableRestoreRequestId().equals(this.getTableRestoreRequestId()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         if (other.getRequestTime() == null ^ this.getRequestTime() == null)
             return false;
-        if (other.getRequestTime() != null
-                && other.getRequestTime().equals(this.getRequestTime()) == false)
+        if (other.getRequestTime() != null && other.getRequestTime().equals(this.getRequestTime()) == false)
             return false;
-        if (other.getProgressInMegaBytes() == null
-                ^ this.getProgressInMegaBytes() == null)
+        if (other.getProgressInMegaBytes() == null ^ this.getProgressInMegaBytes() == null)
             return false;
-        if (other.getProgressInMegaBytes() != null
-                && other.getProgressInMegaBytes().equals(
-                        this.getProgressInMegaBytes()) == false)
+        if (other.getProgressInMegaBytes() != null && other.getProgressInMegaBytes().equals(this.getProgressInMegaBytes()) == false)
             return false;
-        if (other.getTotalDataInMegaBytes() == null
-                ^ this.getTotalDataInMegaBytes() == null)
+        if (other.getTotalDataInMegaBytes() == null ^ this.getTotalDataInMegaBytes() == null)
             return false;
-        if (other.getTotalDataInMegaBytes() != null
-                && other.getTotalDataInMegaBytes().equals(
-                        this.getTotalDataInMegaBytes()) == false)
+        if (other.getTotalDataInMegaBytes() != null && other.getTotalDataInMegaBytes().equals(this.getTotalDataInMegaBytes()) == false)
             return false;
-        if (other.getClusterIdentifier() == null
-                ^ this.getClusterIdentifier() == null)
+        if (other.getClusterIdentifier() == null ^ this.getClusterIdentifier() == null)
             return false;
-        if (other.getClusterIdentifier() != null
-                && other.getClusterIdentifier().equals(
-                        this.getClusterIdentifier()) == false)
+        if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false)
             return false;
-        if (other.getSnapshotIdentifier() == null
-                ^ this.getSnapshotIdentifier() == null)
+        if (other.getSnapshotIdentifier() == null ^ this.getSnapshotIdentifier() == null)
             return false;
-        if (other.getSnapshotIdentifier() != null
-                && other.getSnapshotIdentifier().equals(
-                        this.getSnapshotIdentifier()) == false)
+        if (other.getSnapshotIdentifier() != null && other.getSnapshotIdentifier().equals(this.getSnapshotIdentifier()) == false)
             return false;
-        if (other.getSourceDatabaseName() == null
-                ^ this.getSourceDatabaseName() == null)
+        if (other.getSourceDatabaseName() == null ^ this.getSourceDatabaseName() == null)
             return false;
-        if (other.getSourceDatabaseName() != null
-                && other.getSourceDatabaseName().equals(
-                        this.getSourceDatabaseName()) == false)
+        if (other.getSourceDatabaseName() != null && other.getSourceDatabaseName().equals(this.getSourceDatabaseName()) == false)
             return false;
-        if (other.getSourceSchemaName() == null
-                ^ this.getSourceSchemaName() == null)
+        if (other.getSourceSchemaName() == null ^ this.getSourceSchemaName() == null)
             return false;
-        if (other.getSourceSchemaName() != null
-                && other.getSourceSchemaName().equals(
-                        this.getSourceSchemaName()) == false)
+        if (other.getSourceSchemaName() != null && other.getSourceSchemaName().equals(this.getSourceSchemaName()) == false)
             return false;
-        if (other.getSourceTableName() == null
-                ^ this.getSourceTableName() == null)
+        if (other.getSourceTableName() == null ^ this.getSourceTableName() == null)
             return false;
-        if (other.getSourceTableName() != null
-                && other.getSourceTableName().equals(this.getSourceTableName()) == false)
+        if (other.getSourceTableName() != null && other.getSourceTableName().equals(this.getSourceTableName()) == false)
             return false;
-        if (other.getTargetDatabaseName() == null
-                ^ this.getTargetDatabaseName() == null)
+        if (other.getTargetDatabaseName() == null ^ this.getTargetDatabaseName() == null)
             return false;
-        if (other.getTargetDatabaseName() != null
-                && other.getTargetDatabaseName().equals(
-                        this.getTargetDatabaseName()) == false)
+        if (other.getTargetDatabaseName() != null && other.getTargetDatabaseName().equals(this.getTargetDatabaseName()) == false)
             return false;
-        if (other.getTargetSchemaName() == null
-                ^ this.getTargetSchemaName() == null)
+        if (other.getTargetSchemaName() == null ^ this.getTargetSchemaName() == null)
             return false;
-        if (other.getTargetSchemaName() != null
-                && other.getTargetSchemaName().equals(
-                        this.getTargetSchemaName()) == false)
+        if (other.getTargetSchemaName() != null && other.getTargetSchemaName().equals(this.getTargetSchemaName()) == false)
             return false;
         if (other.getNewTableName() == null ^ this.getNewTableName() == null)
             return false;
-        if (other.getNewTableName() != null
-                && other.getNewTableName().equals(this.getNewTableName()) == false)
+        if (other.getNewTableName() != null && other.getNewTableName().equals(this.getNewTableName()) == false)
             return false;
         return true;
     }
@@ -968,57 +862,20 @@ public class TableRestoreStatus implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getTableRestoreRequestId() == null) ? 0
-                        : getTableRestoreRequestId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRequestTime() == null) ? 0 : getRequestTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProgressInMegaBytes() == null) ? 0
-                        : getProgressInMegaBytes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTotalDataInMegaBytes() == null) ? 0
-                        : getTotalDataInMegaBytes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClusterIdentifier() == null) ? 0
-                        : getClusterIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotIdentifier() == null) ? 0
-                        : getSnapshotIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceDatabaseName() == null) ? 0
-                        : getSourceDatabaseName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceSchemaName() == null) ? 0 : getSourceSchemaName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceTableName() == null) ? 0 : getSourceTableName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTargetDatabaseName() == null) ? 0
-                        : getTargetDatabaseName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTargetSchemaName() == null) ? 0 : getTargetSchemaName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNewTableName() == null) ? 0 : getNewTableName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getTableRestoreRequestId() == null) ? 0 : getTableRestoreRequestId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getRequestTime() == null) ? 0 : getRequestTime().hashCode());
+        hashCode = prime * hashCode + ((getProgressInMegaBytes() == null) ? 0 : getProgressInMegaBytes().hashCode());
+        hashCode = prime * hashCode + ((getTotalDataInMegaBytes() == null) ? 0 : getTotalDataInMegaBytes().hashCode());
+        hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotIdentifier() == null) ? 0 : getSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSourceDatabaseName() == null) ? 0 : getSourceDatabaseName().hashCode());
+        hashCode = prime * hashCode + ((getSourceSchemaName() == null) ? 0 : getSourceSchemaName().hashCode());
+        hashCode = prime * hashCode + ((getSourceTableName() == null) ? 0 : getSourceTableName().hashCode());
+        hashCode = prime * hashCode + ((getTargetDatabaseName() == null) ? 0 : getTargetDatabaseName().hashCode());
+        hashCode = prime * hashCode + ((getTargetSchemaName() == null) ? 0 : getTargetSchemaName().hashCode());
+        hashCode = prime * hashCode + ((getNewTableName() == null) ? 0 : getNewTableName().hashCode());
         return hashCode;
     }
 
@@ -1027,9 +884,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
         try {
             return (TableRestoreStatus) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

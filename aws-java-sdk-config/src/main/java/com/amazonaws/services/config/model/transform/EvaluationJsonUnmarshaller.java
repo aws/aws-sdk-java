@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Evaluation JSON Unmarshaller
  */
-public class EvaluationJsonUnmarshaller implements
-        Unmarshaller<Evaluation, JsonUnmarshallerContext> {
+public class EvaluationJsonUnmarshaller implements Unmarshaller<Evaluation, JsonUnmarshallerContext> {
 
-    public Evaluation unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public Evaluation unmarshall(JsonUnmarshallerContext context) throws Exception {
         Evaluation evaluation = new Evaluation();
 
         int originalDepth = context.getCurrentDepth();
@@ -51,36 +47,28 @@ public class EvaluationJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("ComplianceResourceType",
-                        targetDepth)) {
+                if (context.testExpression("ComplianceResourceType", targetDepth)) {
                     context.nextToken();
-                    evaluation.setComplianceResourceType(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    evaluation.setComplianceResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComplianceResourceId", targetDepth)) {
                     context.nextToken();
-                    evaluation.setComplianceResourceId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    evaluation.setComplianceResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComplianceType", targetDepth)) {
                     context.nextToken();
-                    evaluation.setComplianceType(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    evaluation.setComplianceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Annotation", targetDepth)) {
                     context.nextToken();
-                    evaluation.setAnnotation(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    evaluation.setAnnotation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrderingTimestamp", targetDepth)) {
                     context.nextToken();
-                    evaluation.setOrderingTimestamp(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    evaluation.setOrderingTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

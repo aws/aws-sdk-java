@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the TransferCertificate operation.
  * </p>
  */
-public class TransferCertificateRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class TransferCertificateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -77,8 +73,7 @@ public class TransferCertificateRequest extends
      * 
      * @param certificateId
      *        The ID of the certificate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TransferCertificateRequest withCertificateId(String certificateId) {
@@ -118,12 +113,10 @@ public class TransferCertificateRequest extends
      * 
      * @param targetAwsAccount
      *        The AWS account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TransferCertificateRequest withTargetAwsAccount(
-            String targetAwsAccount) {
+    public TransferCertificateRequest withTargetAwsAccount(String targetAwsAccount) {
         setTargetAwsAccount(targetAwsAccount);
         return this;
     }
@@ -160,8 +153,7 @@ public class TransferCertificateRequest extends
      * 
      * @param transferMessage
      *        The transfer message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TransferCertificateRequest withTransferMessage(String transferMessage) {
@@ -170,8 +162,7 @@ public class TransferCertificateRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -203,21 +194,15 @@ public class TransferCertificateRequest extends
         TransferCertificateRequest other = (TransferCertificateRequest) obj;
         if (other.getCertificateId() == null ^ this.getCertificateId() == null)
             return false;
-        if (other.getCertificateId() != null
-                && other.getCertificateId().equals(this.getCertificateId()) == false)
+        if (other.getCertificateId() != null && other.getCertificateId().equals(this.getCertificateId()) == false)
             return false;
-        if (other.getTargetAwsAccount() == null
-                ^ this.getTargetAwsAccount() == null)
+        if (other.getTargetAwsAccount() == null ^ this.getTargetAwsAccount() == null)
             return false;
-        if (other.getTargetAwsAccount() != null
-                && other.getTargetAwsAccount().equals(
-                        this.getTargetAwsAccount()) == false)
+        if (other.getTargetAwsAccount() != null && other.getTargetAwsAccount().equals(this.getTargetAwsAccount()) == false)
             return false;
-        if (other.getTransferMessage() == null
-                ^ this.getTransferMessage() == null)
+        if (other.getTransferMessage() == null ^ this.getTransferMessage() == null)
             return false;
-        if (other.getTransferMessage() != null
-                && other.getTransferMessage().equals(this.getTransferMessage()) == false)
+        if (other.getTransferMessage() != null && other.getTransferMessage().equals(this.getTransferMessage()) == false)
             return false;
         return true;
     }
@@ -227,18 +212,9 @@ public class TransferCertificateRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCertificateId() == null) ? 0 : getCertificateId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTargetAwsAccount() == null) ? 0 : getTargetAwsAccount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTransferMessage() == null) ? 0 : getTransferMessage()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getCertificateId() == null) ? 0 : getCertificateId().hashCode());
+        hashCode = prime * hashCode + ((getTargetAwsAccount() == null) ? 0 : getTargetAwsAccount().hashCode());
+        hashCode = prime * hashCode + ((getTransferMessage() == null) ? 0 : getTransferMessage().hashCode());
         return hashCode;
     }
 

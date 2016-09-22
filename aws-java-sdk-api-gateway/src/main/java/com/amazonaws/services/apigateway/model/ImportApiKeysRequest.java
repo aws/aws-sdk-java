@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -19,64 +17,55 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The POST request to import API keys from an external source, such as a
- * CSV-formatted file.
+ * The POST request to import API keys from an external source, such as a CSV-formatted file.
  * </p>
  */
-public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The payload of the POST request to import API keys. For the payload
-     * format, see <a href=
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html"
-     * >API Key File Format</a>.
+     * The payload of the POST request to import API keys. For the payload format, see <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     * Format</a>.
      * </p>
      */
     private java.nio.ByteBuffer body;
     /**
      * <p>
-     * A query parameter to specify the input format to imported API keys.
-     * Currently, only the <code>csv</code> format is supported.
+     * A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format
+     * is supported.
      * </p>
      */
     private String format;
     /**
      * <p>
-     * A query parameter to indicate whether to rollback <a>ApiKey</a>
-     * importation (<code>true</code>) or not (<code>false</code>) when error is
-     * encountered.
+     * A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     * <code>false</code>) when error is encountered.
      * </p>
      */
     private Boolean failOnWarnings;
 
     /**
      * <p>
-     * The payload of the POST request to import API keys. For the payload
-     * format, see <a href=
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html"
-     * >API Key File Format</a>.
+     * The payload of the POST request to import API keys. For the payload format, see <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     * Format</a>.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending
-     * this request to AWS service by default. Users of the SDK should not
-     * perform Base64 encoding on this field.
+     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
-     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
-     * content or position of the byte buffer will be seen by all objects that
-     * have a reference to this object. It is recommended to call
-     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
-     * reading from the buffer. This behavior will be changed in a future major
-     * version of the SDK.
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param body
-     *        The payload of the POST request to import API keys. For the
-     *        payload format, see <a href=
-     *        "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html"
-     *        >API Key File Format</a>.
+     *        The payload of the POST request to import API keys. For the payload format, see <a
+     *        href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     *        Format</a>.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -85,26 +74,21 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The payload of the POST request to import API keys. For the payload
-     * format, see <a href=
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html"
-     * >API Key File Format</a>.
+     * The payload of the POST request to import API keys. For the payload format, see <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     * Format</a>.
      * </p>
      * <p>
-     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
-     * changes their {@code position}. We recommend using
-     * {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view
-     * of the buffer with an independent {@code position}, and calling
-     * {@code get} methods on this rather than directly on the returned
-     * {@code ByteBuffer}. Doing so will ensure that anyone else using the
-     * {@code ByteBuffer} will not be affected by changes to the {@code position}
-     * .
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
      * </p>
      * 
-     * @return The payload of the POST request to import API keys. For the
-     *         payload format, see <a href=
-     *         "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html"
-     *         >API Key File Format</a>.
+     * @return The payload of the POST request to import API keys. For the payload format, see <a
+     *         href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     *         Format</a>.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -113,19 +97,16 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The payload of the POST request to import API keys. For the payload
-     * format, see <a href=
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html"
-     * >API Key File Format</a>.
+     * The payload of the POST request to import API keys. For the payload format, see <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     * Format</a>.
      * </p>
      * 
      * @param body
-     *        The payload of the POST request to import API keys. For the
-     *        payload format, see <a href=
-     *        "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html"
-     *        >API Key File Format</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The payload of the POST request to import API keys. For the payload format, see <a
+     *        href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     *        Format</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportApiKeysRequest withBody(java.nio.ByteBuffer body) {
@@ -135,13 +116,13 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A query parameter to specify the input format to imported API keys.
-     * Currently, only the <code>csv</code> format is supported.
+     * A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format
+     * is supported.
      * </p>
      * 
      * @param format
-     *        A query parameter to specify the input format to imported API
-     *        keys. Currently, only the <code>csv</code> format is supported.
+     *        A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code>
+     *        format is supported.
      * @see ApiKeysFormat
      */
 
@@ -151,12 +132,12 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A query parameter to specify the input format to imported API keys.
-     * Currently, only the <code>csv</code> format is supported.
+     * A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format
+     * is supported.
      * </p>
      * 
-     * @return A query parameter to specify the input format to imported API
-     *         keys. Currently, only the <code>csv</code> format is supported.
+     * @return A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code>
+     *         format is supported.
      * @see ApiKeysFormat
      */
 
@@ -166,15 +147,14 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A query parameter to specify the input format to imported API keys.
-     * Currently, only the <code>csv</code> format is supported.
+     * A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format
+     * is supported.
      * </p>
      * 
      * @param format
-     *        A query parameter to specify the input format to imported API
-     *        keys. Currently, only the <code>csv</code> format is supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code>
+     *        format is supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApiKeysFormat
      */
 
@@ -185,13 +165,13 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A query parameter to specify the input format to imported API keys.
-     * Currently, only the <code>csv</code> format is supported.
+     * A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format
+     * is supported.
      * </p>
      * 
      * @param format
-     *        A query parameter to specify the input format to imported API
-     *        keys. Currently, only the <code>csv</code> format is supported.
+     *        A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code>
+     *        format is supported.
      * @see ApiKeysFormat
      */
 
@@ -201,15 +181,14 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A query parameter to specify the input format to imported API keys.
-     * Currently, only the <code>csv</code> format is supported.
+     * A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format
+     * is supported.
      * </p>
      * 
      * @param format
-     *        A query parameter to specify the input format to imported API
-     *        keys. Currently, only the <code>csv</code> format is supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code>
+     *        format is supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApiKeysFormat
      */
 
@@ -220,15 +199,13 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A query parameter to indicate whether to rollback <a>ApiKey</a>
-     * importation (<code>true</code>) or not (<code>false</code>) when error is
-     * encountered.
+     * A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     * <code>false</code>) when error is encountered.
      * </p>
      * 
      * @param failOnWarnings
-     *        A query parameter to indicate whether to rollback <a>ApiKey</a>
-     *        importation (<code>true</code>) or not (<code>false</code>) when
-     *        error is encountered.
+     *        A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     *        <code>false</code>) when error is encountered.
      */
 
     public void setFailOnWarnings(Boolean failOnWarnings) {
@@ -237,14 +214,12 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A query parameter to indicate whether to rollback <a>ApiKey</a>
-     * importation (<code>true</code>) or not (<code>false</code>) when error is
-     * encountered.
+     * A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     * <code>false</code>) when error is encountered.
      * </p>
      * 
-     * @return A query parameter to indicate whether to rollback <a>ApiKey</a>
-     *         importation (<code>true</code>) or not (<code>false</code>) when
-     *         error is encountered.
+     * @return A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     *         <code>false</code>) when error is encountered.
      */
 
     public Boolean getFailOnWarnings() {
@@ -253,17 +228,14 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A query parameter to indicate whether to rollback <a>ApiKey</a>
-     * importation (<code>true</code>) or not (<code>false</code>) when error is
-     * encountered.
+     * A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     * <code>false</code>) when error is encountered.
      * </p>
      * 
      * @param failOnWarnings
-     *        A query parameter to indicate whether to rollback <a>ApiKey</a>
-     *        importation (<code>true</code>) or not (<code>false</code>) when
-     *        error is encountered.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     *        <code>false</code>) when error is encountered.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportApiKeysRequest withFailOnWarnings(Boolean failOnWarnings) {
@@ -273,14 +245,12 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A query parameter to indicate whether to rollback <a>ApiKey</a>
-     * importation (<code>true</code>) or not (<code>false</code>) when error is
-     * encountered.
+     * A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     * <code>false</code>) when error is encountered.
      * </p>
      * 
-     * @return A query parameter to indicate whether to rollback <a>ApiKey</a>
-     *         importation (<code>true</code>) or not (<code>false</code>) when
-     *         error is encountered.
+     * @return A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (
+     *         <code>false</code>) when error is encountered.
      */
 
     public Boolean isFailOnWarnings() {
@@ -288,8 +258,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -321,19 +290,15 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
         ImportApiKeysRequest other = (ImportApiKeysRequest) obj;
         if (other.getBody() == null ^ this.getBody() == null)
             return false;
-        if (other.getBody() != null
-                && other.getBody().equals(this.getBody()) == false)
+        if (other.getBody() != null && other.getBody().equals(this.getBody()) == false)
             return false;
         if (other.getFormat() == null ^ this.getFormat() == null)
             return false;
-        if (other.getFormat() != null
-                && other.getFormat().equals(this.getFormat()) == false)
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
             return false;
-        if (other.getFailOnWarnings() == null
-                ^ this.getFailOnWarnings() == null)
+        if (other.getFailOnWarnings() == null ^ this.getFailOnWarnings() == null)
             return false;
-        if (other.getFailOnWarnings() != null
-                && other.getFailOnWarnings().equals(this.getFailOnWarnings()) == false)
+        if (other.getFailOnWarnings() != null && other.getFailOnWarnings().equals(this.getFailOnWarnings()) == false)
             return false;
         return true;
     }
@@ -343,14 +308,9 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getBody() == null) ? 0 : getBody().hashCode());
-        hashCode = prime * hashCode
-                + ((getFormat() == null) ? 0 : getFormat().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFailOnWarnings() == null) ? 0 : getFailOnWarnings()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
+        hashCode = prime * hashCode + ((getFailOnWarnings() == null) ? 0 : getFailOnWarnings().hashCode());
         return hashCode;
     }
 

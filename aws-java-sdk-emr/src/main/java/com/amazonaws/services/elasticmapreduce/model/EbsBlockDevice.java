@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -18,17 +16,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Configuration of requested EBS block device associated with the instance
- * group.
+ * Configuration of requested EBS block device associated with the instance group.
  * </p>
  */
 public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size(GiB) that
-     * will be requested for the EBS volume attached to an EC2 instance in the
-     * cluster.
+     * EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume
+     * attached to an EC2 instance in the cluster.
      * </p>
      */
     private VolumeSpecification volumeSpecification;
@@ -41,15 +37,13 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size(GiB) that
-     * will be requested for the EBS volume attached to an EC2 instance in the
-     * cluster.
+     * EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume
+     * attached to an EC2 instance in the cluster.
      * </p>
      * 
      * @param volumeSpecification
-     *        EBS volume specifications such as volume type, IOPS, and size(GiB)
-     *        that will be requested for the EBS volume attached to an EC2
-     *        instance in the cluster.
+     *        EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS
+     *        volume attached to an EC2 instance in the cluster.
      */
 
     public void setVolumeSpecification(VolumeSpecification volumeSpecification) {
@@ -58,14 +52,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size(GiB) that
-     * will be requested for the EBS volume attached to an EC2 instance in the
-     * cluster.
+     * EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume
+     * attached to an EC2 instance in the cluster.
      * </p>
      * 
-     * @return EBS volume specifications such as volume type, IOPS, and
-     *         size(GiB) that will be requested for the EBS volume attached to
-     *         an EC2 instance in the cluster.
+     * @return EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS
+     *         volume attached to an EC2 instance in the cluster.
      */
 
     public VolumeSpecification getVolumeSpecification() {
@@ -74,21 +66,17 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size(GiB) that
-     * will be requested for the EBS volume attached to an EC2 instance in the
-     * cluster.
+     * EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume
+     * attached to an EC2 instance in the cluster.
      * </p>
      * 
      * @param volumeSpecification
-     *        EBS volume specifications such as volume type, IOPS, and size(GiB)
-     *        that will be requested for the EBS volume attached to an EC2
-     *        instance in the cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS
+     *        volume attached to an EC2 instance in the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EbsBlockDevice withVolumeSpecification(
-            VolumeSpecification volumeSpecification) {
+    public EbsBlockDevice withVolumeSpecification(VolumeSpecification volumeSpecification) {
         setVolumeSpecification(volumeSpecification);
         return this;
     }
@@ -111,8 +99,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * The device name that is exposed to the instance, such as /dev/sdh.
      * </p>
      * 
-     * @return The device name that is exposed to the instance, such as
-     *         /dev/sdh.
+     * @return The device name that is exposed to the instance, such as /dev/sdh.
      */
 
     public String getDevice() {
@@ -126,8 +113,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * 
      * @param device
      *        The device name that is exposed to the instance, such as /dev/sdh.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EbsBlockDevice withDevice(String device) {
@@ -136,8 +122,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -165,17 +150,13 @@ public class EbsBlockDevice implements Serializable, Cloneable {
         if (obj instanceof EbsBlockDevice == false)
             return false;
         EbsBlockDevice other = (EbsBlockDevice) obj;
-        if (other.getVolumeSpecification() == null
-                ^ this.getVolumeSpecification() == null)
+        if (other.getVolumeSpecification() == null ^ this.getVolumeSpecification() == null)
             return false;
-        if (other.getVolumeSpecification() != null
-                && other.getVolumeSpecification().equals(
-                        this.getVolumeSpecification()) == false)
+        if (other.getVolumeSpecification() != null && other.getVolumeSpecification().equals(this.getVolumeSpecification()) == false)
             return false;
         if (other.getDevice() == null ^ this.getDevice() == null)
             return false;
-        if (other.getDevice() != null
-                && other.getDevice().equals(this.getDevice()) == false)
+        if (other.getDevice() != null && other.getDevice().equals(this.getDevice()) == false)
             return false;
         return true;
     }
@@ -185,12 +166,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getVolumeSpecification() == null) ? 0
-                        : getVolumeSpecification().hashCode());
-        hashCode = prime * hashCode
-                + ((getDevice() == null) ? 0 : getDevice().hashCode());
+        hashCode = prime * hashCode + ((getVolumeSpecification() == null) ? 0 : getVolumeSpecification().hashCode());
+        hashCode = prime * hashCode + ((getDevice() == null) ? 0 : getDevice().hashCode());
         return hashCode;
     }
 
@@ -199,9 +176,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
         try {
             return (EbsBlockDevice) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

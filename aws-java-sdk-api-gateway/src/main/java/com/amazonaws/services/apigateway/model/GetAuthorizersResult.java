@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -20,13 +18,11 @@ import java.io.Serializable;
  * <p>
  * Represents a collection of <a>Authorizer</a> resources.
  * </p>
- * <div class="seeAlso"> <a href=
- * "http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html"
- * >Enable custom authorization</a> </div>
+ * <div class="seeAlso"> <a
+ * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable custom
+ * authorization</a> </div>
  */
-public class GetAuthorizersResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetAuthorizersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String position;
     /**
@@ -54,8 +50,7 @@ public class GetAuthorizersResult extends
 
     /**
      * @param position
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAuthorizersResult withPosition(String position) {
@@ -68,8 +63,7 @@ public class GetAuthorizersResult extends
      * Gets the current list of <a>Authorizer</a> resources in the collection.
      * </p>
      * 
-     * @return Gets the current list of <a>Authorizer</a> resources in the
-     *         collection.
+     * @return Gets the current list of <a>Authorizer</a> resources in the collection.
      */
 
     public java.util.List<Authorizer> getItems() {
@@ -82,8 +76,7 @@ public class GetAuthorizersResult extends
      * </p>
      * 
      * @param items
-     *        Gets the current list of <a>Authorizer</a> resources in the
-     *        collection.
+     *        Gets the current list of <a>Authorizer</a> resources in the collection.
      */
 
     public void setItems(java.util.Collection<Authorizer> items) {
@@ -100,17 +93,14 @@ public class GetAuthorizersResult extends
      * Gets the current list of <a>Authorizer</a> resources in the collection.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setItems(java.util.Collection)} or
-     * {@link #withItems(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param items
-     *        Gets the current list of <a>Authorizer</a> resources in the
-     *        collection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Gets the current list of <a>Authorizer</a> resources in the collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAuthorizersResult withItems(Authorizer... items) {
@@ -129,10 +119,8 @@ public class GetAuthorizersResult extends
      * </p>
      * 
      * @param items
-     *        Gets the current list of <a>Authorizer</a> resources in the
-     *        collection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Gets the current list of <a>Authorizer</a> resources in the collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAuthorizersResult withItems(java.util.Collection<Authorizer> items) {
@@ -141,8 +129,7 @@ public class GetAuthorizersResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -172,13 +159,11 @@ public class GetAuthorizersResult extends
         GetAuthorizersResult other = (GetAuthorizersResult) obj;
         if (other.getPosition() == null ^ this.getPosition() == null)
             return false;
-        if (other.getPosition() != null
-                && other.getPosition().equals(this.getPosition()) == false)
+        if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
             return false;
         if (other.getItems() == null ^ this.getItems() == null)
             return false;
-        if (other.getItems() != null
-                && other.getItems().equals(this.getItems()) == false)
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false)
             return false;
         return true;
     }
@@ -188,10 +173,8 @@ public class GetAuthorizersResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPosition() == null) ? 0 : getPosition().hashCode());
-        hashCode = prime * hashCode
-                + ((getItems() == null) ? 0 : getItems().hashCode());
+        hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());
         return hashCode;
     }
 
@@ -200,9 +183,7 @@ public class GetAuthorizersResult extends
         try {
             return (GetAuthorizersResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

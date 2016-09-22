@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * EnableLoggingResult StAX Unmarshaller
  */
-public class EnableLoggingResultStaxUnmarshaller implements
-        Unmarshaller<EnableLoggingResult, StaxUnmarshallerContext> {
+public class EnableLoggingResultStaxUnmarshaller implements Unmarshaller<EnableLoggingResult, StaxUnmarshallerContext> {
 
-    public EnableLoggingResult unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public EnableLoggingResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         EnableLoggingResult enableLoggingResult = new EnableLoggingResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,42 +46,32 @@ public class EnableLoggingResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("LoggingEnabled", targetDepth)) {
-                    enableLoggingResult
-                            .setLoggingEnabled(BooleanStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    enableLoggingResult.setLoggingEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("BucketName", targetDepth)) {
-                    enableLoggingResult.setBucketName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    enableLoggingResult.setBucketName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("S3KeyPrefix", targetDepth)) {
-                    enableLoggingResult.setS3KeyPrefix(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    enableLoggingResult.setS3KeyPrefix(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("LastSuccessfulDeliveryTime",
-                        targetDepth)) {
-                    enableLoggingResult
-                            .setLastSuccessfulDeliveryTime(DateStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("LastSuccessfulDeliveryTime", targetDepth)) {
+                    enableLoggingResult.setLastSuccessfulDeliveryTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LastFailureTime", targetDepth)) {
-                    enableLoggingResult.setLastFailureTime(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    enableLoggingResult.setLastFailureTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LastFailureMessage", targetDepth)) {
-                    enableLoggingResult
-                            .setLastFailureMessage(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    enableLoggingResult.setLastFailureMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

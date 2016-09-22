@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model;
 
@@ -20,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /** The name of the domain in which to perform the operation. */
     private String domainName;
@@ -30,26 +27,22 @@ public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
     /** The names of the attributes. */
     private com.amazonaws.internal.SdkInternalList<String> attributeNames;
     /**
-     * Determines whether or not strong consistency should be enforced when data
-     * is read from SimpleDB. If <code>true</code>, any data previously written
-     * to SimpleDB will be returned. Otherwise, results will be consistent
-     * eventually, and the client may not see data that was written immediately
-     * before your read.
+     * Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If
+     * <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be
+     * consistent eventually, and the client may not see data that was written immediately before your read.
      */
     private Boolean consistentRead;
 
     /**
-     * Default constructor for GetAttributesRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for GetAttributesRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public GetAttributesRequest() {
     }
 
     /**
-     * Constructs a new GetAttributesRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new GetAttributesRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param domainName
      *        The name of the domain in which to perform the operation.
@@ -87,8 +80,7 @@ public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param domainName
      *        The name of the domain in which to perform the operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAttributesRequest withDomainName(String domainName) {
@@ -122,8 +114,7 @@ public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param itemName
      *        The name of the item.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAttributesRequest withItemName(String itemName) {
@@ -157,29 +148,25 @@ public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
             return;
         }
 
-        this.attributeNames = new com.amazonaws.internal.SdkInternalList<String>(
-                attributeNames);
+        this.attributeNames = new com.amazonaws.internal.SdkInternalList<String>(attributeNames);
     }
 
     /**
      * The names of the attributes.
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttributeNames(java.util.Collection)} or
-     * {@link #withAttributeNames(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributeNames(java.util.Collection)} or {@link #withAttributeNames(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param attributeNames
      *        The names of the attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAttributesRequest withAttributeNames(String... attributeNames) {
         if (this.attributeNames == null) {
-            setAttributeNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    attributeNames.length));
+            setAttributeNames(new com.amazonaws.internal.SdkInternalList<String>(attributeNames.length));
         }
         for (String ele : attributeNames) {
             this.attributeNames.add(ele);
@@ -192,29 +179,23 @@ public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param attributeNames
      *        The names of the attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetAttributesRequest withAttributeNames(
-            java.util.Collection<String> attributeNames) {
+    public GetAttributesRequest withAttributeNames(java.util.Collection<String> attributeNames) {
         setAttributeNames(attributeNames);
         return this;
     }
 
     /**
-     * Determines whether or not strong consistency should be enforced when data
-     * is read from SimpleDB. If <code>true</code>, any data previously written
-     * to SimpleDB will be returned. Otherwise, results will be consistent
-     * eventually, and the client may not see data that was written immediately
-     * before your read.
+     * Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If
+     * <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be
+     * consistent eventually, and the client may not see data that was written immediately before your read.
      * 
      * @param consistentRead
-     *        Determines whether or not strong consistency should be enforced
-     *        when data is read from SimpleDB. If <code>true</code>, any data
-     *        previously written to SimpleDB will be returned. Otherwise,
-     *        results will be consistent eventually, and the client may not see
-     *        data that was written immediately before your read.
+     *        Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If
+     *        <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be
+     *        consistent eventually, and the client may not see data that was written immediately before your read.
      */
 
     public void setConsistentRead(Boolean consistentRead) {
@@ -222,17 +203,13 @@ public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Determines whether or not strong consistency should be enforced when data
-     * is read from SimpleDB. If <code>true</code>, any data previously written
-     * to SimpleDB will be returned. Otherwise, results will be consistent
-     * eventually, and the client may not see data that was written immediately
-     * before your read.
+     * Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If
+     * <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be
+     * consistent eventually, and the client may not see data that was written immediately before your read.
      * 
-     * @return Determines whether or not strong consistency should be enforced
-     *         when data is read from SimpleDB. If <code>true</code>, any data
-     *         previously written to SimpleDB will be returned. Otherwise,
-     *         results will be consistent eventually, and the client may not see
-     *         data that was written immediately before your read.
+     * @return Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If
+     *         <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be
+     *         consistent eventually, and the client may not see data that was written immediately before your read.
      */
 
     public Boolean getConsistentRead() {
@@ -240,20 +217,15 @@ public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Determines whether or not strong consistency should be enforced when data
-     * is read from SimpleDB. If <code>true</code>, any data previously written
-     * to SimpleDB will be returned. Otherwise, results will be consistent
-     * eventually, and the client may not see data that was written immediately
-     * before your read.
+     * Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If
+     * <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be
+     * consistent eventually, and the client may not see data that was written immediately before your read.
      * 
      * @param consistentRead
-     *        Determines whether or not strong consistency should be enforced
-     *        when data is read from SimpleDB. If <code>true</code>, any data
-     *        previously written to SimpleDB will be returned. Otherwise,
-     *        results will be consistent eventually, and the client may not see
-     *        data that was written immediately before your read.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If
+     *        <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be
+     *        consistent eventually, and the client may not see data that was written immediately before your read.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAttributesRequest withConsistentRead(Boolean consistentRead) {
@@ -262,17 +234,13 @@ public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Determines whether or not strong consistency should be enforced when data
-     * is read from SimpleDB. If <code>true</code>, any data previously written
-     * to SimpleDB will be returned. Otherwise, results will be consistent
-     * eventually, and the client may not see data that was written immediately
-     * before your read.
+     * Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If
+     * <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be
+     * consistent eventually, and the client may not see data that was written immediately before your read.
      * 
-     * @return Determines whether or not strong consistency should be enforced
-     *         when data is read from SimpleDB. If <code>true</code>, any data
-     *         previously written to SimpleDB will be returned. Otherwise,
-     *         results will be consistent eventually, and the client may not see
-     *         data that was written immediately before your read.
+     * @return Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If
+     *         <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be
+     *         consistent eventually, and the client may not see data that was written immediately before your read.
      */
 
     public Boolean isConsistentRead() {
@@ -280,8 +248,7 @@ public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -315,25 +282,19 @@ public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
         GetAttributesRequest other = (GetAttributesRequest) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
         if (other.getItemName() == null ^ this.getItemName() == null)
             return false;
-        if (other.getItemName() != null
-                && other.getItemName().equals(this.getItemName()) == false)
+        if (other.getItemName() != null && other.getItemName().equals(this.getItemName()) == false)
             return false;
-        if (other.getAttributeNames() == null
-                ^ this.getAttributeNames() == null)
+        if (other.getAttributeNames() == null ^ this.getAttributeNames() == null)
             return false;
-        if (other.getAttributeNames() != null
-                && other.getAttributeNames().equals(this.getAttributeNames()) == false)
+        if (other.getAttributeNames() != null && other.getAttributeNames().equals(this.getAttributeNames()) == false)
             return false;
-        if (other.getConsistentRead() == null
-                ^ this.getConsistentRead() == null)
+        if (other.getConsistentRead() == null ^ this.getConsistentRead() == null)
             return false;
-        if (other.getConsistentRead() != null
-                && other.getConsistentRead().equals(this.getConsistentRead()) == false)
+        if (other.getConsistentRead() != null && other.getConsistentRead().equals(this.getConsistentRead()) == false)
             return false;
         return true;
     }
@@ -343,18 +304,10 @@ public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime * hashCode
-                + ((getItemName() == null) ? 0 : getItemName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttributeNames() == null) ? 0 : getAttributeNames()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConsistentRead() == null) ? 0 : getConsistentRead()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getItemName() == null) ? 0 : getItemName().hashCode());
+        hashCode = prime * hashCode + ((getAttributeNames() == null) ? 0 : getAttributeNames().hashCode());
+        hashCode = prime * hashCode + ((getConsistentRead() == null) ? 0 : getConsistentRead().hashCode());
         return hashCode;
     }
 

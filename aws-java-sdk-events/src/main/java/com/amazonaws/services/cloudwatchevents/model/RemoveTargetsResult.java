@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatchevents.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The result of the <a>RemoveTargets</a> operation.
  * </p>
  */
-public class RemoveTargetsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class RemoveTargetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -70,8 +66,7 @@ public class RemoveTargetsResult extends
      * 
      * @param failedEntryCount
      *        The number of failed entries.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTargetsResult withFailedEntryCount(Integer failedEntryCount) {
@@ -100,15 +95,13 @@ public class RemoveTargetsResult extends
      *        An array of failed target entries.
      */
 
-    public void setFailedEntries(
-            java.util.Collection<RemoveTargetsResultEntry> failedEntries) {
+    public void setFailedEntries(java.util.Collection<RemoveTargetsResultEntry> failedEntries) {
         if (failedEntries == null) {
             this.failedEntries = null;
             return;
         }
 
-        this.failedEntries = new java.util.ArrayList<RemoveTargetsResultEntry>(
-                failedEntries);
+        this.failedEntries = new java.util.ArrayList<RemoveTargetsResultEntry>(failedEntries);
     }
 
     /**
@@ -116,23 +109,19 @@ public class RemoveTargetsResult extends
      * An array of failed target entries.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFailedEntries(java.util.Collection)} or
-     * {@link #withFailedEntries(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFailedEntries(java.util.Collection)} or {@link #withFailedEntries(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param failedEntries
      *        An array of failed target entries.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RemoveTargetsResult withFailedEntries(
-            RemoveTargetsResultEntry... failedEntries) {
+    public RemoveTargetsResult withFailedEntries(RemoveTargetsResultEntry... failedEntries) {
         if (this.failedEntries == null) {
-            setFailedEntries(new java.util.ArrayList<RemoveTargetsResultEntry>(
-                    failedEntries.length));
+            setFailedEntries(new java.util.ArrayList<RemoveTargetsResultEntry>(failedEntries.length));
         }
         for (RemoveTargetsResultEntry ele : failedEntries) {
             this.failedEntries.add(ele);
@@ -147,19 +136,16 @@ public class RemoveTargetsResult extends
      * 
      * @param failedEntries
      *        An array of failed target entries.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RemoveTargetsResult withFailedEntries(
-            java.util.Collection<RemoveTargetsResultEntry> failedEntries) {
+    public RemoveTargetsResult withFailedEntries(java.util.Collection<RemoveTargetsResultEntry> failedEntries) {
         setFailedEntries(failedEntries);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -187,17 +173,13 @@ public class RemoveTargetsResult extends
         if (obj instanceof RemoveTargetsResult == false)
             return false;
         RemoveTargetsResult other = (RemoveTargetsResult) obj;
-        if (other.getFailedEntryCount() == null
-                ^ this.getFailedEntryCount() == null)
+        if (other.getFailedEntryCount() == null ^ this.getFailedEntryCount() == null)
             return false;
-        if (other.getFailedEntryCount() != null
-                && other.getFailedEntryCount().equals(
-                        this.getFailedEntryCount()) == false)
+        if (other.getFailedEntryCount() != null && other.getFailedEntryCount().equals(this.getFailedEntryCount()) == false)
             return false;
         if (other.getFailedEntries() == null ^ this.getFailedEntries() == null)
             return false;
-        if (other.getFailedEntries() != null
-                && other.getFailedEntries().equals(this.getFailedEntries()) == false)
+        if (other.getFailedEntries() != null && other.getFailedEntries().equals(this.getFailedEntries()) == false)
             return false;
         return true;
     }
@@ -207,14 +189,8 @@ public class RemoveTargetsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFailedEntryCount() == null) ? 0 : getFailedEntryCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFailedEntries() == null) ? 0 : getFailedEntries()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getFailedEntryCount() == null) ? 0 : getFailedEntryCount().hashCode());
+        hashCode = prime * hashCode + ((getFailedEntries() == null) ? 0 : getFailedEntries().hashCode());
         return hashCode;
     }
 
@@ -223,9 +199,7 @@ public class RemoveTargetsResult extends
         try {
             return (RemoveTargetsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

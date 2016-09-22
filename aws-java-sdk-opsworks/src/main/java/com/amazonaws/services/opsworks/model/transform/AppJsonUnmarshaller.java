@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -29,8 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * App JSON Unmarshaller
  */
-public class AppJsonUnmarshaller implements
-        Unmarshaller<App, JsonUnmarshallerContext> {
+public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerContext> {
 
     public App unmarshall(JsonUnmarshallerContext context) throws Exception {
         App app = new App();
@@ -52,82 +49,63 @@ public class AppJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppId", targetDepth)) {
                     context.nextToken();
-                    app.setAppId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    app.setAppId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
-                    app.setStackId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    app.setStackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Shortname", targetDepth)) {
                     context.nextToken();
-                    app.setShortname(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    app.setShortname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    app.setName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    app.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    app.setDescription(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    app.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSources", targetDepth)) {
                     context.nextToken();
-                    app.setDataSources(new ListUnmarshaller<DataSource>(
-                            DataSourceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    app.setDataSources(new ListUnmarshaller<DataSource>(DataSourceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    app.setType(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    app.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AppSource", targetDepth)) {
                     context.nextToken();
-                    app.setAppSource(SourceJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    app.setAppSource(SourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Domains", targetDepth)) {
                     context.nextToken();
-                    app.setDomains(new ListUnmarshaller<String>(context
-                            .getUnmarshaller(String.class)).unmarshall(context));
+                    app.setDomains(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("EnableSsl", targetDepth)) {
                     context.nextToken();
-                    app.setEnableSsl(context.getUnmarshaller(Boolean.class)
-                            .unmarshall(context));
+                    app.setEnableSsl(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SslConfiguration", targetDepth)) {
                     context.nextToken();
-                    app.setSslConfiguration(SslConfigurationJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    app.setSslConfiguration(SslConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
-                    app.setAttributes(new MapUnmarshaller<String, String>(
-                            context.getUnmarshaller(String.class), context
-                                    .getUnmarshaller(String.class))
+                    app.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    app.setCreatedAt(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    app.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
                     context.nextToken();
-                    app.setEnvironment(new ListUnmarshaller<EnvironmentVariable>(
-                            EnvironmentVariableJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    app.setEnvironment(new ListUnmarshaller<EnvironmentVariable>(EnvironmentVariableJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

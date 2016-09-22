@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -20,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -56,15 +53,14 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
     private String clusterIdentifier;
     /**
      * <p>
-     * Determines whether a final snapshot of the cluster is created before
-     * Amazon Redshift deletes the cluster. If <code>true</code>, a final
-     * cluster snapshot is not created. If <code>false</code>, a final cluster
-     * snapshot is created before the cluster is deleted.
+     * Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If
+     * <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is
+     * created before the cluster is deleted.
      * </p>
      * <note>
      * <p>
-     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if
-     * <i>SkipFinalClusterSnapshot</i> is <code>false</code>.
+     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
+     * <code>false</code>.
      * </p>
      * </note>
      * <p>
@@ -74,9 +70,8 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
     private Boolean skipFinalClusterSnapshot;
     /**
      * <p>
-     * The identifier of the final snapshot that is to be created immediately
-     * before deleting the cluster. If this parameter is provided,
-     * <i>SkipFinalClusterSnapshot</i> must be <code>false</code>.
+     * The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this
+     * parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>.
      * </p>
      * <p>
      * Constraints:
@@ -280,8 +275,7 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Cannot end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteClusterRequest withClusterIdentifier(String clusterIdentifier) {
@@ -291,15 +285,14 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Determines whether a final snapshot of the cluster is created before
-     * Amazon Redshift deletes the cluster. If <code>true</code>, a final
-     * cluster snapshot is not created. If <code>false</code>, a final cluster
-     * snapshot is created before the cluster is deleted.
+     * Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If
+     * <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is
+     * created before the cluster is deleted.
      * </p>
      * <note>
      * <p>
-     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if
-     * <i>SkipFinalClusterSnapshot</i> is <code>false</code>.
+     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
+     * <code>false</code>.
      * </p>
      * </note>
      * <p>
@@ -307,15 +300,12 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param skipFinalClusterSnapshot
-     *        Determines whether a final snapshot of the cluster is created
-     *        before Amazon Redshift deletes the cluster. If <code>true</code>,
-     *        a final cluster snapshot is not created. If <code>false</code>, a
-     *        final cluster snapshot is created before the cluster is deleted.
-     *        </p> <note>
+     *        Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster.
+     *        If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster
+     *        snapshot is created before the cluster is deleted. </p> <note>
      *        <p>
-     *        The <i>FinalClusterSnapshotIdentifier</i> parameter must be
-     *        specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>
-     *        .
+     *        The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i>
+     *        is <code>false</code>.
      *        </p>
      *        </note>
      *        <p>
@@ -328,30 +318,26 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Determines whether a final snapshot of the cluster is created before
-     * Amazon Redshift deletes the cluster. If <code>true</code>, a final
-     * cluster snapshot is not created. If <code>false</code>, a final cluster
-     * snapshot is created before the cluster is deleted.
+     * Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If
+     * <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is
+     * created before the cluster is deleted.
      * </p>
      * <note>
      * <p>
-     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if
-     * <i>SkipFinalClusterSnapshot</i> is <code>false</code>.
+     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
+     * <code>false</code>.
      * </p>
      * </note>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return Determines whether a final snapshot of the cluster is created
-     *         before Amazon Redshift deletes the cluster. If <code>true</code>,
-     *         a final cluster snapshot is not created. If <code>false</code>, a
-     *         final cluster snapshot is created before the cluster is deleted.
-     *         </p> <note>
+     * @return Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster.
+     *         If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster
+     *         snapshot is created before the cluster is deleted. </p> <note>
      *         <p>
-     *         The <i>FinalClusterSnapshotIdentifier</i> parameter must be
-     *         specified if <i>SkipFinalClusterSnapshot</i> is
-     *         <code>false</code>.
+     *         The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i>
+     *         is <code>false</code>.
      *         </p>
      *         </note>
      *         <p>
@@ -364,15 +350,14 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Determines whether a final snapshot of the cluster is created before
-     * Amazon Redshift deletes the cluster. If <code>true</code>, a final
-     * cluster snapshot is not created. If <code>false</code>, a final cluster
-     * snapshot is created before the cluster is deleted.
+     * Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If
+     * <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is
+     * created before the cluster is deleted.
      * </p>
      * <note>
      * <p>
-     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if
-     * <i>SkipFinalClusterSnapshot</i> is <code>false</code>.
+     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
+     * <code>false</code>.
      * </p>
      * </note>
      * <p>
@@ -380,55 +365,46 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param skipFinalClusterSnapshot
-     *        Determines whether a final snapshot of the cluster is created
-     *        before Amazon Redshift deletes the cluster. If <code>true</code>,
-     *        a final cluster snapshot is not created. If <code>false</code>, a
-     *        final cluster snapshot is created before the cluster is deleted.
-     *        </p> <note>
+     *        Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster.
+     *        If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster
+     *        snapshot is created before the cluster is deleted. </p> <note>
      *        <p>
-     *        The <i>FinalClusterSnapshotIdentifier</i> parameter must be
-     *        specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>
-     *        .
+     *        The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i>
+     *        is <code>false</code>.
      *        </p>
      *        </note>
      *        <p>
      *        Default: <code>false</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteClusterRequest withSkipFinalClusterSnapshot(
-            Boolean skipFinalClusterSnapshot) {
+    public DeleteClusterRequest withSkipFinalClusterSnapshot(Boolean skipFinalClusterSnapshot) {
         setSkipFinalClusterSnapshot(skipFinalClusterSnapshot);
         return this;
     }
 
     /**
      * <p>
-     * Determines whether a final snapshot of the cluster is created before
-     * Amazon Redshift deletes the cluster. If <code>true</code>, a final
-     * cluster snapshot is not created. If <code>false</code>, a final cluster
-     * snapshot is created before the cluster is deleted.
+     * Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If
+     * <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is
+     * created before the cluster is deleted.
      * </p>
      * <note>
      * <p>
-     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if
-     * <i>SkipFinalClusterSnapshot</i> is <code>false</code>.
+     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
+     * <code>false</code>.
      * </p>
      * </note>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return Determines whether a final snapshot of the cluster is created
-     *         before Amazon Redshift deletes the cluster. If <code>true</code>,
-     *         a final cluster snapshot is not created. If <code>false</code>, a
-     *         final cluster snapshot is created before the cluster is deleted.
-     *         </p> <note>
+     * @return Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster.
+     *         If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster
+     *         snapshot is created before the cluster is deleted. </p> <note>
      *         <p>
-     *         The <i>FinalClusterSnapshotIdentifier</i> parameter must be
-     *         specified if <i>SkipFinalClusterSnapshot</i> is
-     *         <code>false</code>.
+     *         The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i>
+     *         is <code>false</code>.
      *         </p>
      *         </note>
      *         <p>
@@ -441,9 +417,8 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the final snapshot that is to be created immediately
-     * before deleting the cluster. If this parameter is provided,
-     * <i>SkipFinalClusterSnapshot</i> must be <code>false</code>.
+     * The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this
+     * parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>.
      * </p>
      * <p>
      * Constraints:
@@ -467,10 +442,8 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param finalClusterSnapshotIdentifier
-     *        The identifier of the final snapshot that is to be created
-     *        immediately before deleting the cluster. If this parameter is
-     *        provided, <i>SkipFinalClusterSnapshot</i> must be
-     *        <code>false</code>. </p>
+     *        The identifier of the final snapshot that is to be created immediately before deleting the cluster. If
+     *        this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -492,16 +465,14 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      */
 
-    public void setFinalClusterSnapshotIdentifier(
-            String finalClusterSnapshotIdentifier) {
+    public void setFinalClusterSnapshotIdentifier(String finalClusterSnapshotIdentifier) {
         this.finalClusterSnapshotIdentifier = finalClusterSnapshotIdentifier;
     }
 
     /**
      * <p>
-     * The identifier of the final snapshot that is to be created immediately
-     * before deleting the cluster. If this parameter is provided,
-     * <i>SkipFinalClusterSnapshot</i> must be <code>false</code>.
+     * The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this
+     * parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>.
      * </p>
      * <p>
      * Constraints:
@@ -524,10 +495,8 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * 
-     * @return The identifier of the final snapshot that is to be created
-     *         immediately before deleting the cluster. If this parameter is
-     *         provided, <i>SkipFinalClusterSnapshot</i> must be
-     *         <code>false</code>. </p>
+     * @return The identifier of the final snapshot that is to be created immediately before deleting the cluster. If
+     *         this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -555,9 +524,8 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the final snapshot that is to be created immediately
-     * before deleting the cluster. If this parameter is provided,
-     * <i>SkipFinalClusterSnapshot</i> must be <code>false</code>.
+     * The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this
+     * parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>.
      * </p>
      * <p>
      * Constraints:
@@ -581,10 +549,8 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param finalClusterSnapshotIdentifier
-     *        The identifier of the final snapshot that is to be created
-     *        immediately before deleting the cluster. If this parameter is
-     *        provided, <i>SkipFinalClusterSnapshot</i> must be
-     *        <code>false</code>. </p>
+     *        The identifier of the final snapshot that is to be created immediately before deleting the cluster. If
+     *        this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -604,19 +570,16 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Cannot end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteClusterRequest withFinalClusterSnapshotIdentifier(
-            String finalClusterSnapshotIdentifier) {
+    public DeleteClusterRequest withFinalClusterSnapshotIdentifier(String finalClusterSnapshotIdentifier) {
         setFinalClusterSnapshotIdentifier(finalClusterSnapshotIdentifier);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -629,11 +592,9 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getClusterIdentifier() != null)
             sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
         if (getSkipFinalClusterSnapshot() != null)
-            sb.append("SkipFinalClusterSnapshot: "
-                    + getSkipFinalClusterSnapshot() + ",");
+            sb.append("SkipFinalClusterSnapshot: " + getSkipFinalClusterSnapshot() + ",");
         if (getFinalClusterSnapshotIdentifier() != null)
-            sb.append("FinalClusterSnapshotIdentifier: "
-                    + getFinalClusterSnapshotIdentifier());
+            sb.append("FinalClusterSnapshotIdentifier: " + getFinalClusterSnapshotIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -648,26 +609,18 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof DeleteClusterRequest == false)
             return false;
         DeleteClusterRequest other = (DeleteClusterRequest) obj;
-        if (other.getClusterIdentifier() == null
-                ^ this.getClusterIdentifier() == null)
+        if (other.getClusterIdentifier() == null ^ this.getClusterIdentifier() == null)
             return false;
-        if (other.getClusterIdentifier() != null
-                && other.getClusterIdentifier().equals(
-                        this.getClusterIdentifier()) == false)
+        if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false)
             return false;
-        if (other.getSkipFinalClusterSnapshot() == null
-                ^ this.getSkipFinalClusterSnapshot() == null)
+        if (other.getSkipFinalClusterSnapshot() == null ^ this.getSkipFinalClusterSnapshot() == null)
             return false;
-        if (other.getSkipFinalClusterSnapshot() != null
-                && other.getSkipFinalClusterSnapshot().equals(
-                        this.getSkipFinalClusterSnapshot()) == false)
+        if (other.getSkipFinalClusterSnapshot() != null && other.getSkipFinalClusterSnapshot().equals(this.getSkipFinalClusterSnapshot()) == false)
             return false;
-        if (other.getFinalClusterSnapshotIdentifier() == null
-                ^ this.getFinalClusterSnapshotIdentifier() == null)
+        if (other.getFinalClusterSnapshotIdentifier() == null ^ this.getFinalClusterSnapshotIdentifier() == null)
             return false;
         if (other.getFinalClusterSnapshotIdentifier() != null
-                && other.getFinalClusterSnapshotIdentifier().equals(
-                        this.getFinalClusterSnapshotIdentifier()) == false)
+                && other.getFinalClusterSnapshotIdentifier().equals(this.getFinalClusterSnapshotIdentifier()) == false)
             return false;
         return true;
     }
@@ -677,18 +630,9 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getClusterIdentifier() == null) ? 0
-                        : getClusterIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSkipFinalClusterSnapshot() == null) ? 0
-                        : getSkipFinalClusterSnapshot().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFinalClusterSnapshotIdentifier() == null) ? 0
-                        : getFinalClusterSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSkipFinalClusterSnapshot() == null) ? 0 : getSkipFinalClusterSnapshot().hashCode());
+        hashCode = prime * hashCode + ((getFinalClusterSnapshotIdentifier() == null) ? 0 : getFinalClusterSnapshotIdentifier().hashCode());
         return hashCode;
     }
 

@@ -175,6 +175,16 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
         realSQS.shutdown();
     }
 
+    /**
+     * Flushes all outstanding outbound requests. Calling this method will wait for
+     * the pending outbound tasks in the {@link QueueBuffer} to finish.
+     */
+    public void flush() {
+        for (QueueBuffer buffer : buffers.values()) {
+            buffer.flush();
+        }
+    }
+
     public Future<ChangeMessageVisibilityBatchResult> changeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest)
             throws AmazonServiceException, AmazonClientException {
         ResultConverter.appendUserAgent(changeMessageVisibilityBatchRequest, USER_AGENT);

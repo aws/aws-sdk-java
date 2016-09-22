@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * DeleteFleetRequest Marshaller
  */
-public class DeleteFleetRequestMarshaller implements
-        Marshaller<Request<DeleteFleetRequest>, DeleteFleetRequest> {
+public class DeleteFleetRequestMarshaller implements Marshaller<Request<DeleteFleetRequest>, DeleteFleetRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -44,16 +41,13 @@ public class DeleteFleetRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DeleteFleetRequest> marshall(
-            DeleteFleetRequest deleteFleetRequest) {
+    public Request<DeleteFleetRequest> marshall(DeleteFleetRequest deleteFleetRequest) {
 
         if (deleteFleetRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteFleetRequest> request = new DefaultRequest<DeleteFleetRequest>(
-                deleteFleetRequest, "AmazonGameLift");
+        Request<DeleteFleetRequest> request = new DefaultRequest<DeleteFleetRequest>(deleteFleetRequest, "AmazonGameLift");
         request.addHeader("X-Amz-Target", "GameLift.DeleteFleet");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -61,26 +55,22 @@ public class DeleteFleetRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (deleteFleetRequest.getFleetId() != null) {
-                jsonGenerator.writeFieldName("FleetId").writeValue(
-                        deleteFleetRequest.getFleetId());
+                jsonGenerator.writeFieldName("FleetId").writeValue(deleteFleetRequest.getFleetId());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

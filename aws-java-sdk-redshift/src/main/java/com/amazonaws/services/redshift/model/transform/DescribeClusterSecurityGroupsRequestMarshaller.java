@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model.transform;
 
@@ -31,40 +29,31 @@ import com.amazonaws.util.IdempotentUtils;
  * DescribeClusterSecurityGroupsRequest Marshaller
  */
 
-public class DescribeClusterSecurityGroupsRequestMarshaller
-        implements
+public class DescribeClusterSecurityGroupsRequestMarshaller implements
         Marshaller<Request<DescribeClusterSecurityGroupsRequest>, DescribeClusterSecurityGroupsRequest> {
 
-    public Request<DescribeClusterSecurityGroupsRequest> marshall(
-            DescribeClusterSecurityGroupsRequest describeClusterSecurityGroupsRequest) {
+    public Request<DescribeClusterSecurityGroupsRequest> marshall(DescribeClusterSecurityGroupsRequest describeClusterSecurityGroupsRequest) {
 
         if (describeClusterSecurityGroupsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeClusterSecurityGroupsRequest> request = new DefaultRequest<DescribeClusterSecurityGroupsRequest>(
-                describeClusterSecurityGroupsRequest, "AmazonRedshift");
+        Request<DescribeClusterSecurityGroupsRequest> request = new DefaultRequest<DescribeClusterSecurityGroupsRequest>(describeClusterSecurityGroupsRequest,
+                "AmazonRedshift");
         request.addParameter("Action", "DescribeClusterSecurityGroups");
         request.addParameter("Version", "2012-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeClusterSecurityGroupsRequest.getClusterSecurityGroupName() != null) {
-            request.addParameter("ClusterSecurityGroupName", StringUtils
-                    .fromString(describeClusterSecurityGroupsRequest
-                            .getClusterSecurityGroupName()));
+            request.addParameter("ClusterSecurityGroupName", StringUtils.fromString(describeClusterSecurityGroupsRequest.getClusterSecurityGroupName()));
         }
 
         if (describeClusterSecurityGroupsRequest.getMaxRecords() != null) {
-            request.addParameter("MaxRecords", StringUtils
-                    .fromInteger(describeClusterSecurityGroupsRequest
-                            .getMaxRecords()));
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeClusterSecurityGroupsRequest.getMaxRecords()));
         }
 
         if (describeClusterSecurityGroupsRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils
-                    .fromString(describeClusterSecurityGroupsRequest
-                            .getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(describeClusterSecurityGroupsRequest.getMarker()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterSecurityGroupsRequest
@@ -74,8 +63,7 @@ public class DescribeClusterSecurityGroupsRequestMarshaller
 
             for (String tagKeysListValue : tagKeysList) {
                 if (tagKeysListValue != null) {
-                    request.addParameter("TagKeys.TagKey." + tagKeysListIndex,
-                            StringUtils.fromString(tagKeysListValue));
+                    request.addParameter("TagKeys.TagKey." + tagKeysListIndex, StringUtils.fromString(tagKeysListValue));
                 }
                 tagKeysListIndex++;
             }
@@ -88,9 +76,7 @@ public class DescribeClusterSecurityGroupsRequestMarshaller
 
             for (String tagValuesListValue : tagValuesList) {
                 if (tagValuesListValue != null) {
-                    request.addParameter("TagValues.TagValue."
-                            + tagValuesListIndex,
-                            StringUtils.fromString(tagValuesListValue));
+                    request.addParameter("TagValues.TagValue." + tagValuesListIndex, StringUtils.fromString(tagValuesListValue));
                 }
                 tagValuesListIndex++;
             }

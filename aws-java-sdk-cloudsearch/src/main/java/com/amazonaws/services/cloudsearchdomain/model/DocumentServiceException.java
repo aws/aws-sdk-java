@@ -1,41 +1,34 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchdomain.model;
 
 /**
  * <p>
- * Information about any problems encountered while processing an upload
- * request.
+ * Information about any problems encountered while processing an upload request.
  * </p>
  */
-public class DocumentServiceException
-        extends
-        com.amazonaws.services.cloudsearchdomain.model.AmazonCloudSearchDomainException {
+public class DocumentServiceException extends com.amazonaws.services.cloudsearchdomain.model.AmazonCloudSearchDomainException {
     private static final long serialVersionUID = 1L;
 
     /**
      * <p>
-     * The return status of a document upload request, <code>error</code> or
-     * <code>success</code>.
+     * The return status of a document upload request, <code>error</code> or <code>success</code>.
      * </p>
      */
     private String status;
 
     /**
-     * Constructs a new DocumentServiceException with the specified error
-     * message.
+     * Constructs a new DocumentServiceException with the specified error message.
      *
      * @param message
      *        Describes the error encountered.
@@ -46,13 +39,11 @@ public class DocumentServiceException
 
     /**
      * <p>
-     * The return status of a document upload request, <code>error</code> or
-     * <code>success</code>.
+     * The return status of a document upload request, <code>error</code> or <code>success</code>.
      * </p>
      * 
      * @param status
-     *        The return status of a document upload request, <code>error</code>
-     *        or <code>success</code>.
+     *        The return status of a document upload request, <code>error</code> or <code>success</code>.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("status")
@@ -62,12 +53,10 @@ public class DocumentServiceException
 
     /**
      * <p>
-     * The return status of a document upload request, <code>error</code> or
-     * <code>success</code>.
+     * The return status of a document upload request, <code>error</code> or <code>success</code>.
      * </p>
      * 
-     * @return The return status of a document upload request,
-     *         <code>error</code> or <code>success</code>.
+     * @return The return status of a document upload request, <code>error</code> or <code>success</code>.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("status")
@@ -77,15 +66,12 @@ public class DocumentServiceException
 
     /**
      * <p>
-     * The return status of a document upload request, <code>error</code> or
-     * <code>success</code>.
+     * The return status of a document upload request, <code>error</code> or <code>success</code>.
      * </p>
      * 
      * @param status
-     *        The return status of a document upload request, <code>error</code>
-     *        or <code>success</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The return status of a document upload request, <code>error</code> or <code>success</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DocumentServiceException withStatus(String status) {

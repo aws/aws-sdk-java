@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model;
 
@@ -20,14 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Function name for which the alias is created. An alias is a subresource
-     * that exists only in the context of an existing Lambda function so you
-     * must specify the function name.
+     * Function name for which the alias is created. An alias is a subresource that exists only in the context of an
+     * existing Lambda function so you must specify the function name.
      * </p>
      */
     private String functionName;
@@ -40,15 +36,13 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Function name for which the alias is created. An alias is a subresource
-     * that exists only in the context of an existing Lambda function so you
-     * must specify the function name.
+     * Function name for which the alias is created. An alias is a subresource that exists only in the context of an
+     * existing Lambda function so you must specify the function name.
      * </p>
      * 
      * @param functionName
-     *        Function name for which the alias is created. An alias is a
-     *        subresource that exists only in the context of an existing Lambda
-     *        function so you must specify the function name.
+     *        Function name for which the alias is created. An alias is a subresource that exists only in the context of
+     *        an existing Lambda function so you must specify the function name.
      */
 
     public void setFunctionName(String functionName) {
@@ -57,14 +51,12 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Function name for which the alias is created. An alias is a subresource
-     * that exists only in the context of an existing Lambda function so you
-     * must specify the function name.
+     * Function name for which the alias is created. An alias is a subresource that exists only in the context of an
+     * existing Lambda function so you must specify the function name.
      * </p>
      * 
-     * @return Function name for which the alias is created. An alias is a
-     *         subresource that exists only in the context of an existing Lambda
-     *         function so you must specify the function name.
+     * @return Function name for which the alias is created. An alias is a subresource that exists only in the context
+     *         of an existing Lambda function so you must specify the function name.
      */
 
     public String getFunctionName() {
@@ -73,17 +65,14 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Function name for which the alias is created. An alias is a subresource
-     * that exists only in the context of an existing Lambda function so you
-     * must specify the function name.
+     * Function name for which the alias is created. An alias is a subresource that exists only in the context of an
+     * existing Lambda function so you must specify the function name.
      * </p>
      * 
      * @param functionName
-     *        Function name for which the alias is created. An alias is a
-     *        subresource that exists only in the context of an existing Lambda
-     *        function so you must specify the function name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Function name for which the alias is created. An alias is a subresource that exists only in the context of
+     *        an existing Lambda function so you must specify the function name.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAliasRequest withFunctionName(String functionName) {
@@ -123,8 +112,7 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param name
      *        Name of the alias for which you want to retrieve information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAliasRequest withName(String name) {
@@ -133,8 +121,7 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -164,13 +151,11 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest
         GetAliasRequest other = (GetAliasRequest) obj;
         if (other.getFunctionName() == null ^ this.getFunctionName() == null)
             return false;
-        if (other.getFunctionName() != null
-                && other.getFunctionName().equals(this.getFunctionName()) == false)
+        if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -180,12 +165,8 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFunctionName() == null) ? 0 : getFunctionName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

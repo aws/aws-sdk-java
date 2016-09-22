@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
@@ -35,26 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * ListDeploymentsRequest Marshaller
  */
-public class ListDeploymentsRequestMarshaller implements
-        Marshaller<Request<ListDeploymentsRequest>, ListDeploymentsRequest> {
+public class ListDeploymentsRequestMarshaller implements Marshaller<Request<ListDeploymentsRequest>, ListDeploymentsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public ListDeploymentsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public ListDeploymentsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<ListDeploymentsRequest> marshall(
-            ListDeploymentsRequest listDeploymentsRequest) {
+    public Request<ListDeploymentsRequest> marshall(ListDeploymentsRequest listDeploymentsRequest) {
 
         if (listDeploymentsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDeploymentsRequest> request = new DefaultRequest<ListDeploymentsRequest>(
-                listDeploymentsRequest, "AmazonCodeDeploy");
+        Request<ListDeploymentsRequest> request = new DefaultRequest<ListDeploymentsRequest>(listDeploymentsRequest, "AmazonCodeDeploy");
         request.addHeader("X-Amz-Target", "CodeDeploy_20141006.ListDeployments");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -62,24 +55,20 @@ public class ListDeploymentsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (listDeploymentsRequest.getApplicationName() != null) {
-                jsonGenerator.writeFieldName("applicationName").writeValue(
-                        listDeploymentsRequest.getApplicationName());
+                jsonGenerator.writeFieldName("applicationName").writeValue(listDeploymentsRequest.getApplicationName());
             }
             if (listDeploymentsRequest.getDeploymentGroupName() != null) {
-                jsonGenerator.writeFieldName("deploymentGroupName").writeValue(
-                        listDeploymentsRequest.getDeploymentGroupName());
+                jsonGenerator.writeFieldName("deploymentGroupName").writeValue(listDeploymentsRequest.getDeploymentGroupName());
             }
 
             com.amazonaws.internal.SdkInternalList<String> includeOnlyStatusesList = (com.amazonaws.internal.SdkInternalList<String>) listDeploymentsRequest
                     .getIncludeOnlyStatuses();
-            if (!includeOnlyStatusesList.isEmpty()
-                    || !includeOnlyStatusesList.isAutoConstruct()) {
+            if (!includeOnlyStatusesList.isEmpty() || !includeOnlyStatusesList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("includeOnlyStatuses");
                 jsonGenerator.writeStartArray();
                 for (String includeOnlyStatusesListValue : includeOnlyStatusesList) {
@@ -91,25 +80,20 @@ public class ListDeploymentsRequestMarshaller implements
             }
             if (listDeploymentsRequest.getCreateTimeRange() != null) {
                 jsonGenerator.writeFieldName("createTimeRange");
-                TimeRangeJsonMarshaller.getInstance().marshall(
-                        listDeploymentsRequest.getCreateTimeRange(),
-                        jsonGenerator);
+                TimeRangeJsonMarshaller.getInstance().marshall(listDeploymentsRequest.getCreateTimeRange(), jsonGenerator);
             }
             if (listDeploymentsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(
-                        listDeploymentsRequest.getNextToken());
+                jsonGenerator.writeFieldName("nextToken").writeValue(listDeploymentsRequest.getNextToken());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

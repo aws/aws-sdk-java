@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -68,12 +66,10 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
      * 
      * @param dBClusterOptionGroupName
      *        Specifies the name of the DB cluster option group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DBClusterOptionGroupStatus withDBClusterOptionGroupName(
-            String dBClusterOptionGroupName) {
+    public DBClusterOptionGroupStatus withDBClusterOptionGroupName(String dBClusterOptionGroupName) {
         setDBClusterOptionGroupName(dBClusterOptionGroupName);
         return this;
     }
@@ -110,8 +106,7 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
      * 
      * @param status
      *        Specifies the status of the DB cluster option group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterOptionGroupStatus withStatus(String status) {
@@ -120,8 +115,7 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -132,8 +126,7 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterOptionGroupName() != null)
-            sb.append("DBClusterOptionGroupName: "
-                    + getDBClusterOptionGroupName() + ",");
+            sb.append("DBClusterOptionGroupName: " + getDBClusterOptionGroupName() + ",");
         if (getStatus() != null)
             sb.append("Status: " + getStatus());
         sb.append("}");
@@ -150,17 +143,13 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
         if (obj instanceof DBClusterOptionGroupStatus == false)
             return false;
         DBClusterOptionGroupStatus other = (DBClusterOptionGroupStatus) obj;
-        if (other.getDBClusterOptionGroupName() == null
-                ^ this.getDBClusterOptionGroupName() == null)
+        if (other.getDBClusterOptionGroupName() == null ^ this.getDBClusterOptionGroupName() == null)
             return false;
-        if (other.getDBClusterOptionGroupName() != null
-                && other.getDBClusterOptionGroupName().equals(
-                        this.getDBClusterOptionGroupName()) == false)
+        if (other.getDBClusterOptionGroupName() != null && other.getDBClusterOptionGroupName().equals(this.getDBClusterOptionGroupName()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -170,12 +159,8 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDBClusterOptionGroupName() == null) ? 0
-                        : getDBClusterOptionGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterOptionGroupName() == null) ? 0 : getDBClusterOptionGroupName().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 
@@ -184,9 +169,7 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
         try {
             return (DBClusterOptionGroupStatus) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

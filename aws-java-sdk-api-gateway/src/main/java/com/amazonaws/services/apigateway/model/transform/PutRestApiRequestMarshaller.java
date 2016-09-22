@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * PutRestApiRequest Marshaller
  */
-public class PutRestApiRequestMarshaller implements
-        Marshaller<Request<PutRestApiRequest>, PutRestApiRequest> {
+public class PutRestApiRequestMarshaller implements Marshaller<Request<PutRestApiRequest>, PutRestApiRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,46 +49,35 @@ public class PutRestApiRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<PutRestApiRequest> marshall(
-            PutRestApiRequest putRestApiRequest) {
+    public Request<PutRestApiRequest> marshall(PutRestApiRequest putRestApiRequest) {
 
         if (putRestApiRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutRestApiRequest> request = new DefaultRequest<PutRestApiRequest>(
-                putRestApiRequest, "AmazonApiGateway");
+        Request<PutRestApiRequest> request = new DefaultRequest<PutRestApiRequest>(putRestApiRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.PUT);
 
         String uriResourcePath = "/restapis/{restapi_id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (putRestApiRequest.getRestApiId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(putRestApiRequest
-                                .getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{restapi_id}",
+                (putRestApiRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(putRestApiRequest.getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (putRestApiRequest.getMode() != null) {
-            request.addParameter("mode",
-                    StringUtils.fromString(putRestApiRequest.getMode()));
+            request.addParameter("mode", StringUtils.fromString(putRestApiRequest.getMode()));
         }
 
         if (putRestApiRequest.getFailOnWarnings() != null) {
-            request.addParameter("failonwarnings", StringUtils
-                    .fromBoolean(putRestApiRequest.getFailOnWarnings()));
+            request.addParameter("failonwarnings", StringUtils.fromBoolean(putRestApiRequest.getFailOnWarnings()));
         }
 
-        java.util.Map<String, String> parameters = putRestApiRequest
-                .getParameters();
+        java.util.Map<String, String> parameters = putRestApiRequest.getParameters();
         if (parameters != null) {
             for (Map.Entry<String, String> entry : parameters.entrySet()) {
                 if (entry.getValue() != null) {
-                    request.addParameter(
-                            StringUtils.fromString(entry.getKey()),
-                            StringUtils.fromString(entry.getValue()));
+                    request.addParameter(StringUtils.fromString(entry.getKey()), StringUtils.fromString(entry.getValue()));
                 }
             }
         }

@@ -1,28 +1,23 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 
 /**
- * The response to a request to list the distributions that are associated with
- * a specified AWS WAF web ACL.
+ * The response to a request to list the distributions that are associated with a specified AWS WAF web ACL.
  */
-public class ListDistributionsByWebACLIdResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListDistributionsByWebACLIdResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /** The DistributionList type. */
     private DistributionList distributionList;
@@ -53,19 +48,16 @@ public class ListDistributionsByWebACLIdResult extends
      * 
      * @param distributionList
      *        The DistributionList type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListDistributionsByWebACLIdResult withDistributionList(
-            DistributionList distributionList) {
+    public ListDistributionsByWebACLIdResult withDistributionList(DistributionList distributionList) {
         setDistributionList(distributionList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -91,12 +83,9 @@ public class ListDistributionsByWebACLIdResult extends
         if (obj instanceof ListDistributionsByWebACLIdResult == false)
             return false;
         ListDistributionsByWebACLIdResult other = (ListDistributionsByWebACLIdResult) obj;
-        if (other.getDistributionList() == null
-                ^ this.getDistributionList() == null)
+        if (other.getDistributionList() == null ^ this.getDistributionList() == null)
             return false;
-        if (other.getDistributionList() != null
-                && other.getDistributionList().equals(
-                        this.getDistributionList()) == false)
+        if (other.getDistributionList() != null && other.getDistributionList().equals(this.getDistributionList()) == false)
             return false;
         return true;
     }
@@ -106,10 +95,7 @@ public class ListDistributionsByWebACLIdResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDistributionList() == null) ? 0 : getDistributionList()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDistributionList() == null) ? 0 : getDistributionList().hashCode());
         return hashCode;
     }
 
@@ -118,9 +104,7 @@ public class ListDistributionsByWebACLIdResult extends
         try {
             return (ListDistributionsByWebACLIdResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

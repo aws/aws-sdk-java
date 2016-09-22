@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -20,49 +18,38 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateReusableDelegationSetRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateReusableDelegationSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique string that identifies the request, and that allows you to retry
-     * failed <code>CreateReusableDelegationSet</code> requests without the risk
-     * of executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you submit a
-     * <code>CreateReusableDelegationSet</code> request.
-     * <code>CallerReference</code> can be any unique string, for example a
-     * date/time stamp.
+     * A unique string that identifies the request, and that allows you to retry failed
+     * <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use
+     * a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
+     * request. <code>CallerReference</code> can be any unique string, for example a date/time stamp.
      * </p>
      */
     private String callerReference;
     /**
      * <p>
-     * If you want to mark the delegation set for an existing hosted zone as
-     * reusable, the ID for that hosted zone.
+     * If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted zone.
      * </p>
      */
     private String hostedZoneId;
 
     /**
      * <p>
-     * A unique string that identifies the request, and that allows you to retry
-     * failed <code>CreateReusableDelegationSet</code> requests without the risk
-     * of executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you submit a
-     * <code>CreateReusableDelegationSet</code> request.
-     * <code>CallerReference</code> can be any unique string, for example a
-     * date/time stamp.
+     * A unique string that identifies the request, and that allows you to retry failed
+     * <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use
+     * a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
+     * request. <code>CallerReference</code> can be any unique string, for example a date/time stamp.
      * </p>
      * 
      * @param callerReference
-     *        A unique string that identifies the request, and that allows you
-     *        to retry failed <code>CreateReusableDelegationSet</code> requests
-     *        without the risk of executing the operation twice. You must use a
-     *        unique <code>CallerReference</code> string every time you submit a
-     *        <code>CreateReusableDelegationSet</code> request.
-     *        <code>CallerReference</code> can be any unique string, for example
-     *        a date/time stamp.
+     *        A unique string that identifies the request, and that allows you to retry failed
+     *        <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You
+     *        must use a unique <code>CallerReference</code> string every time you submit a
+     *        <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string,
+     *        for example a date/time stamp.
      */
 
     public void setCallerReference(String callerReference) {
@@ -71,22 +58,17 @@ public class CreateReusableDelegationSetRequest extends
 
     /**
      * <p>
-     * A unique string that identifies the request, and that allows you to retry
-     * failed <code>CreateReusableDelegationSet</code> requests without the risk
-     * of executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you submit a
-     * <code>CreateReusableDelegationSet</code> request.
-     * <code>CallerReference</code> can be any unique string, for example a
-     * date/time stamp.
+     * A unique string that identifies the request, and that allows you to retry failed
+     * <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use
+     * a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
+     * request. <code>CallerReference</code> can be any unique string, for example a date/time stamp.
      * </p>
      * 
-     * @return A unique string that identifies the request, and that allows you
-     *         to retry failed <code>CreateReusableDelegationSet</code> requests
-     *         without the risk of executing the operation twice. You must use a
-     *         unique <code>CallerReference</code> string every time you submit
-     *         a <code>CreateReusableDelegationSet</code> request.
-     *         <code>CallerReference</code> can be any unique string, for
-     *         example a date/time stamp.
+     * @return A unique string that identifies the request, and that allows you to retry failed
+     *         <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You
+     *         must use a unique <code>CallerReference</code> string every time you submit a
+     *         <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string,
+     *         for example a date/time stamp.
      */
 
     public String getCallerReference() {
@@ -95,42 +77,34 @@ public class CreateReusableDelegationSetRequest extends
 
     /**
      * <p>
-     * A unique string that identifies the request, and that allows you to retry
-     * failed <code>CreateReusableDelegationSet</code> requests without the risk
-     * of executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you submit a
-     * <code>CreateReusableDelegationSet</code> request.
-     * <code>CallerReference</code> can be any unique string, for example a
-     * date/time stamp.
+     * A unique string that identifies the request, and that allows you to retry failed
+     * <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use
+     * a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
+     * request. <code>CallerReference</code> can be any unique string, for example a date/time stamp.
      * </p>
      * 
      * @param callerReference
-     *        A unique string that identifies the request, and that allows you
-     *        to retry failed <code>CreateReusableDelegationSet</code> requests
-     *        without the risk of executing the operation twice. You must use a
-     *        unique <code>CallerReference</code> string every time you submit a
-     *        <code>CreateReusableDelegationSet</code> request.
-     *        <code>CallerReference</code> can be any unique string, for example
-     *        a date/time stamp.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A unique string that identifies the request, and that allows you to retry failed
+     *        <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You
+     *        must use a unique <code>CallerReference</code> string every time you submit a
+     *        <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string,
+     *        for example a date/time stamp.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReusableDelegationSetRequest withCallerReference(
-            String callerReference) {
+    public CreateReusableDelegationSetRequest withCallerReference(String callerReference) {
         setCallerReference(callerReference);
         return this;
     }
 
     /**
      * <p>
-     * If you want to mark the delegation set for an existing hosted zone as
-     * reusable, the ID for that hosted zone.
+     * If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted zone.
      * </p>
      * 
      * @param hostedZoneId
-     *        If you want to mark the delegation set for an existing hosted zone
-     *        as reusable, the ID for that hosted zone.
+     *        If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted
+     *        zone.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -139,12 +113,11 @@ public class CreateReusableDelegationSetRequest extends
 
     /**
      * <p>
-     * If you want to mark the delegation set for an existing hosted zone as
-     * reusable, the ID for that hosted zone.
+     * If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted zone.
      * </p>
      * 
-     * @return If you want to mark the delegation set for an existing hosted
-     *         zone as reusable, the ID for that hosted zone.
+     * @return If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted
+     *         zone.
      */
 
     public String getHostedZoneId() {
@@ -153,26 +126,22 @@ public class CreateReusableDelegationSetRequest extends
 
     /**
      * <p>
-     * If you want to mark the delegation set for an existing hosted zone as
-     * reusable, the ID for that hosted zone.
+     * If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted zone.
      * </p>
      * 
      * @param hostedZoneId
-     *        If you want to mark the delegation set for an existing hosted zone
-     *        as reusable, the ID for that hosted zone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted
+     *        zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReusableDelegationSetRequest withHostedZoneId(
-            String hostedZoneId) {
+    public CreateReusableDelegationSetRequest withHostedZoneId(String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -200,16 +169,13 @@ public class CreateReusableDelegationSetRequest extends
         if (obj instanceof CreateReusableDelegationSetRequest == false)
             return false;
         CreateReusableDelegationSetRequest other = (CreateReusableDelegationSetRequest) obj;
-        if (other.getCallerReference() == null
-                ^ this.getCallerReference() == null)
+        if (other.getCallerReference() == null ^ this.getCallerReference() == null)
             return false;
-        if (other.getCallerReference() != null
-                && other.getCallerReference().equals(this.getCallerReference()) == false)
+        if (other.getCallerReference() != null && other.getCallerReference().equals(this.getCallerReference()) == false)
             return false;
         if (other.getHostedZoneId() == null ^ this.getHostedZoneId() == null)
             return false;
-        if (other.getHostedZoneId() != null
-                && other.getHostedZoneId().equals(this.getHostedZoneId()) == false)
+        if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false)
             return false;
         return true;
     }
@@ -219,14 +185,8 @@ public class CreateReusableDelegationSetRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCallerReference() == null) ? 0 : getCallerReference()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHostedZoneId() == null) ? 0 : getHostedZoneId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode());
+        hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode());
         return hashCode;
     }
 

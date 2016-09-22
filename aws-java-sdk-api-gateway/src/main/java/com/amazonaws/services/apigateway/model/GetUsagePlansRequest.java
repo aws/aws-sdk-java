@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -22,13 +20,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The GET request to get all the usage plans of the caller's account.
  * </p>
  */
-public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The zero-based array index specifying the position of the to-be-retrieved
-     * <a>UsagePlan</a> resource.
+     * The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
      * </p>
      */
     private String position;
@@ -47,13 +43,11 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The zero-based array index specifying the position of the to-be-retrieved
-     * <a>UsagePlan</a> resource.
+     * The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
      * </p>
      * 
      * @param position
-     *        The zero-based array index specifying the position of the
-     *        to-be-retrieved <a>UsagePlan</a> resource.
+     *        The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
      */
 
     public void setPosition(String position) {
@@ -62,12 +56,10 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The zero-based array index specifying the position of the to-be-retrieved
-     * <a>UsagePlan</a> resource.
+     * The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
      * </p>
      * 
-     * @return The zero-based array index specifying the position of the
-     *         to-be-retrieved <a>UsagePlan</a> resource.
+     * @return The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
      */
 
     public String getPosition() {
@@ -76,15 +68,12 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The zero-based array index specifying the position of the to-be-retrieved
-     * <a>UsagePlan</a> resource.
+     * The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
      * </p>
      * 
      * @param position
-     *        The zero-based array index specifying the position of the
-     *        to-be-retrieved <a>UsagePlan</a> resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetUsagePlansRequest withPosition(String position) {
@@ -124,8 +113,7 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param keyId
      *        The identifier of the API key associated with the usage plans.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetUsagePlansRequest withKeyId(String keyId) {
@@ -139,8 +127,7 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param limit
-     *        The number of <a>UsagePlan</a> resources to be returned as the
-     *        result.
+     *        The number of <a>UsagePlan</a> resources to be returned as the result.
      */
 
     public void setLimit(Integer limit) {
@@ -152,8 +139,7 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest
      * The number of <a>UsagePlan</a> resources to be returned as the result.
      * </p>
      * 
-     * @return The number of <a>UsagePlan</a> resources to be returned as the
-     *         result.
+     * @return The number of <a>UsagePlan</a> resources to be returned as the result.
      */
 
     public Integer getLimit() {
@@ -166,10 +152,8 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param limit
-     *        The number of <a>UsagePlan</a> resources to be returned as the
-     *        result.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of <a>UsagePlan</a> resources to be returned as the result.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetUsagePlansRequest withLimit(Integer limit) {
@@ -178,8 +162,7 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -211,18 +194,15 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest
         GetUsagePlansRequest other = (GetUsagePlansRequest) obj;
         if (other.getPosition() == null ^ this.getPosition() == null)
             return false;
-        if (other.getPosition() != null
-                && other.getPosition().equals(this.getPosition()) == false)
+        if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
             return false;
         if (other.getKeyId() == null ^ this.getKeyId() == null)
             return false;
-        if (other.getKeyId() != null
-                && other.getKeyId().equals(this.getKeyId()) == false)
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -232,12 +212,9 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPosition() == null) ? 0 : getPosition().hashCode());
-        hashCode = prime * hashCode
-                + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 

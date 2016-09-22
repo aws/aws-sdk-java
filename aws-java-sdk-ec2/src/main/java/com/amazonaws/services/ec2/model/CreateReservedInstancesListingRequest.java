@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.CreateReservedInstancesListing
  * Contains the parameters for CreateReservedInstancesListing.
  * </p>
  */
-public class CreateReservedInstancesListingRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable,
+public class CreateReservedInstancesListingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<CreateReservedInstancesListingRequest> {
 
     /**
@@ -36,27 +33,24 @@ public class CreateReservedInstancesListingRequest extends
     private String reservedInstancesId;
     /**
      * <p>
-     * The number of instances that are a part of a Reserved Instance account to
-     * be listed in the Reserved Instance Marketplace. This number should be
-     * less than or equal to the instance count associated with the Reserved
-     * Instance ID specified in this call.
+     * The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance
+     * Marketplace. This number should be less than or equal to the instance count associated with the Reserved Instance
+     * ID specified in this call.
      * </p>
      */
     private Integer instanceCount;
     /**
      * <p>
-     * A list specifying the price of the Reserved Instance for each month
-     * remaining in the Reserved Instance term.
+     * A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance term.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PriceScheduleSpecification> priceSchedules;
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * your listings. This helps avoid duplicate listings. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
+     * listings. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      */
     private String clientToken;
@@ -93,29 +87,25 @@ public class CreateReservedInstancesListingRequest extends
      * 
      * @param reservedInstancesId
      *        The ID of the active Reserved Instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReservedInstancesListingRequest withReservedInstancesId(
-            String reservedInstancesId) {
+    public CreateReservedInstancesListingRequest withReservedInstancesId(String reservedInstancesId) {
         setReservedInstancesId(reservedInstancesId);
         return this;
     }
 
     /**
      * <p>
-     * The number of instances that are a part of a Reserved Instance account to
-     * be listed in the Reserved Instance Marketplace. This number should be
-     * less than or equal to the instance count associated with the Reserved
-     * Instance ID specified in this call.
+     * The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance
+     * Marketplace. This number should be less than or equal to the instance count associated with the Reserved Instance
+     * ID specified in this call.
      * </p>
      * 
      * @param instanceCount
-     *        The number of instances that are a part of a Reserved Instance
-     *        account to be listed in the Reserved Instance Marketplace. This
-     *        number should be less than or equal to the instance count
-     *        associated with the Reserved Instance ID specified in this call.
+     *        The number of instances that are a part of a Reserved Instance account to be listed in the Reserved
+     *        Instance Marketplace. This number should be less than or equal to the instance count associated with the
+     *        Reserved Instance ID specified in this call.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -124,16 +114,14 @@ public class CreateReservedInstancesListingRequest extends
 
     /**
      * <p>
-     * The number of instances that are a part of a Reserved Instance account to
-     * be listed in the Reserved Instance Marketplace. This number should be
-     * less than or equal to the instance count associated with the Reserved
-     * Instance ID specified in this call.
+     * The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance
+     * Marketplace. This number should be less than or equal to the instance count associated with the Reserved Instance
+     * ID specified in this call.
      * </p>
      * 
-     * @return The number of instances that are a part of a Reserved Instance
-     *         account to be listed in the Reserved Instance Marketplace. This
-     *         number should be less than or equal to the instance count
-     *         associated with the Reserved Instance ID specified in this call.
+     * @return The number of instances that are a part of a Reserved Instance account to be listed in the Reserved
+     *         Instance Marketplace. This number should be less than or equal to the instance count associated with the
+     *         Reserved Instance ID specified in this call.
      */
 
     public Integer getInstanceCount() {
@@ -142,35 +130,30 @@ public class CreateReservedInstancesListingRequest extends
 
     /**
      * <p>
-     * The number of instances that are a part of a Reserved Instance account to
-     * be listed in the Reserved Instance Marketplace. This number should be
-     * less than or equal to the instance count associated with the Reserved
-     * Instance ID specified in this call.
+     * The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance
+     * Marketplace. This number should be less than or equal to the instance count associated with the Reserved Instance
+     * ID specified in this call.
      * </p>
      * 
      * @param instanceCount
-     *        The number of instances that are a part of a Reserved Instance
-     *        account to be listed in the Reserved Instance Marketplace. This
-     *        number should be less than or equal to the instance count
-     *        associated with the Reserved Instance ID specified in this call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of instances that are a part of a Reserved Instance account to be listed in the Reserved
+     *        Instance Marketplace. This number should be less than or equal to the instance count associated with the
+     *        Reserved Instance ID specified in this call.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReservedInstancesListingRequest withInstanceCount(
-            Integer instanceCount) {
+    public CreateReservedInstancesListingRequest withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
         return this;
     }
 
     /**
      * <p>
-     * A list specifying the price of the Reserved Instance for each month
-     * remaining in the Reserved Instance term.
+     * A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance term.
      * </p>
      * 
-     * @return A list specifying the price of the Reserved Instance for each
-     *         month remaining in the Reserved Instance term.
+     * @return A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance
+     *         term.
      */
 
     public java.util.List<PriceScheduleSpecification> getPriceSchedules() {
@@ -182,50 +165,42 @@ public class CreateReservedInstancesListingRequest extends
 
     /**
      * <p>
-     * A list specifying the price of the Reserved Instance for each month
-     * remaining in the Reserved Instance term.
+     * A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance term.
      * </p>
      * 
      * @param priceSchedules
-     *        A list specifying the price of the Reserved Instance for each
-     *        month remaining in the Reserved Instance term.
+     *        A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance
+     *        term.
      */
 
-    public void setPriceSchedules(
-            java.util.Collection<PriceScheduleSpecification> priceSchedules) {
+    public void setPriceSchedules(java.util.Collection<PriceScheduleSpecification> priceSchedules) {
         if (priceSchedules == null) {
             this.priceSchedules = null;
             return;
         }
 
-        this.priceSchedules = new com.amazonaws.internal.SdkInternalList<PriceScheduleSpecification>(
-                priceSchedules);
+        this.priceSchedules = new com.amazonaws.internal.SdkInternalList<PriceScheduleSpecification>(priceSchedules);
     }
 
     /**
      * <p>
-     * A list specifying the price of the Reserved Instance for each month
-     * remaining in the Reserved Instance term.
+     * A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance term.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPriceSchedules(java.util.Collection)} or
-     * {@link #withPriceSchedules(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPriceSchedules(java.util.Collection)} or {@link #withPriceSchedules(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param priceSchedules
-     *        A list specifying the price of the Reserved Instance for each
-     *        month remaining in the Reserved Instance term.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance
+     *        term.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReservedInstancesListingRequest withPriceSchedules(
-            PriceScheduleSpecification... priceSchedules) {
+    public CreateReservedInstancesListingRequest withPriceSchedules(PriceScheduleSpecification... priceSchedules) {
         if (this.priceSchedules == null) {
-            setPriceSchedules(new com.amazonaws.internal.SdkInternalList<PriceScheduleSpecification>(
-                    priceSchedules.length));
+            setPriceSchedules(new com.amazonaws.internal.SdkInternalList<PriceScheduleSpecification>(priceSchedules.length));
         }
         for (PriceScheduleSpecification ele : priceSchedules) {
             this.priceSchedules.add(ele);
@@ -235,38 +210,33 @@ public class CreateReservedInstancesListingRequest extends
 
     /**
      * <p>
-     * A list specifying the price of the Reserved Instance for each month
-     * remaining in the Reserved Instance term.
+     * A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance term.
      * </p>
      * 
      * @param priceSchedules
-     *        A list specifying the price of the Reserved Instance for each
-     *        month remaining in the Reserved Instance term.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance
+     *        term.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReservedInstancesListingRequest withPriceSchedules(
-            java.util.Collection<PriceScheduleSpecification> priceSchedules) {
+    public CreateReservedInstancesListingRequest withPriceSchedules(java.util.Collection<PriceScheduleSpecification> priceSchedules) {
         setPriceSchedules(priceSchedules);
         return this;
     }
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * your listings. This helps avoid duplicate listings. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
+     * listings. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure
-     *        idempotency of your listings. This helps avoid duplicate listings.
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *        >Ensuring Idempotency</a>.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid
+     *        duplicate listings. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -275,18 +245,16 @@ public class CreateReservedInstancesListingRequest extends
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * your listings. This helps avoid duplicate listings. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
+     * listings. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure
-     *         idempotency of your listings. This helps avoid duplicate
-     *         listings. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *         >Ensuring Idempotency</a>.
+     * @return Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid
+     *         duplicate listings. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.
      */
 
     public String getClientToken() {
@@ -295,45 +263,38 @@ public class CreateReservedInstancesListingRequest extends
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * your listings. This helps avoid duplicate listings. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
+     * listings. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure
-     *        idempotency of your listings. This helps avoid duplicate listings.
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *        >Ensuring Idempotency</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid
+     *        duplicate listings. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReservedInstancesListingRequest withClientToken(
-            String clientToken) {
+    public CreateReservedInstancesListingRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<CreateReservedInstancesListingRequest> getDryRunRequest() {
-        Request<CreateReservedInstancesListingRequest> request = new CreateReservedInstancesListingRequestMarshaller()
-                .marshall(this);
+        Request<CreateReservedInstancesListingRequest> request = new CreateReservedInstancesListingRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -365,28 +326,21 @@ public class CreateReservedInstancesListingRequest extends
         if (obj instanceof CreateReservedInstancesListingRequest == false)
             return false;
         CreateReservedInstancesListingRequest other = (CreateReservedInstancesListingRequest) obj;
-        if (other.getReservedInstancesId() == null
-                ^ this.getReservedInstancesId() == null)
+        if (other.getReservedInstancesId() == null ^ this.getReservedInstancesId() == null)
             return false;
-        if (other.getReservedInstancesId() != null
-                && other.getReservedInstancesId().equals(
-                        this.getReservedInstancesId()) == false)
+        if (other.getReservedInstancesId() != null && other.getReservedInstancesId().equals(this.getReservedInstancesId()) == false)
             return false;
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
-        if (other.getInstanceCount() != null
-                && other.getInstanceCount().equals(this.getInstanceCount()) == false)
+        if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
             return false;
-        if (other.getPriceSchedules() == null
-                ^ this.getPriceSchedules() == null)
+        if (other.getPriceSchedules() == null ^ this.getPriceSchedules() == null)
             return false;
-        if (other.getPriceSchedules() != null
-                && other.getPriceSchedules().equals(this.getPriceSchedules()) == false)
+        if (other.getPriceSchedules() != null && other.getPriceSchedules().equals(this.getPriceSchedules()) == false)
             return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getClientToken() != null
-                && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -396,21 +350,10 @@ public class CreateReservedInstancesListingRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReservedInstancesId() == null) ? 0
-                        : getReservedInstancesId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceCount() == null) ? 0 : getInstanceCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPriceSchedules() == null) ? 0 : getPriceSchedules()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesId() == null) ? 0 : getReservedInstancesId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getPriceSchedules() == null) ? 0 : getPriceSchedules().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

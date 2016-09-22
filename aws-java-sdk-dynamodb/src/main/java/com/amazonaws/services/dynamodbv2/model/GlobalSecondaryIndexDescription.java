@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model;
 
@@ -31,8 +29,8 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
     private String indexName;
     /**
      * <p>
-     * The complete key schema for a global secondary index, which consists of
-     * one or more pairs of attribute names and key types:
+     * The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and
+     * key types:
      * </p>
      * <ul>
      * <li>
@@ -48,16 +46,14 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      * </ul>
      * <note>
      * <p>
-     * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB' usage of an internal
-     * hash function to evenly distribute data items across partitions, based on
-     * their partition key values.
+     * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * partition key values.
      * </p>
      * <p>
-     * The sort key of an item is also known as its <i>range attribute</i>. The
-     * term "range attribute" derives from the way DynamoDB stores items with
-     * the same partition key physically close together, in sorted order by the
-     * sort key value.
+     * The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the
+     * way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key
+     * value.
      * </p>
      * </note>
      */
@@ -94,19 +90,15 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
     private String indexStatus;
     /**
      * <p>
-     * Indicates whether the index is currently backfilling. <i>Backfilling</i>
-     * is the process of reading items from the table and determining whether
-     * they can be added to the index. (Not all items will qualify: For example,
-     * a partition key cannot have any duplicate values.) If an item can be
-     * added to the index, DynamoDB will do so. After all items have been
-     * processed, the backfilling operation is complete and <i>Backfilling</i>
-     * is false.
+     * Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the
+     * table and determining whether they can be added to the index. (Not all items will qualify: For example, a
+     * partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After
+     * all items have been processed, the backfilling operation is complete and <i>Backfilling</i> is false.
      * </p>
      * <note>
      * <p>
-     * For indexes that were created during a <i>CreateTable</i> operation, the
-     * <i>Backfilling</i> attribute does not appear in the <i>DescribeTable</i>
-     * output.
+     * For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i> attribute does not
+     * appear in the <i>DescribeTable</i> output.
      * </p>
      * </note>
      */
@@ -115,17 +107,15 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
     private ProvisionedThroughputDescription provisionedThroughput;
     /**
      * <p>
-     * The total size of the specified index, in bytes. DynamoDB updates this
-     * value approximately every six hours. Recent changes might not be
-     * reflected in this value.
+     * The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours.
+     * Recent changes might not be reflected in this value.
      * </p>
      */
     private Long indexSizeBytes;
     /**
      * <p>
-     * The number of items in the specified index. DynamoDB updates this value
-     * approximately every six hours. Recent changes might not be reflected in
-     * this value.
+     * The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent
+     * changes might not be reflected in this value.
      * </p>
      */
     private Long itemCount;
@@ -168,8 +158,7 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      * 
      * @param indexName
      *        The name of the global secondary index.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GlobalSecondaryIndexDescription withIndexName(String indexName) {
@@ -179,8 +168,8 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The complete key schema for a global secondary index, which consists of
-     * one or more pairs of attribute names and key types:
+     * The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and
+     * key types:
      * </p>
      * <ul>
      * <li>
@@ -196,22 +185,19 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      * </ul>
      * <note>
      * <p>
-     * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB' usage of an internal
-     * hash function to evenly distribute data items across partitions, based on
-     * their partition key values.
+     * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * partition key values.
      * </p>
      * <p>
-     * The sort key of an item is also known as its <i>range attribute</i>. The
-     * term "range attribute" derives from the way DynamoDB stores items with
-     * the same partition key physically close together, in sorted order by the
-     * sort key value.
+     * The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the
+     * way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key
+     * value.
      * </p>
      * </note>
      * 
-     * @return The complete key schema for a global secondary index, which
-     *         consists of one or more pairs of attribute names and key
-     *         types:</p>
+     * @return The complete key schema for a global secondary index, which consists of one or more pairs of attribute
+     *         names and key types:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -226,16 +212,14 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      *         </ul>
      *         <note>
      *         <p>
-     *         The partition key of an item is also known as its <i>hash
-     *         attribute</i>. The term "hash attribute" derives from DynamoDB'
-     *         usage of an internal hash function to evenly distribute data
-     *         items across partitions, based on their partition key values.
+     *         The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute"
+     *         derives from DynamoDB' usage of an internal hash function to evenly distribute data items across
+     *         partitions, based on their partition key values.
      *         </p>
      *         <p>
-     *         The sort key of an item is also known as its <i>range
-     *         attribute</i>. The term "range attribute" derives from the way
-     *         DynamoDB stores items with the same partition key physically
-     *         close together, in sorted order by the sort key value.
+     *         The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
+     *         from the way DynamoDB stores items with the same partition key physically close together, in sorted order
+     *         by the sort key value.
      *         </p>
      */
 
@@ -245,8 +229,8 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The complete key schema for a global secondary index, which consists of
-     * one or more pairs of attribute names and key types:
+     * The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and
+     * key types:
      * </p>
      * <ul>
      * <li>
@@ -262,23 +246,20 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      * </ul>
      * <note>
      * <p>
-     * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB' usage of an internal
-     * hash function to evenly distribute data items across partitions, based on
-     * their partition key values.
+     * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * partition key values.
      * </p>
      * <p>
-     * The sort key of an item is also known as its <i>range attribute</i>. The
-     * term "range attribute" derives from the way DynamoDB stores items with
-     * the same partition key physically close together, in sorted order by the
-     * sort key value.
+     * The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the
+     * way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key
+     * value.
      * </p>
      * </note>
      * 
      * @param keySchema
-     *        The complete key schema for a global secondary index, which
-     *        consists of one or more pairs of attribute names and key
-     *        types:</p>
+     *        The complete key schema for a global secondary index, which consists of one or more pairs of attribute
+     *        names and key types:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -293,16 +274,14 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      *        </ul>
      *        <note>
      *        <p>
-     *        The partition key of an item is also known as its <i>hash
-     *        attribute</i>. The term "hash attribute" derives from DynamoDB'
-     *        usage of an internal hash function to evenly distribute data items
-     *        across partitions, based on their partition key values.
+     *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
+     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
+     *        on their partition key values.
      *        </p>
      *        <p>
-     *        The sort key of an item is also known as its <i>range
-     *        attribute</i>. The term "range attribute" derives from the way
-     *        DynamoDB stores items with the same partition key physically close
-     *        together, in sorted order by the sort key value.
+     *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
+     *        from the way DynamoDB stores items with the same partition key physically close together, in sorted order
+     *        by the sort key value.
      *        </p>
      */
 
@@ -317,8 +296,8 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The complete key schema for a global secondary index, which consists of
-     * one or more pairs of attribute names and key types:
+     * The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and
+     * key types:
      * </p>
      * <ul>
      * <li>
@@ -334,29 +313,25 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      * </ul>
      * <note>
      * <p>
-     * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB' usage of an internal
-     * hash function to evenly distribute data items across partitions, based on
-     * their partition key values.
+     * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * partition key values.
      * </p>
      * <p>
-     * The sort key of an item is also known as its <i>range attribute</i>. The
-     * term "range attribute" derives from the way DynamoDB stores items with
-     * the same partition key physically close together, in sorted order by the
-     * sort key value.
+     * The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the
+     * way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key
+     * value.
      * </p>
      * </note>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setKeySchema(java.util.Collection)} or
-     * {@link #withKeySchema(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setKeySchema(java.util.Collection)} or {@link #withKeySchema(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param keySchema
-     *        The complete key schema for a global secondary index, which
-     *        consists of one or more pairs of attribute names and key
-     *        types:</p>
+     *        The complete key schema for a global secondary index, which consists of one or more pairs of attribute
+     *        names and key types:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -371,26 +346,21 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      *        </ul>
      *        <note>
      *        <p>
-     *        The partition key of an item is also known as its <i>hash
-     *        attribute</i>. The term "hash attribute" derives from DynamoDB'
-     *        usage of an internal hash function to evenly distribute data items
-     *        across partitions, based on their partition key values.
+     *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
+     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
+     *        on their partition key values.
      *        </p>
      *        <p>
-     *        The sort key of an item is also known as its <i>range
-     *        attribute</i>. The term "range attribute" derives from the way
-     *        DynamoDB stores items with the same partition key physically close
-     *        together, in sorted order by the sort key value.
+     *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
+     *        from the way DynamoDB stores items with the same partition key physically close together, in sorted order
+     *        by the sort key value.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GlobalSecondaryIndexDescription withKeySchema(
-            KeySchemaElement... keySchema) {
+    public GlobalSecondaryIndexDescription withKeySchema(KeySchemaElement... keySchema) {
         if (this.keySchema == null) {
-            setKeySchema(new java.util.ArrayList<KeySchemaElement>(
-                    keySchema.length));
+            setKeySchema(new java.util.ArrayList<KeySchemaElement>(keySchema.length));
         }
         for (KeySchemaElement ele : keySchema) {
             this.keySchema.add(ele);
@@ -400,8 +370,8 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The complete key schema for a global secondary index, which consists of
-     * one or more pairs of attribute names and key types:
+     * The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and
+     * key types:
      * </p>
      * <ul>
      * <li>
@@ -417,23 +387,20 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      * </ul>
      * <note>
      * <p>
-     * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB' usage of an internal
-     * hash function to evenly distribute data items across partitions, based on
-     * their partition key values.
+     * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * partition key values.
      * </p>
      * <p>
-     * The sort key of an item is also known as its <i>range attribute</i>. The
-     * term "range attribute" derives from the way DynamoDB stores items with
-     * the same partition key physically close together, in sorted order by the
-     * sort key value.
+     * The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the
+     * way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key
+     * value.
      * </p>
      * </note>
      * 
      * @param keySchema
-     *        The complete key schema for a global secondary index, which
-     *        consists of one or more pairs of attribute names and key
-     *        types:</p>
+     *        The complete key schema for a global secondary index, which consists of one or more pairs of attribute
+     *        names and key types:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -448,23 +415,19 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      *        </ul>
      *        <note>
      *        <p>
-     *        The partition key of an item is also known as its <i>hash
-     *        attribute</i>. The term "hash attribute" derives from DynamoDB'
-     *        usage of an internal hash function to evenly distribute data items
-     *        across partitions, based on their partition key values.
+     *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
+     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
+     *        on their partition key values.
      *        </p>
      *        <p>
-     *        The sort key of an item is also known as its <i>range
-     *        attribute</i>. The term "range attribute" derives from the way
-     *        DynamoDB stores items with the same partition key physically close
-     *        together, in sorted order by the sort key value.
+     *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
+     *        from the way DynamoDB stores items with the same partition key physically close together, in sorted order
+     *        by the sort key value.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GlobalSecondaryIndexDescription withKeySchema(
-            java.util.Collection<KeySchemaElement> keySchema) {
+    public GlobalSecondaryIndexDescription withKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         setKeySchema(keySchema);
         return this;
     }
@@ -487,8 +450,7 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
 
     /**
      * @param projection
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GlobalSecondaryIndexDescription withProjection(Projection projection) {
@@ -659,8 +621,7 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      *        <i>ACTIVE</i> - The index is ready for use.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see IndexStatus
      */
 
@@ -776,47 +737,38 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      *        <i>ACTIVE</i> - The index is ready for use.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see IndexStatus
      */
 
-    public GlobalSecondaryIndexDescription withIndexStatus(
-            IndexStatus indexStatus) {
+    public GlobalSecondaryIndexDescription withIndexStatus(IndexStatus indexStatus) {
         setIndexStatus(indexStatus);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the index is currently backfilling. <i>Backfilling</i>
-     * is the process of reading items from the table and determining whether
-     * they can be added to the index. (Not all items will qualify: For example,
-     * a partition key cannot have any duplicate values.) If an item can be
-     * added to the index, DynamoDB will do so. After all items have been
-     * processed, the backfilling operation is complete and <i>Backfilling</i>
-     * is false.
+     * Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the
+     * table and determining whether they can be added to the index. (Not all items will qualify: For example, a
+     * partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After
+     * all items have been processed, the backfilling operation is complete and <i>Backfilling</i> is false.
      * </p>
      * <note>
      * <p>
-     * For indexes that were created during a <i>CreateTable</i> operation, the
-     * <i>Backfilling</i> attribute does not appear in the <i>DescribeTable</i>
-     * output.
+     * For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i> attribute does not
+     * appear in the <i>DescribeTable</i> output.
      * </p>
      * </note>
      * 
      * @param backfilling
-     *        Indicates whether the index is currently backfilling.
-     *        <i>Backfilling</i> is the process of reading items from the table
-     *        and determining whether they can be added to the index. (Not all
-     *        items will qualify: For example, a partition key cannot have any
-     *        duplicate values.) If an item can be added to the index, DynamoDB
-     *        will do so. After all items have been processed, the backfilling
-     *        operation is complete and <i>Backfilling</i> is false.</p> <note>
+     *        Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items
+     *        from the table and determining whether they can be added to the index. (Not all items will qualify: For
+     *        example, a partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB
+     *        will do so. After all items have been processed, the backfilling operation is complete and
+     *        <i>Backfilling</i> is false.</p> <note>
      *        <p>
-     *        For indexes that were created during a <i>CreateTable</i>
-     *        operation, the <i>Backfilling</i> attribute does not appear in the
-     *        <i>DescribeTable</i> output.
+     *        For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i> attribute does
+     *        not appear in the <i>DescribeTable</i> output.
      *        </p>
      */
 
@@ -826,33 +778,26 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Indicates whether the index is currently backfilling. <i>Backfilling</i>
-     * is the process of reading items from the table and determining whether
-     * they can be added to the index. (Not all items will qualify: For example,
-     * a partition key cannot have any duplicate values.) If an item can be
-     * added to the index, DynamoDB will do so. After all items have been
-     * processed, the backfilling operation is complete and <i>Backfilling</i>
-     * is false.
+     * Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the
+     * table and determining whether they can be added to the index. (Not all items will qualify: For example, a
+     * partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After
+     * all items have been processed, the backfilling operation is complete and <i>Backfilling</i> is false.
      * </p>
      * <note>
      * <p>
-     * For indexes that were created during a <i>CreateTable</i> operation, the
-     * <i>Backfilling</i> attribute does not appear in the <i>DescribeTable</i>
-     * output.
+     * For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i> attribute does not
+     * appear in the <i>DescribeTable</i> output.
      * </p>
      * </note>
      * 
-     * @return Indicates whether the index is currently backfilling.
-     *         <i>Backfilling</i> is the process of reading items from the table
-     *         and determining whether they can be added to the index. (Not all
-     *         items will qualify: For example, a partition key cannot have any
-     *         duplicate values.) If an item can be added to the index, DynamoDB
-     *         will do so. After all items have been processed, the backfilling
-     *         operation is complete and <i>Backfilling</i> is false.</p> <note>
+     * @return Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items
+     *         from the table and determining whether they can be added to the index. (Not all items will qualify: For
+     *         example, a partition key cannot have any duplicate values.) If an item can be added to the index,
+     *         DynamoDB will do so. After all items have been processed, the backfilling operation is complete and
+     *         <i>Backfilling</i> is false.</p> <note>
      *         <p>
-     *         For indexes that were created during a <i>CreateTable</i>
-     *         operation, the <i>Backfilling</i> attribute does not appear in
-     *         the <i>DescribeTable</i> output.
+     *         For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i> attribute
+     *         does not appear in the <i>DescribeTable</i> output.
      *         </p>
      */
 
@@ -862,37 +807,29 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Indicates whether the index is currently backfilling. <i>Backfilling</i>
-     * is the process of reading items from the table and determining whether
-     * they can be added to the index. (Not all items will qualify: For example,
-     * a partition key cannot have any duplicate values.) If an item can be
-     * added to the index, DynamoDB will do so. After all items have been
-     * processed, the backfilling operation is complete and <i>Backfilling</i>
-     * is false.
+     * Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the
+     * table and determining whether they can be added to the index. (Not all items will qualify: For example, a
+     * partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After
+     * all items have been processed, the backfilling operation is complete and <i>Backfilling</i> is false.
      * </p>
      * <note>
      * <p>
-     * For indexes that were created during a <i>CreateTable</i> operation, the
-     * <i>Backfilling</i> attribute does not appear in the <i>DescribeTable</i>
-     * output.
+     * For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i> attribute does not
+     * appear in the <i>DescribeTable</i> output.
      * </p>
      * </note>
      * 
      * @param backfilling
-     *        Indicates whether the index is currently backfilling.
-     *        <i>Backfilling</i> is the process of reading items from the table
-     *        and determining whether they can be added to the index. (Not all
-     *        items will qualify: For example, a partition key cannot have any
-     *        duplicate values.) If an item can be added to the index, DynamoDB
-     *        will do so. After all items have been processed, the backfilling
-     *        operation is complete and <i>Backfilling</i> is false.</p> <note>
+     *        Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items
+     *        from the table and determining whether they can be added to the index. (Not all items will qualify: For
+     *        example, a partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB
+     *        will do so. After all items have been processed, the backfilling operation is complete and
+     *        <i>Backfilling</i> is false.</p> <note>
      *        <p>
-     *        For indexes that were created during a <i>CreateTable</i>
-     *        operation, the <i>Backfilling</i> attribute does not appear in the
-     *        <i>DescribeTable</i> output.
+     *        For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i> attribute does
+     *        not appear in the <i>DescribeTable</i> output.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GlobalSecondaryIndexDescription withBackfilling(Boolean backfilling) {
@@ -902,33 +839,26 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Indicates whether the index is currently backfilling. <i>Backfilling</i>
-     * is the process of reading items from the table and determining whether
-     * they can be added to the index. (Not all items will qualify: For example,
-     * a partition key cannot have any duplicate values.) If an item can be
-     * added to the index, DynamoDB will do so. After all items have been
-     * processed, the backfilling operation is complete and <i>Backfilling</i>
-     * is false.
+     * Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the
+     * table and determining whether they can be added to the index. (Not all items will qualify: For example, a
+     * partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After
+     * all items have been processed, the backfilling operation is complete and <i>Backfilling</i> is false.
      * </p>
      * <note>
      * <p>
-     * For indexes that were created during a <i>CreateTable</i> operation, the
-     * <i>Backfilling</i> attribute does not appear in the <i>DescribeTable</i>
-     * output.
+     * For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i> attribute does not
+     * appear in the <i>DescribeTable</i> output.
      * </p>
      * </note>
      * 
-     * @return Indicates whether the index is currently backfilling.
-     *         <i>Backfilling</i> is the process of reading items from the table
-     *         and determining whether they can be added to the index. (Not all
-     *         items will qualify: For example, a partition key cannot have any
-     *         duplicate values.) If an item can be added to the index, DynamoDB
-     *         will do so. After all items have been processed, the backfilling
-     *         operation is complete and <i>Backfilling</i> is false.</p> <note>
+     * @return Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items
+     *         from the table and determining whether they can be added to the index. (Not all items will qualify: For
+     *         example, a partition key cannot have any duplicate values.) If an item can be added to the index,
+     *         DynamoDB will do so. After all items have been processed, the backfilling operation is complete and
+     *         <i>Backfilling</i> is false.</p> <note>
      *         <p>
-     *         For indexes that were created during a <i>CreateTable</i>
-     *         operation, the <i>Backfilling</i> attribute does not appear in
-     *         the <i>DescribeTable</i> output.
+     *         For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i> attribute
+     *         does not appear in the <i>DescribeTable</i> output.
      *         </p>
      */
 
@@ -940,8 +870,7 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      * @param provisionedThroughput
      */
 
-    public void setProvisionedThroughput(
-            ProvisionedThroughputDescription provisionedThroughput) {
+    public void setProvisionedThroughput(ProvisionedThroughputDescription provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
     }
 
@@ -955,27 +884,23 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
 
     /**
      * @param provisionedThroughput
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GlobalSecondaryIndexDescription withProvisionedThroughput(
-            ProvisionedThroughputDescription provisionedThroughput) {
+    public GlobalSecondaryIndexDescription withProvisionedThroughput(ProvisionedThroughputDescription provisionedThroughput) {
         setProvisionedThroughput(provisionedThroughput);
         return this;
     }
 
     /**
      * <p>
-     * The total size of the specified index, in bytes. DynamoDB updates this
-     * value approximately every six hours. Recent changes might not be
-     * reflected in this value.
+     * The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours.
+     * Recent changes might not be reflected in this value.
      * </p>
      * 
      * @param indexSizeBytes
-     *        The total size of the specified index, in bytes. DynamoDB updates
-     *        this value approximately every six hours. Recent changes might not
-     *        be reflected in this value.
+     *        The total size of the specified index, in bytes. DynamoDB updates this value approximately every six
+     *        hours. Recent changes might not be reflected in this value.
      */
 
     public void setIndexSizeBytes(Long indexSizeBytes) {
@@ -984,14 +909,12 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The total size of the specified index, in bytes. DynamoDB updates this
-     * value approximately every six hours. Recent changes might not be
-     * reflected in this value.
+     * The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours.
+     * Recent changes might not be reflected in this value.
      * </p>
      * 
-     * @return The total size of the specified index, in bytes. DynamoDB updates
-     *         this value approximately every six hours. Recent changes might
-     *         not be reflected in this value.
+     * @return The total size of the specified index, in bytes. DynamoDB updates this value approximately every six
+     *         hours. Recent changes might not be reflected in this value.
      */
 
     public Long getIndexSizeBytes() {
@@ -1000,36 +923,30 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The total size of the specified index, in bytes. DynamoDB updates this
-     * value approximately every six hours. Recent changes might not be
-     * reflected in this value.
+     * The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours.
+     * Recent changes might not be reflected in this value.
      * </p>
      * 
      * @param indexSizeBytes
-     *        The total size of the specified index, in bytes. DynamoDB updates
-     *        this value approximately every six hours. Recent changes might not
-     *        be reflected in this value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The total size of the specified index, in bytes. DynamoDB updates this value approximately every six
+     *        hours. Recent changes might not be reflected in this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GlobalSecondaryIndexDescription withIndexSizeBytes(
-            Long indexSizeBytes) {
+    public GlobalSecondaryIndexDescription withIndexSizeBytes(Long indexSizeBytes) {
         setIndexSizeBytes(indexSizeBytes);
         return this;
     }
 
     /**
      * <p>
-     * The number of items in the specified index. DynamoDB updates this value
-     * approximately every six hours. Recent changes might not be reflected in
-     * this value.
+     * The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent
+     * changes might not be reflected in this value.
      * </p>
      * 
      * @param itemCount
-     *        The number of items in the specified index. DynamoDB updates this
-     *        value approximately every six hours. Recent changes might not be
-     *        reflected in this value.
+     *        The number of items in the specified index. DynamoDB updates this value approximately every six hours.
+     *        Recent changes might not be reflected in this value.
      */
 
     public void setItemCount(Long itemCount) {
@@ -1038,14 +955,12 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The number of items in the specified index. DynamoDB updates this value
-     * approximately every six hours. Recent changes might not be reflected in
-     * this value.
+     * The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent
+     * changes might not be reflected in this value.
      * </p>
      * 
-     * @return The number of items in the specified index. DynamoDB updates this
-     *         value approximately every six hours. Recent changes might not be
-     *         reflected in this value.
+     * @return The number of items in the specified index. DynamoDB updates this value approximately every six hours.
+     *         Recent changes might not be reflected in this value.
      */
 
     public Long getItemCount() {
@@ -1054,17 +969,14 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The number of items in the specified index. DynamoDB updates this value
-     * approximately every six hours. Recent changes might not be reflected in
-     * this value.
+     * The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent
+     * changes might not be reflected in this value.
      * </p>
      * 
      * @param itemCount
-     *        The number of items in the specified index. DynamoDB updates this
-     *        value approximately every six hours. Recent changes might not be
-     *        reflected in this value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of items in the specified index. DynamoDB updates this value approximately every six hours.
+     *        Recent changes might not be reflected in this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GlobalSecondaryIndexDescription withItemCount(Long itemCount) {
@@ -1090,8 +1002,7 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      * The Amazon Resource Name (ARN) that uniquely identifies the index.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that uniquely identifies the
-     *         index.
+     * @return The Amazon Resource Name (ARN) that uniquely identifies the index.
      */
 
     public String getIndexArn() {
@@ -1105,8 +1016,7 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
      * 
      * @param indexArn
      *        The Amazon Resource Name (ARN) that uniquely identifies the index.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GlobalSecondaryIndexDescription withIndexArn(String indexArn) {
@@ -1115,8 +1025,7 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1137,8 +1046,7 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
         if (getBackfilling() != null)
             sb.append("Backfilling: " + getBackfilling() + ",");
         if (getProvisionedThroughput() != null)
-            sb.append("ProvisionedThroughput: " + getProvisionedThroughput()
-                    + ",");
+            sb.append("ProvisionedThroughput: " + getProvisionedThroughput() + ",");
         if (getIndexSizeBytes() != null)
             sb.append("IndexSizeBytes: " + getIndexSizeBytes() + ",");
         if (getItemCount() != null)
@@ -1161,51 +1069,39 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
         GlobalSecondaryIndexDescription other = (GlobalSecondaryIndexDescription) obj;
         if (other.getIndexName() == null ^ this.getIndexName() == null)
             return false;
-        if (other.getIndexName() != null
-                && other.getIndexName().equals(this.getIndexName()) == false)
+        if (other.getIndexName() != null && other.getIndexName().equals(this.getIndexName()) == false)
             return false;
         if (other.getKeySchema() == null ^ this.getKeySchema() == null)
             return false;
-        if (other.getKeySchema() != null
-                && other.getKeySchema().equals(this.getKeySchema()) == false)
+        if (other.getKeySchema() != null && other.getKeySchema().equals(this.getKeySchema()) == false)
             return false;
         if (other.getProjection() == null ^ this.getProjection() == null)
             return false;
-        if (other.getProjection() != null
-                && other.getProjection().equals(this.getProjection()) == false)
+        if (other.getProjection() != null && other.getProjection().equals(this.getProjection()) == false)
             return false;
         if (other.getIndexStatus() == null ^ this.getIndexStatus() == null)
             return false;
-        if (other.getIndexStatus() != null
-                && other.getIndexStatus().equals(this.getIndexStatus()) == false)
+        if (other.getIndexStatus() != null && other.getIndexStatus().equals(this.getIndexStatus()) == false)
             return false;
         if (other.getBackfilling() == null ^ this.getBackfilling() == null)
             return false;
-        if (other.getBackfilling() != null
-                && other.getBackfilling().equals(this.getBackfilling()) == false)
+        if (other.getBackfilling() != null && other.getBackfilling().equals(this.getBackfilling()) == false)
             return false;
-        if (other.getProvisionedThroughput() == null
-                ^ this.getProvisionedThroughput() == null)
+        if (other.getProvisionedThroughput() == null ^ this.getProvisionedThroughput() == null)
             return false;
-        if (other.getProvisionedThroughput() != null
-                && other.getProvisionedThroughput().equals(
-                        this.getProvisionedThroughput()) == false)
+        if (other.getProvisionedThroughput() != null && other.getProvisionedThroughput().equals(this.getProvisionedThroughput()) == false)
             return false;
-        if (other.getIndexSizeBytes() == null
-                ^ this.getIndexSizeBytes() == null)
+        if (other.getIndexSizeBytes() == null ^ this.getIndexSizeBytes() == null)
             return false;
-        if (other.getIndexSizeBytes() != null
-                && other.getIndexSizeBytes().equals(this.getIndexSizeBytes()) == false)
+        if (other.getIndexSizeBytes() != null && other.getIndexSizeBytes().equals(this.getIndexSizeBytes()) == false)
             return false;
         if (other.getItemCount() == null ^ this.getItemCount() == null)
             return false;
-        if (other.getItemCount() != null
-                && other.getItemCount().equals(this.getItemCount()) == false)
+        if (other.getItemCount() != null && other.getItemCount().equals(this.getItemCount()) == false)
             return false;
         if (other.getIndexArn() == null ^ this.getIndexArn() == null)
             return false;
-        if (other.getIndexArn() != null
-                && other.getIndexArn().equals(this.getIndexArn()) == false)
+        if (other.getIndexArn() != null && other.getIndexArn().equals(this.getIndexArn()) == false)
             return false;
         return true;
     }
@@ -1215,30 +1111,15 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
-        hashCode = prime * hashCode
-                + ((getKeySchema() == null) ? 0 : getKeySchema().hashCode());
-        hashCode = prime * hashCode
-                + ((getProjection() == null) ? 0 : getProjection().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIndexStatus() == null) ? 0 : getIndexStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBackfilling() == null) ? 0 : getBackfilling().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProvisionedThroughput() == null) ? 0
-                        : getProvisionedThroughput().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIndexSizeBytes() == null) ? 0 : getIndexSizeBytes()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getItemCount() == null) ? 0 : getItemCount().hashCode());
-        hashCode = prime * hashCode
-                + ((getIndexArn() == null) ? 0 : getIndexArn().hashCode());
+        hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
+        hashCode = prime * hashCode + ((getKeySchema() == null) ? 0 : getKeySchema().hashCode());
+        hashCode = prime * hashCode + ((getProjection() == null) ? 0 : getProjection().hashCode());
+        hashCode = prime * hashCode + ((getIndexStatus() == null) ? 0 : getIndexStatus().hashCode());
+        hashCode = prime * hashCode + ((getBackfilling() == null) ? 0 : getBackfilling().hashCode());
+        hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
+        hashCode = prime * hashCode + ((getIndexSizeBytes() == null) ? 0 : getIndexSizeBytes().hashCode());
+        hashCode = prime * hashCode + ((getItemCount() == null) ? 0 : getItemCount().hashCode());
+        hashCode = prime * hashCode + ((getIndexArn() == null) ? 0 : getIndexArn().hashCode());
         return hashCode;
     }
 
@@ -1247,9 +1128,7 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable 
         try {
             return (GlobalSecondaryIndexDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

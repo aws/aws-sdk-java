@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model;
 
@@ -22,15 +20,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to create a <a>SqlInjectionMatchSet</a>.
  * </p>
  */
-public class CreateSqlInjectionMatchSetRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateSqlInjectionMatchSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A friendly name or description for the <a>SqlInjectionMatchSet</a> that
-     * you're creating. You can't change <code>Name</code> after you create the
-     * <code>SqlInjectionMatchSet</code>.
+     * A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change
+     * <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.
      * </p>
      */
     private String name;
@@ -43,15 +38,13 @@ public class CreateSqlInjectionMatchSetRequest extends
 
     /**
      * <p>
-     * A friendly name or description for the <a>SqlInjectionMatchSet</a> that
-     * you're creating. You can't change <code>Name</code> after you create the
-     * <code>SqlInjectionMatchSet</code>.
+     * A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change
+     * <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.
      * </p>
      * 
      * @param name
-     *        A friendly name or description for the <a>SqlInjectionMatchSet</a>
-     *        that you're creating. You can't change <code>Name</code> after you
-     *        create the <code>SqlInjectionMatchSet</code>.
+     *        A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change
+     *        <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.
      */
 
     public void setName(String name) {
@@ -60,15 +53,12 @@ public class CreateSqlInjectionMatchSetRequest extends
 
     /**
      * <p>
-     * A friendly name or description for the <a>SqlInjectionMatchSet</a> that
-     * you're creating. You can't change <code>Name</code> after you create the
-     * <code>SqlInjectionMatchSet</code>.
+     * A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change
+     * <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.
      * </p>
      * 
-     * @return A friendly name or description for the
-     *         <a>SqlInjectionMatchSet</a> that you're creating. You can't
-     *         change <code>Name</code> after you create the
-     *         <code>SqlInjectionMatchSet</code>.
+     * @return A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change
+     *         <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.
      */
 
     public String getName() {
@@ -77,17 +67,14 @@ public class CreateSqlInjectionMatchSetRequest extends
 
     /**
      * <p>
-     * A friendly name or description for the <a>SqlInjectionMatchSet</a> that
-     * you're creating. You can't change <code>Name</code> after you create the
-     * <code>SqlInjectionMatchSet</code>.
+     * A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change
+     * <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.
      * </p>
      * 
      * @param name
-     *        A friendly name or description for the <a>SqlInjectionMatchSet</a>
-     *        that you're creating. You can't change <code>Name</code> after you
-     *        create the <code>SqlInjectionMatchSet</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change
+     *        <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateSqlInjectionMatchSetRequest withName(String name) {
@@ -101,8 +88,7 @@ public class CreateSqlInjectionMatchSetRequest extends
      * </p>
      * 
      * @param changeToken
-     *        The value returned by the most recent call to
-     *        <a>GetChangeToken</a>.
+     *        The value returned by the most recent call to <a>GetChangeToken</a>.
      */
 
     public void setChangeToken(String changeToken) {
@@ -114,8 +100,7 @@ public class CreateSqlInjectionMatchSetRequest extends
      * The value returned by the most recent call to <a>GetChangeToken</a>.
      * </p>
      * 
-     * @return The value returned by the most recent call to
-     *         <a>GetChangeToken</a>.
+     * @return The value returned by the most recent call to <a>GetChangeToken</a>.
      */
 
     public String getChangeToken() {
@@ -128,10 +113,8 @@ public class CreateSqlInjectionMatchSetRequest extends
      * </p>
      * 
      * @param changeToken
-     *        The value returned by the most recent call to
-     *        <a>GetChangeToken</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value returned by the most recent call to <a>GetChangeToken</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateSqlInjectionMatchSetRequest withChangeToken(String changeToken) {
@@ -140,8 +123,7 @@ public class CreateSqlInjectionMatchSetRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -171,13 +153,11 @@ public class CreateSqlInjectionMatchSetRequest extends
         CreateSqlInjectionMatchSetRequest other = (CreateSqlInjectionMatchSetRequest) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getChangeToken() == null ^ this.getChangeToken() == null)
             return false;
-        if (other.getChangeToken() != null
-                && other.getChangeToken().equals(this.getChangeToken()) == false)
+        if (other.getChangeToken() != null && other.getChangeToken().equals(this.getChangeToken()) == false)
             return false;
         return true;
     }
@@ -187,11 +167,8 @@ public class CreateSqlInjectionMatchSetRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getChangeToken() == null) ? 0 : getChangeToken().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getChangeToken() == null) ? 0 : getChangeToken().hashCode());
         return hashCode;
     }
 

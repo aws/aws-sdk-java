@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
@@ -20,22 +18,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class AddApplicationInputRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of your existing Amazon Kinesis Analytics application to which you
-     * want to add the streaming source.
+     * Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * Current version of your Amazon Kinesis Analytics application. You can use
-     * the <a>DescribeApplication</a> operation to find the current application
-     * version.
+     * Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
+     * operation to find the current application version.
      * </p>
      */
     private Long currentApplicationVersionId;
@@ -44,13 +38,11 @@ public class AddApplicationInputRequest extends
 
     /**
      * <p>
-     * Name of your existing Amazon Kinesis Analytics application to which you
-     * want to add the streaming source.
+     * Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.
      * </p>
      * 
      * @param applicationName
-     *        Name of your existing Amazon Kinesis Analytics application to
-     *        which you want to add the streaming source.
+     *        Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.
      */
 
     public void setApplicationName(String applicationName) {
@@ -59,12 +51,10 @@ public class AddApplicationInputRequest extends
 
     /**
      * <p>
-     * Name of your existing Amazon Kinesis Analytics application to which you
-     * want to add the streaming source.
+     * Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.
      * </p>
      * 
-     * @return Name of your existing Amazon Kinesis Analytics application to
-     *         which you want to add the streaming source.
+     * @return Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.
      */
 
     public String getApplicationName() {
@@ -73,15 +63,12 @@ public class AddApplicationInputRequest extends
 
     /**
      * <p>
-     * Name of your existing Amazon Kinesis Analytics application to which you
-     * want to add the streaming source.
+     * Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.
      * </p>
      * 
      * @param applicationName
-     *        Name of your existing Amazon Kinesis Analytics application to
-     *        which you want to add the streaming source.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddApplicationInputRequest withApplicationName(String applicationName) {
@@ -91,15 +78,13 @@ public class AddApplicationInputRequest extends
 
     /**
      * <p>
-     * Current version of your Amazon Kinesis Analytics application. You can use
-     * the <a>DescribeApplication</a> operation to find the current application
-     * version.
+     * Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
+     * operation to find the current application version.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Current version of your Amazon Kinesis Analytics application. You
-     *        can use the <a>DescribeApplication</a> operation to find the
-     *        current application version.
+     *        Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
+     *        operation to find the current application version.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -108,14 +93,12 @@ public class AddApplicationInputRequest extends
 
     /**
      * <p>
-     * Current version of your Amazon Kinesis Analytics application. You can use
-     * the <a>DescribeApplication</a> operation to find the current application
-     * version.
+     * Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
+     * operation to find the current application version.
      * </p>
      * 
-     * @return Current version of your Amazon Kinesis Analytics application. You
-     *         can use the <a>DescribeApplication</a> operation to find the
-     *         current application version.
+     * @return Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
+     *         operation to find the current application version.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -124,21 +107,17 @@ public class AddApplicationInputRequest extends
 
     /**
      * <p>
-     * Current version of your Amazon Kinesis Analytics application. You can use
-     * the <a>DescribeApplication</a> operation to find the current application
-     * version.
+     * Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
+     * operation to find the current application version.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Current version of your Amazon Kinesis Analytics application. You
-     *        can use the <a>DescribeApplication</a> operation to find the
-     *        current application version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
+     *        operation to find the current application version.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AddApplicationInputRequest withCurrentApplicationVersionId(
-            Long currentApplicationVersionId) {
+    public AddApplicationInputRequest withCurrentApplicationVersionId(Long currentApplicationVersionId) {
         setCurrentApplicationVersionId(currentApplicationVersionId);
         return this;
     }
@@ -161,8 +140,7 @@ public class AddApplicationInputRequest extends
 
     /**
      * @param input
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddApplicationInputRequest withInput(Input input) {
@@ -171,8 +149,7 @@ public class AddApplicationInputRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -185,8 +162,7 @@ public class AddApplicationInputRequest extends
         if (getApplicationName() != null)
             sb.append("ApplicationName: " + getApplicationName() + ",");
         if (getCurrentApplicationVersionId() != null)
-            sb.append("CurrentApplicationVersionId: "
-                    + getCurrentApplicationVersionId() + ",");
+            sb.append("CurrentApplicationVersionId: " + getCurrentApplicationVersionId() + ",");
         if (getInput() != null)
             sb.append("Input: " + getInput());
         sb.append("}");
@@ -203,23 +179,17 @@ public class AddApplicationInputRequest extends
         if (obj instanceof AddApplicationInputRequest == false)
             return false;
         AddApplicationInputRequest other = (AddApplicationInputRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
-        if (other.getCurrentApplicationVersionId() == null
-                ^ this.getCurrentApplicationVersionId() == null)
+        if (other.getCurrentApplicationVersionId() == null ^ this.getCurrentApplicationVersionId() == null)
             return false;
-        if (other.getCurrentApplicationVersionId() != null
-                && other.getCurrentApplicationVersionId().equals(
-                        this.getCurrentApplicationVersionId()) == false)
+        if (other.getCurrentApplicationVersionId() != null && other.getCurrentApplicationVersionId().equals(this.getCurrentApplicationVersionId()) == false)
             return false;
         if (other.getInput() == null ^ this.getInput() == null)
             return false;
-        if (other.getInput() != null
-                && other.getInput().equals(this.getInput()) == false)
+        if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
             return false;
         return true;
     }
@@ -229,16 +199,9 @@ public class AddApplicationInputRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCurrentApplicationVersionId() == null) ? 0
-                        : getCurrentApplicationVersionId().hashCode());
-        hashCode = prime * hashCode
-                + ((getInput() == null) ? 0 : getInput().hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getCurrentApplicationVersionId() == null) ? 0 : getCurrentApplicationVersionId().hashCode());
+        hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
         return hashCode;
     }
 

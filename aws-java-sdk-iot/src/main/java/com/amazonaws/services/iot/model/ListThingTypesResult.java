@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The output for the ListThingTypes operation.
  * </p>
  */
-public class ListThingTypesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListThingTypesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,7 @@ public class ListThingTypesResult extends
     private java.util.List<ThingTypeDefinition> thingTypes;
     /**
      * <p>
-     * The token for the next set of results, or <b>null</b> if there are no
-     * additional results.
+     * The token for the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      */
     private String nextToken;
@@ -60,15 +55,13 @@ public class ListThingTypesResult extends
      *        The thing types.
      */
 
-    public void setThingTypes(
-            java.util.Collection<ThingTypeDefinition> thingTypes) {
+    public void setThingTypes(java.util.Collection<ThingTypeDefinition> thingTypes) {
         if (thingTypes == null) {
             this.thingTypes = null;
             return;
         }
 
-        this.thingTypes = new java.util.ArrayList<ThingTypeDefinition>(
-                thingTypes);
+        this.thingTypes = new java.util.ArrayList<ThingTypeDefinition>(thingTypes);
     }
 
     /**
@@ -76,23 +69,19 @@ public class ListThingTypesResult extends
      * The thing types.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setThingTypes(java.util.Collection)} or
-     * {@link #withThingTypes(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setThingTypes(java.util.Collection)} or {@link #withThingTypes(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param thingTypes
      *        The thing types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListThingTypesResult withThingTypes(
-            ThingTypeDefinition... thingTypes) {
+    public ListThingTypesResult withThingTypes(ThingTypeDefinition... thingTypes) {
         if (this.thingTypes == null) {
-            setThingTypes(new java.util.ArrayList<ThingTypeDefinition>(
-                    thingTypes.length));
+            setThingTypes(new java.util.ArrayList<ThingTypeDefinition>(thingTypes.length));
         }
         for (ThingTypeDefinition ele : thingTypes) {
             this.thingTypes.add(ele);
@@ -107,25 +96,21 @@ public class ListThingTypesResult extends
      * 
      * @param thingTypes
      *        The thing types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListThingTypesResult withThingTypes(
-            java.util.Collection<ThingTypeDefinition> thingTypes) {
+    public ListThingTypesResult withThingTypes(java.util.Collection<ThingTypeDefinition> thingTypes) {
         setThingTypes(thingTypes);
         return this;
     }
 
     /**
      * <p>
-     * The token for the next set of results, or <b>null</b> if there are no
-     * additional results.
+     * The token for the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or <b>null</b> if there are
-     *        no additional results.
+     *        The token for the next set of results, or <b>null</b> if there are no additional results.
      */
 
     public void setNextToken(String nextToken) {
@@ -134,12 +119,10 @@ public class ListThingTypesResult extends
 
     /**
      * <p>
-     * The token for the next set of results, or <b>null</b> if there are no
-     * additional results.
+     * The token for the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
-     * @return The token for the next set of results, or <b>null</b> if there
-     *         are no additional results.
+     * @return The token for the next set of results, or <b>null</b> if there are no additional results.
      */
 
     public String getNextToken() {
@@ -148,15 +131,12 @@ public class ListThingTypesResult extends
 
     /**
      * <p>
-     * The token for the next set of results, or <b>null</b> if there are no
-     * additional results.
+     * The token for the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or <b>null</b> if there are
-     *        no additional results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token for the next set of results, or <b>null</b> if there are no additional results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListThingTypesResult withNextToken(String nextToken) {
@@ -165,8 +145,7 @@ public class ListThingTypesResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -196,13 +175,11 @@ public class ListThingTypesResult extends
         ListThingTypesResult other = (ListThingTypesResult) obj;
         if (other.getThingTypes() == null ^ this.getThingTypes() == null)
             return false;
-        if (other.getThingTypes() != null
-                && other.getThingTypes().equals(this.getThingTypes()) == false)
+        if (other.getThingTypes() != null && other.getThingTypes().equals(this.getThingTypes()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -212,10 +189,8 @@ public class ListThingTypesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getThingTypes() == null) ? 0 : getThingTypes().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getThingTypes() == null) ? 0 : getThingTypes().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -224,9 +199,7 @@ public class ListThingTypesResult extends
         try {
             return (ListThingTypesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

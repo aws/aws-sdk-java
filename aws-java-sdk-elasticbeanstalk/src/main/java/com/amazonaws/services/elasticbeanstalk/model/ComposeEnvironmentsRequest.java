@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to create or update a group of environments.
  * </p>
  */
-public class ComposeEnvironmentsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ComposeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,21 +30,18 @@ public class ComposeEnvironmentsRequest extends
     private String applicationName;
     /**
      * <p>
-     * The name of the group to which the target environments belong. Specify a
-     * group name only if the environment name defined in each target
-     * environment's manifest ends with a + (plus) character. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
-     * >Environment Manifest (env.yaml)</a> for details.
+     * The name of the group to which the target environments belong. Specify a group name only if the environment name
+     * defined in each target environment's manifest ends with a + (plus) character. See <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest
+     * (env.yaml)</a> for details.
      * </p>
      */
     private String groupName;
     /**
      * <p>
-     * A list of version labels, specifying one or more application source
-     * bundles that belong to the target application. Each source bundle must
-     * include an environment manifest that specifies the name of the
-     * environment and the name of the solution stack to use, and optionally can
-     * specify environment links to create.
+     * A list of version labels, specifying one or more application source bundles that belong to the target
+     * application. Each source bundle must include an environment manifest that specifies the name of the environment
+     * and the name of the solution stack to use, and optionally can specify environment links to create.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> versionLabels;
@@ -59,8 +52,7 @@ public class ComposeEnvironmentsRequest extends
      * </p>
      * 
      * @param applicationName
-     *        The name of the application to which the specified source bundles
-     *        belong.
+     *        The name of the application to which the specified source bundles belong.
      */
 
     public void setApplicationName(String applicationName) {
@@ -72,8 +64,7 @@ public class ComposeEnvironmentsRequest extends
      * The name of the application to which the specified source bundles belong.
      * </p>
      * 
-     * @return The name of the application to which the specified source bundles
-     *         belong.
+     * @return The name of the application to which the specified source bundles belong.
      */
 
     public String getApplicationName() {
@@ -86,10 +77,8 @@ public class ComposeEnvironmentsRequest extends
      * </p>
      * 
      * @param applicationName
-     *        The name of the application to which the specified source bundles
-     *        belong.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the application to which the specified source bundles belong.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ComposeEnvironmentsRequest withApplicationName(String applicationName) {
@@ -99,20 +88,17 @@ public class ComposeEnvironmentsRequest extends
 
     /**
      * <p>
-     * The name of the group to which the target environments belong. Specify a
-     * group name only if the environment name defined in each target
-     * environment's manifest ends with a + (plus) character. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
-     * >Environment Manifest (env.yaml)</a> for details.
+     * The name of the group to which the target environments belong. Specify a group name only if the environment name
+     * defined in each target environment's manifest ends with a + (plus) character. See <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest
+     * (env.yaml)</a> for details.
      * </p>
      * 
      * @param groupName
-     *        The name of the group to which the target environments belong.
-     *        Specify a group name only if the environment name defined in each
-     *        target environment's manifest ends with a + (plus) character. See
-     *        <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
-     *        >Environment Manifest (env.yaml)</a> for details.
+     *        The name of the group to which the target environments belong. Specify a group name only if the
+     *        environment name defined in each target environment's manifest ends with a + (plus) character. See <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     *        Manifest (env.yaml)</a> for details.
      */
 
     public void setGroupName(String groupName) {
@@ -121,19 +107,16 @@ public class ComposeEnvironmentsRequest extends
 
     /**
      * <p>
-     * The name of the group to which the target environments belong. Specify a
-     * group name only if the environment name defined in each target
-     * environment's manifest ends with a + (plus) character. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
-     * >Environment Manifest (env.yaml)</a> for details.
+     * The name of the group to which the target environments belong. Specify a group name only if the environment name
+     * defined in each target environment's manifest ends with a + (plus) character. See <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest
+     * (env.yaml)</a> for details.
      * </p>
      * 
-     * @return The name of the group to which the target environments belong.
-     *         Specify a group name only if the environment name defined in each
-     *         target environment's manifest ends with a + (plus) character. See
-     *         <a href=
-     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
-     *         >Environment Manifest (env.yaml)</a> for details.
+     * @return The name of the group to which the target environments belong. Specify a group name only if the
+     *         environment name defined in each target environment's manifest ends with a + (plus) character. See <a
+     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     *         Manifest (env.yaml)</a> for details.
      */
 
     public String getGroupName() {
@@ -142,22 +125,18 @@ public class ComposeEnvironmentsRequest extends
 
     /**
      * <p>
-     * The name of the group to which the target environments belong. Specify a
-     * group name only if the environment name defined in each target
-     * environment's manifest ends with a + (plus) character. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
-     * >Environment Manifest (env.yaml)</a> for details.
+     * The name of the group to which the target environments belong. Specify a group name only if the environment name
+     * defined in each target environment's manifest ends with a + (plus) character. See <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest
+     * (env.yaml)</a> for details.
      * </p>
      * 
      * @param groupName
-     *        The name of the group to which the target environments belong.
-     *        Specify a group name only if the environment name defined in each
-     *        target environment's manifest ends with a + (plus) character. See
-     *        <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
-     *        >Environment Manifest (env.yaml)</a> for details.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the group to which the target environments belong. Specify a group name only if the
+     *        environment name defined in each target environment's manifest ends with a + (plus) character. See <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     *        Manifest (env.yaml)</a> for details.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ComposeEnvironmentsRequest withGroupName(String groupName) {
@@ -167,18 +146,15 @@ public class ComposeEnvironmentsRequest extends
 
     /**
      * <p>
-     * A list of version labels, specifying one or more application source
-     * bundles that belong to the target application. Each source bundle must
-     * include an environment manifest that specifies the name of the
-     * environment and the name of the solution stack to use, and optionally can
-     * specify environment links to create.
+     * A list of version labels, specifying one or more application source bundles that belong to the target
+     * application. Each source bundle must include an environment manifest that specifies the name of the environment
+     * and the name of the solution stack to use, and optionally can specify environment links to create.
      * </p>
      * 
-     * @return A list of version labels, specifying one or more application
-     *         source bundles that belong to the target application. Each source
-     *         bundle must include an environment manifest that specifies the
-     *         name of the environment and the name of the solution stack to
-     *         use, and optionally can specify environment links to create.
+     * @return A list of version labels, specifying one or more application source bundles that belong to the target
+     *         application. Each source bundle must include an environment manifest that specifies the name of the
+     *         environment and the name of the solution stack to use, and optionally can specify environment links to
+     *         create.
      */
 
     public java.util.List<String> getVersionLabels() {
@@ -190,19 +166,16 @@ public class ComposeEnvironmentsRequest extends
 
     /**
      * <p>
-     * A list of version labels, specifying one or more application source
-     * bundles that belong to the target application. Each source bundle must
-     * include an environment manifest that specifies the name of the
-     * environment and the name of the solution stack to use, and optionally can
-     * specify environment links to create.
+     * A list of version labels, specifying one or more application source bundles that belong to the target
+     * application. Each source bundle must include an environment manifest that specifies the name of the environment
+     * and the name of the solution stack to use, and optionally can specify environment links to create.
      * </p>
      * 
      * @param versionLabels
-     *        A list of version labels, specifying one or more application
-     *        source bundles that belong to the target application. Each source
-     *        bundle must include an environment manifest that specifies the
-     *        name of the environment and the name of the solution stack to use,
-     *        and optionally can specify environment links to create.
+     *        A list of version labels, specifying one or more application source bundles that belong to the target
+     *        application. Each source bundle must include an environment manifest that specifies the name of the
+     *        environment and the name of the solution stack to use, and optionally can specify environment links to
+     *        create.
      */
 
     public void setVersionLabels(java.util.Collection<String> versionLabels) {
@@ -211,39 +184,32 @@ public class ComposeEnvironmentsRequest extends
             return;
         }
 
-        this.versionLabels = new com.amazonaws.internal.SdkInternalList<String>(
-                versionLabels);
+        this.versionLabels = new com.amazonaws.internal.SdkInternalList<String>(versionLabels);
     }
 
     /**
      * <p>
-     * A list of version labels, specifying one or more application source
-     * bundles that belong to the target application. Each source bundle must
-     * include an environment manifest that specifies the name of the
-     * environment and the name of the solution stack to use, and optionally can
-     * specify environment links to create.
+     * A list of version labels, specifying one or more application source bundles that belong to the target
+     * application. Each source bundle must include an environment manifest that specifies the name of the environment
+     * and the name of the solution stack to use, and optionally can specify environment links to create.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVersionLabels(java.util.Collection)} or
-     * {@link #withVersionLabels(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVersionLabels(java.util.Collection)} or {@link #withVersionLabels(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param versionLabels
-     *        A list of version labels, specifying one or more application
-     *        source bundles that belong to the target application. Each source
-     *        bundle must include an environment manifest that specifies the
-     *        name of the environment and the name of the solution stack to use,
-     *        and optionally can specify environment links to create.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of version labels, specifying one or more application source bundles that belong to the target
+     *        application. Each source bundle must include an environment manifest that specifies the name of the
+     *        environment and the name of the solution stack to use, and optionally can specify environment links to
+     *        create.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ComposeEnvironmentsRequest withVersionLabels(String... versionLabels) {
         if (this.versionLabels == null) {
-            setVersionLabels(new com.amazonaws.internal.SdkInternalList<String>(
-                    versionLabels.length));
+            setVersionLabels(new com.amazonaws.internal.SdkInternalList<String>(versionLabels.length));
         }
         for (String ele : versionLabels) {
             this.versionLabels.add(ele);
@@ -253,32 +219,26 @@ public class ComposeEnvironmentsRequest extends
 
     /**
      * <p>
-     * A list of version labels, specifying one or more application source
-     * bundles that belong to the target application. Each source bundle must
-     * include an environment manifest that specifies the name of the
-     * environment and the name of the solution stack to use, and optionally can
-     * specify environment links to create.
+     * A list of version labels, specifying one or more application source bundles that belong to the target
+     * application. Each source bundle must include an environment manifest that specifies the name of the environment
+     * and the name of the solution stack to use, and optionally can specify environment links to create.
      * </p>
      * 
      * @param versionLabels
-     *        A list of version labels, specifying one or more application
-     *        source bundles that belong to the target application. Each source
-     *        bundle must include an environment manifest that specifies the
-     *        name of the environment and the name of the solution stack to use,
-     *        and optionally can specify environment links to create.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of version labels, specifying one or more application source bundles that belong to the target
+     *        application. Each source bundle must include an environment manifest that specifies the name of the
+     *        environment and the name of the solution stack to use, and optionally can specify environment links to
+     *        create.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ComposeEnvironmentsRequest withVersionLabels(
-            java.util.Collection<String> versionLabels) {
+    public ComposeEnvironmentsRequest withVersionLabels(java.util.Collection<String> versionLabels) {
         setVersionLabels(versionLabels);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -308,21 +268,17 @@ public class ComposeEnvironmentsRequest extends
         if (obj instanceof ComposeEnvironmentsRequest == false)
             return false;
         ComposeEnvironmentsRequest other = (ComposeEnvironmentsRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
         if (other.getGroupName() == null ^ this.getGroupName() == null)
             return false;
-        if (other.getGroupName() != null
-                && other.getGroupName().equals(this.getGroupName()) == false)
+        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
         if (other.getVersionLabels() == null ^ this.getVersionLabels() == null)
             return false;
-        if (other.getVersionLabels() != null
-                && other.getVersionLabels().equals(this.getVersionLabels()) == false)
+        if (other.getVersionLabels() != null && other.getVersionLabels().equals(this.getVersionLabels()) == false)
             return false;
         return true;
     }
@@ -332,16 +288,9 @@ public class ComposeEnvironmentsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVersionLabels() == null) ? 0 : getVersionLabels()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getVersionLabels() == null) ? 0 : getVersionLabels().hashCode());
         return hashCode;
     }
 

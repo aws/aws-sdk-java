@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CreateOptionGroupRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -55,15 +51,13 @@ public class CreateOptionGroupRequest extends
     private String optionGroupName;
     /**
      * <p>
-     * Specifies the name of the engine that this option group should be
-     * associated with.
+     * Specifies the name of the engine that this option group should be associated with.
      * </p>
      */
     private String engineName;
     /**
      * <p>
-     * Specifies the major version of the engine that this option group should
-     * be associated with.
+     * Specifies the major version of the engine that this option group should be associated with.
      * </p>
      */
     private String majorEngineVersion;
@@ -243,8 +237,7 @@ public class CreateOptionGroupRequest extends
      *        </ul>
      *        <p>
      *        Example: <code>myoptiongroup</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateOptionGroupRequest withOptionGroupName(String optionGroupName) {
@@ -254,13 +247,11 @@ public class CreateOptionGroupRequest extends
 
     /**
      * <p>
-     * Specifies the name of the engine that this option group should be
-     * associated with.
+     * Specifies the name of the engine that this option group should be associated with.
      * </p>
      * 
      * @param engineName
-     *        Specifies the name of the engine that this option group should be
-     *        associated with.
+     *        Specifies the name of the engine that this option group should be associated with.
      */
 
     public void setEngineName(String engineName) {
@@ -269,12 +260,10 @@ public class CreateOptionGroupRequest extends
 
     /**
      * <p>
-     * Specifies the name of the engine that this option group should be
-     * associated with.
+     * Specifies the name of the engine that this option group should be associated with.
      * </p>
      * 
-     * @return Specifies the name of the engine that this option group should be
-     *         associated with.
+     * @return Specifies the name of the engine that this option group should be associated with.
      */
 
     public String getEngineName() {
@@ -283,15 +272,12 @@ public class CreateOptionGroupRequest extends
 
     /**
      * <p>
-     * Specifies the name of the engine that this option group should be
-     * associated with.
+     * Specifies the name of the engine that this option group should be associated with.
      * </p>
      * 
      * @param engineName
-     *        Specifies the name of the engine that this option group should be
-     *        associated with.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the name of the engine that this option group should be associated with.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateOptionGroupRequest withEngineName(String engineName) {
@@ -301,13 +287,11 @@ public class CreateOptionGroupRequest extends
 
     /**
      * <p>
-     * Specifies the major version of the engine that this option group should
-     * be associated with.
+     * Specifies the major version of the engine that this option group should be associated with.
      * </p>
      * 
      * @param majorEngineVersion
-     *        Specifies the major version of the engine that this option group
-     *        should be associated with.
+     *        Specifies the major version of the engine that this option group should be associated with.
      */
 
     public void setMajorEngineVersion(String majorEngineVersion) {
@@ -316,12 +300,10 @@ public class CreateOptionGroupRequest extends
 
     /**
      * <p>
-     * Specifies the major version of the engine that this option group should
-     * be associated with.
+     * Specifies the major version of the engine that this option group should be associated with.
      * </p>
      * 
-     * @return Specifies the major version of the engine that this option group
-     *         should be associated with.
+     * @return Specifies the major version of the engine that this option group should be associated with.
      */
 
     public String getMajorEngineVersion() {
@@ -330,19 +312,15 @@ public class CreateOptionGroupRequest extends
 
     /**
      * <p>
-     * Specifies the major version of the engine that this option group should
-     * be associated with.
+     * Specifies the major version of the engine that this option group should be associated with.
      * </p>
      * 
      * @param majorEngineVersion
-     *        Specifies the major version of the engine that this option group
-     *        should be associated with.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the major version of the engine that this option group should be associated with.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateOptionGroupRequest withMajorEngineVersion(
-            String majorEngineVersion) {
+    public CreateOptionGroupRequest withMajorEngineVersion(String majorEngineVersion) {
         setMajorEngineVersion(majorEngineVersion);
         return this;
     }
@@ -379,12 +357,10 @@ public class CreateOptionGroupRequest extends
      * 
      * @param optionGroupDescription
      *        The description of the option group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateOptionGroupRequest withOptionGroupDescription(
-            String optionGroupDescription) {
+    public CreateOptionGroupRequest withOptionGroupDescription(String optionGroupDescription) {
         setOptionGroupDescription(optionGroupDescription);
         return this;
     }
@@ -415,15 +391,13 @@ public class CreateOptionGroupRequest extends
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateOptionGroupRequest withTags(Tag... tags) {
@@ -438,8 +412,7 @@ public class CreateOptionGroupRequest extends
 
     /**
      * @param tags
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateOptionGroupRequest withTags(java.util.Collection<Tag> tags) {
@@ -448,8 +421,7 @@ public class CreateOptionGroupRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -466,8 +438,7 @@ public class CreateOptionGroupRequest extends
         if (getMajorEngineVersion() != null)
             sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ",");
         if (getOptionGroupDescription() != null)
-            sb.append("OptionGroupDescription: " + getOptionGroupDescription()
-                    + ",");
+            sb.append("OptionGroupDescription: " + getOptionGroupDescription() + ",");
         if (getTags() != null)
             sb.append("Tags: " + getTags());
         sb.append("}");
@@ -484,35 +455,25 @@ public class CreateOptionGroupRequest extends
         if (obj instanceof CreateOptionGroupRequest == false)
             return false;
         CreateOptionGroupRequest other = (CreateOptionGroupRequest) obj;
-        if (other.getOptionGroupName() == null
-                ^ this.getOptionGroupName() == null)
+        if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null)
             return false;
-        if (other.getOptionGroupName() != null
-                && other.getOptionGroupName().equals(this.getOptionGroupName()) == false)
+        if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false)
             return false;
         if (other.getEngineName() == null ^ this.getEngineName() == null)
             return false;
-        if (other.getEngineName() != null
-                && other.getEngineName().equals(this.getEngineName()) == false)
+        if (other.getEngineName() != null && other.getEngineName().equals(this.getEngineName()) == false)
             return false;
-        if (other.getMajorEngineVersion() == null
-                ^ this.getMajorEngineVersion() == null)
+        if (other.getMajorEngineVersion() == null ^ this.getMajorEngineVersion() == null)
             return false;
-        if (other.getMajorEngineVersion() != null
-                && other.getMajorEngineVersion().equals(
-                        this.getMajorEngineVersion()) == false)
+        if (other.getMajorEngineVersion() != null && other.getMajorEngineVersion().equals(this.getMajorEngineVersion()) == false)
             return false;
-        if (other.getOptionGroupDescription() == null
-                ^ this.getOptionGroupDescription() == null)
+        if (other.getOptionGroupDescription() == null ^ this.getOptionGroupDescription() == null)
             return false;
-        if (other.getOptionGroupDescription() != null
-                && other.getOptionGroupDescription().equals(
-                        this.getOptionGroupDescription()) == false)
+        if (other.getOptionGroupDescription() != null && other.getOptionGroupDescription().equals(this.getOptionGroupDescription()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -522,22 +483,11 @@ public class CreateOptionGroupRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getOptionGroupName() == null) ? 0 : getOptionGroupName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getEngineName() == null) ? 0 : getEngineName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMajorEngineVersion() == null) ? 0
-                        : getMajorEngineVersion().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOptionGroupDescription() == null) ? 0
-                        : getOptionGroupDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode());
+        hashCode = prime * hashCode + ((getEngineName() == null) ? 0 : getEngineName().hashCode());
+        hashCode = prime * hashCode + ((getMajorEngineVersion() == null) ? 0 : getMajorEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getOptionGroupDescription() == null) ? 0 : getOptionGroupDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

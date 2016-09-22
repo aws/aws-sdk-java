@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -74,8 +72,7 @@ public class EC2SecurityGroup implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the Amazon EC2 security group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EC2SecurityGroup withStatus(String status) {
@@ -115,8 +112,7 @@ public class EC2SecurityGroup implements Serializable, Cloneable {
      * 
      * @param eC2SecurityGroupName
      *        The name of the Amazon EC2 security group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EC2SecurityGroup withEC2SecurityGroupName(String eC2SecurityGroupName) {
@@ -156,19 +152,16 @@ public class EC2SecurityGroup implements Serializable, Cloneable {
      * 
      * @param eC2SecurityGroupOwnerId
      *        The AWS account ID of the Amazon EC2 security group owner.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EC2SecurityGroup withEC2SecurityGroupOwnerId(
-            String eC2SecurityGroupOwnerId) {
+    public EC2SecurityGroup withEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         setEC2SecurityGroupOwnerId(eC2SecurityGroupOwnerId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -181,11 +174,9 @@ public class EC2SecurityGroup implements Serializable, Cloneable {
         if (getStatus() != null)
             sb.append("Status: " + getStatus() + ",");
         if (getEC2SecurityGroupName() != null)
-            sb.append("EC2SecurityGroupName: " + getEC2SecurityGroupName()
-                    + ",");
+            sb.append("EC2SecurityGroupName: " + getEC2SecurityGroupName() + ",");
         if (getEC2SecurityGroupOwnerId() != null)
-            sb.append("EC2SecurityGroupOwnerId: "
-                    + getEC2SecurityGroupOwnerId());
+            sb.append("EC2SecurityGroupOwnerId: " + getEC2SecurityGroupOwnerId());
         sb.append("}");
         return sb.toString();
     }
@@ -202,22 +193,15 @@ public class EC2SecurityGroup implements Serializable, Cloneable {
         EC2SecurityGroup other = (EC2SecurityGroup) obj;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getEC2SecurityGroupName() == null
-                ^ this.getEC2SecurityGroupName() == null)
+        if (other.getEC2SecurityGroupName() == null ^ this.getEC2SecurityGroupName() == null)
             return false;
-        if (other.getEC2SecurityGroupName() != null
-                && other.getEC2SecurityGroupName().equals(
-                        this.getEC2SecurityGroupName()) == false)
+        if (other.getEC2SecurityGroupName() != null && other.getEC2SecurityGroupName().equals(this.getEC2SecurityGroupName()) == false)
             return false;
-        if (other.getEC2SecurityGroupOwnerId() == null
-                ^ this.getEC2SecurityGroupOwnerId() == null)
+        if (other.getEC2SecurityGroupOwnerId() == null ^ this.getEC2SecurityGroupOwnerId() == null)
             return false;
-        if (other.getEC2SecurityGroupOwnerId() != null
-                && other.getEC2SecurityGroupOwnerId().equals(
-                        this.getEC2SecurityGroupOwnerId()) == false)
+        if (other.getEC2SecurityGroupOwnerId() != null && other.getEC2SecurityGroupOwnerId().equals(this.getEC2SecurityGroupOwnerId()) == false)
             return false;
         return true;
     }
@@ -227,16 +211,9 @@ public class EC2SecurityGroup implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEC2SecurityGroupName() == null) ? 0
-                        : getEC2SecurityGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEC2SecurityGroupOwnerId() == null) ? 0
-                        : getEC2SecurityGroupOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getEC2SecurityGroupName() == null) ? 0 : getEC2SecurityGroupName().hashCode());
+        hashCode = prime * hashCode + ((getEC2SecurityGroupOwnerId() == null) ? 0 : getEC2SecurityGroupOwnerId().hashCode());
         return hashCode;
     }
 
@@ -245,9 +222,7 @@ public class EC2SecurityGroup implements Serializable, Cloneable {
         try {
             return (EC2SecurityGroup) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

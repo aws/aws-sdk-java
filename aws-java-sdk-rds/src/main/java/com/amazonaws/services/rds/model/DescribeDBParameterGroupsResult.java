@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -18,19 +16,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * <a>DescribeDBParameterGroups</a> action.
+ * Contains the result of a successful invocation of the <a>DescribeDBParameterGroups</a> action.
  * </p>
  */
-public class DescribeDBParameterGroupsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeDBParameterGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
@@ -43,16 +37,13 @@ public class DescribeDBParameterGroupsResult extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous request. If
-     *        this parameter is specified, the response includes only records
-     *        beyond the marker, up to the value specified by
-     *        <code>MaxRecords</code>.
+     *        An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *        includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -61,15 +52,12 @@ public class DescribeDBParameterGroupsResult extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
-     * @return An optional pagination token provided by a previous request. If
-     *         this parameter is specified, the response includes only records
-     *         beyond the marker, up to the value specified by
-     *         <code>MaxRecords</code>.
+     * @return An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *         includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -78,18 +66,14 @@ public class DescribeDBParameterGroupsResult extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous request. If
-     *        this parameter is specified, the response includes only records
-     *        beyond the marker, up to the value specified by
-     *        <code>MaxRecords</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *        includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDBParameterGroupsResult withMarker(String marker) {
@@ -121,15 +105,13 @@ public class DescribeDBParameterGroupsResult extends
      *        A list of <a>DBParameterGroup</a> instances.
      */
 
-    public void setDBParameterGroups(
-            java.util.Collection<DBParameterGroup> dBParameterGroups) {
+    public void setDBParameterGroups(java.util.Collection<DBParameterGroup> dBParameterGroups) {
         if (dBParameterGroups == null) {
             this.dBParameterGroups = null;
             return;
         }
 
-        this.dBParameterGroups = new com.amazonaws.internal.SdkInternalList<DBParameterGroup>(
-                dBParameterGroups);
+        this.dBParameterGroups = new com.amazonaws.internal.SdkInternalList<DBParameterGroup>(dBParameterGroups);
     }
 
     /**
@@ -137,23 +119,19 @@ public class DescribeDBParameterGroupsResult extends
      * A list of <a>DBParameterGroup</a> instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDBParameterGroups(java.util.Collection)} or
-     * {@link #withDBParameterGroups(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDBParameterGroups(java.util.Collection)} or {@link #withDBParameterGroups(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param dBParameterGroups
      *        A list of <a>DBParameterGroup</a> instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDBParameterGroupsResult withDBParameterGroups(
-            DBParameterGroup... dBParameterGroups) {
+    public DescribeDBParameterGroupsResult withDBParameterGroups(DBParameterGroup... dBParameterGroups) {
         if (this.dBParameterGroups == null) {
-            setDBParameterGroups(new com.amazonaws.internal.SdkInternalList<DBParameterGroup>(
-                    dBParameterGroups.length));
+            setDBParameterGroups(new com.amazonaws.internal.SdkInternalList<DBParameterGroup>(dBParameterGroups.length));
         }
         for (DBParameterGroup ele : dBParameterGroups) {
             this.dBParameterGroups.add(ele);
@@ -168,19 +146,16 @@ public class DescribeDBParameterGroupsResult extends
      * 
      * @param dBParameterGroups
      *        A list of <a>DBParameterGroup</a> instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDBParameterGroupsResult withDBParameterGroups(
-            java.util.Collection<DBParameterGroup> dBParameterGroups) {
+    public DescribeDBParameterGroupsResult withDBParameterGroups(java.util.Collection<DBParameterGroup> dBParameterGroups) {
         setDBParameterGroups(dBParameterGroups);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -210,15 +185,11 @@ public class DescribeDBParameterGroupsResult extends
         DescribeDBParameterGroupsResult other = (DescribeDBParameterGroupsResult) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
-        if (other.getDBParameterGroups() == null
-                ^ this.getDBParameterGroups() == null)
+        if (other.getDBParameterGroups() == null ^ this.getDBParameterGroups() == null)
             return false;
-        if (other.getDBParameterGroups() != null
-                && other.getDBParameterGroups().equals(
-                        this.getDBParameterGroups()) == false)
+        if (other.getDBParameterGroups() != null && other.getDBParameterGroups().equals(this.getDBParameterGroups()) == false)
             return false;
         return true;
     }
@@ -228,12 +199,8 @@ public class DescribeDBParameterGroupsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBParameterGroups() == null) ? 0
-                        : getDBParameterGroups().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getDBParameterGroups() == null) ? 0 : getDBParameterGroups().hashCode());
         return hashCode;
     }
 
@@ -242,9 +209,7 @@ public class DescribeDBParameterGroupsResult extends
         try {
             return (DescribeDBParameterGroupsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -64,6 +64,8 @@ public class JavaCodeFormatter {
         DEFAULT_FORMATTER_OPTIONS
                 .put(DefaultCodeFormatterConstants.FORMATTER_COMMENT_FORMAT_HEADER,
                      DefaultCodeFormatterConstants.TRUE);
+        DEFAULT_FORMATTER_OPTIONS.put(DefaultCodeFormatterConstants.FORMATTER_LINE_SPLIT, "160");
+        DEFAULT_FORMATTER_OPTIONS.put(DefaultCodeFormatterConstants.FORMATTER_COMMENT_LINE_LENGTH, "120");
     }
 
     /**

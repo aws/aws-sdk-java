@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
 
@@ -31,8 +29,7 @@ public class PartListElement implements Serializable, Cloneable {
     private String rangeInBytes;
     /**
      * <p>
-     * The SHA256 tree hash value that Amazon Glacier calculated for the part.
-     * This field is never <code>null</code>.
+     * The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <code>null</code>.
      * </p>
      */
     private String sHA256TreeHash;
@@ -43,8 +40,7 @@ public class PartListElement implements Serializable, Cloneable {
      * </p>
      * 
      * @param rangeInBytes
-     *        The byte range of a part, inclusive of the upper value of the
-     *        range.
+     *        The byte range of a part, inclusive of the upper value of the range.
      */
 
     public void setRangeInBytes(String rangeInBytes) {
@@ -56,8 +52,7 @@ public class PartListElement implements Serializable, Cloneable {
      * The byte range of a part, inclusive of the upper value of the range.
      * </p>
      * 
-     * @return The byte range of a part, inclusive of the upper value of the
-     *         range.
+     * @return The byte range of a part, inclusive of the upper value of the range.
      */
 
     public String getRangeInBytes() {
@@ -70,10 +65,8 @@ public class PartListElement implements Serializable, Cloneable {
      * </p>
      * 
      * @param rangeInBytes
-     *        The byte range of a part, inclusive of the upper value of the
-     *        range.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The byte range of a part, inclusive of the upper value of the range.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PartListElement withRangeInBytes(String rangeInBytes) {
@@ -83,13 +76,12 @@ public class PartListElement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SHA256 tree hash value that Amazon Glacier calculated for the part.
-     * This field is never <code>null</code>.
+     * The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <code>null</code>.
      * </p>
      * 
      * @param sHA256TreeHash
-     *        The SHA256 tree hash value that Amazon Glacier calculated for the
-     *        part. This field is never <code>null</code>.
+     *        The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never
+     *        <code>null</code>.
      */
 
     public void setSHA256TreeHash(String sHA256TreeHash) {
@@ -98,12 +90,11 @@ public class PartListElement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SHA256 tree hash value that Amazon Glacier calculated for the part.
-     * This field is never <code>null</code>.
+     * The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <code>null</code>.
      * </p>
      * 
-     * @return The SHA256 tree hash value that Amazon Glacier calculated for the
-     *         part. This field is never <code>null</code>.
+     * @return The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never
+     *         <code>null</code>.
      */
 
     public String getSHA256TreeHash() {
@@ -112,15 +103,13 @@ public class PartListElement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SHA256 tree hash value that Amazon Glacier calculated for the part.
-     * This field is never <code>null</code>.
+     * The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <code>null</code>.
      * </p>
      * 
      * @param sHA256TreeHash
-     *        The SHA256 tree hash value that Amazon Glacier calculated for the
-     *        part. This field is never <code>null</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never
+     *        <code>null</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PartListElement withSHA256TreeHash(String sHA256TreeHash) {
@@ -129,8 +118,7 @@ public class PartListElement implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -160,14 +148,11 @@ public class PartListElement implements Serializable, Cloneable {
         PartListElement other = (PartListElement) obj;
         if (other.getRangeInBytes() == null ^ this.getRangeInBytes() == null)
             return false;
-        if (other.getRangeInBytes() != null
-                && other.getRangeInBytes().equals(this.getRangeInBytes()) == false)
+        if (other.getRangeInBytes() != null && other.getRangeInBytes().equals(this.getRangeInBytes()) == false)
             return false;
-        if (other.getSHA256TreeHash() == null
-                ^ this.getSHA256TreeHash() == null)
+        if (other.getSHA256TreeHash() == null ^ this.getSHA256TreeHash() == null)
             return false;
-        if (other.getSHA256TreeHash() != null
-                && other.getSHA256TreeHash().equals(this.getSHA256TreeHash()) == false)
+        if (other.getSHA256TreeHash() != null && other.getSHA256TreeHash().equals(this.getSHA256TreeHash()) == false)
             return false;
         return true;
     }
@@ -177,14 +162,8 @@ public class PartListElement implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRangeInBytes() == null) ? 0 : getRangeInBytes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSHA256TreeHash() == null) ? 0 : getSHA256TreeHash()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRangeInBytes() == null) ? 0 : getRangeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getSHA256TreeHash() == null) ? 0 : getSHA256TreeHash().hashCode());
         return hashCode;
     }
 
@@ -193,9 +172,7 @@ public class PartListElement implements Serializable, Cloneable {
         try {
             return (PartListElement) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

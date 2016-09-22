@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListGatewaysResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<GatewayInfo> gateways;
 
@@ -48,27 +44,23 @@ public class ListGatewaysResult extends
             return;
         }
 
-        this.gateways = new com.amazonaws.internal.SdkInternalList<GatewayInfo>(
-                gateways);
+        this.gateways = new com.amazonaws.internal.SdkInternalList<GatewayInfo>(gateways);
     }
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGateways(java.util.Collection)} or
-     * {@link #withGateways(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGateways(java.util.Collection)} or {@link #withGateways(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param gateways
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListGatewaysResult withGateways(GatewayInfo... gateways) {
         if (this.gateways == null) {
-            setGateways(new com.amazonaws.internal.SdkInternalList<GatewayInfo>(
-                    gateways.length));
+            setGateways(new com.amazonaws.internal.SdkInternalList<GatewayInfo>(gateways.length));
         }
         for (GatewayInfo ele : gateways) {
             this.gateways.add(ele);
@@ -78,12 +70,10 @@ public class ListGatewaysResult extends
 
     /**
      * @param gateways
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListGatewaysResult withGateways(
-            java.util.Collection<GatewayInfo> gateways) {
+    public ListGatewaysResult withGateways(java.util.Collection<GatewayInfo> gateways) {
         setGateways(gateways);
         return this;
     }
@@ -106,8 +96,7 @@ public class ListGatewaysResult extends
 
     /**
      * @param marker
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListGatewaysResult withMarker(String marker) {
@@ -116,8 +105,7 @@ public class ListGatewaysResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -147,13 +135,11 @@ public class ListGatewaysResult extends
         ListGatewaysResult other = (ListGatewaysResult) obj;
         if (other.getGateways() == null ^ this.getGateways() == null)
             return false;
-        if (other.getGateways() != null
-                && other.getGateways().equals(this.getGateways()) == false)
+        if (other.getGateways() != null && other.getGateways().equals(this.getGateways()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -163,10 +149,8 @@ public class ListGatewaysResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGateways() == null) ? 0 : getGateways().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getGateways() == null) ? 0 : getGateways().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -175,9 +159,7 @@ public class ListGatewaysResult extends
         try {
             return (ListGatewaysResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

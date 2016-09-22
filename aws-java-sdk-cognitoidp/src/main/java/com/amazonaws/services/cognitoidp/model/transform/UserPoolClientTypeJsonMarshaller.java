@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
@@ -34,49 +32,38 @@ public class UserPoolClientTypeJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(UserPoolClientType userPoolClientType,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(UserPoolClientType userPoolClientType, StructuredJsonGenerator jsonGenerator) {
 
         if (userPoolClientType == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (userPoolClientType.getUserPoolId() != null) {
-                jsonGenerator.writeFieldName("UserPoolId").writeValue(
-                        userPoolClientType.getUserPoolId());
+                jsonGenerator.writeFieldName("UserPoolId").writeValue(userPoolClientType.getUserPoolId());
             }
             if (userPoolClientType.getClientName() != null) {
-                jsonGenerator.writeFieldName("ClientName").writeValue(
-                        userPoolClientType.getClientName());
+                jsonGenerator.writeFieldName("ClientName").writeValue(userPoolClientType.getClientName());
             }
             if (userPoolClientType.getClientId() != null) {
-                jsonGenerator.writeFieldName("ClientId").writeValue(
-                        userPoolClientType.getClientId());
+                jsonGenerator.writeFieldName("ClientId").writeValue(userPoolClientType.getClientId());
             }
             if (userPoolClientType.getClientSecret() != null) {
-                jsonGenerator.writeFieldName("ClientSecret").writeValue(
-                        userPoolClientType.getClientSecret());
+                jsonGenerator.writeFieldName("ClientSecret").writeValue(userPoolClientType.getClientSecret());
             }
             if (userPoolClientType.getLastModifiedDate() != null) {
-                jsonGenerator.writeFieldName("LastModifiedDate").writeValue(
-                        userPoolClientType.getLastModifiedDate());
+                jsonGenerator.writeFieldName("LastModifiedDate").writeValue(userPoolClientType.getLastModifiedDate());
             }
             if (userPoolClientType.getCreationDate() != null) {
-                jsonGenerator.writeFieldName("CreationDate").writeValue(
-                        userPoolClientType.getCreationDate());
+                jsonGenerator.writeFieldName("CreationDate").writeValue(userPoolClientType.getCreationDate());
             }
             if (userPoolClientType.getRefreshTokenValidity() != null) {
-                jsonGenerator.writeFieldName("RefreshTokenValidity")
-                        .writeValue(
-                                userPoolClientType.getRefreshTokenValidity());
+                jsonGenerator.writeFieldName("RefreshTokenValidity").writeValue(userPoolClientType.getRefreshTokenValidity());
             }
 
-            java.util.List<String> readAttributesList = userPoolClientType
-                    .getReadAttributes();
+            java.util.List<String> readAttributesList = userPoolClientType.getReadAttributes();
             if (readAttributesList != null) {
                 jsonGenerator.writeFieldName("ReadAttributes");
                 jsonGenerator.writeStartArray();
@@ -88,8 +75,7 @@ public class UserPoolClientTypeJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
 
-            java.util.List<String> writeAttributesList = userPoolClientType
-                    .getWriteAttributes();
+            java.util.List<String> writeAttributesList = userPoolClientType.getWriteAttributes();
             if (writeAttributesList != null) {
                 jsonGenerator.writeFieldName("WriteAttributes");
                 jsonGenerator.writeStartArray();
@@ -101,8 +87,7 @@ public class UserPoolClientTypeJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
 
-            java.util.List<String> explicitAuthFlowsList = userPoolClientType
-                    .getExplicitAuthFlows();
+            java.util.List<String> explicitAuthFlowsList = userPoolClientType.getExplicitAuthFlows();
             if (explicitAuthFlowsList != null) {
                 jsonGenerator.writeFieldName("ExplicitAuthFlows");
                 jsonGenerator.writeStartArray();
@@ -116,8 +101,7 @@ public class UserPoolClientTypeJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

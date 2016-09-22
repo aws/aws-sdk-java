@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model;
 
@@ -19,9 +17,8 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeComplianceByConfigRuleResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeComplianceByConfigRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -31,8 +28,7 @@ public class DescribeComplianceByConfigRuleResult extends
     private com.amazonaws.internal.SdkInternalList<ComplianceByConfigRule> complianceByConfigRules;
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      */
     private String nextToken;
@@ -42,8 +38,7 @@ public class DescribeComplianceByConfigRuleResult extends
      * Indicates whether each of the specified AWS Config rules is compliant.
      * </p>
      * 
-     * @return Indicates whether each of the specified AWS Config rules is
-     *         compliant.
+     * @return Indicates whether each of the specified AWS Config rules is compliant.
      */
 
     public java.util.List<ComplianceByConfigRule> getComplianceByConfigRules() {
@@ -59,19 +54,16 @@ public class DescribeComplianceByConfigRuleResult extends
      * </p>
      * 
      * @param complianceByConfigRules
-     *        Indicates whether each of the specified AWS Config rules is
-     *        compliant.
+     *        Indicates whether each of the specified AWS Config rules is compliant.
      */
 
-    public void setComplianceByConfigRules(
-            java.util.Collection<ComplianceByConfigRule> complianceByConfigRules) {
+    public void setComplianceByConfigRules(java.util.Collection<ComplianceByConfigRule> complianceByConfigRules) {
         if (complianceByConfigRules == null) {
             this.complianceByConfigRules = null;
             return;
         }
 
-        this.complianceByConfigRules = new com.amazonaws.internal.SdkInternalList<ComplianceByConfigRule>(
-                complianceByConfigRules);
+        this.complianceByConfigRules = new com.amazonaws.internal.SdkInternalList<ComplianceByConfigRule>(complianceByConfigRules);
     }
 
     /**
@@ -79,24 +71,19 @@ public class DescribeComplianceByConfigRuleResult extends
      * Indicates whether each of the specified AWS Config rules is compliant.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setComplianceByConfigRules(java.util.Collection)} or
-     * {@link #withComplianceByConfigRules(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setComplianceByConfigRules(java.util.Collection)} or
+     * {@link #withComplianceByConfigRules(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param complianceByConfigRules
-     *        Indicates whether each of the specified AWS Config rules is
-     *        compliant.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether each of the specified AWS Config rules is compliant.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeComplianceByConfigRuleResult withComplianceByConfigRules(
-            ComplianceByConfigRule... complianceByConfigRules) {
+    public DescribeComplianceByConfigRuleResult withComplianceByConfigRules(ComplianceByConfigRule... complianceByConfigRules) {
         if (this.complianceByConfigRules == null) {
-            setComplianceByConfigRules(new com.amazonaws.internal.SdkInternalList<ComplianceByConfigRule>(
-                    complianceByConfigRules.length));
+            setComplianceByConfigRules(new com.amazonaws.internal.SdkInternalList<ComplianceByConfigRule>(complianceByConfigRules.length));
         }
         for (ComplianceByConfigRule ele : complianceByConfigRules) {
             this.complianceByConfigRules.add(ele);
@@ -110,27 +97,22 @@ public class DescribeComplianceByConfigRuleResult extends
      * </p>
      * 
      * @param complianceByConfigRules
-     *        Indicates whether each of the specified AWS Config rules is
-     *        compliant.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether each of the specified AWS Config rules is compliant.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeComplianceByConfigRuleResult withComplianceByConfigRules(
-            java.util.Collection<ComplianceByConfigRule> complianceByConfigRules) {
+    public DescribeComplianceByConfigRuleResult withComplianceByConfigRules(java.util.Collection<ComplianceByConfigRule> complianceByConfigRules) {
         setComplianceByConfigRules(complianceByConfigRules);
         return this;
     }
 
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next
-     *        page of results in a paginated response.
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -139,12 +121,10 @@ public class DescribeComplianceByConfigRuleResult extends
 
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      * 
-     * @return The string that you use in a subsequent request to get the next
-     *         page of results in a paginated response.
+     * @return The string that you use in a subsequent request to get the next page of results in a paginated response.
      */
 
     public String getNextToken() {
@@ -153,15 +133,12 @@ public class DescribeComplianceByConfigRuleResult extends
 
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next
-     *        page of results in a paginated response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeComplianceByConfigRuleResult withNextToken(String nextToken) {
@@ -170,8 +147,7 @@ public class DescribeComplianceByConfigRuleResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -182,8 +158,7 @@ public class DescribeComplianceByConfigRuleResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComplianceByConfigRules() != null)
-            sb.append("ComplianceByConfigRules: "
-                    + getComplianceByConfigRules() + ",");
+            sb.append("ComplianceByConfigRules: " + getComplianceByConfigRules() + ",");
         if (getNextToken() != null)
             sb.append("NextToken: " + getNextToken());
         sb.append("}");
@@ -200,17 +175,13 @@ public class DescribeComplianceByConfigRuleResult extends
         if (obj instanceof DescribeComplianceByConfigRuleResult == false)
             return false;
         DescribeComplianceByConfigRuleResult other = (DescribeComplianceByConfigRuleResult) obj;
-        if (other.getComplianceByConfigRules() == null
-                ^ this.getComplianceByConfigRules() == null)
+        if (other.getComplianceByConfigRules() == null ^ this.getComplianceByConfigRules() == null)
             return false;
-        if (other.getComplianceByConfigRules() != null
-                && other.getComplianceByConfigRules().equals(
-                        this.getComplianceByConfigRules()) == false)
+        if (other.getComplianceByConfigRules() != null && other.getComplianceByConfigRules().equals(this.getComplianceByConfigRules()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -220,12 +191,8 @@ public class DescribeComplianceByConfigRuleResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getComplianceByConfigRules() == null) ? 0
-                        : getComplianceByConfigRules().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getComplianceByConfigRules() == null) ? 0 : getComplianceByConfigRules().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -234,9 +201,7 @@ public class DescribeComplianceByConfigRuleResult extends
         try {
             return (DescribeComplianceByConfigRuleResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

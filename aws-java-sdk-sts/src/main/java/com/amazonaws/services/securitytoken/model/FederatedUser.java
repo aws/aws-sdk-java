@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.securitytoken.model;
 
@@ -25,44 +23,40 @@ public class FederatedUser implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The string that identifies the federated user associated with the
-     * credentials, similar to the unique ID of an IAM user.
+     * The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM
+     * user.
      * </p>
      */
     private String federatedUserId;
     /**
      * <p>
-     * The ARN that specifies the federated user that is associated with the
-     * credentials. For more information about ARNs and how to use them in
-     * policies, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     * >IAM Identifiers</a> in <i>Using IAM</i>.
+     * The ARN that specifies the federated user that is associated with the credentials. For more information about
+     * ARNs and how to use them in policies, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in <i>Using
+     * IAM</i>.
      * </p>
      */
     private String arn;
 
     /**
-     * Default constructor for FederatedUser object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for FederatedUser object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize the object after creating it.
      */
     public FederatedUser() {
     }
 
     /**
-     * Constructs a new FederatedUser object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new FederatedUser object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param federatedUserId
-     *        The string that identifies the federated user associated with the
-     *        credentials, similar to the unique ID of an IAM user.
+     *        The string that identifies the federated user associated with the credentials, similar to the unique ID of
+     *        an IAM user.
      * @param arn
-     *        The ARN that specifies the federated user that is associated with
-     *        the credentials. For more information about ARNs and how to use
-     *        them in policies, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     *        >IAM Identifiers</a> in <i>Using IAM</i>.
+     *        The ARN that specifies the federated user that is associated with the credentials. For more information
+     *        about ARNs and how to use them in policies, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
+     *        <i>Using IAM</i>.
      */
     public FederatedUser(String federatedUserId, String arn) {
         setFederatedUserId(federatedUserId);
@@ -71,13 +65,13 @@ public class FederatedUser implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The string that identifies the federated user associated with the
-     * credentials, similar to the unique ID of an IAM user.
+     * The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM
+     * user.
      * </p>
      * 
      * @param federatedUserId
-     *        The string that identifies the federated user associated with the
-     *        credentials, similar to the unique ID of an IAM user.
+     *        The string that identifies the federated user associated with the credentials, similar to the unique ID of
+     *        an IAM user.
      */
 
     public void setFederatedUserId(String federatedUserId) {
@@ -86,12 +80,12 @@ public class FederatedUser implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The string that identifies the federated user associated with the
-     * credentials, similar to the unique ID of an IAM user.
+     * The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM
+     * user.
      * </p>
      * 
-     * @return The string that identifies the federated user associated with the
-     *         credentials, similar to the unique ID of an IAM user.
+     * @return The string that identifies the federated user associated with the credentials, similar to the unique ID
+     *         of an IAM user.
      */
 
     public String getFederatedUserId() {
@@ -100,15 +94,14 @@ public class FederatedUser implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The string that identifies the federated user associated with the
-     * credentials, similar to the unique ID of an IAM user.
+     * The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM
+     * user.
      * </p>
      * 
      * @param federatedUserId
-     *        The string that identifies the federated user associated with the
-     *        credentials, similar to the unique ID of an IAM user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The string that identifies the federated user associated with the credentials, similar to the unique ID of
+     *        an IAM user.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FederatedUser withFederatedUserId(String federatedUserId) {
@@ -118,19 +111,17 @@ public class FederatedUser implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN that specifies the federated user that is associated with the
-     * credentials. For more information about ARNs and how to use them in
-     * policies, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     * >IAM Identifiers</a> in <i>Using IAM</i>.
+     * The ARN that specifies the federated user that is associated with the credentials. For more information about
+     * ARNs and how to use them in policies, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in <i>Using
+     * IAM</i>.
      * </p>
      * 
      * @param arn
-     *        The ARN that specifies the federated user that is associated with
-     *        the credentials. For more information about ARNs and how to use
-     *        them in policies, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     *        >IAM Identifiers</a> in <i>Using IAM</i>.
+     *        The ARN that specifies the federated user that is associated with the credentials. For more information
+     *        about ARNs and how to use them in policies, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
+     *        <i>Using IAM</i>.
      */
 
     public void setArn(String arn) {
@@ -139,18 +130,16 @@ public class FederatedUser implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN that specifies the federated user that is associated with the
-     * credentials. For more information about ARNs and how to use them in
-     * policies, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     * >IAM Identifiers</a> in <i>Using IAM</i>.
+     * The ARN that specifies the federated user that is associated with the credentials. For more information about
+     * ARNs and how to use them in policies, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in <i>Using
+     * IAM</i>.
      * </p>
      * 
-     * @return The ARN that specifies the federated user that is associated with
-     *         the credentials. For more information about ARNs and how to use
-     *         them in policies, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     *         >IAM Identifiers</a> in <i>Using IAM</i>.
+     * @return The ARN that specifies the federated user that is associated with the credentials. For more information
+     *         about ARNs and how to use them in policies, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
+     *         <i>Using IAM</i>.
      */
 
     public String getArn() {
@@ -159,21 +148,18 @@ public class FederatedUser implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN that specifies the federated user that is associated with the
-     * credentials. For more information about ARNs and how to use them in
-     * policies, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     * >IAM Identifiers</a> in <i>Using IAM</i>.
+     * The ARN that specifies the federated user that is associated with the credentials. For more information about
+     * ARNs and how to use them in policies, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in <i>Using
+     * IAM</i>.
      * </p>
      * 
      * @param arn
-     *        The ARN that specifies the federated user that is associated with
-     *        the credentials. For more information about ARNs and how to use
-     *        them in policies, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     *        >IAM Identifiers</a> in <i>Using IAM</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN that specifies the federated user that is associated with the credentials. For more information
+     *        about ARNs and how to use them in policies, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
+     *        <i>Using IAM</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FederatedUser withArn(String arn) {
@@ -182,8 +168,7 @@ public class FederatedUser implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -211,16 +196,13 @@ public class FederatedUser implements Serializable, Cloneable {
         if (obj instanceof FederatedUser == false)
             return false;
         FederatedUser other = (FederatedUser) obj;
-        if (other.getFederatedUserId() == null
-                ^ this.getFederatedUserId() == null)
+        if (other.getFederatedUserId() == null ^ this.getFederatedUserId() == null)
             return false;
-        if (other.getFederatedUserId() != null
-                && other.getFederatedUserId().equals(this.getFederatedUserId()) == false)
+        if (other.getFederatedUserId() != null && other.getFederatedUserId().equals(this.getFederatedUserId()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         return true;
     }
@@ -230,12 +212,8 @@ public class FederatedUser implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFederatedUserId() == null) ? 0 : getFederatedUserId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getFederatedUserId() == null) ? 0 : getFederatedUserId().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 
@@ -244,9 +222,7 @@ public class FederatedUser implements Serializable, Cloneable {
         try {
             return (FederatedUser) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
@@ -34,26 +32,22 @@ public class GenericRevisionInfoJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(GenericRevisionInfo genericRevisionInfo,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(GenericRevisionInfo genericRevisionInfo, StructuredJsonGenerator jsonGenerator) {
 
         if (genericRevisionInfo == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (genericRevisionInfo.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(
-                        genericRevisionInfo.getDescription());
+                jsonGenerator.writeFieldName("description").writeValue(genericRevisionInfo.getDescription());
             }
 
             com.amazonaws.internal.SdkInternalList<String> deploymentGroupsList = (com.amazonaws.internal.SdkInternalList<String>) genericRevisionInfo
                     .getDeploymentGroups();
-            if (!deploymentGroupsList.isEmpty()
-                    || !deploymentGroupsList.isAutoConstruct()) {
+            if (!deploymentGroupsList.isEmpty() || !deploymentGroupsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("deploymentGroups");
                 jsonGenerator.writeStartArray();
                 for (String deploymentGroupsListValue : deploymentGroupsList) {
@@ -64,22 +58,18 @@ public class GenericRevisionInfoJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
             if (genericRevisionInfo.getFirstUsedTime() != null) {
-                jsonGenerator.writeFieldName("firstUsedTime").writeValue(
-                        genericRevisionInfo.getFirstUsedTime());
+                jsonGenerator.writeFieldName("firstUsedTime").writeValue(genericRevisionInfo.getFirstUsedTime());
             }
             if (genericRevisionInfo.getLastUsedTime() != null) {
-                jsonGenerator.writeFieldName("lastUsedTime").writeValue(
-                        genericRevisionInfo.getLastUsedTime());
+                jsonGenerator.writeFieldName("lastUsedTime").writeValue(genericRevisionInfo.getLastUsedTime());
             }
             if (genericRevisionInfo.getRegisterTime() != null) {
-                jsonGenerator.writeFieldName("registerTime").writeValue(
-                        genericRevisionInfo.getRegisterTime());
+                jsonGenerator.writeFieldName("registerTime").writeValue(genericRevisionInfo.getRegisterTime());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

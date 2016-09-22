@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model.transform;
 
@@ -30,8 +28,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Option StAX Unmarshaller
  */
-public class OptionStaxUnmarshaller implements
-        Unmarshaller<Option, StaxUnmarshallerContext> {
+public class OptionStaxUnmarshaller implements Unmarshaller<Option, StaxUnmarshallerContext> {
 
     public Option unmarshall(StaxUnmarshallerContext context) throws Exception {
         Option option = new Option();
@@ -49,62 +46,47 @@ public class OptionStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("OptionName", targetDepth)) {
-                    option.setOptionName(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    option.setOptionName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("OptionDescription", targetDepth)) {
-                    option.setOptionDescription(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    option.setOptionDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Persistent", targetDepth)) {
-                    option.setPersistent(BooleanStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    option.setPersistent(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Permanent", targetDepth)) {
-                    option.setPermanent(BooleanStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    option.setPermanent(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Port", targetDepth)) {
-                    option.setPort(IntegerStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    option.setPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("OptionVersion", targetDepth)) {
-                    option.setOptionVersion(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    option.setOptionVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("OptionSettings/OptionSetting",
-                        targetDepth)) {
-                    option.withOptionSettings(OptionSettingStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("OptionSettings/OptionSetting", targetDepth)) {
+                    option.withOptionSettings(OptionSettingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "DBSecurityGroupMemberships/DBSecurityGroup",
-                        targetDepth)) {
-                    option.withDBSecurityGroupMemberships(DBSecurityGroupMembershipStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("DBSecurityGroupMemberships/DBSecurityGroup", targetDepth)) {
+                    option.withDBSecurityGroupMemberships(DBSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression(
-                                "VpcSecurityGroupMemberships/VpcSecurityGroupMembership",
-                                targetDepth)) {
-                    option.withVpcSecurityGroupMemberships(VpcSecurityGroupMembershipStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("VpcSecurityGroupMemberships/VpcSecurityGroupMembership", targetDepth)) {
+                    option.withVpcSecurityGroupMemberships(VpcSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

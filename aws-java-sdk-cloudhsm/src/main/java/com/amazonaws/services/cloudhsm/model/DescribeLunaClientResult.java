@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudhsm.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeLunaClientResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeLunaClientResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -86,8 +82,7 @@ public class DescribeLunaClientResult extends
      * 
      * @param clientArn
      *        The ARN of the client.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeLunaClientResult withClientArn(String clientArn) {
@@ -127,8 +122,7 @@ public class DescribeLunaClientResult extends
      * 
      * @param certificate
      *        The certificate installed on the HSMs used by this client.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeLunaClientResult withCertificate(String certificate) {
@@ -168,12 +162,10 @@ public class DescribeLunaClientResult extends
      * 
      * @param certificateFingerprint
      *        The certificate fingerprint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLunaClientResult withCertificateFingerprint(
-            String certificateFingerprint) {
+    public DescribeLunaClientResult withCertificateFingerprint(String certificateFingerprint) {
         setCertificateFingerprint(certificateFingerprint);
         return this;
     }
@@ -210,12 +202,10 @@ public class DescribeLunaClientResult extends
      * 
      * @param lastModifiedTimestamp
      *        The date and time the client was last modified.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLunaClientResult withLastModifiedTimestamp(
-            String lastModifiedTimestamp) {
+    public DescribeLunaClientResult withLastModifiedTimestamp(String lastModifiedTimestamp) {
         setLastModifiedTimestamp(lastModifiedTimestamp);
         return this;
     }
@@ -252,8 +242,7 @@ public class DescribeLunaClientResult extends
      * 
      * @param label
      *        The label of the client.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeLunaClientResult withLabel(String label) {
@@ -262,8 +251,7 @@ public class DescribeLunaClientResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -278,11 +266,9 @@ public class DescribeLunaClientResult extends
         if (getCertificate() != null)
             sb.append("Certificate: " + getCertificate() + ",");
         if (getCertificateFingerprint() != null)
-            sb.append("CertificateFingerprint: " + getCertificateFingerprint()
-                    + ",");
+            sb.append("CertificateFingerprint: " + getCertificateFingerprint() + ",");
         if (getLastModifiedTimestamp() != null)
-            sb.append("LastModifiedTimestamp: " + getLastModifiedTimestamp()
-                    + ",");
+            sb.append("LastModifiedTimestamp: " + getLastModifiedTimestamp() + ",");
         if (getLabel() != null)
             sb.append("Label: " + getLabel());
         sb.append("}");
@@ -301,32 +287,23 @@ public class DescribeLunaClientResult extends
         DescribeLunaClientResult other = (DescribeLunaClientResult) obj;
         if (other.getClientArn() == null ^ this.getClientArn() == null)
             return false;
-        if (other.getClientArn() != null
-                && other.getClientArn().equals(this.getClientArn()) == false)
+        if (other.getClientArn() != null && other.getClientArn().equals(this.getClientArn()) == false)
             return false;
         if (other.getCertificate() == null ^ this.getCertificate() == null)
             return false;
-        if (other.getCertificate() != null
-                && other.getCertificate().equals(this.getCertificate()) == false)
+        if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
             return false;
-        if (other.getCertificateFingerprint() == null
-                ^ this.getCertificateFingerprint() == null)
+        if (other.getCertificateFingerprint() == null ^ this.getCertificateFingerprint() == null)
             return false;
-        if (other.getCertificateFingerprint() != null
-                && other.getCertificateFingerprint().equals(
-                        this.getCertificateFingerprint()) == false)
+        if (other.getCertificateFingerprint() != null && other.getCertificateFingerprint().equals(this.getCertificateFingerprint()) == false)
             return false;
-        if (other.getLastModifiedTimestamp() == null
-                ^ this.getLastModifiedTimestamp() == null)
+        if (other.getLastModifiedTimestamp() == null ^ this.getLastModifiedTimestamp() == null)
             return false;
-        if (other.getLastModifiedTimestamp() != null
-                && other.getLastModifiedTimestamp().equals(
-                        this.getLastModifiedTimestamp()) == false)
+        if (other.getLastModifiedTimestamp() != null && other.getLastModifiedTimestamp().equals(this.getLastModifiedTimestamp()) == false)
             return false;
         if (other.getLabel() == null ^ this.getLabel() == null)
             return false;
-        if (other.getLabel() != null
-                && other.getLabel().equals(this.getLabel()) == false)
+        if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
             return false;
         return true;
     }
@@ -336,21 +313,11 @@ public class DescribeLunaClientResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getClientArn() == null) ? 0 : getClientArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCertificateFingerprint() == null) ? 0
-                        : getCertificateFingerprint().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastModifiedTimestamp() == null) ? 0
-                        : getLastModifiedTimestamp().hashCode());
-        hashCode = prime * hashCode
-                + ((getLabel() == null) ? 0 : getLabel().hashCode());
+        hashCode = prime * hashCode + ((getClientArn() == null) ? 0 : getClientArn().hashCode());
+        hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
+        hashCode = prime * hashCode + ((getCertificateFingerprint() == null) ? 0 : getCertificateFingerprint().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedTimestamp() == null) ? 0 : getLastModifiedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
         return hashCode;
     }
 
@@ -359,9 +326,7 @@ public class DescribeLunaClientResult extends
         try {
             return (DescribeLunaClientResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

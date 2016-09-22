@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * JobFlowDetail JSON Unmarshaller
  */
-public class JobFlowDetailJsonUnmarshaller implements
-        Unmarshaller<JobFlowDetail, JsonUnmarshallerContext> {
+public class JobFlowDetailJsonUnmarshaller implements Unmarshaller<JobFlowDetail, JsonUnmarshallerContext> {
 
-    public JobFlowDetail unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public JobFlowDetail unmarshall(JsonUnmarshallerContext context) throws Exception {
         JobFlowDetail jobFlowDetail = new JobFlowDetail();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,76 +49,55 @@ public class JobFlowDetailJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobFlowId", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setJobFlowId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    jobFlowDetail.setJobFlowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    jobFlowDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogUri", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setLogUri(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    jobFlowDetail.setLogUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AmiVersion", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setAmiVersion(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    jobFlowDetail.setAmiVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context
-                        .testExpression("ExecutionStatusDetail", targetDepth)) {
+                if (context.testExpression("ExecutionStatusDetail", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail
-                            .setExecutionStatusDetail(JobFlowExecutionStatusDetailJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowDetail.setExecutionStatusDetail(JobFlowExecutionStatusDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Instances", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail
-                            .setInstances(JobFlowInstancesDetailJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowDetail.setInstances(JobFlowInstancesDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Steps", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setSteps(new ListUnmarshaller<StepDetail>(
-                            StepDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    jobFlowDetail.setSteps(new ListUnmarshaller<StepDetail>(StepDetailJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("BootstrapActions", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail
-                            .setBootstrapActions(new ListUnmarshaller<BootstrapActionDetail>(
-                                    BootstrapActionDetailJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    jobFlowDetail.setBootstrapActions(new ListUnmarshaller<BootstrapActionDetail>(BootstrapActionDetailJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("SupportedProducts", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail
-                            .setSupportedProducts(new ListUnmarshaller<String>(
-                                    context.getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    jobFlowDetail.setSupportedProducts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("VisibleToAllUsers", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setVisibleToAllUsers(context.getUnmarshaller(
-                            Boolean.class).unmarshall(context));
+                    jobFlowDetail.setVisibleToAllUsers(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("JobFlowRole", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setJobFlowRole(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    jobFlowDetail.setJobFlowRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setServiceRole(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    jobFlowDetail.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

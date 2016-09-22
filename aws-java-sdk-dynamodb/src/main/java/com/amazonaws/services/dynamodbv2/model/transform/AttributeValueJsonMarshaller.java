@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
@@ -34,28 +32,23 @@ public class AttributeValueJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(AttributeValue attributeValue,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(AttributeValue attributeValue, StructuredJsonGenerator jsonGenerator) {
 
         if (attributeValue == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (attributeValue.getS() != null) {
-                jsonGenerator.writeFieldName("S").writeValue(
-                        attributeValue.getS());
+                jsonGenerator.writeFieldName("S").writeValue(attributeValue.getS());
             }
             if (attributeValue.getN() != null) {
-                jsonGenerator.writeFieldName("N").writeValue(
-                        attributeValue.getN());
+                jsonGenerator.writeFieldName("N").writeValue(attributeValue.getN());
             }
             if (attributeValue.getB() != null) {
-                jsonGenerator.writeFieldName("B").writeValue(
-                        attributeValue.getB());
+                jsonGenerator.writeFieldName("B").writeValue(attributeValue.getB());
             }
 
             java.util.List<String> sSList = attributeValue.getSS();
@@ -99,13 +92,11 @@ public class AttributeValueJsonMarshaller {
                 jsonGenerator.writeFieldName("M");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, AttributeValue> mMapValue : mMap
-                        .entrySet()) {
+                for (Map.Entry<String, AttributeValue> mMapValue : mMap.entrySet()) {
                     if (mMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(mMapValue.getKey());
 
-                        AttributeValueJsonMarshaller.getInstance().marshall(
-                                mMapValue.getValue(), jsonGenerator);
+                        AttributeValueJsonMarshaller.getInstance().marshall(mMapValue.getValue(), jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndObject();
@@ -118,25 +109,21 @@ public class AttributeValueJsonMarshaller {
                 for (AttributeValue lListValue : lList) {
                     if (lListValue != null) {
 
-                        AttributeValueJsonMarshaller.getInstance().marshall(
-                                lListValue, jsonGenerator);
+                        AttributeValueJsonMarshaller.getInstance().marshall(lListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (attributeValue.getNULL() != null) {
-                jsonGenerator.writeFieldName("NULL").writeValue(
-                        attributeValue.getNULL());
+                jsonGenerator.writeFieldName("NULL").writeValue(attributeValue.getNULL());
             }
             if (attributeValue.getBOOL() != null) {
-                jsonGenerator.writeFieldName("BOOL").writeValue(
-                        attributeValue.getBOOL());
+                jsonGenerator.writeFieldName("BOOL").writeValue(attributeValue.getBOOL());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

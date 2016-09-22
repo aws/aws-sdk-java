@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -43,15 +41,14 @@ public class UpgradeTarget implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * A value that indicates whether the target version will be applied to any
-     * source DB instances that have AutoMinorVersionUpgrade set to true.
+     * A value that indicates whether the target version will be applied to any source DB instances that have
+     * AutoMinorVersionUpgrade set to true.
      * </p>
      */
     private Boolean autoUpgrade;
     /**
      * <p>
-     * A value that indicates whether a database engine will be upgraded to a
-     * major version.
+     * A value that indicates whether a database engine will be upgraded to a major version.
      * </p>
      */
     private Boolean isMajorVersionUpgrade;
@@ -88,8 +85,7 @@ public class UpgradeTarget implements Serializable, Cloneable {
      * 
      * @param engine
      *        The name of the upgrade target database engine.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpgradeTarget withEngine(String engine) {
@@ -129,8 +125,7 @@ public class UpgradeTarget implements Serializable, Cloneable {
      * 
      * @param engineVersion
      *        The version number of the upgrade target database engine.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpgradeTarget withEngineVersion(String engineVersion) {
@@ -144,8 +139,7 @@ public class UpgradeTarget implements Serializable, Cloneable {
      * </p>
      * 
      * @param description
-     *        The version of the database engine that a DB instance can be
-     *        upgraded to.
+     *        The version of the database engine that a DB instance can be upgraded to.
      */
 
     public void setDescription(String description) {
@@ -157,8 +151,7 @@ public class UpgradeTarget implements Serializable, Cloneable {
      * The version of the database engine that a DB instance can be upgraded to.
      * </p>
      * 
-     * @return The version of the database engine that a DB instance can be
-     *         upgraded to.
+     * @return The version of the database engine that a DB instance can be upgraded to.
      */
 
     public String getDescription() {
@@ -171,10 +164,8 @@ public class UpgradeTarget implements Serializable, Cloneable {
      * </p>
      * 
      * @param description
-     *        The version of the database engine that a DB instance can be
-     *        upgraded to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The version of the database engine that a DB instance can be upgraded to.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpgradeTarget withDescription(String description) {
@@ -184,14 +175,13 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the target version will be applied to any
-     * source DB instances that have AutoMinorVersionUpgrade set to true.
+     * A value that indicates whether the target version will be applied to any source DB instances that have
+     * AutoMinorVersionUpgrade set to true.
      * </p>
      * 
      * @param autoUpgrade
-     *        A value that indicates whether the target version will be applied
-     *        to any source DB instances that have AutoMinorVersionUpgrade set
-     *        to true.
+     *        A value that indicates whether the target version will be applied to any source DB instances that have
+     *        AutoMinorVersionUpgrade set to true.
      */
 
     public void setAutoUpgrade(Boolean autoUpgrade) {
@@ -200,13 +190,12 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the target version will be applied to any
-     * source DB instances that have AutoMinorVersionUpgrade set to true.
+     * A value that indicates whether the target version will be applied to any source DB instances that have
+     * AutoMinorVersionUpgrade set to true.
      * </p>
      * 
-     * @return A value that indicates whether the target version will be applied
-     *         to any source DB instances that have AutoMinorVersionUpgrade set
-     *         to true.
+     * @return A value that indicates whether the target version will be applied to any source DB instances that have
+     *         AutoMinorVersionUpgrade set to true.
      */
 
     public Boolean getAutoUpgrade() {
@@ -215,16 +204,14 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the target version will be applied to any
-     * source DB instances that have AutoMinorVersionUpgrade set to true.
+     * A value that indicates whether the target version will be applied to any source DB instances that have
+     * AutoMinorVersionUpgrade set to true.
      * </p>
      * 
      * @param autoUpgrade
-     *        A value that indicates whether the target version will be applied
-     *        to any source DB instances that have AutoMinorVersionUpgrade set
-     *        to true.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value that indicates whether the target version will be applied to any source DB instances that have
+     *        AutoMinorVersionUpgrade set to true.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpgradeTarget withAutoUpgrade(Boolean autoUpgrade) {
@@ -234,13 +221,12 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the target version will be applied to any
-     * source DB instances that have AutoMinorVersionUpgrade set to true.
+     * A value that indicates whether the target version will be applied to any source DB instances that have
+     * AutoMinorVersionUpgrade set to true.
      * </p>
      * 
-     * @return A value that indicates whether the target version will be applied
-     *         to any source DB instances that have AutoMinorVersionUpgrade set
-     *         to true.
+     * @return A value that indicates whether the target version will be applied to any source DB instances that have
+     *         AutoMinorVersionUpgrade set to true.
      */
 
     public Boolean isAutoUpgrade() {
@@ -249,13 +235,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether a database engine will be upgraded to a
-     * major version.
+     * A value that indicates whether a database engine will be upgraded to a major version.
      * </p>
      * 
      * @param isMajorVersionUpgrade
-     *        A value that indicates whether a database engine will be upgraded
-     *        to a major version.
+     *        A value that indicates whether a database engine will be upgraded to a major version.
      */
 
     public void setIsMajorVersionUpgrade(Boolean isMajorVersionUpgrade) {
@@ -264,12 +248,10 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether a database engine will be upgraded to a
-     * major version.
+     * A value that indicates whether a database engine will be upgraded to a major version.
      * </p>
      * 
-     * @return A value that indicates whether a database engine will be upgraded
-     *         to a major version.
+     * @return A value that indicates whether a database engine will be upgraded to a major version.
      */
 
     public Boolean getIsMajorVersionUpgrade() {
@@ -278,15 +260,12 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether a database engine will be upgraded to a
-     * major version.
+     * A value that indicates whether a database engine will be upgraded to a major version.
      * </p>
      * 
      * @param isMajorVersionUpgrade
-     *        A value that indicates whether a database engine will be upgraded
-     *        to a major version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value that indicates whether a database engine will be upgraded to a major version.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpgradeTarget withIsMajorVersionUpgrade(Boolean isMajorVersionUpgrade) {
@@ -296,12 +275,10 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether a database engine will be upgraded to a
-     * major version.
+     * A value that indicates whether a database engine will be upgraded to a major version.
      * </p>
      * 
-     * @return A value that indicates whether a database engine will be upgraded
-     *         to a major version.
+     * @return A value that indicates whether a database engine will be upgraded to a major version.
      */
 
     public Boolean isMajorVersionUpgrade() {
@@ -309,8 +286,7 @@ public class UpgradeTarget implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -346,30 +322,23 @@ public class UpgradeTarget implements Serializable, Cloneable {
         UpgradeTarget other = (UpgradeTarget) obj;
         if (other.getEngine() == null ^ this.getEngine() == null)
             return false;
-        if (other.getEngine() != null
-                && other.getEngine().equals(this.getEngine()) == false)
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
             return false;
         if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
             return false;
-        if (other.getEngineVersion() != null
-                && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getAutoUpgrade() == null ^ this.getAutoUpgrade() == null)
             return false;
-        if (other.getAutoUpgrade() != null
-                && other.getAutoUpgrade().equals(this.getAutoUpgrade()) == false)
+        if (other.getAutoUpgrade() != null && other.getAutoUpgrade().equals(this.getAutoUpgrade()) == false)
             return false;
-        if (other.getIsMajorVersionUpgrade() == null
-                ^ this.getIsMajorVersionUpgrade() == null)
+        if (other.getIsMajorVersionUpgrade() == null ^ this.getIsMajorVersionUpgrade() == null)
             return false;
-        if (other.getIsMajorVersionUpgrade() != null
-                && other.getIsMajorVersionUpgrade().equals(
-                        this.getIsMajorVersionUpgrade()) == false)
+        if (other.getIsMajorVersionUpgrade() != null && other.getIsMajorVersionUpgrade().equals(this.getIsMajorVersionUpgrade()) == false)
             return false;
         return true;
     }
@@ -379,22 +348,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getEngine() == null) ? 0 : getEngine().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEngineVersion() == null) ? 0 : getEngineVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoUpgrade() == null) ? 0 : getAutoUpgrade().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsMajorVersionUpgrade() == null) ? 0
-                        : getIsMajorVersionUpgrade().hashCode());
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getAutoUpgrade() == null) ? 0 : getAutoUpgrade().hashCode());
+        hashCode = prime * hashCode + ((getIsMajorVersionUpgrade() == null) ? 0 : getIsMajorVersionUpgrade().hashCode());
         return hashCode;
     }
 
@@ -403,9 +361,7 @@ public class UpgradeTarget implements Serializable, Cloneable {
         try {
             return (UpgradeTarget) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

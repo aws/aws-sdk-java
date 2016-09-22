@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
@@ -34,28 +32,23 @@ public class PermissionJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Permission permission,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(Permission permission, StructuredJsonGenerator jsonGenerator) {
 
         if (permission == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (permission.getGranteeType() != null) {
-                jsonGenerator.writeFieldName("GranteeType").writeValue(
-                        permission.getGranteeType());
+                jsonGenerator.writeFieldName("GranteeType").writeValue(permission.getGranteeType());
             }
             if (permission.getGrantee() != null) {
-                jsonGenerator.writeFieldName("Grantee").writeValue(
-                        permission.getGrantee());
+                jsonGenerator.writeFieldName("Grantee").writeValue(permission.getGrantee());
             }
 
-            com.amazonaws.internal.SdkInternalList<String> accessList = (com.amazonaws.internal.SdkInternalList<String>) permission
-                    .getAccess();
+            com.amazonaws.internal.SdkInternalList<String> accessList = (com.amazonaws.internal.SdkInternalList<String>) permission.getAccess();
             if (!accessList.isEmpty() || !accessList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("Access");
                 jsonGenerator.writeStartArray();
@@ -69,8 +62,7 @@ public class PermissionJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

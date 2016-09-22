@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ClientData StAX Unmarshaller
  */
-public class ClientDataStaxUnmarshaller implements
-        Unmarshaller<ClientData, StaxUnmarshallerContext> {
+public class ClientDataStaxUnmarshaller implements Unmarshaller<ClientData, StaxUnmarshallerContext> {
 
-    public ClientData unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public ClientData unmarshall(StaxUnmarshallerContext context) throws Exception {
         ClientData clientData = new ClientData();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,26 +46,22 @@ public class ClientDataStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("UploadStart", targetDepth)) {
-                    clientData.setUploadStart(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    clientData.setUploadStart(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("UploadEnd", targetDepth)) {
-                    clientData.setUploadEnd(DateStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    clientData.setUploadEnd(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("UploadSize", targetDepth)) {
-                    clientData.setUploadSize(DoubleStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    clientData.setUploadSize(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Comment", targetDepth)) {
-                    clientData.setComment(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    clientData.setComment(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

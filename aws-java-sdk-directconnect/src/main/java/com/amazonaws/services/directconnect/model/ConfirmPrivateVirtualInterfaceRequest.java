@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
 
@@ -22,21 +20,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the ConfirmPrivateVirtualInterface operation.
  * </p>
  */
-public class ConfirmPrivateVirtualInterfaceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ConfirmPrivateVirtualInterfaceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String virtualInterfaceId;
     /**
      * <p>
-     * ID of the virtual private gateway that will be attached to the virtual
-     * interface.
+     * ID of the virtual private gateway that will be attached to the virtual interface.
      * </p>
      * <p>
-     * A virtual private gateway can be managed via the Amazon Virtual Private
-     * Cloud (VPC) console or the <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html"
-     * >EC2 CreateVpnGateway</a> action.
+     * A virtual private gateway can be managed via the Amazon Virtual Private Cloud (VPC) console or the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
+     * CreateVpnGateway</a> action.
      * </p>
      * <p>
      * Default: None
@@ -62,39 +56,33 @@ public class ConfirmPrivateVirtualInterfaceRequest extends
 
     /**
      * @param virtualInterfaceId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfirmPrivateVirtualInterfaceRequest withVirtualInterfaceId(
-            String virtualInterfaceId) {
+    public ConfirmPrivateVirtualInterfaceRequest withVirtualInterfaceId(String virtualInterfaceId) {
         setVirtualInterfaceId(virtualInterfaceId);
         return this;
     }
 
     /**
      * <p>
-     * ID of the virtual private gateway that will be attached to the virtual
-     * interface.
+     * ID of the virtual private gateway that will be attached to the virtual interface.
      * </p>
      * <p>
-     * A virtual private gateway can be managed via the Amazon Virtual Private
-     * Cloud (VPC) console or the <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html"
-     * >EC2 CreateVpnGateway</a> action.
+     * A virtual private gateway can be managed via the Amazon Virtual Private Cloud (VPC) console or the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
+     * CreateVpnGateway</a> action.
      * </p>
      * <p>
      * Default: None
      * </p>
      * 
      * @param virtualGatewayId
-     *        ID of the virtual private gateway that will be attached to the
-     *        virtual interface.</p>
+     *        ID of the virtual private gateway that will be attached to the virtual interface.</p>
      *        <p>
-     *        A virtual private gateway can be managed via the Amazon Virtual
-     *        Private Cloud (VPC) console or the <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html"
-     *        >EC2 CreateVpnGateway</a> action.
+     *        A virtual private gateway can be managed via the Amazon Virtual Private Cloud (VPC) console or the <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
+     *        CreateVpnGateway</a> action.
      *        </p>
      *        <p>
      *        Default: None
@@ -106,26 +94,22 @@ public class ConfirmPrivateVirtualInterfaceRequest extends
 
     /**
      * <p>
-     * ID of the virtual private gateway that will be attached to the virtual
-     * interface.
+     * ID of the virtual private gateway that will be attached to the virtual interface.
      * </p>
      * <p>
-     * A virtual private gateway can be managed via the Amazon Virtual Private
-     * Cloud (VPC) console or the <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html"
-     * >EC2 CreateVpnGateway</a> action.
+     * A virtual private gateway can be managed via the Amazon Virtual Private Cloud (VPC) console or the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
+     * CreateVpnGateway</a> action.
      * </p>
      * <p>
      * Default: None
      * </p>
      * 
-     * @return ID of the virtual private gateway that will be attached to the
-     *         virtual interface.</p>
+     * @return ID of the virtual private gateway that will be attached to the virtual interface.</p>
      *         <p>
-     *         A virtual private gateway can be managed via the Amazon Virtual
-     *         Private Cloud (VPC) console or the <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html"
-     *         >EC2 CreateVpnGateway</a> action.
+     *         A virtual private gateway can be managed via the Amazon Virtual Private Cloud (VPC) console or the <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
+     *         CreateVpnGateway</a> action.
      *         </p>
      *         <p>
      *         Default: None
@@ -137,43 +121,36 @@ public class ConfirmPrivateVirtualInterfaceRequest extends
 
     /**
      * <p>
-     * ID of the virtual private gateway that will be attached to the virtual
-     * interface.
+     * ID of the virtual private gateway that will be attached to the virtual interface.
      * </p>
      * <p>
-     * A virtual private gateway can be managed via the Amazon Virtual Private
-     * Cloud (VPC) console or the <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html"
-     * >EC2 CreateVpnGateway</a> action.
+     * A virtual private gateway can be managed via the Amazon Virtual Private Cloud (VPC) console or the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
+     * CreateVpnGateway</a> action.
      * </p>
      * <p>
      * Default: None
      * </p>
      * 
      * @param virtualGatewayId
-     *        ID of the virtual private gateway that will be attached to the
-     *        virtual interface.</p>
+     *        ID of the virtual private gateway that will be attached to the virtual interface.</p>
      *        <p>
-     *        A virtual private gateway can be managed via the Amazon Virtual
-     *        Private Cloud (VPC) console or the <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html"
-     *        >EC2 CreateVpnGateway</a> action.
+     *        A virtual private gateway can be managed via the Amazon Virtual Private Cloud (VPC) console or the <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
+     *        CreateVpnGateway</a> action.
      *        </p>
      *        <p>
      *        Default: None
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfirmPrivateVirtualInterfaceRequest withVirtualGatewayId(
-            String virtualGatewayId) {
+    public ConfirmPrivateVirtualInterfaceRequest withVirtualGatewayId(String virtualGatewayId) {
         setVirtualGatewayId(virtualGatewayId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -201,19 +178,13 @@ public class ConfirmPrivateVirtualInterfaceRequest extends
         if (obj instanceof ConfirmPrivateVirtualInterfaceRequest == false)
             return false;
         ConfirmPrivateVirtualInterfaceRequest other = (ConfirmPrivateVirtualInterfaceRequest) obj;
-        if (other.getVirtualInterfaceId() == null
-                ^ this.getVirtualInterfaceId() == null)
+        if (other.getVirtualInterfaceId() == null ^ this.getVirtualInterfaceId() == null)
             return false;
-        if (other.getVirtualInterfaceId() != null
-                && other.getVirtualInterfaceId().equals(
-                        this.getVirtualInterfaceId()) == false)
+        if (other.getVirtualInterfaceId() != null && other.getVirtualInterfaceId().equals(this.getVirtualInterfaceId()) == false)
             return false;
-        if (other.getVirtualGatewayId() == null
-                ^ this.getVirtualGatewayId() == null)
+        if (other.getVirtualGatewayId() == null ^ this.getVirtualGatewayId() == null)
             return false;
-        if (other.getVirtualGatewayId() != null
-                && other.getVirtualGatewayId().equals(
-                        this.getVirtualGatewayId()) == false)
+        if (other.getVirtualGatewayId() != null && other.getVirtualGatewayId().equals(this.getVirtualGatewayId()) == false)
             return false;
         return true;
     }
@@ -223,14 +194,8 @@ public class ConfirmPrivateVirtualInterfaceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getVirtualInterfaceId() == null) ? 0
-                        : getVirtualInterfaceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVirtualGatewayId() == null) ? 0 : getVirtualGatewayId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getVirtualInterfaceId() == null) ? 0 : getVirtualInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getVirtualGatewayId() == null) ? 0 : getVirtualGatewayId().hashCode());
         return hashCode;
     }
 

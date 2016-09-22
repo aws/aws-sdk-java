@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -22,26 +20,22 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>DescribeReplicationGroups</i> action.
  * </p>
  */
-public class DescribeReplicationGroupsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeReplicationGroupsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the replication group to be described. This parameter
-     * is not case sensitive.
+     * The identifier for the replication group to be described. This parameter is not case sensitive.
      * </p>
      * <p>
-     * If you do not specify this parameter, information about all replication
-     * groups is returned.
+     * If you do not specify this parameter, information about all replication groups is returned.
      * </p>
      */
     private String replicationGroupId;
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -53,30 +47,25 @@ public class DescribeReplicationGroupsRequest extends
     private Integer maxRecords;
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
+     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.
      * </p>
      */
     private String marker;
 
     /**
      * <p>
-     * The identifier for the replication group to be described. This parameter
-     * is not case sensitive.
+     * The identifier for the replication group to be described. This parameter is not case sensitive.
      * </p>
      * <p>
-     * If you do not specify this parameter, information about all replication
-     * groups is returned.
+     * If you do not specify this parameter, information about all replication groups is returned.
      * </p>
      * 
      * @param replicationGroupId
-     *        The identifier for the replication group to be described. This
-     *        parameter is not case sensitive.</p>
+     *        The identifier for the replication group to be described. This parameter is not case sensitive.</p>
      *        <p>
-     *        If you do not specify this parameter, information about all
-     *        replication groups is returned.
+     *        If you do not specify this parameter, information about all replication groups is returned.
      */
 
     public void setReplicationGroupId(String replicationGroupId) {
@@ -85,19 +74,15 @@ public class DescribeReplicationGroupsRequest extends
 
     /**
      * <p>
-     * The identifier for the replication group to be described. This parameter
-     * is not case sensitive.
+     * The identifier for the replication group to be described. This parameter is not case sensitive.
      * </p>
      * <p>
-     * If you do not specify this parameter, information about all replication
-     * groups is returned.
+     * If you do not specify this parameter, information about all replication groups is returned.
      * </p>
      * 
-     * @return The identifier for the replication group to be described. This
-     *         parameter is not case sensitive.</p>
+     * @return The identifier for the replication group to be described. This parameter is not case sensitive.</p>
      *         <p>
-     *         If you do not specify this parameter, information about all
-     *         replication groups is returned.
+     *         If you do not specify this parameter, information about all replication groups is returned.
      */
 
     public String getReplicationGroupId() {
@@ -106,35 +91,29 @@ public class DescribeReplicationGroupsRequest extends
 
     /**
      * <p>
-     * The identifier for the replication group to be described. This parameter
-     * is not case sensitive.
+     * The identifier for the replication group to be described. This parameter is not case sensitive.
      * </p>
      * <p>
-     * If you do not specify this parameter, information about all replication
-     * groups is returned.
+     * If you do not specify this parameter, information about all replication groups is returned.
      * </p>
      * 
      * @param replicationGroupId
-     *        The identifier for the replication group to be described. This
-     *        parameter is not case sensitive.</p>
+     *        The identifier for the replication group to be described. This parameter is not case sensitive.</p>
      *        <p>
-     *        If you do not specify this parameter, information about all
-     *        replication groups is returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you do not specify this parameter, information about all replication groups is returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReplicationGroupsRequest withReplicationGroupId(
-            String replicationGroupId) {
+    public DescribeReplicationGroupsRequest withReplicationGroupId(String replicationGroupId) {
         setReplicationGroupId(replicationGroupId);
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -144,10 +123,9 @@ public class DescribeReplicationGroupsRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        marker is included in the response so that the remaining results
-     *        can be retrieved.</p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     *        retrieved.</p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -161,9 +139,9 @@ public class DescribeReplicationGroupsRequest extends
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -172,10 +150,9 @@ public class DescribeReplicationGroupsRequest extends
      * Constraints: minimum 20; maximum 100.
      * </p>
      * 
-     * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         marker is included in the response so that the remaining results
-     *         can be retrieved.</p>
+     * @return The maximum number of records to include in the response. If more records exist than the specified
+     *         <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     *         retrieved.</p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -189,9 +166,9 @@ public class DescribeReplicationGroupsRequest extends
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -201,17 +178,15 @@ public class DescribeReplicationGroupsRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        marker is included in the response so that the remaining results
-     *        can be retrieved.</p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     *        retrieved.</p>
      *        <p>
      *        Default: 100
      *        </p>
      *        <p>
      *        Constraints: minimum 20; maximum 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeReplicationGroupsRequest withMaxRecords(Integer maxRecords) {
@@ -221,17 +196,15 @@ public class DescribeReplicationGroupsRequest extends
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
+     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.
      * </p>
      * 
      * @param marker
-     *        An optional marker returned from a prior request. Use this marker
-     *        for pagination of results from this action. If this parameter is
-     *        specified, the response includes only records beyond the marker,
-     *        up to the value specified by <i>MaxRecords</i>.
+     *        An optional marker returned from a prior request. Use this marker for pagination of results from this
+     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <i>MaxRecords</i>.
      */
 
     public void setMarker(String marker) {
@@ -240,16 +213,14 @@ public class DescribeReplicationGroupsRequest extends
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
+     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.
      * </p>
      * 
-     * @return An optional marker returned from a prior request. Use this marker
-     *         for pagination of results from this action. If this parameter is
-     *         specified, the response includes only records beyond the marker,
-     *         up to the value specified by <i>MaxRecords</i>.
+     * @return An optional marker returned from a prior request. Use this marker for pagination of results from this
+     *         action. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *         value specified by <i>MaxRecords</i>.
      */
 
     public String getMarker() {
@@ -258,19 +229,16 @@ public class DescribeReplicationGroupsRequest extends
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
+     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.
      * </p>
      * 
      * @param marker
-     *        An optional marker returned from a prior request. Use this marker
-     *        for pagination of results from this action. If this parameter is
-     *        specified, the response includes only records beyond the marker,
-     *        up to the value specified by <i>MaxRecords</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional marker returned from a prior request. Use this marker for pagination of results from this
+     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <i>MaxRecords</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeReplicationGroupsRequest withMarker(String marker) {
@@ -279,8 +247,7 @@ public class DescribeReplicationGroupsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -310,22 +277,17 @@ public class DescribeReplicationGroupsRequest extends
         if (obj instanceof DescribeReplicationGroupsRequest == false)
             return false;
         DescribeReplicationGroupsRequest other = (DescribeReplicationGroupsRequest) obj;
-        if (other.getReplicationGroupId() == null
-                ^ this.getReplicationGroupId() == null)
+        if (other.getReplicationGroupId() == null ^ this.getReplicationGroupId() == null)
             return false;
-        if (other.getReplicationGroupId() != null
-                && other.getReplicationGroupId().equals(
-                        this.getReplicationGroupId()) == false)
+        if (other.getReplicationGroupId() != null && other.getReplicationGroupId().equals(this.getReplicationGroupId()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -335,14 +297,9 @@ public class DescribeReplicationGroupsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReplicationGroupId() == null) ? 0
-                        : getReplicationGroupId().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getReplicationGroupId() == null) ? 0 : getReplicationGroupId().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 

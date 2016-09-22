@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -18,9 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a lifecycle hook, which tells Auto Scaling that you want to perform
- * an action when an instance launches or terminates. When you have a lifecycle
- * hook in place, the Auto Scaling group will either:
+ * Describes a lifecycle hook, which tells Auto Scaling that you want to perform an action when an instance launches or
+ * terminates. When you have a lifecycle hook in place, the Auto Scaling group will either:
  * </p>
  * <ul>
  * <li>
@@ -35,9 +32,9 @@ import java.io.Serializable;
  * </li>
  * </ul>
  * <p>
- * For more information, see <a href=
- * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
- * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+ * For more information, see <a
+ * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto Scaling
+ * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
  * </p>
  */
 public class LifecycleHook implements Serializable, Cloneable {
@@ -56,17 +53,15 @@ public class LifecycleHook implements Serializable, Cloneable {
     private String autoScalingGroupName;
     /**
      * <p>
-     * The state of the EC2 instance to which you want to attach the lifecycle
-     * hook. For a list of lifecycle hook types, see
-     * <a>DescribeLifecycleHookTypes</a>.
+     * The state of the EC2 instance to which you want to attach the lifecycle hook. For a list of lifecycle hook types,
+     * see <a>DescribeLifecycleHookTypes</a>.
      * </p>
      */
     private String lifecycleTransition;
     /**
      * <p>
-     * The ARN of the notification target that Auto Scaling uses to notify you
-     * when an instance is in the transition state for the lifecycle hook. This
-     * ARN target can be either an SQS queue or an SNS topic. The notification
+     * The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the transition
+     * state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The notification
      * message sent to the target includes the following:
      * </p>
      * <ul>
@@ -110,41 +105,35 @@ public class LifecycleHook implements Serializable, Cloneable {
     private String notificationTargetARN;
     /**
      * <p>
-     * The ARN of the IAM role that allows the Auto Scaling group to publish to
-     * the specified notification target.
+     * The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.
      * </p>
      */
     private String roleARN;
     /**
      * <p>
-     * Additional information that you want to include any time Auto Scaling
-     * sends a message to the notification target.
+     * Additional information that you want to include any time Auto Scaling sends a message to the notification target.
      * </p>
      */
     private String notificationMetadata;
     /**
      * <p>
-     * The maximum time, in seconds, that can elapse before the lifecycle hook
-     * times out. The default is 3600 seconds (1 hour). When the lifecycle hook
-     * times out, Auto Scaling performs the default action. You can prevent the
-     * lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>.
+     * The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600 seconds (1
+     * hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can prevent the lifecycle
+     * hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      */
     private Integer heartbeatTimeout;
     /**
      * <p>
-     * The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The
-     * default is 172800 seconds (48 hours).
+     * The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
+     * <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
      * </p>
      */
     private Integer globalTimeout;
     /**
      * <p>
-     * Defines the action the Auto Scaling group should take when the lifecycle
-     * hook timeout elapses or if an unexpected failure occurs. The valid values
-     * are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
+     * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
+     * failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
      * <code>CONTINUE</code>.
      * </p>
      */
@@ -182,8 +171,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * 
      * @param lifecycleHookName
      *        The name of the lifecycle hook.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LifecycleHook withLifecycleHookName(String lifecycleHookName) {
@@ -223,8 +211,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * 
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group for the lifecycle hook.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LifecycleHook withAutoScalingGroupName(String autoScalingGroupName) {
@@ -234,15 +221,13 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the EC2 instance to which you want to attach the lifecycle
-     * hook. For a list of lifecycle hook types, see
-     * <a>DescribeLifecycleHookTypes</a>.
+     * The state of the EC2 instance to which you want to attach the lifecycle hook. For a list of lifecycle hook types,
+     * see <a>DescribeLifecycleHookTypes</a>.
      * </p>
      * 
      * @param lifecycleTransition
-     *        The state of the EC2 instance to which you want to attach the
-     *        lifecycle hook. For a list of lifecycle hook types, see
-     *        <a>DescribeLifecycleHookTypes</a>.
+     *        The state of the EC2 instance to which you want to attach the lifecycle hook. For a list of lifecycle hook
+     *        types, see <a>DescribeLifecycleHookTypes</a>.
      */
 
     public void setLifecycleTransition(String lifecycleTransition) {
@@ -251,14 +236,12 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the EC2 instance to which you want to attach the lifecycle
-     * hook. For a list of lifecycle hook types, see
-     * <a>DescribeLifecycleHookTypes</a>.
+     * The state of the EC2 instance to which you want to attach the lifecycle hook. For a list of lifecycle hook types,
+     * see <a>DescribeLifecycleHookTypes</a>.
      * </p>
      * 
-     * @return The state of the EC2 instance to which you want to attach the
-     *         lifecycle hook. For a list of lifecycle hook types, see
-     *         <a>DescribeLifecycleHookTypes</a>.
+     * @return The state of the EC2 instance to which you want to attach the lifecycle hook. For a list of lifecycle
+     *         hook types, see <a>DescribeLifecycleHookTypes</a>.
      */
 
     public String getLifecycleTransition() {
@@ -267,17 +250,14 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the EC2 instance to which you want to attach the lifecycle
-     * hook. For a list of lifecycle hook types, see
-     * <a>DescribeLifecycleHookTypes</a>.
+     * The state of the EC2 instance to which you want to attach the lifecycle hook. For a list of lifecycle hook types,
+     * see <a>DescribeLifecycleHookTypes</a>.
      * </p>
      * 
      * @param lifecycleTransition
-     *        The state of the EC2 instance to which you want to attach the
-     *        lifecycle hook. For a list of lifecycle hook types, see
-     *        <a>DescribeLifecycleHookTypes</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The state of the EC2 instance to which you want to attach the lifecycle hook. For a list of lifecycle hook
+     *        types, see <a>DescribeLifecycleHookTypes</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LifecycleHook withLifecycleTransition(String lifecycleTransition) {
@@ -287,9 +267,8 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the notification target that Auto Scaling uses to notify you
-     * when an instance is in the transition state for the lifecycle hook. This
-     * ARN target can be either an SQS queue or an SNS topic. The notification
+     * The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the transition
+     * state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The notification
      * message sent to the target includes the following:
      * </p>
      * <ul>
@@ -331,11 +310,9 @@ public class LifecycleHook implements Serializable, Cloneable {
      * </ul>
      * 
      * @param notificationTargetARN
-     *        The ARN of the notification target that Auto Scaling uses to
-     *        notify you when an instance is in the transition state for the
-     *        lifecycle hook. This ARN target can be either an SQS queue or an
-     *        SNS topic. The notification message sent to the target includes
-     *        the following:</p>
+     *        The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the
+     *        transition state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The
+     *        notification message sent to the target includes the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -380,9 +357,8 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the notification target that Auto Scaling uses to notify you
-     * when an instance is in the transition state for the lifecycle hook. This
-     * ARN target can be either an SQS queue or an SNS topic. The notification
+     * The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the transition
+     * state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The notification
      * message sent to the target includes the following:
      * </p>
      * <ul>
@@ -423,11 +399,9 @@ public class LifecycleHook implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The ARN of the notification target that Auto Scaling uses to
-     *         notify you when an instance is in the transition state for the
-     *         lifecycle hook. This ARN target can be either an SQS queue or an
-     *         SNS topic. The notification message sent to the target includes
-     *         the following:</p>
+     * @return The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the
+     *         transition state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The
+     *         notification message sent to the target includes the following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -472,9 +446,8 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the notification target that Auto Scaling uses to notify you
-     * when an instance is in the transition state for the lifecycle hook. This
-     * ARN target can be either an SQS queue or an SNS topic. The notification
+     * The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the transition
+     * state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The notification
      * message sent to the target includes the following:
      * </p>
      * <ul>
@@ -516,11 +489,9 @@ public class LifecycleHook implements Serializable, Cloneable {
      * </ul>
      * 
      * @param notificationTargetARN
-     *        The ARN of the notification target that Auto Scaling uses to
-     *        notify you when an instance is in the transition state for the
-     *        lifecycle hook. This ARN target can be either an SQS queue or an
-     *        SNS topic. The notification message sent to the target includes
-     *        the following:</p>
+     *        The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the
+     *        transition state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The
+     *        notification message sent to the target includes the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -557,8 +528,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      *        Notification metadata
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LifecycleHook withNotificationTargetARN(String notificationTargetARN) {
@@ -568,13 +538,12 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that allows the Auto Scaling group to publish to
-     * the specified notification target.
+     * The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the IAM role that allows the Auto Scaling group to
-     *        publish to the specified notification target.
+     *        The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
+     *        target.
      */
 
     public void setRoleARN(String roleARN) {
@@ -583,12 +552,11 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that allows the Auto Scaling group to publish to
-     * the specified notification target.
+     * The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.
      * </p>
      * 
-     * @return The ARN of the IAM role that allows the Auto Scaling group to
-     *         publish to the specified notification target.
+     * @return The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
+     *         target.
      */
 
     public String getRoleARN() {
@@ -597,15 +565,13 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that allows the Auto Scaling group to publish to
-     * the specified notification target.
+     * The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the IAM role that allows the Auto Scaling group to
-     *        publish to the specified notification target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
+     *        target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LifecycleHook withRoleARN(String roleARN) {
@@ -615,13 +581,12 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional information that you want to include any time Auto Scaling
-     * sends a message to the notification target.
+     * Additional information that you want to include any time Auto Scaling sends a message to the notification target.
      * </p>
      * 
      * @param notificationMetadata
-     *        Additional information that you want to include any time Auto
-     *        Scaling sends a message to the notification target.
+     *        Additional information that you want to include any time Auto Scaling sends a message to the notification
+     *        target.
      */
 
     public void setNotificationMetadata(String notificationMetadata) {
@@ -630,12 +595,11 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional information that you want to include any time Auto Scaling
-     * sends a message to the notification target.
+     * Additional information that you want to include any time Auto Scaling sends a message to the notification target.
      * </p>
      * 
-     * @return Additional information that you want to include any time Auto
-     *         Scaling sends a message to the notification target.
+     * @return Additional information that you want to include any time Auto Scaling sends a message to the notification
+     *         target.
      */
 
     public String getNotificationMetadata() {
@@ -644,15 +608,13 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional information that you want to include any time Auto Scaling
-     * sends a message to the notification target.
+     * Additional information that you want to include any time Auto Scaling sends a message to the notification target.
      * </p>
      * 
      * @param notificationMetadata
-     *        Additional information that you want to include any time Auto
-     *        Scaling sends a message to the notification target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Additional information that you want to include any time Auto Scaling sends a message to the notification
+     *        target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LifecycleHook withNotificationMetadata(String notificationMetadata) {
@@ -662,19 +624,15 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum time, in seconds, that can elapse before the lifecycle hook
-     * times out. The default is 3600 seconds (1 hour). When the lifecycle hook
-     * times out, Auto Scaling performs the default action. You can prevent the
-     * lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>.
+     * The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600 seconds (1
+     * hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can prevent the lifecycle
+     * hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      * 
      * @param heartbeatTimeout
-     *        The maximum time, in seconds, that can elapse before the lifecycle
-     *        hook times out. The default is 3600 seconds (1 hour). When the
-     *        lifecycle hook times out, Auto Scaling performs the default
-     *        action. You can prevent the lifecycle hook from timing out by
-     *        calling <a>RecordLifecycleActionHeartbeat</a>.
+     *        The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600
+     *        seconds (1 hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can
+     *        prevent the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
      */
 
     public void setHeartbeatTimeout(Integer heartbeatTimeout) {
@@ -683,18 +641,14 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum time, in seconds, that can elapse before the lifecycle hook
-     * times out. The default is 3600 seconds (1 hour). When the lifecycle hook
-     * times out, Auto Scaling performs the default action. You can prevent the
-     * lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>.
+     * The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600 seconds (1
+     * hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can prevent the lifecycle
+     * hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      * 
-     * @return The maximum time, in seconds, that can elapse before the
-     *         lifecycle hook times out. The default is 3600 seconds (1 hour).
-     *         When the lifecycle hook times out, Auto Scaling performs the
-     *         default action. You can prevent the lifecycle hook from timing
-     *         out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * @return The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600
+     *         seconds (1 hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can
+     *         prevent the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
      */
 
     public Integer getHeartbeatTimeout() {
@@ -703,21 +657,16 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum time, in seconds, that can elapse before the lifecycle hook
-     * times out. The default is 3600 seconds (1 hour). When the lifecycle hook
-     * times out, Auto Scaling performs the default action. You can prevent the
-     * lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>.
+     * The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600 seconds (1
+     * hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can prevent the lifecycle
+     * hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      * 
      * @param heartbeatTimeout
-     *        The maximum time, in seconds, that can elapse before the lifecycle
-     *        hook times out. The default is 3600 seconds (1 hour). When the
-     *        lifecycle hook times out, Auto Scaling performs the default
-     *        action. You can prevent the lifecycle hook from timing out by
-     *        calling <a>RecordLifecycleActionHeartbeat</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600
+     *        seconds (1 hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can
+     *        prevent the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LifecycleHook withHeartbeatTimeout(Integer heartbeatTimeout) {
@@ -727,15 +676,13 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The
-     * default is 172800 seconds (48 hours).
+     * The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
+     * <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
      * </p>
      * 
      * @param globalTimeout
-     *        The maximum time, in seconds, that an instance can remain in a
-     *        <code>Pending:Wait</code> or <code>Terminating:Wait</code> state.
-     *        The default is 172800 seconds (48 hours).
+     *        The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
+     *        <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
      */
 
     public void setGlobalTimeout(Integer globalTimeout) {
@@ -744,14 +691,12 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The
-     * default is 172800 seconds (48 hours).
+     * The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
+     * <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
      * </p>
      * 
-     * @return The maximum time, in seconds, that an instance can remain in a
-     *         <code>Pending:Wait</code> or <code>Terminating:Wait</code> state.
-     *         The default is 172800 seconds (48 hours).
+     * @return The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
+     *         <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
      */
 
     public Integer getGlobalTimeout() {
@@ -760,17 +705,14 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The
-     * default is 172800 seconds (48 hours).
+     * The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
+     * <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
      * </p>
      * 
      * @param globalTimeout
-     *        The maximum time, in seconds, that an instance can remain in a
-     *        <code>Pending:Wait</code> or <code>Terminating:Wait</code> state.
-     *        The default is 172800 seconds (48 hours).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
+     *        <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LifecycleHook withGlobalTimeout(Integer globalTimeout) {
@@ -780,17 +722,15 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Defines the action the Auto Scaling group should take when the lifecycle
-     * hook timeout elapses or if an unexpected failure occurs. The valid values
-     * are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
+     * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
+     * failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
      * <code>CONTINUE</code>.
      * </p>
      * 
      * @param defaultResult
-     *        Defines the action the Auto Scaling group should take when the
-     *        lifecycle hook timeout elapses or if an unexpected failure occurs.
-     *        The valid values are <code>CONTINUE</code> and
-     *        <code>ABANDON</code>. The default value is <code>CONTINUE</code>.
+     *        Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an
+     *        unexpected failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The
+     *        default value is <code>CONTINUE</code>.
      */
 
     public void setDefaultResult(String defaultResult) {
@@ -799,16 +739,14 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Defines the action the Auto Scaling group should take when the lifecycle
-     * hook timeout elapses or if an unexpected failure occurs. The valid values
-     * are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
+     * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
+     * failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
      * <code>CONTINUE</code>.
      * </p>
      * 
-     * @return Defines the action the Auto Scaling group should take when the
-     *         lifecycle hook timeout elapses or if an unexpected failure
-     *         occurs. The valid values are <code>CONTINUE</code> and
-     *         <code>ABANDON</code>. The default value is <code>CONTINUE</code>.
+     * @return Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an
+     *         unexpected failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The
+     *         default value is <code>CONTINUE</code>.
      */
 
     public String getDefaultResult() {
@@ -817,19 +755,16 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Defines the action the Auto Scaling group should take when the lifecycle
-     * hook timeout elapses or if an unexpected failure occurs. The valid values
-     * are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
+     * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
+     * failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
      * <code>CONTINUE</code>.
      * </p>
      * 
      * @param defaultResult
-     *        Defines the action the Auto Scaling group should take when the
-     *        lifecycle hook timeout elapses or if an unexpected failure occurs.
-     *        The valid values are <code>CONTINUE</code> and
-     *        <code>ABANDON</code>. The default value is <code>CONTINUE</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an
+     *        unexpected failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The
+     *        default value is <code>CONTINUE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LifecycleHook withDefaultResult(String defaultResult) {
@@ -838,8 +773,7 @@ public class LifecycleHook implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -852,18 +786,15 @@ public class LifecycleHook implements Serializable, Cloneable {
         if (getLifecycleHookName() != null)
             sb.append("LifecycleHookName: " + getLifecycleHookName() + ",");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
         if (getLifecycleTransition() != null)
             sb.append("LifecycleTransition: " + getLifecycleTransition() + ",");
         if (getNotificationTargetARN() != null)
-            sb.append("NotificationTargetARN: " + getNotificationTargetARN()
-                    + ",");
+            sb.append("NotificationTargetARN: " + getNotificationTargetARN() + ",");
         if (getRoleARN() != null)
             sb.append("RoleARN: " + getRoleARN() + ",");
         if (getNotificationMetadata() != null)
-            sb.append("NotificationMetadata: " + getNotificationMetadata()
-                    + ",");
+            sb.append("NotificationMetadata: " + getNotificationMetadata() + ",");
         if (getHeartbeatTimeout() != null)
             sb.append("HeartbeatTimeout: " + getHeartbeatTimeout() + ",");
         if (getGlobalTimeout() != null)
@@ -884,62 +815,41 @@ public class LifecycleHook implements Serializable, Cloneable {
         if (obj instanceof LifecycleHook == false)
             return false;
         LifecycleHook other = (LifecycleHook) obj;
-        if (other.getLifecycleHookName() == null
-                ^ this.getLifecycleHookName() == null)
+        if (other.getLifecycleHookName() == null ^ this.getLifecycleHookName() == null)
             return false;
-        if (other.getLifecycleHookName() != null
-                && other.getLifecycleHookName().equals(
-                        this.getLifecycleHookName()) == false)
+        if (other.getLifecycleHookName() != null && other.getLifecycleHookName().equals(this.getLifecycleHookName()) == false)
             return false;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
-        if (other.getLifecycleTransition() == null
-                ^ this.getLifecycleTransition() == null)
+        if (other.getLifecycleTransition() == null ^ this.getLifecycleTransition() == null)
             return false;
-        if (other.getLifecycleTransition() != null
-                && other.getLifecycleTransition().equals(
-                        this.getLifecycleTransition()) == false)
+        if (other.getLifecycleTransition() != null && other.getLifecycleTransition().equals(this.getLifecycleTransition()) == false)
             return false;
-        if (other.getNotificationTargetARN() == null
-                ^ this.getNotificationTargetARN() == null)
+        if (other.getNotificationTargetARN() == null ^ this.getNotificationTargetARN() == null)
             return false;
-        if (other.getNotificationTargetARN() != null
-                && other.getNotificationTargetARN().equals(
-                        this.getNotificationTargetARN()) == false)
+        if (other.getNotificationTargetARN() != null && other.getNotificationTargetARN().equals(this.getNotificationTargetARN()) == false)
             return false;
         if (other.getRoleARN() == null ^ this.getRoleARN() == null)
             return false;
-        if (other.getRoleARN() != null
-                && other.getRoleARN().equals(this.getRoleARN()) == false)
+        if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false)
             return false;
-        if (other.getNotificationMetadata() == null
-                ^ this.getNotificationMetadata() == null)
+        if (other.getNotificationMetadata() == null ^ this.getNotificationMetadata() == null)
             return false;
-        if (other.getNotificationMetadata() != null
-                && other.getNotificationMetadata().equals(
-                        this.getNotificationMetadata()) == false)
+        if (other.getNotificationMetadata() != null && other.getNotificationMetadata().equals(this.getNotificationMetadata()) == false)
             return false;
-        if (other.getHeartbeatTimeout() == null
-                ^ this.getHeartbeatTimeout() == null)
+        if (other.getHeartbeatTimeout() == null ^ this.getHeartbeatTimeout() == null)
             return false;
-        if (other.getHeartbeatTimeout() != null
-                && other.getHeartbeatTimeout().equals(
-                        this.getHeartbeatTimeout()) == false)
+        if (other.getHeartbeatTimeout() != null && other.getHeartbeatTimeout().equals(this.getHeartbeatTimeout()) == false)
             return false;
         if (other.getGlobalTimeout() == null ^ this.getGlobalTimeout() == null)
             return false;
-        if (other.getGlobalTimeout() != null
-                && other.getGlobalTimeout().equals(this.getGlobalTimeout()) == false)
+        if (other.getGlobalTimeout() != null && other.getGlobalTimeout().equals(this.getGlobalTimeout()) == false)
             return false;
         if (other.getDefaultResult() == null ^ this.getDefaultResult() == null)
             return false;
-        if (other.getDefaultResult() != null
-                && other.getDefaultResult().equals(this.getDefaultResult()) == false)
+        if (other.getDefaultResult() != null && other.getDefaultResult().equals(this.getDefaultResult()) == false)
             return false;
         return true;
     }
@@ -949,40 +859,15 @@ public class LifecycleHook implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLifecycleHookName() == null) ? 0
-                        : getLifecycleHookName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLifecycleTransition() == null) ? 0
-                        : getLifecycleTransition().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNotificationTargetARN() == null) ? 0
-                        : getNotificationTargetARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNotificationMetadata() == null) ? 0
-                        : getNotificationMetadata().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHeartbeatTimeout() == null) ? 0 : getHeartbeatTimeout()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getGlobalTimeout() == null) ? 0 : getGlobalTimeout()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultResult() == null) ? 0 : getDefaultResult()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getLifecycleHookName() == null) ? 0 : getLifecycleHookName().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleTransition() == null) ? 0 : getLifecycleTransition().hashCode());
+        hashCode = prime * hashCode + ((getNotificationTargetARN() == null) ? 0 : getNotificationTargetARN().hashCode());
+        hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
+        hashCode = prime * hashCode + ((getNotificationMetadata() == null) ? 0 : getNotificationMetadata().hashCode());
+        hashCode = prime * hashCode + ((getHeartbeatTimeout() == null) ? 0 : getHeartbeatTimeout().hashCode());
+        hashCode = prime * hashCode + ((getGlobalTimeout() == null) ? 0 : getGlobalTimeout().hashCode());
+        hashCode = prime * hashCode + ((getDefaultResult() == null) ? 0 : getDefaultResult().hashCode());
         return hashCode;
     }
 
@@ -991,9 +876,7 @@ public class LifecycleHook implements Serializable, Cloneable {
         try {
             return (LifecycleHook) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListVolumeRecoveryPointsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListVolumeRecoveryPointsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String gatewayARN;
 
@@ -45,8 +41,7 @@ public class ListVolumeRecoveryPointsResult extends
 
     /**
      * @param gatewayARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListVolumeRecoveryPointsResult withGatewayARN(String gatewayARN) {
@@ -69,35 +64,29 @@ public class ListVolumeRecoveryPointsResult extends
      * @param volumeRecoveryPointInfos
      */
 
-    public void setVolumeRecoveryPointInfos(
-            java.util.Collection<VolumeRecoveryPointInfo> volumeRecoveryPointInfos) {
+    public void setVolumeRecoveryPointInfos(java.util.Collection<VolumeRecoveryPointInfo> volumeRecoveryPointInfos) {
         if (volumeRecoveryPointInfos == null) {
             this.volumeRecoveryPointInfos = null;
             return;
         }
 
-        this.volumeRecoveryPointInfos = new com.amazonaws.internal.SdkInternalList<VolumeRecoveryPointInfo>(
-                volumeRecoveryPointInfos);
+        this.volumeRecoveryPointInfos = new com.amazonaws.internal.SdkInternalList<VolumeRecoveryPointInfo>(volumeRecoveryPointInfos);
     }
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVolumeRecoveryPointInfos(java.util.Collection)} or
-     * {@link #withVolumeRecoveryPointInfos(java.util.Collection)} if you want
-     * to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVolumeRecoveryPointInfos(java.util.Collection)} or
+     * {@link #withVolumeRecoveryPointInfos(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param volumeRecoveryPointInfos
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListVolumeRecoveryPointsResult withVolumeRecoveryPointInfos(
-            VolumeRecoveryPointInfo... volumeRecoveryPointInfos) {
+    public ListVolumeRecoveryPointsResult withVolumeRecoveryPointInfos(VolumeRecoveryPointInfo... volumeRecoveryPointInfos) {
         if (this.volumeRecoveryPointInfos == null) {
-            setVolumeRecoveryPointInfos(new com.amazonaws.internal.SdkInternalList<VolumeRecoveryPointInfo>(
-                    volumeRecoveryPointInfos.length));
+            setVolumeRecoveryPointInfos(new com.amazonaws.internal.SdkInternalList<VolumeRecoveryPointInfo>(volumeRecoveryPointInfos.length));
         }
         for (VolumeRecoveryPointInfo ele : volumeRecoveryPointInfos) {
             this.volumeRecoveryPointInfos.add(ele);
@@ -107,19 +96,16 @@ public class ListVolumeRecoveryPointsResult extends
 
     /**
      * @param volumeRecoveryPointInfos
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListVolumeRecoveryPointsResult withVolumeRecoveryPointInfos(
-            java.util.Collection<VolumeRecoveryPointInfo> volumeRecoveryPointInfos) {
+    public ListVolumeRecoveryPointsResult withVolumeRecoveryPointInfos(java.util.Collection<VolumeRecoveryPointInfo> volumeRecoveryPointInfos) {
         setVolumeRecoveryPointInfos(volumeRecoveryPointInfos);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -132,8 +118,7 @@ public class ListVolumeRecoveryPointsResult extends
         if (getGatewayARN() != null)
             sb.append("GatewayARN: " + getGatewayARN() + ",");
         if (getVolumeRecoveryPointInfos() != null)
-            sb.append("VolumeRecoveryPointInfos: "
-                    + getVolumeRecoveryPointInfos());
+            sb.append("VolumeRecoveryPointInfos: " + getVolumeRecoveryPointInfos());
         sb.append("}");
         return sb.toString();
     }
@@ -150,15 +135,11 @@ public class ListVolumeRecoveryPointsResult extends
         ListVolumeRecoveryPointsResult other = (ListVolumeRecoveryPointsResult) obj;
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null)
             return false;
-        if (other.getGatewayARN() != null
-                && other.getGatewayARN().equals(this.getGatewayARN()) == false)
+        if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
-        if (other.getVolumeRecoveryPointInfos() == null
-                ^ this.getVolumeRecoveryPointInfos() == null)
+        if (other.getVolumeRecoveryPointInfos() == null ^ this.getVolumeRecoveryPointInfos() == null)
             return false;
-        if (other.getVolumeRecoveryPointInfos() != null
-                && other.getVolumeRecoveryPointInfos().equals(
-                        this.getVolumeRecoveryPointInfos()) == false)
+        if (other.getVolumeRecoveryPointInfos() != null && other.getVolumeRecoveryPointInfos().equals(this.getVolumeRecoveryPointInfos()) == false)
             return false;
         return true;
     }
@@ -168,12 +149,8 @@ public class ListVolumeRecoveryPointsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeRecoveryPointInfos() == null) ? 0
-                        : getVolumeRecoveryPointInfos().hashCode());
+        hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getVolumeRecoveryPointInfos() == null) ? 0 : getVolumeRecoveryPointInfos().hashCode());
         return hashCode;
     }
 
@@ -182,9 +159,7 @@ public class ListVolumeRecoveryPointsResult extends
         try {
             return (ListVolumeRecoveryPointsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

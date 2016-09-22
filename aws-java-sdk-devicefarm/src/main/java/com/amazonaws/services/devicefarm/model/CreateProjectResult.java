@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Represents the result of a create project request.
  * </p>
  */
-public class CreateProjectResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CreateProjectResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -64,8 +60,7 @@ public class CreateProjectResult extends
      * 
      * @param project
      *        The newly created project.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateProjectResult withProject(Project project) {
@@ -74,8 +69,7 @@ public class CreateProjectResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -103,8 +97,7 @@ public class CreateProjectResult extends
         CreateProjectResult other = (CreateProjectResult) obj;
         if (other.getProject() == null ^ this.getProject() == null)
             return false;
-        if (other.getProject() != null
-                && other.getProject().equals(this.getProject()) == false)
+        if (other.getProject() != null && other.getProject().equals(this.getProject()) == false)
             return false;
         return true;
     }
@@ -114,8 +107,7 @@ public class CreateProjectResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getProject() == null) ? 0 : getProject().hashCode());
+        hashCode = prime * hashCode + ((getProject() == null) ? 0 : getProject().hashCode());
         return hashCode;
     }
 
@@ -124,9 +116,7 @@ public class CreateProjectResult extends
         try {
             return (CreateProjectResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

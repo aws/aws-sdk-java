@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeScheduledInstancesRequ
  * Contains the parameters for DescribeScheduledInstances.
  * </p>
  */
-public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeScheduledInstancesRequest> {
 
     /**
@@ -48,10 +45,8 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in a single call. This value can
-     * be between 5 and 300. The default value is 100. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
+     * is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      */
     private Integer maxResults;
@@ -62,26 +57,22 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>availability-zone</code> - The Availability Zone (for example,
-     * <code>us-west-2a</code>).
+     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type (for example,
-     * <code>c4.large</code>).
+     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-platform</code> - The network platform (
-     * <code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or
-     * <code>Windows</code>).
+     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      * </p>
      * </li>
      * </ul>
@@ -112,15 +103,13 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      *        One or more Scheduled Instance IDs.
      */
 
-    public void setScheduledInstanceIds(
-            java.util.Collection<String> scheduledInstanceIds) {
+    public void setScheduledInstanceIds(java.util.Collection<String> scheduledInstanceIds) {
         if (scheduledInstanceIds == null) {
             this.scheduledInstanceIds = null;
             return;
         }
 
-        this.scheduledInstanceIds = new com.amazonaws.internal.SdkInternalList<String>(
-                scheduledInstanceIds);
+        this.scheduledInstanceIds = new com.amazonaws.internal.SdkInternalList<String>(scheduledInstanceIds);
     }
 
     /**
@@ -128,23 +117,19 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * One or more Scheduled Instance IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setScheduledInstanceIds(java.util.Collection)} or
-     * {@link #withScheduledInstanceIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setScheduledInstanceIds(java.util.Collection)} or {@link #withScheduledInstanceIds(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param scheduledInstanceIds
      *        One or more Scheduled Instance IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScheduledInstancesRequest withScheduledInstanceIds(
-            String... scheduledInstanceIds) {
+    public DescribeScheduledInstancesRequest withScheduledInstanceIds(String... scheduledInstanceIds) {
         if (this.scheduledInstanceIds == null) {
-            setScheduledInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    scheduledInstanceIds.length));
+            setScheduledInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(scheduledInstanceIds.length));
         }
         for (String ele : scheduledInstanceIds) {
             this.scheduledInstanceIds.add(ele);
@@ -159,12 +144,10 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * 
      * @param scheduledInstanceIds
      *        One or more Scheduled Instance IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScheduledInstancesRequest withScheduledInstanceIds(
-            java.util.Collection<String> scheduledInstanceIds) {
+    public DescribeScheduledInstancesRequest withScheduledInstanceIds(java.util.Collection<String> scheduledInstanceIds) {
         setScheduledInstanceIds(scheduledInstanceIds);
         return this;
     }
@@ -178,8 +161,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      *        The time period for the first schedule to start.
      */
 
-    public void setSlotStartTimeRange(
-            SlotStartTimeRangeRequest slotStartTimeRange) {
+    public void setSlotStartTimeRange(SlotStartTimeRangeRequest slotStartTimeRange) {
         this.slotStartTimeRange = slotStartTimeRange;
     }
 
@@ -202,12 +184,10 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * 
      * @param slotStartTimeRange
      *        The time period for the first schedule to start.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScheduledInstancesRequest withSlotStartTimeRange(
-            SlotStartTimeRangeRequest slotStartTimeRange) {
+    public DescribeScheduledInstancesRequest withSlotStartTimeRange(SlotStartTimeRangeRequest slotStartTimeRange) {
         setSlotStartTimeRange(slotStartTimeRange);
         return this;
     }
@@ -244,8 +224,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * 
      * @param nextToken
      *        The token for the next set of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeScheduledInstancesRequest withNextToken(String nextToken) {
@@ -255,17 +234,14 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. This value can
-     * be between 5 and 300. The default value is 100. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
+     * is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. This
-     *        value can be between 5 and 300. The default value is 100. To
-     *        retrieve the remaining results, make another call with the
-     *        returned <code>NextToken</code> value.
+     *        The maximum number of results to return in a single call. This value can be between 5 and 300. The default
+     *        value is 100. To retrieve the remaining results, make another call with the returned
+     *        <code>NextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -274,16 +250,13 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. This value can
-     * be between 5 and 300. The default value is 100. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
+     * is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. This
-     *         value can be between 5 and 300. The default value is 100. To
-     *         retrieve the remaining results, make another call with the
-     *         returned <code>NextToken</code> value.
+     * @return The maximum number of results to return in a single call. This value can be between 5 and 300. The
+     *         default value is 100. To retrieve the remaining results, make another call with the returned
+     *         <code>NextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -292,19 +265,15 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. This value can
-     * be between 5 and 300. The default value is 100. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
+     * is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. This
-     *        value can be between 5 and 300. The default value is 100. To
-     *        retrieve the remaining results, make another call with the
-     *        returned <code>NextToken</code> value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of results to return in a single call. This value can be between 5 and 300. The default
+     *        value is 100. To retrieve the remaining results, make another call with the returned
+     *        <code>NextToken</code> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeScheduledInstancesRequest withMaxResults(Integer maxResults) {
@@ -319,26 +288,22 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>availability-zone</code> - The Availability Zone (for example,
-     * <code>us-west-2a</code>).
+     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type (for example,
-     * <code>c4.large</code>).
+     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-platform</code> - The network platform (
-     * <code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or
-     * <code>Windows</code>).
+     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      * </p>
      * </li>
      * </ul>
@@ -347,26 +312,22 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>availability-zone</code> - The Availability Zone (for
-     *         example, <code>us-west-2a</code>).
+     *         <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>instance-type</code> - The instance type (for example,
-     *         <code>c4.large</code>).
+     *         <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-platform</code> - The network platform (
-     *         <code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *         <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>platform</code> - The platform (<code>Linux/UNIX</code> or
-     *         <code>Windows</code>).
+     *         <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      *         </p>
      *         </li>
      */
@@ -385,26 +346,22 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>availability-zone</code> - The Availability Zone (for example,
-     * <code>us-west-2a</code>).
+     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type (for example,
-     * <code>c4.large</code>).
+     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-platform</code> - The network platform (
-     * <code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or
-     * <code>Windows</code>).
+     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      * </p>
      * </li>
      * </ul>
@@ -414,26 +371,22 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>availability-zone</code> - The Availability Zone (for
-     *        example, <code>us-west-2a</code>).
+     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-type</code> - The instance type (for example,
-     *        <code>c4.large</code>).
+     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-platform</code> - The network platform (
-     *        <code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or
-     *        <code>Windows</code>).
+     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      *        </p>
      *        </li>
      */
@@ -444,8 +397,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -455,34 +407,29 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>availability-zone</code> - The Availability Zone (for example,
-     * <code>us-west-2a</code>).
+     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type (for example,
-     * <code>c4.large</code>).
+     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-platform</code> - The network platform (
-     * <code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or
-     * <code>Windows</code>).
+     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
@@ -490,36 +437,30 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>availability-zone</code> - The Availability Zone (for
-     *        example, <code>us-west-2a</code>).
+     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-type</code> - The instance type (for example,
-     *        <code>c4.large</code>).
+     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-platform</code> - The network platform (
-     *        <code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or
-     *        <code>Windows</code>).
+     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeScheduledInstancesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -534,26 +475,22 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>availability-zone</code> - The Availability Zone (for example,
-     * <code>us-west-2a</code>).
+     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type (for example,
-     * <code>c4.large</code>).
+     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-platform</code> - The network platform (
-     * <code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or
-     * <code>Windows</code>).
+     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      * </p>
      * </li>
      * </ul>
@@ -563,54 +500,45 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>availability-zone</code> - The Availability Zone (for
-     *        example, <code>us-west-2a</code>).
+     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-type</code> - The instance type (for example,
-     *        <code>c4.large</code>).
+     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-platform</code> - The network platform (
-     *        <code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or
-     *        <code>Windows</code>).
+     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScheduledInstancesRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeScheduledInstancesRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeScheduledInstancesRequest> getDryRunRequest() {
-        Request<DescribeScheduledInstancesRequest> request = new DescribeScheduledInstancesRequestMarshaller()
-                .marshall(this);
+        Request<DescribeScheduledInstancesRequest> request = new DescribeScheduledInstancesRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -621,8 +549,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScheduledInstanceIds() != null)
-            sb.append("ScheduledInstanceIds: " + getScheduledInstanceIds()
-                    + ",");
+            sb.append("ScheduledInstanceIds: " + getScheduledInstanceIds() + ",");
         if (getSlotStartTimeRange() != null)
             sb.append("SlotStartTimeRange: " + getSlotStartTimeRange() + ",");
         if (getNextToken() != null)
@@ -645,34 +572,25 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeScheduledInstancesRequest == false)
             return false;
         DescribeScheduledInstancesRequest other = (DescribeScheduledInstancesRequest) obj;
-        if (other.getScheduledInstanceIds() == null
-                ^ this.getScheduledInstanceIds() == null)
+        if (other.getScheduledInstanceIds() == null ^ this.getScheduledInstanceIds() == null)
             return false;
-        if (other.getScheduledInstanceIds() != null
-                && other.getScheduledInstanceIds().equals(
-                        this.getScheduledInstanceIds()) == false)
+        if (other.getScheduledInstanceIds() != null && other.getScheduledInstanceIds().equals(this.getScheduledInstanceIds()) == false)
             return false;
-        if (other.getSlotStartTimeRange() == null
-                ^ this.getSlotStartTimeRange() == null)
+        if (other.getSlotStartTimeRange() == null ^ this.getSlotStartTimeRange() == null)
             return false;
-        if (other.getSlotStartTimeRange() != null
-                && other.getSlotStartTimeRange().equals(
-                        this.getSlotStartTimeRange()) == false)
+        if (other.getSlotStartTimeRange() != null && other.getSlotStartTimeRange().equals(this.getSlotStartTimeRange()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         return true;
     }
@@ -682,20 +600,11 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getScheduledInstanceIds() == null) ? 0
-                        : getScheduledInstanceIds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSlotStartTimeRange() == null) ? 0
-                        : getSlotStartTimeRange().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getScheduledInstanceIds() == null) ? 0 : getScheduledInstanceIds().hashCode());
+        hashCode = prime * hashCode + ((getSlotStartTimeRange() == null) ? 0 : getSlotStartTimeRange().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

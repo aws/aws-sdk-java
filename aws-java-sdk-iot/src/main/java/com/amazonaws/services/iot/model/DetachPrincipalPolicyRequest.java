@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DetachPrincipalPolicy operation.
  * </p>
  */
-public class DetachPrincipalPolicyRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DetachPrincipalPolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -37,8 +33,8 @@ public class DetachPrincipalPolicyRequest extends
      * The principal.
      * </p>
      * <p>
-     * If the principal is a certificate, specify the certificate ARN. If the
-     * principal is an Amazon Cognito identity, specify the identity ID.
+     * If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity,
+     * specify the identity ID.
      * </p>
      */
     private String principal;
@@ -75,8 +71,7 @@ public class DetachPrincipalPolicyRequest extends
      * 
      * @param policyName
      *        The name of the policy to detach.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetachPrincipalPolicyRequest withPolicyName(String policyName) {
@@ -89,16 +84,15 @@ public class DetachPrincipalPolicyRequest extends
      * The principal.
      * </p>
      * <p>
-     * If the principal is a certificate, specify the certificate ARN. If the
-     * principal is an Amazon Cognito identity, specify the identity ID.
+     * If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity,
+     * specify the identity ID.
      * </p>
      * 
      * @param principal
      *        The principal.</p>
      *        <p>
-     *        If the principal is a certificate, specify the certificate ARN. If
-     *        the principal is an Amazon Cognito identity, specify the identity
-     *        ID.
+     *        If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito
+     *        identity, specify the identity ID.
      */
 
     public void setPrincipal(String principal) {
@@ -110,15 +104,14 @@ public class DetachPrincipalPolicyRequest extends
      * The principal.
      * </p>
      * <p>
-     * If the principal is a certificate, specify the certificate ARN. If the
-     * principal is an Amazon Cognito identity, specify the identity ID.
+     * If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity,
+     * specify the identity ID.
      * </p>
      * 
      * @return The principal.</p>
      *         <p>
-     *         If the principal is a certificate, specify the certificate ARN.
-     *         If the principal is an Amazon Cognito identity, specify the
-     *         identity ID.
+     *         If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito
+     *         identity, specify the identity ID.
      */
 
     public String getPrincipal() {
@@ -130,18 +123,16 @@ public class DetachPrincipalPolicyRequest extends
      * The principal.
      * </p>
      * <p>
-     * If the principal is a certificate, specify the certificate ARN. If the
-     * principal is an Amazon Cognito identity, specify the identity ID.
+     * If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity,
+     * specify the identity ID.
      * </p>
      * 
      * @param principal
      *        The principal.</p>
      *        <p>
-     *        If the principal is a certificate, specify the certificate ARN. If
-     *        the principal is an Amazon Cognito identity, specify the identity
-     *        ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito
+     *        identity, specify the identity ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetachPrincipalPolicyRequest withPrincipal(String principal) {
@@ -150,8 +141,7 @@ public class DetachPrincipalPolicyRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -181,13 +171,11 @@ public class DetachPrincipalPolicyRequest extends
         DetachPrincipalPolicyRequest other = (DetachPrincipalPolicyRequest) obj;
         if (other.getPolicyName() == null ^ this.getPolicyName() == null)
             return false;
-        if (other.getPolicyName() != null
-                && other.getPolicyName().equals(this.getPolicyName()) == false)
+        if (other.getPolicyName() != null && other.getPolicyName().equals(this.getPolicyName()) == false)
             return false;
         if (other.getPrincipal() == null ^ this.getPrincipal() == null)
             return false;
-        if (other.getPrincipal() != null
-                && other.getPrincipal().equals(this.getPrincipal()) == false)
+        if (other.getPrincipal() != null && other.getPrincipal().equals(this.getPrincipal()) == false)
             return false;
         return true;
     }
@@ -197,10 +185,8 @@ public class DetachPrincipalPolicyRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPrincipal() == null) ? 0 : getPrincipal().hashCode());
+        hashCode = prime * hashCode + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
+        hashCode = prime * hashCode + ((getPrincipal() == null) ? 0 : getPrincipal().hashCode());
         return hashCode;
     }
 

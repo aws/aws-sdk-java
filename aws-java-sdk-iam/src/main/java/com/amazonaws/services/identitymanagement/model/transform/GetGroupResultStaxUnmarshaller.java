@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * GetGroupResult StAX Unmarshaller
  */
-public class GetGroupResultStaxUnmarshaller implements
-        Unmarshaller<GetGroupResult, StaxUnmarshallerContext> {
+public class GetGroupResultStaxUnmarshaller implements Unmarshaller<GetGroupResult, StaxUnmarshallerContext> {
 
-    public GetGroupResult unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public GetGroupResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         GetGroupResult getGroupResult = new GetGroupResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,26 +46,22 @@ public class GetGroupResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Group", targetDepth)) {
-                    getGroupResult.setGroup(GroupStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    getGroupResult.setGroup(GroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Users/member", targetDepth)) {
-                    getGroupResult.withUsers(UserStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    getGroupResult.withUsers(UserStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("IsTruncated", targetDepth)) {
-                    getGroupResult.setIsTruncated(BooleanStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getGroupResult.setIsTruncated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Marker", targetDepth)) {
-                    getGroupResult.setMarker(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getGroupResult.setMarker(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

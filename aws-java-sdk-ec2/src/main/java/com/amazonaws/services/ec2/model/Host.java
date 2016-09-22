@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -37,19 +35,16 @@ public class Host implements Serializable, Cloneable {
     private String autoPlacement;
     /**
      * <p>
-     * The reservation ID of the Dedicated Host. This returns a
-     * <code>null</code> response if the Dedicated Host doesn't have an
-     * associated reservation.
+     * The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't
+     * have an associated reservation.
      * </p>
      */
     private String hostReservationId;
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String clientToken;
@@ -73,8 +68,7 @@ public class Host implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * The IDs and instance type that are currently running on the Dedicated
-     * Host.
+     * The IDs and instance type that are currently running on the Dedicated Host.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<HostInstance> instances;
@@ -117,8 +111,7 @@ public class Host implements Serializable, Cloneable {
      * 
      * @param hostId
      *        The ID of the Dedicated Host.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Host withHostId(String hostId) {
@@ -160,8 +153,7 @@ public class Host implements Serializable, Cloneable {
      * 
      * @param autoPlacement
      *        Whether auto-placement is on or off.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoPlacement
      */
 
@@ -191,8 +183,7 @@ public class Host implements Serializable, Cloneable {
      * 
      * @param autoPlacement
      *        Whether auto-placement is on or off.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoPlacement
      */
 
@@ -203,15 +194,13 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reservation ID of the Dedicated Host. This returns a
-     * <code>null</code> response if the Dedicated Host doesn't have an
-     * associated reservation.
+     * The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't
+     * have an associated reservation.
      * </p>
      * 
      * @param hostReservationId
-     *        The reservation ID of the Dedicated Host. This returns a
-     *        <code>null</code> response if the Dedicated Host doesn't have an
-     *        associated reservation.
+     *        The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host
+     *        doesn't have an associated reservation.
      */
 
     public void setHostReservationId(String hostReservationId) {
@@ -220,14 +209,12 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reservation ID of the Dedicated Host. This returns a
-     * <code>null</code> response if the Dedicated Host doesn't have an
-     * associated reservation.
+     * The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't
+     * have an associated reservation.
      * </p>
      * 
-     * @return The reservation ID of the Dedicated Host. This returns a
-     *         <code>null</code> response if the Dedicated Host doesn't have an
-     *         associated reservation.
+     * @return The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host
+     *         doesn't have an associated reservation.
      */
 
     public String getHostReservationId() {
@@ -236,17 +223,14 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reservation ID of the Dedicated Host. This returns a
-     * <code>null</code> response if the Dedicated Host doesn't have an
-     * associated reservation.
+     * The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't
+     * have an associated reservation.
      * </p>
      * 
      * @param hostReservationId
-     *        The reservation ID of the Dedicated Host. This returns a
-     *        <code>null</code> response if the Dedicated Host doesn't have an
-     *        associated reservation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host
+     *        doesn't have an associated reservation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Host withHostReservationId(String hostReservationId) {
@@ -256,19 +240,15 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure
-     *        idempotency of the request. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     *        >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
-     *        Cloud User Guide</i>.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setClientToken(String clientToken) {
@@ -277,18 +257,14 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure
-     *         idempotency of the request. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     *         >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
-     *         Cloud User Guide</i>.
+     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getClientToken() {
@@ -297,21 +273,16 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure
-     *        idempotency of the request. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     *        >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
-     *        Cloud User Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Host withClientToken(String clientToken) {
@@ -351,8 +322,7 @@ public class Host implements Serializable, Cloneable {
      * 
      * @param hostProperties
      *        The hardware specifications of the Dedicated Host.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Host withHostProperties(HostProperties hostProperties) {
@@ -394,8 +364,7 @@ public class Host implements Serializable, Cloneable {
      * 
      * @param state
      *        The Dedicated Host's state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AllocationState
      */
 
@@ -425,8 +394,7 @@ public class Host implements Serializable, Cloneable {
      * 
      * @param state
      *        The Dedicated Host's state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AllocationState
      */
 
@@ -467,8 +435,7 @@ public class Host implements Serializable, Cloneable {
      * 
      * @param availabilityZone
      *        The Availability Zone of the Dedicated Host.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Host withAvailabilityZone(String availabilityZone) {
@@ -478,12 +445,10 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs and instance type that are currently running on the Dedicated
-     * Host.
+     * The IDs and instance type that are currently running on the Dedicated Host.
      * </p>
      * 
-     * @return The IDs and instance type that are currently running on the
-     *         Dedicated Host.
+     * @return The IDs and instance type that are currently running on the Dedicated Host.
      */
 
     public java.util.List<HostInstance> getInstances() {
@@ -495,13 +460,11 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs and instance type that are currently running on the Dedicated
-     * Host.
+     * The IDs and instance type that are currently running on the Dedicated Host.
      * </p>
      * 
      * @param instances
-     *        The IDs and instance type that are currently running on the
-     *        Dedicated Host.
+     *        The IDs and instance type that are currently running on the Dedicated Host.
      */
 
     public void setInstances(java.util.Collection<HostInstance> instances) {
@@ -510,33 +473,27 @@ public class Host implements Serializable, Cloneable {
             return;
         }
 
-        this.instances = new com.amazonaws.internal.SdkInternalList<HostInstance>(
-                instances);
+        this.instances = new com.amazonaws.internal.SdkInternalList<HostInstance>(instances);
     }
 
     /**
      * <p>
-     * The IDs and instance type that are currently running on the Dedicated
-     * Host.
+     * The IDs and instance type that are currently running on the Dedicated Host.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstances(java.util.Collection)} or
-     * {@link #withInstances(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstances(java.util.Collection)} or {@link #withInstances(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param instances
-     *        The IDs and instance type that are currently running on the
-     *        Dedicated Host.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs and instance type that are currently running on the Dedicated Host.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Host withInstances(HostInstance... instances) {
         if (this.instances == null) {
-            setInstances(new com.amazonaws.internal.SdkInternalList<HostInstance>(
-                    instances.length));
+            setInstances(new com.amazonaws.internal.SdkInternalList<HostInstance>(instances.length));
         }
         for (HostInstance ele : instances) {
             this.instances.add(ele);
@@ -546,15 +503,12 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs and instance type that are currently running on the Dedicated
-     * Host.
+     * The IDs and instance type that are currently running on the Dedicated Host.
      * </p>
      * 
      * @param instances
-     *        The IDs and instance type that are currently running on the
-     *        Dedicated Host.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs and instance type that are currently running on the Dedicated Host.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Host withInstances(java.util.Collection<HostInstance> instances) {
@@ -568,8 +522,7 @@ public class Host implements Serializable, Cloneable {
      * </p>
      * 
      * @param availableCapacity
-     *        The number of new instances that can be launched onto the
-     *        Dedicated Host.
+     *        The number of new instances that can be launched onto the Dedicated Host.
      */
 
     public void setAvailableCapacity(AvailableCapacity availableCapacity) {
@@ -581,8 +534,7 @@ public class Host implements Serializable, Cloneable {
      * The number of new instances that can be launched onto the Dedicated Host.
      * </p>
      * 
-     * @return The number of new instances that can be launched onto the
-     *         Dedicated Host.
+     * @return The number of new instances that can be launched onto the Dedicated Host.
      */
 
     public AvailableCapacity getAvailableCapacity() {
@@ -595,10 +547,8 @@ public class Host implements Serializable, Cloneable {
      * </p>
      * 
      * @param availableCapacity
-     *        The number of new instances that can be launched onto the
-     *        Dedicated Host.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of new instances that can be launched onto the Dedicated Host.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Host withAvailableCapacity(AvailableCapacity availableCapacity) {
@@ -607,8 +557,7 @@ public class Host implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -652,55 +601,39 @@ public class Host implements Serializable, Cloneable {
         Host other = (Host) obj;
         if (other.getHostId() == null ^ this.getHostId() == null)
             return false;
-        if (other.getHostId() != null
-                && other.getHostId().equals(this.getHostId()) == false)
+        if (other.getHostId() != null && other.getHostId().equals(this.getHostId()) == false)
             return false;
         if (other.getAutoPlacement() == null ^ this.getAutoPlacement() == null)
             return false;
-        if (other.getAutoPlacement() != null
-                && other.getAutoPlacement().equals(this.getAutoPlacement()) == false)
+        if (other.getAutoPlacement() != null && other.getAutoPlacement().equals(this.getAutoPlacement()) == false)
             return false;
-        if (other.getHostReservationId() == null
-                ^ this.getHostReservationId() == null)
+        if (other.getHostReservationId() == null ^ this.getHostReservationId() == null)
             return false;
-        if (other.getHostReservationId() != null
-                && other.getHostReservationId().equals(
-                        this.getHostReservationId()) == false)
+        if (other.getHostReservationId() != null && other.getHostReservationId().equals(this.getHostReservationId()) == false)
             return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getClientToken() != null
-                && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
-        if (other.getHostProperties() == null
-                ^ this.getHostProperties() == null)
+        if (other.getHostProperties() == null ^ this.getHostProperties() == null)
             return false;
-        if (other.getHostProperties() != null
-                && other.getHostProperties().equals(this.getHostProperties()) == false)
+        if (other.getHostProperties() != null && other.getHostProperties().equals(this.getHostProperties()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
         if (other.getInstances() == null ^ this.getInstances() == null)
             return false;
-        if (other.getInstances() != null
-                && other.getInstances().equals(this.getInstances()) == false)
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
             return false;
-        if (other.getAvailableCapacity() == null
-                ^ this.getAvailableCapacity() == null)
+        if (other.getAvailableCapacity() == null ^ this.getAvailableCapacity() == null)
             return false;
-        if (other.getAvailableCapacity() != null
-                && other.getAvailableCapacity().equals(
-                        this.getAvailableCapacity()) == false)
+        if (other.getAvailableCapacity() != null && other.getAvailableCapacity().equals(this.getAvailableCapacity()) == false)
             return false;
         return true;
     }
@@ -710,35 +643,15 @@ public class Host implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getHostId() == null) ? 0 : getHostId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoPlacement() == null) ? 0 : getAutoPlacement()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHostReservationId() == null) ? 0
-                        : getHostReservationId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHostProperties() == null) ? 0 : getHostProperties()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getInstances() == null) ? 0 : getInstances().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailableCapacity() == null) ? 0
-                        : getAvailableCapacity().hashCode());
+        hashCode = prime * hashCode + ((getHostId() == null) ? 0 : getHostId().hashCode());
+        hashCode = prime * hashCode + ((getAutoPlacement() == null) ? 0 : getAutoPlacement().hashCode());
+        hashCode = prime * hashCode + ((getHostReservationId() == null) ? 0 : getHostReservationId().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getHostProperties() == null) ? 0 : getHostProperties().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
+        hashCode = prime * hashCode + ((getAvailableCapacity() == null) ? 0 : getAvailableCapacity().hashCode());
         return hashCode;
     }
 
@@ -747,9 +660,7 @@ public class Host implements Serializable, Cloneable {
         try {
             return (Host) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -74,8 +72,7 @@ public class ClusterNode implements Serializable, Cloneable {
      * 
      * @param nodeRole
      *        Whether the node is a leader node or a compute node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterNode withNodeRole(String nodeRole) {
@@ -115,8 +112,7 @@ public class ClusterNode implements Serializable, Cloneable {
      * 
      * @param privateIPAddress
      *        The private IP address of a node within a cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterNode withPrivateIPAddress(String privateIPAddress) {
@@ -156,8 +152,7 @@ public class ClusterNode implements Serializable, Cloneable {
      * 
      * @param publicIPAddress
      *        The public IP address of a node within a cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterNode withPublicIPAddress(String publicIPAddress) {
@@ -166,8 +161,7 @@ public class ClusterNode implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -199,21 +193,15 @@ public class ClusterNode implements Serializable, Cloneable {
         ClusterNode other = (ClusterNode) obj;
         if (other.getNodeRole() == null ^ this.getNodeRole() == null)
             return false;
-        if (other.getNodeRole() != null
-                && other.getNodeRole().equals(this.getNodeRole()) == false)
+        if (other.getNodeRole() != null && other.getNodeRole().equals(this.getNodeRole()) == false)
             return false;
-        if (other.getPrivateIPAddress() == null
-                ^ this.getPrivateIPAddress() == null)
+        if (other.getPrivateIPAddress() == null ^ this.getPrivateIPAddress() == null)
             return false;
-        if (other.getPrivateIPAddress() != null
-                && other.getPrivateIPAddress().equals(
-                        this.getPrivateIPAddress()) == false)
+        if (other.getPrivateIPAddress() != null && other.getPrivateIPAddress().equals(this.getPrivateIPAddress()) == false)
             return false;
-        if (other.getPublicIPAddress() == null
-                ^ this.getPublicIPAddress() == null)
+        if (other.getPublicIPAddress() == null ^ this.getPublicIPAddress() == null)
             return false;
-        if (other.getPublicIPAddress() != null
-                && other.getPublicIPAddress().equals(this.getPublicIPAddress()) == false)
+        if (other.getPublicIPAddress() != null && other.getPublicIPAddress().equals(this.getPublicIPAddress()) == false)
             return false;
         return true;
     }
@@ -223,16 +211,9 @@ public class ClusterNode implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getNodeRole() == null) ? 0 : getNodeRole().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrivateIPAddress() == null) ? 0 : getPrivateIPAddress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPublicIPAddress() == null) ? 0 : getPublicIPAddress()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getNodeRole() == null) ? 0 : getNodeRole().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIPAddress() == null) ? 0 : getPrivateIPAddress().hashCode());
+        hashCode = prime * hashCode + ((getPublicIPAddress() == null) ? 0 : getPublicIPAddress().hashCode());
         return hashCode;
     }
 
@@ -241,9 +222,7 @@ public class ClusterNode implements Serializable, Cloneable {
         try {
             return (ClusterNode) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

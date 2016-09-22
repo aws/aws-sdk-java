@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory;
 
@@ -18,9 +16,8 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AWSDirectoryService}. Convenient method
- * forms pass through to the corresponding overload that takes a request object,
- * which throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AWSDirectoryService}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
@@ -43,14 +40,12 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public AddTagsToResourceResult addTagsToResource(
-            AddTagsToResourceRequest request) {
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ConnectDirectoryResult connectDirectory(
-            ConnectDirectoryRequest request) {
+    public ConnectDirectoryResult connectDirectory(ConnectDirectoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,8 +60,7 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public CreateConditionalForwarderResult createConditionalForwarder(
-            CreateConditionalForwarderRequest request) {
+    public CreateConditionalForwarderResult createConditionalForwarder(CreateConditionalForwarderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -76,8 +70,7 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public CreateMicrosoftADResult createMicrosoftAD(
-            CreateMicrosoftADRequest request) {
+    public CreateMicrosoftADResult createMicrosoftAD(CreateMicrosoftADRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -92,8 +85,7 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public DeleteConditionalForwarderResult deleteConditionalForwarder(
-            DeleteConditionalForwarderRequest request) {
+    public DeleteConditionalForwarderResult deleteConditionalForwarder(DeleteConditionalForwarderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -113,20 +105,17 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public DeregisterEventTopicResult deregisterEventTopic(
-            DeregisterEventTopicRequest request) {
+    public DeregisterEventTopicResult deregisterEventTopic(DeregisterEventTopicRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeConditionalForwardersResult describeConditionalForwarders(
-            DescribeConditionalForwardersRequest request) {
+    public DescribeConditionalForwardersResult describeConditionalForwarders(DescribeConditionalForwardersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeDirectoriesResult describeDirectories(
-            DescribeDirectoriesRequest request) {
+    public DescribeDirectoriesResult describeDirectories(DescribeDirectoriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -136,14 +125,12 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public DescribeEventTopicsResult describeEventTopics(
-            DescribeEventTopicsRequest request) {
+    public DescribeEventTopicsResult describeEventTopics(DescribeEventTopicsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeSnapshotsResult describeSnapshots(
-            DescribeSnapshotsRequest request) {
+    public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -178,8 +165,7 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public GetDirectoryLimitsResult getDirectoryLimits(
-            GetDirectoryLimitsRequest request) {
+    public GetDirectoryLimitsResult getDirectoryLimits(GetDirectoryLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -189,8 +175,7 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public GetSnapshotLimitsResult getSnapshotLimits(
-            GetSnapshotLimitsRequest request) {
+    public GetSnapshotLimitsResult getSnapshotLimits(GetSnapshotLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -200,14 +185,12 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public ListTagsForResourceResult listTagsForResource(
-            ListTagsForResourceRequest request) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RegisterEventTopicResult registerEventTopic(
-            RegisterEventTopicRequest request) {
+    public RegisterEventTopicResult registerEventTopic(RegisterEventTopicRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -217,20 +200,17 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public RemoveTagsFromResourceResult removeTagsFromResource(
-            RemoveTagsFromResourceRequest request) {
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RestoreFromSnapshotResult restoreFromSnapshot(
-            RestoreFromSnapshotRequest request) {
+    public RestoreFromSnapshotResult restoreFromSnapshot(RestoreFromSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateConditionalForwarderResult updateConditionalForwarder(
-            UpdateConditionalForwarderRequest request) {
+    public UpdateConditionalForwarderResult updateConditionalForwarder(UpdateConditionalForwarderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -250,8 +230,7 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

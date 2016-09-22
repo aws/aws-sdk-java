@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model.transform;
 
@@ -39,72 +37,51 @@ import com.amazonaws.util.SdkHttpUtils;
  * UpdateTrafficPolicyCommentRequest Marshaller
  */
 
-public class UpdateTrafficPolicyCommentRequestMarshaller
-        implements
-        Marshaller<Request<UpdateTrafficPolicyCommentRequest>, UpdateTrafficPolicyCommentRequest> {
+public class UpdateTrafficPolicyCommentRequestMarshaller implements Marshaller<Request<UpdateTrafficPolicyCommentRequest>, UpdateTrafficPolicyCommentRequest> {
 
-    public Request<UpdateTrafficPolicyCommentRequest> marshall(
-            UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest) {
+    public Request<UpdateTrafficPolicyCommentRequest> marshall(UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest) {
 
         if (updateTrafficPolicyCommentRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateTrafficPolicyCommentRequest> request = new DefaultRequest<UpdateTrafficPolicyCommentRequest>(
-                updateTrafficPolicyCommentRequest, "AmazonRoute53");
+        Request<UpdateTrafficPolicyCommentRequest> request = new DefaultRequest<UpdateTrafficPolicyCommentRequest>(updateTrafficPolicyCommentRequest,
+                "AmazonRoute53");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/2013-04-01/trafficpolicy/{Id}/{Version}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{Id}",
-                        (updateTrafficPolicyCommentRequest.getId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(updateTrafficPolicyCommentRequest
-                                                .getId()), false)
-                                : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{Version}",
-                        (updateTrafficPolicyCommentRequest.getVersion() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromInteger(updateTrafficPolicyCommentRequest
-                                                .getVersion()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{Id}",
+                (updateTrafficPolicyCommentRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateTrafficPolicyCommentRequest.getId()),
+                        false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{Version}",
+                (updateTrafficPolicyCommentRequest.getVersion() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromInteger(updateTrafficPolicyCommentRequest.getVersion()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter,
-                    "https://route53.amazonaws.com/doc/2013-04-01/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2013-04-01/");
 
             xmlWriter.startElement("UpdateTrafficPolicyCommentRequest");
             if (updateTrafficPolicyCommentRequest != null) {
 
                 if (updateTrafficPolicyCommentRequest.getComment() != null) {
-                    xmlWriter
-                            .startElement("Comment")
-                            .value(updateTrafficPolicyCommentRequest
-                                    .getComment()).endElement();
+                    xmlWriter.startElement("Comment").value(updateTrafficPolicyCommentRequest.getComment()).endElement();
                 }
             }
             xmlWriter.endElement();
 
-            request.setContent(new StringInputStream(stringWriter.getBuffer()
-                    .toString()));
-            request.addHeader(
-                    "Content-Length",
-                    Integer.toString(stringWriter.getBuffer().toString()
-                            .getBytes(UTF8).length));
+            request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
+            request.addHeader("Content-Length", Integer.toString(stringWriter.getBuffer().toString().getBytes(UTF8).length));
             if (!request.getHeaders().containsKey("Content-Type")) {
                 request.addHeader("Content-Type", "application/xml");
             }
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to XML: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to XML: " + t.getMessage(), t);
         }
 
         return request;

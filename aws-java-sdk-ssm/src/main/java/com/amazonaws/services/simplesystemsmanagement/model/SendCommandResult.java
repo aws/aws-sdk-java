@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
@@ -19,27 +17,25 @@ import java.io.Serializable;
 /**
  * 
  */
-public class SendCommandResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class SendCommandResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The request as it was received by SSM. Also provides the command ID which
-     * can be used future references to this request.
+     * The request as it was received by SSM. Also provides the command ID which can be used future references to this
+     * request.
      * </p>
      */
     private Command command;
 
     /**
      * <p>
-     * The request as it was received by SSM. Also provides the command ID which
-     * can be used future references to this request.
+     * The request as it was received by SSM. Also provides the command ID which can be used future references to this
+     * request.
      * </p>
      * 
      * @param command
-     *        The request as it was received by SSM. Also provides the command
-     *        ID which can be used future references to this request.
+     *        The request as it was received by SSM. Also provides the command ID which can be used future references to
+     *        this request.
      */
 
     public void setCommand(Command command) {
@@ -48,12 +44,12 @@ public class SendCommandResult extends
 
     /**
      * <p>
-     * The request as it was received by SSM. Also provides the command ID which
-     * can be used future references to this request.
+     * The request as it was received by SSM. Also provides the command ID which can be used future references to this
+     * request.
      * </p>
      * 
-     * @return The request as it was received by SSM. Also provides the command
-     *         ID which can be used future references to this request.
+     * @return The request as it was received by SSM. Also provides the command ID which can be used future references
+     *         to this request.
      */
 
     public Command getCommand() {
@@ -62,15 +58,14 @@ public class SendCommandResult extends
 
     /**
      * <p>
-     * The request as it was received by SSM. Also provides the command ID which
-     * can be used future references to this request.
+     * The request as it was received by SSM. Also provides the command ID which can be used future references to this
+     * request.
      * </p>
      * 
      * @param command
-     *        The request as it was received by SSM. Also provides the command
-     *        ID which can be used future references to this request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The request as it was received by SSM. Also provides the command ID which can be used future references to
+     *        this request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SendCommandResult withCommand(Command command) {
@@ -79,8 +74,7 @@ public class SendCommandResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -108,8 +102,7 @@ public class SendCommandResult extends
         SendCommandResult other = (SendCommandResult) obj;
         if (other.getCommand() == null ^ this.getCommand() == null)
             return false;
-        if (other.getCommand() != null
-                && other.getCommand().equals(this.getCommand()) == false)
+        if (other.getCommand() != null && other.getCommand().equals(this.getCommand()) == false)
             return false;
         return true;
     }
@@ -119,8 +112,7 @@ public class SendCommandResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCommand() == null) ? 0 : getCommand().hashCode());
+        hashCode = prime * hashCode + ((getCommand() == null) ? 0 : getCommand().hashCode());
         return hashCode;
     }
 
@@ -129,9 +121,7 @@ public class SendCommandResult extends
         try {
             return (SendCommandResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

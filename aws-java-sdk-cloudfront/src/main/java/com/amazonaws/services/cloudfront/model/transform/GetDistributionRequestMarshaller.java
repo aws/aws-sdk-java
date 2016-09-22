@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model.transform;
 
@@ -39,30 +37,22 @@ import com.amazonaws.util.SdkHttpUtils;
  * GetDistributionRequest Marshaller
  */
 
-public class GetDistributionRequestMarshaller implements
-        Marshaller<Request<GetDistributionRequest>, GetDistributionRequest> {
+public class GetDistributionRequestMarshaller implements Marshaller<Request<GetDistributionRequest>, GetDistributionRequest> {
 
-    public Request<GetDistributionRequest> marshall(
-            GetDistributionRequest getDistributionRequest) {
+    public Request<GetDistributionRequest> marshall(GetDistributionRequest getDistributionRequest) {
 
         if (getDistributionRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDistributionRequest> request = new DefaultRequest<GetDistributionRequest>(
-                getDistributionRequest, "AmazonCloudFront");
+        Request<GetDistributionRequest> request = new DefaultRequest<GetDistributionRequest>(getDistributionRequest, "AmazonCloudFront");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2016-09-07/distribution/{Id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (getDistributionRequest.getId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils
-                                .fromString(getDistributionRequest.getId()),
-                                false) : "");
+        uriResourcePath = uriResourcePath.replace("{Id}",
+                (getDistributionRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getDistributionRequest.getId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

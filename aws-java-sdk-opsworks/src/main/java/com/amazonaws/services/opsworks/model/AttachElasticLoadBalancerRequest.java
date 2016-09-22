@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class AttachElasticLoadBalancerRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class AttachElasticLoadBalancerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,8 +28,7 @@ public class AttachElasticLoadBalancerRequest extends
     private String elasticLoadBalancerName;
     /**
      * <p>
-     * The ID of the layer that the Elastic Load Balancing instance is to be
-     * attached to.
+     * The ID of the layer that the Elastic Load Balancing instance is to be attached to.
      * </p>
      */
     private String layerId;
@@ -70,25 +65,21 @@ public class AttachElasticLoadBalancerRequest extends
      * 
      * @param elasticLoadBalancerName
      *        The Elastic Load Balancing instance's name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AttachElasticLoadBalancerRequest withElasticLoadBalancerName(
-            String elasticLoadBalancerName) {
+    public AttachElasticLoadBalancerRequest withElasticLoadBalancerName(String elasticLoadBalancerName) {
         setElasticLoadBalancerName(elasticLoadBalancerName);
         return this;
     }
 
     /**
      * <p>
-     * The ID of the layer that the Elastic Load Balancing instance is to be
-     * attached to.
+     * The ID of the layer that the Elastic Load Balancing instance is to be attached to.
      * </p>
      * 
      * @param layerId
-     *        The ID of the layer that the Elastic Load Balancing instance is to
-     *        be attached to.
+     *        The ID of the layer that the Elastic Load Balancing instance is to be attached to.
      */
 
     public void setLayerId(String layerId) {
@@ -97,12 +88,10 @@ public class AttachElasticLoadBalancerRequest extends
 
     /**
      * <p>
-     * The ID of the layer that the Elastic Load Balancing instance is to be
-     * attached to.
+     * The ID of the layer that the Elastic Load Balancing instance is to be attached to.
      * </p>
      * 
-     * @return The ID of the layer that the Elastic Load Balancing instance is
-     *         to be attached to.
+     * @return The ID of the layer that the Elastic Load Balancing instance is to be attached to.
      */
 
     public String getLayerId() {
@@ -111,15 +100,12 @@ public class AttachElasticLoadBalancerRequest extends
 
     /**
      * <p>
-     * The ID of the layer that the Elastic Load Balancing instance is to be
-     * attached to.
+     * The ID of the layer that the Elastic Load Balancing instance is to be attached to.
      * </p>
      * 
      * @param layerId
-     *        The ID of the layer that the Elastic Load Balancing instance is to
-     *        be attached to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttachElasticLoadBalancerRequest withLayerId(String layerId) {
@@ -128,8 +114,7 @@ public class AttachElasticLoadBalancerRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -140,8 +125,7 @@ public class AttachElasticLoadBalancerRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getElasticLoadBalancerName() != null)
-            sb.append("ElasticLoadBalancerName: "
-                    + getElasticLoadBalancerName() + ",");
+            sb.append("ElasticLoadBalancerName: " + getElasticLoadBalancerName() + ",");
         if (getLayerId() != null)
             sb.append("LayerId: " + getLayerId());
         sb.append("}");
@@ -158,17 +142,13 @@ public class AttachElasticLoadBalancerRequest extends
         if (obj instanceof AttachElasticLoadBalancerRequest == false)
             return false;
         AttachElasticLoadBalancerRequest other = (AttachElasticLoadBalancerRequest) obj;
-        if (other.getElasticLoadBalancerName() == null
-                ^ this.getElasticLoadBalancerName() == null)
+        if (other.getElasticLoadBalancerName() == null ^ this.getElasticLoadBalancerName() == null)
             return false;
-        if (other.getElasticLoadBalancerName() != null
-                && other.getElasticLoadBalancerName().equals(
-                        this.getElasticLoadBalancerName()) == false)
+        if (other.getElasticLoadBalancerName() != null && other.getElasticLoadBalancerName().equals(this.getElasticLoadBalancerName()) == false)
             return false;
         if (other.getLayerId() == null ^ this.getLayerId() == null)
             return false;
-        if (other.getLayerId() != null
-                && other.getLayerId().equals(this.getLayerId()) == false)
+        if (other.getLayerId() != null && other.getLayerId().equals(this.getLayerId()) == false)
             return false;
         return true;
     }
@@ -178,12 +158,8 @@ public class AttachElasticLoadBalancerRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getElasticLoadBalancerName() == null) ? 0
-                        : getElasticLoadBalancerName().hashCode());
-        hashCode = prime * hashCode
-                + ((getLayerId() == null) ? 0 : getLayerId().hashCode());
+        hashCode = prime * hashCode + ((getElasticLoadBalancerName() == null) ? 0 : getElasticLoadBalancerName().hashCode());
+        hashCode = prime * hashCode + ((getLayerId() == null) ? 0 : getLayerId().hashCode());
         return hashCode;
     }
 

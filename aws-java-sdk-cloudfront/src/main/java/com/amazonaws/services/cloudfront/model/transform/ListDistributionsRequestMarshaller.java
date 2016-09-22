@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model.transform;
 
@@ -39,19 +37,15 @@ import com.amazonaws.util.SdkHttpUtils;
  * ListDistributionsRequest Marshaller
  */
 
-public class ListDistributionsRequestMarshaller implements
-        Marshaller<Request<ListDistributionsRequest>, ListDistributionsRequest> {
+public class ListDistributionsRequestMarshaller implements Marshaller<Request<ListDistributionsRequest>, ListDistributionsRequest> {
 
-    public Request<ListDistributionsRequest> marshall(
-            ListDistributionsRequest listDistributionsRequest) {
+    public Request<ListDistributionsRequest> marshall(ListDistributionsRequest listDistributionsRequest) {
 
         if (listDistributionsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDistributionsRequest> request = new DefaultRequest<ListDistributionsRequest>(
-                listDistributionsRequest, "AmazonCloudFront");
+        Request<ListDistributionsRequest> request = new DefaultRequest<ListDistributionsRequest>(listDistributionsRequest, "AmazonCloudFront");
 
         request.setHttpMethod(HttpMethodName.GET);
 
@@ -60,13 +54,11 @@ public class ListDistributionsRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         if (listDistributionsRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils
-                    .fromString(listDistributionsRequest.getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(listDistributionsRequest.getMarker()));
         }
 
         if (listDistributionsRequest.getMaxItems() != null) {
-            request.addParameter("MaxItems", StringUtils
-                    .fromString(listDistributionsRequest.getMaxItems()));
+            request.addParameter("MaxItems", StringUtils.fromString(listDistributionsRequest.getMaxItems()));
         }
 
         return request;

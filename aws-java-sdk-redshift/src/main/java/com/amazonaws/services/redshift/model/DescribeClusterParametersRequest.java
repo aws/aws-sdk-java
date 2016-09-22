@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DescribeClusterParametersRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeClusterParametersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,10 +28,9 @@ public class DescribeClusterParametersRequest extends
     private String parameterGroupName;
     /**
      * <p>
-     * The parameter types to return. Specify <code>user</code> to show
-     * parameters that are different form the default. Similarly, specify
-     * <code>engine-default</code> to show parameters that are the same as the
-     * default parameter group.
+     * The parameter types to return. Specify <code>user</code> to show parameters that are different form the default.
+     * Similarly, specify <code>engine-default</code> to show parameters that are the same as the default parameter
+     * group.
      * </p>
      * <p>
      * Default: All parameter types returned.
@@ -47,11 +42,9 @@ public class DescribeClusterParametersRequest extends
     private String source;
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -63,13 +56,10 @@ public class DescribeClusterParametersRequest extends
     private Integer maxRecords;
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <a>DescribeClusterParameters</a> request exceed the value specified in
-     * <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
-     * field of the response. You can retrieve the next set of response records
-     * by providing the returned marker value in the <code>Marker</code>
-     * parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <a>DescribeClusterParameters</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
+     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      */
     private String marker;
@@ -92,8 +82,7 @@ public class DescribeClusterParametersRequest extends
      * The name of a cluster parameter group for which to return details.
      * </p>
      * 
-     * @return The name of a cluster parameter group for which to return
-     *         details.
+     * @return The name of a cluster parameter group for which to return details.
      */
 
     public String getParameterGroupName() {
@@ -107,22 +96,19 @@ public class DescribeClusterParametersRequest extends
      * 
      * @param parameterGroupName
      *        The name of a cluster parameter group for which to return details.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeClusterParametersRequest withParameterGroupName(
-            String parameterGroupName) {
+    public DescribeClusterParametersRequest withParameterGroupName(String parameterGroupName) {
         setParameterGroupName(parameterGroupName);
         return this;
     }
 
     /**
      * <p>
-     * The parameter types to return. Specify <code>user</code> to show
-     * parameters that are different form the default. Similarly, specify
-     * <code>engine-default</code> to show parameters that are the same as the
-     * default parameter group.
+     * The parameter types to return. Specify <code>user</code> to show parameters that are different form the default.
+     * Similarly, specify <code>engine-default</code> to show parameters that are the same as the default parameter
+     * group.
      * </p>
      * <p>
      * Default: All parameter types returned.
@@ -132,10 +118,9 @@ public class DescribeClusterParametersRequest extends
      * </p>
      * 
      * @param source
-     *        The parameter types to return. Specify <code>user</code> to show
-     *        parameters that are different form the default. Similarly, specify
-     *        <code>engine-default</code> to show parameters that are the same
-     *        as the default parameter group. </p>
+     *        The parameter types to return. Specify <code>user</code> to show parameters that are different form the
+     *        default. Similarly, specify <code>engine-default</code> to show parameters that are the same as the
+     *        default parameter group. </p>
      *        <p>
      *        Default: All parameter types returned.
      *        </p>
@@ -149,10 +134,9 @@ public class DescribeClusterParametersRequest extends
 
     /**
      * <p>
-     * The parameter types to return. Specify <code>user</code> to show
-     * parameters that are different form the default. Similarly, specify
-     * <code>engine-default</code> to show parameters that are the same as the
-     * default parameter group.
+     * The parameter types to return. Specify <code>user</code> to show parameters that are different form the default.
+     * Similarly, specify <code>engine-default</code> to show parameters that are the same as the default parameter
+     * group.
      * </p>
      * <p>
      * Default: All parameter types returned.
@@ -161,10 +145,9 @@ public class DescribeClusterParametersRequest extends
      * Valid Values: <code>user</code> | <code>engine-default</code>
      * </p>
      * 
-     * @return The parameter types to return. Specify <code>user</code> to show
-     *         parameters that are different form the default. Similarly,
-     *         specify <code>engine-default</code> to show parameters that are
-     *         the same as the default parameter group. </p>
+     * @return The parameter types to return. Specify <code>user</code> to show parameters that are different form the
+     *         default. Similarly, specify <code>engine-default</code> to show parameters that are the same as the
+     *         default parameter group. </p>
      *         <p>
      *         Default: All parameter types returned.
      *         </p>
@@ -178,10 +161,9 @@ public class DescribeClusterParametersRequest extends
 
     /**
      * <p>
-     * The parameter types to return. Specify <code>user</code> to show
-     * parameters that are different form the default. Similarly, specify
-     * <code>engine-default</code> to show parameters that are the same as the
-     * default parameter group.
+     * The parameter types to return. Specify <code>user</code> to show parameters that are different form the default.
+     * Similarly, specify <code>engine-default</code> to show parameters that are the same as the default parameter
+     * group.
      * </p>
      * <p>
      * Default: All parameter types returned.
@@ -191,17 +173,15 @@ public class DescribeClusterParametersRequest extends
      * </p>
      * 
      * @param source
-     *        The parameter types to return. Specify <code>user</code> to show
-     *        parameters that are different form the default. Similarly, specify
-     *        <code>engine-default</code> to show parameters that are the same
-     *        as the default parameter group. </p>
+     *        The parameter types to return. Specify <code>user</code> to show parameters that are different form the
+     *        default. Similarly, specify <code>engine-default</code> to show parameters that are the same as the
+     *        default parameter group. </p>
      *        <p>
      *        Default: All parameter types returned.
      *        </p>
      *        <p>
      *        Valid Values: <code>user</code> | <code>engine-default</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeClusterParametersRequest withSource(String source) {
@@ -211,11 +191,9 @@ public class DescribeClusterParametersRequest extends
 
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -225,12 +203,10 @@ public class DescribeClusterParametersRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of response records to return in each call. If
-     *        the number of remaining response records exceeds the specified
-     *        <code>MaxRecords</code> value, a value is returned in a
-     *        <code>marker</code> field of the response. You can retrieve the
-     *        next set of records by retrying the command with the returned
-     *        marker value. </p>
+     *        The maximum number of response records to return in each call. If the number of remaining response records
+     *        exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of
+     *        the response. You can retrieve the next set of records by retrying the command with the returned marker
+     *        value. </p>
      *        <p>
      *        Default: <code>100</code>
      *        </p>
@@ -244,11 +220,9 @@ public class DescribeClusterParametersRequest extends
 
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -257,11 +231,9 @@ public class DescribeClusterParametersRequest extends
      * Constraints: minimum 20, maximum 100.
      * </p>
      * 
-     * @return The maximum number of response records to return in each call. If
-     *         the number of remaining response records exceeds the specified
-     *         <code>MaxRecords</code> value, a value is returned in a
-     *         <code>marker</code> field of the response. You can retrieve the
-     *         next set of records by retrying the command with the returned
+     * @return The maximum number of response records to return in each call. If the number of remaining response
+     *         records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code>
+     *         field of the response. You can retrieve the next set of records by retrying the command with the returned
      *         marker value. </p>
      *         <p>
      *         Default: <code>100</code>
@@ -276,11 +248,9 @@ public class DescribeClusterParametersRequest extends
 
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -290,19 +260,16 @@ public class DescribeClusterParametersRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of response records to return in each call. If
-     *        the number of remaining response records exceeds the specified
-     *        <code>MaxRecords</code> value, a value is returned in a
-     *        <code>marker</code> field of the response. You can retrieve the
-     *        next set of records by retrying the command with the returned
-     *        marker value. </p>
+     *        The maximum number of response records to return in each call. If the number of remaining response records
+     *        exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of
+     *        the response. You can retrieve the next set of records by retrying the command with the returned marker
+     *        value. </p>
      *        <p>
      *        Default: <code>100</code>
      *        </p>
      *        <p>
      *        Constraints: minimum 20, maximum 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeClusterParametersRequest withMaxRecords(Integer maxRecords) {
@@ -312,24 +279,18 @@ public class DescribeClusterParametersRequest extends
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <a>DescribeClusterParameters</a> request exceed the value specified in
-     * <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
-     * field of the response. You can retrieve the next set of response records
-     * by providing the returned marker value in the <code>Marker</code>
-     * parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <a>DescribeClusterParameters</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
+     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * 
      * @param marker
-     *        An optional parameter that specifies the starting point to return
-     *        a set of response records. When the results of a
-     *        <a>DescribeClusterParameters</a> request exceed the value
-     *        specified in <code>MaxRecords</code>, AWS returns a value in the
-     *        <code>Marker</code> field of the response. You can retrieve the
-     *        next set of response records by providing the returned marker
-     *        value in the <code>Marker</code> parameter and retrying the
-     *        request.
+     *        An optional parameter that specifies the starting point to return a set of response records. When the
+     *        results of a <a>DescribeClusterParameters</a> request exceed the value specified in
+     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
+     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>Marker</code> parameter and retrying the request.
      */
 
     public void setMarker(String marker) {
@@ -338,23 +299,17 @@ public class DescribeClusterParametersRequest extends
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <a>DescribeClusterParameters</a> request exceed the value specified in
-     * <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
-     * field of the response. You can retrieve the next set of response records
-     * by providing the returned marker value in the <code>Marker</code>
-     * parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <a>DescribeClusterParameters</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
+     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * 
-     * @return An optional parameter that specifies the starting point to return
-     *         a set of response records. When the results of a
-     *         <a>DescribeClusterParameters</a> request exceed the value
-     *         specified in <code>MaxRecords</code>, AWS returns a value in the
-     *         <code>Marker</code> field of the response. You can retrieve the
-     *         next set of response records by providing the returned marker
-     *         value in the <code>Marker</code> parameter and retrying the
-     *         request.
+     * @return An optional parameter that specifies the starting point to return a set of response records. When the
+     *         results of a <a>DescribeClusterParameters</a> request exceed the value specified in
+     *         <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
+     *         retrieve the next set of response records by providing the returned marker value in the
+     *         <code>Marker</code> parameter and retrying the request.
      */
 
     public String getMarker() {
@@ -363,26 +318,19 @@ public class DescribeClusterParametersRequest extends
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <a>DescribeClusterParameters</a> request exceed the value specified in
-     * <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
-     * field of the response. You can retrieve the next set of response records
-     * by providing the returned marker value in the <code>Marker</code>
-     * parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <a>DescribeClusterParameters</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
+     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * 
      * @param marker
-     *        An optional parameter that specifies the starting point to return
-     *        a set of response records. When the results of a
-     *        <a>DescribeClusterParameters</a> request exceed the value
-     *        specified in <code>MaxRecords</code>, AWS returns a value in the
-     *        <code>Marker</code> field of the response. You can retrieve the
-     *        next set of response records by providing the returned marker
-     *        value in the <code>Marker</code> parameter and retrying the
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional parameter that specifies the starting point to return a set of response records. When the
+     *        results of a <a>DescribeClusterParameters</a> request exceed the value specified in
+     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
+     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>Marker</code> parameter and retrying the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeClusterParametersRequest withMarker(String marker) {
@@ -391,8 +339,7 @@ public class DescribeClusterParametersRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -424,27 +371,21 @@ public class DescribeClusterParametersRequest extends
         if (obj instanceof DescribeClusterParametersRequest == false)
             return false;
         DescribeClusterParametersRequest other = (DescribeClusterParametersRequest) obj;
-        if (other.getParameterGroupName() == null
-                ^ this.getParameterGroupName() == null)
+        if (other.getParameterGroupName() == null ^ this.getParameterGroupName() == null)
             return false;
-        if (other.getParameterGroupName() != null
-                && other.getParameterGroupName().equals(
-                        this.getParameterGroupName()) == false)
+        if (other.getParameterGroupName() != null && other.getParameterGroupName().equals(this.getParameterGroupName()) == false)
             return false;
         if (other.getSource() == null ^ this.getSource() == null)
             return false;
-        if (other.getSource() != null
-                && other.getSource().equals(this.getSource()) == false)
+        if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -454,16 +395,10 @@ public class DescribeClusterParametersRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getParameterGroupName() == null) ? 0
-                        : getParameterGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getSource() == null) ? 0 : getSource().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getParameterGroupName() == null) ? 0 : getParameterGroupName().hashCode());
+        hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 

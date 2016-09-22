@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.applicationautoscaling.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeScalableTargetsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeScalableTargetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -31,12 +27,9 @@ public class DescribeScalableTargetsResult extends
     private java.util.List<ScalableTarget> scalableTargets;
     /**
      * <p>
-     * The <code>NextToken</code> value to include in a future
-     * <code>DescribeScalableTargets</code> request. When the results of a
-     * <code>DescribeScalableTargets</code> request exceed
-     * <code>MaxResults</code>, this value can be used to retrieve the next page
-     * of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The <code>NextToken</code> value to include in a future <code>DescribeScalableTargets</code> request. When the
+     * results of a <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>, this value can be used
+     * to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      */
     private String nextToken;
@@ -62,15 +55,13 @@ public class DescribeScalableTargetsResult extends
      *        The list of scalable targets that matches the request parameters.
      */
 
-    public void setScalableTargets(
-            java.util.Collection<ScalableTarget> scalableTargets) {
+    public void setScalableTargets(java.util.Collection<ScalableTarget> scalableTargets) {
         if (scalableTargets == null) {
             this.scalableTargets = null;
             return;
         }
 
-        this.scalableTargets = new java.util.ArrayList<ScalableTarget>(
-                scalableTargets);
+        this.scalableTargets = new java.util.ArrayList<ScalableTarget>(scalableTargets);
     }
 
     /**
@@ -78,23 +69,19 @@ public class DescribeScalableTargetsResult extends
      * The list of scalable targets that matches the request parameters.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setScalableTargets(java.util.Collection)} or
-     * {@link #withScalableTargets(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setScalableTargets(java.util.Collection)} or {@link #withScalableTargets(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param scalableTargets
      *        The list of scalable targets that matches the request parameters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScalableTargetsResult withScalableTargets(
-            ScalableTarget... scalableTargets) {
+    public DescribeScalableTargetsResult withScalableTargets(ScalableTarget... scalableTargets) {
         if (this.scalableTargets == null) {
-            setScalableTargets(new java.util.ArrayList<ScalableTarget>(
-                    scalableTargets.length));
+            setScalableTargets(new java.util.ArrayList<ScalableTarget>(scalableTargets.length));
         }
         for (ScalableTarget ele : scalableTargets) {
             this.scalableTargets.add(ele);
@@ -109,33 +96,26 @@ public class DescribeScalableTargetsResult extends
      * 
      * @param scalableTargets
      *        The list of scalable targets that matches the request parameters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScalableTargetsResult withScalableTargets(
-            java.util.Collection<ScalableTarget> scalableTargets) {
+    public DescribeScalableTargetsResult withScalableTargets(java.util.Collection<ScalableTarget> scalableTargets) {
         setScalableTargets(scalableTargets);
         return this;
     }
 
     /**
      * <p>
-     * The <code>NextToken</code> value to include in a future
-     * <code>DescribeScalableTargets</code> request. When the results of a
-     * <code>DescribeScalableTargets</code> request exceed
-     * <code>MaxResults</code>, this value can be used to retrieve the next page
-     * of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The <code>NextToken</code> value to include in a future <code>DescribeScalableTargets</code> request. When the
+     * results of a <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>, this value can be used
+     * to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> value to include in a future
-     *        <code>DescribeScalableTargets</code> request. When the results of
-     *        a <code>DescribeScalableTargets</code> request exceed
-     *        <code>MaxResults</code>, this value can be used to retrieve the
-     *        next page of results. This value is <code>null</code> when there
-     *        are no more results to return.
+     *        The <code>NextToken</code> value to include in a future <code>DescribeScalableTargets</code> request. When
+     *        the results of a <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>, this value
+     *        can be used to retrieve the next page of results. This value is <code>null</code> when there are no more
+     *        results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -144,20 +124,15 @@ public class DescribeScalableTargetsResult extends
 
     /**
      * <p>
-     * The <code>NextToken</code> value to include in a future
-     * <code>DescribeScalableTargets</code> request. When the results of a
-     * <code>DescribeScalableTargets</code> request exceed
-     * <code>MaxResults</code>, this value can be used to retrieve the next page
-     * of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The <code>NextToken</code> value to include in a future <code>DescribeScalableTargets</code> request. When the
+     * results of a <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>, this value can be used
+     * to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
-     * @return The <code>NextToken</code> value to include in a future
-     *         <code>DescribeScalableTargets</code> request. When the results of
-     *         a <code>DescribeScalableTargets</code> request exceed
-     *         <code>MaxResults</code>, this value can be used to retrieve the
-     *         next page of results. This value is <code>null</code> when there
-     *         are no more results to return.
+     * @return The <code>NextToken</code> value to include in a future <code>DescribeScalableTargets</code> request.
+     *         When the results of a <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>, this
+     *         value can be used to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
      */
 
     public String getNextToken() {
@@ -166,23 +141,17 @@ public class DescribeScalableTargetsResult extends
 
     /**
      * <p>
-     * The <code>NextToken</code> value to include in a future
-     * <code>DescribeScalableTargets</code> request. When the results of a
-     * <code>DescribeScalableTargets</code> request exceed
-     * <code>MaxResults</code>, this value can be used to retrieve the next page
-     * of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The <code>NextToken</code> value to include in a future <code>DescribeScalableTargets</code> request. When the
+     * results of a <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>, this value can be used
+     * to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> value to include in a future
-     *        <code>DescribeScalableTargets</code> request. When the results of
-     *        a <code>DescribeScalableTargets</code> request exceed
-     *        <code>MaxResults</code>, this value can be used to retrieve the
-     *        next page of results. This value is <code>null</code> when there
-     *        are no more results to return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>NextToken</code> value to include in a future <code>DescribeScalableTargets</code> request. When
+     *        the results of a <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>, this value
+     *        can be used to retrieve the next page of results. This value is <code>null</code> when there are no more
+     *        results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeScalableTargetsResult withNextToken(String nextToken) {
@@ -191,8 +160,7 @@ public class DescribeScalableTargetsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -220,16 +188,13 @@ public class DescribeScalableTargetsResult extends
         if (obj instanceof DescribeScalableTargetsResult == false)
             return false;
         DescribeScalableTargetsResult other = (DescribeScalableTargetsResult) obj;
-        if (other.getScalableTargets() == null
-                ^ this.getScalableTargets() == null)
+        if (other.getScalableTargets() == null ^ this.getScalableTargets() == null)
             return false;
-        if (other.getScalableTargets() != null
-                && other.getScalableTargets().equals(this.getScalableTargets()) == false)
+        if (other.getScalableTargets() != null && other.getScalableTargets().equals(this.getScalableTargets()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -239,12 +204,8 @@ public class DescribeScalableTargetsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getScalableTargets() == null) ? 0 : getScalableTargets()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getScalableTargets() == null) ? 0 : getScalableTargets().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -253,9 +214,7 @@ public class DescribeScalableTargetsResult extends
         try {
             return (DescribeScalableTargetsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

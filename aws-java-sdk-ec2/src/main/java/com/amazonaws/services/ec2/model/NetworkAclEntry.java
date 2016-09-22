@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -25,8 +23,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule number for the entry. ACL entries are processed in ascending
-     * order by rule number.
+     * The rule number for the entry. ACL entries are processed in ascending order by rule number.
      * </p>
      */
     private Integer ruleNumber;
@@ -44,8 +41,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
     private String ruleAction;
     /**
      * <p>
-     * Indicates whether the rule is an egress rule (applied to traffic leaving
-     * the subnet).
+     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
      * </p>
      */
     private Boolean egress;
@@ -70,13 +66,11 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule number for the entry. ACL entries are processed in ascending
-     * order by rule number.
+     * The rule number for the entry. ACL entries are processed in ascending order by rule number.
      * </p>
      * 
      * @param ruleNumber
-     *        The rule number for the entry. ACL entries are processed in
-     *        ascending order by rule number.
+     *        The rule number for the entry. ACL entries are processed in ascending order by rule number.
      */
 
     public void setRuleNumber(Integer ruleNumber) {
@@ -85,12 +79,10 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule number for the entry. ACL entries are processed in ascending
-     * order by rule number.
+     * The rule number for the entry. ACL entries are processed in ascending order by rule number.
      * </p>
      * 
-     * @return The rule number for the entry. ACL entries are processed in
-     *         ascending order by rule number.
+     * @return The rule number for the entry. ACL entries are processed in ascending order by rule number.
      */
 
     public Integer getRuleNumber() {
@@ -99,15 +91,12 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule number for the entry. ACL entries are processed in ascending
-     * order by rule number.
+     * The rule number for the entry. ACL entries are processed in ascending order by rule number.
      * </p>
      * 
      * @param ruleNumber
-     *        The rule number for the entry. ACL entries are processed in
-     *        ascending order by rule number.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The rule number for the entry. ACL entries are processed in ascending order by rule number.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAclEntry withRuleNumber(Integer ruleNumber) {
@@ -147,8 +136,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * 
      * @param protocol
      *        The protocol. A value of <code>-1</code> means all protocols.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAclEntry withProtocol(String protocol) {
@@ -162,8 +150,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * </p>
      * 
      * @param ruleAction
-     *        Indicates whether to allow or deny the traffic that matches the
-     *        rule.
+     *        Indicates whether to allow or deny the traffic that matches the rule.
      * @see RuleAction
      */
 
@@ -176,8 +163,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * Indicates whether to allow or deny the traffic that matches the rule.
      * </p>
      * 
-     * @return Indicates whether to allow or deny the traffic that matches the
-     *         rule.
+     * @return Indicates whether to allow or deny the traffic that matches the rule.
      * @see RuleAction
      */
 
@@ -191,10 +177,8 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * </p>
      * 
      * @param ruleAction
-     *        Indicates whether to allow or deny the traffic that matches the
-     *        rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether to allow or deny the traffic that matches the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleAction
      */
 
@@ -209,8 +193,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * </p>
      * 
      * @param ruleAction
-     *        Indicates whether to allow or deny the traffic that matches the
-     *        rule.
+     *        Indicates whether to allow or deny the traffic that matches the rule.
      * @see RuleAction
      */
 
@@ -224,10 +207,8 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * </p>
      * 
      * @param ruleAction
-     *        Indicates whether to allow or deny the traffic that matches the
-     *        rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether to allow or deny the traffic that matches the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleAction
      */
 
@@ -238,13 +219,11 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the rule is an egress rule (applied to traffic leaving
-     * the subnet).
+     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
      * </p>
      * 
      * @param egress
-     *        Indicates whether the rule is an egress rule (applied to traffic
-     *        leaving the subnet).
+     *        Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
      */
 
     public void setEgress(Boolean egress) {
@@ -253,12 +232,10 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the rule is an egress rule (applied to traffic leaving
-     * the subnet).
+     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
      * </p>
      * 
-     * @return Indicates whether the rule is an egress rule (applied to traffic
-     *         leaving the subnet).
+     * @return Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
      */
 
     public Boolean getEgress() {
@@ -267,15 +244,12 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the rule is an egress rule (applied to traffic leaving
-     * the subnet).
+     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
      * </p>
      * 
      * @param egress
-     *        Indicates whether the rule is an egress rule (applied to traffic
-     *        leaving the subnet).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAclEntry withEgress(Boolean egress) {
@@ -285,12 +259,10 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the rule is an egress rule (applied to traffic leaving
-     * the subnet).
+     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
      * </p>
      * 
-     * @return Indicates whether the rule is an egress rule (applied to traffic
-     *         leaving the subnet).
+     * @return Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
      */
 
     public Boolean isEgress() {
@@ -329,8 +301,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * 
      * @param cidrBlock
      *        The network range to allow or deny, in CIDR notation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAclEntry withCidrBlock(String cidrBlock) {
@@ -370,8 +341,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * 
      * @param icmpTypeCode
      *        ICMP protocol: The ICMP type and code.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAclEntry withIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
@@ -411,8 +381,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * 
      * @param portRange
      *        TCP or UDP protocols: The range of ports the rule applies to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkAclEntry withPortRange(PortRange portRange) {
@@ -421,8 +390,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -462,38 +430,31 @@ public class NetworkAclEntry implements Serializable, Cloneable {
         NetworkAclEntry other = (NetworkAclEntry) obj;
         if (other.getRuleNumber() == null ^ this.getRuleNumber() == null)
             return false;
-        if (other.getRuleNumber() != null
-                && other.getRuleNumber().equals(this.getRuleNumber()) == false)
+        if (other.getRuleNumber() != null && other.getRuleNumber().equals(this.getRuleNumber()) == false)
             return false;
         if (other.getProtocol() == null ^ this.getProtocol() == null)
             return false;
-        if (other.getProtocol() != null
-                && other.getProtocol().equals(this.getProtocol()) == false)
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
             return false;
         if (other.getRuleAction() == null ^ this.getRuleAction() == null)
             return false;
-        if (other.getRuleAction() != null
-                && other.getRuleAction().equals(this.getRuleAction()) == false)
+        if (other.getRuleAction() != null && other.getRuleAction().equals(this.getRuleAction()) == false)
             return false;
         if (other.getEgress() == null ^ this.getEgress() == null)
             return false;
-        if (other.getEgress() != null
-                && other.getEgress().equals(this.getEgress()) == false)
+        if (other.getEgress() != null && other.getEgress().equals(this.getEgress()) == false)
             return false;
         if (other.getCidrBlock() == null ^ this.getCidrBlock() == null)
             return false;
-        if (other.getCidrBlock() != null
-                && other.getCidrBlock().equals(this.getCidrBlock()) == false)
+        if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false)
             return false;
         if (other.getIcmpTypeCode() == null ^ this.getIcmpTypeCode() == null)
             return false;
-        if (other.getIcmpTypeCode() != null
-                && other.getIcmpTypeCode().equals(this.getIcmpTypeCode()) == false)
+        if (other.getIcmpTypeCode() != null && other.getIcmpTypeCode().equals(this.getIcmpTypeCode()) == false)
             return false;
         if (other.getPortRange() == null ^ this.getPortRange() == null)
             return false;
-        if (other.getPortRange() != null
-                && other.getPortRange().equals(this.getPortRange()) == false)
+        if (other.getPortRange() != null && other.getPortRange().equals(this.getPortRange()) == false)
             return false;
         return true;
     }
@@ -503,22 +464,13 @@ public class NetworkAclEntry implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRuleNumber() == null) ? 0 : getRuleNumber().hashCode());
-        hashCode = prime * hashCode
-                + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
-        hashCode = prime * hashCode
-                + ((getRuleAction() == null) ? 0 : getRuleAction().hashCode());
-        hashCode = prime * hashCode
-                + ((getEgress() == null) ? 0 : getEgress().hashCode());
-        hashCode = prime * hashCode
-                + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIcmpTypeCode() == null) ? 0 : getIcmpTypeCode()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPortRange() == null) ? 0 : getPortRange().hashCode());
+        hashCode = prime * hashCode + ((getRuleNumber() == null) ? 0 : getRuleNumber().hashCode());
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
+        hashCode = prime * hashCode + ((getRuleAction() == null) ? 0 : getRuleAction().hashCode());
+        hashCode = prime * hashCode + ((getEgress() == null) ? 0 : getEgress().hashCode());
+        hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getIcmpTypeCode() == null) ? 0 : getIcmpTypeCode().hashCode());
+        hashCode = prime * hashCode + ((getPortRange() == null) ? 0 : getPortRange().hashCode());
         return hashCode;
     }
 
@@ -527,9 +479,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
         try {
             return (NetworkAclEntry) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

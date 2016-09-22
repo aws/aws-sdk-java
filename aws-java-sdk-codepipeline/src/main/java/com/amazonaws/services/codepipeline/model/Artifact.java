@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents information about an artifact that will be worked upon by actions
- * in the pipeline.
+ * Represents information about an artifact that will be worked upon by actions in the pipeline.
  * </p>
  */
 public class Artifact implements Serializable, Cloneable {
@@ -32,8 +29,8 @@ public class Artifact implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The artifact's revision ID. Depending on the type of object, this could
-     * be a commit ID (GitHub) or a revision ID (Amazon S3).
+     * The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID
+     * (Amazon S3).
      * </p>
      */
     private String revision;
@@ -76,8 +73,7 @@ public class Artifact implements Serializable, Cloneable {
      * 
      * @param name
      *        The artifact's name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Artifact withName(String name) {
@@ -87,13 +83,13 @@ public class Artifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The artifact's revision ID. Depending on the type of object, this could
-     * be a commit ID (GitHub) or a revision ID (Amazon S3).
+     * The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID
+     * (Amazon S3).
      * </p>
      * 
      * @param revision
-     *        The artifact's revision ID. Depending on the type of object, this
-     *        could be a commit ID (GitHub) or a revision ID (Amazon S3).
+     *        The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a
+     *        revision ID (Amazon S3).
      */
 
     public void setRevision(String revision) {
@@ -102,12 +98,12 @@ public class Artifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The artifact's revision ID. Depending on the type of object, this could
-     * be a commit ID (GitHub) or a revision ID (Amazon S3).
+     * The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID
+     * (Amazon S3).
      * </p>
      * 
-     * @return The artifact's revision ID. Depending on the type of object, this
-     *         could be a commit ID (GitHub) or a revision ID (Amazon S3).
+     * @return The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a
+     *         revision ID (Amazon S3).
      */
 
     public String getRevision() {
@@ -116,15 +112,14 @@ public class Artifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The artifact's revision ID. Depending on the type of object, this could
-     * be a commit ID (GitHub) or a revision ID (Amazon S3).
+     * The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID
+     * (Amazon S3).
      * </p>
      * 
      * @param revision
-     *        The artifact's revision ID. Depending on the type of object, this
-     *        could be a commit ID (GitHub) or a revision ID (Amazon S3).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a
+     *        revision ID (Amazon S3).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Artifact withRevision(String revision) {
@@ -164,8 +159,7 @@ public class Artifact implements Serializable, Cloneable {
      * 
      * @param location
      *        The location of an artifact.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Artifact withLocation(ArtifactLocation location) {
@@ -174,8 +168,7 @@ public class Artifact implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -207,18 +200,15 @@ public class Artifact implements Serializable, Cloneable {
         Artifact other = (Artifact) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getRevision() == null ^ this.getRevision() == null)
             return false;
-        if (other.getRevision() != null
-                && other.getRevision().equals(this.getRevision()) == false)
+        if (other.getRevision() != null && other.getRevision().equals(this.getRevision()) == false)
             return false;
         if (other.getLocation() == null ^ this.getLocation() == null)
             return false;
-        if (other.getLocation() != null
-                && other.getLocation().equals(this.getLocation()) == false)
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
         return true;
     }
@@ -228,12 +218,9 @@ public class Artifact implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getRevision() == null) ? 0 : getRevision().hashCode());
-        hashCode = prime * hashCode
-                + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRevision() == null) ? 0 : getRevision().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 
@@ -242,9 +229,7 @@ public class Artifact implements Serializable, Cloneable {
         try {
             return (Artifact) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

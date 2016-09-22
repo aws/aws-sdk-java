@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -22,41 +20,34 @@ import com.amazonaws.AmazonWebServiceRequest;
  * ListTagsForResourceInput
  * </p>
  */
-public class ListTagsForResourceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.
+     * The Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning
-     * the list of tags.
+     * An opaque string that indicates the position at which to begin returning the list of tags.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Specifies that the list of tags returned be limited to the specified
-     * number of items.
+     * Specifies that the list of tags returned be limited to the specified number of items.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.
+     * The Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the resource for which you want
-     *        to list tags.
+     *        The Amazon Resource Name (ARN) of the resource for which you want to list tags.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -65,12 +56,10 @@ public class ListTagsForResourceRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.
+     * The Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource for which you want
-     *         to list tags.
+     * @return The Amazon Resource Name (ARN) of the resource for which you want to list tags.
      */
 
     public String getResourceARN() {
@@ -79,15 +68,12 @@ public class ListTagsForResourceRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.
+     * The Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the resource for which you want
-     *        to list tags.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the resource for which you want to list tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsForResourceRequest withResourceARN(String resourceARN) {
@@ -97,13 +83,11 @@ public class ListTagsForResourceRequest extends
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning
-     * the list of tags.
+     * An opaque string that indicates the position at which to begin returning the list of tags.
      * </p>
      * 
      * @param marker
-     *        An opaque string that indicates the position at which to begin
-     *        returning the list of tags.
+     *        An opaque string that indicates the position at which to begin returning the list of tags.
      */
 
     public void setMarker(String marker) {
@@ -112,12 +96,10 @@ public class ListTagsForResourceRequest extends
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning
-     * the list of tags.
+     * An opaque string that indicates the position at which to begin returning the list of tags.
      * </p>
      * 
-     * @return An opaque string that indicates the position at which to begin
-     *         returning the list of tags.
+     * @return An opaque string that indicates the position at which to begin returning the list of tags.
      */
 
     public String getMarker() {
@@ -126,15 +108,12 @@ public class ListTagsForResourceRequest extends
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning
-     * the list of tags.
+     * An opaque string that indicates the position at which to begin returning the list of tags.
      * </p>
      * 
      * @param marker
-     *        An opaque string that indicates the position at which to begin
-     *        returning the list of tags.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An opaque string that indicates the position at which to begin returning the list of tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsForResourceRequest withMarker(String marker) {
@@ -144,13 +123,11 @@ public class ListTagsForResourceRequest extends
 
     /**
      * <p>
-     * Specifies that the list of tags returned be limited to the specified
-     * number of items.
+     * Specifies that the list of tags returned be limited to the specified number of items.
      * </p>
      * 
      * @param limit
-     *        Specifies that the list of tags returned be limited to the
-     *        specified number of items.
+     *        Specifies that the list of tags returned be limited to the specified number of items.
      */
 
     public void setLimit(Integer limit) {
@@ -159,12 +136,10 @@ public class ListTagsForResourceRequest extends
 
     /**
      * <p>
-     * Specifies that the list of tags returned be limited to the specified
-     * number of items.
+     * Specifies that the list of tags returned be limited to the specified number of items.
      * </p>
      * 
-     * @return Specifies that the list of tags returned be limited to the
-     *         specified number of items.
+     * @return Specifies that the list of tags returned be limited to the specified number of items.
      */
 
     public Integer getLimit() {
@@ -173,15 +148,12 @@ public class ListTagsForResourceRequest extends
 
     /**
      * <p>
-     * Specifies that the list of tags returned be limited to the specified
-     * number of items.
+     * Specifies that the list of tags returned be limited to the specified number of items.
      * </p>
      * 
      * @param limit
-     *        Specifies that the list of tags returned be limited to the
-     *        specified number of items.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies that the list of tags returned be limited to the specified number of items.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsForResourceRequest withLimit(Integer limit) {
@@ -190,8 +162,7 @@ public class ListTagsForResourceRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -223,18 +194,15 @@ public class ListTagsForResourceRequest extends
         ListTagsForResourceRequest other = (ListTagsForResourceRequest) obj;
         if (other.getResourceARN() == null ^ this.getResourceARN() == null)
             return false;
-        if (other.getResourceARN() != null
-                && other.getResourceARN().equals(this.getResourceARN()) == false)
+        if (other.getResourceARN() != null && other.getResourceARN().equals(this.getResourceARN()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -244,13 +212,9 @@ public class ListTagsForResourceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 

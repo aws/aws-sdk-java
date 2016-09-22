@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * StaleIpPermission StAX Unmarshaller
  */
-public class StaleIpPermissionStaxUnmarshaller implements
-        Unmarshaller<StaleIpPermission, StaxUnmarshallerContext> {
+public class StaleIpPermissionStaxUnmarshaller implements Unmarshaller<StaleIpPermission, StaxUnmarshallerContext> {
 
-    public StaleIpPermission unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public StaleIpPermission unmarshall(StaxUnmarshallerContext context) throws Exception {
         StaleIpPermission staleIpPermission = new StaleIpPermission();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,39 +46,32 @@ public class StaleIpPermissionStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("fromPort", targetDepth)) {
-                    staleIpPermission.setFromPort(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    staleIpPermission.setFromPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ipProtocol", targetDepth)) {
-                    staleIpPermission.setIpProtocol(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    staleIpPermission.setIpProtocol(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ipRanges/item", targetDepth)) {
-                    staleIpPermission.withIpRanges(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    staleIpPermission.withIpRanges(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("prefixListIds/item", targetDepth)) {
-                    staleIpPermission.withPrefixListIds(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    staleIpPermission.withPrefixListIds(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("toPort", targetDepth)) {
-                    staleIpPermission.setToPort(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    staleIpPermission.setToPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("groups/item", targetDepth)) {
-                    staleIpPermission
-                            .withUserIdGroupPairs(UserIdGroupPairStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    staleIpPermission.withUserIdGroupPairs(UserIdGroupPairStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

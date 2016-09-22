@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model.transform;
 
@@ -30,12 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * GetHealthCheckLastFailureReasonResult StAX Unmarshaller
  */
-public class GetHealthCheckLastFailureReasonResultStaxUnmarshaller
-        implements
-        Unmarshaller<GetHealthCheckLastFailureReasonResult, StaxUnmarshallerContext> {
+public class GetHealthCheckLastFailureReasonResultStaxUnmarshaller implements Unmarshaller<GetHealthCheckLastFailureReasonResult, StaxUnmarshallerContext> {
 
-    public GetHealthCheckLastFailureReasonResult unmarshall(
-            StaxUnmarshallerContext context) throws Exception {
+    public GetHealthCheckLastFailureReasonResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         GetHealthCheckLastFailureReasonResult getHealthCheckLastFailureReasonResult = new GetHealthCheckLastFailureReasonResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,12 +45,8 @@ public class GetHealthCheckLastFailureReasonResultStaxUnmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression(
-                        "HealthCheckObservations/HealthCheckObservation",
-                        targetDepth)) {
-                    getHealthCheckLastFailureReasonResult
-                            .withHealthCheckObservations(HealthCheckObservationStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("HealthCheckObservations/HealthCheckObservation", targetDepth)) {
+                    getHealthCheckLastFailureReasonResult.withHealthCheckObservations(HealthCheckObservationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

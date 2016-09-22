@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -21,13 +19,13 @@ import java.io.Serializable;
  * Information about a receipt rule set.
  * </p>
  * <p>
- * A receipt rule set is a collection of rules that specify what Amazon SES
- * should do with mail it receives on behalf of your account's verified domains.
+ * A receipt rule set is a collection of rules that specify what Amazon SES should do with mail it receives on behalf of
+ * your account's verified domains.
  * </p>
  * <p>
- * For information about setting up receipt rule sets, see the <a href=
- * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html"
- * >Amazon SES Developer Guide</a>.
+ * For information about setting up receipt rule sets, see the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
+ * Developer Guide</a>.
  * </p>
  */
 public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
@@ -39,8 +37,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -70,8 +67,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -91,8 +87,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     *        underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
@@ -118,8 +113,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -138,8 +132,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-).
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      *         </p>
      *         </li>
      *         <li>
@@ -165,8 +158,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -186,8 +178,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     *        underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
@@ -200,8 +191,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      *        Contain less than 64 characters.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReceiptRuleSetMetadata withName(String name) {
@@ -241,19 +231,16 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      * 
      * @param createdTimestamp
      *        The date and time the receipt rule set was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReceiptRuleSetMetadata withCreatedTimestamp(
-            java.util.Date createdTimestamp) {
+    public ReceiptRuleSetMetadata withCreatedTimestamp(java.util.Date createdTimestamp) {
         setCreatedTimestamp(createdTimestamp);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -283,15 +270,11 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
         ReceiptRuleSetMetadata other = (ReceiptRuleSetMetadata) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getCreatedTimestamp() == null
-                ^ this.getCreatedTimestamp() == null)
+        if (other.getCreatedTimestamp() == null ^ this.getCreatedTimestamp() == null)
             return false;
-        if (other.getCreatedTimestamp() != null
-                && other.getCreatedTimestamp().equals(
-                        this.getCreatedTimestamp()) == false)
+        if (other.getCreatedTimestamp() != null && other.getCreatedTimestamp().equals(this.getCreatedTimestamp()) == false)
             return false;
         return true;
     }
@@ -301,12 +284,8 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
         return hashCode;
     }
 
@@ -315,9 +294,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
         try {
             return (ReceiptRuleSetMetadata) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

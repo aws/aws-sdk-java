@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -60,8 +58,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * </p>
      * 
      * @param publicIp
-     *        The address of the Elastic IP address bound to the network
-     *        interface.
+     *        The address of the Elastic IP address bound to the network interface.
      */
 
     public void setPublicIp(String publicIp) {
@@ -73,8 +70,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * The address of the Elastic IP address bound to the network interface.
      * </p>
      * 
-     * @return The address of the Elastic IP address bound to the network
-     *         interface.
+     * @return The address of the Elastic IP address bound to the network interface.
      */
 
     public String getPublicIp() {
@@ -87,10 +83,8 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * </p>
      * 
      * @param publicIp
-     *        The address of the Elastic IP address bound to the network
-     *        interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The address of the Elastic IP address bound to the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkInterfaceAssociation withPublicIp(String publicIp) {
@@ -130,8 +124,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * 
      * @param publicDnsName
      *        The public DNS name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkInterfaceAssociation withPublicDnsName(String publicDnsName) {
@@ -171,8 +164,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * 
      * @param ipOwnerId
      *        The ID of the Elastic IP address owner.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkInterfaceAssociation withIpOwnerId(String ipOwnerId) {
@@ -212,8 +204,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * 
      * @param allocationId
      *        The allocation ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkInterfaceAssociation withAllocationId(String allocationId) {
@@ -253,8 +244,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * 
      * @param associationId
      *        The association ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkInterfaceAssociation withAssociationId(String associationId) {
@@ -263,8 +253,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -300,28 +289,23 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
         NetworkInterfaceAssociation other = (NetworkInterfaceAssociation) obj;
         if (other.getPublicIp() == null ^ this.getPublicIp() == null)
             return false;
-        if (other.getPublicIp() != null
-                && other.getPublicIp().equals(this.getPublicIp()) == false)
+        if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
         if (other.getPublicDnsName() == null ^ this.getPublicDnsName() == null)
             return false;
-        if (other.getPublicDnsName() != null
-                && other.getPublicDnsName().equals(this.getPublicDnsName()) == false)
+        if (other.getPublicDnsName() != null && other.getPublicDnsName().equals(this.getPublicDnsName()) == false)
             return false;
         if (other.getIpOwnerId() == null ^ this.getIpOwnerId() == null)
             return false;
-        if (other.getIpOwnerId() != null
-                && other.getIpOwnerId().equals(this.getIpOwnerId()) == false)
+        if (other.getIpOwnerId() != null && other.getIpOwnerId().equals(this.getIpOwnerId()) == false)
             return false;
         if (other.getAllocationId() == null ^ this.getAllocationId() == null)
             return false;
-        if (other.getAllocationId() != null
-                && other.getAllocationId().equals(this.getAllocationId()) == false)
+        if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
             return false;
         if (other.getAssociationId() == null ^ this.getAssociationId() == null)
             return false;
-        if (other.getAssociationId() != null
-                && other.getAssociationId().equals(this.getAssociationId()) == false)
+        if (other.getAssociationId() != null && other.getAssociationId().equals(this.getAssociationId()) == false)
             return false;
         return true;
     }
@@ -331,22 +315,11 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPublicDnsName() == null) ? 0 : getPublicDnsName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getIpOwnerId() == null) ? 0 : getIpOwnerId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAllocationId() == null) ? 0 : getAllocationId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAssociationId() == null) ? 0 : getAssociationId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
+        hashCode = prime * hashCode + ((getPublicDnsName() == null) ? 0 : getPublicDnsName().hashCode());
+        hashCode = prime * hashCode + ((getIpOwnerId() == null) ? 0 : getIpOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
+        hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
         return hashCode;
     }
 
@@ -355,9 +328,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
         try {
             return (NetworkInterfaceAssociation) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

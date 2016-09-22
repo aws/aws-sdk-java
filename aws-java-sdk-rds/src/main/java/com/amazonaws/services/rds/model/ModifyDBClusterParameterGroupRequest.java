@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class ModifyDBClusterParameterGroupRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -46,8 +42,7 @@ public class ModifyDBClusterParameterGroupRequest extends
      *        The name of the DB cluster parameter group to modify.
      */
 
-    public void setDBClusterParameterGroupName(
-            String dBClusterParameterGroupName) {
+    public void setDBClusterParameterGroupName(String dBClusterParameterGroupName) {
         this.dBClusterParameterGroupName = dBClusterParameterGroupName;
     }
 
@@ -70,12 +65,10 @@ public class ModifyDBClusterParameterGroupRequest extends
      * 
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to modify.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyDBClusterParameterGroupRequest withDBClusterParameterGroupName(
-            String dBClusterParameterGroupName) {
+    public ModifyDBClusterParameterGroupRequest withDBClusterParameterGroupName(String dBClusterParameterGroupName) {
         setDBClusterParameterGroupName(dBClusterParameterGroupName);
         return this;
     }
@@ -110,8 +103,7 @@ public class ModifyDBClusterParameterGroupRequest extends
             return;
         }
 
-        this.parameters = new com.amazonaws.internal.SdkInternalList<Parameter>(
-                parameters);
+        this.parameters = new com.amazonaws.internal.SdkInternalList<Parameter>(parameters);
     }
 
     /**
@@ -119,23 +111,19 @@ public class ModifyDBClusterParameterGroupRequest extends
      * A list of parameters in the DB cluster parameter group to modify.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setParameters(java.util.Collection)} or
-     * {@link #withParameters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParameters(java.util.Collection)} or {@link #withParameters(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param parameters
      *        A list of parameters in the DB cluster parameter group to modify.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyDBClusterParameterGroupRequest withParameters(
-            Parameter... parameters) {
+    public ModifyDBClusterParameterGroupRequest withParameters(Parameter... parameters) {
         if (this.parameters == null) {
-            setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(
-                    parameters.length));
+            setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(parameters.length));
         }
         for (Parameter ele : parameters) {
             this.parameters.add(ele);
@@ -150,19 +138,16 @@ public class ModifyDBClusterParameterGroupRequest extends
      * 
      * @param parameters
      *        A list of parameters in the DB cluster parameter group to modify.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyDBClusterParameterGroupRequest withParameters(
-            java.util.Collection<Parameter> parameters) {
+    public ModifyDBClusterParameterGroupRequest withParameters(java.util.Collection<Parameter> parameters) {
         setParameters(parameters);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -173,8 +158,7 @@ public class ModifyDBClusterParameterGroupRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterParameterGroupName() != null)
-            sb.append("DBClusterParameterGroupName: "
-                    + getDBClusterParameterGroupName() + ",");
+            sb.append("DBClusterParameterGroupName: " + getDBClusterParameterGroupName() + ",");
         if (getParameters() != null)
             sb.append("Parameters: " + getParameters());
         sb.append("}");
@@ -191,17 +175,13 @@ public class ModifyDBClusterParameterGroupRequest extends
         if (obj instanceof ModifyDBClusterParameterGroupRequest == false)
             return false;
         ModifyDBClusterParameterGroupRequest other = (ModifyDBClusterParameterGroupRequest) obj;
-        if (other.getDBClusterParameterGroupName() == null
-                ^ this.getDBClusterParameterGroupName() == null)
+        if (other.getDBClusterParameterGroupName() == null ^ this.getDBClusterParameterGroupName() == null)
             return false;
-        if (other.getDBClusterParameterGroupName() != null
-                && other.getDBClusterParameterGroupName().equals(
-                        this.getDBClusterParameterGroupName()) == false)
+        if (other.getDBClusterParameterGroupName() != null && other.getDBClusterParameterGroupName().equals(this.getDBClusterParameterGroupName()) == false)
             return false;
         if (other.getParameters() == null ^ this.getParameters() == null)
             return false;
-        if (other.getParameters() != null
-                && other.getParameters().equals(this.getParameters()) == false)
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
             return false;
         return true;
     }
@@ -211,12 +191,8 @@ public class ModifyDBClusterParameterGroupRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDBClusterParameterGroupName() == null) ? 0
-                        : getDBClusterParameterGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterParameterGroupName() == null) ? 0 : getDBClusterParameterGroupName().hashCode());
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         return hashCode;
     }
 

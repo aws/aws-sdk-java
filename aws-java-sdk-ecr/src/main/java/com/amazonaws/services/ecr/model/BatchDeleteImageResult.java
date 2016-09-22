@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecr.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class BatchDeleteImageResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class BatchDeleteImageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -71,22 +67,19 @@ public class BatchDeleteImageResult extends
      * The image IDs of the deleted images.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setImageIds(java.util.Collection)} or
-     * {@link #withImageIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setImageIds(java.util.Collection)} or {@link #withImageIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param imageIds
      *        The image IDs of the deleted images.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchDeleteImageResult withImageIds(ImageIdentifier... imageIds) {
         if (this.imageIds == null) {
-            setImageIds(new java.util.ArrayList<ImageIdentifier>(
-                    imageIds.length));
+            setImageIds(new java.util.ArrayList<ImageIdentifier>(imageIds.length));
         }
         for (ImageIdentifier ele : imageIds) {
             this.imageIds.add(ele);
@@ -101,12 +94,10 @@ public class BatchDeleteImageResult extends
      * 
      * @param imageIds
      *        The image IDs of the deleted images.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchDeleteImageResult withImageIds(
-            java.util.Collection<ImageIdentifier> imageIds) {
+    public BatchDeleteImageResult withImageIds(java.util.Collection<ImageIdentifier> imageIds) {
         setImageIds(imageIds);
         return this;
     }
@@ -146,16 +137,14 @@ public class BatchDeleteImageResult extends
      * Any failures associated with the call.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFailures(java.util.Collection)} or
-     * {@link #withFailures(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFailures(java.util.Collection)} or {@link #withFailures(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param failures
      *        Any failures associated with the call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchDeleteImageResult withFailures(ImageFailure... failures) {
@@ -175,19 +164,16 @@ public class BatchDeleteImageResult extends
      * 
      * @param failures
      *        Any failures associated with the call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchDeleteImageResult withFailures(
-            java.util.Collection<ImageFailure> failures) {
+    public BatchDeleteImageResult withFailures(java.util.Collection<ImageFailure> failures) {
         setFailures(failures);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -217,13 +203,11 @@ public class BatchDeleteImageResult extends
         BatchDeleteImageResult other = (BatchDeleteImageResult) obj;
         if (other.getImageIds() == null ^ this.getImageIds() == null)
             return false;
-        if (other.getImageIds() != null
-                && other.getImageIds().equals(this.getImageIds()) == false)
+        if (other.getImageIds() != null && other.getImageIds().equals(this.getImageIds()) == false)
             return false;
         if (other.getFailures() == null ^ this.getFailures() == null)
             return false;
-        if (other.getFailures() != null
-                && other.getFailures().equals(this.getFailures()) == false)
+        if (other.getFailures() != null && other.getFailures().equals(this.getFailures()) == false)
             return false;
         return true;
     }
@@ -233,10 +217,8 @@ public class BatchDeleteImageResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getImageIds() == null) ? 0 : getImageIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getFailures() == null) ? 0 : getFailures().hashCode());
+        hashCode = prime * hashCode + ((getImageIds() == null) ? 0 : getImageIds().hashCode());
+        hashCode = prime * hashCode + ((getFailures() == null) ? 0 : getFailures().hashCode());
         return hashCode;
     }
 
@@ -245,9 +227,7 @@ public class BatchDeleteImageResult extends
         try {
             return (BatchDeleteImageResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

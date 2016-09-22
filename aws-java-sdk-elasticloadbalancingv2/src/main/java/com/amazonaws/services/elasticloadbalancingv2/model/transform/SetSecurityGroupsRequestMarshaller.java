@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
@@ -31,30 +29,24 @@ import com.amazonaws.util.IdempotentUtils;
  * SetSecurityGroupsRequest Marshaller
  */
 
-public class SetSecurityGroupsRequestMarshaller implements
-        Marshaller<Request<SetSecurityGroupsRequest>, SetSecurityGroupsRequest> {
+public class SetSecurityGroupsRequestMarshaller implements Marshaller<Request<SetSecurityGroupsRequest>, SetSecurityGroupsRequest> {
 
-    public Request<SetSecurityGroupsRequest> marshall(
-            SetSecurityGroupsRequest setSecurityGroupsRequest) {
+    public Request<SetSecurityGroupsRequest> marshall(SetSecurityGroupsRequest setSecurityGroupsRequest) {
 
         if (setSecurityGroupsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetSecurityGroupsRequest> request = new DefaultRequest<SetSecurityGroupsRequest>(
-                setSecurityGroupsRequest, "AmazonElasticLoadBalancing");
+        Request<SetSecurityGroupsRequest> request = new DefaultRequest<SetSecurityGroupsRequest>(setSecurityGroupsRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "SetSecurityGroups");
         request.addParameter("Version", "2015-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (setSecurityGroupsRequest.getLoadBalancerArn() != null) {
-            request.addParameter("LoadBalancerArn", StringUtils
-                    .fromString(setSecurityGroupsRequest.getLoadBalancerArn()));
+            request.addParameter("LoadBalancerArn", StringUtils.fromString(setSecurityGroupsRequest.getLoadBalancerArn()));
         }
 
-        java.util.List<String> securityGroupsList = setSecurityGroupsRequest
-                .getSecurityGroups();
+        java.util.List<String> securityGroupsList = setSecurityGroupsRequest.getSecurityGroups();
 
         if (securityGroupsList != null) {
             if (securityGroupsList.isEmpty()) {
@@ -64,9 +56,7 @@ public class SetSecurityGroupsRequestMarshaller implements
 
                 for (String securityGroupsListValue : securityGroupsList) {
                     if (securityGroupsListValue != null) {
-                        request.addParameter("SecurityGroups.member."
-                                + securityGroupsListIndex,
-                                StringUtils.fromString(securityGroupsListValue));
+                        request.addParameter("SecurityGroups.member." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
                     }
                     securityGroupsListIndex++;
                 }

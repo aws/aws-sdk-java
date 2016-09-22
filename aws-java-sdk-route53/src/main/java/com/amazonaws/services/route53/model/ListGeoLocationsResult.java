@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -21,56 +19,46 @@ import java.io.Serializable;
  * A complex type containing the response information for the request.
  * </p>
  */
-public class ListGeoLocationsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one <code>GeoLocationDetails</code> element
-     * for each location that Amazon Route 53 supports for geolocation.
+     * A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53
+     * supports for geolocation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GeoLocationDetails> geoLocationDetailsList;
     /**
      * <p>
-     * A value that indicates whether more locations remain to be listed after
-     * the last location in this response. If so, the value of
-     * <code>IsTruncated</code> is <code>true</code>. To get more values, submit
-     * another request and include the values of <code>NextContinentCode</code>,
-     * <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the
-     * <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
+     * A value that indicates whether more locations remain to be listed after the last location in this response. If
+     * so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and
+     * include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     * <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
      * <code>StartSubdivisionCode</code>, as applicable.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, you can make a
-     * follow-up request to display more locations. Enter the value of
-     * <code>NextContinentCode</code> in the <code>StartContinentCode</code>
-     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
-     * request.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
+     * Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code> parameter in another
+     * <code>GET</code> <code>ListGeoLocations</code> request.
      * </p>
      */
     private String nextContinentCode;
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, you can make a
-     * follow-up request to display more locations. Enter the value of
-     * <code>NextCountryCode</code> in the <code>StartCountryCode</code>
-     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
-     * request.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
+     * Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter in another
+     * <code>GET</code> <code>ListGeoLocations</code> request.
      * </p>
      */
     private String nextCountryCode;
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, you can make a
-     * follow-up request to display more locations. Enter the value of
-     * <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
-     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
-     * request.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
+     * Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code> parameter in another
+     * <code>GET</code> <code>ListGeoLocations</code> request.
      * </p>
      */
     private String nextSubdivisionCode;
@@ -83,13 +71,12 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * A complex type that contains one <code>GeoLocationDetails</code> element
-     * for each location that Amazon Route 53 supports for geolocation.
+     * A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53
+     * supports for geolocation.
      * </p>
      * 
-     * @return A complex type that contains one <code>GeoLocationDetails</code>
-     *         element for each location that Amazon Route 53 supports for
-     *         geolocation.
+     * @return A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon
+     *         Route 53 supports for geolocation.
      */
 
     public java.util.List<GeoLocationDetails> getGeoLocationDetailsList() {
@@ -101,52 +88,44 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * A complex type that contains one <code>GeoLocationDetails</code> element
-     * for each location that Amazon Route 53 supports for geolocation.
+     * A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53
+     * supports for geolocation.
      * </p>
      * 
      * @param geoLocationDetailsList
-     *        A complex type that contains one <code>GeoLocationDetails</code>
-     *        element for each location that Amazon Route 53 supports for
-     *        geolocation.
+     *        A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon
+     *        Route 53 supports for geolocation.
      */
 
-    public void setGeoLocationDetailsList(
-            java.util.Collection<GeoLocationDetails> geoLocationDetailsList) {
+    public void setGeoLocationDetailsList(java.util.Collection<GeoLocationDetails> geoLocationDetailsList) {
         if (geoLocationDetailsList == null) {
             this.geoLocationDetailsList = null;
             return;
         }
 
-        this.geoLocationDetailsList = new com.amazonaws.internal.SdkInternalList<GeoLocationDetails>(
-                geoLocationDetailsList);
+        this.geoLocationDetailsList = new com.amazonaws.internal.SdkInternalList<GeoLocationDetails>(geoLocationDetailsList);
     }
 
     /**
      * <p>
-     * A complex type that contains one <code>GeoLocationDetails</code> element
-     * for each location that Amazon Route 53 supports for geolocation.
+     * A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53
+     * supports for geolocation.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGeoLocationDetailsList(java.util.Collection)} or
-     * {@link #withGeoLocationDetailsList(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGeoLocationDetailsList(java.util.Collection)} or
+     * {@link #withGeoLocationDetailsList(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param geoLocationDetailsList
-     *        A complex type that contains one <code>GeoLocationDetails</code>
-     *        element for each location that Amazon Route 53 supports for
-     *        geolocation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon
+     *        Route 53 supports for geolocation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListGeoLocationsResult withGeoLocationDetailsList(
-            GeoLocationDetails... geoLocationDetailsList) {
+    public ListGeoLocationsResult withGeoLocationDetailsList(GeoLocationDetails... geoLocationDetailsList) {
         if (this.geoLocationDetailsList == null) {
-            setGeoLocationDetailsList(new com.amazonaws.internal.SdkInternalList<GeoLocationDetails>(
-                    geoLocationDetailsList.length));
+            setGeoLocationDetailsList(new com.amazonaws.internal.SdkInternalList<GeoLocationDetails>(geoLocationDetailsList.length));
         }
         for (GeoLocationDetails ele : geoLocationDetailsList) {
             this.geoLocationDetailsList.add(ele);
@@ -156,44 +135,36 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * A complex type that contains one <code>GeoLocationDetails</code> element
-     * for each location that Amazon Route 53 supports for geolocation.
+     * A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53
+     * supports for geolocation.
      * </p>
      * 
      * @param geoLocationDetailsList
-     *        A complex type that contains one <code>GeoLocationDetails</code>
-     *        element for each location that Amazon Route 53 supports for
-     *        geolocation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon
+     *        Route 53 supports for geolocation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListGeoLocationsResult withGeoLocationDetailsList(
-            java.util.Collection<GeoLocationDetails> geoLocationDetailsList) {
+    public ListGeoLocationsResult withGeoLocationDetailsList(java.util.Collection<GeoLocationDetails> geoLocationDetailsList) {
         setGeoLocationDetailsList(geoLocationDetailsList);
         return this;
     }
 
     /**
      * <p>
-     * A value that indicates whether more locations remain to be listed after
-     * the last location in this response. If so, the value of
-     * <code>IsTruncated</code> is <code>true</code>. To get more values, submit
-     * another request and include the values of <code>NextContinentCode</code>,
-     * <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the
-     * <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
+     * A value that indicates whether more locations remain to be listed after the last location in this response. If
+     * so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and
+     * include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     * <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
      * <code>StartSubdivisionCode</code>, as applicable.
      * </p>
      * 
      * @param isTruncated
-     *        A value that indicates whether more locations remain to be listed
-     *        after the last location in this response. If so, the value of
-     *        <code>IsTruncated</code> is <code>true</code>. To get more values,
-     *        submit another request and include the values of
-     *        <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     *        <code>NextSubdivisionCode</code> in the
-     *        <code>StartContinentCode</code>, <code>StartCountryCode</code>,
-     *        and <code>StartSubdivisionCode</code>, as applicable.
+     *        A value that indicates whether more locations remain to be listed after the last location in this
+     *        response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit
+     *        another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>,
+     *        and <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>
+     *        , and <code>StartSubdivisionCode</code>, as applicable.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -202,23 +173,18 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * A value that indicates whether more locations remain to be listed after
-     * the last location in this response. If so, the value of
-     * <code>IsTruncated</code> is <code>true</code>. To get more values, submit
-     * another request and include the values of <code>NextContinentCode</code>,
-     * <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the
-     * <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
+     * A value that indicates whether more locations remain to be listed after the last location in this response. If
+     * so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and
+     * include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     * <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
      * <code>StartSubdivisionCode</code>, as applicable.
      * </p>
      * 
-     * @return A value that indicates whether more locations remain to be listed
-     *         after the last location in this response. If so, the value of
-     *         <code>IsTruncated</code> is <code>true</code>. To get more
-     *         values, submit another request and include the values of
-     *         <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     *         <code>NextSubdivisionCode</code> in the
-     *         <code>StartContinentCode</code>, <code>StartCountryCode</code>,
-     *         and <code>StartSubdivisionCode</code>, as applicable.
+     * @return A value that indicates whether more locations remain to be listed after the last location in this
+     *         response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit
+     *         another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>,
+     *         and <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>,
+     *         <code>StartCountryCode</code>, and <code>StartSubdivisionCode</code>, as applicable.
      */
 
     public Boolean getIsTruncated() {
@@ -227,26 +193,20 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * A value that indicates whether more locations remain to be listed after
-     * the last location in this response. If so, the value of
-     * <code>IsTruncated</code> is <code>true</code>. To get more values, submit
-     * another request and include the values of <code>NextContinentCode</code>,
-     * <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the
-     * <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
+     * A value that indicates whether more locations remain to be listed after the last location in this response. If
+     * so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and
+     * include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     * <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
      * <code>StartSubdivisionCode</code>, as applicable.
      * </p>
      * 
      * @param isTruncated
-     *        A value that indicates whether more locations remain to be listed
-     *        after the last location in this response. If so, the value of
-     *        <code>IsTruncated</code> is <code>true</code>. To get more values,
-     *        submit another request and include the values of
-     *        <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     *        <code>NextSubdivisionCode</code> in the
-     *        <code>StartContinentCode</code>, <code>StartCountryCode</code>,
-     *        and <code>StartSubdivisionCode</code>, as applicable.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value that indicates whether more locations remain to be listed after the last location in this
+     *        response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit
+     *        another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>,
+     *        and <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>
+     *        , and <code>StartSubdivisionCode</code>, as applicable.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListGeoLocationsResult withIsTruncated(Boolean isTruncated) {
@@ -256,23 +216,18 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * A value that indicates whether more locations remain to be listed after
-     * the last location in this response. If so, the value of
-     * <code>IsTruncated</code> is <code>true</code>. To get more values, submit
-     * another request and include the values of <code>NextContinentCode</code>,
-     * <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the
-     * <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
+     * A value that indicates whether more locations remain to be listed after the last location in this response. If
+     * so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and
+     * include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     * <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
      * <code>StartSubdivisionCode</code>, as applicable.
      * </p>
      * 
-     * @return A value that indicates whether more locations remain to be listed
-     *         after the last location in this response. If so, the value of
-     *         <code>IsTruncated</code> is <code>true</code>. To get more
-     *         values, submit another request and include the values of
-     *         <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     *         <code>NextSubdivisionCode</code> in the
-     *         <code>StartContinentCode</code>, <code>StartCountryCode</code>,
-     *         and <code>StartSubdivisionCode</code>, as applicable.
+     * @return A value that indicates whether more locations remain to be listed after the last location in this
+     *         response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit
+     *         another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>,
+     *         and <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>,
+     *         <code>StartCountryCode</code>, and <code>StartSubdivisionCode</code>, as applicable.
      */
 
     public Boolean isTruncated() {
@@ -281,19 +236,15 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, you can make a
-     * follow-up request to display more locations. Enter the value of
-     * <code>NextContinentCode</code> in the <code>StartContinentCode</code>
-     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
-     * request.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
+     * Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code> parameter in another
+     * <code>GET</code> <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextContinentCode
-     *        If <code>IsTruncated</code> is <code>true</code>, you can make a
-     *        follow-up request to display more locations. Enter the value of
-     *        <code>NextContinentCode</code> in the
-     *        <code>StartContinentCode</code> parameter in another
-     *        <code>GET</code> <code>ListGeoLocations</code> request.
+     *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
+     *        locations. Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code>
+     *        parameter in another <code>GET</code> <code>ListGeoLocations</code> request.
      */
 
     public void setNextContinentCode(String nextContinentCode) {
@@ -302,18 +253,14 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, you can make a
-     * follow-up request to display more locations. Enter the value of
-     * <code>NextContinentCode</code> in the <code>StartContinentCode</code>
-     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
-     * request.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
+     * Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code> parameter in another
+     * <code>GET</code> <code>ListGeoLocations</code> request.
      * </p>
      * 
-     * @return If <code>IsTruncated</code> is <code>true</code>, you can make a
-     *         follow-up request to display more locations. Enter the value of
-     *         <code>NextContinentCode</code> in the
-     *         <code>StartContinentCode</code> parameter in another
-     *         <code>GET</code> <code>ListGeoLocations</code> request.
+     * @return If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
+     *         locations. Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code>
+     *         parameter in another <code>GET</code> <code>ListGeoLocations</code> request.
      */
 
     public String getNextContinentCode() {
@@ -322,21 +269,16 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, you can make a
-     * follow-up request to display more locations. Enter the value of
-     * <code>NextContinentCode</code> in the <code>StartContinentCode</code>
-     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
-     * request.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
+     * Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code> parameter in another
+     * <code>GET</code> <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextContinentCode
-     *        If <code>IsTruncated</code> is <code>true</code>, you can make a
-     *        follow-up request to display more locations. Enter the value of
-     *        <code>NextContinentCode</code> in the
-     *        <code>StartContinentCode</code> parameter in another
-     *        <code>GET</code> <code>ListGeoLocations</code> request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
+     *        locations. Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code>
+     *        parameter in another <code>GET</code> <code>ListGeoLocations</code> request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListGeoLocationsResult withNextContinentCode(String nextContinentCode) {
@@ -346,19 +288,15 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, you can make a
-     * follow-up request to display more locations. Enter the value of
-     * <code>NextCountryCode</code> in the <code>StartCountryCode</code>
-     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
-     * request.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
+     * Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter in another
+     * <code>GET</code> <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextCountryCode
-     *        If <code>IsTruncated</code> is <code>true</code>, you can make a
-     *        follow-up request to display more locations. Enter the value of
-     *        <code>NextCountryCode</code> in the <code>StartCountryCode</code>
-     *        parameter in another <code>GET</code>
-     *        <code>ListGeoLocations</code> request.
+     *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
+     *        locations. Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter
+     *        in another <code>GET</code> <code>ListGeoLocations</code> request.
      */
 
     public void setNextCountryCode(String nextCountryCode) {
@@ -367,18 +305,14 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, you can make a
-     * follow-up request to display more locations. Enter the value of
-     * <code>NextCountryCode</code> in the <code>StartCountryCode</code>
-     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
-     * request.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
+     * Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter in another
+     * <code>GET</code> <code>ListGeoLocations</code> request.
      * </p>
      * 
-     * @return If <code>IsTruncated</code> is <code>true</code>, you can make a
-     *         follow-up request to display more locations. Enter the value of
-     *         <code>NextCountryCode</code> in the <code>StartCountryCode</code>
-     *         parameter in another <code>GET</code>
-     *         <code>ListGeoLocations</code> request.
+     * @return If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
+     *         locations. Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter
+     *         in another <code>GET</code> <code>ListGeoLocations</code> request.
      */
 
     public String getNextCountryCode() {
@@ -387,21 +321,16 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, you can make a
-     * follow-up request to display more locations. Enter the value of
-     * <code>NextCountryCode</code> in the <code>StartCountryCode</code>
-     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
-     * request.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
+     * Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter in another
+     * <code>GET</code> <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextCountryCode
-     *        If <code>IsTruncated</code> is <code>true</code>, you can make a
-     *        follow-up request to display more locations. Enter the value of
-     *        <code>NextCountryCode</code> in the <code>StartCountryCode</code>
-     *        parameter in another <code>GET</code>
-     *        <code>ListGeoLocations</code> request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
+     *        locations. Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter
+     *        in another <code>GET</code> <code>ListGeoLocations</code> request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListGeoLocationsResult withNextCountryCode(String nextCountryCode) {
@@ -411,19 +340,15 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, you can make a
-     * follow-up request to display more locations. Enter the value of
-     * <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
-     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
-     * request.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
+     * Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code> parameter in another
+     * <code>GET</code> <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextSubdivisionCode
-     *        If <code>IsTruncated</code> is <code>true</code>, you can make a
-     *        follow-up request to display more locations. Enter the value of
-     *        <code>NextSubdivisionCode</code> in the
-     *        <code>StartSubdivisionCode</code> parameter in another
-     *        <code>GET</code> <code>ListGeoLocations</code> request.
+     *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
+     *        locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
+     *        parameter in another <code>GET</code> <code>ListGeoLocations</code> request.
      */
 
     public void setNextSubdivisionCode(String nextSubdivisionCode) {
@@ -432,18 +357,14 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, you can make a
-     * follow-up request to display more locations. Enter the value of
-     * <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
-     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
-     * request.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
+     * Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code> parameter in another
+     * <code>GET</code> <code>ListGeoLocations</code> request.
      * </p>
      * 
-     * @return If <code>IsTruncated</code> is <code>true</code>, you can make a
-     *         follow-up request to display more locations. Enter the value of
-     *         <code>NextSubdivisionCode</code> in the
-     *         <code>StartSubdivisionCode</code> parameter in another
-     *         <code>GET</code> <code>ListGeoLocations</code> request.
+     * @return If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
+     *         locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
+     *         parameter in another <code>GET</code> <code>ListGeoLocations</code> request.
      */
 
     public String getNextSubdivisionCode() {
@@ -452,25 +373,19 @@ public class ListGeoLocationsResult extends
 
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, you can make a
-     * follow-up request to display more locations. Enter the value of
-     * <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
-     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
-     * request.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
+     * Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code> parameter in another
+     * <code>GET</code> <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextSubdivisionCode
-     *        If <code>IsTruncated</code> is <code>true</code>, you can make a
-     *        follow-up request to display more locations. Enter the value of
-     *        <code>NextSubdivisionCode</code> in the
-     *        <code>StartSubdivisionCode</code> parameter in another
-     *        <code>GET</code> <code>ListGeoLocations</code> request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
+     *        locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
+     *        parameter in another <code>GET</code> <code>ListGeoLocations</code> request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListGeoLocationsResult withNextSubdivisionCode(
-            String nextSubdivisionCode) {
+    public ListGeoLocationsResult withNextSubdivisionCode(String nextSubdivisionCode) {
         setNextSubdivisionCode(nextSubdivisionCode);
         return this;
     }
@@ -481,8 +396,7 @@ public class ListGeoLocationsResult extends
      * </p>
      * 
      * @param maxItems
-     *        The value that you specified for <code>MaxItems</code> in the
-     *        request.
+     *        The value that you specified for <code>MaxItems</code> in the request.
      */
 
     public void setMaxItems(String maxItems) {
@@ -494,8 +408,7 @@ public class ListGeoLocationsResult extends
      * The value that you specified for <code>MaxItems</code> in the request.
      * </p>
      * 
-     * @return The value that you specified for <code>MaxItems</code> in the
-     *         request.
+     * @return The value that you specified for <code>MaxItems</code> in the request.
      */
 
     public String getMaxItems() {
@@ -508,10 +421,8 @@ public class ListGeoLocationsResult extends
      * </p>
      * 
      * @param maxItems
-     *        The value that you specified for <code>MaxItems</code> in the
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value that you specified for <code>MaxItems</code> in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListGeoLocationsResult withMaxItems(String maxItems) {
@@ -520,8 +431,7 @@ public class ListGeoLocationsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -532,8 +442,7 @@ public class ListGeoLocationsResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGeoLocationDetailsList() != null)
-            sb.append("GeoLocationDetailsList: " + getGeoLocationDetailsList()
-                    + ",");
+            sb.append("GeoLocationDetailsList: " + getGeoLocationDetailsList() + ",");
         if (getIsTruncated() != null)
             sb.append("IsTruncated: " + getIsTruncated() + ",");
         if (getNextContinentCode() != null)
@@ -558,42 +467,29 @@ public class ListGeoLocationsResult extends
         if (obj instanceof ListGeoLocationsResult == false)
             return false;
         ListGeoLocationsResult other = (ListGeoLocationsResult) obj;
-        if (other.getGeoLocationDetailsList() == null
-                ^ this.getGeoLocationDetailsList() == null)
+        if (other.getGeoLocationDetailsList() == null ^ this.getGeoLocationDetailsList() == null)
             return false;
-        if (other.getGeoLocationDetailsList() != null
-                && other.getGeoLocationDetailsList().equals(
-                        this.getGeoLocationDetailsList()) == false)
+        if (other.getGeoLocationDetailsList() != null && other.getGeoLocationDetailsList().equals(this.getGeoLocationDetailsList()) == false)
             return false;
         if (other.getIsTruncated() == null ^ this.getIsTruncated() == null)
             return false;
-        if (other.getIsTruncated() != null
-                && other.getIsTruncated().equals(this.getIsTruncated()) == false)
+        if (other.getIsTruncated() != null && other.getIsTruncated().equals(this.getIsTruncated()) == false)
             return false;
-        if (other.getNextContinentCode() == null
-                ^ this.getNextContinentCode() == null)
+        if (other.getNextContinentCode() == null ^ this.getNextContinentCode() == null)
             return false;
-        if (other.getNextContinentCode() != null
-                && other.getNextContinentCode().equals(
-                        this.getNextContinentCode()) == false)
+        if (other.getNextContinentCode() != null && other.getNextContinentCode().equals(this.getNextContinentCode()) == false)
             return false;
-        if (other.getNextCountryCode() == null
-                ^ this.getNextCountryCode() == null)
+        if (other.getNextCountryCode() == null ^ this.getNextCountryCode() == null)
             return false;
-        if (other.getNextCountryCode() != null
-                && other.getNextCountryCode().equals(this.getNextCountryCode()) == false)
+        if (other.getNextCountryCode() != null && other.getNextCountryCode().equals(this.getNextCountryCode()) == false)
             return false;
-        if (other.getNextSubdivisionCode() == null
-                ^ this.getNextSubdivisionCode() == null)
+        if (other.getNextSubdivisionCode() == null ^ this.getNextSubdivisionCode() == null)
             return false;
-        if (other.getNextSubdivisionCode() != null
-                && other.getNextSubdivisionCode().equals(
-                        this.getNextSubdivisionCode()) == false)
+        if (other.getNextSubdivisionCode() != null && other.getNextSubdivisionCode().equals(this.getNextSubdivisionCode()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         return true;
     }
@@ -603,27 +499,12 @@ public class ListGeoLocationsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getGeoLocationDetailsList() == null) ? 0
-                        : getGeoLocationDetailsList().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextContinentCode() == null) ? 0
-                        : getNextContinentCode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextCountryCode() == null) ? 0 : getNextCountryCode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextSubdivisionCode() == null) ? 0
-                        : getNextSubdivisionCode().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getGeoLocationDetailsList() == null) ? 0 : getGeoLocationDetailsList().hashCode());
+        hashCode = prime * hashCode + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
+        hashCode = prime * hashCode + ((getNextContinentCode() == null) ? 0 : getNextContinentCode().hashCode());
+        hashCode = prime * hashCode + ((getNextCountryCode() == null) ? 0 : getNextCountryCode().hashCode());
+        hashCode = prime * hashCode + ((getNextSubdivisionCode() == null) ? 0 : getNextSubdivisionCode().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
 
@@ -632,9 +513,7 @@ public class ListGeoLocationsResult extends
         try {
             return (ListGeoLocationsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

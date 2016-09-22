@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
@@ -18,9 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An activation registers one or more on-premises servers or virtual machines
- * (VMs) with AWS so that you can configure those servers or VMs using Run
- * Command. A server or VM that has been registered with AWS is called a managed
+ * An activation registers one or more on-premises servers or virtual machines (VMs) with AWS so that you can configure
+ * those servers or VMs using Run Command. A server or VM that has been registered with AWS is called a managed
  * instance.
  * </p>
  */
@@ -46,15 +43,13 @@ public class Activation implements Serializable, Cloneable {
     private String defaultInstanceName;
     /**
      * <p>
-     * The Amazon Identity and Access Management (IAM) role to assign to the
-     * managed instance.
+     * The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
      * </p>
      */
     private String iamRole;
     /**
      * <p>
-     * The maximum number of managed instances that can be registered using this
-     * activation.
+     * The maximum number of managed instances that can be registered using this activation.
      * </p>
      */
     private Integer registrationLimit;
@@ -66,8 +61,7 @@ public class Activation implements Serializable, Cloneable {
     private Integer registrationsCount;
     /**
      * <p>
-     * The date when this activation can no longer be used to register managed
-     * instances.
+     * The date when this activation can no longer be used to register managed instances.
      * </p>
      */
     private java.util.Date expirationDate;
@@ -116,8 +110,7 @@ public class Activation implements Serializable, Cloneable {
      * 
      * @param activationId
      *        The ID created by SSM when you submitted the activation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Activation withActivationId(String activationId) {
@@ -157,8 +150,7 @@ public class Activation implements Serializable, Cloneable {
      * 
      * @param description
      *        A user defined description of the activation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Activation withDescription(String description) {
@@ -198,8 +190,7 @@ public class Activation implements Serializable, Cloneable {
      * 
      * @param defaultInstanceName
      *        A name for the managed instance when it is created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Activation withDefaultInstanceName(String defaultInstanceName) {
@@ -209,13 +200,11 @@ public class Activation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Identity and Access Management (IAM) role to assign to the
-     * managed instance.
+     * The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
      * </p>
      * 
      * @param iamRole
-     *        The Amazon Identity and Access Management (IAM) role to assign to
-     *        the managed instance.
+     *        The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
      */
 
     public void setIamRole(String iamRole) {
@@ -224,12 +213,10 @@ public class Activation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Identity and Access Management (IAM) role to assign to the
-     * managed instance.
+     * The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
      * </p>
      * 
-     * @return The Amazon Identity and Access Management (IAM) role to assign to
-     *         the managed instance.
+     * @return The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
      */
 
     public String getIamRole() {
@@ -238,15 +225,12 @@ public class Activation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Identity and Access Management (IAM) role to assign to the
-     * managed instance.
+     * The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
      * </p>
      * 
      * @param iamRole
-     *        The Amazon Identity and Access Management (IAM) role to assign to
-     *        the managed instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Activation withIamRole(String iamRole) {
@@ -256,13 +240,11 @@ public class Activation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of managed instances that can be registered using this
-     * activation.
+     * The maximum number of managed instances that can be registered using this activation.
      * </p>
      * 
      * @param registrationLimit
-     *        The maximum number of managed instances that can be registered
-     *        using this activation.
+     *        The maximum number of managed instances that can be registered using this activation.
      */
 
     public void setRegistrationLimit(Integer registrationLimit) {
@@ -271,12 +253,10 @@ public class Activation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of managed instances that can be registered using this
-     * activation.
+     * The maximum number of managed instances that can be registered using this activation.
      * </p>
      * 
-     * @return The maximum number of managed instances that can be registered
-     *         using this activation.
+     * @return The maximum number of managed instances that can be registered using this activation.
      */
 
     public Integer getRegistrationLimit() {
@@ -285,15 +265,12 @@ public class Activation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of managed instances that can be registered using this
-     * activation.
+     * The maximum number of managed instances that can be registered using this activation.
      * </p>
      * 
      * @param registrationLimit
-     *        The maximum number of managed instances that can be registered
-     *        using this activation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of managed instances that can be registered using this activation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Activation withRegistrationLimit(Integer registrationLimit) {
@@ -307,8 +284,7 @@ public class Activation implements Serializable, Cloneable {
      * </p>
      * 
      * @param registrationsCount
-     *        The number of managed instances already registered with this
-     *        activation.
+     *        The number of managed instances already registered with this activation.
      */
 
     public void setRegistrationsCount(Integer registrationsCount) {
@@ -320,8 +296,7 @@ public class Activation implements Serializable, Cloneable {
      * The number of managed instances already registered with this activation.
      * </p>
      * 
-     * @return The number of managed instances already registered with this
-     *         activation.
+     * @return The number of managed instances already registered with this activation.
      */
 
     public Integer getRegistrationsCount() {
@@ -334,10 +309,8 @@ public class Activation implements Serializable, Cloneable {
      * </p>
      * 
      * @param registrationsCount
-     *        The number of managed instances already registered with this
-     *        activation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of managed instances already registered with this activation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Activation withRegistrationsCount(Integer registrationsCount) {
@@ -347,13 +320,11 @@ public class Activation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when this activation can no longer be used to register managed
-     * instances.
+     * The date when this activation can no longer be used to register managed instances.
      * </p>
      * 
      * @param expirationDate
-     *        The date when this activation can no longer be used to register
-     *        managed instances.
+     *        The date when this activation can no longer be used to register managed instances.
      */
 
     public void setExpirationDate(java.util.Date expirationDate) {
@@ -362,12 +333,10 @@ public class Activation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when this activation can no longer be used to register managed
-     * instances.
+     * The date when this activation can no longer be used to register managed instances.
      * </p>
      * 
-     * @return The date when this activation can no longer be used to register
-     *         managed instances.
+     * @return The date when this activation can no longer be used to register managed instances.
      */
 
     public java.util.Date getExpirationDate() {
@@ -376,15 +345,12 @@ public class Activation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when this activation can no longer be used to register managed
-     * instances.
+     * The date when this activation can no longer be used to register managed instances.
      * </p>
      * 
      * @param expirationDate
-     *        The date when this activation can no longer be used to register
-     *        managed instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The date when this activation can no longer be used to register managed instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Activation withExpirationDate(java.util.Date expirationDate) {
@@ -424,8 +390,7 @@ public class Activation implements Serializable, Cloneable {
      * 
      * @param expired
      *        Whether or not the activation is expired.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Activation withExpired(Boolean expired) {
@@ -477,8 +442,7 @@ public class Activation implements Serializable, Cloneable {
      * 
      * @param createdDate
      *        The date the activation was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Activation withCreatedDate(java.util.Date createdDate) {
@@ -487,8 +451,7 @@ public class Activation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -532,55 +495,39 @@ public class Activation implements Serializable, Cloneable {
         Activation other = (Activation) obj;
         if (other.getActivationId() == null ^ this.getActivationId() == null)
             return false;
-        if (other.getActivationId() != null
-                && other.getActivationId().equals(this.getActivationId()) == false)
+        if (other.getActivationId() != null && other.getActivationId().equals(this.getActivationId()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getDefaultInstanceName() == null
-                ^ this.getDefaultInstanceName() == null)
+        if (other.getDefaultInstanceName() == null ^ this.getDefaultInstanceName() == null)
             return false;
-        if (other.getDefaultInstanceName() != null
-                && other.getDefaultInstanceName().equals(
-                        this.getDefaultInstanceName()) == false)
+        if (other.getDefaultInstanceName() != null && other.getDefaultInstanceName().equals(this.getDefaultInstanceName()) == false)
             return false;
         if (other.getIamRole() == null ^ this.getIamRole() == null)
             return false;
-        if (other.getIamRole() != null
-                && other.getIamRole().equals(this.getIamRole()) == false)
+        if (other.getIamRole() != null && other.getIamRole().equals(this.getIamRole()) == false)
             return false;
-        if (other.getRegistrationLimit() == null
-                ^ this.getRegistrationLimit() == null)
+        if (other.getRegistrationLimit() == null ^ this.getRegistrationLimit() == null)
             return false;
-        if (other.getRegistrationLimit() != null
-                && other.getRegistrationLimit().equals(
-                        this.getRegistrationLimit()) == false)
+        if (other.getRegistrationLimit() != null && other.getRegistrationLimit().equals(this.getRegistrationLimit()) == false)
             return false;
-        if (other.getRegistrationsCount() == null
-                ^ this.getRegistrationsCount() == null)
+        if (other.getRegistrationsCount() == null ^ this.getRegistrationsCount() == null)
             return false;
-        if (other.getRegistrationsCount() != null
-                && other.getRegistrationsCount().equals(
-                        this.getRegistrationsCount()) == false)
+        if (other.getRegistrationsCount() != null && other.getRegistrationsCount().equals(this.getRegistrationsCount()) == false)
             return false;
-        if (other.getExpirationDate() == null
-                ^ this.getExpirationDate() == null)
+        if (other.getExpirationDate() == null ^ this.getExpirationDate() == null)
             return false;
-        if (other.getExpirationDate() != null
-                && other.getExpirationDate().equals(this.getExpirationDate()) == false)
+        if (other.getExpirationDate() != null && other.getExpirationDate().equals(this.getExpirationDate()) == false)
             return false;
         if (other.getExpired() == null ^ this.getExpired() == null)
             return false;
-        if (other.getExpired() != null
-                && other.getExpired().equals(this.getExpired()) == false)
+        if (other.getExpired() != null && other.getExpired().equals(this.getExpired()) == false)
             return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
-        if (other.getCreatedDate() != null
-                && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
             return false;
         return true;
     }
@@ -590,36 +537,15 @@ public class Activation implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getActivationId() == null) ? 0 : getActivationId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultInstanceName() == null) ? 0
-                        : getDefaultInstanceName().hashCode());
-        hashCode = prime * hashCode
-                + ((getIamRole() == null) ? 0 : getIamRole().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegistrationLimit() == null) ? 0
-                        : getRegistrationLimit().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegistrationsCount() == null) ? 0
-                        : getRegistrationsCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExpirationDate() == null) ? 0 : getExpirationDate()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getExpired() == null) ? 0 : getExpired().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getActivationId() == null) ? 0 : getActivationId().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDefaultInstanceName() == null) ? 0 : getDefaultInstanceName().hashCode());
+        hashCode = prime * hashCode + ((getIamRole() == null) ? 0 : getIamRole().hashCode());
+        hashCode = prime * hashCode + ((getRegistrationLimit() == null) ? 0 : getRegistrationLimit().hashCode());
+        hashCode = prime * hashCode + ((getRegistrationsCount() == null) ? 0 : getRegistrationsCount().hashCode());
+        hashCode = prime * hashCode + ((getExpirationDate() == null) ? 0 : getExpirationDate().hashCode());
+        hashCode = prime * hashCode + ((getExpired() == null) ? 0 : getExpired().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         return hashCode;
     }
 
@@ -628,9 +554,7 @@ public class Activation implements Serializable, Cloneable {
         try {
             return (Activation) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -49,9 +47,8 @@ public class SchemaAttributeType implements Serializable, Cloneable {
     private Boolean mutable;
     /**
      * <p>
-     * Specifies whether a user pool attribute is required. If the attribute is
-     * required and the user does not provide a value, registration or sign-in
-     * will fail.
+     * Specifies whether a user pool attribute is required. If the attribute is required and the user does not provide a
+     * value, registration or sign-in will fail.
      * </p>
      */
     private Boolean required;
@@ -100,8 +97,7 @@ public class SchemaAttributeType implements Serializable, Cloneable {
      * 
      * @param name
      *        A schema attribute of the name type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SchemaAttributeType withName(String name) {
@@ -143,8 +139,7 @@ public class SchemaAttributeType implements Serializable, Cloneable {
      * 
      * @param attributeDataType
      *        The attribute data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttributeDataType
      */
 
@@ -174,13 +169,11 @@ public class SchemaAttributeType implements Serializable, Cloneable {
      * 
      * @param attributeDataType
      *        The attribute data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttributeDataType
      */
 
-    public SchemaAttributeType withAttributeDataType(
-            AttributeDataType attributeDataType) {
+    public SchemaAttributeType withAttributeDataType(AttributeDataType attributeDataType) {
         setAttributeDataType(attributeDataType);
         return this;
     }
@@ -217,12 +210,10 @@ public class SchemaAttributeType implements Serializable, Cloneable {
      * 
      * @param developerOnlyAttribute
      *        Specifies whether the attribute type is developer only.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SchemaAttributeType withDeveloperOnlyAttribute(
-            Boolean developerOnlyAttribute) {
+    public SchemaAttributeType withDeveloperOnlyAttribute(Boolean developerOnlyAttribute) {
         setDeveloperOnlyAttribute(developerOnlyAttribute);
         return this;
     }
@@ -245,8 +236,7 @@ public class SchemaAttributeType implements Serializable, Cloneable {
      * </p>
      * 
      * @param mutable
-     *        Specifies whether the attribute can be changed once it has been
-     *        created.
+     *        Specifies whether the attribute can be changed once it has been created.
      */
 
     public void setMutable(Boolean mutable) {
@@ -258,8 +248,7 @@ public class SchemaAttributeType implements Serializable, Cloneable {
      * Specifies whether the attribute can be changed once it has been created.
      * </p>
      * 
-     * @return Specifies whether the attribute can be changed once it has been
-     *         created.
+     * @return Specifies whether the attribute can be changed once it has been created.
      */
 
     public Boolean getMutable() {
@@ -272,10 +261,8 @@ public class SchemaAttributeType implements Serializable, Cloneable {
      * </p>
      * 
      * @param mutable
-     *        Specifies whether the attribute can be changed once it has been
-     *        created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether the attribute can be changed once it has been created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SchemaAttributeType withMutable(Boolean mutable) {
@@ -288,8 +275,7 @@ public class SchemaAttributeType implements Serializable, Cloneable {
      * Specifies whether the attribute can be changed once it has been created.
      * </p>
      * 
-     * @return Specifies whether the attribute can be changed once it has been
-     *         created.
+     * @return Specifies whether the attribute can be changed once it has been created.
      */
 
     public Boolean isMutable() {
@@ -298,15 +284,13 @@ public class SchemaAttributeType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether a user pool attribute is required. If the attribute is
-     * required and the user does not provide a value, registration or sign-in
-     * will fail.
+     * Specifies whether a user pool attribute is required. If the attribute is required and the user does not provide a
+     * value, registration or sign-in will fail.
      * </p>
      * 
      * @param required
-     *        Specifies whether a user pool attribute is required. If the
-     *        attribute is required and the user does not provide a value,
-     *        registration or sign-in will fail.
+     *        Specifies whether a user pool attribute is required. If the attribute is required and the user does not
+     *        provide a value, registration or sign-in will fail.
      */
 
     public void setRequired(Boolean required) {
@@ -315,14 +299,12 @@ public class SchemaAttributeType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether a user pool attribute is required. If the attribute is
-     * required and the user does not provide a value, registration or sign-in
-     * will fail.
+     * Specifies whether a user pool attribute is required. If the attribute is required and the user does not provide a
+     * value, registration or sign-in will fail.
      * </p>
      * 
-     * @return Specifies whether a user pool attribute is required. If the
-     *         attribute is required and the user does not provide a value,
-     *         registration or sign-in will fail.
+     * @return Specifies whether a user pool attribute is required. If the attribute is required and the user does not
+     *         provide a value, registration or sign-in will fail.
      */
 
     public Boolean getRequired() {
@@ -331,17 +313,14 @@ public class SchemaAttributeType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether a user pool attribute is required. If the attribute is
-     * required and the user does not provide a value, registration or sign-in
-     * will fail.
+     * Specifies whether a user pool attribute is required. If the attribute is required and the user does not provide a
+     * value, registration or sign-in will fail.
      * </p>
      * 
      * @param required
-     *        Specifies whether a user pool attribute is required. If the
-     *        attribute is required and the user does not provide a value,
-     *        registration or sign-in will fail.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether a user pool attribute is required. If the attribute is required and the user does not
+     *        provide a value, registration or sign-in will fail.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SchemaAttributeType withRequired(Boolean required) {
@@ -351,14 +330,12 @@ public class SchemaAttributeType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether a user pool attribute is required. If the attribute is
-     * required and the user does not provide a value, registration or sign-in
-     * will fail.
+     * Specifies whether a user pool attribute is required. If the attribute is required and the user does not provide a
+     * value, registration or sign-in will fail.
      * </p>
      * 
-     * @return Specifies whether a user pool attribute is required. If the
-     *         attribute is required and the user does not provide a value,
-     *         registration or sign-in will fail.
+     * @return Specifies whether a user pool attribute is required. If the attribute is required and the user does not
+     *         provide a value, registration or sign-in will fail.
      */
 
     public Boolean isRequired() {
@@ -374,8 +351,7 @@ public class SchemaAttributeType implements Serializable, Cloneable {
      *        Specifies the constraints for an attribute of the number type.
      */
 
-    public void setNumberAttributeConstraints(
-            NumberAttributeConstraintsType numberAttributeConstraints) {
+    public void setNumberAttributeConstraints(NumberAttributeConstraintsType numberAttributeConstraints) {
         this.numberAttributeConstraints = numberAttributeConstraints;
     }
 
@@ -398,12 +374,10 @@ public class SchemaAttributeType implements Serializable, Cloneable {
      * 
      * @param numberAttributeConstraints
      *        Specifies the constraints for an attribute of the number type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SchemaAttributeType withNumberAttributeConstraints(
-            NumberAttributeConstraintsType numberAttributeConstraints) {
+    public SchemaAttributeType withNumberAttributeConstraints(NumberAttributeConstraintsType numberAttributeConstraints) {
         setNumberAttributeConstraints(numberAttributeConstraints);
         return this;
     }
@@ -417,8 +391,7 @@ public class SchemaAttributeType implements Serializable, Cloneable {
      *        Specifies the constraints for an attribute of the string type.
      */
 
-    public void setStringAttributeConstraints(
-            StringAttributeConstraintsType stringAttributeConstraints) {
+    public void setStringAttributeConstraints(StringAttributeConstraintsType stringAttributeConstraints) {
         this.stringAttributeConstraints = stringAttributeConstraints;
     }
 
@@ -441,19 +414,16 @@ public class SchemaAttributeType implements Serializable, Cloneable {
      * 
      * @param stringAttributeConstraints
      *        Specifies the constraints for an attribute of the string type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SchemaAttributeType withStringAttributeConstraints(
-            StringAttributeConstraintsType stringAttributeConstraints) {
+    public SchemaAttributeType withStringAttributeConstraints(StringAttributeConstraintsType stringAttributeConstraints) {
         setStringAttributeConstraints(stringAttributeConstraints);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -468,18 +438,15 @@ public class SchemaAttributeType implements Serializable, Cloneable {
         if (getAttributeDataType() != null)
             sb.append("AttributeDataType: " + getAttributeDataType() + ",");
         if (getDeveloperOnlyAttribute() != null)
-            sb.append("DeveloperOnlyAttribute: " + getDeveloperOnlyAttribute()
-                    + ",");
+            sb.append("DeveloperOnlyAttribute: " + getDeveloperOnlyAttribute() + ",");
         if (getMutable() != null)
             sb.append("Mutable: " + getMutable() + ",");
         if (getRequired() != null)
             sb.append("Required: " + getRequired() + ",");
         if (getNumberAttributeConstraints() != null)
-            sb.append("NumberAttributeConstraints: "
-                    + getNumberAttributeConstraints() + ",");
+            sb.append("NumberAttributeConstraints: " + getNumberAttributeConstraints() + ",");
         if (getStringAttributeConstraints() != null)
-            sb.append("StringAttributeConstraints: "
-                    + getStringAttributeConstraints());
+            sb.append("StringAttributeConstraints: " + getStringAttributeConstraints());
         sb.append("}");
         return sb.toString();
     }
@@ -496,46 +463,31 @@ public class SchemaAttributeType implements Serializable, Cloneable {
         SchemaAttributeType other = (SchemaAttributeType) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getAttributeDataType() == null
-                ^ this.getAttributeDataType() == null)
+        if (other.getAttributeDataType() == null ^ this.getAttributeDataType() == null)
             return false;
-        if (other.getAttributeDataType() != null
-                && other.getAttributeDataType().equals(
-                        this.getAttributeDataType()) == false)
+        if (other.getAttributeDataType() != null && other.getAttributeDataType().equals(this.getAttributeDataType()) == false)
             return false;
-        if (other.getDeveloperOnlyAttribute() == null
-                ^ this.getDeveloperOnlyAttribute() == null)
+        if (other.getDeveloperOnlyAttribute() == null ^ this.getDeveloperOnlyAttribute() == null)
             return false;
-        if (other.getDeveloperOnlyAttribute() != null
-                && other.getDeveloperOnlyAttribute().equals(
-                        this.getDeveloperOnlyAttribute()) == false)
+        if (other.getDeveloperOnlyAttribute() != null && other.getDeveloperOnlyAttribute().equals(this.getDeveloperOnlyAttribute()) == false)
             return false;
         if (other.getMutable() == null ^ this.getMutable() == null)
             return false;
-        if (other.getMutable() != null
-                && other.getMutable().equals(this.getMutable()) == false)
+        if (other.getMutable() != null && other.getMutable().equals(this.getMutable()) == false)
             return false;
         if (other.getRequired() == null ^ this.getRequired() == null)
             return false;
-        if (other.getRequired() != null
-                && other.getRequired().equals(this.getRequired()) == false)
+        if (other.getRequired() != null && other.getRequired().equals(this.getRequired()) == false)
             return false;
-        if (other.getNumberAttributeConstraints() == null
-                ^ this.getNumberAttributeConstraints() == null)
+        if (other.getNumberAttributeConstraints() == null ^ this.getNumberAttributeConstraints() == null)
             return false;
-        if (other.getNumberAttributeConstraints() != null
-                && other.getNumberAttributeConstraints().equals(
-                        this.getNumberAttributeConstraints()) == false)
+        if (other.getNumberAttributeConstraints() != null && other.getNumberAttributeConstraints().equals(this.getNumberAttributeConstraints()) == false)
             return false;
-        if (other.getStringAttributeConstraints() == null
-                ^ this.getStringAttributeConstraints() == null)
+        if (other.getStringAttributeConstraints() == null ^ this.getStringAttributeConstraints() == null)
             return false;
-        if (other.getStringAttributeConstraints() != null
-                && other.getStringAttributeConstraints().equals(
-                        this.getStringAttributeConstraints()) == false)
+        if (other.getStringAttributeConstraints() != null && other.getStringAttributeConstraints().equals(this.getStringAttributeConstraints()) == false)
             return false;
         return true;
     }
@@ -545,28 +497,13 @@ public class SchemaAttributeType implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttributeDataType() == null) ? 0
-                        : getAttributeDataType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeveloperOnlyAttribute() == null) ? 0
-                        : getDeveloperOnlyAttribute().hashCode());
-        hashCode = prime * hashCode
-                + ((getMutable() == null) ? 0 : getMutable().hashCode());
-        hashCode = prime * hashCode
-                + ((getRequired() == null) ? 0 : getRequired().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNumberAttributeConstraints() == null) ? 0
-                        : getNumberAttributeConstraints().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStringAttributeConstraints() == null) ? 0
-                        : getStringAttributeConstraints().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getAttributeDataType() == null) ? 0 : getAttributeDataType().hashCode());
+        hashCode = prime * hashCode + ((getDeveloperOnlyAttribute() == null) ? 0 : getDeveloperOnlyAttribute().hashCode());
+        hashCode = prime * hashCode + ((getMutable() == null) ? 0 : getMutable().hashCode());
+        hashCode = prime * hashCode + ((getRequired() == null) ? 0 : getRequired().hashCode());
+        hashCode = prime * hashCode + ((getNumberAttributeConstraints() == null) ? 0 : getNumberAttributeConstraints().hashCode());
+        hashCode = prime * hashCode + ((getStringAttributeConstraints() == null) ? 0 : getStringAttributeConstraints().hashCode());
         return hashCode;
     }
 
@@ -575,9 +512,7 @@ public class SchemaAttributeType implements Serializable, Cloneable {
         try {
             return (SchemaAttributeType) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -39,24 +37,20 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class UpdateMaintenanceStartTimeRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String gatewayARN;
     /**
      * <p>
-     * The hour component of the maintenance start time represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is
-     * in the time zone of the gateway.
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to
+     * 23). The hour of the day is in the time zone of the gateway.
      * </p>
      */
     private Integer hourOfDay;
     /**
      * <p>
-     * The minute component of the maintenance start time represented as
-     * <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
-     * hour is in the time zone of the gateway.
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to
+     * 59). The minute of the hour is in the time zone of the gateway.
      * </p>
      */
     private Integer minuteOfHour;
@@ -85,8 +79,7 @@ public class UpdateMaintenanceStartTimeRequest extends
 
     /**
      * @param gatewayARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMaintenanceStartTimeRequest withGatewayARN(String gatewayARN) {
@@ -96,15 +89,13 @@ public class UpdateMaintenanceStartTimeRequest extends
 
     /**
      * <p>
-     * The hour component of the maintenance start time represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is
-     * in the time zone of the gateway.
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to
+     * 23). The hour of the day is in the time zone of the gateway.
      * </p>
      * 
      * @param hourOfDay
-     *        The hour component of the maintenance start time represented as
-     *        <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the
-     *        day is in the time zone of the gateway.
+     *        The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00
+     *        to 23). The hour of the day is in the time zone of the gateway.
      */
 
     public void setHourOfDay(Integer hourOfDay) {
@@ -113,14 +104,12 @@ public class UpdateMaintenanceStartTimeRequest extends
 
     /**
      * <p>
-     * The hour component of the maintenance start time represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is
-     * in the time zone of the gateway.
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to
+     * 23). The hour of the day is in the time zone of the gateway.
      * </p>
      * 
-     * @return The hour component of the maintenance start time represented as
-     *         <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of
-     *         the day is in the time zone of the gateway.
+     * @return The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour
+     *         (00 to 23). The hour of the day is in the time zone of the gateway.
      */
 
     public Integer getHourOfDay() {
@@ -129,17 +118,14 @@ public class UpdateMaintenanceStartTimeRequest extends
 
     /**
      * <p>
-     * The hour component of the maintenance start time represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is
-     * in the time zone of the gateway.
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to
+     * 23). The hour of the day is in the time zone of the gateway.
      * </p>
      * 
      * @param hourOfDay
-     *        The hour component of the maintenance start time represented as
-     *        <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the
-     *        day is in the time zone of the gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00
+     *        to 23). The hour of the day is in the time zone of the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMaintenanceStartTimeRequest withHourOfDay(Integer hourOfDay) {
@@ -149,15 +135,13 @@ public class UpdateMaintenanceStartTimeRequest extends
 
     /**
      * <p>
-     * The minute component of the maintenance start time represented as
-     * <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
-     * hour is in the time zone of the gateway.
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to
+     * 59). The minute of the hour is in the time zone of the gateway.
      * </p>
      * 
      * @param minuteOfHour
-     *        The minute component of the maintenance start time represented as
-     *        <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of
-     *        the hour is in the time zone of the gateway.
+     *        The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute
+     *        (00 to 59). The minute of the hour is in the time zone of the gateway.
      */
 
     public void setMinuteOfHour(Integer minuteOfHour) {
@@ -166,14 +150,12 @@ public class UpdateMaintenanceStartTimeRequest extends
 
     /**
      * <p>
-     * The minute component of the maintenance start time represented as
-     * <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
-     * hour is in the time zone of the gateway.
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to
+     * 59). The minute of the hour is in the time zone of the gateway.
      * </p>
      * 
-     * @return The minute component of the maintenance start time represented as
-     *         <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute
-     *         of the hour is in the time zone of the gateway.
+     * @return The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the
+     *         minute (00 to 59). The minute of the hour is in the time zone of the gateway.
      */
 
     public Integer getMinuteOfHour() {
@@ -182,21 +164,17 @@ public class UpdateMaintenanceStartTimeRequest extends
 
     /**
      * <p>
-     * The minute component of the maintenance start time represented as
-     * <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
-     * hour is in the time zone of the gateway.
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to
+     * 59). The minute of the hour is in the time zone of the gateway.
      * </p>
      * 
      * @param minuteOfHour
-     *        The minute component of the maintenance start time represented as
-     *        <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of
-     *        the hour is in the time zone of the gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute
+     *        (00 to 59). The minute of the hour is in the time zone of the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateMaintenanceStartTimeRequest withMinuteOfHour(
-            Integer minuteOfHour) {
+    public UpdateMaintenanceStartTimeRequest withMinuteOfHour(Integer minuteOfHour) {
         setMinuteOfHour(minuteOfHour);
         return this;
     }
@@ -233,8 +211,7 @@ public class UpdateMaintenanceStartTimeRequest extends
      * 
      * @param dayOfWeek
      *        The maintenance start time day of the week.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMaintenanceStartTimeRequest withDayOfWeek(Integer dayOfWeek) {
@@ -243,8 +220,7 @@ public class UpdateMaintenanceStartTimeRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -278,23 +254,19 @@ public class UpdateMaintenanceStartTimeRequest extends
         UpdateMaintenanceStartTimeRequest other = (UpdateMaintenanceStartTimeRequest) obj;
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null)
             return false;
-        if (other.getGatewayARN() != null
-                && other.getGatewayARN().equals(this.getGatewayARN()) == false)
+        if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
         if (other.getHourOfDay() == null ^ this.getHourOfDay() == null)
             return false;
-        if (other.getHourOfDay() != null
-                && other.getHourOfDay().equals(this.getHourOfDay()) == false)
+        if (other.getHourOfDay() != null && other.getHourOfDay().equals(this.getHourOfDay()) == false)
             return false;
         if (other.getMinuteOfHour() == null ^ this.getMinuteOfHour() == null)
             return false;
-        if (other.getMinuteOfHour() != null
-                && other.getMinuteOfHour().equals(this.getMinuteOfHour()) == false)
+        if (other.getMinuteOfHour() != null && other.getMinuteOfHour().equals(this.getMinuteOfHour()) == false)
             return false;
         if (other.getDayOfWeek() == null ^ this.getDayOfWeek() == null)
             return false;
-        if (other.getDayOfWeek() != null
-                && other.getDayOfWeek().equals(this.getDayOfWeek()) == false)
+        if (other.getDayOfWeek() != null && other.getDayOfWeek().equals(this.getDayOfWeek()) == false)
             return false;
         return true;
     }
@@ -304,16 +276,10 @@ public class UpdateMaintenanceStartTimeRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getHourOfDay() == null) ? 0 : getHourOfDay().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMinuteOfHour() == null) ? 0 : getMinuteOfHour()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getDayOfWeek() == null) ? 0 : getDayOfWeek().hashCode());
+        hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getHourOfDay() == null) ? 0 : getHourOfDay().hashCode());
+        hashCode = prime * hashCode + ((getMinuteOfHour() == null) ? 0 : getMinuteOfHour().hashCode());
+        hashCode = prime * hashCode + ((getDayOfWeek() == null) ? 0 : getDayOfWeek().hashCode());
         return hashCode;
     }
 

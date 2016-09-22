@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
@@ -20,18 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CreateReplicationSubnetGroupRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateReplicationSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name for the replication subnet group. This value is stored as a
-     * lowercase string.
+     * The name for the replication subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, spaces, underscores, or hyphens. Must not be "default".
+     * Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens.
+     * Must not be "default".
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -59,53 +54,46 @@ public class CreateReplicationSubnetGroupRequest extends
 
     /**
      * <p>
-     * The name for the replication subnet group. This value is stored as a
-     * lowercase string.
+     * The name for the replication subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, spaces, underscores, or hyphens. Must not be "default".
+     * Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens.
+     * Must not be "default".
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
      * @param replicationSubnetGroupIdentifier
-     *        The name for the replication subnet group. This value is stored as
-     *        a lowercase string.</p>
+     *        The name for the replication subnet group. This value is stored as a lowercase string.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric
-     *        characters, periods, spaces, underscores, or hyphens. Must not be
-     *        "default".
+     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or
+     *        hyphens. Must not be "default".
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
      */
 
-    public void setReplicationSubnetGroupIdentifier(
-            String replicationSubnetGroupIdentifier) {
+    public void setReplicationSubnetGroupIdentifier(String replicationSubnetGroupIdentifier) {
         this.replicationSubnetGroupIdentifier = replicationSubnetGroupIdentifier;
     }
 
     /**
      * <p>
-     * The name for the replication subnet group. This value is stored as a
-     * lowercase string.
+     * The name for the replication subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, spaces, underscores, or hyphens. Must not be "default".
+     * Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens.
+     * Must not be "default".
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
-     * @return The name for the replication subnet group. This value is stored
-     *         as a lowercase string.</p>
+     * @return The name for the replication subnet group. This value is stored as a lowercase string.</p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric
-     *         characters, periods, spaces, underscores, or hyphens. Must not be
-     *         "default".
+     *         Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or
+     *         hyphens. Must not be "default".
      *         </p>
      *         <p>
      *         Example: <code>mySubnetgroup</code>
@@ -117,33 +105,28 @@ public class CreateReplicationSubnetGroupRequest extends
 
     /**
      * <p>
-     * The name for the replication subnet group. This value is stored as a
-     * lowercase string.
+     * The name for the replication subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, spaces, underscores, or hyphens. Must not be "default".
+     * Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens.
+     * Must not be "default".
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
      * @param replicationSubnetGroupIdentifier
-     *        The name for the replication subnet group. This value is stored as
-     *        a lowercase string.</p>
+     *        The name for the replication subnet group. This value is stored as a lowercase string.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric
-     *        characters, periods, spaces, underscores, or hyphens. Must not be
-     *        "default".
+     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or
+     *        hyphens. Must not be "default".
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationSubnetGroupRequest withReplicationSubnetGroupIdentifier(
-            String replicationSubnetGroupIdentifier) {
+    public CreateReplicationSubnetGroupRequest withReplicationSubnetGroupIdentifier(String replicationSubnetGroupIdentifier) {
         setReplicationSubnetGroupIdentifier(replicationSubnetGroupIdentifier);
         return this;
     }
@@ -157,8 +140,7 @@ public class CreateReplicationSubnetGroupRequest extends
      *        The description for the subnet group.
      */
 
-    public void setReplicationSubnetGroupDescription(
-            String replicationSubnetGroupDescription) {
+    public void setReplicationSubnetGroupDescription(String replicationSubnetGroupDescription) {
         this.replicationSubnetGroupDescription = replicationSubnetGroupDescription;
     }
 
@@ -181,12 +163,10 @@ public class CreateReplicationSubnetGroupRequest extends
      * 
      * @param replicationSubnetGroupDescription
      *        The description for the subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationSubnetGroupRequest withReplicationSubnetGroupDescription(
-            String replicationSubnetGroupDescription) {
+    public CreateReplicationSubnetGroupRequest withReplicationSubnetGroupDescription(String replicationSubnetGroupDescription) {
         setReplicationSubnetGroupDescription(replicationSubnetGroupDescription);
         return this;
     }
@@ -226,20 +206,17 @@ public class CreateReplicationSubnetGroupRequest extends
      * The EC2 subnet IDs for the subnet group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnetIds(java.util.Collection)} or
-     * {@link #withSubnetIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param subnetIds
      *        The EC2 subnet IDs for the subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationSubnetGroupRequest withSubnetIds(
-            String... subnetIds) {
+    public CreateReplicationSubnetGroupRequest withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
             setSubnetIds(new java.util.ArrayList<String>(subnetIds.length));
         }
@@ -256,12 +233,10 @@ public class CreateReplicationSubnetGroupRequest extends
      * 
      * @param subnetIds
      *        The EC2 subnet IDs for the subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationSubnetGroupRequest withSubnetIds(
-            java.util.Collection<String> subnetIds) {
+    public CreateReplicationSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
         return this;
     }
@@ -301,16 +276,14 @@ public class CreateReplicationSubnetGroupRequest extends
      * The tag to be assigned to the subnet group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        The tag to be assigned to the subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateReplicationSubnetGroupRequest withTags(Tag... tags) {
@@ -330,19 +303,16 @@ public class CreateReplicationSubnetGroupRequest extends
      * 
      * @param tags
      *        The tag to be assigned to the subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationSubnetGroupRequest withTags(
-            java.util.Collection<Tag> tags) {
+    public CreateReplicationSubnetGroupRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -353,11 +323,9 @@ public class CreateReplicationSubnetGroupRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationSubnetGroupIdentifier() != null)
-            sb.append("ReplicationSubnetGroupIdentifier: "
-                    + getReplicationSubnetGroupIdentifier() + ",");
+            sb.append("ReplicationSubnetGroupIdentifier: " + getReplicationSubnetGroupIdentifier() + ",");
         if (getReplicationSubnetGroupDescription() != null)
-            sb.append("ReplicationSubnetGroupDescription: "
-                    + getReplicationSubnetGroupDescription() + ",");
+            sb.append("ReplicationSubnetGroupDescription: " + getReplicationSubnetGroupDescription() + ",");
         if (getSubnetIds() != null)
             sb.append("SubnetIds: " + getSubnetIds() + ",");
         if (getTags() != null)
@@ -376,29 +344,23 @@ public class CreateReplicationSubnetGroupRequest extends
         if (obj instanceof CreateReplicationSubnetGroupRequest == false)
             return false;
         CreateReplicationSubnetGroupRequest other = (CreateReplicationSubnetGroupRequest) obj;
-        if (other.getReplicationSubnetGroupIdentifier() == null
-                ^ this.getReplicationSubnetGroupIdentifier() == null)
+        if (other.getReplicationSubnetGroupIdentifier() == null ^ this.getReplicationSubnetGroupIdentifier() == null)
             return false;
         if (other.getReplicationSubnetGroupIdentifier() != null
-                && other.getReplicationSubnetGroupIdentifier().equals(
-                        this.getReplicationSubnetGroupIdentifier()) == false)
+                && other.getReplicationSubnetGroupIdentifier().equals(this.getReplicationSubnetGroupIdentifier()) == false)
             return false;
-        if (other.getReplicationSubnetGroupDescription() == null
-                ^ this.getReplicationSubnetGroupDescription() == null)
+        if (other.getReplicationSubnetGroupDescription() == null ^ this.getReplicationSubnetGroupDescription() == null)
             return false;
         if (other.getReplicationSubnetGroupDescription() != null
-                && other.getReplicationSubnetGroupDescription().equals(
-                        this.getReplicationSubnetGroupDescription()) == false)
+                && other.getReplicationSubnetGroupDescription().equals(this.getReplicationSubnetGroupDescription()) == false)
             return false;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
-        if (other.getSubnetIds() != null
-                && other.getSubnetIds().equals(this.getSubnetIds()) == false)
+        if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -408,18 +370,10 @@ public class CreateReplicationSubnetGroupRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReplicationSubnetGroupIdentifier() == null) ? 0
-                        : getReplicationSubnetGroupIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReplicationSubnetGroupDescription() == null) ? 0
-                        : getReplicationSubnetGroupDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getReplicationSubnetGroupIdentifier() == null) ? 0 : getReplicationSubnetGroupIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getReplicationSubnetGroupDescription() == null) ? 0 : getReplicationSubnetGroupDescription().hashCode());
+        hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

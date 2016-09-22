@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model;
 
@@ -22,44 +20,36 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of an enable stage transition action.
  * </p>
  */
-public class EnableStageTransitionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class EnableStageTransitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the pipeline in which you want to enable the flow of
-     * artifacts from one stage to another.
+     * The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.
      * </p>
      */
     private String pipelineName;
     /**
      * <p>
-     * The name of the stage where you want to enable the transition of
-     * artifacts, either into the stage (inbound) or from that stage to the next
-     * stage (outbound).
+     * The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or
+     * from that stage to the next stage (outbound).
      * </p>
      */
     private String stageName;
     /**
      * <p>
-     * Specifies whether artifacts will be allowed to enter the stage and be
-     * processed by the actions in that stage (inbound) or whether
-     * already-processed artifacts will be allowed to transition to the next
-     * stage (outbound).
+     * Specifies whether artifacts will be allowed to enter the stage and be processed by the actions in that stage
+     * (inbound) or whether already-processed artifacts will be allowed to transition to the next stage (outbound).
      * </p>
      */
     private String transitionType;
 
     /**
      * <p>
-     * The name of the pipeline in which you want to enable the flow of
-     * artifacts from one stage to another.
+     * The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.
      * </p>
      * 
      * @param pipelineName
-     *        The name of the pipeline in which you want to enable the flow of
-     *        artifacts from one stage to another.
+     *        The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.
      */
 
     public void setPipelineName(String pipelineName) {
@@ -68,12 +58,10 @@ public class EnableStageTransitionRequest extends
 
     /**
      * <p>
-     * The name of the pipeline in which you want to enable the flow of
-     * artifacts from one stage to another.
+     * The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.
      * </p>
      * 
-     * @return The name of the pipeline in which you want to enable the flow of
-     *         artifacts from one stage to another.
+     * @return The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.
      */
 
     public String getPipelineName() {
@@ -82,15 +70,12 @@ public class EnableStageTransitionRequest extends
 
     /**
      * <p>
-     * The name of the pipeline in which you want to enable the flow of
-     * artifacts from one stage to another.
+     * The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.
      * </p>
      * 
      * @param pipelineName
-     *        The name of the pipeline in which you want to enable the flow of
-     *        artifacts from one stage to another.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EnableStageTransitionRequest withPipelineName(String pipelineName) {
@@ -100,15 +85,13 @@ public class EnableStageTransitionRequest extends
 
     /**
      * <p>
-     * The name of the stage where you want to enable the transition of
-     * artifacts, either into the stage (inbound) or from that stage to the next
-     * stage (outbound).
+     * The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or
+     * from that stage to the next stage (outbound).
      * </p>
      * 
      * @param stageName
-     *        The name of the stage where you want to enable the transition of
-     *        artifacts, either into the stage (inbound) or from that stage to
-     *        the next stage (outbound).
+     *        The name of the stage where you want to enable the transition of artifacts, either into the stage
+     *        (inbound) or from that stage to the next stage (outbound).
      */
 
     public void setStageName(String stageName) {
@@ -117,14 +100,12 @@ public class EnableStageTransitionRequest extends
 
     /**
      * <p>
-     * The name of the stage where you want to enable the transition of
-     * artifacts, either into the stage (inbound) or from that stage to the next
-     * stage (outbound).
+     * The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or
+     * from that stage to the next stage (outbound).
      * </p>
      * 
-     * @return The name of the stage where you want to enable the transition of
-     *         artifacts, either into the stage (inbound) or from that stage to
-     *         the next stage (outbound).
+     * @return The name of the stage where you want to enable the transition of artifacts, either into the stage
+     *         (inbound) or from that stage to the next stage (outbound).
      */
 
     public String getStageName() {
@@ -133,17 +114,14 @@ public class EnableStageTransitionRequest extends
 
     /**
      * <p>
-     * The name of the stage where you want to enable the transition of
-     * artifacts, either into the stage (inbound) or from that stage to the next
-     * stage (outbound).
+     * The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or
+     * from that stage to the next stage (outbound).
      * </p>
      * 
      * @param stageName
-     *        The name of the stage where you want to enable the transition of
-     *        artifacts, either into the stage (inbound) or from that stage to
-     *        the next stage (outbound).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the stage where you want to enable the transition of artifacts, either into the stage
+     *        (inbound) or from that stage to the next stage (outbound).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EnableStageTransitionRequest withStageName(String stageName) {
@@ -153,17 +131,14 @@ public class EnableStageTransitionRequest extends
 
     /**
      * <p>
-     * Specifies whether artifacts will be allowed to enter the stage and be
-     * processed by the actions in that stage (inbound) or whether
-     * already-processed artifacts will be allowed to transition to the next
-     * stage (outbound).
+     * Specifies whether artifacts will be allowed to enter the stage and be processed by the actions in that stage
+     * (inbound) or whether already-processed artifacts will be allowed to transition to the next stage (outbound).
      * </p>
      * 
      * @param transitionType
-     *        Specifies whether artifacts will be allowed to enter the stage and
-     *        be processed by the actions in that stage (inbound) or whether
-     *        already-processed artifacts will be allowed to transition to the
-     *        next stage (outbound).
+     *        Specifies whether artifacts will be allowed to enter the stage and be processed by the actions in that
+     *        stage (inbound) or whether already-processed artifacts will be allowed to transition to the next stage
+     *        (outbound).
      * @see StageTransitionType
      */
 
@@ -173,16 +148,13 @@ public class EnableStageTransitionRequest extends
 
     /**
      * <p>
-     * Specifies whether artifacts will be allowed to enter the stage and be
-     * processed by the actions in that stage (inbound) or whether
-     * already-processed artifacts will be allowed to transition to the next
-     * stage (outbound).
+     * Specifies whether artifacts will be allowed to enter the stage and be processed by the actions in that stage
+     * (inbound) or whether already-processed artifacts will be allowed to transition to the next stage (outbound).
      * </p>
      * 
-     * @return Specifies whether artifacts will be allowed to enter the stage
-     *         and be processed by the actions in that stage (inbound) or
-     *         whether already-processed artifacts will be allowed to transition
-     *         to the next stage (outbound).
+     * @return Specifies whether artifacts will be allowed to enter the stage and be processed by the actions in that
+     *         stage (inbound) or whether already-processed artifacts will be allowed to transition to the next stage
+     *         (outbound).
      * @see StageTransitionType
      */
 
@@ -192,19 +164,15 @@ public class EnableStageTransitionRequest extends
 
     /**
      * <p>
-     * Specifies whether artifacts will be allowed to enter the stage and be
-     * processed by the actions in that stage (inbound) or whether
-     * already-processed artifacts will be allowed to transition to the next
-     * stage (outbound).
+     * Specifies whether artifacts will be allowed to enter the stage and be processed by the actions in that stage
+     * (inbound) or whether already-processed artifacts will be allowed to transition to the next stage (outbound).
      * </p>
      * 
      * @param transitionType
-     *        Specifies whether artifacts will be allowed to enter the stage and
-     *        be processed by the actions in that stage (inbound) or whether
-     *        already-processed artifacts will be allowed to transition to the
-     *        next stage (outbound).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether artifacts will be allowed to enter the stage and be processed by the actions in that
+     *        stage (inbound) or whether already-processed artifacts will be allowed to transition to the next stage
+     *        (outbound).
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StageTransitionType
      */
 
@@ -215,17 +183,14 @@ public class EnableStageTransitionRequest extends
 
     /**
      * <p>
-     * Specifies whether artifacts will be allowed to enter the stage and be
-     * processed by the actions in that stage (inbound) or whether
-     * already-processed artifacts will be allowed to transition to the next
-     * stage (outbound).
+     * Specifies whether artifacts will be allowed to enter the stage and be processed by the actions in that stage
+     * (inbound) or whether already-processed artifacts will be allowed to transition to the next stage (outbound).
      * </p>
      * 
      * @param transitionType
-     *        Specifies whether artifacts will be allowed to enter the stage and
-     *        be processed by the actions in that stage (inbound) or whether
-     *        already-processed artifacts will be allowed to transition to the
-     *        next stage (outbound).
+     *        Specifies whether artifacts will be allowed to enter the stage and be processed by the actions in that
+     *        stage (inbound) or whether already-processed artifacts will be allowed to transition to the next stage
+     *        (outbound).
      * @see StageTransitionType
      */
 
@@ -235,31 +200,25 @@ public class EnableStageTransitionRequest extends
 
     /**
      * <p>
-     * Specifies whether artifacts will be allowed to enter the stage and be
-     * processed by the actions in that stage (inbound) or whether
-     * already-processed artifacts will be allowed to transition to the next
-     * stage (outbound).
+     * Specifies whether artifacts will be allowed to enter the stage and be processed by the actions in that stage
+     * (inbound) or whether already-processed artifacts will be allowed to transition to the next stage (outbound).
      * </p>
      * 
      * @param transitionType
-     *        Specifies whether artifacts will be allowed to enter the stage and
-     *        be processed by the actions in that stage (inbound) or whether
-     *        already-processed artifacts will be allowed to transition to the
-     *        next stage (outbound).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether artifacts will be allowed to enter the stage and be processed by the actions in that
+     *        stage (inbound) or whether already-processed artifacts will be allowed to transition to the next stage
+     *        (outbound).
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StageTransitionType
      */
 
-    public EnableStageTransitionRequest withTransitionType(
-            StageTransitionType transitionType) {
+    public EnableStageTransitionRequest withTransitionType(StageTransitionType transitionType) {
         setTransitionType(transitionType);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -291,19 +250,15 @@ public class EnableStageTransitionRequest extends
         EnableStageTransitionRequest other = (EnableStageTransitionRequest) obj;
         if (other.getPipelineName() == null ^ this.getPipelineName() == null)
             return false;
-        if (other.getPipelineName() != null
-                && other.getPipelineName().equals(this.getPipelineName()) == false)
+        if (other.getPipelineName() != null && other.getPipelineName().equals(this.getPipelineName()) == false)
             return false;
         if (other.getStageName() == null ^ this.getStageName() == null)
             return false;
-        if (other.getStageName() != null
-                && other.getStageName().equals(this.getStageName()) == false)
+        if (other.getStageName() != null && other.getStageName().equals(this.getStageName()) == false)
             return false;
-        if (other.getTransitionType() == null
-                ^ this.getTransitionType() == null)
+        if (other.getTransitionType() == null ^ this.getTransitionType() == null)
             return false;
-        if (other.getTransitionType() != null
-                && other.getTransitionType().equals(this.getTransitionType()) == false)
+        if (other.getTransitionType() != null && other.getTransitionType().equals(this.getTransitionType()) == false)
             return false;
         return true;
     }
@@ -313,16 +268,9 @@ public class EnableStageTransitionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPipelineName() == null) ? 0 : getPipelineName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStageName() == null) ? 0 : getStageName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTransitionType() == null) ? 0 : getTransitionType()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPipelineName() == null) ? 0 : getPipelineName().hashCode());
+        hashCode = prime * hashCode + ((getStageName() == null) ? 0 : getStageName().hashCode());
+        hashCode = prime * hashCode + ((getTransitionType() == null) ? 0 : getTransitionType().hashCode());
         return hashCode;
     }
 

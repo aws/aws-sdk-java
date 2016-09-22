@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -43,8 +41,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
     private java.util.Date createTime;
     /**
      * <p>
-     * True if the user has authenticated with GitHub for the specified
-     * application; otherwise, false.
+     * True if the user has authenticated with GitHub for the specified application; otherwise, false.
      * </p>
      */
     private Boolean linkedToGitHub;
@@ -81,8 +78,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * 
      * @param applicationId
      *        The application ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationInfo withApplicationId(String applicationId) {
@@ -122,8 +118,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * 
      * @param applicationName
      *        The application name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationInfo withApplicationName(String applicationName) {
@@ -163,8 +158,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * 
      * @param createTime
      *        The time at which the application was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationInfo withCreateTime(java.util.Date createTime) {
@@ -174,13 +168,11 @@ public class ApplicationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if the user has authenticated with GitHub for the specified
-     * application; otherwise, false.
+     * True if the user has authenticated with GitHub for the specified application; otherwise, false.
      * </p>
      * 
      * @param linkedToGitHub
-     *        True if the user has authenticated with GitHub for the specified
-     *        application; otherwise, false.
+     *        True if the user has authenticated with GitHub for the specified application; otherwise, false.
      */
 
     public void setLinkedToGitHub(Boolean linkedToGitHub) {
@@ -189,12 +181,10 @@ public class ApplicationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if the user has authenticated with GitHub for the specified
-     * application; otherwise, false.
+     * True if the user has authenticated with GitHub for the specified application; otherwise, false.
      * </p>
      * 
-     * @return True if the user has authenticated with GitHub for the specified
-     *         application; otherwise, false.
+     * @return True if the user has authenticated with GitHub for the specified application; otherwise, false.
      */
 
     public Boolean getLinkedToGitHub() {
@@ -203,15 +193,12 @@ public class ApplicationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if the user has authenticated with GitHub for the specified
-     * application; otherwise, false.
+     * True if the user has authenticated with GitHub for the specified application; otherwise, false.
      * </p>
      * 
      * @param linkedToGitHub
-     *        True if the user has authenticated with GitHub for the specified
-     *        application; otherwise, false.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        True if the user has authenticated with GitHub for the specified application; otherwise, false.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationInfo withLinkedToGitHub(Boolean linkedToGitHub) {
@@ -221,12 +208,10 @@ public class ApplicationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if the user has authenticated with GitHub for the specified
-     * application; otherwise, false.
+     * True if the user has authenticated with GitHub for the specified application; otherwise, false.
      * </p>
      * 
-     * @return True if the user has authenticated with GitHub for the specified
-     *         application; otherwise, false.
+     * @return True if the user has authenticated with GitHub for the specified application; otherwise, false.
      */
 
     public Boolean isLinkedToGitHub() {
@@ -234,8 +219,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -269,25 +253,19 @@ public class ApplicationInfo implements Serializable, Cloneable {
         ApplicationInfo other = (ApplicationInfo) obj;
         if (other.getApplicationId() == null ^ this.getApplicationId() == null)
             return false;
-        if (other.getApplicationId() != null
-                && other.getApplicationId().equals(this.getApplicationId()) == false)
+        if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
         if (other.getCreateTime() == null ^ this.getCreateTime() == null)
             return false;
-        if (other.getCreateTime() != null
-                && other.getCreateTime().equals(this.getCreateTime()) == false)
+        if (other.getCreateTime() != null && other.getCreateTime().equals(this.getCreateTime()) == false)
             return false;
-        if (other.getLinkedToGitHub() == null
-                ^ this.getLinkedToGitHub() == null)
+        if (other.getLinkedToGitHub() == null ^ this.getLinkedToGitHub() == null)
             return false;
-        if (other.getLinkedToGitHub() != null
-                && other.getLinkedToGitHub().equals(this.getLinkedToGitHub()) == false)
+        if (other.getLinkedToGitHub() != null && other.getLinkedToGitHub().equals(this.getLinkedToGitHub()) == false)
             return false;
         return true;
     }
@@ -297,20 +275,10 @@ public class ApplicationInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationId() == null) ? 0 : getApplicationId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLinkedToGitHub() == null) ? 0 : getLinkedToGitHub()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
+        hashCode = prime * hashCode + ((getLinkedToGitHub() == null) ? 0 : getLinkedToGitHub().hashCode());
         return hashCode;
     }
 
@@ -319,9 +287,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
         try {
             return (ApplicationInfo) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

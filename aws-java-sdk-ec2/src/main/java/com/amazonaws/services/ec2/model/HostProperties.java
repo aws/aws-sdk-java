@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -43,8 +41,7 @@ public class HostProperties implements Serializable, Cloneable {
     private Integer totalVCpus;
     /**
      * <p>
-     * The instance type size that the Dedicated Host supports (for example,
-     * <code>m3.medium</code>).
+     * The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
      * </p>
      */
     private String instanceType;
@@ -81,8 +78,7 @@ public class HostProperties implements Serializable, Cloneable {
      * 
      * @param sockets
      *        The number of sockets on the Dedicated Host.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HostProperties withSockets(Integer sockets) {
@@ -122,8 +118,7 @@ public class HostProperties implements Serializable, Cloneable {
      * 
      * @param cores
      *        The number of cores on the Dedicated Host.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HostProperties withCores(Integer cores) {
@@ -163,8 +158,7 @@ public class HostProperties implements Serializable, Cloneable {
      * 
      * @param totalVCpus
      *        The number of vCPUs on the Dedicated Host.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HostProperties withTotalVCpus(Integer totalVCpus) {
@@ -174,13 +168,11 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size that the Dedicated Host supports (for example,
-     * <code>m3.medium</code>).
+     * The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
      * </p>
      * 
      * @param instanceType
-     *        The instance type size that the Dedicated Host supports (for
-     *        example, <code>m3.medium</code>).
+     *        The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
      */
 
     public void setInstanceType(String instanceType) {
@@ -189,12 +181,10 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size that the Dedicated Host supports (for example,
-     * <code>m3.medium</code>).
+     * The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
      * </p>
      * 
-     * @return The instance type size that the Dedicated Host supports (for
-     *         example, <code>m3.medium</code>).
+     * @return The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
      */
 
     public String getInstanceType() {
@@ -203,15 +193,12 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size that the Dedicated Host supports (for example,
-     * <code>m3.medium</code>).
+     * The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
      * </p>
      * 
      * @param instanceType
-     *        The instance type size that the Dedicated Host supports (for
-     *        example, <code>m3.medium</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HostProperties withInstanceType(String instanceType) {
@@ -220,8 +207,7 @@ public class HostProperties implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -255,23 +241,19 @@ public class HostProperties implements Serializable, Cloneable {
         HostProperties other = (HostProperties) obj;
         if (other.getSockets() == null ^ this.getSockets() == null)
             return false;
-        if (other.getSockets() != null
-                && other.getSockets().equals(this.getSockets()) == false)
+        if (other.getSockets() != null && other.getSockets().equals(this.getSockets()) == false)
             return false;
         if (other.getCores() == null ^ this.getCores() == null)
             return false;
-        if (other.getCores() != null
-                && other.getCores().equals(this.getCores()) == false)
+        if (other.getCores() != null && other.getCores().equals(this.getCores()) == false)
             return false;
         if (other.getTotalVCpus() == null ^ this.getTotalVCpus() == null)
             return false;
-        if (other.getTotalVCpus() != null
-                && other.getTotalVCpus().equals(this.getTotalVCpus()) == false)
+        if (other.getTotalVCpus() != null && other.getTotalVCpus().equals(this.getTotalVCpus()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         return true;
     }
@@ -281,16 +263,10 @@ public class HostProperties implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSockets() == null) ? 0 : getSockets().hashCode());
-        hashCode = prime * hashCode
-                + ((getCores() == null) ? 0 : getCores().hashCode());
-        hashCode = prime * hashCode
-                + ((getTotalVCpus() == null) ? 0 : getTotalVCpus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getSockets() == null) ? 0 : getSockets().hashCode());
+        hashCode = prime * hashCode + ((getCores() == null) ? 0 : getCores().hashCode());
+        hashCode = prime * hashCode + ((getTotalVCpus() == null) ? 0 : getTotalVCpus().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         return hashCode;
     }
 
@@ -299,9 +275,7 @@ public class HostProperties implements Serializable, Cloneable {
         try {
             return (HostProperties) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

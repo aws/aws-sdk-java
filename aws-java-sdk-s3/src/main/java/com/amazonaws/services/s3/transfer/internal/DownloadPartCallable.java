@@ -20,6 +20,8 @@ import java.util.concurrent.Callable;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.GetObjectRequest;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Helper class to get a part from s3,
@@ -27,26 +29,36 @@ import com.amazonaws.services.s3.model.GetObjectRequest;
  * return the temporary file.
  */
 public class DownloadPartCallable implements Callable<File> {
-    private final AmazonS3 s3;
-    private final GetObjectRequest getPartRequest;
-    private final String destinationFileName;
-    private File tempFile;
+    private static final Log LOG = LogFactory.getLog(DownloadPartCallable.class);
     private static final String TEMP_FILE_MIDDLE_NAME = ".part.";
 
-    public DownloadPartCallable(AmazonS3 s3, GetObjectRequest getPartRequest, String destinationFileName) {
+    private final AmazonS3 s3;
+    private final GetObjectRequest getPartRequest;
+    private final File destinationFile;
+    private final String destinationFilePath;
+    private File partFile;
+
+    public DownloadPartCallable(AmazonS3 s3, GetObjectRequest getPartRequest, File destinationFile) {
         this.s3 = s3;
         this.getPartRequest = getPartRequest;
-        this.destinationFileName = destinationFileName;
+        this.destinationFile = destinationFile;
+        this.destinationFilePath = destinationFile.getAbsolutePath();
     }
 
     public File call() throws Exception {
-        tempFile = File.createTempFile(destinationFileName,
-                TEMP_FILE_MIDDLE_NAME + getPartRequest.getPartNumber().toString());
-        tempFile.deleteOnExit();
-        if (s3.getObject(getPartRequest, tempFile) == null) {
+        partFile = File.createTempFile(destinationFile.getName(),
+                TEMP_FILE_MIDDLE_NAME + getPartRequest.getPartNumber().toString(),
+                new File(destinationFilePath.substring(0, destinationFilePath.lastIndexOf(File.separator))));
+        try {
+            partFile.deleteOnExit();
+        } catch (SecurityException exception) {
+            LOG.warn("SecurityException denied delete access to file " + partFile.getAbsolutePath());
+        }
+
+        if (s3.getObject(getPartRequest, partFile) == null) {
             throw new AmazonClientException(
                     "There is no object in S3 satisfying this request. The getObject method returned null");
         }
-        return tempFile;
+        return partFile;
     }
 }

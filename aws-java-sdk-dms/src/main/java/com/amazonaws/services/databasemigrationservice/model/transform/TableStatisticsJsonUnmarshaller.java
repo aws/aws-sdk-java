@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * TableStatistics JSON Unmarshaller
  */
-public class TableStatisticsJsonUnmarshaller implements
-        Unmarshaller<TableStatistics, JsonUnmarshallerContext> {
+public class TableStatisticsJsonUnmarshaller implements Unmarshaller<TableStatistics, JsonUnmarshallerContext> {
 
-    public TableStatistics unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public TableStatistics unmarshall(JsonUnmarshallerContext context) throws Exception {
         TableStatistics tableStatistics = new TableStatistics();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,53 +49,42 @@ public class TableStatisticsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SchemaName", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setSchemaName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    tableStatistics.setSchemaName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setTableName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    tableStatistics.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Inserts", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setInserts(context.getUnmarshaller(
-                            Long.class).unmarshall(context));
+                    tableStatistics.setInserts(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Deletes", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setDeletes(context.getUnmarshaller(
-                            Long.class).unmarshall(context));
+                    tableStatistics.setDeletes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Updates", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setUpdates(context.getUnmarshaller(
-                            Long.class).unmarshall(context));
+                    tableStatistics.setUpdates(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Ddls", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setDdls(context.getUnmarshaller(Long.class)
-                            .unmarshall(context));
+                    tableStatistics.setDdls(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FullLoadRows", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setFullLoadRows(context.getUnmarshaller(
-                            Long.class).unmarshall(context));
+                    tableStatistics.setFullLoadRows(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setLastUpdateTime(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    tableStatistics.setLastUpdateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("TableState", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setTableState(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    tableStatistics.setTableState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

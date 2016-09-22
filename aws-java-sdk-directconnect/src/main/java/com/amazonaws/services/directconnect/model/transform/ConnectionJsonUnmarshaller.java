@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Connection JSON Unmarshaller
  */
-public class ConnectionJsonUnmarshaller implements
-        Unmarshaller<Connection, JsonUnmarshallerContext> {
+public class ConnectionJsonUnmarshaller implements Unmarshaller<Connection, JsonUnmarshallerContext> {
 
-    public Connection unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public Connection unmarshall(JsonUnmarshallerContext context) throws Exception {
         Connection connection = new Connection();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,58 +49,46 @@ public class ConnectionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ownerAccount", targetDepth)) {
                     context.nextToken();
-                    connection.setOwnerAccount(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    connection.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionId", targetDepth)) {
                     context.nextToken();
-                    connection.setConnectionId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    connection.setConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionName", targetDepth)) {
                     context.nextToken();
-                    connection.setConnectionName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    connection.setConnectionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionState", targetDepth)) {
                     context.nextToken();
-                    connection.setConnectionState(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    connection.setConnectionState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
                     context.nextToken();
-                    connection.setRegion(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    connection.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
-                    connection.setLocation(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    connection.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bandwidth", targetDepth)) {
                     context.nextToken();
-                    connection.setBandwidth(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    connection.setBandwidth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vlan", targetDepth)) {
                     context.nextToken();
-                    connection.setVlan(context.getUnmarshaller(Integer.class)
-                            .unmarshall(context));
+                    connection.setVlan(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("partnerName", targetDepth)) {
                     context.nextToken();
-                    connection.setPartnerName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    connection.setPartnerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("loaIssueTime", targetDepth)) {
                     context.nextToken();
-                    connection.setLoaIssueTime(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    connection.setLoaIssueTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

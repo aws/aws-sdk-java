@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesis.model;
 
@@ -31,8 +29,8 @@ public class SequenceNumberRange implements Serializable, Cloneable {
     private String startingSequenceNumber;
     /**
      * <p>
-     * The ending sequence number for the range. Shards that are in the OPEN
-     * state have an ending sequence number of <code>null</code>.
+     * The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of
+     * <code>null</code>.
      * </p>
      */
     private String endingSequenceNumber;
@@ -69,25 +67,23 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * 
      * @param startingSequenceNumber
      *        The starting sequence number for the range.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SequenceNumberRange withStartingSequenceNumber(
-            String startingSequenceNumber) {
+    public SequenceNumberRange withStartingSequenceNumber(String startingSequenceNumber) {
         setStartingSequenceNumber(startingSequenceNumber);
         return this;
     }
 
     /**
      * <p>
-     * The ending sequence number for the range. Shards that are in the OPEN
-     * state have an ending sequence number of <code>null</code>.
+     * The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of
+     * <code>null</code>.
      * </p>
      * 
      * @param endingSequenceNumber
-     *        The ending sequence number for the range. Shards that are in the
-     *        OPEN state have an ending sequence number of <code>null</code>.
+     *        The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number
+     *        of <code>null</code>.
      */
 
     public void setEndingSequenceNumber(String endingSequenceNumber) {
@@ -96,12 +92,12 @@ public class SequenceNumberRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ending sequence number for the range. Shards that are in the OPEN
-     * state have an ending sequence number of <code>null</code>.
+     * The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of
+     * <code>null</code>.
      * </p>
      * 
-     * @return The ending sequence number for the range. Shards that are in the
-     *         OPEN state have an ending sequence number of <code>null</code>.
+     * @return The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence
+     *         number of <code>null</code>.
      */
 
     public String getEndingSequenceNumber() {
@@ -110,26 +106,23 @@ public class SequenceNumberRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ending sequence number for the range. Shards that are in the OPEN
-     * state have an ending sequence number of <code>null</code>.
+     * The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of
+     * <code>null</code>.
      * </p>
      * 
      * @param endingSequenceNumber
-     *        The ending sequence number for the range. Shards that are in the
-     *        OPEN state have an ending sequence number of <code>null</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number
+     *        of <code>null</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SequenceNumberRange withEndingSequenceNumber(
-            String endingSequenceNumber) {
+    public SequenceNumberRange withEndingSequenceNumber(String endingSequenceNumber) {
         setEndingSequenceNumber(endingSequenceNumber);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -140,8 +133,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStartingSequenceNumber() != null)
-            sb.append("StartingSequenceNumber: " + getStartingSequenceNumber()
-                    + ",");
+            sb.append("StartingSequenceNumber: " + getStartingSequenceNumber() + ",");
         if (getEndingSequenceNumber() != null)
             sb.append("EndingSequenceNumber: " + getEndingSequenceNumber());
         sb.append("}");
@@ -158,19 +150,13 @@ public class SequenceNumberRange implements Serializable, Cloneable {
         if (obj instanceof SequenceNumberRange == false)
             return false;
         SequenceNumberRange other = (SequenceNumberRange) obj;
-        if (other.getStartingSequenceNumber() == null
-                ^ this.getStartingSequenceNumber() == null)
+        if (other.getStartingSequenceNumber() == null ^ this.getStartingSequenceNumber() == null)
             return false;
-        if (other.getStartingSequenceNumber() != null
-                && other.getStartingSequenceNumber().equals(
-                        this.getStartingSequenceNumber()) == false)
+        if (other.getStartingSequenceNumber() != null && other.getStartingSequenceNumber().equals(this.getStartingSequenceNumber()) == false)
             return false;
-        if (other.getEndingSequenceNumber() == null
-                ^ this.getEndingSequenceNumber() == null)
+        if (other.getEndingSequenceNumber() == null ^ this.getEndingSequenceNumber() == null)
             return false;
-        if (other.getEndingSequenceNumber() != null
-                && other.getEndingSequenceNumber().equals(
-                        this.getEndingSequenceNumber()) == false)
+        if (other.getEndingSequenceNumber() != null && other.getEndingSequenceNumber().equals(this.getEndingSequenceNumber()) == false)
             return false;
         return true;
     }
@@ -180,14 +166,8 @@ public class SequenceNumberRange implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getStartingSequenceNumber() == null) ? 0
-                        : getStartingSequenceNumber().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEndingSequenceNumber() == null) ? 0
-                        : getEndingSequenceNumber().hashCode());
+        hashCode = prime * hashCode + ((getStartingSequenceNumber() == null) ? 0 : getStartingSequenceNumber().hashCode());
+        hashCode = prime * hashCode + ((getEndingSequenceNumber() == null) ? 0 : getEndingSequenceNumber().hashCode());
         return hashCode;
     }
 
@@ -196,9 +176,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
         try {
             return (SequenceNumberRange) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

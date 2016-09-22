@@ -35,7 +35,7 @@ import java.util.regex.Pattern;
  * public PhoneNumber getPhoneNumber()
  * </pre>
  *
- * Where,
+ * <p>Where,</p>
  * <pre class="brush: java">
  * public class PhoneNumber {
  *     private String areaCode;
@@ -53,7 +53,7 @@ import java.util.regex.Pattern;
  * }
  * </pre>
  *
- * Would write,
+ * <p>Would write,</p>
  * <ul>
  *     <li><code>PhoneNumber("206","266","1000")</code> = <code>"206-266-1000"</code></li>
  *     <li><code>PhoneNumber("206",null,"1000")</code> = <code>"206--1000"</code></li>
@@ -85,10 +85,10 @@ import java.util.regex.Pattern;
  * which also persist that same data, would effectively truncate it back to the
  * original format.</p>
  *
- * <p>Auto-generated annotations are not supported on field/property. However,
- * conversion annotations such as {@link DynamoDBConvertedTime} and
- * {@link DynamoDBTypeConverted} where the output type is {@link String} are
- * supported.</p>
+ * <p>Auto-generated annotations are not supported on field/property.</p>
+ *
+ * <p>TYpe-converted annotations, annotated by {@link DynamoDBTypeConverted},
+ * where the output type is {@link String} are supported.
  *
  * <p>May be used as a meta-annotation.</p>
  */

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model;
 
@@ -18,24 +16,22 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about a Remote Authentication Dial In User Service
- * (RADIUS) server.
+ * Contains information about a Remote Authentication Dial In User Service (RADIUS) server.
  * </p>
  */
 public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.
+     * An array of strings that contains the IP addresses of the RADIUS server endpoints, or the IP addresses of your
+     * RADIUS server load balancer.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> radiusServers;
     /**
      * <p>
-     * The port that your RADIUS server is using for communications. Your
-     * on-premises network must allow inbound traffic over this port from the
-     * AWS Directory Service servers.
+     * The port that your RADIUS server is using for communications. Your on-premises network must allow inbound traffic
+     * over this port from the AWS Directory Service servers.
      * </p>
      */
     private Integer radiusPort;
@@ -47,8 +43,7 @@ public class RadiusSettings implements Serializable, Cloneable {
     private Integer radiusTimeout;
     /**
      * <p>
-     * The maximum number of times that communication with the RADIUS server is
-     * attempted.
+     * The maximum number of times that communication with the RADIUS server is attempted.
      * </p>
      */
     private Integer radiusRetries;
@@ -79,13 +74,12 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.
+     * An array of strings that contains the IP addresses of the RADIUS server endpoints, or the IP addresses of your
+     * RADIUS server load balancer.
      * </p>
      * 
-     * @return An array of strings that contains the IP addresses of the RADIUS
-     *         server endpoints, or the IP addresses of your RADIUS server load
-     *         balancer.
+     * @return An array of strings that contains the IP addresses of the RADIUS server endpoints, or the IP addresses of
+     *         your RADIUS server load balancer.
      */
 
     public java.util.List<String> getRadiusServers() {
@@ -97,14 +91,13 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.
+     * An array of strings that contains the IP addresses of the RADIUS server endpoints, or the IP addresses of your
+     * RADIUS server load balancer.
      * </p>
      * 
      * @param radiusServers
-     *        An array of strings that contains the IP addresses of the RADIUS
-     *        server endpoints, or the IP addresses of your RADIUS server load
-     *        balancer.
+     *        An array of strings that contains the IP addresses of the RADIUS server endpoints, or the IP addresses of
+     *        your RADIUS server load balancer.
      */
 
     public void setRadiusServers(java.util.Collection<String> radiusServers) {
@@ -113,34 +106,29 @@ public class RadiusSettings implements Serializable, Cloneable {
             return;
         }
 
-        this.radiusServers = new com.amazonaws.internal.SdkInternalList<String>(
-                radiusServers);
+        this.radiusServers = new com.amazonaws.internal.SdkInternalList<String>(radiusServers);
     }
 
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.
+     * An array of strings that contains the IP addresses of the RADIUS server endpoints, or the IP addresses of your
+     * RADIUS server load balancer.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRadiusServers(java.util.Collection)} or
-     * {@link #withRadiusServers(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRadiusServers(java.util.Collection)} or {@link #withRadiusServers(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param radiusServers
-     *        An array of strings that contains the IP addresses of the RADIUS
-     *        server endpoints, or the IP addresses of your RADIUS server load
-     *        balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of strings that contains the IP addresses of the RADIUS server endpoints, or the IP addresses of
+     *        your RADIUS server load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RadiusSettings withRadiusServers(String... radiusServers) {
         if (this.radiusServers == null) {
-            setRadiusServers(new com.amazonaws.internal.SdkInternalList<String>(
-                    radiusServers.length));
+            setRadiusServers(new com.amazonaws.internal.SdkInternalList<String>(radiusServers.length));
         }
         for (String ele : radiusServers) {
             this.radiusServers.add(ele);
@@ -150,35 +138,30 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the RADIUS server
-     * endpoints, or the IP addresses of your RADIUS server load balancer.
+     * An array of strings that contains the IP addresses of the RADIUS server endpoints, or the IP addresses of your
+     * RADIUS server load balancer.
      * </p>
      * 
      * @param radiusServers
-     *        An array of strings that contains the IP addresses of the RADIUS
-     *        server endpoints, or the IP addresses of your RADIUS server load
-     *        balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of strings that contains the IP addresses of the RADIUS server endpoints, or the IP addresses of
+     *        your RADIUS server load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RadiusSettings withRadiusServers(
-            java.util.Collection<String> radiusServers) {
+    public RadiusSettings withRadiusServers(java.util.Collection<String> radiusServers) {
         setRadiusServers(radiusServers);
         return this;
     }
 
     /**
      * <p>
-     * The port that your RADIUS server is using for communications. Your
-     * on-premises network must allow inbound traffic over this port from the
-     * AWS Directory Service servers.
+     * The port that your RADIUS server is using for communications. Your on-premises network must allow inbound traffic
+     * over this port from the AWS Directory Service servers.
      * </p>
      * 
      * @param radiusPort
-     *        The port that your RADIUS server is using for communications. Your
-     *        on-premises network must allow inbound traffic over this port from
-     *        the AWS Directory Service servers.
+     *        The port that your RADIUS server is using for communications. Your on-premises network must allow inbound
+     *        traffic over this port from the AWS Directory Service servers.
      */
 
     public void setRadiusPort(Integer radiusPort) {
@@ -187,14 +170,12 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port that your RADIUS server is using for communications. Your
-     * on-premises network must allow inbound traffic over this port from the
-     * AWS Directory Service servers.
+     * The port that your RADIUS server is using for communications. Your on-premises network must allow inbound traffic
+     * over this port from the AWS Directory Service servers.
      * </p>
      * 
-     * @return The port that your RADIUS server is using for communications.
-     *         Your on-premises network must allow inbound traffic over this
-     *         port from the AWS Directory Service servers.
+     * @return The port that your RADIUS server is using for communications. Your on-premises network must allow inbound
+     *         traffic over this port from the AWS Directory Service servers.
      */
 
     public Integer getRadiusPort() {
@@ -203,17 +184,14 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port that your RADIUS server is using for communications. Your
-     * on-premises network must allow inbound traffic over this port from the
-     * AWS Directory Service servers.
+     * The port that your RADIUS server is using for communications. Your on-premises network must allow inbound traffic
+     * over this port from the AWS Directory Service servers.
      * </p>
      * 
      * @param radiusPort
-     *        The port that your RADIUS server is using for communications. Your
-     *        on-premises network must allow inbound traffic over this port from
-     *        the AWS Directory Service servers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The port that your RADIUS server is using for communications. Your on-premises network must allow inbound
+     *        traffic over this port from the AWS Directory Service servers.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RadiusSettings withRadiusPort(Integer radiusPort) {
@@ -227,8 +205,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * </p>
      * 
      * @param radiusTimeout
-     *        The amount of time, in seconds, to wait for the RADIUS server to
-     *        respond.
+     *        The amount of time, in seconds, to wait for the RADIUS server to respond.
      */
 
     public void setRadiusTimeout(Integer radiusTimeout) {
@@ -240,8 +217,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * The amount of time, in seconds, to wait for the RADIUS server to respond.
      * </p>
      * 
-     * @return The amount of time, in seconds, to wait for the RADIUS server to
-     *         respond.
+     * @return The amount of time, in seconds, to wait for the RADIUS server to respond.
      */
 
     public Integer getRadiusTimeout() {
@@ -254,10 +230,8 @@ public class RadiusSettings implements Serializable, Cloneable {
      * </p>
      * 
      * @param radiusTimeout
-     *        The amount of time, in seconds, to wait for the RADIUS server to
-     *        respond.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The amount of time, in seconds, to wait for the RADIUS server to respond.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RadiusSettings withRadiusTimeout(Integer radiusTimeout) {
@@ -267,13 +241,11 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of times that communication with the RADIUS server is
-     * attempted.
+     * The maximum number of times that communication with the RADIUS server is attempted.
      * </p>
      * 
      * @param radiusRetries
-     *        The maximum number of times that communication with the RADIUS
-     *        server is attempted.
+     *        The maximum number of times that communication with the RADIUS server is attempted.
      */
 
     public void setRadiusRetries(Integer radiusRetries) {
@@ -282,12 +254,10 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of times that communication with the RADIUS server is
-     * attempted.
+     * The maximum number of times that communication with the RADIUS server is attempted.
      * </p>
      * 
-     * @return The maximum number of times that communication with the RADIUS
-     *         server is attempted.
+     * @return The maximum number of times that communication with the RADIUS server is attempted.
      */
 
     public Integer getRadiusRetries() {
@@ -296,15 +266,12 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of times that communication with the RADIUS server is
-     * attempted.
+     * The maximum number of times that communication with the RADIUS server is attempted.
      * </p>
      * 
      * @param radiusRetries
-     *        The maximum number of times that communication with the RADIUS
-     *        server is attempted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of times that communication with the RADIUS server is attempted.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RadiusSettings withRadiusRetries(Integer radiusRetries) {
@@ -344,8 +311,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * 
      * @param sharedSecret
      *        Not currently used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RadiusSettings withSharedSecret(String sharedSecret) {
@@ -387,13 +353,11 @@ public class RadiusSettings implements Serializable, Cloneable {
      * 
      * @param authenticationProtocol
      *        The protocol specified for your RADIUS endpoints.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RadiusAuthenticationProtocol
      */
 
-    public RadiusSettings withAuthenticationProtocol(
-            String authenticationProtocol) {
+    public RadiusSettings withAuthenticationProtocol(String authenticationProtocol) {
         setAuthenticationProtocol(authenticationProtocol);
         return this;
     }
@@ -408,8 +372,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @see RadiusAuthenticationProtocol
      */
 
-    public void setAuthenticationProtocol(
-            RadiusAuthenticationProtocol authenticationProtocol) {
+    public void setAuthenticationProtocol(RadiusAuthenticationProtocol authenticationProtocol) {
         this.authenticationProtocol = authenticationProtocol.toString();
     }
 
@@ -420,13 +383,11 @@ public class RadiusSettings implements Serializable, Cloneable {
      * 
      * @param authenticationProtocol
      *        The protocol specified for your RADIUS endpoints.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RadiusAuthenticationProtocol
      */
 
-    public RadiusSettings withAuthenticationProtocol(
-            RadiusAuthenticationProtocol authenticationProtocol) {
+    public RadiusSettings withAuthenticationProtocol(RadiusAuthenticationProtocol authenticationProtocol) {
         setAuthenticationProtocol(authenticationProtocol);
         return this;
     }
@@ -463,8 +424,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * 
      * @param displayLabel
      *        Not currently used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RadiusSettings withDisplayLabel(String displayLabel) {
@@ -504,8 +464,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * 
      * @param useSameUsername
      *        Not currently used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RadiusSettings withUseSameUsername(Boolean useSameUsername) {
@@ -526,8 +485,7 @@ public class RadiusSettings implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -548,8 +506,7 @@ public class RadiusSettings implements Serializable, Cloneable {
         if (getSharedSecret() != null)
             sb.append("SharedSecret: " + getSharedSecret() + ",");
         if (getAuthenticationProtocol() != null)
-            sb.append("AuthenticationProtocol: " + getAuthenticationProtocol()
-                    + ",");
+            sb.append("AuthenticationProtocol: " + getAuthenticationProtocol() + ",");
         if (getDisplayLabel() != null)
             sb.append("DisplayLabel: " + getDisplayLabel() + ",");
         if (getUseSameUsername() != null)
@@ -570,46 +527,35 @@ public class RadiusSettings implements Serializable, Cloneable {
         RadiusSettings other = (RadiusSettings) obj;
         if (other.getRadiusServers() == null ^ this.getRadiusServers() == null)
             return false;
-        if (other.getRadiusServers() != null
-                && other.getRadiusServers().equals(this.getRadiusServers()) == false)
+        if (other.getRadiusServers() != null && other.getRadiusServers().equals(this.getRadiusServers()) == false)
             return false;
         if (other.getRadiusPort() == null ^ this.getRadiusPort() == null)
             return false;
-        if (other.getRadiusPort() != null
-                && other.getRadiusPort().equals(this.getRadiusPort()) == false)
+        if (other.getRadiusPort() != null && other.getRadiusPort().equals(this.getRadiusPort()) == false)
             return false;
         if (other.getRadiusTimeout() == null ^ this.getRadiusTimeout() == null)
             return false;
-        if (other.getRadiusTimeout() != null
-                && other.getRadiusTimeout().equals(this.getRadiusTimeout()) == false)
+        if (other.getRadiusTimeout() != null && other.getRadiusTimeout().equals(this.getRadiusTimeout()) == false)
             return false;
         if (other.getRadiusRetries() == null ^ this.getRadiusRetries() == null)
             return false;
-        if (other.getRadiusRetries() != null
-                && other.getRadiusRetries().equals(this.getRadiusRetries()) == false)
+        if (other.getRadiusRetries() != null && other.getRadiusRetries().equals(this.getRadiusRetries()) == false)
             return false;
         if (other.getSharedSecret() == null ^ this.getSharedSecret() == null)
             return false;
-        if (other.getSharedSecret() != null
-                && other.getSharedSecret().equals(this.getSharedSecret()) == false)
+        if (other.getSharedSecret() != null && other.getSharedSecret().equals(this.getSharedSecret()) == false)
             return false;
-        if (other.getAuthenticationProtocol() == null
-                ^ this.getAuthenticationProtocol() == null)
+        if (other.getAuthenticationProtocol() == null ^ this.getAuthenticationProtocol() == null)
             return false;
-        if (other.getAuthenticationProtocol() != null
-                && other.getAuthenticationProtocol().equals(
-                        this.getAuthenticationProtocol()) == false)
+        if (other.getAuthenticationProtocol() != null && other.getAuthenticationProtocol().equals(this.getAuthenticationProtocol()) == false)
             return false;
         if (other.getDisplayLabel() == null ^ this.getDisplayLabel() == null)
             return false;
-        if (other.getDisplayLabel() != null
-                && other.getDisplayLabel().equals(this.getDisplayLabel()) == false)
+        if (other.getDisplayLabel() != null && other.getDisplayLabel().equals(this.getDisplayLabel()) == false)
             return false;
-        if (other.getUseSameUsername() == null
-                ^ this.getUseSameUsername() == null)
+        if (other.getUseSameUsername() == null ^ this.getUseSameUsername() == null)
             return false;
-        if (other.getUseSameUsername() != null
-                && other.getUseSameUsername().equals(this.getUseSameUsername()) == false)
+        if (other.getUseSameUsername() != null && other.getUseSameUsername().equals(this.getUseSameUsername()) == false)
             return false;
         return true;
     }
@@ -619,36 +565,14 @@ public class RadiusSettings implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRadiusServers() == null) ? 0 : getRadiusServers()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getRadiusPort() == null) ? 0 : getRadiusPort().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRadiusTimeout() == null) ? 0 : getRadiusTimeout()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRadiusRetries() == null) ? 0 : getRadiusRetries()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSharedSecret() == null) ? 0 : getSharedSecret()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAuthenticationProtocol() == null) ? 0
-                        : getAuthenticationProtocol().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDisplayLabel() == null) ? 0 : getDisplayLabel()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUseSameUsername() == null) ? 0 : getUseSameUsername()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRadiusServers() == null) ? 0 : getRadiusServers().hashCode());
+        hashCode = prime * hashCode + ((getRadiusPort() == null) ? 0 : getRadiusPort().hashCode());
+        hashCode = prime * hashCode + ((getRadiusTimeout() == null) ? 0 : getRadiusTimeout().hashCode());
+        hashCode = prime * hashCode + ((getRadiusRetries() == null) ? 0 : getRadiusRetries().hashCode());
+        hashCode = prime * hashCode + ((getSharedSecret() == null) ? 0 : getSharedSecret().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticationProtocol() == null) ? 0 : getAuthenticationProtocol().hashCode());
+        hashCode = prime * hashCode + ((getDisplayLabel() == null) ? 0 : getDisplayLabel().hashCode());
+        hashCode = prime * hashCode + ((getUseSameUsername() == null) ? 0 : getUseSameUsername().hashCode());
         return hashCode;
     }
 
@@ -657,9 +581,7 @@ public class RadiusSettings implements Serializable, Cloneable {
         try {
             return (RadiusSettings) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

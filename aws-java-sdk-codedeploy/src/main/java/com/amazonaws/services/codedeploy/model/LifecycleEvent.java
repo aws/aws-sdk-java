@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -25,8 +23,8 @@ public class LifecycleEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The deployment lifecycle event name, such as ApplicationStop,
-     * BeforeInstall, AfterInstall, ApplicationStart, or ValidateService.
+     * The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or
+     * ValidateService.
      * </p>
      */
     private String lifecycleEventName;
@@ -89,13 +87,13 @@ public class LifecycleEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The deployment lifecycle event name, such as ApplicationStop,
-     * BeforeInstall, AfterInstall, ApplicationStart, or ValidateService.
+     * The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or
+     * ValidateService.
      * </p>
      * 
      * @param lifecycleEventName
-     *        The deployment lifecycle event name, such as ApplicationStop,
-     *        BeforeInstall, AfterInstall, ApplicationStart, or ValidateService.
+     *        The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall,
+     *        ApplicationStart, or ValidateService.
      */
 
     public void setLifecycleEventName(String lifecycleEventName) {
@@ -104,13 +102,12 @@ public class LifecycleEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The deployment lifecycle event name, such as ApplicationStop,
-     * BeforeInstall, AfterInstall, ApplicationStart, or ValidateService.
+     * The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or
+     * ValidateService.
      * </p>
      * 
-     * @return The deployment lifecycle event name, such as ApplicationStop,
-     *         BeforeInstall, AfterInstall, ApplicationStart, or
-     *         ValidateService.
+     * @return The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall,
+     *         ApplicationStart, or ValidateService.
      */
 
     public String getLifecycleEventName() {
@@ -119,15 +116,14 @@ public class LifecycleEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The deployment lifecycle event name, such as ApplicationStop,
-     * BeforeInstall, AfterInstall, ApplicationStart, or ValidateService.
+     * The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or
+     * ValidateService.
      * </p>
      * 
      * @param lifecycleEventName
-     *        The deployment lifecycle event name, such as ApplicationStop,
-     *        BeforeInstall, AfterInstall, ApplicationStart, or ValidateService.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall,
+     *        ApplicationStart, or ValidateService.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LifecycleEvent withLifecycleEventName(String lifecycleEventName) {
@@ -167,8 +163,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * 
      * @param diagnostics
      *        Diagnostic information about the deployment lifecycle event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LifecycleEvent withDiagnostics(Diagnostics diagnostics) {
@@ -182,8 +177,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * </p>
      * 
      * @param startTime
-     *        A timestamp indicating when the deployment lifecycle event
-     *        started.
+     *        A timestamp indicating when the deployment lifecycle event started.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -195,8 +189,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * A timestamp indicating when the deployment lifecycle event started.
      * </p>
      * 
-     * @return A timestamp indicating when the deployment lifecycle event
-     *         started.
+     * @return A timestamp indicating when the deployment lifecycle event started.
      */
 
     public java.util.Date getStartTime() {
@@ -209,10 +202,8 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * </p>
      * 
      * @param startTime
-     *        A timestamp indicating when the deployment lifecycle event
-     *        started.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A timestamp indicating when the deployment lifecycle event started.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LifecycleEvent withStartTime(java.util.Date startTime) {
@@ -252,8 +243,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * 
      * @param endTime
      *        A timestamp indicating when the deployment lifecycle event ended.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LifecycleEvent withEndTime(java.util.Date endTime) {
@@ -484,8 +474,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      *        Unknown: The deployment lifecycle event is unknown.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifecycleEventStatus
      */
 
@@ -641,8 +630,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      *        Unknown: The deployment lifecycle event is unknown.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifecycleEventStatus
      */
 
@@ -652,8 +640,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -687,32 +674,25 @@ public class LifecycleEvent implements Serializable, Cloneable {
         if (obj instanceof LifecycleEvent == false)
             return false;
         LifecycleEvent other = (LifecycleEvent) obj;
-        if (other.getLifecycleEventName() == null
-                ^ this.getLifecycleEventName() == null)
+        if (other.getLifecycleEventName() == null ^ this.getLifecycleEventName() == null)
             return false;
-        if (other.getLifecycleEventName() != null
-                && other.getLifecycleEventName().equals(
-                        this.getLifecycleEventName()) == false)
+        if (other.getLifecycleEventName() != null && other.getLifecycleEventName().equals(this.getLifecycleEventName()) == false)
             return false;
         if (other.getDiagnostics() == null ^ this.getDiagnostics() == null)
             return false;
-        if (other.getDiagnostics() != null
-                && other.getDiagnostics().equals(this.getDiagnostics()) == false)
+        if (other.getDiagnostics() != null && other.getDiagnostics().equals(this.getDiagnostics()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
-        if (other.getStartTime() != null
-                && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
-        if (other.getEndTime() != null
-                && other.getEndTime().equals(this.getEndTime()) == false)
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -722,19 +702,11 @@ public class LifecycleEvent implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLifecycleEventName() == null) ? 0
-                        : getLifecycleEventName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDiagnostics() == null) ? 0 : getDiagnostics().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleEventName() == null) ? 0 : getLifecycleEventName().hashCode());
+        hashCode = prime * hashCode + ((getDiagnostics() == null) ? 0 : getDiagnostics().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 
@@ -743,9 +715,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
         try {
             return (LifecycleEvent) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

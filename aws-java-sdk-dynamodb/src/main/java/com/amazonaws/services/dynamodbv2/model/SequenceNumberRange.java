@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The beginning and ending sequence numbers for the stream records contained
- * within a shard.
+ * The beginning and ending sequence numbers for the stream records contained within a shard.
  * </p>
  */
 public class SequenceNumberRange implements Serializable, Cloneable {
@@ -69,12 +66,10 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * 
      * @param startingSequenceNumber
      *        The first sequence number.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SequenceNumberRange withStartingSequenceNumber(
-            String startingSequenceNumber) {
+    public SequenceNumberRange withStartingSequenceNumber(String startingSequenceNumber) {
         setStartingSequenceNumber(startingSequenceNumber);
         return this;
     }
@@ -111,19 +106,16 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * 
      * @param endingSequenceNumber
      *        The last sequence number.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SequenceNumberRange withEndingSequenceNumber(
-            String endingSequenceNumber) {
+    public SequenceNumberRange withEndingSequenceNumber(String endingSequenceNumber) {
         setEndingSequenceNumber(endingSequenceNumber);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -134,8 +126,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStartingSequenceNumber() != null)
-            sb.append("StartingSequenceNumber: " + getStartingSequenceNumber()
-                    + ",");
+            sb.append("StartingSequenceNumber: " + getStartingSequenceNumber() + ",");
         if (getEndingSequenceNumber() != null)
             sb.append("EndingSequenceNumber: " + getEndingSequenceNumber());
         sb.append("}");
@@ -152,19 +143,13 @@ public class SequenceNumberRange implements Serializable, Cloneable {
         if (obj instanceof SequenceNumberRange == false)
             return false;
         SequenceNumberRange other = (SequenceNumberRange) obj;
-        if (other.getStartingSequenceNumber() == null
-                ^ this.getStartingSequenceNumber() == null)
+        if (other.getStartingSequenceNumber() == null ^ this.getStartingSequenceNumber() == null)
             return false;
-        if (other.getStartingSequenceNumber() != null
-                && other.getStartingSequenceNumber().equals(
-                        this.getStartingSequenceNumber()) == false)
+        if (other.getStartingSequenceNumber() != null && other.getStartingSequenceNumber().equals(this.getStartingSequenceNumber()) == false)
             return false;
-        if (other.getEndingSequenceNumber() == null
-                ^ this.getEndingSequenceNumber() == null)
+        if (other.getEndingSequenceNumber() == null ^ this.getEndingSequenceNumber() == null)
             return false;
-        if (other.getEndingSequenceNumber() != null
-                && other.getEndingSequenceNumber().equals(
-                        this.getEndingSequenceNumber()) == false)
+        if (other.getEndingSequenceNumber() != null && other.getEndingSequenceNumber().equals(this.getEndingSequenceNumber()) == false)
             return false;
         return true;
     }
@@ -174,14 +159,8 @@ public class SequenceNumberRange implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getStartingSequenceNumber() == null) ? 0
-                        : getStartingSequenceNumber().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEndingSequenceNumber() == null) ? 0
-                        : getEndingSequenceNumber().hashCode());
+        hashCode = prime * hashCode + ((getStartingSequenceNumber() == null) ? 0 : getStartingSequenceNumber().hashCode());
+        hashCode = prime * hashCode + ((getEndingSequenceNumber() == null) ? 0 : getEndingSequenceNumber().hashCode());
         return hashCode;
     }
 
@@ -190,9 +169,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
         try {
             return (SequenceNumberRange) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to update the device status, as an administrator.
  * </p>
  */
-public class AdminUpdateDeviceStatusRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -83,8 +79,7 @@ public class AdminUpdateDeviceStatusRequest extends
      * 
      * @param userPoolId
      *        The user pool ID>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminUpdateDeviceStatusRequest withUserPoolId(String userPoolId) {
@@ -124,8 +119,7 @@ public class AdminUpdateDeviceStatusRequest extends
      * 
      * @param username
      *        The user name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminUpdateDeviceStatusRequest withUsername(String username) {
@@ -165,8 +159,7 @@ public class AdminUpdateDeviceStatusRequest extends
      * 
      * @param deviceKey
      *        The device key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminUpdateDeviceStatusRequest withDeviceKey(String deviceKey) {
@@ -193,8 +186,7 @@ public class AdminUpdateDeviceStatusRequest extends
      * The status indicating whether a device has been remembered or not.
      * </p>
      * 
-     * @return The status indicating whether a device has been remembered or
-     *         not.
+     * @return The status indicating whether a device has been remembered or not.
      * @see DeviceRememberedStatusType
      */
 
@@ -209,13 +201,11 @@ public class AdminUpdateDeviceStatusRequest extends
      * 
      * @param deviceRememberedStatus
      *        The status indicating whether a device has been remembered or not.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceRememberedStatusType
      */
 
-    public AdminUpdateDeviceStatusRequest withDeviceRememberedStatus(
-            String deviceRememberedStatus) {
+    public AdminUpdateDeviceStatusRequest withDeviceRememberedStatus(String deviceRememberedStatus) {
         setDeviceRememberedStatus(deviceRememberedStatus);
         return this;
     }
@@ -230,8 +220,7 @@ public class AdminUpdateDeviceStatusRequest extends
      * @see DeviceRememberedStatusType
      */
 
-    public void setDeviceRememberedStatus(
-            DeviceRememberedStatusType deviceRememberedStatus) {
+    public void setDeviceRememberedStatus(DeviceRememberedStatusType deviceRememberedStatus) {
         this.deviceRememberedStatus = deviceRememberedStatus.toString();
     }
 
@@ -242,20 +231,17 @@ public class AdminUpdateDeviceStatusRequest extends
      * 
      * @param deviceRememberedStatus
      *        The status indicating whether a device has been remembered or not.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceRememberedStatusType
      */
 
-    public AdminUpdateDeviceStatusRequest withDeviceRememberedStatus(
-            DeviceRememberedStatusType deviceRememberedStatus) {
+    public AdminUpdateDeviceStatusRequest withDeviceRememberedStatus(DeviceRememberedStatusType deviceRememberedStatus) {
         setDeviceRememberedStatus(deviceRememberedStatus);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -289,25 +275,19 @@ public class AdminUpdateDeviceStatusRequest extends
         AdminUpdateDeviceStatusRequest other = (AdminUpdateDeviceStatusRequest) obj;
         if (other.getUserPoolId() == null ^ this.getUserPoolId() == null)
             return false;
-        if (other.getUserPoolId() != null
-                && other.getUserPoolId().equals(this.getUserPoolId()) == false)
+        if (other.getUserPoolId() != null && other.getUserPoolId().equals(this.getUserPoolId()) == false)
             return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
-        if (other.getUsername() != null
-                && other.getUsername().equals(this.getUsername()) == false)
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
         if (other.getDeviceKey() == null ^ this.getDeviceKey() == null)
             return false;
-        if (other.getDeviceKey() != null
-                && other.getDeviceKey().equals(this.getDeviceKey()) == false)
+        if (other.getDeviceKey() != null && other.getDeviceKey().equals(this.getDeviceKey()) == false)
             return false;
-        if (other.getDeviceRememberedStatus() == null
-                ^ this.getDeviceRememberedStatus() == null)
+        if (other.getDeviceRememberedStatus() == null ^ this.getDeviceRememberedStatus() == null)
             return false;
-        if (other.getDeviceRememberedStatus() != null
-                && other.getDeviceRememberedStatus().equals(
-                        this.getDeviceRememberedStatus()) == false)
+        if (other.getDeviceRememberedStatus() != null && other.getDeviceRememberedStatus().equals(this.getDeviceRememberedStatus()) == false)
             return false;
         return true;
     }
@@ -317,16 +297,10 @@ public class AdminUpdateDeviceStatusRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        hashCode = prime * hashCode
-                + ((getDeviceKey() == null) ? 0 : getDeviceKey().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeviceRememberedStatus() == null) ? 0
-                        : getDeviceRememberedStatus().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getDeviceKey() == null) ? 0 : getDeviceKey().hashCode());
+        hashCode = prime * hashCode + ((getDeviceRememberedStatus() == null) ? 0 : getDeviceRememberedStatus().hashCode());
         return hashCode;
     }
 

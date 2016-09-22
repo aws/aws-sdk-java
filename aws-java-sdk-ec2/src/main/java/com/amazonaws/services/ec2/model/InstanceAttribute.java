@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -55,23 +53,21 @@ public class InstanceAttribute implements Serializable, Cloneable {
     private String userData;
     /**
      * <p>
-     * If the value is <code>true</code>, you can't terminate the instance
-     * through the Amazon EC2 console, CLI, or API; otherwise, you can.
+     * If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API;
+     * otherwise, you can.
      * </p>
      */
     private Boolean disableApiTermination;
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      */
     private String instanceInitiatedShutdownBehavior;
     /**
      * <p>
-     * The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).
+     * The name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      * </p>
      */
     private String rootDeviceName;
@@ -95,8 +91,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
     private Boolean ebsOptimized;
     /**
      * <p>
-     * Indicates whether enhanced networking with the Intel 82599 Virtual
-     * Function interface is enabled.
+     * Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      */
     private String sriovNetSupport;
@@ -108,10 +103,9 @@ public class InstanceAttribute implements Serializable, Cloneable {
     private Boolean enaSupport;
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
+     * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
+     * perform NAT.
      * </p>
      */
     private Boolean sourceDestCheck;
@@ -154,8 +148,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @param instanceId
      *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceAttribute withInstanceId(String instanceId) {
@@ -195,8 +188,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceAttribute withInstanceType(String instanceType) {
@@ -236,8 +228,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @param kernelId
      *        The kernel ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceAttribute withKernelId(String kernelId) {
@@ -277,8 +268,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @param ramdiskId
      *        The RAM disk ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceAttribute withRamdiskId(String ramdiskId) {
@@ -318,8 +308,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @param userData
      *        The user data.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceAttribute withUserData(String userData) {
@@ -329,14 +318,13 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value is <code>true</code>, you can't terminate the instance
-     * through the Amazon EC2 console, CLI, or API; otherwise, you can.
+     * If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API;
+     * otherwise, you can.
      * </p>
      * 
      * @param disableApiTermination
-     *        If the value is <code>true</code>, you can't terminate the
-     *        instance through the Amazon EC2 console, CLI, or API; otherwise,
-     *        you can.
+     *        If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI,
+     *        or API; otherwise, you can.
      */
 
     public void setDisableApiTermination(Boolean disableApiTermination) {
@@ -345,13 +333,12 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value is <code>true</code>, you can't terminate the instance
-     * through the Amazon EC2 console, CLI, or API; otherwise, you can.
+     * If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API;
+     * otherwise, you can.
      * </p>
      * 
-     * @return If the value is <code>true</code>, you can't terminate the
-     *         instance through the Amazon EC2 console, CLI, or API; otherwise,
-     *         you can.
+     * @return If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI,
+     *         or API; otherwise, you can.
      */
 
     public Boolean getDisableApiTermination() {
@@ -360,33 +347,29 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value is <code>true</code>, you can't terminate the instance
-     * through the Amazon EC2 console, CLI, or API; otherwise, you can.
+     * If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API;
+     * otherwise, you can.
      * </p>
      * 
      * @param disableApiTermination
-     *        If the value is <code>true</code>, you can't terminate the
-     *        instance through the Amazon EC2 console, CLI, or API; otherwise,
-     *        you can.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI,
+     *        or API; otherwise, you can.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceAttribute withDisableApiTermination(
-            Boolean disableApiTermination) {
+    public InstanceAttribute withDisableApiTermination(Boolean disableApiTermination) {
         setDisableApiTermination(disableApiTermination);
         return this;
     }
 
     /**
      * <p>
-     * If the value is <code>true</code>, you can't terminate the instance
-     * through the Amazon EC2 console, CLI, or API; otherwise, you can.
+     * If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API;
+     * otherwise, you can.
      * </p>
      * 
-     * @return If the value is <code>true</code>, you can't terminate the
-     *         instance through the Amazon EC2 console, CLI, or API; otherwise,
-     *         you can.
+     * @return If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI,
+     *         or API; otherwise, you can.
      */
 
     public Boolean isDisableApiTermination() {
@@ -395,32 +378,27 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * 
      * @param instanceInitiatedShutdownBehavior
-     *        Indicates whether an instance stops or terminates when you
-     *        initiate shutdown from the instance (using the operating system
-     *        command for system shutdown).
+     *        Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     *        operating system command for system shutdown).
      */
 
-    public void setInstanceInitiatedShutdownBehavior(
-            String instanceInitiatedShutdownBehavior) {
+    public void setInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
     }
 
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * 
-     * @return Indicates whether an instance stops or terminates when you
-     *         initiate shutdown from the instance (using the operating system
-     *         command for system shutdown).
+     * @return Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     *         operating system command for system shutdown).
      */
 
     public String getInstanceInitiatedShutdownBehavior() {
@@ -429,34 +407,28 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether an instance stops or terminates when you initiate
-     * shutdown from the instance (using the operating system command for system
-     * shutdown).
+     * Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     * operating system command for system shutdown).
      * </p>
      * 
      * @param instanceInitiatedShutdownBehavior
-     *        Indicates whether an instance stops or terminates when you
-     *        initiate shutdown from the instance (using the operating system
-     *        command for system shutdown).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the
+     *        operating system command for system shutdown).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceAttribute withInstanceInitiatedShutdownBehavior(
-            String instanceInitiatedShutdownBehavior) {
+    public InstanceAttribute withInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
         setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
         return this;
     }
 
     /**
      * <p>
-     * The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).
+     * The name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      * </p>
      * 
      * @param rootDeviceName
-     *        The name of the root device (for example, <code>/dev/sda1</code>
-     *        or <code>/dev/xvda</code>).
+     *        The name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      */
 
     public void setRootDeviceName(String rootDeviceName) {
@@ -465,12 +437,10 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).
+     * The name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      * </p>
      * 
-     * @return The name of the root device (for example, <code>/dev/sda1</code>
-     *         or <code>/dev/xvda</code>).
+     * @return The name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      */
 
     public String getRootDeviceName() {
@@ -479,15 +449,12 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).
+     * The name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      * </p>
      * 
      * @param rootDeviceName
-     *        The name of the root device (for example, <code>/dev/sda1</code>
-     *        or <code>/dev/xvda</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceAttribute withRootDeviceName(String rootDeviceName) {
@@ -519,15 +486,13 @@ public class InstanceAttribute implements Serializable, Cloneable {
      *        The block device mapping of the instance.
      */
 
-    public void setBlockDeviceMappings(
-            java.util.Collection<InstanceBlockDeviceMapping> blockDeviceMappings) {
+    public void setBlockDeviceMappings(java.util.Collection<InstanceBlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
             return;
         }
 
-        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMapping>(
-                blockDeviceMappings);
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMapping>(blockDeviceMappings);
     }
 
     /**
@@ -535,23 +500,19 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * The block device mapping of the instance.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
-     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param blockDeviceMappings
      *        The block device mapping of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceAttribute withBlockDeviceMappings(
-            InstanceBlockDeviceMapping... blockDeviceMappings) {
+    public InstanceAttribute withBlockDeviceMappings(InstanceBlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
-            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMapping>(
-                    blockDeviceMappings.length));
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMapping>(blockDeviceMappings.length));
         }
         for (InstanceBlockDeviceMapping ele : blockDeviceMappings) {
             this.blockDeviceMappings.add(ele);
@@ -566,12 +527,10 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @param blockDeviceMappings
      *        The block device mapping of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceAttribute withBlockDeviceMappings(
-            java.util.Collection<InstanceBlockDeviceMapping> blockDeviceMappings) {
+    public InstanceAttribute withBlockDeviceMappings(java.util.Collection<InstanceBlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
         return this;
     }
@@ -606,8 +565,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
             return;
         }
 
-        this.productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>(
-                productCodes);
+        this.productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>(productCodes);
     }
 
     /**
@@ -615,22 +573,19 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * A list of product codes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setProductCodes(java.util.Collection)} or
-     * {@link #withProductCodes(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProductCodes(java.util.Collection)} or {@link #withProductCodes(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param productCodes
      *        A list of product codes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceAttribute withProductCodes(ProductCode... productCodes) {
         if (this.productCodes == null) {
-            setProductCodes(new com.amazonaws.internal.SdkInternalList<ProductCode>(
-                    productCodes.length));
+            setProductCodes(new com.amazonaws.internal.SdkInternalList<ProductCode>(productCodes.length));
         }
         for (ProductCode ele : productCodes) {
             this.productCodes.add(ele);
@@ -645,12 +600,10 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @param productCodes
      *        A list of product codes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceAttribute withProductCodes(
-            java.util.Collection<ProductCode> productCodes) {
+    public InstanceAttribute withProductCodes(java.util.Collection<ProductCode> productCodes) {
         setProductCodes(productCodes);
         return this;
     }
@@ -687,8 +640,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @param ebsOptimized
      *        Indicates whether the instance is optimized for EBS I/O.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceAttribute withEbsOptimized(Boolean ebsOptimized) {
@@ -710,13 +662,11 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether enhanced networking with the Intel 82599 Virtual
-     * Function interface is enabled.
+     * Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      * 
      * @param sriovNetSupport
-     *        Indicates whether enhanced networking with the Intel 82599 Virtual
-     *        Function interface is enabled.
+     *        Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      */
 
     public void setSriovNetSupport(String sriovNetSupport) {
@@ -725,12 +675,10 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether enhanced networking with the Intel 82599 Virtual
-     * Function interface is enabled.
+     * Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      * 
-     * @return Indicates whether enhanced networking with the Intel 82599
-     *         Virtual Function interface is enabled.
+     * @return Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      */
 
     public String getSriovNetSupport() {
@@ -739,15 +687,12 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether enhanced networking with the Intel 82599 Virtual
-     * Function interface is enabled.
+     * Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      * 
      * @param sriovNetSupport
-     *        Indicates whether enhanced networking with the Intel 82599 Virtual
-     *        Function interface is enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceAttribute withSriovNetSupport(String sriovNetSupport) {
@@ -787,8 +732,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @param enaSupport
      *        Indicates whether enhanced networking with ENA is enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceAttribute withEnaSupport(Boolean enaSupport) {
@@ -810,17 +754,15 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
+     * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
+     * perform NAT.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether source/destination checking is enabled. A value
-     *        of <code>true</code> means checking is enabled, and
-     *        <code>false</code> means checking is disabled. This value must be
-     *        <code>false</code> for a NAT instance to perform NAT.
+     *        Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is
+     *        enabled, and <code>false</code> means checking is disabled. This value must be <code>false</code> for a
+     *        NAT instance to perform NAT.
      */
 
     public void setSourceDestCheck(Boolean sourceDestCheck) {
@@ -829,16 +771,14 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
+     * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
+     * perform NAT.
      * </p>
      * 
-     * @return Indicates whether source/destination checking is enabled. A value
-     *         of <code>true</code> means checking is enabled, and
-     *         <code>false</code> means checking is disabled. This value must be
-     *         <code>false</code> for a NAT instance to perform NAT.
+     * @return Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is
+     *         enabled, and <code>false</code> means checking is disabled. This value must be <code>false</code> for a
+     *         NAT instance to perform NAT.
      */
 
     public Boolean getSourceDestCheck() {
@@ -847,19 +787,16 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
+     * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
+     * perform NAT.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether source/destination checking is enabled. A value
-     *        of <code>true</code> means checking is enabled, and
-     *        <code>false</code> means checking is disabled. This value must be
-     *        <code>false</code> for a NAT instance to perform NAT.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is
+     *        enabled, and <code>false</code> means checking is disabled. This value must be <code>false</code> for a
+     *        NAT instance to perform NAT.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceAttribute withSourceDestCheck(Boolean sourceDestCheck) {
@@ -869,16 +806,14 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
+     * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
+     * perform NAT.
      * </p>
      * 
-     * @return Indicates whether source/destination checking is enabled. A value
-     *         of <code>true</code> means checking is enabled, and
-     *         <code>false</code> means checking is disabled. This value must be
-     *         <code>false</code> for a NAT instance to perform NAT.
+     * @return Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is
+     *         enabled, and <code>false</code> means checking is disabled. This value must be <code>false</code> for a
+     *         NAT instance to perform NAT.
      */
 
     public Boolean isSourceDestCheck() {
@@ -915,8 +850,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
             return;
         }
 
-        this.groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
-                groups);
+        this.groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(groups);
     }
 
     /**
@@ -924,22 +858,19 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * The security groups associated with the instance.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGroups(java.util.Collection)} or
-     * {@link #withGroups(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param groups
      *        The security groups associated with the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceAttribute withGroups(GroupIdentifier... groups) {
         if (this.groups == null) {
-            setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
-                    groups.length));
+            setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(groups.length));
         }
         for (GroupIdentifier ele : groups) {
             this.groups.add(ele);
@@ -954,19 +885,16 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @param groups
      *        The security groups associated with the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceAttribute withGroups(
-            java.util.Collection<GroupIdentifier> groups) {
+    public InstanceAttribute withGroups(java.util.Collection<GroupIdentifier> groups) {
         setGroups(groups);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -987,11 +915,9 @@ public class InstanceAttribute implements Serializable, Cloneable {
         if (getUserData() != null)
             sb.append("UserData: " + getUserData() + ",");
         if (getDisableApiTermination() != null)
-            sb.append("DisableApiTermination: " + getDisableApiTermination()
-                    + ",");
+            sb.append("DisableApiTermination: " + getDisableApiTermination() + ",");
         if (getInstanceInitiatedShutdownBehavior() != null)
-            sb.append("InstanceInitiatedShutdownBehavior: "
-                    + getInstanceInitiatedShutdownBehavior() + ",");
+            sb.append("InstanceInitiatedShutdownBehavior: " + getInstanceInitiatedShutdownBehavior() + ",");
         if (getRootDeviceName() != null)
             sb.append("RootDeviceName: " + getRootDeviceName() + ",");
         if (getBlockDeviceMappings() != null)
@@ -1024,87 +950,64 @@ public class InstanceAttribute implements Serializable, Cloneable {
         InstanceAttribute other = (InstanceAttribute) obj;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getKernelId() == null ^ this.getKernelId() == null)
             return false;
-        if (other.getKernelId() != null
-                && other.getKernelId().equals(this.getKernelId()) == false)
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
             return false;
         if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
             return false;
-        if (other.getRamdiskId() != null
-                && other.getRamdiskId().equals(this.getRamdiskId()) == false)
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
             return false;
         if (other.getUserData() == null ^ this.getUserData() == null)
             return false;
-        if (other.getUserData() != null
-                && other.getUserData().equals(this.getUserData()) == false)
+        if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false)
             return false;
-        if (other.getDisableApiTermination() == null
-                ^ this.getDisableApiTermination() == null)
+        if (other.getDisableApiTermination() == null ^ this.getDisableApiTermination() == null)
             return false;
-        if (other.getDisableApiTermination() != null
-                && other.getDisableApiTermination().equals(
-                        this.getDisableApiTermination()) == false)
+        if (other.getDisableApiTermination() != null && other.getDisableApiTermination().equals(this.getDisableApiTermination()) == false)
             return false;
-        if (other.getInstanceInitiatedShutdownBehavior() == null
-                ^ this.getInstanceInitiatedShutdownBehavior() == null)
+        if (other.getInstanceInitiatedShutdownBehavior() == null ^ this.getInstanceInitiatedShutdownBehavior() == null)
             return false;
         if (other.getInstanceInitiatedShutdownBehavior() != null
-                && other.getInstanceInitiatedShutdownBehavior().equals(
-                        this.getInstanceInitiatedShutdownBehavior()) == false)
+                && other.getInstanceInitiatedShutdownBehavior().equals(this.getInstanceInitiatedShutdownBehavior()) == false)
             return false;
-        if (other.getRootDeviceName() == null
-                ^ this.getRootDeviceName() == null)
+        if (other.getRootDeviceName() == null ^ this.getRootDeviceName() == null)
             return false;
-        if (other.getRootDeviceName() != null
-                && other.getRootDeviceName().equals(this.getRootDeviceName()) == false)
+        if (other.getRootDeviceName() != null && other.getRootDeviceName().equals(this.getRootDeviceName()) == false)
             return false;
-        if (other.getBlockDeviceMappings() == null
-                ^ this.getBlockDeviceMappings() == null)
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
             return false;
-        if (other.getBlockDeviceMappings() != null
-                && other.getBlockDeviceMappings().equals(
-                        this.getBlockDeviceMappings()) == false)
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
         if (other.getProductCodes() == null ^ this.getProductCodes() == null)
             return false;
-        if (other.getProductCodes() != null
-                && other.getProductCodes().equals(this.getProductCodes()) == false)
+        if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false)
             return false;
         if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
             return false;
-        if (other.getEbsOptimized() != null
-                && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
+        if (other.getEbsOptimized() != null && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
             return false;
-        if (other.getSriovNetSupport() == null
-                ^ this.getSriovNetSupport() == null)
+        if (other.getSriovNetSupport() == null ^ this.getSriovNetSupport() == null)
             return false;
-        if (other.getSriovNetSupport() != null
-                && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
+        if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
             return false;
         if (other.getEnaSupport() == null ^ this.getEnaSupport() == null)
             return false;
-        if (other.getEnaSupport() != null
-                && other.getEnaSupport().equals(this.getEnaSupport()) == false)
+        if (other.getEnaSupport() != null && other.getEnaSupport().equals(this.getEnaSupport()) == false)
             return false;
-        if (other.getSourceDestCheck() == null
-                ^ this.getSourceDestCheck() == null)
+        if (other.getSourceDestCheck() == null ^ this.getSourceDestCheck() == null)
             return false;
-        if (other.getSourceDestCheck() != null
-                && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
+        if (other.getSourceDestCheck() != null && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
             return false;
         if (other.getGroups() == null ^ this.getGroups() == null)
             return false;
-        if (other.getGroups() != null
-                && other.getGroups().equals(this.getGroups()) == false)
+        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
             return false;
         return true;
     }
@@ -1114,54 +1017,21 @@ public class InstanceAttribute implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
-        hashCode = prime * hashCode
-                + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserData() == null) ? 0 : getUserData().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDisableApiTermination() == null) ? 0
-                        : getDisableApiTermination().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceInitiatedShutdownBehavior() == null) ? 0
-                        : getInstanceInitiatedShutdownBehavior().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRootDeviceName() == null) ? 0 : getRootDeviceName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBlockDeviceMappings() == null) ? 0
-                        : getBlockDeviceMappings().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProductCodes() == null) ? 0 : getProductCodes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEbsOptimized() == null) ? 0 : getEbsOptimized()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getGroups() == null) ? 0 : getGroups().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
+        hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
+        hashCode = prime * hashCode + ((getDisableApiTermination() == null) ? 0 : getDisableApiTermination().hashCode());
+        hashCode = prime * hashCode + ((getInstanceInitiatedShutdownBehavior() == null) ? 0 : getInstanceInitiatedShutdownBehavior().hashCode());
+        hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode());
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
+        hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode());
+        hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
+        hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode());
+        hashCode = prime * hashCode + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
+        hashCode = prime * hashCode + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck().hashCode());
+        hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
         return hashCode;
     }
 
@@ -1170,9 +1040,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
         try {
             return (InstanceAttribute) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

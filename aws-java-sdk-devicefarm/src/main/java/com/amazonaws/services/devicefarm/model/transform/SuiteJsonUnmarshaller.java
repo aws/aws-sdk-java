@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
@@ -29,8 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Suite JSON Unmarshaller
  */
-public class SuiteJsonUnmarshaller implements
-        Unmarshaller<Suite, JsonUnmarshallerContext> {
+public class SuiteJsonUnmarshaller implements Unmarshaller<Suite, JsonUnmarshallerContext> {
 
     public Suite unmarshall(JsonUnmarshallerContext context) throws Exception {
         Suite suite = new Suite();
@@ -52,63 +49,50 @@ public class SuiteJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    suite.setArn(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    suite.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    suite.setName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    suite.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    suite.setType(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    suite.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    suite.setCreated(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    suite.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    suite.setStatus(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    suite.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("result", targetDepth)) {
                     context.nextToken();
-                    suite.setResult(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    suite.setResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("started", targetDepth)) {
                     context.nextToken();
-                    suite.setStarted(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    suite.setStarted(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
                     context.nextToken();
-                    suite.setStopped(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    suite.setStopped(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("counters", targetDepth)) {
                     context.nextToken();
-                    suite.setCounters(CountersJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    suite.setCounters(CountersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    suite.setMessage(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    suite.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceMinutes", targetDepth)) {
                     context.nextToken();
-                    suite.setDeviceMinutes(DeviceMinutesJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    suite.setDeviceMinutes(DeviceMinutesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

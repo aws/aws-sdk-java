@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -22,15 +20,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input argument to the <a>AddJobFlowSteps</a> operation.
  * </p>
  */
-public class AddJobFlowStepsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that uniquely identifies the job flow. This identifier is
-     * returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>ListClusters</a>.
+     * A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be
+     * obtained from <a>ListClusters</a>.
      * </p>
      */
     private String jobFlowId;
@@ -42,56 +37,48 @@ public class AddJobFlowStepsRequest extends
     private com.amazonaws.internal.SdkInternalList<StepConfig> steps;
 
     /**
-     * Default constructor for AddJobFlowStepsRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for AddJobFlowStepsRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public AddJobFlowStepsRequest() {
     }
 
     /**
-     * Constructs a new AddJobFlowStepsRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new AddJobFlowStepsRequest object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize any additional object members.
      * 
      * @param jobFlowId
-     *        A string that uniquely identifies the job flow. This identifier is
-     *        returned by <a>RunJobFlow</a> and can also be obtained from
-     *        <a>ListClusters</a>.
+     *        A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can
+     *        also be obtained from <a>ListClusters</a>.
      */
     public AddJobFlowStepsRequest(String jobFlowId) {
         setJobFlowId(jobFlowId);
     }
 
     /**
-     * Constructs a new AddJobFlowStepsRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new AddJobFlowStepsRequest object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize any additional object members.
      * 
      * @param jobFlowId
-     *        A string that uniquely identifies the job flow. This identifier is
-     *        returned by <a>RunJobFlow</a> and can also be obtained from
-     *        <a>ListClusters</a>.
+     *        A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can
+     *        also be obtained from <a>ListClusters</a>.
      * @param steps
      *        A list of <a>StepConfig</a> to be executed by the job flow.
      */
-    public AddJobFlowStepsRequest(String jobFlowId,
-            java.util.List<StepConfig> steps) {
+    public AddJobFlowStepsRequest(String jobFlowId, java.util.List<StepConfig> steps) {
         setJobFlowId(jobFlowId);
         setSteps(steps);
     }
 
     /**
      * <p>
-     * A string that uniquely identifies the job flow. This identifier is
-     * returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>ListClusters</a>.
+     * A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be
+     * obtained from <a>ListClusters</a>.
      * </p>
      * 
      * @param jobFlowId
-     *        A string that uniquely identifies the job flow. This identifier is
-     *        returned by <a>RunJobFlow</a> and can also be obtained from
-     *        <a>ListClusters</a>.
+     *        A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can
+     *        also be obtained from <a>ListClusters</a>.
      */
 
     public void setJobFlowId(String jobFlowId) {
@@ -100,14 +87,12 @@ public class AddJobFlowStepsRequest extends
 
     /**
      * <p>
-     * A string that uniquely identifies the job flow. This identifier is
-     * returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>ListClusters</a>.
+     * A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be
+     * obtained from <a>ListClusters</a>.
      * </p>
      * 
-     * @return A string that uniquely identifies the job flow. This identifier
-     *         is returned by <a>RunJobFlow</a> and can also be obtained from
-     *         <a>ListClusters</a>.
+     * @return A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can
+     *         also be obtained from <a>ListClusters</a>.
      */
 
     public String getJobFlowId() {
@@ -116,17 +101,14 @@ public class AddJobFlowStepsRequest extends
 
     /**
      * <p>
-     * A string that uniquely identifies the job flow. This identifier is
-     * returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>ListClusters</a>.
+     * A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be
+     * obtained from <a>ListClusters</a>.
      * </p>
      * 
      * @param jobFlowId
-     *        A string that uniquely identifies the job flow. This identifier is
-     *        returned by <a>RunJobFlow</a> and can also be obtained from
-     *        <a>ListClusters</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can
+     *        also be obtained from <a>ListClusters</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddJobFlowStepsRequest withJobFlowId(String jobFlowId) {
@@ -164,8 +146,7 @@ public class AddJobFlowStepsRequest extends
             return;
         }
 
-        this.steps = new com.amazonaws.internal.SdkInternalList<StepConfig>(
-                steps);
+        this.steps = new com.amazonaws.internal.SdkInternalList<StepConfig>(steps);
     }
 
     /**
@@ -173,22 +154,19 @@ public class AddJobFlowStepsRequest extends
      * A list of <a>StepConfig</a> to be executed by the job flow.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSteps(java.util.Collection)} or
-     * {@link #withSteps(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSteps(java.util.Collection)} or {@link #withSteps(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param steps
      *        A list of <a>StepConfig</a> to be executed by the job flow.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddJobFlowStepsRequest withSteps(StepConfig... steps) {
         if (this.steps == null) {
-            setSteps(new com.amazonaws.internal.SdkInternalList<StepConfig>(
-                    steps.length));
+            setSteps(new com.amazonaws.internal.SdkInternalList<StepConfig>(steps.length));
         }
         for (StepConfig ele : steps) {
             this.steps.add(ele);
@@ -203,19 +181,16 @@ public class AddJobFlowStepsRequest extends
      * 
      * @param steps
      *        A list of <a>StepConfig</a> to be executed by the job flow.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AddJobFlowStepsRequest withSteps(
-            java.util.Collection<StepConfig> steps) {
+    public AddJobFlowStepsRequest withSteps(java.util.Collection<StepConfig> steps) {
         setSteps(steps);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -245,13 +220,11 @@ public class AddJobFlowStepsRequest extends
         AddJobFlowStepsRequest other = (AddJobFlowStepsRequest) obj;
         if (other.getJobFlowId() == null ^ this.getJobFlowId() == null)
             return false;
-        if (other.getJobFlowId() != null
-                && other.getJobFlowId().equals(this.getJobFlowId()) == false)
+        if (other.getJobFlowId() != null && other.getJobFlowId().equals(this.getJobFlowId()) == false)
             return false;
         if (other.getSteps() == null ^ this.getSteps() == null)
             return false;
-        if (other.getSteps() != null
-                && other.getSteps().equals(this.getSteps()) == false)
+        if (other.getSteps() != null && other.getSteps().equals(this.getSteps()) == false)
             return false;
         return true;
     }
@@ -261,10 +234,8 @@ public class AddJobFlowStepsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJobFlowId() == null) ? 0 : getJobFlowId().hashCode());
-        hashCode = prime * hashCode
-                + ((getSteps() == null) ? 0 : getSteps().hashCode());
+        hashCode = prime * hashCode + ((getJobFlowId() == null) ? 0 : getJobFlowId().hashCode());
+        hashCode = prime * hashCode + ((getSteps() == null) ? 0 : getSteps().hashCode());
         return hashCode;
     }
 

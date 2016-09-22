@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * A complex type that describes function metadata.
  * </p>
  */
-public class CreateFunctionResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -42,16 +38,15 @@ public class CreateFunctionResult extends
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
-     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
      * </p>
      */
     private String runtime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when
-     * it executes your function to access any other Amazon Web Services (AWS)
-     * resources.
+     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any
+     * other Amazon Web Services (AWS) resources.
      * </p>
      */
     private String role;
@@ -75,17 +70,14 @@ public class CreateFunctionResult extends
     private String description;
     /**
      * <p>
-     * The function execution time at which Lambda should terminate the
-     * function. Because the execution time has cost implications, we recommend
-     * you set this value based on your expected execution time. The default is
-     * 3 seconds.
+     * The function execution time at which Lambda should terminate the function. Because the execution time has cost
+     * implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.
      * </p>
      */
     private Integer timeout;
     /**
      * <p>
-     * The memory size, in MB, you configured for the function. Must be a
-     * multiple of 64 MB.
+     * The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
      * </p>
      */
     private Integer memorySize;
@@ -146,8 +138,7 @@ public class CreateFunctionResult extends
      * 
      * @param functionName
      *        The name of the function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFunctionResult withFunctionName(String functionName) {
@@ -187,8 +178,7 @@ public class CreateFunctionResult extends
      * 
      * @param functionArn
      *        The Amazon Resource Name (ARN) assigned to the function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFunctionResult withFunctionArn(String functionArn) {
@@ -201,15 +191,15 @@ public class CreateFunctionResult extends
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
-     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
      * </p>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     *        use earlier runtime (v0.10.42), set the value to "nodejs".
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *        value to "nodejs".
      * @see Runtime
      */
 
@@ -222,14 +212,14 @@ public class CreateFunctionResult extends
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
-     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
      * </p>
      * 
      * @return The runtime environment for the Lambda function.</p>
      *         <p>
-     *         To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     *         use earlier runtime (v0.10.42), set the value to "nodejs".
+     *         To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *         value to "nodejs".
      * @see Runtime
      */
 
@@ -242,17 +232,16 @@ public class CreateFunctionResult extends
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
-     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
      * </p>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     *        use earlier runtime (v0.10.42), set the value to "nodejs".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *        value to "nodejs".
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
 
@@ -266,15 +255,15 @@ public class CreateFunctionResult extends
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
-     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
      * </p>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     *        use earlier runtime (v0.10.42), set the value to "nodejs".
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *        value to "nodejs".
      * @see Runtime
      */
 
@@ -287,17 +276,16 @@ public class CreateFunctionResult extends
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
-     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
      * </p>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     *        use earlier runtime (v0.10.42), set the value to "nodejs".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *        value to "nodejs".
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
 
@@ -308,15 +296,13 @@ public class CreateFunctionResult extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when
-     * it executes your function to access any other Amazon Web Services (AWS)
-     * resources.
+     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any
+     * other Amazon Web Services (AWS) resources.
      * </p>
      * 
      * @param role
-     *        The Amazon Resource Name (ARN) of the IAM role that Lambda assumes
-     *        when it executes your function to access any other Amazon Web
-     *        Services (AWS) resources.
+     *        The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to
+     *        access any other Amazon Web Services (AWS) resources.
      */
 
     public void setRole(String role) {
@@ -325,14 +311,12 @@ public class CreateFunctionResult extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when
-     * it executes your function to access any other Amazon Web Services (AWS)
-     * resources.
+     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any
+     * other Amazon Web Services (AWS) resources.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that Lambda
-     *         assumes when it executes your function to access any other Amazon
-     *         Web Services (AWS) resources.
+     * @return The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to
+     *         access any other Amazon Web Services (AWS) resources.
      */
 
     public String getRole() {
@@ -341,17 +325,14 @@ public class CreateFunctionResult extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when
-     * it executes your function to access any other Amazon Web Services (AWS)
-     * resources.
+     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any
+     * other Amazon Web Services (AWS) resources.
      * </p>
      * 
      * @param role
-     *        The Amazon Resource Name (ARN) of the IAM role that Lambda assumes
-     *        when it executes your function to access any other Amazon Web
-     *        Services (AWS) resources.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to
+     *        access any other Amazon Web Services (AWS) resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFunctionResult withRole(String role) {
@@ -391,8 +372,7 @@ public class CreateFunctionResult extends
      * 
      * @param handler
      *        The function Lambda calls to begin executing your function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFunctionResult withHandler(String handler) {
@@ -432,8 +412,7 @@ public class CreateFunctionResult extends
      * 
      * @param codeSize
      *        The size, in bytes, of the function .zip file you uploaded.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFunctionResult withCodeSize(Long codeSize) {
@@ -473,8 +452,7 @@ public class CreateFunctionResult extends
      * 
      * @param description
      *        The user-provided description.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFunctionResult withDescription(String description) {
@@ -484,17 +462,14 @@ public class CreateFunctionResult extends
 
     /**
      * <p>
-     * The function execution time at which Lambda should terminate the
-     * function. Because the execution time has cost implications, we recommend
-     * you set this value based on your expected execution time. The default is
-     * 3 seconds.
+     * The function execution time at which Lambda should terminate the function. Because the execution time has cost
+     * implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.
      * </p>
      * 
      * @param timeout
-     *        The function execution time at which Lambda should terminate the
-     *        function. Because the execution time has cost implications, we
-     *        recommend you set this value based on your expected execution
-     *        time. The default is 3 seconds.
+     *        The function execution time at which Lambda should terminate the function. Because the execution time has
+     *        cost implications, we recommend you set this value based on your expected execution time. The default is 3
+     *        seconds.
      */
 
     public void setTimeout(Integer timeout) {
@@ -503,16 +478,13 @@ public class CreateFunctionResult extends
 
     /**
      * <p>
-     * The function execution time at which Lambda should terminate the
-     * function. Because the execution time has cost implications, we recommend
-     * you set this value based on your expected execution time. The default is
-     * 3 seconds.
+     * The function execution time at which Lambda should terminate the function. Because the execution time has cost
+     * implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.
      * </p>
      * 
-     * @return The function execution time at which Lambda should terminate the
-     *         function. Because the execution time has cost implications, we
-     *         recommend you set this value based on your expected execution
-     *         time. The default is 3 seconds.
+     * @return The function execution time at which Lambda should terminate the function. Because the execution time has
+     *         cost implications, we recommend you set this value based on your expected execution time. The default is
+     *         3 seconds.
      */
 
     public Integer getTimeout() {
@@ -521,19 +493,15 @@ public class CreateFunctionResult extends
 
     /**
      * <p>
-     * The function execution time at which Lambda should terminate the
-     * function. Because the execution time has cost implications, we recommend
-     * you set this value based on your expected execution time. The default is
-     * 3 seconds.
+     * The function execution time at which Lambda should terminate the function. Because the execution time has cost
+     * implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.
      * </p>
      * 
      * @param timeout
-     *        The function execution time at which Lambda should terminate the
-     *        function. Because the execution time has cost implications, we
-     *        recommend you set this value based on your expected execution
-     *        time. The default is 3 seconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The function execution time at which Lambda should terminate the function. Because the execution time has
+     *        cost implications, we recommend you set this value based on your expected execution time. The default is 3
+     *        seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFunctionResult withTimeout(Integer timeout) {
@@ -543,13 +511,11 @@ public class CreateFunctionResult extends
 
     /**
      * <p>
-     * The memory size, in MB, you configured for the function. Must be a
-     * multiple of 64 MB.
+     * The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
      * </p>
      * 
      * @param memorySize
-     *        The memory size, in MB, you configured for the function. Must be a
-     *        multiple of 64 MB.
+     *        The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
      */
 
     public void setMemorySize(Integer memorySize) {
@@ -558,12 +524,10 @@ public class CreateFunctionResult extends
 
     /**
      * <p>
-     * The memory size, in MB, you configured for the function. Must be a
-     * multiple of 64 MB.
+     * The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
      * </p>
      * 
-     * @return The memory size, in MB, you configured for the function. Must be
-     *         a multiple of 64 MB.
+     * @return The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
      */
 
     public Integer getMemorySize() {
@@ -572,15 +536,12 @@ public class CreateFunctionResult extends
 
     /**
      * <p>
-     * The memory size, in MB, you configured for the function. Must be a
-     * multiple of 64 MB.
+     * The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
      * </p>
      * 
      * @param memorySize
-     *        The memory size, in MB, you configured for the function. Must be a
-     *        multiple of 64 MB.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFunctionResult withMemorySize(Integer memorySize) {
@@ -620,8 +581,7 @@ public class CreateFunctionResult extends
      * 
      * @param lastModified
      *        The time stamp of the last time you updated the function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFunctionResult withLastModified(String lastModified) {
@@ -661,8 +621,7 @@ public class CreateFunctionResult extends
      * 
      * @param codeSha256
      *        It is the SHA256 hash of your function deployment package.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFunctionResult withCodeSha256(String codeSha256) {
@@ -702,8 +661,7 @@ public class CreateFunctionResult extends
      * 
      * @param version
      *        The version of the Lambda function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFunctionResult withVersion(String version) {
@@ -743,8 +701,7 @@ public class CreateFunctionResult extends
      * 
      * @param vpcConfig
      *        VPC configuration associated with your Lambda function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFunctionResult withVpcConfig(VpcConfigResponse vpcConfig) {
@@ -753,8 +710,7 @@ public class CreateFunctionResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -806,68 +762,55 @@ public class CreateFunctionResult extends
         CreateFunctionResult other = (CreateFunctionResult) obj;
         if (other.getFunctionName() == null ^ this.getFunctionName() == null)
             return false;
-        if (other.getFunctionName() != null
-                && other.getFunctionName().equals(this.getFunctionName()) == false)
+        if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false)
             return false;
         if (other.getFunctionArn() == null ^ this.getFunctionArn() == null)
             return false;
-        if (other.getFunctionArn() != null
-                && other.getFunctionArn().equals(this.getFunctionArn()) == false)
+        if (other.getFunctionArn() != null && other.getFunctionArn().equals(this.getFunctionArn()) == false)
             return false;
         if (other.getRuntime() == null ^ this.getRuntime() == null)
             return false;
-        if (other.getRuntime() != null
-                && other.getRuntime().equals(this.getRuntime()) == false)
+        if (other.getRuntime() != null && other.getRuntime().equals(this.getRuntime()) == false)
             return false;
         if (other.getRole() == null ^ this.getRole() == null)
             return false;
-        if (other.getRole() != null
-                && other.getRole().equals(this.getRole()) == false)
+        if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
             return false;
         if (other.getHandler() == null ^ this.getHandler() == null)
             return false;
-        if (other.getHandler() != null
-                && other.getHandler().equals(this.getHandler()) == false)
+        if (other.getHandler() != null && other.getHandler().equals(this.getHandler()) == false)
             return false;
         if (other.getCodeSize() == null ^ this.getCodeSize() == null)
             return false;
-        if (other.getCodeSize() != null
-                && other.getCodeSize().equals(this.getCodeSize()) == false)
+        if (other.getCodeSize() != null && other.getCodeSize().equals(this.getCodeSize()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getTimeout() == null ^ this.getTimeout() == null)
             return false;
-        if (other.getTimeout() != null
-                && other.getTimeout().equals(this.getTimeout()) == false)
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
             return false;
         if (other.getMemorySize() == null ^ this.getMemorySize() == null)
             return false;
-        if (other.getMemorySize() != null
-                && other.getMemorySize().equals(this.getMemorySize()) == false)
+        if (other.getMemorySize() != null && other.getMemorySize().equals(this.getMemorySize()) == false)
             return false;
         if (other.getLastModified() == null ^ this.getLastModified() == null)
             return false;
-        if (other.getLastModified() != null
-                && other.getLastModified().equals(this.getLastModified()) == false)
+        if (other.getLastModified() != null && other.getLastModified().equals(this.getLastModified()) == false)
             return false;
         if (other.getCodeSha256() == null ^ this.getCodeSha256() == null)
             return false;
-        if (other.getCodeSha256() != null
-                && other.getCodeSha256().equals(this.getCodeSha256()) == false)
+        if (other.getCodeSha256() != null && other.getCodeSha256().equals(this.getCodeSha256()) == false)
             return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
-        if (other.getVersion() != null
-                && other.getVersion().equals(this.getVersion()) == false)
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
         if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
             return false;
-        if (other.getVpcConfig() != null
-                && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
         return true;
     }
@@ -877,38 +820,19 @@ public class CreateFunctionResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFunctionName() == null) ? 0 : getFunctionName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFunctionArn() == null) ? 0 : getFunctionArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getRuntime() == null) ? 0 : getRuntime().hashCode());
-        hashCode = prime * hashCode
-                + ((getRole() == null) ? 0 : getRole().hashCode());
-        hashCode = prime * hashCode
-                + ((getHandler() == null) ? 0 : getHandler().hashCode());
-        hashCode = prime * hashCode
-                + ((getCodeSize() == null) ? 0 : getCodeSize().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
-        hashCode = prime * hashCode
-                + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastModified() == null) ? 0 : getLastModified()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCodeSha256() == null) ? 0 : getCodeSha256().hashCode());
-        hashCode = prime * hashCode
-                + ((getVersion() == null) ? 0 : getVersion().hashCode());
-        hashCode = prime * hashCode
-                + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode());
+        hashCode = prime * hashCode + ((getFunctionArn() == null) ? 0 : getFunctionArn().hashCode());
+        hashCode = prime * hashCode + ((getRuntime() == null) ? 0 : getRuntime().hashCode());
+        hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
+        hashCode = prime * hashCode + ((getHandler() == null) ? 0 : getHandler().hashCode());
+        hashCode = prime * hashCode + ((getCodeSize() == null) ? 0 : getCodeSize().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
+        hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode());
+        hashCode = prime * hashCode + ((getLastModified() == null) ? 0 : getLastModified().hashCode());
+        hashCode = prime * hashCode + ((getCodeSha256() == null) ? 0 : getCodeSha256().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         return hashCode;
     }
 
@@ -917,9 +841,7 @@ public class CreateFunctionResult extends
         try {
             return (CreateFunctionResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

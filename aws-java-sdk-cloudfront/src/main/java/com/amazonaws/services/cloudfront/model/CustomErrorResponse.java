@@ -1,71 +1,60 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 
 /**
- * A complex type that describes how you'd prefer CloudFront to respond to
- * requests that result in either a 4xx or 5xx response. You can control whether
- * a custom error page should be displayed, what the desired response code
- * should be for this error page and how long should the error response be
- * cached by CloudFront. If you don't want to specify any custom error
- * responses, include only an empty CustomErrorResponses element. To delete all
- * custom error responses in an existing distribution, update the distribution
- * configuration and include only an empty CustomErrorResponses element. To add,
- * change, or remove one or more custom error responses, update the distribution
- * configuration and specify all of the custom error responses that you want to
- * include in the updated distribution.
+ * A complex type that describes how you'd prefer CloudFront to respond to requests that result in either a 4xx or 5xx
+ * response. You can control whether a custom error page should be displayed, what the desired response code should be
+ * for this error page and how long should the error response be cached by CloudFront. If you don't want to specify any
+ * custom error responses, include only an empty CustomErrorResponses element. To delete all custom error responses in
+ * an existing distribution, update the distribution configuration and include only an empty CustomErrorResponses
+ * element. To add, change, or remove one or more custom error responses, update the distribution configuration and
+ * specify all of the custom error responses that you want to include in the updated distribution.
  */
 public class CustomErrorResponse implements Serializable, Cloneable {
 
     /**
-     * The 4xx or 5xx HTTP status code that you want to customize. For a list of
-     * HTTP status codes that you can customize, see CloudFront documentation.
+     * The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP status codes that you can
+     * customize, see CloudFront documentation.
      */
     private Integer errorCode;
     /**
-     * The path of the custom error page (for example, /custom_404.html). The
-     * path is relative to the distribution and must begin with a slash (/). If
-     * the path includes any non-ASCII characters or unsafe characters as defined
-     * in RFC 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those
-     * characters. Do not URL encode any other characters in the path, or
-     * CloudFront will not return the custom error page to the viewer.
+     * The path of the custom error page (for example, /custom_404.html). The path is relative to the distribution and
+     * must begin with a slash (/). If the path includes any non-ASCII characters or unsafe characters as defined in RFC
+     * 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do not URL encode any other characters in
+     * the path, or CloudFront will not return the custom error page to the viewer.
      */
     private String responsePagePath;
     /**
-     * The HTTP status code that you want CloudFront to return with the custom
-     * error page to the viewer. For a list of HTTP status codes that you can
-     * replace, see CloudFront Documentation.
+     * The HTTP status code that you want CloudFront to return with the custom error page to the viewer. For a list of
+     * HTTP status codes that you can replace, see CloudFront Documentation.
      */
     private String responseCode;
     /**
-     * The minimum amount of time you want HTTP error codes to stay in
-     * CloudFront caches before CloudFront queries your origin to see whether
-     * the object has been updated. You can specify a value from 0 to 31,536,000.
+     * The minimum amount of time you want HTTP error codes to stay in CloudFront caches before CloudFront queries your
+     * origin to see whether the object has been updated. You can specify a value from 0 to 31,536,000.
      */
     private Long errorCachingMinTTL;
 
     /**
-     * The 4xx or 5xx HTTP status code that you want to customize. For a list of
-     * HTTP status codes that you can customize, see CloudFront documentation.
+     * The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP status codes that you can
+     * customize, see CloudFront documentation.
      * 
      * @param errorCode
-     *        The 4xx or 5xx HTTP status code that you want to customize. For a
-     *        list of HTTP status codes that you can customize, see CloudFront
-     *        documentation.
+     *        The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP status codes that you can
+     *        customize, see CloudFront documentation.
      */
 
     public void setErrorCode(Integer errorCode) {
@@ -73,12 +62,11 @@ public class CustomErrorResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The 4xx or 5xx HTTP status code that you want to customize. For a list of
-     * HTTP status codes that you can customize, see CloudFront documentation.
+     * The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP status codes that you can
+     * customize, see CloudFront documentation.
      * 
-     * @return The 4xx or 5xx HTTP status code that you want to customize. For a
-     *         list of HTTP status codes that you can customize, see CloudFront
-     *         documentation.
+     * @return The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP status codes that you can
+     *         customize, see CloudFront documentation.
      */
 
     public Integer getErrorCode() {
@@ -86,15 +74,13 @@ public class CustomErrorResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The 4xx or 5xx HTTP status code that you want to customize. For a list of
-     * HTTP status codes that you can customize, see CloudFront documentation.
+     * The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP status codes that you can
+     * customize, see CloudFront documentation.
      * 
      * @param errorCode
-     *        The 4xx or 5xx HTTP status code that you want to customize. For a
-     *        list of HTTP status codes that you can customize, see CloudFront
-     *        documentation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP status codes that you can
+     *        customize, see CloudFront documentation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CustomErrorResponse withErrorCode(Integer errorCode) {
@@ -103,21 +89,17 @@ public class CustomErrorResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The path of the custom error page (for example, /custom_404.html). The
-     * path is relative to the distribution and must begin with a slash (/). If
-     * the path includes any non-ASCII characters or unsafe characters as defined
-     * in RFC 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those
-     * characters. Do not URL encode any other characters in the path, or
-     * CloudFront will not return the custom error page to the viewer.
+     * The path of the custom error page (for example, /custom_404.html). The path is relative to the distribution and
+     * must begin with a slash (/). If the path includes any non-ASCII characters or unsafe characters as defined in RFC
+     * 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do not URL encode any other characters in
+     * the path, or CloudFront will not return the custom error page to the viewer.
      * 
      * @param responsePagePath
-     *        The path of the custom error page (for example, /custom_404.html).
-     *        The path is relative to the distribution and must begin with a
-     *        slash (/). If the path includes any non-ASCII characters or unsafe
-     *        characters as defined in RFC 1783
-     *        (http://www.ietf.org/rfc/rfc1738.txt), URL encode those
-     *        characters. Do not URL encode any other characters in the path, or
-     *        CloudFront will not return the custom error page to the viewer.
+     *        The path of the custom error page (for example, /custom_404.html). The path is relative to the
+     *        distribution and must begin with a slash (/). If the path includes any non-ASCII characters or unsafe
+     *        characters as defined in RFC 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do
+     *        not URL encode any other characters in the path, or CloudFront will not return the custom error page to
+     *        the viewer.
      */
 
     public void setResponsePagePath(String responsePagePath) {
@@ -125,21 +107,16 @@ public class CustomErrorResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The path of the custom error page (for example, /custom_404.html). The
-     * path is relative to the distribution and must begin with a slash (/). If
-     * the path includes any non-ASCII characters or unsafe characters as defined
-     * in RFC 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those
-     * characters. Do not URL encode any other characters in the path, or
-     * CloudFront will not return the custom error page to the viewer.
+     * The path of the custom error page (for example, /custom_404.html). The path is relative to the distribution and
+     * must begin with a slash (/). If the path includes any non-ASCII characters or unsafe characters as defined in RFC
+     * 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do not URL encode any other characters in
+     * the path, or CloudFront will not return the custom error page to the viewer.
      * 
-     * @return The path of the custom error page (for example,
-     *         /custom_404.html). The path is relative to the distribution and
-     *         must begin with a slash (/). If the path includes any non-ASCII
-     *         characters or unsafe characters as defined in RFC 1783
-     *         (http://www.ietf.org/rfc/rfc1738.txt), URL encode those
-     *         characters. Do not URL encode any other characters in the path,
-     *         or CloudFront will not return the custom error page to the
-     *         viewer.
+     * @return The path of the custom error page (for example, /custom_404.html). The path is relative to the
+     *         distribution and must begin with a slash (/). If the path includes any non-ASCII characters or unsafe
+     *         characters as defined in RFC 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do
+     *         not URL encode any other characters in the path, or CloudFront will not return the custom error page to
+     *         the viewer.
      */
 
     public String getResponsePagePath() {
@@ -147,23 +124,18 @@ public class CustomErrorResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The path of the custom error page (for example, /custom_404.html). The
-     * path is relative to the distribution and must begin with a slash (/). If
-     * the path includes any non-ASCII characters or unsafe characters as defined
-     * in RFC 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those
-     * characters. Do not URL encode any other characters in the path, or
-     * CloudFront will not return the custom error page to the viewer.
+     * The path of the custom error page (for example, /custom_404.html). The path is relative to the distribution and
+     * must begin with a slash (/). If the path includes any non-ASCII characters or unsafe characters as defined in RFC
+     * 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do not URL encode any other characters in
+     * the path, or CloudFront will not return the custom error page to the viewer.
      * 
      * @param responsePagePath
-     *        The path of the custom error page (for example, /custom_404.html).
-     *        The path is relative to the distribution and must begin with a
-     *        slash (/). If the path includes any non-ASCII characters or unsafe
-     *        characters as defined in RFC 1783
-     *        (http://www.ietf.org/rfc/rfc1738.txt), URL encode those
-     *        characters. Do not URL encode any other characters in the path, or
-     *        CloudFront will not return the custom error page to the viewer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The path of the custom error page (for example, /custom_404.html). The path is relative to the
+     *        distribution and must begin with a slash (/). If the path includes any non-ASCII characters or unsafe
+     *        characters as defined in RFC 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do
+     *        not URL encode any other characters in the path, or CloudFront will not return the custom error page to
+     *        the viewer.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CustomErrorResponse withResponsePagePath(String responsePagePath) {
@@ -172,14 +144,12 @@ public class CustomErrorResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The HTTP status code that you want CloudFront to return with the custom
-     * error page to the viewer. For a list of HTTP status codes that you can
-     * replace, see CloudFront Documentation.
+     * The HTTP status code that you want CloudFront to return with the custom error page to the viewer. For a list of
+     * HTTP status codes that you can replace, see CloudFront Documentation.
      * 
      * @param responseCode
-     *        The HTTP status code that you want CloudFront to return with the
-     *        custom error page to the viewer. For a list of HTTP status codes
-     *        that you can replace, see CloudFront Documentation.
+     *        The HTTP status code that you want CloudFront to return with the custom error page to the viewer. For a
+     *        list of HTTP status codes that you can replace, see CloudFront Documentation.
      */
 
     public void setResponseCode(String responseCode) {
@@ -187,13 +157,11 @@ public class CustomErrorResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The HTTP status code that you want CloudFront to return with the custom
-     * error page to the viewer. For a list of HTTP status codes that you can
-     * replace, see CloudFront Documentation.
+     * The HTTP status code that you want CloudFront to return with the custom error page to the viewer. For a list of
+     * HTTP status codes that you can replace, see CloudFront Documentation.
      * 
-     * @return The HTTP status code that you want CloudFront to return with the
-     *         custom error page to the viewer. For a list of HTTP status codes
-     *         that you can replace, see CloudFront Documentation.
+     * @return The HTTP status code that you want CloudFront to return with the custom error page to the viewer. For a
+     *         list of HTTP status codes that you can replace, see CloudFront Documentation.
      */
 
     public String getResponseCode() {
@@ -201,16 +169,13 @@ public class CustomErrorResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The HTTP status code that you want CloudFront to return with the custom
-     * error page to the viewer. For a list of HTTP status codes that you can
-     * replace, see CloudFront Documentation.
+     * The HTTP status code that you want CloudFront to return with the custom error page to the viewer. For a list of
+     * HTTP status codes that you can replace, see CloudFront Documentation.
      * 
      * @param responseCode
-     *        The HTTP status code that you want CloudFront to return with the
-     *        custom error page to the viewer. For a list of HTTP status codes
-     *        that you can replace, see CloudFront Documentation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The HTTP status code that you want CloudFront to return with the custom error page to the viewer. For a
+     *        list of HTTP status codes that you can replace, see CloudFront Documentation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CustomErrorResponse withResponseCode(String responseCode) {
@@ -219,15 +184,13 @@ public class CustomErrorResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The minimum amount of time you want HTTP error codes to stay in
-     * CloudFront caches before CloudFront queries your origin to see whether
-     * the object has been updated. You can specify a value from 0 to 31,536,000.
+     * The minimum amount of time you want HTTP error codes to stay in CloudFront caches before CloudFront queries your
+     * origin to see whether the object has been updated. You can specify a value from 0 to 31,536,000.
      * 
      * @param errorCachingMinTTL
-     *        The minimum amount of time you want HTTP error codes to stay in
-     *        CloudFront caches before CloudFront queries your origin to see
-     *        whether the object has been updated. You can specify a value from
-     *        0 to 31,536,000.
+     *        The minimum amount of time you want HTTP error codes to stay in CloudFront caches before CloudFront
+     *        queries your origin to see whether the object has been updated. You can specify a value from 0 to
+     *        31,536,000.
      */
 
     public void setErrorCachingMinTTL(Long errorCachingMinTTL) {
@@ -235,14 +198,12 @@ public class CustomErrorResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The minimum amount of time you want HTTP error codes to stay in
-     * CloudFront caches before CloudFront queries your origin to see whether
-     * the object has been updated. You can specify a value from 0 to 31,536,000.
+     * The minimum amount of time you want HTTP error codes to stay in CloudFront caches before CloudFront queries your
+     * origin to see whether the object has been updated. You can specify a value from 0 to 31,536,000.
      * 
-     * @return The minimum amount of time you want HTTP error codes to stay in
-     *         CloudFront caches before CloudFront queries your origin to see
-     *         whether the object has been updated. You can specify a value from
-     *         0 to 31,536,000.
+     * @return The minimum amount of time you want HTTP error codes to stay in CloudFront caches before CloudFront
+     *         queries your origin to see whether the object has been updated. You can specify a value from 0 to
+     *         31,536,000.
      */
 
     public Long getErrorCachingMinTTL() {
@@ -250,17 +211,14 @@ public class CustomErrorResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The minimum amount of time you want HTTP error codes to stay in
-     * CloudFront caches before CloudFront queries your origin to see whether
-     * the object has been updated. You can specify a value from 0 to 31,536,000.
+     * The minimum amount of time you want HTTP error codes to stay in CloudFront caches before CloudFront queries your
+     * origin to see whether the object has been updated. You can specify a value from 0 to 31,536,000.
      * 
      * @param errorCachingMinTTL
-     *        The minimum amount of time you want HTTP error codes to stay in
-     *        CloudFront caches before CloudFront queries your origin to see
-     *        whether the object has been updated. You can specify a value from
-     *        0 to 31,536,000.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The minimum amount of time you want HTTP error codes to stay in CloudFront caches before CloudFront
+     *        queries your origin to see whether the object has been updated. You can specify a value from 0 to
+     *        31,536,000.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CustomErrorResponse withErrorCachingMinTTL(Long errorCachingMinTTL) {
@@ -269,8 +227,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -304,27 +261,19 @@ public class CustomErrorResponse implements Serializable, Cloneable {
         CustomErrorResponse other = (CustomErrorResponse) obj;
         if (other.getErrorCode() == null ^ this.getErrorCode() == null)
             return false;
-        if (other.getErrorCode() != null
-                && other.getErrorCode().equals(this.getErrorCode()) == false)
+        if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
             return false;
-        if (other.getResponsePagePath() == null
-                ^ this.getResponsePagePath() == null)
+        if (other.getResponsePagePath() == null ^ this.getResponsePagePath() == null)
             return false;
-        if (other.getResponsePagePath() != null
-                && other.getResponsePagePath().equals(
-                        this.getResponsePagePath()) == false)
+        if (other.getResponsePagePath() != null && other.getResponsePagePath().equals(this.getResponsePagePath()) == false)
             return false;
         if (other.getResponseCode() == null ^ this.getResponseCode() == null)
             return false;
-        if (other.getResponseCode() != null
-                && other.getResponseCode().equals(this.getResponseCode()) == false)
+        if (other.getResponseCode() != null && other.getResponseCode().equals(this.getResponseCode()) == false)
             return false;
-        if (other.getErrorCachingMinTTL() == null
-                ^ this.getErrorCachingMinTTL() == null)
+        if (other.getErrorCachingMinTTL() == null ^ this.getErrorCachingMinTTL() == null)
             return false;
-        if (other.getErrorCachingMinTTL() != null
-                && other.getErrorCachingMinTTL().equals(
-                        this.getErrorCachingMinTTL()) == false)
+        if (other.getErrorCachingMinTTL() != null && other.getErrorCachingMinTTL().equals(this.getErrorCachingMinTTL()) == false)
             return false;
         return true;
     }
@@ -334,20 +283,10 @@ public class CustomErrorResponse implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResponsePagePath() == null) ? 0 : getResponsePagePath()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResponseCode() == null) ? 0 : getResponseCode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getErrorCachingMinTTL() == null) ? 0
-                        : getErrorCachingMinTTL().hashCode());
+        hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
+        hashCode = prime * hashCode + ((getResponsePagePath() == null) ? 0 : getResponsePagePath().hashCode());
+        hashCode = prime * hashCode + ((getResponseCode() == null) ? 0 : getResponseCode().hashCode());
+        hashCode = prime * hashCode + ((getErrorCachingMinTTL() == null) ? 0 : getErrorCachingMinTTL().hashCode());
         return hashCode;
     }
 
@@ -356,9 +295,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
         try {
             return (CustomErrorResponse) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for EvaluateExpression.
  * </p>
  */
-public class EvaluateExpressionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class EvaluateExpressionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -77,8 +73,7 @@ public class EvaluateExpressionRequest extends
      * 
      * @param pipelineId
      *        The ID of the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EvaluateExpressionRequest withPipelineId(String pipelineId) {
@@ -118,8 +113,7 @@ public class EvaluateExpressionRequest extends
      * 
      * @param objectId
      *        The ID of the object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EvaluateExpressionRequest withObjectId(String objectId) {
@@ -159,8 +153,7 @@ public class EvaluateExpressionRequest extends
      * 
      * @param expression
      *        The expression to evaluate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EvaluateExpressionRequest withExpression(String expression) {
@@ -169,8 +162,7 @@ public class EvaluateExpressionRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -202,18 +194,15 @@ public class EvaluateExpressionRequest extends
         EvaluateExpressionRequest other = (EvaluateExpressionRequest) obj;
         if (other.getPipelineId() == null ^ this.getPipelineId() == null)
             return false;
-        if (other.getPipelineId() != null
-                && other.getPipelineId().equals(this.getPipelineId()) == false)
+        if (other.getPipelineId() != null && other.getPipelineId().equals(this.getPipelineId()) == false)
             return false;
         if (other.getObjectId() == null ^ this.getObjectId() == null)
             return false;
-        if (other.getObjectId() != null
-                && other.getObjectId().equals(this.getObjectId()) == false)
+        if (other.getObjectId() != null && other.getObjectId().equals(this.getObjectId()) == false)
             return false;
         if (other.getExpression() == null ^ this.getExpression() == null)
             return false;
-        if (other.getExpression() != null
-                && other.getExpression().equals(this.getExpression()) == false)
+        if (other.getExpression() != null && other.getExpression().equals(this.getExpression()) == false)
             return false;
         return true;
     }
@@ -223,12 +212,9 @@ public class EvaluateExpressionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
-        hashCode = prime * hashCode
-                + ((getObjectId() == null) ? 0 : getObjectId().hashCode());
-        hashCode = prime * hashCode
-                + ((getExpression() == null) ? 0 : getExpression().hashCode());
+        hashCode = prime * hashCode + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
+        hashCode = prime * hashCode + ((getObjectId() == null) ? 0 : getObjectId().hashCode());
+        hashCode = prime * hashCode + ((getExpression() == null) ? 0 : getExpression().hashCode());
         return hashCode;
     }
 

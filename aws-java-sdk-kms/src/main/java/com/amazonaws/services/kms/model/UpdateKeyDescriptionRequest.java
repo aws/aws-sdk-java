@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kms.model;
 
@@ -20,21 +18,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateKeyDescriptionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateKeyDescriptionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier or the fully specified ARN to a key.
+     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
+     * specified ARN to a key.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
-     * -1234-123456789012
+     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -54,15 +48,13 @@ public class UpdateKeyDescriptionRequest extends
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier or the fully specified ARN to a key.
+     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
+     * specified ARN to a key.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
-     * -1234-123456789012
+     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -73,21 +65,17 @@ public class UpdateKeyDescriptionRequest extends
      * </ul>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be
-     *        a globally unique identifier or the fully specified ARN to a
-     *        key.</p>
+     *        A unique identifier for the customer master key. This value can be a globally unique identifier or the
+     *        fully specified ARN to a key.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     *        -1234-1234-123456789012
+     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012
+     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
      */
@@ -98,15 +86,13 @@ public class UpdateKeyDescriptionRequest extends
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier or the fully specified ARN to a key.
+     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
+     * specified ARN to a key.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
-     * -1234-123456789012
+     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -116,21 +102,17 @@ public class UpdateKeyDescriptionRequest extends
      * </li>
      * </ul>
      * 
-     * @return A unique identifier for the customer master key. This value can
-     *         be a globally unique identifier or the fully specified ARN to a
-     *         key.</p>
+     * @return A unique identifier for the customer master key. This value can be a globally unique identifier or the
+     *         fully specified ARN to a key.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Key ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678-
-     *         1234-1234-1234-123456789012
+     *         Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012
+     *         Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
      *         </p>
      *         </li>
      */
@@ -141,15 +123,13 @@ public class UpdateKeyDescriptionRequest extends
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier or the fully specified ARN to a key.
+     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
+     * specified ARN to a key.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
-     * -1234-123456789012
+     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -160,25 +140,20 @@ public class UpdateKeyDescriptionRequest extends
      * </ul>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be
-     *        a globally unique identifier or the fully specified ARN to a
-     *        key.</p>
+     *        A unique identifier for the customer master key. This value can be a globally unique identifier or the
+     *        fully specified ARN to a key.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     *        -1234-1234-123456789012
+     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012
+     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateKeyDescriptionRequest withKeyId(String keyId) {
@@ -218,8 +193,7 @@ public class UpdateKeyDescriptionRequest extends
      * 
      * @param description
      *        New description for the key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateKeyDescriptionRequest withDescription(String description) {
@@ -228,8 +202,7 @@ public class UpdateKeyDescriptionRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -259,13 +232,11 @@ public class UpdateKeyDescriptionRequest extends
         UpdateKeyDescriptionRequest other = (UpdateKeyDescriptionRequest) obj;
         if (other.getKeyId() == null ^ this.getKeyId() == null)
             return false;
-        if (other.getKeyId() != null
-                && other.getKeyId().equals(this.getKeyId()) == false)
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         return true;
     }
@@ -275,11 +246,8 @@ public class UpdateKeyDescriptionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticsearch.model;
 
@@ -19,12 +17,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code><a>AddTags</a></code> operation.
- * Specify the tags that you want to attach to the Elasticsearch domain.
+ * Container for the parameters to the <code><a>AddTags</a></code> operation. Specify the tags that you want to attach
+ * to the Elasticsearch domain.
  * </p>
  */
-public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,8 +31,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String aRN;
     /**
      * <p>
-     * List of <code>Tag</code> that need to be added for the Elasticsearch
-     * domain.
+     * List of <code>Tag</code> that need to be added for the Elasticsearch domain.
      * </p>
      */
     private java.util.List<Tag> tagList;
@@ -72,8 +68,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param aRN
      *        Specify the <code>ARN</code> for which you want to add the tags.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsRequest withARN(String aRN) {
@@ -83,12 +78,10 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * List of <code>Tag</code> that need to be added for the Elasticsearch
-     * domain.
+     * List of <code>Tag</code> that need to be added for the Elasticsearch domain.
      * </p>
      * 
-     * @return List of <code>Tag</code> that need to be added for the
-     *         Elasticsearch domain.
+     * @return List of <code>Tag</code> that need to be added for the Elasticsearch domain.
      */
 
     public java.util.List<Tag> getTagList() {
@@ -97,13 +90,11 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * List of <code>Tag</code> that need to be added for the Elasticsearch
-     * domain.
+     * List of <code>Tag</code> that need to be added for the Elasticsearch domain.
      * </p>
      * 
      * @param tagList
-     *        List of <code>Tag</code> that need to be added for the
-     *        Elasticsearch domain.
+     *        List of <code>Tag</code> that need to be added for the Elasticsearch domain.
      */
 
     public void setTagList(java.util.Collection<Tag> tagList) {
@@ -117,21 +108,17 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * List of <code>Tag</code> that need to be added for the Elasticsearch
-     * domain.
+     * List of <code>Tag</code> that need to be added for the Elasticsearch domain.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagList(java.util.Collection)} or
-     * {@link #withTagList(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param tagList
-     *        List of <code>Tag</code> that need to be added for the
-     *        Elasticsearch domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        List of <code>Tag</code> that need to be added for the Elasticsearch domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsRequest withTagList(Tag... tagList) {
@@ -146,15 +133,12 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * List of <code>Tag</code> that need to be added for the Elasticsearch
-     * domain.
+     * List of <code>Tag</code> that need to be added for the Elasticsearch domain.
      * </p>
      * 
      * @param tagList
-     *        List of <code>Tag</code> that need to be added for the
-     *        Elasticsearch domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        List of <code>Tag</code> that need to be added for the Elasticsearch domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsRequest withTagList(java.util.Collection<Tag> tagList) {
@@ -163,8 +147,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -194,13 +177,11 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
         AddTagsRequest other = (AddTagsRequest) obj;
         if (other.getARN() == null ^ this.getARN() == null)
             return false;
-        if (other.getARN() != null
-                && other.getARN().equals(this.getARN()) == false)
+        if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
             return false;
         if (other.getTagList() == null ^ this.getTagList() == null)
             return false;
-        if (other.getTagList() != null
-                && other.getTagList().equals(this.getTagList()) == false)
+        if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false)
             return false;
         return true;
     }
@@ -210,10 +191,8 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getARN() == null) ? 0 : getARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getTagList() == null) ? 0 : getTagList().hashCode());
+        hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
+        hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         return hashCode;
     }
 

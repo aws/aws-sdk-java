@@ -26,7 +26,12 @@ import java.util.Arrays;
 /**
  * Annotation for marking a property as an optimistic locking version attribute.
  *
- * <p>Alternatively, the convinience annotation {@link DynamoDBVersionAttribute}
+ * <pre class="brush: java">
+ * &#064;DynamoDBVersioned
+ * public Long getRecordVersionNumber()
+ * </pre>
+ *
+ * <p>Alternately, the convinience annotation {@link DynamoDBVersionAttribute}
  * may be used if combining with an attribute name on a field/getter.</p>
  *
  * <p>Only nullable, integral numeric types (e.g. Integer, Long) can be used as

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -18,13 +16,12 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Recipient-related information to include in the Delivery Status Notification
- * (DSN) when an email that Amazon SES receives on your behalf bounces.
+ * Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES
+ * receives on your behalf bounces.
  * </p>
  * <p>
- * For information about receiving email through Amazon SES, see the <a href=
- * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html"
- * >Amazon SES Developer Guide</a>.
+ * For information about receiving email through Amazon SES, see the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.
  * </p>
  */
 public class BouncedRecipientInfo implements Serializable, Cloneable {
@@ -37,27 +34,24 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
     private String recipient;
     /**
      * <p>
-     * This parameter is used only for sending authorization. It is the ARN of
-     * the identity that is associated with the sending authorization policy
-     * that permits you to receive email for the recipient of the bounced email.
-     * For more information about sending authorization, see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
-     * >Amazon SES Developer Guide</a>.
+     * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
+     * sending authorization policy that permits you to receive email for the recipient of the bounced email. For more
+     * information about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
      * </p>
      */
     private String recipientArn;
     /**
      * <p>
-     * The reason for the bounce. You must provide either this parameter or
-     * <code>RecipientDsnFields</code>.
+     * The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.
      * </p>
      */
     private String bounceType;
     /**
      * <p>
-     * Recipient-related DSN fields, most of which would normally be filled in
-     * automatically when provided with a <code>BounceType</code>. You must
-     * provide either this parameter or <code>BounceType</code>.
+     * Recipient-related DSN fields, most of which would normally be filled in automatically when provided with a
+     * <code>BounceType</code>. You must provide either this parameter or <code>BounceType</code>.
      * </p>
      */
     private RecipientDsnFields recipientDsnFields;
@@ -94,8 +88,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      * 
      * @param recipient
      *        The email address of the recipient of the bounced email.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BouncedRecipientInfo withRecipient(String recipient) {
@@ -105,22 +98,19 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is used only for sending authorization. It is the ARN of
-     * the identity that is associated with the sending authorization policy
-     * that permits you to receive email for the recipient of the bounced email.
-     * For more information about sending authorization, see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
-     * >Amazon SES Developer Guide</a>.
+     * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
+     * sending authorization policy that permits you to receive email for the recipient of the bounced email. For more
+     * information about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
      * </p>
      * 
      * @param recipientArn
-     *        This parameter is used only for sending authorization. It is the
-     *        ARN of the identity that is associated with the sending
-     *        authorization policy that permits you to receive email for the
-     *        recipient of the bounced email. For more information about sending
-     *        authorization, see the <a href=
-     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
-     *        >Amazon SES Developer Guide</a>.
+     *        This parameter is used only for sending authorization. It is the ARN of the identity that is associated
+     *        with the sending authorization policy that permits you to receive email for the recipient of the bounced
+     *        email. For more information about sending authorization, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        Developer Guide</a>.
      */
 
     public void setRecipientArn(String recipientArn) {
@@ -129,21 +119,18 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is used only for sending authorization. It is the ARN of
-     * the identity that is associated with the sending authorization policy
-     * that permits you to receive email for the recipient of the bounced email.
-     * For more information about sending authorization, see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
-     * >Amazon SES Developer Guide</a>.
+     * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
+     * sending authorization policy that permits you to receive email for the recipient of the bounced email. For more
+     * information about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
      * </p>
      * 
-     * @return This parameter is used only for sending authorization. It is the
-     *         ARN of the identity that is associated with the sending
-     *         authorization policy that permits you to receive email for the
-     *         recipient of the bounced email. For more information about
-     *         sending authorization, see the <a href=
-     *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
-     *         >Amazon SES Developer Guide</a>.
+     * @return This parameter is used only for sending authorization. It is the ARN of the identity that is associated
+     *         with the sending authorization policy that permits you to receive email for the recipient of the bounced
+     *         email. For more information about sending authorization, see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *         Developer Guide</a>.
      */
 
     public String getRecipientArn() {
@@ -152,24 +139,20 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is used only for sending authorization. It is the ARN of
-     * the identity that is associated with the sending authorization policy
-     * that permits you to receive email for the recipient of the bounced email.
-     * For more information about sending authorization, see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
-     * >Amazon SES Developer Guide</a>.
+     * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
+     * sending authorization policy that permits you to receive email for the recipient of the bounced email. For more
+     * information about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
      * </p>
      * 
      * @param recipientArn
-     *        This parameter is used only for sending authorization. It is the
-     *        ARN of the identity that is associated with the sending
-     *        authorization policy that permits you to receive email for the
-     *        recipient of the bounced email. For more information about sending
-     *        authorization, see the <a href=
-     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
-     *        >Amazon SES Developer Guide</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter is used only for sending authorization. It is the ARN of the identity that is associated
+     *        with the sending authorization policy that permits you to receive email for the recipient of the bounced
+     *        email. For more information about sending authorization, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BouncedRecipientInfo withRecipientArn(String recipientArn) {
@@ -179,13 +162,11 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason for the bounce. You must provide either this parameter or
-     * <code>RecipientDsnFields</code>.
+     * The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.
      * </p>
      * 
      * @param bounceType
-     *        The reason for the bounce. You must provide either this parameter
-     *        or <code>RecipientDsnFields</code>.
+     *        The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.
      * @see BounceType
      */
 
@@ -195,12 +176,10 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason for the bounce. You must provide either this parameter or
-     * <code>RecipientDsnFields</code>.
+     * The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.
      * </p>
      * 
-     * @return The reason for the bounce. You must provide either this parameter
-     *         or <code>RecipientDsnFields</code>.
+     * @return The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.
      * @see BounceType
      */
 
@@ -210,15 +189,12 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason for the bounce. You must provide either this parameter or
-     * <code>RecipientDsnFields</code>.
+     * The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.
      * </p>
      * 
      * @param bounceType
-     *        The reason for the bounce. You must provide either this parameter
-     *        or <code>RecipientDsnFields</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see BounceType
      */
 
@@ -229,13 +205,11 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason for the bounce. You must provide either this parameter or
-     * <code>RecipientDsnFields</code>.
+     * The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.
      * </p>
      * 
      * @param bounceType
-     *        The reason for the bounce. You must provide either this parameter
-     *        or <code>RecipientDsnFields</code>.
+     *        The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.
      * @see BounceType
      */
 
@@ -245,15 +219,12 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason for the bounce. You must provide either this parameter or
-     * <code>RecipientDsnFields</code>.
+     * The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.
      * </p>
      * 
      * @param bounceType
-     *        The reason for the bounce. You must provide either this parameter
-     *        or <code>RecipientDsnFields</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see BounceType
      */
 
@@ -264,16 +235,13 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Recipient-related DSN fields, most of which would normally be filled in
-     * automatically when provided with a <code>BounceType</code>. You must
-     * provide either this parameter or <code>BounceType</code>.
+     * Recipient-related DSN fields, most of which would normally be filled in automatically when provided with a
+     * <code>BounceType</code>. You must provide either this parameter or <code>BounceType</code>.
      * </p>
      * 
      * @param recipientDsnFields
-     *        Recipient-related DSN fields, most of which would normally be
-     *        filled in automatically when provided with a
-     *        <code>BounceType</code>. You must provide either this parameter or
-     *        <code>BounceType</code>.
+     *        Recipient-related DSN fields, most of which would normally be filled in automatically when provided with a
+     *        <code>BounceType</code>. You must provide either this parameter or <code>BounceType</code>.
      */
 
     public void setRecipientDsnFields(RecipientDsnFields recipientDsnFields) {
@@ -282,15 +250,12 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Recipient-related DSN fields, most of which would normally be filled in
-     * automatically when provided with a <code>BounceType</code>. You must
-     * provide either this parameter or <code>BounceType</code>.
+     * Recipient-related DSN fields, most of which would normally be filled in automatically when provided with a
+     * <code>BounceType</code>. You must provide either this parameter or <code>BounceType</code>.
      * </p>
      * 
-     * @return Recipient-related DSN fields, most of which would normally be
-     *         filled in automatically when provided with a
-     *         <code>BounceType</code>. You must provide either this parameter
-     *         or <code>BounceType</code>.
+     * @return Recipient-related DSN fields, most of which would normally be filled in automatically when provided with
+     *         a <code>BounceType</code>. You must provide either this parameter or <code>BounceType</code>.
      */
 
     public RecipientDsnFields getRecipientDsnFields() {
@@ -299,29 +264,23 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Recipient-related DSN fields, most of which would normally be filled in
-     * automatically when provided with a <code>BounceType</code>. You must
-     * provide either this parameter or <code>BounceType</code>.
+     * Recipient-related DSN fields, most of which would normally be filled in automatically when provided with a
+     * <code>BounceType</code>. You must provide either this parameter or <code>BounceType</code>.
      * </p>
      * 
      * @param recipientDsnFields
-     *        Recipient-related DSN fields, most of which would normally be
-     *        filled in automatically when provided with a
-     *        <code>BounceType</code>. You must provide either this parameter or
-     *        <code>BounceType</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Recipient-related DSN fields, most of which would normally be filled in automatically when provided with a
+     *        <code>BounceType</code>. You must provide either this parameter or <code>BounceType</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BouncedRecipientInfo withRecipientDsnFields(
-            RecipientDsnFields recipientDsnFields) {
+    public BouncedRecipientInfo withRecipientDsnFields(RecipientDsnFields recipientDsnFields) {
         setRecipientDsnFields(recipientDsnFields);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -355,25 +314,19 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
         BouncedRecipientInfo other = (BouncedRecipientInfo) obj;
         if (other.getRecipient() == null ^ this.getRecipient() == null)
             return false;
-        if (other.getRecipient() != null
-                && other.getRecipient().equals(this.getRecipient()) == false)
+        if (other.getRecipient() != null && other.getRecipient().equals(this.getRecipient()) == false)
             return false;
         if (other.getRecipientArn() == null ^ this.getRecipientArn() == null)
             return false;
-        if (other.getRecipientArn() != null
-                && other.getRecipientArn().equals(this.getRecipientArn()) == false)
+        if (other.getRecipientArn() != null && other.getRecipientArn().equals(this.getRecipientArn()) == false)
             return false;
         if (other.getBounceType() == null ^ this.getBounceType() == null)
             return false;
-        if (other.getBounceType() != null
-                && other.getBounceType().equals(this.getBounceType()) == false)
+        if (other.getBounceType() != null && other.getBounceType().equals(this.getBounceType()) == false)
             return false;
-        if (other.getRecipientDsnFields() == null
-                ^ this.getRecipientDsnFields() == null)
+        if (other.getRecipientDsnFields() == null ^ this.getRecipientDsnFields() == null)
             return false;
-        if (other.getRecipientDsnFields() != null
-                && other.getRecipientDsnFields().equals(
-                        this.getRecipientDsnFields()) == false)
+        if (other.getRecipientDsnFields() != null && other.getRecipientDsnFields().equals(this.getRecipientDsnFields()) == false)
             return false;
         return true;
     }
@@ -383,18 +336,10 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRecipient() == null) ? 0 : getRecipient().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRecipientArn() == null) ? 0 : getRecipientArn()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getBounceType() == null) ? 0 : getBounceType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRecipientDsnFields() == null) ? 0
-                        : getRecipientDsnFields().hashCode());
+        hashCode = prime * hashCode + ((getRecipient() == null) ? 0 : getRecipient().hashCode());
+        hashCode = prime * hashCode + ((getRecipientArn() == null) ? 0 : getRecipientArn().hashCode());
+        hashCode = prime * hashCode + ((getBounceType() == null) ? 0 : getBounceType().hashCode());
+        hashCode = prime * hashCode + ((getRecipientDsnFields() == null) ? 0 : getRecipientDsnFields().hashCode());
         return hashCode;
     }
 
@@ -403,9 +348,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
         try {
             return (BouncedRecipientInfo) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

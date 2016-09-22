@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DescribeLimitsResult JSON Unmarshaller
  */
-public class DescribeLimitsResultJsonUnmarshaller implements
-        Unmarshaller<DescribeLimitsResult, JsonUnmarshallerContext> {
+public class DescribeLimitsResultJsonUnmarshaller implements Unmarshaller<DescribeLimitsResult, JsonUnmarshallerContext> {
 
-    public DescribeLimitsResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public DescribeLimitsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeLimitsResult describeLimitsResult = new DescribeLimitsResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -51,36 +47,24 @@ public class DescribeLimitsResultJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("AccountMaxReadCapacityUnits",
-                        targetDepth)) {
+                if (context.testExpression("AccountMaxReadCapacityUnits", targetDepth)) {
                     context.nextToken();
-                    describeLimitsResult.setAccountMaxReadCapacityUnits(context
-                            .getUnmarshaller(Long.class).unmarshall(context));
+                    describeLimitsResult.setAccountMaxReadCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
-                if (context.testExpression("AccountMaxWriteCapacityUnits",
-                        targetDepth)) {
+                if (context.testExpression("AccountMaxWriteCapacityUnits", targetDepth)) {
                     context.nextToken();
-                    describeLimitsResult
-                            .setAccountMaxWriteCapacityUnits(context
-                                    .getUnmarshaller(Long.class).unmarshall(
-                                            context));
+                    describeLimitsResult.setAccountMaxWriteCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
-                if (context.testExpression("TableMaxReadCapacityUnits",
-                        targetDepth)) {
+                if (context.testExpression("TableMaxReadCapacityUnits", targetDepth)) {
                     context.nextToken();
-                    describeLimitsResult.setTableMaxReadCapacityUnits(context
-                            .getUnmarshaller(Long.class).unmarshall(context));
+                    describeLimitsResult.setTableMaxReadCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
-                if (context.testExpression("TableMaxWriteCapacityUnits",
-                        targetDepth)) {
+                if (context.testExpression("TableMaxWriteCapacityUnits", targetDepth)) {
                     context.nextToken();
-                    describeLimitsResult.setTableMaxWriteCapacityUnits(context
-                            .getUnmarshaller(Long.class).unmarshall(context));
+                    describeLimitsResult.setTableMaxWriteCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

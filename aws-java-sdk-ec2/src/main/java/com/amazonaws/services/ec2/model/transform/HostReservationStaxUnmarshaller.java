@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * HostReservation StAX Unmarshaller
  */
-public class HostReservationStaxUnmarshaller implements
-        Unmarshaller<HostReservation, StaxUnmarshallerContext> {
+public class HostReservationStaxUnmarshaller implements Unmarshaller<HostReservation, StaxUnmarshallerContext> {
 
-    public HostReservation unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public HostReservation unmarshall(StaxUnmarshallerContext context) throws Exception {
         HostReservation hostReservation = new HostReservation();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,80 +46,67 @@ public class HostReservationStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("hostReservationId", targetDepth)) {
-                    hostReservation.setHostReservationId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hostReservation.setHostReservationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("hostIdSet/item", targetDepth)) {
-                    hostReservation.withHostIdSet(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hostReservation.withHostIdSet(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("offeringId", targetDepth)) {
-                    hostReservation.setOfferingId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hostReservation.setOfferingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("instanceFamily", targetDepth)) {
-                    hostReservation.setInstanceFamily(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hostReservation.setInstanceFamily(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("paymentOption", targetDepth)) {
-                    hostReservation.setPaymentOption(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hostReservation.setPaymentOption(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("hourlyPrice", targetDepth)) {
-                    hostReservation.setHourlyPrice(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hostReservation.setHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("upfrontPrice", targetDepth)) {
-                    hostReservation.setUpfrontPrice(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hostReservation.setUpfrontPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("currencyCode", targetDepth)) {
-                    hostReservation.setCurrencyCode(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hostReservation.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("count", targetDepth)) {
-                    hostReservation.setCount(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hostReservation.setCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("duration", targetDepth)) {
-                    hostReservation.setDuration(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hostReservation.setDuration(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("end", targetDepth)) {
-                    hostReservation.setEnd(DateStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    hostReservation.setEnd(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("start", targetDepth)) {
-                    hostReservation.setStart(DateStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    hostReservation.setStart(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("state", targetDepth)) {
-                    hostReservation.setState(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hostReservation.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

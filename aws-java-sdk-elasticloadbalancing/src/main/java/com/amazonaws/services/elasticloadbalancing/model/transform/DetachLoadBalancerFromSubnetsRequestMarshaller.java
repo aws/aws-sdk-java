@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model.transform;
 
@@ -31,29 +29,23 @@ import com.amazonaws.util.IdempotentUtils;
  * DetachLoadBalancerFromSubnetsRequest Marshaller
  */
 
-public class DetachLoadBalancerFromSubnetsRequestMarshaller
-        implements
+public class DetachLoadBalancerFromSubnetsRequestMarshaller implements
         Marshaller<Request<DetachLoadBalancerFromSubnetsRequest>, DetachLoadBalancerFromSubnetsRequest> {
 
-    public Request<DetachLoadBalancerFromSubnetsRequest> marshall(
-            DetachLoadBalancerFromSubnetsRequest detachLoadBalancerFromSubnetsRequest) {
+    public Request<DetachLoadBalancerFromSubnetsRequest> marshall(DetachLoadBalancerFromSubnetsRequest detachLoadBalancerFromSubnetsRequest) {
 
         if (detachLoadBalancerFromSubnetsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DetachLoadBalancerFromSubnetsRequest> request = new DefaultRequest<DetachLoadBalancerFromSubnetsRequest>(
-                detachLoadBalancerFromSubnetsRequest,
+        Request<DetachLoadBalancerFromSubnetsRequest> request = new DefaultRequest<DetachLoadBalancerFromSubnetsRequest>(detachLoadBalancerFromSubnetsRequest,
                 "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DetachLoadBalancerFromSubnets");
         request.addParameter("Version", "2012-06-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (detachLoadBalancerFromSubnetsRequest.getLoadBalancerName() != null) {
-            request.addParameter("LoadBalancerName", StringUtils
-                    .fromString(detachLoadBalancerFromSubnetsRequest
-                            .getLoadBalancerName()));
+            request.addParameter("LoadBalancerName", StringUtils.fromString(detachLoadBalancerFromSubnetsRequest.getLoadBalancerName()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> subnetsList = (com.amazonaws.internal.SdkInternalList<String>) detachLoadBalancerFromSubnetsRequest
@@ -63,8 +55,7 @@ public class DetachLoadBalancerFromSubnetsRequestMarshaller
 
             for (String subnetsListValue : subnetsList) {
                 if (subnetsListValue != null) {
-                    request.addParameter("Subnets.member." + subnetsListIndex,
-                            StringUtils.fromString(subnetsListValue));
+                    request.addParameter("Subnets.member." + subnetsListIndex, StringUtils.fromString(subnetsListValue));
                 }
                 subnetsListIndex++;
             }

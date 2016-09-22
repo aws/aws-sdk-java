@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -31,8 +29,7 @@ public class NodeGroupMember implements Serializable, Cloneable {
     private String cacheClusterId;
     /**
      * <p>
-     * The ID of the node within its cache cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).
+     * The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).
      * </p>
      */
     private String cacheNodeId;
@@ -46,8 +43,7 @@ public class NodeGroupMember implements Serializable, Cloneable {
     private String preferredAvailabilityZone;
     /**
      * <p>
-     * The role that is currently assigned to the node - <i>primary</i> or
-     * <i>replica</i>.
+     * The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
      * </p>
      */
     private String currentRole;
@@ -84,8 +80,7 @@ public class NodeGroupMember implements Serializable, Cloneable {
      * 
      * @param cacheClusterId
      *        The ID of the cache cluster to which the node belongs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NodeGroupMember withCacheClusterId(String cacheClusterId) {
@@ -95,13 +90,11 @@ public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the node within its cache cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).
+     * The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).
      * </p>
      * 
      * @param cacheNodeId
-     *        The ID of the node within its cache cluster. A node ID is a
-     *        numeric identifier (0001, 0002, etc.).
+     *        The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).
      */
 
     public void setCacheNodeId(String cacheNodeId) {
@@ -110,12 +103,10 @@ public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the node within its cache cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).
+     * The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).
      * </p>
      * 
-     * @return The ID of the node within its cache cluster. A node ID is a
-     *         numeric identifier (0001, 0002, etc.).
+     * @return The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).
      */
 
     public String getCacheNodeId() {
@@ -124,15 +115,12 @@ public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the node within its cache cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).
+     * The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).
      * </p>
      * 
      * @param cacheNodeId
-     *        The ID of the node within its cache cluster. A node ID is a
-     *        numeric identifier (0001, 0002, etc.).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NodeGroupMember withCacheNodeId(String cacheNodeId) {
@@ -158,8 +146,7 @@ public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * @param readEndpoint
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NodeGroupMember withReadEndpoint(Endpoint readEndpoint) {
@@ -199,25 +186,21 @@ public class NodeGroupMember implements Serializable, Cloneable {
      * 
      * @param preferredAvailabilityZone
      *        The name of the Availability Zone in which the node is located.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NodeGroupMember withPreferredAvailabilityZone(
-            String preferredAvailabilityZone) {
+    public NodeGroupMember withPreferredAvailabilityZone(String preferredAvailabilityZone) {
         setPreferredAvailabilityZone(preferredAvailabilityZone);
         return this;
     }
 
     /**
      * <p>
-     * The role that is currently assigned to the node - <i>primary</i> or
-     * <i>replica</i>.
+     * The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
      * </p>
      * 
      * @param currentRole
-     *        The role that is currently assigned to the node - <i>primary</i>
-     *        or <i>replica</i>.
+     *        The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
      */
 
     public void setCurrentRole(String currentRole) {
@@ -226,12 +209,10 @@ public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role that is currently assigned to the node - <i>primary</i> or
-     * <i>replica</i>.
+     * The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
      * </p>
      * 
-     * @return The role that is currently assigned to the node - <i>primary</i>
-     *         or <i>replica</i>.
+     * @return The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
      */
 
     public String getCurrentRole() {
@@ -240,15 +221,12 @@ public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role that is currently assigned to the node - <i>primary</i> or
-     * <i>replica</i>.
+     * The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
      * </p>
      * 
      * @param currentRole
-     *        The role that is currently assigned to the node - <i>primary</i>
-     *        or <i>replica</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NodeGroupMember withCurrentRole(String currentRole) {
@@ -257,8 +235,7 @@ public class NodeGroupMember implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -275,8 +252,7 @@ public class NodeGroupMember implements Serializable, Cloneable {
         if (getReadEndpoint() != null)
             sb.append("ReadEndpoint: " + getReadEndpoint() + ",");
         if (getPreferredAvailabilityZone() != null)
-            sb.append("PreferredAvailabilityZone: "
-                    + getPreferredAvailabilityZone() + ",");
+            sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ",");
         if (getCurrentRole() != null)
             sb.append("CurrentRole: " + getCurrentRole());
         sb.append("}");
@@ -293,33 +269,25 @@ public class NodeGroupMember implements Serializable, Cloneable {
         if (obj instanceof NodeGroupMember == false)
             return false;
         NodeGroupMember other = (NodeGroupMember) obj;
-        if (other.getCacheClusterId() == null
-                ^ this.getCacheClusterId() == null)
+        if (other.getCacheClusterId() == null ^ this.getCacheClusterId() == null)
             return false;
-        if (other.getCacheClusterId() != null
-                && other.getCacheClusterId().equals(this.getCacheClusterId()) == false)
+        if (other.getCacheClusterId() != null && other.getCacheClusterId().equals(this.getCacheClusterId()) == false)
             return false;
         if (other.getCacheNodeId() == null ^ this.getCacheNodeId() == null)
             return false;
-        if (other.getCacheNodeId() != null
-                && other.getCacheNodeId().equals(this.getCacheNodeId()) == false)
+        if (other.getCacheNodeId() != null && other.getCacheNodeId().equals(this.getCacheNodeId()) == false)
             return false;
         if (other.getReadEndpoint() == null ^ this.getReadEndpoint() == null)
             return false;
-        if (other.getReadEndpoint() != null
-                && other.getReadEndpoint().equals(this.getReadEndpoint()) == false)
+        if (other.getReadEndpoint() != null && other.getReadEndpoint().equals(this.getReadEndpoint()) == false)
             return false;
-        if (other.getPreferredAvailabilityZone() == null
-                ^ this.getPreferredAvailabilityZone() == null)
+        if (other.getPreferredAvailabilityZone() == null ^ this.getPreferredAvailabilityZone() == null)
             return false;
-        if (other.getPreferredAvailabilityZone() != null
-                && other.getPreferredAvailabilityZone().equals(
-                        this.getPreferredAvailabilityZone()) == false)
+        if (other.getPreferredAvailabilityZone() != null && other.getPreferredAvailabilityZone().equals(this.getPreferredAvailabilityZone()) == false)
             return false;
         if (other.getCurrentRole() == null ^ this.getCurrentRole() == null)
             return false;
-        if (other.getCurrentRole() != null
-                && other.getCurrentRole().equals(this.getCurrentRole()) == false)
+        if (other.getCurrentRole() != null && other.getCurrentRole().equals(this.getCurrentRole()) == false)
             return false;
         return true;
     }
@@ -329,24 +297,11 @@ public class NodeGroupMember implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCacheClusterId() == null) ? 0 : getCacheClusterId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheNodeId() == null) ? 0 : getCacheNodeId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReadEndpoint() == null) ? 0 : getReadEndpoint()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPreferredAvailabilityZone() == null) ? 0
-                        : getPreferredAvailabilityZone().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCurrentRole() == null) ? 0 : getCurrentRole().hashCode());
+        hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode());
+        hashCode = prime * hashCode + ((getCacheNodeId() == null) ? 0 : getCacheNodeId().hashCode());
+        hashCode = prime * hashCode + ((getReadEndpoint() == null) ? 0 : getReadEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getPreferredAvailabilityZone() == null) ? 0 : getPreferredAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getCurrentRole() == null) ? 0 : getCurrentRole().hashCode());
         return hashCode;
     }
 
@@ -355,9 +310,7 @@ public class NodeGroupMember implements Serializable, Cloneable {
         try {
             return (NodeGroupMember) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticsearch.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ElasticsearchDomainStatus JSON Unmarshaller
  */
-public class ElasticsearchDomainStatusJsonUnmarshaller implements
-        Unmarshaller<ElasticsearchDomainStatus, JsonUnmarshallerContext> {
+public class ElasticsearchDomainStatusJsonUnmarshaller implements Unmarshaller<ElasticsearchDomainStatus, JsonUnmarshallerContext> {
 
-    public ElasticsearchDomainStatus unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ElasticsearchDomainStatus unmarshall(JsonUnmarshallerContext context) throws Exception {
         ElasticsearchDomainStatus elasticsearchDomainStatus = new ElasticsearchDomainStatus();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,83 +49,59 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainId", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus.setDomainId(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    elasticsearchDomainStatus.setDomainId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainName", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus.setDomainName(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    elasticsearchDomainStatus.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ARN", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus.setARN(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    elasticsearchDomainStatus.setARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Created", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus
-                            .setCreated(context.getUnmarshaller(Boolean.class)
-                                    .unmarshall(context));
+                    elasticsearchDomainStatus.setCreated(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Deleted", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus
-                            .setDeleted(context.getUnmarshaller(Boolean.class)
-                                    .unmarshall(context));
+                    elasticsearchDomainStatus.setDeleted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Endpoint", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus.setEndpoint(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    elasticsearchDomainStatus.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Processing", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus
-                            .setProcessing(context.getUnmarshaller(
-                                    Boolean.class).unmarshall(context));
+                    elasticsearchDomainStatus.setProcessing(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ElasticsearchVersion", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus.setElasticsearchVersion(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    elasticsearchDomainStatus.setElasticsearchVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("ElasticsearchClusterConfig",
-                        targetDepth)) {
+                if (context.testExpression("ElasticsearchClusterConfig", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus
-                            .setElasticsearchClusterConfig(ElasticsearchClusterConfigJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    elasticsearchDomainStatus.setElasticsearchClusterConfig(ElasticsearchClusterConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EBSOptions", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus
-                            .setEBSOptions(EBSOptionsJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    elasticsearchDomainStatus.setEBSOptions(EBSOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AccessPolicies", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus.setAccessPolicies(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    elasticsearchDomainStatus.setAccessPolicies(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotOptions", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus
-                            .setSnapshotOptions(SnapshotOptionsJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    elasticsearchDomainStatus.setSnapshotOptions(SnapshotOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AdvancedOptions", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus
-                            .setAdvancedOptions(new MapUnmarshaller<String, String>(
-                                    context.getUnmarshaller(String.class),
-                                    context.getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    elasticsearchDomainStatus.setAdvancedOptions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

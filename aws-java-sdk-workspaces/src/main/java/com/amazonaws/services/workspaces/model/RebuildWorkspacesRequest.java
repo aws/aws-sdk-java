@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.workspaces.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>RebuildWorkspaces</a> operation.
  * </p>
  */
-public class RebuildWorkspacesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class RebuildWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -57,15 +53,13 @@ public class RebuildWorkspacesRequest extends
      *        An array of structures that specify the WorkSpaces to rebuild.
      */
 
-    public void setRebuildWorkspaceRequests(
-            java.util.Collection<RebuildRequest> rebuildWorkspaceRequests) {
+    public void setRebuildWorkspaceRequests(java.util.Collection<RebuildRequest> rebuildWorkspaceRequests) {
         if (rebuildWorkspaceRequests == null) {
             this.rebuildWorkspaceRequests = null;
             return;
         }
 
-        this.rebuildWorkspaceRequests = new com.amazonaws.internal.SdkInternalList<RebuildRequest>(
-                rebuildWorkspaceRequests);
+        this.rebuildWorkspaceRequests = new com.amazonaws.internal.SdkInternalList<RebuildRequest>(rebuildWorkspaceRequests);
     }
 
     /**
@@ -73,23 +67,19 @@ public class RebuildWorkspacesRequest extends
      * An array of structures that specify the WorkSpaces to rebuild.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRebuildWorkspaceRequests(java.util.Collection)} or
-     * {@link #withRebuildWorkspaceRequests(java.util.Collection)} if you want
-     * to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRebuildWorkspaceRequests(java.util.Collection)} or
+     * {@link #withRebuildWorkspaceRequests(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param rebuildWorkspaceRequests
      *        An array of structures that specify the WorkSpaces to rebuild.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RebuildWorkspacesRequest withRebuildWorkspaceRequests(
-            RebuildRequest... rebuildWorkspaceRequests) {
+    public RebuildWorkspacesRequest withRebuildWorkspaceRequests(RebuildRequest... rebuildWorkspaceRequests) {
         if (this.rebuildWorkspaceRequests == null) {
-            setRebuildWorkspaceRequests(new com.amazonaws.internal.SdkInternalList<RebuildRequest>(
-                    rebuildWorkspaceRequests.length));
+            setRebuildWorkspaceRequests(new com.amazonaws.internal.SdkInternalList<RebuildRequest>(rebuildWorkspaceRequests.length));
         }
         for (RebuildRequest ele : rebuildWorkspaceRequests) {
             this.rebuildWorkspaceRequests.add(ele);
@@ -104,19 +94,16 @@ public class RebuildWorkspacesRequest extends
      * 
      * @param rebuildWorkspaceRequests
      *        An array of structures that specify the WorkSpaces to rebuild.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RebuildWorkspacesRequest withRebuildWorkspaceRequests(
-            java.util.Collection<RebuildRequest> rebuildWorkspaceRequests) {
+    public RebuildWorkspacesRequest withRebuildWorkspaceRequests(java.util.Collection<RebuildRequest> rebuildWorkspaceRequests) {
         setRebuildWorkspaceRequests(rebuildWorkspaceRequests);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -127,8 +114,7 @@ public class RebuildWorkspacesRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRebuildWorkspaceRequests() != null)
-            sb.append("RebuildWorkspaceRequests: "
-                    + getRebuildWorkspaceRequests());
+            sb.append("RebuildWorkspaceRequests: " + getRebuildWorkspaceRequests());
         sb.append("}");
         return sb.toString();
     }
@@ -143,12 +129,9 @@ public class RebuildWorkspacesRequest extends
         if (obj instanceof RebuildWorkspacesRequest == false)
             return false;
         RebuildWorkspacesRequest other = (RebuildWorkspacesRequest) obj;
-        if (other.getRebuildWorkspaceRequests() == null
-                ^ this.getRebuildWorkspaceRequests() == null)
+        if (other.getRebuildWorkspaceRequests() == null ^ this.getRebuildWorkspaceRequests() == null)
             return false;
-        if (other.getRebuildWorkspaceRequests() != null
-                && other.getRebuildWorkspaceRequests().equals(
-                        this.getRebuildWorkspaceRequests()) == false)
+        if (other.getRebuildWorkspaceRequests() != null && other.getRebuildWorkspaceRequests().equals(this.getRebuildWorkspaceRequests()) == false)
             return false;
         return true;
     }
@@ -158,10 +141,7 @@ public class RebuildWorkspacesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRebuildWorkspaceRequests() == null) ? 0
-                        : getRebuildWorkspaceRequests().hashCode());
+        hashCode = prime * hashCode + ((getRebuildWorkspaceRequests() == null) ? 0 : getRebuildWorkspaceRequests().hashCode());
         return hashCode;
     }
 

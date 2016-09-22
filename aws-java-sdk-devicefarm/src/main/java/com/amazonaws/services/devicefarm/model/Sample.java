@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model;
 
@@ -39,14 +37,14 @@ public class Sample implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * CPU: A CPU sample type. This is expressed as the app processing CPU time
-     * (including child processes) as reported by process, as a percentage.
+     * CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as reported
+     * by process, as a percentage.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MEMORY: A memory usage sample type. This is expressed as the total
-     * proportional set size of an app process, in kilobytes.
+     * MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app process, in
+     * kilobytes.
      * </p>
      * </li>
      * <li>
@@ -106,14 +104,12 @@ public class Sample implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * RX_RATE: The total number of bytes per second (TCP and UDP) that are
-     * sent, by app process.
+     * RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.
      * </p>
      * </li>
      * <li>
      * <p>
-     * THREADS: A threads sample type. This is expressed as the total number of
-     * threads per app process.
+     * THREADS: A threads sample type. This is expressed as the total number of threads per app process.
      * </p>
      * </li>
      * <li>
@@ -123,8 +119,7 @@ public class Sample implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * TX_RATE: The total number of bytes per second (TCP and UDP) that are
-     * received, by app process.
+     * TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.
      * </p>
      * </li>
      * </ul>
@@ -132,8 +127,7 @@ public class Sample implements Serializable, Cloneable {
     private String type;
     /**
      * <p>
-     * The pre-signed Amazon S3 URL that can be used with a corresponding GET
-     * request to download the sample's file.
+     * The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's file.
      * </p>
      */
     private String url;
@@ -170,8 +164,7 @@ public class Sample implements Serializable, Cloneable {
      * 
      * @param arn
      *        The sample's ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Sample withArn(String arn) {
@@ -189,14 +182,14 @@ public class Sample implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * CPU: A CPU sample type. This is expressed as the app processing CPU time
-     * (including child processes) as reported by process, as a percentage.
+     * CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as reported
+     * by process, as a percentage.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MEMORY: A memory usage sample type. This is expressed as the total
-     * proportional set size of an app process, in kilobytes.
+     * MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app process, in
+     * kilobytes.
      * </p>
      * </li>
      * <li>
@@ -256,14 +249,12 @@ public class Sample implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * RX_RATE: The total number of bytes per second (TCP and UDP) that are
-     * sent, by app process.
+     * RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.
      * </p>
      * </li>
      * <li>
      * <p>
-     * THREADS: A threads sample type. This is expressed as the total number of
-     * threads per app process.
+     * THREADS: A threads sample type. This is expressed as the total number of threads per app process.
      * </p>
      * </li>
      * <li>
@@ -273,8 +264,7 @@ public class Sample implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * TX_RATE: The total number of bytes per second (TCP and UDP) that are
-     * received, by app process.
+     * TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.
      * </p>
      * </li>
      * </ul>
@@ -287,15 +277,14 @@ public class Sample implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        CPU: A CPU sample type. This is expressed as the app processing
-     *        CPU time (including child processes) as reported by process, as a
-     *        percentage.
+     *        CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as
+     *        reported by process, as a percentage.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MEMORY: A memory usage sample type. This is expressed as the total
-     *        proportional set size of an app process, in kilobytes.
+     *        MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app
+     *        process, in kilobytes.
      *        </p>
      *        </li>
      *        <li>
@@ -355,14 +344,12 @@ public class Sample implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        RX_RATE: The total number of bytes per second (TCP and UDP) that
-     *        are sent, by app process.
+     *        RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        THREADS: A threads sample type. This is expressed as the total
-     *        number of threads per app process.
+     *        THREADS: A threads sample type. This is expressed as the total number of threads per app process.
      *        </p>
      *        </li>
      *        <li>
@@ -372,8 +359,7 @@ public class Sample implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        TX_RATE: The total number of bytes per second (TCP and UDP) that
-     *        are received, by app process.
+     *        TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.
      *        </p>
      *        </li>
      * @see SampleType
@@ -393,14 +379,14 @@ public class Sample implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * CPU: A CPU sample type. This is expressed as the app processing CPU time
-     * (including child processes) as reported by process, as a percentage.
+     * CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as reported
+     * by process, as a percentage.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MEMORY: A memory usage sample type. This is expressed as the total
-     * proportional set size of an app process, in kilobytes.
+     * MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app process, in
+     * kilobytes.
      * </p>
      * </li>
      * <li>
@@ -460,14 +446,12 @@ public class Sample implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * RX_RATE: The total number of bytes per second (TCP and UDP) that are
-     * sent, by app process.
+     * RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.
      * </p>
      * </li>
      * <li>
      * <p>
-     * THREADS: A threads sample type. This is expressed as the total number of
-     * threads per app process.
+     * THREADS: A threads sample type. This is expressed as the total number of threads per app process.
      * </p>
      * </li>
      * <li>
@@ -477,8 +461,7 @@ public class Sample implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * TX_RATE: The total number of bytes per second (TCP and UDP) that are
-     * received, by app process.
+     * TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.
      * </p>
      * </li>
      * </ul>
@@ -490,15 +473,14 @@ public class Sample implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         CPU: A CPU sample type. This is expressed as the app processing
-     *         CPU time (including child processes) as reported by process, as a
-     *         percentage.
+     *         CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as
+     *         reported by process, as a percentage.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MEMORY: A memory usage sample type. This is expressed as the
-     *         total proportional set size of an app process, in kilobytes.
+     *         MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app
+     *         process, in kilobytes.
      *         </p>
      *         </li>
      *         <li>
@@ -558,14 +540,12 @@ public class Sample implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         RX_RATE: The total number of bytes per second (TCP and UDP) that
-     *         are sent, by app process.
+     *         RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         THREADS: A threads sample type. This is expressed as the total
-     *         number of threads per app process.
+     *         THREADS: A threads sample type. This is expressed as the total number of threads per app process.
      *         </p>
      *         </li>
      *         <li>
@@ -575,8 +555,7 @@ public class Sample implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         TX_RATE: The total number of bytes per second (TCP and UDP) that
-     *         are received, by app process.
+     *         TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.
      *         </p>
      *         </li>
      * @see SampleType
@@ -596,14 +575,14 @@ public class Sample implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * CPU: A CPU sample type. This is expressed as the app processing CPU time
-     * (including child processes) as reported by process, as a percentage.
+     * CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as reported
+     * by process, as a percentage.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MEMORY: A memory usage sample type. This is expressed as the total
-     * proportional set size of an app process, in kilobytes.
+     * MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app process, in
+     * kilobytes.
      * </p>
      * </li>
      * <li>
@@ -663,14 +642,12 @@ public class Sample implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * RX_RATE: The total number of bytes per second (TCP and UDP) that are
-     * sent, by app process.
+     * RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.
      * </p>
      * </li>
      * <li>
      * <p>
-     * THREADS: A threads sample type. This is expressed as the total number of
-     * threads per app process.
+     * THREADS: A threads sample type. This is expressed as the total number of threads per app process.
      * </p>
      * </li>
      * <li>
@@ -680,8 +657,7 @@ public class Sample implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * TX_RATE: The total number of bytes per second (TCP and UDP) that are
-     * received, by app process.
+     * TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.
      * </p>
      * </li>
      * </ul>
@@ -694,15 +670,14 @@ public class Sample implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        CPU: A CPU sample type. This is expressed as the app processing
-     *        CPU time (including child processes) as reported by process, as a
-     *        percentage.
+     *        CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as
+     *        reported by process, as a percentage.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MEMORY: A memory usage sample type. This is expressed as the total
-     *        proportional set size of an app process, in kilobytes.
+     *        MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app
+     *        process, in kilobytes.
      *        </p>
      *        </li>
      *        <li>
@@ -762,14 +737,12 @@ public class Sample implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        RX_RATE: The total number of bytes per second (TCP and UDP) that
-     *        are sent, by app process.
+     *        RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        THREADS: A threads sample type. This is expressed as the total
-     *        number of threads per app process.
+     *        THREADS: A threads sample type. This is expressed as the total number of threads per app process.
      *        </p>
      *        </li>
      *        <li>
@@ -779,12 +752,10 @@ public class Sample implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        TX_RATE: The total number of bytes per second (TCP and UDP) that
-     *        are received, by app process.
+     *        TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see SampleType
      */
 
@@ -803,14 +774,14 @@ public class Sample implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * CPU: A CPU sample type. This is expressed as the app processing CPU time
-     * (including child processes) as reported by process, as a percentage.
+     * CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as reported
+     * by process, as a percentage.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MEMORY: A memory usage sample type. This is expressed as the total
-     * proportional set size of an app process, in kilobytes.
+     * MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app process, in
+     * kilobytes.
      * </p>
      * </li>
      * <li>
@@ -870,14 +841,12 @@ public class Sample implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * RX_RATE: The total number of bytes per second (TCP and UDP) that are
-     * sent, by app process.
+     * RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.
      * </p>
      * </li>
      * <li>
      * <p>
-     * THREADS: A threads sample type. This is expressed as the total number of
-     * threads per app process.
+     * THREADS: A threads sample type. This is expressed as the total number of threads per app process.
      * </p>
      * </li>
      * <li>
@@ -887,8 +856,7 @@ public class Sample implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * TX_RATE: The total number of bytes per second (TCP and UDP) that are
-     * received, by app process.
+     * TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.
      * </p>
      * </li>
      * </ul>
@@ -901,15 +869,14 @@ public class Sample implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        CPU: A CPU sample type. This is expressed as the app processing
-     *        CPU time (including child processes) as reported by process, as a
-     *        percentage.
+     *        CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as
+     *        reported by process, as a percentage.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MEMORY: A memory usage sample type. This is expressed as the total
-     *        proportional set size of an app process, in kilobytes.
+     *        MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app
+     *        process, in kilobytes.
      *        </p>
      *        </li>
      *        <li>
@@ -969,14 +936,12 @@ public class Sample implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        RX_RATE: The total number of bytes per second (TCP and UDP) that
-     *        are sent, by app process.
+     *        RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        THREADS: A threads sample type. This is expressed as the total
-     *        number of threads per app process.
+     *        THREADS: A threads sample type. This is expressed as the total number of threads per app process.
      *        </p>
      *        </li>
      *        <li>
@@ -986,8 +951,7 @@ public class Sample implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        TX_RATE: The total number of bytes per second (TCP and UDP) that
-     *        are received, by app process.
+     *        TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.
      *        </p>
      *        </li>
      * @see SampleType
@@ -1007,14 +971,14 @@ public class Sample implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * CPU: A CPU sample type. This is expressed as the app processing CPU time
-     * (including child processes) as reported by process, as a percentage.
+     * CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as reported
+     * by process, as a percentage.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MEMORY: A memory usage sample type. This is expressed as the total
-     * proportional set size of an app process, in kilobytes.
+     * MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app process, in
+     * kilobytes.
      * </p>
      * </li>
      * <li>
@@ -1074,14 +1038,12 @@ public class Sample implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * RX_RATE: The total number of bytes per second (TCP and UDP) that are
-     * sent, by app process.
+     * RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.
      * </p>
      * </li>
      * <li>
      * <p>
-     * THREADS: A threads sample type. This is expressed as the total number of
-     * threads per app process.
+     * THREADS: A threads sample type. This is expressed as the total number of threads per app process.
      * </p>
      * </li>
      * <li>
@@ -1091,8 +1053,7 @@ public class Sample implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * TX_RATE: The total number of bytes per second (TCP and UDP) that are
-     * received, by app process.
+     * TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.
      * </p>
      * </li>
      * </ul>
@@ -1105,15 +1066,14 @@ public class Sample implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        CPU: A CPU sample type. This is expressed as the app processing
-     *        CPU time (including child processes) as reported by process, as a
-     *        percentage.
+     *        CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as
+     *        reported by process, as a percentage.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MEMORY: A memory usage sample type. This is expressed as the total
-     *        proportional set size of an app process, in kilobytes.
+     *        MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app
+     *        process, in kilobytes.
      *        </p>
      *        </li>
      *        <li>
@@ -1173,14 +1133,12 @@ public class Sample implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        RX_RATE: The total number of bytes per second (TCP and UDP) that
-     *        are sent, by app process.
+     *        RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        THREADS: A threads sample type. This is expressed as the total
-     *        number of threads per app process.
+     *        THREADS: A threads sample type. This is expressed as the total number of threads per app process.
      *        </p>
      *        </li>
      *        <li>
@@ -1190,12 +1148,10 @@ public class Sample implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        TX_RATE: The total number of bytes per second (TCP and UDP) that
-     *        are received, by app process.
+     *        TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see SampleType
      */
 
@@ -1206,13 +1162,12 @@ public class Sample implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The pre-signed Amazon S3 URL that can be used with a corresponding GET
-     * request to download the sample's file.
+     * The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's file.
      * </p>
      * 
      * @param url
-     *        The pre-signed Amazon S3 URL that can be used with a corresponding
-     *        GET request to download the sample's file.
+     *        The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's
+     *        file.
      */
 
     public void setUrl(String url) {
@@ -1221,12 +1176,11 @@ public class Sample implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The pre-signed Amazon S3 URL that can be used with a corresponding GET
-     * request to download the sample's file.
+     * The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's file.
      * </p>
      * 
-     * @return The pre-signed Amazon S3 URL that can be used with a
-     *         corresponding GET request to download the sample's file.
+     * @return The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's
+     *         file.
      */
 
     public String getUrl() {
@@ -1235,15 +1189,13 @@ public class Sample implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The pre-signed Amazon S3 URL that can be used with a corresponding GET
-     * request to download the sample's file.
+     * The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's file.
      * </p>
      * 
      * @param url
-     *        The pre-signed Amazon S3 URL that can be used with a corresponding
-     *        GET request to download the sample's file.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's
+     *        file.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Sample withUrl(String url) {
@@ -1252,8 +1204,7 @@ public class Sample implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1285,18 +1236,15 @@ public class Sample implements Serializable, Cloneable {
         Sample other = (Sample) obj;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getUrl() == null ^ this.getUrl() == null)
             return false;
-        if (other.getUrl() != null
-                && other.getUrl().equals(this.getUrl()) == false)
+        if (other.getUrl() != null && other.getUrl().equals(this.getUrl()) == false)
             return false;
         return true;
     }
@@ -1306,12 +1254,9 @@ public class Sample implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode
-                + ((getUrl() == null) ? 0 : getUrl().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         return hashCode;
     }
 
@@ -1320,9 +1265,7 @@ public class Sample implements Serializable, Cloneable {
         try {
             return (Sample) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

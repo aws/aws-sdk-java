@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Contains a list of event sources (see )
  * </p>
  */
-public class ListEventSourceMappingsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListEventSourceMappingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -70,8 +66,7 @@ public class ListEventSourceMappingsResult extends
      * 
      * @param nextMarker
      *        A string, present if there are more event source mappings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListEventSourceMappingsResult withNextMarker(String nextMarker) {
@@ -103,15 +98,13 @@ public class ListEventSourceMappingsResult extends
      *        An array of <code>EventSourceMappingConfiguration</code> objects.
      */
 
-    public void setEventSourceMappings(
-            java.util.Collection<EventSourceMappingConfiguration> eventSourceMappings) {
+    public void setEventSourceMappings(java.util.Collection<EventSourceMappingConfiguration> eventSourceMappings) {
         if (eventSourceMappings == null) {
             this.eventSourceMappings = null;
             return;
         }
 
-        this.eventSourceMappings = new com.amazonaws.internal.SdkInternalList<EventSourceMappingConfiguration>(
-                eventSourceMappings);
+        this.eventSourceMappings = new com.amazonaws.internal.SdkInternalList<EventSourceMappingConfiguration>(eventSourceMappings);
     }
 
     /**
@@ -119,23 +112,19 @@ public class ListEventSourceMappingsResult extends
      * An array of <code>EventSourceMappingConfiguration</code> objects.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEventSourceMappings(java.util.Collection)} or
-     * {@link #withEventSourceMappings(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEventSourceMappings(java.util.Collection)} or {@link #withEventSourceMappings(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param eventSourceMappings
      *        An array of <code>EventSourceMappingConfiguration</code> objects.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListEventSourceMappingsResult withEventSourceMappings(
-            EventSourceMappingConfiguration... eventSourceMappings) {
+    public ListEventSourceMappingsResult withEventSourceMappings(EventSourceMappingConfiguration... eventSourceMappings) {
         if (this.eventSourceMappings == null) {
-            setEventSourceMappings(new com.amazonaws.internal.SdkInternalList<EventSourceMappingConfiguration>(
-                    eventSourceMappings.length));
+            setEventSourceMappings(new com.amazonaws.internal.SdkInternalList<EventSourceMappingConfiguration>(eventSourceMappings.length));
         }
         for (EventSourceMappingConfiguration ele : eventSourceMappings) {
             this.eventSourceMappings.add(ele);
@@ -150,19 +139,16 @@ public class ListEventSourceMappingsResult extends
      * 
      * @param eventSourceMappings
      *        An array of <code>EventSourceMappingConfiguration</code> objects.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListEventSourceMappingsResult withEventSourceMappings(
-            java.util.Collection<EventSourceMappingConfiguration> eventSourceMappings) {
+    public ListEventSourceMappingsResult withEventSourceMappings(java.util.Collection<EventSourceMappingConfiguration> eventSourceMappings) {
         setEventSourceMappings(eventSourceMappings);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -192,15 +178,11 @@ public class ListEventSourceMappingsResult extends
         ListEventSourceMappingsResult other = (ListEventSourceMappingsResult) obj;
         if (other.getNextMarker() == null ^ this.getNextMarker() == null)
             return false;
-        if (other.getNextMarker() != null
-                && other.getNextMarker().equals(this.getNextMarker()) == false)
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false)
             return false;
-        if (other.getEventSourceMappings() == null
-                ^ this.getEventSourceMappings() == null)
+        if (other.getEventSourceMappings() == null ^ this.getEventSourceMappings() == null)
             return false;
-        if (other.getEventSourceMappings() != null
-                && other.getEventSourceMappings().equals(
-                        this.getEventSourceMappings()) == false)
+        if (other.getEventSourceMappings() != null && other.getEventSourceMappings().equals(this.getEventSourceMappings()) == false)
             return false;
         return true;
     }
@@ -210,12 +192,8 @@ public class ListEventSourceMappingsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEventSourceMappings() == null) ? 0
-                        : getEventSourceMappings().hashCode());
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
+        hashCode = prime * hashCode + ((getEventSourceMappings() == null) ? 0 : getEventSourceMappings().hashCode());
         return hashCode;
     }
 
@@ -224,9 +202,7 @@ public class ListEventSourceMappingsResult extends
         try {
             return (ListEventSourceMappingsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model.transform;
 
@@ -31,31 +29,25 @@ import com.amazonaws.util.IdempotentUtils;
  * PutAttributesRequest Marshaller
  */
 
-public class PutAttributesRequestMarshaller implements
-        Marshaller<Request<PutAttributesRequest>, PutAttributesRequest> {
+public class PutAttributesRequestMarshaller implements Marshaller<Request<PutAttributesRequest>, PutAttributesRequest> {
 
-    public Request<PutAttributesRequest> marshall(
-            PutAttributesRequest putAttributesRequest) {
+    public Request<PutAttributesRequest> marshall(PutAttributesRequest putAttributesRequest) {
 
         if (putAttributesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutAttributesRequest> request = new DefaultRequest<PutAttributesRequest>(
-                putAttributesRequest, "AmazonSimpleDB");
+        Request<PutAttributesRequest> request = new DefaultRequest<PutAttributesRequest>(putAttributesRequest, "AmazonSimpleDB");
         request.addParameter("Action", "PutAttributes");
         request.addParameter("Version", "2009-04-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (putAttributesRequest.getDomainName() != null) {
-            request.addParameter("DomainName", StringUtils
-                    .fromString(putAttributesRequest.getDomainName()));
+            request.addParameter("DomainName", StringUtils.fromString(putAttributesRequest.getDomainName()));
         }
 
         if (putAttributesRequest.getItemName() != null) {
-            request.addParameter("ItemName",
-                    StringUtils.fromString(putAttributesRequest.getItemName()));
+            request.addParameter("ItemName", StringUtils.fromString(putAttributesRequest.getItemName()));
         }
 
         com.amazonaws.internal.SdkInternalList<ReplaceableAttribute> attributesList = (com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) putAttributesRequest
@@ -66,21 +58,15 @@ public class PutAttributesRequestMarshaller implements
             for (ReplaceableAttribute attributesListValue : attributesList) {
 
                 if (attributesListValue.getName() != null) {
-                    request.addParameter("Attribute." + attributesListIndex
-                            + ".Name", StringUtils
-                            .fromString(attributesListValue.getName()));
+                    request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getName()));
                 }
 
                 if (attributesListValue.getValue() != null) {
-                    request.addParameter("Attribute." + attributesListIndex
-                            + ".Value", StringUtils
-                            .fromString(attributesListValue.getValue()));
+                    request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
                 }
 
                 if (attributesListValue.getReplace() != null) {
-                    request.addParameter("Attribute." + attributesListIndex
-                            + ".Replace", StringUtils
-                            .fromBoolean(attributesListValue.getReplace()));
+                    request.addParameter("Attribute." + attributesListIndex + ".Replace", StringUtils.fromBoolean(attributesListValue.getReplace()));
                 }
                 attributesListIndex++;
             }
@@ -90,18 +76,15 @@ public class PutAttributesRequestMarshaller implements
         if (expected != null) {
 
             if (expected.getName() != null) {
-                request.addParameter("Expected.Name",
-                        StringUtils.fromString(expected.getName()));
+                request.addParameter("Expected.Name", StringUtils.fromString(expected.getName()));
             }
 
             if (expected.getValue() != null) {
-                request.addParameter("Expected.Value",
-                        StringUtils.fromString(expected.getValue()));
+                request.addParameter("Expected.Value", StringUtils.fromString(expected.getValue()));
             }
 
             if (expected.getExists() != null) {
-                request.addParameter("Expected.Exists",
-                        StringUtils.fromBoolean(expected.getExists()));
+                request.addParameter("Expected.Exists", StringUtils.fromBoolean(expected.getExists()));
             }
         }
 

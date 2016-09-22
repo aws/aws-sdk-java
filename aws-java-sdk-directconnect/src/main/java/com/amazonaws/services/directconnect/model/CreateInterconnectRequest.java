@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the CreateInterconnect operation.
  * </p>
  */
-public class CreateInterconnectRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -131,12 +127,10 @@ public class CreateInterconnectRequest extends
      *        </p>
      *        <p>
      *        Default: None
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateInterconnectRequest withInterconnectName(
-            String interconnectName) {
+    public CreateInterconnectRequest withInterconnectName(String interconnectName) {
         setInterconnectName(interconnectName);
         return this;
     }
@@ -224,8 +218,7 @@ public class CreateInterconnectRequest extends
      *        </p>
      *        <p>
      *        Available values: 1Gbps,10Gbps
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateInterconnectRequest withBandwidth(String bandwidth) {
@@ -298,8 +291,7 @@ public class CreateInterconnectRequest extends
      *        </p>
      *        <p>
      *        Default: None
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateInterconnectRequest withLocation(String location) {
@@ -308,8 +300,7 @@ public class CreateInterconnectRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -339,22 +330,17 @@ public class CreateInterconnectRequest extends
         if (obj instanceof CreateInterconnectRequest == false)
             return false;
         CreateInterconnectRequest other = (CreateInterconnectRequest) obj;
-        if (other.getInterconnectName() == null
-                ^ this.getInterconnectName() == null)
+        if (other.getInterconnectName() == null ^ this.getInterconnectName() == null)
             return false;
-        if (other.getInterconnectName() != null
-                && other.getInterconnectName().equals(
-                        this.getInterconnectName()) == false)
+        if (other.getInterconnectName() != null && other.getInterconnectName().equals(this.getInterconnectName()) == false)
             return false;
         if (other.getBandwidth() == null ^ this.getBandwidth() == null)
             return false;
-        if (other.getBandwidth() != null
-                && other.getBandwidth().equals(this.getBandwidth()) == false)
+        if (other.getBandwidth() != null && other.getBandwidth().equals(this.getBandwidth()) == false)
             return false;
         if (other.getLocation() == null ^ this.getLocation() == null)
             return false;
-        if (other.getLocation() != null
-                && other.getLocation().equals(this.getLocation()) == false)
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
         return true;
     }
@@ -364,14 +350,9 @@ public class CreateInterconnectRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInterconnectName() == null) ? 0 : getInterconnectName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode());
-        hashCode = prime * hashCode
-                + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getInterconnectName() == null) ? 0 : getInterconnectName().hashCode());
+        hashCode = prime * hashCode + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 

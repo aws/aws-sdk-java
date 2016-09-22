@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -18,16 +16,12 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a unique identifier for a version of a deployed <a>RestApi</a>
- * that is callable by users.
+ * Represents a unique identifier for a version of a deployed <a>RestApi</a> that is callable by users.
  * </p>
- * <div class="seeAlso"> <a href=
- * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html"
- * >Deploy an API</a> </div>
+ * <div class="seeAlso"> <a
+ * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy an API</a> </div>
  */
-public class UpdateStageResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -43,8 +37,8 @@ public class UpdateStageResult extends
     private String clientCertificateId;
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
+     * Gateway.
      * </p>
      */
     private String stageName;
@@ -74,37 +68,30 @@ public class UpdateStageResult extends
     private String cacheClusterStatus;
     /**
      * <p>
-     * A map that defines the method settings for a <a>Stage</a> resource. Keys
-     * (designated as <code>/{method_setting_key</code> below) are method paths
-     * defined as <code>{resource_path}/{http_method}</code> for an individual
-     * method override, or <code>/\*&#47;\*</code> for overriding all methods in
-     * the stage. Any forward slash ("/") characters in the
-     * <code>resource_path</code> part must be encoded as "~1" as in, for
-     * example, <code>~1resource~1sub-resource/GET</code>.
+     * A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     * <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code>
+     * for an individual method override, or <code>/\*&#47;\*</code> for overriding all methods in the stage.
      * </p>
      */
     private java.util.Map<String, MethodSetting> methodSettings;
     /**
      * <p>
-     * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphanumeric and underscore characters, and the
-     * values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric and
+     * underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      */
     private java.util.Map<String, String> variables;
     /**
      * <p>
-     * The date and time that the stage was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      */
     private java.util.Date createdDate;
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in
-     * <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The date and time that information about the stage was last updated, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
      * </p>
      */
     private java.util.Date lastUpdatedDate;
@@ -141,8 +128,7 @@ public class UpdateStageResult extends
      * 
      * @param deploymentId
      *        The identifier of the <a>Deployment</a> that the stage points to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateStageResult withDeploymentId(String deploymentId) {
@@ -182,8 +168,7 @@ public class UpdateStageResult extends
      * 
      * @param clientCertificateId
      *        The identifier of a client certificate for an API stage.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateStageResult withClientCertificateId(String clientCertificateId) {
@@ -193,13 +178,13 @@ public class UpdateStageResult extends
 
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
+     * Gateway.
      * </p>
      * 
      * @param stageName
-     *        The name of the stage is the first path segment in the Uniform
-     *        Resource Identifier (URI) of a call to Amazon API Gateway.
+     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to
+     *        Amazon API Gateway.
      */
 
     public void setStageName(String stageName) {
@@ -208,12 +193,12 @@ public class UpdateStageResult extends
 
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
+     * Gateway.
      * </p>
      * 
-     * @return The name of the stage is the first path segment in the Uniform
-     *         Resource Identifier (URI) of a call to Amazon API Gateway.
+     * @return The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to
+     *         Amazon API Gateway.
      */
 
     public String getStageName() {
@@ -222,15 +207,14 @@ public class UpdateStageResult extends
 
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource
-     * Identifier (URI) of a call to Amazon API Gateway.
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
+     * Gateway.
      * </p>
      * 
      * @param stageName
-     *        The name of the stage is the first path segment in the Uniform
-     *        Resource Identifier (URI) of a call to Amazon API Gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to
+     *        Amazon API Gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateStageResult withStageName(String stageName) {
@@ -270,8 +254,7 @@ public class UpdateStageResult extends
      * 
      * @param description
      *        The stage's description.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateStageResult withDescription(String description) {
@@ -311,8 +294,7 @@ public class UpdateStageResult extends
      * 
      * @param cacheClusterEnabled
      *        Specifies whether a cache cluster is enabled for the stage.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateStageResult withCacheClusterEnabled(Boolean cacheClusterEnabled) {
@@ -364,8 +346,7 @@ public class UpdateStageResult extends
      * 
      * @param cacheClusterSize
      *        The size of the cache cluster for the stage, if enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateStageResult withCacheClusterSize(String cacheClusterSize) {
@@ -407,8 +388,7 @@ public class UpdateStageResult extends
      * 
      * @param cacheClusterStatus
      *        The status of the cache cluster for the stage, if enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CacheClusterStatus
      */
 
@@ -438,36 +418,26 @@ public class UpdateStageResult extends
      * 
      * @param cacheClusterStatus
      *        The status of the cache cluster for the stage, if enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CacheClusterStatus
      */
 
-    public UpdateStageResult withCacheClusterStatus(
-            CacheClusterStatus cacheClusterStatus) {
+    public UpdateStageResult withCacheClusterStatus(CacheClusterStatus cacheClusterStatus) {
         setCacheClusterStatus(cacheClusterStatus);
         return this;
     }
 
     /**
      * <p>
-     * A map that defines the method settings for a <a>Stage</a> resource. Keys
-     * (designated as <code>/{method_setting_key</code> below) are method paths
-     * defined as <code>{resource_path}/{http_method}</code> for an individual
-     * method override, or <code>/\*&#47;\*</code> for overriding all methods in
-     * the stage. Any forward slash ("/") characters in the
-     * <code>resource_path</code> part must be encoded as "~1" as in, for
-     * example, <code>~1resource~1sub-resource/GET</code>.
+     * A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     * <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code>
+     * for an individual method override, or <code>/\*&#47;\*</code> for overriding all methods in the stage.
      * </p>
      * 
-     * @return A map that defines the method settings for a <a>Stage</a>
-     *         resource. Keys (designated as <code>/{method_setting_key</code>
-     *         below) are method paths defined as
-     *         <code>{resource_path}/{http_method}</code> for an individual
-     *         method override, or <code>/\*&#47;\*</code> for overriding all
-     *         methods in the stage. Any forward slash ("/") characters in the
-     *         <code>resource_path</code> part must be encoded as "~1" as in,
-     *         for example, <code>~1resource~1sub-resource/GET</code>.
+     * @return A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     *         <code>/{method_setting_key</code> below) are method paths defined as
+     *         <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*&#47;\*</code>
+     *         for overriding all methods in the stage.
      */
 
     public java.util.Map<String, MethodSetting> getMethodSettings() {
@@ -476,76 +446,55 @@ public class UpdateStageResult extends
 
     /**
      * <p>
-     * A map that defines the method settings for a <a>Stage</a> resource. Keys
-     * (designated as <code>/{method_setting_key</code> below) are method paths
-     * defined as <code>{resource_path}/{http_method}</code> for an individual
-     * method override, or <code>/\*&#47;\*</code> for overriding all methods in
-     * the stage. Any forward slash ("/") characters in the
-     * <code>resource_path</code> part must be encoded as "~1" as in, for
-     * example, <code>~1resource~1sub-resource/GET</code>.
+     * A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     * <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code>
+     * for an individual method override, or <code>/\*&#47;\*</code> for overriding all methods in the stage.
      * </p>
      * 
      * @param methodSettings
-     *        A map that defines the method settings for a <a>Stage</a>
-     *        resource. Keys (designated as <code>/{method_setting_key</code>
-     *        below) are method paths defined as
-     *        <code>{resource_path}/{http_method}</code> for an individual
-     *        method override, or <code>/\*&#47;\*</code> for overriding all
-     *        methods in the stage. Any forward slash ("/") characters in the
-     *        <code>resource_path</code> part must be encoded as "~1" as in, for
-     *        example, <code>~1resource~1sub-resource/GET</code>.
+     *        A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     *        <code>/{method_setting_key</code> below) are method paths defined as
+     *        <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*&#47;\*</code>
+     *        for overriding all methods in the stage.
      */
 
-    public void setMethodSettings(
-            java.util.Map<String, MethodSetting> methodSettings) {
+    public void setMethodSettings(java.util.Map<String, MethodSetting> methodSettings) {
         this.methodSettings = methodSettings;
     }
 
     /**
      * <p>
-     * A map that defines the method settings for a <a>Stage</a> resource. Keys
-     * (designated as <code>/{method_setting_key</code> below) are method paths
-     * defined as <code>{resource_path}/{http_method}</code> for an individual
-     * method override, or <code>/\*&#47;\*</code> for overriding all methods in
-     * the stage. Any forward slash ("/") characters in the
-     * <code>resource_path</code> part must be encoded as "~1" as in, for
-     * example, <code>~1resource~1sub-resource/GET</code>.
+     * A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     * <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code>
+     * for an individual method override, or <code>/\*&#47;\*</code> for overriding all methods in the stage.
      * </p>
      * 
      * @param methodSettings
-     *        A map that defines the method settings for a <a>Stage</a>
-     *        resource. Keys (designated as <code>/{method_setting_key</code>
-     *        below) are method paths defined as
-     *        <code>{resource_path}/{http_method}</code> for an individual
-     *        method override, or <code>/\*&#47;\*</code> for overriding all
-     *        methods in the stage. Any forward slash ("/") characters in the
-     *        <code>resource_path</code> part must be encoded as "~1" as in, for
-     *        example, <code>~1resource~1sub-resource/GET</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as
+     *        <code>/{method_setting_key</code> below) are method paths defined as
+     *        <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*&#47;\*</code>
+     *        for overriding all methods in the stage.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateStageResult withMethodSettings(
-            java.util.Map<String, MethodSetting> methodSettings) {
+    public UpdateStageResult withMethodSettings(java.util.Map<String, MethodSetting> methodSettings) {
         setMethodSettings(methodSettings);
         return this;
     }
 
-    public UpdateStageResult addMethodSettingsEntry(String key,
-            MethodSetting value) {
+    public UpdateStageResult addMethodSettingsEntry(String key, MethodSetting value) {
         if (null == this.methodSettings) {
             this.methodSettings = new java.util.HashMap<String, MethodSetting>();
         }
         if (this.methodSettings.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.methodSettings.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into MethodSettings. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into MethodSettings. &lt;p> Returns a reference to this object so that method calls
+     * can be chained together.
      */
 
     public UpdateStageResult clearMethodSettingsEntries() {
@@ -555,15 +504,12 @@ public class UpdateStageResult extends
 
     /**
      * <p>
-     * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphanumeric and underscore characters, and the
-     * values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric and
+     * underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
-     * @return A map that defines the stage variables for a <a>Stage</a>
-     *         resource. Variable names can have alphanumeric and underscore
-     *         characters, and the values must match
-     *         <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * @return A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric
+     *         and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
 
     public java.util.Map<String, String> getVariables() {
@@ -572,16 +518,13 @@ public class UpdateStageResult extends
 
     /**
      * <p>
-     * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphanumeric and underscore characters, and the
-     * values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric and
+     * underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
-     *        A map that defines the stage variables for a <a>Stage</a>
-     *        resource. Variable names can have alphanumeric and underscore
-     *        characters, and the values must match
-     *        <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     *        A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric
+     *        and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
 
     public void setVariables(java.util.Map<String, String> variables) {
@@ -590,22 +533,17 @@ public class UpdateStageResult extends
 
     /**
      * <p>
-     * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphanumeric and underscore characters, and the
-     * values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric and
+     * underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
-     *        A map that defines the stage variables for a <a>Stage</a>
-     *        resource. Variable names can have alphanumeric and underscore
-     *        characters, and the values must match
-     *        <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric
+     *        and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateStageResult withVariables(
-            java.util.Map<String, String> variables) {
+    public UpdateStageResult withVariables(java.util.Map<String, String> variables) {
         setVariables(variables);
         return this;
     }
@@ -615,15 +553,14 @@ public class UpdateStageResult extends
             this.variables = new java.util.HashMap<String, String>();
         }
         if (this.variables.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.variables.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Variables. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into Variables. &lt;p> Returns a reference to this object so that method calls can
+     * be chained together.
      */
 
     public UpdateStageResult clearVariablesEntries() {
@@ -633,15 +570,13 @@ public class UpdateStageResult extends
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
      *        The date and time that the stage was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -650,14 +585,12 @@ public class UpdateStageResult extends
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @return The date and time that the stage was created, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *         target="_blank">ISO 8601 format</a>.
+     *         href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
      */
 
     public java.util.Date getCreatedDate() {
@@ -666,17 +599,14 @@ public class UpdateStageResult extends
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
      *        The date and time that the stage was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateStageResult withCreatedDate(java.util.Date createdDate) {
@@ -686,16 +616,13 @@ public class UpdateStageResult extends
 
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in
-     * <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The date and time that information about the stage was last updated, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        The date and time that information about the stage was last
-     *        updated, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        The date and time that information about the stage was last updated, in <a
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
      */
 
     public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
@@ -704,15 +631,12 @@ public class UpdateStageResult extends
 
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in
-     * <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The date and time that information about the stage was last updated, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
      * </p>
      * 
-     * @return The date and time that information about the stage was last
-     *         updated, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *         target="_blank">ISO 8601 format</a>.
+     * @return The date and time that information about the stage was last updated, in <a
+     *         href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
      */
 
     public java.util.Date getLastUpdatedDate() {
@@ -721,18 +645,14 @@ public class UpdateStageResult extends
 
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in
-     * <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The date and time that information about the stage was last updated, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        The date and time that information about the stage was last
-     *        updated, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The date and time that information about the stage was last updated, in <a
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateStageResult withLastUpdatedDate(java.util.Date lastUpdatedDate) {
@@ -741,8 +661,7 @@ public class UpdateStageResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -790,68 +709,47 @@ public class UpdateStageResult extends
         UpdateStageResult other = (UpdateStageResult) obj;
         if (other.getDeploymentId() == null ^ this.getDeploymentId() == null)
             return false;
-        if (other.getDeploymentId() != null
-                && other.getDeploymentId().equals(this.getDeploymentId()) == false)
+        if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false)
             return false;
-        if (other.getClientCertificateId() == null
-                ^ this.getClientCertificateId() == null)
+        if (other.getClientCertificateId() == null ^ this.getClientCertificateId() == null)
             return false;
-        if (other.getClientCertificateId() != null
-                && other.getClientCertificateId().equals(
-                        this.getClientCertificateId()) == false)
+        if (other.getClientCertificateId() != null && other.getClientCertificateId().equals(this.getClientCertificateId()) == false)
             return false;
         if (other.getStageName() == null ^ this.getStageName() == null)
             return false;
-        if (other.getStageName() != null
-                && other.getStageName().equals(this.getStageName()) == false)
+        if (other.getStageName() != null && other.getStageName().equals(this.getStageName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getCacheClusterEnabled() == null
-                ^ this.getCacheClusterEnabled() == null)
+        if (other.getCacheClusterEnabled() == null ^ this.getCacheClusterEnabled() == null)
             return false;
-        if (other.getCacheClusterEnabled() != null
-                && other.getCacheClusterEnabled().equals(
-                        this.getCacheClusterEnabled()) == false)
+        if (other.getCacheClusterEnabled() != null && other.getCacheClusterEnabled().equals(this.getCacheClusterEnabled()) == false)
             return false;
-        if (other.getCacheClusterSize() == null
-                ^ this.getCacheClusterSize() == null)
+        if (other.getCacheClusterSize() == null ^ this.getCacheClusterSize() == null)
             return false;
-        if (other.getCacheClusterSize() != null
-                && other.getCacheClusterSize().equals(
-                        this.getCacheClusterSize()) == false)
+        if (other.getCacheClusterSize() != null && other.getCacheClusterSize().equals(this.getCacheClusterSize()) == false)
             return false;
-        if (other.getCacheClusterStatus() == null
-                ^ this.getCacheClusterStatus() == null)
+        if (other.getCacheClusterStatus() == null ^ this.getCacheClusterStatus() == null)
             return false;
-        if (other.getCacheClusterStatus() != null
-                && other.getCacheClusterStatus().equals(
-                        this.getCacheClusterStatus()) == false)
+        if (other.getCacheClusterStatus() != null && other.getCacheClusterStatus().equals(this.getCacheClusterStatus()) == false)
             return false;
-        if (other.getMethodSettings() == null
-                ^ this.getMethodSettings() == null)
+        if (other.getMethodSettings() == null ^ this.getMethodSettings() == null)
             return false;
-        if (other.getMethodSettings() != null
-                && other.getMethodSettings().equals(this.getMethodSettings()) == false)
+        if (other.getMethodSettings() != null && other.getMethodSettings().equals(this.getMethodSettings()) == false)
             return false;
         if (other.getVariables() == null ^ this.getVariables() == null)
             return false;
-        if (other.getVariables() != null
-                && other.getVariables().equals(this.getVariables()) == false)
+        if (other.getVariables() != null && other.getVariables().equals(this.getVariables()) == false)
             return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
-        if (other.getCreatedDate() != null
-                && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
             return false;
-        if (other.getLastUpdatedDate() == null
-                ^ this.getLastUpdatedDate() == null)
+        if (other.getLastUpdatedDate() == null ^ this.getLastUpdatedDate() == null)
             return false;
-        if (other.getLastUpdatedDate() != null
-                && other.getLastUpdatedDate().equals(this.getLastUpdatedDate()) == false)
+        if (other.getLastUpdatedDate() != null && other.getLastUpdatedDate().equals(this.getLastUpdatedDate()) == false)
             return false;
         return true;
     }
@@ -861,44 +759,17 @@ public class UpdateStageResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentId() == null) ? 0 : getDeploymentId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClientCertificateId() == null) ? 0
-                        : getClientCertificateId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStageName() == null) ? 0 : getStageName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheClusterEnabled() == null) ? 0
-                        : getCacheClusterEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheClusterSize() == null) ? 0 : getCacheClusterSize()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheClusterStatus() == null) ? 0
-                        : getCacheClusterStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMethodSettings() == null) ? 0 : getMethodSettings()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getVariables() == null) ? 0 : getVariables().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
+        hashCode = prime * hashCode + ((getClientCertificateId() == null) ? 0 : getClientCertificateId().hashCode());
+        hashCode = prime * hashCode + ((getStageName() == null) ? 0 : getStageName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getCacheClusterEnabled() == null) ? 0 : getCacheClusterEnabled().hashCode());
+        hashCode = prime * hashCode + ((getCacheClusterSize() == null) ? 0 : getCacheClusterSize().hashCode());
+        hashCode = prime * hashCode + ((getCacheClusterStatus() == null) ? 0 : getCacheClusterStatus().hashCode());
+        hashCode = prime * hashCode + ((getMethodSettings() == null) ? 0 : getMethodSettings().hashCode());
+        hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
         return hashCode;
     }
 
@@ -907,9 +778,7 @@ public class UpdateStageResult extends
         try {
             return (UpdateStageResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

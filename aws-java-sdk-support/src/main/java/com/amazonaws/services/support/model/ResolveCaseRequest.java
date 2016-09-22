@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.support.model;
 
@@ -20,29 +18,25 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class ResolveCaseRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ResolveCaseRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Support case ID requested or returned in the call. The case ID is
-     * an alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as
+     * shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * </p>
      */
     private String caseId;
 
     /**
      * <p>
-     * The AWS Support case ID requested or returned in the call. The case ID is
-     * an alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as
+     * shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * </p>
      * 
      * @param caseId
-     *        The AWS Support case ID requested or returned in the call. The
-     *        case ID is an alphanumeric string formatted as shown in this
-     *        example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     *        The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted
+     *        as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
 
     public void setCaseId(String caseId) {
@@ -51,14 +45,12 @@ public class ResolveCaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS Support case ID requested or returned in the call. The case ID is
-     * an alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as
+     * shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * </p>
      * 
-     * @return The AWS Support case ID requested or returned in the call. The
-     *         case ID is an alphanumeric string formatted as shown in this
-     *         example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @return The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string
+     *         formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
 
     public String getCaseId() {
@@ -67,17 +59,14 @@ public class ResolveCaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS Support case ID requested or returned in the call. The case ID is
-     * an alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as
+     * shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * </p>
      * 
      * @param caseId
-     *        The AWS Support case ID requested or returned in the call. The
-     *        case ID is an alphanumeric string formatted as shown in this
-     *        example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted
+     *        as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResolveCaseRequest withCaseId(String caseId) {
@@ -86,8 +75,7 @@ public class ResolveCaseRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -115,8 +103,7 @@ public class ResolveCaseRequest extends com.amazonaws.AmazonWebServiceRequest
         ResolveCaseRequest other = (ResolveCaseRequest) obj;
         if (other.getCaseId() == null ^ this.getCaseId() == null)
             return false;
-        if (other.getCaseId() != null
-                && other.getCaseId().equals(this.getCaseId()) == false)
+        if (other.getCaseId() != null && other.getCaseId().equals(this.getCaseId()) == false)
             return false;
         return true;
     }
@@ -126,8 +113,7 @@ public class ResolveCaseRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCaseId() == null) ? 0 : getCaseId().hashCode());
+        hashCode = prime * hashCode + ((getCaseId() == null) ? 0 : getCaseId().hashCode());
         return hashCode;
     }
 

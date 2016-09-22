@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * See the example below to learn how to create a request body.
  * </p>
  */
-public class DescribeInstancesHealthRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeInstancesHealthRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -40,9 +36,8 @@ public class DescribeInstancesHealthRequest extends
     private String environmentId;
     /**
      * <p>
-     * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk only returns a list of
-     * instances.
+     * Specifies the response elements you wish to receive. If no attribute names are specified, AWS Elastic Beanstalk
+     * only returns a list of instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> attributeNames;
@@ -85,12 +80,10 @@ public class DescribeInstancesHealthRequest extends
      * 
      * @param environmentName
      *        Specifies the AWS Elastic Beanstalk environment name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeInstancesHealthRequest withEnvironmentName(
-            String environmentName) {
+    public DescribeInstancesHealthRequest withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
         return this;
     }
@@ -127,8 +120,7 @@ public class DescribeInstancesHealthRequest extends
      * 
      * @param environmentId
      *        Specifies the AWS Elastic Beanstalk environment ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeInstancesHealthRequest withEnvironmentId(String environmentId) {
@@ -138,14 +130,12 @@ public class DescribeInstancesHealthRequest extends
 
     /**
      * <p>
-     * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk only returns a list of
-     * instances.
+     * Specifies the response elements you wish to receive. If no attribute names are specified, AWS Elastic Beanstalk
+     * only returns a list of instances.
      * </p>
      * 
-     * @return Specifies the response elements you wish to receive. If no
-     *         attribute names are specified, AWS Elastic Beanstalk only returns
-     *         a list of instances.
+     * @return Specifies the response elements you wish to receive. If no attribute names are specified, AWS Elastic
+     *         Beanstalk only returns a list of instances.
      * @see InstancesHealthAttribute
      */
 
@@ -158,15 +148,13 @@ public class DescribeInstancesHealthRequest extends
 
     /**
      * <p>
-     * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk only returns a list of
-     * instances.
+     * Specifies the response elements you wish to receive. If no attribute names are specified, AWS Elastic Beanstalk
+     * only returns a list of instances.
      * </p>
      * 
      * @param attributeNames
-     *        Specifies the response elements you wish to receive. If no
-     *        attribute names are specified, AWS Elastic Beanstalk only returns
-     *        a list of instances.
+     *        Specifies the response elements you wish to receive. If no attribute names are specified, AWS Elastic
+     *        Beanstalk only returns a list of instances.
      * @see InstancesHealthAttribute
      */
 
@@ -176,37 +164,30 @@ public class DescribeInstancesHealthRequest extends
             return;
         }
 
-        this.attributeNames = new com.amazonaws.internal.SdkInternalList<String>(
-                attributeNames);
+        this.attributeNames = new com.amazonaws.internal.SdkInternalList<String>(attributeNames);
     }
 
     /**
      * <p>
-     * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk only returns a list of
-     * instances.
+     * Specifies the response elements you wish to receive. If no attribute names are specified, AWS Elastic Beanstalk
+     * only returns a list of instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttributeNames(java.util.Collection)} or
-     * {@link #withAttributeNames(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributeNames(java.util.Collection)} or {@link #withAttributeNames(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param attributeNames
-     *        Specifies the response elements you wish to receive. If no
-     *        attribute names are specified, AWS Elastic Beanstalk only returns
-     *        a list of instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the response elements you wish to receive. If no attribute names are specified, AWS Elastic
+     *        Beanstalk only returns a list of instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstancesHealthAttribute
      */
 
-    public DescribeInstancesHealthRequest withAttributeNames(
-            String... attributeNames) {
+    public DescribeInstancesHealthRequest withAttributeNames(String... attributeNames) {
         if (this.attributeNames == null) {
-            setAttributeNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    attributeNames.length));
+            setAttributeNames(new com.amazonaws.internal.SdkInternalList<String>(attributeNames.length));
         }
         for (String ele : attributeNames) {
             this.attributeNames.add(ele);
@@ -216,46 +197,37 @@ public class DescribeInstancesHealthRequest extends
 
     /**
      * <p>
-     * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk only returns a list of
-     * instances.
+     * Specifies the response elements you wish to receive. If no attribute names are specified, AWS Elastic Beanstalk
+     * only returns a list of instances.
      * </p>
      * 
      * @param attributeNames
-     *        Specifies the response elements you wish to receive. If no
-     *        attribute names are specified, AWS Elastic Beanstalk only returns
-     *        a list of instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the response elements you wish to receive. If no attribute names are specified, AWS Elastic
+     *        Beanstalk only returns a list of instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstancesHealthAttribute
      */
 
-    public DescribeInstancesHealthRequest withAttributeNames(
-            java.util.Collection<String> attributeNames) {
+    public DescribeInstancesHealthRequest withAttributeNames(java.util.Collection<String> attributeNames) {
         setAttributeNames(attributeNames);
         return this;
     }
 
     /**
      * <p>
-     * Specifies the response elements you wish to receive. If no attribute
-     * names are specified, AWS Elastic Beanstalk only returns a list of
-     * instances.
+     * Specifies the response elements you wish to receive. If no attribute names are specified, AWS Elastic Beanstalk
+     * only returns a list of instances.
      * </p>
      * 
      * @param attributeNames
-     *        Specifies the response elements you wish to receive. If no
-     *        attribute names are specified, AWS Elastic Beanstalk only returns
-     *        a list of instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the response elements you wish to receive. If no attribute names are specified, AWS Elastic
+     *        Beanstalk only returns a list of instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstancesHealthAttribute
      */
 
-    public DescribeInstancesHealthRequest withAttributeNames(
-            InstancesHealthAttribute... attributeNames) {
-        com.amazonaws.internal.SdkInternalList<String> attributeNamesCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                attributeNames.length);
+    public DescribeInstancesHealthRequest withAttributeNames(InstancesHealthAttribute... attributeNames) {
+        com.amazonaws.internal.SdkInternalList<String> attributeNamesCopy = new com.amazonaws.internal.SdkInternalList<String>(attributeNames.length);
         for (InstancesHealthAttribute value : attributeNames) {
             attributeNamesCopy.add(value.toString());
         }
@@ -299,8 +271,7 @@ public class DescribeInstancesHealthRequest extends
      * 
      * @param nextToken
      *        Specifies the next token of the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeInstancesHealthRequest withNextToken(String nextToken) {
@@ -309,8 +280,7 @@ public class DescribeInstancesHealthRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -342,27 +312,21 @@ public class DescribeInstancesHealthRequest extends
         if (obj instanceof DescribeInstancesHealthRequest == false)
             return false;
         DescribeInstancesHealthRequest other = (DescribeInstancesHealthRequest) obj;
-        if (other.getEnvironmentName() == null
-                ^ this.getEnvironmentName() == null)
+        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
             return false;
-        if (other.getEnvironmentName() != null
-                && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
+        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
             return false;
         if (other.getEnvironmentId() == null ^ this.getEnvironmentId() == null)
             return false;
-        if (other.getEnvironmentId() != null
-                && other.getEnvironmentId().equals(this.getEnvironmentId()) == false)
+        if (other.getEnvironmentId() != null && other.getEnvironmentId().equals(this.getEnvironmentId()) == false)
             return false;
-        if (other.getAttributeNames() == null
-                ^ this.getAttributeNames() == null)
+        if (other.getAttributeNames() == null ^ this.getAttributeNames() == null)
             return false;
-        if (other.getAttributeNames() != null
-                && other.getAttributeNames().equals(this.getAttributeNames()) == false)
+        if (other.getAttributeNames() != null && other.getAttributeNames().equals(this.getAttributeNames()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -372,20 +336,10 @@ public class DescribeInstancesHealthRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEnvironmentName() == null) ? 0 : getEnvironmentName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEnvironmentId() == null) ? 0 : getEnvironmentId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttributeNames() == null) ? 0 : getAttributeNames()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode());
+        hashCode = prime * hashCode + ((getAttributeNames() == null) ? 0 : getAttributeNames().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

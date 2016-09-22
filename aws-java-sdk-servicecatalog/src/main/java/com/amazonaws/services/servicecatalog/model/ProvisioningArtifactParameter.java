@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.servicecatalog.model;
 
@@ -18,8 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A parameter used to successfully provision the product. This value includes a
- * list of allowable values and additional metadata.
+ * A parameter used to successfully provision the product. This value includes a list of allowable values and additional
+ * metadata.
  * </p>
  */
 public class ProvisioningArtifactParameter implements Serializable, Cloneable {
@@ -44,9 +42,8 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
     private String parameterType;
     /**
      * <p>
-     * If this value is true, the value for this parameter is obfuscated from
-     * view when the parameter is retrieved. This parameter is used to hide
-     * sensitive information.
+     * If this value is true, the value for this parameter is obfuscated from view when the parameter is retrieved. This
+     * parameter is used to hide sensitive information.
      * </p>
      */
     private Boolean isNoEcho;
@@ -95,8 +92,7 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
      * 
      * @param parameterKey
      *        The parameter key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisioningArtifactParameter withParameterKey(String parameterKey) {
@@ -136,8 +132,7 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
      * 
      * @param defaultValue
      *        The default value for this parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisioningArtifactParameter withDefaultValue(String defaultValue) {
@@ -177,8 +172,7 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
      * 
      * @param parameterType
      *        The parameter type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisioningArtifactParameter withParameterType(String parameterType) {
@@ -188,15 +182,13 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If this value is true, the value for this parameter is obfuscated from
-     * view when the parameter is retrieved. This parameter is used to hide
-     * sensitive information.
+     * If this value is true, the value for this parameter is obfuscated from view when the parameter is retrieved. This
+     * parameter is used to hide sensitive information.
      * </p>
      * 
      * @param isNoEcho
-     *        If this value is true, the value for this parameter is obfuscated
-     *        from view when the parameter is retrieved. This parameter is used
-     *        to hide sensitive information.
+     *        If this value is true, the value for this parameter is obfuscated from view when the parameter is
+     *        retrieved. This parameter is used to hide sensitive information.
      */
 
     public void setIsNoEcho(Boolean isNoEcho) {
@@ -205,14 +197,12 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If this value is true, the value for this parameter is obfuscated from
-     * view when the parameter is retrieved. This parameter is used to hide
-     * sensitive information.
+     * If this value is true, the value for this parameter is obfuscated from view when the parameter is retrieved. This
+     * parameter is used to hide sensitive information.
      * </p>
      * 
-     * @return If this value is true, the value for this parameter is obfuscated
-     *         from view when the parameter is retrieved. This parameter is used
-     *         to hide sensitive information.
+     * @return If this value is true, the value for this parameter is obfuscated from view when the parameter is
+     *         retrieved. This parameter is used to hide sensitive information.
      */
 
     public Boolean getIsNoEcho() {
@@ -221,17 +211,14 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If this value is true, the value for this parameter is obfuscated from
-     * view when the parameter is retrieved. This parameter is used to hide
-     * sensitive information.
+     * If this value is true, the value for this parameter is obfuscated from view when the parameter is retrieved. This
+     * parameter is used to hide sensitive information.
      * </p>
      * 
      * @param isNoEcho
-     *        If this value is true, the value for this parameter is obfuscated
-     *        from view when the parameter is retrieved. This parameter is used
-     *        to hide sensitive information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If this value is true, the value for this parameter is obfuscated from view when the parameter is
+     *        retrieved. This parameter is used to hide sensitive information.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisioningArtifactParameter withIsNoEcho(Boolean isNoEcho) {
@@ -241,14 +228,12 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If this value is true, the value for this parameter is obfuscated from
-     * view when the parameter is retrieved. This parameter is used to hide
-     * sensitive information.
+     * If this value is true, the value for this parameter is obfuscated from view when the parameter is retrieved. This
+     * parameter is used to hide sensitive information.
      * </p>
      * 
-     * @return If this value is true, the value for this parameter is obfuscated
-     *         from view when the parameter is retrieved. This parameter is used
-     *         to hide sensitive information.
+     * @return If this value is true, the value for this parameter is obfuscated from view when the parameter is
+     *         retrieved. This parameter is used to hide sensitive information.
      */
 
     public Boolean isNoEcho() {
@@ -287,8 +272,7 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
      * 
      * @param description
      *        The text description of the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisioningArtifactParameter withDescription(String description) {
@@ -302,12 +286,10 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
      * </p>
      * 
      * @param parameterConstraints
-     *        The list of constraints that the administrator has put on the
-     *        parameter.
+     *        The list of constraints that the administrator has put on the parameter.
      */
 
-    public void setParameterConstraints(
-            ParameterConstraints parameterConstraints) {
+    public void setParameterConstraints(ParameterConstraints parameterConstraints) {
         this.parameterConstraints = parameterConstraints;
     }
 
@@ -316,8 +298,7 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
      * The list of constraints that the administrator has put on the parameter.
      * </p>
      * 
-     * @return The list of constraints that the administrator has put on the
-     *         parameter.
+     * @return The list of constraints that the administrator has put on the parameter.
      */
 
     public ParameterConstraints getParameterConstraints() {
@@ -330,21 +311,17 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
      * </p>
      * 
      * @param parameterConstraints
-     *        The list of constraints that the administrator has put on the
-     *        parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of constraints that the administrator has put on the parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ProvisioningArtifactParameter withParameterConstraints(
-            ParameterConstraints parameterConstraints) {
+    public ProvisioningArtifactParameter withParameterConstraints(ParameterConstraints parameterConstraints) {
         setParameterConstraints(parameterConstraints);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -382,35 +359,27 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
         ProvisioningArtifactParameter other = (ProvisioningArtifactParameter) obj;
         if (other.getParameterKey() == null ^ this.getParameterKey() == null)
             return false;
-        if (other.getParameterKey() != null
-                && other.getParameterKey().equals(this.getParameterKey()) == false)
+        if (other.getParameterKey() != null && other.getParameterKey().equals(this.getParameterKey()) == false)
             return false;
         if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
             return false;
-        if (other.getDefaultValue() != null
-                && other.getDefaultValue().equals(this.getDefaultValue()) == false)
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
             return false;
         if (other.getParameterType() == null ^ this.getParameterType() == null)
             return false;
-        if (other.getParameterType() != null
-                && other.getParameterType().equals(this.getParameterType()) == false)
+        if (other.getParameterType() != null && other.getParameterType().equals(this.getParameterType()) == false)
             return false;
         if (other.getIsNoEcho() == null ^ this.getIsNoEcho() == null)
             return false;
-        if (other.getIsNoEcho() != null
-                && other.getIsNoEcho().equals(this.getIsNoEcho()) == false)
+        if (other.getIsNoEcho() != null && other.getIsNoEcho().equals(this.getIsNoEcho()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getParameterConstraints() == null
-                ^ this.getParameterConstraints() == null)
+        if (other.getParameterConstraints() == null ^ this.getParameterConstraints() == null)
             return false;
-        if (other.getParameterConstraints() != null
-                && other.getParameterConstraints().equals(
-                        this.getParameterConstraints()) == false)
+        if (other.getParameterConstraints() != null && other.getParameterConstraints().equals(this.getParameterConstraints()) == false)
             return false;
         return true;
     }
@@ -420,27 +389,12 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getParameterKey() == null) ? 0 : getParameterKey()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultValue() == null) ? 0 : getDefaultValue()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getParameterType() == null) ? 0 : getParameterType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getIsNoEcho() == null) ? 0 : getIsNoEcho().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getParameterConstraints() == null) ? 0
-                        : getParameterConstraints().hashCode());
+        hashCode = prime * hashCode + ((getParameterKey() == null) ? 0 : getParameterKey().hashCode());
+        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
+        hashCode = prime * hashCode + ((getParameterType() == null) ? 0 : getParameterType().hashCode());
+        hashCode = prime * hashCode + ((getIsNoEcho() == null) ? 0 : getIsNoEcho().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getParameterConstraints() == null) ? 0 : getParameterConstraints().hashCode());
         return hashCode;
     }
 
@@ -449,9 +403,7 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable {
         try {
             return (ProvisioningArtifactParameter) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

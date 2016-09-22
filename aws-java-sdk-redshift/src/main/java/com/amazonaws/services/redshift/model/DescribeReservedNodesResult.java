@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -19,18 +17,14 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class DescribeReservedNodesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeReservedNodesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      */
     private String marker;
@@ -43,22 +37,17 @@ public class DescribeReservedNodesResult extends
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      * 
      * @param marker
-     *        A value that indicates the starting point for the next set of
-     *        response records in a subsequent request. If a value is returned
-     *        in a response, you can retrieve the next set of records by
-     *        providing this returned marker value in the <code>Marker</code>
-     *        parameter and retrying the command. If the <code>Marker</code>
-     *        field is empty, all response records have been retrieved for the
-     *        request.
+     *        A value that indicates the starting point for the next set of response records in a subsequent request. If
+     *        a value is returned in a response, you can retrieve the next set of records by providing this returned
+     *        marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+     *        field is empty, all response records have been retrieved for the request.
      */
 
     public void setMarker(String marker) {
@@ -67,21 +56,16 @@ public class DescribeReservedNodesResult extends
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      * 
-     * @return A value that indicates the starting point for the next set of
-     *         response records in a subsequent request. If a value is returned
-     *         in a response, you can retrieve the next set of records by
-     *         providing this returned marker value in the <code>Marker</code>
-     *         parameter and retrying the command. If the <code>Marker</code>
-     *         field is empty, all response records have been retrieved for the
-     *         request.
+     * @return A value that indicates the starting point for the next set of response records in a subsequent request.
+     *         If a value is returned in a response, you can retrieve the next set of records by providing this returned
+     *         marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+     *         field is empty, all response records have been retrieved for the request.
      */
 
     public String getMarker() {
@@ -90,24 +74,18 @@ public class DescribeReservedNodesResult extends
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      * 
      * @param marker
-     *        A value that indicates the starting point for the next set of
-     *        response records in a subsequent request. If a value is returned
-     *        in a response, you can retrieve the next set of records by
-     *        providing this returned marker value in the <code>Marker</code>
-     *        parameter and retrying the command. If the <code>Marker</code>
-     *        field is empty, all response records have been retrieved for the
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value that indicates the starting point for the next set of response records in a subsequent request. If
+     *        a value is returned in a response, you can retrieve the next set of records by providing this returned
+     *        marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+     *        field is empty, all response records have been retrieved for the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeReservedNodesResult withMarker(String marker) {
@@ -139,15 +117,13 @@ public class DescribeReservedNodesResult extends
      *        The list of <code>ReservedNode</code> objects.
      */
 
-    public void setReservedNodes(
-            java.util.Collection<ReservedNode> reservedNodes) {
+    public void setReservedNodes(java.util.Collection<ReservedNode> reservedNodes) {
         if (reservedNodes == null) {
             this.reservedNodes = null;
             return;
         }
 
-        this.reservedNodes = new com.amazonaws.internal.SdkInternalList<ReservedNode>(
-                reservedNodes);
+        this.reservedNodes = new com.amazonaws.internal.SdkInternalList<ReservedNode>(reservedNodes);
     }
 
     /**
@@ -155,23 +131,19 @@ public class DescribeReservedNodesResult extends
      * The list of <code>ReservedNode</code> objects.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setReservedNodes(java.util.Collection)} or
-     * {@link #withReservedNodes(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReservedNodes(java.util.Collection)} or {@link #withReservedNodes(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param reservedNodes
      *        The list of <code>ReservedNode</code> objects.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReservedNodesResult withReservedNodes(
-            ReservedNode... reservedNodes) {
+    public DescribeReservedNodesResult withReservedNodes(ReservedNode... reservedNodes) {
         if (this.reservedNodes == null) {
-            setReservedNodes(new com.amazonaws.internal.SdkInternalList<ReservedNode>(
-                    reservedNodes.length));
+            setReservedNodes(new com.amazonaws.internal.SdkInternalList<ReservedNode>(reservedNodes.length));
         }
         for (ReservedNode ele : reservedNodes) {
             this.reservedNodes.add(ele);
@@ -186,19 +158,16 @@ public class DescribeReservedNodesResult extends
      * 
      * @param reservedNodes
      *        The list of <code>ReservedNode</code> objects.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeReservedNodesResult withReservedNodes(
-            java.util.Collection<ReservedNode> reservedNodes) {
+    public DescribeReservedNodesResult withReservedNodes(java.util.Collection<ReservedNode> reservedNodes) {
         setReservedNodes(reservedNodes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -228,13 +197,11 @@ public class DescribeReservedNodesResult extends
         DescribeReservedNodesResult other = (DescribeReservedNodesResult) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getReservedNodes() == null ^ this.getReservedNodes() == null)
             return false;
-        if (other.getReservedNodes() != null
-                && other.getReservedNodes().equals(this.getReservedNodes()) == false)
+        if (other.getReservedNodes() != null && other.getReservedNodes().equals(this.getReservedNodes()) == false)
             return false;
         return true;
     }
@@ -244,12 +211,8 @@ public class DescribeReservedNodesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReservedNodes() == null) ? 0 : getReservedNodes()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getReservedNodes() == null) ? 0 : getReservedNodes().hashCode());
         return hashCode;
     }
 
@@ -258,9 +221,7 @@ public class DescribeReservedNodesResult extends
         try {
             return (DescribeReservedNodesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

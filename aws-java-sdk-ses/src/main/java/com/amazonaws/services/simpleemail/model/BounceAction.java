@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -18,41 +16,35 @@ import java.io.Serializable;
 
 /**
  * <p>
- * When included in a receipt rule, this action rejects the received email by
- * returning a bounce response to the sender and, optionally, publishes a
- * notification to Amazon Simple Notification Service (Amazon SNS).
+ * When included in a receipt rule, this action rejects the received email by returning a bounce response to the sender
+ * and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).
  * </p>
  * <p>
- * For information about sending a bounce message in response to a received
- * email, see the <a href=
- * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html"
- * >Amazon SES Developer Guide</a>.
+ * For information about sending a bounce message in response to a received email, see the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html">Amazon SES Developer
+ * Guide</a>.
  * </p>
  */
 public class BounceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * bounce action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
-     * information about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An example of
+     * an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
+     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.
      * </p>
      */
     private String topicArn;
     /**
      * <p>
-     * The SMTP reply code, as defined by <a
-     * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
+     * The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
      * </p>
      */
     private String smtpReplyCode;
     /**
      * <p>
-     * The SMTP enhanced status code, as defined by <a
-     * href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
+     * The SMTP enhanced status code, as defined by <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
      * </p>
      */
     private String statusCode;
@@ -64,29 +56,25 @@ public class BounceAction implements Serializable, Cloneable {
     private String message;
     /**
      * <p>
-     * The email address of the sender of the bounced email. This is the address
-     * from which the bounce message will be sent.
+     * The email address of the sender of the bounced email. This is the address from which the bounce message will be
+     * sent.
      * </p>
      */
     private String sender;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * bounce action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
-     * information about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An example of
+     * an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
+     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.
      * </p>
      * 
      * @param topicArn
-     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify
-     *        when the bounce action is taken. An example of an Amazon SNS topic
-     *        ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>.
-     *        For more information about Amazon SNS topics, see the <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
-     *        >Amazon SNS Developer Guide</a>.
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An
+     *        example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
+     *        information about Amazon SNS topics, see the <a
+     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
     public void setTopicArn(String topicArn) {
@@ -95,21 +83,16 @@ public class BounceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * bounce action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
-     * information about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An example of
+     * an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
+     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to notify
-     *         when the bounce action is taken. An example of an Amazon SNS
-     *         topic ARN is
-     *         <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
-     *         information about Amazon SNS topics, see the <a href=
-     *         "http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
-     *         >Amazon SNS Developer Guide</a>.
+     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An
+     *         example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
+     *         information about Amazon SNS topics, see the <a
+     *         href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
     public String getTopicArn() {
@@ -118,23 +101,18 @@ public class BounceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * bounce action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
-     * information about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An example of
+     * an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
+     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.
      * </p>
      * 
      * @param topicArn
-     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify
-     *        when the bounce action is taken. An example of an Amazon SNS topic
-     *        ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>.
-     *        For more information about Amazon SNS topics, see the <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
-     *        >Amazon SNS Developer Guide</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An
+     *        example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
+     *        information about Amazon SNS topics, see the <a
+     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BounceAction withTopicArn(String topicArn) {
@@ -144,13 +122,11 @@ public class BounceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SMTP reply code, as defined by <a
-     * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
+     * The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
      * </p>
      * 
      * @param smtpReplyCode
-     *        The SMTP reply code, as defined by <a
-     *        href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
+     *        The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
      */
 
     public void setSmtpReplyCode(String smtpReplyCode) {
@@ -159,12 +135,10 @@ public class BounceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SMTP reply code, as defined by <a
-     * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
+     * The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
      * </p>
      * 
-     * @return The SMTP reply code, as defined by <a
-     *         href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
+     * @return The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
      */
 
     public String getSmtpReplyCode() {
@@ -173,15 +147,12 @@ public class BounceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SMTP reply code, as defined by <a
-     * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
+     * The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
      * </p>
      * 
      * @param smtpReplyCode
-     *        The SMTP reply code, as defined by <a
-     *        href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BounceAction withSmtpReplyCode(String smtpReplyCode) {
@@ -191,13 +162,11 @@ public class BounceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SMTP enhanced status code, as defined by <a
-     * href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
+     * The SMTP enhanced status code, as defined by <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
      * </p>
      * 
      * @param statusCode
-     *        The SMTP enhanced status code, as defined by <a
-     *        href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
+     *        The SMTP enhanced status code, as defined by <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
      */
 
     public void setStatusCode(String statusCode) {
@@ -206,12 +175,10 @@ public class BounceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SMTP enhanced status code, as defined by <a
-     * href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
+     * The SMTP enhanced status code, as defined by <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
      * </p>
      * 
-     * @return The SMTP enhanced status code, as defined by <a
-     *         href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
+     * @return The SMTP enhanced status code, as defined by <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
      */
 
     public String getStatusCode() {
@@ -220,15 +187,12 @@ public class BounceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SMTP enhanced status code, as defined by <a
-     * href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
+     * The SMTP enhanced status code, as defined by <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
      * </p>
      * 
      * @param statusCode
-     *        The SMTP enhanced status code, as defined by <a
-     *        href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The SMTP enhanced status code, as defined by <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BounceAction withStatusCode(String statusCode) {
@@ -268,8 +232,7 @@ public class BounceAction implements Serializable, Cloneable {
      * 
      * @param message
      *        Human-readable text to include in the bounce message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BounceAction withMessage(String message) {
@@ -279,13 +242,13 @@ public class BounceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The email address of the sender of the bounced email. This is the address
-     * from which the bounce message will be sent.
+     * The email address of the sender of the bounced email. This is the address from which the bounce message will be
+     * sent.
      * </p>
      * 
      * @param sender
-     *        The email address of the sender of the bounced email. This is the
-     *        address from which the bounce message will be sent.
+     *        The email address of the sender of the bounced email. This is the address from which the bounce message
+     *        will be sent.
      */
 
     public void setSender(String sender) {
@@ -294,12 +257,12 @@ public class BounceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The email address of the sender of the bounced email. This is the address
-     * from which the bounce message will be sent.
+     * The email address of the sender of the bounced email. This is the address from which the bounce message will be
+     * sent.
      * </p>
      * 
-     * @return The email address of the sender of the bounced email. This is the
-     *         address from which the bounce message will be sent.
+     * @return The email address of the sender of the bounced email. This is the address from which the bounce message
+     *         will be sent.
      */
 
     public String getSender() {
@@ -308,15 +271,14 @@ public class BounceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The email address of the sender of the bounced email. This is the address
-     * from which the bounce message will be sent.
+     * The email address of the sender of the bounced email. This is the address from which the bounce message will be
+     * sent.
      * </p>
      * 
      * @param sender
-     *        The email address of the sender of the bounced email. This is the
-     *        address from which the bounce message will be sent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The email address of the sender of the bounced email. This is the address from which the bounce message
+     *        will be sent.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BounceAction withSender(String sender) {
@@ -325,8 +287,7 @@ public class BounceAction implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -362,28 +323,23 @@ public class BounceAction implements Serializable, Cloneable {
         BounceAction other = (BounceAction) obj;
         if (other.getTopicArn() == null ^ this.getTopicArn() == null)
             return false;
-        if (other.getTopicArn() != null
-                && other.getTopicArn().equals(this.getTopicArn()) == false)
+        if (other.getTopicArn() != null && other.getTopicArn().equals(this.getTopicArn()) == false)
             return false;
         if (other.getSmtpReplyCode() == null ^ this.getSmtpReplyCode() == null)
             return false;
-        if (other.getSmtpReplyCode() != null
-                && other.getSmtpReplyCode().equals(this.getSmtpReplyCode()) == false)
+        if (other.getSmtpReplyCode() != null && other.getSmtpReplyCode().equals(this.getSmtpReplyCode()) == false)
             return false;
         if (other.getStatusCode() == null ^ this.getStatusCode() == null)
             return false;
-        if (other.getStatusCode() != null
-                && other.getStatusCode().equals(this.getStatusCode()) == false)
+        if (other.getStatusCode() != null && other.getStatusCode().equals(this.getStatusCode()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         if (other.getSender() == null ^ this.getSender() == null)
             return false;
-        if (other.getSender() != null
-                && other.getSender().equals(this.getSender()) == false)
+        if (other.getSender() != null && other.getSender().equals(this.getSender()) == false)
             return false;
         return true;
     }
@@ -393,18 +349,11 @@ public class BounceAction implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSmtpReplyCode() == null) ? 0 : getSmtpReplyCode()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
-        hashCode = prime * hashCode
-                + ((getSender() == null) ? 0 : getSender().hashCode());
+        hashCode = prime * hashCode + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode());
+        hashCode = prime * hashCode + ((getSmtpReplyCode() == null) ? 0 : getSmtpReplyCode().hashCode());
+        hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getSender() == null) ? 0 : getSender().hashCode());
         return hashCode;
     }
 
@@ -413,9 +362,7 @@ public class BounceAction implements Serializable, Cloneable {
         try {
             return (BounceAction) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

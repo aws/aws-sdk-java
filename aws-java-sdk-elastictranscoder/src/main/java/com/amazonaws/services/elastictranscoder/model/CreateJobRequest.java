@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
 
@@ -22,23 +20,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The <code>CreateJobRequest</code> structure.
  * </p>
  */
-public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>Id</code> of the pipeline that you want Elastic Transcoder to
-     * use for transcoding. The pipeline determines several settings, including
-     * the Amazon S3 bucket from which Elastic Transcoder gets the files to
-     * transcode and the bucket into which Elastic Transcoder puts the
-     * transcoded files.
+     * The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline
+     * determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to
+     * transcode and the bucket into which Elastic Transcoder puts the transcoded files.
      * </p>
      */
     private String pipelineId;
     /**
      * <p>
-     * A section of the request body that provides information about the file
-     * that is being transcoded.
+     * A section of the request body that provides information about the file that is being transcoded.
      * </p>
      */
     private JobInput input;
@@ -46,26 +40,23 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
     private CreateJobOutput output;
     /**
      * <p>
-     * A section of the request body that provides information about the
-     * transcoded (target) files. We recommend that you use the
-     * <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
+     * A section of the request body that provides information about the transcoded (target) files. We recommend that
+     * you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CreateJobOutput> outputs;
     /**
      * <p>
-     * The value, if any, that you want Elastic Transcoder to prepend to the
-     * names of all files that this job creates, including output files,
-     * thumbnails, and playlists.
+     * The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates,
+     * including output files, thumbnails, and playlists.
      * </p>
      */
     private String outputKeyPrefix;
     /**
      * <p>
-     * If you specify a preset in <code>PresetId</code> for which the value of
-     * <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
-     * Playlists contains information about the master playlists that you want
-     * Elastic Transcoder to create.
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     * (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want Elastic
+     * Transcoder to create.
      * </p>
      * <p>
      * The maximum number of master playlists in a job is 30.
@@ -74,30 +65,25 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<CreateJobPlaylist> playlists;
     /**
      * <p>
-     * User-defined metadata that you want to associate with an Elastic
-     * Transcoder job. You specify metadata in <code>key/value</code> pairs, and
-     * you can add up to 10 <code>key/value</code> pairs per job. Elastic
-     * Transcoder does not guarantee that <code>key/value</code> pairs will be
-     * returned in the same order in which you specify them.
+     * User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
+     * <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder
+     * does not guarantee that <code>key/value</code> pairs will be returned in the same order in which you specify
+     * them.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> userMetadata;
 
     /**
      * <p>
-     * The <code>Id</code> of the pipeline that you want Elastic Transcoder to
-     * use for transcoding. The pipeline determines several settings, including
-     * the Amazon S3 bucket from which Elastic Transcoder gets the files to
-     * transcode and the bucket into which Elastic Transcoder puts the
-     * transcoded files.
+     * The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline
+     * determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to
+     * transcode and the bucket into which Elastic Transcoder puts the transcoded files.
      * </p>
      * 
      * @param pipelineId
-     *        The <code>Id</code> of the pipeline that you want Elastic
-     *        Transcoder to use for transcoding. The pipeline determines several
-     *        settings, including the Amazon S3 bucket from which Elastic
-     *        Transcoder gets the files to transcode and the bucket into which
-     *        Elastic Transcoder puts the transcoded files.
+     *        The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline
+     *        determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files
+     *        to transcode and the bucket into which Elastic Transcoder puts the transcoded files.
      */
 
     public void setPipelineId(String pipelineId) {
@@ -106,18 +92,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>Id</code> of the pipeline that you want Elastic Transcoder to
-     * use for transcoding. The pipeline determines several settings, including
-     * the Amazon S3 bucket from which Elastic Transcoder gets the files to
-     * transcode and the bucket into which Elastic Transcoder puts the
-     * transcoded files.
+     * The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline
+     * determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to
+     * transcode and the bucket into which Elastic Transcoder puts the transcoded files.
      * </p>
      * 
-     * @return The <code>Id</code> of the pipeline that you want Elastic
-     *         Transcoder to use for transcoding. The pipeline determines
-     *         several settings, including the Amazon S3 bucket from which
-     *         Elastic Transcoder gets the files to transcode and the bucket
-     *         into which Elastic Transcoder puts the transcoded files.
+     * @return The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline
+     *         determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files
+     *         to transcode and the bucket into which Elastic Transcoder puts the transcoded files.
      */
 
     public String getPipelineId() {
@@ -126,21 +108,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>Id</code> of the pipeline that you want Elastic Transcoder to
-     * use for transcoding. The pipeline determines several settings, including
-     * the Amazon S3 bucket from which Elastic Transcoder gets the files to
-     * transcode and the bucket into which Elastic Transcoder puts the
-     * transcoded files.
+     * The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline
+     * determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to
+     * transcode and the bucket into which Elastic Transcoder puts the transcoded files.
      * </p>
      * 
      * @param pipelineId
-     *        The <code>Id</code> of the pipeline that you want Elastic
-     *        Transcoder to use for transcoding. The pipeline determines several
-     *        settings, including the Amazon S3 bucket from which Elastic
-     *        Transcoder gets the files to transcode and the bucket into which
-     *        Elastic Transcoder puts the transcoded files.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline
+     *        determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files
+     *        to transcode and the bucket into which Elastic Transcoder puts the transcoded files.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobRequest withPipelineId(String pipelineId) {
@@ -150,13 +127,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A section of the request body that provides information about the file
-     * that is being transcoded.
+     * A section of the request body that provides information about the file that is being transcoded.
      * </p>
      * 
      * @param input
-     *        A section of the request body that provides information about the
-     *        file that is being transcoded.
+     *        A section of the request body that provides information about the file that is being transcoded.
      */
 
     public void setInput(JobInput input) {
@@ -165,12 +140,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A section of the request body that provides information about the file
-     * that is being transcoded.
+     * A section of the request body that provides information about the file that is being transcoded.
      * </p>
      * 
-     * @return A section of the request body that provides information about the
-     *         file that is being transcoded.
+     * @return A section of the request body that provides information about the file that is being transcoded.
      */
 
     public JobInput getInput() {
@@ -179,15 +152,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A section of the request body that provides information about the file
-     * that is being transcoded.
+     * A section of the request body that provides information about the file that is being transcoded.
      * </p>
      * 
      * @param input
-     *        A section of the request body that provides information about the
-     *        file that is being transcoded.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A section of the request body that provides information about the file that is being transcoded.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobRequest withInput(JobInput input) {
@@ -213,8 +183,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * @param output
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobRequest withOutput(CreateJobOutput output) {
@@ -224,15 +193,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A section of the request body that provides information about the
-     * transcoded (target) files. We recommend that you use the
-     * <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
+     * A section of the request body that provides information about the transcoded (target) files. We recommend that
+     * you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
      * </p>
      * 
-     * @return A section of the request body that provides information about the
-     *         transcoded (target) files. We recommend that you use the
-     *         <code>Outputs</code> syntax instead of the <code>Output</code>
-     *         syntax.
+     * @return A section of the request body that provides information about the transcoded (target) files. We recommend
+     *         that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
      */
 
     public java.util.List<CreateJobOutput> getOutputs() {
@@ -244,16 +210,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A section of the request body that provides information about the
-     * transcoded (target) files. We recommend that you use the
-     * <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
+     * A section of the request body that provides information about the transcoded (target) files. We recommend that
+     * you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
      * </p>
      * 
      * @param outputs
-     *        A section of the request body that provides information about the
-     *        transcoded (target) files. We recommend that you use the
-     *        <code>Outputs</code> syntax instead of the <code>Output</code>
-     *        syntax.
+     *        A section of the request body that provides information about the transcoded (target) files. We recommend
+     *        that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
      */
 
     public void setOutputs(java.util.Collection<CreateJobOutput> outputs) {
@@ -262,36 +225,29 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
             return;
         }
 
-        this.outputs = new com.amazonaws.internal.SdkInternalList<CreateJobOutput>(
-                outputs);
+        this.outputs = new com.amazonaws.internal.SdkInternalList<CreateJobOutput>(outputs);
     }
 
     /**
      * <p>
-     * A section of the request body that provides information about the
-     * transcoded (target) files. We recommend that you use the
-     * <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
+     * A section of the request body that provides information about the transcoded (target) files. We recommend that
+     * you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOutputs(java.util.Collection)} or
-     * {@link #withOutputs(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOutputs(java.util.Collection)} or {@link #withOutputs(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param outputs
-     *        A section of the request body that provides information about the
-     *        transcoded (target) files. We recommend that you use the
-     *        <code>Outputs</code> syntax instead of the <code>Output</code>
-     *        syntax.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A section of the request body that provides information about the transcoded (target) files. We recommend
+     *        that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobRequest withOutputs(CreateJobOutput... outputs) {
         if (this.outputs == null) {
-            setOutputs(new com.amazonaws.internal.SdkInternalList<CreateJobOutput>(
-                    outputs.length));
+            setOutputs(new com.amazonaws.internal.SdkInternalList<CreateJobOutput>(outputs.length));
         }
         for (CreateJobOutput ele : outputs) {
             this.outputs.add(ele);
@@ -301,37 +257,30 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A section of the request body that provides information about the
-     * transcoded (target) files. We recommend that you use the
-     * <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
+     * A section of the request body that provides information about the transcoded (target) files. We recommend that
+     * you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
      * </p>
      * 
      * @param outputs
-     *        A section of the request body that provides information about the
-     *        transcoded (target) files. We recommend that you use the
-     *        <code>Outputs</code> syntax instead of the <code>Output</code>
-     *        syntax.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A section of the request body that provides information about the transcoded (target) files. We recommend
+     *        that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateJobRequest withOutputs(
-            java.util.Collection<CreateJobOutput> outputs) {
+    public CreateJobRequest withOutputs(java.util.Collection<CreateJobOutput> outputs) {
         setOutputs(outputs);
         return this;
     }
 
     /**
      * <p>
-     * The value, if any, that you want Elastic Transcoder to prepend to the
-     * names of all files that this job creates, including output files,
-     * thumbnails, and playlists.
+     * The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates,
+     * including output files, thumbnails, and playlists.
      * </p>
      * 
      * @param outputKeyPrefix
-     *        The value, if any, that you want Elastic Transcoder to prepend to
-     *        the names of all files that this job creates, including output
-     *        files, thumbnails, and playlists.
+     *        The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job
+     *        creates, including output files, thumbnails, and playlists.
      */
 
     public void setOutputKeyPrefix(String outputKeyPrefix) {
@@ -340,14 +289,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The value, if any, that you want Elastic Transcoder to prepend to the
-     * names of all files that this job creates, including output files,
-     * thumbnails, and playlists.
+     * The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates,
+     * including output files, thumbnails, and playlists.
      * </p>
      * 
-     * @return The value, if any, that you want Elastic Transcoder to prepend to
-     *         the names of all files that this job creates, including output
-     *         files, thumbnails, and playlists.
+     * @return The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job
+     *         creates, including output files, thumbnails, and playlists.
      */
 
     public String getOutputKeyPrefix() {
@@ -356,17 +303,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The value, if any, that you want Elastic Transcoder to prepend to the
-     * names of all files that this job creates, including output files,
-     * thumbnails, and playlists.
+     * The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates,
+     * including output files, thumbnails, and playlists.
      * </p>
      * 
      * @param outputKeyPrefix
-     *        The value, if any, that you want Elastic Transcoder to prepend to
-     *        the names of all files that this job creates, including output
-     *        files, thumbnails, and playlists.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job
+     *        creates, including output files, thumbnails, and playlists.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobRequest withOutputKeyPrefix(String outputKeyPrefix) {
@@ -376,19 +320,17 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If you specify a preset in <code>PresetId</code> for which the value of
-     * <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
-     * Playlists contains information about the master playlists that you want
-     * Elastic Transcoder to create.
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     * (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want Elastic
+     * Transcoder to create.
      * </p>
      * <p>
      * The maximum number of master playlists in a job is 30.
      * </p>
      * 
-     * @return If you specify a preset in <code>PresetId</code> for which the
-     *         value of <code>Container</code> is fmp4 (Fragmented MP4) or ts
-     *         (MPEG-TS), Playlists contains information about the master
-     *         playlists that you want Elastic Transcoder to create.</p>
+     * @return If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     *         (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want
+     *         Elastic Transcoder to create.</p>
      *         <p>
      *         The maximum number of master playlists in a job is 30.
      */
@@ -402,20 +344,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If you specify a preset in <code>PresetId</code> for which the value of
-     * <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
-     * Playlists contains information about the master playlists that you want
-     * Elastic Transcoder to create.
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     * (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want Elastic
+     * Transcoder to create.
      * </p>
      * <p>
      * The maximum number of master playlists in a job is 30.
      * </p>
      * 
      * @param playlists
-     *        If you specify a preset in <code>PresetId</code> for which the
-     *        value of <code>Container</code> is fmp4 (Fragmented MP4) or ts
-     *        (MPEG-TS), Playlists contains information about the master
-     *        playlists that you want Elastic Transcoder to create.</p>
+     *        If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     *        (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want
+     *        Elastic Transcoder to create.</p>
      *        <p>
      *        The maximum number of master playlists in a job is 30.
      */
@@ -426,42 +366,36 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
             return;
         }
 
-        this.playlists = new com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>(
-                playlists);
+        this.playlists = new com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>(playlists);
     }
 
     /**
      * <p>
-     * If you specify a preset in <code>PresetId</code> for which the value of
-     * <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
-     * Playlists contains information about the master playlists that you want
-     * Elastic Transcoder to create.
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     * (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want Elastic
+     * Transcoder to create.
      * </p>
      * <p>
      * The maximum number of master playlists in a job is 30.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPlaylists(java.util.Collection)} or
-     * {@link #withPlaylists(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlaylists(java.util.Collection)} or {@link #withPlaylists(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param playlists
-     *        If you specify a preset in <code>PresetId</code> for which the
-     *        value of <code>Container</code> is fmp4 (Fragmented MP4) or ts
-     *        (MPEG-TS), Playlists contains information about the master
-     *        playlists that you want Elastic Transcoder to create.</p>
+     *        If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     *        (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want
+     *        Elastic Transcoder to create.</p>
      *        <p>
      *        The maximum number of master playlists in a job is 30.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobRequest withPlaylists(CreateJobPlaylist... playlists) {
         if (this.playlists == null) {
-            setPlaylists(new com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>(
-                    playlists.length));
+            setPlaylists(new com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>(playlists.length));
         }
         for (CreateJobPlaylist ele : playlists) {
             this.playlists.add(ele);
@@ -471,47 +405,40 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If you specify a preset in <code>PresetId</code> for which the value of
-     * <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
-     * Playlists contains information about the master playlists that you want
-     * Elastic Transcoder to create.
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     * (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want Elastic
+     * Transcoder to create.
      * </p>
      * <p>
      * The maximum number of master playlists in a job is 30.
      * </p>
      * 
      * @param playlists
-     *        If you specify a preset in <code>PresetId</code> for which the
-     *        value of <code>Container</code> is fmp4 (Fragmented MP4) or ts
-     *        (MPEG-TS), Playlists contains information about the master
-     *        playlists that you want Elastic Transcoder to create.</p>
+     *        If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     *        (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want
+     *        Elastic Transcoder to create.</p>
      *        <p>
      *        The maximum number of master playlists in a job is 30.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateJobRequest withPlaylists(
-            java.util.Collection<CreateJobPlaylist> playlists) {
+    public CreateJobRequest withPlaylists(java.util.Collection<CreateJobPlaylist> playlists) {
         setPlaylists(playlists);
         return this;
     }
 
     /**
      * <p>
-     * User-defined metadata that you want to associate with an Elastic
-     * Transcoder job. You specify metadata in <code>key/value</code> pairs, and
-     * you can add up to 10 <code>key/value</code> pairs per job. Elastic
-     * Transcoder does not guarantee that <code>key/value</code> pairs will be
-     * returned in the same order in which you specify them.
+     * User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
+     * <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder
+     * does not guarantee that <code>key/value</code> pairs will be returned in the same order in which you specify
+     * them.
      * </p>
      * 
-     * @return User-defined metadata that you want to associate with an Elastic
-     *         Transcoder job. You specify metadata in <code>key/value</code>
-     *         pairs, and you can add up to 10 <code>key/value</code> pairs per
-     *         job. Elastic Transcoder does not guarantee that
-     *         <code>key/value</code> pairs will be returned in the same order
-     *         in which you specify them.
+     * @return User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
+     *         <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     *         Transcoder does not guarantee that <code>key/value</code> pairs will be returned in the same order in
+     *         which you specify them.
      */
 
     public java.util.Map<String, String> getUserMetadata() {
@@ -523,50 +450,40 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * User-defined metadata that you want to associate with an Elastic
-     * Transcoder job. You specify metadata in <code>key/value</code> pairs, and
-     * you can add up to 10 <code>key/value</code> pairs per job. Elastic
-     * Transcoder does not guarantee that <code>key/value</code> pairs will be
-     * returned in the same order in which you specify them.
+     * User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
+     * <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder
+     * does not guarantee that <code>key/value</code> pairs will be returned in the same order in which you specify
+     * them.
      * </p>
      * 
      * @param userMetadata
-     *        User-defined metadata that you want to associate with an Elastic
-     *        Transcoder job. You specify metadata in <code>key/value</code>
-     *        pairs, and you can add up to 10 <code>key/value</code> pairs per
-     *        job. Elastic Transcoder does not guarantee that
-     *        <code>key/value</code> pairs will be returned in the same order in
+     *        User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
+     *        <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     *        Transcoder does not guarantee that <code>key/value</code> pairs will be returned in the same order in
      *        which you specify them.
      */
 
     public void setUserMetadata(java.util.Map<String, String> userMetadata) {
-        this.userMetadata = userMetadata == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        userMetadata);
+        this.userMetadata = userMetadata == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(userMetadata);
     }
 
     /**
      * <p>
-     * User-defined metadata that you want to associate with an Elastic
-     * Transcoder job. You specify metadata in <code>key/value</code> pairs, and
-     * you can add up to 10 <code>key/value</code> pairs per job. Elastic
-     * Transcoder does not guarantee that <code>key/value</code> pairs will be
-     * returned in the same order in which you specify them.
+     * User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
+     * <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder
+     * does not guarantee that <code>key/value</code> pairs will be returned in the same order in which you specify
+     * them.
      * </p>
      * 
      * @param userMetadata
-     *        User-defined metadata that you want to associate with an Elastic
-     *        Transcoder job. You specify metadata in <code>key/value</code>
-     *        pairs, and you can add up to 10 <code>key/value</code> pairs per
-     *        job. Elastic Transcoder does not guarantee that
-     *        <code>key/value</code> pairs will be returned in the same order in
+     *        User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
+     *        <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic
+     *        Transcoder does not guarantee that <code>key/value</code> pairs will be returned in the same order in
      *        which you specify them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateJobRequest withUserMetadata(
-            java.util.Map<String, String> userMetadata) {
+    public CreateJobRequest withUserMetadata(java.util.Map<String, String> userMetadata) {
         setUserMetadata(userMetadata);
         return this;
     }
@@ -576,15 +493,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
             this.userMetadata = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.userMetadata.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.userMetadata.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into UserMetadata. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into UserMetadata. &lt;p> Returns a reference to this object so that method calls
+     * can be chained together.
      */
 
     public CreateJobRequest clearUserMetadataEntries() {
@@ -593,8 +509,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -634,39 +549,31 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
         CreateJobRequest other = (CreateJobRequest) obj;
         if (other.getPipelineId() == null ^ this.getPipelineId() == null)
             return false;
-        if (other.getPipelineId() != null
-                && other.getPipelineId().equals(this.getPipelineId()) == false)
+        if (other.getPipelineId() != null && other.getPipelineId().equals(this.getPipelineId()) == false)
             return false;
         if (other.getInput() == null ^ this.getInput() == null)
             return false;
-        if (other.getInput() != null
-                && other.getInput().equals(this.getInput()) == false)
+        if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
             return false;
         if (other.getOutput() == null ^ this.getOutput() == null)
             return false;
-        if (other.getOutput() != null
-                && other.getOutput().equals(this.getOutput()) == false)
+        if (other.getOutput() != null && other.getOutput().equals(this.getOutput()) == false)
             return false;
         if (other.getOutputs() == null ^ this.getOutputs() == null)
             return false;
-        if (other.getOutputs() != null
-                && other.getOutputs().equals(this.getOutputs()) == false)
+        if (other.getOutputs() != null && other.getOutputs().equals(this.getOutputs()) == false)
             return false;
-        if (other.getOutputKeyPrefix() == null
-                ^ this.getOutputKeyPrefix() == null)
+        if (other.getOutputKeyPrefix() == null ^ this.getOutputKeyPrefix() == null)
             return false;
-        if (other.getOutputKeyPrefix() != null
-                && other.getOutputKeyPrefix().equals(this.getOutputKeyPrefix()) == false)
+        if (other.getOutputKeyPrefix() != null && other.getOutputKeyPrefix().equals(this.getOutputKeyPrefix()) == false)
             return false;
         if (other.getPlaylists() == null ^ this.getPlaylists() == null)
             return false;
-        if (other.getPlaylists() != null
-                && other.getPlaylists().equals(this.getPlaylists()) == false)
+        if (other.getPlaylists() != null && other.getPlaylists().equals(this.getPlaylists()) == false)
             return false;
         if (other.getUserMetadata() == null ^ this.getUserMetadata() == null)
             return false;
-        if (other.getUserMetadata() != null
-                && other.getUserMetadata().equals(this.getUserMetadata()) == false)
+        if (other.getUserMetadata() != null && other.getUserMetadata().equals(this.getUserMetadata()) == false)
             return false;
         return true;
     }
@@ -676,24 +583,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
-        hashCode = prime * hashCode
-                + ((getInput() == null) ? 0 : getInput().hashCode());
-        hashCode = prime * hashCode
-                + ((getOutput() == null) ? 0 : getOutput().hashCode());
-        hashCode = prime * hashCode
-                + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOutputKeyPrefix() == null) ? 0 : getOutputKeyPrefix()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPlaylists() == null) ? 0 : getPlaylists().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUserMetadata() == null) ? 0 : getUserMetadata()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
+        hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
+        hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());
+        hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
+        hashCode = prime * hashCode + ((getOutputKeyPrefix() == null) ? 0 : getOutputKeyPrefix().hashCode());
+        hashCode = prime * hashCode + ((getPlaylists() == null) ? 0 : getPlaylists().hashCode());
+        hashCode = prime * hashCode + ((getUserMetadata() == null) ? 0 : getUserMetadata().hashCode());
         return hashCode;
     }
 

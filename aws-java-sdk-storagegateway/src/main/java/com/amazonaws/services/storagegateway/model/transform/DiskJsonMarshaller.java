@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
@@ -37,46 +35,37 @@ public class DiskJsonMarshaller {
     public void marshall(Disk disk, StructuredJsonGenerator jsonGenerator) {
 
         if (disk == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (disk.getDiskId() != null) {
-                jsonGenerator.writeFieldName("DiskId").writeValue(
-                        disk.getDiskId());
+                jsonGenerator.writeFieldName("DiskId").writeValue(disk.getDiskId());
             }
             if (disk.getDiskPath() != null) {
-                jsonGenerator.writeFieldName("DiskPath").writeValue(
-                        disk.getDiskPath());
+                jsonGenerator.writeFieldName("DiskPath").writeValue(disk.getDiskPath());
             }
             if (disk.getDiskNode() != null) {
-                jsonGenerator.writeFieldName("DiskNode").writeValue(
-                        disk.getDiskNode());
+                jsonGenerator.writeFieldName("DiskNode").writeValue(disk.getDiskNode());
             }
             if (disk.getDiskStatus() != null) {
-                jsonGenerator.writeFieldName("DiskStatus").writeValue(
-                        disk.getDiskStatus());
+                jsonGenerator.writeFieldName("DiskStatus").writeValue(disk.getDiskStatus());
             }
             if (disk.getDiskSizeInBytes() != null) {
-                jsonGenerator.writeFieldName("DiskSizeInBytes").writeValue(
-                        disk.getDiskSizeInBytes());
+                jsonGenerator.writeFieldName("DiskSizeInBytes").writeValue(disk.getDiskSizeInBytes());
             }
             if (disk.getDiskAllocationType() != null) {
-                jsonGenerator.writeFieldName("DiskAllocationType").writeValue(
-                        disk.getDiskAllocationType());
+                jsonGenerator.writeFieldName("DiskAllocationType").writeValue(disk.getDiskAllocationType());
             }
             if (disk.getDiskAllocationResource() != null) {
-                jsonGenerator.writeFieldName("DiskAllocationResource")
-                        .writeValue(disk.getDiskAllocationResource());
+                jsonGenerator.writeFieldName("DiskAllocationResource").writeValue(disk.getDiskAllocationResource());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

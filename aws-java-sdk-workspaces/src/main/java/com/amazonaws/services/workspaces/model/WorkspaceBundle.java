@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.workspaces.model;
 
@@ -37,8 +35,8 @@ public class WorkspaceBundle implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The owner of the bundle. This contains the owner's account identifier, or
-     * <code>AMAZON</code> if the bundle is provided by AWS.
+     * The owner of the bundle. This contains the owner's account identifier, or <code>AMAZON</code> if the bundle is
+     * provided by AWS.
      * </p>
      */
     private String owner;
@@ -50,15 +48,13 @@ public class WorkspaceBundle implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * A <a>UserStorage</a> object that specifies the amount of user storage
-     * that the bundle contains.
+     * A <a>UserStorage</a> object that specifies the amount of user storage that the bundle contains.
      * </p>
      */
     private UserStorage userStorage;
     /**
      * <p>
-     * A <a>ComputeType</a> object that specifies the compute type for the
-     * bundle.
+     * A <a>ComputeType</a> object that specifies the compute type for the bundle.
      * </p>
      */
     private ComputeType computeType;
@@ -95,8 +91,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * 
      * @param bundleId
      *        The bundle identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceBundle withBundleId(String bundleId) {
@@ -136,8 +131,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the bundle.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceBundle withName(String name) {
@@ -147,14 +141,13 @@ public class WorkspaceBundle implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The owner of the bundle. This contains the owner's account identifier, or
-     * <code>AMAZON</code> if the bundle is provided by AWS.
+     * The owner of the bundle. This contains the owner's account identifier, or <code>AMAZON</code> if the bundle is
+     * provided by AWS.
      * </p>
      * 
      * @param owner
-     *        The owner of the bundle. This contains the owner's account
-     *        identifier, or <code>AMAZON</code> if the bundle is provided by
-     *        AWS.
+     *        The owner of the bundle. This contains the owner's account identifier, or <code>AMAZON</code> if the
+     *        bundle is provided by AWS.
      */
 
     public void setOwner(String owner) {
@@ -163,13 +156,12 @@ public class WorkspaceBundle implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The owner of the bundle. This contains the owner's account identifier, or
-     * <code>AMAZON</code> if the bundle is provided by AWS.
+     * The owner of the bundle. This contains the owner's account identifier, or <code>AMAZON</code> if the bundle is
+     * provided by AWS.
      * </p>
      * 
-     * @return The owner of the bundle. This contains the owner's account
-     *         identifier, or <code>AMAZON</code> if the bundle is provided by
-     *         AWS.
+     * @return The owner of the bundle. This contains the owner's account identifier, or <code>AMAZON</code> if the
+     *         bundle is provided by AWS.
      */
 
     public String getOwner() {
@@ -178,16 +170,14 @@ public class WorkspaceBundle implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The owner of the bundle. This contains the owner's account identifier, or
-     * <code>AMAZON</code> if the bundle is provided by AWS.
+     * The owner of the bundle. This contains the owner's account identifier, or <code>AMAZON</code> if the bundle is
+     * provided by AWS.
      * </p>
      * 
      * @param owner
-     *        The owner of the bundle. This contains the owner's account
-     *        identifier, or <code>AMAZON</code> if the bundle is provided by
-     *        AWS.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The owner of the bundle. This contains the owner's account identifier, or <code>AMAZON</code> if the
+     *        bundle is provided by AWS.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceBundle withOwner(String owner) {
@@ -227,8 +217,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * 
      * @param description
      *        The bundle description.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceBundle withDescription(String description) {
@@ -238,13 +227,11 @@ public class WorkspaceBundle implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>UserStorage</a> object that specifies the amount of user storage
-     * that the bundle contains.
+     * A <a>UserStorage</a> object that specifies the amount of user storage that the bundle contains.
      * </p>
      * 
      * @param userStorage
-     *        A <a>UserStorage</a> object that specifies the amount of user
-     *        storage that the bundle contains.
+     *        A <a>UserStorage</a> object that specifies the amount of user storage that the bundle contains.
      */
 
     public void setUserStorage(UserStorage userStorage) {
@@ -253,12 +240,10 @@ public class WorkspaceBundle implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>UserStorage</a> object that specifies the amount of user storage
-     * that the bundle contains.
+     * A <a>UserStorage</a> object that specifies the amount of user storage that the bundle contains.
      * </p>
      * 
-     * @return A <a>UserStorage</a> object that specifies the amount of user
-     *         storage that the bundle contains.
+     * @return A <a>UserStorage</a> object that specifies the amount of user storage that the bundle contains.
      */
 
     public UserStorage getUserStorage() {
@@ -267,15 +252,12 @@ public class WorkspaceBundle implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>UserStorage</a> object that specifies the amount of user storage
-     * that the bundle contains.
+     * A <a>UserStorage</a> object that specifies the amount of user storage that the bundle contains.
      * </p>
      * 
      * @param userStorage
-     *        A <a>UserStorage</a> object that specifies the amount of user
-     *        storage that the bundle contains.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <a>UserStorage</a> object that specifies the amount of user storage that the bundle contains.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceBundle withUserStorage(UserStorage userStorage) {
@@ -285,13 +267,11 @@ public class WorkspaceBundle implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>ComputeType</a> object that specifies the compute type for the
-     * bundle.
+     * A <a>ComputeType</a> object that specifies the compute type for the bundle.
      * </p>
      * 
      * @param computeType
-     *        A <a>ComputeType</a> object that specifies the compute type for
-     *        the bundle.
+     *        A <a>ComputeType</a> object that specifies the compute type for the bundle.
      */
 
     public void setComputeType(ComputeType computeType) {
@@ -300,12 +280,10 @@ public class WorkspaceBundle implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>ComputeType</a> object that specifies the compute type for the
-     * bundle.
+     * A <a>ComputeType</a> object that specifies the compute type for the bundle.
      * </p>
      * 
-     * @return A <a>ComputeType</a> object that specifies the compute type for
-     *         the bundle.
+     * @return A <a>ComputeType</a> object that specifies the compute type for the bundle.
      */
 
     public ComputeType getComputeType() {
@@ -314,15 +292,12 @@ public class WorkspaceBundle implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>ComputeType</a> object that specifies the compute type for the
-     * bundle.
+     * A <a>ComputeType</a> object that specifies the compute type for the bundle.
      * </p>
      * 
      * @param computeType
-     *        A <a>ComputeType</a> object that specifies the compute type for
-     *        the bundle.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <a>ComputeType</a> object that specifies the compute type for the bundle.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceBundle withComputeType(ComputeType computeType) {
@@ -331,8 +306,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -370,33 +344,27 @@ public class WorkspaceBundle implements Serializable, Cloneable {
         WorkspaceBundle other = (WorkspaceBundle) obj;
         if (other.getBundleId() == null ^ this.getBundleId() == null)
             return false;
-        if (other.getBundleId() != null
-                && other.getBundleId().equals(this.getBundleId()) == false)
+        if (other.getBundleId() != null && other.getBundleId().equals(this.getBundleId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getOwner() == null ^ this.getOwner() == null)
             return false;
-        if (other.getOwner() != null
-                && other.getOwner().equals(this.getOwner()) == false)
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getUserStorage() == null ^ this.getUserStorage() == null)
             return false;
-        if (other.getUserStorage() != null
-                && other.getUserStorage().equals(this.getUserStorage()) == false)
+        if (other.getUserStorage() != null && other.getUserStorage().equals(this.getUserStorage()) == false)
             return false;
         if (other.getComputeType() == null ^ this.getComputeType() == null)
             return false;
-        if (other.getComputeType() != null
-                && other.getComputeType().equals(this.getComputeType()) == false)
+        if (other.getComputeType() != null && other.getComputeType().equals(this.getComputeType()) == false)
             return false;
         return true;
     }
@@ -406,21 +374,12 @@ public class WorkspaceBundle implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getOwner() == null) ? 0 : getOwner().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUserStorage() == null) ? 0 : getUserStorage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getComputeType() == null) ? 0 : getComputeType().hashCode());
+        hashCode = prime * hashCode + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getUserStorage() == null) ? 0 : getUserStorage().hashCode());
+        hashCode = prime * hashCode + ((getComputeType() == null) ? 0 : getComputeType().hashCode());
         return hashCode;
     }
 
@@ -429,9 +388,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
         try {
             return (WorkspaceBundle) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

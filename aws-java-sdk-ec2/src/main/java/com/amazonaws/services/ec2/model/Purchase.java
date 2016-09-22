@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -37,8 +35,7 @@ public class Purchase implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> hostIdSet;
     /**
      * <p>
-     * The instance family on the Dedicated Host that the reservation can be
-     * associated with.
+     * The instance family on the Dedicated Host that the reservation can be associated with.
      * </p>
      */
     private String instanceFamily;
@@ -62,9 +59,8 @@ public class Purchase implements Serializable, Cloneable {
     private String hourlyPrice;
     /**
      * <p>
-     * The currency in which the <code>UpfrontPrice</code> and
-     * <code>HourlyPrice</code> amounts are specified. At this time, the only
-     * supported currency is <code>USD</code>.
+     * The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At this
+     * time, the only supported currency is <code>USD</code>.
      * </p>
      */
     private String currencyCode;
@@ -107,8 +103,7 @@ public class Purchase implements Serializable, Cloneable {
      * 
      * @param hostReservationId
      *        The ID of the reservation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Purchase withHostReservationId(String hostReservationId) {
@@ -146,8 +141,7 @@ public class Purchase implements Serializable, Cloneable {
             return;
         }
 
-        this.hostIdSet = new com.amazonaws.internal.SdkInternalList<String>(
-                hostIdSet);
+        this.hostIdSet = new com.amazonaws.internal.SdkInternalList<String>(hostIdSet);
     }
 
     /**
@@ -155,22 +149,19 @@ public class Purchase implements Serializable, Cloneable {
      * The IDs of the Dedicated Hosts associated with the reservation.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setHostIdSet(java.util.Collection)} or
-     * {@link #withHostIdSet(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHostIdSet(java.util.Collection)} or {@link #withHostIdSet(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param hostIdSet
      *        The IDs of the Dedicated Hosts associated with the reservation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Purchase withHostIdSet(String... hostIdSet) {
         if (this.hostIdSet == null) {
-            setHostIdSet(new com.amazonaws.internal.SdkInternalList<String>(
-                    hostIdSet.length));
+            setHostIdSet(new com.amazonaws.internal.SdkInternalList<String>(hostIdSet.length));
         }
         for (String ele : hostIdSet) {
             this.hostIdSet.add(ele);
@@ -185,8 +176,7 @@ public class Purchase implements Serializable, Cloneable {
      * 
      * @param hostIdSet
      *        The IDs of the Dedicated Hosts associated with the reservation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Purchase withHostIdSet(java.util.Collection<String> hostIdSet) {
@@ -196,13 +186,11 @@ public class Purchase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance family on the Dedicated Host that the reservation can be
-     * associated with.
+     * The instance family on the Dedicated Host that the reservation can be associated with.
      * </p>
      * 
      * @param instanceFamily
-     *        The instance family on the Dedicated Host that the reservation can
-     *        be associated with.
+     *        The instance family on the Dedicated Host that the reservation can be associated with.
      */
 
     public void setInstanceFamily(String instanceFamily) {
@@ -211,12 +199,10 @@ public class Purchase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance family on the Dedicated Host that the reservation can be
-     * associated with.
+     * The instance family on the Dedicated Host that the reservation can be associated with.
      * </p>
      * 
-     * @return The instance family on the Dedicated Host that the reservation
-     *         can be associated with.
+     * @return The instance family on the Dedicated Host that the reservation can be associated with.
      */
 
     public String getInstanceFamily() {
@@ -225,15 +211,12 @@ public class Purchase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance family on the Dedicated Host that the reservation can be
-     * associated with.
+     * The instance family on the Dedicated Host that the reservation can be associated with.
      * </p>
      * 
      * @param instanceFamily
-     *        The instance family on the Dedicated Host that the reservation can
-     *        be associated with.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance family on the Dedicated Host that the reservation can be associated with.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Purchase withInstanceFamily(String instanceFamily) {
@@ -275,8 +258,7 @@ public class Purchase implements Serializable, Cloneable {
      * 
      * @param paymentOption
      *        The payment option for the reservation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PaymentOption
      */
 
@@ -306,8 +288,7 @@ public class Purchase implements Serializable, Cloneable {
      * 
      * @param paymentOption
      *        The payment option for the reservation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PaymentOption
      */
 
@@ -348,8 +329,7 @@ public class Purchase implements Serializable, Cloneable {
      * 
      * @param upfrontPrice
      *        The upfront price of the reservation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Purchase withUpfrontPrice(String upfrontPrice) {
@@ -389,8 +369,7 @@ public class Purchase implements Serializable, Cloneable {
      * 
      * @param hourlyPrice
      *        The hourly price of the reservation per hour.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Purchase withHourlyPrice(String hourlyPrice) {
@@ -400,15 +379,13 @@ public class Purchase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The currency in which the <code>UpfrontPrice</code> and
-     * <code>HourlyPrice</code> amounts are specified. At this time, the only
-     * supported currency is <code>USD</code>.
+     * The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At this
+     * time, the only supported currency is <code>USD</code>.
      * </p>
      * 
      * @param currencyCode
-     *        The currency in which the <code>UpfrontPrice</code> and
-     *        <code>HourlyPrice</code> amounts are specified. At this time, the
-     *        only supported currency is <code>USD</code>.
+     *        The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At
+     *        this time, the only supported currency is <code>USD</code>.
      * @see CurrencyCodeValues
      */
 
@@ -418,14 +395,12 @@ public class Purchase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The currency in which the <code>UpfrontPrice</code> and
-     * <code>HourlyPrice</code> amounts are specified. At this time, the only
-     * supported currency is <code>USD</code>.
+     * The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At this
+     * time, the only supported currency is <code>USD</code>.
      * </p>
      * 
-     * @return The currency in which the <code>UpfrontPrice</code> and
-     *         <code>HourlyPrice</code> amounts are specified. At this time, the
-     *         only supported currency is <code>USD</code>.
+     * @return The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified.
+     *         At this time, the only supported currency is <code>USD</code>.
      * @see CurrencyCodeValues
      */
 
@@ -435,17 +410,14 @@ public class Purchase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The currency in which the <code>UpfrontPrice</code> and
-     * <code>HourlyPrice</code> amounts are specified. At this time, the only
-     * supported currency is <code>USD</code>.
+     * The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At this
+     * time, the only supported currency is <code>USD</code>.
      * </p>
      * 
      * @param currencyCode
-     *        The currency in which the <code>UpfrontPrice</code> and
-     *        <code>HourlyPrice</code> amounts are specified. At this time, the
-     *        only supported currency is <code>USD</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At
+     *        this time, the only supported currency is <code>USD</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CurrencyCodeValues
      */
 
@@ -456,15 +428,13 @@ public class Purchase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The currency in which the <code>UpfrontPrice</code> and
-     * <code>HourlyPrice</code> amounts are specified. At this time, the only
-     * supported currency is <code>USD</code>.
+     * The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At this
+     * time, the only supported currency is <code>USD</code>.
      * </p>
      * 
      * @param currencyCode
-     *        The currency in which the <code>UpfrontPrice</code> and
-     *        <code>HourlyPrice</code> amounts are specified. At this time, the
-     *        only supported currency is <code>USD</code>.
+     *        The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At
+     *        this time, the only supported currency is <code>USD</code>.
      * @see CurrencyCodeValues
      */
 
@@ -474,17 +444,14 @@ public class Purchase implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The currency in which the <code>UpfrontPrice</code> and
-     * <code>HourlyPrice</code> amounts are specified. At this time, the only
-     * supported currency is <code>USD</code>.
+     * The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At this
+     * time, the only supported currency is <code>USD</code>.
      * </p>
      * 
      * @param currencyCode
-     *        The currency in which the <code>UpfrontPrice</code> and
-     *        <code>HourlyPrice</code> amounts are specified. At this time, the
-     *        only supported currency is <code>USD</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At
+     *        this time, the only supported currency is <code>USD</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CurrencyCodeValues
      */
 
@@ -525,8 +492,7 @@ public class Purchase implements Serializable, Cloneable {
      * 
      * @param duration
      *        The duration of the reservation's term in seconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Purchase withDuration(Integer duration) {
@@ -535,8 +501,7 @@ public class Purchase implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -576,48 +541,37 @@ public class Purchase implements Serializable, Cloneable {
         if (obj instanceof Purchase == false)
             return false;
         Purchase other = (Purchase) obj;
-        if (other.getHostReservationId() == null
-                ^ this.getHostReservationId() == null)
+        if (other.getHostReservationId() == null ^ this.getHostReservationId() == null)
             return false;
-        if (other.getHostReservationId() != null
-                && other.getHostReservationId().equals(
-                        this.getHostReservationId()) == false)
+        if (other.getHostReservationId() != null && other.getHostReservationId().equals(this.getHostReservationId()) == false)
             return false;
         if (other.getHostIdSet() == null ^ this.getHostIdSet() == null)
             return false;
-        if (other.getHostIdSet() != null
-                && other.getHostIdSet().equals(this.getHostIdSet()) == false)
+        if (other.getHostIdSet() != null && other.getHostIdSet().equals(this.getHostIdSet()) == false)
             return false;
-        if (other.getInstanceFamily() == null
-                ^ this.getInstanceFamily() == null)
+        if (other.getInstanceFamily() == null ^ this.getInstanceFamily() == null)
             return false;
-        if (other.getInstanceFamily() != null
-                && other.getInstanceFamily().equals(this.getInstanceFamily()) == false)
+        if (other.getInstanceFamily() != null && other.getInstanceFamily().equals(this.getInstanceFamily()) == false)
             return false;
         if (other.getPaymentOption() == null ^ this.getPaymentOption() == null)
             return false;
-        if (other.getPaymentOption() != null
-                && other.getPaymentOption().equals(this.getPaymentOption()) == false)
+        if (other.getPaymentOption() != null && other.getPaymentOption().equals(this.getPaymentOption()) == false)
             return false;
         if (other.getUpfrontPrice() == null ^ this.getUpfrontPrice() == null)
             return false;
-        if (other.getUpfrontPrice() != null
-                && other.getUpfrontPrice().equals(this.getUpfrontPrice()) == false)
+        if (other.getUpfrontPrice() != null && other.getUpfrontPrice().equals(this.getUpfrontPrice()) == false)
             return false;
         if (other.getHourlyPrice() == null ^ this.getHourlyPrice() == null)
             return false;
-        if (other.getHourlyPrice() != null
-                && other.getHourlyPrice().equals(this.getHourlyPrice()) == false)
+        if (other.getHourlyPrice() != null && other.getHourlyPrice().equals(this.getHourlyPrice()) == false)
             return false;
         if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
             return false;
-        if (other.getCurrencyCode() != null
-                && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
+        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
             return false;
         if (other.getDuration() == null ^ this.getDuration() == null)
             return false;
-        if (other.getDuration() != null
-                && other.getDuration().equals(this.getDuration()) == false)
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
             return false;
         return true;
     }
@@ -627,33 +581,14 @@ public class Purchase implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getHostReservationId() == null) ? 0
-                        : getHostReservationId().hashCode());
-        hashCode = prime * hashCode
-                + ((getHostIdSet() == null) ? 0 : getHostIdSet().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceFamily() == null) ? 0 : getInstanceFamily()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPaymentOption() == null) ? 0 : getPaymentOption()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUpfrontPrice() == null) ? 0 : getUpfrontPrice()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHourlyPrice() == null) ? 0 : getHourlyPrice().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCurrencyCode() == null) ? 0 : getCurrencyCode()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getDuration() == null) ? 0 : getDuration().hashCode());
+        hashCode = prime * hashCode + ((getHostReservationId() == null) ? 0 : getHostReservationId().hashCode());
+        hashCode = prime * hashCode + ((getHostIdSet() == null) ? 0 : getHostIdSet().hashCode());
+        hashCode = prime * hashCode + ((getInstanceFamily() == null) ? 0 : getInstanceFamily().hashCode());
+        hashCode = prime * hashCode + ((getPaymentOption() == null) ? 0 : getPaymentOption().hashCode());
+        hashCode = prime * hashCode + ((getUpfrontPrice() == null) ? 0 : getUpfrontPrice().hashCode());
+        hashCode = prime * hashCode + ((getHourlyPrice() == null) ? 0 : getHourlyPrice().hashCode());
+        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         return hashCode;
     }
 
@@ -662,9 +597,7 @@ public class Purchase implements Serializable, Cloneable {
         try {
             return (Purchase) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

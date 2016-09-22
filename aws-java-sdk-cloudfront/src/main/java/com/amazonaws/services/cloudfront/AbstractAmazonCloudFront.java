@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront;
 
@@ -19,9 +17,8 @@ import com.amazonaws.*;
 import com.amazonaws.services.cloudfront.waiters.AmazonCloudFrontWaiters;
 
 /**
- * Abstract implementation of {@code AmazonCloudFront}. Convenient method forms
- * pass through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonCloudFront}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
@@ -39,68 +36,57 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
-    public CreateCloudFrontOriginAccessIdentityResult createCloudFrontOriginAccessIdentity(
-            CreateCloudFrontOriginAccessIdentityRequest request) {
+    public CreateCloudFrontOriginAccessIdentityResult createCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateDistributionResult createDistribution(
-            CreateDistributionRequest request) {
+    public CreateDistributionResult createDistribution(CreateDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateDistributionWithTagsResult createDistributionWithTags(
-            CreateDistributionWithTagsRequest request) {
+    public CreateDistributionWithTagsResult createDistributionWithTags(CreateDistributionWithTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateInvalidationResult createInvalidation(
-            CreateInvalidationRequest request) {
+    public CreateInvalidationResult createInvalidation(CreateInvalidationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateStreamingDistributionResult createStreamingDistribution(
-            CreateStreamingDistributionRequest request) {
+    public CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateStreamingDistributionWithTagsResult createStreamingDistributionWithTags(
-            CreateStreamingDistributionWithTagsRequest request) {
+    public CreateStreamingDistributionWithTagsResult createStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteCloudFrontOriginAccessIdentityResult deleteCloudFrontOriginAccessIdentity(
-            DeleteCloudFrontOriginAccessIdentityRequest request) {
+    public DeleteCloudFrontOriginAccessIdentityResult deleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteDistributionResult deleteDistribution(
-            DeleteDistributionRequest request) {
+    public DeleteDistributionResult deleteDistribution(DeleteDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteStreamingDistributionResult deleteStreamingDistribution(
-            DeleteStreamingDistributionRequest request) {
+    public DeleteStreamingDistributionResult deleteStreamingDistribution(DeleteStreamingDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetCloudFrontOriginAccessIdentityResult getCloudFrontOriginAccessIdentity(
-            GetCloudFrontOriginAccessIdentityRequest request) {
+    public GetCloudFrontOriginAccessIdentityResult getCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetCloudFrontOriginAccessIdentityConfigResult getCloudFrontOriginAccessIdentityConfig(
-            GetCloudFrontOriginAccessIdentityConfigRequest request) {
+    public GetCloudFrontOriginAccessIdentityConfigResult getCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,8 +96,7 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
-    public GetDistributionConfigResult getDistributionConfig(
-            GetDistributionConfigRequest request) {
+    public GetDistributionConfigResult getDistributionConfig(GetDistributionConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -121,50 +106,42 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
-    public GetStreamingDistributionResult getStreamingDistribution(
-            GetStreamingDistributionRequest request) {
+    public GetStreamingDistributionResult getStreamingDistribution(GetStreamingDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetStreamingDistributionConfigResult getStreamingDistributionConfig(
-            GetStreamingDistributionConfigRequest request) {
+    public GetStreamingDistributionConfigResult getStreamingDistributionConfig(GetStreamingDistributionConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListCloudFrontOriginAccessIdentitiesResult listCloudFrontOriginAccessIdentities(
-            ListCloudFrontOriginAccessIdentitiesRequest request) {
+    public ListCloudFrontOriginAccessIdentitiesResult listCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListDistributionsResult listDistributions(
-            ListDistributionsRequest request) {
+    public ListDistributionsResult listDistributions(ListDistributionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListDistributionsByWebACLIdResult listDistributionsByWebACLId(
-            ListDistributionsByWebACLIdRequest request) {
+    public ListDistributionsByWebACLIdResult listDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListInvalidationsResult listInvalidations(
-            ListInvalidationsRequest request) {
+    public ListInvalidationsResult listInvalidations(ListInvalidationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListStreamingDistributionsResult listStreamingDistributions(
-            ListStreamingDistributionsRequest request) {
+    public ListStreamingDistributionsResult listStreamingDistributions(ListStreamingDistributionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListTagsForResourceResult listTagsForResource(
-            ListTagsForResourceRequest request) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,20 +156,17 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
-    public UpdateCloudFrontOriginAccessIdentityResult updateCloudFrontOriginAccessIdentity(
-            UpdateCloudFrontOriginAccessIdentityRequest request) {
+    public UpdateCloudFrontOriginAccessIdentityResult updateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateDistributionResult updateDistribution(
-            UpdateDistributionRequest request) {
+    public UpdateDistributionResult updateDistribution(UpdateDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateStreamingDistributionResult updateStreamingDistribution(
-            UpdateStreamingDistributionRequest request) {
+    public UpdateStreamingDistributionResult updateStreamingDistribution(UpdateStreamingDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -202,8 +176,7 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

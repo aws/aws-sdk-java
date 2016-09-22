@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -21,29 +19,24 @@ import java.io.Serializable;
  * Data returned by the <b>DescribeAccountAttributes</b> action.
  * </p>
  */
-public class DescribeAccountAttributesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a
-     * name, a count of usage toward the quota maximum, and a maximum value for
-     * the quota.
+     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward the quota
+     * maximum, and a maximum value for the quota.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AccountQuota> accountQuotas;
 
     /**
      * <p>
-     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a
-     * name, a count of usage toward the quota maximum, and a maximum value for
-     * the quota.
+     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward the quota
+     * maximum, and a maximum value for the quota.
      * </p>
      * 
-     * @return A list of <a>AccountQuota</a> objects. Within this list, each
-     *         quota has a name, a count of usage toward the quota maximum, and
-     *         a maximum value for the quota.
+     * @return A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward
+     *         the quota maximum, and a maximum value for the quota.
      */
 
     public java.util.List<AccountQuota> getAccountQuotas() {
@@ -55,54 +48,44 @@ public class DescribeAccountAttributesResult extends
 
     /**
      * <p>
-     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a
-     * name, a count of usage toward the quota maximum, and a maximum value for
-     * the quota.
+     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward the quota
+     * maximum, and a maximum value for the quota.
      * </p>
      * 
      * @param accountQuotas
-     *        A list of <a>AccountQuota</a> objects. Within this list, each
-     *        quota has a name, a count of usage toward the quota maximum, and a
-     *        maximum value for the quota.
+     *        A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward
+     *        the quota maximum, and a maximum value for the quota.
      */
 
-    public void setAccountQuotas(
-            java.util.Collection<AccountQuota> accountQuotas) {
+    public void setAccountQuotas(java.util.Collection<AccountQuota> accountQuotas) {
         if (accountQuotas == null) {
             this.accountQuotas = null;
             return;
         }
 
-        this.accountQuotas = new com.amazonaws.internal.SdkInternalList<AccountQuota>(
-                accountQuotas);
+        this.accountQuotas = new com.amazonaws.internal.SdkInternalList<AccountQuota>(accountQuotas);
     }
 
     /**
      * <p>
-     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a
-     * name, a count of usage toward the quota maximum, and a maximum value for
-     * the quota.
+     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward the quota
+     * maximum, and a maximum value for the quota.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAccountQuotas(java.util.Collection)} or
-     * {@link #withAccountQuotas(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccountQuotas(java.util.Collection)} or {@link #withAccountQuotas(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param accountQuotas
-     *        A list of <a>AccountQuota</a> objects. Within this list, each
-     *        quota has a name, a count of usage toward the quota maximum, and a
-     *        maximum value for the quota.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward
+     *        the quota maximum, and a maximum value for the quota.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAccountAttributesResult withAccountQuotas(
-            AccountQuota... accountQuotas) {
+    public DescribeAccountAttributesResult withAccountQuotas(AccountQuota... accountQuotas) {
         if (this.accountQuotas == null) {
-            setAccountQuotas(new com.amazonaws.internal.SdkInternalList<AccountQuota>(
-                    accountQuotas.length));
+            setAccountQuotas(new com.amazonaws.internal.SdkInternalList<AccountQuota>(accountQuotas.length));
         }
         for (AccountQuota ele : accountQuotas) {
             this.accountQuotas.add(ele);
@@ -112,28 +95,23 @@ public class DescribeAccountAttributesResult extends
 
     /**
      * <p>
-     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a
-     * name, a count of usage toward the quota maximum, and a maximum value for
-     * the quota.
+     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward the quota
+     * maximum, and a maximum value for the quota.
      * </p>
      * 
      * @param accountQuotas
-     *        A list of <a>AccountQuota</a> objects. Within this list, each
-     *        quota has a name, a count of usage toward the quota maximum, and a
-     *        maximum value for the quota.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward
+     *        the quota maximum, and a maximum value for the quota.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAccountAttributesResult withAccountQuotas(
-            java.util.Collection<AccountQuota> accountQuotas) {
+    public DescribeAccountAttributesResult withAccountQuotas(java.util.Collection<AccountQuota> accountQuotas) {
         setAccountQuotas(accountQuotas);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -161,8 +139,7 @@ public class DescribeAccountAttributesResult extends
         DescribeAccountAttributesResult other = (DescribeAccountAttributesResult) obj;
         if (other.getAccountQuotas() == null ^ this.getAccountQuotas() == null)
             return false;
-        if (other.getAccountQuotas() != null
-                && other.getAccountQuotas().equals(this.getAccountQuotas()) == false)
+        if (other.getAccountQuotas() != null && other.getAccountQuotas().equals(this.getAccountQuotas()) == false)
             return false;
         return true;
     }
@@ -172,10 +149,7 @@ public class DescribeAccountAttributesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAccountQuotas() == null) ? 0 : getAccountQuotas()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAccountQuotas() == null) ? 0 : getAccountQuotas().hashCode());
         return hashCode;
     }
 
@@ -184,9 +158,7 @@ public class DescribeAccountAttributesResult extends
         try {
             return (DescribeAccountAttributesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

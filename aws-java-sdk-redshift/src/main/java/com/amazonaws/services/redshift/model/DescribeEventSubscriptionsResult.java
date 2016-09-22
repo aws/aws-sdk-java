@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -19,18 +17,14 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class DescribeEventSubscriptionsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeEventSubscriptionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      */
     private String marker;
@@ -43,22 +37,17 @@ public class DescribeEventSubscriptionsResult extends
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      * 
      * @param marker
-     *        A value that indicates the starting point for the next set of
-     *        response records in a subsequent request. If a value is returned
-     *        in a response, you can retrieve the next set of records by
-     *        providing this returned marker value in the <code>Marker</code>
-     *        parameter and retrying the command. If the <code>Marker</code>
-     *        field is empty, all response records have been retrieved for the
-     *        request.
+     *        A value that indicates the starting point for the next set of response records in a subsequent request. If
+     *        a value is returned in a response, you can retrieve the next set of records by providing this returned
+     *        marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+     *        field is empty, all response records have been retrieved for the request.
      */
 
     public void setMarker(String marker) {
@@ -67,21 +56,16 @@ public class DescribeEventSubscriptionsResult extends
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      * 
-     * @return A value that indicates the starting point for the next set of
-     *         response records in a subsequent request. If a value is returned
-     *         in a response, you can retrieve the next set of records by
-     *         providing this returned marker value in the <code>Marker</code>
-     *         parameter and retrying the command. If the <code>Marker</code>
-     *         field is empty, all response records have been retrieved for the
-     *         request.
+     * @return A value that indicates the starting point for the next set of response records in a subsequent request.
+     *         If a value is returned in a response, you can retrieve the next set of records by providing this returned
+     *         marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+     *         field is empty, all response records have been retrieved for the request.
      */
 
     public String getMarker() {
@@ -90,24 +74,18 @@ public class DescribeEventSubscriptionsResult extends
 
     /**
      * <p>
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response records
-     * have been retrieved for the request.
+     * A value that indicates the starting point for the next set of response records in a subsequent request. If a
+     * value is returned in a response, you can retrieve the next set of records by providing this returned marker value
+     * in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all
+     * response records have been retrieved for the request.
      * </p>
      * 
      * @param marker
-     *        A value that indicates the starting point for the next set of
-     *        response records in a subsequent request. If a value is returned
-     *        in a response, you can retrieve the next set of records by
-     *        providing this returned marker value in the <code>Marker</code>
-     *        parameter and retrying the command. If the <code>Marker</code>
-     *        field is empty, all response records have been retrieved for the
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value that indicates the starting point for the next set of response records in a subsequent request. If
+     *        a value is returned in a response, you can retrieve the next set of records by providing this returned
+     *        marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+     *        field is empty, all response records have been retrieved for the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEventSubscriptionsResult withMarker(String marker) {
@@ -139,15 +117,13 @@ public class DescribeEventSubscriptionsResult extends
      *        A list of event subscriptions.
      */
 
-    public void setEventSubscriptionsList(
-            java.util.Collection<EventSubscription> eventSubscriptionsList) {
+    public void setEventSubscriptionsList(java.util.Collection<EventSubscription> eventSubscriptionsList) {
         if (eventSubscriptionsList == null) {
             this.eventSubscriptionsList = null;
             return;
         }
 
-        this.eventSubscriptionsList = new com.amazonaws.internal.SdkInternalList<EventSubscription>(
-                eventSubscriptionsList);
+        this.eventSubscriptionsList = new com.amazonaws.internal.SdkInternalList<EventSubscription>(eventSubscriptionsList);
     }
 
     /**
@@ -155,23 +131,19 @@ public class DescribeEventSubscriptionsResult extends
      * A list of event subscriptions.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEventSubscriptionsList(java.util.Collection)} or
-     * {@link #withEventSubscriptionsList(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEventSubscriptionsList(java.util.Collection)} or
+     * {@link #withEventSubscriptionsList(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param eventSubscriptionsList
      *        A list of event subscriptions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEventSubscriptionsResult withEventSubscriptionsList(
-            EventSubscription... eventSubscriptionsList) {
+    public DescribeEventSubscriptionsResult withEventSubscriptionsList(EventSubscription... eventSubscriptionsList) {
         if (this.eventSubscriptionsList == null) {
-            setEventSubscriptionsList(new com.amazonaws.internal.SdkInternalList<EventSubscription>(
-                    eventSubscriptionsList.length));
+            setEventSubscriptionsList(new com.amazonaws.internal.SdkInternalList<EventSubscription>(eventSubscriptionsList.length));
         }
         for (EventSubscription ele : eventSubscriptionsList) {
             this.eventSubscriptionsList.add(ele);
@@ -186,19 +158,16 @@ public class DescribeEventSubscriptionsResult extends
      * 
      * @param eventSubscriptionsList
      *        A list of event subscriptions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEventSubscriptionsResult withEventSubscriptionsList(
-            java.util.Collection<EventSubscription> eventSubscriptionsList) {
+    public DescribeEventSubscriptionsResult withEventSubscriptionsList(java.util.Collection<EventSubscription> eventSubscriptionsList) {
         setEventSubscriptionsList(eventSubscriptionsList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -228,15 +197,11 @@ public class DescribeEventSubscriptionsResult extends
         DescribeEventSubscriptionsResult other = (DescribeEventSubscriptionsResult) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
-        if (other.getEventSubscriptionsList() == null
-                ^ this.getEventSubscriptionsList() == null)
+        if (other.getEventSubscriptionsList() == null ^ this.getEventSubscriptionsList() == null)
             return false;
-        if (other.getEventSubscriptionsList() != null
-                && other.getEventSubscriptionsList().equals(
-                        this.getEventSubscriptionsList()) == false)
+        if (other.getEventSubscriptionsList() != null && other.getEventSubscriptionsList().equals(this.getEventSubscriptionsList()) == false)
             return false;
         return true;
     }
@@ -246,12 +211,8 @@ public class DescribeEventSubscriptionsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEventSubscriptionsList() == null) ? 0
-                        : getEventSubscriptionsList().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getEventSubscriptionsList() == null) ? 0 : getEventSubscriptionsList().hashCode());
         return hashCode;
     }
 
@@ -260,9 +221,7 @@ public class DescribeEventSubscriptionsResult extends
         try {
             return (DescribeEventSubscriptionsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model;
 
@@ -25,16 +23,14 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the plugin. Must be one of the following: aws:updateAgent,
-     * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
-     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
+     * aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple
-     * plugins.
+     * The status of this plugin. You can execute a document with multiple plugins.
      * </p>
      */
     private String status;
@@ -52,8 +48,7 @@ public class CommandPlugin implements Serializable, Cloneable {
     private java.util.Date responseStartDateTime;
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for
-     * example, a cancel command was sent.
+     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      */
     private java.util.Date responseFinishDateTime;
@@ -65,32 +60,28 @@ public class CommandPlugin implements Serializable, Cloneable {
     private String output;
     /**
      * <p>
-     * The S3 bucket where the responses to the command executions should be
-     * stored. This was requested when issuing the command.
+     * The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the
+     * command.
      * </p>
      */
     private String outputS3BucketName;
     /**
      * <p>
-     * The S3 directory path inside the bucket where the responses to the
-     * command executions should be stored. This was requested when issuing the
-     * command.
+     * The S3 directory path inside the bucket where the responses to the command executions should be stored. This was
+     * requested when issuing the command.
      * </p>
      */
     private String outputS3KeyPrefix;
 
     /**
      * <p>
-     * The name of the plugin. Must be one of the following: aws:updateAgent,
-     * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
-     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
+     * aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
      * </p>
      * 
      * @param name
-     *        The name of the plugin. Must be one of the following:
-     *        aws:updateAgent, aws:domainjoin, aws:applications,
-     *        aws:runPowerShellScript, aws:psmodule, aws:cloudWatch,
-     *        aws:runShellScript, or aws:updateSSMAgent.
+     *        The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
+     *        aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
      */
 
     public void setName(String name) {
@@ -99,15 +90,12 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the plugin. Must be one of the following: aws:updateAgent,
-     * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
-     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
+     * aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
      * </p>
      * 
-     * @return The name of the plugin. Must be one of the following:
-     *         aws:updateAgent, aws:domainjoin, aws:applications,
-     *         aws:runPowerShellScript, aws:psmodule, aws:cloudWatch,
-     *         aws:runShellScript, or aws:updateSSMAgent.
+     * @return The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
+     *         aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
      */
 
     public String getName() {
@@ -116,18 +104,14 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the plugin. Must be one of the following: aws:updateAgent,
-     * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
-     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
+     * aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
      * </p>
      * 
      * @param name
-     *        The name of the plugin. Must be one of the following:
-     *        aws:updateAgent, aws:domainjoin, aws:applications,
-     *        aws:runPowerShellScript, aws:psmodule, aws:cloudWatch,
-     *        aws:runShellScript, or aws:updateSSMAgent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
+     *        aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CommandPlugin withName(String name) {
@@ -137,13 +121,11 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple
-     * plugins.
+     * The status of this plugin. You can execute a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with
-     *        multiple plugins.
+     *        The status of this plugin. You can execute a document with multiple plugins.
      * @see CommandPluginStatus
      */
 
@@ -153,12 +135,10 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple
-     * plugins.
+     * The status of this plugin. You can execute a document with multiple plugins.
      * </p>
      * 
-     * @return The status of this plugin. You can execute a document with
-     *         multiple plugins.
+     * @return The status of this plugin. You can execute a document with multiple plugins.
      * @see CommandPluginStatus
      */
 
@@ -168,15 +148,12 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple
-     * plugins.
+     * The status of this plugin. You can execute a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with
-     *        multiple plugins.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status of this plugin. You can execute a document with multiple plugins.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandPluginStatus
      */
 
@@ -187,13 +164,11 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple
-     * plugins.
+     * The status of this plugin. You can execute a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with
-     *        multiple plugins.
+     *        The status of this plugin. You can execute a document with multiple plugins.
      * @see CommandPluginStatus
      */
 
@@ -203,15 +178,12 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple
-     * plugins.
+     * The status of this plugin. You can execute a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with
-     *        multiple plugins.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status of this plugin. You can execute a document with multiple plugins.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandPluginStatus
      */
 
@@ -252,8 +224,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * 
      * @param responseCode
      *        A numeric response code generated after executing the plugin.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CommandPlugin withResponseCode(Integer responseCode) {
@@ -293,25 +264,21 @@ public class CommandPlugin implements Serializable, Cloneable {
      * 
      * @param responseStartDateTime
      *        The time the plugin started executing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CommandPlugin withResponseStartDateTime(
-            java.util.Date responseStartDateTime) {
+    public CommandPlugin withResponseStartDateTime(java.util.Date responseStartDateTime) {
         setResponseStartDateTime(responseStartDateTime);
         return this;
     }
 
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for
-     * example, a cancel command was sent.
+     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      * 
      * @param responseFinishDateTime
-     *        The time the plugin stopped executing. Could stop prematurely if,
-     *        for example, a cancel command was sent.
+     *        The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
      */
 
     public void setResponseFinishDateTime(java.util.Date responseFinishDateTime) {
@@ -320,12 +287,10 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for
-     * example, a cancel command was sent.
+     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      * 
-     * @return The time the plugin stopped executing. Could stop prematurely if,
-     *         for example, a cancel command was sent.
+     * @return The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
      */
 
     public java.util.Date getResponseFinishDateTime() {
@@ -334,19 +299,15 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for
-     * example, a cancel command was sent.
+     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      * 
      * @param responseFinishDateTime
-     *        The time the plugin stopped executing. Could stop prematurely if,
-     *        for example, a cancel command was sent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CommandPlugin withResponseFinishDateTime(
-            java.util.Date responseFinishDateTime) {
+    public CommandPlugin withResponseFinishDateTime(java.util.Date responseFinishDateTime) {
         setResponseFinishDateTime(responseFinishDateTime);
         return this;
     }
@@ -383,8 +344,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * 
      * @param output
      *        Output of the plugin execution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CommandPlugin withOutput(String output) {
@@ -394,13 +354,13 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket where the responses to the command executions should be
-     * stored. This was requested when issuing the command.
+     * The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the
+     * command.
      * </p>
      * 
      * @param outputS3BucketName
-     *        The S3 bucket where the responses to the command executions should
-     *        be stored. This was requested when issuing the command.
+     *        The S3 bucket where the responses to the command executions should be stored. This was requested when
+     *        issuing the command.
      */
 
     public void setOutputS3BucketName(String outputS3BucketName) {
@@ -409,12 +369,12 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket where the responses to the command executions should be
-     * stored. This was requested when issuing the command.
+     * The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the
+     * command.
      * </p>
      * 
-     * @return The S3 bucket where the responses to the command executions
-     *         should be stored. This was requested when issuing the command.
+     * @return The S3 bucket where the responses to the command executions should be stored. This was requested when
+     *         issuing the command.
      */
 
     public String getOutputS3BucketName() {
@@ -423,15 +383,14 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket where the responses to the command executions should be
-     * stored. This was requested when issuing the command.
+     * The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the
+     * command.
      * </p>
      * 
      * @param outputS3BucketName
-     *        The S3 bucket where the responses to the command executions should
-     *        be stored. This was requested when issuing the command.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The S3 bucket where the responses to the command executions should be stored. This was requested when
+     *        issuing the command.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CommandPlugin withOutputS3BucketName(String outputS3BucketName) {
@@ -441,15 +400,13 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 directory path inside the bucket where the responses to the
-     * command executions should be stored. This was requested when issuing the
-     * command.
+     * The S3 directory path inside the bucket where the responses to the command executions should be stored. This was
+     * requested when issuing the command.
      * </p>
      * 
      * @param outputS3KeyPrefix
-     *        The S3 directory path inside the bucket where the responses to the
-     *        command executions should be stored. This was requested when
-     *        issuing the command.
+     *        The S3 directory path inside the bucket where the responses to the command executions should be stored.
+     *        This was requested when issuing the command.
      */
 
     public void setOutputS3KeyPrefix(String outputS3KeyPrefix) {
@@ -458,14 +415,12 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 directory path inside the bucket where the responses to the
-     * command executions should be stored. This was requested when issuing the
-     * command.
+     * The S3 directory path inside the bucket where the responses to the command executions should be stored. This was
+     * requested when issuing the command.
      * </p>
      * 
-     * @return The S3 directory path inside the bucket where the responses to
-     *         the command executions should be stored. This was requested when
-     *         issuing the command.
+     * @return The S3 directory path inside the bucket where the responses to the command executions should be stored.
+     *         This was requested when issuing the command.
      */
 
     public String getOutputS3KeyPrefix() {
@@ -474,17 +429,14 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 directory path inside the bucket where the responses to the
-     * command executions should be stored. This was requested when issuing the
-     * command.
+     * The S3 directory path inside the bucket where the responses to the command executions should be stored. This was
+     * requested when issuing the command.
      * </p>
      * 
      * @param outputS3KeyPrefix
-     *        The S3 directory path inside the bucket where the responses to the
-     *        command executions should be stored. This was requested when
-     *        issuing the command.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The S3 directory path inside the bucket where the responses to the command executions should be stored.
+     *        This was requested when issuing the command.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CommandPlugin withOutputS3KeyPrefix(String outputS3KeyPrefix) {
@@ -493,8 +445,7 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -511,11 +462,9 @@ public class CommandPlugin implements Serializable, Cloneable {
         if (getResponseCode() != null)
             sb.append("ResponseCode: " + getResponseCode() + ",");
         if (getResponseStartDateTime() != null)
-            sb.append("ResponseStartDateTime: " + getResponseStartDateTime()
-                    + ",");
+            sb.append("ResponseStartDateTime: " + getResponseStartDateTime() + ",");
         if (getResponseFinishDateTime() != null)
-            sb.append("ResponseFinishDateTime: " + getResponseFinishDateTime()
-                    + ",");
+            sb.append("ResponseFinishDateTime: " + getResponseFinishDateTime() + ",");
         if (getOutput() != null)
             sb.append("Output: " + getOutput() + ",");
         if (getOutputS3BucketName() != null)
@@ -538,51 +487,35 @@ public class CommandPlugin implements Serializable, Cloneable {
         CommandPlugin other = (CommandPlugin) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getResponseCode() == null ^ this.getResponseCode() == null)
             return false;
-        if (other.getResponseCode() != null
-                && other.getResponseCode().equals(this.getResponseCode()) == false)
+        if (other.getResponseCode() != null && other.getResponseCode().equals(this.getResponseCode()) == false)
             return false;
-        if (other.getResponseStartDateTime() == null
-                ^ this.getResponseStartDateTime() == null)
+        if (other.getResponseStartDateTime() == null ^ this.getResponseStartDateTime() == null)
             return false;
-        if (other.getResponseStartDateTime() != null
-                && other.getResponseStartDateTime().equals(
-                        this.getResponseStartDateTime()) == false)
+        if (other.getResponseStartDateTime() != null && other.getResponseStartDateTime().equals(this.getResponseStartDateTime()) == false)
             return false;
-        if (other.getResponseFinishDateTime() == null
-                ^ this.getResponseFinishDateTime() == null)
+        if (other.getResponseFinishDateTime() == null ^ this.getResponseFinishDateTime() == null)
             return false;
-        if (other.getResponseFinishDateTime() != null
-                && other.getResponseFinishDateTime().equals(
-                        this.getResponseFinishDateTime()) == false)
+        if (other.getResponseFinishDateTime() != null && other.getResponseFinishDateTime().equals(this.getResponseFinishDateTime()) == false)
             return false;
         if (other.getOutput() == null ^ this.getOutput() == null)
             return false;
-        if (other.getOutput() != null
-                && other.getOutput().equals(this.getOutput()) == false)
+        if (other.getOutput() != null && other.getOutput().equals(this.getOutput()) == false)
             return false;
-        if (other.getOutputS3BucketName() == null
-                ^ this.getOutputS3BucketName() == null)
+        if (other.getOutputS3BucketName() == null ^ this.getOutputS3BucketName() == null)
             return false;
-        if (other.getOutputS3BucketName() != null
-                && other.getOutputS3BucketName().equals(
-                        this.getOutputS3BucketName()) == false)
+        if (other.getOutputS3BucketName() != null && other.getOutputS3BucketName().equals(this.getOutputS3BucketName()) == false)
             return false;
-        if (other.getOutputS3KeyPrefix() == null
-                ^ this.getOutputS3KeyPrefix() == null)
+        if (other.getOutputS3KeyPrefix() == null ^ this.getOutputS3KeyPrefix() == null)
             return false;
-        if (other.getOutputS3KeyPrefix() != null
-                && other.getOutputS3KeyPrefix().equals(
-                        this.getOutputS3KeyPrefix()) == false)
+        if (other.getOutputS3KeyPrefix() != null && other.getOutputS3KeyPrefix().equals(this.getOutputS3KeyPrefix()) == false)
             return false;
         return true;
     }
@@ -592,32 +525,14 @@ public class CommandPlugin implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResponseCode() == null) ? 0 : getResponseCode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResponseStartDateTime() == null) ? 0
-                        : getResponseStartDateTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResponseFinishDateTime() == null) ? 0
-                        : getResponseFinishDateTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getOutput() == null) ? 0 : getOutput().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOutputS3BucketName() == null) ? 0
-                        : getOutputS3BucketName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOutputS3KeyPrefix() == null) ? 0
-                        : getOutputS3KeyPrefix().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getResponseCode() == null) ? 0 : getResponseCode().hashCode());
+        hashCode = prime * hashCode + ((getResponseStartDateTime() == null) ? 0 : getResponseStartDateTime().hashCode());
+        hashCode = prime * hashCode + ((getResponseFinishDateTime() == null) ? 0 : getResponseFinishDateTime().hashCode());
+        hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());
+        hashCode = prime * hashCode + ((getOutputS3BucketName() == null) ? 0 : getOutputS3BucketName().hashCode());
+        hashCode = prime * hashCode + ((getOutputS3KeyPrefix() == null) ? 0 : getOutputS3KeyPrefix().hashCode());
         return hashCode;
     }
 
@@ -626,9 +541,7 @@ public class CommandPlugin implements Serializable, Cloneable {
         try {
             return (CommandPlugin) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

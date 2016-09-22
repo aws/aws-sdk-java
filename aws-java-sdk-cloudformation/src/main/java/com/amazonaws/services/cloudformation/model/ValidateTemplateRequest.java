@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
 
@@ -22,36 +20,30 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for <a>ValidateTemplate</a> action.
  * </p>
  */
-public class ValidateTemplateRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Structure containing the template body with a minimum length of 1 byte
-     * and a maximum length of 51,200 bytes. For more information, go to <a
-     * href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     * >Template Anatomy</a> in the AWS CloudFormation User Guide.
+     * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
+     * more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * Conditional: You must pass <code>TemplateURL</code> or
-     * <code>TemplateBody</code>. If both are passed, only
+     * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      * <code>TemplateBody</code> is used.
      * </p>
      */
     private String templateBody;
     /**
      * <p>
-     * Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3
-     * bucket. For more information, go to <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     * >Template Anatomy</a> in the AWS CloudFormation User Guide.
+     * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
+     * located in an Amazon S3 bucket. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * Conditional: You must pass <code>TemplateURL</code> or
-     * <code>TemplateBody</code>. If both are passed, only
+     * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      * <code>TemplateBody</code> is used.
      * </p>
      */
@@ -59,27 +51,23 @@ public class ValidateTemplateRequest extends
 
     /**
      * <p>
-     * Structure containing the template body with a minimum length of 1 byte
-     * and a maximum length of 51,200 bytes. For more information, go to <a
-     * href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     * >Template Anatomy</a> in the AWS CloudFormation User Guide.
+     * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
+     * more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * Conditional: You must pass <code>TemplateURL</code> or
-     * <code>TemplateBody</code>. If both are passed, only
+     * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      * <code>TemplateBody</code> is used.
      * </p>
      * 
      * @param templateBody
-     *        Structure containing the template body with a minimum length of 1
-     *        byte and a maximum length of 51,200 bytes. For more information,
-     *        go to <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     *        >Template Anatomy</a> in the AWS CloudFormation User Guide.</p>
+     *        Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
+     *        bytes. For more information, go to <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
-     *        Conditional: You must pass <code>TemplateURL</code> or
-     *        <code>TemplateBody</code>. If both are passed, only
+     *        Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      *        <code>TemplateBody</code> is used.
      */
 
@@ -89,27 +77,23 @@ public class ValidateTemplateRequest extends
 
     /**
      * <p>
-     * Structure containing the template body with a minimum length of 1 byte
-     * and a maximum length of 51,200 bytes. For more information, go to <a
-     * href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     * >Template Anatomy</a> in the AWS CloudFormation User Guide.
+     * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
+     * more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * Conditional: You must pass <code>TemplateURL</code> or
-     * <code>TemplateBody</code>. If both are passed, only
+     * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      * <code>TemplateBody</code> is used.
      * </p>
      * 
-     * @return Structure containing the template body with a minimum length of 1
-     *         byte and a maximum length of 51,200 bytes. For more information,
-     *         go to <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     *         >Template Anatomy</a> in the AWS CloudFormation User Guide.</p>
+     * @return Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
+     *         bytes. For more information, go to <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
-     *         Conditional: You must pass <code>TemplateURL</code> or
-     *         <code>TemplateBody</code>. If both are passed, only
-     *         <code>TemplateBody</code> is used.
+     *         Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
+     *         only <code>TemplateBody</code> is used.
      */
 
     public String getTemplateBody() {
@@ -118,30 +102,25 @@ public class ValidateTemplateRequest extends
 
     /**
      * <p>
-     * Structure containing the template body with a minimum length of 1 byte
-     * and a maximum length of 51,200 bytes. For more information, go to <a
-     * href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     * >Template Anatomy</a> in the AWS CloudFormation User Guide.
+     * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
+     * more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * Conditional: You must pass <code>TemplateURL</code> or
-     * <code>TemplateBody</code>. If both are passed, only
+     * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      * <code>TemplateBody</code> is used.
      * </p>
      * 
      * @param templateBody
-     *        Structure containing the template body with a minimum length of 1
-     *        byte and a maximum length of 51,200 bytes. For more information,
-     *        go to <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     *        >Template Anatomy</a> in the AWS CloudFormation User Guide.</p>
+     *        Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
+     *        bytes. For more information, go to <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
-     *        Conditional: You must pass <code>TemplateURL</code> or
-     *        <code>TemplateBody</code>. If both are passed, only
+     *        Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      *        <code>TemplateBody</code> is used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ValidateTemplateRequest withTemplateBody(String templateBody) {
@@ -151,27 +130,23 @@ public class ValidateTemplateRequest extends
 
     /**
      * <p>
-     * Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3
-     * bucket. For more information, go to <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     * >Template Anatomy</a> in the AWS CloudFormation User Guide.
+     * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
+     * located in an Amazon S3 bucket. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * Conditional: You must pass <code>TemplateURL</code> or
-     * <code>TemplateBody</code>. If both are passed, only
+     * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      * <code>TemplateBody</code> is used.
      * </p>
      * 
      * @param templateURL
-     *        Location of file containing the template body. The URL must point
-     *        to a template (max size: 460,800 bytes) that is located in an
-     *        Amazon S3 bucket. For more information, go to <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     *        >Template Anatomy</a> in the AWS CloudFormation User Guide.</p>
+     *        Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
+     *        that is located in an Amazon S3 bucket. For more information, go to <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
-     *        Conditional: You must pass <code>TemplateURL</code> or
-     *        <code>TemplateBody</code>. If both are passed, only
+     *        Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      *        <code>TemplateBody</code> is used.
      */
 
@@ -181,27 +156,23 @@ public class ValidateTemplateRequest extends
 
     /**
      * <p>
-     * Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3
-     * bucket. For more information, go to <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     * >Template Anatomy</a> in the AWS CloudFormation User Guide.
+     * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
+     * located in an Amazon S3 bucket. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * Conditional: You must pass <code>TemplateURL</code> or
-     * <code>TemplateBody</code>. If both are passed, only
+     * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      * <code>TemplateBody</code> is used.
      * </p>
      * 
-     * @return Location of file containing the template body. The URL must point
-     *         to a template (max size: 460,800 bytes) that is located in an
-     *         Amazon S3 bucket. For more information, go to <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     *         >Template Anatomy</a> in the AWS CloudFormation User Guide.</p>
+     * @return Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
+     *         that is located in an Amazon S3 bucket. For more information, go to <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
-     *         Conditional: You must pass <code>TemplateURL</code> or
-     *         <code>TemplateBody</code>. If both are passed, only
-     *         <code>TemplateBody</code> is used.
+     *         Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
+     *         only <code>TemplateBody</code> is used.
      */
 
     public String getTemplateURL() {
@@ -210,30 +181,25 @@ public class ValidateTemplateRequest extends
 
     /**
      * <p>
-     * Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3
-     * bucket. For more information, go to <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     * >Template Anatomy</a> in the AWS CloudFormation User Guide.
+     * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
+     * located in an Amazon S3 bucket. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * Conditional: You must pass <code>TemplateURL</code> or
-     * <code>TemplateBody</code>. If both are passed, only
+     * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      * <code>TemplateBody</code> is used.
      * </p>
      * 
      * @param templateURL
-     *        Location of file containing the template body. The URL must point
-     *        to a template (max size: 460,800 bytes) that is located in an
-     *        Amazon S3 bucket. For more information, go to <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
-     *        >Template Anatomy</a> in the AWS CloudFormation User Guide.</p>
+     *        Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
+     *        that is located in an Amazon S3 bucket. For more information, go to <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
-     *        Conditional: You must pass <code>TemplateURL</code> or
-     *        <code>TemplateBody</code>. If both are passed, only
+     *        Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      *        <code>TemplateBody</code> is used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ValidateTemplateRequest withTemplateURL(String templateURL) {
@@ -242,8 +208,7 @@ public class ValidateTemplateRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -273,13 +238,11 @@ public class ValidateTemplateRequest extends
         ValidateTemplateRequest other = (ValidateTemplateRequest) obj;
         if (other.getTemplateBody() == null ^ this.getTemplateBody() == null)
             return false;
-        if (other.getTemplateBody() != null
-                && other.getTemplateBody().equals(this.getTemplateBody()) == false)
+        if (other.getTemplateBody() != null && other.getTemplateBody().equals(this.getTemplateBody()) == false)
             return false;
         if (other.getTemplateURL() == null ^ this.getTemplateURL() == null)
             return false;
-        if (other.getTemplateURL() != null
-                && other.getTemplateURL().equals(this.getTemplateURL()) == false)
+        if (other.getTemplateURL() != null && other.getTemplateURL().equals(this.getTemplateURL()) == false)
             return false;
         return true;
     }
@@ -289,13 +252,8 @@ public class ValidateTemplateRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getTemplateBody() == null) ? 0 : getTemplateBody()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTemplateURL() == null) ? 0 : getTemplateURL().hashCode());
+        hashCode = prime * hashCode + ((getTemplateBody() == null) ? 0 : getTemplateBody().hashCode());
+        hashCode = prime * hashCode + ((getTemplateURL() == null) ? 0 : getTemplateURL().hashCode());
         return hashCode;
     }
 

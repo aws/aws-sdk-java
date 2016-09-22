@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
 
@@ -25,32 +23,28 @@ public class Captions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A policy that determines how Elastic Transcoder handles the existence of
-     * multiple captions.
+     * A policy that determines how Elastic Transcoder handles the existence of multiple captions.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and
-     * sidecar captions into outputs. If captions for a language are embedded in
-     * the input file and also appear in a sidecar file, Elastic Transcoder uses
-     * the sidecar captions and ignores the embedded captions for that language.
+     * <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions
+     * for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the
+     * sidecar captions and ignores the embedded captions for that language.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and
-     * sidecar captions into outputs. If captions for a language are embedded in
-     * the input file and also appear in a sidecar file, Elastic Transcoder uses
-     * the embedded captions and ignores the sidecar captions for that language.
-     * If <code>CaptionSources</code> is empty, Elastic Transcoder omits all
-     * sidecar captions from the output files.
+     * <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions
+     * for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the
+     * embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty,
+     * Elastic Transcoder omits all sidecar captions from the output files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions
-     * that you specify in <code>CaptionSources</code>.
+     * <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in
+     * <code>CaptionSources</code>.
      * </p>
      * </li>
      * </ul>
@@ -61,48 +55,43 @@ public class Captions implements Serializable, Cloneable {
     private String mergePolicy;
     /**
      * <p>
-     * Source files for the input sidecar captions used during the transcoding
-     * process. To omit all sidecar captions, leave <code>CaptionSources</code>
-     * blank.
+     * Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions,
+     * leave <code>CaptionSources</code> blank.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CaptionSource> captionSources;
     /**
      * <p>
-     * The array of file formats for the output captions. If you leave this
-     * value blank, Elastic Transcoder returns an error.
+     * The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an
+     * error.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CaptionFormat> captionFormats;
 
     /**
      * <p>
-     * A policy that determines how Elastic Transcoder handles the existence of
-     * multiple captions.
+     * A policy that determines how Elastic Transcoder handles the existence of multiple captions.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and
-     * sidecar captions into outputs. If captions for a language are embedded in
-     * the input file and also appear in a sidecar file, Elastic Transcoder uses
-     * the sidecar captions and ignores the embedded captions for that language.
+     * <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions
+     * for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the
+     * sidecar captions and ignores the embedded captions for that language.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and
-     * sidecar captions into outputs. If captions for a language are embedded in
-     * the input file and also appear in a sidecar file, Elastic Transcoder uses
-     * the embedded captions and ignores the sidecar captions for that language.
-     * If <code>CaptionSources</code> is empty, Elastic Transcoder omits all
-     * sidecar captions from the output files.
+     * <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions
+     * for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the
+     * embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty,
+     * Elastic Transcoder omits all sidecar captions from the output files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions
-     * that you specify in <code>CaptionSources</code>.
+     * <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in
+     * <code>CaptionSources</code>.
      * </p>
      * </li>
      * </ul>
@@ -111,33 +100,27 @@ public class Captions implements Serializable, Cloneable {
      * </p>
      * 
      * @param mergePolicy
-     *        A policy that determines how Elastic Transcoder handles the
-     *        existence of multiple captions.</p>
+     *        A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded
-     *        and sidecar captions into outputs. If captions for a language are
-     *        embedded in the input file and also appear in a sidecar file,
-     *        Elastic Transcoder uses the sidecar captions and ignores the
-     *        embedded captions for that language.
+     *        <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If
+     *        captions for a language are embedded in the input file and also appear in a sidecar file, Elastic
+     *        Transcoder uses the sidecar captions and ignores the embedded captions for that language.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded
-     *        and sidecar captions into outputs. If captions for a language are
-     *        embedded in the input file and also appear in a sidecar file,
-     *        Elastic Transcoder uses the embedded captions and ignores the
-     *        sidecar captions for that language. If <code>CaptionSources</code>
-     *        is empty, Elastic Transcoder omits all sidecar captions from the
-     *        output files.
+     *        <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If
+     *        captions for a language are embedded in the input file and also appear in a sidecar file, Elastic
+     *        Transcoder uses the embedded captions and ignores the sidecar captions for that language. If
+     *        <code>CaptionSources</code> is empty, Elastic Transcoder omits all sidecar captions from the output files.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Override:</b> Elastic Transcoder transcodes only the sidecar
-     *        captions that you specify in <code>CaptionSources</code>.
+     *        <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in
+     *        <code>CaptionSources</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -151,32 +134,28 @@ public class Captions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A policy that determines how Elastic Transcoder handles the existence of
-     * multiple captions.
+     * A policy that determines how Elastic Transcoder handles the existence of multiple captions.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and
-     * sidecar captions into outputs. If captions for a language are embedded in
-     * the input file and also appear in a sidecar file, Elastic Transcoder uses
-     * the sidecar captions and ignores the embedded captions for that language.
+     * <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions
+     * for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the
+     * sidecar captions and ignores the embedded captions for that language.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and
-     * sidecar captions into outputs. If captions for a language are embedded in
-     * the input file and also appear in a sidecar file, Elastic Transcoder uses
-     * the embedded captions and ignores the sidecar captions for that language.
-     * If <code>CaptionSources</code> is empty, Elastic Transcoder omits all
-     * sidecar captions from the output files.
+     * <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions
+     * for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the
+     * embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty,
+     * Elastic Transcoder omits all sidecar captions from the output files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions
-     * that you specify in <code>CaptionSources</code>.
+     * <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in
+     * <code>CaptionSources</code>.
      * </p>
      * </li>
      * </ul>
@@ -184,33 +163,28 @@ public class Captions implements Serializable, Cloneable {
      * <code>MergePolicy</code> cannot be null.
      * </p>
      * 
-     * @return A policy that determines how Elastic Transcoder handles the
-     *         existence of multiple captions.</p>
+     * @return A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded
-     *         and sidecar captions into outputs. If captions for a language are
-     *         embedded in the input file and also appear in a sidecar file,
-     *         Elastic Transcoder uses the sidecar captions and ignores the
-     *         embedded captions for that language.
+     *         <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If
+     *         captions for a language are embedded in the input file and also appear in a sidecar file, Elastic
+     *         Transcoder uses the sidecar captions and ignores the embedded captions for that language.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded
-     *         and sidecar captions into outputs. If captions for a language are
-     *         embedded in the input file and also appear in a sidecar file,
-     *         Elastic Transcoder uses the embedded captions and ignores the
-     *         sidecar captions for that language. If
-     *         <code>CaptionSources</code> is empty, Elastic Transcoder omits
-     *         all sidecar captions from the output files.
+     *         <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If
+     *         captions for a language are embedded in the input file and also appear in a sidecar file, Elastic
+     *         Transcoder uses the embedded captions and ignores the sidecar captions for that language. If
+     *         <code>CaptionSources</code> is empty, Elastic Transcoder omits all sidecar captions from the output
+     *         files.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Override:</b> Elastic Transcoder transcodes only the sidecar
-     *         captions that you specify in <code>CaptionSources</code>.
+     *         <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in
+     *         <code>CaptionSources</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -224,32 +198,28 @@ public class Captions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A policy that determines how Elastic Transcoder handles the existence of
-     * multiple captions.
+     * A policy that determines how Elastic Transcoder handles the existence of multiple captions.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and
-     * sidecar captions into outputs. If captions for a language are embedded in
-     * the input file and also appear in a sidecar file, Elastic Transcoder uses
-     * the sidecar captions and ignores the embedded captions for that language.
+     * <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions
+     * for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the
+     * sidecar captions and ignores the embedded captions for that language.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and
-     * sidecar captions into outputs. If captions for a language are embedded in
-     * the input file and also appear in a sidecar file, Elastic Transcoder uses
-     * the embedded captions and ignores the sidecar captions for that language.
-     * If <code>CaptionSources</code> is empty, Elastic Transcoder omits all
-     * sidecar captions from the output files.
+     * <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions
+     * for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the
+     * embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty,
+     * Elastic Transcoder omits all sidecar captions from the output files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions
-     * that you specify in <code>CaptionSources</code>.
+     * <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in
+     * <code>CaptionSources</code>.
      * </p>
      * </li>
      * </ul>
@@ -258,40 +228,33 @@ public class Captions implements Serializable, Cloneable {
      * </p>
      * 
      * @param mergePolicy
-     *        A policy that determines how Elastic Transcoder handles the
-     *        existence of multiple captions.</p>
+     *        A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded
-     *        and sidecar captions into outputs. If captions for a language are
-     *        embedded in the input file and also appear in a sidecar file,
-     *        Elastic Transcoder uses the sidecar captions and ignores the
-     *        embedded captions for that language.
+     *        <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If
+     *        captions for a language are embedded in the input file and also appear in a sidecar file, Elastic
+     *        Transcoder uses the sidecar captions and ignores the embedded captions for that language.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded
-     *        and sidecar captions into outputs. If captions for a language are
-     *        embedded in the input file and also appear in a sidecar file,
-     *        Elastic Transcoder uses the embedded captions and ignores the
-     *        sidecar captions for that language. If <code>CaptionSources</code>
-     *        is empty, Elastic Transcoder omits all sidecar captions from the
-     *        output files.
+     *        <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If
+     *        captions for a language are embedded in the input file and also appear in a sidecar file, Elastic
+     *        Transcoder uses the embedded captions and ignores the sidecar captions for that language. If
+     *        <code>CaptionSources</code> is empty, Elastic Transcoder omits all sidecar captions from the output files.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Override:</b> Elastic Transcoder transcodes only the sidecar
-     *        captions that you specify in <code>CaptionSources</code>.
+     *        <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in
+     *        <code>CaptionSources</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        <code>MergePolicy</code> cannot be null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Captions withMergePolicy(String mergePolicy) {
@@ -301,14 +264,12 @@ public class Captions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Source files for the input sidecar captions used during the transcoding
-     * process. To omit all sidecar captions, leave <code>CaptionSources</code>
-     * blank.
+     * Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions,
+     * leave <code>CaptionSources</code> blank.
      * </p>
      * 
-     * @return Source files for the input sidecar captions used during the
-     *         transcoding process. To omit all sidecar captions, leave
-     *         <code>CaptionSources</code> blank.
+     * @return Source files for the input sidecar captions used during the transcoding process. To omit all sidecar
+     *         captions, leave <code>CaptionSources</code> blank.
      */
 
     public java.util.List<CaptionSource> getCaptionSources() {
@@ -320,53 +281,44 @@ public class Captions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Source files for the input sidecar captions used during the transcoding
-     * process. To omit all sidecar captions, leave <code>CaptionSources</code>
-     * blank.
+     * Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions,
+     * leave <code>CaptionSources</code> blank.
      * </p>
      * 
      * @param captionSources
-     *        Source files for the input sidecar captions used during the
-     *        transcoding process. To omit all sidecar captions, leave
-     *        <code>CaptionSources</code> blank.
+     *        Source files for the input sidecar captions used during the transcoding process. To omit all sidecar
+     *        captions, leave <code>CaptionSources</code> blank.
      */
 
-    public void setCaptionSources(
-            java.util.Collection<CaptionSource> captionSources) {
+    public void setCaptionSources(java.util.Collection<CaptionSource> captionSources) {
         if (captionSources == null) {
             this.captionSources = null;
             return;
         }
 
-        this.captionSources = new com.amazonaws.internal.SdkInternalList<CaptionSource>(
-                captionSources);
+        this.captionSources = new com.amazonaws.internal.SdkInternalList<CaptionSource>(captionSources);
     }
 
     /**
      * <p>
-     * Source files for the input sidecar captions used during the transcoding
-     * process. To omit all sidecar captions, leave <code>CaptionSources</code>
-     * blank.
+     * Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions,
+     * leave <code>CaptionSources</code> blank.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCaptionSources(java.util.Collection)} or
-     * {@link #withCaptionSources(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCaptionSources(java.util.Collection)} or {@link #withCaptionSources(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param captionSources
-     *        Source files for the input sidecar captions used during the
-     *        transcoding process. To omit all sidecar captions, leave
-     *        <code>CaptionSources</code> blank.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Source files for the input sidecar captions used during the transcoding process. To omit all sidecar
+     *        captions, leave <code>CaptionSources</code> blank.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Captions withCaptionSources(CaptionSource... captionSources) {
         if (this.captionSources == null) {
-            setCaptionSources(new com.amazonaws.internal.SdkInternalList<CaptionSource>(
-                    captionSources.length));
+            setCaptionSources(new com.amazonaws.internal.SdkInternalList<CaptionSource>(captionSources.length));
         }
         for (CaptionSource ele : captionSources) {
             this.captionSources.add(ele);
@@ -376,33 +328,29 @@ public class Captions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Source files for the input sidecar captions used during the transcoding
-     * process. To omit all sidecar captions, leave <code>CaptionSources</code>
-     * blank.
+     * Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions,
+     * leave <code>CaptionSources</code> blank.
      * </p>
      * 
      * @param captionSources
-     *        Source files for the input sidecar captions used during the
-     *        transcoding process. To omit all sidecar captions, leave
-     *        <code>CaptionSources</code> blank.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Source files for the input sidecar captions used during the transcoding process. To omit all sidecar
+     *        captions, leave <code>CaptionSources</code> blank.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Captions withCaptionSources(
-            java.util.Collection<CaptionSource> captionSources) {
+    public Captions withCaptionSources(java.util.Collection<CaptionSource> captionSources) {
         setCaptionSources(captionSources);
         return this;
     }
 
     /**
      * <p>
-     * The array of file formats for the output captions. If you leave this
-     * value blank, Elastic Transcoder returns an error.
+     * The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an
+     * error.
      * </p>
      * 
-     * @return The array of file formats for the output captions. If you leave
-     *         this value blank, Elastic Transcoder returns an error.
+     * @return The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder
+     *         returns an error.
      */
 
     public java.util.List<CaptionFormat> getCaptionFormats() {
@@ -414,49 +362,44 @@ public class Captions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The array of file formats for the output captions. If you leave this
-     * value blank, Elastic Transcoder returns an error.
+     * The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an
+     * error.
      * </p>
      * 
      * @param captionFormats
-     *        The array of file formats for the output captions. If you leave
-     *        this value blank, Elastic Transcoder returns an error.
+     *        The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder
+     *        returns an error.
      */
 
-    public void setCaptionFormats(
-            java.util.Collection<CaptionFormat> captionFormats) {
+    public void setCaptionFormats(java.util.Collection<CaptionFormat> captionFormats) {
         if (captionFormats == null) {
             this.captionFormats = null;
             return;
         }
 
-        this.captionFormats = new com.amazonaws.internal.SdkInternalList<CaptionFormat>(
-                captionFormats);
+        this.captionFormats = new com.amazonaws.internal.SdkInternalList<CaptionFormat>(captionFormats);
     }
 
     /**
      * <p>
-     * The array of file formats for the output captions. If you leave this
-     * value blank, Elastic Transcoder returns an error.
+     * The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an
+     * error.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCaptionFormats(java.util.Collection)} or
-     * {@link #withCaptionFormats(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCaptionFormats(java.util.Collection)} or {@link #withCaptionFormats(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param captionFormats
-     *        The array of file formats for the output captions. If you leave
-     *        this value blank, Elastic Transcoder returns an error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder
+     *        returns an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Captions withCaptionFormats(CaptionFormat... captionFormats) {
         if (this.captionFormats == null) {
-            setCaptionFormats(new com.amazonaws.internal.SdkInternalList<CaptionFormat>(
-                    captionFormats.length));
+            setCaptionFormats(new com.amazonaws.internal.SdkInternalList<CaptionFormat>(captionFormats.length));
         }
         for (CaptionFormat ele : captionFormats) {
             this.captionFormats.add(ele);
@@ -466,26 +409,23 @@ public class Captions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The array of file formats for the output captions. If you leave this
-     * value blank, Elastic Transcoder returns an error.
+     * The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an
+     * error.
      * </p>
      * 
      * @param captionFormats
-     *        The array of file formats for the output captions. If you leave
-     *        this value blank, Elastic Transcoder returns an error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder
+     *        returns an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Captions withCaptionFormats(
-            java.util.Collection<CaptionFormat> captionFormats) {
+    public Captions withCaptionFormats(java.util.Collection<CaptionFormat> captionFormats) {
         setCaptionFormats(captionFormats);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -517,20 +457,15 @@ public class Captions implements Serializable, Cloneable {
         Captions other = (Captions) obj;
         if (other.getMergePolicy() == null ^ this.getMergePolicy() == null)
             return false;
-        if (other.getMergePolicy() != null
-                && other.getMergePolicy().equals(this.getMergePolicy()) == false)
+        if (other.getMergePolicy() != null && other.getMergePolicy().equals(this.getMergePolicy()) == false)
             return false;
-        if (other.getCaptionSources() == null
-                ^ this.getCaptionSources() == null)
+        if (other.getCaptionSources() == null ^ this.getCaptionSources() == null)
             return false;
-        if (other.getCaptionSources() != null
-                && other.getCaptionSources().equals(this.getCaptionSources()) == false)
+        if (other.getCaptionSources() != null && other.getCaptionSources().equals(this.getCaptionSources()) == false)
             return false;
-        if (other.getCaptionFormats() == null
-                ^ this.getCaptionFormats() == null)
+        if (other.getCaptionFormats() == null ^ this.getCaptionFormats() == null)
             return false;
-        if (other.getCaptionFormats() != null
-                && other.getCaptionFormats().equals(this.getCaptionFormats()) == false)
+        if (other.getCaptionFormats() != null && other.getCaptionFormats().equals(this.getCaptionFormats()) == false)
             return false;
         return true;
     }
@@ -540,17 +475,9 @@ public class Captions implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getMergePolicy() == null) ? 0 : getMergePolicy().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCaptionSources() == null) ? 0 : getCaptionSources()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCaptionFormats() == null) ? 0 : getCaptionFormats()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getMergePolicy() == null) ? 0 : getMergePolicy().hashCode());
+        hashCode = prime * hashCode + ((getCaptionSources() == null) ? 0 : getCaptionSources().hashCode());
+        hashCode = prime * hashCode + ((getCaptionFormats() == null) ? 0 : getCaptionFormats().hashCode());
         return hashCode;
     }
 
@@ -559,9 +486,7 @@ public class Captions implements Serializable, Cloneable {
         try {
             return (Captions) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

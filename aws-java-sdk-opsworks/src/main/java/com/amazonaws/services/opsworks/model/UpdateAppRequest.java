@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -20,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -61,8 +58,8 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
     private Source appSource;
     /**
      * <p>
-     * The app's virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.example.com, example.com'</code>
+     * The app's virtual host settings, with multiple domains separated by commas. For example:
+     * <code>'www.example.com, example.com'</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> domains;
@@ -80,33 +77,28 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
     private SslConfiguration sslConfiguration;
     /**
      * <p>
-     * One or more user-defined key/value pairs to be added to the stack
-     * attributes.
+     * One or more user-defined key/value pairs to be added to the stack attributes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
     /**
      * <p>
-     * An array of <code>EnvironmentVariable</code> objects that specify
-     * environment variables to be associated with the app. After you deploy the
-     * app, these variables are defined on the associated app server
-     * instances.For more information, see <a href=
+     * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
+     * app. After you deploy the app, these variables are defined on the associated app server instances.For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <p>
-     * There is no specific limit on the number of environment variables.
-     * However, the size of the associated data structure - which includes the
-     * variables' names, values, and protected flag values - cannot exceed 10 KB
-     * (10240 Bytes). This limit should accommodate most if not all use cases.
-     * Exceeding it will cause an exception with the message,
-     * "Environment: is too large (maximum is 10KB)."
+     * There is no specific limit on the number of environment variables. However, the size of the associated data
+     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240
+     * Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the
+     * message, "Environment: is too large (maximum is 10KB)."
      * </p>
      * <note>
      * <p>
-     * This parameter is supported only by Chef 11.10 stacks. If you have
-     * specified one or more environment variables, you cannot modify the
-     * stack's Chef version.
+     * This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables,
+     * you cannot modify the stack's Chef version.
      * </p>
      * </note>
      */
@@ -144,8 +136,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param appId
      *        The app ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAppRequest withAppId(String appId) {
@@ -185,8 +176,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param name
      *        The app name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAppRequest withName(String name) {
@@ -226,8 +216,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param description
      *        A description of the app.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAppRequest withDescription(String description) {
@@ -265,8 +254,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
             return;
         }
 
-        this.dataSources = new com.amazonaws.internal.SdkInternalList<DataSource>(
-                dataSources);
+        this.dataSources = new com.amazonaws.internal.SdkInternalList<DataSource>(dataSources);
     }
 
     /**
@@ -274,22 +262,19 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
      * The app's data sources.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDataSources(java.util.Collection)} or
-     * {@link #withDataSources(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataSources(java.util.Collection)} or {@link #withDataSources(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param dataSources
      *        The app's data sources.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAppRequest withDataSources(DataSource... dataSources) {
         if (this.dataSources == null) {
-            setDataSources(new com.amazonaws.internal.SdkInternalList<DataSource>(
-                    dataSources.length));
+            setDataSources(new com.amazonaws.internal.SdkInternalList<DataSource>(dataSources.length));
         }
         for (DataSource ele : dataSources) {
             this.dataSources.add(ele);
@@ -304,12 +289,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param dataSources
      *        The app's data sources.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateAppRequest withDataSources(
-            java.util.Collection<DataSource> dataSources) {
+    public UpdateAppRequest withDataSources(java.util.Collection<DataSource> dataSources) {
         setDataSources(dataSources);
         return this;
     }
@@ -348,8 +331,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param type
      *        The app type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppType
      */
 
@@ -379,8 +361,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param type
      *        The app type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppType
      */
 
@@ -421,8 +402,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param appSource
      *        A <code>Source</code> object that specifies the app repository.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAppRequest withAppSource(Source appSource) {
@@ -432,12 +412,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The app's virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.example.com, example.com'</code>
+     * The app's virtual host settings, with multiple domains separated by commas. For example:
+     * <code>'www.example.com, example.com'</code>
      * </p>
      * 
-     * @return The app's virtual host settings, with multiple domains separated
-     *         by commas. For example:
+     * @return The app's virtual host settings, with multiple domains separated by commas. For example:
      *         <code>'www.example.com, example.com'</code>
      */
 
@@ -450,13 +429,12 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The app's virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.example.com, example.com'</code>
+     * The app's virtual host settings, with multiple domains separated by commas. For example:
+     * <code>'www.example.com, example.com'</code>
      * </p>
      * 
      * @param domains
-     *        The app's virtual host settings, with multiple domains separated
-     *        by commas. For example:
+     *        The app's virtual host settings, with multiple domains separated by commas. For example:
      *        <code>'www.example.com, example.com'</code>
      */
 
@@ -466,34 +444,29 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
             return;
         }
 
-        this.domains = new com.amazonaws.internal.SdkInternalList<String>(
-                domains);
+        this.domains = new com.amazonaws.internal.SdkInternalList<String>(domains);
     }
 
     /**
      * <p>
-     * The app's virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.example.com, example.com'</code>
+     * The app's virtual host settings, with multiple domains separated by commas. For example:
+     * <code>'www.example.com, example.com'</code>
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDomains(java.util.Collection)} or
-     * {@link #withDomains(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDomains(java.util.Collection)} or {@link #withDomains(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param domains
-     *        The app's virtual host settings, with multiple domains separated
-     *        by commas. For example:
+     *        The app's virtual host settings, with multiple domains separated by commas. For example:
      *        <code>'www.example.com, example.com'</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAppRequest withDomains(String... domains) {
         if (this.domains == null) {
-            setDomains(new com.amazonaws.internal.SdkInternalList<String>(
-                    domains.length));
+            setDomains(new com.amazonaws.internal.SdkInternalList<String>(domains.length));
         }
         for (String ele : domains) {
             this.domains.add(ele);
@@ -503,16 +476,14 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The app's virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.example.com, example.com'</code>
+     * The app's virtual host settings, with multiple domains separated by commas. For example:
+     * <code>'www.example.com, example.com'</code>
      * </p>
      * 
      * @param domains
-     *        The app's virtual host settings, with multiple domains separated
-     *        by commas. For example:
+     *        The app's virtual host settings, with multiple domains separated by commas. For example:
      *        <code>'www.example.com, example.com'</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAppRequest withDomains(java.util.Collection<String> domains) {
@@ -552,8 +523,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param enableSsl
      *        Whether SSL is enabled for the app.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAppRequest withEnableSsl(Boolean enableSsl) {
@@ -579,8 +549,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param sslConfiguration
-     *        An <code>SslConfiguration</code> object with the SSL
-     *        configuration.
+     *        An <code>SslConfiguration</code> object with the SSL configuration.
      */
 
     public void setSslConfiguration(SslConfiguration sslConfiguration) {
@@ -592,8 +561,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
      * An <code>SslConfiguration</code> object with the SSL configuration.
      * </p>
      * 
-     * @return An <code>SslConfiguration</code> object with the SSL
-     *         configuration.
+     * @return An <code>SslConfiguration</code> object with the SSL configuration.
      */
 
     public SslConfiguration getSslConfiguration() {
@@ -606,26 +574,21 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param sslConfiguration
-     *        An <code>SslConfiguration</code> object with the SSL
-     *        configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An <code>SslConfiguration</code> object with the SSL configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateAppRequest withSslConfiguration(
-            SslConfiguration sslConfiguration) {
+    public UpdateAppRequest withSslConfiguration(SslConfiguration sslConfiguration) {
         setSslConfiguration(sslConfiguration);
         return this;
     }
 
     /**
      * <p>
-     * One or more user-defined key/value pairs to be added to the stack
-     * attributes.
+     * One or more user-defined key/value pairs to be added to the stack attributes.
      * </p>
      * 
-     * @return One or more user-defined key/value pairs to be added to the stack
-     *         attributes.
+     * @return One or more user-defined key/value pairs to be added to the stack attributes.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -637,36 +600,28 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more user-defined key/value pairs to be added to the stack
-     * attributes.
+     * One or more user-defined key/value pairs to be added to the stack attributes.
      * </p>
      * 
      * @param attributes
-     *        One or more user-defined key/value pairs to be added to the stack
-     *        attributes.
+     *        One or more user-defined key/value pairs to be added to the stack attributes.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
-        this.attributes = attributes == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        attributes);
+        this.attributes = attributes == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(attributes);
     }
 
     /**
      * <p>
-     * One or more user-defined key/value pairs to be added to the stack
-     * attributes.
+     * One or more user-defined key/value pairs to be added to the stack attributes.
      * </p>
      * 
      * @param attributes
-     *        One or more user-defined key/value pairs to be added to the stack
-     *        attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One or more user-defined key/value pairs to be added to the stack attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateAppRequest withAttributes(
-            java.util.Map<String, String> attributes) {
+    public UpdateAppRequest withAttributes(java.util.Map<String, String> attributes) {
         setAttributes(attributes);
         return this;
     }
@@ -676,15 +631,14 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
             this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.attributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.attributes.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Attributes. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into Attributes. &lt;p> Returns a reference to this object so that method calls can
+     * be chained together.
      */
 
     public UpdateAppRequest clearAttributesEntries() {
@@ -694,49 +648,40 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of <code>EnvironmentVariable</code> objects that specify
-     * environment variables to be associated with the app. After you deploy the
-     * app, these variables are defined on the associated app server
-     * instances.For more information, see <a href=
+     * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
+     * app. After you deploy the app, these variables are defined on the associated app server instances.For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <p>
-     * There is no specific limit on the number of environment variables.
-     * However, the size of the associated data structure - which includes the
-     * variables' names, values, and protected flag values - cannot exceed 10 KB
-     * (10240 Bytes). This limit should accommodate most if not all use cases.
-     * Exceeding it will cause an exception with the message,
-     * "Environment: is too large (maximum is 10KB)."
+     * There is no specific limit on the number of environment variables. However, the size of the associated data
+     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240
+     * Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the
+     * message, "Environment: is too large (maximum is 10KB)."
      * </p>
      * <note>
      * <p>
-     * This parameter is supported only by Chef 11.10 stacks. If you have
-     * specified one or more environment variables, you cannot modify the
-     * stack's Chef version.
+     * This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables,
+     * you cannot modify the stack's Chef version.
      * </p>
      * </note>
      * 
-     * @return An array of <code>EnvironmentVariable</code> objects that specify
-     *         environment variables to be associated with the app. After you
-     *         deploy the app, these variables are defined on the associated app
-     *         server instances.For more information, see <a href=
+     * @return An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated
+     *         with the app. After you deploy the app, these variables are defined on the associated app server
+     *         instances.For more information, see <a href=
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      *         > Environment Variables</a>.</p>
      *         <p>
-     *         There is no specific limit on the number of environment
-     *         variables. However, the size of the associated data structure -
-     *         which includes the variables' names, values, and protected flag
-     *         values - cannot exceed 10 KB (10240 Bytes). This limit should
-     *         accommodate most if not all use cases. Exceeding it will cause an
-     *         exception with the message,
-     *         "Environment: is too large (maximum is 10KB)."
+     *         There is no specific limit on the number of environment variables. However, the size of the associated
+     *         data structure - which includes the variables' names, values, and protected flag values - cannot exceed
+     *         10 KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an
+     *         exception with the message, "Environment: is too large (maximum is 10KB)."
      *         </p>
      *         <note>
      *         <p>
-     *         This parameter is supported only by Chef 11.10 stacks. If you
-     *         have specified one or more environment variables, you cannot
-     *         modify the stack's Chef version.
+     *         This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment
+     *         variables, you cannot modify the stack's Chef version.
      *         </p>
      */
 
@@ -749,123 +694,102 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of <code>EnvironmentVariable</code> objects that specify
-     * environment variables to be associated with the app. After you deploy the
-     * app, these variables are defined on the associated app server
-     * instances.For more information, see <a href=
+     * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
+     * app. After you deploy the app, these variables are defined on the associated app server instances.For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <p>
-     * There is no specific limit on the number of environment variables.
-     * However, the size of the associated data structure - which includes the
-     * variables' names, values, and protected flag values - cannot exceed 10 KB
-     * (10240 Bytes). This limit should accommodate most if not all use cases.
-     * Exceeding it will cause an exception with the message,
-     * "Environment: is too large (maximum is 10KB)."
+     * There is no specific limit on the number of environment variables. However, the size of the associated data
+     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240
+     * Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the
+     * message, "Environment: is too large (maximum is 10KB)."
      * </p>
      * <note>
      * <p>
-     * This parameter is supported only by Chef 11.10 stacks. If you have
-     * specified one or more environment variables, you cannot modify the
-     * stack's Chef version.
+     * This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables,
+     * you cannot modify the stack's Chef version.
      * </p>
      * </note>
      * 
      * @param environment
-     *        An array of <code>EnvironmentVariable</code> objects that specify
-     *        environment variables to be associated with the app. After you
-     *        deploy the app, these variables are defined on the associated app
-     *        server instances.For more information, see <a href=
+     *        An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated
+     *        with the app. After you deploy the app, these variables are defined on the associated app server
+     *        instances.For more information, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      *        > Environment Variables</a>.</p>
      *        <p>
-     *        There is no specific limit on the number of environment variables.
-     *        However, the size of the associated data structure - which
-     *        includes the variables' names, values, and protected flag values -
-     *        cannot exceed 10 KB (10240 Bytes). This limit should accommodate
-     *        most if not all use cases. Exceeding it will cause an exception
-     *        with the message, "Environment: is too large (maximum is 10KB)."
+     *        There is no specific limit on the number of environment variables. However, the size of the associated
+     *        data structure - which includes the variables' names, values, and protected flag values - cannot exceed 10
+     *        KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an
+     *        exception with the message, "Environment: is too large (maximum is 10KB)."
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is supported only by Chef 11.10 stacks. If you have
-     *        specified one or more environment variables, you cannot modify the
-     *        stack's Chef version.
+     *        This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment
+     *        variables, you cannot modify the stack's Chef version.
      *        </p>
      */
 
-    public void setEnvironment(
-            java.util.Collection<EnvironmentVariable> environment) {
+    public void setEnvironment(java.util.Collection<EnvironmentVariable> environment) {
         if (environment == null) {
             this.environment = null;
             return;
         }
 
-        this.environment = new com.amazonaws.internal.SdkInternalList<EnvironmentVariable>(
-                environment);
+        this.environment = new com.amazonaws.internal.SdkInternalList<EnvironmentVariable>(environment);
     }
 
     /**
      * <p>
-     * An array of <code>EnvironmentVariable</code> objects that specify
-     * environment variables to be associated with the app. After you deploy the
-     * app, these variables are defined on the associated app server
-     * instances.For more information, see <a href=
+     * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
+     * app. After you deploy the app, these variables are defined on the associated app server instances.For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <p>
-     * There is no specific limit on the number of environment variables.
-     * However, the size of the associated data structure - which includes the
-     * variables' names, values, and protected flag values - cannot exceed 10 KB
-     * (10240 Bytes). This limit should accommodate most if not all use cases.
-     * Exceeding it will cause an exception with the message,
-     * "Environment: is too large (maximum is 10KB)."
+     * There is no specific limit on the number of environment variables. However, the size of the associated data
+     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240
+     * Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the
+     * message, "Environment: is too large (maximum is 10KB)."
      * </p>
      * <note>
      * <p>
-     * This parameter is supported only by Chef 11.10 stacks. If you have
-     * specified one or more environment variables, you cannot modify the
-     * stack's Chef version.
+     * This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables,
+     * you cannot modify the stack's Chef version.
      * </p>
      * </note>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEnvironment(java.util.Collection)} or
-     * {@link #withEnvironment(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEnvironment(java.util.Collection)} or {@link #withEnvironment(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param environment
-     *        An array of <code>EnvironmentVariable</code> objects that specify
-     *        environment variables to be associated with the app. After you
-     *        deploy the app, these variables are defined on the associated app
-     *        server instances.For more information, see <a href=
+     *        An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated
+     *        with the app. After you deploy the app, these variables are defined on the associated app server
+     *        instances.For more information, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      *        > Environment Variables</a>.</p>
      *        <p>
-     *        There is no specific limit on the number of environment variables.
-     *        However, the size of the associated data structure - which
-     *        includes the variables' names, values, and protected flag values -
-     *        cannot exceed 10 KB (10240 Bytes). This limit should accommodate
-     *        most if not all use cases. Exceeding it will cause an exception
-     *        with the message, "Environment: is too large (maximum is 10KB)."
+     *        There is no specific limit on the number of environment variables. However, the size of the associated
+     *        data structure - which includes the variables' names, values, and protected flag values - cannot exceed 10
+     *        KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an
+     *        exception with the message, "Environment: is too large (maximum is 10KB)."
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is supported only by Chef 11.10 stacks. If you have
-     *        specified one or more environment variables, you cannot modify the
-     *        stack's Chef version.
+     *        This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment
+     *        variables, you cannot modify the stack's Chef version.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAppRequest withEnvironment(EnvironmentVariable... environment) {
         if (this.environment == null) {
-            setEnvironment(new com.amazonaws.internal.SdkInternalList<EnvironmentVariable>(
-                    environment.length));
+            setEnvironment(new com.amazonaws.internal.SdkInternalList<EnvironmentVariable>(environment.length));
         }
         for (EnvironmentVariable ele : environment) {
             this.environment.add(ele);
@@ -875,63 +799,52 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of <code>EnvironmentVariable</code> objects that specify
-     * environment variables to be associated with the app. After you deploy the
-     * app, these variables are defined on the associated app server
-     * instances.For more information, see <a href=
+     * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
+     * app. After you deploy the app, these variables are defined on the associated app server instances.For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <p>
-     * There is no specific limit on the number of environment variables.
-     * However, the size of the associated data structure - which includes the
-     * variables' names, values, and protected flag values - cannot exceed 10 KB
-     * (10240 Bytes). This limit should accommodate most if not all use cases.
-     * Exceeding it will cause an exception with the message,
-     * "Environment: is too large (maximum is 10KB)."
+     * There is no specific limit on the number of environment variables. However, the size of the associated data
+     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240
+     * Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the
+     * message, "Environment: is too large (maximum is 10KB)."
      * </p>
      * <note>
      * <p>
-     * This parameter is supported only by Chef 11.10 stacks. If you have
-     * specified one or more environment variables, you cannot modify the
-     * stack's Chef version.
+     * This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables,
+     * you cannot modify the stack's Chef version.
      * </p>
      * </note>
      * 
      * @param environment
-     *        An array of <code>EnvironmentVariable</code> objects that specify
-     *        environment variables to be associated with the app. After you
-     *        deploy the app, these variables are defined on the associated app
-     *        server instances.For more information, see <a href=
+     *        An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated
+     *        with the app. After you deploy the app, these variables are defined on the associated app server
+     *        instances.For more information, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      *        > Environment Variables</a>.</p>
      *        <p>
-     *        There is no specific limit on the number of environment variables.
-     *        However, the size of the associated data structure - which
-     *        includes the variables' names, values, and protected flag values -
-     *        cannot exceed 10 KB (10240 Bytes). This limit should accommodate
-     *        most if not all use cases. Exceeding it will cause an exception
-     *        with the message, "Environment: is too large (maximum is 10KB)."
+     *        There is no specific limit on the number of environment variables. However, the size of the associated
+     *        data structure - which includes the variables' names, values, and protected flag values - cannot exceed 10
+     *        KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an
+     *        exception with the message, "Environment: is too large (maximum is 10KB)."
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is supported only by Chef 11.10 stacks. If you have
-     *        specified one or more environment variables, you cannot modify the
-     *        stack's Chef version.
+     *        This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment
+     *        variables, you cannot modify the stack's Chef version.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateAppRequest withEnvironment(
-            java.util.Collection<EnvironmentVariable> environment) {
+    public UpdateAppRequest withEnvironment(java.util.Collection<EnvironmentVariable> environment) {
         setEnvironment(environment);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -979,60 +892,47 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
         UpdateAppRequest other = (UpdateAppRequest) obj;
         if (other.getAppId() == null ^ this.getAppId() == null)
             return false;
-        if (other.getAppId() != null
-                && other.getAppId().equals(this.getAppId()) == false)
+        if (other.getAppId() != null && other.getAppId().equals(this.getAppId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getDataSources() == null ^ this.getDataSources() == null)
             return false;
-        if (other.getDataSources() != null
-                && other.getDataSources().equals(this.getDataSources()) == false)
+        if (other.getDataSources() != null && other.getDataSources().equals(this.getDataSources()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getAppSource() == null ^ this.getAppSource() == null)
             return false;
-        if (other.getAppSource() != null
-                && other.getAppSource().equals(this.getAppSource()) == false)
+        if (other.getAppSource() != null && other.getAppSource().equals(this.getAppSource()) == false)
             return false;
         if (other.getDomains() == null ^ this.getDomains() == null)
             return false;
-        if (other.getDomains() != null
-                && other.getDomains().equals(this.getDomains()) == false)
+        if (other.getDomains() != null && other.getDomains().equals(this.getDomains()) == false)
             return false;
         if (other.getEnableSsl() == null ^ this.getEnableSsl() == null)
             return false;
-        if (other.getEnableSsl() != null
-                && other.getEnableSsl().equals(this.getEnableSsl()) == false)
+        if (other.getEnableSsl() != null && other.getEnableSsl().equals(this.getEnableSsl()) == false)
             return false;
-        if (other.getSslConfiguration() == null
-                ^ this.getSslConfiguration() == null)
+        if (other.getSslConfiguration() == null ^ this.getSslConfiguration() == null)
             return false;
-        if (other.getSslConfiguration() != null
-                && other.getSslConfiguration().equals(
-                        this.getSslConfiguration()) == false)
+        if (other.getSslConfiguration() != null && other.getSslConfiguration().equals(this.getSslConfiguration()) == false)
             return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
-        if (other.getAttributes() != null
-                && other.getAttributes().equals(this.getAttributes()) == false)
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
         if (other.getEnvironment() == null ^ this.getEnvironment() == null)
             return false;
-        if (other.getEnvironment() != null
-                && other.getEnvironment().equals(this.getEnvironment()) == false)
+        if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
             return false;
         return true;
     }
@@ -1042,33 +942,17 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAppId() == null) ? 0 : getAppId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode
-                + ((getAppSource() == null) ? 0 : getAppSource().hashCode());
-        hashCode = prime * hashCode
-                + ((getDomains() == null) ? 0 : getDomains().hashCode());
-        hashCode = prime * hashCode
-                + ((getEnableSsl() == null) ? 0 : getEnableSsl().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSslConfiguration() == null) ? 0 : getSslConfiguration()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getAppSource() == null) ? 0 : getAppSource().hashCode());
+        hashCode = prime * hashCode + ((getDomains() == null) ? 0 : getDomains().hashCode());
+        hashCode = prime * hashCode + ((getEnableSsl() == null) ? 0 : getEnableSsl().hashCode());
+        hashCode = prime * hashCode + ((getSslConfiguration() == null) ? 0 : getSslConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         return hashCode;
     }
 

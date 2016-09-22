@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model.transform;
 
@@ -31,31 +29,25 @@ import com.amazonaws.util.IdempotentUtils;
  * DeleteAttributesRequest Marshaller
  */
 
-public class DeleteAttributesRequestMarshaller implements
-        Marshaller<Request<DeleteAttributesRequest>, DeleteAttributesRequest> {
+public class DeleteAttributesRequestMarshaller implements Marshaller<Request<DeleteAttributesRequest>, DeleteAttributesRequest> {
 
-    public Request<DeleteAttributesRequest> marshall(
-            DeleteAttributesRequest deleteAttributesRequest) {
+    public Request<DeleteAttributesRequest> marshall(DeleteAttributesRequest deleteAttributesRequest) {
 
         if (deleteAttributesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteAttributesRequest> request = new DefaultRequest<DeleteAttributesRequest>(
-                deleteAttributesRequest, "AmazonSimpleDB");
+        Request<DeleteAttributesRequest> request = new DefaultRequest<DeleteAttributesRequest>(deleteAttributesRequest, "AmazonSimpleDB");
         request.addParameter("Action", "DeleteAttributes");
         request.addParameter("Version", "2009-04-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (deleteAttributesRequest.getDomainName() != null) {
-            request.addParameter("DomainName", StringUtils
-                    .fromString(deleteAttributesRequest.getDomainName()));
+            request.addParameter("DomainName", StringUtils.fromString(deleteAttributesRequest.getDomainName()));
         }
 
         if (deleteAttributesRequest.getItemName() != null) {
-            request.addParameter("ItemName", StringUtils
-                    .fromString(deleteAttributesRequest.getItemName()));
+            request.addParameter("ItemName", StringUtils.fromString(deleteAttributesRequest.getItemName()));
         }
 
         com.amazonaws.internal.SdkInternalList<Attribute> attributesList = (com.amazonaws.internal.SdkInternalList<Attribute>) deleteAttributesRequest
@@ -66,29 +58,21 @@ public class DeleteAttributesRequestMarshaller implements
             for (Attribute attributesListValue : attributesList) {
 
                 if (attributesListValue.getName() != null) {
-                    request.addParameter("Attribute." + attributesListIndex
-                            + ".Name", StringUtils
-                            .fromString(attributesListValue.getName()));
+                    request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getName()));
                 }
 
                 if (attributesListValue.getAlternateNameEncoding() != null) {
-                    request.addParameter("Attribute." + attributesListIndex
-                            + ".AlternateNameEncoding", StringUtils
-                            .fromString(attributesListValue
-                                    .getAlternateNameEncoding()));
+                    request.addParameter("Attribute." + attributesListIndex + ".AlternateNameEncoding",
+                            StringUtils.fromString(attributesListValue.getAlternateNameEncoding()));
                 }
 
                 if (attributesListValue.getValue() != null) {
-                    request.addParameter("Attribute." + attributesListIndex
-                            + ".Value", StringUtils
-                            .fromString(attributesListValue.getValue()));
+                    request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
                 }
 
                 if (attributesListValue.getAlternateValueEncoding() != null) {
-                    request.addParameter("Attribute." + attributesListIndex
-                            + ".AlternateValueEncoding", StringUtils
-                            .fromString(attributesListValue
-                                    .getAlternateValueEncoding()));
+                    request.addParameter("Attribute." + attributesListIndex + ".AlternateValueEncoding",
+                            StringUtils.fromString(attributesListValue.getAlternateValueEncoding()));
                 }
                 attributesListIndex++;
             }
@@ -98,18 +82,15 @@ public class DeleteAttributesRequestMarshaller implements
         if (expected != null) {
 
             if (expected.getName() != null) {
-                request.addParameter("Expected.Name",
-                        StringUtils.fromString(expected.getName()));
+                request.addParameter("Expected.Name", StringUtils.fromString(expected.getName()));
             }
 
             if (expected.getValue() != null) {
-                request.addParameter("Expected.Value",
-                        StringUtils.fromString(expected.getValue()));
+                request.addParameter("Expected.Value", StringUtils.fromString(expected.getValue()));
             }
 
             if (expected.getExists() != null) {
-                request.addParameter("Expected.Exists",
-                        StringUtils.fromBoolean(expected.getExists()));
+                request.addParameter("Expected.Exists", StringUtils.fromBoolean(expected.getExists()));
             }
         }
 

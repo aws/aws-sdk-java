@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codecommit.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Represents the output of a batch get repositories operation.
  * </p>
  */
-public class BatchGetRepositoriesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class BatchGetRepositoriesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,7 @@ public class BatchGetRepositoriesResult extends
     private java.util.List<RepositoryMetadata> repositories;
     /**
      * <p>
-     * Returns a list of repository names for which information could not be
-     * found.
+     * Returns a list of repository names for which information could not be found.
      * </p>
      */
     private java.util.List<String> repositoriesNotFound;
@@ -44,8 +39,7 @@ public class BatchGetRepositoriesResult extends
      * A list of repositories returned by the batch get repositories operation.
      * </p>
      * 
-     * @return A list of repositories returned by the batch get repositories
-     *         operation.
+     * @return A list of repositories returned by the batch get repositories operation.
      */
 
     public java.util.List<RepositoryMetadata> getRepositories() {
@@ -58,19 +52,16 @@ public class BatchGetRepositoriesResult extends
      * </p>
      * 
      * @param repositories
-     *        A list of repositories returned by the batch get repositories
-     *        operation.
+     *        A list of repositories returned by the batch get repositories operation.
      */
 
-    public void setRepositories(
-            java.util.Collection<RepositoryMetadata> repositories) {
+    public void setRepositories(java.util.Collection<RepositoryMetadata> repositories) {
         if (repositories == null) {
             this.repositories = null;
             return;
         }
 
-        this.repositories = new java.util.ArrayList<RepositoryMetadata>(
-                repositories);
+        this.repositories = new java.util.ArrayList<RepositoryMetadata>(repositories);
     }
 
     /**
@@ -78,24 +69,19 @@ public class BatchGetRepositoriesResult extends
      * A list of repositories returned by the batch get repositories operation.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRepositories(java.util.Collection)} or
-     * {@link #withRepositories(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRepositories(java.util.Collection)} or {@link #withRepositories(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param repositories
-     *        A list of repositories returned by the batch get repositories
-     *        operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of repositories returned by the batch get repositories operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetRepositoriesResult withRepositories(
-            RepositoryMetadata... repositories) {
+    public BatchGetRepositoriesResult withRepositories(RepositoryMetadata... repositories) {
         if (this.repositories == null) {
-            setRepositories(new java.util.ArrayList<RepositoryMetadata>(
-                    repositories.length));
+            setRepositories(new java.util.ArrayList<RepositoryMetadata>(repositories.length));
         }
         for (RepositoryMetadata ele : repositories) {
             this.repositories.add(ele);
@@ -109,26 +95,21 @@ public class BatchGetRepositoriesResult extends
      * </p>
      * 
      * @param repositories
-     *        A list of repositories returned by the batch get repositories
-     *        operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of repositories returned by the batch get repositories operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetRepositoriesResult withRepositories(
-            java.util.Collection<RepositoryMetadata> repositories) {
+    public BatchGetRepositoriesResult withRepositories(java.util.Collection<RepositoryMetadata> repositories) {
         setRepositories(repositories);
         return this;
     }
 
     /**
      * <p>
-     * Returns a list of repository names for which information could not be
-     * found.
+     * Returns a list of repository names for which information could not be found.
      * </p>
      * 
-     * @return Returns a list of repository names for which information could
-     *         not be found.
+     * @return Returns a list of repository names for which information could not be found.
      */
 
     public java.util.List<String> getRepositoriesNotFound() {
@@ -137,50 +118,40 @@ public class BatchGetRepositoriesResult extends
 
     /**
      * <p>
-     * Returns a list of repository names for which information could not be
-     * found.
+     * Returns a list of repository names for which information could not be found.
      * </p>
      * 
      * @param repositoriesNotFound
-     *        Returns a list of repository names for which information could not
-     *        be found.
+     *        Returns a list of repository names for which information could not be found.
      */
 
-    public void setRepositoriesNotFound(
-            java.util.Collection<String> repositoriesNotFound) {
+    public void setRepositoriesNotFound(java.util.Collection<String> repositoriesNotFound) {
         if (repositoriesNotFound == null) {
             this.repositoriesNotFound = null;
             return;
         }
 
-        this.repositoriesNotFound = new java.util.ArrayList<String>(
-                repositoriesNotFound);
+        this.repositoriesNotFound = new java.util.ArrayList<String>(repositoriesNotFound);
     }
 
     /**
      * <p>
-     * Returns a list of repository names for which information could not be
-     * found.
+     * Returns a list of repository names for which information could not be found.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRepositoriesNotFound(java.util.Collection)} or
-     * {@link #withRepositoriesNotFound(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRepositoriesNotFound(java.util.Collection)} or {@link #withRepositoriesNotFound(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param repositoriesNotFound
-     *        Returns a list of repository names for which information could not
-     *        be found.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Returns a list of repository names for which information could not be found.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetRepositoriesResult withRepositoriesNotFound(
-            String... repositoriesNotFound) {
+    public BatchGetRepositoriesResult withRepositoriesNotFound(String... repositoriesNotFound) {
         if (this.repositoriesNotFound == null) {
-            setRepositoriesNotFound(new java.util.ArrayList<String>(
-                    repositoriesNotFound.length));
+            setRepositoriesNotFound(new java.util.ArrayList<String>(repositoriesNotFound.length));
         }
         for (String ele : repositoriesNotFound) {
             this.repositoriesNotFound.add(ele);
@@ -190,26 +161,21 @@ public class BatchGetRepositoriesResult extends
 
     /**
      * <p>
-     * Returns a list of repository names for which information could not be
-     * found.
+     * Returns a list of repository names for which information could not be found.
      * </p>
      * 
      * @param repositoriesNotFound
-     *        Returns a list of repository names for which information could not
-     *        be found.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Returns a list of repository names for which information could not be found.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetRepositoriesResult withRepositoriesNotFound(
-            java.util.Collection<String> repositoriesNotFound) {
+    public BatchGetRepositoriesResult withRepositoriesNotFound(java.util.Collection<String> repositoriesNotFound) {
         setRepositoriesNotFound(repositoriesNotFound);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -239,15 +205,11 @@ public class BatchGetRepositoriesResult extends
         BatchGetRepositoriesResult other = (BatchGetRepositoriesResult) obj;
         if (other.getRepositories() == null ^ this.getRepositories() == null)
             return false;
-        if (other.getRepositories() != null
-                && other.getRepositories().equals(this.getRepositories()) == false)
+        if (other.getRepositories() != null && other.getRepositories().equals(this.getRepositories()) == false)
             return false;
-        if (other.getRepositoriesNotFound() == null
-                ^ this.getRepositoriesNotFound() == null)
+        if (other.getRepositoriesNotFound() == null ^ this.getRepositoriesNotFound() == null)
             return false;
-        if (other.getRepositoriesNotFound() != null
-                && other.getRepositoriesNotFound().equals(
-                        this.getRepositoriesNotFound()) == false)
+        if (other.getRepositoriesNotFound() != null && other.getRepositoriesNotFound().equals(this.getRepositoriesNotFound()) == false)
             return false;
         return true;
     }
@@ -257,14 +219,8 @@ public class BatchGetRepositoriesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRepositories() == null) ? 0 : getRepositories()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoriesNotFound() == null) ? 0
-                        : getRepositoriesNotFound().hashCode());
+        hashCode = prime * hashCode + ((getRepositories() == null) ? 0 : getRepositories().hashCode());
+        hashCode = prime * hashCode + ((getRepositoriesNotFound() == null) ? 0 : getRepositoriesNotFound().hashCode());
         return hashCode;
     }
 
@@ -273,9 +229,7 @@ public class BatchGetRepositoriesResult extends
         try {
             return (BatchGetRepositoriesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

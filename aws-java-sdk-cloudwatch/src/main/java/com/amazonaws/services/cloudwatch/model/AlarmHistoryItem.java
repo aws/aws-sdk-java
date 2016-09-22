@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
 
@@ -18,10 +16,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>AlarmHistoryItem</code> data type contains descriptive information
- * about the history of a specific alarm. If you call
- * <a>DescribeAlarmHistory</a>, Amazon CloudWatch returns this data type as part
- * of the DescribeAlarmHistoryResult data type.
+ * The <code>AlarmHistoryItem</code> data type contains descriptive information about the history of a specific alarm.
+ * If you call <a>DescribeAlarmHistory</a>, Amazon CloudWatch returns this data type as part of the
+ * DescribeAlarmHistoryResult data type.
  * </p>
  */
 public class AlarmHistoryItem implements Serializable, Cloneable {
@@ -89,8 +86,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * 
      * @param alarmName
      *        The descriptive name for the alarm.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AlarmHistoryItem withAlarmName(String alarmName) {
@@ -130,8 +126,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * 
      * @param timestamp
      *        The time stamp for the alarm history item.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AlarmHistoryItem withTimestamp(java.util.Date timestamp) {
@@ -173,8 +168,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * 
      * @param historyItemType
      *        The type of alarm history item.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HistoryItemType
      */
 
@@ -204,8 +198,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * 
      * @param historyItemType
      *        The type of alarm history item.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HistoryItemType
      */
 
@@ -246,8 +239,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * 
      * @param historySummary
      *        A human-readable summary of the alarm history.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AlarmHistoryItem withHistorySummary(String historySummary) {
@@ -287,8 +279,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * 
      * @param historyData
      *        Machine-readable data about the alarm in JSON format.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AlarmHistoryItem withHistoryData(String historyData) {
@@ -297,8 +288,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -334,30 +324,23 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
         AlarmHistoryItem other = (AlarmHistoryItem) obj;
         if (other.getAlarmName() == null ^ this.getAlarmName() == null)
             return false;
-        if (other.getAlarmName() != null
-                && other.getAlarmName().equals(this.getAlarmName()) == false)
+        if (other.getAlarmName() != null && other.getAlarmName().equals(this.getAlarmName()) == false)
             return false;
         if (other.getTimestamp() == null ^ this.getTimestamp() == null)
             return false;
-        if (other.getTimestamp() != null
-                && other.getTimestamp().equals(this.getTimestamp()) == false)
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
-        if (other.getHistoryItemType() == null
-                ^ this.getHistoryItemType() == null)
+        if (other.getHistoryItemType() == null ^ this.getHistoryItemType() == null)
             return false;
-        if (other.getHistoryItemType() != null
-                && other.getHistoryItemType().equals(this.getHistoryItemType()) == false)
+        if (other.getHistoryItemType() != null && other.getHistoryItemType().equals(this.getHistoryItemType()) == false)
             return false;
-        if (other.getHistorySummary() == null
-                ^ this.getHistorySummary() == null)
+        if (other.getHistorySummary() == null ^ this.getHistorySummary() == null)
             return false;
-        if (other.getHistorySummary() != null
-                && other.getHistorySummary().equals(this.getHistorySummary()) == false)
+        if (other.getHistorySummary() != null && other.getHistorySummary().equals(this.getHistorySummary()) == false)
             return false;
         if (other.getHistoryData() == null ^ this.getHistoryData() == null)
             return false;
-        if (other.getHistoryData() != null
-                && other.getHistoryData().equals(this.getHistoryData()) == false)
+        if (other.getHistoryData() != null && other.getHistoryData().equals(this.getHistoryData()) == false)
             return false;
         return true;
     }
@@ -367,21 +350,11 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode());
-        hashCode = prime * hashCode
-                + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHistoryItemType() == null) ? 0 : getHistoryItemType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHistorySummary() == null) ? 0 : getHistorySummary()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHistoryData() == null) ? 0 : getHistoryData().hashCode());
+        hashCode = prime * hashCode + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode());
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getHistoryItemType() == null) ? 0 : getHistoryItemType().hashCode());
+        hashCode = prime * hashCode + ((getHistorySummary() == null) ? 0 : getHistorySummary().hashCode());
+        hashCode = prime * hashCode + ((getHistoryData() == null) ? 0 : getHistoryData().hashCode());
         return hashCode;
     }
 
@@ -390,9 +363,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
         try {
             return (AlarmHistoryItem) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

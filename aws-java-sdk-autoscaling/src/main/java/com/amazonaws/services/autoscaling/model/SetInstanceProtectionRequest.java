@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for SetInstanceProtection.
  * </p>
  */
-public class SetInstanceProtectionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -40,8 +36,7 @@ public class SetInstanceProtectionRequest extends
     private String autoScalingGroupName;
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto
-     * Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      * </p>
      */
     private Boolean protectedFromScaleIn;
@@ -76,8 +71,7 @@ public class SetInstanceProtectionRequest extends
             return;
         }
 
-        this.instanceIds = new com.amazonaws.internal.SdkInternalList<String>(
-                instanceIds);
+        this.instanceIds = new com.amazonaws.internal.SdkInternalList<String>(instanceIds);
     }
 
     /**
@@ -85,22 +79,19 @@ public class SetInstanceProtectionRequest extends
      * One or more instance IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstanceIds(java.util.Collection)} or
-     * {@link #withInstanceIds(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceIds(java.util.Collection)} or {@link #withInstanceIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param instanceIds
      *        One or more instance IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetInstanceProtectionRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
-            setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    instanceIds.length));
+            setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(instanceIds.length));
         }
         for (String ele : instanceIds) {
             this.instanceIds.add(ele);
@@ -115,12 +106,10 @@ public class SetInstanceProtectionRequest extends
      * 
      * @param instanceIds
      *        One or more instance IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetInstanceProtectionRequest withInstanceIds(
-            java.util.Collection<String> instanceIds) {
+    public SetInstanceProtectionRequest withInstanceIds(java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
         return this;
     }
@@ -157,25 +146,21 @@ public class SetInstanceProtectionRequest extends
      * 
      * @param autoScalingGroupName
      *        The name of the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetInstanceProtectionRequest withAutoScalingGroupName(
-            String autoScalingGroupName) {
+    public SetInstanceProtectionRequest withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto
-     * Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      * </p>
      * 
      * @param protectedFromScaleIn
-     *        Indicates whether the instance is protected from termination by
-     *        Auto Scaling when scaling in.
+     *        Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      */
 
     public void setProtectedFromScaleIn(Boolean protectedFromScaleIn) {
@@ -184,12 +169,10 @@ public class SetInstanceProtectionRequest extends
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto
-     * Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      * </p>
      * 
-     * @return Indicates whether the instance is protected from termination by
-     *         Auto Scaling when scaling in.
+     * @return Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      */
 
     public Boolean getProtectedFromScaleIn() {
@@ -198,31 +181,25 @@ public class SetInstanceProtectionRequest extends
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto
-     * Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      * </p>
      * 
      * @param protectedFromScaleIn
-     *        Indicates whether the instance is protected from termination by
-     *        Auto Scaling when scaling in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetInstanceProtectionRequest withProtectedFromScaleIn(
-            Boolean protectedFromScaleIn) {
+    public SetInstanceProtectionRequest withProtectedFromScaleIn(Boolean protectedFromScaleIn) {
         setProtectedFromScaleIn(protectedFromScaleIn);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto
-     * Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      * </p>
      * 
-     * @return Indicates whether the instance is protected from termination by
-     *         Auto Scaling when scaling in.
+     * @return Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      */
 
     public Boolean isProtectedFromScaleIn() {
@@ -230,8 +207,7 @@ public class SetInstanceProtectionRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -244,8 +220,7 @@ public class SetInstanceProtectionRequest extends
         if (getInstanceIds() != null)
             sb.append("InstanceIds: " + getInstanceIds() + ",");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
         if (getProtectedFromScaleIn() != null)
             sb.append("ProtectedFromScaleIn: " + getProtectedFromScaleIn());
         sb.append("}");
@@ -264,22 +239,15 @@ public class SetInstanceProtectionRequest extends
         SetInstanceProtectionRequest other = (SetInstanceProtectionRequest) obj;
         if (other.getInstanceIds() == null ^ this.getInstanceIds() == null)
             return false;
-        if (other.getInstanceIds() != null
-                && other.getInstanceIds().equals(this.getInstanceIds()) == false)
+        if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false)
             return false;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
-        if (other.getProtectedFromScaleIn() == null
-                ^ this.getProtectedFromScaleIn() == null)
+        if (other.getProtectedFromScaleIn() == null ^ this.getProtectedFromScaleIn() == null)
             return false;
-        if (other.getProtectedFromScaleIn() != null
-                && other.getProtectedFromScaleIn().equals(
-                        this.getProtectedFromScaleIn()) == false)
+        if (other.getProtectedFromScaleIn() != null && other.getProtectedFromScaleIn().equals(this.getProtectedFromScaleIn()) == false)
             return false;
         return true;
     }
@@ -289,17 +257,9 @@ public class SetInstanceProtectionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProtectedFromScaleIn() == null) ? 0
-                        : getProtectedFromScaleIn().hashCode());
+        hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getProtectedFromScaleIn() == null) ? 0 : getProtectedFromScaleIn().hashCode());
         return hashCode;
     }
 

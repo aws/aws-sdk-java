@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ConfigurationOptionDescription StAX Unmarshaller
  */
-public class ConfigurationOptionDescriptionStaxUnmarshaller implements
-        Unmarshaller<ConfigurationOptionDescription, StaxUnmarshallerContext> {
+public class ConfigurationOptionDescriptionStaxUnmarshaller implements Unmarshaller<ConfigurationOptionDescription, StaxUnmarshallerContext> {
 
-    public ConfigurationOptionDescription unmarshall(
-            StaxUnmarshallerContext context) throws Exception {
+    public ConfigurationOptionDescription unmarshall(StaxUnmarshallerContext context) throws Exception {
         ConfigurationOptionDescription configurationOptionDescription = new ConfigurationOptionDescription();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,79 +46,57 @@ public class ConfigurationOptionDescriptionStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Namespace", targetDepth)) {
-                    configurationOptionDescription
-                            .setNamespace(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    configurationOptionDescription.setNamespace(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Name", targetDepth)) {
-                    configurationOptionDescription
-                            .setName(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    configurationOptionDescription.setName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DefaultValue", targetDepth)) {
-                    configurationOptionDescription
-                            .setDefaultValue(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationOptionDescription.setDefaultValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ChangeSeverity", targetDepth)) {
-                    configurationOptionDescription
-                            .setChangeSeverity(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationOptionDescription.setChangeSeverity(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("UserDefined", targetDepth)) {
-                    configurationOptionDescription
-                            .setUserDefined(BooleanStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationOptionDescription.setUserDefined(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ValueType", targetDepth)) {
-                    configurationOptionDescription
-                            .setValueType(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    configurationOptionDescription.setValueType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ValueOptions/member", targetDepth)) {
-                    configurationOptionDescription
-                            .withValueOptions(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationOptionDescription.withValueOptions(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MinValue", targetDepth)) {
-                    configurationOptionDescription
-                            .setMinValue(IntegerStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    configurationOptionDescription.setMinValue(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MaxValue", targetDepth)) {
-                    configurationOptionDescription
-                            .setMaxValue(IntegerStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    configurationOptionDescription.setMaxValue(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MaxLength", targetDepth)) {
-                    configurationOptionDescription
-                            .setMaxLength(IntegerStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    configurationOptionDescription.setMaxLength(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Regex", targetDepth)) {
-                    configurationOptionDescription
-                            .setRegex(OptionRestrictionRegexStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationOptionDescription.setRegex(OptionRestrictionRegexStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

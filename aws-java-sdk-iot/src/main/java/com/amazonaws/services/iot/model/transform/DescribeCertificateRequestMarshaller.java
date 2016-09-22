@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -43,40 +41,30 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeCertificateRequest Marshaller
  */
-public class DescribeCertificateRequestMarshaller
-        implements
-        Marshaller<Request<DescribeCertificateRequest>, DescribeCertificateRequest> {
+public class DescribeCertificateRequestMarshaller implements Marshaller<Request<DescribeCertificateRequest>, DescribeCertificateRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeCertificateRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeCertificateRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeCertificateRequest> marshall(
-            DescribeCertificateRequest describeCertificateRequest) {
+    public Request<DescribeCertificateRequest> marshall(DescribeCertificateRequest describeCertificateRequest) {
 
         if (describeCertificateRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeCertificateRequest> request = new DefaultRequest<DescribeCertificateRequest>(
-                describeCertificateRequest, "AWSIot");
+        Request<DescribeCertificateRequest> request = new DefaultRequest<DescribeCertificateRequest>(describeCertificateRequest, "AWSIot");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/certificates/{certificateId}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{certificateId}",
-                        (describeCertificateRequest.getCertificateId() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(describeCertificateRequest
-                                                .getCertificateId()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{certificateId}",
+                (describeCertificateRequest.getCertificateId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(describeCertificateRequest.getCertificateId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

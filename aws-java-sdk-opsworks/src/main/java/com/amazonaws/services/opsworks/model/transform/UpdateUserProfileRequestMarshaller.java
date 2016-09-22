@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -35,26 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * UpdateUserProfileRequest Marshaller
  */
-public class UpdateUserProfileRequestMarshaller implements
-        Marshaller<Request<UpdateUserProfileRequest>, UpdateUserProfileRequest> {
+public class UpdateUserProfileRequestMarshaller implements Marshaller<Request<UpdateUserProfileRequest>, UpdateUserProfileRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public UpdateUserProfileRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public UpdateUserProfileRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<UpdateUserProfileRequest> marshall(
-            UpdateUserProfileRequest updateUserProfileRequest) {
+    public Request<UpdateUserProfileRequest> marshall(UpdateUserProfileRequest updateUserProfileRequest) {
 
         if (updateUserProfileRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateUserProfileRequest> request = new DefaultRequest<UpdateUserProfileRequest>(
-                updateUserProfileRequest, "AWSOpsWorks");
+        Request<UpdateUserProfileRequest> request = new DefaultRequest<UpdateUserProfileRequest>(updateUserProfileRequest, "AWSOpsWorks");
         request.addHeader("X-Amz-Target", "OpsWorks_20130218.UpdateUserProfile");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -62,38 +55,31 @@ public class UpdateUserProfileRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (updateUserProfileRequest.getIamUserArn() != null) {
-                jsonGenerator.writeFieldName("IamUserArn").writeValue(
-                        updateUserProfileRequest.getIamUserArn());
+                jsonGenerator.writeFieldName("IamUserArn").writeValue(updateUserProfileRequest.getIamUserArn());
             }
             if (updateUserProfileRequest.getSshUsername() != null) {
-                jsonGenerator.writeFieldName("SshUsername").writeValue(
-                        updateUserProfileRequest.getSshUsername());
+                jsonGenerator.writeFieldName("SshUsername").writeValue(updateUserProfileRequest.getSshUsername());
             }
             if (updateUserProfileRequest.getSshPublicKey() != null) {
-                jsonGenerator.writeFieldName("SshPublicKey").writeValue(
-                        updateUserProfileRequest.getSshPublicKey());
+                jsonGenerator.writeFieldName("SshPublicKey").writeValue(updateUserProfileRequest.getSshPublicKey());
             }
             if (updateUserProfileRequest.getAllowSelfManagement() != null) {
-                jsonGenerator.writeFieldName("AllowSelfManagement").writeValue(
-                        updateUserProfileRequest.getAllowSelfManagement());
+                jsonGenerator.writeFieldName("AllowSelfManagement").writeValue(updateUserProfileRequest.getAllowSelfManagement());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

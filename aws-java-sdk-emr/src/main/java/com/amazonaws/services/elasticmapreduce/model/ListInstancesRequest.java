@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -22,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This input determines which instances to list.
  * </p>
  */
-public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -45,8 +42,7 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<String> instanceGroupTypes;
     /**
      * <p>
-     * A list of instance states that will filter the instances returned with
-     * this request.
+     * A list of instance states that will filter the instances returned with this request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceStates;
@@ -89,8 +85,7 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param clusterId
      *        The identifier of the cluster for which to list the instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListInstancesRequest withClusterId(String clusterId) {
@@ -104,8 +99,7 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param instanceGroupId
-     *        The identifier of the instance group for which to list the
-     *        instances.
+     *        The identifier of the instance group for which to list the instances.
      */
 
     public void setInstanceGroupId(String instanceGroupId) {
@@ -117,8 +111,7 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
      * The identifier of the instance group for which to list the instances.
      * </p>
      * 
-     * @return The identifier of the instance group for which to list the
-     *         instances.
+     * @return The identifier of the instance group for which to list the instances.
      */
 
     public String getInstanceGroupId() {
@@ -131,10 +124,8 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param instanceGroupId
-     *        The identifier of the instance group for which to list the
-     *        instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the instance group for which to list the instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListInstancesRequest withInstanceGroupId(String instanceGroupId) {
@@ -168,15 +159,13 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see InstanceGroupType
      */
 
-    public void setInstanceGroupTypes(
-            java.util.Collection<String> instanceGroupTypes) {
+    public void setInstanceGroupTypes(java.util.Collection<String> instanceGroupTypes) {
         if (instanceGroupTypes == null) {
             this.instanceGroupTypes = null;
             return;
         }
 
-        this.instanceGroupTypes = new com.amazonaws.internal.SdkInternalList<String>(
-                instanceGroupTypes);
+        this.instanceGroupTypes = new com.amazonaws.internal.SdkInternalList<String>(instanceGroupTypes);
     }
 
     /**
@@ -184,24 +173,20 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
      * The type of instance group for which to list the instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstanceGroupTypes(java.util.Collection)} or
-     * {@link #withInstanceGroupTypes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceGroupTypes(java.util.Collection)} or {@link #withInstanceGroupTypes(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param instanceGroupTypes
      *        The type of instance group for which to list the instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceGroupType
      */
 
-    public ListInstancesRequest withInstanceGroupTypes(
-            String... instanceGroupTypes) {
+    public ListInstancesRequest withInstanceGroupTypes(String... instanceGroupTypes) {
         if (this.instanceGroupTypes == null) {
-            setInstanceGroupTypes(new com.amazonaws.internal.SdkInternalList<String>(
-                    instanceGroupTypes.length));
+            setInstanceGroupTypes(new com.amazonaws.internal.SdkInternalList<String>(instanceGroupTypes.length));
         }
         for (String ele : instanceGroupTypes) {
             this.instanceGroupTypes.add(ele);
@@ -216,13 +201,11 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param instanceGroupTypes
      *        The type of instance group for which to list the instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceGroupType
      */
 
-    public ListInstancesRequest withInstanceGroupTypes(
-            java.util.Collection<String> instanceGroupTypes) {
+    public ListInstancesRequest withInstanceGroupTypes(java.util.Collection<String> instanceGroupTypes) {
         setInstanceGroupTypes(instanceGroupTypes);
         return this;
     }
@@ -234,15 +217,12 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param instanceGroupTypes
      *        The type of instance group for which to list the instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceGroupType
      */
 
-    public ListInstancesRequest withInstanceGroupTypes(
-            InstanceGroupType... instanceGroupTypes) {
-        com.amazonaws.internal.SdkInternalList<String> instanceGroupTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                instanceGroupTypes.length);
+    public ListInstancesRequest withInstanceGroupTypes(InstanceGroupType... instanceGroupTypes) {
+        com.amazonaws.internal.SdkInternalList<String> instanceGroupTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(instanceGroupTypes.length);
         for (InstanceGroupType value : instanceGroupTypes) {
             instanceGroupTypesCopy.add(value.toString());
         }
@@ -256,12 +236,10 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of instance states that will filter the instances returned with
-     * this request.
+     * A list of instance states that will filter the instances returned with this request.
      * </p>
      * 
-     * @return A list of instance states that will filter the instances returned
-     *         with this request.
+     * @return A list of instance states that will filter the instances returned with this request.
      * @see InstanceState
      */
 
@@ -274,13 +252,11 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of instance states that will filter the instances returned with
-     * this request.
+     * A list of instance states that will filter the instances returned with this request.
      * </p>
      * 
      * @param instanceStates
-     *        A list of instance states that will filter the instances returned
-     *        with this request.
+     *        A list of instance states that will filter the instances returned with this request.
      * @see InstanceState
      */
 
@@ -290,34 +266,28 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
             return;
         }
 
-        this.instanceStates = new com.amazonaws.internal.SdkInternalList<String>(
-                instanceStates);
+        this.instanceStates = new com.amazonaws.internal.SdkInternalList<String>(instanceStates);
     }
 
     /**
      * <p>
-     * A list of instance states that will filter the instances returned with
-     * this request.
+     * A list of instance states that will filter the instances returned with this request.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstanceStates(java.util.Collection)} or
-     * {@link #withInstanceStates(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceStates(java.util.Collection)} or {@link #withInstanceStates(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param instanceStates
-     *        A list of instance states that will filter the instances returned
-     *        with this request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of instance states that will filter the instances returned with this request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceState
      */
 
     public ListInstancesRequest withInstanceStates(String... instanceStates) {
         if (this.instanceStates == null) {
-            setInstanceStates(new com.amazonaws.internal.SdkInternalList<String>(
-                    instanceStates.length));
+            setInstanceStates(new com.amazonaws.internal.SdkInternalList<String>(instanceStates.length));
         }
         for (String ele : instanceStates) {
             this.instanceStates.add(ele);
@@ -327,42 +297,33 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of instance states that will filter the instances returned with
-     * this request.
+     * A list of instance states that will filter the instances returned with this request.
      * </p>
      * 
      * @param instanceStates
-     *        A list of instance states that will filter the instances returned
-     *        with this request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of instance states that will filter the instances returned with this request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceState
      */
 
-    public ListInstancesRequest withInstanceStates(
-            java.util.Collection<String> instanceStates) {
+    public ListInstancesRequest withInstanceStates(java.util.Collection<String> instanceStates) {
         setInstanceStates(instanceStates);
         return this;
     }
 
     /**
      * <p>
-     * A list of instance states that will filter the instances returned with
-     * this request.
+     * A list of instance states that will filter the instances returned with this request.
      * </p>
      * 
      * @param instanceStates
-     *        A list of instance states that will filter the instances returned
-     *        with this request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of instance states that will filter the instances returned with this request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceState
      */
 
-    public ListInstancesRequest withInstanceStates(
-            InstanceState... instanceStates) {
-        com.amazonaws.internal.SdkInternalList<String> instanceStatesCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                instanceStates.length);
+    public ListInstancesRequest withInstanceStates(InstanceState... instanceStates) {
+        com.amazonaws.internal.SdkInternalList<String> instanceStatesCopy = new com.amazonaws.internal.SdkInternalList<String>(instanceStates.length);
         for (InstanceState value : instanceStates) {
             instanceStatesCopy.add(value.toString());
         }
@@ -380,8 +341,7 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param marker
-     *        The pagination token that indicates the next set of results to
-     *        retrieve.
+     *        The pagination token that indicates the next set of results to retrieve.
      */
 
     public void setMarker(String marker) {
@@ -393,8 +353,7 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
      * The pagination token that indicates the next set of results to retrieve.
      * </p>
      * 
-     * @return The pagination token that indicates the next set of results to
-     *         retrieve.
+     * @return The pagination token that indicates the next set of results to retrieve.
      */
 
     public String getMarker() {
@@ -407,10 +366,8 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param marker
-     *        The pagination token that indicates the next set of results to
-     *        retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The pagination token that indicates the next set of results to retrieve.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListInstancesRequest withMarker(String marker) {
@@ -419,8 +376,7 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -456,32 +412,23 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
         ListInstancesRequest other = (ListInstancesRequest) obj;
         if (other.getClusterId() == null ^ this.getClusterId() == null)
             return false;
-        if (other.getClusterId() != null
-                && other.getClusterId().equals(this.getClusterId()) == false)
+        if (other.getClusterId() != null && other.getClusterId().equals(this.getClusterId()) == false)
             return false;
-        if (other.getInstanceGroupId() == null
-                ^ this.getInstanceGroupId() == null)
+        if (other.getInstanceGroupId() == null ^ this.getInstanceGroupId() == null)
             return false;
-        if (other.getInstanceGroupId() != null
-                && other.getInstanceGroupId().equals(this.getInstanceGroupId()) == false)
+        if (other.getInstanceGroupId() != null && other.getInstanceGroupId().equals(this.getInstanceGroupId()) == false)
             return false;
-        if (other.getInstanceGroupTypes() == null
-                ^ this.getInstanceGroupTypes() == null)
+        if (other.getInstanceGroupTypes() == null ^ this.getInstanceGroupTypes() == null)
             return false;
-        if (other.getInstanceGroupTypes() != null
-                && other.getInstanceGroupTypes().equals(
-                        this.getInstanceGroupTypes()) == false)
+        if (other.getInstanceGroupTypes() != null && other.getInstanceGroupTypes().equals(this.getInstanceGroupTypes()) == false)
             return false;
-        if (other.getInstanceStates() == null
-                ^ this.getInstanceStates() == null)
+        if (other.getInstanceStates() == null ^ this.getInstanceStates() == null)
             return false;
-        if (other.getInstanceStates() != null
-                && other.getInstanceStates().equals(this.getInstanceStates()) == false)
+        if (other.getInstanceStates() != null && other.getInstanceStates().equals(this.getInstanceStates()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -491,22 +438,11 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceGroupId() == null) ? 0 : getInstanceGroupId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceGroupTypes() == null) ? 0
-                        : getInstanceGroupTypes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceStates() == null) ? 0 : getInstanceStates()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceGroupId() == null) ? 0 : getInstanceGroupId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceGroupTypes() == null) ? 0 : getInstanceGroupTypes().hashCode());
+        hashCode = prime * hashCode + ((getInstanceStates() == null) ? 0 : getInstanceStates().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
@@ -37,8 +35,7 @@ public class LoadBalancer implements Serializable, Cloneable {
     private String dNSName;
     /**
      * <p>
-     * The ID of the Amazon Route 53 hosted zone associated with the load
-     * balancer.
+     * The ID of the Amazon Route 53 hosted zone associated with the load balancer.
      * </p>
      */
     private String canonicalHostedZoneId;
@@ -56,17 +53,14 @@ public class LoadBalancer implements Serializable, Cloneable {
     private String loadBalancerName;
     /**
      * <p>
-     * The nodes of an Internet-facing load balancer have public IP addresses.
-     * The DNS name of an Internet-facing load balancer is publicly resolvable
-     * to the public IP addresses of the nodes. Therefore, Internet-facing load
+     * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
+     * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
      * balancers can route requests from clients over the Internet.
      * </p>
      * <p>
-     * The nodes of an internal load balancer have only private IP addresses.
-     * The DNS name of an internal load balancer is publicly resolvable to the
-     * private IP addresses of the nodes. Therefore, internal load balancers can
-     * only route requests from clients with access to the VPC for the load
-     * balancer.
+     * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
+     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can only
+     * route requests from clients with access to the VPC for the load balancer.
      * </p>
      */
     private String scheme;
@@ -133,8 +127,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * 
      * @param loadBalancerArn
      *        The Amazon Resource Name (ARN) of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancer withLoadBalancerArn(String loadBalancerArn) {
@@ -174,8 +167,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * 
      * @param dNSName
      *        The public DNS name of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancer withDNSName(String dNSName) {
@@ -185,13 +177,11 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Amazon Route 53 hosted zone associated with the load
-     * balancer.
+     * The ID of the Amazon Route 53 hosted zone associated with the load balancer.
      * </p>
      * 
      * @param canonicalHostedZoneId
-     *        The ID of the Amazon Route 53 hosted zone associated with the load
-     *        balancer.
+     *        The ID of the Amazon Route 53 hosted zone associated with the load balancer.
      */
 
     public void setCanonicalHostedZoneId(String canonicalHostedZoneId) {
@@ -200,12 +190,10 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Amazon Route 53 hosted zone associated with the load
-     * balancer.
+     * The ID of the Amazon Route 53 hosted zone associated with the load balancer.
      * </p>
      * 
-     * @return The ID of the Amazon Route 53 hosted zone associated with the
-     *         load balancer.
+     * @return The ID of the Amazon Route 53 hosted zone associated with the load balancer.
      */
 
     public String getCanonicalHostedZoneId() {
@@ -214,15 +202,12 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Amazon Route 53 hosted zone associated with the load
-     * balancer.
+     * The ID of the Amazon Route 53 hosted zone associated with the load balancer.
      * </p>
      * 
      * @param canonicalHostedZoneId
-     *        The ID of the Amazon Route 53 hosted zone associated with the load
-     *        balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the Amazon Route 53 hosted zone associated with the load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancer withCanonicalHostedZoneId(String canonicalHostedZoneId) {
@@ -262,8 +247,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * 
      * @param createdTime
      *        The date and time the load balancer was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancer withCreatedTime(java.util.Date createdTime) {
@@ -303,8 +287,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * 
      * @param loadBalancerName
      *        The name of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancer withLoadBalancerName(String loadBalancerName) {
@@ -314,31 +297,24 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The nodes of an Internet-facing load balancer have public IP addresses.
-     * The DNS name of an Internet-facing load balancer is publicly resolvable
-     * to the public IP addresses of the nodes. Therefore, Internet-facing load
+     * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
+     * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
      * balancers can route requests from clients over the Internet.
      * </p>
      * <p>
-     * The nodes of an internal load balancer have only private IP addresses.
-     * The DNS name of an internal load balancer is publicly resolvable to the
-     * private IP addresses of the nodes. Therefore, internal load balancers can
-     * only route requests from clients with access to the VPC for the load
-     * balancer.
+     * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
+     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can only
+     * route requests from clients with access to the VPC for the load balancer.
      * </p>
      * 
      * @param scheme
-     *        The nodes of an Internet-facing load balancer have public IP
-     *        addresses. The DNS name of an Internet-facing load balancer is
-     *        publicly resolvable to the public IP addresses of the nodes.
-     *        Therefore, Internet-facing load balancers can route requests from
-     *        clients over the Internet.</p>
+     *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
+     *        load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing
+     *        load balancers can route requests from clients over the Internet.</p>
      *        <p>
-     *        The nodes of an internal load balancer have only private IP
-     *        addresses. The DNS name of an internal load balancer is publicly
-     *        resolvable to the private IP addresses of the nodes. Therefore,
-     *        internal load balancers can only route requests from clients with
-     *        access to the VPC for the load balancer.
+     *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
+     *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
+     *        balancers can only route requests from clients with access to the VPC for the load balancer.
      * @see LoadBalancerSchemeEnum
      */
 
@@ -348,30 +324,23 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The nodes of an Internet-facing load balancer have public IP addresses.
-     * The DNS name of an Internet-facing load balancer is publicly resolvable
-     * to the public IP addresses of the nodes. Therefore, Internet-facing load
+     * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
+     * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
      * balancers can route requests from clients over the Internet.
      * </p>
      * <p>
-     * The nodes of an internal load balancer have only private IP addresses.
-     * The DNS name of an internal load balancer is publicly resolvable to the
-     * private IP addresses of the nodes. Therefore, internal load balancers can
-     * only route requests from clients with access to the VPC for the load
-     * balancer.
+     * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
+     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can only
+     * route requests from clients with access to the VPC for the load balancer.
      * </p>
      * 
-     * @return The nodes of an Internet-facing load balancer have public IP
-     *         addresses. The DNS name of an Internet-facing load balancer is
-     *         publicly resolvable to the public IP addresses of the nodes.
-     *         Therefore, Internet-facing load balancers can route requests from
-     *         clients over the Internet.</p>
+     * @return The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
+     *         Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore,
+     *         Internet-facing load balancers can route requests from clients over the Internet.</p>
      *         <p>
-     *         The nodes of an internal load balancer have only private IP
-     *         addresses. The DNS name of an internal load balancer is publicly
-     *         resolvable to the private IP addresses of the nodes. Therefore,
-     *         internal load balancers can only route requests from clients with
-     *         access to the VPC for the load balancer.
+     *         The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
+     *         balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
+     *         balancers can only route requests from clients with access to the VPC for the load balancer.
      * @see LoadBalancerSchemeEnum
      */
 
@@ -381,33 +350,25 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The nodes of an Internet-facing load balancer have public IP addresses.
-     * The DNS name of an Internet-facing load balancer is publicly resolvable
-     * to the public IP addresses of the nodes. Therefore, Internet-facing load
+     * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
+     * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
      * balancers can route requests from clients over the Internet.
      * </p>
      * <p>
-     * The nodes of an internal load balancer have only private IP addresses.
-     * The DNS name of an internal load balancer is publicly resolvable to the
-     * private IP addresses of the nodes. Therefore, internal load balancers can
-     * only route requests from clients with access to the VPC for the load
-     * balancer.
+     * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
+     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can only
+     * route requests from clients with access to the VPC for the load balancer.
      * </p>
      * 
      * @param scheme
-     *        The nodes of an Internet-facing load balancer have public IP
-     *        addresses. The DNS name of an Internet-facing load balancer is
-     *        publicly resolvable to the public IP addresses of the nodes.
-     *        Therefore, Internet-facing load balancers can route requests from
-     *        clients over the Internet.</p>
+     *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
+     *        load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing
+     *        load balancers can route requests from clients over the Internet.</p>
      *        <p>
-     *        The nodes of an internal load balancer have only private IP
-     *        addresses. The DNS name of an internal load balancer is publicly
-     *        resolvable to the private IP addresses of the nodes. Therefore,
-     *        internal load balancers can only route requests from clients with
-     *        access to the VPC for the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
+     *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
+     *        balancers can only route requests from clients with access to the VPC for the load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerSchemeEnum
      */
 
@@ -418,31 +379,24 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The nodes of an Internet-facing load balancer have public IP addresses.
-     * The DNS name of an Internet-facing load balancer is publicly resolvable
-     * to the public IP addresses of the nodes. Therefore, Internet-facing load
+     * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
+     * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
      * balancers can route requests from clients over the Internet.
      * </p>
      * <p>
-     * The nodes of an internal load balancer have only private IP addresses.
-     * The DNS name of an internal load balancer is publicly resolvable to the
-     * private IP addresses of the nodes. Therefore, internal load balancers can
-     * only route requests from clients with access to the VPC for the load
-     * balancer.
+     * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
+     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can only
+     * route requests from clients with access to the VPC for the load balancer.
      * </p>
      * 
      * @param scheme
-     *        The nodes of an Internet-facing load balancer have public IP
-     *        addresses. The DNS name of an Internet-facing load balancer is
-     *        publicly resolvable to the public IP addresses of the nodes.
-     *        Therefore, Internet-facing load balancers can route requests from
-     *        clients over the Internet.</p>
+     *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
+     *        load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing
+     *        load balancers can route requests from clients over the Internet.</p>
      *        <p>
-     *        The nodes of an internal load balancer have only private IP
-     *        addresses. The DNS name of an internal load balancer is publicly
-     *        resolvable to the private IP addresses of the nodes. Therefore,
-     *        internal load balancers can only route requests from clients with
-     *        access to the VPC for the load balancer.
+     *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
+     *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
+     *        balancers can only route requests from clients with access to the VPC for the load balancer.
      * @see LoadBalancerSchemeEnum
      */
 
@@ -452,33 +406,25 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The nodes of an Internet-facing load balancer have public IP addresses.
-     * The DNS name of an Internet-facing load balancer is publicly resolvable
-     * to the public IP addresses of the nodes. Therefore, Internet-facing load
+     * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
+     * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
      * balancers can route requests from clients over the Internet.
      * </p>
      * <p>
-     * The nodes of an internal load balancer have only private IP addresses.
-     * The DNS name of an internal load balancer is publicly resolvable to the
-     * private IP addresses of the nodes. Therefore, internal load balancers can
-     * only route requests from clients with access to the VPC for the load
-     * balancer.
+     * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
+     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can only
+     * route requests from clients with access to the VPC for the load balancer.
      * </p>
      * 
      * @param scheme
-     *        The nodes of an Internet-facing load balancer have public IP
-     *        addresses. The DNS name of an Internet-facing load balancer is
-     *        publicly resolvable to the public IP addresses of the nodes.
-     *        Therefore, Internet-facing load balancers can route requests from
-     *        clients over the Internet.</p>
+     *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
+     *        load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing
+     *        load balancers can route requests from clients over the Internet.</p>
      *        <p>
-     *        The nodes of an internal load balancer have only private IP
-     *        addresses. The DNS name of an internal load balancer is publicly
-     *        resolvable to the private IP addresses of the nodes. Therefore,
-     *        internal load balancers can only route requests from clients with
-     *        access to the VPC for the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
+     *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
+     *        balancers can only route requests from clients with access to the VPC for the load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerSchemeEnum
      */
 
@@ -519,8 +465,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * 
      * @param vpcId
      *        The ID of the VPC for the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancer withVpcId(String vpcId) {
@@ -560,8 +505,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancer withState(LoadBalancerState state) {
@@ -603,8 +547,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTypeEnum
      */
 
@@ -634,8 +577,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTypeEnum
      */
 
@@ -665,15 +607,13 @@ public class LoadBalancer implements Serializable, Cloneable {
      *        The Availability Zones for the load balancer.
      */
 
-    public void setAvailabilityZones(
-            java.util.Collection<AvailabilityZone> availabilityZones) {
+    public void setAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
         if (availabilityZones == null) {
             this.availabilityZones = null;
             return;
         }
 
-        this.availabilityZones = new java.util.ArrayList<AvailabilityZone>(
-                availabilityZones);
+        this.availabilityZones = new java.util.ArrayList<AvailabilityZone>(availabilityZones);
     }
 
     /**
@@ -681,23 +621,19 @@ public class LoadBalancer implements Serializable, Cloneable {
      * The Availability Zones for the load balancer.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
-     * {@link #withAvailabilityZones(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param availabilityZones
      *        The Availability Zones for the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LoadBalancer withAvailabilityZones(
-            AvailabilityZone... availabilityZones) {
+    public LoadBalancer withAvailabilityZones(AvailabilityZone... availabilityZones) {
         if (this.availabilityZones == null) {
-            setAvailabilityZones(new java.util.ArrayList<AvailabilityZone>(
-                    availabilityZones.length));
+            setAvailabilityZones(new java.util.ArrayList<AvailabilityZone>(availabilityZones.length));
         }
         for (AvailabilityZone ele : availabilityZones) {
             this.availabilityZones.add(ele);
@@ -712,12 +648,10 @@ public class LoadBalancer implements Serializable, Cloneable {
      * 
      * @param availabilityZones
      *        The Availability Zones for the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LoadBalancer withAvailabilityZones(
-            java.util.Collection<AvailabilityZone> availabilityZones) {
+    public LoadBalancer withAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
         setAvailabilityZones(availabilityZones);
         return this;
     }
@@ -757,22 +691,19 @@ public class LoadBalancer implements Serializable, Cloneable {
      * The IDs of the security groups for the load balancer.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroups(java.util.Collection)} or
-     * {@link #withSecurityGroups(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param securityGroups
      *        The IDs of the security groups for the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancer withSecurityGroups(String... securityGroups) {
         if (this.securityGroups == null) {
-            setSecurityGroups(new java.util.ArrayList<String>(
-                    securityGroups.length));
+            setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
         }
         for (String ele : securityGroups) {
             this.securityGroups.add(ele);
@@ -787,19 +718,16 @@ public class LoadBalancer implements Serializable, Cloneable {
      * 
      * @param securityGroups
      *        The IDs of the security groups for the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LoadBalancer withSecurityGroups(
-            java.util.Collection<String> securityGroups) {
+    public LoadBalancer withSecurityGroups(java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -814,8 +742,7 @@ public class LoadBalancer implements Serializable, Cloneable {
         if (getDNSName() != null)
             sb.append("DNSName: " + getDNSName() + ",");
         if (getCanonicalHostedZoneId() != null)
-            sb.append("CanonicalHostedZoneId: " + getCanonicalHostedZoneId()
-                    + ",");
+            sb.append("CanonicalHostedZoneId: " + getCanonicalHostedZoneId() + ",");
         if (getCreatedTime() != null)
             sb.append("CreatedTime: " + getCreatedTime() + ",");
         if (getLoadBalancerName() != null)
@@ -846,68 +773,49 @@ public class LoadBalancer implements Serializable, Cloneable {
         if (obj instanceof LoadBalancer == false)
             return false;
         LoadBalancer other = (LoadBalancer) obj;
-        if (other.getLoadBalancerArn() == null
-                ^ this.getLoadBalancerArn() == null)
+        if (other.getLoadBalancerArn() == null ^ this.getLoadBalancerArn() == null)
             return false;
-        if (other.getLoadBalancerArn() != null
-                && other.getLoadBalancerArn().equals(this.getLoadBalancerArn()) == false)
+        if (other.getLoadBalancerArn() != null && other.getLoadBalancerArn().equals(this.getLoadBalancerArn()) == false)
             return false;
         if (other.getDNSName() == null ^ this.getDNSName() == null)
             return false;
-        if (other.getDNSName() != null
-                && other.getDNSName().equals(this.getDNSName()) == false)
+        if (other.getDNSName() != null && other.getDNSName().equals(this.getDNSName()) == false)
             return false;
-        if (other.getCanonicalHostedZoneId() == null
-                ^ this.getCanonicalHostedZoneId() == null)
+        if (other.getCanonicalHostedZoneId() == null ^ this.getCanonicalHostedZoneId() == null)
             return false;
-        if (other.getCanonicalHostedZoneId() != null
-                && other.getCanonicalHostedZoneId().equals(
-                        this.getCanonicalHostedZoneId()) == false)
+        if (other.getCanonicalHostedZoneId() != null && other.getCanonicalHostedZoneId().equals(this.getCanonicalHostedZoneId()) == false)
             return false;
         if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
             return false;
-        if (other.getCreatedTime() != null
-                && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
-        if (other.getLoadBalancerName() == null
-                ^ this.getLoadBalancerName() == null)
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null)
             return false;
-        if (other.getLoadBalancerName() != null
-                && other.getLoadBalancerName().equals(
-                        this.getLoadBalancerName()) == false)
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false)
             return false;
         if (other.getScheme() == null ^ this.getScheme() == null)
             return false;
-        if (other.getScheme() != null
-                && other.getScheme().equals(this.getScheme()) == false)
+        if (other.getScheme() != null && other.getScheme().equals(this.getScheme()) == false)
             return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
-        if (other.getAvailabilityZones() == null
-                ^ this.getAvailabilityZones() == null)
+        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null)
             return false;
-        if (other.getAvailabilityZones() != null
-                && other.getAvailabilityZones().equals(
-                        this.getAvailabilityZones()) == false)
+        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false)
             return false;
-        if (other.getSecurityGroups() == null
-                ^ this.getSecurityGroups() == null)
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
             return false;
-        if (other.getSecurityGroups() != null
-                && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
         return true;
     }
@@ -917,39 +825,17 @@ public class LoadBalancer implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerArn() == null) ? 0 : getLoadBalancerArn()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getDNSName() == null) ? 0 : getDNSName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCanonicalHostedZoneId() == null) ? 0
-                        : getCanonicalHostedZoneId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getScheme() == null) ? 0 : getScheme().hashCode());
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZones() == null) ? 0
-                        : getAvailabilityZones().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroups() == null) ? 0 : getSecurityGroups()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerArn() == null) ? 0 : getLoadBalancerArn().hashCode());
+        hashCode = prime * hashCode + ((getDNSName() == null) ? 0 : getDNSName().hashCode());
+        hashCode = prime * hashCode + ((getCanonicalHostedZoneId() == null) ? 0 : getCanonicalHostedZoneId().hashCode());
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode());
+        hashCode = prime * hashCode + ((getScheme() == null) ? 0 : getScheme().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         return hashCode;
     }
 
@@ -958,9 +844,7 @@ public class LoadBalancer implements Serializable, Cloneable {
         try {
             return (LoadBalancer) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

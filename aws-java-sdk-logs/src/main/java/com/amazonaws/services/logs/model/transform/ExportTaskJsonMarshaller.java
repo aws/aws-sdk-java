@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model.transform;
 
@@ -34,60 +32,48 @@ public class ExportTaskJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ExportTask exportTask,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(ExportTask exportTask, StructuredJsonGenerator jsonGenerator) {
 
         if (exportTask == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (exportTask.getTaskId() != null) {
-                jsonGenerator.writeFieldName("taskId").writeValue(
-                        exportTask.getTaskId());
+                jsonGenerator.writeFieldName("taskId").writeValue(exportTask.getTaskId());
             }
             if (exportTask.getTaskName() != null) {
-                jsonGenerator.writeFieldName("taskName").writeValue(
-                        exportTask.getTaskName());
+                jsonGenerator.writeFieldName("taskName").writeValue(exportTask.getTaskName());
             }
             if (exportTask.getLogGroupName() != null) {
-                jsonGenerator.writeFieldName("logGroupName").writeValue(
-                        exportTask.getLogGroupName());
+                jsonGenerator.writeFieldName("logGroupName").writeValue(exportTask.getLogGroupName());
             }
             if (exportTask.getFrom() != null) {
-                jsonGenerator.writeFieldName("from").writeValue(
-                        exportTask.getFrom());
+                jsonGenerator.writeFieldName("from").writeValue(exportTask.getFrom());
             }
             if (exportTask.getTo() != null) {
-                jsonGenerator.writeFieldName("to").writeValue(
-                        exportTask.getTo());
+                jsonGenerator.writeFieldName("to").writeValue(exportTask.getTo());
             }
             if (exportTask.getDestination() != null) {
-                jsonGenerator.writeFieldName("destination").writeValue(
-                        exportTask.getDestination());
+                jsonGenerator.writeFieldName("destination").writeValue(exportTask.getDestination());
             }
             if (exportTask.getDestinationPrefix() != null) {
-                jsonGenerator.writeFieldName("destinationPrefix").writeValue(
-                        exportTask.getDestinationPrefix());
+                jsonGenerator.writeFieldName("destinationPrefix").writeValue(exportTask.getDestinationPrefix());
             }
             if (exportTask.getStatus() != null) {
                 jsonGenerator.writeFieldName("status");
-                ExportTaskStatusJsonMarshaller.getInstance().marshall(
-                        exportTask.getStatus(), jsonGenerator);
+                ExportTaskStatusJsonMarshaller.getInstance().marshall(exportTask.getStatus(), jsonGenerator);
             }
             if (exportTask.getExecutionInfo() != null) {
                 jsonGenerator.writeFieldName("executionInfo");
-                ExportTaskExecutionInfoJsonMarshaller.getInstance().marshall(
-                        exportTask.getExecutionInfo(), jsonGenerator);
+                ExportTaskExecutionInfoJsonMarshaller.getInstance().marshall(exportTask.getExecutionInfo(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

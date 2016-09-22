@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
 
@@ -22,20 +20,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for <a>DescribeStacks</a> action.
  * </p>
  */
-public class DescribeStacksRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeStacksRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or the unique stack ID that is associated with the stack, which
-     * are not always interchangeable:
+     * The name or the unique stack ID that is associated with the stack, which are not always interchangeable:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Running stacks: You can specify either the stack's name or its unique
-     * stack ID.
+     * Running stacks: You can specify either the stack's name or its unique stack ID.
      * </p>
      * </li>
      * <li>
@@ -51,22 +45,19 @@ public class DescribeStacksRequest extends
     private String stackName;
     /**
      * <p>
-     * A string that identifies the next page of stacks that you want to
-     * retrieve.
+     * A string that identifies the next page of stacks that you want to retrieve.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The name or the unique stack ID that is associated with the stack, which
-     * are not always interchangeable:
+     * The name or the unique stack ID that is associated with the stack, which are not always interchangeable:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Running stacks: You can specify either the stack's name or its unique
-     * stack ID.
+     * Running stacks: You can specify either the stack's name or its unique stack ID.
      * </p>
      * </li>
      * <li>
@@ -80,13 +71,12 @@ public class DescribeStacksRequest extends
      * </p>
      * 
      * @param stackName
-     *        The name or the unique stack ID that is associated with the stack,
-     *        which are not always interchangeable:</p>
+     *        The name or the unique stack ID that is associated with the stack, which are not always
+     *        interchangeable:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Running stacks: You can specify either the stack's name or its
-     *        unique stack ID.
+     *        Running stacks: You can specify either the stack's name or its unique stack ID.
      *        </p>
      *        </li>
      *        <li>
@@ -105,14 +95,12 @@ public class DescribeStacksRequest extends
 
     /**
      * <p>
-     * The name or the unique stack ID that is associated with the stack, which
-     * are not always interchangeable:
+     * The name or the unique stack ID that is associated with the stack, which are not always interchangeable:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Running stacks: You can specify either the stack's name or its unique
-     * stack ID.
+     * Running stacks: You can specify either the stack's name or its unique stack ID.
      * </p>
      * </li>
      * <li>
@@ -125,13 +113,12 @@ public class DescribeStacksRequest extends
      * Default: There is no default value.
      * </p>
      * 
-     * @return The name or the unique stack ID that is associated with the
-     *         stack, which are not always interchangeable:</p>
+     * @return The name or the unique stack ID that is associated with the stack, which are not always
+     *         interchangeable:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Running stacks: You can specify either the stack's name or its
-     *         unique stack ID.
+     *         Running stacks: You can specify either the stack's name or its unique stack ID.
      *         </p>
      *         </li>
      *         <li>
@@ -150,14 +137,12 @@ public class DescribeStacksRequest extends
 
     /**
      * <p>
-     * The name or the unique stack ID that is associated with the stack, which
-     * are not always interchangeable:
+     * The name or the unique stack ID that is associated with the stack, which are not always interchangeable:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Running stacks: You can specify either the stack's name or its unique
-     * stack ID.
+     * Running stacks: You can specify either the stack's name or its unique stack ID.
      * </p>
      * </li>
      * <li>
@@ -171,13 +156,12 @@ public class DescribeStacksRequest extends
      * </p>
      * 
      * @param stackName
-     *        The name or the unique stack ID that is associated with the stack,
-     *        which are not always interchangeable:</p>
+     *        The name or the unique stack ID that is associated with the stack, which are not always
+     *        interchangeable:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Running stacks: You can specify either the stack's name or its
-     *        unique stack ID.
+     *        Running stacks: You can specify either the stack's name or its unique stack ID.
      *        </p>
      *        </li>
      *        <li>
@@ -188,8 +172,7 @@ public class DescribeStacksRequest extends
      *        </ul>
      *        <p>
      *        Default: There is no default value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStacksRequest withStackName(String stackName) {
@@ -199,13 +182,11 @@ public class DescribeStacksRequest extends
 
     /**
      * <p>
-     * A string that identifies the next page of stacks that you want to
-     * retrieve.
+     * A string that identifies the next page of stacks that you want to retrieve.
      * </p>
      * 
      * @param nextToken
-     *        A string that identifies the next page of stacks that you want to
-     *        retrieve.
+     *        A string that identifies the next page of stacks that you want to retrieve.
      */
 
     public void setNextToken(String nextToken) {
@@ -214,12 +195,10 @@ public class DescribeStacksRequest extends
 
     /**
      * <p>
-     * A string that identifies the next page of stacks that you want to
-     * retrieve.
+     * A string that identifies the next page of stacks that you want to retrieve.
      * </p>
      * 
-     * @return A string that identifies the next page of stacks that you want to
-     *         retrieve.
+     * @return A string that identifies the next page of stacks that you want to retrieve.
      */
 
     public String getNextToken() {
@@ -228,15 +207,12 @@ public class DescribeStacksRequest extends
 
     /**
      * <p>
-     * A string that identifies the next page of stacks that you want to
-     * retrieve.
+     * A string that identifies the next page of stacks that you want to retrieve.
      * </p>
      * 
      * @param nextToken
-     *        A string that identifies the next page of stacks that you want to
-     *        retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A string that identifies the next page of stacks that you want to retrieve.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStacksRequest withNextToken(String nextToken) {
@@ -245,8 +221,7 @@ public class DescribeStacksRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -276,13 +251,11 @@ public class DescribeStacksRequest extends
         DescribeStacksRequest other = (DescribeStacksRequest) obj;
         if (other.getStackName() == null ^ this.getStackName() == null)
             return false;
-        if (other.getStackName() != null
-                && other.getStackName().equals(this.getStackName()) == false)
+        if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -292,10 +265,8 @@ public class DescribeStacksRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStackName() == null) ? 0 : getStackName().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

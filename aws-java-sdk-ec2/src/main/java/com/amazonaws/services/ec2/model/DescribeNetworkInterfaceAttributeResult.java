@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,8 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of DescribeNetworkInterfaceAttribute.
  * </p>
  */
-public class DescribeNetworkInterfaceAttributeResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -89,12 +86,10 @@ public class DescribeNetworkInterfaceAttributeResult extends
      * 
      * @param networkInterfaceId
      *        The ID of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfaceAttributeResult withNetworkInterfaceId(
-            String networkInterfaceId) {
+    public DescribeNetworkInterfaceAttributeResult withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
         return this;
     }
@@ -131,12 +126,10 @@ public class DescribeNetworkInterfaceAttributeResult extends
      * 
      * @param description
      *        The description of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfaceAttributeResult withDescription(
-            String description) {
+    public DescribeNetworkInterfaceAttributeResult withDescription(String description) {
         setDescription(description);
         return this;
     }
@@ -173,12 +166,10 @@ public class DescribeNetworkInterfaceAttributeResult extends
      * 
      * @param sourceDestCheck
      *        Indicates whether source/destination checking is enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfaceAttributeResult withSourceDestCheck(
-            Boolean sourceDestCheck) {
+    public DescribeNetworkInterfaceAttributeResult withSourceDestCheck(Boolean sourceDestCheck) {
         setSourceDestCheck(sourceDestCheck);
         return this;
     }
@@ -225,8 +216,7 @@ public class DescribeNetworkInterfaceAttributeResult extends
             return;
         }
 
-        this.groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
-                groups);
+        this.groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(groups);
     }
 
     /**
@@ -234,23 +224,19 @@ public class DescribeNetworkInterfaceAttributeResult extends
      * The security groups associated with the network interface.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGroups(java.util.Collection)} or
-     * {@link #withGroups(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param groups
      *        The security groups associated with the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfaceAttributeResult withGroups(
-            GroupIdentifier... groups) {
+    public DescribeNetworkInterfaceAttributeResult withGroups(GroupIdentifier... groups) {
         if (this.groups == null) {
-            setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
-                    groups.length));
+            setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(groups.length));
         }
         for (GroupIdentifier ele : groups) {
             this.groups.add(ele);
@@ -265,12 +251,10 @@ public class DescribeNetworkInterfaceAttributeResult extends
      * 
      * @param groups
      *        The security groups associated with the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfaceAttributeResult withGroups(
-            java.util.Collection<GroupIdentifier> groups) {
+    public DescribeNetworkInterfaceAttributeResult withGroups(java.util.Collection<GroupIdentifier> groups) {
         setGroups(groups);
         return this;
     }
@@ -307,19 +291,16 @@ public class DescribeNetworkInterfaceAttributeResult extends
      * 
      * @param attachment
      *        The attachment (if any) of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfaceAttributeResult withAttachment(
-            NetworkInterfaceAttachment attachment) {
+    public DescribeNetworkInterfaceAttributeResult withAttachment(NetworkInterfaceAttachment attachment) {
         setAttachment(attachment);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -353,33 +334,25 @@ public class DescribeNetworkInterfaceAttributeResult extends
         if (obj instanceof DescribeNetworkInterfaceAttributeResult == false)
             return false;
         DescribeNetworkInterfaceAttributeResult other = (DescribeNetworkInterfaceAttributeResult) obj;
-        if (other.getNetworkInterfaceId() == null
-                ^ this.getNetworkInterfaceId() == null)
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
-        if (other.getNetworkInterfaceId() != null
-                && other.getNetworkInterfaceId().equals(
-                        this.getNetworkInterfaceId()) == false)
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getSourceDestCheck() == null
-                ^ this.getSourceDestCheck() == null)
+        if (other.getSourceDestCheck() == null ^ this.getSourceDestCheck() == null)
             return false;
-        if (other.getSourceDestCheck() != null
-                && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
+        if (other.getSourceDestCheck() != null && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
             return false;
         if (other.getGroups() == null ^ this.getGroups() == null)
             return false;
-        if (other.getGroups() != null
-                && other.getGroups().equals(this.getGroups()) == false)
+        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
             return false;
         if (other.getAttachment() == null ^ this.getAttachment() == null)
             return false;
-        if (other.getAttachment() != null
-                && other.getAttachment().equals(this.getAttachment()) == false)
+        if (other.getAttachment() != null && other.getAttachment().equals(this.getAttachment()) == false)
             return false;
         return true;
     }
@@ -389,21 +362,11 @@ public class DescribeNetworkInterfaceAttributeResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaceId() == null) ? 0
-                        : getNetworkInterfaceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getGroups() == null) ? 0 : getGroups().hashCode());
-        hashCode = prime * hashCode
-                + ((getAttachment() == null) ? 0 : getAttachment().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck().hashCode());
+        hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
+        hashCode = prime * hashCode + ((getAttachment() == null) ? 0 : getAttachment().hashCode());
         return hashCode;
     }
 
@@ -412,9 +375,7 @@ public class DescribeNetworkInterfaceAttributeResult extends
         try {
             return (DescribeNetworkInterfaceAttributeResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

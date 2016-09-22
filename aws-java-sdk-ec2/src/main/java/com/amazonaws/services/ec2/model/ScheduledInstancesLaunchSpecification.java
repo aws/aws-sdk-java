@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -21,13 +19,11 @@ import java.io.Serializable;
  * Describes the launch specification for a Scheduled Instance.
  * </p>
  * <p>
- * If you are launching the Scheduled Instance in EC2-VPC, you must specify the
- * ID of the subnet. You can specify the subnet using either
- * <code>SubnetId</code> or <code>NetworkInterface</code>.
+ * If you are launching the Scheduled Instance in EC2-VPC, you must specify the ID of the subnet. You can specify the
+ * subnet using either <code>SubnetId</code> or <code>NetworkInterface</code>.
  * </p>
  */
-public class ScheduledInstancesLaunchSpecification implements Serializable,
-        Cloneable {
+public class ScheduledInstancesLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -109,11 +105,9 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
     private ScheduledInstancesIamInstanceProfile iamInstanceProfile;
     /**
      * <p>
-     * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS-optimized instance.
+     * Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -153,8 +147,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @param imageId
      *        The ID of the Amazon Machine Image (AMI).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledInstancesLaunchSpecification withImageId(String imageId) {
@@ -194,8 +187,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @param keyName
      *        The name of the key pair.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledInstancesLaunchSpecification withKeyName(String keyName) {
@@ -227,15 +219,13 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      *        The IDs of one or more security groups.
      */
 
-    public void setSecurityGroupIds(
-            java.util.Collection<String> securityGroupIds) {
+    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         if (securityGroupIds == null) {
             this.securityGroupIds = null;
             return;
         }
 
-        this.securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(
-                securityGroupIds);
+        this.securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(securityGroupIds);
     }
 
     /**
@@ -243,23 +233,19 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * The IDs of one or more security groups.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or
-     * {@link #withSecurityGroupIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param securityGroupIds
      *        The IDs of one or more security groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesLaunchSpecification withSecurityGroupIds(
-            String... securityGroupIds) {
+    public ScheduledInstancesLaunchSpecification withSecurityGroupIds(String... securityGroupIds) {
         if (this.securityGroupIds == null) {
-            setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    securityGroupIds.length));
+            setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(securityGroupIds.length));
         }
         for (String ele : securityGroupIds) {
             this.securityGroupIds.add(ele);
@@ -274,12 +260,10 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @param securityGroupIds
      *        The IDs of one or more security groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesLaunchSpecification withSecurityGroupIds(
-            java.util.Collection<String> securityGroupIds) {
+    public ScheduledInstancesLaunchSpecification withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         setSecurityGroupIds(securityGroupIds);
         return this;
     }
@@ -316,8 +300,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @param userData
      *        The base64-encoded MIME user data.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledInstancesLaunchSpecification withUserData(String userData) {
@@ -357,12 +340,10 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @param placement
      *        The placement information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesLaunchSpecification withPlacement(
-            ScheduledInstancesPlacement placement) {
+    public ScheduledInstancesLaunchSpecification withPlacement(ScheduledInstancesPlacement placement) {
         setPlacement(placement);
         return this;
     }
@@ -399,8 +380,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @param kernelId
      *        The ID of the kernel.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledInstancesLaunchSpecification withKernelId(String kernelId) {
@@ -440,12 +420,10 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @param instanceType
      *        The instance type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesLaunchSpecification withInstanceType(
-            String instanceType) {
+    public ScheduledInstancesLaunchSpecification withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
     }
@@ -482,8 +460,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @param ramdiskId
      *        The ID of the RAM disk.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledInstancesLaunchSpecification withRamdiskId(String ramdiskId) {
@@ -515,15 +492,13 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      *        One or more block device mapping entries.
      */
 
-    public void setBlockDeviceMappings(
-            java.util.Collection<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings) {
+    public void setBlockDeviceMappings(java.util.Collection<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
             return;
         }
 
-        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping>(
-                blockDeviceMappings);
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping>(blockDeviceMappings);
     }
 
     /**
@@ -531,23 +506,19 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * One or more block device mapping entries.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
-     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param blockDeviceMappings
      *        One or more block device mapping entries.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesLaunchSpecification withBlockDeviceMappings(
-            ScheduledInstancesBlockDeviceMapping... blockDeviceMappings) {
+    public ScheduledInstancesLaunchSpecification withBlockDeviceMappings(ScheduledInstancesBlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
-            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping>(
-                    blockDeviceMappings.length));
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping>(blockDeviceMappings.length));
         }
         for (ScheduledInstancesBlockDeviceMapping ele : blockDeviceMappings) {
             this.blockDeviceMappings.add(ele);
@@ -562,12 +533,10 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @param blockDeviceMappings
      *        One or more block device mapping entries.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesLaunchSpecification withBlockDeviceMappings(
-            java.util.Collection<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings) {
+    public ScheduledInstancesLaunchSpecification withBlockDeviceMappings(java.util.Collection<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
         return this;
     }
@@ -604,12 +573,10 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @param monitoring
      *        Enable or disable monitoring for the instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesLaunchSpecification withMonitoring(
-            ScheduledInstancesMonitoring monitoring) {
+    public ScheduledInstancesLaunchSpecification withMonitoring(ScheduledInstancesMonitoring monitoring) {
         setMonitoring(monitoring);
         return this;
     }
@@ -646,8 +613,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @param subnetId
      *        The ID of the subnet in which to launch the instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledInstancesLaunchSpecification withSubnetId(String subnetId) {
@@ -679,15 +645,13 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      *        One or more network interfaces.
      */
 
-    public void setNetworkInterfaces(
-            java.util.Collection<ScheduledInstancesNetworkInterface> networkInterfaces) {
+    public void setNetworkInterfaces(java.util.Collection<ScheduledInstancesNetworkInterface> networkInterfaces) {
         if (networkInterfaces == null) {
             this.networkInterfaces = null;
             return;
         }
 
-        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface>(
-                networkInterfaces);
+        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface>(networkInterfaces);
     }
 
     /**
@@ -695,23 +659,19 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * One or more network interfaces.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNetworkInterfaces(java.util.Collection)} or
-     * {@link #withNetworkInterfaces(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param networkInterfaces
      *        One or more network interfaces.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesLaunchSpecification withNetworkInterfaces(
-            ScheduledInstancesNetworkInterface... networkInterfaces) {
+    public ScheduledInstancesLaunchSpecification withNetworkInterfaces(ScheduledInstancesNetworkInterface... networkInterfaces) {
         if (this.networkInterfaces == null) {
-            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface>(
-                    networkInterfaces.length));
+            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface>(networkInterfaces.length));
         }
         for (ScheduledInstancesNetworkInterface ele : networkInterfaces) {
             this.networkInterfaces.add(ele);
@@ -726,12 +686,10 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @param networkInterfaces
      *        One or more network interfaces.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesLaunchSpecification withNetworkInterfaces(
-            java.util.Collection<ScheduledInstancesNetworkInterface> networkInterfaces) {
+    public ScheduledInstancesLaunchSpecification withNetworkInterfaces(java.util.Collection<ScheduledInstancesNetworkInterface> networkInterfaces) {
         setNetworkInterfaces(networkInterfaces);
         return this;
     }
@@ -745,8 +703,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      *        The IAM instance profile.
      */
 
-    public void setIamInstanceProfile(
-            ScheduledInstancesIamInstanceProfile iamInstanceProfile) {
+    public void setIamInstanceProfile(ScheduledInstancesIamInstanceProfile iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
     }
 
@@ -769,35 +726,29 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @param iamInstanceProfile
      *        The IAM instance profile.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesLaunchSpecification withIamInstanceProfile(
-            ScheduledInstancesIamInstanceProfile iamInstanceProfile) {
+    public ScheduledInstancesLaunchSpecification withIamInstanceProfile(ScheduledInstancesIamInstanceProfile iamInstanceProfile) {
         setIamInstanceProfile(iamInstanceProfile);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS-optimized instance.
+     * Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instances are optimized for EBS I/O. This
-     *        optimization provides dedicated throughput to Amazon EBS and an
-     *        optimized configuration stack to provide optimal EBS I/O
-     *        performance. This optimization isn't available with all instance
-     *        types. Additional usage charges apply when using an EBS-optimized
-     *        instance.</p>
+     *        Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput
+     *        to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
+     *        optimization isn't available with all instance types. Additional usage charges apply when using an
+     *        EBS-optimized instance.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -808,22 +759,18 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS-optimized instance.
+     * Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the instances are optimized for EBS I/O. This
-     *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal EBS I/O
-     *         performance. This optimization isn't available with all instance
-     *         types. Additional usage charges apply when using an EBS-optimized
-     *         instance.</p>
+     * @return Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated
+     *         throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance.
+     *         This optimization isn't available with all instance types. Additional usage charges apply when using an
+     *         EBS-optimized instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -834,53 +781,43 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS-optimized instance.
+     * Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instances are optimized for EBS I/O. This
-     *        optimization provides dedicated throughput to Amazon EBS and an
-     *        optimized configuration stack to provide optimal EBS I/O
-     *        performance. This optimization isn't available with all instance
-     *        types. Additional usage charges apply when using an EBS-optimized
-     *        instance.</p>
+     *        Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput
+     *        to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
+     *        optimization isn't available with all instance types. Additional usage charges apply when using an
+     *        EBS-optimized instance.</p>
      *        <p>
      *        Default: <code>false</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesLaunchSpecification withEbsOptimized(
-            Boolean ebsOptimized) {
+    public ScheduledInstancesLaunchSpecification withEbsOptimized(Boolean ebsOptimized) {
         setEbsOptimized(ebsOptimized);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS-optimized instance.
+     * Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the instances are optimized for EBS I/O. This
-     *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal EBS I/O
-     *         performance. This optimization isn't available with all instance
-     *         types. Additional usage charges apply when using an EBS-optimized
-     *         instance.</p>
+     * @return Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated
+     *         throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance.
+     *         This optimization isn't available with all instance types. Additional usage charges apply when using an
+     *         EBS-optimized instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -890,8 +827,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -945,81 +881,59 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
         ScheduledInstancesLaunchSpecification other = (ScheduledInstancesLaunchSpecification) obj;
         if (other.getImageId() == null ^ this.getImageId() == null)
             return false;
-        if (other.getImageId() != null
-                && other.getImageId().equals(this.getImageId()) == false)
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
             return false;
         if (other.getKeyName() == null ^ this.getKeyName() == null)
             return false;
-        if (other.getKeyName() != null
-                && other.getKeyName().equals(this.getKeyName()) == false)
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
-        if (other.getSecurityGroupIds() == null
-                ^ this.getSecurityGroupIds() == null)
+        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null)
             return false;
-        if (other.getSecurityGroupIds() != null
-                && other.getSecurityGroupIds().equals(
-                        this.getSecurityGroupIds()) == false)
+        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
             return false;
         if (other.getUserData() == null ^ this.getUserData() == null)
             return false;
-        if (other.getUserData() != null
-                && other.getUserData().equals(this.getUserData()) == false)
+        if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false)
             return false;
         if (other.getPlacement() == null ^ this.getPlacement() == null)
             return false;
-        if (other.getPlacement() != null
-                && other.getPlacement().equals(this.getPlacement()) == false)
+        if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false)
             return false;
         if (other.getKernelId() == null ^ this.getKernelId() == null)
             return false;
-        if (other.getKernelId() != null
-                && other.getKernelId().equals(this.getKernelId()) == false)
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
             return false;
-        if (other.getRamdiskId() != null
-                && other.getRamdiskId().equals(this.getRamdiskId()) == false)
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
             return false;
-        if (other.getBlockDeviceMappings() == null
-                ^ this.getBlockDeviceMappings() == null)
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
             return false;
-        if (other.getBlockDeviceMappings() != null
-                && other.getBlockDeviceMappings().equals(
-                        this.getBlockDeviceMappings()) == false)
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
         if (other.getMonitoring() == null ^ this.getMonitoring() == null)
             return false;
-        if (other.getMonitoring() != null
-                && other.getMonitoring().equals(this.getMonitoring()) == false)
+        if (other.getMonitoring() != null && other.getMonitoring().equals(this.getMonitoring()) == false)
             return false;
         if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
-        if (other.getSubnetId() != null
-                && other.getSubnetId().equals(this.getSubnetId()) == false)
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
-        if (other.getNetworkInterfaces() == null
-                ^ this.getNetworkInterfaces() == null)
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
             return false;
-        if (other.getNetworkInterfaces() != null
-                && other.getNetworkInterfaces().equals(
-                        this.getNetworkInterfaces()) == false)
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
             return false;
-        if (other.getIamInstanceProfile() == null
-                ^ this.getIamInstanceProfile() == null)
+        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null)
             return false;
-        if (other.getIamInstanceProfile() != null
-                && other.getIamInstanceProfile().equals(
-                        this.getIamInstanceProfile()) == false)
+        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false)
             return false;
         if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
             return false;
-        if (other.getEbsOptimized() != null
-                && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
+        if (other.getEbsOptimized() != null && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
             return false;
         return true;
     }
@@ -1029,46 +943,20 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getImageId() == null) ? 0 : getImageId().hashCode());
-        hashCode = prime * hashCode
-                + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getUserData() == null) ? 0 : getUserData().hashCode());
-        hashCode = prime * hashCode
-                + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
-        hashCode = prime * hashCode
-                + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBlockDeviceMappings() == null) ? 0
-                        : getBlockDeviceMappings().hashCode());
-        hashCode = prime * hashCode
-                + ((getMonitoring() == null) ? 0 : getMonitoring().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaces() == null) ? 0
-                        : getNetworkInterfaces().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIamInstanceProfile() == null) ? 0
-                        : getIamInstanceProfile().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEbsOptimized() == null) ? 0 : getEbsOptimized()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
+        hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
+        hashCode = prime * hashCode + ((getMonitoring() == null) ? 0 : getMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
+        hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
         return hashCode;
     }
 
@@ -1077,9 +965,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
         try {
             return (ScheduledInstancesLaunchSpecification) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

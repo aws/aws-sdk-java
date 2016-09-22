@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -39,8 +37,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
     private String message;
     /**
      * <p>
-     * The Boolean value that specifies whether the notification represents an
-     * error.
+     * The Boolean value that specifies whether the notification represents an error.
      * </p>
      */
     private Boolean error;
@@ -89,8 +86,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      * 
      * @param dateValue
      *        The date of the notification.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRunNotification withDate(java.util.Date dateValue) {
@@ -132,8 +128,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      * 
      * @param event
      *        The event for which a notification is sent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InspectorEvent
      */
 
@@ -163,8 +158,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      * 
      * @param event
      *        The event for which a notification is sent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InspectorEvent
      */
 
@@ -191,8 +185,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
 
     /**
      * @param message
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRunNotification withMessage(String message) {
@@ -202,13 +195,11 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Boolean value that specifies whether the notification represents an
-     * error.
+     * The Boolean value that specifies whether the notification represents an error.
      * </p>
      * 
      * @param error
-     *        The Boolean value that specifies whether the notification
-     *        represents an error.
+     *        The Boolean value that specifies whether the notification represents an error.
      */
 
     public void setError(Boolean error) {
@@ -217,12 +208,10 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Boolean value that specifies whether the notification represents an
-     * error.
+     * The Boolean value that specifies whether the notification represents an error.
      * </p>
      * 
-     * @return The Boolean value that specifies whether the notification
-     *         represents an error.
+     * @return The Boolean value that specifies whether the notification represents an error.
      */
 
     public Boolean getError() {
@@ -231,15 +220,12 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Boolean value that specifies whether the notification represents an
-     * error.
+     * The Boolean value that specifies whether the notification represents an error.
      * </p>
      * 
      * @param error
-     *        The Boolean value that specifies whether the notification
-     *        represents an error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Boolean value that specifies whether the notification represents an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRunNotification withError(Boolean error) {
@@ -249,12 +235,10 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Boolean value that specifies whether the notification represents an
-     * error.
+     * The Boolean value that specifies whether the notification represents an error.
      * </p>
      * 
-     * @return The Boolean value that specifies whether the notification
-     *         represents an error.
+     * @return The Boolean value that specifies whether the notification represents an error.
      */
 
     public Boolean isError() {
@@ -293,8 +277,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      * 
      * @param snsTopicArn
      *        The SNS topic to which the SNS notification is sent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRunNotification withSnsTopicArn(String snsTopicArn) {
@@ -336,13 +319,11 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      * 
      * @param snsPublishStatusCode
      *        The status code of the SNS notification.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssessmentRunNotificationSnsStatusCode
      */
 
-    public AssessmentRunNotification withSnsPublishStatusCode(
-            String snsPublishStatusCode) {
+    public AssessmentRunNotification withSnsPublishStatusCode(String snsPublishStatusCode) {
         setSnsPublishStatusCode(snsPublishStatusCode);
         return this;
     }
@@ -357,8 +338,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      * @see AssessmentRunNotificationSnsStatusCode
      */
 
-    public void setSnsPublishStatusCode(
-            AssessmentRunNotificationSnsStatusCode snsPublishStatusCode) {
+    public void setSnsPublishStatusCode(AssessmentRunNotificationSnsStatusCode snsPublishStatusCode) {
         this.snsPublishStatusCode = snsPublishStatusCode.toString();
     }
 
@@ -369,20 +349,17 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      * 
      * @param snsPublishStatusCode
      *        The status code of the SNS notification.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssessmentRunNotificationSnsStatusCode
      */
 
-    public AssessmentRunNotification withSnsPublishStatusCode(
-            AssessmentRunNotificationSnsStatusCode snsPublishStatusCode) {
+    public AssessmentRunNotification withSnsPublishStatusCode(AssessmentRunNotificationSnsStatusCode snsPublishStatusCode) {
         setSnsPublishStatusCode(snsPublishStatusCode);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -420,35 +397,27 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
         AssessmentRunNotification other = (AssessmentRunNotification) obj;
         if (other.getDate() == null ^ this.getDate() == null)
             return false;
-        if (other.getDate() != null
-                && other.getDate().equals(this.getDate()) == false)
+        if (other.getDate() != null && other.getDate().equals(this.getDate()) == false)
             return false;
         if (other.getEvent() == null ^ this.getEvent() == null)
             return false;
-        if (other.getEvent() != null
-                && other.getEvent().equals(this.getEvent()) == false)
+        if (other.getEvent() != null && other.getEvent().equals(this.getEvent()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         if (other.getError() == null ^ this.getError() == null)
             return false;
-        if (other.getError() != null
-                && other.getError().equals(this.getError()) == false)
+        if (other.getError() != null && other.getError().equals(this.getError()) == false)
             return false;
         if (other.getSnsTopicArn() == null ^ this.getSnsTopicArn() == null)
             return false;
-        if (other.getSnsTopicArn() != null
-                && other.getSnsTopicArn().equals(this.getSnsTopicArn()) == false)
+        if (other.getSnsTopicArn() != null && other.getSnsTopicArn().equals(this.getSnsTopicArn()) == false)
             return false;
-        if (other.getSnsPublishStatusCode() == null
-                ^ this.getSnsPublishStatusCode() == null)
+        if (other.getSnsPublishStatusCode() == null ^ this.getSnsPublishStatusCode() == null)
             return false;
-        if (other.getSnsPublishStatusCode() != null
-                && other.getSnsPublishStatusCode().equals(
-                        this.getSnsPublishStatusCode()) == false)
+        if (other.getSnsPublishStatusCode() != null && other.getSnsPublishStatusCode().equals(this.getSnsPublishStatusCode()) == false)
             return false;
         return true;
     }
@@ -458,21 +427,12 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDate() == null) ? 0 : getDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getEvent() == null) ? 0 : getEvent().hashCode());
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
-        hashCode = prime * hashCode
-                + ((getError() == null) ? 0 : getError().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnsPublishStatusCode() == null) ? 0
-                        : getSnsPublishStatusCode().hashCode());
+        hashCode = prime * hashCode + ((getDate() == null) ? 0 : getDate().hashCode());
+        hashCode = prime * hashCode + ((getEvent() == null) ? 0 : getEvent().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        hashCode = prime * hashCode + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode());
+        hashCode = prime * hashCode + ((getSnsPublishStatusCode() == null) ? 0 : getSnsPublishStatusCode().hashCode());
         return hashCode;
     }
 
@@ -481,9 +441,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
         try {
             return (AssessmentRunNotification) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

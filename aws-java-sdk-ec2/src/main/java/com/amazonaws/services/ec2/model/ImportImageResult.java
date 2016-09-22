@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output for ImportImage.
  * </p>
  */
-public class ImportImageResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -125,8 +121,7 @@ public class ImportImageResult extends
      * 
      * @param importTaskId
      *        The task ID of the import image task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageResult withImportTaskId(String importTaskId) {
@@ -166,8 +161,7 @@ public class ImportImageResult extends
      * 
      * @param architecture
      *        The architecture of the virtual machine.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageResult withArchitecture(String architecture) {
@@ -207,8 +201,7 @@ public class ImportImageResult extends
      * 
      * @param licenseType
      *        The license type of the virtual machine.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageResult withLicenseType(String licenseType) {
@@ -248,8 +241,7 @@ public class ImportImageResult extends
      * 
      * @param platform
      *        The operating system of the virtual machine.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageResult withPlatform(String platform) {
@@ -289,8 +281,7 @@ public class ImportImageResult extends
      * 
      * @param hypervisor
      *        The target hypervisor of the import task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageResult withHypervisor(String hypervisor) {
@@ -330,8 +321,7 @@ public class ImportImageResult extends
      * 
      * @param description
      *        A description of the import task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageResult withDescription(String description) {
@@ -363,15 +353,13 @@ public class ImportImageResult extends
      *        Information about the snapshots.
      */
 
-    public void setSnapshotDetails(
-            java.util.Collection<SnapshotDetail> snapshotDetails) {
+    public void setSnapshotDetails(java.util.Collection<SnapshotDetail> snapshotDetails) {
         if (snapshotDetails == null) {
             this.snapshotDetails = null;
             return;
         }
 
-        this.snapshotDetails = new com.amazonaws.internal.SdkInternalList<SnapshotDetail>(
-                snapshotDetails);
+        this.snapshotDetails = new com.amazonaws.internal.SdkInternalList<SnapshotDetail>(snapshotDetails);
     }
 
     /**
@@ -379,23 +367,19 @@ public class ImportImageResult extends
      * Information about the snapshots.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSnapshotDetails(java.util.Collection)} or
-     * {@link #withSnapshotDetails(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSnapshotDetails(java.util.Collection)} or {@link #withSnapshotDetails(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param snapshotDetails
      *        Information about the snapshots.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportImageResult withSnapshotDetails(
-            SnapshotDetail... snapshotDetails) {
+    public ImportImageResult withSnapshotDetails(SnapshotDetail... snapshotDetails) {
         if (this.snapshotDetails == null) {
-            setSnapshotDetails(new com.amazonaws.internal.SdkInternalList<SnapshotDetail>(
-                    snapshotDetails.length));
+            setSnapshotDetails(new com.amazonaws.internal.SdkInternalList<SnapshotDetail>(snapshotDetails.length));
         }
         for (SnapshotDetail ele : snapshotDetails) {
             this.snapshotDetails.add(ele);
@@ -410,12 +394,10 @@ public class ImportImageResult extends
      * 
      * @param snapshotDetails
      *        Information about the snapshots.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportImageResult withSnapshotDetails(
-            java.util.Collection<SnapshotDetail> snapshotDetails) {
+    public ImportImageResult withSnapshotDetails(java.util.Collection<SnapshotDetail> snapshotDetails) {
         setSnapshotDetails(snapshotDetails);
         return this;
     }
@@ -426,8 +408,7 @@ public class ImportImageResult extends
      * </p>
      * 
      * @param imageId
-     *        The ID of the Amazon Machine Image (AMI) created by the import
-     *        task.
+     *        The ID of the Amazon Machine Image (AMI) created by the import task.
      */
 
     public void setImageId(String imageId) {
@@ -439,8 +420,7 @@ public class ImportImageResult extends
      * The ID of the Amazon Machine Image (AMI) created by the import task.
      * </p>
      * 
-     * @return The ID of the Amazon Machine Image (AMI) created by the import
-     *         task.
+     * @return The ID of the Amazon Machine Image (AMI) created by the import task.
      */
 
     public String getImageId() {
@@ -453,10 +433,8 @@ public class ImportImageResult extends
      * </p>
      * 
      * @param imageId
-     *        The ID of the Amazon Machine Image (AMI) created by the import
-     *        task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the Amazon Machine Image (AMI) created by the import task.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageResult withImageId(String imageId) {
@@ -496,8 +474,7 @@ public class ImportImageResult extends
      * 
      * @param progress
      *        The progress of the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageResult withProgress(String progress) {
@@ -537,8 +514,7 @@ public class ImportImageResult extends
      * 
      * @param statusMessage
      *        A detailed status message of the import task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageResult withStatusMessage(String statusMessage) {
@@ -578,8 +554,7 @@ public class ImportImageResult extends
      * 
      * @param status
      *        A brief status of the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportImageResult withStatus(String status) {
@@ -588,8 +563,7 @@ public class ImportImageResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -637,59 +611,47 @@ public class ImportImageResult extends
         ImportImageResult other = (ImportImageResult) obj;
         if (other.getImportTaskId() == null ^ this.getImportTaskId() == null)
             return false;
-        if (other.getImportTaskId() != null
-                && other.getImportTaskId().equals(this.getImportTaskId()) == false)
+        if (other.getImportTaskId() != null && other.getImportTaskId().equals(this.getImportTaskId()) == false)
             return false;
         if (other.getArchitecture() == null ^ this.getArchitecture() == null)
             return false;
-        if (other.getArchitecture() != null
-                && other.getArchitecture().equals(this.getArchitecture()) == false)
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
             return false;
         if (other.getLicenseType() == null ^ this.getLicenseType() == null)
             return false;
-        if (other.getLicenseType() != null
-                && other.getLicenseType().equals(this.getLicenseType()) == false)
+        if (other.getLicenseType() != null && other.getLicenseType().equals(this.getLicenseType()) == false)
             return false;
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
-        if (other.getPlatform() != null
-                && other.getPlatform().equals(this.getPlatform()) == false)
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
         if (other.getHypervisor() == null ^ this.getHypervisor() == null)
             return false;
-        if (other.getHypervisor() != null
-                && other.getHypervisor().equals(this.getHypervisor()) == false)
+        if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getSnapshotDetails() == null
-                ^ this.getSnapshotDetails() == null)
+        if (other.getSnapshotDetails() == null ^ this.getSnapshotDetails() == null)
             return false;
-        if (other.getSnapshotDetails() != null
-                && other.getSnapshotDetails().equals(this.getSnapshotDetails()) == false)
+        if (other.getSnapshotDetails() != null && other.getSnapshotDetails().equals(this.getSnapshotDetails()) == false)
             return false;
         if (other.getImageId() == null ^ this.getImageId() == null)
             return false;
-        if (other.getImageId() != null
-                && other.getImageId().equals(this.getImageId()) == false)
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
             return false;
         if (other.getProgress() == null ^ this.getProgress() == null)
             return false;
-        if (other.getProgress() != null
-                && other.getProgress().equals(this.getProgress()) == false)
+        if (other.getProgress() != null && other.getProgress().equals(this.getProgress()) == false)
             return false;
         if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
-        if (other.getStatusMessage() != null
-                && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -699,38 +661,17 @@ public class ImportImageResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getImportTaskId() == null) ? 0 : getImportTaskId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getArchitecture() == null) ? 0 : getArchitecture()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
-        hashCode = prime * hashCode
-                + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
-        hashCode = prime * hashCode
-                + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotDetails() == null) ? 0 : getSnapshotDetails()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getImageId() == null) ? 0 : getImageId().hashCode());
-        hashCode = prime * hashCode
-                + ((getProgress() == null) ? 0 : getProgress().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStatusMessage() == null) ? 0 : getStatusMessage()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getImportTaskId() == null) ? 0 : getImportTaskId().hashCode());
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotDetails() == null) ? 0 : getSnapshotDetails().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 
@@ -739,9 +680,7 @@ public class ImportImageResult extends
         try {
             return (ImportImageResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

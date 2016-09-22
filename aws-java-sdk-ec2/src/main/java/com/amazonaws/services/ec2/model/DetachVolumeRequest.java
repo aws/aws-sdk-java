@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DetachVolumeRequestMarshaller;
  * Contains the parameters for DetachVolume.
  * </p>
  */
-public class DetachVolumeRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<DetachVolumeRequest> {
+public class DetachVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DetachVolumeRequest> {
 
     /**
      * <p>
@@ -47,29 +44,25 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
     private String device;
     /**
      * <p>
-     * Forces detachment if the previous detachment attempt did not occur
-     * cleanly (for example, logging into an instance, unmounting the volume,
-     * and detaching normally). This option can lead to data loss or a corrupted
-     * file system. Use this option only as a last resort to detach a volume
-     * from a failed instance. The instance won't have an opportunity to flush
-     * file system caches or file system metadata. If you use this option, you
-     * must perform file system check and repair procedures.
+     * Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an
+     * instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted file
+     * system. Use this option only as a last resort to detach a volume from a failed instance. The instance won't have
+     * an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file
+     * system check and repair procedures.
      * </p>
      */
     private Boolean force;
 
     /**
-     * Default constructor for DetachVolumeRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for DetachVolumeRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public DetachVolumeRequest() {
     }
 
     /**
-     * Constructs a new DetachVolumeRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new DetachVolumeRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param volumeId
      *        The ID of the volume.
@@ -110,8 +103,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @param volumeId
      *        The ID of the volume.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetachVolumeRequest withVolumeId(String volumeId) {
@@ -151,8 +143,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @param instanceId
      *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetachVolumeRequest withInstanceId(String instanceId) {
@@ -192,8 +183,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @param device
      *        The device name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetachVolumeRequest withDevice(String device) {
@@ -203,24 +193,19 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Forces detachment if the previous detachment attempt did not occur
-     * cleanly (for example, logging into an instance, unmounting the volume,
-     * and detaching normally). This option can lead to data loss or a corrupted
-     * file system. Use this option only as a last resort to detach a volume
-     * from a failed instance. The instance won't have an opportunity to flush
-     * file system caches or file system metadata. If you use this option, you
-     * must perform file system check and repair procedures.
+     * Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an
+     * instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted file
+     * system. Use this option only as a last resort to detach a volume from a failed instance. The instance won't have
+     * an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file
+     * system check and repair procedures.
      * </p>
      * 
      * @param force
-     *        Forces detachment if the previous detachment attempt did not occur
-     *        cleanly (for example, logging into an instance, unmounting the
-     *        volume, and detaching normally). This option can lead to data loss
-     *        or a corrupted file system. Use this option only as a last resort
-     *        to detach a volume from a failed instance. The instance won't have
-     *        an opportunity to flush file system caches or file system
-     *        metadata. If you use this option, you must perform file system
-     *        check and repair procedures.
+     *        Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an
+     *        instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted
+     *        file system. Use this option only as a last resort to detach a volume from a failed instance. The instance
+     *        won't have an opportunity to flush file system caches or file system metadata. If you use this option, you
+     *        must perform file system check and repair procedures.
      */
 
     public void setForce(Boolean force) {
@@ -229,23 +214,18 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Forces detachment if the previous detachment attempt did not occur
-     * cleanly (for example, logging into an instance, unmounting the volume,
-     * and detaching normally). This option can lead to data loss or a corrupted
-     * file system. Use this option only as a last resort to detach a volume
-     * from a failed instance. The instance won't have an opportunity to flush
-     * file system caches or file system metadata. If you use this option, you
-     * must perform file system check and repair procedures.
+     * Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an
+     * instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted file
+     * system. Use this option only as a last resort to detach a volume from a failed instance. The instance won't have
+     * an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file
+     * system check and repair procedures.
      * </p>
      * 
-     * @return Forces detachment if the previous detachment attempt did not
-     *         occur cleanly (for example, logging into an instance, unmounting
-     *         the volume, and detaching normally). This option can lead to data
-     *         loss or a corrupted file system. Use this option only as a last
-     *         resort to detach a volume from a failed instance. The instance
-     *         won't have an opportunity to flush file system caches or file
-     *         system metadata. If you use this option, you must perform file
-     *         system check and repair procedures.
+     * @return Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an
+     *         instance, unmounting the volume, and detaching normally). This option can lead to data loss or a
+     *         corrupted file system. Use this option only as a last resort to detach a volume from a failed instance.
+     *         The instance won't have an opportunity to flush file system caches or file system metadata. If you use
+     *         this option, you must perform file system check and repair procedures.
      */
 
     public Boolean getForce() {
@@ -254,26 +234,20 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Forces detachment if the previous detachment attempt did not occur
-     * cleanly (for example, logging into an instance, unmounting the volume,
-     * and detaching normally). This option can lead to data loss or a corrupted
-     * file system. Use this option only as a last resort to detach a volume
-     * from a failed instance. The instance won't have an opportunity to flush
-     * file system caches or file system metadata. If you use this option, you
-     * must perform file system check and repair procedures.
+     * Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an
+     * instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted file
+     * system. Use this option only as a last resort to detach a volume from a failed instance. The instance won't have
+     * an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file
+     * system check and repair procedures.
      * </p>
      * 
      * @param force
-     *        Forces detachment if the previous detachment attempt did not occur
-     *        cleanly (for example, logging into an instance, unmounting the
-     *        volume, and detaching normally). This option can lead to data loss
-     *        or a corrupted file system. Use this option only as a last resort
-     *        to detach a volume from a failed instance. The instance won't have
-     *        an opportunity to flush file system caches or file system
-     *        metadata. If you use this option, you must perform file system
-     *        check and repair procedures.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an
+     *        instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted
+     *        file system. Use this option only as a last resort to detach a volume from a failed instance. The instance
+     *        won't have an opportunity to flush file system caches or file system metadata. If you use this option, you
+     *        must perform file system check and repair procedures.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetachVolumeRequest withForce(Boolean force) {
@@ -283,23 +257,18 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Forces detachment if the previous detachment attempt did not occur
-     * cleanly (for example, logging into an instance, unmounting the volume,
-     * and detaching normally). This option can lead to data loss or a corrupted
-     * file system. Use this option only as a last resort to detach a volume
-     * from a failed instance. The instance won't have an opportunity to flush
-     * file system caches or file system metadata. If you use this option, you
-     * must perform file system check and repair procedures.
+     * Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an
+     * instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted file
+     * system. Use this option only as a last resort to detach a volume from a failed instance. The instance won't have
+     * an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file
+     * system check and repair procedures.
      * </p>
      * 
-     * @return Forces detachment if the previous detachment attempt did not
-     *         occur cleanly (for example, logging into an instance, unmounting
-     *         the volume, and detaching normally). This option can lead to data
-     *         loss or a corrupted file system. Use this option only as a last
-     *         resort to detach a volume from a failed instance. The instance
-     *         won't have an opportunity to flush file system caches or file
-     *         system metadata. If you use this option, you must perform file
-     *         system check and repair procedures.
+     * @return Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an
+     *         instance, unmounting the volume, and detaching normally). This option can lead to data loss or a
+     *         corrupted file system. Use this option only as a last resort to detach a volume from a failed instance.
+     *         The instance won't have an opportunity to flush file system caches or file system metadata. If you use
+     *         this option, you must perform file system check and repair procedures.
      */
 
     public Boolean isForce() {
@@ -307,21 +276,18 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DetachVolumeRequest> getDryRunRequest() {
-        Request<DetachVolumeRequest> request = new DetachVolumeRequestMarshaller()
-                .marshall(this);
+        Request<DetachVolumeRequest> request = new DetachVolumeRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -355,23 +321,19 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
         DetachVolumeRequest other = (DetachVolumeRequest) obj;
         if (other.getVolumeId() == null ^ this.getVolumeId() == null)
             return false;
-        if (other.getVolumeId() != null
-                && other.getVolumeId().equals(this.getVolumeId()) == false)
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         if (other.getDevice() == null ^ this.getDevice() == null)
             return false;
-        if (other.getDevice() != null
-                && other.getDevice().equals(this.getDevice()) == false)
+        if (other.getDevice() != null && other.getDevice().equals(this.getDevice()) == false)
             return false;
         if (other.getForce() == null ^ this.getForce() == null)
             return false;
-        if (other.getForce() != null
-                && other.getForce().equals(this.getForce()) == false)
+        if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
             return false;
         return true;
     }
@@ -381,14 +343,10 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getDevice() == null) ? 0 : getDevice().hashCode());
-        hashCode = prime * hashCode
-                + ((getForce() == null) ? 0 : getForce().hashCode());
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getDevice() == null) ? 0 : getDevice().hashCode());
+        hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;
     }
 

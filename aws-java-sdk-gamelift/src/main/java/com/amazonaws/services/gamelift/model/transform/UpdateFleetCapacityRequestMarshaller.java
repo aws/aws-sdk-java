@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model.transform;
 
@@ -35,27 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * UpdateFleetCapacityRequest Marshaller
  */
-public class UpdateFleetCapacityRequestMarshaller
-        implements
-        Marshaller<Request<UpdateFleetCapacityRequest>, UpdateFleetCapacityRequest> {
+public class UpdateFleetCapacityRequestMarshaller implements Marshaller<Request<UpdateFleetCapacityRequest>, UpdateFleetCapacityRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public UpdateFleetCapacityRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public UpdateFleetCapacityRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<UpdateFleetCapacityRequest> marshall(
-            UpdateFleetCapacityRequest updateFleetCapacityRequest) {
+    public Request<UpdateFleetCapacityRequest> marshall(UpdateFleetCapacityRequest updateFleetCapacityRequest) {
 
         if (updateFleetCapacityRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateFleetCapacityRequest> request = new DefaultRequest<UpdateFleetCapacityRequest>(
-                updateFleetCapacityRequest, "AmazonGameLift");
+        Request<UpdateFleetCapacityRequest> request = new DefaultRequest<UpdateFleetCapacityRequest>(updateFleetCapacityRequest, "AmazonGameLift");
         request.addHeader("X-Amz-Target", "GameLift.UpdateFleetCapacity");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -63,38 +55,31 @@ public class UpdateFleetCapacityRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (updateFleetCapacityRequest.getFleetId() != null) {
-                jsonGenerator.writeFieldName("FleetId").writeValue(
-                        updateFleetCapacityRequest.getFleetId());
+                jsonGenerator.writeFieldName("FleetId").writeValue(updateFleetCapacityRequest.getFleetId());
             }
             if (updateFleetCapacityRequest.getDesiredInstances() != null) {
-                jsonGenerator.writeFieldName("DesiredInstances").writeValue(
-                        updateFleetCapacityRequest.getDesiredInstances());
+                jsonGenerator.writeFieldName("DesiredInstances").writeValue(updateFleetCapacityRequest.getDesiredInstances());
             }
             if (updateFleetCapacityRequest.getMinSize() != null) {
-                jsonGenerator.writeFieldName("MinSize").writeValue(
-                        updateFleetCapacityRequest.getMinSize());
+                jsonGenerator.writeFieldName("MinSize").writeValue(updateFleetCapacityRequest.getMinSize());
             }
             if (updateFleetCapacityRequest.getMaxSize() != null) {
-                jsonGenerator.writeFieldName("MaxSize").writeValue(
-                        updateFleetCapacityRequest.getMaxSize());
+                jsonGenerator.writeFieldName("MaxSize").writeValue(updateFleetCapacityRequest.getMaxSize());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

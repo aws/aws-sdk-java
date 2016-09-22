@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.machinelearning.model;
 
@@ -21,35 +19,29 @@ import java.io.Serializable;
  * Represents the output of a <code>DeleteBatchPrediction</code> operation.
  * </p>
  * <p>
- * You can use the <code>GetBatchPrediction</code> operation and check the value
- * of the <code>Status</code> parameter to see whether a
- * <code>BatchPrediction</code> is marked as <code>DELETED</code>.
+ * You can use the <code>GetBatchPrediction</code> operation and check the value of the <code>Status</code> parameter to
+ * see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.
  * </p>
  */
-public class DeleteBatchPredictionResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DeleteBatchPredictionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A user-supplied ID that uniquely identifies the
-     * <code>BatchPrediction</code>. This value should be identical to the value
-     * of the <code>BatchPredictionID</code> in the request.
+     * A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be identical to
+     * the value of the <code>BatchPredictionID</code> in the request.
      * </p>
      */
     private String batchPredictionId;
 
     /**
      * <p>
-     * A user-supplied ID that uniquely identifies the
-     * <code>BatchPrediction</code>. This value should be identical to the value
-     * of the <code>BatchPredictionID</code> in the request.
+     * A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be identical to
+     * the value of the <code>BatchPredictionID</code> in the request.
      * </p>
      * 
      * @param batchPredictionId
-     *        A user-supplied ID that uniquely identifies the
-     *        <code>BatchPrediction</code>. This value should be identical to
-     *        the value of the <code>BatchPredictionID</code> in the request.
+     *        A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be
+     *        identical to the value of the <code>BatchPredictionID</code> in the request.
      */
 
     public void setBatchPredictionId(String batchPredictionId) {
@@ -58,14 +50,12 @@ public class DeleteBatchPredictionResult extends
 
     /**
      * <p>
-     * A user-supplied ID that uniquely identifies the
-     * <code>BatchPrediction</code>. This value should be identical to the value
-     * of the <code>BatchPredictionID</code> in the request.
+     * A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be identical to
+     * the value of the <code>BatchPredictionID</code> in the request.
      * </p>
      * 
-     * @return A user-supplied ID that uniquely identifies the
-     *         <code>BatchPrediction</code>. This value should be identical to
-     *         the value of the <code>BatchPredictionID</code> in the request.
+     * @return A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be
+     *         identical to the value of the <code>BatchPredictionID</code> in the request.
      */
 
     public String getBatchPredictionId() {
@@ -74,28 +64,23 @@ public class DeleteBatchPredictionResult extends
 
     /**
      * <p>
-     * A user-supplied ID that uniquely identifies the
-     * <code>BatchPrediction</code>. This value should be identical to the value
-     * of the <code>BatchPredictionID</code> in the request.
+     * A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be identical to
+     * the value of the <code>BatchPredictionID</code> in the request.
      * </p>
      * 
      * @param batchPredictionId
-     *        A user-supplied ID that uniquely identifies the
-     *        <code>BatchPrediction</code>. This value should be identical to
-     *        the value of the <code>BatchPredictionID</code> in the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be
+     *        identical to the value of the <code>BatchPredictionID</code> in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteBatchPredictionResult withBatchPredictionId(
-            String batchPredictionId) {
+    public DeleteBatchPredictionResult withBatchPredictionId(String batchPredictionId) {
         setBatchPredictionId(batchPredictionId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -121,12 +106,9 @@ public class DeleteBatchPredictionResult extends
         if (obj instanceof DeleteBatchPredictionResult == false)
             return false;
         DeleteBatchPredictionResult other = (DeleteBatchPredictionResult) obj;
-        if (other.getBatchPredictionId() == null
-                ^ this.getBatchPredictionId() == null)
+        if (other.getBatchPredictionId() == null ^ this.getBatchPredictionId() == null)
             return false;
-        if (other.getBatchPredictionId() != null
-                && other.getBatchPredictionId().equals(
-                        this.getBatchPredictionId()) == false)
+        if (other.getBatchPredictionId() != null && other.getBatchPredictionId().equals(this.getBatchPredictionId()) == false)
             return false;
         return true;
     }
@@ -136,10 +118,7 @@ public class DeleteBatchPredictionResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getBatchPredictionId() == null) ? 0
-                        : getBatchPredictionId().hashCode());
+        hashCode = prime * hashCode + ((getBatchPredictionId() == null) ? 0 : getBatchPredictionId().hashCode());
         return hashCode;
     }
 
@@ -148,9 +127,7 @@ public class DeleteBatchPredictionResult extends
         try {
             return (DeleteBatchPredictionResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

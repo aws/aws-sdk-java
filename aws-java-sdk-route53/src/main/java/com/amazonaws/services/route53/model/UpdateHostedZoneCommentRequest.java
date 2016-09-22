@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A complex type that contains the hosted zone request information.
  * </p>
  */
-public class UpdateHostedZoneCommentRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateHostedZoneCommentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,9 +30,8 @@ public class UpdateHostedZoneCommentRequest extends
     private String id;
     /**
      * <p>
-     * The new comment for the hosted zone. If you don't specify a value for
-     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
-     * <code>Comment</code> element, if any.
+     * The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53
+     * deletes the existing value of the <code>Comment</code> element, if any.
      * </p>
      */
     private String comment;
@@ -47,8 +42,7 @@ public class UpdateHostedZoneCommentRequest extends
      * </p>
      * 
      * @param id
-     *        The ID for the hosted zone for which you want to update the
-     *        comment.
+     *        The ID for the hosted zone for which you want to update the comment.
      */
 
     public void setId(String id) {
@@ -60,8 +54,7 @@ public class UpdateHostedZoneCommentRequest extends
      * The ID for the hosted zone for which you want to update the comment.
      * </p>
      * 
-     * @return The ID for the hosted zone for which you want to update the
-     *         comment.
+     * @return The ID for the hosted zone for which you want to update the comment.
      */
 
     public String getId() {
@@ -74,10 +67,8 @@ public class UpdateHostedZoneCommentRequest extends
      * </p>
      * 
      * @param id
-     *        The ID for the hosted zone for which you want to update the
-     *        comment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID for the hosted zone for which you want to update the comment.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateHostedZoneCommentRequest withId(String id) {
@@ -87,15 +78,13 @@ public class UpdateHostedZoneCommentRequest extends
 
     /**
      * <p>
-     * The new comment for the hosted zone. If you don't specify a value for
-     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
-     * <code>Comment</code> element, if any.
+     * The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53
+     * deletes the existing value of the <code>Comment</code> element, if any.
      * </p>
      * 
      * @param comment
-     *        The new comment for the hosted zone. If you don't specify a value
-     *        for <code>Comment</code>, Amazon Route 53 deletes the existing
-     *        value of the <code>Comment</code> element, if any.
+     *        The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route
+     *        53 deletes the existing value of the <code>Comment</code> element, if any.
      */
 
     public void setComment(String comment) {
@@ -104,14 +93,12 @@ public class UpdateHostedZoneCommentRequest extends
 
     /**
      * <p>
-     * The new comment for the hosted zone. If you don't specify a value for
-     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
-     * <code>Comment</code> element, if any.
+     * The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53
+     * deletes the existing value of the <code>Comment</code> element, if any.
      * </p>
      * 
-     * @return The new comment for the hosted zone. If you don't specify a value
-     *         for <code>Comment</code>, Amazon Route 53 deletes the existing
-     *         value of the <code>Comment</code> element, if any.
+     * @return The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route
+     *         53 deletes the existing value of the <code>Comment</code> element, if any.
      */
 
     public String getComment() {
@@ -120,17 +107,14 @@ public class UpdateHostedZoneCommentRequest extends
 
     /**
      * <p>
-     * The new comment for the hosted zone. If you don't specify a value for
-     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
-     * <code>Comment</code> element, if any.
+     * The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53
+     * deletes the existing value of the <code>Comment</code> element, if any.
      * </p>
      * 
      * @param comment
-     *        The new comment for the hosted zone. If you don't specify a value
-     *        for <code>Comment</code>, Amazon Route 53 deletes the existing
-     *        value of the <code>Comment</code> element, if any.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route
+     *        53 deletes the existing value of the <code>Comment</code> element, if any.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateHostedZoneCommentRequest withComment(String comment) {
@@ -139,8 +123,7 @@ public class UpdateHostedZoneCommentRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -170,13 +153,11 @@ public class UpdateHostedZoneCommentRequest extends
         UpdateHostedZoneCommentRequest other = (UpdateHostedZoneCommentRequest) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getComment() == null ^ this.getComment() == null)
             return false;
-        if (other.getComment() != null
-                && other.getComment().equals(this.getComment()) == false)
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
             return false;
         return true;
     }
@@ -186,10 +167,8 @@ public class UpdateHostedZoneCommentRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         return hashCode;
     }
 

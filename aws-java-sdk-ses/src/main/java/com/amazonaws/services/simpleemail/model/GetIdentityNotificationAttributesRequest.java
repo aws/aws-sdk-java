@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -19,22 +17,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents a request to return the notification attributes for a list of
- * identities you verified with Amazon SES. For information about Amazon SES
- * notifications, see the <a href=
- * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html"
- * >Amazon SES Developer Guide</a>.
+ * Represents a request to return the notification attributes for a list of identities you verified with Amazon SES. For
+ * information about Amazon SES notifications, see the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
  * </p>
  */
-public class GetIdentityNotificationAttributesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class GetIdentityNotificationAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of one or more identities. You can specify an identity by using
-     * its name or by using its Amazon Resource Name (ARN). Examples:
-     * <code>user@example.com</code>, <code>example.com</code>,
+     * A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource
+     * Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      */
@@ -42,18 +35,14 @@ public class GetIdentityNotificationAttributesRequest extends
 
     /**
      * <p>
-     * A list of one or more identities. You can specify an identity by using
-     * its name or by using its Amazon Resource Name (ARN). Examples:
-     * <code>user@example.com</code>, <code>example.com</code>,
+     * A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource
+     * Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      * 
-     * @return A list of one or more identities. You can specify an identity by
-     *         using its name or by using its Amazon Resource Name (ARN).
-     *         Examples: <code>user@example.com</code>, <code>example.com</code>
-     *         ,
-     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>
-     *         .
+     * @return A list of one or more identities. You can specify an identity by using its name or by using its Amazon
+     *         Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      */
 
     public java.util.List<String> getIdentities() {
@@ -65,18 +54,15 @@ public class GetIdentityNotificationAttributesRequest extends
 
     /**
      * <p>
-     * A list of one or more identities. You can specify an identity by using
-     * its name or by using its Amazon Resource Name (ARN). Examples:
-     * <code>user@example.com</code>, <code>example.com</code>,
+     * A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource
+     * Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      * 
      * @param identities
-     *        A list of one or more identities. You can specify an identity by
-     *        using its name or by using its Amazon Resource Name (ARN).
-     *        Examples: <code>user@example.com</code>, <code>example.com</code>,
-     *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>
-     *        .
+     *        A list of one or more identities. You can specify an identity by using its name or by using its Amazon
+     *        Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      */
 
     public void setIdentities(java.util.Collection<String> identities) {
@@ -85,39 +71,31 @@ public class GetIdentityNotificationAttributesRequest extends
             return;
         }
 
-        this.identities = new com.amazonaws.internal.SdkInternalList<String>(
-                identities);
+        this.identities = new com.amazonaws.internal.SdkInternalList<String>(identities);
     }
 
     /**
      * <p>
-     * A list of one or more identities. You can specify an identity by using
-     * its name or by using its Amazon Resource Name (ARN). Examples:
-     * <code>user@example.com</code>, <code>example.com</code>,
+     * A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource
+     * Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setIdentities(java.util.Collection)} or
-     * {@link #withIdentities(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIdentities(java.util.Collection)} or {@link #withIdentities(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param identities
-     *        A list of one or more identities. You can specify an identity by
-     *        using its name or by using its Amazon Resource Name (ARN).
-     *        Examples: <code>user@example.com</code>, <code>example.com</code>,
-     *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>
-     *        .
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of one or more identities. You can specify an identity by using its name or by using its Amazon
+     *        Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetIdentityNotificationAttributesRequest withIdentities(
-            String... identities) {
+    public GetIdentityNotificationAttributesRequest withIdentities(String... identities) {
         if (this.identities == null) {
-            setIdentities(new com.amazonaws.internal.SdkInternalList<String>(
-                    identities.length));
+            setIdentities(new com.amazonaws.internal.SdkInternalList<String>(identities.length));
         }
         for (String ele : identities) {
             this.identities.add(ele);
@@ -127,31 +105,25 @@ public class GetIdentityNotificationAttributesRequest extends
 
     /**
      * <p>
-     * A list of one or more identities. You can specify an identity by using
-     * its name or by using its Amazon Resource Name (ARN). Examples:
-     * <code>user@example.com</code>, <code>example.com</code>,
+     * A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource
+     * Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      * 
      * @param identities
-     *        A list of one or more identities. You can specify an identity by
-     *        using its name or by using its Amazon Resource Name (ARN).
-     *        Examples: <code>user@example.com</code>, <code>example.com</code>,
-     *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>
-     *        .
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of one or more identities. You can specify an identity by using its name or by using its Amazon
+     *        Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetIdentityNotificationAttributesRequest withIdentities(
-            java.util.Collection<String> identities) {
+    public GetIdentityNotificationAttributesRequest withIdentities(java.util.Collection<String> identities) {
         setIdentities(identities);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -179,8 +151,7 @@ public class GetIdentityNotificationAttributesRequest extends
         GetIdentityNotificationAttributesRequest other = (GetIdentityNotificationAttributesRequest) obj;
         if (other.getIdentities() == null ^ this.getIdentities() == null)
             return false;
-        if (other.getIdentities() != null
-                && other.getIdentities().equals(this.getIdentities()) == false)
+        if (other.getIdentities() != null && other.getIdentities().equals(this.getIdentities()) == false)
             return false;
         return true;
     }
@@ -190,8 +161,7 @@ public class GetIdentityNotificationAttributesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIdentities() == null) ? 0 : getIdentities().hashCode());
+        hashCode = prime * hashCode + ((getIdentities() == null) ? 0 : getIdentities().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -22,14 +20,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the ListThingTypes operation.
  * </p>
  */
-public class ListThingTypesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListThingTypesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The token for the next set of results, or <b>null</b> if there are no
-     * additional results.
+     * The token for the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      */
     private String nextToken;
@@ -48,13 +43,11 @@ public class ListThingTypesRequest extends
 
     /**
      * <p>
-     * The token for the next set of results, or <b>null</b> if there are no
-     * additional results.
+     * The token for the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or <b>null</b> if there are
-     *        no additional results.
+     *        The token for the next set of results, or <b>null</b> if there are no additional results.
      */
 
     public void setNextToken(String nextToken) {
@@ -63,12 +56,10 @@ public class ListThingTypesRequest extends
 
     /**
      * <p>
-     * The token for the next set of results, or <b>null</b> if there are no
-     * additional results.
+     * The token for the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
-     * @return The token for the next set of results, or <b>null</b> if there
-     *         are no additional results.
+     * @return The token for the next set of results, or <b>null</b> if there are no additional results.
      */
 
     public String getNextToken() {
@@ -77,15 +68,12 @@ public class ListThingTypesRequest extends
 
     /**
      * <p>
-     * The token for the next set of results, or <b>null</b> if there are no
-     * additional results.
+     * The token for the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or <b>null</b> if there are
-     *        no additional results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token for the next set of results, or <b>null</b> if there are no additional results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListThingTypesRequest withNextToken(String nextToken) {
@@ -125,8 +113,7 @@ public class ListThingTypesRequest extends
      * 
      * @param maxResults
      *        The maximum number of results to return in this operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListThingTypesRequest withMaxResults(Integer maxResults) {
@@ -166,8 +153,7 @@ public class ListThingTypesRequest extends
      * 
      * @param thingTypeName
      *        The name of the thing type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListThingTypesRequest withThingTypeName(String thingTypeName) {
@@ -176,8 +162,7 @@ public class ListThingTypesRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -209,18 +194,15 @@ public class ListThingTypesRequest extends
         ListThingTypesRequest other = (ListThingTypesRequest) obj;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getThingTypeName() == null ^ this.getThingTypeName() == null)
             return false;
-        if (other.getThingTypeName() != null
-                && other.getThingTypeName().equals(this.getThingTypeName()) == false)
+        if (other.getThingTypeName() != null && other.getThingTypeName().equals(this.getThingTypeName()) == false)
             return false;
         return true;
     }
@@ -230,14 +212,9 @@ public class ListThingTypesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getThingTypeName() == null) ? 0 : getThingTypeName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getThingTypeName() == null) ? 0 : getThingTypeName().hashCode());
         return hashCode;
     }
 

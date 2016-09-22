@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -18,12 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the custom MAIL FROM domain attributes of a verified identity
- * (email address or domain).
+ * Represents the custom MAIL FROM domain attributes of a verified identity (email address or domain).
  * </p>
  */
-public class IdentityMailFromDomainAttributes implements Serializable,
-        Cloneable {
+public class IdentityMailFromDomainAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,28 +29,23 @@ public class IdentityMailFromDomainAttributes implements Serializable,
     private String mailFromDomain;
     /**
      * <p>
-     * The state that indicates whether Amazon SES has successfully read the MX
-     * record required for custom MAIL FROM domain setup. If the state is
-     * <code>Success</code>, Amazon SES uses the specified custom MAIL FROM
-     * domain when the verified identity sends an email. All other states
-     * indicate that Amazon SES takes the action described by
+     * The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM
+     * domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when
+     * the verified identity sends an email. All other states indicate that Amazon SES takes the action described by
      * <code>BehaviorOnMXFailure</code>.
      * </p>
      */
     private String mailFromDomainStatus;
     /**
      * <p>
-     * The action that Amazon SES takes if it cannot successfully read the
-     * required MX record when you send an email. A value of
-     * <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the
-     * required MX record, it uses amazonses.com (or a subdomain of that) as the
-     * MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if
-     * Amazon SES cannot read the required MX record, Amazon SES returns a
+     * The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A
+     * value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses
+     * amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates
+     * that if Amazon SES cannot read the required MX record, Amazon SES returns a
      * <code>MailFromDomainNotVerified</code> error and does not send the email.
      * </p>
      * <p>
-     * The custom MAIL FROM setup states that result in this behavior are
-     * <code>Pending</code>, <code>Failed</code>, and
+     * The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and
      * <code>TemporaryFailure</code>.
      * </p>
      */
@@ -66,8 +57,7 @@ public class IdentityMailFromDomainAttributes implements Serializable,
      * </p>
      * 
      * @param mailFromDomain
-     *        The custom MAIL FROM domain that the identity is configured to
-     *        use.
+     *        The custom MAIL FROM domain that the identity is configured to use.
      */
 
     public void setMailFromDomain(String mailFromDomain) {
@@ -79,8 +69,7 @@ public class IdentityMailFromDomainAttributes implements Serializable,
      * The custom MAIL FROM domain that the identity is configured to use.
      * </p>
      * 
-     * @return The custom MAIL FROM domain that the identity is configured to
-     *         use.
+     * @return The custom MAIL FROM domain that the identity is configured to use.
      */
 
     public String getMailFromDomain() {
@@ -93,35 +82,28 @@ public class IdentityMailFromDomainAttributes implements Serializable,
      * </p>
      * 
      * @param mailFromDomain
-     *        The custom MAIL FROM domain that the identity is configured to
-     *        use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The custom MAIL FROM domain that the identity is configured to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public IdentityMailFromDomainAttributes withMailFromDomain(
-            String mailFromDomain) {
+    public IdentityMailFromDomainAttributes withMailFromDomain(String mailFromDomain) {
         setMailFromDomain(mailFromDomain);
         return this;
     }
 
     /**
      * <p>
-     * The state that indicates whether Amazon SES has successfully read the MX
-     * record required for custom MAIL FROM domain setup. If the state is
-     * <code>Success</code>, Amazon SES uses the specified custom MAIL FROM
-     * domain when the verified identity sends an email. All other states
-     * indicate that Amazon SES takes the action described by
+     * The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM
+     * domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when
+     * the verified identity sends an email. All other states indicate that Amazon SES takes the action described by
      * <code>BehaviorOnMXFailure</code>.
      * </p>
      * 
      * @param mailFromDomainStatus
-     *        The state that indicates whether Amazon SES has successfully read
-     *        the MX record required for custom MAIL FROM domain setup. If the
-     *        state is <code>Success</code>, Amazon SES uses the specified
-     *        custom MAIL FROM domain when the verified identity sends an email.
-     *        All other states indicate that Amazon SES takes the action
-     *        described by <code>BehaviorOnMXFailure</code>.
+     *        The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL
+     *        FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM
+     *        domain when the verified identity sends an email. All other states indicate that Amazon SES takes the
+     *        action described by <code>BehaviorOnMXFailure</code>.
      * @see CustomMailFromStatus
      */
 
@@ -131,20 +113,16 @@ public class IdentityMailFromDomainAttributes implements Serializable,
 
     /**
      * <p>
-     * The state that indicates whether Amazon SES has successfully read the MX
-     * record required for custom MAIL FROM domain setup. If the state is
-     * <code>Success</code>, Amazon SES uses the specified custom MAIL FROM
-     * domain when the verified identity sends an email. All other states
-     * indicate that Amazon SES takes the action described by
+     * The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM
+     * domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when
+     * the verified identity sends an email. All other states indicate that Amazon SES takes the action described by
      * <code>BehaviorOnMXFailure</code>.
      * </p>
      * 
-     * @return The state that indicates whether Amazon SES has successfully read
-     *         the MX record required for custom MAIL FROM domain setup. If the
-     *         state is <code>Success</code>, Amazon SES uses the specified
-     *         custom MAIL FROM domain when the verified identity sends an
-     *         email. All other states indicate that Amazon SES takes the action
-     *         described by <code>BehaviorOnMXFailure</code>.
+     * @return The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL
+     *         FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM
+     *         domain when the verified identity sends an email. All other states indicate that Amazon SES takes the
+     *         action described by <code>BehaviorOnMXFailure</code>.
      * @see CustomMailFromStatus
      */
 
@@ -154,115 +132,90 @@ public class IdentityMailFromDomainAttributes implements Serializable,
 
     /**
      * <p>
-     * The state that indicates whether Amazon SES has successfully read the MX
-     * record required for custom MAIL FROM domain setup. If the state is
-     * <code>Success</code>, Amazon SES uses the specified custom MAIL FROM
-     * domain when the verified identity sends an email. All other states
-     * indicate that Amazon SES takes the action described by
+     * The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM
+     * domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when
+     * the verified identity sends an email. All other states indicate that Amazon SES takes the action described by
      * <code>BehaviorOnMXFailure</code>.
      * </p>
      * 
      * @param mailFromDomainStatus
-     *        The state that indicates whether Amazon SES has successfully read
-     *        the MX record required for custom MAIL FROM domain setup. If the
-     *        state is <code>Success</code>, Amazon SES uses the specified
-     *        custom MAIL FROM domain when the verified identity sends an email.
-     *        All other states indicate that Amazon SES takes the action
-     *        described by <code>BehaviorOnMXFailure</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL
+     *        FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM
+     *        domain when the verified identity sends an email. All other states indicate that Amazon SES takes the
+     *        action described by <code>BehaviorOnMXFailure</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CustomMailFromStatus
      */
 
-    public IdentityMailFromDomainAttributes withMailFromDomainStatus(
-            String mailFromDomainStatus) {
+    public IdentityMailFromDomainAttributes withMailFromDomainStatus(String mailFromDomainStatus) {
         setMailFromDomainStatus(mailFromDomainStatus);
         return this;
     }
 
     /**
      * <p>
-     * The state that indicates whether Amazon SES has successfully read the MX
-     * record required for custom MAIL FROM domain setup. If the state is
-     * <code>Success</code>, Amazon SES uses the specified custom MAIL FROM
-     * domain when the verified identity sends an email. All other states
-     * indicate that Amazon SES takes the action described by
+     * The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM
+     * domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when
+     * the verified identity sends an email. All other states indicate that Amazon SES takes the action described by
      * <code>BehaviorOnMXFailure</code>.
      * </p>
      * 
      * @param mailFromDomainStatus
-     *        The state that indicates whether Amazon SES has successfully read
-     *        the MX record required for custom MAIL FROM domain setup. If the
-     *        state is <code>Success</code>, Amazon SES uses the specified
-     *        custom MAIL FROM domain when the verified identity sends an email.
-     *        All other states indicate that Amazon SES takes the action
-     *        described by <code>BehaviorOnMXFailure</code>.
+     *        The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL
+     *        FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM
+     *        domain when the verified identity sends an email. All other states indicate that Amazon SES takes the
+     *        action described by <code>BehaviorOnMXFailure</code>.
      * @see CustomMailFromStatus
      */
 
-    public void setMailFromDomainStatus(
-            CustomMailFromStatus mailFromDomainStatus) {
+    public void setMailFromDomainStatus(CustomMailFromStatus mailFromDomainStatus) {
         this.mailFromDomainStatus = mailFromDomainStatus.toString();
     }
 
     /**
      * <p>
-     * The state that indicates whether Amazon SES has successfully read the MX
-     * record required for custom MAIL FROM domain setup. If the state is
-     * <code>Success</code>, Amazon SES uses the specified custom MAIL FROM
-     * domain when the verified identity sends an email. All other states
-     * indicate that Amazon SES takes the action described by
+     * The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM
+     * domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when
+     * the verified identity sends an email. All other states indicate that Amazon SES takes the action described by
      * <code>BehaviorOnMXFailure</code>.
      * </p>
      * 
      * @param mailFromDomainStatus
-     *        The state that indicates whether Amazon SES has successfully read
-     *        the MX record required for custom MAIL FROM domain setup. If the
-     *        state is <code>Success</code>, Amazon SES uses the specified
-     *        custom MAIL FROM domain when the verified identity sends an email.
-     *        All other states indicate that Amazon SES takes the action
-     *        described by <code>BehaviorOnMXFailure</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL
+     *        FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM
+     *        domain when the verified identity sends an email. All other states indicate that Amazon SES takes the
+     *        action described by <code>BehaviorOnMXFailure</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CustomMailFromStatus
      */
 
-    public IdentityMailFromDomainAttributes withMailFromDomainStatus(
-            CustomMailFromStatus mailFromDomainStatus) {
+    public IdentityMailFromDomainAttributes withMailFromDomainStatus(CustomMailFromStatus mailFromDomainStatus) {
         setMailFromDomainStatus(mailFromDomainStatus);
         return this;
     }
 
     /**
      * <p>
-     * The action that Amazon SES takes if it cannot successfully read the
-     * required MX record when you send an email. A value of
-     * <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the
-     * required MX record, it uses amazonses.com (or a subdomain of that) as the
-     * MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if
-     * Amazon SES cannot read the required MX record, Amazon SES returns a
+     * The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A
+     * value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses
+     * amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates
+     * that if Amazon SES cannot read the required MX record, Amazon SES returns a
      * <code>MailFromDomainNotVerified</code> error and does not send the email.
      * </p>
      * <p>
-     * The custom MAIL FROM setup states that result in this behavior are
-     * <code>Pending</code>, <code>Failed</code>, and
+     * The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and
      * <code>TemporaryFailure</code>.
      * </p>
      * 
      * @param behaviorOnMXFailure
-     *        The action that Amazon SES takes if it cannot successfully read
-     *        the required MX record when you send an email. A value of
-     *        <code>UseDefaultValue</code> indicates that if Amazon SES cannot
-     *        read the required MX record, it uses amazonses.com (or a subdomain
-     *        of that) as the MAIL FROM domain. A value of
-     *        <code>RejectMessage</code> indicates that if Amazon SES cannot
-     *        read the required MX record, Amazon SES returns a
-     *        <code>MailFromDomainNotVerified</code> error and does not send the
-     *        email.</p>
+     *        The action that Amazon SES takes if it cannot successfully read the required MX record when you send an
+     *        email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX
+     *        record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of
+     *        <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES
+     *        returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
      *        <p>
-     *        The custom MAIL FROM setup states that result in this behavior are
-     *        <code>Pending</code>, <code>Failed</code>, and
-     *        <code>TemporaryFailure</code>.
+     *        The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>,
+     *        <code>Failed</code>, and <code>TemporaryFailure</code>.
      * @see BehaviorOnMXFailure
      */
 
@@ -272,33 +225,25 @@ public class IdentityMailFromDomainAttributes implements Serializable,
 
     /**
      * <p>
-     * The action that Amazon SES takes if it cannot successfully read the
-     * required MX record when you send an email. A value of
-     * <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the
-     * required MX record, it uses amazonses.com (or a subdomain of that) as the
-     * MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if
-     * Amazon SES cannot read the required MX record, Amazon SES returns a
+     * The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A
+     * value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses
+     * amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates
+     * that if Amazon SES cannot read the required MX record, Amazon SES returns a
      * <code>MailFromDomainNotVerified</code> error and does not send the email.
      * </p>
      * <p>
-     * The custom MAIL FROM setup states that result in this behavior are
-     * <code>Pending</code>, <code>Failed</code>, and
+     * The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and
      * <code>TemporaryFailure</code>.
      * </p>
      * 
-     * @return The action that Amazon SES takes if it cannot successfully read
-     *         the required MX record when you send an email. A value of
-     *         <code>UseDefaultValue</code> indicates that if Amazon SES cannot
-     *         read the required MX record, it uses amazonses.com (or a
-     *         subdomain of that) as the MAIL FROM domain. A value of
-     *         <code>RejectMessage</code> indicates that if Amazon SES cannot
-     *         read the required MX record, Amazon SES returns a
-     *         <code>MailFromDomainNotVerified</code> error and does not send
-     *         the email.</p>
+     * @return The action that Amazon SES takes if it cannot successfully read the required MX record when you send an
+     *         email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX
+     *         record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of
+     *         <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES
+     *         returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
      *         <p>
-     *         The custom MAIL FROM setup states that result in this behavior
-     *         are <code>Pending</code>, <code>Failed</code>, and
-     *         <code>TemporaryFailure</code>.
+     *         The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>,
+     *         <code>Failed</code>, and <code>TemporaryFailure</code>.
      * @see BehaviorOnMXFailure
      */
 
@@ -308,75 +253,57 @@ public class IdentityMailFromDomainAttributes implements Serializable,
 
     /**
      * <p>
-     * The action that Amazon SES takes if it cannot successfully read the
-     * required MX record when you send an email. A value of
-     * <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the
-     * required MX record, it uses amazonses.com (or a subdomain of that) as the
-     * MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if
-     * Amazon SES cannot read the required MX record, Amazon SES returns a
+     * The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A
+     * value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses
+     * amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates
+     * that if Amazon SES cannot read the required MX record, Amazon SES returns a
      * <code>MailFromDomainNotVerified</code> error and does not send the email.
      * </p>
      * <p>
-     * The custom MAIL FROM setup states that result in this behavior are
-     * <code>Pending</code>, <code>Failed</code>, and
+     * The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and
      * <code>TemporaryFailure</code>.
      * </p>
      * 
      * @param behaviorOnMXFailure
-     *        The action that Amazon SES takes if it cannot successfully read
-     *        the required MX record when you send an email. A value of
-     *        <code>UseDefaultValue</code> indicates that if Amazon SES cannot
-     *        read the required MX record, it uses amazonses.com (or a subdomain
-     *        of that) as the MAIL FROM domain. A value of
-     *        <code>RejectMessage</code> indicates that if Amazon SES cannot
-     *        read the required MX record, Amazon SES returns a
-     *        <code>MailFromDomainNotVerified</code> error and does not send the
-     *        email.</p>
+     *        The action that Amazon SES takes if it cannot successfully read the required MX record when you send an
+     *        email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX
+     *        record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of
+     *        <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES
+     *        returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
      *        <p>
-     *        The custom MAIL FROM setup states that result in this behavior are
-     *        <code>Pending</code>, <code>Failed</code>, and
-     *        <code>TemporaryFailure</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>,
+     *        <code>Failed</code>, and <code>TemporaryFailure</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see BehaviorOnMXFailure
      */
 
-    public IdentityMailFromDomainAttributes withBehaviorOnMXFailure(
-            String behaviorOnMXFailure) {
+    public IdentityMailFromDomainAttributes withBehaviorOnMXFailure(String behaviorOnMXFailure) {
         setBehaviorOnMXFailure(behaviorOnMXFailure);
         return this;
     }
 
     /**
      * <p>
-     * The action that Amazon SES takes if it cannot successfully read the
-     * required MX record when you send an email. A value of
-     * <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the
-     * required MX record, it uses amazonses.com (or a subdomain of that) as the
-     * MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if
-     * Amazon SES cannot read the required MX record, Amazon SES returns a
+     * The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A
+     * value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses
+     * amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates
+     * that if Amazon SES cannot read the required MX record, Amazon SES returns a
      * <code>MailFromDomainNotVerified</code> error and does not send the email.
      * </p>
      * <p>
-     * The custom MAIL FROM setup states that result in this behavior are
-     * <code>Pending</code>, <code>Failed</code>, and
+     * The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and
      * <code>TemporaryFailure</code>.
      * </p>
      * 
      * @param behaviorOnMXFailure
-     *        The action that Amazon SES takes if it cannot successfully read
-     *        the required MX record when you send an email. A value of
-     *        <code>UseDefaultValue</code> indicates that if Amazon SES cannot
-     *        read the required MX record, it uses amazonses.com (or a subdomain
-     *        of that) as the MAIL FROM domain. A value of
-     *        <code>RejectMessage</code> indicates that if Amazon SES cannot
-     *        read the required MX record, Amazon SES returns a
-     *        <code>MailFromDomainNotVerified</code> error and does not send the
-     *        email.</p>
+     *        The action that Amazon SES takes if it cannot successfully read the required MX record when you send an
+     *        email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX
+     *        record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of
+     *        <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES
+     *        returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
      *        <p>
-     *        The custom MAIL FROM setup states that result in this behavior are
-     *        <code>Pending</code>, <code>Failed</code>, and
-     *        <code>TemporaryFailure</code>.
+     *        The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>,
+     *        <code>Failed</code>, and <code>TemporaryFailure</code>.
      * @see BehaviorOnMXFailure
      */
 
@@ -386,48 +313,37 @@ public class IdentityMailFromDomainAttributes implements Serializable,
 
     /**
      * <p>
-     * The action that Amazon SES takes if it cannot successfully read the
-     * required MX record when you send an email. A value of
-     * <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the
-     * required MX record, it uses amazonses.com (or a subdomain of that) as the
-     * MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if
-     * Amazon SES cannot read the required MX record, Amazon SES returns a
+     * The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A
+     * value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses
+     * amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates
+     * that if Amazon SES cannot read the required MX record, Amazon SES returns a
      * <code>MailFromDomainNotVerified</code> error and does not send the email.
      * </p>
      * <p>
-     * The custom MAIL FROM setup states that result in this behavior are
-     * <code>Pending</code>, <code>Failed</code>, and
+     * The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and
      * <code>TemporaryFailure</code>.
      * </p>
      * 
      * @param behaviorOnMXFailure
-     *        The action that Amazon SES takes if it cannot successfully read
-     *        the required MX record when you send an email. A value of
-     *        <code>UseDefaultValue</code> indicates that if Amazon SES cannot
-     *        read the required MX record, it uses amazonses.com (or a subdomain
-     *        of that) as the MAIL FROM domain. A value of
-     *        <code>RejectMessage</code> indicates that if Amazon SES cannot
-     *        read the required MX record, Amazon SES returns a
-     *        <code>MailFromDomainNotVerified</code> error and does not send the
-     *        email.</p>
+     *        The action that Amazon SES takes if it cannot successfully read the required MX record when you send an
+     *        email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX
+     *        record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of
+     *        <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES
+     *        returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
      *        <p>
-     *        The custom MAIL FROM setup states that result in this behavior are
-     *        <code>Pending</code>, <code>Failed</code>, and
-     *        <code>TemporaryFailure</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>,
+     *        <code>Failed</code>, and <code>TemporaryFailure</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see BehaviorOnMXFailure
      */
 
-    public IdentityMailFromDomainAttributes withBehaviorOnMXFailure(
-            BehaviorOnMXFailure behaviorOnMXFailure) {
+    public IdentityMailFromDomainAttributes withBehaviorOnMXFailure(BehaviorOnMXFailure behaviorOnMXFailure) {
         setBehaviorOnMXFailure(behaviorOnMXFailure);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -440,8 +356,7 @@ public class IdentityMailFromDomainAttributes implements Serializable,
         if (getMailFromDomain() != null)
             sb.append("MailFromDomain: " + getMailFromDomain() + ",");
         if (getMailFromDomainStatus() != null)
-            sb.append("MailFromDomainStatus: " + getMailFromDomainStatus()
-                    + ",");
+            sb.append("MailFromDomainStatus: " + getMailFromDomainStatus() + ",");
         if (getBehaviorOnMXFailure() != null)
             sb.append("BehaviorOnMXFailure: " + getBehaviorOnMXFailure());
         sb.append("}");
@@ -458,25 +373,17 @@ public class IdentityMailFromDomainAttributes implements Serializable,
         if (obj instanceof IdentityMailFromDomainAttributes == false)
             return false;
         IdentityMailFromDomainAttributes other = (IdentityMailFromDomainAttributes) obj;
-        if (other.getMailFromDomain() == null
-                ^ this.getMailFromDomain() == null)
+        if (other.getMailFromDomain() == null ^ this.getMailFromDomain() == null)
             return false;
-        if (other.getMailFromDomain() != null
-                && other.getMailFromDomain().equals(this.getMailFromDomain()) == false)
+        if (other.getMailFromDomain() != null && other.getMailFromDomain().equals(this.getMailFromDomain()) == false)
             return false;
-        if (other.getMailFromDomainStatus() == null
-                ^ this.getMailFromDomainStatus() == null)
+        if (other.getMailFromDomainStatus() == null ^ this.getMailFromDomainStatus() == null)
             return false;
-        if (other.getMailFromDomainStatus() != null
-                && other.getMailFromDomainStatus().equals(
-                        this.getMailFromDomainStatus()) == false)
+        if (other.getMailFromDomainStatus() != null && other.getMailFromDomainStatus().equals(this.getMailFromDomainStatus()) == false)
             return false;
-        if (other.getBehaviorOnMXFailure() == null
-                ^ this.getBehaviorOnMXFailure() == null)
+        if (other.getBehaviorOnMXFailure() == null ^ this.getBehaviorOnMXFailure() == null)
             return false;
-        if (other.getBehaviorOnMXFailure() != null
-                && other.getBehaviorOnMXFailure().equals(
-                        this.getBehaviorOnMXFailure()) == false)
+        if (other.getBehaviorOnMXFailure() != null && other.getBehaviorOnMXFailure().equals(this.getBehaviorOnMXFailure()) == false)
             return false;
         return true;
     }
@@ -486,18 +393,9 @@ public class IdentityMailFromDomainAttributes implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getMailFromDomain() == null) ? 0 : getMailFromDomain()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMailFromDomainStatus() == null) ? 0
-                        : getMailFromDomainStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBehaviorOnMXFailure() == null) ? 0
-                        : getBehaviorOnMXFailure().hashCode());
+        hashCode = prime * hashCode + ((getMailFromDomain() == null) ? 0 : getMailFromDomain().hashCode());
+        hashCode = prime * hashCode + ((getMailFromDomainStatus() == null) ? 0 : getMailFromDomainStatus().hashCode());
+        hashCode = prime * hashCode + ((getBehaviorOnMXFailure() == null) ? 0 : getBehaviorOnMXFailure().hashCode());
         return hashCode;
     }
 
@@ -506,9 +404,7 @@ public class IdentityMailFromDomainAttributes implements Serializable,
         try {
             return (IdentityMailFromDomainAttributes) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

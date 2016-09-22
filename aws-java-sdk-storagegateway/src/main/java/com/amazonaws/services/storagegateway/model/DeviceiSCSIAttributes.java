@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -25,8 +23,8 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
-     * qualified name(iqn) of a tape drive or media changer target.
+     * Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or
+     * media changer target.
      * </p>
      */
     private String targetARN;
@@ -51,13 +49,13 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
-     * qualified name(iqn) of a tape drive or media changer target.
+     * Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or
+     * media changer target.
      * </p>
      * 
      * @param targetARN
-     *        Specifies the unique Amazon Resource Name(ARN) that encodes the
-     *        iSCSI qualified name(iqn) of a tape drive or media changer target.
+     *        Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI qualified name(iqn) of a tape drive
+     *        or media changer target.
      */
 
     public void setTargetARN(String targetARN) {
@@ -66,13 +64,12 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
-     * qualified name(iqn) of a tape drive or media changer target.
+     * Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or
+     * media changer target.
      * </p>
      * 
-     * @return Specifies the unique Amazon Resource Name(ARN) that encodes the
-     *         iSCSI qualified name(iqn) of a tape drive or media changer
-     *         target.
+     * @return Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI qualified name(iqn) of a tape drive
+     *         or media changer target.
      */
 
     public String getTargetARN() {
@@ -81,15 +78,14 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
-     * qualified name(iqn) of a tape drive or media changer target.
+     * Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or
+     * media changer target.
      * </p>
      * 
      * @param targetARN
-     *        Specifies the unique Amazon Resource Name(ARN) that encodes the
-     *        iSCSI qualified name(iqn) of a tape drive or media changer target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI qualified name(iqn) of a tape drive
+     *        or media changer target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeviceiSCSIAttributes withTargetARN(String targetARN) {
@@ -129,12 +125,10 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @param networkInterfaceId
      *        The network interface identifier of the VTL device.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeviceiSCSIAttributes withNetworkInterfaceId(
-            String networkInterfaceId) {
+    public DeviceiSCSIAttributes withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
         return this;
     }
@@ -171,12 +165,10 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @param networkInterfacePort
      *        The port used to communicate with iSCSI VTL device targets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeviceiSCSIAttributes withNetworkInterfacePort(
-            Integer networkInterfacePort) {
+    public DeviceiSCSIAttributes withNetworkInterfacePort(Integer networkInterfacePort) {
         setNetworkInterfacePort(networkInterfacePort);
         return this;
     }
@@ -213,8 +205,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @param chapEnabled
      *        Indicates whether mutual CHAP is enabled for the iSCSI target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeviceiSCSIAttributes withChapEnabled(Boolean chapEnabled) {
@@ -235,8 +226,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -251,8 +241,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
         if (getNetworkInterfacePort() != null)
-            sb.append("NetworkInterfacePort: " + getNetworkInterfacePort()
-                    + ",");
+            sb.append("NetworkInterfacePort: " + getNetworkInterfacePort() + ",");
         if (getChapEnabled() != null)
             sb.append("ChapEnabled: " + getChapEnabled());
         sb.append("}");
@@ -271,27 +260,19 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
         DeviceiSCSIAttributes other = (DeviceiSCSIAttributes) obj;
         if (other.getTargetARN() == null ^ this.getTargetARN() == null)
             return false;
-        if (other.getTargetARN() != null
-                && other.getTargetARN().equals(this.getTargetARN()) == false)
+        if (other.getTargetARN() != null && other.getTargetARN().equals(this.getTargetARN()) == false)
             return false;
-        if (other.getNetworkInterfaceId() == null
-                ^ this.getNetworkInterfaceId() == null)
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
-        if (other.getNetworkInterfaceId() != null
-                && other.getNetworkInterfaceId().equals(
-                        this.getNetworkInterfaceId()) == false)
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
-        if (other.getNetworkInterfacePort() == null
-                ^ this.getNetworkInterfacePort() == null)
+        if (other.getNetworkInterfacePort() == null ^ this.getNetworkInterfacePort() == null)
             return false;
-        if (other.getNetworkInterfacePort() != null
-                && other.getNetworkInterfacePort().equals(
-                        this.getNetworkInterfacePort()) == false)
+        if (other.getNetworkInterfacePort() != null && other.getNetworkInterfacePort().equals(this.getNetworkInterfacePort()) == false)
             return false;
         if (other.getChapEnabled() == null ^ this.getChapEnabled() == null)
             return false;
-        if (other.getChapEnabled() != null
-                && other.getChapEnabled().equals(this.getChapEnabled()) == false)
+        if (other.getChapEnabled() != null && other.getChapEnabled().equals(this.getChapEnabled()) == false)
             return false;
         return true;
     }
@@ -301,19 +282,10 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTargetARN() == null) ? 0 : getTargetARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaceId() == null) ? 0
-                        : getNetworkInterfaceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfacePort() == null) ? 0
-                        : getNetworkInterfacePort().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getChapEnabled() == null) ? 0 : getChapEnabled().hashCode());
+        hashCode = prime * hashCode + ((getTargetARN() == null) ? 0 : getTargetARN().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfacePort() == null) ? 0 : getNetworkInterfacePort().hashCode());
+        hashCode = prime * hashCode + ((getChapEnabled() == null) ? 0 : getChapEnabled().hashCode());
         return hashCode;
     }
 
@@ -322,9 +294,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
         try {
             return (DeviceiSCSIAttributes) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

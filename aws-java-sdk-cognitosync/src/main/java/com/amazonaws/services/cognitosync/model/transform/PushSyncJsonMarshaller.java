@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitosync.model.transform;
 
@@ -34,21 +32,17 @@ public class PushSyncJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PushSync pushSync,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(PushSync pushSync, StructuredJsonGenerator jsonGenerator) {
 
         if (pushSync == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
-            com.amazonaws.internal.SdkInternalList<String> applicationArnsList = (com.amazonaws.internal.SdkInternalList<String>) pushSync
-                    .getApplicationArns();
-            if (!applicationArnsList.isEmpty()
-                    || !applicationArnsList.isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> applicationArnsList = (com.amazonaws.internal.SdkInternalList<String>) pushSync.getApplicationArns();
+            if (!applicationArnsList.isEmpty() || !applicationArnsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("ApplicationArns");
                 jsonGenerator.writeStartArray();
                 for (String applicationArnsListValue : applicationArnsList) {
@@ -59,14 +53,12 @@ public class PushSyncJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
             if (pushSync.getRoleArn() != null) {
-                jsonGenerator.writeFieldName("RoleArn").writeValue(
-                        pushSync.getRoleArn());
+                jsonGenerator.writeFieldName("RoleArn").writeValue(pushSync.getRoleArn());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

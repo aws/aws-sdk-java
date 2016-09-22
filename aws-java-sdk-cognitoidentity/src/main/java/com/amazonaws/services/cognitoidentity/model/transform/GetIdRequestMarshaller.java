@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidentity.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetIdRequest Marshaller
  */
-public class GetIdRequestMarshaller implements
-        Marshaller<Request<GetIdRequest>, GetIdRequest> {
+public class GetIdRequestMarshaller implements Marshaller<Request<GetIdRequest>, GetIdRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -47,12 +44,10 @@ public class GetIdRequestMarshaller implements
     public Request<GetIdRequest> marshall(GetIdRequest getIdRequest) {
 
         if (getIdRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetIdRequest> request = new DefaultRequest<GetIdRequest>(
-                getIdRequest, "AmazonCognitoIdentity");
+        Request<GetIdRequest> request = new DefaultRequest<GetIdRequest>(getIdRequest, "AmazonCognitoIdentity");
         request.addHeader("X-Amz-Target", "AWSCognitoIdentityService.GetId");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -60,18 +55,15 @@ public class GetIdRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (getIdRequest.getAccountId() != null) {
-                jsonGenerator.writeFieldName("AccountId").writeValue(
-                        getIdRequest.getAccountId());
+                jsonGenerator.writeFieldName("AccountId").writeValue(getIdRequest.getAccountId());
             }
             if (getIdRequest.getIdentityPoolId() != null) {
-                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(
-                        getIdRequest.getIdentityPoolId());
+                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(getIdRequest.getIdentityPoolId());
             }
 
             java.util.Map<String, String> loginsMap = getIdRequest.getLogins();
@@ -79,8 +71,7 @@ public class GetIdRequestMarshaller implements
                 jsonGenerator.writeFieldName("Logins");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> loginsMapValue : loginsMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> loginsMapValue : loginsMap.entrySet()) {
                     if (loginsMapValue.getValue() != null) {
                         jsonGenerator.writeFieldName(loginsMapValue.getKey());
 
@@ -94,12 +85,10 @@ public class GetIdRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

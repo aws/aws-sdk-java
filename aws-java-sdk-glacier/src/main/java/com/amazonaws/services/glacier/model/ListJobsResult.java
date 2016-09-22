@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
 
@@ -21,35 +19,28 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class ListJobsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListJobsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of job objects. Each job object contains metadata describing the
-     * job.
+     * A list of job objects. Each job object contains metadata describing the job.
      * </p>
      */
     private java.util.List<GlacierJobDescription> jobList;
     /**
      * <p>
-     * An opaque string that represents where to continue pagination of the
-     * results. You use this value in a new List Jobs request to obtain more
-     * jobs in the list. If there are no more jobs, this value is
-     * <code>null</code>.
+     * An opaque string that represents where to continue pagination of the results. You use this value in a new List
+     * Jobs request to obtain more jobs in the list. If there are no more jobs, this value is <code>null</code>.
      * </p>
      */
     private String marker;
 
     /**
      * <p>
-     * A list of job objects. Each job object contains metadata describing the
-     * job.
+     * A list of job objects. Each job object contains metadata describing the job.
      * </p>
      * 
-     * @return A list of job objects. Each job object contains metadata
-     *         describing the job.
+     * @return A list of job objects. Each job object contains metadata describing the job.
      */
 
     public java.util.List<GlacierJobDescription> getJobList() {
@@ -58,13 +49,11 @@ public class ListJobsResult extends
 
     /**
      * <p>
-     * A list of job objects. Each job object contains metadata describing the
-     * job.
+     * A list of job objects. Each job object contains metadata describing the job.
      * </p>
      * 
      * @param jobList
-     *        A list of job objects. Each job object contains metadata
-     *        describing the job.
+     *        A list of job objects. Each job object contains metadata describing the job.
      */
 
     public void setJobList(java.util.Collection<GlacierJobDescription> jobList) {
@@ -78,27 +67,22 @@ public class ListJobsResult extends
 
     /**
      * <p>
-     * A list of job objects. Each job object contains metadata describing the
-     * job.
+     * A list of job objects. Each job object contains metadata describing the job.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setJobList(java.util.Collection)} or
-     * {@link #withJobList(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setJobList(java.util.Collection)} or {@link #withJobList(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param jobList
-     *        A list of job objects. Each job object contains metadata
-     *        describing the job.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of job objects. Each job object contains metadata describing the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListJobsResult withJobList(GlacierJobDescription... jobList) {
         if (this.jobList == null) {
-            setJobList(new java.util.ArrayList<GlacierJobDescription>(
-                    jobList.length));
+            setJobList(new java.util.ArrayList<GlacierJobDescription>(jobList.length));
         }
         for (GlacierJobDescription ele : jobList) {
             this.jobList.add(ele);
@@ -108,36 +92,29 @@ public class ListJobsResult extends
 
     /**
      * <p>
-     * A list of job objects. Each job object contains metadata describing the
-     * job.
+     * A list of job objects. Each job object contains metadata describing the job.
      * </p>
      * 
      * @param jobList
-     *        A list of job objects. Each job object contains metadata
-     *        describing the job.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of job objects. Each job object contains metadata describing the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListJobsResult withJobList(
-            java.util.Collection<GlacierJobDescription> jobList) {
+    public ListJobsResult withJobList(java.util.Collection<GlacierJobDescription> jobList) {
         setJobList(jobList);
         return this;
     }
 
     /**
      * <p>
-     * An opaque string that represents where to continue pagination of the
-     * results. You use this value in a new List Jobs request to obtain more
-     * jobs in the list. If there are no more jobs, this value is
-     * <code>null</code>.
+     * An opaque string that represents where to continue pagination of the results. You use this value in a new List
+     * Jobs request to obtain more jobs in the list. If there are no more jobs, this value is <code>null</code>.
      * </p>
      * 
      * @param marker
-     *        An opaque string that represents where to continue pagination of
-     *        the results. You use this value in a new List Jobs request to
-     *        obtain more jobs in the list. If there are no more jobs, this
-     *        value is <code>null</code>.
+     *        An opaque string that represents where to continue pagination of the results. You use this value in a new
+     *        List Jobs request to obtain more jobs in the list. If there are no more jobs, this value is
+     *        <code>null</code>.
      */
 
     public void setMarker(String marker) {
@@ -146,16 +123,13 @@ public class ListJobsResult extends
 
     /**
      * <p>
-     * An opaque string that represents where to continue pagination of the
-     * results. You use this value in a new List Jobs request to obtain more
-     * jobs in the list. If there are no more jobs, this value is
-     * <code>null</code>.
+     * An opaque string that represents where to continue pagination of the results. You use this value in a new List
+     * Jobs request to obtain more jobs in the list. If there are no more jobs, this value is <code>null</code>.
      * </p>
      * 
-     * @return An opaque string that represents where to continue pagination of
-     *         the results. You use this value in a new List Jobs request to
-     *         obtain more jobs in the list. If there are no more jobs, this
-     *         value is <code>null</code>.
+     * @return An opaque string that represents where to continue pagination of the results. You use this value in a new
+     *         List Jobs request to obtain more jobs in the list. If there are no more jobs, this value is
+     *         <code>null</code>.
      */
 
     public String getMarker() {
@@ -164,19 +138,15 @@ public class ListJobsResult extends
 
     /**
      * <p>
-     * An opaque string that represents where to continue pagination of the
-     * results. You use this value in a new List Jobs request to obtain more
-     * jobs in the list. If there are no more jobs, this value is
-     * <code>null</code>.
+     * An opaque string that represents where to continue pagination of the results. You use this value in a new List
+     * Jobs request to obtain more jobs in the list. If there are no more jobs, this value is <code>null</code>.
      * </p>
      * 
      * @param marker
-     *        An opaque string that represents where to continue pagination of
-     *        the results. You use this value in a new List Jobs request to
-     *        obtain more jobs in the list. If there are no more jobs, this
-     *        value is <code>null</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An opaque string that represents where to continue pagination of the results. You use this value in a new
+     *        List Jobs request to obtain more jobs in the list. If there are no more jobs, this value is
+     *        <code>null</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListJobsResult withMarker(String marker) {
@@ -185,8 +155,7 @@ public class ListJobsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -216,13 +185,11 @@ public class ListJobsResult extends
         ListJobsResult other = (ListJobsResult) obj;
         if (other.getJobList() == null ^ this.getJobList() == null)
             return false;
-        if (other.getJobList() != null
-                && other.getJobList().equals(this.getJobList()) == false)
+        if (other.getJobList() != null && other.getJobList().equals(this.getJobList()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -232,10 +199,8 @@ public class ListJobsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJobList() == null) ? 0 : getJobList().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getJobList() == null) ? 0 : getJobList().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -244,9 +209,7 @@ public class ListJobsResult extends
         try {
             return (ListJobsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

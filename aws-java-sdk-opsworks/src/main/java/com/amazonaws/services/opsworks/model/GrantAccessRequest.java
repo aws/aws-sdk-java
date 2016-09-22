@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -20,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -31,10 +28,9 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest
     private String instanceId;
     /**
      * <p>
-     * The length of time (in minutes) that the grant is valid. When the grant
-     * expires at the end of this period, the user will no longer be able to use
-     * the credentials to log in. If the user is logged in at the time, he or
-     * she automatically will be logged out.
+     * The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the
+     * user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she
+     * automatically will be logged out.
      * </p>
      */
     private Integer validForInMinutes;
@@ -71,8 +67,7 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param instanceId
      *        The instance's AWS OpsWorks ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GrantAccessRequest withInstanceId(String instanceId) {
@@ -82,17 +77,15 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The length of time (in minutes) that the grant is valid. When the grant
-     * expires at the end of this period, the user will no longer be able to use
-     * the credentials to log in. If the user is logged in at the time, he or
-     * she automatically will be logged out.
+     * The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the
+     * user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she
+     * automatically will be logged out.
      * </p>
      * 
      * @param validForInMinutes
-     *        The length of time (in minutes) that the grant is valid. When the
-     *        grant expires at the end of this period, the user will no longer
-     *        be able to use the credentials to log in. If the user is logged in
-     *        at the time, he or she automatically will be logged out.
+     *        The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period,
+     *        the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he
+     *        or she automatically will be logged out.
      */
 
     public void setValidForInMinutes(Integer validForInMinutes) {
@@ -101,16 +94,14 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The length of time (in minutes) that the grant is valid. When the grant
-     * expires at the end of this period, the user will no longer be able to use
-     * the credentials to log in. If the user is logged in at the time, he or
-     * she automatically will be logged out.
+     * The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the
+     * user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she
+     * automatically will be logged out.
      * </p>
      * 
-     * @return The length of time (in minutes) that the grant is valid. When the
-     *         grant expires at the end of this period, the user will no longer
-     *         be able to use the credentials to log in. If the user is logged
-     *         in at the time, he or she automatically will be logged out.
+     * @return The length of time (in minutes) that the grant is valid. When the grant expires at the end of this
+     *         period, the user will no longer be able to use the credentials to log in. If the user is logged in at the
+     *         time, he or she automatically will be logged out.
      */
 
     public Integer getValidForInMinutes() {
@@ -119,19 +110,16 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The length of time (in minutes) that the grant is valid. When the grant
-     * expires at the end of this period, the user will no longer be able to use
-     * the credentials to log in. If the user is logged in at the time, he or
-     * she automatically will be logged out.
+     * The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the
+     * user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she
+     * automatically will be logged out.
      * </p>
      * 
      * @param validForInMinutes
-     *        The length of time (in minutes) that the grant is valid. When the
-     *        grant expires at the end of this period, the user will no longer
-     *        be able to use the credentials to log in. If the user is logged in
-     *        at the time, he or she automatically will be logged out.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period,
+     *        the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he
+     *        or she automatically will be logged out.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GrantAccessRequest withValidForInMinutes(Integer validForInMinutes) {
@@ -140,8 +128,7 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -171,15 +158,11 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest
         GrantAccessRequest other = (GrantAccessRequest) obj;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
-        if (other.getValidForInMinutes() == null
-                ^ this.getValidForInMinutes() == null)
+        if (other.getValidForInMinutes() == null ^ this.getValidForInMinutes() == null)
             return false;
-        if (other.getValidForInMinutes() != null
-                && other.getValidForInMinutes().equals(
-                        this.getValidForInMinutes()) == false)
+        if (other.getValidForInMinutes() != null && other.getValidForInMinutes().equals(this.getValidForInMinutes()) == false)
             return false;
         return true;
     }
@@ -189,12 +172,8 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getValidForInMinutes() == null) ? 0
-                        : getValidForInMinutes().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getValidForInMinutes() == null) ? 0 : getValidForInMinutes().hashCode());
         return hashCode;
     }
 

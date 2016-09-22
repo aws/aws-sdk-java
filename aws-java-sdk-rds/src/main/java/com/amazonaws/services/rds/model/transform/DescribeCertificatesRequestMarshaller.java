@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model.transform;
 
@@ -31,53 +29,40 @@ import com.amazonaws.util.IdempotentUtils;
  * DescribeCertificatesRequest Marshaller
  */
 
-public class DescribeCertificatesRequestMarshaller
-        implements
-        Marshaller<Request<DescribeCertificatesRequest>, DescribeCertificatesRequest> {
+public class DescribeCertificatesRequestMarshaller implements Marshaller<Request<DescribeCertificatesRequest>, DescribeCertificatesRequest> {
 
-    public Request<DescribeCertificatesRequest> marshall(
-            DescribeCertificatesRequest describeCertificatesRequest) {
+    public Request<DescribeCertificatesRequest> marshall(DescribeCertificatesRequest describeCertificatesRequest) {
 
         if (describeCertificatesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeCertificatesRequest> request = new DefaultRequest<DescribeCertificatesRequest>(
-                describeCertificatesRequest, "AmazonRDS");
+        Request<DescribeCertificatesRequest> request = new DefaultRequest<DescribeCertificatesRequest>(describeCertificatesRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeCertificates");
         request.addParameter("Version", "2014-10-31");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeCertificatesRequest.getCertificateIdentifier() != null) {
-            request.addParameter("CertificateIdentifier", StringUtils
-                    .fromString(describeCertificatesRequest
-                            .getCertificateIdentifier()));
+            request.addParameter("CertificateIdentifier", StringUtils.fromString(describeCertificatesRequest.getCertificateIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeCertificatesRequest
-                .getFilters();
+        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeCertificatesRequest.getFilters();
         if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
             for (Filter filtersListValue : filtersList) {
 
                 if (filtersListValue.getName() != null) {
-                    request.addParameter("Filters.Filter." + filtersListIndex
-                            + ".Name",
-                            StringUtils.fromString(filtersListValue.getName()));
+                    request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue
-                        .getValues();
+                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
                 if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
-                            request.addParameter("Filters.Filter."
-                                    + filtersListIndex + ".Values.Value."
-                                    + valuesListIndex,
+                            request.addParameter("Filters.Filter." + filtersListIndex + ".Values.Value." + valuesListIndex,
                                     StringUtils.fromString(valuesListValue));
                         }
                         valuesListIndex++;
@@ -88,13 +73,11 @@ public class DescribeCertificatesRequestMarshaller
         }
 
         if (describeCertificatesRequest.getMaxRecords() != null) {
-            request.addParameter("MaxRecords", StringUtils
-                    .fromInteger(describeCertificatesRequest.getMaxRecords()));
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeCertificatesRequest.getMaxRecords()));
         }
 
         if (describeCertificatesRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils
-                    .fromString(describeCertificatesRequest.getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(describeCertificatesRequest.getMarker()));
         }
 
         return request;

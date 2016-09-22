@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.workspaces.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Workspace JSON Unmarshaller
  */
-public class WorkspaceJsonUnmarshaller implements
-        Unmarshaller<Workspace, JsonUnmarshallerContext> {
+public class WorkspaceJsonUnmarshaller implements Unmarshaller<Workspace, JsonUnmarshallerContext> {
 
-    public Workspace unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public Workspace unmarshall(JsonUnmarshallerContext context) throws Exception {
         Workspace workspace = new Workspace();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,85 +49,62 @@ public class WorkspaceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WorkspaceId", targetDepth)) {
                     context.nextToken();
-                    workspace.setWorkspaceId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    workspace.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DirectoryId", targetDepth)) {
                     context.nextToken();
-                    workspace.setDirectoryId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    workspace.setDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserName", targetDepth)) {
                     context.nextToken();
-                    workspace.setUserName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    workspace.setUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
                     context.nextToken();
-                    workspace.setIpAddress(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    workspace.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
-                    workspace.setState(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    workspace.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BundleId", targetDepth)) {
                     context.nextToken();
-                    workspace.setBundleId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    workspace.setBundleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
                     context.nextToken();
-                    workspace.setSubnetId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    workspace.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();
-                    workspace.setErrorMessage(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    workspace.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorCode", targetDepth)) {
                     context.nextToken();
-                    workspace.setErrorCode(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    workspace.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputerName", targetDepth)) {
                     context.nextToken();
-                    workspace.setComputerName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    workspace.setComputerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeEncryptionKey", targetDepth)) {
                     context.nextToken();
-                    workspace.setVolumeEncryptionKey(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    workspace.setVolumeEncryptionKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("UserVolumeEncryptionEnabled",
-                        targetDepth)) {
+                if (context.testExpression("UserVolumeEncryptionEnabled", targetDepth)) {
                     context.nextToken();
-                    workspace
-                            .setUserVolumeEncryptionEnabled(context
-                                    .getUnmarshaller(Boolean.class).unmarshall(
-                                            context));
+                    workspace.setUserVolumeEncryptionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
-                if (context.testExpression("RootVolumeEncryptionEnabled",
-                        targetDepth)) {
+                if (context.testExpression("RootVolumeEncryptionEnabled", targetDepth)) {
                     context.nextToken();
-                    workspace
-                            .setRootVolumeEncryptionEnabled(context
-                                    .getUnmarshaller(Boolean.class).unmarshall(
-                                            context));
+                    workspace.setRootVolumeEncryptionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkspaceProperties", targetDepth)) {
                     context.nextToken();
-                    workspace
-                            .setWorkspaceProperties(WorkspacePropertiesJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    workspace.setWorkspaceProperties(WorkspacePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

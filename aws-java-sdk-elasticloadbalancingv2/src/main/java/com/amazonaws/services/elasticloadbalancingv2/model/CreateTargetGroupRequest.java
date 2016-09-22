@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for CreateTargetGroup.
  * </p>
  */
-public class CreateTargetGroupRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -40,8 +36,8 @@ public class CreateTargetGroupRequest extends
     private String protocol;
     /**
      * <p>
-     * The port on which the targets receive traffic. This port is used unless
-     * you specify a port override when registering the target.
+     * The port on which the targets receive traffic. This port is used unless you specify a port override when
+     * registering the target.
      * </p>
      */
     private Integer port;
@@ -53,58 +49,53 @@ public class CreateTargetGroupRequest extends
     private String vpcId;
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on
-     * targets. The default is the HTTP protocol.
+     * The protocol the load balancer uses when performing health checks on targets. The default is the HTTP protocol.
      * </p>
      */
     private String healthCheckProtocol;
     /**
      * <p>
-     * The port the load balancer uses when performing health checks on targets.
-     * The default is <code>traffic-port</code>, which indicates the port on
-     * which each target receives traffic from the load balancer.
+     * The port the load balancer uses when performing health checks on targets. The default is
+     * <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load balancer.
      * </p>
      */
     private String healthCheckPort;
     /**
      * <p>
-     * The ping path that is the destination on the targets for health checks.
-     * The default is /.
+     * The ping path that is the destination on the targets for health checks. The default is /.
      * </p>
      */
     private String healthCheckPath;
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an
-     * individual target. The default is 30 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. The default is 30
+     * seconds.
      * </p>
      */
     private Integer healthCheckIntervalSeconds;
     /**
      * <p>
-     * The amount of time, in seconds, during which no response from a target
-     * means a failed health check. The default is 5 seconds.
+     * The amount of time, in seconds, during which no response from a target means a failed health check. The default
+     * is 5 seconds.
      * </p>
      */
     private Integer healthCheckTimeoutSeconds;
     /**
      * <p>
-     * The number of consecutive health checks successes required before
-     * considering an unhealthy target healthy. The default is 5.
+     * The number of consecutive health checks successes required before considering an unhealthy target healthy. The
+     * default is 5.
      * </p>
      */
     private Integer healthyThresholdCount;
     /**
      * <p>
-     * The number of consecutive health check failures required before
-     * considering a target unhealthy. The default is 2.
+     * The number of consecutive health check failures required before considering a target unhealthy. The default is 2.
      * </p>
      */
     private Integer unhealthyThresholdCount;
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a
-     * target. The default is 200.
+     * The HTTP codes to use when checking for a successful response from a target. The default is 200.
      * </p>
      */
     private Matcher matcher;
@@ -141,8 +132,7 @@ public class CreateTargetGroupRequest extends
      * 
      * @param name
      *        The name of the target group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTargetGroupRequest withName(String name) {
@@ -184,8 +174,7 @@ public class CreateTargetGroupRequest extends
      * 
      * @param protocol
      *        The protocol to use for routing traffic to the targets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
 
@@ -215,8 +204,7 @@ public class CreateTargetGroupRequest extends
      * 
      * @param protocol
      *        The protocol to use for routing traffic to the targets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
 
@@ -227,13 +215,13 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The port on which the targets receive traffic. This port is used unless
-     * you specify a port override when registering the target.
+     * The port on which the targets receive traffic. This port is used unless you specify a port override when
+     * registering the target.
      * </p>
      * 
      * @param port
-     *        The port on which the targets receive traffic. This port is used
-     *        unless you specify a port override when registering the target.
+     *        The port on which the targets receive traffic. This port is used unless you specify a port override when
+     *        registering the target.
      */
 
     public void setPort(Integer port) {
@@ -242,12 +230,12 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The port on which the targets receive traffic. This port is used unless
-     * you specify a port override when registering the target.
+     * The port on which the targets receive traffic. This port is used unless you specify a port override when
+     * registering the target.
      * </p>
      * 
-     * @return The port on which the targets receive traffic. This port is used
-     *         unless you specify a port override when registering the target.
+     * @return The port on which the targets receive traffic. This port is used unless you specify a port override when
+     *         registering the target.
      */
 
     public Integer getPort() {
@@ -256,15 +244,14 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The port on which the targets receive traffic. This port is used unless
-     * you specify a port override when registering the target.
+     * The port on which the targets receive traffic. This port is used unless you specify a port override when
+     * registering the target.
      * </p>
      * 
      * @param port
-     *        The port on which the targets receive traffic. This port is used
-     *        unless you specify a port override when registering the target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The port on which the targets receive traffic. This port is used unless you specify a port override when
+     *        registering the target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTargetGroupRequest withPort(Integer port) {
@@ -304,8 +291,7 @@ public class CreateTargetGroupRequest extends
      * 
      * @param vpcId
      *        The identifier of the virtual private cloud (VPC).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTargetGroupRequest withVpcId(String vpcId) {
@@ -315,13 +301,12 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on
-     * targets. The default is the HTTP protocol.
+     * The protocol the load balancer uses when performing health checks on targets. The default is the HTTP protocol.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks
-     *        on targets. The default is the HTTP protocol.
+     *        The protocol the load balancer uses when performing health checks on targets. The default is the HTTP
+     *        protocol.
      * @see ProtocolEnum
      */
 
@@ -331,12 +316,11 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on
-     * targets. The default is the HTTP protocol.
+     * The protocol the load balancer uses when performing health checks on targets. The default is the HTTP protocol.
      * </p>
      * 
-     * @return The protocol the load balancer uses when performing health checks
-     *         on targets. The default is the HTTP protocol.
+     * @return The protocol the load balancer uses when performing health checks on targets. The default is the HTTP
+     *         protocol.
      * @see ProtocolEnum
      */
 
@@ -346,33 +330,29 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on
-     * targets. The default is the HTTP protocol.
+     * The protocol the load balancer uses when performing health checks on targets. The default is the HTTP protocol.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks
-     *        on targets. The default is the HTTP protocol.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The protocol the load balancer uses when performing health checks on targets. The default is the HTTP
+     *        protocol.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
 
-    public CreateTargetGroupRequest withHealthCheckProtocol(
-            String healthCheckProtocol) {
+    public CreateTargetGroupRequest withHealthCheckProtocol(String healthCheckProtocol) {
         setHealthCheckProtocol(healthCheckProtocol);
         return this;
     }
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on
-     * targets. The default is the HTTP protocol.
+     * The protocol the load balancer uses when performing health checks on targets. The default is the HTTP protocol.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks
-     *        on targets. The default is the HTTP protocol.
+     *        The protocol the load balancer uses when performing health checks on targets. The default is the HTTP
+     *        protocol.
      * @see ProtocolEnum
      */
 
@@ -382,35 +362,30 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on
-     * targets. The default is the HTTP protocol.
+     * The protocol the load balancer uses when performing health checks on targets. The default is the HTTP protocol.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks
-     *        on targets. The default is the HTTP protocol.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The protocol the load balancer uses when performing health checks on targets. The default is the HTTP
+     *        protocol.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
 
-    public CreateTargetGroupRequest withHealthCheckProtocol(
-            ProtocolEnum healthCheckProtocol) {
+    public CreateTargetGroupRequest withHealthCheckProtocol(ProtocolEnum healthCheckProtocol) {
         setHealthCheckProtocol(healthCheckProtocol);
         return this;
     }
 
     /**
      * <p>
-     * The port the load balancer uses when performing health checks on targets.
-     * The default is <code>traffic-port</code>, which indicates the port on
-     * which each target receives traffic from the load balancer.
+     * The port the load balancer uses when performing health checks on targets. The default is
+     * <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load balancer.
      * </p>
      * 
      * @param healthCheckPort
-     *        The port the load balancer uses when performing health checks on
-     *        targets. The default is <code>traffic-port</code>, which indicates
-     *        the port on which each target receives traffic from the load
+     *        The port the load balancer uses when performing health checks on targets. The default is
+     *        <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load
      *        balancer.
      */
 
@@ -420,15 +395,13 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The port the load balancer uses when performing health checks on targets.
-     * The default is <code>traffic-port</code>, which indicates the port on
-     * which each target receives traffic from the load balancer.
+     * The port the load balancer uses when performing health checks on targets. The default is
+     * <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load balancer.
      * </p>
      * 
-     * @return The port the load balancer uses when performing health checks on
-     *         targets. The default is <code>traffic-port</code>, which
-     *         indicates the port on which each target receives traffic from the
-     *         load balancer.
+     * @return The port the load balancer uses when performing health checks on targets. The default is
+     *         <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load
+     *         balancer.
      */
 
     public String getHealthCheckPort() {
@@ -437,18 +410,15 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The port the load balancer uses when performing health checks on targets.
-     * The default is <code>traffic-port</code>, which indicates the port on
-     * which each target receives traffic from the load balancer.
+     * The port the load balancer uses when performing health checks on targets. The default is
+     * <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load balancer.
      * </p>
      * 
      * @param healthCheckPort
-     *        The port the load balancer uses when performing health checks on
-     *        targets. The default is <code>traffic-port</code>, which indicates
-     *        the port on which each target receives traffic from the load
+     *        The port the load balancer uses when performing health checks on targets. The default is
+     *        <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load
      *        balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTargetGroupRequest withHealthCheckPort(String healthCheckPort) {
@@ -458,13 +428,11 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The ping path that is the destination on the targets for health checks.
-     * The default is /.
+     * The ping path that is the destination on the targets for health checks. The default is /.
      * </p>
      * 
      * @param healthCheckPath
-     *        The ping path that is the destination on the targets for health
-     *        checks. The default is /.
+     *        The ping path that is the destination on the targets for health checks. The default is /.
      */
 
     public void setHealthCheckPath(String healthCheckPath) {
@@ -473,12 +441,10 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The ping path that is the destination on the targets for health checks.
-     * The default is /.
+     * The ping path that is the destination on the targets for health checks. The default is /.
      * </p>
      * 
-     * @return The ping path that is the destination on the targets for health
-     *         checks. The default is /.
+     * @return The ping path that is the destination on the targets for health checks. The default is /.
      */
 
     public String getHealthCheckPath() {
@@ -487,15 +453,12 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The ping path that is the destination on the targets for health checks.
-     * The default is /.
+     * The ping path that is the destination on the targets for health checks. The default is /.
      * </p>
      * 
      * @param healthCheckPath
-     *        The ping path that is the destination on the targets for health
-     *        checks. The default is /.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ping path that is the destination on the targets for health checks. The default is /.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTargetGroupRequest withHealthCheckPath(String healthCheckPath) {
@@ -505,13 +468,13 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an
-     * individual target. The default is 30 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. The default is 30
+     * seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks
-     *        of an individual target. The default is 30 seconds.
+     *        The approximate amount of time, in seconds, between health checks of an individual target. The default is
+     *        30 seconds.
      */
 
     public void setHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
@@ -520,12 +483,12 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an
-     * individual target. The default is 30 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. The default is 30
+     * seconds.
      * </p>
      * 
-     * @return The approximate amount of time, in seconds, between health checks
-     *         of an individual target. The default is 30 seconds.
+     * @return The approximate amount of time, in seconds, between health checks of an individual target. The default is
+     *         30 seconds.
      */
 
     public Integer getHealthCheckIntervalSeconds() {
@@ -534,32 +497,30 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an
-     * individual target. The default is 30 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. The default is 30
+     * seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks
-     *        of an individual target. The default is 30 seconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The approximate amount of time, in seconds, between health checks of an individual target. The default is
+     *        30 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateTargetGroupRequest withHealthCheckIntervalSeconds(
-            Integer healthCheckIntervalSeconds) {
+    public CreateTargetGroupRequest withHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
         setHealthCheckIntervalSeconds(healthCheckIntervalSeconds);
         return this;
     }
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response from a target
-     * means a failed health check. The default is 5 seconds.
+     * The amount of time, in seconds, during which no response from a target means a failed health check. The default
+     * is 5 seconds.
      * </p>
      * 
      * @param healthCheckTimeoutSeconds
-     *        The amount of time, in seconds, during which no response from a
-     *        target means a failed health check. The default is 5 seconds.
+     *        The amount of time, in seconds, during which no response from a target means a failed health check. The
+     *        default is 5 seconds.
      */
 
     public void setHealthCheckTimeoutSeconds(Integer healthCheckTimeoutSeconds) {
@@ -568,12 +529,12 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response from a target
-     * means a failed health check. The default is 5 seconds.
+     * The amount of time, in seconds, during which no response from a target means a failed health check. The default
+     * is 5 seconds.
      * </p>
      * 
-     * @return The amount of time, in seconds, during which no response from a
-     *         target means a failed health check. The default is 5 seconds.
+     * @return The amount of time, in seconds, during which no response from a target means a failed health check. The
+     *         default is 5 seconds.
      */
 
     public Integer getHealthCheckTimeoutSeconds() {
@@ -582,32 +543,30 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response from a target
-     * means a failed health check. The default is 5 seconds.
+     * The amount of time, in seconds, during which no response from a target means a failed health check. The default
+     * is 5 seconds.
      * </p>
      * 
      * @param healthCheckTimeoutSeconds
-     *        The amount of time, in seconds, during which no response from a
-     *        target means a failed health check. The default is 5 seconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The amount of time, in seconds, during which no response from a target means a failed health check. The
+     *        default is 5 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateTargetGroupRequest withHealthCheckTimeoutSeconds(
-            Integer healthCheckTimeoutSeconds) {
+    public CreateTargetGroupRequest withHealthCheckTimeoutSeconds(Integer healthCheckTimeoutSeconds) {
         setHealthCheckTimeoutSeconds(healthCheckTimeoutSeconds);
         return this;
     }
 
     /**
      * <p>
-     * The number of consecutive health checks successes required before
-     * considering an unhealthy target healthy. The default is 5.
+     * The number of consecutive health checks successes required before considering an unhealthy target healthy. The
+     * default is 5.
      * </p>
      * 
      * @param healthyThresholdCount
-     *        The number of consecutive health checks successes required before
-     *        considering an unhealthy target healthy. The default is 5.
+     *        The number of consecutive health checks successes required before considering an unhealthy target healthy.
+     *        The default is 5.
      */
 
     public void setHealthyThresholdCount(Integer healthyThresholdCount) {
@@ -616,12 +575,12 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The number of consecutive health checks successes required before
-     * considering an unhealthy target healthy. The default is 5.
+     * The number of consecutive health checks successes required before considering an unhealthy target healthy. The
+     * default is 5.
      * </p>
      * 
-     * @return The number of consecutive health checks successes required before
-     *         considering an unhealthy target healthy. The default is 5.
+     * @return The number of consecutive health checks successes required before considering an unhealthy target
+     *         healthy. The default is 5.
      */
 
     public Integer getHealthyThresholdCount() {
@@ -630,32 +589,29 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The number of consecutive health checks successes required before
-     * considering an unhealthy target healthy. The default is 5.
+     * The number of consecutive health checks successes required before considering an unhealthy target healthy. The
+     * default is 5.
      * </p>
      * 
      * @param healthyThresholdCount
-     *        The number of consecutive health checks successes required before
-     *        considering an unhealthy target healthy. The default is 5.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of consecutive health checks successes required before considering an unhealthy target healthy.
+     *        The default is 5.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateTargetGroupRequest withHealthyThresholdCount(
-            Integer healthyThresholdCount) {
+    public CreateTargetGroupRequest withHealthyThresholdCount(Integer healthyThresholdCount) {
         setHealthyThresholdCount(healthyThresholdCount);
         return this;
     }
 
     /**
      * <p>
-     * The number of consecutive health check failures required before
-     * considering a target unhealthy. The default is 2.
+     * The number of consecutive health check failures required before considering a target unhealthy. The default is 2.
      * </p>
      * 
      * @param unhealthyThresholdCount
-     *        The number of consecutive health check failures required before
-     *        considering a target unhealthy. The default is 2.
+     *        The number of consecutive health check failures required before considering a target unhealthy. The
+     *        default is 2.
      */
 
     public void setUnhealthyThresholdCount(Integer unhealthyThresholdCount) {
@@ -664,12 +620,11 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The number of consecutive health check failures required before
-     * considering a target unhealthy. The default is 2.
+     * The number of consecutive health check failures required before considering a target unhealthy. The default is 2.
      * </p>
      * 
-     * @return The number of consecutive health check failures required before
-     *         considering a target unhealthy. The default is 2.
+     * @return The number of consecutive health check failures required before considering a target unhealthy. The
+     *         default is 2.
      */
 
     public Integer getUnhealthyThresholdCount() {
@@ -678,32 +633,27 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The number of consecutive health check failures required before
-     * considering a target unhealthy. The default is 2.
+     * The number of consecutive health check failures required before considering a target unhealthy. The default is 2.
      * </p>
      * 
      * @param unhealthyThresholdCount
-     *        The number of consecutive health check failures required before
-     *        considering a target unhealthy. The default is 2.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of consecutive health check failures required before considering a target unhealthy. The
+     *        default is 2.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateTargetGroupRequest withUnhealthyThresholdCount(
-            Integer unhealthyThresholdCount) {
+    public CreateTargetGroupRequest withUnhealthyThresholdCount(Integer unhealthyThresholdCount) {
         setUnhealthyThresholdCount(unhealthyThresholdCount);
         return this;
     }
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a
-     * target. The default is 200.
+     * The HTTP codes to use when checking for a successful response from a target. The default is 200.
      * </p>
      * 
      * @param matcher
-     *        The HTTP codes to use when checking for a successful response from
-     *        a target. The default is 200.
+     *        The HTTP codes to use when checking for a successful response from a target. The default is 200.
      */
 
     public void setMatcher(Matcher matcher) {
@@ -712,12 +662,10 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a
-     * target. The default is 200.
+     * The HTTP codes to use when checking for a successful response from a target. The default is 200.
      * </p>
      * 
-     * @return The HTTP codes to use when checking for a successful response
-     *         from a target. The default is 200.
+     * @return The HTTP codes to use when checking for a successful response from a target. The default is 200.
      */
 
     public Matcher getMatcher() {
@@ -726,15 +674,12 @@ public class CreateTargetGroupRequest extends
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a
-     * target. The default is 200.
+     * The HTTP codes to use when checking for a successful response from a target. The default is 200.
      * </p>
      * 
      * @param matcher
-     *        The HTTP codes to use when checking for a successful response from
-     *        a target. The default is 200.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The HTTP codes to use when checking for a successful response from a target. The default is 200.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTargetGroupRequest withMatcher(Matcher matcher) {
@@ -743,8 +688,7 @@ public class CreateTargetGroupRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -769,17 +713,13 @@ public class CreateTargetGroupRequest extends
         if (getHealthCheckPath() != null)
             sb.append("HealthCheckPath: " + getHealthCheckPath() + ",");
         if (getHealthCheckIntervalSeconds() != null)
-            sb.append("HealthCheckIntervalSeconds: "
-                    + getHealthCheckIntervalSeconds() + ",");
+            sb.append("HealthCheckIntervalSeconds: " + getHealthCheckIntervalSeconds() + ",");
         if (getHealthCheckTimeoutSeconds() != null)
-            sb.append("HealthCheckTimeoutSeconds: "
-                    + getHealthCheckTimeoutSeconds() + ",");
+            sb.append("HealthCheckTimeoutSeconds: " + getHealthCheckTimeoutSeconds() + ",");
         if (getHealthyThresholdCount() != null)
-            sb.append("HealthyThresholdCount: " + getHealthyThresholdCount()
-                    + ",");
+            sb.append("HealthyThresholdCount: " + getHealthyThresholdCount() + ",");
         if (getUnhealthyThresholdCount() != null)
-            sb.append("UnhealthyThresholdCount: "
-                    + getUnhealthyThresholdCount() + ",");
+            sb.append("UnhealthyThresholdCount: " + getUnhealthyThresholdCount() + ",");
         if (getMatcher() != null)
             sb.append("Matcher: " + getMatcher());
         sb.append("}");
@@ -798,75 +738,51 @@ public class CreateTargetGroupRequest extends
         CreateTargetGroupRequest other = (CreateTargetGroupRequest) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getProtocol() == null ^ this.getProtocol() == null)
             return false;
-        if (other.getProtocol() != null
-                && other.getProtocol().equals(this.getProtocol()) == false)
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
             return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
-        if (other.getPort() != null
-                && other.getPort().equals(this.getPort()) == false)
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
-        if (other.getHealthCheckProtocol() == null
-                ^ this.getHealthCheckProtocol() == null)
+        if (other.getHealthCheckProtocol() == null ^ this.getHealthCheckProtocol() == null)
             return false;
-        if (other.getHealthCheckProtocol() != null
-                && other.getHealthCheckProtocol().equals(
-                        this.getHealthCheckProtocol()) == false)
+        if (other.getHealthCheckProtocol() != null && other.getHealthCheckProtocol().equals(this.getHealthCheckProtocol()) == false)
             return false;
-        if (other.getHealthCheckPort() == null
-                ^ this.getHealthCheckPort() == null)
+        if (other.getHealthCheckPort() == null ^ this.getHealthCheckPort() == null)
             return false;
-        if (other.getHealthCheckPort() != null
-                && other.getHealthCheckPort().equals(this.getHealthCheckPort()) == false)
+        if (other.getHealthCheckPort() != null && other.getHealthCheckPort().equals(this.getHealthCheckPort()) == false)
             return false;
-        if (other.getHealthCheckPath() == null
-                ^ this.getHealthCheckPath() == null)
+        if (other.getHealthCheckPath() == null ^ this.getHealthCheckPath() == null)
             return false;
-        if (other.getHealthCheckPath() != null
-                && other.getHealthCheckPath().equals(this.getHealthCheckPath()) == false)
+        if (other.getHealthCheckPath() != null && other.getHealthCheckPath().equals(this.getHealthCheckPath()) == false)
             return false;
-        if (other.getHealthCheckIntervalSeconds() == null
-                ^ this.getHealthCheckIntervalSeconds() == null)
+        if (other.getHealthCheckIntervalSeconds() == null ^ this.getHealthCheckIntervalSeconds() == null)
             return false;
-        if (other.getHealthCheckIntervalSeconds() != null
-                && other.getHealthCheckIntervalSeconds().equals(
-                        this.getHealthCheckIntervalSeconds()) == false)
+        if (other.getHealthCheckIntervalSeconds() != null && other.getHealthCheckIntervalSeconds().equals(this.getHealthCheckIntervalSeconds()) == false)
             return false;
-        if (other.getHealthCheckTimeoutSeconds() == null
-                ^ this.getHealthCheckTimeoutSeconds() == null)
+        if (other.getHealthCheckTimeoutSeconds() == null ^ this.getHealthCheckTimeoutSeconds() == null)
             return false;
-        if (other.getHealthCheckTimeoutSeconds() != null
-                && other.getHealthCheckTimeoutSeconds().equals(
-                        this.getHealthCheckTimeoutSeconds()) == false)
+        if (other.getHealthCheckTimeoutSeconds() != null && other.getHealthCheckTimeoutSeconds().equals(this.getHealthCheckTimeoutSeconds()) == false)
             return false;
-        if (other.getHealthyThresholdCount() == null
-                ^ this.getHealthyThresholdCount() == null)
+        if (other.getHealthyThresholdCount() == null ^ this.getHealthyThresholdCount() == null)
             return false;
-        if (other.getHealthyThresholdCount() != null
-                && other.getHealthyThresholdCount().equals(
-                        this.getHealthyThresholdCount()) == false)
+        if (other.getHealthyThresholdCount() != null && other.getHealthyThresholdCount().equals(this.getHealthyThresholdCount()) == false)
             return false;
-        if (other.getUnhealthyThresholdCount() == null
-                ^ this.getUnhealthyThresholdCount() == null)
+        if (other.getUnhealthyThresholdCount() == null ^ this.getUnhealthyThresholdCount() == null)
             return false;
-        if (other.getUnhealthyThresholdCount() != null
-                && other.getUnhealthyThresholdCount().equals(
-                        this.getUnhealthyThresholdCount()) == false)
+        if (other.getUnhealthyThresholdCount() != null && other.getUnhealthyThresholdCount().equals(this.getUnhealthyThresholdCount()) == false)
             return false;
         if (other.getMatcher() == null ^ this.getMatcher() == null)
             return false;
-        if (other.getMatcher() != null
-                && other.getMatcher().equals(this.getMatcher()) == false)
+        if (other.getMatcher() != null && other.getMatcher().equals(this.getMatcher()) == false)
             return false;
         return true;
     }
@@ -876,44 +792,18 @@ public class CreateTargetGroupRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
-        hashCode = prime * hashCode
-                + ((getPort() == null) ? 0 : getPort().hashCode());
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckProtocol() == null) ? 0
-                        : getHealthCheckProtocol().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckPort() == null) ? 0 : getHealthCheckPort()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckPath() == null) ? 0 : getHealthCheckPath()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckIntervalSeconds() == null) ? 0
-                        : getHealthCheckIntervalSeconds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthCheckTimeoutSeconds() == null) ? 0
-                        : getHealthCheckTimeoutSeconds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthyThresholdCount() == null) ? 0
-                        : getHealthyThresholdCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUnhealthyThresholdCount() == null) ? 0
-                        : getUnhealthyThresholdCount().hashCode());
-        hashCode = prime * hashCode
-                + ((getMatcher() == null) ? 0 : getMatcher().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckProtocol() == null) ? 0 : getHealthCheckProtocol().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckPort() == null) ? 0 : getHealthCheckPort().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckPath() == null) ? 0 : getHealthCheckPath().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckIntervalSeconds() == null) ? 0 : getHealthCheckIntervalSeconds().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckTimeoutSeconds() == null) ? 0 : getHealthCheckTimeoutSeconds().hashCode());
+        hashCode = prime * hashCode + ((getHealthyThresholdCount() == null) ? 0 : getHealthyThresholdCount().hashCode());
+        hashCode = prime * hashCode + ((getUnhealthyThresholdCount() == null) ? 0 : getUnhealthyThresholdCount().hashCode());
+        hashCode = prime * hashCode + ((getMatcher() == null) ? 0 : getMatcher().hashCode());
         return hashCode;
     }
 

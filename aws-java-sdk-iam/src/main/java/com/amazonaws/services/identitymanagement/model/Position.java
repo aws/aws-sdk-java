@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -18,12 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the row and column of a location of a <code>Statement</code> element
- * in a policy document.
+ * Contains the row and column of a location of a <code>Statement</code> element in a policy document.
  * </p>
  * <p>
- * This data type is used as a member of the <code> <a>Statement</a> </code>
- * type.
+ * This data type is used as a member of the <code> <a>Statement</a> </code> type.
  * </p>
  */
 public class Position implements Serializable, Cloneable {
@@ -73,8 +69,7 @@ public class Position implements Serializable, Cloneable {
      * 
      * @param line
      *        The line containing the specified position in the document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Position withLine(Integer line) {
@@ -88,8 +83,7 @@ public class Position implements Serializable, Cloneable {
      * </p>
      * 
      * @param column
-     *        The column in the line containing the specified position in the
-     *        document.
+     *        The column in the line containing the specified position in the document.
      */
 
     public void setColumn(Integer column) {
@@ -101,8 +95,7 @@ public class Position implements Serializable, Cloneable {
      * The column in the line containing the specified position in the document.
      * </p>
      * 
-     * @return The column in the line containing the specified position in the
-     *         document.
+     * @return The column in the line containing the specified position in the document.
      */
 
     public Integer getColumn() {
@@ -115,10 +108,8 @@ public class Position implements Serializable, Cloneable {
      * </p>
      * 
      * @param column
-     *        The column in the line containing the specified position in the
-     *        document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The column in the line containing the specified position in the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Position withColumn(Integer column) {
@@ -127,8 +118,7 @@ public class Position implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -158,13 +148,11 @@ public class Position implements Serializable, Cloneable {
         Position other = (Position) obj;
         if (other.getLine() == null ^ this.getLine() == null)
             return false;
-        if (other.getLine() != null
-                && other.getLine().equals(this.getLine()) == false)
+        if (other.getLine() != null && other.getLine().equals(this.getLine()) == false)
             return false;
         if (other.getColumn() == null ^ this.getColumn() == null)
             return false;
-        if (other.getColumn() != null
-                && other.getColumn().equals(this.getColumn()) == false)
+        if (other.getColumn() != null && other.getColumn().equals(this.getColumn()) == false)
             return false;
         return true;
     }
@@ -174,10 +162,8 @@ public class Position implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getLine() == null) ? 0 : getLine().hashCode());
-        hashCode = prime * hashCode
-                + ((getColumn() == null) ? 0 : getColumn().hashCode());
+        hashCode = prime * hashCode + ((getLine() == null) ? 0 : getLine().hashCode());
+        hashCode = prime * hashCode + ((getColumn() == null) ? 0 : getColumn().hashCode());
         return hashCode;
     }
 
@@ -186,9 +172,7 @@ public class Position implements Serializable, Cloneable {
         try {
             return (Position) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

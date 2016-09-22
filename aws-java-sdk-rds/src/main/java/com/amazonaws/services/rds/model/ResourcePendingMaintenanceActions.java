@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -21,8 +19,7 @@ import java.io.Serializable;
  * Describes the pending maintenance actions for a resource.
  * </p>
  */
-public class ResourcePendingMaintenanceActions implements Serializable,
-        Cloneable {
+public class ResourcePendingMaintenanceActions implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,8 +29,7 @@ public class ResourcePendingMaintenanceActions implements Serializable,
     private String resourceIdentifier;
     /**
      * <p>
-     * A list that provides details about the pending maintenance actions for
-     * the resource.
+     * A list that provides details about the pending maintenance actions for the resource.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PendingMaintenanceAction> pendingMaintenanceActionDetails;
@@ -70,24 +66,20 @@ public class ResourcePendingMaintenanceActions implements Serializable,
      * 
      * @param resourceIdentifier
      *        The ARN of the resource that has pending maintenance actions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResourcePendingMaintenanceActions withResourceIdentifier(
-            String resourceIdentifier) {
+    public ResourcePendingMaintenanceActions withResourceIdentifier(String resourceIdentifier) {
         setResourceIdentifier(resourceIdentifier);
         return this;
     }
 
     /**
      * <p>
-     * A list that provides details about the pending maintenance actions for
-     * the resource.
+     * A list that provides details about the pending maintenance actions for the resource.
      * </p>
      * 
-     * @return A list that provides details about the pending maintenance
-     *         actions for the resource.
+     * @return A list that provides details about the pending maintenance actions for the resource.
      */
 
     public java.util.List<PendingMaintenanceAction> getPendingMaintenanceActionDetails() {
@@ -99,51 +91,40 @@ public class ResourcePendingMaintenanceActions implements Serializable,
 
     /**
      * <p>
-     * A list that provides details about the pending maintenance actions for
-     * the resource.
+     * A list that provides details about the pending maintenance actions for the resource.
      * </p>
      * 
      * @param pendingMaintenanceActionDetails
-     *        A list that provides details about the pending maintenance actions
-     *        for the resource.
+     *        A list that provides details about the pending maintenance actions for the resource.
      */
 
-    public void setPendingMaintenanceActionDetails(
-            java.util.Collection<PendingMaintenanceAction> pendingMaintenanceActionDetails) {
+    public void setPendingMaintenanceActionDetails(java.util.Collection<PendingMaintenanceAction> pendingMaintenanceActionDetails) {
         if (pendingMaintenanceActionDetails == null) {
             this.pendingMaintenanceActionDetails = null;
             return;
         }
 
-        this.pendingMaintenanceActionDetails = new com.amazonaws.internal.SdkInternalList<PendingMaintenanceAction>(
-                pendingMaintenanceActionDetails);
+        this.pendingMaintenanceActionDetails = new com.amazonaws.internal.SdkInternalList<PendingMaintenanceAction>(pendingMaintenanceActionDetails);
     }
 
     /**
      * <p>
-     * A list that provides details about the pending maintenance actions for
-     * the resource.
+     * A list that provides details about the pending maintenance actions for the resource.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPendingMaintenanceActionDetails(java.util.Collection)} or
-     * {@link #withPendingMaintenanceActionDetails(java.util.Collection)} if you
-     * want to override the existing values.
+     * {@link #withPendingMaintenanceActionDetails(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param pendingMaintenanceActionDetails
-     *        A list that provides details about the pending maintenance actions
-     *        for the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list that provides details about the pending maintenance actions for the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResourcePendingMaintenanceActions withPendingMaintenanceActionDetails(
-            PendingMaintenanceAction... pendingMaintenanceActionDetails) {
+    public ResourcePendingMaintenanceActions withPendingMaintenanceActionDetails(PendingMaintenanceAction... pendingMaintenanceActionDetails) {
         if (this.pendingMaintenanceActionDetails == null) {
-            setPendingMaintenanceActionDetails(new com.amazonaws.internal.SdkInternalList<PendingMaintenanceAction>(
-                    pendingMaintenanceActionDetails.length));
+            setPendingMaintenanceActionDetails(new com.amazonaws.internal.SdkInternalList<PendingMaintenanceAction>(pendingMaintenanceActionDetails.length));
         }
         for (PendingMaintenanceAction ele : pendingMaintenanceActionDetails) {
             this.pendingMaintenanceActionDetails.add(ele);
@@ -153,26 +134,21 @@ public class ResourcePendingMaintenanceActions implements Serializable,
 
     /**
      * <p>
-     * A list that provides details about the pending maintenance actions for
-     * the resource.
+     * A list that provides details about the pending maintenance actions for the resource.
      * </p>
      * 
      * @param pendingMaintenanceActionDetails
-     *        A list that provides details about the pending maintenance actions
-     *        for the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list that provides details about the pending maintenance actions for the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResourcePendingMaintenanceActions withPendingMaintenanceActionDetails(
-            java.util.Collection<PendingMaintenanceAction> pendingMaintenanceActionDetails) {
+    public ResourcePendingMaintenanceActions withPendingMaintenanceActionDetails(java.util.Collection<PendingMaintenanceAction> pendingMaintenanceActionDetails) {
         setPendingMaintenanceActionDetails(pendingMaintenanceActionDetails);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -185,8 +161,7 @@ public class ResourcePendingMaintenanceActions implements Serializable,
         if (getResourceIdentifier() != null)
             sb.append("ResourceIdentifier: " + getResourceIdentifier() + ",");
         if (getPendingMaintenanceActionDetails() != null)
-            sb.append("PendingMaintenanceActionDetails: "
-                    + getPendingMaintenanceActionDetails());
+            sb.append("PendingMaintenanceActionDetails: " + getPendingMaintenanceActionDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -201,19 +176,14 @@ public class ResourcePendingMaintenanceActions implements Serializable,
         if (obj instanceof ResourcePendingMaintenanceActions == false)
             return false;
         ResourcePendingMaintenanceActions other = (ResourcePendingMaintenanceActions) obj;
-        if (other.getResourceIdentifier() == null
-                ^ this.getResourceIdentifier() == null)
+        if (other.getResourceIdentifier() == null ^ this.getResourceIdentifier() == null)
             return false;
-        if (other.getResourceIdentifier() != null
-                && other.getResourceIdentifier().equals(
-                        this.getResourceIdentifier()) == false)
+        if (other.getResourceIdentifier() != null && other.getResourceIdentifier().equals(this.getResourceIdentifier()) == false)
             return false;
-        if (other.getPendingMaintenanceActionDetails() == null
-                ^ this.getPendingMaintenanceActionDetails() == null)
+        if (other.getPendingMaintenanceActionDetails() == null ^ this.getPendingMaintenanceActionDetails() == null)
             return false;
         if (other.getPendingMaintenanceActionDetails() != null
-                && other.getPendingMaintenanceActionDetails().equals(
-                        this.getPendingMaintenanceActionDetails()) == false)
+                && other.getPendingMaintenanceActionDetails().equals(this.getPendingMaintenanceActionDetails()) == false)
             return false;
         return true;
     }
@@ -223,14 +193,8 @@ public class ResourcePendingMaintenanceActions implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceIdentifier() == null) ? 0
-                        : getResourceIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPendingMaintenanceActionDetails() == null) ? 0
-                        : getPendingMaintenanceActionDetails().hashCode());
+        hashCode = prime * hashCode + ((getResourceIdentifier() == null) ? 0 : getResourceIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getPendingMaintenanceActionDetails() == null) ? 0 : getPendingMaintenanceActionDetails().hashCode());
         return hashCode;
     }
 
@@ -239,9 +203,7 @@ public class ResourcePendingMaintenanceActions implements Serializable,
         try {
             return (ResourcePendingMaintenanceActions) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

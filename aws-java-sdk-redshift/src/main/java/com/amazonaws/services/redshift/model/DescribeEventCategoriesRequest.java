@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -20,38 +18,30 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DescribeEventCategoriesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The source type, such as cluster or parameter group, to which the
-     * described event categories apply.
+     * The source type, such as cluster or parameter group, to which the described event categories apply.
      * </p>
      * <p>
-     * Valid values: cluster, cluster-snapshot, cluster-parameter-group, and
-     * cluster-security-group.
+     * Valid values: cluster, cluster-snapshot, cluster-parameter-group, and cluster-security-group.
      * </p>
      */
     private String sourceType;
 
     /**
      * <p>
-     * The source type, such as cluster or parameter group, to which the
-     * described event categories apply.
+     * The source type, such as cluster or parameter group, to which the described event categories apply.
      * </p>
      * <p>
-     * Valid values: cluster, cluster-snapshot, cluster-parameter-group, and
-     * cluster-security-group.
+     * Valid values: cluster, cluster-snapshot, cluster-parameter-group, and cluster-security-group.
      * </p>
      * 
      * @param sourceType
-     *        The source type, such as cluster or parameter group, to which the
-     *        described event categories apply.</p>
+     *        The source type, such as cluster or parameter group, to which the described event categories apply.</p>
      *        <p>
-     *        Valid values: cluster, cluster-snapshot, cluster-parameter-group,
-     *        and cluster-security-group.
+     *        Valid values: cluster, cluster-snapshot, cluster-parameter-group, and cluster-security-group.
      */
 
     public void setSourceType(String sourceType) {
@@ -60,19 +50,15 @@ public class DescribeEventCategoriesRequest extends
 
     /**
      * <p>
-     * The source type, such as cluster or parameter group, to which the
-     * described event categories apply.
+     * The source type, such as cluster or parameter group, to which the described event categories apply.
      * </p>
      * <p>
-     * Valid values: cluster, cluster-snapshot, cluster-parameter-group, and
-     * cluster-security-group.
+     * Valid values: cluster, cluster-snapshot, cluster-parameter-group, and cluster-security-group.
      * </p>
      * 
-     * @return The source type, such as cluster or parameter group, to which the
-     *         described event categories apply.</p>
+     * @return The source type, such as cluster or parameter group, to which the described event categories apply.</p>
      *         <p>
-     *         Valid values: cluster, cluster-snapshot, cluster-parameter-group,
-     *         and cluster-security-group.
+     *         Valid values: cluster, cluster-snapshot, cluster-parameter-group, and cluster-security-group.
      */
 
     public String getSourceType() {
@@ -81,22 +67,17 @@ public class DescribeEventCategoriesRequest extends
 
     /**
      * <p>
-     * The source type, such as cluster or parameter group, to which the
-     * described event categories apply.
+     * The source type, such as cluster or parameter group, to which the described event categories apply.
      * </p>
      * <p>
-     * Valid values: cluster, cluster-snapshot, cluster-parameter-group, and
-     * cluster-security-group.
+     * Valid values: cluster, cluster-snapshot, cluster-parameter-group, and cluster-security-group.
      * </p>
      * 
      * @param sourceType
-     *        The source type, such as cluster or parameter group, to which the
-     *        described event categories apply.</p>
+     *        The source type, such as cluster or parameter group, to which the described event categories apply.</p>
      *        <p>
-     *        Valid values: cluster, cluster-snapshot, cluster-parameter-group,
-     *        and cluster-security-group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Valid values: cluster, cluster-snapshot, cluster-parameter-group, and cluster-security-group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEventCategoriesRequest withSourceType(String sourceType) {
@@ -105,8 +86,7 @@ public class DescribeEventCategoriesRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -134,8 +114,7 @@ public class DescribeEventCategoriesRequest extends
         DescribeEventCategoriesRequest other = (DescribeEventCategoriesRequest) obj;
         if (other.getSourceType() == null ^ this.getSourceType() == null)
             return false;
-        if (other.getSourceType() != null
-                && other.getSourceType().equals(this.getSourceType()) == false)
+        if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false)
             return false;
         return true;
     }
@@ -145,8 +124,7 @@ public class DescribeEventCategoriesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
+        hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
         return hashCode;
     }
 

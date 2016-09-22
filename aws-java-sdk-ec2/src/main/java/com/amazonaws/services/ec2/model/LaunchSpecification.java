@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -37,10 +35,9 @@ public class LaunchSpecification implements Serializable, Cloneable {
     private String keyName;
     /**
      * <p>
-     * The user data to make available to the instances. If you are using an AWS
-     * SDK or command line tool, Base64-encoding is performed for you, and you
-     * can load the text from a file. Otherwise, you must provide Base64-encoded
-     * text.
+     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      */
     private String userData;
@@ -79,8 +76,8 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * One or more block device mapping entries.
      * </p>
      * <p>
-     * Although you can specify encrypted EBS volumes in this block device
-     * mapping for your Spot Instances, these volumes are not encrypted.
+     * Although you can specify encrypted EBS volumes in this block device mapping for your Spot Instances, these
+     * volumes are not encrypted.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -104,11 +101,9 @@ public class LaunchSpecification implements Serializable, Cloneable {
     private IamInstanceProfileSpecification iamInstanceProfile;
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS Optimized instance.
+     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -117,9 +112,8 @@ public class LaunchSpecification implements Serializable, Cloneable {
     private Boolean ebsOptimized;
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.
+     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
+     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> allSecurityGroups;
@@ -164,8 +158,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @param imageId
      *        The ID of the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchSpecification withImageId(String imageId) {
@@ -205,8 +198,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @param keyName
      *        The name of the key pair.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchSpecification withKeyName(String keyName) {
@@ -216,17 +208,15 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user data to make available to the instances. If you are using an AWS
-     * SDK or command line tool, Base64-encoding is performed for you, and you
-     * can load the text from a file. Otherwise, you must provide Base64-encoded
-     * text.
+     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instances. If you are using
-     *        an AWS SDK or command line tool, Base64-encoding is performed for
-     *        you, and you can load the text from a file. Otherwise, you must
-     *        provide Base64-encoded text.
+     *        The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     *        Base64-encoded text.
      */
 
     public void setUserData(String userData) {
@@ -235,16 +225,14 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user data to make available to the instances. If you are using an AWS
-     * SDK or command line tool, Base64-encoding is performed for you, and you
-     * can load the text from a file. Otherwise, you must provide Base64-encoded
-     * text.
+     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      * 
-     * @return The user data to make available to the instances. If you are
-     *         using an AWS SDK or command line tool, Base64-encoding is
-     *         performed for you, and you can load the text from a file.
-     *         Otherwise, you must provide Base64-encoded text.
+     * @return The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     *         Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     *         Base64-encoded text.
      */
 
     public String getUserData() {
@@ -253,19 +241,16 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user data to make available to the instances. If you are using an AWS
-     * SDK or command line tool, Base64-encoding is performed for you, and you
-     * can load the text from a file. Otherwise, you must provide Base64-encoded
-     * text.
+     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instances. If you are using
-     *        an AWS SDK or command line tool, Base64-encoding is performed for
-     *        you, and you can load the text from a file. Otherwise, you must
-     *        provide Base64-encoded text.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user data to make available to the instances. If you are using an AWS SDK or command line tool,
+     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
+     *        Base64-encoded text.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchSpecification withUserData(String userData) {
@@ -305,8 +290,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @param addressingType
      *        Deprecated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchSpecification withAddressingType(String addressingType) {
@@ -348,8 +332,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
@@ -379,8 +362,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
@@ -421,8 +403,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @param placement
      *        The placement information for the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchSpecification withPlacement(SpotPlacement placement) {
@@ -462,8 +443,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @param kernelId
      *        The ID of the kernel.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchSpecification withKernelId(String kernelId) {
@@ -503,8 +483,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @param ramdiskId
      *        The ID of the RAM disk.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchSpecification withRamdiskId(String ramdiskId) {
@@ -517,15 +496,14 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * One or more block device mapping entries.
      * </p>
      * <p>
-     * Although you can specify encrypted EBS volumes in this block device
-     * mapping for your Spot Instances, these volumes are not encrypted.
+     * Although you can specify encrypted EBS volumes in this block device mapping for your Spot Instances, these
+     * volumes are not encrypted.
      * </p>
      * 
      * @return One or more block device mapping entries.</p>
      *         <p>
-     *         Although you can specify encrypted EBS volumes in this block
-     *         device mapping for your Spot Instances, these volumes are not
-     *         encrypted.
+     *         Although you can specify encrypted EBS volumes in this block device mapping for your Spot Instances,
+     *         these volumes are not encrypted.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -540,27 +518,24 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * One or more block device mapping entries.
      * </p>
      * <p>
-     * Although you can specify encrypted EBS volumes in this block device
-     * mapping for your Spot Instances, these volumes are not encrypted.
+     * Although you can specify encrypted EBS volumes in this block device mapping for your Spot Instances, these
+     * volumes are not encrypted.
      * </p>
      * 
      * @param blockDeviceMappings
      *        One or more block device mapping entries.</p>
      *        <p>
-     *        Although you can specify encrypted EBS volumes in this block
-     *        device mapping for your Spot Instances, these volumes are not
-     *        encrypted.
+     *        Although you can specify encrypted EBS volumes in this block device mapping for your Spot Instances, these
+     *        volumes are not encrypted.
      */
 
-    public void setBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
             return;
         }
 
-        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                blockDeviceMappings);
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings);
     }
 
     /**
@@ -568,31 +543,26 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * One or more block device mapping entries.
      * </p>
      * <p>
-     * Although you can specify encrypted EBS volumes in this block device
-     * mapping for your Spot Instances, these volumes are not encrypted.
+     * Although you can specify encrypted EBS volumes in this block device mapping for your Spot Instances, these
+     * volumes are not encrypted.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
-     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param blockDeviceMappings
      *        One or more block device mapping entries.</p>
      *        <p>
-     *        Although you can specify encrypted EBS volumes in this block
-     *        device mapping for your Spot Instances, these volumes are not
-     *        encrypted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Although you can specify encrypted EBS volumes in this block device mapping for your Spot Instances, these
+     *        volumes are not encrypted.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchSpecification withBlockDeviceMappings(
-            BlockDeviceMapping... blockDeviceMappings) {
+    public LaunchSpecification withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
-            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                    blockDeviceMappings.length));
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings.length));
         }
         for (BlockDeviceMapping ele : blockDeviceMappings) {
             this.blockDeviceMappings.add(ele);
@@ -605,22 +575,19 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * One or more block device mapping entries.
      * </p>
      * <p>
-     * Although you can specify encrypted EBS volumes in this block device
-     * mapping for your Spot Instances, these volumes are not encrypted.
+     * Although you can specify encrypted EBS volumes in this block device mapping for your Spot Instances, these
+     * volumes are not encrypted.
      * </p>
      * 
      * @param blockDeviceMappings
      *        One or more block device mapping entries.</p>
      *        <p>
-     *        Although you can specify encrypted EBS volumes in this block
-     *        device mapping for your Spot Instances, these volumes are not
-     *        encrypted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Although you can specify encrypted EBS volumes in this block device mapping for your Spot Instances, these
+     *        volumes are not encrypted.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchSpecification withBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public LaunchSpecification withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
         return this;
     }
@@ -657,8 +624,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @param subnetId
      *        The ID of the subnet in which to launch the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchSpecification withSubnetId(String subnetId) {
@@ -690,15 +656,13 @@ public class LaunchSpecification implements Serializable, Cloneable {
      *        One or more network interfaces.
      */
 
-    public void setNetworkInterfaces(
-            java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+    public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         if (networkInterfaces == null) {
             this.networkInterfaces = null;
             return;
         }
 
-        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(
-                networkInterfaces);
+        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces);
     }
 
     /**
@@ -706,23 +670,19 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * One or more network interfaces.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNetworkInterfaces(java.util.Collection)} or
-     * {@link #withNetworkInterfaces(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param networkInterfaces
      *        One or more network interfaces.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchSpecification withNetworkInterfaces(
-            InstanceNetworkInterfaceSpecification... networkInterfaces) {
+    public LaunchSpecification withNetworkInterfaces(InstanceNetworkInterfaceSpecification... networkInterfaces) {
         if (this.networkInterfaces == null) {
-            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(
-                    networkInterfaces.length));
+            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces.length));
         }
         for (InstanceNetworkInterfaceSpecification ele : networkInterfaces) {
             this.networkInterfaces.add(ele);
@@ -737,12 +697,10 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @param networkInterfaces
      *        One or more network interfaces.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchSpecification withNetworkInterfaces(
-            java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+    public LaunchSpecification withNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         setNetworkInterfaces(networkInterfaces);
         return this;
     }
@@ -756,8 +714,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      *        The IAM instance profile.
      */
 
-    public void setIamInstanceProfile(
-            IamInstanceProfileSpecification iamInstanceProfile) {
+    public void setIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
     }
 
@@ -780,35 +737,29 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @param iamInstanceProfile
      *        The IAM instance profile.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchSpecification withIamInstanceProfile(
-            IamInstanceProfileSpecification iamInstanceProfile) {
+    public LaunchSpecification withIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
         setIamInstanceProfile(iamInstanceProfile);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS Optimized instance.
+     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instance is optimized for EBS I/O. This
-     *        optimization provides dedicated throughput to Amazon EBS and an
-     *        optimized configuration stack to provide optimal EBS I/O
-     *        performance. This optimization isn't available with all instance
-     *        types. Additional usage charges apply when using an EBS Optimized
-     *        instance.</p>
+     *        Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
+     *        to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
+     *        optimization isn't available with all instance types. Additional usage charges apply when using an EBS
+     *        Optimized instance.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -819,22 +770,18 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS Optimized instance.
+     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the instance is optimized for EBS I/O. This
-     *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal EBS I/O
-     *         performance. This optimization isn't available with all instance
-     *         types. Additional usage charges apply when using an EBS Optimized
-     *         instance.</p>
+     * @return Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
+     *         to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
+     *         optimization isn't available with all instance types. Additional usage charges apply when using an EBS
+     *         Optimized instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -845,27 +792,22 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS Optimized instance.
+     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instance is optimized for EBS I/O. This
-     *        optimization provides dedicated throughput to Amazon EBS and an
-     *        optimized configuration stack to provide optimal EBS I/O
-     *        performance. This optimization isn't available with all instance
-     *        types. Additional usage charges apply when using an EBS Optimized
-     *        instance.</p>
+     *        Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
+     *        to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
+     *        optimization isn't available with all instance types. Additional usage charges apply when using an EBS
+     *        Optimized instance.</p>
      *        <p>
      *        Default: <code>false</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchSpecification withEbsOptimized(Boolean ebsOptimized) {
@@ -875,22 +817,18 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage
-     * charges apply when using an EBS Optimized instance.
+     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
+     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the instance is optimized for EBS I/O. This
-     *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal EBS I/O
-     *         performance. This optimization isn't available with all instance
-     *         types. Additional usage charges apply when using an EBS Optimized
-     *         instance.</p>
+     * @return Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
+     *         to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
+     *         optimization isn't available with all instance types. Additional usage charges apply when using an EBS
+     *         Optimized instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -901,15 +839,13 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.
+     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
+     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
      * </p>
      * 
-     * @return One or more security groups. When requesting instances in a VPC,
-     *         you must specify the IDs of the security groups. When requesting
-     *         instances in EC2-Classic, you can specify the names or the IDs of
-     *         the security groups.
+     * @return One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security
+     *         groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security
+     *         groups.
      */
 
     public java.util.List<GroupIdentifier> getAllSecurityGroups() {
@@ -921,56 +857,46 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.
+     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
+     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
      * </p>
      * 
      * @param allSecurityGroups
-     *        One or more security groups. When requesting instances in a VPC,
-     *        you must specify the IDs of the security groups. When requesting
-     *        instances in EC2-Classic, you can specify the names or the IDs of
-     *        the security groups.
+     *        One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security
+     *        groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security
+     *        groups.
      */
 
-    public void setAllSecurityGroups(
-            java.util.Collection<GroupIdentifier> allSecurityGroups) {
+    public void setAllSecurityGroups(java.util.Collection<GroupIdentifier> allSecurityGroups) {
         if (allSecurityGroups == null) {
             this.allSecurityGroups = null;
             return;
         }
 
-        this.allSecurityGroups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
-                allSecurityGroups);
+        this.allSecurityGroups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(allSecurityGroups);
     }
 
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.
+     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
+     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAllSecurityGroups(java.util.Collection)} or
-     * {@link #withAllSecurityGroups(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAllSecurityGroups(java.util.Collection)} or {@link #withAllSecurityGroups(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param allSecurityGroups
-     *        One or more security groups. When requesting instances in a VPC,
-     *        you must specify the IDs of the security groups. When requesting
-     *        instances in EC2-Classic, you can specify the names or the IDs of
-     *        the security groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security
+     *        groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security
+     *        groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchSpecification withAllSecurityGroups(
-            GroupIdentifier... allSecurityGroups) {
+    public LaunchSpecification withAllSecurityGroups(GroupIdentifier... allSecurityGroups) {
         if (this.allSecurityGroups == null) {
-            setAllSecurityGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
-                    allSecurityGroups.length));
+            setAllSecurityGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(allSecurityGroups.length));
         }
         for (GroupIdentifier ele : allSecurityGroups) {
             this.allSecurityGroups.add(ele);
@@ -980,22 +906,18 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.
+     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
+     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
      * </p>
      * 
      * @param allSecurityGroups
-     *        One or more security groups. When requesting instances in a VPC,
-     *        you must specify the IDs of the security groups. When requesting
-     *        instances in EC2-Classic, you can specify the names or the IDs of
-     *        the security groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security
+     *        groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security
+     *        groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchSpecification withAllSecurityGroups(
-            java.util.Collection<GroupIdentifier> allSecurityGroups) {
+    public LaunchSpecification withAllSecurityGroups(java.util.Collection<GroupIdentifier> allSecurityGroups) {
         setAllSecurityGroups(allSecurityGroups);
         return this;
     }
@@ -1018,8 +940,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * @param monitoringEnabled
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchSpecification withMonitoringEnabled(Boolean monitoringEnabled) {
@@ -1065,8 +986,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
             return;
         }
 
-        this.securityGroups = new com.amazonaws.internal.SdkInternalList<String>(
-                securityGroups);
+        this.securityGroups = new com.amazonaws.internal.SdkInternalList<String>(securityGroups);
     }
 
     /**
@@ -1074,22 +994,19 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * One or more security group names.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroups(java.util.Collection)} or
-     * {@link #withSecurityGroups(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param securityGroups
      *        One or more security group names.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchSpecification withSecurityGroups(String... securityGroups) {
         if (this.securityGroups == null) {
-            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
-                    securityGroups.length));
+            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(securityGroups.length));
         }
         for (String ele : securityGroups) {
             this.securityGroups.add(ele);
@@ -1104,19 +1021,16 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @param securityGroups
      *        One or more security group names.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchSpecification withSecurityGroups(
-            java.util.Collection<String> securityGroups) {
+    public LaunchSpecification withSecurityGroups(java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1174,95 +1088,67 @@ public class LaunchSpecification implements Serializable, Cloneable {
         LaunchSpecification other = (LaunchSpecification) obj;
         if (other.getImageId() == null ^ this.getImageId() == null)
             return false;
-        if (other.getImageId() != null
-                && other.getImageId().equals(this.getImageId()) == false)
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
             return false;
         if (other.getKeyName() == null ^ this.getKeyName() == null)
             return false;
-        if (other.getKeyName() != null
-                && other.getKeyName().equals(this.getKeyName()) == false)
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
         if (other.getUserData() == null ^ this.getUserData() == null)
             return false;
-        if (other.getUserData() != null
-                && other.getUserData().equals(this.getUserData()) == false)
+        if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false)
             return false;
-        if (other.getAddressingType() == null
-                ^ this.getAddressingType() == null)
+        if (other.getAddressingType() == null ^ this.getAddressingType() == null)
             return false;
-        if (other.getAddressingType() != null
-                && other.getAddressingType().equals(this.getAddressingType()) == false)
+        if (other.getAddressingType() != null && other.getAddressingType().equals(this.getAddressingType()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getPlacement() == null ^ this.getPlacement() == null)
             return false;
-        if (other.getPlacement() != null
-                && other.getPlacement().equals(this.getPlacement()) == false)
+        if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false)
             return false;
         if (other.getKernelId() == null ^ this.getKernelId() == null)
             return false;
-        if (other.getKernelId() != null
-                && other.getKernelId().equals(this.getKernelId()) == false)
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
             return false;
         if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
             return false;
-        if (other.getRamdiskId() != null
-                && other.getRamdiskId().equals(this.getRamdiskId()) == false)
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
             return false;
-        if (other.getBlockDeviceMappings() == null
-                ^ this.getBlockDeviceMappings() == null)
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
             return false;
-        if (other.getBlockDeviceMappings() != null
-                && other.getBlockDeviceMappings().equals(
-                        this.getBlockDeviceMappings()) == false)
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
         if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
-        if (other.getSubnetId() != null
-                && other.getSubnetId().equals(this.getSubnetId()) == false)
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
-        if (other.getNetworkInterfaces() == null
-                ^ this.getNetworkInterfaces() == null)
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
             return false;
-        if (other.getNetworkInterfaces() != null
-                && other.getNetworkInterfaces().equals(
-                        this.getNetworkInterfaces()) == false)
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
             return false;
-        if (other.getIamInstanceProfile() == null
-                ^ this.getIamInstanceProfile() == null)
+        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null)
             return false;
-        if (other.getIamInstanceProfile() != null
-                && other.getIamInstanceProfile().equals(
-                        this.getIamInstanceProfile()) == false)
+        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false)
             return false;
         if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
             return false;
-        if (other.getEbsOptimized() != null
-                && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
+        if (other.getEbsOptimized() != null && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
             return false;
-        if (other.getAllSecurityGroups() == null
-                ^ this.getAllSecurityGroups() == null)
+        if (other.getAllSecurityGroups() == null ^ this.getAllSecurityGroups() == null)
             return false;
-        if (other.getAllSecurityGroups() != null
-                && other.getAllSecurityGroups().equals(
-                        this.getAllSecurityGroups()) == false)
+        if (other.getAllSecurityGroups() != null && other.getAllSecurityGroups().equals(this.getAllSecurityGroups()) == false)
             return false;
-        if (other.getMonitoringEnabled() == null
-                ^ this.getMonitoringEnabled() == null)
+        if (other.getMonitoringEnabled() == null ^ this.getMonitoringEnabled() == null)
             return false;
-        if (other.getMonitoringEnabled() != null
-                && other.getMonitoringEnabled().equals(
-                        this.getMonitoringEnabled()) == false)
+        if (other.getMonitoringEnabled() != null && other.getMonitoringEnabled().equals(this.getMonitoringEnabled()) == false)
             return false;
-        if (other.getSecurityGroups() == null
-                ^ this.getSecurityGroups() == null)
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
             return false;
-        if (other.getSecurityGroups() != null
-                && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
         return true;
     }
@@ -1272,56 +1158,22 @@ public class LaunchSpecification implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getImageId() == null) ? 0 : getImageId().hashCode());
-        hashCode = prime * hashCode
-                + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserData() == null) ? 0 : getUserData().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAddressingType() == null) ? 0 : getAddressingType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
-        hashCode = prime * hashCode
-                + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
-        hashCode = prime * hashCode
-                + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBlockDeviceMappings() == null) ? 0
-                        : getBlockDeviceMappings().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaces() == null) ? 0
-                        : getNetworkInterfaces().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIamInstanceProfile() == null) ? 0
-                        : getIamInstanceProfile().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEbsOptimized() == null) ? 0 : getEbsOptimized()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAllSecurityGroups() == null) ? 0
-                        : getAllSecurityGroups().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMonitoringEnabled() == null) ? 0
-                        : getMonitoringEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroups() == null) ? 0 : getSecurityGroups()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
+        hashCode = prime * hashCode + ((getAddressingType() == null) ? 0 : getAddressingType().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
+        hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
+        hashCode = prime * hashCode + ((getAllSecurityGroups() == null) ? 0 : getAllSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringEnabled() == null) ? 0 : getMonitoringEnabled().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         return hashCode;
     }
 
@@ -1330,9 +1182,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
         try {
             return (LaunchSpecification) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

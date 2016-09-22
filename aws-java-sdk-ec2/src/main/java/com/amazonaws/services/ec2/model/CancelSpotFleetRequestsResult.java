@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,14 +20,11 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of CancelSpotFleetRequests.
  * </p>
  */
-public class CancelSpotFleetRequestsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are not successfully
-     * canceled.
+     * Information about the Spot fleet requests that are not successfully canceled.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests;
@@ -42,12 +37,10 @@ public class CancelSpotFleetRequestsResult extends
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are not successfully
-     * canceled.
+     * Information about the Spot fleet requests that are not successfully canceled.
      * </p>
      * 
-     * @return Information about the Spot fleet requests that are not
-     *         successfully canceled.
+     * @return Information about the Spot fleet requests that are not successfully canceled.
      */
 
     public java.util.List<CancelSpotFleetRequestsErrorItem> getUnsuccessfulFleetRequests() {
@@ -59,50 +52,40 @@ public class CancelSpotFleetRequestsResult extends
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are not successfully
-     * canceled.
+     * Information about the Spot fleet requests that are not successfully canceled.
      * </p>
      * 
      * @param unsuccessfulFleetRequests
-     *        Information about the Spot fleet requests that are not
-     *        successfully canceled.
+     *        Information about the Spot fleet requests that are not successfully canceled.
      */
 
-    public void setUnsuccessfulFleetRequests(
-            java.util.Collection<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests) {
+    public void setUnsuccessfulFleetRequests(java.util.Collection<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests) {
         if (unsuccessfulFleetRequests == null) {
             this.unsuccessfulFleetRequests = null;
             return;
         }
 
-        this.unsuccessfulFleetRequests = new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem>(
-                unsuccessfulFleetRequests);
+        this.unsuccessfulFleetRequests = new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem>(unsuccessfulFleetRequests);
     }
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are not successfully
-     * canceled.
+     * Information about the Spot fleet requests that are not successfully canceled.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setUnsuccessfulFleetRequests(java.util.Collection)} or
-     * {@link #withUnsuccessfulFleetRequests(java.util.Collection)} if you want
-     * to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUnsuccessfulFleetRequests(java.util.Collection)} or
+     * {@link #withUnsuccessfulFleetRequests(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param unsuccessfulFleetRequests
-     *        Information about the Spot fleet requests that are not
-     *        successfully canceled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the Spot fleet requests that are not successfully canceled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CancelSpotFleetRequestsResult withUnsuccessfulFleetRequests(
-            CancelSpotFleetRequestsErrorItem... unsuccessfulFleetRequests) {
+    public CancelSpotFleetRequestsResult withUnsuccessfulFleetRequests(CancelSpotFleetRequestsErrorItem... unsuccessfulFleetRequests) {
         if (this.unsuccessfulFleetRequests == null) {
-            setUnsuccessfulFleetRequests(new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem>(
-                    unsuccessfulFleetRequests.length));
+            setUnsuccessfulFleetRequests(new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem>(unsuccessfulFleetRequests.length));
         }
         for (CancelSpotFleetRequestsErrorItem ele : unsuccessfulFleetRequests) {
             this.unsuccessfulFleetRequests.add(ele);
@@ -112,19 +95,15 @@ public class CancelSpotFleetRequestsResult extends
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are not successfully
-     * canceled.
+     * Information about the Spot fleet requests that are not successfully canceled.
      * </p>
      * 
      * @param unsuccessfulFleetRequests
-     *        Information about the Spot fleet requests that are not
-     *        successfully canceled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the Spot fleet requests that are not successfully canceled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CancelSpotFleetRequestsResult withUnsuccessfulFleetRequests(
-            java.util.Collection<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests) {
+    public CancelSpotFleetRequestsResult withUnsuccessfulFleetRequests(java.util.Collection<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests) {
         setUnsuccessfulFleetRequests(unsuccessfulFleetRequests);
         return this;
     }
@@ -134,8 +113,7 @@ public class CancelSpotFleetRequestsResult extends
      * Information about the Spot fleet requests that are successfully canceled.
      * </p>
      * 
-     * @return Information about the Spot fleet requests that are successfully
-     *         canceled.
+     * @return Information about the Spot fleet requests that are successfully canceled.
      */
 
     public java.util.List<CancelSpotFleetRequestsSuccessItem> getSuccessfulFleetRequests() {
@@ -151,19 +129,16 @@ public class CancelSpotFleetRequestsResult extends
      * </p>
      * 
      * @param successfulFleetRequests
-     *        Information about the Spot fleet requests that are successfully
-     *        canceled.
+     *        Information about the Spot fleet requests that are successfully canceled.
      */
 
-    public void setSuccessfulFleetRequests(
-            java.util.Collection<CancelSpotFleetRequestsSuccessItem> successfulFleetRequests) {
+    public void setSuccessfulFleetRequests(java.util.Collection<CancelSpotFleetRequestsSuccessItem> successfulFleetRequests) {
         if (successfulFleetRequests == null) {
             this.successfulFleetRequests = null;
             return;
         }
 
-        this.successfulFleetRequests = new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsSuccessItem>(
-                successfulFleetRequests);
+        this.successfulFleetRequests = new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsSuccessItem>(successfulFleetRequests);
     }
 
     /**
@@ -171,24 +146,19 @@ public class CancelSpotFleetRequestsResult extends
      * Information about the Spot fleet requests that are successfully canceled.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSuccessfulFleetRequests(java.util.Collection)} or
-     * {@link #withSuccessfulFleetRequests(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSuccessfulFleetRequests(java.util.Collection)} or
+     * {@link #withSuccessfulFleetRequests(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param successfulFleetRequests
-     *        Information about the Spot fleet requests that are successfully
-     *        canceled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the Spot fleet requests that are successfully canceled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CancelSpotFleetRequestsResult withSuccessfulFleetRequests(
-            CancelSpotFleetRequestsSuccessItem... successfulFleetRequests) {
+    public CancelSpotFleetRequestsResult withSuccessfulFleetRequests(CancelSpotFleetRequestsSuccessItem... successfulFleetRequests) {
         if (this.successfulFleetRequests == null) {
-            setSuccessfulFleetRequests(new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsSuccessItem>(
-                    successfulFleetRequests.length));
+            setSuccessfulFleetRequests(new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsSuccessItem>(successfulFleetRequests.length));
         }
         for (CancelSpotFleetRequestsSuccessItem ele : successfulFleetRequests) {
             this.successfulFleetRequests.add(ele);
@@ -202,21 +172,17 @@ public class CancelSpotFleetRequestsResult extends
      * </p>
      * 
      * @param successfulFleetRequests
-     *        Information about the Spot fleet requests that are successfully
-     *        canceled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the Spot fleet requests that are successfully canceled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CancelSpotFleetRequestsResult withSuccessfulFleetRequests(
-            java.util.Collection<CancelSpotFleetRequestsSuccessItem> successfulFleetRequests) {
+    public CancelSpotFleetRequestsResult withSuccessfulFleetRequests(java.util.Collection<CancelSpotFleetRequestsSuccessItem> successfulFleetRequests) {
         setSuccessfulFleetRequests(successfulFleetRequests);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -227,11 +193,9 @@ public class CancelSpotFleetRequestsResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUnsuccessfulFleetRequests() != null)
-            sb.append("UnsuccessfulFleetRequests: "
-                    + getUnsuccessfulFleetRequests() + ",");
+            sb.append("UnsuccessfulFleetRequests: " + getUnsuccessfulFleetRequests() + ",");
         if (getSuccessfulFleetRequests() != null)
-            sb.append("SuccessfulFleetRequests: "
-                    + getSuccessfulFleetRequests());
+            sb.append("SuccessfulFleetRequests: " + getSuccessfulFleetRequests());
         sb.append("}");
         return sb.toString();
     }
@@ -246,19 +210,13 @@ public class CancelSpotFleetRequestsResult extends
         if (obj instanceof CancelSpotFleetRequestsResult == false)
             return false;
         CancelSpotFleetRequestsResult other = (CancelSpotFleetRequestsResult) obj;
-        if (other.getUnsuccessfulFleetRequests() == null
-                ^ this.getUnsuccessfulFleetRequests() == null)
+        if (other.getUnsuccessfulFleetRequests() == null ^ this.getUnsuccessfulFleetRequests() == null)
             return false;
-        if (other.getUnsuccessfulFleetRequests() != null
-                && other.getUnsuccessfulFleetRequests().equals(
-                        this.getUnsuccessfulFleetRequests()) == false)
+        if (other.getUnsuccessfulFleetRequests() != null && other.getUnsuccessfulFleetRequests().equals(this.getUnsuccessfulFleetRequests()) == false)
             return false;
-        if (other.getSuccessfulFleetRequests() == null
-                ^ this.getSuccessfulFleetRequests() == null)
+        if (other.getSuccessfulFleetRequests() == null ^ this.getSuccessfulFleetRequests() == null)
             return false;
-        if (other.getSuccessfulFleetRequests() != null
-                && other.getSuccessfulFleetRequests().equals(
-                        this.getSuccessfulFleetRequests()) == false)
+        if (other.getSuccessfulFleetRequests() != null && other.getSuccessfulFleetRequests().equals(this.getSuccessfulFleetRequests()) == false)
             return false;
         return true;
     }
@@ -268,14 +226,8 @@ public class CancelSpotFleetRequestsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getUnsuccessfulFleetRequests() == null) ? 0
-                        : getUnsuccessfulFleetRequests().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSuccessfulFleetRequests() == null) ? 0
-                        : getSuccessfulFleetRequests().hashCode());
+        hashCode = prime * hashCode + ((getUnsuccessfulFleetRequests() == null) ? 0 : getUnsuccessfulFleetRequests().hashCode());
+        hashCode = prime * hashCode + ((getSuccessfulFleetRequests() == null) ? 0 : getSuccessfulFleetRequests().hashCode());
         return hashCode;
     }
 
@@ -284,9 +236,7 @@ public class CancelSpotFleetRequestsResult extends
         try {
             return (CancelSpotFleetRequestsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

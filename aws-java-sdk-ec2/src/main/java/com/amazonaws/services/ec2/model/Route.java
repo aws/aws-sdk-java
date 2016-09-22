@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -73,10 +71,8 @@ public class Route implements Serializable, Cloneable {
     private String natGatewayId;
     /**
      * <p>
-     * The state of the route. The <code>blackhole</code> state indicates that
-     * the route's target isn't available (for example, the specified gateway
-     * isn't attached to the VPC, or the specified NAT instance has been
-     * terminated).
+     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
+     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
      * </p>
      */
     private String state;
@@ -87,20 +83,17 @@ public class Route implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>CreateRouteTable</code> - The route was automatically created when
-     * the route table was created.
+     * <code>CreateRouteTable</code> - The route was automatically created when the route table was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CreateRoute</code> - The route was manually added to the route
-     * table.
+     * <code>CreateRoute</code> - The route was manually added to the route table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EnableVgwRoutePropagation</code> - The route was propagated by
-     * route propagation.
+     * <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
      * </p>
      * </li>
      * </ul>
@@ -139,8 +132,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @param destinationCidrBlock
      *        The CIDR block used for the destination match.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Route withDestinationCidrBlock(String destinationCidrBlock) {
@@ -180,8 +172,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @param destinationPrefixListId
      *        The prefix of the AWS service.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Route withDestinationPrefixListId(String destinationPrefixListId) {
@@ -221,8 +212,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @param gatewayId
      *        The ID of a gateway attached to your VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Route withGatewayId(String gatewayId) {
@@ -262,8 +252,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @param instanceId
      *        The ID of a NAT instance in your VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Route withInstanceId(String instanceId) {
@@ -303,8 +292,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @param instanceOwnerId
      *        The AWS account ID of the owner of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Route withInstanceOwnerId(String instanceOwnerId) {
@@ -344,8 +332,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @param networkInterfaceId
      *        The ID of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Route withNetworkInterfaceId(String networkInterfaceId) {
@@ -385,8 +372,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @param vpcPeeringConnectionId
      *        The ID of the VPC peering connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Route withVpcPeeringConnectionId(String vpcPeeringConnectionId) {
@@ -426,8 +412,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @param natGatewayId
      *        The ID of a NAT gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Route withNatGatewayId(String natGatewayId) {
@@ -437,17 +422,14 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the route. The <code>blackhole</code> state indicates that
-     * the route's target isn't available (for example, the specified gateway
-     * isn't attached to the VPC, or the specified NAT instance has been
-     * terminated).
+     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
+     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
      * </p>
      * 
      * @param state
-     *        The state of the route. The <code>blackhole</code> state indicates
-     *        that the route's target isn't available (for example, the
-     *        specified gateway isn't attached to the VPC, or the specified NAT
-     *        instance has been terminated).
+     *        The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available
+     *        (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been
+     *        terminated).
      * @see RouteState
      */
 
@@ -457,16 +439,13 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the route. The <code>blackhole</code> state indicates that
-     * the route's target isn't available (for example, the specified gateway
-     * isn't attached to the VPC, or the specified NAT instance has been
-     * terminated).
+     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
+     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
      * </p>
      * 
-     * @return The state of the route. The <code>blackhole</code> state
-     *         indicates that the route's target isn't available (for example,
-     *         the specified gateway isn't attached to the VPC, or the specified
-     *         NAT instance has been terminated).
+     * @return The state of the route. The <code>blackhole</code> state indicates that the route's target isn't
+     *         available (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance
+     *         has been terminated).
      * @see RouteState
      */
 
@@ -476,19 +455,15 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the route. The <code>blackhole</code> state indicates that
-     * the route's target isn't available (for example, the specified gateway
-     * isn't attached to the VPC, or the specified NAT instance has been
-     * terminated).
+     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
+     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
      * </p>
      * 
      * @param state
-     *        The state of the route. The <code>blackhole</code> state indicates
-     *        that the route's target isn't available (for example, the
-     *        specified gateway isn't attached to the VPC, or the specified NAT
-     *        instance has been terminated).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available
+     *        (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been
+     *        terminated).
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RouteState
      */
 
@@ -499,17 +474,14 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the route. The <code>blackhole</code> state indicates that
-     * the route's target isn't available (for example, the specified gateway
-     * isn't attached to the VPC, or the specified NAT instance has been
-     * terminated).
+     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
+     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
      * </p>
      * 
      * @param state
-     *        The state of the route. The <code>blackhole</code> state indicates
-     *        that the route's target isn't available (for example, the
-     *        specified gateway isn't attached to the VPC, or the specified NAT
-     *        instance has been terminated).
+     *        The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available
+     *        (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been
+     *        terminated).
      * @see RouteState
      */
 
@@ -519,19 +491,15 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the route. The <code>blackhole</code> state indicates that
-     * the route's target isn't available (for example, the specified gateway
-     * isn't attached to the VPC, or the specified NAT instance has been
-     * terminated).
+     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
+     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
      * </p>
      * 
      * @param state
-     *        The state of the route. The <code>blackhole</code> state indicates
-     *        that the route's target isn't available (for example, the
-     *        specified gateway isn't attached to the VPC, or the specified NAT
-     *        instance has been terminated).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available
+     *        (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been
+     *        terminated).
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RouteState
      */
 
@@ -547,20 +515,17 @@ public class Route implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>CreateRouteTable</code> - The route was automatically created when
-     * the route table was created.
+     * <code>CreateRouteTable</code> - The route was automatically created when the route table was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CreateRoute</code> - The route was manually added to the route
-     * table.
+     * <code>CreateRoute</code> - The route was manually added to the route table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EnableVgwRoutePropagation</code> - The route was propagated by
-     * route propagation.
+     * <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
      * </p>
      * </li>
      * </ul>
@@ -570,20 +535,17 @@ public class Route implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CreateRouteTable</code> - The route was automatically
-     *        created when the route table was created.
+     *        <code>CreateRouteTable</code> - The route was automatically created when the route table was created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CreateRoute</code> - The route was manually added to the
-     *        route table.
+     *        <code>CreateRoute</code> - The route was manually added to the route table.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EnableVgwRoutePropagation</code> - The route was propagated
-     *        by route propagation.
+     *        <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
      *        </p>
      *        </li>
      * @see RouteOrigin
@@ -600,20 +562,17 @@ public class Route implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>CreateRouteTable</code> - The route was automatically created when
-     * the route table was created.
+     * <code>CreateRouteTable</code> - The route was automatically created when the route table was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CreateRoute</code> - The route was manually added to the route
-     * table.
+     * <code>CreateRoute</code> - The route was manually added to the route table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EnableVgwRoutePropagation</code> - The route was propagated by
-     * route propagation.
+     * <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
      * </p>
      * </li>
      * </ul>
@@ -622,20 +581,17 @@ public class Route implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CreateRouteTable</code> - The route was automatically
-     *         created when the route table was created.
+     *         <code>CreateRouteTable</code> - The route was automatically created when the route table was created.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CreateRoute</code> - The route was manually added to the
-     *         route table.
+     *         <code>CreateRoute</code> - The route was manually added to the route table.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EnableVgwRoutePropagation</code> - The route was propagated
-     *         by route propagation.
+     *         <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
      *         </p>
      *         </li>
      * @see RouteOrigin
@@ -652,20 +608,17 @@ public class Route implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>CreateRouteTable</code> - The route was automatically created when
-     * the route table was created.
+     * <code>CreateRouteTable</code> - The route was automatically created when the route table was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CreateRoute</code> - The route was manually added to the route
-     * table.
+     * <code>CreateRoute</code> - The route was manually added to the route table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EnableVgwRoutePropagation</code> - The route was propagated by
-     * route propagation.
+     * <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
      * </p>
      * </li>
      * </ul>
@@ -675,24 +628,20 @@ public class Route implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CreateRouteTable</code> - The route was automatically
-     *        created when the route table was created.
+     *        <code>CreateRouteTable</code> - The route was automatically created when the route table was created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CreateRoute</code> - The route was manually added to the
-     *        route table.
+     *        <code>CreateRoute</code> - The route was manually added to the route table.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EnableVgwRoutePropagation</code> - The route was propagated
-     *        by route propagation.
+     *        <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RouteOrigin
      */
 
@@ -708,20 +657,17 @@ public class Route implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>CreateRouteTable</code> - The route was automatically created when
-     * the route table was created.
+     * <code>CreateRouteTable</code> - The route was automatically created when the route table was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CreateRoute</code> - The route was manually added to the route
-     * table.
+     * <code>CreateRoute</code> - The route was manually added to the route table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EnableVgwRoutePropagation</code> - The route was propagated by
-     * route propagation.
+     * <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
      * </p>
      * </li>
      * </ul>
@@ -731,20 +677,17 @@ public class Route implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CreateRouteTable</code> - The route was automatically
-     *        created when the route table was created.
+     *        <code>CreateRouteTable</code> - The route was automatically created when the route table was created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CreateRoute</code> - The route was manually added to the
-     *        route table.
+     *        <code>CreateRoute</code> - The route was manually added to the route table.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EnableVgwRoutePropagation</code> - The route was propagated
-     *        by route propagation.
+     *        <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
      *        </p>
      *        </li>
      * @see RouteOrigin
@@ -761,20 +704,17 @@ public class Route implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>CreateRouteTable</code> - The route was automatically created when
-     * the route table was created.
+     * <code>CreateRouteTable</code> - The route was automatically created when the route table was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CreateRoute</code> - The route was manually added to the route
-     * table.
+     * <code>CreateRoute</code> - The route was manually added to the route table.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EnableVgwRoutePropagation</code> - The route was propagated by
-     * route propagation.
+     * <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
      * </p>
      * </li>
      * </ul>
@@ -784,24 +724,20 @@ public class Route implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CreateRouteTable</code> - The route was automatically
-     *        created when the route table was created.
+     *        <code>CreateRouteTable</code> - The route was automatically created when the route table was created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CreateRoute</code> - The route was manually added to the
-     *        route table.
+     *        <code>CreateRoute</code> - The route was manually added to the route table.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EnableVgwRoutePropagation</code> - The route was propagated
-     *        by route propagation.
+     *        <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RouteOrigin
      */
 
@@ -811,8 +747,7 @@ public class Route implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -823,11 +758,9 @@ public class Route implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinationCidrBlock() != null)
-            sb.append("DestinationCidrBlock: " + getDestinationCidrBlock()
-                    + ",");
+            sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ",");
         if (getDestinationPrefixListId() != null)
-            sb.append("DestinationPrefixListId: "
-                    + getDestinationPrefixListId() + ",");
+            sb.append("DestinationPrefixListId: " + getDestinationPrefixListId() + ",");
         if (getGatewayId() != null)
             sb.append("GatewayId: " + getGatewayId() + ",");
         if (getInstanceId() != null)
@@ -837,8 +770,7 @@ public class Route implements Serializable, Cloneable {
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
         if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId()
-                    + ",");
+            sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId() + ",");
         if (getNatGatewayId() != null)
             sb.append("NatGatewayId: " + getNatGatewayId() + ",");
         if (getState() != null)
@@ -859,64 +791,45 @@ public class Route implements Serializable, Cloneable {
         if (obj instanceof Route == false)
             return false;
         Route other = (Route) obj;
-        if (other.getDestinationCidrBlock() == null
-                ^ this.getDestinationCidrBlock() == null)
+        if (other.getDestinationCidrBlock() == null ^ this.getDestinationCidrBlock() == null)
             return false;
-        if (other.getDestinationCidrBlock() != null
-                && other.getDestinationCidrBlock().equals(
-                        this.getDestinationCidrBlock()) == false)
+        if (other.getDestinationCidrBlock() != null && other.getDestinationCidrBlock().equals(this.getDestinationCidrBlock()) == false)
             return false;
-        if (other.getDestinationPrefixListId() == null
-                ^ this.getDestinationPrefixListId() == null)
+        if (other.getDestinationPrefixListId() == null ^ this.getDestinationPrefixListId() == null)
             return false;
-        if (other.getDestinationPrefixListId() != null
-                && other.getDestinationPrefixListId().equals(
-                        this.getDestinationPrefixListId()) == false)
+        if (other.getDestinationPrefixListId() != null && other.getDestinationPrefixListId().equals(this.getDestinationPrefixListId()) == false)
             return false;
         if (other.getGatewayId() == null ^ this.getGatewayId() == null)
             return false;
-        if (other.getGatewayId() != null
-                && other.getGatewayId().equals(this.getGatewayId()) == false)
+        if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
-        if (other.getInstanceOwnerId() == null
-                ^ this.getInstanceOwnerId() == null)
+        if (other.getInstanceOwnerId() == null ^ this.getInstanceOwnerId() == null)
             return false;
-        if (other.getInstanceOwnerId() != null
-                && other.getInstanceOwnerId().equals(this.getInstanceOwnerId()) == false)
+        if (other.getInstanceOwnerId() != null && other.getInstanceOwnerId().equals(this.getInstanceOwnerId()) == false)
             return false;
-        if (other.getNetworkInterfaceId() == null
-                ^ this.getNetworkInterfaceId() == null)
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
-        if (other.getNetworkInterfaceId() != null
-                && other.getNetworkInterfaceId().equals(
-                        this.getNetworkInterfaceId()) == false)
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
-        if (other.getVpcPeeringConnectionId() == null
-                ^ this.getVpcPeeringConnectionId() == null)
+        if (other.getVpcPeeringConnectionId() == null ^ this.getVpcPeeringConnectionId() == null)
             return false;
-        if (other.getVpcPeeringConnectionId() != null
-                && other.getVpcPeeringConnectionId().equals(
-                        this.getVpcPeeringConnectionId()) == false)
+        if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false)
             return false;
         if (other.getNatGatewayId() == null ^ this.getNatGatewayId() == null)
             return false;
-        if (other.getNatGatewayId() != null
-                && other.getNatGatewayId().equals(this.getNatGatewayId()) == false)
+        if (other.getNatGatewayId() != null && other.getNatGatewayId().equals(this.getNatGatewayId()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getOrigin() == null ^ this.getOrigin() == null)
             return false;
-        if (other.getOrigin() != null
-                && other.getOrigin().equals(this.getOrigin()) == false)
+        if (other.getOrigin() != null && other.getOrigin().equals(this.getOrigin()) == false)
             return false;
         return true;
     }
@@ -926,38 +839,16 @@ public class Route implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDestinationCidrBlock() == null) ? 0
-                        : getDestinationCidrBlock().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDestinationPrefixListId() == null) ? 0
-                        : getDestinationPrefixListId().hashCode());
-        hashCode = prime * hashCode
-                + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceOwnerId() == null) ? 0 : getInstanceOwnerId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaceId() == null) ? 0
-                        : getNetworkInterfaceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVpcPeeringConnectionId() == null) ? 0
-                        : getVpcPeeringConnectionId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNatGatewayId() == null) ? 0 : getNatGatewayId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime * hashCode
-                + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
+        hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getDestinationPrefixListId() == null) ? 0 : getDestinationPrefixListId().hashCode());
+        hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceOwnerId() == null) ? 0 : getInstanceOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());
+        hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
         return hashCode;
     }
 
@@ -966,9 +857,7 @@ public class Route implements Serializable, Cloneable {
         try {
             return (Route) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Represents the response from the server that lists user pool clients.
  * </p>
  */
-public class ListUserPoolClientsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListUserPoolClientsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,8 @@ public class ListUserPoolClientsResult extends
     private java.util.List<UserPoolClientDescription> userPoolClients;
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next
+     * set of items in the list.
      * </p>
      */
     private String nextToken;
@@ -44,8 +40,7 @@ public class ListUserPoolClientsResult extends
      * The user pool clients in the response that lists user pool clients.
      * </p>
      * 
-     * @return The user pool clients in the response that lists user pool
-     *         clients.
+     * @return The user pool clients in the response that lists user pool clients.
      */
 
     public java.util.List<UserPoolClientDescription> getUserPoolClients() {
@@ -58,19 +53,16 @@ public class ListUserPoolClientsResult extends
      * </p>
      * 
      * @param userPoolClients
-     *        The user pool clients in the response that lists user pool
-     *        clients.
+     *        The user pool clients in the response that lists user pool clients.
      */
 
-    public void setUserPoolClients(
-            java.util.Collection<UserPoolClientDescription> userPoolClients) {
+    public void setUserPoolClients(java.util.Collection<UserPoolClientDescription> userPoolClients) {
         if (userPoolClients == null) {
             this.userPoolClients = null;
             return;
         }
 
-        this.userPoolClients = new java.util.ArrayList<UserPoolClientDescription>(
-                userPoolClients);
+        this.userPoolClients = new java.util.ArrayList<UserPoolClientDescription>(userPoolClients);
     }
 
     /**
@@ -78,24 +70,19 @@ public class ListUserPoolClientsResult extends
      * The user pool clients in the response that lists user pool clients.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setUserPoolClients(java.util.Collection)} or
-     * {@link #withUserPoolClients(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserPoolClients(java.util.Collection)} or {@link #withUserPoolClients(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param userPoolClients
-     *        The user pool clients in the response that lists user pool
-     *        clients.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user pool clients in the response that lists user pool clients.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListUserPoolClientsResult withUserPoolClients(
-            UserPoolClientDescription... userPoolClients) {
+    public ListUserPoolClientsResult withUserPoolClients(UserPoolClientDescription... userPoolClients) {
         if (this.userPoolClients == null) {
-            setUserPoolClients(new java.util.ArrayList<UserPoolClientDescription>(
-                    userPoolClients.length));
+            setUserPoolClients(new java.util.ArrayList<UserPoolClientDescription>(userPoolClients.length));
         }
         for (UserPoolClientDescription ele : userPoolClients) {
             this.userPoolClients.add(ele);
@@ -109,28 +96,24 @@ public class ListUserPoolClientsResult extends
      * </p>
      * 
      * @param userPoolClients
-     *        The user pool clients in the response that lists user pool
-     *        clients.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user pool clients in the response that lists user pool clients.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListUserPoolClientsResult withUserPoolClients(
-            java.util.Collection<UserPoolClientDescription> userPoolClients) {
+    public ListUserPoolClientsResult withUserPoolClients(java.util.Collection<UserPoolClientDescription> userPoolClients) {
         setUserPoolClients(userPoolClients);
         return this;
     }
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next
+     * set of items in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous call to this
-     *        operation, which can be used to return the next set of items in
-     *        the list.
+     *        An identifier that was returned from the previous call to this operation, which can be used to return the
+     *        next set of items in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -139,13 +122,12 @@ public class ListUserPoolClientsResult extends
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next
+     * set of items in the list.
      * </p>
      * 
-     * @return An identifier that was returned from the previous call to this
-     *         operation, which can be used to return the next set of items in
-     *         the list.
+     * @return An identifier that was returned from the previous call to this operation, which can be used to return the
+     *         next set of items in the list.
      */
 
     public String getNextToken() {
@@ -154,16 +136,14 @@ public class ListUserPoolClientsResult extends
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next
+     * set of items in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous call to this
-     *        operation, which can be used to return the next set of items in
-     *        the list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An identifier that was returned from the previous call to this operation, which can be used to return the
+     *        next set of items in the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListUserPoolClientsResult withNextToken(String nextToken) {
@@ -172,8 +152,7 @@ public class ListUserPoolClientsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -201,16 +180,13 @@ public class ListUserPoolClientsResult extends
         if (obj instanceof ListUserPoolClientsResult == false)
             return false;
         ListUserPoolClientsResult other = (ListUserPoolClientsResult) obj;
-        if (other.getUserPoolClients() == null
-                ^ this.getUserPoolClients() == null)
+        if (other.getUserPoolClients() == null ^ this.getUserPoolClients() == null)
             return false;
-        if (other.getUserPoolClients() != null
-                && other.getUserPoolClients().equals(this.getUserPoolClients()) == false)
+        if (other.getUserPoolClients() != null && other.getUserPoolClients().equals(this.getUserPoolClients()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -220,12 +196,8 @@ public class ListUserPoolClientsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getUserPoolClients() == null) ? 0 : getUserPoolClients()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolClients() == null) ? 0 : getUserPoolClients().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -234,9 +206,7 @@ public class ListUserPoolClientsResult extends
         try {
             return (ListUserPoolClientsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

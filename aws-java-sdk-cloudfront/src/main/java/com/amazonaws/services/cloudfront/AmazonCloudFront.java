@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront;
 
@@ -25,78 +23,62 @@ import com.amazonaws.services.cloudfront.waiters.AmazonCloudFrontWaiters;
  * <p>
  * <fullname>Amazon CloudFront</fullname>
  * <p>
- * Amazon CloudFront is a global content delivery network (CDN) service that
- * accelerates delivery of your websites, APIs, video content or other web
- * assets. It integrates with other Amazon Web Services products to give
- * developers and businesses an easy way to accelerate content to end users with
- * no minimum usage commitments.
+ * Amazon CloudFront is a global content delivery network (CDN) service that accelerates delivery of your websites,
+ * APIs, video content or other web assets. It integrates with other Amazon Web Services products to give developers and
+ * businesses an easy way to accelerate content to end users with no minimum usage commitments.
  * </p>
  */
 public interface AmazonCloudFront {
 
     /**
-     * The region metadata service name for computing region endpoints. You can
-     * use this value to retrieve metadata (such as supported regions) of the
-     * service.
+     * The region metadata service name for computing region endpoints. You can use this value to retrieve metadata
+     * (such as supported regions) of the service.
      *
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "cloudfront";
 
     /**
-     * Overrides the default endpoint for this client
-     * ("https://cloudfront.amazonaws.com/"). Callers can use this method to
-     * control which AWS region they want to work with.
+     * Overrides the default endpoint for this client ("https://cloudfront.amazonaws.com/"). Callers can use this method
+     * to control which AWS region they want to work with.
      * <p>
-     * Callers can pass in just the endpoint (ex: "cloudfront.amazonaws.com/")
-     * or a full URL, including the protocol (ex:
-     * "https://cloudfront.amazonaws.com/"). If the protocol is not specified
-     * here, the default protocol from this client's {@link ClientConfiguration}
-     * will be used, which by default is HTTPS.
+     * Callers can pass in just the endpoint (ex: "cloudfront.amazonaws.com/") or a full URL, including the protocol
+     * (ex: "https://cloudfront.amazonaws.com/"). If the protocol is not specified here, the default protocol from this
+     * client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see: <a
-     * href=
-     * "http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912"
-     * > http://developer.amazonwebservices.com/connect/entry.jspa?externalID=
-     * 3912</a>
+     * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
+     * endpoints for all AWS services, see: <a
+     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
+     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
      * <p>
-     * <b>This method is not threadsafe. An endpoint should be configured when
-     * the client is created and before any service requests are made. Changing
-     * it afterwards creates inevitable race conditions for any service requests
-     * in transit or retrying.</b>
+     * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
+     * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
+     * transit or retrying.</b>
      *
      * @param endpoint
-     *        The endpoint (ex: "cloudfront.amazonaws.com/") or a full URL,
-     *        including the protocol (ex: "https://cloudfront.amazonaws.com/")
-     *        of the region specific AWS endpoint this client will communicate
+     *        The endpoint (ex: "cloudfront.amazonaws.com/") or a full URL, including the protocol (ex:
+     *        "https://cloudfront.amazonaws.com/") of the region specific AWS endpoint this client will communicate
      *        with.
      */
     void setEndpoint(String endpoint);
 
     /**
-     * An alternative to {@link AmazonCloudFront#setEndpoint(String)}, sets the
-     * regional endpoint for this client's service calls. Callers can use this
-     * method to control which AWS region they want to work with.
+     * An alternative to {@link AmazonCloudFront#setEndpoint(String)}, sets the regional endpoint for this client's
+     * service calls. Callers can use this method to control which AWS region they want to work with.
      * <p>
-     * By default, all service endpoints in all regions use the https protocol.
-     * To use http instead, specify it in the {@link ClientConfiguration}
-     * supplied at construction.
+     * By default, all service endpoints in all regions use the https protocol. To use http instead, specify it in the
+     * {@link ClientConfiguration} supplied at construction.
      * <p>
-     * <b>This method is not threadsafe. A region should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit or retrying.</b>
+     * <b>This method is not threadsafe. A region should be configured when the client is created and before any service
+     * requests are made. Changing it afterwards creates inevitable race conditions for any service requests in transit
+     * or retrying.</b>
      *
      * @param region
-     *        The region this client will communicate with. See
-     *        {@link Region#getRegion(com.amazonaws.regions.Regions)} for
-     *        accessing a given region. Must not be null and must be a region
-     *        where the service is available.
+     *        The region this client will communicate with. See {@link Region#getRegion(com.amazonaws.regions.Regions)}
+     *        for accessing a given region. Must not be null and must be a region where the service is available.
      *
      * @see Region#getRegion(com.amazonaws.regions.Regions)
-     * @see Region#createClient(Class,
-     *      com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      * @see Region#isServiceSupported(String)
      */
     void setRegion(Region region);
@@ -106,20 +88,15 @@ public interface AmazonCloudFront {
      * 
      * @param createCloudFrontOriginAccessIdentityRequest
      *        The request to create a new origin access identity.
-     * @return Result of the CreateCloudFrontOriginAccessIdentity operation
-     *         returned by the service.
+     * @return Result of the CreateCloudFrontOriginAccessIdentity operation returned by the service.
      * @throws CloudFrontOriginAccessIdentityAlreadyExistsException
-     *         If the CallerReference is a value you already sent in a previous
-     *         request to create an identity but the content of the
-     *         CloudFrontOriginAccessIdentityConfig is different from the
-     *         original request, CloudFront returns a
-     *         CloudFrontOriginAccessIdentityAlreadyExists error.
+     *         If the CallerReference is a value you already sent in a previous request to create an identity but the
+     *         content of the CloudFrontOriginAccessIdentityConfig is different from the original request, CloudFront
+     *         returns a CloudFrontOriginAccessIdentityAlreadyExists error.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present
-     *         and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
      * @throws TooManyCloudFrontOriginAccessIdentitiesException
-     *         Processing your request would cause you to exceed the maximum
-     *         number of origin access identities allowed.
+     *         Processing your request would cause you to exceed the maximum number of origin access identities allowed.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InconsistentQuantitiesException
@@ -134,49 +111,40 @@ public interface AmazonCloudFront {
      * 
      * @param createDistributionRequest
      *        The request to create a new distribution.
-     * @return Result of the CreateDistribution operation returned by the
-     *         service.
+     * @return Result of the CreateDistribution operation returned by the service.
      * @throws CNAMEAlreadyExistsException
      * @throws DistributionAlreadyExistsException
-     *         The caller reference you attempted to create the distribution
-     *         with is associated with another distribution.
+     *         The caller reference you attempted to create the distribution with is associated with another
+     *         distribution.
      * @throws InvalidOriginException
-     *         The Amazon S3 origin server specified does not refer to a valid
-     *         Amazon S3 bucket.
+     *         The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws TooManyTrustedSignersException
-     *         Your request contains more trusted signers than are allowed per
-     *         distribution.
+     *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
      *         One or more of your trusted signers do not exist.
      * @throws InvalidViewerCertificateException
      * @throws InvalidMinimumProtocolVersionException
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present
-     *         and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
      * @throws TooManyDistributionCNAMEsException
-     *         Your request contains more CNAMEs than are allowed per
-     *         distribution.
+     *         Your request contains more CNAMEs than are allowed per distribution.
      * @throws TooManyDistributionsException
-     *         Processing your request would cause you to exceed the maximum
-     *         number of distributions allowed.
+     *         Processing your request would cause you to exceed the maximum number of distributions allowed.
      * @throws InvalidDefaultRootObjectException
-     *         The default root object file name is too big or contains an
-     *         invalid character.
+     *         The default root object file name is too big or contains an invalid character.
      * @throws InvalidRelativePathException
-     *         The relative path is too big, is not URL-encoded, or does not
-     *         begin with a slash (/).
+     *         The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
      * @throws InvalidErrorCodeException
      * @throws InvalidResponseCodeException
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidRequiredProtocolException
-     *         This operation requires the HTTPS protocol. Ensure that you
-     *         specify the HTTPS protocol in your request, or omit the
-     *         RequiredProtocols element from your distribution configuration.
+     *         This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request,
+     *         or omit the RequiredProtocols element from your distribution configuration.
      * @throws NoSuchOriginException
      *         No origin exists with the specified Origin Id.
      * @throws TooManyOriginsException
@@ -184,13 +152,11 @@ public interface AmazonCloudFront {
      * @throws TooManyCacheBehaviorsException
      *         You cannot create anymore cache behaviors for the distribution.
      * @throws TooManyCookieNamesInWhiteListException
-     *         Your request contains more cookie names in the whitelist than are
-     *         allowed per cache behavior.
+     *         Your request contains more cookie names in the whitelist than are allowed per cache behavior.
      * @throws InvalidForwardCookiesException
-     *         Your request contains forward cookies option which doesn't match
-     *         with the expectation for the whitelisted list of cookie names.
-     *         Either list of cookie names has been specified when not allowed
-     *         or list of cookie names is missing when expected.
+     *         Your request contains forward cookies option which doesn't match with the expectation for the whitelisted
+     *         list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie
+     *         names is missing when expected.
      * @throws TooManyHeadersInForwardedValuesException
      * @throws InvalidHeadersForS3OriginException
      * @throws InconsistentQuantitiesException
@@ -200,9 +166,8 @@ public interface AmazonCloudFront {
      * @throws InvalidLocationCodeException
      * @throws InvalidGeoRestrictionParameterException
      * @throws InvalidProtocolSettingsException
-     *         You cannot specify SSLv3 as the minimum protocol version if you
-     *         only want to support only clients that Support Server Name
-     *         Indication (SNI).
+     *         You cannot specify SSLv3 as the minimum protocol version if you only want to support only clients that
+     *         Support Server Name Indication (SNI).
      * @throws InvalidTTLOrderException
      * @throws InvalidWebACLIdException
      * @throws TooManyOriginCustomHeadersException
@@ -210,57 +175,47 @@ public interface AmazonCloudFront {
      * @throws InvalidQueryStringParametersException
      * @sample AmazonCloudFront.CreateDistribution
      */
-    CreateDistributionResult createDistribution(
-            CreateDistributionRequest createDistributionRequest);
+    CreateDistributionResult createDistribution(CreateDistributionRequest createDistributionRequest);
 
     /**
      * Create a new distribution with tags.
      * 
      * @param createDistributionWithTagsRequest
      *        The request to create a new distribution with tags
-     * @return Result of the CreateDistributionWithTags operation returned by
-     *         the service.
+     * @return Result of the CreateDistributionWithTags operation returned by the service.
      * @throws CNAMEAlreadyExistsException
      * @throws DistributionAlreadyExistsException
-     *         The caller reference you attempted to create the distribution
-     *         with is associated with another distribution.
+     *         The caller reference you attempted to create the distribution with is associated with another
+     *         distribution.
      * @throws InvalidOriginException
-     *         The Amazon S3 origin server specified does not refer to a valid
-     *         Amazon S3 bucket.
+     *         The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws TooManyTrustedSignersException
-     *         Your request contains more trusted signers than are allowed per
-     *         distribution.
+     *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
      *         One or more of your trusted signers do not exist.
      * @throws InvalidViewerCertificateException
      * @throws InvalidMinimumProtocolVersionException
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present
-     *         and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
      * @throws TooManyDistributionCNAMEsException
-     *         Your request contains more CNAMEs than are allowed per
-     *         distribution.
+     *         Your request contains more CNAMEs than are allowed per distribution.
      * @throws TooManyDistributionsException
-     *         Processing your request would cause you to exceed the maximum
-     *         number of distributions allowed.
+     *         Processing your request would cause you to exceed the maximum number of distributions allowed.
      * @throws InvalidDefaultRootObjectException
-     *         The default root object file name is too big or contains an
-     *         invalid character.
+     *         The default root object file name is too big or contains an invalid character.
      * @throws InvalidRelativePathException
-     *         The relative path is too big, is not URL-encoded, or does not
-     *         begin with a slash (/).
+     *         The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
      * @throws InvalidErrorCodeException
      * @throws InvalidResponseCodeException
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidRequiredProtocolException
-     *         This operation requires the HTTPS protocol. Ensure that you
-     *         specify the HTTPS protocol in your request, or omit the
-     *         RequiredProtocols element from your distribution configuration.
+     *         This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request,
+     *         or omit the RequiredProtocols element from your distribution configuration.
      * @throws NoSuchOriginException
      *         No origin exists with the specified Origin Id.
      * @throws TooManyOriginsException
@@ -268,13 +223,11 @@ public interface AmazonCloudFront {
      * @throws TooManyCacheBehaviorsException
      *         You cannot create anymore cache behaviors for the distribution.
      * @throws TooManyCookieNamesInWhiteListException
-     *         Your request contains more cookie names in the whitelist than are
-     *         allowed per cache behavior.
+     *         Your request contains more cookie names in the whitelist than are allowed per cache behavior.
      * @throws InvalidForwardCookiesException
-     *         Your request contains forward cookies option which doesn't match
-     *         with the expectation for the whitelisted list of cookie names.
-     *         Either list of cookie names has been specified when not allowed
-     *         or list of cookie names is missing when expected.
+     *         Your request contains forward cookies option which doesn't match with the expectation for the whitelisted
+     *         list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie
+     *         names is missing when expected.
      * @throws TooManyHeadersInForwardedValuesException
      * @throws InvalidHeadersForS3OriginException
      * @throws InconsistentQuantitiesException
@@ -284,121 +237,103 @@ public interface AmazonCloudFront {
      * @throws InvalidLocationCodeException
      * @throws InvalidGeoRestrictionParameterException
      * @throws InvalidProtocolSettingsException
-     *         You cannot specify SSLv3 as the minimum protocol version if you
-     *         only want to support only clients that Support Server Name
-     *         Indication (SNI).
+     *         You cannot specify SSLv3 as the minimum protocol version if you only want to support only clients that
+     *         Support Server Name Indication (SNI).
      * @throws InvalidTTLOrderException
      * @throws InvalidWebACLIdException
      * @throws TooManyOriginCustomHeadersException
      * @throws InvalidTaggingException
-     *         The specified tagging for a CloudFront resource is invalid. For
-     *         more information, see the error text.
+     *         The specified tagging for a CloudFront resource is invalid. For more information, see the error text.
      * @throws TooManyQueryStringParametersException
      * @throws InvalidQueryStringParametersException
      * @sample AmazonCloudFront.CreateDistributionWithTags
      */
-    CreateDistributionWithTagsResult createDistributionWithTags(
-            CreateDistributionWithTagsRequest createDistributionWithTagsRequest);
+    CreateDistributionWithTagsResult createDistributionWithTags(CreateDistributionWithTagsRequest createDistributionWithTagsRequest);
 
     /**
      * Create a new invalidation.
      * 
      * @param createInvalidationRequest
      *        The request to create an invalidation.
-     * @return Result of the CreateInvalidation operation returned by the
-     *         service.
+     * @return Result of the CreateInvalidation operation returned by the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present
-     *         and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws BatchTooLargeException
      * @throws TooManyInvalidationsInProgressException
-     *         You have exceeded the maximum number of allowable InProgress
-     *         invalidation batch requests, or invalidation objects.
+     *         You have exceeded the maximum number of allowable InProgress invalidation batch requests, or invalidation
+     *         objects.
      * @throws InconsistentQuantitiesException
      *         The value of Quantity and the size of Items do not match.
      * @sample AmazonCloudFront.CreateInvalidation
      */
-    CreateInvalidationResult createInvalidation(
-            CreateInvalidationRequest createInvalidationRequest);
+    CreateInvalidationResult createInvalidation(CreateInvalidationRequest createInvalidationRequest);
 
     /**
      * Create a new streaming distribution.
      * 
      * @param createStreamingDistributionRequest
      *        The request to create a new streaming distribution.
-     * @return Result of the CreateStreamingDistribution operation returned by
-     *         the service.
+     * @return Result of the CreateStreamingDistribution operation returned by the service.
      * @throws CNAMEAlreadyExistsException
      * @throws StreamingDistributionAlreadyExistsException
      * @throws InvalidOriginException
-     *         The Amazon S3 origin server specified does not refer to a valid
-     *         Amazon S3 bucket.
+     *         The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws TooManyTrustedSignersException
-     *         Your request contains more trusted signers than are allowed per
-     *         distribution.
+     *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
      *         One or more of your trusted signers do not exist.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present
-     *         and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
      * @throws TooManyStreamingDistributionCNAMEsException
      * @throws TooManyStreamingDistributionsException
-     *         Processing your request would cause you to exceed the maximum
-     *         number of streaming distributions allowed.
+     *         Processing your request would cause you to exceed the maximum number of streaming distributions allowed.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InconsistentQuantitiesException
      *         The value of Quantity and the size of Items do not match.
      * @sample AmazonCloudFront.CreateStreamingDistribution
      */
-    CreateStreamingDistributionResult createStreamingDistribution(
-            CreateStreamingDistributionRequest createStreamingDistributionRequest);
+    CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest);
 
     /**
      * Create a new streaming distribution with tags.
      * 
      * @param createStreamingDistributionWithTagsRequest
      *        The request to create a new streaming distribution with tags.
-     * @return Result of the CreateStreamingDistributionWithTags operation
-     *         returned by the service.
+     * @return Result of the CreateStreamingDistributionWithTags operation returned by the service.
      * @throws CNAMEAlreadyExistsException
      * @throws StreamingDistributionAlreadyExistsException
      * @throws InvalidOriginException
-     *         The Amazon S3 origin server specified does not refer to a valid
-     *         Amazon S3 bucket.
+     *         The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws TooManyTrustedSignersException
-     *         Your request contains more trusted signers than are allowed per
-     *         distribution.
+     *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
      *         One or more of your trusted signers do not exist.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present
-     *         and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
      * @throws TooManyStreamingDistributionCNAMEsException
      * @throws TooManyStreamingDistributionsException
-     *         Processing your request would cause you to exceed the maximum
-     *         number of streaming distributions allowed.
+     *         Processing your request would cause you to exceed the maximum number of streaming distributions allowed.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InconsistentQuantitiesException
      *         The value of Quantity and the size of Items do not match.
      * @throws InvalidTaggingException
-     *         The specified tagging for a CloudFront resource is invalid. For
-     *         more information, see the error text.
+     *         The specified tagging for a CloudFront resource is invalid. For more information, see the error text.
      * @sample AmazonCloudFront.CreateStreamingDistributionWithTags
      */
     CreateStreamingDistributionWithTagsResult createStreamingDistributionWithTags(
@@ -409,18 +344,15 @@ public interface AmazonCloudFront {
      * 
      * @param deleteCloudFrontOriginAccessIdentityRequest
      *        The request to delete a origin access identity.
-     * @return Result of the DeleteCloudFrontOriginAccessIdentity operation
-     *         returned by the service.
+     * @return Result of the DeleteCloudFrontOriginAccessIdentity operation returned by the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws InvalidIfMatchVersionException
-     *         The If-Match version is missing or not valid for the
-     *         distribution.
+     *         The If-Match version is missing or not valid for the distribution.
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header
-     *         fields evaluated to false.
+     *         The precondition given in one or more of the request-header fields evaluated to false.
      * @throws CloudFrontOriginAccessIdentityInUseException
      * @sample AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity
      */
@@ -432,70 +364,59 @@ public interface AmazonCloudFront {
      * 
      * @param deleteDistributionRequest
      *        The request to delete a distribution.
-     * @return Result of the DeleteDistribution operation returned by the
-     *         service.
+     * @return Result of the DeleteDistribution operation returned by the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws DistributionNotDisabledException
      * @throws InvalidIfMatchVersionException
-     *         The If-Match version is missing or not valid for the
-     *         distribution.
+     *         The If-Match version is missing or not valid for the distribution.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header
-     *         fields evaluated to false.
+     *         The precondition given in one or more of the request-header fields evaluated to false.
      * @sample AmazonCloudFront.DeleteDistribution
      */
-    DeleteDistributionResult deleteDistribution(
-            DeleteDistributionRequest deleteDistributionRequest);
+    DeleteDistributionResult deleteDistribution(DeleteDistributionRequest deleteDistributionRequest);
 
     /**
      * Delete a streaming distribution.
      * 
      * @param deleteStreamingDistributionRequest
      *        The request to delete a streaming distribution.
-     * @return Result of the DeleteStreamingDistribution operation returned by
-     *         the service.
+     * @return Result of the DeleteStreamingDistribution operation returned by the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws StreamingDistributionNotDisabledException
      * @throws InvalidIfMatchVersionException
-     *         The If-Match version is missing or not valid for the
-     *         distribution.
+     *         The If-Match version is missing or not valid for the distribution.
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header
-     *         fields evaluated to false.
+     *         The precondition given in one or more of the request-header fields evaluated to false.
      * @sample AmazonCloudFront.DeleteStreamingDistribution
      */
-    DeleteStreamingDistributionResult deleteStreamingDistribution(
-            DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
+    DeleteStreamingDistributionResult deleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
 
     /**
      * Get the information about an origin access identity.
      * 
      * @param getCloudFrontOriginAccessIdentityRequest
      *        The request to get an origin access identity's information.
-     * @return Result of the GetCloudFrontOriginAccessIdentity operation
-     *         returned by the service.
+     * @return Result of the GetCloudFrontOriginAccessIdentity operation returned by the service.
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetCloudFrontOriginAccessIdentity
      */
-    GetCloudFrontOriginAccessIdentityResult getCloudFrontOriginAccessIdentity(
-            GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest);
+    GetCloudFrontOriginAccessIdentityResult getCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest);
 
     /**
      * Get the configuration information about an origin access identity.
      * 
      * @param getCloudFrontOriginAccessIdentityConfigRequest
      *        The request to get an origin access identity's configuration.
-     * @return Result of the GetCloudFrontOriginAccessIdentityConfig operation
-     *         returned by the service.
+     * @return Result of the GetCloudFrontOriginAccessIdentityConfig operation returned by the service.
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws AccessDeniedException
@@ -517,24 +438,21 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @sample AmazonCloudFront.GetDistribution
      */
-    GetDistributionResult getDistribution(
-            GetDistributionRequest getDistributionRequest);
+    GetDistributionResult getDistribution(GetDistributionRequest getDistributionRequest);
 
     /**
      * Get the configuration information about a distribution.
      * 
      * @param getDistributionConfigRequest
      *        The request to get a distribution configuration.
-     * @return Result of the GetDistributionConfig operation returned by the
-     *         service.
+     * @return Result of the GetDistributionConfig operation returned by the service.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetDistributionConfig
      */
-    GetDistributionConfigResult getDistributionConfig(
-            GetDistributionConfigRequest getDistributionConfigRequest);
+    GetDistributionConfigResult getDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest);
 
     /**
      * Get the information about an invalidation.
@@ -550,48 +468,42 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @sample AmazonCloudFront.GetInvalidation
      */
-    GetInvalidationResult getInvalidation(
-            GetInvalidationRequest getInvalidationRequest);
+    GetInvalidationResult getInvalidation(GetInvalidationRequest getInvalidationRequest);
 
     /**
      * Get the information about a streaming distribution.
      * 
      * @param getStreamingDistributionRequest
      *        The request to get a streaming distribution's information.
-     * @return Result of the GetStreamingDistribution operation returned by the
-     *         service.
+     * @return Result of the GetStreamingDistribution operation returned by the service.
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistribution
      */
-    GetStreamingDistributionResult getStreamingDistribution(
-            GetStreamingDistributionRequest getStreamingDistributionRequest);
+    GetStreamingDistributionResult getStreamingDistribution(GetStreamingDistributionRequest getStreamingDistributionRequest);
 
     /**
      * Get the configuration information about a streaming distribution.
      * 
      * @param getStreamingDistributionConfigRequest
      *        To request to get a streaming distribution configuration.
-     * @return Result of the GetStreamingDistributionConfig operation returned
-     *         by the service.
+     * @return Result of the GetStreamingDistributionConfig operation returned by the service.
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistributionConfig
      */
-    GetStreamingDistributionConfigResult getStreamingDistributionConfig(
-            GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest);
+    GetStreamingDistributionConfigResult getStreamingDistributionConfig(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest);
 
     /**
      * List origin access identities.
      * 
      * @param listCloudFrontOriginAccessIdentitiesRequest
      *        The request to list origin access identities.
-     * @return Result of the ListCloudFrontOriginAccessIdentities operation
-     *         returned by the service.
+     * @return Result of the ListCloudFrontOriginAccessIdentities operation returned by the service.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListCloudFrontOriginAccessIdentities
@@ -604,39 +516,32 @@ public interface AmazonCloudFront {
      * 
      * @param listDistributionsRequest
      *        The request to list your distributions.
-     * @return Result of the ListDistributions operation returned by the
-     *         service.
+     * @return Result of the ListDistributions operation returned by the service.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListDistributions
      */
-    ListDistributionsResult listDistributions(
-            ListDistributionsRequest listDistributionsRequest);
+    ListDistributionsResult listDistributions(ListDistributionsRequest listDistributionsRequest);
 
     /**
-     * List the distributions that are associated with a specified AWS WAF web
-     * ACL.
+     * List the distributions that are associated with a specified AWS WAF web ACL.
      * 
      * @param listDistributionsByWebACLIdRequest
-     *        The request to list distributions that are associated with a
-     *        specified AWS WAF web ACL.
-     * @return Result of the ListDistributionsByWebACLId operation returned by
-     *         the service.
+     *        The request to list distributions that are associated with a specified AWS WAF web ACL.
+     * @return Result of the ListDistributionsByWebACLId operation returned by the service.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidWebACLIdException
      * @sample AmazonCloudFront.ListDistributionsByWebACLId
      */
-    ListDistributionsByWebACLIdResult listDistributionsByWebACLId(
-            ListDistributionsByWebACLIdRequest listDistributionsByWebACLIdRequest);
+    ListDistributionsByWebACLIdResult listDistributionsByWebACLId(ListDistributionsByWebACLIdRequest listDistributionsByWebACLIdRequest);
 
     /**
      * List invalidation batches.
      * 
      * @param listInvalidationsRequest
      *        The request to list invalidations.
-     * @return Result of the ListInvalidations operation returned by the
-     *         service.
+     * @return Result of the ListInvalidations operation returned by the service.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws NoSuchDistributionException
@@ -645,43 +550,37 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @sample AmazonCloudFront.ListInvalidations
      */
-    ListInvalidationsResult listInvalidations(
-            ListInvalidationsRequest listInvalidationsRequest);
+    ListInvalidationsResult listInvalidations(ListInvalidationsRequest listInvalidationsRequest);
 
     /**
      * List streaming distributions.
      * 
      * @param listStreamingDistributionsRequest
      *        The request to list your streaming distributions.
-     * @return Result of the ListStreamingDistributions operation returned by
-     *         the service.
+     * @return Result of the ListStreamingDistributions operation returned by the service.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListStreamingDistributions
      */
-    ListStreamingDistributionsResult listStreamingDistributions(
-            ListStreamingDistributionsRequest listStreamingDistributionsRequest);
+    ListStreamingDistributionsResult listStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest);
 
     /**
      * List tags for a CloudFront resource.
      * 
      * @param listTagsForResourceRequest
      *        The request to list tags for a CloudFront resource.
-     * @return Result of the ListTagsForResource operation returned by the
-     *         service.
+     * @return Result of the ListTagsForResource operation returned by the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidTaggingException
-     *         The specified tagging for a CloudFront resource is invalid. For
-     *         more information, see the error text.
+     *         The specified tagging for a CloudFront resource is invalid. For more information, see the error text.
      * @throws NoSuchResourceException
      *         The specified CloudFront resource does not exist.
      * @sample AmazonCloudFront.ListTagsForResource
      */
-    ListTagsForResourceResult listTagsForResource(
-            ListTagsForResourceRequest listTagsForResourceRequest);
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * Add tags to a CloudFront resource.
@@ -694,8 +593,7 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidTaggingException
-     *         The specified tagging for a CloudFront resource is invalid. For
-     *         more information, see the error text.
+     *         The specified tagging for a CloudFront resource is invalid. For more information, see the error text.
      * @throws NoSuchResourceException
      *         The specified CloudFront resource does not exist.
      * @sample AmazonCloudFront.TagResource
@@ -713,8 +611,7 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidTaggingException
-     *         The specified tagging for a CloudFront resource is invalid. For
-     *         more information, see the error text.
+     *         The specified tagging for a CloudFront resource is invalid. For more information, see the error text.
      * @throws NoSuchResourceException
      *         The specified CloudFront resource does not exist.
      * @sample AmazonCloudFront.UntagResource
@@ -726,23 +623,19 @@ public interface AmazonCloudFront {
      * 
      * @param updateCloudFrontOriginAccessIdentityRequest
      *        The request to update an origin access identity.
-     * @return Result of the UpdateCloudFrontOriginAccessIdentity operation
-     *         returned by the service.
+     * @return Result of the UpdateCloudFrontOriginAccessIdentity operation returned by the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws IllegalUpdateException
      *         Origin and CallerReference cannot be updated.
      * @throws InvalidIfMatchVersionException
-     *         The If-Match version is missing or not valid for the
-     *         distribution.
+     *         The If-Match version is missing or not valid for the distribution.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present
-     *         and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header
-     *         fields evaluated to false.
+     *         The precondition given in one or more of the request-header fields evaluated to false.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InconsistentQuantitiesException
@@ -757,33 +650,26 @@ public interface AmazonCloudFront {
      * 
      * @param updateDistributionRequest
      *        The request to update a distribution.
-     * @return Result of the UpdateDistribution operation returned by the
-     *         service.
+     * @return Result of the UpdateDistribution operation returned by the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws CNAMEAlreadyExistsException
      * @throws IllegalUpdateException
      *         Origin and CallerReference cannot be updated.
      * @throws InvalidIfMatchVersionException
-     *         The If-Match version is missing or not valid for the
-     *         distribution.
+     *         The If-Match version is missing or not valid for the distribution.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present
-     *         and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header
-     *         fields evaluated to false.
+     *         The precondition given in one or more of the request-header fields evaluated to false.
      * @throws TooManyDistributionCNAMEsException
-     *         Your request contains more CNAMEs than are allowed per
-     *         distribution.
+     *         Your request contains more CNAMEs than are allowed per distribution.
      * @throws InvalidDefaultRootObjectException
-     *         The default root object file name is too big or contains an
-     *         invalid character.
+     *         The default root object file name is too big or contains an invalid character.
      * @throws InvalidRelativePathException
-     *         The relative path is too big, is not URL-encoded, or does not
-     *         begin with a slash (/).
+     *         The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
      * @throws InvalidErrorCodeException
      * @throws InvalidResponseCodeException
      * @throws InvalidArgumentException
@@ -791,16 +677,14 @@ public interface AmazonCloudFront {
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
      * @throws TooManyTrustedSignersException
-     *         Your request contains more trusted signers than are allowed per
-     *         distribution.
+     *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
      *         One or more of your trusted signers do not exist.
      * @throws InvalidViewerCertificateException
      * @throws InvalidMinimumProtocolVersionException
      * @throws InvalidRequiredProtocolException
-     *         This operation requires the HTTPS protocol. Ensure that you
-     *         specify the HTTPS protocol in your request, or omit the
-     *         RequiredProtocols element from your distribution configuration.
+     *         This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request,
+     *         or omit the RequiredProtocols element from your distribution configuration.
      * @throws NoSuchOriginException
      *         No origin exists with the specified Origin Id.
      * @throws TooManyOriginsException
@@ -808,13 +692,11 @@ public interface AmazonCloudFront {
      * @throws TooManyCacheBehaviorsException
      *         You cannot create anymore cache behaviors for the distribution.
      * @throws TooManyCookieNamesInWhiteListException
-     *         Your request contains more cookie names in the whitelist than are
-     *         allowed per cache behavior.
+     *         Your request contains more cookie names in the whitelist than are allowed per cache behavior.
      * @throws InvalidForwardCookiesException
-     *         Your request contains forward cookies option which doesn't match
-     *         with the expectation for the whitelisted list of cookie names.
-     *         Either list of cookie names has been specified when not allowed
-     *         or list of cookie names is missing when expected.
+     *         Your request contains forward cookies option which doesn't match with the expectation for the whitelisted
+     *         list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie
+     *         names is missing when expected.
      * @throws TooManyHeadersInForwardedValuesException
      * @throws InvalidHeadersForS3OriginException
      * @throws InconsistentQuantitiesException
@@ -830,75 +712,62 @@ public interface AmazonCloudFront {
      * @throws InvalidQueryStringParametersException
      * @sample AmazonCloudFront.UpdateDistribution
      */
-    UpdateDistributionResult updateDistribution(
-            UpdateDistributionRequest updateDistributionRequest);
+    UpdateDistributionResult updateDistribution(UpdateDistributionRequest updateDistributionRequest);
 
     /**
      * Update a streaming distribution.
      * 
      * @param updateStreamingDistributionRequest
      *        The request to update a streaming distribution.
-     * @return Result of the UpdateStreamingDistribution operation returned by
-     *         the service.
+     * @return Result of the UpdateStreamingDistribution operation returned by the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws CNAMEAlreadyExistsException
      * @throws IllegalUpdateException
      *         Origin and CallerReference cannot be updated.
      * @throws InvalidIfMatchVersionException
-     *         The If-Match version is missing or not valid for the
-     *         distribution.
+     *         The If-Match version is missing or not valid for the distribution.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present
-     *         and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header
-     *         fields evaluated to false.
+     *         The precondition given in one or more of the request-header fields evaluated to false.
      * @throws TooManyStreamingDistributionCNAMEsException
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
      * @throws TooManyTrustedSignersException
-     *         Your request contains more trusted signers than are allowed per
-     *         distribution.
+     *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
      *         One or more of your trusted signers do not exist.
      * @throws InconsistentQuantitiesException
      *         The value of Quantity and the size of Items do not match.
      * @sample AmazonCloudFront.UpdateStreamingDistribution
      */
-    UpdateStreamingDistributionResult updateStreamingDistribution(
-            UpdateStreamingDistributionRequest updateStreamingDistributionRequest);
+    UpdateStreamingDistributionResult updateStreamingDistribution(UpdateStreamingDistributionRequest updateStreamingDistributionRequest);
 
     /**
-     * Shuts down this client object, releasing any resources that might be held
-     * open. This is an optional method, and callers are not expected to call
-     * it, but can if they want to explicitly release any open resources. Once a
-     * client has been shutdown, it should not be used to make any more
-     * requests.
+     * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
+     * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
+     * has been shutdown, it should not be used to make any more requests.
      */
     void shutdown();
 
     /**
-     * Returns additional metadata for a previously executed successful request,
-     * typically used for debugging issues where a service isn't acting as
-     * expected. This data isn't considered part of the result data returned by
-     * an operation, so it's available through this separate, diagnostic
-     * interface.
+     * Returns additional metadata for a previously executed successful request, typically used for debugging issues
+     * where a service isn't acting as expected. This data isn't considered part of the result data returned by an
+     * operation, so it's available through this separate, diagnostic interface.
      * <p>
-     * Response metadata is only cached for a limited period of time, so if you
-     * need to access this extra diagnostic information for an executed request,
-     * you should use this method to retrieve it as soon as possible after
+     * Response metadata is only cached for a limited period of time, so if you need to access this extra diagnostic
+     * information for an executed request, you should use this method to retrieve it as soon as possible after
      * executing a request.
      *
      * @param request
      *        The originally executed request.
      *
-     * @return The response metadata for the specified request, or null if none
-     *         is available.
+     * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 

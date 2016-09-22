@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
@@ -35,103 +33,70 @@ import com.amazonaws.protocol.json.*;
 /**
  * CountClosedWorkflowExecutionsRequest Marshaller
  */
-public class CountClosedWorkflowExecutionsRequestMarshaller
-        implements
+public class CountClosedWorkflowExecutionsRequestMarshaller implements
         Marshaller<Request<CountClosedWorkflowExecutionsRequest>, CountClosedWorkflowExecutionsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public CountClosedWorkflowExecutionsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public CountClosedWorkflowExecutionsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<CountClosedWorkflowExecutionsRequest> marshall(
-            CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest) {
+    public Request<CountClosedWorkflowExecutionsRequest> marshall(CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest) {
 
         if (countClosedWorkflowExecutionsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CountClosedWorkflowExecutionsRequest> request = new DefaultRequest<CountClosedWorkflowExecutionsRequest>(
-                countClosedWorkflowExecutionsRequest, "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target",
-                "SimpleWorkflowService.CountClosedWorkflowExecutions");
+        Request<CountClosedWorkflowExecutionsRequest> request = new DefaultRequest<CountClosedWorkflowExecutionsRequest>(countClosedWorkflowExecutionsRequest,
+                "AmazonSimpleWorkflow");
+        request.addHeader("X-Amz-Target", "SimpleWorkflowService.CountClosedWorkflowExecutions");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (countClosedWorkflowExecutionsRequest.getDomain() != null) {
-                jsonGenerator.writeFieldName("domain").writeValue(
-                        countClosedWorkflowExecutionsRequest.getDomain());
+                jsonGenerator.writeFieldName("domain").writeValue(countClosedWorkflowExecutionsRequest.getDomain());
             }
             if (countClosedWorkflowExecutionsRequest.getStartTimeFilter() != null) {
                 jsonGenerator.writeFieldName("startTimeFilter");
-                ExecutionTimeFilterJsonMarshaller
-                        .getInstance()
-                        .marshall(
-                                countClosedWorkflowExecutionsRequest
-                                        .getStartTimeFilter(),
-                                jsonGenerator);
+                ExecutionTimeFilterJsonMarshaller.getInstance().marshall(countClosedWorkflowExecutionsRequest.getStartTimeFilter(), jsonGenerator);
             }
             if (countClosedWorkflowExecutionsRequest.getCloseTimeFilter() != null) {
                 jsonGenerator.writeFieldName("closeTimeFilter");
-                ExecutionTimeFilterJsonMarshaller
-                        .getInstance()
-                        .marshall(
-                                countClosedWorkflowExecutionsRequest
-                                        .getCloseTimeFilter(),
-                                jsonGenerator);
+                ExecutionTimeFilterJsonMarshaller.getInstance().marshall(countClosedWorkflowExecutionsRequest.getCloseTimeFilter(), jsonGenerator);
             }
             if (countClosedWorkflowExecutionsRequest.getExecutionFilter() != null) {
                 jsonGenerator.writeFieldName("executionFilter");
-                WorkflowExecutionFilterJsonMarshaller
-                        .getInstance()
-                        .marshall(
-                                countClosedWorkflowExecutionsRequest
-                                        .getExecutionFilter(),
-                                jsonGenerator);
+                WorkflowExecutionFilterJsonMarshaller.getInstance().marshall(countClosedWorkflowExecutionsRequest.getExecutionFilter(), jsonGenerator);
             }
             if (countClosedWorkflowExecutionsRequest.getTypeFilter() != null) {
                 jsonGenerator.writeFieldName("typeFilter");
-                WorkflowTypeFilterJsonMarshaller.getInstance().marshall(
-                        countClosedWorkflowExecutionsRequest.getTypeFilter(),
-                        jsonGenerator);
+                WorkflowTypeFilterJsonMarshaller.getInstance().marshall(countClosedWorkflowExecutionsRequest.getTypeFilter(), jsonGenerator);
             }
             if (countClosedWorkflowExecutionsRequest.getTagFilter() != null) {
                 jsonGenerator.writeFieldName("tagFilter");
-                TagFilterJsonMarshaller.getInstance().marshall(
-                        countClosedWorkflowExecutionsRequest.getTagFilter(),
-                        jsonGenerator);
+                TagFilterJsonMarshaller.getInstance().marshall(countClosedWorkflowExecutionsRequest.getTagFilter(), jsonGenerator);
             }
             if (countClosedWorkflowExecutionsRequest.getCloseStatusFilter() != null) {
                 jsonGenerator.writeFieldName("closeStatusFilter");
-                CloseStatusFilterJsonMarshaller
-                        .getInstance()
-                        .marshall(
-                                countClosedWorkflowExecutionsRequest
-                                        .getCloseStatusFilter(),
-                                jsonGenerator);
+                CloseStatusFilterJsonMarshaller.getInstance().marshall(countClosedWorkflowExecutionsRequest.getCloseStatusFilter(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

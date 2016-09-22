@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -18,13 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains the response information for the
- * <code>CreateTrafficPolicy</code> request.
+ * A complex type that contains the response information for the <code>CreateTrafficPolicy</code> request.
  * </p>
  */
-public class CreateTrafficPolicyResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CreateTrafficPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -67,12 +62,10 @@ public class CreateTrafficPolicyResult extends
      * 
      * @param trafficPolicy
      *        A complex type that contains settings for the new traffic policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateTrafficPolicyResult withTrafficPolicy(
-            TrafficPolicy trafficPolicy) {
+    public CreateTrafficPolicyResult withTrafficPolicy(TrafficPolicy trafficPolicy) {
         setTrafficPolicy(trafficPolicy);
         return this;
     }
@@ -95,8 +88,7 @@ public class CreateTrafficPolicyResult extends
 
     /**
      * @param location
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTrafficPolicyResult withLocation(String location) {
@@ -105,8 +97,7 @@ public class CreateTrafficPolicyResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -136,13 +127,11 @@ public class CreateTrafficPolicyResult extends
         CreateTrafficPolicyResult other = (CreateTrafficPolicyResult) obj;
         if (other.getTrafficPolicy() == null ^ this.getTrafficPolicy() == null)
             return false;
-        if (other.getTrafficPolicy() != null
-                && other.getTrafficPolicy().equals(this.getTrafficPolicy()) == false)
+        if (other.getTrafficPolicy() != null && other.getTrafficPolicy().equals(this.getTrafficPolicy()) == false)
             return false;
         if (other.getLocation() == null ^ this.getLocation() == null)
             return false;
-        if (other.getLocation() != null
-                && other.getLocation().equals(this.getLocation()) == false)
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
         return true;
     }
@@ -152,12 +141,8 @@ public class CreateTrafficPolicyResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getTrafficPolicy() == null) ? 0 : getTrafficPolicy()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getTrafficPolicy() == null) ? 0 : getTrafficPolicy().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 
@@ -166,9 +151,7 @@ public class CreateTrafficPolicyResult extends
         try {
             return (CreateTrafficPolicyResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

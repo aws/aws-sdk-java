@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -34,33 +32,28 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the
-     * returned list of gateways.
+     * An opaque string that indicates the position at which to begin the returned list of gateways.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Specifies that the list of gateways returned be limited to the specified
-     * number of items.
+     * Specifies that the list of gateways returned be limited to the specified number of items.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the
-     * returned list of gateways.
+     * An opaque string that indicates the position at which to begin the returned list of gateways.
      * </p>
      * 
      * @param marker
-     *        An opaque string that indicates the position at which to begin the
-     *        returned list of gateways.
+     *        An opaque string that indicates the position at which to begin the returned list of gateways.
      */
 
     public void setMarker(String marker) {
@@ -69,12 +62,10 @@ public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the
-     * returned list of gateways.
+     * An opaque string that indicates the position at which to begin the returned list of gateways.
      * </p>
      * 
-     * @return An opaque string that indicates the position at which to begin
-     *         the returned list of gateways.
+     * @return An opaque string that indicates the position at which to begin the returned list of gateways.
      */
 
     public String getMarker() {
@@ -83,15 +74,12 @@ public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the
-     * returned list of gateways.
+     * An opaque string that indicates the position at which to begin the returned list of gateways.
      * </p>
      * 
      * @param marker
-     *        An opaque string that indicates the position at which to begin the
-     *        returned list of gateways.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An opaque string that indicates the position at which to begin the returned list of gateways.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListGatewaysRequest withMarker(String marker) {
@@ -101,13 +89,11 @@ public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies that the list of gateways returned be limited to the specified
-     * number of items.
+     * Specifies that the list of gateways returned be limited to the specified number of items.
      * </p>
      * 
      * @param limit
-     *        Specifies that the list of gateways returned be limited to the
-     *        specified number of items.
+     *        Specifies that the list of gateways returned be limited to the specified number of items.
      */
 
     public void setLimit(Integer limit) {
@@ -116,12 +102,10 @@ public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies that the list of gateways returned be limited to the specified
-     * number of items.
+     * Specifies that the list of gateways returned be limited to the specified number of items.
      * </p>
      * 
-     * @return Specifies that the list of gateways returned be limited to the
-     *         specified number of items.
+     * @return Specifies that the list of gateways returned be limited to the specified number of items.
      */
 
     public Integer getLimit() {
@@ -130,15 +114,12 @@ public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies that the list of gateways returned be limited to the specified
-     * number of items.
+     * Specifies that the list of gateways returned be limited to the specified number of items.
      * </p>
      * 
      * @param limit
-     *        Specifies that the list of gateways returned be limited to the
-     *        specified number of items.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies that the list of gateways returned be limited to the specified number of items.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListGatewaysRequest withLimit(Integer limit) {
@@ -147,8 +128,7 @@ public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -178,13 +158,11 @@ public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest
         ListGatewaysRequest other = (ListGatewaysRequest) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -194,10 +172,8 @@ public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 

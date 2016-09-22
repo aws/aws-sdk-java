@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.ModifyInstancePlacementRequest
  * Contains the parameters for ModifyInstancePlacement.
  * </p>
  */
-public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<ModifyInstancePlacementRequest> {
 
     /**
@@ -85,8 +82,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * 
      * @param instanceId
      *        The ID of the instance that you are modifying.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyInstancePlacementRequest withInstanceId(String instanceId) {
@@ -128,8 +124,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * 
      * @param tenancy
      *        The tenancy of the instance that you are modifying.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HostTenancy
      */
 
@@ -159,8 +154,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * 
      * @param tenancy
      *        The tenancy of the instance that you are modifying.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HostTenancy
      */
 
@@ -203,8 +197,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * 
      * @param affinity
      *        The new affinity setting for the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Affinity
      */
 
@@ -234,8 +227,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * 
      * @param affinity
      *        The new affinity setting for the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Affinity
      */
 
@@ -250,8 +242,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param hostId
-     *        The ID of the Dedicated Host that the instance will have affinity
-     *        with.
+     *        The ID of the Dedicated Host that the instance will have affinity with.
      */
 
     public void setHostId(String hostId) {
@@ -263,8 +254,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * The ID of the Dedicated Host that the instance will have affinity with.
      * </p>
      * 
-     * @return The ID of the Dedicated Host that the instance will have affinity
-     *         with.
+     * @return The ID of the Dedicated Host that the instance will have affinity with.
      */
 
     public String getHostId() {
@@ -277,10 +267,8 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param hostId
-     *        The ID of the Dedicated Host that the instance will have affinity
-     *        with.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the Dedicated Host that the instance will have affinity with.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyInstancePlacementRequest withHostId(String hostId) {
@@ -289,21 +277,18 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<ModifyInstancePlacementRequest> getDryRunRequest() {
-        Request<ModifyInstancePlacementRequest> request = new ModifyInstancePlacementRequestMarshaller()
-                .marshall(this);
+        Request<ModifyInstancePlacementRequest> request = new ModifyInstancePlacementRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -337,23 +322,19 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
         ModifyInstancePlacementRequest other = (ModifyInstancePlacementRequest) obj;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         if (other.getTenancy() == null ^ this.getTenancy() == null)
             return false;
-        if (other.getTenancy() != null
-                && other.getTenancy().equals(this.getTenancy()) == false)
+        if (other.getTenancy() != null && other.getTenancy().equals(this.getTenancy()) == false)
             return false;
         if (other.getAffinity() == null ^ this.getAffinity() == null)
             return false;
-        if (other.getAffinity() != null
-                && other.getAffinity().equals(this.getAffinity()) == false)
+        if (other.getAffinity() != null && other.getAffinity().equals(this.getAffinity()) == false)
             return false;
         if (other.getHostId() == null ^ this.getHostId() == null)
             return false;
-        if (other.getHostId() != null
-                && other.getHostId().equals(this.getHostId()) == false)
+        if (other.getHostId() != null && other.getHostId().equals(this.getHostId()) == false)
             return false;
         return true;
     }
@@ -363,14 +344,10 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
-        hashCode = prime * hashCode
-                + ((getAffinity() == null) ? 0 : getAffinity().hashCode());
-        hashCode = prime * hashCode
-                + ((getHostId() == null) ? 0 : getHostId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
+        hashCode = prime * hashCode + ((getAffinity() == null) ? 0 : getAffinity().hashCode());
+        hashCode = prime * hashCode + ((getHostId() == null) ? 0 : getHostId().hashCode());
         return hashCode;
     }
 

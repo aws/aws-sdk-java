@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -103,9 +101,8 @@ public class ReservedInstances implements Serializable, Cloneable {
     private String instanceTenancy;
     /**
      * <p>
-     * The currency of the Reserved Instance. It's specified using ISO 4217
-     * standard currency codes. At this time, the only supported currency is
-     * <code>USD</code>.
+     * The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this time, the
+     * only supported currency is <code>USD</code>.
      * </p>
      */
     private String currencyCode;
@@ -154,8 +151,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param reservedInstancesId
      *        The ID of the Reserved Instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstances withReservedInstancesId(String reservedInstancesId) {
@@ -197,8 +193,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type on which the Reserved Instance can be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
@@ -228,8 +223,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type on which the Reserved Instance can be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
@@ -270,8 +264,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param availabilityZone
      *        The Availability Zone in which the Reserved Instance can be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstances withAvailabilityZone(String availabilityZone) {
@@ -311,8 +304,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param start
      *        The date and time the Reserved Instance started.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstances withStart(java.util.Date start) {
@@ -352,8 +344,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param end
      *        The time when the Reserved Instance expires.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstances withEnd(java.util.Date end) {
@@ -393,8 +384,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param duration
      *        The duration of the Reserved Instance, in seconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstances withDuration(Long duration) {
@@ -434,8 +424,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param usagePrice
      *        The usage price of the Reserved Instance, per hour.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstances withUsagePrice(Float usagePrice) {
@@ -475,8 +464,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param fixedPrice
      *        The purchase price of the Reserved Instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstances withFixedPrice(Float fixedPrice) {
@@ -516,8 +504,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param instanceCount
      *        The number of reservations purchased.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstances withInstanceCount(Integer instanceCount) {
@@ -559,8 +546,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param productDescription
      *        The Reserved Instance product platform description.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RIProductDescription
      */
 
@@ -590,13 +576,11 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param productDescription
      *        The Reserved Instance product platform description.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RIProductDescription
      */
 
-    public ReservedInstances withProductDescription(
-            RIProductDescription productDescription) {
+    public ReservedInstances withProductDescription(RIProductDescription productDescription) {
         setProductDescription(productDescription);
         return this;
     }
@@ -635,8 +619,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the Reserved Instance purchase.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReservedInstanceState
      */
 
@@ -666,8 +649,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the Reserved Instance purchase.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReservedInstanceState
      */
 
@@ -714,16 +696,14 @@ public class ReservedInstances implements Serializable, Cloneable {
      * Any tags assigned to the resource.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        Any tags assigned to the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstances withTags(Tag... tags) {
@@ -743,8 +723,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param tags
      *        Any tags assigned to the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstances withTags(java.util.Collection<Tag> tags) {
@@ -786,8 +765,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param instanceTenancy
      *        The tenancy of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tenancy
      */
 
@@ -817,8 +795,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param instanceTenancy
      *        The tenancy of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tenancy
      */
 
@@ -829,15 +806,13 @@ public class ReservedInstances implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The currency of the Reserved Instance. It's specified using ISO 4217
-     * standard currency codes. At this time, the only supported currency is
-     * <code>USD</code>.
+     * The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this time, the
+     * only supported currency is <code>USD</code>.
      * </p>
      * 
      * @param currencyCode
-     *        The currency of the Reserved Instance. It's specified using ISO
-     *        4217 standard currency codes. At this time, the only supported
-     *        currency is <code>USD</code>.
+     *        The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this
+     *        time, the only supported currency is <code>USD</code>.
      * @see CurrencyCodeValues
      */
 
@@ -847,14 +822,12 @@ public class ReservedInstances implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The currency of the Reserved Instance. It's specified using ISO 4217
-     * standard currency codes. At this time, the only supported currency is
-     * <code>USD</code>.
+     * The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this time, the
+     * only supported currency is <code>USD</code>.
      * </p>
      * 
-     * @return The currency of the Reserved Instance. It's specified using ISO
-     *         4217 standard currency codes. At this time, the only supported
-     *         currency is <code>USD</code>.
+     * @return The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this
+     *         time, the only supported currency is <code>USD</code>.
      * @see CurrencyCodeValues
      */
 
@@ -864,17 +837,14 @@ public class ReservedInstances implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The currency of the Reserved Instance. It's specified using ISO 4217
-     * standard currency codes. At this time, the only supported currency is
-     * <code>USD</code>.
+     * The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this time, the
+     * only supported currency is <code>USD</code>.
      * </p>
      * 
      * @param currencyCode
-     *        The currency of the Reserved Instance. It's specified using ISO
-     *        4217 standard currency codes. At this time, the only supported
-     *        currency is <code>USD</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this
+     *        time, the only supported currency is <code>USD</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CurrencyCodeValues
      */
 
@@ -885,15 +855,13 @@ public class ReservedInstances implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The currency of the Reserved Instance. It's specified using ISO 4217
-     * standard currency codes. At this time, the only supported currency is
-     * <code>USD</code>.
+     * The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this time, the
+     * only supported currency is <code>USD</code>.
      * </p>
      * 
      * @param currencyCode
-     *        The currency of the Reserved Instance. It's specified using ISO
-     *        4217 standard currency codes. At this time, the only supported
-     *        currency is <code>USD</code>.
+     *        The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this
+     *        time, the only supported currency is <code>USD</code>.
      * @see CurrencyCodeValues
      */
 
@@ -903,17 +871,14 @@ public class ReservedInstances implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The currency of the Reserved Instance. It's specified using ISO 4217
-     * standard currency codes. At this time, the only supported currency is
-     * <code>USD</code>.
+     * The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this time, the
+     * only supported currency is <code>USD</code>.
      * </p>
      * 
      * @param currencyCode
-     *        The currency of the Reserved Instance. It's specified using ISO
-     *        4217 standard currency codes. At this time, the only supported
-     *        currency is <code>USD</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this
+     *        time, the only supported currency is <code>USD</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CurrencyCodeValues
      */
 
@@ -956,8 +921,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param offeringType
      *        The Reserved Instance offering type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OfferingTypeValues
      */
 
@@ -987,8 +951,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param offeringType
      *        The Reserved Instance offering type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OfferingTypeValues
      */
 
@@ -1021,15 +984,13 @@ public class ReservedInstances implements Serializable, Cloneable {
      *        The recurring charge tag assigned to the resource.
      */
 
-    public void setRecurringCharges(
-            java.util.Collection<RecurringCharge> recurringCharges) {
+    public void setRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         if (recurringCharges == null) {
             this.recurringCharges = null;
             return;
         }
 
-        this.recurringCharges = new com.amazonaws.internal.SdkInternalList<RecurringCharge>(
-                recurringCharges);
+        this.recurringCharges = new com.amazonaws.internal.SdkInternalList<RecurringCharge>(recurringCharges);
     }
 
     /**
@@ -1037,23 +998,19 @@ public class ReservedInstances implements Serializable, Cloneable {
      * The recurring charge tag assigned to the resource.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRecurringCharges(java.util.Collection)} or
-     * {@link #withRecurringCharges(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRecurringCharges(java.util.Collection)} or {@link #withRecurringCharges(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param recurringCharges
      *        The recurring charge tag assigned to the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedInstances withRecurringCharges(
-            RecurringCharge... recurringCharges) {
+    public ReservedInstances withRecurringCharges(RecurringCharge... recurringCharges) {
         if (this.recurringCharges == null) {
-            setRecurringCharges(new com.amazonaws.internal.SdkInternalList<RecurringCharge>(
-                    recurringCharges.length));
+            setRecurringCharges(new com.amazonaws.internal.SdkInternalList<RecurringCharge>(recurringCharges.length));
         }
         for (RecurringCharge ele : recurringCharges) {
             this.recurringCharges.add(ele);
@@ -1068,19 +1025,16 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param recurringCharges
      *        The recurring charge tag assigned to the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedInstances withRecurringCharges(
-            java.util.Collection<RecurringCharge> recurringCharges) {
+    public ReservedInstances withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         setRecurringCharges(recurringCharges);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1136,94 +1090,69 @@ public class ReservedInstances implements Serializable, Cloneable {
         if (obj instanceof ReservedInstances == false)
             return false;
         ReservedInstances other = (ReservedInstances) obj;
-        if (other.getReservedInstancesId() == null
-                ^ this.getReservedInstancesId() == null)
+        if (other.getReservedInstancesId() == null ^ this.getReservedInstancesId() == null)
             return false;
-        if (other.getReservedInstancesId() != null
-                && other.getReservedInstancesId().equals(
-                        this.getReservedInstancesId()) == false)
+        if (other.getReservedInstancesId() != null && other.getReservedInstancesId().equals(this.getReservedInstancesId()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
         if (other.getStart() == null ^ this.getStart() == null)
             return false;
-        if (other.getStart() != null
-                && other.getStart().equals(this.getStart()) == false)
+        if (other.getStart() != null && other.getStart().equals(this.getStart()) == false)
             return false;
         if (other.getEnd() == null ^ this.getEnd() == null)
             return false;
-        if (other.getEnd() != null
-                && other.getEnd().equals(this.getEnd()) == false)
+        if (other.getEnd() != null && other.getEnd().equals(this.getEnd()) == false)
             return false;
         if (other.getDuration() == null ^ this.getDuration() == null)
             return false;
-        if (other.getDuration() != null
-                && other.getDuration().equals(this.getDuration()) == false)
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
             return false;
         if (other.getUsagePrice() == null ^ this.getUsagePrice() == null)
             return false;
-        if (other.getUsagePrice() != null
-                && other.getUsagePrice().equals(this.getUsagePrice()) == false)
+        if (other.getUsagePrice() != null && other.getUsagePrice().equals(this.getUsagePrice()) == false)
             return false;
         if (other.getFixedPrice() == null ^ this.getFixedPrice() == null)
             return false;
-        if (other.getFixedPrice() != null
-                && other.getFixedPrice().equals(this.getFixedPrice()) == false)
+        if (other.getFixedPrice() != null && other.getFixedPrice().equals(this.getFixedPrice()) == false)
             return false;
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
-        if (other.getInstanceCount() != null
-                && other.getInstanceCount().equals(this.getInstanceCount()) == false)
+        if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
             return false;
-        if (other.getProductDescription() == null
-                ^ this.getProductDescription() == null)
+        if (other.getProductDescription() == null ^ this.getProductDescription() == null)
             return false;
-        if (other.getProductDescription() != null
-                && other.getProductDescription().equals(
-                        this.getProductDescription()) == false)
+        if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getInstanceTenancy() == null
-                ^ this.getInstanceTenancy() == null)
+        if (other.getInstanceTenancy() == null ^ this.getInstanceTenancy() == null)
             return false;
-        if (other.getInstanceTenancy() != null
-                && other.getInstanceTenancy().equals(this.getInstanceTenancy()) == false)
+        if (other.getInstanceTenancy() != null && other.getInstanceTenancy().equals(this.getInstanceTenancy()) == false)
             return false;
         if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
             return false;
-        if (other.getCurrencyCode() != null
-                && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
+        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
             return false;
         if (other.getOfferingType() == null ^ this.getOfferingType() == null)
             return false;
-        if (other.getOfferingType() != null
-                && other.getOfferingType().equals(this.getOfferingType()) == false)
+        if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false)
             return false;
-        if (other.getRecurringCharges() == null
-                ^ this.getRecurringCharges() == null)
+        if (other.getRecurringCharges() == null ^ this.getRecurringCharges() == null)
             return false;
-        if (other.getRecurringCharges() != null
-                && other.getRecurringCharges().equals(
-                        this.getRecurringCharges()) == false)
+        if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false)
             return false;
         return true;
     }
@@ -1233,56 +1162,22 @@ public class ReservedInstances implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReservedInstancesId() == null) ? 0
-                        : getReservedInstancesId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStart() == null) ? 0 : getStart().hashCode());
-        hashCode = prime * hashCode
-                + ((getEnd() == null) ? 0 : getEnd().hashCode());
-        hashCode = prime * hashCode
-                + ((getDuration() == null) ? 0 : getDuration().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode());
-        hashCode = prime * hashCode
-                + ((getFixedPrice() == null) ? 0 : getFixedPrice().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceCount() == null) ? 0 : getInstanceCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProductDescription() == null) ? 0
-                        : getProductDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceTenancy() == null) ? 0 : getInstanceTenancy()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCurrencyCode() == null) ? 0 : getCurrencyCode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOfferingType() == null) ? 0 : getOfferingType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRecurringCharges() == null) ? 0 : getRecurringCharges()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesId() == null) ? 0 : getReservedInstancesId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getStart() == null) ? 0 : getStart().hashCode());
+        hashCode = prime * hashCode + ((getEnd() == null) ? 0 : getEnd().hashCode());
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
+        hashCode = prime * hashCode + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode());
+        hashCode = prime * hashCode + ((getFixedPrice() == null) ? 0 : getFixedPrice().hashCode());
+        hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getInstanceTenancy() == null) ? 0 : getInstanceTenancy().hashCode());
+        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
+        hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
+        hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode());
         return hashCode;
     }
 
@@ -1291,9 +1186,7 @@ public class ReservedInstances implements Serializable, Cloneable {
         try {
             return (ReservedInstances) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

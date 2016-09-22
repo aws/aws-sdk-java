@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.CreateImageRequestMarshaller;
  * Contains the parameters for CreateImage.
  * </p>
  */
-public class CreateImageRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<CreateImageRequest> {
+public class CreateImageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateImageRequest> {
 
     /**
      * <p>
@@ -38,9 +35,8 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * A name for the new image.
      * </p>
      * <p>
-     * Constraints: 3-128 alphanumeric characters, parentheses (()), square
-     * brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single
-     * quotes ('), at-signs (@), or underscores(_)
+     * Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     * slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
      * </p>
      */
     private String name;
@@ -52,11 +48,9 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
     private String description;
     /**
      * <p>
-     * By default, Amazon EC2 attempts to shut down and reboot the instance
-     * before creating the image. If the 'No Reboot' option is set, Amazon EC2
-     * doesn't shut down the instance before creating the image. When this
-     * option is used, file system integrity on the created image can't be
-     * guaranteed.
+     * By default, Amazon EC2 attempts to shut down and reboot the instance before creating the image. If the 'No
+     * Reboot' option is set, Amazon EC2 doesn't shut down the instance before creating the image. When this option is
+     * used, file system integrity on the created image can't be guaranteed.
      * </p>
      */
     private Boolean noReboot;
@@ -68,26 +62,23 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
 
     /**
-     * Default constructor for CreateImageRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for CreateImageRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public CreateImageRequest() {
     }
 
     /**
-     * Constructs a new CreateImageRequest object. Callers should use the setter
-     * or fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new CreateImageRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param instanceId
      *        The ID of the instance.
      * @param name
      *        A name for the new image.</p>
      *        <p>
-     *        Constraints: 3-128 alphanumeric characters, parentheses (()),
-     *        square brackets ([]), spaces ( ), periods (.), slashes (/), dashes
-     *        (-), single quotes ('), at-signs (@), or underscores(_)
+     *        Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods
+     *        (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
      */
     public CreateImageRequest(String instanceId, String name) {
         setInstanceId(instanceId);
@@ -126,8 +117,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * 
      * @param instanceId
      *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateImageRequest withInstanceId(String instanceId) {
@@ -140,17 +130,15 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * A name for the new image.
      * </p>
      * <p>
-     * Constraints: 3-128 alphanumeric characters, parentheses (()), square
-     * brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single
-     * quotes ('), at-signs (@), or underscores(_)
+     * Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     * slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
      * </p>
      * 
      * @param name
      *        A name for the new image.</p>
      *        <p>
-     *        Constraints: 3-128 alphanumeric characters, parentheses (()),
-     *        square brackets ([]), spaces ( ), periods (.), slashes (/), dashes
-     *        (-), single quotes ('), at-signs (@), or underscores(_)
+     *        Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods
+     *        (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
      */
 
     public void setName(String name) {
@@ -162,16 +150,14 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * A name for the new image.
      * </p>
      * <p>
-     * Constraints: 3-128 alphanumeric characters, parentheses (()), square
-     * brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single
-     * quotes ('), at-signs (@), or underscores(_)
+     * Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     * slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
      * </p>
      * 
      * @return A name for the new image.</p>
      *         <p>
-     *         Constraints: 3-128 alphanumeric characters, parentheses (()),
-     *         square brackets ([]), spaces ( ), periods (.), slashes (/),
-     *         dashes (-), single quotes ('), at-signs (@), or underscores(_)
+     *         Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods
+     *         (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
      */
 
     public String getName() {
@@ -183,19 +169,16 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * A name for the new image.
      * </p>
      * <p>
-     * Constraints: 3-128 alphanumeric characters, parentheses (()), square
-     * brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single
-     * quotes ('), at-signs (@), or underscores(_)
+     * Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     * slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
      * </p>
      * 
      * @param name
      *        A name for the new image.</p>
      *        <p>
-     *        Constraints: 3-128 alphanumeric characters, parentheses (()),
-     *        square brackets ([]), spaces ( ), periods (.), slashes (/), dashes
-     *        (-), single quotes ('), at-signs (@), or underscores(_)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods
+     *        (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateImageRequest withName(String name) {
@@ -235,8 +218,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * 
      * @param description
      *        A description for the new image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateImageRequest withDescription(String description) {
@@ -246,19 +228,15 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * By default, Amazon EC2 attempts to shut down and reboot the instance
-     * before creating the image. If the 'No Reboot' option is set, Amazon EC2
-     * doesn't shut down the instance before creating the image. When this
-     * option is used, file system integrity on the created image can't be
-     * guaranteed.
+     * By default, Amazon EC2 attempts to shut down and reboot the instance before creating the image. If the 'No
+     * Reboot' option is set, Amazon EC2 doesn't shut down the instance before creating the image. When this option is
+     * used, file system integrity on the created image can't be guaranteed.
      * </p>
      * 
      * @param noReboot
-     *        By default, Amazon EC2 attempts to shut down and reboot the
-     *        instance before creating the image. If the 'No Reboot' option is
-     *        set, Amazon EC2 doesn't shut down the instance before creating the
-     *        image. When this option is used, file system integrity on the
-     *        created image can't be guaranteed.
+     *        By default, Amazon EC2 attempts to shut down and reboot the instance before creating the image. If the 'No
+     *        Reboot' option is set, Amazon EC2 doesn't shut down the instance before creating the image. When this
+     *        option is used, file system integrity on the created image can't be guaranteed.
      */
 
     public void setNoReboot(Boolean noReboot) {
@@ -267,18 +245,14 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * By default, Amazon EC2 attempts to shut down and reboot the instance
-     * before creating the image. If the 'No Reboot' option is set, Amazon EC2
-     * doesn't shut down the instance before creating the image. When this
-     * option is used, file system integrity on the created image can't be
-     * guaranteed.
+     * By default, Amazon EC2 attempts to shut down and reboot the instance before creating the image. If the 'No
+     * Reboot' option is set, Amazon EC2 doesn't shut down the instance before creating the image. When this option is
+     * used, file system integrity on the created image can't be guaranteed.
      * </p>
      * 
-     * @return By default, Amazon EC2 attempts to shut down and reboot the
-     *         instance before creating the image. If the 'No Reboot' option is
-     *         set, Amazon EC2 doesn't shut down the instance before creating
-     *         the image. When this option is used, file system integrity on the
-     *         created image can't be guaranteed.
+     * @return By default, Amazon EC2 attempts to shut down and reboot the instance before creating the image. If the
+     *         'No Reboot' option is set, Amazon EC2 doesn't shut down the instance before creating the image. When this
+     *         option is used, file system integrity on the created image can't be guaranteed.
      */
 
     public Boolean getNoReboot() {
@@ -287,21 +261,16 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * By default, Amazon EC2 attempts to shut down and reboot the instance
-     * before creating the image. If the 'No Reboot' option is set, Amazon EC2
-     * doesn't shut down the instance before creating the image. When this
-     * option is used, file system integrity on the created image can't be
-     * guaranteed.
+     * By default, Amazon EC2 attempts to shut down and reboot the instance before creating the image. If the 'No
+     * Reboot' option is set, Amazon EC2 doesn't shut down the instance before creating the image. When this option is
+     * used, file system integrity on the created image can't be guaranteed.
      * </p>
      * 
      * @param noReboot
-     *        By default, Amazon EC2 attempts to shut down and reboot the
-     *        instance before creating the image. If the 'No Reboot' option is
-     *        set, Amazon EC2 doesn't shut down the instance before creating the
-     *        image. When this option is used, file system integrity on the
-     *        created image can't be guaranteed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        By default, Amazon EC2 attempts to shut down and reboot the instance before creating the image. If the 'No
+     *        Reboot' option is set, Amazon EC2 doesn't shut down the instance before creating the image. When this
+     *        option is used, file system integrity on the created image can't be guaranteed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateImageRequest withNoReboot(Boolean noReboot) {
@@ -311,18 +280,14 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * By default, Amazon EC2 attempts to shut down and reboot the instance
-     * before creating the image. If the 'No Reboot' option is set, Amazon EC2
-     * doesn't shut down the instance before creating the image. When this
-     * option is used, file system integrity on the created image can't be
-     * guaranteed.
+     * By default, Amazon EC2 attempts to shut down and reboot the instance before creating the image. If the 'No
+     * Reboot' option is set, Amazon EC2 doesn't shut down the instance before creating the image. When this option is
+     * used, file system integrity on the created image can't be guaranteed.
      * </p>
      * 
-     * @return By default, Amazon EC2 attempts to shut down and reboot the
-     *         instance before creating the image. If the 'No Reboot' option is
-     *         set, Amazon EC2 doesn't shut down the instance before creating
-     *         the image. When this option is used, file system integrity on the
-     *         created image can't be guaranteed.
+     * @return By default, Amazon EC2 attempts to shut down and reboot the instance before creating the image. If the
+     *         'No Reboot' option is set, Amazon EC2 doesn't shut down the instance before creating the image. When this
+     *         option is used, file system integrity on the created image can't be guaranteed.
      */
 
     public Boolean isNoReboot() {
@@ -353,15 +318,13 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      *        Information about one or more block device mappings.
      */
 
-    public void setBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
             return;
         }
 
-        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                blockDeviceMappings);
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings);
     }
 
     /**
@@ -369,23 +332,19 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * Information about one or more block device mappings.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
-     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param blockDeviceMappings
      *        Information about one or more block device mappings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateImageRequest withBlockDeviceMappings(
-            BlockDeviceMapping... blockDeviceMappings) {
+    public CreateImageRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
-            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                    blockDeviceMappings.length));
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings.length));
         }
         for (BlockDeviceMapping ele : blockDeviceMappings) {
             this.blockDeviceMappings.add(ele);
@@ -400,32 +359,27 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * 
      * @param blockDeviceMappings
      *        Information about one or more block device mappings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateImageRequest withBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public CreateImageRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<CreateImageRequest> getDryRunRequest() {
-        Request<CreateImageRequest> request = new CreateImageRequestMarshaller()
-                .marshall(this);
+        Request<CreateImageRequest> request = new CreateImageRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -461,30 +415,23 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
         CreateImageRequest other = (CreateImageRequest) obj;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getNoReboot() == null ^ this.getNoReboot() == null)
             return false;
-        if (other.getNoReboot() != null
-                && other.getNoReboot().equals(this.getNoReboot()) == false)
+        if (other.getNoReboot() != null && other.getNoReboot().equals(this.getNoReboot()) == false)
             return false;
-        if (other.getBlockDeviceMappings() == null
-                ^ this.getBlockDeviceMappings() == null)
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
             return false;
-        if (other.getBlockDeviceMappings() != null
-                && other.getBlockDeviceMappings().equals(
-                        this.getBlockDeviceMappings()) == false)
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
         return true;
     }
@@ -494,19 +441,11 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getNoReboot() == null) ? 0 : getNoReboot().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBlockDeviceMappings() == null) ? 0
-                        : getBlockDeviceMappings().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getNoReboot() == null) ? 0 : getNoReboot().hashCode());
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
         return hashCode;
     }
 

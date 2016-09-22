@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -31,8 +29,7 @@ public class DomainMembership implements Serializable, Cloneable {
     private String domain;
     /**
      * <p>
-     * The status of the DB instance's Active Directory Domain membership, such
-     * as joined, pending-join, failed etc).
+     * The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed etc).
      * </p>
      */
     private String status;
@@ -44,8 +41,7 @@ public class DomainMembership implements Serializable, Cloneable {
     private String fQDN;
     /**
      * <p>
-     * The name of the IAM role to be used when making API calls to the
-     * Directory Service.
+     * The name of the IAM role to be used when making API calls to the Directory Service.
      * </p>
      */
     private String iAMRoleName;
@@ -82,8 +78,7 @@ public class DomainMembership implements Serializable, Cloneable {
      * 
      * @param domain
      *        The identifier of the Active Directory Domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainMembership withDomain(String domain) {
@@ -93,13 +88,12 @@ public class DomainMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the DB instance's Active Directory Domain membership, such
-     * as joined, pending-join, failed etc).
+     * The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed etc).
      * </p>
      * 
      * @param status
-     *        The status of the DB instance's Active Directory Domain
-     *        membership, such as joined, pending-join, failed etc).
+     *        The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed
+     *        etc).
      */
 
     public void setStatus(String status) {
@@ -108,12 +102,11 @@ public class DomainMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the DB instance's Active Directory Domain membership, such
-     * as joined, pending-join, failed etc).
+     * The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed etc).
      * </p>
      * 
-     * @return The status of the DB instance's Active Directory Domain
-     *         membership, such as joined, pending-join, failed etc).
+     * @return The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed
+     *         etc).
      */
 
     public String getStatus() {
@@ -122,15 +115,13 @@ public class DomainMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the DB instance's Active Directory Domain membership, such
-     * as joined, pending-join, failed etc).
+     * The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed etc).
      * </p>
      * 
      * @param status
-     *        The status of the DB instance's Active Directory Domain
-     *        membership, such as joined, pending-join, failed etc).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed
+     *        etc).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainMembership withStatus(String status) {
@@ -170,8 +161,7 @@ public class DomainMembership implements Serializable, Cloneable {
      * 
      * @param fQDN
      *        The fully qualified domain name of the Active Directory Domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainMembership withFQDN(String fQDN) {
@@ -181,13 +171,11 @@ public class DomainMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the IAM role to be used when making API calls to the
-     * Directory Service.
+     * The name of the IAM role to be used when making API calls to the Directory Service.
      * </p>
      * 
      * @param iAMRoleName
-     *        The name of the IAM role to be used when making API calls to the
-     *        Directory Service.
+     *        The name of the IAM role to be used when making API calls to the Directory Service.
      */
 
     public void setIAMRoleName(String iAMRoleName) {
@@ -196,12 +184,10 @@ public class DomainMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the IAM role to be used when making API calls to the
-     * Directory Service.
+     * The name of the IAM role to be used when making API calls to the Directory Service.
      * </p>
      * 
-     * @return The name of the IAM role to be used when making API calls to the
-     *         Directory Service.
+     * @return The name of the IAM role to be used when making API calls to the Directory Service.
      */
 
     public String getIAMRoleName() {
@@ -210,15 +196,12 @@ public class DomainMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the IAM role to be used when making API calls to the
-     * Directory Service.
+     * The name of the IAM role to be used when making API calls to the Directory Service.
      * </p>
      * 
      * @param iAMRoleName
-     *        The name of the IAM role to be used when making API calls to the
-     *        Directory Service.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the IAM role to be used when making API calls to the Directory Service.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainMembership withIAMRoleName(String iAMRoleName) {
@@ -227,8 +210,7 @@ public class DomainMembership implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -262,23 +244,19 @@ public class DomainMembership implements Serializable, Cloneable {
         DomainMembership other = (DomainMembership) obj;
         if (other.getDomain() == null ^ this.getDomain() == null)
             return false;
-        if (other.getDomain() != null
-                && other.getDomain().equals(this.getDomain()) == false)
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getFQDN() == null ^ this.getFQDN() == null)
             return false;
-        if (other.getFQDN() != null
-                && other.getFQDN().equals(this.getFQDN()) == false)
+        if (other.getFQDN() != null && other.getFQDN().equals(this.getFQDN()) == false)
             return false;
         if (other.getIAMRoleName() == null ^ this.getIAMRoleName() == null)
             return false;
-        if (other.getIAMRoleName() != null
-                && other.getIAMRoleName().equals(this.getIAMRoleName()) == false)
+        if (other.getIAMRoleName() != null && other.getIAMRoleName().equals(this.getIAMRoleName()) == false)
             return false;
         return true;
     }
@@ -288,15 +266,10 @@ public class DomainMembership implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomain() == null) ? 0 : getDomain().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getFQDN() == null) ? 0 : getFQDN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIAMRoleName() == null) ? 0 : getIAMRoleName().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getFQDN() == null) ? 0 : getFQDN().hashCode());
+        hashCode = prime * hashCode + ((getIAMRoleName() == null) ? 0 : getIAMRoleName().hashCode());
         return hashCode;
     }
 
@@ -305,9 +278,7 @@ public class DomainMembership implements Serializable, Cloneable {
         try {
             return (DomainMembership) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model;
 
@@ -19,25 +17,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a delete custom action operation. The custom action
- * will be marked as deleted.
+ * Represents the input of a delete custom action operation. The custom action will be marked as deleted.
  * </p>
  */
-public class DeleteCustomActionTypeRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteCustomActionTypeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The category of the custom action that you want to delete, such as source
-     * or deploy.
+     * The category of the custom action that you want to delete, such as source or deploy.
      * </p>
      */
     private String category;
     /**
      * <p>
-     * The provider of the service used in the custom action, such as AWS
-     * CodeDeploy.
+     * The provider of the service used in the custom action, such as AWS CodeDeploy.
      * </p>
      */
     private String provider;
@@ -50,13 +43,11 @@ public class DeleteCustomActionTypeRequest extends
 
     /**
      * <p>
-     * The category of the custom action that you want to delete, such as source
-     * or deploy.
+     * The category of the custom action that you want to delete, such as source or deploy.
      * </p>
      * 
      * @param category
-     *        The category of the custom action that you want to delete, such as
-     *        source or deploy.
+     *        The category of the custom action that you want to delete, such as source or deploy.
      * @see ActionCategory
      */
 
@@ -66,12 +57,10 @@ public class DeleteCustomActionTypeRequest extends
 
     /**
      * <p>
-     * The category of the custom action that you want to delete, such as source
-     * or deploy.
+     * The category of the custom action that you want to delete, such as source or deploy.
      * </p>
      * 
-     * @return The category of the custom action that you want to delete, such
-     *         as source or deploy.
+     * @return The category of the custom action that you want to delete, such as source or deploy.
      * @see ActionCategory
      */
 
@@ -81,15 +70,12 @@ public class DeleteCustomActionTypeRequest extends
 
     /**
      * <p>
-     * The category of the custom action that you want to delete, such as source
-     * or deploy.
+     * The category of the custom action that you want to delete, such as source or deploy.
      * </p>
      * 
      * @param category
-     *        The category of the custom action that you want to delete, such as
-     *        source or deploy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The category of the custom action that you want to delete, such as source or deploy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCategory
      */
 
@@ -100,13 +86,11 @@ public class DeleteCustomActionTypeRequest extends
 
     /**
      * <p>
-     * The category of the custom action that you want to delete, such as source
-     * or deploy.
+     * The category of the custom action that you want to delete, such as source or deploy.
      * </p>
      * 
      * @param category
-     *        The category of the custom action that you want to delete, such as
-     *        source or deploy.
+     *        The category of the custom action that you want to delete, such as source or deploy.
      * @see ActionCategory
      */
 
@@ -116,15 +100,12 @@ public class DeleteCustomActionTypeRequest extends
 
     /**
      * <p>
-     * The category of the custom action that you want to delete, such as source
-     * or deploy.
+     * The category of the custom action that you want to delete, such as source or deploy.
      * </p>
      * 
      * @param category
-     *        The category of the custom action that you want to delete, such as
-     *        source or deploy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The category of the custom action that you want to delete, such as source or deploy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCategory
      */
 
@@ -135,13 +116,11 @@ public class DeleteCustomActionTypeRequest extends
 
     /**
      * <p>
-     * The provider of the service used in the custom action, such as AWS
-     * CodeDeploy.
+     * The provider of the service used in the custom action, such as AWS CodeDeploy.
      * </p>
      * 
      * @param provider
-     *        The provider of the service used in the custom action, such as AWS
-     *        CodeDeploy.
+     *        The provider of the service used in the custom action, such as AWS CodeDeploy.
      */
 
     public void setProvider(String provider) {
@@ -150,12 +129,10 @@ public class DeleteCustomActionTypeRequest extends
 
     /**
      * <p>
-     * The provider of the service used in the custom action, such as AWS
-     * CodeDeploy.
+     * The provider of the service used in the custom action, such as AWS CodeDeploy.
      * </p>
      * 
-     * @return The provider of the service used in the custom action, such as
-     *         AWS CodeDeploy.
+     * @return The provider of the service used in the custom action, such as AWS CodeDeploy.
      */
 
     public String getProvider() {
@@ -164,15 +141,12 @@ public class DeleteCustomActionTypeRequest extends
 
     /**
      * <p>
-     * The provider of the service used in the custom action, such as AWS
-     * CodeDeploy.
+     * The provider of the service used in the custom action, such as AWS CodeDeploy.
      * </p>
      * 
      * @param provider
-     *        The provider of the service used in the custom action, such as AWS
-     *        CodeDeploy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The provider of the service used in the custom action, such as AWS CodeDeploy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteCustomActionTypeRequest withProvider(String provider) {
@@ -212,8 +186,7 @@ public class DeleteCustomActionTypeRequest extends
      * 
      * @param version
      *        The version of the custom action to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteCustomActionTypeRequest withVersion(String version) {
@@ -222,8 +195,7 @@ public class DeleteCustomActionTypeRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -255,18 +227,15 @@ public class DeleteCustomActionTypeRequest extends
         DeleteCustomActionTypeRequest other = (DeleteCustomActionTypeRequest) obj;
         if (other.getCategory() == null ^ this.getCategory() == null)
             return false;
-        if (other.getCategory() != null
-                && other.getCategory().equals(this.getCategory()) == false)
+        if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
             return false;
         if (other.getProvider() == null ^ this.getProvider() == null)
             return false;
-        if (other.getProvider() != null
-                && other.getProvider().equals(this.getProvider()) == false)
+        if (other.getProvider() != null && other.getProvider().equals(this.getProvider()) == false)
             return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
-        if (other.getVersion() != null
-                && other.getVersion().equals(this.getVersion()) == false)
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
         return true;
     }
@@ -276,12 +245,9 @@ public class DeleteCustomActionTypeRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCategory() == null) ? 0 : getCategory().hashCode());
-        hashCode = prime * hashCode
-                + ((getProvider() == null) ? 0 : getProvider().hashCode());
-        hashCode = prime * hashCode
-                + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
+        hashCode = prime * hashCode + ((getProvider() == null) ? 0 : getProvider().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
 

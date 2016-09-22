@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudhsm.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DescribeHsmResult JSON Unmarshaller
  */
-public class DescribeHsmResultJsonUnmarshaller implements
-        Unmarshaller<DescribeHsmResult, JsonUnmarshallerContext> {
+public class DescribeHsmResultJsonUnmarshaller implements Unmarshaller<DescribeHsmResult, JsonUnmarshallerContext> {
 
-    public DescribeHsmResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public DescribeHsmResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeHsmResult describeHsmResult = new DescribeHsmResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,117 +49,90 @@ public class DescribeHsmResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HsmArn", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setHsmArn(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeHsmResult.setHsmArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setStatus(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeHsmResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusDetails", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setStatusDetails(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeHsmResult.setStatusDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setAvailabilityZone(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeHsmResult.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EniId", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setEniId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeHsmResult.setEniId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EniIp", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setEniIp(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeHsmResult.setEniIp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubscriptionType", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setSubscriptionType(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeHsmResult.setSubscriptionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context
-                        .testExpression("SubscriptionStartDate", targetDepth)) {
+                if (context.testExpression("SubscriptionStartDate", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setSubscriptionStartDate(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeHsmResult.setSubscriptionStartDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubscriptionEndDate", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setSubscriptionEndDate(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeHsmResult.setSubscriptionEndDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setVpcId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeHsmResult.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setSubnetId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeHsmResult.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamRoleArn", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setIamRoleArn(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeHsmResult.setIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SerialNumber", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setSerialNumber(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeHsmResult.setSerialNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VendorName", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setVendorName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeHsmResult.setVendorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HsmType", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setHsmType(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeHsmResult.setHsmType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SoftwareVersion", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setSoftwareVersion(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeHsmResult.setSoftwareVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SshPublicKey", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setSshPublicKey(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeHsmResult.setSshPublicKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SshKeyLastUpdated", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setSshKeyLastUpdated(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeHsmResult.setSshKeyLastUpdated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerCertUri", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setServerCertUri(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    describeHsmResult.setServerCertUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context
-                        .testExpression("ServerCertLastUpdated", targetDepth)) {
+                if (context.testExpression("ServerCertLastUpdated", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult.setServerCertLastUpdated(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeHsmResult.setServerCertLastUpdated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Partitions", targetDepth)) {
                     context.nextToken();
-                    describeHsmResult
-                            .setPartitions(new ListUnmarshaller<String>(context
-                                    .getUnmarshaller(String.class))
-                                    .unmarshall(context));
+                    describeHsmResult.setPartitions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

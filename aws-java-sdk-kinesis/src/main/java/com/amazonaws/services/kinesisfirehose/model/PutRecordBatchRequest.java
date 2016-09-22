@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisfirehose.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for <a>PutRecordBatch</a>.
  * </p>
  */
-public class PutRecordBatchRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class PutRecordBatchRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -71,12 +67,10 @@ public class PutRecordBatchRequest extends
      * 
      * @param deliveryStreamName
      *        The name of the delivery stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutRecordBatchRequest withDeliveryStreamName(
-            String deliveryStreamName) {
+    public PutRecordBatchRequest withDeliveryStreamName(String deliveryStreamName) {
         setDeliveryStreamName(deliveryStreamName);
         return this;
     }
@@ -116,16 +110,14 @@ public class PutRecordBatchRequest extends
      * One or more records.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRecords(java.util.Collection)} or
-     * {@link #withRecords(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param records
      *        One or more records.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutRecordBatchRequest withRecords(Record... records) {
@@ -145,19 +137,16 @@ public class PutRecordBatchRequest extends
      * 
      * @param records
      *        One or more records.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutRecordBatchRequest withRecords(
-            java.util.Collection<Record> records) {
+    public PutRecordBatchRequest withRecords(java.util.Collection<Record> records) {
         setRecords(records);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -185,17 +174,13 @@ public class PutRecordBatchRequest extends
         if (obj instanceof PutRecordBatchRequest == false)
             return false;
         PutRecordBatchRequest other = (PutRecordBatchRequest) obj;
-        if (other.getDeliveryStreamName() == null
-                ^ this.getDeliveryStreamName() == null)
+        if (other.getDeliveryStreamName() == null ^ this.getDeliveryStreamName() == null)
             return false;
-        if (other.getDeliveryStreamName() != null
-                && other.getDeliveryStreamName().equals(
-                        this.getDeliveryStreamName()) == false)
+        if (other.getDeliveryStreamName() != null && other.getDeliveryStreamName().equals(this.getDeliveryStreamName()) == false)
             return false;
         if (other.getRecords() == null ^ this.getRecords() == null)
             return false;
-        if (other.getRecords() != null
-                && other.getRecords().equals(this.getRecords()) == false)
+        if (other.getRecords() != null && other.getRecords().equals(this.getRecords()) == false)
             return false;
         return true;
     }
@@ -205,12 +190,8 @@ public class PutRecordBatchRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDeliveryStreamName() == null) ? 0
-                        : getDeliveryStreamName().hashCode());
-        hashCode = prime * hashCode
-                + ((getRecords() == null) ? 0 : getRecords().hashCode());
+        hashCode = prime * hashCode + ((getDeliveryStreamName() == null) ? 0 : getDeliveryStreamName().hashCode());
+        hashCode = prime * hashCode + ((getRecords() == null) ? 0 : getRecords().hashCode());
         return hashCode;
     }
 

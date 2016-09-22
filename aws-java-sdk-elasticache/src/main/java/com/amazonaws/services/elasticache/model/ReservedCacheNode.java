@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -50,16 +48,14 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.t2.micro</code>,
-     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.t1.micro</code>,
-     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
      * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
      * </p>
      * </li>
@@ -77,15 +73,13 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.r3.large</code>,
-     * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
      * </p>
      * </li>
      * </ul>
@@ -107,15 +101,13 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
-     * instances.
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
-     * Product Features and Details</a> and <a href=
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
@@ -210,8 +202,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * 
      * @param reservedCacheNodeId
      *        The unique identifier for the reservation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedCacheNode withReservedCacheNodeId(String reservedCacheNodeId) {
@@ -228,8 +219,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        The offering identifier.
      */
 
-    public void setReservedCacheNodesOfferingId(
-            String reservedCacheNodesOfferingId) {
+    public void setReservedCacheNodesOfferingId(String reservedCacheNodesOfferingId) {
         this.reservedCacheNodesOfferingId = reservedCacheNodesOfferingId;
     }
 
@@ -252,12 +242,10 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * 
      * @param reservedCacheNodesOfferingId
      *        The offering identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedCacheNode withReservedCacheNodesOfferingId(
-            String reservedCacheNodesOfferingId) {
+    public ReservedCacheNode withReservedCacheNodesOfferingId(String reservedCacheNodesOfferingId) {
         setReservedCacheNodesOfferingId(reservedCacheNodesOfferingId);
         return this;
     }
@@ -277,16 +265,14 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.t2.micro</code>,
-     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.t1.micro</code>,
-     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
      * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
      * </p>
      * </li>
@@ -304,15 +290,13 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.r3.large</code>,
-     * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
      * </p>
      * </li>
      * </ul>
@@ -334,15 +318,13 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
-     * instances.
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
-     * Product Features and Details</a> and <a href=
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
@@ -362,17 +344,14 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Current generation: <code>cache.t2.micro</code>,
-     *        <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     *        <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     *        <code>cache.m3.2xlarge</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Previous generation: <code>cache.t1.micro</code>,
-     *        <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
+     *        <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -389,15 +368,14 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Current generation: <code>cache.r3.large</code>,
-     *        <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *        Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *        <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Previous generation: <code>cache.m2.xlarge</code>,
-     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *        Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *        <code>cache.m2.4xlarge</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -409,8 +387,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        All t2 instances are created in an Amazon Virtual Private Cloud
-     *        (VPC).
+     *        All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
      *        </p>
      *        </li>
      *        <li>
@@ -420,15 +397,14 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Redis Append-only files (AOF) functionality is not supported for
-     *        t1 or t2 instances.
+     *        Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of cache node types and specifications, see
-     *        <a href="http://aws.amazon.com/elasticache/details">Amazon
-     *        ElastiCache Product Features and Details</a> and <a href=
+     *        For a complete listing of cache node types and specifications, see <a
+     *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
+     *        <a href=
      *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
      *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
@@ -454,16 +430,14 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.t2.micro</code>,
-     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.t1.micro</code>,
-     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
      * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
      * </p>
      * </li>
@@ -481,15 +455,13 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.r3.large</code>,
-     * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
      * </p>
      * </li>
      * </ul>
@@ -511,15 +483,13 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
-     * instances.
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
-     * Product Features and Details</a> and <a href=
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
@@ -538,17 +508,15 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         Current generation: <code>cache.t2.micro</code>,
-     *         <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     *         <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     *         Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     *         <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
      *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Previous generation: <code>cache.t1.micro</code>,
-     *         <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *         Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
+     *         <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -565,15 +533,14 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         Current generation: <code>cache.r3.large</code>,
-     *         <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *         <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *         Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *         <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Previous generation: <code>cache.m2.xlarge</code>,
-     *         <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *         Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *         <code>cache.m2.4xlarge</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -585,8 +552,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         All t2 instances are created in an Amazon Virtual Private Cloud
-     *         (VPC).
+     *         All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
      *         </p>
      *         </li>
      *         <li>
@@ -596,18 +562,16 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         Redis Append-only files (AOF) functionality is not supported for
-     *         t1 or t2 instances.
+     *         Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For a complete listing of cache node types and specifications,
-     *         see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     *         ElastiCache Product Features and Details</a> and <a href=
+     *         For a complete listing of cache node types and specifications, see <a
+     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
+     *         <a href=
      *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
-     *         >Cache Node Type-Specific Parameters for Memcached</a> or <a
-     *         href=
+     *         >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
      *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
      *         >Cache Node Type-Specific Parameters for Redis</a>.
      */
@@ -631,16 +595,14 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.t2.micro</code>,
-     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.t1.micro</code>,
-     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
      * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
      * </p>
      * </li>
@@ -658,15 +620,13 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.r3.large</code>,
-     * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
      * </p>
      * </li>
      * </ul>
@@ -688,15 +648,13 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
-     * instances.
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
-     * Product Features and Details</a> and <a href=
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
@@ -716,17 +674,14 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Current generation: <code>cache.t2.micro</code>,
-     *        <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     *        <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     *        <code>cache.m3.2xlarge</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Previous generation: <code>cache.t1.micro</code>,
-     *        <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
+     *        <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -743,15 +698,14 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Current generation: <code>cache.r3.large</code>,
-     *        <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *        Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *        <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Previous generation: <code>cache.m2.xlarge</code>,
-     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *        Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *        <code>cache.m2.4xlarge</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -763,8 +717,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        All t2 instances are created in an Amazon Virtual Private Cloud
-     *        (VPC).
+     *        All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
      *        </p>
      *        </li>
      *        <li>
@@ -774,21 +727,19 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Redis Append-only files (AOF) functionality is not supported for
-     *        t1 or t2 instances.
+     *        Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of cache node types and specifications, see
-     *        <a href="http://aws.amazon.com/elasticache/details">Amazon
-     *        ElastiCache Product Features and Details</a> and <a href=
+     *        For a complete listing of cache node types and specifications, see <a
+     *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
+     *        <a href=
      *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
      *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Redis</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedCacheNode withCacheNodeType(String cacheNodeType) {
@@ -828,8 +779,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * 
      * @param startTime
      *        The time the reservation started.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedCacheNode withStartTime(java.util.Date startTime) {
@@ -869,8 +819,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * 
      * @param duration
      *        The duration of the reservation in seconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedCacheNode withDuration(Integer duration) {
@@ -910,8 +859,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * 
      * @param fixedPrice
      *        The fixed price charged for this reserved cache node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedCacheNode withFixedPrice(Double fixedPrice) {
@@ -951,8 +899,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * 
      * @param usagePrice
      *        The hourly price charged for this reserved cache node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedCacheNode withUsagePrice(Double usagePrice) {
@@ -992,8 +939,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * 
      * @param cacheNodeCount
      *        The number of cache nodes that have been reserved.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedCacheNode withCacheNodeCount(Integer cacheNodeCount) {
@@ -1033,8 +979,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * 
      * @param productDescription
      *        The description of the reserved cache node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedCacheNode withProductDescription(String productDescription) {
@@ -1074,8 +1019,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * 
      * @param offeringType
      *        The offering type of this reserved cache node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedCacheNode withOfferingType(String offeringType) {
@@ -1115,8 +1059,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the reserved cache node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedCacheNode withState(String state) {
@@ -1148,15 +1091,13 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        The recurring price charged to run this reserved cache node.
      */
 
-    public void setRecurringCharges(
-            java.util.Collection<RecurringCharge> recurringCharges) {
+    public void setRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         if (recurringCharges == null) {
             this.recurringCharges = null;
             return;
         }
 
-        this.recurringCharges = new com.amazonaws.internal.SdkInternalList<RecurringCharge>(
-                recurringCharges);
+        this.recurringCharges = new com.amazonaws.internal.SdkInternalList<RecurringCharge>(recurringCharges);
     }
 
     /**
@@ -1164,23 +1105,19 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * The recurring price charged to run this reserved cache node.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRecurringCharges(java.util.Collection)} or
-     * {@link #withRecurringCharges(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRecurringCharges(java.util.Collection)} or {@link #withRecurringCharges(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param recurringCharges
      *        The recurring price charged to run this reserved cache node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedCacheNode withRecurringCharges(
-            RecurringCharge... recurringCharges) {
+    public ReservedCacheNode withRecurringCharges(RecurringCharge... recurringCharges) {
         if (this.recurringCharges == null) {
-            setRecurringCharges(new com.amazonaws.internal.SdkInternalList<RecurringCharge>(
-                    recurringCharges.length));
+            setRecurringCharges(new com.amazonaws.internal.SdkInternalList<RecurringCharge>(recurringCharges.length));
         }
         for (RecurringCharge ele : recurringCharges) {
             this.recurringCharges.add(ele);
@@ -1195,19 +1132,16 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * 
      * @param recurringCharges
      *        The recurring price charged to run this reserved cache node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedCacheNode withRecurringCharges(
-            java.util.Collection<RecurringCharge> recurringCharges) {
+    public ReservedCacheNode withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         setRecurringCharges(recurringCharges);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1220,8 +1154,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
         if (getReservedCacheNodeId() != null)
             sb.append("ReservedCacheNodeId: " + getReservedCacheNodeId() + ",");
         if (getReservedCacheNodesOfferingId() != null)
-            sb.append("ReservedCacheNodesOfferingId: "
-                    + getReservedCacheNodesOfferingId() + ",");
+            sb.append("ReservedCacheNodesOfferingId: " + getReservedCacheNodesOfferingId() + ",");
         if (getCacheNodeType() != null)
             sb.append("CacheNodeType: " + getCacheNodeType() + ",");
         if (getStartTime() != null)
@@ -1256,74 +1189,53 @@ public class ReservedCacheNode implements Serializable, Cloneable {
         if (obj instanceof ReservedCacheNode == false)
             return false;
         ReservedCacheNode other = (ReservedCacheNode) obj;
-        if (other.getReservedCacheNodeId() == null
-                ^ this.getReservedCacheNodeId() == null)
+        if (other.getReservedCacheNodeId() == null ^ this.getReservedCacheNodeId() == null)
             return false;
-        if (other.getReservedCacheNodeId() != null
-                && other.getReservedCacheNodeId().equals(
-                        this.getReservedCacheNodeId()) == false)
+        if (other.getReservedCacheNodeId() != null && other.getReservedCacheNodeId().equals(this.getReservedCacheNodeId()) == false)
             return false;
-        if (other.getReservedCacheNodesOfferingId() == null
-                ^ this.getReservedCacheNodesOfferingId() == null)
+        if (other.getReservedCacheNodesOfferingId() == null ^ this.getReservedCacheNodesOfferingId() == null)
             return false;
-        if (other.getReservedCacheNodesOfferingId() != null
-                && other.getReservedCacheNodesOfferingId().equals(
-                        this.getReservedCacheNodesOfferingId()) == false)
+        if (other.getReservedCacheNodesOfferingId() != null && other.getReservedCacheNodesOfferingId().equals(this.getReservedCacheNodesOfferingId()) == false)
             return false;
         if (other.getCacheNodeType() == null ^ this.getCacheNodeType() == null)
             return false;
-        if (other.getCacheNodeType() != null
-                && other.getCacheNodeType().equals(this.getCacheNodeType()) == false)
+        if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
-        if (other.getStartTime() != null
-                && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         if (other.getDuration() == null ^ this.getDuration() == null)
             return false;
-        if (other.getDuration() != null
-                && other.getDuration().equals(this.getDuration()) == false)
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
             return false;
         if (other.getFixedPrice() == null ^ this.getFixedPrice() == null)
             return false;
-        if (other.getFixedPrice() != null
-                && other.getFixedPrice().equals(this.getFixedPrice()) == false)
+        if (other.getFixedPrice() != null && other.getFixedPrice().equals(this.getFixedPrice()) == false)
             return false;
         if (other.getUsagePrice() == null ^ this.getUsagePrice() == null)
             return false;
-        if (other.getUsagePrice() != null
-                && other.getUsagePrice().equals(this.getUsagePrice()) == false)
+        if (other.getUsagePrice() != null && other.getUsagePrice().equals(this.getUsagePrice()) == false)
             return false;
-        if (other.getCacheNodeCount() == null
-                ^ this.getCacheNodeCount() == null)
+        if (other.getCacheNodeCount() == null ^ this.getCacheNodeCount() == null)
             return false;
-        if (other.getCacheNodeCount() != null
-                && other.getCacheNodeCount().equals(this.getCacheNodeCount()) == false)
+        if (other.getCacheNodeCount() != null && other.getCacheNodeCount().equals(this.getCacheNodeCount()) == false)
             return false;
-        if (other.getProductDescription() == null
-                ^ this.getProductDescription() == null)
+        if (other.getProductDescription() == null ^ this.getProductDescription() == null)
             return false;
-        if (other.getProductDescription() != null
-                && other.getProductDescription().equals(
-                        this.getProductDescription()) == false)
+        if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false)
             return false;
         if (other.getOfferingType() == null ^ this.getOfferingType() == null)
             return false;
-        if (other.getOfferingType() != null
-                && other.getOfferingType().equals(this.getOfferingType()) == false)
+        if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
-        if (other.getRecurringCharges() == null
-                ^ this.getRecurringCharges() == null)
+        if (other.getRecurringCharges() == null ^ this.getRecurringCharges() == null)
             return false;
-        if (other.getRecurringCharges() != null
-                && other.getRecurringCharges().equals(
-                        this.getRecurringCharges()) == false)
+        if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false)
             return false;
         return true;
     }
@@ -1333,44 +1245,18 @@ public class ReservedCacheNode implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReservedCacheNodeId() == null) ? 0
-                        : getReservedCacheNodeId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReservedCacheNodesOfferingId() == null) ? 0
-                        : getReservedCacheNodesOfferingId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheNodeType() == null) ? 0 : getCacheNodeType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getDuration() == null) ? 0 : getDuration().hashCode());
-        hashCode = prime * hashCode
-                + ((getFixedPrice() == null) ? 0 : getFixedPrice().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheNodeCount() == null) ? 0 : getCacheNodeCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProductDescription() == null) ? 0
-                        : getProductDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOfferingType() == null) ? 0 : getOfferingType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRecurringCharges() == null) ? 0 : getRecurringCharges()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getReservedCacheNodeId() == null) ? 0 : getReservedCacheNodeId().hashCode());
+        hashCode = prime * hashCode + ((getReservedCacheNodesOfferingId() == null) ? 0 : getReservedCacheNodesOfferingId().hashCode());
+        hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
+        hashCode = prime * hashCode + ((getFixedPrice() == null) ? 0 : getFixedPrice().hashCode());
+        hashCode = prime * hashCode + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode());
+        hashCode = prime * hashCode + ((getCacheNodeCount() == null) ? 0 : getCacheNodeCount().hashCode());
+        hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode());
+        hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode());
         return hashCode;
     }
 
@@ -1379,9 +1265,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
         try {
             return (ReservedCacheNode) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

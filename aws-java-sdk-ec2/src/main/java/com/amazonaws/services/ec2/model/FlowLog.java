@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -61,20 +59,17 @@ public class FlowLog implements Serializable, Cloneable {
     private String logGroupName;
     /**
      * <p>
-     * The status of the logs delivery (<code>SUCCESS</code> |
-     * <code>FAILED</code>).
+     * The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).
      * </p>
      */
     private String deliverLogsStatus;
     /**
      * <p>
-     * Information about the error that occurred. <code>Rate limited</code>
-     * indicates that CloudWatch logs throttling has been applied for one or
-     * more network interfaces, or that you've reached the limit on the number
-     * of CloudWatch Logs log groups that you can create.
-     * <code>Access error</code> indicates that the IAM role associated with the
-     * flow log does not have sufficient permissions to publish to CloudWatch
-     * Logs. <code>Unknown error</code> indicates an internal error.
+     * Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling
+     * has been applied for one or more network interfaces, or that you've reached the limit on the number of CloudWatch
+     * Logs log groups that you can create. <code>Access error</code> indicates that the IAM role associated with the
+     * flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates
+     * an internal error.
      * </p>
      */
     private String deliverLogsErrorMessage;
@@ -117,8 +112,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @param creationTime
      *        The date and time the flow log was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FlowLog withCreationTime(java.util.Date creationTime) {
@@ -158,8 +152,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @param flowLogId
      *        The flow log ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FlowLog withFlowLogId(String flowLogId) {
@@ -199,8 +192,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @param flowLogStatus
      *        The status of the flow log (<code>ACTIVE</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FlowLog withFlowLogStatus(String flowLogStatus) {
@@ -240,8 +232,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @param resourceId
      *        The ID of the resource on which the flow log was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FlowLog withResourceId(String resourceId) {
@@ -283,8 +274,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @param trafficType
      *        The type of traffic captured for the flow log.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrafficType
      */
 
@@ -314,8 +304,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @param trafficType
      *        The type of traffic captured for the flow log.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrafficType
      */
 
@@ -356,8 +345,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @param logGroupName
      *        The name of the flow log group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FlowLog withLogGroupName(String logGroupName) {
@@ -367,13 +355,11 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the logs delivery (<code>SUCCESS</code> |
-     * <code>FAILED</code>).
+     * The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).
      * </p>
      * 
      * @param deliverLogsStatus
-     *        The status of the logs delivery (<code>SUCCESS</code> |
-     *        <code>FAILED</code>).
+     *        The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).
      */
 
     public void setDeliverLogsStatus(String deliverLogsStatus) {
@@ -382,12 +368,10 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the logs delivery (<code>SUCCESS</code> |
-     * <code>FAILED</code>).
+     * The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).
      * </p>
      * 
-     * @return The status of the logs delivery (<code>SUCCESS</code> |
-     *         <code>FAILED</code>).
+     * @return The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).
      */
 
     public String getDeliverLogsStatus() {
@@ -396,15 +380,12 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the logs delivery (<code>SUCCESS</code> |
-     * <code>FAILED</code>).
+     * The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).
      * </p>
      * 
      * @param deliverLogsStatus
-     *        The status of the logs delivery (<code>SUCCESS</code> |
-     *        <code>FAILED</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FlowLog withDeliverLogsStatus(String deliverLogsStatus) {
@@ -414,23 +395,18 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the error that occurred. <code>Rate limited</code>
-     * indicates that CloudWatch logs throttling has been applied for one or
-     * more network interfaces, or that you've reached the limit on the number
-     * of CloudWatch Logs log groups that you can create.
-     * <code>Access error</code> indicates that the IAM role associated with the
-     * flow log does not have sufficient permissions to publish to CloudWatch
-     * Logs. <code>Unknown error</code> indicates an internal error.
+     * Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling
+     * has been applied for one or more network interfaces, or that you've reached the limit on the number of CloudWatch
+     * Logs log groups that you can create. <code>Access error</code> indicates that the IAM role associated with the
+     * flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates
+     * an internal error.
      * </p>
      * 
      * @param deliverLogsErrorMessage
-     *        Information about the error that occurred.
-     *        <code>Rate limited</code> indicates that CloudWatch logs
-     *        throttling has been applied for one or more network interfaces, or
-     *        that you've reached the limit on the number of CloudWatch Logs log
-     *        groups that you can create. <code>Access error</code> indicates
-     *        that the IAM role associated with the flow log does not have
-     *        sufficient permissions to publish to CloudWatch Logs.
+     *        Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs
+     *        throttling has been applied for one or more network interfaces, or that you've reached the limit on the
+     *        number of CloudWatch Logs log groups that you can create. <code>Access error</code> indicates that the IAM
+     *        role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs.
      *        <code>Unknown error</code> indicates an internal error.
      */
 
@@ -440,22 +416,17 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the error that occurred. <code>Rate limited</code>
-     * indicates that CloudWatch logs throttling has been applied for one or
-     * more network interfaces, or that you've reached the limit on the number
-     * of CloudWatch Logs log groups that you can create.
-     * <code>Access error</code> indicates that the IAM role associated with the
-     * flow log does not have sufficient permissions to publish to CloudWatch
-     * Logs. <code>Unknown error</code> indicates an internal error.
+     * Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling
+     * has been applied for one or more network interfaces, or that you've reached the limit on the number of CloudWatch
+     * Logs log groups that you can create. <code>Access error</code> indicates that the IAM role associated with the
+     * flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates
+     * an internal error.
      * </p>
      * 
-     * @return Information about the error that occurred.
-     *         <code>Rate limited</code> indicates that CloudWatch logs
-     *         throttling has been applied for one or more network interfaces,
-     *         or that you've reached the limit on the number of CloudWatch Logs
-     *         log groups that you can create. <code>Access error</code>
-     *         indicates that the IAM role associated with the flow log does not
-     *         have sufficient permissions to publish to CloudWatch Logs.
+     * @return Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs
+     *         throttling has been applied for one or more network interfaces, or that you've reached the limit on the
+     *         number of CloudWatch Logs log groups that you can create. <code>Access error</code> indicates that the
+     *         IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs.
      *         <code>Unknown error</code> indicates an internal error.
      */
 
@@ -465,26 +436,20 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the error that occurred. <code>Rate limited</code>
-     * indicates that CloudWatch logs throttling has been applied for one or
-     * more network interfaces, or that you've reached the limit on the number
-     * of CloudWatch Logs log groups that you can create.
-     * <code>Access error</code> indicates that the IAM role associated with the
-     * flow log does not have sufficient permissions to publish to CloudWatch
-     * Logs. <code>Unknown error</code> indicates an internal error.
+     * Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling
+     * has been applied for one or more network interfaces, or that you've reached the limit on the number of CloudWatch
+     * Logs log groups that you can create. <code>Access error</code> indicates that the IAM role associated with the
+     * flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates
+     * an internal error.
      * </p>
      * 
      * @param deliverLogsErrorMessage
-     *        Information about the error that occurred.
-     *        <code>Rate limited</code> indicates that CloudWatch logs
-     *        throttling has been applied for one or more network interfaces, or
-     *        that you've reached the limit on the number of CloudWatch Logs log
-     *        groups that you can create. <code>Access error</code> indicates
-     *        that the IAM role associated with the flow log does not have
-     *        sufficient permissions to publish to CloudWatch Logs.
+     *        Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs
+     *        throttling has been applied for one or more network interfaces, or that you've reached the limit on the
+     *        number of CloudWatch Logs log groups that you can create. <code>Access error</code> indicates that the IAM
+     *        role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs.
      *        <code>Unknown error</code> indicates an internal error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FlowLog withDeliverLogsErrorMessage(String deliverLogsErrorMessage) {
@@ -524,8 +489,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @param deliverLogsPermissionArn
      *        The ARN of the IAM role that posts logs to CloudWatch Logs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FlowLog withDeliverLogsPermissionArn(String deliverLogsPermissionArn) {
@@ -534,8 +498,7 @@ public class FlowLog implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -560,11 +523,9 @@ public class FlowLog implements Serializable, Cloneable {
         if (getDeliverLogsStatus() != null)
             sb.append("DeliverLogsStatus: " + getDeliverLogsStatus() + ",");
         if (getDeliverLogsErrorMessage() != null)
-            sb.append("DeliverLogsErrorMessage: "
-                    + getDeliverLogsErrorMessage() + ",");
+            sb.append("DeliverLogsErrorMessage: " + getDeliverLogsErrorMessage() + ",");
         if (getDeliverLogsPermissionArn() != null)
-            sb.append("DeliverLogsPermissionArn: "
-                    + getDeliverLogsPermissionArn());
+            sb.append("DeliverLogsPermissionArn: " + getDeliverLogsPermissionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -581,54 +542,39 @@ public class FlowLog implements Serializable, Cloneable {
         FlowLog other = (FlowLog) obj;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getCreationTime() != null
-                && other.getCreationTime().equals(this.getCreationTime()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
         if (other.getFlowLogId() == null ^ this.getFlowLogId() == null)
             return false;
-        if (other.getFlowLogId() != null
-                && other.getFlowLogId().equals(this.getFlowLogId()) == false)
+        if (other.getFlowLogId() != null && other.getFlowLogId().equals(this.getFlowLogId()) == false)
             return false;
         if (other.getFlowLogStatus() == null ^ this.getFlowLogStatus() == null)
             return false;
-        if (other.getFlowLogStatus() != null
-                && other.getFlowLogStatus().equals(this.getFlowLogStatus()) == false)
+        if (other.getFlowLogStatus() != null && other.getFlowLogStatus().equals(this.getFlowLogStatus()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getTrafficType() == null ^ this.getTrafficType() == null)
             return false;
-        if (other.getTrafficType() != null
-                && other.getTrafficType().equals(this.getTrafficType()) == false)
+        if (other.getTrafficType() != null && other.getTrafficType().equals(this.getTrafficType()) == false)
             return false;
         if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
             return false;
-        if (other.getLogGroupName() != null
-                && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
             return false;
-        if (other.getDeliverLogsStatus() == null
-                ^ this.getDeliverLogsStatus() == null)
+        if (other.getDeliverLogsStatus() == null ^ this.getDeliverLogsStatus() == null)
             return false;
-        if (other.getDeliverLogsStatus() != null
-                && other.getDeliverLogsStatus().equals(
-                        this.getDeliverLogsStatus()) == false)
+        if (other.getDeliverLogsStatus() != null && other.getDeliverLogsStatus().equals(this.getDeliverLogsStatus()) == false)
             return false;
-        if (other.getDeliverLogsErrorMessage() == null
-                ^ this.getDeliverLogsErrorMessage() == null)
+        if (other.getDeliverLogsErrorMessage() == null ^ this.getDeliverLogsErrorMessage() == null)
             return false;
-        if (other.getDeliverLogsErrorMessage() != null
-                && other.getDeliverLogsErrorMessage().equals(
-                        this.getDeliverLogsErrorMessage()) == false)
+        if (other.getDeliverLogsErrorMessage() != null && other.getDeliverLogsErrorMessage().equals(this.getDeliverLogsErrorMessage()) == false)
             return false;
-        if (other.getDeliverLogsPermissionArn() == null
-                ^ this.getDeliverLogsPermissionArn() == null)
+        if (other.getDeliverLogsPermissionArn() == null ^ this.getDeliverLogsPermissionArn() == null)
             return false;
-        if (other.getDeliverLogsPermissionArn() != null
-                && other.getDeliverLogsPermissionArn().equals(
-                        this.getDeliverLogsPermissionArn()) == false)
+        if (other.getDeliverLogsPermissionArn() != null && other.getDeliverLogsPermissionArn().equals(this.getDeliverLogsPermissionArn()) == false)
             return false;
         return true;
     }
@@ -638,37 +584,15 @@ public class FlowLog implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCreationTime() == null) ? 0 : getCreationTime()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getFlowLogId() == null) ? 0 : getFlowLogId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFlowLogStatus() == null) ? 0 : getFlowLogStatus()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTrafficType() == null) ? 0 : getTrafficType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLogGroupName() == null) ? 0 : getLogGroupName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeliverLogsStatus() == null) ? 0
-                        : getDeliverLogsStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeliverLogsErrorMessage() == null) ? 0
-                        : getDeliverLogsErrorMessage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeliverLogsPermissionArn() == null) ? 0
-                        : getDeliverLogsPermissionArn().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getFlowLogId() == null) ? 0 : getFlowLogId().hashCode());
+        hashCode = prime * hashCode + ((getFlowLogStatus() == null) ? 0 : getFlowLogStatus().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getTrafficType() == null) ? 0 : getTrafficType().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getDeliverLogsStatus() == null) ? 0 : getDeliverLogsStatus().hashCode());
+        hashCode = prime * hashCode + ((getDeliverLogsErrorMessage() == null) ? 0 : getDeliverLogsErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getDeliverLogsPermissionArn() == null) ? 0 : getDeliverLogsPermissionArn().hashCode());
         return hashCode;
     }
 
@@ -677,9 +601,7 @@ public class FlowLog implements Serializable, Cloneable {
         try {
             return (FlowLog) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

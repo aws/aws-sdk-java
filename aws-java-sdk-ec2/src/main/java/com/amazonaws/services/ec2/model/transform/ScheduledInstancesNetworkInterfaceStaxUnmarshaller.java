@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,12 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * ScheduledInstancesNetworkInterface StAX Unmarshaller
  */
-public class ScheduledInstancesNetworkInterfaceStaxUnmarshaller
-        implements
-        Unmarshaller<ScheduledInstancesNetworkInterface, StaxUnmarshallerContext> {
+public class ScheduledInstancesNetworkInterfaceStaxUnmarshaller implements Unmarshaller<ScheduledInstancesNetworkInterface, StaxUnmarshallerContext> {
 
-    public ScheduledInstancesNetworkInterface unmarshall(
-            StaxUnmarshallerContext context) throws Exception {
+    public ScheduledInstancesNetworkInterface unmarshall(StaxUnmarshallerContext context) throws Exception {
         ScheduledInstancesNetworkInterface scheduledInstancesNetworkInterface = new ScheduledInstancesNetworkInterface();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -51,77 +46,53 @@ public class ScheduledInstancesNetworkInterfaceStaxUnmarshaller
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("NetworkInterfaceId", targetDepth)) {
-                    scheduledInstancesNetworkInterface
-                            .setNetworkInterfaceId(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduledInstancesNetworkInterface.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DeviceIndex", targetDepth)) {
-                    scheduledInstancesNetworkInterface
-                            .setDeviceIndex(IntegerStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduledInstancesNetworkInterface.setDeviceIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("SubnetId", targetDepth)) {
-                    scheduledInstancesNetworkInterface
-                            .setSubnetId(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    scheduledInstancesNetworkInterface.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Description", targetDepth)) {
-                    scheduledInstancesNetworkInterface
-                            .setDescription(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduledInstancesNetworkInterface.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("PrivateIpAddress", targetDepth)) {
-                    scheduledInstancesNetworkInterface
-                            .setPrivateIpAddress(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduledInstancesNetworkInterface.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "PrivateIpAddressConfig/PrivateIpAddressConfigSet",
-                        targetDepth)) {
-                    scheduledInstancesNetworkInterface
-                            .withPrivateIpAddressConfigs(ScheduledInstancesPrivateIpAddressConfigStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("PrivateIpAddressConfig/PrivateIpAddressConfigSet", targetDepth)) {
+                    scheduledInstancesNetworkInterface.withPrivateIpAddressConfigs(ScheduledInstancesPrivateIpAddressConfigStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("SecondaryPrivateIpAddressCount",
-                        targetDepth)) {
-                    scheduledInstancesNetworkInterface
-                            .setSecondaryPrivateIpAddressCount(IntegerStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("SecondaryPrivateIpAddressCount", targetDepth)) {
+                    scheduledInstancesNetworkInterface.setSecondaryPrivateIpAddressCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("AssociatePublicIpAddress",
-                        targetDepth)) {
-                    scheduledInstancesNetworkInterface
-                            .setAssociatePublicIpAddress(BooleanStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("AssociatePublicIpAddress", targetDepth)) {
+                    scheduledInstancesNetworkInterface.setAssociatePublicIpAddress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("Group/SecurityGroupId", targetDepth)) {
-                    scheduledInstancesNetworkInterface
-                            .withGroups(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                if (context.testExpression("Group/SecurityGroupId", targetDepth)) {
+                    scheduledInstancesNetworkInterface.withGroups(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DeleteOnTermination", targetDepth)) {
-                    scheduledInstancesNetworkInterface
-                            .setDeleteOnTermination(BooleanStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduledInstancesNetworkInterface.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

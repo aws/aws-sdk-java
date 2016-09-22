@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -18,13 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the response to a successful <a>SimulatePrincipalPolicy</a> or
- * <a>SimulateCustomPolicy</a> request.
+ * Contains the response to a successful <a>SimulatePrincipalPolicy</a> or <a>SimulateCustomPolicy</a> request.
  * </p>
  */
-public class SimulatePrincipalPolicyResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class SimulatePrincipalPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,21 +29,18 @@ public class SimulatePrincipalPolicyResult extends
     private com.amazonaws.internal.SdkInternalList<EvaluationResult> evaluationResults;
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      */
     private String marker;
@@ -77,15 +69,13 @@ public class SimulatePrincipalPolicyResult extends
      *        The results of the simulation.
      */
 
-    public void setEvaluationResults(
-            java.util.Collection<EvaluationResult> evaluationResults) {
+    public void setEvaluationResults(java.util.Collection<EvaluationResult> evaluationResults) {
         if (evaluationResults == null) {
             this.evaluationResults = null;
             return;
         }
 
-        this.evaluationResults = new com.amazonaws.internal.SdkInternalList<EvaluationResult>(
-                evaluationResults);
+        this.evaluationResults = new com.amazonaws.internal.SdkInternalList<EvaluationResult>(evaluationResults);
     }
 
     /**
@@ -93,23 +83,19 @@ public class SimulatePrincipalPolicyResult extends
      * The results of the simulation.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEvaluationResults(java.util.Collection)} or
-     * {@link #withEvaluationResults(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEvaluationResults(java.util.Collection)} or {@link #withEvaluationResults(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param evaluationResults
      *        The results of the simulation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SimulatePrincipalPolicyResult withEvaluationResults(
-            EvaluationResult... evaluationResults) {
+    public SimulatePrincipalPolicyResult withEvaluationResults(EvaluationResult... evaluationResults) {
         if (this.evaluationResults == null) {
-            setEvaluationResults(new com.amazonaws.internal.SdkInternalList<EvaluationResult>(
-                    evaluationResults.length));
+            setEvaluationResults(new com.amazonaws.internal.SdkInternalList<EvaluationResult>(evaluationResults.length));
         }
         for (EvaluationResult ele : evaluationResults) {
             this.evaluationResults.add(ele);
@@ -124,36 +110,29 @@ public class SimulatePrincipalPolicyResult extends
      * 
      * @param evaluationResults
      *        The results of the simulation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SimulatePrincipalPolicyResult withEvaluationResults(
-            java.util.Collection<EvaluationResult> evaluationResults) {
+    public SimulatePrincipalPolicyResult withEvaluationResults(java.util.Collection<EvaluationResult> evaluationResults) {
         setEvaluationResults(evaluationResults);
         return this;
     }
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more items to return. If
-     *        your results were truncated, you can make a subsequent pagination
-     *        request using the <code>Marker</code> request parameter to
-     *        retrieve more items. Note that IAM might return fewer than the
-     *        <code>MaxItems</code> number of results even when there are more
-     *        results available. We recommend that you check
-     *        <code>IsTruncated</code> after every call to ensure that you
-     *        receive all of your results.
+     *        A flag that indicates whether there are more items to return. If your results were truncated, you can make
+     *        a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.
+     *        Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more
+     *        results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that
+     *        you receive all of your results.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -162,23 +141,18 @@ public class SimulatePrincipalPolicyResult extends
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      * 
-     * @return A flag that indicates whether there are more items to return. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to
-     *         retrieve more items. Note that IAM might return fewer than the
-     *         <code>MaxItems</code> number of results even when there are more
-     *         results available. We recommend that you check
-     *         <code>IsTruncated</code> after every call to ensure that you
-     *         receive all of your results.
+     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can
+     *         make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there
+     *         are more results available. We recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      */
 
     public Boolean getIsTruncated() {
@@ -187,26 +161,20 @@ public class SimulatePrincipalPolicyResult extends
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more items to return. If
-     *        your results were truncated, you can make a subsequent pagination
-     *        request using the <code>Marker</code> request parameter to
-     *        retrieve more items. Note that IAM might return fewer than the
-     *        <code>MaxItems</code> number of results even when there are more
-     *        results available. We recommend that you check
-     *        <code>IsTruncated</code> after every call to ensure that you
-     *        receive all of your results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A flag that indicates whether there are more items to return. If your results were truncated, you can make
+     *        a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.
+     *        Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more
+     *        results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that
+     *        you receive all of your results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SimulatePrincipalPolicyResult withIsTruncated(Boolean isTruncated) {
@@ -216,23 +184,18 @@ public class SimulatePrincipalPolicyResult extends
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * of your results.
      * </p>
      * 
-     * @return A flag that indicates whether there are more items to return. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to
-     *         retrieve more items. Note that IAM might return fewer than the
-     *         <code>MaxItems</code> number of results even when there are more
-     *         results available. We recommend that you check
-     *         <code>IsTruncated</code> after every call to ensure that you
-     *         receive all of your results.
+     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can
+     *         make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there
+     *         are more results available. We recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      */
 
     public Boolean isTruncated() {
@@ -241,15 +204,13 @@ public class SimulatePrincipalPolicyResult extends
 
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      * 
      * @param marker
-     *        When <code>IsTruncated</code> is <code>true</code>, this element
-     *        is present and contains the value to use for the
-     *        <code>Marker</code> parameter in a subsequent pagination request.
+     *        When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use
+     *        for the <code>Marker</code> parameter in a subsequent pagination request.
      */
 
     public void setMarker(String marker) {
@@ -258,14 +219,12 @@ public class SimulatePrincipalPolicyResult extends
 
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      * 
-     * @return When <code>IsTruncated</code> is <code>true</code>, this element
-     *         is present and contains the value to use for the
-     *         <code>Marker</code> parameter in a subsequent pagination request.
+     * @return When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use
+     *         for the <code>Marker</code> parameter in a subsequent pagination request.
      */
 
     public String getMarker() {
@@ -274,17 +233,14 @@ public class SimulatePrincipalPolicyResult extends
 
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      * 
      * @param marker
-     *        When <code>IsTruncated</code> is <code>true</code>, this element
-     *        is present and contains the value to use for the
-     *        <code>Marker</code> parameter in a subsequent pagination request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use
+     *        for the <code>Marker</code> parameter in a subsequent pagination request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SimulatePrincipalPolicyResult withMarker(String marker) {
@@ -293,8 +249,7 @@ public class SimulatePrincipalPolicyResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -324,22 +279,17 @@ public class SimulatePrincipalPolicyResult extends
         if (obj instanceof SimulatePrincipalPolicyResult == false)
             return false;
         SimulatePrincipalPolicyResult other = (SimulatePrincipalPolicyResult) obj;
-        if (other.getEvaluationResults() == null
-                ^ this.getEvaluationResults() == null)
+        if (other.getEvaluationResults() == null ^ this.getEvaluationResults() == null)
             return false;
-        if (other.getEvaluationResults() != null
-                && other.getEvaluationResults().equals(
-                        this.getEvaluationResults()) == false)
+        if (other.getEvaluationResults() != null && other.getEvaluationResults().equals(this.getEvaluationResults()) == false)
             return false;
         if (other.getIsTruncated() == null ^ this.getIsTruncated() == null)
             return false;
-        if (other.getIsTruncated() != null
-                && other.getIsTruncated().equals(this.getIsTruncated()) == false)
+        if (other.getIsTruncated() != null && other.getIsTruncated().equals(this.getIsTruncated()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -349,15 +299,9 @@ public class SimulatePrincipalPolicyResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEvaluationResults() == null) ? 0
-                        : getEvaluationResults().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getEvaluationResults() == null) ? 0 : getEvaluationResults().hashCode());
+        hashCode = prime * hashCode + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -366,9 +310,7 @@ public class SimulatePrincipalPolicyResult extends
         try {
             return (SimulatePrincipalPolicyResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

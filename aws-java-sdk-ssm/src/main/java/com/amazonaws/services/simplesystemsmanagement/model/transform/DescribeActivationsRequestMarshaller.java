@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
@@ -35,27 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeActivationsRequest Marshaller
  */
-public class DescribeActivationsRequestMarshaller
-        implements
-        Marshaller<Request<DescribeActivationsRequest>, DescribeActivationsRequest> {
+public class DescribeActivationsRequestMarshaller implements Marshaller<Request<DescribeActivationsRequest>, DescribeActivationsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeActivationsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeActivationsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeActivationsRequest> marshall(
-            DescribeActivationsRequest describeActivationsRequest) {
+    public Request<DescribeActivationsRequest> marshall(DescribeActivationsRequest describeActivationsRequest) {
 
         if (describeActivationsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeActivationsRequest> request = new DefaultRequest<DescribeActivationsRequest>(
-                describeActivationsRequest, "AWSSimpleSystemsManagement");
+        Request<DescribeActivationsRequest> request = new DefaultRequest<DescribeActivationsRequest>(describeActivationsRequest, "AWSSimpleSystemsManagement");
         request.addHeader("X-Amz-Target", "AmazonSSM.DescribeActivations");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -63,8 +55,7 @@ public class DescribeActivationsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
@@ -76,31 +67,26 @@ public class DescribeActivationsRequestMarshaller
                 for (DescribeActivationsFilter filtersListValue : filtersList) {
                     if (filtersListValue != null) {
 
-                        DescribeActivationsFilterJsonMarshaller.getInstance()
-                                .marshall(filtersListValue, jsonGenerator);
+                        DescribeActivationsFilterJsonMarshaller.getInstance().marshall(filtersListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (describeActivationsRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(
-                        describeActivationsRequest.getMaxResults());
+                jsonGenerator.writeFieldName("MaxResults").writeValue(describeActivationsRequest.getMaxResults());
             }
             if (describeActivationsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(
-                        describeActivationsRequest.getNextToken());
+                jsonGenerator.writeFieldName("NextToken").writeValue(describeActivationsRequest.getNextToken());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model;
 
@@ -68,8 +66,7 @@ public class UniqueProblem implements Serializable, Cloneable {
      * 
      * @param message
      *        A message about the unique problems' result.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UniqueProblem withMessage(String message) {
@@ -112,16 +109,14 @@ public class UniqueProblem implements Serializable, Cloneable {
      * Information about the problems.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setProblems(java.util.Collection)} or
-     * {@link #withProblems(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProblems(java.util.Collection)} or {@link #withProblems(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param problems
      *        Information about the problems.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UniqueProblem withProblems(Problem... problems) {
@@ -141,8 +136,7 @@ public class UniqueProblem implements Serializable, Cloneable {
      * 
      * @param problems
      *        Information about the problems.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UniqueProblem withProblems(java.util.Collection<Problem> problems) {
@@ -151,8 +145,7 @@ public class UniqueProblem implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -182,13 +175,11 @@ public class UniqueProblem implements Serializable, Cloneable {
         UniqueProblem other = (UniqueProblem) obj;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         if (other.getProblems() == null ^ this.getProblems() == null)
             return false;
-        if (other.getProblems() != null
-                && other.getProblems().equals(this.getProblems()) == false)
+        if (other.getProblems() != null && other.getProblems().equals(this.getProblems()) == false)
             return false;
         return true;
     }
@@ -198,10 +189,8 @@ public class UniqueProblem implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
-        hashCode = prime * hashCode
-                + ((getProblems() == null) ? 0 : getProblems().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getProblems() == null) ? 0 : getProblems().hashCode());
         return hashCode;
     }
 
@@ -210,9 +199,7 @@ public class UniqueProblem implements Serializable, Cloneable {
         try {
             return (UniqueProblem) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

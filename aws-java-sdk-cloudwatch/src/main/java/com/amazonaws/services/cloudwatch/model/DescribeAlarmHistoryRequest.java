@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes the inputs for DescribeAlarmHistory.
  * </p>
  */
-public class DescribeAlarmHistoryRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -58,8 +54,7 @@ public class DescribeAlarmHistoryRequest extends
     private Integer maxRecords;
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      */
     private String nextToken;
@@ -96,8 +91,7 @@ public class DescribeAlarmHistoryRequest extends
      * 
      * @param alarmName
      *        The name of the alarm.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmHistoryRequest withAlarmName(String alarmName) {
@@ -139,13 +133,11 @@ public class DescribeAlarmHistoryRequest extends
      * 
      * @param historyItemType
      *        The type of alarm histories to retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HistoryItemType
      */
 
-    public DescribeAlarmHistoryRequest withHistoryItemType(
-            String historyItemType) {
+    public DescribeAlarmHistoryRequest withHistoryItemType(String historyItemType) {
         setHistoryItemType(historyItemType);
         return this;
     }
@@ -171,13 +163,11 @@ public class DescribeAlarmHistoryRequest extends
      * 
      * @param historyItemType
      *        The type of alarm histories to retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HistoryItemType
      */
 
-    public DescribeAlarmHistoryRequest withHistoryItemType(
-            HistoryItemType historyItemType) {
+    public DescribeAlarmHistoryRequest withHistoryItemType(HistoryItemType historyItemType) {
         setHistoryItemType(historyItemType);
         return this;
     }
@@ -214,8 +204,7 @@ public class DescribeAlarmHistoryRequest extends
      * 
      * @param startDate
      *        The starting date to retrieve alarm history.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmHistoryRequest withStartDate(java.util.Date startDate) {
@@ -255,8 +244,7 @@ public class DescribeAlarmHistoryRequest extends
      * 
      * @param endDate
      *        The ending date to retrieve alarm history.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmHistoryRequest withEndDate(java.util.Date endDate) {
@@ -296,8 +284,7 @@ public class DescribeAlarmHistoryRequest extends
      * 
      * @param maxRecords
      *        The maximum number of alarm history records to retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmHistoryRequest withMaxRecords(Integer maxRecords) {
@@ -307,13 +294,11 @@ public class DescribeAlarmHistoryRequest extends
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      * 
      * @param nextToken
-     *        The token returned by a previous call to indicate that there is
-     *        more data available.
+     *        The token returned by a previous call to indicate that there is more data available.
      */
 
     public void setNextToken(String nextToken) {
@@ -322,12 +307,10 @@ public class DescribeAlarmHistoryRequest extends
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      * 
-     * @return The token returned by a previous call to indicate that there is
-     *         more data available.
+     * @return The token returned by a previous call to indicate that there is more data available.
      */
 
     public String getNextToken() {
@@ -336,15 +319,12 @@ public class DescribeAlarmHistoryRequest extends
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      * 
      * @param nextToken
-     *        The token returned by a previous call to indicate that there is
-     *        more data available.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token returned by a previous call to indicate that there is more data available.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmHistoryRequest withNextToken(String nextToken) {
@@ -353,8 +333,7 @@ public class DescribeAlarmHistoryRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -392,34 +371,27 @@ public class DescribeAlarmHistoryRequest extends
         DescribeAlarmHistoryRequest other = (DescribeAlarmHistoryRequest) obj;
         if (other.getAlarmName() == null ^ this.getAlarmName() == null)
             return false;
-        if (other.getAlarmName() != null
-                && other.getAlarmName().equals(this.getAlarmName()) == false)
+        if (other.getAlarmName() != null && other.getAlarmName().equals(this.getAlarmName()) == false)
             return false;
-        if (other.getHistoryItemType() == null
-                ^ this.getHistoryItemType() == null)
+        if (other.getHistoryItemType() == null ^ this.getHistoryItemType() == null)
             return false;
-        if (other.getHistoryItemType() != null
-                && other.getHistoryItemType().equals(this.getHistoryItemType()) == false)
+        if (other.getHistoryItemType() != null && other.getHistoryItemType().equals(this.getHistoryItemType()) == false)
             return false;
         if (other.getStartDate() == null ^ this.getStartDate() == null)
             return false;
-        if (other.getStartDate() != null
-                && other.getStartDate().equals(this.getStartDate()) == false)
+        if (other.getStartDate() != null && other.getStartDate().equals(this.getStartDate()) == false)
             return false;
         if (other.getEndDate() == null ^ this.getEndDate() == null)
             return false;
-        if (other.getEndDate() != null
-                && other.getEndDate().equals(this.getEndDate()) == false)
+        if (other.getEndDate() != null && other.getEndDate().equals(this.getEndDate()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -429,20 +401,12 @@ public class DescribeAlarmHistoryRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHistoryItemType() == null) ? 0 : getHistoryItemType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode());
+        hashCode = prime * hashCode + ((getHistoryItemType() == null) ? 0 : getHistoryItemType().hashCode());
+        hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
+        hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

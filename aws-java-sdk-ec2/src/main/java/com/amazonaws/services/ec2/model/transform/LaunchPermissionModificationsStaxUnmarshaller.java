@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * LaunchPermissionModifications StAX Unmarshaller
  */
-public class LaunchPermissionModificationsStaxUnmarshaller implements
-        Unmarshaller<LaunchPermissionModifications, StaxUnmarshallerContext> {
+public class LaunchPermissionModificationsStaxUnmarshaller implements Unmarshaller<LaunchPermissionModifications, StaxUnmarshallerContext> {
 
-    public LaunchPermissionModifications unmarshall(
-            StaxUnmarshallerContext context) throws Exception {
+    public LaunchPermissionModifications unmarshall(StaxUnmarshallerContext context) throws Exception {
         LaunchPermissionModifications launchPermissionModifications = new LaunchPermissionModifications();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,16 +46,12 @@ public class LaunchPermissionModificationsStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Add/item", targetDepth)) {
-                    launchPermissionModifications
-                            .withAdd(LaunchPermissionStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    launchPermissionModifications.withAdd(LaunchPermissionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Remove/item", targetDepth)) {
-                    launchPermissionModifications
-                            .withRemove(LaunchPermissionStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    launchPermissionModifications.withRemove(LaunchPermissionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchdomain.model;
 
@@ -22,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <code>Suggest</code> request.
  * </p>
  */
-public class SuggestRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SuggestRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -76,8 +73,7 @@ public class SuggestRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param query
      *        Specifies the string for which you want to get suggestions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SuggestRequest withQuery(String query) {
@@ -91,8 +87,7 @@ public class SuggestRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param suggester
-     *        Specifies the name of the suggester to use to find suggested
-     *        matches.
+     *        Specifies the name of the suggester to use to find suggested matches.
      */
 
     public void setSuggester(String suggester) {
@@ -104,8 +99,7 @@ public class SuggestRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the name of the suggester to use to find suggested matches.
      * </p>
      * 
-     * @return Specifies the name of the suggester to use to find suggested
-     *         matches.
+     * @return Specifies the name of the suggester to use to find suggested matches.
      */
 
     public String getSuggester() {
@@ -118,10 +112,8 @@ public class SuggestRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param suggester
-     *        Specifies the name of the suggester to use to find suggested
-     *        matches.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the name of the suggester to use to find suggested matches.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SuggestRequest withSuggester(String suggester) {
@@ -161,8 +153,7 @@ public class SuggestRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param size
      *        Specifies the maximum number of suggestions to return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SuggestRequest withSize(Long size) {
@@ -171,8 +162,7 @@ public class SuggestRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -204,18 +194,15 @@ public class SuggestRequest extends com.amazonaws.AmazonWebServiceRequest
         SuggestRequest other = (SuggestRequest) obj;
         if (other.getQuery() == null ^ this.getQuery() == null)
             return false;
-        if (other.getQuery() != null
-                && other.getQuery().equals(this.getQuery()) == false)
+        if (other.getQuery() != null && other.getQuery().equals(this.getQuery()) == false)
             return false;
         if (other.getSuggester() == null ^ this.getSuggester() == null)
             return false;
-        if (other.getSuggester() != null
-                && other.getSuggester().equals(this.getSuggester()) == false)
+        if (other.getSuggester() != null && other.getSuggester().equals(this.getSuggester()) == false)
             return false;
         if (other.getSize() == null ^ this.getSize() == null)
             return false;
-        if (other.getSize() != null
-                && other.getSize().equals(this.getSize()) == false)
+        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
             return false;
         return true;
     }
@@ -225,12 +212,9 @@ public class SuggestRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getQuery() == null) ? 0 : getQuery().hashCode());
-        hashCode = prime * hashCode
-                + ((getSuggester() == null) ? 0 : getSuggester().hashCode());
-        hashCode = prime * hashCode
-                + ((getSize() == null) ? 0 : getSize().hashCode());
+        hashCode = prime * hashCode + ((getQuery() == null) ? 0 : getQuery().hashCode());
+        hashCode = prime * hashCode + ((getSuggester() == null) ? 0 : getSuggester().hashCode());
+        hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
         return hashCode;
     }
 

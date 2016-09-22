@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,12 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * InstanceBlockDeviceMappingSpecification StAX Unmarshaller
  */
-public class InstanceBlockDeviceMappingSpecificationStaxUnmarshaller
-        implements
-        Unmarshaller<InstanceBlockDeviceMappingSpecification, StaxUnmarshallerContext> {
+public class InstanceBlockDeviceMappingSpecificationStaxUnmarshaller implements Unmarshaller<InstanceBlockDeviceMappingSpecification, StaxUnmarshallerContext> {
 
-    public InstanceBlockDeviceMappingSpecification unmarshall(
-            StaxUnmarshallerContext context) throws Exception {
+    public InstanceBlockDeviceMappingSpecification unmarshall(StaxUnmarshallerContext context) throws Exception {
         InstanceBlockDeviceMappingSpecification instanceBlockDeviceMappingSpecification = new InstanceBlockDeviceMappingSpecification();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -51,30 +46,22 @@ public class InstanceBlockDeviceMappingSpecificationStaxUnmarshaller
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("deviceName", targetDepth)) {
-                    instanceBlockDeviceMappingSpecification
-                            .setDeviceName(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    instanceBlockDeviceMappingSpecification.setDeviceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ebs", targetDepth)) {
-                    instanceBlockDeviceMappingSpecification
-                            .setEbs(EbsInstanceBlockDeviceSpecificationStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    instanceBlockDeviceMappingSpecification.setEbs(EbsInstanceBlockDeviceSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("virtualName", targetDepth)) {
-                    instanceBlockDeviceMappingSpecification
-                            .setVirtualName(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    instanceBlockDeviceMappingSpecification.setVirtualName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("noDevice", targetDepth)) {
-                    instanceBlockDeviceMappingSpecification
-                            .setNoDevice(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    instanceBlockDeviceMappingSpecification.setNoDevice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

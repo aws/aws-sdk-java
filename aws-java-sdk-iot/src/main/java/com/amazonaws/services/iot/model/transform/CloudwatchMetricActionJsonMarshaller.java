@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -34,46 +32,37 @@ public class CloudwatchMetricActionJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(CloudwatchMetricAction cloudwatchMetricAction,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(CloudwatchMetricAction cloudwatchMetricAction, StructuredJsonGenerator jsonGenerator) {
 
         if (cloudwatchMetricAction == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (cloudwatchMetricAction.getRoleArn() != null) {
-                jsonGenerator.writeFieldName("roleArn").writeValue(
-                        cloudwatchMetricAction.getRoleArn());
+                jsonGenerator.writeFieldName("roleArn").writeValue(cloudwatchMetricAction.getRoleArn());
             }
             if (cloudwatchMetricAction.getMetricNamespace() != null) {
-                jsonGenerator.writeFieldName("metricNamespace").writeValue(
-                        cloudwatchMetricAction.getMetricNamespace());
+                jsonGenerator.writeFieldName("metricNamespace").writeValue(cloudwatchMetricAction.getMetricNamespace());
             }
             if (cloudwatchMetricAction.getMetricName() != null) {
-                jsonGenerator.writeFieldName("metricName").writeValue(
-                        cloudwatchMetricAction.getMetricName());
+                jsonGenerator.writeFieldName("metricName").writeValue(cloudwatchMetricAction.getMetricName());
             }
             if (cloudwatchMetricAction.getMetricValue() != null) {
-                jsonGenerator.writeFieldName("metricValue").writeValue(
-                        cloudwatchMetricAction.getMetricValue());
+                jsonGenerator.writeFieldName("metricValue").writeValue(cloudwatchMetricAction.getMetricValue());
             }
             if (cloudwatchMetricAction.getMetricUnit() != null) {
-                jsonGenerator.writeFieldName("metricUnit").writeValue(
-                        cloudwatchMetricAction.getMetricUnit());
+                jsonGenerator.writeFieldName("metricUnit").writeValue(cloudwatchMetricAction.getMetricUnit());
             }
             if (cloudwatchMetricAction.getMetricTimestamp() != null) {
-                jsonGenerator.writeFieldName("metricTimestamp").writeValue(
-                        cloudwatchMetricAction.getMetricTimestamp());
+                jsonGenerator.writeFieldName("metricTimestamp").writeValue(cloudwatchMetricAction.getMetricTimestamp());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

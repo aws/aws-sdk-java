@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -20,15 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CreateHsmClientCertificateRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateHsmClientCertificateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier to be assigned to the new HSM client certificate that the
-     * cluster will use to connect to the HSM to use the database encryption
-     * keys.
+     * The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM
+     * to use the database encryption keys.
      * </p>
      */
     private String hsmClientCertificateIdentifier;
@@ -41,32 +36,27 @@ public class CreateHsmClientCertificateRequest extends
 
     /**
      * <p>
-     * The identifier to be assigned to the new HSM client certificate that the
-     * cluster will use to connect to the HSM to use the database encryption
-     * keys.
+     * The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM
+     * to use the database encryption keys.
      * </p>
      * 
      * @param hsmClientCertificateIdentifier
-     *        The identifier to be assigned to the new HSM client certificate
-     *        that the cluster will use to connect to the HSM to use the
-     *        database encryption keys.
+     *        The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to
+     *        the HSM to use the database encryption keys.
      */
 
-    public void setHsmClientCertificateIdentifier(
-            String hsmClientCertificateIdentifier) {
+    public void setHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {
         this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
     }
 
     /**
      * <p>
-     * The identifier to be assigned to the new HSM client certificate that the
-     * cluster will use to connect to the HSM to use the database encryption
-     * keys.
+     * The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM
+     * to use the database encryption keys.
      * </p>
      * 
-     * @return The identifier to be assigned to the new HSM client certificate
-     *         that the cluster will use to connect to the HSM to use the
-     *         database encryption keys.
+     * @return The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to
+     *         the HSM to use the database encryption keys.
      */
 
     public String getHsmClientCertificateIdentifier() {
@@ -75,21 +65,17 @@ public class CreateHsmClientCertificateRequest extends
 
     /**
      * <p>
-     * The identifier to be assigned to the new HSM client certificate that the
-     * cluster will use to connect to the HSM to use the database encryption
-     * keys.
+     * The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM
+     * to use the database encryption keys.
      * </p>
      * 
      * @param hsmClientCertificateIdentifier
-     *        The identifier to be assigned to the new HSM client certificate
-     *        that the cluster will use to connect to the HSM to use the
-     *        database encryption keys.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to
+     *        the HSM to use the database encryption keys.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateHsmClientCertificateRequest withHsmClientCertificateIdentifier(
-            String hsmClientCertificateIdentifier) {
+    public CreateHsmClientCertificateRequest withHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {
         setHsmClientCertificateIdentifier(hsmClientCertificateIdentifier);
         return this;
     }
@@ -132,16 +118,14 @@ public class CreateHsmClientCertificateRequest extends
      * A list of tag instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        A list of tag instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateHsmClientCertificateRequest withTags(Tag... tags) {
@@ -161,19 +145,16 @@ public class CreateHsmClientCertificateRequest extends
      * 
      * @param tags
      *        A list of tag instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateHsmClientCertificateRequest withTags(
-            java.util.Collection<Tag> tags) {
+    public CreateHsmClientCertificateRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -184,8 +165,7 @@ public class CreateHsmClientCertificateRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmClientCertificateIdentifier() != null)
-            sb.append("HsmClientCertificateIdentifier: "
-                    + getHsmClientCertificateIdentifier() + ",");
+            sb.append("HsmClientCertificateIdentifier: " + getHsmClientCertificateIdentifier() + ",");
         if (getTags() != null)
             sb.append("Tags: " + getTags());
         sb.append("}");
@@ -202,17 +182,14 @@ public class CreateHsmClientCertificateRequest extends
         if (obj instanceof CreateHsmClientCertificateRequest == false)
             return false;
         CreateHsmClientCertificateRequest other = (CreateHsmClientCertificateRequest) obj;
-        if (other.getHsmClientCertificateIdentifier() == null
-                ^ this.getHsmClientCertificateIdentifier() == null)
+        if (other.getHsmClientCertificateIdentifier() == null ^ this.getHsmClientCertificateIdentifier() == null)
             return false;
         if (other.getHsmClientCertificateIdentifier() != null
-                && other.getHsmClientCertificateIdentifier().equals(
-                        this.getHsmClientCertificateIdentifier()) == false)
+                && other.getHsmClientCertificateIdentifier().equals(this.getHsmClientCertificateIdentifier()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -222,12 +199,8 @@ public class CreateHsmClientCertificateRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getHsmClientCertificateIdentifier() == null) ? 0
-                        : getHsmClientCertificateIdentifier().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getHsmClientCertificateIdentifier() == null) ? 0 : getHsmClientCertificateIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

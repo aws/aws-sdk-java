@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesis.model;
 
@@ -25,61 +23,51 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data blob to put into the record, which is base64-encoded when the
-     * blob is serialized. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size must
-     * not exceed the maximum record size (1 MB).
+     * The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob
+     * (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the
+     * maximum record size (1 MB).
      * </p>
      */
     private java.nio.ByteBuffer data;
     /**
      * <p>
-     * The hash value used to determine explicitly the shard that the data
-     * record is assigned to by overriding the partition key hash.
+     * The hash value used to determine explicitly the shard that the data record is assigned to by overriding the
+     * partition key hash.
      * </p>
      */
     private String explicitHashKey;
     /**
      * <p>
-     * Determines which shard in the stream the data record is assigned to.
-     * Partition keys are Unicode strings with a maximum length limit of 256
-     * characters for each key. Amazon Kinesis uses the partition key as input
-     * to a hash function that maps the partition key and associated data to a
-     * specific shard. Specifically, an MD5 hash function is used to map
-     * partition keys to 128-bit integer values and to map associated data
-     * records to shards. As a result of this hashing mechanism, all data
-     * records with the same partition key map to the same shard within the
-     * stream.
+     * Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a
+     * maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash
+     * function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function
+     * is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result
+     * of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.
      * </p>
      */
     private String partitionKey;
 
     /**
      * <p>
-     * The data blob to put into the record, which is base64-encoded when the
-     * blob is serialized. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size must
-     * not exceed the maximum record size (1 MB).
+     * The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob
+     * (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the
+     * maximum record size (1 MB).
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending
-     * this request to AWS service by default. Users of the SDK should not
-     * perform Base64 encoding on this field.
+     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
-     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
-     * content or position of the byte buffer will be seen by all objects that
-     * have a reference to this object. It is recommended to call
-     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
-     * reading from the buffer. This behavior will be changed in a future major
-     * version of the SDK.
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param data
-     *        The data blob to put into the record, which is base64-encoded when
-     *        the blob is serialized. When the data blob (the payload before
-     *        base64-encoding) is added to the partition key size, the total
-     *        size must not exceed the maximum record size (1 MB).
+     *        The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data
+     *        blob (the payload before base64-encoding) is added to the partition key size, the total size must not
+     *        exceed the maximum record size (1 MB).
      */
 
     public void setData(java.nio.ByteBuffer data) {
@@ -88,26 +76,21 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data blob to put into the record, which is base64-encoded when the
-     * blob is serialized. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size must
-     * not exceed the maximum record size (1 MB).
+     * The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob
+     * (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the
+     * maximum record size (1 MB).
      * </p>
      * <p>
-     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
-     * changes their {@code position}. We recommend using
-     * {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view
-     * of the buffer with an independent {@code position}, and calling
-     * {@code get} methods on this rather than directly on the returned
-     * {@code ByteBuffer}. Doing so will ensure that anyone else using the
-     * {@code ByteBuffer} will not be affected by changes to the {@code position}
-     * .
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
      * </p>
      * 
-     * @return The data blob to put into the record, which is base64-encoded
-     *         when the blob is serialized. When the data blob (the payload
-     *         before base64-encoding) is added to the partition key size, the
-     *         total size must not exceed the maximum record size (1 MB).
+     * @return The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data
+     *         blob (the payload before base64-encoding) is added to the partition key size, the total size must not
+     *         exceed the maximum record size (1 MB).
      */
 
     public java.nio.ByteBuffer getData() {
@@ -116,19 +99,16 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data blob to put into the record, which is base64-encoded when the
-     * blob is serialized. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size must
-     * not exceed the maximum record size (1 MB).
+     * The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob
+     * (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the
+     * maximum record size (1 MB).
      * </p>
      * 
      * @param data
-     *        The data blob to put into the record, which is base64-encoded when
-     *        the blob is serialized. When the data blob (the payload before
-     *        base64-encoding) is added to the partition key size, the total
-     *        size must not exceed the maximum record size (1 MB).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data
+     *        blob (the payload before base64-encoding) is added to the partition key size, the total size must not
+     *        exceed the maximum record size (1 MB).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutRecordsRequestEntry withData(java.nio.ByteBuffer data) {
@@ -138,13 +118,13 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hash value used to determine explicitly the shard that the data
-     * record is assigned to by overriding the partition key hash.
+     * The hash value used to determine explicitly the shard that the data record is assigned to by overriding the
+     * partition key hash.
      * </p>
      * 
      * @param explicitHashKey
-     *        The hash value used to determine explicitly the shard that the
-     *        data record is assigned to by overriding the partition key hash.
+     *        The hash value used to determine explicitly the shard that the data record is assigned to by overriding
+     *        the partition key hash.
      */
 
     public void setExplicitHashKey(String explicitHashKey) {
@@ -153,12 +133,12 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hash value used to determine explicitly the shard that the data
-     * record is assigned to by overriding the partition key hash.
+     * The hash value used to determine explicitly the shard that the data record is assigned to by overriding the
+     * partition key hash.
      * </p>
      * 
-     * @return The hash value used to determine explicitly the shard that the
-     *         data record is assigned to by overriding the partition key hash.
+     * @return The hash value used to determine explicitly the shard that the data record is assigned to by overriding
+     *         the partition key hash.
      */
 
     public String getExplicitHashKey() {
@@ -167,15 +147,14 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hash value used to determine explicitly the shard that the data
-     * record is assigned to by overriding the partition key hash.
+     * The hash value used to determine explicitly the shard that the data record is assigned to by overriding the
+     * partition key hash.
      * </p>
      * 
      * @param explicitHashKey
-     *        The hash value used to determine explicitly the shard that the
-     *        data record is assigned to by overriding the partition key hash.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The hash value used to determine explicitly the shard that the data record is assigned to by overriding
+     *        the partition key hash.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutRecordsRequestEntry withExplicitHashKey(String explicitHashKey) {
@@ -185,27 +164,20 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines which shard in the stream the data record is assigned to.
-     * Partition keys are Unicode strings with a maximum length limit of 256
-     * characters for each key. Amazon Kinesis uses the partition key as input
-     * to a hash function that maps the partition key and associated data to a
-     * specific shard. Specifically, an MD5 hash function is used to map
-     * partition keys to 128-bit integer values and to map associated data
-     * records to shards. As a result of this hashing mechanism, all data
-     * records with the same partition key map to the same shard within the
-     * stream.
+     * Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a
+     * maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash
+     * function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function
+     * is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result
+     * of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.
      * </p>
      * 
      * @param partitionKey
-     *        Determines which shard in the stream the data record is assigned
-     *        to. Partition keys are Unicode strings with a maximum length limit
-     *        of 256 characters for each key. Amazon Kinesis uses the partition
-     *        key as input to a hash function that maps the partition key and
-     *        associated data to a specific shard. Specifically, an MD5 hash
-     *        function is used to map partition keys to 128-bit integer values
-     *        and to map associated data records to shards. As a result of this
-     *        hashing mechanism, all data records with the same partition key
-     *        map to the same shard within the stream.
+     *        Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings
+     *        with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input
+     *        to a hash function that maps the partition key and associated data to a specific shard. Specifically, an
+     *        MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data
+     *        records to shards. As a result of this hashing mechanism, all data records with the same partition key map
+     *        to the same shard within the stream.
      */
 
     public void setPartitionKey(String partitionKey) {
@@ -214,25 +186,18 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines which shard in the stream the data record is assigned to.
-     * Partition keys are Unicode strings with a maximum length limit of 256
-     * characters for each key. Amazon Kinesis uses the partition key as input
-     * to a hash function that maps the partition key and associated data to a
-     * specific shard. Specifically, an MD5 hash function is used to map
-     * partition keys to 128-bit integer values and to map associated data
-     * records to shards. As a result of this hashing mechanism, all data
-     * records with the same partition key map to the same shard within the
-     * stream.
+     * Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a
+     * maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash
+     * function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function
+     * is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result
+     * of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.
      * </p>
      * 
-     * @return Determines which shard in the stream the data record is assigned
-     *         to. Partition keys are Unicode strings with a maximum length
-     *         limit of 256 characters for each key. Amazon Kinesis uses the
-     *         partition key as input to a hash function that maps the partition
-     *         key and associated data to a specific shard. Specifically, an MD5
-     *         hash function is used to map partition keys to 128-bit integer
-     *         values and to map associated data records to shards. As a result
-     *         of this hashing mechanism, all data records with the same
+     * @return Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings
+     *         with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as
+     *         input to a hash function that maps the partition key and associated data to a specific shard.
+     *         Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map
+     *         associated data records to shards. As a result of this hashing mechanism, all data records with the same
      *         partition key map to the same shard within the stream.
      */
 
@@ -242,29 +207,21 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines which shard in the stream the data record is assigned to.
-     * Partition keys are Unicode strings with a maximum length limit of 256
-     * characters for each key. Amazon Kinesis uses the partition key as input
-     * to a hash function that maps the partition key and associated data to a
-     * specific shard. Specifically, an MD5 hash function is used to map
-     * partition keys to 128-bit integer values and to map associated data
-     * records to shards. As a result of this hashing mechanism, all data
-     * records with the same partition key map to the same shard within the
-     * stream.
+     * Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a
+     * maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash
+     * function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function
+     * is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result
+     * of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.
      * </p>
      * 
      * @param partitionKey
-     *        Determines which shard in the stream the data record is assigned
-     *        to. Partition keys are Unicode strings with a maximum length limit
-     *        of 256 characters for each key. Amazon Kinesis uses the partition
-     *        key as input to a hash function that maps the partition key and
-     *        associated data to a specific shard. Specifically, an MD5 hash
-     *        function is used to map partition keys to 128-bit integer values
-     *        and to map associated data records to shards. As a result of this
-     *        hashing mechanism, all data records with the same partition key
-     *        map to the same shard within the stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings
+     *        with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input
+     *        to a hash function that maps the partition key and associated data to a specific shard. Specifically, an
+     *        MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data
+     *        records to shards. As a result of this hashing mechanism, all data records with the same partition key map
+     *        to the same shard within the stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutRecordsRequestEntry withPartitionKey(String partitionKey) {
@@ -273,8 +230,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -306,19 +262,15 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
         PutRecordsRequestEntry other = (PutRecordsRequestEntry) obj;
         if (other.getData() == null ^ this.getData() == null)
             return false;
-        if (other.getData() != null
-                && other.getData().equals(this.getData()) == false)
+        if (other.getData() != null && other.getData().equals(this.getData()) == false)
             return false;
-        if (other.getExplicitHashKey() == null
-                ^ this.getExplicitHashKey() == null)
+        if (other.getExplicitHashKey() == null ^ this.getExplicitHashKey() == null)
             return false;
-        if (other.getExplicitHashKey() != null
-                && other.getExplicitHashKey().equals(this.getExplicitHashKey()) == false)
+        if (other.getExplicitHashKey() != null && other.getExplicitHashKey().equals(this.getExplicitHashKey()) == false)
             return false;
         if (other.getPartitionKey() == null ^ this.getPartitionKey() == null)
             return false;
-        if (other.getPartitionKey() != null
-                && other.getPartitionKey().equals(this.getPartitionKey()) == false)
+        if (other.getPartitionKey() != null && other.getPartitionKey().equals(this.getPartitionKey()) == false)
             return false;
         return true;
     }
@@ -328,16 +280,9 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getData() == null) ? 0 : getData().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExplicitHashKey() == null) ? 0 : getExplicitHashKey()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPartitionKey() == null) ? 0 : getPartitionKey()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
+        hashCode = prime * hashCode + ((getExplicitHashKey() == null) ? 0 : getExplicitHashKey().hashCode());
+        hashCode = prime * hashCode + ((getPartitionKey() == null) ? 0 : getPartitionKey().hashCode());
         return hashCode;
     }
 
@@ -346,9 +291,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
         try {
             return (PutRecordsRequestEntry) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

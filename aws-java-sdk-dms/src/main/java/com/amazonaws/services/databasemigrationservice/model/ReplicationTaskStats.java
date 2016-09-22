@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
@@ -90,12 +88,10 @@ public class ReplicationTaskStats implements Serializable, Cloneable {
      * 
      * @param fullLoadProgressPercent
      *        The percent complete for the full load migration task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReplicationTaskStats withFullLoadProgressPercent(
-            Integer fullLoadProgressPercent) {
+    public ReplicationTaskStats withFullLoadProgressPercent(Integer fullLoadProgressPercent) {
         setFullLoadProgressPercent(fullLoadProgressPercent);
         return this;
     }
@@ -132,8 +128,7 @@ public class ReplicationTaskStats implements Serializable, Cloneable {
      * 
      * @param elapsedTimeMillis
      *        The elapsed time of the task, in milliseconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReplicationTaskStats withElapsedTimeMillis(Long elapsedTimeMillis) {
@@ -173,8 +168,7 @@ public class ReplicationTaskStats implements Serializable, Cloneable {
      * 
      * @param tablesLoaded
      *        The number of tables loaded for this task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReplicationTaskStats withTablesLoaded(Integer tablesLoaded) {
@@ -214,8 +208,7 @@ public class ReplicationTaskStats implements Serializable, Cloneable {
      * 
      * @param tablesLoading
      *        The number of tables currently loading for this task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReplicationTaskStats withTablesLoading(Integer tablesLoading) {
@@ -255,8 +248,7 @@ public class ReplicationTaskStats implements Serializable, Cloneable {
      * 
      * @param tablesQueued
      *        The number of tables queued for this task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReplicationTaskStats withTablesQueued(Integer tablesQueued) {
@@ -296,8 +288,7 @@ public class ReplicationTaskStats implements Serializable, Cloneable {
      * 
      * @param tablesErrored
      *        The number of errors that have occurred during this task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReplicationTaskStats withTablesErrored(Integer tablesErrored) {
@@ -306,8 +297,7 @@ public class ReplicationTaskStats implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -318,8 +308,7 @@ public class ReplicationTaskStats implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFullLoadProgressPercent() != null)
-            sb.append("FullLoadProgressPercent: "
-                    + getFullLoadProgressPercent() + ",");
+            sb.append("FullLoadProgressPercent: " + getFullLoadProgressPercent() + ",");
         if (getElapsedTimeMillis() != null)
             sb.append("ElapsedTimeMillis: " + getElapsedTimeMillis() + ",");
         if (getTablesLoaded() != null)
@@ -344,39 +333,29 @@ public class ReplicationTaskStats implements Serializable, Cloneable {
         if (obj instanceof ReplicationTaskStats == false)
             return false;
         ReplicationTaskStats other = (ReplicationTaskStats) obj;
-        if (other.getFullLoadProgressPercent() == null
-                ^ this.getFullLoadProgressPercent() == null)
+        if (other.getFullLoadProgressPercent() == null ^ this.getFullLoadProgressPercent() == null)
             return false;
-        if (other.getFullLoadProgressPercent() != null
-                && other.getFullLoadProgressPercent().equals(
-                        this.getFullLoadProgressPercent()) == false)
+        if (other.getFullLoadProgressPercent() != null && other.getFullLoadProgressPercent().equals(this.getFullLoadProgressPercent()) == false)
             return false;
-        if (other.getElapsedTimeMillis() == null
-                ^ this.getElapsedTimeMillis() == null)
+        if (other.getElapsedTimeMillis() == null ^ this.getElapsedTimeMillis() == null)
             return false;
-        if (other.getElapsedTimeMillis() != null
-                && other.getElapsedTimeMillis().equals(
-                        this.getElapsedTimeMillis()) == false)
+        if (other.getElapsedTimeMillis() != null && other.getElapsedTimeMillis().equals(this.getElapsedTimeMillis()) == false)
             return false;
         if (other.getTablesLoaded() == null ^ this.getTablesLoaded() == null)
             return false;
-        if (other.getTablesLoaded() != null
-                && other.getTablesLoaded().equals(this.getTablesLoaded()) == false)
+        if (other.getTablesLoaded() != null && other.getTablesLoaded().equals(this.getTablesLoaded()) == false)
             return false;
         if (other.getTablesLoading() == null ^ this.getTablesLoading() == null)
             return false;
-        if (other.getTablesLoading() != null
-                && other.getTablesLoading().equals(this.getTablesLoading()) == false)
+        if (other.getTablesLoading() != null && other.getTablesLoading().equals(this.getTablesLoading()) == false)
             return false;
         if (other.getTablesQueued() == null ^ this.getTablesQueued() == null)
             return false;
-        if (other.getTablesQueued() != null
-                && other.getTablesQueued().equals(this.getTablesQueued()) == false)
+        if (other.getTablesQueued() != null && other.getTablesQueued().equals(this.getTablesQueued()) == false)
             return false;
         if (other.getTablesErrored() == null ^ this.getTablesErrored() == null)
             return false;
-        if (other.getTablesErrored() != null
-                && other.getTablesErrored().equals(this.getTablesErrored()) == false)
+        if (other.getTablesErrored() != null && other.getTablesErrored().equals(this.getTablesErrored()) == false)
             return false;
         return true;
     }
@@ -386,30 +365,12 @@ public class ReplicationTaskStats implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFullLoadProgressPercent() == null) ? 0
-                        : getFullLoadProgressPercent().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getElapsedTimeMillis() == null) ? 0
-                        : getElapsedTimeMillis().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTablesLoaded() == null) ? 0 : getTablesLoaded()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTablesLoading() == null) ? 0 : getTablesLoading()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTablesQueued() == null) ? 0 : getTablesQueued()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTablesErrored() == null) ? 0 : getTablesErrored()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getFullLoadProgressPercent() == null) ? 0 : getFullLoadProgressPercent().hashCode());
+        hashCode = prime * hashCode + ((getElapsedTimeMillis() == null) ? 0 : getElapsedTimeMillis().hashCode());
+        hashCode = prime * hashCode + ((getTablesLoaded() == null) ? 0 : getTablesLoaded().hashCode());
+        hashCode = prime * hashCode + ((getTablesLoading() == null) ? 0 : getTablesLoading().hashCode());
+        hashCode = prime * hashCode + ((getTablesQueued() == null) ? 0 : getTablesQueued().hashCode());
+        hashCode = prime * hashCode + ((getTablesErrored() == null) ? 0 : getTablesErrored().hashCode());
         return hashCode;
     }
 
@@ -418,9 +379,7 @@ public class ReplicationTaskStats implements Serializable, Cloneable {
         try {
             return (ReplicationTaskStats) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

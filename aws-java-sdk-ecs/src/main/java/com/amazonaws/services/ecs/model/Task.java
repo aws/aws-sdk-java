@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecs.model;
 
@@ -37,15 +35,13 @@ public class Task implements Serializable, Cloneable {
     private String clusterArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task definition that creates the
-     * task.
+     * The Amazon Resource Name (ARN) of the task definition that creates the task.
      * </p>
      */
     private String taskDefinitionArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instances that host the
-     * task.
+     * The Amazon Resource Name (ARN) of the container instances that host the task.
      * </p>
      */
     private String containerInstanceArn;
@@ -75,9 +71,8 @@ public class Task implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Container> containers;
     /**
      * <p>
-     * The tag specified when a task is started. If the task is started by an
-     * Amazon ECS service, then the <code>startedBy</code> parameter contains
-     * the deployment ID of the service that starts it.
+     * The tag specified when a task is started. If the task is started by an Amazon ECS service, then the
+     * <code>startedBy</code> parameter contains the deployment ID of the service that starts it.
      * </p>
      */
     private String startedBy;
@@ -89,22 +84,21 @@ public class Task implements Serializable, Cloneable {
     private String stoppedReason;
     /**
      * <p>
-     * The Unix timestamp for when the task was created (the task entered the
-     * <code>PENDING</code> state).
+     * The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The Unix timestamp for when the task was started (the task transitioned
-     * from the <code>PENDING</code> state to the <code>RUNNING</code> state).
+     * The Unix timestamp for when the task was started (the task transitioned from the <code>PENDING</code> state to
+     * the <code>RUNNING</code> state).
      * </p>
      */
     private java.util.Date startedAt;
     /**
      * <p>
-     * The Unix timestamp for when the task was stopped (the task transitioned
-     * from the <code>RUNNING</code> state to the <code>STOPPED</code> state).
+     * The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code> state to
+     * the <code>STOPPED</code> state).
      * </p>
      */
     private java.util.Date stoppedAt;
@@ -141,8 +135,7 @@ public class Task implements Serializable, Cloneable {
      * 
      * @param taskArn
      *        The Amazon Resource Name (ARN) of the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withTaskArn(String taskArn) {
@@ -168,8 +161,7 @@ public class Task implements Serializable, Cloneable {
      * The Amazon Resource Name (ARN) of the cluster that hosts the task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the cluster that hosts the
-     *         task.
+     * @return The Amazon Resource Name (ARN) of the cluster that hosts the task.
      */
 
     public String getClusterArn() {
@@ -183,8 +175,7 @@ public class Task implements Serializable, Cloneable {
      * 
      * @param clusterArn
      *        The Amazon Resource Name (ARN) of the cluster that hosts the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withClusterArn(String clusterArn) {
@@ -194,13 +185,11 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task definition that creates the
-     * task.
+     * The Amazon Resource Name (ARN) of the task definition that creates the task.
      * </p>
      * 
      * @param taskDefinitionArn
-     *        The Amazon Resource Name (ARN) of the task definition that creates
-     *        the task.
+     *        The Amazon Resource Name (ARN) of the task definition that creates the task.
      */
 
     public void setTaskDefinitionArn(String taskDefinitionArn) {
@@ -209,12 +198,10 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task definition that creates the
-     * task.
+     * The Amazon Resource Name (ARN) of the task definition that creates the task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task definition that
-     *         creates the task.
+     * @return The Amazon Resource Name (ARN) of the task definition that creates the task.
      */
 
     public String getTaskDefinitionArn() {
@@ -223,15 +210,12 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task definition that creates the
-     * task.
+     * The Amazon Resource Name (ARN) of the task definition that creates the task.
      * </p>
      * 
      * @param taskDefinitionArn
-     *        The Amazon Resource Name (ARN) of the task definition that creates
-     *        the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the task definition that creates the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withTaskDefinitionArn(String taskDefinitionArn) {
@@ -241,13 +225,11 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instances that host the
-     * task.
+     * The Amazon Resource Name (ARN) of the container instances that host the task.
      * </p>
      * 
      * @param containerInstanceArn
-     *        The Amazon Resource Name (ARN) of the container instances that
-     *        host the task.
+     *        The Amazon Resource Name (ARN) of the container instances that host the task.
      */
 
     public void setContainerInstanceArn(String containerInstanceArn) {
@@ -256,12 +238,10 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instances that host the
-     * task.
+     * The Amazon Resource Name (ARN) of the container instances that host the task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the container instances that
-     *         host the task.
+     * @return The Amazon Resource Name (ARN) of the container instances that host the task.
      */
 
     public String getContainerInstanceArn() {
@@ -270,15 +250,12 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instances that host the
-     * task.
+     * The Amazon Resource Name (ARN) of the container instances that host the task.
      * </p>
      * 
      * @param containerInstanceArn
-     *        The Amazon Resource Name (ARN) of the container instances that
-     *        host the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the container instances that host the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withContainerInstanceArn(String containerInstanceArn) {
@@ -318,8 +295,7 @@ public class Task implements Serializable, Cloneable {
      * 
      * @param overrides
      *        One or more container overrides.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withOverrides(TaskOverride overrides) {
@@ -359,8 +335,7 @@ public class Task implements Serializable, Cloneable {
      * 
      * @param lastStatus
      *        The last known status of the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withLastStatus(String lastStatus) {
@@ -400,8 +375,7 @@ public class Task implements Serializable, Cloneable {
      * 
      * @param desiredStatus
      *        The desired status of the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withDesiredStatus(String desiredStatus) {
@@ -439,8 +413,7 @@ public class Task implements Serializable, Cloneable {
             return;
         }
 
-        this.containers = new com.amazonaws.internal.SdkInternalList<Container>(
-                containers);
+        this.containers = new com.amazonaws.internal.SdkInternalList<Container>(containers);
     }
 
     /**
@@ -448,22 +421,19 @@ public class Task implements Serializable, Cloneable {
      * The containers associated with the task.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setContainers(java.util.Collection)} or
-     * {@link #withContainers(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setContainers(java.util.Collection)} or {@link #withContainers(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param containers
      *        The containers associated with the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withContainers(Container... containers) {
         if (this.containers == null) {
-            setContainers(new com.amazonaws.internal.SdkInternalList<Container>(
-                    containers.length));
+            setContainers(new com.amazonaws.internal.SdkInternalList<Container>(containers.length));
         }
         for (Container ele : containers) {
             this.containers.add(ele);
@@ -478,8 +448,7 @@ public class Task implements Serializable, Cloneable {
      * 
      * @param containers
      *        The containers associated with the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withContainers(java.util.Collection<Container> containers) {
@@ -489,16 +458,13 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tag specified when a task is started. If the task is started by an
-     * Amazon ECS service, then the <code>startedBy</code> parameter contains
-     * the deployment ID of the service that starts it.
+     * The tag specified when a task is started. If the task is started by an Amazon ECS service, then the
+     * <code>startedBy</code> parameter contains the deployment ID of the service that starts it.
      * </p>
      * 
      * @param startedBy
-     *        The tag specified when a task is started. If the task is started
-     *        by an Amazon ECS service, then the <code>startedBy</code>
-     *        parameter contains the deployment ID of the service that starts
-     *        it.
+     *        The tag specified when a task is started. If the task is started by an Amazon ECS service, then the
+     *        <code>startedBy</code> parameter contains the deployment ID of the service that starts it.
      */
 
     public void setStartedBy(String startedBy) {
@@ -507,15 +473,12 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tag specified when a task is started. If the task is started by an
-     * Amazon ECS service, then the <code>startedBy</code> parameter contains
-     * the deployment ID of the service that starts it.
+     * The tag specified when a task is started. If the task is started by an Amazon ECS service, then the
+     * <code>startedBy</code> parameter contains the deployment ID of the service that starts it.
      * </p>
      * 
-     * @return The tag specified when a task is started. If the task is started
-     *         by an Amazon ECS service, then the <code>startedBy</code>
-     *         parameter contains the deployment ID of the service that starts
-     *         it.
+     * @return The tag specified when a task is started. If the task is started by an Amazon ECS service, then the
+     *         <code>startedBy</code> parameter contains the deployment ID of the service that starts it.
      */
 
     public String getStartedBy() {
@@ -524,18 +487,14 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tag specified when a task is started. If the task is started by an
-     * Amazon ECS service, then the <code>startedBy</code> parameter contains
-     * the deployment ID of the service that starts it.
+     * The tag specified when a task is started. If the task is started by an Amazon ECS service, then the
+     * <code>startedBy</code> parameter contains the deployment ID of the service that starts it.
      * </p>
      * 
      * @param startedBy
-     *        The tag specified when a task is started. If the task is started
-     *        by an Amazon ECS service, then the <code>startedBy</code>
-     *        parameter contains the deployment ID of the service that starts
-     *        it.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The tag specified when a task is started. If the task is started by an Amazon ECS service, then the
+     *        <code>startedBy</code> parameter contains the deployment ID of the service that starts it.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withStartedBy(String startedBy) {
@@ -575,8 +534,7 @@ public class Task implements Serializable, Cloneable {
      * 
      * @param stoppedReason
      *        The reason the task was stopped.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withStoppedReason(String stoppedReason) {
@@ -586,13 +544,11 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the task was created (the task entered the
-     * <code>PENDING</code> state).
+     * The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the task was created (the task entered
-     *        the <code>PENDING</code> state).
+     *        The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -601,12 +557,10 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the task was created (the task entered the
-     * <code>PENDING</code> state).
+     * The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
      * </p>
      * 
-     * @return The Unix timestamp for when the task was created (the task
-     *         entered the <code>PENDING</code> state).
+     * @return The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
      */
 
     public java.util.Date getCreatedAt() {
@@ -615,15 +569,12 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the task was created (the task entered the
-     * <code>PENDING</code> state).
+     * The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the task was created (the task entered
-     *        the <code>PENDING</code> state).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withCreatedAt(java.util.Date createdAt) {
@@ -633,14 +584,13 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the task was started (the task transitioned
-     * from the <code>PENDING</code> state to the <code>RUNNING</code> state).
+     * The Unix timestamp for when the task was started (the task transitioned from the <code>PENDING</code> state to
+     * the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix timestamp for when the task was started (the task
-     *        transitioned from the <code>PENDING</code> state to the
-     *        <code>RUNNING</code> state).
+     *        The Unix timestamp for when the task was started (the task transitioned from the <code>PENDING</code>
+     *        state to the <code>RUNNING</code> state).
      */
 
     public void setStartedAt(java.util.Date startedAt) {
@@ -649,13 +599,12 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the task was started (the task transitioned
-     * from the <code>PENDING</code> state to the <code>RUNNING</code> state).
+     * The Unix timestamp for when the task was started (the task transitioned from the <code>PENDING</code> state to
+     * the <code>RUNNING</code> state).
      * </p>
      * 
-     * @return The Unix timestamp for when the task was started (the task
-     *         transitioned from the <code>PENDING</code> state to the
-     *         <code>RUNNING</code> state).
+     * @return The Unix timestamp for when the task was started (the task transitioned from the <code>PENDING</code>
+     *         state to the <code>RUNNING</code> state).
      */
 
     public java.util.Date getStartedAt() {
@@ -664,16 +613,14 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the task was started (the task transitioned
-     * from the <code>PENDING</code> state to the <code>RUNNING</code> state).
+     * The Unix timestamp for when the task was started (the task transitioned from the <code>PENDING</code> state to
+     * the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix timestamp for when the task was started (the task
-     *        transitioned from the <code>PENDING</code> state to the
-     *        <code>RUNNING</code> state).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Unix timestamp for when the task was started (the task transitioned from the <code>PENDING</code>
+     *        state to the <code>RUNNING</code> state).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withStartedAt(java.util.Date startedAt) {
@@ -683,14 +630,13 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the task was stopped (the task transitioned
-     * from the <code>RUNNING</code> state to the <code>STOPPED</code> state).
+     * The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code> state to
+     * the <code>STOPPED</code> state).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix timestamp for when the task was stopped (the task
-     *        transitioned from the <code>RUNNING</code> state to the
-     *        <code>STOPPED</code> state).
+     *        The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code>
+     *        state to the <code>STOPPED</code> state).
      */
 
     public void setStoppedAt(java.util.Date stoppedAt) {
@@ -699,13 +645,12 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the task was stopped (the task transitioned
-     * from the <code>RUNNING</code> state to the <code>STOPPED</code> state).
+     * The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code> state to
+     * the <code>STOPPED</code> state).
      * </p>
      * 
-     * @return The Unix timestamp for when the task was stopped (the task
-     *         transitioned from the <code>RUNNING</code> state to the
-     *         <code>STOPPED</code> state).
+     * @return The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code>
+     *         state to the <code>STOPPED</code> state).
      */
 
     public java.util.Date getStoppedAt() {
@@ -714,16 +659,14 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the task was stopped (the task transitioned
-     * from the <code>RUNNING</code> state to the <code>STOPPED</code> state).
+     * The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code> state to
+     * the <code>STOPPED</code> state).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix timestamp for when the task was stopped (the task
-     *        transitioned from the <code>RUNNING</code> state to the
-     *        <code>STOPPED</code> state).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code>
+     *        state to the <code>STOPPED</code> state).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withStoppedAt(java.util.Date stoppedAt) {
@@ -732,8 +675,7 @@ public class Task implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -750,8 +692,7 @@ public class Task implements Serializable, Cloneable {
         if (getTaskDefinitionArn() != null)
             sb.append("TaskDefinitionArn: " + getTaskDefinitionArn() + ",");
         if (getContainerInstanceArn() != null)
-            sb.append("ContainerInstanceArn: " + getContainerInstanceArn()
-                    + ",");
+            sb.append("ContainerInstanceArn: " + getContainerInstanceArn() + ",");
         if (getOverrides() != null)
             sb.append("Overrides: " + getOverrides() + ",");
         if (getLastStatus() != null)
@@ -786,72 +727,55 @@ public class Task implements Serializable, Cloneable {
         Task other = (Task) obj;
         if (other.getTaskArn() == null ^ this.getTaskArn() == null)
             return false;
-        if (other.getTaskArn() != null
-                && other.getTaskArn().equals(this.getTaskArn()) == false)
+        if (other.getTaskArn() != null && other.getTaskArn().equals(this.getTaskArn()) == false)
             return false;
         if (other.getClusterArn() == null ^ this.getClusterArn() == null)
             return false;
-        if (other.getClusterArn() != null
-                && other.getClusterArn().equals(this.getClusterArn()) == false)
+        if (other.getClusterArn() != null && other.getClusterArn().equals(this.getClusterArn()) == false)
             return false;
-        if (other.getTaskDefinitionArn() == null
-                ^ this.getTaskDefinitionArn() == null)
+        if (other.getTaskDefinitionArn() == null ^ this.getTaskDefinitionArn() == null)
             return false;
-        if (other.getTaskDefinitionArn() != null
-                && other.getTaskDefinitionArn().equals(
-                        this.getTaskDefinitionArn()) == false)
+        if (other.getTaskDefinitionArn() != null && other.getTaskDefinitionArn().equals(this.getTaskDefinitionArn()) == false)
             return false;
-        if (other.getContainerInstanceArn() == null
-                ^ this.getContainerInstanceArn() == null)
+        if (other.getContainerInstanceArn() == null ^ this.getContainerInstanceArn() == null)
             return false;
-        if (other.getContainerInstanceArn() != null
-                && other.getContainerInstanceArn().equals(
-                        this.getContainerInstanceArn()) == false)
+        if (other.getContainerInstanceArn() != null && other.getContainerInstanceArn().equals(this.getContainerInstanceArn()) == false)
             return false;
         if (other.getOverrides() == null ^ this.getOverrides() == null)
             return false;
-        if (other.getOverrides() != null
-                && other.getOverrides().equals(this.getOverrides()) == false)
+        if (other.getOverrides() != null && other.getOverrides().equals(this.getOverrides()) == false)
             return false;
         if (other.getLastStatus() == null ^ this.getLastStatus() == null)
             return false;
-        if (other.getLastStatus() != null
-                && other.getLastStatus().equals(this.getLastStatus()) == false)
+        if (other.getLastStatus() != null && other.getLastStatus().equals(this.getLastStatus()) == false)
             return false;
         if (other.getDesiredStatus() == null ^ this.getDesiredStatus() == null)
             return false;
-        if (other.getDesiredStatus() != null
-                && other.getDesiredStatus().equals(this.getDesiredStatus()) == false)
+        if (other.getDesiredStatus() != null && other.getDesiredStatus().equals(this.getDesiredStatus()) == false)
             return false;
         if (other.getContainers() == null ^ this.getContainers() == null)
             return false;
-        if (other.getContainers() != null
-                && other.getContainers().equals(this.getContainers()) == false)
+        if (other.getContainers() != null && other.getContainers().equals(this.getContainers()) == false)
             return false;
         if (other.getStartedBy() == null ^ this.getStartedBy() == null)
             return false;
-        if (other.getStartedBy() != null
-                && other.getStartedBy().equals(this.getStartedBy()) == false)
+        if (other.getStartedBy() != null && other.getStartedBy().equals(this.getStartedBy()) == false)
             return false;
         if (other.getStoppedReason() == null ^ this.getStoppedReason() == null)
             return false;
-        if (other.getStoppedReason() != null
-                && other.getStoppedReason().equals(this.getStoppedReason()) == false)
+        if (other.getStoppedReason() != null && other.getStoppedReason().equals(this.getStoppedReason()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getCreatedAt() != null
-                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getStartedAt() == null ^ this.getStartedAt() == null)
             return false;
-        if (other.getStartedAt() != null
-                && other.getStartedAt().equals(this.getStartedAt()) == false)
+        if (other.getStartedAt() != null && other.getStartedAt().equals(this.getStartedAt()) == false)
             return false;
         if (other.getStoppedAt() == null ^ this.getStoppedAt() == null)
             return false;
-        if (other.getStoppedAt() != null
-                && other.getStoppedAt().equals(this.getStoppedAt()) == false)
+        if (other.getStoppedAt() != null && other.getStoppedAt().equals(this.getStoppedAt()) == false)
             return false;
         return true;
     }
@@ -861,40 +785,19 @@ public class Task implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTaskDefinitionArn() == null) ? 0
-                        : getTaskDefinitionArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getContainerInstanceArn() == null) ? 0
-                        : getContainerInstanceArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
-        hashCode = prime * hashCode
-                + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDesiredStatus() == null) ? 0 : getDesiredStatus()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getContainers() == null) ? 0 : getContainers().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStoppedReason() == null) ? 0 : getStoppedReason()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
-        hashCode = prime * hashCode
-                + ((getStoppedAt() == null) ? 0 : getStoppedAt().hashCode());
+        hashCode = prime * hashCode + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
+        hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
+        hashCode = prime * hashCode + ((getTaskDefinitionArn() == null) ? 0 : getTaskDefinitionArn().hashCode());
+        hashCode = prime * hashCode + ((getContainerInstanceArn() == null) ? 0 : getContainerInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
+        hashCode = prime * hashCode + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode());
+        hashCode = prime * hashCode + ((getDesiredStatus() == null) ? 0 : getDesiredStatus().hashCode());
+        hashCode = prime * hashCode + ((getContainers() == null) ? 0 : getContainers().hashCode());
+        hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
+        hashCode = prime * hashCode + ((getStoppedReason() == null) ? 0 : getStoppedReason().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
+        hashCode = prime * hashCode + ((getStoppedAt() == null) ? 0 : getStoppedAt().hashCode());
         return hashCode;
     }
 
@@ -903,9 +806,7 @@ public class Task implements Serializable, Cloneable {
         try {
             return (Task) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

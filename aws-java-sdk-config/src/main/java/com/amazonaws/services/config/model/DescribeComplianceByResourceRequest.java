@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model;
 
@@ -20,24 +18,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeComplianceByResourceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeComplianceByResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The types of AWS resources for which you want compliance information; for
-     * example, <code>AWS::EC2::Instance</code>. For this action, you can
-     * specify that the resource type is an AWS account by specifying
-     * <code>AWS::::Account</code>.
+     * The types of AWS resources for which you want compliance information; for example,
+     * <code>AWS::EC2::Instance</code>. For this action, you can specify that the resource type is an AWS account by
+     * specifying <code>AWS::::Account</code>.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The ID of the AWS resource for which you want compliance information. You
-     * can specify only one resource ID. If you specify a resource ID, you must
-     * also specify a type for <code>ResourceType</code>.
+     * The ID of the AWS resource for which you want compliance information. You can specify only one resource ID. If
+     * you specify a resource ID, you must also specify a type for <code>ResourceType</code>.
      * </p>
      */
     private String resourceId;
@@ -46,40 +40,36 @@ public class DescribeComplianceByResourceRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>INSUFFICIENT_DATA</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> complianceTypes;
     /**
      * <p>
-     * The maximum number of evaluation results returned on each page. The
-     * default is 10. You cannot specify a limit greater than 100. If you
-     * specify 0, AWS Config uses the default.
+     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a limit
+     * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The types of AWS resources for which you want compliance information; for
-     * example, <code>AWS::EC2::Instance</code>. For this action, you can
-     * specify that the resource type is an AWS account by specifying
-     * <code>AWS::::Account</code>.
+     * The types of AWS resources for which you want compliance information; for example,
+     * <code>AWS::EC2::Instance</code>. For this action, you can specify that the resource type is an AWS account by
+     * specifying <code>AWS::::Account</code>.
      * </p>
      * 
      * @param resourceType
-     *        The types of AWS resources for which you want compliance
-     *        information; for example, <code>AWS::EC2::Instance</code>. For
-     *        this action, you can specify that the resource type is an AWS
-     *        account by specifying <code>AWS::::Account</code>.
+     *        The types of AWS resources for which you want compliance information; for example,
+     *        <code>AWS::EC2::Instance</code>. For this action, you can specify that the resource type is an AWS account
+     *        by specifying <code>AWS::::Account</code>.
      */
 
     public void setResourceType(String resourceType) {
@@ -88,15 +78,13 @@ public class DescribeComplianceByResourceRequest extends
 
     /**
      * <p>
-     * The types of AWS resources for which you want compliance information; for
-     * example, <code>AWS::EC2::Instance</code>. For this action, you can
-     * specify that the resource type is an AWS account by specifying
-     * <code>AWS::::Account</code>.
+     * The types of AWS resources for which you want compliance information; for example,
+     * <code>AWS::EC2::Instance</code>. For this action, you can specify that the resource type is an AWS account by
+     * specifying <code>AWS::::Account</code>.
      * </p>
      * 
-     * @return The types of AWS resources for which you want compliance
-     *         information; for example, <code>AWS::EC2::Instance</code>. For
-     *         this action, you can specify that the resource type is an AWS
+     * @return The types of AWS resources for which you want compliance information; for example,
+     *         <code>AWS::EC2::Instance</code>. For this action, you can specify that the resource type is an AWS
      *         account by specifying <code>AWS::::Account</code>.
      */
 
@@ -106,39 +94,32 @@ public class DescribeComplianceByResourceRequest extends
 
     /**
      * <p>
-     * The types of AWS resources for which you want compliance information; for
-     * example, <code>AWS::EC2::Instance</code>. For this action, you can
-     * specify that the resource type is an AWS account by specifying
-     * <code>AWS::::Account</code>.
+     * The types of AWS resources for which you want compliance information; for example,
+     * <code>AWS::EC2::Instance</code>. For this action, you can specify that the resource type is an AWS account by
+     * specifying <code>AWS::::Account</code>.
      * </p>
      * 
      * @param resourceType
-     *        The types of AWS resources for which you want compliance
-     *        information; for example, <code>AWS::EC2::Instance</code>. For
-     *        this action, you can specify that the resource type is an AWS
-     *        account by specifying <code>AWS::::Account</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The types of AWS resources for which you want compliance information; for example,
+     *        <code>AWS::EC2::Instance</code>. For this action, you can specify that the resource type is an AWS account
+     *        by specifying <code>AWS::::Account</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeComplianceByResourceRequest withResourceType(
-            String resourceType) {
+    public DescribeComplianceByResourceRequest withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
     }
 
     /**
      * <p>
-     * The ID of the AWS resource for which you want compliance information. You
-     * can specify only one resource ID. If you specify a resource ID, you must
-     * also specify a type for <code>ResourceType</code>.
+     * The ID of the AWS resource for which you want compliance information. You can specify only one resource ID. If
+     * you specify a resource ID, you must also specify a type for <code>ResourceType</code>.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the AWS resource for which you want compliance
-     *        information. You can specify only one resource ID. If you specify
-     *        a resource ID, you must also specify a type for
-     *        <code>ResourceType</code>.
+     *        The ID of the AWS resource for which you want compliance information. You can specify only one resource
+     *        ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.
      */
 
     public void setResourceId(String resourceId) {
@@ -147,15 +128,12 @@ public class DescribeComplianceByResourceRequest extends
 
     /**
      * <p>
-     * The ID of the AWS resource for which you want compliance information. You
-     * can specify only one resource ID. If you specify a resource ID, you must
-     * also specify a type for <code>ResourceType</code>.
+     * The ID of the AWS resource for which you want compliance information. You can specify only one resource ID. If
+     * you specify a resource ID, you must also specify a type for <code>ResourceType</code>.
      * </p>
      * 
-     * @return The ID of the AWS resource for which you want compliance
-     *         information. You can specify only one resource ID. If you specify
-     *         a resource ID, you must also specify a type for
-     *         <code>ResourceType</code>.
+     * @return The ID of the AWS resource for which you want compliance information. You can specify only one resource
+     *         ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.
      */
 
     public String getResourceId() {
@@ -164,18 +142,14 @@ public class DescribeComplianceByResourceRequest extends
 
     /**
      * <p>
-     * The ID of the AWS resource for which you want compliance information. You
-     * can specify only one resource ID. If you specify a resource ID, you must
-     * also specify a type for <code>ResourceType</code>.
+     * The ID of the AWS resource for which you want compliance information. You can specify only one resource ID. If
+     * you specify a resource ID, you must also specify a type for <code>ResourceType</code>.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the AWS resource for which you want compliance
-     *        information. You can specify only one resource ID. If you specify
-     *        a resource ID, you must also specify a type for
-     *        <code>ResourceType</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the AWS resource for which you want compliance information. You can specify only one resource
+     *        ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeComplianceByResourceRequest withResourceId(String resourceId) {
@@ -188,14 +162,13 @@ public class DescribeComplianceByResourceRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>INSUFFICIENT_DATA</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @return Filters the results by compliance.</p>
      *         <p>
-     *         The allowed values are <code>COMPLIANT</code>,
-     *         <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
+     *         The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *         <code>INSUFFICIENT_DATA</code>.
      * @see ComplianceType
      */
 
@@ -211,15 +184,14 @@ public class DescribeComplianceByResourceRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>INSUFFICIENT_DATA</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>,
-     *        <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>INSUFFICIENT_DATA</code>.
      * @see ComplianceType
      */
 
@@ -229,8 +201,7 @@ public class DescribeComplianceByResourceRequest extends
             return;
         }
 
-        this.complianceTypes = new com.amazonaws.internal.SdkInternalList<String>(
-                complianceTypes);
+        this.complianceTypes = new com.amazonaws.internal.SdkInternalList<String>(complianceTypes);
     }
 
     /**
@@ -238,31 +209,26 @@ public class DescribeComplianceByResourceRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>INSUFFICIENT_DATA</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setComplianceTypes(java.util.Collection)} or
-     * {@link #withComplianceTypes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setComplianceTypes(java.util.Collection)} or {@link #withComplianceTypes(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>,
-     *        <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>INSUFFICIENT_DATA</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
 
-    public DescribeComplianceByResourceRequest withComplianceTypes(
-            String... complianceTypes) {
+    public DescribeComplianceByResourceRequest withComplianceTypes(String... complianceTypes) {
         if (this.complianceTypes == null) {
-            setComplianceTypes(new com.amazonaws.internal.SdkInternalList<String>(
-                    complianceTypes.length));
+            setComplianceTypes(new com.amazonaws.internal.SdkInternalList<String>(complianceTypes.length));
         }
         for (String ele : complianceTypes) {
             this.complianceTypes.add(ele);
@@ -275,22 +241,19 @@ public class DescribeComplianceByResourceRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>INSUFFICIENT_DATA</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>,
-     *        <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>INSUFFICIENT_DATA</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
 
-    public DescribeComplianceByResourceRequest withComplianceTypes(
-            java.util.Collection<String> complianceTypes) {
+    public DescribeComplianceByResourceRequest withComplianceTypes(java.util.Collection<String> complianceTypes) {
         setComplianceTypes(complianceTypes);
         return this;
     }
@@ -300,24 +263,20 @@ public class DescribeComplianceByResourceRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>INSUFFICIENT_DATA</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>,
-     *        <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>INSUFFICIENT_DATA</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
 
-    public DescribeComplianceByResourceRequest withComplianceTypes(
-            ComplianceType... complianceTypes) {
-        com.amazonaws.internal.SdkInternalList<String> complianceTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                complianceTypes.length);
+    public DescribeComplianceByResourceRequest withComplianceTypes(ComplianceType... complianceTypes) {
+        com.amazonaws.internal.SdkInternalList<String> complianceTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(complianceTypes.length);
         for (ComplianceType value : complianceTypes) {
             complianceTypesCopy.add(value.toString());
         }
@@ -331,15 +290,13 @@ public class DescribeComplianceByResourceRequest extends
 
     /**
      * <p>
-     * The maximum number of evaluation results returned on each page. The
-     * default is 10. You cannot specify a limit greater than 100. If you
-     * specify 0, AWS Config uses the default.
+     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a limit
+     * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @param limit
-     *        The maximum number of evaluation results returned on each page.
-     *        The default is 10. You cannot specify a limit greater than 100. If
-     *        you specify 0, AWS Config uses the default.
+     *        The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a
+     *        limit greater than 100. If you specify 0, AWS Config uses the default.
      */
 
     public void setLimit(Integer limit) {
@@ -348,14 +305,12 @@ public class DescribeComplianceByResourceRequest extends
 
     /**
      * <p>
-     * The maximum number of evaluation results returned on each page. The
-     * default is 10. You cannot specify a limit greater than 100. If you
-     * specify 0, AWS Config uses the default.
+     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a limit
+     * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
-     * @return The maximum number of evaluation results returned on each page.
-     *         The default is 10. You cannot specify a limit greater than 100.
-     *         If you specify 0, AWS Config uses the default.
+     * @return The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a
+     *         limit greater than 100. If you specify 0, AWS Config uses the default.
      */
 
     public Integer getLimit() {
@@ -364,17 +319,14 @@ public class DescribeComplianceByResourceRequest extends
 
     /**
      * <p>
-     * The maximum number of evaluation results returned on each page. The
-     * default is 10. You cannot specify a limit greater than 100. If you
-     * specify 0, AWS Config uses the default.
+     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a limit
+     * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @param limit
-     *        The maximum number of evaluation results returned on each page.
-     *        The default is 10. You cannot specify a limit greater than 100. If
-     *        you specify 0, AWS Config uses the default.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a
+     *        limit greater than 100. If you specify 0, AWS Config uses the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeComplianceByResourceRequest withLimit(Integer limit) {
@@ -384,13 +336,13 @@ public class DescribeComplianceByResourceRequest extends
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> string returned on a previous page that
-     *        you use to get the next page of results in a paginated response.
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -399,13 +351,12 @@ public class DescribeComplianceByResourceRequest extends
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
-     * @return The <code>nextToken</code> string returned on a previous page
-     *         that you use to get the next page of results in a paginated
-     *         response.
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
+     *         results in a paginated response.
      */
 
     public String getNextToken() {
@@ -414,15 +365,14 @@ public class DescribeComplianceByResourceRequest extends
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> string returned on a previous page that
-     *        you use to get the next page of results in a paginated response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeComplianceByResourceRequest withNextToken(String nextToken) {
@@ -431,8 +381,7 @@ public class DescribeComplianceByResourceRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -468,29 +417,23 @@ public class DescribeComplianceByResourceRequest extends
         DescribeComplianceByResourceRequest other = (DescribeComplianceByResourceRequest) obj;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
-        if (other.getResourceType() != null
-                && other.getResourceType().equals(this.getResourceType()) == false)
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
-        if (other.getComplianceTypes() == null
-                ^ this.getComplianceTypes() == null)
+        if (other.getComplianceTypes() == null ^ this.getComplianceTypes() == null)
             return false;
-        if (other.getComplianceTypes() != null
-                && other.getComplianceTypes().equals(this.getComplianceTypes()) == false)
+        if (other.getComplianceTypes() != null && other.getComplianceTypes().equals(this.getComplianceTypes()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -500,20 +443,11 @@ public class DescribeComplianceByResourceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceType() == null) ? 0 : getResourceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getComplianceTypes() == null) ? 0 : getComplianceTypes()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getComplianceTypes() == null) ? 0 : getComplianceTypes().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
 
@@ -22,37 +20,32 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The <code>ListPipelineRequest</code> structure.
  * </p>
  */
-public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To list pipelines in chronological order by the date and time that they
-     * were created, enter <code>true</code>. To list pipelines in reverse
-     * chronological order, enter <code>false</code>.
+     * To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To
+     * list pipelines in reverse chronological order, enter <code>false</code>.
      * </p>
      */
     private String ascending;
     /**
      * <p>
-     * When Elastic Transcoder returns more than one page of results, use
-     * <code>pageToken</code> in subsequent <code>GET</code> requests to get
-     * each successive page of results.
+     * When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent
+     * <code>GET</code> requests to get each successive page of results.
      * </p>
      */
     private String pageToken;
 
     /**
      * <p>
-     * To list pipelines in chronological order by the date and time that they
-     * were created, enter <code>true</code>. To list pipelines in reverse
-     * chronological order, enter <code>false</code>.
+     * To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To
+     * list pipelines in reverse chronological order, enter <code>false</code>.
      * </p>
      * 
      * @param ascending
-     *        To list pipelines in chronological order by the date and time that
-     *        they were created, enter <code>true</code>. To list pipelines in
-     *        reverse chronological order, enter <code>false</code>.
+     *        To list pipelines in chronological order by the date and time that they were created, enter
+     *        <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.
      */
 
     public void setAscending(String ascending) {
@@ -61,15 +54,12 @@ public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * To list pipelines in chronological order by the date and time that they
-     * were created, enter <code>true</code>. To list pipelines in reverse
-     * chronological order, enter <code>false</code>.
+     * To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To
+     * list pipelines in reverse chronological order, enter <code>false</code>.
      * </p>
      * 
-     * @return To list pipelines in chronological order by the date and time
-     *         that they were created, enter <code>true</code>. To list
-     *         pipelines in reverse chronological order, enter
-     *         <code>false</code>.
+     * @return To list pipelines in chronological order by the date and time that they were created, enter
+     *         <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.
      */
 
     public String getAscending() {
@@ -78,17 +68,14 @@ public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * To list pipelines in chronological order by the date and time that they
-     * were created, enter <code>true</code>. To list pipelines in reverse
-     * chronological order, enter <code>false</code>.
+     * To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To
+     * list pipelines in reverse chronological order, enter <code>false</code>.
      * </p>
      * 
      * @param ascending
-     *        To list pipelines in chronological order by the date and time that
-     *        they were created, enter <code>true</code>. To list pipelines in
-     *        reverse chronological order, enter <code>false</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        To list pipelines in chronological order by the date and time that they were created, enter
+     *        <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPipelinesRequest withAscending(String ascending) {
@@ -98,15 +85,13 @@ public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When Elastic Transcoder returns more than one page of results, use
-     * <code>pageToken</code> in subsequent <code>GET</code> requests to get
-     * each successive page of results.
+     * When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent
+     * <code>GET</code> requests to get each successive page of results.
      * </p>
      * 
      * @param pageToken
-     *        When Elastic Transcoder returns more than one page of results, use
-     *        <code>pageToken</code> in subsequent <code>GET</code> requests to
-     *        get each successive page of results.
+     *        When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent
+     *        <code>GET</code> requests to get each successive page of results.
      */
 
     public void setPageToken(String pageToken) {
@@ -115,14 +100,12 @@ public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When Elastic Transcoder returns more than one page of results, use
-     * <code>pageToken</code> in subsequent <code>GET</code> requests to get
-     * each successive page of results.
+     * When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent
+     * <code>GET</code> requests to get each successive page of results.
      * </p>
      * 
-     * @return When Elastic Transcoder returns more than one page of results,
-     *         use <code>pageToken</code> in subsequent <code>GET</code>
-     *         requests to get each successive page of results.
+     * @return When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent
+     *         <code>GET</code> requests to get each successive page of results.
      */
 
     public String getPageToken() {
@@ -131,17 +114,14 @@ public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When Elastic Transcoder returns more than one page of results, use
-     * <code>pageToken</code> in subsequent <code>GET</code> requests to get
-     * each successive page of results.
+     * When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent
+     * <code>GET</code> requests to get each successive page of results.
      * </p>
      * 
      * @param pageToken
-     *        When Elastic Transcoder returns more than one page of results, use
-     *        <code>pageToken</code> in subsequent <code>GET</code> requests to
-     *        get each successive page of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent
+     *        <code>GET</code> requests to get each successive page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPipelinesRequest withPageToken(String pageToken) {
@@ -150,8 +130,7 @@ public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -181,13 +160,11 @@ public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest
         ListPipelinesRequest other = (ListPipelinesRequest) obj;
         if (other.getAscending() == null ^ this.getAscending() == null)
             return false;
-        if (other.getAscending() != null
-                && other.getAscending().equals(this.getAscending()) == false)
+        if (other.getAscending() != null && other.getAscending().equals(this.getAscending()) == false)
             return false;
         if (other.getPageToken() == null ^ this.getPageToken() == null)
             return false;
-        if (other.getPageToken() != null
-                && other.getPageToken().equals(this.getPageToken()) == false)
+        if (other.getPageToken() != null && other.getPageToken().equals(this.getPageToken()) == false)
             return false;
         return true;
     }
@@ -197,10 +174,8 @@ public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAscending() == null) ? 0 : getAscending().hashCode());
-        hashCode = prime * hashCode
-                + ((getPageToken() == null) ? 0 : getPageToken().hashCode());
+        hashCode = prime * hashCode + ((getAscending() == null) ? 0 : getAscending().hashCode());
+        hashCode = prime * hashCode + ((getPageToken() == null) ? 0 : getPageToken().hashCode());
         return hashCode;
     }
 

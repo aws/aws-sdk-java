@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeCustomerGatewaysReques
  * Contains the parameters for DescribeCustomerGateways.
  * </p>
  */
-public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeCustomerGatewaysRequest> {
 
     /**
@@ -44,8 +41,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol
-     * (BGP) Autonomous System Number (ASN).
+     * <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).
      * </p>
      * </li>
      * <li>
@@ -55,44 +51,38 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>ip-address</code> - The IP address of the customer gateway's
-     * Internet-routable external interface.
+     * <code>ip-address</code> - The IP address of the customer gateway's Internet-routable external interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the customer gateway (
-     * <code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).
+     * <code>state</code> - The state of the customer gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of customer gateway. Currently, the only
-     * supported type is <code>ipsec.1</code>.
+     * <code>type</code> - The type of customer gateway. Currently, the only supported type is <code>ipsec.1</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a
-     * tag assigned to the resource.
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This
-     * filter is independent of the <code>tag-value</code> filter. For example,
-     * if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose
-     * (regardless of what the tag's value is), and the tag value X (regardless
-     * of what the tag's key is). If you want to list only resources where
-     * Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
+     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
+     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource.
-     * This filter is independent of the <code>tag-key</code> filter.
+     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-key</code> filter.
      * </p>
      * </li>
      * </ul>
@@ -133,15 +123,13 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      *        Default: Describes all your customer gateways.
      */
 
-    public void setCustomerGatewayIds(
-            java.util.Collection<String> customerGatewayIds) {
+    public void setCustomerGatewayIds(java.util.Collection<String> customerGatewayIds) {
         if (customerGatewayIds == null) {
             this.customerGatewayIds = null;
             return;
         }
 
-        this.customerGatewayIds = new com.amazonaws.internal.SdkInternalList<String>(
-                customerGatewayIds);
+        this.customerGatewayIds = new com.amazonaws.internal.SdkInternalList<String>(customerGatewayIds);
     }
 
     /**
@@ -152,25 +140,21 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * Default: Describes all your customer gateways.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCustomerGatewayIds(java.util.Collection)} or
-     * {@link #withCustomerGatewayIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCustomerGatewayIds(java.util.Collection)} or {@link #withCustomerGatewayIds(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param customerGatewayIds
      *        One or more customer gateway IDs.</p>
      *        <p>
      *        Default: Describes all your customer gateways.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCustomerGatewaysRequest withCustomerGatewayIds(
-            String... customerGatewayIds) {
+    public DescribeCustomerGatewaysRequest withCustomerGatewayIds(String... customerGatewayIds) {
         if (this.customerGatewayIds == null) {
-            setCustomerGatewayIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    customerGatewayIds.length));
+            setCustomerGatewayIds(new com.amazonaws.internal.SdkInternalList<String>(customerGatewayIds.length));
         }
         for (String ele : customerGatewayIds) {
             this.customerGatewayIds.add(ele);
@@ -190,12 +174,10 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      *        One or more customer gateway IDs.</p>
      *        <p>
      *        Default: Describes all your customer gateways.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCustomerGatewaysRequest withCustomerGatewayIds(
-            java.util.Collection<String> customerGatewayIds) {
+    public DescribeCustomerGatewaysRequest withCustomerGatewayIds(java.util.Collection<String> customerGatewayIds) {
         setCustomerGatewayIds(customerGatewayIds);
         return this;
     }
@@ -207,8 +189,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol
-     * (BGP) Autonomous System Number (ASN).
+     * <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).
      * </p>
      * </li>
      * <li>
@@ -218,44 +199,38 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>ip-address</code> - The IP address of the customer gateway's
-     * Internet-routable external interface.
+     * <code>ip-address</code> - The IP address of the customer gateway's Internet-routable external interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the customer gateway (
-     * <code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).
+     * <code>state</code> - The state of the customer gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of customer gateway. Currently, the only
-     * supported type is <code>ipsec.1</code>.
+     * <code>type</code> - The type of customer gateway. Currently, the only supported type is <code>ipsec.1</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a
-     * tag assigned to the resource.
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This
-     * filter is independent of the <code>tag-value</code> filter. For example,
-     * if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose
-     * (regardless of what the tag's value is), and the tag value X (regardless
-     * of what the tag's key is). If you want to list only resources where
-     * Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
+     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
+     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource.
-     * This filter is independent of the <code>tag-key</code> filter.
+     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-key</code> filter.
      * </p>
      * </li>
      * </ul>
@@ -264,58 +239,50 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>bgp-asn</code> - The customer gateway's Border Gateway
-     *         Protocol (BGP) Autonomous System Number (ASN).
+     *         <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     *         (ASN).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>customer-gateway-id</code> - The ID of the customer
-     *         gateway.
+     *         <code>customer-gateway-id</code> - The ID of the customer gateway.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ip-address</code> - The IP address of the customer
-     *         gateway's Internet-routable external interface.
+     *         <code>ip-address</code> - The IP address of the customer gateway's Internet-routable external interface.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>state</code> - The state of the customer gateway (
-     *         <code>pending</code> | <code>available</code> |
+     *         <code>state</code> - The state of the customer gateway (<code>pending</code> | <code>available</code> |
      *         <code>deleting</code> | <code>deleted</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>type</code> - The type of customer gateway. Currently, the
-     *         only supported type is <code>ipsec.1</code>.
+     *         <code>type</code> - The type of customer gateway. Currently, the only supported type is
+     *         <code>ipsec.1</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     *         combination of a tag assigned to the resource.
+     *         <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag-key</code> - The key of a tag assigned to the resource.
-     *         This filter is independent of the <code>tag-value</code> filter.
-     *         For example, if you use both the filter "tag-key=Purpose" and the
-     *         filter "tag-value=X", you get any resources assigned both the tag
-     *         key Purpose (regardless of what the tag's value is), and the tag
-     *         value X (regardless of what the tag's key is). If you want to
-     *         list only resources where Purpose is X, see the <code>tag</code>
-     *         :<i>key</i>=<i>value</i> filter.
+     *         <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
+     *         <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
+     *         "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's
+     *         value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources
+     *         where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag-value</code> - The value of a tag assigned to the
-     *         resource. This filter is independent of the <code>tag-key</code>
-     *         filter.
+     *         <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     *         <code>tag-key</code> filter.
      *         </p>
      *         </li>
      */
@@ -334,8 +301,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol
-     * (BGP) Autonomous System Number (ASN).
+     * <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).
      * </p>
      * </li>
      * <li>
@@ -345,44 +311,38 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>ip-address</code> - The IP address of the customer gateway's
-     * Internet-routable external interface.
+     * <code>ip-address</code> - The IP address of the customer gateway's Internet-routable external interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the customer gateway (
-     * <code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).
+     * <code>state</code> - The state of the customer gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of customer gateway. Currently, the only
-     * supported type is <code>ipsec.1</code>.
+     * <code>type</code> - The type of customer gateway. Currently, the only supported type is <code>ipsec.1</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a
-     * tag assigned to the resource.
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This
-     * filter is independent of the <code>tag-value</code> filter. For example,
-     * if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose
-     * (regardless of what the tag's value is), and the tag value X (regardless
-     * of what the tag's key is). If you want to list only resources where
-     * Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
+     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
+     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource.
-     * This filter is independent of the <code>tag-key</code> filter.
+     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-key</code> filter.
      * </p>
      * </li>
      * </ul>
@@ -392,8 +352,8 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>bgp-asn</code> - The customer gateway's Border Gateway
-     *        Protocol (BGP) Autonomous System Number (ASN).
+     *        <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     *        (ASN).
      *        </p>
      *        </li>
      *        <li>
@@ -403,46 +363,39 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ip-address</code> - The IP address of the customer gateway's
-     *        Internet-routable external interface.
+     *        <code>ip-address</code> - The IP address of the customer gateway's Internet-routable external interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the customer gateway (
-     *        <code>pending</code> | <code>available</code> |
+     *        <code>state</code> - The state of the customer gateway (<code>pending</code> | <code>available</code> |
      *        <code>deleting</code> | <code>deleted</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of customer gateway. Currently, the
-     *        only supported type is <code>ipsec.1</code>.
+     *        <code>type</code> - The type of customer gateway. Currently, the only supported type is
+     *        <code>ipsec.1</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     *        combination of a tag assigned to the resource.
+     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource.
-     *        This filter is independent of the <code>tag-value</code> filter.
-     *        For example, if you use both the filter "tag-key=Purpose" and the
-     *        filter "tag-value=X", you get any resources assigned both the tag
-     *        key Purpose (regardless of what the tag's value is), and the tag
-     *        value X (regardless of what the tag's key is). If you want to list
-     *        only resources where Purpose is X, see the <code>tag</code>
-     *        :<i>key</i>=<i>value</i> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
+     *        <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
+     *        "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
+     *        is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where
+     *        Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the
-     *        resource. This filter is independent of the <code>tag-key</code>
-     *        filter.
+     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     *        <code>tag-key</code> filter.
      *        </p>
      *        </li>
      */
@@ -453,8 +406,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -464,8 +416,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol
-     * (BGP) Autonomous System Number (ASN).
+     * <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).
      * </p>
      * </li>
      * <li>
@@ -475,52 +426,45 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>ip-address</code> - The IP address of the customer gateway's
-     * Internet-routable external interface.
+     * <code>ip-address</code> - The IP address of the customer gateway's Internet-routable external interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the customer gateway (
-     * <code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).
+     * <code>state</code> - The state of the customer gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of customer gateway. Currently, the only
-     * supported type is <code>ipsec.1</code>.
+     * <code>type</code> - The type of customer gateway. Currently, the only supported type is <code>ipsec.1</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a
-     * tag assigned to the resource.
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This
-     * filter is independent of the <code>tag-value</code> filter. For example,
-     * if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose
-     * (regardless of what the tag's value is), and the tag value X (regardless
-     * of what the tag's key is). If you want to list only resources where
-     * Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
+     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
+     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource.
-     * This filter is independent of the <code>tag-key</code> filter.
+     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-key</code> filter.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
@@ -528,8 +472,8 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>bgp-asn</code> - The customer gateway's Border Gateway
-     *        Protocol (BGP) Autonomous System Number (ASN).
+     *        <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     *        (ASN).
      *        </p>
      *        </li>
      *        <li>
@@ -539,56 +483,47 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ip-address</code> - The IP address of the customer gateway's
-     *        Internet-routable external interface.
+     *        <code>ip-address</code> - The IP address of the customer gateway's Internet-routable external interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the customer gateway (
-     *        <code>pending</code> | <code>available</code> |
+     *        <code>state</code> - The state of the customer gateway (<code>pending</code> | <code>available</code> |
      *        <code>deleting</code> | <code>deleted</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of customer gateway. Currently, the
-     *        only supported type is <code>ipsec.1</code>.
+     *        <code>type</code> - The type of customer gateway. Currently, the only supported type is
+     *        <code>ipsec.1</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     *        combination of a tag assigned to the resource.
+     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource.
-     *        This filter is independent of the <code>tag-value</code> filter.
-     *        For example, if you use both the filter "tag-key=Purpose" and the
-     *        filter "tag-value=X", you get any resources assigned both the tag
-     *        key Purpose (regardless of what the tag's value is), and the tag
-     *        value X (regardless of what the tag's key is). If you want to list
-     *        only resources where Purpose is X, see the <code>tag</code>
-     *        :<i>key</i>=<i>value</i> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
+     *        <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
+     *        "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
+     *        is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where
+     *        Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the
-     *        resource. This filter is independent of the <code>tag-key</code>
-     *        filter.
+     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     *        <code>tag-key</code> filter.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCustomerGatewaysRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -603,8 +538,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol
-     * (BGP) Autonomous System Number (ASN).
+     * <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).
      * </p>
      * </li>
      * <li>
@@ -614,44 +548,38 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>ip-address</code> - The IP address of the customer gateway's
-     * Internet-routable external interface.
+     * <code>ip-address</code> - The IP address of the customer gateway's Internet-routable external interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the customer gateway (
-     * <code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).
+     * <code>state</code> - The state of the customer gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of customer gateway. Currently, the only
-     * supported type is <code>ipsec.1</code>.
+     * <code>type</code> - The type of customer gateway. Currently, the only supported type is <code>ipsec.1</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a
-     * tag assigned to the resource.
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This
-     * filter is independent of the <code>tag-value</code> filter. For example,
-     * if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose
-     * (regardless of what the tag's value is), and the tag value X (regardless
-     * of what the tag's key is). If you want to list only resources where
-     * Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
+     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
+     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
+     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource.
-     * This filter is independent of the <code>tag-key</code> filter.
+     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     * <code>tag-key</code> filter.
      * </p>
      * </li>
      * </ul>
@@ -661,8 +589,8 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>bgp-asn</code> - The customer gateway's Border Gateway
-     *        Protocol (BGP) Autonomous System Number (ASN).
+     *        <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     *        (ASN).
      *        </p>
      *        </li>
      *        <li>
@@ -672,74 +600,62 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ip-address</code> - The IP address of the customer gateway's
-     *        Internet-routable external interface.
+     *        <code>ip-address</code> - The IP address of the customer gateway's Internet-routable external interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the customer gateway (
-     *        <code>pending</code> | <code>available</code> |
+     *        <code>state</code> - The state of the customer gateway (<code>pending</code> | <code>available</code> |
      *        <code>deleting</code> | <code>deleted</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of customer gateway. Currently, the
-     *        only supported type is <code>ipsec.1</code>.
+     *        <code>type</code> - The type of customer gateway. Currently, the only supported type is
+     *        <code>ipsec.1</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     *        combination of a tag assigned to the resource.
+     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource.
-     *        This filter is independent of the <code>tag-value</code> filter.
-     *        For example, if you use both the filter "tag-key=Purpose" and the
-     *        filter "tag-value=X", you get any resources assigned both the tag
-     *        key Purpose (regardless of what the tag's value is), and the tag
-     *        value X (regardless of what the tag's key is). If you want to list
-     *        only resources where Purpose is X, see the <code>tag</code>
-     *        :<i>key</i>=<i>value</i> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
+     *        <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
+     *        "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
+     *        is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where
+     *        Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the
-     *        resource. This filter is independent of the <code>tag-key</code>
-     *        filter.
+     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
+     *        <code>tag-key</code> filter.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCustomerGatewaysRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeCustomerGatewaysRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeCustomerGatewaysRequest> getDryRunRequest() {
-        Request<DescribeCustomerGatewaysRequest> request = new DescribeCustomerGatewaysRequestMarshaller()
-                .marshall(this);
+        Request<DescribeCustomerGatewaysRequest> request = new DescribeCustomerGatewaysRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -767,17 +683,13 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeCustomerGatewaysRequest == false)
             return false;
         DescribeCustomerGatewaysRequest other = (DescribeCustomerGatewaysRequest) obj;
-        if (other.getCustomerGatewayIds() == null
-                ^ this.getCustomerGatewayIds() == null)
+        if (other.getCustomerGatewayIds() == null ^ this.getCustomerGatewayIds() == null)
             return false;
-        if (other.getCustomerGatewayIds() != null
-                && other.getCustomerGatewayIds().equals(
-                        this.getCustomerGatewayIds()) == false)
+        if (other.getCustomerGatewayIds() != null && other.getCustomerGatewayIds().equals(this.getCustomerGatewayIds()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         return true;
     }
@@ -787,12 +699,8 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCustomerGatewayIds() == null) ? 0
-                        : getCustomerGatewayIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getCustomerGatewayIds() == null) ? 0 : getCustomerGatewayIds().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

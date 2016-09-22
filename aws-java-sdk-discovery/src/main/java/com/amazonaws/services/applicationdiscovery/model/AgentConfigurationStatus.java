@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.applicationdiscovery.model;
 
@@ -18,9 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about agents that were instructed to start collecting data.
- * Information includes the agent ID, a description of the operation, and
- * whether or not the agent configuration was updated.
+ * Information about agents that were instructed to start collecting data. Information includes the agent ID, a
+ * description of the operation, and whether or not the agent configuration was updated.
  * </p>
  */
 public class AgentConfigurationStatus implements Serializable, Cloneable {
@@ -33,9 +30,8 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
     private String agentId;
     /**
      * <p>
-     * Information about the status of the <code>StartDataCollection</code> and
-     * <code>StopDataCollection</code> operations. The system has recorded the
-     * data collection operation. The agent receives this command the next time
+     * Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
+     * operations. The system has recorded the data collection operation. The agent receives this command the next time
      * it polls for a new command.
      * </p>
      */
@@ -79,8 +75,7 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
      * 
      * @param agentId
      *        The agent ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AgentConfigurationStatus withAgentId(String agentId) {
@@ -90,18 +85,15 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the status of the <code>StartDataCollection</code> and
-     * <code>StopDataCollection</code> operations. The system has recorded the
-     * data collection operation. The agent receives this command the next time
+     * Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
+     * operations. The system has recorded the data collection operation. The agent receives this command the next time
      * it polls for a new command.
      * </p>
      * 
      * @param operationSucceeded
-     *        Information about the status of the
-     *        <code>StartDataCollection</code> and
-     *        <code>StopDataCollection</code> operations. The system has
-     *        recorded the data collection operation. The agent receives this
-     *        command the next time it polls for a new command.
+     *        Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
+     *        operations. The system has recorded the data collection operation. The agent receives this command the
+     *        next time it polls for a new command.
      */
 
     public void setOperationSucceeded(Boolean operationSucceeded) {
@@ -110,17 +102,14 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the status of the <code>StartDataCollection</code> and
-     * <code>StopDataCollection</code> operations. The system has recorded the
-     * data collection operation. The agent receives this command the next time
+     * Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
+     * operations. The system has recorded the data collection operation. The agent receives this command the next time
      * it polls for a new command.
      * </p>
      * 
-     * @return Information about the status of the
-     *         <code>StartDataCollection</code> and
-     *         <code>StopDataCollection</code> operations. The system has
-     *         recorded the data collection operation. The agent receives this
-     *         command the next time it polls for a new command.
+     * @return Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
+     *         operations. The system has recorded the data collection operation. The agent receives this command the
+     *         next time it polls for a new command.
      */
 
     public Boolean getOperationSucceeded() {
@@ -129,41 +118,33 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the status of the <code>StartDataCollection</code> and
-     * <code>StopDataCollection</code> operations. The system has recorded the
-     * data collection operation. The agent receives this command the next time
+     * Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
+     * operations. The system has recorded the data collection operation. The agent receives this command the next time
      * it polls for a new command.
      * </p>
      * 
      * @param operationSucceeded
-     *        Information about the status of the
-     *        <code>StartDataCollection</code> and
-     *        <code>StopDataCollection</code> operations. The system has
-     *        recorded the data collection operation. The agent receives this
-     *        command the next time it polls for a new command.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
+     *        operations. The system has recorded the data collection operation. The agent receives this command the
+     *        next time it polls for a new command.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AgentConfigurationStatus withOperationSucceeded(
-            Boolean operationSucceeded) {
+    public AgentConfigurationStatus withOperationSucceeded(Boolean operationSucceeded) {
         setOperationSucceeded(operationSucceeded);
         return this;
     }
 
     /**
      * <p>
-     * Information about the status of the <code>StartDataCollection</code> and
-     * <code>StopDataCollection</code> operations. The system has recorded the
-     * data collection operation. The agent receives this command the next time
+     * Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
+     * operations. The system has recorded the data collection operation. The agent receives this command the next time
      * it polls for a new command.
      * </p>
      * 
-     * @return Information about the status of the
-     *         <code>StartDataCollection</code> and
-     *         <code>StopDataCollection</code> operations. The system has
-     *         recorded the data collection operation. The agent receives this
-     *         command the next time it polls for a new command.
+     * @return Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
+     *         operations. The system has recorded the data collection operation. The agent receives this command the
+     *         next time it polls for a new command.
      */
 
     public Boolean isOperationSucceeded() {
@@ -202,8 +183,7 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
      * 
      * @param description
      *        A description of the operation performed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AgentConfigurationStatus withDescription(String description) {
@@ -212,8 +192,7 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -245,20 +224,15 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
         AgentConfigurationStatus other = (AgentConfigurationStatus) obj;
         if (other.getAgentId() == null ^ this.getAgentId() == null)
             return false;
-        if (other.getAgentId() != null
-                && other.getAgentId().equals(this.getAgentId()) == false)
+        if (other.getAgentId() != null && other.getAgentId().equals(this.getAgentId()) == false)
             return false;
-        if (other.getOperationSucceeded() == null
-                ^ this.getOperationSucceeded() == null)
+        if (other.getOperationSucceeded() == null ^ this.getOperationSucceeded() == null)
             return false;
-        if (other.getOperationSucceeded() != null
-                && other.getOperationSucceeded().equals(
-                        this.getOperationSucceeded()) == false)
+        if (other.getOperationSucceeded() != null && other.getOperationSucceeded().equals(this.getOperationSucceeded()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         return true;
     }
@@ -268,15 +242,9 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAgentId() == null) ? 0 : getAgentId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOperationSucceeded() == null) ? 0
-                        : getOperationSucceeded().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getAgentId() == null) ? 0 : getAgentId().hashCode());
+        hashCode = prime * hashCode + ((getOperationSucceeded() == null) ? 0 : getOperationSucceeded().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 
@@ -285,9 +253,7 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
         try {
             return (AgentConfigurationStatus) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

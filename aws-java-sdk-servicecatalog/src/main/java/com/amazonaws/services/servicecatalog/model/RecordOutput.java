@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.servicecatalog.model;
 
@@ -18,9 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An output for the specified Product object created as the result of a
- * request. For example, a CloudFormation-backed product that creates an S3
- * bucket would have an output for the S3 bucket URL.
+ * An output for the specified Product object created as the result of a request. For example, a CloudFormation-backed
+ * product that creates an S3 bucket would have an output for the S3 bucket URL.
  * </p>
  */
 public class RecordOutput implements Serializable, Cloneable {
@@ -76,8 +73,7 @@ public class RecordOutput implements Serializable, Cloneable {
      * 
      * @param outputKey
      *        The output key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordOutput withOutputKey(String outputKey) {
@@ -117,8 +113,7 @@ public class RecordOutput implements Serializable, Cloneable {
      * 
      * @param outputValue
      *        The output value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordOutput withOutputValue(String outputValue) {
@@ -158,8 +153,7 @@ public class RecordOutput implements Serializable, Cloneable {
      * 
      * @param description
      *        The text description of the output.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecordOutput withDescription(String description) {
@@ -168,8 +162,7 @@ public class RecordOutput implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -201,18 +194,15 @@ public class RecordOutput implements Serializable, Cloneable {
         RecordOutput other = (RecordOutput) obj;
         if (other.getOutputKey() == null ^ this.getOutputKey() == null)
             return false;
-        if (other.getOutputKey() != null
-                && other.getOutputKey().equals(this.getOutputKey()) == false)
+        if (other.getOutputKey() != null && other.getOutputKey().equals(this.getOutputKey()) == false)
             return false;
         if (other.getOutputValue() == null ^ this.getOutputValue() == null)
             return false;
-        if (other.getOutputValue() != null
-                && other.getOutputValue().equals(this.getOutputValue()) == false)
+        if (other.getOutputValue() != null && other.getOutputValue().equals(this.getOutputValue()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         return true;
     }
@@ -222,14 +212,9 @@ public class RecordOutput implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getOutputKey() == null) ? 0 : getOutputKey().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOutputValue() == null) ? 0 : getOutputValue().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getOutputKey() == null) ? 0 : getOutputKey().hashCode());
+        hashCode = prime * hashCode + ((getOutputValue() == null) ? 0 : getOutputValue().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 
@@ -238,9 +223,7 @@ public class RecordOutput implements Serializable, Cloneable {
         try {
             return (RecordOutput) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

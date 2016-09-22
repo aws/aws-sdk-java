@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of CancelSpotInstanceRequests.
  * </p>
  */
-public class CancelSpotInstanceRequestsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CancelSpotInstanceRequestsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -57,15 +53,13 @@ public class CancelSpotInstanceRequestsResult extends
      *        One or more Spot instance requests.
      */
 
-    public void setCancelledSpotInstanceRequests(
-            java.util.Collection<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests) {
+    public void setCancelledSpotInstanceRequests(java.util.Collection<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests) {
         if (cancelledSpotInstanceRequests == null) {
             this.cancelledSpotInstanceRequests = null;
             return;
         }
 
-        this.cancelledSpotInstanceRequests = new com.amazonaws.internal.SdkInternalList<CancelledSpotInstanceRequest>(
-                cancelledSpotInstanceRequests);
+        this.cancelledSpotInstanceRequests = new com.amazonaws.internal.SdkInternalList<CancelledSpotInstanceRequest>(cancelledSpotInstanceRequests);
     }
 
     /**
@@ -73,23 +67,19 @@ public class CancelSpotInstanceRequestsResult extends
      * One or more Spot instance requests.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCancelledSpotInstanceRequests(java.util.Collection)}
-     * or {@link #withCancelledSpotInstanceRequests(java.util.Collection)} if
-     * you want to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCancelledSpotInstanceRequests(java.util.Collection)} or
+     * {@link #withCancelledSpotInstanceRequests(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param cancelledSpotInstanceRequests
      *        One or more Spot instance requests.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CancelSpotInstanceRequestsResult withCancelledSpotInstanceRequests(
-            CancelledSpotInstanceRequest... cancelledSpotInstanceRequests) {
+    public CancelSpotInstanceRequestsResult withCancelledSpotInstanceRequests(CancelledSpotInstanceRequest... cancelledSpotInstanceRequests) {
         if (this.cancelledSpotInstanceRequests == null) {
-            setCancelledSpotInstanceRequests(new com.amazonaws.internal.SdkInternalList<CancelledSpotInstanceRequest>(
-                    cancelledSpotInstanceRequests.length));
+            setCancelledSpotInstanceRequests(new com.amazonaws.internal.SdkInternalList<CancelledSpotInstanceRequest>(cancelledSpotInstanceRequests.length));
         }
         for (CancelledSpotInstanceRequest ele : cancelledSpotInstanceRequests) {
             this.cancelledSpotInstanceRequests.add(ele);
@@ -104,19 +94,16 @@ public class CancelSpotInstanceRequestsResult extends
      * 
      * @param cancelledSpotInstanceRequests
      *        One or more Spot instance requests.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CancelSpotInstanceRequestsResult withCancelledSpotInstanceRequests(
-            java.util.Collection<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests) {
+    public CancelSpotInstanceRequestsResult withCancelledSpotInstanceRequests(java.util.Collection<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests) {
         setCancelledSpotInstanceRequests(cancelledSpotInstanceRequests);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -127,8 +114,7 @@ public class CancelSpotInstanceRequestsResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCancelledSpotInstanceRequests() != null)
-            sb.append("CancelledSpotInstanceRequests: "
-                    + getCancelledSpotInstanceRequests());
+            sb.append("CancelledSpotInstanceRequests: " + getCancelledSpotInstanceRequests());
         sb.append("}");
         return sb.toString();
     }
@@ -143,12 +129,10 @@ public class CancelSpotInstanceRequestsResult extends
         if (obj instanceof CancelSpotInstanceRequestsResult == false)
             return false;
         CancelSpotInstanceRequestsResult other = (CancelSpotInstanceRequestsResult) obj;
-        if (other.getCancelledSpotInstanceRequests() == null
-                ^ this.getCancelledSpotInstanceRequests() == null)
+        if (other.getCancelledSpotInstanceRequests() == null ^ this.getCancelledSpotInstanceRequests() == null)
             return false;
         if (other.getCancelledSpotInstanceRequests() != null
-                && other.getCancelledSpotInstanceRequests().equals(
-                        this.getCancelledSpotInstanceRequests()) == false)
+                && other.getCancelledSpotInstanceRequests().equals(this.getCancelledSpotInstanceRequests()) == false)
             return false;
         return true;
     }
@@ -158,10 +142,7 @@ public class CancelSpotInstanceRequestsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCancelledSpotInstanceRequests() == null) ? 0
-                        : getCancelledSpotInstanceRequests().hashCode());
+        hashCode = prime * hashCode + ((getCancelledSpotInstanceRequests() == null) ? 0 : getCancelledSpotInstanceRequests().hashCode());
         return hashCode;
     }
 
@@ -170,9 +151,7 @@ public class CancelSpotInstanceRequestsResult extends
         try {
             return (CancelSpotInstanceRequestsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

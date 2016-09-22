@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an individual setting that controls some aspect of ElastiCache
- * behavior.
+ * Describes an individual setting that controls some aspect of ElastiCache behavior.
  * </p>
  */
 public class Parameter implements Serializable, Cloneable {
@@ -62,9 +59,8 @@ public class Parameter implements Serializable, Cloneable {
     private String allowedValues;
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      */
     private Boolean isModifiable;
@@ -76,12 +72,11 @@ public class Parameter implements Serializable, Cloneable {
     private String minimumEngineVersion;
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can
-     * force a reboot or wait until the next maintenance window's reboot. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     * >Rebooting a Cluster</a>.
+     * ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot for the
+     * change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     * Cluster</a>.
      * </p>
      */
     private String changeType;
@@ -118,8 +113,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param parameterName
      *        The name of the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withParameterName(String parameterName) {
@@ -159,8 +153,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param parameterValue
      *        The value of the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withParameterValue(String parameterValue) {
@@ -200,8 +193,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param description
      *        A description of the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withDescription(String description) {
@@ -241,8 +233,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param source
      *        The source of the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withSource(String source) {
@@ -282,8 +273,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param dataType
      *        The valid data type for the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withDataType(String dataType) {
@@ -323,8 +313,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param allowedValues
      *        The valid range of values for the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withAllowedValues(String allowedValues) {
@@ -334,15 +323,13 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      * 
      * @param isModifiable
-     *        Indicates whether (<code>true</code>) or not (<code>false</code>)
-     *        the parameter can be modified. Some parameters have security or
-     *        operational implications that prevent them from being changed.
+     *        Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some
+     *        parameters have security or operational implications that prevent them from being changed.
      */
 
     public void setIsModifiable(Boolean isModifiable) {
@@ -351,14 +338,12 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      * 
-     * @return Indicates whether (<code>true</code>) or not (<code>false</code>)
-     *         the parameter can be modified. Some parameters have security or
-     *         operational implications that prevent them from being changed.
+     * @return Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some
+     *         parameters have security or operational implications that prevent them from being changed.
      */
 
     public Boolean getIsModifiable() {
@@ -367,17 +352,14 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      * 
      * @param isModifiable
-     *        Indicates whether (<code>true</code>) or not (<code>false</code>)
-     *        the parameter can be modified. Some parameters have security or
-     *        operational implications that prevent them from being changed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some
+     *        parameters have security or operational implications that prevent them from being changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withIsModifiable(Boolean isModifiable) {
@@ -387,14 +369,12 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      * 
-     * @return Indicates whether (<code>true</code>) or not (<code>false</code>)
-     *         the parameter can be modified. Some parameters have security or
-     *         operational implications that prevent them from being changed.
+     * @return Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some
+     *         parameters have security or operational implications that prevent them from being changed.
      */
 
     public Boolean isModifiable() {
@@ -407,8 +387,7 @@ public class Parameter implements Serializable, Cloneable {
      * </p>
      * 
      * @param minimumEngineVersion
-     *        The earliest cache engine version to which the parameter can
-     *        apply.
+     *        The earliest cache engine version to which the parameter can apply.
      */
 
     public void setMinimumEngineVersion(String minimumEngineVersion) {
@@ -420,8 +399,7 @@ public class Parameter implements Serializable, Cloneable {
      * The earliest cache engine version to which the parameter can apply.
      * </p>
      * 
-     * @return The earliest cache engine version to which the parameter can
-     *         apply.
+     * @return The earliest cache engine version to which the parameter can apply.
      */
 
     public String getMinimumEngineVersion() {
@@ -434,10 +412,8 @@ public class Parameter implements Serializable, Cloneable {
      * </p>
      * 
      * @param minimumEngineVersion
-     *        The earliest cache engine version to which the parameter can
-     *        apply.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The earliest cache engine version to which the parameter can apply.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withMinimumEngineVersion(String minimumEngineVersion) {
@@ -447,21 +423,19 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can
-     * force a reboot or wait until the next maintenance window's reboot. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     * >Rebooting a Cluster</a>.
+     * ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot for the
+     * change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     * Cluster</a>.
      * </p>
      * 
      * @param changeType
-     *        ChangeType indicates whether a change to the parameter will be
-     *        applied immediately or requires a reboot for the change to be
-     *        applied. You can force a reboot or wait until the next maintenance
-     *        window's reboot. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     *        >Rebooting a Cluster</a>.
+     *        ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot
+     *        for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     *        Cluster</a>.
      * @see ChangeType
      */
 
@@ -471,20 +445,18 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can
-     * force a reboot or wait until the next maintenance window's reboot. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     * >Rebooting a Cluster</a>.
+     * ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot for the
+     * change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     * Cluster</a>.
      * </p>
      * 
-     * @return ChangeType indicates whether a change to the parameter will be
-     *         applied immediately or requires a reboot for the change to be
-     *         applied. You can force a reboot or wait until the next
-     *         maintenance window's reboot. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     *         >Rebooting a Cluster</a>.
+     * @return ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot
+     *         for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     *         Cluster</a>.
      * @see ChangeType
      */
 
@@ -494,23 +466,20 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can
-     * force a reboot or wait until the next maintenance window's reboot. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     * >Rebooting a Cluster</a>.
+     * ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot for the
+     * change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     * Cluster</a>.
      * </p>
      * 
      * @param changeType
-     *        ChangeType indicates whether a change to the parameter will be
-     *        applied immediately or requires a reboot for the change to be
-     *        applied. You can force a reboot or wait until the next maintenance
-     *        window's reboot. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     *        >Rebooting a Cluster</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot
+     *        for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     *        Cluster</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeType
      */
 
@@ -521,21 +490,19 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can
-     * force a reboot or wait until the next maintenance window's reboot. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     * >Rebooting a Cluster</a>.
+     * ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot for the
+     * change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     * Cluster</a>.
      * </p>
      * 
      * @param changeType
-     *        ChangeType indicates whether a change to the parameter will be
-     *        applied immediately or requires a reboot for the change to be
-     *        applied. You can force a reboot or wait until the next maintenance
-     *        window's reboot. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     *        >Rebooting a Cluster</a>.
+     *        ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot
+     *        for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     *        Cluster</a>.
      * @see ChangeType
      */
 
@@ -545,23 +512,20 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can
-     * force a reboot or wait until the next maintenance window's reboot. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     * >Rebooting a Cluster</a>.
+     * ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot for the
+     * change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     * Cluster</a>.
      * </p>
      * 
      * @param changeType
-     *        ChangeType indicates whether a change to the parameter will be
-     *        applied immediately or requires a reboot for the change to be
-     *        applied. You can force a reboot or wait until the next maintenance
-     *        window's reboot. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     *        >Rebooting a Cluster</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot
+     *        for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     *        Cluster</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeType
      */
 
@@ -571,8 +535,7 @@ public class Parameter implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -597,8 +560,7 @@ public class Parameter implements Serializable, Cloneable {
         if (getIsModifiable() != null)
             sb.append("IsModifiable: " + getIsModifiable() + ",");
         if (getMinimumEngineVersion() != null)
-            sb.append("MinimumEngineVersion: " + getMinimumEngineVersion()
-                    + ",");
+            sb.append("MinimumEngineVersion: " + getMinimumEngineVersion() + ",");
         if (getChangeType() != null)
             sb.append("ChangeType: " + getChangeType());
         sb.append("}");
@@ -617,51 +579,39 @@ public class Parameter implements Serializable, Cloneable {
         Parameter other = (Parameter) obj;
         if (other.getParameterName() == null ^ this.getParameterName() == null)
             return false;
-        if (other.getParameterName() != null
-                && other.getParameterName().equals(this.getParameterName()) == false)
+        if (other.getParameterName() != null && other.getParameterName().equals(this.getParameterName()) == false)
             return false;
-        if (other.getParameterValue() == null
-                ^ this.getParameterValue() == null)
+        if (other.getParameterValue() == null ^ this.getParameterValue() == null)
             return false;
-        if (other.getParameterValue() != null
-                && other.getParameterValue().equals(this.getParameterValue()) == false)
+        if (other.getParameterValue() != null && other.getParameterValue().equals(this.getParameterValue()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getSource() == null ^ this.getSource() == null)
             return false;
-        if (other.getSource() != null
-                && other.getSource().equals(this.getSource()) == false)
+        if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
         if (other.getDataType() == null ^ this.getDataType() == null)
             return false;
-        if (other.getDataType() != null
-                && other.getDataType().equals(this.getDataType()) == false)
+        if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false)
             return false;
         if (other.getAllowedValues() == null ^ this.getAllowedValues() == null)
             return false;
-        if (other.getAllowedValues() != null
-                && other.getAllowedValues().equals(this.getAllowedValues()) == false)
+        if (other.getAllowedValues() != null && other.getAllowedValues().equals(this.getAllowedValues()) == false)
             return false;
         if (other.getIsModifiable() == null ^ this.getIsModifiable() == null)
             return false;
-        if (other.getIsModifiable() != null
-                && other.getIsModifiable().equals(this.getIsModifiable()) == false)
+        if (other.getIsModifiable() != null && other.getIsModifiable().equals(this.getIsModifiable()) == false)
             return false;
-        if (other.getMinimumEngineVersion() == null
-                ^ this.getMinimumEngineVersion() == null)
+        if (other.getMinimumEngineVersion() == null ^ this.getMinimumEngineVersion() == null)
             return false;
-        if (other.getMinimumEngineVersion() != null
-                && other.getMinimumEngineVersion().equals(
-                        this.getMinimumEngineVersion()) == false)
+        if (other.getMinimumEngineVersion() != null && other.getMinimumEngineVersion().equals(this.getMinimumEngineVersion()) == false)
             return false;
         if (other.getChangeType() == null ^ this.getChangeType() == null)
             return false;
-        if (other.getChangeType() != null
-                && other.getChangeType().equals(this.getChangeType()) == false)
+        if (other.getChangeType() != null && other.getChangeType().equals(this.getChangeType()) == false)
             return false;
         return true;
     }
@@ -671,35 +621,15 @@ public class Parameter implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getParameterName() == null) ? 0 : getParameterName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getParameterValue() == null) ? 0 : getParameterValue()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getSource() == null) ? 0 : getSource().hashCode());
-        hashCode = prime * hashCode
-                + ((getDataType() == null) ? 0 : getDataType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAllowedValues() == null) ? 0 : getAllowedValues()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsModifiable() == null) ? 0 : getIsModifiable()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMinimumEngineVersion() == null) ? 0
-                        : getMinimumEngineVersion().hashCode());
-        hashCode = prime * hashCode
-                + ((getChangeType() == null) ? 0 : getChangeType().hashCode());
+        hashCode = prime * hashCode + ((getParameterName() == null) ? 0 : getParameterName().hashCode());
+        hashCode = prime * hashCode + ((getParameterValue() == null) ? 0 : getParameterValue().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
+        hashCode = prime * hashCode + ((getAllowedValues() == null) ? 0 : getAllowedValues().hashCode());
+        hashCode = prime * hashCode + ((getIsModifiable() == null) ? 0 : getIsModifiable().hashCode());
+        hashCode = prime * hashCode + ((getMinimumEngineVersion() == null) ? 0 : getMinimumEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getChangeType() == null) ? 0 : getChangeType().hashCode());
         return hashCode;
     }
 
@@ -708,9 +638,7 @@ public class Parameter implements Serializable, Cloneable {
         try {
             return (Parameter) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

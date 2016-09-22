@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -21,18 +19,16 @@ import java.io.Serializable;
  * Represents a collection of <a>ClientCertificate</a> resources.
  * </p>
  * <div class="seeAlso"> <a href=
- * "http://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html"
- * >Use Client-Side Certificate</a> </div>
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">Use
+ * Client-Side Certificate</a> </div>
  */
-public class GetClientCertificatesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetClientCertificatesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String position;
     /**
      * <p>
-     * The current page of any <a>ClientCertificate</a> resources in the
-     * collection of <a>ClientCertificate</a> resources.
+     * The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
+     * resources.
      * </p>
      */
     private java.util.List<ClientCertificate> items;
@@ -55,8 +51,7 @@ public class GetClientCertificatesResult extends
 
     /**
      * @param position
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetClientCertificatesResult withPosition(String position) {
@@ -66,12 +61,12 @@ public class GetClientCertificatesResult extends
 
     /**
      * <p>
-     * The current page of any <a>ClientCertificate</a> resources in the
-     * collection of <a>ClientCertificate</a> resources.
+     * The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
+     * resources.
      * </p>
      * 
-     * @return The current page of any <a>ClientCertificate</a> resources in the
-     *         collection of <a>ClientCertificate</a> resources.
+     * @return The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
+     *         resources.
      */
 
     public java.util.List<ClientCertificate> getItems() {
@@ -80,13 +75,13 @@ public class GetClientCertificatesResult extends
 
     /**
      * <p>
-     * The current page of any <a>ClientCertificate</a> resources in the
-     * collection of <a>ClientCertificate</a> resources.
+     * The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
+     * resources.
      * </p>
      * 
      * @param items
-     *        The current page of any <a>ClientCertificate</a> resources in the
-     *        collection of <a>ClientCertificate</a> resources.
+     *        The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
+     *        resources.
      */
 
     public void setItems(java.util.Collection<ClientCertificate> items) {
@@ -100,21 +95,19 @@ public class GetClientCertificatesResult extends
 
     /**
      * <p>
-     * The current page of any <a>ClientCertificate</a> resources in the
-     * collection of <a>ClientCertificate</a> resources.
+     * The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
+     * resources.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setItems(java.util.Collection)} or
-     * {@link #withItems(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param items
-     *        The current page of any <a>ClientCertificate</a> resources in the
-     *        collection of <a>ClientCertificate</a> resources.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
+     *        resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetClientCertificatesResult withItems(ClientCertificate... items) {
@@ -129,26 +122,23 @@ public class GetClientCertificatesResult extends
 
     /**
      * <p>
-     * The current page of any <a>ClientCertificate</a> resources in the
-     * collection of <a>ClientCertificate</a> resources.
+     * The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
+     * resources.
      * </p>
      * 
      * @param items
-     *        The current page of any <a>ClientCertificate</a> resources in the
-     *        collection of <a>ClientCertificate</a> resources.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
+     *        resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetClientCertificatesResult withItems(
-            java.util.Collection<ClientCertificate> items) {
+    public GetClientCertificatesResult withItems(java.util.Collection<ClientCertificate> items) {
         setItems(items);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -178,13 +168,11 @@ public class GetClientCertificatesResult extends
         GetClientCertificatesResult other = (GetClientCertificatesResult) obj;
         if (other.getPosition() == null ^ this.getPosition() == null)
             return false;
-        if (other.getPosition() != null
-                && other.getPosition().equals(this.getPosition()) == false)
+        if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
             return false;
         if (other.getItems() == null ^ this.getItems() == null)
             return false;
-        if (other.getItems() != null
-                && other.getItems().equals(this.getItems()) == false)
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false)
             return false;
         return true;
     }
@@ -194,10 +182,8 @@ public class GetClientCertificatesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPosition() == null) ? 0 : getPosition().hashCode());
-        hashCode = prime * hashCode
-                + ((getItems() == null) ? 0 : getItems().hashCode());
+        hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());
         return hashCode;
     }
 
@@ -206,9 +192,7 @@ public class GetClientCertificatesResult extends
         try {
             return (GetClientCertificatesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

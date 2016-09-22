@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -18,30 +16,28 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides information about the EC2 instances in a cluster grouped by
- * category. For example, key name, subnet ID, IAM instance profile, and so on.
+ * Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM
+ * instance profile, and so on.
  * </p>
  */
 public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon EC2 key pair to use when connecting with SSH into
-     * the master node as a user named "hadoop".
+     * The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named
+     * "hadoop".
      * </p>
      */
     private String ec2KeyName;
     /**
      * <p>
-     * To launch the job flow in Amazon VPC, set this parameter to the
-     * identifier of the Amazon VPC subnet where you want the job flow to
-     * launch. If you do not specify this value, the job flow is launched in the
-     * normal AWS cloud, outside of a VPC.
+     * To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you
+     * want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud,
+     * outside of a VPC.
      * </p>
      * <p>
-     * Amazon VPC currently does not support cluster compute quadruple extra
-     * large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a job flow launched in a VPC.
+     * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you
+     * cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
      * </p>
      */
     private String ec2SubnetId;
@@ -53,8 +49,8 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
     private String ec2AvailabilityZone;
     /**
      * <p>
-     * The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.
+     * The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this
+     * role.
      * </p>
      */
     private String iamInstanceProfile;
@@ -72,8 +68,8 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
     private String emrManagedSlaveSecurityGroup;
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group for the Amazon EMR
-     * service to access clusters in VPC private subnets.
+     * The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private
+     * subnets.
      * </p>
      */
     private String serviceAccessSecurityGroup;
@@ -92,13 +88,13 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon EC2 key pair to use when connecting with SSH into
-     * the master node as a user named "hadoop".
+     * The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named
+     * "hadoop".
      * </p>
      * 
      * @param ec2KeyName
-     *        The name of the Amazon EC2 key pair to use when connecting with
-     *        SSH into the master node as a user named "hadoop".
+     *        The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named
+     *        "hadoop".
      */
 
     public void setEc2KeyName(String ec2KeyName) {
@@ -107,12 +103,12 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon EC2 key pair to use when connecting with SSH into
-     * the master node as a user named "hadoop".
+     * The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named
+     * "hadoop".
      * </p>
      * 
-     * @return The name of the Amazon EC2 key pair to use when connecting with
-     *         SSH into the master node as a user named "hadoop".
+     * @return The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named
+     *         "hadoop".
      */
 
     public String getEc2KeyName() {
@@ -121,15 +117,14 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon EC2 key pair to use when connecting with SSH into
-     * the master node as a user named "hadoop".
+     * The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named
+     * "hadoop".
      * </p>
      * 
      * @param ec2KeyName
-     *        The name of the Amazon EC2 key pair to use when connecting with
-     *        SSH into the master node as a user named "hadoop".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named
+     *        "hadoop".
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Ec2InstanceAttributes withEc2KeyName(String ec2KeyName) {
@@ -139,27 +134,22 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To launch the job flow in Amazon VPC, set this parameter to the
-     * identifier of the Amazon VPC subnet where you want the job flow to
-     * launch. If you do not specify this value, the job flow is launched in the
-     * normal AWS cloud, outside of a VPC.
+     * To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you
+     * want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud,
+     * outside of a VPC.
      * </p>
      * <p>
-     * Amazon VPC currently does not support cluster compute quadruple extra
-     * large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a job flow launched in a VPC.
+     * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you
+     * cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
      * </p>
      * 
      * @param ec2SubnetId
-     *        To launch the job flow in Amazon VPC, set this parameter to the
-     *        identifier of the Amazon VPC subnet where you want the job flow to
-     *        launch. If you do not specify this value, the job flow is launched
-     *        in the normal AWS cloud, outside of a VPC.</p>
+     *        To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where
+     *        you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal
+     *        AWS cloud, outside of a VPC.</p>
      *        <p>
-     *        Amazon VPC currently does not support cluster compute quadruple
-     *        extra large (cc1.4xlarge) instances. Thus, you cannot specify the
-     *        cc1.4xlarge instance type for nodes of a job flow launched in a
-     *        VPC.
+     *        Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus,
+     *        you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
      */
 
     public void setEc2SubnetId(String ec2SubnetId) {
@@ -168,26 +158,21 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To launch the job flow in Amazon VPC, set this parameter to the
-     * identifier of the Amazon VPC subnet where you want the job flow to
-     * launch. If you do not specify this value, the job flow is launched in the
-     * normal AWS cloud, outside of a VPC.
+     * To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you
+     * want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud,
+     * outside of a VPC.
      * </p>
      * <p>
-     * Amazon VPC currently does not support cluster compute quadruple extra
-     * large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a job flow launched in a VPC.
+     * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you
+     * cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
      * </p>
      * 
-     * @return To launch the job flow in Amazon VPC, set this parameter to the
-     *         identifier of the Amazon VPC subnet where you want the job flow
-     *         to launch. If you do not specify this value, the job flow is
-     *         launched in the normal AWS cloud, outside of a VPC.</p>
+     * @return To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where
+     *         you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal
+     *         AWS cloud, outside of a VPC.</p>
      *         <p>
-     *         Amazon VPC currently does not support cluster compute quadruple
-     *         extra large (cc1.4xlarge) instances. Thus, you cannot specify the
-     *         cc1.4xlarge instance type for nodes of a job flow launched in a
-     *         VPC.
+     *         Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances.
+     *         Thus, you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
      */
 
     public String getEc2SubnetId() {
@@ -196,29 +181,23 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To launch the job flow in Amazon VPC, set this parameter to the
-     * identifier of the Amazon VPC subnet where you want the job flow to
-     * launch. If you do not specify this value, the job flow is launched in the
-     * normal AWS cloud, outside of a VPC.
+     * To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you
+     * want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud,
+     * outside of a VPC.
      * </p>
      * <p>
-     * Amazon VPC currently does not support cluster compute quadruple extra
-     * large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a job flow launched in a VPC.
+     * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you
+     * cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
      * </p>
      * 
      * @param ec2SubnetId
-     *        To launch the job flow in Amazon VPC, set this parameter to the
-     *        identifier of the Amazon VPC subnet where you want the job flow to
-     *        launch. If you do not specify this value, the job flow is launched
-     *        in the normal AWS cloud, outside of a VPC.</p>
+     *        To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where
+     *        you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal
+     *        AWS cloud, outside of a VPC.</p>
      *        <p>
-     *        Amazon VPC currently does not support cluster compute quadruple
-     *        extra large (cc1.4xlarge) instances. Thus, you cannot specify the
-     *        cc1.4xlarge instance type for nodes of a job flow launched in a
-     *        VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus,
+     *        you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Ec2InstanceAttributes withEc2SubnetId(String ec2SubnetId) {
@@ -258,25 +237,23 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * 
      * @param ec2AvailabilityZone
      *        The Availability Zone in which the cluster will run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Ec2InstanceAttributes withEc2AvailabilityZone(
-            String ec2AvailabilityZone) {
+    public Ec2InstanceAttributes withEc2AvailabilityZone(String ec2AvailabilityZone) {
         setEc2AvailabilityZone(ec2AvailabilityZone);
         return this;
     }
 
     /**
      * <p>
-     * The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.
+     * The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this
+     * role.
      * </p>
      * 
      * @param iamInstanceProfile
-     *        The IAM role that was specified when the job flow was launched.
-     *        The EC2 instances of the job flow assume this role.
+     *        The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume
+     *        this role.
      */
 
     public void setIamInstanceProfile(String iamInstanceProfile) {
@@ -285,12 +262,12 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.
+     * The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this
+     * role.
      * </p>
      * 
-     * @return The IAM role that was specified when the job flow was launched.
-     *         The EC2 instances of the job flow assume this role.
+     * @return The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume
+     *         this role.
      */
 
     public String getIamInstanceProfile() {
@@ -299,19 +276,17 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.
+     * The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this
+     * role.
      * </p>
      * 
      * @param iamInstanceProfile
-     *        The IAM role that was specified when the job flow was launched.
-     *        The EC2 instances of the job flow assume this role.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume
+     *        this role.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Ec2InstanceAttributes withIamInstanceProfile(
-            String iamInstanceProfile) {
+    public Ec2InstanceAttributes withIamInstanceProfile(String iamInstanceProfile) {
         setIamInstanceProfile(iamInstanceProfile);
         return this;
     }
@@ -322,12 +297,10 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * </p>
      * 
      * @param emrManagedMasterSecurityGroup
-     *        The identifier of the Amazon EC2 security group for the master
-     *        node.
+     *        The identifier of the Amazon EC2 security group for the master node.
      */
 
-    public void setEmrManagedMasterSecurityGroup(
-            String emrManagedMasterSecurityGroup) {
+    public void setEmrManagedMasterSecurityGroup(String emrManagedMasterSecurityGroup) {
         this.emrManagedMasterSecurityGroup = emrManagedMasterSecurityGroup;
     }
 
@@ -336,8 +309,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * The identifier of the Amazon EC2 security group for the master node.
      * </p>
      * 
-     * @return The identifier of the Amazon EC2 security group for the master
-     *         node.
+     * @return The identifier of the Amazon EC2 security group for the master node.
      */
 
     public String getEmrManagedMasterSecurityGroup() {
@@ -350,14 +322,11 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * </p>
      * 
      * @param emrManagedMasterSecurityGroup
-     *        The identifier of the Amazon EC2 security group for the master
-     *        node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the Amazon EC2 security group for the master node.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Ec2InstanceAttributes withEmrManagedMasterSecurityGroup(
-            String emrManagedMasterSecurityGroup) {
+    public Ec2InstanceAttributes withEmrManagedMasterSecurityGroup(String emrManagedMasterSecurityGroup) {
         setEmrManagedMasterSecurityGroup(emrManagedMasterSecurityGroup);
         return this;
     }
@@ -368,12 +337,10 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * </p>
      * 
      * @param emrManagedSlaveSecurityGroup
-     *        The identifier of the Amazon EC2 security group for the slave
-     *        nodes.
+     *        The identifier of the Amazon EC2 security group for the slave nodes.
      */
 
-    public void setEmrManagedSlaveSecurityGroup(
-            String emrManagedSlaveSecurityGroup) {
+    public void setEmrManagedSlaveSecurityGroup(String emrManagedSlaveSecurityGroup) {
         this.emrManagedSlaveSecurityGroup = emrManagedSlaveSecurityGroup;
     }
 
@@ -382,8 +349,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * The identifier of the Amazon EC2 security group for the slave nodes.
      * </p>
      * 
-     * @return The identifier of the Amazon EC2 security group for the slave
-     *         nodes.
+     * @return The identifier of the Amazon EC2 security group for the slave nodes.
      */
 
     public String getEmrManagedSlaveSecurityGroup() {
@@ -396,27 +362,24 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * </p>
      * 
      * @param emrManagedSlaveSecurityGroup
-     *        The identifier of the Amazon EC2 security group for the slave
-     *        nodes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the Amazon EC2 security group for the slave nodes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Ec2InstanceAttributes withEmrManagedSlaveSecurityGroup(
-            String emrManagedSlaveSecurityGroup) {
+    public Ec2InstanceAttributes withEmrManagedSlaveSecurityGroup(String emrManagedSlaveSecurityGroup) {
         setEmrManagedSlaveSecurityGroup(emrManagedSlaveSecurityGroup);
         return this;
     }
 
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group for the Amazon EMR
-     * service to access clusters in VPC private subnets.
+     * The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private
+     * subnets.
      * </p>
      * 
      * @param serviceAccessSecurityGroup
-     *        The identifier of the Amazon EC2 security group for the Amazon EMR
-     *        service to access clusters in VPC private subnets.
+     *        The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC
+     *        private subnets.
      */
 
     public void setServiceAccessSecurityGroup(String serviceAccessSecurityGroup) {
@@ -425,12 +388,12 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group for the Amazon EMR
-     * service to access clusters in VPC private subnets.
+     * The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private
+     * subnets.
      * </p>
      * 
-     * @return The identifier of the Amazon EC2 security group for the Amazon
-     *         EMR service to access clusters in VPC private subnets.
+     * @return The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC
+     *         private subnets.
      */
 
     public String getServiceAccessSecurityGroup() {
@@ -439,19 +402,17 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group for the Amazon EMR
-     * service to access clusters in VPC private subnets.
+     * The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private
+     * subnets.
      * </p>
      * 
      * @param serviceAccessSecurityGroup
-     *        The identifier of the Amazon EC2 security group for the Amazon EMR
-     *        service to access clusters in VPC private subnets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC
+     *        private subnets.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Ec2InstanceAttributes withServiceAccessSecurityGroup(
-            String serviceAccessSecurityGroup) {
+    public Ec2InstanceAttributes withServiceAccessSecurityGroup(String serviceAccessSecurityGroup) {
         setServiceAccessSecurityGroup(serviceAccessSecurityGroup);
         return this;
     }
@@ -461,8 +422,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * A list of additional Amazon EC2 security group IDs for the master node.
      * </p>
      * 
-     * @return A list of additional Amazon EC2 security group IDs for the master
-     *         node.
+     * @return A list of additional Amazon EC2 security group IDs for the master node.
      */
 
     public java.util.List<String> getAdditionalMasterSecurityGroups() {
@@ -478,19 +438,16 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * </p>
      * 
      * @param additionalMasterSecurityGroups
-     *        A list of additional Amazon EC2 security group IDs for the master
-     *        node.
+     *        A list of additional Amazon EC2 security group IDs for the master node.
      */
 
-    public void setAdditionalMasterSecurityGroups(
-            java.util.Collection<String> additionalMasterSecurityGroups) {
+    public void setAdditionalMasterSecurityGroups(java.util.Collection<String> additionalMasterSecurityGroups) {
         if (additionalMasterSecurityGroups == null) {
             this.additionalMasterSecurityGroups = null;
             return;
         }
 
-        this.additionalMasterSecurityGroups = new com.amazonaws.internal.SdkInternalList<String>(
-                additionalMasterSecurityGroups);
+        this.additionalMasterSecurityGroups = new com.amazonaws.internal.SdkInternalList<String>(additionalMasterSecurityGroups);
     }
 
     /**
@@ -498,25 +455,19 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * A list of additional Amazon EC2 security group IDs for the master node.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAdditionalMasterSecurityGroups(java.util.Collection)} or
-     * {@link #withAdditionalMasterSecurityGroups(java.util.Collection)} if you
-     * want to override the existing values.
+     * {@link #withAdditionalMasterSecurityGroups(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param additionalMasterSecurityGroups
-     *        A list of additional Amazon EC2 security group IDs for the master
-     *        node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of additional Amazon EC2 security group IDs for the master node.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Ec2InstanceAttributes withAdditionalMasterSecurityGroups(
-            String... additionalMasterSecurityGroups) {
+    public Ec2InstanceAttributes withAdditionalMasterSecurityGroups(String... additionalMasterSecurityGroups) {
         if (this.additionalMasterSecurityGroups == null) {
-            setAdditionalMasterSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
-                    additionalMasterSecurityGroups.length));
+            setAdditionalMasterSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(additionalMasterSecurityGroups.length));
         }
         for (String ele : additionalMasterSecurityGroups) {
             this.additionalMasterSecurityGroups.add(ele);
@@ -530,14 +481,11 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * </p>
      * 
      * @param additionalMasterSecurityGroups
-     *        A list of additional Amazon EC2 security group IDs for the master
-     *        node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of additional Amazon EC2 security group IDs for the master node.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Ec2InstanceAttributes withAdditionalMasterSecurityGroups(
-            java.util.Collection<String> additionalMasterSecurityGroups) {
+    public Ec2InstanceAttributes withAdditionalMasterSecurityGroups(java.util.Collection<String> additionalMasterSecurityGroups) {
         setAdditionalMasterSecurityGroups(additionalMasterSecurityGroups);
         return this;
     }
@@ -547,8 +495,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * A list of additional Amazon EC2 security group IDs for the slave nodes.
      * </p>
      * 
-     * @return A list of additional Amazon EC2 security group IDs for the slave
-     *         nodes.
+     * @return A list of additional Amazon EC2 security group IDs for the slave nodes.
      */
 
     public java.util.List<String> getAdditionalSlaveSecurityGroups() {
@@ -564,19 +511,16 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * </p>
      * 
      * @param additionalSlaveSecurityGroups
-     *        A list of additional Amazon EC2 security group IDs for the slave
-     *        nodes.
+     *        A list of additional Amazon EC2 security group IDs for the slave nodes.
      */
 
-    public void setAdditionalSlaveSecurityGroups(
-            java.util.Collection<String> additionalSlaveSecurityGroups) {
+    public void setAdditionalSlaveSecurityGroups(java.util.Collection<String> additionalSlaveSecurityGroups) {
         if (additionalSlaveSecurityGroups == null) {
             this.additionalSlaveSecurityGroups = null;
             return;
         }
 
-        this.additionalSlaveSecurityGroups = new com.amazonaws.internal.SdkInternalList<String>(
-                additionalSlaveSecurityGroups);
+        this.additionalSlaveSecurityGroups = new com.amazonaws.internal.SdkInternalList<String>(additionalSlaveSecurityGroups);
     }
 
     /**
@@ -584,24 +528,19 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * A list of additional Amazon EC2 security group IDs for the slave nodes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAdditionalSlaveSecurityGroups(java.util.Collection)}
-     * or {@link #withAdditionalSlaveSecurityGroups(java.util.Collection)} if
-     * you want to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalSlaveSecurityGroups(java.util.Collection)} or
+     * {@link #withAdditionalSlaveSecurityGroups(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param additionalSlaveSecurityGroups
-     *        A list of additional Amazon EC2 security group IDs for the slave
-     *        nodes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of additional Amazon EC2 security group IDs for the slave nodes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Ec2InstanceAttributes withAdditionalSlaveSecurityGroups(
-            String... additionalSlaveSecurityGroups) {
+    public Ec2InstanceAttributes withAdditionalSlaveSecurityGroups(String... additionalSlaveSecurityGroups) {
         if (this.additionalSlaveSecurityGroups == null) {
-            setAdditionalSlaveSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
-                    additionalSlaveSecurityGroups.length));
+            setAdditionalSlaveSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(additionalSlaveSecurityGroups.length));
         }
         for (String ele : additionalSlaveSecurityGroups) {
             this.additionalSlaveSecurityGroups.add(ele);
@@ -615,21 +554,17 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * </p>
      * 
      * @param additionalSlaveSecurityGroups
-     *        A list of additional Amazon EC2 security group IDs for the slave
-     *        nodes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of additional Amazon EC2 security group IDs for the slave nodes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Ec2InstanceAttributes withAdditionalSlaveSecurityGroups(
-            java.util.Collection<String> additionalSlaveSecurityGroups) {
+    public Ec2InstanceAttributes withAdditionalSlaveSecurityGroups(java.util.Collection<String> additionalSlaveSecurityGroups) {
         setAdditionalSlaveSecurityGroups(additionalSlaveSecurityGroups);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -648,20 +583,15 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
         if (getIamInstanceProfile() != null)
             sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");
         if (getEmrManagedMasterSecurityGroup() != null)
-            sb.append("EmrManagedMasterSecurityGroup: "
-                    + getEmrManagedMasterSecurityGroup() + ",");
+            sb.append("EmrManagedMasterSecurityGroup: " + getEmrManagedMasterSecurityGroup() + ",");
         if (getEmrManagedSlaveSecurityGroup() != null)
-            sb.append("EmrManagedSlaveSecurityGroup: "
-                    + getEmrManagedSlaveSecurityGroup() + ",");
+            sb.append("EmrManagedSlaveSecurityGroup: " + getEmrManagedSlaveSecurityGroup() + ",");
         if (getServiceAccessSecurityGroup() != null)
-            sb.append("ServiceAccessSecurityGroup: "
-                    + getServiceAccessSecurityGroup() + ",");
+            sb.append("ServiceAccessSecurityGroup: " + getServiceAccessSecurityGroup() + ",");
         if (getAdditionalMasterSecurityGroups() != null)
-            sb.append("AdditionalMasterSecurityGroups: "
-                    + getAdditionalMasterSecurityGroups() + ",");
+            sb.append("AdditionalMasterSecurityGroups: " + getAdditionalMasterSecurityGroups() + ",");
         if (getAdditionalSlaveSecurityGroups() != null)
-            sb.append("AdditionalSlaveSecurityGroups: "
-                    + getAdditionalSlaveSecurityGroups());
+            sb.append("AdditionalSlaveSecurityGroups: " + getAdditionalSlaveSecurityGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -678,62 +608,42 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
         Ec2InstanceAttributes other = (Ec2InstanceAttributes) obj;
         if (other.getEc2KeyName() == null ^ this.getEc2KeyName() == null)
             return false;
-        if (other.getEc2KeyName() != null
-                && other.getEc2KeyName().equals(this.getEc2KeyName()) == false)
+        if (other.getEc2KeyName() != null && other.getEc2KeyName().equals(this.getEc2KeyName()) == false)
             return false;
         if (other.getEc2SubnetId() == null ^ this.getEc2SubnetId() == null)
             return false;
-        if (other.getEc2SubnetId() != null
-                && other.getEc2SubnetId().equals(this.getEc2SubnetId()) == false)
+        if (other.getEc2SubnetId() != null && other.getEc2SubnetId().equals(this.getEc2SubnetId()) == false)
             return false;
-        if (other.getEc2AvailabilityZone() == null
-                ^ this.getEc2AvailabilityZone() == null)
+        if (other.getEc2AvailabilityZone() == null ^ this.getEc2AvailabilityZone() == null)
             return false;
-        if (other.getEc2AvailabilityZone() != null
-                && other.getEc2AvailabilityZone().equals(
-                        this.getEc2AvailabilityZone()) == false)
+        if (other.getEc2AvailabilityZone() != null && other.getEc2AvailabilityZone().equals(this.getEc2AvailabilityZone()) == false)
             return false;
-        if (other.getIamInstanceProfile() == null
-                ^ this.getIamInstanceProfile() == null)
+        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null)
             return false;
-        if (other.getIamInstanceProfile() != null
-                && other.getIamInstanceProfile().equals(
-                        this.getIamInstanceProfile()) == false)
+        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false)
             return false;
-        if (other.getEmrManagedMasterSecurityGroup() == null
-                ^ this.getEmrManagedMasterSecurityGroup() == null)
+        if (other.getEmrManagedMasterSecurityGroup() == null ^ this.getEmrManagedMasterSecurityGroup() == null)
             return false;
         if (other.getEmrManagedMasterSecurityGroup() != null
-                && other.getEmrManagedMasterSecurityGroup().equals(
-                        this.getEmrManagedMasterSecurityGroup()) == false)
+                && other.getEmrManagedMasterSecurityGroup().equals(this.getEmrManagedMasterSecurityGroup()) == false)
             return false;
-        if (other.getEmrManagedSlaveSecurityGroup() == null
-                ^ this.getEmrManagedSlaveSecurityGroup() == null)
+        if (other.getEmrManagedSlaveSecurityGroup() == null ^ this.getEmrManagedSlaveSecurityGroup() == null)
             return false;
-        if (other.getEmrManagedSlaveSecurityGroup() != null
-                && other.getEmrManagedSlaveSecurityGroup().equals(
-                        this.getEmrManagedSlaveSecurityGroup()) == false)
+        if (other.getEmrManagedSlaveSecurityGroup() != null && other.getEmrManagedSlaveSecurityGroup().equals(this.getEmrManagedSlaveSecurityGroup()) == false)
             return false;
-        if (other.getServiceAccessSecurityGroup() == null
-                ^ this.getServiceAccessSecurityGroup() == null)
+        if (other.getServiceAccessSecurityGroup() == null ^ this.getServiceAccessSecurityGroup() == null)
             return false;
-        if (other.getServiceAccessSecurityGroup() != null
-                && other.getServiceAccessSecurityGroup().equals(
-                        this.getServiceAccessSecurityGroup()) == false)
+        if (other.getServiceAccessSecurityGroup() != null && other.getServiceAccessSecurityGroup().equals(this.getServiceAccessSecurityGroup()) == false)
             return false;
-        if (other.getAdditionalMasterSecurityGroups() == null
-                ^ this.getAdditionalMasterSecurityGroups() == null)
+        if (other.getAdditionalMasterSecurityGroups() == null ^ this.getAdditionalMasterSecurityGroups() == null)
             return false;
         if (other.getAdditionalMasterSecurityGroups() != null
-                && other.getAdditionalMasterSecurityGroups().equals(
-                        this.getAdditionalMasterSecurityGroups()) == false)
+                && other.getAdditionalMasterSecurityGroups().equals(this.getAdditionalMasterSecurityGroups()) == false)
             return false;
-        if (other.getAdditionalSlaveSecurityGroups() == null
-                ^ this.getAdditionalSlaveSecurityGroups() == null)
+        if (other.getAdditionalSlaveSecurityGroups() == null ^ this.getAdditionalSlaveSecurityGroups() == null)
             return false;
         if (other.getAdditionalSlaveSecurityGroups() != null
-                && other.getAdditionalSlaveSecurityGroups().equals(
-                        this.getAdditionalSlaveSecurityGroups()) == false)
+                && other.getAdditionalSlaveSecurityGroups().equals(this.getAdditionalSlaveSecurityGroups()) == false)
             return false;
         return true;
     }
@@ -743,39 +653,15 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getEc2KeyName() == null) ? 0 : getEc2KeyName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEc2SubnetId() == null) ? 0 : getEc2SubnetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEc2AvailabilityZone() == null) ? 0
-                        : getEc2AvailabilityZone().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIamInstanceProfile() == null) ? 0
-                        : getIamInstanceProfile().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEmrManagedMasterSecurityGroup() == null) ? 0
-                        : getEmrManagedMasterSecurityGroup().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEmrManagedSlaveSecurityGroup() == null) ? 0
-                        : getEmrManagedSlaveSecurityGroup().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getServiceAccessSecurityGroup() == null) ? 0
-                        : getServiceAccessSecurityGroup().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAdditionalMasterSecurityGroups() == null) ? 0
-                        : getAdditionalMasterSecurityGroups().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAdditionalSlaveSecurityGroups() == null) ? 0
-                        : getAdditionalSlaveSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getEc2KeyName() == null) ? 0 : getEc2KeyName().hashCode());
+        hashCode = prime * hashCode + ((getEc2SubnetId() == null) ? 0 : getEc2SubnetId().hashCode());
+        hashCode = prime * hashCode + ((getEc2AvailabilityZone() == null) ? 0 : getEc2AvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
+        hashCode = prime * hashCode + ((getEmrManagedMasterSecurityGroup() == null) ? 0 : getEmrManagedMasterSecurityGroup().hashCode());
+        hashCode = prime * hashCode + ((getEmrManagedSlaveSecurityGroup() == null) ? 0 : getEmrManagedSlaveSecurityGroup().hashCode());
+        hashCode = prime * hashCode + ((getServiceAccessSecurityGroup() == null) ? 0 : getServiceAccessSecurityGroup().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalMasterSecurityGroups() == null) ? 0 : getAdditionalMasterSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalSlaveSecurityGroups() == null) ? 0 : getAdditionalSlaveSecurityGroups().hashCode());
         return hashCode;
     }
 
@@ -784,9 +670,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
         try {
             return (Ec2InstanceAttributes) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

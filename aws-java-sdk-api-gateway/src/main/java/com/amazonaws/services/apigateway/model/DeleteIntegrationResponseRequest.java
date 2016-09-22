@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a delete integration response request.
  * </p>
  */
-public class DeleteIntegrationResponseRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -83,8 +79,7 @@ public class DeleteIntegrationResponseRequest extends
      * 
      * @param restApiId
      *        Specifies a delete integration response request's API identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteIntegrationResponseRequest withRestApiId(String restApiId) {
@@ -98,8 +93,7 @@ public class DeleteIntegrationResponseRequest extends
      * </p>
      * 
      * @param resourceId
-     *        Specifies a delete integration response request's resource
-     *        identifier.
+     *        Specifies a delete integration response request's resource identifier.
      */
 
     public void setResourceId(String resourceId) {
@@ -111,8 +105,7 @@ public class DeleteIntegrationResponseRequest extends
      * Specifies a delete integration response request's resource identifier.
      * </p>
      * 
-     * @return Specifies a delete integration response request's resource
-     *         identifier.
+     * @return Specifies a delete integration response request's resource identifier.
      */
 
     public String getResourceId() {
@@ -125,10 +118,8 @@ public class DeleteIntegrationResponseRequest extends
      * </p>
      * 
      * @param resourceId
-     *        Specifies a delete integration response request's resource
-     *        identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies a delete integration response request's resource identifier.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteIntegrationResponseRequest withResourceId(String resourceId) {
@@ -168,8 +159,7 @@ public class DeleteIntegrationResponseRequest extends
      * 
      * @param httpMethod
      *        Specifies a delete integration response request's HTTP method.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteIntegrationResponseRequest withHttpMethod(String httpMethod) {
@@ -209,8 +199,7 @@ public class DeleteIntegrationResponseRequest extends
      * 
      * @param statusCode
      *        Specifies a delete integration response request's status code.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteIntegrationResponseRequest withStatusCode(String statusCode) {
@@ -219,8 +208,7 @@ public class DeleteIntegrationResponseRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -254,23 +242,19 @@ public class DeleteIntegrationResponseRequest extends
         DeleteIntegrationResponseRequest other = (DeleteIntegrationResponseRequest) obj;
         if (other.getRestApiId() == null ^ this.getRestApiId() == null)
             return false;
-        if (other.getRestApiId() != null
-                && other.getRestApiId().equals(this.getRestApiId()) == false)
+        if (other.getRestApiId() != null && other.getRestApiId().equals(this.getRestApiId()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getHttpMethod() == null ^ this.getHttpMethod() == null)
             return false;
-        if (other.getHttpMethod() != null
-                && other.getHttpMethod().equals(this.getHttpMethod()) == false)
+        if (other.getHttpMethod() != null && other.getHttpMethod().equals(this.getHttpMethod()) == false)
             return false;
         if (other.getStatusCode() == null ^ this.getStatusCode() == null)
             return false;
-        if (other.getStatusCode() != null
-                && other.getStatusCode().equals(this.getStatusCode()) == false)
+        if (other.getStatusCode() != null && other.getStatusCode().equals(this.getStatusCode()) == false)
             return false;
         return true;
     }
@@ -280,14 +264,10 @@ public class DeleteIntegrationResponseRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getHttpMethod() == null) ? 0 : getHttpMethod().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
+        hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getHttpMethod() == null) ? 0 : getHttpMethod().hashCode());
+        hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model;
 
@@ -22,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>EnableRadius</a> operation.
  * </p>
  */
-public class EnableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class EnableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +30,7 @@ public class EnableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest
     private String directoryId;
     /**
      * <p>
-     * A <a>RadiusSettings</a> object that contains information about the RADIUS
-     * server.
+     * A <a>RadiusSettings</a> object that contains information about the RADIUS server.
      * </p>
      */
     private RadiusSettings radiusSettings;
@@ -71,8 +67,7 @@ public class EnableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param directoryId
      *        The identifier of the directory for which to enable MFA.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EnableRadiusRequest withDirectoryId(String directoryId) {
@@ -82,13 +77,11 @@ public class EnableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A <a>RadiusSettings</a> object that contains information about the RADIUS
-     * server.
+     * A <a>RadiusSettings</a> object that contains information about the RADIUS server.
      * </p>
      * 
      * @param radiusSettings
-     *        A <a>RadiusSettings</a> object that contains information about the
-     *        RADIUS server.
+     *        A <a>RadiusSettings</a> object that contains information about the RADIUS server.
      */
 
     public void setRadiusSettings(RadiusSettings radiusSettings) {
@@ -97,12 +90,10 @@ public class EnableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A <a>RadiusSettings</a> object that contains information about the RADIUS
-     * server.
+     * A <a>RadiusSettings</a> object that contains information about the RADIUS server.
      * </p>
      * 
-     * @return A <a>RadiusSettings</a> object that contains information about
-     *         the RADIUS server.
+     * @return A <a>RadiusSettings</a> object that contains information about the RADIUS server.
      */
 
     public RadiusSettings getRadiusSettings() {
@@ -111,15 +102,12 @@ public class EnableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A <a>RadiusSettings</a> object that contains information about the RADIUS
-     * server.
+     * A <a>RadiusSettings</a> object that contains information about the RADIUS server.
      * </p>
      * 
      * @param radiusSettings
-     *        A <a>RadiusSettings</a> object that contains information about the
-     *        RADIUS server.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <a>RadiusSettings</a> object that contains information about the RADIUS server.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EnableRadiusRequest withRadiusSettings(RadiusSettings radiusSettings) {
@@ -128,8 +116,7 @@ public class EnableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -159,14 +146,11 @@ public class EnableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest
         EnableRadiusRequest other = (EnableRadiusRequest) obj;
         if (other.getDirectoryId() == null ^ this.getDirectoryId() == null)
             return false;
-        if (other.getDirectoryId() != null
-                && other.getDirectoryId().equals(this.getDirectoryId()) == false)
+        if (other.getDirectoryId() != null && other.getDirectoryId().equals(this.getDirectoryId()) == false)
             return false;
-        if (other.getRadiusSettings() == null
-                ^ this.getRadiusSettings() == null)
+        if (other.getRadiusSettings() == null ^ this.getRadiusSettings() == null)
             return false;
-        if (other.getRadiusSettings() != null
-                && other.getRadiusSettings().equals(this.getRadiusSettings()) == false)
+        if (other.getRadiusSettings() != null && other.getRadiusSettings().equals(this.getRadiusSettings()) == false)
             return false;
         return true;
     }
@@ -176,13 +160,8 @@ public class EnableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRadiusSettings() == null) ? 0 : getRadiusSettings()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getRadiusSettings() == null) ? 0 : getRadiusSettings().hashCode());
         return hashCode;
     }
 

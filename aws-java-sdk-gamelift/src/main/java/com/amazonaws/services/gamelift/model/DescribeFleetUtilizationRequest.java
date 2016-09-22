@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -22,48 +20,39 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for a request action.
  * </p>
  */
-public class DescribeFleetUtilizationRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeFleetUtilizationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the fleet(s) you want to retrieve utilization data
-     * for. To request utilization data for all fleets, leave this parameter
-     * empty.
+     * Unique identifier for the fleet(s) you want to retrieve utilization data for. To request utilization data for all
+     * fleets, leave this parameter empty.
      * </p>
      */
     private java.util.List<String> fleetIds;
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages. This
-     * parameter is ignored when the request specifies one or a list of fleet
-     * IDs.
+     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
+     * sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To
-     * specify the start of the result set, do not specify a value. This
-     * parameter is ignored when the request specifies one or a list of fleet
-     * IDs.
+     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
+     * call to this action. To specify the start of the result set, do not specify a value. This parameter is ignored
+     * when the request specifies one or a list of fleet IDs.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Unique identifier for the fleet(s) you want to retrieve utilization data
-     * for. To request utilization data for all fleets, leave this parameter
-     * empty.
+     * Unique identifier for the fleet(s) you want to retrieve utilization data for. To request utilization data for all
+     * fleets, leave this parameter empty.
      * </p>
      * 
-     * @return Unique identifier for the fleet(s) you want to retrieve
-     *         utilization data for. To request utilization data for all fleets,
-     *         leave this parameter empty.
+     * @return Unique identifier for the fleet(s) you want to retrieve utilization data for. To request utilization data
+     *         for all fleets, leave this parameter empty.
      */
 
     public java.util.List<String> getFleetIds() {
@@ -72,15 +61,13 @@ public class DescribeFleetUtilizationRequest extends
 
     /**
      * <p>
-     * Unique identifier for the fleet(s) you want to retrieve utilization data
-     * for. To request utilization data for all fleets, leave this parameter
-     * empty.
+     * Unique identifier for the fleet(s) you want to retrieve utilization data for. To request utilization data for all
+     * fleets, leave this parameter empty.
      * </p>
      * 
      * @param fleetIds
-     *        Unique identifier for the fleet(s) you want to retrieve
-     *        utilization data for. To request utilization data for all fleets,
-     *        leave this parameter empty.
+     *        Unique identifier for the fleet(s) you want to retrieve utilization data for. To request utilization data
+     *        for all fleets, leave this parameter empty.
      */
 
     public void setFleetIds(java.util.Collection<String> fleetIds) {
@@ -94,23 +81,19 @@ public class DescribeFleetUtilizationRequest extends
 
     /**
      * <p>
-     * Unique identifier for the fleet(s) you want to retrieve utilization data
-     * for. To request utilization data for all fleets, leave this parameter
-     * empty.
+     * Unique identifier for the fleet(s) you want to retrieve utilization data for. To request utilization data for all
+     * fleets, leave this parameter empty.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFleetIds(java.util.Collection)} or
-     * {@link #withFleetIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFleetIds(java.util.Collection)} or {@link #withFleetIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param fleetIds
-     *        Unique identifier for the fleet(s) you want to retrieve
-     *        utilization data for. To request utilization data for all fleets,
-     *        leave this parameter empty.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique identifier for the fleet(s) you want to retrieve utilization data for. To request utilization data
+     *        for all fleets, leave this parameter empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeFleetUtilizationRequest withFleetIds(String... fleetIds) {
@@ -125,38 +108,30 @@ public class DescribeFleetUtilizationRequest extends
 
     /**
      * <p>
-     * Unique identifier for the fleet(s) you want to retrieve utilization data
-     * for. To request utilization data for all fleets, leave this parameter
-     * empty.
+     * Unique identifier for the fleet(s) you want to retrieve utilization data for. To request utilization data for all
+     * fleets, leave this parameter empty.
      * </p>
      * 
      * @param fleetIds
-     *        Unique identifier for the fleet(s) you want to retrieve
-     *        utilization data for. To request utilization data for all fleets,
-     *        leave this parameter empty.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique identifier for the fleet(s) you want to retrieve utilization data for. To request utilization data
+     *        for all fleets, leave this parameter empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeFleetUtilizationRequest withFleetIds(
-            java.util.Collection<String> fleetIds) {
+    public DescribeFleetUtilizationRequest withFleetIds(java.util.Collection<String> fleetIds) {
         setFleetIds(fleetIds);
         return this;
     }
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages. This
-     * parameter is ignored when the request specifies one or a list of fleet
-     * IDs.
+     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
+     * sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with
-     *        <code>NextToken</code> to get results as a set of sequential
-     *        pages. This parameter is ignored when the request specifies one or
-     *        a list of fleet IDs.
+     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
+     *        set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
      */
 
     public void setLimit(Integer limit) {
@@ -165,16 +140,12 @@ public class DescribeFleetUtilizationRequest extends
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages. This
-     * parameter is ignored when the request specifies one or a list of fleet
-     * IDs.
+     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
+     * sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
-     * @return Maximum number of results to return. Use this parameter with
-     *         <code>NextToken</code> to get results as a set of sequential
-     *         pages. This parameter is ignored when the request specifies one
-     *         or a list of fleet IDs.
+     * @return Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
+     *         set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
      */
 
     public Integer getLimit() {
@@ -183,19 +154,14 @@ public class DescribeFleetUtilizationRequest extends
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages. This
-     * parameter is ignored when the request specifies one or a list of fleet
-     * IDs.
+     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
+     * sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with
-     *        <code>NextToken</code> to get results as a set of sequential
-     *        pages. This parameter is ignored when the request specifies one or
-     *        a list of fleet IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
+     *        set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeFleetUtilizationRequest withLimit(Integer limit) {
@@ -205,19 +171,15 @@ public class DescribeFleetUtilizationRequest extends
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To
-     * specify the start of the result set, do not specify a value. This
-     * parameter is ignored when the request specifies one or a list of fleet
-     * IDs.
+     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
+     * call to this action. To specify the start of the result set, do not specify a value. This parameter is ignored
+     * when the request specifies one or a list of fleet IDs.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results.
-     *        Use the token that is returned with a previous call to this
-     *        action. To specify the start of the result set, do not specify a
-     *        value. This parameter is ignored when the request specifies one or
-     *        a list of fleet IDs.
+     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
+     *        previous call to this action. To specify the start of the result set, do not specify a value. This
+     *        parameter is ignored when the request specifies one or a list of fleet IDs.
      */
 
     public void setNextToken(String nextToken) {
@@ -226,18 +188,14 @@ public class DescribeFleetUtilizationRequest extends
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To
-     * specify the start of the result set, do not specify a value. This
-     * parameter is ignored when the request specifies one or a list of fleet
-     * IDs.
+     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
+     * call to this action. To specify the start of the result set, do not specify a value. This parameter is ignored
+     * when the request specifies one or a list of fleet IDs.
      * </p>
      * 
-     * @return Token indicating the start of the next sequential page of
-     *         results. Use the token that is returned with a previous call to
-     *         this action. To specify the start of the result set, do not
-     *         specify a value. This parameter is ignored when the request
-     *         specifies one or a list of fleet IDs.
+     * @return Token indicating the start of the next sequential page of results. Use the token that is returned with a
+     *         previous call to this action. To specify the start of the result set, do not specify a value. This
+     *         parameter is ignored when the request specifies one or a list of fleet IDs.
      */
 
     public String getNextToken() {
@@ -246,21 +204,16 @@ public class DescribeFleetUtilizationRequest extends
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To
-     * specify the start of the result set, do not specify a value. This
-     * parameter is ignored when the request specifies one or a list of fleet
-     * IDs.
+     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
+     * call to this action. To specify the start of the result set, do not specify a value. This parameter is ignored
+     * when the request specifies one or a list of fleet IDs.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results.
-     *        Use the token that is returned with a previous call to this
-     *        action. To specify the start of the result set, do not specify a
-     *        value. This parameter is ignored when the request specifies one or
-     *        a list of fleet IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
+     *        previous call to this action. To specify the start of the result set, do not specify a value. This
+     *        parameter is ignored when the request specifies one or a list of fleet IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeFleetUtilizationRequest withNextToken(String nextToken) {
@@ -269,8 +222,7 @@ public class DescribeFleetUtilizationRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -302,18 +254,15 @@ public class DescribeFleetUtilizationRequest extends
         DescribeFleetUtilizationRequest other = (DescribeFleetUtilizationRequest) obj;
         if (other.getFleetIds() == null ^ this.getFleetIds() == null)
             return false;
-        if (other.getFleetIds() != null
-                && other.getFleetIds().equals(this.getFleetIds()) == false)
+        if (other.getFleetIds() != null && other.getFleetIds().equals(this.getFleetIds()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -323,12 +272,9 @@ public class DescribeFleetUtilizationRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFleetIds() == null) ? 0 : getFleetIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFleetIds() == null) ? 0 : getFleetIds().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

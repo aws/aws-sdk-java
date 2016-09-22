@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.importexport.model;
 
@@ -47,8 +45,7 @@ public class Job implements Serializable, Cloneable {
 
     /**
      * @param jobId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Job withJobId(String jobId) {
@@ -74,8 +71,7 @@ public class Job implements Serializable, Cloneable {
 
     /**
      * @param creationDate
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Job withCreationDate(java.util.Date creationDate) {
@@ -101,8 +97,7 @@ public class Job implements Serializable, Cloneable {
 
     /**
      * @param isCanceled
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Job withIsCanceled(Boolean isCanceled) {
@@ -138,8 +133,7 @@ public class Job implements Serializable, Cloneable {
 
     /**
      * @param jobType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */
 
@@ -159,8 +153,7 @@ public class Job implements Serializable, Cloneable {
 
     /**
      * @param jobType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */
 
@@ -170,8 +163,7 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -205,23 +197,19 @@ public class Job implements Serializable, Cloneable {
         Job other = (Job) obj;
         if (other.getJobId() == null ^ this.getJobId() == null)
             return false;
-        if (other.getJobId() != null
-                && other.getJobId().equals(this.getJobId()) == false)
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
-        if (other.getCreationDate() != null
-                && other.getCreationDate().equals(this.getCreationDate()) == false)
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
         if (other.getIsCanceled() == null ^ this.getIsCanceled() == null)
             return false;
-        if (other.getIsCanceled() != null
-                && other.getIsCanceled().equals(this.getIsCanceled()) == false)
+        if (other.getIsCanceled() != null && other.getIsCanceled().equals(this.getIsCanceled()) == false)
             return false;
         if (other.getJobType() == null ^ this.getJobType() == null)
             return false;
-        if (other.getJobType() != null
-                && other.getJobType().equals(this.getJobType()) == false)
+        if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
             return false;
         return true;
     }
@@ -231,16 +219,10 @@ public class Job implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJobId() == null) ? 0 : getJobId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDate() == null) ? 0 : getCreationDate()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getIsCanceled() == null) ? 0 : getIsCanceled().hashCode());
-        hashCode = prime * hashCode
-                + ((getJobType() == null) ? 0 : getJobType().hashCode());
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getIsCanceled() == null) ? 0 : getIsCanceled().hashCode());
+        hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
         return hashCode;
     }
 
@@ -249,9 +231,7 @@ public class Job implements Serializable, Cloneable {
         try {
             return (Job) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

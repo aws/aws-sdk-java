@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -86,8 +84,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * 
      * @param ruleArn
      *        The rule ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TopicRuleListItem withRuleArn(String ruleArn) {
@@ -127,8 +124,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * 
      * @param ruleName
      *        The name of the rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TopicRuleListItem withRuleName(String ruleName) {
@@ -168,8 +164,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * 
      * @param topicPattern
      *        The pattern for the topic names that apply.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TopicRuleListItem withTopicPattern(String topicPattern) {
@@ -209,8 +204,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * 
      * @param createdAt
      *        The date and time the rule was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TopicRuleListItem withCreatedAt(java.util.Date createdAt) {
@@ -250,8 +244,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * 
      * @param ruleDisabled
      *        Specifies whether the rule is disabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TopicRuleListItem withRuleDisabled(Boolean ruleDisabled) {
@@ -272,8 +265,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -309,28 +301,23 @@ public class TopicRuleListItem implements Serializable, Cloneable {
         TopicRuleListItem other = (TopicRuleListItem) obj;
         if (other.getRuleArn() == null ^ this.getRuleArn() == null)
             return false;
-        if (other.getRuleArn() != null
-                && other.getRuleArn().equals(this.getRuleArn()) == false)
+        if (other.getRuleArn() != null && other.getRuleArn().equals(this.getRuleArn()) == false)
             return false;
         if (other.getRuleName() == null ^ this.getRuleName() == null)
             return false;
-        if (other.getRuleName() != null
-                && other.getRuleName().equals(this.getRuleName()) == false)
+        if (other.getRuleName() != null && other.getRuleName().equals(this.getRuleName()) == false)
             return false;
         if (other.getTopicPattern() == null ^ this.getTopicPattern() == null)
             return false;
-        if (other.getTopicPattern() != null
-                && other.getTopicPattern().equals(this.getTopicPattern()) == false)
+        if (other.getTopicPattern() != null && other.getTopicPattern().equals(this.getTopicPattern()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getCreatedAt() != null
-                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getRuleDisabled() == null ^ this.getRuleDisabled() == null)
             return false;
-        if (other.getRuleDisabled() != null
-                && other.getRuleDisabled().equals(this.getRuleDisabled()) == false)
+        if (other.getRuleDisabled() != null && other.getRuleDisabled().equals(this.getRuleDisabled()) == false)
             return false;
         return true;
     }
@@ -340,20 +327,11 @@ public class TopicRuleListItem implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRuleArn() == null) ? 0 : getRuleArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTopicPattern() == null) ? 0 : getTopicPattern()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRuleDisabled() == null) ? 0 : getRuleDisabled()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRuleArn() == null) ? 0 : getRuleArn().hashCode());
+        hashCode = prime * hashCode + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
+        hashCode = prime * hashCode + ((getTopicPattern() == null) ? 0 : getTopicPattern().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getRuleDisabled() == null) ? 0 : getRuleDisabled().hashCode());
         return hashCode;
     }
 
@@ -362,9 +340,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
         try {
             return (TopicRuleListItem) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class AssignInstanceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class AssignInstanceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,8 +28,8 @@ public class AssignInstanceRequest extends
     private String instanceId;
     /**
      * <p>
-     * The layer ID, which must correspond to a custom layer. You cannot assign
-     * a registered instance to a built-in layer.
+     * The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in
+     * layer.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> layerIds;
@@ -70,8 +66,7 @@ public class AssignInstanceRequest extends
      * 
      * @param instanceId
      *        The instance ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssignInstanceRequest withInstanceId(String instanceId) {
@@ -81,12 +76,12 @@ public class AssignInstanceRequest extends
 
     /**
      * <p>
-     * The layer ID, which must correspond to a custom layer. You cannot assign
-     * a registered instance to a built-in layer.
+     * The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in
+     * layer.
      * </p>
      * 
-     * @return The layer ID, which must correspond to a custom layer. You cannot
-     *         assign a registered instance to a built-in layer.
+     * @return The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a
+     *         built-in layer.
      */
 
     public java.util.List<String> getLayerIds() {
@@ -98,13 +93,13 @@ public class AssignInstanceRequest extends
 
     /**
      * <p>
-     * The layer ID, which must correspond to a custom layer. You cannot assign
-     * a registered instance to a built-in layer.
+     * The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in
+     * layer.
      * </p>
      * 
      * @param layerIds
-     *        The layer ID, which must correspond to a custom layer. You cannot
-     *        assign a registered instance to a built-in layer.
+     *        The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a
+     *        built-in layer.
      */
 
     public void setLayerIds(java.util.Collection<String> layerIds) {
@@ -113,33 +108,29 @@ public class AssignInstanceRequest extends
             return;
         }
 
-        this.layerIds = new com.amazonaws.internal.SdkInternalList<String>(
-                layerIds);
+        this.layerIds = new com.amazonaws.internal.SdkInternalList<String>(layerIds);
     }
 
     /**
      * <p>
-     * The layer ID, which must correspond to a custom layer. You cannot assign
-     * a registered instance to a built-in layer.
+     * The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in
+     * layer.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLayerIds(java.util.Collection)} or
-     * {@link #withLayerIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLayerIds(java.util.Collection)} or {@link #withLayerIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param layerIds
-     *        The layer ID, which must correspond to a custom layer. You cannot
-     *        assign a registered instance to a built-in layer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a
+     *        built-in layer.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssignInstanceRequest withLayerIds(String... layerIds) {
         if (this.layerIds == null) {
-            setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    layerIds.length));
+            setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(layerIds.length));
         }
         for (String ele : layerIds) {
             this.layerIds.add(ele);
@@ -149,26 +140,23 @@ public class AssignInstanceRequest extends
 
     /**
      * <p>
-     * The layer ID, which must correspond to a custom layer. You cannot assign
-     * a registered instance to a built-in layer.
+     * The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in
+     * layer.
      * </p>
      * 
      * @param layerIds
-     *        The layer ID, which must correspond to a custom layer. You cannot
-     *        assign a registered instance to a built-in layer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a
+     *        built-in layer.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssignInstanceRequest withLayerIds(
-            java.util.Collection<String> layerIds) {
+    public AssignInstanceRequest withLayerIds(java.util.Collection<String> layerIds) {
         setLayerIds(layerIds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -198,13 +186,11 @@ public class AssignInstanceRequest extends
         AssignInstanceRequest other = (AssignInstanceRequest) obj;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         if (other.getLayerIds() == null ^ this.getLayerIds() == null)
             return false;
-        if (other.getLayerIds() != null
-                && other.getLayerIds().equals(this.getLayerIds()) == false)
+        if (other.getLayerIds() != null && other.getLayerIds().equals(this.getLayerIds()) == false)
             return false;
         return true;
     }
@@ -214,10 +200,8 @@ public class AssignInstanceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getLayerIds() == null) ? 0 : getLayerIds().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getLayerIds() == null) ? 0 : getLayerIds().hashCode());
         return hashCode;
     }
 

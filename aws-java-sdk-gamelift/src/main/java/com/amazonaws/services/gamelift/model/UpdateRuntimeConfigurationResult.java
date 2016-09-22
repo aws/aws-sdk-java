@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -21,42 +19,39 @@ import java.io.Serializable;
  * Represents the returned data in response to a request action.
  * </p>
  */
-public class UpdateRuntimeConfigurationResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class UpdateRuntimeConfigurationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The runtime configuration currently in force. If the update was
-     * successful, this object matches the one in the request.
+     * The runtime configuration currently in force. If the update was successful, this object matches the one in the
+     * request.
      * </p>
      */
     private RuntimeConfiguration runtimeConfiguration;
 
     /**
      * <p>
-     * The runtime configuration currently in force. If the update was
-     * successful, this object matches the one in the request.
+     * The runtime configuration currently in force. If the update was successful, this object matches the one in the
+     * request.
      * </p>
      * 
      * @param runtimeConfiguration
-     *        The runtime configuration currently in force. If the update was
-     *        successful, this object matches the one in the request.
+     *        The runtime configuration currently in force. If the update was successful, this object matches the one in
+     *        the request.
      */
 
-    public void setRuntimeConfiguration(
-            RuntimeConfiguration runtimeConfiguration) {
+    public void setRuntimeConfiguration(RuntimeConfiguration runtimeConfiguration) {
         this.runtimeConfiguration = runtimeConfiguration;
     }
 
     /**
      * <p>
-     * The runtime configuration currently in force. If the update was
-     * successful, this object matches the one in the request.
+     * The runtime configuration currently in force. If the update was successful, this object matches the one in the
+     * request.
      * </p>
      * 
-     * @return The runtime configuration currently in force. If the update was
-     *         successful, this object matches the one in the request.
+     * @return The runtime configuration currently in force. If the update was successful, this object matches the one
+     *         in the request.
      */
 
     public RuntimeConfiguration getRuntimeConfiguration() {
@@ -65,26 +60,23 @@ public class UpdateRuntimeConfigurationResult extends
 
     /**
      * <p>
-     * The runtime configuration currently in force. If the update was
-     * successful, this object matches the one in the request.
+     * The runtime configuration currently in force. If the update was successful, this object matches the one in the
+     * request.
      * </p>
      * 
      * @param runtimeConfiguration
-     *        The runtime configuration currently in force. If the update was
-     *        successful, this object matches the one in the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The runtime configuration currently in force. If the update was successful, this object matches the one in
+     *        the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateRuntimeConfigurationResult withRuntimeConfiguration(
-            RuntimeConfiguration runtimeConfiguration) {
+    public UpdateRuntimeConfigurationResult withRuntimeConfiguration(RuntimeConfiguration runtimeConfiguration) {
         setRuntimeConfiguration(runtimeConfiguration);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -110,12 +102,9 @@ public class UpdateRuntimeConfigurationResult extends
         if (obj instanceof UpdateRuntimeConfigurationResult == false)
             return false;
         UpdateRuntimeConfigurationResult other = (UpdateRuntimeConfigurationResult) obj;
-        if (other.getRuntimeConfiguration() == null
-                ^ this.getRuntimeConfiguration() == null)
+        if (other.getRuntimeConfiguration() == null ^ this.getRuntimeConfiguration() == null)
             return false;
-        if (other.getRuntimeConfiguration() != null
-                && other.getRuntimeConfiguration().equals(
-                        this.getRuntimeConfiguration()) == false)
+        if (other.getRuntimeConfiguration() != null && other.getRuntimeConfiguration().equals(this.getRuntimeConfiguration()) == false)
             return false;
         return true;
     }
@@ -125,10 +114,7 @@ public class UpdateRuntimeConfigurationResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRuntimeConfiguration() == null) ? 0
-                        : getRuntimeConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeConfiguration() == null) ? 0 : getRuntimeConfiguration().hashCode());
         return hashCode;
     }
 
@@ -137,9 +123,7 @@ public class UpdateRuntimeConfigurationResult extends
         try {
             return (UpdateRuntimeConfigurationResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -26,7 +26,7 @@ import java.lang.annotation.Target;
  * property. If the annotation is applied directly to the class field, the
  * corresponding getter and setter must be declared in the same class.
  *
- * <p>Alternatively, the meta-annotation {@link DynamoDBVersioned} may be used
+ * <p>Alternately, the meta-annotation {@link DynamoDBVersioned} may be used
  * to annotate a custom annotation, or directly to the field/getter.</p>
  *
  * <p>Only nullable, integral numeric types (e.g. Integer, Long) can be used as

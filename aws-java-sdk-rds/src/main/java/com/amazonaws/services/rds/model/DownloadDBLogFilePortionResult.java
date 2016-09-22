@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -18,13 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element to
- * <a>DownloadDBLogFilePortion</a>.
+ * This data type is used as a response element to <a>DownloadDBLogFilePortion</a>.
  * </p>
  */
-public class DownloadDBLogFilePortionResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DownloadDBLogFilePortionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,15 +29,13 @@ public class DownloadDBLogFilePortionResult extends
     private String logFileData;
     /**
      * <p>
-     * A pagination token that can be used in a subsequent
-     * DownloadDBLogFilePortion request.
+     * A pagination token that can be used in a subsequent DownloadDBLogFilePortion request.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Boolean value that if true, indicates there is more data to be
-     * downloaded.
+     * Boolean value that if true, indicates there is more data to be downloaded.
      * </p>
      */
     private Boolean additionalDataPending;
@@ -79,8 +72,7 @@ public class DownloadDBLogFilePortionResult extends
      * 
      * @param logFileData
      *        Entries from the specified log file.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DownloadDBLogFilePortionResult withLogFileData(String logFileData) {
@@ -90,13 +82,11 @@ public class DownloadDBLogFilePortionResult extends
 
     /**
      * <p>
-     * A pagination token that can be used in a subsequent
-     * DownloadDBLogFilePortion request.
+     * A pagination token that can be used in a subsequent DownloadDBLogFilePortion request.
      * </p>
      * 
      * @param marker
-     *        A pagination token that can be used in a subsequent
-     *        DownloadDBLogFilePortion request.
+     *        A pagination token that can be used in a subsequent DownloadDBLogFilePortion request.
      */
 
     public void setMarker(String marker) {
@@ -105,12 +95,10 @@ public class DownloadDBLogFilePortionResult extends
 
     /**
      * <p>
-     * A pagination token that can be used in a subsequent
-     * DownloadDBLogFilePortion request.
+     * A pagination token that can be used in a subsequent DownloadDBLogFilePortion request.
      * </p>
      * 
-     * @return A pagination token that can be used in a subsequent
-     *         DownloadDBLogFilePortion request.
+     * @return A pagination token that can be used in a subsequent DownloadDBLogFilePortion request.
      */
 
     public String getMarker() {
@@ -119,15 +107,12 @@ public class DownloadDBLogFilePortionResult extends
 
     /**
      * <p>
-     * A pagination token that can be used in a subsequent
-     * DownloadDBLogFilePortion request.
+     * A pagination token that can be used in a subsequent DownloadDBLogFilePortion request.
      * </p>
      * 
      * @param marker
-     *        A pagination token that can be used in a subsequent
-     *        DownloadDBLogFilePortion request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A pagination token that can be used in a subsequent DownloadDBLogFilePortion request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DownloadDBLogFilePortionResult withMarker(String marker) {
@@ -137,13 +122,11 @@ public class DownloadDBLogFilePortionResult extends
 
     /**
      * <p>
-     * Boolean value that if true, indicates there is more data to be
-     * downloaded.
+     * Boolean value that if true, indicates there is more data to be downloaded.
      * </p>
      * 
      * @param additionalDataPending
-     *        Boolean value that if true, indicates there is more data to be
-     *        downloaded.
+     *        Boolean value that if true, indicates there is more data to be downloaded.
      */
 
     public void setAdditionalDataPending(Boolean additionalDataPending) {
@@ -152,12 +135,10 @@ public class DownloadDBLogFilePortionResult extends
 
     /**
      * <p>
-     * Boolean value that if true, indicates there is more data to be
-     * downloaded.
+     * Boolean value that if true, indicates there is more data to be downloaded.
      * </p>
      * 
-     * @return Boolean value that if true, indicates there is more data to be
-     *         downloaded.
+     * @return Boolean value that if true, indicates there is more data to be downloaded.
      */
 
     public Boolean getAdditionalDataPending() {
@@ -166,31 +147,25 @@ public class DownloadDBLogFilePortionResult extends
 
     /**
      * <p>
-     * Boolean value that if true, indicates there is more data to be
-     * downloaded.
+     * Boolean value that if true, indicates there is more data to be downloaded.
      * </p>
      * 
      * @param additionalDataPending
-     *        Boolean value that if true, indicates there is more data to be
-     *        downloaded.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Boolean value that if true, indicates there is more data to be downloaded.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DownloadDBLogFilePortionResult withAdditionalDataPending(
-            Boolean additionalDataPending) {
+    public DownloadDBLogFilePortionResult withAdditionalDataPending(Boolean additionalDataPending) {
         setAdditionalDataPending(additionalDataPending);
         return this;
     }
 
     /**
      * <p>
-     * Boolean value that if true, indicates there is more data to be
-     * downloaded.
+     * Boolean value that if true, indicates there is more data to be downloaded.
      * </p>
      * 
-     * @return Boolean value that if true, indicates there is more data to be
-     *         downloaded.
+     * @return Boolean value that if true, indicates there is more data to be downloaded.
      */
 
     public Boolean isAdditionalDataPending() {
@@ -198,8 +173,7 @@ public class DownloadDBLogFilePortionResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -231,20 +205,15 @@ public class DownloadDBLogFilePortionResult extends
         DownloadDBLogFilePortionResult other = (DownloadDBLogFilePortionResult) obj;
         if (other.getLogFileData() == null ^ this.getLogFileData() == null)
             return false;
-        if (other.getLogFileData() != null
-                && other.getLogFileData().equals(this.getLogFileData()) == false)
+        if (other.getLogFileData() != null && other.getLogFileData().equals(this.getLogFileData()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
-        if (other.getAdditionalDataPending() == null
-                ^ this.getAdditionalDataPending() == null)
+        if (other.getAdditionalDataPending() == null ^ this.getAdditionalDataPending() == null)
             return false;
-        if (other.getAdditionalDataPending() != null
-                && other.getAdditionalDataPending().equals(
-                        this.getAdditionalDataPending()) == false)
+        if (other.getAdditionalDataPending() != null && other.getAdditionalDataPending().equals(this.getAdditionalDataPending()) == false)
             return false;
         return true;
     }
@@ -254,15 +223,9 @@ public class DownloadDBLogFilePortionResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLogFileData() == null) ? 0 : getLogFileData().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAdditionalDataPending() == null) ? 0
-                        : getAdditionalDataPending().hashCode());
+        hashCode = prime * hashCode + ((getLogFileData() == null) ? 0 : getLogFileData().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalDataPending() == null) ? 0 : getAdditionalDataPending().hashCode());
         return hashCode;
     }
 
@@ -271,9 +234,7 @@ public class DownloadDBLogFilePortionResult extends
         try {
             return (DownloadDBLogFilePortionResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

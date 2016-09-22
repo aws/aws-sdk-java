@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of DescribeVpcEndpoints.
  * </p>
  */
-public class DescribeVpcEndpointsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeVpcEndpointsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,8 +30,8 @@ public class DescribeVpcEndpointsResult extends
     private com.amazonaws.internal.SdkInternalList<VpcEndpoint> vpcEndpoints;
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      */
     private String nextToken;
@@ -70,8 +66,7 @@ public class DescribeVpcEndpointsResult extends
             return;
         }
 
-        this.vpcEndpoints = new com.amazonaws.internal.SdkInternalList<VpcEndpoint>(
-                vpcEndpoints);
+        this.vpcEndpoints = new com.amazonaws.internal.SdkInternalList<VpcEndpoint>(vpcEndpoints);
     }
 
     /**
@@ -79,23 +74,19 @@ public class DescribeVpcEndpointsResult extends
      * Information about the endpoints.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVpcEndpoints(java.util.Collection)} or
-     * {@link #withVpcEndpoints(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcEndpoints(java.util.Collection)} or {@link #withVpcEndpoints(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param vpcEndpoints
      *        Information about the endpoints.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeVpcEndpointsResult withVpcEndpoints(
-            VpcEndpoint... vpcEndpoints) {
+    public DescribeVpcEndpointsResult withVpcEndpoints(VpcEndpoint... vpcEndpoints) {
         if (this.vpcEndpoints == null) {
-            setVpcEndpoints(new com.amazonaws.internal.SdkInternalList<VpcEndpoint>(
-                    vpcEndpoints.length));
+            setVpcEndpoints(new com.amazonaws.internal.SdkInternalList<VpcEndpoint>(vpcEndpoints.length));
         }
         for (VpcEndpoint ele : vpcEndpoints) {
             this.vpcEndpoints.add(ele);
@@ -110,25 +101,23 @@ public class DescribeVpcEndpointsResult extends
      * 
      * @param vpcEndpoints
      *        Information about the endpoints.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeVpcEndpointsResult withVpcEndpoints(
-            java.util.Collection<VpcEndpoint> vpcEndpoints) {
+    public DescribeVpcEndpointsResult withVpcEndpoints(java.util.Collection<VpcEndpoint> vpcEndpoints) {
         setVpcEndpoints(vpcEndpoints);
         return this;
     }
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there
-     *        are no additional items to return, the string is empty.
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
      */
 
     public void setNextToken(String nextToken) {
@@ -137,12 +126,12 @@ public class DescribeVpcEndpointsResult extends
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
-     * @return The token to use when requesting the next set of items. If there
-     *         are no additional items to return, the string is empty.
+     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
+     *         string is empty.
      */
 
     public String getNextToken() {
@@ -151,15 +140,14 @@ public class DescribeVpcEndpointsResult extends
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there
-     *        are no additional items to return, the string is empty.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeVpcEndpointsResult withNextToken(String nextToken) {
@@ -168,8 +156,7 @@ public class DescribeVpcEndpointsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -199,13 +186,11 @@ public class DescribeVpcEndpointsResult extends
         DescribeVpcEndpointsResult other = (DescribeVpcEndpointsResult) obj;
         if (other.getVpcEndpoints() == null ^ this.getVpcEndpoints() == null)
             return false;
-        if (other.getVpcEndpoints() != null
-                && other.getVpcEndpoints().equals(this.getVpcEndpoints()) == false)
+        if (other.getVpcEndpoints() != null && other.getVpcEndpoints().equals(this.getVpcEndpoints()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -215,12 +200,8 @@ public class DescribeVpcEndpointsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getVpcEndpoints() == null) ? 0 : getVpcEndpoints()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getVpcEndpoints() == null) ? 0 : getVpcEndpoints().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -229,9 +210,7 @@ public class DescribeVpcEndpointsResult extends
         try {
             return (DescribeVpcEndpointsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

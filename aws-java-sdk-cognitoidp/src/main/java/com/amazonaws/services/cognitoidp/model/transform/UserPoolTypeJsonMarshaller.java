@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
@@ -34,80 +32,65 @@ public class UserPoolTypeJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(UserPoolType userPoolType,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(UserPoolType userPoolType, StructuredJsonGenerator jsonGenerator) {
 
         if (userPoolType == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (userPoolType.getId() != null) {
-                jsonGenerator.writeFieldName("Id").writeValue(
-                        userPoolType.getId());
+                jsonGenerator.writeFieldName("Id").writeValue(userPoolType.getId());
             }
             if (userPoolType.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(
-                        userPoolType.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(userPoolType.getName());
             }
             if (userPoolType.getPolicies() != null) {
                 jsonGenerator.writeFieldName("Policies");
-                UserPoolPolicyTypeJsonMarshaller.getInstance().marshall(
-                        userPoolType.getPolicies(), jsonGenerator);
+                UserPoolPolicyTypeJsonMarshaller.getInstance().marshall(userPoolType.getPolicies(), jsonGenerator);
             }
             if (userPoolType.getLambdaConfig() != null) {
                 jsonGenerator.writeFieldName("LambdaConfig");
-                LambdaConfigTypeJsonMarshaller.getInstance().marshall(
-                        userPoolType.getLambdaConfig(), jsonGenerator);
+                LambdaConfigTypeJsonMarshaller.getInstance().marshall(userPoolType.getLambdaConfig(), jsonGenerator);
             }
             if (userPoolType.getStatus() != null) {
-                jsonGenerator.writeFieldName("Status").writeValue(
-                        userPoolType.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(userPoolType.getStatus());
             }
             if (userPoolType.getLastModifiedDate() != null) {
-                jsonGenerator.writeFieldName("LastModifiedDate").writeValue(
-                        userPoolType.getLastModifiedDate());
+                jsonGenerator.writeFieldName("LastModifiedDate").writeValue(userPoolType.getLastModifiedDate());
             }
             if (userPoolType.getCreationDate() != null) {
-                jsonGenerator.writeFieldName("CreationDate").writeValue(
-                        userPoolType.getCreationDate());
+                jsonGenerator.writeFieldName("CreationDate").writeValue(userPoolType.getCreationDate());
             }
 
-            java.util.List<SchemaAttributeType> schemaAttributesList = userPoolType
-                    .getSchemaAttributes();
+            java.util.List<SchemaAttributeType> schemaAttributesList = userPoolType.getSchemaAttributes();
             if (schemaAttributesList != null) {
                 jsonGenerator.writeFieldName("SchemaAttributes");
                 jsonGenerator.writeStartArray();
                 for (SchemaAttributeType schemaAttributesListValue : schemaAttributesList) {
                     if (schemaAttributesListValue != null) {
 
-                        SchemaAttributeTypeJsonMarshaller.getInstance()
-                                .marshall(schemaAttributesListValue,
-                                        jsonGenerator);
+                        SchemaAttributeTypeJsonMarshaller.getInstance().marshall(schemaAttributesListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
 
-            java.util.List<String> autoVerifiedAttributesList = userPoolType
-                    .getAutoVerifiedAttributes();
+            java.util.List<String> autoVerifiedAttributesList = userPoolType.getAutoVerifiedAttributes();
             if (autoVerifiedAttributesList != null) {
                 jsonGenerator.writeFieldName("AutoVerifiedAttributes");
                 jsonGenerator.writeStartArray();
                 for (String autoVerifiedAttributesListValue : autoVerifiedAttributesList) {
                     if (autoVerifiedAttributesListValue != null) {
-                        jsonGenerator
-                                .writeValue(autoVerifiedAttributesListValue);
+                        jsonGenerator.writeValue(autoVerifiedAttributesListValue);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
 
-            java.util.List<String> aliasAttributesList = userPoolType
-                    .getAliasAttributes();
+            java.util.List<String> aliasAttributesList = userPoolType.getAliasAttributes();
             if (aliasAttributesList != null) {
                 jsonGenerator.writeFieldName("AliasAttributes");
                 jsonGenerator.writeStartArray();
@@ -119,58 +102,45 @@ public class UserPoolTypeJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
             if (userPoolType.getSmsVerificationMessage() != null) {
-                jsonGenerator.writeFieldName("SmsVerificationMessage")
-                        .writeValue(userPoolType.getSmsVerificationMessage());
+                jsonGenerator.writeFieldName("SmsVerificationMessage").writeValue(userPoolType.getSmsVerificationMessage());
             }
             if (userPoolType.getEmailVerificationMessage() != null) {
-                jsonGenerator.writeFieldName("EmailVerificationMessage")
-                        .writeValue(userPoolType.getEmailVerificationMessage());
+                jsonGenerator.writeFieldName("EmailVerificationMessage").writeValue(userPoolType.getEmailVerificationMessage());
             }
             if (userPoolType.getEmailVerificationSubject() != null) {
-                jsonGenerator.writeFieldName("EmailVerificationSubject")
-                        .writeValue(userPoolType.getEmailVerificationSubject());
+                jsonGenerator.writeFieldName("EmailVerificationSubject").writeValue(userPoolType.getEmailVerificationSubject());
             }
             if (userPoolType.getSmsAuthenticationMessage() != null) {
-                jsonGenerator.writeFieldName("SmsAuthenticationMessage")
-                        .writeValue(userPoolType.getSmsAuthenticationMessage());
+                jsonGenerator.writeFieldName("SmsAuthenticationMessage").writeValue(userPoolType.getSmsAuthenticationMessage());
             }
             if (userPoolType.getMfaConfiguration() != null) {
-                jsonGenerator.writeFieldName("MfaConfiguration").writeValue(
-                        userPoolType.getMfaConfiguration());
+                jsonGenerator.writeFieldName("MfaConfiguration").writeValue(userPoolType.getMfaConfiguration());
             }
             if (userPoolType.getDeviceConfiguration() != null) {
                 jsonGenerator.writeFieldName("DeviceConfiguration");
-                DeviceConfigurationTypeJsonMarshaller.getInstance().marshall(
-                        userPoolType.getDeviceConfiguration(), jsonGenerator);
+                DeviceConfigurationTypeJsonMarshaller.getInstance().marshall(userPoolType.getDeviceConfiguration(), jsonGenerator);
             }
             if (userPoolType.getEstimatedNumberOfUsers() != null) {
-                jsonGenerator.writeFieldName("EstimatedNumberOfUsers")
-                        .writeValue(userPoolType.getEstimatedNumberOfUsers());
+                jsonGenerator.writeFieldName("EstimatedNumberOfUsers").writeValue(userPoolType.getEstimatedNumberOfUsers());
             }
             if (userPoolType.getEmailConfiguration() != null) {
                 jsonGenerator.writeFieldName("EmailConfiguration");
-                EmailConfigurationTypeJsonMarshaller.getInstance().marshall(
-                        userPoolType.getEmailConfiguration(), jsonGenerator);
+                EmailConfigurationTypeJsonMarshaller.getInstance().marshall(userPoolType.getEmailConfiguration(), jsonGenerator);
             }
             if (userPoolType.getSmsConfiguration() != null) {
                 jsonGenerator.writeFieldName("SmsConfiguration");
-                SmsConfigurationTypeJsonMarshaller.getInstance().marshall(
-                        userPoolType.getSmsConfiguration(), jsonGenerator);
+                SmsConfigurationTypeJsonMarshaller.getInstance().marshall(userPoolType.getSmsConfiguration(), jsonGenerator);
             }
             if (userPoolType.getSmsConfigurationFailure() != null) {
-                jsonGenerator.writeFieldName("SmsConfigurationFailure")
-                        .writeValue(userPoolType.getSmsConfigurationFailure());
+                jsonGenerator.writeFieldName("SmsConfigurationFailure").writeValue(userPoolType.getSmsConfigurationFailure());
             }
             if (userPoolType.getEmailConfigurationFailure() != null) {
-                jsonGenerator
-                        .writeFieldName("EmailConfigurationFailure")
-                        .writeValue(userPoolType.getEmailConfigurationFailure());
+                jsonGenerator.writeFieldName("EmailConfigurationFailure").writeValue(userPoolType.getEmailConfigurationFailure());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

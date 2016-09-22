@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -22,27 +20,22 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a get deployment configuration operation.
  * </p>
  */
-public class GetDeploymentConfigRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class GetDeploymentConfigRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.
+     * The name of a deployment configuration associated with the applicable IAM user or AWS account.
      * </p>
      */
     private String deploymentConfigName;
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.
+     * The name of a deployment configuration associated with the applicable IAM user or AWS account.
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the
-     *        applicable IAM user or AWS account.
+     *        The name of a deployment configuration associated with the applicable IAM user or AWS account.
      */
 
     public void setDeploymentConfigName(String deploymentConfigName) {
@@ -51,12 +44,10 @@ public class GetDeploymentConfigRequest extends
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.
+     * The name of a deployment configuration associated with the applicable IAM user or AWS account.
      * </p>
      * 
-     * @return The name of a deployment configuration associated with the
-     *         applicable IAM user or AWS account.
+     * @return The name of a deployment configuration associated with the applicable IAM user or AWS account.
      */
 
     public String getDeploymentConfigName() {
@@ -65,26 +56,21 @@ public class GetDeploymentConfigRequest extends
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.
+     * The name of a deployment configuration associated with the applicable IAM user or AWS account.
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the
-     *        applicable IAM user or AWS account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of a deployment configuration associated with the applicable IAM user or AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetDeploymentConfigRequest withDeploymentConfigName(
-            String deploymentConfigName) {
+    public GetDeploymentConfigRequest withDeploymentConfigName(String deploymentConfigName) {
         setDeploymentConfigName(deploymentConfigName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -110,12 +96,9 @@ public class GetDeploymentConfigRequest extends
         if (obj instanceof GetDeploymentConfigRequest == false)
             return false;
         GetDeploymentConfigRequest other = (GetDeploymentConfigRequest) obj;
-        if (other.getDeploymentConfigName() == null
-                ^ this.getDeploymentConfigName() == null)
+        if (other.getDeploymentConfigName() == null ^ this.getDeploymentConfigName() == null)
             return false;
-        if (other.getDeploymentConfigName() != null
-                && other.getDeploymentConfigName().equals(
-                        this.getDeploymentConfigName()) == false)
+        if (other.getDeploymentConfigName() != null && other.getDeploymentConfigName().equals(this.getDeploymentConfigName()) == false)
             return false;
         return true;
     }
@@ -125,10 +108,7 @@ public class GetDeploymentConfigRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentConfigName() == null) ? 0
-                        : getDeploymentConfigName().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentConfigName() == null) ? 0 : getDeploymentConfigName().hashCode());
         return hashCode;
     }
 

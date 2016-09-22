@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeConfigRulesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeConfigRulesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -31,8 +27,7 @@ public class DescribeConfigRulesResult extends
     private com.amazonaws.internal.SdkInternalList<ConfigRule> configRules;
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      */
     private String nextToken;
@@ -67,8 +62,7 @@ public class DescribeConfigRulesResult extends
             return;
         }
 
-        this.configRules = new com.amazonaws.internal.SdkInternalList<ConfigRule>(
-                configRules);
+        this.configRules = new com.amazonaws.internal.SdkInternalList<ConfigRule>(configRules);
     }
 
     /**
@@ -76,22 +70,19 @@ public class DescribeConfigRulesResult extends
      * The details about your AWS Config rules.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConfigRules(java.util.Collection)} or
-     * {@link #withConfigRules(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConfigRules(java.util.Collection)} or {@link #withConfigRules(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param configRules
      *        The details about your AWS Config rules.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeConfigRulesResult withConfigRules(ConfigRule... configRules) {
         if (this.configRules == null) {
-            setConfigRules(new com.amazonaws.internal.SdkInternalList<ConfigRule>(
-                    configRules.length));
+            setConfigRules(new com.amazonaws.internal.SdkInternalList<ConfigRule>(configRules.length));
         }
         for (ConfigRule ele : configRules) {
             this.configRules.add(ele);
@@ -106,25 +97,21 @@ public class DescribeConfigRulesResult extends
      * 
      * @param configRules
      *        The details about your AWS Config rules.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConfigRulesResult withConfigRules(
-            java.util.Collection<ConfigRule> configRules) {
+    public DescribeConfigRulesResult withConfigRules(java.util.Collection<ConfigRule> configRules) {
         setConfigRules(configRules);
         return this;
     }
 
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next
-     *        page of results in a paginated response.
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -133,12 +120,10 @@ public class DescribeConfigRulesResult extends
 
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      * 
-     * @return The string that you use in a subsequent request to get the next
-     *         page of results in a paginated response.
+     * @return The string that you use in a subsequent request to get the next page of results in a paginated response.
      */
 
     public String getNextToken() {
@@ -147,15 +132,12 @@ public class DescribeConfigRulesResult extends
 
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next
-     *        page of results in a paginated response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeConfigRulesResult withNextToken(String nextToken) {
@@ -164,8 +146,7 @@ public class DescribeConfigRulesResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -195,13 +176,11 @@ public class DescribeConfigRulesResult extends
         DescribeConfigRulesResult other = (DescribeConfigRulesResult) obj;
         if (other.getConfigRules() == null ^ this.getConfigRules() == null)
             return false;
-        if (other.getConfigRules() != null
-                && other.getConfigRules().equals(this.getConfigRules()) == false)
+        if (other.getConfigRules() != null && other.getConfigRules().equals(this.getConfigRules()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -211,11 +190,8 @@ public class DescribeConfigRulesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getConfigRules() == null) ? 0 : getConfigRules().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getConfigRules() == null) ? 0 : getConfigRules().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -224,9 +200,7 @@ public class DescribeConfigRulesResult extends
         try {
             return (DescribeConfigRulesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

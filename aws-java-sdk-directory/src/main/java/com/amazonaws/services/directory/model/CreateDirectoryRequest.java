@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model;
 
@@ -22,14 +20,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>CreateDirectory</a> operation.
  * </p>
  */
-public class CreateDirectoryRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The fully qualified name for the directory, such as
-     * <code>corp.example.com</code>.
+     * The fully qualified name for the directory, such as <code>corp.example.com</code>.
      * </p>
      */
     private String name;
@@ -41,9 +36,8 @@ public class CreateDirectoryRequest extends
     private String shortName;
     /**
      * <p>
-     * The password for the directory administrator. The directory creation
-     * process creates a directory administrator account with the username
-     * <code>Administrator</code> and this password.
+     * The password for the directory administrator. The directory creation process creates a directory administrator
+     * account with the username <code>Administrator</code> and this password.
      * </p>
      */
     private String password;
@@ -61,21 +55,18 @@ public class CreateDirectoryRequest extends
     private String size;
     /**
      * <p>
-     * A <a>DirectoryVpcSettings</a> object that contains additional information
-     * for the operation.
+     * A <a>DirectoryVpcSettings</a> object that contains additional information for the operation.
      * </p>
      */
     private DirectoryVpcSettings vpcSettings;
 
     /**
      * <p>
-     * The fully qualified name for the directory, such as
-     * <code>corp.example.com</code>.
+     * The fully qualified name for the directory, such as <code>corp.example.com</code>.
      * </p>
      * 
      * @param name
-     *        The fully qualified name for the directory, such as
-     *        <code>corp.example.com</code>.
+     *        The fully qualified name for the directory, such as <code>corp.example.com</code>.
      */
 
     public void setName(String name) {
@@ -84,12 +75,10 @@ public class CreateDirectoryRequest extends
 
     /**
      * <p>
-     * The fully qualified name for the directory, such as
-     * <code>corp.example.com</code>.
+     * The fully qualified name for the directory, such as <code>corp.example.com</code>.
      * </p>
      * 
-     * @return The fully qualified name for the directory, such as
-     *         <code>corp.example.com</code>.
+     * @return The fully qualified name for the directory, such as <code>corp.example.com</code>.
      */
 
     public String getName() {
@@ -98,15 +87,12 @@ public class CreateDirectoryRequest extends
 
     /**
      * <p>
-     * The fully qualified name for the directory, such as
-     * <code>corp.example.com</code>.
+     * The fully qualified name for the directory, such as <code>corp.example.com</code>.
      * </p>
      * 
      * @param name
-     *        The fully qualified name for the directory, such as
-     *        <code>corp.example.com</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The fully qualified name for the directory, such as <code>corp.example.com</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDirectoryRequest withName(String name) {
@@ -146,8 +132,7 @@ public class CreateDirectoryRequest extends
      * 
      * @param shortName
      *        The short name of the directory, such as <code>CORP</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDirectoryRequest withShortName(String shortName) {
@@ -157,15 +142,13 @@ public class CreateDirectoryRequest extends
 
     /**
      * <p>
-     * The password for the directory administrator. The directory creation
-     * process creates a directory administrator account with the username
-     * <code>Administrator</code> and this password.
+     * The password for the directory administrator. The directory creation process creates a directory administrator
+     * account with the username <code>Administrator</code> and this password.
      * </p>
      * 
      * @param password
-     *        The password for the directory administrator. The directory
-     *        creation process creates a directory administrator account with
-     *        the username <code>Administrator</code> and this password.
+     *        The password for the directory administrator. The directory creation process creates a directory
+     *        administrator account with the username <code>Administrator</code> and this password.
      */
 
     public void setPassword(String password) {
@@ -174,14 +157,12 @@ public class CreateDirectoryRequest extends
 
     /**
      * <p>
-     * The password for the directory administrator. The directory creation
-     * process creates a directory administrator account with the username
-     * <code>Administrator</code> and this password.
+     * The password for the directory administrator. The directory creation process creates a directory administrator
+     * account with the username <code>Administrator</code> and this password.
      * </p>
      * 
-     * @return The password for the directory administrator. The directory
-     *         creation process creates a directory administrator account with
-     *         the username <code>Administrator</code> and this password.
+     * @return The password for the directory administrator. The directory creation process creates a directory
+     *         administrator account with the username <code>Administrator</code> and this password.
      */
 
     public String getPassword() {
@@ -190,17 +171,14 @@ public class CreateDirectoryRequest extends
 
     /**
      * <p>
-     * The password for the directory administrator. The directory creation
-     * process creates a directory administrator account with the username
-     * <code>Administrator</code> and this password.
+     * The password for the directory administrator. The directory creation process creates a directory administrator
+     * account with the username <code>Administrator</code> and this password.
      * </p>
      * 
      * @param password
-     *        The password for the directory administrator. The directory
-     *        creation process creates a directory administrator account with
-     *        the username <code>Administrator</code> and this password.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The password for the directory administrator. The directory creation process creates a directory
+     *        administrator account with the username <code>Administrator</code> and this password.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDirectoryRequest withPassword(String password) {
@@ -240,8 +218,7 @@ public class CreateDirectoryRequest extends
      * 
      * @param description
      *        A textual description for the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDirectoryRequest withDescription(String description) {
@@ -283,8 +260,7 @@ public class CreateDirectoryRequest extends
      * 
      * @param size
      *        The size of the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectorySize
      */
 
@@ -314,8 +290,7 @@ public class CreateDirectoryRequest extends
      * 
      * @param size
      *        The size of the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectorySize
      */
 
@@ -326,13 +301,11 @@ public class CreateDirectoryRequest extends
 
     /**
      * <p>
-     * A <a>DirectoryVpcSettings</a> object that contains additional information
-     * for the operation.
+     * A <a>DirectoryVpcSettings</a> object that contains additional information for the operation.
      * </p>
      * 
      * @param vpcSettings
-     *        A <a>DirectoryVpcSettings</a> object that contains additional
-     *        information for the operation.
+     *        A <a>DirectoryVpcSettings</a> object that contains additional information for the operation.
      */
 
     public void setVpcSettings(DirectoryVpcSettings vpcSettings) {
@@ -341,12 +314,10 @@ public class CreateDirectoryRequest extends
 
     /**
      * <p>
-     * A <a>DirectoryVpcSettings</a> object that contains additional information
-     * for the operation.
+     * A <a>DirectoryVpcSettings</a> object that contains additional information for the operation.
      * </p>
      * 
-     * @return A <a>DirectoryVpcSettings</a> object that contains additional
-     *         information for the operation.
+     * @return A <a>DirectoryVpcSettings</a> object that contains additional information for the operation.
      */
 
     public DirectoryVpcSettings getVpcSettings() {
@@ -355,26 +326,21 @@ public class CreateDirectoryRequest extends
 
     /**
      * <p>
-     * A <a>DirectoryVpcSettings</a> object that contains additional information
-     * for the operation.
+     * A <a>DirectoryVpcSettings</a> object that contains additional information for the operation.
      * </p>
      * 
      * @param vpcSettings
-     *        A <a>DirectoryVpcSettings</a> object that contains additional
-     *        information for the operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <a>DirectoryVpcSettings</a> object that contains additional information for the operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDirectoryRequest withVpcSettings(
-            DirectoryVpcSettings vpcSettings) {
+    public CreateDirectoryRequest withVpcSettings(DirectoryVpcSettings vpcSettings) {
         setVpcSettings(vpcSettings);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -412,33 +378,27 @@ public class CreateDirectoryRequest extends
         CreateDirectoryRequest other = (CreateDirectoryRequest) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getShortName() == null ^ this.getShortName() == null)
             return false;
-        if (other.getShortName() != null
-                && other.getShortName().equals(this.getShortName()) == false)
+        if (other.getShortName() != null && other.getShortName().equals(this.getShortName()) == false)
             return false;
         if (other.getPassword() == null ^ this.getPassword() == null)
             return false;
-        if (other.getPassword() != null
-                && other.getPassword().equals(this.getPassword()) == false)
+        if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getSize() == null ^ this.getSize() == null)
             return false;
-        if (other.getSize() != null
-                && other.getSize().equals(this.getSize()) == false)
+        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
             return false;
         if (other.getVpcSettings() == null ^ this.getVpcSettings() == null)
             return false;
-        if (other.getVpcSettings() != null
-                && other.getVpcSettings().equals(this.getVpcSettings()) == false)
+        if (other.getVpcSettings() != null && other.getVpcSettings().equals(this.getVpcSettings()) == false)
             return false;
         return true;
     }
@@ -448,20 +408,12 @@ public class CreateDirectoryRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getShortName() == null) ? 0 : getShortName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPassword() == null) ? 0 : getPassword().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getSize() == null) ? 0 : getSize().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVpcSettings() == null) ? 0 : getVpcSettings().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getShortName() == null) ? 0 : getShortName().hashCode());
+        hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
+        hashCode = prime * hashCode + ((getVpcSettings() == null) ? 0 : getVpcSettings().hashCode());
         return hashCode;
     }
 

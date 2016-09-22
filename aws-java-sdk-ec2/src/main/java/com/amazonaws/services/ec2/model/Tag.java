@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -28,8 +26,8 @@ public class Tag implements Serializable, Cloneable {
      * The key of the tag.
      * </p>
      * <p>
-     * Constraints: Tag keys are case-sensitive and accept a maximum of 127
-     * Unicode characters. May not begin with <code>aws:</code>
+     * Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code>
      * </p>
      */
     private String key;
@@ -38,49 +36,46 @@ public class Tag implements Serializable, Cloneable {
      * The value of the tag.
      * </p>
      * <p>
-     * Constraints: Tag values are case-sensitive and accept a maximum of 255
-     * Unicode characters.
+     * Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
      * </p>
      */
     private String value;
 
     /**
-     * Default constructor for Tag object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize the object after creating
-     * it.
+     * Default constructor for Tag object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize the object after creating it.
      */
     public Tag() {
     }
 
     /**
-     * Constructs a new Tag object. Callers should use the setter or fluent
-     * setter (with...) methods to initialize any additional object members.
+     * Constructs a new Tag object. Callers should use the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
      * @param key
      *        The key of the tag.</p>
      *        <p>
-     *        Constraints: Tag keys are case-sensitive and accept a maximum of
-     *        127 Unicode characters. May not begin with <code>aws:</code>
+     *        Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin
+     *        with <code>aws:</code>
      */
     public Tag(String key) {
         setKey(key);
     }
 
     /**
-     * Constructs a new Tag object. Callers should use the setter or fluent
-     * setter (with...) methods to initialize any additional object members.
+     * Constructs a new Tag object. Callers should use the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
      * @param key
      *        The key of the tag.</p>
      *        <p>
-     *        Constraints: Tag keys are case-sensitive and accept a maximum of
-     *        127 Unicode characters. May not begin with <code>aws:</code>
+     *        Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin
+     *        with <code>aws:</code>
      * @param value
      *        The value of the tag.
      *        </p>
      *        <p>
-     *        Constraints: Tag values are case-sensitive and accept a maximum of
-     *        255 Unicode characters.
+     *        Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
      */
     public Tag(String key, String value) {
         setKey(key);
@@ -92,15 +87,15 @@ public class Tag implements Serializable, Cloneable {
      * The key of the tag.
      * </p>
      * <p>
-     * Constraints: Tag keys are case-sensitive and accept a maximum of 127
-     * Unicode characters. May not begin with <code>aws:</code>
+     * Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code>
      * </p>
      * 
      * @param key
      *        The key of the tag.</p>
      *        <p>
-     *        Constraints: Tag keys are case-sensitive and accept a maximum of
-     *        127 Unicode characters. May not begin with <code>aws:</code>
+     *        Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin
+     *        with <code>aws:</code>
      */
 
     public void setKey(String key) {
@@ -112,14 +107,14 @@ public class Tag implements Serializable, Cloneable {
      * The key of the tag.
      * </p>
      * <p>
-     * Constraints: Tag keys are case-sensitive and accept a maximum of 127
-     * Unicode characters. May not begin with <code>aws:</code>
+     * Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code>
      * </p>
      * 
      * @return The key of the tag.</p>
      *         <p>
-     *         Constraints: Tag keys are case-sensitive and accept a maximum of
-     *         127 Unicode characters. May not begin with <code>aws:</code>
+     *         Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin
+     *         with <code>aws:</code>
      */
 
     public String getKey() {
@@ -131,17 +126,16 @@ public class Tag implements Serializable, Cloneable {
      * The key of the tag.
      * </p>
      * <p>
-     * Constraints: Tag keys are case-sensitive and accept a maximum of 127
-     * Unicode characters. May not begin with <code>aws:</code>
+     * Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with
+     * <code>aws:</code>
      * </p>
      * 
      * @param key
      *        The key of the tag.</p>
      *        <p>
-     *        Constraints: Tag keys are case-sensitive and accept a maximum of
-     *        127 Unicode characters. May not begin with <code>aws:</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin
+     *        with <code>aws:</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Tag withKey(String key) {
@@ -154,15 +148,13 @@ public class Tag implements Serializable, Cloneable {
      * The value of the tag.
      * </p>
      * <p>
-     * Constraints: Tag values are case-sensitive and accept a maximum of 255
-     * Unicode characters.
+     * Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
      * </p>
      * 
      * @param value
      *        The value of the tag.</p>
      *        <p>
-     *        Constraints: Tag values are case-sensitive and accept a maximum of
-     *        255 Unicode characters.
+     *        Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
      */
 
     public void setValue(String value) {
@@ -174,14 +166,12 @@ public class Tag implements Serializable, Cloneable {
      * The value of the tag.
      * </p>
      * <p>
-     * Constraints: Tag values are case-sensitive and accept a maximum of 255
-     * Unicode characters.
+     * Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
      * </p>
      * 
      * @return The value of the tag.</p>
      *         <p>
-     *         Constraints: Tag values are case-sensitive and accept a maximum
-     *         of 255 Unicode characters.
+     *         Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
      */
 
     public String getValue() {
@@ -193,17 +183,14 @@ public class Tag implements Serializable, Cloneable {
      * The value of the tag.
      * </p>
      * <p>
-     * Constraints: Tag values are case-sensitive and accept a maximum of 255
-     * Unicode characters.
+     * Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
      * </p>
      * 
      * @param value
      *        The value of the tag.</p>
      *        <p>
-     *        Constraints: Tag values are case-sensitive and accept a maximum of
-     *        255 Unicode characters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Tag withValue(String value) {
@@ -212,8 +199,7 @@ public class Tag implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -243,13 +229,11 @@ public class Tag implements Serializable, Cloneable {
         Tag other = (Tag) obj;
         if (other.getKey() == null ^ this.getKey() == null)
             return false;
-        if (other.getKey() != null
-                && other.getKey().equals(this.getKey()) == false)
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
             return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
-        if (other.getValue() != null
-                && other.getValue().equals(this.getValue()) == false)
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
         return true;
     }
@@ -259,10 +243,8 @@ public class Tag implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKey() == null) ? 0 : getKey().hashCode());
-        hashCode = prime * hashCode
-                + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         return hashCode;
     }
 
@@ -271,9 +253,7 @@ public class Tag implements Serializable, Cloneable {
         try {
             return (Tag) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

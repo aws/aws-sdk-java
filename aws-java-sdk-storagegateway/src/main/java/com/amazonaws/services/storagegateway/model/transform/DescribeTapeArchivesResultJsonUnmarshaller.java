@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DescribeTapeArchivesResult JSON Unmarshaller
  */
-public class DescribeTapeArchivesResultJsonUnmarshaller implements
-        Unmarshaller<DescribeTapeArchivesResult, JsonUnmarshallerContext> {
+public class DescribeTapeArchivesResultJsonUnmarshaller implements Unmarshaller<DescribeTapeArchivesResult, JsonUnmarshallerContext> {
 
-    public DescribeTapeArchivesResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public DescribeTapeArchivesResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeTapeArchivesResult describeTapeArchivesResult = new DescribeTapeArchivesResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -54,19 +50,14 @@ public class DescribeTapeArchivesResultJsonUnmarshaller implements
                 if (context.testExpression("TapeArchives", targetDepth)) {
                     context.nextToken();
                     describeTapeArchivesResult
-                            .setTapeArchives(new ListUnmarshaller<TapeArchive>(
-                                    TapeArchiveJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+                            .setTapeArchives(new ListUnmarshaller<TapeArchive>(TapeArchiveJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();
-                    describeTapeArchivesResult.setMarker(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeTapeArchivesResult.setMarker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

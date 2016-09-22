@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,35 +29,29 @@ import com.amazonaws.util.IdempotentUtils;
  * CreateDhcpOptionsRequest Marshaller
  */
 
-public class CreateDhcpOptionsRequestMarshaller implements
-        Marshaller<Request<CreateDhcpOptionsRequest>, CreateDhcpOptionsRequest> {
+public class CreateDhcpOptionsRequestMarshaller implements Marshaller<Request<CreateDhcpOptionsRequest>, CreateDhcpOptionsRequest> {
 
-    public Request<CreateDhcpOptionsRequest> marshall(
-            CreateDhcpOptionsRequest createDhcpOptionsRequest) {
+    public Request<CreateDhcpOptionsRequest> marshall(CreateDhcpOptionsRequest createDhcpOptionsRequest) {
 
         if (createDhcpOptionsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDhcpOptionsRequest> request = new DefaultRequest<CreateDhcpOptionsRequest>(
-                createDhcpOptionsRequest, "AmazonEC2");
+        Request<CreateDhcpOptionsRequest> request = new DefaultRequest<CreateDhcpOptionsRequest>(createDhcpOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "CreateDhcpOptions");
         request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<DhcpConfiguration> dhcpConfigurationsList = (com.amazonaws.internal.SdkInternalList<DhcpConfiguration>) createDhcpOptionsRequest
                 .getDhcpConfigurations();
-        if (!dhcpConfigurationsList.isEmpty()
-                || !dhcpConfigurationsList.isAutoConstruct()) {
+        if (!dhcpConfigurationsList.isEmpty() || !dhcpConfigurationsList.isAutoConstruct()) {
             int dhcpConfigurationsListIndex = 1;
 
             for (DhcpConfiguration dhcpConfigurationsListValue : dhcpConfigurationsList) {
 
                 if (dhcpConfigurationsListValue.getKey() != null) {
-                    request.addParameter("DhcpConfiguration."
-                            + dhcpConfigurationsListIndex + ".Key", StringUtils
-                            .fromString(dhcpConfigurationsListValue.getKey()));
+                    request.addParameter("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Key",
+                            StringUtils.fromString(dhcpConfigurationsListValue.getKey()));
                 }
 
                 com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) dhcpConfigurationsListValue
@@ -69,9 +61,7 @@ public class CreateDhcpOptionsRequestMarshaller implements
 
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
-                            request.addParameter("DhcpConfiguration."
-                                    + dhcpConfigurationsListIndex + ".Value."
-                                    + valuesListIndex,
+                            request.addParameter("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Value." + valuesListIndex,
                                     StringUtils.fromString(valuesListValue));
                         }
                         valuesListIndex++;

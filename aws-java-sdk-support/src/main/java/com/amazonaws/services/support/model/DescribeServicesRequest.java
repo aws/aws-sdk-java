@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.support.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DescribeServicesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,9 +28,8 @@ public class DescribeServicesRequest extends
     private com.amazonaws.internal.SdkInternalList<String> serviceCodeList;
     /**
      * <p>
-     * The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en")
+     * and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
      * </p>
      */
     private String language;
@@ -44,8 +39,7 @@ public class DescribeServicesRequest extends
      * A JSON-formatted list of service codes available for AWS services.
      * </p>
      * 
-     * @return A JSON-formatted list of service codes available for AWS
-     *         services.
+     * @return A JSON-formatted list of service codes available for AWS services.
      */
 
     public java.util.List<String> getServiceCodeList() {
@@ -70,8 +64,7 @@ public class DescribeServicesRequest extends
             return;
         }
 
-        this.serviceCodeList = new com.amazonaws.internal.SdkInternalList<String>(
-                serviceCodeList);
+        this.serviceCodeList = new com.amazonaws.internal.SdkInternalList<String>(serviceCodeList);
     }
 
     /**
@@ -79,23 +72,19 @@ public class DescribeServicesRequest extends
      * A JSON-formatted list of service codes available for AWS services.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setServiceCodeList(java.util.Collection)} or
-     * {@link #withServiceCodeList(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setServiceCodeList(java.util.Collection)} or {@link #withServiceCodeList(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param serviceCodeList
      *        A JSON-formatted list of service codes available for AWS services.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeServicesRequest withServiceCodeList(
-            String... serviceCodeList) {
+    public DescribeServicesRequest withServiceCodeList(String... serviceCodeList) {
         if (this.serviceCodeList == null) {
-            setServiceCodeList(new com.amazonaws.internal.SdkInternalList<String>(
-                    serviceCodeList.length));
+            setServiceCodeList(new com.amazonaws.internal.SdkInternalList<String>(serviceCodeList.length));
         }
         for (String ele : serviceCodeList) {
             this.serviceCodeList.add(ele);
@@ -110,28 +99,23 @@ public class DescribeServicesRequest extends
      * 
      * @param serviceCodeList
      *        A JSON-formatted list of service codes available for AWS services.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeServicesRequest withServiceCodeList(
-            java.util.Collection<String> serviceCodeList) {
+    public DescribeServicesRequest withServiceCodeList(java.util.Collection<String> serviceCodeList) {
         setServiceCodeList(serviceCodeList);
         return this;
     }
 
     /**
      * <p>
-     * The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en")
+     * and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
      * </p>
      * 
      * @param language
-     *        The ISO 639-1 code for the language in which AWS provides support.
-     *        AWS Support currently supports English ("en") and Japanese ("ja").
-     *        Language parameters must be passed explicitly for operations that
-     *        take them.
+     *        The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English
+     *        ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
      */
 
     public void setLanguage(String language) {
@@ -140,15 +124,12 @@ public class DescribeServicesRequest extends
 
     /**
      * <p>
-     * The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en")
+     * and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
      * </p>
      * 
-     * @return The ISO 639-1 code for the language in which AWS provides
-     *         support. AWS Support currently supports English ("en") and
-     *         Japanese ("ja"). Language parameters must be passed explicitly
-     *         for operations that take them.
+     * @return The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English
+     *         ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
      */
 
     public String getLanguage() {
@@ -157,18 +138,14 @@ public class DescribeServicesRequest extends
 
     /**
      * <p>
-     * The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en")
+     * and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
      * </p>
      * 
      * @param language
-     *        The ISO 639-1 code for the language in which AWS provides support.
-     *        AWS Support currently supports English ("en") and Japanese ("ja").
-     *        Language parameters must be passed explicitly for operations that
-     *        take them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English
+     *        ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeServicesRequest withLanguage(String language) {
@@ -177,8 +154,7 @@ public class DescribeServicesRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -206,16 +182,13 @@ public class DescribeServicesRequest extends
         if (obj instanceof DescribeServicesRequest == false)
             return false;
         DescribeServicesRequest other = (DescribeServicesRequest) obj;
-        if (other.getServiceCodeList() == null
-                ^ this.getServiceCodeList() == null)
+        if (other.getServiceCodeList() == null ^ this.getServiceCodeList() == null)
             return false;
-        if (other.getServiceCodeList() != null
-                && other.getServiceCodeList().equals(this.getServiceCodeList()) == false)
+        if (other.getServiceCodeList() != null && other.getServiceCodeList().equals(this.getServiceCodeList()) == false)
             return false;
         if (other.getLanguage() == null ^ this.getLanguage() == null)
             return false;
-        if (other.getLanguage() != null
-                && other.getLanguage().equals(this.getLanguage()) == false)
+        if (other.getLanguage() != null && other.getLanguage().equals(this.getLanguage()) == false)
             return false;
         return true;
     }
@@ -225,12 +198,8 @@ public class DescribeServicesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getServiceCodeList() == null) ? 0 : getServiceCodeList()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
+        hashCode = prime * hashCode + ((getServiceCodeList() == null) ? 0 : getServiceCodeList().hashCode());
+        hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
         return hashCode;
     }
 

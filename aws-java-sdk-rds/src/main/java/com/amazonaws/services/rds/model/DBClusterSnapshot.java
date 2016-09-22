@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -33,16 +31,14 @@ import java.io.Serializable;
  * </li>
  * </ul>
  * <p>
- * This data type is used as a response element in the
- * <a>DescribeDBClusterSnapshots</a> action.
+ * This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.
  * </p>
  */
 public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB
-     * cluster snapshot can be restored in.
+     * Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> availabilityZones;
@@ -54,15 +50,13 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private String dBClusterSnapshotIdentifier;
     /**
      * <p>
-     * Specifies the DB cluster identifier of the DB cluster that this DB
-     * cluster snapshot was created from.
+     * Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot was created from.
      * </p>
      */
     private String dBClusterIdentifier;
     /**
      * <p>
-     * Provides the time when the snapshot was taken, in Universal Coordinated
-     * Time (UTC).
+     * Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
      * </p>
      */
     private java.util.Date snapshotCreateTime;
@@ -86,8 +80,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * Specifies the port that the DB cluster was listening on at the time of
-     * the snapshot.
+     * Specifies the port that the DB cluster was listening on at the time of the snapshot.
      * </p>
      */
     private Integer port;
@@ -99,8 +92,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * Specifies the time when the DB cluster was created, in Universal
-     * Coordinated Time (UTC).
+     * Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
      * </p>
      */
     private java.util.Date clusterCreateTime;
@@ -142,8 +134,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the
-     * encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
      */
     private String kmsKeyId;
@@ -156,12 +147,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB
-     * cluster snapshot can be restored in.
+     * Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
      * </p>
      * 
-     * @return Provides the list of EC2 Availability Zones that instances in the
-     *         DB cluster snapshot can be restored in.
+     * @return Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
      */
 
     public java.util.List<String> getAvailabilityZones() {
@@ -173,49 +162,40 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB
-     * cluster snapshot can be restored in.
+     * Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
      * </p>
      * 
      * @param availabilityZones
-     *        Provides the list of EC2 Availability Zones that instances in the
-     *        DB cluster snapshot can be restored in.
+     *        Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
      */
 
-    public void setAvailabilityZones(
-            java.util.Collection<String> availabilityZones) {
+    public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
             this.availabilityZones = null;
             return;
         }
 
-        this.availabilityZones = new com.amazonaws.internal.SdkInternalList<String>(
-                availabilityZones);
+        this.availabilityZones = new com.amazonaws.internal.SdkInternalList<String>(availabilityZones);
     }
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB
-     * cluster snapshot can be restored in.
+     * Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
-     * {@link #withAvailabilityZones(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param availabilityZones
-     *        Provides the list of EC2 Availability Zones that instances in the
-     *        DB cluster snapshot can be restored in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withAvailabilityZones(String... availabilityZones) {
         if (this.availabilityZones == null) {
-            setAvailabilityZones(new com.amazonaws.internal.SdkInternalList<String>(
-                    availabilityZones.length));
+            setAvailabilityZones(new com.amazonaws.internal.SdkInternalList<String>(availabilityZones.length));
         }
         for (String ele : availabilityZones) {
             this.availabilityZones.add(ele);
@@ -225,19 +205,15 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB
-     * cluster snapshot can be restored in.
+     * Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
      * </p>
      * 
      * @param availabilityZones
-     *        Provides the list of EC2 Availability Zones that instances in the
-     *        DB cluster snapshot can be restored in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DBClusterSnapshot withAvailabilityZones(
-            java.util.Collection<String> availabilityZones) {
+    public DBClusterSnapshot withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         setAvailabilityZones(availabilityZones);
         return this;
     }
@@ -251,8 +227,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      *        Specifies the identifier for the DB cluster snapshot.
      */
 
-    public void setDBClusterSnapshotIdentifier(
-            String dBClusterSnapshotIdentifier) {
+    public void setDBClusterSnapshotIdentifier(String dBClusterSnapshotIdentifier) {
         this.dBClusterSnapshotIdentifier = dBClusterSnapshotIdentifier;
     }
 
@@ -275,25 +250,21 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * 
      * @param dBClusterSnapshotIdentifier
      *        Specifies the identifier for the DB cluster snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DBClusterSnapshot withDBClusterSnapshotIdentifier(
-            String dBClusterSnapshotIdentifier) {
+    public DBClusterSnapshot withDBClusterSnapshotIdentifier(String dBClusterSnapshotIdentifier) {
         setDBClusterSnapshotIdentifier(dBClusterSnapshotIdentifier);
         return this;
     }
 
     /**
      * <p>
-     * Specifies the DB cluster identifier of the DB cluster that this DB
-     * cluster snapshot was created from.
+     * Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot was created from.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        Specifies the DB cluster identifier of the DB cluster that this DB
-     *        cluster snapshot was created from.
+     *        Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot was created from.
      */
 
     public void setDBClusterIdentifier(String dBClusterIdentifier) {
@@ -302,12 +273,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the DB cluster identifier of the DB cluster that this DB
-     * cluster snapshot was created from.
+     * Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot was created from.
      * </p>
      * 
-     * @return Specifies the DB cluster identifier of the DB cluster that this
-     *         DB cluster snapshot was created from.
+     * @return Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot was created from.
      */
 
     public String getDBClusterIdentifier() {
@@ -316,15 +285,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the DB cluster identifier of the DB cluster that this DB
-     * cluster snapshot was created from.
+     * Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot was created from.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        Specifies the DB cluster identifier of the DB cluster that this DB
-     *        cluster snapshot was created from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot was created from.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withDBClusterIdentifier(String dBClusterIdentifier) {
@@ -334,13 +300,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the time when the snapshot was taken, in Universal Coordinated
-     * Time (UTC).
+     * Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
      * </p>
      * 
      * @param snapshotCreateTime
-     *        Provides the time when the snapshot was taken, in Universal
-     *        Coordinated Time (UTC).
+     *        Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
      */
 
     public void setSnapshotCreateTime(java.util.Date snapshotCreateTime) {
@@ -349,12 +313,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the time when the snapshot was taken, in Universal Coordinated
-     * Time (UTC).
+     * Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
      * </p>
      * 
-     * @return Provides the time when the snapshot was taken, in Universal
-     *         Coordinated Time (UTC).
+     * @return Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
      */
 
     public java.util.Date getSnapshotCreateTime() {
@@ -363,19 +325,15 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the time when the snapshot was taken, in Universal Coordinated
-     * Time (UTC).
+     * Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
      * </p>
      * 
      * @param snapshotCreateTime
-     *        Provides the time when the snapshot was taken, in Universal
-     *        Coordinated Time (UTC).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DBClusterSnapshot withSnapshotCreateTime(
-            java.util.Date snapshotCreateTime) {
+    public DBClusterSnapshot withSnapshotCreateTime(java.util.Date snapshotCreateTime) {
         setSnapshotCreateTime(snapshotCreateTime);
         return this;
     }
@@ -412,8 +370,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * 
      * @param engine
      *        Specifies the name of the database engine.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withEngine(String engine) {
@@ -453,8 +410,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * 
      * @param allocatedStorage
      *        Specifies the allocated storage size in gigabytes (GB).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withAllocatedStorage(Integer allocatedStorage) {
@@ -494,8 +450,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * 
      * @param status
      *        Specifies the status of this DB cluster snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withStatus(String status) {
@@ -505,13 +460,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the port that the DB cluster was listening on at the time of
-     * the snapshot.
+     * Specifies the port that the DB cluster was listening on at the time of the snapshot.
      * </p>
      * 
      * @param port
-     *        Specifies the port that the DB cluster was listening on at the
-     *        time of the snapshot.
+     *        Specifies the port that the DB cluster was listening on at the time of the snapshot.
      */
 
     public void setPort(Integer port) {
@@ -520,12 +473,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the port that the DB cluster was listening on at the time of
-     * the snapshot.
+     * Specifies the port that the DB cluster was listening on at the time of the snapshot.
      * </p>
      * 
-     * @return Specifies the port that the DB cluster was listening on at the
-     *         time of the snapshot.
+     * @return Specifies the port that the DB cluster was listening on at the time of the snapshot.
      */
 
     public Integer getPort() {
@@ -534,15 +485,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the port that the DB cluster was listening on at the time of
-     * the snapshot.
+     * Specifies the port that the DB cluster was listening on at the time of the snapshot.
      * </p>
      * 
      * @param port
-     *        Specifies the port that the DB cluster was listening on at the
-     *        time of the snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the port that the DB cluster was listening on at the time of the snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withPort(Integer port) {
@@ -582,8 +530,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * 
      * @param vpcId
      *        Provides the VPC ID associated with the DB cluster snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withVpcId(String vpcId) {
@@ -593,13 +540,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the DB cluster was created, in Universal
-     * Coordinated Time (UTC).
+     * Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
      * </p>
      * 
      * @param clusterCreateTime
-     *        Specifies the time when the DB cluster was created, in Universal
-     *        Coordinated Time (UTC).
+     *        Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
      */
 
     public void setClusterCreateTime(java.util.Date clusterCreateTime) {
@@ -608,12 +553,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the DB cluster was created, in Universal
-     * Coordinated Time (UTC).
+     * Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
      * </p>
      * 
-     * @return Specifies the time when the DB cluster was created, in Universal
-     *         Coordinated Time (UTC).
+     * @return Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
      */
 
     public java.util.Date getClusterCreateTime() {
@@ -622,19 +565,15 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the DB cluster was created, in Universal
-     * Coordinated Time (UTC).
+     * Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
      * </p>
      * 
      * @param clusterCreateTime
-     *        Specifies the time when the DB cluster was created, in Universal
-     *        Coordinated Time (UTC).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DBClusterSnapshot withClusterCreateTime(
-            java.util.Date clusterCreateTime) {
+    public DBClusterSnapshot withClusterCreateTime(java.util.Date clusterCreateTime) {
         setClusterCreateTime(clusterCreateTime);
         return this;
     }
@@ -671,8 +610,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * 
      * @param masterUsername
      *        Provides the master username for the DB cluster snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withMasterUsername(String masterUsername) {
@@ -686,8 +624,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * </p>
      * 
      * @param engineVersion
-     *        Provides the version of the database engine for this DB cluster
-     *        snapshot.
+     *        Provides the version of the database engine for this DB cluster snapshot.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -699,8 +636,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * Provides the version of the database engine for this DB cluster snapshot.
      * </p>
      * 
-     * @return Provides the version of the database engine for this DB cluster
-     *         snapshot.
+     * @return Provides the version of the database engine for this DB cluster snapshot.
      */
 
     public String getEngineVersion() {
@@ -713,10 +649,8 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * </p>
      * 
      * @param engineVersion
-     *        Provides the version of the database engine for this DB cluster
-     *        snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Provides the version of the database engine for this DB cluster snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withEngineVersion(String engineVersion) {
@@ -730,8 +664,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * </p>
      * 
      * @param licenseModel
-     *        Provides the license model information for this DB cluster
-     *        snapshot.
+     *        Provides the license model information for this DB cluster snapshot.
      */
 
     public void setLicenseModel(String licenseModel) {
@@ -743,8 +676,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * Provides the license model information for this DB cluster snapshot.
      * </p>
      * 
-     * @return Provides the license model information for this DB cluster
-     *         snapshot.
+     * @return Provides the license model information for this DB cluster snapshot.
      */
 
     public String getLicenseModel() {
@@ -757,10 +689,8 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * </p>
      * 
      * @param licenseModel
-     *        Provides the license model information for this DB cluster
-     *        snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Provides the license model information for this DB cluster snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withLicenseModel(String licenseModel) {
@@ -800,8 +730,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * 
      * @param snapshotType
      *        Provides the type of the DB cluster snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withSnapshotType(String snapshotType) {
@@ -815,8 +744,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * </p>
      * 
      * @param percentProgress
-     *        Specifies the percentage of the estimated data that has been
-     *        transferred.
+     *        Specifies the percentage of the estimated data that has been transferred.
      */
 
     public void setPercentProgress(Integer percentProgress) {
@@ -828,8 +756,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * Specifies the percentage of the estimated data that has been transferred.
      * </p>
      * 
-     * @return Specifies the percentage of the estimated data that has been
-     *         transferred.
+     * @return Specifies the percentage of the estimated data that has been transferred.
      */
 
     public Integer getPercentProgress() {
@@ -842,10 +769,8 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * </p>
      * 
      * @param percentProgress
-     *        Specifies the percentage of the estimated data that has been
-     *        transferred.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the percentage of the estimated data that has been transferred.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withPercentProgress(Integer percentProgress) {
@@ -885,8 +810,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * 
      * @param storageEncrypted
      *        Specifies whether the DB cluster snapshot is encrypted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withStorageEncrypted(Boolean storageEncrypted) {
@@ -908,13 +832,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the
-     * encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the KMS key identifier
-     *        for the encrypted DB cluster snapshot.
+     *        If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -923,12 +845,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the
-     * encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is true, the KMS key identifier
-     *         for the encrypted DB cluster snapshot.
+     * @return If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
      */
 
     public String getKmsKeyId() {
@@ -937,15 +857,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the
-     * encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the KMS key identifier
-     *        for the encrypted DB cluster snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withKmsKeyId(String kmsKeyId) {
@@ -985,19 +902,16 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * 
      * @param dBClusterSnapshotArn
      *        The Amazon Resource Name (ARN) for the DB cluster snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DBClusterSnapshot withDBClusterSnapshotArn(
-            String dBClusterSnapshotArn) {
+    public DBClusterSnapshot withDBClusterSnapshotArn(String dBClusterSnapshotArn) {
         setDBClusterSnapshotArn(dBClusterSnapshotArn);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1010,8 +924,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (getAvailabilityZones() != null)
             sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
         if (getDBClusterSnapshotIdentifier() != null)
-            sb.append("DBClusterSnapshotIdentifier: "
-                    + getDBClusterSnapshotIdentifier() + ",");
+            sb.append("DBClusterSnapshotIdentifier: " + getDBClusterSnapshotIdentifier() + ",");
         if (getDBClusterIdentifier() != null)
             sb.append("DBClusterIdentifier: " + getDBClusterIdentifier() + ",");
         if (getSnapshotCreateTime() != null)
@@ -1058,113 +971,77 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (obj instanceof DBClusterSnapshot == false)
             return false;
         DBClusterSnapshot other = (DBClusterSnapshot) obj;
-        if (other.getAvailabilityZones() == null
-                ^ this.getAvailabilityZones() == null)
+        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null)
             return false;
-        if (other.getAvailabilityZones() != null
-                && other.getAvailabilityZones().equals(
-                        this.getAvailabilityZones()) == false)
+        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false)
             return false;
-        if (other.getDBClusterSnapshotIdentifier() == null
-                ^ this.getDBClusterSnapshotIdentifier() == null)
+        if (other.getDBClusterSnapshotIdentifier() == null ^ this.getDBClusterSnapshotIdentifier() == null)
             return false;
-        if (other.getDBClusterSnapshotIdentifier() != null
-                && other.getDBClusterSnapshotIdentifier().equals(
-                        this.getDBClusterSnapshotIdentifier()) == false)
+        if (other.getDBClusterSnapshotIdentifier() != null && other.getDBClusterSnapshotIdentifier().equals(this.getDBClusterSnapshotIdentifier()) == false)
             return false;
-        if (other.getDBClusterIdentifier() == null
-                ^ this.getDBClusterIdentifier() == null)
+        if (other.getDBClusterIdentifier() == null ^ this.getDBClusterIdentifier() == null)
             return false;
-        if (other.getDBClusterIdentifier() != null
-                && other.getDBClusterIdentifier().equals(
-                        this.getDBClusterIdentifier()) == false)
+        if (other.getDBClusterIdentifier() != null && other.getDBClusterIdentifier().equals(this.getDBClusterIdentifier()) == false)
             return false;
-        if (other.getSnapshotCreateTime() == null
-                ^ this.getSnapshotCreateTime() == null)
+        if (other.getSnapshotCreateTime() == null ^ this.getSnapshotCreateTime() == null)
             return false;
-        if (other.getSnapshotCreateTime() != null
-                && other.getSnapshotCreateTime().equals(
-                        this.getSnapshotCreateTime()) == false)
+        if (other.getSnapshotCreateTime() != null && other.getSnapshotCreateTime().equals(this.getSnapshotCreateTime()) == false)
             return false;
         if (other.getEngine() == null ^ this.getEngine() == null)
             return false;
-        if (other.getEngine() != null
-                && other.getEngine().equals(this.getEngine()) == false)
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
             return false;
-        if (other.getAllocatedStorage() == null
-                ^ this.getAllocatedStorage() == null)
+        if (other.getAllocatedStorage() == null ^ this.getAllocatedStorage() == null)
             return false;
-        if (other.getAllocatedStorage() != null
-                && other.getAllocatedStorage().equals(
-                        this.getAllocatedStorage()) == false)
+        if (other.getAllocatedStorage() != null && other.getAllocatedStorage().equals(this.getAllocatedStorage()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
-        if (other.getPort() != null
-                && other.getPort().equals(this.getPort()) == false)
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
-        if (other.getClusterCreateTime() == null
-                ^ this.getClusterCreateTime() == null)
+        if (other.getClusterCreateTime() == null ^ this.getClusterCreateTime() == null)
             return false;
-        if (other.getClusterCreateTime() != null
-                && other.getClusterCreateTime().equals(
-                        this.getClusterCreateTime()) == false)
+        if (other.getClusterCreateTime() != null && other.getClusterCreateTime().equals(this.getClusterCreateTime()) == false)
             return false;
-        if (other.getMasterUsername() == null
-                ^ this.getMasterUsername() == null)
+        if (other.getMasterUsername() == null ^ this.getMasterUsername() == null)
             return false;
-        if (other.getMasterUsername() != null
-                && other.getMasterUsername().equals(this.getMasterUsername()) == false)
+        if (other.getMasterUsername() != null && other.getMasterUsername().equals(this.getMasterUsername()) == false)
             return false;
         if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
             return false;
-        if (other.getEngineVersion() != null
-                && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
         if (other.getLicenseModel() == null ^ this.getLicenseModel() == null)
             return false;
-        if (other.getLicenseModel() != null
-                && other.getLicenseModel().equals(this.getLicenseModel()) == false)
+        if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false)
             return false;
         if (other.getSnapshotType() == null ^ this.getSnapshotType() == null)
             return false;
-        if (other.getSnapshotType() != null
-                && other.getSnapshotType().equals(this.getSnapshotType()) == false)
+        if (other.getSnapshotType() != null && other.getSnapshotType().equals(this.getSnapshotType()) == false)
             return false;
-        if (other.getPercentProgress() == null
-                ^ this.getPercentProgress() == null)
+        if (other.getPercentProgress() == null ^ this.getPercentProgress() == null)
             return false;
-        if (other.getPercentProgress() != null
-                && other.getPercentProgress().equals(this.getPercentProgress()) == false)
+        if (other.getPercentProgress() != null && other.getPercentProgress().equals(this.getPercentProgress()) == false)
             return false;
-        if (other.getStorageEncrypted() == null
-                ^ this.getStorageEncrypted() == null)
+        if (other.getStorageEncrypted() == null ^ this.getStorageEncrypted() == null)
             return false;
-        if (other.getStorageEncrypted() != null
-                && other.getStorageEncrypted().equals(
-                        this.getStorageEncrypted()) == false)
+        if (other.getStorageEncrypted() != null && other.getStorageEncrypted().equals(this.getStorageEncrypted()) == false)
             return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
-        if (other.getKmsKeyId() != null
-                && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
-        if (other.getDBClusterSnapshotArn() == null
-                ^ this.getDBClusterSnapshotArn() == null)
+        if (other.getDBClusterSnapshotArn() == null ^ this.getDBClusterSnapshotArn() == null)
             return false;
-        if (other.getDBClusterSnapshotArn() != null
-                && other.getDBClusterSnapshotArn().equals(
-                        this.getDBClusterSnapshotArn()) == false)
+        if (other.getDBClusterSnapshotArn() != null && other.getDBClusterSnapshotArn().equals(this.getDBClusterSnapshotArn()) == false)
             return false;
         return true;
     }
@@ -1174,68 +1051,24 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZones() == null) ? 0
-                        : getAvailabilityZones().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBClusterSnapshotIdentifier() == null) ? 0
-                        : getDBClusterSnapshotIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBClusterIdentifier() == null) ? 0
-                        : getDBClusterIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotCreateTime() == null) ? 0
-                        : getSnapshotCreateTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getEngine() == null) ? 0 : getEngine().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getPort() == null) ? 0 : getPort().hashCode());
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClusterCreateTime() == null) ? 0
-                        : getClusterCreateTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMasterUsername() == null) ? 0 : getMasterUsername()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEngineVersion() == null) ? 0 : getEngineVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLicenseModel() == null) ? 0 : getLicenseModel()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotType() == null) ? 0 : getSnapshotType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPercentProgress() == null) ? 0 : getPercentProgress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStorageEncrypted() == null) ? 0 : getStorageEncrypted()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBClusterSnapshotArn() == null) ? 0
-                        : getDBClusterSnapshotArn().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterSnapshotIdentifier() == null) ? 0 : getDBClusterSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotCreateTime() == null) ? 0 : getSnapshotCreateTime().hashCode());
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
+        hashCode = prime * hashCode + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getClusterCreateTime() == null) ? 0 : getClusterCreateTime().hashCode());
+        hashCode = prime * hashCode + ((getMasterUsername() == null) ? 0 : getMasterUsername().hashCode());
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotType() == null) ? 0 : getSnapshotType().hashCode());
+        hashCode = prime * hashCode + ((getPercentProgress() == null) ? 0 : getPercentProgress().hashCode());
+        hashCode = prime * hashCode + ((getStorageEncrypted() == null) ? 0 : getStorageEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterSnapshotArn() == null) ? 0 : getDBClusterSnapshotArn().hashCode());
         return hashCode;
     }
 
@@ -1244,9 +1077,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         try {
             return (DBClusterSnapshot) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

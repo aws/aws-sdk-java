@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeTargetHealth.
  * </p>
  */
-public class DescribeTargetHealthRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeTargetHealthRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -71,8 +67,7 @@ public class DescribeTargetHealthRequest extends
      * 
      * @param targetGroupArn
      *        The Amazon Resource Name (ARN) of the target group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTargetHealthRequest withTargetGroupArn(String targetGroupArn) {
@@ -115,22 +110,19 @@ public class DescribeTargetHealthRequest extends
      * The targets.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTargets(java.util.Collection)} or
-     * {@link #withTargets(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param targets
      *        The targets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTargetHealthRequest withTargets(TargetDescription... targets) {
         if (this.targets == null) {
-            setTargets(new java.util.ArrayList<TargetDescription>(
-                    targets.length));
+            setTargets(new java.util.ArrayList<TargetDescription>(targets.length));
         }
         for (TargetDescription ele : targets) {
             this.targets.add(ele);
@@ -145,19 +137,16 @@ public class DescribeTargetHealthRequest extends
      * 
      * @param targets
      *        The targets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTargetHealthRequest withTargets(
-            java.util.Collection<TargetDescription> targets) {
+    public DescribeTargetHealthRequest withTargets(java.util.Collection<TargetDescription> targets) {
         setTargets(targets);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -185,16 +174,13 @@ public class DescribeTargetHealthRequest extends
         if (obj instanceof DescribeTargetHealthRequest == false)
             return false;
         DescribeTargetHealthRequest other = (DescribeTargetHealthRequest) obj;
-        if (other.getTargetGroupArn() == null
-                ^ this.getTargetGroupArn() == null)
+        if (other.getTargetGroupArn() == null ^ this.getTargetGroupArn() == null)
             return false;
-        if (other.getTargetGroupArn() != null
-                && other.getTargetGroupArn().equals(this.getTargetGroupArn()) == false)
+        if (other.getTargetGroupArn() != null && other.getTargetGroupArn().equals(this.getTargetGroupArn()) == false)
             return false;
         if (other.getTargets() == null ^ this.getTargets() == null)
             return false;
-        if (other.getTargets() != null
-                && other.getTargets().equals(this.getTargets()) == false)
+        if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
             return false;
         return true;
     }
@@ -204,12 +190,8 @@ public class DescribeTargetHealthRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getTargetGroupArn() == null) ? 0 : getTargetGroupArn()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTargets() == null) ? 0 : getTargets().hashCode());
+        hashCode = prime * hashCode + ((getTargetGroupArn() == null) ? 0 : getTargetGroupArn().hashCode());
+        hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         return hashCode;
     }
 

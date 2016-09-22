@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Contains the output of DescribeScalingProcessTypes.
  * </p>
  */
-public class DescribeScalingProcessTypesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeScalingProcessTypesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -62,8 +58,7 @@ public class DescribeScalingProcessTypesResult extends
             return;
         }
 
-        this.processes = new com.amazonaws.internal.SdkInternalList<ProcessType>(
-                processes);
+        this.processes = new com.amazonaws.internal.SdkInternalList<ProcessType>(processes);
     }
 
     /**
@@ -71,23 +66,19 @@ public class DescribeScalingProcessTypesResult extends
      * The names of the process types.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setProcesses(java.util.Collection)} or
-     * {@link #withProcesses(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProcesses(java.util.Collection)} or {@link #withProcesses(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param processes
      *        The names of the process types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScalingProcessTypesResult withProcesses(
-            ProcessType... processes) {
+    public DescribeScalingProcessTypesResult withProcesses(ProcessType... processes) {
         if (this.processes == null) {
-            setProcesses(new com.amazonaws.internal.SdkInternalList<ProcessType>(
-                    processes.length));
+            setProcesses(new com.amazonaws.internal.SdkInternalList<ProcessType>(processes.length));
         }
         for (ProcessType ele : processes) {
             this.processes.add(ele);
@@ -102,19 +93,16 @@ public class DescribeScalingProcessTypesResult extends
      * 
      * @param processes
      *        The names of the process types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScalingProcessTypesResult withProcesses(
-            java.util.Collection<ProcessType> processes) {
+    public DescribeScalingProcessTypesResult withProcesses(java.util.Collection<ProcessType> processes) {
         setProcesses(processes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -142,8 +130,7 @@ public class DescribeScalingProcessTypesResult extends
         DescribeScalingProcessTypesResult other = (DescribeScalingProcessTypesResult) obj;
         if (other.getProcesses() == null ^ this.getProcesses() == null)
             return false;
-        if (other.getProcesses() != null
-                && other.getProcesses().equals(this.getProcesses()) == false)
+        if (other.getProcesses() != null && other.getProcesses().equals(this.getProcesses()) == false)
             return false;
         return true;
     }
@@ -153,8 +140,7 @@ public class DescribeScalingProcessTypesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getProcesses() == null) ? 0 : getProcesses().hashCode());
+        hashCode = prime * hashCode + ((getProcesses() == null) ? 0 : getProcesses().hashCode());
         return hashCode;
     }
 
@@ -163,9 +149,7 @@ public class DescribeScalingProcessTypesResult extends
         try {
             return (DescribeScalingProcessTypesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

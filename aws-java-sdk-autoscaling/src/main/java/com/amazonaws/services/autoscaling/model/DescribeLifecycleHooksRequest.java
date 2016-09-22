@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeLifecycleHooks.
  * </p>
  */
-public class DescribeLifecycleHooksRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeLifecycleHooksRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,8 +30,7 @@ public class DescribeLifecycleHooksRequest extends
     private String autoScalingGroupName;
     /**
      * <p>
-     * The names of one or more lifecycle hooks. If you omit this parameter, all
-     * lifecycle hooks are described.
+     * The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle hooks are described.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> lifecycleHookNames;
@@ -72,24 +67,20 @@ public class DescribeLifecycleHooksRequest extends
      * 
      * @param autoScalingGroupName
      *        The name of the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLifecycleHooksRequest withAutoScalingGroupName(
-            String autoScalingGroupName) {
+    public DescribeLifecycleHooksRequest withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
 
     /**
      * <p>
-     * The names of one or more lifecycle hooks. If you omit this parameter, all
-     * lifecycle hooks are described.
+     * The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle hooks are described.
      * </p>
      * 
-     * @return The names of one or more lifecycle hooks. If you omit this
-     *         parameter, all lifecycle hooks are described.
+     * @return The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle hooks are described.
      */
 
     public java.util.List<String> getLifecycleHookNames() {
@@ -101,50 +92,40 @@ public class DescribeLifecycleHooksRequest extends
 
     /**
      * <p>
-     * The names of one or more lifecycle hooks. If you omit this parameter, all
-     * lifecycle hooks are described.
+     * The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle hooks are described.
      * </p>
      * 
      * @param lifecycleHookNames
-     *        The names of one or more lifecycle hooks. If you omit this
-     *        parameter, all lifecycle hooks are described.
+     *        The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle hooks are described.
      */
 
-    public void setLifecycleHookNames(
-            java.util.Collection<String> lifecycleHookNames) {
+    public void setLifecycleHookNames(java.util.Collection<String> lifecycleHookNames) {
         if (lifecycleHookNames == null) {
             this.lifecycleHookNames = null;
             return;
         }
 
-        this.lifecycleHookNames = new com.amazonaws.internal.SdkInternalList<String>(
-                lifecycleHookNames);
+        this.lifecycleHookNames = new com.amazonaws.internal.SdkInternalList<String>(lifecycleHookNames);
     }
 
     /**
      * <p>
-     * The names of one or more lifecycle hooks. If you omit this parameter, all
-     * lifecycle hooks are described.
+     * The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle hooks are described.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLifecycleHookNames(java.util.Collection)} or
-     * {@link #withLifecycleHookNames(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLifecycleHookNames(java.util.Collection)} or {@link #withLifecycleHookNames(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param lifecycleHookNames
-     *        The names of one or more lifecycle hooks. If you omit this
-     *        parameter, all lifecycle hooks are described.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle hooks are described.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLifecycleHooksRequest withLifecycleHookNames(
-            String... lifecycleHookNames) {
+    public DescribeLifecycleHooksRequest withLifecycleHookNames(String... lifecycleHookNames) {
         if (this.lifecycleHookNames == null) {
-            setLifecycleHookNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    lifecycleHookNames.length));
+            setLifecycleHookNames(new com.amazonaws.internal.SdkInternalList<String>(lifecycleHookNames.length));
         }
         for (String ele : lifecycleHookNames) {
             this.lifecycleHookNames.add(ele);
@@ -154,26 +135,21 @@ public class DescribeLifecycleHooksRequest extends
 
     /**
      * <p>
-     * The names of one or more lifecycle hooks. If you omit this parameter, all
-     * lifecycle hooks are described.
+     * The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle hooks are described.
      * </p>
      * 
      * @param lifecycleHookNames
-     *        The names of one or more lifecycle hooks. If you omit this
-     *        parameter, all lifecycle hooks are described.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle hooks are described.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLifecycleHooksRequest withLifecycleHookNames(
-            java.util.Collection<String> lifecycleHookNames) {
+    public DescribeLifecycleHooksRequest withLifecycleHookNames(java.util.Collection<String> lifecycleHookNames) {
         setLifecycleHookNames(lifecycleHookNames);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -184,8 +160,7 @@ public class DescribeLifecycleHooksRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
         if (getLifecycleHookNames() != null)
             sb.append("LifecycleHookNames: " + getLifecycleHookNames());
         sb.append("}");
@@ -202,19 +177,13 @@ public class DescribeLifecycleHooksRequest extends
         if (obj instanceof DescribeLifecycleHooksRequest == false)
             return false;
         DescribeLifecycleHooksRequest other = (DescribeLifecycleHooksRequest) obj;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
-        if (other.getLifecycleHookNames() == null
-                ^ this.getLifecycleHookNames() == null)
+        if (other.getLifecycleHookNames() == null ^ this.getLifecycleHookNames() == null)
             return false;
-        if (other.getLifecycleHookNames() != null
-                && other.getLifecycleHookNames().equals(
-                        this.getLifecycleHookNames()) == false)
+        if (other.getLifecycleHookNames() != null && other.getLifecycleHookNames().equals(this.getLifecycleHookNames()) == false)
             return false;
         return true;
     }
@@ -224,14 +193,8 @@ public class DescribeLifecycleHooksRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLifecycleHookNames() == null) ? 0
-                        : getLifecycleHookNames().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleHookNames() == null) ? 0 : getLifecycleHookNames().hashCode());
         return hashCode;
     }
 

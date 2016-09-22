@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Contains the output of DescribeObjects.
  * </p>
  */
-public class DescribeObjectsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeObjectsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,9 +29,8 @@ public class DescribeObjectsResult extends
     private com.amazonaws.internal.SdkInternalList<PipelineObject> pipelineObjects;
     /**
      * <p>
-     * The starting point for the next page of results. To view the next page of
-     * results, call <code>DescribeObjects</code> again with this marker value.
-     * If the value is null, there are no more results.
+     * The starting point for the next page of results. To view the next page of results, call
+     * <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.
      * </p>
      */
     private String marker;
@@ -70,15 +65,13 @@ public class DescribeObjectsResult extends
      *        An array of object definitions.
      */
 
-    public void setPipelineObjects(
-            java.util.Collection<PipelineObject> pipelineObjects) {
+    public void setPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {
         if (pipelineObjects == null) {
             this.pipelineObjects = null;
             return;
         }
 
-        this.pipelineObjects = new com.amazonaws.internal.SdkInternalList<PipelineObject>(
-                pipelineObjects);
+        this.pipelineObjects = new com.amazonaws.internal.SdkInternalList<PipelineObject>(pipelineObjects);
     }
 
     /**
@@ -86,23 +79,19 @@ public class DescribeObjectsResult extends
      * An array of object definitions.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPipelineObjects(java.util.Collection)} or
-     * {@link #withPipelineObjects(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPipelineObjects(java.util.Collection)} or {@link #withPipelineObjects(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param pipelineObjects
      *        An array of object definitions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeObjectsResult withPipelineObjects(
-            PipelineObject... pipelineObjects) {
+    public DescribeObjectsResult withPipelineObjects(PipelineObject... pipelineObjects) {
         if (this.pipelineObjects == null) {
-            setPipelineObjects(new com.amazonaws.internal.SdkInternalList<PipelineObject>(
-                    pipelineObjects.length));
+            setPipelineObjects(new com.amazonaws.internal.SdkInternalList<PipelineObject>(pipelineObjects.length));
         }
         for (PipelineObject ele : pipelineObjects) {
             this.pipelineObjects.add(ele);
@@ -117,27 +106,24 @@ public class DescribeObjectsResult extends
      * 
      * @param pipelineObjects
      *        An array of object definitions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeObjectsResult withPipelineObjects(
-            java.util.Collection<PipelineObject> pipelineObjects) {
+    public DescribeObjectsResult withPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {
         setPipelineObjects(pipelineObjects);
         return this;
     }
 
     /**
      * <p>
-     * The starting point for the next page of results. To view the next page of
-     * results, call <code>DescribeObjects</code> again with this marker value.
-     * If the value is null, there are no more results.
+     * The starting point for the next page of results. To view the next page of results, call
+     * <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.
      * </p>
      * 
      * @param marker
-     *        The starting point for the next page of results. To view the next
-     *        page of results, call <code>DescribeObjects</code> again with this
-     *        marker value. If the value is null, there are no more results.
+     *        The starting point for the next page of results. To view the next page of results, call
+     *        <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more
+     *        results.
      */
 
     public void setMarker(String marker) {
@@ -146,14 +132,12 @@ public class DescribeObjectsResult extends
 
     /**
      * <p>
-     * The starting point for the next page of results. To view the next page of
-     * results, call <code>DescribeObjects</code> again with this marker value.
-     * If the value is null, there are no more results.
+     * The starting point for the next page of results. To view the next page of results, call
+     * <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.
      * </p>
      * 
-     * @return The starting point for the next page of results. To view the next
-     *         page of results, call <code>DescribeObjects</code> again with
-     *         this marker value. If the value is null, there are no more
+     * @return The starting point for the next page of results. To view the next page of results, call
+     *         <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more
      *         results.
      */
 
@@ -163,17 +147,15 @@ public class DescribeObjectsResult extends
 
     /**
      * <p>
-     * The starting point for the next page of results. To view the next page of
-     * results, call <code>DescribeObjects</code> again with this marker value.
-     * If the value is null, there are no more results.
+     * The starting point for the next page of results. To view the next page of results, call
+     * <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.
      * </p>
      * 
      * @param marker
-     *        The starting point for the next page of results. To view the next
-     *        page of results, call <code>DescribeObjects</code> again with this
-     *        marker value. If the value is null, there are no more results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The starting point for the next page of results. To view the next page of results, call
+     *        <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more
+     *        results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeObjectsResult withMarker(String marker) {
@@ -213,8 +195,7 @@ public class DescribeObjectsResult extends
      * 
      * @param hasMoreResults
      *        Indicates whether there are more results to return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeObjectsResult withHasMoreResults(Boolean hasMoreResults) {
@@ -235,8 +216,7 @@ public class DescribeObjectsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -266,22 +246,17 @@ public class DescribeObjectsResult extends
         if (obj instanceof DescribeObjectsResult == false)
             return false;
         DescribeObjectsResult other = (DescribeObjectsResult) obj;
-        if (other.getPipelineObjects() == null
-                ^ this.getPipelineObjects() == null)
+        if (other.getPipelineObjects() == null ^ this.getPipelineObjects() == null)
             return false;
-        if (other.getPipelineObjects() != null
-                && other.getPipelineObjects().equals(this.getPipelineObjects()) == false)
+        if (other.getPipelineObjects() != null && other.getPipelineObjects().equals(this.getPipelineObjects()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
-        if (other.getHasMoreResults() == null
-                ^ this.getHasMoreResults() == null)
+        if (other.getHasMoreResults() == null ^ this.getHasMoreResults() == null)
             return false;
-        if (other.getHasMoreResults() != null
-                && other.getHasMoreResults().equals(this.getHasMoreResults()) == false)
+        if (other.getHasMoreResults() != null && other.getHasMoreResults().equals(this.getHasMoreResults()) == false)
             return false;
         return true;
     }
@@ -291,16 +266,9 @@ public class DescribeObjectsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPipelineObjects() == null) ? 0 : getPipelineObjects()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHasMoreResults() == null) ? 0 : getHasMoreResults()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPipelineObjects() == null) ? 0 : getPipelineObjects().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getHasMoreResults() == null) ? 0 : getHasMoreResults().hashCode());
         return hashCode;
     }
 
@@ -309,9 +277,7 @@ public class DescribeObjectsResult extends
         try {
             return (DescribeObjectsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

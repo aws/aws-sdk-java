@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.applicationdiscovery.model;
 
@@ -20,44 +18,33 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class StartDataCollectionByAgentIdsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class StartDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the agents that you want to start collecting data. If you send
-     * a request to an AWS agent ID that you do not have permission to contact,
-     * according to your AWS account, the service does not throw an exception.
-     * Instead, it returns the error in the <i>Description</i> field. If you
-     * send a request to multiple agents and you do not have permission to
-     * contact some of those agents, the system does not throw an exception.
-     * Instead, the system shows <code>Failed</code> in the <i>Description</i>
-     * field.
+     * The IDs of the agents that you want to start collecting data. If you send a request to an AWS agent ID that you
+     * do not have permission to contact, according to your AWS account, the service does not throw an exception.
+     * Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you
+     * do not have permission to contact some of those agents, the system does not throw an exception. Instead, the
+     * system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      */
     private java.util.List<String> agentIds;
 
     /**
      * <p>
-     * The IDs of the agents that you want to start collecting data. If you send
-     * a request to an AWS agent ID that you do not have permission to contact,
-     * according to your AWS account, the service does not throw an exception.
-     * Instead, it returns the error in the <i>Description</i> field. If you
-     * send a request to multiple agents and you do not have permission to
-     * contact some of those agents, the system does not throw an exception.
-     * Instead, the system shows <code>Failed</code> in the <i>Description</i>
-     * field.
+     * The IDs of the agents that you want to start collecting data. If you send a request to an AWS agent ID that you
+     * do not have permission to contact, according to your AWS account, the service does not throw an exception.
+     * Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you
+     * do not have permission to contact some of those agents, the system does not throw an exception. Instead, the
+     * system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      * 
-     * @return The IDs of the agents that you want to start collecting data. If
-     *         you send a request to an AWS agent ID that you do not have
-     *         permission to contact, according to your AWS account, the service
-     *         does not throw an exception. Instead, it returns the error in the
-     *         <i>Description</i> field. If you send a request to multiple
-     *         agents and you do not have permission to contact some of those
-     *         agents, the system does not throw an exception. Instead, the
-     *         system shows <code>Failed</code> in the <i>Description</i> field.
+     * @return The IDs of the agents that you want to start collecting data. If you send a request to an AWS agent ID
+     *         that you do not have permission to contact, according to your AWS account, the service does not throw an
+     *         exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to
+     *         multiple agents and you do not have permission to contact some of those agents, the system does not throw
+     *         an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      */
 
     public java.util.List<String> getAgentIds() {
@@ -66,25 +53,19 @@ public class StartDataCollectionByAgentIdsRequest extends
 
     /**
      * <p>
-     * The IDs of the agents that you want to start collecting data. If you send
-     * a request to an AWS agent ID that you do not have permission to contact,
-     * according to your AWS account, the service does not throw an exception.
-     * Instead, it returns the error in the <i>Description</i> field. If you
-     * send a request to multiple agents and you do not have permission to
-     * contact some of those agents, the system does not throw an exception.
-     * Instead, the system shows <code>Failed</code> in the <i>Description</i>
-     * field.
+     * The IDs of the agents that you want to start collecting data. If you send a request to an AWS agent ID that you
+     * do not have permission to contact, according to your AWS account, the service does not throw an exception.
+     * Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you
+     * do not have permission to contact some of those agents, the system does not throw an exception. Instead, the
+     * system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      * 
      * @param agentIds
-     *        The IDs of the agents that you want to start collecting data. If
-     *        you send a request to an AWS agent ID that you do not have
-     *        permission to contact, according to your AWS account, the service
-     *        does not throw an exception. Instead, it returns the error in the
-     *        <i>Description</i> field. If you send a request to multiple agents
-     *        and you do not have permission to contact some of those agents,
-     *        the system does not throw an exception. Instead, the system shows
-     *        <code>Failed</code> in the <i>Description</i> field.
+     *        The IDs of the agents that you want to start collecting data. If you send a request to an AWS agent ID
+     *        that you do not have permission to contact, according to your AWS account, the service does not throw an
+     *        exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to
+     *        multiple agents and you do not have permission to contact some of those agents, the system does not throw
+     *        an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      */
 
     public void setAgentIds(java.util.Collection<String> agentIds) {
@@ -98,33 +79,25 @@ public class StartDataCollectionByAgentIdsRequest extends
 
     /**
      * <p>
-     * The IDs of the agents that you want to start collecting data. If you send
-     * a request to an AWS agent ID that you do not have permission to contact,
-     * according to your AWS account, the service does not throw an exception.
-     * Instead, it returns the error in the <i>Description</i> field. If you
-     * send a request to multiple agents and you do not have permission to
-     * contact some of those agents, the system does not throw an exception.
-     * Instead, the system shows <code>Failed</code> in the <i>Description</i>
-     * field.
+     * The IDs of the agents that you want to start collecting data. If you send a request to an AWS agent ID that you
+     * do not have permission to contact, according to your AWS account, the service does not throw an exception.
+     * Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you
+     * do not have permission to contact some of those agents, the system does not throw an exception. Instead, the
+     * system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAgentIds(java.util.Collection)} or
-     * {@link #withAgentIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAgentIds(java.util.Collection)} or {@link #withAgentIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param agentIds
-     *        The IDs of the agents that you want to start collecting data. If
-     *        you send a request to an AWS agent ID that you do not have
-     *        permission to contact, according to your AWS account, the service
-     *        does not throw an exception. Instead, it returns the error in the
-     *        <i>Description</i> field. If you send a request to multiple agents
-     *        and you do not have permission to contact some of those agents,
-     *        the system does not throw an exception. Instead, the system shows
-     *        <code>Failed</code> in the <i>Description</i> field.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs of the agents that you want to start collecting data. If you send a request to an AWS agent ID
+     *        that you do not have permission to contact, according to your AWS account, the service does not throw an
+     *        exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to
+     *        multiple agents and you do not have permission to contact some of those agents, the system does not throw
+     *        an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StartDataCollectionByAgentIdsRequest withAgentIds(String... agentIds) {
@@ -139,38 +112,29 @@ public class StartDataCollectionByAgentIdsRequest extends
 
     /**
      * <p>
-     * The IDs of the agents that you want to start collecting data. If you send
-     * a request to an AWS agent ID that you do not have permission to contact,
-     * according to your AWS account, the service does not throw an exception.
-     * Instead, it returns the error in the <i>Description</i> field. If you
-     * send a request to multiple agents and you do not have permission to
-     * contact some of those agents, the system does not throw an exception.
-     * Instead, the system shows <code>Failed</code> in the <i>Description</i>
-     * field.
+     * The IDs of the agents that you want to start collecting data. If you send a request to an AWS agent ID that you
+     * do not have permission to contact, according to your AWS account, the service does not throw an exception.
+     * Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you
+     * do not have permission to contact some of those agents, the system does not throw an exception. Instead, the
+     * system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      * 
      * @param agentIds
-     *        The IDs of the agents that you want to start collecting data. If
-     *        you send a request to an AWS agent ID that you do not have
-     *        permission to contact, according to your AWS account, the service
-     *        does not throw an exception. Instead, it returns the error in the
-     *        <i>Description</i> field. If you send a request to multiple agents
-     *        and you do not have permission to contact some of those agents,
-     *        the system does not throw an exception. Instead, the system shows
-     *        <code>Failed</code> in the <i>Description</i> field.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs of the agents that you want to start collecting data. If you send a request to an AWS agent ID
+     *        that you do not have permission to contact, according to your AWS account, the service does not throw an
+     *        exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to
+     *        multiple agents and you do not have permission to contact some of those agents, the system does not throw
+     *        an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartDataCollectionByAgentIdsRequest withAgentIds(
-            java.util.Collection<String> agentIds) {
+    public StartDataCollectionByAgentIdsRequest withAgentIds(java.util.Collection<String> agentIds) {
         setAgentIds(agentIds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -198,8 +162,7 @@ public class StartDataCollectionByAgentIdsRequest extends
         StartDataCollectionByAgentIdsRequest other = (StartDataCollectionByAgentIdsRequest) obj;
         if (other.getAgentIds() == null ^ this.getAgentIds() == null)
             return false;
-        if (other.getAgentIds() != null
-                && other.getAgentIds().equals(this.getAgentIds()) == false)
+        if (other.getAgentIds() != null && other.getAgentIds().equals(this.getAgentIds()) == false)
             return false;
         return true;
     }
@@ -209,8 +172,7 @@ public class StartDataCollectionByAgentIdsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAgentIds() == null) ? 0 : getAgentIds().hashCode());
+        hashCode = prime * hashCode + ((getAgentIds() == null) ? 0 : getAgentIds().hashCode());
         return hashCode;
     }
 

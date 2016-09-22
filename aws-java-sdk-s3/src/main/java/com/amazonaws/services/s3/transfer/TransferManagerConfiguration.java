@@ -84,6 +84,24 @@ public class TransferManagerConfiguration {
     private long multipartCopyPartSize = DEFAULT_MINIMUM_COPY_PART_SIZE;
 
     /**
+     * Option to disable parallel downloads. By default, the value is set to false.
+     *
+     * <p>
+     * TransferManager automatically detects and downloads a multipart object
+     * in parallel. Setting this option to true will disable parallel downloads.
+     * </p>
+     * <p>
+     * During parallel downloads, each part is downloaded to a temporary file, gets merged
+     * into the final destination file and will be deleted. These temporary files uses disk space temporarily.
+     * Disable parallel downloads if your system do not have enough space to store these files during download.
+     * </p>
+     * <p>
+     * Disabling parallel downloads might reduce performance for large files.
+     * </p>
+     */
+    private boolean disableParallelDownloads = false;
+
+    /**
      * Returns the minimum part size for upload parts.
      * Decreasing the minimum part size causes
      * multipart uploads to be split into a larger number
@@ -229,5 +247,49 @@ public class TransferManagerConfiguration {
     @Deprecated
     public void setMultipartUploadThreshold(int multipartUploadThreshold) {
         setMultipartUploadThreshold((long) multipartUploadThreshold);
+    }
+
+    /**
+     * Returns if the parallel downloads are disabled or not. By default, the value is set to false.
+     *
+     * <p>
+     * TransferManager automatically detects and downloads a multipart object
+     * in parallel. Setting this option to true will disable parallel downloads.
+     * </p>
+     * <p>
+     * During parallel downloads, each part is downloaded to a temporary file, gets merged
+     * into the final destination file and will be deleted. These temporary files uses disk space temporarily.
+     * Disable parallel downloads if your system do not have enough space to store these files during download.
+     * </p>
+     * <p>
+     * Disabling parallel downloads might reduce performance for large files.
+     * </p>
+     *
+     * @return true if parallel downloads are disabled, otherwise false.
+     */
+    public boolean isDisableParallelDownloads() {
+        return disableParallelDownloads;
+    }
+
+    /**
+     * Sets the option to disable parallel downloads. By default, the value is set to false.
+     *
+     * <p>
+     * TransferManager automatically detects and downloads a multipart object
+     * in parallel. Setting this option to true will disable parallel downloads.
+     * </p>
+     * <p>
+     * During parallel downloads, each part is downloaded to a temporary file, gets merged
+     * into the final destination file and will be deleted. These temporary files uses disk space temporarily.
+     * Disable parallel downloads if your system do not have enough space to store these files during download.
+     * </p>
+     * <p>
+     * Disabling parallel downloads might reduce performance for large files.
+     * </p>
+     *
+     * @param disableParallelDownloads boolean value to disable parallel downloads.
+     */
+    public void setDisableParallelDownloads(boolean disableParallelDownloads) {
+        this.disableParallelDownloads = disableParallelDownloads;
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
@@ -37,8 +35,7 @@ public class TestJsonMarshaller {
     public void marshall(Test test, StructuredJsonGenerator jsonGenerator) {
 
         if (test == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -54,44 +51,35 @@ public class TestJsonMarshaller {
                 jsonGenerator.writeFieldName("type").writeValue(test.getType());
             }
             if (test.getCreated() != null) {
-                jsonGenerator.writeFieldName("created").writeValue(
-                        test.getCreated());
+                jsonGenerator.writeFieldName("created").writeValue(test.getCreated());
             }
             if (test.getStatus() != null) {
-                jsonGenerator.writeFieldName("status").writeValue(
-                        test.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(test.getStatus());
             }
             if (test.getResult() != null) {
-                jsonGenerator.writeFieldName("result").writeValue(
-                        test.getResult());
+                jsonGenerator.writeFieldName("result").writeValue(test.getResult());
             }
             if (test.getStarted() != null) {
-                jsonGenerator.writeFieldName("started").writeValue(
-                        test.getStarted());
+                jsonGenerator.writeFieldName("started").writeValue(test.getStarted());
             }
             if (test.getStopped() != null) {
-                jsonGenerator.writeFieldName("stopped").writeValue(
-                        test.getStopped());
+                jsonGenerator.writeFieldName("stopped").writeValue(test.getStopped());
             }
             if (test.getCounters() != null) {
                 jsonGenerator.writeFieldName("counters");
-                CountersJsonMarshaller.getInstance().marshall(
-                        test.getCounters(), jsonGenerator);
+                CountersJsonMarshaller.getInstance().marshall(test.getCounters(), jsonGenerator);
             }
             if (test.getMessage() != null) {
-                jsonGenerator.writeFieldName("message").writeValue(
-                        test.getMessage());
+                jsonGenerator.writeFieldName("message").writeValue(test.getMessage());
             }
             if (test.getDeviceMinutes() != null) {
                 jsonGenerator.writeFieldName("deviceMinutes");
-                DeviceMinutesJsonMarshaller.getInstance().marshall(
-                        test.getDeviceMinutes(), jsonGenerator);
+                DeviceMinutesJsonMarshaller.getInstance().marshall(test.getDeviceMinutes(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

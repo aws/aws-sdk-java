@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,9 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeAddressesRequestMarsha
  * Contains the parameters for DescribeAddresses.
  * </p>
  */
-public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable,
-        DryRunSupportedRequest<DescribeAddressesRequest> {
+public class DescribeAddressesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeAddressesRequest> {
 
     /**
      * <p>
@@ -49,38 +45,34 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>association-id</code> - [EC2-VPC] The association ID for the
-     * address.
+     * <code>association-id</code> - [EC2-VPC] The association ID for the address.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>domain</code> - Indicates whether the address is for use in
-     * EC2-Classic (<code>standard</code>) or in a VPC (<code>vpc</code>).
+     * <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     * (<code>vpc</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-id</code> - The ID of the instance the address is
-     * associated with, if any.
+     * <code>instance-id</code> - The ID of the instance the address is associated with, if any.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-id</code> - [EC2-VPC] The ID of the network
-     * interface that the address is associated with, if any.
+     * <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated
+     * with, if any.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The AWS account ID of the
-     * owner.
+     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>private-ip-address</code> - [EC2-VPC] The private IP address
-     * associated with the Elastic IP address.
+     * <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.
      * </p>
      * </li>
      * <li>
@@ -141,8 +133,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.publicIps = new com.amazonaws.internal.SdkInternalList<String>(
-                publicIps);
+        this.publicIps = new com.amazonaws.internal.SdkInternalList<String>(publicIps);
     }
 
     /**
@@ -153,24 +144,21 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * Default: Describes all your Elastic IP addresses.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPublicIps(java.util.Collection)} or
-     * {@link #withPublicIps(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPublicIps(java.util.Collection)} or {@link #withPublicIps(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param publicIps
      *        [EC2-Classic] One or more Elastic IP addresses.</p>
      *        <p>
      *        Default: Describes all your Elastic IP addresses.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAddressesRequest withPublicIps(String... publicIps) {
         if (this.publicIps == null) {
-            setPublicIps(new com.amazonaws.internal.SdkInternalList<String>(
-                    publicIps.length));
+            setPublicIps(new com.amazonaws.internal.SdkInternalList<String>(publicIps.length));
         }
         for (String ele : publicIps) {
             this.publicIps.add(ele);
@@ -190,12 +178,10 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        [EC2-Classic] One or more Elastic IP addresses.</p>
      *        <p>
      *        Default: Describes all your Elastic IP addresses.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAddressesRequest withPublicIps(
-            java.util.Collection<String> publicIps) {
+    public DescribeAddressesRequest withPublicIps(java.util.Collection<String> publicIps) {
         setPublicIps(publicIps);
         return this;
     }
@@ -212,38 +198,34 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>association-id</code> - [EC2-VPC] The association ID for the
-     * address.
+     * <code>association-id</code> - [EC2-VPC] The association ID for the address.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>domain</code> - Indicates whether the address is for use in
-     * EC2-Classic (<code>standard</code>) or in a VPC (<code>vpc</code>).
+     * <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     * (<code>vpc</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-id</code> - The ID of the instance the address is
-     * associated with, if any.
+     * <code>instance-id</code> - The ID of the instance the address is associated with, if any.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-id</code> - [EC2-VPC] The ID of the network
-     * interface that the address is associated with, if any.
+     * <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated
+     * with, if any.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The AWS account ID of the
-     * owner.
+     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>private-ip-address</code> - [EC2-VPC] The private IP address
-     * associated with the Elastic IP address.
+     * <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.
      * </p>
      * </li>
      * <li>
@@ -253,50 +235,44 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * </ul>
      * 
-     * @return One or more filters. Filter names and values are
-     *         case-sensitive.</p>
+     * @return One or more filters. Filter names and values are case-sensitive.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     *         address.
+     *         <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>association-id</code> - [EC2-VPC] The association ID for
-     *         the address.
+     *         <code>association-id</code> - [EC2-VPC] The association ID for the address.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>domain</code> - Indicates whether the address is for use in
-     *         EC2-Classic (<code>standard</code>) or in a VPC (<code>vpc</code>
-     *         ).
+     *         <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) or
+     *         in a VPC (<code>vpc</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>instance-id</code> - The ID of the instance the address is
+     *         <code>instance-id</code> - The ID of the instance the address is associated with, if any.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is
      *         associated with, if any.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface-id</code> - [EC2-VPC] The ID of the
-     *         network interface that the address is associated with, if any.
+     *         <code>network-interface-owner-id</code> - The AWS account ID of the owner.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface-owner-id</code> - The AWS account ID of
-     *         the owner.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>private-ip-address</code> - [EC2-VPC] The private IP
-     *         address associated with the Elastic IP address.
+     *         <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP
+     *         address.
      *         </p>
      *         </li>
      *         <li>
@@ -325,38 +301,34 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>association-id</code> - [EC2-VPC] The association ID for the
-     * address.
+     * <code>association-id</code> - [EC2-VPC] The association ID for the address.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>domain</code> - Indicates whether the address is for use in
-     * EC2-Classic (<code>standard</code>) or in a VPC (<code>vpc</code>).
+     * <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     * (<code>vpc</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-id</code> - The ID of the instance the address is
-     * associated with, if any.
+     * <code>instance-id</code> - The ID of the instance the address is associated with, if any.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-id</code> - [EC2-VPC] The ID of the network
-     * interface that the address is associated with, if any.
+     * <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated
+     * with, if any.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The AWS account ID of the
-     * owner.
+     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>private-ip-address</code> - [EC2-VPC] The private IP address
-     * associated with the Elastic IP address.
+     * <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.
      * </p>
      * </li>
      * <li>
@@ -367,50 +339,43 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </ul>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are
-     *        case-sensitive.</p>
+     *        One or more filters. Filter names and values are case-sensitive.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     *        address.
+     *        <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>association-id</code> - [EC2-VPC] The association ID for the
-     *        address.
+     *        <code>association-id</code> - [EC2-VPC] The association ID for the address.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>domain</code> - Indicates whether the address is for use in
-     *        EC2-Classic (<code>standard</code>) or in a VPC (<code>vpc</code>
-     *        ).
+     *        <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) or
+     *        in a VPC (<code>vpc</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-id</code> - The ID of the instance the address is
+     *        <code>instance-id</code> - The ID of the instance the address is associated with, if any.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is
      *        associated with, if any.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-id</code> - [EC2-VPC] The ID of the
-     *        network interface that the address is associated with, if any.
+     *        <code>network-interface-owner-id</code> - The AWS account ID of the owner.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-owner-id</code> - The AWS account ID of
-     *        the owner.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>private-ip-address</code> - [EC2-VPC] The private IP address
-     *        associated with the Elastic IP address.
+     *        <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.
      *        </p>
      *        </li>
      *        <li>
@@ -426,8 +391,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -442,38 +406,34 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>association-id</code> - [EC2-VPC] The association ID for the
-     * address.
+     * <code>association-id</code> - [EC2-VPC] The association ID for the address.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>domain</code> - Indicates whether the address is for use in
-     * EC2-Classic (<code>standard</code>) or in a VPC (<code>vpc</code>).
+     * <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     * (<code>vpc</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-id</code> - The ID of the instance the address is
-     * associated with, if any.
+     * <code>instance-id</code> - The ID of the instance the address is associated with, if any.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-id</code> - [EC2-VPC] The ID of the network
-     * interface that the address is associated with, if any.
+     * <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated
+     * with, if any.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The AWS account ID of the
-     * owner.
+     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>private-ip-address</code> - [EC2-VPC] The private IP address
-     * associated with the Elastic IP address.
+     * <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.
      * </p>
      * </li>
      * <li>
@@ -483,57 +443,49 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are
-     *        case-sensitive.</p>
+     *        One or more filters. Filter names and values are case-sensitive.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     *        address.
+     *        <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>association-id</code> - [EC2-VPC] The association ID for the
-     *        address.
+     *        <code>association-id</code> - [EC2-VPC] The association ID for the address.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>domain</code> - Indicates whether the address is for use in
-     *        EC2-Classic (<code>standard</code>) or in a VPC (<code>vpc</code>
-     *        ).
+     *        <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) or
+     *        in a VPC (<code>vpc</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-id</code> - The ID of the instance the address is
+     *        <code>instance-id</code> - The ID of the instance the address is associated with, if any.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is
      *        associated with, if any.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-id</code> - [EC2-VPC] The ID of the
-     *        network interface that the address is associated with, if any.
+     *        <code>network-interface-owner-id</code> - The AWS account ID of the owner.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-owner-id</code> - The AWS account ID of
-     *        the owner.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>private-ip-address</code> - [EC2-VPC] The private IP address
-     *        associated with the Elastic IP address.
+     *        <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.
      *        </p>
      *        </li>
      *        <li>
@@ -541,14 +493,12 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        <code>public-ip</code> - The Elastic IP address.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAddressesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -568,38 +518,34 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>association-id</code> - [EC2-VPC] The association ID for the
-     * address.
+     * <code>association-id</code> - [EC2-VPC] The association ID for the address.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>domain</code> - Indicates whether the address is for use in
-     * EC2-Classic (<code>standard</code>) or in a VPC (<code>vpc</code>).
+     * <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) or in a VPC
+     * (<code>vpc</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-id</code> - The ID of the instance the address is
-     * associated with, if any.
+     * <code>instance-id</code> - The ID of the instance the address is associated with, if any.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-id</code> - [EC2-VPC] The ID of the network
-     * interface that the address is associated with, if any.
+     * <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated
+     * with, if any.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The AWS account ID of the
-     * owner.
+     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>private-ip-address</code> - [EC2-VPC] The private IP address
-     * associated with the Elastic IP address.
+     * <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.
      * </p>
      * </li>
      * <li>
@@ -610,50 +556,43 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </ul>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are
-     *        case-sensitive.</p>
+     *        One or more filters. Filter names and values are case-sensitive.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     *        address.
+     *        <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>association-id</code> - [EC2-VPC] The association ID for the
-     *        address.
+     *        <code>association-id</code> - [EC2-VPC] The association ID for the address.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>domain</code> - Indicates whether the address is for use in
-     *        EC2-Classic (<code>standard</code>) or in a VPC (<code>vpc</code>
-     *        ).
+     *        <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) or
+     *        in a VPC (<code>vpc</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-id</code> - The ID of the instance the address is
+     *        <code>instance-id</code> - The ID of the instance the address is associated with, if any.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is
      *        associated with, if any.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-id</code> - [EC2-VPC] The ID of the
-     *        network interface that the address is associated with, if any.
+     *        <code>network-interface-owner-id</code> - The AWS account ID of the owner.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-owner-id</code> - The AWS account ID of
-     *        the owner.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>private-ip-address</code> - [EC2-VPC] The private IP address
-     *        associated with the Elastic IP address.
+     *        <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.
      *        </p>
      *        </li>
      *        <li>
@@ -661,12 +600,10 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        <code>public-ip</code> - The Elastic IP address.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAddressesRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeAddressesRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
@@ -711,8 +648,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.allocationIds = new com.amazonaws.internal.SdkInternalList<String>(
-                allocationIds);
+        this.allocationIds = new com.amazonaws.internal.SdkInternalList<String>(allocationIds);
     }
 
     /**
@@ -723,24 +659,21 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * Default: Describes all your Elastic IP addresses.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAllocationIds(java.util.Collection)} or
-     * {@link #withAllocationIds(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAllocationIds(java.util.Collection)} or {@link #withAllocationIds(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param allocationIds
      *        [EC2-VPC] One or more allocation IDs.</p>
      *        <p>
      *        Default: Describes all your Elastic IP addresses.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAddressesRequest withAllocationIds(String... allocationIds) {
         if (this.allocationIds == null) {
-            setAllocationIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    allocationIds.length));
+            setAllocationIds(new com.amazonaws.internal.SdkInternalList<String>(allocationIds.length));
         }
         for (String ele : allocationIds) {
             this.allocationIds.add(ele);
@@ -760,32 +693,27 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        [EC2-VPC] One or more allocation IDs.</p>
      *        <p>
      *        Default: Describes all your Elastic IP addresses.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAddressesRequest withAllocationIds(
-            java.util.Collection<String> allocationIds) {
+    public DescribeAddressesRequest withAllocationIds(java.util.Collection<String> allocationIds) {
         setAllocationIds(allocationIds);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeAddressesRequest> getDryRunRequest() {
-        Request<DescribeAddressesRequest> request = new DescribeAddressesRequestMarshaller()
-                .marshall(this);
+        Request<DescribeAddressesRequest> request = new DescribeAddressesRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -817,18 +745,15 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
         DescribeAddressesRequest other = (DescribeAddressesRequest) obj;
         if (other.getPublicIps() == null ^ this.getPublicIps() == null)
             return false;
-        if (other.getPublicIps() != null
-                && other.getPublicIps().equals(this.getPublicIps()) == false)
+        if (other.getPublicIps() != null && other.getPublicIps().equals(this.getPublicIps()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         if (other.getAllocationIds() == null ^ this.getAllocationIds() == null)
             return false;
-        if (other.getAllocationIds() != null
-                && other.getAllocationIds().equals(this.getAllocationIds()) == false)
+        if (other.getAllocationIds() != null && other.getAllocationIds().equals(this.getAllocationIds()) == false)
             return false;
         return true;
     }
@@ -838,14 +763,9 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPublicIps() == null) ? 0 : getPublicIps().hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAllocationIds() == null) ? 0 : getAllocationIds()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPublicIps() == null) ? 0 : getPublicIps().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getAllocationIds() == null) ? 0 : getAllocationIds().hashCode());
         return hashCode;
     }
 

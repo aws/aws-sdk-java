@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesis;
 
@@ -19,9 +17,8 @@ import com.amazonaws.*;
 import com.amazonaws.services.kinesis.waiters.AmazonKinesisWaiters;
 
 /**
- * Abstract implementation of {@code AmazonKinesis}. Convenient method forms
- * pass through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonKinesis}. Convenient method forms pass through to the corresponding overload
+ * that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAmazonKinesis implements AmazonKinesis {
 
@@ -50,13 +47,11 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
 
     @Override
     public CreateStreamResult createStream(String streamName, Integer shardCount) {
-        return createStream(new CreateStreamRequest()
-                .withStreamName(streamName).withShardCount(shardCount));
+        return createStream(new CreateStreamRequest().withStreamName(streamName).withShardCount(shardCount));
     }
 
     @Override
-    public DecreaseStreamRetentionPeriodResult decreaseStreamRetentionPeriod(
-            DecreaseStreamRetentionPeriodRequest request) {
+    public DecreaseStreamRetentionPeriodResult decreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -67,8 +62,7 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
 
     @Override
     public DeleteStreamResult deleteStream(String streamName) {
-        return deleteStream(new DeleteStreamRequest()
-                .withStreamName(streamName));
+        return deleteStream(new DeleteStreamRequest().withStreamName(streamName));
     }
 
     @Override
@@ -78,34 +72,26 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
 
     @Override
     public DescribeStreamResult describeStream(String streamName) {
-        return describeStream(new DescribeStreamRequest()
-                .withStreamName(streamName));
+        return describeStream(new DescribeStreamRequest().withStreamName(streamName));
     }
 
     @Override
-    public DescribeStreamResult describeStream(String streamName,
-            String exclusiveStartShardId) {
-        return describeStream(new DescribeStreamRequest().withStreamName(
-                streamName).withExclusiveStartShardId(exclusiveStartShardId));
+    public DescribeStreamResult describeStream(String streamName, String exclusiveStartShardId) {
+        return describeStream(new DescribeStreamRequest().withStreamName(streamName).withExclusiveStartShardId(exclusiveStartShardId));
     }
 
     @Override
-    public DescribeStreamResult describeStream(String streamName,
-            Integer limit, String exclusiveStartShardId) {
-        return describeStream(new DescribeStreamRequest()
-                .withStreamName(streamName).withLimit(limit)
-                .withExclusiveStartShardId(exclusiveStartShardId));
+    public DescribeStreamResult describeStream(String streamName, Integer limit, String exclusiveStartShardId) {
+        return describeStream(new DescribeStreamRequest().withStreamName(streamName).withLimit(limit).withExclusiveStartShardId(exclusiveStartShardId));
     }
 
     @Override
-    public DisableEnhancedMonitoringResult disableEnhancedMonitoring(
-            DisableEnhancedMonitoringRequest request) {
+    public DisableEnhancedMonitoringResult disableEnhancedMonitoring(DisableEnhancedMonitoringRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public EnableEnhancedMonitoringResult enableEnhancedMonitoring(
-            EnableEnhancedMonitoringRequest request) {
+    public EnableEnhancedMonitoringResult enableEnhancedMonitoring(EnableEnhancedMonitoringRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -115,32 +101,23 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
-    public GetShardIteratorResult getShardIterator(
-            GetShardIteratorRequest request) {
+    public GetShardIteratorResult getShardIterator(GetShardIteratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetShardIteratorResult getShardIterator(String streamName,
-            String shardId, String shardIteratorType) {
-        return getShardIterator(new GetShardIteratorRequest()
-                .withStreamName(streamName).withShardId(shardId)
-                .withShardIteratorType(shardIteratorType));
+    public GetShardIteratorResult getShardIterator(String streamName, String shardId, String shardIteratorType) {
+        return getShardIterator(new GetShardIteratorRequest().withStreamName(streamName).withShardId(shardId).withShardIteratorType(shardIteratorType));
     }
 
     @Override
-    public GetShardIteratorResult getShardIterator(String streamName,
-            String shardId, String shardIteratorType,
-            String startingSequenceNumber) {
-        return getShardIterator(new GetShardIteratorRequest()
-                .withStreamName(streamName).withShardId(shardId)
-                .withShardIteratorType(shardIteratorType)
+    public GetShardIteratorResult getShardIterator(String streamName, String shardId, String shardIteratorType, String startingSequenceNumber) {
+        return getShardIterator(new GetShardIteratorRequest().withStreamName(streamName).withShardId(shardId).withShardIteratorType(shardIteratorType)
                 .withStartingSequenceNumber(startingSequenceNumber));
     }
 
     @Override
-    public IncreaseStreamRetentionPeriodResult increaseStreamRetentionPeriod(
-            IncreaseStreamRetentionPeriodRequest request) {
+    public IncreaseStreamRetentionPeriodResult increaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -156,20 +133,16 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
 
     @Override
     public ListStreamsResult listStreams(String exclusiveStartStreamName) {
-        return listStreams(new ListStreamsRequest()
-                .withExclusiveStartStreamName(exclusiveStartStreamName));
+        return listStreams(new ListStreamsRequest().withExclusiveStartStreamName(exclusiveStartStreamName));
     }
 
     @Override
-    public ListStreamsResult listStreams(Integer limit,
-            String exclusiveStartStreamName) {
-        return listStreams(new ListStreamsRequest().withLimit(limit)
-                .withExclusiveStartStreamName(exclusiveStartStreamName));
+    public ListStreamsResult listStreams(Integer limit, String exclusiveStartStreamName) {
+        return listStreams(new ListStreamsRequest().withLimit(limit).withExclusiveStartStreamName(exclusiveStartStreamName));
     }
 
     @Override
-    public ListTagsForStreamResult listTagsForStream(
-            ListTagsForStreamRequest request) {
+    public ListTagsForStreamResult listTagsForStream(ListTagsForStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,11 +152,8 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
-    public MergeShardsResult mergeShards(String streamName,
-            String shardToMerge, String adjacentShardToMerge) {
-        return mergeShards(new MergeShardsRequest().withStreamName(streamName)
-                .withShardToMerge(shardToMerge)
-                .withAdjacentShardToMerge(adjacentShardToMerge));
+    public MergeShardsResult mergeShards(String streamName, String shardToMerge, String adjacentShardToMerge) {
+        return mergeShards(new MergeShardsRequest().withStreamName(streamName).withShardToMerge(shardToMerge).withAdjacentShardToMerge(adjacentShardToMerge));
     }
 
     @Override
@@ -192,18 +162,13 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
-    public PutRecordResult putRecord(String streamName,
-            java.nio.ByteBuffer data, String partitionKey) {
-        return putRecord(new PutRecordRequest().withStreamName(streamName)
-                .withData(data).withPartitionKey(partitionKey));
+    public PutRecordResult putRecord(String streamName, java.nio.ByteBuffer data, String partitionKey) {
+        return putRecord(new PutRecordRequest().withStreamName(streamName).withData(data).withPartitionKey(partitionKey));
     }
 
     @Override
-    public PutRecordResult putRecord(String streamName,
-            java.nio.ByteBuffer data, String partitionKey,
-            String sequenceNumberForOrdering) {
-        return putRecord(new PutRecordRequest().withStreamName(streamName)
-                .withData(data).withPartitionKey(partitionKey)
+    public PutRecordResult putRecord(String streamName, java.nio.ByteBuffer data, String partitionKey, String sequenceNumberForOrdering) {
+        return putRecord(new PutRecordRequest().withStreamName(streamName).withData(data).withPartitionKey(partitionKey)
                 .withSequenceNumberForOrdering(sequenceNumberForOrdering));
     }
 
@@ -213,8 +178,7 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
-    public RemoveTagsFromStreamResult removeTagsFromStream(
-            RemoveTagsFromStreamRequest request) {
+    public RemoveTagsFromStreamResult removeTagsFromStream(RemoveTagsFromStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -224,11 +188,8 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
-    public SplitShardResult splitShard(String streamName, String shardToSplit,
-            String newStartingHashKey) {
-        return splitShard(new SplitShardRequest().withStreamName(streamName)
-                .withShardToSplit(shardToSplit)
-                .withNewStartingHashKey(newStartingHashKey));
+    public SplitShardResult splitShard(String streamName, String shardToSplit, String newStartingHashKey) {
+        return splitShard(new SplitShardRequest().withStreamName(streamName).withShardToSplit(shardToSplit).withNewStartingHashKey(newStartingHashKey));
     }
 
     @Override
@@ -237,8 +198,7 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

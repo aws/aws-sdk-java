@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -49,11 +47,9 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
     private java.util.Date createTime;
     /**
      * <p>
-     * The progress of the Spot fleet request. If there is an error, the status
-     * is <code>error</code>. After all bids are placed, the status is
-     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
-     * greater than its target capacity, the status is <code>fulfilled</code>.
-     * If the size of the fleet is decreased, the status is
+     * The progress of the Spot fleet request. If there is an error, the status is <code>error</code>. After all bids
+     * are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or greater than
+     * its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is decreased, the status is
      * <code>pending_termination</code> while Spot instances are terminating.
      * </p>
      */
@@ -91,12 +87,10 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * 
      * @param spotFleetRequestId
      *        The ID of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SpotFleetRequestConfig withSpotFleetRequestId(
-            String spotFleetRequestId) {
+    public SpotFleetRequestConfig withSpotFleetRequestId(String spotFleetRequestId) {
         setSpotFleetRequestId(spotFleetRequestId);
         return this;
     }
@@ -135,13 +129,11 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * 
      * @param spotFleetRequestState
      *        The state of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchState
      */
 
-    public SpotFleetRequestConfig withSpotFleetRequestState(
-            String spotFleetRequestState) {
+    public SpotFleetRequestConfig withSpotFleetRequestState(String spotFleetRequestState) {
         setSpotFleetRequestState(spotFleetRequestState);
         return this;
     }
@@ -167,13 +159,11 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * 
      * @param spotFleetRequestState
      *        The state of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchState
      */
 
-    public SpotFleetRequestConfig withSpotFleetRequestState(
-            BatchState spotFleetRequestState) {
+    public SpotFleetRequestConfig withSpotFleetRequestState(BatchState spotFleetRequestState) {
         setSpotFleetRequestState(spotFleetRequestState);
         return this;
     }
@@ -187,8 +177,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      *        Information about the configuration of the Spot fleet request.
      */
 
-    public void setSpotFleetRequestConfig(
-            SpotFleetRequestConfigData spotFleetRequestConfig) {
+    public void setSpotFleetRequestConfig(SpotFleetRequestConfigData spotFleetRequestConfig) {
         this.spotFleetRequestConfig = spotFleetRequestConfig;
     }
 
@@ -211,12 +200,10 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * 
      * @param spotFleetRequestConfig
      *        Information about the configuration of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SpotFleetRequestConfig withSpotFleetRequestConfig(
-            SpotFleetRequestConfigData spotFleetRequestConfig) {
+    public SpotFleetRequestConfig withSpotFleetRequestConfig(SpotFleetRequestConfigData spotFleetRequestConfig) {
         setSpotFleetRequestConfig(spotFleetRequestConfig);
         return this;
     }
@@ -253,8 +240,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * 
      * @param createTime
      *        The creation date and time of the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotFleetRequestConfig withCreateTime(java.util.Date createTime) {
@@ -264,22 +250,17 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The progress of the Spot fleet request. If there is an error, the status
-     * is <code>error</code>. After all bids are placed, the status is
-     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
-     * greater than its target capacity, the status is <code>fulfilled</code>.
-     * If the size of the fleet is decreased, the status is
+     * The progress of the Spot fleet request. If there is an error, the status is <code>error</code>. After all bids
+     * are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or greater than
+     * its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is decreased, the status is
      * <code>pending_termination</code> while Spot instances are terminating.
      * </p>
      * 
      * @param activityStatus
-     *        The progress of the Spot fleet request. If there is an error, the
-     *        status is <code>error</code>. After all bids are placed, the
-     *        status is <code>pending_fulfillment</code>. If the size of the
-     *        fleet is equal to or greater than its target capacity, the status
-     *        is <code>fulfilled</code>. If the size of the fleet is decreased,
-     *        the status is <code>pending_termination</code> while Spot
-     *        instances are terminating.
+     *        The progress of the Spot fleet request. If there is an error, the status is <code>error</code>. After all
+     *        bids are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     *        greater than its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is
+     *        decreased, the status is <code>pending_termination</code> while Spot instances are terminating.
      * @see ActivityStatus
      */
 
@@ -289,21 +270,16 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The progress of the Spot fleet request. If there is an error, the status
-     * is <code>error</code>. After all bids are placed, the status is
-     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
-     * greater than its target capacity, the status is <code>fulfilled</code>.
-     * If the size of the fleet is decreased, the status is
+     * The progress of the Spot fleet request. If there is an error, the status is <code>error</code>. After all bids
+     * are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or greater than
+     * its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is decreased, the status is
      * <code>pending_termination</code> while Spot instances are terminating.
      * </p>
      * 
-     * @return The progress of the Spot fleet request. If there is an error, the
-     *         status is <code>error</code>. After all bids are placed, the
-     *         status is <code>pending_fulfillment</code>. If the size of the
-     *         fleet is equal to or greater than its target capacity, the status
-     *         is <code>fulfilled</code>. If the size of the fleet is decreased,
-     *         the status is <code>pending_termination</code> while Spot
-     *         instances are terminating.
+     * @return The progress of the Spot fleet request. If there is an error, the status is <code>error</code>. After all
+     *         bids are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     *         greater than its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is
+     *         decreased, the status is <code>pending_termination</code> while Spot instances are terminating.
      * @see ActivityStatus
      */
 
@@ -313,24 +289,18 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The progress of the Spot fleet request. If there is an error, the status
-     * is <code>error</code>. After all bids are placed, the status is
-     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
-     * greater than its target capacity, the status is <code>fulfilled</code>.
-     * If the size of the fleet is decreased, the status is
+     * The progress of the Spot fleet request. If there is an error, the status is <code>error</code>. After all bids
+     * are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or greater than
+     * its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is decreased, the status is
      * <code>pending_termination</code> while Spot instances are terminating.
      * </p>
      * 
      * @param activityStatus
-     *        The progress of the Spot fleet request. If there is an error, the
-     *        status is <code>error</code>. After all bids are placed, the
-     *        status is <code>pending_fulfillment</code>. If the size of the
-     *        fleet is equal to or greater than its target capacity, the status
-     *        is <code>fulfilled</code>. If the size of the fleet is decreased,
-     *        the status is <code>pending_termination</code> while Spot
-     *        instances are terminating.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The progress of the Spot fleet request. If there is an error, the status is <code>error</code>. After all
+     *        bids are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     *        greater than its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is
+     *        decreased, the status is <code>pending_termination</code> while Spot instances are terminating.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActivityStatus
      */
 
@@ -341,22 +311,17 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The progress of the Spot fleet request. If there is an error, the status
-     * is <code>error</code>. After all bids are placed, the status is
-     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
-     * greater than its target capacity, the status is <code>fulfilled</code>.
-     * If the size of the fleet is decreased, the status is
+     * The progress of the Spot fleet request. If there is an error, the status is <code>error</code>. After all bids
+     * are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or greater than
+     * its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is decreased, the status is
      * <code>pending_termination</code> while Spot instances are terminating.
      * </p>
      * 
      * @param activityStatus
-     *        The progress of the Spot fleet request. If there is an error, the
-     *        status is <code>error</code>. After all bids are placed, the
-     *        status is <code>pending_fulfillment</code>. If the size of the
-     *        fleet is equal to or greater than its target capacity, the status
-     *        is <code>fulfilled</code>. If the size of the fleet is decreased,
-     *        the status is <code>pending_termination</code> while Spot
-     *        instances are terminating.
+     *        The progress of the Spot fleet request. If there is an error, the status is <code>error</code>. After all
+     *        bids are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     *        greater than its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is
+     *        decreased, the status is <code>pending_termination</code> while Spot instances are terminating.
      * @see ActivityStatus
      */
 
@@ -366,36 +331,28 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The progress of the Spot fleet request. If there is an error, the status
-     * is <code>error</code>. After all bids are placed, the status is
-     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
-     * greater than its target capacity, the status is <code>fulfilled</code>.
-     * If the size of the fleet is decreased, the status is
+     * The progress of the Spot fleet request. If there is an error, the status is <code>error</code>. After all bids
+     * are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or greater than
+     * its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is decreased, the status is
      * <code>pending_termination</code> while Spot instances are terminating.
      * </p>
      * 
      * @param activityStatus
-     *        The progress of the Spot fleet request. If there is an error, the
-     *        status is <code>error</code>. After all bids are placed, the
-     *        status is <code>pending_fulfillment</code>. If the size of the
-     *        fleet is equal to or greater than its target capacity, the status
-     *        is <code>fulfilled</code>. If the size of the fleet is decreased,
-     *        the status is <code>pending_termination</code> while Spot
-     *        instances are terminating.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The progress of the Spot fleet request. If there is an error, the status is <code>error</code>. After all
+     *        bids are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     *        greater than its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is
+     *        decreased, the status is <code>pending_termination</code> while Spot instances are terminating.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActivityStatus
      */
 
-    public SpotFleetRequestConfig withActivityStatus(
-            ActivityStatus activityStatus) {
+    public SpotFleetRequestConfig withActivityStatus(ActivityStatus activityStatus) {
         setActivityStatus(activityStatus);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -408,11 +365,9 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
         if (getSpotFleetRequestId() != null)
             sb.append("SpotFleetRequestId: " + getSpotFleetRequestId() + ",");
         if (getSpotFleetRequestState() != null)
-            sb.append("SpotFleetRequestState: " + getSpotFleetRequestState()
-                    + ",");
+            sb.append("SpotFleetRequestState: " + getSpotFleetRequestState() + ",");
         if (getSpotFleetRequestConfig() != null)
-            sb.append("SpotFleetRequestConfig: " + getSpotFleetRequestConfig()
-                    + ",");
+            sb.append("SpotFleetRequestConfig: " + getSpotFleetRequestConfig() + ",");
         if (getCreateTime() != null)
             sb.append("CreateTime: " + getCreateTime() + ",");
         if (getActivityStatus() != null)
@@ -431,37 +386,25 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
         if (obj instanceof SpotFleetRequestConfig == false)
             return false;
         SpotFleetRequestConfig other = (SpotFleetRequestConfig) obj;
-        if (other.getSpotFleetRequestId() == null
-                ^ this.getSpotFleetRequestId() == null)
+        if (other.getSpotFleetRequestId() == null ^ this.getSpotFleetRequestId() == null)
             return false;
-        if (other.getSpotFleetRequestId() != null
-                && other.getSpotFleetRequestId().equals(
-                        this.getSpotFleetRequestId()) == false)
+        if (other.getSpotFleetRequestId() != null && other.getSpotFleetRequestId().equals(this.getSpotFleetRequestId()) == false)
             return false;
-        if (other.getSpotFleetRequestState() == null
-                ^ this.getSpotFleetRequestState() == null)
+        if (other.getSpotFleetRequestState() == null ^ this.getSpotFleetRequestState() == null)
             return false;
-        if (other.getSpotFleetRequestState() != null
-                && other.getSpotFleetRequestState().equals(
-                        this.getSpotFleetRequestState()) == false)
+        if (other.getSpotFleetRequestState() != null && other.getSpotFleetRequestState().equals(this.getSpotFleetRequestState()) == false)
             return false;
-        if (other.getSpotFleetRequestConfig() == null
-                ^ this.getSpotFleetRequestConfig() == null)
+        if (other.getSpotFleetRequestConfig() == null ^ this.getSpotFleetRequestConfig() == null)
             return false;
-        if (other.getSpotFleetRequestConfig() != null
-                && other.getSpotFleetRequestConfig().equals(
-                        this.getSpotFleetRequestConfig()) == false)
+        if (other.getSpotFleetRequestConfig() != null && other.getSpotFleetRequestConfig().equals(this.getSpotFleetRequestConfig()) == false)
             return false;
         if (other.getCreateTime() == null ^ this.getCreateTime() == null)
             return false;
-        if (other.getCreateTime() != null
-                && other.getCreateTime().equals(this.getCreateTime()) == false)
+        if (other.getCreateTime() != null && other.getCreateTime().equals(this.getCreateTime()) == false)
             return false;
-        if (other.getActivityStatus() == null
-                ^ this.getActivityStatus() == null)
+        if (other.getActivityStatus() == null ^ this.getActivityStatus() == null)
             return false;
-        if (other.getActivityStatus() != null
-                && other.getActivityStatus().equals(this.getActivityStatus()) == false)
+        if (other.getActivityStatus() != null && other.getActivityStatus().equals(this.getActivityStatus()) == false)
             return false;
         return true;
     }
@@ -471,24 +414,11 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSpotFleetRequestId() == null) ? 0
-                        : getSpotFleetRequestId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSpotFleetRequestState() == null) ? 0
-                        : getSpotFleetRequestState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSpotFleetRequestConfig() == null) ? 0
-                        : getSpotFleetRequestConfig().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getActivityStatus() == null) ? 0 : getActivityStatus()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestState() == null) ? 0 : getSpotFleetRequestState().hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestConfig() == null) ? 0 : getSpotFleetRequestConfig().hashCode());
+        hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
+        hashCode = prime * hashCode + ((getActivityStatus() == null) ? 0 : getActivityStatus().hashCode());
         return hashCode;
     }
 
@@ -497,9 +427,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
         try {
             return (SpotFleetRequestConfig) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

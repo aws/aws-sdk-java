@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
@@ -25,56 +23,50 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If enabled, the load balancer routes the request traffic evenly across
-     * all instances regardless of the Availability Zones.
+     * If enabled, the load balancer routes the request traffic evenly across all instances regardless of the
+     * Availability Zones.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
-     * >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
+     * Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
     private CrossZoneLoadBalancing crossZoneLoadBalancing;
     /**
      * <p>
-     * If enabled, the load balancer captures detailed information of all
-     * requests and delivers the information to the Amazon S3 bucket that you
-     * specify.
+     * If enabled, the load balancer captures detailed information of all requests and delivers the information to the
+     * Amazon S3 bucket that you specify.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
-     * >Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access
+     * Logs</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
     private AccessLog accessLog;
     /**
      * <p>
-     * If enabled, the load balancer allows existing requests to complete before
-     * the load balancer shifts traffic away from a deregistered or unhealthy
-     * instance.
+     * If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away
+     * from a deregistered or unhealthy instance.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
-     * >Configure Connection Draining</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection
+     * Draining</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
     private ConnectionDraining connectionDraining;
     /**
      * <p>
-     * If enabled, the load balancer allows the connections to remain idle (no
-     * data is sent over the connection) for the specified duration.
+     * If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the
+     * specified duration.
      * </p>
      * <p>
-     * By default, Elastic Load Balancing maintains a 60-second idle connection
-     * timeout for both front-end and back-end connections of your load
-     * balancer. For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
-     * >Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end
+     * connections of your load balancer. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle
+     * Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
     private ConnectionSettings connectionSettings;
@@ -87,50 +79,45 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If enabled, the load balancer routes the request traffic evenly across
-     * all instances regardless of the Availability Zones.
+     * If enabled, the load balancer routes the request traffic evenly across all instances regardless of the
+     * Availability Zones.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
-     * >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
+     * Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param crossZoneLoadBalancing
-     *        If enabled, the load balancer routes the request traffic evenly
-     *        across all instances regardless of the Availability Zones.</p>
+     *        If enabled, the load balancer routes the request traffic evenly across all instances regardless of the
+     *        Availability Zones.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
-     *        >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load
-     *        Balancers Guide</i>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     *        >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
-    public void setCrossZoneLoadBalancing(
-            CrossZoneLoadBalancing crossZoneLoadBalancing) {
+    public void setCrossZoneLoadBalancing(CrossZoneLoadBalancing crossZoneLoadBalancing) {
         this.crossZoneLoadBalancing = crossZoneLoadBalancing;
     }
 
     /**
      * <p>
-     * If enabled, the load balancer routes the request traffic evenly across
-     * all instances regardless of the Availability Zones.
+     * If enabled, the load balancer routes the request traffic evenly across all instances regardless of the
+     * Availability Zones.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
-     * >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
+     * Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
-     * @return If enabled, the load balancer routes the request traffic evenly
-     *         across all instances regardless of the Availability Zones.</p>
+     * @return If enabled, the load balancer routes the request traffic evenly across all instances regardless of the
+     *         Availability Zones.</p>
      *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
-     *         >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load
-     *         Balancers Guide</i>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     *         >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public CrossZoneLoadBalancing getCrossZoneLoadBalancing() {
@@ -139,55 +126,48 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If enabled, the load balancer routes the request traffic evenly across
-     * all instances regardless of the Availability Zones.
+     * If enabled, the load balancer routes the request traffic evenly across all instances regardless of the
+     * Availability Zones.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
-     * >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
+     * Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param crossZoneLoadBalancing
-     *        If enabled, the load balancer routes the request traffic evenly
-     *        across all instances regardless of the Availability Zones.</p>
+     *        If enabled, the load balancer routes the request traffic evenly across all instances regardless of the
+     *        Availability Zones.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
-     *        >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load
-     *        Balancers Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     *        >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LoadBalancerAttributes withCrossZoneLoadBalancing(
-            CrossZoneLoadBalancing crossZoneLoadBalancing) {
+    public LoadBalancerAttributes withCrossZoneLoadBalancing(CrossZoneLoadBalancing crossZoneLoadBalancing) {
         setCrossZoneLoadBalancing(crossZoneLoadBalancing);
         return this;
     }
 
     /**
      * <p>
-     * If enabled, the load balancer captures detailed information of all
-     * requests and delivers the information to the Amazon S3 bucket that you
-     * specify.
+     * If enabled, the load balancer captures detailed information of all requests and delivers the information to the
+     * Amazon S3 bucket that you specify.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
-     * >Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access
+     * Logs</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param accessLog
-     *        If enabled, the load balancer captures detailed information of all
-     *        requests and delivers the information to the Amazon S3 bucket that
-     *        you specify.</p>
+     *        If enabled, the load balancer captures detailed information of all requests and delivers the information
+     *        to the Amazon S3 bucket that you specify.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
-     *        >Enable Access Logs</a> in the <i>Classic Load Balancers
-     *        Guide</i>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
+     *        Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public void setAccessLog(AccessLog accessLog) {
@@ -196,24 +176,21 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If enabled, the load balancer captures detailed information of all
-     * requests and delivers the information to the Amazon S3 bucket that you
-     * specify.
+     * If enabled, the load balancer captures detailed information of all requests and delivers the information to the
+     * Amazon S3 bucket that you specify.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
-     * >Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access
+     * Logs</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
-     * @return If enabled, the load balancer captures detailed information of
-     *         all requests and delivers the information to the Amazon S3 bucket
-     *         that you specify.</p>
+     * @return If enabled, the load balancer captures detailed information of all requests and delivers the information
+     *         to the Amazon S3 bucket that you specify.</p>
      *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
-     *         >Enable Access Logs</a> in the <i>Classic Load Balancers
-     *         Guide</i>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
+     *         Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public AccessLog getAccessLog() {
@@ -222,27 +199,23 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If enabled, the load balancer captures detailed information of all
-     * requests and delivers the information to the Amazon S3 bucket that you
-     * specify.
+     * If enabled, the load balancer captures detailed information of all requests and delivers the information to the
+     * Amazon S3 bucket that you specify.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
-     * >Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access
+     * Logs</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param accessLog
-     *        If enabled, the load balancer captures detailed information of all
-     *        requests and delivers the information to the Amazon S3 bucket that
-     *        you specify.</p>
+     *        If enabled, the load balancer captures detailed information of all requests and delivers the information
+     *        to the Amazon S3 bucket that you specify.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
-     *        >Enable Access Logs</a> in the <i>Classic Load Balancers
-     *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
+     *        Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancerAttributes withAccessLog(AccessLog accessLog) {
@@ -252,26 +225,22 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If enabled, the load balancer allows existing requests to complete before
-     * the load balancer shifts traffic away from a deregistered or unhealthy
-     * instance.
+     * If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away
+     * from a deregistered or unhealthy instance.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
-     * >Configure Connection Draining</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection
+     * Draining</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param connectionDraining
-     *        If enabled, the load balancer allows existing requests to complete
-     *        before the load balancer shifts traffic away from a deregistered
-     *        or unhealthy instance.</p>
+     *        If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic
+     *        away from a deregistered or unhealthy instance.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
-     *        >Configure Connection Draining</a> in the <i>Classic Load
-     *        Balancers Guide</i>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
+     *        Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public void setConnectionDraining(ConnectionDraining connectionDraining) {
@@ -280,25 +249,21 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If enabled, the load balancer allows existing requests to complete before
-     * the load balancer shifts traffic away from a deregistered or unhealthy
-     * instance.
+     * If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away
+     * from a deregistered or unhealthy instance.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
-     * >Configure Connection Draining</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection
+     * Draining</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
-     * @return If enabled, the load balancer allows existing requests to
-     *         complete before the load balancer shifts traffic away from a
-     *         deregistered or unhealthy instance.</p>
+     * @return If enabled, the load balancer allows existing requests to complete before the load balancer shifts
+     *         traffic away from a deregistered or unhealthy instance.</p>
      *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
-     *         >Configure Connection Draining</a> in the <i>Classic Load
-     *         Balancers Guide</i>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
+     *         Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public ConnectionDraining getConnectionDraining() {
@@ -307,61 +272,50 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If enabled, the load balancer allows existing requests to complete before
-     * the load balancer shifts traffic away from a deregistered or unhealthy
-     * instance.
+     * If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away
+     * from a deregistered or unhealthy instance.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
-     * >Configure Connection Draining</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection
+     * Draining</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param connectionDraining
-     *        If enabled, the load balancer allows existing requests to complete
-     *        before the load balancer shifts traffic away from a deregistered
-     *        or unhealthy instance.</p>
+     *        If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic
+     *        away from a deregistered or unhealthy instance.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
-     *        >Configure Connection Draining</a> in the <i>Classic Load
-     *        Balancers Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
+     *        Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LoadBalancerAttributes withConnectionDraining(
-            ConnectionDraining connectionDraining) {
+    public LoadBalancerAttributes withConnectionDraining(ConnectionDraining connectionDraining) {
         setConnectionDraining(connectionDraining);
         return this;
     }
 
     /**
      * <p>
-     * If enabled, the load balancer allows the connections to remain idle (no
-     * data is sent over the connection) for the specified duration.
+     * If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the
+     * specified duration.
      * </p>
      * <p>
-     * By default, Elastic Load Balancing maintains a 60-second idle connection
-     * timeout for both front-end and back-end connections of your load
-     * balancer. For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
-     * >Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end
+     * connections of your load balancer. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle
+     * Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param connectionSettings
-     *        If enabled, the load balancer allows the connections to remain
-     *        idle (no data is sent over the connection) for the specified
-     *        duration.</p>
+     *        If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection)
+     *        for the specified duration.</p>
      *        <p>
-     *        By default, Elastic Load Balancing maintains a 60-second idle
-     *        connection timeout for both front-end and back-end connections of
-     *        your load balancer. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
-     *        >Configure Idle Connection Timeout</a> in the <i>Classic Load
-     *        Balancers Guide</i>.
+     *        By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and
+     *        back-end connections of your load balancer. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
+     *        Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public void setConnectionSettings(ConnectionSettings connectionSettings) {
@@ -370,28 +324,23 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If enabled, the load balancer allows the connections to remain idle (no
-     * data is sent over the connection) for the specified duration.
+     * If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the
+     * specified duration.
      * </p>
      * <p>
-     * By default, Elastic Load Balancing maintains a 60-second idle connection
-     * timeout for both front-end and back-end connections of your load
-     * balancer. For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
-     * >Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end
+     * connections of your load balancer. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle
+     * Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
-     * @return If enabled, the load balancer allows the connections to remain
-     *         idle (no data is sent over the connection) for the specified
-     *         duration.</p>
+     * @return If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection)
+     *         for the specified duration.</p>
      *         <p>
-     *         By default, Elastic Load Balancing maintains a 60-second idle
-     *         connection timeout for both front-end and back-end connections of
-     *         your load balancer. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
-     *         >Configure Idle Connection Timeout</a> in the <i>Classic Load
-     *         Balancers Guide</i>.
+     *         By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and
+     *         back-end connections of your load balancer. For more information, see <a
+     *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
+     *         Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public ConnectionSettings getConnectionSettings() {
@@ -400,35 +349,28 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If enabled, the load balancer allows the connections to remain idle (no
-     * data is sent over the connection) for the specified duration.
+     * If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the
+     * specified duration.
      * </p>
      * <p>
-     * By default, Elastic Load Balancing maintains a 60-second idle connection
-     * timeout for both front-end and back-end connections of your load
-     * balancer. For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
-     * >Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end
+     * connections of your load balancer. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle
+     * Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param connectionSettings
-     *        If enabled, the load balancer allows the connections to remain
-     *        idle (no data is sent over the connection) for the specified
-     *        duration.</p>
+     *        If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection)
+     *        for the specified duration.</p>
      *        <p>
-     *        By default, Elastic Load Balancing maintains a 60-second idle
-     *        connection timeout for both front-end and back-end connections of
-     *        your load balancer. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
-     *        >Configure Idle Connection Timeout</a> in the <i>Classic Load
-     *        Balancers Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and
+     *        back-end connections of your load balancer. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
+     *        Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LoadBalancerAttributes withConnectionSettings(
-            ConnectionSettings connectionSettings) {
+    public LoadBalancerAttributes withConnectionSettings(ConnectionSettings connectionSettings) {
         setConnectionSettings(connectionSettings);
         return this;
     }
@@ -457,15 +399,13 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        This parameter is reserved.
      */
 
-    public void setAdditionalAttributes(
-            java.util.Collection<AdditionalAttribute> additionalAttributes) {
+    public void setAdditionalAttributes(java.util.Collection<AdditionalAttribute> additionalAttributes) {
         if (additionalAttributes == null) {
             this.additionalAttributes = null;
             return;
         }
 
-        this.additionalAttributes = new com.amazonaws.internal.SdkInternalList<AdditionalAttribute>(
-                additionalAttributes);
+        this.additionalAttributes = new com.amazonaws.internal.SdkInternalList<AdditionalAttribute>(additionalAttributes);
     }
 
     /**
@@ -473,23 +413,19 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * This parameter is reserved.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAdditionalAttributes(java.util.Collection)} or
-     * {@link #withAdditionalAttributes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalAttributes(java.util.Collection)} or {@link #withAdditionalAttributes(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param additionalAttributes
      *        This parameter is reserved.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LoadBalancerAttributes withAdditionalAttributes(
-            AdditionalAttribute... additionalAttributes) {
+    public LoadBalancerAttributes withAdditionalAttributes(AdditionalAttribute... additionalAttributes) {
         if (this.additionalAttributes == null) {
-            setAdditionalAttributes(new com.amazonaws.internal.SdkInternalList<AdditionalAttribute>(
-                    additionalAttributes.length));
+            setAdditionalAttributes(new com.amazonaws.internal.SdkInternalList<AdditionalAttribute>(additionalAttributes.length));
         }
         for (AdditionalAttribute ele : additionalAttributes) {
             this.additionalAttributes.add(ele);
@@ -504,19 +440,16 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * 
      * @param additionalAttributes
      *        This parameter is reserved.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LoadBalancerAttributes withAdditionalAttributes(
-            java.util.Collection<AdditionalAttribute> additionalAttributes) {
+    public LoadBalancerAttributes withAdditionalAttributes(java.util.Collection<AdditionalAttribute> additionalAttributes) {
         setAdditionalAttributes(additionalAttributes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -527,8 +460,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCrossZoneLoadBalancing() != null)
-            sb.append("CrossZoneLoadBalancing: " + getCrossZoneLoadBalancing()
-                    + ",");
+            sb.append("CrossZoneLoadBalancing: " + getCrossZoneLoadBalancing() + ",");
         if (getAccessLog() != null)
             sb.append("AccessLog: " + getAccessLog() + ",");
         if (getConnectionDraining() != null)
@@ -551,38 +483,25 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
         if (obj instanceof LoadBalancerAttributes == false)
             return false;
         LoadBalancerAttributes other = (LoadBalancerAttributes) obj;
-        if (other.getCrossZoneLoadBalancing() == null
-                ^ this.getCrossZoneLoadBalancing() == null)
+        if (other.getCrossZoneLoadBalancing() == null ^ this.getCrossZoneLoadBalancing() == null)
             return false;
-        if (other.getCrossZoneLoadBalancing() != null
-                && other.getCrossZoneLoadBalancing().equals(
-                        this.getCrossZoneLoadBalancing()) == false)
+        if (other.getCrossZoneLoadBalancing() != null && other.getCrossZoneLoadBalancing().equals(this.getCrossZoneLoadBalancing()) == false)
             return false;
         if (other.getAccessLog() == null ^ this.getAccessLog() == null)
             return false;
-        if (other.getAccessLog() != null
-                && other.getAccessLog().equals(this.getAccessLog()) == false)
+        if (other.getAccessLog() != null && other.getAccessLog().equals(this.getAccessLog()) == false)
             return false;
-        if (other.getConnectionDraining() == null
-                ^ this.getConnectionDraining() == null)
+        if (other.getConnectionDraining() == null ^ this.getConnectionDraining() == null)
             return false;
-        if (other.getConnectionDraining() != null
-                && other.getConnectionDraining().equals(
-                        this.getConnectionDraining()) == false)
+        if (other.getConnectionDraining() != null && other.getConnectionDraining().equals(this.getConnectionDraining()) == false)
             return false;
-        if (other.getConnectionSettings() == null
-                ^ this.getConnectionSettings() == null)
+        if (other.getConnectionSettings() == null ^ this.getConnectionSettings() == null)
             return false;
-        if (other.getConnectionSettings() != null
-                && other.getConnectionSettings().equals(
-                        this.getConnectionSettings()) == false)
+        if (other.getConnectionSettings() != null && other.getConnectionSettings().equals(this.getConnectionSettings()) == false)
             return false;
-        if (other.getAdditionalAttributes() == null
-                ^ this.getAdditionalAttributes() == null)
+        if (other.getAdditionalAttributes() == null ^ this.getAdditionalAttributes() == null)
             return false;
-        if (other.getAdditionalAttributes() != null
-                && other.getAdditionalAttributes().equals(
-                        this.getAdditionalAttributes()) == false)
+        if (other.getAdditionalAttributes() != null && other.getAdditionalAttributes().equals(this.getAdditionalAttributes()) == false)
             return false;
         return true;
     }
@@ -592,24 +511,11 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCrossZoneLoadBalancing() == null) ? 0
-                        : getCrossZoneLoadBalancing().hashCode());
-        hashCode = prime * hashCode
-                + ((getAccessLog() == null) ? 0 : getAccessLog().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConnectionDraining() == null) ? 0
-                        : getConnectionDraining().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConnectionSettings() == null) ? 0
-                        : getConnectionSettings().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAdditionalAttributes() == null) ? 0
-                        : getAdditionalAttributes().hashCode());
+        hashCode = prime * hashCode + ((getCrossZoneLoadBalancing() == null) ? 0 : getCrossZoneLoadBalancing().hashCode());
+        hashCode = prime * hashCode + ((getAccessLog() == null) ? 0 : getAccessLog().hashCode());
+        hashCode = prime * hashCode + ((getConnectionDraining() == null) ? 0 : getConnectionDraining().hashCode());
+        hashCode = prime * hashCode + ((getConnectionSettings() == null) ? 0 : getConnectionSettings().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalAttributes() == null) ? 0 : getAdditionalAttributes().hashCode());
         return hashCode;
     }
 
@@ -618,9 +524,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
         try {
             return (LoadBalancerAttributes) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

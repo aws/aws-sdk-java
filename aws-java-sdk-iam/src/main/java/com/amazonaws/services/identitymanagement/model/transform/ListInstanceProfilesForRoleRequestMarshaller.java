@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
@@ -31,39 +29,31 @@ import com.amazonaws.util.IdempotentUtils;
  * ListInstanceProfilesForRoleRequest Marshaller
  */
 
-public class ListInstanceProfilesForRoleRequestMarshaller
-        implements
+public class ListInstanceProfilesForRoleRequestMarshaller implements
         Marshaller<Request<ListInstanceProfilesForRoleRequest>, ListInstanceProfilesForRoleRequest> {
 
-    public Request<ListInstanceProfilesForRoleRequest> marshall(
-            ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest) {
+    public Request<ListInstanceProfilesForRoleRequest> marshall(ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest) {
 
         if (listInstanceProfilesForRoleRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListInstanceProfilesForRoleRequest> request = new DefaultRequest<ListInstanceProfilesForRoleRequest>(
-                listInstanceProfilesForRoleRequest, "AmazonIdentityManagement");
+        Request<ListInstanceProfilesForRoleRequest> request = new DefaultRequest<ListInstanceProfilesForRoleRequest>(listInstanceProfilesForRoleRequest,
+                "AmazonIdentityManagement");
         request.addParameter("Action", "ListInstanceProfilesForRole");
         request.addParameter("Version", "2010-05-08");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (listInstanceProfilesForRoleRequest.getRoleName() != null) {
-            request.addParameter("RoleName", StringUtils
-                    .fromString(listInstanceProfilesForRoleRequest
-                            .getRoleName()));
+            request.addParameter("RoleName", StringUtils.fromString(listInstanceProfilesForRoleRequest.getRoleName()));
         }
 
         if (listInstanceProfilesForRoleRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils
-                    .fromString(listInstanceProfilesForRoleRequest.getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(listInstanceProfilesForRoleRequest.getMarker()));
         }
 
         if (listInstanceProfilesForRoleRequest.getMaxItems() != null) {
-            request.addParameter("MaxItems", StringUtils
-                    .fromInteger(listInstanceProfilesForRoleRequest
-                            .getMaxItems()));
+            request.addParameter("MaxItems", StringUtils.fromInteger(listInstanceProfilesForRoleRequest.getMaxItems()));
         }
 
         return request;

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
@@ -25,56 +23,47 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the policy. This name must be unique within the set of
-     * policies for this load balancer.
+     * The name of the policy. This name must be unique within the set of policies for this load balancer.
      * </p>
      */
     private String policyName;
     /**
      * <p>
-     * The time period, in seconds, after which the cookie should be considered
-     * stale. If this parameter is not specified, the stickiness session lasts
-     * for the duration of the browser session.
+     * The time period, in seconds, after which the cookie should be considered stale. If this parameter is not
+     * specified, the stickiness session lasts for the duration of the browser session.
      * </p>
      */
     private Long cookieExpirationPeriod;
 
     /**
-     * Default constructor for LBCookieStickinessPolicy object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize the
-     * object after creating it.
+     * Default constructor for LBCookieStickinessPolicy object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public LBCookieStickinessPolicy() {
     }
 
     /**
-     * Constructs a new LBCookieStickinessPolicy object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new LBCookieStickinessPolicy object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param policyName
-     *        The name of the policy. This name must be unique within the set of
-     *        policies for this load balancer.
+     *        The name of the policy. This name must be unique within the set of policies for this load balancer.
      * @param cookieExpirationPeriod
-     *        The time period, in seconds, after which the cookie should be
-     *        considered stale. If this parameter is not specified, the
-     *        stickiness session lasts for the duration of the browser session.
+     *        The time period, in seconds, after which the cookie should be considered stale. If this parameter is not
+     *        specified, the stickiness session lasts for the duration of the browser session.
      */
-    public LBCookieStickinessPolicy(String policyName,
-            Long cookieExpirationPeriod) {
+    public LBCookieStickinessPolicy(String policyName, Long cookieExpirationPeriod) {
         setPolicyName(policyName);
         setCookieExpirationPeriod(cookieExpirationPeriod);
     }
 
     /**
      * <p>
-     * The name of the policy. This name must be unique within the set of
-     * policies for this load balancer.
+     * The name of the policy. This name must be unique within the set of policies for this load balancer.
      * </p>
      * 
      * @param policyName
-     *        The name of the policy. This name must be unique within the set of
-     *        policies for this load balancer.
+     *        The name of the policy. This name must be unique within the set of policies for this load balancer.
      */
 
     public void setPolicyName(String policyName) {
@@ -83,12 +72,10 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the policy. This name must be unique within the set of
-     * policies for this load balancer.
+     * The name of the policy. This name must be unique within the set of policies for this load balancer.
      * </p>
      * 
-     * @return The name of the policy. This name must be unique within the set
-     *         of policies for this load balancer.
+     * @return The name of the policy. This name must be unique within the set of policies for this load balancer.
      */
 
     public String getPolicyName() {
@@ -97,15 +84,12 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the policy. This name must be unique within the set of
-     * policies for this load balancer.
+     * The name of the policy. This name must be unique within the set of policies for this load balancer.
      * </p>
      * 
      * @param policyName
-     *        The name of the policy. This name must be unique within the set of
-     *        policies for this load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the policy. This name must be unique within the set of policies for this load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LBCookieStickinessPolicy withPolicyName(String policyName) {
@@ -115,15 +99,13 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time period, in seconds, after which the cookie should be considered
-     * stale. If this parameter is not specified, the stickiness session lasts
-     * for the duration of the browser session.
+     * The time period, in seconds, after which the cookie should be considered stale. If this parameter is not
+     * specified, the stickiness session lasts for the duration of the browser session.
      * </p>
      * 
      * @param cookieExpirationPeriod
-     *        The time period, in seconds, after which the cookie should be
-     *        considered stale. If this parameter is not specified, the
-     *        stickiness session lasts for the duration of the browser session.
+     *        The time period, in seconds, after which the cookie should be considered stale. If this parameter is not
+     *        specified, the stickiness session lasts for the duration of the browser session.
      */
 
     public void setCookieExpirationPeriod(Long cookieExpirationPeriod) {
@@ -132,14 +114,12 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time period, in seconds, after which the cookie should be considered
-     * stale. If this parameter is not specified, the stickiness session lasts
-     * for the duration of the browser session.
+     * The time period, in seconds, after which the cookie should be considered stale. If this parameter is not
+     * specified, the stickiness session lasts for the duration of the browser session.
      * </p>
      * 
-     * @return The time period, in seconds, after which the cookie should be
-     *         considered stale. If this parameter is not specified, the
-     *         stickiness session lasts for the duration of the browser session.
+     * @return The time period, in seconds, after which the cookie should be considered stale. If this parameter is not
+     *         specified, the stickiness session lasts for the duration of the browser session.
      */
 
     public Long getCookieExpirationPeriod() {
@@ -148,28 +128,23 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time period, in seconds, after which the cookie should be considered
-     * stale. If this parameter is not specified, the stickiness session lasts
-     * for the duration of the browser session.
+     * The time period, in seconds, after which the cookie should be considered stale. If this parameter is not
+     * specified, the stickiness session lasts for the duration of the browser session.
      * </p>
      * 
      * @param cookieExpirationPeriod
-     *        The time period, in seconds, after which the cookie should be
-     *        considered stale. If this parameter is not specified, the
-     *        stickiness session lasts for the duration of the browser session.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time period, in seconds, after which the cookie should be considered stale. If this parameter is not
+     *        specified, the stickiness session lasts for the duration of the browser session.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LBCookieStickinessPolicy withCookieExpirationPeriod(
-            Long cookieExpirationPeriod) {
+    public LBCookieStickinessPolicy withCookieExpirationPeriod(Long cookieExpirationPeriod) {
         setCookieExpirationPeriod(cookieExpirationPeriod);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -199,15 +174,11 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
         LBCookieStickinessPolicy other = (LBCookieStickinessPolicy) obj;
         if (other.getPolicyName() == null ^ this.getPolicyName() == null)
             return false;
-        if (other.getPolicyName() != null
-                && other.getPolicyName().equals(this.getPolicyName()) == false)
+        if (other.getPolicyName() != null && other.getPolicyName().equals(this.getPolicyName()) == false)
             return false;
-        if (other.getCookieExpirationPeriod() == null
-                ^ this.getCookieExpirationPeriod() == null)
+        if (other.getCookieExpirationPeriod() == null ^ this.getCookieExpirationPeriod() == null)
             return false;
-        if (other.getCookieExpirationPeriod() != null
-                && other.getCookieExpirationPeriod().equals(
-                        this.getCookieExpirationPeriod()) == false)
+        if (other.getCookieExpirationPeriod() != null && other.getCookieExpirationPeriod().equals(this.getCookieExpirationPeriod()) == false)
             return false;
         return true;
     }
@@ -217,12 +188,8 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCookieExpirationPeriod() == null) ? 0
-                        : getCookieExpirationPeriod().hashCode());
+        hashCode = prime * hashCode + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
+        hashCode = prime * hashCode + ((getCookieExpirationPeriod() == null) ? 0 : getCookieExpirationPeriod().hashCode());
         return hashCode;
     }
 
@@ -231,9 +198,7 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
         try {
             return (LBCookieStickinessPolicy) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

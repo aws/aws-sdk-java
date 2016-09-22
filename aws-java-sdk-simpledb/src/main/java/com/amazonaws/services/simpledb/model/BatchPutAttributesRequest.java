@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class BatchPutAttributesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class BatchPutAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /** The name of the domain in which the attributes are being stored. */
     private String domainName;
@@ -30,25 +26,22 @@ public class BatchPutAttributesRequest extends
     private com.amazonaws.internal.SdkInternalList<ReplaceableItem> items;
 
     /**
-     * Default constructor for BatchPutAttributesRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize the
-     * object after creating it.
+     * Default constructor for BatchPutAttributesRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public BatchPutAttributesRequest() {
     }
 
     /**
-     * Constructs a new BatchPutAttributesRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new BatchPutAttributesRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param domainName
      *        The name of the domain in which the attributes are being stored.
      * @param items
      *        A list of items on which to perform the operation.
      */
-    public BatchPutAttributesRequest(String domainName,
-            java.util.List<ReplaceableItem> items) {
+    public BatchPutAttributesRequest(String domainName, java.util.List<ReplaceableItem> items) {
         setDomainName(domainName);
         setItems(items);
     }
@@ -79,8 +72,7 @@ public class BatchPutAttributesRequest extends
      * 
      * @param domainName
      *        The name of the domain in which the attributes are being stored.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPutAttributesRequest withDomainName(String domainName) {
@@ -114,29 +106,25 @@ public class BatchPutAttributesRequest extends
             return;
         }
 
-        this.items = new com.amazonaws.internal.SdkInternalList<ReplaceableItem>(
-                items);
+        this.items = new com.amazonaws.internal.SdkInternalList<ReplaceableItem>(items);
     }
 
     /**
      * A list of items on which to perform the operation.
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setItems(java.util.Collection)} or
-     * {@link #withItems(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param items
      *        A list of items on which to perform the operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchPutAttributesRequest withItems(ReplaceableItem... items) {
         if (this.items == null) {
-            setItems(new com.amazonaws.internal.SdkInternalList<ReplaceableItem>(
-                    items.length));
+            setItems(new com.amazonaws.internal.SdkInternalList<ReplaceableItem>(items.length));
         }
         for (ReplaceableItem ele : items) {
             this.items.add(ele);
@@ -149,19 +137,16 @@ public class BatchPutAttributesRequest extends
      * 
      * @param items
      *        A list of items on which to perform the operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchPutAttributesRequest withItems(
-            java.util.Collection<ReplaceableItem> items) {
+    public BatchPutAttributesRequest withItems(java.util.Collection<ReplaceableItem> items) {
         setItems(items);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -191,13 +176,11 @@ public class BatchPutAttributesRequest extends
         BatchPutAttributesRequest other = (BatchPutAttributesRequest) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
         if (other.getItems() == null ^ this.getItems() == null)
             return false;
-        if (other.getItems() != null
-                && other.getItems().equals(this.getItems()) == false)
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false)
             return false;
         return true;
     }
@@ -207,10 +190,8 @@ public class BatchPutAttributesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime * hashCode
-                + ((getItems() == null) ? 0 : getItems().hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());
         return hashCode;
     }
 

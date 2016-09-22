@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchdomain.model;
 
@@ -21,15 +19,12 @@ import java.io.Serializable;
  * Contains the response to a <code>Suggest</code> request.
  * </p>
  */
-public class SuggestResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class SuggestResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of a <code>SuggestRequest</code>. Contains the resource ID (
-     * <code>rid</code>) and how long it took to process the request (
-     * <code>timems</code>).
+     * The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to
+     * process the request (<code>timems</code>).
      * </p>
      */
     private SuggestStatus status;
@@ -42,15 +37,13 @@ public class SuggestResult extends
 
     /**
      * <p>
-     * The status of a <code>SuggestRequest</code>. Contains the resource ID (
-     * <code>rid</code>) and how long it took to process the request (
-     * <code>timems</code>).
+     * The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to
+     * process the request (<code>timems</code>).
      * </p>
      * 
      * @param status
-     *        The status of a <code>SuggestRequest</code>. Contains the resource
-     *        ID (<code>rid</code>) and how long it took to process the request
-     *        (<code>timems</code>).
+     *        The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it
+     *        took to process the request (<code>timems</code>).
      */
 
     public void setStatus(SuggestStatus status) {
@@ -59,14 +52,12 @@ public class SuggestResult extends
 
     /**
      * <p>
-     * The status of a <code>SuggestRequest</code>. Contains the resource ID (
-     * <code>rid</code>) and how long it took to process the request (
-     * <code>timems</code>).
+     * The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to
+     * process the request (<code>timems</code>).
      * </p>
      * 
-     * @return The status of a <code>SuggestRequest</code>. Contains the
-     *         resource ID (<code>rid</code>) and how long it took to process
-     *         the request (<code>timems</code>).
+     * @return The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it
+     *         took to process the request (<code>timems</code>).
      */
 
     public SuggestStatus getStatus() {
@@ -75,17 +66,14 @@ public class SuggestResult extends
 
     /**
      * <p>
-     * The status of a <code>SuggestRequest</code>. Contains the resource ID (
-     * <code>rid</code>) and how long it took to process the request (
-     * <code>timems</code>).
+     * The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to
+     * process the request (<code>timems</code>).
      * </p>
      * 
      * @param status
-     *        The status of a <code>SuggestRequest</code>. Contains the resource
-     *        ID (<code>rid</code>) and how long it took to process the request
-     *        (<code>timems</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it
+     *        took to process the request (<code>timems</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SuggestResult withStatus(SuggestStatus status) {
@@ -125,8 +113,7 @@ public class SuggestResult extends
      * 
      * @param suggest
      *        Container for the matching search suggestion information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SuggestResult withSuggest(SuggestModel suggest) {
@@ -135,8 +122,7 @@ public class SuggestResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -166,13 +152,11 @@ public class SuggestResult extends
         SuggestResult other = (SuggestResult) obj;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getSuggest() == null ^ this.getSuggest() == null)
             return false;
-        if (other.getSuggest() != null
-                && other.getSuggest().equals(this.getSuggest()) == false)
+        if (other.getSuggest() != null && other.getSuggest().equals(this.getSuggest()) == false)
             return false;
         return true;
     }
@@ -182,10 +166,8 @@ public class SuggestResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getSuggest() == null) ? 0 : getSuggest().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getSuggest() == null) ? 0 : getSuggest().hashCode());
         return hashCode;
     }
 
@@ -194,9 +176,7 @@ public class SuggestResult extends
         try {
             return (SuggestResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

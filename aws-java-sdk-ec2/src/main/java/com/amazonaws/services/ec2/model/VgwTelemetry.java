@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -25,8 +23,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Internet-routable IP address of the virtual private gateway's outside
-     * interface.
+     * The Internet-routable IP address of the virtual private gateway's outside interface.
      * </p>
      */
     private String outsideIpAddress;
@@ -57,13 +54,11 @@ public class VgwTelemetry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Internet-routable IP address of the virtual private gateway's outside
-     * interface.
+     * The Internet-routable IP address of the virtual private gateway's outside interface.
      * </p>
      * 
      * @param outsideIpAddress
-     *        The Internet-routable IP address of the virtual private gateway's
-     *        outside interface.
+     *        The Internet-routable IP address of the virtual private gateway's outside interface.
      */
 
     public void setOutsideIpAddress(String outsideIpAddress) {
@@ -72,12 +67,10 @@ public class VgwTelemetry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Internet-routable IP address of the virtual private gateway's outside
-     * interface.
+     * The Internet-routable IP address of the virtual private gateway's outside interface.
      * </p>
      * 
-     * @return The Internet-routable IP address of the virtual private gateway's
-     *         outside interface.
+     * @return The Internet-routable IP address of the virtual private gateway's outside interface.
      */
 
     public String getOutsideIpAddress() {
@@ -86,15 +79,12 @@ public class VgwTelemetry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Internet-routable IP address of the virtual private gateway's outside
-     * interface.
+     * The Internet-routable IP address of the virtual private gateway's outside interface.
      * </p>
      * 
      * @param outsideIpAddress
-     *        The Internet-routable IP address of the virtual private gateway's
-     *        outside interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Internet-routable IP address of the virtual private gateway's outside interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VgwTelemetry withOutsideIpAddress(String outsideIpAddress) {
@@ -136,8 +126,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the VPN tunnel.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TelemetryStatus
      */
 
@@ -167,8 +156,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the VPN tunnel.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TelemetryStatus
      */
 
@@ -209,8 +197,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * 
      * @param lastStatusChange
      *        The date and time of the last change in status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VgwTelemetry withLastStatusChange(java.util.Date lastStatusChange) {
@@ -250,8 +237,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * 
      * @param statusMessage
      *        If an error occurs, a description of the error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VgwTelemetry withStatusMessage(String statusMessage) {
@@ -291,8 +277,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * 
      * @param acceptedRouteCount
      *        The number of accepted routes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VgwTelemetry withAcceptedRouteCount(Integer acceptedRouteCount) {
@@ -301,8 +286,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -336,36 +320,25 @@ public class VgwTelemetry implements Serializable, Cloneable {
         if (obj instanceof VgwTelemetry == false)
             return false;
         VgwTelemetry other = (VgwTelemetry) obj;
-        if (other.getOutsideIpAddress() == null
-                ^ this.getOutsideIpAddress() == null)
+        if (other.getOutsideIpAddress() == null ^ this.getOutsideIpAddress() == null)
             return false;
-        if (other.getOutsideIpAddress() != null
-                && other.getOutsideIpAddress().equals(
-                        this.getOutsideIpAddress()) == false)
+        if (other.getOutsideIpAddress() != null && other.getOutsideIpAddress().equals(this.getOutsideIpAddress()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getLastStatusChange() == null
-                ^ this.getLastStatusChange() == null)
+        if (other.getLastStatusChange() == null ^ this.getLastStatusChange() == null)
             return false;
-        if (other.getLastStatusChange() != null
-                && other.getLastStatusChange().equals(
-                        this.getLastStatusChange()) == false)
+        if (other.getLastStatusChange() != null && other.getLastStatusChange().equals(this.getLastStatusChange()) == false)
             return false;
         if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
-        if (other.getStatusMessage() != null
-                && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
-        if (other.getAcceptedRouteCount() == null
-                ^ this.getAcceptedRouteCount() == null)
+        if (other.getAcceptedRouteCount() == null ^ this.getAcceptedRouteCount() == null)
             return false;
-        if (other.getAcceptedRouteCount() != null
-                && other.getAcceptedRouteCount().equals(
-                        this.getAcceptedRouteCount()) == false)
+        if (other.getAcceptedRouteCount() != null && other.getAcceptedRouteCount().equals(this.getAcceptedRouteCount()) == false)
             return false;
         return true;
     }
@@ -375,24 +348,11 @@ public class VgwTelemetry implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getOutsideIpAddress() == null) ? 0 : getOutsideIpAddress()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastStatusChange() == null) ? 0 : getLastStatusChange()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStatusMessage() == null) ? 0 : getStatusMessage()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAcceptedRouteCount() == null) ? 0
-                        : getAcceptedRouteCount().hashCode());
+        hashCode = prime * hashCode + ((getOutsideIpAddress() == null) ? 0 : getOutsideIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastStatusChange() == null) ? 0 : getLastStatusChange().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getAcceptedRouteCount() == null) ? 0 : getAcceptedRouteCount().hashCode());
         return hashCode;
     }
 
@@ -401,9 +361,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
         try {
             return (VgwTelemetry) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

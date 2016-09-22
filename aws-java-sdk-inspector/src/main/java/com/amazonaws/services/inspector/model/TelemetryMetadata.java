@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -18,9 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The metadata about the Amazon Inspector application data metrics collected by
- * the agent. This data type is used as the response element in the
- * <a>GetTelemetryMetadata</a> action.
+ * The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as
+ * the response element in the <a>GetTelemetryMetadata</a> action.
  * </p>
  */
 public class TelemetryMetadata implements Serializable, Cloneable {
@@ -33,15 +30,13 @@ public class TelemetryMetadata implements Serializable, Cloneable {
     private String messageType;
     /**
      * <p>
-     * The count of messages that the agent sends to the Amazon Inspector
-     * service.
+     * The count of messages that the agent sends to the Amazon Inspector service.
      * </p>
      */
     private Long count;
     /**
      * <p>
-     * The data size of messages that the agent sends to the Amazon Inspector
-     * service.
+     * The data size of messages that the agent sends to the Amazon Inspector service.
      * </p>
      */
     private Long dataSize;
@@ -64,8 +59,7 @@ public class TelemetryMetadata implements Serializable, Cloneable {
      * A specific type of behavioral data that is collected by the agent.
      * </p>
      * 
-     * @return A specific type of behavioral data that is collected by the
-     *         agent.
+     * @return A specific type of behavioral data that is collected by the agent.
      */
 
     public String getMessageType() {
@@ -79,8 +73,7 @@ public class TelemetryMetadata implements Serializable, Cloneable {
      * 
      * @param messageType
      *        A specific type of behavioral data that is collected by the agent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TelemetryMetadata withMessageType(String messageType) {
@@ -90,13 +83,11 @@ public class TelemetryMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of messages that the agent sends to the Amazon Inspector
-     * service.
+     * The count of messages that the agent sends to the Amazon Inspector service.
      * </p>
      * 
      * @param count
-     *        The count of messages that the agent sends to the Amazon Inspector
-     *        service.
+     *        The count of messages that the agent sends to the Amazon Inspector service.
      */
 
     public void setCount(Long count) {
@@ -105,12 +96,10 @@ public class TelemetryMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of messages that the agent sends to the Amazon Inspector
-     * service.
+     * The count of messages that the agent sends to the Amazon Inspector service.
      * </p>
      * 
-     * @return The count of messages that the agent sends to the Amazon
-     *         Inspector service.
+     * @return The count of messages that the agent sends to the Amazon Inspector service.
      */
 
     public Long getCount() {
@@ -119,15 +108,12 @@ public class TelemetryMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of messages that the agent sends to the Amazon Inspector
-     * service.
+     * The count of messages that the agent sends to the Amazon Inspector service.
      * </p>
      * 
      * @param count
-     *        The count of messages that the agent sends to the Amazon Inspector
-     *        service.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The count of messages that the agent sends to the Amazon Inspector service.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TelemetryMetadata withCount(Long count) {
@@ -137,13 +123,11 @@ public class TelemetryMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data size of messages that the agent sends to the Amazon Inspector
-     * service.
+     * The data size of messages that the agent sends to the Amazon Inspector service.
      * </p>
      * 
      * @param dataSize
-     *        The data size of messages that the agent sends to the Amazon
-     *        Inspector service.
+     *        The data size of messages that the agent sends to the Amazon Inspector service.
      */
 
     public void setDataSize(Long dataSize) {
@@ -152,12 +136,10 @@ public class TelemetryMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data size of messages that the agent sends to the Amazon Inspector
-     * service.
+     * The data size of messages that the agent sends to the Amazon Inspector service.
      * </p>
      * 
-     * @return The data size of messages that the agent sends to the Amazon
-     *         Inspector service.
+     * @return The data size of messages that the agent sends to the Amazon Inspector service.
      */
 
     public Long getDataSize() {
@@ -166,15 +148,12 @@ public class TelemetryMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data size of messages that the agent sends to the Amazon Inspector
-     * service.
+     * The data size of messages that the agent sends to the Amazon Inspector service.
      * </p>
      * 
      * @param dataSize
-     *        The data size of messages that the agent sends to the Amazon
-     *        Inspector service.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The data size of messages that the agent sends to the Amazon Inspector service.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TelemetryMetadata withDataSize(Long dataSize) {
@@ -183,8 +162,7 @@ public class TelemetryMetadata implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -216,18 +194,15 @@ public class TelemetryMetadata implements Serializable, Cloneable {
         TelemetryMetadata other = (TelemetryMetadata) obj;
         if (other.getMessageType() == null ^ this.getMessageType() == null)
             return false;
-        if (other.getMessageType() != null
-                && other.getMessageType().equals(this.getMessageType()) == false)
+        if (other.getMessageType() != null && other.getMessageType().equals(this.getMessageType()) == false)
             return false;
         if (other.getCount() == null ^ this.getCount() == null)
             return false;
-        if (other.getCount() != null
-                && other.getCount().equals(this.getCount()) == false)
+        if (other.getCount() != null && other.getCount().equals(this.getCount()) == false)
             return false;
         if (other.getDataSize() == null ^ this.getDataSize() == null)
             return false;
-        if (other.getDataSize() != null
-                && other.getDataSize().equals(this.getDataSize()) == false)
+        if (other.getDataSize() != null && other.getDataSize().equals(this.getDataSize()) == false)
             return false;
         return true;
     }
@@ -237,13 +212,9 @@ public class TelemetryMetadata implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getMessageType() == null) ? 0 : getMessageType().hashCode());
-        hashCode = prime * hashCode
-                + ((getCount() == null) ? 0 : getCount().hashCode());
-        hashCode = prime * hashCode
-                + ((getDataSize() == null) ? 0 : getDataSize().hashCode());
+        hashCode = prime * hashCode + ((getMessageType() == null) ? 0 : getMessageType().hashCode());
+        hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
+        hashCode = prime * hashCode + ((getDataSize() == null) ? 0 : getDataSize().hashCode());
         return hashCode;
     }
 
@@ -252,9 +223,7 @@ public class TelemetryMetadata implements Serializable, Cloneable {
         try {
             return (TelemetryMetadata) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

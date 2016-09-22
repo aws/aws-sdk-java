@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for ValidatePipelineDefinition.
  * </p>
  */
-public class ValidatePipelineDefinitionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ValidatePipelineDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,8 +30,7 @@ public class ValidatePipelineDefinitionRequest extends
     private String pipelineId;
     /**
      * <p>
-     * The objects that define the pipeline changes to validate against the
-     * pipeline.
+     * The objects that define the pipeline changes to validate against the pipeline.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PipelineObject> pipelineObjects;
@@ -84,8 +79,7 @@ public class ValidatePipelineDefinitionRequest extends
      * 
      * @param pipelineId
      *        The ID of the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ValidatePipelineDefinitionRequest withPipelineId(String pipelineId) {
@@ -95,12 +89,10 @@ public class ValidatePipelineDefinitionRequest extends
 
     /**
      * <p>
-     * The objects that define the pipeline changes to validate against the
-     * pipeline.
+     * The objects that define the pipeline changes to validate against the pipeline.
      * </p>
      * 
-     * @return The objects that define the pipeline changes to validate against
-     *         the pipeline.
+     * @return The objects that define the pipeline changes to validate against the pipeline.
      */
 
     public java.util.List<PipelineObject> getPipelineObjects() {
@@ -112,50 +104,40 @@ public class ValidatePipelineDefinitionRequest extends
 
     /**
      * <p>
-     * The objects that define the pipeline changes to validate against the
-     * pipeline.
+     * The objects that define the pipeline changes to validate against the pipeline.
      * </p>
      * 
      * @param pipelineObjects
-     *        The objects that define the pipeline changes to validate against
-     *        the pipeline.
+     *        The objects that define the pipeline changes to validate against the pipeline.
      */
 
-    public void setPipelineObjects(
-            java.util.Collection<PipelineObject> pipelineObjects) {
+    public void setPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {
         if (pipelineObjects == null) {
             this.pipelineObjects = null;
             return;
         }
 
-        this.pipelineObjects = new com.amazonaws.internal.SdkInternalList<PipelineObject>(
-                pipelineObjects);
+        this.pipelineObjects = new com.amazonaws.internal.SdkInternalList<PipelineObject>(pipelineObjects);
     }
 
     /**
      * <p>
-     * The objects that define the pipeline changes to validate against the
-     * pipeline.
+     * The objects that define the pipeline changes to validate against the pipeline.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPipelineObjects(java.util.Collection)} or
-     * {@link #withPipelineObjects(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPipelineObjects(java.util.Collection)} or {@link #withPipelineObjects(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param pipelineObjects
-     *        The objects that define the pipeline changes to validate against
-     *        the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The objects that define the pipeline changes to validate against the pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ValidatePipelineDefinitionRequest withPipelineObjects(
-            PipelineObject... pipelineObjects) {
+    public ValidatePipelineDefinitionRequest withPipelineObjects(PipelineObject... pipelineObjects) {
         if (this.pipelineObjects == null) {
-            setPipelineObjects(new com.amazonaws.internal.SdkInternalList<PipelineObject>(
-                    pipelineObjects.length));
+            setPipelineObjects(new com.amazonaws.internal.SdkInternalList<PipelineObject>(pipelineObjects.length));
         }
         for (PipelineObject ele : pipelineObjects) {
             this.pipelineObjects.add(ele);
@@ -165,19 +147,15 @@ public class ValidatePipelineDefinitionRequest extends
 
     /**
      * <p>
-     * The objects that define the pipeline changes to validate against the
-     * pipeline.
+     * The objects that define the pipeline changes to validate against the pipeline.
      * </p>
      * 
      * @param pipelineObjects
-     *        The objects that define the pipeline changes to validate against
-     *        the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The objects that define the pipeline changes to validate against the pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ValidatePipelineDefinitionRequest withPipelineObjects(
-            java.util.Collection<PipelineObject> pipelineObjects) {
+    public ValidatePipelineDefinitionRequest withPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {
         setPipelineObjects(pipelineObjects);
         return this;
     }
@@ -206,15 +184,13 @@ public class ValidatePipelineDefinitionRequest extends
      *        The parameter objects used with the pipeline.
      */
 
-    public void setParameterObjects(
-            java.util.Collection<ParameterObject> parameterObjects) {
+    public void setParameterObjects(java.util.Collection<ParameterObject> parameterObjects) {
         if (parameterObjects == null) {
             this.parameterObjects = null;
             return;
         }
 
-        this.parameterObjects = new com.amazonaws.internal.SdkInternalList<ParameterObject>(
-                parameterObjects);
+        this.parameterObjects = new com.amazonaws.internal.SdkInternalList<ParameterObject>(parameterObjects);
     }
 
     /**
@@ -222,23 +198,19 @@ public class ValidatePipelineDefinitionRequest extends
      * The parameter objects used with the pipeline.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setParameterObjects(java.util.Collection)} or
-     * {@link #withParameterObjects(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParameterObjects(java.util.Collection)} or {@link #withParameterObjects(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param parameterObjects
      *        The parameter objects used with the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ValidatePipelineDefinitionRequest withParameterObjects(
-            ParameterObject... parameterObjects) {
+    public ValidatePipelineDefinitionRequest withParameterObjects(ParameterObject... parameterObjects) {
         if (this.parameterObjects == null) {
-            setParameterObjects(new com.amazonaws.internal.SdkInternalList<ParameterObject>(
-                    parameterObjects.length));
+            setParameterObjects(new com.amazonaws.internal.SdkInternalList<ParameterObject>(parameterObjects.length));
         }
         for (ParameterObject ele : parameterObjects) {
             this.parameterObjects.add(ele);
@@ -253,12 +225,10 @@ public class ValidatePipelineDefinitionRequest extends
      * 
      * @param parameterObjects
      *        The parameter objects used with the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ValidatePipelineDefinitionRequest withParameterObjects(
-            java.util.Collection<ParameterObject> parameterObjects) {
+    public ValidatePipelineDefinitionRequest withParameterObjects(java.util.Collection<ParameterObject> parameterObjects) {
         setParameterObjects(parameterObjects);
         return this;
     }
@@ -287,15 +257,13 @@ public class ValidatePipelineDefinitionRequest extends
      *        The parameter values used with the pipeline.
      */
 
-    public void setParameterValues(
-            java.util.Collection<ParameterValue> parameterValues) {
+    public void setParameterValues(java.util.Collection<ParameterValue> parameterValues) {
         if (parameterValues == null) {
             this.parameterValues = null;
             return;
         }
 
-        this.parameterValues = new com.amazonaws.internal.SdkInternalList<ParameterValue>(
-                parameterValues);
+        this.parameterValues = new com.amazonaws.internal.SdkInternalList<ParameterValue>(parameterValues);
     }
 
     /**
@@ -303,23 +271,19 @@ public class ValidatePipelineDefinitionRequest extends
      * The parameter values used with the pipeline.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setParameterValues(java.util.Collection)} or
-     * {@link #withParameterValues(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParameterValues(java.util.Collection)} or {@link #withParameterValues(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param parameterValues
      *        The parameter values used with the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ValidatePipelineDefinitionRequest withParameterValues(
-            ParameterValue... parameterValues) {
+    public ValidatePipelineDefinitionRequest withParameterValues(ParameterValue... parameterValues) {
         if (this.parameterValues == null) {
-            setParameterValues(new com.amazonaws.internal.SdkInternalList<ParameterValue>(
-                    parameterValues.length));
+            setParameterValues(new com.amazonaws.internal.SdkInternalList<ParameterValue>(parameterValues.length));
         }
         for (ParameterValue ele : parameterValues) {
             this.parameterValues.add(ele);
@@ -334,19 +298,16 @@ public class ValidatePipelineDefinitionRequest extends
      * 
      * @param parameterValues
      *        The parameter values used with the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ValidatePipelineDefinitionRequest withParameterValues(
-            java.util.Collection<ParameterValue> parameterValues) {
+    public ValidatePipelineDefinitionRequest withParameterValues(java.util.Collection<ParameterValue> parameterValues) {
         setParameterValues(parameterValues);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -380,27 +341,19 @@ public class ValidatePipelineDefinitionRequest extends
         ValidatePipelineDefinitionRequest other = (ValidatePipelineDefinitionRequest) obj;
         if (other.getPipelineId() == null ^ this.getPipelineId() == null)
             return false;
-        if (other.getPipelineId() != null
-                && other.getPipelineId().equals(this.getPipelineId()) == false)
+        if (other.getPipelineId() != null && other.getPipelineId().equals(this.getPipelineId()) == false)
             return false;
-        if (other.getPipelineObjects() == null
-                ^ this.getPipelineObjects() == null)
+        if (other.getPipelineObjects() == null ^ this.getPipelineObjects() == null)
             return false;
-        if (other.getPipelineObjects() != null
-                && other.getPipelineObjects().equals(this.getPipelineObjects()) == false)
+        if (other.getPipelineObjects() != null && other.getPipelineObjects().equals(this.getPipelineObjects()) == false)
             return false;
-        if (other.getParameterObjects() == null
-                ^ this.getParameterObjects() == null)
+        if (other.getParameterObjects() == null ^ this.getParameterObjects() == null)
             return false;
-        if (other.getParameterObjects() != null
-                && other.getParameterObjects().equals(
-                        this.getParameterObjects()) == false)
+        if (other.getParameterObjects() != null && other.getParameterObjects().equals(this.getParameterObjects()) == false)
             return false;
-        if (other.getParameterValues() == null
-                ^ this.getParameterValues() == null)
+        if (other.getParameterValues() == null ^ this.getParameterValues() == null)
             return false;
-        if (other.getParameterValues() != null
-                && other.getParameterValues().equals(this.getParameterValues()) == false)
+        if (other.getParameterValues() != null && other.getParameterValues().equals(this.getParameterValues()) == false)
             return false;
         return true;
     }
@@ -410,20 +363,10 @@ public class ValidatePipelineDefinitionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPipelineObjects() == null) ? 0 : getPipelineObjects()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getParameterObjects() == null) ? 0 : getParameterObjects()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getParameterValues() == null) ? 0 : getParameterValues()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
+        hashCode = prime * hashCode + ((getPipelineObjects() == null) ? 0 : getPipelineObjects().hashCode());
+        hashCode = prime * hashCode + ((getParameterObjects() == null) ? 0 : getParameterObjects().hashCode());
+        hashCode = prime * hashCode + ((getParameterValues() == null) ? 0 : getParameterValues().hashCode());
         return hashCode;
     }
 

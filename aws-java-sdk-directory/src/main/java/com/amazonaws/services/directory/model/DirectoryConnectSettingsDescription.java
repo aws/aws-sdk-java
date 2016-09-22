@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model;
 
@@ -21,8 +19,7 @@ import java.io.Serializable;
  * Contains information about an AD Connector directory.
  * </p>
  */
-public class DirectoryConnectSettingsDescription implements Serializable,
-        Cloneable {
+public class DirectoryConnectSettingsDescription implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -93,8 +90,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * 
      * @param vpcId
      *        The identifier of the VPC that the AD Connector is in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DirectoryConnectSettingsDescription withVpcId(String vpcId) {
@@ -107,8 +103,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * A list of subnet identifiers in the VPC that the AD connector is in.
      * </p>
      * 
-     * @return A list of subnet identifiers in the VPC that the AD connector is
-     *         in.
+     * @return A list of subnet identifiers in the VPC that the AD connector is in.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -124,8 +119,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet identifiers in the VPC that the AD connector is
-     *        in.
+     *        A list of subnet identifiers in the VPC that the AD connector is in.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -134,8 +128,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
             return;
         }
 
-        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(
-                subnetIds);
+        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(subnetIds);
     }
 
     /**
@@ -143,24 +136,19 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * A list of subnet identifiers in the VPC that the AD connector is in.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnetIds(java.util.Collection)} or
-     * {@link #withSubnetIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet identifiers in the VPC that the AD connector is
-     *        in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of subnet identifiers in the VPC that the AD connector is in.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DirectoryConnectSettingsDescription withSubnetIds(
-            String... subnetIds) {
+    public DirectoryConnectSettingsDescription withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
-            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    subnetIds.length));
+            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(subnetIds.length));
         }
         for (String ele : subnetIds) {
             this.subnetIds.add(ele);
@@ -174,14 +162,11 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet identifiers in the VPC that the AD connector is
-     *        in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of subnet identifiers in the VPC that the AD connector is in.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DirectoryConnectSettingsDescription withSubnetIds(
-            java.util.Collection<String> subnetIds) {
+    public DirectoryConnectSettingsDescription withSubnetIds(java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
         return this;
     }
@@ -218,12 +203,10 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * 
      * @param customerUserName
      *        The username of the service account in the on-premises directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DirectoryConnectSettingsDescription withCustomerUserName(
-            String customerUserName) {
+    public DirectoryConnectSettingsDescription withCustomerUserName(String customerUserName) {
         setCustomerUserName(customerUserName);
         return this;
     }
@@ -260,12 +243,10 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * 
      * @param securityGroupId
      *        The security group identifier for the AD Connector directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DirectoryConnectSettingsDescription withSecurityGroupId(
-            String securityGroupId) {
+    public DirectoryConnectSettingsDescription withSecurityGroupId(String securityGroupId) {
         setSecurityGroupId(securityGroupId);
         return this;
     }
@@ -294,15 +275,13 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      *        A list of the Availability Zones that the directory is in.
      */
 
-    public void setAvailabilityZones(
-            java.util.Collection<String> availabilityZones) {
+    public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
             this.availabilityZones = null;
             return;
         }
 
-        this.availabilityZones = new com.amazonaws.internal.SdkInternalList<String>(
-                availabilityZones);
+        this.availabilityZones = new com.amazonaws.internal.SdkInternalList<String>(availabilityZones);
     }
 
     /**
@@ -310,23 +289,19 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * A list of the Availability Zones that the directory is in.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
-     * {@link #withAvailabilityZones(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param availabilityZones
      *        A list of the Availability Zones that the directory is in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DirectoryConnectSettingsDescription withAvailabilityZones(
-            String... availabilityZones) {
+    public DirectoryConnectSettingsDescription withAvailabilityZones(String... availabilityZones) {
         if (this.availabilityZones == null) {
-            setAvailabilityZones(new com.amazonaws.internal.SdkInternalList<String>(
-                    availabilityZones.length));
+            setAvailabilityZones(new com.amazonaws.internal.SdkInternalList<String>(availabilityZones.length));
         }
         for (String ele : availabilityZones) {
             this.availabilityZones.add(ele);
@@ -341,12 +316,10 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * 
      * @param availabilityZones
      *        A list of the Availability Zones that the directory is in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DirectoryConnectSettingsDescription withAvailabilityZones(
-            java.util.Collection<String> availabilityZones) {
+    public DirectoryConnectSettingsDescription withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         setAvailabilityZones(availabilityZones);
         return this;
     }
@@ -381,8 +354,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
             return;
         }
 
-        this.connectIps = new com.amazonaws.internal.SdkInternalList<String>(
-                connectIps);
+        this.connectIps = new com.amazonaws.internal.SdkInternalList<String>(connectIps);
     }
 
     /**
@@ -390,23 +362,19 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * The IP addresses of the AD Connector servers.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConnectIps(java.util.Collection)} or
-     * {@link #withConnectIps(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConnectIps(java.util.Collection)} or {@link #withConnectIps(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param connectIps
      *        The IP addresses of the AD Connector servers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DirectoryConnectSettingsDescription withConnectIps(
-            String... connectIps) {
+    public DirectoryConnectSettingsDescription withConnectIps(String... connectIps) {
         if (this.connectIps == null) {
-            setConnectIps(new com.amazonaws.internal.SdkInternalList<String>(
-                    connectIps.length));
+            setConnectIps(new com.amazonaws.internal.SdkInternalList<String>(connectIps.length));
         }
         for (String ele : connectIps) {
             this.connectIps.add(ele);
@@ -421,19 +389,16 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * 
      * @param connectIps
      *        The IP addresses of the AD Connector servers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DirectoryConnectSettingsDescription withConnectIps(
-            java.util.Collection<String> connectIps) {
+    public DirectoryConnectSettingsDescription withConnectIps(java.util.Collection<String> connectIps) {
         setConnectIps(connectIps);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -471,38 +436,27 @@ public class DirectoryConnectSettingsDescription implements Serializable,
         DirectoryConnectSettingsDescription other = (DirectoryConnectSettingsDescription) obj;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
-        if (other.getSubnetIds() != null
-                && other.getSubnetIds().equals(this.getSubnetIds()) == false)
+        if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
             return false;
-        if (other.getCustomerUserName() == null
-                ^ this.getCustomerUserName() == null)
+        if (other.getCustomerUserName() == null ^ this.getCustomerUserName() == null)
             return false;
-        if (other.getCustomerUserName() != null
-                && other.getCustomerUserName().equals(
-                        this.getCustomerUserName()) == false)
+        if (other.getCustomerUserName() != null && other.getCustomerUserName().equals(this.getCustomerUserName()) == false)
             return false;
-        if (other.getSecurityGroupId() == null
-                ^ this.getSecurityGroupId() == null)
+        if (other.getSecurityGroupId() == null ^ this.getSecurityGroupId() == null)
             return false;
-        if (other.getSecurityGroupId() != null
-                && other.getSecurityGroupId().equals(this.getSecurityGroupId()) == false)
+        if (other.getSecurityGroupId() != null && other.getSecurityGroupId().equals(this.getSecurityGroupId()) == false)
             return false;
-        if (other.getAvailabilityZones() == null
-                ^ this.getAvailabilityZones() == null)
+        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null)
             return false;
-        if (other.getAvailabilityZones() != null
-                && other.getAvailabilityZones().equals(
-                        this.getAvailabilityZones()) == false)
+        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false)
             return false;
         if (other.getConnectIps() == null ^ this.getConnectIps() == null)
             return false;
-        if (other.getConnectIps() != null
-                && other.getConnectIps().equals(this.getConnectIps()) == false)
+        if (other.getConnectIps() != null && other.getConnectIps().equals(this.getConnectIps()) == false)
             return false;
         return true;
     }
@@ -512,24 +466,12 @@ public class DirectoryConnectSettingsDescription implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomerUserName() == null) ? 0 : getCustomerUserName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroupId() == null) ? 0 : getSecurityGroupId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZones() == null) ? 0
-                        : getAvailabilityZones().hashCode());
-        hashCode = prime * hashCode
-                + ((getConnectIps() == null) ? 0 : getConnectIps().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
+        hashCode = prime * hashCode + ((getCustomerUserName() == null) ? 0 : getCustomerUserName().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupId() == null) ? 0 : getSecurityGroupId().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
+        hashCode = prime * hashCode + ((getConnectIps() == null) ? 0 : getConnectIps().hashCode());
         return hashCode;
     }
 
@@ -538,9 +480,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
         try {
             return (DirectoryConnectSettingsDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

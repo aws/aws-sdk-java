@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -31,8 +29,7 @@ public class Alias implements Serializable, Cloneable {
     private String aliasId;
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be
-     * unique.
+     * Descriptive label associated with an alias. Alias names do not need to be unique.
      * </p>
      */
     private String name;
@@ -46,15 +43,15 @@ public class Alias implements Serializable, Cloneable {
     private RoutingStrategy routingStrategy;
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057".
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * Time stamp indicating when this data object was last modified. Format is
-     * a number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057".
      * </p>
      */
     private java.util.Date lastUpdatedTime;
@@ -91,8 +88,7 @@ public class Alias implements Serializable, Cloneable {
      * 
      * @param aliasId
      *        Unique identifier for a fleet alias.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Alias withAliasId(String aliasId) {
@@ -102,13 +98,11 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be
-     * unique.
+     * Descriptive label associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with an alias. Alias names do not
-     *        need to be unique.
+     *        Descriptive label associated with an alias. Alias names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -117,12 +111,10 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be
-     * unique.
+     * Descriptive label associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with an alias. Alias names do not
-     *         need to be unique.
+     * @return Descriptive label associated with an alias. Alias names do not need to be unique.
      */
 
     public String getName() {
@@ -131,15 +123,12 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be
-     * unique.
+     * Descriptive label associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with an alias. Alias names do not
-     *        need to be unique.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Descriptive label associated with an alias. Alias names do not need to be unique.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Alias withName(String name) {
@@ -179,8 +168,7 @@ public class Alias implements Serializable, Cloneable {
      * 
      * @param description
      *        Human-readable description of an alias.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Alias withDescription(String description) {
@@ -206,8 +194,7 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * @param routingStrategy
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Alias withRoutingStrategy(RoutingStrategy routingStrategy) {
@@ -217,14 +204,13 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is
-     *        a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057".
+     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (ex: "1469498468.057".
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -233,13 +219,12 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057".
      * </p>
      * 
-     * @return Time stamp indicating when this data object was created. Format
-     *         is a number expressed in Unix time as milliseconds (ex:
-     *         "1469498468.057".
+     * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *         milliseconds (ex: "1469498468.057".
      */
 
     public java.util.Date getCreationTime() {
@@ -248,16 +233,14 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is
-     *        a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (ex: "1469498468.057".
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Alias withCreationTime(java.util.Date creationTime) {
@@ -267,14 +250,13 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was last modified. Format is
-     * a number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param lastUpdatedTime
-     *        Time stamp indicating when this data object was last modified.
-     *        Format is a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057".
+     *        Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time
+     *        as milliseconds (ex: "1469498468.057".
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -283,13 +265,12 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was last modified. Format is
-     * a number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057".
      * </p>
      * 
-     * @return Time stamp indicating when this data object was last modified.
-     *         Format is a number expressed in Unix time as milliseconds (ex:
-     *         "1469498468.057".
+     * @return Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time
+     *         as milliseconds (ex: "1469498468.057".
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -298,16 +279,14 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was last modified. Format is
-     * a number expressed in Unix time as milliseconds (ex: "1469498468.057".
+     * Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param lastUpdatedTime
-     *        Time stamp indicating when this data object was last modified.
-     *        Format is a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time
+     *        as milliseconds (ex: "1469498468.057".
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Alias withLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -316,8 +295,7 @@ public class Alias implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -355,35 +333,27 @@ public class Alias implements Serializable, Cloneable {
         Alias other = (Alias) obj;
         if (other.getAliasId() == null ^ this.getAliasId() == null)
             return false;
-        if (other.getAliasId() != null
-                && other.getAliasId().equals(this.getAliasId()) == false)
+        if (other.getAliasId() != null && other.getAliasId().equals(this.getAliasId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getRoutingStrategy() == null
-                ^ this.getRoutingStrategy() == null)
+        if (other.getRoutingStrategy() == null ^ this.getRoutingStrategy() == null)
             return false;
-        if (other.getRoutingStrategy() != null
-                && other.getRoutingStrategy().equals(this.getRoutingStrategy()) == false)
+        if (other.getRoutingStrategy() != null && other.getRoutingStrategy().equals(this.getRoutingStrategy()) == false)
             return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getCreationTime() != null
-                && other.getCreationTime().equals(this.getCreationTime()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
-        if (other.getLastUpdatedTime() == null
-                ^ this.getLastUpdatedTime() == null)
+        if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null)
             return false;
-        if (other.getLastUpdatedTime() != null
-                && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
+        if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
             return false;
         return true;
     }
@@ -393,25 +363,12 @@ public class Alias implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAliasId() == null) ? 0 : getAliasId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRoutingStrategy() == null) ? 0 : getRoutingStrategy()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationTime() == null) ? 0 : getCreationTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAliasId() == null) ? 0 : getAliasId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getRoutingStrategy() == null) ? 0 : getRoutingStrategy().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         return hashCode;
     }
 
@@ -420,9 +377,7 @@ public class Alias implements Serializable, Cloneable {
         try {
             return (Alias) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

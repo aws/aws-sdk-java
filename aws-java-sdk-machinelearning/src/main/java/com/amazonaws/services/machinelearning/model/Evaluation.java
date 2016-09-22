@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.machinelearning.model;
 
@@ -21,8 +19,8 @@ import java.io.Serializable;
  * Represents the output of <code>GetEvaluation</code> operation.
  * </p>
  * <p>
- * The content consists of the detailed metadata and data file information and
- * the current status of the <code>Evaluation</code>.
+ * The content consists of the detailed metadata and data file information and the current status of the
+ * <code>Evaluation</code>.
  * </p>
  */
 public class Evaluation implements Serializable, Cloneable {
@@ -41,37 +39,32 @@ public class Evaluation implements Serializable, Cloneable {
     private String mLModelId;
     /**
      * <p>
-     * The ID of the <code>DataSource</code> that is used to evaluate the
-     * <code>MLModel</code>.
+     * The ID of the <code>DataSource</code> that is used to evaluate the <code>MLModel</code>.
      * </p>
      */
     private String evaluationDataSourceId;
     /**
      * <p>
-     * The location and name of the data in Amazon Simple Storage Server (Amazon
-     * S3) that is used in the evaluation.
+     * The location and name of the data in Amazon Simple Storage Server (Amazon S3) that is used in the evaluation.
      * </p>
      */
     private String inputDataLocationS3;
     /**
      * <p>
-     * The AWS user account that invoked the evaluation. The account type can be
-     * either an AWS root account or an AWS Identity and Access Management (IAM)
-     * user account.
+     * The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS
+     * Identity and Access Management (IAM) user account.
      * </p>
      */
     private String createdByIamUser;
     /**
      * <p>
-     * The time that the <code>Evaluation</code> was created. The time is
-     * expressed in epoch time.
+     * The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The time of the most recent edit to the <code>Evaluation</code>. The time
-     * is expressed in epoch time.
+     * The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
@@ -83,61 +76,51 @@ public class Evaluation implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The status of the evaluation. This element can have one of the following
-     * values:
+     * The status of the evaluation. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
-     * a request to evaluate an <code>MLModel</code>.</li>
+     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to evaluate an
+     * <code>MLModel</code>.</li>
      * <li> <code>INPROGRESS</code> - The evaluation is underway.</li>
-     * <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code>
-     * did not run to completion. It is not usable.</li>
-     * <li> <code>COMPLETED</code> - The evaluation process completed
-     * successfully.</li>
-     * <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as
-     * deleted. It is not usable.</li>
+     * <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not
+     * usable.</li>
+     * <li> <code>COMPLETED</code> - The evaluation process completed successfully.</li>
+     * <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</li>
      * </ul>
      */
     private String status;
     /**
      * <p>
-     * Measurements of how well the <code>MLModel</code> performed, using
-     * observations referenced by the <code>DataSource</code>. One of the
-     * following metrics is returned, based on the type of the
-     * <code>MLModel</code>:
+     * Measurements of how well the <code>MLModel</code> performed, using observations referenced by the
+     * <code>DataSource</code>. One of the following metrics is returned, based on the type of the <code>MLModel</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve
-     * (AUC) technique to measure performance.
+     * BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean
-     * Square Error (RMSE) technique to measure performance. RMSE measures the
-     * difference between predicted and actual values for a single variable.
+     * RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure
+     * performance. RMSE measures the difference between predicted and actual values for a single variable.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score
-     * technique to measure performance.
+     * MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.
      * </p>
      * </li>
      * </ul>
      * <p>
      * For more information about performance metrics, please see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
-     * Machine Learning Developer Guide</a>.
+     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.
      * </p>
      */
     private PerformanceMetrics performanceMetrics;
     /**
      * <p>
-     * A description of the most recent details about evaluating the
-     * <code>MLModel</code>.
+     * A description of the most recent details about evaluating the <code>MLModel</code>.
      * </p>
      */
     private String message;
@@ -154,8 +137,7 @@ public class Evaluation implements Serializable, Cloneable {
      * </p>
      * 
      * @param evaluationId
-     *        The ID that is assigned to the <code>Evaluation</code> at
-     *        creation.
+     *        The ID that is assigned to the <code>Evaluation</code> at creation.
      */
 
     public void setEvaluationId(String evaluationId) {
@@ -167,8 +149,7 @@ public class Evaluation implements Serializable, Cloneable {
      * The ID that is assigned to the <code>Evaluation</code> at creation.
      * </p>
      * 
-     * @return The ID that is assigned to the <code>Evaluation</code> at
-     *         creation.
+     * @return The ID that is assigned to the <code>Evaluation</code> at creation.
      */
 
     public String getEvaluationId() {
@@ -181,10 +162,8 @@ public class Evaluation implements Serializable, Cloneable {
      * </p>
      * 
      * @param evaluationId
-     *        The ID that is assigned to the <code>Evaluation</code> at
-     *        creation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID that is assigned to the <code>Evaluation</code> at creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Evaluation withEvaluationId(String evaluationId) {
@@ -198,8 +177,7 @@ public class Evaluation implements Serializable, Cloneable {
      * </p>
      * 
      * @param mLModelId
-     *        The ID of the <code>MLModel</code> that is the focus of the
-     *        evaluation.
+     *        The ID of the <code>MLModel</code> that is the focus of the evaluation.
      */
 
     public void setMLModelId(String mLModelId) {
@@ -211,8 +189,7 @@ public class Evaluation implements Serializable, Cloneable {
      * The ID of the <code>MLModel</code> that is the focus of the evaluation.
      * </p>
      * 
-     * @return The ID of the <code>MLModel</code> that is the focus of the
-     *         evaluation.
+     * @return The ID of the <code>MLModel</code> that is the focus of the evaluation.
      */
 
     public String getMLModelId() {
@@ -225,10 +202,8 @@ public class Evaluation implements Serializable, Cloneable {
      * </p>
      * 
      * @param mLModelId
-     *        The ID of the <code>MLModel</code> that is the focus of the
-     *        evaluation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the <code>MLModel</code> that is the focus of the evaluation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Evaluation withMLModelId(String mLModelId) {
@@ -238,13 +213,11 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the <code>DataSource</code> that is used to evaluate the
-     * <code>MLModel</code>.
+     * The ID of the <code>DataSource</code> that is used to evaluate the <code>MLModel</code>.
      * </p>
      * 
      * @param evaluationDataSourceId
-     *        The ID of the <code>DataSource</code> that is used to evaluate the
-     *        <code>MLModel</code>.
+     *        The ID of the <code>DataSource</code> that is used to evaluate the <code>MLModel</code>.
      */
 
     public void setEvaluationDataSourceId(String evaluationDataSourceId) {
@@ -253,12 +226,10 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the <code>DataSource</code> that is used to evaluate the
-     * <code>MLModel</code>.
+     * The ID of the <code>DataSource</code> that is used to evaluate the <code>MLModel</code>.
      * </p>
      * 
-     * @return The ID of the <code>DataSource</code> that is used to evaluate
-     *         the <code>MLModel</code>.
+     * @return The ID of the <code>DataSource</code> that is used to evaluate the <code>MLModel</code>.
      */
 
     public String getEvaluationDataSourceId() {
@@ -267,15 +238,12 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the <code>DataSource</code> that is used to evaluate the
-     * <code>MLModel</code>.
+     * The ID of the <code>DataSource</code> that is used to evaluate the <code>MLModel</code>.
      * </p>
      * 
      * @param evaluationDataSourceId
-     *        The ID of the <code>DataSource</code> that is used to evaluate the
-     *        <code>MLModel</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the <code>DataSource</code> that is used to evaluate the <code>MLModel</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Evaluation withEvaluationDataSourceId(String evaluationDataSourceId) {
@@ -285,13 +253,12 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location and name of the data in Amazon Simple Storage Server (Amazon
-     * S3) that is used in the evaluation.
+     * The location and name of the data in Amazon Simple Storage Server (Amazon S3) that is used in the evaluation.
      * </p>
      * 
      * @param inputDataLocationS3
-     *        The location and name of the data in Amazon Simple Storage Server
-     *        (Amazon S3) that is used in the evaluation.
+     *        The location and name of the data in Amazon Simple Storage Server (Amazon S3) that is used in the
+     *        evaluation.
      */
 
     public void setInputDataLocationS3(String inputDataLocationS3) {
@@ -300,12 +267,11 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location and name of the data in Amazon Simple Storage Server (Amazon
-     * S3) that is used in the evaluation.
+     * The location and name of the data in Amazon Simple Storage Server (Amazon S3) that is used in the evaluation.
      * </p>
      * 
-     * @return The location and name of the data in Amazon Simple Storage Server
-     *         (Amazon S3) that is used in the evaluation.
+     * @return The location and name of the data in Amazon Simple Storage Server (Amazon S3) that is used in the
+     *         evaluation.
      */
 
     public String getInputDataLocationS3() {
@@ -314,15 +280,13 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location and name of the data in Amazon Simple Storage Server (Amazon
-     * S3) that is used in the evaluation.
+     * The location and name of the data in Amazon Simple Storage Server (Amazon S3) that is used in the evaluation.
      * </p>
      * 
      * @param inputDataLocationS3
-     *        The location and name of the data in Amazon Simple Storage Server
-     *        (Amazon S3) that is used in the evaluation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The location and name of the data in Amazon Simple Storage Server (Amazon S3) that is used in the
+     *        evaluation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Evaluation withInputDataLocationS3(String inputDataLocationS3) {
@@ -332,15 +296,13 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS user account that invoked the evaluation. The account type can be
-     * either an AWS root account or an AWS Identity and Access Management (IAM)
-     * user account.
+     * The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS
+     * Identity and Access Management (IAM) user account.
      * </p>
      * 
      * @param createdByIamUser
-     *        The AWS user account that invoked the evaluation. The account type
-     *        can be either an AWS root account or an AWS Identity and Access
-     *        Management (IAM) user account.
+     *        The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an
+     *        AWS Identity and Access Management (IAM) user account.
      */
 
     public void setCreatedByIamUser(String createdByIamUser) {
@@ -349,14 +311,12 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS user account that invoked the evaluation. The account type can be
-     * either an AWS root account or an AWS Identity and Access Management (IAM)
-     * user account.
+     * The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS
+     * Identity and Access Management (IAM) user account.
      * </p>
      * 
-     * @return The AWS user account that invoked the evaluation. The account
-     *         type can be either an AWS root account or an AWS Identity and
-     *         Access Management (IAM) user account.
+     * @return The AWS user account that invoked the evaluation. The account type can be either an AWS root account or
+     *         an AWS Identity and Access Management (IAM) user account.
      */
 
     public String getCreatedByIamUser() {
@@ -365,17 +325,14 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS user account that invoked the evaluation. The account type can be
-     * either an AWS root account or an AWS Identity and Access Management (IAM)
-     * user account.
+     * The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS
+     * Identity and Access Management (IAM) user account.
      * </p>
      * 
      * @param createdByIamUser
-     *        The AWS user account that invoked the evaluation. The account type
-     *        can be either an AWS root account or an AWS Identity and Access
-     *        Management (IAM) user account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an
+     *        AWS Identity and Access Management (IAM) user account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Evaluation withCreatedByIamUser(String createdByIamUser) {
@@ -385,13 +342,11 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the <code>Evaluation</code> was created. The time is
-     * expressed in epoch time.
+     * The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.
      * </p>
      * 
      * @param createdAt
-     *        The time that the <code>Evaluation</code> was created. The time is
-     *        expressed in epoch time.
+     *        The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -400,12 +355,10 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the <code>Evaluation</code> was created. The time is
-     * expressed in epoch time.
+     * The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.
      * </p>
      * 
-     * @return The time that the <code>Evaluation</code> was created. The time
-     *         is expressed in epoch time.
+     * @return The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.
      */
 
     public java.util.Date getCreatedAt() {
@@ -414,15 +367,12 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the <code>Evaluation</code> was created. The time is
-     * expressed in epoch time.
+     * The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.
      * </p>
      * 
      * @param createdAt
-     *        The time that the <code>Evaluation</code> was created. The time is
-     *        expressed in epoch time.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Evaluation withCreatedAt(java.util.Date createdAt) {
@@ -432,13 +382,11 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time of the most recent edit to the <code>Evaluation</code>. The time
-     * is expressed in epoch time.
+     * The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The time of the most recent edit to the <code>Evaluation</code>.
-     *        The time is expressed in epoch time.
+     *        The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -447,12 +395,10 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time of the most recent edit to the <code>Evaluation</code>. The time
-     * is expressed in epoch time.
+     * The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.
      * </p>
      * 
-     * @return The time of the most recent edit to the <code>Evaluation</code>.
-     *         The time is expressed in epoch time.
+     * @return The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -461,15 +407,12 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time of the most recent edit to the <code>Evaluation</code>. The time
-     * is expressed in epoch time.
+     * The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The time of the most recent edit to the <code>Evaluation</code>.
-     *        The time is expressed in epoch time.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Evaluation withLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -483,8 +426,7 @@ public class Evaluation implements Serializable, Cloneable {
      * </p>
      * 
      * @param name
-     *        A user-supplied name or description of the <code>Evaluation</code>
-     *        .
+     *        A user-supplied name or description of the <code>Evaluation</code>.
      */
 
     public void setName(String name) {
@@ -496,8 +438,7 @@ public class Evaluation implements Serializable, Cloneable {
      * A user-supplied name or description of the <code>Evaluation</code>.
      * </p>
      * 
-     * @return A user-supplied name or description of the
-     *         <code>Evaluation</code>.
+     * @return A user-supplied name or description of the <code>Evaluation</code>.
      */
 
     public String getName() {
@@ -510,10 +451,8 @@ public class Evaluation implements Serializable, Cloneable {
      * </p>
      * 
      * @param name
-     *        A user-supplied name or description of the <code>Evaluation</code>
-     *        .
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A user-supplied name or description of the <code>Evaluation</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Evaluation withName(String name) {
@@ -523,34 +462,28 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the evaluation. This element can have one of the following
-     * values:
+     * The status of the evaluation. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
-     * a request to evaluate an <code>MLModel</code>.</li>
+     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to evaluate an
+     * <code>MLModel</code>.</li>
      * <li> <code>INPROGRESS</code> - The evaluation is underway.</li>
-     * <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code>
-     * did not run to completion. It is not usable.</li>
-     * <li> <code>COMPLETED</code> - The evaluation process completed
-     * successfully.</li>
-     * <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as
-     * deleted. It is not usable.</li>
+     * <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not
+     * usable.</li>
+     * <li> <code>COMPLETED</code> - The evaluation process completed successfully.</li>
+     * <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</li>
      * </ul>
      * 
      * @param status
-     *        The status of the evaluation. This element can have one of the
-     *        following values:</p>
+     *        The status of the evaluation. This element can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML)
-     *        submitted a request to evaluate an <code>MLModel</code>.</li>
+     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to evaluate an
+     *        <code>MLModel</code>.</li>
      *        <li> <code>INPROGRESS</code> - The evaluation is underway.</li>
-     *        <li> <code>FAILED</code> - The request to evaluate an
-     *        <code>MLModel</code> did not run to completion. It is not usable.</li>
-     *        <li> <code>COMPLETED</code> - The evaluation process completed
-     *        successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>Evaluation</code> is marked
-     *        as deleted. It is not usable.</li>
+     *        <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is
+     *        not usable.</li>
+     *        <li> <code>COMPLETED</code> - The evaluation process completed successfully.</li>
+     *        <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</li>
      * @see EntityStatus
      */
 
@@ -560,34 +493,27 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the evaluation. This element can have one of the following
-     * values:
+     * The status of the evaluation. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
-     * a request to evaluate an <code>MLModel</code>.</li>
+     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to evaluate an
+     * <code>MLModel</code>.</li>
      * <li> <code>INPROGRESS</code> - The evaluation is underway.</li>
-     * <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code>
-     * did not run to completion. It is not usable.</li>
-     * <li> <code>COMPLETED</code> - The evaluation process completed
-     * successfully.</li>
-     * <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as
-     * deleted. It is not usable.</li>
+     * <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not
+     * usable.</li>
+     * <li> <code>COMPLETED</code> - The evaluation process completed successfully.</li>
+     * <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</li>
      * </ul>
      * 
-     * @return The status of the evaluation. This element can have one of the
-     *         following values:</p>
+     * @return The status of the evaluation. This element can have one of the following values:</p>
      *         <ul>
-     *         <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML)
-     *         submitted a request to evaluate an <code>MLModel</code>.</li>
+     *         <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to evaluate an
+     *         <code>MLModel</code>.</li>
      *         <li> <code>INPROGRESS</code> - The evaluation is underway.</li>
-     *         <li> <code>FAILED</code> - The request to evaluate an
-     *         <code>MLModel</code> did not run to completion. It is not usable.
-     *         </li>
-     *         <li> <code>COMPLETED</code> - The evaluation process completed
-     *         successfully.</li>
-     *         <li> <code>DELETED</code> - The <code>Evaluation</code> is marked
-     *         as deleted. It is not usable.</li>
+     *         <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It
+     *         is not usable.</li>
+     *         <li> <code>COMPLETED</code> - The evaluation process completed successfully.</li>
+     *         <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</li>
      * @see EntityStatus
      */
 
@@ -597,36 +523,29 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the evaluation. This element can have one of the following
-     * values:
+     * The status of the evaluation. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
-     * a request to evaluate an <code>MLModel</code>.</li>
+     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to evaluate an
+     * <code>MLModel</code>.</li>
      * <li> <code>INPROGRESS</code> - The evaluation is underway.</li>
-     * <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code>
-     * did not run to completion. It is not usable.</li>
-     * <li> <code>COMPLETED</code> - The evaluation process completed
-     * successfully.</li>
-     * <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as
-     * deleted. It is not usable.</li>
+     * <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not
+     * usable.</li>
+     * <li> <code>COMPLETED</code> - The evaluation process completed successfully.</li>
+     * <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</li>
      * </ul>
      * 
      * @param status
-     *        The status of the evaluation. This element can have one of the
-     *        following values:</p>
+     *        The status of the evaluation. This element can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML)
-     *        submitted a request to evaluate an <code>MLModel</code>.</li>
+     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to evaluate an
+     *        <code>MLModel</code>.</li>
      *        <li> <code>INPROGRESS</code> - The evaluation is underway.</li>
-     *        <li> <code>FAILED</code> - The request to evaluate an
-     *        <code>MLModel</code> did not run to completion. It is not usable.</li>
-     *        <li> <code>COMPLETED</code> - The evaluation process completed
-     *        successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>Evaluation</code> is marked
-     *        as deleted. It is not usable.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is
+     *        not usable.</li>
+     *        <li> <code>COMPLETED</code> - The evaluation process completed successfully.</li>
+     *        <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityStatus
      */
 
@@ -637,34 +556,28 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the evaluation. This element can have one of the following
-     * values:
+     * The status of the evaluation. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
-     * a request to evaluate an <code>MLModel</code>.</li>
+     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to evaluate an
+     * <code>MLModel</code>.</li>
      * <li> <code>INPROGRESS</code> - The evaluation is underway.</li>
-     * <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code>
-     * did not run to completion. It is not usable.</li>
-     * <li> <code>COMPLETED</code> - The evaluation process completed
-     * successfully.</li>
-     * <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as
-     * deleted. It is not usable.</li>
+     * <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not
+     * usable.</li>
+     * <li> <code>COMPLETED</code> - The evaluation process completed successfully.</li>
+     * <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</li>
      * </ul>
      * 
      * @param status
-     *        The status of the evaluation. This element can have one of the
-     *        following values:</p>
+     *        The status of the evaluation. This element can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML)
-     *        submitted a request to evaluate an <code>MLModel</code>.</li>
+     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to evaluate an
+     *        <code>MLModel</code>.</li>
      *        <li> <code>INPROGRESS</code> - The evaluation is underway.</li>
-     *        <li> <code>FAILED</code> - The request to evaluate an
-     *        <code>MLModel</code> did not run to completion. It is not usable.</li>
-     *        <li> <code>COMPLETED</code> - The evaluation process completed
-     *        successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>Evaluation</code> is marked
-     *        as deleted. It is not usable.</li>
+     *        <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is
+     *        not usable.</li>
+     *        <li> <code>COMPLETED</code> - The evaluation process completed successfully.</li>
+     *        <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</li>
      * @see EntityStatus
      */
 
@@ -674,36 +587,29 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the evaluation. This element can have one of the following
-     * values:
+     * The status of the evaluation. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
-     * a request to evaluate an <code>MLModel</code>.</li>
+     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to evaluate an
+     * <code>MLModel</code>.</li>
      * <li> <code>INPROGRESS</code> - The evaluation is underway.</li>
-     * <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code>
-     * did not run to completion. It is not usable.</li>
-     * <li> <code>COMPLETED</code> - The evaluation process completed
-     * successfully.</li>
-     * <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as
-     * deleted. It is not usable.</li>
+     * <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not
+     * usable.</li>
+     * <li> <code>COMPLETED</code> - The evaluation process completed successfully.</li>
+     * <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</li>
      * </ul>
      * 
      * @param status
-     *        The status of the evaluation. This element can have one of the
-     *        following values:</p>
+     *        The status of the evaluation. This element can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML)
-     *        submitted a request to evaluate an <code>MLModel</code>.</li>
+     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to evaluate an
+     *        <code>MLModel</code>.</li>
      *        <li> <code>INPROGRESS</code> - The evaluation is underway.</li>
-     *        <li> <code>FAILED</code> - The request to evaluate an
-     *        <code>MLModel</code> did not run to completion. It is not usable.</li>
-     *        <li> <code>COMPLETED</code> - The evaluation process completed
-     *        successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>Evaluation</code> is marked
-     *        as deleted. It is not usable.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li> <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is
+     *        not usable.</li>
+     *        <li> <code>COMPLETED</code> - The evaluation process completed successfully.</li>
+     *        <li> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityStatus
      */
 
@@ -714,70 +620,59 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Measurements of how well the <code>MLModel</code> performed, using
-     * observations referenced by the <code>DataSource</code>. One of the
-     * following metrics is returned, based on the type of the
-     * <code>MLModel</code>:
+     * Measurements of how well the <code>MLModel</code> performed, using observations referenced by the
+     * <code>DataSource</code>. One of the following metrics is returned, based on the type of the <code>MLModel</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve
-     * (AUC) technique to measure performance.
+     * BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean
-     * Square Error (RMSE) technique to measure performance. RMSE measures the
-     * difference between predicted and actual values for a single variable.
+     * RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure
+     * performance. RMSE measures the difference between predicted and actual values for a single variable.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score
-     * technique to measure performance.
+     * MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.
      * </p>
      * </li>
      * </ul>
      * <p>
      * For more information about performance metrics, please see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
-     * Machine Learning Developer Guide</a>.
+     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.
      * </p>
      * 
      * @param performanceMetrics
-     *        Measurements of how well the <code>MLModel</code> performed, using
-     *        observations referenced by the <code>DataSource</code>. One of the
-     *        following metrics is returned, based on the type of the
+     *        Measurements of how well the <code>MLModel</code> performed, using observations referenced by the
+     *        <code>DataSource</code>. One of the following metrics is returned, based on the type of the
      *        <code>MLModel</code>: </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        BinaryAUC: A binary <code>MLModel</code> uses the Area Under the
-     *        Curve (AUC) technique to measure performance.
+     *        BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure
+     *        performance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RegressionRMSE: A regression <code>MLModel</code> uses the Root
-     *        Mean Square Error (RMSE) technique to measure performance. RMSE
-     *        measures the difference between predicted and actual values for a
-     *        single variable.
+     *        RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to
+     *        measure performance. RMSE measures the difference between predicted and actual values for a single
+     *        variable.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1
-     *        score technique to measure performance.
+     *        MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        For more information about performance metrics, please see the <a
-     *        href
-     *        ="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
-     *        Machine Learning Developer Guide</a>.
+     *        href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.
      */
 
     public void setPerformanceMetrics(PerformanceMetrics performanceMetrics) {
@@ -786,69 +681,59 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Measurements of how well the <code>MLModel</code> performed, using
-     * observations referenced by the <code>DataSource</code>. One of the
-     * following metrics is returned, based on the type of the
-     * <code>MLModel</code>:
+     * Measurements of how well the <code>MLModel</code> performed, using observations referenced by the
+     * <code>DataSource</code>. One of the following metrics is returned, based on the type of the <code>MLModel</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve
-     * (AUC) technique to measure performance.
+     * BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean
-     * Square Error (RMSE) technique to measure performance. RMSE measures the
-     * difference between predicted and actual values for a single variable.
+     * RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure
+     * performance. RMSE measures the difference between predicted and actual values for a single variable.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score
-     * technique to measure performance.
+     * MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.
      * </p>
      * </li>
      * </ul>
      * <p>
      * For more information about performance metrics, please see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
-     * Machine Learning Developer Guide</a>.
+     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.
      * </p>
      * 
-     * @return Measurements of how well the <code>MLModel</code> performed,
-     *         using observations referenced by the <code>DataSource</code>. One
-     *         of the following metrics is returned, based on the type of the
+     * @return Measurements of how well the <code>MLModel</code> performed, using observations referenced by the
+     *         <code>DataSource</code>. One of the following metrics is returned, based on the type of the
      *         <code>MLModel</code>: </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         BinaryAUC: A binary <code>MLModel</code> uses the Area Under the
-     *         Curve (AUC) technique to measure performance.
+     *         BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure
+     *         performance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         RegressionRMSE: A regression <code>MLModel</code> uses the Root
-     *         Mean Square Error (RMSE) technique to measure performance. RMSE
-     *         measures the difference between predicted and actual values for a
-     *         single variable.
+     *         RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to
+     *         measure performance. RMSE measures the difference between predicted and actual values for a single
+     *         variable.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the
-     *         F1 score technique to measure performance.
+     *         MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure
+     *         performance.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         For more information about performance metrics, please see the <a
-     *         href
-     *         ="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
-     *         Machine Learning Developer Guide</a>.
+     *         href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.
      */
 
     public PerformanceMetrics getPerformanceMetrics() {
@@ -857,89 +742,74 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Measurements of how well the <code>MLModel</code> performed, using
-     * observations referenced by the <code>DataSource</code>. One of the
-     * following metrics is returned, based on the type of the
-     * <code>MLModel</code>:
+     * Measurements of how well the <code>MLModel</code> performed, using observations referenced by the
+     * <code>DataSource</code>. One of the following metrics is returned, based on the type of the <code>MLModel</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve
-     * (AUC) technique to measure performance.
+     * BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean
-     * Square Error (RMSE) technique to measure performance. RMSE measures the
-     * difference between predicted and actual values for a single variable.
+     * RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure
+     * performance. RMSE measures the difference between predicted and actual values for a single variable.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score
-     * technique to measure performance.
+     * MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.
      * </p>
      * </li>
      * </ul>
      * <p>
      * For more information about performance metrics, please see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
-     * Machine Learning Developer Guide</a>.
+     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.
      * </p>
      * 
      * @param performanceMetrics
-     *        Measurements of how well the <code>MLModel</code> performed, using
-     *        observations referenced by the <code>DataSource</code>. One of the
-     *        following metrics is returned, based on the type of the
+     *        Measurements of how well the <code>MLModel</code> performed, using observations referenced by the
+     *        <code>DataSource</code>. One of the following metrics is returned, based on the type of the
      *        <code>MLModel</code>: </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        BinaryAUC: A binary <code>MLModel</code> uses the Area Under the
-     *        Curve (AUC) technique to measure performance.
+     *        BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure
+     *        performance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RegressionRMSE: A regression <code>MLModel</code> uses the Root
-     *        Mean Square Error (RMSE) technique to measure performance. RMSE
-     *        measures the difference between predicted and actual values for a
-     *        single variable.
+     *        RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to
+     *        measure performance. RMSE measures the difference between predicted and actual values for a single
+     *        variable.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1
-     *        score technique to measure performance.
+     *        MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        For more information about performance metrics, please see the <a
-     *        href
-     *        ="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
-     *        Machine Learning Developer Guide</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Evaluation withPerformanceMetrics(
-            PerformanceMetrics performanceMetrics) {
+    public Evaluation withPerformanceMetrics(PerformanceMetrics performanceMetrics) {
         setPerformanceMetrics(performanceMetrics);
         return this;
     }
 
     /**
      * <p>
-     * A description of the most recent details about evaluating the
-     * <code>MLModel</code>.
+     * A description of the most recent details about evaluating the <code>MLModel</code>.
      * </p>
      * 
      * @param message
-     *        A description of the most recent details about evaluating the
-     *        <code>MLModel</code>.
+     *        A description of the most recent details about evaluating the <code>MLModel</code>.
      */
 
     public void setMessage(String message) {
@@ -948,12 +818,10 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the most recent details about evaluating the
-     * <code>MLModel</code>.
+     * A description of the most recent details about evaluating the <code>MLModel</code>.
      * </p>
      * 
-     * @return A description of the most recent details about evaluating the
-     *         <code>MLModel</code>.
+     * @return A description of the most recent details about evaluating the <code>MLModel</code>.
      */
 
     public String getMessage() {
@@ -962,15 +830,12 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the most recent details about evaluating the
-     * <code>MLModel</code>.
+     * A description of the most recent details about evaluating the <code>MLModel</code>.
      * </p>
      * 
      * @param message
-     *        A description of the most recent details about evaluating the
-     *        <code>MLModel</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A description of the most recent details about evaluating the <code>MLModel</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Evaluation withMessage(String message) {
@@ -996,8 +861,7 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * @param computeTime
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Evaluation withComputeTime(Long computeTime) {
@@ -1023,8 +887,7 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * @param finishedAt
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Evaluation withFinishedAt(java.util.Date finishedAt) {
@@ -1050,8 +913,7 @@ public class Evaluation implements Serializable, Cloneable {
 
     /**
      * @param startedAt
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Evaluation withStartedAt(java.util.Date startedAt) {
@@ -1060,8 +922,7 @@ public class Evaluation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1076,8 +937,7 @@ public class Evaluation implements Serializable, Cloneable {
         if (getMLModelId() != null)
             sb.append("MLModelId: " + getMLModelId() + ",");
         if (getEvaluationDataSourceId() != null)
-            sb.append("EvaluationDataSourceId: " + getEvaluationDataSourceId()
-                    + ",");
+            sb.append("EvaluationDataSourceId: " + getEvaluationDataSourceId() + ",");
         if (getInputDataLocationS3() != null)
             sb.append("InputDataLocationS3: " + getInputDataLocationS3() + ",");
         if (getCreatedByIamUser() != null)
@@ -1116,81 +976,59 @@ public class Evaluation implements Serializable, Cloneable {
         Evaluation other = (Evaluation) obj;
         if (other.getEvaluationId() == null ^ this.getEvaluationId() == null)
             return false;
-        if (other.getEvaluationId() != null
-                && other.getEvaluationId().equals(this.getEvaluationId()) == false)
+        if (other.getEvaluationId() != null && other.getEvaluationId().equals(this.getEvaluationId()) == false)
             return false;
         if (other.getMLModelId() == null ^ this.getMLModelId() == null)
             return false;
-        if (other.getMLModelId() != null
-                && other.getMLModelId().equals(this.getMLModelId()) == false)
+        if (other.getMLModelId() != null && other.getMLModelId().equals(this.getMLModelId()) == false)
             return false;
-        if (other.getEvaluationDataSourceId() == null
-                ^ this.getEvaluationDataSourceId() == null)
+        if (other.getEvaluationDataSourceId() == null ^ this.getEvaluationDataSourceId() == null)
             return false;
-        if (other.getEvaluationDataSourceId() != null
-                && other.getEvaluationDataSourceId().equals(
-                        this.getEvaluationDataSourceId()) == false)
+        if (other.getEvaluationDataSourceId() != null && other.getEvaluationDataSourceId().equals(this.getEvaluationDataSourceId()) == false)
             return false;
-        if (other.getInputDataLocationS3() == null
-                ^ this.getInputDataLocationS3() == null)
+        if (other.getInputDataLocationS3() == null ^ this.getInputDataLocationS3() == null)
             return false;
-        if (other.getInputDataLocationS3() != null
-                && other.getInputDataLocationS3().equals(
-                        this.getInputDataLocationS3()) == false)
+        if (other.getInputDataLocationS3() != null && other.getInputDataLocationS3().equals(this.getInputDataLocationS3()) == false)
             return false;
-        if (other.getCreatedByIamUser() == null
-                ^ this.getCreatedByIamUser() == null)
+        if (other.getCreatedByIamUser() == null ^ this.getCreatedByIamUser() == null)
             return false;
-        if (other.getCreatedByIamUser() != null
-                && other.getCreatedByIamUser().equals(
-                        this.getCreatedByIamUser()) == false)
+        if (other.getCreatedByIamUser() != null && other.getCreatedByIamUser().equals(this.getCreatedByIamUser()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getCreatedAt() != null
-                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getLastUpdatedAt() == null ^ this.getLastUpdatedAt() == null)
             return false;
-        if (other.getLastUpdatedAt() != null
-                && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
+        if (other.getLastUpdatedAt() != null && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getPerformanceMetrics() == null
-                ^ this.getPerformanceMetrics() == null)
+        if (other.getPerformanceMetrics() == null ^ this.getPerformanceMetrics() == null)
             return false;
-        if (other.getPerformanceMetrics() != null
-                && other.getPerformanceMetrics().equals(
-                        this.getPerformanceMetrics()) == false)
+        if (other.getPerformanceMetrics() != null && other.getPerformanceMetrics().equals(this.getPerformanceMetrics()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         if (other.getComputeTime() == null ^ this.getComputeTime() == null)
             return false;
-        if (other.getComputeTime() != null
-                && other.getComputeTime().equals(this.getComputeTime()) == false)
+        if (other.getComputeTime() != null && other.getComputeTime().equals(this.getComputeTime()) == false)
             return false;
         if (other.getFinishedAt() == null ^ this.getFinishedAt() == null)
             return false;
-        if (other.getFinishedAt() != null
-                && other.getFinishedAt().equals(this.getFinishedAt()) == false)
+        if (other.getFinishedAt() != null && other.getFinishedAt().equals(this.getFinishedAt()) == false)
             return false;
         if (other.getStartedAt() == null ^ this.getStartedAt() == null)
             return false;
-        if (other.getStartedAt() != null
-                && other.getStartedAt().equals(this.getStartedAt()) == false)
+        if (other.getStartedAt() != null && other.getStartedAt().equals(this.getStartedAt()) == false)
             return false;
         return true;
     }
@@ -1200,47 +1038,20 @@ public class Evaluation implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEvaluationId() == null) ? 0 : getEvaluationId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMLModelId() == null) ? 0 : getMLModelId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEvaluationDataSourceId() == null) ? 0
-                        : getEvaluationDataSourceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInputDataLocationS3() == null) ? 0
-                        : getInputDataLocationS3().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedByIamUser() == null) ? 0 : getCreatedByIamUser()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPerformanceMetrics() == null) ? 0
-                        : getPerformanceMetrics().hashCode());
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getComputeTime() == null) ? 0 : getComputeTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getFinishedAt() == null) ? 0 : getFinishedAt().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
+        hashCode = prime * hashCode + ((getEvaluationId() == null) ? 0 : getEvaluationId().hashCode());
+        hashCode = prime * hashCode + ((getMLModelId() == null) ? 0 : getMLModelId().hashCode());
+        hashCode = prime * hashCode + ((getEvaluationDataSourceId() == null) ? 0 : getEvaluationDataSourceId().hashCode());
+        hashCode = prime * hashCode + ((getInputDataLocationS3() == null) ? 0 : getInputDataLocationS3().hashCode());
+        hashCode = prime * hashCode + ((getCreatedByIamUser() == null) ? 0 : getCreatedByIamUser().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getPerformanceMetrics() == null) ? 0 : getPerformanceMetrics().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getComputeTime() == null) ? 0 : getComputeTime().hashCode());
+        hashCode = prime * hashCode + ((getFinishedAt() == null) ? 0 : getFinishedAt().hashCode());
+        hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         return hashCode;
     }
 
@@ -1249,9 +1060,7 @@ public class Evaluation implements Serializable, Cloneable {
         try {
             return (Evaluation) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

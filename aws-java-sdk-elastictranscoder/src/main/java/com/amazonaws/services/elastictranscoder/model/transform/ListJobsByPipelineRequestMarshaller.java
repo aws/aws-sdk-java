@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
@@ -43,49 +41,38 @@ import com.amazonaws.protocol.json.*;
 /**
  * ListJobsByPipelineRequest Marshaller
  */
-public class ListJobsByPipelineRequestMarshaller
-        implements
-        Marshaller<Request<ListJobsByPipelineRequest>, ListJobsByPipelineRequest> {
+public class ListJobsByPipelineRequestMarshaller implements Marshaller<Request<ListJobsByPipelineRequest>, ListJobsByPipelineRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public ListJobsByPipelineRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public ListJobsByPipelineRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<ListJobsByPipelineRequest> marshall(
-            ListJobsByPipelineRequest listJobsByPipelineRequest) {
+    public Request<ListJobsByPipelineRequest> marshall(ListJobsByPipelineRequest listJobsByPipelineRequest) {
 
         if (listJobsByPipelineRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListJobsByPipelineRequest> request = new DefaultRequest<ListJobsByPipelineRequest>(
-                listJobsByPipelineRequest, "AmazonElasticTranscoder");
+        Request<ListJobsByPipelineRequest> request = new DefaultRequest<ListJobsByPipelineRequest>(listJobsByPipelineRequest, "AmazonElasticTranscoder");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2012-09-25/jobsByPipeline/{PipelineId}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{PipelineId}",
-                        (listJobsByPipelineRequest.getPipelineId() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(listJobsByPipelineRequest
-                                                .getPipelineId()), false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{PipelineId}",
+                (listJobsByPipelineRequest.getPipelineId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listJobsByPipelineRequest.getPipelineId()),
+                        false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (listJobsByPipelineRequest.getAscending() != null) {
-            request.addParameter("Ascending", StringUtils
-                    .fromString(listJobsByPipelineRequest.getAscending()));
+            request.addParameter("Ascending", StringUtils.fromString(listJobsByPipelineRequest.getAscending()));
         }
 
         if (listJobsByPipelineRequest.getPageToken() != null) {
-            request.addParameter("PageToken", StringUtils
-                    .fromString(listJobsByPipelineRequest.getPageToken()));
+            request.addParameter("PageToken", StringUtils.fromString(listJobsByPipelineRequest.getPageToken()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

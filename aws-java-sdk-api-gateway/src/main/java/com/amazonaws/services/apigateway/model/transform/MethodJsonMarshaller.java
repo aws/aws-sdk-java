@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -37,97 +35,77 @@ public class MethodJsonMarshaller {
     public void marshall(Method method, StructuredJsonGenerator jsonGenerator) {
 
         if (method == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (method.getHttpMethod() != null) {
-                jsonGenerator.writeFieldName("httpMethod").writeValue(
-                        method.getHttpMethod());
+                jsonGenerator.writeFieldName("httpMethod").writeValue(method.getHttpMethod());
             }
             if (method.getAuthorizationType() != null) {
-                jsonGenerator.writeFieldName("authorizationType").writeValue(
-                        method.getAuthorizationType());
+                jsonGenerator.writeFieldName("authorizationType").writeValue(method.getAuthorizationType());
             }
             if (method.getAuthorizerId() != null) {
-                jsonGenerator.writeFieldName("authorizerId").writeValue(
-                        method.getAuthorizerId());
+                jsonGenerator.writeFieldName("authorizerId").writeValue(method.getAuthorizerId());
             }
             if (method.getApiKeyRequired() != null) {
-                jsonGenerator.writeFieldName("apiKeyRequired").writeValue(
-                        method.getApiKeyRequired());
+                jsonGenerator.writeFieldName("apiKeyRequired").writeValue(method.getApiKeyRequired());
             }
 
-            java.util.Map<String, Boolean> requestParametersMap = method
-                    .getRequestParameters();
+            java.util.Map<String, Boolean> requestParametersMap = method.getRequestParameters();
             if (requestParametersMap != null) {
                 jsonGenerator.writeFieldName("requestParameters");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, Boolean> requestParametersMapValue : requestParametersMap
-                        .entrySet()) {
+                for (Map.Entry<String, Boolean> requestParametersMapValue : requestParametersMap.entrySet()) {
                     if (requestParametersMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(requestParametersMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(requestParametersMapValue.getKey());
 
-                        jsonGenerator.writeValue(requestParametersMapValue
-                                .getValue());
+                        jsonGenerator.writeValue(requestParametersMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
             }
 
-            java.util.Map<String, String> requestModelsMap = method
-                    .getRequestModels();
+            java.util.Map<String, String> requestModelsMap = method.getRequestModels();
             if (requestModelsMap != null) {
                 jsonGenerator.writeFieldName("requestModels");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> requestModelsMapValue : requestModelsMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> requestModelsMapValue : requestModelsMap.entrySet()) {
                     if (requestModelsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(requestModelsMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(requestModelsMapValue.getKey());
 
-                        jsonGenerator.writeValue(requestModelsMapValue
-                                .getValue());
+                        jsonGenerator.writeValue(requestModelsMapValue.getValue());
                     }
                 }
                 jsonGenerator.writeEndObject();
             }
 
-            java.util.Map<String, MethodResponse> methodResponsesMap = method
-                    .getMethodResponses();
+            java.util.Map<String, MethodResponse> methodResponsesMap = method.getMethodResponses();
             if (methodResponsesMap != null) {
                 jsonGenerator.writeFieldName("methodResponses");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, MethodResponse> methodResponsesMapValue : methodResponsesMap
-                        .entrySet()) {
+                for (Map.Entry<String, MethodResponse> methodResponsesMapValue : methodResponsesMap.entrySet()) {
                     if (methodResponsesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(methodResponsesMapValue
-                                .getKey());
+                        jsonGenerator.writeFieldName(methodResponsesMapValue.getKey());
 
-                        MethodResponseJsonMarshaller.getInstance().marshall(
-                                methodResponsesMapValue.getValue(),
-                                jsonGenerator);
+                        MethodResponseJsonMarshaller.getInstance().marshall(methodResponsesMapValue.getValue(), jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndObject();
             }
             if (method.getMethodIntegration() != null) {
                 jsonGenerator.writeFieldName("methodIntegration");
-                IntegrationJsonMarshaller.getInstance().marshall(
-                        method.getMethodIntegration(), jsonGenerator);
+                IntegrationJsonMarshaller.getInstance().marshall(method.getMethodIntegration(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

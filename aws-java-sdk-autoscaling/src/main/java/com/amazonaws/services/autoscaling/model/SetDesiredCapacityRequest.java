@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for SetDesiredCapacity.
  * </p>
  */
-public class SetDesiredCapacityRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,18 +30,15 @@ public class SetDesiredCapacityRequest extends
     private String autoScalingGroupName;
     /**
      * <p>
-     * The number of EC2 instances that should be running in the Auto Scaling
-     * group.
+     * The number of EC2 instances that should be running in the Auto Scaling group.
      * </p>
      */
     private Integer desiredCapacity;
     /**
      * <p>
-     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period
-     * associated with the Auto Scaling group. Specify <code>True</code> to make
-     * Auto Scaling to wait for the cool-down period associated with the Auto
-     * Scaling group to complete before initiating a scaling activity to set
-     * your Auto Scaling group to its new capacity.
+     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling group.
+     * Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the Auto Scaling
+     * group to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity.
      * </p>
      */
     private Boolean honorCooldown;
@@ -82,25 +75,21 @@ public class SetDesiredCapacityRequest extends
      * 
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetDesiredCapacityRequest withAutoScalingGroupName(
-            String autoScalingGroupName) {
+    public SetDesiredCapacityRequest withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
 
     /**
      * <p>
-     * The number of EC2 instances that should be running in the Auto Scaling
-     * group.
+     * The number of EC2 instances that should be running in the Auto Scaling group.
      * </p>
      * 
      * @param desiredCapacity
-     *        The number of EC2 instances that should be running in the Auto
-     *        Scaling group.
+     *        The number of EC2 instances that should be running in the Auto Scaling group.
      */
 
     public void setDesiredCapacity(Integer desiredCapacity) {
@@ -109,12 +98,10 @@ public class SetDesiredCapacityRequest extends
 
     /**
      * <p>
-     * The number of EC2 instances that should be running in the Auto Scaling
-     * group.
+     * The number of EC2 instances that should be running in the Auto Scaling group.
      * </p>
      * 
-     * @return The number of EC2 instances that should be running in the Auto
-     *         Scaling group.
+     * @return The number of EC2 instances that should be running in the Auto Scaling group.
      */
 
     public Integer getDesiredCapacity() {
@@ -123,15 +110,12 @@ public class SetDesiredCapacityRequest extends
 
     /**
      * <p>
-     * The number of EC2 instances that should be running in the Auto Scaling
-     * group.
+     * The number of EC2 instances that should be running in the Auto Scaling group.
      * </p>
      * 
      * @param desiredCapacity
-     *        The number of EC2 instances that should be running in the Auto
-     *        Scaling group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of EC2 instances that should be running in the Auto Scaling group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetDesiredCapacityRequest withDesiredCapacity(Integer desiredCapacity) {
@@ -141,20 +125,16 @@ public class SetDesiredCapacityRequest extends
 
     /**
      * <p>
-     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period
-     * associated with the Auto Scaling group. Specify <code>True</code> to make
-     * Auto Scaling to wait for the cool-down period associated with the Auto
-     * Scaling group to complete before initiating a scaling activity to set
-     * your Auto Scaling group to its new capacity.
+     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling group.
+     * Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the Auto Scaling
+     * group to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity.
      * </p>
      * 
      * @param honorCooldown
-     *        By default, <code>SetDesiredCapacity</code> overrides any cooldown
-     *        period associated with the Auto Scaling group. Specify
-     *        <code>True</code> to make Auto Scaling to wait for the cool-down
-     *        period associated with the Auto Scaling group to complete before
-     *        initiating a scaling activity to set your Auto Scaling group to
-     *        its new capacity.
+     *        By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling
+     *        group. Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the
+     *        Auto Scaling group to complete before initiating a scaling activity to set your Auto Scaling group to its
+     *        new capacity.
      */
 
     public void setHonorCooldown(Boolean honorCooldown) {
@@ -163,19 +143,15 @@ public class SetDesiredCapacityRequest extends
 
     /**
      * <p>
-     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period
-     * associated with the Auto Scaling group. Specify <code>True</code> to make
-     * Auto Scaling to wait for the cool-down period associated with the Auto
-     * Scaling group to complete before initiating a scaling activity to set
-     * your Auto Scaling group to its new capacity.
+     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling group.
+     * Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the Auto Scaling
+     * group to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity.
      * </p>
      * 
-     * @return By default, <code>SetDesiredCapacity</code> overrides any
-     *         cooldown period associated with the Auto Scaling group. Specify
-     *         <code>True</code> to make Auto Scaling to wait for the cool-down
-     *         period associated with the Auto Scaling group to complete before
-     *         initiating a scaling activity to set your Auto Scaling group to
-     *         its new capacity.
+     * @return By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto
+     *         Scaling group. Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated
+     *         with the Auto Scaling group to complete before initiating a scaling activity to set your Auto Scaling
+     *         group to its new capacity.
      */
 
     public Boolean getHonorCooldown() {
@@ -184,22 +160,17 @@ public class SetDesiredCapacityRequest extends
 
     /**
      * <p>
-     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period
-     * associated with the Auto Scaling group. Specify <code>True</code> to make
-     * Auto Scaling to wait for the cool-down period associated with the Auto
-     * Scaling group to complete before initiating a scaling activity to set
-     * your Auto Scaling group to its new capacity.
+     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling group.
+     * Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the Auto Scaling
+     * group to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity.
      * </p>
      * 
      * @param honorCooldown
-     *        By default, <code>SetDesiredCapacity</code> overrides any cooldown
-     *        period associated with the Auto Scaling group. Specify
-     *        <code>True</code> to make Auto Scaling to wait for the cool-down
-     *        period associated with the Auto Scaling group to complete before
-     *        initiating a scaling activity to set your Auto Scaling group to
-     *        its new capacity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling
+     *        group. Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the
+     *        Auto Scaling group to complete before initiating a scaling activity to set your Auto Scaling group to its
+     *        new capacity.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetDesiredCapacityRequest withHonorCooldown(Boolean honorCooldown) {
@@ -209,19 +180,15 @@ public class SetDesiredCapacityRequest extends
 
     /**
      * <p>
-     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period
-     * associated with the Auto Scaling group. Specify <code>True</code> to make
-     * Auto Scaling to wait for the cool-down period associated with the Auto
-     * Scaling group to complete before initiating a scaling activity to set
-     * your Auto Scaling group to its new capacity.
+     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling group.
+     * Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the Auto Scaling
+     * group to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity.
      * </p>
      * 
-     * @return By default, <code>SetDesiredCapacity</code> overrides any
-     *         cooldown period associated with the Auto Scaling group. Specify
-     *         <code>True</code> to make Auto Scaling to wait for the cool-down
-     *         period associated with the Auto Scaling group to complete before
-     *         initiating a scaling activity to set your Auto Scaling group to
-     *         its new capacity.
+     * @return By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto
+     *         Scaling group. Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated
+     *         with the Auto Scaling group to complete before initiating a scaling activity to set your Auto Scaling
+     *         group to its new capacity.
      */
 
     public Boolean isHonorCooldown() {
@@ -229,8 +196,7 @@ public class SetDesiredCapacityRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -241,8 +207,7 @@ public class SetDesiredCapacityRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
         if (getDesiredCapacity() != null)
             sb.append("DesiredCapacity: " + getDesiredCapacity() + ",");
         if (getHonorCooldown() != null)
@@ -261,23 +226,17 @@ public class SetDesiredCapacityRequest extends
         if (obj instanceof SetDesiredCapacityRequest == false)
             return false;
         SetDesiredCapacityRequest other = (SetDesiredCapacityRequest) obj;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
-        if (other.getDesiredCapacity() == null
-                ^ this.getDesiredCapacity() == null)
+        if (other.getDesiredCapacity() == null ^ this.getDesiredCapacity() == null)
             return false;
-        if (other.getDesiredCapacity() != null
-                && other.getDesiredCapacity().equals(this.getDesiredCapacity()) == false)
+        if (other.getDesiredCapacity() != null && other.getDesiredCapacity().equals(this.getDesiredCapacity()) == false)
             return false;
         if (other.getHonorCooldown() == null ^ this.getHonorCooldown() == null)
             return false;
-        if (other.getHonorCooldown() != null
-                && other.getHonorCooldown().equals(this.getHonorCooldown()) == false)
+        if (other.getHonorCooldown() != null && other.getHonorCooldown().equals(this.getHonorCooldown()) == false)
             return false;
         return true;
     }
@@ -287,18 +246,9 @@ public class SetDesiredCapacityRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHonorCooldown() == null) ? 0 : getHonorCooldown()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity().hashCode());
+        hashCode = prime * hashCode + ((getHonorCooldown() == null) ? 0 : getHonorCooldown().hashCode());
         return hashCode;
     }
 

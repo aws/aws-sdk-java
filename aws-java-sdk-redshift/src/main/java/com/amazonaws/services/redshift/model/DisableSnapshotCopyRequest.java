@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -20,38 +18,33 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DisableSnapshotCopyRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DisableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the source cluster that you want to disable
-     * copying of snapshots to a destination region.
+     * The unique identifier of the source cluster that you want to disable copying of snapshots to a destination
+     * region.
      * </p>
      * <p>
-     * Constraints: Must be the valid name of an existing cluster that has
-     * cross-region snapshot copy enabled.
+     * Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
      * </p>
      */
     private String clusterIdentifier;
 
     /**
      * <p>
-     * The unique identifier of the source cluster that you want to disable
-     * copying of snapshots to a destination region.
+     * The unique identifier of the source cluster that you want to disable copying of snapshots to a destination
+     * region.
      * </p>
      * <p>
-     * Constraints: Must be the valid name of an existing cluster that has
-     * cross-region snapshot copy enabled.
+     * Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
      * </p>
      * 
      * @param clusterIdentifier
-     *        The unique identifier of the source cluster that you want to
-     *        disable copying of snapshots to a destination region.</p>
+     *        The unique identifier of the source cluster that you want to disable copying of snapshots to a destination
+     *        region.</p>
      *        <p>
-     *        Constraints: Must be the valid name of an existing cluster that
-     *        has cross-region snapshot copy enabled.
+     *        Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
      */
 
     public void setClusterIdentifier(String clusterIdentifier) {
@@ -60,19 +53,17 @@ public class DisableSnapshotCopyRequest extends
 
     /**
      * <p>
-     * The unique identifier of the source cluster that you want to disable
-     * copying of snapshots to a destination region.
+     * The unique identifier of the source cluster that you want to disable copying of snapshots to a destination
+     * region.
      * </p>
      * <p>
-     * Constraints: Must be the valid name of an existing cluster that has
-     * cross-region snapshot copy enabled.
+     * Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
      * </p>
      * 
-     * @return The unique identifier of the source cluster that you want to
-     *         disable copying of snapshots to a destination region.</p>
+     * @return The unique identifier of the source cluster that you want to disable copying of snapshots to a
+     *         destination region.</p>
      *         <p>
-     *         Constraints: Must be the valid name of an existing cluster that
-     *         has cross-region snapshot copy enabled.
+     *         Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
      */
 
     public String getClusterIdentifier() {
@@ -81,33 +72,28 @@ public class DisableSnapshotCopyRequest extends
 
     /**
      * <p>
-     * The unique identifier of the source cluster that you want to disable
-     * copying of snapshots to a destination region.
+     * The unique identifier of the source cluster that you want to disable copying of snapshots to a destination
+     * region.
      * </p>
      * <p>
-     * Constraints: Must be the valid name of an existing cluster that has
-     * cross-region snapshot copy enabled.
+     * Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
      * </p>
      * 
      * @param clusterIdentifier
-     *        The unique identifier of the source cluster that you want to
-     *        disable copying of snapshots to a destination region.</p>
+     *        The unique identifier of the source cluster that you want to disable copying of snapshots to a destination
+     *        region.</p>
      *        <p>
-     *        Constraints: Must be the valid name of an existing cluster that
-     *        has cross-region snapshot copy enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DisableSnapshotCopyRequest withClusterIdentifier(
-            String clusterIdentifier) {
+    public DisableSnapshotCopyRequest withClusterIdentifier(String clusterIdentifier) {
         setClusterIdentifier(clusterIdentifier);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -133,12 +119,9 @@ public class DisableSnapshotCopyRequest extends
         if (obj instanceof DisableSnapshotCopyRequest == false)
             return false;
         DisableSnapshotCopyRequest other = (DisableSnapshotCopyRequest) obj;
-        if (other.getClusterIdentifier() == null
-                ^ this.getClusterIdentifier() == null)
+        if (other.getClusterIdentifier() == null ^ this.getClusterIdentifier() == null)
             return false;
-        if (other.getClusterIdentifier() != null
-                && other.getClusterIdentifier().equals(
-                        this.getClusterIdentifier()) == false)
+        if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false)
             return false;
         return true;
     }
@@ -148,10 +131,7 @@ public class DisableSnapshotCopyRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getClusterIdentifier() == null) ? 0
-                        : getClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for a request action.
  * </p>
  */
-public class UpdateFleetCapacityRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -40,15 +36,13 @@ public class UpdateFleetCapacityRequest extends
     private Integer desiredInstances;
     /**
      * <p>
-     * Minimum value allowed for the fleet's instance count. Default if not set
-     * is 0.
+     * Minimum value allowed for the fleet's instance count. Default if not set is 0.
      * </p>
      */
     private Integer minSize;
     /**
      * <p>
-     * Maximum value allowed for the fleet's instance count. Default if not set
-     * is 1.
+     * Maximum value allowed for the fleet's instance count. Default if not set is 1.
      * </p>
      */
     private Integer maxSize;
@@ -85,8 +79,7 @@ public class UpdateFleetCapacityRequest extends
      * 
      * @param fleetId
      *        Unique identifier for the fleet you want to update capacity for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFleetCapacityRequest withFleetId(String fleetId) {
@@ -126,25 +119,21 @@ public class UpdateFleetCapacityRequest extends
      * 
      * @param desiredInstances
      *        Number of EC2 instances you want this fleet to host.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateFleetCapacityRequest withDesiredInstances(
-            Integer desiredInstances) {
+    public UpdateFleetCapacityRequest withDesiredInstances(Integer desiredInstances) {
         setDesiredInstances(desiredInstances);
         return this;
     }
 
     /**
      * <p>
-     * Minimum value allowed for the fleet's instance count. Default if not set
-     * is 0.
+     * Minimum value allowed for the fleet's instance count. Default if not set is 0.
      * </p>
      * 
      * @param minSize
-     *        Minimum value allowed for the fleet's instance count. Default if
-     *        not set is 0.
+     *        Minimum value allowed for the fleet's instance count. Default if not set is 0.
      */
 
     public void setMinSize(Integer minSize) {
@@ -153,12 +142,10 @@ public class UpdateFleetCapacityRequest extends
 
     /**
      * <p>
-     * Minimum value allowed for the fleet's instance count. Default if not set
-     * is 0.
+     * Minimum value allowed for the fleet's instance count. Default if not set is 0.
      * </p>
      * 
-     * @return Minimum value allowed for the fleet's instance count. Default if
-     *         not set is 0.
+     * @return Minimum value allowed for the fleet's instance count. Default if not set is 0.
      */
 
     public Integer getMinSize() {
@@ -167,15 +154,12 @@ public class UpdateFleetCapacityRequest extends
 
     /**
      * <p>
-     * Minimum value allowed for the fleet's instance count. Default if not set
-     * is 0.
+     * Minimum value allowed for the fleet's instance count. Default if not set is 0.
      * </p>
      * 
      * @param minSize
-     *        Minimum value allowed for the fleet's instance count. Default if
-     *        not set is 0.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Minimum value allowed for the fleet's instance count. Default if not set is 0.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFleetCapacityRequest withMinSize(Integer minSize) {
@@ -185,13 +169,11 @@ public class UpdateFleetCapacityRequest extends
 
     /**
      * <p>
-     * Maximum value allowed for the fleet's instance count. Default if not set
-     * is 1.
+     * Maximum value allowed for the fleet's instance count. Default if not set is 1.
      * </p>
      * 
      * @param maxSize
-     *        Maximum value allowed for the fleet's instance count. Default if
-     *        not set is 1.
+     *        Maximum value allowed for the fleet's instance count. Default if not set is 1.
      */
 
     public void setMaxSize(Integer maxSize) {
@@ -200,12 +182,10 @@ public class UpdateFleetCapacityRequest extends
 
     /**
      * <p>
-     * Maximum value allowed for the fleet's instance count. Default if not set
-     * is 1.
+     * Maximum value allowed for the fleet's instance count. Default if not set is 1.
      * </p>
      * 
-     * @return Maximum value allowed for the fleet's instance count. Default if
-     *         not set is 1.
+     * @return Maximum value allowed for the fleet's instance count. Default if not set is 1.
      */
 
     public Integer getMaxSize() {
@@ -214,15 +194,12 @@ public class UpdateFleetCapacityRequest extends
 
     /**
      * <p>
-     * Maximum value allowed for the fleet's instance count. Default if not set
-     * is 1.
+     * Maximum value allowed for the fleet's instance count. Default if not set is 1.
      * </p>
      * 
      * @param maxSize
-     *        Maximum value allowed for the fleet's instance count. Default if
-     *        not set is 1.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Maximum value allowed for the fleet's instance count. Default if not set is 1.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFleetCapacityRequest withMaxSize(Integer maxSize) {
@@ -231,8 +208,7 @@ public class UpdateFleetCapacityRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -266,25 +242,19 @@ public class UpdateFleetCapacityRequest extends
         UpdateFleetCapacityRequest other = (UpdateFleetCapacityRequest) obj;
         if (other.getFleetId() == null ^ this.getFleetId() == null)
             return false;
-        if (other.getFleetId() != null
-                && other.getFleetId().equals(this.getFleetId()) == false)
+        if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
             return false;
-        if (other.getDesiredInstances() == null
-                ^ this.getDesiredInstances() == null)
+        if (other.getDesiredInstances() == null ^ this.getDesiredInstances() == null)
             return false;
-        if (other.getDesiredInstances() != null
-                && other.getDesiredInstances().equals(
-                        this.getDesiredInstances()) == false)
+        if (other.getDesiredInstances() != null && other.getDesiredInstances().equals(this.getDesiredInstances()) == false)
             return false;
         if (other.getMinSize() == null ^ this.getMinSize() == null)
             return false;
-        if (other.getMinSize() != null
-                && other.getMinSize().equals(this.getMinSize()) == false)
+        if (other.getMinSize() != null && other.getMinSize().equals(this.getMinSize()) == false)
             return false;
         if (other.getMaxSize() == null ^ this.getMaxSize() == null)
             return false;
-        if (other.getMaxSize() != null
-                && other.getMaxSize().equals(this.getMaxSize()) == false)
+        if (other.getMaxSize() != null && other.getMaxSize().equals(this.getMaxSize()) == false)
             return false;
         return true;
     }
@@ -294,16 +264,10 @@ public class UpdateFleetCapacityRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDesiredInstances() == null) ? 0 : getDesiredInstances()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
+        hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getDesiredInstances() == null) ? 0 : getDesiredInstances().hashCode());
+        hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
+        hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
         return hashCode;
     }
 

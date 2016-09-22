@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,46 +41,34 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetBasePathMappingRequest Marshaller
  */
-public class GetBasePathMappingRequestMarshaller
-        implements
-        Marshaller<Request<GetBasePathMappingRequest>, GetBasePathMappingRequest> {
+public class GetBasePathMappingRequestMarshaller implements Marshaller<Request<GetBasePathMappingRequest>, GetBasePathMappingRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public GetBasePathMappingRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public GetBasePathMappingRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<GetBasePathMappingRequest> marshall(
-            GetBasePathMappingRequest getBasePathMappingRequest) {
+    public Request<GetBasePathMappingRequest> marshall(GetBasePathMappingRequest getBasePathMappingRequest) {
 
         if (getBasePathMappingRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetBasePathMappingRequest> request = new DefaultRequest<GetBasePathMappingRequest>(
-                getBasePathMappingRequest, "AmazonApiGateway");
+        Request<GetBasePathMappingRequest> request = new DefaultRequest<GetBasePathMappingRequest>(getBasePathMappingRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{domain_name}",
-                        (getBasePathMappingRequest.getDomainName() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(getBasePathMappingRequest
-                                                .getDomainName()), false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{base_path}",
-                        (getBasePathMappingRequest.getBasePath() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(getBasePathMappingRequest
-                                                .getBasePath()), false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{domain_name}",
+                (getBasePathMappingRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getBasePathMappingRequest.getDomainName()),
+                        false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{base_path}",
+                (getBasePathMappingRequest.getBasePath() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getBasePathMappingRequest.getBasePath()),
+                        false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

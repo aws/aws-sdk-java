@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * UpdateAliasRequest Marshaller
  */
-public class UpdateAliasRequestMarshaller implements
-        Marshaller<Request<UpdateAliasRequest>, UpdateAliasRequest> {
+public class UpdateAliasRequestMarshaller implements Marshaller<Request<UpdateAliasRequest>, UpdateAliasRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -44,16 +41,13 @@ public class UpdateAliasRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<UpdateAliasRequest> marshall(
-            UpdateAliasRequest updateAliasRequest) {
+    public Request<UpdateAliasRequest> marshall(UpdateAliasRequest updateAliasRequest) {
 
         if (updateAliasRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateAliasRequest> request = new DefaultRequest<UpdateAliasRequest>(
-                updateAliasRequest, "AmazonGameLift");
+        Request<UpdateAliasRequest> request = new DefaultRequest<UpdateAliasRequest>(updateAliasRequest, "AmazonGameLift");
         request.addHeader("X-Amz-Target", "GameLift.UpdateAlias");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -61,39 +55,32 @@ public class UpdateAliasRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (updateAliasRequest.getAliasId() != null) {
-                jsonGenerator.writeFieldName("AliasId").writeValue(
-                        updateAliasRequest.getAliasId());
+                jsonGenerator.writeFieldName("AliasId").writeValue(updateAliasRequest.getAliasId());
             }
             if (updateAliasRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(
-                        updateAliasRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(updateAliasRequest.getName());
             }
             if (updateAliasRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(
-                        updateAliasRequest.getDescription());
+                jsonGenerator.writeFieldName("Description").writeValue(updateAliasRequest.getDescription());
             }
             if (updateAliasRequest.getRoutingStrategy() != null) {
                 jsonGenerator.writeFieldName("RoutingStrategy");
-                RoutingStrategyJsonMarshaller.getInstance().marshall(
-                        updateAliasRequest.getRoutingStrategy(), jsonGenerator);
+                RoutingStrategyJsonMarshaller.getInstance().marshall(updateAliasRequest.getRoutingStrategy(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

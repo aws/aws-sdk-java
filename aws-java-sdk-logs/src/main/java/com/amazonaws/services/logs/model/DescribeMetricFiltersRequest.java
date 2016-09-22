@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeMetricFiltersRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,39 +28,36 @@ public class DescribeMetricFiltersRequest extends
     private String logGroupName;
     /**
      * <p>
-     * Will only return metric filters that match the provided filterNamePrefix.
-     * If you don't specify a value, no prefix filter is applied.
+     * Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix
+     * filter is applied.
      * </p>
      */
     private String filterNamePrefix;
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the response of the previous
-     * <code>DescribeMetricFilters</code> request.
+     * A string token used for pagination that points to the next page of results. It must be a value obtained from the
+     * response of the previous <code>DescribeMetricFilters</code> request.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't
-     * specify a value, the request would return up to 50 items.
+     * The maximum number of items returned in the response. If you don't specify a value, the request would return up
+     * to 50 items.
      * </p>
      */
     private Integer limit;
 
     /**
-     * Default constructor for DescribeMetricFiltersRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * the object after creating it.
+     * Default constructor for DescribeMetricFiltersRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public DescribeMetricFiltersRequest() {
     }
 
     /**
-     * Constructs a new DescribeMetricFiltersRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new DescribeMetricFiltersRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param logGroupName
      *        The log group name for which metric filters are to be listed.
@@ -105,8 +98,7 @@ public class DescribeMetricFiltersRequest extends
      * 
      * @param logGroupName
      *        The log group name for which metric filters are to be listed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMetricFiltersRequest withLogGroupName(String logGroupName) {
@@ -116,14 +108,13 @@ public class DescribeMetricFiltersRequest extends
 
     /**
      * <p>
-     * Will only return metric filters that match the provided filterNamePrefix.
-     * If you don't specify a value, no prefix filter is applied.
+     * Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix
+     * filter is applied.
      * </p>
      * 
      * @param filterNamePrefix
-     *        Will only return metric filters that match the provided
-     *        filterNamePrefix. If you don't specify a value, no prefix filter
-     *        is applied.
+     *        Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no
+     *        prefix filter is applied.
      */
 
     public void setFilterNamePrefix(String filterNamePrefix) {
@@ -132,13 +123,12 @@ public class DescribeMetricFiltersRequest extends
 
     /**
      * <p>
-     * Will only return metric filters that match the provided filterNamePrefix.
-     * If you don't specify a value, no prefix filter is applied.
+     * Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix
+     * filter is applied.
      * </p>
      * 
-     * @return Will only return metric filters that match the provided
-     *         filterNamePrefix. If you don't specify a value, no prefix filter
-     *         is applied.
+     * @return Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value,
+     *         no prefix filter is applied.
      */
 
     public String getFilterNamePrefix() {
@@ -147,35 +137,30 @@ public class DescribeMetricFiltersRequest extends
 
     /**
      * <p>
-     * Will only return metric filters that match the provided filterNamePrefix.
-     * If you don't specify a value, no prefix filter is applied.
+     * Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix
+     * filter is applied.
      * </p>
      * 
      * @param filterNamePrefix
-     *        Will only return metric filters that match the provided
-     *        filterNamePrefix. If you don't specify a value, no prefix filter
-     *        is applied.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no
+     *        prefix filter is applied.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeMetricFiltersRequest withFilterNamePrefix(
-            String filterNamePrefix) {
+    public DescribeMetricFiltersRequest withFilterNamePrefix(String filterNamePrefix) {
         setFilterNamePrefix(filterNamePrefix);
         return this;
     }
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the response of the previous
-     * <code>DescribeMetricFilters</code> request.
+     * A string token used for pagination that points to the next page of results. It must be a value obtained from the
+     * response of the previous <code>DescribeMetricFilters</code> request.
      * </p>
      * 
      * @param nextToken
-     *        A string token used for pagination that points to the next page of
-     *        results. It must be a value obtained from the response of the
-     *        previous <code>DescribeMetricFilters</code> request.
+     *        A string token used for pagination that points to the next page of results. It must be a value obtained
+     *        from the response of the previous <code>DescribeMetricFilters</code> request.
      */
 
     public void setNextToken(String nextToken) {
@@ -184,14 +169,12 @@ public class DescribeMetricFiltersRequest extends
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the response of the previous
-     * <code>DescribeMetricFilters</code> request.
+     * A string token used for pagination that points to the next page of results. It must be a value obtained from the
+     * response of the previous <code>DescribeMetricFilters</code> request.
      * </p>
      * 
-     * @return A string token used for pagination that points to the next page
-     *         of results. It must be a value obtained from the response of the
-     *         previous <code>DescribeMetricFilters</code> request.
+     * @return A string token used for pagination that points to the next page of results. It must be a value obtained
+     *         from the response of the previous <code>DescribeMetricFilters</code> request.
      */
 
     public String getNextToken() {
@@ -200,17 +183,14 @@ public class DescribeMetricFiltersRequest extends
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the response of the previous
-     * <code>DescribeMetricFilters</code> request.
+     * A string token used for pagination that points to the next page of results. It must be a value obtained from the
+     * response of the previous <code>DescribeMetricFilters</code> request.
      * </p>
      * 
      * @param nextToken
-     *        A string token used for pagination that points to the next page of
-     *        results. It must be a value obtained from the response of the
-     *        previous <code>DescribeMetricFilters</code> request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A string token used for pagination that points to the next page of results. It must be a value obtained
+     *        from the response of the previous <code>DescribeMetricFilters</code> request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMetricFiltersRequest withNextToken(String nextToken) {
@@ -220,13 +200,13 @@ public class DescribeMetricFiltersRequest extends
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't
-     * specify a value, the request would return up to 50 items.
+     * The maximum number of items returned in the response. If you don't specify a value, the request would return up
+     * to 50 items.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items returned in the response. If you don't
-     *        specify a value, the request would return up to 50 items.
+     *        The maximum number of items returned in the response. If you don't specify a value, the request would
+     *        return up to 50 items.
      */
 
     public void setLimit(Integer limit) {
@@ -235,12 +215,12 @@ public class DescribeMetricFiltersRequest extends
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't
-     * specify a value, the request would return up to 50 items.
+     * The maximum number of items returned in the response. If you don't specify a value, the request would return up
+     * to 50 items.
      * </p>
      * 
-     * @return The maximum number of items returned in the response. If you
-     *         don't specify a value, the request would return up to 50 items.
+     * @return The maximum number of items returned in the response. If you don't specify a value, the request would
+     *         return up to 50 items.
      */
 
     public Integer getLimit() {
@@ -249,15 +229,14 @@ public class DescribeMetricFiltersRequest extends
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't
-     * specify a value, the request would return up to 50 items.
+     * The maximum number of items returned in the response. If you don't specify a value, the request would return up
+     * to 50 items.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items returned in the response. If you don't
-     *        specify a value, the request would return up to 50 items.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of items returned in the response. If you don't specify a value, the request would
+     *        return up to 50 items.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMetricFiltersRequest withLimit(Integer limit) {
@@ -266,8 +245,7 @@ public class DescribeMetricFiltersRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -301,25 +279,19 @@ public class DescribeMetricFiltersRequest extends
         DescribeMetricFiltersRequest other = (DescribeMetricFiltersRequest) obj;
         if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
             return false;
-        if (other.getLogGroupName() != null
-                && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
             return false;
-        if (other.getFilterNamePrefix() == null
-                ^ this.getFilterNamePrefix() == null)
+        if (other.getFilterNamePrefix() == null ^ this.getFilterNamePrefix() == null)
             return false;
-        if (other.getFilterNamePrefix() != null
-                && other.getFilterNamePrefix().equals(
-                        this.getFilterNamePrefix()) == false)
+        if (other.getFilterNamePrefix() != null && other.getFilterNamePrefix().equals(this.getFilterNamePrefix()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -329,18 +301,10 @@ public class DescribeMetricFiltersRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLogGroupName() == null) ? 0 : getLogGroupName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFilterNamePrefix() == null) ? 0 : getFilterNamePrefix()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getFilterNamePrefix() == null) ? 0 : getFilterNamePrefix().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 

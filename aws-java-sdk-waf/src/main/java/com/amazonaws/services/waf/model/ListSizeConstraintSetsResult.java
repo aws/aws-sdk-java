@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model;
 
@@ -19,19 +17,14 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListSizeConstraintSetsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListSizeConstraintSetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you have more <code>SizeConstraintSet</code> objects than the number
-     * that you specified for <code>Limit</code> in the request, the response
-     * includes a <code>NextMarker</code> value. To list more
-     * <code>SizeConstraintSet</code> objects, submit another
-     * <code>ListSizeConstraintSets</code> request, and specify the
-     * <code>NextMarker</code> value from the response in the
-     * <code>NextMarker</code> value in the next request.
+     * If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code>
+     * in the request, the response includes a <code>NextMarker</code> value. To list more
+     * <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify
+     * the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.
      * </p>
      */
     private String nextMarker;
@@ -44,23 +37,18 @@ public class ListSizeConstraintSetsResult extends
 
     /**
      * <p>
-     * If you have more <code>SizeConstraintSet</code> objects than the number
-     * that you specified for <code>Limit</code> in the request, the response
-     * includes a <code>NextMarker</code> value. To list more
-     * <code>SizeConstraintSet</code> objects, submit another
-     * <code>ListSizeConstraintSets</code> request, and specify the
-     * <code>NextMarker</code> value from the response in the
-     * <code>NextMarker</code> value in the next request.
+     * If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code>
+     * in the request, the response includes a <code>NextMarker</code> value. To list more
+     * <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify
+     * the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.
      * </p>
      * 
      * @param nextMarker
-     *        If you have more <code>SizeConstraintSet</code> objects than the
-     *        number that you specified for <code>Limit</code> in the request,
-     *        the response includes a <code>NextMarker</code> value. To list
-     *        more <code>SizeConstraintSet</code> objects, submit another
-     *        <code>ListSizeConstraintSets</code> request, and specify the
-     *        <code>NextMarker</code> value from the response in the
-     *        <code>NextMarker</code> value in the next request.
+     *        If you have more <code>SizeConstraintSet</code> objects than the number that you specified for
+     *        <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more
+     *        <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and
+     *        specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the
+     *        next request.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -69,22 +57,17 @@ public class ListSizeConstraintSetsResult extends
 
     /**
      * <p>
-     * If you have more <code>SizeConstraintSet</code> objects than the number
-     * that you specified for <code>Limit</code> in the request, the response
-     * includes a <code>NextMarker</code> value. To list more
-     * <code>SizeConstraintSet</code> objects, submit another
-     * <code>ListSizeConstraintSets</code> request, and specify the
-     * <code>NextMarker</code> value from the response in the
-     * <code>NextMarker</code> value in the next request.
+     * If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code>
+     * in the request, the response includes a <code>NextMarker</code> value. To list more
+     * <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify
+     * the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.
      * </p>
      * 
-     * @return If you have more <code>SizeConstraintSet</code> objects than the
-     *         number that you specified for <code>Limit</code> in the request,
-     *         the response includes a <code>NextMarker</code> value. To list
-     *         more <code>SizeConstraintSet</code> objects, submit another
-     *         <code>ListSizeConstraintSets</code> request, and specify the
-     *         <code>NextMarker</code> value from the response in the
-     *         <code>NextMarker</code> value in the next request.
+     * @return If you have more <code>SizeConstraintSet</code> objects than the number that you specified for
+     *         <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more
+     *         <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and
+     *         specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the
+     *         next request.
      */
 
     public String getNextMarker() {
@@ -93,25 +76,19 @@ public class ListSizeConstraintSetsResult extends
 
     /**
      * <p>
-     * If you have more <code>SizeConstraintSet</code> objects than the number
-     * that you specified for <code>Limit</code> in the request, the response
-     * includes a <code>NextMarker</code> value. To list more
-     * <code>SizeConstraintSet</code> objects, submit another
-     * <code>ListSizeConstraintSets</code> request, and specify the
-     * <code>NextMarker</code> value from the response in the
-     * <code>NextMarker</code> value in the next request.
+     * If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code>
+     * in the request, the response includes a <code>NextMarker</code> value. To list more
+     * <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify
+     * the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.
      * </p>
      * 
      * @param nextMarker
-     *        If you have more <code>SizeConstraintSet</code> objects than the
-     *        number that you specified for <code>Limit</code> in the request,
-     *        the response includes a <code>NextMarker</code> value. To list
-     *        more <code>SizeConstraintSet</code> objects, submit another
-     *        <code>ListSizeConstraintSets</code> request, and specify the
-     *        <code>NextMarker</code> value from the response in the
-     *        <code>NextMarker</code> value in the next request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you have more <code>SizeConstraintSet</code> objects than the number that you specified for
+     *        <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more
+     *        <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and
+     *        specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the
+     *        next request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListSizeConstraintSetsResult withNextMarker(String nextMarker) {
@@ -140,15 +117,13 @@ public class ListSizeConstraintSetsResult extends
      *        An array of <a>SizeConstraintSetSummary</a> objects.
      */
 
-    public void setSizeConstraintSets(
-            java.util.Collection<SizeConstraintSetSummary> sizeConstraintSets) {
+    public void setSizeConstraintSets(java.util.Collection<SizeConstraintSetSummary> sizeConstraintSets) {
         if (sizeConstraintSets == null) {
             this.sizeConstraintSets = null;
             return;
         }
 
-        this.sizeConstraintSets = new java.util.ArrayList<SizeConstraintSetSummary>(
-                sizeConstraintSets);
+        this.sizeConstraintSets = new java.util.ArrayList<SizeConstraintSetSummary>(sizeConstraintSets);
     }
 
     /**
@@ -156,23 +131,19 @@ public class ListSizeConstraintSetsResult extends
      * An array of <a>SizeConstraintSetSummary</a> objects.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSizeConstraintSets(java.util.Collection)} or
-     * {@link #withSizeConstraintSets(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSizeConstraintSets(java.util.Collection)} or {@link #withSizeConstraintSets(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param sizeConstraintSets
      *        An array of <a>SizeConstraintSetSummary</a> objects.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListSizeConstraintSetsResult withSizeConstraintSets(
-            SizeConstraintSetSummary... sizeConstraintSets) {
+    public ListSizeConstraintSetsResult withSizeConstraintSets(SizeConstraintSetSummary... sizeConstraintSets) {
         if (this.sizeConstraintSets == null) {
-            setSizeConstraintSets(new java.util.ArrayList<SizeConstraintSetSummary>(
-                    sizeConstraintSets.length));
+            setSizeConstraintSets(new java.util.ArrayList<SizeConstraintSetSummary>(sizeConstraintSets.length));
         }
         for (SizeConstraintSetSummary ele : sizeConstraintSets) {
             this.sizeConstraintSets.add(ele);
@@ -187,19 +158,16 @@ public class ListSizeConstraintSetsResult extends
      * 
      * @param sizeConstraintSets
      *        An array of <a>SizeConstraintSetSummary</a> objects.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListSizeConstraintSetsResult withSizeConstraintSets(
-            java.util.Collection<SizeConstraintSetSummary> sizeConstraintSets) {
+    public ListSizeConstraintSetsResult withSizeConstraintSets(java.util.Collection<SizeConstraintSetSummary> sizeConstraintSets) {
         setSizeConstraintSets(sizeConstraintSets);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -229,15 +197,11 @@ public class ListSizeConstraintSetsResult extends
         ListSizeConstraintSetsResult other = (ListSizeConstraintSetsResult) obj;
         if (other.getNextMarker() == null ^ this.getNextMarker() == null)
             return false;
-        if (other.getNextMarker() != null
-                && other.getNextMarker().equals(this.getNextMarker()) == false)
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false)
             return false;
-        if (other.getSizeConstraintSets() == null
-                ^ this.getSizeConstraintSets() == null)
+        if (other.getSizeConstraintSets() == null ^ this.getSizeConstraintSets() == null)
             return false;
-        if (other.getSizeConstraintSets() != null
-                && other.getSizeConstraintSets().equals(
-                        this.getSizeConstraintSets()) == false)
+        if (other.getSizeConstraintSets() != null && other.getSizeConstraintSets().equals(this.getSizeConstraintSets()) == false)
             return false;
         return true;
     }
@@ -247,12 +211,8 @@ public class ListSizeConstraintSetsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSizeConstraintSets() == null) ? 0
-                        : getSizeConstraintSets().hashCode());
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
+        hashCode = prime * hashCode + ((getSizeConstraintSets() == null) ? 0 : getSizeConstraintSets().hashCode());
         return hashCode;
     }
 
@@ -261,9 +221,7 @@ public class ListSizeConstraintSetsResult extends
         try {
             return (ListSizeConstraintSetsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

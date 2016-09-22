@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache;
 
@@ -19,9 +17,8 @@ import com.amazonaws.*;
 import com.amazonaws.services.elasticache.waiters.AmazonElastiCacheWaiters;
 
 /**
- * Abstract implementation of {@code AmazonElastiCache}. Convenient method forms
- * pass through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonElastiCache}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAmazonElastiCache implements AmazonElastiCache {
 
@@ -39,14 +36,12 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public AddTagsToResourceResult addTagsToResource(
-            AddTagsToResourceRequest request) {
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CacheSecurityGroup authorizeCacheSecurityGroupIngress(
-            AuthorizeCacheSecurityGroupIngressRequest request) {
+    public CacheSecurityGroup authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -61,26 +56,22 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public CacheParameterGroup createCacheParameterGroup(
-            CreateCacheParameterGroupRequest request) {
+    public CacheParameterGroup createCacheParameterGroup(CreateCacheParameterGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CacheSecurityGroup createCacheSecurityGroup(
-            CreateCacheSecurityGroupRequest request) {
+    public CacheSecurityGroup createCacheSecurityGroup(CreateCacheSecurityGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CacheSubnetGroup createCacheSubnetGroup(
-            CreateCacheSubnetGroupRequest request) {
+    public CacheSubnetGroup createCacheSubnetGroup(CreateCacheSubnetGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ReplicationGroup createReplicationGroup(
-            CreateReplicationGroupRequest request) {
+    public ReplicationGroup createReplicationGroup(CreateReplicationGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -95,26 +86,22 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public DeleteCacheParameterGroupResult deleteCacheParameterGroup(
-            DeleteCacheParameterGroupRequest request) {
+    public DeleteCacheParameterGroupResult deleteCacheParameterGroup(DeleteCacheParameterGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteCacheSecurityGroupResult deleteCacheSecurityGroup(
-            DeleteCacheSecurityGroupRequest request) {
+    public DeleteCacheSecurityGroupResult deleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteCacheSubnetGroupResult deleteCacheSubnetGroup(
-            DeleteCacheSubnetGroupRequest request) {
+    public DeleteCacheSubnetGroupResult deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ReplicationGroup deleteReplicationGroup(
-            DeleteReplicationGroupRequest request) {
+    public ReplicationGroup deleteReplicationGroup(DeleteReplicationGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,8 +111,7 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public DescribeCacheClustersResult describeCacheClusters(
-            DescribeCacheClustersRequest request) {
+    public DescribeCacheClustersResult describeCacheClusters(DescribeCacheClustersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -135,8 +121,7 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public DescribeCacheEngineVersionsResult describeCacheEngineVersions(
-            DescribeCacheEngineVersionsRequest request) {
+    public DescribeCacheEngineVersionsResult describeCacheEngineVersions(DescribeCacheEngineVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -146,8 +131,7 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public DescribeCacheParameterGroupsResult describeCacheParameterGroups(
-            DescribeCacheParameterGroupsRequest request) {
+    public DescribeCacheParameterGroupsResult describeCacheParameterGroups(DescribeCacheParameterGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -157,14 +141,12 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public DescribeCacheParametersResult describeCacheParameters(
-            DescribeCacheParametersRequest request) {
+    public DescribeCacheParametersResult describeCacheParameters(DescribeCacheParametersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeCacheSecurityGroupsResult describeCacheSecurityGroups(
-            DescribeCacheSecurityGroupsRequest request) {
+    public DescribeCacheSecurityGroupsResult describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -174,8 +156,7 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public DescribeCacheSubnetGroupsResult describeCacheSubnetGroups(
-            DescribeCacheSubnetGroupsRequest request) {
+    public DescribeCacheSubnetGroupsResult describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -185,8 +166,7 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public EngineDefaults describeEngineDefaultParameters(
-            DescribeEngineDefaultParametersRequest request) {
+    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -201,8 +181,7 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public DescribeReplicationGroupsResult describeReplicationGroups(
-            DescribeReplicationGroupsRequest request) {
+    public DescribeReplicationGroupsResult describeReplicationGroups(DescribeReplicationGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -212,8 +191,7 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public DescribeReservedCacheNodesResult describeReservedCacheNodes(
-            DescribeReservedCacheNodesRequest request) {
+    public DescribeReservedCacheNodesResult describeReservedCacheNodes(DescribeReservedCacheNodesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -223,8 +201,7 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings(
-            DescribeReservedCacheNodesOfferingsRequest request) {
+    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -234,8 +211,7 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public DescribeSnapshotsResult describeSnapshots(
-            DescribeSnapshotsRequest request) {
+    public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -245,8 +221,7 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public ListAllowedNodeTypeModificationsResult listAllowedNodeTypeModifications(
-            ListAllowedNodeTypeModificationsRequest request) {
+    public ListAllowedNodeTypeModificationsResult listAllowedNodeTypeModifications(ListAllowedNodeTypeModificationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -256,8 +231,7 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public ListTagsForResourceResult listTagsForResource(
-            ListTagsForResourceRequest request) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -267,26 +241,22 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public ModifyCacheParameterGroupResult modifyCacheParameterGroup(
-            ModifyCacheParameterGroupRequest request) {
+    public ModifyCacheParameterGroupResult modifyCacheParameterGroup(ModifyCacheParameterGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CacheSubnetGroup modifyCacheSubnetGroup(
-            ModifyCacheSubnetGroupRequest request) {
+    public CacheSubnetGroup modifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ReplicationGroup modifyReplicationGroup(
-            ModifyReplicationGroupRequest request) {
+    public ReplicationGroup modifyReplicationGroup(ModifyReplicationGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ReservedCacheNode purchaseReservedCacheNodesOffering(
-            PurchaseReservedCacheNodesOfferingRequest request) {
+    public ReservedCacheNode purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -296,20 +266,17 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public RemoveTagsFromResourceResult removeTagsFromResource(
-            RemoveTagsFromResourceRequest request) {
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ResetCacheParameterGroupResult resetCacheParameterGroup(
-            ResetCacheParameterGroupRequest request) {
+    public ResetCacheParameterGroupResult resetCacheParameterGroup(ResetCacheParameterGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CacheSecurityGroup revokeCacheSecurityGroupIngress(
-            RevokeCacheSecurityGroupIngressRequest request) {
+    public CacheSecurityGroup revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -319,8 +286,7 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

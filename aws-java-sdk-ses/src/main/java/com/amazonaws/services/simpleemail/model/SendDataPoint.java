@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -18,8 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents sending statistics data. Each <code>SendDataPoint</code> contains
- * statistics for a 15-minute period of sending activity.
+ * Represents sending statistics data. Each <code>SendDataPoint</code> contains statistics for a 15-minute period of
+ * sending activity.
  * </p>
  */
 public class SendDataPoint implements Serializable, Cloneable {
@@ -87,8 +85,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * 
      * @param timestamp
      *        Time of the data point.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SendDataPoint withTimestamp(java.util.Date timestamp) {
@@ -128,8 +125,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * 
      * @param deliveryAttempts
      *        Number of emails that have been enqueued for sending.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SendDataPoint withDeliveryAttempts(Long deliveryAttempts) {
@@ -169,8 +165,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * 
      * @param bounces
      *        Number of emails that have bounced.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SendDataPoint withBounces(Long bounces) {
@@ -210,8 +205,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * 
      * @param complaints
      *        Number of unwanted emails that were rejected by recipients.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SendDataPoint withComplaints(Long complaints) {
@@ -251,8 +245,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * 
      * @param rejects
      *        Number of emails rejected by Amazon SES.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SendDataPoint withRejects(Long rejects) {
@@ -261,8 +254,7 @@ public class SendDataPoint implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -298,30 +290,23 @@ public class SendDataPoint implements Serializable, Cloneable {
         SendDataPoint other = (SendDataPoint) obj;
         if (other.getTimestamp() == null ^ this.getTimestamp() == null)
             return false;
-        if (other.getTimestamp() != null
-                && other.getTimestamp().equals(this.getTimestamp()) == false)
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
-        if (other.getDeliveryAttempts() == null
-                ^ this.getDeliveryAttempts() == null)
+        if (other.getDeliveryAttempts() == null ^ this.getDeliveryAttempts() == null)
             return false;
-        if (other.getDeliveryAttempts() != null
-                && other.getDeliveryAttempts().equals(
-                        this.getDeliveryAttempts()) == false)
+        if (other.getDeliveryAttempts() != null && other.getDeliveryAttempts().equals(this.getDeliveryAttempts()) == false)
             return false;
         if (other.getBounces() == null ^ this.getBounces() == null)
             return false;
-        if (other.getBounces() != null
-                && other.getBounces().equals(this.getBounces()) == false)
+        if (other.getBounces() != null && other.getBounces().equals(this.getBounces()) == false)
             return false;
         if (other.getComplaints() == null ^ this.getComplaints() == null)
             return false;
-        if (other.getComplaints() != null
-                && other.getComplaints().equals(this.getComplaints()) == false)
+        if (other.getComplaints() != null && other.getComplaints().equals(this.getComplaints()) == false)
             return false;
         if (other.getRejects() == null ^ this.getRejects() == null)
             return false;
-        if (other.getRejects() != null
-                && other.getRejects().equals(this.getRejects()) == false)
+        if (other.getRejects() != null && other.getRejects().equals(this.getRejects()) == false)
             return false;
         return true;
     }
@@ -331,18 +316,11 @@ public class SendDataPoint implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeliveryAttempts() == null) ? 0 : getDeliveryAttempts()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getBounces() == null) ? 0 : getBounces().hashCode());
-        hashCode = prime * hashCode
-                + ((getComplaints() == null) ? 0 : getComplaints().hashCode());
-        hashCode = prime * hashCode
-                + ((getRejects() == null) ? 0 : getRejects().hashCode());
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getDeliveryAttempts() == null) ? 0 : getDeliveryAttempts().hashCode());
+        hashCode = prime * hashCode + ((getBounces() == null) ? 0 : getBounces().hashCode());
+        hashCode = prime * hashCode + ((getComplaints() == null) ? 0 : getComplaints().hashCode());
+        hashCode = prime * hashCode + ((getRejects() == null) ? 0 : getRejects().hashCode());
         return hashCode;
     }
 
@@ -351,9 +329,7 @@ public class SendDataPoint implements Serializable, Cloneable {
         try {
             return (SendDataPoint) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

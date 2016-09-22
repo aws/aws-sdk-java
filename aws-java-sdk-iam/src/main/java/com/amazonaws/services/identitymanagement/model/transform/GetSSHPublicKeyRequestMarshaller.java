@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
@@ -31,36 +29,29 @@ import com.amazonaws.util.IdempotentUtils;
  * GetSSHPublicKeyRequest Marshaller
  */
 
-public class GetSSHPublicKeyRequestMarshaller implements
-        Marshaller<Request<GetSSHPublicKeyRequest>, GetSSHPublicKeyRequest> {
+public class GetSSHPublicKeyRequestMarshaller implements Marshaller<Request<GetSSHPublicKeyRequest>, GetSSHPublicKeyRequest> {
 
-    public Request<GetSSHPublicKeyRequest> marshall(
-            GetSSHPublicKeyRequest getSSHPublicKeyRequest) {
+    public Request<GetSSHPublicKeyRequest> marshall(GetSSHPublicKeyRequest getSSHPublicKeyRequest) {
 
         if (getSSHPublicKeyRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetSSHPublicKeyRequest> request = new DefaultRequest<GetSSHPublicKeyRequest>(
-                getSSHPublicKeyRequest, "AmazonIdentityManagement");
+        Request<GetSSHPublicKeyRequest> request = new DefaultRequest<GetSSHPublicKeyRequest>(getSSHPublicKeyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "GetSSHPublicKey");
         request.addParameter("Version", "2010-05-08");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (getSSHPublicKeyRequest.getUserName() != null) {
-            request.addParameter("UserName", StringUtils
-                    .fromString(getSSHPublicKeyRequest.getUserName()));
+            request.addParameter("UserName", StringUtils.fromString(getSSHPublicKeyRequest.getUserName()));
         }
 
         if (getSSHPublicKeyRequest.getSSHPublicKeyId() != null) {
-            request.addParameter("SSHPublicKeyId", StringUtils
-                    .fromString(getSSHPublicKeyRequest.getSSHPublicKeyId()));
+            request.addParameter("SSHPublicKeyId", StringUtils.fromString(getSSHPublicKeyRequest.getSSHPublicKeyId()));
         }
 
         if (getSSHPublicKeyRequest.getEncoding() != null) {
-            request.addParameter("Encoding", StringUtils
-                    .fromString(getSSHPublicKeyRequest.getEncoding()));
+            request.addParameter("Encoding", StringUtils.fromString(getSSHPublicKeyRequest.getEncoding()));
         }
 
         return request;

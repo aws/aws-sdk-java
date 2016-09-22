@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.certificatemanager.model;
 
@@ -19,15 +17,12 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListCertificatesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListCertificatesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * When the list is truncated, this value is present and contains the value
-     * to use for the <code>NextToken</code> parameter in a subsequent
-     * pagination request.
+     * When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code>
+     * parameter in a subsequent pagination request.
      * </p>
      */
     private String nextToken;
@@ -40,15 +35,13 @@ public class ListCertificatesResult extends
 
     /**
      * <p>
-     * When the list is truncated, this value is present and contains the value
-     * to use for the <code>NextToken</code> parameter in a subsequent
-     * pagination request.
+     * When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code>
+     * parameter in a subsequent pagination request.
      * </p>
      * 
      * @param nextToken
-     *        When the list is truncated, this value is present and contains the
-     *        value to use for the <code>NextToken</code> parameter in a
-     *        subsequent pagination request.
+     *        When the list is truncated, this value is present and contains the value to use for the
+     *        <code>NextToken</code> parameter in a subsequent pagination request.
      */
 
     public void setNextToken(String nextToken) {
@@ -57,14 +50,12 @@ public class ListCertificatesResult extends
 
     /**
      * <p>
-     * When the list is truncated, this value is present and contains the value
-     * to use for the <code>NextToken</code> parameter in a subsequent
-     * pagination request.
+     * When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code>
+     * parameter in a subsequent pagination request.
      * </p>
      * 
-     * @return When the list is truncated, this value is present and contains
-     *         the value to use for the <code>NextToken</code> parameter in a
-     *         subsequent pagination request.
+     * @return When the list is truncated, this value is present and contains the value to use for the
+     *         <code>NextToken</code> parameter in a subsequent pagination request.
      */
 
     public String getNextToken() {
@@ -73,17 +64,14 @@ public class ListCertificatesResult extends
 
     /**
      * <p>
-     * When the list is truncated, this value is present and contains the value
-     * to use for the <code>NextToken</code> parameter in a subsequent
-     * pagination request.
+     * When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code>
+     * parameter in a subsequent pagination request.
      * </p>
      * 
      * @param nextToken
-     *        When the list is truncated, this value is present and contains the
-     *        value to use for the <code>NextToken</code> parameter in a
-     *        subsequent pagination request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When the list is truncated, this value is present and contains the value to use for the
+     *        <code>NextToken</code> parameter in a subsequent pagination request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCertificatesResult withNextToken(String nextToken) {
@@ -112,15 +100,13 @@ public class ListCertificatesResult extends
      *        A list of ACM Certificates.
      */
 
-    public void setCertificateSummaryList(
-            java.util.Collection<CertificateSummary> certificateSummaryList) {
+    public void setCertificateSummaryList(java.util.Collection<CertificateSummary> certificateSummaryList) {
         if (certificateSummaryList == null) {
             this.certificateSummaryList = null;
             return;
         }
 
-        this.certificateSummaryList = new java.util.ArrayList<CertificateSummary>(
-                certificateSummaryList);
+        this.certificateSummaryList = new java.util.ArrayList<CertificateSummary>(certificateSummaryList);
     }
 
     /**
@@ -128,23 +114,19 @@ public class ListCertificatesResult extends
      * A list of ACM Certificates.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCertificateSummaryList(java.util.Collection)} or
-     * {@link #withCertificateSummaryList(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCertificateSummaryList(java.util.Collection)} or
+     * {@link #withCertificateSummaryList(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param certificateSummaryList
      *        A list of ACM Certificates.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListCertificatesResult withCertificateSummaryList(
-            CertificateSummary... certificateSummaryList) {
+    public ListCertificatesResult withCertificateSummaryList(CertificateSummary... certificateSummaryList) {
         if (this.certificateSummaryList == null) {
-            setCertificateSummaryList(new java.util.ArrayList<CertificateSummary>(
-                    certificateSummaryList.length));
+            setCertificateSummaryList(new java.util.ArrayList<CertificateSummary>(certificateSummaryList.length));
         }
         for (CertificateSummary ele : certificateSummaryList) {
             this.certificateSummaryList.add(ele);
@@ -159,19 +141,16 @@ public class ListCertificatesResult extends
      * 
      * @param certificateSummaryList
      *        A list of ACM Certificates.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListCertificatesResult withCertificateSummaryList(
-            java.util.Collection<CertificateSummary> certificateSummaryList) {
+    public ListCertificatesResult withCertificateSummaryList(java.util.Collection<CertificateSummary> certificateSummaryList) {
         setCertificateSummaryList(certificateSummaryList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -201,15 +180,11 @@ public class ListCertificatesResult extends
         ListCertificatesResult other = (ListCertificatesResult) obj;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getCertificateSummaryList() == null
-                ^ this.getCertificateSummaryList() == null)
+        if (other.getCertificateSummaryList() == null ^ this.getCertificateSummaryList() == null)
             return false;
-        if (other.getCertificateSummaryList() != null
-                && other.getCertificateSummaryList().equals(
-                        this.getCertificateSummaryList()) == false)
+        if (other.getCertificateSummaryList() != null && other.getCertificateSummaryList().equals(this.getCertificateSummaryList()) == false)
             return false;
         return true;
     }
@@ -219,12 +194,8 @@ public class ListCertificatesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCertificateSummaryList() == null) ? 0
-                        : getCertificateSummaryList().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getCertificateSummaryList() == null) ? 0 : getCertificateSummaryList().hashCode());
         return hashCode;
     }
 
@@ -233,9 +204,7 @@ public class ListCertificatesResult extends
         try {
             return (ListCertificatesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

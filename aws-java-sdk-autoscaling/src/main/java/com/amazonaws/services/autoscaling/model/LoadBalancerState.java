@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -21,17 +19,15 @@ import java.io.Serializable;
  * Describes the state of a Classic load balancer.
  * </p>
  * <p>
- * If you specify a load balancer when creating the Auto Scaling group, the
- * state of the load balancer is <code>InService</code>.
+ * If you specify a load balancer when creating the Auto Scaling group, the state of the load balancer is
+ * <code>InService</code>.
  * </p>
  * <p>
- * If you attach a load balancer to an existing Auto Scaling group, the initial
- * state is <code>Adding</code>. The state transitions to <code>Added</code>
- * after all instances in the group are registered with the load balancer. If
- * ELB health checks are enabled for the load balancer, the state transitions to
- * <code>InService</code> after at least one instance in the group passes the
- * health check. If EC2 health checks are enabled instead, the load balancer
- * remains in the <code>Added</code> state.
+ * If you attach a load balancer to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state
+ * transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If ELB
+ * health checks are enabled for the load balancer, the state transitions to <code>InService</code> after at least one
+ * instance in the group passes the health check. If EC2 health checks are enabled instead, the load balancer remains in
+ * the <code>Added</code> state.
  * </p>
  */
 public class LoadBalancerState implements Serializable, Cloneable {
@@ -49,34 +45,29 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Adding</code> - The instances in the group are being registered
-     * with the load balancer.
+     * <code>Adding</code> - The instances in the group are being registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Added</code> - All instances in the group are registered with the
-     * load balancer.
+     * <code>Added</code> - All instances in the group are registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InService</code> - At least one instance in the group passed an ELB
-     * health check.
+     * <code>InService</code> - At least one instance in the group passed an ELB health check.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removing</code> - The instances in the group are being deregistered
-     * from the load balancer. If connection draining is enabled, Elastic Load
-     * Balancing waits for in-flight requests to complete before deregistering
-     * the instances.
+     * <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If connection
+     * draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the
+     * instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removed</code> - All instances in the group are deregistered from
-     * the load balancer.
+     * <code>Removed</code> - All instances in the group are deregistered from the load balancer.
      * </p>
      * </li>
      * </ul>
@@ -115,8 +106,7 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * 
      * @param loadBalancerName
      *        The name of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancerState withLoadBalancerName(String loadBalancerName) {
@@ -131,34 +121,29 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Adding</code> - The instances in the group are being registered
-     * with the load balancer.
+     * <code>Adding</code> - The instances in the group are being registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Added</code> - All instances in the group are registered with the
-     * load balancer.
+     * <code>Added</code> - All instances in the group are registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InService</code> - At least one instance in the group passed an ELB
-     * health check.
+     * <code>InService</code> - At least one instance in the group passed an ELB health check.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removing</code> - The instances in the group are being deregistered
-     * from the load balancer. If connection draining is enabled, Elastic Load
-     * Balancing waits for in-flight requests to complete before deregistering
-     * the instances.
+     * <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If connection
+     * draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the
+     * instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removed</code> - All instances in the group are deregistered from
-     * the load balancer.
+     * <code>Removed</code> - All instances in the group are deregistered from the load balancer.
      * </p>
      * </li>
      * </ul>
@@ -168,34 +153,29 @@ public class LoadBalancerState implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Adding</code> - The instances in the group are being
-     *        registered with the load balancer.
+     *        <code>Adding</code> - The instances in the group are being registered with the load balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Added</code> - All instances in the group are registered
-     *        with the load balancer.
+     *        <code>Added</code> - All instances in the group are registered with the load balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>InService</code> - At least one instance in the group passed
-     *        an ELB health check.
+     *        <code>InService</code> - At least one instance in the group passed an ELB health check.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Removing</code> - The instances in the group are being
-     *        deregistered from the load balancer. If connection draining is
-     *        enabled, Elastic Load Balancing waits for in-flight requests to
-     *        complete before deregistering the instances.
+     *        <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If
+     *        connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before
+     *        deregistering the instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Removed</code> - All instances in the group are deregistered
-     *        from the load balancer.
+     *        <code>Removed</code> - All instances in the group are deregistered from the load balancer.
      *        </p>
      *        </li>
      */
@@ -211,34 +191,29 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Adding</code> - The instances in the group are being registered
-     * with the load balancer.
+     * <code>Adding</code> - The instances in the group are being registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Added</code> - All instances in the group are registered with the
-     * load balancer.
+     * <code>Added</code> - All instances in the group are registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InService</code> - At least one instance in the group passed an ELB
-     * health check.
+     * <code>InService</code> - At least one instance in the group passed an ELB health check.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removing</code> - The instances in the group are being deregistered
-     * from the load balancer. If connection draining is enabled, Elastic Load
-     * Balancing waits for in-flight requests to complete before deregistering
-     * the instances.
+     * <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If connection
+     * draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the
+     * instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removed</code> - All instances in the group are deregistered from
-     * the load balancer.
+     * <code>Removed</code> - All instances in the group are deregistered from the load balancer.
      * </p>
      * </li>
      * </ul>
@@ -247,34 +222,29 @@ public class LoadBalancerState implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Adding</code> - The instances in the group are being
-     *         registered with the load balancer.
+     *         <code>Adding</code> - The instances in the group are being registered with the load balancer.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Added</code> - All instances in the group are registered
-     *         with the load balancer.
+     *         <code>Added</code> - All instances in the group are registered with the load balancer.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>InService</code> - At least one instance in the group
-     *         passed an ELB health check.
+     *         <code>InService</code> - At least one instance in the group passed an ELB health check.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Removing</code> - The instances in the group are being
-     *         deregistered from the load balancer. If connection draining is
-     *         enabled, Elastic Load Balancing waits for in-flight requests to
-     *         complete before deregistering the instances.
+     *         <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If
+     *         connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before
+     *         deregistering the instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Removed</code> - All instances in the group are
-     *         deregistered from the load balancer.
+     *         <code>Removed</code> - All instances in the group are deregistered from the load balancer.
      *         </p>
      *         </li>
      */
@@ -290,34 +260,29 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Adding</code> - The instances in the group are being registered
-     * with the load balancer.
+     * <code>Adding</code> - The instances in the group are being registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Added</code> - All instances in the group are registered with the
-     * load balancer.
+     * <code>Added</code> - All instances in the group are registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InService</code> - At least one instance in the group passed an ELB
-     * health check.
+     * <code>InService</code> - At least one instance in the group passed an ELB health check.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removing</code> - The instances in the group are being deregistered
-     * from the load balancer. If connection draining is enabled, Elastic Load
-     * Balancing waits for in-flight requests to complete before deregistering
-     * the instances.
+     * <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If connection
+     * draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the
+     * instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removed</code> - All instances in the group are deregistered from
-     * the load balancer.
+     * <code>Removed</code> - All instances in the group are deregistered from the load balancer.
      * </p>
      * </li>
      * </ul>
@@ -327,38 +292,32 @@ public class LoadBalancerState implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Adding</code> - The instances in the group are being
-     *        registered with the load balancer.
+     *        <code>Adding</code> - The instances in the group are being registered with the load balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Added</code> - All instances in the group are registered
-     *        with the load balancer.
+     *        <code>Added</code> - All instances in the group are registered with the load balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>InService</code> - At least one instance in the group passed
-     *        an ELB health check.
+     *        <code>InService</code> - At least one instance in the group passed an ELB health check.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Removing</code> - The instances in the group are being
-     *        deregistered from the load balancer. If connection draining is
-     *        enabled, Elastic Load Balancing waits for in-flight requests to
-     *        complete before deregistering the instances.
+     *        <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If
+     *        connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before
+     *        deregistering the instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Removed</code> - All instances in the group are deregistered
-     *        from the load balancer.
+     *        <code>Removed</code> - All instances in the group are deregistered from the load balancer.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancerState withState(String state) {
@@ -367,8 +326,7 @@ public class LoadBalancerState implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -396,17 +354,13 @@ public class LoadBalancerState implements Serializable, Cloneable {
         if (obj instanceof LoadBalancerState == false)
             return false;
         LoadBalancerState other = (LoadBalancerState) obj;
-        if (other.getLoadBalancerName() == null
-                ^ this.getLoadBalancerName() == null)
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null)
             return false;
-        if (other.getLoadBalancerName() != null
-                && other.getLoadBalancerName().equals(
-                        this.getLoadBalancerName()) == false)
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         return true;
     }
@@ -416,12 +370,8 @@ public class LoadBalancerState implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         return hashCode;
     }
 
@@ -430,9 +380,7 @@ public class LoadBalancerState implements Serializable, Cloneable {
         try {
             return (LoadBalancerState) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

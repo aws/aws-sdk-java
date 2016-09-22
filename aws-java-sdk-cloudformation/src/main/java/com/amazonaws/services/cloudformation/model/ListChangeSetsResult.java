@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
 
@@ -21,33 +19,31 @@ import java.io.Serializable;
  * The output for the <a>ListChangeSets</a> action.
  * </p>
  */
-public class ListChangeSetsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListChangeSetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code>ChangeSetSummary</code> structures that provides the ID
-     * and status of each change set for the specified stack.
+     * A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the
+     * specified stack.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ChangeSetSummary> summaries;
     /**
      * <p>
-     * If the output exceeds 1 MB, a string that identifies the next page of
-     * change sets. If there is no additional page, this value is null.
+     * If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional
+     * page, this value is null.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of <code>ChangeSetSummary</code> structures that provides the ID
-     * and status of each change set for the specified stack.
+     * A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the
+     * specified stack.
      * </p>
      * 
-     * @return A list of <code>ChangeSetSummary</code> structures that provides
-     *         the ID and status of each change set for the specified stack.
+     * @return A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for
+     *         the specified stack.
      */
 
     public java.util.List<ChangeSetSummary> getSummaries() {
@@ -59,13 +55,13 @@ public class ListChangeSetsResult extends
 
     /**
      * <p>
-     * A list of <code>ChangeSetSummary</code> structures that provides the ID
-     * and status of each change set for the specified stack.
+     * A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the
+     * specified stack.
      * </p>
      * 
      * @param summaries
-     *        A list of <code>ChangeSetSummary</code> structures that provides
-     *        the ID and status of each change set for the specified stack.
+     *        A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for
+     *        the specified stack.
      */
 
     public void setSummaries(java.util.Collection<ChangeSetSummary> summaries) {
@@ -74,33 +70,29 @@ public class ListChangeSetsResult extends
             return;
         }
 
-        this.summaries = new com.amazonaws.internal.SdkInternalList<ChangeSetSummary>(
-                summaries);
+        this.summaries = new com.amazonaws.internal.SdkInternalList<ChangeSetSummary>(summaries);
     }
 
     /**
      * <p>
-     * A list of <code>ChangeSetSummary</code> structures that provides the ID
-     * and status of each change set for the specified stack.
+     * A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the
+     * specified stack.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSummaries(java.util.Collection)} or
-     * {@link #withSummaries(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSummaries(java.util.Collection)} or {@link #withSummaries(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param summaries
-     *        A list of <code>ChangeSetSummary</code> structures that provides
-     *        the ID and status of each change set for the specified stack.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for
+     *        the specified stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeSetsResult withSummaries(ChangeSetSummary... summaries) {
         if (this.summaries == null) {
-            setSummaries(new com.amazonaws.internal.SdkInternalList<ChangeSetSummary>(
-                    summaries.length));
+            setSummaries(new com.amazonaws.internal.SdkInternalList<ChangeSetSummary>(summaries.length));
         }
         for (ChangeSetSummary ele : summaries) {
             this.summaries.add(ele);
@@ -110,33 +102,30 @@ public class ListChangeSetsResult extends
 
     /**
      * <p>
-     * A list of <code>ChangeSetSummary</code> structures that provides the ID
-     * and status of each change set for the specified stack.
+     * A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the
+     * specified stack.
      * </p>
      * 
      * @param summaries
-     *        A list of <code>ChangeSetSummary</code> structures that provides
-     *        the ID and status of each change set for the specified stack.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for
+     *        the specified stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListChangeSetsResult withSummaries(
-            java.util.Collection<ChangeSetSummary> summaries) {
+    public ListChangeSetsResult withSummaries(java.util.Collection<ChangeSetSummary> summaries) {
         setSummaries(summaries);
         return this;
     }
 
     /**
      * <p>
-     * If the output exceeds 1 MB, a string that identifies the next page of
-     * change sets. If there is no additional page, this value is null.
+     * If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional
+     * page, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        If the output exceeds 1 MB, a string that identifies the next page
-     *        of change sets. If there is no additional page, this value is
-     *        null.
+     *        If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no
+     *        additional page, this value is null.
      */
 
     public void setNextToken(String nextToken) {
@@ -145,13 +134,12 @@ public class ListChangeSetsResult extends
 
     /**
      * <p>
-     * If the output exceeds 1 MB, a string that identifies the next page of
-     * change sets. If there is no additional page, this value is null.
+     * If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional
+     * page, this value is null.
      * </p>
      * 
-     * @return If the output exceeds 1 MB, a string that identifies the next
-     *         page of change sets. If there is no additional page, this value
-     *         is null.
+     * @return If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no
+     *         additional page, this value is null.
      */
 
     public String getNextToken() {
@@ -160,16 +148,14 @@ public class ListChangeSetsResult extends
 
     /**
      * <p>
-     * If the output exceeds 1 MB, a string that identifies the next page of
-     * change sets. If there is no additional page, this value is null.
+     * If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional
+     * page, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        If the output exceeds 1 MB, a string that identifies the next page
-     *        of change sets. If there is no additional page, this value is
-     *        null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no
+     *        additional page, this value is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListChangeSetsResult withNextToken(String nextToken) {
@@ -178,8 +164,7 @@ public class ListChangeSetsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -209,13 +194,11 @@ public class ListChangeSetsResult extends
         ListChangeSetsResult other = (ListChangeSetsResult) obj;
         if (other.getSummaries() == null ^ this.getSummaries() == null)
             return false;
-        if (other.getSummaries() != null
-                && other.getSummaries().equals(this.getSummaries()) == false)
+        if (other.getSummaries() != null && other.getSummaries().equals(this.getSummaries()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -225,10 +208,8 @@ public class ListChangeSetsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSummaries() == null) ? 0 : getSummaries().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getSummaries() == null) ? 0 : getSummaries().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -237,9 +218,7 @@ public class ListChangeSetsResult extends
         try {
             return (ListChangeSetsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

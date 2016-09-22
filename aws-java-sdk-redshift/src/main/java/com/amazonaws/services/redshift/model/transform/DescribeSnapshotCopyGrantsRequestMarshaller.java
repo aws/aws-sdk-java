@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model.transform;
 
@@ -31,39 +29,30 @@ import com.amazonaws.util.IdempotentUtils;
  * DescribeSnapshotCopyGrantsRequest Marshaller
  */
 
-public class DescribeSnapshotCopyGrantsRequestMarshaller
-        implements
-        Marshaller<Request<DescribeSnapshotCopyGrantsRequest>, DescribeSnapshotCopyGrantsRequest> {
+public class DescribeSnapshotCopyGrantsRequestMarshaller implements Marshaller<Request<DescribeSnapshotCopyGrantsRequest>, DescribeSnapshotCopyGrantsRequest> {
 
-    public Request<DescribeSnapshotCopyGrantsRequest> marshall(
-            DescribeSnapshotCopyGrantsRequest describeSnapshotCopyGrantsRequest) {
+    public Request<DescribeSnapshotCopyGrantsRequest> marshall(DescribeSnapshotCopyGrantsRequest describeSnapshotCopyGrantsRequest) {
 
         if (describeSnapshotCopyGrantsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeSnapshotCopyGrantsRequest> request = new DefaultRequest<DescribeSnapshotCopyGrantsRequest>(
-                describeSnapshotCopyGrantsRequest, "AmazonRedshift");
+        Request<DescribeSnapshotCopyGrantsRequest> request = new DefaultRequest<DescribeSnapshotCopyGrantsRequest>(describeSnapshotCopyGrantsRequest,
+                "AmazonRedshift");
         request.addParameter("Action", "DescribeSnapshotCopyGrants");
         request.addParameter("Version", "2012-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeSnapshotCopyGrantsRequest.getSnapshotCopyGrantName() != null) {
-            request.addParameter("SnapshotCopyGrantName", StringUtils
-                    .fromString(describeSnapshotCopyGrantsRequest
-                            .getSnapshotCopyGrantName()));
+            request.addParameter("SnapshotCopyGrantName", StringUtils.fromString(describeSnapshotCopyGrantsRequest.getSnapshotCopyGrantName()));
         }
 
         if (describeSnapshotCopyGrantsRequest.getMaxRecords() != null) {
-            request.addParameter("MaxRecords", StringUtils
-                    .fromInteger(describeSnapshotCopyGrantsRequest
-                            .getMaxRecords()));
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeSnapshotCopyGrantsRequest.getMaxRecords()));
         }
 
         if (describeSnapshotCopyGrantsRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils
-                    .fromString(describeSnapshotCopyGrantsRequest.getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(describeSnapshotCopyGrantsRequest.getMarker()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) describeSnapshotCopyGrantsRequest
@@ -73,8 +62,7 @@ public class DescribeSnapshotCopyGrantsRequestMarshaller
 
             for (String tagKeysListValue : tagKeysList) {
                 if (tagKeysListValue != null) {
-                    request.addParameter("TagKeys.TagKey." + tagKeysListIndex,
-                            StringUtils.fromString(tagKeysListValue));
+                    request.addParameter("TagKeys.TagKey." + tagKeysListIndex, StringUtils.fromString(tagKeysListValue));
                 }
                 tagKeysListIndex++;
             }
@@ -87,9 +75,7 @@ public class DescribeSnapshotCopyGrantsRequestMarshaller
 
             for (String tagValuesListValue : tagValuesList) {
                 if (tagValuesListValue != null) {
-                    request.addParameter("TagValues.TagValue."
-                            + tagValuesListIndex,
-                            StringUtils.fromString(tagValuesListValue));
+                    request.addParameter("TagValues.TagValue." + tagValuesListIndex, StringUtils.fromString(tagValuesListValue));
                 }
                 tagValuesListIndex++;
             }

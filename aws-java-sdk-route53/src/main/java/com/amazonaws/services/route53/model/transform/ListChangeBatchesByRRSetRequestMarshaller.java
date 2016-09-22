@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model.transform;
 
@@ -39,69 +37,52 @@ import com.amazonaws.util.SdkHttpUtils;
  * ListChangeBatchesByRRSetRequest Marshaller
  */
 
-public class ListChangeBatchesByRRSetRequestMarshaller
-        implements
-        Marshaller<Request<ListChangeBatchesByRRSetRequest>, ListChangeBatchesByRRSetRequest> {
+public class ListChangeBatchesByRRSetRequestMarshaller implements Marshaller<Request<ListChangeBatchesByRRSetRequest>, ListChangeBatchesByRRSetRequest> {
 
-    public Request<ListChangeBatchesByRRSetRequest> marshall(
-            ListChangeBatchesByRRSetRequest listChangeBatchesByRRSetRequest) {
+    public Request<ListChangeBatchesByRRSetRequest> marshall(ListChangeBatchesByRRSetRequest listChangeBatchesByRRSetRequest) {
 
         if (listChangeBatchesByRRSetRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListChangeBatchesByRRSetRequest> request = new DefaultRequest<ListChangeBatchesByRRSetRequest>(
-                listChangeBatchesByRRSetRequest, "AmazonRoute53");
+        Request<ListChangeBatchesByRRSetRequest> request = new DefaultRequest<ListChangeBatchesByRRSetRequest>(listChangeBatchesByRRSetRequest, "AmazonRoute53");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2013-04-01/hostedzone/{Id}/rrsChanges";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{Id}",
-                        (listChangeBatchesByRRSetRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(listChangeBatchesByRRSetRequest
-                                                .getHostedZoneId()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{Id}",
+                (listChangeBatchesByRRSetRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(listChangeBatchesByRRSetRequest.getHostedZoneId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (listChangeBatchesByRRSetRequest.getName() != null) {
-            request.addParameter("rrSet_name", StringUtils
-                    .fromString(listChangeBatchesByRRSetRequest.getName()));
+            request.addParameter("rrSet_name", StringUtils.fromString(listChangeBatchesByRRSetRequest.getName()));
         }
 
         if (listChangeBatchesByRRSetRequest.getType() != null) {
-            request.addParameter("type", StringUtils
-                    .fromString(listChangeBatchesByRRSetRequest.getType()));
+            request.addParameter("type", StringUtils.fromString(listChangeBatchesByRRSetRequest.getType()));
         }
 
         if (listChangeBatchesByRRSetRequest.getSetIdentifier() != null) {
-            request.addParameter("identifier", StringUtils
-                    .fromString(listChangeBatchesByRRSetRequest
-                            .getSetIdentifier()));
+            request.addParameter("identifier", StringUtils.fromString(listChangeBatchesByRRSetRequest.getSetIdentifier()));
         }
 
         if (listChangeBatchesByRRSetRequest.getStartDate() != null) {
-            request.addParameter("startDate", StringUtils
-                    .fromString(listChangeBatchesByRRSetRequest.getStartDate()));
+            request.addParameter("startDate", StringUtils.fromString(listChangeBatchesByRRSetRequest.getStartDate()));
         }
 
         if (listChangeBatchesByRRSetRequest.getEndDate() != null) {
-            request.addParameter("endDate", StringUtils
-                    .fromString(listChangeBatchesByRRSetRequest.getEndDate()));
+            request.addParameter("endDate", StringUtils.fromString(listChangeBatchesByRRSetRequest.getEndDate()));
         }
 
         if (listChangeBatchesByRRSetRequest.getMaxItems() != null) {
-            request.addParameter("maxItems", StringUtils
-                    .fromString(listChangeBatchesByRRSetRequest.getMaxItems()));
+            request.addParameter("maxItems", StringUtils.fromString(listChangeBatchesByRRSetRequest.getMaxItems()));
         }
 
         if (listChangeBatchesByRRSetRequest.getMarker() != null) {
-            request.addParameter("marker", StringUtils
-                    .fromString(listChangeBatchesByRRSetRequest.getMarker()));
+            request.addParameter("marker", StringUtils.fromString(listChangeBatchesByRRSetRequest.getMarker()));
         }
 
         return request;

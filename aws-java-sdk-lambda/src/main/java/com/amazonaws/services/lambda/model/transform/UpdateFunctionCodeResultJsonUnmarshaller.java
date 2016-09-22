@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * UpdateFunctionCodeResult JSON Unmarshaller
  */
-public class UpdateFunctionCodeResultJsonUnmarshaller implements
-        Unmarshaller<UpdateFunctionCodeResult, JsonUnmarshallerContext> {
+public class UpdateFunctionCodeResultJsonUnmarshaller implements Unmarshaller<UpdateFunctionCodeResult, JsonUnmarshallerContext> {
 
-    public UpdateFunctionCodeResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public UpdateFunctionCodeResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         UpdateFunctionCodeResult updateFunctionCodeResult = new UpdateFunctionCodeResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,76 +49,58 @@ public class UpdateFunctionCodeResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FunctionName", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult.setFunctionName(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    updateFunctionCodeResult.setFunctionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FunctionArn", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult.setFunctionArn(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    updateFunctionCodeResult.setFunctionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Runtime", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult.setRuntime(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    updateFunctionCodeResult.setRuntime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult.setRole(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    updateFunctionCodeResult.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Handler", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult.setHandler(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    updateFunctionCodeResult.setHandler(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CodeSize", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult.setCodeSize(context
-                            .getUnmarshaller(Long.class).unmarshall(context));
+                    updateFunctionCodeResult.setCodeSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult.setDescription(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    updateFunctionCodeResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Timeout", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult
-                            .setTimeout(context.getUnmarshaller(Integer.class)
-                                    .unmarshall(context));
+                    updateFunctionCodeResult.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MemorySize", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult
-                            .setMemorySize(context.getUnmarshaller(
-                                    Integer.class).unmarshall(context));
+                    updateFunctionCodeResult.setMemorySize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModified", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult.setLastModified(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    updateFunctionCodeResult.setLastModified(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CodeSha256", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult.setCodeSha256(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    updateFunctionCodeResult.setCodeSha256(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult.setVersion(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    updateFunctionCodeResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcConfig", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult
-                            .setVpcConfig(VpcConfigResponseJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateFunctionCodeResult.setVpcConfig(VpcConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

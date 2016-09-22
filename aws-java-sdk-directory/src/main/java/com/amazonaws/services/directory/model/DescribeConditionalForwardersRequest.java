@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model;
 
@@ -22,35 +20,29 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes a conditional forwarder.
  * </p>
  */
-public class DescribeConditionalForwardersRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeConditionalForwardersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The directory ID for which to get the list of associated conditional
-     * forwarders.
+     * The directory ID for which to get the list of associated conditional forwarders.
      * </p>
      */
     private String directoryId;
     /**
      * <p>
-     * The fully qualified domain names (FQDN) of the remote domains for which
-     * to get the list of associated conditional forwarders. If this member is
-     * null, all conditional forwarders are returned.
+     * The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional
+     * forwarders. If this member is null, all conditional forwarders are returned.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> remoteDomainNames;
 
     /**
      * <p>
-     * The directory ID for which to get the list of associated conditional
-     * forwarders.
+     * The directory ID for which to get the list of associated conditional forwarders.
      * </p>
      * 
      * @param directoryId
-     *        The directory ID for which to get the list of associated
-     *        conditional forwarders.
+     *        The directory ID for which to get the list of associated conditional forwarders.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -59,12 +51,10 @@ public class DescribeConditionalForwardersRequest extends
 
     /**
      * <p>
-     * The directory ID for which to get the list of associated conditional
-     * forwarders.
+     * The directory ID for which to get the list of associated conditional forwarders.
      * </p>
      * 
-     * @return The directory ID for which to get the list of associated
-     *         conditional forwarders.
+     * @return The directory ID for which to get the list of associated conditional forwarders.
      */
 
     public String getDirectoryId() {
@@ -73,33 +63,27 @@ public class DescribeConditionalForwardersRequest extends
 
     /**
      * <p>
-     * The directory ID for which to get the list of associated conditional
-     * forwarders.
+     * The directory ID for which to get the list of associated conditional forwarders.
      * </p>
      * 
      * @param directoryId
-     *        The directory ID for which to get the list of associated
-     *        conditional forwarders.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The directory ID for which to get the list of associated conditional forwarders.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConditionalForwardersRequest withDirectoryId(
-            String directoryId) {
+    public DescribeConditionalForwardersRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
     }
 
     /**
      * <p>
-     * The fully qualified domain names (FQDN) of the remote domains for which
-     * to get the list of associated conditional forwarders. If this member is
-     * null, all conditional forwarders are returned.
+     * The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional
+     * forwarders. If this member is null, all conditional forwarders are returned.
      * </p>
      * 
-     * @return The fully qualified domain names (FQDN) of the remote domains for
-     *         which to get the list of associated conditional forwarders. If
-     *         this member is null, all conditional forwarders are returned.
+     * @return The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated
+     *         conditional forwarders. If this member is null, all conditional forwarders are returned.
      */
 
     public java.util.List<String> getRemoteDomainNames() {
@@ -111,54 +95,44 @@ public class DescribeConditionalForwardersRequest extends
 
     /**
      * <p>
-     * The fully qualified domain names (FQDN) of the remote domains for which
-     * to get the list of associated conditional forwarders. If this member is
-     * null, all conditional forwarders are returned.
+     * The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional
+     * forwarders. If this member is null, all conditional forwarders are returned.
      * </p>
      * 
      * @param remoteDomainNames
-     *        The fully qualified domain names (FQDN) of the remote domains for
-     *        which to get the list of associated conditional forwarders. If
-     *        this member is null, all conditional forwarders are returned.
+     *        The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated
+     *        conditional forwarders. If this member is null, all conditional forwarders are returned.
      */
 
-    public void setRemoteDomainNames(
-            java.util.Collection<String> remoteDomainNames) {
+    public void setRemoteDomainNames(java.util.Collection<String> remoteDomainNames) {
         if (remoteDomainNames == null) {
             this.remoteDomainNames = null;
             return;
         }
 
-        this.remoteDomainNames = new com.amazonaws.internal.SdkInternalList<String>(
-                remoteDomainNames);
+        this.remoteDomainNames = new com.amazonaws.internal.SdkInternalList<String>(remoteDomainNames);
     }
 
     /**
      * <p>
-     * The fully qualified domain names (FQDN) of the remote domains for which
-     * to get the list of associated conditional forwarders. If this member is
-     * null, all conditional forwarders are returned.
+     * The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional
+     * forwarders. If this member is null, all conditional forwarders are returned.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRemoteDomainNames(java.util.Collection)} or
-     * {@link #withRemoteDomainNames(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRemoteDomainNames(java.util.Collection)} or {@link #withRemoteDomainNames(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param remoteDomainNames
-     *        The fully qualified domain names (FQDN) of the remote domains for
-     *        which to get the list of associated conditional forwarders. If
-     *        this member is null, all conditional forwarders are returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated
+     *        conditional forwarders. If this member is null, all conditional forwarders are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConditionalForwardersRequest withRemoteDomainNames(
-            String... remoteDomainNames) {
+    public DescribeConditionalForwardersRequest withRemoteDomainNames(String... remoteDomainNames) {
         if (this.remoteDomainNames == null) {
-            setRemoteDomainNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    remoteDomainNames.length));
+            setRemoteDomainNames(new com.amazonaws.internal.SdkInternalList<String>(remoteDomainNames.length));
         }
         for (String ele : remoteDomainNames) {
             this.remoteDomainNames.add(ele);
@@ -168,28 +142,23 @@ public class DescribeConditionalForwardersRequest extends
 
     /**
      * <p>
-     * The fully qualified domain names (FQDN) of the remote domains for which
-     * to get the list of associated conditional forwarders. If this member is
-     * null, all conditional forwarders are returned.
+     * The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional
+     * forwarders. If this member is null, all conditional forwarders are returned.
      * </p>
      * 
      * @param remoteDomainNames
-     *        The fully qualified domain names (FQDN) of the remote domains for
-     *        which to get the list of associated conditional forwarders. If
-     *        this member is null, all conditional forwarders are returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated
+     *        conditional forwarders. If this member is null, all conditional forwarders are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConditionalForwardersRequest withRemoteDomainNames(
-            java.util.Collection<String> remoteDomainNames) {
+    public DescribeConditionalForwardersRequest withRemoteDomainNames(java.util.Collection<String> remoteDomainNames) {
         setRemoteDomainNames(remoteDomainNames);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -219,15 +188,11 @@ public class DescribeConditionalForwardersRequest extends
         DescribeConditionalForwardersRequest other = (DescribeConditionalForwardersRequest) obj;
         if (other.getDirectoryId() == null ^ this.getDirectoryId() == null)
             return false;
-        if (other.getDirectoryId() != null
-                && other.getDirectoryId().equals(this.getDirectoryId()) == false)
+        if (other.getDirectoryId() != null && other.getDirectoryId().equals(this.getDirectoryId()) == false)
             return false;
-        if (other.getRemoteDomainNames() == null
-                ^ this.getRemoteDomainNames() == null)
+        if (other.getRemoteDomainNames() == null ^ this.getRemoteDomainNames() == null)
             return false;
-        if (other.getRemoteDomainNames() != null
-                && other.getRemoteDomainNames().equals(
-                        this.getRemoteDomainNames()) == false)
+        if (other.getRemoteDomainNames() != null && other.getRemoteDomainNames().equals(this.getRemoteDomainNames()) == false)
             return false;
         return true;
     }
@@ -237,13 +202,8 @@ public class DescribeConditionalForwardersRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRemoteDomainNames() == null) ? 0
-                        : getRemoteDomainNames().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getRemoteDomainNames() == null) ? 0 : getRemoteDomainNames().hashCode());
         return hashCode;
     }
 

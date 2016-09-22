@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DeleteLoadBalancer.
  * </p>
  */
-public class DeleteLoadBalancerRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteLoadBalancerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -65,8 +61,7 @@ public class DeleteLoadBalancerRequest extends
      * 
      * @param loadBalancerArn
      *        The Amazon Resource Name (ARN) of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteLoadBalancerRequest withLoadBalancerArn(String loadBalancerArn) {
@@ -75,8 +70,7 @@ public class DeleteLoadBalancerRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -102,11 +96,9 @@ public class DeleteLoadBalancerRequest extends
         if (obj instanceof DeleteLoadBalancerRequest == false)
             return false;
         DeleteLoadBalancerRequest other = (DeleteLoadBalancerRequest) obj;
-        if (other.getLoadBalancerArn() == null
-                ^ this.getLoadBalancerArn() == null)
+        if (other.getLoadBalancerArn() == null ^ this.getLoadBalancerArn() == null)
             return false;
-        if (other.getLoadBalancerArn() != null
-                && other.getLoadBalancerArn().equals(this.getLoadBalancerArn()) == false)
+        if (other.getLoadBalancerArn() != null && other.getLoadBalancerArn().equals(this.getLoadBalancerArn()) == false)
             return false;
         return true;
     }
@@ -116,10 +108,7 @@ public class DeleteLoadBalancerRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerArn() == null) ? 0 : getLoadBalancerArn()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerArn() == null) ? 0 : getLoadBalancerArn().hashCode());
         return hashCode;
     }
 

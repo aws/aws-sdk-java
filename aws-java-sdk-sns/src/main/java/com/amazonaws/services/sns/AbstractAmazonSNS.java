@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.sns;
 
@@ -18,9 +16,8 @@ import com.amazonaws.services.sns.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AmazonSNS}. Convenient method forms pass
- * through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonSNS}. Convenient method forms pass through to the corresponding overload that
+ * takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAmazonSNS implements AmazonSNS {
 
@@ -43,50 +40,38 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
-    public AddPermissionResult addPermission(String topicArn, String label,
-            java.util.List<String> aWSAccountIds,
-            java.util.List<String> actionNames) {
-        return addPermission(new AddPermissionRequest().withTopicArn(topicArn)
-                .withLabel(label).withAWSAccountIds(aWSAccountIds)
-                .withActionNames(actionNames));
+    public AddPermissionResult addPermission(String topicArn, String label, java.util.List<String> aWSAccountIds, java.util.List<String> actionNames) {
+        return addPermission(new AddPermissionRequest().withTopicArn(topicArn).withLabel(label).withAWSAccountIds(aWSAccountIds).withActionNames(actionNames));
     }
 
     @Override
-    public CheckIfPhoneNumberIsOptedOutResult checkIfPhoneNumberIsOptedOut(
-            CheckIfPhoneNumberIsOptedOutRequest request) {
+    public CheckIfPhoneNumberIsOptedOutResult checkIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ConfirmSubscriptionResult confirmSubscription(
-            ConfirmSubscriptionRequest request) {
+    public ConfirmSubscriptionResult confirmSubscription(ConfirmSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ConfirmSubscriptionResult confirmSubscription(String topicArn,
-            String token, String authenticateOnUnsubscribe) {
-        return confirmSubscription(new ConfirmSubscriptionRequest()
-                .withTopicArn(topicArn).withToken(token)
+    public ConfirmSubscriptionResult confirmSubscription(String topicArn, String token, String authenticateOnUnsubscribe) {
+        return confirmSubscription(new ConfirmSubscriptionRequest().withTopicArn(topicArn).withToken(token)
                 .withAuthenticateOnUnsubscribe(authenticateOnUnsubscribe));
     }
 
     @Override
-    public ConfirmSubscriptionResult confirmSubscription(String topicArn,
-            String token) {
-        return confirmSubscription(new ConfirmSubscriptionRequest()
-                .withTopicArn(topicArn).withToken(token));
+    public ConfirmSubscriptionResult confirmSubscription(String topicArn, String token) {
+        return confirmSubscription(new ConfirmSubscriptionRequest().withTopicArn(topicArn).withToken(token));
     }
 
     @Override
-    public CreatePlatformApplicationResult createPlatformApplication(
-            CreatePlatformApplicationRequest request) {
+    public CreatePlatformApplicationResult createPlatformApplication(CreatePlatformApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreatePlatformEndpointResult createPlatformEndpoint(
-            CreatePlatformEndpointRequest request) {
+    public CreatePlatformEndpointResult createPlatformEndpoint(CreatePlatformEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -106,8 +91,7 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
-    public DeletePlatformApplicationResult deletePlatformApplication(
-            DeletePlatformApplicationRequest request) {
+    public DeletePlatformApplicationResult deletePlatformApplication(DeletePlatformApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -122,63 +106,52 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
-    public GetEndpointAttributesResult getEndpointAttributes(
-            GetEndpointAttributesRequest request) {
+    public GetEndpointAttributesResult getEndpointAttributes(GetEndpointAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetPlatformApplicationAttributesResult getPlatformApplicationAttributes(
-            GetPlatformApplicationAttributesRequest request) {
+    public GetPlatformApplicationAttributesResult getPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetSMSAttributesResult getSMSAttributes(
-            GetSMSAttributesRequest request) {
+    public GetSMSAttributesResult getSMSAttributes(GetSMSAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetSubscriptionAttributesResult getSubscriptionAttributes(
-            GetSubscriptionAttributesRequest request) {
+    public GetSubscriptionAttributesResult getSubscriptionAttributes(GetSubscriptionAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetSubscriptionAttributesResult getSubscriptionAttributes(
-            String subscriptionArn) {
-        return getSubscriptionAttributes(new GetSubscriptionAttributesRequest()
-                .withSubscriptionArn(subscriptionArn));
+    public GetSubscriptionAttributesResult getSubscriptionAttributes(String subscriptionArn) {
+        return getSubscriptionAttributes(new GetSubscriptionAttributesRequest().withSubscriptionArn(subscriptionArn));
     }
 
     @Override
-    public GetTopicAttributesResult getTopicAttributes(
-            GetTopicAttributesRequest request) {
+    public GetTopicAttributesResult getTopicAttributes(GetTopicAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetTopicAttributesResult getTopicAttributes(String topicArn) {
-        return getTopicAttributes(new GetTopicAttributesRequest()
-                .withTopicArn(topicArn));
+        return getTopicAttributes(new GetTopicAttributesRequest().withTopicArn(topicArn));
     }
 
     @Override
-    public ListEndpointsByPlatformApplicationResult listEndpointsByPlatformApplication(
-            ListEndpointsByPlatformApplicationRequest request) {
+    public ListEndpointsByPlatformApplicationResult listEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListPhoneNumbersOptedOutResult listPhoneNumbersOptedOut(
-            ListPhoneNumbersOptedOutRequest request) {
+    public ListPhoneNumbersOptedOutResult listPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListPlatformApplicationsResult listPlatformApplications(
-            ListPlatformApplicationsRequest request) {
+    public ListPlatformApplicationsResult listPlatformApplications(ListPlatformApplicationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -188,8 +161,7 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
-    public ListSubscriptionsResult listSubscriptions(
-            ListSubscriptionsRequest request) {
+    public ListSubscriptionsResult listSubscriptions(ListSubscriptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -200,28 +172,22 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public ListSubscriptionsResult listSubscriptions(String nextToken) {
-        return listSubscriptions(new ListSubscriptionsRequest()
-                .withNextToken(nextToken));
+        return listSubscriptions(new ListSubscriptionsRequest().withNextToken(nextToken));
     }
 
     @Override
-    public ListSubscriptionsByTopicResult listSubscriptionsByTopic(
-            ListSubscriptionsByTopicRequest request) {
+    public ListSubscriptionsByTopicResult listSubscriptionsByTopic(ListSubscriptionsByTopicRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListSubscriptionsByTopicResult listSubscriptionsByTopic(
-            String topicArn) {
-        return listSubscriptionsByTopic(new ListSubscriptionsByTopicRequest()
-                .withTopicArn(topicArn));
+    public ListSubscriptionsByTopicResult listSubscriptionsByTopic(String topicArn) {
+        return listSubscriptionsByTopic(new ListSubscriptionsByTopicRequest().withTopicArn(topicArn));
     }
 
     @Override
-    public ListSubscriptionsByTopicResult listSubscriptionsByTopic(
-            String topicArn, String nextToken) {
-        return listSubscriptionsByTopic(new ListSubscriptionsByTopicRequest()
-                .withTopicArn(topicArn).withNextToken(nextToken));
+    public ListSubscriptionsByTopicResult listSubscriptionsByTopic(String topicArn, String nextToken) {
+        return listSubscriptionsByTopic(new ListSubscriptionsByTopicRequest().withTopicArn(topicArn).withNextToken(nextToken));
     }
 
     @Override
@@ -240,8 +206,7 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
-    public OptInPhoneNumberResult optInPhoneNumber(
-            OptInPhoneNumberRequest request) {
+    public OptInPhoneNumberResult optInPhoneNumber(OptInPhoneNumberRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -252,73 +217,58 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public PublishResult publish(String topicArn, String message) {
-        return publish(new PublishRequest().withTopicArn(topicArn).withMessage(
-                message));
+        return publish(new PublishRequest().withTopicArn(topicArn).withMessage(message));
     }
 
     @Override
     public PublishResult publish(String topicArn, String message, String subject) {
-        return publish(new PublishRequest().withTopicArn(topicArn)
-                .withMessage(message).withSubject(subject));
+        return publish(new PublishRequest().withTopicArn(topicArn).withMessage(message).withSubject(subject));
     }
 
     @Override
-    public RemovePermissionResult removePermission(
-            RemovePermissionRequest request) {
+    public RemovePermissionResult removePermission(RemovePermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public RemovePermissionResult removePermission(String topicArn, String label) {
-        return removePermission(new RemovePermissionRequest().withTopicArn(
-                topicArn).withLabel(label));
+        return removePermission(new RemovePermissionRequest().withTopicArn(topicArn).withLabel(label));
     }
 
     @Override
-    public SetEndpointAttributesResult setEndpointAttributes(
-            SetEndpointAttributesRequest request) {
+    public SetEndpointAttributesResult setEndpointAttributes(SetEndpointAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetPlatformApplicationAttributesResult setPlatformApplicationAttributes(
-            SetPlatformApplicationAttributesRequest request) {
+    public SetPlatformApplicationAttributesResult setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetSMSAttributesResult setSMSAttributes(
-            SetSMSAttributesRequest request) {
+    public SetSMSAttributesResult setSMSAttributes(SetSMSAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetSubscriptionAttributesResult setSubscriptionAttributes(
-            SetSubscriptionAttributesRequest request) {
+    public SetSubscriptionAttributesResult setSubscriptionAttributes(SetSubscriptionAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetSubscriptionAttributesResult setSubscriptionAttributes(
-            String subscriptionArn, String attributeName, String attributeValue) {
-        return setSubscriptionAttributes(new SetSubscriptionAttributesRequest()
-                .withSubscriptionArn(subscriptionArn)
-                .withAttributeName(attributeName)
+    public SetSubscriptionAttributesResult setSubscriptionAttributes(String subscriptionArn, String attributeName, String attributeValue) {
+        return setSubscriptionAttributes(new SetSubscriptionAttributesRequest().withSubscriptionArn(subscriptionArn).withAttributeName(attributeName)
                 .withAttributeValue(attributeValue));
     }
 
     @Override
-    public SetTopicAttributesResult setTopicAttributes(
-            SetTopicAttributesRequest request) {
+    public SetTopicAttributesResult setTopicAttributes(SetTopicAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetTopicAttributesResult setTopicAttributes(String topicArn,
-            String attributeName, String attributeValue) {
-        return setTopicAttributes(new SetTopicAttributesRequest()
-                .withTopicArn(topicArn).withAttributeName(attributeName)
-                .withAttributeValue(attributeValue));
+    public SetTopicAttributesResult setTopicAttributes(String topicArn, String attributeName, String attributeValue) {
+        return setTopicAttributes(new SetTopicAttributesRequest().withTopicArn(topicArn).withAttributeName(attributeName).withAttributeValue(attributeValue));
     }
 
     @Override
@@ -327,10 +277,8 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
-    public SubscribeResult subscribe(String topicArn, String protocol,
-            String endpoint) {
-        return subscribe(new SubscribeRequest().withTopicArn(topicArn)
-                .withProtocol(protocol).withEndpoint(endpoint));
+    public SubscribeResult subscribe(String topicArn, String protocol, String endpoint) {
+        return subscribe(new SubscribeRequest().withTopicArn(topicArn).withProtocol(protocol).withEndpoint(endpoint));
     }
 
     @Override
@@ -340,8 +288,7 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public UnsubscribeResult unsubscribe(String subscriptionArn) {
-        return unsubscribe(new UnsubscribeRequest()
-                .withSubscriptionArn(subscriptionArn));
+        return unsubscribe(new UnsubscribeRequest().withSubscriptionArn(subscriptionArn));
     }
 
     @Override
@@ -350,8 +297,7 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

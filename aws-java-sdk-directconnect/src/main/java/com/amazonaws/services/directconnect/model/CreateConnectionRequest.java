@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the CreateConnection operation.
  * </p>
  */
-public class CreateConnectionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String location;
 
@@ -50,8 +46,7 @@ public class CreateConnectionRequest extends
 
     /**
      * @param location
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateConnectionRequest withLocation(String location) {
@@ -77,8 +72,7 @@ public class CreateConnectionRequest extends
 
     /**
      * @param bandwidth
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateConnectionRequest withBandwidth(String bandwidth) {
@@ -104,8 +98,7 @@ public class CreateConnectionRequest extends
 
     /**
      * @param connectionName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateConnectionRequest withConnectionName(String connectionName) {
@@ -114,8 +107,7 @@ public class CreateConnectionRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -147,19 +139,15 @@ public class CreateConnectionRequest extends
         CreateConnectionRequest other = (CreateConnectionRequest) obj;
         if (other.getLocation() == null ^ this.getLocation() == null)
             return false;
-        if (other.getLocation() != null
-                && other.getLocation().equals(this.getLocation()) == false)
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
         if (other.getBandwidth() == null ^ this.getBandwidth() == null)
             return false;
-        if (other.getBandwidth() != null
-                && other.getBandwidth().equals(this.getBandwidth()) == false)
+        if (other.getBandwidth() != null && other.getBandwidth().equals(this.getBandwidth()) == false)
             return false;
-        if (other.getConnectionName() == null
-                ^ this.getConnectionName() == null)
+        if (other.getConnectionName() == null ^ this.getConnectionName() == null)
             return false;
-        if (other.getConnectionName() != null
-                && other.getConnectionName().equals(this.getConnectionName()) == false)
+        if (other.getConnectionName() != null && other.getConnectionName().equals(this.getConnectionName()) == false)
             return false;
         return true;
     }
@@ -169,14 +157,9 @@ public class CreateConnectionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getLocation() == null) ? 0 : getLocation().hashCode());
-        hashCode = prime * hashCode
-                + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConnectionName() == null) ? 0 : getConnectionName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode());
+        hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
         return hashCode;
     }
 

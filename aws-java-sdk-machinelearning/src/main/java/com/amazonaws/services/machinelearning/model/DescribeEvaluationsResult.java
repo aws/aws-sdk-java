@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.machinelearning.model;
 
@@ -18,13 +16,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the query results from a <code>DescribeEvaluations</code>
- * operation. The content is essentially a list of <code>Evaluation</code>.
+ * Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of
+ * <code>Evaluation</code>.
  * </p>
  */
-public class DescribeEvaluationsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeEvaluationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,8 +30,7 @@ public class DescribeEvaluationsResult extends
     private com.amazonaws.internal.SdkInternalList<Evaluation> results;
     /**
      * <p>
-     * The ID of the next page in the paginated results that indicates at least
-     * one more page follows.
+     * The ID of the next page in the paginated results that indicates at least one more page follows.
      * </p>
      */
     private String nextToken;
@@ -70,8 +65,7 @@ public class DescribeEvaluationsResult extends
             return;
         }
 
-        this.results = new com.amazonaws.internal.SdkInternalList<Evaluation>(
-                results);
+        this.results = new com.amazonaws.internal.SdkInternalList<Evaluation>(results);
     }
 
     /**
@@ -79,22 +73,19 @@ public class DescribeEvaluationsResult extends
      * A list of <code>Evaluation</code> that meet the search criteria.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setResults(java.util.Collection)} or
-     * {@link #withResults(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResults(java.util.Collection)} or {@link #withResults(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param results
      *        A list of <code>Evaluation</code> that meet the search criteria.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEvaluationsResult withResults(Evaluation... results) {
         if (this.results == null) {
-            setResults(new com.amazonaws.internal.SdkInternalList<Evaluation>(
-                    results.length));
+            setResults(new com.amazonaws.internal.SdkInternalList<Evaluation>(results.length));
         }
         for (Evaluation ele : results) {
             this.results.add(ele);
@@ -109,25 +100,21 @@ public class DescribeEvaluationsResult extends
      * 
      * @param results
      *        A list of <code>Evaluation</code> that meet the search criteria.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEvaluationsResult withResults(
-            java.util.Collection<Evaluation> results) {
+    public DescribeEvaluationsResult withResults(java.util.Collection<Evaluation> results) {
         setResults(results);
         return this;
     }
 
     /**
      * <p>
-     * The ID of the next page in the paginated results that indicates at least
-     * one more page follows.
+     * The ID of the next page in the paginated results that indicates at least one more page follows.
      * </p>
      * 
      * @param nextToken
-     *        The ID of the next page in the paginated results that indicates at
-     *        least one more page follows.
+     *        The ID of the next page in the paginated results that indicates at least one more page follows.
      */
 
     public void setNextToken(String nextToken) {
@@ -136,12 +123,10 @@ public class DescribeEvaluationsResult extends
 
     /**
      * <p>
-     * The ID of the next page in the paginated results that indicates at least
-     * one more page follows.
+     * The ID of the next page in the paginated results that indicates at least one more page follows.
      * </p>
      * 
-     * @return The ID of the next page in the paginated results that indicates
-     *         at least one more page follows.
+     * @return The ID of the next page in the paginated results that indicates at least one more page follows.
      */
 
     public String getNextToken() {
@@ -150,15 +135,12 @@ public class DescribeEvaluationsResult extends
 
     /**
      * <p>
-     * The ID of the next page in the paginated results that indicates at least
-     * one more page follows.
+     * The ID of the next page in the paginated results that indicates at least one more page follows.
      * </p>
      * 
      * @param nextToken
-     *        The ID of the next page in the paginated results that indicates at
-     *        least one more page follows.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the next page in the paginated results that indicates at least one more page follows.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEvaluationsResult withNextToken(String nextToken) {
@@ -167,8 +149,7 @@ public class DescribeEvaluationsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -198,13 +179,11 @@ public class DescribeEvaluationsResult extends
         DescribeEvaluationsResult other = (DescribeEvaluationsResult) obj;
         if (other.getResults() == null ^ this.getResults() == null)
             return false;
-        if (other.getResults() != null
-                && other.getResults().equals(this.getResults()) == false)
+        if (other.getResults() != null && other.getResults().equals(this.getResults()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -214,10 +193,8 @@ public class DescribeEvaluationsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getResults() == null) ? 0 : getResults().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getResults() == null) ? 0 : getResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -226,9 +203,7 @@ public class DescribeEvaluationsResult extends
         try {
             return (DescribeEvaluationsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

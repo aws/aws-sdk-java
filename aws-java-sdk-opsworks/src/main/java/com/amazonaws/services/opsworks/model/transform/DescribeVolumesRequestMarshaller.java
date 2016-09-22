@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -35,26 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeVolumesRequest Marshaller
  */
-public class DescribeVolumesRequestMarshaller implements
-        Marshaller<Request<DescribeVolumesRequest>, DescribeVolumesRequest> {
+public class DescribeVolumesRequestMarshaller implements Marshaller<Request<DescribeVolumesRequest>, DescribeVolumesRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeVolumesRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeVolumesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeVolumesRequest> marshall(
-            DescribeVolumesRequest describeVolumesRequest) {
+    public Request<DescribeVolumesRequest> marshall(DescribeVolumesRequest describeVolumesRequest) {
 
         if (describeVolumesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeVolumesRequest> request = new DefaultRequest<DescribeVolumesRequest>(
-                describeVolumesRequest, "AWSOpsWorks");
+        Request<DescribeVolumesRequest> request = new DefaultRequest<DescribeVolumesRequest>(describeVolumesRequest, "AWSOpsWorks");
         request.addHeader("X-Amz-Target", "OpsWorks_20130218.DescribeVolumes");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -62,22 +55,18 @@ public class DescribeVolumesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (describeVolumesRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(
-                        describeVolumesRequest.getInstanceId());
+                jsonGenerator.writeFieldName("InstanceId").writeValue(describeVolumesRequest.getInstanceId());
             }
             if (describeVolumesRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(
-                        describeVolumesRequest.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(describeVolumesRequest.getStackId());
             }
             if (describeVolumesRequest.getRaidArrayId() != null) {
-                jsonGenerator.writeFieldName("RaidArrayId").writeValue(
-                        describeVolumesRequest.getRaidArrayId());
+                jsonGenerator.writeFieldName("RaidArrayId").writeValue(describeVolumesRequest.getRaidArrayId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> volumeIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVolumesRequest
@@ -97,12 +86,10 @@ public class DescribeVolumesRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

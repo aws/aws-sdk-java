@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetUsageRequest Marshaller
  */
-public class GetUsageRequestMarshaller implements
-        Marshaller<Request<GetUsageRequest>, GetUsageRequest> {
+public class GetUsageRequestMarshaller implements Marshaller<Request<GetUsageRequest>, GetUsageRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -55,47 +52,37 @@ public class GetUsageRequestMarshaller implements
     public Request<GetUsageRequest> marshall(GetUsageRequest getUsageRequest) {
 
         if (getUsageRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetUsageRequest> request = new DefaultRequest<GetUsageRequest>(
-                getUsageRequest, "AmazonApiGateway");
+        Request<GetUsageRequest> request = new DefaultRequest<GetUsageRequest>(getUsageRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/usageplans/{usageplanId}/usage";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{usageplanId}",
-                (getUsageRequest.getUsagePlanId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(getUsageRequest
-                                .getUsagePlanId()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{usageplanId}",
+                (getUsageRequest.getUsagePlanId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getUsageRequest.getUsagePlanId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (getUsageRequest.getKeyId() != null) {
-            request.addParameter("keyId",
-                    StringUtils.fromString(getUsageRequest.getKeyId()));
+            request.addParameter("keyId", StringUtils.fromString(getUsageRequest.getKeyId()));
         }
 
         if (getUsageRequest.getStartDate() != null) {
-            request.addParameter("startDate",
-                    StringUtils.fromString(getUsageRequest.getStartDate()));
+            request.addParameter("startDate", StringUtils.fromString(getUsageRequest.getStartDate()));
         }
 
         if (getUsageRequest.getEndDate() != null) {
-            request.addParameter("endDate",
-                    StringUtils.fromString(getUsageRequest.getEndDate()));
+            request.addParameter("endDate", StringUtils.fromString(getUsageRequest.getEndDate()));
         }
 
         if (getUsageRequest.getPosition() != null) {
-            request.addParameter("position",
-                    StringUtils.fromString(getUsageRequest.getPosition()));
+            request.addParameter("position", StringUtils.fromString(getUsageRequest.getPosition()));
         }
 
         if (getUsageRequest.getLimit() != null) {
-            request.addParameter("limit",
-                    StringUtils.fromInteger(getUsageRequest.getLimit()));
+            request.addParameter("limit", StringUtils.fromInteger(getUsageRequest.getLimit()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

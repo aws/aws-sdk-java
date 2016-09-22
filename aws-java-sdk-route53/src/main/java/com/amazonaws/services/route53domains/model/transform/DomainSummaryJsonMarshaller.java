@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model.transform;
 
@@ -34,38 +32,31 @@ public class DomainSummaryJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(DomainSummary domainSummary,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(DomainSummary domainSummary, StructuredJsonGenerator jsonGenerator) {
 
         if (domainSummary == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (domainSummary.getDomainName() != null) {
-                jsonGenerator.writeFieldName("DomainName").writeValue(
-                        domainSummary.getDomainName());
+                jsonGenerator.writeFieldName("DomainName").writeValue(domainSummary.getDomainName());
             }
             if (domainSummary.getAutoRenew() != null) {
-                jsonGenerator.writeFieldName("AutoRenew").writeValue(
-                        domainSummary.getAutoRenew());
+                jsonGenerator.writeFieldName("AutoRenew").writeValue(domainSummary.getAutoRenew());
             }
             if (domainSummary.getTransferLock() != null) {
-                jsonGenerator.writeFieldName("TransferLock").writeValue(
-                        domainSummary.getTransferLock());
+                jsonGenerator.writeFieldName("TransferLock").writeValue(domainSummary.getTransferLock());
             }
             if (domainSummary.getExpiry() != null) {
-                jsonGenerator.writeFieldName("Expiry").writeValue(
-                        domainSummary.getExpiry());
+                jsonGenerator.writeFieldName("Expiry").writeValue(domainSummary.getExpiry());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

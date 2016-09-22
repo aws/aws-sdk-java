@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * PresetWatermark JSON Unmarshaller
  */
-public class PresetWatermarkJsonUnmarshaller implements
-        Unmarshaller<PresetWatermark, JsonUnmarshallerContext> {
+public class PresetWatermarkJsonUnmarshaller implements Unmarshaller<PresetWatermark, JsonUnmarshallerContext> {
 
-    public PresetWatermark unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public PresetWatermark unmarshall(JsonUnmarshallerContext context) throws Exception {
         PresetWatermark presetWatermark = new PresetWatermark();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,58 +49,46 @@ public class PresetWatermarkJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    presetWatermark.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxWidth", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setMaxWidth(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    presetWatermark.setMaxWidth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxHeight", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setMaxHeight(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    presetWatermark.setMaxHeight(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizingPolicy", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setSizingPolicy(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    presetWatermark.setSizingPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HorizontalAlign", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setHorizontalAlign(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    presetWatermark.setHorizontalAlign(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HorizontalOffset", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setHorizontalOffset(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    presetWatermark.setHorizontalOffset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VerticalAlign", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setVerticalAlign(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    presetWatermark.setVerticalAlign(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VerticalOffset", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setVerticalOffset(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    presetWatermark.setVerticalOffset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Opacity", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setOpacity(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    presetWatermark.setOpacity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Target", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setTarget(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    presetWatermark.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

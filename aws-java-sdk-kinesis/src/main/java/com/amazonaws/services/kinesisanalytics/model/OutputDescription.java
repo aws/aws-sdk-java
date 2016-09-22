@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
@@ -18,10 +16,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the application output configuration, which includes the
- * in-application stream name and the destination where the stream data is
- * written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis
- * Firehose delivery stream.
+ * Describes the application output configuration, which includes the in-application stream name and the destination
+ * where the stream data is written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose
+ * delivery stream.
  * </p>
  */
 public class OutputDescription implements Serializable, Cloneable {
@@ -40,15 +37,13 @@ public class OutputDescription implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * Describes Amazon Kinesis stream configured as the destination where
-     * output is written.
+     * Describes Amazon Kinesis stream configured as the destination where output is written.
      * </p>
      */
     private KinesisStreamsOutputDescription kinesisStreamsOutputDescription;
     /**
      * <p>
-     * Describes the Amazon Kinesis Firehose delivery stream configured as the
-     * destination where output is written.
+     * Describes the Amazon Kinesis Firehose delivery stream configured as the destination where output is written.
      * </p>
      */
     private KinesisFirehoseOutputDescription kinesisFirehoseOutputDescription;
@@ -91,8 +86,7 @@ public class OutputDescription implements Serializable, Cloneable {
      * 
      * @param outputId
      *        A unique identifier for the output configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OutputDescription withOutputId(String outputId) {
@@ -132,8 +126,7 @@ public class OutputDescription implements Serializable, Cloneable {
      * 
      * @param name
      *        Name of the in-application stream configured as output.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OutputDescription withName(String name) {
@@ -143,28 +136,23 @@ public class OutputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes Amazon Kinesis stream configured as the destination where
-     * output is written.
+     * Describes Amazon Kinesis stream configured as the destination where output is written.
      * </p>
      * 
      * @param kinesisStreamsOutputDescription
-     *        Describes Amazon Kinesis stream configured as the destination
-     *        where output is written.
+     *        Describes Amazon Kinesis stream configured as the destination where output is written.
      */
 
-    public void setKinesisStreamsOutputDescription(
-            KinesisStreamsOutputDescription kinesisStreamsOutputDescription) {
+    public void setKinesisStreamsOutputDescription(KinesisStreamsOutputDescription kinesisStreamsOutputDescription) {
         this.kinesisStreamsOutputDescription = kinesisStreamsOutputDescription;
     }
 
     /**
      * <p>
-     * Describes Amazon Kinesis stream configured as the destination where
-     * output is written.
+     * Describes Amazon Kinesis stream configured as the destination where output is written.
      * </p>
      * 
-     * @return Describes Amazon Kinesis stream configured as the destination
-     *         where output is written.
+     * @return Describes Amazon Kinesis stream configured as the destination where output is written.
      */
 
     public KinesisStreamsOutputDescription getKinesisStreamsOutputDescription() {
@@ -173,47 +161,40 @@ public class OutputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes Amazon Kinesis stream configured as the destination where
-     * output is written.
+     * Describes Amazon Kinesis stream configured as the destination where output is written.
      * </p>
      * 
      * @param kinesisStreamsOutputDescription
-     *        Describes Amazon Kinesis stream configured as the destination
-     *        where output is written.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Describes Amazon Kinesis stream configured as the destination where output is written.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OutputDescription withKinesisStreamsOutputDescription(
-            KinesisStreamsOutputDescription kinesisStreamsOutputDescription) {
+    public OutputDescription withKinesisStreamsOutputDescription(KinesisStreamsOutputDescription kinesisStreamsOutputDescription) {
         setKinesisStreamsOutputDescription(kinesisStreamsOutputDescription);
         return this;
     }
 
     /**
      * <p>
-     * Describes the Amazon Kinesis Firehose delivery stream configured as the
-     * destination where output is written.
+     * Describes the Amazon Kinesis Firehose delivery stream configured as the destination where output is written.
      * </p>
      * 
      * @param kinesisFirehoseOutputDescription
-     *        Describes the Amazon Kinesis Firehose delivery stream configured
-     *        as the destination where output is written.
+     *        Describes the Amazon Kinesis Firehose delivery stream configured as the destination where output is
+     *        written.
      */
 
-    public void setKinesisFirehoseOutputDescription(
-            KinesisFirehoseOutputDescription kinesisFirehoseOutputDescription) {
+    public void setKinesisFirehoseOutputDescription(KinesisFirehoseOutputDescription kinesisFirehoseOutputDescription) {
         this.kinesisFirehoseOutputDescription = kinesisFirehoseOutputDescription;
     }
 
     /**
      * <p>
-     * Describes the Amazon Kinesis Firehose delivery stream configured as the
-     * destination where output is written.
+     * Describes the Amazon Kinesis Firehose delivery stream configured as the destination where output is written.
      * </p>
      * 
-     * @return Describes the Amazon Kinesis Firehose delivery stream configured
-     *         as the destination where output is written.
+     * @return Describes the Amazon Kinesis Firehose delivery stream configured as the destination where output is
+     *         written.
      */
 
     public KinesisFirehoseOutputDescription getKinesisFirehoseOutputDescription() {
@@ -222,19 +203,16 @@ public class OutputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the Amazon Kinesis Firehose delivery stream configured as the
-     * destination where output is written.
+     * Describes the Amazon Kinesis Firehose delivery stream configured as the destination where output is written.
      * </p>
      * 
      * @param kinesisFirehoseOutputDescription
-     *        Describes the Amazon Kinesis Firehose delivery stream configured
-     *        as the destination where output is written.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Describes the Amazon Kinesis Firehose delivery stream configured as the destination where output is
+     *        written.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OutputDescription withKinesisFirehoseOutputDescription(
-            KinesisFirehoseOutputDescription kinesisFirehoseOutputDescription) {
+    public OutputDescription withKinesisFirehoseOutputDescription(KinesisFirehoseOutputDescription kinesisFirehoseOutputDescription) {
         setKinesisFirehoseOutputDescription(kinesisFirehoseOutputDescription);
         return this;
     }
@@ -271,19 +249,16 @@ public class OutputDescription implements Serializable, Cloneable {
      * 
      * @param destinationSchema
      *        Data format used for writing data to the destination.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OutputDescription withDestinationSchema(
-            DestinationSchema destinationSchema) {
+    public OutputDescription withDestinationSchema(DestinationSchema destinationSchema) {
         setDestinationSchema(destinationSchema);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -298,11 +273,9 @@ public class OutputDescription implements Serializable, Cloneable {
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
         if (getKinesisStreamsOutputDescription() != null)
-            sb.append("KinesisStreamsOutputDescription: "
-                    + getKinesisStreamsOutputDescription() + ",");
+            sb.append("KinesisStreamsOutputDescription: " + getKinesisStreamsOutputDescription() + ",");
         if (getKinesisFirehoseOutputDescription() != null)
-            sb.append("KinesisFirehoseOutputDescription: "
-                    + getKinesisFirehoseOutputDescription() + ",");
+            sb.append("KinesisFirehoseOutputDescription: " + getKinesisFirehoseOutputDescription() + ",");
         if (getDestinationSchema() != null)
             sb.append("DestinationSchema: " + getDestinationSchema());
         sb.append("}");
@@ -321,34 +294,25 @@ public class OutputDescription implements Serializable, Cloneable {
         OutputDescription other = (OutputDescription) obj;
         if (other.getOutputId() == null ^ this.getOutputId() == null)
             return false;
-        if (other.getOutputId() != null
-                && other.getOutputId().equals(this.getOutputId()) == false)
+        if (other.getOutputId() != null && other.getOutputId().equals(this.getOutputId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getKinesisStreamsOutputDescription() == null
-                ^ this.getKinesisStreamsOutputDescription() == null)
+        if (other.getKinesisStreamsOutputDescription() == null ^ this.getKinesisStreamsOutputDescription() == null)
             return false;
         if (other.getKinesisStreamsOutputDescription() != null
-                && other.getKinesisStreamsOutputDescription().equals(
-                        this.getKinesisStreamsOutputDescription()) == false)
+                && other.getKinesisStreamsOutputDescription().equals(this.getKinesisStreamsOutputDescription()) == false)
             return false;
-        if (other.getKinesisFirehoseOutputDescription() == null
-                ^ this.getKinesisFirehoseOutputDescription() == null)
+        if (other.getKinesisFirehoseOutputDescription() == null ^ this.getKinesisFirehoseOutputDescription() == null)
             return false;
         if (other.getKinesisFirehoseOutputDescription() != null
-                && other.getKinesisFirehoseOutputDescription().equals(
-                        this.getKinesisFirehoseOutputDescription()) == false)
+                && other.getKinesisFirehoseOutputDescription().equals(this.getKinesisFirehoseOutputDescription()) == false)
             return false;
-        if (other.getDestinationSchema() == null
-                ^ this.getDestinationSchema() == null)
+        if (other.getDestinationSchema() == null ^ this.getDestinationSchema() == null)
             return false;
-        if (other.getDestinationSchema() != null
-                && other.getDestinationSchema().equals(
-                        this.getDestinationSchema()) == false)
+        if (other.getDestinationSchema() != null && other.getDestinationSchema().equals(this.getDestinationSchema()) == false)
             return false;
         return true;
     }
@@ -358,22 +322,11 @@ public class OutputDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getOutputId() == null) ? 0 : getOutputId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getKinesisStreamsOutputDescription() == null) ? 0
-                        : getKinesisStreamsOutputDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getKinesisFirehoseOutputDescription() == null) ? 0
-                        : getKinesisFirehoseOutputDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDestinationSchema() == null) ? 0
-                        : getDestinationSchema().hashCode());
+        hashCode = prime * hashCode + ((getOutputId() == null) ? 0 : getOutputId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getKinesisStreamsOutputDescription() == null) ? 0 : getKinesisStreamsOutputDescription().hashCode());
+        hashCode = prime * hashCode + ((getKinesisFirehoseOutputDescription() == null) ? 0 : getKinesisFirehoseOutputDescription().hashCode());
+        hashCode = prime * hashCode + ((getDestinationSchema() == null) ? 0 : getDestinationSchema().hashCode());
         return hashCode;
     }
 
@@ -382,9 +335,7 @@ public class OutputDescription implements Serializable, Cloneable {
         try {
             return (OutputDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

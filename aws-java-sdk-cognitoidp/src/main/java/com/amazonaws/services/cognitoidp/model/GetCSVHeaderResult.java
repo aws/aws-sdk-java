@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -18,18 +16,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the response from the server to the request to get the header
- * information for the .csv file for the user import job.
+ * Represents the response from the server to the request to get the header information for the .csv file for the user
+ * import job.
  * </p>
  */
-public class GetCSVHeaderResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetCSVHeaderResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user pool ID for the user pool that the users are to be imported
-     * into.
+     * The user pool ID for the user pool that the users are to be imported into.
      * </p>
      */
     private String userPoolId;
@@ -42,13 +37,11 @@ public class GetCSVHeaderResult extends
 
     /**
      * <p>
-     * The user pool ID for the user pool that the users are to be imported
-     * into.
+     * The user pool ID for the user pool that the users are to be imported into.
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID for the user pool that the users are to be
-     *        imported into.
+     *        The user pool ID for the user pool that the users are to be imported into.
      */
 
     public void setUserPoolId(String userPoolId) {
@@ -57,12 +50,10 @@ public class GetCSVHeaderResult extends
 
     /**
      * <p>
-     * The user pool ID for the user pool that the users are to be imported
-     * into.
+     * The user pool ID for the user pool that the users are to be imported into.
      * </p>
      * 
-     * @return The user pool ID for the user pool that the users are to be
-     *         imported into.
+     * @return The user pool ID for the user pool that the users are to be imported into.
      */
 
     public String getUserPoolId() {
@@ -71,15 +62,12 @@ public class GetCSVHeaderResult extends
 
     /**
      * <p>
-     * The user pool ID for the user pool that the users are to be imported
-     * into.
+     * The user pool ID for the user pool that the users are to be imported into.
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID for the user pool that the users are to be
-     *        imported into.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user pool ID for the user pool that the users are to be imported into.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetCSVHeaderResult withUserPoolId(String userPoolId) {
@@ -122,16 +110,14 @@ public class GetCSVHeaderResult extends
      * The header information for the .csv file for the user import job.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCSVHeader(java.util.Collection)} or
-     * {@link #withCSVHeader(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCSVHeader(java.util.Collection)} or {@link #withCSVHeader(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param cSVHeader
      *        The header information for the .csv file for the user import job.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetCSVHeaderResult withCSVHeader(String... cSVHeader) {
@@ -151,19 +137,16 @@ public class GetCSVHeaderResult extends
      * 
      * @param cSVHeader
      *        The header information for the .csv file for the user import job.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetCSVHeaderResult withCSVHeader(
-            java.util.Collection<String> cSVHeader) {
+    public GetCSVHeaderResult withCSVHeader(java.util.Collection<String> cSVHeader) {
         setCSVHeader(cSVHeader);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -193,13 +176,11 @@ public class GetCSVHeaderResult extends
         GetCSVHeaderResult other = (GetCSVHeaderResult) obj;
         if (other.getUserPoolId() == null ^ this.getUserPoolId() == null)
             return false;
-        if (other.getUserPoolId() != null
-                && other.getUserPoolId().equals(this.getUserPoolId()) == false)
+        if (other.getUserPoolId() != null && other.getUserPoolId().equals(this.getUserPoolId()) == false)
             return false;
         if (other.getCSVHeader() == null ^ this.getCSVHeader() == null)
             return false;
-        if (other.getCSVHeader() != null
-                && other.getCSVHeader().equals(this.getCSVHeader()) == false)
+        if (other.getCSVHeader() != null && other.getCSVHeader().equals(this.getCSVHeader()) == false)
             return false;
         return true;
     }
@@ -209,10 +190,8 @@ public class GetCSVHeaderResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
-        hashCode = prime * hashCode
-                + ((getCSVHeader() == null) ? 0 : getCSVHeader().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
+        hashCode = prime * hashCode + ((getCSVHeader() == null) ? 0 : getCSVHeader().hashCode());
         return hashCode;
     }
 
@@ -221,9 +200,7 @@ public class GetCSVHeaderResult extends
         try {
             return (GetCSVHeaderResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

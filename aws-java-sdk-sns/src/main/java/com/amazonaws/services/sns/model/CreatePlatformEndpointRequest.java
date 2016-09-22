@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
 
@@ -22,53 +20,45 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for CreatePlatformEndpoint action.
  * </p>
  */
-public class CreatePlatformEndpointRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * PlatformApplicationArn returned from CreatePlatformApplication is used to
-     * create a an endpoint.
+     * PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
      * </p>
      */
     private String platformApplicationArn;
     /**
      * <p>
-     * Unique identifier created by the notification service for an app on a
-     * device. The specific name for Token will vary, depending on which
-     * notification service is being used. For example, when using APNS as the
-     * notification service, you need the device token. Alternatively, when
-     * using GCM or ADM, the device token equivalent is called the registration
-     * ID.
+     * Unique identifier created by the notification service for an app on a device. The specific name for Token will
+     * vary, depending on which notification service is being used. For example, when using APNS as the notification
+     * service, you need the device token. Alternatively, when using GCM or ADM, the device token equivalent is called
+     * the registration ID.
      * </p>
      */
     private String token;
     /**
      * <p>
-     * Arbitrary user data to associate with the endpoint. Amazon SNS does not
-     * use this data. The data must be in UTF-8 format and less than 2KB.
+     * Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8
+     * format and less than 2KB.
      * </p>
      */
     private String customUserData;
     /**
      * <p>
-     * For a list of attributes, see <a href=
-     * "http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
-     * >SetEndpointAttributes</a>.
+     * For a list of attributes, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
 
     /**
      * <p>
-     * PlatformApplicationArn returned from CreatePlatformApplication is used to
-     * create a an endpoint.
+     * PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
      * </p>
      * 
      * @param platformApplicationArn
-     *        PlatformApplicationArn returned from CreatePlatformApplication is
-     *        used to create a an endpoint.
+     *        PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
      */
 
     public void setPlatformApplicationArn(String platformApplicationArn) {
@@ -77,12 +67,10 @@ public class CreatePlatformEndpointRequest extends
 
     /**
      * <p>
-     * PlatformApplicationArn returned from CreatePlatformApplication is used to
-     * create a an endpoint.
+     * PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
      * </p>
      * 
-     * @return PlatformApplicationArn returned from CreatePlatformApplication is
-     *         used to create a an endpoint.
+     * @return PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
      */
 
     public String getPlatformApplicationArn() {
@@ -91,40 +79,32 @@ public class CreatePlatformEndpointRequest extends
 
     /**
      * <p>
-     * PlatformApplicationArn returned from CreatePlatformApplication is used to
-     * create a an endpoint.
+     * PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
      * </p>
      * 
      * @param platformApplicationArn
-     *        PlatformApplicationArn returned from CreatePlatformApplication is
-     *        used to create a an endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreatePlatformEndpointRequest withPlatformApplicationArn(
-            String platformApplicationArn) {
+    public CreatePlatformEndpointRequest withPlatformApplicationArn(String platformApplicationArn) {
         setPlatformApplicationArn(platformApplicationArn);
         return this;
     }
 
     /**
      * <p>
-     * Unique identifier created by the notification service for an app on a
-     * device. The specific name for Token will vary, depending on which
-     * notification service is being used. For example, when using APNS as the
-     * notification service, you need the device token. Alternatively, when
-     * using GCM or ADM, the device token equivalent is called the registration
-     * ID.
+     * Unique identifier created by the notification service for an app on a device. The specific name for Token will
+     * vary, depending on which notification service is being used. For example, when using APNS as the notification
+     * service, you need the device token. Alternatively, when using GCM or ADM, the device token equivalent is called
+     * the registration ID.
      * </p>
      * 
      * @param token
-     *        Unique identifier created by the notification service for an app
-     *        on a device. The specific name for Token will vary, depending on
-     *        which notification service is being used. For example, when using
-     *        APNS as the notification service, you need the device token.
-     *        Alternatively, when using GCM or ADM, the device token equivalent
-     *        is called the registration ID.
+     *        Unique identifier created by the notification service for an app on a device. The specific name for Token
+     *        will vary, depending on which notification service is being used. For example, when using APNS as the
+     *        notification service, you need the device token. Alternatively, when using GCM or ADM, the device token
+     *        equivalent is called the registration ID.
      */
 
     public void setToken(String token) {
@@ -133,20 +113,16 @@ public class CreatePlatformEndpointRequest extends
 
     /**
      * <p>
-     * Unique identifier created by the notification service for an app on a
-     * device. The specific name for Token will vary, depending on which
-     * notification service is being used. For example, when using APNS as the
-     * notification service, you need the device token. Alternatively, when
-     * using GCM or ADM, the device token equivalent is called the registration
-     * ID.
+     * Unique identifier created by the notification service for an app on a device. The specific name for Token will
+     * vary, depending on which notification service is being used. For example, when using APNS as the notification
+     * service, you need the device token. Alternatively, when using GCM or ADM, the device token equivalent is called
+     * the registration ID.
      * </p>
      * 
-     * @return Unique identifier created by the notification service for an app
-     *         on a device. The specific name for Token will vary, depending on
-     *         which notification service is being used. For example, when using
-     *         APNS as the notification service, you need the device token.
-     *         Alternatively, when using GCM or ADM, the device token equivalent
-     *         is called the registration ID.
+     * @return Unique identifier created by the notification service for an app on a device. The specific name for Token
+     *         will vary, depending on which notification service is being used. For example, when using APNS as the
+     *         notification service, you need the device token. Alternatively, when using GCM or ADM, the device token
+     *         equivalent is called the registration ID.
      */
 
     public String getToken() {
@@ -155,23 +131,18 @@ public class CreatePlatformEndpointRequest extends
 
     /**
      * <p>
-     * Unique identifier created by the notification service for an app on a
-     * device. The specific name for Token will vary, depending on which
-     * notification service is being used. For example, when using APNS as the
-     * notification service, you need the device token. Alternatively, when
-     * using GCM or ADM, the device token equivalent is called the registration
-     * ID.
+     * Unique identifier created by the notification service for an app on a device. The specific name for Token will
+     * vary, depending on which notification service is being used. For example, when using APNS as the notification
+     * service, you need the device token. Alternatively, when using GCM or ADM, the device token equivalent is called
+     * the registration ID.
      * </p>
      * 
      * @param token
-     *        Unique identifier created by the notification service for an app
-     *        on a device. The specific name for Token will vary, depending on
-     *        which notification service is being used. For example, when using
-     *        APNS as the notification service, you need the device token.
-     *        Alternatively, when using GCM or ADM, the device token equivalent
-     *        is called the registration ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique identifier created by the notification service for an app on a device. The specific name for Token
+     *        will vary, depending on which notification service is being used. For example, when using APNS as the
+     *        notification service, you need the device token. Alternatively, when using GCM or ADM, the device token
+     *        equivalent is called the registration ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreatePlatformEndpointRequest withToken(String token) {
@@ -181,14 +152,13 @@ public class CreatePlatformEndpointRequest extends
 
     /**
      * <p>
-     * Arbitrary user data to associate with the endpoint. Amazon SNS does not
-     * use this data. The data must be in UTF-8 format and less than 2KB.
+     * Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8
+     * format and less than 2KB.
      * </p>
      * 
      * @param customUserData
-     *        Arbitrary user data to associate with the endpoint. Amazon SNS
-     *        does not use this data. The data must be in UTF-8 format and less
-     *        than 2KB.
+     *        Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in
+     *        UTF-8 format and less than 2KB.
      */
 
     public void setCustomUserData(String customUserData) {
@@ -197,13 +167,12 @@ public class CreatePlatformEndpointRequest extends
 
     /**
      * <p>
-     * Arbitrary user data to associate with the endpoint. Amazon SNS does not
-     * use this data. The data must be in UTF-8 format and less than 2KB.
+     * Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8
+     * format and less than 2KB.
      * </p>
      * 
-     * @return Arbitrary user data to associate with the endpoint. Amazon SNS
-     *         does not use this data. The data must be in UTF-8 format and less
-     *         than 2KB.
+     * @return Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be
+     *         in UTF-8 format and less than 2KB.
      */
 
     public String getCustomUserData() {
@@ -212,33 +181,29 @@ public class CreatePlatformEndpointRequest extends
 
     /**
      * <p>
-     * Arbitrary user data to associate with the endpoint. Amazon SNS does not
-     * use this data. The data must be in UTF-8 format and less than 2KB.
+     * Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8
+     * format and less than 2KB.
      * </p>
      * 
      * @param customUserData
-     *        Arbitrary user data to associate with the endpoint. Amazon SNS
-     *        does not use this data. The data must be in UTF-8 format and less
-     *        than 2KB.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in
+     *        UTF-8 format and less than 2KB.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreatePlatformEndpointRequest withCustomUserData(
-            String customUserData) {
+    public CreatePlatformEndpointRequest withCustomUserData(String customUserData) {
         setCustomUserData(customUserData);
         return this;
     }
 
     /**
      * <p>
-     * For a list of attributes, see <a href=
-     * "http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
-     * >SetEndpointAttributes</a>.
+     * For a list of attributes, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
      * </p>
      * 
-     * @return For a list of attributes, see <a href=
-     *         "http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
+     * @return For a list of attributes, see <a
+     *         href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
      *         >SetEndpointAttributes</a>.
      */
 
@@ -251,59 +216,49 @@ public class CreatePlatformEndpointRequest extends
 
     /**
      * <p>
-     * For a list of attributes, see <a href=
-     * "http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
-     * >SetEndpointAttributes</a>.
+     * For a list of attributes, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
      * </p>
      * 
      * @param attributes
-     *        For a list of attributes, see <a href=
-     *        "http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
-     *        >SetEndpointAttributes</a>.
+     *        For a list of attributes, see <a
+     *        href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
-        this.attributes = attributes == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        attributes);
+        this.attributes = attributes == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(attributes);
     }
 
     /**
      * <p>
-     * For a list of attributes, see <a href=
-     * "http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
-     * >SetEndpointAttributes</a>.
+     * For a list of attributes, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
      * </p>
      * 
      * @param attributes
-     *        For a list of attributes, see <a href=
-     *        "http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
-     *        >SetEndpointAttributes</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For a list of attributes, see <a
+     *        href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreatePlatformEndpointRequest withAttributes(
-            java.util.Map<String, String> attributes) {
+    public CreatePlatformEndpointRequest withAttributes(java.util.Map<String, String> attributes) {
         setAttributes(attributes);
         return this;
     }
 
-    public CreatePlatformEndpointRequest addAttributesEntry(String key,
-            String value) {
+    public CreatePlatformEndpointRequest addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.attributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.attributes.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Attributes. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into Attributes. &lt;p> Returns a reference to this object so that method calls can
+     * be chained together.
      */
 
     public CreatePlatformEndpointRequest clearAttributesEntries() {
@@ -312,8 +267,7 @@ public class CreatePlatformEndpointRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -324,8 +278,7 @@ public class CreatePlatformEndpointRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlatformApplicationArn() != null)
-            sb.append("PlatformApplicationArn: " + getPlatformApplicationArn()
-                    + ",");
+            sb.append("PlatformApplicationArn: " + getPlatformApplicationArn() + ",");
         if (getToken() != null)
             sb.append("Token: " + getToken() + ",");
         if (getCustomUserData() != null)
@@ -346,28 +299,21 @@ public class CreatePlatformEndpointRequest extends
         if (obj instanceof CreatePlatformEndpointRequest == false)
             return false;
         CreatePlatformEndpointRequest other = (CreatePlatformEndpointRequest) obj;
-        if (other.getPlatformApplicationArn() == null
-                ^ this.getPlatformApplicationArn() == null)
+        if (other.getPlatformApplicationArn() == null ^ this.getPlatformApplicationArn() == null)
             return false;
-        if (other.getPlatformApplicationArn() != null
-                && other.getPlatformApplicationArn().equals(
-                        this.getPlatformApplicationArn()) == false)
+        if (other.getPlatformApplicationArn() != null && other.getPlatformApplicationArn().equals(this.getPlatformApplicationArn()) == false)
             return false;
         if (other.getToken() == null ^ this.getToken() == null)
             return false;
-        if (other.getToken() != null
-                && other.getToken().equals(this.getToken()) == false)
+        if (other.getToken() != null && other.getToken().equals(this.getToken()) == false)
             return false;
-        if (other.getCustomUserData() == null
-                ^ this.getCustomUserData() == null)
+        if (other.getCustomUserData() == null ^ this.getCustomUserData() == null)
             return false;
-        if (other.getCustomUserData() != null
-                && other.getCustomUserData().equals(this.getCustomUserData()) == false)
+        if (other.getCustomUserData() != null && other.getCustomUserData().equals(this.getCustomUserData()) == false)
             return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
-        if (other.getAttributes() != null
-                && other.getAttributes().equals(this.getAttributes()) == false)
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
         return true;
     }
@@ -377,18 +323,10 @@ public class CreatePlatformEndpointRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPlatformApplicationArn() == null) ? 0
-                        : getPlatformApplicationArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getToken() == null) ? 0 : getToken().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomUserData() == null) ? 0 : getCustomUserData()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getPlatformApplicationArn() == null) ? 0 : getPlatformApplicationArn().hashCode());
+        hashCode = prime * hashCode + ((getToken() == null) ? 0 : getToken().hashCode());
+        hashCode = prime * hashCode + ((getCustomUserData() == null) ? 0 : getCustomUserData().hashCode());
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         return hashCode;
     }
 

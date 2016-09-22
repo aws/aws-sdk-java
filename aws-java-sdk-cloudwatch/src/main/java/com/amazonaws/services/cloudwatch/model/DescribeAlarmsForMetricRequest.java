@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes the inputs for DescribeAlarmsForMetric.
  * </p>
  */
-public class DescribeAlarmsForMetricRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -46,9 +42,8 @@ public class DescribeAlarmsForMetricRequest extends
     private String statistic;
     /**
      * <p>
-     * The list of dimensions associated with the metric. If the metric has any
-     * associated dimensions, you must specify them in order for the
-     * DescribeAlarmsForMetric to succeed.
+     * The list of dimensions associated with the metric. If the metric has any associated dimensions, you must specify
+     * them in order for the DescribeAlarmsForMetric to succeed.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Dimension> dimensions;
@@ -97,8 +92,7 @@ public class DescribeAlarmsForMetricRequest extends
      * 
      * @param metricName
      *        The name of the metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmsForMetricRequest withMetricName(String metricName) {
@@ -138,8 +132,7 @@ public class DescribeAlarmsForMetricRequest extends
      * 
      * @param namespace
      *        The namespace of the metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmsForMetricRequest withNamespace(String namespace) {
@@ -181,8 +174,7 @@ public class DescribeAlarmsForMetricRequest extends
      * 
      * @param statistic
      *        The statistic for the metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Statistic
      */
 
@@ -212,8 +204,7 @@ public class DescribeAlarmsForMetricRequest extends
      * 
      * @param statistic
      *        The statistic for the metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Statistic
      */
 
@@ -224,14 +215,12 @@ public class DescribeAlarmsForMetricRequest extends
 
     /**
      * <p>
-     * The list of dimensions associated with the metric. If the metric has any
-     * associated dimensions, you must specify them in order for the
-     * DescribeAlarmsForMetric to succeed.
+     * The list of dimensions associated with the metric. If the metric has any associated dimensions, you must specify
+     * them in order for the DescribeAlarmsForMetric to succeed.
      * </p>
      * 
-     * @return The list of dimensions associated with the metric. If the metric
-     *         has any associated dimensions, you must specify them in order for
-     *         the DescribeAlarmsForMetric to succeed.
+     * @return The list of dimensions associated with the metric. If the metric has any associated dimensions, you must
+     *         specify them in order for the DescribeAlarmsForMetric to succeed.
      */
 
     public java.util.List<Dimension> getDimensions() {
@@ -243,15 +232,13 @@ public class DescribeAlarmsForMetricRequest extends
 
     /**
      * <p>
-     * The list of dimensions associated with the metric. If the metric has any
-     * associated dimensions, you must specify them in order for the
-     * DescribeAlarmsForMetric to succeed.
+     * The list of dimensions associated with the metric. If the metric has any associated dimensions, you must specify
+     * them in order for the DescribeAlarmsForMetric to succeed.
      * </p>
      * 
      * @param dimensions
-     *        The list of dimensions associated with the metric. If the metric
-     *        has any associated dimensions, you must specify them in order for
-     *        the DescribeAlarmsForMetric to succeed.
+     *        The list of dimensions associated with the metric. If the metric has any associated dimensions, you must
+     *        specify them in order for the DescribeAlarmsForMetric to succeed.
      */
 
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
@@ -260,36 +247,29 @@ public class DescribeAlarmsForMetricRequest extends
             return;
         }
 
-        this.dimensions = new com.amazonaws.internal.SdkInternalList<Dimension>(
-                dimensions);
+        this.dimensions = new com.amazonaws.internal.SdkInternalList<Dimension>(dimensions);
     }
 
     /**
      * <p>
-     * The list of dimensions associated with the metric. If the metric has any
-     * associated dimensions, you must specify them in order for the
-     * DescribeAlarmsForMetric to succeed.
+     * The list of dimensions associated with the metric. If the metric has any associated dimensions, you must specify
+     * them in order for the DescribeAlarmsForMetric to succeed.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDimensions(java.util.Collection)} or
-     * {@link #withDimensions(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDimensions(java.util.Collection)} or {@link #withDimensions(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param dimensions
-     *        The list of dimensions associated with the metric. If the metric
-     *        has any associated dimensions, you must specify them in order for
-     *        the DescribeAlarmsForMetric to succeed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of dimensions associated with the metric. If the metric has any associated dimensions, you must
+     *        specify them in order for the DescribeAlarmsForMetric to succeed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAlarmsForMetricRequest withDimensions(
-            Dimension... dimensions) {
+    public DescribeAlarmsForMetricRequest withDimensions(Dimension... dimensions) {
         if (this.dimensions == null) {
-            setDimensions(new com.amazonaws.internal.SdkInternalList<Dimension>(
-                    dimensions.length));
+            setDimensions(new com.amazonaws.internal.SdkInternalList<Dimension>(dimensions.length));
         }
         for (Dimension ele : dimensions) {
             this.dimensions.add(ele);
@@ -299,21 +279,17 @@ public class DescribeAlarmsForMetricRequest extends
 
     /**
      * <p>
-     * The list of dimensions associated with the metric. If the metric has any
-     * associated dimensions, you must specify them in order for the
-     * DescribeAlarmsForMetric to succeed.
+     * The list of dimensions associated with the metric. If the metric has any associated dimensions, you must specify
+     * them in order for the DescribeAlarmsForMetric to succeed.
      * </p>
      * 
      * @param dimensions
-     *        The list of dimensions associated with the metric. If the metric
-     *        has any associated dimensions, you must specify them in order for
-     *        the DescribeAlarmsForMetric to succeed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of dimensions associated with the metric. If the metric has any associated dimensions, you must
+     *        specify them in order for the DescribeAlarmsForMetric to succeed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAlarmsForMetricRequest withDimensions(
-            java.util.Collection<Dimension> dimensions) {
+    public DescribeAlarmsForMetricRequest withDimensions(java.util.Collection<Dimension> dimensions) {
         setDimensions(dimensions);
         return this;
     }
@@ -350,8 +326,7 @@ public class DescribeAlarmsForMetricRequest extends
      * 
      * @param period
      *        The period in seconds over which the statistic is applied.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmsForMetricRequest withPeriod(Integer period) {
@@ -393,8 +368,7 @@ public class DescribeAlarmsForMetricRequest extends
      * 
      * @param unit
      *        The unit for the metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardUnit
      */
 
@@ -424,8 +398,7 @@ public class DescribeAlarmsForMetricRequest extends
      * 
      * @param unit
      *        The unit for the metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardUnit
      */
 
@@ -435,8 +408,7 @@ public class DescribeAlarmsForMetricRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -474,33 +446,27 @@ public class DescribeAlarmsForMetricRequest extends
         DescribeAlarmsForMetricRequest other = (DescribeAlarmsForMetricRequest) obj;
         if (other.getMetricName() == null ^ this.getMetricName() == null)
             return false;
-        if (other.getMetricName() != null
-                && other.getMetricName().equals(this.getMetricName()) == false)
+        if (other.getMetricName() != null && other.getMetricName().equals(this.getMetricName()) == false)
             return false;
         if (other.getNamespace() == null ^ this.getNamespace() == null)
             return false;
-        if (other.getNamespace() != null
-                && other.getNamespace().equals(this.getNamespace()) == false)
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
             return false;
         if (other.getStatistic() == null ^ this.getStatistic() == null)
             return false;
-        if (other.getStatistic() != null
-                && other.getStatistic().equals(this.getStatistic()) == false)
+        if (other.getStatistic() != null && other.getStatistic().equals(this.getStatistic()) == false)
             return false;
         if (other.getDimensions() == null ^ this.getDimensions() == null)
             return false;
-        if (other.getDimensions() != null
-                && other.getDimensions().equals(this.getDimensions()) == false)
+        if (other.getDimensions() != null && other.getDimensions().equals(this.getDimensions()) == false)
             return false;
         if (other.getPeriod() == null ^ this.getPeriod() == null)
             return false;
-        if (other.getPeriod() != null
-                && other.getPeriod().equals(this.getPeriod()) == false)
+        if (other.getPeriod() != null && other.getPeriod().equals(this.getPeriod()) == false)
             return false;
         if (other.getUnit() == null ^ this.getUnit() == null)
             return false;
-        if (other.getUnit() != null
-                && other.getUnit().equals(this.getUnit()) == false)
+        if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false)
             return false;
         return true;
     }
@@ -510,18 +476,12 @@ public class DescribeAlarmsForMetricRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
-        hashCode = prime * hashCode
-                + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatistic() == null) ? 0 : getStatistic().hashCode());
-        hashCode = prime * hashCode
-                + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
-        hashCode = prime * hashCode
-                + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
-        hashCode = prime * hashCode
-                + ((getUnit() == null) ? 0 : getUnit().hashCode());
+        hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
+        hashCode = prime * hashCode + ((getStatistic() == null) ? 0 : getStatistic().hashCode());
+        hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
+        hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
+        hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
         return hashCode;
     }
 

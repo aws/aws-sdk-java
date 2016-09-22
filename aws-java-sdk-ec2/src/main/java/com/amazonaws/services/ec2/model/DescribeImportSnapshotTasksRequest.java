@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeImportSnapshotTasksReq
  * Contains the parameters for DescribeImportSnapshotTasks.
  * </p>
  */
-public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeImportSnapshotTasksRequest> {
 
     /**
@@ -42,9 +39,8 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned
-     * <code>NextToken</code> value.
+     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
+     * with the returned <code>NextToken</code> value.
      * </p>
      */
     private Integer maxResults;
@@ -85,8 +81,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.importTaskIds = new com.amazonaws.internal.SdkInternalList<String>(
-                importTaskIds);
+        this.importTaskIds = new com.amazonaws.internal.SdkInternalList<String>(importTaskIds);
     }
 
     /**
@@ -94,23 +89,19 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * A list of import snapshot task IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setImportTaskIds(java.util.Collection)} or
-     * {@link #withImportTaskIds(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setImportTaskIds(java.util.Collection)} or {@link #withImportTaskIds(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param importTaskIds
      *        A list of import snapshot task IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeImportSnapshotTasksRequest withImportTaskIds(
-            String... importTaskIds) {
+    public DescribeImportSnapshotTasksRequest withImportTaskIds(String... importTaskIds) {
         if (this.importTaskIds == null) {
-            setImportTaskIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    importTaskIds.length));
+            setImportTaskIds(new com.amazonaws.internal.SdkInternalList<String>(importTaskIds.length));
         }
         for (String ele : importTaskIds) {
             this.importTaskIds.add(ele);
@@ -125,12 +116,10 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * 
      * @param importTaskIds
      *        A list of import snapshot task IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeImportSnapshotTasksRequest withImportTaskIds(
-            java.util.Collection<String> importTaskIds) {
+    public DescribeImportSnapshotTasksRequest withImportTaskIds(java.util.Collection<String> importTaskIds) {
         setImportTaskIds(importTaskIds);
         return this;
     }
@@ -167,8 +156,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * 
      * @param nextToken
      *        A token that indicates the next page of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeImportSnapshotTasksRequest withNextToken(String nextToken) {
@@ -178,15 +166,13 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned
-     * <code>NextToken</code> value.
+     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
+     * with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To
-     *        retrieve the remaining results, make another call with the
-     *        returned <code>NextToken</code> value.
+     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
+     *        call with the returned <code>NextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -195,14 +181,12 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned
-     * <code>NextToken</code> value.
+     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
+     * with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. To
-     *         retrieve the remaining results, make another call with the
-     *         returned <code>NextToken</code> value.
+     * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
+     *         call with the returned <code>NextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -211,17 +195,14 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned
-     * <code>NextToken</code> value.
+     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
+     * with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To
-     *        retrieve the remaining results, make another call with the
-     *        returned <code>NextToken</code> value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
+     *        call with the returned <code>NextToken</code> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeImportSnapshotTasksRequest withMaxResults(Integer maxResults) {
@@ -259,8 +240,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -268,22 +248,19 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * One or more filters.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
      *        One or more filters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeImportSnapshotTasksRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -298,32 +275,27 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * 
      * @param filters
      *        One or more filters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeImportSnapshotTasksRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeImportSnapshotTasksRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeImportSnapshotTasksRequest> getDryRunRequest() {
-        Request<DescribeImportSnapshotTasksRequest> request = new DescribeImportSnapshotTasksRequestMarshaller()
-                .marshall(this);
+        Request<DescribeImportSnapshotTasksRequest> request = new DescribeImportSnapshotTasksRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -357,23 +329,19 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
         DescribeImportSnapshotTasksRequest other = (DescribeImportSnapshotTasksRequest) obj;
         if (other.getImportTaskIds() == null ^ this.getImportTaskIds() == null)
             return false;
-        if (other.getImportTaskIds() != null
-                && other.getImportTaskIds().equals(this.getImportTaskIds()) == false)
+        if (other.getImportTaskIds() != null && other.getImportTaskIds().equals(this.getImportTaskIds()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         return true;
     }
@@ -383,16 +351,10 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getImportTaskIds() == null) ? 0 : getImportTaskIds()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getImportTaskIds() == null) ? 0 : getImportTaskIds().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

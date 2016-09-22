@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticfilesystem.model.transform;
 
@@ -43,27 +41,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeFileSystemsRequest Marshaller
  */
-public class DescribeFileSystemsRequestMarshaller
-        implements
-        Marshaller<Request<DescribeFileSystemsRequest>, DescribeFileSystemsRequest> {
+public class DescribeFileSystemsRequestMarshaller implements Marshaller<Request<DescribeFileSystemsRequest>, DescribeFileSystemsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeFileSystemsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeFileSystemsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeFileSystemsRequest> marshall(
-            DescribeFileSystemsRequest describeFileSystemsRequest) {
+    public Request<DescribeFileSystemsRequest> marshall(DescribeFileSystemsRequest describeFileSystemsRequest) {
 
         if (describeFileSystemsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeFileSystemsRequest> request = new DefaultRequest<DescribeFileSystemsRequest>(
-                describeFileSystemsRequest, "AmazonElasticFileSystem");
+        Request<DescribeFileSystemsRequest> request = new DefaultRequest<DescribeFileSystemsRequest>(describeFileSystemsRequest, "AmazonElasticFileSystem");
 
         request.setHttpMethod(HttpMethodName.GET);
 
@@ -72,23 +64,19 @@ public class DescribeFileSystemsRequestMarshaller
         request.setResourcePath(uriResourcePath);
 
         if (describeFileSystemsRequest.getMaxItems() != null) {
-            request.addParameter("MaxItems", StringUtils
-                    .fromInteger(describeFileSystemsRequest.getMaxItems()));
+            request.addParameter("MaxItems", StringUtils.fromInteger(describeFileSystemsRequest.getMaxItems()));
         }
 
         if (describeFileSystemsRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils
-                    .fromString(describeFileSystemsRequest.getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(describeFileSystemsRequest.getMarker()));
         }
 
         if (describeFileSystemsRequest.getCreationToken() != null) {
-            request.addParameter("CreationToken", StringUtils
-                    .fromString(describeFileSystemsRequest.getCreationToken()));
+            request.addParameter("CreationToken", StringUtils.fromString(describeFileSystemsRequest.getCreationToken()));
         }
 
         if (describeFileSystemsRequest.getFileSystemId() != null) {
-            request.addParameter("FileSystemId", StringUtils
-                    .fromString(describeFileSystemsRequest.getFileSystemId()));
+            request.addParameter("FileSystemId", StringUtils.fromString(describeFileSystemsRequest.getFileSystemId()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
 
@@ -21,8 +19,7 @@ import java.io.Serializable;
  * Provides details of the <code>WorkflowExecutionTimedOut</code> event.
  * </p>
  */
-public class WorkflowExecutionTimedOutEventAttributes implements Serializable,
-        Cloneable {
+public class WorkflowExecutionTimedOutEventAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,21 +29,17 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable,
     private String timeoutType;
     /**
      * <p>
-     * The policy used for the child workflow executions of this workflow
-     * execution.
+     * The policy used for the child workflow executions of this workflow execution.
      * </p>
      * <p>
      * The supported child policies are:
      * </p>
      * <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each
-     * child execution by recording a
-     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is
-     * up to the decider to take appropriate actions when it receives an
-     * execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will
-     * continue to run.</li>
+     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
+     * actions when it receives an execution history with this event.</li>
+     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
      * </ul>
      */
     private String childPolicy;
@@ -85,13 +78,11 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable,
      * 
      * @param timeoutType
      *        The type of timeout that caused this event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkflowExecutionTimeoutType
      */
 
-    public WorkflowExecutionTimedOutEventAttributes withTimeoutType(
-            String timeoutType) {
+    public WorkflowExecutionTimedOutEventAttributes withTimeoutType(String timeoutType) {
         setTimeoutType(timeoutType);
         return this;
     }
@@ -117,51 +108,41 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable,
      * 
      * @param timeoutType
      *        The type of timeout that caused this event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkflowExecutionTimeoutType
      */
 
-    public WorkflowExecutionTimedOutEventAttributes withTimeoutType(
-            WorkflowExecutionTimeoutType timeoutType) {
+    public WorkflowExecutionTimedOutEventAttributes withTimeoutType(WorkflowExecutionTimeoutType timeoutType) {
         setTimeoutType(timeoutType);
         return this;
     }
 
     /**
      * <p>
-     * The policy used for the child workflow executions of this workflow
-     * execution.
+     * The policy used for the child workflow executions of this workflow execution.
      * </p>
      * <p>
      * The supported child policies are:
      * </p>
      * <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each
-     * child execution by recording a
-     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is
-     * up to the decider to take appropriate actions when it receives an
-     * execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will
-     * continue to run.</li>
+     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
+     * actions when it receives an execution history with this event.</li>
+     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
      * </ul>
      * 
      * @param childPolicy
-     *        The policy used for the child workflow executions of this workflow
-     *        execution.</p>
+     *        The policy used for the child workflow executions of this workflow execution.</p>
      *        <p>
      *        The supported child policies are:
      *        </p>
      *        <ul>
      *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted
-     *        for each child execution by recording a
-     *        <code>WorkflowExecutionCancelRequested</code> event in its
-     *        history. It is up to the decider to take appropriate actions when
-     *        it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions
-     *        will continue to run.</li>
+     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
+     *        appropriate actions when it receives an execution history with this event.</li>
+     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
      * @see ChildPolicy
      */
 
@@ -171,37 +152,29 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable,
 
     /**
      * <p>
-     * The policy used for the child workflow executions of this workflow
-     * execution.
+     * The policy used for the child workflow executions of this workflow execution.
      * </p>
      * <p>
      * The supported child policies are:
      * </p>
      * <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each
-     * child execution by recording a
-     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is
-     * up to the decider to take appropriate actions when it receives an
-     * execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will
-     * continue to run.</li>
+     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
+     * actions when it receives an execution history with this event.</li>
+     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
      * </ul>
      * 
-     * @return The policy used for the child workflow executions of this
-     *         workflow execution.</p>
+     * @return The policy used for the child workflow executions of this workflow execution.</p>
      *         <p>
      *         The supported child policies are:
      *         </p>
      *         <ul>
      *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted
-     *         for each child execution by recording a
-     *         <code>WorkflowExecutionCancelRequested</code> event in its
-     *         history. It is up to the decider to take appropriate actions when
-     *         it receives an execution history with this event.</li>
-     *         <li><b>ABANDON:</b> no action will be taken. The child executions
-     *         will continue to run.</li>
+     *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *         <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
+     *         appropriate actions when it receives an execution history with this event.</li>
+     *         <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
      * @see ChildPolicy
      */
 
@@ -211,83 +184,65 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable,
 
     /**
      * <p>
-     * The policy used for the child workflow executions of this workflow
-     * execution.
+     * The policy used for the child workflow executions of this workflow execution.
      * </p>
      * <p>
      * The supported child policies are:
      * </p>
      * <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each
-     * child execution by recording a
-     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is
-     * up to the decider to take appropriate actions when it receives an
-     * execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will
-     * continue to run.</li>
+     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
+     * actions when it receives an execution history with this event.</li>
+     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
      * </ul>
      * 
      * @param childPolicy
-     *        The policy used for the child workflow executions of this workflow
-     *        execution.</p>
+     *        The policy used for the child workflow executions of this workflow execution.</p>
      *        <p>
      *        The supported child policies are:
      *        </p>
      *        <ul>
      *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted
-     *        for each child execution by recording a
-     *        <code>WorkflowExecutionCancelRequested</code> event in its
-     *        history. It is up to the decider to take appropriate actions when
-     *        it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions
-     *        will continue to run.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
+     *        appropriate actions when it receives an execution history with this event.</li>
+     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChildPolicy
      */
 
-    public WorkflowExecutionTimedOutEventAttributes withChildPolicy(
-            String childPolicy) {
+    public WorkflowExecutionTimedOutEventAttributes withChildPolicy(String childPolicy) {
         setChildPolicy(childPolicy);
         return this;
     }
 
     /**
      * <p>
-     * The policy used for the child workflow executions of this workflow
-     * execution.
+     * The policy used for the child workflow executions of this workflow execution.
      * </p>
      * <p>
      * The supported child policies are:
      * </p>
      * <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each
-     * child execution by recording a
-     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is
-     * up to the decider to take appropriate actions when it receives an
-     * execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will
-     * continue to run.</li>
+     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
+     * actions when it receives an execution history with this event.</li>
+     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
      * </ul>
      * 
      * @param childPolicy
-     *        The policy used for the child workflow executions of this workflow
-     *        execution.</p>
+     *        The policy used for the child workflow executions of this workflow execution.</p>
      *        <p>
      *        The supported child policies are:
      *        </p>
      *        <ul>
      *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted
-     *        for each child execution by recording a
-     *        <code>WorkflowExecutionCancelRequested</code> event in its
-     *        history. It is up to the decider to take appropriate actions when
-     *        it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions
-     *        will continue to run.</li>
+     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
+     *        appropriate actions when it receives an execution history with this event.</li>
+     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
      * @see ChildPolicy
      */
 
@@ -297,52 +252,41 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable,
 
     /**
      * <p>
-     * The policy used for the child workflow executions of this workflow
-     * execution.
+     * The policy used for the child workflow executions of this workflow execution.
      * </p>
      * <p>
      * The supported child policies are:
      * </p>
      * <ul>
      * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each
-     * child execution by recording a
-     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is
-     * up to the decider to take appropriate actions when it receives an
-     * execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will
-     * continue to run.</li>
+     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
+     * actions when it receives an execution history with this event.</li>
+     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
      * </ul>
      * 
      * @param childPolicy
-     *        The policy used for the child workflow executions of this workflow
-     *        execution.</p>
+     *        The policy used for the child workflow executions of this workflow execution.</p>
      *        <p>
      *        The supported child policies are:
      *        </p>
      *        <ul>
      *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted
-     *        for each child execution by recording a
-     *        <code>WorkflowExecutionCancelRequested</code> event in its
-     *        history. It is up to the decider to take appropriate actions when
-     *        it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions
-     *        will continue to run.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
+     *        appropriate actions when it receives an execution history with this event.</li>
+     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChildPolicy
      */
 
-    public WorkflowExecutionTimedOutEventAttributes withChildPolicy(
-            ChildPolicy childPolicy) {
+    public WorkflowExecutionTimedOutEventAttributes withChildPolicy(ChildPolicy childPolicy) {
         setChildPolicy(childPolicy);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -372,13 +316,11 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable,
         WorkflowExecutionTimedOutEventAttributes other = (WorkflowExecutionTimedOutEventAttributes) obj;
         if (other.getTimeoutType() == null ^ this.getTimeoutType() == null)
             return false;
-        if (other.getTimeoutType() != null
-                && other.getTimeoutType().equals(this.getTimeoutType()) == false)
+        if (other.getTimeoutType() != null && other.getTimeoutType().equals(this.getTimeoutType()) == false)
             return false;
         if (other.getChildPolicy() == null ^ this.getChildPolicy() == null)
             return false;
-        if (other.getChildPolicy() != null
-                && other.getChildPolicy().equals(this.getChildPolicy()) == false)
+        if (other.getChildPolicy() != null && other.getChildPolicy().equals(this.getChildPolicy()) == false)
             return false;
         return true;
     }
@@ -388,12 +330,8 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getTimeoutType() == null) ? 0 : getTimeoutType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getChildPolicy() == null) ? 0 : getChildPolicy().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutType() == null) ? 0 : getTimeoutType().hashCode());
+        hashCode = prime * hashCode + ((getChildPolicy() == null) ? 0 : getChildPolicy().hashCode());
         return hashCode;
     }
 
@@ -402,9 +340,7 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable,
         try {
             return (WorkflowExecutionTimedOutEventAttributes) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

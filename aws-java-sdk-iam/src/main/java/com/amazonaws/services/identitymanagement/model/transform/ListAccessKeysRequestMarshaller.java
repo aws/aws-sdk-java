@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
@@ -31,36 +29,29 @@ import com.amazonaws.util.IdempotentUtils;
  * ListAccessKeysRequest Marshaller
  */
 
-public class ListAccessKeysRequestMarshaller implements
-        Marshaller<Request<ListAccessKeysRequest>, ListAccessKeysRequest> {
+public class ListAccessKeysRequestMarshaller implements Marshaller<Request<ListAccessKeysRequest>, ListAccessKeysRequest> {
 
-    public Request<ListAccessKeysRequest> marshall(
-            ListAccessKeysRequest listAccessKeysRequest) {
+    public Request<ListAccessKeysRequest> marshall(ListAccessKeysRequest listAccessKeysRequest) {
 
         if (listAccessKeysRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListAccessKeysRequest> request = new DefaultRequest<ListAccessKeysRequest>(
-                listAccessKeysRequest, "AmazonIdentityManagement");
+        Request<ListAccessKeysRequest> request = new DefaultRequest<ListAccessKeysRequest>(listAccessKeysRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListAccessKeys");
         request.addParameter("Version", "2010-05-08");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (listAccessKeysRequest.getUserName() != null) {
-            request.addParameter("UserName",
-                    StringUtils.fromString(listAccessKeysRequest.getUserName()));
+            request.addParameter("UserName", StringUtils.fromString(listAccessKeysRequest.getUserName()));
         }
 
         if (listAccessKeysRequest.getMarker() != null) {
-            request.addParameter("Marker",
-                    StringUtils.fromString(listAccessKeysRequest.getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(listAccessKeysRequest.getMarker()));
         }
 
         if (listAccessKeysRequest.getMaxItems() != null) {
-            request.addParameter("MaxItems", StringUtils
-                    .fromInteger(listAccessKeysRequest.getMaxItems()));
+            request.addParameter("MaxItems", StringUtils.fromInteger(listAccessKeysRequest.getMaxItems()));
         }
 
         return request;

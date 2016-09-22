@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.ResetNetworkInterfaceAttribute
  * Contains the parameters for ResetNetworkInterfaceAttribute.
  * </p>
  */
-public class ResetNetworkInterfaceAttributeRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable,
+public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<ResetNetworkInterfaceAttributeRequest> {
 
     /**
@@ -36,8 +33,7 @@ public class ResetNetworkInterfaceAttributeRequest extends
     private String networkInterfaceId;
     /**
      * <p>
-     * The source/destination checking attribute. Resets the value to
-     * <code>true</code>.
+     * The source/destination checking attribute. Resets the value to <code>true</code>.
      * </p>
      */
     private String sourceDestCheck;
@@ -74,25 +70,21 @@ public class ResetNetworkInterfaceAttributeRequest extends
      * 
      * @param networkInterfaceId
      *        The ID of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResetNetworkInterfaceAttributeRequest withNetworkInterfaceId(
-            String networkInterfaceId) {
+    public ResetNetworkInterfaceAttributeRequest withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
         return this;
     }
 
     /**
      * <p>
-     * The source/destination checking attribute. Resets the value to
-     * <code>true</code>.
+     * The source/destination checking attribute. Resets the value to <code>true</code>.
      * </p>
      * 
      * @param sourceDestCheck
-     *        The source/destination checking attribute. Resets the value to
-     *        <code>true</code>.
+     *        The source/destination checking attribute. Resets the value to <code>true</code>.
      */
 
     public void setSourceDestCheck(String sourceDestCheck) {
@@ -101,12 +93,10 @@ public class ResetNetworkInterfaceAttributeRequest extends
 
     /**
      * <p>
-     * The source/destination checking attribute. Resets the value to
-     * <code>true</code>.
+     * The source/destination checking attribute. Resets the value to <code>true</code>.
      * </p>
      * 
-     * @return The source/destination checking attribute. Resets the value to
-     *         <code>true</code>.
+     * @return The source/destination checking attribute. Resets the value to <code>true</code>.
      */
 
     public String getSourceDestCheck() {
@@ -115,39 +105,32 @@ public class ResetNetworkInterfaceAttributeRequest extends
 
     /**
      * <p>
-     * The source/destination checking attribute. Resets the value to
-     * <code>true</code>.
+     * The source/destination checking attribute. Resets the value to <code>true</code>.
      * </p>
      * 
      * @param sourceDestCheck
-     *        The source/destination checking attribute. Resets the value to
-     *        <code>true</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The source/destination checking attribute. Resets the value to <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResetNetworkInterfaceAttributeRequest withSourceDestCheck(
-            String sourceDestCheck) {
+    public ResetNetworkInterfaceAttributeRequest withSourceDestCheck(String sourceDestCheck) {
         setSourceDestCheck(sourceDestCheck);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<ResetNetworkInterfaceAttributeRequest> getDryRunRequest() {
-        Request<ResetNetworkInterfaceAttributeRequest> request = new ResetNetworkInterfaceAttributeRequestMarshaller()
-                .marshall(this);
+        Request<ResetNetworkInterfaceAttributeRequest> request = new ResetNetworkInterfaceAttributeRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -175,18 +158,13 @@ public class ResetNetworkInterfaceAttributeRequest extends
         if (obj instanceof ResetNetworkInterfaceAttributeRequest == false)
             return false;
         ResetNetworkInterfaceAttributeRequest other = (ResetNetworkInterfaceAttributeRequest) obj;
-        if (other.getNetworkInterfaceId() == null
-                ^ this.getNetworkInterfaceId() == null)
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
-        if (other.getNetworkInterfaceId() != null
-                && other.getNetworkInterfaceId().equals(
-                        this.getNetworkInterfaceId()) == false)
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
-        if (other.getSourceDestCheck() == null
-                ^ this.getSourceDestCheck() == null)
+        if (other.getSourceDestCheck() == null ^ this.getSourceDestCheck() == null)
             return false;
-        if (other.getSourceDestCheck() != null
-                && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
+        if (other.getSourceDestCheck() != null && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
             return false;
         return true;
     }
@@ -196,14 +174,8 @@ public class ResetNetworkInterfaceAttributeRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaceId() == null) ? 0
-                        : getNetworkInterfaceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck().hashCode());
         return hashCode;
     }
 

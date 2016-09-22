@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Contains a paginated collection of DomainInfo structures.
  * </p>
  */
-public class DomainInfos extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DomainInfos extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,14 +29,12 @@ public class DomainInfos extends
     private java.util.List<DomainInfo> domainInfos;
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      */
     private String nextPageToken;
@@ -80,22 +74,19 @@ public class DomainInfos extends
      * A list of DomainInfo structures.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDomainInfos(java.util.Collection)} or
-     * {@link #withDomainInfos(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDomainInfos(java.util.Collection)} or {@link #withDomainInfos(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param domainInfos
      *        A list of DomainInfo structures.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainInfos withDomainInfos(DomainInfo... domainInfos) {
         if (this.domainInfos == null) {
-            setDomainInfos(new java.util.ArrayList<DomainInfo>(
-                    domainInfos.length));
+            setDomainInfos(new java.util.ArrayList<DomainInfo>(domainInfos.length));
         }
         for (DomainInfo ele : domainInfos) {
             this.domainInfos.add(ele);
@@ -110,37 +101,30 @@ public class DomainInfos extends
      * 
      * @param domainInfos
      *        A list of DomainInfo structures.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DomainInfos withDomainInfos(
-            java.util.Collection<DomainInfo> domainInfos) {
+    public DomainInfos withDomainInfos(java.util.Collection<DomainInfo> domainInfos) {
         setDomainInfos(domainInfos);
         return this;
     }
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call,
-     *        there are more results available. To retrieve the next page of
-     *        results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments
-     *        unchanged.</p>
+     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
+     *        retrieve the next page of results, make the call again using the returned token in
+     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
      *        <p>
-     *        The configured <code>maximumPageSize</code> determines how many
-     *        results can be returned in a single call.
+     *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -149,24 +133,19 @@ public class DomainInfos extends
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
-     * @return If a <code>NextPageToken</code> was returned by a previous call,
-     *         there are more results available. To retrieve the next page of
-     *         results, make the call again using the returned token in
-     *         <code>nextPageToken</code>. Keep all other arguments
-     *         unchanged.</p>
+     * @return If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
+     *         retrieve the next page of results, make the call again using the returned token in
+     *         <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
      *         <p>
-     *         The configured <code>maximumPageSize</code> determines how many
-     *         results can be returned in a single call.
+     *         The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      */
 
     public String getNextPageToken() {
@@ -175,27 +154,21 @@ public class DomainInfos extends
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call,
-     *        there are more results available. To retrieve the next page of
-     *        results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments
-     *        unchanged.</p>
+     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
+     *        retrieve the next page of results, make the call again using the returned token in
+     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
      *        <p>
-     *        The configured <code>maximumPageSize</code> determines how many
-     *        results can be returned in a single call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainInfos withNextPageToken(String nextPageToken) {
@@ -204,8 +177,7 @@ public class DomainInfos extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -235,13 +207,11 @@ public class DomainInfos extends
         DomainInfos other = (DomainInfos) obj;
         if (other.getDomainInfos() == null ^ this.getDomainInfos() == null)
             return false;
-        if (other.getDomainInfos() != null
-                && other.getDomainInfos().equals(this.getDomainInfos()) == false)
+        if (other.getDomainInfos() != null && other.getDomainInfos().equals(this.getDomainInfos()) == false)
             return false;
         if (other.getNextPageToken() == null ^ this.getNextPageToken() == null)
             return false;
-        if (other.getNextPageToken() != null
-                && other.getNextPageToken().equals(this.getNextPageToken()) == false)
+        if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false)
             return false;
         return true;
     }
@@ -251,13 +221,8 @@ public class DomainInfos extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDomainInfos() == null) ? 0 : getDomainInfos().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextPageToken() == null) ? 0 : getNextPageToken()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDomainInfos() == null) ? 0 : getDomainInfos().hashCode());
+        hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
         return hashCode;
     }
 
@@ -266,9 +231,7 @@ public class DomainInfos extends
         try {
             return (DomainInfos) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -21,27 +19,22 @@ import java.io.Serializable;
  * The output from the DescribeEndpoint operation.
  * </p>
  */
-public class DescribeEndpointResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The endpoint. The format of the endpoint is as follows:
-     * <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
+     * The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
      * </p>
      */
     private String endpointAddress;
 
     /**
      * <p>
-     * The endpoint. The format of the endpoint is as follows:
-     * <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
+     * The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
      * </p>
      * 
      * @param endpointAddress
-     *        The endpoint. The format of the endpoint is as follows:
-     *        <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
+     *        The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
      */
 
     public void setEndpointAddress(String endpointAddress) {
@@ -50,8 +43,7 @@ public class DescribeEndpointResult extends
 
     /**
      * <p>
-     * The endpoint. The format of the endpoint is as follows:
-     * <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
+     * The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
      * </p>
      * 
      * @return The endpoint. The format of the endpoint is as follows:
@@ -64,15 +56,12 @@ public class DescribeEndpointResult extends
 
     /**
      * <p>
-     * The endpoint. The format of the endpoint is as follows:
-     * <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
+     * The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
      * </p>
      * 
      * @param endpointAddress
-     *        The endpoint. The format of the endpoint is as follows:
-     *        <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEndpointResult withEndpointAddress(String endpointAddress) {
@@ -81,8 +70,7 @@ public class DescribeEndpointResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -108,11 +96,9 @@ public class DescribeEndpointResult extends
         if (obj instanceof DescribeEndpointResult == false)
             return false;
         DescribeEndpointResult other = (DescribeEndpointResult) obj;
-        if (other.getEndpointAddress() == null
-                ^ this.getEndpointAddress() == null)
+        if (other.getEndpointAddress() == null ^ this.getEndpointAddress() == null)
             return false;
-        if (other.getEndpointAddress() != null
-                && other.getEndpointAddress().equals(this.getEndpointAddress()) == false)
+        if (other.getEndpointAddress() != null && other.getEndpointAddress().equals(this.getEndpointAddress()) == false)
             return false;
         return true;
     }
@@ -122,10 +108,7 @@ public class DescribeEndpointResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEndpointAddress() == null) ? 0 : getEndpointAddress()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getEndpointAddress() == null) ? 0 : getEndpointAddress().hashCode());
         return hashCode;
     }
 
@@ -134,9 +117,7 @@ public class DescribeEndpointResult extends
         try {
             return (DescribeEndpointResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

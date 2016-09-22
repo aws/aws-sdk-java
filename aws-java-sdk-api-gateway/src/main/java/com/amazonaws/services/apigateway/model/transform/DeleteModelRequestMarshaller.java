@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * DeleteModelRequest Marshaller
  */
-public class DeleteModelRequestMarshaller implements
-        Marshaller<Request<DeleteModelRequest>, DeleteModelRequest> {
+public class DeleteModelRequestMarshaller implements Marshaller<Request<DeleteModelRequest>, DeleteModelRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,31 +49,22 @@ public class DeleteModelRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DeleteModelRequest> marshall(
-            DeleteModelRequest deleteModelRequest) {
+    public Request<DeleteModelRequest> marshall(DeleteModelRequest deleteModelRequest) {
 
         if (deleteModelRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteModelRequest> request = new DefaultRequest<DeleteModelRequest>(
-                deleteModelRequest, "AmazonApiGateway");
+        Request<DeleteModelRequest> request = new DefaultRequest<DeleteModelRequest>(deleteModelRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/restapis/{restapi_id}/models/{model_name}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (deleteModelRequest.getRestApiId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(deleteModelRequest
-                                .getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{model_name}",
-                (deleteModelRequest.getModelName() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(deleteModelRequest
-                                .getModelName()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{restapi_id}",
+                (deleteModelRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteModelRequest.getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{model_name}",
+                (deleteModelRequest.getModelName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteModelRequest.getModelName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

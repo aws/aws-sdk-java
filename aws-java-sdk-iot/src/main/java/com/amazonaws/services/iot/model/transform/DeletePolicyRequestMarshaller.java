@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * DeletePolicyRequest Marshaller
  */
-public class DeletePolicyRequestMarshaller implements
-        Marshaller<Request<DeletePolicyRequest>, DeletePolicyRequest> {
+public class DeletePolicyRequestMarshaller implements Marshaller<Request<DeletePolicyRequest>, DeletePolicyRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,26 +49,23 @@ public class DeletePolicyRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DeletePolicyRequest> marshall(
-            DeletePolicyRequest deletePolicyRequest) {
+    public Request<DeletePolicyRequest> marshall(DeletePolicyRequest deletePolicyRequest) {
 
         if (deletePolicyRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeletePolicyRequest> request = new DefaultRequest<DeletePolicyRequest>(
-                deletePolicyRequest, "AWSIot");
+        Request<DeletePolicyRequest> request = new DefaultRequest<DeletePolicyRequest>(deletePolicyRequest, "AWSIot");
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/policies/{policyName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{policyName}",
-                (deletePolicyRequest.getPolicyName() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(deletePolicyRequest
-                                .getPolicyName()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{policyName}",
+                        (deletePolicyRequest.getPolicyName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deletePolicyRequest.getPolicyName()),
+                                false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

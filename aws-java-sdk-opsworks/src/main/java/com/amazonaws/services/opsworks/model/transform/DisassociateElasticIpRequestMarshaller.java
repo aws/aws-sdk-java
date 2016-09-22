@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -35,55 +33,44 @@ import com.amazonaws.protocol.json.*;
 /**
  * DisassociateElasticIpRequest Marshaller
  */
-public class DisassociateElasticIpRequestMarshaller
-        implements
-        Marshaller<Request<DisassociateElasticIpRequest>, DisassociateElasticIpRequest> {
+public class DisassociateElasticIpRequestMarshaller implements Marshaller<Request<DisassociateElasticIpRequest>, DisassociateElasticIpRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DisassociateElasticIpRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DisassociateElasticIpRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DisassociateElasticIpRequest> marshall(
-            DisassociateElasticIpRequest disassociateElasticIpRequest) {
+    public Request<DisassociateElasticIpRequest> marshall(DisassociateElasticIpRequest disassociateElasticIpRequest) {
 
         if (disassociateElasticIpRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DisassociateElasticIpRequest> request = new DefaultRequest<DisassociateElasticIpRequest>(
-                disassociateElasticIpRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target",
-                "OpsWorks_20130218.DisassociateElasticIp");
+        Request<DisassociateElasticIpRequest> request = new DefaultRequest<DisassociateElasticIpRequest>(disassociateElasticIpRequest, "AWSOpsWorks");
+        request.addHeader("X-Amz-Target", "OpsWorks_20130218.DisassociateElasticIp");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (disassociateElasticIpRequest.getElasticIp() != null) {
-                jsonGenerator.writeFieldName("ElasticIp").writeValue(
-                        disassociateElasticIpRequest.getElasticIp());
+                jsonGenerator.writeFieldName("ElasticIp").writeValue(disassociateElasticIpRequest.getElasticIp());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

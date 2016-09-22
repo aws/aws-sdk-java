@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * See the example below for a sample response.
  * </p>
  */
-public class DescribeEnvironmentHealthResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,26 +29,23 @@ public class DescribeEnvironmentHealthResult extends
     private String environmentName;
     /**
      * <p>
-     * Contains the response body with information about the health of the
-     * environment.
+     * Contains the response body with information about the health of the environment.
      * </p>
      */
     private String healthStatus;
     /**
      * <p>
-     * Returns the health status value of the environment. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the health status value of the environment. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * Returns the color indicator that tells you information about the health
-     * of the environment. For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the color indicator that tells you information about the health of the environment. For more information,
+     * see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      */
     private String color;
@@ -105,25 +98,21 @@ public class DescribeEnvironmentHealthResult extends
      * 
      * @param environmentName
      *        The AWS Elastic Beanstalk environment name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEnvironmentHealthResult withEnvironmentName(
-            String environmentName) {
+    public DescribeEnvironmentHealthResult withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
         return this;
     }
 
     /**
      * <p>
-     * Contains the response body with information about the health of the
-     * environment.
+     * Contains the response body with information about the health of the environment.
      * </p>
      * 
      * @param healthStatus
-     *        Contains the response body with information about the health of
-     *        the environment.
+     *        Contains the response body with information about the health of the environment.
      */
 
     public void setHealthStatus(String healthStatus) {
@@ -132,12 +121,10 @@ public class DescribeEnvironmentHealthResult extends
 
     /**
      * <p>
-     * Contains the response body with information about the health of the
-     * environment.
+     * Contains the response body with information about the health of the environment.
      * </p>
      * 
-     * @return Contains the response body with information about the health of
-     *         the environment.
+     * @return Contains the response body with information about the health of the environment.
      */
 
     public String getHealthStatus() {
@@ -146,15 +133,12 @@ public class DescribeEnvironmentHealthResult extends
 
     /**
      * <p>
-     * Contains the response body with information about the health of the
-     * environment.
+     * Contains the response body with information about the health of the environment.
      * </p>
      * 
      * @param healthStatus
-     *        Contains the response body with information about the health of
-     *        the environment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Contains the response body with information about the health of the environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEnvironmentHealthResult withHealthStatus(String healthStatus) {
@@ -164,17 +148,15 @@ public class DescribeEnvironmentHealthResult extends
 
     /**
      * <p>
-     * Returns the health status value of the environment. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the health status value of the environment. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
      * @param status
-     *        Returns the health status value of the environment. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *        >Health Colors and Statuses</a>.
+     *        Returns the health status value of the environment. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     *        Statuses</a>.
      * @see EnvironmentHealth
      */
 
@@ -184,16 +166,14 @@ public class DescribeEnvironmentHealthResult extends
 
     /**
      * <p>
-     * Returns the health status value of the environment. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the health status value of the environment. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
-     * @return Returns the health status value of the environment. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *         >Health Colors and Statuses</a>.
+     * @return Returns the health status value of the environment. For more information, see <a
+     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *         and Statuses</a>.
      * @see EnvironmentHealth
      */
 
@@ -203,19 +183,16 @@ public class DescribeEnvironmentHealthResult extends
 
     /**
      * <p>
-     * Returns the health status value of the environment. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the health status value of the environment. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
      * @param status
-     *        Returns the health status value of the environment. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *        >Health Colors and Statuses</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Returns the health status value of the environment. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     *        Statuses</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentHealth
      */
 
@@ -226,17 +203,15 @@ public class DescribeEnvironmentHealthResult extends
 
     /**
      * <p>
-     * Returns the health status value of the environment. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the health status value of the environment. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
      * @param status
-     *        Returns the health status value of the environment. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *        >Health Colors and Statuses</a>.
+     *        Returns the health status value of the environment. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     *        Statuses</a>.
      * @see EnvironmentHealth
      */
 
@@ -246,19 +221,16 @@ public class DescribeEnvironmentHealthResult extends
 
     /**
      * <p>
-     * Returns the health status value of the environment. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the health status value of the environment. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
      * @param status
-     *        Returns the health status value of the environment. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *        >Health Colors and Statuses</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Returns the health status value of the environment. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     *        Statuses</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentHealth
      */
 
@@ -269,17 +241,16 @@ public class DescribeEnvironmentHealthResult extends
 
     /**
      * <p>
-     * Returns the color indicator that tells you information about the health
-     * of the environment. For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the color indicator that tells you information about the health of the environment. For more information,
+     * see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
      * @param color
-     *        Returns the color indicator that tells you information about the
-     *        health of the environment. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *        >Health Colors and Statuses</a>.
+     *        Returns the color indicator that tells you information about the health of the environment. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     *        Statuses</a>.
      */
 
     public void setColor(String color) {
@@ -288,16 +259,15 @@ public class DescribeEnvironmentHealthResult extends
 
     /**
      * <p>
-     * Returns the color indicator that tells you information about the health
-     * of the environment. For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the color indicator that tells you information about the health of the environment. For more information,
+     * see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
-     * @return Returns the color indicator that tells you information about the
-     *         health of the environment. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *         >Health Colors and Statuses</a>.
+     * @return Returns the color indicator that tells you information about the health of the environment. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *         and Statuses</a>.
      */
 
     public String getColor() {
@@ -306,19 +276,17 @@ public class DescribeEnvironmentHealthResult extends
 
     /**
      * <p>
-     * Returns the color indicator that tells you information about the health
-     * of the environment. For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     * >Health Colors and Statuses</a>.
+     * Returns the color indicator that tells you information about the health of the environment. For more information,
+     * see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * Statuses</a>.
      * </p>
      * 
      * @param color
-     *        Returns the color indicator that tells you information about the
-     *        health of the environment. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
-     *        >Health Colors and Statuses</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Returns the color indicator that tells you information about the health of the environment. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     *        Statuses</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEnvironmentHealthResult withColor(String color) {
@@ -364,22 +332,19 @@ public class DescribeEnvironmentHealthResult extends
      * Returns potential causes for the reported status.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCauses(java.util.Collection)} or
-     * {@link #withCauses(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCauses(java.util.Collection)} or {@link #withCauses(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param causes
      *        Returns potential causes for the reported status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEnvironmentHealthResult withCauses(String... causes) {
         if (this.causes == null) {
-            setCauses(new com.amazonaws.internal.SdkInternalList<String>(
-                    causes.length));
+            setCauses(new com.amazonaws.internal.SdkInternalList<String>(causes.length));
         }
         for (String ele : causes) {
             this.causes.add(ele);
@@ -394,12 +359,10 @@ public class DescribeEnvironmentHealthResult extends
      * 
      * @param causes
      *        Returns potential causes for the reported status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEnvironmentHealthResult withCauses(
-            java.util.Collection<String> causes) {
+    public DescribeEnvironmentHealthResult withCauses(java.util.Collection<String> causes) {
         setCauses(causes);
         return this;
     }
@@ -422,12 +385,10 @@ public class DescribeEnvironmentHealthResult extends
 
     /**
      * @param applicationMetrics
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEnvironmentHealthResult withApplicationMetrics(
-            ApplicationMetrics applicationMetrics) {
+    public DescribeEnvironmentHealthResult withApplicationMetrics(ApplicationMetrics applicationMetrics) {
         setApplicationMetrics(applicationMetrics);
         return this;
     }
@@ -450,12 +411,10 @@ public class DescribeEnvironmentHealthResult extends
 
     /**
      * @param instancesHealth
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEnvironmentHealthResult withInstancesHealth(
-            InstanceHealthSummary instancesHealth) {
+    public DescribeEnvironmentHealthResult withInstancesHealth(InstanceHealthSummary instancesHealth) {
         setInstancesHealth(instancesHealth);
         return this;
     }
@@ -492,19 +451,16 @@ public class DescribeEnvironmentHealthResult extends
      * 
      * @param refreshedAt
      *        The date and time the information was last refreshed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEnvironmentHealthResult withRefreshedAt(
-            java.util.Date refreshedAt) {
+    public DescribeEnvironmentHealthResult withRefreshedAt(java.util.Date refreshedAt) {
         setRefreshedAt(refreshedAt);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -544,49 +500,37 @@ public class DescribeEnvironmentHealthResult extends
         if (obj instanceof DescribeEnvironmentHealthResult == false)
             return false;
         DescribeEnvironmentHealthResult other = (DescribeEnvironmentHealthResult) obj;
-        if (other.getEnvironmentName() == null
-                ^ this.getEnvironmentName() == null)
+        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
             return false;
-        if (other.getEnvironmentName() != null
-                && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
+        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
             return false;
         if (other.getHealthStatus() == null ^ this.getHealthStatus() == null)
             return false;
-        if (other.getHealthStatus() != null
-                && other.getHealthStatus().equals(this.getHealthStatus()) == false)
+        if (other.getHealthStatus() != null && other.getHealthStatus().equals(this.getHealthStatus()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getColor() == null ^ this.getColor() == null)
             return false;
-        if (other.getColor() != null
-                && other.getColor().equals(this.getColor()) == false)
+        if (other.getColor() != null && other.getColor().equals(this.getColor()) == false)
             return false;
         if (other.getCauses() == null ^ this.getCauses() == null)
             return false;
-        if (other.getCauses() != null
-                && other.getCauses().equals(this.getCauses()) == false)
+        if (other.getCauses() != null && other.getCauses().equals(this.getCauses()) == false)
             return false;
-        if (other.getApplicationMetrics() == null
-                ^ this.getApplicationMetrics() == null)
+        if (other.getApplicationMetrics() == null ^ this.getApplicationMetrics() == null)
             return false;
-        if (other.getApplicationMetrics() != null
-                && other.getApplicationMetrics().equals(
-                        this.getApplicationMetrics()) == false)
+        if (other.getApplicationMetrics() != null && other.getApplicationMetrics().equals(this.getApplicationMetrics()) == false)
             return false;
-        if (other.getInstancesHealth() == null
-                ^ this.getInstancesHealth() == null)
+        if (other.getInstancesHealth() == null ^ this.getInstancesHealth() == null)
             return false;
-        if (other.getInstancesHealth() != null
-                && other.getInstancesHealth().equals(this.getInstancesHealth()) == false)
+        if (other.getInstancesHealth() != null && other.getInstancesHealth().equals(this.getInstancesHealth()) == false)
             return false;
         if (other.getRefreshedAt() == null ^ this.getRefreshedAt() == null)
             return false;
-        if (other.getRefreshedAt() != null
-                && other.getRefreshedAt().equals(this.getRefreshedAt()) == false)
+        if (other.getRefreshedAt() != null && other.getRefreshedAt().equals(this.getRefreshedAt()) == false)
             return false;
         return true;
     }
@@ -596,31 +540,14 @@ public class DescribeEnvironmentHealthResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEnvironmentName() == null) ? 0 : getEnvironmentName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHealthStatus() == null) ? 0 : getHealthStatus()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getColor() == null) ? 0 : getColor().hashCode());
-        hashCode = prime * hashCode
-                + ((getCauses() == null) ? 0 : getCauses().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getApplicationMetrics() == null) ? 0
-                        : getApplicationMetrics().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstancesHealth() == null) ? 0 : getInstancesHealth()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRefreshedAt() == null) ? 0 : getRefreshedAt().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
+        hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getColor() == null) ? 0 : getColor().hashCode());
+        hashCode = prime * hashCode + ((getCauses() == null) ? 0 : getCauses().hashCode());
+        hashCode = prime * hashCode + ((getApplicationMetrics() == null) ? 0 : getApplicationMetrics().hashCode());
+        hashCode = prime * hashCode + ((getInstancesHealth() == null) ? 0 : getInstancesHealth().hashCode());
+        hashCode = prime * hashCode + ((getRefreshedAt() == null) ? 0 : getRefreshedAt().hashCode());
         return hashCode;
     }
 
@@ -629,9 +556,7 @@ public class DescribeEnvironmentHealthResult extends
         try {
             return (DescribeEnvironmentHealthResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

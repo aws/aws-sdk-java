@@ -313,7 +313,7 @@ public final class ConversionSchemas {
             // actually correct for @DynamoDBFlattened attributes, however,
             // its the best that can be done given only the method. The
             // proper way to get this information is using the model factory.
-            final StandardAnnotationMaps.FieldTypedMap annotations = StandardAnnotationMaps.of(getter, null);
+            final StandardAnnotationMaps.FieldMap annotations = StandardAnnotationMaps.of(getter, null);
             final DynamoDBMapperFieldModel.Builder builder = new DynamoDBMapperFieldModel.Builder(void.class, annotations);
             builder.with(attributeType);
             return builder.build();
@@ -1297,7 +1297,7 @@ public final class ConversionSchemas {
 
         @Override
         public ArgumentMarshaller getMarshaller(Method getter) {
-            final StandardAnnotationMaps.FieldTypedMap<?> annotations = StandardAnnotationMaps.of(getter, null);
+            final StandardAnnotationMaps.FieldMap<?> annotations = StandardAnnotationMaps.of(getter, null);
             final DynamoDBMarshalling marshalling = annotations.actualOf(DynamoDBMarshalling.class);
             if (marshalling != null) {
                 return new CustomMarshaller(marshalling.marshallerClass());
@@ -1326,7 +1326,7 @@ public final class ConversionSchemas {
         public ArgumentUnmarshaller getUnmarshaller(
                 Method getter,
                 Method setter) {
-            final StandardAnnotationMaps.FieldTypedMap<?> annotations = StandardAnnotationMaps.of(getter, null);
+            final StandardAnnotationMaps.FieldMap<?> annotations = StandardAnnotationMaps.of(getter, null);
             final DynamoDBMarshalling marshalling = annotations.actualOf(DynamoDBMarshalling.class);
             if (marshalling != null) {
                 return new CustomUnmarshaller(getter.getReturnType(), marshalling.marshallerClass());
@@ -1447,7 +1447,7 @@ public final class ConversionSchemas {
         }
 
         @Override
-        public Rule<V> getRule(ConversionType<V> type) {
+        public Rule<V> getRule(ConvertibleType<V> type) {
             if (customSchema && type.typeConverter() == null) {
                 return new ItemConverterRule<V>(type);
             } else {
@@ -1456,16 +1456,16 @@ public final class ConversionSchemas {
         }
 
         private final class ItemConverterRule<V> implements Rule<V>, DynamoDBTypeConverter<AttributeValue,V> {
-            private final ConversionType<V> type;
-            private ItemConverterRule(final ConversionType<V> type) {
+            private final ConvertibleType<V> type;
+            private ItemConverterRule(final ConvertibleType<V> type) {
                 this.type = type;
             }
             @Override
-            public boolean isAssignableFrom(ConversionType<?> type) {
+            public boolean isAssignableFrom(ConvertibleType<?> type) {
                 return true;
             }
             @Override
-            public DynamoDBTypeConverter<AttributeValue,V> newConverter(ConversionType<V> type) {
+            public DynamoDBTypeConverter<AttributeValue,V> newConverter(ConvertibleType<V> type) {
                 return this;
             }
             @Override

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -37,9 +35,8 @@ public class CacheParameterGroupStatus implements Serializable, Cloneable {
     private String parameterApplyStatus;
     /**
      * <p>
-     * A list of the cache node IDs which need to be rebooted for parameter
-     * changes to be applied. A node ID is a numeric identifier (0001, 0002,
-     * etc.).
+     * A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a
+     * numeric identifier (0001, 0002, etc.).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> cacheNodeIdsToReboot;
@@ -76,12 +73,10 @@ public class CacheParameterGroupStatus implements Serializable, Cloneable {
      * 
      * @param cacheParameterGroupName
      *        The name of the cache parameter group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CacheParameterGroupStatus withCacheParameterGroupName(
-            String cacheParameterGroupName) {
+    public CacheParameterGroupStatus withCacheParameterGroupName(String cacheParameterGroupName) {
         setCacheParameterGroupName(cacheParameterGroupName);
         return this;
     }
@@ -118,26 +113,22 @@ public class CacheParameterGroupStatus implements Serializable, Cloneable {
      * 
      * @param parameterApplyStatus
      *        The status of parameter updates.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CacheParameterGroupStatus withParameterApplyStatus(
-            String parameterApplyStatus) {
+    public CacheParameterGroupStatus withParameterApplyStatus(String parameterApplyStatus) {
         setParameterApplyStatus(parameterApplyStatus);
         return this;
     }
 
     /**
      * <p>
-     * A list of the cache node IDs which need to be rebooted for parameter
-     * changes to be applied. A node ID is a numeric identifier (0001, 0002,
-     * etc.).
+     * A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a
+     * numeric identifier (0001, 0002, etc.).
      * </p>
      * 
-     * @return A list of the cache node IDs which need to be rebooted for
-     *         parameter changes to be applied. A node ID is a numeric
-     *         identifier (0001, 0002, etc.).
+     * @return A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is
+     *         a numeric identifier (0001, 0002, etc.).
      */
 
     public java.util.List<String> getCacheNodeIdsToReboot() {
@@ -149,54 +140,44 @@ public class CacheParameterGroupStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the cache node IDs which need to be rebooted for parameter
-     * changes to be applied. A node ID is a numeric identifier (0001, 0002,
-     * etc.).
+     * A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a
+     * numeric identifier (0001, 0002, etc.).
      * </p>
      * 
      * @param cacheNodeIdsToReboot
-     *        A list of the cache node IDs which need to be rebooted for
-     *        parameter changes to be applied. A node ID is a numeric identifier
-     *        (0001, 0002, etc.).
+     *        A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a
+     *        numeric identifier (0001, 0002, etc.).
      */
 
-    public void setCacheNodeIdsToReboot(
-            java.util.Collection<String> cacheNodeIdsToReboot) {
+    public void setCacheNodeIdsToReboot(java.util.Collection<String> cacheNodeIdsToReboot) {
         if (cacheNodeIdsToReboot == null) {
             this.cacheNodeIdsToReboot = null;
             return;
         }
 
-        this.cacheNodeIdsToReboot = new com.amazonaws.internal.SdkInternalList<String>(
-                cacheNodeIdsToReboot);
+        this.cacheNodeIdsToReboot = new com.amazonaws.internal.SdkInternalList<String>(cacheNodeIdsToReboot);
     }
 
     /**
      * <p>
-     * A list of the cache node IDs which need to be rebooted for parameter
-     * changes to be applied. A node ID is a numeric identifier (0001, 0002,
-     * etc.).
+     * A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a
+     * numeric identifier (0001, 0002, etc.).
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCacheNodeIdsToReboot(java.util.Collection)} or
-     * {@link #withCacheNodeIdsToReboot(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCacheNodeIdsToReboot(java.util.Collection)} or {@link #withCacheNodeIdsToReboot(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param cacheNodeIdsToReboot
-     *        A list of the cache node IDs which need to be rebooted for
-     *        parameter changes to be applied. A node ID is a numeric identifier
-     *        (0001, 0002, etc.).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a
+     *        numeric identifier (0001, 0002, etc.).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CacheParameterGroupStatus withCacheNodeIdsToReboot(
-            String... cacheNodeIdsToReboot) {
+    public CacheParameterGroupStatus withCacheNodeIdsToReboot(String... cacheNodeIdsToReboot) {
         if (this.cacheNodeIdsToReboot == null) {
-            setCacheNodeIdsToReboot(new com.amazonaws.internal.SdkInternalList<String>(
-                    cacheNodeIdsToReboot.length));
+            setCacheNodeIdsToReboot(new com.amazonaws.internal.SdkInternalList<String>(cacheNodeIdsToReboot.length));
         }
         for (String ele : cacheNodeIdsToReboot) {
             this.cacheNodeIdsToReboot.add(ele);
@@ -206,28 +187,23 @@ public class CacheParameterGroupStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the cache node IDs which need to be rebooted for parameter
-     * changes to be applied. A node ID is a numeric identifier (0001, 0002,
-     * etc.).
+     * A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a
+     * numeric identifier (0001, 0002, etc.).
      * </p>
      * 
      * @param cacheNodeIdsToReboot
-     *        A list of the cache node IDs which need to be rebooted for
-     *        parameter changes to be applied. A node ID is a numeric identifier
-     *        (0001, 0002, etc.).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a
+     *        numeric identifier (0001, 0002, etc.).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CacheParameterGroupStatus withCacheNodeIdsToReboot(
-            java.util.Collection<String> cacheNodeIdsToReboot) {
+    public CacheParameterGroupStatus withCacheNodeIdsToReboot(java.util.Collection<String> cacheNodeIdsToReboot) {
         setCacheNodeIdsToReboot(cacheNodeIdsToReboot);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -238,11 +214,9 @@ public class CacheParameterGroupStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheParameterGroupName() != null)
-            sb.append("CacheParameterGroupName: "
-                    + getCacheParameterGroupName() + ",");
+            sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
         if (getParameterApplyStatus() != null)
-            sb.append("ParameterApplyStatus: " + getParameterApplyStatus()
-                    + ",");
+            sb.append("ParameterApplyStatus: " + getParameterApplyStatus() + ",");
         if (getCacheNodeIdsToReboot() != null)
             sb.append("CacheNodeIdsToReboot: " + getCacheNodeIdsToReboot());
         sb.append("}");
@@ -259,26 +233,17 @@ public class CacheParameterGroupStatus implements Serializable, Cloneable {
         if (obj instanceof CacheParameterGroupStatus == false)
             return false;
         CacheParameterGroupStatus other = (CacheParameterGroupStatus) obj;
-        if (other.getCacheParameterGroupName() == null
-                ^ this.getCacheParameterGroupName() == null)
+        if (other.getCacheParameterGroupName() == null ^ this.getCacheParameterGroupName() == null)
             return false;
-        if (other.getCacheParameterGroupName() != null
-                && other.getCacheParameterGroupName().equals(
-                        this.getCacheParameterGroupName()) == false)
+        if (other.getCacheParameterGroupName() != null && other.getCacheParameterGroupName().equals(this.getCacheParameterGroupName()) == false)
             return false;
-        if (other.getParameterApplyStatus() == null
-                ^ this.getParameterApplyStatus() == null)
+        if (other.getParameterApplyStatus() == null ^ this.getParameterApplyStatus() == null)
             return false;
-        if (other.getParameterApplyStatus() != null
-                && other.getParameterApplyStatus().equals(
-                        this.getParameterApplyStatus()) == false)
+        if (other.getParameterApplyStatus() != null && other.getParameterApplyStatus().equals(this.getParameterApplyStatus()) == false)
             return false;
-        if (other.getCacheNodeIdsToReboot() == null
-                ^ this.getCacheNodeIdsToReboot() == null)
+        if (other.getCacheNodeIdsToReboot() == null ^ this.getCacheNodeIdsToReboot() == null)
             return false;
-        if (other.getCacheNodeIdsToReboot() != null
-                && other.getCacheNodeIdsToReboot().equals(
-                        this.getCacheNodeIdsToReboot()) == false)
+        if (other.getCacheNodeIdsToReboot() != null && other.getCacheNodeIdsToReboot().equals(this.getCacheNodeIdsToReboot()) == false)
             return false;
         return true;
     }
@@ -288,18 +253,9 @@ public class CacheParameterGroupStatus implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCacheParameterGroupName() == null) ? 0
-                        : getCacheParameterGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getParameterApplyStatus() == null) ? 0
-                        : getParameterApplyStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheNodeIdsToReboot() == null) ? 0
-                        : getCacheNodeIdsToReboot().hashCode());
+        hashCode = prime * hashCode + ((getCacheParameterGroupName() == null) ? 0 : getCacheParameterGroupName().hashCode());
+        hashCode = prime * hashCode + ((getParameterApplyStatus() == null) ? 0 : getParameterApplyStatus().hashCode());
+        hashCode = prime * hashCode + ((getCacheNodeIdsToReboot() == null) ? 0 : getCacheNodeIdsToReboot().hashCode());
         return hashCode;
     }
 
@@ -308,9 +264,7 @@ public class CacheParameterGroupStatus implements Serializable, Cloneable {
         try {
             return (CacheParameterGroupStatus) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

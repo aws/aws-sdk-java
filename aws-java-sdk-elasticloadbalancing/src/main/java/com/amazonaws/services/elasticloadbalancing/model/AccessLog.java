@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
@@ -37,8 +35,7 @@ public class AccessLog implements Serializable, Cloneable {
     private String s3BucketName;
     /**
      * <p>
-     * The interval for publishing the access logs. You can specify an interval
-     * of either 5 minutes or 60 minutes.
+     * The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.
      * </p>
      * <p>
      * Default: 60 minutes
@@ -47,9 +44,8 @@ public class AccessLog implements Serializable, Cloneable {
     private Integer emitInterval;
     /**
      * <p>
-     * The logical hierarchy you created for your Amazon S3 bucket, for example
-     * <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the
-     * log is placed at the root level of the bucket.
+     * The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If
+     * the prefix is not provided, the log is placed at the root level of the bucket.
      * </p>
      */
     private String s3BucketPrefix;
@@ -86,8 +82,7 @@ public class AccessLog implements Serializable, Cloneable {
      * 
      * @param enabled
      *        Specifies whether access logs are enabled for the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AccessLog withEnabled(Boolean enabled) {
@@ -125,8 +120,7 @@ public class AccessLog implements Serializable, Cloneable {
      * The name of the Amazon S3 bucket where the access logs are stored.
      * </p>
      * 
-     * @return The name of the Amazon S3 bucket where the access logs are
-     *         stored.
+     * @return The name of the Amazon S3 bucket where the access logs are stored.
      */
 
     public String getS3BucketName() {
@@ -140,8 +134,7 @@ public class AccessLog implements Serializable, Cloneable {
      * 
      * @param s3BucketName
      *        The name of the Amazon S3 bucket where the access logs are stored.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AccessLog withS3BucketName(String s3BucketName) {
@@ -151,16 +144,15 @@ public class AccessLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The interval for publishing the access logs. You can specify an interval
-     * of either 5 minutes or 60 minutes.
+     * The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.
      * </p>
      * <p>
      * Default: 60 minutes
      * </p>
      * 
      * @param emitInterval
-     *        The interval for publishing the access logs. You can specify an
-     *        interval of either 5 minutes or 60 minutes.</p>
+     *        The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60
+     *        minutes.</p>
      *        <p>
      *        Default: 60 minutes
      */
@@ -171,15 +163,14 @@ public class AccessLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The interval for publishing the access logs. You can specify an interval
-     * of either 5 minutes or 60 minutes.
+     * The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.
      * </p>
      * <p>
      * Default: 60 minutes
      * </p>
      * 
-     * @return The interval for publishing the access logs. You can specify an
-     *         interval of either 5 minutes or 60 minutes.</p>
+     * @return The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60
+     *         minutes.</p>
      *         <p>
      *         Default: 60 minutes
      */
@@ -190,20 +181,18 @@ public class AccessLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The interval for publishing the access logs. You can specify an interval
-     * of either 5 minutes or 60 minutes.
+     * The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.
      * </p>
      * <p>
      * Default: 60 minutes
      * </p>
      * 
      * @param emitInterval
-     *        The interval for publishing the access logs. You can specify an
-     *        interval of either 5 minutes or 60 minutes.</p>
+     *        The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60
+     *        minutes.</p>
      *        <p>
      *        Default: 60 minutes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AccessLog withEmitInterval(Integer emitInterval) {
@@ -213,15 +202,14 @@ public class AccessLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The logical hierarchy you created for your Amazon S3 bucket, for example
-     * <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the
-     * log is placed at the root level of the bucket.
+     * The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If
+     * the prefix is not provided, the log is placed at the root level of the bucket.
      * </p>
      * 
      * @param s3BucketPrefix
-     *        The logical hierarchy you created for your Amazon S3 bucket, for
-     *        example <code>my-bucket-prefix/prod</code>. If the prefix is not
-     *        provided, the log is placed at the root level of the bucket.
+     *        The logical hierarchy you created for your Amazon S3 bucket, for example
+     *        <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of
+     *        the bucket.
      */
 
     public void setS3BucketPrefix(String s3BucketPrefix) {
@@ -230,14 +218,13 @@ public class AccessLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The logical hierarchy you created for your Amazon S3 bucket, for example
-     * <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the
-     * log is placed at the root level of the bucket.
+     * The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If
+     * the prefix is not provided, the log is placed at the root level of the bucket.
      * </p>
      * 
-     * @return The logical hierarchy you created for your Amazon S3 bucket, for
-     *         example <code>my-bucket-prefix/prod</code>. If the prefix is not
-     *         provided, the log is placed at the root level of the bucket.
+     * @return The logical hierarchy you created for your Amazon S3 bucket, for example
+     *         <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of
+     *         the bucket.
      */
 
     public String getS3BucketPrefix() {
@@ -246,17 +233,15 @@ public class AccessLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The logical hierarchy you created for your Amazon S3 bucket, for example
-     * <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the
-     * log is placed at the root level of the bucket.
+     * The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If
+     * the prefix is not provided, the log is placed at the root level of the bucket.
      * </p>
      * 
      * @param s3BucketPrefix
-     *        The logical hierarchy you created for your Amazon S3 bucket, for
-     *        example <code>my-bucket-prefix/prod</code>. If the prefix is not
-     *        provided, the log is placed at the root level of the bucket.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The logical hierarchy you created for your Amazon S3 bucket, for example
+     *        <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of
+     *        the bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AccessLog withS3BucketPrefix(String s3BucketPrefix) {
@@ -265,8 +250,7 @@ public class AccessLog implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -300,24 +284,19 @@ public class AccessLog implements Serializable, Cloneable {
         AccessLog other = (AccessLog) obj;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
-        if (other.getEnabled() != null
-                && other.getEnabled().equals(this.getEnabled()) == false)
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
         if (other.getS3BucketName() == null ^ this.getS3BucketName() == null)
             return false;
-        if (other.getS3BucketName() != null
-                && other.getS3BucketName().equals(this.getS3BucketName()) == false)
+        if (other.getS3BucketName() != null && other.getS3BucketName().equals(this.getS3BucketName()) == false)
             return false;
         if (other.getEmitInterval() == null ^ this.getEmitInterval() == null)
             return false;
-        if (other.getEmitInterval() != null
-                && other.getEmitInterval().equals(this.getEmitInterval()) == false)
+        if (other.getEmitInterval() != null && other.getEmitInterval().equals(this.getEmitInterval()) == false)
             return false;
-        if (other.getS3BucketPrefix() == null
-                ^ this.getS3BucketPrefix() == null)
+        if (other.getS3BucketPrefix() == null ^ this.getS3BucketPrefix() == null)
             return false;
-        if (other.getS3BucketPrefix() != null
-                && other.getS3BucketPrefix().equals(this.getS3BucketPrefix()) == false)
+        if (other.getS3BucketPrefix() != null && other.getS3BucketPrefix().equals(this.getS3BucketPrefix()) == false)
             return false;
         return true;
     }
@@ -327,20 +306,10 @@ public class AccessLog implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getS3BucketName() == null) ? 0 : getS3BucketName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEmitInterval() == null) ? 0 : getEmitInterval()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getS3BucketPrefix() == null) ? 0 : getS3BucketPrefix()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getS3BucketName() == null) ? 0 : getS3BucketName().hashCode());
+        hashCode = prime * hashCode + ((getEmitInterval() == null) ? 0 : getEmitInterval().hashCode());
+        hashCode = prime * hashCode + ((getS3BucketPrefix() == null) ? 0 : getS3BucketPrefix().hashCode());
         return hashCode;
     }
 
@@ -349,9 +318,7 @@ public class AccessLog implements Serializable, Cloneable {
         try {
             return (AccessLog) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

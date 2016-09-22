@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * EventSubscription StAX Unmarshaller
  */
-public class EventSubscriptionStaxUnmarshaller implements
-        Unmarshaller<EventSubscription, StaxUnmarshallerContext> {
+public class EventSubscriptionStaxUnmarshaller implements Unmarshaller<EventSubscription, StaxUnmarshallerContext> {
 
-    public EventSubscription unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public EventSubscription unmarshall(StaxUnmarshallerContext context) throws Exception {
         EventSubscription eventSubscription = new EventSubscription();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,74 +46,57 @@ public class EventSubscriptionStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("CustomerAwsId", targetDepth)) {
-                    eventSubscription.setCustomerAwsId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventSubscription.setCustomerAwsId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("CustSubscriptionId", targetDepth)) {
-                    eventSubscription
-                            .setCustSubscriptionId(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    eventSubscription.setCustSubscriptionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("SnsTopicArn", targetDepth)) {
-                    eventSubscription.setSnsTopicArn(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventSubscription.setSnsTopicArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Status", targetDepth)) {
-                    eventSubscription.setStatus(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventSubscription.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("SubscriptionCreationTime",
-                        targetDepth)) {
-                    eventSubscription
-                            .setSubscriptionCreationTime(DateStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("SubscriptionCreationTime", targetDepth)) {
+                    eventSubscription.setSubscriptionCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("SourceType", targetDepth)) {
-                    eventSubscription.setSourceType(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventSubscription.setSourceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("SourceIdsList/SourceId",
-                        targetDepth)) {
-                    eventSubscription.withSourceIdsList(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("SourceIdsList/SourceId", targetDepth)) {
+                    eventSubscription.withSourceIdsList(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("EventCategoriesList/EventCategory",
-                        targetDepth)) {
-                    eventSubscription
-                            .withEventCategoriesList(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("EventCategoriesList/EventCategory", targetDepth)) {
+                    eventSubscription.withEventCategoriesList(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Severity", targetDepth)) {
-                    eventSubscription.setSeverity(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventSubscription.setSeverity(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Enabled", targetDepth)) {
-                    eventSubscription.setEnabled(BooleanStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventSubscription.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Tags/Tag", targetDepth)) {
-                    eventSubscription.withTags(TagStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventSubscription.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

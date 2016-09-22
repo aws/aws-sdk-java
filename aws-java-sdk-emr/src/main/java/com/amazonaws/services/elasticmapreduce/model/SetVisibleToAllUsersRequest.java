@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input to the SetVisibleToAllUsers action.
  * </p>
  */
-public class SetVisibleToAllUsersRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,11 +30,10 @@ public class SetVisibleToAllUsersRequest extends
     private com.amazonaws.internal.SdkInternalList<String> jobFlowIds;
     /**
      * <p>
-     * Whether the specified job flows are visible to all IAM users of the AWS
-     * account associated with the job flow. If this value is set to True, all
-     * IAM users of that AWS account can view and, if they have the proper IAM
-     * policy permissions set, manage the job flows. If it is set to False, only
-     * the IAM user that created a job flow can view and manage it.
+     * Whether the specified job flows are visible to all IAM users of the AWS account associated with the job flow. If
+     * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
+     * permissions set, manage the job flows. If it is set to False, only the IAM user that created a job flow can view
+     * and manage it.
      * </p>
      */
     private Boolean visibleToAllUsers;
@@ -48,8 +43,7 @@ public class SetVisibleToAllUsersRequest extends
      * Identifiers of the job flows to receive the new visibility setting.
      * </p>
      * 
-     * @return Identifiers of the job flows to receive the new visibility
-     *         setting.
+     * @return Identifiers of the job flows to receive the new visibility setting.
      */
 
     public java.util.List<String> getJobFlowIds() {
@@ -65,8 +59,7 @@ public class SetVisibleToAllUsersRequest extends
      * </p>
      * 
      * @param jobFlowIds
-     *        Identifiers of the job flows to receive the new visibility
-     *        setting.
+     *        Identifiers of the job flows to receive the new visibility setting.
      */
 
     public void setJobFlowIds(java.util.Collection<String> jobFlowIds) {
@@ -75,8 +68,7 @@ public class SetVisibleToAllUsersRequest extends
             return;
         }
 
-        this.jobFlowIds = new com.amazonaws.internal.SdkInternalList<String>(
-                jobFlowIds);
+        this.jobFlowIds = new com.amazonaws.internal.SdkInternalList<String>(jobFlowIds);
     }
 
     /**
@@ -84,23 +76,19 @@ public class SetVisibleToAllUsersRequest extends
      * Identifiers of the job flows to receive the new visibility setting.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setJobFlowIds(java.util.Collection)} or
-     * {@link #withJobFlowIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setJobFlowIds(java.util.Collection)} or {@link #withJobFlowIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param jobFlowIds
-     *        Identifiers of the job flows to receive the new visibility
-     *        setting.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Identifiers of the job flows to receive the new visibility setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetVisibleToAllUsersRequest withJobFlowIds(String... jobFlowIds) {
         if (this.jobFlowIds == null) {
-            setJobFlowIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    jobFlowIds.length));
+            setJobFlowIds(new com.amazonaws.internal.SdkInternalList<String>(jobFlowIds.length));
         }
         for (String ele : jobFlowIds) {
             this.jobFlowIds.add(ele);
@@ -114,34 +102,28 @@ public class SetVisibleToAllUsersRequest extends
      * </p>
      * 
      * @param jobFlowIds
-     *        Identifiers of the job flows to receive the new visibility
-     *        setting.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Identifiers of the job flows to receive the new visibility setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetVisibleToAllUsersRequest withJobFlowIds(
-            java.util.Collection<String> jobFlowIds) {
+    public SetVisibleToAllUsersRequest withJobFlowIds(java.util.Collection<String> jobFlowIds) {
         setJobFlowIds(jobFlowIds);
         return this;
     }
 
     /**
      * <p>
-     * Whether the specified job flows are visible to all IAM users of the AWS
-     * account associated with the job flow. If this value is set to True, all
-     * IAM users of that AWS account can view and, if they have the proper IAM
-     * policy permissions set, manage the job flows. If it is set to False, only
-     * the IAM user that created a job flow can view and manage it.
+     * Whether the specified job flows are visible to all IAM users of the AWS account associated with the job flow. If
+     * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
+     * permissions set, manage the job flows. If it is set to False, only the IAM user that created a job flow can view
+     * and manage it.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Whether the specified job flows are visible to all IAM users of
-     *        the AWS account associated with the job flow. If this value is set
-     *        to True, all IAM users of that AWS account can view and, if they
-     *        have the proper IAM policy permissions set, manage the job flows.
-     *        If it is set to False, only the IAM user that created a job flow
-     *        can view and manage it.
+     *        Whether the specified job flows are visible to all IAM users of the AWS account associated with the job
+     *        flow. If this value is set to True, all IAM users of that AWS account can view and, if they have the
+     *        proper IAM policy permissions set, manage the job flows. If it is set to False, only the IAM user that
+     *        created a job flow can view and manage it.
      */
 
     public void setVisibleToAllUsers(Boolean visibleToAllUsers) {
@@ -150,19 +132,16 @@ public class SetVisibleToAllUsersRequest extends
 
     /**
      * <p>
-     * Whether the specified job flows are visible to all IAM users of the AWS
-     * account associated with the job flow. If this value is set to True, all
-     * IAM users of that AWS account can view and, if they have the proper IAM
-     * policy permissions set, manage the job flows. If it is set to False, only
-     * the IAM user that created a job flow can view and manage it.
+     * Whether the specified job flows are visible to all IAM users of the AWS account associated with the job flow. If
+     * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
+     * permissions set, manage the job flows. If it is set to False, only the IAM user that created a job flow can view
+     * and manage it.
      * </p>
      * 
-     * @return Whether the specified job flows are visible to all IAM users of
-     *         the AWS account associated with the job flow. If this value is
-     *         set to True, all IAM users of that AWS account can view and, if
-     *         they have the proper IAM policy permissions set, manage the job
-     *         flows. If it is set to False, only the IAM user that created a
-     *         job flow can view and manage it.
+     * @return Whether the specified job flows are visible to all IAM users of the AWS account associated with the job
+     *         flow. If this value is set to True, all IAM users of that AWS account can view and, if they have the
+     *         proper IAM policy permissions set, manage the job flows. If it is set to False, only the IAM user that
+     *         created a job flow can view and manage it.
      */
 
     public Boolean getVisibleToAllUsers() {
@@ -171,45 +150,37 @@ public class SetVisibleToAllUsersRequest extends
 
     /**
      * <p>
-     * Whether the specified job flows are visible to all IAM users of the AWS
-     * account associated with the job flow. If this value is set to True, all
-     * IAM users of that AWS account can view and, if they have the proper IAM
-     * policy permissions set, manage the job flows. If it is set to False, only
-     * the IAM user that created a job flow can view and manage it.
+     * Whether the specified job flows are visible to all IAM users of the AWS account associated with the job flow. If
+     * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
+     * permissions set, manage the job flows. If it is set to False, only the IAM user that created a job flow can view
+     * and manage it.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Whether the specified job flows are visible to all IAM users of
-     *        the AWS account associated with the job flow. If this value is set
-     *        to True, all IAM users of that AWS account can view and, if they
-     *        have the proper IAM policy permissions set, manage the job flows.
-     *        If it is set to False, only the IAM user that created a job flow
-     *        can view and manage it.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Whether the specified job flows are visible to all IAM users of the AWS account associated with the job
+     *        flow. If this value is set to True, all IAM users of that AWS account can view and, if they have the
+     *        proper IAM policy permissions set, manage the job flows. If it is set to False, only the IAM user that
+     *        created a job flow can view and manage it.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetVisibleToAllUsersRequest withVisibleToAllUsers(
-            Boolean visibleToAllUsers) {
+    public SetVisibleToAllUsersRequest withVisibleToAllUsers(Boolean visibleToAllUsers) {
         setVisibleToAllUsers(visibleToAllUsers);
         return this;
     }
 
     /**
      * <p>
-     * Whether the specified job flows are visible to all IAM users of the AWS
-     * account associated with the job flow. If this value is set to True, all
-     * IAM users of that AWS account can view and, if they have the proper IAM
-     * policy permissions set, manage the job flows. If it is set to False, only
-     * the IAM user that created a job flow can view and manage it.
+     * Whether the specified job flows are visible to all IAM users of the AWS account associated with the job flow. If
+     * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
+     * permissions set, manage the job flows. If it is set to False, only the IAM user that created a job flow can view
+     * and manage it.
      * </p>
      * 
-     * @return Whether the specified job flows are visible to all IAM users of
-     *         the AWS account associated with the job flow. If this value is
-     *         set to True, all IAM users of that AWS account can view and, if
-     *         they have the proper IAM policy permissions set, manage the job
-     *         flows. If it is set to False, only the IAM user that created a
-     *         job flow can view and manage it.
+     * @return Whether the specified job flows are visible to all IAM users of the AWS account associated with the job
+     *         flow. If this value is set to True, all IAM users of that AWS account can view and, if they have the
+     *         proper IAM policy permissions set, manage the job flows. If it is set to False, only the IAM user that
+     *         created a job flow can view and manage it.
      */
 
     public Boolean isVisibleToAllUsers() {
@@ -217,8 +188,7 @@ public class SetVisibleToAllUsersRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -248,15 +218,11 @@ public class SetVisibleToAllUsersRequest extends
         SetVisibleToAllUsersRequest other = (SetVisibleToAllUsersRequest) obj;
         if (other.getJobFlowIds() == null ^ this.getJobFlowIds() == null)
             return false;
-        if (other.getJobFlowIds() != null
-                && other.getJobFlowIds().equals(this.getJobFlowIds()) == false)
+        if (other.getJobFlowIds() != null && other.getJobFlowIds().equals(this.getJobFlowIds()) == false)
             return false;
-        if (other.getVisibleToAllUsers() == null
-                ^ this.getVisibleToAllUsers() == null)
+        if (other.getVisibleToAllUsers() == null ^ this.getVisibleToAllUsers() == null)
             return false;
-        if (other.getVisibleToAllUsers() != null
-                && other.getVisibleToAllUsers().equals(
-                        this.getVisibleToAllUsers()) == false)
+        if (other.getVisibleToAllUsers() != null && other.getVisibleToAllUsers().equals(this.getVisibleToAllUsers()) == false)
             return false;
         return true;
     }
@@ -266,12 +232,8 @@ public class SetVisibleToAllUsersRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJobFlowIds() == null) ? 0 : getJobFlowIds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVisibleToAllUsers() == null) ? 0
-                        : getVisibleToAllUsers().hashCode());
+        hashCode = prime * hashCode + ((getJobFlowIds() == null) ? 0 : getJobFlowIds().hashCode());
+        hashCode = prime * hashCode + ((getVisibleToAllUsers() == null) ? 0 : getVisibleToAllUsers().hashCode());
         return hashCode;
     }
 

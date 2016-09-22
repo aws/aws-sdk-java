@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
 
@@ -37,16 +35,14 @@ public class UploadListElement implements Serializable, Cloneable {
     private String vaultARN;
     /**
      * <p>
-     * The description of the archive that was specified in the Initiate
-     * Multipart Upload request.
+     * The description of the archive that was specified in the Initiate Multipart Upload request.
      * </p>
      */
     private String archiveDescription;
     /**
      * <p>
-     * The part size, in bytes, specified in the Initiate Multipart Upload
-     * request. This is the size of all the parts in the upload except the last
-     * part, which may be smaller than this size.
+     * The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the parts in
+     * the upload except the last part, which may be smaller than this size.
      * </p>
      */
     private Long partSizeInBytes;
@@ -89,8 +85,7 @@ public class UploadListElement implements Serializable, Cloneable {
      * 
      * @param multipartUploadId
      *        The ID of a multipart upload.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadListElement withMultipartUploadId(String multipartUploadId) {
@@ -104,8 +99,7 @@ public class UploadListElement implements Serializable, Cloneable {
      * </p>
      * 
      * @param vaultARN
-     *        The Amazon Resource Name (ARN) of the vault that contains the
-     *        archive.
+     *        The Amazon Resource Name (ARN) of the vault that contains the archive.
      */
 
     public void setVaultARN(String vaultARN) {
@@ -117,8 +111,7 @@ public class UploadListElement implements Serializable, Cloneable {
      * The Amazon Resource Name (ARN) of the vault that contains the archive.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the vault that contains the
-     *         archive.
+     * @return The Amazon Resource Name (ARN) of the vault that contains the archive.
      */
 
     public String getVaultARN() {
@@ -131,10 +124,8 @@ public class UploadListElement implements Serializable, Cloneable {
      * </p>
      * 
      * @param vaultARN
-     *        The Amazon Resource Name (ARN) of the vault that contains the
-     *        archive.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the vault that contains the archive.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadListElement withVaultARN(String vaultARN) {
@@ -144,13 +135,11 @@ public class UploadListElement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the archive that was specified in the Initiate
-     * Multipart Upload request.
+     * The description of the archive that was specified in the Initiate Multipart Upload request.
      * </p>
      * 
      * @param archiveDescription
-     *        The description of the archive that was specified in the Initiate
-     *        Multipart Upload request.
+     *        The description of the archive that was specified in the Initiate Multipart Upload request.
      */
 
     public void setArchiveDescription(String archiveDescription) {
@@ -159,12 +148,10 @@ public class UploadListElement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the archive that was specified in the Initiate
-     * Multipart Upload request.
+     * The description of the archive that was specified in the Initiate Multipart Upload request.
      * </p>
      * 
-     * @return The description of the archive that was specified in the Initiate
-     *         Multipart Upload request.
+     * @return The description of the archive that was specified in the Initiate Multipart Upload request.
      */
 
     public String getArchiveDescription() {
@@ -173,15 +160,12 @@ public class UploadListElement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the archive that was specified in the Initiate
-     * Multipart Upload request.
+     * The description of the archive that was specified in the Initiate Multipart Upload request.
      * </p>
      * 
      * @param archiveDescription
-     *        The description of the archive that was specified in the Initiate
-     *        Multipart Upload request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The description of the archive that was specified in the Initiate Multipart Upload request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadListElement withArchiveDescription(String archiveDescription) {
@@ -191,15 +175,13 @@ public class UploadListElement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The part size, in bytes, specified in the Initiate Multipart Upload
-     * request. This is the size of all the parts in the upload except the last
-     * part, which may be smaller than this size.
+     * The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the parts in
+     * the upload except the last part, which may be smaller than this size.
      * </p>
      * 
      * @param partSizeInBytes
-     *        The part size, in bytes, specified in the Initiate Multipart
-     *        Upload request. This is the size of all the parts in the upload
-     *        except the last part, which may be smaller than this size.
+     *        The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the
+     *        parts in the upload except the last part, which may be smaller than this size.
      */
 
     public void setPartSizeInBytes(Long partSizeInBytes) {
@@ -208,14 +190,12 @@ public class UploadListElement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The part size, in bytes, specified in the Initiate Multipart Upload
-     * request. This is the size of all the parts in the upload except the last
-     * part, which may be smaller than this size.
+     * The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the parts in
+     * the upload except the last part, which may be smaller than this size.
      * </p>
      * 
-     * @return The part size, in bytes, specified in the Initiate Multipart
-     *         Upload request. This is the size of all the parts in the upload
-     *         except the last part, which may be smaller than this size.
+     * @return The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the
+     *         parts in the upload except the last part, which may be smaller than this size.
      */
 
     public Long getPartSizeInBytes() {
@@ -224,17 +204,14 @@ public class UploadListElement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The part size, in bytes, specified in the Initiate Multipart Upload
-     * request. This is the size of all the parts in the upload except the last
-     * part, which may be smaller than this size.
+     * The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the parts in
+     * the upload except the last part, which may be smaller than this size.
      * </p>
      * 
      * @param partSizeInBytes
-     *        The part size, in bytes, specified in the Initiate Multipart
-     *        Upload request. This is the size of all the parts in the upload
-     *        except the last part, which may be smaller than this size.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the
+     *        parts in the upload except the last part, which may be smaller than this size.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadListElement withPartSizeInBytes(Long partSizeInBytes) {
@@ -274,8 +251,7 @@ public class UploadListElement implements Serializable, Cloneable {
      * 
      * @param creationDate
      *        The UTC time at which the multipart upload was initiated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadListElement withCreationDate(String creationDate) {
@@ -284,8 +260,7 @@ public class UploadListElement implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -319,35 +294,25 @@ public class UploadListElement implements Serializable, Cloneable {
         if (obj instanceof UploadListElement == false)
             return false;
         UploadListElement other = (UploadListElement) obj;
-        if (other.getMultipartUploadId() == null
-                ^ this.getMultipartUploadId() == null)
+        if (other.getMultipartUploadId() == null ^ this.getMultipartUploadId() == null)
             return false;
-        if (other.getMultipartUploadId() != null
-                && other.getMultipartUploadId().equals(
-                        this.getMultipartUploadId()) == false)
+        if (other.getMultipartUploadId() != null && other.getMultipartUploadId().equals(this.getMultipartUploadId()) == false)
             return false;
         if (other.getVaultARN() == null ^ this.getVaultARN() == null)
             return false;
-        if (other.getVaultARN() != null
-                && other.getVaultARN().equals(this.getVaultARN()) == false)
+        if (other.getVaultARN() != null && other.getVaultARN().equals(this.getVaultARN()) == false)
             return false;
-        if (other.getArchiveDescription() == null
-                ^ this.getArchiveDescription() == null)
+        if (other.getArchiveDescription() == null ^ this.getArchiveDescription() == null)
             return false;
-        if (other.getArchiveDescription() != null
-                && other.getArchiveDescription().equals(
-                        this.getArchiveDescription()) == false)
+        if (other.getArchiveDescription() != null && other.getArchiveDescription().equals(this.getArchiveDescription()) == false)
             return false;
-        if (other.getPartSizeInBytes() == null
-                ^ this.getPartSizeInBytes() == null)
+        if (other.getPartSizeInBytes() == null ^ this.getPartSizeInBytes() == null)
             return false;
-        if (other.getPartSizeInBytes() != null
-                && other.getPartSizeInBytes().equals(this.getPartSizeInBytes()) == false)
+        if (other.getPartSizeInBytes() != null && other.getPartSizeInBytes().equals(this.getPartSizeInBytes()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
-        if (other.getCreationDate() != null
-                && other.getCreationDate().equals(this.getCreationDate()) == false)
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
         return true;
     }
@@ -357,24 +322,11 @@ public class UploadListElement implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getMultipartUploadId() == null) ? 0
-                        : getMultipartUploadId().hashCode());
-        hashCode = prime * hashCode
-                + ((getVaultARN() == null) ? 0 : getVaultARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getArchiveDescription() == null) ? 0
-                        : getArchiveDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPartSizeInBytes() == null) ? 0 : getPartSizeInBytes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDate() == null) ? 0 : getCreationDate()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getMultipartUploadId() == null) ? 0 : getMultipartUploadId().hashCode());
+        hashCode = prime * hashCode + ((getVaultARN() == null) ? 0 : getVaultARN().hashCode());
+        hashCode = prime * hashCode + ((getArchiveDescription() == null) ? 0 : getArchiveDescription().hashCode());
+        hashCode = prime * hashCode + ((getPartSizeInBytes() == null) ? 0 : getPartSizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         return hashCode;
     }
 
@@ -383,9 +335,7 @@ public class UploadListElement implements Serializable, Cloneable {
         try {
             return (UploadListElement) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

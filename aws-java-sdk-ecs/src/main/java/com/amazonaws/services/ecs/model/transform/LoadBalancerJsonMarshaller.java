@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecs.model.transform;
 
@@ -34,38 +32,31 @@ public class LoadBalancerJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(LoadBalancer loadBalancer,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(LoadBalancer loadBalancer, StructuredJsonGenerator jsonGenerator) {
 
         if (loadBalancer == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (loadBalancer.getTargetGroupArn() != null) {
-                jsonGenerator.writeFieldName("targetGroupArn").writeValue(
-                        loadBalancer.getTargetGroupArn());
+                jsonGenerator.writeFieldName("targetGroupArn").writeValue(loadBalancer.getTargetGroupArn());
             }
             if (loadBalancer.getLoadBalancerName() != null) {
-                jsonGenerator.writeFieldName("loadBalancerName").writeValue(
-                        loadBalancer.getLoadBalancerName());
+                jsonGenerator.writeFieldName("loadBalancerName").writeValue(loadBalancer.getLoadBalancerName());
             }
             if (loadBalancer.getContainerName() != null) {
-                jsonGenerator.writeFieldName("containerName").writeValue(
-                        loadBalancer.getContainerName());
+                jsonGenerator.writeFieldName("containerName").writeValue(loadBalancer.getContainerName());
             }
             if (loadBalancer.getContainerPort() != null) {
-                jsonGenerator.writeFieldName("containerPort").writeValue(
-                        loadBalancer.getContainerPort());
+                jsonGenerator.writeFieldName("containerPort").writeValue(loadBalancer.getContainerPort());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
 
@@ -18,13 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A connection represents the physical network connection between the AWS
- * Direct Connect location and the customer.
+ * A connection represents the physical network connection between the AWS Direct Connect location and the customer.
  * </p>
  */
-public class DeleteConnectionResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DeleteConnectionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -47,8 +42,7 @@ public class DeleteConnectionResult extends
      * Bandwidth of the connection.
      * </p>
      * <p>
-     * Example: 1Gbps (for regular connections), or 500Mbps (for hosted
-     * connections)
+     * Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)
      * </p>
      * <p>
      * Default: None
@@ -59,15 +53,13 @@ public class DeleteConnectionResult extends
     private Integer vlan;
     /**
      * <p>
-     * The name of the AWS Direct Connect service provider associated with the
-     * connection.
+     * The name of the AWS Direct Connect service provider associated with the connection.
      * </p>
      */
     private String partnerName;
     /**
      * <p>
-     * The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.
+     * The time of the most recent call to DescribeConnectionLoa for this Connection.
      * </p>
      */
     private java.util.Date loaIssueTime;
@@ -104,8 +96,7 @@ public class DeleteConnectionResult extends
      * 
      * @param ownerAccount
      *        The AWS account that will own the new connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteConnectionResult withOwnerAccount(String ownerAccount) {
@@ -131,8 +122,7 @@ public class DeleteConnectionResult extends
 
     /**
      * @param connectionId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteConnectionResult withConnectionId(String connectionId) {
@@ -158,8 +148,7 @@ public class DeleteConnectionResult extends
 
     /**
      * @param connectionName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteConnectionResult withConnectionName(String connectionName) {
@@ -187,8 +176,7 @@ public class DeleteConnectionResult extends
 
     /**
      * @param connectionState
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionState
      */
 
@@ -208,13 +196,11 @@ public class DeleteConnectionResult extends
 
     /**
      * @param connectionState
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionState
      */
 
-    public DeleteConnectionResult withConnectionState(
-            ConnectionState connectionState) {
+    public DeleteConnectionResult withConnectionState(ConnectionState connectionState) {
         setConnectionState(connectionState);
         return this;
     }
@@ -237,8 +223,7 @@ public class DeleteConnectionResult extends
 
     /**
      * @param region
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteConnectionResult withRegion(String region) {
@@ -264,8 +249,7 @@ public class DeleteConnectionResult extends
 
     /**
      * @param location
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteConnectionResult withLocation(String location) {
@@ -278,8 +262,7 @@ public class DeleteConnectionResult extends
      * Bandwidth of the connection.
      * </p>
      * <p>
-     * Example: 1Gbps (for regular connections), or 500Mbps (for hosted
-     * connections)
+     * Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)
      * </p>
      * <p>
      * Default: None
@@ -288,8 +271,7 @@ public class DeleteConnectionResult extends
      * @param bandwidth
      *        Bandwidth of the connection.</p>
      *        <p>
-     *        Example: 1Gbps (for regular connections), or 500Mbps (for hosted
-     *        connections)
+     *        Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)
      *        </p>
      *        <p>
      *        Default: None
@@ -304,8 +286,7 @@ public class DeleteConnectionResult extends
      * Bandwidth of the connection.
      * </p>
      * <p>
-     * Example: 1Gbps (for regular connections), or 500Mbps (for hosted
-     * connections)
+     * Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)
      * </p>
      * <p>
      * Default: None
@@ -313,8 +294,7 @@ public class DeleteConnectionResult extends
      * 
      * @return Bandwidth of the connection.</p>
      *         <p>
-     *         Example: 1Gbps (for regular connections), or 500Mbps (for hosted
-     *         connections)
+     *         Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)
      *         </p>
      *         <p>
      *         Default: None
@@ -329,8 +309,7 @@ public class DeleteConnectionResult extends
      * Bandwidth of the connection.
      * </p>
      * <p>
-     * Example: 1Gbps (for regular connections), or 500Mbps (for hosted
-     * connections)
+     * Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)
      * </p>
      * <p>
      * Default: None
@@ -339,13 +318,11 @@ public class DeleteConnectionResult extends
      * @param bandwidth
      *        Bandwidth of the connection.</p>
      *        <p>
-     *        Example: 1Gbps (for regular connections), or 500Mbps (for hosted
-     *        connections)
+     *        Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)
      *        </p>
      *        <p>
      *        Default: None
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteConnectionResult withBandwidth(String bandwidth) {
@@ -371,8 +348,7 @@ public class DeleteConnectionResult extends
 
     /**
      * @param vlan
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteConnectionResult withVlan(Integer vlan) {
@@ -382,13 +358,11 @@ public class DeleteConnectionResult extends
 
     /**
      * <p>
-     * The name of the AWS Direct Connect service provider associated with the
-     * connection.
+     * The name of the AWS Direct Connect service provider associated with the connection.
      * </p>
      * 
      * @param partnerName
-     *        The name of the AWS Direct Connect service provider associated
-     *        with the connection.
+     *        The name of the AWS Direct Connect service provider associated with the connection.
      */
 
     public void setPartnerName(String partnerName) {
@@ -397,12 +371,10 @@ public class DeleteConnectionResult extends
 
     /**
      * <p>
-     * The name of the AWS Direct Connect service provider associated with the
-     * connection.
+     * The name of the AWS Direct Connect service provider associated with the connection.
      * </p>
      * 
-     * @return The name of the AWS Direct Connect service provider associated
-     *         with the connection.
+     * @return The name of the AWS Direct Connect service provider associated with the connection.
      */
 
     public String getPartnerName() {
@@ -411,15 +383,12 @@ public class DeleteConnectionResult extends
 
     /**
      * <p>
-     * The name of the AWS Direct Connect service provider associated with the
-     * connection.
+     * The name of the AWS Direct Connect service provider associated with the connection.
      * </p>
      * 
      * @param partnerName
-     *        The name of the AWS Direct Connect service provider associated
-     *        with the connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the AWS Direct Connect service provider associated with the connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteConnectionResult withPartnerName(String partnerName) {
@@ -429,13 +398,11 @@ public class DeleteConnectionResult extends
 
     /**
      * <p>
-     * The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.
+     * The time of the most recent call to DescribeConnectionLoa for this Connection.
      * </p>
      * 
      * @param loaIssueTime
-     *        The time of the most recent call to DescribeConnectionLoa for this
-     *        Connection.
+     *        The time of the most recent call to DescribeConnectionLoa for this Connection.
      */
 
     public void setLoaIssueTime(java.util.Date loaIssueTime) {
@@ -444,12 +411,10 @@ public class DeleteConnectionResult extends
 
     /**
      * <p>
-     * The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.
+     * The time of the most recent call to DescribeConnectionLoa for this Connection.
      * </p>
      * 
-     * @return The time of the most recent call to DescribeConnectionLoa for
-     *         this Connection.
+     * @return The time of the most recent call to DescribeConnectionLoa for this Connection.
      */
 
     public java.util.Date getLoaIssueTime() {
@@ -458,15 +423,12 @@ public class DeleteConnectionResult extends
 
     /**
      * <p>
-     * The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.
+     * The time of the most recent call to DescribeConnectionLoa for this Connection.
      * </p>
      * 
      * @param loaIssueTime
-     *        The time of the most recent call to DescribeConnectionLoa for this
-     *        Connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time of the most recent call to DescribeConnectionLoa for this Connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteConnectionResult withLoaIssueTime(java.util.Date loaIssueTime) {
@@ -475,8 +437,7 @@ public class DeleteConnectionResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -522,55 +483,43 @@ public class DeleteConnectionResult extends
         DeleteConnectionResult other = (DeleteConnectionResult) obj;
         if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null)
             return false;
-        if (other.getOwnerAccount() != null
-                && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
+        if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
             return false;
         if (other.getConnectionId() == null ^ this.getConnectionId() == null)
             return false;
-        if (other.getConnectionId() != null
-                && other.getConnectionId().equals(this.getConnectionId()) == false)
+        if (other.getConnectionId() != null && other.getConnectionId().equals(this.getConnectionId()) == false)
             return false;
-        if (other.getConnectionName() == null
-                ^ this.getConnectionName() == null)
+        if (other.getConnectionName() == null ^ this.getConnectionName() == null)
             return false;
-        if (other.getConnectionName() != null
-                && other.getConnectionName().equals(this.getConnectionName()) == false)
+        if (other.getConnectionName() != null && other.getConnectionName().equals(this.getConnectionName()) == false)
             return false;
-        if (other.getConnectionState() == null
-                ^ this.getConnectionState() == null)
+        if (other.getConnectionState() == null ^ this.getConnectionState() == null)
             return false;
-        if (other.getConnectionState() != null
-                && other.getConnectionState().equals(this.getConnectionState()) == false)
+        if (other.getConnectionState() != null && other.getConnectionState().equals(this.getConnectionState()) == false)
             return false;
         if (other.getRegion() == null ^ this.getRegion() == null)
             return false;
-        if (other.getRegion() != null
-                && other.getRegion().equals(this.getRegion()) == false)
+        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
             return false;
         if (other.getLocation() == null ^ this.getLocation() == null)
             return false;
-        if (other.getLocation() != null
-                && other.getLocation().equals(this.getLocation()) == false)
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
         if (other.getBandwidth() == null ^ this.getBandwidth() == null)
             return false;
-        if (other.getBandwidth() != null
-                && other.getBandwidth().equals(this.getBandwidth()) == false)
+        if (other.getBandwidth() != null && other.getBandwidth().equals(this.getBandwidth()) == false)
             return false;
         if (other.getVlan() == null ^ this.getVlan() == null)
             return false;
-        if (other.getVlan() != null
-                && other.getVlan().equals(this.getVlan()) == false)
+        if (other.getVlan() != null && other.getVlan().equals(this.getVlan()) == false)
             return false;
         if (other.getPartnerName() == null ^ this.getPartnerName() == null)
             return false;
-        if (other.getPartnerName() != null
-                && other.getPartnerName().equals(this.getPartnerName()) == false)
+        if (other.getPartnerName() != null && other.getPartnerName().equals(this.getPartnerName()) == false)
             return false;
         if (other.getLoaIssueTime() == null ^ this.getLoaIssueTime() == null)
             return false;
-        if (other.getLoaIssueTime() != null
-                && other.getLoaIssueTime().equals(this.getLoaIssueTime()) == false)
+        if (other.getLoaIssueTime() != null && other.getLoaIssueTime().equals(this.getLoaIssueTime()) == false)
             return false;
         return true;
     }
@@ -580,37 +529,16 @@ public class DeleteConnectionResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getOwnerAccount() == null) ? 0 : getOwnerAccount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConnectionId() == null) ? 0 : getConnectionId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConnectionName() == null) ? 0 : getConnectionName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConnectionState() == null) ? 0 : getConnectionState()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getRegion() == null) ? 0 : getRegion().hashCode());
-        hashCode = prime * hashCode
-                + ((getLocation() == null) ? 0 : getLocation().hashCode());
-        hashCode = prime * hashCode
-                + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode());
-        hashCode = prime * hashCode
-                + ((getVlan() == null) ? 0 : getVlan().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPartnerName() == null) ? 0 : getPartnerName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLoaIssueTime() == null) ? 0 : getLoaIssueTime()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
+        hashCode = prime * hashCode + ((getConnectionId() == null) ? 0 : getConnectionId().hashCode());
+        hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
+        hashCode = prime * hashCode + ((getConnectionState() == null) ? 0 : getConnectionState().hashCode());
+        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode());
+        hashCode = prime * hashCode + ((getVlan() == null) ? 0 : getVlan().hashCode());
+        hashCode = prime * hashCode + ((getPartnerName() == null) ? 0 : getPartnerName().hashCode());
+        hashCode = prime * hashCode + ((getLoaIssueTime() == null) ? 0 : getLoaIssueTime().hashCode());
         return hashCode;
     }
 
@@ -619,9 +547,7 @@ public class DeleteConnectionResult extends
         try {
             return (DeleteConnectionResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -34,52 +32,40 @@ public class CACertificateDescriptionJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(CACertificateDescription cACertificateDescription,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(CACertificateDescription cACertificateDescription, StructuredJsonGenerator jsonGenerator) {
 
         if (cACertificateDescription == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (cACertificateDescription.getCertificateArn() != null) {
-                jsonGenerator.writeFieldName("certificateArn").writeValue(
-                        cACertificateDescription.getCertificateArn());
+                jsonGenerator.writeFieldName("certificateArn").writeValue(cACertificateDescription.getCertificateArn());
             }
             if (cACertificateDescription.getCertificateId() != null) {
-                jsonGenerator.writeFieldName("certificateId").writeValue(
-                        cACertificateDescription.getCertificateId());
+                jsonGenerator.writeFieldName("certificateId").writeValue(cACertificateDescription.getCertificateId());
             }
             if (cACertificateDescription.getStatus() != null) {
-                jsonGenerator.writeFieldName("status").writeValue(
-                        cACertificateDescription.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(cACertificateDescription.getStatus());
             }
             if (cACertificateDescription.getCertificatePem() != null) {
-                jsonGenerator.writeFieldName("certificatePem").writeValue(
-                        cACertificateDescription.getCertificatePem());
+                jsonGenerator.writeFieldName("certificatePem").writeValue(cACertificateDescription.getCertificatePem());
             }
             if (cACertificateDescription.getOwnedBy() != null) {
-                jsonGenerator.writeFieldName("ownedBy").writeValue(
-                        cACertificateDescription.getOwnedBy());
+                jsonGenerator.writeFieldName("ownedBy").writeValue(cACertificateDescription.getOwnedBy());
             }
             if (cACertificateDescription.getCreationDate() != null) {
-                jsonGenerator.writeFieldName("creationDate").writeValue(
-                        cACertificateDescription.getCreationDate());
+                jsonGenerator.writeFieldName("creationDate").writeValue(cACertificateDescription.getCreationDate());
             }
             if (cACertificateDescription.getAutoRegistrationStatus() != null) {
-                jsonGenerator.writeFieldName("autoRegistrationStatus")
-                        .writeValue(
-                                cACertificateDescription
-                                        .getAutoRegistrationStatus());
+                jsonGenerator.writeFieldName("autoRegistrationStatus").writeValue(cACertificateDescription.getAutoRegistrationStatus());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

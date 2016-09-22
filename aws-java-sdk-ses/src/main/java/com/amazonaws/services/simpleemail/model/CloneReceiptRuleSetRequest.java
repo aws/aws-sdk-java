@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -19,16 +17,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents a request to create a receipt rule set by cloning an existing one.
- * You use receipt rule sets to receive email with Amazon SES. For more
- * information, see the <a href=
- * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
- * >Amazon SES Developer Guide</a>.
+ * Represents a request to create a receipt rule set by cloning an existing one. You use receipt rule sets to receive
+ * email with Amazon SES. For more information, see the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
+ * Guide</a>.
  * </p>
  */
-public class CloneReceiptRuleSetRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -37,8 +32,7 @@ public class CloneReceiptRuleSetRequest extends
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -68,8 +62,7 @@ public class CloneReceiptRuleSetRequest extends
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -89,8 +82,7 @@ public class CloneReceiptRuleSetRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     *        underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
@@ -116,8 +108,7 @@ public class CloneReceiptRuleSetRequest extends
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -136,8 +127,7 @@ public class CloneReceiptRuleSetRequest extends
      *         <ul>
      *         <li>
      *         <p>
-     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-).
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      *         </p>
      *         </li>
      *         <li>
@@ -163,8 +153,7 @@ public class CloneReceiptRuleSetRequest extends
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -184,8 +173,7 @@ public class CloneReceiptRuleSetRequest extends
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     *        underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
@@ -198,8 +186,7 @@ public class CloneReceiptRuleSetRequest extends
      *        Contain less than 64 characters.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CloneReceiptRuleSetRequest withRuleSetName(String ruleSetName) {
@@ -239,19 +226,16 @@ public class CloneReceiptRuleSetRequest extends
      * 
      * @param originalRuleSetName
      *        The name of the rule set to clone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CloneReceiptRuleSetRequest withOriginalRuleSetName(
-            String originalRuleSetName) {
+    public CloneReceiptRuleSetRequest withOriginalRuleSetName(String originalRuleSetName) {
         setOriginalRuleSetName(originalRuleSetName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -281,15 +265,11 @@ public class CloneReceiptRuleSetRequest extends
         CloneReceiptRuleSetRequest other = (CloneReceiptRuleSetRequest) obj;
         if (other.getRuleSetName() == null ^ this.getRuleSetName() == null)
             return false;
-        if (other.getRuleSetName() != null
-                && other.getRuleSetName().equals(this.getRuleSetName()) == false)
+        if (other.getRuleSetName() != null && other.getRuleSetName().equals(this.getRuleSetName()) == false)
             return false;
-        if (other.getOriginalRuleSetName() == null
-                ^ this.getOriginalRuleSetName() == null)
+        if (other.getOriginalRuleSetName() == null ^ this.getOriginalRuleSetName() == null)
             return false;
-        if (other.getOriginalRuleSetName() != null
-                && other.getOriginalRuleSetName().equals(
-                        this.getOriginalRuleSetName()) == false)
+        if (other.getOriginalRuleSetName() != null && other.getOriginalRuleSetName().equals(this.getOriginalRuleSetName()) == false)
             return false;
         return true;
     }
@@ -299,13 +279,8 @@ public class CloneReceiptRuleSetRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRuleSetName() == null) ? 0 : getRuleSetName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOriginalRuleSetName() == null) ? 0
-                        : getOriginalRuleSetName().hashCode());
+        hashCode = prime * hashCode + ((getRuleSetName() == null) ? 0 : getRuleSetName().hashCode());
+        hashCode = prime * hashCode + ((getOriginalRuleSetName() == null) ? 0 : getOriginalRuleSetName().hashCode());
         return hashCode;
     }
 

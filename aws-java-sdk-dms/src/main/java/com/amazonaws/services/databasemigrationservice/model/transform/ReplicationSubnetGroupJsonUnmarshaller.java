@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ReplicationSubnetGroup JSON Unmarshaller
  */
-public class ReplicationSubnetGroupJsonUnmarshaller implements
-        Unmarshaller<ReplicationSubnetGroup, JsonUnmarshallerContext> {
+public class ReplicationSubnetGroupJsonUnmarshaller implements Unmarshaller<ReplicationSubnetGroup, JsonUnmarshallerContext> {
 
-    public ReplicationSubnetGroup unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ReplicationSubnetGroup unmarshall(JsonUnmarshallerContext context) throws Exception {
         ReplicationSubnetGroup replicationSubnetGroup = new ReplicationSubnetGroup();
 
         int originalDepth = context.getCurrentDepth();
@@ -51,43 +47,28 @@ public class ReplicationSubnetGroupJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("ReplicationSubnetGroupIdentifier",
-                        targetDepth)) {
+                if (context.testExpression("ReplicationSubnetGroupIdentifier", targetDepth)) {
                     context.nextToken();
-                    replicationSubnetGroup
-                            .setReplicationSubnetGroupIdentifier(context
-                                    .getUnmarshaller(String.class).unmarshall(
-                                            context));
+                    replicationSubnetGroup.setReplicationSubnetGroupIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("ReplicationSubnetGroupDescription",
-                        targetDepth)) {
+                if (context.testExpression("ReplicationSubnetGroupDescription", targetDepth)) {
                     context.nextToken();
-                    replicationSubnetGroup
-                            .setReplicationSubnetGroupDescription(context
-                                    .getUnmarshaller(String.class).unmarshall(
-                                            context));
+                    replicationSubnetGroup.setReplicationSubnetGroupDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
                     context.nextToken();
-                    replicationSubnetGroup.setVpcId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    replicationSubnetGroup.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetGroupStatus", targetDepth)) {
                     context.nextToken();
-                    replicationSubnetGroup.setSubnetGroupStatus(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    replicationSubnetGroup.setSubnetGroupStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Subnets", targetDepth)) {
                     context.nextToken();
-                    replicationSubnetGroup
-                            .setSubnets(new ListUnmarshaller<Subnet>(
-                                    SubnetJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+                    replicationSubnetGroup.setSubnets(new ListUnmarshaller<Subnet>(SubnetJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

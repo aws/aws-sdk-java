@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model.transform;
 
@@ -39,33 +37,24 @@ import com.amazonaws.util.SdkHttpUtils;
  * GetHealthCheckStatusRequest Marshaller
  */
 
-public class GetHealthCheckStatusRequestMarshaller
-        implements
-        Marshaller<Request<GetHealthCheckStatusRequest>, GetHealthCheckStatusRequest> {
+public class GetHealthCheckStatusRequestMarshaller implements Marshaller<Request<GetHealthCheckStatusRequest>, GetHealthCheckStatusRequest> {
 
-    public Request<GetHealthCheckStatusRequest> marshall(
-            GetHealthCheckStatusRequest getHealthCheckStatusRequest) {
+    public Request<GetHealthCheckStatusRequest> marshall(GetHealthCheckStatusRequest getHealthCheckStatusRequest) {
 
         if (getHealthCheckStatusRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetHealthCheckStatusRequest> request = new DefaultRequest<GetHealthCheckStatusRequest>(
-                getHealthCheckStatusRequest, "AmazonRoute53");
+        Request<GetHealthCheckStatusRequest> request = new DefaultRequest<GetHealthCheckStatusRequest>(getHealthCheckStatusRequest, "AmazonRoute53");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}/status";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{HealthCheckId}",
-                        (getHealthCheckStatusRequest.getHealthCheckId() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(getHealthCheckStatusRequest
-                                                .getHealthCheckId()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{HealthCheckId}",
+                (getHealthCheckStatusRequest.getHealthCheckId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(getHealthCheckStatusRequest.getHealthCheckId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

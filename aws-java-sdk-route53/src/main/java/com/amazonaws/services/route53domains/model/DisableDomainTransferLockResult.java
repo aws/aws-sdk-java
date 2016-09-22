@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model;
 
@@ -21,14 +19,12 @@ import java.io.Serializable;
  * The DisableDomainTransferLock response includes the following element.
  * </p>
  */
-public class DisableDomainTransferLockResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DisableDomainTransferLockResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Identifier for tracking the progress of the request. To use this ID to
-     * query the operation status, use GetOperationDetail.
+     * Identifier for tracking the progress of the request. To use this ID to query the operation status, use
+     * GetOperationDetail.
      * </p>
      * <p>
      * Type: String
@@ -44,8 +40,8 @@ public class DisableDomainTransferLockResult extends
 
     /**
      * <p>
-     * Identifier for tracking the progress of the request. To use this ID to
-     * query the operation status, use GetOperationDetail.
+     * Identifier for tracking the progress of the request. To use this ID to query the operation status, use
+     * GetOperationDetail.
      * </p>
      * <p>
      * Type: String
@@ -58,8 +54,8 @@ public class DisableDomainTransferLockResult extends
      * </p>
      * 
      * @param operationId
-     *        Identifier for tracking the progress of the request. To use this
-     *        ID to query the operation status, use GetOperationDetail.</p>
+     *        Identifier for tracking the progress of the request. To use this ID to query the operation status, use
+     *        GetOperationDetail.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -76,8 +72,8 @@ public class DisableDomainTransferLockResult extends
 
     /**
      * <p>
-     * Identifier for tracking the progress of the request. To use this ID to
-     * query the operation status, use GetOperationDetail.
+     * Identifier for tracking the progress of the request. To use this ID to query the operation status, use
+     * GetOperationDetail.
      * </p>
      * <p>
      * Type: String
@@ -89,8 +85,8 @@ public class DisableDomainTransferLockResult extends
      * Constraints: Maximum 255 characters.
      * </p>
      * 
-     * @return Identifier for tracking the progress of the request. To use this
-     *         ID to query the operation status, use GetOperationDetail.</p>
+     * @return Identifier for tracking the progress of the request. To use this ID to query the operation status, use
+     *         GetOperationDetail.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -107,8 +103,8 @@ public class DisableDomainTransferLockResult extends
 
     /**
      * <p>
-     * Identifier for tracking the progress of the request. To use this ID to
-     * query the operation status, use GetOperationDetail.
+     * Identifier for tracking the progress of the request. To use this ID to query the operation status, use
+     * GetOperationDetail.
      * </p>
      * <p>
      * Type: String
@@ -121,8 +117,8 @@ public class DisableDomainTransferLockResult extends
      * </p>
      * 
      * @param operationId
-     *        Identifier for tracking the progress of the request. To use this
-     *        ID to query the operation status, use GetOperationDetail.</p>
+     *        Identifier for tracking the progress of the request. To use this ID to query the operation status, use
+     *        GetOperationDetail.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -131,8 +127,7 @@ public class DisableDomainTransferLockResult extends
      *        </p>
      *        <p>
      *        Constraints: Maximum 255 characters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisableDomainTransferLockResult withOperationId(String operationId) {
@@ -141,8 +136,7 @@ public class DisableDomainTransferLockResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -170,8 +164,7 @@ public class DisableDomainTransferLockResult extends
         DisableDomainTransferLockResult other = (DisableDomainTransferLockResult) obj;
         if (other.getOperationId() == null ^ this.getOperationId() == null)
             return false;
-        if (other.getOperationId() != null
-                && other.getOperationId().equals(this.getOperationId()) == false)
+        if (other.getOperationId() != null && other.getOperationId().equals(this.getOperationId()) == false)
             return false;
         return true;
     }
@@ -181,9 +174,7 @@ public class DisableDomainTransferLockResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getOperationId() == null) ? 0 : getOperationId().hashCode());
+        hashCode = prime * hashCode + ((getOperationId() == null) ? 0 : getOperationId().hashCode());
         return hashCode;
     }
 
@@ -192,9 +183,7 @@ public class DisableDomainTransferLockResult extends
         try {
             return (DisableDomainTransferLockResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

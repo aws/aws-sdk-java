@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
@@ -31,28 +29,22 @@ import com.amazonaws.util.IdempotentUtils;
  * DeleteVirtualMFADeviceRequest Marshaller
  */
 
-public class DeleteVirtualMFADeviceRequestMarshaller
-        implements
-        Marshaller<Request<DeleteVirtualMFADeviceRequest>, DeleteVirtualMFADeviceRequest> {
+public class DeleteVirtualMFADeviceRequestMarshaller implements Marshaller<Request<DeleteVirtualMFADeviceRequest>, DeleteVirtualMFADeviceRequest> {
 
-    public Request<DeleteVirtualMFADeviceRequest> marshall(
-            DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest) {
+    public Request<DeleteVirtualMFADeviceRequest> marshall(DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest) {
 
         if (deleteVirtualMFADeviceRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteVirtualMFADeviceRequest> request = new DefaultRequest<DeleteVirtualMFADeviceRequest>(
-                deleteVirtualMFADeviceRequest, "AmazonIdentityManagement");
+        Request<DeleteVirtualMFADeviceRequest> request = new DefaultRequest<DeleteVirtualMFADeviceRequest>(deleteVirtualMFADeviceRequest,
+                "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteVirtualMFADevice");
         request.addParameter("Version", "2010-05-08");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (deleteVirtualMFADeviceRequest.getSerialNumber() != null) {
-            request.addParameter("SerialNumber",
-                    StringUtils.fromString(deleteVirtualMFADeviceRequest
-                            .getSerialNumber()));
+            request.addParameter("SerialNumber", StringUtils.fromString(deleteVirtualMFADeviceRequest.getSerialNumber()));
         }
 
         return request;

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteAssessmentTargetRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteAssessmentTargetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -37,8 +33,7 @@ public class DeleteAssessmentTargetRequest extends
      * </p>
      * 
      * @param assessmentTargetArn
-     *        The ARN that specifies the assessment target that you want to
-     *        delete.
+     *        The ARN that specifies the assessment target that you want to delete.
      */
 
     public void setAssessmentTargetArn(String assessmentTargetArn) {
@@ -50,8 +45,7 @@ public class DeleteAssessmentTargetRequest extends
      * The ARN that specifies the assessment target that you want to delete.
      * </p>
      * 
-     * @return The ARN that specifies the assessment target that you want to
-     *         delete.
+     * @return The ARN that specifies the assessment target that you want to delete.
      */
 
     public String getAssessmentTargetArn() {
@@ -64,21 +58,17 @@ public class DeleteAssessmentTargetRequest extends
      * </p>
      * 
      * @param assessmentTargetArn
-     *        The ARN that specifies the assessment target that you want to
-     *        delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN that specifies the assessment target that you want to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteAssessmentTargetRequest withAssessmentTargetArn(
-            String assessmentTargetArn) {
+    public DeleteAssessmentTargetRequest withAssessmentTargetArn(String assessmentTargetArn) {
         setAssessmentTargetArn(assessmentTargetArn);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -104,12 +94,9 @@ public class DeleteAssessmentTargetRequest extends
         if (obj instanceof DeleteAssessmentTargetRequest == false)
             return false;
         DeleteAssessmentTargetRequest other = (DeleteAssessmentTargetRequest) obj;
-        if (other.getAssessmentTargetArn() == null
-                ^ this.getAssessmentTargetArn() == null)
+        if (other.getAssessmentTargetArn() == null ^ this.getAssessmentTargetArn() == null)
             return false;
-        if (other.getAssessmentTargetArn() != null
-                && other.getAssessmentTargetArn().equals(
-                        this.getAssessmentTargetArn()) == false)
+        if (other.getAssessmentTargetArn() != null && other.getAssessmentTargetArn().equals(this.getAssessmentTargetArn()) == false)
             return false;
         return true;
     }
@@ -119,10 +106,7 @@ public class DeleteAssessmentTargetRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAssessmentTargetArn() == null) ? 0
-                        : getAssessmentTargetArn().hashCode());
+        hashCode = prime * hashCode + ((getAssessmentTargetArn() == null) ? 0 : getAssessmentTargetArn().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -31,8 +29,7 @@ public class Destination implements Serializable, Cloneable {
     private String destinationName;
     /**
      * <p>
-     * ARN of the physical target where the log events will be delivered (eg.
-     * ARN of a Kinesis stream).
+     * ARN of the physical target where the log events will be delivered (eg. ARN of a Kinesis stream).
      * </p>
      */
     private String targetArn;
@@ -44,8 +41,7 @@ public class Destination implements Serializable, Cloneable {
     private String roleArn;
     /**
      * <p>
-     * An IAM policy document that governs which AWS accounts can create
-     * subscription filters against this destination.
+     * An IAM policy document that governs which AWS accounts can create subscription filters against this destination.
      * </p>
      */
     private String accessPolicy;
@@ -57,8 +53,8 @@ public class Destination implements Serializable, Cloneable {
     private String arn;
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC specifying when this destination was created.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC specifying when this
+     * destination was created.
      * </p>
      */
     private Long creationTime;
@@ -95,8 +91,7 @@ public class Destination implements Serializable, Cloneable {
      * 
      * @param destinationName
      *        Name of the destination.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Destination withDestinationName(String destinationName) {
@@ -106,13 +101,11 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ARN of the physical target where the log events will be delivered (eg.
-     * ARN of a Kinesis stream).
+     * ARN of the physical target where the log events will be delivered (eg. ARN of a Kinesis stream).
      * </p>
      * 
      * @param targetArn
-     *        ARN of the physical target where the log events will be delivered
-     *        (eg. ARN of a Kinesis stream).
+     *        ARN of the physical target where the log events will be delivered (eg. ARN of a Kinesis stream).
      */
 
     public void setTargetArn(String targetArn) {
@@ -121,12 +114,10 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ARN of the physical target where the log events will be delivered (eg.
-     * ARN of a Kinesis stream).
+     * ARN of the physical target where the log events will be delivered (eg. ARN of a Kinesis stream).
      * </p>
      * 
-     * @return ARN of the physical target where the log events will be delivered
-     *         (eg. ARN of a Kinesis stream).
+     * @return ARN of the physical target where the log events will be delivered (eg. ARN of a Kinesis stream).
      */
 
     public String getTargetArn() {
@@ -135,15 +126,12 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ARN of the physical target where the log events will be delivered (eg.
-     * ARN of a Kinesis stream).
+     * ARN of the physical target where the log events will be delivered (eg. ARN of a Kinesis stream).
      * </p>
      * 
      * @param targetArn
-     *        ARN of the physical target where the log events will be delivered
-     *        (eg. ARN of a Kinesis stream).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        ARN of the physical target where the log events will be delivered (eg. ARN of a Kinesis stream).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Destination withTargetArn(String targetArn) {
@@ -183,8 +171,7 @@ public class Destination implements Serializable, Cloneable {
      * 
      * @param roleArn
      *        A role for impersonation for delivering log events to the target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Destination withRoleArn(String roleArn) {
@@ -194,13 +181,12 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An IAM policy document that governs which AWS accounts can create
-     * subscription filters against this destination.
+     * An IAM policy document that governs which AWS accounts can create subscription filters against this destination.
      * </p>
      * 
      * @param accessPolicy
-     *        An IAM policy document that governs which AWS accounts can create
-     *        subscription filters against this destination.
+     *        An IAM policy document that governs which AWS accounts can create subscription filters against this
+     *        destination.
      */
 
     public void setAccessPolicy(String accessPolicy) {
@@ -209,12 +195,11 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An IAM policy document that governs which AWS accounts can create
-     * subscription filters against this destination.
+     * An IAM policy document that governs which AWS accounts can create subscription filters against this destination.
      * </p>
      * 
-     * @return An IAM policy document that governs which AWS accounts can create
-     *         subscription filters against this destination.
+     * @return An IAM policy document that governs which AWS accounts can create subscription filters against this
+     *         destination.
      */
 
     public String getAccessPolicy() {
@@ -223,15 +208,13 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An IAM policy document that governs which AWS accounts can create
-     * subscription filters against this destination.
+     * An IAM policy document that governs which AWS accounts can create subscription filters against this destination.
      * </p>
      * 
      * @param accessPolicy
-     *        An IAM policy document that governs which AWS accounts can create
-     *        subscription filters against this destination.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An IAM policy document that governs which AWS accounts can create subscription filters against this
+     *        destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Destination withAccessPolicy(String accessPolicy) {
@@ -271,8 +254,7 @@ public class Destination implements Serializable, Cloneable {
      * 
      * @param arn
      *        ARN of this destination.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Destination withArn(String arn) {
@@ -282,13 +264,13 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC specifying when this destination was created.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC specifying when this
+     * destination was created.
      * </p>
      * 
      * @param creationTime
-     *        A point in time expressed as the number of milliseconds since Jan
-     *        1, 1970 00:00:00 UTC specifying when this destination was created.
+     *        A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC specifying when
+     *        this destination was created.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -297,13 +279,12 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC specifying when this destination was created.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC specifying when this
+     * destination was created.
      * </p>
      * 
-     * @return A point in time expressed as the number of milliseconds since Jan
-     *         1, 1970 00:00:00 UTC specifying when this destination was
-     *         created.
+     * @return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC specifying when
+     *         this destination was created.
      */
 
     public Long getCreationTime() {
@@ -312,15 +293,14 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC specifying when this destination was created.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC specifying when this
+     * destination was created.
      * </p>
      * 
      * @param creationTime
-     *        A point in time expressed as the number of milliseconds since Jan
-     *        1, 1970 00:00:00 UTC specifying when this destination was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC specifying when
+     *        this destination was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Destination withCreationTime(Long creationTime) {
@@ -329,8 +309,7 @@ public class Destination implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -366,36 +345,29 @@ public class Destination implements Serializable, Cloneable {
         if (obj instanceof Destination == false)
             return false;
         Destination other = (Destination) obj;
-        if (other.getDestinationName() == null
-                ^ this.getDestinationName() == null)
+        if (other.getDestinationName() == null ^ this.getDestinationName() == null)
             return false;
-        if (other.getDestinationName() != null
-                && other.getDestinationName().equals(this.getDestinationName()) == false)
+        if (other.getDestinationName() != null && other.getDestinationName().equals(this.getDestinationName()) == false)
             return false;
         if (other.getTargetArn() == null ^ this.getTargetArn() == null)
             return false;
-        if (other.getTargetArn() != null
-                && other.getTargetArn().equals(this.getTargetArn()) == false)
+        if (other.getTargetArn() != null && other.getTargetArn().equals(this.getTargetArn()) == false)
             return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
-        if (other.getRoleArn() != null
-                && other.getRoleArn().equals(this.getRoleArn()) == false)
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
         if (other.getAccessPolicy() == null ^ this.getAccessPolicy() == null)
             return false;
-        if (other.getAccessPolicy() != null
-                && other.getAccessPolicy().equals(this.getAccessPolicy()) == false)
+        if (other.getAccessPolicy() != null && other.getAccessPolicy().equals(this.getAccessPolicy()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getCreationTime() != null
-                && other.getCreationTime().equals(this.getCreationTime()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
         return true;
     }
@@ -405,24 +377,12 @@ public class Destination implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDestinationName() == null) ? 0 : getDestinationName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTargetArn() == null) ? 0 : getTargetArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAccessPolicy() == null) ? 0 : getAccessPolicy()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationTime() == null) ? 0 : getCreationTime()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDestinationName() == null) ? 0 : getDestinationName().hashCode());
+        hashCode = prime * hashCode + ((getTargetArn() == null) ? 0 : getTargetArn().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getAccessPolicy() == null) ? 0 : getAccessPolicy().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }
 
@@ -431,9 +391,7 @@ public class Destination implements Serializable, Cloneable {
         try {
             return (Destination) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

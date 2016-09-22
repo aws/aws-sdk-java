@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class RemovePermissionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,32 +31,29 @@ public class RemovePermissionRequest extends
     private String queueUrl;
     /**
      * <p>
-     * The identification of the permission to remove. This is the label added
-     * with the <a>AddPermission</a> action.
+     * The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.
      * </p>
      */
     private String label;
 
     /**
-     * Default constructor for RemovePermissionRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize the
-     * object after creating it.
+     * Default constructor for RemovePermissionRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public RemovePermissionRequest() {
     }
 
     /**
-     * Constructs a new RemovePermissionRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new RemovePermissionRequest object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize any additional object members.
      * 
      * @param queueUrl
      *        The URL of the Amazon SQS queue to take action on.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @param label
-     *        The identification of the permission to remove. This is the label
-     *        added with the <a>AddPermission</a> action.
+     *        The identification of the permission to remove. This is the label added with the <a>AddPermission</a>
+     *        action.
      */
     public RemovePermissionRequest(String queueUrl, String label) {
         setQueueUrl(queueUrl);
@@ -114,8 +107,7 @@ public class RemovePermissionRequest extends
      *        The URL of the Amazon SQS queue to take action on.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemovePermissionRequest withQueueUrl(String queueUrl) {
@@ -125,13 +117,12 @@ public class RemovePermissionRequest extends
 
     /**
      * <p>
-     * The identification of the permission to remove. This is the label added
-     * with the <a>AddPermission</a> action.
+     * The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.
      * </p>
      * 
      * @param label
-     *        The identification of the permission to remove. This is the label
-     *        added with the <a>AddPermission</a> action.
+     *        The identification of the permission to remove. This is the label added with the <a>AddPermission</a>
+     *        action.
      */
 
     public void setLabel(String label) {
@@ -140,12 +131,11 @@ public class RemovePermissionRequest extends
 
     /**
      * <p>
-     * The identification of the permission to remove. This is the label added
-     * with the <a>AddPermission</a> action.
+     * The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.
      * </p>
      * 
-     * @return The identification of the permission to remove. This is the label
-     *         added with the <a>AddPermission</a> action.
+     * @return The identification of the permission to remove. This is the label added with the <a>AddPermission</a>
+     *         action.
      */
 
     public String getLabel() {
@@ -154,15 +144,13 @@ public class RemovePermissionRequest extends
 
     /**
      * <p>
-     * The identification of the permission to remove. This is the label added
-     * with the <a>AddPermission</a> action.
+     * The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.
      * </p>
      * 
      * @param label
-     *        The identification of the permission to remove. This is the label
-     *        added with the <a>AddPermission</a> action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identification of the permission to remove. This is the label added with the <a>AddPermission</a>
+     *        action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemovePermissionRequest withLabel(String label) {
@@ -171,8 +159,7 @@ public class RemovePermissionRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -202,13 +189,11 @@ public class RemovePermissionRequest extends
         RemovePermissionRequest other = (RemovePermissionRequest) obj;
         if (other.getQueueUrl() == null ^ this.getQueueUrl() == null)
             return false;
-        if (other.getQueueUrl() != null
-                && other.getQueueUrl().equals(this.getQueueUrl()) == false)
+        if (other.getQueueUrl() != null && other.getQueueUrl().equals(this.getQueueUrl()) == false)
             return false;
         if (other.getLabel() == null ^ this.getLabel() == null)
             return false;
-        if (other.getLabel() != null
-                && other.getLabel().equals(this.getLabel()) == false)
+        if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
             return false;
         return true;
     }
@@ -218,10 +203,8 @@ public class RemovePermissionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getQueueUrl() == null) ? 0 : getQueueUrl().hashCode());
-        hashCode = prime * hashCode
-                + ((getLabel() == null) ? 0 : getLabel().hashCode());
+        hashCode = prime * hashCode + ((getQueueUrl() == null) ? 0 : getQueueUrl().hashCode());
+        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
         return hashCode;
     }
 

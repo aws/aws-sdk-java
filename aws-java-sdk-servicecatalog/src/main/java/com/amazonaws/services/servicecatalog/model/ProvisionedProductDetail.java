@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.servicecatalog.model;
 
@@ -73,8 +71,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
     private String idempotencyToken;
     /**
      * <p>
-     * The record identifier of the last request performed on this
-     * ProvisionedProduct object.
+     * The record identifier of the last request performed on this ProvisionedProduct object.
      * </p>
      */
     private String lastRecordId;
@@ -111,8 +108,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
      * 
      * @param name
      *        The user-friendly name of the ProvisionedProduct object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisionedProductDetail withName(String name) {
@@ -152,8 +148,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
      * 
      * @param arn
      *        The ARN associated with the ProvisionedProduct object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisionedProductDetail withArn(String arn) {
@@ -193,8 +188,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of the ProvisionedProduct object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisionedProductDetail withType(String type) {
@@ -234,8 +228,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
      * 
      * @param id
      *        The identifier of the ProvisionedProduct object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisionedProductDetail withId(String id) {
@@ -277,8 +270,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
      * 
      * @param status
      *        The current status of the ProvisionedProduct.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecordStatus
      */
 
@@ -308,8 +300,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
      * 
      * @param status
      *        The current status of the ProvisionedProduct.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecordStatus
      */
 
@@ -350,8 +341,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
      * 
      * @param statusMessage
      *        The current status message of the ProvisionedProduct.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisionedProductDetail withStatusMessage(String statusMessage) {
@@ -391,8 +381,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
      * 
      * @param createdTime
      *        The time the ProvisionedProduct was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisionedProductDetail withCreatedTime(java.util.Date createdTime) {
@@ -406,8 +395,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param idempotencyToken
-     *        An idempotency token that uniquely identifies this
-     *        ProvisionedProduct.
+     *        An idempotency token that uniquely identifies this ProvisionedProduct.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -419,8 +407,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
      * An idempotency token that uniquely identifies this ProvisionedProduct.
      * </p>
      * 
-     * @return An idempotency token that uniquely identifies this
-     *         ProvisionedProduct.
+     * @return An idempotency token that uniquely identifies this ProvisionedProduct.
      */
 
     public String getIdempotencyToken() {
@@ -433,10 +420,8 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param idempotencyToken
-     *        An idempotency token that uniquely identifies this
-     *        ProvisionedProduct.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An idempotency token that uniquely identifies this ProvisionedProduct.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisionedProductDetail withIdempotencyToken(String idempotencyToken) {
@@ -446,13 +431,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The record identifier of the last request performed on this
-     * ProvisionedProduct object.
+     * The record identifier of the last request performed on this ProvisionedProduct object.
      * </p>
      * 
      * @param lastRecordId
-     *        The record identifier of the last request performed on this
-     *        ProvisionedProduct object.
+     *        The record identifier of the last request performed on this ProvisionedProduct object.
      */
 
     public void setLastRecordId(String lastRecordId) {
@@ -461,12 +444,10 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The record identifier of the last request performed on this
-     * ProvisionedProduct object.
+     * The record identifier of the last request performed on this ProvisionedProduct object.
      * </p>
      * 
-     * @return The record identifier of the last request performed on this
-     *         ProvisionedProduct object.
+     * @return The record identifier of the last request performed on this ProvisionedProduct object.
      */
 
     public String getLastRecordId() {
@@ -475,15 +456,12 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The record identifier of the last request performed on this
-     * ProvisionedProduct object.
+     * The record identifier of the last request performed on this ProvisionedProduct object.
      * </p>
      * 
      * @param lastRecordId
-     *        The record identifier of the last request performed on this
-     *        ProvisionedProduct object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The record identifier of the last request performed on this ProvisionedProduct object.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisionedProductDetail withLastRecordId(String lastRecordId) {
@@ -492,8 +470,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -537,50 +514,39 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
         ProvisionedProductDetail other = (ProvisionedProductDetail) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
-        if (other.getStatusMessage() != null
-                && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
         if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
             return false;
-        if (other.getCreatedTime() != null
-                && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
-        if (other.getIdempotencyToken() == null
-                ^ this.getIdempotencyToken() == null)
+        if (other.getIdempotencyToken() == null ^ this.getIdempotencyToken() == null)
             return false;
-        if (other.getIdempotencyToken() != null
-                && other.getIdempotencyToken().equals(
-                        this.getIdempotencyToken()) == false)
+        if (other.getIdempotencyToken() != null && other.getIdempotencyToken().equals(this.getIdempotencyToken()) == false)
             return false;
         if (other.getLastRecordId() == null ^ this.getLastRecordId() == null)
             return false;
-        if (other.getLastRecordId() != null
-                && other.getLastRecordId().equals(this.getLastRecordId()) == false)
+        if (other.getLastRecordId() != null && other.getLastRecordId().equals(this.getLastRecordId()) == false)
             return false;
         return true;
     }
@@ -590,31 +556,15 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStatusMessage() == null) ? 0 : getStatusMessage()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastRecordId() == null) ? 0 : getLastRecordId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken().hashCode());
+        hashCode = prime * hashCode + ((getLastRecordId() == null) ? 0 : getLastRecordId().hashCode());
         return hashCode;
     }
 
@@ -623,9 +573,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
         try {
             return (ProvisionedProductDetail) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

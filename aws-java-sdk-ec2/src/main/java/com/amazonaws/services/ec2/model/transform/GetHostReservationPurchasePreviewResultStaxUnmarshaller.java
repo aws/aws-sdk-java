@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,12 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * GetHostReservationPurchasePreviewResult StAX Unmarshaller
  */
-public class GetHostReservationPurchasePreviewResultStaxUnmarshaller
-        implements
-        Unmarshaller<GetHostReservationPurchasePreviewResult, StaxUnmarshallerContext> {
+public class GetHostReservationPurchasePreviewResultStaxUnmarshaller implements Unmarshaller<GetHostReservationPurchasePreviewResult, StaxUnmarshallerContext> {
 
-    public GetHostReservationPurchasePreviewResult unmarshall(
-            StaxUnmarshallerContext context) throws Exception {
+    public GetHostReservationPurchasePreviewResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         GetHostReservationPurchasePreviewResult getHostReservationPurchasePreviewResult = new GetHostReservationPurchasePreviewResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -51,30 +46,22 @@ public class GetHostReservationPurchasePreviewResultStaxUnmarshaller
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("purchase/member", targetDepth)) {
-                    getHostReservationPurchasePreviewResult
-                            .withPurchase(PurchaseStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getHostReservationPurchasePreviewResult.withPurchase(PurchaseStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("totalUpfrontPrice", targetDepth)) {
-                    getHostReservationPurchasePreviewResult
-                            .setTotalUpfrontPrice(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getHostReservationPurchasePreviewResult.setTotalUpfrontPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("totalHourlyPrice", targetDepth)) {
-                    getHostReservationPurchasePreviewResult
-                            .setTotalHourlyPrice(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getHostReservationPurchasePreviewResult.setTotalHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("currencyCode", targetDepth)) {
-                    getHostReservationPurchasePreviewResult
-                            .setCurrencyCode(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getHostReservationPurchasePreviewResult.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

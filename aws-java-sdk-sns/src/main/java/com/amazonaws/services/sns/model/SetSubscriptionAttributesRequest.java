@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for SetSubscriptionAttributes action.
  * </p>
  */
-public class SetSubscriptionAttributesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,12 +30,10 @@ public class SetSubscriptionAttributesRequest extends
     private String subscriptionArn;
     /**
      * <p>
-     * The name of the attribute you want to set. Only a subset of the
-     * subscriptions attributes are mutable.
+     * The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.
      * </p>
      * <p>
-     * Valid values: <code>DeliveryPolicy</code> |
-     * <code>RawMessageDelivery</code>
+     * Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      * </p>
      */
     private String attributeName;
@@ -51,31 +45,26 @@ public class SetSubscriptionAttributesRequest extends
     private String attributeValue;
 
     /**
-     * Default constructor for SetSubscriptionAttributesRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * the object after creating it.
+     * Default constructor for SetSubscriptionAttributesRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public SetSubscriptionAttributesRequest() {
     }
 
     /**
-     * Constructs a new SetSubscriptionAttributesRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new SetSubscriptionAttributesRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize any additional object members.
      * 
      * @param subscriptionArn
      *        The ARN of the subscription to modify.
      * @param attributeName
-     *        The name of the attribute you want to set. Only a subset of the
-     *        subscriptions attributes are mutable.</p>
+     *        The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p>
      *        <p>
-     *        Valid values: <code>DeliveryPolicy</code> |
-     *        <code>RawMessageDelivery</code>
+     *        Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      * @param attributeValue
      *        The new value for the attribute in JSON format.
      */
-    public SetSubscriptionAttributesRequest(String subscriptionArn,
-            String attributeName, String attributeValue) {
+    public SetSubscriptionAttributesRequest(String subscriptionArn, String attributeName, String attributeValue) {
         setSubscriptionArn(subscriptionArn);
         setAttributeName(attributeName);
         setAttributeValue(attributeValue);
@@ -113,32 +102,26 @@ public class SetSubscriptionAttributesRequest extends
      * 
      * @param subscriptionArn
      *        The ARN of the subscription to modify.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetSubscriptionAttributesRequest withSubscriptionArn(
-            String subscriptionArn) {
+    public SetSubscriptionAttributesRequest withSubscriptionArn(String subscriptionArn) {
         setSubscriptionArn(subscriptionArn);
         return this;
     }
 
     /**
      * <p>
-     * The name of the attribute you want to set. Only a subset of the
-     * subscriptions attributes are mutable.
+     * The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.
      * </p>
      * <p>
-     * Valid values: <code>DeliveryPolicy</code> |
-     * <code>RawMessageDelivery</code>
+     * Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      * </p>
      * 
      * @param attributeName
-     *        The name of the attribute you want to set. Only a subset of the
-     *        subscriptions attributes are mutable.</p>
+     *        The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p>
      *        <p>
-     *        Valid values: <code>DeliveryPolicy</code> |
-     *        <code>RawMessageDelivery</code>
+     *        Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      */
 
     public void setAttributeName(String attributeName) {
@@ -147,19 +130,15 @@ public class SetSubscriptionAttributesRequest extends
 
     /**
      * <p>
-     * The name of the attribute you want to set. Only a subset of the
-     * subscriptions attributes are mutable.
+     * The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.
      * </p>
      * <p>
-     * Valid values: <code>DeliveryPolicy</code> |
-     * <code>RawMessageDelivery</code>
+     * Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      * </p>
      * 
-     * @return The name of the attribute you want to set. Only a subset of the
-     *         subscriptions attributes are mutable.</p>
+     * @return The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p>
      *         <p>
-     *         Valid values: <code>DeliveryPolicy</code> |
-     *         <code>RawMessageDelivery</code>
+     *         Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      */
 
     public String getAttributeName() {
@@ -168,26 +147,20 @@ public class SetSubscriptionAttributesRequest extends
 
     /**
      * <p>
-     * The name of the attribute you want to set. Only a subset of the
-     * subscriptions attributes are mutable.
+     * The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.
      * </p>
      * <p>
-     * Valid values: <code>DeliveryPolicy</code> |
-     * <code>RawMessageDelivery</code>
+     * Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      * </p>
      * 
      * @param attributeName
-     *        The name of the attribute you want to set. Only a subset of the
-     *        subscriptions attributes are mutable.</p>
+     *        The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p>
      *        <p>
-     *        Valid values: <code>DeliveryPolicy</code> |
-     *        <code>RawMessageDelivery</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetSubscriptionAttributesRequest withAttributeName(
-            String attributeName) {
+    public SetSubscriptionAttributesRequest withAttributeName(String attributeName) {
         setAttributeName(attributeName);
         return this;
     }
@@ -224,19 +197,16 @@ public class SetSubscriptionAttributesRequest extends
      * 
      * @param attributeValue
      *        The new value for the attribute in JSON format.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetSubscriptionAttributesRequest withAttributeValue(
-            String attributeValue) {
+    public SetSubscriptionAttributesRequest withAttributeValue(String attributeValue) {
         setAttributeValue(attributeValue);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -266,22 +236,17 @@ public class SetSubscriptionAttributesRequest extends
         if (obj instanceof SetSubscriptionAttributesRequest == false)
             return false;
         SetSubscriptionAttributesRequest other = (SetSubscriptionAttributesRequest) obj;
-        if (other.getSubscriptionArn() == null
-                ^ this.getSubscriptionArn() == null)
+        if (other.getSubscriptionArn() == null ^ this.getSubscriptionArn() == null)
             return false;
-        if (other.getSubscriptionArn() != null
-                && other.getSubscriptionArn().equals(this.getSubscriptionArn()) == false)
+        if (other.getSubscriptionArn() != null && other.getSubscriptionArn().equals(this.getSubscriptionArn()) == false)
             return false;
         if (other.getAttributeName() == null ^ this.getAttributeName() == null)
             return false;
-        if (other.getAttributeName() != null
-                && other.getAttributeName().equals(this.getAttributeName()) == false)
+        if (other.getAttributeName() != null && other.getAttributeName().equals(this.getAttributeName()) == false)
             return false;
-        if (other.getAttributeValue() == null
-                ^ this.getAttributeValue() == null)
+        if (other.getAttributeValue() == null ^ this.getAttributeValue() == null)
             return false;
-        if (other.getAttributeValue() != null
-                && other.getAttributeValue().equals(this.getAttributeValue()) == false)
+        if (other.getAttributeValue() != null && other.getAttributeValue().equals(this.getAttributeValue()) == false)
             return false;
         return true;
     }
@@ -291,18 +256,9 @@ public class SetSubscriptionAttributesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSubscriptionArn() == null) ? 0 : getSubscriptionArn()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttributeName() == null) ? 0 : getAttributeName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttributeValue() == null) ? 0 : getAttributeValue()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getSubscriptionArn() == null) ? 0 : getSubscriptionArn().hashCode());
+        hashCode = prime * hashCode + ((getAttributeName() == null) ? 0 : getAttributeName().hashCode());
+        hashCode = prime * hashCode + ((getAttributeValue() == null) ? 0 : getAttributeValue().hashCode());
         return hashCode;
     }
 

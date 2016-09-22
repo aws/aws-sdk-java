@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model.transform;
 
@@ -29,8 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Finding JSON Unmarshaller
  */
-public class FindingJsonUnmarshaller implements
-        Unmarshaller<Finding, JsonUnmarshallerContext> {
+public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmarshallerContext> {
 
     public Finding unmarshall(JsonUnmarshallerContext context) throws Exception {
         Finding finding = new Finding();
@@ -52,101 +49,78 @@ public class FindingJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    finding.setArn(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    finding.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("schemaVersion", targetDepth)) {
                     context.nextToken();
-                    finding.setSchemaVersion(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    finding.setSchemaVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("service", targetDepth)) {
                     context.nextToken();
-                    finding.setService(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    finding.setService(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceAttributes", targetDepth)) {
                     context.nextToken();
-                    finding.setServiceAttributes(InspectorServiceAttributesJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    finding.setServiceAttributes(InspectorServiceAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("assetType", targetDepth)) {
                     context.nextToken();
-                    finding.setAssetType(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    finding.setAssetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetAttributes", targetDepth)) {
                     context.nextToken();
-                    finding.setAssetAttributes(AssetAttributesJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    finding.setAssetAttributes(AssetAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    finding.setId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    finding.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("title", targetDepth)) {
                     context.nextToken();
-                    finding.setTitle(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    finding.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    finding.setDescription(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    finding.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recommendation", targetDepth)) {
                     context.nextToken();
-                    finding.setRecommendation(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    finding.setRecommendation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("severity", targetDepth)) {
                     context.nextToken();
-                    finding.setSeverity(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    finding.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("numericSeverity", targetDepth)) {
                     context.nextToken();
-                    finding.setNumericSeverity(context.getUnmarshaller(
-                            Double.class).unmarshall(context));
+                    finding.setNumericSeverity(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("confidence", targetDepth)) {
                     context.nextToken();
-                    finding.setConfidence(context
-                            .getUnmarshaller(Integer.class).unmarshall(context));
+                    finding.setConfidence(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context
-                        .testExpression("indicatorOfCompromise", targetDepth)) {
+                if (context.testExpression("indicatorOfCompromise", targetDepth)) {
                     context.nextToken();
-                    finding.setIndicatorOfCompromise(context.getUnmarshaller(
-                            Boolean.class).unmarshall(context));
+                    finding.setIndicatorOfCompromise(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
-                    finding.setAttributes(new ListUnmarshaller<Attribute>(
-                            AttributeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    finding.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("userAttributes", targetDepth)) {
                     context.nextToken();
-                    finding.setUserAttributes(new ListUnmarshaller<Attribute>(
-                            AttributeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    finding.setUserAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    finding.setCreatedAt(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    finding.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
-                    finding.setUpdatedAt(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    finding.setUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

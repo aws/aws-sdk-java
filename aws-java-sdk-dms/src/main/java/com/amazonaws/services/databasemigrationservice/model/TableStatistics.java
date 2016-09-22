@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
@@ -53,8 +51,7 @@ public class TableStatistics implements Serializable, Cloneable {
     private Long updates;
     /**
      * <p>
-     * The Data Definition Language (DDL) used to build and modify the structure
-     * of your tables.
+     * The Data Definition Language (DDL) used to build and modify the structure of your tables.
      * </p>
      */
     private Long ddls;
@@ -109,8 +106,7 @@ public class TableStatistics implements Serializable, Cloneable {
      * 
      * @param schemaName
      *        The schema name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableStatistics withSchemaName(String schemaName) {
@@ -150,8 +146,7 @@ public class TableStatistics implements Serializable, Cloneable {
      * 
      * @param tableName
      *        The name of the table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableStatistics withTableName(String tableName) {
@@ -191,8 +186,7 @@ public class TableStatistics implements Serializable, Cloneable {
      * 
      * @param inserts
      *        The number of insert actions performed on a table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableStatistics withInserts(Long inserts) {
@@ -232,8 +226,7 @@ public class TableStatistics implements Serializable, Cloneable {
      * 
      * @param deletes
      *        The number of delete actions performed on a table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableStatistics withDeletes(Long deletes) {
@@ -273,8 +266,7 @@ public class TableStatistics implements Serializable, Cloneable {
      * 
      * @param updates
      *        The number of update actions performed on a table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableStatistics withUpdates(Long updates) {
@@ -284,13 +276,11 @@ public class TableStatistics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Data Definition Language (DDL) used to build and modify the structure
-     * of your tables.
+     * The Data Definition Language (DDL) used to build and modify the structure of your tables.
      * </p>
      * 
      * @param ddls
-     *        The Data Definition Language (DDL) used to build and modify the
-     *        structure of your tables.
+     *        The Data Definition Language (DDL) used to build and modify the structure of your tables.
      */
 
     public void setDdls(Long ddls) {
@@ -299,12 +289,10 @@ public class TableStatistics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Data Definition Language (DDL) used to build and modify the structure
-     * of your tables.
+     * The Data Definition Language (DDL) used to build and modify the structure of your tables.
      * </p>
      * 
-     * @return The Data Definition Language (DDL) used to build and modify the
-     *         structure of your tables.
+     * @return The Data Definition Language (DDL) used to build and modify the structure of your tables.
      */
 
     public Long getDdls() {
@@ -313,15 +301,12 @@ public class TableStatistics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Data Definition Language (DDL) used to build and modify the structure
-     * of your tables.
+     * The Data Definition Language (DDL) used to build and modify the structure of your tables.
      * </p>
      * 
      * @param ddls
-     *        The Data Definition Language (DDL) used to build and modify the
-     *        structure of your tables.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Data Definition Language (DDL) used to build and modify the structure of your tables.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableStatistics withDdls(Long ddls) {
@@ -361,8 +346,7 @@ public class TableStatistics implements Serializable, Cloneable {
      * 
      * @param fullLoadRows
      *        The number of rows added during the Full Load operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableStatistics withFullLoadRows(Long fullLoadRows) {
@@ -402,8 +386,7 @@ public class TableStatistics implements Serializable, Cloneable {
      * 
      * @param lastUpdateTime
      *        The last time the table was updated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableStatistics withLastUpdateTime(java.util.Date lastUpdateTime) {
@@ -443,8 +426,7 @@ public class TableStatistics implements Serializable, Cloneable {
      * 
      * @param tableState
      *        The state of the table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableStatistics withTableState(String tableState) {
@@ -453,8 +435,7 @@ public class TableStatistics implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -498,49 +479,39 @@ public class TableStatistics implements Serializable, Cloneable {
         TableStatistics other = (TableStatistics) obj;
         if (other.getSchemaName() == null ^ this.getSchemaName() == null)
             return false;
-        if (other.getSchemaName() != null
-                && other.getSchemaName().equals(this.getSchemaName()) == false)
+        if (other.getSchemaName() != null && other.getSchemaName().equals(this.getSchemaName()) == false)
             return false;
         if (other.getTableName() == null ^ this.getTableName() == null)
             return false;
-        if (other.getTableName() != null
-                && other.getTableName().equals(this.getTableName()) == false)
+        if (other.getTableName() != null && other.getTableName().equals(this.getTableName()) == false)
             return false;
         if (other.getInserts() == null ^ this.getInserts() == null)
             return false;
-        if (other.getInserts() != null
-                && other.getInserts().equals(this.getInserts()) == false)
+        if (other.getInserts() != null && other.getInserts().equals(this.getInserts()) == false)
             return false;
         if (other.getDeletes() == null ^ this.getDeletes() == null)
             return false;
-        if (other.getDeletes() != null
-                && other.getDeletes().equals(this.getDeletes()) == false)
+        if (other.getDeletes() != null && other.getDeletes().equals(this.getDeletes()) == false)
             return false;
         if (other.getUpdates() == null ^ this.getUpdates() == null)
             return false;
-        if (other.getUpdates() != null
-                && other.getUpdates().equals(this.getUpdates()) == false)
+        if (other.getUpdates() != null && other.getUpdates().equals(this.getUpdates()) == false)
             return false;
         if (other.getDdls() == null ^ this.getDdls() == null)
             return false;
-        if (other.getDdls() != null
-                && other.getDdls().equals(this.getDdls()) == false)
+        if (other.getDdls() != null && other.getDdls().equals(this.getDdls()) == false)
             return false;
         if (other.getFullLoadRows() == null ^ this.getFullLoadRows() == null)
             return false;
-        if (other.getFullLoadRows() != null
-                && other.getFullLoadRows().equals(this.getFullLoadRows()) == false)
+        if (other.getFullLoadRows() != null && other.getFullLoadRows().equals(this.getFullLoadRows()) == false)
             return false;
-        if (other.getLastUpdateTime() == null
-                ^ this.getLastUpdateTime() == null)
+        if (other.getLastUpdateTime() == null ^ this.getLastUpdateTime() == null)
             return false;
-        if (other.getLastUpdateTime() != null
-                && other.getLastUpdateTime().equals(this.getLastUpdateTime()) == false)
+        if (other.getLastUpdateTime() != null && other.getLastUpdateTime().equals(this.getLastUpdateTime()) == false)
             return false;
         if (other.getTableState() == null ^ this.getTableState() == null)
             return false;
-        if (other.getTableState() != null
-                && other.getTableState().equals(this.getTableState()) == false)
+        if (other.getTableState() != null && other.getTableState().equals(this.getTableState()) == false)
             return false;
         return true;
     }
@@ -550,28 +521,15 @@ public class TableStatistics implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSchemaName() == null) ? 0 : getSchemaName().hashCode());
-        hashCode = prime * hashCode
-                + ((getTableName() == null) ? 0 : getTableName().hashCode());
-        hashCode = prime * hashCode
-                + ((getInserts() == null) ? 0 : getInserts().hashCode());
-        hashCode = prime * hashCode
-                + ((getDeletes() == null) ? 0 : getDeletes().hashCode());
-        hashCode = prime * hashCode
-                + ((getUpdates() == null) ? 0 : getUpdates().hashCode());
-        hashCode = prime * hashCode
-                + ((getDdls() == null) ? 0 : getDdls().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFullLoadRows() == null) ? 0 : getFullLoadRows()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTableState() == null) ? 0 : getTableState().hashCode());
+        hashCode = prime * hashCode + ((getSchemaName() == null) ? 0 : getSchemaName().hashCode());
+        hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode());
+        hashCode = prime * hashCode + ((getInserts() == null) ? 0 : getInserts().hashCode());
+        hashCode = prime * hashCode + ((getDeletes() == null) ? 0 : getDeletes().hashCode());
+        hashCode = prime * hashCode + ((getUpdates() == null) ? 0 : getUpdates().hashCode());
+        hashCode = prime * hashCode + ((getDdls() == null) ? 0 : getDdls().hashCode());
+        hashCode = prime * hashCode + ((getFullLoadRows() == null) ? 0 : getFullLoadRows().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getTableState() == null) ? 0 : getTableState().hashCode());
         return hashCode;
     }
 
@@ -580,9 +538,7 @@ public class TableStatistics implements Serializable, Cloneable {
         try {
             return (TableStatistics) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

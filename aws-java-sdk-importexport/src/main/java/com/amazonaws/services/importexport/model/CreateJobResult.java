@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.importexport.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * Output structure for the CreateJob operation.
  */
-public class CreateJobResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CreateJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String jobId;
 
@@ -53,8 +49,7 @@ public class CreateJobResult extends
 
     /**
      * @param jobId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobResult withJobId(String jobId) {
@@ -82,8 +77,7 @@ public class CreateJobResult extends
 
     /**
      * @param jobType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */
 
@@ -103,8 +97,7 @@ public class CreateJobResult extends
 
     /**
      * @param jobType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */
 
@@ -131,8 +124,7 @@ public class CreateJobResult extends
 
     /**
      * @param signature
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobResult withSignature(String signature) {
@@ -158,12 +150,10 @@ public class CreateJobResult extends
 
     /**
      * @param signatureFileContents
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateJobResult withSignatureFileContents(
-            String signatureFileContents) {
+    public CreateJobResult withSignatureFileContents(String signatureFileContents) {
         setSignatureFileContents(signatureFileContents);
         return this;
     }
@@ -186,8 +176,7 @@ public class CreateJobResult extends
 
     /**
      * @param warningMessage
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobResult withWarningMessage(String warningMessage) {
@@ -216,27 +205,23 @@ public class CreateJobResult extends
             return;
         }
 
-        this.artifactList = new com.amazonaws.internal.SdkInternalList<Artifact>(
-                artifactList);
+        this.artifactList = new com.amazonaws.internal.SdkInternalList<Artifact>(artifactList);
     }
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setArtifactList(java.util.Collection)} or
-     * {@link #withArtifactList(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param artifactList
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobResult withArtifactList(Artifact... artifactList) {
         if (this.artifactList == null) {
-            setArtifactList(new com.amazonaws.internal.SdkInternalList<Artifact>(
-                    artifactList.length));
+            setArtifactList(new com.amazonaws.internal.SdkInternalList<Artifact>(artifactList.length));
         }
         for (Artifact ele : artifactList) {
             this.artifactList.add(ele);
@@ -246,19 +231,16 @@ public class CreateJobResult extends
 
     /**
      * @param artifactList
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateJobResult withArtifactList(
-            java.util.Collection<Artifact> artifactList) {
+    public CreateJobResult withArtifactList(java.util.Collection<Artifact> artifactList) {
         setArtifactList(artifactList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -275,8 +257,7 @@ public class CreateJobResult extends
         if (getSignature() != null)
             sb.append("Signature: " + getSignature() + ",");
         if (getSignatureFileContents() != null)
-            sb.append("SignatureFileContents: " + getSignatureFileContents()
-                    + ",");
+            sb.append("SignatureFileContents: " + getSignatureFileContents() + ",");
         if (getWarningMessage() != null)
             sb.append("WarningMessage: " + getWarningMessage() + ",");
         if (getArtifactList() != null)
@@ -297,36 +278,27 @@ public class CreateJobResult extends
         CreateJobResult other = (CreateJobResult) obj;
         if (other.getJobId() == null ^ this.getJobId() == null)
             return false;
-        if (other.getJobId() != null
-                && other.getJobId().equals(this.getJobId()) == false)
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
         if (other.getJobType() == null ^ this.getJobType() == null)
             return false;
-        if (other.getJobType() != null
-                && other.getJobType().equals(this.getJobType()) == false)
+        if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
             return false;
         if (other.getSignature() == null ^ this.getSignature() == null)
             return false;
-        if (other.getSignature() != null
-                && other.getSignature().equals(this.getSignature()) == false)
+        if (other.getSignature() != null && other.getSignature().equals(this.getSignature()) == false)
             return false;
-        if (other.getSignatureFileContents() == null
-                ^ this.getSignatureFileContents() == null)
+        if (other.getSignatureFileContents() == null ^ this.getSignatureFileContents() == null)
             return false;
-        if (other.getSignatureFileContents() != null
-                && other.getSignatureFileContents().equals(
-                        this.getSignatureFileContents()) == false)
+        if (other.getSignatureFileContents() != null && other.getSignatureFileContents().equals(this.getSignatureFileContents()) == false)
             return false;
-        if (other.getWarningMessage() == null
-                ^ this.getWarningMessage() == null)
+        if (other.getWarningMessage() == null ^ this.getWarningMessage() == null)
             return false;
-        if (other.getWarningMessage() != null
-                && other.getWarningMessage().equals(this.getWarningMessage()) == false)
+        if (other.getWarningMessage() != null && other.getWarningMessage().equals(this.getWarningMessage()) == false)
             return false;
         if (other.getArtifactList() == null ^ this.getArtifactList() == null)
             return false;
-        if (other.getArtifactList() != null
-                && other.getArtifactList().equals(this.getArtifactList()) == false)
+        if (other.getArtifactList() != null && other.getArtifactList().equals(this.getArtifactList()) == false)
             return false;
         return true;
     }
@@ -336,24 +308,12 @@ public class CreateJobResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJobId() == null) ? 0 : getJobId().hashCode());
-        hashCode = prime * hashCode
-                + ((getJobType() == null) ? 0 : getJobType().hashCode());
-        hashCode = prime * hashCode
-                + ((getSignature() == null) ? 0 : getSignature().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSignatureFileContents() == null) ? 0
-                        : getSignatureFileContents().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getWarningMessage() == null) ? 0 : getWarningMessage()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getArtifactList() == null) ? 0 : getArtifactList()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
+        hashCode = prime * hashCode + ((getSignature() == null) ? 0 : getSignature().hashCode());
+        hashCode = prime * hashCode + ((getSignatureFileContents() == null) ? 0 : getSignatureFileContents().hashCode());
+        hashCode = prime * hashCode + ((getWarningMessage() == null) ? 0 : getWarningMessage().hashCode());
+        hashCode = prime * hashCode + ((getArtifactList() == null) ? 0 : getArtifactList().hashCode());
         return hashCode;
     }
 
@@ -362,9 +322,7 @@ public class CreateJobResult extends
         try {
             return (CreateJobResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

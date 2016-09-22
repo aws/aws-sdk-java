@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -19,35 +17,29 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListAssessmentRunsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListAssessmentRunsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs that specifies the assessment runs that are returned by
-     * the action.
+     * A list of ARNs that specifies the assessment runs that are returned by the action.
      * </p>
      */
     private java.util.List<String> assessmentRunArns;
     /**
      * <p>
-     * When a response is generated, if there is more data to be listed, this
-     * parameter is present in the response and contains the value to use for
-     * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to null.
+     * When a response is generated, if there is more data to be listed, this parameter is present in the response and
+     * contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no
+     * more data to be listed, this parameter is set to null.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of ARNs that specifies the assessment runs that are returned by
-     * the action.
+     * A list of ARNs that specifies the assessment runs that are returned by the action.
      * </p>
      * 
-     * @return A list of ARNs that specifies the assessment runs that are
-     *         returned by the action.
+     * @return A list of ARNs that specifies the assessment runs that are returned by the action.
      */
 
     public java.util.List<String> getAssessmentRunArns() {
@@ -56,50 +48,40 @@ public class ListAssessmentRunsResult extends
 
     /**
      * <p>
-     * A list of ARNs that specifies the assessment runs that are returned by
-     * the action.
+     * A list of ARNs that specifies the assessment runs that are returned by the action.
      * </p>
      * 
      * @param assessmentRunArns
-     *        A list of ARNs that specifies the assessment runs that are
-     *        returned by the action.
+     *        A list of ARNs that specifies the assessment runs that are returned by the action.
      */
 
-    public void setAssessmentRunArns(
-            java.util.Collection<String> assessmentRunArns) {
+    public void setAssessmentRunArns(java.util.Collection<String> assessmentRunArns) {
         if (assessmentRunArns == null) {
             this.assessmentRunArns = null;
             return;
         }
 
-        this.assessmentRunArns = new java.util.ArrayList<String>(
-                assessmentRunArns);
+        this.assessmentRunArns = new java.util.ArrayList<String>(assessmentRunArns);
     }
 
     /**
      * <p>
-     * A list of ARNs that specifies the assessment runs that are returned by
-     * the action.
+     * A list of ARNs that specifies the assessment runs that are returned by the action.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAssessmentRunArns(java.util.Collection)} or
-     * {@link #withAssessmentRunArns(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssessmentRunArns(java.util.Collection)} or {@link #withAssessmentRunArns(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param assessmentRunArns
-     *        A list of ARNs that specifies the assessment runs that are
-     *        returned by the action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of ARNs that specifies the assessment runs that are returned by the action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListAssessmentRunsResult withAssessmentRunArns(
-            String... assessmentRunArns) {
+    public ListAssessmentRunsResult withAssessmentRunArns(String... assessmentRunArns) {
         if (this.assessmentRunArns == null) {
-            setAssessmentRunArns(new java.util.ArrayList<String>(
-                    assessmentRunArns.length));
+            setAssessmentRunArns(new java.util.ArrayList<String>(assessmentRunArns.length));
         }
         for (String ele : assessmentRunArns) {
             this.assessmentRunArns.add(ele);
@@ -109,37 +91,30 @@ public class ListAssessmentRunsResult extends
 
     /**
      * <p>
-     * A list of ARNs that specifies the assessment runs that are returned by
-     * the action.
+     * A list of ARNs that specifies the assessment runs that are returned by the action.
      * </p>
      * 
      * @param assessmentRunArns
-     *        A list of ARNs that specifies the assessment runs that are
-     *        returned by the action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of ARNs that specifies the assessment runs that are returned by the action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListAssessmentRunsResult withAssessmentRunArns(
-            java.util.Collection<String> assessmentRunArns) {
+    public ListAssessmentRunsResult withAssessmentRunArns(java.util.Collection<String> assessmentRunArns) {
         setAssessmentRunArns(assessmentRunArns);
         return this;
     }
 
     /**
      * <p>
-     * When a response is generated, if there is more data to be listed, this
-     * parameter is present in the response and contains the value to use for
-     * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to null.
+     * When a response is generated, if there is more data to be listed, this parameter is present in the response and
+     * contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no
+     * more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @param nextToken
-     *        When a response is generated, if there is more data to be listed,
-     *        this parameter is present in the response and contains the value
-     *        to use for the <b>nextToken</b> parameter in a subsequent
-     *        pagination request. If there is no more data to be listed, this
-     *        parameter is set to null.
+     *        When a response is generated, if there is more data to be listed, this parameter is present in the
+     *        response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination
+     *        request. If there is no more data to be listed, this parameter is set to null.
      */
 
     public void setNextToken(String nextToken) {
@@ -148,17 +123,14 @@ public class ListAssessmentRunsResult extends
 
     /**
      * <p>
-     * When a response is generated, if there is more data to be listed, this
-     * parameter is present in the response and contains the value to use for
-     * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to null.
+     * When a response is generated, if there is more data to be listed, this parameter is present in the response and
+     * contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no
+     * more data to be listed, this parameter is set to null.
      * </p>
      * 
-     * @return When a response is generated, if there is more data to be listed,
-     *         this parameter is present in the response and contains the value
-     *         to use for the <b>nextToken</b> parameter in a subsequent
-     *         pagination request. If there is no more data to be listed, this
-     *         parameter is set to null.
+     * @return When a response is generated, if there is more data to be listed, this parameter is present in the
+     *         response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination
+     *         request. If there is no more data to be listed, this parameter is set to null.
      */
 
     public String getNextToken() {
@@ -167,20 +139,16 @@ public class ListAssessmentRunsResult extends
 
     /**
      * <p>
-     * When a response is generated, if there is more data to be listed, this
-     * parameter is present in the response and contains the value to use for
-     * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to null.
+     * When a response is generated, if there is more data to be listed, this parameter is present in the response and
+     * contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no
+     * more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @param nextToken
-     *        When a response is generated, if there is more data to be listed,
-     *        this parameter is present in the response and contains the value
-     *        to use for the <b>nextToken</b> parameter in a subsequent
-     *        pagination request. If there is no more data to be listed, this
-     *        parameter is set to null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When a response is generated, if there is more data to be listed, this parameter is present in the
+     *        response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination
+     *        request. If there is no more data to be listed, this parameter is set to null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListAssessmentRunsResult withNextToken(String nextToken) {
@@ -189,8 +157,7 @@ public class ListAssessmentRunsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -218,17 +185,13 @@ public class ListAssessmentRunsResult extends
         if (obj instanceof ListAssessmentRunsResult == false)
             return false;
         ListAssessmentRunsResult other = (ListAssessmentRunsResult) obj;
-        if (other.getAssessmentRunArns() == null
-                ^ this.getAssessmentRunArns() == null)
+        if (other.getAssessmentRunArns() == null ^ this.getAssessmentRunArns() == null)
             return false;
-        if (other.getAssessmentRunArns() != null
-                && other.getAssessmentRunArns().equals(
-                        this.getAssessmentRunArns()) == false)
+        if (other.getAssessmentRunArns() != null && other.getAssessmentRunArns().equals(this.getAssessmentRunArns()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -238,12 +201,8 @@ public class ListAssessmentRunsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAssessmentRunArns() == null) ? 0
-                        : getAssessmentRunArns().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getAssessmentRunArns() == null) ? 0 : getAssessmentRunArns().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -252,9 +211,7 @@ public class ListAssessmentRunsResult extends
         try {
             return (ListAssessmentRunsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

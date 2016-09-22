@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * TransitionState JSON Unmarshaller
  */
-public class TransitionStateJsonUnmarshaller implements
-        Unmarshaller<TransitionState, JsonUnmarshallerContext> {
+public class TransitionStateJsonUnmarshaller implements Unmarshaller<TransitionState, JsonUnmarshallerContext> {
 
-    public TransitionState unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public TransitionState unmarshall(JsonUnmarshallerContext context) throws Exception {
         TransitionState transitionState = new TransitionState();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,28 +49,22 @@ public class TransitionStateJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("enabled", targetDepth)) {
                     context.nextToken();
-                    transitionState.setEnabled(context.getUnmarshaller(
-                            Boolean.class).unmarshall(context));
+                    transitionState.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("lastChangedBy", targetDepth)) {
                     context.nextToken();
-                    transitionState.setLastChangedBy(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    transitionState.setLastChangedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastChangedAt", targetDepth)) {
                     context.nextToken();
-                    transitionState.setLastChangedAt(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    transitionState.setLastChangedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("disabledReason", targetDepth)) {
                     context.nextToken();
-                    transitionState.setDisabledReason(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    transitionState.setDisabledReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

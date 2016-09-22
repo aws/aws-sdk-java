@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -18,17 +16,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about a configuration for automatically rolling back to a
- * previous version of an application revision when a deployment doesn't
- * complete successfully.
+ * Information about a configuration for automatically rolling back to a previous version of an application revision
+ * when a deployment doesn't complete successfully.
  * </p>
  */
 public class AutoRollbackConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a defined automatic rollback configuration is currently
-     * enabled.
+     * Indicates whether a defined automatic rollback configuration is currently enabled.
      * </p>
      */
     private Boolean enabled;
@@ -41,13 +37,11 @@ public class AutoRollbackConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a defined automatic rollback configuration is currently
-     * enabled.
+     * Indicates whether a defined automatic rollback configuration is currently enabled.
      * </p>
      * 
      * @param enabled
-     *        Indicates whether a defined automatic rollback configuration is
-     *        currently enabled.
+     *        Indicates whether a defined automatic rollback configuration is currently enabled.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -56,12 +50,10 @@ public class AutoRollbackConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a defined automatic rollback configuration is currently
-     * enabled.
+     * Indicates whether a defined automatic rollback configuration is currently enabled.
      * </p>
      * 
-     * @return Indicates whether a defined automatic rollback configuration is
-     *         currently enabled.
+     * @return Indicates whether a defined automatic rollback configuration is currently enabled.
      */
 
     public Boolean getEnabled() {
@@ -70,15 +62,12 @@ public class AutoRollbackConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a defined automatic rollback configuration is currently
-     * enabled.
+     * Indicates whether a defined automatic rollback configuration is currently enabled.
      * </p>
      * 
      * @param enabled
-     *        Indicates whether a defined automatic rollback configuration is
-     *        currently enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether a defined automatic rollback configuration is currently enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoRollbackConfiguration withEnabled(Boolean enabled) {
@@ -88,12 +77,10 @@ public class AutoRollbackConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a defined automatic rollback configuration is currently
-     * enabled.
+     * Indicates whether a defined automatic rollback configuration is currently enabled.
      * </p>
      * 
-     * @return Indicates whether a defined automatic rollback configuration is
-     *         currently enabled.
+     * @return Indicates whether a defined automatic rollback configuration is currently enabled.
      */
 
     public Boolean isEnabled() {
@@ -140,23 +127,20 @@ public class AutoRollbackConfiguration implements Serializable, Cloneable {
      * The event type or types that trigger a rollback.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEvents(java.util.Collection)} or
-     * {@link #withEvents(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param events
      *        The event type or types that trigger a rollback.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoRollbackEvent
      */
 
     public AutoRollbackConfiguration withEvents(String... events) {
         if (this.events == null) {
-            setEvents(new com.amazonaws.internal.SdkInternalList<String>(
-                    events.length));
+            setEvents(new com.amazonaws.internal.SdkInternalList<String>(events.length));
         }
         for (String ele : events) {
             this.events.add(ele);
@@ -171,13 +155,11 @@ public class AutoRollbackConfiguration implements Serializable, Cloneable {
      * 
      * @param events
      *        The event type or types that trigger a rollback.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoRollbackEvent
      */
 
-    public AutoRollbackConfiguration withEvents(
-            java.util.Collection<String> events) {
+    public AutoRollbackConfiguration withEvents(java.util.Collection<String> events) {
         setEvents(events);
         return this;
     }
@@ -189,14 +171,12 @@ public class AutoRollbackConfiguration implements Serializable, Cloneable {
      * 
      * @param events
      *        The event type or types that trigger a rollback.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoRollbackEvent
      */
 
     public AutoRollbackConfiguration withEvents(AutoRollbackEvent... events) {
-        com.amazonaws.internal.SdkInternalList<String> eventsCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                events.length);
+        com.amazonaws.internal.SdkInternalList<String> eventsCopy = new com.amazonaws.internal.SdkInternalList<String>(events.length);
         for (AutoRollbackEvent value : events) {
             eventsCopy.add(value.toString());
         }
@@ -209,8 +189,7 @@ public class AutoRollbackConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -240,13 +219,11 @@ public class AutoRollbackConfiguration implements Serializable, Cloneable {
         AutoRollbackConfiguration other = (AutoRollbackConfiguration) obj;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
-        if (other.getEnabled() != null
-                && other.getEnabled().equals(this.getEnabled()) == false)
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
         if (other.getEvents() == null ^ this.getEvents() == null)
             return false;
-        if (other.getEvents() != null
-                && other.getEvents().equals(this.getEvents()) == false)
+        if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false)
             return false;
         return true;
     }
@@ -256,10 +233,8 @@ public class AutoRollbackConfiguration implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
-        hashCode = prime * hashCode
-                + ((getEvents() == null) ? 0 : getEvents().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
         return hashCode;
     }
 
@@ -268,9 +243,7 @@ public class AutoRollbackConfiguration implements Serializable, Cloneable {
         try {
             return (AutoRollbackConfiguration) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

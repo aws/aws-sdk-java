@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model;
 
@@ -18,8 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A list that contains the status of the delivery of either the snapshot or the
- * configuration history to the specified Amazon S3 bucket.
+ * A list that contains the status of the delivery of either the snapshot or the configuration history to the specified
+ * Amazon S3 bucket.
  * </p>
  */
 public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
@@ -95,8 +93,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * 
      * @param lastStatus
      *        Status of the last attempted delivery.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryStatus
      */
 
@@ -126,8 +123,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * 
      * @param lastStatus
      *        Status of the last attempted delivery.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryStatus
      */
 
@@ -168,8 +164,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * 
      * @param lastErrorCode
      *        The error code from the last attempted delivery.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfigExportDeliveryInfo withLastErrorCode(String lastErrorCode) {
@@ -209,8 +204,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * 
      * @param lastErrorMessage
      *        The error message from the last attempted delivery.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConfigExportDeliveryInfo withLastErrorMessage(String lastErrorMessage) {
@@ -250,12 +244,10 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * 
      * @param lastAttemptTime
      *        The time of the last attempted delivery.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigExportDeliveryInfo withLastAttemptTime(
-            java.util.Date lastAttemptTime) {
+    public ConfigExportDeliveryInfo withLastAttemptTime(java.util.Date lastAttemptTime) {
         setLastAttemptTime(lastAttemptTime);
         return this;
     }
@@ -292,12 +284,10 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * 
      * @param lastSuccessfulTime
      *        The time of the last successful delivery.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigExportDeliveryInfo withLastSuccessfulTime(
-            java.util.Date lastSuccessfulTime) {
+    public ConfigExportDeliveryInfo withLastSuccessfulTime(java.util.Date lastSuccessfulTime) {
         setLastSuccessfulTime(lastSuccessfulTime);
         return this;
     }
@@ -334,19 +324,16 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * 
      * @param nextDeliveryTime
      *        The time that the next delivery occurs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConfigExportDeliveryInfo withNextDeliveryTime(
-            java.util.Date nextDeliveryTime) {
+    public ConfigExportDeliveryInfo withNextDeliveryTime(java.util.Date nextDeliveryTime) {
         setNextDeliveryTime(nextDeliveryTime);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -384,40 +371,27 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
         ConfigExportDeliveryInfo other = (ConfigExportDeliveryInfo) obj;
         if (other.getLastStatus() == null ^ this.getLastStatus() == null)
             return false;
-        if (other.getLastStatus() != null
-                && other.getLastStatus().equals(this.getLastStatus()) == false)
+        if (other.getLastStatus() != null && other.getLastStatus().equals(this.getLastStatus()) == false)
             return false;
         if (other.getLastErrorCode() == null ^ this.getLastErrorCode() == null)
             return false;
-        if (other.getLastErrorCode() != null
-                && other.getLastErrorCode().equals(this.getLastErrorCode()) == false)
+        if (other.getLastErrorCode() != null && other.getLastErrorCode().equals(this.getLastErrorCode()) == false)
             return false;
-        if (other.getLastErrorMessage() == null
-                ^ this.getLastErrorMessage() == null)
+        if (other.getLastErrorMessage() == null ^ this.getLastErrorMessage() == null)
             return false;
-        if (other.getLastErrorMessage() != null
-                && other.getLastErrorMessage().equals(
-                        this.getLastErrorMessage()) == false)
+        if (other.getLastErrorMessage() != null && other.getLastErrorMessage().equals(this.getLastErrorMessage()) == false)
             return false;
-        if (other.getLastAttemptTime() == null
-                ^ this.getLastAttemptTime() == null)
+        if (other.getLastAttemptTime() == null ^ this.getLastAttemptTime() == null)
             return false;
-        if (other.getLastAttemptTime() != null
-                && other.getLastAttemptTime().equals(this.getLastAttemptTime()) == false)
+        if (other.getLastAttemptTime() != null && other.getLastAttemptTime().equals(this.getLastAttemptTime()) == false)
             return false;
-        if (other.getLastSuccessfulTime() == null
-                ^ this.getLastSuccessfulTime() == null)
+        if (other.getLastSuccessfulTime() == null ^ this.getLastSuccessfulTime() == null)
             return false;
-        if (other.getLastSuccessfulTime() != null
-                && other.getLastSuccessfulTime().equals(
-                        this.getLastSuccessfulTime()) == false)
+        if (other.getLastSuccessfulTime() != null && other.getLastSuccessfulTime().equals(this.getLastSuccessfulTime()) == false)
             return false;
-        if (other.getNextDeliveryTime() == null
-                ^ this.getNextDeliveryTime() == null)
+        if (other.getNextDeliveryTime() == null ^ this.getNextDeliveryTime() == null)
             return false;
-        if (other.getNextDeliveryTime() != null
-                && other.getNextDeliveryTime().equals(
-                        this.getNextDeliveryTime()) == false)
+        if (other.getNextDeliveryTime() != null && other.getNextDeliveryTime().equals(this.getNextDeliveryTime()) == false)
             return false;
         return true;
     }
@@ -427,28 +401,12 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastErrorCode() == null) ? 0 : getLastErrorCode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastErrorMessage() == null) ? 0 : getLastErrorMessage()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastAttemptTime() == null) ? 0 : getLastAttemptTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastSuccessfulTime() == null) ? 0
-                        : getLastSuccessfulTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextDeliveryTime() == null) ? 0 : getNextDeliveryTime()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastErrorCode() == null) ? 0 : getLastErrorCode().hashCode());
+        hashCode = prime * hashCode + ((getLastErrorMessage() == null) ? 0 : getLastErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getLastAttemptTime() == null) ? 0 : getLastAttemptTime().hashCode());
+        hashCode = prime * hashCode + ((getLastSuccessfulTime() == null) ? 0 : getLastSuccessfulTime().hashCode());
+        hashCode = prime * hashCode + ((getNextDeliveryTime() == null) ? 0 : getNextDeliveryTime().hashCode());
         return hashCode;
     }
 
@@ -457,9 +415,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
         try {
             return (ConfigExportDeliveryInfo) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

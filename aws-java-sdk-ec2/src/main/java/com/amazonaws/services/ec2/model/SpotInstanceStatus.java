@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -27,15 +25,14 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * <p>
      * The status code. For a list of status codes, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     * >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String code;
     /**
      * <p>
-     * The date and time of the most recent status update, in UTC format (for
-     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * The date and time of the most recent status update, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      */
     private java.util.Date updateTime;
@@ -50,15 +47,13 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * <p>
      * The status code. For a list of status codes, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     * >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param code
      *        The status code. For a list of status codes, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     *        >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud
-     *        User Guide</i>.
+     *        >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setCode(String code) {
@@ -69,14 +64,12 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * <p>
      * The status code. For a list of status codes, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     * >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return The status code. For a list of status codes, see <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     *         >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud
-     *         User Guide</i>.
+     *         >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getCode() {
@@ -87,17 +80,14 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * <p>
      * The status code. For a list of status codes, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     * >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param code
      *        The status code. For a list of status codes, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     *        >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud
-     *        User Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotInstanceStatus withCode(String code) {
@@ -107,13 +97,12 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time of the most recent status update, in UTC format (for
-     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * The date and time of the most recent status update, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      * 
      * @param updateTime
-     *        The date and time of the most recent status update, in UTC format
-     *        (for example,
+     *        The date and time of the most recent status update, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
 
@@ -123,12 +112,11 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time of the most recent status update, in UTC format (for
-     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * The date and time of the most recent status update, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      * 
-     * @return The date and time of the most recent status update, in UTC format
-     *         (for example,
+     * @return The date and time of the most recent status update, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
 
@@ -138,16 +126,14 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time of the most recent status update, in UTC format (for
-     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * The date and time of the most recent status update, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      * 
      * @param updateTime
-     *        The date and time of the most recent status update, in UTC format
-     *        (for example,
+     *        The date and time of the most recent status update, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotInstanceStatus withUpdateTime(java.util.Date updateTime) {
@@ -187,8 +173,7 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * 
      * @param message
      *        The description for the status code.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotInstanceStatus withMessage(String message) {
@@ -197,8 +182,7 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -230,18 +214,15 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
         SpotInstanceStatus other = (SpotInstanceStatus) obj;
         if (other.getCode() == null ^ this.getCode() == null)
             return false;
-        if (other.getCode() != null
-                && other.getCode().equals(this.getCode()) == false)
+        if (other.getCode() != null && other.getCode().equals(this.getCode()) == false)
             return false;
         if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
             return false;
-        if (other.getUpdateTime() != null
-                && other.getUpdateTime().equals(this.getUpdateTime()) == false)
+        if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         return true;
     }
@@ -251,12 +232,9 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCode() == null) ? 0 : getCode().hashCode());
-        hashCode = prime * hashCode
-                + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
+        hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         return hashCode;
     }
 
@@ -265,9 +243,7 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
         try {
             return (SpotInstanceStatus) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

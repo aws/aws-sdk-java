@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
@@ -35,63 +33,50 @@ import com.amazonaws.protocol.json.*;
 /**
  * EnableStageTransitionRequest Marshaller
  */
-public class EnableStageTransitionRequestMarshaller
-        implements
-        Marshaller<Request<EnableStageTransitionRequest>, EnableStageTransitionRequest> {
+public class EnableStageTransitionRequestMarshaller implements Marshaller<Request<EnableStageTransitionRequest>, EnableStageTransitionRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public EnableStageTransitionRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public EnableStageTransitionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<EnableStageTransitionRequest> marshall(
-            EnableStageTransitionRequest enableStageTransitionRequest) {
+    public Request<EnableStageTransitionRequest> marshall(EnableStageTransitionRequest enableStageTransitionRequest) {
 
         if (enableStageTransitionRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<EnableStageTransitionRequest> request = new DefaultRequest<EnableStageTransitionRequest>(
-                enableStageTransitionRequest, "AWSCodePipeline");
-        request.addHeader("X-Amz-Target",
-                "CodePipeline_20150709.EnableStageTransition");
+        Request<EnableStageTransitionRequest> request = new DefaultRequest<EnableStageTransitionRequest>(enableStageTransitionRequest, "AWSCodePipeline");
+        request.addHeader("X-Amz-Target", "CodePipeline_20150709.EnableStageTransition");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (enableStageTransitionRequest.getPipelineName() != null) {
-                jsonGenerator.writeFieldName("pipelineName").writeValue(
-                        enableStageTransitionRequest.getPipelineName());
+                jsonGenerator.writeFieldName("pipelineName").writeValue(enableStageTransitionRequest.getPipelineName());
             }
             if (enableStageTransitionRequest.getStageName() != null) {
-                jsonGenerator.writeFieldName("stageName").writeValue(
-                        enableStageTransitionRequest.getStageName());
+                jsonGenerator.writeFieldName("stageName").writeValue(enableStageTransitionRequest.getStageName());
             }
             if (enableStageTransitionRequest.getTransitionType() != null) {
-                jsonGenerator.writeFieldName("transitionType").writeValue(
-                        enableStageTransitionRequest.getTransitionType());
+                jsonGenerator.writeFieldName("transitionType").writeValue(enableStageTransitionRequest.getTransitionType());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

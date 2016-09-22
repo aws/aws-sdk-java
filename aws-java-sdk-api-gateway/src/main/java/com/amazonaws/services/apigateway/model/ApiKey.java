@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -18,14 +16,12 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A resource that can be distributed to callers for executing <a>Method</a>
- * resources that require an API key. API keys can be mapped to any <a>Stage</a>
- * on any <a>RestApi</a>, which indicates that the callers with the API key can
- * make requests to that stage.
+ * A resource that can be distributed to callers for executing <a>Method</a> resources that require an API key. API keys
+ * can be mapped to any <a>Stage</a> on any <a>RestApi</a>, which indicates that the callers with the API key can make
+ * requests to that stage.
  * </p>
- * <div class="seeAlso"> <a href=
- * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html"
- * >Use API Keys</a> </div>
+ * <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
+ * API Keys</a> </div>
  */
 public class ApiKey implements Serializable, Cloneable {
 
@@ -61,8 +57,7 @@ public class ApiKey implements Serializable, Cloneable {
     private Boolean enabled;
     /**
      * <p>
-     * The date when the API Key was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      */
@@ -75,8 +70,7 @@ public class ApiKey implements Serializable, Cloneable {
     private java.util.Date lastUpdatedDate;
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the
-     * <a>ApiKey</a> resource.
+     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
      * </p>
      */
     private java.util.List<String> stageKeys;
@@ -113,8 +107,7 @@ public class ApiKey implements Serializable, Cloneable {
      * 
      * @param id
      *        The identifier of the API Key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApiKey withId(String id) {
@@ -154,8 +147,7 @@ public class ApiKey implements Serializable, Cloneable {
      * 
      * @param value
      *        The value of the API Key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApiKey withValue(String value) {
@@ -195,8 +187,7 @@ public class ApiKey implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the API Key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApiKey withName(String name) {
@@ -236,8 +227,7 @@ public class ApiKey implements Serializable, Cloneable {
      * 
      * @param description
      *        The description of the API Key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApiKey withDescription(String description) {
@@ -277,8 +267,7 @@ public class ApiKey implements Serializable, Cloneable {
      * 
      * @param enabled
      *        Specifies whether the API Key can be used by callers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApiKey withEnabled(Boolean enabled) {
@@ -300,14 +289,12 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the API Key was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API Key was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *        target="_blank">ISO 8601 format</a>.
      */
 
@@ -317,13 +304,11 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the API Key was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
-     * @return The date when the API Key was created, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * @return The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *         target="_blank">ISO 8601 format</a>.
      */
 
@@ -333,17 +318,14 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the API Key was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API Key was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *        target="_blank">ISO 8601 format</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApiKey withCreatedDate(java.util.Date createdDate) {
@@ -383,8 +365,7 @@ public class ApiKey implements Serializable, Cloneable {
      * 
      * @param lastUpdatedDate
      *        When the API Key was last updated, in ISO 8601 format.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApiKey withLastUpdatedDate(java.util.Date lastUpdatedDate) {
@@ -394,12 +375,10 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the
-     * <a>ApiKey</a> resource.
+     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
      * </p>
      * 
-     * @return A list of <a>Stage</a> resources that are associated with the
-     *         <a>ApiKey</a> resource.
+     * @return A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
      */
 
     public java.util.List<String> getStageKeys() {
@@ -408,13 +387,11 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the
-     * <a>ApiKey</a> resource.
+     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
      * </p>
      * 
      * @param stageKeys
-     *        A list of <a>Stage</a> resources that are associated with the
-     *        <a>ApiKey</a> resource.
+     *        A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
      */
 
     public void setStageKeys(java.util.Collection<String> stageKeys) {
@@ -428,21 +405,17 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the
-     * <a>ApiKey</a> resource.
+     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setStageKeys(java.util.Collection)} or
-     * {@link #withStageKeys(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStageKeys(java.util.Collection)} or {@link #withStageKeys(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param stageKeys
-     *        A list of <a>Stage</a> resources that are associated with the
-     *        <a>ApiKey</a> resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApiKey withStageKeys(String... stageKeys) {
@@ -457,15 +430,12 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the
-     * <a>ApiKey</a> resource.
+     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
      * </p>
      * 
      * @param stageKeys
-     *        A list of <a>Stage</a> resources that are associated with the
-     *        <a>ApiKey</a> resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApiKey withStageKeys(java.util.Collection<String> stageKeys) {
@@ -474,8 +444,7 @@ public class ApiKey implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -517,44 +486,35 @@ public class ApiKey implements Serializable, Cloneable {
         ApiKey other = (ApiKey) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
-        if (other.getValue() != null
-                && other.getValue().equals(this.getValue()) == false)
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
-        if (other.getEnabled() != null
-                && other.getEnabled().equals(this.getEnabled()) == false)
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
-        if (other.getCreatedDate() != null
-                && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
             return false;
-        if (other.getLastUpdatedDate() == null
-                ^ this.getLastUpdatedDate() == null)
+        if (other.getLastUpdatedDate() == null ^ this.getLastUpdatedDate() == null)
             return false;
-        if (other.getLastUpdatedDate() != null
-                && other.getLastUpdatedDate().equals(this.getLastUpdatedDate()) == false)
+        if (other.getLastUpdatedDate() != null && other.getLastUpdatedDate().equals(this.getLastUpdatedDate()) == false)
             return false;
         if (other.getStageKeys() == null ^ this.getStageKeys() == null)
             return false;
-        if (other.getStageKeys() != null
-                && other.getStageKeys().equals(this.getStageKeys()) == false)
+        if (other.getStageKeys() != null && other.getStageKeys().equals(this.getStageKeys()) == false)
             return false;
         return true;
     }
@@ -564,26 +524,14 @@ public class ApiKey implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getValue() == null) ? 0 : getValue().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStageKeys() == null) ? 0 : getStageKeys().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
+        hashCode = prime * hashCode + ((getStageKeys() == null) ? 0 : getStageKeys().hashCode());
         return hashCode;
     }
 
@@ -592,9 +540,7 @@ public class ApiKey implements Serializable, Cloneable {
         try {
             return (ApiKey) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

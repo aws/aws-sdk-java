@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -18,39 +16,37 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains the status that one Amazon Route 53 health
- * checker reports and the time of the health check.
+ * A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health
+ * check.
  * </p>
  */
 public class StatusReport implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the status of the health check endpoint as reported by
-     * one of the Amazon Route 53 health checkers.
+     * A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health
+     * checkers.
      * </p>
      */
     private String status;
     /**
      * <p>
      * The time at which the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For
+     * example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751 UTC.
      * </p>
      */
     private java.util.Date checkedTime;
 
     /**
      * <p>
-     * A description of the status of the health check endpoint as reported by
-     * one of the Amazon Route 53 health checkers.
+     * A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health
+     * checkers.
      * </p>
      * 
      * @param status
-     *        A description of the status of the health check endpoint as
-     *        reported by one of the Amazon Route 53 health checkers.
+     *        A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health
+     *        checkers.
      */
 
     public void setStatus(String status) {
@@ -59,12 +55,12 @@ public class StatusReport implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the status of the health check endpoint as reported by
-     * one of the Amazon Route 53 health checkers.
+     * A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health
+     * checkers.
      * </p>
      * 
-     * @return A description of the status of the health check endpoint as
-     *         reported by one of the Amazon Route 53 health checkers.
+     * @return A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health
+     *         checkers.
      */
 
     public String getStatus() {
@@ -73,15 +69,14 @@ public class StatusReport implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the status of the health check endpoint as reported by
-     * one of the Amazon Route 53 health checkers.
+     * A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health
+     * checkers.
      * </p>
      * 
      * @param status
-     *        A description of the status of the health check endpoint as
-     *        reported by one of the Amazon Route 53 health checkers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health
+     *        checkers.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StatusReport withStatus(String status) {
@@ -92,18 +87,15 @@ public class StatusReport implements Serializable, Cloneable {
     /**
      * <p>
      * The time at which the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For
+     * example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751 UTC.
      * </p>
      * 
      * @param checkedTime
-     *        The time at which the health checker performed the health check in
-     *        <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601
-     *        format</a> and Coordinated Universal Time (UTC). For example, the
-     *        value <code>2014-10-27T17:48:16.751Z</code> represents October 27,
-     *        2014 at 17:48:16.751 UTC.
+     *        The time at which the health checker performed the health check in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
+     *        For example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751
+     *        UTC.
      */
 
     public void setCheckedTime(java.util.Date checkedTime) {
@@ -113,17 +105,14 @@ public class StatusReport implements Serializable, Cloneable {
     /**
      * <p>
      * The time at which the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For
+     * example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751 UTC.
      * </p>
      * 
-     * @return The time at which the health checker performed the health check
-     *         in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601
-     *         format</a> and Coordinated Universal Time (UTC). For example, the
-     *         value <code>2014-10-27T17:48:16.751Z</code> represents October
-     *         27, 2014 at 17:48:16.751 UTC.
+     * @return The time at which the health checker performed the health check in <a
+     *         href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
+     *         For example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751
+     *         UTC.
      */
 
     public java.util.Date getCheckedTime() {
@@ -133,20 +122,16 @@ public class StatusReport implements Serializable, Cloneable {
     /**
      * <p>
      * The time at which the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For
+     * example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751 UTC.
      * </p>
      * 
      * @param checkedTime
-     *        The time at which the health checker performed the health check in
-     *        <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601
-     *        format</a> and Coordinated Universal Time (UTC). For example, the
-     *        value <code>2014-10-27T17:48:16.751Z</code> represents October 27,
-     *        2014 at 17:48:16.751 UTC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time at which the health checker performed the health check in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
+     *        For example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751
+     *        UTC.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StatusReport withCheckedTime(java.util.Date checkedTime) {
@@ -155,8 +140,7 @@ public class StatusReport implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -186,13 +170,11 @@ public class StatusReport implements Serializable, Cloneable {
         StatusReport other = (StatusReport) obj;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getCheckedTime() == null ^ this.getCheckedTime() == null)
             return false;
-        if (other.getCheckedTime() != null
-                && other.getCheckedTime().equals(this.getCheckedTime()) == false)
+        if (other.getCheckedTime() != null && other.getCheckedTime().equals(this.getCheckedTime()) == false)
             return false;
         return true;
     }
@@ -202,11 +184,8 @@ public class StatusReport implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCheckedTime() == null) ? 0 : getCheckedTime().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCheckedTime() == null) ? 0 : getCheckedTime().hashCode());
         return hashCode;
     }
 
@@ -215,9 +194,7 @@ public class StatusReport implements Serializable, Cloneable {
         try {
             return (StatusReport) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

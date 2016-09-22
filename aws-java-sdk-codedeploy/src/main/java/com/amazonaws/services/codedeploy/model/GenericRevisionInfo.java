@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -86,8 +84,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * 
      * @param description
      *        A comment about the revision.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GenericRevisionInfo withDescription(String description) {
@@ -100,8 +97,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * The deployment groups for which this is the current target revision.
      * </p>
      * 
-     * @return The deployment groups for which this is the current target
-     *         revision.
+     * @return The deployment groups for which this is the current target revision.
      */
 
     public java.util.List<String> getDeploymentGroups() {
@@ -117,19 +113,16 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param deploymentGroups
-     *        The deployment groups for which this is the current target
-     *        revision.
+     *        The deployment groups for which this is the current target revision.
      */
 
-    public void setDeploymentGroups(
-            java.util.Collection<String> deploymentGroups) {
+    public void setDeploymentGroups(java.util.Collection<String> deploymentGroups) {
         if (deploymentGroups == null) {
             this.deploymentGroups = null;
             return;
         }
 
-        this.deploymentGroups = new com.amazonaws.internal.SdkInternalList<String>(
-                deploymentGroups);
+        this.deploymentGroups = new com.amazonaws.internal.SdkInternalList<String>(deploymentGroups);
     }
 
     /**
@@ -137,23 +130,19 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * The deployment groups for which this is the current target revision.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDeploymentGroups(java.util.Collection)} or
-     * {@link #withDeploymentGroups(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeploymentGroups(java.util.Collection)} or {@link #withDeploymentGroups(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param deploymentGroups
-     *        The deployment groups for which this is the current target
-     *        revision.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The deployment groups for which this is the current target revision.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GenericRevisionInfo withDeploymentGroups(String... deploymentGroups) {
         if (this.deploymentGroups == null) {
-            setDeploymentGroups(new com.amazonaws.internal.SdkInternalList<String>(
-                    deploymentGroups.length));
+            setDeploymentGroups(new com.amazonaws.internal.SdkInternalList<String>(deploymentGroups.length));
         }
         for (String ele : deploymentGroups) {
             this.deploymentGroups.add(ele);
@@ -167,14 +156,11 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param deploymentGroups
-     *        The deployment groups for which this is the current target
-     *        revision.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The deployment groups for which this is the current target revision.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GenericRevisionInfo withDeploymentGroups(
-            java.util.Collection<String> deploymentGroups) {
+    public GenericRevisionInfo withDeploymentGroups(java.util.Collection<String> deploymentGroups) {
         setDeploymentGroups(deploymentGroups);
         return this;
     }
@@ -211,8 +197,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * 
      * @param firstUsedTime
      *        When the revision was first used by AWS CodeDeploy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GenericRevisionInfo withFirstUsedTime(java.util.Date firstUsedTime) {
@@ -252,8 +237,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * 
      * @param lastUsedTime
      *        When the revision was last used by AWS CodeDeploy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GenericRevisionInfo withLastUsedTime(java.util.Date lastUsedTime) {
@@ -293,8 +277,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * 
      * @param registerTime
      *        When the revision was registered with AWS CodeDeploy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GenericRevisionInfo withRegisterTime(java.util.Date registerTime) {
@@ -303,8 +286,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -340,30 +322,23 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
         GenericRevisionInfo other = (GenericRevisionInfo) obj;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getDeploymentGroups() == null
-                ^ this.getDeploymentGroups() == null)
+        if (other.getDeploymentGroups() == null ^ this.getDeploymentGroups() == null)
             return false;
-        if (other.getDeploymentGroups() != null
-                && other.getDeploymentGroups().equals(
-                        this.getDeploymentGroups()) == false)
+        if (other.getDeploymentGroups() != null && other.getDeploymentGroups().equals(this.getDeploymentGroups()) == false)
             return false;
         if (other.getFirstUsedTime() == null ^ this.getFirstUsedTime() == null)
             return false;
-        if (other.getFirstUsedTime() != null
-                && other.getFirstUsedTime().equals(this.getFirstUsedTime()) == false)
+        if (other.getFirstUsedTime() != null && other.getFirstUsedTime().equals(this.getFirstUsedTime()) == false)
             return false;
         if (other.getLastUsedTime() == null ^ this.getLastUsedTime() == null)
             return false;
-        if (other.getLastUsedTime() != null
-                && other.getLastUsedTime().equals(this.getLastUsedTime()) == false)
+        if (other.getLastUsedTime() != null && other.getLastUsedTime().equals(this.getLastUsedTime()) == false)
             return false;
         if (other.getRegisterTime() == null ^ this.getRegisterTime() == null)
             return false;
-        if (other.getRegisterTime() != null
-                && other.getRegisterTime().equals(this.getRegisterTime()) == false)
+        if (other.getRegisterTime() != null && other.getRegisterTime().equals(this.getRegisterTime()) == false)
             return false;
         return true;
     }
@@ -373,25 +348,11 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentGroups() == null) ? 0 : getDeploymentGroups()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFirstUsedTime() == null) ? 0 : getFirstUsedTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastUsedTime() == null) ? 0 : getLastUsedTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegisterTime() == null) ? 0 : getRegisterTime()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentGroups() == null) ? 0 : getDeploymentGroups().hashCode());
+        hashCode = prime * hashCode + ((getFirstUsedTime() == null) ? 0 : getFirstUsedTime().hashCode());
+        hashCode = prime * hashCode + ((getLastUsedTime() == null) ? 0 : getLastUsedTime().hashCode());
+        hashCode = prime * hashCode + ((getRegisterTime() == null) ? 0 : getRegisterTime().hashCode());
         return hashCode;
     }
 
@@ -400,9 +361,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
         try {
             return (GenericRevisionInfo) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

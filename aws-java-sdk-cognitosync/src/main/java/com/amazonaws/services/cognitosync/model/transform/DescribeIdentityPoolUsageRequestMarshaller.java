@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitosync.model.transform;
 
@@ -43,40 +41,31 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeIdentityPoolUsageRequest Marshaller
  */
-public class DescribeIdentityPoolUsageRequestMarshaller
-        implements
-        Marshaller<Request<DescribeIdentityPoolUsageRequest>, DescribeIdentityPoolUsageRequest> {
+public class DescribeIdentityPoolUsageRequestMarshaller implements Marshaller<Request<DescribeIdentityPoolUsageRequest>, DescribeIdentityPoolUsageRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeIdentityPoolUsageRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeIdentityPoolUsageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeIdentityPoolUsageRequest> marshall(
-            DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest) {
+    public Request<DescribeIdentityPoolUsageRequest> marshall(DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest) {
 
         if (describeIdentityPoolUsageRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeIdentityPoolUsageRequest> request = new DefaultRequest<DescribeIdentityPoolUsageRequest>(
-                describeIdentityPoolUsageRequest, "AmazonCognitoSync");
+        Request<DescribeIdentityPoolUsageRequest> request = new DefaultRequest<DescribeIdentityPoolUsageRequest>(describeIdentityPoolUsageRequest,
+                "AmazonCognitoSync");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{IdentityPoolId}",
-                        (describeIdentityPoolUsageRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(describeIdentityPoolUsageRequest
-                                                .getIdentityPoolId()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{IdentityPoolId}",
+                (describeIdentityPoolUsageRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(describeIdentityPoolUsageRequest.getIdentityPoolId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

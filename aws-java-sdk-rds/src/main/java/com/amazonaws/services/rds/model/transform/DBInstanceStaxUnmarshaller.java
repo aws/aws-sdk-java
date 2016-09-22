@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * DBInstance StAX Unmarshaller
  */
-public class DBInstanceStaxUnmarshaller implements
-        Unmarshaller<DBInstance, StaxUnmarshallerContext> {
+public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, StaxUnmarshallerContext> {
 
-    public DBInstance unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public DBInstance unmarshall(StaxUnmarshallerContext context) throws Exception {
         DBInstance dBInstance = new DBInstance();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,318 +46,237 @@ public class DBInstanceStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("DBInstanceIdentifier", targetDepth)) {
-                    dBInstance.setDBInstanceIdentifier(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setDBInstanceIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DBInstanceClass", targetDepth)) {
-                    dBInstance.setDBInstanceClass(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setDBInstanceClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Engine", targetDepth)) {
-                    dBInstance.setEngine(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    dBInstance.setEngine(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DBInstanceStatus", targetDepth)) {
-                    dBInstance.setDBInstanceStatus(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setDBInstanceStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MasterUsername", targetDepth)) {
-                    dBInstance.setMasterUsername(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setMasterUsername(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DBName", targetDepth)) {
-                    dBInstance.setDBName(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    dBInstance.setDBName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Endpoint", targetDepth)) {
-                    dBInstance.setEndpoint(EndpointStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setEndpoint(EndpointStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("AllocatedStorage", targetDepth)) {
-                    dBInstance.setAllocatedStorage(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setAllocatedStorage(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("InstanceCreateTime", targetDepth)) {
-                    dBInstance.setInstanceCreateTime(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setInstanceCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("PreferredBackupWindow", targetDepth)) {
-                    dBInstance.setPreferredBackupWindow(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("PreferredBackupWindow", targetDepth)) {
+                    dBInstance.setPreferredBackupWindow(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("BackupRetentionPeriod", targetDepth)) {
-                    dBInstance.setBackupRetentionPeriod(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("BackupRetentionPeriod", targetDepth)) {
+                    dBInstance.setBackupRetentionPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("DBSecurityGroups/DBSecurityGroup",
-                        targetDepth)) {
-                    dBInstance
-                            .withDBSecurityGroups(DBSecurityGroupMembershipStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("DBSecurityGroups/DBSecurityGroup", targetDepth)) {
+                    dBInstance.withDBSecurityGroups(DBSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "VpcSecurityGroups/VpcSecurityGroupMembership",
-                        targetDepth)) {
-                    dBInstance
-                            .withVpcSecurityGroups(VpcSecurityGroupMembershipStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth)) {
+                    dBInstance.withVpcSecurityGroups(VpcSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "DBParameterGroups/DBParameterGroup", targetDepth)) {
-                    dBInstance
-                            .withDBParameterGroups(DBParameterGroupStatusStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("DBParameterGroups/DBParameterGroup", targetDepth)) {
+                    dBInstance.withDBParameterGroups(DBParameterGroupStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
-                    dBInstance.setAvailabilityZone(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DBSubnetGroup", targetDepth)) {
-                    dBInstance.setDBSubnetGroup(DBSubnetGroupStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setDBSubnetGroup(DBSubnetGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("PreferredMaintenanceWindow",
-                        targetDepth)) {
-                    dBInstance
-                            .setPreferredMaintenanceWindow(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("PreferredMaintenanceWindow", targetDepth)) {
+                    dBInstance.setPreferredMaintenanceWindow(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("PendingModifiedValues", targetDepth)) {
-                    dBInstance
-                            .setPendingModifiedValues(PendingModifiedValuesStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("PendingModifiedValues", targetDepth)) {
+                    dBInstance.setPendingModifiedValues(PendingModifiedValuesStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LatestRestorableTime", targetDepth)) {
-                    dBInstance.setLatestRestorableTime(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setLatestRestorableTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MultiAZ", targetDepth)) {
-                    dBInstance.setMultiAZ(BooleanStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    dBInstance.setMultiAZ(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EngineVersion", targetDepth)) {
-                    dBInstance.setEngineVersion(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setEngineVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("AutoMinorVersionUpgrade",
-                        targetDepth)) {
-                    dBInstance
-                            .setAutoMinorVersionUpgrade(BooleanStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("AutoMinorVersionUpgrade", targetDepth)) {
+                    dBInstance.setAutoMinorVersionUpgrade(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "ReadReplicaSourceDBInstanceIdentifier", targetDepth)) {
-                    dBInstance
-                            .setReadReplicaSourceDBInstanceIdentifier(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("ReadReplicaSourceDBInstanceIdentifier", targetDepth)) {
+                    dBInstance.setReadReplicaSourceDBInstanceIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression(
-                                "ReadReplicaDBInstanceIdentifiers/ReadReplicaDBInstanceIdentifier",
-                                targetDepth)) {
-                    dBInstance
-                            .withReadReplicaDBInstanceIdentifiers(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("ReadReplicaDBInstanceIdentifiers/ReadReplicaDBInstanceIdentifier", targetDepth)) {
+                    dBInstance.withReadReplicaDBInstanceIdentifiers(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LicenseModel", targetDepth)) {
-                    dBInstance.setLicenseModel(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setLicenseModel(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Iops", targetDepth)) {
-                    dBInstance.setIops(IntegerStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    dBInstance.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "OptionGroupMemberships/OptionGroupMembership",
-                        targetDepth)) {
-                    dBInstance
-                            .withOptionGroupMemberships(OptionGroupMembershipStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("OptionGroupMemberships/OptionGroupMembership", targetDepth)) {
+                    dBInstance.withOptionGroupMemberships(OptionGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("CharacterSetName", targetDepth)) {
-                    dBInstance.setCharacterSetName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setCharacterSetName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("SecondaryAvailabilityZone",
-                        targetDepth)) {
-                    dBInstance
-                            .setSecondaryAvailabilityZone(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("SecondaryAvailabilityZone", targetDepth)) {
+                    dBInstance.setSecondaryAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("PubliclyAccessible", targetDepth)) {
-                    dBInstance.setPubliclyAccessible(BooleanStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setPubliclyAccessible(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("StatusInfos/DBInstanceStatusInfo",
-                        targetDepth)) {
-                    dBInstance
-                            .withStatusInfos(DBInstanceStatusInfoStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("StatusInfos/DBInstanceStatusInfo", targetDepth)) {
+                    dBInstance.withStatusInfos(DBInstanceStatusInfoStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("StorageType", targetDepth)) {
-                    dBInstance.setStorageType(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setStorageType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("TdeCredentialArn", targetDepth)) {
-                    dBInstance.setTdeCredentialArn(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setTdeCredentialArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DbInstancePort", targetDepth)) {
-                    dBInstance.setDbInstancePort(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setDbInstancePort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DBClusterIdentifier", targetDepth)) {
-                    dBInstance.setDBClusterIdentifier(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setDBClusterIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("StorageEncrypted", targetDepth)) {
-                    dBInstance.setStorageEncrypted(BooleanStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setStorageEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("KmsKeyId", targetDepth)) {
-                    dBInstance.setKmsKeyId(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    dBInstance.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DbiResourceId", targetDepth)) {
-                    dBInstance.setDbiResourceId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setDbiResourceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("CACertificateIdentifier",
-                        targetDepth)) {
-                    dBInstance
-                            .setCACertificateIdentifier(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("CACertificateIdentifier", targetDepth)) {
+                    dBInstance.setCACertificateIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "DomainMemberships/DomainMembership", targetDepth)) {
-                    dBInstance
-                            .withDomainMemberships(DomainMembershipStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("DomainMemberships/DomainMembership", targetDepth)) {
+                    dBInstance.withDomainMemberships(DomainMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("CopyTagsToSnapshot", targetDepth)) {
-                    dBInstance.setCopyTagsToSnapshot(BooleanStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setCopyTagsToSnapshot(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MonitoringInterval", targetDepth)) {
-                    dBInstance.setMonitoringInterval(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setMonitoringInterval(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("EnhancedMonitoringResourceArn",
-                        targetDepth)) {
-                    dBInstance
-                            .setEnhancedMonitoringResourceArn(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("EnhancedMonitoringResourceArn", targetDepth)) {
+                    dBInstance.setEnhancedMonitoringResourceArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MonitoringRoleArn", targetDepth)) {
-                    dBInstance.setMonitoringRoleArn(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setMonitoringRoleArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("PromotionTier", targetDepth)) {
-                    dBInstance.setPromotionTier(IntegerStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setPromotionTier(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DBInstanceArn", targetDepth)) {
-                    dBInstance.setDBInstanceArn(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dBInstance.setDBInstanceArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Timezone", targetDepth)) {
-                    dBInstance.setTimezone(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    dBInstance.setTimezone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

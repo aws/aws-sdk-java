@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * CreatePresetRequest Marshaller
  */
-public class CreatePresetRequestMarshaller implements
-        Marshaller<Request<CreatePresetRequest>, CreatePresetRequest> {
+public class CreatePresetRequestMarshaller implements Marshaller<Request<CreatePresetRequest>, CreatePresetRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,16 +49,13 @@ public class CreatePresetRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<CreatePresetRequest> marshall(
-            CreatePresetRequest createPresetRequest) {
+    public Request<CreatePresetRequest> marshall(CreatePresetRequest createPresetRequest) {
 
         if (createPresetRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreatePresetRequest> request = new DefaultRequest<CreatePresetRequest>(
-                createPresetRequest, "AmazonElasticTranscoder");
+        Request<CreatePresetRequest> request = new DefaultRequest<CreatePresetRequest>(createPresetRequest, "AmazonElasticTranscoder");
 
         request.setHttpMethod(HttpMethodName.POST);
 
@@ -70,51 +64,41 @@ public class CreatePresetRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
             jsonGenerator.writeStartObject();
 
             if (createPresetRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(
-                        createPresetRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(createPresetRequest.getName());
             }
             if (createPresetRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(
-                        createPresetRequest.getDescription());
+                jsonGenerator.writeFieldName("Description").writeValue(createPresetRequest.getDescription());
             }
             if (createPresetRequest.getContainer() != null) {
-                jsonGenerator.writeFieldName("Container").writeValue(
-                        createPresetRequest.getContainer());
+                jsonGenerator.writeFieldName("Container").writeValue(createPresetRequest.getContainer());
             }
             if (createPresetRequest.getVideo() != null) {
                 jsonGenerator.writeFieldName("Video");
-                VideoParametersJsonMarshaller.getInstance().marshall(
-                        createPresetRequest.getVideo(), jsonGenerator);
+                VideoParametersJsonMarshaller.getInstance().marshall(createPresetRequest.getVideo(), jsonGenerator);
             }
             if (createPresetRequest.getAudio() != null) {
                 jsonGenerator.writeFieldName("Audio");
-                AudioParametersJsonMarshaller.getInstance().marshall(
-                        createPresetRequest.getAudio(), jsonGenerator);
+                AudioParametersJsonMarshaller.getInstance().marshall(createPresetRequest.getAudio(), jsonGenerator);
             }
             if (createPresetRequest.getThumbnails() != null) {
                 jsonGenerator.writeFieldName("Thumbnails");
-                ThumbnailsJsonMarshaller.getInstance().marshall(
-                        createPresetRequest.getThumbnails(), jsonGenerator);
+                ThumbnailsJsonMarshaller.getInstance().marshall(createPresetRequest.getThumbnails(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type",
-                        protocolFactory.getContentType());
+                request.addHeader("Content-Type", protocolFactory.getContentType());
             }
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

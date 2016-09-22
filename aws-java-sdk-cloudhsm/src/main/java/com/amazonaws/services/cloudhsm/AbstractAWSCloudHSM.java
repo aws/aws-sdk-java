@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudhsm;
 
@@ -18,9 +16,8 @@ import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AWSCloudHSM}. Convenient method forms pass
- * through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AWSCloudHSM}. Convenient method forms pass through to the corresponding overload
+ * that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAWSCloudHSM implements AWSCloudHSM {
 
@@ -38,8 +35,7 @@ public class AbstractAWSCloudHSM implements AWSCloudHSM {
     }
 
     @Override
-    public AddTagsToResourceResult addTagsToResource(
-            AddTagsToResourceRequest request) {
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,8 +50,7 @@ public class AbstractAWSCloudHSM implements AWSCloudHSM {
     }
 
     @Override
-    public CreateLunaClientResult createLunaClient(
-            CreateLunaClientRequest request) {
+    public CreateLunaClientResult createLunaClient(CreateLunaClientRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -70,8 +65,7 @@ public class AbstractAWSCloudHSM implements AWSCloudHSM {
     }
 
     @Override
-    public DeleteLunaClientResult deleteLunaClient(
-            DeleteLunaClientRequest request) {
+    public DeleteLunaClientResult deleteLunaClient(DeleteLunaClientRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,8 +85,7 @@ public class AbstractAWSCloudHSM implements AWSCloudHSM {
     }
 
     @Override
-    public DescribeLunaClientResult describeLunaClient(
-            DescribeLunaClientRequest request) {
+    public DescribeLunaClientResult describeLunaClient(DescribeLunaClientRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -107,8 +100,7 @@ public class AbstractAWSCloudHSM implements AWSCloudHSM {
     }
 
     @Override
-    public ListAvailableZonesResult listAvailableZones(
-            ListAvailableZonesRequest request) {
+    public ListAvailableZonesResult listAvailableZones(ListAvailableZonesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -148,8 +140,7 @@ public class AbstractAWSCloudHSM implements AWSCloudHSM {
     }
 
     @Override
-    public ListTagsForResourceResult listTagsForResource(
-            ListTagsForResourceRequest request) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -164,14 +155,12 @@ public class AbstractAWSCloudHSM implements AWSCloudHSM {
     }
 
     @Override
-    public ModifyLunaClientResult modifyLunaClient(
-            ModifyLunaClientRequest request) {
+    public ModifyLunaClientResult modifyLunaClient(ModifyLunaClientRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RemoveTagsFromResourceResult removeTagsFromResource(
-            RemoveTagsFromResourceRequest request) {
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -181,8 +170,7 @@ public class AbstractAWSCloudHSM implements AWSCloudHSM {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

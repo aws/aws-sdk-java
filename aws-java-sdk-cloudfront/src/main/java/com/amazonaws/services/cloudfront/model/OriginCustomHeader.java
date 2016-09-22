@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
@@ -52,8 +50,7 @@ public class OriginCustomHeader implements Serializable, Cloneable {
      * 
      * @param headerName
      *        The header's name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OriginCustomHeader withHeaderName(String headerName) {
@@ -87,8 +84,7 @@ public class OriginCustomHeader implements Serializable, Cloneable {
      * 
      * @param headerValue
      *        The header's value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OriginCustomHeader withHeaderValue(String headerValue) {
@@ -97,8 +93,7 @@ public class OriginCustomHeader implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -128,13 +123,11 @@ public class OriginCustomHeader implements Serializable, Cloneable {
         OriginCustomHeader other = (OriginCustomHeader) obj;
         if (other.getHeaderName() == null ^ this.getHeaderName() == null)
             return false;
-        if (other.getHeaderName() != null
-                && other.getHeaderName().equals(this.getHeaderName()) == false)
+        if (other.getHeaderName() != null && other.getHeaderName().equals(this.getHeaderName()) == false)
             return false;
         if (other.getHeaderValue() == null ^ this.getHeaderValue() == null)
             return false;
-        if (other.getHeaderValue() != null
-                && other.getHeaderValue().equals(this.getHeaderValue()) == false)
+        if (other.getHeaderValue() != null && other.getHeaderValue().equals(this.getHeaderValue()) == false)
             return false;
         return true;
     }
@@ -144,11 +137,8 @@ public class OriginCustomHeader implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getHeaderName() == null) ? 0 : getHeaderName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHeaderValue() == null) ? 0 : getHeaderValue().hashCode());
+        hashCode = prime * hashCode + ((getHeaderName() == null) ? 0 : getHeaderName().hashCode());
+        hashCode = prime * hashCode + ((getHeaderValue() == null) ? 0 : getHeaderValue().hashCode());
         return hashCode;
     }
 
@@ -157,9 +147,7 @@ public class OriginCustomHeader implements Serializable, Cloneable {
         try {
             return (OriginCustomHeader) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

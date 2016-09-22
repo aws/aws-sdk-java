@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DomainName JSON Unmarshaller
  */
-public class DomainNameJsonUnmarshaller implements
-        Unmarshaller<DomainName, JsonUnmarshallerContext> {
+public class DomainNameJsonUnmarshaller implements Unmarshaller<DomainName, JsonUnmarshallerContext> {
 
-    public DomainName unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public DomainName unmarshall(JsonUnmarshallerContext context) throws Exception {
         DomainName domainName = new DomainName();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,31 +49,22 @@ public class DomainNameJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("domainName", targetDepth)) {
                     context.nextToken();
-                    domainName.setDomainName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    domainName.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateName", targetDepth)) {
                     context.nextToken();
-                    domainName.setCertificateName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    domainName.setCertificateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context
-                        .testExpression("certificateUploadDate", targetDepth)) {
+                if (context.testExpression("certificateUploadDate", targetDepth)) {
                     context.nextToken();
-                    domainName.setCertificateUploadDate(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    domainName.setCertificateUploadDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
-                if (context.testExpression("distributionDomainName",
-                        targetDepth)) {
+                if (context.testExpression("distributionDomainName", targetDepth)) {
                     context.nextToken();
-                    domainName.setDistributionDomainName(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    domainName.setDistributionDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

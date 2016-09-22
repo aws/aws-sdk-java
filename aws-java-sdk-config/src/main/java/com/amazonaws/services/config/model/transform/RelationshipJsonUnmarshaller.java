@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Relationship JSON Unmarshaller
  */
-public class RelationshipJsonUnmarshaller implements
-        Unmarshaller<Relationship, JsonUnmarshallerContext> {
+public class RelationshipJsonUnmarshaller implements Unmarshaller<Relationship, JsonUnmarshallerContext> {
 
-    public Relationship unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public Relationship unmarshall(JsonUnmarshallerContext context) throws Exception {
         Relationship relationship = new Relationship();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,28 +49,22 @@ public class RelationshipJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
-                    relationship.setResourceType(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    relationship.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
-                    relationship.setResourceId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    relationship.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceName", targetDepth)) {
                     context.nextToken();
-                    relationship.setResourceName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    relationship.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("relationshipName", targetDepth)) {
                     context.nextToken();
-                    relationship.setRelationshipName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    relationship.setRelationshipName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

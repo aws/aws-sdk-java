@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model.transform;
 
@@ -39,19 +37,15 @@ import com.amazonaws.util.SdkHttpUtils;
  * GetGeoLocationRequest Marshaller
  */
 
-public class GetGeoLocationRequestMarshaller implements
-        Marshaller<Request<GetGeoLocationRequest>, GetGeoLocationRequest> {
+public class GetGeoLocationRequestMarshaller implements Marshaller<Request<GetGeoLocationRequest>, GetGeoLocationRequest> {
 
-    public Request<GetGeoLocationRequest> marshall(
-            GetGeoLocationRequest getGeoLocationRequest) {
+    public Request<GetGeoLocationRequest> marshall(GetGeoLocationRequest getGeoLocationRequest) {
 
         if (getGeoLocationRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetGeoLocationRequest> request = new DefaultRequest<GetGeoLocationRequest>(
-                getGeoLocationRequest, "AmazonRoute53");
+        Request<GetGeoLocationRequest> request = new DefaultRequest<GetGeoLocationRequest>(getGeoLocationRequest, "AmazonRoute53");
 
         request.setHttpMethod(HttpMethodName.GET);
 
@@ -60,18 +54,15 @@ public class GetGeoLocationRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         if (getGeoLocationRequest.getContinentCode() != null) {
-            request.addParameter("continentcode", StringUtils
-                    .fromString(getGeoLocationRequest.getContinentCode()));
+            request.addParameter("continentcode", StringUtils.fromString(getGeoLocationRequest.getContinentCode()));
         }
 
         if (getGeoLocationRequest.getCountryCode() != null) {
-            request.addParameter("countrycode", StringUtils
-                    .fromString(getGeoLocationRequest.getCountryCode()));
+            request.addParameter("countrycode", StringUtils.fromString(getGeoLocationRequest.getCountryCode()));
         }
 
         if (getGeoLocationRequest.getSubdivisionCode() != null) {
-            request.addParameter("subdivisioncode", StringUtils
-                    .fromString(getGeoLocationRequest.getSubdivisionCode()));
+            request.addParameter("subdivisioncode", StringUtils.fromString(getGeoLocationRequest.getSubdivisionCode()));
         }
 
         return request;

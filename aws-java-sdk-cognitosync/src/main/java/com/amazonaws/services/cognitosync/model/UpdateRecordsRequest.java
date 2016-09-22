@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitosync.model;
 
@@ -18,27 +16,23 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * A request to post updates to records or add and delete records for a dataset
- * and user.
+ * A request to post updates to records or add and delete records for a dataset and user.
  */
-public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      */
     private String identityPoolId;
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      */
     private String identityId;
     /**
-     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-     * '_' (underscore), '-' (dash), and '.' (dot).
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+     * (dot).
      */
     private String datasetName;
     /**
@@ -49,26 +43,20 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String deviceId;
     /** A list of patch operations. */
     private com.amazonaws.internal.SdkInternalList<RecordPatch> recordPatches;
-    /**
-     * The SyncSessionToken returned by a previous call to ListRecords for this
-     * dataset and identity.
-     */
+    /** The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity. */
     private String syncSessionToken;
     /**
-     * Intended to supply a device ID that will populate the lastModifiedBy
-     * field referenced in other methods. The ClientContext field is not yet
-     * implemented.
+     * Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The
+     * ClientContext field is not yet implemented.
      */
     private String clientContext;
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
      * @param identityPoolId
-     *        A name-spaced GUID (for example,
-     *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     *        A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
 
@@ -77,12 +65,10 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
-     * @return A name-spaced GUID (for example,
-     *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     * @return A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
 
@@ -91,16 +77,13 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
      * @param identityPoolId
-     *        A name-spaced GUID (for example,
-     *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     *        A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateRecordsRequest withIdentityPoolId(String identityPoolId) {
@@ -109,13 +92,11 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
      * @param identityId
-     *        A name-spaced GUID (for example,
-     *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     *        A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
 
@@ -124,12 +105,10 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
-     * @return A name-spaced GUID (for example,
-     *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     * @return A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
 
@@ -138,16 +117,13 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
      * @param identityId
-     *        A name-spaced GUID (for example,
-     *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     *        A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateRecordsRequest withIdentityId(String identityId) {
@@ -156,12 +132,12 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-     * '_' (underscore), '-' (dash), and '.' (dot).
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+     * (dot).
      * 
      * @param datasetName
-     *        A string of up to 128 characters. Allowed characters are a-z, A-Z,
-     *        0-9, '_' (underscore), '-' (dash), and '.' (dot).
+     *        A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and
+     *        '.' (dot).
      */
 
     public void setDatasetName(String datasetName) {
@@ -169,11 +145,11 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-     * '_' (underscore), '-' (dash), and '.' (dot).
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+     * (dot).
      * 
-     * @return A string of up to 128 characters. Allowed characters are a-z,
-     *         A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+     * @return A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and
+     *         '.' (dot).
      */
 
     public String getDatasetName() {
@@ -181,14 +157,13 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-     * '_' (underscore), '-' (dash), and '.' (dot).
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+     * (dot).
      * 
      * @param datasetName
-     *        A string of up to 128 characters. Allowed characters are a-z, A-Z,
-     *        0-9, '_' (underscore), '-' (dash), and '.' (dot).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and
+     *        '.' (dot).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateRecordsRequest withDatasetName(String datasetName) {
@@ -228,8 +203,7 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param deviceId
      *        The unique ID generated for this device by Cognito.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateRecordsRequest withDeviceId(String deviceId) {
@@ -263,29 +237,25 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
             return;
         }
 
-        this.recordPatches = new com.amazonaws.internal.SdkInternalList<RecordPatch>(
-                recordPatches);
+        this.recordPatches = new com.amazonaws.internal.SdkInternalList<RecordPatch>(recordPatches);
     }
 
     /**
      * A list of patch operations.
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRecordPatches(java.util.Collection)} or
-     * {@link #withRecordPatches(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRecordPatches(java.util.Collection)} or {@link #withRecordPatches(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param recordPatches
      *        A list of patch operations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateRecordsRequest withRecordPatches(RecordPatch... recordPatches) {
         if (this.recordPatches == null) {
-            setRecordPatches(new com.amazonaws.internal.SdkInternalList<RecordPatch>(
-                    recordPatches.length));
+            setRecordPatches(new com.amazonaws.internal.SdkInternalList<RecordPatch>(recordPatches.length));
         }
         for (RecordPatch ele : recordPatches) {
             this.recordPatches.add(ele);
@@ -298,23 +268,19 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param recordPatches
      *        A list of patch operations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateRecordsRequest withRecordPatches(
-            java.util.Collection<RecordPatch> recordPatches) {
+    public UpdateRecordsRequest withRecordPatches(java.util.Collection<RecordPatch> recordPatches) {
         setRecordPatches(recordPatches);
         return this;
     }
 
     /**
-     * The SyncSessionToken returned by a previous call to ListRecords for this
-     * dataset and identity.
+     * The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
      * 
      * @param syncSessionToken
-     *        The SyncSessionToken returned by a previous call to ListRecords
-     *        for this dataset and identity.
+     *        The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
      */
 
     public void setSyncSessionToken(String syncSessionToken) {
@@ -322,11 +288,9 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * The SyncSessionToken returned by a previous call to ListRecords for this
-     * dataset and identity.
+     * The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
      * 
-     * @return The SyncSessionToken returned by a previous call to ListRecords
-     *         for this dataset and identity.
+     * @return The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
      */
 
     public String getSyncSessionToken() {
@@ -334,14 +298,11 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * The SyncSessionToken returned by a previous call to ListRecords for this
-     * dataset and identity.
+     * The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
      * 
      * @param syncSessionToken
-     *        The SyncSessionToken returned by a previous call to ListRecords
-     *        for this dataset and identity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateRecordsRequest withSyncSessionToken(String syncSessionToken) {
@@ -350,14 +311,12 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Intended to supply a device ID that will populate the lastModifiedBy
-     * field referenced in other methods. The ClientContext field is not yet
-     * implemented.
+     * Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The
+     * ClientContext field is not yet implemented.
      * 
      * @param clientContext
-     *        Intended to supply a device ID that will populate the
-     *        lastModifiedBy field referenced in other methods. The
-     *        ClientContext field is not yet implemented.
+     *        Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods.
+     *        The ClientContext field is not yet implemented.
      */
 
     public void setClientContext(String clientContext) {
@@ -365,13 +324,11 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Intended to supply a device ID that will populate the lastModifiedBy
-     * field referenced in other methods. The ClientContext field is not yet
-     * implemented.
+     * Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The
+     * ClientContext field is not yet implemented.
      * 
-     * @return Intended to supply a device ID that will populate the
-     *         lastModifiedBy field referenced in other methods. The
-     *         ClientContext field is not yet implemented.
+     * @return Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods.
+     *         The ClientContext field is not yet implemented.
      */
 
     public String getClientContext() {
@@ -379,16 +336,13 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Intended to supply a device ID that will populate the lastModifiedBy
-     * field referenced in other methods. The ClientContext field is not yet
-     * implemented.
+     * Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The
+     * ClientContext field is not yet implemented.
      * 
      * @param clientContext
-     *        Intended to supply a device ID that will populate the
-     *        lastModifiedBy field referenced in other methods. The
-     *        ClientContext field is not yet implemented.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods.
+     *        The ClientContext field is not yet implemented.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateRecordsRequest withClientContext(String clientContext) {
@@ -397,8 +351,7 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -436,43 +389,33 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof UpdateRecordsRequest == false)
             return false;
         UpdateRecordsRequest other = (UpdateRecordsRequest) obj;
-        if (other.getIdentityPoolId() == null
-                ^ this.getIdentityPoolId() == null)
+        if (other.getIdentityPoolId() == null ^ this.getIdentityPoolId() == null)
             return false;
-        if (other.getIdentityPoolId() != null
-                && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
+        if (other.getIdentityPoolId() != null && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
             return false;
         if (other.getIdentityId() == null ^ this.getIdentityId() == null)
             return false;
-        if (other.getIdentityId() != null
-                && other.getIdentityId().equals(this.getIdentityId()) == false)
+        if (other.getIdentityId() != null && other.getIdentityId().equals(this.getIdentityId()) == false)
             return false;
         if (other.getDatasetName() == null ^ this.getDatasetName() == null)
             return false;
-        if (other.getDatasetName() != null
-                && other.getDatasetName().equals(this.getDatasetName()) == false)
+        if (other.getDatasetName() != null && other.getDatasetName().equals(this.getDatasetName()) == false)
             return false;
         if (other.getDeviceId() == null ^ this.getDeviceId() == null)
             return false;
-        if (other.getDeviceId() != null
-                && other.getDeviceId().equals(this.getDeviceId()) == false)
+        if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
             return false;
         if (other.getRecordPatches() == null ^ this.getRecordPatches() == null)
             return false;
-        if (other.getRecordPatches() != null
-                && other.getRecordPatches().equals(this.getRecordPatches()) == false)
+        if (other.getRecordPatches() != null && other.getRecordPatches().equals(this.getRecordPatches()) == false)
             return false;
-        if (other.getSyncSessionToken() == null
-                ^ this.getSyncSessionToken() == null)
+        if (other.getSyncSessionToken() == null ^ this.getSyncSessionToken() == null)
             return false;
-        if (other.getSyncSessionToken() != null
-                && other.getSyncSessionToken().equals(
-                        this.getSyncSessionToken()) == false)
+        if (other.getSyncSessionToken() != null && other.getSyncSessionToken().equals(this.getSyncSessionToken()) == false)
             return false;
         if (other.getClientContext() == null ^ this.getClientContext() == null)
             return false;
-        if (other.getClientContext() != null
-                && other.getClientContext().equals(this.getClientContext()) == false)
+        if (other.getClientContext() != null && other.getClientContext().equals(this.getClientContext()) == false)
             return false;
         return true;
     }
@@ -482,29 +425,13 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDatasetName() == null) ? 0 : getDatasetName().hashCode());
-        hashCode = prime * hashCode
-                + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRecordPatches() == null) ? 0 : getRecordPatches()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSyncSessionToken() == null) ? 0 : getSyncSessionToken()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClientContext() == null) ? 0 : getClientContext()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode());
+        hashCode = prime * hashCode + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
+        hashCode = prime * hashCode + ((getDatasetName() == null) ? 0 : getDatasetName().hashCode());
+        hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
+        hashCode = prime * hashCode + ((getRecordPatches() == null) ? 0 : getRecordPatches().hashCode());
+        hashCode = prime * hashCode + ((getSyncSessionToken() == null) ? 0 : getSyncSessionToken().hashCode());
+        hashCode = prime * hashCode + ((getClientContext() == null) ? 0 : getClientContext().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteNetworkAclEntryRequestMa
  * Contains the parameters for DeleteNetworkAclEntry.
  * </p>
  */
-public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DeleteNetworkAclEntryRequest> {
 
     /**
@@ -79,8 +76,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
      * 
      * @param networkAclId
      *        The ID of the network ACL.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteNetworkAclEntryRequest withNetworkAclId(String networkAclId) {
@@ -120,8 +116,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
      * 
      * @param ruleNumber
      *        The rule number of the entry to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteNetworkAclEntryRequest withRuleNumber(Integer ruleNumber) {
@@ -161,8 +156,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
      * 
      * @param egress
      *        Indicates whether the rule is an egress rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteNetworkAclEntryRequest withEgress(Boolean egress) {
@@ -183,21 +177,18 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DeleteNetworkAclEntryRequest> getDryRunRequest() {
-        Request<DeleteNetworkAclEntryRequest> request = new DeleteNetworkAclEntryRequestMarshaller()
-                .marshall(this);
+        Request<DeleteNetworkAclEntryRequest> request = new DeleteNetworkAclEntryRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -229,18 +220,15 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
         DeleteNetworkAclEntryRequest other = (DeleteNetworkAclEntryRequest) obj;
         if (other.getNetworkAclId() == null ^ this.getNetworkAclId() == null)
             return false;
-        if (other.getNetworkAclId() != null
-                && other.getNetworkAclId().equals(this.getNetworkAclId()) == false)
+        if (other.getNetworkAclId() != null && other.getNetworkAclId().equals(this.getNetworkAclId()) == false)
             return false;
         if (other.getRuleNumber() == null ^ this.getRuleNumber() == null)
             return false;
-        if (other.getRuleNumber() != null
-                && other.getRuleNumber().equals(this.getRuleNumber()) == false)
+        if (other.getRuleNumber() != null && other.getRuleNumber().equals(this.getRuleNumber()) == false)
             return false;
         if (other.getEgress() == null ^ this.getEgress() == null)
             return false;
-        if (other.getEgress() != null
-                && other.getEgress().equals(this.getEgress()) == false)
+        if (other.getEgress() != null && other.getEgress().equals(this.getEgress()) == false)
             return false;
         return true;
     }
@@ -250,14 +238,9 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNetworkAclId() == null) ? 0 : getNetworkAclId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getRuleNumber() == null) ? 0 : getRuleNumber().hashCode());
-        hashCode = prime * hashCode
-                + ((getEgress() == null) ? 0 : getEgress().hashCode());
+        hashCode = prime * hashCode + ((getNetworkAclId() == null) ? 0 : getNetworkAclId().hashCode());
+        hashCode = prime * hashCode + ((getRuleNumber() == null) ? 0 : getRuleNumber().hashCode());
+        hashCode = prime * hashCode + ((getEgress() == null) ? 0 : getEgress().hashCode());
         return hashCode;
     }
 

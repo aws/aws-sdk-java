@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.machinelearning.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateEvaluationRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateEvaluationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,8 +28,7 @@ public class UpdateEvaluationRequest extends
     private String evaluationId;
     /**
      * <p>
-     * A new user-supplied name or description of the <code>Evaluation</code>
-     * that will replace the current content.
+     * A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content.
      * </p>
      */
     private String evaluationName;
@@ -70,8 +65,7 @@ public class UpdateEvaluationRequest extends
      * 
      * @param evaluationId
      *        The ID assigned to the <code>Evaluation</code> during creation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateEvaluationRequest withEvaluationId(String evaluationId) {
@@ -81,13 +75,12 @@ public class UpdateEvaluationRequest extends
 
     /**
      * <p>
-     * A new user-supplied name or description of the <code>Evaluation</code>
-     * that will replace the current content.
+     * A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content.
      * </p>
      * 
      * @param evaluationName
-     *        A new user-supplied name or description of the
-     *        <code>Evaluation</code> that will replace the current content.
+     *        A new user-supplied name or description of the <code>Evaluation</code> that will replace the current
+     *        content.
      */
 
     public void setEvaluationName(String evaluationName) {
@@ -96,12 +89,11 @@ public class UpdateEvaluationRequest extends
 
     /**
      * <p>
-     * A new user-supplied name or description of the <code>Evaluation</code>
-     * that will replace the current content.
+     * A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content.
      * </p>
      * 
-     * @return A new user-supplied name or description of the
-     *         <code>Evaluation</code> that will replace the current content.
+     * @return A new user-supplied name or description of the <code>Evaluation</code> that will replace the current
+     *         content.
      */
 
     public String getEvaluationName() {
@@ -110,15 +102,13 @@ public class UpdateEvaluationRequest extends
 
     /**
      * <p>
-     * A new user-supplied name or description of the <code>Evaluation</code>
-     * that will replace the current content.
+     * A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content.
      * </p>
      * 
      * @param evaluationName
-     *        A new user-supplied name or description of the
-     *        <code>Evaluation</code> that will replace the current content.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A new user-supplied name or description of the <code>Evaluation</code> that will replace the current
+     *        content.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateEvaluationRequest withEvaluationName(String evaluationName) {
@@ -127,8 +117,7 @@ public class UpdateEvaluationRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -158,14 +147,11 @@ public class UpdateEvaluationRequest extends
         UpdateEvaluationRequest other = (UpdateEvaluationRequest) obj;
         if (other.getEvaluationId() == null ^ this.getEvaluationId() == null)
             return false;
-        if (other.getEvaluationId() != null
-                && other.getEvaluationId().equals(this.getEvaluationId()) == false)
+        if (other.getEvaluationId() != null && other.getEvaluationId().equals(this.getEvaluationId()) == false)
             return false;
-        if (other.getEvaluationName() == null
-                ^ this.getEvaluationName() == null)
+        if (other.getEvaluationName() == null ^ this.getEvaluationName() == null)
             return false;
-        if (other.getEvaluationName() != null
-                && other.getEvaluationName().equals(this.getEvaluationName()) == false)
+        if (other.getEvaluationName() != null && other.getEvaluationName().equals(this.getEvaluationName()) == false)
             return false;
         return true;
     }
@@ -175,14 +161,8 @@ public class UpdateEvaluationRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEvaluationId() == null) ? 0 : getEvaluationId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEvaluationName() == null) ? 0 : getEvaluationName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getEvaluationId() == null) ? 0 : getEvaluationId().hashCode());
+        hashCode = prime * hashCode + ((getEvaluationName() == null) ? 0 : getEvaluationName().hashCode());
         return hashCode;
     }
 

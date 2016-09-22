@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecs.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Resource JSON Unmarshaller
  */
-public class ResourceJsonUnmarshaller implements
-        Unmarshaller<Resource, JsonUnmarshallerContext> {
+public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnmarshallerContext> {
 
-    public Resource unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public Resource unmarshall(JsonUnmarshallerContext context) throws Exception {
         Resource resource = new Resource();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,39 +49,30 @@ public class ResourceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    resource.setName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    resource.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    resource.setType(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    resource.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("doubleValue", targetDepth)) {
                     context.nextToken();
-                    resource.setDoubleValue(context.getUnmarshaller(
-                            Double.class).unmarshall(context));
+                    resource.setDoubleValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("longValue", targetDepth)) {
                     context.nextToken();
-                    resource.setLongValue(context.getUnmarshaller(Long.class)
-                            .unmarshall(context));
+                    resource.setLongValue(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("integerValue", targetDepth)) {
                     context.nextToken();
-                    resource.setIntegerValue(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    resource.setIntegerValue(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("stringSetValue", targetDepth)) {
                     context.nextToken();
-                    resource.setStringSetValue(new ListUnmarshaller<String>(
-                            context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+                    resource.setStringSetValue(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

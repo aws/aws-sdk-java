@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -31,8 +29,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
     private String mountPoint;
     /**
      * <p>
-     * The volume <a
-     * href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
+     * The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      * </p>
      */
     private Integer raidLevel;
@@ -110,8 +107,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * 
      * @param mountPoint
      *        The volume mount point. For example "/dev/sdh".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeConfiguration withMountPoint(String mountPoint) {
@@ -121,14 +117,11 @@ public class VolumeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume <a
-     * href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
+     * The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      * </p>
      * 
      * @param raidLevel
-     *        The volume <a
-     *        href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
-     *        level</a>.
+     *        The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      */
 
     public void setRaidLevel(Integer raidLevel) {
@@ -137,13 +130,10 @@ public class VolumeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume <a
-     * href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
+     * The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      * </p>
      * 
-     * @return The volume <a
-     *         href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
-     *         level</a>.
+     * @return The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      */
 
     public Integer getRaidLevel() {
@@ -152,16 +142,12 @@ public class VolumeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume <a
-     * href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
+     * The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      * </p>
      * 
      * @param raidLevel
-     *        The volume <a
-     *        href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
-     *        level</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeConfiguration withRaidLevel(Integer raidLevel) {
@@ -201,8 +187,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * 
      * @param numberOfDisks
      *        The number of disks in the volume.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeConfiguration withNumberOfDisks(Integer numberOfDisks) {
@@ -242,8 +227,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * 
      * @param size
      *        The volume size.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeConfiguration withSize(Integer size) {
@@ -382,8 +366,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      *        <code>gp2</code> - General Purpose (SSD)
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeConfiguration withVolumeType(String volumeType) {
@@ -423,8 +406,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * 
      * @param iops
      *        For PIOPS volumes, the IOPS per disk.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeConfiguration withIops(Integer iops) {
@@ -433,8 +415,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -472,33 +453,27 @@ public class VolumeConfiguration implements Serializable, Cloneable {
         VolumeConfiguration other = (VolumeConfiguration) obj;
         if (other.getMountPoint() == null ^ this.getMountPoint() == null)
             return false;
-        if (other.getMountPoint() != null
-                && other.getMountPoint().equals(this.getMountPoint()) == false)
+        if (other.getMountPoint() != null && other.getMountPoint().equals(this.getMountPoint()) == false)
             return false;
         if (other.getRaidLevel() == null ^ this.getRaidLevel() == null)
             return false;
-        if (other.getRaidLevel() != null
-                && other.getRaidLevel().equals(this.getRaidLevel()) == false)
+        if (other.getRaidLevel() != null && other.getRaidLevel().equals(this.getRaidLevel()) == false)
             return false;
         if (other.getNumberOfDisks() == null ^ this.getNumberOfDisks() == null)
             return false;
-        if (other.getNumberOfDisks() != null
-                && other.getNumberOfDisks().equals(this.getNumberOfDisks()) == false)
+        if (other.getNumberOfDisks() != null && other.getNumberOfDisks().equals(this.getNumberOfDisks()) == false)
             return false;
         if (other.getSize() == null ^ this.getSize() == null)
             return false;
-        if (other.getSize() != null
-                && other.getSize().equals(this.getSize()) == false)
+        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
             return false;
         if (other.getVolumeType() == null ^ this.getVolumeType() == null)
             return false;
-        if (other.getVolumeType() != null
-                && other.getVolumeType().equals(this.getVolumeType()) == false)
+        if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false)
             return false;
         if (other.getIops() == null ^ this.getIops() == null)
             return false;
-        if (other.getIops() != null
-                && other.getIops().equals(this.getIops()) == false)
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
             return false;
         return true;
     }
@@ -508,20 +483,12 @@ public class VolumeConfiguration implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMountPoint() == null) ? 0 : getMountPoint().hashCode());
-        hashCode = prime * hashCode
-                + ((getRaidLevel() == null) ? 0 : getRaidLevel().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNumberOfDisks() == null) ? 0 : getNumberOfDisks()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getSize() == null) ? 0 : getSize().hashCode());
-        hashCode = prime * hashCode
-                + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
-        hashCode = prime * hashCode
-                + ((getIops() == null) ? 0 : getIops().hashCode());
+        hashCode = prime * hashCode + ((getMountPoint() == null) ? 0 : getMountPoint().hashCode());
+        hashCode = prime * hashCode + ((getRaidLevel() == null) ? 0 : getRaidLevel().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfDisks() == null) ? 0 : getNumberOfDisks().hashCode());
+        hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
+        hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         return hashCode;
     }
 
@@ -530,9 +497,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
         try {
             return (VolumeConfiguration) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Represents the returned data in response to a request action.
  * </p>
  */
-public class ListBuildsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListBuildsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,15 +29,13 @@ public class ListBuildsResult extends
     private java.util.List<Build> builds;
     /**
      * <p>
-     * Token indicating where to resume retrieving results on the next call to
-     * this action. If no token is returned, these results represent the end of
-     * the list.
+     * Token indicating where to resume retrieving results on the next call to this action. If no token is returned,
+     * these results represent the end of the list.
      * </p>
      * <note>
      * <p>
-     * If a request has a limit that exactly matches the number of remaining
-     * results, a token is returned even though there are no more results to
-     * retrieve.
+     * If a request has a limit that exactly matches the number of remaining results, a token is returned even though
+     * there are no more results to retrieve.
      * </p>
      * </note>
      */
@@ -82,16 +76,14 @@ public class ListBuildsResult extends
      * Collection of build records that match the request.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBuilds(java.util.Collection)} or
-     * {@link #withBuilds(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBuilds(java.util.Collection)} or {@link #withBuilds(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param builds
      *        Collection of build records that match the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListBuildsResult withBuilds(Build... builds) {
@@ -111,8 +103,7 @@ public class ListBuildsResult extends
      * 
      * @param builds
      *        Collection of build records that match the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListBuildsResult withBuilds(java.util.Collection<Build> builds) {
@@ -122,26 +113,22 @@ public class ListBuildsResult extends
 
     /**
      * <p>
-     * Token indicating where to resume retrieving results on the next call to
-     * this action. If no token is returned, these results represent the end of
-     * the list.
+     * Token indicating where to resume retrieving results on the next call to this action. If no token is returned,
+     * these results represent the end of the list.
      * </p>
      * <note>
      * <p>
-     * If a request has a limit that exactly matches the number of remaining
-     * results, a token is returned even though there are no more results to
-     * retrieve.
+     * If a request has a limit that exactly matches the number of remaining results, a token is returned even though
+     * there are no more results to retrieve.
      * </p>
      * </note>
      * 
      * @param nextToken
-     *        Token indicating where to resume retrieving results on the next
-     *        call to this action. If no token is returned, these results
-     *        represent the end of the list.</p> <note>
+     *        Token indicating where to resume retrieving results on the next call to this action. If no token is
+     *        returned, these results represent the end of the list.</p> <note>
      *        <p>
-     *        If a request has a limit that exactly matches the number of
-     *        remaining results, a token is returned even though there are no
-     *        more results to retrieve.
+     *        If a request has a limit that exactly matches the number of remaining results, a token is returned even
+     *        though there are no more results to retrieve.
      *        </p>
      */
 
@@ -151,25 +138,21 @@ public class ListBuildsResult extends
 
     /**
      * <p>
-     * Token indicating where to resume retrieving results on the next call to
-     * this action. If no token is returned, these results represent the end of
-     * the list.
+     * Token indicating where to resume retrieving results on the next call to this action. If no token is returned,
+     * these results represent the end of the list.
      * </p>
      * <note>
      * <p>
-     * If a request has a limit that exactly matches the number of remaining
-     * results, a token is returned even though there are no more results to
-     * retrieve.
+     * If a request has a limit that exactly matches the number of remaining results, a token is returned even though
+     * there are no more results to retrieve.
      * </p>
      * </note>
      * 
-     * @return Token indicating where to resume retrieving results on the next
-     *         call to this action. If no token is returned, these results
-     *         represent the end of the list.</p> <note>
+     * @return Token indicating where to resume retrieving results on the next call to this action. If no token is
+     *         returned, these results represent the end of the list.</p> <note>
      *         <p>
-     *         If a request has a limit that exactly matches the number of
-     *         remaining results, a token is returned even though there are no
-     *         more results to retrieve.
+     *         If a request has a limit that exactly matches the number of remaining results, a token is returned even
+     *         though there are no more results to retrieve.
      *         </p>
      */
 
@@ -179,29 +162,24 @@ public class ListBuildsResult extends
 
     /**
      * <p>
-     * Token indicating where to resume retrieving results on the next call to
-     * this action. If no token is returned, these results represent the end of
-     * the list.
+     * Token indicating where to resume retrieving results on the next call to this action. If no token is returned,
+     * these results represent the end of the list.
      * </p>
      * <note>
      * <p>
-     * If a request has a limit that exactly matches the number of remaining
-     * results, a token is returned even though there are no more results to
-     * retrieve.
+     * If a request has a limit that exactly matches the number of remaining results, a token is returned even though
+     * there are no more results to retrieve.
      * </p>
      * </note>
      * 
      * @param nextToken
-     *        Token indicating where to resume retrieving results on the next
-     *        call to this action. If no token is returned, these results
-     *        represent the end of the list.</p> <note>
+     *        Token indicating where to resume retrieving results on the next call to this action. If no token is
+     *        returned, these results represent the end of the list.</p> <note>
      *        <p>
-     *        If a request has a limit that exactly matches the number of
-     *        remaining results, a token is returned even though there are no
-     *        more results to retrieve.
+     *        If a request has a limit that exactly matches the number of remaining results, a token is returned even
+     *        though there are no more results to retrieve.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListBuildsResult withNextToken(String nextToken) {
@@ -210,8 +188,7 @@ public class ListBuildsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -241,13 +218,11 @@ public class ListBuildsResult extends
         ListBuildsResult other = (ListBuildsResult) obj;
         if (other.getBuilds() == null ^ this.getBuilds() == null)
             return false;
-        if (other.getBuilds() != null
-                && other.getBuilds().equals(this.getBuilds()) == false)
+        if (other.getBuilds() != null && other.getBuilds().equals(this.getBuilds()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -257,10 +232,8 @@ public class ListBuildsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getBuilds() == null) ? 0 : getBuilds().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getBuilds() == null) ? 0 : getBuilds().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -269,9 +242,7 @@ public class ListBuildsResult extends
         try {
             return (ListBuildsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

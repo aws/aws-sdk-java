@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -25,8 +23,8 @@ public class DataSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-     * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.
+     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or
+     * <code>RdsDbInstance</code>.
      * </p>
      */
     private String type;
@@ -45,14 +43,13 @@ public class DataSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-     * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.
+     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or
+     * <code>RdsDbInstance</code>.
      * </p>
      * 
      * @param type
-     *        The data source's type,
-     *        <code>AutoSelectOpsworksMysqlInstance</code>,
-     *        <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.
+     *        The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>,
+     *        or <code>RdsDbInstance</code>.
      */
 
     public void setType(String type) {
@@ -61,14 +58,12 @@ public class DataSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-     * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.
+     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or
+     * <code>RdsDbInstance</code>.
      * </p>
      * 
-     * @return The data source's type,
-     *         <code>AutoSelectOpsworksMysqlInstance</code>,
-     *         <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>
-     *         .
+     * @return The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>,
+     *         or <code>RdsDbInstance</code>.
      */
 
     public String getType() {
@@ -77,16 +72,14 @@ public class DataSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-     * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.
+     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or
+     * <code>RdsDbInstance</code>.
      * </p>
      * 
      * @param type
-     *        The data source's type,
-     *        <code>AutoSelectOpsworksMysqlInstance</code>,
-     *        <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>,
+     *        or <code>RdsDbInstance</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DataSource withType(String type) {
@@ -126,8 +119,7 @@ public class DataSource implements Serializable, Cloneable {
      * 
      * @param arn
      *        The data source's ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DataSource withArn(String arn) {
@@ -167,8 +159,7 @@ public class DataSource implements Serializable, Cloneable {
      * 
      * @param databaseName
      *        The database name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DataSource withDatabaseName(String databaseName) {
@@ -177,8 +168,7 @@ public class DataSource implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -210,18 +200,15 @@ public class DataSource implements Serializable, Cloneable {
         DataSource other = (DataSource) obj;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getDatabaseName() == null ^ this.getDatabaseName() == null)
             return false;
-        if (other.getDatabaseName() != null
-                && other.getDatabaseName().equals(this.getDatabaseName()) == false)
+        if (other.getDatabaseName() != null && other.getDatabaseName().equals(this.getDatabaseName()) == false)
             return false;
         return true;
     }
@@ -231,14 +218,9 @@ public class DataSource implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDatabaseName() == null) ? 0 : getDatabaseName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
         return hashCode;
     }
 
@@ -247,9 +229,7 @@ public class DataSource implements Serializable, Cloneable {
         try {
             return (DataSource) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

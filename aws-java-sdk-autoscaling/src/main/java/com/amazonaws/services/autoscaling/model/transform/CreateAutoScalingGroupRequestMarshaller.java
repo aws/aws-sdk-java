@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model.transform;
 
@@ -31,74 +29,55 @@ import com.amazonaws.util.IdempotentUtils;
  * CreateAutoScalingGroupRequest Marshaller
  */
 
-public class CreateAutoScalingGroupRequestMarshaller
-        implements
-        Marshaller<Request<CreateAutoScalingGroupRequest>, CreateAutoScalingGroupRequest> {
+public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Request<CreateAutoScalingGroupRequest>, CreateAutoScalingGroupRequest> {
 
-    public Request<CreateAutoScalingGroupRequest> marshall(
-            CreateAutoScalingGroupRequest createAutoScalingGroupRequest) {
+    public Request<CreateAutoScalingGroupRequest> marshall(CreateAutoScalingGroupRequest createAutoScalingGroupRequest) {
 
         if (createAutoScalingGroupRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateAutoScalingGroupRequest> request = new DefaultRequest<CreateAutoScalingGroupRequest>(
-                createAutoScalingGroupRequest, "AmazonAutoScaling");
+        Request<CreateAutoScalingGroupRequest> request = new DefaultRequest<CreateAutoScalingGroupRequest>(createAutoScalingGroupRequest, "AmazonAutoScaling");
         request.addParameter("Action", "CreateAutoScalingGroup");
         request.addParameter("Version", "2011-01-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createAutoScalingGroupRequest.getAutoScalingGroupName() != null) {
-            request.addParameter("AutoScalingGroupName", StringUtils
-                    .fromString(createAutoScalingGroupRequest
-                            .getAutoScalingGroupName()));
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(createAutoScalingGroupRequest.getAutoScalingGroupName()));
         }
 
         if (createAutoScalingGroupRequest.getLaunchConfigurationName() != null) {
-            request.addParameter("LaunchConfigurationName", StringUtils
-                    .fromString(createAutoScalingGroupRequest
-                            .getLaunchConfigurationName()));
+            request.addParameter("LaunchConfigurationName", StringUtils.fromString(createAutoScalingGroupRequest.getLaunchConfigurationName()));
         }
 
         if (createAutoScalingGroupRequest.getInstanceId() != null) {
-            request.addParameter("InstanceId", StringUtils
-                    .fromString(createAutoScalingGroupRequest.getInstanceId()));
+            request.addParameter("InstanceId", StringUtils.fromString(createAutoScalingGroupRequest.getInstanceId()));
         }
 
         if (createAutoScalingGroupRequest.getMinSize() != null) {
-            request.addParameter("MinSize", StringUtils
-                    .fromInteger(createAutoScalingGroupRequest.getMinSize()));
+            request.addParameter("MinSize", StringUtils.fromInteger(createAutoScalingGroupRequest.getMinSize()));
         }
 
         if (createAutoScalingGroupRequest.getMaxSize() != null) {
-            request.addParameter("MaxSize", StringUtils
-                    .fromInteger(createAutoScalingGroupRequest.getMaxSize()));
+            request.addParameter("MaxSize", StringUtils.fromInteger(createAutoScalingGroupRequest.getMaxSize()));
         }
 
         if (createAutoScalingGroupRequest.getDesiredCapacity() != null) {
-            request.addParameter("DesiredCapacity", StringUtils
-                    .fromInteger(createAutoScalingGroupRequest
-                            .getDesiredCapacity()));
+            request.addParameter("DesiredCapacity", StringUtils.fromInteger(createAutoScalingGroupRequest.getDesiredCapacity()));
         }
 
         if (createAutoScalingGroupRequest.getDefaultCooldown() != null) {
-            request.addParameter("DefaultCooldown", StringUtils
-                    .fromInteger(createAutoScalingGroupRequest
-                            .getDefaultCooldown()));
+            request.addParameter("DefaultCooldown", StringUtils.fromInteger(createAutoScalingGroupRequest.getDefaultCooldown()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest
                 .getAvailabilityZones();
-        if (!availabilityZonesList.isEmpty()
-                || !availabilityZonesList.isAutoConstruct()) {
+        if (!availabilityZonesList.isEmpty() || !availabilityZonesList.isAutoConstruct()) {
             int availabilityZonesListIndex = 1;
 
             for (String availabilityZonesListValue : availabilityZonesList) {
                 if (availabilityZonesListValue != null) {
-                    request.addParameter("AvailabilityZones.member."
-                            + availabilityZonesListIndex,
-                            StringUtils.fromString(availabilityZonesListValue));
+                    request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));
                 }
                 availabilityZonesListIndex++;
             }
@@ -106,15 +85,12 @@ public class CreateAutoScalingGroupRequestMarshaller
 
         com.amazonaws.internal.SdkInternalList<String> loadBalancerNamesList = (com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest
                 .getLoadBalancerNames();
-        if (!loadBalancerNamesList.isEmpty()
-                || !loadBalancerNamesList.isAutoConstruct()) {
+        if (!loadBalancerNamesList.isEmpty() || !loadBalancerNamesList.isAutoConstruct()) {
             int loadBalancerNamesListIndex = 1;
 
             for (String loadBalancerNamesListValue : loadBalancerNamesList) {
                 if (loadBalancerNamesListValue != null) {
-                    request.addParameter("LoadBalancerNames.member."
-                            + loadBalancerNamesListIndex,
-                            StringUtils.fromString(loadBalancerNamesListValue));
+                    request.addParameter("LoadBalancerNames.member." + loadBalancerNamesListIndex, StringUtils.fromString(loadBalancerNamesListValue));
                 }
                 loadBalancerNamesListIndex++;
             }
@@ -122,55 +98,41 @@ public class CreateAutoScalingGroupRequestMarshaller
 
         com.amazonaws.internal.SdkInternalList<String> targetGroupARNsList = (com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest
                 .getTargetGroupARNs();
-        if (!targetGroupARNsList.isEmpty()
-                || !targetGroupARNsList.isAutoConstruct()) {
+        if (!targetGroupARNsList.isEmpty() || !targetGroupARNsList.isAutoConstruct()) {
             int targetGroupARNsListIndex = 1;
 
             for (String targetGroupARNsListValue : targetGroupARNsList) {
                 if (targetGroupARNsListValue != null) {
-                    request.addParameter("TargetGroupARNs.member."
-                            + targetGroupARNsListIndex,
-                            StringUtils.fromString(targetGroupARNsListValue));
+                    request.addParameter("TargetGroupARNs.member." + targetGroupARNsListIndex, StringUtils.fromString(targetGroupARNsListValue));
                 }
                 targetGroupARNsListIndex++;
             }
         }
 
         if (createAutoScalingGroupRequest.getHealthCheckType() != null) {
-            request.addParameter("HealthCheckType", StringUtils
-                    .fromString(createAutoScalingGroupRequest
-                            .getHealthCheckType()));
+            request.addParameter("HealthCheckType", StringUtils.fromString(createAutoScalingGroupRequest.getHealthCheckType()));
         }
 
         if (createAutoScalingGroupRequest.getHealthCheckGracePeriod() != null) {
-            request.addParameter("HealthCheckGracePeriod", StringUtils
-                    .fromInteger(createAutoScalingGroupRequest
-                            .getHealthCheckGracePeriod()));
+            request.addParameter("HealthCheckGracePeriod", StringUtils.fromInteger(createAutoScalingGroupRequest.getHealthCheckGracePeriod()));
         }
 
         if (createAutoScalingGroupRequest.getPlacementGroup() != null) {
-            request.addParameter("PlacementGroup", StringUtils
-                    .fromString(createAutoScalingGroupRequest
-                            .getPlacementGroup()));
+            request.addParameter("PlacementGroup", StringUtils.fromString(createAutoScalingGroupRequest.getPlacementGroup()));
         }
 
         if (createAutoScalingGroupRequest.getVPCZoneIdentifier() != null) {
-            request.addParameter("VPCZoneIdentifier", StringUtils
-                    .fromString(createAutoScalingGroupRequest
-                            .getVPCZoneIdentifier()));
+            request.addParameter("VPCZoneIdentifier", StringUtils.fromString(createAutoScalingGroupRequest.getVPCZoneIdentifier()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> terminationPoliciesList = (com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest
                 .getTerminationPolicies();
-        if (!terminationPoliciesList.isEmpty()
-                || !terminationPoliciesList.isAutoConstruct()) {
+        if (!terminationPoliciesList.isEmpty() || !terminationPoliciesList.isAutoConstruct()) {
             int terminationPoliciesListIndex = 1;
 
             for (String terminationPoliciesListValue : terminationPoliciesList) {
                 if (terminationPoliciesListValue != null) {
-                    request.addParameter("TerminationPolicies.member."
-                            + terminationPoliciesListIndex, StringUtils
-                            .fromString(terminationPoliciesListValue));
+                    request.addParameter("TerminationPolicies.member." + terminationPoliciesListIndex, StringUtils.fromString(terminationPoliciesListValue));
                 }
                 terminationPoliciesListIndex++;
             }
@@ -178,45 +140,33 @@ public class CreateAutoScalingGroupRequestMarshaller
 
         if (createAutoScalingGroupRequest.getNewInstancesProtectedFromScaleIn() != null) {
             request.addParameter("NewInstancesProtectedFromScaleIn",
-                    StringUtils.fromBoolean(createAutoScalingGroupRequest
-                            .getNewInstancesProtectedFromScaleIn()));
+                    StringUtils.fromBoolean(createAutoScalingGroupRequest.getNewInstancesProtectedFromScaleIn()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createAutoScalingGroupRequest
-                .getTags();
+        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createAutoScalingGroupRequest.getTags();
         if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
 
                 if (tagsListValue.getResourceId() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex
-                            + ".ResourceId", StringUtils
-                            .fromString(tagsListValue.getResourceId()));
+                    request.addParameter("Tags.member." + tagsListIndex + ".ResourceId", StringUtils.fromString(tagsListValue.getResourceId()));
                 }
 
                 if (tagsListValue.getResourceType() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex
-                            + ".ResourceType", StringUtils
-                            .fromString(tagsListValue.getResourceType()));
+                    request.addParameter("Tags.member." + tagsListIndex + ".ResourceType", StringUtils.fromString(tagsListValue.getResourceType()));
                 }
 
                 if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex
-                            + ".Key",
-                            StringUtils.fromString(tagsListValue.getKey()));
+                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
                 }
 
                 if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex
-                            + ".Value",
-                            StringUtils.fromString(tagsListValue.getValue()));
+                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
                 }
 
                 if (tagsListValue.getPropagateAtLaunch() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex
-                            + ".PropagateAtLaunch", StringUtils
-                            .fromBoolean(tagsListValue.getPropagateAtLaunch()));
+                    request.addParameter("Tags.member." + tagsListIndex + ".PropagateAtLaunch", StringUtils.fromBoolean(tagsListValue.getPropagateAtLaunch()));
                 }
                 tagsListIndex++;
             }

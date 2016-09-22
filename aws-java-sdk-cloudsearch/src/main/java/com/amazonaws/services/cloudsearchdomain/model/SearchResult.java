@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchdomain.model;
 
@@ -18,14 +16,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The result of a <code>Search</code> request. Contains the documents that
- * match the specified search criteria and any requested fields, highlights, and
- * facet information.
+ * The result of a <code>Search</code> request. Contains the documents that match the specified search criteria and any
+ * requested fields, highlights, and facet information.
  * </p>
  */
-public class SearchResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class SearchResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -84,8 +79,7 @@ public class SearchResult extends
      * 
      * @param status
      *        The status information returned for the search request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SearchResult withStatus(SearchStatus status) {
@@ -125,8 +119,7 @@ public class SearchResult extends
      * 
      * @param hits
      *        The documents that match the search criteria.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SearchResult withHits(Hits hits) {
@@ -159,9 +152,7 @@ public class SearchResult extends
      */
 
     public void setFacets(java.util.Map<String, BucketInfo> facets) {
-        this.facets = facets == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, BucketInfo>(
-                        facets);
+        this.facets = facets == null ? null : new com.amazonaws.internal.SdkInternalMap<String, BucketInfo>(facets);
     }
 
     /**
@@ -171,8 +162,7 @@ public class SearchResult extends
      * 
      * @param facets
      *        The requested facet information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SearchResult withFacets(java.util.Map<String, BucketInfo> facets) {
@@ -185,15 +175,14 @@ public class SearchResult extends
             this.facets = new com.amazonaws.internal.SdkInternalMap<String, BucketInfo>();
         }
         if (this.facets.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.facets.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Facets. &lt;p> Returns a reference to
-     * this object so that method calls can be chained together.
+     * Removes all the entries added into Facets. &lt;p> Returns a reference to this object so that method calls can be
+     * chained together.
      */
 
     public SearchResult clearFacetsEntries() {
@@ -226,9 +215,7 @@ public class SearchResult extends
      */
 
     public void setStats(java.util.Map<String, FieldStats> stats) {
-        this.stats = stats == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, FieldStats>(
-                        stats);
+        this.stats = stats == null ? null : new com.amazonaws.internal.SdkInternalMap<String, FieldStats>(stats);
     }
 
     /**
@@ -238,8 +225,7 @@ public class SearchResult extends
      * 
      * @param stats
      *        The requested field statistics information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SearchResult withStats(java.util.Map<String, FieldStats> stats) {
@@ -252,15 +238,14 @@ public class SearchResult extends
             this.stats = new com.amazonaws.internal.SdkInternalMap<String, FieldStats>();
         }
         if (this.stats.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.stats.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Stats. &lt;p> Returns a reference to
-     * this object so that method calls can be chained together.
+     * Removes all the entries added into Stats. &lt;p> Returns a reference to this object so that method calls can be
+     * chained together.
      */
 
     public SearchResult clearStatsEntries() {
@@ -269,8 +254,7 @@ public class SearchResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -304,23 +288,19 @@ public class SearchResult extends
         SearchResult other = (SearchResult) obj;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getHits() == null ^ this.getHits() == null)
             return false;
-        if (other.getHits() != null
-                && other.getHits().equals(this.getHits()) == false)
+        if (other.getHits() != null && other.getHits().equals(this.getHits()) == false)
             return false;
         if (other.getFacets() == null ^ this.getFacets() == null)
             return false;
-        if (other.getFacets() != null
-                && other.getFacets().equals(this.getFacets()) == false)
+        if (other.getFacets() != null && other.getFacets().equals(this.getFacets()) == false)
             return false;
         if (other.getStats() == null ^ this.getStats() == null)
             return false;
-        if (other.getStats() != null
-                && other.getStats().equals(this.getStats()) == false)
+        if (other.getStats() != null && other.getStats().equals(this.getStats()) == false)
             return false;
         return true;
     }
@@ -330,14 +310,10 @@ public class SearchResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getHits() == null) ? 0 : getHits().hashCode());
-        hashCode = prime * hashCode
-                + ((getFacets() == null) ? 0 : getFacets().hashCode());
-        hashCode = prime * hashCode
-                + ((getStats() == null) ? 0 : getStats().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getHits() == null) ? 0 : getHits().hashCode());
+        hashCode = prime * hashCode + ((getFacets() == null) ? 0 : getFacets().hashCode());
+        hashCode = prime * hashCode + ((getStats() == null) ? 0 : getStats().hashCode());
         return hashCode;
     }
 
@@ -346,9 +322,7 @@ public class SearchResult extends
         try {
             return (SearchResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

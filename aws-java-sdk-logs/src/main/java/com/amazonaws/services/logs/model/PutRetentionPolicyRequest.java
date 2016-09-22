@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class PutRetentionPolicyRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class PutRetentionPolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,24 +30,21 @@ public class PutRetentionPolicyRequest extends
     private Integer retentionInDays;
 
     /**
-     * Default constructor for PutRetentionPolicyRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize the
-     * object after creating it.
+     * Default constructor for PutRetentionPolicyRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public PutRetentionPolicyRequest() {
     }
 
     /**
-     * Constructs a new PutRetentionPolicyRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new PutRetentionPolicyRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param logGroupName
      *        The name of the log group to associate the retention policy with.
      * @param retentionInDays
      */
-    public PutRetentionPolicyRequest(String logGroupName,
-            Integer retentionInDays) {
+    public PutRetentionPolicyRequest(String logGroupName, Integer retentionInDays) {
         setLogGroupName(logGroupName);
         setRetentionInDays(retentionInDays);
     }
@@ -88,8 +81,7 @@ public class PutRetentionPolicyRequest extends
      * 
      * @param logGroupName
      *        The name of the log group to associate the retention policy with.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutRetentionPolicyRequest withLogGroupName(String logGroupName) {
@@ -115,8 +107,7 @@ public class PutRetentionPolicyRequest extends
 
     /**
      * @param retentionInDays
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutRetentionPolicyRequest withRetentionInDays(Integer retentionInDays) {
@@ -125,8 +116,7 @@ public class PutRetentionPolicyRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -156,14 +146,11 @@ public class PutRetentionPolicyRequest extends
         PutRetentionPolicyRequest other = (PutRetentionPolicyRequest) obj;
         if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
             return false;
-        if (other.getLogGroupName() != null
-                && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
             return false;
-        if (other.getRetentionInDays() == null
-                ^ this.getRetentionInDays() == null)
+        if (other.getRetentionInDays() == null ^ this.getRetentionInDays() == null)
             return false;
-        if (other.getRetentionInDays() != null
-                && other.getRetentionInDays().equals(this.getRetentionInDays()) == false)
+        if (other.getRetentionInDays() != null && other.getRetentionInDays().equals(this.getRetentionInDays()) == false)
             return false;
         return true;
     }
@@ -173,14 +160,8 @@ public class PutRetentionPolicyRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLogGroupName() == null) ? 0 : getLogGroupName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRetentionInDays() == null) ? 0 : getRetentionInDays()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getRetentionInDays() == null) ? 0 : getRetentionInDays().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,9 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeExportTasksRequestMars
  * Contains the parameters for DescribeExportTasks.
  * </p>
  */
-public class DescribeExportTasksRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
-        DryRunSupportedRequest<DescribeExportTasksRequest> {
+public class DescribeExportTasksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeExportTasksRequest> {
 
     /**
      * <p>
@@ -65,8 +61,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.exportTaskIds = new com.amazonaws.internal.SdkInternalList<String>(
-                exportTaskIds);
+        this.exportTaskIds = new com.amazonaws.internal.SdkInternalList<String>(exportTaskIds);
     }
 
     /**
@@ -74,22 +69,19 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      * One or more export task IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setExportTaskIds(java.util.Collection)} or
-     * {@link #withExportTaskIds(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExportTaskIds(java.util.Collection)} or {@link #withExportTaskIds(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param exportTaskIds
      *        One or more export task IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeExportTasksRequest withExportTaskIds(String... exportTaskIds) {
         if (this.exportTaskIds == null) {
-            setExportTaskIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    exportTaskIds.length));
+            setExportTaskIds(new com.amazonaws.internal.SdkInternalList<String>(exportTaskIds.length));
         }
         for (String ele : exportTaskIds) {
             this.exportTaskIds.add(ele);
@@ -104,32 +96,27 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      * 
      * @param exportTaskIds
      *        One or more export task IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeExportTasksRequest withExportTaskIds(
-            java.util.Collection<String> exportTaskIds) {
+    public DescribeExportTasksRequest withExportTaskIds(java.util.Collection<String> exportTaskIds) {
         setExportTaskIds(exportTaskIds);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeExportTasksRequest> getDryRunRequest() {
-        Request<DescribeExportTasksRequest> request = new DescribeExportTasksRequestMarshaller()
-                .marshall(this);
+        Request<DescribeExportTasksRequest> request = new DescribeExportTasksRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -157,8 +144,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
         DescribeExportTasksRequest other = (DescribeExportTasksRequest) obj;
         if (other.getExportTaskIds() == null ^ this.getExportTaskIds() == null)
             return false;
-        if (other.getExportTaskIds() != null
-                && other.getExportTaskIds().equals(this.getExportTaskIds()) == false)
+        if (other.getExportTaskIds() != null && other.getExportTaskIds().equals(this.getExportTaskIds()) == false)
             return false;
         return true;
     }
@@ -168,10 +154,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getExportTaskIds() == null) ? 0 : getExportTaskIds()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getExportTaskIds() == null) ? 0 : getExportTaskIds().hashCode());
         return hashCode;
     }
 

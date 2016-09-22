@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticsearch.model;
 
@@ -19,38 +17,33 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code><a>RemoveTags</a></code> operation.
- * Specify the <code>ARN</code> for the Elasticsearch domain from which you want
- * to remove the specified <code>TagKey</code>.
+ * Container for the parameters to the <code><a>RemoveTags</a></code> operation. Specify the <code>ARN</code> for the
+ * Elasticsearch domain from which you want to remove the specified <code>TagKey</code>.
  * </p>
  */
-public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the <code>ARN</code> for the Elasticsearch domain from which
-     * you want to delete the specified tags.
+     * Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.
      * </p>
      */
     private String aRN;
     /**
      * <p>
-     * Specifies the <code>TagKey</code> list which you want to remove from the
-     * Elasticsearch domain.
+     * Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * Specifies the <code>ARN</code> for the Elasticsearch domain from which
-     * you want to delete the specified tags.
+     * Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.
      * </p>
      * 
      * @param aRN
-     *        Specifies the <code>ARN</code> for the Elasticsearch domain from
-     *        which you want to delete the specified tags.
+     *        Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified
+     *        tags.
      */
 
     public void setARN(String aRN) {
@@ -59,12 +52,11 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the <code>ARN</code> for the Elasticsearch domain from which
-     * you want to delete the specified tags.
+     * Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.
      * </p>
      * 
-     * @return Specifies the <code>ARN</code> for the Elasticsearch domain from
-     *         which you want to delete the specified tags.
+     * @return Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified
+     *         tags.
      */
 
     public String getARN() {
@@ -73,15 +65,13 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the <code>ARN</code> for the Elasticsearch domain from which
-     * you want to delete the specified tags.
+     * Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.
      * </p>
      * 
      * @param aRN
-     *        Specifies the <code>ARN</code> for the Elasticsearch domain from
-     *        which you want to delete the specified tags.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified
+     *        tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTagsRequest withARN(String aRN) {
@@ -91,12 +81,10 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the <code>TagKey</code> list which you want to remove from the
-     * Elasticsearch domain.
+     * Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.
      * </p>
      * 
-     * @return Specifies the <code>TagKey</code> list which you want to remove
-     *         from the Elasticsearch domain.
+     * @return Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -105,13 +93,11 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the <code>TagKey</code> list which you want to remove from the
-     * Elasticsearch domain.
+     * Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.
      * </p>
      * 
      * @param tagKeys
-     *        Specifies the <code>TagKey</code> list which you want to remove
-     *        from the Elasticsearch domain.
+     *        Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -125,21 +111,17 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the <code>TagKey</code> list which you want to remove from the
-     * Elasticsearch domain.
+     * Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagKeys(java.util.Collection)} or
-     * {@link #withTagKeys(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param tagKeys
-     *        Specifies the <code>TagKey</code> list which you want to remove
-     *        from the Elasticsearch domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTagsRequest withTagKeys(String... tagKeys) {
@@ -154,15 +136,12 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the <code>TagKey</code> list which you want to remove from the
-     * Elasticsearch domain.
+     * Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.
      * </p>
      * 
      * @param tagKeys
-     *        Specifies the <code>TagKey</code> list which you want to remove
-     *        from the Elasticsearch domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTagsRequest withTagKeys(java.util.Collection<String> tagKeys) {
@@ -171,8 +150,7 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -202,13 +180,11 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest
         RemoveTagsRequest other = (RemoveTagsRequest) obj;
         if (other.getARN() == null ^ this.getARN() == null)
             return false;
-        if (other.getARN() != null
-                && other.getARN().equals(this.getARN()) == false)
+        if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
             return false;
         if (other.getTagKeys() == null ^ this.getTagKeys() == null)
             return false;
-        if (other.getTagKeys() != null
-                && other.getTagKeys().equals(this.getTagKeys()) == false)
+        if (other.getTagKeys() != null && other.getTagKeys().equals(this.getTagKeys()) == false)
             return false;
         return true;
     }
@@ -218,10 +194,8 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getARN() == null) ? 0 : getARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
+        hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
+        hashCode = prime * hashCode + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
         return hashCode;
     }
 

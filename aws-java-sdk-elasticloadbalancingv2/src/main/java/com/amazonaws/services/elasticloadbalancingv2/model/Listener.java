@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
@@ -49,15 +47,14 @@ public class Listener implements Serializable, Cloneable {
     private String protocol;
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the
-     * protocol is HTTPS.
+     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
      * </p>
      */
     private java.util.List<Certificate> certificates;
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are
-     * supported. The default is the current predefined security policy.
+     * The security policy that defines which ciphers and protocols are supported. The default is the current predefined
+     * security policy.
      * </p>
      */
     private String sslPolicy;
@@ -100,8 +97,7 @@ public class Listener implements Serializable, Cloneable {
      * 
      * @param listenerArn
      *        The Amazon Resource Name (ARN) of the listener.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Listener withListenerArn(String listenerArn) {
@@ -141,8 +137,7 @@ public class Listener implements Serializable, Cloneable {
      * 
      * @param loadBalancerArn
      *        The Amazon Resource Name (ARN) of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Listener withLoadBalancerArn(String loadBalancerArn) {
@@ -182,8 +177,7 @@ public class Listener implements Serializable, Cloneable {
      * 
      * @param port
      *        The port on which the load balancer is listening.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Listener withPort(Integer port) {
@@ -225,8 +219,7 @@ public class Listener implements Serializable, Cloneable {
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
 
@@ -256,8 +249,7 @@ public class Listener implements Serializable, Cloneable {
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
 
@@ -268,12 +260,10 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the
-     * protocol is HTTPS.
+     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
      * </p>
      * 
-     * @return The SSL server certificate. You must provide a certificate if the
-     *         protocol is HTTPS.
+     * @return The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
      */
 
     public java.util.List<Certificate> getCertificates() {
@@ -282,13 +272,11 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the
-     * protocol is HTTPS.
+     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate. You must provide a certificate if the
-     *        protocol is HTTPS.
+     *        The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -302,27 +290,22 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the
-     * protocol is HTTPS.
+     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCertificates(java.util.Collection)} or
-     * {@link #withCertificates(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCertificates(java.util.Collection)} or {@link #withCertificates(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate. You must provide a certificate if the
-     *        protocol is HTTPS.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Listener withCertificates(Certificate... certificates) {
         if (this.certificates == null) {
-            setCertificates(new java.util.ArrayList<Certificate>(
-                    certificates.length));
+            setCertificates(new java.util.ArrayList<Certificate>(certificates.length));
         }
         for (Certificate ele : certificates) {
             this.certificates.add(ele);
@@ -332,32 +315,28 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the
-     * protocol is HTTPS.
+     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate. You must provide a certificate if the
-     *        protocol is HTTPS.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Listener withCertificates(
-            java.util.Collection<Certificate> certificates) {
+    public Listener withCertificates(java.util.Collection<Certificate> certificates) {
         setCertificates(certificates);
         return this;
     }
 
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are
-     * supported. The default is the current predefined security policy.
+     * The security policy that defines which ciphers and protocols are supported. The default is the current predefined
+     * security policy.
      * </p>
      * 
      * @param sslPolicy
-     *        The security policy that defines which ciphers and protocols are
-     *        supported. The default is the current predefined security policy.
+     *        The security policy that defines which ciphers and protocols are supported. The default is the current
+     *        predefined security policy.
      */
 
     public void setSslPolicy(String sslPolicy) {
@@ -366,12 +345,12 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are
-     * supported. The default is the current predefined security policy.
+     * The security policy that defines which ciphers and protocols are supported. The default is the current predefined
+     * security policy.
      * </p>
      * 
-     * @return The security policy that defines which ciphers and protocols are
-     *         supported. The default is the current predefined security policy.
+     * @return The security policy that defines which ciphers and protocols are supported. The default is the current
+     *         predefined security policy.
      */
 
     public String getSslPolicy() {
@@ -380,15 +359,14 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are
-     * supported. The default is the current predefined security policy.
+     * The security policy that defines which ciphers and protocols are supported. The default is the current predefined
+     * security policy.
      * </p>
      * 
      * @param sslPolicy
-     *        The security policy that defines which ciphers and protocols are
-     *        supported. The default is the current predefined security policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The security policy that defines which ciphers and protocols are supported. The default is the current
+     *        predefined security policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Listener withSslPolicy(String sslPolicy) {
@@ -431,22 +409,19 @@ public class Listener implements Serializable, Cloneable {
      * The default actions for the listener.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDefaultActions(java.util.Collection)} or
-     * {@link #withDefaultActions(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDefaultActions(java.util.Collection)} or {@link #withDefaultActions(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param defaultActions
      *        The default actions for the listener.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Listener withDefaultActions(Action... defaultActions) {
         if (this.defaultActions == null) {
-            setDefaultActions(new java.util.ArrayList<Action>(
-                    defaultActions.length));
+            setDefaultActions(new java.util.ArrayList<Action>(defaultActions.length));
         }
         for (Action ele : defaultActions) {
             this.defaultActions.add(ele);
@@ -461,19 +436,16 @@ public class Listener implements Serializable, Cloneable {
      * 
      * @param defaultActions
      *        The default actions for the listener.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Listener withDefaultActions(
-            java.util.Collection<Action> defaultActions) {
+    public Listener withDefaultActions(java.util.Collection<Action> defaultActions) {
         setDefaultActions(defaultActions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -513,40 +485,31 @@ public class Listener implements Serializable, Cloneable {
         Listener other = (Listener) obj;
         if (other.getListenerArn() == null ^ this.getListenerArn() == null)
             return false;
-        if (other.getListenerArn() != null
-                && other.getListenerArn().equals(this.getListenerArn()) == false)
+        if (other.getListenerArn() != null && other.getListenerArn().equals(this.getListenerArn()) == false)
             return false;
-        if (other.getLoadBalancerArn() == null
-                ^ this.getLoadBalancerArn() == null)
+        if (other.getLoadBalancerArn() == null ^ this.getLoadBalancerArn() == null)
             return false;
-        if (other.getLoadBalancerArn() != null
-                && other.getLoadBalancerArn().equals(this.getLoadBalancerArn()) == false)
+        if (other.getLoadBalancerArn() != null && other.getLoadBalancerArn().equals(this.getLoadBalancerArn()) == false)
             return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
-        if (other.getPort() != null
-                && other.getPort().equals(this.getPort()) == false)
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
         if (other.getProtocol() == null ^ this.getProtocol() == null)
             return false;
-        if (other.getProtocol() != null
-                && other.getProtocol().equals(this.getProtocol()) == false)
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
             return false;
         if (other.getCertificates() == null ^ this.getCertificates() == null)
             return false;
-        if (other.getCertificates() != null
-                && other.getCertificates().equals(this.getCertificates()) == false)
+        if (other.getCertificates() != null && other.getCertificates().equals(this.getCertificates()) == false)
             return false;
         if (other.getSslPolicy() == null ^ this.getSslPolicy() == null)
             return false;
-        if (other.getSslPolicy() != null
-                && other.getSslPolicy().equals(this.getSslPolicy()) == false)
+        if (other.getSslPolicy() != null && other.getSslPolicy().equals(this.getSslPolicy()) == false)
             return false;
-        if (other.getDefaultActions() == null
-                ^ this.getDefaultActions() == null)
+        if (other.getDefaultActions() == null ^ this.getDefaultActions() == null)
             return false;
-        if (other.getDefaultActions() != null
-                && other.getDefaultActions().equals(this.getDefaultActions()) == false)
+        if (other.getDefaultActions() != null && other.getDefaultActions().equals(this.getDefaultActions()) == false)
             return false;
         return true;
     }
@@ -556,27 +519,13 @@ public class Listener implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getListenerArn() == null) ? 0 : getListenerArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerArn() == null) ? 0 : getLoadBalancerArn()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPort() == null) ? 0 : getPort().hashCode());
-        hashCode = prime * hashCode
-                + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCertificates() == null) ? 0 : getCertificates()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getSslPolicy() == null) ? 0 : getSslPolicy().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultActions() == null) ? 0 : getDefaultActions()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getListenerArn() == null) ? 0 : getListenerArn().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerArn() == null) ? 0 : getLoadBalancerArn().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
+        hashCode = prime * hashCode + ((getCertificates() == null) ? 0 : getCertificates().hashCode());
+        hashCode = prime * hashCode + ((getSslPolicy() == null) ? 0 : getSslPolicy().hashCode());
+        hashCode = prime * hashCode + ((getDefaultActions() == null) ? 0 : getDefaultActions().hashCode());
         return hashCode;
     }
 
@@ -585,9 +534,7 @@ public class Listener implements Serializable, Cloneable {
         try {
             return (Listener) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

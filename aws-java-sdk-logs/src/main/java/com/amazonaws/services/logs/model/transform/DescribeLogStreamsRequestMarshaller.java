@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model.transform;
 
@@ -35,27 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeLogStreamsRequest Marshaller
  */
-public class DescribeLogStreamsRequestMarshaller
-        implements
-        Marshaller<Request<DescribeLogStreamsRequest>, DescribeLogStreamsRequest> {
+public class DescribeLogStreamsRequestMarshaller implements Marshaller<Request<DescribeLogStreamsRequest>, DescribeLogStreamsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeLogStreamsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeLogStreamsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeLogStreamsRequest> marshall(
-            DescribeLogStreamsRequest describeLogStreamsRequest) {
+    public Request<DescribeLogStreamsRequest> marshall(DescribeLogStreamsRequest describeLogStreamsRequest) {
 
         if (describeLogStreamsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeLogStreamsRequest> request = new DefaultRequest<DescribeLogStreamsRequest>(
-                describeLogStreamsRequest, "AWSLogs");
+        Request<DescribeLogStreamsRequest> request = new DefaultRequest<DescribeLogStreamsRequest>(describeLogStreamsRequest, "AWSLogs");
         request.addHeader("X-Amz-Target", "Logs_20140328.DescribeLogStreams");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -63,46 +55,37 @@ public class DescribeLogStreamsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (describeLogStreamsRequest.getLogGroupName() != null) {
-                jsonGenerator.writeFieldName("logGroupName").writeValue(
-                        describeLogStreamsRequest.getLogGroupName());
+                jsonGenerator.writeFieldName("logGroupName").writeValue(describeLogStreamsRequest.getLogGroupName());
             }
             if (describeLogStreamsRequest.getLogStreamNamePrefix() != null) {
-                jsonGenerator.writeFieldName("logStreamNamePrefix").writeValue(
-                        describeLogStreamsRequest.getLogStreamNamePrefix());
+                jsonGenerator.writeFieldName("logStreamNamePrefix").writeValue(describeLogStreamsRequest.getLogStreamNamePrefix());
             }
             if (describeLogStreamsRequest.getOrderBy() != null) {
-                jsonGenerator.writeFieldName("orderBy").writeValue(
-                        describeLogStreamsRequest.getOrderBy());
+                jsonGenerator.writeFieldName("orderBy").writeValue(describeLogStreamsRequest.getOrderBy());
             }
             if (describeLogStreamsRequest.getDescending() != null) {
-                jsonGenerator.writeFieldName("descending").writeValue(
-                        describeLogStreamsRequest.getDescending());
+                jsonGenerator.writeFieldName("descending").writeValue(describeLogStreamsRequest.getDescending());
             }
             if (describeLogStreamsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(
-                        describeLogStreamsRequest.getNextToken());
+                jsonGenerator.writeFieldName("nextToken").writeValue(describeLogStreamsRequest.getNextToken());
             }
             if (describeLogStreamsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("limit").writeValue(
-                        describeLogStreamsRequest.getLimit());
+                jsonGenerator.writeFieldName("limit").writeValue(describeLogStreamsRequest.getLimit());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

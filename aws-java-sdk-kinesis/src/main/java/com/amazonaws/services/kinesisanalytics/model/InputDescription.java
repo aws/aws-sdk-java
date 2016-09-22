@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
@@ -19,18 +17,16 @@ import java.io.Serializable;
 /**
  * <p>
  * Describes the application input configuration. For more information, see <a
- * href=
- * "http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html"
- * >Configuring Application Input</a>.
+ * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+ * Input</a>.
  * </p>
  */
 public class InputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Input ID associated with the application input. This is the ID that
-     * Amazon Kinesis Analytics assigns to each input configuration you add to
-     * your application.
+     * Input ID associated with the application input. This is the ID that Amazon Kinesis Analytics assigns to each
+     * input configuration you add to your application.
      * </p>
      */
     private String inputId;
@@ -42,25 +38,22 @@ public class InputDescription implements Serializable, Cloneable {
     private String namePrefix;
     /**
      * <p>
-     * Returns the in-application stream names that are mapped to the stream
-     * source.
+     * Returns the in-application stream names that are mapped to the stream source.
      * </p>
      */
     private java.util.List<String> inAppStreamNames;
     /**
      * <p>
-     * If an Amazon Kinesis stream is configured as streaming source, provides
-     * Amazon Kinesis stream's ARN and an IAM role that enables Amazon Kinesis
-     * Analytics to access the stream on your behalf.
+     * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an IAM
+     * role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
      */
     private KinesisStreamsInputDescription kinesisStreamsInputDescription;
     /**
      * <p>
-     * If an Amazon Kinesis Firehose delivery stream is configured as a
-     * streaming source, provides the Firehose delivery stream's Amazon Resource
-     * Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to
-     * access the stream on your behalf.
+     * If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose delivery
+     * stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on
+     * your behalf.
      * </p>
      */
     private KinesisFirehoseInputDescription kinesisFirehoseInputDescription;
@@ -68,30 +61,26 @@ public class InputDescription implements Serializable, Cloneable {
     private SourceSchema inputSchema;
     /**
      * <p>
-     * Describes the configured parallelism (number of in-application streams
-     * mapped to the streaming source).
+     * Describes the configured parallelism (number of in-application streams mapped to the streaming source).
      * </p>
      */
     private InputParallelism inputParallelism;
     /**
      * <p>
-     * Point at which the application is configured to read from the input
-     * stream.
+     * Point at which the application is configured to read from the input stream.
      * </p>
      */
     private InputStartingPositionConfiguration inputStartingPositionConfiguration;
 
     /**
      * <p>
-     * Input ID associated with the application input. This is the ID that
-     * Amazon Kinesis Analytics assigns to each input configuration you add to
-     * your application.
+     * Input ID associated with the application input. This is the ID that Amazon Kinesis Analytics assigns to each
+     * input configuration you add to your application.
      * </p>
      * 
      * @param inputId
-     *        Input ID associated with the application input. This is the ID
-     *        that Amazon Kinesis Analytics assigns to each input configuration
-     *        you add to your application.
+     *        Input ID associated with the application input. This is the ID that Amazon Kinesis Analytics assigns to
+     *        each input configuration you add to your application.
      */
 
     public void setInputId(String inputId) {
@@ -100,14 +89,12 @@ public class InputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Input ID associated with the application input. This is the ID that
-     * Amazon Kinesis Analytics assigns to each input configuration you add to
-     * your application.
+     * Input ID associated with the application input. This is the ID that Amazon Kinesis Analytics assigns to each
+     * input configuration you add to your application.
      * </p>
      * 
-     * @return Input ID associated with the application input. This is the ID
-     *         that Amazon Kinesis Analytics assigns to each input configuration
-     *         you add to your application.
+     * @return Input ID associated with the application input. This is the ID that Amazon Kinesis Analytics assigns to
+     *         each input configuration you add to your application.
      */
 
     public String getInputId() {
@@ -116,17 +103,14 @@ public class InputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Input ID associated with the application input. This is the ID that
-     * Amazon Kinesis Analytics assigns to each input configuration you add to
-     * your application.
+     * Input ID associated with the application input. This is the ID that Amazon Kinesis Analytics assigns to each
+     * input configuration you add to your application.
      * </p>
      * 
      * @param inputId
-     *        Input ID associated with the application input. This is the ID
-     *        that Amazon Kinesis Analytics assigns to each input configuration
-     *        you add to your application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Input ID associated with the application input. This is the ID that Amazon Kinesis Analytics assigns to
+     *        each input configuration you add to your application.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InputDescription withInputId(String inputId) {
@@ -166,8 +150,7 @@ public class InputDescription implements Serializable, Cloneable {
      * 
      * @param namePrefix
      *        In-application name prefix.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InputDescription withNamePrefix(String namePrefix) {
@@ -177,12 +160,10 @@ public class InputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the in-application stream names that are mapped to the stream
-     * source.
+     * Returns the in-application stream names that are mapped to the stream source.
      * </p>
      * 
-     * @return Returns the in-application stream names that are mapped to the
-     *         stream source.
+     * @return Returns the in-application stream names that are mapped to the stream source.
      */
 
     public java.util.List<String> getInAppStreamNames() {
@@ -191,49 +172,40 @@ public class InputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the in-application stream names that are mapped to the stream
-     * source.
+     * Returns the in-application stream names that are mapped to the stream source.
      * </p>
      * 
      * @param inAppStreamNames
-     *        Returns the in-application stream names that are mapped to the
-     *        stream source.
+     *        Returns the in-application stream names that are mapped to the stream source.
      */
 
-    public void setInAppStreamNames(
-            java.util.Collection<String> inAppStreamNames) {
+    public void setInAppStreamNames(java.util.Collection<String> inAppStreamNames) {
         if (inAppStreamNames == null) {
             this.inAppStreamNames = null;
             return;
         }
 
-        this.inAppStreamNames = new java.util.ArrayList<String>(
-                inAppStreamNames);
+        this.inAppStreamNames = new java.util.ArrayList<String>(inAppStreamNames);
     }
 
     /**
      * <p>
-     * Returns the in-application stream names that are mapped to the stream
-     * source.
+     * Returns the in-application stream names that are mapped to the stream source.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInAppStreamNames(java.util.Collection)} or
-     * {@link #withInAppStreamNames(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInAppStreamNames(java.util.Collection)} or {@link #withInAppStreamNames(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param inAppStreamNames
-     *        Returns the in-application stream names that are mapped to the
-     *        stream source.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Returns the in-application stream names that are mapped to the stream source.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InputDescription withInAppStreamNames(String... inAppStreamNames) {
         if (this.inAppStreamNames == null) {
-            setInAppStreamNames(new java.util.ArrayList<String>(
-                    inAppStreamNames.length));
+            setInAppStreamNames(new java.util.ArrayList<String>(inAppStreamNames.length));
         }
         for (String ele : inAppStreamNames) {
             this.inAppStreamNames.add(ele);
@@ -243,51 +215,42 @@ public class InputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the in-application stream names that are mapped to the stream
-     * source.
+     * Returns the in-application stream names that are mapped to the stream source.
      * </p>
      * 
      * @param inAppStreamNames
-     *        Returns the in-application stream names that are mapped to the
-     *        stream source.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Returns the in-application stream names that are mapped to the stream source.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InputDescription withInAppStreamNames(
-            java.util.Collection<String> inAppStreamNames) {
+    public InputDescription withInAppStreamNames(java.util.Collection<String> inAppStreamNames) {
         setInAppStreamNames(inAppStreamNames);
         return this;
     }
 
     /**
      * <p>
-     * If an Amazon Kinesis stream is configured as streaming source, provides
-     * Amazon Kinesis stream's ARN and an IAM role that enables Amazon Kinesis
-     * Analytics to access the stream on your behalf.
+     * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an IAM
+     * role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
      * 
      * @param kinesisStreamsInputDescription
-     *        If an Amazon Kinesis stream is configured as streaming source,
-     *        provides Amazon Kinesis stream's ARN and an IAM role that enables
-     *        Amazon Kinesis Analytics to access the stream on your behalf.
+     *        If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an
+     *        IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      */
 
-    public void setKinesisStreamsInputDescription(
-            KinesisStreamsInputDescription kinesisStreamsInputDescription) {
+    public void setKinesisStreamsInputDescription(KinesisStreamsInputDescription kinesisStreamsInputDescription) {
         this.kinesisStreamsInputDescription = kinesisStreamsInputDescription;
     }
 
     /**
      * <p>
-     * If an Amazon Kinesis stream is configured as streaming source, provides
-     * Amazon Kinesis stream's ARN and an IAM role that enables Amazon Kinesis
-     * Analytics to access the stream on your behalf.
+     * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an IAM
+     * role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
      * 
-     * @return If an Amazon Kinesis stream is configured as streaming source,
-     *         provides Amazon Kinesis stream's ARN and an IAM role that enables
-     *         Amazon Kinesis Analytics to access the stream on your behalf.
+     * @return If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and
+     *         an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      */
 
     public KinesisStreamsInputDescription getKinesisStreamsInputDescription() {
@@ -296,57 +259,48 @@ public class InputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If an Amazon Kinesis stream is configured as streaming source, provides
-     * Amazon Kinesis stream's ARN and an IAM role that enables Amazon Kinesis
-     * Analytics to access the stream on your behalf.
+     * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an IAM
+     * role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
      * 
      * @param kinesisStreamsInputDescription
-     *        If an Amazon Kinesis stream is configured as streaming source,
-     *        provides Amazon Kinesis stream's ARN and an IAM role that enables
-     *        Amazon Kinesis Analytics to access the stream on your behalf.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an
+     *        IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InputDescription withKinesisStreamsInputDescription(
-            KinesisStreamsInputDescription kinesisStreamsInputDescription) {
+    public InputDescription withKinesisStreamsInputDescription(KinesisStreamsInputDescription kinesisStreamsInputDescription) {
         setKinesisStreamsInputDescription(kinesisStreamsInputDescription);
         return this;
     }
 
     /**
      * <p>
-     * If an Amazon Kinesis Firehose delivery stream is configured as a
-     * streaming source, provides the Firehose delivery stream's Amazon Resource
-     * Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to
-     * access the stream on your behalf.
+     * If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose delivery
+     * stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on
+     * your behalf.
      * </p>
      * 
      * @param kinesisFirehoseInputDescription
-     *        If an Amazon Kinesis Firehose delivery stream is configured as a
-     *        streaming source, provides the Firehose delivery stream's Amazon
-     *        Resource Name (ARN) and an IAM role that enables Amazon Kinesis
-     *        Analytics to access the stream on your behalf.
+     *        If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose
+     *        delivery stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to
+     *        access the stream on your behalf.
      */
 
-    public void setKinesisFirehoseInputDescription(
-            KinesisFirehoseInputDescription kinesisFirehoseInputDescription) {
+    public void setKinesisFirehoseInputDescription(KinesisFirehoseInputDescription kinesisFirehoseInputDescription) {
         this.kinesisFirehoseInputDescription = kinesisFirehoseInputDescription;
     }
 
     /**
      * <p>
-     * If an Amazon Kinesis Firehose delivery stream is configured as a
-     * streaming source, provides the Firehose delivery stream's Amazon Resource
-     * Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to
-     * access the stream on your behalf.
+     * If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose delivery
+     * stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on
+     * your behalf.
      * </p>
      * 
-     * @return If an Amazon Kinesis Firehose delivery stream is configured as a
-     *         streaming source, provides the Firehose delivery stream's Amazon
-     *         Resource Name (ARN) and an IAM role that enables Amazon Kinesis
-     *         Analytics to access the stream on your behalf.
+     * @return If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose
+     *         delivery stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to
+     *         access the stream on your behalf.
      */
 
     public KinesisFirehoseInputDescription getKinesisFirehoseInputDescription() {
@@ -355,23 +309,19 @@ public class InputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If an Amazon Kinesis Firehose delivery stream is configured as a
-     * streaming source, provides the Firehose delivery stream's Amazon Resource
-     * Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to
-     * access the stream on your behalf.
+     * If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose delivery
+     * stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on
+     * your behalf.
      * </p>
      * 
      * @param kinesisFirehoseInputDescription
-     *        If an Amazon Kinesis Firehose delivery stream is configured as a
-     *        streaming source, provides the Firehose delivery stream's Amazon
-     *        Resource Name (ARN) and an IAM role that enables Amazon Kinesis
-     *        Analytics to access the stream on your behalf.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose
+     *        delivery stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to
+     *        access the stream on your behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InputDescription withKinesisFirehoseInputDescription(
-            KinesisFirehoseInputDescription kinesisFirehoseInputDescription) {
+    public InputDescription withKinesisFirehoseInputDescription(KinesisFirehoseInputDescription kinesisFirehoseInputDescription) {
         setKinesisFirehoseInputDescription(kinesisFirehoseInputDescription);
         return this;
     }
@@ -394,8 +344,7 @@ public class InputDescription implements Serializable, Cloneable {
 
     /**
      * @param inputSchema
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InputDescription withInputSchema(SourceSchema inputSchema) {
@@ -405,13 +354,11 @@ public class InputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the configured parallelism (number of in-application streams
-     * mapped to the streaming source).
+     * Describes the configured parallelism (number of in-application streams mapped to the streaming source).
      * </p>
      * 
      * @param inputParallelism
-     *        Describes the configured parallelism (number of in-application
-     *        streams mapped to the streaming source).
+     *        Describes the configured parallelism (number of in-application streams mapped to the streaming source).
      */
 
     public void setInputParallelism(InputParallelism inputParallelism) {
@@ -420,12 +367,10 @@ public class InputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the configured parallelism (number of in-application streams
-     * mapped to the streaming source).
+     * Describes the configured parallelism (number of in-application streams mapped to the streaming source).
      * </p>
      * 
-     * @return Describes the configured parallelism (number of in-application
-     *         streams mapped to the streaming source).
+     * @return Describes the configured parallelism (number of in-application streams mapped to the streaming source).
      */
 
     public InputParallelism getInputParallelism() {
@@ -434,47 +379,38 @@ public class InputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the configured parallelism (number of in-application streams
-     * mapped to the streaming source).
+     * Describes the configured parallelism (number of in-application streams mapped to the streaming source).
      * </p>
      * 
      * @param inputParallelism
-     *        Describes the configured parallelism (number of in-application
-     *        streams mapped to the streaming source).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Describes the configured parallelism (number of in-application streams mapped to the streaming source).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InputDescription withInputParallelism(
-            InputParallelism inputParallelism) {
+    public InputDescription withInputParallelism(InputParallelism inputParallelism) {
         setInputParallelism(inputParallelism);
         return this;
     }
 
     /**
      * <p>
-     * Point at which the application is configured to read from the input
-     * stream.
+     * Point at which the application is configured to read from the input stream.
      * </p>
      * 
      * @param inputStartingPositionConfiguration
-     *        Point at which the application is configured to read from the
-     *        input stream.
+     *        Point at which the application is configured to read from the input stream.
      */
 
-    public void setInputStartingPositionConfiguration(
-            InputStartingPositionConfiguration inputStartingPositionConfiguration) {
+    public void setInputStartingPositionConfiguration(InputStartingPositionConfiguration inputStartingPositionConfiguration) {
         this.inputStartingPositionConfiguration = inputStartingPositionConfiguration;
     }
 
     /**
      * <p>
-     * Point at which the application is configured to read from the input
-     * stream.
+     * Point at which the application is configured to read from the input stream.
      * </p>
      * 
-     * @return Point at which the application is configured to read from the
-     *         input stream.
+     * @return Point at which the application is configured to read from the input stream.
      */
 
     public InputStartingPositionConfiguration getInputStartingPositionConfiguration() {
@@ -483,26 +419,21 @@ public class InputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Point at which the application is configured to read from the input
-     * stream.
+     * Point at which the application is configured to read from the input stream.
      * </p>
      * 
      * @param inputStartingPositionConfiguration
-     *        Point at which the application is configured to read from the
-     *        input stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Point at which the application is configured to read from the input stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InputDescription withInputStartingPositionConfiguration(
-            InputStartingPositionConfiguration inputStartingPositionConfiguration) {
+    public InputDescription withInputStartingPositionConfiguration(InputStartingPositionConfiguration inputStartingPositionConfiguration) {
         setInputStartingPositionConfiguration(inputStartingPositionConfiguration);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -519,18 +450,15 @@ public class InputDescription implements Serializable, Cloneable {
         if (getInAppStreamNames() != null)
             sb.append("InAppStreamNames: " + getInAppStreamNames() + ",");
         if (getKinesisStreamsInputDescription() != null)
-            sb.append("KinesisStreamsInputDescription: "
-                    + getKinesisStreamsInputDescription() + ",");
+            sb.append("KinesisStreamsInputDescription: " + getKinesisStreamsInputDescription() + ",");
         if (getKinesisFirehoseInputDescription() != null)
-            sb.append("KinesisFirehoseInputDescription: "
-                    + getKinesisFirehoseInputDescription() + ",");
+            sb.append("KinesisFirehoseInputDescription: " + getKinesisFirehoseInputDescription() + ",");
         if (getInputSchema() != null)
             sb.append("InputSchema: " + getInputSchema() + ",");
         if (getInputParallelism() != null)
             sb.append("InputParallelism: " + getInputParallelism() + ",");
         if (getInputStartingPositionConfiguration() != null)
-            sb.append("InputStartingPositionConfiguration: "
-                    + getInputStartingPositionConfiguration());
+            sb.append("InputStartingPositionConfiguration: " + getInputStartingPositionConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -547,53 +475,38 @@ public class InputDescription implements Serializable, Cloneable {
         InputDescription other = (InputDescription) obj;
         if (other.getInputId() == null ^ this.getInputId() == null)
             return false;
-        if (other.getInputId() != null
-                && other.getInputId().equals(this.getInputId()) == false)
+        if (other.getInputId() != null && other.getInputId().equals(this.getInputId()) == false)
             return false;
         if (other.getNamePrefix() == null ^ this.getNamePrefix() == null)
             return false;
-        if (other.getNamePrefix() != null
-                && other.getNamePrefix().equals(this.getNamePrefix()) == false)
+        if (other.getNamePrefix() != null && other.getNamePrefix().equals(this.getNamePrefix()) == false)
             return false;
-        if (other.getInAppStreamNames() == null
-                ^ this.getInAppStreamNames() == null)
+        if (other.getInAppStreamNames() == null ^ this.getInAppStreamNames() == null)
             return false;
-        if (other.getInAppStreamNames() != null
-                && other.getInAppStreamNames().equals(
-                        this.getInAppStreamNames()) == false)
+        if (other.getInAppStreamNames() != null && other.getInAppStreamNames().equals(this.getInAppStreamNames()) == false)
             return false;
-        if (other.getKinesisStreamsInputDescription() == null
-                ^ this.getKinesisStreamsInputDescription() == null)
+        if (other.getKinesisStreamsInputDescription() == null ^ this.getKinesisStreamsInputDescription() == null)
             return false;
         if (other.getKinesisStreamsInputDescription() != null
-                && other.getKinesisStreamsInputDescription().equals(
-                        this.getKinesisStreamsInputDescription()) == false)
+                && other.getKinesisStreamsInputDescription().equals(this.getKinesisStreamsInputDescription()) == false)
             return false;
-        if (other.getKinesisFirehoseInputDescription() == null
-                ^ this.getKinesisFirehoseInputDescription() == null)
+        if (other.getKinesisFirehoseInputDescription() == null ^ this.getKinesisFirehoseInputDescription() == null)
             return false;
         if (other.getKinesisFirehoseInputDescription() != null
-                && other.getKinesisFirehoseInputDescription().equals(
-                        this.getKinesisFirehoseInputDescription()) == false)
+                && other.getKinesisFirehoseInputDescription().equals(this.getKinesisFirehoseInputDescription()) == false)
             return false;
         if (other.getInputSchema() == null ^ this.getInputSchema() == null)
             return false;
-        if (other.getInputSchema() != null
-                && other.getInputSchema().equals(this.getInputSchema()) == false)
+        if (other.getInputSchema() != null && other.getInputSchema().equals(this.getInputSchema()) == false)
             return false;
-        if (other.getInputParallelism() == null
-                ^ this.getInputParallelism() == null)
+        if (other.getInputParallelism() == null ^ this.getInputParallelism() == null)
             return false;
-        if (other.getInputParallelism() != null
-                && other.getInputParallelism().equals(
-                        this.getInputParallelism()) == false)
+        if (other.getInputParallelism() != null && other.getInputParallelism().equals(this.getInputParallelism()) == false)
             return false;
-        if (other.getInputStartingPositionConfiguration() == null
-                ^ this.getInputStartingPositionConfiguration() == null)
+        if (other.getInputStartingPositionConfiguration() == null ^ this.getInputStartingPositionConfiguration() == null)
             return false;
         if (other.getInputStartingPositionConfiguration() != null
-                && other.getInputStartingPositionConfiguration().equals(
-                        this.getInputStartingPositionConfiguration()) == false)
+                && other.getInputStartingPositionConfiguration().equals(this.getInputStartingPositionConfiguration()) == false)
             return false;
         return true;
     }
@@ -603,33 +516,14 @@ public class InputDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInputId() == null) ? 0 : getInputId().hashCode());
-        hashCode = prime * hashCode
-                + ((getNamePrefix() == null) ? 0 : getNamePrefix().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInAppStreamNames() == null) ? 0 : getInAppStreamNames()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getKinesisStreamsInputDescription() == null) ? 0
-                        : getKinesisStreamsInputDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getKinesisFirehoseInputDescription() == null) ? 0
-                        : getKinesisFirehoseInputDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInputSchema() == null) ? 0 : getInputSchema().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInputParallelism() == null) ? 0 : getInputParallelism()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInputStartingPositionConfiguration() == null) ? 0
-                        : getInputStartingPositionConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getInputId() == null) ? 0 : getInputId().hashCode());
+        hashCode = prime * hashCode + ((getNamePrefix() == null) ? 0 : getNamePrefix().hashCode());
+        hashCode = prime * hashCode + ((getInAppStreamNames() == null) ? 0 : getInAppStreamNames().hashCode());
+        hashCode = prime * hashCode + ((getKinesisStreamsInputDescription() == null) ? 0 : getKinesisStreamsInputDescription().hashCode());
+        hashCode = prime * hashCode + ((getKinesisFirehoseInputDescription() == null) ? 0 : getKinesisFirehoseInputDescription().hashCode());
+        hashCode = prime * hashCode + ((getInputSchema() == null) ? 0 : getInputSchema().hashCode());
+        hashCode = prime * hashCode + ((getInputParallelism() == null) ? 0 : getInputParallelism().hashCode());
+        hashCode = prime * hashCode + ((getInputStartingPositionConfiguration() == null) ? 0 : getInputStartingPositionConfiguration().hashCode());
         return hashCode;
     }
 
@@ -638,9 +532,7 @@ public class InputDescription implements Serializable, Cloneable {
         try {
             return (InputDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

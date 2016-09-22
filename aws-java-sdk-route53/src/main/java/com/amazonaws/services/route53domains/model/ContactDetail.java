@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model;
 
@@ -37,8 +35,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -59,8 +56,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -69,10 +65,9 @@ public class ContactDetail implements Serializable, Cloneable {
     private String lastName;
     /**
      * <p>
-     * Indicates whether the contact is a person, company, association, or
-     * public organization. If you choose an option other than
-     * <code>PERSON</code>, you must enter an organization name, and you
-     * can&apos;t enable privacy protection for the contact.
+     * Indicates whether the contact is a person, company, association, or public organization. If you choose an option
+     * other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable privacy protection
+     * for the contact.
      * </p>
      * <p>
      * Type: String
@@ -84,12 +79,10 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Valid values: <code>PERSON</code> | <code>COMPANY</code> |
-     * <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
+     * Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -98,8 +91,7 @@ public class ContactDetail implements Serializable, Cloneable {
     private String contactType;
     /**
      * <p>
-     * Name of the organization for contact types other than <code>PERSON</code>
-     * .
+     * Name of the organization for contact types other than <code>PERSON</code>.
      * </p>
      * <p>
      * Type: String
@@ -108,12 +100,10 @@ public class ContactDetail implements Serializable, Cloneable {
      * Default: None
      * </p>
      * <p>
-     * Constraints: Maximum 255 characters. Contact type must not be
-     * <code>PERSON</code>.
+     * Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -134,8 +124,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -156,8 +145,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -178,8 +166,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -200,8 +187,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -222,8 +208,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -244,8 +229,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -264,12 +248,11 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code>]". For example,
-     * a US phone number might appear as <code>"+1.1234567890"</code>.
+     * "+[country dialing code].[number including any area code>]". For example, a US phone number might appear as
+     * <code>"+1.1234567890"</code>.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -290,8 +273,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 254 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -310,12 +292,11 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code]". For example,
-     * a US phone number might appear as <code>"+1.1234567890"</code>.
+     * "+[country dialing code].[number including any area code]". For example, a US phone number might appear as
+     * <code>"+1.1234567890"</code>.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -324,8 +305,7 @@ public class ContactDetail implements Serializable, Cloneable {
     private String fax;
     /**
      * <p>
-     * A list of name-value pairs for parameters required by certain top-level
-     * domains.
+     * A list of name-value pairs for parameters required by certain top-level domains.
      * </p>
      * <p>
      * Type: Complex
@@ -334,8 +314,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Default: None
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Children: <code>Name</code>, <code>Value</code>
@@ -360,8 +339,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -403,8 +381,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -421,8 +398,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Constraints: Maximum 255 characters.
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Required: Yes
@@ -446,8 +422,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -469,8 +444,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContactDetail withFirstName(String firstName) {
@@ -492,8 +466,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -535,8 +508,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -553,8 +525,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Constraints: Maximum 255 characters.
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Required: Yes
@@ -578,8 +549,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -601,8 +571,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContactDetail withLastName(String lastName) {
@@ -612,10 +581,9 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the contact is a person, company, association, or
-     * public organization. If you choose an option other than
-     * <code>PERSON</code>, you must enter an organization name, and you
-     * can&apos;t enable privacy protection for the contact.
+     * Indicates whether the contact is a person, company, association, or public organization. If you choose an option
+     * other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable privacy protection
+     * for the contact.
      * </p>
      * <p>
      * Type: String
@@ -627,22 +595,19 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Valid values: <code>PERSON</code> | <code>COMPANY</code> |
-     * <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
+     * Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
      * </p>
      * 
      * @param contactType
-     *        Indicates whether the contact is a person, company, association,
-     *        or public organization. If you choose an option other than
-     *        <code>PERSON</code>, you must enter an organization name, and you
-     *        can&apos;t enable privacy protection for the contact.</p>
+     *        Indicates whether the contact is a person, company, association, or public organization. If you choose an
+     *        option other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable
+     *        privacy protection for the contact.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -653,8 +618,8 @@ public class ContactDetail implements Serializable, Cloneable {
      *        Constraints: Maximum 255 characters.
      *        </p>
      *        <p>
-     *        Valid values: <code>PERSON</code> | <code>COMPANY</code> |
-     *        <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
+     *        Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> |
+     *        <code>PUBLIC_BODY</code>
      *        </p>
      *        <p>
      *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
@@ -670,10 +635,9 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the contact is a person, company, association, or
-     * public organization. If you choose an option other than
-     * <code>PERSON</code>, you must enter an organization name, and you
-     * can&apos;t enable privacy protection for the contact.
+     * Indicates whether the contact is a person, company, association, or public organization. If you choose an option
+     * other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable privacy protection
+     * for the contact.
      * </p>
      * <p>
      * Type: String
@@ -685,21 +649,18 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Valid values: <code>PERSON</code> | <code>COMPANY</code> |
-     * <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
+     * Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
      * </p>
      * 
-     * @return Indicates whether the contact is a person, company, association,
-     *         or public organization. If you choose an option other than
-     *         <code>PERSON</code>, you must enter an organization name, and you
-     *         can&apos;t enable privacy protection for the contact.</p>
+     * @return Indicates whether the contact is a person, company, association, or public organization. If you choose an
+     *         option other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable
+     *         privacy protection for the contact.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -710,12 +671,11 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Constraints: Maximum 255 characters.
      *         </p>
      *         <p>
-     *         Valid values: <code>PERSON</code> | <code>COMPANY</code> |
-     *         <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
+     *         Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> |
+     *         <code>PUBLIC_BODY</code>
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Required: Yes
@@ -728,10 +688,9 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the contact is a person, company, association, or
-     * public organization. If you choose an option other than
-     * <code>PERSON</code>, you must enter an organization name, and you
-     * can&apos;t enable privacy protection for the contact.
+     * Indicates whether the contact is a person, company, association, or public organization. If you choose an option
+     * other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable privacy protection
+     * for the contact.
      * </p>
      * <p>
      * Type: String
@@ -743,22 +702,19 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Valid values: <code>PERSON</code> | <code>COMPANY</code> |
-     * <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
+     * Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
      * </p>
      * 
      * @param contactType
-     *        Indicates whether the contact is a person, company, association,
-     *        or public organization. If you choose an option other than
-     *        <code>PERSON</code>, you must enter an organization name, and you
-     *        can&apos;t enable privacy protection for the contact.</p>
+     *        Indicates whether the contact is a person, company, association, or public organization. If you choose an
+     *        option other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable
+     *        privacy protection for the contact.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -769,16 +725,15 @@ public class ContactDetail implements Serializable, Cloneable {
      *        Constraints: Maximum 255 characters.
      *        </p>
      *        <p>
-     *        Valid values: <code>PERSON</code> | <code>COMPANY</code> |
-     *        <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
+     *        Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> |
+     *        <code>PUBLIC_BODY</code>
      *        </p>
      *        <p>
      *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactType
      */
 
@@ -789,10 +744,9 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the contact is a person, company, association, or
-     * public organization. If you choose an option other than
-     * <code>PERSON</code>, you must enter an organization name, and you
-     * can&apos;t enable privacy protection for the contact.
+     * Indicates whether the contact is a person, company, association, or public organization. If you choose an option
+     * other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable privacy protection
+     * for the contact.
      * </p>
      * <p>
      * Type: String
@@ -804,22 +758,19 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Valid values: <code>PERSON</code> | <code>COMPANY</code> |
-     * <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
+     * Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
      * </p>
      * 
      * @param contactType
-     *        Indicates whether the contact is a person, company, association,
-     *        or public organization. If you choose an option other than
-     *        <code>PERSON</code>, you must enter an organization name, and you
-     *        can&apos;t enable privacy protection for the contact.</p>
+     *        Indicates whether the contact is a person, company, association, or public organization. If you choose an
+     *        option other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable
+     *        privacy protection for the contact.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -830,8 +781,8 @@ public class ContactDetail implements Serializable, Cloneable {
      *        Constraints: Maximum 255 characters.
      *        </p>
      *        <p>
-     *        Valid values: <code>PERSON</code> | <code>COMPANY</code> |
-     *        <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
+     *        Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> |
+     *        <code>PUBLIC_BODY</code>
      *        </p>
      *        <p>
      *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
@@ -847,10 +798,9 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the contact is a person, company, association, or
-     * public organization. If you choose an option other than
-     * <code>PERSON</code>, you must enter an organization name, and you
-     * can&apos;t enable privacy protection for the contact.
+     * Indicates whether the contact is a person, company, association, or public organization. If you choose an option
+     * other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable privacy protection
+     * for the contact.
      * </p>
      * <p>
      * Type: String
@@ -862,22 +812,19 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Valid values: <code>PERSON</code> | <code>COMPANY</code> |
-     * <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
+     * Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
      * </p>
      * 
      * @param contactType
-     *        Indicates whether the contact is a person, company, association,
-     *        or public organization. If you choose an option other than
-     *        <code>PERSON</code>, you must enter an organization name, and you
-     *        can&apos;t enable privacy protection for the contact.</p>
+     *        Indicates whether the contact is a person, company, association, or public organization. If you choose an
+     *        option other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable
+     *        privacy protection for the contact.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -888,16 +835,15 @@ public class ContactDetail implements Serializable, Cloneable {
      *        Constraints: Maximum 255 characters.
      *        </p>
      *        <p>
-     *        Valid values: <code>PERSON</code> | <code>COMPANY</code> |
-     *        <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
+     *        Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> |
+     *        <code>PUBLIC_BODY</code>
      *        </p>
      *        <p>
      *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactType
      */
 
@@ -908,8 +854,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of the organization for contact types other than <code>PERSON</code>
-     * .
+     * Name of the organization for contact types other than <code>PERSON</code>.
      * </p>
      * <p>
      * Type: String
@@ -918,20 +863,17 @@ public class ContactDetail implements Serializable, Cloneable {
      * Default: None
      * </p>
      * <p>
-     * Constraints: Maximum 255 characters. Contact type must not be
-     * <code>PERSON</code>.
+     * Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
      * </p>
      * 
      * @param organizationName
-     *        Name of the organization for contact types other than
-     *        <code>PERSON</code>.</p>
+     *        Name of the organization for contact types other than <code>PERSON</code>.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -939,8 +881,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        Default: None
      *        </p>
      *        <p>
-     *        Constraints: Maximum 255 characters. Contact type must not be
-     *        <code>PERSON</code>.
+     *        Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
      *        </p>
      *        <p>
      *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
@@ -955,8 +896,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of the organization for contact types other than <code>PERSON</code>
-     * .
+     * Name of the organization for contact types other than <code>PERSON</code>.
      * </p>
      * <p>
      * Type: String
@@ -965,19 +905,16 @@ public class ContactDetail implements Serializable, Cloneable {
      * Default: None
      * </p>
      * <p>
-     * Constraints: Maximum 255 characters. Contact type must not be
-     * <code>PERSON</code>.
+     * Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
      * </p>
      * 
-     * @return Name of the organization for contact types other than
-     *         <code>PERSON</code>.</p>
+     * @return Name of the organization for contact types other than <code>PERSON</code>.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -985,12 +922,10 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Default: None
      *         </p>
      *         <p>
-     *         Constraints: Maximum 255 characters. Contact type must not be
-     *         <code>PERSON</code>.
+     *         Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Required: No
@@ -1002,8 +937,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of the organization for contact types other than <code>PERSON</code>
-     * .
+     * Name of the organization for contact types other than <code>PERSON</code>.
      * </p>
      * <p>
      * Type: String
@@ -1012,20 +946,17 @@ public class ContactDetail implements Serializable, Cloneable {
      * Default: None
      * </p>
      * <p>
-     * Constraints: Maximum 255 characters. Contact type must not be
-     * <code>PERSON</code>.
+     * Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
      * </p>
      * 
      * @param organizationName
-     *        Name of the organization for contact types other than
-     *        <code>PERSON</code>.</p>
+     *        Name of the organization for contact types other than <code>PERSON</code>.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1033,16 +964,14 @@ public class ContactDetail implements Serializable, Cloneable {
      *        Default: None
      *        </p>
      *        <p>
-     *        Constraints: Maximum 255 characters. Contact type must not be
-     *        <code>PERSON</code>.
+     *        Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
      *        </p>
      *        <p>
      *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContactDetail withOrganizationName(String organizationName) {
@@ -1064,8 +993,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -1107,8 +1035,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -1125,8 +1052,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Constraints: Maximum 255 characters.
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Required: Yes
@@ -1150,8 +1076,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -1173,8 +1098,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContactDetail withAddressLine1(String addressLine1) {
@@ -1196,8 +1120,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -1239,8 +1162,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -1257,8 +1179,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Constraints: Maximum 255 characters.
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Required: No
@@ -1282,8 +1203,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -1305,8 +1225,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContactDetail withAddressLine2(String addressLine2) {
@@ -1328,8 +1247,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -1371,8 +1289,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -1389,8 +1306,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Constraints: Maximum 255 characters.
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Required: Yes
@@ -1414,8 +1330,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -1437,8 +1352,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContactDetail withCity(String city) {
@@ -1460,8 +1374,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -1503,8 +1416,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -1521,8 +1433,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Constraints: Maximum 255 characters.
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Required: No
@@ -1546,8 +1457,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -1569,8 +1479,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContactDetail withState(String state) {
@@ -1592,8 +1501,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -1636,8 +1544,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -1654,8 +1561,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Constraints: Maximum 255 characters.
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Required: Yes
@@ -1680,8 +1586,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -1703,8 +1608,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CountryCode
      */
 
@@ -1727,8 +1631,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -1771,8 +1674,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -1794,8 +1696,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CountryCode
      */
 
@@ -1818,8 +1719,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -1861,8 +1761,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -1879,8 +1778,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Constraints: Maximum 255 characters.
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Required: No
@@ -1904,8 +1802,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 255 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -1927,8 +1824,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContactDetail withZipCode(String zipCode) {
@@ -1948,12 +1844,11 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code>]". For example,
-     * a US phone number might appear as <code>"+1.1234567890"</code>.
+     * "+[country dialing code].[number including any area code>]". For example, a US phone number might appear as
+     * <code>"+1.1234567890"</code>.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -1969,9 +1864,8 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Constraints: Phone number must be specified in the format
-     *        "+[country dialing code].[number including any area code>]". For
-     *        example, a US phone number might appear as
-     *        <code>"+1.1234567890"</code>.
+     *        "+[country dialing code].[number including any area code>]". For example, a US phone number might appear
+     *        as <code>"+1.1234567890"</code>.
      *        </p>
      *        <p>
      *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
@@ -1996,12 +1890,11 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code>]". For example,
-     * a US phone number might appear as <code>"+1.1234567890"</code>.
+     * "+[country dialing code].[number including any area code>]". For example, a US phone number might appear as
+     * <code>"+1.1234567890"</code>.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -2016,13 +1909,11 @@ public class ContactDetail implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         Constraints: Phone number must be specified in the format
-     *         "+[country dialing code].[number including any area code>]". For
-     *         example, a US phone number might appear as
-     *         <code>"+1.1234567890"</code>.
+     *         "+[country dialing code].[number including any area code>]". For example, a US phone number might appear
+     *         as <code>"+1.1234567890"</code>.
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Required: Yes
@@ -2044,12 +1935,11 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code>]". For example,
-     * a US phone number might appear as <code>"+1.1234567890"</code>.
+     * "+[country dialing code].[number including any area code>]". For example, a US phone number might appear as
+     * <code>"+1.1234567890"</code>.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -2065,17 +1955,15 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Constraints: Phone number must be specified in the format
-     *        "+[country dialing code].[number including any area code>]". For
-     *        example, a US phone number might appear as
-     *        <code>"+1.1234567890"</code>.
+     *        "+[country dialing code].[number including any area code>]". For example, a US phone number might appear
+     *        as <code>"+1.1234567890"</code>.
      *        </p>
      *        <p>
      *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContactDetail withPhoneNumber(String phoneNumber) {
@@ -2097,8 +1985,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 254 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -2140,8 +2027,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 254 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -2158,8 +2044,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Constraints: Maximum 254 characters.
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Required: Yes
@@ -2183,8 +2068,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Constraints: Maximum 254 characters.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: Yes
@@ -2206,8 +2090,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContactDetail withEmail(String email) {
@@ -2227,12 +2110,11 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code]". For example,
-     * a US phone number might appear as <code>"+1.1234567890"</code>.
+     * "+[country dialing code].[number including any area code]". For example, a US phone number might appear as
+     * <code>"+1.1234567890"</code>.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -2248,8 +2130,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Constraints: Phone number must be specified in the format
-     *        "+[country dialing code].[number including any area code]". For
-     *        example, a US phone number might appear as
+     *        "+[country dialing code].[number including any area code]". For example, a US phone number might appear as
      *        <code>"+1.1234567890"</code>.
      *        </p>
      *        <p>
@@ -2275,12 +2156,11 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code]". For example,
-     * a US phone number might appear as <code>"+1.1234567890"</code>.
+     * "+[country dialing code].[number including any area code]". For example, a US phone number might appear as
+     * <code>"+1.1234567890"</code>.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -2295,13 +2175,11 @@ public class ContactDetail implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         Constraints: Phone number must be specified in the format
-     *         "+[country dialing code].[number including any area code]". For
-     *         example, a US phone number might appear as
-     *         <code>"+1.1234567890"</code>.
+     *         "+[country dialing code].[number including any area code]". For example, a US phone number might appear
+     *         as <code>"+1.1234567890"</code>.
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Required: No
@@ -2323,12 +2201,11 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code]". For example,
-     * a US phone number might appear as <code>"+1.1234567890"</code>.
+     * "+[country dialing code].[number including any area code]". For example, a US phone number might appear as
+     * <code>"+1.1234567890"</code>.
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Required: No
@@ -2344,8 +2221,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Constraints: Phone number must be specified in the format
-     *        "+[country dialing code].[number including any area code]". For
-     *        example, a US phone number might appear as
+     *        "+[country dialing code].[number including any area code]". For example, a US phone number might appear as
      *        <code>"+1.1234567890"</code>.
      *        </p>
      *        <p>
@@ -2353,8 +2229,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContactDetail withFax(String fax) {
@@ -2364,8 +2239,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of name-value pairs for parameters required by certain top-level
-     * domains.
+     * A list of name-value pairs for parameters required by certain top-level domains.
      * </p>
      * <p>
      * Type: Complex
@@ -2374,8 +2248,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Default: None
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Children: <code>Name</code>, <code>Value</code>
@@ -2384,8 +2257,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Required: No
      * </p>
      * 
-     * @return A list of name-value pairs for parameters required by certain
-     *         top-level domains.</p>
+     * @return A list of name-value pairs for parameters required by certain top-level domains.</p>
      *         <p>
      *         Type: Complex
      *         </p>
@@ -2393,8 +2265,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Default: None
      *         </p>
      *         <p>
-     *         Parents: <code>RegistrantContact</code>,
-     *         <code>AdminContact</code>, <code>TechContact</code>
+     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      *         </p>
      *         <p>
      *         Children: <code>Name</code>, <code>Value</code>
@@ -2412,8 +2283,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of name-value pairs for parameters required by certain top-level
-     * domains.
+     * A list of name-value pairs for parameters required by certain top-level domains.
      * </p>
      * <p>
      * Type: Complex
@@ -2422,8 +2292,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Default: None
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Children: <code>Name</code>, <code>Value</code>
@@ -2433,8 +2302,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param extraParams
-     *        A list of name-value pairs for parameters required by certain
-     *        top-level domains.</p>
+     *        A list of name-value pairs for parameters required by certain top-level domains.</p>
      *        <p>
      *        Type: Complex
      *        </p>
@@ -2457,14 +2325,12 @@ public class ContactDetail implements Serializable, Cloneable {
             return;
         }
 
-        this.extraParams = new com.amazonaws.internal.SdkInternalList<ExtraParam>(
-                extraParams);
+        this.extraParams = new com.amazonaws.internal.SdkInternalList<ExtraParam>(extraParams);
     }
 
     /**
      * <p>
-     * A list of name-value pairs for parameters required by certain top-level
-     * domains.
+     * A list of name-value pairs for parameters required by certain top-level domains.
      * </p>
      * <p>
      * Type: Complex
@@ -2473,8 +2339,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Default: None
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Children: <code>Name</code>, <code>Value</code>
@@ -2483,15 +2348,13 @@ public class ContactDetail implements Serializable, Cloneable {
      * Required: No
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setExtraParams(java.util.Collection)} or
-     * {@link #withExtraParams(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExtraParams(java.util.Collection)} or {@link #withExtraParams(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param extraParams
-     *        A list of name-value pairs for parameters required by certain
-     *        top-level domains.</p>
+     *        A list of name-value pairs for parameters required by certain top-level domains.</p>
      *        <p>
      *        Type: Complex
      *        </p>
@@ -2506,14 +2369,12 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContactDetail withExtraParams(ExtraParam... extraParams) {
         if (this.extraParams == null) {
-            setExtraParams(new com.amazonaws.internal.SdkInternalList<ExtraParam>(
-                    extraParams.length));
+            setExtraParams(new com.amazonaws.internal.SdkInternalList<ExtraParam>(extraParams.length));
         }
         for (ExtraParam ele : extraParams) {
             this.extraParams.add(ele);
@@ -2523,8 +2384,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of name-value pairs for parameters required by certain top-level
-     * domains.
+     * A list of name-value pairs for parameters required by certain top-level domains.
      * </p>
      * <p>
      * Type: Complex
@@ -2533,8 +2393,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Default: None
      * </p>
      * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
-     * <code>TechContact</code>
+     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
      * </p>
      * <p>
      * Children: <code>Name</code>, <code>Value</code>
@@ -2544,8 +2403,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param extraParams
-     *        A list of name-value pairs for parameters required by certain
-     *        top-level domains.</p>
+     *        A list of name-value pairs for parameters required by certain top-level domains.</p>
      *        <p>
      *        Type: Complex
      *        </p>
@@ -2560,19 +2418,16 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ContactDetail withExtraParams(
-            java.util.Collection<ExtraParam> extraParams) {
+    public ContactDetail withExtraParams(java.util.Collection<ExtraParam> extraParams) {
         setExtraParams(extraParams);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -2626,75 +2481,59 @@ public class ContactDetail implements Serializable, Cloneable {
         ContactDetail other = (ContactDetail) obj;
         if (other.getFirstName() == null ^ this.getFirstName() == null)
             return false;
-        if (other.getFirstName() != null
-                && other.getFirstName().equals(this.getFirstName()) == false)
+        if (other.getFirstName() != null && other.getFirstName().equals(this.getFirstName()) == false)
             return false;
         if (other.getLastName() == null ^ this.getLastName() == null)
             return false;
-        if (other.getLastName() != null
-                && other.getLastName().equals(this.getLastName()) == false)
+        if (other.getLastName() != null && other.getLastName().equals(this.getLastName()) == false)
             return false;
         if (other.getContactType() == null ^ this.getContactType() == null)
             return false;
-        if (other.getContactType() != null
-                && other.getContactType().equals(this.getContactType()) == false)
+        if (other.getContactType() != null && other.getContactType().equals(this.getContactType()) == false)
             return false;
-        if (other.getOrganizationName() == null
-                ^ this.getOrganizationName() == null)
+        if (other.getOrganizationName() == null ^ this.getOrganizationName() == null)
             return false;
-        if (other.getOrganizationName() != null
-                && other.getOrganizationName().equals(
-                        this.getOrganizationName()) == false)
+        if (other.getOrganizationName() != null && other.getOrganizationName().equals(this.getOrganizationName()) == false)
             return false;
         if (other.getAddressLine1() == null ^ this.getAddressLine1() == null)
             return false;
-        if (other.getAddressLine1() != null
-                && other.getAddressLine1().equals(this.getAddressLine1()) == false)
+        if (other.getAddressLine1() != null && other.getAddressLine1().equals(this.getAddressLine1()) == false)
             return false;
         if (other.getAddressLine2() == null ^ this.getAddressLine2() == null)
             return false;
-        if (other.getAddressLine2() != null
-                && other.getAddressLine2().equals(this.getAddressLine2()) == false)
+        if (other.getAddressLine2() != null && other.getAddressLine2().equals(this.getAddressLine2()) == false)
             return false;
         if (other.getCity() == null ^ this.getCity() == null)
             return false;
-        if (other.getCity() != null
-                && other.getCity().equals(this.getCity()) == false)
+        if (other.getCity() != null && other.getCity().equals(this.getCity()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getCountryCode() == null ^ this.getCountryCode() == null)
             return false;
-        if (other.getCountryCode() != null
-                && other.getCountryCode().equals(this.getCountryCode()) == false)
+        if (other.getCountryCode() != null && other.getCountryCode().equals(this.getCountryCode()) == false)
             return false;
         if (other.getZipCode() == null ^ this.getZipCode() == null)
             return false;
-        if (other.getZipCode() != null
-                && other.getZipCode().equals(this.getZipCode()) == false)
+        if (other.getZipCode() != null && other.getZipCode().equals(this.getZipCode()) == false)
             return false;
         if (other.getPhoneNumber() == null ^ this.getPhoneNumber() == null)
             return false;
-        if (other.getPhoneNumber() != null
-                && other.getPhoneNumber().equals(this.getPhoneNumber()) == false)
+        if (other.getPhoneNumber() != null && other.getPhoneNumber().equals(this.getPhoneNumber()) == false)
             return false;
         if (other.getEmail() == null ^ this.getEmail() == null)
             return false;
-        if (other.getEmail() != null
-                && other.getEmail().equals(this.getEmail()) == false)
+        if (other.getEmail() != null && other.getEmail().equals(this.getEmail()) == false)
             return false;
         if (other.getFax() == null ^ this.getFax() == null)
             return false;
-        if (other.getFax() != null
-                && other.getFax().equals(this.getFax()) == false)
+        if (other.getFax() != null && other.getFax().equals(this.getFax()) == false)
             return false;
         if (other.getExtraParams() == null ^ this.getExtraParams() == null)
             return false;
-        if (other.getExtraParams() != null
-                && other.getExtraParams().equals(this.getExtraParams()) == false)
+        if (other.getExtraParams() != null && other.getExtraParams().equals(this.getExtraParams()) == false)
             return false;
         return true;
     }
@@ -2704,44 +2543,20 @@ public class ContactDetail implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFirstName() == null) ? 0 : getFirstName().hashCode());
-        hashCode = prime * hashCode
-                + ((getLastName() == null) ? 0 : getLastName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getContactType() == null) ? 0 : getContactType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOrganizationName() == null) ? 0 : getOrganizationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAddressLine1() == null) ? 0 : getAddressLine1()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAddressLine2() == null) ? 0 : getAddressLine2()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCity() == null) ? 0 : getCity().hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCountryCode() == null) ? 0 : getCountryCode().hashCode());
-        hashCode = prime * hashCode
-                + ((getZipCode() == null) ? 0 : getZipCode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPhoneNumber() == null) ? 0 : getPhoneNumber().hashCode());
-        hashCode = prime * hashCode
-                + ((getEmail() == null) ? 0 : getEmail().hashCode());
-        hashCode = prime * hashCode
-                + ((getFax() == null) ? 0 : getFax().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExtraParams() == null) ? 0 : getExtraParams().hashCode());
+        hashCode = prime * hashCode + ((getFirstName() == null) ? 0 : getFirstName().hashCode());
+        hashCode = prime * hashCode + ((getLastName() == null) ? 0 : getLastName().hashCode());
+        hashCode = prime * hashCode + ((getContactType() == null) ? 0 : getContactType().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationName() == null) ? 0 : getOrganizationName().hashCode());
+        hashCode = prime * hashCode + ((getAddressLine1() == null) ? 0 : getAddressLine1().hashCode());
+        hashCode = prime * hashCode + ((getAddressLine2() == null) ? 0 : getAddressLine2().hashCode());
+        hashCode = prime * hashCode + ((getCity() == null) ? 0 : getCity().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getCountryCode() == null) ? 0 : getCountryCode().hashCode());
+        hashCode = prime * hashCode + ((getZipCode() == null) ? 0 : getZipCode().hashCode());
+        hashCode = prime * hashCode + ((getPhoneNumber() == null) ? 0 : getPhoneNumber().hashCode());
+        hashCode = prime * hashCode + ((getEmail() == null) ? 0 : getEmail().hashCode());
+        hashCode = prime * hashCode + ((getFax() == null) ? 0 : getFax().hashCode());
+        hashCode = prime * hashCode + ((getExtraParams() == null) ? 0 : getExtraParams().hashCode());
         return hashCode;
     }
 
@@ -2750,9 +2565,7 @@ public class ContactDetail implements Serializable, Cloneable {
         try {
             return (ContactDetail) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

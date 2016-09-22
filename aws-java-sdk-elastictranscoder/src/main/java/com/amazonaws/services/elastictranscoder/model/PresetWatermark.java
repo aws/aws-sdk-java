@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
 
@@ -18,42 +16,36 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Settings for the size, location, and opacity of graphics that you want
- * Elastic Transcoder to overlay over videos that are transcoded using this
- * preset. You can specify settings for up to four watermarks. Watermarks appear
- * in the specified size and location, and with the specified opacity for the
- * duration of the transcoded video.
+ * Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that
+ * are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the
+ * specified size and location, and with the specified opacity for the duration of the transcoded video.
  * </p>
  * <p>
- * Watermarks can be in .png or .jpg format. If you want to display a watermark
- * that is not rectangular, use the .png format, which supports transparency.
+ * Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png
+ * format, which supports transparency.
  * </p>
  * <p>
- * When you create a job that uses this preset, you specify the .png or .jpg
- * graphics that you want Elastic Transcoder to include in the transcoded
- * videos. You can specify fewer graphics in the job than you specify watermark
- * settings in the preset, which allows you to use the same preset for up to
- * four watermarks that have different dimensions.
+ * When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder
+ * to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in
+ * the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.
  * </p>
  */
 public class PresetWatermark implements Serializable, Cloneable {
 
     /**
-     * A unique identifier for the settings for one watermark. The value of
-     * <code>Id</code> can be up to 40 characters long.
+     * A unique identifier for the settings for one watermark. The value of <code>Id</code> can be up to 40 characters
+     * long.
      */
     private String id;
     /**
      * <p>
      * The maximum width of the watermark in one of the following formats:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 16 pixels, and the
-     * maximum value is the value of <code>MaxWidth</code>.</li>
-     * <li>integer percentage (%): The range of valid values is 0 to 100. Use
-     * the value of <code>Target</code> to specify whether you want Elastic
-     * Transcoder to include the black bars that are added by Elastic
-     * Transcoder, if any, in the calculation.</li> If you specify the value in
-     * pixels, it must be less than or equal to the value of
+     * <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     * <code>MaxWidth</code>.</li>
+     * <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to
+     * specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if
+     * any, in the calculation.</li> If you specify the value in pixels, it must be less than or equal to the value of
      * <code>MaxWidth</code>.
      * </ul>
      * </p>
@@ -63,15 +55,13 @@ public class PresetWatermark implements Serializable, Cloneable {
      * <p>
      * The maximum height of the watermark in one of the following formats:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 16 pixels, and the
-     * maximum value is the value of <code>MaxHeight</code>.</li>
-     * <li>integer percentage (%): The range of valid values is 0 to 100. Use
-     * the value of <code>Target</code> to specify whether you want Elastic
-     * Transcoder to include the black bars that are added by Elastic
-     * Transcoder, if any, in the calculation.</li>
+     * <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     * <code>MaxHeight</code>.</li>
+     * <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to
+     * specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if
+     * any, in the calculation.</li>
      * </ul>
-     * If you specify the value in pixels, it must be less than or equal to the
-     * value of <code>MaxHeight</code>.
+     * If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.
      * </p>
      */
     private String maxHeight;
@@ -79,78 +69,60 @@ public class PresetWatermark implements Serializable, Cloneable {
      * <p>
      * A value that controls scaling of the watermark:
      * <ul>
-     * <li><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the
-     * value that you specified in either <code>MaxWidth</code> or
-     * <code>MaxHeight</code> without exceeding the other value.</li>
-     * <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to match
-     * the values that you specified for <code>MaxWidth</code> and
-     * <code>MaxHeight</code>. If the relative proportions of the watermark and
-     * the values of <code>MaxWidth</code> and <code>MaxHeight</code> are
-     * different, the watermark will be distorted.</li>
-     * <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so
-     * that its dimensions match the values that you specified for at least one
-     * of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding
-     * either value. If you specify this option, Elastic Transcoder does not
-     * scale the watermark up.</li>
+     * <li><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either
+     * <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
+     * <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for
+     * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of
+     * <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</li>
+     * <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that
+     * you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either
+     * value. If you specify this option, Elastic Transcoder does not scale the watermark up.</li>
      * </ul>
      * </p>
      */
     private String sizingPolicy;
     /**
      * <p>
-     * The horizontal position of the watermark unless you specify a non-zero
-     * value for <code>HorizontalOffset</code>:
+     * The horizontal position of the watermark unless you specify a non-zero value for <code>HorizontalOffset</code>:
      * <ul>
-     * <li><b>Left</b>: The left edge of the watermark is aligned with the left
-     * border of the video.</li>
-     * <li><b>Right</b>: The right edge of the watermark is aligned with the
-     * right border of the video.</li>
-     * <li><b>Center</b>: The watermark is centered between the left and right
-     * borders.</li>
+     * <li><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</li>
+     * <li><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</li>
+     * <li><b>Center</b>: The watermark is centered between the left and right borders.</li>
      * </ul>
      * </p>
      */
     private String horizontalAlign;
     /**
      * <p>
-     * The amount by which you want the horizontal position of the watermark to
-     * be offset from the position specified by HorizontalAlign:
+     * The amount by which you want the horizontal position of the watermark to be offset from the position specified by
+     * HorizontalAlign:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum
-     * value is the value of MaxWidth.</li>
+     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</li>
      * <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      * </ul>
-     * For example, if you specify Left for <code>HorizontalAlign</code> and 5px
-     * for <code>HorizontalOffset</code>, the left side of the watermark appears
-     * 5 pixels from the left border of the output video.
+     * For example, if you specify Left for <code>HorizontalAlign</code> and 5px for <code>HorizontalOffset</code>, the
+     * left side of the watermark appears 5 pixels from the left border of the output video.
      * </p>
      * <p>
-     * <code>HorizontalOffset</code> is only valid when the value of
-     * <code>HorizontalAlign</code> is <code>Left</code> or <code>Right</code>.
-     * If you specify an offset that causes the watermark to extend beyond the
-     * left or right border and Elastic Transcoder has not added black bars, the
-     * watermark is cropped. If Elastic Transcoder has added black bars, the
-     * watermark extends into the black bars. If the watermark extends beyond
-     * the black bars, it is cropped.
+     * <code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is <code>Left</code>
+     * or <code>Right</code>. If you specify an offset that causes the watermark to extend beyond the left or right
+     * border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added
+     * black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is
+     * cropped.
      * </p>
      * <p>
-     * Use the value of <code>Target</code> to specify whether you want to
-     * include the black bars that are added by Elastic Transcoder, if any, in
-     * the offset calculation.
+     * Use the value of <code>Target</code> to specify whether you want to include the black bars that are added by
+     * Elastic Transcoder, if any, in the offset calculation.
      * </p>
      */
     private String horizontalOffset;
     /**
      * <p>
-     * The vertical position of the watermark unless you specify a non-zero
-     * value for <code>VerticalOffset</code>:
+     * The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>:
      * <ul>
-     * <li><b>Top</b>: The top edge of the watermark is aligned with the top
-     * border of the video.</li>
-     * <li><b>Bottom</b>: The bottom edge of the watermark is aligned with the
-     * bottom border of the video.</li>
-     * <li><b>Center</b>: The watermark is centered between the top and bottom
-     * borders.</li>
+     * <li><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</li>
+     * <li><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</li>
+     * <li><b>Center</b>: The watermark is centered between the top and bottom borders.</li>
      * </ul>
      * </p>
      */
@@ -158,81 +130,68 @@ public class PresetWatermark implements Serializable, Cloneable {
     /**
      * <code>VerticalOffset</code>
      * <p>
-     * The amount by which you want the vertical position of the watermark to be
-     * offset from the position specified by VerticalAlign:
+     * The amount by which you want the vertical position of the watermark to be offset from the position specified by
+     * VerticalAlign:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum
-     * value is the value of <code>MaxHeight</code>.</li>
+     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of
+     * <code>MaxHeight</code>.</li>
      * <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      * </ul>
-     * For example, if you specify <code>Top</code> for
-     * <code>VerticalAlign</code> and <code>5px</code> for
-     * <code>VerticalOffset</code>, the top of the watermark appears 5 pixels
-     * from the top border of the output video.
+     * For example, if you specify <code>Top</code> for <code>VerticalAlign</code> and <code>5px</code> for
+     * <code>VerticalOffset</code>, the top of the watermark appears 5 pixels from the top border of the output video.
      * </p>
      * <p>
-     * <code>VerticalOffset</code> is only valid when the value of VerticalAlign
-     * is Top or Bottom.
+     * <code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.
      * </p>
      * <p>
-     * If you specify an offset that causes the watermark to extend beyond the
-     * top or bottom border and Elastic Transcoder has not added black bars, the
-     * watermark is cropped. If Elastic Transcoder has added black bars, the
-     * watermark extends into the black bars. If the watermark extends beyond
-     * the black bars, it is cropped.
+     * If you specify an offset that causes the watermark to extend beyond the top or bottom border and Elastic
+     * Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the
+     * watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.
      * </p>
      * <p>
-     * Use the value of <code>Target</code> to specify whether you want Elastic
-     * Transcoder to include the black bars that are added by Elastic
-     * Transcoder, if any, in the offset calculation.
+     * Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars
+     * that are added by Elastic Transcoder, if any, in the offset calculation.
      * </p>
      */
     private String verticalOffset;
     /**
      * <p>
-     * A percentage that indicates how much you want a watermark to obscure the
-     * video in the location where it appears. Valid values are 0 (the watermark
-     * is invisible) to 100 (the watermark completely obscures the video in the
+     * A percentage that indicates how much you want a watermark to obscure the video in the location where it appears.
+     * Valid values are 0 (the watermark is invisible) to 100 (the watermark completely obscures the video in the
      * specified location). The datatype of <code>Opacity</code> is float.
      * </p>
      * <p>
-     * Elastic Transcoder supports transparent .png graphics. If you use a
-     * transparent .png, the transparent portion of the video appears as if you
-     * had specified a value of 0 for <code>Opacity</code>. The .jpg file format
-     * doesn't support transparency.
+     * Elastic Transcoder supports transparent .png graphics. If you use a transparent .png, the transparent portion of
+     * the video appears as if you had specified a value of 0 for <code>Opacity</code>. The .jpg file format doesn't
+     * support transparency.
      * </p>
      */
     private String opacity;
     /**
      * <p>
-     * A value that determines how Elastic Transcoder interprets values that you
-     * specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>,
-     * <code>MaxWidth</code>, and <code>MaxHeight</code>:
+     * A value that determines how Elastic Transcoder interprets values that you specified for
+     * <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and <code>MaxHeight</code>:
      * <ul>
-     * <li><b>Content</b>: <code>HorizontalOffset</code> and
-     * <code>VerticalOffset</code> values are calculated based on the borders of
-     * the video excluding black bars added by Elastic Transcoder, if any. In
-     * addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified
-     * as a percentage, are calculated based on the borders of the video
-     * excluding black bars added by Elastic Transcoder, if any.</li>
-     * <li><b>Frame</b>: <code>HorizontalOffset</code> and
-     * <code>VerticalOffset</code> values are calculated based on the borders of
-     * the video including black bars added by Elastic Transcoder, if any.</li>
-     * In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if
-     * specified as a percentage, are calculated based on the borders of the
-     * video including black bars added by Elastic Transcoder, if any.
+     * <li><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on
+     * the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition,
+     * <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the
+     * borders of the video excluding black bars added by Elastic Transcoder, if any.</li>
+     * <li><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on
+     * the borders of the video including black bars added by Elastic Transcoder, if any.</li> In addition,
+     * <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the
+     * borders of the video including black bars added by Elastic Transcoder, if any.
      * </ul>
      * </p>
      */
     private String target;
 
     /**
-     * A unique identifier for the settings for one watermark. The value of
-     * <code>Id</code> can be up to 40 characters long.
+     * A unique identifier for the settings for one watermark. The value of <code>Id</code> can be up to 40 characters
+     * long.
      * 
      * @param id
-     *        A unique identifier for the settings for one watermark. The value
-     *        of <code>Id</code> can be up to 40 characters long.
+     *        A unique identifier for the settings for one watermark. The value of <code>Id</code> can be up to 40
+     *        characters long.
      */
 
     public void setId(String id) {
@@ -240,11 +199,11 @@ public class PresetWatermark implements Serializable, Cloneable {
     }
 
     /**
-     * A unique identifier for the settings for one watermark. The value of
-     * <code>Id</code> can be up to 40 characters long.
+     * A unique identifier for the settings for one watermark. The value of <code>Id</code> can be up to 40 characters
+     * long.
      * 
-     * @return A unique identifier for the settings for one watermark. The value
-     *         of <code>Id</code> can be up to 40 characters long.
+     * @return A unique identifier for the settings for one watermark. The value of <code>Id</code> can be up to 40
+     *         characters long.
      */
 
     public String getId() {
@@ -252,14 +211,13 @@ public class PresetWatermark implements Serializable, Cloneable {
     }
 
     /**
-     * A unique identifier for the settings for one watermark. The value of
-     * <code>Id</code> can be up to 40 characters long.
+     * A unique identifier for the settings for one watermark. The value of <code>Id</code> can be up to 40 characters
+     * long.
      * 
      * @param id
-     *        A unique identifier for the settings for one watermark. The value
-     *        of <code>Id</code> can be up to 40 characters long.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A unique identifier for the settings for one watermark. The value of <code>Id</code> can be up to 40
+     *        characters long.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PresetWatermark withId(String id) {
@@ -271,29 +229,24 @@ public class PresetWatermark implements Serializable, Cloneable {
      * <p>
      * The maximum width of the watermark in one of the following formats:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 16 pixels, and the
-     * maximum value is the value of <code>MaxWidth</code>.</li>
-     * <li>integer percentage (%): The range of valid values is 0 to 100. Use
-     * the value of <code>Target</code> to specify whether you want Elastic
-     * Transcoder to include the black bars that are added by Elastic
-     * Transcoder, if any, in the calculation.</li> If you specify the value in
-     * pixels, it must be less than or equal to the value of
+     * <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     * <code>MaxWidth</code>.</li>
+     * <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to
+     * specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if
+     * any, in the calculation.</li> If you specify the value in pixels, it must be less than or equal to the value of
      * <code>MaxWidth</code>.
      * </ul>
      * </p>
      * 
      * @param maxWidth
-     *        The maximum width of the watermark in one of the following
-     *        formats:
+     *        The maximum width of the watermark in one of the following formats:
      *        <ul>
-     *        <li>number of pixels (px): The minimum value is 16 pixels, and the
-     *        maximum value is the value of <code>MaxWidth</code>.</li>
-     *        <li>integer percentage (%): The range of valid values is 0 to 100.
-     *        Use the value of <code>Target</code> to specify whether you want
-     *        Elastic Transcoder to include the black bars that are added by
-     *        Elastic Transcoder, if any, in the calculation.</li> If you
-     *        specify the value in pixels, it must be less than or equal to the
-     *        value of <code>MaxWidth</code>.
+     *        <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     *        <code>MaxWidth</code>.</li>
+     *        <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to
+     *        specify whether you want Elastic Transcoder to include the black bars that are added by Elastic
+     *        Transcoder, if any, in the calculation.</li> If you specify the value in pixels, it must be less than or
+     *        equal to the value of <code>MaxWidth</code>.
      *        </ul>
      */
 
@@ -305,28 +258,23 @@ public class PresetWatermark implements Serializable, Cloneable {
      * <p>
      * The maximum width of the watermark in one of the following formats:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 16 pixels, and the
-     * maximum value is the value of <code>MaxWidth</code>.</li>
-     * <li>integer percentage (%): The range of valid values is 0 to 100. Use
-     * the value of <code>Target</code> to specify whether you want Elastic
-     * Transcoder to include the black bars that are added by Elastic
-     * Transcoder, if any, in the calculation.</li> If you specify the value in
-     * pixels, it must be less than or equal to the value of
+     * <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     * <code>MaxWidth</code>.</li>
+     * <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to
+     * specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if
+     * any, in the calculation.</li> If you specify the value in pixels, it must be less than or equal to the value of
      * <code>MaxWidth</code>.
      * </ul>
      * </p>
      * 
-     * @return The maximum width of the watermark in one of the following
-     *         formats:
+     * @return The maximum width of the watermark in one of the following formats:
      *         <ul>
-     *         <li>number of pixels (px): The minimum value is 16 pixels, and
-     *         the maximum value is the value of <code>MaxWidth</code>.</li>
-     *         <li>integer percentage (%): The range of valid values is 0 to
-     *         100. Use the value of <code>Target</code> to specify whether you
-     *         want Elastic Transcoder to include the black bars that are added
-     *         by Elastic Transcoder, if any, in the calculation.</li> If you
-     *         specify the value in pixels, it must be less than or equal to the
-     *         value of <code>MaxWidth</code>.
+     *         <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     *         <code>MaxWidth</code>.</li>
+     *         <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code>
+     *         to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic
+     *         Transcoder, if any, in the calculation.</li> If you specify the value in pixels, it must be less than or
+     *         equal to the value of <code>MaxWidth</code>.
      *         </ul>
      */
 
@@ -338,32 +286,26 @@ public class PresetWatermark implements Serializable, Cloneable {
      * <p>
      * The maximum width of the watermark in one of the following formats:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 16 pixels, and the
-     * maximum value is the value of <code>MaxWidth</code>.</li>
-     * <li>integer percentage (%): The range of valid values is 0 to 100. Use
-     * the value of <code>Target</code> to specify whether you want Elastic
-     * Transcoder to include the black bars that are added by Elastic
-     * Transcoder, if any, in the calculation.</li> If you specify the value in
-     * pixels, it must be less than or equal to the value of
+     * <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     * <code>MaxWidth</code>.</li>
+     * <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to
+     * specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if
+     * any, in the calculation.</li> If you specify the value in pixels, it must be less than or equal to the value of
      * <code>MaxWidth</code>.
      * </ul>
      * </p>
      * 
      * @param maxWidth
-     *        The maximum width of the watermark in one of the following
-     *        formats:
+     *        The maximum width of the watermark in one of the following formats:
      *        <ul>
-     *        <li>number of pixels (px): The minimum value is 16 pixels, and the
-     *        maximum value is the value of <code>MaxWidth</code>.</li>
-     *        <li>integer percentage (%): The range of valid values is 0 to 100.
-     *        Use the value of <code>Target</code> to specify whether you want
-     *        Elastic Transcoder to include the black bars that are added by
-     *        Elastic Transcoder, if any, in the calculation.</li> If you
-     *        specify the value in pixels, it must be less than or equal to the
-     *        value of <code>MaxWidth</code>.
+     *        <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     *        <code>MaxWidth</code>.</li>
+     *        <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to
+     *        specify whether you want Elastic Transcoder to include the black bars that are added by Elastic
+     *        Transcoder, if any, in the calculation.</li> If you specify the value in pixels, it must be less than or
+     *        equal to the value of <code>MaxWidth</code>.
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PresetWatermark withMaxWidth(String maxWidth) {
@@ -375,30 +317,25 @@ public class PresetWatermark implements Serializable, Cloneable {
      * <p>
      * The maximum height of the watermark in one of the following formats:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 16 pixels, and the
-     * maximum value is the value of <code>MaxHeight</code>.</li>
-     * <li>integer percentage (%): The range of valid values is 0 to 100. Use
-     * the value of <code>Target</code> to specify whether you want Elastic
-     * Transcoder to include the black bars that are added by Elastic
-     * Transcoder, if any, in the calculation.</li>
+     * <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     * <code>MaxHeight</code>.</li>
+     * <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to
+     * specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if
+     * any, in the calculation.</li>
      * </ul>
-     * If you specify the value in pixels, it must be less than or equal to the
-     * value of <code>MaxHeight</code>.
+     * If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.
      * </p>
      * 
      * @param maxHeight
-     *        The maximum height of the watermark in one of the following
-     *        formats:
+     *        The maximum height of the watermark in one of the following formats:
      *        <ul>
-     *        <li>number of pixels (px): The minimum value is 16 pixels, and the
-     *        maximum value is the value of <code>MaxHeight</code>.</li>
-     *        <li>integer percentage (%): The range of valid values is 0 to 100.
-     *        Use the value of <code>Target</code> to specify whether you want
-     *        Elastic Transcoder to include the black bars that are added by
-     *        Elastic Transcoder, if any, in the calculation.</li>
+     *        <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     *        <code>MaxHeight</code>.</li>
+     *        <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to
+     *        specify whether you want Elastic Transcoder to include the black bars that are added by Elastic
+     *        Transcoder, if any, in the calculation.</li>
      *        </ul>
-     *        If you specify the value in pixels, it must be less than or equal
-     *        to the value of <code>MaxHeight</code>.
+     *        If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.
      */
 
     public void setMaxHeight(String maxHeight) {
@@ -409,29 +346,24 @@ public class PresetWatermark implements Serializable, Cloneable {
      * <p>
      * The maximum height of the watermark in one of the following formats:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 16 pixels, and the
-     * maximum value is the value of <code>MaxHeight</code>.</li>
-     * <li>integer percentage (%): The range of valid values is 0 to 100. Use
-     * the value of <code>Target</code> to specify whether you want Elastic
-     * Transcoder to include the black bars that are added by Elastic
-     * Transcoder, if any, in the calculation.</li>
+     * <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     * <code>MaxHeight</code>.</li>
+     * <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to
+     * specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if
+     * any, in the calculation.</li>
      * </ul>
-     * If you specify the value in pixels, it must be less than or equal to the
-     * value of <code>MaxHeight</code>.
+     * If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.
      * </p>
      * 
-     * @return The maximum height of the watermark in one of the following
-     *         formats:
+     * @return The maximum height of the watermark in one of the following formats:
      *         <ul>
-     *         <li>number of pixels (px): The minimum value is 16 pixels, and
-     *         the maximum value is the value of <code>MaxHeight</code>.</li>
-     *         <li>integer percentage (%): The range of valid values is 0 to
-     *         100. Use the value of <code>Target</code> to specify whether you
-     *         want Elastic Transcoder to include the black bars that are added
-     *         by Elastic Transcoder, if any, in the calculation.</li>
+     *         <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     *         <code>MaxHeight</code>.</li>
+     *         <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code>
+     *         to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic
+     *         Transcoder, if any, in the calculation.</li>
      *         </ul>
-     *         If you specify the value in pixels, it must be less than or equal
-     *         to the value of <code>MaxHeight</code>.
+     *         If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.
      */
 
     public String getMaxHeight() {
@@ -442,32 +374,26 @@ public class PresetWatermark implements Serializable, Cloneable {
      * <p>
      * The maximum height of the watermark in one of the following formats:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 16 pixels, and the
-     * maximum value is the value of <code>MaxHeight</code>.</li>
-     * <li>integer percentage (%): The range of valid values is 0 to 100. Use
-     * the value of <code>Target</code> to specify whether you want Elastic
-     * Transcoder to include the black bars that are added by Elastic
-     * Transcoder, if any, in the calculation.</li>
+     * <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     * <code>MaxHeight</code>.</li>
+     * <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to
+     * specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if
+     * any, in the calculation.</li>
      * </ul>
-     * If you specify the value in pixels, it must be less than or equal to the
-     * value of <code>MaxHeight</code>.
+     * If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.
      * </p>
      * 
      * @param maxHeight
-     *        The maximum height of the watermark in one of the following
-     *        formats:
+     *        The maximum height of the watermark in one of the following formats:
      *        <ul>
-     *        <li>number of pixels (px): The minimum value is 16 pixels, and the
-     *        maximum value is the value of <code>MaxHeight</code>.</li>
-     *        <li>integer percentage (%): The range of valid values is 0 to 100.
-     *        Use the value of <code>Target</code> to specify whether you want
-     *        Elastic Transcoder to include the black bars that are added by
-     *        Elastic Transcoder, if any, in the calculation.</li>
+     *        <li>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of
+     *        <code>MaxHeight</code>.</li>
+     *        <li>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to
+     *        specify whether you want Elastic Transcoder to include the black bars that are added by Elastic
+     *        Transcoder, if any, in the calculation.</li>
      *        </ul>
-     *        If you specify the value in pixels, it must be less than or equal
-     *        to the value of <code>MaxHeight</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PresetWatermark withMaxHeight(String maxHeight) {
@@ -479,41 +405,29 @@ public class PresetWatermark implements Serializable, Cloneable {
      * <p>
      * A value that controls scaling of the watermark:
      * <ul>
-     * <li><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the
-     * value that you specified in either <code>MaxWidth</code> or
-     * <code>MaxHeight</code> without exceeding the other value.</li>
-     * <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to match
-     * the values that you specified for <code>MaxWidth</code> and
-     * <code>MaxHeight</code>. If the relative proportions of the watermark and
-     * the values of <code>MaxWidth</code> and <code>MaxHeight</code> are
-     * different, the watermark will be distorted.</li>
-     * <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so
-     * that its dimensions match the values that you specified for at least one
-     * of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding
-     * either value. If you specify this option, Elastic Transcoder does not
-     * scale the watermark up.</li>
+     * <li><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either
+     * <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
+     * <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for
+     * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of
+     * <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</li>
+     * <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that
+     * you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either
+     * value. If you specify this option, Elastic Transcoder does not scale the watermark up.</li>
      * </ul>
      * </p>
      * 
      * @param sizingPolicy
      *        A value that controls scaling of the watermark:
      *        <ul>
-     *        <li><b>Fit</b>: Elastic Transcoder scales the watermark so it
-     *        matches the value that you specified in either
-     *        <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding
-     *        the other value.</li>
-     *        <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to
-     *        match the values that you specified for <code>MaxWidth</code> and
-     *        <code>MaxHeight</code>. If the relative proportions of the
-     *        watermark and the values of <code>MaxWidth</code> and
-     *        <code>MaxHeight</code> are different, the watermark will be
-     *        distorted.</li>
-     *        <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark
-     *        down so that its dimensions match the values that you specified
-     *        for at least one of <code>MaxWidth</code> and
-     *        <code>MaxHeight</code> without exceeding either value. If you
-     *        specify this option, Elastic Transcoder does not scale the
-     *        watermark up.</li>
+     *        <li><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in
+     *        either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
+     *        <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for
+     *        <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the
+     *        values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.
+     *        </li>
+     *        <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the
+     *        values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
+     *        exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</li>
      *        </ul>
      */
 
@@ -525,40 +439,28 @@ public class PresetWatermark implements Serializable, Cloneable {
      * <p>
      * A value that controls scaling of the watermark:
      * <ul>
-     * <li><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the
-     * value that you specified in either <code>MaxWidth</code> or
-     * <code>MaxHeight</code> without exceeding the other value.</li>
-     * <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to match
-     * the values that you specified for <code>MaxWidth</code> and
-     * <code>MaxHeight</code>. If the relative proportions of the watermark and
-     * the values of <code>MaxWidth</code> and <code>MaxHeight</code> are
-     * different, the watermark will be distorted.</li>
-     * <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so
-     * that its dimensions match the values that you specified for at least one
-     * of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding
-     * either value. If you specify this option, Elastic Transcoder does not
-     * scale the watermark up.</li>
+     * <li><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either
+     * <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
+     * <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for
+     * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of
+     * <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</li>
+     * <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that
+     * you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either
+     * value. If you specify this option, Elastic Transcoder does not scale the watermark up.</li>
      * </ul>
      * </p>
      * 
      * @return A value that controls scaling of the watermark:
      *         <ul>
-     *         <li><b>Fit</b>: Elastic Transcoder scales the watermark so it
-     *         matches the value that you specified in either
-     *         <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding
-     *         the other value.</li>
-     *         <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to
-     *         match the values that you specified for <code>MaxWidth</code> and
-     *         <code>MaxHeight</code>. If the relative proportions of the
-     *         watermark and the values of <code>MaxWidth</code> and
-     *         <code>MaxHeight</code> are different, the watermark will be
+     *         <li><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in
+     *         either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
+     *         <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for
+     *         <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the
+     *         values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be
      *         distorted.</li>
-     *         <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark
-     *         down so that its dimensions match the values that you specified
-     *         for at least one of <code>MaxWidth</code> and
-     *         <code>MaxHeight</code> without exceeding either value. If you
-     *         specify this option, Elastic Transcoder does not scale the
-     *         watermark up.</li>
+     *         <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the
+     *         values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
+     *         exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</li>
      *         </ul>
      */
 
@@ -570,44 +472,31 @@ public class PresetWatermark implements Serializable, Cloneable {
      * <p>
      * A value that controls scaling of the watermark:
      * <ul>
-     * <li><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the
-     * value that you specified in either <code>MaxWidth</code> or
-     * <code>MaxHeight</code> without exceeding the other value.</li>
-     * <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to match
-     * the values that you specified for <code>MaxWidth</code> and
-     * <code>MaxHeight</code>. If the relative proportions of the watermark and
-     * the values of <code>MaxWidth</code> and <code>MaxHeight</code> are
-     * different, the watermark will be distorted.</li>
-     * <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so
-     * that its dimensions match the values that you specified for at least one
-     * of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding
-     * either value. If you specify this option, Elastic Transcoder does not
-     * scale the watermark up.</li>
+     * <li><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either
+     * <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
+     * <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for
+     * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of
+     * <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</li>
+     * <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that
+     * you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either
+     * value. If you specify this option, Elastic Transcoder does not scale the watermark up.</li>
      * </ul>
      * </p>
      * 
      * @param sizingPolicy
      *        A value that controls scaling of the watermark:
      *        <ul>
-     *        <li><b>Fit</b>: Elastic Transcoder scales the watermark so it
-     *        matches the value that you specified in either
-     *        <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding
-     *        the other value.</li>
-     *        <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to
-     *        match the values that you specified for <code>MaxWidth</code> and
-     *        <code>MaxHeight</code>. If the relative proportions of the
-     *        watermark and the values of <code>MaxWidth</code> and
-     *        <code>MaxHeight</code> are different, the watermark will be
-     *        distorted.</li>
-     *        <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark
-     *        down so that its dimensions match the values that you specified
-     *        for at least one of <code>MaxWidth</code> and
-     *        <code>MaxHeight</code> without exceeding either value. If you
-     *        specify this option, Elastic Transcoder does not scale the
-     *        watermark up.</li>
+     *        <li><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in
+     *        either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
+     *        <li><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for
+     *        <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the
+     *        values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.
+     *        </li>
+     *        <li><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the
+     *        values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
+     *        exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PresetWatermark withSizingPolicy(String sizingPolicy) {
@@ -617,28 +506,21 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The horizontal position of the watermark unless you specify a non-zero
-     * value for <code>HorizontalOffset</code>:
+     * The horizontal position of the watermark unless you specify a non-zero value for <code>HorizontalOffset</code>:
      * <ul>
-     * <li><b>Left</b>: The left edge of the watermark is aligned with the left
-     * border of the video.</li>
-     * <li><b>Right</b>: The right edge of the watermark is aligned with the
-     * right border of the video.</li>
-     * <li><b>Center</b>: The watermark is centered between the left and right
-     * borders.</li>
+     * <li><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</li>
+     * <li><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</li>
+     * <li><b>Center</b>: The watermark is centered between the left and right borders.</li>
      * </ul>
      * </p>
      * 
      * @param horizontalAlign
-     *        The horizontal position of the watermark unless you specify a
-     *        non-zero value for <code>HorizontalOffset</code>:
+     *        The horizontal position of the watermark unless you specify a non-zero value for
+     *        <code>HorizontalOffset</code>:
      *        <ul>
-     *        <li><b>Left</b>: The left edge of the watermark is aligned with
-     *        the left border of the video.</li>
-     *        <li><b>Right</b>: The right edge of the watermark is aligned with
-     *        the right border of the video.</li>
-     *        <li><b>Center</b>: The watermark is centered between the left and
-     *        right borders.</li>
+     *        <li><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</li>
+     *        <li><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</li>
+     *        <li><b>Center</b>: The watermark is centered between the left and right borders.</li>
      *        </ul>
      */
 
@@ -648,27 +530,20 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The horizontal position of the watermark unless you specify a non-zero
-     * value for <code>HorizontalOffset</code>:
+     * The horizontal position of the watermark unless you specify a non-zero value for <code>HorizontalOffset</code>:
      * <ul>
-     * <li><b>Left</b>: The left edge of the watermark is aligned with the left
-     * border of the video.</li>
-     * <li><b>Right</b>: The right edge of the watermark is aligned with the
-     * right border of the video.</li>
-     * <li><b>Center</b>: The watermark is centered between the left and right
-     * borders.</li>
+     * <li><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</li>
+     * <li><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</li>
+     * <li><b>Center</b>: The watermark is centered between the left and right borders.</li>
      * </ul>
      * </p>
      * 
-     * @return The horizontal position of the watermark unless you specify a
-     *         non-zero value for <code>HorizontalOffset</code>:
+     * @return The horizontal position of the watermark unless you specify a non-zero value for
+     *         <code>HorizontalOffset</code>:
      *         <ul>
-     *         <li><b>Left</b>: The left edge of the watermark is aligned with
-     *         the left border of the video.</li>
-     *         <li><b>Right</b>: The right edge of the watermark is aligned with
-     *         the right border of the video.</li>
-     *         <li><b>Center</b>: The watermark is centered between the left and
-     *         right borders.</li>
+     *         <li><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</li>
+     *         <li><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</li>
+     *         <li><b>Center</b>: The watermark is centered between the left and right borders.</li>
      *         </ul>
      */
 
@@ -678,31 +553,23 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The horizontal position of the watermark unless you specify a non-zero
-     * value for <code>HorizontalOffset</code>:
+     * The horizontal position of the watermark unless you specify a non-zero value for <code>HorizontalOffset</code>:
      * <ul>
-     * <li><b>Left</b>: The left edge of the watermark is aligned with the left
-     * border of the video.</li>
-     * <li><b>Right</b>: The right edge of the watermark is aligned with the
-     * right border of the video.</li>
-     * <li><b>Center</b>: The watermark is centered between the left and right
-     * borders.</li>
+     * <li><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</li>
+     * <li><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</li>
+     * <li><b>Center</b>: The watermark is centered between the left and right borders.</li>
      * </ul>
      * </p>
      * 
      * @param horizontalAlign
-     *        The horizontal position of the watermark unless you specify a
-     *        non-zero value for <code>HorizontalOffset</code>:
+     *        The horizontal position of the watermark unless you specify a non-zero value for
+     *        <code>HorizontalOffset</code>:
      *        <ul>
-     *        <li><b>Left</b>: The left edge of the watermark is aligned with
-     *        the left border of the video.</li>
-     *        <li><b>Right</b>: The right edge of the watermark is aligned with
-     *        the right border of the video.</li>
-     *        <li><b>Center</b>: The watermark is centered between the left and
-     *        right borders.</li>
+     *        <li><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</li>
+     *        <li><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</li>
+     *        <li><b>Center</b>: The watermark is centered between the left and right borders.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PresetWatermark withHorizontalAlign(String horizontalAlign) {
@@ -712,60 +579,47 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount by which you want the horizontal position of the watermark to
-     * be offset from the position specified by HorizontalAlign:
+     * The amount by which you want the horizontal position of the watermark to be offset from the position specified by
+     * HorizontalAlign:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum
-     * value is the value of MaxWidth.</li>
+     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</li>
      * <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      * </ul>
-     * For example, if you specify Left for <code>HorizontalAlign</code> and 5px
-     * for <code>HorizontalOffset</code>, the left side of the watermark appears
-     * 5 pixels from the left border of the output video.
+     * For example, if you specify Left for <code>HorizontalAlign</code> and 5px for <code>HorizontalOffset</code>, the
+     * left side of the watermark appears 5 pixels from the left border of the output video.
      * </p>
      * <p>
-     * <code>HorizontalOffset</code> is only valid when the value of
-     * <code>HorizontalAlign</code> is <code>Left</code> or <code>Right</code>.
-     * If you specify an offset that causes the watermark to extend beyond the
-     * left or right border and Elastic Transcoder has not added black bars, the
-     * watermark is cropped. If Elastic Transcoder has added black bars, the
-     * watermark extends into the black bars. If the watermark extends beyond
-     * the black bars, it is cropped.
+     * <code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is <code>Left</code>
+     * or <code>Right</code>. If you specify an offset that causes the watermark to extend beyond the left or right
+     * border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added
+     * black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is
+     * cropped.
      * </p>
      * <p>
-     * Use the value of <code>Target</code> to specify whether you want to
-     * include the black bars that are added by Elastic Transcoder, if any, in
-     * the offset calculation.
+     * Use the value of <code>Target</code> to specify whether you want to include the black bars that are added by
+     * Elastic Transcoder, if any, in the offset calculation.
      * </p>
      * 
      * @param horizontalOffset
-     *        The amount by which you want the horizontal position of the
-     *        watermark to be offset from the position specified by
-     *        HorizontalAlign:
+     *        The amount by which you want the horizontal position of the watermark to be offset from the position
+     *        specified by HorizontalAlign:
      *        <ul>
-     *        <li>number of pixels (px): The minimum value is 0 pixels, and the
-     *        maximum value is the value of MaxWidth.</li>
-     *        <li>integer percentage (%): The range of valid values is 0 to 100.
-     *        </li>
+     *        <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</li>
+     *        <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      *        </ul>
-     *        For example, if you specify Left for <code>HorizontalAlign</code>
-     *        and 5px for <code>HorizontalOffset</code>, the left side of the
-     *        watermark appears 5 pixels from the left border of the output
-     *        video.</p>
+     *        For example, if you specify Left for <code>HorizontalAlign</code> and 5px for
+     *        <code>HorizontalOffset</code>, the left side of the watermark appears 5 pixels from the left border of the
+     *        output video.</p>
      *        <p>
-     *        <code>HorizontalOffset</code> is only valid when the value of
-     *        <code>HorizontalAlign</code> is <code>Left</code> or
-     *        <code>Right</code>. If you specify an offset that causes the
-     *        watermark to extend beyond the left or right border and Elastic
-     *        Transcoder has not added black bars, the watermark is cropped. If
-     *        Elastic Transcoder has added black bars, the watermark extends
-     *        into the black bars. If the watermark extends beyond the black
-     *        bars, it is cropped.
+     *        <code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is
+     *        <code>Left</code> or <code>Right</code>. If you specify an offset that causes the watermark to extend
+     *        beyond the left or right border and Elastic Transcoder has not added black bars, the watermark is cropped.
+     *        If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark
+     *        extends beyond the black bars, it is cropped.
      *        </p>
      *        <p>
-     *        Use the value of <code>Target</code> to specify whether you want
-     *        to include the black bars that are added by Elastic Transcoder, if
-     *        any, in the offset calculation.
+     *        Use the value of <code>Target</code> to specify whether you want to include the black bars that are added
+     *        by Elastic Transcoder, if any, in the offset calculation.
      */
 
     public void setHorizontalOffset(String horizontalOffset) {
@@ -774,59 +628,47 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount by which you want the horizontal position of the watermark to
-     * be offset from the position specified by HorizontalAlign:
+     * The amount by which you want the horizontal position of the watermark to be offset from the position specified by
+     * HorizontalAlign:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum
-     * value is the value of MaxWidth.</li>
+     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</li>
      * <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      * </ul>
-     * For example, if you specify Left for <code>HorizontalAlign</code> and 5px
-     * for <code>HorizontalOffset</code>, the left side of the watermark appears
-     * 5 pixels from the left border of the output video.
+     * For example, if you specify Left for <code>HorizontalAlign</code> and 5px for <code>HorizontalOffset</code>, the
+     * left side of the watermark appears 5 pixels from the left border of the output video.
      * </p>
      * <p>
-     * <code>HorizontalOffset</code> is only valid when the value of
-     * <code>HorizontalAlign</code> is <code>Left</code> or <code>Right</code>.
-     * If you specify an offset that causes the watermark to extend beyond the
-     * left or right border and Elastic Transcoder has not added black bars, the
-     * watermark is cropped. If Elastic Transcoder has added black bars, the
-     * watermark extends into the black bars. If the watermark extends beyond
-     * the black bars, it is cropped.
+     * <code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is <code>Left</code>
+     * or <code>Right</code>. If you specify an offset that causes the watermark to extend beyond the left or right
+     * border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added
+     * black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is
+     * cropped.
      * </p>
      * <p>
-     * Use the value of <code>Target</code> to specify whether you want to
-     * include the black bars that are added by Elastic Transcoder, if any, in
-     * the offset calculation.
+     * Use the value of <code>Target</code> to specify whether you want to include the black bars that are added by
+     * Elastic Transcoder, if any, in the offset calculation.
      * </p>
      * 
-     * @return The amount by which you want the horizontal position of the
-     *         watermark to be offset from the position specified by
-     *         HorizontalAlign:
+     * @return The amount by which you want the horizontal position of the watermark to be offset from the position
+     *         specified by HorizontalAlign:
      *         <ul>
-     *         <li>number of pixels (px): The minimum value is 0 pixels, and the
-     *         maximum value is the value of MaxWidth.</li>
-     *         <li>integer percentage (%): The range of valid values is 0 to
-     *         100.</li>
+     *         <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.
+     *         </li>
+     *         <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      *         </ul>
-     *         For example, if you specify Left for <code>HorizontalAlign</code>
-     *         and 5px for <code>HorizontalOffset</code>, the left side of the
-     *         watermark appears 5 pixels from the left border of the output
-     *         video.</p>
+     *         For example, if you specify Left for <code>HorizontalAlign</code> and 5px for
+     *         <code>HorizontalOffset</code>, the left side of the watermark appears 5 pixels from the left border of
+     *         the output video.</p>
      *         <p>
-     *         <code>HorizontalOffset</code> is only valid when the value of
-     *         <code>HorizontalAlign</code> is <code>Left</code> or
-     *         <code>Right</code>. If you specify an offset that causes the
-     *         watermark to extend beyond the left or right border and Elastic
-     *         Transcoder has not added black bars, the watermark is cropped. If
-     *         Elastic Transcoder has added black bars, the watermark extends
-     *         into the black bars. If the watermark extends beyond the black
-     *         bars, it is cropped.
+     *         <code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is
+     *         <code>Left</code> or <code>Right</code>. If you specify an offset that causes the watermark to extend
+     *         beyond the left or right border and Elastic Transcoder has not added black bars, the watermark is
+     *         cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the
+     *         watermark extends beyond the black bars, it is cropped.
      *         </p>
      *         <p>
-     *         Use the value of <code>Target</code> to specify whether you want
-     *         to include the black bars that are added by Elastic Transcoder,
-     *         if any, in the offset calculation.
+     *         Use the value of <code>Target</code> to specify whether you want to include the black bars that are added
+     *         by Elastic Transcoder, if any, in the offset calculation.
      */
 
     public String getHorizontalOffset() {
@@ -835,62 +677,48 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount by which you want the horizontal position of the watermark to
-     * be offset from the position specified by HorizontalAlign:
+     * The amount by which you want the horizontal position of the watermark to be offset from the position specified by
+     * HorizontalAlign:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum
-     * value is the value of MaxWidth.</li>
+     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</li>
      * <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      * </ul>
-     * For example, if you specify Left for <code>HorizontalAlign</code> and 5px
-     * for <code>HorizontalOffset</code>, the left side of the watermark appears
-     * 5 pixels from the left border of the output video.
+     * For example, if you specify Left for <code>HorizontalAlign</code> and 5px for <code>HorizontalOffset</code>, the
+     * left side of the watermark appears 5 pixels from the left border of the output video.
      * </p>
      * <p>
-     * <code>HorizontalOffset</code> is only valid when the value of
-     * <code>HorizontalAlign</code> is <code>Left</code> or <code>Right</code>.
-     * If you specify an offset that causes the watermark to extend beyond the
-     * left or right border and Elastic Transcoder has not added black bars, the
-     * watermark is cropped. If Elastic Transcoder has added black bars, the
-     * watermark extends into the black bars. If the watermark extends beyond
-     * the black bars, it is cropped.
+     * <code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is <code>Left</code>
+     * or <code>Right</code>. If you specify an offset that causes the watermark to extend beyond the left or right
+     * border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added
+     * black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is
+     * cropped.
      * </p>
      * <p>
-     * Use the value of <code>Target</code> to specify whether you want to
-     * include the black bars that are added by Elastic Transcoder, if any, in
-     * the offset calculation.
+     * Use the value of <code>Target</code> to specify whether you want to include the black bars that are added by
+     * Elastic Transcoder, if any, in the offset calculation.
      * </p>
      * 
      * @param horizontalOffset
-     *        The amount by which you want the horizontal position of the
-     *        watermark to be offset from the position specified by
-     *        HorizontalAlign:
+     *        The amount by which you want the horizontal position of the watermark to be offset from the position
+     *        specified by HorizontalAlign:
      *        <ul>
-     *        <li>number of pixels (px): The minimum value is 0 pixels, and the
-     *        maximum value is the value of MaxWidth.</li>
-     *        <li>integer percentage (%): The range of valid values is 0 to 100.
-     *        </li>
+     *        <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</li>
+     *        <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      *        </ul>
-     *        For example, if you specify Left for <code>HorizontalAlign</code>
-     *        and 5px for <code>HorizontalOffset</code>, the left side of the
-     *        watermark appears 5 pixels from the left border of the output
-     *        video.</p>
+     *        For example, if you specify Left for <code>HorizontalAlign</code> and 5px for
+     *        <code>HorizontalOffset</code>, the left side of the watermark appears 5 pixels from the left border of the
+     *        output video.</p>
      *        <p>
-     *        <code>HorizontalOffset</code> is only valid when the value of
-     *        <code>HorizontalAlign</code> is <code>Left</code> or
-     *        <code>Right</code>. If you specify an offset that causes the
-     *        watermark to extend beyond the left or right border and Elastic
-     *        Transcoder has not added black bars, the watermark is cropped. If
-     *        Elastic Transcoder has added black bars, the watermark extends
-     *        into the black bars. If the watermark extends beyond the black
-     *        bars, it is cropped.
+     *        <code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is
+     *        <code>Left</code> or <code>Right</code>. If you specify an offset that causes the watermark to extend
+     *        beyond the left or right border and Elastic Transcoder has not added black bars, the watermark is cropped.
+     *        If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark
+     *        extends beyond the black bars, it is cropped.
      *        </p>
      *        <p>
-     *        Use the value of <code>Target</code> to specify whether you want
-     *        to include the black bars that are added by Elastic Transcoder, if
-     *        any, in the offset calculation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Use the value of <code>Target</code> to specify whether you want to include the black bars that are added
+     *        by Elastic Transcoder, if any, in the offset calculation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PresetWatermark withHorizontalOffset(String horizontalOffset) {
@@ -900,28 +728,21 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The vertical position of the watermark unless you specify a non-zero
-     * value for <code>VerticalOffset</code>:
+     * The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>:
      * <ul>
-     * <li><b>Top</b>: The top edge of the watermark is aligned with the top
-     * border of the video.</li>
-     * <li><b>Bottom</b>: The bottom edge of the watermark is aligned with the
-     * bottom border of the video.</li>
-     * <li><b>Center</b>: The watermark is centered between the top and bottom
-     * borders.</li>
+     * <li><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</li>
+     * <li><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</li>
+     * <li><b>Center</b>: The watermark is centered between the top and bottom borders.</li>
      * </ul>
      * </p>
      * 
      * @param verticalAlign
-     *        The vertical position of the watermark unless you specify a
-     *        non-zero value for <code>VerticalOffset</code>:
+     *        The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>
+     *        :
      *        <ul>
-     *        <li><b>Top</b>: The top edge of the watermark is aligned with the
-     *        top border of the video.</li>
-     *        <li><b>Bottom</b>: The bottom edge of the watermark is aligned
-     *        with the bottom border of the video.</li>
-     *        <li><b>Center</b>: The watermark is centered between the top and
-     *        bottom borders.</li>
+     *        <li><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</li>
+     *        <li><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</li>
+     *        <li><b>Center</b>: The watermark is centered between the top and bottom borders.</li>
      *        </ul>
      */
 
@@ -931,27 +752,20 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The vertical position of the watermark unless you specify a non-zero
-     * value for <code>VerticalOffset</code>:
+     * The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>:
      * <ul>
-     * <li><b>Top</b>: The top edge of the watermark is aligned with the top
-     * border of the video.</li>
-     * <li><b>Bottom</b>: The bottom edge of the watermark is aligned with the
-     * bottom border of the video.</li>
-     * <li><b>Center</b>: The watermark is centered between the top and bottom
-     * borders.</li>
+     * <li><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</li>
+     * <li><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</li>
+     * <li><b>Center</b>: The watermark is centered between the top and bottom borders.</li>
      * </ul>
      * </p>
      * 
-     * @return The vertical position of the watermark unless you specify a
-     *         non-zero value for <code>VerticalOffset</code>:
+     * @return The vertical position of the watermark unless you specify a non-zero value for
+     *         <code>VerticalOffset</code>:
      *         <ul>
-     *         <li><b>Top</b>: The top edge of the watermark is aligned with the
-     *         top border of the video.</li>
-     *         <li><b>Bottom</b>: The bottom edge of the watermark is aligned
-     *         with the bottom border of the video.</li>
-     *         <li><b>Center</b>: The watermark is centered between the top and
-     *         bottom borders.</li>
+     *         <li><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</li>
+     *         <li><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</li>
+     *         <li><b>Center</b>: The watermark is centered between the top and bottom borders.</li>
      *         </ul>
      */
 
@@ -961,31 +775,23 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The vertical position of the watermark unless you specify a non-zero
-     * value for <code>VerticalOffset</code>:
+     * The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>:
      * <ul>
-     * <li><b>Top</b>: The top edge of the watermark is aligned with the top
-     * border of the video.</li>
-     * <li><b>Bottom</b>: The bottom edge of the watermark is aligned with the
-     * bottom border of the video.</li>
-     * <li><b>Center</b>: The watermark is centered between the top and bottom
-     * borders.</li>
+     * <li><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</li>
+     * <li><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</li>
+     * <li><b>Center</b>: The watermark is centered between the top and bottom borders.</li>
      * </ul>
      * </p>
      * 
      * @param verticalAlign
-     *        The vertical position of the watermark unless you specify a
-     *        non-zero value for <code>VerticalOffset</code>:
+     *        The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>
+     *        :
      *        <ul>
-     *        <li><b>Top</b>: The top edge of the watermark is aligned with the
-     *        top border of the video.</li>
-     *        <li><b>Bottom</b>: The bottom edge of the watermark is aligned
-     *        with the bottom border of the video.</li>
-     *        <li><b>Center</b>: The watermark is centered between the top and
-     *        bottom borders.</li>
+     *        <li><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</li>
+     *        <li><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</li>
+     *        <li><b>Center</b>: The watermark is centered between the top and bottom borders.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PresetWatermark withVerticalAlign(String verticalAlign) {
@@ -996,67 +802,54 @@ public class PresetWatermark implements Serializable, Cloneable {
     /**
      * <code>VerticalOffset</code>
      * <p>
-     * The amount by which you want the vertical position of the watermark to be
-     * offset from the position specified by VerticalAlign:
+     * The amount by which you want the vertical position of the watermark to be offset from the position specified by
+     * VerticalAlign:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum
-     * value is the value of <code>MaxHeight</code>.</li>
+     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of
+     * <code>MaxHeight</code>.</li>
      * <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      * </ul>
-     * For example, if you specify <code>Top</code> for
-     * <code>VerticalAlign</code> and <code>5px</code> for
-     * <code>VerticalOffset</code>, the top of the watermark appears 5 pixels
-     * from the top border of the output video.
+     * For example, if you specify <code>Top</code> for <code>VerticalAlign</code> and <code>5px</code> for
+     * <code>VerticalOffset</code>, the top of the watermark appears 5 pixels from the top border of the output video.
      * </p>
      * <p>
-     * <code>VerticalOffset</code> is only valid when the value of VerticalAlign
-     * is Top or Bottom.
+     * <code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.
      * </p>
      * <p>
-     * If you specify an offset that causes the watermark to extend beyond the
-     * top or bottom border and Elastic Transcoder has not added black bars, the
-     * watermark is cropped. If Elastic Transcoder has added black bars, the
-     * watermark extends into the black bars. If the watermark extends beyond
-     * the black bars, it is cropped.
+     * If you specify an offset that causes the watermark to extend beyond the top or bottom border and Elastic
+     * Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the
+     * watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.
      * </p>
      * <p>
-     * Use the value of <code>Target</code> to specify whether you want Elastic
-     * Transcoder to include the black bars that are added by Elastic
-     * Transcoder, if any, in the offset calculation.
+     * Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars
+     * that are added by Elastic Transcoder, if any, in the offset calculation.
      * </p>
      * 
      * @param verticalOffset
      *        VerticalOffset</code>
      *        <p>
-     *        The amount by which you want the vertical position of the
-     *        watermark to be offset from the position specified by
-     *        VerticalAlign:
+     *        The amount by which you want the vertical position of the watermark to be offset from the position
+     *        specified by VerticalAlign:
      *        <ul>
-     *        <li>number of pixels (px): The minimum value is 0 pixels, and the
-     *        maximum value is the value of <code>MaxHeight</code>.</li>
-     *        <li>integer percentage (%): The range of valid values is 0 to 100.
-     *        </li>
+     *        <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of
+     *        <code>MaxHeight</code>.</li>
+     *        <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      *        </ul>
-     *        For example, if you specify <code>Top</code> for
-     *        <code>VerticalAlign</code> and <code>5px</code> for
-     *        <code>VerticalOffset</code>, the top of the watermark appears 5
-     *        pixels from the top border of the output video.
+     *        For example, if you specify <code>Top</code> for <code>VerticalAlign</code> and <code>5px</code> for
+     *        <code>VerticalOffset</code>, the top of the watermark appears 5 pixels from the top border of the output
+     *        video.
      *        </p>
      *        <p>
-     *        <code>VerticalOffset</code> is only valid when the value of
-     *        VerticalAlign is Top or Bottom.
+     *        <code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.
      *        </p>
      *        <p>
-     *        If you specify an offset that causes the watermark to extend
-     *        beyond the top or bottom border and Elastic Transcoder has not
-     *        added black bars, the watermark is cropped. If Elastic Transcoder
-     *        has added black bars, the watermark extends into the black bars.
-     *        If the watermark extends beyond the black bars, it is cropped.
+     *        If you specify an offset that causes the watermark to extend beyond the top or bottom border and Elastic
+     *        Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars,
+     *        the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.
      *        </p>
      *        <p>
-     *        Use the value of <code>Target</code> to specify whether you want
-     *        Elastic Transcoder to include the black bars that are added by
-     *        Elastic Transcoder, if any, in the offset calculation.
+     *        Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black
+     *        bars that are added by Elastic Transcoder, if any, in the offset calculation.
      */
 
     public void setVerticalOffset(String verticalOffset) {
@@ -1066,66 +859,54 @@ public class PresetWatermark implements Serializable, Cloneable {
     /**
      * <code>VerticalOffset</code>
      * <p>
-     * The amount by which you want the vertical position of the watermark to be
-     * offset from the position specified by VerticalAlign:
+     * The amount by which you want the vertical position of the watermark to be offset from the position specified by
+     * VerticalAlign:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum
-     * value is the value of <code>MaxHeight</code>.</li>
+     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of
+     * <code>MaxHeight</code>.</li>
      * <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      * </ul>
-     * For example, if you specify <code>Top</code> for
-     * <code>VerticalAlign</code> and <code>5px</code> for
-     * <code>VerticalOffset</code>, the top of the watermark appears 5 pixels
-     * from the top border of the output video.
+     * For example, if you specify <code>Top</code> for <code>VerticalAlign</code> and <code>5px</code> for
+     * <code>VerticalOffset</code>, the top of the watermark appears 5 pixels from the top border of the output video.
      * </p>
      * <p>
-     * <code>VerticalOffset</code> is only valid when the value of VerticalAlign
-     * is Top or Bottom.
+     * <code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.
      * </p>
      * <p>
-     * If you specify an offset that causes the watermark to extend beyond the
-     * top or bottom border and Elastic Transcoder has not added black bars, the
-     * watermark is cropped. If Elastic Transcoder has added black bars, the
-     * watermark extends into the black bars. If the watermark extends beyond
-     * the black bars, it is cropped.
+     * If you specify an offset that causes the watermark to extend beyond the top or bottom border and Elastic
+     * Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the
+     * watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.
      * </p>
      * <p>
-     * Use the value of <code>Target</code> to specify whether you want Elastic
-     * Transcoder to include the black bars that are added by Elastic
-     * Transcoder, if any, in the offset calculation.
+     * Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars
+     * that are added by Elastic Transcoder, if any, in the offset calculation.
      * </p>
      * 
      * @return VerticalOffset</code>
      *         <p>
-     *         The amount by which you want the vertical position of the
-     *         watermark to be offset from the position specified by
-     *         VerticalAlign:
+     *         The amount by which you want the vertical position of the watermark to be offset from the position
+     *         specified by VerticalAlign:
      *         <ul>
-     *         <li>number of pixels (px): The minimum value is 0 pixels, and the
-     *         maximum value is the value of <code>MaxHeight</code>.</li>
-     *         <li>integer percentage (%): The range of valid values is 0 to
-     *         100.</li>
+     *         <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of
+     *         <code>MaxHeight</code>.</li>
+     *         <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      *         </ul>
-     *         For example, if you specify <code>Top</code> for
-     *         <code>VerticalAlign</code> and <code>5px</code> for
-     *         <code>VerticalOffset</code>, the top of the watermark appears 5
-     *         pixels from the top border of the output video.
+     *         For example, if you specify <code>Top</code> for <code>VerticalAlign</code> and <code>5px</code> for
+     *         <code>VerticalOffset</code>, the top of the watermark appears 5 pixels from the top border of the output
+     *         video.
      *         </p>
      *         <p>
-     *         <code>VerticalOffset</code> is only valid when the value of
-     *         VerticalAlign is Top or Bottom.
+     *         <code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.
      *         </p>
      *         <p>
-     *         If you specify an offset that causes the watermark to extend
-     *         beyond the top or bottom border and Elastic Transcoder has not
-     *         added black bars, the watermark is cropped. If Elastic Transcoder
-     *         has added black bars, the watermark extends into the black bars.
-     *         If the watermark extends beyond the black bars, it is cropped.
+     *         If you specify an offset that causes the watermark to extend beyond the top or bottom border and Elastic
+     *         Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black
+     *         bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is
+     *         cropped.
      *         </p>
      *         <p>
-     *         Use the value of <code>Target</code> to specify whether you want
-     *         Elastic Transcoder to include the black bars that are added by
-     *         Elastic Transcoder, if any, in the offset calculation.
+     *         Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black
+     *         bars that are added by Elastic Transcoder, if any, in the offset calculation.
      */
 
     public String getVerticalOffset() {
@@ -1135,69 +916,55 @@ public class PresetWatermark implements Serializable, Cloneable {
     /**
      * <code>VerticalOffset</code>
      * <p>
-     * The amount by which you want the vertical position of the watermark to be
-     * offset from the position specified by VerticalAlign:
+     * The amount by which you want the vertical position of the watermark to be offset from the position specified by
+     * VerticalAlign:
      * <ul>
-     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum
-     * value is the value of <code>MaxHeight</code>.</li>
+     * <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of
+     * <code>MaxHeight</code>.</li>
      * <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      * </ul>
-     * For example, if you specify <code>Top</code> for
-     * <code>VerticalAlign</code> and <code>5px</code> for
-     * <code>VerticalOffset</code>, the top of the watermark appears 5 pixels
-     * from the top border of the output video.
+     * For example, if you specify <code>Top</code> for <code>VerticalAlign</code> and <code>5px</code> for
+     * <code>VerticalOffset</code>, the top of the watermark appears 5 pixels from the top border of the output video.
      * </p>
      * <p>
-     * <code>VerticalOffset</code> is only valid when the value of VerticalAlign
-     * is Top or Bottom.
+     * <code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.
      * </p>
      * <p>
-     * If you specify an offset that causes the watermark to extend beyond the
-     * top or bottom border and Elastic Transcoder has not added black bars, the
-     * watermark is cropped. If Elastic Transcoder has added black bars, the
-     * watermark extends into the black bars. If the watermark extends beyond
-     * the black bars, it is cropped.
+     * If you specify an offset that causes the watermark to extend beyond the top or bottom border and Elastic
+     * Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the
+     * watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.
      * </p>
      * <p>
-     * Use the value of <code>Target</code> to specify whether you want Elastic
-     * Transcoder to include the black bars that are added by Elastic
-     * Transcoder, if any, in the offset calculation.
+     * Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars
+     * that are added by Elastic Transcoder, if any, in the offset calculation.
      * </p>
      * 
      * @param verticalOffset
      *        VerticalOffset</code>
      *        <p>
-     *        The amount by which you want the vertical position of the
-     *        watermark to be offset from the position specified by
-     *        VerticalAlign:
+     *        The amount by which you want the vertical position of the watermark to be offset from the position
+     *        specified by VerticalAlign:
      *        <ul>
-     *        <li>number of pixels (px): The minimum value is 0 pixels, and the
-     *        maximum value is the value of <code>MaxHeight</code>.</li>
-     *        <li>integer percentage (%): The range of valid values is 0 to 100.
-     *        </li>
+     *        <li>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of
+     *        <code>MaxHeight</code>.</li>
+     *        <li>integer percentage (%): The range of valid values is 0 to 100.</li>
      *        </ul>
-     *        For example, if you specify <code>Top</code> for
-     *        <code>VerticalAlign</code> and <code>5px</code> for
-     *        <code>VerticalOffset</code>, the top of the watermark appears 5
-     *        pixels from the top border of the output video.
+     *        For example, if you specify <code>Top</code> for <code>VerticalAlign</code> and <code>5px</code> for
+     *        <code>VerticalOffset</code>, the top of the watermark appears 5 pixels from the top border of the output
+     *        video.
      *        </p>
      *        <p>
-     *        <code>VerticalOffset</code> is only valid when the value of
-     *        VerticalAlign is Top or Bottom.
+     *        <code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.
      *        </p>
      *        <p>
-     *        If you specify an offset that causes the watermark to extend
-     *        beyond the top or bottom border and Elastic Transcoder has not
-     *        added black bars, the watermark is cropped. If Elastic Transcoder
-     *        has added black bars, the watermark extends into the black bars.
-     *        If the watermark extends beyond the black bars, it is cropped.
+     *        If you specify an offset that causes the watermark to extend beyond the top or bottom border and Elastic
+     *        Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars,
+     *        the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.
      *        </p>
      *        <p>
-     *        Use the value of <code>Target</code> to specify whether you want
-     *        Elastic Transcoder to include the black bars that are added by
-     *        Elastic Transcoder, if any, in the offset calculation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black
+     *        bars that are added by Elastic Transcoder, if any, in the offset calculation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PresetWatermark withVerticalOffset(String verticalOffset) {
@@ -1207,29 +974,24 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A percentage that indicates how much you want a watermark to obscure the
-     * video in the location where it appears. Valid values are 0 (the watermark
-     * is invisible) to 100 (the watermark completely obscures the video in the
+     * A percentage that indicates how much you want a watermark to obscure the video in the location where it appears.
+     * Valid values are 0 (the watermark is invisible) to 100 (the watermark completely obscures the video in the
      * specified location). The datatype of <code>Opacity</code> is float.
      * </p>
      * <p>
-     * Elastic Transcoder supports transparent .png graphics. If you use a
-     * transparent .png, the transparent portion of the video appears as if you
-     * had specified a value of 0 for <code>Opacity</code>. The .jpg file format
-     * doesn't support transparency.
+     * Elastic Transcoder supports transparent .png graphics. If you use a transparent .png, the transparent portion of
+     * the video appears as if you had specified a value of 0 for <code>Opacity</code>. The .jpg file format doesn't
+     * support transparency.
      * </p>
      * 
      * @param opacity
-     *        A percentage that indicates how much you want a watermark to
-     *        obscure the video in the location where it appears. Valid values
-     *        are 0 (the watermark is invisible) to 100 (the watermark
-     *        completely obscures the video in the specified location). The
-     *        datatype of <code>Opacity</code> is float.</p>
+     *        A percentage that indicates how much you want a watermark to obscure the video in the location where it
+     *        appears. Valid values are 0 (the watermark is invisible) to 100 (the watermark completely obscures the
+     *        video in the specified location). The datatype of <code>Opacity</code> is float.</p>
      *        <p>
-     *        Elastic Transcoder supports transparent .png graphics. If you use
-     *        a transparent .png, the transparent portion of the video appears
-     *        as if you had specified a value of 0 for <code>Opacity</code>. The
-     *        .jpg file format doesn't support transparency.
+     *        Elastic Transcoder supports transparent .png graphics. If you use a transparent .png, the transparent
+     *        portion of the video appears as if you had specified a value of 0 for <code>Opacity</code>. The .jpg file
+     *        format doesn't support transparency.
      */
 
     public void setOpacity(String opacity) {
@@ -1238,28 +1000,23 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A percentage that indicates how much you want a watermark to obscure the
-     * video in the location where it appears. Valid values are 0 (the watermark
-     * is invisible) to 100 (the watermark completely obscures the video in the
+     * A percentage that indicates how much you want a watermark to obscure the video in the location where it appears.
+     * Valid values are 0 (the watermark is invisible) to 100 (the watermark completely obscures the video in the
      * specified location). The datatype of <code>Opacity</code> is float.
      * </p>
      * <p>
-     * Elastic Transcoder supports transparent .png graphics. If you use a
-     * transparent .png, the transparent portion of the video appears as if you
-     * had specified a value of 0 for <code>Opacity</code>. The .jpg file format
-     * doesn't support transparency.
+     * Elastic Transcoder supports transparent .png graphics. If you use a transparent .png, the transparent portion of
+     * the video appears as if you had specified a value of 0 for <code>Opacity</code>. The .jpg file format doesn't
+     * support transparency.
      * </p>
      * 
-     * @return A percentage that indicates how much you want a watermark to
-     *         obscure the video in the location where it appears. Valid values
-     *         are 0 (the watermark is invisible) to 100 (the watermark
-     *         completely obscures the video in the specified location). The
-     *         datatype of <code>Opacity</code> is float.</p>
+     * @return A percentage that indicates how much you want a watermark to obscure the video in the location where it
+     *         appears. Valid values are 0 (the watermark is invisible) to 100 (the watermark completely obscures the
+     *         video in the specified location). The datatype of <code>Opacity</code> is float.</p>
      *         <p>
-     *         Elastic Transcoder supports transparent .png graphics. If you use
-     *         a transparent .png, the transparent portion of the video appears
-     *         as if you had specified a value of 0 for <code>Opacity</code>.
-     *         The .jpg file format doesn't support transparency.
+     *         Elastic Transcoder supports transparent .png graphics. If you use a transparent .png, the transparent
+     *         portion of the video appears as if you had specified a value of 0 for <code>Opacity</code>. The .jpg file
+     *         format doesn't support transparency.
      */
 
     public String getOpacity() {
@@ -1268,31 +1025,25 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A percentage that indicates how much you want a watermark to obscure the
-     * video in the location where it appears. Valid values are 0 (the watermark
-     * is invisible) to 100 (the watermark completely obscures the video in the
+     * A percentage that indicates how much you want a watermark to obscure the video in the location where it appears.
+     * Valid values are 0 (the watermark is invisible) to 100 (the watermark completely obscures the video in the
      * specified location). The datatype of <code>Opacity</code> is float.
      * </p>
      * <p>
-     * Elastic Transcoder supports transparent .png graphics. If you use a
-     * transparent .png, the transparent portion of the video appears as if you
-     * had specified a value of 0 for <code>Opacity</code>. The .jpg file format
-     * doesn't support transparency.
+     * Elastic Transcoder supports transparent .png graphics. If you use a transparent .png, the transparent portion of
+     * the video appears as if you had specified a value of 0 for <code>Opacity</code>. The .jpg file format doesn't
+     * support transparency.
      * </p>
      * 
      * @param opacity
-     *        A percentage that indicates how much you want a watermark to
-     *        obscure the video in the location where it appears. Valid values
-     *        are 0 (the watermark is invisible) to 100 (the watermark
-     *        completely obscures the video in the specified location). The
-     *        datatype of <code>Opacity</code> is float.</p>
+     *        A percentage that indicates how much you want a watermark to obscure the video in the location where it
+     *        appears. Valid values are 0 (the watermark is invisible) to 100 (the watermark completely obscures the
+     *        video in the specified location). The datatype of <code>Opacity</code> is float.</p>
      *        <p>
-     *        Elastic Transcoder supports transparent .png graphics. If you use
-     *        a transparent .png, the transparent portion of the video appears
-     *        as if you had specified a value of 0 for <code>Opacity</code>. The
-     *        .jpg file format doesn't support transparency.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Elastic Transcoder supports transparent .png graphics. If you use a transparent .png, the transparent
+     *        portion of the video appears as if you had specified a value of 0 for <code>Opacity</code>. The .jpg file
+     *        format doesn't support transparency.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PresetWatermark withOpacity(String opacity) {
@@ -1302,45 +1053,33 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that determines how Elastic Transcoder interprets values that you
-     * specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>,
-     * <code>MaxWidth</code>, and <code>MaxHeight</code>:
+     * A value that determines how Elastic Transcoder interprets values that you specified for
+     * <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and <code>MaxHeight</code>:
      * <ul>
-     * <li><b>Content</b>: <code>HorizontalOffset</code> and
-     * <code>VerticalOffset</code> values are calculated based on the borders of
-     * the video excluding black bars added by Elastic Transcoder, if any. In
-     * addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified
-     * as a percentage, are calculated based on the borders of the video
-     * excluding black bars added by Elastic Transcoder, if any.</li>
-     * <li><b>Frame</b>: <code>HorizontalOffset</code> and
-     * <code>VerticalOffset</code> values are calculated based on the borders of
-     * the video including black bars added by Elastic Transcoder, if any.</li>
-     * In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if
-     * specified as a percentage, are calculated based on the borders of the
-     * video including black bars added by Elastic Transcoder, if any.
+     * <li><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on
+     * the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition,
+     * <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the
+     * borders of the video excluding black bars added by Elastic Transcoder, if any.</li>
+     * <li><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on
+     * the borders of the video including black bars added by Elastic Transcoder, if any.</li> In addition,
+     * <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the
+     * borders of the video including black bars added by Elastic Transcoder, if any.
      * </ul>
      * </p>
      * 
      * @param target
-     *        A value that determines how Elastic Transcoder interprets values
-     *        that you specified for <code>HorizontalOffset</code>,
-     *        <code>VerticalOffset</code>, <code>MaxWidth</code>, and
+     *        A value that determines how Elastic Transcoder interprets values that you specified for
+     *        <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and
      *        <code>MaxHeight</code>:
      *        <ul>
-     *        <li><b>Content</b>: <code>HorizontalOffset</code> and
-     *        <code>VerticalOffset</code> values are calculated based on the
-     *        borders of the video excluding black bars added by Elastic
-     *        Transcoder, if any. In addition, <code>MaxWidth</code> and
-     *        <code>MaxHeight</code>, if specified as a percentage, are
-     *        calculated based on the borders of the video excluding black bars
-     *        added by Elastic Transcoder, if any.</li>
-     *        <li><b>Frame</b>: <code>HorizontalOffset</code> and
-     *        <code>VerticalOffset</code> values are calculated based on the
-     *        borders of the video including black bars added by Elastic
-     *        Transcoder, if any.</li> In addition, <code>MaxWidth</code> and
-     *        <code>MaxHeight</code>, if specified as a percentage, are
-     *        calculated based on the borders of the video including black bars
-     *        added by Elastic Transcoder, if any.
+     *        <li><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated
+     *        based on the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition,
+     *        <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on
+     *        the borders of the video excluding black bars added by Elastic Transcoder, if any.</li>
+     *        <li><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated
+     *        based on the borders of the video including black bars added by Elastic Transcoder, if any.</li> In
+     *        addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated
+     *        based on the borders of the video including black bars added by Elastic Transcoder, if any.
      *        </ul>
      */
 
@@ -1350,44 +1089,32 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that determines how Elastic Transcoder interprets values that you
-     * specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>,
-     * <code>MaxWidth</code>, and <code>MaxHeight</code>:
+     * A value that determines how Elastic Transcoder interprets values that you specified for
+     * <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and <code>MaxHeight</code>:
      * <ul>
-     * <li><b>Content</b>: <code>HorizontalOffset</code> and
-     * <code>VerticalOffset</code> values are calculated based on the borders of
-     * the video excluding black bars added by Elastic Transcoder, if any. In
-     * addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified
-     * as a percentage, are calculated based on the borders of the video
-     * excluding black bars added by Elastic Transcoder, if any.</li>
-     * <li><b>Frame</b>: <code>HorizontalOffset</code> and
-     * <code>VerticalOffset</code> values are calculated based on the borders of
-     * the video including black bars added by Elastic Transcoder, if any.</li>
-     * In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if
-     * specified as a percentage, are calculated based on the borders of the
-     * video including black bars added by Elastic Transcoder, if any.
+     * <li><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on
+     * the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition,
+     * <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the
+     * borders of the video excluding black bars added by Elastic Transcoder, if any.</li>
+     * <li><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on
+     * the borders of the video including black bars added by Elastic Transcoder, if any.</li> In addition,
+     * <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the
+     * borders of the video including black bars added by Elastic Transcoder, if any.
      * </ul>
      * </p>
      * 
-     * @return A value that determines how Elastic Transcoder interprets values
-     *         that you specified for <code>HorizontalOffset</code>,
-     *         <code>VerticalOffset</code>, <code>MaxWidth</code>, and
+     * @return A value that determines how Elastic Transcoder interprets values that you specified for
+     *         <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and
      *         <code>MaxHeight</code>:
      *         <ul>
-     *         <li><b>Content</b>: <code>HorizontalOffset</code> and
-     *         <code>VerticalOffset</code> values are calculated based on the
-     *         borders of the video excluding black bars added by Elastic
-     *         Transcoder, if any. In addition, <code>MaxWidth</code> and
-     *         <code>MaxHeight</code>, if specified as a percentage, are
-     *         calculated based on the borders of the video excluding black bars
-     *         added by Elastic Transcoder, if any.</li>
-     *         <li><b>Frame</b>: <code>HorizontalOffset</code> and
-     *         <code>VerticalOffset</code> values are calculated based on the
-     *         borders of the video including black bars added by Elastic
-     *         Transcoder, if any.</li> In addition, <code>MaxWidth</code> and
-     *         <code>MaxHeight</code>, if specified as a percentage, are
-     *         calculated based on the borders of the video including black bars
-     *         added by Elastic Transcoder, if any.
+     *         <li><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated
+     *         based on the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition,
+     *         <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on
+     *         the borders of the video excluding black bars added by Elastic Transcoder, if any.</li>
+     *         <li><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated
+     *         based on the borders of the video including black bars added by Elastic Transcoder, if any.</li> In
+     *         addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated
+     *         based on the borders of the video including black bars added by Elastic Transcoder, if any.
      *         </ul>
      */
 
@@ -1397,48 +1124,35 @@ public class PresetWatermark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that determines how Elastic Transcoder interprets values that you
-     * specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>,
-     * <code>MaxWidth</code>, and <code>MaxHeight</code>:
+     * A value that determines how Elastic Transcoder interprets values that you specified for
+     * <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and <code>MaxHeight</code>:
      * <ul>
-     * <li><b>Content</b>: <code>HorizontalOffset</code> and
-     * <code>VerticalOffset</code> values are calculated based on the borders of
-     * the video excluding black bars added by Elastic Transcoder, if any. In
-     * addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified
-     * as a percentage, are calculated based on the borders of the video
-     * excluding black bars added by Elastic Transcoder, if any.</li>
-     * <li><b>Frame</b>: <code>HorizontalOffset</code> and
-     * <code>VerticalOffset</code> values are calculated based on the borders of
-     * the video including black bars added by Elastic Transcoder, if any.</li>
-     * In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if
-     * specified as a percentage, are calculated based on the borders of the
-     * video including black bars added by Elastic Transcoder, if any.
+     * <li><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on
+     * the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition,
+     * <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the
+     * borders of the video excluding black bars added by Elastic Transcoder, if any.</li>
+     * <li><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on
+     * the borders of the video including black bars added by Elastic Transcoder, if any.</li> In addition,
+     * <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the
+     * borders of the video including black bars added by Elastic Transcoder, if any.
      * </ul>
      * </p>
      * 
      * @param target
-     *        A value that determines how Elastic Transcoder interprets values
-     *        that you specified for <code>HorizontalOffset</code>,
-     *        <code>VerticalOffset</code>, <code>MaxWidth</code>, and
+     *        A value that determines how Elastic Transcoder interprets values that you specified for
+     *        <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and
      *        <code>MaxHeight</code>:
      *        <ul>
-     *        <li><b>Content</b>: <code>HorizontalOffset</code> and
-     *        <code>VerticalOffset</code> values are calculated based on the
-     *        borders of the video excluding black bars added by Elastic
-     *        Transcoder, if any. In addition, <code>MaxWidth</code> and
-     *        <code>MaxHeight</code>, if specified as a percentage, are
-     *        calculated based on the borders of the video excluding black bars
-     *        added by Elastic Transcoder, if any.</li>
-     *        <li><b>Frame</b>: <code>HorizontalOffset</code> and
-     *        <code>VerticalOffset</code> values are calculated based on the
-     *        borders of the video including black bars added by Elastic
-     *        Transcoder, if any.</li> In addition, <code>MaxWidth</code> and
-     *        <code>MaxHeight</code>, if specified as a percentage, are
-     *        calculated based on the borders of the video including black bars
-     *        added by Elastic Transcoder, if any.
+     *        <li><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated
+     *        based on the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition,
+     *        <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on
+     *        the borders of the video excluding black bars added by Elastic Transcoder, if any.</li>
+     *        <li><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated
+     *        based on the borders of the video including black bars added by Elastic Transcoder, if any.</li> In
+     *        addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated
+     *        based on the borders of the video including black bars added by Elastic Transcoder, if any.
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PresetWatermark withTarget(String target) {
@@ -1447,8 +1161,7 @@ public class PresetWatermark implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1494,57 +1207,43 @@ public class PresetWatermark implements Serializable, Cloneable {
         PresetWatermark other = (PresetWatermark) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getMaxWidth() == null ^ this.getMaxWidth() == null)
             return false;
-        if (other.getMaxWidth() != null
-                && other.getMaxWidth().equals(this.getMaxWidth()) == false)
+        if (other.getMaxWidth() != null && other.getMaxWidth().equals(this.getMaxWidth()) == false)
             return false;
         if (other.getMaxHeight() == null ^ this.getMaxHeight() == null)
             return false;
-        if (other.getMaxHeight() != null
-                && other.getMaxHeight().equals(this.getMaxHeight()) == false)
+        if (other.getMaxHeight() != null && other.getMaxHeight().equals(this.getMaxHeight()) == false)
             return false;
         if (other.getSizingPolicy() == null ^ this.getSizingPolicy() == null)
             return false;
-        if (other.getSizingPolicy() != null
-                && other.getSizingPolicy().equals(this.getSizingPolicy()) == false)
+        if (other.getSizingPolicy() != null && other.getSizingPolicy().equals(this.getSizingPolicy()) == false)
             return false;
-        if (other.getHorizontalAlign() == null
-                ^ this.getHorizontalAlign() == null)
+        if (other.getHorizontalAlign() == null ^ this.getHorizontalAlign() == null)
             return false;
-        if (other.getHorizontalAlign() != null
-                && other.getHorizontalAlign().equals(this.getHorizontalAlign()) == false)
+        if (other.getHorizontalAlign() != null && other.getHorizontalAlign().equals(this.getHorizontalAlign()) == false)
             return false;
-        if (other.getHorizontalOffset() == null
-                ^ this.getHorizontalOffset() == null)
+        if (other.getHorizontalOffset() == null ^ this.getHorizontalOffset() == null)
             return false;
-        if (other.getHorizontalOffset() != null
-                && other.getHorizontalOffset().equals(
-                        this.getHorizontalOffset()) == false)
+        if (other.getHorizontalOffset() != null && other.getHorizontalOffset().equals(this.getHorizontalOffset()) == false)
             return false;
         if (other.getVerticalAlign() == null ^ this.getVerticalAlign() == null)
             return false;
-        if (other.getVerticalAlign() != null
-                && other.getVerticalAlign().equals(this.getVerticalAlign()) == false)
+        if (other.getVerticalAlign() != null && other.getVerticalAlign().equals(this.getVerticalAlign()) == false)
             return false;
-        if (other.getVerticalOffset() == null
-                ^ this.getVerticalOffset() == null)
+        if (other.getVerticalOffset() == null ^ this.getVerticalOffset() == null)
             return false;
-        if (other.getVerticalOffset() != null
-                && other.getVerticalOffset().equals(this.getVerticalOffset()) == false)
+        if (other.getVerticalOffset() != null && other.getVerticalOffset().equals(this.getVerticalOffset()) == false)
             return false;
         if (other.getOpacity() == null ^ this.getOpacity() == null)
             return false;
-        if (other.getOpacity() != null
-                && other.getOpacity().equals(this.getOpacity()) == false)
+        if (other.getOpacity() != null && other.getOpacity().equals(this.getOpacity()) == false)
             return false;
         if (other.getTarget() == null ^ this.getTarget() == null)
             return false;
-        if (other.getTarget() != null
-                && other.getTarget().equals(this.getTarget()) == false)
+        if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
             return false;
         return true;
     }
@@ -1554,36 +1253,16 @@ public class PresetWatermark implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxWidth() == null) ? 0 : getMaxWidth().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxHeight() == null) ? 0 : getMaxHeight().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSizingPolicy() == null) ? 0 : getSizingPolicy()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHorizontalAlign() == null) ? 0 : getHorizontalAlign()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHorizontalOffset() == null) ? 0 : getHorizontalOffset()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVerticalAlign() == null) ? 0 : getVerticalAlign()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVerticalOffset() == null) ? 0 : getVerticalOffset()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getOpacity() == null) ? 0 : getOpacity().hashCode());
-        hashCode = prime * hashCode
-                + ((getTarget() == null) ? 0 : getTarget().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getMaxWidth() == null) ? 0 : getMaxWidth().hashCode());
+        hashCode = prime * hashCode + ((getMaxHeight() == null) ? 0 : getMaxHeight().hashCode());
+        hashCode = prime * hashCode + ((getSizingPolicy() == null) ? 0 : getSizingPolicy().hashCode());
+        hashCode = prime * hashCode + ((getHorizontalAlign() == null) ? 0 : getHorizontalAlign().hashCode());
+        hashCode = prime * hashCode + ((getHorizontalOffset() == null) ? 0 : getHorizontalOffset().hashCode());
+        hashCode = prime * hashCode + ((getVerticalAlign() == null) ? 0 : getVerticalAlign().hashCode());
+        hashCode = prime * hashCode + ((getVerticalOffset() == null) ? 0 : getVerticalOffset().hashCode());
+        hashCode = prime * hashCode + ((getOpacity() == null) ? 0 : getOpacity().hashCode());
+        hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
         return hashCode;
     }
 
@@ -1592,9 +1271,7 @@ public class PresetWatermark implements Serializable, Cloneable {
         try {
             return (PresetWatermark) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

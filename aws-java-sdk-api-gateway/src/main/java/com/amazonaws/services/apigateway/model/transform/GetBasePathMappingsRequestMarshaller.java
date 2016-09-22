@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,49 +41,38 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetBasePathMappingsRequest Marshaller
  */
-public class GetBasePathMappingsRequestMarshaller
-        implements
-        Marshaller<Request<GetBasePathMappingsRequest>, GetBasePathMappingsRequest> {
+public class GetBasePathMappingsRequestMarshaller implements Marshaller<Request<GetBasePathMappingsRequest>, GetBasePathMappingsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public GetBasePathMappingsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public GetBasePathMappingsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<GetBasePathMappingsRequest> marshall(
-            GetBasePathMappingsRequest getBasePathMappingsRequest) {
+    public Request<GetBasePathMappingsRequest> marshall(GetBasePathMappingsRequest getBasePathMappingsRequest) {
 
         if (getBasePathMappingsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetBasePathMappingsRequest> request = new DefaultRequest<GetBasePathMappingsRequest>(
-                getBasePathMappingsRequest, "AmazonApiGateway");
+        Request<GetBasePathMappingsRequest> request = new DefaultRequest<GetBasePathMappingsRequest>(getBasePathMappingsRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/domainnames/{domain_name}/basepathmappings";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{domain_name}",
-                        (getBasePathMappingsRequest.getDomainName() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(getBasePathMappingsRequest
-                                                .getDomainName()), false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{domain_name}",
+                (getBasePathMappingsRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(getBasePathMappingsRequest.getDomainName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (getBasePathMappingsRequest.getPosition() != null) {
-            request.addParameter("position", StringUtils
-                    .fromString(getBasePathMappingsRequest.getPosition()));
+            request.addParameter("position", StringUtils.fromString(getBasePathMappingsRequest.getPosition()));
         }
 
         if (getBasePathMappingsRequest.getLimit() != null) {
-            request.addParameter("limit", StringUtils
-                    .fromInteger(getBasePathMappingsRequest.getLimit()));
+            request.addParameter("limit", StringUtils.fromInteger(getBasePathMappingsRequest.getLimit()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

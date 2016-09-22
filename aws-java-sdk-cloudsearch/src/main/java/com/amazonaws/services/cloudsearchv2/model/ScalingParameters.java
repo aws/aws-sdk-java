@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchv2.model;
 
@@ -18,16 +16,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The desired instance type and desired number of replicas of each index
- * partition.
+ * The desired instance type and desired number of replicas of each index partition.
  * </p>
  */
 public class ScalingParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type that you want to preconfigure for your domain. For
-     * example, <code>search.m1.small</code>.
+     * The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.
      * </p>
      */
     private String desiredInstanceType;
@@ -39,22 +35,20 @@ public class ScalingParameters implements Serializable, Cloneable {
     private Integer desiredReplicationCount;
     /**
      * <p>
-     * The number of partitions you want to preconfigure for your domain. Only
-     * valid when you select <code>m2.2xlarge</code> as the desired instance
-     * type.
+     * The number of partitions you want to preconfigure for your domain. Only valid when you select
+     * <code>m2.2xlarge</code> as the desired instance type.
      * </p>
      */
     private Integer desiredPartitionCount;
 
     /**
      * <p>
-     * The instance type that you want to preconfigure for your domain. For
-     * example, <code>search.m1.small</code>.
+     * The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.
      * </p>
      * 
      * @param desiredInstanceType
-     *        The instance type that you want to preconfigure for your domain.
-     *        For example, <code>search.m1.small</code>.
+     *        The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>
+     *        .
      * @see PartitionInstanceType
      */
 
@@ -64,12 +58,11 @@ public class ScalingParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type that you want to preconfigure for your domain. For
-     * example, <code>search.m1.small</code>.
+     * The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.
      * </p>
      * 
-     * @return The instance type that you want to preconfigure for your domain.
-     *         For example, <code>search.m1.small</code>.
+     * @return The instance type that you want to preconfigure for your domain. For example,
+     *         <code>search.m1.small</code>.
      * @see PartitionInstanceType
      */
 
@@ -79,15 +72,13 @@ public class ScalingParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type that you want to preconfigure for your domain. For
-     * example, <code>search.m1.small</code>.
+     * The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.
      * </p>
      * 
      * @param desiredInstanceType
-     *        The instance type that you want to preconfigure for your domain.
-     *        For example, <code>search.m1.small</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>
+     *        .
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PartitionInstanceType
      */
 
@@ -98,13 +89,12 @@ public class ScalingParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type that you want to preconfigure for your domain. For
-     * example, <code>search.m1.small</code>.
+     * The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.
      * </p>
      * 
      * @param desiredInstanceType
-     *        The instance type that you want to preconfigure for your domain.
-     *        For example, <code>search.m1.small</code>.
+     *        The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>
+     *        .
      * @see PartitionInstanceType
      */
 
@@ -114,20 +104,17 @@ public class ScalingParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type that you want to preconfigure for your domain. For
-     * example, <code>search.m1.small</code>.
+     * The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.
      * </p>
      * 
      * @param desiredInstanceType
-     *        The instance type that you want to preconfigure for your domain.
-     *        For example, <code>search.m1.small</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>
+     *        .
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PartitionInstanceType
      */
 
-    public ScalingParameters withDesiredInstanceType(
-            PartitionInstanceType desiredInstanceType) {
+    public ScalingParameters withDesiredInstanceType(PartitionInstanceType desiredInstanceType) {
         setDesiredInstanceType(desiredInstanceType);
         return this;
     }
@@ -138,8 +125,7 @@ public class ScalingParameters implements Serializable, Cloneable {
      * </p>
      * 
      * @param desiredReplicationCount
-     *        The number of replicas you want to preconfigure for each index
-     *        partition.
+     *        The number of replicas you want to preconfigure for each index partition.
      */
 
     public void setDesiredReplicationCount(Integer desiredReplicationCount) {
@@ -151,8 +137,7 @@ public class ScalingParameters implements Serializable, Cloneable {
      * The number of replicas you want to preconfigure for each index partition.
      * </p>
      * 
-     * @return The number of replicas you want to preconfigure for each index
-     *         partition.
+     * @return The number of replicas you want to preconfigure for each index partition.
      */
 
     public Integer getDesiredReplicationCount() {
@@ -165,29 +150,24 @@ public class ScalingParameters implements Serializable, Cloneable {
      * </p>
      * 
      * @param desiredReplicationCount
-     *        The number of replicas you want to preconfigure for each index
-     *        partition.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of replicas you want to preconfigure for each index partition.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScalingParameters withDesiredReplicationCount(
-            Integer desiredReplicationCount) {
+    public ScalingParameters withDesiredReplicationCount(Integer desiredReplicationCount) {
         setDesiredReplicationCount(desiredReplicationCount);
         return this;
     }
 
     /**
      * <p>
-     * The number of partitions you want to preconfigure for your domain. Only
-     * valid when you select <code>m2.2xlarge</code> as the desired instance
-     * type.
+     * The number of partitions you want to preconfigure for your domain. Only valid when you select
+     * <code>m2.2xlarge</code> as the desired instance type.
      * </p>
      * 
      * @param desiredPartitionCount
-     *        The number of partitions you want to preconfigure for your domain.
-     *        Only valid when you select <code>m2.2xlarge</code> as the desired
-     *        instance type.
+     *        The number of partitions you want to preconfigure for your domain. Only valid when you select
+     *        <code>m2.2xlarge</code> as the desired instance type.
      */
 
     public void setDesiredPartitionCount(Integer desiredPartitionCount) {
@@ -196,14 +176,12 @@ public class ScalingParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of partitions you want to preconfigure for your domain. Only
-     * valid when you select <code>m2.2xlarge</code> as the desired instance
-     * type.
+     * The number of partitions you want to preconfigure for your domain. Only valid when you select
+     * <code>m2.2xlarge</code> as the desired instance type.
      * </p>
      * 
-     * @return The number of partitions you want to preconfigure for your
-     *         domain. Only valid when you select <code>m2.2xlarge</code> as the
-     *         desired instance type.
+     * @return The number of partitions you want to preconfigure for your domain. Only valid when you select
+     *         <code>m2.2xlarge</code> as the desired instance type.
      */
 
     public Integer getDesiredPartitionCount() {
@@ -212,28 +190,23 @@ public class ScalingParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of partitions you want to preconfigure for your domain. Only
-     * valid when you select <code>m2.2xlarge</code> as the desired instance
-     * type.
+     * The number of partitions you want to preconfigure for your domain. Only valid when you select
+     * <code>m2.2xlarge</code> as the desired instance type.
      * </p>
      * 
      * @param desiredPartitionCount
-     *        The number of partitions you want to preconfigure for your domain.
-     *        Only valid when you select <code>m2.2xlarge</code> as the desired
-     *        instance type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of partitions you want to preconfigure for your domain. Only valid when you select
+     *        <code>m2.2xlarge</code> as the desired instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScalingParameters withDesiredPartitionCount(
-            Integer desiredPartitionCount) {
+    public ScalingParameters withDesiredPartitionCount(Integer desiredPartitionCount) {
         setDesiredPartitionCount(desiredPartitionCount);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -246,8 +219,7 @@ public class ScalingParameters implements Serializable, Cloneable {
         if (getDesiredInstanceType() != null)
             sb.append("DesiredInstanceType: " + getDesiredInstanceType() + ",");
         if (getDesiredReplicationCount() != null)
-            sb.append("DesiredReplicationCount: "
-                    + getDesiredReplicationCount() + ",");
+            sb.append("DesiredReplicationCount: " + getDesiredReplicationCount() + ",");
         if (getDesiredPartitionCount() != null)
             sb.append("DesiredPartitionCount: " + getDesiredPartitionCount());
         sb.append("}");
@@ -264,26 +236,17 @@ public class ScalingParameters implements Serializable, Cloneable {
         if (obj instanceof ScalingParameters == false)
             return false;
         ScalingParameters other = (ScalingParameters) obj;
-        if (other.getDesiredInstanceType() == null
-                ^ this.getDesiredInstanceType() == null)
+        if (other.getDesiredInstanceType() == null ^ this.getDesiredInstanceType() == null)
             return false;
-        if (other.getDesiredInstanceType() != null
-                && other.getDesiredInstanceType().equals(
-                        this.getDesiredInstanceType()) == false)
+        if (other.getDesiredInstanceType() != null && other.getDesiredInstanceType().equals(this.getDesiredInstanceType()) == false)
             return false;
-        if (other.getDesiredReplicationCount() == null
-                ^ this.getDesiredReplicationCount() == null)
+        if (other.getDesiredReplicationCount() == null ^ this.getDesiredReplicationCount() == null)
             return false;
-        if (other.getDesiredReplicationCount() != null
-                && other.getDesiredReplicationCount().equals(
-                        this.getDesiredReplicationCount()) == false)
+        if (other.getDesiredReplicationCount() != null && other.getDesiredReplicationCount().equals(this.getDesiredReplicationCount()) == false)
             return false;
-        if (other.getDesiredPartitionCount() == null
-                ^ this.getDesiredPartitionCount() == null)
+        if (other.getDesiredPartitionCount() == null ^ this.getDesiredPartitionCount() == null)
             return false;
-        if (other.getDesiredPartitionCount() != null
-                && other.getDesiredPartitionCount().equals(
-                        this.getDesiredPartitionCount()) == false)
+        if (other.getDesiredPartitionCount() != null && other.getDesiredPartitionCount().equals(this.getDesiredPartitionCount()) == false)
             return false;
         return true;
     }
@@ -293,18 +256,9 @@ public class ScalingParameters implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDesiredInstanceType() == null) ? 0
-                        : getDesiredInstanceType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDesiredReplicationCount() == null) ? 0
-                        : getDesiredReplicationCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDesiredPartitionCount() == null) ? 0
-                        : getDesiredPartitionCount().hashCode());
+        hashCode = prime * hashCode + ((getDesiredInstanceType() == null) ? 0 : getDesiredInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getDesiredReplicationCount() == null) ? 0 : getDesiredReplicationCount().hashCode());
+        hashCode = prime * hashCode + ((getDesiredPartitionCount() == null) ? 0 : getDesiredPartitionCount().hashCode());
         return hashCode;
     }
 
@@ -313,9 +267,7 @@ public class ScalingParameters implements Serializable, Cloneable {
         try {
             return (ScalingParameters) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

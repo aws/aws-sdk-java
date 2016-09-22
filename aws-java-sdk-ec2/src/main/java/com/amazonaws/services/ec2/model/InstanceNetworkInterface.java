@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -79,8 +77,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
     private String privateDnsName;
     /**
      * <p>
-     * Indicates whether to validate network traffic to or from this network
-     * interface.
+     * Indicates whether to validate network traffic to or from this network interface.
      * </p>
      */
     private Boolean sourceDestCheck;
@@ -98,8 +95,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
     private InstanceNetworkInterfaceAttachment attachment;
     /**
      * <p>
-     * The association information for an Elastic IP associated with the network
-     * interface.
+     * The association information for an Elastic IP associated with the network interface.
      * </p>
      */
     private InstanceNetworkInterfaceAssociation association;
@@ -142,12 +138,10 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param networkInterfaceId
      *        The ID of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceNetworkInterface withNetworkInterfaceId(
-            String networkInterfaceId) {
+    public InstanceNetworkInterface withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
         return this;
     }
@@ -184,8 +178,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param subnetId
      *        The ID of the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceNetworkInterface withSubnetId(String subnetId) {
@@ -225,8 +218,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param vpcId
      *        The ID of the VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceNetworkInterface withVpcId(String vpcId) {
@@ -266,8 +258,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param description
      *        The description.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceNetworkInterface withDescription(String description) {
@@ -307,8 +298,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param ownerId
      *        The ID of the AWS account that created the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceNetworkInterface withOwnerId(String ownerId) {
@@ -350,8 +340,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkInterfaceStatus
      */
 
@@ -381,8 +370,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkInterfaceStatus
      */
 
@@ -423,8 +411,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param macAddress
      *        The MAC address.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceNetworkInterface withMacAddress(String macAddress) {
@@ -464,8 +451,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param privateIpAddress
      *        The IP address of the network interface within the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceNetworkInterface withPrivateIpAddress(String privateIpAddress) {
@@ -505,8 +491,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param privateDnsName
      *        The private DNS name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceNetworkInterface withPrivateDnsName(String privateDnsName) {
@@ -516,13 +501,11 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether to validate network traffic to or from this network
-     * interface.
+     * Indicates whether to validate network traffic to or from this network interface.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether to validate network traffic to or from this
-     *        network interface.
+     *        Indicates whether to validate network traffic to or from this network interface.
      */
 
     public void setSourceDestCheck(Boolean sourceDestCheck) {
@@ -531,12 +514,10 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether to validate network traffic to or from this network
-     * interface.
+     * Indicates whether to validate network traffic to or from this network interface.
      * </p>
      * 
-     * @return Indicates whether to validate network traffic to or from this
-     *         network interface.
+     * @return Indicates whether to validate network traffic to or from this network interface.
      */
 
     public Boolean getSourceDestCheck() {
@@ -545,15 +526,12 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether to validate network traffic to or from this network
-     * interface.
+     * Indicates whether to validate network traffic to or from this network interface.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether to validate network traffic to or from this
-     *        network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether to validate network traffic to or from this network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceNetworkInterface withSourceDestCheck(Boolean sourceDestCheck) {
@@ -563,12 +541,10 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether to validate network traffic to or from this network
-     * interface.
+     * Indicates whether to validate network traffic to or from this network interface.
      * </p>
      * 
-     * @return Indicates whether to validate network traffic to or from this
-     *         network interface.
+     * @return Indicates whether to validate network traffic to or from this network interface.
      */
 
     public Boolean isSourceDestCheck() {
@@ -605,8 +581,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
             return;
         }
 
-        this.groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
-                groups);
+        this.groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(groups);
     }
 
     /**
@@ -614,22 +589,19 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * One or more security groups.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGroups(java.util.Collection)} or
-     * {@link #withGroups(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param groups
      *        One or more security groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceNetworkInterface withGroups(GroupIdentifier... groups) {
         if (this.groups == null) {
-            setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
-                    groups.length));
+            setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(groups.length));
         }
         for (GroupIdentifier ele : groups) {
             this.groups.add(ele);
@@ -644,12 +616,10 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param groups
      *        One or more security groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceNetworkInterface withGroups(
-            java.util.Collection<GroupIdentifier> groups) {
+    public InstanceNetworkInterface withGroups(java.util.Collection<GroupIdentifier> groups) {
         setGroups(groups);
         return this;
     }
@@ -686,25 +656,21 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param attachment
      *        The network interface attachment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceNetworkInterface withAttachment(
-            InstanceNetworkInterfaceAttachment attachment) {
+    public InstanceNetworkInterface withAttachment(InstanceNetworkInterfaceAttachment attachment) {
         setAttachment(attachment);
         return this;
     }
 
     /**
      * <p>
-     * The association information for an Elastic IP associated with the network
-     * interface.
+     * The association information for an Elastic IP associated with the network interface.
      * </p>
      * 
      * @param association
-     *        The association information for an Elastic IP associated with the
-     *        network interface.
+     *        The association information for an Elastic IP associated with the network interface.
      */
 
     public void setAssociation(InstanceNetworkInterfaceAssociation association) {
@@ -713,12 +679,10 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The association information for an Elastic IP associated with the network
-     * interface.
+     * The association information for an Elastic IP associated with the network interface.
      * </p>
      * 
-     * @return The association information for an Elastic IP associated with the
-     *         network interface.
+     * @return The association information for an Elastic IP associated with the network interface.
      */
 
     public InstanceNetworkInterfaceAssociation getAssociation() {
@@ -727,19 +691,15 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The association information for an Elastic IP associated with the network
-     * interface.
+     * The association information for an Elastic IP associated with the network interface.
      * </p>
      * 
      * @param association
-     *        The association information for an Elastic IP associated with the
-     *        network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The association information for an Elastic IP associated with the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceNetworkInterface withAssociation(
-            InstanceNetworkInterfaceAssociation association) {
+    public InstanceNetworkInterface withAssociation(InstanceNetworkInterfaceAssociation association) {
         setAssociation(association);
         return this;
     }
@@ -768,15 +728,13 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      *        The private IP addresses associated with the network interface.
      */
 
-    public void setPrivateIpAddresses(
-            java.util.Collection<InstancePrivateIpAddress> privateIpAddresses) {
+    public void setPrivateIpAddresses(java.util.Collection<InstancePrivateIpAddress> privateIpAddresses) {
         if (privateIpAddresses == null) {
             this.privateIpAddresses = null;
             return;
         }
 
-        this.privateIpAddresses = new com.amazonaws.internal.SdkInternalList<InstancePrivateIpAddress>(
-                privateIpAddresses);
+        this.privateIpAddresses = new com.amazonaws.internal.SdkInternalList<InstancePrivateIpAddress>(privateIpAddresses);
     }
 
     /**
@@ -784,23 +742,19 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * The private IP addresses associated with the network interface.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPrivateIpAddresses(java.util.Collection)} or
-     * {@link #withPrivateIpAddresses(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPrivateIpAddresses(java.util.Collection)} or {@link #withPrivateIpAddresses(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param privateIpAddresses
      *        The private IP addresses associated with the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceNetworkInterface withPrivateIpAddresses(
-            InstancePrivateIpAddress... privateIpAddresses) {
+    public InstanceNetworkInterface withPrivateIpAddresses(InstancePrivateIpAddress... privateIpAddresses) {
         if (this.privateIpAddresses == null) {
-            setPrivateIpAddresses(new com.amazonaws.internal.SdkInternalList<InstancePrivateIpAddress>(
-                    privateIpAddresses.length));
+            setPrivateIpAddresses(new com.amazonaws.internal.SdkInternalList<InstancePrivateIpAddress>(privateIpAddresses.length));
         }
         for (InstancePrivateIpAddress ele : privateIpAddresses) {
             this.privateIpAddresses.add(ele);
@@ -815,19 +769,16 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param privateIpAddresses
      *        The private IP addresses associated with the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceNetworkInterface withPrivateIpAddresses(
-            java.util.Collection<InstancePrivateIpAddress> privateIpAddresses) {
+    public InstanceNetworkInterface withPrivateIpAddresses(java.util.Collection<InstancePrivateIpAddress> privateIpAddresses) {
         setPrivateIpAddresses(privateIpAddresses);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -879,83 +830,61 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
         if (obj instanceof InstanceNetworkInterface == false)
             return false;
         InstanceNetworkInterface other = (InstanceNetworkInterface) obj;
-        if (other.getNetworkInterfaceId() == null
-                ^ this.getNetworkInterfaceId() == null)
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
-        if (other.getNetworkInterfaceId() != null
-                && other.getNetworkInterfaceId().equals(
-                        this.getNetworkInterfaceId()) == false)
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
         if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
-        if (other.getSubnetId() != null
-                && other.getSubnetId().equals(this.getSubnetId()) == false)
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getOwnerId() == null ^ this.getOwnerId() == null)
             return false;
-        if (other.getOwnerId() != null
-                && other.getOwnerId().equals(this.getOwnerId()) == false)
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getMacAddress() == null ^ this.getMacAddress() == null)
             return false;
-        if (other.getMacAddress() != null
-                && other.getMacAddress().equals(this.getMacAddress()) == false)
+        if (other.getMacAddress() != null && other.getMacAddress().equals(this.getMacAddress()) == false)
             return false;
-        if (other.getPrivateIpAddress() == null
-                ^ this.getPrivateIpAddress() == null)
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
             return false;
-        if (other.getPrivateIpAddress() != null
-                && other.getPrivateIpAddress().equals(
-                        this.getPrivateIpAddress()) == false)
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
             return false;
-        if (other.getPrivateDnsName() == null
-                ^ this.getPrivateDnsName() == null)
+        if (other.getPrivateDnsName() == null ^ this.getPrivateDnsName() == null)
             return false;
-        if (other.getPrivateDnsName() != null
-                && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false)
+        if (other.getPrivateDnsName() != null && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false)
             return false;
-        if (other.getSourceDestCheck() == null
-                ^ this.getSourceDestCheck() == null)
+        if (other.getSourceDestCheck() == null ^ this.getSourceDestCheck() == null)
             return false;
-        if (other.getSourceDestCheck() != null
-                && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
+        if (other.getSourceDestCheck() != null && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
             return false;
         if (other.getGroups() == null ^ this.getGroups() == null)
             return false;
-        if (other.getGroups() != null
-                && other.getGroups().equals(this.getGroups()) == false)
+        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
             return false;
         if (other.getAttachment() == null ^ this.getAttachment() == null)
             return false;
-        if (other.getAttachment() != null
-                && other.getAttachment().equals(this.getAttachment()) == false)
+        if (other.getAttachment() != null && other.getAttachment().equals(this.getAttachment()) == false)
             return false;
         if (other.getAssociation() == null ^ this.getAssociation() == null)
             return false;
-        if (other.getAssociation() != null
-                && other.getAssociation().equals(this.getAssociation()) == false)
+        if (other.getAssociation() != null && other.getAssociation().equals(this.getAssociation()) == false)
             return false;
-        if (other.getPrivateIpAddresses() == null
-                ^ this.getPrivateIpAddresses() == null)
+        if (other.getPrivateIpAddresses() == null ^ this.getPrivateIpAddresses() == null)
             return false;
-        if (other.getPrivateIpAddresses() != null
-                && other.getPrivateIpAddresses().equals(
-                        this.getPrivateIpAddresses()) == false)
+        if (other.getPrivateIpAddresses() != null && other.getPrivateIpAddresses().equals(this.getPrivateIpAddresses()) == false)
             return false;
         return true;
     }
@@ -965,46 +894,20 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaceId() == null) ? 0
-                        : getNetworkInterfaceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getMacAddress() == null) ? 0 : getMacAddress().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getGroups() == null) ? 0 : getGroups().hashCode());
-        hashCode = prime * hashCode
-                + ((getAttachment() == null) ? 0 : getAttachment().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAssociation() == null) ? 0 : getAssociation().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrivateIpAddresses() == null) ? 0
-                        : getPrivateIpAddresses().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getMacAddress() == null) ? 0 : getMacAddress().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
+        hashCode = prime * hashCode + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck().hashCode());
+        hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
+        hashCode = prime * hashCode + ((getAttachment() == null) ? 0 : getAttachment().hashCode());
+        hashCode = prime * hashCode + ((getAssociation() == null) ? 0 : getAssociation().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());
         return hashCode;
     }
 
@@ -1013,9 +916,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
         try {
             return (InstanceNetworkInterface) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

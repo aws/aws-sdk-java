@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
 
@@ -25,8 +23,8 @@ public class PipelineDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The pipeline identifier that was assigned by AWS Data Pipeline. This is a
-     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form
+     * <code>df-297EG78HU43EEXAMPLE</code>.
      * </p>
      */
     private String pipelineId;
@@ -38,8 +36,7 @@ public class PipelineDescription implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * A list of read-only fields that contain metadata about the pipeline:
-     * @userId, @accountId, and @pipelineState.
+     * A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Field> fields;
@@ -51,24 +48,22 @@ public class PipelineDescription implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * A list of tags to associated with a pipeline. Tags let you control access
-     * to pipelines. For more information, see <a href=
-     * "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html"
-     * >Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline
-     * Developer Guide</i>.
+     * A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see
+     * <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User
+     * Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
-     * The pipeline identifier that was assigned by AWS Data Pipeline. This is a
-     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form
+     * <code>df-297EG78HU43EEXAMPLE</code>.
      * </p>
      * 
      * @param pipelineId
-     *        The pipeline identifier that was assigned by AWS Data Pipeline.
-     *        This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     *        The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form
+     *        <code>df-297EG78HU43EEXAMPLE</code>.
      */
 
     public void setPipelineId(String pipelineId) {
@@ -77,12 +72,12 @@ public class PipelineDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The pipeline identifier that was assigned by AWS Data Pipeline. This is a
-     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form
+     * <code>df-297EG78HU43EEXAMPLE</code>.
      * </p>
      * 
-     * @return The pipeline identifier that was assigned by AWS Data Pipeline.
-     *         This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * @return The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form
+     *         <code>df-297EG78HU43EEXAMPLE</code>.
      */
 
     public String getPipelineId() {
@@ -91,15 +86,14 @@ public class PipelineDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The pipeline identifier that was assigned by AWS Data Pipeline. This is a
-     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form
+     * <code>df-297EG78HU43EEXAMPLE</code>.
      * </p>
      * 
      * @param pipelineId
-     *        The pipeline identifier that was assigned by AWS Data Pipeline.
-     *        This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form
+     *        <code>df-297EG78HU43EEXAMPLE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PipelineDescription withPipelineId(String pipelineId) {
@@ -139,8 +133,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PipelineDescription withName(String name) {
@@ -150,12 +143,11 @@ public class PipelineDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of read-only fields that contain metadata about the pipeline:
-     * @userId, @accountId, and @pipelineState.
+     * A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.
      * </p>
      * 
-     * @return A list of read-only fields that contain metadata about the
-     *         pipeline: @userId, @accountId, and @pipelineState.
+     * @return A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and
+     *         @pipelineState.
      */
 
     public java.util.List<Field> getFields() {
@@ -167,13 +159,12 @@ public class PipelineDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of read-only fields that contain metadata about the pipeline:
-     * @userId, @accountId, and @pipelineState.
+     * A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.
      * </p>
      * 
      * @param fields
-     *        A list of read-only fields that contain metadata about the
-     *        pipeline: @userId, @accountId, and @pipelineState.
+     *        A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and
+     *        @pipelineState.
      */
 
     public void setFields(java.util.Collection<Field> fields) {
@@ -187,27 +178,23 @@ public class PipelineDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of read-only fields that contain metadata about the pipeline:
-     * @userId, @accountId, and @pipelineState.
+     * A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFields(java.util.Collection)} or
-     * {@link #withFields(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFields(java.util.Collection)} or {@link #withFields(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param fields
-     *        A list of read-only fields that contain metadata about the
-     *        pipeline: @userId, @accountId, and @pipelineState.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and
+     *        @pipelineState.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PipelineDescription withFields(Field... fields) {
         if (this.fields == null) {
-            setFields(new com.amazonaws.internal.SdkInternalList<Field>(
-                    fields.length));
+            setFields(new com.amazonaws.internal.SdkInternalList<Field>(fields.length));
         }
         for (Field ele : fields) {
             this.fields.add(ele);
@@ -217,15 +204,13 @@ public class PipelineDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of read-only fields that contain metadata about the pipeline:
-     * @userId, @accountId, and @pipelineState.
+     * A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.
      * </p>
      * 
      * @param fields
-     *        A list of read-only fields that contain metadata about the
-     *        pipeline: @userId, @accountId, and @pipelineState.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and
+     *        @pipelineState.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PipelineDescription withFields(java.util.Collection<Field> fields) {
@@ -265,8 +250,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * 
      * @param description
      *        Description of the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PipelineDescription withDescription(String description) {
@@ -276,18 +260,15 @@ public class PipelineDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags to associated with a pipeline. Tags let you control access
-     * to pipelines. For more information, see <a href=
-     * "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html"
-     * >Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline
-     * Developer Guide</i>.
+     * A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see
+     * <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User
+     * Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
      * </p>
      * 
-     * @return A list of tags to associated with a pipeline. Tags let you
-     *         control access to pipelines. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html"
-     *         >Controlling User Access to Pipelines</a> in the <i>AWS Data
-     *         Pipeline Developer Guide</i>.
+     * @return A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
+     *         User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -299,19 +280,16 @@ public class PipelineDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags to associated with a pipeline. Tags let you control access
-     * to pipelines. For more information, see <a href=
-     * "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html"
-     * >Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline
-     * Developer Guide</i>.
+     * A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see
+     * <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User
+     * Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
      * </p>
      * 
      * @param tags
-     *        A list of tags to associated with a pipeline. Tags let you control
-     *        access to pipelines. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html"
-     *        >Controlling User Access to Pipelines</a> in the <i>AWS Data
-     *        Pipeline Developer Guide</i>.
+     *        A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
+     *        User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -325,27 +303,22 @@ public class PipelineDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags to associated with a pipeline. Tags let you control access
-     * to pipelines. For more information, see <a href=
-     * "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html"
-     * >Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline
-     * Developer Guide</i>.
+     * A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see
+     * <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User
+     * Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     *        A list of tags to associated with a pipeline. Tags let you control
-     *        access to pipelines. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html"
-     *        >Controlling User Access to Pipelines</a> in the <i>AWS Data
-     *        Pipeline Developer Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
+     *        User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PipelineDescription withTags(Tag... tags) {
@@ -360,21 +333,17 @@ public class PipelineDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags to associated with a pipeline. Tags let you control access
-     * to pipelines. For more information, see <a href=
-     * "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html"
-     * >Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline
-     * Developer Guide</i>.
+     * A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see
+     * <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User
+     * Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
      * </p>
      * 
      * @param tags
-     *        A list of tags to associated with a pipeline. Tags let you control
-     *        access to pipelines. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html"
-     *        >Controlling User Access to Pipelines</a> in the <i>AWS Data
-     *        Pipeline Developer Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
+     *        User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PipelineDescription withTags(java.util.Collection<Tag> tags) {
@@ -383,8 +352,7 @@ public class PipelineDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -420,28 +388,23 @@ public class PipelineDescription implements Serializable, Cloneable {
         PipelineDescription other = (PipelineDescription) obj;
         if (other.getPipelineId() == null ^ this.getPipelineId() == null)
             return false;
-        if (other.getPipelineId() != null
-                && other.getPipelineId().equals(this.getPipelineId()) == false)
+        if (other.getPipelineId() != null && other.getPipelineId().equals(this.getPipelineId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getFields() == null ^ this.getFields() == null)
             return false;
-        if (other.getFields() != null
-                && other.getFields().equals(this.getFields()) == false)
+        if (other.getFields() != null && other.getFields().equals(this.getFields()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -451,17 +414,11 @@ public class PipelineDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getFields() == null) ? 0 : getFields().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getFields() == null) ? 0 : getFields().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -470,9 +427,7 @@ public class PipelineDescription implements Serializable, Cloneable {
         try {
             return (PipelineDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * A list of available AWS Elastic Beanstalk solution stacks.
  * </p>
  */
-public class ListAvailableSolutionStacksResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListAvailableSolutionStacksResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,7 @@ public class ListAvailableSolutionStacksResult extends
     private com.amazonaws.internal.SdkInternalList<String> solutionStacks;
     /**
      * <p>
-     * A list of available solution stacks and their
-     * <a>SolutionStackDescription</a>.
+     * A list of available solution stacks and their <a>SolutionStackDescription</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SolutionStackDescription> solutionStackDetails;
@@ -69,8 +64,7 @@ public class ListAvailableSolutionStacksResult extends
             return;
         }
 
-        this.solutionStacks = new com.amazonaws.internal.SdkInternalList<String>(
-                solutionStacks);
+        this.solutionStacks = new com.amazonaws.internal.SdkInternalList<String>(solutionStacks);
     }
 
     /**
@@ -78,23 +72,19 @@ public class ListAvailableSolutionStacksResult extends
      * A list of available solution stacks.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSolutionStacks(java.util.Collection)} or
-     * {@link #withSolutionStacks(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSolutionStacks(java.util.Collection)} or {@link #withSolutionStacks(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param solutionStacks
      *        A list of available solution stacks.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListAvailableSolutionStacksResult withSolutionStacks(
-            String... solutionStacks) {
+    public ListAvailableSolutionStacksResult withSolutionStacks(String... solutionStacks) {
         if (this.solutionStacks == null) {
-            setSolutionStacks(new com.amazonaws.internal.SdkInternalList<String>(
-                    solutionStacks.length));
+            setSolutionStacks(new com.amazonaws.internal.SdkInternalList<String>(solutionStacks.length));
         }
         for (String ele : solutionStacks) {
             this.solutionStacks.add(ele);
@@ -109,24 +99,20 @@ public class ListAvailableSolutionStacksResult extends
      * 
      * @param solutionStacks
      *        A list of available solution stacks.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListAvailableSolutionStacksResult withSolutionStacks(
-            java.util.Collection<String> solutionStacks) {
+    public ListAvailableSolutionStacksResult withSolutionStacks(java.util.Collection<String> solutionStacks) {
         setSolutionStacks(solutionStacks);
         return this;
     }
 
     /**
      * <p>
-     * A list of available solution stacks and their
-     * <a>SolutionStackDescription</a>.
+     * A list of available solution stacks and their <a>SolutionStackDescription</a>.
      * </p>
      * 
-     * @return A list of available solution stacks and their
-     *         <a>SolutionStackDescription</a>.
+     * @return A list of available solution stacks and their <a>SolutionStackDescription</a>.
      */
 
     public java.util.List<SolutionStackDescription> getSolutionStackDetails() {
@@ -138,50 +124,40 @@ public class ListAvailableSolutionStacksResult extends
 
     /**
      * <p>
-     * A list of available solution stacks and their
-     * <a>SolutionStackDescription</a>.
+     * A list of available solution stacks and their <a>SolutionStackDescription</a>.
      * </p>
      * 
      * @param solutionStackDetails
-     *        A list of available solution stacks and their
-     *        <a>SolutionStackDescription</a>.
+     *        A list of available solution stacks and their <a>SolutionStackDescription</a>.
      */
 
-    public void setSolutionStackDetails(
-            java.util.Collection<SolutionStackDescription> solutionStackDetails) {
+    public void setSolutionStackDetails(java.util.Collection<SolutionStackDescription> solutionStackDetails) {
         if (solutionStackDetails == null) {
             this.solutionStackDetails = null;
             return;
         }
 
-        this.solutionStackDetails = new com.amazonaws.internal.SdkInternalList<SolutionStackDescription>(
-                solutionStackDetails);
+        this.solutionStackDetails = new com.amazonaws.internal.SdkInternalList<SolutionStackDescription>(solutionStackDetails);
     }
 
     /**
      * <p>
-     * A list of available solution stacks and their
-     * <a>SolutionStackDescription</a>.
+     * A list of available solution stacks and their <a>SolutionStackDescription</a>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSolutionStackDetails(java.util.Collection)} or
-     * {@link #withSolutionStackDetails(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSolutionStackDetails(java.util.Collection)} or {@link #withSolutionStackDetails(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param solutionStackDetails
-     *        A list of available solution stacks and their
-     *        <a>SolutionStackDescription</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of available solution stacks and their <a>SolutionStackDescription</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListAvailableSolutionStacksResult withSolutionStackDetails(
-            SolutionStackDescription... solutionStackDetails) {
+    public ListAvailableSolutionStacksResult withSolutionStackDetails(SolutionStackDescription... solutionStackDetails) {
         if (this.solutionStackDetails == null) {
-            setSolutionStackDetails(new com.amazonaws.internal.SdkInternalList<SolutionStackDescription>(
-                    solutionStackDetails.length));
+            setSolutionStackDetails(new com.amazonaws.internal.SdkInternalList<SolutionStackDescription>(solutionStackDetails.length));
         }
         for (SolutionStackDescription ele : solutionStackDetails) {
             this.solutionStackDetails.add(ele);
@@ -191,26 +167,21 @@ public class ListAvailableSolutionStacksResult extends
 
     /**
      * <p>
-     * A list of available solution stacks and their
-     * <a>SolutionStackDescription</a>.
+     * A list of available solution stacks and their <a>SolutionStackDescription</a>.
      * </p>
      * 
      * @param solutionStackDetails
-     *        A list of available solution stacks and their
-     *        <a>SolutionStackDescription</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of available solution stacks and their <a>SolutionStackDescription</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListAvailableSolutionStacksResult withSolutionStackDetails(
-            java.util.Collection<SolutionStackDescription> solutionStackDetails) {
+    public ListAvailableSolutionStacksResult withSolutionStackDetails(java.util.Collection<SolutionStackDescription> solutionStackDetails) {
         setSolutionStackDetails(solutionStackDetails);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -238,18 +209,13 @@ public class ListAvailableSolutionStacksResult extends
         if (obj instanceof ListAvailableSolutionStacksResult == false)
             return false;
         ListAvailableSolutionStacksResult other = (ListAvailableSolutionStacksResult) obj;
-        if (other.getSolutionStacks() == null
-                ^ this.getSolutionStacks() == null)
+        if (other.getSolutionStacks() == null ^ this.getSolutionStacks() == null)
             return false;
-        if (other.getSolutionStacks() != null
-                && other.getSolutionStacks().equals(this.getSolutionStacks()) == false)
+        if (other.getSolutionStacks() != null && other.getSolutionStacks().equals(this.getSolutionStacks()) == false)
             return false;
-        if (other.getSolutionStackDetails() == null
-                ^ this.getSolutionStackDetails() == null)
+        if (other.getSolutionStackDetails() == null ^ this.getSolutionStackDetails() == null)
             return false;
-        if (other.getSolutionStackDetails() != null
-                && other.getSolutionStackDetails().equals(
-                        this.getSolutionStackDetails()) == false)
+        if (other.getSolutionStackDetails() != null && other.getSolutionStackDetails().equals(this.getSolutionStackDetails()) == false)
             return false;
         return true;
     }
@@ -259,14 +225,8 @@ public class ListAvailableSolutionStacksResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSolutionStacks() == null) ? 0 : getSolutionStacks()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSolutionStackDetails() == null) ? 0
-                        : getSolutionStackDetails().hashCode());
+        hashCode = prime * hashCode + ((getSolutionStacks() == null) ? 0 : getSolutionStacks().hashCode());
+        hashCode = prime * hashCode + ((getSolutionStackDetails() == null) ? 0 : getSolutionStackDetails().hashCode());
         return hashCode;
     }
 
@@ -275,9 +235,7 @@ public class ListAvailableSolutionStacksResult extends
         try {
             return (ListAvailableSolutionStacksResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

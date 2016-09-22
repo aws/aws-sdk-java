@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitosync.model.transform;
 
@@ -43,52 +41,39 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeDatasetRequest Marshaller
  */
-public class DescribeDatasetRequestMarshaller implements
-        Marshaller<Request<DescribeDatasetRequest>, DescribeDatasetRequest> {
+public class DescribeDatasetRequestMarshaller implements Marshaller<Request<DescribeDatasetRequest>, DescribeDatasetRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeDatasetRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeDatasetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeDatasetRequest> marshall(
-            DescribeDatasetRequest describeDatasetRequest) {
+    public Request<DescribeDatasetRequest> marshall(DescribeDatasetRequest describeDatasetRequest) {
 
         if (describeDatasetRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeDatasetRequest> request = new DefaultRequest<DescribeDatasetRequest>(
-                describeDatasetRequest, "AmazonCognitoSync");
+        Request<DescribeDatasetRequest> request = new DefaultRequest<DescribeDatasetRequest>(describeDatasetRequest, "AmazonCognitoSync");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{IdentityPoolId}",
-                        (describeDatasetRequest.getIdentityPoolId() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(describeDatasetRequest
-                                                .getIdentityPoolId()), false)
-                                : "");
         uriResourcePath = uriResourcePath.replace(
-                "{IdentityId}",
-                (describeDatasetRequest.getIdentityId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils
-                                .fromString(describeDatasetRequest
-                                        .getIdentityId()), false) : "");
+                "{IdentityPoolId}",
+                (describeDatasetRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(describeDatasetRequest.getIdentityPoolId()), false) : "");
         uriResourcePath = uriResourcePath
                 .replace(
-                        "{DatasetName}",
-                        (describeDatasetRequest.getDatasetName() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(describeDatasetRequest
-                                                .getDatasetName()), false) : "");
+                        "{IdentityId}",
+                        (describeDatasetRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils.fromString(describeDatasetRequest.getIdentityId()), false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{DatasetName}",
+                (describeDatasetRequest.getDatasetName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(describeDatasetRequest.getDatasetName()),
+                        false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

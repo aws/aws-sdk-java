@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for ModifyLoadBalancerAttributes.
  * </p>
  */
-public class ModifyLoadBalancerAttributesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ModifyLoadBalancerAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -71,12 +67,10 @@ public class ModifyLoadBalancerAttributesRequest extends
      * 
      * @param loadBalancerName
      *        The name of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyLoadBalancerAttributesRequest withLoadBalancerName(
-            String loadBalancerName) {
+    public ModifyLoadBalancerAttributesRequest withLoadBalancerName(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
         return this;
     }
@@ -90,8 +84,7 @@ public class ModifyLoadBalancerAttributesRequest extends
      *        The attributes of the load balancer.
      */
 
-    public void setLoadBalancerAttributes(
-            LoadBalancerAttributes loadBalancerAttributes) {
+    public void setLoadBalancerAttributes(LoadBalancerAttributes loadBalancerAttributes) {
         this.loadBalancerAttributes = loadBalancerAttributes;
     }
 
@@ -114,19 +107,16 @@ public class ModifyLoadBalancerAttributesRequest extends
      * 
      * @param loadBalancerAttributes
      *        The attributes of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyLoadBalancerAttributesRequest withLoadBalancerAttributes(
-            LoadBalancerAttributes loadBalancerAttributes) {
+    public ModifyLoadBalancerAttributesRequest withLoadBalancerAttributes(LoadBalancerAttributes loadBalancerAttributes) {
         setLoadBalancerAttributes(loadBalancerAttributes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -154,19 +144,13 @@ public class ModifyLoadBalancerAttributesRequest extends
         if (obj instanceof ModifyLoadBalancerAttributesRequest == false)
             return false;
         ModifyLoadBalancerAttributesRequest other = (ModifyLoadBalancerAttributesRequest) obj;
-        if (other.getLoadBalancerName() == null
-                ^ this.getLoadBalancerName() == null)
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null)
             return false;
-        if (other.getLoadBalancerName() != null
-                && other.getLoadBalancerName().equals(
-                        this.getLoadBalancerName()) == false)
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false)
             return false;
-        if (other.getLoadBalancerAttributes() == null
-                ^ this.getLoadBalancerAttributes() == null)
+        if (other.getLoadBalancerAttributes() == null ^ this.getLoadBalancerAttributes() == null)
             return false;
-        if (other.getLoadBalancerAttributes() != null
-                && other.getLoadBalancerAttributes().equals(
-                        this.getLoadBalancerAttributes()) == false)
+        if (other.getLoadBalancerAttributes() != null && other.getLoadBalancerAttributes().equals(this.getLoadBalancerAttributes()) == false)
             return false;
         return true;
     }
@@ -176,14 +160,8 @@ public class ModifyLoadBalancerAttributesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerAttributes() == null) ? 0
-                        : getLoadBalancerAttributes().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerAttributes() == null) ? 0 : getLoadBalancerAttributes().hashCode());
         return hashCode;
     }
 

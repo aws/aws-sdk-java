@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.support.model;
 
@@ -20,41 +18,35 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class AddAttachmentsToSetRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class AddAttachmentsToSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the attachment set. If an <code>attachmentSetId</code> is not
-     * specified, a new attachment set is created, and the ID of the set is
-     * returned in the response. If an <code>attachmentSetId</code> is
-     * specified, the attachments are added to the specified set, if it exists.
+     * The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is
+     * created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the
+     * attachments are added to the specified set, if it exists.
      * </p>
      */
     private String attachmentSetId;
     /**
      * <p>
-     * One or more attachments to add to the set. The limit is 3 attachments per
-     * set, and the size limit is 5 MB per attachment.
+     * One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per
+     * attachment.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attachment> attachments;
 
     /**
      * <p>
-     * The ID of the attachment set. If an <code>attachmentSetId</code> is not
-     * specified, a new attachment set is created, and the ID of the set is
-     * returned in the response. If an <code>attachmentSetId</code> is
-     * specified, the attachments are added to the specified set, if it exists.
+     * The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is
+     * created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the
+     * attachments are added to the specified set, if it exists.
      * </p>
      * 
      * @param attachmentSetId
-     *        The ID of the attachment set. If an <code>attachmentSetId</code>
-     *        is not specified, a new attachment set is created, and the ID of
-     *        the set is returned in the response. If an
-     *        <code>attachmentSetId</code> is specified, the attachments are
-     *        added to the specified set, if it exists.
+     *        The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is
+     *        created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is
+     *        specified, the attachments are added to the specified set, if it exists.
      */
 
     public void setAttachmentSetId(String attachmentSetId) {
@@ -63,17 +55,14 @@ public class AddAttachmentsToSetRequest extends
 
     /**
      * <p>
-     * The ID of the attachment set. If an <code>attachmentSetId</code> is not
-     * specified, a new attachment set is created, and the ID of the set is
-     * returned in the response. If an <code>attachmentSetId</code> is
-     * specified, the attachments are added to the specified set, if it exists.
+     * The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is
+     * created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the
+     * attachments are added to the specified set, if it exists.
      * </p>
      * 
-     * @return The ID of the attachment set. If an <code>attachmentSetId</code>
-     *         is not specified, a new attachment set is created, and the ID of
-     *         the set is returned in the response. If an
-     *         <code>attachmentSetId</code> is specified, the attachments are
-     *         added to the specified set, if it exists.
+     * @return The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set
+     *         is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is
+     *         specified, the attachments are added to the specified set, if it exists.
      */
 
     public String getAttachmentSetId() {
@@ -82,20 +71,16 @@ public class AddAttachmentsToSetRequest extends
 
     /**
      * <p>
-     * The ID of the attachment set. If an <code>attachmentSetId</code> is not
-     * specified, a new attachment set is created, and the ID of the set is
-     * returned in the response. If an <code>attachmentSetId</code> is
-     * specified, the attachments are added to the specified set, if it exists.
+     * The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is
+     * created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the
+     * attachments are added to the specified set, if it exists.
      * </p>
      * 
      * @param attachmentSetId
-     *        The ID of the attachment set. If an <code>attachmentSetId</code>
-     *        is not specified, a new attachment set is created, and the ID of
-     *        the set is returned in the response. If an
-     *        <code>attachmentSetId</code> is specified, the attachments are
-     *        added to the specified set, if it exists.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is
+     *        created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is
+     *        specified, the attachments are added to the specified set, if it exists.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddAttachmentsToSetRequest withAttachmentSetId(String attachmentSetId) {
@@ -105,12 +90,12 @@ public class AddAttachmentsToSetRequest extends
 
     /**
      * <p>
-     * One or more attachments to add to the set. The limit is 3 attachments per
-     * set, and the size limit is 5 MB per attachment.
+     * One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per
+     * attachment.
      * </p>
      * 
-     * @return One or more attachments to add to the set. The limit is 3
-     *         attachments per set, and the size limit is 5 MB per attachment.
+     * @return One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB
+     *         per attachment.
      */
 
     public java.util.List<Attachment> getAttachments() {
@@ -122,13 +107,13 @@ public class AddAttachmentsToSetRequest extends
 
     /**
      * <p>
-     * One or more attachments to add to the set. The limit is 3 attachments per
-     * set, and the size limit is 5 MB per attachment.
+     * One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per
+     * attachment.
      * </p>
      * 
      * @param attachments
-     *        One or more attachments to add to the set. The limit is 3
-     *        attachments per set, and the size limit is 5 MB per attachment.
+     *        One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB
+     *        per attachment.
      */
 
     public void setAttachments(java.util.Collection<Attachment> attachments) {
@@ -137,33 +122,29 @@ public class AddAttachmentsToSetRequest extends
             return;
         }
 
-        this.attachments = new com.amazonaws.internal.SdkInternalList<Attachment>(
-                attachments);
+        this.attachments = new com.amazonaws.internal.SdkInternalList<Attachment>(attachments);
     }
 
     /**
      * <p>
-     * One or more attachments to add to the set. The limit is 3 attachments per
-     * set, and the size limit is 5 MB per attachment.
+     * One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per
+     * attachment.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttachments(java.util.Collection)} or
-     * {@link #withAttachments(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttachments(java.util.Collection)} or {@link #withAttachments(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param attachments
-     *        One or more attachments to add to the set. The limit is 3
-     *        attachments per set, and the size limit is 5 MB per attachment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB
+     *        per attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddAttachmentsToSetRequest withAttachments(Attachment... attachments) {
         if (this.attachments == null) {
-            setAttachments(new com.amazonaws.internal.SdkInternalList<Attachment>(
-                    attachments.length));
+            setAttachments(new com.amazonaws.internal.SdkInternalList<Attachment>(attachments.length));
         }
         for (Attachment ele : attachments) {
             this.attachments.add(ele);
@@ -173,26 +154,23 @@ public class AddAttachmentsToSetRequest extends
 
     /**
      * <p>
-     * One or more attachments to add to the set. The limit is 3 attachments per
-     * set, and the size limit is 5 MB per attachment.
+     * One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per
+     * attachment.
      * </p>
      * 
      * @param attachments
-     *        One or more attachments to add to the set. The limit is 3
-     *        attachments per set, and the size limit is 5 MB per attachment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB
+     *        per attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AddAttachmentsToSetRequest withAttachments(
-            java.util.Collection<Attachment> attachments) {
+    public AddAttachmentsToSetRequest withAttachments(java.util.Collection<Attachment> attachments) {
         setAttachments(attachments);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -220,16 +198,13 @@ public class AddAttachmentsToSetRequest extends
         if (obj instanceof AddAttachmentsToSetRequest == false)
             return false;
         AddAttachmentsToSetRequest other = (AddAttachmentsToSetRequest) obj;
-        if (other.getAttachmentSetId() == null
-                ^ this.getAttachmentSetId() == null)
+        if (other.getAttachmentSetId() == null ^ this.getAttachmentSetId() == null)
             return false;
-        if (other.getAttachmentSetId() != null
-                && other.getAttachmentSetId().equals(this.getAttachmentSetId()) == false)
+        if (other.getAttachmentSetId() != null && other.getAttachmentSetId().equals(this.getAttachmentSetId()) == false)
             return false;
         if (other.getAttachments() == null ^ this.getAttachments() == null)
             return false;
-        if (other.getAttachments() != null
-                && other.getAttachments().equals(this.getAttachments()) == false)
+        if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false)
             return false;
         return true;
     }
@@ -239,13 +214,8 @@ public class AddAttachmentsToSetRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAttachmentSetId() == null) ? 0 : getAttachmentSetId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentSetId() == null) ? 0 : getAttachmentSetId().hashCode());
+        hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
         return hashCode;
     }
 

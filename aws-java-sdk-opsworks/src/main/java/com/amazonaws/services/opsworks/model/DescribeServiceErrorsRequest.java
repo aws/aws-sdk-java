@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -20,45 +18,38 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeServiceErrorsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeServiceErrorsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The stack ID. If you use this parameter,
-     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors
      * associated with the specified stack.
      * </p>
      */
     private String stackId;
     /**
      * <p>
-     * The instance ID. If you use this parameter,
-     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors
      * associated with the specified instance.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * An array of service error IDs. If you use this parameter,
-     * <code>DescribeServiceErrors</code> returns descriptions of the specified
-     * errors. Otherwise, it returns a description of every error.
+     * An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions
+     * of the specified errors. Otherwise, it returns a description of every error.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> serviceErrorIds;
 
     /**
      * <p>
-     * The stack ID. If you use this parameter,
-     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors
      * associated with the specified stack.
      * </p>
      * 
      * @param stackId
-     *        The stack ID. If you use this parameter,
-     *        <code>DescribeServiceErrors</code> returns descriptions of the
+     *        The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the
      *        errors associated with the specified stack.
      */
 
@@ -68,13 +59,11 @@ public class DescribeServiceErrorsRequest extends
 
     /**
      * <p>
-     * The stack ID. If you use this parameter,
-     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors
      * associated with the specified stack.
      * </p>
      * 
-     * @return The stack ID. If you use this parameter,
-     *         <code>DescribeServiceErrors</code> returns descriptions of the
+     * @return The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the
      *         errors associated with the specified stack.
      */
 
@@ -84,17 +73,14 @@ public class DescribeServiceErrorsRequest extends
 
     /**
      * <p>
-     * The stack ID. If you use this parameter,
-     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors
      * associated with the specified stack.
      * </p>
      * 
      * @param stackId
-     *        The stack ID. If you use this parameter,
-     *        <code>DescribeServiceErrors</code> returns descriptions of the
+     *        The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the
      *        errors associated with the specified stack.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeServiceErrorsRequest withStackId(String stackId) {
@@ -104,14 +90,12 @@ public class DescribeServiceErrorsRequest extends
 
     /**
      * <p>
-     * The instance ID. If you use this parameter,
-     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors
      * associated with the specified instance.
      * </p>
      * 
      * @param instanceId
-     *        The instance ID. If you use this parameter,
-     *        <code>DescribeServiceErrors</code> returns descriptions of the
+     *        The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the
      *        errors associated with the specified instance.
      */
 
@@ -121,14 +105,12 @@ public class DescribeServiceErrorsRequest extends
 
     /**
      * <p>
-     * The instance ID. If you use this parameter,
-     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors
      * associated with the specified instance.
      * </p>
      * 
-     * @return The instance ID. If you use this parameter,
-     *         <code>DescribeServiceErrors</code> returns descriptions of the
-     *         errors associated with the specified instance.
+     * @return The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of
+     *         the errors associated with the specified instance.
      */
 
     public String getInstanceId() {
@@ -137,17 +119,14 @@ public class DescribeServiceErrorsRequest extends
 
     /**
      * <p>
-     * The instance ID. If you use this parameter,
-     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors
      * associated with the specified instance.
      * </p>
      * 
      * @param instanceId
-     *        The instance ID. If you use this parameter,
-     *        <code>DescribeServiceErrors</code> returns descriptions of the
+     *        The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the
      *        errors associated with the specified instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeServiceErrorsRequest withInstanceId(String instanceId) {
@@ -157,15 +136,12 @@ public class DescribeServiceErrorsRequest extends
 
     /**
      * <p>
-     * An array of service error IDs. If you use this parameter,
-     * <code>DescribeServiceErrors</code> returns descriptions of the specified
-     * errors. Otherwise, it returns a description of every error.
+     * An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions
+     * of the specified errors. Otherwise, it returns a description of every error.
      * </p>
      * 
-     * @return An array of service error IDs. If you use this parameter,
-     *         <code>DescribeServiceErrors</code> returns descriptions of the
-     *         specified errors. Otherwise, it returns a description of every
-     *         error.
+     * @return An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns
+     *         descriptions of the specified errors. Otherwise, it returns a description of every error.
      */
 
     public java.util.List<String> getServiceErrorIds() {
@@ -177,16 +153,13 @@ public class DescribeServiceErrorsRequest extends
 
     /**
      * <p>
-     * An array of service error IDs. If you use this parameter,
-     * <code>DescribeServiceErrors</code> returns descriptions of the specified
-     * errors. Otherwise, it returns a description of every error.
+     * An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions
+     * of the specified errors. Otherwise, it returns a description of every error.
      * </p>
      * 
      * @param serviceErrorIds
-     *        An array of service error IDs. If you use this parameter,
-     *        <code>DescribeServiceErrors</code> returns descriptions of the
-     *        specified errors. Otherwise, it returns a description of every
-     *        error.
+     *        An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns
+     *        descriptions of the specified errors. Otherwise, it returns a description of every error.
      */
 
     public void setServiceErrorIds(java.util.Collection<String> serviceErrorIds) {
@@ -195,37 +168,29 @@ public class DescribeServiceErrorsRequest extends
             return;
         }
 
-        this.serviceErrorIds = new com.amazonaws.internal.SdkInternalList<String>(
-                serviceErrorIds);
+        this.serviceErrorIds = new com.amazonaws.internal.SdkInternalList<String>(serviceErrorIds);
     }
 
     /**
      * <p>
-     * An array of service error IDs. If you use this parameter,
-     * <code>DescribeServiceErrors</code> returns descriptions of the specified
-     * errors. Otherwise, it returns a description of every error.
+     * An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions
+     * of the specified errors. Otherwise, it returns a description of every error.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setServiceErrorIds(java.util.Collection)} or
-     * {@link #withServiceErrorIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setServiceErrorIds(java.util.Collection)} or {@link #withServiceErrorIds(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param serviceErrorIds
-     *        An array of service error IDs. If you use this parameter,
-     *        <code>DescribeServiceErrors</code> returns descriptions of the
-     *        specified errors. Otherwise, it returns a description of every
-     *        error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns
+     *        descriptions of the specified errors. Otherwise, it returns a description of every error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeServiceErrorsRequest withServiceErrorIds(
-            String... serviceErrorIds) {
+    public DescribeServiceErrorsRequest withServiceErrorIds(String... serviceErrorIds) {
         if (this.serviceErrorIds == null) {
-            setServiceErrorIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    serviceErrorIds.length));
+            setServiceErrorIds(new com.amazonaws.internal.SdkInternalList<String>(serviceErrorIds.length));
         }
         for (String ele : serviceErrorIds) {
             this.serviceErrorIds.add(ele);
@@ -235,29 +200,23 @@ public class DescribeServiceErrorsRequest extends
 
     /**
      * <p>
-     * An array of service error IDs. If you use this parameter,
-     * <code>DescribeServiceErrors</code> returns descriptions of the specified
-     * errors. Otherwise, it returns a description of every error.
+     * An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions
+     * of the specified errors. Otherwise, it returns a description of every error.
      * </p>
      * 
      * @param serviceErrorIds
-     *        An array of service error IDs. If you use this parameter,
-     *        <code>DescribeServiceErrors</code> returns descriptions of the
-     *        specified errors. Otherwise, it returns a description of every
-     *        error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns
+     *        descriptions of the specified errors. Otherwise, it returns a description of every error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeServiceErrorsRequest withServiceErrorIds(
-            java.util.Collection<String> serviceErrorIds) {
+    public DescribeServiceErrorsRequest withServiceErrorIds(java.util.Collection<String> serviceErrorIds) {
         setServiceErrorIds(serviceErrorIds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -289,19 +248,15 @@ public class DescribeServiceErrorsRequest extends
         DescribeServiceErrorsRequest other = (DescribeServiceErrorsRequest) obj;
         if (other.getStackId() == null ^ this.getStackId() == null)
             return false;
-        if (other.getStackId() != null
-                && other.getStackId().equals(this.getStackId()) == false)
+        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
-        if (other.getServiceErrorIds() == null
-                ^ this.getServiceErrorIds() == null)
+        if (other.getServiceErrorIds() == null ^ this.getServiceErrorIds() == null)
             return false;
-        if (other.getServiceErrorIds() != null
-                && other.getServiceErrorIds().equals(this.getServiceErrorIds()) == false)
+        if (other.getServiceErrorIds() != null && other.getServiceErrorIds().equals(this.getServiceErrorIds()) == false)
             return false;
         return true;
     }
@@ -311,14 +266,9 @@ public class DescribeServiceErrorsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStackId() == null) ? 0 : getStackId().hashCode());
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getServiceErrorIds() == null) ? 0 : getServiceErrorIds()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getServiceErrorIds() == null) ? 0 : getServiceErrorIds().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * AddTagsToResourceInput
  * </p>
  */
-public class AddTagsToResourceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,14 +30,12 @@ public class AddTagsToResourceRequest extends
     private String resourceARN;
     /**
      * <p>
-     * The key-value pair that represents the tag you want to add to the
-     * resource. The value can be an empty string.
+     * The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers
-     * representable in UTF-8 format, and the following special characters: + -
-     * = . _ : / @.
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @.
      * </p>
      * </note>
      */
@@ -53,8 +47,7 @@ public class AddTagsToResourceRequest extends
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the resource you want to add
-     *        tags to.
+     *        The Amazon Resource Name (ARN) of the resource you want to add tags to.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -66,8 +59,7 @@ public class AddTagsToResourceRequest extends
      * The Amazon Resource Name (ARN) of the resource you want to add tags to.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource you want to add
-     *         tags to.
+     * @return The Amazon Resource Name (ARN) of the resource you want to add tags to.
      */
 
     public String getResourceARN() {
@@ -80,10 +72,8 @@ public class AddTagsToResourceRequest extends
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the resource you want to add
-     *        tags to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the resource you want to add tags to.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsToResourceRequest withResourceARN(String resourceARN) {
@@ -93,23 +83,20 @@ public class AddTagsToResourceRequest extends
 
     /**
      * <p>
-     * The key-value pair that represents the tag you want to add to the
-     * resource. The value can be an empty string.
+     * The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers
-     * representable in UTF-8 format, and the following special characters: + -
-     * = . _ : / @.
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @.
      * </p>
      * </note>
      * 
-     * @return The key-value pair that represents the tag you want to add to the
-     *         resource. The value can be an empty string.</p> <note>
+     * @return The key-value pair that represents the tag you want to add to the resource. The value can be an empty
+     *         string.</p> <note>
      *         <p>
-     *         Valid characters for key and value are letters, spaces, and
-     *         numbers representable in UTF-8 format, and the following special
-     *         characters: + - = . _ : / @.
+     *         Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and
+     *         the following special characters: + - = . _ : / @.
      *         </p>
      */
 
@@ -122,24 +109,21 @@ public class AddTagsToResourceRequest extends
 
     /**
      * <p>
-     * The key-value pair that represents the tag you want to add to the
-     * resource. The value can be an empty string.
+     * The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers
-     * representable in UTF-8 format, and the following special characters: + -
-     * = . _ : / @.
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @.
      * </p>
      * </note>
      * 
      * @param tags
-     *        The key-value pair that represents the tag you want to add to the
-     *        resource. The value can be an empty string.</p> <note>
+     *        The key-value pair that represents the tag you want to add to the resource. The value can be an empty
+     *        string.</p> <note>
      *        <p>
-     *        Valid characters for key and value are letters, spaces, and
-     *        numbers representable in UTF-8 format, and the following special
-     *        characters: + - = . _ : / @.
+     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     *        following special characters: + - = . _ : / @.
      *        </p>
      */
 
@@ -154,33 +138,28 @@ public class AddTagsToResourceRequest extends
 
     /**
      * <p>
-     * The key-value pair that represents the tag you want to add to the
-     * resource. The value can be an empty string.
+     * The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers
-     * representable in UTF-8 format, and the following special characters: + -
-     * = . _ : / @.
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @.
      * </p>
      * </note>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents the tag you want to add to the
-     *        resource. The value can be an empty string.</p> <note>
+     *        The key-value pair that represents the tag you want to add to the resource. The value can be an empty
+     *        string.</p> <note>
      *        <p>
-     *        Valid characters for key and value are letters, spaces, and
-     *        numbers representable in UTF-8 format, and the following special
-     *        characters: + - = . _ : / @.
+     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     *        following special characters: + - = . _ : / @.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsToResourceRequest withTags(Tag... tags) {
@@ -195,27 +174,23 @@ public class AddTagsToResourceRequest extends
 
     /**
      * <p>
-     * The key-value pair that represents the tag you want to add to the
-     * resource. The value can be an empty string.
+     * The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers
-     * representable in UTF-8 format, and the following special characters: + -
-     * = . _ : / @.
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @.
      * </p>
      * </note>
      * 
      * @param tags
-     *        The key-value pair that represents the tag you want to add to the
-     *        resource. The value can be an empty string.</p> <note>
+     *        The key-value pair that represents the tag you want to add to the resource. The value can be an empty
+     *        string.</p> <note>
      *        <p>
-     *        Valid characters for key and value are letters, spaces, and
-     *        numbers representable in UTF-8 format, and the following special
-     *        characters: + - = . _ : / @.
+     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     *        following special characters: + - = . _ : / @.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsToResourceRequest withTags(java.util.Collection<Tag> tags) {
@@ -224,8 +199,7 @@ public class AddTagsToResourceRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -255,13 +229,11 @@ public class AddTagsToResourceRequest extends
         AddTagsToResourceRequest other = (AddTagsToResourceRequest) obj;
         if (other.getResourceARN() == null ^ this.getResourceARN() == null)
             return false;
-        if (other.getResourceARN() != null
-                && other.getResourceARN().equals(this.getResourceARN()) == false)
+        if (other.getResourceARN() != null && other.getResourceARN().equals(this.getResourceARN()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -271,11 +243,8 @@ public class AddTagsToResourceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codecommit.model;
 
@@ -31,31 +29,30 @@ public class RepositoryTrigger implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The ARN of the resource that is the target for a trigger. For example,
-     * the ARN of a topic in Amazon Simple Notification Service (SNS).
+     * The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple
+     * Notification Service (SNS).
      * </p>
      */
     private String destinationArn;
     /**
      * <p>
-     * Any custom data associated with the trigger that will be included in the
-     * information sent to the target of the trigger.
+     * Any custom data associated with the trigger that will be included in the information sent to the target of the
+     * trigger.
      * </p>
      */
     private String customData;
     /**
      * <p>
-     * The branches that will be included in the trigger configuration. If no
-     * branches are specified, the trigger will apply to all branches.
+     * The branches that will be included in the trigger configuration. If no branches are specified, the trigger will
+     * apply to all branches.
      * </p>
      */
     private java.util.List<String> branches;
     /**
      * <p>
-     * The repository events that will cause the trigger to run actions in
-     * another service, such as sending a notification through Amazon Simple
-     * Notification Service (SNS). If no events are specified, the trigger will
-     * run for all repository events.
+     * The repository events that will cause the trigger to run actions in another service, such as sending a
+     * notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger will run
+     * for all repository events.
      * </p>
      */
     private java.util.List<String> events;
@@ -92,8 +89,7 @@ public class RepositoryTrigger implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the trigger.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RepositoryTrigger withName(String name) {
@@ -103,14 +99,13 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the resource that is the target for a trigger. For example,
-     * the ARN of a topic in Amazon Simple Notification Service (SNS).
+     * The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple
+     * Notification Service (SNS).
      * </p>
      * 
      * @param destinationArn
-     *        The ARN of the resource that is the target for a trigger. For
-     *        example, the ARN of a topic in Amazon Simple Notification Service
-     *        (SNS).
+     *        The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple
+     *        Notification Service (SNS).
      */
 
     public void setDestinationArn(String destinationArn) {
@@ -119,13 +114,12 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the resource that is the target for a trigger. For example,
-     * the ARN of a topic in Amazon Simple Notification Service (SNS).
+     * The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple
+     * Notification Service (SNS).
      * </p>
      * 
-     * @return The ARN of the resource that is the target for a trigger. For
-     *         example, the ARN of a topic in Amazon Simple Notification Service
-     *         (SNS).
+     * @return The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon
+     *         Simple Notification Service (SNS).
      */
 
     public String getDestinationArn() {
@@ -134,16 +128,14 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the resource that is the target for a trigger. For example,
-     * the ARN of a topic in Amazon Simple Notification Service (SNS).
+     * The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple
+     * Notification Service (SNS).
      * </p>
      * 
      * @param destinationArn
-     *        The ARN of the resource that is the target for a trigger. For
-     *        example, the ARN of a topic in Amazon Simple Notification Service
-     *        (SNS).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple
+     *        Notification Service (SNS).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RepositoryTrigger withDestinationArn(String destinationArn) {
@@ -153,13 +145,13 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any custom data associated with the trigger that will be included in the
-     * information sent to the target of the trigger.
+     * Any custom data associated with the trigger that will be included in the information sent to the target of the
+     * trigger.
      * </p>
      * 
      * @param customData
-     *        Any custom data associated with the trigger that will be included
-     *        in the information sent to the target of the trigger.
+     *        Any custom data associated with the trigger that will be included in the information sent to the target of
+     *        the trigger.
      */
 
     public void setCustomData(String customData) {
@@ -168,12 +160,12 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any custom data associated with the trigger that will be included in the
-     * information sent to the target of the trigger.
+     * Any custom data associated with the trigger that will be included in the information sent to the target of the
+     * trigger.
      * </p>
      * 
-     * @return Any custom data associated with the trigger that will be included
-     *         in the information sent to the target of the trigger.
+     * @return Any custom data associated with the trigger that will be included in the information sent to the target
+     *         of the trigger.
      */
 
     public String getCustomData() {
@@ -182,15 +174,14 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any custom data associated with the trigger that will be included in the
-     * information sent to the target of the trigger.
+     * Any custom data associated with the trigger that will be included in the information sent to the target of the
+     * trigger.
      * </p>
      * 
      * @param customData
-     *        Any custom data associated with the trigger that will be included
-     *        in the information sent to the target of the trigger.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Any custom data associated with the trigger that will be included in the information sent to the target of
+     *        the trigger.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RepositoryTrigger withCustomData(String customData) {
@@ -200,13 +191,12 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The branches that will be included in the trigger configuration. If no
-     * branches are specified, the trigger will apply to all branches.
+     * The branches that will be included in the trigger configuration. If no branches are specified, the trigger will
+     * apply to all branches.
      * </p>
      * 
-     * @return The branches that will be included in the trigger configuration.
-     *         If no branches are specified, the trigger will apply to all
-     *         branches.
+     * @return The branches that will be included in the trigger configuration. If no branches are specified, the
+     *         trigger will apply to all branches.
      */
 
     public java.util.List<String> getBranches() {
@@ -215,14 +205,13 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The branches that will be included in the trigger configuration. If no
-     * branches are specified, the trigger will apply to all branches.
+     * The branches that will be included in the trigger configuration. If no branches are specified, the trigger will
+     * apply to all branches.
      * </p>
      * 
      * @param branches
-     *        The branches that will be included in the trigger configuration.
-     *        If no branches are specified, the trigger will apply to all
-     *        branches.
+     *        The branches that will be included in the trigger configuration. If no branches are specified, the trigger
+     *        will apply to all branches.
      */
 
     public void setBranches(java.util.Collection<String> branches) {
@@ -236,22 +225,19 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The branches that will be included in the trigger configuration. If no
-     * branches are specified, the trigger will apply to all branches.
+     * The branches that will be included in the trigger configuration. If no branches are specified, the trigger will
+     * apply to all branches.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBranches(java.util.Collection)} or
-     * {@link #withBranches(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBranches(java.util.Collection)} or {@link #withBranches(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param branches
-     *        The branches that will be included in the trigger configuration.
-     *        If no branches are specified, the trigger will apply to all
-     *        branches.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The branches that will be included in the trigger configuration. If no branches are specified, the trigger
+     *        will apply to all branches.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RepositoryTrigger withBranches(String... branches) {
@@ -266,16 +252,14 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The branches that will be included in the trigger configuration. If no
-     * branches are specified, the trigger will apply to all branches.
+     * The branches that will be included in the trigger configuration. If no branches are specified, the trigger will
+     * apply to all branches.
      * </p>
      * 
      * @param branches
-     *        The branches that will be included in the trigger configuration.
-     *        If no branches are specified, the trigger will apply to all
-     *        branches.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The branches that will be included in the trigger configuration. If no branches are specified, the trigger
+     *        will apply to all branches.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RepositoryTrigger withBranches(java.util.Collection<String> branches) {
@@ -285,16 +269,14 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The repository events that will cause the trigger to run actions in
-     * another service, such as sending a notification through Amazon Simple
-     * Notification Service (SNS). If no events are specified, the trigger will
-     * run for all repository events.
+     * The repository events that will cause the trigger to run actions in another service, such as sending a
+     * notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger will run
+     * for all repository events.
      * </p>
      * 
-     * @return The repository events that will cause the trigger to run actions
-     *         in another service, such as sending a notification through Amazon
-     *         Simple Notification Service (SNS). If no events are specified,
-     *         the trigger will run for all repository events.
+     * @return The repository events that will cause the trigger to run actions in another service, such as sending a
+     *         notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger
+     *         will run for all repository events.
      * @see RepositoryTriggerEventEnum
      */
 
@@ -304,17 +286,15 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The repository events that will cause the trigger to run actions in
-     * another service, such as sending a notification through Amazon Simple
-     * Notification Service (SNS). If no events are specified, the trigger will
-     * run for all repository events.
+     * The repository events that will cause the trigger to run actions in another service, such as sending a
+     * notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger will run
+     * for all repository events.
      * </p>
      * 
      * @param events
-     *        The repository events that will cause the trigger to run actions
-     *        in another service, such as sending a notification through Amazon
-     *        Simple Notification Service (SNS). If no events are specified, the
-     *        trigger will run for all repository events.
+     *        The repository events that will cause the trigger to run actions in another service, such as sending a
+     *        notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger
+     *        will run for all repository events.
      * @see RepositoryTriggerEventEnum
      */
 
@@ -329,25 +309,21 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The repository events that will cause the trigger to run actions in
-     * another service, such as sending a notification through Amazon Simple
-     * Notification Service (SNS). If no events are specified, the trigger will
-     * run for all repository events.
+     * The repository events that will cause the trigger to run actions in another service, such as sending a
+     * notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger will run
+     * for all repository events.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEvents(java.util.Collection)} or
-     * {@link #withEvents(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param events
-     *        The repository events that will cause the trigger to run actions
-     *        in another service, such as sending a notification through Amazon
-     *        Simple Notification Service (SNS). If no events are specified, the
-     *        trigger will run for all repository events.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The repository events that will cause the trigger to run actions in another service, such as sending a
+     *        notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger
+     *        will run for all repository events.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RepositoryTriggerEventEnum
      */
 
@@ -363,19 +339,16 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The repository events that will cause the trigger to run actions in
-     * another service, such as sending a notification through Amazon Simple
-     * Notification Service (SNS). If no events are specified, the trigger will
-     * run for all repository events.
+     * The repository events that will cause the trigger to run actions in another service, such as sending a
+     * notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger will run
+     * for all repository events.
      * </p>
      * 
      * @param events
-     *        The repository events that will cause the trigger to run actions
-     *        in another service, such as sending a notification through Amazon
-     *        Simple Notification Service (SNS). If no events are specified, the
-     *        trigger will run for all repository events.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The repository events that will cause the trigger to run actions in another service, such as sending a
+     *        notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger
+     *        will run for all repository events.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RepositoryTriggerEventEnum
      */
 
@@ -386,25 +359,21 @@ public class RepositoryTrigger implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The repository events that will cause the trigger to run actions in
-     * another service, such as sending a notification through Amazon Simple
-     * Notification Service (SNS). If no events are specified, the trigger will
-     * run for all repository events.
+     * The repository events that will cause the trigger to run actions in another service, such as sending a
+     * notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger will run
+     * for all repository events.
      * </p>
      * 
      * @param events
-     *        The repository events that will cause the trigger to run actions
-     *        in another service, such as sending a notification through Amazon
-     *        Simple Notification Service (SNS). If no events are specified, the
-     *        trigger will run for all repository events.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The repository events that will cause the trigger to run actions in another service, such as sending a
+     *        notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger
+     *        will run for all repository events.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RepositoryTriggerEventEnum
      */
 
     public RepositoryTrigger withEvents(RepositoryTriggerEventEnum... events) {
-        java.util.ArrayList<String> eventsCopy = new java.util.ArrayList<String>(
-                events.length);
+        java.util.ArrayList<String> eventsCopy = new java.util.ArrayList<String>(events.length);
         for (RepositoryTriggerEventEnum value : events) {
             eventsCopy.add(value.toString());
         }
@@ -417,8 +386,7 @@ public class RepositoryTrigger implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -454,29 +422,23 @@ public class RepositoryTrigger implements Serializable, Cloneable {
         RepositoryTrigger other = (RepositoryTrigger) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getDestinationArn() == null
-                ^ this.getDestinationArn() == null)
+        if (other.getDestinationArn() == null ^ this.getDestinationArn() == null)
             return false;
-        if (other.getDestinationArn() != null
-                && other.getDestinationArn().equals(this.getDestinationArn()) == false)
+        if (other.getDestinationArn() != null && other.getDestinationArn().equals(this.getDestinationArn()) == false)
             return false;
         if (other.getCustomData() == null ^ this.getCustomData() == null)
             return false;
-        if (other.getCustomData() != null
-                && other.getCustomData().equals(this.getCustomData()) == false)
+        if (other.getCustomData() != null && other.getCustomData().equals(this.getCustomData()) == false)
             return false;
         if (other.getBranches() == null ^ this.getBranches() == null)
             return false;
-        if (other.getBranches() != null
-                && other.getBranches().equals(this.getBranches()) == false)
+        if (other.getBranches() != null && other.getBranches().equals(this.getBranches()) == false)
             return false;
         if (other.getEvents() == null ^ this.getEvents() == null)
             return false;
-        if (other.getEvents() != null
-                && other.getEvents().equals(this.getEvents()) == false)
+        if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false)
             return false;
         return true;
     }
@@ -486,18 +448,11 @@ public class RepositoryTrigger implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDestinationArn() == null) ? 0 : getDestinationArn()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCustomData() == null) ? 0 : getCustomData().hashCode());
-        hashCode = prime * hashCode
-                + ((getBranches() == null) ? 0 : getBranches().hashCode());
-        hashCode = prime * hashCode
-                + ((getEvents() == null) ? 0 : getEvents().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDestinationArn() == null) ? 0 : getDestinationArn().hashCode());
+        hashCode = prime * hashCode + ((getCustomData() == null) ? 0 : getCustomData().hashCode());
+        hashCode = prime * hashCode + ((getBranches() == null) ? 0 : getBranches().hashCode());
+        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
         return hashCode;
     }
 
@@ -506,9 +461,7 @@ public class RepositoryTrigger implements Serializable, Cloneable {
         try {
             return (RepositoryTrigger) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

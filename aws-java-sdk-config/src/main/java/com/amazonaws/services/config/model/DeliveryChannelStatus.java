@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model;
 
@@ -34,22 +32,20 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * A list containing the status of the delivery of the snapshot to the
-     * specified Amazon S3 bucket.
+     * A list containing the status of the delivery of the snapshot to the specified Amazon S3 bucket.
      * </p>
      */
     private ConfigExportDeliveryInfo configSnapshotDeliveryInfo;
     /**
      * <p>
-     * A list that contains the status of the delivery of the configuration
-     * history to the specified Amazon S3 bucket.
+     * A list that contains the status of the delivery of the configuration history to the specified Amazon S3 bucket.
      * </p>
      */
     private ConfigExportDeliveryInfo configHistoryDeliveryInfo;
     /**
      * <p>
-     * A list containing the status of the delivery of the configuration stream
-     * notification to the specified Amazon SNS topic.
+     * A list containing the status of the delivery of the configuration stream notification to the specified Amazon SNS
+     * topic.
      * </p>
      */
     private ConfigStreamDeliveryInfo configStreamDeliveryInfo;
@@ -86,8 +82,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the delivery channel.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeliveryChannelStatus withName(String name) {
@@ -97,28 +92,23 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list containing the status of the delivery of the snapshot to the
-     * specified Amazon S3 bucket.
+     * A list containing the status of the delivery of the snapshot to the specified Amazon S3 bucket.
      * </p>
      * 
      * @param configSnapshotDeliveryInfo
-     *        A list containing the status of the delivery of the snapshot to
-     *        the specified Amazon S3 bucket.
+     *        A list containing the status of the delivery of the snapshot to the specified Amazon S3 bucket.
      */
 
-    public void setConfigSnapshotDeliveryInfo(
-            ConfigExportDeliveryInfo configSnapshotDeliveryInfo) {
+    public void setConfigSnapshotDeliveryInfo(ConfigExportDeliveryInfo configSnapshotDeliveryInfo) {
         this.configSnapshotDeliveryInfo = configSnapshotDeliveryInfo;
     }
 
     /**
      * <p>
-     * A list containing the status of the delivery of the snapshot to the
-     * specified Amazon S3 bucket.
+     * A list containing the status of the delivery of the snapshot to the specified Amazon S3 bucket.
      * </p>
      * 
-     * @return A list containing the status of the delivery of the snapshot to
-     *         the specified Amazon S3 bucket.
+     * @return A list containing the status of the delivery of the snapshot to the specified Amazon S3 bucket.
      */
 
     public ConfigExportDeliveryInfo getConfigSnapshotDeliveryInfo() {
@@ -127,47 +117,40 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list containing the status of the delivery of the snapshot to the
-     * specified Amazon S3 bucket.
+     * A list containing the status of the delivery of the snapshot to the specified Amazon S3 bucket.
      * </p>
      * 
      * @param configSnapshotDeliveryInfo
-     *        A list containing the status of the delivery of the snapshot to
-     *        the specified Amazon S3 bucket.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list containing the status of the delivery of the snapshot to the specified Amazon S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeliveryChannelStatus withConfigSnapshotDeliveryInfo(
-            ConfigExportDeliveryInfo configSnapshotDeliveryInfo) {
+    public DeliveryChannelStatus withConfigSnapshotDeliveryInfo(ConfigExportDeliveryInfo configSnapshotDeliveryInfo) {
         setConfigSnapshotDeliveryInfo(configSnapshotDeliveryInfo);
         return this;
     }
 
     /**
      * <p>
-     * A list that contains the status of the delivery of the configuration
-     * history to the specified Amazon S3 bucket.
+     * A list that contains the status of the delivery of the configuration history to the specified Amazon S3 bucket.
      * </p>
      * 
      * @param configHistoryDeliveryInfo
-     *        A list that contains the status of the delivery of the
-     *        configuration history to the specified Amazon S3 bucket.
+     *        A list that contains the status of the delivery of the configuration history to the specified Amazon S3
+     *        bucket.
      */
 
-    public void setConfigHistoryDeliveryInfo(
-            ConfigExportDeliveryInfo configHistoryDeliveryInfo) {
+    public void setConfigHistoryDeliveryInfo(ConfigExportDeliveryInfo configHistoryDeliveryInfo) {
         this.configHistoryDeliveryInfo = configHistoryDeliveryInfo;
     }
 
     /**
      * <p>
-     * A list that contains the status of the delivery of the configuration
-     * history to the specified Amazon S3 bucket.
+     * A list that contains the status of the delivery of the configuration history to the specified Amazon S3 bucket.
      * </p>
      * 
-     * @return A list that contains the status of the delivery of the
-     *         configuration history to the specified Amazon S3 bucket.
+     * @return A list that contains the status of the delivery of the configuration history to the specified Amazon S3
+     *         bucket.
      */
 
     public ConfigExportDeliveryInfo getConfigHistoryDeliveryInfo() {
@@ -176,47 +159,43 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list that contains the status of the delivery of the configuration
-     * history to the specified Amazon S3 bucket.
+     * A list that contains the status of the delivery of the configuration history to the specified Amazon S3 bucket.
      * </p>
      * 
      * @param configHistoryDeliveryInfo
-     *        A list that contains the status of the delivery of the
-     *        configuration history to the specified Amazon S3 bucket.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list that contains the status of the delivery of the configuration history to the specified Amazon S3
+     *        bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeliveryChannelStatus withConfigHistoryDeliveryInfo(
-            ConfigExportDeliveryInfo configHistoryDeliveryInfo) {
+    public DeliveryChannelStatus withConfigHistoryDeliveryInfo(ConfigExportDeliveryInfo configHistoryDeliveryInfo) {
         setConfigHistoryDeliveryInfo(configHistoryDeliveryInfo);
         return this;
     }
 
     /**
      * <p>
-     * A list containing the status of the delivery of the configuration stream
-     * notification to the specified Amazon SNS topic.
+     * A list containing the status of the delivery of the configuration stream notification to the specified Amazon SNS
+     * topic.
      * </p>
      * 
      * @param configStreamDeliveryInfo
-     *        A list containing the status of the delivery of the configuration
-     *        stream notification to the specified Amazon SNS topic.
+     *        A list containing the status of the delivery of the configuration stream notification to the specified
+     *        Amazon SNS topic.
      */
 
-    public void setConfigStreamDeliveryInfo(
-            ConfigStreamDeliveryInfo configStreamDeliveryInfo) {
+    public void setConfigStreamDeliveryInfo(ConfigStreamDeliveryInfo configStreamDeliveryInfo) {
         this.configStreamDeliveryInfo = configStreamDeliveryInfo;
     }
 
     /**
      * <p>
-     * A list containing the status of the delivery of the configuration stream
-     * notification to the specified Amazon SNS topic.
+     * A list containing the status of the delivery of the configuration stream notification to the specified Amazon SNS
+     * topic.
      * </p>
      * 
-     * @return A list containing the status of the delivery of the configuration
-     *         stream notification to the specified Amazon SNS topic.
+     * @return A list containing the status of the delivery of the configuration stream notification to the specified
+     *         Amazon SNS topic.
      */
 
     public ConfigStreamDeliveryInfo getConfigStreamDeliveryInfo() {
@@ -225,26 +204,23 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list containing the status of the delivery of the configuration stream
-     * notification to the specified Amazon SNS topic.
+     * A list containing the status of the delivery of the configuration stream notification to the specified Amazon SNS
+     * topic.
      * </p>
      * 
      * @param configStreamDeliveryInfo
-     *        A list containing the status of the delivery of the configuration
-     *        stream notification to the specified Amazon SNS topic.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list containing the status of the delivery of the configuration stream notification to the specified
+     *        Amazon SNS topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeliveryChannelStatus withConfigStreamDeliveryInfo(
-            ConfigStreamDeliveryInfo configStreamDeliveryInfo) {
+    public DeliveryChannelStatus withConfigStreamDeliveryInfo(ConfigStreamDeliveryInfo configStreamDeliveryInfo) {
         setConfigStreamDeliveryInfo(configStreamDeliveryInfo);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -257,14 +233,11 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
         if (getConfigSnapshotDeliveryInfo() != null)
-            sb.append("ConfigSnapshotDeliveryInfo: "
-                    + getConfigSnapshotDeliveryInfo() + ",");
+            sb.append("ConfigSnapshotDeliveryInfo: " + getConfigSnapshotDeliveryInfo() + ",");
         if (getConfigHistoryDeliveryInfo() != null)
-            sb.append("ConfigHistoryDeliveryInfo: "
-                    + getConfigHistoryDeliveryInfo() + ",");
+            sb.append("ConfigHistoryDeliveryInfo: " + getConfigHistoryDeliveryInfo() + ",");
         if (getConfigStreamDeliveryInfo() != null)
-            sb.append("ConfigStreamDeliveryInfo: "
-                    + getConfigStreamDeliveryInfo());
+            sb.append("ConfigStreamDeliveryInfo: " + getConfigStreamDeliveryInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -281,29 +254,19 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
         DeliveryChannelStatus other = (DeliveryChannelStatus) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getConfigSnapshotDeliveryInfo() == null
-                ^ this.getConfigSnapshotDeliveryInfo() == null)
+        if (other.getConfigSnapshotDeliveryInfo() == null ^ this.getConfigSnapshotDeliveryInfo() == null)
             return false;
-        if (other.getConfigSnapshotDeliveryInfo() != null
-                && other.getConfigSnapshotDeliveryInfo().equals(
-                        this.getConfigSnapshotDeliveryInfo()) == false)
+        if (other.getConfigSnapshotDeliveryInfo() != null && other.getConfigSnapshotDeliveryInfo().equals(this.getConfigSnapshotDeliveryInfo()) == false)
             return false;
-        if (other.getConfigHistoryDeliveryInfo() == null
-                ^ this.getConfigHistoryDeliveryInfo() == null)
+        if (other.getConfigHistoryDeliveryInfo() == null ^ this.getConfigHistoryDeliveryInfo() == null)
             return false;
-        if (other.getConfigHistoryDeliveryInfo() != null
-                && other.getConfigHistoryDeliveryInfo().equals(
-                        this.getConfigHistoryDeliveryInfo()) == false)
+        if (other.getConfigHistoryDeliveryInfo() != null && other.getConfigHistoryDeliveryInfo().equals(this.getConfigHistoryDeliveryInfo()) == false)
             return false;
-        if (other.getConfigStreamDeliveryInfo() == null
-                ^ this.getConfigStreamDeliveryInfo() == null)
+        if (other.getConfigStreamDeliveryInfo() == null ^ this.getConfigStreamDeliveryInfo() == null)
             return false;
-        if (other.getConfigStreamDeliveryInfo() != null
-                && other.getConfigStreamDeliveryInfo().equals(
-                        this.getConfigStreamDeliveryInfo()) == false)
+        if (other.getConfigStreamDeliveryInfo() != null && other.getConfigStreamDeliveryInfo().equals(this.getConfigStreamDeliveryInfo()) == false)
             return false;
         return true;
     }
@@ -313,20 +276,10 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConfigSnapshotDeliveryInfo() == null) ? 0
-                        : getConfigSnapshotDeliveryInfo().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConfigHistoryDeliveryInfo() == null) ? 0
-                        : getConfigHistoryDeliveryInfo().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConfigStreamDeliveryInfo() == null) ? 0
-                        : getConfigStreamDeliveryInfo().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getConfigSnapshotDeliveryInfo() == null) ? 0 : getConfigSnapshotDeliveryInfo().hashCode());
+        hashCode = prime * hashCode + ((getConfigHistoryDeliveryInfo() == null) ? 0 : getConfigHistoryDeliveryInfo().hashCode());
+        hashCode = prime * hashCode + ((getConfigStreamDeliveryInfo() == null) ? 0 : getConfigStreamDeliveryInfo().hashCode());
         return hashCode;
     }
 
@@ -335,9 +288,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
         try {
             return (DeliveryChannelStatus) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

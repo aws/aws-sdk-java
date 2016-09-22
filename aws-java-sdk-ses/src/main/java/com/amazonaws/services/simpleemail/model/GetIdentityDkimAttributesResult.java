@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -18,15 +16,12 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the status of Amazon SES Easy DKIM signing for an identity. For
- * domain identities, this response also contains the DKIM tokens that are
- * required for Easy DKIM signing, and whether Amazon SES successfully verified
- * that these tokens were published.
+ * Represents the status of Amazon SES Easy DKIM signing for an identity. For domain identities, this response also
+ * contains the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES successfully verified that
+ * these tokens were published.
  * </p>
  */
-public class GetIdentityDkimAttributesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetIdentityDkimAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -59,11 +54,8 @@ public class GetIdentityDkimAttributesResult extends
      *        The DKIM attributes for an email address or a domain.
      */
 
-    public void setDkimAttributes(
-            java.util.Map<String, IdentityDkimAttributes> dkimAttributes) {
-        this.dkimAttributes = dkimAttributes == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, IdentityDkimAttributes>(
-                        dkimAttributes);
+    public void setDkimAttributes(java.util.Map<String, IdentityDkimAttributes> dkimAttributes) {
+        this.dkimAttributes = dkimAttributes == null ? null : new com.amazonaws.internal.SdkInternalMap<String, IdentityDkimAttributes>(dkimAttributes);
     }
 
     /**
@@ -73,31 +65,27 @@ public class GetIdentityDkimAttributesResult extends
      * 
      * @param dkimAttributes
      *        The DKIM attributes for an email address or a domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetIdentityDkimAttributesResult withDkimAttributes(
-            java.util.Map<String, IdentityDkimAttributes> dkimAttributes) {
+    public GetIdentityDkimAttributesResult withDkimAttributes(java.util.Map<String, IdentityDkimAttributes> dkimAttributes) {
         setDkimAttributes(dkimAttributes);
         return this;
     }
 
-    public GetIdentityDkimAttributesResult addDkimAttributesEntry(String key,
-            IdentityDkimAttributes value) {
+    public GetIdentityDkimAttributesResult addDkimAttributesEntry(String key, IdentityDkimAttributes value) {
         if (null == this.dkimAttributes) {
             this.dkimAttributes = new com.amazonaws.internal.SdkInternalMap<String, IdentityDkimAttributes>();
         }
         if (this.dkimAttributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.dkimAttributes.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into DkimAttributes. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into DkimAttributes. &lt;p> Returns a reference to this object so that method calls
+     * can be chained together.
      */
 
     public GetIdentityDkimAttributesResult clearDkimAttributesEntries() {
@@ -106,8 +94,7 @@ public class GetIdentityDkimAttributesResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -133,11 +120,9 @@ public class GetIdentityDkimAttributesResult extends
         if (obj instanceof GetIdentityDkimAttributesResult == false)
             return false;
         GetIdentityDkimAttributesResult other = (GetIdentityDkimAttributesResult) obj;
-        if (other.getDkimAttributes() == null
-                ^ this.getDkimAttributes() == null)
+        if (other.getDkimAttributes() == null ^ this.getDkimAttributes() == null)
             return false;
-        if (other.getDkimAttributes() != null
-                && other.getDkimAttributes().equals(this.getDkimAttributes()) == false)
+        if (other.getDkimAttributes() != null && other.getDkimAttributes().equals(this.getDkimAttributes()) == false)
             return false;
         return true;
     }
@@ -147,10 +132,7 @@ public class GetIdentityDkimAttributesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDkimAttributes() == null) ? 0 : getDkimAttributes()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDkimAttributes() == null) ? 0 : getDkimAttributes().hashCode());
         return hashCode;
     }
 
@@ -159,9 +141,7 @@ public class GetIdentityDkimAttributesResult extends
         try {
             return (GetIdentityDkimAttributesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

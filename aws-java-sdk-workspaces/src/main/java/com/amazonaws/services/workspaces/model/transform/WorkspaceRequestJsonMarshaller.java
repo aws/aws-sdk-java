@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.workspaces.model.transform;
 
@@ -34,62 +32,46 @@ public class WorkspaceRequestJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(WorkspaceRequest workspaceRequest,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(WorkspaceRequest workspaceRequest, StructuredJsonGenerator jsonGenerator) {
 
         if (workspaceRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (workspaceRequest.getDirectoryId() != null) {
-                jsonGenerator.writeFieldName("DirectoryId").writeValue(
-                        workspaceRequest.getDirectoryId());
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(workspaceRequest.getDirectoryId());
             }
             if (workspaceRequest.getUserName() != null) {
-                jsonGenerator.writeFieldName("UserName").writeValue(
-                        workspaceRequest.getUserName());
+                jsonGenerator.writeFieldName("UserName").writeValue(workspaceRequest.getUserName());
             }
             if (workspaceRequest.getBundleId() != null) {
-                jsonGenerator.writeFieldName("BundleId").writeValue(
-                        workspaceRequest.getBundleId());
+                jsonGenerator.writeFieldName("BundleId").writeValue(workspaceRequest.getBundleId());
             }
             if (workspaceRequest.getVolumeEncryptionKey() != null) {
-                jsonGenerator.writeFieldName("VolumeEncryptionKey").writeValue(
-                        workspaceRequest.getVolumeEncryptionKey());
+                jsonGenerator.writeFieldName("VolumeEncryptionKey").writeValue(workspaceRequest.getVolumeEncryptionKey());
             }
             if (workspaceRequest.getUserVolumeEncryptionEnabled() != null) {
-                jsonGenerator.writeFieldName("UserVolumeEncryptionEnabled")
-                        .writeValue(
-                                workspaceRequest
-                                        .getUserVolumeEncryptionEnabled());
+                jsonGenerator.writeFieldName("UserVolumeEncryptionEnabled").writeValue(workspaceRequest.getUserVolumeEncryptionEnabled());
             }
             if (workspaceRequest.getRootVolumeEncryptionEnabled() != null) {
-                jsonGenerator.writeFieldName("RootVolumeEncryptionEnabled")
-                        .writeValue(
-                                workspaceRequest
-                                        .getRootVolumeEncryptionEnabled());
+                jsonGenerator.writeFieldName("RootVolumeEncryptionEnabled").writeValue(workspaceRequest.getRootVolumeEncryptionEnabled());
             }
             if (workspaceRequest.getWorkspaceProperties() != null) {
                 jsonGenerator.writeFieldName("WorkspaceProperties");
-                WorkspacePropertiesJsonMarshaller.getInstance().marshall(
-                        workspaceRequest.getWorkspaceProperties(),
-                        jsonGenerator);
+                WorkspacePropertiesJsonMarshaller.getInstance().marshall(workspaceRequest.getWorkspaceProperties(), jsonGenerator);
             }
 
-            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) workspaceRequest
-                    .getTags();
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) workspaceRequest.getTags();
             if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("Tags");
                 jsonGenerator.writeStartArray();
                 for (Tag tagsListValue : tagsList) {
                     if (tagsListValue != null) {
 
-                        TagJsonMarshaller.getInstance().marshall(tagsListValue,
-                                jsonGenerator);
+                        TagJsonMarshaller.getInstance().marshall(tagsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
@@ -97,8 +79,7 @@ public class WorkspaceRequestJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

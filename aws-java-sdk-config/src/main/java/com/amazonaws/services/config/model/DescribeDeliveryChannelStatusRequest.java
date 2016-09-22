@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>DeliveryChannelStatus</a> action.
  * </p>
  */
-public class DescribeDeliveryChannelStatusRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeDeliveryChannelStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -57,15 +53,13 @@ public class DescribeDeliveryChannelStatusRequest extends
      *        A list of delivery channel names.
      */
 
-    public void setDeliveryChannelNames(
-            java.util.Collection<String> deliveryChannelNames) {
+    public void setDeliveryChannelNames(java.util.Collection<String> deliveryChannelNames) {
         if (deliveryChannelNames == null) {
             this.deliveryChannelNames = null;
             return;
         }
 
-        this.deliveryChannelNames = new com.amazonaws.internal.SdkInternalList<String>(
-                deliveryChannelNames);
+        this.deliveryChannelNames = new com.amazonaws.internal.SdkInternalList<String>(deliveryChannelNames);
     }
 
     /**
@@ -73,23 +67,19 @@ public class DescribeDeliveryChannelStatusRequest extends
      * A list of delivery channel names.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDeliveryChannelNames(java.util.Collection)} or
-     * {@link #withDeliveryChannelNames(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeliveryChannelNames(java.util.Collection)} or {@link #withDeliveryChannelNames(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param deliveryChannelNames
      *        A list of delivery channel names.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDeliveryChannelStatusRequest withDeliveryChannelNames(
-            String... deliveryChannelNames) {
+    public DescribeDeliveryChannelStatusRequest withDeliveryChannelNames(String... deliveryChannelNames) {
         if (this.deliveryChannelNames == null) {
-            setDeliveryChannelNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    deliveryChannelNames.length));
+            setDeliveryChannelNames(new com.amazonaws.internal.SdkInternalList<String>(deliveryChannelNames.length));
         }
         for (String ele : deliveryChannelNames) {
             this.deliveryChannelNames.add(ele);
@@ -104,19 +94,16 @@ public class DescribeDeliveryChannelStatusRequest extends
      * 
      * @param deliveryChannelNames
      *        A list of delivery channel names.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDeliveryChannelStatusRequest withDeliveryChannelNames(
-            java.util.Collection<String> deliveryChannelNames) {
+    public DescribeDeliveryChannelStatusRequest withDeliveryChannelNames(java.util.Collection<String> deliveryChannelNames) {
         setDeliveryChannelNames(deliveryChannelNames);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -142,12 +129,9 @@ public class DescribeDeliveryChannelStatusRequest extends
         if (obj instanceof DescribeDeliveryChannelStatusRequest == false)
             return false;
         DescribeDeliveryChannelStatusRequest other = (DescribeDeliveryChannelStatusRequest) obj;
-        if (other.getDeliveryChannelNames() == null
-                ^ this.getDeliveryChannelNames() == null)
+        if (other.getDeliveryChannelNames() == null ^ this.getDeliveryChannelNames() == null)
             return false;
-        if (other.getDeliveryChannelNames() != null
-                && other.getDeliveryChannelNames().equals(
-                        this.getDeliveryChannelNames()) == false)
+        if (other.getDeliveryChannelNames() != null && other.getDeliveryChannelNames().equals(this.getDeliveryChannelNames()) == false)
             return false;
         return true;
     }
@@ -157,10 +141,7 @@ public class DescribeDeliveryChannelStatusRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDeliveryChannelNames() == null) ? 0
-                        : getDeliveryChannelNames().hashCode());
+        hashCode = prime * hashCode + ((getDeliveryChannelNames() == null) ? 0 : getDeliveryChannelNames().hashCode());
         return hashCode;
     }
 

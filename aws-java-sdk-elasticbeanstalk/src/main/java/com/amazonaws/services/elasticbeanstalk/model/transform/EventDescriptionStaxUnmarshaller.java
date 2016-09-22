@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * EventDescription StAX Unmarshaller
  */
-public class EventDescriptionStaxUnmarshaller implements
-        Unmarshaller<EventDescription, StaxUnmarshallerContext> {
+public class EventDescriptionStaxUnmarshaller implements Unmarshaller<EventDescription, StaxUnmarshallerContext> {
 
-    public EventDescription unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public EventDescription unmarshall(StaxUnmarshallerContext context) throws Exception {
         EventDescription eventDescription = new EventDescription();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,50 +46,42 @@ public class EventDescriptionStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("EventDate", targetDepth)) {
-                    eventDescription.setEventDate(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventDescription.setEventDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Message", targetDepth)) {
-                    eventDescription.setMessage(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventDescription.setMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ApplicationName", targetDepth)) {
-                    eventDescription.setApplicationName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventDescription.setApplicationName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("VersionLabel", targetDepth)) {
-                    eventDescription.setVersionLabel(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventDescription.setVersionLabel(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("TemplateName", targetDepth)) {
-                    eventDescription.setTemplateName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventDescription.setTemplateName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EnvironmentName", targetDepth)) {
-                    eventDescription.setEnvironmentName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventDescription.setEnvironmentName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("RequestId", targetDepth)) {
-                    eventDescription.setRequestId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventDescription.setRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Severity", targetDepth)) {
-                    eventDescription.setSeverity(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventDescription.setSeverity(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

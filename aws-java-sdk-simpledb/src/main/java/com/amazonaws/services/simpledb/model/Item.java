@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model;
 
@@ -33,16 +31,15 @@ public class Item implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Attribute> attributes;
 
     /**
-     * Default constructor for Item object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize the object after creating
-     * it.
+     * Default constructor for Item object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize the object after creating it.
      */
     public Item() {
     }
 
     /**
-     * Constructs a new Item object. Callers should use the setter or fluent
-     * setter (with...) methods to initialize any additional object members.
+     * Constructs a new Item object. Callers should use the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
      * @param name
      *        The name of the item.
@@ -80,8 +77,7 @@ public class Item implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the item.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Item withName(String name) {
@@ -116,8 +112,7 @@ public class Item implements Serializable, Cloneable {
      * </p>
      * 
      * @param alternateNameEncoding
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Item withAlternateNameEncoding(String alternateNameEncoding) {
@@ -151,29 +146,25 @@ public class Item implements Serializable, Cloneable {
             return;
         }
 
-        this.attributes = new com.amazonaws.internal.SdkInternalList<Attribute>(
-                attributes);
+        this.attributes = new com.amazonaws.internal.SdkInternalList<Attribute>(attributes);
     }
 
     /**
      * A list of attributes.
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttributes(java.util.Collection)} or
-     * {@link #withAttributes(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param attributes
      *        A list of attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Item withAttributes(Attribute... attributes) {
         if (this.attributes == null) {
-            setAttributes(new com.amazonaws.internal.SdkInternalList<Attribute>(
-                    attributes.length));
+            setAttributes(new com.amazonaws.internal.SdkInternalList<Attribute>(attributes.length));
         }
         for (Attribute ele : attributes) {
             this.attributes.add(ele);
@@ -186,8 +177,7 @@ public class Item implements Serializable, Cloneable {
      * 
      * @param attributes
      *        A list of attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Item withAttributes(java.util.Collection<Attribute> attributes) {
@@ -196,8 +186,7 @@ public class Item implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -210,8 +199,7 @@ public class Item implements Serializable, Cloneable {
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
         if (getAlternateNameEncoding() != null)
-            sb.append("AlternateNameEncoding: " + getAlternateNameEncoding()
-                    + ",");
+            sb.append("AlternateNameEncoding: " + getAlternateNameEncoding() + ",");
         if (getAttributes() != null)
             sb.append("Attributes: " + getAttributes());
         sb.append("}");
@@ -230,20 +218,15 @@ public class Item implements Serializable, Cloneable {
         Item other = (Item) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getAlternateNameEncoding() == null
-                ^ this.getAlternateNameEncoding() == null)
+        if (other.getAlternateNameEncoding() == null ^ this.getAlternateNameEncoding() == null)
             return false;
-        if (other.getAlternateNameEncoding() != null
-                && other.getAlternateNameEncoding().equals(
-                        this.getAlternateNameEncoding()) == false)
+        if (other.getAlternateNameEncoding() != null && other.getAlternateNameEncoding().equals(this.getAlternateNameEncoding()) == false)
             return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
-        if (other.getAttributes() != null
-                && other.getAttributes().equals(this.getAttributes()) == false)
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
         return true;
     }
@@ -253,14 +236,9 @@ public class Item implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAlternateNameEncoding() == null) ? 0
-                        : getAlternateNameEncoding().hashCode());
-        hashCode = prime * hashCode
-                + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getAlternateNameEncoding() == null) ? 0 : getAlternateNameEncoding().hashCode());
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         return hashCode;
     }
 
@@ -269,9 +247,7 @@ public class Item implements Serializable, Cloneable {
         try {
             return (Item) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

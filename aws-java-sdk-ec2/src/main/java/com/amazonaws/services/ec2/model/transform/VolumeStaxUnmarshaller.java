@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -30,8 +28,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Volume StAX Unmarshaller
  */
-public class VolumeStaxUnmarshaller implements
-        Unmarshaller<Volume, StaxUnmarshallerContext> {
+public class VolumeStaxUnmarshaller implements Unmarshaller<Volume, StaxUnmarshallerContext> {
 
     public Volume unmarshall(StaxUnmarshallerContext context) throws Exception {
         Volume volume = new Volume();
@@ -49,74 +46,62 @@ public class VolumeStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("volumeId", targetDepth)) {
-                    volume.setVolumeId(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    volume.setVolumeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("size", targetDepth)) {
-                    volume.setSize(IntegerStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    volume.setSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("snapshotId", targetDepth)) {
-                    volume.setSnapshotId(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    volume.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("availabilityZone", targetDepth)) {
-                    volume.setAvailabilityZone(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    volume.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("status", targetDepth)) {
-                    volume.setState(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    volume.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("createTime", targetDepth)) {
-                    volume.setCreateTime(DateStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    volume.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("attachmentSet/item", targetDepth)) {
-                    volume.withAttachments(VolumeAttachmentStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    volume.withAttachments(VolumeAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("tagSet/item", targetDepth)) {
-                    volume.withTags(TagStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    volume.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("volumeType", targetDepth)) {
-                    volume.setVolumeType(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    volume.setVolumeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("iops", targetDepth)) {
-                    volume.setIops(IntegerStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    volume.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("encrypted", targetDepth)) {
-                    volume.setEncrypted(BooleanStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    volume.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("kmsKeyId", targetDepth)) {
-                    volume.setKmsKeyId(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    volume.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

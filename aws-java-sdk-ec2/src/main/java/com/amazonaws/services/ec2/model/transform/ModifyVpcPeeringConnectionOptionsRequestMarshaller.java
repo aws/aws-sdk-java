@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,16 +29,13 @@ import com.amazonaws.util.IdempotentUtils;
  * ModifyVpcPeeringConnectionOptionsRequest Marshaller
  */
 
-public class ModifyVpcPeeringConnectionOptionsRequestMarshaller
-        implements
+public class ModifyVpcPeeringConnectionOptionsRequestMarshaller implements
         Marshaller<Request<ModifyVpcPeeringConnectionOptionsRequest>, ModifyVpcPeeringConnectionOptionsRequest> {
 
-    public Request<ModifyVpcPeeringConnectionOptionsRequest> marshall(
-            ModifyVpcPeeringConnectionOptionsRequest modifyVpcPeeringConnectionOptionsRequest) {
+    public Request<ModifyVpcPeeringConnectionOptionsRequest> marshall(ModifyVpcPeeringConnectionOptionsRequest modifyVpcPeeringConnectionOptionsRequest) {
 
         if (modifyVpcPeeringConnectionOptionsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<ModifyVpcPeeringConnectionOptionsRequest> request = new DefaultRequest<ModifyVpcPeeringConnectionOptionsRequest>(
@@ -49,70 +44,45 @@ public class ModifyVpcPeeringConnectionOptionsRequestMarshaller
         request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (modifyVpcPeeringConnectionOptionsRequest
-                .getVpcPeeringConnectionId() != null) {
-            request.addParameter("VpcPeeringConnectionId", StringUtils
-                    .fromString(modifyVpcPeeringConnectionOptionsRequest
-                            .getVpcPeeringConnectionId()));
+        if (modifyVpcPeeringConnectionOptionsRequest.getVpcPeeringConnectionId() != null) {
+            request.addParameter("VpcPeeringConnectionId", StringUtils.fromString(modifyVpcPeeringConnectionOptionsRequest.getVpcPeeringConnectionId()));
         }
 
-        PeeringConnectionOptionsRequest requesterPeeringConnectionOptions = modifyVpcPeeringConnectionOptionsRequest
-                .getRequesterPeeringConnectionOptions();
+        PeeringConnectionOptionsRequest requesterPeeringConnectionOptions = modifyVpcPeeringConnectionOptionsRequest.getRequesterPeeringConnectionOptions();
         if (requesterPeeringConnectionOptions != null) {
 
-            if (requesterPeeringConnectionOptions
-                    .getAllowEgressFromLocalClassicLinkToRemoteVpc() != null) {
-                request.addParameter(
-                        "RequesterPeeringConnectionOptions.AllowEgressFromLocalClassicLinkToRemoteVpc",
-                        StringUtils.fromBoolean(requesterPeeringConnectionOptions
-                                .getAllowEgressFromLocalClassicLinkToRemoteVpc()));
+            if (requesterPeeringConnectionOptions.getAllowEgressFromLocalClassicLinkToRemoteVpc() != null) {
+                request.addParameter("RequesterPeeringConnectionOptions.AllowEgressFromLocalClassicLinkToRemoteVpc",
+                        StringUtils.fromBoolean(requesterPeeringConnectionOptions.getAllowEgressFromLocalClassicLinkToRemoteVpc()));
             }
 
-            if (requesterPeeringConnectionOptions
-                    .getAllowEgressFromLocalVpcToRemoteClassicLink() != null) {
-                request.addParameter(
-                        "RequesterPeeringConnectionOptions.AllowEgressFromLocalVpcToRemoteClassicLink",
-                        StringUtils.fromBoolean(requesterPeeringConnectionOptions
-                                .getAllowEgressFromLocalVpcToRemoteClassicLink()));
+            if (requesterPeeringConnectionOptions.getAllowEgressFromLocalVpcToRemoteClassicLink() != null) {
+                request.addParameter("RequesterPeeringConnectionOptions.AllowEgressFromLocalVpcToRemoteClassicLink",
+                        StringUtils.fromBoolean(requesterPeeringConnectionOptions.getAllowEgressFromLocalVpcToRemoteClassicLink()));
             }
 
-            if (requesterPeeringConnectionOptions
-                    .getAllowDnsResolutionFromRemoteVpc() != null) {
-                request.addParameter(
-                        "RequesterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc",
-                        StringUtils
-                                .fromBoolean(requesterPeeringConnectionOptions
-                                        .getAllowDnsResolutionFromRemoteVpc()));
+            if (requesterPeeringConnectionOptions.getAllowDnsResolutionFromRemoteVpc() != null) {
+                request.addParameter("RequesterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc",
+                        StringUtils.fromBoolean(requesterPeeringConnectionOptions.getAllowDnsResolutionFromRemoteVpc()));
             }
         }
 
-        PeeringConnectionOptionsRequest accepterPeeringConnectionOptions = modifyVpcPeeringConnectionOptionsRequest
-                .getAccepterPeeringConnectionOptions();
+        PeeringConnectionOptionsRequest accepterPeeringConnectionOptions = modifyVpcPeeringConnectionOptionsRequest.getAccepterPeeringConnectionOptions();
         if (accepterPeeringConnectionOptions != null) {
 
-            if (accepterPeeringConnectionOptions
-                    .getAllowEgressFromLocalClassicLinkToRemoteVpc() != null) {
-                request.addParameter(
-                        "AccepterPeeringConnectionOptions.AllowEgressFromLocalClassicLinkToRemoteVpc",
-                        StringUtils.fromBoolean(accepterPeeringConnectionOptions
-                                .getAllowEgressFromLocalClassicLinkToRemoteVpc()));
+            if (accepterPeeringConnectionOptions.getAllowEgressFromLocalClassicLinkToRemoteVpc() != null) {
+                request.addParameter("AccepterPeeringConnectionOptions.AllowEgressFromLocalClassicLinkToRemoteVpc",
+                        StringUtils.fromBoolean(accepterPeeringConnectionOptions.getAllowEgressFromLocalClassicLinkToRemoteVpc()));
             }
 
-            if (accepterPeeringConnectionOptions
-                    .getAllowEgressFromLocalVpcToRemoteClassicLink() != null) {
-                request.addParameter(
-                        "AccepterPeeringConnectionOptions.AllowEgressFromLocalVpcToRemoteClassicLink",
-                        StringUtils.fromBoolean(accepterPeeringConnectionOptions
-                                .getAllowEgressFromLocalVpcToRemoteClassicLink()));
+            if (accepterPeeringConnectionOptions.getAllowEgressFromLocalVpcToRemoteClassicLink() != null) {
+                request.addParameter("AccepterPeeringConnectionOptions.AllowEgressFromLocalVpcToRemoteClassicLink",
+                        StringUtils.fromBoolean(accepterPeeringConnectionOptions.getAllowEgressFromLocalVpcToRemoteClassicLink()));
             }
 
-            if (accepterPeeringConnectionOptions
-                    .getAllowDnsResolutionFromRemoteVpc() != null) {
-                request.addParameter(
-                        "AccepterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc",
-                        StringUtils
-                                .fromBoolean(accepterPeeringConnectionOptions
-                                        .getAllowDnsResolutionFromRemoteVpc()));
+            if (accepterPeeringConnectionOptions.getAllowDnsResolutionFromRemoteVpc() != null) {
+                request.addParameter("AccepterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc",
+                        StringUtils.fromBoolean(accepterPeeringConnectionOptions.getAllowDnsResolutionFromRemoteVpc()));
             }
         }
 

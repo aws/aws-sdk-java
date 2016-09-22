@@ -391,6 +391,20 @@ public class DynamoDBMapperConfig {
         }
 
         /**
+         * The type-converter factory for scalar conversions.
+         * <p>To override standard type-conversions,</p>
+         * <pre class="brush: java">
+         * DynamoDBMapperConfig config = DynamoDBMapperConfig.builder()
+         *     .withTypeConverterFactory(DynamoDBTypeConverterFactory.standard().override()
+         *         .with(String.class, MyObject.class, new StringToMyObjectConverter())
+         *         .build())
+         *     .build();
+         * </pre>
+         * <p>Then, on the property, specify the attribute binding,</p>
+         * <pre class="brush: java">
+         * &#064;DynamoDBTyped(DynamoDBAttributeType.S)
+         * public MyObject getMyObject()
+         * </pre>
          * @param value the new type-converter factory
          * @return this builder
          */

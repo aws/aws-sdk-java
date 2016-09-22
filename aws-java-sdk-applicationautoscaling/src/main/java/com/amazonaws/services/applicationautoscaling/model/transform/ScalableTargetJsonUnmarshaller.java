@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.applicationautoscaling.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ScalableTarget JSON Unmarshaller
  */
-public class ScalableTargetJsonUnmarshaller implements
-        Unmarshaller<ScalableTarget, JsonUnmarshallerContext> {
+public class ScalableTargetJsonUnmarshaller implements Unmarshaller<ScalableTarget, JsonUnmarshallerContext> {
 
-    public ScalableTarget unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ScalableTarget unmarshall(JsonUnmarshallerContext context) throws Exception {
         ScalableTarget scalableTarget = new ScalableTarget();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,43 +49,34 @@ public class ScalableTargetJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServiceNamespace", targetDepth)) {
                     context.nextToken();
-                    scalableTarget.setServiceNamespace(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    scalableTarget.setServiceNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
                     context.nextToken();
-                    scalableTarget.setResourceId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    scalableTarget.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalableDimension", targetDepth)) {
                     context.nextToken();
-                    scalableTarget.setScalableDimension(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    scalableTarget.setScalableDimension(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinCapacity", targetDepth)) {
                     context.nextToken();
-                    scalableTarget.setMinCapacity(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    scalableTarget.setMinCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxCapacity", targetDepth)) {
                     context.nextToken();
-                    scalableTarget.setMaxCapacity(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    scalableTarget.setMaxCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleARN", targetDepth)) {
                     context.nextToken();
-                    scalableTarget.setRoleARN(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    scalableTarget.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    scalableTarget.setCreationTime(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    scalableTarget.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

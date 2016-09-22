@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,160 +29,120 @@ import com.amazonaws.util.IdempotentUtils;
  * ModifyInstanceAttributeRequest Marshaller
  */
 
-public class ModifyInstanceAttributeRequestMarshaller
-        implements
-        Marshaller<Request<ModifyInstanceAttributeRequest>, ModifyInstanceAttributeRequest> {
+public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Request<ModifyInstanceAttributeRequest>, ModifyInstanceAttributeRequest> {
 
-    public Request<ModifyInstanceAttributeRequest> marshall(
-            ModifyInstanceAttributeRequest modifyInstanceAttributeRequest) {
+    public Request<ModifyInstanceAttributeRequest> marshall(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest) {
 
         if (modifyInstanceAttributeRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ModifyInstanceAttributeRequest> request = new DefaultRequest<ModifyInstanceAttributeRequest>(
-                modifyInstanceAttributeRequest, "AmazonEC2");
+        Request<ModifyInstanceAttributeRequest> request = new DefaultRequest<ModifyInstanceAttributeRequest>(modifyInstanceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyInstanceAttribute");
         request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifyInstanceAttributeRequest.getInstanceId() != null) {
-            request.addParameter("InstanceId", StringUtils
-                    .fromString(modifyInstanceAttributeRequest.getInstanceId()));
+            request.addParameter("InstanceId", StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceId()));
         }
 
         if (modifyInstanceAttributeRequest.getAttribute() != null) {
-            request.addParameter("Attribute", StringUtils
-                    .fromString(modifyInstanceAttributeRequest.getAttribute()));
+            request.addParameter("Attribute", StringUtils.fromString(modifyInstanceAttributeRequest.getAttribute()));
         }
 
         if (modifyInstanceAttributeRequest.getValue() != null) {
-            request.addParameter("Value", StringUtils
-                    .fromString(modifyInstanceAttributeRequest.getValue()));
+            request.addParameter("Value", StringUtils.fromString(modifyInstanceAttributeRequest.getValue()));
         }
 
         com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMappingSpecification> blockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMappingSpecification>) modifyInstanceAttributeRequest
                 .getBlockDeviceMappings();
-        if (!blockDeviceMappingsList.isEmpty()
-                || !blockDeviceMappingsList.isAutoConstruct()) {
+        if (!blockDeviceMappingsList.isEmpty() || !blockDeviceMappingsList.isAutoConstruct()) {
             int blockDeviceMappingsListIndex = 1;
 
             for (InstanceBlockDeviceMappingSpecification blockDeviceMappingsListValue : blockDeviceMappingsList) {
 
                 if (blockDeviceMappingsListValue.getDeviceName() != null) {
-                    request.addParameter("BlockDeviceMapping."
-                            + blockDeviceMappingsListIndex + ".DeviceName",
-                            StringUtils.fromString(blockDeviceMappingsListValue
-                                    .getDeviceName()));
+                    request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".DeviceName",
+                            StringUtils.fromString(blockDeviceMappingsListValue.getDeviceName()));
                 }
 
-                EbsInstanceBlockDeviceSpecification ebs = blockDeviceMappingsListValue
-                        .getEbs();
+                EbsInstanceBlockDeviceSpecification ebs = blockDeviceMappingsListValue.getEbs();
                 if (ebs != null) {
 
                     if (ebs.getVolumeId() != null) {
-                        request.addParameter("BlockDeviceMapping."
-                                + blockDeviceMappingsListIndex
-                                + ".Ebs.VolumeId",
-                                StringUtils.fromString(ebs.getVolumeId()));
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeId", StringUtils.fromString(ebs.getVolumeId()));
                     }
 
                     if (ebs.getDeleteOnTermination() != null) {
-                        request.addParameter("BlockDeviceMapping."
-                                + blockDeviceMappingsListIndex
-                                + ".Ebs.DeleteOnTermination", StringUtils
-                                .fromBoolean(ebs.getDeleteOnTermination()));
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
+                                StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
                     }
                 }
 
                 if (blockDeviceMappingsListValue.getVirtualName() != null) {
-                    request.addParameter("BlockDeviceMapping."
-                            + blockDeviceMappingsListIndex + ".VirtualName",
-                            StringUtils.fromString(blockDeviceMappingsListValue
-                                    .getVirtualName()));
+                    request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName",
+                            StringUtils.fromString(blockDeviceMappingsListValue.getVirtualName()));
                 }
 
                 if (blockDeviceMappingsListValue.getNoDevice() != null) {
-                    request.addParameter("BlockDeviceMapping."
-                            + blockDeviceMappingsListIndex + ".NoDevice",
-                            StringUtils.fromString(blockDeviceMappingsListValue
-                                    .getNoDevice()));
+                    request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".NoDevice",
+                            StringUtils.fromString(blockDeviceMappingsListValue.getNoDevice()));
                 }
                 blockDeviceMappingsListIndex++;
             }
         }
 
         if (modifyInstanceAttributeRequest.getSourceDestCheck() != null) {
-            request.addParameter("SourceDestCheck.Value", StringUtils
-                    .fromBoolean(modifyInstanceAttributeRequest
-                            .getSourceDestCheck()));
+            request.addParameter("SourceDestCheck.Value", StringUtils.fromBoolean(modifyInstanceAttributeRequest.getSourceDestCheck()));
         }
 
         if (modifyInstanceAttributeRequest.getDisableApiTermination() != null) {
-            request.addParameter("DisableApiTermination.Value", StringUtils
-                    .fromBoolean(modifyInstanceAttributeRequest
-                            .getDisableApiTermination()));
+            request.addParameter("DisableApiTermination.Value", StringUtils.fromBoolean(modifyInstanceAttributeRequest.getDisableApiTermination()));
         }
 
         if (modifyInstanceAttributeRequest.getInstanceType() != null) {
-            request.addParameter("InstanceType.Value", StringUtils
-                    .fromString(modifyInstanceAttributeRequest
-                            .getInstanceType()));
+            request.addParameter("InstanceType.Value", StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceType()));
         }
 
         if (modifyInstanceAttributeRequest.getKernel() != null) {
-            request.addParameter("Kernel.Value", StringUtils
-                    .fromString(modifyInstanceAttributeRequest.getKernel()));
+            request.addParameter("Kernel.Value", StringUtils.fromString(modifyInstanceAttributeRequest.getKernel()));
         }
 
         if (modifyInstanceAttributeRequest.getRamdisk() != null) {
-            request.addParameter("Ramdisk.Value", StringUtils
-                    .fromString(modifyInstanceAttributeRequest.getRamdisk()));
+            request.addParameter("Ramdisk.Value", StringUtils.fromString(modifyInstanceAttributeRequest.getRamdisk()));
         }
 
         if (modifyInstanceAttributeRequest.getUserData() != null) {
-            request.addParameter("UserData.Value", StringUtils
-                    .fromString(modifyInstanceAttributeRequest.getUserData()));
+            request.addParameter("UserData.Value", StringUtils.fromString(modifyInstanceAttributeRequest.getUserData()));
         }
 
-        if (modifyInstanceAttributeRequest
-                .getInstanceInitiatedShutdownBehavior() != null) {
+        if (modifyInstanceAttributeRequest.getInstanceInitiatedShutdownBehavior() != null) {
             request.addParameter("InstanceInitiatedShutdownBehavior.Value",
-                    StringUtils.fromString(modifyInstanceAttributeRequest
-                            .getInstanceInitiatedShutdownBehavior()));
+                    StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceInitiatedShutdownBehavior()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> groupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyInstanceAttributeRequest
-                .getGroups();
+        com.amazonaws.internal.SdkInternalList<String> groupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyInstanceAttributeRequest.getGroups();
         if (!groupsList.isEmpty() || !groupsList.isAutoConstruct()) {
             int groupsListIndex = 1;
 
             for (String groupsListValue : groupsList) {
                 if (groupsListValue != null) {
-                    request.addParameter("GroupId." + groupsListIndex,
-                            StringUtils.fromString(groupsListValue));
+                    request.addParameter("GroupId." + groupsListIndex, StringUtils.fromString(groupsListValue));
                 }
                 groupsListIndex++;
             }
         }
 
         if (modifyInstanceAttributeRequest.getEbsOptimized() != null) {
-            request.addParameter("EbsOptimized.Value", StringUtils
-                    .fromBoolean(modifyInstanceAttributeRequest
-                            .getEbsOptimized()));
+            request.addParameter("EbsOptimized.Value", StringUtils.fromBoolean(modifyInstanceAttributeRequest.getEbsOptimized()));
         }
 
         if (modifyInstanceAttributeRequest.getSriovNetSupport() != null) {
-            request.addParameter("SriovNetSupport.Value", StringUtils
-                    .fromString(modifyInstanceAttributeRequest
-                            .getSriovNetSupport()));
+            request.addParameter("SriovNetSupport.Value", StringUtils.fromString(modifyInstanceAttributeRequest.getSriovNetSupport()));
         }
 
         if (modifyInstanceAttributeRequest.getEnaSupport() != null) {
-            request.addParameter("EnaSupport.Value",
-                    StringUtils.fromBoolean(modifyInstanceAttributeRequest
-                            .getEnaSupport()));
+            request.addParameter("EnaSupport.Value", StringUtils.fromBoolean(modifyInstanceAttributeRequest.getEnaSupport()));
         }
 
         return request;

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -34,28 +32,23 @@ public class UsagePlanJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(UsagePlan usagePlan,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(UsagePlan usagePlan, StructuredJsonGenerator jsonGenerator) {
 
         if (usagePlan == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (usagePlan.getId() != null) {
-                jsonGenerator.writeFieldName("id")
-                        .writeValue(usagePlan.getId());
+                jsonGenerator.writeFieldName("id").writeValue(usagePlan.getId());
             }
             if (usagePlan.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(
-                        usagePlan.getName());
+                jsonGenerator.writeFieldName("name").writeValue(usagePlan.getName());
             }
             if (usagePlan.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(
-                        usagePlan.getDescription());
+                jsonGenerator.writeFieldName("description").writeValue(usagePlan.getDescription());
             }
 
             java.util.List<ApiStage> apiStagesList = usagePlan.getApiStages();
@@ -65,27 +58,23 @@ public class UsagePlanJsonMarshaller {
                 for (ApiStage apiStagesListValue : apiStagesList) {
                     if (apiStagesListValue != null) {
 
-                        ApiStageJsonMarshaller.getInstance().marshall(
-                                apiStagesListValue, jsonGenerator);
+                        ApiStageJsonMarshaller.getInstance().marshall(apiStagesListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (usagePlan.getThrottle() != null) {
                 jsonGenerator.writeFieldName("throttle");
-                ThrottleSettingsJsonMarshaller.getInstance().marshall(
-                        usagePlan.getThrottle(), jsonGenerator);
+                ThrottleSettingsJsonMarshaller.getInstance().marshall(usagePlan.getThrottle(), jsonGenerator);
             }
             if (usagePlan.getQuota() != null) {
                 jsonGenerator.writeFieldName("quota");
-                QuotaSettingsJsonMarshaller.getInstance().marshall(
-                        usagePlan.getQuota(), jsonGenerator);
+                QuotaSettingsJsonMarshaller.getInstance().marshall(usagePlan.getQuota(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

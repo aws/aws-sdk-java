@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class PutDestinationPolicyRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,8 +28,7 @@ public class PutDestinationPolicyRequest extends
     private String destinationName;
     /**
      * <p>
-     * An IAM policy document that authorizes cross-account users to deliver
-     * their log events to associated destination.
+     * An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.
      * </p>
      */
     private String accessPolicy;
@@ -70,25 +65,22 @@ public class PutDestinationPolicyRequest extends
      * 
      * @param destinationName
      *        A name for an existing destination.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutDestinationPolicyRequest withDestinationName(
-            String destinationName) {
+    public PutDestinationPolicyRequest withDestinationName(String destinationName) {
         setDestinationName(destinationName);
         return this;
     }
 
     /**
      * <p>
-     * An IAM policy document that authorizes cross-account users to deliver
-     * their log events to associated destination.
+     * An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.
      * </p>
      * 
      * @param accessPolicy
-     *        An IAM policy document that authorizes cross-account users to
-     *        deliver their log events to associated destination.
+     *        An IAM policy document that authorizes cross-account users to deliver their log events to associated
+     *        destination.
      */
 
     public void setAccessPolicy(String accessPolicy) {
@@ -97,12 +89,11 @@ public class PutDestinationPolicyRequest extends
 
     /**
      * <p>
-     * An IAM policy document that authorizes cross-account users to deliver
-     * their log events to associated destination.
+     * An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.
      * </p>
      * 
-     * @return An IAM policy document that authorizes cross-account users to
-     *         deliver their log events to associated destination.
+     * @return An IAM policy document that authorizes cross-account users to deliver their log events to associated
+     *         destination.
      */
 
     public String getAccessPolicy() {
@@ -111,15 +102,13 @@ public class PutDestinationPolicyRequest extends
 
     /**
      * <p>
-     * An IAM policy document that authorizes cross-account users to deliver
-     * their log events to associated destination.
+     * An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.
      * </p>
      * 
      * @param accessPolicy
-     *        An IAM policy document that authorizes cross-account users to
-     *        deliver their log events to associated destination.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An IAM policy document that authorizes cross-account users to deliver their log events to associated
+     *        destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutDestinationPolicyRequest withAccessPolicy(String accessPolicy) {
@@ -128,8 +117,7 @@ public class PutDestinationPolicyRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -157,16 +145,13 @@ public class PutDestinationPolicyRequest extends
         if (obj instanceof PutDestinationPolicyRequest == false)
             return false;
         PutDestinationPolicyRequest other = (PutDestinationPolicyRequest) obj;
-        if (other.getDestinationName() == null
-                ^ this.getDestinationName() == null)
+        if (other.getDestinationName() == null ^ this.getDestinationName() == null)
             return false;
-        if (other.getDestinationName() != null
-                && other.getDestinationName().equals(this.getDestinationName()) == false)
+        if (other.getDestinationName() != null && other.getDestinationName().equals(this.getDestinationName()) == false)
             return false;
         if (other.getAccessPolicy() == null ^ this.getAccessPolicy() == null)
             return false;
-        if (other.getAccessPolicy() != null
-                && other.getAccessPolicy().equals(this.getAccessPolicy()) == false)
+        if (other.getAccessPolicy() != null && other.getAccessPolicy().equals(this.getAccessPolicy()) == false)
             return false;
         return true;
     }
@@ -176,14 +161,8 @@ public class PutDestinationPolicyRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDestinationName() == null) ? 0 : getDestinationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAccessPolicy() == null) ? 0 : getAccessPolicy()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDestinationName() == null) ? 0 : getDestinationName().hashCode());
+        hashCode = prime * hashCode + ((getAccessPolicy() == null) ? 0 : getAccessPolicy().hashCode());
         return hashCode;
     }
 

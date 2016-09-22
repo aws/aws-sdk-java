@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CountClosedWorkflowExecutionsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,63 +28,51 @@ public class CountClosedWorkflowExecutionsRequest extends
     private String domain;
     /**
      * <p>
-     * If specified, only workflow executions that meet the start time criteria
-     * of the filter are counted.
+     * If specified, only workflow executions that meet the start time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     * mutually exclusive. You must specify one of these in a request but not
-     * both.</note>
+     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     * of these in a request but not both.</note>
      */
     private ExecutionTimeFilter startTimeFilter;
     /**
      * <p>
-     * If specified, only workflow executions that meet the close time criteria
-     * of the filter are counted.
+     * If specified, only workflow executions that meet the close time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     * mutually exclusive. You must specify one of these in a request but not
-     * both.</note>
+     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     * of these in a request but not both.</note>
      */
     private ExecutionTimeFilter closeTimeFilter;
     /**
      * <p>
-     * If specified, only workflow executions matching the
-     * <code>WorkflowId</code> in the filter are counted.
+     * If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      */
     private WorkflowExecutionFilter executionFilter;
     /**
      * <p>
-     * If specified, indicates the type of the workflow executions to be
-     * counted.
+     * If specified, indicates the type of the workflow executions to be counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      */
     private WorkflowTypeFilter typeFilter;
     /**
      * <p>
-     * If specified, only executions that have a tag that matches the filter are
-     * counted.
+     * If specified, only executions that have a tag that matches the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      */
     private TagFilter tagFilter;
     /**
      * <p>
-     * If specified, only workflow executions that match this close status are
-     * counted. This filter has an affect only if <code>executionStatus</code>
-     * is specified as <code>CLOSED</code>.
+     * If specified, only workflow executions that match this close status are counted. This filter has an affect only
+     * if <code>executionStatus</code> is specified as <code>CLOSED</code>.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      */
     private CloseStatusFilter closeStatusFilter;
 
@@ -98,8 +82,7 @@ public class CountClosedWorkflowExecutionsRequest extends
      * </p>
      * 
      * @param domain
-     *        The name of the domain containing the workflow executions to
-     *        count.
+     *        The name of the domain containing the workflow executions to count.
      */
 
     public void setDomain(String domain) {
@@ -111,8 +94,7 @@ public class CountClosedWorkflowExecutionsRequest extends
      * The name of the domain containing the workflow executions to count.
      * </p>
      * 
-     * @return The name of the domain containing the workflow executions to
-     *         count.
+     * @return The name of the domain containing the workflow executions to count.
      */
 
     public String getDomain() {
@@ -125,10 +107,8 @@ public class CountClosedWorkflowExecutionsRequest extends
      * </p>
      * 
      * @param domain
-     *        The name of the domain containing the workflow executions to
-     *        count.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the domain containing the workflow executions to count.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CountClosedWorkflowExecutionsRequest withDomain(String domain) {
@@ -138,19 +118,15 @@ public class CountClosedWorkflowExecutionsRequest extends
 
     /**
      * <p>
-     * If specified, only workflow executions that meet the start time criteria
-     * of the filter are counted.
+     * If specified, only workflow executions that meet the start time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     * mutually exclusive. You must specify one of these in a request but not
-     * both.</note>
+     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     * of these in a request but not both.</note>
      * 
      * @param startTimeFilter
-     *        If specified, only workflow executions that meet the start time
-     *        criteria of the filter are counted.</p> <note>
-     *        <code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     *        mutually exclusive. You must specify one of these in a request but
-     *        not both.
+     *        If specified, only workflow executions that meet the start time criteria of the filter are counted.</p>
+     *        <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must
+     *        specify one of these in a request but not both.
      */
 
     public void setStartTimeFilter(ExecutionTimeFilter startTimeFilter) {
@@ -159,18 +135,14 @@ public class CountClosedWorkflowExecutionsRequest extends
 
     /**
      * <p>
-     * If specified, only workflow executions that meet the start time criteria
-     * of the filter are counted.
+     * If specified, only workflow executions that meet the start time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     * mutually exclusive. You must specify one of these in a request but not
-     * both.</note>
+     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     * of these in a request but not both.</note>
      * 
-     * @return If specified, only workflow executions that meet the start time
-     *         criteria of the filter are counted.</p> <note>
-     *         <code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     *         mutually exclusive. You must specify one of these in a request
-     *         but not both.
+     * @return If specified, only workflow executions that meet the start time criteria of the filter are counted.</p>
+     *         <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must
+     *         specify one of these in a request but not both.
      */
 
     public ExecutionTimeFilter getStartTimeFilter() {
@@ -179,44 +151,34 @@ public class CountClosedWorkflowExecutionsRequest extends
 
     /**
      * <p>
-     * If specified, only workflow executions that meet the start time criteria
-     * of the filter are counted.
+     * If specified, only workflow executions that meet the start time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     * mutually exclusive. You must specify one of these in a request but not
-     * both.</note>
+     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     * of these in a request but not both.</note>
      * 
      * @param startTimeFilter
-     *        If specified, only workflow executions that meet the start time
-     *        criteria of the filter are counted.</p> <note>
-     *        <code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     *        mutually exclusive. You must specify one of these in a request but
-     *        not both.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If specified, only workflow executions that meet the start time criteria of the filter are counted.</p>
+     *        <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must
+     *        specify one of these in a request but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CountClosedWorkflowExecutionsRequest withStartTimeFilter(
-            ExecutionTimeFilter startTimeFilter) {
+    public CountClosedWorkflowExecutionsRequest withStartTimeFilter(ExecutionTimeFilter startTimeFilter) {
         setStartTimeFilter(startTimeFilter);
         return this;
     }
 
     /**
      * <p>
-     * If specified, only workflow executions that meet the close time criteria
-     * of the filter are counted.
+     * If specified, only workflow executions that meet the close time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     * mutually exclusive. You must specify one of these in a request but not
-     * both.</note>
+     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     * of these in a request but not both.</note>
      * 
      * @param closeTimeFilter
-     *        If specified, only workflow executions that meet the close time
-     *        criteria of the filter are counted.</p> <note>
-     *        <code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     *        mutually exclusive. You must specify one of these in a request but
-     *        not both.
+     *        If specified, only workflow executions that meet the close time criteria of the filter are counted.</p>
+     *        <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must
+     *        specify one of these in a request but not both.
      */
 
     public void setCloseTimeFilter(ExecutionTimeFilter closeTimeFilter) {
@@ -225,18 +187,14 @@ public class CountClosedWorkflowExecutionsRequest extends
 
     /**
      * <p>
-     * If specified, only workflow executions that meet the close time criteria
-     * of the filter are counted.
+     * If specified, only workflow executions that meet the close time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     * mutually exclusive. You must specify one of these in a request but not
-     * both.</note>
+     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     * of these in a request but not both.</note>
      * 
-     * @return If specified, only workflow executions that meet the close time
-     *         criteria of the filter are counted.</p> <note>
-     *         <code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     *         mutually exclusive. You must specify one of these in a request
-     *         but not both.
+     * @return If specified, only workflow executions that meet the close time criteria of the filter are counted.</p>
+     *         <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must
+     *         specify one of these in a request but not both.
      */
 
     public ExecutionTimeFilter getCloseTimeFilter() {
@@ -245,44 +203,34 @@ public class CountClosedWorkflowExecutionsRequest extends
 
     /**
      * <p>
-     * If specified, only workflow executions that meet the close time criteria
-     * of the filter are counted.
+     * If specified, only workflow executions that meet the close time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     * mutually exclusive. You must specify one of these in a request but not
-     * both.</note>
+     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     * of these in a request but not both.</note>
      * 
      * @param closeTimeFilter
-     *        If specified, only workflow executions that meet the close time
-     *        criteria of the filter are counted.</p> <note>
-     *        <code>startTimeFilter</code> and <code>closeTimeFilter</code> are
-     *        mutually exclusive. You must specify one of these in a request but
-     *        not both.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If specified, only workflow executions that meet the close time criteria of the filter are counted.</p>
+     *        <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must
+     *        specify one of these in a request but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CountClosedWorkflowExecutionsRequest withCloseTimeFilter(
-            ExecutionTimeFilter closeTimeFilter) {
+    public CountClosedWorkflowExecutionsRequest withCloseTimeFilter(ExecutionTimeFilter closeTimeFilter) {
         setCloseTimeFilter(closeTimeFilter);
         return this;
     }
 
     /**
      * <p>
-     * If specified, only workflow executions matching the
-     * <code>WorkflowId</code> in the filter are counted.
+     * If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      * 
      * @param executionFilter
-     *        If specified, only workflow executions matching the
-     *        <code>WorkflowId</code> in the filter are counted.</p> <note>
-     *        <code>closeStatusFilter</code>, <code>executionFilter</code>,
-     *        <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     *        exclusive. You can specify at most one of these in a request.
+     *        If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p>
+     *        <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
      */
 
     public void setExecutionFilter(WorkflowExecutionFilter executionFilter) {
@@ -291,18 +239,14 @@ public class CountClosedWorkflowExecutionsRequest extends
 
     /**
      * <p>
-     * If specified, only workflow executions matching the
-     * <code>WorkflowId</code> in the filter are counted.
+     * If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      * 
-     * @return If specified, only workflow executions matching the
-     *         <code>WorkflowId</code> in the filter are counted.</p> <note>
-     *         <code>closeStatusFilter</code>, <code>executionFilter</code>,
-     *         <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     *         exclusive. You can specify at most one of these in a request.
+     * @return If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are
+     *         counted.</p> <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code>
+     *         and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
      */
 
     public WorkflowExecutionFilter getExecutionFilter() {
@@ -311,44 +255,34 @@ public class CountClosedWorkflowExecutionsRequest extends
 
     /**
      * <p>
-     * If specified, only workflow executions matching the
-     * <code>WorkflowId</code> in the filter are counted.
+     * If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      * 
      * @param executionFilter
-     *        If specified, only workflow executions matching the
-     *        <code>WorkflowId</code> in the filter are counted.</p> <note>
-     *        <code>closeStatusFilter</code>, <code>executionFilter</code>,
-     *        <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     *        exclusive. You can specify at most one of these in a request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p>
+     *        <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CountClosedWorkflowExecutionsRequest withExecutionFilter(
-            WorkflowExecutionFilter executionFilter) {
+    public CountClosedWorkflowExecutionsRequest withExecutionFilter(WorkflowExecutionFilter executionFilter) {
         setExecutionFilter(executionFilter);
         return this;
     }
 
     /**
      * <p>
-     * If specified, indicates the type of the workflow executions to be
-     * counted.
+     * If specified, indicates the type of the workflow executions to be counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      * 
      * @param typeFilter
-     *        If specified, indicates the type of the workflow executions to be
-     *        counted.</p> <note><code>closeStatusFilter</code>,
-     *        <code>executionFilter</code>, <code>typeFilter</code> and
-     *        <code>tagFilter</code> are mutually exclusive. You can specify at
-     *        most one of these in a request.
+     *        If specified, indicates the type of the workflow executions to be counted.</p> <note>
+     *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
      */
 
     public void setTypeFilter(WorkflowTypeFilter typeFilter) {
@@ -357,18 +291,14 @@ public class CountClosedWorkflowExecutionsRequest extends
 
     /**
      * <p>
-     * If specified, indicates the type of the workflow executions to be
-     * counted.
+     * If specified, indicates the type of the workflow executions to be counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      * 
-     * @return If specified, indicates the type of the workflow executions to be
-     *         counted.</p> <note><code>closeStatusFilter</code>,
-     *         <code>executionFilter</code>, <code>typeFilter</code> and
-     *         <code>tagFilter</code> are mutually exclusive. You can specify at
-     *         most one of these in a request.
+     * @return If specified, indicates the type of the workflow executions to be counted.</p> <note>
+     *         <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *         <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
      */
 
     public WorkflowTypeFilter getTypeFilter() {
@@ -377,44 +307,34 @@ public class CountClosedWorkflowExecutionsRequest extends
 
     /**
      * <p>
-     * If specified, indicates the type of the workflow executions to be
-     * counted.
+     * If specified, indicates the type of the workflow executions to be counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      * 
      * @param typeFilter
-     *        If specified, indicates the type of the workflow executions to be
-     *        counted.</p> <note><code>closeStatusFilter</code>,
-     *        <code>executionFilter</code>, <code>typeFilter</code> and
-     *        <code>tagFilter</code> are mutually exclusive. You can specify at
-     *        most one of these in a request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If specified, indicates the type of the workflow executions to be counted.</p> <note>
+     *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CountClosedWorkflowExecutionsRequest withTypeFilter(
-            WorkflowTypeFilter typeFilter) {
+    public CountClosedWorkflowExecutionsRequest withTypeFilter(WorkflowTypeFilter typeFilter) {
         setTypeFilter(typeFilter);
         return this;
     }
 
     /**
      * <p>
-     * If specified, only executions that have a tag that matches the filter are
-     * counted.
+     * If specified, only executions that have a tag that matches the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      * 
      * @param tagFilter
-     *        If specified, only executions that have a tag that matches the
-     *        filter are counted.</p> <note><code>closeStatusFilter</code>,
-     *        <code>executionFilter</code>, <code>typeFilter</code> and
-     *        <code>tagFilter</code> are mutually exclusive. You can specify at
-     *        most one of these in a request.
+     *        If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+     *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
      */
 
     public void setTagFilter(TagFilter tagFilter) {
@@ -423,18 +343,14 @@ public class CountClosedWorkflowExecutionsRequest extends
 
     /**
      * <p>
-     * If specified, only executions that have a tag that matches the filter are
-     * counted.
+     * If specified, only executions that have a tag that matches the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      * 
-     * @return If specified, only executions that have a tag that matches the
-     *         filter are counted.</p> <note><code>closeStatusFilter</code>,
-     *         <code>executionFilter</code>, <code>typeFilter</code> and
-     *         <code>tagFilter</code> are mutually exclusive. You can specify at
-     *         most one of these in a request.
+     * @return If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+     *         <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *         <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
      */
 
     public TagFilter getTagFilter() {
@@ -443,47 +359,36 @@ public class CountClosedWorkflowExecutionsRequest extends
 
     /**
      * <p>
-     * If specified, only executions that have a tag that matches the filter are
-     * counted.
+     * If specified, only executions that have a tag that matches the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      * 
      * @param tagFilter
-     *        If specified, only executions that have a tag that matches the
-     *        filter are counted.</p> <note><code>closeStatusFilter</code>,
-     *        <code>executionFilter</code>, <code>typeFilter</code> and
-     *        <code>tagFilter</code> are mutually exclusive. You can specify at
-     *        most one of these in a request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+     *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CountClosedWorkflowExecutionsRequest withTagFilter(
-            TagFilter tagFilter) {
+    public CountClosedWorkflowExecutionsRequest withTagFilter(TagFilter tagFilter) {
         setTagFilter(tagFilter);
         return this;
     }
 
     /**
      * <p>
-     * If specified, only workflow executions that match this close status are
-     * counted. This filter has an affect only if <code>executionStatus</code>
-     * is specified as <code>CLOSED</code>.
+     * If specified, only workflow executions that match this close status are counted. This filter has an affect only
+     * if <code>executionStatus</code> is specified as <code>CLOSED</code>.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      * 
      * @param closeStatusFilter
-     *        If specified, only workflow executions that match this close
-     *        status are counted. This filter has an affect only if
-     *        <code>executionStatus</code> is specified as <code>CLOSED</code>
-     *        .</p> <note><code>closeStatusFilter</code>,
-     *        <code>executionFilter</code>, <code>typeFilter</code> and
-     *        <code>tagFilter</code> are mutually exclusive. You can specify at
-     *        most one of these in a request.
+     *        If specified, only workflow executions that match this close status are counted. This filter has an affect
+     *        only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+     *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
      */
 
     public void setCloseStatusFilter(CloseStatusFilter closeStatusFilter) {
@@ -492,21 +397,16 @@ public class CountClosedWorkflowExecutionsRequest extends
 
     /**
      * <p>
-     * If specified, only workflow executions that match this close status are
-     * counted. This filter has an affect only if <code>executionStatus</code>
-     * is specified as <code>CLOSED</code>.
+     * If specified, only workflow executions that match this close status are counted. This filter has an affect only
+     * if <code>executionStatus</code> is specified as <code>CLOSED</code>.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      * 
-     * @return If specified, only workflow executions that match this close
-     *         status are counted. This filter has an affect only if
-     *         <code>executionStatus</code> is specified as <code>CLOSED</code>
-     *         .</p> <note><code>closeStatusFilter</code>,
-     *         <code>executionFilter</code>, <code>typeFilter</code> and
-     *         <code>tagFilter</code> are mutually exclusive. You can specify at
-     *         most one of these in a request.
+     * @return If specified, only workflow executions that match this close status are counted. This filter has an
+     *         affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+     *         <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *         <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
      */
 
     public CloseStatusFilter getCloseStatusFilter() {
@@ -515,35 +415,27 @@ public class CountClosedWorkflowExecutionsRequest extends
 
     /**
      * <p>
-     * If specified, only workflow executions that match this close status are
-     * counted. This filter has an affect only if <code>executionStatus</code>
-     * is specified as <code>CLOSED</code>.
+     * If specified, only workflow executions that match this close status are counted. This filter has an affect only
+     * if <code>executionStatus</code> is specified as <code>CLOSED</code>.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
-     * <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     * exclusive. You can specify at most one of these in a request.</note>
+     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
      * 
      * @param closeStatusFilter
-     *        If specified, only workflow executions that match this close
-     *        status are counted. This filter has an affect only if
-     *        <code>executionStatus</code> is specified as <code>CLOSED</code>
-     *        .</p> <note><code>closeStatusFilter</code>,
-     *        <code>executionFilter</code>, <code>typeFilter</code> and
-     *        <code>tagFilter</code> are mutually exclusive. You can specify at
-     *        most one of these in a request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If specified, only workflow executions that match this close status are counted. This filter has an affect
+     *        only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+     *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CountClosedWorkflowExecutionsRequest withCloseStatusFilter(
-            CloseStatusFilter closeStatusFilter) {
+    public CountClosedWorkflowExecutionsRequest withCloseStatusFilter(CloseStatusFilter closeStatusFilter) {
         setCloseStatusFilter(closeStatusFilter);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -583,43 +475,31 @@ public class CountClosedWorkflowExecutionsRequest extends
         CountClosedWorkflowExecutionsRequest other = (CountClosedWorkflowExecutionsRequest) obj;
         if (other.getDomain() == null ^ this.getDomain() == null)
             return false;
-        if (other.getDomain() != null
-                && other.getDomain().equals(this.getDomain()) == false)
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
-        if (other.getStartTimeFilter() == null
-                ^ this.getStartTimeFilter() == null)
+        if (other.getStartTimeFilter() == null ^ this.getStartTimeFilter() == null)
             return false;
-        if (other.getStartTimeFilter() != null
-                && other.getStartTimeFilter().equals(this.getStartTimeFilter()) == false)
+        if (other.getStartTimeFilter() != null && other.getStartTimeFilter().equals(this.getStartTimeFilter()) == false)
             return false;
-        if (other.getCloseTimeFilter() == null
-                ^ this.getCloseTimeFilter() == null)
+        if (other.getCloseTimeFilter() == null ^ this.getCloseTimeFilter() == null)
             return false;
-        if (other.getCloseTimeFilter() != null
-                && other.getCloseTimeFilter().equals(this.getCloseTimeFilter()) == false)
+        if (other.getCloseTimeFilter() != null && other.getCloseTimeFilter().equals(this.getCloseTimeFilter()) == false)
             return false;
-        if (other.getExecutionFilter() == null
-                ^ this.getExecutionFilter() == null)
+        if (other.getExecutionFilter() == null ^ this.getExecutionFilter() == null)
             return false;
-        if (other.getExecutionFilter() != null
-                && other.getExecutionFilter().equals(this.getExecutionFilter()) == false)
+        if (other.getExecutionFilter() != null && other.getExecutionFilter().equals(this.getExecutionFilter()) == false)
             return false;
         if (other.getTypeFilter() == null ^ this.getTypeFilter() == null)
             return false;
-        if (other.getTypeFilter() != null
-                && other.getTypeFilter().equals(this.getTypeFilter()) == false)
+        if (other.getTypeFilter() != null && other.getTypeFilter().equals(this.getTypeFilter()) == false)
             return false;
         if (other.getTagFilter() == null ^ this.getTagFilter() == null)
             return false;
-        if (other.getTagFilter() != null
-                && other.getTagFilter().equals(this.getTagFilter()) == false)
+        if (other.getTagFilter() != null && other.getTagFilter().equals(this.getTagFilter()) == false)
             return false;
-        if (other.getCloseStatusFilter() == null
-                ^ this.getCloseStatusFilter() == null)
+        if (other.getCloseStatusFilter() == null ^ this.getCloseStatusFilter() == null)
             return false;
-        if (other.getCloseStatusFilter() != null
-                && other.getCloseStatusFilter().equals(
-                        this.getCloseStatusFilter()) == false)
+        if (other.getCloseStatusFilter() != null && other.getCloseStatusFilter().equals(this.getCloseStatusFilter()) == false)
             return false;
         return true;
     }
@@ -629,28 +509,13 @@ public class CountClosedWorkflowExecutionsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomain() == null) ? 0 : getDomain().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStartTimeFilter() == null) ? 0 : getStartTimeFilter()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCloseTimeFilter() == null) ? 0 : getCloseTimeFilter()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExecutionFilter() == null) ? 0 : getExecutionFilter()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTypeFilter() == null) ? 0 : getTypeFilter().hashCode());
-        hashCode = prime * hashCode
-                + ((getTagFilter() == null) ? 0 : getTagFilter().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCloseStatusFilter() == null) ? 0
-                        : getCloseStatusFilter().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getStartTimeFilter() == null) ? 0 : getStartTimeFilter().hashCode());
+        hashCode = prime * hashCode + ((getCloseTimeFilter() == null) ? 0 : getCloseTimeFilter().hashCode());
+        hashCode = prime * hashCode + ((getExecutionFilter() == null) ? 0 : getExecutionFilter().hashCode());
+        hashCode = prime * hashCode + ((getTypeFilter() == null) ? 0 : getTypeFilter().hashCode());
+        hashCode = prime * hashCode + ((getTagFilter() == null) ? 0 : getTagFilter().hashCode());
+        hashCode = prime * hashCode + ((getCloseStatusFilter() == null) ? 0 : getCloseStatusFilter().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model;
 
@@ -37,8 +35,7 @@ public class Computer implements Serializable, Cloneable {
     private String computerName;
     /**
      * <p>
-     * An array of <a>Attribute</a> objects containing the LDAP attributes that
-     * belong to the computer account.
+     * An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the computer account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attribute> computerAttributes;
@@ -75,8 +72,7 @@ public class Computer implements Serializable, Cloneable {
      * 
      * @param computerId
      *        The identifier of the computer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Computer withComputerId(String computerId) {
@@ -116,8 +112,7 @@ public class Computer implements Serializable, Cloneable {
      * 
      * @param computerName
      *        The computer name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Computer withComputerName(String computerName) {
@@ -127,12 +122,10 @@ public class Computer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of <a>Attribute</a> objects containing the LDAP attributes that
-     * belong to the computer account.
+     * An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the computer account.
      * </p>
      * 
-     * @return An array of <a>Attribute</a> objects containing the LDAP
-     *         attributes that belong to the computer account.
+     * @return An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the computer account.
      */
 
     public java.util.List<Attribute> getComputerAttributes() {
@@ -144,49 +137,40 @@ public class Computer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of <a>Attribute</a> objects containing the LDAP attributes that
-     * belong to the computer account.
+     * An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the computer account.
      * </p>
      * 
      * @param computerAttributes
-     *        An array of <a>Attribute</a> objects containing the LDAP
-     *        attributes that belong to the computer account.
+     *        An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the computer account.
      */
 
-    public void setComputerAttributes(
-            java.util.Collection<Attribute> computerAttributes) {
+    public void setComputerAttributes(java.util.Collection<Attribute> computerAttributes) {
         if (computerAttributes == null) {
             this.computerAttributes = null;
             return;
         }
 
-        this.computerAttributes = new com.amazonaws.internal.SdkInternalList<Attribute>(
-                computerAttributes);
+        this.computerAttributes = new com.amazonaws.internal.SdkInternalList<Attribute>(computerAttributes);
     }
 
     /**
      * <p>
-     * An array of <a>Attribute</a> objects containing the LDAP attributes that
-     * belong to the computer account.
+     * An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the computer account.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setComputerAttributes(java.util.Collection)} or
-     * {@link #withComputerAttributes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setComputerAttributes(java.util.Collection)} or {@link #withComputerAttributes(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param computerAttributes
-     *        An array of <a>Attribute</a> objects containing the LDAP
-     *        attributes that belong to the computer account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the computer account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Computer withComputerAttributes(Attribute... computerAttributes) {
         if (this.computerAttributes == null) {
-            setComputerAttributes(new com.amazonaws.internal.SdkInternalList<Attribute>(
-                    computerAttributes.length));
+            setComputerAttributes(new com.amazonaws.internal.SdkInternalList<Attribute>(computerAttributes.length));
         }
         for (Attribute ele : computerAttributes) {
             this.computerAttributes.add(ele);
@@ -196,26 +180,21 @@ public class Computer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of <a>Attribute</a> objects containing the LDAP attributes that
-     * belong to the computer account.
+     * An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the computer account.
      * </p>
      * 
      * @param computerAttributes
-     *        An array of <a>Attribute</a> objects containing the LDAP
-     *        attributes that belong to the computer account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the computer account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Computer withComputerAttributes(
-            java.util.Collection<Attribute> computerAttributes) {
+    public Computer withComputerAttributes(java.util.Collection<Attribute> computerAttributes) {
         setComputerAttributes(computerAttributes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -247,20 +226,15 @@ public class Computer implements Serializable, Cloneable {
         Computer other = (Computer) obj;
         if (other.getComputerId() == null ^ this.getComputerId() == null)
             return false;
-        if (other.getComputerId() != null
-                && other.getComputerId().equals(this.getComputerId()) == false)
+        if (other.getComputerId() != null && other.getComputerId().equals(this.getComputerId()) == false)
             return false;
         if (other.getComputerName() == null ^ this.getComputerName() == null)
             return false;
-        if (other.getComputerName() != null
-                && other.getComputerName().equals(this.getComputerName()) == false)
+        if (other.getComputerName() != null && other.getComputerName().equals(this.getComputerName()) == false)
             return false;
-        if (other.getComputerAttributes() == null
-                ^ this.getComputerAttributes() == null)
+        if (other.getComputerAttributes() == null ^ this.getComputerAttributes() == null)
             return false;
-        if (other.getComputerAttributes() != null
-                && other.getComputerAttributes().equals(
-                        this.getComputerAttributes()) == false)
+        if (other.getComputerAttributes() != null && other.getComputerAttributes().equals(this.getComputerAttributes()) == false)
             return false;
         return true;
     }
@@ -270,16 +244,9 @@ public class Computer implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getComputerId() == null) ? 0 : getComputerId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getComputerName() == null) ? 0 : getComputerName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getComputerAttributes() == null) ? 0
-                        : getComputerAttributes().hashCode());
+        hashCode = prime * hashCode + ((getComputerId() == null) ? 0 : getComputerId().hashCode());
+        hashCode = prime * hashCode + ((getComputerName() == null) ? 0 : getComputerName().hashCode());
+        hashCode = prime * hashCode + ((getComputerAttributes() == null) ? 0 : getComputerAttributes().hashCode());
         return hashCode;
     }
 
@@ -288,9 +255,7 @@ public class Computer implements Serializable, Cloneable {
         try {
             return (Computer) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model;
 
@@ -18,11 +16,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The Amazon S3 location where artifacts are stored for the pipeline. If this
- * Amazon S3 bucket is created manually, it must meet the requirements for AWS
- * CodePipeline. For more information, see the <a href=
- * "http://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#CPS3Bucket"
- * >Concepts</a>.
+ * The Amazon S3 location where artifacts are stored for the pipeline. If this Amazon S3 bucket is created manually, it
+ * must meet the requirements for AWS CodePipeline. For more information, see the <a
+ * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#CPS3Bucket">Concepts</a>.
  * </p>
  */
 public class ArtifactStore implements Serializable, Cloneable {
@@ -35,16 +31,14 @@ public class ArtifactStore implements Serializable, Cloneable {
     private String type;
     /**
      * <p>
-     * The location for storing the artifacts for a pipeline, such as an S3
-     * bucket or folder.
+     * The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
      * </p>
      */
     private String location;
     /**
      * <p>
-     * The encryption key used to encrypt the data in the artifact store, such
-     * as an AWS Key Management Service (AWS KMS) key. If this is undefined, the
-     * default key for Amazon S3 is used.
+     * The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS
+     * KMS) key. If this is undefined, the default key for Amazon S3 is used.
      * </p>
      */
     private EncryptionKey encryptionKey;
@@ -83,8 +77,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of the artifact store, such as S3.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArtifactStoreType
      */
 
@@ -114,8 +107,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of the artifact store, such as S3.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArtifactStoreType
      */
 
@@ -126,13 +118,11 @@ public class ArtifactStore implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location for storing the artifacts for a pipeline, such as an S3
-     * bucket or folder.
+     * The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
      * </p>
      * 
      * @param location
-     *        The location for storing the artifacts for a pipeline, such as an
-     *        S3 bucket or folder.
+     *        The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
      */
 
     public void setLocation(String location) {
@@ -141,12 +131,10 @@ public class ArtifactStore implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location for storing the artifacts for a pipeline, such as an S3
-     * bucket or folder.
+     * The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
      * </p>
      * 
-     * @return The location for storing the artifacts for a pipeline, such as an
-     *         S3 bucket or folder.
+     * @return The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
      */
 
     public String getLocation() {
@@ -155,15 +143,12 @@ public class ArtifactStore implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location for storing the artifacts for a pipeline, such as an S3
-     * bucket or folder.
+     * The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
      * </p>
      * 
      * @param location
-     *        The location for storing the artifacts for a pipeline, such as an
-     *        S3 bucket or folder.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ArtifactStore withLocation(String location) {
@@ -173,15 +158,13 @@ public class ArtifactStore implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption key used to encrypt the data in the artifact store, such
-     * as an AWS Key Management Service (AWS KMS) key. If this is undefined, the
-     * default key for Amazon S3 is used.
+     * The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS
+     * KMS) key. If this is undefined, the default key for Amazon S3 is used.
      * </p>
      * 
      * @param encryptionKey
-     *        The encryption key used to encrypt the data in the artifact store,
-     *        such as an AWS Key Management Service (AWS KMS) key. If this is
-     *        undefined, the default key for Amazon S3 is used.
+     *        The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service
+     *        (AWS KMS) key. If this is undefined, the default key for Amazon S3 is used.
      */
 
     public void setEncryptionKey(EncryptionKey encryptionKey) {
@@ -190,14 +173,12 @@ public class ArtifactStore implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption key used to encrypt the data in the artifact store, such
-     * as an AWS Key Management Service (AWS KMS) key. If this is undefined, the
-     * default key for Amazon S3 is used.
+     * The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS
+     * KMS) key. If this is undefined, the default key for Amazon S3 is used.
      * </p>
      * 
-     * @return The encryption key used to encrypt the data in the artifact
-     *         store, such as an AWS Key Management Service (AWS KMS) key. If
-     *         this is undefined, the default key for Amazon S3 is used.
+     * @return The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service
+     *         (AWS KMS) key. If this is undefined, the default key for Amazon S3 is used.
      */
 
     public EncryptionKey getEncryptionKey() {
@@ -206,17 +187,14 @@ public class ArtifactStore implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption key used to encrypt the data in the artifact store, such
-     * as an AWS Key Management Service (AWS KMS) key. If this is undefined, the
-     * default key for Amazon S3 is used.
+     * The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS
+     * KMS) key. If this is undefined, the default key for Amazon S3 is used.
      * </p>
      * 
      * @param encryptionKey
-     *        The encryption key used to encrypt the data in the artifact store,
-     *        such as an AWS Key Management Service (AWS KMS) key. If this is
-     *        undefined, the default key for Amazon S3 is used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service
+     *        (AWS KMS) key. If this is undefined, the default key for Amazon S3 is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ArtifactStore withEncryptionKey(EncryptionKey encryptionKey) {
@@ -225,8 +203,7 @@ public class ArtifactStore implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -258,18 +235,15 @@ public class ArtifactStore implements Serializable, Cloneable {
         ArtifactStore other = (ArtifactStore) obj;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getLocation() == null ^ this.getLocation() == null)
             return false;
-        if (other.getLocation() != null
-                && other.getLocation().equals(this.getLocation()) == false)
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
         if (other.getEncryptionKey() == null ^ this.getEncryptionKey() == null)
             return false;
-        if (other.getEncryptionKey() != null
-                && other.getEncryptionKey().equals(this.getEncryptionKey()) == false)
+        if (other.getEncryptionKey() != null && other.getEncryptionKey().equals(this.getEncryptionKey()) == false)
             return false;
         return true;
     }
@@ -279,14 +253,9 @@ public class ArtifactStore implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode
-                + ((getLocation() == null) ? 0 : getLocation().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEncryptionKey() == null) ? 0 : getEncryptionKey()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionKey() == null) ? 0 : getEncryptionKey().hashCode());
         return hashCode;
     }
 
@@ -295,9 +264,7 @@ public class ArtifactStore implements Serializable, Cloneable {
         try {
             return (ArtifactStore) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

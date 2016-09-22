@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DetachLoadBalancerTargetGroupsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DetachLoadBalancerTargetGroupsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -69,12 +65,10 @@ public class DetachLoadBalancerTargetGroupsRequest extends
      * 
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DetachLoadBalancerTargetGroupsRequest withAutoScalingGroupName(
-            String autoScalingGroupName) {
+    public DetachLoadBalancerTargetGroupsRequest withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
@@ -109,8 +103,7 @@ public class DetachLoadBalancerTargetGroupsRequest extends
             return;
         }
 
-        this.targetGroupARNs = new com.amazonaws.internal.SdkInternalList<String>(
-                targetGroupARNs);
+        this.targetGroupARNs = new com.amazonaws.internal.SdkInternalList<String>(targetGroupARNs);
     }
 
     /**
@@ -118,23 +111,19 @@ public class DetachLoadBalancerTargetGroupsRequest extends
      * The Amazon Resource Names (ARN) of the target groups.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTargetGroupARNs(java.util.Collection)} or
-     * {@link #withTargetGroupARNs(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetGroupARNs(java.util.Collection)} or {@link #withTargetGroupARNs(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param targetGroupARNs
      *        The Amazon Resource Names (ARN) of the target groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DetachLoadBalancerTargetGroupsRequest withTargetGroupARNs(
-            String... targetGroupARNs) {
+    public DetachLoadBalancerTargetGroupsRequest withTargetGroupARNs(String... targetGroupARNs) {
         if (this.targetGroupARNs == null) {
-            setTargetGroupARNs(new com.amazonaws.internal.SdkInternalList<String>(
-                    targetGroupARNs.length));
+            setTargetGroupARNs(new com.amazonaws.internal.SdkInternalList<String>(targetGroupARNs.length));
         }
         for (String ele : targetGroupARNs) {
             this.targetGroupARNs.add(ele);
@@ -149,19 +138,16 @@ public class DetachLoadBalancerTargetGroupsRequest extends
      * 
      * @param targetGroupARNs
      *        The Amazon Resource Names (ARN) of the target groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DetachLoadBalancerTargetGroupsRequest withTargetGroupARNs(
-            java.util.Collection<String> targetGroupARNs) {
+    public DetachLoadBalancerTargetGroupsRequest withTargetGroupARNs(java.util.Collection<String> targetGroupARNs) {
         setTargetGroupARNs(targetGroupARNs);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -172,8 +158,7 @@ public class DetachLoadBalancerTargetGroupsRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
         if (getTargetGroupARNs() != null)
             sb.append("TargetGroupARNs: " + getTargetGroupARNs());
         sb.append("}");
@@ -190,18 +175,13 @@ public class DetachLoadBalancerTargetGroupsRequest extends
         if (obj instanceof DetachLoadBalancerTargetGroupsRequest == false)
             return false;
         DetachLoadBalancerTargetGroupsRequest other = (DetachLoadBalancerTargetGroupsRequest) obj;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
-        if (other.getTargetGroupARNs() == null
-                ^ this.getTargetGroupARNs() == null)
+        if (other.getTargetGroupARNs() == null ^ this.getTargetGroupARNs() == null)
             return false;
-        if (other.getTargetGroupARNs() != null
-                && other.getTargetGroupARNs().equals(this.getTargetGroupARNs()) == false)
+        if (other.getTargetGroupARNs() != null && other.getTargetGroupARNs().equals(this.getTargetGroupARNs()) == false)
             return false;
         return true;
     }
@@ -211,14 +191,8 @@ public class DetachLoadBalancerTargetGroupsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTargetGroupARNs() == null) ? 0 : getTargetGroupARNs()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getTargetGroupARNs() == null) ? 0 : getTargetGroupARNs().hashCode());
         return hashCode;
     }
 

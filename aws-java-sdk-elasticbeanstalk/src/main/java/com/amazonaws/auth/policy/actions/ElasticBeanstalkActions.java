@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.auth.policy.actions;
 
@@ -28,8 +26,7 @@ public enum ElasticBeanstalkActions implements Action {
     /** Action for the AbortEnvironmentUpdate operation. */
     AbortEnvironmentUpdate("elasticbeanstalk:AbortEnvironmentUpdate"),
     /** Action for the ApplyEnvironmentManagedAction operation. */
-    ApplyEnvironmentManagedAction(
-            "elasticbeanstalk:ApplyEnvironmentManagedAction"),
+    ApplyEnvironmentManagedAction("elasticbeanstalk:ApplyEnvironmentManagedAction"),
     /** Action for the CheckDNSAvailability operation. */
     CheckDNSAvailability("elasticbeanstalk:CheckDNSAvailability"),
     /** Action for the ComposeEnvironments operation. */
@@ -51,29 +48,23 @@ public enum ElasticBeanstalkActions implements Action {
     /** Action for the DeleteConfigurationTemplate operation. */
     DeleteConfigurationTemplate("elasticbeanstalk:DeleteConfigurationTemplate"),
     /** Action for the DeleteEnvironmentConfiguration operation. */
-    DeleteEnvironmentConfiguration(
-            "elasticbeanstalk:DeleteEnvironmentConfiguration"),
+    DeleteEnvironmentConfiguration("elasticbeanstalk:DeleteEnvironmentConfiguration"),
     /** Action for the DescribeApplicationVersions operation. */
     DescribeApplicationVersions("elasticbeanstalk:DescribeApplicationVersions"),
     /** Action for the DescribeApplications operation. */
     DescribeApplications("elasticbeanstalk:DescribeApplications"),
     /** Action for the DescribeConfigurationOptions operation. */
-    DescribeConfigurationOptions(
-            "elasticbeanstalk:DescribeConfigurationOptions"),
+    DescribeConfigurationOptions("elasticbeanstalk:DescribeConfigurationOptions"),
     /** Action for the DescribeConfigurationSettings operation. */
-    DescribeConfigurationSettings(
-            "elasticbeanstalk:DescribeConfigurationSettings"),
+    DescribeConfigurationSettings("elasticbeanstalk:DescribeConfigurationSettings"),
     /** Action for the DescribeEnvironmentHealth operation. */
     DescribeEnvironmentHealth("elasticbeanstalk:DescribeEnvironmentHealth"),
     /** Action for the DescribeEnvironmentManagedActionHistory operation. */
-    DescribeEnvironmentManagedActionHistory(
-            "elasticbeanstalk:DescribeEnvironmentManagedActionHistory"),
+    DescribeEnvironmentManagedActionHistory("elasticbeanstalk:DescribeEnvironmentManagedActionHistory"),
     /** Action for the DescribeEnvironmentManagedActions operation. */
-    DescribeEnvironmentManagedActions(
-            "elasticbeanstalk:DescribeEnvironmentManagedActions"),
+    DescribeEnvironmentManagedActions("elasticbeanstalk:DescribeEnvironmentManagedActions"),
     /** Action for the DescribeEnvironmentResources operation. */
-    DescribeEnvironmentResources(
-            "elasticbeanstalk:DescribeEnvironmentResources"),
+    DescribeEnvironmentResources("elasticbeanstalk:DescribeEnvironmentResources"),
     /** Action for the DescribeEnvironments operation. */
     DescribeEnvironments("elasticbeanstalk:DescribeEnvironments"),
     /** Action for the DescribeEvents operation. */
@@ -103,8 +94,7 @@ public enum ElasticBeanstalkActions implements Action {
     /** Action for the UpdateEnvironment operation. */
     UpdateEnvironment("elasticbeanstalk:UpdateEnvironment"),
     /** Action for the ValidateConfigurationSettings operation. */
-    ValidateConfigurationSettings(
-            "elasticbeanstalk:ValidateConfigurationSettings"),
+    ValidateConfigurationSettings("elasticbeanstalk:ValidateConfigurationSettings"),
 
     ;
 

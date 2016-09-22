@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of DescribeInstanceStatus.
  * </p>
  */
-public class DescribeInstanceStatusResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeInstanceStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,8 +30,8 @@ public class DescribeInstanceStatusResult extends
     private com.amazonaws.internal.SdkInternalList<InstanceStatus> instanceStatuses;
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      */
     private String nextToken;
@@ -64,15 +60,13 @@ public class DescribeInstanceStatusResult extends
      *        One or more instance status descriptions.
      */
 
-    public void setInstanceStatuses(
-            java.util.Collection<InstanceStatus> instanceStatuses) {
+    public void setInstanceStatuses(java.util.Collection<InstanceStatus> instanceStatuses) {
         if (instanceStatuses == null) {
             this.instanceStatuses = null;
             return;
         }
 
-        this.instanceStatuses = new com.amazonaws.internal.SdkInternalList<InstanceStatus>(
-                instanceStatuses);
+        this.instanceStatuses = new com.amazonaws.internal.SdkInternalList<InstanceStatus>(instanceStatuses);
     }
 
     /**
@@ -80,23 +74,19 @@ public class DescribeInstanceStatusResult extends
      * One or more instance status descriptions.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstanceStatuses(java.util.Collection)} or
-     * {@link #withInstanceStatuses(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceStatuses(java.util.Collection)} or {@link #withInstanceStatuses(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param instanceStatuses
      *        One or more instance status descriptions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeInstanceStatusResult withInstanceStatuses(
-            InstanceStatus... instanceStatuses) {
+    public DescribeInstanceStatusResult withInstanceStatuses(InstanceStatus... instanceStatuses) {
         if (this.instanceStatuses == null) {
-            setInstanceStatuses(new com.amazonaws.internal.SdkInternalList<InstanceStatus>(
-                    instanceStatuses.length));
+            setInstanceStatuses(new com.amazonaws.internal.SdkInternalList<InstanceStatus>(instanceStatuses.length));
         }
         for (InstanceStatus ele : instanceStatuses) {
             this.instanceStatuses.add(ele);
@@ -111,25 +101,23 @@ public class DescribeInstanceStatusResult extends
      * 
      * @param instanceStatuses
      *        One or more instance status descriptions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeInstanceStatusResult withInstanceStatuses(
-            java.util.Collection<InstanceStatus> instanceStatuses) {
+    public DescribeInstanceStatusResult withInstanceStatuses(java.util.Collection<InstanceStatus> instanceStatuses) {
         setInstanceStatuses(instanceStatuses);
         return this;
     }
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value
-     *        is <code>null</code> when there are no more results to return.
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -138,12 +126,12 @@ public class DescribeInstanceStatusResult extends
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
-     * @return The token to use to retrieve the next page of results. This value
-     *         is <code>null</code> when there are no more results to return.
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
      */
 
     public String getNextToken() {
@@ -152,15 +140,14 @@ public class DescribeInstanceStatusResult extends
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value
-     *        is <code>null</code> when there are no more results to return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeInstanceStatusResult withNextToken(String nextToken) {
@@ -169,8 +156,7 @@ public class DescribeInstanceStatusResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -198,17 +184,13 @@ public class DescribeInstanceStatusResult extends
         if (obj instanceof DescribeInstanceStatusResult == false)
             return false;
         DescribeInstanceStatusResult other = (DescribeInstanceStatusResult) obj;
-        if (other.getInstanceStatuses() == null
-                ^ this.getInstanceStatuses() == null)
+        if (other.getInstanceStatuses() == null ^ this.getInstanceStatuses() == null)
             return false;
-        if (other.getInstanceStatuses() != null
-                && other.getInstanceStatuses().equals(
-                        this.getInstanceStatuses()) == false)
+        if (other.getInstanceStatuses() != null && other.getInstanceStatuses().equals(this.getInstanceStatuses()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -218,12 +200,8 @@ public class DescribeInstanceStatusResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceStatuses() == null) ? 0 : getInstanceStatuses()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getInstanceStatuses() == null) ? 0 : getInstanceStatuses().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -232,9 +210,7 @@ public class DescribeInstanceStatusResult extends
         try {
             return (DescribeInstanceStatusResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

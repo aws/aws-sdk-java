@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * InventoryRetrievalJobDescription JSON Unmarshaller
  */
-public class InventoryRetrievalJobDescriptionJsonUnmarshaller implements
-        Unmarshaller<InventoryRetrievalJobDescription, JsonUnmarshallerContext> {
+public class InventoryRetrievalJobDescriptionJsonUnmarshaller implements Unmarshaller<InventoryRetrievalJobDescription, JsonUnmarshallerContext> {
 
-    public InventoryRetrievalJobDescription unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public InventoryRetrievalJobDescription unmarshall(JsonUnmarshallerContext context) throws Exception {
         InventoryRetrievalJobDescription inventoryRetrievalJobDescription = new InventoryRetrievalJobDescription();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,33 +49,26 @@ public class InventoryRetrievalJobDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Format", targetDepth)) {
                     context.nextToken();
-                    inventoryRetrievalJobDescription.setFormat(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    inventoryRetrievalJobDescription.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartDate", targetDepth)) {
                     context.nextToken();
-                    inventoryRetrievalJobDescription.setStartDate(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    inventoryRetrievalJobDescription.setStartDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndDate", targetDepth)) {
                     context.nextToken();
-                    inventoryRetrievalJobDescription.setEndDate(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    inventoryRetrievalJobDescription.setEndDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Limit", targetDepth)) {
                     context.nextToken();
-                    inventoryRetrievalJobDescription.setLimit(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    inventoryRetrievalJobDescription.setLimit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();
-                    inventoryRetrievalJobDescription.setMarker(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    inventoryRetrievalJobDescription.setMarker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

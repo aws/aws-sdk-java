@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
 
@@ -18,9 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns information about an HSM configuration, which is an object that
- * describes to Amazon Redshift clusters the information they require to connect
- * to an HSM where they can store database encryption keys.
+ * Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the
+ * information they require to connect to an HSM where they can store database encryption keys.
  * </p>
  */
 public class HsmConfiguration implements Serializable, Cloneable {
@@ -39,15 +36,14 @@ public class HsmConfiguration implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The IP address that the Amazon Redshift cluster must use to access the
-     * HSM.
+     * The IP address that the Amazon Redshift cluster must use to access the HSM.
      * </p>
      */
     private String hsmIpAddress;
     /**
      * <p>
-     * The name of the partition in the HSM where the Amazon Redshift clusters
-     * will store their database encryption keys.
+     * The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption
+     * keys.
      * </p>
      */
     private String hsmPartitionName;
@@ -90,12 +86,10 @@ public class HsmConfiguration implements Serializable, Cloneable {
      * 
      * @param hsmConfigurationIdentifier
      *        The name of the Amazon Redshift HSM configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public HsmConfiguration withHsmConfigurationIdentifier(
-            String hsmConfigurationIdentifier) {
+    public HsmConfiguration withHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
         setHsmConfigurationIdentifier(hsmConfigurationIdentifier);
         return this;
     }
@@ -132,8 +126,7 @@ public class HsmConfiguration implements Serializable, Cloneable {
      * 
      * @param description
      *        A text description of the HSM configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HsmConfiguration withDescription(String description) {
@@ -143,13 +136,11 @@ public class HsmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address that the Amazon Redshift cluster must use to access the
-     * HSM.
+     * The IP address that the Amazon Redshift cluster must use to access the HSM.
      * </p>
      * 
      * @param hsmIpAddress
-     *        The IP address that the Amazon Redshift cluster must use to access
-     *        the HSM.
+     *        The IP address that the Amazon Redshift cluster must use to access the HSM.
      */
 
     public void setHsmIpAddress(String hsmIpAddress) {
@@ -158,12 +149,10 @@ public class HsmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address that the Amazon Redshift cluster must use to access the
-     * HSM.
+     * The IP address that the Amazon Redshift cluster must use to access the HSM.
      * </p>
      * 
-     * @return The IP address that the Amazon Redshift cluster must use to
-     *         access the HSM.
+     * @return The IP address that the Amazon Redshift cluster must use to access the HSM.
      */
 
     public String getHsmIpAddress() {
@@ -172,15 +161,12 @@ public class HsmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address that the Amazon Redshift cluster must use to access the
-     * HSM.
+     * The IP address that the Amazon Redshift cluster must use to access the HSM.
      * </p>
      * 
      * @param hsmIpAddress
-     *        The IP address that the Amazon Redshift cluster must use to access
-     *        the HSM.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IP address that the Amazon Redshift cluster must use to access the HSM.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HsmConfiguration withHsmIpAddress(String hsmIpAddress) {
@@ -190,13 +176,13 @@ public class HsmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the partition in the HSM where the Amazon Redshift clusters
-     * will store their database encryption keys.
+     * The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption
+     * keys.
      * </p>
      * 
      * @param hsmPartitionName
-     *        The name of the partition in the HSM where the Amazon Redshift
-     *        clusters will store their database encryption keys.
+     *        The name of the partition in the HSM where the Amazon Redshift clusters will store their database
+     *        encryption keys.
      */
 
     public void setHsmPartitionName(String hsmPartitionName) {
@@ -205,12 +191,12 @@ public class HsmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the partition in the HSM where the Amazon Redshift clusters
-     * will store their database encryption keys.
+     * The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption
+     * keys.
      * </p>
      * 
-     * @return The name of the partition in the HSM where the Amazon Redshift
-     *         clusters will store their database encryption keys.
+     * @return The name of the partition in the HSM where the Amazon Redshift clusters will store their database
+     *         encryption keys.
      */
 
     public String getHsmPartitionName() {
@@ -219,15 +205,14 @@ public class HsmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the partition in the HSM where the Amazon Redshift clusters
-     * will store their database encryption keys.
+     * The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption
+     * keys.
      * </p>
      * 
      * @param hsmPartitionName
-     *        The name of the partition in the HSM where the Amazon Redshift
-     *        clusters will store their database encryption keys.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the partition in the HSM where the Amazon Redshift clusters will store their database
+     *        encryption keys.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HsmConfiguration withHsmPartitionName(String hsmPartitionName) {
@@ -273,16 +258,14 @@ public class HsmConfiguration implements Serializable, Cloneable {
      * The list of tags for the HSM configuration.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        The list of tags for the HSM configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HsmConfiguration withTags(Tag... tags) {
@@ -302,8 +285,7 @@ public class HsmConfiguration implements Serializable, Cloneable {
      * 
      * @param tags
      *        The list of tags for the HSM configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HsmConfiguration withTags(java.util.Collection<Tag> tags) {
@@ -312,8 +294,7 @@ public class HsmConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -324,8 +305,7 @@ public class HsmConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmConfigurationIdentifier() != null)
-            sb.append("HsmConfigurationIdentifier: "
-                    + getHsmConfigurationIdentifier() + ",");
+            sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() + ",");
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
         if (getHsmIpAddress() != null)
@@ -348,34 +328,25 @@ public class HsmConfiguration implements Serializable, Cloneable {
         if (obj instanceof HsmConfiguration == false)
             return false;
         HsmConfiguration other = (HsmConfiguration) obj;
-        if (other.getHsmConfigurationIdentifier() == null
-                ^ this.getHsmConfigurationIdentifier() == null)
+        if (other.getHsmConfigurationIdentifier() == null ^ this.getHsmConfigurationIdentifier() == null)
             return false;
-        if (other.getHsmConfigurationIdentifier() != null
-                && other.getHsmConfigurationIdentifier().equals(
-                        this.getHsmConfigurationIdentifier()) == false)
+        if (other.getHsmConfigurationIdentifier() != null && other.getHsmConfigurationIdentifier().equals(this.getHsmConfigurationIdentifier()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getHsmIpAddress() == null ^ this.getHsmIpAddress() == null)
             return false;
-        if (other.getHsmIpAddress() != null
-                && other.getHsmIpAddress().equals(this.getHsmIpAddress()) == false)
+        if (other.getHsmIpAddress() != null && other.getHsmIpAddress().equals(this.getHsmIpAddress()) == false)
             return false;
-        if (other.getHsmPartitionName() == null
-                ^ this.getHsmPartitionName() == null)
+        if (other.getHsmPartitionName() == null ^ this.getHsmPartitionName() == null)
             return false;
-        if (other.getHsmPartitionName() != null
-                && other.getHsmPartitionName().equals(
-                        this.getHsmPartitionName()) == false)
+        if (other.getHsmPartitionName() != null && other.getHsmPartitionName().equals(this.getHsmPartitionName()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -385,23 +356,11 @@ public class HsmConfiguration implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getHsmConfigurationIdentifier() == null) ? 0
-                        : getHsmConfigurationIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHsmIpAddress() == null) ? 0 : getHsmIpAddress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHsmPartitionName() == null) ? 0 : getHsmPartitionName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getHsmConfigurationIdentifier() == null) ? 0 : getHsmConfigurationIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getHsmIpAddress() == null) ? 0 : getHsmIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getHsmPartitionName() == null) ? 0 : getHsmPartitionName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -410,9 +369,7 @@ public class HsmConfiguration implements Serializable, Cloneable {
         try {
             return (HsmConfiguration) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

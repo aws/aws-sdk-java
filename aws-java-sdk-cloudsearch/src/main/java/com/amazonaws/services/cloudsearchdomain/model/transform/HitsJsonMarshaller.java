@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchdomain.model.transform;
 
@@ -37,36 +35,30 @@ public class HitsJsonMarshaller {
     public void marshall(Hits hits, StructuredJsonGenerator jsonGenerator) {
 
         if (hits == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (hits.getFound() != null) {
-                jsonGenerator.writeFieldName("found").writeValue(
-                        hits.getFound());
+                jsonGenerator.writeFieldName("found").writeValue(hits.getFound());
             }
             if (hits.getStart() != null) {
-                jsonGenerator.writeFieldName("start").writeValue(
-                        hits.getStart());
+                jsonGenerator.writeFieldName("start").writeValue(hits.getStart());
             }
             if (hits.getCursor() != null) {
-                jsonGenerator.writeFieldName("cursor").writeValue(
-                        hits.getCursor());
+                jsonGenerator.writeFieldName("cursor").writeValue(hits.getCursor());
             }
 
-            com.amazonaws.internal.SdkInternalList<Hit> hitList = (com.amazonaws.internal.SdkInternalList<Hit>) hits
-                    .getHit();
+            com.amazonaws.internal.SdkInternalList<Hit> hitList = (com.amazonaws.internal.SdkInternalList<Hit>) hits.getHit();
             if (!hitList.isEmpty() || !hitList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("hit");
                 jsonGenerator.writeStartArray();
                 for (Hit hitListValue : hitList) {
                     if (hitListValue != null) {
 
-                        HitJsonMarshaller.getInstance().marshall(hitListValue,
-                                jsonGenerator);
+                        HitJsonMarshaller.getInstance().marshall(hitListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
@@ -74,8 +66,7 @@ public class HitsJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

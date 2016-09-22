@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
@@ -34,12 +32,10 @@ public class PipelineJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Pipeline pipeline,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(Pipeline pipeline, StructuredJsonGenerator jsonGenerator) {
 
         if (pipeline == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -49,53 +45,42 @@ public class PipelineJsonMarshaller {
                 jsonGenerator.writeFieldName("Id").writeValue(pipeline.getId());
             }
             if (pipeline.getArn() != null) {
-                jsonGenerator.writeFieldName("Arn").writeValue(
-                        pipeline.getArn());
+                jsonGenerator.writeFieldName("Arn").writeValue(pipeline.getArn());
             }
             if (pipeline.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(
-                        pipeline.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(pipeline.getName());
             }
             if (pipeline.getStatus() != null) {
-                jsonGenerator.writeFieldName("Status").writeValue(
-                        pipeline.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(pipeline.getStatus());
             }
             if (pipeline.getInputBucket() != null) {
-                jsonGenerator.writeFieldName("InputBucket").writeValue(
-                        pipeline.getInputBucket());
+                jsonGenerator.writeFieldName("InputBucket").writeValue(pipeline.getInputBucket());
             }
             if (pipeline.getOutputBucket() != null) {
-                jsonGenerator.writeFieldName("OutputBucket").writeValue(
-                        pipeline.getOutputBucket());
+                jsonGenerator.writeFieldName("OutputBucket").writeValue(pipeline.getOutputBucket());
             }
             if (pipeline.getRole() != null) {
-                jsonGenerator.writeFieldName("Role").writeValue(
-                        pipeline.getRole());
+                jsonGenerator.writeFieldName("Role").writeValue(pipeline.getRole());
             }
             if (pipeline.getAwsKmsKeyArn() != null) {
-                jsonGenerator.writeFieldName("AwsKmsKeyArn").writeValue(
-                        pipeline.getAwsKmsKeyArn());
+                jsonGenerator.writeFieldName("AwsKmsKeyArn").writeValue(pipeline.getAwsKmsKeyArn());
             }
             if (pipeline.getNotifications() != null) {
                 jsonGenerator.writeFieldName("Notifications");
-                NotificationsJsonMarshaller.getInstance().marshall(
-                        pipeline.getNotifications(), jsonGenerator);
+                NotificationsJsonMarshaller.getInstance().marshall(pipeline.getNotifications(), jsonGenerator);
             }
             if (pipeline.getContentConfig() != null) {
                 jsonGenerator.writeFieldName("ContentConfig");
-                PipelineOutputConfigJsonMarshaller.getInstance().marshall(
-                        pipeline.getContentConfig(), jsonGenerator);
+                PipelineOutputConfigJsonMarshaller.getInstance().marshall(pipeline.getContentConfig(), jsonGenerator);
             }
             if (pipeline.getThumbnailConfig() != null) {
                 jsonGenerator.writeFieldName("ThumbnailConfig");
-                PipelineOutputConfigJsonMarshaller.getInstance().marshall(
-                        pipeline.getThumbnailConfig(), jsonGenerator);
+                PipelineOutputConfigJsonMarshaller.getInstance().marshall(pipeline.getThumbnailConfig(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

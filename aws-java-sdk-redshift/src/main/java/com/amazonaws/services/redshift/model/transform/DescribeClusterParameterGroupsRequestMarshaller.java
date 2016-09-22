@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model.transform;
 
@@ -31,16 +29,13 @@ import com.amazonaws.util.IdempotentUtils;
  * DescribeClusterParameterGroupsRequest Marshaller
  */
 
-public class DescribeClusterParameterGroupsRequestMarshaller
-        implements
+public class DescribeClusterParameterGroupsRequestMarshaller implements
         Marshaller<Request<DescribeClusterParameterGroupsRequest>, DescribeClusterParameterGroupsRequest> {
 
-    public Request<DescribeClusterParameterGroupsRequest> marshall(
-            DescribeClusterParameterGroupsRequest describeClusterParameterGroupsRequest) {
+    public Request<DescribeClusterParameterGroupsRequest> marshall(DescribeClusterParameterGroupsRequest describeClusterParameterGroupsRequest) {
 
         if (describeClusterParameterGroupsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DescribeClusterParameterGroupsRequest> request = new DefaultRequest<DescribeClusterParameterGroupsRequest>(
@@ -50,21 +45,15 @@ public class DescribeClusterParameterGroupsRequestMarshaller
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeClusterParameterGroupsRequest.getParameterGroupName() != null) {
-            request.addParameter("ParameterGroupName", StringUtils
-                    .fromString(describeClusterParameterGroupsRequest
-                            .getParameterGroupName()));
+            request.addParameter("ParameterGroupName", StringUtils.fromString(describeClusterParameterGroupsRequest.getParameterGroupName()));
         }
 
         if (describeClusterParameterGroupsRequest.getMaxRecords() != null) {
-            request.addParameter("MaxRecords", StringUtils
-                    .fromInteger(describeClusterParameterGroupsRequest
-                            .getMaxRecords()));
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeClusterParameterGroupsRequest.getMaxRecords()));
         }
 
         if (describeClusterParameterGroupsRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils
-                    .fromString(describeClusterParameterGroupsRequest
-                            .getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(describeClusterParameterGroupsRequest.getMarker()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterParameterGroupsRequest
@@ -74,8 +63,7 @@ public class DescribeClusterParameterGroupsRequestMarshaller
 
             for (String tagKeysListValue : tagKeysList) {
                 if (tagKeysListValue != null) {
-                    request.addParameter("TagKeys.TagKey." + tagKeysListIndex,
-                            StringUtils.fromString(tagKeysListValue));
+                    request.addParameter("TagKeys.TagKey." + tagKeysListIndex, StringUtils.fromString(tagKeysListValue));
                 }
                 tagKeysListIndex++;
             }
@@ -88,9 +76,7 @@ public class DescribeClusterParameterGroupsRequestMarshaller
 
             for (String tagValuesListValue : tagValuesList) {
                 if (tagValuesListValue != null) {
-                    request.addParameter("TagValues.TagValue."
-                            + tagValuesListIndex,
-                            StringUtils.fromString(tagValuesListValue));
+                    request.addParameter("TagValues.TagValue." + tagValuesListIndex, StringUtils.fromString(tagValuesListValue));
                 }
                 tagValuesListIndex++;
             }

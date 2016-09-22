@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ProvisionedThroughputDescription JSON Unmarshaller
  */
-public class ProvisionedThroughputDescriptionJsonUnmarshaller implements
-        Unmarshaller<ProvisionedThroughputDescription, JsonUnmarshallerContext> {
+public class ProvisionedThroughputDescriptionJsonUnmarshaller implements Unmarshaller<ProvisionedThroughputDescription, JsonUnmarshallerContext> {
 
-    public ProvisionedThroughputDescription unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public ProvisionedThroughputDescription unmarshall(JsonUnmarshallerContext context) throws Exception {
         ProvisionedThroughputDescription provisionedThroughputDescription = new ProvisionedThroughputDescription();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,39 +49,26 @@ public class ProvisionedThroughputDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LastIncreaseDateTime", targetDepth)) {
                     context.nextToken();
-                    provisionedThroughputDescription
-                            .setLastIncreaseDateTime(context.getUnmarshaller(
-                                    java.util.Date.class).unmarshall(context));
+                    provisionedThroughputDescription.setLastIncreaseDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("LastDecreaseDateTime", targetDepth)) {
                     context.nextToken();
-                    provisionedThroughputDescription
-                            .setLastDecreaseDateTime(context.getUnmarshaller(
-                                    java.util.Date.class).unmarshall(context));
+                    provisionedThroughputDescription.setLastDecreaseDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
-                if (context.testExpression("NumberOfDecreasesToday",
-                        targetDepth)) {
+                if (context.testExpression("NumberOfDecreasesToday", targetDepth)) {
                     context.nextToken();
-                    provisionedThroughputDescription
-                            .setNumberOfDecreasesToday(context.getUnmarshaller(
-                                    Long.class).unmarshall(context));
+                    provisionedThroughputDescription.setNumberOfDecreasesToday(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ReadCapacityUnits", targetDepth)) {
                     context.nextToken();
-                    provisionedThroughputDescription
-                            .setReadCapacityUnits(context.getUnmarshaller(
-                                    Long.class).unmarshall(context));
+                    provisionedThroughputDescription.setReadCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("WriteCapacityUnits", targetDepth)) {
                     context.nextToken();
-                    provisionedThroughputDescription
-                            .setWriteCapacityUnits(context.getUnmarshaller(
-                                    Long.class).unmarshall(context));
+                    provisionedThroughputDescription.setWriteCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

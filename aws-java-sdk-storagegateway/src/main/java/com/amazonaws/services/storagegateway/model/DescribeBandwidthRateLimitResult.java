@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -21,22 +19,20 @@ import java.io.Serializable;
  * A JSON object containing the following fields:
  * </p>
  */
-public class DescribeBandwidthRateLimitResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeBandwidthRateLimitResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String gatewayARN;
     /**
      * <p>
-     * The average upload bandwidth rate limit in bits per second. This field
-     * does not appear in the response if the upload rate limit is not set.
+     * The average upload bandwidth rate limit in bits per second. This field does not appear in the response if the
+     * upload rate limit is not set.
      * </p>
      */
     private Long averageUploadRateLimitInBitsPerSec;
     /**
      * <p>
-     * The average download bandwidth rate limit in bits per second. This field
-     * does not appear in the response if the download rate limit is not set.
+     * The average download bandwidth rate limit in bits per second. This field does not appear in the response if the
+     * download rate limit is not set.
      * </p>
      */
     private Long averageDownloadRateLimitInBitsPerSec;
@@ -59,8 +55,7 @@ public class DescribeBandwidthRateLimitResult extends
 
     /**
      * @param gatewayARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeBandwidthRateLimitResult withGatewayARN(String gatewayARN) {
@@ -70,30 +65,27 @@ public class DescribeBandwidthRateLimitResult extends
 
     /**
      * <p>
-     * The average upload bandwidth rate limit in bits per second. This field
-     * does not appear in the response if the upload rate limit is not set.
+     * The average upload bandwidth rate limit in bits per second. This field does not appear in the response if the
+     * upload rate limit is not set.
      * </p>
      * 
      * @param averageUploadRateLimitInBitsPerSec
-     *        The average upload bandwidth rate limit in bits per second. This
-     *        field does not appear in the response if the upload rate limit is
-     *        not set.
+     *        The average upload bandwidth rate limit in bits per second. This field does not appear in the response if
+     *        the upload rate limit is not set.
      */
 
-    public void setAverageUploadRateLimitInBitsPerSec(
-            Long averageUploadRateLimitInBitsPerSec) {
+    public void setAverageUploadRateLimitInBitsPerSec(Long averageUploadRateLimitInBitsPerSec) {
         this.averageUploadRateLimitInBitsPerSec = averageUploadRateLimitInBitsPerSec;
     }
 
     /**
      * <p>
-     * The average upload bandwidth rate limit in bits per second. This field
-     * does not appear in the response if the upload rate limit is not set.
+     * The average upload bandwidth rate limit in bits per second. This field does not appear in the response if the
+     * upload rate limit is not set.
      * </p>
      * 
-     * @return The average upload bandwidth rate limit in bits per second. This
-     *         field does not appear in the response if the upload rate limit is
-     *         not set.
+     * @return The average upload bandwidth rate limit in bits per second. This field does not appear in the response if
+     *         the upload rate limit is not set.
      */
 
     public Long getAverageUploadRateLimitInBitsPerSec() {
@@ -102,50 +94,44 @@ public class DescribeBandwidthRateLimitResult extends
 
     /**
      * <p>
-     * The average upload bandwidth rate limit in bits per second. This field
-     * does not appear in the response if the upload rate limit is not set.
+     * The average upload bandwidth rate limit in bits per second. This field does not appear in the response if the
+     * upload rate limit is not set.
      * </p>
      * 
      * @param averageUploadRateLimitInBitsPerSec
-     *        The average upload bandwidth rate limit in bits per second. This
-     *        field does not appear in the response if the upload rate limit is
-     *        not set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The average upload bandwidth rate limit in bits per second. This field does not appear in the response if
+     *        the upload rate limit is not set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeBandwidthRateLimitResult withAverageUploadRateLimitInBitsPerSec(
-            Long averageUploadRateLimitInBitsPerSec) {
+    public DescribeBandwidthRateLimitResult withAverageUploadRateLimitInBitsPerSec(Long averageUploadRateLimitInBitsPerSec) {
         setAverageUploadRateLimitInBitsPerSec(averageUploadRateLimitInBitsPerSec);
         return this;
     }
 
     /**
      * <p>
-     * The average download bandwidth rate limit in bits per second. This field
-     * does not appear in the response if the download rate limit is not set.
+     * The average download bandwidth rate limit in bits per second. This field does not appear in the response if the
+     * download rate limit is not set.
      * </p>
      * 
      * @param averageDownloadRateLimitInBitsPerSec
-     *        The average download bandwidth rate limit in bits per second. This
-     *        field does not appear in the response if the download rate limit
-     *        is not set.
+     *        The average download bandwidth rate limit in bits per second. This field does not appear in the response
+     *        if the download rate limit is not set.
      */
 
-    public void setAverageDownloadRateLimitInBitsPerSec(
-            Long averageDownloadRateLimitInBitsPerSec) {
+    public void setAverageDownloadRateLimitInBitsPerSec(Long averageDownloadRateLimitInBitsPerSec) {
         this.averageDownloadRateLimitInBitsPerSec = averageDownloadRateLimitInBitsPerSec;
     }
 
     /**
      * <p>
-     * The average download bandwidth rate limit in bits per second. This field
-     * does not appear in the response if the download rate limit is not set.
+     * The average download bandwidth rate limit in bits per second. This field does not appear in the response if the
+     * download rate limit is not set.
      * </p>
      * 
-     * @return The average download bandwidth rate limit in bits per second.
-     *         This field does not appear in the response if the download rate
-     *         limit is not set.
+     * @return The average download bandwidth rate limit in bits per second. This field does not appear in the response
+     *         if the download rate limit is not set.
      */
 
     public Long getAverageDownloadRateLimitInBitsPerSec() {
@@ -154,27 +140,23 @@ public class DescribeBandwidthRateLimitResult extends
 
     /**
      * <p>
-     * The average download bandwidth rate limit in bits per second. This field
-     * does not appear in the response if the download rate limit is not set.
+     * The average download bandwidth rate limit in bits per second. This field does not appear in the response if the
+     * download rate limit is not set.
      * </p>
      * 
      * @param averageDownloadRateLimitInBitsPerSec
-     *        The average download bandwidth rate limit in bits per second. This
-     *        field does not appear in the response if the download rate limit
-     *        is not set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The average download bandwidth rate limit in bits per second. This field does not appear in the response
+     *        if the download rate limit is not set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeBandwidthRateLimitResult withAverageDownloadRateLimitInBitsPerSec(
-            Long averageDownloadRateLimitInBitsPerSec) {
+    public DescribeBandwidthRateLimitResult withAverageDownloadRateLimitInBitsPerSec(Long averageDownloadRateLimitInBitsPerSec) {
         setAverageDownloadRateLimitInBitsPerSec(averageDownloadRateLimitInBitsPerSec);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -187,11 +169,9 @@ public class DescribeBandwidthRateLimitResult extends
         if (getGatewayARN() != null)
             sb.append("GatewayARN: " + getGatewayARN() + ",");
         if (getAverageUploadRateLimitInBitsPerSec() != null)
-            sb.append("AverageUploadRateLimitInBitsPerSec: "
-                    + getAverageUploadRateLimitInBitsPerSec() + ",");
+            sb.append("AverageUploadRateLimitInBitsPerSec: " + getAverageUploadRateLimitInBitsPerSec() + ",");
         if (getAverageDownloadRateLimitInBitsPerSec() != null)
-            sb.append("AverageDownloadRateLimitInBitsPerSec: "
-                    + getAverageDownloadRateLimitInBitsPerSec());
+            sb.append("AverageDownloadRateLimitInBitsPerSec: " + getAverageDownloadRateLimitInBitsPerSec());
         sb.append("}");
         return sb.toString();
     }
@@ -208,22 +188,17 @@ public class DescribeBandwidthRateLimitResult extends
         DescribeBandwidthRateLimitResult other = (DescribeBandwidthRateLimitResult) obj;
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null)
             return false;
-        if (other.getGatewayARN() != null
-                && other.getGatewayARN().equals(this.getGatewayARN()) == false)
+        if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
-        if (other.getAverageUploadRateLimitInBitsPerSec() == null
-                ^ this.getAverageUploadRateLimitInBitsPerSec() == null)
+        if (other.getAverageUploadRateLimitInBitsPerSec() == null ^ this.getAverageUploadRateLimitInBitsPerSec() == null)
             return false;
         if (other.getAverageUploadRateLimitInBitsPerSec() != null
-                && other.getAverageUploadRateLimitInBitsPerSec().equals(
-                        this.getAverageUploadRateLimitInBitsPerSec()) == false)
+                && other.getAverageUploadRateLimitInBitsPerSec().equals(this.getAverageUploadRateLimitInBitsPerSec()) == false)
             return false;
-        if (other.getAverageDownloadRateLimitInBitsPerSec() == null
-                ^ this.getAverageDownloadRateLimitInBitsPerSec() == null)
+        if (other.getAverageDownloadRateLimitInBitsPerSec() == null ^ this.getAverageDownloadRateLimitInBitsPerSec() == null)
             return false;
         if (other.getAverageDownloadRateLimitInBitsPerSec() != null
-                && other.getAverageDownloadRateLimitInBitsPerSec().equals(
-                        this.getAverageDownloadRateLimitInBitsPerSec()) == false)
+                && other.getAverageDownloadRateLimitInBitsPerSec().equals(this.getAverageDownloadRateLimitInBitsPerSec()) == false)
             return false;
         return true;
     }
@@ -233,16 +208,9 @@ public class DescribeBandwidthRateLimitResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAverageUploadRateLimitInBitsPerSec() == null) ? 0
-                        : getAverageUploadRateLimitInBitsPerSec().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAverageDownloadRateLimitInBitsPerSec() == null) ? 0
-                        : getAverageDownloadRateLimitInBitsPerSec().hashCode());
+        hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getAverageUploadRateLimitInBitsPerSec() == null) ? 0 : getAverageUploadRateLimitInBitsPerSec().hashCode());
+        hashCode = prime * hashCode + ((getAverageDownloadRateLimitInBitsPerSec() == null) ? 0 : getAverageDownloadRateLimitInBitsPerSec().hashCode());
         return hashCode;
     }
 
@@ -251,9 +219,7 @@ public class DescribeBandwidthRateLimitResult extends
         try {
             return (DescribeBandwidthRateLimitResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

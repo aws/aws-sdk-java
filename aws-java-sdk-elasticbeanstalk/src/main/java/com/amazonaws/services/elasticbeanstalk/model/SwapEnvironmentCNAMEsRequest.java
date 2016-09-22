@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -22,19 +20,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Swaps the CNAMEs of two environments.
  * </p>
  */
-public class SwapEnvironmentCNAMEsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The ID of the source environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the <code>SourceEnvironmentID</code>
-     * or the <code>SourceEnvironmentName</code>. You may also specify both. If
-     * you specify the <code>SourceEnvironmentId</code>, you must specify the
-     * <code>DestinationEnvironmentId</code>.
+     * Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     * <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     * <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.
      * </p>
      */
     private String sourceEnvironmentId;
@@ -43,10 +38,9 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The name of the source environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the <code>SourceEnvironmentID</code>
-     * or the <code>SourceEnvironmentName</code>. You may also specify both. If
-     * you specify the <code>SourceEnvironmentName</code>, you must specify the
-     * <code>DestinationEnvironmentName</code>.
+     * Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     * <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     * <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.
      * </p>
      */
     private String sourceEnvironmentName;
@@ -55,11 +49,9 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The ID of the destination environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the
-     * <code>DestinationEnvironmentID</code> or the
-     * <code>DestinationEnvironmentName</code>. You may also specify both. You
-     * must specify the <code>SourceEnvironmentId</code> with the
-     * <code>DestinationEnvironmentId</code>.
+     * Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     * <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     * <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.
      * </p>
      */
     private String destinationEnvironmentId;
@@ -68,11 +60,9 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The name of the destination environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the
-     * <code>DestinationEnvironmentID</code> or the
-     * <code>DestinationEnvironmentName</code>. You may also specify both. You
-     * must specify the <code>SourceEnvironmentName</code> with the
-     * <code>DestinationEnvironmentName</code>.
+     * Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     * <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     * <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
      * </p>
      */
     private String destinationEnvironmentName;
@@ -82,20 +72,17 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The ID of the source environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the <code>SourceEnvironmentID</code>
-     * or the <code>SourceEnvironmentName</code>. You may also specify both. If
-     * you specify the <code>SourceEnvironmentId</code>, you must specify the
-     * <code>DestinationEnvironmentId</code>.
+     * Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     * <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     * <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.
      * </p>
      * 
      * @param sourceEnvironmentId
      *        The ID of the source environment. </p>
      *        <p>
-     *        Condition: You must specify at least the
-     *        <code>SourceEnvironmentID</code> or the
-     *        <code>SourceEnvironmentName</code>. You may also specify both. If
-     *        you specify the <code>SourceEnvironmentId</code>, you must specify
-     *        the <code>DestinationEnvironmentId</code>.
+     *        Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     *        <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     *        <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.
      */
 
     public void setSourceEnvironmentId(String sourceEnvironmentId) {
@@ -107,19 +94,16 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The ID of the source environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the <code>SourceEnvironmentID</code>
-     * or the <code>SourceEnvironmentName</code>. You may also specify both. If
-     * you specify the <code>SourceEnvironmentId</code>, you must specify the
-     * <code>DestinationEnvironmentId</code>.
+     * Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     * <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     * <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.
      * </p>
      * 
      * @return The ID of the source environment. </p>
      *         <p>
-     *         Condition: You must specify at least the
-     *         <code>SourceEnvironmentID</code> or the
-     *         <code>SourceEnvironmentName</code>. You may also specify both. If
-     *         you specify the <code>SourceEnvironmentId</code>, you must
-     *         specify the <code>DestinationEnvironmentId</code>.
+     *         Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     *         <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     *         <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.
      */
 
     public String getSourceEnvironmentId() {
@@ -131,26 +115,21 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The ID of the source environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the <code>SourceEnvironmentID</code>
-     * or the <code>SourceEnvironmentName</code>. You may also specify both. If
-     * you specify the <code>SourceEnvironmentId</code>, you must specify the
-     * <code>DestinationEnvironmentId</code>.
+     * Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     * <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     * <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.
      * </p>
      * 
      * @param sourceEnvironmentId
      *        The ID of the source environment. </p>
      *        <p>
-     *        Condition: You must specify at least the
-     *        <code>SourceEnvironmentID</code> or the
-     *        <code>SourceEnvironmentName</code>. You may also specify both. If
-     *        you specify the <code>SourceEnvironmentId</code>, you must specify
-     *        the <code>DestinationEnvironmentId</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     *        <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     *        <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SwapEnvironmentCNAMEsRequest withSourceEnvironmentId(
-            String sourceEnvironmentId) {
+    public SwapEnvironmentCNAMEsRequest withSourceEnvironmentId(String sourceEnvironmentId) {
         setSourceEnvironmentId(sourceEnvironmentId);
         return this;
     }
@@ -160,20 +139,17 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The name of the source environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the <code>SourceEnvironmentID</code>
-     * or the <code>SourceEnvironmentName</code>. You may also specify both. If
-     * you specify the <code>SourceEnvironmentName</code>, you must specify the
-     * <code>DestinationEnvironmentName</code>.
+     * Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     * <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     * <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.
      * </p>
      * 
      * @param sourceEnvironmentName
      *        The name of the source environment. </p>
      *        <p>
-     *        Condition: You must specify at least the
-     *        <code>SourceEnvironmentID</code> or the
-     *        <code>SourceEnvironmentName</code>. You may also specify both. If
-     *        you specify the <code>SourceEnvironmentName</code>, you must
-     *        specify the <code>DestinationEnvironmentName</code>.
+     *        Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     *        <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     *        <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.
      */
 
     public void setSourceEnvironmentName(String sourceEnvironmentName) {
@@ -185,19 +161,16 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The name of the source environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the <code>SourceEnvironmentID</code>
-     * or the <code>SourceEnvironmentName</code>. You may also specify both. If
-     * you specify the <code>SourceEnvironmentName</code>, you must specify the
-     * <code>DestinationEnvironmentName</code>.
+     * Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     * <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     * <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.
      * </p>
      * 
      * @return The name of the source environment. </p>
      *         <p>
-     *         Condition: You must specify at least the
-     *         <code>SourceEnvironmentID</code> or the
-     *         <code>SourceEnvironmentName</code>. You may also specify both. If
-     *         you specify the <code>SourceEnvironmentName</code>, you must
-     *         specify the <code>DestinationEnvironmentName</code>.
+     *         Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     *         <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     *         <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.
      */
 
     public String getSourceEnvironmentName() {
@@ -209,26 +182,21 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The name of the source environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the <code>SourceEnvironmentID</code>
-     * or the <code>SourceEnvironmentName</code>. You may also specify both. If
-     * you specify the <code>SourceEnvironmentName</code>, you must specify the
-     * <code>DestinationEnvironmentName</code>.
+     * Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     * <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     * <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.
      * </p>
      * 
      * @param sourceEnvironmentName
      *        The name of the source environment. </p>
      *        <p>
-     *        Condition: You must specify at least the
-     *        <code>SourceEnvironmentID</code> or the
-     *        <code>SourceEnvironmentName</code>. You may also specify both. If
-     *        you specify the <code>SourceEnvironmentName</code>, you must
-     *        specify the <code>DestinationEnvironmentName</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+     *        <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+     *        <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SwapEnvironmentCNAMEsRequest withSourceEnvironmentName(
-            String sourceEnvironmentName) {
+    public SwapEnvironmentCNAMEsRequest withSourceEnvironmentName(String sourceEnvironmentName) {
         setSourceEnvironmentName(sourceEnvironmentName);
         return this;
     }
@@ -238,21 +206,17 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The ID of the destination environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the
-     * <code>DestinationEnvironmentID</code> or the
-     * <code>DestinationEnvironmentName</code>. You may also specify both. You
-     * must specify the <code>SourceEnvironmentId</code> with the
-     * <code>DestinationEnvironmentId</code>.
+     * Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     * <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     * <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.
      * </p>
      * 
      * @param destinationEnvironmentId
      *        The ID of the destination environment. </p>
      *        <p>
-     *        Condition: You must specify at least the
-     *        <code>DestinationEnvironmentID</code> or the
-     *        <code>DestinationEnvironmentName</code>. You may also specify
-     *        both. You must specify the <code>SourceEnvironmentId</code> with
-     *        the <code>DestinationEnvironmentId</code>.
+     *        Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     *        <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     *        <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.
      */
 
     public void setDestinationEnvironmentId(String destinationEnvironmentId) {
@@ -264,20 +228,16 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The ID of the destination environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the
-     * <code>DestinationEnvironmentID</code> or the
-     * <code>DestinationEnvironmentName</code>. You may also specify both. You
-     * must specify the <code>SourceEnvironmentId</code> with the
-     * <code>DestinationEnvironmentId</code>.
+     * Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     * <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     * <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.
      * </p>
      * 
      * @return The ID of the destination environment. </p>
      *         <p>
-     *         Condition: You must specify at least the
-     *         <code>DestinationEnvironmentID</code> or the
-     *         <code>DestinationEnvironmentName</code>. You may also specify
-     *         both. You must specify the <code>SourceEnvironmentId</code> with
-     *         the <code>DestinationEnvironmentId</code>.
+     *         Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     *         <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     *         <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.
      */
 
     public String getDestinationEnvironmentId() {
@@ -289,27 +249,21 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The ID of the destination environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the
-     * <code>DestinationEnvironmentID</code> or the
-     * <code>DestinationEnvironmentName</code>. You may also specify both. You
-     * must specify the <code>SourceEnvironmentId</code> with the
-     * <code>DestinationEnvironmentId</code>.
+     * Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     * <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     * <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.
      * </p>
      * 
      * @param destinationEnvironmentId
      *        The ID of the destination environment. </p>
      *        <p>
-     *        Condition: You must specify at least the
-     *        <code>DestinationEnvironmentID</code> or the
-     *        <code>DestinationEnvironmentName</code>. You may also specify
-     *        both. You must specify the <code>SourceEnvironmentId</code> with
-     *        the <code>DestinationEnvironmentId</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     *        <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     *        <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SwapEnvironmentCNAMEsRequest withDestinationEnvironmentId(
-            String destinationEnvironmentId) {
+    public SwapEnvironmentCNAMEsRequest withDestinationEnvironmentId(String destinationEnvironmentId) {
         setDestinationEnvironmentId(destinationEnvironmentId);
         return this;
     }
@@ -319,21 +273,17 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The name of the destination environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the
-     * <code>DestinationEnvironmentID</code> or the
-     * <code>DestinationEnvironmentName</code>. You may also specify both. You
-     * must specify the <code>SourceEnvironmentName</code> with the
-     * <code>DestinationEnvironmentName</code>.
+     * Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     * <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     * <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
      * </p>
      * 
      * @param destinationEnvironmentName
      *        The name of the destination environment. </p>
      *        <p>
-     *        Condition: You must specify at least the
-     *        <code>DestinationEnvironmentID</code> or the
-     *        <code>DestinationEnvironmentName</code>. You may also specify
-     *        both. You must specify the <code>SourceEnvironmentName</code> with
-     *        the <code>DestinationEnvironmentName</code>.
+     *        Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     *        <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     *        <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
      */
 
     public void setDestinationEnvironmentName(String destinationEnvironmentName) {
@@ -345,20 +295,16 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The name of the destination environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the
-     * <code>DestinationEnvironmentID</code> or the
-     * <code>DestinationEnvironmentName</code>. You may also specify both. You
-     * must specify the <code>SourceEnvironmentName</code> with the
-     * <code>DestinationEnvironmentName</code>.
+     * Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     * <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     * <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
      * </p>
      * 
      * @return The name of the destination environment. </p>
      *         <p>
-     *         Condition: You must specify at least the
-     *         <code>DestinationEnvironmentID</code> or the
-     *         <code>DestinationEnvironmentName</code>. You may also specify
-     *         both. You must specify the <code>SourceEnvironmentName</code>
-     *         with the <code>DestinationEnvironmentName</code>.
+     *         Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     *         <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     *         <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
      */
 
     public String getDestinationEnvironmentName() {
@@ -370,34 +316,27 @@ public class SwapEnvironmentCNAMEsRequest extends
      * The name of the destination environment.
      * </p>
      * <p>
-     * Condition: You must specify at least the
-     * <code>DestinationEnvironmentID</code> or the
-     * <code>DestinationEnvironmentName</code>. You may also specify both. You
-     * must specify the <code>SourceEnvironmentName</code> with the
-     * <code>DestinationEnvironmentName</code>.
+     * Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     * <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     * <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
      * </p>
      * 
      * @param destinationEnvironmentName
      *        The name of the destination environment. </p>
      *        <p>
-     *        Condition: You must specify at least the
-     *        <code>DestinationEnvironmentID</code> or the
-     *        <code>DestinationEnvironmentName</code>. You may also specify
-     *        both. You must specify the <code>SourceEnvironmentName</code> with
-     *        the <code>DestinationEnvironmentName</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+     *        <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+     *        <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SwapEnvironmentCNAMEsRequest withDestinationEnvironmentName(
-            String destinationEnvironmentName) {
+    public SwapEnvironmentCNAMEsRequest withDestinationEnvironmentName(String destinationEnvironmentName) {
         setDestinationEnvironmentName(destinationEnvironmentName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -410,14 +349,11 @@ public class SwapEnvironmentCNAMEsRequest extends
         if (getSourceEnvironmentId() != null)
             sb.append("SourceEnvironmentId: " + getSourceEnvironmentId() + ",");
         if (getSourceEnvironmentName() != null)
-            sb.append("SourceEnvironmentName: " + getSourceEnvironmentName()
-                    + ",");
+            sb.append("SourceEnvironmentName: " + getSourceEnvironmentName() + ",");
         if (getDestinationEnvironmentId() != null)
-            sb.append("DestinationEnvironmentId: "
-                    + getDestinationEnvironmentId() + ",");
+            sb.append("DestinationEnvironmentId: " + getDestinationEnvironmentId() + ",");
         if (getDestinationEnvironmentName() != null)
-            sb.append("DestinationEnvironmentName: "
-                    + getDestinationEnvironmentName());
+            sb.append("DestinationEnvironmentName: " + getDestinationEnvironmentName());
         sb.append("}");
         return sb.toString();
     }
@@ -432,33 +368,21 @@ public class SwapEnvironmentCNAMEsRequest extends
         if (obj instanceof SwapEnvironmentCNAMEsRequest == false)
             return false;
         SwapEnvironmentCNAMEsRequest other = (SwapEnvironmentCNAMEsRequest) obj;
-        if (other.getSourceEnvironmentId() == null
-                ^ this.getSourceEnvironmentId() == null)
+        if (other.getSourceEnvironmentId() == null ^ this.getSourceEnvironmentId() == null)
             return false;
-        if (other.getSourceEnvironmentId() != null
-                && other.getSourceEnvironmentId().equals(
-                        this.getSourceEnvironmentId()) == false)
+        if (other.getSourceEnvironmentId() != null && other.getSourceEnvironmentId().equals(this.getSourceEnvironmentId()) == false)
             return false;
-        if (other.getSourceEnvironmentName() == null
-                ^ this.getSourceEnvironmentName() == null)
+        if (other.getSourceEnvironmentName() == null ^ this.getSourceEnvironmentName() == null)
             return false;
-        if (other.getSourceEnvironmentName() != null
-                && other.getSourceEnvironmentName().equals(
-                        this.getSourceEnvironmentName()) == false)
+        if (other.getSourceEnvironmentName() != null && other.getSourceEnvironmentName().equals(this.getSourceEnvironmentName()) == false)
             return false;
-        if (other.getDestinationEnvironmentId() == null
-                ^ this.getDestinationEnvironmentId() == null)
+        if (other.getDestinationEnvironmentId() == null ^ this.getDestinationEnvironmentId() == null)
             return false;
-        if (other.getDestinationEnvironmentId() != null
-                && other.getDestinationEnvironmentId().equals(
-                        this.getDestinationEnvironmentId()) == false)
+        if (other.getDestinationEnvironmentId() != null && other.getDestinationEnvironmentId().equals(this.getDestinationEnvironmentId()) == false)
             return false;
-        if (other.getDestinationEnvironmentName() == null
-                ^ this.getDestinationEnvironmentName() == null)
+        if (other.getDestinationEnvironmentName() == null ^ this.getDestinationEnvironmentName() == null)
             return false;
-        if (other.getDestinationEnvironmentName() != null
-                && other.getDestinationEnvironmentName().equals(
-                        this.getDestinationEnvironmentName()) == false)
+        if (other.getDestinationEnvironmentName() != null && other.getDestinationEnvironmentName().equals(this.getDestinationEnvironmentName()) == false)
             return false;
         return true;
     }
@@ -468,22 +392,10 @@ public class SwapEnvironmentCNAMEsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSourceEnvironmentId() == null) ? 0
-                        : getSourceEnvironmentId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceEnvironmentName() == null) ? 0
-                        : getSourceEnvironmentName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDestinationEnvironmentId() == null) ? 0
-                        : getDestinationEnvironmentId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDestinationEnvironmentName() == null) ? 0
-                        : getDestinationEnvironmentName().hashCode());
+        hashCode = prime * hashCode + ((getSourceEnvironmentId() == null) ? 0 : getSourceEnvironmentId().hashCode());
+        hashCode = prime * hashCode + ((getSourceEnvironmentName() == null) ? 0 : getSourceEnvironmentName().hashCode());
+        hashCode = prime * hashCode + ((getDestinationEnvironmentId() == null) ? 0 : getDestinationEnvironmentId().hashCode());
+        hashCode = prime * hashCode + ((getDestinationEnvironmentName() == null) ? 0 : getDestinationEnvironmentName().hashCode());
         return hashCode;
     }
 

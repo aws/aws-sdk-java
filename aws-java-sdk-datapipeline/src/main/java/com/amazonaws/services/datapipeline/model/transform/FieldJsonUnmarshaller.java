@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model.transform;
 
@@ -29,8 +27,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Field JSON Unmarshaller
  */
-public class FieldJsonUnmarshaller implements
-        Unmarshaller<Field, JsonUnmarshallerContext> {
+public class FieldJsonUnmarshaller implements Unmarshaller<Field, JsonUnmarshallerContext> {
 
     public Field unmarshall(JsonUnmarshallerContext context) throws Exception {
         Field field = new Field();
@@ -52,23 +49,18 @@ public class FieldJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("key", targetDepth)) {
                     context.nextToken();
-                    field.setKey(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    field.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stringValue", targetDepth)) {
                     context.nextToken();
-                    field.setStringValue(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    field.setStringValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("refValue", targetDepth)) {
                     context.nextToken();
-                    field.setRefValue(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    field.setRefValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

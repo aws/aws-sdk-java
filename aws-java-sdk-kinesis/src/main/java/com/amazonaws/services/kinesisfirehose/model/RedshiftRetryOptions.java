@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisfirehose.model;
 
@@ -18,39 +16,34 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Configures retry behavior in the event that Firehose is unable to deliver
- * documents to Amazon Redshift.
+ * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift.
  * </p>
  */
 public class RedshiftRetryOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The length of time during which Firehose retries delivery after a
-     * failure, starting from the initial request and including the first
-     * attempt. The default value is 3600 seconds (60 minutes). Firehose does
-     * not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or
-     * if the first delivery attempt takes longer than the current value.
+     * The length of time during which Firehose retries delivery after a failure, starting from the initial request and
+     * including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value
+     * of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current
+     * value.
      * </p>
      */
     private Integer durationInSeconds;
 
     /**
      * <p>
-     * The length of time during which Firehose retries delivery after a
-     * failure, starting from the initial request and including the first
-     * attempt. The default value is 3600 seconds (60 minutes). Firehose does
-     * not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or
-     * if the first delivery attempt takes longer than the current value.
+     * The length of time during which Firehose retries delivery after a failure, starting from the initial request and
+     * including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value
+     * of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current
+     * value.
      * </p>
      * 
      * @param durationInSeconds
-     *        The length of time during which Firehose retries delivery after a
-     *        failure, starting from the initial request and including the first
-     *        attempt. The default value is 3600 seconds (60 minutes). Firehose
-     *        does not retry if the value of <code>DurationInSeconds</code> is 0
-     *        (zero) or if the first delivery attempt takes longer than the
-     *        current value.
+     *        The length of time during which Firehose retries delivery after a failure, starting from the initial
+     *        request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not
+     *        retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
+     *        longer than the current value.
      */
 
     public void setDurationInSeconds(Integer durationInSeconds) {
@@ -59,19 +52,16 @@ public class RedshiftRetryOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The length of time during which Firehose retries delivery after a
-     * failure, starting from the initial request and including the first
-     * attempt. The default value is 3600 seconds (60 minutes). Firehose does
-     * not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or
-     * if the first delivery attempt takes longer than the current value.
+     * The length of time during which Firehose retries delivery after a failure, starting from the initial request and
+     * including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value
+     * of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current
+     * value.
      * </p>
      * 
-     * @return The length of time during which Firehose retries delivery after a
-     *         failure, starting from the initial request and including the
-     *         first attempt. The default value is 3600 seconds (60 minutes).
-     *         Firehose does not retry if the value of
-     *         <code>DurationInSeconds</code> is 0 (zero) or if the first
-     *         delivery attempt takes longer than the current value.
+     * @return The length of time during which Firehose retries delivery after a failure, starting from the initial
+     *         request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does
+     *         not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt
+     *         takes longer than the current value.
      */
 
     public Integer getDurationInSeconds() {
@@ -80,22 +70,18 @@ public class RedshiftRetryOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The length of time during which Firehose retries delivery after a
-     * failure, starting from the initial request and including the first
-     * attempt. The default value is 3600 seconds (60 minutes). Firehose does
-     * not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or
-     * if the first delivery attempt takes longer than the current value.
+     * The length of time during which Firehose retries delivery after a failure, starting from the initial request and
+     * including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value
+     * of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current
+     * value.
      * </p>
      * 
      * @param durationInSeconds
-     *        The length of time during which Firehose retries delivery after a
-     *        failure, starting from the initial request and including the first
-     *        attempt. The default value is 3600 seconds (60 minutes). Firehose
-     *        does not retry if the value of <code>DurationInSeconds</code> is 0
-     *        (zero) or if the first delivery attempt takes longer than the
-     *        current value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The length of time during which Firehose retries delivery after a failure, starting from the initial
+     *        request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not
+     *        retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
+     *        longer than the current value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RedshiftRetryOptions withDurationInSeconds(Integer durationInSeconds) {
@@ -104,8 +90,7 @@ public class RedshiftRetryOptions implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -131,12 +116,9 @@ public class RedshiftRetryOptions implements Serializable, Cloneable {
         if (obj instanceof RedshiftRetryOptions == false)
             return false;
         RedshiftRetryOptions other = (RedshiftRetryOptions) obj;
-        if (other.getDurationInSeconds() == null
-                ^ this.getDurationInSeconds() == null)
+        if (other.getDurationInSeconds() == null ^ this.getDurationInSeconds() == null)
             return false;
-        if (other.getDurationInSeconds() != null
-                && other.getDurationInSeconds().equals(
-                        this.getDurationInSeconds()) == false)
+        if (other.getDurationInSeconds() != null && other.getDurationInSeconds().equals(this.getDurationInSeconds()) == false)
             return false;
         return true;
     }
@@ -146,10 +128,7 @@ public class RedshiftRetryOptions implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDurationInSeconds() == null) ? 0
-                        : getDurationInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getDurationInSeconds() == null) ? 0 : getDurationInSeconds().hashCode());
         return hashCode;
     }
 
@@ -158,9 +137,7 @@ public class RedshiftRetryOptions implements Serializable, Cloneable {
         try {
             return (RedshiftRetryOptions) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

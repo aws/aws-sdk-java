@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -18,12 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about an SSH public key, without the key's body or
- * fingerprint.
+ * Contains information about an SSH public key, without the key's body or fingerprint.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>ListSSHPublicKeys</a>
- * action.
+ * This data type is used as a response element in the <a>ListSSHPublicKeys</a> action.
  * </p>
  */
 public class SSHPublicKeyMetadata implements Serializable, Cloneable {
@@ -42,16 +38,15 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
     private String sSHPublicKeyId;
     /**
      * <p>
-     * The status of the SSH public key. <code>Active</code> means the key can
-     * be used for authentication with an AWS CodeCommit repository.
-     * <code>Inactive</code> means the key cannot be used.
+     * The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS
+     * CodeCommit repository. <code>Inactive</code> means the key cannot be used.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the SSH public key was uploaded.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public
+     * key was uploaded.
      * </p>
      */
     private java.util.Date uploadDate;
@@ -88,8 +83,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      * 
      * @param userName
      *        The name of the IAM user associated with the SSH public key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SSHPublicKeyMetadata withUserName(String userName) {
@@ -129,8 +123,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      * 
      * @param sSHPublicKeyId
      *        The unique identifier for the SSH public key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SSHPublicKeyMetadata withSSHPublicKeyId(String sSHPublicKeyId) {
@@ -140,15 +133,13 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the SSH public key. <code>Active</code> means the key can
-     * be used for authentication with an AWS CodeCommit repository.
-     * <code>Inactive</code> means the key cannot be used.
+     * The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS
+     * CodeCommit repository. <code>Inactive</code> means the key cannot be used.
      * </p>
      * 
      * @param status
-     *        The status of the SSH public key. <code>Active</code> means the
-     *        key can be used for authentication with an AWS CodeCommit
-     *        repository. <code>Inactive</code> means the key cannot be used.
+     *        The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an
+     *        AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.
      * @see StatusType
      */
 
@@ -158,14 +149,12 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the SSH public key. <code>Active</code> means the key can
-     * be used for authentication with an AWS CodeCommit repository.
-     * <code>Inactive</code> means the key cannot be used.
+     * The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS
+     * CodeCommit repository. <code>Inactive</code> means the key cannot be used.
      * </p>
      * 
-     * @return The status of the SSH public key. <code>Active</code> means the
-     *         key can be used for authentication with an AWS CodeCommit
-     *         repository. <code>Inactive</code> means the key cannot be used.
+     * @return The status of the SSH public key. <code>Active</code> means the key can be used for authentication with
+     *         an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.
      * @see StatusType
      */
 
@@ -175,17 +164,14 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the SSH public key. <code>Active</code> means the key can
-     * be used for authentication with an AWS CodeCommit repository.
-     * <code>Inactive</code> means the key cannot be used.
+     * The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS
+     * CodeCommit repository. <code>Inactive</code> means the key cannot be used.
      * </p>
      * 
      * @param status
-     *        The status of the SSH public key. <code>Active</code> means the
-     *        key can be used for authentication with an AWS CodeCommit
-     *        repository. <code>Inactive</code> means the key cannot be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an
+     *        AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
 
@@ -196,15 +182,13 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the SSH public key. <code>Active</code> means the key can
-     * be used for authentication with an AWS CodeCommit repository.
-     * <code>Inactive</code> means the key cannot be used.
+     * The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS
+     * CodeCommit repository. <code>Inactive</code> means the key cannot be used.
      * </p>
      * 
      * @param status
-     *        The status of the SSH public key. <code>Active</code> means the
-     *        key can be used for authentication with an AWS CodeCommit
-     *        repository. <code>Inactive</code> means the key cannot be used.
+     *        The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an
+     *        AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.
      * @see StatusType
      */
 
@@ -214,17 +198,14 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the SSH public key. <code>Active</code> means the key can
-     * be used for authentication with an AWS CodeCommit repository.
-     * <code>Inactive</code> means the key cannot be used.
+     * The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS
+     * CodeCommit repository. <code>Inactive</code> means the key cannot be used.
      * </p>
      * 
      * @param status
-     *        The status of the SSH public key. <code>Active</code> means the
-     *        key can be used for authentication with an AWS CodeCommit
-     *        repository. <code>Inactive</code> means the key cannot be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an
+     *        AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
 
@@ -235,13 +216,13 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the SSH public key was uploaded.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public
+     * key was uploaded.
      * </p>
      * 
      * @param uploadDate
-     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *        8601 date-time format</a>, when the SSH public key was uploaded.
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH
+     *        public key was uploaded.
      */
 
     public void setUploadDate(java.util.Date uploadDate) {
@@ -250,13 +231,12 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the SSH public key was uploaded.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public
+     * key was uploaded.
      * </p>
      * 
-     * @return The date and time, in <a
-     *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
-     *         format</a>, when the SSH public key was uploaded.
+     * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *         SSH public key was uploaded.
      */
 
     public java.util.Date getUploadDate() {
@@ -265,15 +245,14 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the SSH public key was uploaded.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public
+     * key was uploaded.
      * </p>
      * 
      * @param uploadDate
-     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *        8601 date-time format</a>, when the SSH public key was uploaded.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH
+     *        public key was uploaded.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SSHPublicKeyMetadata withUploadDate(java.util.Date uploadDate) {
@@ -282,8 +261,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -317,24 +295,19 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
         SSHPublicKeyMetadata other = (SSHPublicKeyMetadata) obj;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
-        if (other.getUserName() != null
-                && other.getUserName().equals(this.getUserName()) == false)
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
-        if (other.getSSHPublicKeyId() == null
-                ^ this.getSSHPublicKeyId() == null)
+        if (other.getSSHPublicKeyId() == null ^ this.getSSHPublicKeyId() == null)
             return false;
-        if (other.getSSHPublicKeyId() != null
-                && other.getSSHPublicKeyId().equals(this.getSSHPublicKeyId()) == false)
+        if (other.getSSHPublicKeyId() != null && other.getSSHPublicKeyId().equals(this.getSSHPublicKeyId()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getUploadDate() == null ^ this.getUploadDate() == null)
             return false;
-        if (other.getUploadDate() != null
-                && other.getUploadDate().equals(this.getUploadDate()) == false)
+        if (other.getUploadDate() != null && other.getUploadDate().equals(this.getUploadDate()) == false)
             return false;
         return true;
     }
@@ -344,16 +317,10 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSSHPublicKeyId() == null) ? 0 : getSSHPublicKeyId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getUploadDate() == null) ? 0 : getUploadDate().hashCode());
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getSSHPublicKeyId() == null) ? 0 : getSSHPublicKeyId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getUploadDate() == null) ? 0 : getUploadDate().hashCode());
         return hashCode;
     }
 
@@ -362,9 +329,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
         try {
             return (SSHPublicKeyMetadata) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

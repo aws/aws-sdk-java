@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -18,30 +16,26 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents your Amazon SES daily sending quota, maximum send rate, and the
- * number of emails you have sent in the last 24 hours.
+ * Represents your Amazon SES daily sending quota, maximum send rate, and the number of emails you have sent in the last
+ * 24 hours.
  * </p>
  */
-public class GetSendQuotaResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetSendQuotaResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of emails the user is allowed to send in a 24-hour
-     * interval. A value of -1 signifies an unlimited quota.
+     * The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an
+     * unlimited quota.
      * </p>
      */
     private Double max24HourSend;
     /**
      * <p>
-     * The maximum number of emails that Amazon SES can accept from the user's
-     * account per second.
+     * The maximum number of emails that Amazon SES can accept from the user's account per second.
      * </p>
      * <note>
      * <p>
-     * The rate at which Amazon SES accepts the user's messages might be less
-     * than the maximum send rate.
+     * The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.
      * </p>
      * </note>
      */
@@ -55,13 +49,13 @@ public class GetSendQuotaResult extends
 
     /**
      * <p>
-     * The maximum number of emails the user is allowed to send in a 24-hour
-     * interval. A value of -1 signifies an unlimited quota.
+     * The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an
+     * unlimited quota.
      * </p>
      * 
      * @param max24HourSend
-     *        The maximum number of emails the user is allowed to send in a
-     *        24-hour interval. A value of -1 signifies an unlimited quota.
+     *        The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an
+     *        unlimited quota.
      */
 
     public void setMax24HourSend(Double max24HourSend) {
@@ -70,12 +64,12 @@ public class GetSendQuotaResult extends
 
     /**
      * <p>
-     * The maximum number of emails the user is allowed to send in a 24-hour
-     * interval. A value of -1 signifies an unlimited quota.
+     * The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an
+     * unlimited quota.
      * </p>
      * 
-     * @return The maximum number of emails the user is allowed to send in a
-     *         24-hour interval. A value of -1 signifies an unlimited quota.
+     * @return The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies
+     *         an unlimited quota.
      */
 
     public Double getMax24HourSend() {
@@ -84,15 +78,14 @@ public class GetSendQuotaResult extends
 
     /**
      * <p>
-     * The maximum number of emails the user is allowed to send in a 24-hour
-     * interval. A value of -1 signifies an unlimited quota.
+     * The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an
+     * unlimited quota.
      * </p>
      * 
      * @param max24HourSend
-     *        The maximum number of emails the user is allowed to send in a
-     *        24-hour interval. A value of -1 signifies an unlimited quota.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an
+     *        unlimited quota.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetSendQuotaResult withMax24HourSend(Double max24HourSend) {
@@ -102,22 +95,18 @@ public class GetSendQuotaResult extends
 
     /**
      * <p>
-     * The maximum number of emails that Amazon SES can accept from the user's
-     * account per second.
+     * The maximum number of emails that Amazon SES can accept from the user's account per second.
      * </p>
      * <note>
      * <p>
-     * The rate at which Amazon SES accepts the user's messages might be less
-     * than the maximum send rate.
+     * The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.
      * </p>
      * </note>
      * 
      * @param maxSendRate
-     *        The maximum number of emails that Amazon SES can accept from the
-     *        user's account per second.</p> <note>
+     *        The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
      *        <p>
-     *        The rate at which Amazon SES accepts the user's messages might be
-     *        less than the maximum send rate.
+     *        The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.
      *        </p>
      */
 
@@ -127,21 +116,17 @@ public class GetSendQuotaResult extends
 
     /**
      * <p>
-     * The maximum number of emails that Amazon SES can accept from the user's
-     * account per second.
+     * The maximum number of emails that Amazon SES can accept from the user's account per second.
      * </p>
      * <note>
      * <p>
-     * The rate at which Amazon SES accepts the user's messages might be less
-     * than the maximum send rate.
+     * The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.
      * </p>
      * </note>
      * 
-     * @return The maximum number of emails that Amazon SES can accept from the
-     *         user's account per second.</p> <note>
+     * @return The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
      *         <p>
-     *         The rate at which Amazon SES accepts the user's messages might be
-     *         less than the maximum send rate.
+     *         The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.
      *         </p>
      */
 
@@ -151,25 +136,20 @@ public class GetSendQuotaResult extends
 
     /**
      * <p>
-     * The maximum number of emails that Amazon SES can accept from the user's
-     * account per second.
+     * The maximum number of emails that Amazon SES can accept from the user's account per second.
      * </p>
      * <note>
      * <p>
-     * The rate at which Amazon SES accepts the user's messages might be less
-     * than the maximum send rate.
+     * The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.
      * </p>
      * </note>
      * 
      * @param maxSendRate
-     *        The maximum number of emails that Amazon SES can accept from the
-     *        user's account per second.</p> <note>
+     *        The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
      *        <p>
-     *        The rate at which Amazon SES accepts the user's messages might be
-     *        less than the maximum send rate.
+     *        The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetSendQuotaResult withMaxSendRate(Double maxSendRate) {
@@ -209,8 +189,7 @@ public class GetSendQuotaResult extends
      * 
      * @param sentLast24Hours
      *        The number of emails sent during the previous 24 hours.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetSendQuotaResult withSentLast24Hours(Double sentLast24Hours) {
@@ -219,8 +198,7 @@ public class GetSendQuotaResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -252,19 +230,15 @@ public class GetSendQuotaResult extends
         GetSendQuotaResult other = (GetSendQuotaResult) obj;
         if (other.getMax24HourSend() == null ^ this.getMax24HourSend() == null)
             return false;
-        if (other.getMax24HourSend() != null
-                && other.getMax24HourSend().equals(this.getMax24HourSend()) == false)
+        if (other.getMax24HourSend() != null && other.getMax24HourSend().equals(this.getMax24HourSend()) == false)
             return false;
         if (other.getMaxSendRate() == null ^ this.getMaxSendRate() == null)
             return false;
-        if (other.getMaxSendRate() != null
-                && other.getMaxSendRate().equals(this.getMaxSendRate()) == false)
+        if (other.getMaxSendRate() != null && other.getMaxSendRate().equals(this.getMaxSendRate()) == false)
             return false;
-        if (other.getSentLast24Hours() == null
-                ^ this.getSentLast24Hours() == null)
+        if (other.getSentLast24Hours() == null ^ this.getSentLast24Hours() == null)
             return false;
-        if (other.getSentLast24Hours() != null
-                && other.getSentLast24Hours().equals(this.getSentLast24Hours()) == false)
+        if (other.getSentLast24Hours() != null && other.getSentLast24Hours().equals(this.getSentLast24Hours()) == false)
             return false;
         return true;
     }
@@ -274,17 +248,9 @@ public class GetSendQuotaResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getMax24HourSend() == null) ? 0 : getMax24HourSend()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMaxSendRate() == null) ? 0 : getMaxSendRate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSentLast24Hours() == null) ? 0 : getSentLast24Hours()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getMax24HourSend() == null) ? 0 : getMax24HourSend().hashCode());
+        hashCode = prime * hashCode + ((getMaxSendRate() == null) ? 0 : getMaxSendRate().hashCode());
+        hashCode = prime * hashCode + ((getSentLast24Hours() == null) ? 0 : getSentLast24Hours().hashCode());
         return hashCode;
     }
 
@@ -293,9 +259,7 @@ public class GetSendQuotaResult extends
         try {
             return (GetSendQuotaResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

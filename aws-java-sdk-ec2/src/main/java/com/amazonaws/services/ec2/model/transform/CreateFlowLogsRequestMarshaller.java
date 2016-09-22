@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,19 +29,15 @@ import com.amazonaws.util.IdempotentUtils;
  * CreateFlowLogsRequest Marshaller
  */
 
-public class CreateFlowLogsRequestMarshaller implements
-        Marshaller<Request<CreateFlowLogsRequest>, CreateFlowLogsRequest> {
+public class CreateFlowLogsRequestMarshaller implements Marshaller<Request<CreateFlowLogsRequest>, CreateFlowLogsRequest> {
 
-    public Request<CreateFlowLogsRequest> marshall(
-            CreateFlowLogsRequest createFlowLogsRequest) {
+    public Request<CreateFlowLogsRequest> marshall(CreateFlowLogsRequest createFlowLogsRequest) {
 
         if (createFlowLogsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateFlowLogsRequest> request = new DefaultRequest<CreateFlowLogsRequest>(
-                createFlowLogsRequest, "AmazonEC2");
+        Request<CreateFlowLogsRequest> request = new DefaultRequest<CreateFlowLogsRequest>(createFlowLogsRequest, "AmazonEC2");
         request.addParameter("Action", "CreateFlowLogs");
         request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
@@ -55,37 +49,30 @@ public class CreateFlowLogsRequestMarshaller implements
 
             for (String resourceIdsListValue : resourceIdsList) {
                 if (resourceIdsListValue != null) {
-                    request.addParameter("ResourceId." + resourceIdsListIndex,
-                            StringUtils.fromString(resourceIdsListValue));
+                    request.addParameter("ResourceId." + resourceIdsListIndex, StringUtils.fromString(resourceIdsListValue));
                 }
                 resourceIdsListIndex++;
             }
         }
 
         if (createFlowLogsRequest.getResourceType() != null) {
-            request.addParameter("ResourceType", StringUtils
-                    .fromString(createFlowLogsRequest.getResourceType()));
+            request.addParameter("ResourceType", StringUtils.fromString(createFlowLogsRequest.getResourceType()));
         }
 
         if (createFlowLogsRequest.getTrafficType() != null) {
-            request.addParameter("TrafficType", StringUtils
-                    .fromString(createFlowLogsRequest.getTrafficType()));
+            request.addParameter("TrafficType", StringUtils.fromString(createFlowLogsRequest.getTrafficType()));
         }
 
         if (createFlowLogsRequest.getLogGroupName() != null) {
-            request.addParameter("LogGroupName", StringUtils
-                    .fromString(createFlowLogsRequest.getLogGroupName()));
+            request.addParameter("LogGroupName", StringUtils.fromString(createFlowLogsRequest.getLogGroupName()));
         }
 
         if (createFlowLogsRequest.getDeliverLogsPermissionArn() != null) {
-            request.addParameter("DeliverLogsPermissionArn", StringUtils
-                    .fromString(createFlowLogsRequest
-                            .getDeliverLogsPermissionArn()));
+            request.addParameter("DeliverLogsPermissionArn", StringUtils.fromString(createFlowLogsRequest.getDeliverLogsPermissionArn()));
         }
 
         if (createFlowLogsRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils
-                    .fromString(createFlowLogsRequest.getClientToken()));
+            request.addParameter("ClientToken", StringUtils.fromString(createFlowLogsRequest.getClientToken()));
         }
 
         return request;

@@ -24,7 +24,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ConversionToAttributeValuesTest {
 
-    private DynamoDBMapperModelFactory.Factory models;
+    private DynamoDBMapperModelFactory models;
     private DynamoDBMapperConfig finalConfig;
 
     @Before
@@ -38,14 +38,14 @@ public class ConversionToAttributeValuesTest {
 
     @Test
     public void converterFailsForSubProperty() throws Exception {
-        DynamoDBMapperTableModel<ConverterData> tableModel = getTableModel(ConverterData.class);
+        DynamoDBMapperTableModel<ConverterData> tableModel = getTable(ConverterData.class);
         Map<String, AttributeValue> withSubData = tableModel.convert(new ConverterData());
         assertEquals("bar", tableModel.unconvert(withSubData).getSubDocument().getaData().getValue());
     }
 
 
-    private <T> DynamoDBMapperTableModel<T> getTableModel(Class<T> clazz) {
-        return this.models.getModelFactory(finalConfig).getTableModel(clazz);
+    private <T> DynamoDBMapperTableModel<T> getTable(Class<T> clazz) {
+        return this.models.getTableFactory(finalConfig).getTable(clazz);
     }
 
     @DynamoDBTable(tableName = "test")

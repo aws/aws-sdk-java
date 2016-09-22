@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
@@ -22,19 +20,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for CreateLoadBalancer.
  * </p>
  */
-public class CreateLoadBalancerRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The name of the load balancer.
      * </p>
      * <p>
-     * This name must be unique within your set of load balancers for the
-     * region, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a
-     * hyphen.
+     * This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters,
+     * must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.
      * </p>
      */
     private String loadBalancerName;
@@ -43,10 +37,9 @@ public class CreateLoadBalancerRequest extends
      * The listeners.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
-     * >Listeners for Your Classic Load Balancer</a> in the <i>Classic Load
-     * Balancers Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
+     * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Listener> listeners;
@@ -58,16 +51,15 @@ public class CreateLoadBalancerRequest extends
      * You must specify at least one Availability Zone.
      * </p>
      * <p>
-     * You can add more Availability Zones after you create the load balancer
-     * using <a>EnableAvailabilityZonesForLoadBalancer</a>.
+     * You can add more Availability Zones after you create the load balancer using
+     * <a>EnableAvailabilityZonesForLoadBalancer</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> availabilityZones;
     /**
      * <p>
-     * The IDs of the subnets in your VPC to attach to the load balancer.
-     * Specify one subnet per Availability Zone specified in
-     * <code>AvailabilityZones</code>.
+     * The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone
+     * specified in <code>AvailabilityZones</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnets;
@@ -82,17 +74,13 @@ public class CreateLoadBalancerRequest extends
      * The type of a load balancer. Valid only for load balancers in a VPC.
      * </p>
      * <p>
-     * By default, Elastic Load Balancing creates an Internet-facing load
-     * balancer with a DNS name that resolves to public IP addresses. For more
-     * information about Internet-facing and Internal load balancers, see <a
-     * href=
+     * By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to
+     * public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
-     * >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
-     * Guide</i>.
+     * >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.
      * </p>
      * <p>
-     * Specify <code>internal</code> to create a load balancer with a DNS name
-     * that resolves to private IP addresses.
+     * Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.
      * </p>
      */
     private String scheme;
@@ -101,73 +89,61 @@ public class CreateLoadBalancerRequest extends
      * A list of tags to assign to the load balancer.
      * </p>
      * <p>
-     * For more information about tagging your load balancer, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
-     * >Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * For more information about tagging your load balancer, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load
+     * Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
-     * Default constructor for CreateLoadBalancerRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize the
-     * object after creating it.
+     * Default constructor for CreateLoadBalancerRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public CreateLoadBalancerRequest() {
     }
 
     /**
-     * Constructs a new CreateLoadBalancerRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new CreateLoadBalancerRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param loadBalancerName
      *        The name of the load balancer.</p>
      *        <p>
-     *        This name must be unique within your set of load balancers for the
-     *        region, must have a maximum of 32 characters, must contain only
-     *        alphanumeric characters or hyphens, and cannot begin or end with a
-     *        hyphen.
+     *        This name must be unique within your set of load balancers for the region, must have a maximum of 32
+     *        characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.
      */
     public CreateLoadBalancerRequest(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
     }
 
     /**
-     * Constructs a new CreateLoadBalancerRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new CreateLoadBalancerRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param loadBalancerName
      *        The name of the load balancer.</p>
      *        <p>
-     *        This name must be unique within your set of load balancers for the
-     *        region, must have a maximum of 32 characters, must contain only
-     *        alphanumeric characters or hyphens, and cannot begin or end with a
-     *        hyphen.
+     *        This name must be unique within your set of load balancers for the region, must have a maximum of 32
+     *        characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.
      * @param listeners
      *        The listeners.
      *        </p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
-     *        >Listeners for Your Classic Load Balancer</a> in the <i>Classic
-     *        Load Balancers Guide</i>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     *        for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * @param availabilityZones
-     *        One or more Availability Zones from the same region as the load
-     *        balancer.
+     *        One or more Availability Zones from the same region as the load balancer.
      *        </p>
      *        <p>
      *        You must specify at least one Availability Zone.
      *        </p>
      *        <p>
-     *        You can add more Availability Zones after you create the load
-     *        balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.
+     *        You can add more Availability Zones after you create the load balancer using
+     *        <a>EnableAvailabilityZonesForLoadBalancer</a>.
      */
-    public CreateLoadBalancerRequest(String loadBalancerName,
-            java.util.List<Listener> listeners,
-            java.util.List<String> availabilityZones) {
+    public CreateLoadBalancerRequest(String loadBalancerName, java.util.List<Listener> listeners, java.util.List<String> availabilityZones) {
         setLoadBalancerName(loadBalancerName);
         setListeners(listeners);
         setAvailabilityZones(availabilityZones);
@@ -178,19 +154,15 @@ public class CreateLoadBalancerRequest extends
      * The name of the load balancer.
      * </p>
      * <p>
-     * This name must be unique within your set of load balancers for the
-     * region, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a
-     * hyphen.
+     * This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters,
+     * must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.
      * </p>
      * 
      * @param loadBalancerName
      *        The name of the load balancer.</p>
      *        <p>
-     *        This name must be unique within your set of load balancers for the
-     *        region, must have a maximum of 32 characters, must contain only
-     *        alphanumeric characters or hyphens, and cannot begin or end with a
-     *        hyphen.
+     *        This name must be unique within your set of load balancers for the region, must have a maximum of 32
+     *        characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.
      */
 
     public void setLoadBalancerName(String loadBalancerName) {
@@ -202,18 +174,14 @@ public class CreateLoadBalancerRequest extends
      * The name of the load balancer.
      * </p>
      * <p>
-     * This name must be unique within your set of load balancers for the
-     * region, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a
-     * hyphen.
+     * This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters,
+     * must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.
      * </p>
      * 
      * @return The name of the load balancer.</p>
      *         <p>
-     *         This name must be unique within your set of load balancers for
-     *         the region, must have a maximum of 32 characters, must contain
-     *         only alphanumeric characters or hyphens, and cannot begin or end
-     *         with a hyphen.
+     *         This name must be unique within your set of load balancers for the region, must have a maximum of 32
+     *         characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.
      */
 
     public String getLoadBalancerName() {
@@ -225,25 +193,19 @@ public class CreateLoadBalancerRequest extends
      * The name of the load balancer.
      * </p>
      * <p>
-     * This name must be unique within your set of load balancers for the
-     * region, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a
-     * hyphen.
+     * This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters,
+     * must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.
      * </p>
      * 
      * @param loadBalancerName
      *        The name of the load balancer.</p>
      *        <p>
-     *        This name must be unique within your set of load balancers for the
-     *        region, must have a maximum of 32 characters, must contain only
-     *        alphanumeric characters or hyphens, and cannot begin or end with a
-     *        hyphen.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This name must be unique within your set of load balancers for the region, must have a maximum of 32
+     *        characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLoadBalancerRequest withLoadBalancerName(
-            String loadBalancerName) {
+    public CreateLoadBalancerRequest withLoadBalancerName(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
         return this;
     }
@@ -253,18 +215,16 @@ public class CreateLoadBalancerRequest extends
      * The listeners.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
-     * >Listeners for Your Classic Load Balancer</a> in the <i>Classic Load
-     * Balancers Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
+     * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @return The listeners.</p>
      *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
-     *         >Listeners for Your Classic Load Balancer</a> in the <i>Classic
-     *         Load Balancers Guide</i>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     *         for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public java.util.List<Listener> getListeners() {
@@ -279,19 +239,17 @@ public class CreateLoadBalancerRequest extends
      * The listeners.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
-     * >Listeners for Your Classic Load Balancer</a> in the <i>Classic Load
-     * Balancers Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
+     * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param listeners
      *        The listeners.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
-     *        >Listeners for Your Classic Load Balancer</a> in the <i>Classic
-     *        Load Balancers Guide</i>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     *        for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public void setListeners(java.util.Collection<Listener> listeners) {
@@ -300,8 +258,7 @@ public class CreateLoadBalancerRequest extends
             return;
         }
 
-        this.listeners = new com.amazonaws.internal.SdkInternalList<Listener>(
-                listeners);
+        this.listeners = new com.amazonaws.internal.SdkInternalList<Listener>(listeners);
     }
 
     /**
@@ -309,33 +266,28 @@ public class CreateLoadBalancerRequest extends
      * The listeners.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
-     * >Listeners for Your Classic Load Balancer</a> in the <i>Classic Load
-     * Balancers Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
+     * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setListeners(java.util.Collection)} or
-     * {@link #withListeners(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setListeners(java.util.Collection)} or {@link #withListeners(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param listeners
      *        The listeners.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
-     *        >Listeners for Your Classic Load Balancer</a> in the <i>Classic
-     *        Load Balancers Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     *        for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLoadBalancerRequest withListeners(Listener... listeners) {
         if (this.listeners == null) {
-            setListeners(new com.amazonaws.internal.SdkInternalList<Listener>(
-                    listeners.length));
+            setListeners(new com.amazonaws.internal.SdkInternalList<Listener>(listeners.length));
         }
         for (Listener ele : listeners) {
             this.listeners.add(ele);
@@ -348,25 +300,21 @@ public class CreateLoadBalancerRequest extends
      * The listeners.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
-     * >Listeners for Your Classic Load Balancer</a> in the <i>Classic Load
-     * Balancers Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
+     * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param listeners
      *        The listeners.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
-     *        >Listeners for Your Classic Load Balancer</a> in the <i>Classic
-     *        Load Balancers Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     *        for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLoadBalancerRequest withListeners(
-            java.util.Collection<Listener> listeners) {
+    public CreateLoadBalancerRequest withListeners(java.util.Collection<Listener> listeners) {
         setListeners(listeners);
         return this;
     }
@@ -379,18 +327,17 @@ public class CreateLoadBalancerRequest extends
      * You must specify at least one Availability Zone.
      * </p>
      * <p>
-     * You can add more Availability Zones after you create the load balancer
-     * using <a>EnableAvailabilityZonesForLoadBalancer</a>.
+     * You can add more Availability Zones after you create the load balancer using
+     * <a>EnableAvailabilityZonesForLoadBalancer</a>.
      * </p>
      * 
-     * @return One or more Availability Zones from the same region as the load
-     *         balancer.</p>
+     * @return One or more Availability Zones from the same region as the load balancer.</p>
      *         <p>
      *         You must specify at least one Availability Zone.
      *         </p>
      *         <p>
-     *         You can add more Availability Zones after you create the load
-     *         balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.
+     *         You can add more Availability Zones after you create the load balancer using
+     *         <a>EnableAvailabilityZonesForLoadBalancer</a>.
      */
 
     public java.util.List<String> getAvailabilityZones() {
@@ -408,30 +355,27 @@ public class CreateLoadBalancerRequest extends
      * You must specify at least one Availability Zone.
      * </p>
      * <p>
-     * You can add more Availability Zones after you create the load balancer
-     * using <a>EnableAvailabilityZonesForLoadBalancer</a>.
+     * You can add more Availability Zones after you create the load balancer using
+     * <a>EnableAvailabilityZonesForLoadBalancer</a>.
      * </p>
      * 
      * @param availabilityZones
-     *        One or more Availability Zones from the same region as the load
-     *        balancer.</p>
+     *        One or more Availability Zones from the same region as the load balancer.</p>
      *        <p>
      *        You must specify at least one Availability Zone.
      *        </p>
      *        <p>
-     *        You can add more Availability Zones after you create the load
-     *        balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.
+     *        You can add more Availability Zones after you create the load balancer using
+     *        <a>EnableAvailabilityZonesForLoadBalancer</a>.
      */
 
-    public void setAvailabilityZones(
-            java.util.Collection<String> availabilityZones) {
+    public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
             this.availabilityZones = null;
             return;
         }
 
-        this.availabilityZones = new com.amazonaws.internal.SdkInternalList<String>(
-                availabilityZones);
+        this.availabilityZones = new com.amazonaws.internal.SdkInternalList<String>(availabilityZones);
     }
 
     /**
@@ -442,34 +386,29 @@ public class CreateLoadBalancerRequest extends
      * You must specify at least one Availability Zone.
      * </p>
      * <p>
-     * You can add more Availability Zones after you create the load balancer
-     * using <a>EnableAvailabilityZonesForLoadBalancer</a>.
+     * You can add more Availability Zones after you create the load balancer using
+     * <a>EnableAvailabilityZonesForLoadBalancer</a>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
-     * {@link #withAvailabilityZones(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param availabilityZones
-     *        One or more Availability Zones from the same region as the load
-     *        balancer.</p>
+     *        One or more Availability Zones from the same region as the load balancer.</p>
      *        <p>
      *        You must specify at least one Availability Zone.
      *        </p>
      *        <p>
-     *        You can add more Availability Zones after you create the load
-     *        balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        You can add more Availability Zones after you create the load balancer using
+     *        <a>EnableAvailabilityZonesForLoadBalancer</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLoadBalancerRequest withAvailabilityZones(
-            String... availabilityZones) {
+    public CreateLoadBalancerRequest withAvailabilityZones(String... availabilityZones) {
         if (this.availabilityZones == null) {
-            setAvailabilityZones(new com.amazonaws.internal.SdkInternalList<String>(
-                    availabilityZones.length));
+            setAvailabilityZones(new com.amazonaws.internal.SdkInternalList<String>(availabilityZones.length));
         }
         for (String ele : availabilityZones) {
             this.availabilityZones.add(ele);
@@ -485,39 +424,34 @@ public class CreateLoadBalancerRequest extends
      * You must specify at least one Availability Zone.
      * </p>
      * <p>
-     * You can add more Availability Zones after you create the load balancer
-     * using <a>EnableAvailabilityZonesForLoadBalancer</a>.
+     * You can add more Availability Zones after you create the load balancer using
+     * <a>EnableAvailabilityZonesForLoadBalancer</a>.
      * </p>
      * 
      * @param availabilityZones
-     *        One or more Availability Zones from the same region as the load
-     *        balancer.</p>
+     *        One or more Availability Zones from the same region as the load balancer.</p>
      *        <p>
      *        You must specify at least one Availability Zone.
      *        </p>
      *        <p>
-     *        You can add more Availability Zones after you create the load
-     *        balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        You can add more Availability Zones after you create the load balancer using
+     *        <a>EnableAvailabilityZonesForLoadBalancer</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLoadBalancerRequest withAvailabilityZones(
-            java.util.Collection<String> availabilityZones) {
+    public CreateLoadBalancerRequest withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         setAvailabilityZones(availabilityZones);
         return this;
     }
 
     /**
      * <p>
-     * The IDs of the subnets in your VPC to attach to the load balancer.
-     * Specify one subnet per Availability Zone specified in
-     * <code>AvailabilityZones</code>.
+     * The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone
+     * specified in <code>AvailabilityZones</code>.
      * </p>
      * 
-     * @return The IDs of the subnets in your VPC to attach to the load
-     *         balancer. Specify one subnet per Availability Zone specified in
-     *         <code>AvailabilityZones</code>.
+     * @return The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability
+     *         Zone specified in <code>AvailabilityZones</code>.
      */
 
     public java.util.List<String> getSubnets() {
@@ -529,15 +463,13 @@ public class CreateLoadBalancerRequest extends
 
     /**
      * <p>
-     * The IDs of the subnets in your VPC to attach to the load balancer.
-     * Specify one subnet per Availability Zone specified in
-     * <code>AvailabilityZones</code>.
+     * The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone
+     * specified in <code>AvailabilityZones</code>.
      * </p>
      * 
      * @param subnets
-     *        The IDs of the subnets in your VPC to attach to the load balancer.
-     *        Specify one subnet per Availability Zone specified in
-     *        <code>AvailabilityZones</code>.
+     *        The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability
+     *        Zone specified in <code>AvailabilityZones</code>.
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -546,35 +478,29 @@ public class CreateLoadBalancerRequest extends
             return;
         }
 
-        this.subnets = new com.amazonaws.internal.SdkInternalList<String>(
-                subnets);
+        this.subnets = new com.amazonaws.internal.SdkInternalList<String>(subnets);
     }
 
     /**
      * <p>
-     * The IDs of the subnets in your VPC to attach to the load balancer.
-     * Specify one subnet per Availability Zone specified in
-     * <code>AvailabilityZones</code>.
+     * The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone
+     * specified in <code>AvailabilityZones</code>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnets(java.util.Collection)} or
-     * {@link #withSubnets(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnets(java.util.Collection)} or {@link #withSubnets(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param subnets
-     *        The IDs of the subnets in your VPC to attach to the load balancer.
-     *        Specify one subnet per Availability Zone specified in
-     *        <code>AvailabilityZones</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability
+     *        Zone specified in <code>AvailabilityZones</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLoadBalancerRequest withSubnets(String... subnets) {
         if (this.subnets == null) {
-            setSubnets(new com.amazonaws.internal.SdkInternalList<String>(
-                    subnets.length));
+            setSubnets(new com.amazonaws.internal.SdkInternalList<String>(subnets.length));
         }
         for (String ele : subnets) {
             this.subnets.add(ele);
@@ -584,21 +510,17 @@ public class CreateLoadBalancerRequest extends
 
     /**
      * <p>
-     * The IDs of the subnets in your VPC to attach to the load balancer.
-     * Specify one subnet per Availability Zone specified in
-     * <code>AvailabilityZones</code>.
+     * The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone
+     * specified in <code>AvailabilityZones</code>.
      * </p>
      * 
      * @param subnets
-     *        The IDs of the subnets in your VPC to attach to the load balancer.
-     *        Specify one subnet per Availability Zone specified in
-     *        <code>AvailabilityZones</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability
+     *        Zone specified in <code>AvailabilityZones</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLoadBalancerRequest withSubnets(
-            java.util.Collection<String> subnets) {
+    public CreateLoadBalancerRequest withSubnets(java.util.Collection<String> subnets) {
         setSubnets(subnets);
         return this;
     }
@@ -633,8 +555,7 @@ public class CreateLoadBalancerRequest extends
             return;
         }
 
-        this.securityGroups = new com.amazonaws.internal.SdkInternalList<String>(
-                securityGroups);
+        this.securityGroups = new com.amazonaws.internal.SdkInternalList<String>(securityGroups);
     }
 
     /**
@@ -642,23 +563,19 @@ public class CreateLoadBalancerRequest extends
      * The IDs of the security groups to assign to the load balancer.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroups(java.util.Collection)} or
-     * {@link #withSecurityGroups(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param securityGroups
      *        The IDs of the security groups to assign to the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLoadBalancerRequest withSecurityGroups(
-            String... securityGroups) {
+    public CreateLoadBalancerRequest withSecurityGroups(String... securityGroups) {
         if (this.securityGroups == null) {
-            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
-                    securityGroups.length));
+            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(securityGroups.length));
         }
         for (String ele : securityGroups) {
             this.securityGroups.add(ele);
@@ -673,12 +590,10 @@ public class CreateLoadBalancerRequest extends
      * 
      * @param securityGroups
      *        The IDs of the security groups to assign to the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLoadBalancerRequest withSecurityGroups(
-            java.util.Collection<String> securityGroups) {
+    public CreateLoadBalancerRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);
         return this;
     }
@@ -688,34 +603,27 @@ public class CreateLoadBalancerRequest extends
      * The type of a load balancer. Valid only for load balancers in a VPC.
      * </p>
      * <p>
-     * By default, Elastic Load Balancing creates an Internet-facing load
-     * balancer with a DNS name that resolves to public IP addresses. For more
-     * information about Internet-facing and Internal load balancers, see <a
-     * href=
+     * By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to
+     * public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
-     * >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
-     * Guide</i>.
+     * >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.
      * </p>
      * <p>
-     * Specify <code>internal</code> to create a load balancer with a DNS name
-     * that resolves to private IP addresses.
+     * Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.
      * </p>
      * 
      * @param scheme
-     *        The type of a load balancer. Valid only for load balancers in a
-     *        VPC.</p>
+     *        The type of a load balancer. Valid only for load balancers in a VPC.</p>
      *        <p>
-     *        By default, Elastic Load Balancing creates an Internet-facing load
-     *        balancer with a DNS name that resolves to public IP addresses. For
-     *        more information about Internet-facing and Internal load
-     *        balancers, see <a href=
+     *        By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves
+     *        to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a
+     *        href=
      *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
-     *        >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
-     *        Guide</i>.
+     *        >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.
      *        </p>
      *        <p>
-     *        Specify <code>internal</code> to create a load balancer with a DNS
-     *        name that resolves to private IP addresses.
+     *        Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP
+     *        addresses.
      */
 
     public void setScheme(String scheme) {
@@ -727,33 +635,26 @@ public class CreateLoadBalancerRequest extends
      * The type of a load balancer. Valid only for load balancers in a VPC.
      * </p>
      * <p>
-     * By default, Elastic Load Balancing creates an Internet-facing load
-     * balancer with a DNS name that resolves to public IP addresses. For more
-     * information about Internet-facing and Internal load balancers, see <a
-     * href=
+     * By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to
+     * public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
-     * >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
-     * Guide</i>.
+     * >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.
      * </p>
      * <p>
-     * Specify <code>internal</code> to create a load balancer with a DNS name
-     * that resolves to private IP addresses.
+     * Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.
      * </p>
      * 
-     * @return The type of a load balancer. Valid only for load balancers in a
-     *         VPC.</p>
+     * @return The type of a load balancer. Valid only for load balancers in a VPC.</p>
      *         <p>
-     *         By default, Elastic Load Balancing creates an Internet-facing
-     *         load balancer with a DNS name that resolves to public IP
-     *         addresses. For more information about Internet-facing and
-     *         Internal load balancers, see <a href=
+     *         By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves
+     *         to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a
+     *         href=
      *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
-     *         >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
-     *         Guide</i>.
+     *         >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.
      *         </p>
      *         <p>
-     *         Specify <code>internal</code> to create a load balancer with a
-     *         DNS name that resolves to private IP addresses.
+     *         Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP
+     *         addresses.
      */
 
     public String getScheme() {
@@ -765,36 +666,28 @@ public class CreateLoadBalancerRequest extends
      * The type of a load balancer. Valid only for load balancers in a VPC.
      * </p>
      * <p>
-     * By default, Elastic Load Balancing creates an Internet-facing load
-     * balancer with a DNS name that resolves to public IP addresses. For more
-     * information about Internet-facing and Internal load balancers, see <a
-     * href=
+     * By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to
+     * public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
-     * >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
-     * Guide</i>.
+     * >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.
      * </p>
      * <p>
-     * Specify <code>internal</code> to create a load balancer with a DNS name
-     * that resolves to private IP addresses.
+     * Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.
      * </p>
      * 
      * @param scheme
-     *        The type of a load balancer. Valid only for load balancers in a
-     *        VPC.</p>
+     *        The type of a load balancer. Valid only for load balancers in a VPC.</p>
      *        <p>
-     *        By default, Elastic Load Balancing creates an Internet-facing load
-     *        balancer with a DNS name that resolves to public IP addresses. For
-     *        more information about Internet-facing and Internal load
-     *        balancers, see <a href=
+     *        By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves
+     *        to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a
+     *        href=
      *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
-     *        >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
-     *        Guide</i>.
+     *        >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.
      *        </p>
      *        <p>
-     *        Specify <code>internal</code> to create a load balancer with a DNS
-     *        name that resolves to private IP addresses.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP
+     *        addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLoadBalancerRequest withScheme(String scheme) {
@@ -807,19 +700,16 @@ public class CreateLoadBalancerRequest extends
      * A list of tags to assign to the load balancer.
      * </p>
      * <p>
-     * For more information about tagging your load balancer, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
-     * >Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * For more information about tagging your load balancer, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load
+     * Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @return A list of tags to assign to the load balancer.</p>
      *         <p>
      *         For more information about tagging your load balancer, see <a
-     *         href=
-     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
-     *         >Tag Your Classic Load Balancer</a> in the <i>Classic Load
-     *         Balancers Guide</i>.
+     *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your
+     *         Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -834,20 +724,17 @@ public class CreateLoadBalancerRequest extends
      * A list of tags to assign to the load balancer.
      * </p>
      * <p>
-     * For more information about tagging your load balancer, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
-     * >Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * For more information about tagging your load balancer, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load
+     * Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param tags
      *        A list of tags to assign to the load balancer.</p>
      *        <p>
      *        For more information about tagging your load balancer, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
-     *        >Tag Your Classic Load Balancer</a> in the <i>Classic Load
-     *        Balancers Guide</i>.
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your
+     *        Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -864,15 +751,13 @@ public class CreateLoadBalancerRequest extends
      * A list of tags to assign to the load balancer.
      * </p>
      * <p>
-     * For more information about tagging your load balancer, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
-     * >Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * For more information about tagging your load balancer, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load
+     * Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
@@ -880,12 +765,9 @@ public class CreateLoadBalancerRequest extends
      *        A list of tags to assign to the load balancer.</p>
      *        <p>
      *        For more information about tagging your load balancer, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
-     *        >Tag Your Classic Load Balancer</a> in the <i>Classic Load
-     *        Balancers Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your
+     *        Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLoadBalancerRequest withTags(Tag... tags) {
@@ -903,22 +785,18 @@ public class CreateLoadBalancerRequest extends
      * A list of tags to assign to the load balancer.
      * </p>
      * <p>
-     * For more information about tagging your load balancer, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
-     * >Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers
-     * Guide</i>.
+     * For more information about tagging your load balancer, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load
+     * Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param tags
      *        A list of tags to assign to the load balancer.</p>
      *        <p>
      *        For more information about tagging your load balancer, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
-     *        >Tag Your Classic Load Balancer</a> in the <i>Classic Load
-     *        Balancers Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your
+     *        Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLoadBalancerRequest withTags(java.util.Collection<Tag> tags) {
@@ -927,8 +805,7 @@ public class CreateLoadBalancerRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -966,45 +843,33 @@ public class CreateLoadBalancerRequest extends
         if (obj instanceof CreateLoadBalancerRequest == false)
             return false;
         CreateLoadBalancerRequest other = (CreateLoadBalancerRequest) obj;
-        if (other.getLoadBalancerName() == null
-                ^ this.getLoadBalancerName() == null)
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null)
             return false;
-        if (other.getLoadBalancerName() != null
-                && other.getLoadBalancerName().equals(
-                        this.getLoadBalancerName()) == false)
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false)
             return false;
         if (other.getListeners() == null ^ this.getListeners() == null)
             return false;
-        if (other.getListeners() != null
-                && other.getListeners().equals(this.getListeners()) == false)
+        if (other.getListeners() != null && other.getListeners().equals(this.getListeners()) == false)
             return false;
-        if (other.getAvailabilityZones() == null
-                ^ this.getAvailabilityZones() == null)
+        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null)
             return false;
-        if (other.getAvailabilityZones() != null
-                && other.getAvailabilityZones().equals(
-                        this.getAvailabilityZones()) == false)
+        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false)
             return false;
         if (other.getSubnets() == null ^ this.getSubnets() == null)
             return false;
-        if (other.getSubnets() != null
-                && other.getSubnets().equals(this.getSubnets()) == false)
+        if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false)
             return false;
-        if (other.getSecurityGroups() == null
-                ^ this.getSecurityGroups() == null)
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
             return false;
-        if (other.getSecurityGroups() != null
-                && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
         if (other.getScheme() == null ^ this.getScheme() == null)
             return false;
-        if (other.getScheme() != null
-                && other.getScheme().equals(this.getScheme()) == false)
+        if (other.getScheme() != null && other.getScheme().equals(this.getScheme()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -1014,26 +879,13 @@ public class CreateLoadBalancerRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getListeners() == null) ? 0 : getListeners().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZones() == null) ? 0
-                        : getAvailabilityZones().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroups() == null) ? 0 : getSecurityGroups()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getScheme() == null) ? 0 : getScheme().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode());
+        hashCode = prime * hashCode + ((getListeners() == null) ? 0 : getListeners().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
+        hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getScheme() == null) ? 0 : getScheme().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

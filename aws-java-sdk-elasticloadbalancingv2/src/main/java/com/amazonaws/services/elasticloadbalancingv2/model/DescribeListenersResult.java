@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Contains the output of DescribeListeners.
  * </p>
  */
-public class DescribeListenersResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeListenersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,8 @@ public class DescribeListenersResult extends
     private java.util.List<Listener> listeners;
     /**
      * <p>
-     * The marker to use when requesting the next set of results. If there are
-     * no additional results, the string is empty.
+     * The marker to use when requesting the next set of results. If there are no additional results, the string is
+     * empty.
      * </p>
      */
     private String nextMarker;
@@ -74,16 +70,14 @@ public class DescribeListenersResult extends
      * Information about the listeners.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setListeners(java.util.Collection)} or
-     * {@link #withListeners(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setListeners(java.util.Collection)} or {@link #withListeners(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param listeners
      *        Information about the listeners.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeListenersResult withListeners(Listener... listeners) {
@@ -103,25 +97,23 @@ public class DescribeListenersResult extends
      * 
      * @param listeners
      *        Information about the listeners.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeListenersResult withListeners(
-            java.util.Collection<Listener> listeners) {
+    public DescribeListenersResult withListeners(java.util.Collection<Listener> listeners) {
         setListeners(listeners);
         return this;
     }
 
     /**
      * <p>
-     * The marker to use when requesting the next set of results. If there are
-     * no additional results, the string is empty.
+     * The marker to use when requesting the next set of results. If there are no additional results, the string is
+     * empty.
      * </p>
      * 
      * @param nextMarker
-     *        The marker to use when requesting the next set of results. If
-     *        there are no additional results, the string is empty.
+     *        The marker to use when requesting the next set of results. If there are no additional results, the string
+     *        is empty.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -130,12 +122,12 @@ public class DescribeListenersResult extends
 
     /**
      * <p>
-     * The marker to use when requesting the next set of results. If there are
-     * no additional results, the string is empty.
+     * The marker to use when requesting the next set of results. If there are no additional results, the string is
+     * empty.
      * </p>
      * 
-     * @return The marker to use when requesting the next set of results. If
-     *         there are no additional results, the string is empty.
+     * @return The marker to use when requesting the next set of results. If there are no additional results, the string
+     *         is empty.
      */
 
     public String getNextMarker() {
@@ -144,15 +136,14 @@ public class DescribeListenersResult extends
 
     /**
      * <p>
-     * The marker to use when requesting the next set of results. If there are
-     * no additional results, the string is empty.
+     * The marker to use when requesting the next set of results. If there are no additional results, the string is
+     * empty.
      * </p>
      * 
      * @param nextMarker
-     *        The marker to use when requesting the next set of results. If
-     *        there are no additional results, the string is empty.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The marker to use when requesting the next set of results. If there are no additional results, the string
+     *        is empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeListenersResult withNextMarker(String nextMarker) {
@@ -161,8 +152,7 @@ public class DescribeListenersResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -192,13 +182,11 @@ public class DescribeListenersResult extends
         DescribeListenersResult other = (DescribeListenersResult) obj;
         if (other.getListeners() == null ^ this.getListeners() == null)
             return false;
-        if (other.getListeners() != null
-                && other.getListeners().equals(this.getListeners()) == false)
+        if (other.getListeners() != null && other.getListeners().equals(this.getListeners()) == false)
             return false;
         if (other.getNextMarker() == null ^ this.getNextMarker() == null)
             return false;
-        if (other.getNextMarker() != null
-                && other.getNextMarker().equals(this.getNextMarker()) == false)
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false)
             return false;
         return true;
     }
@@ -208,10 +196,8 @@ public class DescribeListenersResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getListeners() == null) ? 0 : getListeners().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
+        hashCode = prime * hashCode + ((getListeners() == null) ? 0 : getListeners().hashCode());
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
         return hashCode;
     }
 
@@ -220,9 +206,7 @@ public class DescribeListenersResult extends
         try {
             return (DescribeListenersResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

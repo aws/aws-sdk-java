@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,33 +29,25 @@ import com.amazonaws.util.IdempotentUtils;
  * DetachInternetGatewayRequest Marshaller
  */
 
-public class DetachInternetGatewayRequestMarshaller
-        implements
-        Marshaller<Request<DetachInternetGatewayRequest>, DetachInternetGatewayRequest> {
+public class DetachInternetGatewayRequestMarshaller implements Marshaller<Request<DetachInternetGatewayRequest>, DetachInternetGatewayRequest> {
 
-    public Request<DetachInternetGatewayRequest> marshall(
-            DetachInternetGatewayRequest detachInternetGatewayRequest) {
+    public Request<DetachInternetGatewayRequest> marshall(DetachInternetGatewayRequest detachInternetGatewayRequest) {
 
         if (detachInternetGatewayRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DetachInternetGatewayRequest> request = new DefaultRequest<DetachInternetGatewayRequest>(
-                detachInternetGatewayRequest, "AmazonEC2");
+        Request<DetachInternetGatewayRequest> request = new DefaultRequest<DetachInternetGatewayRequest>(detachInternetGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DetachInternetGateway");
         request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (detachInternetGatewayRequest.getInternetGatewayId() != null) {
-            request.addParameter("InternetGatewayId", StringUtils
-                    .fromString(detachInternetGatewayRequest
-                            .getInternetGatewayId()));
+            request.addParameter("InternetGatewayId", StringUtils.fromString(detachInternetGatewayRequest.getInternetGatewayId()));
         }
 
         if (detachInternetGatewayRequest.getVpcId() != null) {
-            request.addParameter("VpcId", StringUtils
-                    .fromString(detachInternetGatewayRequest.getVpcId()));
+            request.addParameter("VpcId", StringUtils.fromString(detachInternetGatewayRequest.getVpcId()));
         }
 
         return request;

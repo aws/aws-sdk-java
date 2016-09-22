@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -20,14 +18,12 @@ import com.amazonaws.AmazonWebServiceResult;
 /**
  * 
  */
-public class GetHostReservationPurchasePreviewResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetHostReservationPurchasePreviewResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
-     * The purchase information of the Dedicated Host Reservation and the
-     * Dedicated Hosts associated with it.
+     * The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Purchase> purchase;
@@ -45,21 +41,18 @@ public class GetHostReservationPurchasePreviewResult extends
     private String totalHourlyPrice;
     /**
      * <p>
-     * The currency in which the <code>totalUpfrontPrice</code> and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the
-     * only supported currency is <code>USD</code>.
+     * The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified.
+     * At this time, the only supported currency is <code>USD</code>.
      * </p>
      */
     private String currencyCode;
 
     /**
      * <p>
-     * The purchase information of the Dedicated Host Reservation and the
-     * Dedicated Hosts associated with it.
+     * The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
      * </p>
      * 
-     * @return The purchase information of the Dedicated Host Reservation and
-     *         the Dedicated Hosts associated with it.
+     * @return The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
      */
 
     public java.util.List<Purchase> getPurchase() {
@@ -71,13 +64,11 @@ public class GetHostReservationPurchasePreviewResult extends
 
     /**
      * <p>
-     * The purchase information of the Dedicated Host Reservation and the
-     * Dedicated Hosts associated with it.
+     * The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
      * </p>
      * 
      * @param purchase
-     *        The purchase information of the Dedicated Host Reservation and the
-     *        Dedicated Hosts associated with it.
+     *        The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
      */
 
     public void setPurchase(java.util.Collection<Purchase> purchase) {
@@ -86,34 +77,27 @@ public class GetHostReservationPurchasePreviewResult extends
             return;
         }
 
-        this.purchase = new com.amazonaws.internal.SdkInternalList<Purchase>(
-                purchase);
+        this.purchase = new com.amazonaws.internal.SdkInternalList<Purchase>(purchase);
     }
 
     /**
      * <p>
-     * The purchase information of the Dedicated Host Reservation and the
-     * Dedicated Hosts associated with it.
+     * The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPurchase(java.util.Collection)} or
-     * {@link #withPurchase(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPurchase(java.util.Collection)} or {@link #withPurchase(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param purchase
-     *        The purchase information of the Dedicated Host Reservation and the
-     *        Dedicated Hosts associated with it.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetHostReservationPurchasePreviewResult withPurchase(
-            Purchase... purchase) {
+    public GetHostReservationPurchasePreviewResult withPurchase(Purchase... purchase) {
         if (this.purchase == null) {
-            setPurchase(new com.amazonaws.internal.SdkInternalList<Purchase>(
-                    purchase.length));
+            setPurchase(new com.amazonaws.internal.SdkInternalList<Purchase>(purchase.length));
         }
         for (Purchase ele : purchase) {
             this.purchase.add(ele);
@@ -123,19 +107,15 @@ public class GetHostReservationPurchasePreviewResult extends
 
     /**
      * <p>
-     * The purchase information of the Dedicated Host Reservation and the
-     * Dedicated Hosts associated with it.
+     * The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
      * </p>
      * 
      * @param purchase
-     *        The purchase information of the Dedicated Host Reservation and the
-     *        Dedicated Hosts associated with it.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetHostReservationPurchasePreviewResult withPurchase(
-            java.util.Collection<Purchase> purchase) {
+    public GetHostReservationPurchasePreviewResult withPurchase(java.util.Collection<Purchase> purchase) {
         setPurchase(purchase);
         return this;
     }
@@ -172,12 +152,10 @@ public class GetHostReservationPurchasePreviewResult extends
      * 
      * @param totalUpfrontPrice
      *        The potential total upfront price. This is billed immediately.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetHostReservationPurchasePreviewResult withTotalUpfrontPrice(
-            String totalUpfrontPrice) {
+    public GetHostReservationPurchasePreviewResult withTotalUpfrontPrice(String totalUpfrontPrice) {
         setTotalUpfrontPrice(totalUpfrontPrice);
         return this;
     }
@@ -214,27 +192,23 @@ public class GetHostReservationPurchasePreviewResult extends
      * 
      * @param totalHourlyPrice
      *        The potential total hourly price of the reservation per hour.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetHostReservationPurchasePreviewResult withTotalHourlyPrice(
-            String totalHourlyPrice) {
+    public GetHostReservationPurchasePreviewResult withTotalHourlyPrice(String totalHourlyPrice) {
         setTotalHourlyPrice(totalHourlyPrice);
         return this;
     }
 
     /**
      * <p>
-     * The currency in which the <code>totalUpfrontPrice</code> and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the
-     * only supported currency is <code>USD</code>.
+     * The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified.
+     * At this time, the only supported currency is <code>USD</code>.
      * </p>
      * 
      * @param currencyCode
-     *        The currency in which the <code>totalUpfrontPrice</code> and
-     *        <code>totalHourlyPrice</code> amounts are specified. At this time,
-     *        the only supported currency is <code>USD</code>.
+     *        The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are
+     *        specified. At this time, the only supported currency is <code>USD</code>.
      * @see CurrencyCodeValues
      */
 
@@ -244,14 +218,12 @@ public class GetHostReservationPurchasePreviewResult extends
 
     /**
      * <p>
-     * The currency in which the <code>totalUpfrontPrice</code> and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the
-     * only supported currency is <code>USD</code>.
+     * The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified.
+     * At this time, the only supported currency is <code>USD</code>.
      * </p>
      * 
-     * @return The currency in which the <code>totalUpfrontPrice</code> and
-     *         <code>totalHourlyPrice</code> amounts are specified. At this
-     *         time, the only supported currency is <code>USD</code>.
+     * @return The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are
+     *         specified. At this time, the only supported currency is <code>USD</code>.
      * @see CurrencyCodeValues
      */
 
@@ -261,37 +233,31 @@ public class GetHostReservationPurchasePreviewResult extends
 
     /**
      * <p>
-     * The currency in which the <code>totalUpfrontPrice</code> and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the
-     * only supported currency is <code>USD</code>.
+     * The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified.
+     * At this time, the only supported currency is <code>USD</code>.
      * </p>
      * 
      * @param currencyCode
-     *        The currency in which the <code>totalUpfrontPrice</code> and
-     *        <code>totalHourlyPrice</code> amounts are specified. At this time,
-     *        the only supported currency is <code>USD</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are
+     *        specified. At this time, the only supported currency is <code>USD</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CurrencyCodeValues
      */
 
-    public GetHostReservationPurchasePreviewResult withCurrencyCode(
-            String currencyCode) {
+    public GetHostReservationPurchasePreviewResult withCurrencyCode(String currencyCode) {
         setCurrencyCode(currencyCode);
         return this;
     }
 
     /**
      * <p>
-     * The currency in which the <code>totalUpfrontPrice</code> and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the
-     * only supported currency is <code>USD</code>.
+     * The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified.
+     * At this time, the only supported currency is <code>USD</code>.
      * </p>
      * 
      * @param currencyCode
-     *        The currency in which the <code>totalUpfrontPrice</code> and
-     *        <code>totalHourlyPrice</code> amounts are specified. At this time,
-     *        the only supported currency is <code>USD</code>.
+     *        The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are
+     *        specified. At this time, the only supported currency is <code>USD</code>.
      * @see CurrencyCodeValues
      */
 
@@ -301,29 +267,24 @@ public class GetHostReservationPurchasePreviewResult extends
 
     /**
      * <p>
-     * The currency in which the <code>totalUpfrontPrice</code> and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the
-     * only supported currency is <code>USD</code>.
+     * The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified.
+     * At this time, the only supported currency is <code>USD</code>.
      * </p>
      * 
      * @param currencyCode
-     *        The currency in which the <code>totalUpfrontPrice</code> and
-     *        <code>totalHourlyPrice</code> amounts are specified. At this time,
-     *        the only supported currency is <code>USD</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are
+     *        specified. At this time, the only supported currency is <code>USD</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CurrencyCodeValues
      */
 
-    public GetHostReservationPurchasePreviewResult withCurrencyCode(
-            CurrencyCodeValues currencyCode) {
+    public GetHostReservationPurchasePreviewResult withCurrencyCode(CurrencyCodeValues currencyCode) {
         setCurrencyCode(currencyCode);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -357,27 +318,19 @@ public class GetHostReservationPurchasePreviewResult extends
         GetHostReservationPurchasePreviewResult other = (GetHostReservationPurchasePreviewResult) obj;
         if (other.getPurchase() == null ^ this.getPurchase() == null)
             return false;
-        if (other.getPurchase() != null
-                && other.getPurchase().equals(this.getPurchase()) == false)
+        if (other.getPurchase() != null && other.getPurchase().equals(this.getPurchase()) == false)
             return false;
-        if (other.getTotalUpfrontPrice() == null
-                ^ this.getTotalUpfrontPrice() == null)
+        if (other.getTotalUpfrontPrice() == null ^ this.getTotalUpfrontPrice() == null)
             return false;
-        if (other.getTotalUpfrontPrice() != null
-                && other.getTotalUpfrontPrice().equals(
-                        this.getTotalUpfrontPrice()) == false)
+        if (other.getTotalUpfrontPrice() != null && other.getTotalUpfrontPrice().equals(this.getTotalUpfrontPrice()) == false)
             return false;
-        if (other.getTotalHourlyPrice() == null
-                ^ this.getTotalHourlyPrice() == null)
+        if (other.getTotalHourlyPrice() == null ^ this.getTotalHourlyPrice() == null)
             return false;
-        if (other.getTotalHourlyPrice() != null
-                && other.getTotalHourlyPrice().equals(
-                        this.getTotalHourlyPrice()) == false)
+        if (other.getTotalHourlyPrice() != null && other.getTotalHourlyPrice().equals(this.getTotalHourlyPrice()) == false)
             return false;
         if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
             return false;
-        if (other.getCurrencyCode() != null
-                && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
+        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
             return false;
         return true;
     }
@@ -387,20 +340,10 @@ public class GetHostReservationPurchasePreviewResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPurchase() == null) ? 0 : getPurchase().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTotalUpfrontPrice() == null) ? 0
-                        : getTotalUpfrontPrice().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTotalHourlyPrice() == null) ? 0 : getTotalHourlyPrice()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCurrencyCode() == null) ? 0 : getCurrencyCode()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPurchase() == null) ? 0 : getPurchase().hashCode());
+        hashCode = prime * hashCode + ((getTotalUpfrontPrice() == null) ? 0 : getTotalUpfrontPrice().hashCode());
+        hashCode = prime * hashCode + ((getTotalHourlyPrice() == null) ? 0 : getTotalHourlyPrice().hashCode());
+        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
         return hashCode;
     }
 
@@ -409,9 +352,7 @@ public class GetHostReservationPurchasePreviewResult extends
         try {
             return (GetHostReservationPurchasePreviewResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

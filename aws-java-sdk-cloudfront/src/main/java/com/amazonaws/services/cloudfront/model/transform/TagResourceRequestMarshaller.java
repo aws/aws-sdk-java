@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model.transform;
 
@@ -39,62 +37,49 @@ import com.amazonaws.util.SdkHttpUtils;
  * TagResourceRequest Marshaller
  */
 
-public class TagResourceRequestMarshaller implements
-        Marshaller<Request<TagResourceRequest>, TagResourceRequest> {
+public class TagResourceRequestMarshaller implements Marshaller<Request<TagResourceRequest>, TagResourceRequest> {
 
-    public Request<TagResourceRequest> marshall(
-            TagResourceRequest tagResourceRequest) {
+    public Request<TagResourceRequest> marshall(TagResourceRequest tagResourceRequest) {
 
         if (tagResourceRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<TagResourceRequest> request = new DefaultRequest<TagResourceRequest>(
-                tagResourceRequest, "AmazonCloudFront");
+        Request<TagResourceRequest> request = new DefaultRequest<TagResourceRequest>(tagResourceRequest, "AmazonCloudFront");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/2016-09-07/tagging?Operation=Tag";
 
-        uriResourcePath = com.amazonaws.util.UriResourcePathUtils
-                .addStaticQueryParamtersToRequest(request, uriResourcePath);
+        uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
 
         request.setResourcePath(uriResourcePath);
 
         if (tagResourceRequest.getResource() != null) {
-            request.addParameter("Resource",
-                    StringUtils.fromString(tagResourceRequest.getResource()));
+            request.addParameter("Resource", StringUtils.fromString(tagResourceRequest.getResource()));
         }
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter,
-                    "http://cloudfront.amazonaws.com/doc/2016-09-07/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-09-07/");
 
             Tags tags = tagResourceRequest.getTags();
             if (tags != null) {
                 xmlWriter.startElement("Tags");
 
-                com.amazonaws.internal.SdkInternalList<Tag> tagsItemsList = (com.amazonaws.internal.SdkInternalList<Tag>) tags
-                        .getItems();
-                if (!tagsItemsList.isEmpty()
-                        || !tagsItemsList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<Tag> tagsItemsList = (com.amazonaws.internal.SdkInternalList<Tag>) tags.getItems();
+                if (!tagsItemsList.isEmpty() || !tagsItemsList.isAutoConstruct()) {
                     xmlWriter.startElement("Items");
 
                     for (Tag tagsItemsListValue : tagsItemsList) {
                         xmlWriter.startElement("Tag");
 
                         if (tagsItemsListValue.getKey() != null) {
-                            xmlWriter.startElement("Key")
-                                    .value(tagsItemsListValue.getKey())
-                                    .endElement();
+                            xmlWriter.startElement("Key").value(tagsItemsListValue.getKey()).endElement();
                         }
 
                         if (tagsItemsListValue.getValue() != null) {
-                            xmlWriter.startElement("Value")
-                                    .value(tagsItemsListValue.getValue())
-                                    .endElement();
+                            xmlWriter.startElement("Value").value(tagsItemsListValue.getValue()).endElement();
                         }
                         xmlWriter.endElement();
                     }
@@ -103,18 +88,13 @@ public class TagResourceRequestMarshaller implements
                 xmlWriter.endElement();
             }
 
-            request.setContent(new StringInputStream(stringWriter.getBuffer()
-                    .toString()));
-            request.addHeader(
-                    "Content-Length",
-                    Integer.toString(stringWriter.getBuffer().toString()
-                            .getBytes(UTF8).length));
+            request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
+            request.addHeader("Content-Length", Integer.toString(stringWriter.getBuffer().toString().getBytes(UTF8).length));
             if (!request.getHeaders().containsKey("Content-Type")) {
                 request.addHeader("Content-Type", "application/xml");
             }
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to XML: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to XML: " + t.getMessage(), t);
         }
 
         return request;

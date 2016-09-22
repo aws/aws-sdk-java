@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Represents the returned data in response to a request action.
  * </p>
  */
-public class DescribeFleetPortSettingsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeFleetPortSettingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -53,15 +49,13 @@ public class DescribeFleetPortSettingsResult extends
      *        Object containing port settings for the requested fleet ID.
      */
 
-    public void setInboundPermissions(
-            java.util.Collection<IpPermission> inboundPermissions) {
+    public void setInboundPermissions(java.util.Collection<IpPermission> inboundPermissions) {
         if (inboundPermissions == null) {
             this.inboundPermissions = null;
             return;
         }
 
-        this.inboundPermissions = new java.util.ArrayList<IpPermission>(
-                inboundPermissions);
+        this.inboundPermissions = new java.util.ArrayList<IpPermission>(inboundPermissions);
     }
 
     /**
@@ -69,23 +63,19 @@ public class DescribeFleetPortSettingsResult extends
      * Object containing port settings for the requested fleet ID.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInboundPermissions(java.util.Collection)} or
-     * {@link #withInboundPermissions(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInboundPermissions(java.util.Collection)} or {@link #withInboundPermissions(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param inboundPermissions
      *        Object containing port settings for the requested fleet ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeFleetPortSettingsResult withInboundPermissions(
-            IpPermission... inboundPermissions) {
+    public DescribeFleetPortSettingsResult withInboundPermissions(IpPermission... inboundPermissions) {
         if (this.inboundPermissions == null) {
-            setInboundPermissions(new java.util.ArrayList<IpPermission>(
-                    inboundPermissions.length));
+            setInboundPermissions(new java.util.ArrayList<IpPermission>(inboundPermissions.length));
         }
         for (IpPermission ele : inboundPermissions) {
             this.inboundPermissions.add(ele);
@@ -100,19 +90,16 @@ public class DescribeFleetPortSettingsResult extends
      * 
      * @param inboundPermissions
      *        Object containing port settings for the requested fleet ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeFleetPortSettingsResult withInboundPermissions(
-            java.util.Collection<IpPermission> inboundPermissions) {
+    public DescribeFleetPortSettingsResult withInboundPermissions(java.util.Collection<IpPermission> inboundPermissions) {
         setInboundPermissions(inboundPermissions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -138,12 +125,9 @@ public class DescribeFleetPortSettingsResult extends
         if (obj instanceof DescribeFleetPortSettingsResult == false)
             return false;
         DescribeFleetPortSettingsResult other = (DescribeFleetPortSettingsResult) obj;
-        if (other.getInboundPermissions() == null
-                ^ this.getInboundPermissions() == null)
+        if (other.getInboundPermissions() == null ^ this.getInboundPermissions() == null)
             return false;
-        if (other.getInboundPermissions() != null
-                && other.getInboundPermissions().equals(
-                        this.getInboundPermissions()) == false)
+        if (other.getInboundPermissions() != null && other.getInboundPermissions().equals(this.getInboundPermissions()) == false)
             return false;
         return true;
     }
@@ -153,10 +137,7 @@ public class DescribeFleetPortSettingsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInboundPermissions() == null) ? 0
-                        : getInboundPermissions().hashCode());
+        hashCode = prime * hashCode + ((getInboundPermissions() == null) ? 0 : getInboundPermissions().hashCode());
         return hashCode;
     }
 
@@ -165,9 +146,7 @@ public class DescribeFleetPortSettingsResult extends
         try {
             return (DescribeFleetPortSettingsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

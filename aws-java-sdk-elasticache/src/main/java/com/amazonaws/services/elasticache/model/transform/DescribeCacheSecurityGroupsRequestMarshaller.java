@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model.transform;
 
@@ -31,39 +29,31 @@ import com.amazonaws.util.IdempotentUtils;
  * DescribeCacheSecurityGroupsRequest Marshaller
  */
 
-public class DescribeCacheSecurityGroupsRequestMarshaller
-        implements
+public class DescribeCacheSecurityGroupsRequestMarshaller implements
         Marshaller<Request<DescribeCacheSecurityGroupsRequest>, DescribeCacheSecurityGroupsRequest> {
 
-    public Request<DescribeCacheSecurityGroupsRequest> marshall(
-            DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest) {
+    public Request<DescribeCacheSecurityGroupsRequest> marshall(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest) {
 
         if (describeCacheSecurityGroupsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeCacheSecurityGroupsRequest> request = new DefaultRequest<DescribeCacheSecurityGroupsRequest>(
-                describeCacheSecurityGroupsRequest, "AmazonElastiCache");
+        Request<DescribeCacheSecurityGroupsRequest> request = new DefaultRequest<DescribeCacheSecurityGroupsRequest>(describeCacheSecurityGroupsRequest,
+                "AmazonElastiCache");
         request.addParameter("Action", "DescribeCacheSecurityGroups");
         request.addParameter("Version", "2015-02-02");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeCacheSecurityGroupsRequest.getCacheSecurityGroupName() != null) {
-            request.addParameter("CacheSecurityGroupName", StringUtils
-                    .fromString(describeCacheSecurityGroupsRequest
-                            .getCacheSecurityGroupName()));
+            request.addParameter("CacheSecurityGroupName", StringUtils.fromString(describeCacheSecurityGroupsRequest.getCacheSecurityGroupName()));
         }
 
         if (describeCacheSecurityGroupsRequest.getMaxRecords() != null) {
-            request.addParameter("MaxRecords", StringUtils
-                    .fromInteger(describeCacheSecurityGroupsRequest
-                            .getMaxRecords()));
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeCacheSecurityGroupsRequest.getMaxRecords()));
         }
 
         if (describeCacheSecurityGroupsRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils
-                    .fromString(describeCacheSecurityGroupsRequest.getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(describeCacheSecurityGroupsRequest.getMarker()));
         }
 
         return request;

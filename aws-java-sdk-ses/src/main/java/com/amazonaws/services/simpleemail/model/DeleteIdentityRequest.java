@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -19,31 +17,25 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents a request to delete one of your Amazon SES identities (an email
- * address or domain).
+ * Represents a request to delete one of your Amazon SES identities (an email address or domain).
  * </p>
  */
-public class DeleteIdentityRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteIdentityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identity to be removed from the list of identities for the AWS
-     * Account.
+     * The identity to be removed from the list of identities for the AWS Account.
      * </p>
      */
     private String identity;
 
     /**
      * <p>
-     * The identity to be removed from the list of identities for the AWS
-     * Account.
+     * The identity to be removed from the list of identities for the AWS Account.
      * </p>
      * 
      * @param identity
-     *        The identity to be removed from the list of identities for the AWS
-     *        Account.
+     *        The identity to be removed from the list of identities for the AWS Account.
      */
 
     public void setIdentity(String identity) {
@@ -52,12 +44,10 @@ public class DeleteIdentityRequest extends
 
     /**
      * <p>
-     * The identity to be removed from the list of identities for the AWS
-     * Account.
+     * The identity to be removed from the list of identities for the AWS Account.
      * </p>
      * 
-     * @return The identity to be removed from the list of identities for the
-     *         AWS Account.
+     * @return The identity to be removed from the list of identities for the AWS Account.
      */
 
     public String getIdentity() {
@@ -66,15 +56,12 @@ public class DeleteIdentityRequest extends
 
     /**
      * <p>
-     * The identity to be removed from the list of identities for the AWS
-     * Account.
+     * The identity to be removed from the list of identities for the AWS Account.
      * </p>
      * 
      * @param identity
-     *        The identity to be removed from the list of identities for the AWS
-     *        Account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identity to be removed from the list of identities for the AWS Account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteIdentityRequest withIdentity(String identity) {
@@ -83,8 +70,7 @@ public class DeleteIdentityRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -112,8 +98,7 @@ public class DeleteIdentityRequest extends
         DeleteIdentityRequest other = (DeleteIdentityRequest) obj;
         if (other.getIdentity() == null ^ this.getIdentity() == null)
             return false;
-        if (other.getIdentity() != null
-                && other.getIdentity().equals(this.getIdentity()) == false)
+        if (other.getIdentity() != null && other.getIdentity().equals(this.getIdentity()) == false)
             return false;
         return true;
     }
@@ -123,8 +108,7 @@ public class DeleteIdentityRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIdentity() == null) ? 0 : getIdentity().hashCode());
+        hashCode = prime * hashCode + ((getIdentity() == null) ? 0 : getIdentity().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config.model;
 
@@ -21,26 +19,22 @@ import java.io.Serializable;
  * The output for the <a>DescribeConfigurationRecorders</a> action.
  * </p>
  */
-public class DescribeConfigurationRecordersResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeConfigurationRecordersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /**
      * <p>
-     * A list that contains the descriptions of the specified configuration
-     * recorders.
+     * A list that contains the descriptions of the specified configuration recorders.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ConfigurationRecorder> configurationRecorders;
 
     /**
      * <p>
-     * A list that contains the descriptions of the specified configuration
-     * recorders.
+     * A list that contains the descriptions of the specified configuration recorders.
      * </p>
      * 
-     * @return A list that contains the descriptions of the specified
-     *         configuration recorders.
+     * @return A list that contains the descriptions of the specified configuration recorders.
      */
 
     public java.util.List<ConfigurationRecorder> getConfigurationRecorders() {
@@ -52,50 +46,40 @@ public class DescribeConfigurationRecordersResult extends
 
     /**
      * <p>
-     * A list that contains the descriptions of the specified configuration
-     * recorders.
+     * A list that contains the descriptions of the specified configuration recorders.
      * </p>
      * 
      * @param configurationRecorders
-     *        A list that contains the descriptions of the specified
-     *        configuration recorders.
+     *        A list that contains the descriptions of the specified configuration recorders.
      */
 
-    public void setConfigurationRecorders(
-            java.util.Collection<ConfigurationRecorder> configurationRecorders) {
+    public void setConfigurationRecorders(java.util.Collection<ConfigurationRecorder> configurationRecorders) {
         if (configurationRecorders == null) {
             this.configurationRecorders = null;
             return;
         }
 
-        this.configurationRecorders = new com.amazonaws.internal.SdkInternalList<ConfigurationRecorder>(
-                configurationRecorders);
+        this.configurationRecorders = new com.amazonaws.internal.SdkInternalList<ConfigurationRecorder>(configurationRecorders);
     }
 
     /**
      * <p>
-     * A list that contains the descriptions of the specified configuration
-     * recorders.
+     * A list that contains the descriptions of the specified configuration recorders.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConfigurationRecorders(java.util.Collection)} or
-     * {@link #withConfigurationRecorders(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConfigurationRecorders(java.util.Collection)} or
+     * {@link #withConfigurationRecorders(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param configurationRecorders
-     *        A list that contains the descriptions of the specified
-     *        configuration recorders.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list that contains the descriptions of the specified configuration recorders.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConfigurationRecordersResult withConfigurationRecorders(
-            ConfigurationRecorder... configurationRecorders) {
+    public DescribeConfigurationRecordersResult withConfigurationRecorders(ConfigurationRecorder... configurationRecorders) {
         if (this.configurationRecorders == null) {
-            setConfigurationRecorders(new com.amazonaws.internal.SdkInternalList<ConfigurationRecorder>(
-                    configurationRecorders.length));
+            setConfigurationRecorders(new com.amazonaws.internal.SdkInternalList<ConfigurationRecorder>(configurationRecorders.length));
         }
         for (ConfigurationRecorder ele : configurationRecorders) {
             this.configurationRecorders.add(ele);
@@ -105,26 +89,21 @@ public class DescribeConfigurationRecordersResult extends
 
     /**
      * <p>
-     * A list that contains the descriptions of the specified configuration
-     * recorders.
+     * A list that contains the descriptions of the specified configuration recorders.
      * </p>
      * 
      * @param configurationRecorders
-     *        A list that contains the descriptions of the specified
-     *        configuration recorders.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list that contains the descriptions of the specified configuration recorders.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConfigurationRecordersResult withConfigurationRecorders(
-            java.util.Collection<ConfigurationRecorder> configurationRecorders) {
+    public DescribeConfigurationRecordersResult withConfigurationRecorders(java.util.Collection<ConfigurationRecorder> configurationRecorders) {
         setConfigurationRecorders(configurationRecorders);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -150,12 +129,9 @@ public class DescribeConfigurationRecordersResult extends
         if (obj instanceof DescribeConfigurationRecordersResult == false)
             return false;
         DescribeConfigurationRecordersResult other = (DescribeConfigurationRecordersResult) obj;
-        if (other.getConfigurationRecorders() == null
-                ^ this.getConfigurationRecorders() == null)
+        if (other.getConfigurationRecorders() == null ^ this.getConfigurationRecorders() == null)
             return false;
-        if (other.getConfigurationRecorders() != null
-                && other.getConfigurationRecorders().equals(
-                        this.getConfigurationRecorders()) == false)
+        if (other.getConfigurationRecorders() != null && other.getConfigurationRecorders().equals(this.getConfigurationRecorders()) == false)
             return false;
         return true;
     }
@@ -165,10 +141,7 @@ public class DescribeConfigurationRecordersResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getConfigurationRecorders() == null) ? 0
-                        : getConfigurationRecorders().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationRecorders() == null) ? 0 : getConfigurationRecorders().hashCode());
         return hashCode;
     }
 
@@ -177,9 +150,7 @@ public class DescribeConfigurationRecordersResult extends
         try {
             return (DescribeConfigurationRecordersResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

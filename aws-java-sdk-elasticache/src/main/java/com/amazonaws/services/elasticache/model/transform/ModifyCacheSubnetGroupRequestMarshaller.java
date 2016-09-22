@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model.transform;
 
@@ -31,34 +29,25 @@ import com.amazonaws.util.IdempotentUtils;
  * ModifyCacheSubnetGroupRequest Marshaller
  */
 
-public class ModifyCacheSubnetGroupRequestMarshaller
-        implements
-        Marshaller<Request<ModifyCacheSubnetGroupRequest>, ModifyCacheSubnetGroupRequest> {
+public class ModifyCacheSubnetGroupRequestMarshaller implements Marshaller<Request<ModifyCacheSubnetGroupRequest>, ModifyCacheSubnetGroupRequest> {
 
-    public Request<ModifyCacheSubnetGroupRequest> marshall(
-            ModifyCacheSubnetGroupRequest modifyCacheSubnetGroupRequest) {
+    public Request<ModifyCacheSubnetGroupRequest> marshall(ModifyCacheSubnetGroupRequest modifyCacheSubnetGroupRequest) {
 
         if (modifyCacheSubnetGroupRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ModifyCacheSubnetGroupRequest> request = new DefaultRequest<ModifyCacheSubnetGroupRequest>(
-                modifyCacheSubnetGroupRequest, "AmazonElastiCache");
+        Request<ModifyCacheSubnetGroupRequest> request = new DefaultRequest<ModifyCacheSubnetGroupRequest>(modifyCacheSubnetGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "ModifyCacheSubnetGroup");
         request.addParameter("Version", "2015-02-02");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifyCacheSubnetGroupRequest.getCacheSubnetGroupName() != null) {
-            request.addParameter("CacheSubnetGroupName", StringUtils
-                    .fromString(modifyCacheSubnetGroupRequest
-                            .getCacheSubnetGroupName()));
+            request.addParameter("CacheSubnetGroupName", StringUtils.fromString(modifyCacheSubnetGroupRequest.getCacheSubnetGroupName()));
         }
 
         if (modifyCacheSubnetGroupRequest.getCacheSubnetGroupDescription() != null) {
-            request.addParameter("CacheSubnetGroupDescription", StringUtils
-                    .fromString(modifyCacheSubnetGroupRequest
-                            .getCacheSubnetGroupDescription()));
+            request.addParameter("CacheSubnetGroupDescription", StringUtils.fromString(modifyCacheSubnetGroupRequest.getCacheSubnetGroupDescription()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyCacheSubnetGroupRequest
@@ -68,9 +57,7 @@ public class ModifyCacheSubnetGroupRequestMarshaller
 
             for (String subnetIdsListValue : subnetIdsList) {
                 if (subnetIdsListValue != null) {
-                    request.addParameter("SubnetIds.SubnetIdentifier."
-                            + subnetIdsListIndex,
-                            StringUtils.fromString(subnetIdsListValue));
+                    request.addParameter("SubnetIds.SubnetIdentifier." + subnetIdsListIndex, StringUtils.fromString(subnetIdsListValue));
                 }
                 subnetIdsListIndex++;
             }

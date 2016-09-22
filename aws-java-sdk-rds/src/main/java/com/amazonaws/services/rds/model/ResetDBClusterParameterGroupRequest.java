@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class ResetDBClusterParameterGroupRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,19 +28,16 @@ public class ResetDBClusterParameterGroupRequest extends
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * A value that is set to <code>true</code> to reset all parameters in the
-     * DB cluster parameter group to their default values, and
-     * <code>false</code> otherwise. You cannot use this parameter if there is a
-     * list of parameter names specified for the <code>Parameters</code>
-     * parameter.
+     * A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their
+     * default values, and <code>false</code> otherwise. You cannot use this parameter if there is a list of parameter
+     * names specified for the <code>Parameters</code> parameter.
      * </p>
      */
     private Boolean resetAllParameters;
     /**
      * <p>
-     * A list of parameter names in the DB cluster parameter group to reset to
-     * the default values. You cannot use this parameter if the
-     * <code>ResetAllParameters</code> parameter is set to <code>true</code>.
+     * A list of parameter names in the DB cluster parameter group to reset to the default values. You cannot use this
+     * parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
@@ -58,8 +51,7 @@ public class ResetDBClusterParameterGroupRequest extends
      *        The name of the DB cluster parameter group to reset.
      */
 
-    public void setDBClusterParameterGroupName(
-            String dBClusterParameterGroupName) {
+    public void setDBClusterParameterGroupName(String dBClusterParameterGroupName) {
         this.dBClusterParameterGroupName = dBClusterParameterGroupName;
     }
 
@@ -82,31 +74,25 @@ public class ResetDBClusterParameterGroupRequest extends
      * 
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to reset.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResetDBClusterParameterGroupRequest withDBClusterParameterGroupName(
-            String dBClusterParameterGroupName) {
+    public ResetDBClusterParameterGroupRequest withDBClusterParameterGroupName(String dBClusterParameterGroupName) {
         setDBClusterParameterGroupName(dBClusterParameterGroupName);
         return this;
     }
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to reset all parameters in the
-     * DB cluster parameter group to their default values, and
-     * <code>false</code> otherwise. You cannot use this parameter if there is a
-     * list of parameter names specified for the <code>Parameters</code>
-     * parameter.
+     * A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their
+     * default values, and <code>false</code> otherwise. You cannot use this parameter if there is a list of parameter
+     * names specified for the <code>Parameters</code> parameter.
      * </p>
      * 
      * @param resetAllParameters
-     *        A value that is set to <code>true</code> to reset all parameters
-     *        in the DB cluster parameter group to their default values, and
-     *        <code>false</code> otherwise. You cannot use this parameter if
-     *        there is a list of parameter names specified for the
-     *        <code>Parameters</code> parameter.
+     *        A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to
+     *        their default values, and <code>false</code> otherwise. You cannot use this parameter if there is a list
+     *        of parameter names specified for the <code>Parameters</code> parameter.
      */
 
     public void setResetAllParameters(Boolean resetAllParameters) {
@@ -115,18 +101,14 @@ public class ResetDBClusterParameterGroupRequest extends
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to reset all parameters in the
-     * DB cluster parameter group to their default values, and
-     * <code>false</code> otherwise. You cannot use this parameter if there is a
-     * list of parameter names specified for the <code>Parameters</code>
-     * parameter.
+     * A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their
+     * default values, and <code>false</code> otherwise. You cannot use this parameter if there is a list of parameter
+     * names specified for the <code>Parameters</code> parameter.
      * </p>
      * 
-     * @return A value that is set to <code>true</code> to reset all parameters
-     *         in the DB cluster parameter group to their default values, and
-     *         <code>false</code> otherwise. You cannot use this parameter if
-     *         there is a list of parameter names specified for the
-     *         <code>Parameters</code> parameter.
+     * @return A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to
+     *         their default values, and <code>false</code> otherwise. You cannot use this parameter if there is a list
+     *         of parameter names specified for the <code>Parameters</code> parameter.
      */
 
     public Boolean getResetAllParameters() {
@@ -135,43 +117,33 @@ public class ResetDBClusterParameterGroupRequest extends
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to reset all parameters in the
-     * DB cluster parameter group to their default values, and
-     * <code>false</code> otherwise. You cannot use this parameter if there is a
-     * list of parameter names specified for the <code>Parameters</code>
-     * parameter.
+     * A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their
+     * default values, and <code>false</code> otherwise. You cannot use this parameter if there is a list of parameter
+     * names specified for the <code>Parameters</code> parameter.
      * </p>
      * 
      * @param resetAllParameters
-     *        A value that is set to <code>true</code> to reset all parameters
-     *        in the DB cluster parameter group to their default values, and
-     *        <code>false</code> otherwise. You cannot use this parameter if
-     *        there is a list of parameter names specified for the
-     *        <code>Parameters</code> parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to
+     *        their default values, and <code>false</code> otherwise. You cannot use this parameter if there is a list
+     *        of parameter names specified for the <code>Parameters</code> parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResetDBClusterParameterGroupRequest withResetAllParameters(
-            Boolean resetAllParameters) {
+    public ResetDBClusterParameterGroupRequest withResetAllParameters(Boolean resetAllParameters) {
         setResetAllParameters(resetAllParameters);
         return this;
     }
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to reset all parameters in the
-     * DB cluster parameter group to their default values, and
-     * <code>false</code> otherwise. You cannot use this parameter if there is a
-     * list of parameter names specified for the <code>Parameters</code>
-     * parameter.
+     * A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their
+     * default values, and <code>false</code> otherwise. You cannot use this parameter if there is a list of parameter
+     * names specified for the <code>Parameters</code> parameter.
      * </p>
      * 
-     * @return A value that is set to <code>true</code> to reset all parameters
-     *         in the DB cluster parameter group to their default values, and
-     *         <code>false</code> otherwise. You cannot use this parameter if
-     *         there is a list of parameter names specified for the
-     *         <code>Parameters</code> parameter.
+     * @return A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to
+     *         their default values, and <code>false</code> otherwise. You cannot use this parameter if there is a list
+     *         of parameter names specified for the <code>Parameters</code> parameter.
      */
 
     public Boolean isResetAllParameters() {
@@ -180,15 +152,12 @@ public class ResetDBClusterParameterGroupRequest extends
 
     /**
      * <p>
-     * A list of parameter names in the DB cluster parameter group to reset to
-     * the default values. You cannot use this parameter if the
-     * <code>ResetAllParameters</code> parameter is set to <code>true</code>.
+     * A list of parameter names in the DB cluster parameter group to reset to the default values. You cannot use this
+     * parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return A list of parameter names in the DB cluster parameter group to
-     *         reset to the default values. You cannot use this parameter if the
-     *         <code>ResetAllParameters</code> parameter is set to
-     *         <code>true</code>.
+     * @return A list of parameter names in the DB cluster parameter group to reset to the default values. You cannot
+     *         use this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      */
 
     public java.util.List<Parameter> getParameters() {
@@ -200,16 +169,13 @@ public class ResetDBClusterParameterGroupRequest extends
 
     /**
      * <p>
-     * A list of parameter names in the DB cluster parameter group to reset to
-     * the default values. You cannot use this parameter if the
-     * <code>ResetAllParameters</code> parameter is set to <code>true</code>.
+     * A list of parameter names in the DB cluster parameter group to reset to the default values. You cannot use this
+     * parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      * </p>
      * 
      * @param parameters
-     *        A list of parameter names in the DB cluster parameter group to
-     *        reset to the default values. You cannot use this parameter if the
-     *        <code>ResetAllParameters</code> parameter is set to
-     *        <code>true</code>.
+     *        A list of parameter names in the DB cluster parameter group to reset to the default values. You cannot use
+     *        this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      */
 
     public void setParameters(java.util.Collection<Parameter> parameters) {
@@ -218,37 +184,29 @@ public class ResetDBClusterParameterGroupRequest extends
             return;
         }
 
-        this.parameters = new com.amazonaws.internal.SdkInternalList<Parameter>(
-                parameters);
+        this.parameters = new com.amazonaws.internal.SdkInternalList<Parameter>(parameters);
     }
 
     /**
      * <p>
-     * A list of parameter names in the DB cluster parameter group to reset to
-     * the default values. You cannot use this parameter if the
-     * <code>ResetAllParameters</code> parameter is set to <code>true</code>.
+     * A list of parameter names in the DB cluster parameter group to reset to the default values. You cannot use this
+     * parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setParameters(java.util.Collection)} or
-     * {@link #withParameters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParameters(java.util.Collection)} or {@link #withParameters(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param parameters
-     *        A list of parameter names in the DB cluster parameter group to
-     *        reset to the default values. You cannot use this parameter if the
-     *        <code>ResetAllParameters</code> parameter is set to
-     *        <code>true</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of parameter names in the DB cluster parameter group to reset to the default values. You cannot use
+     *        this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResetDBClusterParameterGroupRequest withParameters(
-            Parameter... parameters) {
+    public ResetDBClusterParameterGroupRequest withParameters(Parameter... parameters) {
         if (this.parameters == null) {
-            setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(
-                    parameters.length));
+            setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(parameters.length));
         }
         for (Parameter ele : parameters) {
             this.parameters.add(ele);
@@ -258,29 +216,23 @@ public class ResetDBClusterParameterGroupRequest extends
 
     /**
      * <p>
-     * A list of parameter names in the DB cluster parameter group to reset to
-     * the default values. You cannot use this parameter if the
-     * <code>ResetAllParameters</code> parameter is set to <code>true</code>.
+     * A list of parameter names in the DB cluster parameter group to reset to the default values. You cannot use this
+     * parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      * </p>
      * 
      * @param parameters
-     *        A list of parameter names in the DB cluster parameter group to
-     *        reset to the default values. You cannot use this parameter if the
-     *        <code>ResetAllParameters</code> parameter is set to
-     *        <code>true</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of parameter names in the DB cluster parameter group to reset to the default values. You cannot use
+     *        this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResetDBClusterParameterGroupRequest withParameters(
-            java.util.Collection<Parameter> parameters) {
+    public ResetDBClusterParameterGroupRequest withParameters(java.util.Collection<Parameter> parameters) {
         setParameters(parameters);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -291,8 +243,7 @@ public class ResetDBClusterParameterGroupRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterParameterGroupName() != null)
-            sb.append("DBClusterParameterGroupName: "
-                    + getDBClusterParameterGroupName() + ",");
+            sb.append("DBClusterParameterGroupName: " + getDBClusterParameterGroupName() + ",");
         if (getResetAllParameters() != null)
             sb.append("ResetAllParameters: " + getResetAllParameters() + ",");
         if (getParameters() != null)
@@ -311,24 +262,17 @@ public class ResetDBClusterParameterGroupRequest extends
         if (obj instanceof ResetDBClusterParameterGroupRequest == false)
             return false;
         ResetDBClusterParameterGroupRequest other = (ResetDBClusterParameterGroupRequest) obj;
-        if (other.getDBClusterParameterGroupName() == null
-                ^ this.getDBClusterParameterGroupName() == null)
+        if (other.getDBClusterParameterGroupName() == null ^ this.getDBClusterParameterGroupName() == null)
             return false;
-        if (other.getDBClusterParameterGroupName() != null
-                && other.getDBClusterParameterGroupName().equals(
-                        this.getDBClusterParameterGroupName()) == false)
+        if (other.getDBClusterParameterGroupName() != null && other.getDBClusterParameterGroupName().equals(this.getDBClusterParameterGroupName()) == false)
             return false;
-        if (other.getResetAllParameters() == null
-                ^ this.getResetAllParameters() == null)
+        if (other.getResetAllParameters() == null ^ this.getResetAllParameters() == null)
             return false;
-        if (other.getResetAllParameters() != null
-                && other.getResetAllParameters().equals(
-                        this.getResetAllParameters()) == false)
+        if (other.getResetAllParameters() != null && other.getResetAllParameters().equals(this.getResetAllParameters()) == false)
             return false;
         if (other.getParameters() == null ^ this.getParameters() == null)
             return false;
-        if (other.getParameters() != null
-                && other.getParameters().equals(this.getParameters()) == false)
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
             return false;
         return true;
     }
@@ -338,16 +282,9 @@ public class ResetDBClusterParameterGroupRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDBClusterParameterGroupName() == null) ? 0
-                        : getDBClusterParameterGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResetAllParameters() == null) ? 0
-                        : getResetAllParameters().hashCode());
-        hashCode = prime * hashCode
-                + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterParameterGroupName() == null) ? 0 : getDBClusterParameterGroupName().hashCode());
+        hashCode = prime * hashCode + ((getResetAllParameters() == null) ? 0 : getResetAllParameters().hashCode());
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         return hashCode;
     }
 

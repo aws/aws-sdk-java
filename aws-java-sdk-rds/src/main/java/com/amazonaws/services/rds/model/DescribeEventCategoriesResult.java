@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Data returned from the <b>DescribeEventCategories</b> action.
  * </p>
  */
-public class DescribeEventCategoriesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeEventCategoriesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -56,15 +52,13 @@ public class DescribeEventCategoriesResult extends
      *        A list of EventCategoriesMap data types.
      */
 
-    public void setEventCategoriesMapList(
-            java.util.Collection<EventCategoriesMap> eventCategoriesMapList) {
+    public void setEventCategoriesMapList(java.util.Collection<EventCategoriesMap> eventCategoriesMapList) {
         if (eventCategoriesMapList == null) {
             this.eventCategoriesMapList = null;
             return;
         }
 
-        this.eventCategoriesMapList = new com.amazonaws.internal.SdkInternalList<EventCategoriesMap>(
-                eventCategoriesMapList);
+        this.eventCategoriesMapList = new com.amazonaws.internal.SdkInternalList<EventCategoriesMap>(eventCategoriesMapList);
     }
 
     /**
@@ -72,23 +66,19 @@ public class DescribeEventCategoriesResult extends
      * A list of EventCategoriesMap data types.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEventCategoriesMapList(java.util.Collection)} or
-     * {@link #withEventCategoriesMapList(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEventCategoriesMapList(java.util.Collection)} or
+     * {@link #withEventCategoriesMapList(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param eventCategoriesMapList
      *        A list of EventCategoriesMap data types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEventCategoriesResult withEventCategoriesMapList(
-            EventCategoriesMap... eventCategoriesMapList) {
+    public DescribeEventCategoriesResult withEventCategoriesMapList(EventCategoriesMap... eventCategoriesMapList) {
         if (this.eventCategoriesMapList == null) {
-            setEventCategoriesMapList(new com.amazonaws.internal.SdkInternalList<EventCategoriesMap>(
-                    eventCategoriesMapList.length));
+            setEventCategoriesMapList(new com.amazonaws.internal.SdkInternalList<EventCategoriesMap>(eventCategoriesMapList.length));
         }
         for (EventCategoriesMap ele : eventCategoriesMapList) {
             this.eventCategoriesMapList.add(ele);
@@ -103,19 +93,16 @@ public class DescribeEventCategoriesResult extends
      * 
      * @param eventCategoriesMapList
      *        A list of EventCategoriesMap data types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEventCategoriesResult withEventCategoriesMapList(
-            java.util.Collection<EventCategoriesMap> eventCategoriesMapList) {
+    public DescribeEventCategoriesResult withEventCategoriesMapList(java.util.Collection<EventCategoriesMap> eventCategoriesMapList) {
         setEventCategoriesMapList(eventCategoriesMapList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -141,12 +128,9 @@ public class DescribeEventCategoriesResult extends
         if (obj instanceof DescribeEventCategoriesResult == false)
             return false;
         DescribeEventCategoriesResult other = (DescribeEventCategoriesResult) obj;
-        if (other.getEventCategoriesMapList() == null
-                ^ this.getEventCategoriesMapList() == null)
+        if (other.getEventCategoriesMapList() == null ^ this.getEventCategoriesMapList() == null)
             return false;
-        if (other.getEventCategoriesMapList() != null
-                && other.getEventCategoriesMapList().equals(
-                        this.getEventCategoriesMapList()) == false)
+        if (other.getEventCategoriesMapList() != null && other.getEventCategoriesMapList().equals(this.getEventCategoriesMapList()) == false)
             return false;
         return true;
     }
@@ -156,10 +140,7 @@ public class DescribeEventCategoriesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEventCategoriesMapList() == null) ? 0
-                        : getEventCategoriesMapList().hashCode());
+        hashCode = prime * hashCode + ((getEventCategoriesMapList() == null) ? 0 : getEventCategoriesMapList().hashCode());
         return hashCode;
     }
 
@@ -168,9 +149,7 @@ public class DescribeEventCategoriesResult extends
         try {
             return (DescribeEventCategoriesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

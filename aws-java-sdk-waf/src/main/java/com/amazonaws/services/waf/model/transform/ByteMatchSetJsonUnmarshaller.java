@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ByteMatchSet JSON Unmarshaller
  */
-public class ByteMatchSetJsonUnmarshaller implements
-        Unmarshaller<ByteMatchSet, JsonUnmarshallerContext> {
+public class ByteMatchSetJsonUnmarshaller implements Unmarshaller<ByteMatchSet, JsonUnmarshallerContext> {
 
-    public ByteMatchSet unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ByteMatchSet unmarshall(JsonUnmarshallerContext context) throws Exception {
         ByteMatchSet byteMatchSet = new ByteMatchSet();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,25 +49,18 @@ public class ByteMatchSetJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ByteMatchSetId", targetDepth)) {
                     context.nextToken();
-                    byteMatchSet.setByteMatchSetId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    byteMatchSet.setByteMatchSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    byteMatchSet.setName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    byteMatchSet.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ByteMatchTuples", targetDepth)) {
                     context.nextToken();
-                    byteMatchSet
-                            .setByteMatchTuples(new ListUnmarshaller<ByteMatchTuple>(
-                                    ByteMatchTupleJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    byteMatchSet.setByteMatchTuples(new ListUnmarshaller<ByteMatchTuple>(ByteMatchTupleJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

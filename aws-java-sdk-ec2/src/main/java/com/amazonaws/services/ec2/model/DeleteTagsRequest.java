@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,42 +22,36 @@ import com.amazonaws.services.ec2.model.transform.DeleteTagsRequestMarshaller;
  * Contains the parameters for DeleteTags.
  * </p>
  */
-public class DeleteTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<DeleteTagsRequest> {
+public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteTagsRequest> {
 
     /**
      * <p>
-     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more
-     * than one resource ID.
+     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resources;
     /**
      * <p>
-     * One or more tags to delete. If you omit the <code>value</code> parameter,
-     * we delete the tag regardless of its value. If you specify this parameter
-     * with an empty string as the value, we delete the key only if its value is
-     * an empty string.
+     * One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of its
+     * value. If you specify this parameter with an empty string as the value, we delete the key only if its value is an
+     * empty string.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
-     * Default constructor for DeleteTagsRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for DeleteTagsRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public DeleteTagsRequest() {
     }
 
     /**
-     * Constructs a new DeleteTagsRequest object. Callers should use the setter
-     * or fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new DeleteTagsRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param resources
-     *        The ID of the resource. For example, ami-1a2b3c4d. You can specify
-     *        more than one resource ID.
+     *        The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
      */
     public DeleteTagsRequest(java.util.List<String> resources) {
         setResources(resources);
@@ -67,12 +59,10 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more
-     * than one resource ID.
+     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
      * </p>
      * 
-     * @return The ID of the resource. For example, ami-1a2b3c4d. You can
-     *         specify more than one resource ID.
+     * @return The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
      */
 
     public java.util.List<String> getResources() {
@@ -84,13 +74,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more
-     * than one resource ID.
+     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
      * </p>
      * 
      * @param resources
-     *        The ID of the resource. For example, ami-1a2b3c4d. You can specify
-     *        more than one resource ID.
+     *        The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
      */
 
     public void setResources(java.util.Collection<String> resources) {
@@ -99,33 +87,27 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.resources = new com.amazonaws.internal.SdkInternalList<String>(
-                resources);
+        this.resources = new com.amazonaws.internal.SdkInternalList<String>(resources);
     }
 
     /**
      * <p>
-     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more
-     * than one resource ID.
+     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setResources(java.util.Collection)} or
-     * {@link #withResources(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param resources
-     *        The ID of the resource. For example, ami-1a2b3c4d. You can specify
-     *        more than one resource ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteTagsRequest withResources(String... resources) {
         if (this.resources == null) {
-            setResources(new com.amazonaws.internal.SdkInternalList<String>(
-                    resources.length));
+            setResources(new com.amazonaws.internal.SdkInternalList<String>(resources.length));
         }
         for (String ele : resources) {
             this.resources.add(ele);
@@ -135,35 +117,29 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more
-     * than one resource ID.
+     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
      * </p>
      * 
      * @param resources
-     *        The ID of the resource. For example, ami-1a2b3c4d. You can specify
-     *        more than one resource ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteTagsRequest withResources(
-            java.util.Collection<String> resources) {
+    public DeleteTagsRequest withResources(java.util.Collection<String> resources) {
         setResources(resources);
         return this;
     }
 
     /**
      * <p>
-     * One or more tags to delete. If you omit the <code>value</code> parameter,
-     * we delete the tag regardless of its value. If you specify this parameter
-     * with an empty string as the value, we delete the key only if its value is
-     * an empty string.
+     * One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of its
+     * value. If you specify this parameter with an empty string as the value, we delete the key only if its value is an
+     * empty string.
      * </p>
      * 
-     * @return One or more tags to delete. If you omit the <code>value</code>
-     *         parameter, we delete the tag regardless of its value. If you
-     *         specify this parameter with an empty string as the value, we
-     *         delete the key only if its value is an empty string.
+     * @return One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of
+     *         its value. If you specify this parameter with an empty string as the value, we delete the key only if its
+     *         value is an empty string.
      */
 
     public java.util.List<Tag> getTags() {
@@ -175,17 +151,15 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more tags to delete. If you omit the <code>value</code> parameter,
-     * we delete the tag regardless of its value. If you specify this parameter
-     * with an empty string as the value, we delete the key only if its value is
-     * an empty string.
+     * One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of its
+     * value. If you specify this parameter with an empty string as the value, we delete the key only if its value is an
+     * empty string.
      * </p>
      * 
      * @param tags
-     *        One or more tags to delete. If you omit the <code>value</code>
-     *        parameter, we delete the tag regardless of its value. If you
-     *        specify this parameter with an empty string as the value, we
-     *        delete the key only if its value is an empty string.
+     *        One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of
+     *        its value. If you specify this parameter with an empty string as the value, we delete the key only if its
+     *        value is an empty string.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -199,25 +173,21 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more tags to delete. If you omit the <code>value</code> parameter,
-     * we delete the tag regardless of its value. If you specify this parameter
-     * with an empty string as the value, we delete the key only if its value is
-     * an empty string.
+     * One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of its
+     * value. If you specify this parameter with an empty string as the value, we delete the key only if its value is an
+     * empty string.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     *        One or more tags to delete. If you omit the <code>value</code>
-     *        parameter, we delete the tag regardless of its value. If you
-     *        specify this parameter with an empty string as the value, we
-     *        delete the key only if its value is an empty string.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of
+     *        its value. If you specify this parameter with an empty string as the value, we delete the key only if its
+     *        value is an empty string.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteTagsRequest withTags(Tag... tags) {
@@ -232,19 +202,16 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more tags to delete. If you omit the <code>value</code> parameter,
-     * we delete the tag regardless of its value. If you specify this parameter
-     * with an empty string as the value, we delete the key only if its value is
-     * an empty string.
+     * One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of its
+     * value. If you specify this parameter with an empty string as the value, we delete the key only if its value is an
+     * empty string.
      * </p>
      * 
      * @param tags
-     *        One or more tags to delete. If you omit the <code>value</code>
-     *        parameter, we delete the tag regardless of its value. If you
-     *        specify this parameter with an empty string as the value, we
-     *        delete the key only if its value is an empty string.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of
+     *        its value. If you specify this parameter with an empty string as the value, we delete the key only if its
+     *        value is an empty string.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteTagsRequest withTags(java.util.Collection<Tag> tags) {
@@ -253,21 +220,18 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DeleteTagsRequest> getDryRunRequest() {
-        Request<DeleteTagsRequest> request = new DeleteTagsRequestMarshaller()
-                .marshall(this);
+        Request<DeleteTagsRequest> request = new DeleteTagsRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -297,13 +261,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
         DeleteTagsRequest other = (DeleteTagsRequest) obj;
         if (other.getResources() == null ^ this.getResources() == null)
             return false;
-        if (other.getResources() != null
-                && other.getResources().equals(this.getResources()) == false)
+        if (other.getResources() != null && other.getResources().equals(this.getResources()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -313,10 +275,8 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getResources() == null) ? 0 : getResources().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

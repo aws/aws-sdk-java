@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The Amazon Glacier response to your request.
  * </p>
  */
-public class InitiateMultipartUploadResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class InitiateMultipartUploadResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,7 @@ public class InitiateMultipartUploadResult extends
     private String location;
     /**
      * <p>
-     * The ID of the multipart upload. This value is also included as part of
-     * the location.
+     * The ID of the multipart upload. This value is also included as part of the location.
      * </p>
      */
     private String uploadId;
@@ -45,8 +40,7 @@ public class InitiateMultipartUploadResult extends
      * </p>
      * 
      * @param location
-     *        The relative URI path of the multipart upload ID Amazon Glacier
-     *        created.
+     *        The relative URI path of the multipart upload ID Amazon Glacier created.
      */
 
     public void setLocation(String location) {
@@ -58,8 +52,7 @@ public class InitiateMultipartUploadResult extends
      * The relative URI path of the multipart upload ID Amazon Glacier created.
      * </p>
      * 
-     * @return The relative URI path of the multipart upload ID Amazon Glacier
-     *         created.
+     * @return The relative URI path of the multipart upload ID Amazon Glacier created.
      */
 
     public String getLocation() {
@@ -72,10 +65,8 @@ public class InitiateMultipartUploadResult extends
      * </p>
      * 
      * @param location
-     *        The relative URI path of the multipart upload ID Amazon Glacier
-     *        created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The relative URI path of the multipart upload ID Amazon Glacier created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InitiateMultipartUploadResult withLocation(String location) {
@@ -85,13 +76,11 @@ public class InitiateMultipartUploadResult extends
 
     /**
      * <p>
-     * The ID of the multipart upload. This value is also included as part of
-     * the location.
+     * The ID of the multipart upload. This value is also included as part of the location.
      * </p>
      * 
      * @param uploadId
-     *        The ID of the multipart upload. This value is also included as
-     *        part of the location.
+     *        The ID of the multipart upload. This value is also included as part of the location.
      */
 
     public void setUploadId(String uploadId) {
@@ -100,12 +89,10 @@ public class InitiateMultipartUploadResult extends
 
     /**
      * <p>
-     * The ID of the multipart upload. This value is also included as part of
-     * the location.
+     * The ID of the multipart upload. This value is also included as part of the location.
      * </p>
      * 
-     * @return The ID of the multipart upload. This value is also included as
-     *         part of the location.
+     * @return The ID of the multipart upload. This value is also included as part of the location.
      */
 
     public String getUploadId() {
@@ -114,15 +101,12 @@ public class InitiateMultipartUploadResult extends
 
     /**
      * <p>
-     * The ID of the multipart upload. This value is also included as part of
-     * the location.
+     * The ID of the multipart upload. This value is also included as part of the location.
      * </p>
      * 
      * @param uploadId
-     *        The ID of the multipart upload. This value is also included as
-     *        part of the location.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the multipart upload. This value is also included as part of the location.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InitiateMultipartUploadResult withUploadId(String uploadId) {
@@ -131,8 +115,7 @@ public class InitiateMultipartUploadResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -162,13 +145,11 @@ public class InitiateMultipartUploadResult extends
         InitiateMultipartUploadResult other = (InitiateMultipartUploadResult) obj;
         if (other.getLocation() == null ^ this.getLocation() == null)
             return false;
-        if (other.getLocation() != null
-                && other.getLocation().equals(this.getLocation()) == false)
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
         if (other.getUploadId() == null ^ this.getUploadId() == null)
             return false;
-        if (other.getUploadId() != null
-                && other.getUploadId().equals(this.getUploadId()) == false)
+        if (other.getUploadId() != null && other.getUploadId().equals(this.getUploadId()) == false)
             return false;
         return true;
     }
@@ -178,10 +159,8 @@ public class InitiateMultipartUploadResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getLocation() == null) ? 0 : getLocation().hashCode());
-        hashCode = prime * hashCode
-                + ((getUploadId() == null) ? 0 : getUploadId().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getUploadId() == null) ? 0 : getUploadId().hashCode());
         return hashCode;
     }
 
@@ -190,9 +169,7 @@ public class InitiateMultipartUploadResult extends
         try {
             return (InitiateMultipartUploadResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

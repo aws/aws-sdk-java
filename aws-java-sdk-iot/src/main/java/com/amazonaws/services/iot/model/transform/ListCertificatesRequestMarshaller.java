@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -43,26 +41,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * ListCertificatesRequest Marshaller
  */
-public class ListCertificatesRequestMarshaller implements
-        Marshaller<Request<ListCertificatesRequest>, ListCertificatesRequest> {
+public class ListCertificatesRequestMarshaller implements Marshaller<Request<ListCertificatesRequest>, ListCertificatesRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public ListCertificatesRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public ListCertificatesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<ListCertificatesRequest> marshall(
-            ListCertificatesRequest listCertificatesRequest) {
+    public Request<ListCertificatesRequest> marshall(ListCertificatesRequest listCertificatesRequest) {
 
         if (listCertificatesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListCertificatesRequest> request = new DefaultRequest<ListCertificatesRequest>(
-                listCertificatesRequest, "AWSIot");
+        Request<ListCertificatesRequest> request = new DefaultRequest<ListCertificatesRequest>(listCertificatesRequest, "AWSIot");
 
         request.setHttpMethod(HttpMethodName.GET);
 
@@ -71,18 +64,15 @@ public class ListCertificatesRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         if (listCertificatesRequest.getPageSize() != null) {
-            request.addParameter("pageSize", StringUtils
-                    .fromInteger(listCertificatesRequest.getPageSize()));
+            request.addParameter("pageSize", StringUtils.fromInteger(listCertificatesRequest.getPageSize()));
         }
 
         if (listCertificatesRequest.getMarker() != null) {
-            request.addParameter("marker",
-                    StringUtils.fromString(listCertificatesRequest.getMarker()));
+            request.addParameter("marker", StringUtils.fromString(listCertificatesRequest.getMarker()));
         }
 
         if (listCertificatesRequest.getAscendingOrder() != null) {
-            request.addParameter("isAscendingOrder", StringUtils
-                    .fromBoolean(listCertificatesRequest.getAscendingOrder()));
+            request.addParameter("isAscendingOrder", StringUtils.fromBoolean(listCertificatesRequest.getAscendingOrder()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

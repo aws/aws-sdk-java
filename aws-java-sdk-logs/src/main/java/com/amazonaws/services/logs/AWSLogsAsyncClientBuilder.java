@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs;
 
@@ -20,12 +18,11 @@ import com.amazonaws.client.builder.AwsAsyncClientBuilder;
 import com.amazonaws.client.AwsAsyncClientParams;
 
 /**
- * Fluent builder for {@link com.amazonaws.services.logs.AWSLogsAsync}. Use of
- * the builder is preferred over using constructors of the client class.
+ * Fluent builder for {@link com.amazonaws.services.logs.AWSLogsAsync}. Use of the builder is preferred over using
+ * constructors of the client class.
  **/
 @NotThreadSafe
-public final class AWSLogsAsyncClientBuilder extends
-        AwsAsyncClientBuilder<AWSLogsAsyncClientBuilder, AWSLogsAsync> {
+public final class AWSLogsAsyncClientBuilder extends AwsAsyncClientBuilder<AWSLogsAsyncClientBuilder, AWSLogsAsync> {
 
     private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();;
 
@@ -37,8 +34,7 @@ public final class AWSLogsAsyncClientBuilder extends
     }
 
     /**
-     * @return Default async client using the
-     *         {@link com.amazonaws.auth.DefaultAWSCredentialsProviderChain} and
+     * @return Default async client using the {@link com.amazonaws.auth.DefaultAWSCredentialsProviderChain} and
      *         {@link com.amazonaws.regions.DefaultAwsRegionProviderChain} chain
      */
     public static AWSLogsAsync defaultClient() {
@@ -50,8 +46,7 @@ public final class AWSLogsAsyncClientBuilder extends
     }
 
     /**
-     * Construct an asynchronous implementation of AWSLogsAsync using the
-     * current builder configuration.
+     * Construct an asynchronous implementation of AWSLogsAsync using the current builder configuration.
      *
      * @param params
      *        Current builder configuration represented as a parameter object.

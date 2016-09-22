@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.workspaces.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>CreateWorkspaces</a> operation.
  * </p>
  */
-public class CreateWorkspacesRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -63,8 +59,7 @@ public class CreateWorkspacesRequest extends
             return;
         }
 
-        this.workspaces = new com.amazonaws.internal.SdkInternalList<WorkspaceRequest>(
-                workspaces);
+        this.workspaces = new com.amazonaws.internal.SdkInternalList<WorkspaceRequest>(workspaces);
     }
 
     /**
@@ -72,23 +67,19 @@ public class CreateWorkspacesRequest extends
      * An array of structures that specify the WorkSpaces to create.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setWorkspaces(java.util.Collection)} or
-     * {@link #withWorkspaces(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWorkspaces(java.util.Collection)} or {@link #withWorkspaces(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param workspaces
      *        An array of structures that specify the WorkSpaces to create.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateWorkspacesRequest withWorkspaces(
-            WorkspaceRequest... workspaces) {
+    public CreateWorkspacesRequest withWorkspaces(WorkspaceRequest... workspaces) {
         if (this.workspaces == null) {
-            setWorkspaces(new com.amazonaws.internal.SdkInternalList<WorkspaceRequest>(
-                    workspaces.length));
+            setWorkspaces(new com.amazonaws.internal.SdkInternalList<WorkspaceRequest>(workspaces.length));
         }
         for (WorkspaceRequest ele : workspaces) {
             this.workspaces.add(ele);
@@ -103,19 +94,16 @@ public class CreateWorkspacesRequest extends
      * 
      * @param workspaces
      *        An array of structures that specify the WorkSpaces to create.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateWorkspacesRequest withWorkspaces(
-            java.util.Collection<WorkspaceRequest> workspaces) {
+    public CreateWorkspacesRequest withWorkspaces(java.util.Collection<WorkspaceRequest> workspaces) {
         setWorkspaces(workspaces);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -143,8 +131,7 @@ public class CreateWorkspacesRequest extends
         CreateWorkspacesRequest other = (CreateWorkspacesRequest) obj;
         if (other.getWorkspaces() == null ^ this.getWorkspaces() == null)
             return false;
-        if (other.getWorkspaces() != null
-                && other.getWorkspaces().equals(this.getWorkspaces()) == false)
+        if (other.getWorkspaces() != null && other.getWorkspaces().equals(this.getWorkspaces()) == false)
             return false;
         return true;
     }
@@ -154,8 +141,7 @@ public class CreateWorkspacesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getWorkspaces() == null) ? 0 : getWorkspaces().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaces() == null) ? 0 : getWorkspaces().hashCode());
         return hashCode;
     }
 

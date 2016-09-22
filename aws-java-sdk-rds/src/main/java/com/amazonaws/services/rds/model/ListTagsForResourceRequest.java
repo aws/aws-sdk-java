@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -20,16 +18,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class ListTagsForResourceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon RDS resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     * > Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information
+     * about creating an ARN, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      */
     private String resourceName;
@@ -42,16 +38,15 @@ public class ListTagsForResourceRequest extends
 
     /**
      * <p>
-     * The Amazon RDS resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     * > Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information
+     * about creating an ARN, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * 
      * @param resourceName
-     *        The Amazon RDS resource with tags to be listed. This value is an
-     *        Amazon Resource Name (ARN). For information about creating an ARN,
-     *        see <a href=
+     *        The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For
+     *        information about creating an ARN, see <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an RDS Amazon Resource Name (ARN)</a>.
      */
@@ -62,15 +57,14 @@ public class ListTagsForResourceRequest extends
 
     /**
      * <p>
-     * The Amazon RDS resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     * > Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information
+     * about creating an ARN, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * 
-     * @return The Amazon RDS resource with tags to be listed. This value is an
-     *         Amazon Resource Name (ARN). For information about creating an
-     *         ARN, see <a href=
+     * @return The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For
+     *         information about creating an ARN, see <a href=
      *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *         > Constructing an RDS Amazon Resource Name (ARN)</a>.
      */
@@ -81,20 +75,18 @@ public class ListTagsForResourceRequest extends
 
     /**
      * <p>
-     * The Amazon RDS resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     * > Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information
+     * about creating an ARN, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * 
      * @param resourceName
-     *        The Amazon RDS resource with tags to be listed. This value is an
-     *        Amazon Resource Name (ARN). For information about creating an ARN,
-     *        see <a href=
+     *        The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For
+     *        information about creating an ARN, see <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an RDS Amazon Resource Name (ARN)</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsForResourceRequest withResourceName(String resourceName) {
@@ -132,8 +124,7 @@ public class ListTagsForResourceRequest extends
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -141,22 +132,19 @@ public class ListTagsForResourceRequest extends
      * This parameter is not currently supported.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
      *        This parameter is not currently supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsForResourceRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -171,19 +159,16 @@ public class ListTagsForResourceRequest extends
      * 
      * @param filters
      *        This parameter is not currently supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListTagsForResourceRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public ListTagsForResourceRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -213,13 +198,11 @@ public class ListTagsForResourceRequest extends
         ListTagsForResourceRequest other = (ListTagsForResourceRequest) obj;
         if (other.getResourceName() == null ^ this.getResourceName() == null)
             return false;
-        if (other.getResourceName() != null
-                && other.getResourceName().equals(this.getResourceName()) == false)
+        if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         return true;
     }
@@ -229,12 +212,8 @@ public class ListTagsForResourceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceName() == null) ? 0 : getResourceName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

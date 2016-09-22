@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,16 +29,13 @@ import com.amazonaws.util.IdempotentUtils;
  * DescribeVpcClassicLinkDnsSupportRequest Marshaller
  */
 
-public class DescribeVpcClassicLinkDnsSupportRequestMarshaller
-        implements
+public class DescribeVpcClassicLinkDnsSupportRequestMarshaller implements
         Marshaller<Request<DescribeVpcClassicLinkDnsSupportRequest>, DescribeVpcClassicLinkDnsSupportRequest> {
 
-    public Request<DescribeVpcClassicLinkDnsSupportRequest> marshall(
-            DescribeVpcClassicLinkDnsSupportRequest describeVpcClassicLinkDnsSupportRequest) {
+    public Request<DescribeVpcClassicLinkDnsSupportRequest> marshall(DescribeVpcClassicLinkDnsSupportRequest describeVpcClassicLinkDnsSupportRequest) {
 
         if (describeVpcClassicLinkDnsSupportRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DescribeVpcClassicLinkDnsSupportRequest> request = new DefaultRequest<DescribeVpcClassicLinkDnsSupportRequest>(
@@ -56,23 +51,18 @@ public class DescribeVpcClassicLinkDnsSupportRequestMarshaller
 
             for (String vpcIdsListValue : vpcIdsList) {
                 if (vpcIdsListValue != null) {
-                    request.addParameter("VpcIds." + vpcIdsListIndex,
-                            StringUtils.fromString(vpcIdsListValue));
+                    request.addParameter("VpcIds." + vpcIdsListIndex, StringUtils.fromString(vpcIdsListValue));
                 }
                 vpcIdsListIndex++;
             }
         }
 
         if (describeVpcClassicLinkDnsSupportRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils
-                    .fromInteger(describeVpcClassicLinkDnsSupportRequest
-                            .getMaxResults()));
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeVpcClassicLinkDnsSupportRequest.getMaxResults()));
         }
 
         if (describeVpcClassicLinkDnsSupportRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils
-                    .fromString(describeVpcClassicLinkDnsSupportRequest
-                            .getNextToken()));
+            request.addParameter("NextToken", StringUtils.fromString(describeVpcClassicLinkDnsSupportRequest.getNextToken()));
         }
 
         return request;

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetResourceRequest Marshaller
  */
-public class GetResourceRequestMarshaller implements
-        Marshaller<Request<GetResourceRequest>, GetResourceRequest> {
+public class GetResourceRequestMarshaller implements Marshaller<Request<GetResourceRequest>, GetResourceRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,31 +49,22 @@ public class GetResourceRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<GetResourceRequest> marshall(
-            GetResourceRequest getResourceRequest) {
+    public Request<GetResourceRequest> marshall(GetResourceRequest getResourceRequest) {
 
         if (getResourceRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetResourceRequest> request = new DefaultRequest<GetResourceRequest>(
-                getResourceRequest, "AmazonApiGateway");
+        Request<GetResourceRequest> request = new DefaultRequest<GetResourceRequest>(getResourceRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (getResourceRequest.getRestApiId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(getResourceRequest
-                                .getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (getResourceRequest.getResourceId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(getResourceRequest
-                                .getResourceId()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{restapi_id}",
+                (getResourceRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getResourceRequest.getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{resource_id}",
+                (getResourceRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getResourceRequest.getResourceId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

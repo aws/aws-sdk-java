@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.sns.model.transform;
 
@@ -31,16 +29,13 @@ import com.amazonaws.util.IdempotentUtils;
  * SetPlatformApplicationAttributesRequest Marshaller
  */
 
-public class SetPlatformApplicationAttributesRequestMarshaller
-        implements
+public class SetPlatformApplicationAttributesRequestMarshaller implements
         Marshaller<Request<SetPlatformApplicationAttributesRequest>, SetPlatformApplicationAttributesRequest> {
 
-    public Request<SetPlatformApplicationAttributesRequest> marshall(
-            SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest) {
+    public Request<SetPlatformApplicationAttributesRequest> marshall(SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest) {
 
         if (setPlatformApplicationAttributesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<SetPlatformApplicationAttributesRequest> request = new DefaultRequest<SetPlatformApplicationAttributesRequest>(
@@ -50,22 +45,17 @@ public class SetPlatformApplicationAttributesRequestMarshaller
         request.setHttpMethod(HttpMethodName.POST);
 
         if (setPlatformApplicationAttributesRequest.getPlatformApplicationArn() != null) {
-            request.addParameter("PlatformApplicationArn", StringUtils
-                    .fromString(setPlatformApplicationAttributesRequest
-                            .getPlatformApplicationArn()));
+            request.addParameter("PlatformApplicationArn", StringUtils.fromString(setPlatformApplicationAttributesRequest.getPlatformApplicationArn()));
         }
 
-        java.util.Map<String, String> attributes = setPlatformApplicationAttributesRequest
-                .getAttributes();
+        java.util.Map<String, String> attributes = setPlatformApplicationAttributesRequest.getAttributes();
         int attributesListIndex = 1;
         for (Map.Entry<String, String> entry : attributes.entrySet()) {
             if (entry.getKey() != null) {
-                request.addParameter("Attributes.entry." + attributesListIndex
-                        + ".key", StringUtils.fromString(entry.getKey()));
+                request.addParameter("Attributes.entry." + attributesListIndex + ".key", StringUtils.fromString(entry.getKey()));
             }
             if (entry.getValue() != null) {
-                request.addParameter("Attributes.entry." + attributesListIndex
-                        + ".value", StringUtils.fromString(entry.getValue()));
+                request.addParameter("Attributes.entry." + attributesListIndex + ".value", StringUtils.fromString(entry.getValue()));
             }
             attributesListIndex++;
         }

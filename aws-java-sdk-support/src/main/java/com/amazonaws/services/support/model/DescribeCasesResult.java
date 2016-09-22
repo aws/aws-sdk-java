@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.support.model;
 
@@ -18,13 +16,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code>
- * that defines a point for pagination in the result set.
+ * Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in
+ * the result set.
  * </p>
  */
-public class DescribeCasesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeCasesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -69,8 +65,7 @@ public class DescribeCasesResult extends
             return;
         }
 
-        this.cases = new com.amazonaws.internal.SdkInternalList<CaseDetails>(
-                cases);
+        this.cases = new com.amazonaws.internal.SdkInternalList<CaseDetails>(cases);
     }
 
     /**
@@ -78,22 +73,19 @@ public class DescribeCasesResult extends
      * The details for the cases that match the request.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCases(java.util.Collection)} or
-     * {@link #withCases(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCases(java.util.Collection)} or {@link #withCases(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param cases
      *        The details for the cases that match the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCasesResult withCases(CaseDetails... cases) {
         if (this.cases == null) {
-            setCases(new com.amazonaws.internal.SdkInternalList<CaseDetails>(
-                    cases.length));
+            setCases(new com.amazonaws.internal.SdkInternalList<CaseDetails>(cases.length));
         }
         for (CaseDetails ele : cases) {
             this.cases.add(ele);
@@ -108,8 +100,7 @@ public class DescribeCasesResult extends
      * 
      * @param cases
      *        The details for the cases that match the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCasesResult withCases(java.util.Collection<CaseDetails> cases) {
@@ -149,8 +140,7 @@ public class DescribeCasesResult extends
      * 
      * @param nextToken
      *        A resumption point for pagination.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCasesResult withNextToken(String nextToken) {
@@ -159,8 +149,7 @@ public class DescribeCasesResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -190,13 +179,11 @@ public class DescribeCasesResult extends
         DescribeCasesResult other = (DescribeCasesResult) obj;
         if (other.getCases() == null ^ this.getCases() == null)
             return false;
-        if (other.getCases() != null
-                && other.getCases().equals(this.getCases()) == false)
+        if (other.getCases() != null && other.getCases().equals(this.getCases()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -206,10 +193,8 @@ public class DescribeCasesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCases() == null) ? 0 : getCases().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getCases() == null) ? 0 : getCases().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -218,9 +203,7 @@ public class DescribeCasesResult extends
         try {
             return (DescribeCasesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

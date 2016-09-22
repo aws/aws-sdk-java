@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.redshift.model.transform;
 
@@ -31,40 +29,29 @@ import com.amazonaws.util.IdempotentUtils;
  * RevokeSnapshotAccessRequest Marshaller
  */
 
-public class RevokeSnapshotAccessRequestMarshaller
-        implements
-        Marshaller<Request<RevokeSnapshotAccessRequest>, RevokeSnapshotAccessRequest> {
+public class RevokeSnapshotAccessRequestMarshaller implements Marshaller<Request<RevokeSnapshotAccessRequest>, RevokeSnapshotAccessRequest> {
 
-    public Request<RevokeSnapshotAccessRequest> marshall(
-            RevokeSnapshotAccessRequest revokeSnapshotAccessRequest) {
+    public Request<RevokeSnapshotAccessRequest> marshall(RevokeSnapshotAccessRequest revokeSnapshotAccessRequest) {
 
         if (revokeSnapshotAccessRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RevokeSnapshotAccessRequest> request = new DefaultRequest<RevokeSnapshotAccessRequest>(
-                revokeSnapshotAccessRequest, "AmazonRedshift");
+        Request<RevokeSnapshotAccessRequest> request = new DefaultRequest<RevokeSnapshotAccessRequest>(revokeSnapshotAccessRequest, "AmazonRedshift");
         request.addParameter("Action", "RevokeSnapshotAccess");
         request.addParameter("Version", "2012-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (revokeSnapshotAccessRequest.getSnapshotIdentifier() != null) {
-            request.addParameter("SnapshotIdentifier", StringUtils
-                    .fromString(revokeSnapshotAccessRequest
-                            .getSnapshotIdentifier()));
+            request.addParameter("SnapshotIdentifier", StringUtils.fromString(revokeSnapshotAccessRequest.getSnapshotIdentifier()));
         }
 
         if (revokeSnapshotAccessRequest.getSnapshotClusterIdentifier() != null) {
-            request.addParameter("SnapshotClusterIdentifier", StringUtils
-                    .fromString(revokeSnapshotAccessRequest
-                            .getSnapshotClusterIdentifier()));
+            request.addParameter("SnapshotClusterIdentifier", StringUtils.fromString(revokeSnapshotAccessRequest.getSnapshotClusterIdentifier()));
         }
 
         if (revokeSnapshotAccessRequest.getAccountWithRestoreAccess() != null) {
-            request.addParameter("AccountWithRestoreAccess", StringUtils
-                    .fromString(revokeSnapshotAccessRequest
-                            .getAccountWithRestoreAccess()));
+            request.addParameter("AccountWithRestoreAccess", StringUtils.fromString(revokeSnapshotAccessRequest.getAccountWithRestoreAccess()));
         }
 
         return request;

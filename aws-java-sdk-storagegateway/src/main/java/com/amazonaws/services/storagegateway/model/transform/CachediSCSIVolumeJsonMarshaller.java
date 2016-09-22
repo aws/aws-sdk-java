@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
@@ -34,56 +32,44 @@ public class CachediSCSIVolumeJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(CachediSCSIVolume cachediSCSIVolume,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(CachediSCSIVolume cachediSCSIVolume, StructuredJsonGenerator jsonGenerator) {
 
         if (cachediSCSIVolume == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (cachediSCSIVolume.getVolumeARN() != null) {
-                jsonGenerator.writeFieldName("VolumeARN").writeValue(
-                        cachediSCSIVolume.getVolumeARN());
+                jsonGenerator.writeFieldName("VolumeARN").writeValue(cachediSCSIVolume.getVolumeARN());
             }
             if (cachediSCSIVolume.getVolumeId() != null) {
-                jsonGenerator.writeFieldName("VolumeId").writeValue(
-                        cachediSCSIVolume.getVolumeId());
+                jsonGenerator.writeFieldName("VolumeId").writeValue(cachediSCSIVolume.getVolumeId());
             }
             if (cachediSCSIVolume.getVolumeType() != null) {
-                jsonGenerator.writeFieldName("VolumeType").writeValue(
-                        cachediSCSIVolume.getVolumeType());
+                jsonGenerator.writeFieldName("VolumeType").writeValue(cachediSCSIVolume.getVolumeType());
             }
             if (cachediSCSIVolume.getVolumeStatus() != null) {
-                jsonGenerator.writeFieldName("VolumeStatus").writeValue(
-                        cachediSCSIVolume.getVolumeStatus());
+                jsonGenerator.writeFieldName("VolumeStatus").writeValue(cachediSCSIVolume.getVolumeStatus());
             }
             if (cachediSCSIVolume.getVolumeSizeInBytes() != null) {
-                jsonGenerator.writeFieldName("VolumeSizeInBytes").writeValue(
-                        cachediSCSIVolume.getVolumeSizeInBytes());
+                jsonGenerator.writeFieldName("VolumeSizeInBytes").writeValue(cachediSCSIVolume.getVolumeSizeInBytes());
             }
             if (cachediSCSIVolume.getVolumeProgress() != null) {
-                jsonGenerator.writeFieldName("VolumeProgress").writeValue(
-                        cachediSCSIVolume.getVolumeProgress());
+                jsonGenerator.writeFieldName("VolumeProgress").writeValue(cachediSCSIVolume.getVolumeProgress());
             }
             if (cachediSCSIVolume.getSourceSnapshotId() != null) {
-                jsonGenerator.writeFieldName("SourceSnapshotId").writeValue(
-                        cachediSCSIVolume.getSourceSnapshotId());
+                jsonGenerator.writeFieldName("SourceSnapshotId").writeValue(cachediSCSIVolume.getSourceSnapshotId());
             }
             if (cachediSCSIVolume.getVolumeiSCSIAttributes() != null) {
                 jsonGenerator.writeFieldName("VolumeiSCSIAttributes");
-                VolumeiSCSIAttributesJsonMarshaller.getInstance().marshall(
-                        cachediSCSIVolume.getVolumeiSCSIAttributes(),
-                        jsonGenerator);
+                VolumeiSCSIAttributesJsonMarshaller.getInstance().marshall(cachediSCSIVolume.getVolumeiSCSIAttributes(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

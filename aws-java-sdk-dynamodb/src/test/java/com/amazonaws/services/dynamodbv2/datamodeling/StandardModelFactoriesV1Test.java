@@ -45,12 +45,12 @@ public class StandardModelFactoriesV1Test {
         .withConversionSchema(ConversionSchemas.V1)
         .build();
 
-    private static final DynamoDBMapperModelFactory.Factory factory = StandardModelFactories.of(S3Link.Factory.of(null));
-    private static final DynamoDBMapperModelFactory models = factory.getModelFactory(CONFIG);
+    private static final DynamoDBMapperModelFactory factory = StandardModelFactories.of(S3Link.Factory.of(null));
+    private static final DynamoDBMapperModelFactory.TableFactory models = factory.getTableFactory(CONFIG);
 
     protected <T> AttributeValue convert(Class<T> clazz, Method getter, Object value) {
-        final StandardAnnotationMaps.FieldTypedMap<Object> map = StandardAnnotationMaps.of(getter, null);
-        return models.getTableModel(clazz).field(map.attributeName()).convert(value);
+        final StandardAnnotationMaps.FieldMap<Object> map = StandardAnnotationMaps.of(getter, null);
+        return models.getTable(clazz).field(map.attributeName()).convert(value);
     }
 
     @Test

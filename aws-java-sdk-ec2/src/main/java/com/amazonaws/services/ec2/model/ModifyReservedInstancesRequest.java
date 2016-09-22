@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,16 +22,15 @@ import com.amazonaws.services.ec2.model.transform.ModifyReservedInstancesRequest
  * Contains the parameters for ModifyReservedInstances.
  * </p>
  */
-public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<ModifyReservedInstancesRequest> {
 
     /**
      * <p>
-     * A unique, case-sensitive token you provide to ensure idempotency of your
-     * modification request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      */
     private String clientToken;
@@ -52,17 +49,17 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A unique, case-sensitive token you provide to ensure idempotency of your
-     * modification request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive token you provide to ensure idempotency
-     *        of your modification request. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *        >Ensuring Idempotency</a>.
+     *        A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -71,16 +68,16 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A unique, case-sensitive token you provide to ensure idempotency of your
-     * modification request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
-     * @return A unique, case-sensitive token you provide to ensure idempotency
-     *         of your modification request. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *         >Ensuring Idempotency</a>.
+     * @return A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.
      */
 
     public String getClientToken() {
@@ -89,19 +86,18 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A unique, case-sensitive token you provide to ensure idempotency of your
-     * modification request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive token you provide to ensure idempotency
-     *        of your modification request. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *        >Ensuring Idempotency</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyReservedInstancesRequest withClientToken(String clientToken) {
@@ -133,15 +129,13 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      *        The IDs of the Reserved Instances to modify.
      */
 
-    public void setReservedInstancesIds(
-            java.util.Collection<String> reservedInstancesIds) {
+    public void setReservedInstancesIds(java.util.Collection<String> reservedInstancesIds) {
         if (reservedInstancesIds == null) {
             this.reservedInstancesIds = null;
             return;
         }
 
-        this.reservedInstancesIds = new com.amazonaws.internal.SdkInternalList<String>(
-                reservedInstancesIds);
+        this.reservedInstancesIds = new com.amazonaws.internal.SdkInternalList<String>(reservedInstancesIds);
     }
 
     /**
@@ -149,23 +143,19 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      * The IDs of the Reserved Instances to modify.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setReservedInstancesIds(java.util.Collection)} or
-     * {@link #withReservedInstancesIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReservedInstancesIds(java.util.Collection)} or {@link #withReservedInstancesIds(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param reservedInstancesIds
      *        The IDs of the Reserved Instances to modify.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyReservedInstancesRequest withReservedInstancesIds(
-            String... reservedInstancesIds) {
+    public ModifyReservedInstancesRequest withReservedInstancesIds(String... reservedInstancesIds) {
         if (this.reservedInstancesIds == null) {
-            setReservedInstancesIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    reservedInstancesIds.length));
+            setReservedInstancesIds(new com.amazonaws.internal.SdkInternalList<String>(reservedInstancesIds.length));
         }
         for (String ele : reservedInstancesIds) {
             this.reservedInstancesIds.add(ele);
@@ -180,12 +170,10 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      * 
      * @param reservedInstancesIds
      *        The IDs of the Reserved Instances to modify.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyReservedInstancesRequest withReservedInstancesIds(
-            java.util.Collection<String> reservedInstancesIds) {
+    public ModifyReservedInstancesRequest withReservedInstancesIds(java.util.Collection<String> reservedInstancesIds) {
         setReservedInstancesIds(reservedInstancesIds);
         return this;
     }
@@ -214,15 +202,13 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      *        The configuration settings for the Reserved Instances to modify.
      */
 
-    public void setTargetConfigurations(
-            java.util.Collection<ReservedInstancesConfiguration> targetConfigurations) {
+    public void setTargetConfigurations(java.util.Collection<ReservedInstancesConfiguration> targetConfigurations) {
         if (targetConfigurations == null) {
             this.targetConfigurations = null;
             return;
         }
 
-        this.targetConfigurations = new com.amazonaws.internal.SdkInternalList<ReservedInstancesConfiguration>(
-                targetConfigurations);
+        this.targetConfigurations = new com.amazonaws.internal.SdkInternalList<ReservedInstancesConfiguration>(targetConfigurations);
     }
 
     /**
@@ -230,23 +216,19 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      * The configuration settings for the Reserved Instances to modify.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTargetConfigurations(java.util.Collection)} or
-     * {@link #withTargetConfigurations(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetConfigurations(java.util.Collection)} or {@link #withTargetConfigurations(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param targetConfigurations
      *        The configuration settings for the Reserved Instances to modify.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyReservedInstancesRequest withTargetConfigurations(
-            ReservedInstancesConfiguration... targetConfigurations) {
+    public ModifyReservedInstancesRequest withTargetConfigurations(ReservedInstancesConfiguration... targetConfigurations) {
         if (this.targetConfigurations == null) {
-            setTargetConfigurations(new com.amazonaws.internal.SdkInternalList<ReservedInstancesConfiguration>(
-                    targetConfigurations.length));
+            setTargetConfigurations(new com.amazonaws.internal.SdkInternalList<ReservedInstancesConfiguration>(targetConfigurations.length));
         }
         for (ReservedInstancesConfiguration ele : targetConfigurations) {
             this.targetConfigurations.add(ele);
@@ -261,32 +243,27 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      * 
      * @param targetConfigurations
      *        The configuration settings for the Reserved Instances to modify.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyReservedInstancesRequest withTargetConfigurations(
-            java.util.Collection<ReservedInstancesConfiguration> targetConfigurations) {
+    public ModifyReservedInstancesRequest withTargetConfigurations(java.util.Collection<ReservedInstancesConfiguration> targetConfigurations) {
         setTargetConfigurations(targetConfigurations);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<ModifyReservedInstancesRequest> getDryRunRequest() {
-        Request<ModifyReservedInstancesRequest> request = new ModifyReservedInstancesRequestMarshaller()
-                .marshall(this);
+        Request<ModifyReservedInstancesRequest> request = new ModifyReservedInstancesRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -299,8 +276,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
         if (getClientToken() != null)
             sb.append("ClientToken: " + getClientToken() + ",");
         if (getReservedInstancesIds() != null)
-            sb.append("ReservedInstancesIds: " + getReservedInstancesIds()
-                    + ",");
+            sb.append("ReservedInstancesIds: " + getReservedInstancesIds() + ",");
         if (getTargetConfigurations() != null)
             sb.append("TargetConfigurations: " + getTargetConfigurations());
         sb.append("}");
@@ -319,22 +295,15 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
         ModifyReservedInstancesRequest other = (ModifyReservedInstancesRequest) obj;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getClientToken() != null
-                && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
-        if (other.getReservedInstancesIds() == null
-                ^ this.getReservedInstancesIds() == null)
+        if (other.getReservedInstancesIds() == null ^ this.getReservedInstancesIds() == null)
             return false;
-        if (other.getReservedInstancesIds() != null
-                && other.getReservedInstancesIds().equals(
-                        this.getReservedInstancesIds()) == false)
+        if (other.getReservedInstancesIds() != null && other.getReservedInstancesIds().equals(this.getReservedInstancesIds()) == false)
             return false;
-        if (other.getTargetConfigurations() == null
-                ^ this.getTargetConfigurations() == null)
+        if (other.getTargetConfigurations() == null ^ this.getTargetConfigurations() == null)
             return false;
-        if (other.getTargetConfigurations() != null
-                && other.getTargetConfigurations().equals(
-                        this.getTargetConfigurations()) == false)
+        if (other.getTargetConfigurations() != null && other.getTargetConfigurations().equals(this.getTargetConfigurations()) == false)
             return false;
         return true;
     }
@@ -344,17 +313,9 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReservedInstancesIds() == null) ? 0
-                        : getReservedInstancesIds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTargetConfigurations() == null) ? 0
-                        : getTargetConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesIds() == null) ? 0 : getReservedInstancesIds().hashCode());
+        hashCode = prime * hashCode + ((getTargetConfigurations() == null) ? 0 : getTargetConfigurations().hashCode());
         return hashCode;
     }
 

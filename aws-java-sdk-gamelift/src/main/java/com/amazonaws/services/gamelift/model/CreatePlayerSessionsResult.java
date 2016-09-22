@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Represents the returned data in response to a request action.
  * </p>
  */
-public class CreatePlayerSessionsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CreatePlayerSessionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -37,8 +33,7 @@ public class CreatePlayerSessionsResult extends
      * Collection of player session objects created for the added players.
      * </p>
      * 
-     * @return Collection of player session objects created for the added
-     *         players.
+     * @return Collection of player session objects created for the added players.
      */
 
     public java.util.List<PlayerSession> getPlayerSessions() {
@@ -51,19 +46,16 @@ public class CreatePlayerSessionsResult extends
      * </p>
      * 
      * @param playerSessions
-     *        Collection of player session objects created for the added
-     *        players.
+     *        Collection of player session objects created for the added players.
      */
 
-    public void setPlayerSessions(
-            java.util.Collection<PlayerSession> playerSessions) {
+    public void setPlayerSessions(java.util.Collection<PlayerSession> playerSessions) {
         if (playerSessions == null) {
             this.playerSessions = null;
             return;
         }
 
-        this.playerSessions = new java.util.ArrayList<PlayerSession>(
-                playerSessions);
+        this.playerSessions = new java.util.ArrayList<PlayerSession>(playerSessions);
     }
 
     /**
@@ -71,24 +63,19 @@ public class CreatePlayerSessionsResult extends
      * Collection of player session objects created for the added players.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPlayerSessions(java.util.Collection)} or
-     * {@link #withPlayerSessions(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlayerSessions(java.util.Collection)} or {@link #withPlayerSessions(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param playerSessions
-     *        Collection of player session objects created for the added
-     *        players.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Collection of player session objects created for the added players.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreatePlayerSessionsResult withPlayerSessions(
-            PlayerSession... playerSessions) {
+    public CreatePlayerSessionsResult withPlayerSessions(PlayerSession... playerSessions) {
         if (this.playerSessions == null) {
-            setPlayerSessions(new java.util.ArrayList<PlayerSession>(
-                    playerSessions.length));
+            setPlayerSessions(new java.util.ArrayList<PlayerSession>(playerSessions.length));
         }
         for (PlayerSession ele : playerSessions) {
             this.playerSessions.add(ele);
@@ -102,21 +89,17 @@ public class CreatePlayerSessionsResult extends
      * </p>
      * 
      * @param playerSessions
-     *        Collection of player session objects created for the added
-     *        players.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Collection of player session objects created for the added players.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreatePlayerSessionsResult withPlayerSessions(
-            java.util.Collection<PlayerSession> playerSessions) {
+    public CreatePlayerSessionsResult withPlayerSessions(java.util.Collection<PlayerSession> playerSessions) {
         setPlayerSessions(playerSessions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -142,11 +125,9 @@ public class CreatePlayerSessionsResult extends
         if (obj instanceof CreatePlayerSessionsResult == false)
             return false;
         CreatePlayerSessionsResult other = (CreatePlayerSessionsResult) obj;
-        if (other.getPlayerSessions() == null
-                ^ this.getPlayerSessions() == null)
+        if (other.getPlayerSessions() == null ^ this.getPlayerSessions() == null)
             return false;
-        if (other.getPlayerSessions() != null
-                && other.getPlayerSessions().equals(this.getPlayerSessions()) == false)
+        if (other.getPlayerSessions() != null && other.getPlayerSessions().equals(this.getPlayerSessions()) == false)
             return false;
         return true;
     }
@@ -156,10 +137,7 @@ public class CreatePlayerSessionsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPlayerSessions() == null) ? 0 : getPlayerSessions()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPlayerSessions() == null) ? 0 : getPlayerSessions().hashCode());
         return hashCode;
     }
 
@@ -168,9 +146,7 @@ public class CreatePlayerSessionsResult extends
         try {
             return (CreatePlayerSessionsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

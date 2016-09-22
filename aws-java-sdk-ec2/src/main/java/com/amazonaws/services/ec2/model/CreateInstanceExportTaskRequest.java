@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,14 +22,12 @@ import com.amazonaws.services.ec2.model.transform.CreateInstanceExportTaskReques
  * Contains the parameters for CreateInstanceExportTask.
  * </p>
  */
-public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<CreateInstanceExportTaskRequest> {
 
     /**
      * <p>
-     * A description for the conversion task or the resource being exported. The
-     * maximum length is 255 bytes.
+     * A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
      * </p>
      */
     private String description;
@@ -56,13 +52,11 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the conversion task or the resource being exported. The
-     * maximum length is 255 bytes.
+     * A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
      * </p>
      * 
      * @param description
-     *        A description for the conversion task or the resource being
-     *        exported. The maximum length is 255 bytes.
+     *        A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
      */
 
     public void setDescription(String description) {
@@ -71,12 +65,10 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the conversion task or the resource being exported. The
-     * maximum length is 255 bytes.
+     * A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
      * </p>
      * 
-     * @return A description for the conversion task or the resource being
-     *         exported. The maximum length is 255 bytes.
+     * @return A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
      */
 
     public String getDescription() {
@@ -85,15 +77,12 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the conversion task or the resource being exported. The
-     * maximum length is 255 bytes.
+     * A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
      * </p>
      * 
      * @param description
-     *        A description for the conversion task or the resource being
-     *        exported. The maximum length is 255 bytes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateInstanceExportTaskRequest withDescription(String description) {
@@ -133,8 +122,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      * 
      * @param instanceId
      *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateInstanceExportTaskRequest withInstanceId(String instanceId) {
@@ -176,13 +164,11 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      * 
      * @param targetEnvironment
      *        The target virtualization environment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExportEnvironment
      */
 
-    public CreateInstanceExportTaskRequest withTargetEnvironment(
-            String targetEnvironment) {
+    public CreateInstanceExportTaskRequest withTargetEnvironment(String targetEnvironment) {
         setTargetEnvironment(targetEnvironment);
         return this;
     }
@@ -208,13 +194,11 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      * 
      * @param targetEnvironment
      *        The target virtualization environment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExportEnvironment
      */
 
-    public CreateInstanceExportTaskRequest withTargetEnvironment(
-            ExportEnvironment targetEnvironment) {
+    public CreateInstanceExportTaskRequest withTargetEnvironment(ExportEnvironment targetEnvironment) {
         setTargetEnvironment(targetEnvironment);
         return this;
     }
@@ -251,32 +235,27 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      * 
      * @param exportToS3Task
      *        The format and location for an instance export task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateInstanceExportTaskRequest withExportToS3Task(
-            ExportToS3TaskSpecification exportToS3Task) {
+    public CreateInstanceExportTaskRequest withExportToS3Task(ExportToS3TaskSpecification exportToS3Task) {
         setExportToS3Task(exportToS3Task);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<CreateInstanceExportTaskRequest> getDryRunRequest() {
-        Request<CreateInstanceExportTaskRequest> request = new CreateInstanceExportTaskRequestMarshaller()
-                .marshall(this);
+        Request<CreateInstanceExportTaskRequest> request = new CreateInstanceExportTaskRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -310,26 +289,19 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
         CreateInstanceExportTaskRequest other = (CreateInstanceExportTaskRequest) obj;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
-        if (other.getTargetEnvironment() == null
-                ^ this.getTargetEnvironment() == null)
+        if (other.getTargetEnvironment() == null ^ this.getTargetEnvironment() == null)
             return false;
-        if (other.getTargetEnvironment() != null
-                && other.getTargetEnvironment().equals(
-                        this.getTargetEnvironment()) == false)
+        if (other.getTargetEnvironment() != null && other.getTargetEnvironment().equals(this.getTargetEnvironment()) == false)
             return false;
-        if (other.getExportToS3Task() == null
-                ^ this.getExportToS3Task() == null)
+        if (other.getExportToS3Task() == null ^ this.getExportToS3Task() == null)
             return false;
-        if (other.getExportToS3Task() != null
-                && other.getExportToS3Task().equals(this.getExportToS3Task()) == false)
+        if (other.getExportToS3Task() != null && other.getExportToS3Task().equals(this.getExportToS3Task()) == false)
             return false;
         return true;
     }
@@ -339,19 +311,10 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTargetEnvironment() == null) ? 0
-                        : getTargetEnvironment().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExportToS3Task() == null) ? 0 : getExportToS3Task()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getTargetEnvironment() == null) ? 0 : getTargetEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getExportToS3Task() == null) ? 0 : getExportToS3Task().hashCode());
         return hashCode;
     }
 

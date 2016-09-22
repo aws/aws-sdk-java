@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,14 +22,12 @@ import com.amazonaws.services.ec2.model.transform.DeleteSecurityGroupRequestMars
  * Contains the parameters for DeleteSecurityGroup.
  * </p>
  */
-public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
-        DryRunSupportedRequest<DeleteSecurityGroupRequest> {
+public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteSecurityGroupRequest> {
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You can
-     * specify either the security group name or the security group ID.
+     * [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name or the
+     * security group ID.
      * </p>
      */
     private String groupName;
@@ -43,21 +39,19 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
     private String groupId;
 
     /**
-     * Default constructor for DeleteSecurityGroupRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize the
-     * object after creating it.
+     * Default constructor for DeleteSecurityGroupRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public DeleteSecurityGroupRequest() {
     }
 
     /**
-     * Constructs a new DeleteSecurityGroupRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new DeleteSecurityGroupRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group. You can
-     *        specify either the security group name or the security group ID.
+     *        [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name
+     *        or the security group ID.
      */
     public DeleteSecurityGroupRequest(String groupName) {
         setGroupName(groupName);
@@ -65,13 +59,13 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You can
-     * specify either the security group name or the security group ID.
+     * [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name or the
+     * security group ID.
      * </p>
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group. You can
-     *        specify either the security group name or the security group ID.
+     *        [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name
+     *        or the security group ID.
      */
 
     public void setGroupName(String groupName) {
@@ -80,13 +74,12 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You can
-     * specify either the security group name or the security group ID.
+     * [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name or the
+     * security group ID.
      * </p>
      * 
-     * @return [EC2-Classic, default VPC] The name of the security group. You
-     *         can specify either the security group name or the security group
-     *         ID.
+     * @return [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name
+     *         or the security group ID.
      */
 
     public String getGroupName() {
@@ -95,15 +88,14 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You can
-     * specify either the security group name or the security group ID.
+     * [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name or the
+     * security group ID.
      * </p>
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group. You can
-     *        specify either the security group name or the security group ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name
+     *        or the security group ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteSecurityGroupRequest withGroupName(String groupName) {
@@ -143,8 +135,7 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
      * 
      * @param groupId
      *        The ID of the security group. Required for a nondefault VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteSecurityGroupRequest withGroupId(String groupId) {
@@ -153,21 +144,18 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DeleteSecurityGroupRequest> getDryRunRequest() {
-        Request<DeleteSecurityGroupRequest> request = new DeleteSecurityGroupRequestMarshaller()
-                .marshall(this);
+        Request<DeleteSecurityGroupRequest> request = new DeleteSecurityGroupRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -197,13 +185,11 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
         DeleteSecurityGroupRequest other = (DeleteSecurityGroupRequest) obj;
         if (other.getGroupName() == null ^ this.getGroupName() == null)
             return false;
-        if (other.getGroupName() != null
-                && other.getGroupName().equals(this.getGroupName()) == false)
+        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
         if (other.getGroupId() == null ^ this.getGroupId() == null)
             return false;
-        if (other.getGroupId() != null
-                && other.getGroupId().equals(this.getGroupId()) == false)
+        if (other.getGroupId() != null && other.getGroupId().equals(this.getGroupId()) == false)
             return false;
         return true;
     }
@@ -213,10 +199,8 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         return hashCode;
     }
 

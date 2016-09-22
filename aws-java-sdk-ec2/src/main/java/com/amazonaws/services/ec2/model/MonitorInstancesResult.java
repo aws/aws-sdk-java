@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of MonitorInstances.
  * </p>
  */
-public class MonitorInstancesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class MonitorInstancesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -57,15 +53,13 @@ public class MonitorInstancesResult extends
      *        Monitoring information for one or more instances.
      */
 
-    public void setInstanceMonitorings(
-            java.util.Collection<InstanceMonitoring> instanceMonitorings) {
+    public void setInstanceMonitorings(java.util.Collection<InstanceMonitoring> instanceMonitorings) {
         if (instanceMonitorings == null) {
             this.instanceMonitorings = null;
             return;
         }
 
-        this.instanceMonitorings = new com.amazonaws.internal.SdkInternalList<InstanceMonitoring>(
-                instanceMonitorings);
+        this.instanceMonitorings = new com.amazonaws.internal.SdkInternalList<InstanceMonitoring>(instanceMonitorings);
     }
 
     /**
@@ -73,23 +67,19 @@ public class MonitorInstancesResult extends
      * Monitoring information for one or more instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstanceMonitorings(java.util.Collection)} or
-     * {@link #withInstanceMonitorings(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceMonitorings(java.util.Collection)} or {@link #withInstanceMonitorings(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param instanceMonitorings
      *        Monitoring information for one or more instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public MonitorInstancesResult withInstanceMonitorings(
-            InstanceMonitoring... instanceMonitorings) {
+    public MonitorInstancesResult withInstanceMonitorings(InstanceMonitoring... instanceMonitorings) {
         if (this.instanceMonitorings == null) {
-            setInstanceMonitorings(new com.amazonaws.internal.SdkInternalList<InstanceMonitoring>(
-                    instanceMonitorings.length));
+            setInstanceMonitorings(new com.amazonaws.internal.SdkInternalList<InstanceMonitoring>(instanceMonitorings.length));
         }
         for (InstanceMonitoring ele : instanceMonitorings) {
             this.instanceMonitorings.add(ele);
@@ -104,19 +94,16 @@ public class MonitorInstancesResult extends
      * 
      * @param instanceMonitorings
      *        Monitoring information for one or more instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public MonitorInstancesResult withInstanceMonitorings(
-            java.util.Collection<InstanceMonitoring> instanceMonitorings) {
+    public MonitorInstancesResult withInstanceMonitorings(java.util.Collection<InstanceMonitoring> instanceMonitorings) {
         setInstanceMonitorings(instanceMonitorings);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -142,12 +129,9 @@ public class MonitorInstancesResult extends
         if (obj instanceof MonitorInstancesResult == false)
             return false;
         MonitorInstancesResult other = (MonitorInstancesResult) obj;
-        if (other.getInstanceMonitorings() == null
-                ^ this.getInstanceMonitorings() == null)
+        if (other.getInstanceMonitorings() == null ^ this.getInstanceMonitorings() == null)
             return false;
-        if (other.getInstanceMonitorings() != null
-                && other.getInstanceMonitorings().equals(
-                        this.getInstanceMonitorings()) == false)
+        if (other.getInstanceMonitorings() != null && other.getInstanceMonitorings().equals(this.getInstanceMonitorings()) == false)
             return false;
         return true;
     }
@@ -157,10 +141,7 @@ public class MonitorInstancesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceMonitorings() == null) ? 0
-                        : getInstanceMonitorings().hashCode());
+        hashCode = prime * hashCode + ((getInstanceMonitorings() == null) ? 0 : getInstanceMonitorings().hashCode());
         return hashCode;
     }
 
@@ -169,9 +150,7 @@ public class MonitorInstancesResult extends
         try {
             return (MonitorInstancesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

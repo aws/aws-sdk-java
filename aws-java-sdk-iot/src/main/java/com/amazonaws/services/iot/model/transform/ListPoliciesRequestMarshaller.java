@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * ListPoliciesRequest Marshaller
  */
-public class ListPoliciesRequestMarshaller implements
-        Marshaller<Request<ListPoliciesRequest>, ListPoliciesRequest> {
+public class ListPoliciesRequestMarshaller implements Marshaller<Request<ListPoliciesRequest>, ListPoliciesRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,16 +49,13 @@ public class ListPoliciesRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<ListPoliciesRequest> marshall(
-            ListPoliciesRequest listPoliciesRequest) {
+    public Request<ListPoliciesRequest> marshall(ListPoliciesRequest listPoliciesRequest) {
 
         if (listPoliciesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListPoliciesRequest> request = new DefaultRequest<ListPoliciesRequest>(
-                listPoliciesRequest, "AWSIot");
+        Request<ListPoliciesRequest> request = new DefaultRequest<ListPoliciesRequest>(listPoliciesRequest, "AWSIot");
 
         request.setHttpMethod(HttpMethodName.GET);
 
@@ -70,18 +64,15 @@ public class ListPoliciesRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         if (listPoliciesRequest.getMarker() != null) {
-            request.addParameter("marker",
-                    StringUtils.fromString(listPoliciesRequest.getMarker()));
+            request.addParameter("marker", StringUtils.fromString(listPoliciesRequest.getMarker()));
         }
 
         if (listPoliciesRequest.getPageSize() != null) {
-            request.addParameter("pageSize",
-                    StringUtils.fromInteger(listPoliciesRequest.getPageSize()));
+            request.addParameter("pageSize", StringUtils.fromInteger(listPoliciesRequest.getPageSize()));
         }
 
         if (listPoliciesRequest.getAscendingOrder() != null) {
-            request.addParameter("isAscendingOrder", StringUtils
-                    .fromBoolean(listPoliciesRequest.getAscendingOrder()));
+            request.addParameter("isAscendingOrder", StringUtils.fromBoolean(listPoliciesRequest.getAscendingOrder()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

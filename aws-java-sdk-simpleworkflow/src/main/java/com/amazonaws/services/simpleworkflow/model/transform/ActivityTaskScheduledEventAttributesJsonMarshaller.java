@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
@@ -34,13 +32,10 @@ public class ActivityTaskScheduledEventAttributesJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(
-            ActivityTaskScheduledEventAttributes activityTaskScheduledEventAttributes,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(ActivityTaskScheduledEventAttributes activityTaskScheduledEventAttributes, StructuredJsonGenerator jsonGenerator) {
 
         if (activityTaskScheduledEventAttributes == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -48,68 +43,43 @@ public class ActivityTaskScheduledEventAttributesJsonMarshaller {
 
             if (activityTaskScheduledEventAttributes.getActivityType() != null) {
                 jsonGenerator.writeFieldName("activityType");
-                ActivityTypeJsonMarshaller.getInstance().marshall(
-                        activityTaskScheduledEventAttributes.getActivityType(),
-                        jsonGenerator);
+                ActivityTypeJsonMarshaller.getInstance().marshall(activityTaskScheduledEventAttributes.getActivityType(), jsonGenerator);
             }
             if (activityTaskScheduledEventAttributes.getActivityId() != null) {
-                jsonGenerator.writeFieldName("activityId").writeValue(
-                        activityTaskScheduledEventAttributes.getActivityId());
+                jsonGenerator.writeFieldName("activityId").writeValue(activityTaskScheduledEventAttributes.getActivityId());
             }
             if (activityTaskScheduledEventAttributes.getInput() != null) {
-                jsonGenerator.writeFieldName("input").writeValue(
-                        activityTaskScheduledEventAttributes.getInput());
+                jsonGenerator.writeFieldName("input").writeValue(activityTaskScheduledEventAttributes.getInput());
             }
             if (activityTaskScheduledEventAttributes.getControl() != null) {
-                jsonGenerator.writeFieldName("control").writeValue(
-                        activityTaskScheduledEventAttributes.getControl());
+                jsonGenerator.writeFieldName("control").writeValue(activityTaskScheduledEventAttributes.getControl());
             }
-            if (activityTaskScheduledEventAttributes
-                    .getScheduleToStartTimeout() != null) {
-                jsonGenerator.writeFieldName("scheduleToStartTimeout")
-                        .writeValue(
-                                activityTaskScheduledEventAttributes
-                                        .getScheduleToStartTimeout());
+            if (activityTaskScheduledEventAttributes.getScheduleToStartTimeout() != null) {
+                jsonGenerator.writeFieldName("scheduleToStartTimeout").writeValue(activityTaskScheduledEventAttributes.getScheduleToStartTimeout());
             }
-            if (activityTaskScheduledEventAttributes
-                    .getScheduleToCloseTimeout() != null) {
-                jsonGenerator.writeFieldName("scheduleToCloseTimeout")
-                        .writeValue(
-                                activityTaskScheduledEventAttributes
-                                        .getScheduleToCloseTimeout());
+            if (activityTaskScheduledEventAttributes.getScheduleToCloseTimeout() != null) {
+                jsonGenerator.writeFieldName("scheduleToCloseTimeout").writeValue(activityTaskScheduledEventAttributes.getScheduleToCloseTimeout());
             }
             if (activityTaskScheduledEventAttributes.getStartToCloseTimeout() != null) {
-                jsonGenerator.writeFieldName("startToCloseTimeout").writeValue(
-                        activityTaskScheduledEventAttributes
-                                .getStartToCloseTimeout());
+                jsonGenerator.writeFieldName("startToCloseTimeout").writeValue(activityTaskScheduledEventAttributes.getStartToCloseTimeout());
             }
             if (activityTaskScheduledEventAttributes.getTaskList() != null) {
                 jsonGenerator.writeFieldName("taskList");
-                TaskListJsonMarshaller.getInstance().marshall(
-                        activityTaskScheduledEventAttributes.getTaskList(),
-                        jsonGenerator);
+                TaskListJsonMarshaller.getInstance().marshall(activityTaskScheduledEventAttributes.getTaskList(), jsonGenerator);
             }
             if (activityTaskScheduledEventAttributes.getTaskPriority() != null) {
-                jsonGenerator.writeFieldName("taskPriority").writeValue(
-                        activityTaskScheduledEventAttributes.getTaskPriority());
+                jsonGenerator.writeFieldName("taskPriority").writeValue(activityTaskScheduledEventAttributes.getTaskPriority());
             }
-            if (activityTaskScheduledEventAttributes
-                    .getDecisionTaskCompletedEventId() != null) {
-                jsonGenerator.writeFieldName("decisionTaskCompletedEventId")
-                        .writeValue(
-                                activityTaskScheduledEventAttributes
-                                        .getDecisionTaskCompletedEventId());
+            if (activityTaskScheduledEventAttributes.getDecisionTaskCompletedEventId() != null) {
+                jsonGenerator.writeFieldName("decisionTaskCompletedEventId").writeValue(activityTaskScheduledEventAttributes.getDecisionTaskCompletedEventId());
             }
             if (activityTaskScheduledEventAttributes.getHeartbeatTimeout() != null) {
-                jsonGenerator.writeFieldName("heartbeatTimeout").writeValue(
-                        activityTaskScheduledEventAttributes
-                                .getHeartbeatTimeout());
+                jsonGenerator.writeFieldName("heartbeatTimeout").writeValue(activityTaskScheduledEventAttributes.getHeartbeatTimeout());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

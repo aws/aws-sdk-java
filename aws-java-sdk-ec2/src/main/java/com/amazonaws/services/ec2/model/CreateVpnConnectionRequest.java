@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,9 +22,7 @@ import com.amazonaws.services.ec2.model.transform.CreateVpnConnectionRequestMars
  * Contains the parameters for CreateVpnConnection.
  * </p>
  */
-public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
-        DryRunSupportedRequest<CreateVpnConnectionRequest> {
+public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateVpnConnectionRequest> {
 
     /**
      * <p>
@@ -48,9 +44,8 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
     private String vpnGatewayId;
     /**
      * <p>
-     * Indicates whether the VPN connection requires static routes. If you are
-     * creating a VPN connection for a device that does not support BGP, you
-     * must specify <code>true</code>.
+     * Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device
+     * that does not support BGP, you must specify <code>true</code>.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -59,17 +54,15 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
     private VpnConnectionOptionsSpecification options;
 
     /**
-     * Default constructor for CreateVpnConnectionRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize the
-     * object after creating it.
+     * Default constructor for CreateVpnConnectionRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public CreateVpnConnectionRequest() {
     }
 
     /**
-     * Constructs a new CreateVpnConnectionRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new CreateVpnConnectionRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param type
      *        The type of VPN connection (<code>ipsec.1</code>).
@@ -78,8 +71,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * @param vpnGatewayId
      *        The ID of the virtual private gateway.
      */
-    public CreateVpnConnectionRequest(String type, String customerGatewayId,
-            String vpnGatewayId) {
+    public CreateVpnConnectionRequest(String type, String customerGatewayId, String vpnGatewayId) {
         setType(type);
         setCustomerGatewayId(customerGatewayId);
         setVpnGatewayId(vpnGatewayId);
@@ -117,8 +109,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * 
      * @param type
      *        The type of VPN connection (<code>ipsec.1</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateVpnConnectionRequest withType(String type) {
@@ -158,12 +149,10 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * 
      * @param customerGatewayId
      *        The ID of the customer gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateVpnConnectionRequest withCustomerGatewayId(
-            String customerGatewayId) {
+    public CreateVpnConnectionRequest withCustomerGatewayId(String customerGatewayId) {
         setCustomerGatewayId(customerGatewayId);
         return this;
     }
@@ -200,8 +189,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * 
      * @param vpnGatewayId
      *        The ID of the virtual private gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateVpnConnectionRequest withVpnGatewayId(String vpnGatewayId) {
@@ -211,18 +199,16 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicates whether the VPN connection requires static routes. If you are
-     * creating a VPN connection for a device that does not support BGP, you
-     * must specify <code>true</code>.
+     * Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device
+     * that does not support BGP, you must specify <code>true</code>.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param options
-     *        Indicates whether the VPN connection requires static routes. If
-     *        you are creating a VPN connection for a device that does not
-     *        support BGP, you must specify <code>true</code>.</p>
+     *        Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a
+     *        device that does not support BGP, you must specify <code>true</code>.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -233,17 +219,15 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicates whether the VPN connection requires static routes. If you are
-     * creating a VPN connection for a device that does not support BGP, you
-     * must specify <code>true</code>.
+     * Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device
+     * that does not support BGP, you must specify <code>true</code>.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the VPN connection requires static routes. If
-     *         you are creating a VPN connection for a device that does not
-     *         support BGP, you must specify <code>true</code>.</p>
+     * @return Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a
+     *         device that does not support BGP, you must specify <code>true</code>.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -254,46 +238,39 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicates whether the VPN connection requires static routes. If you are
-     * creating a VPN connection for a device that does not support BGP, you
-     * must specify <code>true</code>.
+     * Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device
+     * that does not support BGP, you must specify <code>true</code>.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param options
-     *        Indicates whether the VPN connection requires static routes. If
-     *        you are creating a VPN connection for a device that does not
-     *        support BGP, you must specify <code>true</code>.</p>
+     *        Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a
+     *        device that does not support BGP, you must specify <code>true</code>.</p>
      *        <p>
      *        Default: <code>false</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateVpnConnectionRequest withOptions(
-            VpnConnectionOptionsSpecification options) {
+    public CreateVpnConnectionRequest withOptions(VpnConnectionOptionsSpecification options) {
         setOptions(options);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<CreateVpnConnectionRequest> getDryRunRequest() {
-        Request<CreateVpnConnectionRequest> request = new CreateVpnConnectionRequestMarshaller()
-                .marshall(this);
+        Request<CreateVpnConnectionRequest> request = new CreateVpnConnectionRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -327,25 +304,19 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
         CreateVpnConnectionRequest other = (CreateVpnConnectionRequest) obj;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
-        if (other.getCustomerGatewayId() == null
-                ^ this.getCustomerGatewayId() == null)
+        if (other.getCustomerGatewayId() == null ^ this.getCustomerGatewayId() == null)
             return false;
-        if (other.getCustomerGatewayId() != null
-                && other.getCustomerGatewayId().equals(
-                        this.getCustomerGatewayId()) == false)
+        if (other.getCustomerGatewayId() != null && other.getCustomerGatewayId().equals(this.getCustomerGatewayId()) == false)
             return false;
         if (other.getVpnGatewayId() == null ^ this.getVpnGatewayId() == null)
             return false;
-        if (other.getVpnGatewayId() != null
-                && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false)
+        if (other.getVpnGatewayId() != null && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false)
             return false;
         if (other.getOptions() == null ^ this.getOptions() == null)
             return false;
-        if (other.getOptions() != null
-                && other.getOptions().equals(this.getOptions()) == false)
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
             return false;
         return true;
     }
@@ -355,18 +326,10 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomerGatewayId() == null) ? 0
-                        : getCustomerGatewayId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getOptions() == null) ? 0 : getOptions().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getCustomerGatewayId() == null) ? 0 : getCustomerGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
     }
 

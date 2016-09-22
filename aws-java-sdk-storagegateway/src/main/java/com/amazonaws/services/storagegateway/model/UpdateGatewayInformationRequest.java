@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateGatewayInformationRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String gatewayARN;
 
@@ -48,8 +44,7 @@ public class UpdateGatewayInformationRequest extends
 
     /**
      * @param gatewayARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateGatewayInformationRequest withGatewayARN(String gatewayARN) {
@@ -75,8 +70,7 @@ public class UpdateGatewayInformationRequest extends
 
     /**
      * @param gatewayName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateGatewayInformationRequest withGatewayName(String gatewayName) {
@@ -102,19 +96,16 @@ public class UpdateGatewayInformationRequest extends
 
     /**
      * @param gatewayTimezone
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateGatewayInformationRequest withGatewayTimezone(
-            String gatewayTimezone) {
+    public UpdateGatewayInformationRequest withGatewayTimezone(String gatewayTimezone) {
         setGatewayTimezone(gatewayTimezone);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -146,19 +137,15 @@ public class UpdateGatewayInformationRequest extends
         UpdateGatewayInformationRequest other = (UpdateGatewayInformationRequest) obj;
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null)
             return false;
-        if (other.getGatewayARN() != null
-                && other.getGatewayARN().equals(this.getGatewayARN()) == false)
+        if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
         if (other.getGatewayName() == null ^ this.getGatewayName() == null)
             return false;
-        if (other.getGatewayName() != null
-                && other.getGatewayName().equals(this.getGatewayName()) == false)
+        if (other.getGatewayName() != null && other.getGatewayName().equals(this.getGatewayName()) == false)
             return false;
-        if (other.getGatewayTimezone() == null
-                ^ this.getGatewayTimezone() == null)
+        if (other.getGatewayTimezone() == null ^ this.getGatewayTimezone() == null)
             return false;
-        if (other.getGatewayTimezone() != null
-                && other.getGatewayTimezone().equals(this.getGatewayTimezone()) == false)
+        if (other.getGatewayTimezone() != null && other.getGatewayTimezone().equals(this.getGatewayTimezone()) == false)
             return false;
         return true;
     }
@@ -168,15 +155,9 @@ public class UpdateGatewayInformationRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getGatewayName() == null) ? 0 : getGatewayName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getGatewayTimezone() == null) ? 0 : getGatewayTimezone()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getGatewayName() == null) ? 0 : getGatewayName().hashCode());
+        hashCode = prime * hashCode + ((getGatewayTimezone() == null) ? 0 : getGatewayTimezone().hashCode());
         return hashCode;
     }
 

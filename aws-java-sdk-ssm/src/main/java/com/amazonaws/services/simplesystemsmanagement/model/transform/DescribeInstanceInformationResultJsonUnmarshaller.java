@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
@@ -29,12 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DescribeInstanceInformationResult JSON Unmarshaller
  */
-public class DescribeInstanceInformationResultJsonUnmarshaller
-        implements
-        Unmarshaller<DescribeInstanceInformationResult, JsonUnmarshallerContext> {
+public class DescribeInstanceInformationResultJsonUnmarshaller implements Unmarshaller<DescribeInstanceInformationResult, JsonUnmarshallerContext> {
 
-    public DescribeInstanceInformationResult unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public DescribeInstanceInformationResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeInstanceInformationResult describeInstanceInformationResult = new DescribeInstanceInformationResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -52,23 +47,17 @@ public class DescribeInstanceInformationResultJsonUnmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("InstanceInformationList",
-                        targetDepth)) {
+                if (context.testExpression("InstanceInformationList", targetDepth)) {
                     context.nextToken();
-                    describeInstanceInformationResult
-                            .setInstanceInformationList(new ListUnmarshaller<InstanceInformation>(
-                                    InstanceInformationJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    describeInstanceInformationResult.setInstanceInformationList(new ListUnmarshaller<InstanceInformation>(InstanceInformationJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
-                    describeInstanceInformationResult.setNextToken(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    describeInstanceInformationResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

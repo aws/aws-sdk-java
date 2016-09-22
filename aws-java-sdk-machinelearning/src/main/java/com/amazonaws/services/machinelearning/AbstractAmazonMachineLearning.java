@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.machinelearning;
 
@@ -19,9 +17,8 @@ import com.amazonaws.*;
 import com.amazonaws.services.machinelearning.waiters.AmazonMachineLearningWaiters;
 
 /**
- * Abstract implementation of {@code AmazonMachineLearning}. Convenient method
- * forms pass through to the corresponding overload that takes a request object,
- * which throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonMachineLearning}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
 
@@ -44,32 +41,27 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     }
 
     @Override
-    public CreateBatchPredictionResult createBatchPrediction(
-            CreateBatchPredictionRequest request) {
+    public CreateBatchPredictionResult createBatchPrediction(CreateBatchPredictionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateDataSourceFromRDSResult createDataSourceFromRDS(
-            CreateDataSourceFromRDSRequest request) {
+    public CreateDataSourceFromRDSResult createDataSourceFromRDS(CreateDataSourceFromRDSRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateDataSourceFromRedshiftResult createDataSourceFromRedshift(
-            CreateDataSourceFromRedshiftRequest request) {
+    public CreateDataSourceFromRedshiftResult createDataSourceFromRedshift(CreateDataSourceFromRedshiftRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateDataSourceFromS3Result createDataSourceFromS3(
-            CreateDataSourceFromS3Request request) {
+    public CreateDataSourceFromS3Result createDataSourceFromS3(CreateDataSourceFromS3Request request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateEvaluationResult createEvaluation(
-            CreateEvaluationRequest request) {
+    public CreateEvaluationResult createEvaluation(CreateEvaluationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,26 +71,22 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     }
 
     @Override
-    public CreateRealtimeEndpointResult createRealtimeEndpoint(
-            CreateRealtimeEndpointRequest request) {
+    public CreateRealtimeEndpointResult createRealtimeEndpoint(CreateRealtimeEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteBatchPredictionResult deleteBatchPrediction(
-            DeleteBatchPredictionRequest request) {
+    public DeleteBatchPredictionResult deleteBatchPrediction(DeleteBatchPredictionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteDataSourceResult deleteDataSource(
-            DeleteDataSourceRequest request) {
+    public DeleteDataSourceResult deleteDataSource(DeleteDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteEvaluationResult deleteEvaluation(
-            DeleteEvaluationRequest request) {
+    public DeleteEvaluationResult deleteEvaluation(DeleteEvaluationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,8 +96,7 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     }
 
     @Override
-    public DeleteRealtimeEndpointResult deleteRealtimeEndpoint(
-            DeleteRealtimeEndpointRequest request) {
+    public DeleteRealtimeEndpointResult deleteRealtimeEndpoint(DeleteRealtimeEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,8 +106,7 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     }
 
     @Override
-    public DescribeBatchPredictionsResult describeBatchPredictions(
-            DescribeBatchPredictionsRequest request) {
+    public DescribeBatchPredictionsResult describeBatchPredictions(DescribeBatchPredictionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -130,8 +116,7 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     }
 
     @Override
-    public DescribeDataSourcesResult describeDataSources(
-            DescribeDataSourcesRequest request) {
+    public DescribeDataSourcesResult describeDataSources(DescribeDataSourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -141,8 +126,7 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     }
 
     @Override
-    public DescribeEvaluationsResult describeEvaluations(
-            DescribeEvaluationsRequest request) {
+    public DescribeEvaluationsResult describeEvaluations(DescribeEvaluationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -152,8 +136,7 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     }
 
     @Override
-    public DescribeMLModelsResult describeMLModels(
-            DescribeMLModelsRequest request) {
+    public DescribeMLModelsResult describeMLModels(DescribeMLModelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,8 +151,7 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     }
 
     @Override
-    public GetBatchPredictionResult getBatchPrediction(
-            GetBatchPredictionRequest request) {
+    public GetBatchPredictionResult getBatchPrediction(GetBatchPredictionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -194,20 +176,17 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     }
 
     @Override
-    public UpdateBatchPredictionResult updateBatchPrediction(
-            UpdateBatchPredictionRequest request) {
+    public UpdateBatchPredictionResult updateBatchPrediction(UpdateBatchPredictionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateDataSourceResult updateDataSource(
-            UpdateDataSourceRequest request) {
+    public UpdateDataSourceResult updateDataSource(UpdateDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateEvaluationResult updateEvaluation(
-            UpdateEvaluationRequest request) {
+    public UpdateEvaluationResult updateEvaluation(UpdateEvaluationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -222,8 +201,7 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of DescribeAccountAttributes.
  * </p>
  */
-public class DescribeAccountAttributesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -57,15 +53,13 @@ public class DescribeAccountAttributesResult extends
      *        Information about one or more account attributes.
      */
 
-    public void setAccountAttributes(
-            java.util.Collection<AccountAttribute> accountAttributes) {
+    public void setAccountAttributes(java.util.Collection<AccountAttribute> accountAttributes) {
         if (accountAttributes == null) {
             this.accountAttributes = null;
             return;
         }
 
-        this.accountAttributes = new com.amazonaws.internal.SdkInternalList<AccountAttribute>(
-                accountAttributes);
+        this.accountAttributes = new com.amazonaws.internal.SdkInternalList<AccountAttribute>(accountAttributes);
     }
 
     /**
@@ -73,23 +67,19 @@ public class DescribeAccountAttributesResult extends
      * Information about one or more account attributes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAccountAttributes(java.util.Collection)} or
-     * {@link #withAccountAttributes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccountAttributes(java.util.Collection)} or {@link #withAccountAttributes(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param accountAttributes
      *        Information about one or more account attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAccountAttributesResult withAccountAttributes(
-            AccountAttribute... accountAttributes) {
+    public DescribeAccountAttributesResult withAccountAttributes(AccountAttribute... accountAttributes) {
         if (this.accountAttributes == null) {
-            setAccountAttributes(new com.amazonaws.internal.SdkInternalList<AccountAttribute>(
-                    accountAttributes.length));
+            setAccountAttributes(new com.amazonaws.internal.SdkInternalList<AccountAttribute>(accountAttributes.length));
         }
         for (AccountAttribute ele : accountAttributes) {
             this.accountAttributes.add(ele);
@@ -104,19 +94,16 @@ public class DescribeAccountAttributesResult extends
      * 
      * @param accountAttributes
      *        Information about one or more account attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAccountAttributesResult withAccountAttributes(
-            java.util.Collection<AccountAttribute> accountAttributes) {
+    public DescribeAccountAttributesResult withAccountAttributes(java.util.Collection<AccountAttribute> accountAttributes) {
         setAccountAttributes(accountAttributes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -142,12 +129,9 @@ public class DescribeAccountAttributesResult extends
         if (obj instanceof DescribeAccountAttributesResult == false)
             return false;
         DescribeAccountAttributesResult other = (DescribeAccountAttributesResult) obj;
-        if (other.getAccountAttributes() == null
-                ^ this.getAccountAttributes() == null)
+        if (other.getAccountAttributes() == null ^ this.getAccountAttributes() == null)
             return false;
-        if (other.getAccountAttributes() != null
-                && other.getAccountAttributes().equals(
-                        this.getAccountAttributes()) == false)
+        if (other.getAccountAttributes() != null && other.getAccountAttributes().equals(this.getAccountAttributes()) == false)
             return false;
         return true;
     }
@@ -157,10 +141,7 @@ public class DescribeAccountAttributesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAccountAttributes() == null) ? 0
-                        : getAccountAttributes().hashCode());
+        hashCode = prime * hashCode + ((getAccountAttributes() == null) ? 0 : getAccountAttributes().hashCode());
         return hashCode;
     }
 
@@ -169,9 +150,7 @@ public class DescribeAccountAttributesResult extends
         try {
             return (DescribeAccountAttributesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

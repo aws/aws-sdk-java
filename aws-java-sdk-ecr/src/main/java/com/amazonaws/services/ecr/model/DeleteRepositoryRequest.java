@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecr.model;
 
@@ -20,15 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteRepositoryRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository to delete. If you do not specify a registry, the default
-     * registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository to delete. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      */
     private String registryId;
@@ -47,15 +42,13 @@ public class DeleteRepositoryRequest extends
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository to delete. If you do not specify a registry, the default
-     * registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository to delete. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the
-     *        repository to delete. If you do not specify a registry, the
-     *        default registry is assumed.
+     *        The AWS account ID associated with the registry that contains the repository to delete. If you do not
+     *        specify a registry, the default registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -64,14 +57,12 @@ public class DeleteRepositoryRequest extends
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository to delete. If you do not specify a registry, the default
-     * registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository to delete. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry that contains the
-     *         repository to delete. If you do not specify a registry, the
-     *         default registry is assumed.
+     * @return The AWS account ID associated with the registry that contains the repository to delete. If you do not
+     *         specify a registry, the default registry is assumed.
      */
 
     public String getRegistryId() {
@@ -80,17 +71,14 @@ public class DeleteRepositoryRequest extends
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository to delete. If you do not specify a registry, the default
-     * registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository to delete. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the
-     *        repository to delete. If you do not specify a registry, the
-     *        default registry is assumed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS account ID associated with the registry that contains the repository to delete. If you do not
+     *        specify a registry, the default registry is assumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteRepositoryRequest withRegistryId(String registryId) {
@@ -130,8 +118,7 @@ public class DeleteRepositoryRequest extends
      * 
      * @param repositoryName
      *        The name of the repository to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteRepositoryRequest withRepositoryName(String repositoryName) {
@@ -171,8 +158,7 @@ public class DeleteRepositoryRequest extends
      * 
      * @param force
      *        Force the deletion of the repository if it contains images.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteRepositoryRequest withForce(Boolean force) {
@@ -193,8 +179,7 @@ public class DeleteRepositoryRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -226,19 +211,15 @@ public class DeleteRepositoryRequest extends
         DeleteRepositoryRequest other = (DeleteRepositoryRequest) obj;
         if (other.getRegistryId() == null ^ this.getRegistryId() == null)
             return false;
-        if (other.getRegistryId() != null
-                && other.getRegistryId().equals(this.getRegistryId()) == false)
+        if (other.getRegistryId() != null && other.getRegistryId().equals(this.getRegistryId()) == false)
             return false;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
         if (other.getForce() == null ^ this.getForce() == null)
             return false;
-        if (other.getForce() != null
-                && other.getForce().equals(this.getForce()) == false)
+        if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
             return false;
         return true;
     }
@@ -248,14 +229,9 @@ public class DeleteRepositoryRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getForce() == null) ? 0 : getForce().hashCode());
+        hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
@@ -35,26 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * AddInstanceGroupsRequest Marshaller
  */
-public class AddInstanceGroupsRequestMarshaller implements
-        Marshaller<Request<AddInstanceGroupsRequest>, AddInstanceGroupsRequest> {
+public class AddInstanceGroupsRequestMarshaller implements Marshaller<Request<AddInstanceGroupsRequest>, AddInstanceGroupsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public AddInstanceGroupsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public AddInstanceGroupsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<AddInstanceGroupsRequest> marshall(
-            AddInstanceGroupsRequest addInstanceGroupsRequest) {
+    public Request<AddInstanceGroupsRequest> marshall(AddInstanceGroupsRequest addInstanceGroupsRequest) {
 
         if (addInstanceGroupsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AddInstanceGroupsRequest> request = new DefaultRequest<AddInstanceGroupsRequest>(
-                addInstanceGroupsRequest, "AmazonElasticMapReduce");
+        Request<AddInstanceGroupsRequest> request = new DefaultRequest<AddInstanceGroupsRequest>(addInstanceGroupsRequest, "AmazonElasticMapReduce");
         request.addHeader("X-Amz-Target", "ElasticMapReduce.AddInstanceGroups");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -62,42 +55,35 @@ public class AddInstanceGroupsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<InstanceGroupConfig> instanceGroupsList = (com.amazonaws.internal.SdkInternalList<InstanceGroupConfig>) addInstanceGroupsRequest
                     .getInstanceGroups();
-            if (!instanceGroupsList.isEmpty()
-                    || !instanceGroupsList.isAutoConstruct()) {
+            if (!instanceGroupsList.isEmpty() || !instanceGroupsList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("InstanceGroups");
                 jsonGenerator.writeStartArray();
                 for (InstanceGroupConfig instanceGroupsListValue : instanceGroupsList) {
                     if (instanceGroupsListValue != null) {
 
-                        InstanceGroupConfigJsonMarshaller.getInstance()
-                                .marshall(instanceGroupsListValue,
-                                        jsonGenerator);
+                        InstanceGroupConfigJsonMarshaller.getInstance().marshall(instanceGroupsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (addInstanceGroupsRequest.getJobFlowId() != null) {
-                jsonGenerator.writeFieldName("JobFlowId").writeValue(
-                        addInstanceGroupsRequest.getJobFlowId());
+                jsonGenerator.writeFieldName("JobFlowId").writeValue(addInstanceGroupsRequest.getJobFlowId());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

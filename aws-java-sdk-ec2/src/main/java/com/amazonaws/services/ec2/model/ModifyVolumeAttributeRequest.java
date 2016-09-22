@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.ModifyVolumeAttributeRequestMa
  * Contains the parameters for ModifyVolumeAttribute.
  * </p>
  */
-public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<ModifyVolumeAttributeRequest> {
 
     /**
@@ -73,8 +70,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
      * 
      * @param volumeId
      *        The ID of the volume.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyVolumeAttributeRequest withVolumeId(String volumeId) {
@@ -88,8 +84,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param autoEnableIO
-     *        Indicates whether the volume should be auto-enabled for I/O
-     *        operations.
+     *        Indicates whether the volume should be auto-enabled for I/O operations.
      */
 
     public void setAutoEnableIO(Boolean autoEnableIO) {
@@ -101,8 +96,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
      * Indicates whether the volume should be auto-enabled for I/O operations.
      * </p>
      * 
-     * @return Indicates whether the volume should be auto-enabled for I/O
-     *         operations.
+     * @return Indicates whether the volume should be auto-enabled for I/O operations.
      */
 
     public Boolean getAutoEnableIO() {
@@ -115,10 +109,8 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param autoEnableIO
-     *        Indicates whether the volume should be auto-enabled for I/O
-     *        operations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether the volume should be auto-enabled for I/O operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyVolumeAttributeRequest withAutoEnableIO(Boolean autoEnableIO) {
@@ -131,8 +123,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
      * Indicates whether the volume should be auto-enabled for I/O operations.
      * </p>
      * 
-     * @return Indicates whether the volume should be auto-enabled for I/O
-     *         operations.
+     * @return Indicates whether the volume should be auto-enabled for I/O operations.
      */
 
     public Boolean isAutoEnableIO() {
@@ -140,21 +131,18 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<ModifyVolumeAttributeRequest> getDryRunRequest() {
-        Request<ModifyVolumeAttributeRequest> request = new ModifyVolumeAttributeRequestMarshaller()
-                .marshall(this);
+        Request<ModifyVolumeAttributeRequest> request = new ModifyVolumeAttributeRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -184,13 +172,11 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
         ModifyVolumeAttributeRequest other = (ModifyVolumeAttributeRequest) obj;
         if (other.getVolumeId() == null ^ this.getVolumeId() == null)
             return false;
-        if (other.getVolumeId() != null
-                && other.getVolumeId().equals(this.getVolumeId()) == false)
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
             return false;
         if (other.getAutoEnableIO() == null ^ this.getAutoEnableIO() == null)
             return false;
-        if (other.getAutoEnableIO() != null
-                && other.getAutoEnableIO().equals(this.getAutoEnableIO()) == false)
+        if (other.getAutoEnableIO() != null && other.getAutoEnableIO().equals(this.getAutoEnableIO()) == false)
             return false;
         return true;
     }
@@ -200,12 +186,8 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoEnableIO() == null) ? 0 : getAutoEnableIO()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
+        hashCode = prime * hashCode + ((getAutoEnableIO() == null) ? 0 : getAutoEnableIO().hashCode());
         return hashCode;
     }
 

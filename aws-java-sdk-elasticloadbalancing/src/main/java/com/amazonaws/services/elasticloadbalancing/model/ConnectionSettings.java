@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 
@@ -25,24 +23,21 @@ public class ConnectionSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time, in seconds, that the connection is allowed to be idle (no data
-     * has been sent over the connection) before it is closed by the load
-     * balancer.
+     * The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection)
+     * before it is closed by the load balancer.
      * </p>
      */
     private Integer idleTimeout;
 
     /**
      * <p>
-     * The time, in seconds, that the connection is allowed to be idle (no data
-     * has been sent over the connection) before it is closed by the load
-     * balancer.
+     * The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection)
+     * before it is closed by the load balancer.
      * </p>
      * 
      * @param idleTimeout
-     *        The time, in seconds, that the connection is allowed to be idle
-     *        (no data has been sent over the connection) before it is closed by
-     *        the load balancer.
+     *        The time, in seconds, that the connection is allowed to be idle (no data has been sent over the
+     *        connection) before it is closed by the load balancer.
      */
 
     public void setIdleTimeout(Integer idleTimeout) {
@@ -51,14 +46,12 @@ public class ConnectionSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time, in seconds, that the connection is allowed to be idle (no data
-     * has been sent over the connection) before it is closed by the load
-     * balancer.
+     * The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection)
+     * before it is closed by the load balancer.
      * </p>
      * 
-     * @return The time, in seconds, that the connection is allowed to be idle
-     *         (no data has been sent over the connection) before it is closed
-     *         by the load balancer.
+     * @return The time, in seconds, that the connection is allowed to be idle (no data has been sent over the
+     *         connection) before it is closed by the load balancer.
      */
 
     public Integer getIdleTimeout() {
@@ -67,17 +60,14 @@ public class ConnectionSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time, in seconds, that the connection is allowed to be idle (no data
-     * has been sent over the connection) before it is closed by the load
-     * balancer.
+     * The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection)
+     * before it is closed by the load balancer.
      * </p>
      * 
      * @param idleTimeout
-     *        The time, in seconds, that the connection is allowed to be idle
-     *        (no data has been sent over the connection) before it is closed by
-     *        the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time, in seconds, that the connection is allowed to be idle (no data has been sent over the
+     *        connection) before it is closed by the load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConnectionSettings withIdleTimeout(Integer idleTimeout) {
@@ -86,8 +76,7 @@ public class ConnectionSettings implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -115,8 +104,7 @@ public class ConnectionSettings implements Serializable, Cloneable {
         ConnectionSettings other = (ConnectionSettings) obj;
         if (other.getIdleTimeout() == null ^ this.getIdleTimeout() == null)
             return false;
-        if (other.getIdleTimeout() != null
-                && other.getIdleTimeout().equals(this.getIdleTimeout()) == false)
+        if (other.getIdleTimeout() != null && other.getIdleTimeout().equals(this.getIdleTimeout()) == false)
             return false;
         return true;
     }
@@ -126,9 +114,7 @@ public class ConnectionSettings implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getIdleTimeout() == null) ? 0 : getIdleTimeout().hashCode());
+        hashCode = prime * hashCode + ((getIdleTimeout() == null) ? 0 : getIdleTimeout().hashCode());
         return hashCode;
     }
 
@@ -137,9 +123,7 @@ public class ConnectionSettings implements Serializable, Cloneable {
         try {
             return (ConnectionSettings) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

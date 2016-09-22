@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -20,27 +18,22 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetTelemetryMetadataRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class GetTelemetryMetadataRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN that specifies the assessment run that has the telemetry data
-     * that you want to obtain.
+     * The ARN that specifies the assessment run that has the telemetry data that you want to obtain.
      * </p>
      */
     private String assessmentRunArn;
 
     /**
      * <p>
-     * The ARN that specifies the assessment run that has the telemetry data
-     * that you want to obtain.
+     * The ARN that specifies the assessment run that has the telemetry data that you want to obtain.
      * </p>
      * 
      * @param assessmentRunArn
-     *        The ARN that specifies the assessment run that has the telemetry
-     *        data that you want to obtain.
+     *        The ARN that specifies the assessment run that has the telemetry data that you want to obtain.
      */
 
     public void setAssessmentRunArn(String assessmentRunArn) {
@@ -49,12 +42,10 @@ public class GetTelemetryMetadataRequest extends
 
     /**
      * <p>
-     * The ARN that specifies the assessment run that has the telemetry data
-     * that you want to obtain.
+     * The ARN that specifies the assessment run that has the telemetry data that you want to obtain.
      * </p>
      * 
-     * @return The ARN that specifies the assessment run that has the telemetry
-     *         data that you want to obtain.
+     * @return The ARN that specifies the assessment run that has the telemetry data that you want to obtain.
      */
 
     public String getAssessmentRunArn() {
@@ -63,26 +54,21 @@ public class GetTelemetryMetadataRequest extends
 
     /**
      * <p>
-     * The ARN that specifies the assessment run that has the telemetry data
-     * that you want to obtain.
+     * The ARN that specifies the assessment run that has the telemetry data that you want to obtain.
      * </p>
      * 
      * @param assessmentRunArn
-     *        The ARN that specifies the assessment run that has the telemetry
-     *        data that you want to obtain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN that specifies the assessment run that has the telemetry data that you want to obtain.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTelemetryMetadataRequest withAssessmentRunArn(
-            String assessmentRunArn) {
+    public GetTelemetryMetadataRequest withAssessmentRunArn(String assessmentRunArn) {
         setAssessmentRunArn(assessmentRunArn);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -108,12 +94,9 @@ public class GetTelemetryMetadataRequest extends
         if (obj instanceof GetTelemetryMetadataRequest == false)
             return false;
         GetTelemetryMetadataRequest other = (GetTelemetryMetadataRequest) obj;
-        if (other.getAssessmentRunArn() == null
-                ^ this.getAssessmentRunArn() == null)
+        if (other.getAssessmentRunArn() == null ^ this.getAssessmentRunArn() == null)
             return false;
-        if (other.getAssessmentRunArn() != null
-                && other.getAssessmentRunArn().equals(
-                        this.getAssessmentRunArn()) == false)
+        if (other.getAssessmentRunArn() != null && other.getAssessmentRunArn().equals(this.getAssessmentRunArn()) == false)
             return false;
         return true;
     }
@@ -123,10 +106,7 @@ public class GetTelemetryMetadataRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAssessmentRunArn() == null) ? 0 : getAssessmentRunArn()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAssessmentRunArn() == null) ? 0 : getAssessmentRunArn().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.workspaces.model;
 
@@ -31,8 +29,7 @@ public class Workspace implements Serializable, Cloneable {
     private String workspaceId;
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory that the WorkSpace
-     * belongs to.
+     * The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
      * </p>
      */
     private String directoryId;
@@ -68,8 +65,7 @@ public class Workspace implements Serializable, Cloneable {
     private String subnetId;
     /**
      * <p>
-     * If the WorkSpace could not be created, this contains a textual error
-     * message that describes the failure.
+     * If the WorkSpace could not be created, this contains a textual error message that describes the failure.
      * </p>
      */
     private String errorMessage;
@@ -93,15 +89,13 @@ public class Workspace implements Serializable, Cloneable {
     private String volumeEncryptionKey;
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      * </p>
      */
     private Boolean userVolumeEncryptionEnabled;
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      * </p>
      */
     private Boolean rootVolumeEncryptionEnabled;
@@ -140,8 +134,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @param workspaceId
      *        The identifier of the WorkSpace.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Workspace withWorkspaceId(String workspaceId) {
@@ -151,13 +144,11 @@ public class Workspace implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory that the WorkSpace
-     * belongs to.
+     * The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the AWS Directory Service directory that the
-     *        WorkSpace belongs to.
+     *        The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -166,12 +157,10 @@ public class Workspace implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory that the WorkSpace
-     * belongs to.
+     * The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
      * </p>
      * 
-     * @return The identifier of the AWS Directory Service directory that the
-     *         WorkSpace belongs to.
+     * @return The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
      */
 
     public String getDirectoryId() {
@@ -180,15 +169,12 @@ public class Workspace implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory that the WorkSpace
-     * belongs to.
+     * The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the AWS Directory Service directory that the
-     *        WorkSpace belongs to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Workspace withDirectoryId(String directoryId) {
@@ -228,8 +214,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @param userName
      *        The user that the WorkSpace is assigned to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Workspace withUserName(String userName) {
@@ -269,8 +254,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @param ipAddress
      *        The IP address of the WorkSpace.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Workspace withIpAddress(String ipAddress) {
@@ -312,8 +296,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @param state
      *        The operational state of the WorkSpace.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceState
      */
 
@@ -343,8 +326,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @param state
      *        The operational state of the WorkSpace.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceState
      */
 
@@ -385,8 +367,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @param bundleId
      *        The identifier of the bundle that the WorkSpace was created from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Workspace withBundleId(String bundleId) {
@@ -426,8 +407,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @param subnetId
      *        The identifier of the subnet that the WorkSpace is in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Workspace withSubnetId(String subnetId) {
@@ -437,13 +417,11 @@ public class Workspace implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, this contains a textual error
-     * message that describes the failure.
+     * If the WorkSpace could not be created, this contains a textual error message that describes the failure.
      * </p>
      * 
      * @param errorMessage
-     *        If the WorkSpace could not be created, this contains a textual
-     *        error message that describes the failure.
+     *        If the WorkSpace could not be created, this contains a textual error message that describes the failure.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -452,12 +430,10 @@ public class Workspace implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, this contains a textual error
-     * message that describes the failure.
+     * If the WorkSpace could not be created, this contains a textual error message that describes the failure.
      * </p>
      * 
-     * @return If the WorkSpace could not be created, this contains a textual
-     *         error message that describes the failure.
+     * @return If the WorkSpace could not be created, this contains a textual error message that describes the failure.
      */
 
     public String getErrorMessage() {
@@ -466,15 +442,12 @@ public class Workspace implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, this contains a textual error
-     * message that describes the failure.
+     * If the WorkSpace could not be created, this contains a textual error message that describes the failure.
      * </p>
      * 
      * @param errorMessage
-     *        If the WorkSpace could not be created, this contains a textual
-     *        error message that describes the failure.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the WorkSpace could not be created, this contains a textual error message that describes the failure.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Workspace withErrorMessage(String errorMessage) {
@@ -488,8 +461,7 @@ public class Workspace implements Serializable, Cloneable {
      * </p>
      * 
      * @param errorCode
-     *        If the WorkSpace could not be created, this contains the error
-     *        code.
+     *        If the WorkSpace could not be created, this contains the error code.
      */
 
     public void setErrorCode(String errorCode) {
@@ -501,8 +473,7 @@ public class Workspace implements Serializable, Cloneable {
      * If the WorkSpace could not be created, this contains the error code.
      * </p>
      * 
-     * @return If the WorkSpace could not be created, this contains the error
-     *         code.
+     * @return If the WorkSpace could not be created, this contains the error code.
      */
 
     public String getErrorCode() {
@@ -515,10 +486,8 @@ public class Workspace implements Serializable, Cloneable {
      * </p>
      * 
      * @param errorCode
-     *        If the WorkSpace could not be created, this contains the error
-     *        code.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the WorkSpace could not be created, this contains the error code.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Workspace withErrorCode(String errorCode) {
@@ -558,8 +527,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @param computerName
      *        The name of the WorkSpace as seen by the operating system.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Workspace withComputerName(String computerName) {
@@ -599,8 +567,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @param volumeEncryptionKey
      *        The KMS key used to encrypt data stored on your WorkSpace.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Workspace withVolumeEncryptionKey(String volumeEncryptionKey) {
@@ -610,28 +577,23 @@ public class Workspace implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      * </p>
      * 
      * @param userVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the user volume, or D: drive,
-     *        is encrypted.
+     *        Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      */
 
-    public void setUserVolumeEncryptionEnabled(
-            Boolean userVolumeEncryptionEnabled) {
+    public void setUserVolumeEncryptionEnabled(Boolean userVolumeEncryptionEnabled) {
         this.userVolumeEncryptionEnabled = userVolumeEncryptionEnabled;
     }
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the user volume, or D:
-     *         drive, is encrypted.
+     * @return Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      */
 
     public Boolean getUserVolumeEncryptionEnabled() {
@@ -640,31 +602,25 @@ public class Workspace implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      * </p>
      * 
      * @param userVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the user volume, or D: drive,
-     *        is encrypted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Workspace withUserVolumeEncryptionEnabled(
-            Boolean userVolumeEncryptionEnabled) {
+    public Workspace withUserVolumeEncryptionEnabled(Boolean userVolumeEncryptionEnabled) {
         setUserVolumeEncryptionEnabled(userVolumeEncryptionEnabled);
         return this;
     }
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the user volume, or D:
-     *         drive, is encrypted.
+     * @return Specifies whether the data stored on the user volume, or D: drive, is encrypted.
      */
 
     public Boolean isUserVolumeEncryptionEnabled() {
@@ -673,28 +629,23 @@ public class Workspace implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      * </p>
      * 
      * @param rootVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the root volume, or C: drive,
-     *        is encrypted.
+     *        Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      */
 
-    public void setRootVolumeEncryptionEnabled(
-            Boolean rootVolumeEncryptionEnabled) {
+    public void setRootVolumeEncryptionEnabled(Boolean rootVolumeEncryptionEnabled) {
         this.rootVolumeEncryptionEnabled = rootVolumeEncryptionEnabled;
     }
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the root volume, or C:
-     *         drive, is encrypted.
+     * @return Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      */
 
     public Boolean getRootVolumeEncryptionEnabled() {
@@ -703,31 +654,25 @@ public class Workspace implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      * </p>
      * 
      * @param rootVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the root volume, or C: drive,
-     *        is encrypted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Workspace withRootVolumeEncryptionEnabled(
-            Boolean rootVolumeEncryptionEnabled) {
+    public Workspace withRootVolumeEncryptionEnabled(Boolean rootVolumeEncryptionEnabled) {
         setRootVolumeEncryptionEnabled(rootVolumeEncryptionEnabled);
         return this;
     }
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is
-     * encrypted.
+     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the root volume, or C:
-     *         drive, is encrypted.
+     * @return Specifies whether the data stored on the root volume, or C: drive, is encrypted.
      */
 
     public Boolean isRootVolumeEncryptionEnabled() {
@@ -752,19 +697,16 @@ public class Workspace implements Serializable, Cloneable {
 
     /**
      * @param workspaceProperties
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Workspace withWorkspaceProperties(
-            WorkspaceProperties workspaceProperties) {
+    public Workspace withWorkspaceProperties(WorkspaceProperties workspaceProperties) {
         setWorkspaceProperties(workspaceProperties);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -797,11 +739,9 @@ public class Workspace implements Serializable, Cloneable {
         if (getVolumeEncryptionKey() != null)
             sb.append("VolumeEncryptionKey: " + getVolumeEncryptionKey() + ",");
         if (getUserVolumeEncryptionEnabled() != null)
-            sb.append("UserVolumeEncryptionEnabled: "
-                    + getUserVolumeEncryptionEnabled() + ",");
+            sb.append("UserVolumeEncryptionEnabled: " + getUserVolumeEncryptionEnabled() + ",");
         if (getRootVolumeEncryptionEnabled() != null)
-            sb.append("RootVolumeEncryptionEnabled: "
-                    + getRootVolumeEncryptionEnabled() + ",");
+            sb.append("RootVolumeEncryptionEnabled: " + getRootVolumeEncryptionEnabled() + ",");
         if (getWorkspaceProperties() != null)
             sb.append("WorkspaceProperties: " + getWorkspaceProperties());
         sb.append("}");
@@ -820,81 +760,59 @@ public class Workspace implements Serializable, Cloneable {
         Workspace other = (Workspace) obj;
         if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
-        if (other.getWorkspaceId() != null
-                && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         if (other.getDirectoryId() == null ^ this.getDirectoryId() == null)
             return false;
-        if (other.getDirectoryId() != null
-                && other.getDirectoryId().equals(this.getDirectoryId()) == false)
+        if (other.getDirectoryId() != null && other.getDirectoryId().equals(this.getDirectoryId()) == false)
             return false;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
-        if (other.getUserName() != null
-                && other.getUserName().equals(this.getUserName()) == false)
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
         if (other.getIpAddress() == null ^ this.getIpAddress() == null)
             return false;
-        if (other.getIpAddress() != null
-                && other.getIpAddress().equals(this.getIpAddress()) == false)
+        if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getBundleId() == null ^ this.getBundleId() == null)
             return false;
-        if (other.getBundleId() != null
-                && other.getBundleId().equals(this.getBundleId()) == false)
+        if (other.getBundleId() != null && other.getBundleId().equals(this.getBundleId()) == false)
             return false;
         if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
-        if (other.getSubnetId() != null
-                && other.getSubnetId().equals(this.getSubnetId()) == false)
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
         if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
             return false;
-        if (other.getErrorMessage() != null
-                && other.getErrorMessage().equals(this.getErrorMessage()) == false)
+        if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
         if (other.getErrorCode() == null ^ this.getErrorCode() == null)
             return false;
-        if (other.getErrorCode() != null
-                && other.getErrorCode().equals(this.getErrorCode()) == false)
+        if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
             return false;
         if (other.getComputerName() == null ^ this.getComputerName() == null)
             return false;
-        if (other.getComputerName() != null
-                && other.getComputerName().equals(this.getComputerName()) == false)
+        if (other.getComputerName() != null && other.getComputerName().equals(this.getComputerName()) == false)
             return false;
-        if (other.getVolumeEncryptionKey() == null
-                ^ this.getVolumeEncryptionKey() == null)
+        if (other.getVolumeEncryptionKey() == null ^ this.getVolumeEncryptionKey() == null)
             return false;
-        if (other.getVolumeEncryptionKey() != null
-                && other.getVolumeEncryptionKey().equals(
-                        this.getVolumeEncryptionKey()) == false)
+        if (other.getVolumeEncryptionKey() != null && other.getVolumeEncryptionKey().equals(this.getVolumeEncryptionKey()) == false)
             return false;
-        if (other.getUserVolumeEncryptionEnabled() == null
-                ^ this.getUserVolumeEncryptionEnabled() == null)
+        if (other.getUserVolumeEncryptionEnabled() == null ^ this.getUserVolumeEncryptionEnabled() == null)
             return false;
-        if (other.getUserVolumeEncryptionEnabled() != null
-                && other.getUserVolumeEncryptionEnabled().equals(
-                        this.getUserVolumeEncryptionEnabled()) == false)
+        if (other.getUserVolumeEncryptionEnabled() != null && other.getUserVolumeEncryptionEnabled().equals(this.getUserVolumeEncryptionEnabled()) == false)
             return false;
-        if (other.getRootVolumeEncryptionEnabled() == null
-                ^ this.getRootVolumeEncryptionEnabled() == null)
+        if (other.getRootVolumeEncryptionEnabled() == null ^ this.getRootVolumeEncryptionEnabled() == null)
             return false;
-        if (other.getRootVolumeEncryptionEnabled() != null
-                && other.getRootVolumeEncryptionEnabled().equals(
-                        this.getRootVolumeEncryptionEnabled()) == false)
+        if (other.getRootVolumeEncryptionEnabled() != null && other.getRootVolumeEncryptionEnabled().equals(this.getRootVolumeEncryptionEnabled()) == false)
             return false;
-        if (other.getWorkspaceProperties() == null
-                ^ this.getWorkspaceProperties() == null)
+        if (other.getWorkspaceProperties() == null ^ this.getWorkspaceProperties() == null)
             return false;
-        if (other.getWorkspaceProperties() != null
-                && other.getWorkspaceProperties().equals(
-                        this.getWorkspaceProperties()) == false)
+        if (other.getWorkspaceProperties() != null && other.getWorkspaceProperties().equals(this.getWorkspaceProperties()) == false)
             return false;
         return true;
     }
@@ -904,48 +822,20 @@ public class Workspace implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        hashCode = prime * hashCode
-                + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime * hashCode
-                + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getErrorMessage() == null) ? 0 : getErrorMessage()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getComputerName() == null) ? 0 : getComputerName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeEncryptionKey() == null) ? 0
-                        : getVolumeEncryptionKey().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUserVolumeEncryptionEnabled() == null) ? 0
-                        : getUserVolumeEncryptionEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRootVolumeEncryptionEnabled() == null) ? 0
-                        : getRootVolumeEncryptionEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getWorkspaceProperties() == null) ? 0
-                        : getWorkspaceProperties().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
+        hashCode = prime * hashCode + ((getComputerName() == null) ? 0 : getComputerName().hashCode());
+        hashCode = prime * hashCode + ((getVolumeEncryptionKey() == null) ? 0 : getVolumeEncryptionKey().hashCode());
+        hashCode = prime * hashCode + ((getUserVolumeEncryptionEnabled() == null) ? 0 : getUserVolumeEncryptionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getRootVolumeEncryptionEnabled() == null) ? 0 : getRootVolumeEncryptionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaceProperties() == null) ? 0 : getWorkspaceProperties().hashCode());
         return hashCode;
     }
 
@@ -954,9 +844,7 @@ public class Workspace implements Serializable, Cloneable {
         try {
             return (Workspace) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

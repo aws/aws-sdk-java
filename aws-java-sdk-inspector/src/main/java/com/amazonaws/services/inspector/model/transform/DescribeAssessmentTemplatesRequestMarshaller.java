@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model.transform;
 
@@ -35,49 +33,41 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeAssessmentTemplatesRequest Marshaller
  */
-public class DescribeAssessmentTemplatesRequestMarshaller
-        implements
+public class DescribeAssessmentTemplatesRequestMarshaller implements
         Marshaller<Request<DescribeAssessmentTemplatesRequest>, DescribeAssessmentTemplatesRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeAssessmentTemplatesRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeAssessmentTemplatesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeAssessmentTemplatesRequest> marshall(
-            DescribeAssessmentTemplatesRequest describeAssessmentTemplatesRequest) {
+    public Request<DescribeAssessmentTemplatesRequest> marshall(DescribeAssessmentTemplatesRequest describeAssessmentTemplatesRequest) {
 
         if (describeAssessmentTemplatesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeAssessmentTemplatesRequest> request = new DefaultRequest<DescribeAssessmentTemplatesRequest>(
-                describeAssessmentTemplatesRequest, "AmazonInspector");
-        request.addHeader("X-Amz-Target",
-                "InspectorService.DescribeAssessmentTemplates");
+        Request<DescribeAssessmentTemplatesRequest> request = new DefaultRequest<DescribeAssessmentTemplatesRequest>(describeAssessmentTemplatesRequest,
+                "AmazonInspector");
+        request.addHeader("X-Amz-Target", "InspectorService.DescribeAssessmentTemplates");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
-            java.util.List<String> assessmentTemplateArnsList = describeAssessmentTemplatesRequest
-                    .getAssessmentTemplateArns();
+            java.util.List<String> assessmentTemplateArnsList = describeAssessmentTemplatesRequest.getAssessmentTemplateArns();
             if (assessmentTemplateArnsList != null) {
                 jsonGenerator.writeFieldName("assessmentTemplateArns");
                 jsonGenerator.writeStartArray();
                 for (String assessmentTemplateArnsListValue : assessmentTemplateArnsList) {
                     if (assessmentTemplateArnsListValue != null) {
-                        jsonGenerator
-                                .writeValue(assessmentTemplateArnsListValue);
+                        jsonGenerator.writeValue(assessmentTemplateArnsListValue);
                     }
                 }
                 jsonGenerator.writeEndArray();
@@ -87,12 +77,10 @@ public class DescribeAssessmentTemplatesRequestMarshaller
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

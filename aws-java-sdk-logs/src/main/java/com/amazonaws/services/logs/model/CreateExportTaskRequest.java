@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateExportTaskRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -38,24 +34,22 @@ public class CreateExportTaskRequest extends
     private String logGroupName;
     /**
      * <p>
-     * Will only export log streams that match the provided logStreamNamePrefix.
-     * If you don't specify a value, no prefix filter is applied.
+     * Will only export log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix
+     * filter is applied.
      * </p>
      */
     private String logStreamNamePrefix;
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the start time of the range for the request.
-     * Events with a timestamp prior to this time will not be exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start
+     * time of the range for the request. Events with a timestamp prior to this time will not be exported.
      * </p>
      */
     private Long from;
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the end time of the range for the request.
-     * Events with a timestamp later than this time will not be exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time
+     * of the range for the request. Events with a timestamp later than this time will not be exported.
      * </p>
      */
     private Long to;
@@ -70,8 +64,8 @@ public class CreateExportTaskRequest extends
     private String destination;
     /**
      * <p>
-     * Prefix that will be used as the start of Amazon S3 key for every object
-     * exported. If not specified, this defaults to 'exportedlogs'.
+     * Prefix that will be used as the start of Amazon S3 key for every object exported. If not specified, this defaults
+     * to 'exportedlogs'.
      * </p>
      */
     private String destinationPrefix;
@@ -108,8 +102,7 @@ public class CreateExportTaskRequest extends
      * 
      * @param taskName
      *        The name of the export task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateExportTaskRequest withTaskName(String taskName) {
@@ -149,8 +142,7 @@ public class CreateExportTaskRequest extends
      * 
      * @param logGroupName
      *        The name of the log group to export.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateExportTaskRequest withLogGroupName(String logGroupName) {
@@ -160,14 +152,13 @@ public class CreateExportTaskRequest extends
 
     /**
      * <p>
-     * Will only export log streams that match the provided logStreamNamePrefix.
-     * If you don't specify a value, no prefix filter is applied.
+     * Will only export log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix
+     * filter is applied.
      * </p>
      * 
      * @param logStreamNamePrefix
-     *        Will only export log streams that match the provided
-     *        logStreamNamePrefix. If you don't specify a value, no prefix
-     *        filter is applied.
+     *        Will only export log streams that match the provided logStreamNamePrefix. If you don't specify a value, no
+     *        prefix filter is applied.
      */
 
     public void setLogStreamNamePrefix(String logStreamNamePrefix) {
@@ -176,13 +167,12 @@ public class CreateExportTaskRequest extends
 
     /**
      * <p>
-     * Will only export log streams that match the provided logStreamNamePrefix.
-     * If you don't specify a value, no prefix filter is applied.
+     * Will only export log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix
+     * filter is applied.
      * </p>
      * 
-     * @return Will only export log streams that match the provided
-     *         logStreamNamePrefix. If you don't specify a value, no prefix
-     *         filter is applied.
+     * @return Will only export log streams that match the provided logStreamNamePrefix. If you don't specify a value,
+     *         no prefix filter is applied.
      */
 
     public String getLogStreamNamePrefix() {
@@ -191,36 +181,30 @@ public class CreateExportTaskRequest extends
 
     /**
      * <p>
-     * Will only export log streams that match the provided logStreamNamePrefix.
-     * If you don't specify a value, no prefix filter is applied.
+     * Will only export log streams that match the provided logStreamNamePrefix. If you don't specify a value, no prefix
+     * filter is applied.
      * </p>
      * 
      * @param logStreamNamePrefix
-     *        Will only export log streams that match the provided
-     *        logStreamNamePrefix. If you don't specify a value, no prefix
-     *        filter is applied.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Will only export log streams that match the provided logStreamNamePrefix. If you don't specify a value, no
+     *        prefix filter is applied.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateExportTaskRequest withLogStreamNamePrefix(
-            String logStreamNamePrefix) {
+    public CreateExportTaskRequest withLogStreamNamePrefix(String logStreamNamePrefix) {
         setLogStreamNamePrefix(logStreamNamePrefix);
         return this;
     }
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the start time of the range for the request.
-     * Events with a timestamp prior to this time will not be exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start
+     * time of the range for the request. Events with a timestamp prior to this time will not be exported.
      * </p>
      * 
      * @param from
-     *        A point in time expressed as the number of milliseconds since Jan
-     *        1, 1970 00:00:00 UTC. It indicates the start time of the range for
-     *        the request. Events with a timestamp prior to this time will not
-     *        be exported.
+     *        A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the
+     *        start time of the range for the request. Events with a timestamp prior to this time will not be exported.
      */
 
     public void setFrom(Long from) {
@@ -229,15 +213,12 @@ public class CreateExportTaskRequest extends
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the start time of the range for the request.
-     * Events with a timestamp prior to this time will not be exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start
+     * time of the range for the request. Events with a timestamp prior to this time will not be exported.
      * </p>
      * 
-     * @return A point in time expressed as the number of milliseconds since Jan
-     *         1, 1970 00:00:00 UTC. It indicates the start time of the range
-     *         for the request. Events with a timestamp prior to this time will
-     *         not be exported.
+     * @return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the
+     *         start time of the range for the request. Events with a timestamp prior to this time will not be exported.
      */
 
     public Long getFrom() {
@@ -246,18 +227,14 @@ public class CreateExportTaskRequest extends
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the start time of the range for the request.
-     * Events with a timestamp prior to this time will not be exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the start
+     * time of the range for the request. Events with a timestamp prior to this time will not be exported.
      * </p>
      * 
      * @param from
-     *        A point in time expressed as the number of milliseconds since Jan
-     *        1, 1970 00:00:00 UTC. It indicates the start time of the range for
-     *        the request. Events with a timestamp prior to this time will not
-     *        be exported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the
+     *        start time of the range for the request. Events with a timestamp prior to this time will not be exported.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateExportTaskRequest withFrom(Long from) {
@@ -267,16 +244,13 @@ public class CreateExportTaskRequest extends
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the end time of the range for the request.
-     * Events with a timestamp later than this time will not be exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time
+     * of the range for the request. Events with a timestamp later than this time will not be exported.
      * </p>
      * 
      * @param to
-     *        A point in time expressed as the number of milliseconds since Jan
-     *        1, 1970 00:00:00 UTC. It indicates the end time of the range for
-     *        the request. Events with a timestamp later than this time will not
-     *        be exported.
+     *        A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the
+     *        end time of the range for the request. Events with a timestamp later than this time will not be exported.
      */
 
     public void setTo(Long to) {
@@ -285,15 +259,12 @@ public class CreateExportTaskRequest extends
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the end time of the range for the request.
-     * Events with a timestamp later than this time will not be exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time
+     * of the range for the request. Events with a timestamp later than this time will not be exported.
      * </p>
      * 
-     * @return A point in time expressed as the number of milliseconds since Jan
-     *         1, 1970 00:00:00 UTC. It indicates the end time of the range for
-     *         the request. Events with a timestamp later than this time will
-     *         not be exported.
+     * @return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the
+     *         end time of the range for the request. Events with a timestamp later than this time will not be exported.
      */
 
     public Long getTo() {
@@ -302,18 +273,14 @@ public class CreateExportTaskRequest extends
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the end time of the range for the request.
-     * Events with a timestamp later than this time will not be exported.
+     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the end time
+     * of the range for the request. Events with a timestamp later than this time will not be exported.
      * </p>
      * 
      * @param to
-     *        A point in time expressed as the number of milliseconds since Jan
-     *        1, 1970 00:00:00 UTC. It indicates the end time of the range for
-     *        the request. Events with a timestamp later than this time will not
-     *        be exported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. It indicates the
+     *        end time of the range for the request. Events with a timestamp later than this time will not be exported.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateExportTaskRequest withTo(Long to) {
@@ -330,8 +297,7 @@ public class CreateExportTaskRequest extends
      * </p>
      * 
      * @param destination
-     *        Name of Amazon S3 bucket to which the log data will be
-     *        exported.</p>
+     *        Name of Amazon S3 bucket to which the log data will be exported.</p>
      *        <p>
      *        <b>Note:</b> Only buckets in the same AWS region are supported.
      */
@@ -348,8 +314,7 @@ public class CreateExportTaskRequest extends
      * <b>Note:</b> Only buckets in the same AWS region are supported.
      * </p>
      * 
-     * @return Name of Amazon S3 bucket to which the log data will be
-     *         exported.</p>
+     * @return Name of Amazon S3 bucket to which the log data will be exported.</p>
      *         <p>
      *         <b>Note:</b> Only buckets in the same AWS region are supported.
      */
@@ -367,12 +332,10 @@ public class CreateExportTaskRequest extends
      * </p>
      * 
      * @param destination
-     *        Name of Amazon S3 bucket to which the log data will be
-     *        exported.</p>
+     *        Name of Amazon S3 bucket to which the log data will be exported.</p>
      *        <p>
      *        <b>Note:</b> Only buckets in the same AWS region are supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateExportTaskRequest withDestination(String destination) {
@@ -382,14 +345,13 @@ public class CreateExportTaskRequest extends
 
     /**
      * <p>
-     * Prefix that will be used as the start of Amazon S3 key for every object
-     * exported. If not specified, this defaults to 'exportedlogs'.
+     * Prefix that will be used as the start of Amazon S3 key for every object exported. If not specified, this defaults
+     * to 'exportedlogs'.
      * </p>
      * 
      * @param destinationPrefix
-     *        Prefix that will be used as the start of Amazon S3 key for every
-     *        object exported. If not specified, this defaults to
-     *        'exportedlogs'.
+     *        Prefix that will be used as the start of Amazon S3 key for every object exported. If not specified, this
+     *        defaults to 'exportedlogs'.
      */
 
     public void setDestinationPrefix(String destinationPrefix) {
@@ -398,13 +360,12 @@ public class CreateExportTaskRequest extends
 
     /**
      * <p>
-     * Prefix that will be used as the start of Amazon S3 key for every object
-     * exported. If not specified, this defaults to 'exportedlogs'.
+     * Prefix that will be used as the start of Amazon S3 key for every object exported. If not specified, this defaults
+     * to 'exportedlogs'.
      * </p>
      * 
-     * @return Prefix that will be used as the start of Amazon S3 key for every
-     *         object exported. If not specified, this defaults to
-     *         'exportedlogs'.
+     * @return Prefix that will be used as the start of Amazon S3 key for every object exported. If not specified, this
+     *         defaults to 'exportedlogs'.
      */
 
     public String getDestinationPrefix() {
@@ -413,27 +374,23 @@ public class CreateExportTaskRequest extends
 
     /**
      * <p>
-     * Prefix that will be used as the start of Amazon S3 key for every object
-     * exported. If not specified, this defaults to 'exportedlogs'.
+     * Prefix that will be used as the start of Amazon S3 key for every object exported. If not specified, this defaults
+     * to 'exportedlogs'.
      * </p>
      * 
      * @param destinationPrefix
-     *        Prefix that will be used as the start of Amazon S3 key for every
-     *        object exported. If not specified, this defaults to
-     *        'exportedlogs'.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Prefix that will be used as the start of Amazon S3 key for every object exported. If not specified, this
+     *        defaults to 'exportedlogs'.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateExportTaskRequest withDestinationPrefix(
-            String destinationPrefix) {
+    public CreateExportTaskRequest withDestinationPrefix(String destinationPrefix) {
         setDestinationPrefix(destinationPrefix);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -473,42 +430,31 @@ public class CreateExportTaskRequest extends
         CreateExportTaskRequest other = (CreateExportTaskRequest) obj;
         if (other.getTaskName() == null ^ this.getTaskName() == null)
             return false;
-        if (other.getTaskName() != null
-                && other.getTaskName().equals(this.getTaskName()) == false)
+        if (other.getTaskName() != null && other.getTaskName().equals(this.getTaskName()) == false)
             return false;
         if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
             return false;
-        if (other.getLogGroupName() != null
-                && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
             return false;
-        if (other.getLogStreamNamePrefix() == null
-                ^ this.getLogStreamNamePrefix() == null)
+        if (other.getLogStreamNamePrefix() == null ^ this.getLogStreamNamePrefix() == null)
             return false;
-        if (other.getLogStreamNamePrefix() != null
-                && other.getLogStreamNamePrefix().equals(
-                        this.getLogStreamNamePrefix()) == false)
+        if (other.getLogStreamNamePrefix() != null && other.getLogStreamNamePrefix().equals(this.getLogStreamNamePrefix()) == false)
             return false;
         if (other.getFrom() == null ^ this.getFrom() == null)
             return false;
-        if (other.getFrom() != null
-                && other.getFrom().equals(this.getFrom()) == false)
+        if (other.getFrom() != null && other.getFrom().equals(this.getFrom()) == false)
             return false;
         if (other.getTo() == null ^ this.getTo() == null)
             return false;
-        if (other.getTo() != null
-                && other.getTo().equals(this.getTo()) == false)
+        if (other.getTo() != null && other.getTo().equals(this.getTo()) == false)
             return false;
         if (other.getDestination() == null ^ this.getDestination() == null)
             return false;
-        if (other.getDestination() != null
-                && other.getDestination().equals(this.getDestination()) == false)
+        if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
             return false;
-        if (other.getDestinationPrefix() == null
-                ^ this.getDestinationPrefix() == null)
+        if (other.getDestinationPrefix() == null ^ this.getDestinationPrefix() == null)
             return false;
-        if (other.getDestinationPrefix() != null
-                && other.getDestinationPrefix().equals(
-                        this.getDestinationPrefix()) == false)
+        if (other.getDestinationPrefix() != null && other.getDestinationPrefix().equals(this.getDestinationPrefix()) == false)
             return false;
         return true;
     }
@@ -518,27 +464,13 @@ public class CreateExportTaskRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTaskName() == null) ? 0 : getTaskName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLogGroupName() == null) ? 0 : getLogGroupName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLogStreamNamePrefix() == null) ? 0
-                        : getLogStreamNamePrefix().hashCode());
-        hashCode = prime * hashCode
-                + ((getFrom() == null) ? 0 : getFrom().hashCode());
-        hashCode = prime * hashCode
-                + ((getTo() == null) ? 0 : getTo().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDestination() == null) ? 0 : getDestination().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDestinationPrefix() == null) ? 0
-                        : getDestinationPrefix().hashCode());
+        hashCode = prime * hashCode + ((getTaskName() == null) ? 0 : getTaskName().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getLogStreamNamePrefix() == null) ? 0 : getLogStreamNamePrefix().hashCode());
+        hashCode = prime * hashCode + ((getFrom() == null) ? 0 : getFrom().hashCode());
+        hashCode = prime * hashCode + ((getTo() == null) ? 0 : getTo().hashCode());
+        hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
+        hashCode = prime * hashCode + ((getDestinationPrefix() == null) ? 0 : getDestinationPrefix().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class DescribeVaultResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeVaultResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -39,32 +35,29 @@ public class DescribeVaultResult extends
     private String vaultName;
     /**
      * <p>
-     * The UTC date when the vault was created. A string representation of ISO
-     * 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+     * The UTC date when the vault was created. A string representation of ISO 8601 date format, for example,
+     * "2012-03-20T17:03:43.221Z".
      * </p>
      */
     private String creationDate;
     /**
      * <p>
-     * The UTC date when Amazon Glacier completed the last vault inventory. A
-     * string representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".
+     * The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601 date
+     * format, for example, "2012-03-20T17:03:43.221Z".
      * </p>
      */
     private String lastInventoryDate;
     /**
      * <p>
-     * The number of archives in the vault as of the last inventory date. This
-     * field will return <code>null</code> if an inventory has not yet run on
-     * the vault, for example, if you just created the vault.
+     * The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an
+     * inventory has not yet run on the vault, for example, if you just created the vault.
      * </p>
      */
     private Long numberOfArchives;
     /**
      * <p>
-     * Total size, in bytes, of the archives in the vault as of the last
-     * inventory date. This field will return null if an inventory has not yet
-     * run on the vault, for example, if you just created the vault.
+     * Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if
+     * an inventory has not yet run on the vault, for example, if you just created the vault.
      * </p>
      */
     private Long sizeInBytes;
@@ -101,8 +94,7 @@ public class DescribeVaultResult extends
      * 
      * @param vaultARN
      *        The Amazon Resource Name (ARN) of the vault.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeVaultResult withVaultARN(String vaultARN) {
@@ -142,8 +134,7 @@ public class DescribeVaultResult extends
      * 
      * @param vaultName
      *        The name of the vault.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeVaultResult withVaultName(String vaultName) {
@@ -153,13 +144,13 @@ public class DescribeVaultResult extends
 
     /**
      * <p>
-     * The UTC date when the vault was created. A string representation of ISO
-     * 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+     * The UTC date when the vault was created. A string representation of ISO 8601 date format, for example,
+     * "2012-03-20T17:03:43.221Z".
      * </p>
      * 
      * @param creationDate
-     *        The UTC date when the vault was created. A string representation
-     *        of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+     *        The UTC date when the vault was created. A string representation of ISO 8601 date format, for example,
+     *        "2012-03-20T17:03:43.221Z".
      */
 
     public void setCreationDate(String creationDate) {
@@ -168,12 +159,12 @@ public class DescribeVaultResult extends
 
     /**
      * <p>
-     * The UTC date when the vault was created. A string representation of ISO
-     * 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+     * The UTC date when the vault was created. A string representation of ISO 8601 date format, for example,
+     * "2012-03-20T17:03:43.221Z".
      * </p>
      * 
-     * @return The UTC date when the vault was created. A string representation
-     *         of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+     * @return The UTC date when the vault was created. A string representation of ISO 8601 date format, for example,
+     *         "2012-03-20T17:03:43.221Z".
      */
 
     public String getCreationDate() {
@@ -182,15 +173,14 @@ public class DescribeVaultResult extends
 
     /**
      * <p>
-     * The UTC date when the vault was created. A string representation of ISO
-     * 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+     * The UTC date when the vault was created. A string representation of ISO 8601 date format, for example,
+     * "2012-03-20T17:03:43.221Z".
      * </p>
      * 
      * @param creationDate
-     *        The UTC date when the vault was created. A string representation
-     *        of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The UTC date when the vault was created. A string representation of ISO 8601 date format, for example,
+     *        "2012-03-20T17:03:43.221Z".
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeVaultResult withCreationDate(String creationDate) {
@@ -200,15 +190,13 @@ public class DescribeVaultResult extends
 
     /**
      * <p>
-     * The UTC date when Amazon Glacier completed the last vault inventory. A
-     * string representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".
+     * The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601 date
+     * format, for example, "2012-03-20T17:03:43.221Z".
      * </p>
      * 
      * @param lastInventoryDate
-     *        The UTC date when Amazon Glacier completed the last vault
-     *        inventory. A string representation of ISO 8601 date format, for
-     *        example, "2012-03-20T17:03:43.221Z".
+     *        The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601
+     *        date format, for example, "2012-03-20T17:03:43.221Z".
      */
 
     public void setLastInventoryDate(String lastInventoryDate) {
@@ -217,14 +205,12 @@ public class DescribeVaultResult extends
 
     /**
      * <p>
-     * The UTC date when Amazon Glacier completed the last vault inventory. A
-     * string representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".
+     * The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601 date
+     * format, for example, "2012-03-20T17:03:43.221Z".
      * </p>
      * 
-     * @return The UTC date when Amazon Glacier completed the last vault
-     *         inventory. A string representation of ISO 8601 date format, for
-     *         example, "2012-03-20T17:03:43.221Z".
+     * @return The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601
+     *         date format, for example, "2012-03-20T17:03:43.221Z".
      */
 
     public String getLastInventoryDate() {
@@ -233,17 +219,14 @@ public class DescribeVaultResult extends
 
     /**
      * <p>
-     * The UTC date when Amazon Glacier completed the last vault inventory. A
-     * string representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".
+     * The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601 date
+     * format, for example, "2012-03-20T17:03:43.221Z".
      * </p>
      * 
      * @param lastInventoryDate
-     *        The UTC date when Amazon Glacier completed the last vault
-     *        inventory. A string representation of ISO 8601 date format, for
-     *        example, "2012-03-20T17:03:43.221Z".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The UTC date when Amazon Glacier completed the last vault inventory. A string representation of ISO 8601
+     *        date format, for example, "2012-03-20T17:03:43.221Z".
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeVaultResult withLastInventoryDate(String lastInventoryDate) {
@@ -253,15 +236,14 @@ public class DescribeVaultResult extends
 
     /**
      * <p>
-     * The number of archives in the vault as of the last inventory date. This
-     * field will return <code>null</code> if an inventory has not yet run on
-     * the vault, for example, if you just created the vault.
+     * The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an
+     * inventory has not yet run on the vault, for example, if you just created the vault.
      * </p>
      * 
      * @param numberOfArchives
-     *        The number of archives in the vault as of the last inventory date.
-     *        This field will return <code>null</code> if an inventory has not
-     *        yet run on the vault, for example, if you just created the vault.
+     *        The number of archives in the vault as of the last inventory date. This field will return
+     *        <code>null</code> if an inventory has not yet run on the vault, for example, if you just created the
+     *        vault.
      */
 
     public void setNumberOfArchives(Long numberOfArchives) {
@@ -270,15 +252,13 @@ public class DescribeVaultResult extends
 
     /**
      * <p>
-     * The number of archives in the vault as of the last inventory date. This
-     * field will return <code>null</code> if an inventory has not yet run on
-     * the vault, for example, if you just created the vault.
+     * The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an
+     * inventory has not yet run on the vault, for example, if you just created the vault.
      * </p>
      * 
-     * @return The number of archives in the vault as of the last inventory
-     *         date. This field will return <code>null</code> if an inventory
-     *         has not yet run on the vault, for example, if you just created
-     *         the vault.
+     * @return The number of archives in the vault as of the last inventory date. This field will return
+     *         <code>null</code> if an inventory has not yet run on the vault, for example, if you just created the
+     *         vault.
      */
 
     public Long getNumberOfArchives() {
@@ -287,17 +267,15 @@ public class DescribeVaultResult extends
 
     /**
      * <p>
-     * The number of archives in the vault as of the last inventory date. This
-     * field will return <code>null</code> if an inventory has not yet run on
-     * the vault, for example, if you just created the vault.
+     * The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an
+     * inventory has not yet run on the vault, for example, if you just created the vault.
      * </p>
      * 
      * @param numberOfArchives
-     *        The number of archives in the vault as of the last inventory date.
-     *        This field will return <code>null</code> if an inventory has not
-     *        yet run on the vault, for example, if you just created the vault.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of archives in the vault as of the last inventory date. This field will return
+     *        <code>null</code> if an inventory has not yet run on the vault, for example, if you just created the
+     *        vault.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeVaultResult withNumberOfArchives(Long numberOfArchives) {
@@ -307,16 +285,13 @@ public class DescribeVaultResult extends
 
     /**
      * <p>
-     * Total size, in bytes, of the archives in the vault as of the last
-     * inventory date. This field will return null if an inventory has not yet
-     * run on the vault, for example, if you just created the vault.
+     * Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if
+     * an inventory has not yet run on the vault, for example, if you just created the vault.
      * </p>
      * 
      * @param sizeInBytes
-     *        Total size, in bytes, of the archives in the vault as of the last
-     *        inventory date. This field will return null if an inventory has
-     *        not yet run on the vault, for example, if you just created the
-     *        vault.
+     *        Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return
+     *        null if an inventory has not yet run on the vault, for example, if you just created the vault.
      */
 
     public void setSizeInBytes(Long sizeInBytes) {
@@ -325,15 +300,12 @@ public class DescribeVaultResult extends
 
     /**
      * <p>
-     * Total size, in bytes, of the archives in the vault as of the last
-     * inventory date. This field will return null if an inventory has not yet
-     * run on the vault, for example, if you just created the vault.
+     * Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if
+     * an inventory has not yet run on the vault, for example, if you just created the vault.
      * </p>
      * 
-     * @return Total size, in bytes, of the archives in the vault as of the last
-     *         inventory date. This field will return null if an inventory has
-     *         not yet run on the vault, for example, if you just created the
-     *         vault.
+     * @return Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return
+     *         null if an inventory has not yet run on the vault, for example, if you just created the vault.
      */
 
     public Long getSizeInBytes() {
@@ -342,18 +314,14 @@ public class DescribeVaultResult extends
 
     /**
      * <p>
-     * Total size, in bytes, of the archives in the vault as of the last
-     * inventory date. This field will return null if an inventory has not yet
-     * run on the vault, for example, if you just created the vault.
+     * Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if
+     * an inventory has not yet run on the vault, for example, if you just created the vault.
      * </p>
      * 
      * @param sizeInBytes
-     *        Total size, in bytes, of the archives in the vault as of the last
-     *        inventory date. This field will return null if an inventory has
-     *        not yet run on the vault, for example, if you just created the
-     *        vault.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return
+     *        null if an inventory has not yet run on the vault, for example, if you just created the vault.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeVaultResult withSizeInBytes(Long sizeInBytes) {
@@ -362,8 +330,7 @@ public class DescribeVaultResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -401,37 +368,27 @@ public class DescribeVaultResult extends
         DescribeVaultResult other = (DescribeVaultResult) obj;
         if (other.getVaultARN() == null ^ this.getVaultARN() == null)
             return false;
-        if (other.getVaultARN() != null
-                && other.getVaultARN().equals(this.getVaultARN()) == false)
+        if (other.getVaultARN() != null && other.getVaultARN().equals(this.getVaultARN()) == false)
             return false;
         if (other.getVaultName() == null ^ this.getVaultName() == null)
             return false;
-        if (other.getVaultName() != null
-                && other.getVaultName().equals(this.getVaultName()) == false)
+        if (other.getVaultName() != null && other.getVaultName().equals(this.getVaultName()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
-        if (other.getCreationDate() != null
-                && other.getCreationDate().equals(this.getCreationDate()) == false)
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
-        if (other.getLastInventoryDate() == null
-                ^ this.getLastInventoryDate() == null)
+        if (other.getLastInventoryDate() == null ^ this.getLastInventoryDate() == null)
             return false;
-        if (other.getLastInventoryDate() != null
-                && other.getLastInventoryDate().equals(
-                        this.getLastInventoryDate()) == false)
+        if (other.getLastInventoryDate() != null && other.getLastInventoryDate().equals(this.getLastInventoryDate()) == false)
             return false;
-        if (other.getNumberOfArchives() == null
-                ^ this.getNumberOfArchives() == null)
+        if (other.getNumberOfArchives() == null ^ this.getNumberOfArchives() == null)
             return false;
-        if (other.getNumberOfArchives() != null
-                && other.getNumberOfArchives().equals(
-                        this.getNumberOfArchives()) == false)
+        if (other.getNumberOfArchives() != null && other.getNumberOfArchives().equals(this.getNumberOfArchives()) == false)
             return false;
         if (other.getSizeInBytes() == null ^ this.getSizeInBytes() == null)
             return false;
-        if (other.getSizeInBytes() != null
-                && other.getSizeInBytes().equals(this.getSizeInBytes()) == false)
+        if (other.getSizeInBytes() != null && other.getSizeInBytes().equals(this.getSizeInBytes()) == false)
             return false;
         return true;
     }
@@ -441,25 +398,12 @@ public class DescribeVaultResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVaultARN() == null) ? 0 : getVaultARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getVaultName() == null) ? 0 : getVaultName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDate() == null) ? 0 : getCreationDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastInventoryDate() == null) ? 0
-                        : getLastInventoryDate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNumberOfArchives() == null) ? 0 : getNumberOfArchives()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSizeInBytes() == null) ? 0 : getSizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getVaultARN() == null) ? 0 : getVaultARN().hashCode());
+        hashCode = prime * hashCode + ((getVaultName() == null) ? 0 : getVaultName().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getLastInventoryDate() == null) ? 0 : getLastInventoryDate().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfArchives() == null) ? 0 : getNumberOfArchives().hashCode());
+        hashCode = prime * hashCode + ((getSizeInBytes() == null) ? 0 : getSizeInBytes().hashCode());
         return hashCode;
     }
 
@@ -468,9 +412,7 @@ public class DescribeVaultResult extends
         try {
             return (DescribeVaultResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

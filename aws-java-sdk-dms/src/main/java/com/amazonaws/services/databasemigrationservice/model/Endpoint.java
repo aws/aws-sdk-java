@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
@@ -23,9 +21,8 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter;
-     * must contain only ASCII letters, digits, and hyphens; and must not end
-     * with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
+     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
      * </p>
      */
     private String endpointIdentifier;
@@ -79,18 +76,15 @@ public class Endpoint implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection
-     * parameters. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS region.
+     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
+     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      */
     private String endpointArn;
@@ -105,8 +99,7 @@ public class Endpoint implements Serializable, Cloneable {
      * The SSL mode used to connect to the endpoint.
      * </p>
      * <p>
-     * SSL mode can be one of four values: none, require, verify-ca,
-     * verify-full.
+     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
      * </p>
      * <p>
      * The default value is none.
@@ -116,15 +109,13 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter;
-     * must contain only ASCII letters, digits, and hyphens; and must not end
-     * with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
+     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
      * @param endpointIdentifier
-     *        The database endpoint identifier. Identifiers must begin with a
-     *        letter; must contain only ASCII letters, digits, and hyphens; and
-     *        must not end with a hyphen or contain two consecutive hyphens.
+     *        The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters,
+     *        digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
      */
 
     public void setEndpointIdentifier(String endpointIdentifier) {
@@ -133,14 +124,12 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter;
-     * must contain only ASCII letters, digits, and hyphens; and must not end
-     * with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
+     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
-     * @return The database endpoint identifier. Identifiers must begin with a
-     *         letter; must contain only ASCII letters, digits, and hyphens; and
-     *         must not end with a hyphen or contain two consecutive hyphens.
+     * @return The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters,
+     *         digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
      */
 
     public String getEndpointIdentifier() {
@@ -149,17 +138,14 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter;
-     * must contain only ASCII letters, digits, and hyphens; and must not end
-     * with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
+     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
      * @param endpointIdentifier
-     *        The database endpoint identifier. Identifiers must begin with a
-     *        letter; must contain only ASCII letters, digits, and hyphens; and
-     *        must not end with a hyphen or contain two consecutive hyphens.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters,
+     *        digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Endpoint withEndpointIdentifier(String endpointIdentifier) {
@@ -201,8 +187,7 @@ public class Endpoint implements Serializable, Cloneable {
      * 
      * @param endpointType
      *        The type of endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -232,8 +217,7 @@ public class Endpoint implements Serializable, Cloneable {
      * 
      * @param endpointType
      *        The type of endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -274,8 +258,7 @@ public class Endpoint implements Serializable, Cloneable {
      * 
      * @param engineName
      *        The database engine name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Endpoint withEngineName(String engineName) {
@@ -315,8 +298,7 @@ public class Endpoint implements Serializable, Cloneable {
      * 
      * @param username
      *        The user name used to connect to the endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Endpoint withUsername(String username) {
@@ -356,8 +338,7 @@ public class Endpoint implements Serializable, Cloneable {
      * 
      * @param serverName
      *        The name of the server at the endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Endpoint withServerName(String serverName) {
@@ -397,8 +378,7 @@ public class Endpoint implements Serializable, Cloneable {
      * 
      * @param port
      *        The port value used to access the endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Endpoint withPort(Integer port) {
@@ -438,8 +418,7 @@ public class Endpoint implements Serializable, Cloneable {
      * 
      * @param databaseName
      *        The name of the database at the endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Endpoint withDatabaseName(String databaseName) {
@@ -479,12 +458,10 @@ public class Endpoint implements Serializable, Cloneable {
      * 
      * @param extraConnectionAttributes
      *        Additional connection attributes used to connect to the endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Endpoint withExtraConnectionAttributes(
-            String extraConnectionAttributes) {
+    public Endpoint withExtraConnectionAttributes(String extraConnectionAttributes) {
         setExtraConnectionAttributes(extraConnectionAttributes);
         return this;
     }
@@ -521,8 +498,7 @@ public class Endpoint implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Endpoint withStatus(String status) {
@@ -532,20 +508,16 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection
-     * parameters. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS region.
+     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
+     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier that will be used to encrypt the connection
-     *        parameters. If you do not specify a value for the KmsKeyId
-     *        parameter, then AWS DMS will use your default encryption key. AWS
-     *        KMS creates the default encryption key for your AWS account. Your
-     *        AWS account has a different default encryption key for each AWS
-     *        region.
+     *        The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
+     *        value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
+     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
+     *        each AWS region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -554,19 +526,15 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection
-     * parameters. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS region.
+     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
+     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
      * </p>
      * 
-     * @return The KMS key identifier that will be used to encrypt the
-     *         connection parameters. If you do not specify a value for the
-     *         KmsKeyId parameter, then AWS DMS will use your default encryption
-     *         key. AWS KMS creates the default encryption key for your AWS
-     *         account. Your AWS account has a different default encryption key
-     *         for each AWS region.
+     * @return The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
+     *         value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
+     *         default encryption key for your AWS account. Your AWS account has a different default encryption key for
+     *         each AWS region.
      */
 
     public String getKmsKeyId() {
@@ -575,22 +543,17 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection
-     * parameters. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS region.
+     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
+     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier that will be used to encrypt the connection
-     *        parameters. If you do not specify a value for the KmsKeyId
-     *        parameter, then AWS DMS will use your default encryption key. AWS
-     *        KMS creates the default encryption key for your AWS account. Your
-     *        AWS account has a different default encryption key for each AWS
-     *        region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
+     *        value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
+     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
+     *        each AWS region.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Endpoint withKmsKeyId(String kmsKeyId) {
@@ -600,13 +563,11 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param endpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the
-     *        endpoint.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      */
 
     public void setEndpointArn(String endpointArn) {
@@ -615,12 +576,10 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) string that uniquely identifies
-     *         the endpoint.
+     * @return The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      */
 
     public String getEndpointArn() {
@@ -629,15 +588,12 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param endpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the
-     *        endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Endpoint withEndpointArn(String endpointArn) {
@@ -651,8 +607,7 @@ public class Endpoint implements Serializable, Cloneable {
      * </p>
      * 
      * @param certificateArn
-     *        The Amazon Resource Name (ARN) used for SSL connection to the
-     *        endpoint.
+     *        The Amazon Resource Name (ARN) used for SSL connection to the endpoint.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -664,8 +619,7 @@ public class Endpoint implements Serializable, Cloneable {
      * The Amazon Resource Name (ARN) used for SSL connection to the endpoint.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) used for SSL connection to the
-     *         endpoint.
+     * @return The Amazon Resource Name (ARN) used for SSL connection to the endpoint.
      */
 
     public String getCertificateArn() {
@@ -678,10 +632,8 @@ public class Endpoint implements Serializable, Cloneable {
      * </p>
      * 
      * @param certificateArn
-     *        The Amazon Resource Name (ARN) used for SSL connection to the
-     *        endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) used for SSL connection to the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Endpoint withCertificateArn(String certificateArn) {
@@ -694,8 +646,7 @@ public class Endpoint implements Serializable, Cloneable {
      * The SSL mode used to connect to the endpoint.
      * </p>
      * <p>
-     * SSL mode can be one of four values: none, require, verify-ca,
-     * verify-full.
+     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
      * </p>
      * <p>
      * The default value is none.
@@ -704,8 +655,7 @@ public class Endpoint implements Serializable, Cloneable {
      * @param sslMode
      *        The SSL mode used to connect to the endpoint.</p>
      *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca,
-     *        verify-full.
+     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
      *        </p>
      *        <p>
      *        The default value is none.
@@ -721,8 +671,7 @@ public class Endpoint implements Serializable, Cloneable {
      * The SSL mode used to connect to the endpoint.
      * </p>
      * <p>
-     * SSL mode can be one of four values: none, require, verify-ca,
-     * verify-full.
+     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
      * </p>
      * <p>
      * The default value is none.
@@ -730,8 +679,7 @@ public class Endpoint implements Serializable, Cloneable {
      * 
      * @return The SSL mode used to connect to the endpoint.</p>
      *         <p>
-     *         SSL mode can be one of four values: none, require, verify-ca,
-     *         verify-full.
+     *         SSL mode can be one of four values: none, require, verify-ca, verify-full.
      *         </p>
      *         <p>
      *         The default value is none.
@@ -747,8 +695,7 @@ public class Endpoint implements Serializable, Cloneable {
      * The SSL mode used to connect to the endpoint.
      * </p>
      * <p>
-     * SSL mode can be one of four values: none, require, verify-ca,
-     * verify-full.
+     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
      * </p>
      * <p>
      * The default value is none.
@@ -757,13 +704,11 @@ public class Endpoint implements Serializable, Cloneable {
      * @param sslMode
      *        The SSL mode used to connect to the endpoint.</p>
      *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca,
-     *        verify-full.
+     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
      *        </p>
      *        <p>
      *        The default value is none.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DmsSslModeValue
      */
 
@@ -777,8 +722,7 @@ public class Endpoint implements Serializable, Cloneable {
      * The SSL mode used to connect to the endpoint.
      * </p>
      * <p>
-     * SSL mode can be one of four values: none, require, verify-ca,
-     * verify-full.
+     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
      * </p>
      * <p>
      * The default value is none.
@@ -787,8 +731,7 @@ public class Endpoint implements Serializable, Cloneable {
      * @param sslMode
      *        The SSL mode used to connect to the endpoint.</p>
      *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca,
-     *        verify-full.
+     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
      *        </p>
      *        <p>
      *        The default value is none.
@@ -804,8 +747,7 @@ public class Endpoint implements Serializable, Cloneable {
      * The SSL mode used to connect to the endpoint.
      * </p>
      * <p>
-     * SSL mode can be one of four values: none, require, verify-ca,
-     * verify-full.
+     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
      * </p>
      * <p>
      * The default value is none.
@@ -814,13 +756,11 @@ public class Endpoint implements Serializable, Cloneable {
      * @param sslMode
      *        The SSL mode used to connect to the endpoint.</p>
      *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca,
-     *        verify-full.
+     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
      *        </p>
      *        <p>
      *        The default value is none.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DmsSslModeValue
      */
 
@@ -830,8 +770,7 @@ public class Endpoint implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -856,8 +795,7 @@ public class Endpoint implements Serializable, Cloneable {
         if (getDatabaseName() != null)
             sb.append("DatabaseName: " + getDatabaseName() + ",");
         if (getExtraConnectionAttributes() != null)
-            sb.append("ExtraConnectionAttributes: "
-                    + getExtraConnectionAttributes() + ",");
+            sb.append("ExtraConnectionAttributes: " + getExtraConnectionAttributes() + ",");
         if (getStatus() != null)
             sb.append("Status: " + getStatus() + ",");
         if (getKmsKeyId() != null)
@@ -882,75 +820,57 @@ public class Endpoint implements Serializable, Cloneable {
         if (obj instanceof Endpoint == false)
             return false;
         Endpoint other = (Endpoint) obj;
-        if (other.getEndpointIdentifier() == null
-                ^ this.getEndpointIdentifier() == null)
+        if (other.getEndpointIdentifier() == null ^ this.getEndpointIdentifier() == null)
             return false;
-        if (other.getEndpointIdentifier() != null
-                && other.getEndpointIdentifier().equals(
-                        this.getEndpointIdentifier()) == false)
+        if (other.getEndpointIdentifier() != null && other.getEndpointIdentifier().equals(this.getEndpointIdentifier()) == false)
             return false;
         if (other.getEndpointType() == null ^ this.getEndpointType() == null)
             return false;
-        if (other.getEndpointType() != null
-                && other.getEndpointType().equals(this.getEndpointType()) == false)
+        if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
             return false;
         if (other.getEngineName() == null ^ this.getEngineName() == null)
             return false;
-        if (other.getEngineName() != null
-                && other.getEngineName().equals(this.getEngineName()) == false)
+        if (other.getEngineName() != null && other.getEngineName().equals(this.getEngineName()) == false)
             return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
-        if (other.getUsername() != null
-                && other.getUsername().equals(this.getUsername()) == false)
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
         if (other.getServerName() == null ^ this.getServerName() == null)
             return false;
-        if (other.getServerName() != null
-                && other.getServerName().equals(this.getServerName()) == false)
+        if (other.getServerName() != null && other.getServerName().equals(this.getServerName()) == false)
             return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
-        if (other.getPort() != null
-                && other.getPort().equals(this.getPort()) == false)
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
         if (other.getDatabaseName() == null ^ this.getDatabaseName() == null)
             return false;
-        if (other.getDatabaseName() != null
-                && other.getDatabaseName().equals(this.getDatabaseName()) == false)
+        if (other.getDatabaseName() != null && other.getDatabaseName().equals(this.getDatabaseName()) == false)
             return false;
-        if (other.getExtraConnectionAttributes() == null
-                ^ this.getExtraConnectionAttributes() == null)
+        if (other.getExtraConnectionAttributes() == null ^ this.getExtraConnectionAttributes() == null)
             return false;
-        if (other.getExtraConnectionAttributes() != null
-                && other.getExtraConnectionAttributes().equals(
-                        this.getExtraConnectionAttributes()) == false)
+        if (other.getExtraConnectionAttributes() != null && other.getExtraConnectionAttributes().equals(this.getExtraConnectionAttributes()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
-        if (other.getKmsKeyId() != null
-                && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         if (other.getEndpointArn() == null ^ this.getEndpointArn() == null)
             return false;
-        if (other.getEndpointArn() != null
-                && other.getEndpointArn().equals(this.getEndpointArn()) == false)
+        if (other.getEndpointArn() != null && other.getEndpointArn().equals(this.getEndpointArn()) == false)
             return false;
-        if (other.getCertificateArn() == null
-                ^ this.getCertificateArn() == null)
+        if (other.getCertificateArn() == null ^ this.getCertificateArn() == null)
             return false;
-        if (other.getCertificateArn() != null
-                && other.getCertificateArn().equals(this.getCertificateArn()) == false)
+        if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
             return false;
         if (other.getSslMode() == null ^ this.getSslMode() == null)
             return false;
-        if (other.getSslMode() != null
-                && other.getSslMode().equals(this.getSslMode()) == false)
+        if (other.getSslMode() != null && other.getSslMode().equals(this.getSslMode()) == false)
             return false;
         return true;
     }
@@ -960,43 +880,19 @@ public class Endpoint implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEndpointIdentifier() == null) ? 0
-                        : getEndpointIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEndpointType() == null) ? 0 : getEndpointType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getEngineName() == null) ? 0 : getEngineName().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        hashCode = prime * hashCode
-                + ((getServerName() == null) ? 0 : getServerName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPort() == null) ? 0 : getPort().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDatabaseName() == null) ? 0 : getDatabaseName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExtraConnectionAttributes() == null) ? 0
-                        : getExtraConnectionAttributes().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCertificateArn() == null) ? 0 : getCertificateArn()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getSslMode() == null) ? 0 : getSslMode().hashCode());
+        hashCode = prime * hashCode + ((getEndpointIdentifier() == null) ? 0 : getEndpointIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
+        hashCode = prime * hashCode + ((getEngineName() == null) ? 0 : getEngineName().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
+        hashCode = prime * hashCode + ((getExtraConnectionAttributes() == null) ? 0 : getExtraConnectionAttributes().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
+        hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getSslMode() == null) ? 0 : getSslMode().hashCode());
         return hashCode;
     }
 
@@ -1005,9 +901,7 @@ public class Endpoint implements Serializable, Cloneable {
         try {
             return (Endpoint) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

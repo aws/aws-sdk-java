@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
@@ -34,59 +32,38 @@ public class WorkflowExecutionStartedEventAttributesJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(
-            WorkflowExecutionStartedEventAttributes workflowExecutionStartedEventAttributes,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(WorkflowExecutionStartedEventAttributes workflowExecutionStartedEventAttributes, StructuredJsonGenerator jsonGenerator) {
 
         if (workflowExecutionStartedEventAttributes == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (workflowExecutionStartedEventAttributes.getInput() != null) {
-                jsonGenerator.writeFieldName("input").writeValue(
-                        workflowExecutionStartedEventAttributes.getInput());
+                jsonGenerator.writeFieldName("input").writeValue(workflowExecutionStartedEventAttributes.getInput());
             }
-            if (workflowExecutionStartedEventAttributes
-                    .getExecutionStartToCloseTimeout() != null) {
-                jsonGenerator.writeFieldName("executionStartToCloseTimeout")
-                        .writeValue(
-                                workflowExecutionStartedEventAttributes
-                                        .getExecutionStartToCloseTimeout());
+            if (workflowExecutionStartedEventAttributes.getExecutionStartToCloseTimeout() != null) {
+                jsonGenerator.writeFieldName("executionStartToCloseTimeout").writeValue(
+                        workflowExecutionStartedEventAttributes.getExecutionStartToCloseTimeout());
             }
-            if (workflowExecutionStartedEventAttributes
-                    .getTaskStartToCloseTimeout() != null) {
-                jsonGenerator.writeFieldName("taskStartToCloseTimeout")
-                        .writeValue(
-                                workflowExecutionStartedEventAttributes
-                                        .getTaskStartToCloseTimeout());
+            if (workflowExecutionStartedEventAttributes.getTaskStartToCloseTimeout() != null) {
+                jsonGenerator.writeFieldName("taskStartToCloseTimeout").writeValue(workflowExecutionStartedEventAttributes.getTaskStartToCloseTimeout());
             }
             if (workflowExecutionStartedEventAttributes.getChildPolicy() != null) {
-                jsonGenerator.writeFieldName("childPolicy").writeValue(
-                        workflowExecutionStartedEventAttributes
-                                .getChildPolicy());
+                jsonGenerator.writeFieldName("childPolicy").writeValue(workflowExecutionStartedEventAttributes.getChildPolicy());
             }
             if (workflowExecutionStartedEventAttributes.getTaskList() != null) {
                 jsonGenerator.writeFieldName("taskList");
-                TaskListJsonMarshaller.getInstance().marshall(
-                        workflowExecutionStartedEventAttributes.getTaskList(),
-                        jsonGenerator);
+                TaskListJsonMarshaller.getInstance().marshall(workflowExecutionStartedEventAttributes.getTaskList(), jsonGenerator);
             }
             if (workflowExecutionStartedEventAttributes.getWorkflowType() != null) {
                 jsonGenerator.writeFieldName("workflowType");
-                WorkflowTypeJsonMarshaller
-                        .getInstance()
-                        .marshall(
-                                workflowExecutionStartedEventAttributes
-                                        .getWorkflowType(),
-                                jsonGenerator);
+                WorkflowTypeJsonMarshaller.getInstance().marshall(workflowExecutionStartedEventAttributes.getWorkflowType(), jsonGenerator);
             }
 
-            java.util.List<String> tagListList = workflowExecutionStartedEventAttributes
-                    .getTagList();
+            java.util.List<String> tagListList = workflowExecutionStartedEventAttributes.getTagList();
             if (tagListList != null) {
                 jsonGenerator.writeFieldName("tagList");
                 jsonGenerator.writeStartArray();
@@ -98,45 +75,25 @@ public class WorkflowExecutionStartedEventAttributesJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
             if (workflowExecutionStartedEventAttributes.getTaskPriority() != null) {
-                jsonGenerator.writeFieldName("taskPriority").writeValue(
-                        workflowExecutionStartedEventAttributes
-                                .getTaskPriority());
+                jsonGenerator.writeFieldName("taskPriority").writeValue(workflowExecutionStartedEventAttributes.getTaskPriority());
             }
-            if (workflowExecutionStartedEventAttributes
-                    .getContinuedExecutionRunId() != null) {
-                jsonGenerator.writeFieldName("continuedExecutionRunId")
-                        .writeValue(
-                                workflowExecutionStartedEventAttributes
-                                        .getContinuedExecutionRunId());
+            if (workflowExecutionStartedEventAttributes.getContinuedExecutionRunId() != null) {
+                jsonGenerator.writeFieldName("continuedExecutionRunId").writeValue(workflowExecutionStartedEventAttributes.getContinuedExecutionRunId());
             }
-            if (workflowExecutionStartedEventAttributes
-                    .getParentWorkflowExecution() != null) {
+            if (workflowExecutionStartedEventAttributes.getParentWorkflowExecution() != null) {
                 jsonGenerator.writeFieldName("parentWorkflowExecution");
-                WorkflowExecutionJsonMarshaller
-                        .getInstance()
-                        .marshall(
-                                workflowExecutionStartedEventAttributes
-                                        .getParentWorkflowExecution(),
-                                jsonGenerator);
+                WorkflowExecutionJsonMarshaller.getInstance().marshall(workflowExecutionStartedEventAttributes.getParentWorkflowExecution(), jsonGenerator);
             }
-            if (workflowExecutionStartedEventAttributes
-                    .getParentInitiatedEventId() != null) {
-                jsonGenerator.writeFieldName("parentInitiatedEventId")
-                        .writeValue(
-                                workflowExecutionStartedEventAttributes
-                                        .getParentInitiatedEventId());
+            if (workflowExecutionStartedEventAttributes.getParentInitiatedEventId() != null) {
+                jsonGenerator.writeFieldName("parentInitiatedEventId").writeValue(workflowExecutionStartedEventAttributes.getParentInitiatedEventId());
             }
             if (workflowExecutionStartedEventAttributes.getLambdaRole() != null) {
-                jsonGenerator.writeFieldName("lambdaRole")
-                        .writeValue(
-                                workflowExecutionStartedEventAttributes
-                                        .getLambdaRole());
+                jsonGenerator.writeFieldName("lambdaRole").writeValue(workflowExecutionStartedEventAttributes.getLambdaRole());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

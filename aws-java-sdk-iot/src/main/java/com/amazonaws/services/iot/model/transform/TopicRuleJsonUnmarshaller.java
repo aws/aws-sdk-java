@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * TopicRule JSON Unmarshaller
  */
-public class TopicRuleJsonUnmarshaller implements
-        Unmarshaller<TopicRule, JsonUnmarshallerContext> {
+public class TopicRuleJsonUnmarshaller implements Unmarshaller<TopicRule, JsonUnmarshallerContext> {
 
-    public TopicRule unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public TopicRule unmarshall(JsonUnmarshallerContext context) throws Exception {
         TopicRule topicRule = new TopicRule();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,44 +49,34 @@ public class TopicRuleJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ruleName", targetDepth)) {
                     context.nextToken();
-                    topicRule.setRuleName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    topicRule.setRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sql", targetDepth)) {
                     context.nextToken();
-                    topicRule.setSql(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    topicRule.setSql(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    topicRule.setDescription(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    topicRule.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    topicRule.setCreatedAt(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    topicRule.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
-                    topicRule.setActions(new ListUnmarshaller<Action>(
-                            ActionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    topicRule.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("ruleDisabled", targetDepth)) {
                     context.nextToken();
-                    topicRule.setRuleDisabled(context.getUnmarshaller(
-                            Boolean.class).unmarshall(context));
+                    topicRule.setRuleDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("awsIotSqlVersion", targetDepth)) {
                     context.nextToken();
-                    topicRule.setAwsIotSqlVersion(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    topicRule.setAwsIotSqlVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

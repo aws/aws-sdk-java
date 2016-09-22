@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
 
@@ -22,41 +20,36 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>DescribeChangeSet</a> action.
  * </p>
  */
-public class DescribeChangeSetRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the change set that you want to
-     * describe.
+     * The name or Amazon Resource Name (ARN) of the change set that you want to describe.
      * </p>
      */
     private String changeSetName;
     /**
      * <p>
-     * If you specified the name of a change set, specify the stack name or ID
-     * (ARN) of the change set you want to describe.
+     * If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to
+     * describe.
      * </p>
      */
     private String stackName;
     /**
      * <p>
-     * A string (provided by the <a>DescribeChangeSet</a> response output) that
-     * identifies the next page of information that you want to retrieve.
+     * A string (provided by the <a>DescribeChangeSet</a> response output) that identifies the next page of information
+     * that you want to retrieve.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the change set that you want to
-     * describe.
+     * The name or Amazon Resource Name (ARN) of the change set that you want to describe.
      * </p>
      * 
      * @param changeSetName
-     *        The name or Amazon Resource Name (ARN) of the change set that you
-     *        want to describe.
+     *        The name or Amazon Resource Name (ARN) of the change set that you want to describe.
      */
 
     public void setChangeSetName(String changeSetName) {
@@ -65,12 +58,10 @@ public class DescribeChangeSetRequest extends
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the change set that you want to
-     * describe.
+     * The name or Amazon Resource Name (ARN) of the change set that you want to describe.
      * </p>
      * 
-     * @return The name or Amazon Resource Name (ARN) of the change set that you
-     *         want to describe.
+     * @return The name or Amazon Resource Name (ARN) of the change set that you want to describe.
      */
 
     public String getChangeSetName() {
@@ -79,15 +70,12 @@ public class DescribeChangeSetRequest extends
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the change set that you want to
-     * describe.
+     * The name or Amazon Resource Name (ARN) of the change set that you want to describe.
      * </p>
      * 
      * @param changeSetName
-     *        The name or Amazon Resource Name (ARN) of the change set that you
-     *        want to describe.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name or Amazon Resource Name (ARN) of the change set that you want to describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeChangeSetRequest withChangeSetName(String changeSetName) {
@@ -97,13 +85,13 @@ public class DescribeChangeSetRequest extends
 
     /**
      * <p>
-     * If you specified the name of a change set, specify the stack name or ID
-     * (ARN) of the change set you want to describe.
+     * If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to
+     * describe.
      * </p>
      * 
      * @param stackName
-     *        If you specified the name of a change set, specify the stack name
-     *        or ID (ARN) of the change set you want to describe.
+     *        If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want
+     *        to describe.
      */
 
     public void setStackName(String stackName) {
@@ -112,12 +100,12 @@ public class DescribeChangeSetRequest extends
 
     /**
      * <p>
-     * If you specified the name of a change set, specify the stack name or ID
-     * (ARN) of the change set you want to describe.
+     * If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to
+     * describe.
      * </p>
      * 
-     * @return If you specified the name of a change set, specify the stack name
-     *         or ID (ARN) of the change set you want to describe.
+     * @return If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want
+     *         to describe.
      */
 
     public String getStackName() {
@@ -126,15 +114,14 @@ public class DescribeChangeSetRequest extends
 
     /**
      * <p>
-     * If you specified the name of a change set, specify the stack name or ID
-     * (ARN) of the change set you want to describe.
+     * If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to
+     * describe.
      * </p>
      * 
      * @param stackName
-     *        If you specified the name of a change set, specify the stack name
-     *        or ID (ARN) of the change set you want to describe.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want
+     *        to describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeChangeSetRequest withStackName(String stackName) {
@@ -144,14 +131,13 @@ public class DescribeChangeSetRequest extends
 
     /**
      * <p>
-     * A string (provided by the <a>DescribeChangeSet</a> response output) that
-     * identifies the next page of information that you want to retrieve.
+     * A string (provided by the <a>DescribeChangeSet</a> response output) that identifies the next page of information
+     * that you want to retrieve.
      * </p>
      * 
      * @param nextToken
-     *        A string (provided by the <a>DescribeChangeSet</a> response
-     *        output) that identifies the next page of information that you want
-     *        to retrieve.
+     *        A string (provided by the <a>DescribeChangeSet</a> response output) that identifies the next page of
+     *        information that you want to retrieve.
      */
 
     public void setNextToken(String nextToken) {
@@ -160,13 +146,12 @@ public class DescribeChangeSetRequest extends
 
     /**
      * <p>
-     * A string (provided by the <a>DescribeChangeSet</a> response output) that
-     * identifies the next page of information that you want to retrieve.
+     * A string (provided by the <a>DescribeChangeSet</a> response output) that identifies the next page of information
+     * that you want to retrieve.
      * </p>
      * 
-     * @return A string (provided by the <a>DescribeChangeSet</a> response
-     *         output) that identifies the next page of information that you
-     *         want to retrieve.
+     * @return A string (provided by the <a>DescribeChangeSet</a> response output) that identifies the next page of
+     *         information that you want to retrieve.
      */
 
     public String getNextToken() {
@@ -175,16 +160,14 @@ public class DescribeChangeSetRequest extends
 
     /**
      * <p>
-     * A string (provided by the <a>DescribeChangeSet</a> response output) that
-     * identifies the next page of information that you want to retrieve.
+     * A string (provided by the <a>DescribeChangeSet</a> response output) that identifies the next page of information
+     * that you want to retrieve.
      * </p>
      * 
      * @param nextToken
-     *        A string (provided by the <a>DescribeChangeSet</a> response
-     *        output) that identifies the next page of information that you want
-     *        to retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A string (provided by the <a>DescribeChangeSet</a> response output) that identifies the next page of
+     *        information that you want to retrieve.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeChangeSetRequest withNextToken(String nextToken) {
@@ -193,8 +176,7 @@ public class DescribeChangeSetRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -226,18 +208,15 @@ public class DescribeChangeSetRequest extends
         DescribeChangeSetRequest other = (DescribeChangeSetRequest) obj;
         if (other.getChangeSetName() == null ^ this.getChangeSetName() == null)
             return false;
-        if (other.getChangeSetName() != null
-                && other.getChangeSetName().equals(this.getChangeSetName()) == false)
+        if (other.getChangeSetName() != null && other.getChangeSetName().equals(this.getChangeSetName()) == false)
             return false;
         if (other.getStackName() == null ^ this.getStackName() == null)
             return false;
-        if (other.getStackName() != null
-                && other.getStackName().equals(this.getStackName()) == false)
+        if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -247,14 +226,9 @@ public class DescribeChangeSetRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getChangeSetName() == null) ? 0 : getChangeSetName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStackName() == null) ? 0 : getStackName().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getChangeSetName() == null) ? 0 : getChangeSetName().hashCode());
+        hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model;
 
@@ -18,12 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the new provisioned throughput settings to be applied to a global
- * secondary index.
+ * Represents the new provisioned throughput settings to be applied to a global secondary index.
  * </p>
  */
-public class UpdateGlobalSecondaryIndexAction implements Serializable,
-        Cloneable {
+public class UpdateGlobalSecondaryIndexAction implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -66,8 +62,7 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
      * 
      * @param indexName
      *        The name of the global secondary index to be updated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateGlobalSecondaryIndexAction withIndexName(String indexName) {
@@ -79,8 +74,7 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
      * @param provisionedThroughput
      */
 
-    public void setProvisionedThroughput(
-            ProvisionedThroughput provisionedThroughput) {
+    public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
     }
 
@@ -94,19 +88,16 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
 
     /**
      * @param provisionedThroughput
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateGlobalSecondaryIndexAction withProvisionedThroughput(
-            ProvisionedThroughput provisionedThroughput) {
+    public UpdateGlobalSecondaryIndexAction withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
         setProvisionedThroughput(provisionedThroughput);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -136,15 +127,11 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
         UpdateGlobalSecondaryIndexAction other = (UpdateGlobalSecondaryIndexAction) obj;
         if (other.getIndexName() == null ^ this.getIndexName() == null)
             return false;
-        if (other.getIndexName() != null
-                && other.getIndexName().equals(this.getIndexName()) == false)
+        if (other.getIndexName() != null && other.getIndexName().equals(this.getIndexName()) == false)
             return false;
-        if (other.getProvisionedThroughput() == null
-                ^ this.getProvisionedThroughput() == null)
+        if (other.getProvisionedThroughput() == null ^ this.getProvisionedThroughput() == null)
             return false;
-        if (other.getProvisionedThroughput() != null
-                && other.getProvisionedThroughput().equals(
-                        this.getProvisionedThroughput()) == false)
+        if (other.getProvisionedThroughput() != null && other.getProvisionedThroughput().equals(this.getProvisionedThroughput()) == false)
             return false;
         return true;
     }
@@ -154,12 +141,8 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProvisionedThroughput() == null) ? 0
-                        : getProvisionedThroughput().hashCode());
+        hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
+        hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
         return hashCode;
     }
 
@@ -168,9 +151,7 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
         try {
             return (UpdateGlobalSecondaryIndexAction) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

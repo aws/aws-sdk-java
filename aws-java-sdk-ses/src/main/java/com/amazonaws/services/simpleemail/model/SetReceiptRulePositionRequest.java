@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -19,21 +17,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents a request to set the position of a receipt rule in a receipt rule
- * set. You use receipt rule sets to receive email with Amazon SES. For more
- * information, see the <a href=
- * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
- * >Amazon SES Developer Guide</a>.
+ * Represents a request to set the position of a receipt rule in a receipt rule set. You use receipt rule sets to
+ * receive email with Amazon SES. For more information, see the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
+ * Guide</a>.
  * </p>
  */
-public class SetReceiptRulePositionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class SetReceiptRulePositionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the receipt rule set that contains the receipt rule to
-     * reposition.
+     * The name of the receipt rule set that contains the receipt rule to reposition.
      * </p>
      */
     private String ruleSetName;
@@ -45,21 +39,18 @@ public class SetReceiptRulePositionRequest extends
     private String ruleName;
     /**
      * <p>
-     * The name of the receipt rule after which to place the specified receipt
-     * rule.
+     * The name of the receipt rule after which to place the specified receipt rule.
      * </p>
      */
     private String after;
 
     /**
      * <p>
-     * The name of the receipt rule set that contains the receipt rule to
-     * reposition.
+     * The name of the receipt rule set that contains the receipt rule to reposition.
      * </p>
      * 
      * @param ruleSetName
-     *        The name of the receipt rule set that contains the receipt rule to
-     *        reposition.
+     *        The name of the receipt rule set that contains the receipt rule to reposition.
      */
 
     public void setRuleSetName(String ruleSetName) {
@@ -68,12 +59,10 @@ public class SetReceiptRulePositionRequest extends
 
     /**
      * <p>
-     * The name of the receipt rule set that contains the receipt rule to
-     * reposition.
+     * The name of the receipt rule set that contains the receipt rule to reposition.
      * </p>
      * 
-     * @return The name of the receipt rule set that contains the receipt rule
-     *         to reposition.
+     * @return The name of the receipt rule set that contains the receipt rule to reposition.
      */
 
     public String getRuleSetName() {
@@ -82,15 +71,12 @@ public class SetReceiptRulePositionRequest extends
 
     /**
      * <p>
-     * The name of the receipt rule set that contains the receipt rule to
-     * reposition.
+     * The name of the receipt rule set that contains the receipt rule to reposition.
      * </p>
      * 
      * @param ruleSetName
-     *        The name of the receipt rule set that contains the receipt rule to
-     *        reposition.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the receipt rule set that contains the receipt rule to reposition.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetReceiptRulePositionRequest withRuleSetName(String ruleSetName) {
@@ -130,8 +116,7 @@ public class SetReceiptRulePositionRequest extends
      * 
      * @param ruleName
      *        The name of the receipt rule to reposition.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetReceiptRulePositionRequest withRuleName(String ruleName) {
@@ -141,13 +126,11 @@ public class SetReceiptRulePositionRequest extends
 
     /**
      * <p>
-     * The name of the receipt rule after which to place the specified receipt
-     * rule.
+     * The name of the receipt rule after which to place the specified receipt rule.
      * </p>
      * 
      * @param after
-     *        The name of the receipt rule after which to place the specified
-     *        receipt rule.
+     *        The name of the receipt rule after which to place the specified receipt rule.
      */
 
     public void setAfter(String after) {
@@ -156,12 +139,10 @@ public class SetReceiptRulePositionRequest extends
 
     /**
      * <p>
-     * The name of the receipt rule after which to place the specified receipt
-     * rule.
+     * The name of the receipt rule after which to place the specified receipt rule.
      * </p>
      * 
-     * @return The name of the receipt rule after which to place the specified
-     *         receipt rule.
+     * @return The name of the receipt rule after which to place the specified receipt rule.
      */
 
     public String getAfter() {
@@ -170,15 +151,12 @@ public class SetReceiptRulePositionRequest extends
 
     /**
      * <p>
-     * The name of the receipt rule after which to place the specified receipt
-     * rule.
+     * The name of the receipt rule after which to place the specified receipt rule.
      * </p>
      * 
      * @param after
-     *        The name of the receipt rule after which to place the specified
-     *        receipt rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the receipt rule after which to place the specified receipt rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetReceiptRulePositionRequest withAfter(String after) {
@@ -187,8 +165,7 @@ public class SetReceiptRulePositionRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -220,18 +197,15 @@ public class SetReceiptRulePositionRequest extends
         SetReceiptRulePositionRequest other = (SetReceiptRulePositionRequest) obj;
         if (other.getRuleSetName() == null ^ this.getRuleSetName() == null)
             return false;
-        if (other.getRuleSetName() != null
-                && other.getRuleSetName().equals(this.getRuleSetName()) == false)
+        if (other.getRuleSetName() != null && other.getRuleSetName().equals(this.getRuleSetName()) == false)
             return false;
         if (other.getRuleName() == null ^ this.getRuleName() == null)
             return false;
-        if (other.getRuleName() != null
-                && other.getRuleName().equals(this.getRuleName()) == false)
+        if (other.getRuleName() != null && other.getRuleName().equals(this.getRuleName()) == false)
             return false;
         if (other.getAfter() == null ^ this.getAfter() == null)
             return false;
-        if (other.getAfter() != null
-                && other.getAfter().equals(this.getAfter()) == false)
+        if (other.getAfter() != null && other.getAfter().equals(this.getAfter()) == false)
             return false;
         return true;
     }
@@ -241,13 +215,9 @@ public class SetReceiptRulePositionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRuleSetName() == null) ? 0 : getRuleSetName().hashCode());
-        hashCode = prime * hashCode
-                + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
-        hashCode = prime * hashCode
-                + ((getAfter() == null) ? 0 : getAfter().hashCode());
+        hashCode = prime * hashCode + ((getRuleSetName() == null) ? 0 : getRuleSetName().hashCode());
+        hashCode = prime * hashCode + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
+        hashCode = prime * hashCode + ((getAfter() == null) ? 0 : getAfter().hashCode());
         return hashCode;
     }
 

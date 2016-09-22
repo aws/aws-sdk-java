@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * SetPermissionRequest Marshaller
  */
-public class SetPermissionRequestMarshaller implements
-        Marshaller<Request<SetPermissionRequest>, SetPermissionRequest> {
+public class SetPermissionRequestMarshaller implements Marshaller<Request<SetPermissionRequest>, SetPermissionRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -44,16 +41,13 @@ public class SetPermissionRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<SetPermissionRequest> marshall(
-            SetPermissionRequest setPermissionRequest) {
+    public Request<SetPermissionRequest> marshall(SetPermissionRequest setPermissionRequest) {
 
         if (setPermissionRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetPermissionRequest> request = new DefaultRequest<SetPermissionRequest>(
-                setPermissionRequest, "AWSOpsWorks");
+        Request<SetPermissionRequest> request = new DefaultRequest<SetPermissionRequest>(setPermissionRequest, "AWSOpsWorks");
         request.addHeader("X-Amz-Target", "OpsWorks_20130218.SetPermission");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -61,42 +55,34 @@ public class SetPermissionRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (setPermissionRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(
-                        setPermissionRequest.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(setPermissionRequest.getStackId());
             }
             if (setPermissionRequest.getIamUserArn() != null) {
-                jsonGenerator.writeFieldName("IamUserArn").writeValue(
-                        setPermissionRequest.getIamUserArn());
+                jsonGenerator.writeFieldName("IamUserArn").writeValue(setPermissionRequest.getIamUserArn());
             }
             if (setPermissionRequest.getAllowSsh() != null) {
-                jsonGenerator.writeFieldName("AllowSsh").writeValue(
-                        setPermissionRequest.getAllowSsh());
+                jsonGenerator.writeFieldName("AllowSsh").writeValue(setPermissionRequest.getAllowSsh());
             }
             if (setPermissionRequest.getAllowSudo() != null) {
-                jsonGenerator.writeFieldName("AllowSudo").writeValue(
-                        setPermissionRequest.getAllowSudo());
+                jsonGenerator.writeFieldName("AllowSudo").writeValue(setPermissionRequest.getAllowSudo());
             }
             if (setPermissionRequest.getLevel() != null) {
-                jsonGenerator.writeFieldName("Level").writeValue(
-                        setPermissionRequest.getLevel());
+                jsonGenerator.writeFieldName("Level").writeValue(setPermissionRequest.getLevel());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

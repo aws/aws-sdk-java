@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kms.model;
 
@@ -20,18 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ImportKeyMaterialRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the CMK to import the key material into. The CMK's
-     * <code>Origin</code> must be <code>EXTERNAL</code>.
+     * The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
+     * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN)
-     * of the CMK. Examples:
+     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
      * </p>
      * <ul>
      * <li>
@@ -41,8 +36,7 @@ public class ImportKeyMaterialRequest extends
      * </li>
      * <li>
      * <p>
-     * Key ARN:
-     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
@@ -50,50 +44,43 @@ public class ImportKeyMaterialRequest extends
     private String keyId;
     /**
      * <p>
-     * The import token that you received in the response to a previous
-     * <a>GetParametersForImport</a> request. It must be from the same response
-     * that contained the public key that you used to encrypt the key material.
+     * The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It must
+     * be from the same response that contained the public key that you used to encrypt the key material.
      * </p>
      */
     private java.nio.ByteBuffer importToken;
     /**
      * <p>
-     * The encrypted key material to import. It must be encrypted with the
-     * public key that you received in the response to a previous
-     * <a>GetParametersForImport</a> request, using the wrapping algorithm that
-     * you specified in that request.
+     * The encrypted key material to import. It must be encrypted with the public key that you received in the response
+     * to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you specified in that
+     * request.
      * </p>
      */
     private java.nio.ByteBuffer encryptedKeyMaterial;
     /**
      * <p>
-     * The time at which the imported key material expires. When the key
-     * material expires, AWS KMS deletes the key material and the CMK becomes
-     * unusable. You must omit this parameter when the
-     * <code>ExpirationModel</code> parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.
+     * The time at which the imported key material expires. When the key material expires, AWS KMS deletes the key
+     * material and the CMK becomes unusable. You must omit this parameter when the <code>ExpirationModel</code>
+     * parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.
      * </p>
      */
     private java.util.Date validTo;
     /**
      * <p>
-     * Specifies whether the key material expires. The default is
-     * <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the
-     * <code>ValidTo</code> parameter. When this parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     * <code>ValidTo</code> parameter.
+     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which case you
+     * must include the <code>ValidTo</code> parameter. When this parameter is set to
+     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
      * </p>
      */
     private String expirationModel;
 
     /**
      * <p>
-     * The identifier of the CMK to import the key material into. The CMK's
-     * <code>Origin</code> must be <code>EXTERNAL</code>.
+     * The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
+     * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN)
-     * of the CMK. Examples:
+     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
      * </p>
      * <ul>
      * <li>
@@ -103,18 +90,16 @@ public class ImportKeyMaterialRequest extends
      * </li>
      * <li>
      * <p>
-     * Key ARN:
-     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param keyId
-     *        The identifier of the CMK to import the key material into. The
-     *        CMK's <code>Origin</code> must be <code>EXTERNAL</code>.</p>
+     *        The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
+     *        <code>EXTERNAL</code>.</p>
      *        <p>
-     *        A valid identifier is the unique key ID or the Amazon Resource
-     *        Name (ARN) of the CMK. Examples:
+     *        A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
      *        </p>
      *        <ul>
      *        <li>
@@ -124,8 +109,7 @@ public class ImportKeyMaterialRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        Key ARN:
-     *        <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      */
@@ -136,12 +120,11 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * The identifier of the CMK to import the key material into. The CMK's
-     * <code>Origin</code> must be <code>EXTERNAL</code>.
+     * The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
+     * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN)
-     * of the CMK. Examples:
+     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
      * </p>
      * <ul>
      * <li>
@@ -151,17 +134,15 @@ public class ImportKeyMaterialRequest extends
      * </li>
      * <li>
      * <p>
-     * Key ARN:
-     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The identifier of the CMK to import the key material into. The
-     *         CMK's <code>Origin</code> must be <code>EXTERNAL</code>.</p>
+     * @return The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
+     *         <code>EXTERNAL</code>.</p>
      *         <p>
-     *         A valid identifier is the unique key ID or the Amazon Resource
-     *         Name (ARN) of the CMK. Examples:
+     *         A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
      *         </p>
      *         <ul>
      *         <li>
@@ -171,8 +152,7 @@ public class ImportKeyMaterialRequest extends
      *         </li>
      *         <li>
      *         <p>
-     *         Key ARN:
-     *         <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      */
@@ -183,12 +163,11 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * The identifier of the CMK to import the key material into. The CMK's
-     * <code>Origin</code> must be <code>EXTERNAL</code>.
+     * The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
+     * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN)
-     * of the CMK. Examples:
+     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
      * </p>
      * <ul>
      * <li>
@@ -198,18 +177,16 @@ public class ImportKeyMaterialRequest extends
      * </li>
      * <li>
      * <p>
-     * Key ARN:
-     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param keyId
-     *        The identifier of the CMK to import the key material into. The
-     *        CMK's <code>Origin</code> must be <code>EXTERNAL</code>.</p>
+     *        The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
+     *        <code>EXTERNAL</code>.</p>
      *        <p>
-     *        A valid identifier is the unique key ID or the Amazon Resource
-     *        Name (ARN) of the CMK. Examples:
+     *        A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
      *        </p>
      *        <ul>
      *        <li>
@@ -219,12 +196,10 @@ public class ImportKeyMaterialRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        Key ARN:
-     *        <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportKeyMaterialRequest withKeyId(String keyId) {
@@ -234,29 +209,23 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * The import token that you received in the response to a previous
-     * <a>GetParametersForImport</a> request. It must be from the same response
-     * that contained the public key that you used to encrypt the key material.
+     * The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It must
+     * be from the same response that contained the public key that you used to encrypt the key material.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending
-     * this request to AWS service by default. Users of the SDK should not
-     * perform Base64 encoding on this field.
+     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
-     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
-     * content or position of the byte buffer will be seen by all objects that
-     * have a reference to this object. It is recommended to call
-     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
-     * reading from the buffer. This behavior will be changed in a future major
-     * version of the SDK.
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param importToken
-     *        The import token that you received in the response to a previous
-     *        <a>GetParametersForImport</a> request. It must be from the same
-     *        response that contained the public key that you used to encrypt
-     *        the key material.
+     *        The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It
+     *        must be from the same response that contained the public key that you used to encrypt the key material.
      */
 
     public void setImportToken(java.nio.ByteBuffer importToken) {
@@ -265,25 +234,20 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * The import token that you received in the response to a previous
-     * <a>GetParametersForImport</a> request. It must be from the same response
-     * that contained the public key that you used to encrypt the key material.
+     * The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It must
+     * be from the same response that contained the public key that you used to encrypt the key material.
      * </p>
      * <p>
-     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
-     * changes their {@code position}. We recommend using
-     * {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view
-     * of the buffer with an independent {@code position}, and calling
-     * {@code get} methods on this rather than directly on the returned
-     * {@code ByteBuffer}. Doing so will ensure that anyone else using the
-     * {@code ByteBuffer} will not be affected by changes to the {@code position}
-     * .
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
      * </p>
      * 
-     * @return The import token that you received in the response to a previous
-     *         <a>GetParametersForImport</a> request. It must be from the same
-     *         response that contained the public key that you used to encrypt
-     *         the key material.
+     * @return The import token that you received in the response to a previous <a>GetParametersForImport</a> request.
+     *         It must be from the same response that contained the public key that you used to encrypt the key
+     *         material.
      */
 
     public java.nio.ByteBuffer getImportToken() {
@@ -292,52 +256,42 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * The import token that you received in the response to a previous
-     * <a>GetParametersForImport</a> request. It must be from the same response
-     * that contained the public key that you used to encrypt the key material.
+     * The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It must
+     * be from the same response that contained the public key that you used to encrypt the key material.
      * </p>
      * 
      * @param importToken
-     *        The import token that you received in the response to a previous
-     *        <a>GetParametersForImport</a> request. It must be from the same
-     *        response that contained the public key that you used to encrypt
-     *        the key material.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It
+     *        must be from the same response that contained the public key that you used to encrypt the key material.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportKeyMaterialRequest withImportToken(
-            java.nio.ByteBuffer importToken) {
+    public ImportKeyMaterialRequest withImportToken(java.nio.ByteBuffer importToken) {
         setImportToken(importToken);
         return this;
     }
 
     /**
      * <p>
-     * The encrypted key material to import. It must be encrypted with the
-     * public key that you received in the response to a previous
-     * <a>GetParametersForImport</a> request, using the wrapping algorithm that
-     * you specified in that request.
+     * The encrypted key material to import. It must be encrypted with the public key that you received in the response
+     * to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you specified in that
+     * request.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending
-     * this request to AWS service by default. Users of the SDK should not
-     * perform Base64 encoding on this field.
+     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
-     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
-     * content or position of the byte buffer will be seen by all objects that
-     * have a reference to this object. It is recommended to call
-     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
-     * reading from the buffer. This behavior will be changed in a future major
-     * version of the SDK.
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param encryptedKeyMaterial
-     *        The encrypted key material to import. It must be encrypted with
-     *        the public key that you received in the response to a previous
-     *        <a>GetParametersForImport</a> request, using the wrapping
-     *        algorithm that you specified in that request.
+     *        The encrypted key material to import. It must be encrypted with the public key that you received in the
+     *        response to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you
+     *        specified in that request.
      */
 
     public void setEncryptedKeyMaterial(java.nio.ByteBuffer encryptedKeyMaterial) {
@@ -346,26 +300,21 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * The encrypted key material to import. It must be encrypted with the
-     * public key that you received in the response to a previous
-     * <a>GetParametersForImport</a> request, using the wrapping algorithm that
-     * you specified in that request.
+     * The encrypted key material to import. It must be encrypted with the public key that you received in the response
+     * to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you specified in that
+     * request.
      * </p>
      * <p>
-     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
-     * changes their {@code position}. We recommend using
-     * {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view
-     * of the buffer with an independent {@code position}, and calling
-     * {@code get} methods on this rather than directly on the returned
-     * {@code ByteBuffer}. Doing so will ensure that anyone else using the
-     * {@code ByteBuffer} will not be affected by changes to the {@code position}
-     * .
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
      * </p>
      * 
-     * @return The encrypted key material to import. It must be encrypted with
-     *         the public key that you received in the response to a previous
-     *         <a>GetParametersForImport</a> request, using the wrapping
-     *         algorithm that you specified in that request.
+     * @return The encrypted key material to import. It must be encrypted with the public key that you received in the
+     *         response to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you
+     *         specified in that request.
      */
 
     public java.nio.ByteBuffer getEncryptedKeyMaterial() {
@@ -374,43 +323,35 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * The encrypted key material to import. It must be encrypted with the
-     * public key that you received in the response to a previous
-     * <a>GetParametersForImport</a> request, using the wrapping algorithm that
-     * you specified in that request.
+     * The encrypted key material to import. It must be encrypted with the public key that you received in the response
+     * to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you specified in that
+     * request.
      * </p>
      * 
      * @param encryptedKeyMaterial
-     *        The encrypted key material to import. It must be encrypted with
-     *        the public key that you received in the response to a previous
-     *        <a>GetParametersForImport</a> request, using the wrapping
-     *        algorithm that you specified in that request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The encrypted key material to import. It must be encrypted with the public key that you received in the
+     *        response to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you
+     *        specified in that request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportKeyMaterialRequest withEncryptedKeyMaterial(
-            java.nio.ByteBuffer encryptedKeyMaterial) {
+    public ImportKeyMaterialRequest withEncryptedKeyMaterial(java.nio.ByteBuffer encryptedKeyMaterial) {
         setEncryptedKeyMaterial(encryptedKeyMaterial);
         return this;
     }
 
     /**
      * <p>
-     * The time at which the imported key material expires. When the key
-     * material expires, AWS KMS deletes the key material and the CMK becomes
-     * unusable. You must omit this parameter when the
-     * <code>ExpirationModel</code> parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.
+     * The time at which the imported key material expires. When the key material expires, AWS KMS deletes the key
+     * material and the CMK becomes unusable. You must omit this parameter when the <code>ExpirationModel</code>
+     * parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.
      * </p>
      * 
      * @param validTo
-     *        The time at which the imported key material expires. When the key
-     *        material expires, AWS KMS deletes the key material and the CMK
-     *        becomes unusable. You must omit this parameter when the
-     *        <code>ExpirationModel</code> parameter is set to
-     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is
-     *        required.
+     *        The time at which the imported key material expires. When the key material expires, AWS KMS deletes the
+     *        key material and the CMK becomes unusable. You must omit this parameter when the
+     *        <code>ExpirationModel</code> parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it
+     *        is required.
      */
 
     public void setValidTo(java.util.Date validTo) {
@@ -419,19 +360,15 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * The time at which the imported key material expires. When the key
-     * material expires, AWS KMS deletes the key material and the CMK becomes
-     * unusable. You must omit this parameter when the
-     * <code>ExpirationModel</code> parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.
+     * The time at which the imported key material expires. When the key material expires, AWS KMS deletes the key
+     * material and the CMK becomes unusable. You must omit this parameter when the <code>ExpirationModel</code>
+     * parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.
      * </p>
      * 
-     * @return The time at which the imported key material expires. When the key
-     *         material expires, AWS KMS deletes the key material and the CMK
-     *         becomes unusable. You must omit this parameter when the
-     *         <code>ExpirationModel</code> parameter is set to
-     *         <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is
-     *         required.
+     * @return The time at which the imported key material expires. When the key material expires, AWS KMS deletes the
+     *         key material and the CMK becomes unusable. You must omit this parameter when the
+     *         <code>ExpirationModel</code> parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it
+     *         is required.
      */
 
     public java.util.Date getValidTo() {
@@ -440,22 +377,17 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * The time at which the imported key material expires. When the key
-     * material expires, AWS KMS deletes the key material and the CMK becomes
-     * unusable. You must omit this parameter when the
-     * <code>ExpirationModel</code> parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.
+     * The time at which the imported key material expires. When the key material expires, AWS KMS deletes the key
+     * material and the CMK becomes unusable. You must omit this parameter when the <code>ExpirationModel</code>
+     * parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.
      * </p>
      * 
      * @param validTo
-     *        The time at which the imported key material expires. When the key
-     *        material expires, AWS KMS deletes the key material and the CMK
-     *        becomes unusable. You must omit this parameter when the
-     *        <code>ExpirationModel</code> parameter is set to
-     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is
-     *        required.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time at which the imported key material expires. When the key material expires, AWS KMS deletes the
+     *        key material and the CMK becomes unusable. You must omit this parameter when the
+     *        <code>ExpirationModel</code> parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it
+     *        is required.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportKeyMaterialRequest withValidTo(java.util.Date validTo) {
@@ -465,19 +397,15 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * Specifies whether the key material expires. The default is
-     * <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the
-     * <code>ValidTo</code> parameter. When this parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     * <code>ValidTo</code> parameter.
+     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which case you
+     * must include the <code>ValidTo</code> parameter. When this parameter is set to
+     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
      * </p>
      * 
      * @param expirationModel
-     *        Specifies whether the key material expires. The default is
-     *        <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include
-     *        the <code>ValidTo</code> parameter. When this parameter is set to
-     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     *        <code>ValidTo</code> parameter.
+     *        Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which
+     *        case you must include the <code>ValidTo</code> parameter. When this parameter is set to
+     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
      * @see ExpirationModelType
      */
 
@@ -487,18 +415,14 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * Specifies whether the key material expires. The default is
-     * <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the
-     * <code>ValidTo</code> parameter. When this parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     * <code>ValidTo</code> parameter.
+     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which case you
+     * must include the <code>ValidTo</code> parameter. When this parameter is set to
+     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
      * </p>
      * 
-     * @return Specifies whether the key material expires. The default is
-     *         <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include
-     *         the <code>ValidTo</code> parameter. When this parameter is set to
-     *         <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     *         <code>ValidTo</code> parameter.
+     * @return Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which
+     *         case you must include the <code>ValidTo</code> parameter. When this parameter is set to
+     *         <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
      * @see ExpirationModelType
      */
 
@@ -508,21 +432,16 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * Specifies whether the key material expires. The default is
-     * <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the
-     * <code>ValidTo</code> parameter. When this parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     * <code>ValidTo</code> parameter.
+     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which case you
+     * must include the <code>ValidTo</code> parameter. When this parameter is set to
+     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
      * </p>
      * 
      * @param expirationModel
-     *        Specifies whether the key material expires. The default is
-     *        <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include
-     *        the <code>ValidTo</code> parameter. When this parameter is set to
-     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     *        <code>ValidTo</code> parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which
+     *        case you must include the <code>ValidTo</code> parameter. When this parameter is set to
+     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExpirationModelType
      */
 
@@ -533,19 +452,15 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * Specifies whether the key material expires. The default is
-     * <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the
-     * <code>ValidTo</code> parameter. When this parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     * <code>ValidTo</code> parameter.
+     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which case you
+     * must include the <code>ValidTo</code> parameter. When this parameter is set to
+     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
      * </p>
      * 
      * @param expirationModel
-     *        Specifies whether the key material expires. The default is
-     *        <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include
-     *        the <code>ValidTo</code> parameter. When this parameter is set to
-     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     *        <code>ValidTo</code> parameter.
+     *        Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which
+     *        case you must include the <code>ValidTo</code> parameter. When this parameter is set to
+     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
      * @see ExpirationModelType
      */
 
@@ -555,33 +470,26 @@ public class ImportKeyMaterialRequest extends
 
     /**
      * <p>
-     * Specifies whether the key material expires. The default is
-     * <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the
-     * <code>ValidTo</code> parameter. When this parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     * <code>ValidTo</code> parameter.
+     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which case you
+     * must include the <code>ValidTo</code> parameter. When this parameter is set to
+     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
      * </p>
      * 
      * @param expirationModel
-     *        Specifies whether the key material expires. The default is
-     *        <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include
-     *        the <code>ValidTo</code> parameter. When this parameter is set to
-     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     *        <code>ValidTo</code> parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which
+     *        case you must include the <code>ValidTo</code> parameter. When this parameter is set to
+     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExpirationModelType
      */
 
-    public ImportKeyMaterialRequest withExpirationModel(
-            ExpirationModelType expirationModel) {
+    public ImportKeyMaterialRequest withExpirationModel(ExpirationModelType expirationModel) {
         setExpirationModel(expirationModel);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -596,8 +504,7 @@ public class ImportKeyMaterialRequest extends
         if (getImportToken() != null)
             sb.append("ImportToken: " + getImportToken() + ",");
         if (getEncryptedKeyMaterial() != null)
-            sb.append("EncryptedKeyMaterial: " + getEncryptedKeyMaterial()
-                    + ",");
+            sb.append("EncryptedKeyMaterial: " + getEncryptedKeyMaterial() + ",");
         if (getValidTo() != null)
             sb.append("ValidTo: " + getValidTo() + ",");
         if (getExpirationModel() != null)
@@ -618,31 +525,23 @@ public class ImportKeyMaterialRequest extends
         ImportKeyMaterialRequest other = (ImportKeyMaterialRequest) obj;
         if (other.getKeyId() == null ^ this.getKeyId() == null)
             return false;
-        if (other.getKeyId() != null
-                && other.getKeyId().equals(this.getKeyId()) == false)
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
             return false;
         if (other.getImportToken() == null ^ this.getImportToken() == null)
             return false;
-        if (other.getImportToken() != null
-                && other.getImportToken().equals(this.getImportToken()) == false)
+        if (other.getImportToken() != null && other.getImportToken().equals(this.getImportToken()) == false)
             return false;
-        if (other.getEncryptedKeyMaterial() == null
-                ^ this.getEncryptedKeyMaterial() == null)
+        if (other.getEncryptedKeyMaterial() == null ^ this.getEncryptedKeyMaterial() == null)
             return false;
-        if (other.getEncryptedKeyMaterial() != null
-                && other.getEncryptedKeyMaterial().equals(
-                        this.getEncryptedKeyMaterial()) == false)
+        if (other.getEncryptedKeyMaterial() != null && other.getEncryptedKeyMaterial().equals(this.getEncryptedKeyMaterial()) == false)
             return false;
         if (other.getValidTo() == null ^ this.getValidTo() == null)
             return false;
-        if (other.getValidTo() != null
-                && other.getValidTo().equals(this.getValidTo()) == false)
+        if (other.getValidTo() != null && other.getValidTo().equals(this.getValidTo()) == false)
             return false;
-        if (other.getExpirationModel() == null
-                ^ this.getExpirationModel() == null)
+        if (other.getExpirationModel() == null ^ this.getExpirationModel() == null)
             return false;
-        if (other.getExpirationModel() != null
-                && other.getExpirationModel().equals(this.getExpirationModel()) == false)
+        if (other.getExpirationModel() != null && other.getExpirationModel().equals(this.getExpirationModel()) == false)
             return false;
         return true;
     }
@@ -652,21 +551,11 @@ public class ImportKeyMaterialRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getImportToken() == null) ? 0 : getImportToken().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEncryptedKeyMaterial() == null) ? 0
-                        : getEncryptedKeyMaterial().hashCode());
-        hashCode = prime * hashCode
-                + ((getValidTo() == null) ? 0 : getValidTo().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExpirationModel() == null) ? 0 : getExpirationModel()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
+        hashCode = prime * hashCode + ((getImportToken() == null) ? 0 : getImportToken().hashCode());
+        hashCode = prime * hashCode + ((getEncryptedKeyMaterial() == null) ? 0 : getEncryptedKeyMaterial().hashCode());
+        hashCode = prime * hashCode + ((getValidTo() == null) ? 0 : getValidTo().hashCode());
+        hashCode = prime * hashCode + ((getExpirationModel() == null) ? 0 : getExpirationModel().hashCode());
         return hashCode;
     }
 

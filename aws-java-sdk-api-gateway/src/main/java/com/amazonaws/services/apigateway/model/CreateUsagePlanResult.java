@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model;
 
@@ -18,22 +16,19 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a usage plan than can specify who can assess associated API stages
- * with specified request limits and quotas.
+ * Represents a usage plan than can specify who can assess associated API stages with specified request limits and
+ * quotas.
  * </p>
  * <div class="remarks">
  * <p>
- * In a usage plan, you associate an API by specifying the API's Id and a stage
- * name of the specified API. You add plan customers by adding API keys to the
- * plan.
+ * In a usage plan, you associate an API by specifying the API's Id and a stage name of the specified API. You add plan
+ * customers by adding API keys to the plan.
  * </p>
- * </div> <div class="seeAlso"> <a href=
- * "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html"
- * >Create and Use Usage Plans</a> </div>
+ * </div> <div class="seeAlso"> <a
+ * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use
+ * Usage Plans</a> </div>
  */
-public class CreateUsagePlanResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CreateUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -104,8 +99,7 @@ public class CreateUsagePlanResult extends
      * 
      * @param id
      *        The identifier of a <a>UsagePlan</a> resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateUsagePlanResult withId(String id) {
@@ -145,8 +139,7 @@ public class CreateUsagePlanResult extends
      * 
      * @param name
      *        The name of a usage plan.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateUsagePlanResult withName(String name) {
@@ -186,8 +179,7 @@ public class CreateUsagePlanResult extends
      * 
      * @param description
      *        The description of a usage plan.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateUsagePlanResult withDescription(String description) {
@@ -230,16 +222,14 @@ public class CreateUsagePlanResult extends
      * The associated API stages of a usage plan.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setApiStages(java.util.Collection)} or
-     * {@link #withApiStages(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setApiStages(java.util.Collection)} or {@link #withApiStages(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param apiStages
      *        The associated API stages of a usage plan.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateUsagePlanResult withApiStages(ApiStage... apiStages) {
@@ -259,12 +249,10 @@ public class CreateUsagePlanResult extends
      * 
      * @param apiStages
      *        The associated API stages of a usage plan.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateUsagePlanResult withApiStages(
-            java.util.Collection<ApiStage> apiStages) {
+    public CreateUsagePlanResult withApiStages(java.util.Collection<ApiStage> apiStages) {
         setApiStages(apiStages);
         return this;
     }
@@ -301,8 +289,7 @@ public class CreateUsagePlanResult extends
      * 
      * @param throttle
      *        The request throttle limits of a usage plan.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateUsagePlanResult withThrottle(ThrottleSettings throttle) {
@@ -316,8 +303,7 @@ public class CreateUsagePlanResult extends
      * </p>
      * 
      * @param quota
-     *        The maximum number of permitted requests per a given unit time
-     *        interval.
+     *        The maximum number of permitted requests per a given unit time interval.
      */
 
     public void setQuota(QuotaSettings quota) {
@@ -329,8 +315,7 @@ public class CreateUsagePlanResult extends
      * The maximum number of permitted requests per a given unit time interval.
      * </p>
      * 
-     * @return The maximum number of permitted requests per a given unit time
-     *         interval.
+     * @return The maximum number of permitted requests per a given unit time interval.
      */
 
     public QuotaSettings getQuota() {
@@ -343,10 +328,8 @@ public class CreateUsagePlanResult extends
      * </p>
      * 
      * @param quota
-     *        The maximum number of permitted requests per a given unit time
-     *        interval.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of permitted requests per a given unit time interval.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateUsagePlanResult withQuota(QuotaSettings quota) {
@@ -355,8 +338,7 @@ public class CreateUsagePlanResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -394,33 +376,27 @@ public class CreateUsagePlanResult extends
         CreateUsagePlanResult other = (CreateUsagePlanResult) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getApiStages() == null ^ this.getApiStages() == null)
             return false;
-        if (other.getApiStages() != null
-                && other.getApiStages().equals(this.getApiStages()) == false)
+        if (other.getApiStages() != null && other.getApiStages().equals(this.getApiStages()) == false)
             return false;
         if (other.getThrottle() == null ^ this.getThrottle() == null)
             return false;
-        if (other.getThrottle() != null
-                && other.getThrottle().equals(this.getThrottle()) == false)
+        if (other.getThrottle() != null && other.getThrottle().equals(this.getThrottle()) == false)
             return false;
         if (other.getQuota() == null ^ this.getQuota() == null)
             return false;
-        if (other.getQuota() != null
-                && other.getQuota().equals(this.getQuota()) == false)
+        if (other.getQuota() != null && other.getQuota().equals(this.getQuota()) == false)
             return false;
         return true;
     }
@@ -430,19 +406,12 @@ public class CreateUsagePlanResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getApiStages() == null) ? 0 : getApiStages().hashCode());
-        hashCode = prime * hashCode
-                + ((getThrottle() == null) ? 0 : getThrottle().hashCode());
-        hashCode = prime * hashCode
-                + ((getQuota() == null) ? 0 : getQuota().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getApiStages() == null) ? 0 : getApiStages().hashCode());
+        hashCode = prime * hashCode + ((getThrottle() == null) ? 0 : getThrottle().hashCode());
+        hashCode = prime * hashCode + ((getQuota() == null) ? 0 : getQuota().hashCode());
         return hashCode;
     }
 
@@ -451,9 +420,7 @@ public class CreateUsagePlanResult extends
         try {
             return (CreateUsagePlanResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

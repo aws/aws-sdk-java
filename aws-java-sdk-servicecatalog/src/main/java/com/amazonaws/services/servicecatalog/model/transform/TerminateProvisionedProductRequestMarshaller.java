@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
@@ -35,75 +33,56 @@ import com.amazonaws.protocol.json.*;
 /**
  * TerminateProvisionedProductRequest Marshaller
  */
-public class TerminateProvisionedProductRequestMarshaller
-        implements
+public class TerminateProvisionedProductRequestMarshaller implements
         Marshaller<Request<TerminateProvisionedProductRequest>, TerminateProvisionedProductRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public TerminateProvisionedProductRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public TerminateProvisionedProductRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<TerminateProvisionedProductRequest> marshall(
-            TerminateProvisionedProductRequest terminateProvisionedProductRequest) {
+    public Request<TerminateProvisionedProductRequest> marshall(TerminateProvisionedProductRequest terminateProvisionedProductRequest) {
 
         if (terminateProvisionedProductRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<TerminateProvisionedProductRequest> request = new DefaultRequest<TerminateProvisionedProductRequest>(
-                terminateProvisionedProductRequest, "AWSServiceCatalog");
-        request.addHeader("X-Amz-Target",
-                "AWS242ServiceCatalogService.TerminateProvisionedProduct");
+        Request<TerminateProvisionedProductRequest> request = new DefaultRequest<TerminateProvisionedProductRequest>(terminateProvisionedProductRequest,
+                "AWSServiceCatalog");
+        request.addHeader("X-Amz-Target", "AWS242ServiceCatalogService.TerminateProvisionedProduct");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (terminateProvisionedProductRequest.getProvisionedProductName() != null) {
-                jsonGenerator.writeFieldName("ProvisionedProductName")
-                        .writeValue(
-                                terminateProvisionedProductRequest
-                                        .getProvisionedProductName());
+                jsonGenerator.writeFieldName("ProvisionedProductName").writeValue(terminateProvisionedProductRequest.getProvisionedProductName());
             }
             if (terminateProvisionedProductRequest.getProvisionedProductId() != null) {
-                jsonGenerator.writeFieldName("ProvisionedProductId")
-                        .writeValue(
-                                terminateProvisionedProductRequest
-                                        .getProvisionedProductId());
+                jsonGenerator.writeFieldName("ProvisionedProductId").writeValue(terminateProvisionedProductRequest.getProvisionedProductId());
             }
-            jsonGenerator.writeFieldName("TerminateToken").writeValue(
-                    IdempotentUtils
-                            .resolveString(terminateProvisionedProductRequest
-                                    .getTerminateToken()));
+            jsonGenerator.writeFieldName("TerminateToken").writeValue(IdempotentUtils.resolveString(terminateProvisionedProductRequest.getTerminateToken()));
             if (terminateProvisionedProductRequest.getIgnoreErrors() != null) {
-                jsonGenerator.writeFieldName("IgnoreErrors").writeValue(
-                        terminateProvisionedProductRequest.getIgnoreErrors());
+                jsonGenerator.writeFieldName("IgnoreErrors").writeValue(terminateProvisionedProductRequest.getIgnoreErrors());
             }
             if (terminateProvisionedProductRequest.getAcceptLanguage() != null) {
-                jsonGenerator.writeFieldName("AcceptLanguage").writeValue(
-                        terminateProvisionedProductRequest.getAcceptLanguage());
+                jsonGenerator.writeFieldName("AcceptLanguage").writeValue(terminateProvisionedProductRequest.getAcceptLanguage());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

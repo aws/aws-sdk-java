@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for RemovePermission action.
  * </p>
  */
-public class RemovePermissionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -40,21 +36,18 @@ public class RemovePermissionRequest extends
     private String label;
 
     /**
-     * Default constructor for RemovePermissionRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize the
-     * object after creating it.
+     * Default constructor for RemovePermissionRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public RemovePermissionRequest() {
     }
 
     /**
-     * Constructs a new RemovePermissionRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new RemovePermissionRequest object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize any additional object members.
      * 
      * @param topicArn
-     *        The ARN of the topic whose access control policy you wish to
-     *        modify.
+     *        The ARN of the topic whose access control policy you wish to modify.
      * @param label
      *        The unique label of the statement you want to remove.
      */
@@ -69,8 +62,7 @@ public class RemovePermissionRequest extends
      * </p>
      * 
      * @param topicArn
-     *        The ARN of the topic whose access control policy you wish to
-     *        modify.
+     *        The ARN of the topic whose access control policy you wish to modify.
      */
 
     public void setTopicArn(String topicArn) {
@@ -82,8 +74,7 @@ public class RemovePermissionRequest extends
      * The ARN of the topic whose access control policy you wish to modify.
      * </p>
      * 
-     * @return The ARN of the topic whose access control policy you wish to
-     *         modify.
+     * @return The ARN of the topic whose access control policy you wish to modify.
      */
 
     public String getTopicArn() {
@@ -96,10 +87,8 @@ public class RemovePermissionRequest extends
      * </p>
      * 
      * @param topicArn
-     *        The ARN of the topic whose access control policy you wish to
-     *        modify.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN of the topic whose access control policy you wish to modify.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemovePermissionRequest withTopicArn(String topicArn) {
@@ -139,8 +128,7 @@ public class RemovePermissionRequest extends
      * 
      * @param label
      *        The unique label of the statement you want to remove.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemovePermissionRequest withLabel(String label) {
@@ -149,8 +137,7 @@ public class RemovePermissionRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -180,13 +167,11 @@ public class RemovePermissionRequest extends
         RemovePermissionRequest other = (RemovePermissionRequest) obj;
         if (other.getTopicArn() == null ^ this.getTopicArn() == null)
             return false;
-        if (other.getTopicArn() != null
-                && other.getTopicArn().equals(this.getTopicArn()) == false)
+        if (other.getTopicArn() != null && other.getTopicArn().equals(this.getTopicArn()) == false)
             return false;
         if (other.getLabel() == null ^ this.getLabel() == null)
             return false;
-        if (other.getLabel() != null
-                && other.getLabel().equals(this.getLabel()) == false)
+        if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
             return false;
         return true;
     }
@@ -196,10 +181,8 @@ public class RemovePermissionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getLabel() == null) ? 0 : getLabel().hashCode());
+        hashCode = prime * hashCode + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode());
+        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -19,25 +17,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the VPC and the hosted zone
- * that you want to disassociate.
+ * A complex type that contains information about the VPC and the hosted zone that you want to disassociate.
  * </p>
  */
-public class DisassociateVPCFromHostedZoneRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DisassociateVPCFromHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC that you want to disassociate from an Amazon Route 53
-     * hosted zone.
+     * The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
      * </p>
      */
     private String hostedZoneId;
     /**
      * <p>
-     * A complex type containing information about the Amazon VPC that you're
-     * disassociating from the specified hosted zone.
+     * A complex type containing information about the Amazon VPC that you're disassociating from the specified hosted
+     * zone.
      * </p>
      */
     private VPC vPC;
@@ -50,13 +44,11 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * The ID of the VPC that you want to disassociate from an Amazon Route 53
-     * hosted zone.
+     * The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the VPC that you want to disassociate from an Amazon
-     *        Route 53 hosted zone.
+     *        The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -65,12 +57,10 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * The ID of the VPC that you want to disassociate from an Amazon Route 53
-     * hosted zone.
+     * The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
      * </p>
      * 
-     * @return The ID of the VPC that you want to disassociate from an Amazon
-     *         Route 53 hosted zone.
+     * @return The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
      */
 
     public String getHostedZoneId() {
@@ -79,32 +69,28 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * The ID of the VPC that you want to disassociate from an Amazon Route 53
-     * hosted zone.
+     * The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the VPC that you want to disassociate from an Amazon
-     *        Route 53 hosted zone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DisassociateVPCFromHostedZoneRequest withHostedZoneId(
-            String hostedZoneId) {
+    public DisassociateVPCFromHostedZoneRequest withHostedZoneId(String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
         return this;
     }
 
     /**
      * <p>
-     * A complex type containing information about the Amazon VPC that you're
-     * disassociating from the specified hosted zone.
+     * A complex type containing information about the Amazon VPC that you're disassociating from the specified hosted
+     * zone.
      * </p>
      * 
      * @param vPC
-     *        A complex type containing information about the Amazon VPC that
-     *        you're disassociating from the specified hosted zone.
+     *        A complex type containing information about the Amazon VPC that you're disassociating from the specified
+     *        hosted zone.
      */
 
     public void setVPC(VPC vPC) {
@@ -113,12 +99,12 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * A complex type containing information about the Amazon VPC that you're
-     * disassociating from the specified hosted zone.
+     * A complex type containing information about the Amazon VPC that you're disassociating from the specified hosted
+     * zone.
      * </p>
      * 
-     * @return A complex type containing information about the Amazon VPC that
-     *         you're disassociating from the specified hosted zone.
+     * @return A complex type containing information about the Amazon VPC that you're disassociating from the specified
+     *         hosted zone.
      */
 
     public VPC getVPC() {
@@ -127,15 +113,14 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * A complex type containing information about the Amazon VPC that you're
-     * disassociating from the specified hosted zone.
+     * A complex type containing information about the Amazon VPC that you're disassociating from the specified hosted
+     * zone.
      * </p>
      * 
      * @param vPC
-     *        A complex type containing information about the Amazon VPC that
-     *        you're disassociating from the specified hosted zone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type containing information about the Amazon VPC that you're disassociating from the specified
+     *        hosted zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisassociateVPCFromHostedZoneRequest withVPC(VPC vPC) {
@@ -175,8 +160,7 @@ public class DisassociateVPCFromHostedZoneRequest extends
      * 
      * @param comment
      *        <i>Optional:</i> A comment about the disassociation request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisassociateVPCFromHostedZoneRequest withComment(String comment) {
@@ -185,8 +169,7 @@ public class DisassociateVPCFromHostedZoneRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -218,18 +201,15 @@ public class DisassociateVPCFromHostedZoneRequest extends
         DisassociateVPCFromHostedZoneRequest other = (DisassociateVPCFromHostedZoneRequest) obj;
         if (other.getHostedZoneId() == null ^ this.getHostedZoneId() == null)
             return false;
-        if (other.getHostedZoneId() != null
-                && other.getHostedZoneId().equals(this.getHostedZoneId()) == false)
+        if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false)
             return false;
         if (other.getVPC() == null ^ this.getVPC() == null)
             return false;
-        if (other.getVPC() != null
-                && other.getVPC().equals(this.getVPC()) == false)
+        if (other.getVPC() != null && other.getVPC().equals(this.getVPC()) == false)
             return false;
         if (other.getComment() == null ^ this.getComment() == null)
             return false;
-        if (other.getComment() != null
-                && other.getComment().equals(this.getComment()) == false)
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
             return false;
         return true;
     }
@@ -239,14 +219,9 @@ public class DisassociateVPCFromHostedZoneRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getHostedZoneId() == null) ? 0 : getHostedZoneId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getVPC() == null) ? 0 : getVPC().hashCode());
-        hashCode = prime * hashCode
-                + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode());
+        hashCode = prime * hashCode + ((getVPC() == null) ? 0 : getVPC().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         return hashCode;
     }
 

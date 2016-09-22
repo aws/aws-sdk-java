@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model;
 
@@ -57,8 +55,7 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * @param logStreamName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogStream withLogStreamName(String logStreamName) {
@@ -84,8 +81,7 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * @param creationTime
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogStream withCreationTime(Long creationTime) {
@@ -111,8 +107,7 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * @param firstEventTimestamp
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogStream withFirstEventTimestamp(Long firstEventTimestamp) {
@@ -138,8 +133,7 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * @param lastEventTimestamp
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogStream withLastEventTimestamp(Long lastEventTimestamp) {
@@ -165,8 +159,7 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * @param lastIngestionTime
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogStream withLastIngestionTime(Long lastIngestionTime) {
@@ -192,8 +185,7 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * @param uploadSequenceToken
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogStream withUploadSequenceToken(String uploadSequenceToken) {
@@ -219,8 +211,7 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * @param arn
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogStream withArn(String arn) {
@@ -246,8 +237,7 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * @param storedBytes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogStream withStoredBytes(Long storedBytes) {
@@ -256,8 +246,7 @@ public class LogStream implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -299,51 +288,35 @@ public class LogStream implements Serializable, Cloneable {
         LogStream other = (LogStream) obj;
         if (other.getLogStreamName() == null ^ this.getLogStreamName() == null)
             return false;
-        if (other.getLogStreamName() != null
-                && other.getLogStreamName().equals(this.getLogStreamName()) == false)
+        if (other.getLogStreamName() != null && other.getLogStreamName().equals(this.getLogStreamName()) == false)
             return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getCreationTime() != null
-                && other.getCreationTime().equals(this.getCreationTime()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
-        if (other.getFirstEventTimestamp() == null
-                ^ this.getFirstEventTimestamp() == null)
+        if (other.getFirstEventTimestamp() == null ^ this.getFirstEventTimestamp() == null)
             return false;
-        if (other.getFirstEventTimestamp() != null
-                && other.getFirstEventTimestamp().equals(
-                        this.getFirstEventTimestamp()) == false)
+        if (other.getFirstEventTimestamp() != null && other.getFirstEventTimestamp().equals(this.getFirstEventTimestamp()) == false)
             return false;
-        if (other.getLastEventTimestamp() == null
-                ^ this.getLastEventTimestamp() == null)
+        if (other.getLastEventTimestamp() == null ^ this.getLastEventTimestamp() == null)
             return false;
-        if (other.getLastEventTimestamp() != null
-                && other.getLastEventTimestamp().equals(
-                        this.getLastEventTimestamp()) == false)
+        if (other.getLastEventTimestamp() != null && other.getLastEventTimestamp().equals(this.getLastEventTimestamp()) == false)
             return false;
-        if (other.getLastIngestionTime() == null
-                ^ this.getLastIngestionTime() == null)
+        if (other.getLastIngestionTime() == null ^ this.getLastIngestionTime() == null)
             return false;
-        if (other.getLastIngestionTime() != null
-                && other.getLastIngestionTime().equals(
-                        this.getLastIngestionTime()) == false)
+        if (other.getLastIngestionTime() != null && other.getLastIngestionTime().equals(this.getLastIngestionTime()) == false)
             return false;
-        if (other.getUploadSequenceToken() == null
-                ^ this.getUploadSequenceToken() == null)
+        if (other.getUploadSequenceToken() == null ^ this.getUploadSequenceToken() == null)
             return false;
-        if (other.getUploadSequenceToken() != null
-                && other.getUploadSequenceToken().equals(
-                        this.getUploadSequenceToken()) == false)
+        if (other.getUploadSequenceToken() != null && other.getUploadSequenceToken().equals(this.getUploadSequenceToken()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getStoredBytes() == null ^ this.getStoredBytes() == null)
             return false;
-        if (other.getStoredBytes() != null
-                && other.getStoredBytes().equals(this.getStoredBytes()) == false)
+        if (other.getStoredBytes() != null && other.getStoredBytes().equals(this.getStoredBytes()) == false)
             return false;
         return true;
     }
@@ -353,35 +326,14 @@ public class LogStream implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLogStreamName() == null) ? 0 : getLogStreamName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationTime() == null) ? 0 : getCreationTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFirstEventTimestamp() == null) ? 0
-                        : getFirstEventTimestamp().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastEventTimestamp() == null) ? 0
-                        : getLastEventTimestamp().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastIngestionTime() == null) ? 0
-                        : getLastIngestionTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUploadSequenceToken() == null) ? 0
-                        : getUploadSequenceToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStoredBytes() == null) ? 0 : getStoredBytes().hashCode());
+        hashCode = prime * hashCode + ((getLogStreamName() == null) ? 0 : getLogStreamName().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getFirstEventTimestamp() == null) ? 0 : getFirstEventTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getLastEventTimestamp() == null) ? 0 : getLastEventTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getLastIngestionTime() == null) ? 0 : getLastIngestionTime().hashCode());
+        hashCode = prime * hashCode + ((getUploadSequenceToken() == null) ? 0 : getUploadSequenceToken().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getStoredBytes() == null) ? 0 : getStoredBytes().hashCode());
         return hashCode;
     }
 
@@ -390,9 +342,7 @@ public class LogStream implements Serializable, Cloneable {
         try {
             return (LogStream) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

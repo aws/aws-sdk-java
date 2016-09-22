@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.devicefarm.model;
 
@@ -50,9 +48,8 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
-     * Android app, interacting with it and capturing screenshots at the same
-     * time.
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     * capturing screenshots at the same time.
      * </p>
      * </li>
      * <li>
@@ -289,8 +286,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @param arn
      *        The test's ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Test withArn(String arn) {
@@ -330,8 +326,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @param name
      *        The test's name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Test withName(String name) {
@@ -354,9 +349,8 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
-     * Android app, interacting with it and capturing screenshots at the same
-     * time.
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     * capturing screenshots at the same time.
      * </p>
      * </li>
      * <li>
@@ -434,9 +428,8 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
-     *        an Android app, interacting with it and capturing screenshots at
-     *        the same time.
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
@@ -521,9 +514,8 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
-     * Android app, interacting with it and capturing screenshots at the same
-     * time.
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     * capturing screenshots at the same time.
      * </p>
      * </li>
      * <li>
@@ -600,9 +592,8 @@ public class Test implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         BUILTIN_EXPLORER: For Android, an app explorer that will traverse
-     *         an Android app, interacting with it and capturing screenshots at
-     *         the same time.
+     *         BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *         capturing screenshots at the same time.
      *         </p>
      *         </li>
      *         <li>
@@ -687,9 +678,8 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
-     * Android app, interacting with it and capturing screenshots at the same
-     * time.
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     * capturing screenshots at the same time.
      * </p>
      * </li>
      * <li>
@@ -767,9 +757,8 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
-     *        an Android app, interacting with it and capturing screenshots at
-     *        the same time.
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
@@ -832,8 +821,7 @@ public class Test implements Serializable, Cloneable {
      *        XCTEST_UI: The XCode UI test type.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TestType
      */
 
@@ -857,9 +845,8 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
-     * Android app, interacting with it and capturing screenshots at the same
-     * time.
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     * capturing screenshots at the same time.
      * </p>
      * </li>
      * <li>
@@ -937,9 +924,8 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
-     *        an Android app, interacting with it and capturing screenshots at
-     *        the same time.
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
@@ -1024,9 +1010,8 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
-     * Android app, interacting with it and capturing screenshots at the same
-     * time.
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     * capturing screenshots at the same time.
      * </p>
      * </li>
      * <li>
@@ -1104,9 +1089,8 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
-     *        an Android app, interacting with it and capturing screenshots at
-     *        the same time.
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
@@ -1169,8 +1153,7 @@ public class Test implements Serializable, Cloneable {
      *        XCTEST_UI: The XCode UI test type.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TestType
      */
 
@@ -1211,8 +1194,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @param created
      *        When the test was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Test withCreated(java.util.Date created) {
@@ -1551,8 +1533,7 @@ public class Test implements Serializable, Cloneable {
      *        STOPPING: A stopping status.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutionStatus
      */
 
@@ -1780,8 +1761,7 @@ public class Test implements Serializable, Cloneable {
      *        STOPPING: A stopping status.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutionStatus
      */
 
@@ -2061,8 +2041,7 @@ public class Test implements Serializable, Cloneable {
      *        STOPPED: A stopped condition.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutionResult
      */
 
@@ -2250,8 +2229,7 @@ public class Test implements Serializable, Cloneable {
      *        STOPPED: A stopped condition.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutionResult
      */
 
@@ -2292,8 +2270,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @param started
      *        The test's start time.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Test withStarted(java.util.Date started) {
@@ -2333,8 +2310,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @param stopped
      *        The test's stop time.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Test withStopped(java.util.Date stopped) {
@@ -2374,8 +2350,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @param counters
      *        The test's result counters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Test withCounters(Counters counters) {
@@ -2415,8 +2390,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @param message
      *        A message about the test's result.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Test withMessage(String message) {
@@ -2430,8 +2404,7 @@ public class Test implements Serializable, Cloneable {
      * </p>
      * 
      * @param deviceMinutes
-     *        Represents the total (metered or unmetered) minutes used by the
-     *        test.
+     *        Represents the total (metered or unmetered) minutes used by the test.
      */
 
     public void setDeviceMinutes(DeviceMinutes deviceMinutes) {
@@ -2443,8 +2416,7 @@ public class Test implements Serializable, Cloneable {
      * Represents the total (metered or unmetered) minutes used by the test.
      * </p>
      * 
-     * @return Represents the total (metered or unmetered) minutes used by the
-     *         test.
+     * @return Represents the total (metered or unmetered) minutes used by the test.
      */
 
     public DeviceMinutes getDeviceMinutes() {
@@ -2457,10 +2429,8 @@ public class Test implements Serializable, Cloneable {
      * </p>
      * 
      * @param deviceMinutes
-     *        Represents the total (metered or unmetered) minutes used by the
-     *        test.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Represents the total (metered or unmetered) minutes used by the test.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Test withDeviceMinutes(DeviceMinutes deviceMinutes) {
@@ -2469,8 +2439,7 @@ public class Test implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -2518,58 +2487,47 @@ public class Test implements Serializable, Cloneable {
         Test other = (Test) obj;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getCreated() == null ^ this.getCreated() == null)
             return false;
-        if (other.getCreated() != null
-                && other.getCreated().equals(this.getCreated()) == false)
+        if (other.getCreated() != null && other.getCreated().equals(this.getCreated()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getResult() == null ^ this.getResult() == null)
             return false;
-        if (other.getResult() != null
-                && other.getResult().equals(this.getResult()) == false)
+        if (other.getResult() != null && other.getResult().equals(this.getResult()) == false)
             return false;
         if (other.getStarted() == null ^ this.getStarted() == null)
             return false;
-        if (other.getStarted() != null
-                && other.getStarted().equals(this.getStarted()) == false)
+        if (other.getStarted() != null && other.getStarted().equals(this.getStarted()) == false)
             return false;
         if (other.getStopped() == null ^ this.getStopped() == null)
             return false;
-        if (other.getStopped() != null
-                && other.getStopped().equals(this.getStopped()) == false)
+        if (other.getStopped() != null && other.getStopped().equals(this.getStopped()) == false)
             return false;
         if (other.getCounters() == null ^ this.getCounters() == null)
             return false;
-        if (other.getCounters() != null
-                && other.getCounters().equals(this.getCounters()) == false)
+        if (other.getCounters() != null && other.getCounters().equals(this.getCounters()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         if (other.getDeviceMinutes() == null ^ this.getDeviceMinutes() == null)
             return false;
-        if (other.getDeviceMinutes() != null
-                && other.getDeviceMinutes().equals(this.getDeviceMinutes()) == false)
+        if (other.getDeviceMinutes() != null && other.getDeviceMinutes().equals(this.getDeviceMinutes()) == false)
             return false;
         return true;
     }
@@ -2579,30 +2537,17 @@ public class Test implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreated() == null) ? 0 : getCreated().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getResult() == null) ? 0 : getResult().hashCode());
-        hashCode = prime * hashCode
-                + ((getStarted() == null) ? 0 : getStarted().hashCode());
-        hashCode = prime * hashCode
-                + ((getStopped() == null) ? 0 : getStopped().hashCode());
-        hashCode = prime * hashCode
-                + ((getCounters() == null) ? 0 : getCounters().hashCode());
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeviceMinutes() == null) ? 0 : getDeviceMinutes()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getResult() == null) ? 0 : getResult().hashCode());
+        hashCode = prime * hashCode + ((getStarted() == null) ? 0 : getStarted().hashCode());
+        hashCode = prime * hashCode + ((getStopped() == null) ? 0 : getStopped().hashCode());
+        hashCode = prime * hashCode + ((getCounters() == null) ? 0 : getCounters().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getDeviceMinutes() == null) ? 0 : getDeviceMinutes().hashCode());
         return hashCode;
     }
 
@@ -2611,9 +2556,7 @@ public class Test implements Serializable, Cloneable {
         try {
             return (Test) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

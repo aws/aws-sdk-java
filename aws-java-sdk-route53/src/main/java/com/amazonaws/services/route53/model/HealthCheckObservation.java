@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
 
@@ -18,43 +16,39 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains the last failure reason as reported by one
- * Amazon Route 53 health checker.
+ * A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker.
  * </p>
  */
 public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region of the Amazon Route 53 health checker that provided the status
-     * in StatusReport.
+     * The region of the Amazon Route 53 health checker that provided the status in StatusReport.
      * </p>
      */
     private String region;
     /**
      * <p>
-     * The IP address of the Amazon Route 53 health checker that provided the
-     * failure reason in <code>StatusReport</code>.
+     * The IP address of the Amazon Route 53 health checker that provided the failure reason in
+     * <code>StatusReport</code>.
      * </p>
      */
     private String iPAddress;
     /**
      * <p>
-     * A complex type that contains the last failure reason as reported by one
-     * Amazon Route 53 health checker and the time of the failed health check.
+     * A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the
+     * time of the failed health check.
      * </p>
      */
     private StatusReport statusReport;
 
     /**
      * <p>
-     * The region of the Amazon Route 53 health checker that provided the status
-     * in StatusReport.
+     * The region of the Amazon Route 53 health checker that provided the status in StatusReport.
      * </p>
      * 
      * @param region
-     *        The region of the Amazon Route 53 health checker that provided the
-     *        status in StatusReport.
+     *        The region of the Amazon Route 53 health checker that provided the status in StatusReport.
      * @see HealthCheckRegion
      */
 
@@ -64,12 +58,10 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region of the Amazon Route 53 health checker that provided the status
-     * in StatusReport.
+     * The region of the Amazon Route 53 health checker that provided the status in StatusReport.
      * </p>
      * 
-     * @return The region of the Amazon Route 53 health checker that provided
-     *         the status in StatusReport.
+     * @return The region of the Amazon Route 53 health checker that provided the status in StatusReport.
      * @see HealthCheckRegion
      */
 
@@ -79,15 +71,12 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region of the Amazon Route 53 health checker that provided the status
-     * in StatusReport.
+     * The region of the Amazon Route 53 health checker that provided the status in StatusReport.
      * </p>
      * 
      * @param region
-     *        The region of the Amazon Route 53 health checker that provided the
-     *        status in StatusReport.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckRegion
      */
 
@@ -98,13 +87,11 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region of the Amazon Route 53 health checker that provided the status
-     * in StatusReport.
+     * The region of the Amazon Route 53 health checker that provided the status in StatusReport.
      * </p>
      * 
      * @param region
-     *        The region of the Amazon Route 53 health checker that provided the
-     *        status in StatusReport.
+     *        The region of the Amazon Route 53 health checker that provided the status in StatusReport.
      * @see HealthCheckRegion
      */
 
@@ -114,15 +101,12 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region of the Amazon Route 53 health checker that provided the status
-     * in StatusReport.
+     * The region of the Amazon Route 53 health checker that provided the status in StatusReport.
      * </p>
      * 
      * @param region
-     *        The region of the Amazon Route 53 health checker that provided the
-     *        status in StatusReport.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckRegion
      */
 
@@ -133,13 +117,13 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the Amazon Route 53 health checker that provided the
-     * failure reason in <code>StatusReport</code>.
+     * The IP address of the Amazon Route 53 health checker that provided the failure reason in
+     * <code>StatusReport</code>.
      * </p>
      * 
      * @param iPAddress
-     *        The IP address of the Amazon Route 53 health checker that provided
-     *        the failure reason in <code>StatusReport</code>.
+     *        The IP address of the Amazon Route 53 health checker that provided the failure reason in
+     *        <code>StatusReport</code>.
      */
 
     public void setIPAddress(String iPAddress) {
@@ -148,12 +132,12 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the Amazon Route 53 health checker that provided the
-     * failure reason in <code>StatusReport</code>.
+     * The IP address of the Amazon Route 53 health checker that provided the failure reason in
+     * <code>StatusReport</code>.
      * </p>
      * 
-     * @return The IP address of the Amazon Route 53 health checker that
-     *         provided the failure reason in <code>StatusReport</code>.
+     * @return The IP address of the Amazon Route 53 health checker that provided the failure reason in
+     *         <code>StatusReport</code>.
      */
 
     public String getIPAddress() {
@@ -162,15 +146,14 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the Amazon Route 53 health checker that provided the
-     * failure reason in <code>StatusReport</code>.
+     * The IP address of the Amazon Route 53 health checker that provided the failure reason in
+     * <code>StatusReport</code>.
      * </p>
      * 
      * @param iPAddress
-     *        The IP address of the Amazon Route 53 health checker that provided
-     *        the failure reason in <code>StatusReport</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IP address of the Amazon Route 53 health checker that provided the failure reason in
+     *        <code>StatusReport</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HealthCheckObservation withIPAddress(String iPAddress) {
@@ -180,14 +163,13 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the last failure reason as reported by one
-     * Amazon Route 53 health checker and the time of the failed health check.
+     * A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the
+     * time of the failed health check.
      * </p>
      * 
      * @param statusReport
-     *        A complex type that contains the last failure reason as reported
-     *        by one Amazon Route 53 health checker and the time of the failed
-     *        health check.
+     *        A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and
+     *        the time of the failed health check.
      */
 
     public void setStatusReport(StatusReport statusReport) {
@@ -196,13 +178,12 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the last failure reason as reported by one
-     * Amazon Route 53 health checker and the time of the failed health check.
+     * A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the
+     * time of the failed health check.
      * </p>
      * 
-     * @return A complex type that contains the last failure reason as reported
-     *         by one Amazon Route 53 health checker and the time of the failed
-     *         health check.
+     * @return A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker
+     *         and the time of the failed health check.
      */
 
     public StatusReport getStatusReport() {
@@ -211,16 +192,14 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the last failure reason as reported by one
-     * Amazon Route 53 health checker and the time of the failed health check.
+     * A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the
+     * time of the failed health check.
      * </p>
      * 
      * @param statusReport
-     *        A complex type that contains the last failure reason as reported
-     *        by one Amazon Route 53 health checker and the time of the failed
-     *        health check.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and
+     *        the time of the failed health check.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HealthCheckObservation withStatusReport(StatusReport statusReport) {
@@ -229,8 +208,7 @@ public class HealthCheckObservation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -262,18 +240,15 @@ public class HealthCheckObservation implements Serializable, Cloneable {
         HealthCheckObservation other = (HealthCheckObservation) obj;
         if (other.getRegion() == null ^ this.getRegion() == null)
             return false;
-        if (other.getRegion() != null
-                && other.getRegion().equals(this.getRegion()) == false)
+        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
             return false;
         if (other.getIPAddress() == null ^ this.getIPAddress() == null)
             return false;
-        if (other.getIPAddress() != null
-                && other.getIPAddress().equals(this.getIPAddress()) == false)
+        if (other.getIPAddress() != null && other.getIPAddress().equals(this.getIPAddress()) == false)
             return false;
         if (other.getStatusReport() == null ^ this.getStatusReport() == null)
             return false;
-        if (other.getStatusReport() != null
-                && other.getStatusReport().equals(this.getStatusReport()) == false)
+        if (other.getStatusReport() != null && other.getStatusReport().equals(this.getStatusReport()) == false)
             return false;
         return true;
     }
@@ -283,14 +258,9 @@ public class HealthCheckObservation implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegion() == null) ? 0 : getRegion().hashCode());
-        hashCode = prime * hashCode
-                + ((getIPAddress() == null) ? 0 : getIPAddress().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStatusReport() == null) ? 0 : getStatusReport()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
+        hashCode = prime * hashCode + ((getIPAddress() == null) ? 0 : getIPAddress().hashCode());
+        hashCode = prime * hashCode + ((getStatusReport() == null) ? 0 : getStatusReport().hashCode());
         return hashCode;
     }
 
@@ -299,9 +269,7 @@ public class HealthCheckObservation implements Serializable, Cloneable {
         try {
             return (HealthCheckObservation) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

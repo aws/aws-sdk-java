@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
 
@@ -22,14 +20,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>DescribeCacheEngineVersions</i> action.
  * </p>
  */
-public class DescribeCacheEngineVersionsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache engine to return. Valid values: <code>memcached</code> |
-     * <code>redis</code>
+     * The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code>
      * </p>
      */
     private String engine;
@@ -44,8 +39,7 @@ public class DescribeCacheEngineVersionsRequest extends
     private String engineVersion;
     /**
      * <p>
-     * The name of a specific cache parameter group family to return details
-     * for.
+     * The name of a specific cache parameter group family to return details for.
      * </p>
      * <p>
      * Constraints:
@@ -71,9 +65,9 @@ public class DescribeCacheEngineVersionsRequest extends
     private String cacheParameterGroupFamily;
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -85,30 +79,27 @@ public class DescribeCacheEngineVersionsRequest extends
     private Integer maxRecords;
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
+     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * If <i>true</i>, specifies that only the default version of the specified
-     * engine or engine and major version combination is to be returned.
+     * If <i>true</i>, specifies that only the default version of the specified engine or engine and major version
+     * combination is to be returned.
      * </p>
      */
     private Boolean defaultOnly;
 
     /**
      * <p>
-     * The cache engine to return. Valid values: <code>memcached</code> |
-     * <code>redis</code>
+     * The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code>
      * </p>
      * 
      * @param engine
-     *        The cache engine to return. Valid values: <code>memcached</code> |
-     *        <code>redis</code>
+     *        The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code>
      */
 
     public void setEngine(String engine) {
@@ -117,12 +108,10 @@ public class DescribeCacheEngineVersionsRequest extends
 
     /**
      * <p>
-     * The cache engine to return. Valid values: <code>memcached</code> |
-     * <code>redis</code>
+     * The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code>
      * </p>
      * 
-     * @return The cache engine to return. Valid values: <code>memcached</code>
-     *         | <code>redis</code>
+     * @return The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code>
      */
 
     public String getEngine() {
@@ -131,15 +120,12 @@ public class DescribeCacheEngineVersionsRequest extends
 
     /**
      * <p>
-     * The cache engine to return. Valid values: <code>memcached</code> |
-     * <code>redis</code>
+     * The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code>
      * </p>
      * 
      * @param engine
-     *        The cache engine to return. Valid values: <code>memcached</code> |
-     *        <code>redis</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCacheEngineVersionsRequest withEngine(String engine) {
@@ -194,20 +180,17 @@ public class DescribeCacheEngineVersionsRequest extends
      *        The cache engine version to return.</p>
      *        <p>
      *        Example: <code>1.4.14</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCacheEngineVersionsRequest withEngineVersion(
-            String engineVersion) {
+    public DescribeCacheEngineVersionsRequest withEngineVersion(String engineVersion) {
         setEngineVersion(engineVersion);
         return this;
     }
 
     /**
      * <p>
-     * The name of a specific cache parameter group family to return details
-     * for.
+     * The name of a specific cache parameter group family to return details for.
      * </p>
      * <p>
      * Constraints:
@@ -231,8 +214,7 @@ public class DescribeCacheEngineVersionsRequest extends
      * </ul>
      * 
      * @param cacheParameterGroupFamily
-     *        The name of a specific cache parameter group family to return
-     *        details for.</p>
+     *        The name of a specific cache parameter group family to return details for.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -260,8 +242,7 @@ public class DescribeCacheEngineVersionsRequest extends
 
     /**
      * <p>
-     * The name of a specific cache parameter group family to return details
-     * for.
+     * The name of a specific cache parameter group family to return details for.
      * </p>
      * <p>
      * Constraints:
@@ -284,8 +265,7 @@ public class DescribeCacheEngineVersionsRequest extends
      * </li>
      * </ul>
      * 
-     * @return The name of a specific cache parameter group family to return
-     *         details for.</p>
+     * @return The name of a specific cache parameter group family to return details for.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -313,8 +293,7 @@ public class DescribeCacheEngineVersionsRequest extends
 
     /**
      * <p>
-     * The name of a specific cache parameter group family to return details
-     * for.
+     * The name of a specific cache parameter group family to return details for.
      * </p>
      * <p>
      * Constraints:
@@ -338,8 +317,7 @@ public class DescribeCacheEngineVersionsRequest extends
      * </ul>
      * 
      * @param cacheParameterGroupFamily
-     *        The name of a specific cache parameter group family to return
-     *        details for.</p>
+     *        The name of a specific cache parameter group family to return details for.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -359,21 +337,19 @@ public class DescribeCacheEngineVersionsRequest extends
      *        Cannot end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCacheEngineVersionsRequest withCacheParameterGroupFamily(
-            String cacheParameterGroupFamily) {
+    public DescribeCacheEngineVersionsRequest withCacheParameterGroupFamily(String cacheParameterGroupFamily) {
         setCacheParameterGroupFamily(cacheParameterGroupFamily);
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -383,10 +359,9 @@ public class DescribeCacheEngineVersionsRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        marker is included in the response so that the remaining results
-     *        can be retrieved.</p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     *        retrieved.</p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -400,9 +375,9 @@ public class DescribeCacheEngineVersionsRequest extends
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -411,10 +386,9 @@ public class DescribeCacheEngineVersionsRequest extends
      * Constraints: minimum 20; maximum 100.
      * </p>
      * 
-     * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         marker is included in the response so that the remaining results
-     *         can be retrieved.</p>
+     * @return The maximum number of records to include in the response. If more records exist than the specified
+     *         <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     *         retrieved.</p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -428,9 +402,9 @@ public class DescribeCacheEngineVersionsRequest extends
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -440,17 +414,15 @@ public class DescribeCacheEngineVersionsRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        marker is included in the response so that the remaining results
-     *        can be retrieved.</p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     *        retrieved.</p>
      *        <p>
      *        Default: 100
      *        </p>
      *        <p>
      *        Constraints: minimum 20; maximum 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCacheEngineVersionsRequest withMaxRecords(Integer maxRecords) {
@@ -460,17 +432,15 @@ public class DescribeCacheEngineVersionsRequest extends
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
+     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.
      * </p>
      * 
      * @param marker
-     *        An optional marker returned from a prior request. Use this marker
-     *        for pagination of results from this action. If this parameter is
-     *        specified, the response includes only records beyond the marker,
-     *        up to the value specified by <i>MaxRecords</i>.
+     *        An optional marker returned from a prior request. Use this marker for pagination of results from this
+     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <i>MaxRecords</i>.
      */
 
     public void setMarker(String marker) {
@@ -479,16 +449,14 @@ public class DescribeCacheEngineVersionsRequest extends
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
+     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.
      * </p>
      * 
-     * @return An optional marker returned from a prior request. Use this marker
-     *         for pagination of results from this action. If this parameter is
-     *         specified, the response includes only records beyond the marker,
-     *         up to the value specified by <i>MaxRecords</i>.
+     * @return An optional marker returned from a prior request. Use this marker for pagination of results from this
+     *         action. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *         value specified by <i>MaxRecords</i>.
      */
 
     public String getMarker() {
@@ -497,19 +465,16 @@ public class DescribeCacheEngineVersionsRequest extends
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
+     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <i>MaxRecords</i>.
      * </p>
      * 
      * @param marker
-     *        An optional marker returned from a prior request. Use this marker
-     *        for pagination of results from this action. If this parameter is
-     *        specified, the response includes only records beyond the marker,
-     *        up to the value specified by <i>MaxRecords</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional marker returned from a prior request. Use this marker for pagination of results from this
+     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <i>MaxRecords</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCacheEngineVersionsRequest withMarker(String marker) {
@@ -519,14 +484,13 @@ public class DescribeCacheEngineVersionsRequest extends
 
     /**
      * <p>
-     * If <i>true</i>, specifies that only the default version of the specified
-     * engine or engine and major version combination is to be returned.
+     * If <i>true</i>, specifies that only the default version of the specified engine or engine and major version
+     * combination is to be returned.
      * </p>
      * 
      * @param defaultOnly
-     *        If <i>true</i>, specifies that only the default version of the
-     *        specified engine or engine and major version combination is to be
-     *        returned.
+     *        If <i>true</i>, specifies that only the default version of the specified engine or engine and major
+     *        version combination is to be returned.
      */
 
     public void setDefaultOnly(Boolean defaultOnly) {
@@ -535,13 +499,12 @@ public class DescribeCacheEngineVersionsRequest extends
 
     /**
      * <p>
-     * If <i>true</i>, specifies that only the default version of the specified
-     * engine or engine and major version combination is to be returned.
+     * If <i>true</i>, specifies that only the default version of the specified engine or engine and major version
+     * combination is to be returned.
      * </p>
      * 
-     * @return If <i>true</i>, specifies that only the default version of the
-     *         specified engine or engine and major version combination is to be
-     *         returned.
+     * @return If <i>true</i>, specifies that only the default version of the specified engine or engine and major
+     *         version combination is to be returned.
      */
 
     public Boolean getDefaultOnly() {
@@ -550,33 +513,29 @@ public class DescribeCacheEngineVersionsRequest extends
 
     /**
      * <p>
-     * If <i>true</i>, specifies that only the default version of the specified
-     * engine or engine and major version combination is to be returned.
+     * If <i>true</i>, specifies that only the default version of the specified engine or engine and major version
+     * combination is to be returned.
      * </p>
      * 
      * @param defaultOnly
-     *        If <i>true</i>, specifies that only the default version of the
-     *        specified engine or engine and major version combination is to be
-     *        returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If <i>true</i>, specifies that only the default version of the specified engine or engine and major
+     *        version combination is to be returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCacheEngineVersionsRequest withDefaultOnly(
-            Boolean defaultOnly) {
+    public DescribeCacheEngineVersionsRequest withDefaultOnly(Boolean defaultOnly) {
         setDefaultOnly(defaultOnly);
         return this;
     }
 
     /**
      * <p>
-     * If <i>true</i>, specifies that only the default version of the specified
-     * engine or engine and major version combination is to be returned.
+     * If <i>true</i>, specifies that only the default version of the specified engine or engine and major version
+     * combination is to be returned.
      * </p>
      * 
-     * @return If <i>true</i>, specifies that only the default version of the
-     *         specified engine or engine and major version combination is to be
-     *         returned.
+     * @return If <i>true</i>, specifies that only the default version of the specified engine or engine and major
+     *         version combination is to be returned.
      */
 
     public Boolean isDefaultOnly() {
@@ -584,8 +543,7 @@ public class DescribeCacheEngineVersionsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -600,8 +558,7 @@ public class DescribeCacheEngineVersionsRequest extends
         if (getEngineVersion() != null)
             sb.append("EngineVersion: " + getEngineVersion() + ",");
         if (getCacheParameterGroupFamily() != null)
-            sb.append("CacheParameterGroupFamily: "
-                    + getCacheParameterGroupFamily() + ",");
+            sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");
         if (getMaxRecords() != null)
             sb.append("MaxRecords: " + getMaxRecords() + ",");
         if (getMarker() != null)
@@ -624,35 +581,27 @@ public class DescribeCacheEngineVersionsRequest extends
         DescribeCacheEngineVersionsRequest other = (DescribeCacheEngineVersionsRequest) obj;
         if (other.getEngine() == null ^ this.getEngine() == null)
             return false;
-        if (other.getEngine() != null
-                && other.getEngine().equals(this.getEngine()) == false)
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
             return false;
         if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
             return false;
-        if (other.getEngineVersion() != null
-                && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
-        if (other.getCacheParameterGroupFamily() == null
-                ^ this.getCacheParameterGroupFamily() == null)
+        if (other.getCacheParameterGroupFamily() == null ^ this.getCacheParameterGroupFamily() == null)
             return false;
-        if (other.getCacheParameterGroupFamily() != null
-                && other.getCacheParameterGroupFamily().equals(
-                        this.getCacheParameterGroupFamily()) == false)
+        if (other.getCacheParameterGroupFamily() != null && other.getCacheParameterGroupFamily().equals(this.getCacheParameterGroupFamily()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getDefaultOnly() == null ^ this.getDefaultOnly() == null)
             return false;
-        if (other.getDefaultOnly() != null
-                && other.getDefaultOnly().equals(this.getDefaultOnly()) == false)
+        if (other.getDefaultOnly() != null && other.getDefaultOnly().equals(this.getDefaultOnly()) == false)
             return false;
         return true;
     }
@@ -662,23 +611,12 @@ public class DescribeCacheEngineVersionsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getEngine() == null) ? 0 : getEngine().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEngineVersion() == null) ? 0 : getEngineVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheParameterGroupFamily() == null) ? 0
-                        : getCacheParameterGroupFamily().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultOnly() == null) ? 0 : getDefaultOnly().hashCode());
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getCacheParameterGroupFamily() == null) ? 0 : getCacheParameterGroupFamily().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getDefaultOnly() == null) ? 0 : getDefaultOnly().hashCode());
         return hashCode;
     }
 

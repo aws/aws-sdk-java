@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model;
 
@@ -22,22 +20,18 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a third party job failure result action.
  * </p>
  */
-public class PutThirdPartyJobFailureResultRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class PutThirdPartyJobFailureResultRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the job that failed. This is the same ID returned from
-     * PollForThirdPartyJobs.
+     * The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
      * </p>
      */
     private String jobId;
     /**
      * <p>
-     * The clientToken portion of the clientId and clientToken pair used to
-     * verify that the calling entity is allowed access to the job and its
-     * details.
+     * The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed
+     * access to the job and its details.
      * </p>
      */
     private String clientToken;
@@ -46,13 +40,11 @@ public class PutThirdPartyJobFailureResultRequest extends
 
     /**
      * <p>
-     * The ID of the job that failed. This is the same ID returned from
-     * PollForThirdPartyJobs.
+     * The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
      * </p>
      * 
      * @param jobId
-     *        The ID of the job that failed. This is the same ID returned from
-     *        PollForThirdPartyJobs.
+     *        The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
      */
 
     public void setJobId(String jobId) {
@@ -61,12 +53,10 @@ public class PutThirdPartyJobFailureResultRequest extends
 
     /**
      * <p>
-     * The ID of the job that failed. This is the same ID returned from
-     * PollForThirdPartyJobs.
+     * The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
      * </p>
      * 
-     * @return The ID of the job that failed. This is the same ID returned from
-     *         PollForThirdPartyJobs.
+     * @return The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
      */
 
     public String getJobId() {
@@ -75,15 +65,12 @@ public class PutThirdPartyJobFailureResultRequest extends
 
     /**
      * <p>
-     * The ID of the job that failed. This is the same ID returned from
-     * PollForThirdPartyJobs.
+     * The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
      * </p>
      * 
      * @param jobId
-     *        The ID of the job that failed. This is the same ID returned from
-     *        PollForThirdPartyJobs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutThirdPartyJobFailureResultRequest withJobId(String jobId) {
@@ -93,15 +80,13 @@ public class PutThirdPartyJobFailureResultRequest extends
 
     /**
      * <p>
-     * The clientToken portion of the clientId and clientToken pair used to
-     * verify that the calling entity is allowed access to the job and its
-     * details.
+     * The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed
+     * access to the job and its details.
      * </p>
      * 
      * @param clientToken
-     *        The clientToken portion of the clientId and clientToken pair used
-     *        to verify that the calling entity is allowed access to the job and
-     *        its details.
+     *        The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is
+     *        allowed access to the job and its details.
      */
 
     public void setClientToken(String clientToken) {
@@ -110,14 +95,12 @@ public class PutThirdPartyJobFailureResultRequest extends
 
     /**
      * <p>
-     * The clientToken portion of the clientId and clientToken pair used to
-     * verify that the calling entity is allowed access to the job and its
-     * details.
+     * The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed
+     * access to the job and its details.
      * </p>
      * 
-     * @return The clientToken portion of the clientId and clientToken pair used
-     *         to verify that the calling entity is allowed access to the job
-     *         and its details.
+     * @return The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is
+     *         allowed access to the job and its details.
      */
 
     public String getClientToken() {
@@ -126,21 +109,17 @@ public class PutThirdPartyJobFailureResultRequest extends
 
     /**
      * <p>
-     * The clientToken portion of the clientId and clientToken pair used to
-     * verify that the calling entity is allowed access to the job and its
-     * details.
+     * The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed
+     * access to the job and its details.
      * </p>
      * 
      * @param clientToken
-     *        The clientToken portion of the clientId and clientToken pair used
-     *        to verify that the calling entity is allowed access to the job and
-     *        its details.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is
+     *        allowed access to the job and its details.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutThirdPartyJobFailureResultRequest withClientToken(
-            String clientToken) {
+    public PutThirdPartyJobFailureResultRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
     }
@@ -163,19 +142,16 @@ public class PutThirdPartyJobFailureResultRequest extends
 
     /**
      * @param failureDetails
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutThirdPartyJobFailureResultRequest withFailureDetails(
-            FailureDetails failureDetails) {
+    public PutThirdPartyJobFailureResultRequest withFailureDetails(FailureDetails failureDetails) {
         setFailureDetails(failureDetails);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -207,19 +183,15 @@ public class PutThirdPartyJobFailureResultRequest extends
         PutThirdPartyJobFailureResultRequest other = (PutThirdPartyJobFailureResultRequest) obj;
         if (other.getJobId() == null ^ this.getJobId() == null)
             return false;
-        if (other.getJobId() != null
-                && other.getJobId().equals(this.getJobId()) == false)
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getClientToken() != null
-                && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
-        if (other.getFailureDetails() == null
-                ^ this.getFailureDetails() == null)
+        if (other.getFailureDetails() == null ^ this.getFailureDetails() == null)
             return false;
-        if (other.getFailureDetails() != null
-                && other.getFailureDetails().equals(this.getFailureDetails()) == false)
+        if (other.getFailureDetails() != null && other.getFailureDetails().equals(this.getFailureDetails()) == false)
             return false;
         return true;
     }
@@ -229,15 +201,9 @@ public class PutThirdPartyJobFailureResultRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJobId() == null) ? 0 : getJobId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFailureDetails() == null) ? 0 : getFailureDetails()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getFailureDetails() == null) ? 0 : getFailureDetails().hashCode());
         return hashCode;
     }
 

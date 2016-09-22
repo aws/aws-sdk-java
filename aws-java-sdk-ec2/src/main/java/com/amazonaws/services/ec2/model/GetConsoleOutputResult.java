@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of GetConsoleOutput.
  * </p>
  */
-public class GetConsoleOutputResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -40,8 +36,7 @@ public class GetConsoleOutputResult extends
     private java.util.Date timestamp;
     /**
      * <p>
-     * The console output, Base64-encoded. If using a command line tool, the
-     * tool decodes the output for you.
+     * The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
      * </p>
      */
     private String output;
@@ -78,8 +73,7 @@ public class GetConsoleOutputResult extends
      * 
      * @param instanceId
      *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetConsoleOutputResult withInstanceId(String instanceId) {
@@ -119,8 +113,7 @@ public class GetConsoleOutputResult extends
      * 
      * @param timestamp
      *        The time the output was last updated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetConsoleOutputResult withTimestamp(java.util.Date timestamp) {
@@ -130,13 +123,11 @@ public class GetConsoleOutputResult extends
 
     /**
      * <p>
-     * The console output, Base64-encoded. If using a command line tool, the
-     * tool decodes the output for you.
+     * The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
      * </p>
      * 
      * @param output
-     *        The console output, Base64-encoded. If using a command line tool,
-     *        the tool decodes the output for you.
+     *        The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
      */
 
     public void setOutput(String output) {
@@ -145,12 +136,10 @@ public class GetConsoleOutputResult extends
 
     /**
      * <p>
-     * The console output, Base64-encoded. If using a command line tool, the
-     * tool decodes the output for you.
+     * The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
      * </p>
      * 
-     * @return The console output, Base64-encoded. If using a command line tool,
-     *         the tool decodes the output for you.
+     * @return The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
      */
 
     public String getOutput() {
@@ -159,15 +148,12 @@ public class GetConsoleOutputResult extends
 
     /**
      * <p>
-     * The console output, Base64-encoded. If using a command line tool, the
-     * tool decodes the output for you.
+     * The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
      * </p>
      * 
      * @param output
-     *        The console output, Base64-encoded. If using a command line tool,
-     *        the tool decodes the output for you.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetConsoleOutputResult withOutput(String output) {
@@ -186,8 +172,7 @@ public class GetConsoleOutputResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -219,18 +204,15 @@ public class GetConsoleOutputResult extends
         GetConsoleOutputResult other = (GetConsoleOutputResult) obj;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         if (other.getTimestamp() == null ^ this.getTimestamp() == null)
             return false;
-        if (other.getTimestamp() != null
-                && other.getTimestamp().equals(this.getTimestamp()) == false)
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
         if (other.getOutput() == null ^ this.getOutput() == null)
             return false;
-        if (other.getOutput() != null
-                && other.getOutput().equals(this.getOutput()) == false)
+        if (other.getOutput() != null && other.getOutput().equals(this.getOutput()) == false)
             return false;
         return true;
     }
@@ -240,12 +222,9 @@ public class GetConsoleOutputResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
-        hashCode = prime * hashCode
-                + ((getOutput() == null) ? 0 : getOutput().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());
         return hashCode;
     }
 
@@ -254,9 +233,7 @@ public class GetConsoleOutputResult extends
         try {
             return (GetConsoleOutputResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kms.model;
 
@@ -25,8 +23,7 @@ public class GrantListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier for the customer master key (CMK) to which the
-     * grant applies.
+     * The unique identifier for the customer master key (CMK) to which the grant applies.
      * </p>
      */
     private String keyId;
@@ -38,9 +35,8 @@ public class GrantListEntry implements Serializable, Cloneable {
     private String grantId;
     /**
      * <p>
-     * The friendly name that identifies the grant. If a name was provided in
-     * the <a>CreateGrant</a> request, that name is returned. Otherwise this
-     * value is null.
+     * The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request, that name
+     * is returned. Otherwise this value is null.
      * </p>
      */
     private String name;
@@ -83,13 +79,11 @@ public class GrantListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier for the customer master key (CMK) to which the
-     * grant applies.
+     * The unique identifier for the customer master key (CMK) to which the grant applies.
      * </p>
      * 
      * @param keyId
-     *        The unique identifier for the customer master key (CMK) to which
-     *        the grant applies.
+     *        The unique identifier for the customer master key (CMK) to which the grant applies.
      */
 
     public void setKeyId(String keyId) {
@@ -98,12 +92,10 @@ public class GrantListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier for the customer master key (CMK) to which the
-     * grant applies.
+     * The unique identifier for the customer master key (CMK) to which the grant applies.
      * </p>
      * 
-     * @return The unique identifier for the customer master key (CMK) to which
-     *         the grant applies.
+     * @return The unique identifier for the customer master key (CMK) to which the grant applies.
      */
 
     public String getKeyId() {
@@ -112,15 +104,12 @@ public class GrantListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier for the customer master key (CMK) to which the
-     * grant applies.
+     * The unique identifier for the customer master key (CMK) to which the grant applies.
      * </p>
      * 
      * @param keyId
-     *        The unique identifier for the customer master key (CMK) to which
-     *        the grant applies.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The unique identifier for the customer master key (CMK) to which the grant applies.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GrantListEntry withKeyId(String keyId) {
@@ -160,8 +149,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @param grantId
      *        The unique identifier for the grant.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GrantListEntry withGrantId(String grantId) {
@@ -171,15 +159,13 @@ public class GrantListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The friendly name that identifies the grant. If a name was provided in
-     * the <a>CreateGrant</a> request, that name is returned. Otherwise this
-     * value is null.
+     * The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request, that name
+     * is returned. Otherwise this value is null.
      * </p>
      * 
      * @param name
-     *        The friendly name that identifies the grant. If a name was
-     *        provided in the <a>CreateGrant</a> request, that name is returned.
-     *        Otherwise this value is null.
+     *        The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request,
+     *        that name is returned. Otherwise this value is null.
      */
 
     public void setName(String name) {
@@ -188,14 +174,12 @@ public class GrantListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The friendly name that identifies the grant. If a name was provided in
-     * the <a>CreateGrant</a> request, that name is returned. Otherwise this
-     * value is null.
+     * The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request, that name
+     * is returned. Otherwise this value is null.
      * </p>
      * 
-     * @return The friendly name that identifies the grant. If a name was
-     *         provided in the <a>CreateGrant</a> request, that name is
-     *         returned. Otherwise this value is null.
+     * @return The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request,
+     *         that name is returned. Otherwise this value is null.
      */
 
     public String getName() {
@@ -204,17 +188,14 @@ public class GrantListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The friendly name that identifies the grant. If a name was provided in
-     * the <a>CreateGrant</a> request, that name is returned. Otherwise this
-     * value is null.
+     * The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request, that name
+     * is returned. Otherwise this value is null.
      * </p>
      * 
      * @param name
-     *        The friendly name that identifies the grant. If a name was
-     *        provided in the <a>CreateGrant</a> request, that name is returned.
-     *        Otherwise this value is null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request,
+     *        that name is returned. Otherwise this value is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GrantListEntry withName(String name) {
@@ -254,8 +235,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @param creationDate
      *        The date and time when the grant was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GrantListEntry withCreationDate(java.util.Date creationDate) {
@@ -295,8 +275,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @param granteePrincipal
      *        The principal that receives the grant's permissions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GrantListEntry withGranteePrincipal(String granteePrincipal) {
@@ -336,8 +315,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @param retiringPrincipal
      *        The principal that can retire the grant.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GrantListEntry withRetiringPrincipal(String retiringPrincipal) {
@@ -377,8 +355,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @param issuingAccount
      *        The AWS account under which the grant was issued.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GrantListEntry withIssuingAccount(String issuingAccount) {
@@ -418,8 +395,7 @@ public class GrantListEntry implements Serializable, Cloneable {
             return;
         }
 
-        this.operations = new com.amazonaws.internal.SdkInternalList<String>(
-                operations);
+        this.operations = new com.amazonaws.internal.SdkInternalList<String>(operations);
     }
 
     /**
@@ -427,23 +403,20 @@ public class GrantListEntry implements Serializable, Cloneable {
      * The list of operations permitted by the grant.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOperations(java.util.Collection)} or
-     * {@link #withOperations(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOperations(java.util.Collection)} or {@link #withOperations(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param operations
      *        The list of operations permitted by the grant.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see GrantOperation
      */
 
     public GrantListEntry withOperations(String... operations) {
         if (this.operations == null) {
-            setOperations(new com.amazonaws.internal.SdkInternalList<String>(
-                    operations.length));
+            setOperations(new com.amazonaws.internal.SdkInternalList<String>(operations.length));
         }
         for (String ele : operations) {
             this.operations.add(ele);
@@ -458,8 +431,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @param operations
      *        The list of operations permitted by the grant.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see GrantOperation
      */
 
@@ -475,14 +447,12 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @param operations
      *        The list of operations permitted by the grant.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see GrantOperation
      */
 
     public GrantListEntry withOperations(GrantOperation... operations) {
-        com.amazonaws.internal.SdkInternalList<String> operationsCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                operations.length);
+        com.amazonaws.internal.SdkInternalList<String> operationsCopy = new com.amazonaws.internal.SdkInternalList<String>(operations.length);
         for (GrantOperation value : operations) {
             operationsCopy.add(value.toString());
         }
@@ -526,8 +496,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @param constraints
      *        The conditions under which the grant's operations are allowed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GrantListEntry withConstraints(GrantConstraints constraints) {
@@ -536,8 +505,7 @@ public class GrantListEntry implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -581,53 +549,39 @@ public class GrantListEntry implements Serializable, Cloneable {
         GrantListEntry other = (GrantListEntry) obj;
         if (other.getKeyId() == null ^ this.getKeyId() == null)
             return false;
-        if (other.getKeyId() != null
-                && other.getKeyId().equals(this.getKeyId()) == false)
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
             return false;
         if (other.getGrantId() == null ^ this.getGrantId() == null)
             return false;
-        if (other.getGrantId() != null
-                && other.getGrantId().equals(this.getGrantId()) == false)
+        if (other.getGrantId() != null && other.getGrantId().equals(this.getGrantId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
-        if (other.getCreationDate() != null
-                && other.getCreationDate().equals(this.getCreationDate()) == false)
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
-        if (other.getGranteePrincipal() == null
-                ^ this.getGranteePrincipal() == null)
+        if (other.getGranteePrincipal() == null ^ this.getGranteePrincipal() == null)
             return false;
-        if (other.getGranteePrincipal() != null
-                && other.getGranteePrincipal().equals(
-                        this.getGranteePrincipal()) == false)
+        if (other.getGranteePrincipal() != null && other.getGranteePrincipal().equals(this.getGranteePrincipal()) == false)
             return false;
-        if (other.getRetiringPrincipal() == null
-                ^ this.getRetiringPrincipal() == null)
+        if (other.getRetiringPrincipal() == null ^ this.getRetiringPrincipal() == null)
             return false;
-        if (other.getRetiringPrincipal() != null
-                && other.getRetiringPrincipal().equals(
-                        this.getRetiringPrincipal()) == false)
+        if (other.getRetiringPrincipal() != null && other.getRetiringPrincipal().equals(this.getRetiringPrincipal()) == false)
             return false;
-        if (other.getIssuingAccount() == null
-                ^ this.getIssuingAccount() == null)
+        if (other.getIssuingAccount() == null ^ this.getIssuingAccount() == null)
             return false;
-        if (other.getIssuingAccount() != null
-                && other.getIssuingAccount().equals(this.getIssuingAccount()) == false)
+        if (other.getIssuingAccount() != null && other.getIssuingAccount().equals(this.getIssuingAccount()) == false)
             return false;
         if (other.getOperations() == null ^ this.getOperations() == null)
             return false;
-        if (other.getOperations() != null
-                && other.getOperations().equals(this.getOperations()) == false)
+        if (other.getOperations() != null && other.getOperations().equals(this.getOperations()) == false)
             return false;
         if (other.getConstraints() == null ^ this.getConstraints() == null)
             return false;
-        if (other.getConstraints() != null
-                && other.getConstraints().equals(this.getConstraints()) == false)
+        if (other.getConstraints() != null && other.getConstraints().equals(this.getConstraints()) == false)
             return false;
         return true;
     }
@@ -637,33 +591,15 @@ public class GrantListEntry implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
-        hashCode = prime * hashCode
-                + ((getGrantId() == null) ? 0 : getGrantId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDate() == null) ? 0 : getCreationDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getGranteePrincipal() == null) ? 0 : getGranteePrincipal()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRetiringPrincipal() == null) ? 0
-                        : getRetiringPrincipal().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIssuingAccount() == null) ? 0 : getIssuingAccount()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getOperations() == null) ? 0 : getOperations().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConstraints() == null) ? 0 : getConstraints().hashCode());
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
+        hashCode = prime * hashCode + ((getGrantId() == null) ? 0 : getGrantId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getGranteePrincipal() == null) ? 0 : getGranteePrincipal().hashCode());
+        hashCode = prime * hashCode + ((getRetiringPrincipal() == null) ? 0 : getRetiringPrincipal().hashCode());
+        hashCode = prime * hashCode + ((getIssuingAccount() == null) ? 0 : getIssuingAccount().hashCode());
+        hashCode = prime * hashCode + ((getOperations() == null) ? 0 : getOperations().hashCode());
+        hashCode = prime * hashCode + ((getConstraints() == null) ? 0 : getConstraints().hashCode());
         return hashCode;
     }
 
@@ -672,9 +608,7 @@ public class GrantListEntry implements Serializable, Cloneable {
         try {
             return (GrantListEntry) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

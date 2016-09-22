@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway;
 
@@ -18,9 +16,8 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AWSStorageGateway}. Convenient method forms
- * pass through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AWSStorageGateway}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
@@ -48,8 +45,7 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public AddTagsToResourceResult addTagsToResource(
-            AddTagsToResourceRequest request) {
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,8 +55,7 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public AddWorkingStorageResult addWorkingStorage(
-            AddWorkingStorageRequest request) {
+    public AddWorkingStorageResult addWorkingStorage(AddWorkingStorageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -75,8 +70,7 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public CreateCachediSCSIVolumeResult createCachediSCSIVolume(
-            CreateCachediSCSIVolumeRequest request) {
+    public CreateCachediSCSIVolumeResult createCachediSCSIVolume(CreateCachediSCSIVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -86,20 +80,17 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(
-            CreateSnapshotFromVolumeRecoveryPointRequest request) {
+    public CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateStorediSCSIVolumeResult createStorediSCSIVolume(
-            CreateStorediSCSIVolumeRequest request) {
+    public CreateStorediSCSIVolumeResult createStorediSCSIVolume(CreateStorediSCSIVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateTapeWithBarcodeResult createTapeWithBarcode(
-            CreateTapeWithBarcodeRequest request) {
+    public CreateTapeWithBarcodeResult createTapeWithBarcode(CreateTapeWithBarcodeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,14 +100,12 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public DeleteBandwidthRateLimitResult deleteBandwidthRateLimit(
-            DeleteBandwidthRateLimitRequest request) {
+    public DeleteBandwidthRateLimitResult deleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteChapCredentialsResult deleteChapCredentials(
-            DeleteChapCredentialsRequest request) {
+    public DeleteChapCredentialsResult deleteChapCredentials(DeleteChapCredentialsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -126,8 +115,7 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public DeleteSnapshotScheduleResult deleteSnapshotSchedule(
-            DeleteSnapshotScheduleRequest request) {
+    public DeleteSnapshotScheduleResult deleteSnapshotSchedule(DeleteSnapshotScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -137,8 +125,7 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public DeleteTapeArchiveResult deleteTapeArchive(
-            DeleteTapeArchiveRequest request) {
+    public DeleteTapeArchiveResult deleteTapeArchive(DeleteTapeArchiveRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -148,8 +135,7 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public DescribeBandwidthRateLimitResult describeBandwidthRateLimit(
-            DescribeBandwidthRateLimitRequest request) {
+    public DescribeBandwidthRateLimitResult describeBandwidthRateLimit(DescribeBandwidthRateLimitRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -159,44 +145,37 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public DescribeCachediSCSIVolumesResult describeCachediSCSIVolumes(
-            DescribeCachediSCSIVolumesRequest request) {
+    public DescribeCachediSCSIVolumesResult describeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeChapCredentialsResult describeChapCredentials(
-            DescribeChapCredentialsRequest request) {
+    public DescribeChapCredentialsResult describeChapCredentials(DescribeChapCredentialsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeGatewayInformationResult describeGatewayInformation(
-            DescribeGatewayInformationRequest request) {
+    public DescribeGatewayInformationResult describeGatewayInformation(DescribeGatewayInformationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeMaintenanceStartTimeResult describeMaintenanceStartTime(
-            DescribeMaintenanceStartTimeRequest request) {
+    public DescribeMaintenanceStartTimeResult describeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeSnapshotScheduleResult describeSnapshotSchedule(
-            DescribeSnapshotScheduleRequest request) {
+    public DescribeSnapshotScheduleResult describeSnapshotSchedule(DescribeSnapshotScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeStorediSCSIVolumesResult describeStorediSCSIVolumes(
-            DescribeStorediSCSIVolumesRequest request) {
+    public DescribeStorediSCSIVolumesResult describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeTapeArchivesResult describeTapeArchives(
-            DescribeTapeArchivesRequest request) {
+    public DescribeTapeArchivesResult describeTapeArchives(DescribeTapeArchivesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -206,8 +185,7 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public DescribeTapeRecoveryPointsResult describeTapeRecoveryPoints(
-            DescribeTapeRecoveryPointsRequest request) {
+    public DescribeTapeRecoveryPointsResult describeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -217,20 +195,17 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public DescribeUploadBufferResult describeUploadBuffer(
-            DescribeUploadBufferRequest request) {
+    public DescribeUploadBufferResult describeUploadBuffer(DescribeUploadBufferRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeVTLDevicesResult describeVTLDevices(
-            DescribeVTLDevicesRequest request) {
+    public DescribeVTLDevicesResult describeVTLDevices(DescribeVTLDevicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeWorkingStorageResult describeWorkingStorage(
-            DescribeWorkingStorageRequest request) {
+    public DescribeWorkingStorageResult describeWorkingStorage(DescribeWorkingStorageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -255,8 +230,7 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public ListTagsForResourceResult listTagsForResource(
-            ListTagsForResourceRequest request) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -271,14 +245,12 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public ListVolumeInitiatorsResult listVolumeInitiators(
-            ListVolumeInitiatorsRequest request) {
+    public ListVolumeInitiatorsResult listVolumeInitiators(ListVolumeInitiatorsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListVolumeRecoveryPointsResult listVolumeRecoveryPoints(
-            ListVolumeRecoveryPointsRequest request) {
+    public ListVolumeRecoveryPointsResult listVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -288,8 +260,7 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public RemoveTagsFromResourceResult removeTagsFromResource(
-            RemoveTagsFromResourceRequest request) {
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -304,20 +275,17 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public RetrieveTapeArchiveResult retrieveTapeArchive(
-            RetrieveTapeArchiveRequest request) {
+    public RetrieveTapeArchiveResult retrieveTapeArchive(RetrieveTapeArchiveRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RetrieveTapeRecoveryPointResult retrieveTapeRecoveryPoint(
-            RetrieveTapeRecoveryPointRequest request) {
+    public RetrieveTapeRecoveryPointResult retrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetLocalConsolePasswordResult setLocalConsolePassword(
-            SetLocalConsolePasswordRequest request) {
+    public SetLocalConsolePasswordResult setLocalConsolePassword(SetLocalConsolePasswordRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -332,44 +300,37 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public UpdateBandwidthRateLimitResult updateBandwidthRateLimit(
-            UpdateBandwidthRateLimitRequest request) {
+    public UpdateBandwidthRateLimitResult updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateChapCredentialsResult updateChapCredentials(
-            UpdateChapCredentialsRequest request) {
+    public UpdateChapCredentialsResult updateChapCredentials(UpdateChapCredentialsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateGatewayInformationResult updateGatewayInformation(
-            UpdateGatewayInformationRequest request) {
+    public UpdateGatewayInformationResult updateGatewayInformation(UpdateGatewayInformationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(
-            UpdateGatewaySoftwareNowRequest request) {
+    public UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(
-            UpdateMaintenanceStartTimeRequest request) {
+    public UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateSnapshotScheduleResult updateSnapshotSchedule(
-            UpdateSnapshotScheduleRequest request) {
+    public UpdateSnapshotScheduleResult updateSnapshotSchedule(UpdateSnapshotScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateVTLDeviceTypeResult updateVTLDeviceType(
-            UpdateVTLDeviceTypeRequest request) {
+    public UpdateVTLDeviceTypeResult updateVTLDeviceType(UpdateVTLDeviceTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -379,8 +340,7 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

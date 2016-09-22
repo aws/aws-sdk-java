@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
@@ -19,8 +17,7 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class ReplicationPendingModifiedValues implements Serializable,
-        Cloneable {
+public class ReplicationPendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,16 +31,14 @@ public class ReplicationPendingModifiedValues implements Serializable,
     private String replicationInstanceClass;
     /**
      * <p>
-     * The amount of storage (in gigabytes) that is allocated for the
-     * replication instance.
+     * The amount of storage (in gigabytes) that is allocated for the replication instance.
      * </p>
      */
     private Integer allocatedStorage;
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
-     * parameter is set to <code>true</code>.
+     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
+     * parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      */
     private Boolean multiAZ;
@@ -107,25 +102,21 @@ public class ReplicationPendingModifiedValues implements Serializable,
      *        <p>
      *        Valid Values:
      *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReplicationPendingModifiedValues withReplicationInstanceClass(
-            String replicationInstanceClass) {
+    public ReplicationPendingModifiedValues withReplicationInstanceClass(String replicationInstanceClass) {
         setReplicationInstanceClass(replicationInstanceClass);
         return this;
     }
 
     /**
      * <p>
-     * The amount of storage (in gigabytes) that is allocated for the
-     * replication instance.
+     * The amount of storage (in gigabytes) that is allocated for the replication instance.
      * </p>
      * 
      * @param allocatedStorage
-     *        The amount of storage (in gigabytes) that is allocated for the
-     *        replication instance.
+     *        The amount of storage (in gigabytes) that is allocated for the replication instance.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -134,12 +125,10 @@ public class ReplicationPendingModifiedValues implements Serializable,
 
     /**
      * <p>
-     * The amount of storage (in gigabytes) that is allocated for the
-     * replication instance.
+     * The amount of storage (in gigabytes) that is allocated for the replication instance.
      * </p>
      * 
-     * @return The amount of storage (in gigabytes) that is allocated for the
-     *         replication instance.
+     * @return The amount of storage (in gigabytes) that is allocated for the replication instance.
      */
 
     public Integer getAllocatedStorage() {
@@ -148,34 +137,28 @@ public class ReplicationPendingModifiedValues implements Serializable,
 
     /**
      * <p>
-     * The amount of storage (in gigabytes) that is allocated for the
-     * replication instance.
+     * The amount of storage (in gigabytes) that is allocated for the replication instance.
      * </p>
      * 
      * @param allocatedStorage
-     *        The amount of storage (in gigabytes) that is allocated for the
-     *        replication instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The amount of storage (in gigabytes) that is allocated for the replication instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReplicationPendingModifiedValues withAllocatedStorage(
-            Integer allocatedStorage) {
+    public ReplicationPendingModifiedValues withAllocatedStorage(Integer allocatedStorage) {
         setAllocatedStorage(allocatedStorage);
         return this;
     }
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
-     * parameter is set to <code>true</code>.
+     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
+     * parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the replication instance is a Multi-AZ deployment.
-     *        You cannot set the <code>AvailabilityZone</code> parameter if the
-     *        Multi-AZ parameter is set to <code>true</code>.
+     *        Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -184,14 +167,12 @@ public class ReplicationPendingModifiedValues implements Serializable,
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
-     * parameter is set to <code>true</code>.
+     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
+     * parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the replication instance is a Multi-AZ deployment.
-     *         You cannot set the <code>AvailabilityZone</code> parameter if the
-     *         Multi-AZ parameter is set to <code>true</code>.
+     * @return Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
     public Boolean getMultiAZ() {
@@ -200,17 +181,14 @@ public class ReplicationPendingModifiedValues implements Serializable,
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
-     * parameter is set to <code>true</code>.
+     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
+     * parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the replication instance is a Multi-AZ deployment.
-     *        You cannot set the <code>AvailabilityZone</code> parameter if the
-     *        Multi-AZ parameter is set to <code>true</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReplicationPendingModifiedValues withMultiAZ(Boolean multiAZ) {
@@ -220,14 +198,12 @@ public class ReplicationPendingModifiedValues implements Serializable,
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
-     * parameter is set to <code>true</code>.
+     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
+     * parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the replication instance is a Multi-AZ deployment.
-     *         You cannot set the <code>AvailabilityZone</code> parameter if the
-     *         Multi-AZ parameter is set to <code>true</code>.
+     * @return Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
     public Boolean isMultiAZ() {
@@ -266,19 +242,16 @@ public class ReplicationPendingModifiedValues implements Serializable,
      * 
      * @param engineVersion
      *        The engine version number of the replication instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReplicationPendingModifiedValues withEngineVersion(
-            String engineVersion) {
+    public ReplicationPendingModifiedValues withEngineVersion(String engineVersion) {
         setEngineVersion(engineVersion);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -289,8 +262,7 @@ public class ReplicationPendingModifiedValues implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationInstanceClass() != null)
-            sb.append("ReplicationInstanceClass: "
-                    + getReplicationInstanceClass() + ",");
+            sb.append("ReplicationInstanceClass: " + getReplicationInstanceClass() + ",");
         if (getAllocatedStorage() != null)
             sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
         if (getMultiAZ() != null)
@@ -311,29 +283,21 @@ public class ReplicationPendingModifiedValues implements Serializable,
         if (obj instanceof ReplicationPendingModifiedValues == false)
             return false;
         ReplicationPendingModifiedValues other = (ReplicationPendingModifiedValues) obj;
-        if (other.getReplicationInstanceClass() == null
-                ^ this.getReplicationInstanceClass() == null)
+        if (other.getReplicationInstanceClass() == null ^ this.getReplicationInstanceClass() == null)
             return false;
-        if (other.getReplicationInstanceClass() != null
-                && other.getReplicationInstanceClass().equals(
-                        this.getReplicationInstanceClass()) == false)
+        if (other.getReplicationInstanceClass() != null && other.getReplicationInstanceClass().equals(this.getReplicationInstanceClass()) == false)
             return false;
-        if (other.getAllocatedStorage() == null
-                ^ this.getAllocatedStorage() == null)
+        if (other.getAllocatedStorage() == null ^ this.getAllocatedStorage() == null)
             return false;
-        if (other.getAllocatedStorage() != null
-                && other.getAllocatedStorage().equals(
-                        this.getAllocatedStorage()) == false)
+        if (other.getAllocatedStorage() != null && other.getAllocatedStorage().equals(this.getAllocatedStorage()) == false)
             return false;
         if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
             return false;
-        if (other.getMultiAZ() != null
-                && other.getMultiAZ().equals(this.getMultiAZ()) == false)
+        if (other.getMultiAZ() != null && other.getMultiAZ().equals(this.getMultiAZ()) == false)
             return false;
         if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
             return false;
-        if (other.getEngineVersion() != null
-                && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
         return true;
     }
@@ -343,20 +307,10 @@ public class ReplicationPendingModifiedValues implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReplicationInstanceClass() == null) ? 0
-                        : getReplicationInstanceClass().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEngineVersion() == null) ? 0 : getEngineVersion()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getReplicationInstanceClass() == null) ? 0 : getReplicationInstanceClass().hashCode());
+        hashCode = prime * hashCode + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         return hashCode;
     }
 
@@ -365,9 +319,7 @@ public class ReplicationPendingModifiedValues implements Serializable,
         try {
             return (ReplicationPendingModifiedValues) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

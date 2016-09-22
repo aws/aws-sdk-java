@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -18,9 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A cluster step consisting of a JAR file whose main function will be executed.
- * The main function submits a job for Hadoop to execute and waits for the job
- * to finish or fail.
+ * A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for
+ * Hadoop to execute and waits for the job to finish or fail.
  * </p>
  */
 public class HadoopStepConfig implements Serializable, Cloneable {
@@ -33,22 +30,21 @@ public class HadoopStepConfig implements Serializable, Cloneable {
     private String jar;
     /**
      * <p>
-     * The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.
+     * The list of Java properties that are set when the step runs. You can use these properties to pass key value pairs
+     * to your main function.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> properties;
     /**
      * <p>
-     * The name of the main class in the specified Java file. If not specified,
-     * the JAR file should specify a main class in its manifest file.
+     * The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class
+     * in its manifest file.
      * </p>
      */
     private String mainClass;
     /**
      * <p>
-     * The list of command line arguments to pass to the JAR file's main
-     * function for execution.
+     * The list of command line arguments to pass to the JAR file's main function for execution.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> args;
@@ -85,8 +81,7 @@ public class HadoopStepConfig implements Serializable, Cloneable {
      * 
      * @param jar
      *        The path to the JAR file that runs during the step.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HadoopStepConfig withJar(String jar) {
@@ -96,13 +91,12 @@ public class HadoopStepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.
+     * The list of Java properties that are set when the step runs. You can use these properties to pass key value pairs
+     * to your main function.
      * </p>
      * 
-     * @return The list of Java properties that are set when the step runs. You
-     *         can use these properties to pass key value pairs to your main
-     *         function.
+     * @return The list of Java properties that are set when the step runs. You can use these properties to pass key
+     *         value pairs to your main function.
      */
 
     public java.util.Map<String, String> getProperties() {
@@ -114,38 +108,32 @@ public class HadoopStepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.
+     * The list of Java properties that are set when the step runs. You can use these properties to pass key value pairs
+     * to your main function.
      * </p>
      * 
      * @param properties
-     *        The list of Java properties that are set when the step runs. You
-     *        can use these properties to pass key value pairs to your main
-     *        function.
+     *        The list of Java properties that are set when the step runs. You can use these properties to pass key
+     *        value pairs to your main function.
      */
 
     public void setProperties(java.util.Map<String, String> properties) {
-        this.properties = properties == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        properties);
+        this.properties = properties == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(properties);
     }
 
     /**
      * <p>
-     * The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.
+     * The list of Java properties that are set when the step runs. You can use these properties to pass key value pairs
+     * to your main function.
      * </p>
      * 
      * @param properties
-     *        The list of Java properties that are set when the step runs. You
-     *        can use these properties to pass key value pairs to your main
-     *        function.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of Java properties that are set when the step runs. You can use these properties to pass key
+     *        value pairs to your main function.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public HadoopStepConfig withProperties(
-            java.util.Map<String, String> properties) {
+    public HadoopStepConfig withProperties(java.util.Map<String, String> properties) {
         setProperties(properties);
         return this;
     }
@@ -155,15 +143,14 @@ public class HadoopStepConfig implements Serializable, Cloneable {
             this.properties = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.properties.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.properties.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Properties. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into Properties. &lt;p> Returns a reference to this object so that method calls can
+     * be chained together.
      */
 
     public HadoopStepConfig clearPropertiesEntries() {
@@ -173,14 +160,13 @@ public class HadoopStepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the main class in the specified Java file. If not specified,
-     * the JAR file should specify a main class in its manifest file.
+     * The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class
+     * in its manifest file.
      * </p>
      * 
      * @param mainClass
-     *        The name of the main class in the specified Java file. If not
-     *        specified, the JAR file should specify a main class in its
-     *        manifest file.
+     *        The name of the main class in the specified Java file. If not specified, the JAR file should specify a
+     *        main class in its manifest file.
      */
 
     public void setMainClass(String mainClass) {
@@ -189,13 +175,12 @@ public class HadoopStepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the main class in the specified Java file. If not specified,
-     * the JAR file should specify a main class in its manifest file.
+     * The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class
+     * in its manifest file.
      * </p>
      * 
-     * @return The name of the main class in the specified Java file. If not
-     *         specified, the JAR file should specify a main class in its
-     *         manifest file.
+     * @return The name of the main class in the specified Java file. If not specified, the JAR file should specify a
+     *         main class in its manifest file.
      */
 
     public String getMainClass() {
@@ -204,16 +189,14 @@ public class HadoopStepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the main class in the specified Java file. If not specified,
-     * the JAR file should specify a main class in its manifest file.
+     * The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class
+     * in its manifest file.
      * </p>
      * 
      * @param mainClass
-     *        The name of the main class in the specified Java file. If not
-     *        specified, the JAR file should specify a main class in its
-     *        manifest file.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the main class in the specified Java file. If not specified, the JAR file should specify a
+     *        main class in its manifest file.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HadoopStepConfig withMainClass(String mainClass) {
@@ -223,12 +206,10 @@ public class HadoopStepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of command line arguments to pass to the JAR file's main
-     * function for execution.
+     * The list of command line arguments to pass to the JAR file's main function for execution.
      * </p>
      * 
-     * @return The list of command line arguments to pass to the JAR file's main
-     *         function for execution.
+     * @return The list of command line arguments to pass to the JAR file's main function for execution.
      */
 
     public java.util.List<String> getArgs() {
@@ -240,13 +221,11 @@ public class HadoopStepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of command line arguments to pass to the JAR file's main
-     * function for execution.
+     * The list of command line arguments to pass to the JAR file's main function for execution.
      * </p>
      * 
      * @param args
-     *        The list of command line arguments to pass to the JAR file's main
-     *        function for execution.
+     *        The list of command line arguments to pass to the JAR file's main function for execution.
      */
 
     public void setArgs(java.util.Collection<String> args) {
@@ -260,27 +239,22 @@ public class HadoopStepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of command line arguments to pass to the JAR file's main
-     * function for execution.
+     * The list of command line arguments to pass to the JAR file's main function for execution.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setArgs(java.util.Collection)} or
-     * {@link #withArgs(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setArgs(java.util.Collection)} or {@link #withArgs(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param args
-     *        The list of command line arguments to pass to the JAR file's main
-     *        function for execution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of command line arguments to pass to the JAR file's main function for execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HadoopStepConfig withArgs(String... args) {
         if (this.args == null) {
-            setArgs(new com.amazonaws.internal.SdkInternalList<String>(
-                    args.length));
+            setArgs(new com.amazonaws.internal.SdkInternalList<String>(args.length));
         }
         for (String ele : args) {
             this.args.add(ele);
@@ -290,15 +264,12 @@ public class HadoopStepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of command line arguments to pass to the JAR file's main
-     * function for execution.
+     * The list of command line arguments to pass to the JAR file's main function for execution.
      * </p>
      * 
      * @param args
-     *        The list of command line arguments to pass to the JAR file's main
-     *        function for execution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of command line arguments to pass to the JAR file's main function for execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HadoopStepConfig withArgs(java.util.Collection<String> args) {
@@ -307,8 +278,7 @@ public class HadoopStepConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -342,23 +312,19 @@ public class HadoopStepConfig implements Serializable, Cloneable {
         HadoopStepConfig other = (HadoopStepConfig) obj;
         if (other.getJar() == null ^ this.getJar() == null)
             return false;
-        if (other.getJar() != null
-                && other.getJar().equals(this.getJar()) == false)
+        if (other.getJar() != null && other.getJar().equals(this.getJar()) == false)
             return false;
         if (other.getProperties() == null ^ this.getProperties() == null)
             return false;
-        if (other.getProperties() != null
-                && other.getProperties().equals(this.getProperties()) == false)
+        if (other.getProperties() != null && other.getProperties().equals(this.getProperties()) == false)
             return false;
         if (other.getMainClass() == null ^ this.getMainClass() == null)
             return false;
-        if (other.getMainClass() != null
-                && other.getMainClass().equals(this.getMainClass()) == false)
+        if (other.getMainClass() != null && other.getMainClass().equals(this.getMainClass()) == false)
             return false;
         if (other.getArgs() == null ^ this.getArgs() == null)
             return false;
-        if (other.getArgs() != null
-                && other.getArgs().equals(this.getArgs()) == false)
+        if (other.getArgs() != null && other.getArgs().equals(this.getArgs()) == false)
             return false;
         return true;
     }
@@ -368,14 +334,10 @@ public class HadoopStepConfig implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJar() == null) ? 0 : getJar().hashCode());
-        hashCode = prime * hashCode
-                + ((getProperties() == null) ? 0 : getProperties().hashCode());
-        hashCode = prime * hashCode
-                + ((getMainClass() == null) ? 0 : getMainClass().hashCode());
-        hashCode = prime * hashCode
-                + ((getArgs() == null) ? 0 : getArgs().hashCode());
+        hashCode = prime * hashCode + ((getJar() == null) ? 0 : getJar().hashCode());
+        hashCode = prime * hashCode + ((getProperties() == null) ? 0 : getProperties().hashCode());
+        hashCode = prime * hashCode + ((getMainClass() == null) ? 0 : getMainClass().hashCode());
+        hashCode = prime * hashCode + ((getArgs() == null) ? 0 : getArgs().hashCode());
         return hashCode;
     }
 
@@ -384,9 +346,7 @@ public class HadoopStepConfig implements Serializable, Cloneable {
         try {
             return (HadoopStepConfig) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

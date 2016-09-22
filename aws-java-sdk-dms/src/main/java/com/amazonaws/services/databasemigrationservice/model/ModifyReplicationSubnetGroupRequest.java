@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.databasemigrationservice.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class ModifyReplicationSubnetGroupRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ModifyReplicationSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -52,8 +48,7 @@ public class ModifyReplicationSubnetGroupRequest extends
      *        The name of the replication instance subnet group.
      */
 
-    public void setReplicationSubnetGroupIdentifier(
-            String replicationSubnetGroupIdentifier) {
+    public void setReplicationSubnetGroupIdentifier(String replicationSubnetGroupIdentifier) {
         this.replicationSubnetGroupIdentifier = replicationSubnetGroupIdentifier;
     }
 
@@ -76,12 +71,10 @@ public class ModifyReplicationSubnetGroupRequest extends
      * 
      * @param replicationSubnetGroupIdentifier
      *        The name of the replication instance subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyReplicationSubnetGroupRequest withReplicationSubnetGroupIdentifier(
-            String replicationSubnetGroupIdentifier) {
+    public ModifyReplicationSubnetGroupRequest withReplicationSubnetGroupIdentifier(String replicationSubnetGroupIdentifier) {
         setReplicationSubnetGroupIdentifier(replicationSubnetGroupIdentifier);
         return this;
     }
@@ -95,8 +88,7 @@ public class ModifyReplicationSubnetGroupRequest extends
      *        The description of the replication instance subnet group.
      */
 
-    public void setReplicationSubnetGroupDescription(
-            String replicationSubnetGroupDescription) {
+    public void setReplicationSubnetGroupDescription(String replicationSubnetGroupDescription) {
         this.replicationSubnetGroupDescription = replicationSubnetGroupDescription;
     }
 
@@ -119,12 +111,10 @@ public class ModifyReplicationSubnetGroupRequest extends
      * 
      * @param replicationSubnetGroupDescription
      *        The description of the replication instance subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyReplicationSubnetGroupRequest withReplicationSubnetGroupDescription(
-            String replicationSubnetGroupDescription) {
+    public ModifyReplicationSubnetGroupRequest withReplicationSubnetGroupDescription(String replicationSubnetGroupDescription) {
         setReplicationSubnetGroupDescription(replicationSubnetGroupDescription);
         return this;
     }
@@ -164,20 +154,17 @@ public class ModifyReplicationSubnetGroupRequest extends
      * A list of subnet IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnetIds(java.util.Collection)} or
-     * {@link #withSubnetIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param subnetIds
      *        A list of subnet IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyReplicationSubnetGroupRequest withSubnetIds(
-            String... subnetIds) {
+    public ModifyReplicationSubnetGroupRequest withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
             setSubnetIds(new java.util.ArrayList<String>(subnetIds.length));
         }
@@ -194,19 +181,16 @@ public class ModifyReplicationSubnetGroupRequest extends
      * 
      * @param subnetIds
      *        A list of subnet IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyReplicationSubnetGroupRequest withSubnetIds(
-            java.util.Collection<String> subnetIds) {
+    public ModifyReplicationSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -217,11 +201,9 @@ public class ModifyReplicationSubnetGroupRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationSubnetGroupIdentifier() != null)
-            sb.append("ReplicationSubnetGroupIdentifier: "
-                    + getReplicationSubnetGroupIdentifier() + ",");
+            sb.append("ReplicationSubnetGroupIdentifier: " + getReplicationSubnetGroupIdentifier() + ",");
         if (getReplicationSubnetGroupDescription() != null)
-            sb.append("ReplicationSubnetGroupDescription: "
-                    + getReplicationSubnetGroupDescription() + ",");
+            sb.append("ReplicationSubnetGroupDescription: " + getReplicationSubnetGroupDescription() + ",");
         if (getSubnetIds() != null)
             sb.append("SubnetIds: " + getSubnetIds());
         sb.append("}");
@@ -238,24 +220,19 @@ public class ModifyReplicationSubnetGroupRequest extends
         if (obj instanceof ModifyReplicationSubnetGroupRequest == false)
             return false;
         ModifyReplicationSubnetGroupRequest other = (ModifyReplicationSubnetGroupRequest) obj;
-        if (other.getReplicationSubnetGroupIdentifier() == null
-                ^ this.getReplicationSubnetGroupIdentifier() == null)
+        if (other.getReplicationSubnetGroupIdentifier() == null ^ this.getReplicationSubnetGroupIdentifier() == null)
             return false;
         if (other.getReplicationSubnetGroupIdentifier() != null
-                && other.getReplicationSubnetGroupIdentifier().equals(
-                        this.getReplicationSubnetGroupIdentifier()) == false)
+                && other.getReplicationSubnetGroupIdentifier().equals(this.getReplicationSubnetGroupIdentifier()) == false)
             return false;
-        if (other.getReplicationSubnetGroupDescription() == null
-                ^ this.getReplicationSubnetGroupDescription() == null)
+        if (other.getReplicationSubnetGroupDescription() == null ^ this.getReplicationSubnetGroupDescription() == null)
             return false;
         if (other.getReplicationSubnetGroupDescription() != null
-                && other.getReplicationSubnetGroupDescription().equals(
-                        this.getReplicationSubnetGroupDescription()) == false)
+                && other.getReplicationSubnetGroupDescription().equals(this.getReplicationSubnetGroupDescription()) == false)
             return false;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
-        if (other.getSubnetIds() != null
-                && other.getSubnetIds().equals(this.getSubnetIds()) == false)
+        if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
             return false;
         return true;
     }
@@ -265,16 +242,9 @@ public class ModifyReplicationSubnetGroupRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReplicationSubnetGroupIdentifier() == null) ? 0
-                        : getReplicationSubnetGroupIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReplicationSubnetGroupDescription() == null) ? 0
-                        : getReplicationSubnetGroupDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
+        hashCode = prime * hashCode + ((getReplicationSubnetGroupIdentifier() == null) ? 0 : getReplicationSubnetGroupIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getReplicationSubnetGroupDescription() == null) ? 0 : getReplicationSubnetGroupDescription().hashCode());
+        hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         return hashCode;
     }
 

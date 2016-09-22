@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecs.model;
 
@@ -55,8 +53,8 @@ public class Container implements Serializable, Cloneable {
     private Integer exitCode;
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional
-     * detail about a running or stopped container.
+     * A short (255 max characters) human-readable string to provide additional detail about a running or stopped
+     * container.
      * </p>
      */
     private String reason;
@@ -99,8 +97,7 @@ public class Container implements Serializable, Cloneable {
      * 
      * @param containerArn
      *        The Amazon Resource Name (ARN) of the container.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Container withContainerArn(String containerArn) {
@@ -140,8 +137,7 @@ public class Container implements Serializable, Cloneable {
      * 
      * @param taskArn
      *        The Amazon Resource Name (ARN) of the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Container withTaskArn(String taskArn) {
@@ -181,8 +177,7 @@ public class Container implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the container.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Container withName(String name) {
@@ -222,8 +217,7 @@ public class Container implements Serializable, Cloneable {
      * 
      * @param lastStatus
      *        The last known status of the container.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Container withLastStatus(String lastStatus) {
@@ -263,8 +257,7 @@ public class Container implements Serializable, Cloneable {
      * 
      * @param exitCode
      *        The exit code returned from the container.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Container withExitCode(Integer exitCode) {
@@ -274,13 +267,13 @@ public class Container implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional
-     * detail about a running or stopped container.
+     * A short (255 max characters) human-readable string to provide additional detail about a running or stopped
+     * container.
      * </p>
      * 
      * @param reason
-     *        A short (255 max characters) human-readable string to provide
-     *        additional detail about a running or stopped container.
+     *        A short (255 max characters) human-readable string to provide additional detail about a running or stopped
+     *        container.
      */
 
     public void setReason(String reason) {
@@ -289,12 +282,12 @@ public class Container implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional
-     * detail about a running or stopped container.
+     * A short (255 max characters) human-readable string to provide additional detail about a running or stopped
+     * container.
      * </p>
      * 
-     * @return A short (255 max characters) human-readable string to provide
-     *         additional detail about a running or stopped container.
+     * @return A short (255 max characters) human-readable string to provide additional detail about a running or
+     *         stopped container.
      */
 
     public String getReason() {
@@ -303,15 +296,14 @@ public class Container implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional
-     * detail about a running or stopped container.
+     * A short (255 max characters) human-readable string to provide additional detail about a running or stopped
+     * container.
      * </p>
      * 
      * @param reason
-     *        A short (255 max characters) human-readable string to provide
-     *        additional detail about a running or stopped container.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A short (255 max characters) human-readable string to provide additional detail about a running or stopped
+     *        container.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Container withReason(String reason) {
@@ -343,15 +335,13 @@ public class Container implements Serializable, Cloneable {
      *        The network bindings associated with the container.
      */
 
-    public void setNetworkBindings(
-            java.util.Collection<NetworkBinding> networkBindings) {
+    public void setNetworkBindings(java.util.Collection<NetworkBinding> networkBindings) {
         if (networkBindings == null) {
             this.networkBindings = null;
             return;
         }
 
-        this.networkBindings = new com.amazonaws.internal.SdkInternalList<NetworkBinding>(
-                networkBindings);
+        this.networkBindings = new com.amazonaws.internal.SdkInternalList<NetworkBinding>(networkBindings);
     }
 
     /**
@@ -359,22 +349,19 @@ public class Container implements Serializable, Cloneable {
      * The network bindings associated with the container.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNetworkBindings(java.util.Collection)} or
-     * {@link #withNetworkBindings(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkBindings(java.util.Collection)} or {@link #withNetworkBindings(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param networkBindings
      *        The network bindings associated with the container.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Container withNetworkBindings(NetworkBinding... networkBindings) {
         if (this.networkBindings == null) {
-            setNetworkBindings(new com.amazonaws.internal.SdkInternalList<NetworkBinding>(
-                    networkBindings.length));
+            setNetworkBindings(new com.amazonaws.internal.SdkInternalList<NetworkBinding>(networkBindings.length));
         }
         for (NetworkBinding ele : networkBindings) {
             this.networkBindings.add(ele);
@@ -389,19 +376,16 @@ public class Container implements Serializable, Cloneable {
      * 
      * @param networkBindings
      *        The network bindings associated with the container.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Container withNetworkBindings(
-            java.util.Collection<NetworkBinding> networkBindings) {
+    public Container withNetworkBindings(java.util.Collection<NetworkBinding> networkBindings) {
         setNetworkBindings(networkBindings);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -441,39 +425,31 @@ public class Container implements Serializable, Cloneable {
         Container other = (Container) obj;
         if (other.getContainerArn() == null ^ this.getContainerArn() == null)
             return false;
-        if (other.getContainerArn() != null
-                && other.getContainerArn().equals(this.getContainerArn()) == false)
+        if (other.getContainerArn() != null && other.getContainerArn().equals(this.getContainerArn()) == false)
             return false;
         if (other.getTaskArn() == null ^ this.getTaskArn() == null)
             return false;
-        if (other.getTaskArn() != null
-                && other.getTaskArn().equals(this.getTaskArn()) == false)
+        if (other.getTaskArn() != null && other.getTaskArn().equals(this.getTaskArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getLastStatus() == null ^ this.getLastStatus() == null)
             return false;
-        if (other.getLastStatus() != null
-                && other.getLastStatus().equals(this.getLastStatus()) == false)
+        if (other.getLastStatus() != null && other.getLastStatus().equals(this.getLastStatus()) == false)
             return false;
         if (other.getExitCode() == null ^ this.getExitCode() == null)
             return false;
-        if (other.getExitCode() != null
-                && other.getExitCode().equals(this.getExitCode()) == false)
+        if (other.getExitCode() != null && other.getExitCode().equals(this.getExitCode()) == false)
             return false;
         if (other.getReason() == null ^ this.getReason() == null)
             return false;
-        if (other.getReason() != null
-                && other.getReason().equals(this.getReason()) == false)
+        if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
-        if (other.getNetworkBindings() == null
-                ^ this.getNetworkBindings() == null)
+        if (other.getNetworkBindings() == null ^ this.getNetworkBindings() == null)
             return false;
-        if (other.getNetworkBindings() != null
-                && other.getNetworkBindings().equals(this.getNetworkBindings()) == false)
+        if (other.getNetworkBindings() != null && other.getNetworkBindings().equals(this.getNetworkBindings()) == false)
             return false;
         return true;
     }
@@ -483,24 +459,13 @@ public class Container implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getContainerArn() == null) ? 0 : getContainerArn()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
-        hashCode = prime * hashCode
-                + ((getReason() == null) ? 0 : getReason().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkBindings() == null) ? 0 : getNetworkBindings()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getContainerArn() == null) ? 0 : getContainerArn().hashCode());
+        hashCode = prime * hashCode + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode());
+        hashCode = prime * hashCode + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
+        hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
+        hashCode = prime * hashCode + ((getNetworkBindings() == null) ? 0 : getNetworkBindings().hashCode());
         return hashCode;
     }
 
@@ -509,9 +474,7 @@ public class Container implements Serializable, Cloneable {
         try {
             return (Container) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

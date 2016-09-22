@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The output for the <a>DescribeJobFlows</a> operation.
  * </p>
  */
-public class DescribeJobFlowsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeJobFlowsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -62,8 +58,7 @@ public class DescribeJobFlowsResult extends
             return;
         }
 
-        this.jobFlows = new com.amazonaws.internal.SdkInternalList<JobFlowDetail>(
-                jobFlows);
+        this.jobFlows = new com.amazonaws.internal.SdkInternalList<JobFlowDetail>(jobFlows);
     }
 
     /**
@@ -71,22 +66,19 @@ public class DescribeJobFlowsResult extends
      * A list of job flows matching the parameters supplied.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setJobFlows(java.util.Collection)} or
-     * {@link #withJobFlows(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setJobFlows(java.util.Collection)} or {@link #withJobFlows(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param jobFlows
      *        A list of job flows matching the parameters supplied.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobFlowsResult withJobFlows(JobFlowDetail... jobFlows) {
         if (this.jobFlows == null) {
-            setJobFlows(new com.amazonaws.internal.SdkInternalList<JobFlowDetail>(
-                    jobFlows.length));
+            setJobFlows(new com.amazonaws.internal.SdkInternalList<JobFlowDetail>(jobFlows.length));
         }
         for (JobFlowDetail ele : jobFlows) {
             this.jobFlows.add(ele);
@@ -101,19 +93,16 @@ public class DescribeJobFlowsResult extends
      * 
      * @param jobFlows
      *        A list of job flows matching the parameters supplied.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeJobFlowsResult withJobFlows(
-            java.util.Collection<JobFlowDetail> jobFlows) {
+    public DescribeJobFlowsResult withJobFlows(java.util.Collection<JobFlowDetail> jobFlows) {
         setJobFlows(jobFlows);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -141,8 +130,7 @@ public class DescribeJobFlowsResult extends
         DescribeJobFlowsResult other = (DescribeJobFlowsResult) obj;
         if (other.getJobFlows() == null ^ this.getJobFlows() == null)
             return false;
-        if (other.getJobFlows() != null
-                && other.getJobFlows().equals(this.getJobFlows()) == false)
+        if (other.getJobFlows() != null && other.getJobFlows().equals(this.getJobFlows()) == false)
             return false;
         return true;
     }
@@ -152,8 +140,7 @@ public class DescribeJobFlowsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJobFlows() == null) ? 0 : getJobFlows().hashCode());
+        hashCode = prime * hashCode + ((getJobFlows() == null) ? 0 : getJobFlows().hashCode());
         return hashCode;
     }
 
@@ -162,9 +149,7 @@ public class DescribeJobFlowsResult extends
         try {
             return (DescribeJobFlowsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

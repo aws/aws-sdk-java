@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model.transform;
 
@@ -43,8 +41,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * DeleteThingRequest Marshaller
  */
-public class DeleteThingRequestMarshaller implements
-        Marshaller<Request<DeleteThingRequest>, DeleteThingRequest> {
+public class DeleteThingRequestMarshaller implements Marshaller<Request<DeleteThingRequest>, DeleteThingRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -52,31 +49,24 @@ public class DeleteThingRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DeleteThingRequest> marshall(
-            DeleteThingRequest deleteThingRequest) {
+    public Request<DeleteThingRequest> marshall(DeleteThingRequest deleteThingRequest) {
 
         if (deleteThingRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteThingRequest> request = new DefaultRequest<DeleteThingRequest>(
-                deleteThingRequest, "AWSIot");
+        Request<DeleteThingRequest> request = new DefaultRequest<DeleteThingRequest>(deleteThingRequest, "AWSIot");
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
         String uriResourcePath = "/things/{thingName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{thingName}",
-                (deleteThingRequest.getThingName() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(deleteThingRequest
-                                .getThingName()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{thingName}",
+                (deleteThingRequest.getThingName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteThingRequest.getThingName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (deleteThingRequest.getExpectedVersion() != null) {
-            request.addParameter("expectedVersion", StringUtils
-                    .fromLong(deleteThingRequest.getExpectedVersion()));
+            request.addParameter("expectedVersion", StringUtils.fromLong(deleteThingRequest.getExpectedVersion()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

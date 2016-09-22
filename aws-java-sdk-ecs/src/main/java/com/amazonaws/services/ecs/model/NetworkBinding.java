@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecs.model;
 
@@ -18,9 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Details on the network bindings between a container and its host container
- * instance. After a task reaches the <code>RUNNING</code> status, manual and
- * automatic host and container port assignments are visible in the
+ * Details on the network bindings between a container and its host container instance. After a task reaches the
+ * <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the
  * <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.
  * </p>
  */
@@ -34,8 +31,7 @@ public class NetworkBinding implements Serializable, Cloneable {
     private String bindIP;
     /**
      * <p>
-     * The port number on the container that is be used with the network
-     * binding.
+     * The port number on the container that is be used with the network binding.
      * </p>
      */
     private Integer containerPort;
@@ -58,8 +54,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * </p>
      * 
      * @param bindIP
-     *        The IP address that the container is bound to on the container
-     *        instance.
+     *        The IP address that the container is bound to on the container instance.
      */
 
     public void setBindIP(String bindIP) {
@@ -71,8 +66,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * The IP address that the container is bound to on the container instance.
      * </p>
      * 
-     * @return The IP address that the container is bound to on the container
-     *         instance.
+     * @return The IP address that the container is bound to on the container instance.
      */
 
     public String getBindIP() {
@@ -85,10 +79,8 @@ public class NetworkBinding implements Serializable, Cloneable {
      * </p>
      * 
      * @param bindIP
-     *        The IP address that the container is bound to on the container
-     *        instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IP address that the container is bound to on the container instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkBinding withBindIP(String bindIP) {
@@ -98,13 +90,11 @@ public class NetworkBinding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port number on the container that is be used with the network
-     * binding.
+     * The port number on the container that is be used with the network binding.
      * </p>
      * 
      * @param containerPort
-     *        The port number on the container that is be used with the network
-     *        binding.
+     *        The port number on the container that is be used with the network binding.
      */
 
     public void setContainerPort(Integer containerPort) {
@@ -113,12 +103,10 @@ public class NetworkBinding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port number on the container that is be used with the network
-     * binding.
+     * The port number on the container that is be used with the network binding.
      * </p>
      * 
-     * @return The port number on the container that is be used with the network
-     *         binding.
+     * @return The port number on the container that is be used with the network binding.
      */
 
     public Integer getContainerPort() {
@@ -127,15 +115,12 @@ public class NetworkBinding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port number on the container that is be used with the network
-     * binding.
+     * The port number on the container that is be used with the network binding.
      * </p>
      * 
      * @param containerPort
-     *        The port number on the container that is be used with the network
-     *        binding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The port number on the container that is be used with the network binding.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkBinding withContainerPort(Integer containerPort) {
@@ -161,8 +146,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * The port number on the host that is used with the network binding.
      * </p>
      * 
-     * @return The port number on the host that is used with the network
-     *         binding.
+     * @return The port number on the host that is used with the network binding.
      */
 
     public Integer getHostPort() {
@@ -176,8 +160,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * 
      * @param hostPort
      *        The port number on the host that is used with the network binding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkBinding withHostPort(Integer hostPort) {
@@ -219,8 +202,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * 
      * @param protocol
      *        The protocol used for the network binding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransportProtocol
      */
 
@@ -250,8 +232,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * 
      * @param protocol
      *        The protocol used for the network binding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransportProtocol
      */
 
@@ -261,8 +242,7 @@ public class NetworkBinding implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -296,23 +276,19 @@ public class NetworkBinding implements Serializable, Cloneable {
         NetworkBinding other = (NetworkBinding) obj;
         if (other.getBindIP() == null ^ this.getBindIP() == null)
             return false;
-        if (other.getBindIP() != null
-                && other.getBindIP().equals(this.getBindIP()) == false)
+        if (other.getBindIP() != null && other.getBindIP().equals(this.getBindIP()) == false)
             return false;
         if (other.getContainerPort() == null ^ this.getContainerPort() == null)
             return false;
-        if (other.getContainerPort() != null
-                && other.getContainerPort().equals(this.getContainerPort()) == false)
+        if (other.getContainerPort() != null && other.getContainerPort().equals(this.getContainerPort()) == false)
             return false;
         if (other.getHostPort() == null ^ this.getHostPort() == null)
             return false;
-        if (other.getHostPort() != null
-                && other.getHostPort().equals(this.getHostPort()) == false)
+        if (other.getHostPort() != null && other.getHostPort().equals(this.getHostPort()) == false)
             return false;
         if (other.getProtocol() == null ^ this.getProtocol() == null)
             return false;
-        if (other.getProtocol() != null
-                && other.getProtocol().equals(this.getProtocol()) == false)
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
             return false;
         return true;
     }
@@ -322,16 +298,10 @@ public class NetworkBinding implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getBindIP() == null) ? 0 : getBindIP().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getContainerPort() == null) ? 0 : getContainerPort()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getHostPort() == null) ? 0 : getHostPort().hashCode());
-        hashCode = prime * hashCode
-                + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
+        hashCode = prime * hashCode + ((getBindIP() == null) ? 0 : getBindIP().hashCode());
+        hashCode = prime * hashCode + ((getContainerPort() == null) ? 0 : getContainerPort().hashCode());
+        hashCode = prime * hashCode + ((getHostPort() == null) ? 0 : getHostPort().hashCode());
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         return hashCode;
     }
 
@@ -340,9 +310,7 @@ public class NetworkBinding implements Serializable, Cloneable {
         try {
             return (NetworkBinding) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

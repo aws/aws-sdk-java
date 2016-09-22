@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
@@ -34,44 +32,36 @@ public class PipelineExecutionJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PipelineExecution pipelineExecution,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(PipelineExecution pipelineExecution, StructuredJsonGenerator jsonGenerator) {
 
         if (pipelineExecution == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (pipelineExecution.getPipelineName() != null) {
-                jsonGenerator.writeFieldName("pipelineName").writeValue(
-                        pipelineExecution.getPipelineName());
+                jsonGenerator.writeFieldName("pipelineName").writeValue(pipelineExecution.getPipelineName());
             }
             if (pipelineExecution.getPipelineVersion() != null) {
-                jsonGenerator.writeFieldName("pipelineVersion").writeValue(
-                        pipelineExecution.getPipelineVersion());
+                jsonGenerator.writeFieldName("pipelineVersion").writeValue(pipelineExecution.getPipelineVersion());
             }
             if (pipelineExecution.getPipelineExecutionId() != null) {
-                jsonGenerator.writeFieldName("pipelineExecutionId").writeValue(
-                        pipelineExecution.getPipelineExecutionId());
+                jsonGenerator.writeFieldName("pipelineExecutionId").writeValue(pipelineExecution.getPipelineExecutionId());
             }
             if (pipelineExecution.getStatus() != null) {
-                jsonGenerator.writeFieldName("status").writeValue(
-                        pipelineExecution.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(pipelineExecution.getStatus());
             }
 
-            java.util.List<ArtifactRevision> artifactRevisionsList = pipelineExecution
-                    .getArtifactRevisions();
+            java.util.List<ArtifactRevision> artifactRevisionsList = pipelineExecution.getArtifactRevisions();
             if (artifactRevisionsList != null) {
                 jsonGenerator.writeFieldName("artifactRevisions");
                 jsonGenerator.writeStartArray();
                 for (ArtifactRevision artifactRevisionsListValue : artifactRevisionsList) {
                     if (artifactRevisionsListValue != null) {
 
-                        ArtifactRevisionJsonMarshaller.getInstance().marshall(
-                                artifactRevisionsListValue, jsonGenerator);
+                        ArtifactRevisionJsonMarshaller.getInstance().marshall(artifactRevisionsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
@@ -79,8 +69,7 @@ public class PipelineExecutionJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

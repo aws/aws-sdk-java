@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model.transform;
 
@@ -35,76 +33,60 @@ import com.amazonaws.protocol.json.*;
 /**
  * ConnectDirectoryRequest Marshaller
  */
-public class ConnectDirectoryRequestMarshaller implements
-        Marshaller<Request<ConnectDirectoryRequest>, ConnectDirectoryRequest> {
+public class ConnectDirectoryRequestMarshaller implements Marshaller<Request<ConnectDirectoryRequest>, ConnectDirectoryRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public ConnectDirectoryRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public ConnectDirectoryRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<ConnectDirectoryRequest> marshall(
-            ConnectDirectoryRequest connectDirectoryRequest) {
+    public Request<ConnectDirectoryRequest> marshall(ConnectDirectoryRequest connectDirectoryRequest) {
 
         if (connectDirectoryRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ConnectDirectoryRequest> request = new DefaultRequest<ConnectDirectoryRequest>(
-                connectDirectoryRequest, "AWSDirectoryService");
-        request.addHeader("X-Amz-Target",
-                "DirectoryService_20150416.ConnectDirectory");
+        Request<ConnectDirectoryRequest> request = new DefaultRequest<ConnectDirectoryRequest>(connectDirectoryRequest, "AWSDirectoryService");
+        request.addHeader("X-Amz-Target", "DirectoryService_20150416.ConnectDirectory");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (connectDirectoryRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(
-                        connectDirectoryRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(connectDirectoryRequest.getName());
             }
             if (connectDirectoryRequest.getShortName() != null) {
-                jsonGenerator.writeFieldName("ShortName").writeValue(
-                        connectDirectoryRequest.getShortName());
+                jsonGenerator.writeFieldName("ShortName").writeValue(connectDirectoryRequest.getShortName());
             }
             if (connectDirectoryRequest.getPassword() != null) {
-                jsonGenerator.writeFieldName("Password").writeValue(
-                        connectDirectoryRequest.getPassword());
+                jsonGenerator.writeFieldName("Password").writeValue(connectDirectoryRequest.getPassword());
             }
             if (connectDirectoryRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(
-                        connectDirectoryRequest.getDescription());
+                jsonGenerator.writeFieldName("Description").writeValue(connectDirectoryRequest.getDescription());
             }
             if (connectDirectoryRequest.getSize() != null) {
-                jsonGenerator.writeFieldName("Size").writeValue(
-                        connectDirectoryRequest.getSize());
+                jsonGenerator.writeFieldName("Size").writeValue(connectDirectoryRequest.getSize());
             }
             if (connectDirectoryRequest.getConnectSettings() != null) {
                 jsonGenerator.writeFieldName("ConnectSettings");
-                DirectoryConnectSettingsJsonMarshaller.getInstance().marshall(
-                        connectDirectoryRequest.getConnectSettings(),
-                        jsonGenerator);
+                DirectoryConnectSettingsJsonMarshaller.getInstance().marshall(connectDirectoryRequest.getConnectSettings(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

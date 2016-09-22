@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudsearchdomain.model;
 
@@ -18,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the resource id (<code>rid</code>) and the time it took to process
- * the request (<code>timems</code>).
+ * Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).
  * </p>
  */
 public class SearchStatus implements Serializable, Cloneable {
@@ -69,8 +66,7 @@ public class SearchStatus implements Serializable, Cloneable {
      * 
      * @param timems
      *        How long it took to process the request, in milliseconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SearchStatus withTimems(Long timems) {
@@ -110,8 +106,7 @@ public class SearchStatus implements Serializable, Cloneable {
      * 
      * @param rid
      *        The encrypted resource ID for the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SearchStatus withRid(String rid) {
@@ -120,8 +115,7 @@ public class SearchStatus implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -151,13 +145,11 @@ public class SearchStatus implements Serializable, Cloneable {
         SearchStatus other = (SearchStatus) obj;
         if (other.getTimems() == null ^ this.getTimems() == null)
             return false;
-        if (other.getTimems() != null
-                && other.getTimems().equals(this.getTimems()) == false)
+        if (other.getTimems() != null && other.getTimems().equals(this.getTimems()) == false)
             return false;
         if (other.getRid() == null ^ this.getRid() == null)
             return false;
-        if (other.getRid() != null
-                && other.getRid().equals(this.getRid()) == false)
+        if (other.getRid() != null && other.getRid().equals(this.getRid()) == false)
             return false;
         return true;
     }
@@ -167,10 +159,8 @@ public class SearchStatus implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTimems() == null) ? 0 : getTimems().hashCode());
-        hashCode = prime * hashCode
-                + ((getRid() == null) ? 0 : getRid().hashCode());
+        hashCode = prime * hashCode + ((getTimems() == null) ? 0 : getTimems().hashCode());
+        hashCode = prime * hashCode + ((getRid() == null) ? 0 : getRid().hashCode());
         return hashCode;
     }
 
@@ -179,9 +169,7 @@ public class SearchStatus implements Serializable, Cloneable {
         try {
             return (SearchStatus) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

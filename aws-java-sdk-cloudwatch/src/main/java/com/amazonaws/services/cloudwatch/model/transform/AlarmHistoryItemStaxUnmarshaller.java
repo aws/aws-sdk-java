@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * AlarmHistoryItem StAX Unmarshaller
  */
-public class AlarmHistoryItemStaxUnmarshaller implements
-        Unmarshaller<AlarmHistoryItem, StaxUnmarshallerContext> {
+public class AlarmHistoryItemStaxUnmarshaller implements Unmarshaller<AlarmHistoryItem, StaxUnmarshallerContext> {
 
-    public AlarmHistoryItem unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public AlarmHistoryItem unmarshall(StaxUnmarshallerContext context) throws Exception {
         AlarmHistoryItem alarmHistoryItem = new AlarmHistoryItem();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,32 +46,27 @@ public class AlarmHistoryItemStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("AlarmName", targetDepth)) {
-                    alarmHistoryItem.setAlarmName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    alarmHistoryItem.setAlarmName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Timestamp", targetDepth)) {
-                    alarmHistoryItem.setTimestamp(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    alarmHistoryItem.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("HistoryItemType", targetDepth)) {
-                    alarmHistoryItem.setHistoryItemType(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    alarmHistoryItem.setHistoryItemType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("HistorySummary", targetDepth)) {
-                    alarmHistoryItem.setHistorySummary(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    alarmHistoryItem.setHistorySummary(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("HistoryData", targetDepth)) {
-                    alarmHistoryItem.setHistoryData(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    alarmHistoryItem.setHistoryData(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

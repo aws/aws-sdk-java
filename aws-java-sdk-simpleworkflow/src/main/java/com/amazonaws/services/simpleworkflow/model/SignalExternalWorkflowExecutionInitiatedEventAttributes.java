@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
 
@@ -18,12 +16,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides details of the <code>SignalExternalWorkflowExecutionInitiated</code>
- * event.
+ * Provides details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.
  * </p>
  */
-public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
-        Serializable, Cloneable {
+public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
     private String workflowId;
     /**
      * <p>
-     * The <code>runId</code> of the external workflow execution to send the
-     * signal to.
+     * The <code>runId</code> of the external workflow execution to send the signal to.
      * </p>
      */
     private String runId;
@@ -52,18 +47,15 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
     private String input;
     /**
      * <p>
-     * The ID of the <code>DecisionTaskCompleted</code> event corresponding to
-     * the decision task that resulted in the
-     * <code>SignalExternalWorkflowExecution</code> decision for this signal.
-     * This information can be useful for diagnosing problems by tracing back
-     * the chain of events leading up to this event.
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+     * <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this event.
      * </p>
      */
     private Long decisionTaskCompletedEventId;
     /**
      * <p>
-     * <i>Optional.</i> data attached to the event that can be used by the
-     * decider in subsequent decision tasks.
+     * <i>Optional.</i> data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      */
     private String control;
@@ -100,25 +92,21 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
      * 
      * @param workflowId
      *        The <code>workflowId</code> of the external workflow execution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SignalExternalWorkflowExecutionInitiatedEventAttributes withWorkflowId(
-            String workflowId) {
+    public SignalExternalWorkflowExecutionInitiatedEventAttributes withWorkflowId(String workflowId) {
         setWorkflowId(workflowId);
         return this;
     }
 
     /**
      * <p>
-     * The <code>runId</code> of the external workflow execution to send the
-     * signal to.
+     * The <code>runId</code> of the external workflow execution to send the signal to.
      * </p>
      * 
      * @param runId
-     *        The <code>runId</code> of the external workflow execution to send
-     *        the signal to.
+     *        The <code>runId</code> of the external workflow execution to send the signal to.
      */
 
     public void setRunId(String runId) {
@@ -127,12 +115,10 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
 
     /**
      * <p>
-     * The <code>runId</code> of the external workflow execution to send the
-     * signal to.
+     * The <code>runId</code> of the external workflow execution to send the signal to.
      * </p>
      * 
-     * @return The <code>runId</code> of the external workflow execution to send
-     *         the signal to.
+     * @return The <code>runId</code> of the external workflow execution to send the signal to.
      */
 
     public String getRunId() {
@@ -141,19 +127,15 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
 
     /**
      * <p>
-     * The <code>runId</code> of the external workflow execution to send the
-     * signal to.
+     * The <code>runId</code> of the external workflow execution to send the signal to.
      * </p>
      * 
      * @param runId
-     *        The <code>runId</code> of the external workflow execution to send
-     *        the signal to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>runId</code> of the external workflow execution to send the signal to.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SignalExternalWorkflowExecutionInitiatedEventAttributes withRunId(
-            String runId) {
+    public SignalExternalWorkflowExecutionInitiatedEventAttributes withRunId(String runId) {
         setRunId(runId);
         return this;
     }
@@ -190,12 +172,10 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
      * 
      * @param signalName
      *        The name of the signal.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SignalExternalWorkflowExecutionInitiatedEventAttributes withSignalName(
-            String signalName) {
+    public SignalExternalWorkflowExecutionInitiatedEventAttributes withSignalName(String signalName) {
         setSignalName(signalName);
         return this;
     }
@@ -232,52 +212,41 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
      * 
      * @param input
      *        Input provided to the signal (if any).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SignalExternalWorkflowExecutionInitiatedEventAttributes withInput(
-            String input) {
+    public SignalExternalWorkflowExecutionInitiatedEventAttributes withInput(String input) {
         setInput(input);
         return this;
     }
 
     /**
      * <p>
-     * The ID of the <code>DecisionTaskCompleted</code> event corresponding to
-     * the decision task that resulted in the
-     * <code>SignalExternalWorkflowExecution</code> decision for this signal.
-     * This information can be useful for diagnosing problems by tracing back
-     * the chain of events leading up to this event.
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+     * <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this event.
      * </p>
      * 
      * @param decisionTaskCompletedEventId
-     *        The ID of the <code>DecisionTaskCompleted</code> event
-     *        corresponding to the decision task that resulted in the
-     *        <code>SignalExternalWorkflowExecution</code> decision for this
-     *        signal. This information can be useful for diagnosing problems by
-     *        tracing back the chain of events leading up to this event.
+     *        The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in
+     *        the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful
+     *        for diagnosing problems by tracing back the chain of events leading up to this event.
      */
 
-    public void setDecisionTaskCompletedEventId(
-            Long decisionTaskCompletedEventId) {
+    public void setDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
     }
 
     /**
      * <p>
-     * The ID of the <code>DecisionTaskCompleted</code> event corresponding to
-     * the decision task that resulted in the
-     * <code>SignalExternalWorkflowExecution</code> decision for this signal.
-     * This information can be useful for diagnosing problems by tracing back
-     * the chain of events leading up to this event.
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+     * <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this event.
      * </p>
      * 
-     * @return The ID of the <code>DecisionTaskCompleted</code> event
-     *         corresponding to the decision task that resulted in the
-     *         <code>SignalExternalWorkflowExecution</code> decision for this
-     *         signal. This information can be useful for diagnosing problems by
-     *         tracing back the chain of events leading up to this event.
+     * @return The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted
+     *         in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be
+     *         useful for diagnosing problems by tracing back the chain of events leading up to this event.
      */
 
     public Long getDecisionTaskCompletedEventId() {
@@ -286,33 +255,26 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
 
     /**
      * <p>
-     * The ID of the <code>DecisionTaskCompleted</code> event corresponding to
-     * the decision task that resulted in the
-     * <code>SignalExternalWorkflowExecution</code> decision for this signal.
-     * This information can be useful for diagnosing problems by tracing back
-     * the chain of events leading up to this event.
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+     * <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this event.
      * </p>
      * 
      * @param decisionTaskCompletedEventId
-     *        The ID of the <code>DecisionTaskCompleted</code> event
-     *        corresponding to the decision task that resulted in the
-     *        <code>SignalExternalWorkflowExecution</code> decision for this
-     *        signal. This information can be useful for diagnosing problems by
-     *        tracing back the chain of events leading up to this event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in
+     *        the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful
+     *        for diagnosing problems by tracing back the chain of events leading up to this event.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SignalExternalWorkflowExecutionInitiatedEventAttributes withDecisionTaskCompletedEventId(
-            Long decisionTaskCompletedEventId) {
+    public SignalExternalWorkflowExecutionInitiatedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         setDecisionTaskCompletedEventId(decisionTaskCompletedEventId);
         return this;
     }
 
     /**
      * <p>
-     * <i>Optional.</i> data attached to the event that can be used by the
-     * decider in subsequent decision tasks.
+     * <i>Optional.</i> data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
      * @param control
@@ -325,8 +287,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
 
     /**
      * <p>
-     * <i>Optional.</i> data attached to the event that can be used by the
-     * decider in subsequent decision tasks.
+     * <i>Optional.</i> data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
      * @return Optional.
@@ -338,25 +299,21 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
 
     /**
      * <p>
-     * <i>Optional.</i> data attached to the event that can be used by the
-     * decider in subsequent decision tasks.
+     * <i>Optional.</i> data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
      * @param control
      *        Optional.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SignalExternalWorkflowExecutionInitiatedEventAttributes withControl(
-            String control) {
+    public SignalExternalWorkflowExecutionInitiatedEventAttributes withControl(String control) {
         setControl(control);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -375,8 +332,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
         if (getInput() != null)
             sb.append("Input: " + getInput() + ",");
         if (getDecisionTaskCompletedEventId() != null)
-            sb.append("DecisionTaskCompletedEventId: "
-                    + getDecisionTaskCompletedEventId() + ",");
+            sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");
         if (getControl() != null)
             sb.append("Control: " + getControl());
         sb.append("}");
@@ -395,35 +351,27 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
         SignalExternalWorkflowExecutionInitiatedEventAttributes other = (SignalExternalWorkflowExecutionInitiatedEventAttributes) obj;
         if (other.getWorkflowId() == null ^ this.getWorkflowId() == null)
             return false;
-        if (other.getWorkflowId() != null
-                && other.getWorkflowId().equals(this.getWorkflowId()) == false)
+        if (other.getWorkflowId() != null && other.getWorkflowId().equals(this.getWorkflowId()) == false)
             return false;
         if (other.getRunId() == null ^ this.getRunId() == null)
             return false;
-        if (other.getRunId() != null
-                && other.getRunId().equals(this.getRunId()) == false)
+        if (other.getRunId() != null && other.getRunId().equals(this.getRunId()) == false)
             return false;
         if (other.getSignalName() == null ^ this.getSignalName() == null)
             return false;
-        if (other.getSignalName() != null
-                && other.getSignalName().equals(this.getSignalName()) == false)
+        if (other.getSignalName() != null && other.getSignalName().equals(this.getSignalName()) == false)
             return false;
         if (other.getInput() == null ^ this.getInput() == null)
             return false;
-        if (other.getInput() != null
-                && other.getInput().equals(this.getInput()) == false)
+        if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
             return false;
-        if (other.getDecisionTaskCompletedEventId() == null
-                ^ this.getDecisionTaskCompletedEventId() == null)
+        if (other.getDecisionTaskCompletedEventId() == null ^ this.getDecisionTaskCompletedEventId() == null)
             return false;
-        if (other.getDecisionTaskCompletedEventId() != null
-                && other.getDecisionTaskCompletedEventId().equals(
-                        this.getDecisionTaskCompletedEventId()) == false)
+        if (other.getDecisionTaskCompletedEventId() != null && other.getDecisionTaskCompletedEventId().equals(this.getDecisionTaskCompletedEventId()) == false)
             return false;
         if (other.getControl() == null ^ this.getControl() == null)
             return false;
-        if (other.getControl() != null
-                && other.getControl().equals(this.getControl()) == false)
+        if (other.getControl() != null && other.getControl().equals(this.getControl()) == false)
             return false;
         return true;
     }
@@ -433,32 +381,21 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getWorkflowId() == null) ? 0 : getWorkflowId().hashCode());
-        hashCode = prime * hashCode
-                + ((getRunId() == null) ? 0 : getRunId().hashCode());
-        hashCode = prime * hashCode
-                + ((getSignalName() == null) ? 0 : getSignalName().hashCode());
-        hashCode = prime * hashCode
-                + ((getInput() == null) ? 0 : getInput().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDecisionTaskCompletedEventId() == null) ? 0
-                        : getDecisionTaskCompletedEventId().hashCode());
-        hashCode = prime * hashCode
-                + ((getControl() == null) ? 0 : getControl().hashCode());
+        hashCode = prime * hashCode + ((getWorkflowId() == null) ? 0 : getWorkflowId().hashCode());
+        hashCode = prime * hashCode + ((getRunId() == null) ? 0 : getRunId().hashCode());
+        hashCode = prime * hashCode + ((getSignalName() == null) ? 0 : getSignalName().hashCode());
+        hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
+        hashCode = prime * hashCode + ((getDecisionTaskCompletedEventId() == null) ? 0 : getDecisionTaskCompletedEventId().hashCode());
+        hashCode = prime * hashCode + ((getControl() == null) ? 0 : getControl().hashCode());
         return hashCode;
     }
 
     @Override
     public SignalExternalWorkflowExecutionInitiatedEventAttributes clone() {
         try {
-            return (SignalExternalWorkflowExecutionInitiatedEventAttributes) super
-                    .clone();
+            return (SignalExternalWorkflowExecutionInitiatedEventAttributes) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to disable any user as an administrator.
  * </p>
  */
-public class AdminDisableUserRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class AdminDisableUserRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -45,8 +41,7 @@ public class AdminDisableUserRequest extends
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID for the user pool where you want to disable the
-     *        user.
+     *        The user pool ID for the user pool where you want to disable the user.
      */
 
     public void setUserPoolId(String userPoolId) {
@@ -58,8 +53,7 @@ public class AdminDisableUserRequest extends
      * The user pool ID for the user pool where you want to disable the user.
      * </p>
      * 
-     * @return The user pool ID for the user pool where you want to disable the
-     *         user.
+     * @return The user pool ID for the user pool where you want to disable the user.
      */
 
     public String getUserPoolId() {
@@ -72,10 +66,8 @@ public class AdminDisableUserRequest extends
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID for the user pool where you want to disable the
-     *        user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user pool ID for the user pool where you want to disable the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminDisableUserRequest withUserPoolId(String userPoolId) {
@@ -115,8 +107,7 @@ public class AdminDisableUserRequest extends
      * 
      * @param username
      *        The user name of the user you wish to disable.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminDisableUserRequest withUsername(String username) {
@@ -125,8 +116,7 @@ public class AdminDisableUserRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -156,13 +146,11 @@ public class AdminDisableUserRequest extends
         AdminDisableUserRequest other = (AdminDisableUserRequest) obj;
         if (other.getUserPoolId() == null ^ this.getUserPoolId() == null)
             return false;
-        if (other.getUserPoolId() != null
-                && other.getUserPoolId().equals(this.getUserPoolId()) == false)
+        if (other.getUserPoolId() != null && other.getUserPoolId().equals(this.getUserPoolId()) == false)
             return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
-        if (other.getUsername() != null
-                && other.getUsername().equals(this.getUsername()) == false)
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
         return true;
     }
@@ -172,10 +160,8 @@ public class AdminDisableUserRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         return hashCode;
     }
 

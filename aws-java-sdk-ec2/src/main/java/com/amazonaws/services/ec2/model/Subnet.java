@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -49,8 +47,8 @@ public class Subnet implements Serializable, Cloneable {
     private String cidrBlock;
     /**
      * <p>
-     * The number of unused IP addresses in the subnet. Note that the IP
-     * addresses for any stopped instances are considered unavailable.
+     * The number of unused IP addresses in the subnet. Note that the IP addresses for any stopped instances are
+     * considered unavailable.
      * </p>
      */
     private Integer availableIpAddressCount;
@@ -68,8 +66,7 @@ public class Subnet implements Serializable, Cloneable {
     private Boolean defaultForAz;
     /**
      * <p>
-     * Indicates whether instances launched in this subnet receive a public IP
-     * address.
+     * Indicates whether instances launched in this subnet receive a public IP address.
      * </p>
      */
     private Boolean mapPublicIpOnLaunch;
@@ -112,8 +109,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @param subnetId
      *        The ID of the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Subnet withSubnetId(String subnetId) {
@@ -155,8 +151,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @param state
      *        The current state of the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubnetState
      */
 
@@ -186,8 +181,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @param state
      *        The current state of the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubnetState
      */
 
@@ -228,8 +222,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @param vpcId
      *        The ID of the VPC the subnet is in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Subnet withVpcId(String vpcId) {
@@ -269,8 +262,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @param cidrBlock
      *        The CIDR block assigned to the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Subnet withCidrBlock(String cidrBlock) {
@@ -280,13 +272,13 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of unused IP addresses in the subnet. Note that the IP
-     * addresses for any stopped instances are considered unavailable.
+     * The number of unused IP addresses in the subnet. Note that the IP addresses for any stopped instances are
+     * considered unavailable.
      * </p>
      * 
      * @param availableIpAddressCount
-     *        The number of unused IP addresses in the subnet. Note that the IP
-     *        addresses for any stopped instances are considered unavailable.
+     *        The number of unused IP addresses in the subnet. Note that the IP addresses for any stopped instances are
+     *        considered unavailable.
      */
 
     public void setAvailableIpAddressCount(Integer availableIpAddressCount) {
@@ -295,12 +287,12 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of unused IP addresses in the subnet. Note that the IP
-     * addresses for any stopped instances are considered unavailable.
+     * The number of unused IP addresses in the subnet. Note that the IP addresses for any stopped instances are
+     * considered unavailable.
      * </p>
      * 
-     * @return The number of unused IP addresses in the subnet. Note that the IP
-     *         addresses for any stopped instances are considered unavailable.
+     * @return The number of unused IP addresses in the subnet. Note that the IP addresses for any stopped instances are
+     *         considered unavailable.
      */
 
     public Integer getAvailableIpAddressCount() {
@@ -309,15 +301,14 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of unused IP addresses in the subnet. Note that the IP
-     * addresses for any stopped instances are considered unavailable.
+     * The number of unused IP addresses in the subnet. Note that the IP addresses for any stopped instances are
+     * considered unavailable.
      * </p>
      * 
      * @param availableIpAddressCount
-     *        The number of unused IP addresses in the subnet. Note that the IP
-     *        addresses for any stopped instances are considered unavailable.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of unused IP addresses in the subnet. Note that the IP addresses for any stopped instances are
+     *        considered unavailable.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Subnet withAvailableIpAddressCount(Integer availableIpAddressCount) {
@@ -357,8 +348,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @param availabilityZone
      *        The Availability Zone of the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Subnet withAvailabilityZone(String availabilityZone) {
@@ -372,8 +362,7 @@ public class Subnet implements Serializable, Cloneable {
      * </p>
      * 
      * @param defaultForAz
-     *        Indicates whether this is the default subnet for the Availability
-     *        Zone.
+     *        Indicates whether this is the default subnet for the Availability Zone.
      */
 
     public void setDefaultForAz(Boolean defaultForAz) {
@@ -385,8 +374,7 @@ public class Subnet implements Serializable, Cloneable {
      * Indicates whether this is the default subnet for the Availability Zone.
      * </p>
      * 
-     * @return Indicates whether this is the default subnet for the Availability
-     *         Zone.
+     * @return Indicates whether this is the default subnet for the Availability Zone.
      */
 
     public Boolean getDefaultForAz() {
@@ -399,10 +387,8 @@ public class Subnet implements Serializable, Cloneable {
      * </p>
      * 
      * @param defaultForAz
-     *        Indicates whether this is the default subnet for the Availability
-     *        Zone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether this is the default subnet for the Availability Zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Subnet withDefaultForAz(Boolean defaultForAz) {
@@ -415,8 +401,7 @@ public class Subnet implements Serializable, Cloneable {
      * Indicates whether this is the default subnet for the Availability Zone.
      * </p>
      * 
-     * @return Indicates whether this is the default subnet for the Availability
-     *         Zone.
+     * @return Indicates whether this is the default subnet for the Availability Zone.
      */
 
     public Boolean isDefaultForAz() {
@@ -425,13 +410,11 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether instances launched in this subnet receive a public IP
-     * address.
+     * Indicates whether instances launched in this subnet receive a public IP address.
      * </p>
      * 
      * @param mapPublicIpOnLaunch
-     *        Indicates whether instances launched in this subnet receive a
-     *        public IP address.
+     *        Indicates whether instances launched in this subnet receive a public IP address.
      */
 
     public void setMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
@@ -440,12 +423,10 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether instances launched in this subnet receive a public IP
-     * address.
+     * Indicates whether instances launched in this subnet receive a public IP address.
      * </p>
      * 
-     * @return Indicates whether instances launched in this subnet receive a
-     *         public IP address.
+     * @return Indicates whether instances launched in this subnet receive a public IP address.
      */
 
     public Boolean getMapPublicIpOnLaunch() {
@@ -454,15 +435,12 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether instances launched in this subnet receive a public IP
-     * address.
+     * Indicates whether instances launched in this subnet receive a public IP address.
      * </p>
      * 
      * @param mapPublicIpOnLaunch
-     *        Indicates whether instances launched in this subnet receive a
-     *        public IP address.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether instances launched in this subnet receive a public IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Subnet withMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
@@ -472,12 +450,10 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether instances launched in this subnet receive a public IP
-     * address.
+     * Indicates whether instances launched in this subnet receive a public IP address.
      * </p>
      * 
-     * @return Indicates whether instances launched in this subnet receive a
-     *         public IP address.
+     * @return Indicates whether instances launched in this subnet receive a public IP address.
      */
 
     public Boolean isMapPublicIpOnLaunch() {
@@ -522,16 +498,14 @@ public class Subnet implements Serializable, Cloneable {
      * Any tags assigned to the subnet.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        Any tags assigned to the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Subnet withTags(Tag... tags) {
@@ -551,8 +525,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @param tags
      *        Any tags assigned to the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Subnet withTags(java.util.Collection<Tag> tags) {
@@ -561,8 +534,7 @@ public class Subnet implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -581,8 +553,7 @@ public class Subnet implements Serializable, Cloneable {
         if (getCidrBlock() != null)
             sb.append("CidrBlock: " + getCidrBlock() + ",");
         if (getAvailableIpAddressCount() != null)
-            sb.append("AvailableIpAddressCount: "
-                    + getAvailableIpAddressCount() + ",");
+            sb.append("AvailableIpAddressCount: " + getAvailableIpAddressCount() + ",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (getDefaultForAz() != null)
@@ -607,54 +578,39 @@ public class Subnet implements Serializable, Cloneable {
         Subnet other = (Subnet) obj;
         if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
-        if (other.getSubnetId() != null
-                && other.getSubnetId().equals(this.getSubnetId()) == false)
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         if (other.getCidrBlock() == null ^ this.getCidrBlock() == null)
             return false;
-        if (other.getCidrBlock() != null
-                && other.getCidrBlock().equals(this.getCidrBlock()) == false)
+        if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false)
             return false;
-        if (other.getAvailableIpAddressCount() == null
-                ^ this.getAvailableIpAddressCount() == null)
+        if (other.getAvailableIpAddressCount() == null ^ this.getAvailableIpAddressCount() == null)
             return false;
-        if (other.getAvailableIpAddressCount() != null
-                && other.getAvailableIpAddressCount().equals(
-                        this.getAvailableIpAddressCount()) == false)
+        if (other.getAvailableIpAddressCount() != null && other.getAvailableIpAddressCount().equals(this.getAvailableIpAddressCount()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
         if (other.getDefaultForAz() == null ^ this.getDefaultForAz() == null)
             return false;
-        if (other.getDefaultForAz() != null
-                && other.getDefaultForAz().equals(this.getDefaultForAz()) == false)
+        if (other.getDefaultForAz() != null && other.getDefaultForAz().equals(this.getDefaultForAz()) == false)
             return false;
-        if (other.getMapPublicIpOnLaunch() == null
-                ^ this.getMapPublicIpOnLaunch() == null)
+        if (other.getMapPublicIpOnLaunch() == null ^ this.getMapPublicIpOnLaunch() == null)
             return false;
-        if (other.getMapPublicIpOnLaunch() != null
-                && other.getMapPublicIpOnLaunch().equals(
-                        this.getMapPublicIpOnLaunch()) == false)
+        if (other.getMapPublicIpOnLaunch() != null && other.getMapPublicIpOnLaunch().equals(this.getMapPublicIpOnLaunch()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -664,32 +620,15 @@ public class Subnet implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode
-                + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailableIpAddressCount() == null) ? 0
-                        : getAvailableIpAddressCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultForAz() == null) ? 0 : getDefaultForAz()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMapPublicIpOnLaunch() == null) ? 0
-                        : getMapPublicIpOnLaunch().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getAvailableIpAddressCount() == null) ? 0 : getAvailableIpAddressCount().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getDefaultForAz() == null) ? 0 : getDefaultForAz().hashCode());
+        hashCode = prime * hashCode + ((getMapPublicIpOnLaunch() == null) ? 0 : getMapPublicIpOnLaunch().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -698,9 +637,7 @@ public class Subnet implements Serializable, Cloneable {
         try {
             return (Subnet) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
 
@@ -31,38 +29,29 @@ import com.amazonaws.util.IdempotentUtils;
  * ModifySnapshotAttributeRequest Marshaller
  */
 
-public class ModifySnapshotAttributeRequestMarshaller
-        implements
-        Marshaller<Request<ModifySnapshotAttributeRequest>, ModifySnapshotAttributeRequest> {
+public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Request<ModifySnapshotAttributeRequest>, ModifySnapshotAttributeRequest> {
 
-    public Request<ModifySnapshotAttributeRequest> marshall(
-            ModifySnapshotAttributeRequest modifySnapshotAttributeRequest) {
+    public Request<ModifySnapshotAttributeRequest> marshall(ModifySnapshotAttributeRequest modifySnapshotAttributeRequest) {
 
         if (modifySnapshotAttributeRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ModifySnapshotAttributeRequest> request = new DefaultRequest<ModifySnapshotAttributeRequest>(
-                modifySnapshotAttributeRequest, "AmazonEC2");
+        Request<ModifySnapshotAttributeRequest> request = new DefaultRequest<ModifySnapshotAttributeRequest>(modifySnapshotAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifySnapshotAttribute");
         request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifySnapshotAttributeRequest.getSnapshotId() != null) {
-            request.addParameter("SnapshotId", StringUtils
-                    .fromString(modifySnapshotAttributeRequest.getSnapshotId()));
+            request.addParameter("SnapshotId", StringUtils.fromString(modifySnapshotAttributeRequest.getSnapshotId()));
         }
 
         if (modifySnapshotAttributeRequest.getAttribute() != null) {
-            request.addParameter("Attribute", StringUtils
-                    .fromString(modifySnapshotAttributeRequest.getAttribute()));
+            request.addParameter("Attribute", StringUtils.fromString(modifySnapshotAttributeRequest.getAttribute()));
         }
 
         if (modifySnapshotAttributeRequest.getOperationType() != null) {
-            request.addParameter("OperationType", StringUtils
-                    .fromString(modifySnapshotAttributeRequest
-                            .getOperationType()));
+            request.addParameter("OperationType", StringUtils.fromString(modifySnapshotAttributeRequest.getOperationType()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> userIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifySnapshotAttributeRequest
@@ -72,8 +61,7 @@ public class ModifySnapshotAttributeRequestMarshaller
 
             for (String userIdsListValue : userIdsList) {
                 if (userIdsListValue != null) {
-                    request.addParameter("UserId." + userIdsListIndex,
-                            StringUtils.fromString(userIdsListValue));
+                    request.addParameter("UserId." + userIdsListIndex, StringUtils.fromString(userIdsListValue));
                 }
                 userIdsListIndex++;
             }
@@ -86,15 +74,13 @@ public class ModifySnapshotAttributeRequestMarshaller
 
             for (String groupNamesListValue : groupNamesList) {
                 if (groupNamesListValue != null) {
-                    request.addParameter("UserGroup." + groupNamesListIndex,
-                            StringUtils.fromString(groupNamesListValue));
+                    request.addParameter("UserGroup." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
                 }
                 groupNamesListIndex++;
             }
         }
 
-        CreateVolumePermissionModifications createVolumePermission = modifySnapshotAttributeRequest
-                .getCreateVolumePermission();
+        CreateVolumePermissionModifications createVolumePermission = modifySnapshotAttributeRequest.getCreateVolumePermission();
         if (createVolumePermission != null) {
 
             com.amazonaws.internal.SdkInternalList<CreateVolumePermission> addList = (com.amazonaws.internal.SdkInternalList<CreateVolumePermission>) createVolumePermission
@@ -105,15 +91,11 @@ public class ModifySnapshotAttributeRequestMarshaller
                 for (CreateVolumePermission addListValue : addList) {
 
                     if (addListValue.getUserId() != null) {
-                        request.addParameter("CreateVolumePermission.Add."
-                                + addListIndex + ".UserId", StringUtils
-                                .fromString(addListValue.getUserId()));
+                        request.addParameter("CreateVolumePermission.Add." + addListIndex + ".UserId", StringUtils.fromString(addListValue.getUserId()));
                     }
 
                     if (addListValue.getGroup() != null) {
-                        request.addParameter("CreateVolumePermission.Add."
-                                + addListIndex + ".Group",
-                                StringUtils.fromString(addListValue.getGroup()));
+                        request.addParameter("CreateVolumePermission.Add." + addListIndex + ".Group", StringUtils.fromString(addListValue.getGroup()));
                     }
                     addListIndex++;
                 }
@@ -127,15 +109,12 @@ public class ModifySnapshotAttributeRequestMarshaller
                 for (CreateVolumePermission removeListValue : removeList) {
 
                     if (removeListValue.getUserId() != null) {
-                        request.addParameter("CreateVolumePermission.Remove."
-                                + removeListIndex + ".UserId", StringUtils
-                                .fromString(removeListValue.getUserId()));
+                        request.addParameter("CreateVolumePermission.Remove." + removeListIndex + ".UserId",
+                                StringUtils.fromString(removeListValue.getUserId()));
                     }
 
                     if (removeListValue.getGroup() != null) {
-                        request.addParameter("CreateVolumePermission.Remove."
-                                + removeListIndex + ".Group", StringUtils
-                                .fromString(removeListValue.getGroup()));
+                        request.addParameter("CreateVolumePermission.Remove." + removeListIndex + ".Group", StringUtils.fromString(removeListValue.getGroup()));
                     }
                     removeListIndex++;
                 }

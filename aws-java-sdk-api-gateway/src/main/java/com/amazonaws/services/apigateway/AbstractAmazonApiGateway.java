@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway;
 
@@ -18,9 +16,8 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AmazonApiGateway}. Convenient method forms
- * pass through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonApiGateway}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
@@ -43,26 +40,22 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public CreateAuthorizerResult createAuthorizer(
-            CreateAuthorizerRequest request) {
+    public CreateAuthorizerResult createAuthorizer(CreateAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateBasePathMappingResult createBasePathMapping(
-            CreateBasePathMappingRequest request) {
+    public CreateBasePathMappingResult createBasePathMapping(CreateBasePathMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateDeploymentResult createDeployment(
-            CreateDeploymentRequest request) {
+    public CreateDeploymentResult createDeployment(CreateDeploymentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateDomainNameResult createDomainName(
-            CreateDomainNameRequest request) {
+    public CreateDomainNameResult createDomainName(CreateDomainNameRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -92,8 +85,7 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public CreateUsagePlanKeyResult createUsagePlanKey(
-            CreateUsagePlanKeyRequest request) {
+    public CreateUsagePlanKeyResult createUsagePlanKey(CreateUsagePlanKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,44 +95,37 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public DeleteAuthorizerResult deleteAuthorizer(
-            DeleteAuthorizerRequest request) {
+    public DeleteAuthorizerResult deleteAuthorizer(DeleteAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteBasePathMappingResult deleteBasePathMapping(
-            DeleteBasePathMappingRequest request) {
+    public DeleteBasePathMappingResult deleteBasePathMapping(DeleteBasePathMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteClientCertificateResult deleteClientCertificate(
-            DeleteClientCertificateRequest request) {
+    public DeleteClientCertificateResult deleteClientCertificate(DeleteClientCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteDeploymentResult deleteDeployment(
-            DeleteDeploymentRequest request) {
+    public DeleteDeploymentResult deleteDeployment(DeleteDeploymentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteDomainNameResult deleteDomainName(
-            DeleteDomainNameRequest request) {
+    public DeleteDomainNameResult deleteDomainName(DeleteDomainNameRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteIntegrationResult deleteIntegration(
-            DeleteIntegrationRequest request) {
+    public DeleteIntegrationResult deleteIntegration(DeleteIntegrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteIntegrationResponseResult deleteIntegrationResponse(
-            DeleteIntegrationResponseRequest request) {
+    public DeleteIntegrationResponseResult deleteIntegrationResponse(DeleteIntegrationResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -150,8 +135,7 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public DeleteMethodResponseResult deleteMethodResponse(
-            DeleteMethodResponseRequest request) {
+    public DeleteMethodResponseResult deleteMethodResponse(DeleteMethodResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -181,14 +165,12 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public DeleteUsagePlanKeyResult deleteUsagePlanKey(
-            DeleteUsagePlanKeyRequest request) {
+    public DeleteUsagePlanKeyResult deleteUsagePlanKey(DeleteUsagePlanKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public FlushStageAuthorizersCacheResult flushStageAuthorizersCache(
-            FlushStageAuthorizersCacheRequest request) {
+    public FlushStageAuthorizersCacheResult flushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -198,8 +180,7 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public GenerateClientCertificateResult generateClientCertificate(
-            GenerateClientCertificateRequest request) {
+    public GenerateClientCertificateResult generateClientCertificate(GenerateClientCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -229,26 +210,22 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public GetBasePathMappingResult getBasePathMapping(
-            GetBasePathMappingRequest request) {
+    public GetBasePathMappingResult getBasePathMapping(GetBasePathMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetBasePathMappingsResult getBasePathMappings(
-            GetBasePathMappingsRequest request) {
+    public GetBasePathMappingsResult getBasePathMappings(GetBasePathMappingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetClientCertificateResult getClientCertificate(
-            GetClientCertificateRequest request) {
+    public GetClientCertificateResult getClientCertificate(GetClientCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetClientCertificatesResult getClientCertificates(
-            GetClientCertificatesRequest request) {
+    public GetClientCertificatesResult getClientCertificates(GetClientCertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -283,8 +260,7 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public GetIntegrationResponseResult getIntegrationResponse(
-            GetIntegrationResponseRequest request) {
+    public GetIntegrationResponseResult getIntegrationResponse(GetIntegrationResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -294,8 +270,7 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public GetMethodResponseResult getMethodResponse(
-            GetMethodResponseRequest request) {
+    public GetMethodResponseResult getMethodResponse(GetMethodResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -305,8 +280,7 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public GetModelTemplateResult getModelTemplate(
-            GetModelTemplateRequest request) {
+    public GetModelTemplateResult getModelTemplate(GetModelTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -366,8 +340,7 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public GetUsagePlanKeysResult getUsagePlanKeys(
-            GetUsagePlanKeysRequest request) {
+    public GetUsagePlanKeysResult getUsagePlanKeys(GetUsagePlanKeysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -392,8 +365,7 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public PutIntegrationResponseResult putIntegrationResponse(
-            PutIntegrationResponseRequest request) {
+    public PutIntegrationResponseResult putIntegrationResponse(PutIntegrationResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -403,8 +375,7 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public PutMethodResponseResult putMethodResponse(
-            PutMethodResponseRequest request) {
+    public PutMethodResponseResult putMethodResponse(PutMethodResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -414,14 +385,12 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public TestInvokeAuthorizerResult testInvokeAuthorizer(
-            TestInvokeAuthorizerRequest request) {
+    public TestInvokeAuthorizerResult testInvokeAuthorizer(TestInvokeAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public TestInvokeMethodResult testInvokeMethod(
-            TestInvokeMethodRequest request) {
+    public TestInvokeMethodResult testInvokeMethod(TestInvokeMethodRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -436,44 +405,37 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public UpdateAuthorizerResult updateAuthorizer(
-            UpdateAuthorizerRequest request) {
+    public UpdateAuthorizerResult updateAuthorizer(UpdateAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateBasePathMappingResult updateBasePathMapping(
-            UpdateBasePathMappingRequest request) {
+    public UpdateBasePathMappingResult updateBasePathMapping(UpdateBasePathMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateClientCertificateResult updateClientCertificate(
-            UpdateClientCertificateRequest request) {
+    public UpdateClientCertificateResult updateClientCertificate(UpdateClientCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateDeploymentResult updateDeployment(
-            UpdateDeploymentRequest request) {
+    public UpdateDeploymentResult updateDeployment(UpdateDeploymentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateDomainNameResult updateDomainName(
-            UpdateDomainNameRequest request) {
+    public UpdateDomainNameResult updateDomainName(UpdateDomainNameRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateIntegrationResult updateIntegration(
-            UpdateIntegrationRequest request) {
+    public UpdateIntegrationResult updateIntegration(UpdateIntegrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateIntegrationResponseResult updateIntegrationResponse(
-            UpdateIntegrationResponseRequest request) {
+    public UpdateIntegrationResponseResult updateIntegrationResponse(UpdateIntegrationResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -483,8 +445,7 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public UpdateMethodResponseResult updateMethodResponse(
-            UpdateMethodResponseRequest request) {
+    public UpdateMethodResponseResult updateMethodResponse(UpdateMethodResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -524,8 +485,7 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

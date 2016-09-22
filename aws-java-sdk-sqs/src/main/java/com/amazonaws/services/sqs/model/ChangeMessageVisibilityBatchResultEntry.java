@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
 
@@ -21,26 +19,22 @@ import java.io.Serializable;
  * Encloses the id of an entry in <a>ChangeMessageVisibilityBatch</a>.
  * </p>
  */
-public class ChangeMessageVisibilityBatchResultEntry implements Serializable,
-        Cloneable {
+public class ChangeMessageVisibilityBatchResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents a message whose visibility timeout has been changed
-     * successfully.
+     * Represents a message whose visibility timeout has been changed successfully.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * Represents a message whose visibility timeout has been changed
-     * successfully.
+     * Represents a message whose visibility timeout has been changed successfully.
      * </p>
      * 
      * @param id
-     *        Represents a message whose visibility timeout has been changed
-     *        successfully.
+     *        Represents a message whose visibility timeout has been changed successfully.
      */
 
     public void setId(String id) {
@@ -49,12 +43,10 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable,
 
     /**
      * <p>
-     * Represents a message whose visibility timeout has been changed
-     * successfully.
+     * Represents a message whose visibility timeout has been changed successfully.
      * </p>
      * 
-     * @return Represents a message whose visibility timeout has been changed
-     *         successfully.
+     * @return Represents a message whose visibility timeout has been changed successfully.
      */
 
     public String getId() {
@@ -63,15 +55,12 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable,
 
     /**
      * <p>
-     * Represents a message whose visibility timeout has been changed
-     * successfully.
+     * Represents a message whose visibility timeout has been changed successfully.
      * </p>
      * 
      * @param id
-     *        Represents a message whose visibility timeout has been changed
-     *        successfully.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Represents a message whose visibility timeout has been changed successfully.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ChangeMessageVisibilityBatchResultEntry withId(String id) {
@@ -80,8 +69,7 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable,
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -109,8 +97,7 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable,
         ChangeMessageVisibilityBatchResultEntry other = (ChangeMessageVisibilityBatchResultEntry) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         return true;
     }
@@ -120,8 +107,7 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         return hashCode;
     }
 
@@ -130,9 +116,7 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable,
         try {
             return (ChangeMessageVisibilityBatchResultEntry) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

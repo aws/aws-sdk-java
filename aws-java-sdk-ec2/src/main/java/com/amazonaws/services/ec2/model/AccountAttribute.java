@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -68,8 +66,7 @@ public class AccountAttribute implements Serializable, Cloneable {
      * 
      * @param attributeName
      *        The name of the account attribute.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AccountAttribute withAttributeName(String attributeName) {
@@ -101,15 +98,13 @@ public class AccountAttribute implements Serializable, Cloneable {
      *        One or more values for the account attribute.
      */
 
-    public void setAttributeValues(
-            java.util.Collection<AccountAttributeValue> attributeValues) {
+    public void setAttributeValues(java.util.Collection<AccountAttributeValue> attributeValues) {
         if (attributeValues == null) {
             this.attributeValues = null;
             return;
         }
 
-        this.attributeValues = new com.amazonaws.internal.SdkInternalList<AccountAttributeValue>(
-                attributeValues);
+        this.attributeValues = new com.amazonaws.internal.SdkInternalList<AccountAttributeValue>(attributeValues);
     }
 
     /**
@@ -117,23 +112,19 @@ public class AccountAttribute implements Serializable, Cloneable {
      * One or more values for the account attribute.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttributeValues(java.util.Collection)} or
-     * {@link #withAttributeValues(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributeValues(java.util.Collection)} or {@link #withAttributeValues(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param attributeValues
      *        One or more values for the account attribute.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AccountAttribute withAttributeValues(
-            AccountAttributeValue... attributeValues) {
+    public AccountAttribute withAttributeValues(AccountAttributeValue... attributeValues) {
         if (this.attributeValues == null) {
-            setAttributeValues(new com.amazonaws.internal.SdkInternalList<AccountAttributeValue>(
-                    attributeValues.length));
+            setAttributeValues(new com.amazonaws.internal.SdkInternalList<AccountAttributeValue>(attributeValues.length));
         }
         for (AccountAttributeValue ele : attributeValues) {
             this.attributeValues.add(ele);
@@ -148,19 +139,16 @@ public class AccountAttribute implements Serializable, Cloneable {
      * 
      * @param attributeValues
      *        One or more values for the account attribute.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AccountAttribute withAttributeValues(
-            java.util.Collection<AccountAttributeValue> attributeValues) {
+    public AccountAttribute withAttributeValues(java.util.Collection<AccountAttributeValue> attributeValues) {
         setAttributeValues(attributeValues);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -190,14 +178,11 @@ public class AccountAttribute implements Serializable, Cloneable {
         AccountAttribute other = (AccountAttribute) obj;
         if (other.getAttributeName() == null ^ this.getAttributeName() == null)
             return false;
-        if (other.getAttributeName() != null
-                && other.getAttributeName().equals(this.getAttributeName()) == false)
+        if (other.getAttributeName() != null && other.getAttributeName().equals(this.getAttributeName()) == false)
             return false;
-        if (other.getAttributeValues() == null
-                ^ this.getAttributeValues() == null)
+        if (other.getAttributeValues() == null ^ this.getAttributeValues() == null)
             return false;
-        if (other.getAttributeValues() != null
-                && other.getAttributeValues().equals(this.getAttributeValues()) == false)
+        if (other.getAttributeValues() != null && other.getAttributeValues().equals(this.getAttributeValues()) == false)
             return false;
         return true;
     }
@@ -207,14 +192,8 @@ public class AccountAttribute implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAttributeName() == null) ? 0 : getAttributeName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttributeValues() == null) ? 0 : getAttributeValues()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAttributeName() == null) ? 0 : getAttributeName().hashCode());
+        hashCode = prime * hashCode + ((getAttributeValues() == null) ? 0 : getAttributeValues().hashCode());
         return hashCode;
     }
 
@@ -223,9 +202,7 @@ public class AccountAttribute implements Serializable, Cloneable {
         try {
             return (AccountAttribute) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

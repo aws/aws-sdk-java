@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
 
@@ -21,17 +19,13 @@ import java.io.Serializable;
  * A JSON object containing a .
  * </p>
  */
-public class DescribeChapCredentialsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeChapCredentialsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each
-     * object in the array contains CHAP credential information for one
-     * target-initiator pair. If no CHAP credentials are set, an empty array is
-     * returned. CHAP credential information is provided in a JSON object with
-     * the following fields:
+     * An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each object in the array contains CHAP
+     * credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned.
+     * CHAP credential information is provided in a JSON object with the following fields:
      * </p>
      * <ul>
      * <li>
@@ -41,16 +35,14 @@ public class DescribeChapCredentialsResult extends
      * </li>
      * <li>
      * <p>
-     * <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator
-     * (for example, the Windows client) must provide to participate in mutual
-     * CHAP with the target.
+     * <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must
+     * provide to participate in mutual CHAP with the target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SecretToAuthenticateTarget</b>: The secret key that the target must
-     * provide to participate in mutual CHAP with the initiator (e.g. Windows
-     * client).
+     * <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with
+     * the initiator (e.g. Windows client).
      * </p>
      * </li>
      * <li>
@@ -64,11 +56,9 @@ public class DescribeChapCredentialsResult extends
 
     /**
      * <p>
-     * An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each
-     * object in the array contains CHAP credential information for one
-     * target-initiator pair. If no CHAP credentials are set, an empty array is
-     * returned. CHAP credential information is provided in a JSON object with
-     * the following fields:
+     * An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each object in the array contains CHAP
+     * credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned.
+     * CHAP credential information is provided in a JSON object with the following fields:
      * </p>
      * <ul>
      * <li>
@@ -78,16 +68,14 @@ public class DescribeChapCredentialsResult extends
      * </li>
      * <li>
      * <p>
-     * <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator
-     * (for example, the Windows client) must provide to participate in mutual
-     * CHAP with the target.
+     * <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must
+     * provide to participate in mutual CHAP with the target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SecretToAuthenticateTarget</b>: The secret key that the target must
-     * provide to participate in mutual CHAP with the initiator (e.g. Windows
-     * client).
+     * <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with
+     * the initiator (e.g. Windows client).
      * </p>
      * </li>
      * <li>
@@ -97,36 +85,30 @@ public class DescribeChapCredentialsResult extends
      * </li>
      * </ul>
      * 
-     * @return An array of <a>ChapInfo</a> objects that represent CHAP
-     *         credentials. Each object in the array contains CHAP credential
-     *         information for one target-initiator pair. If no CHAP credentials
-     *         are set, an empty array is returned. CHAP credential information
-     *         is provided in a JSON object with the following fields:</p>
+     * @return An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each object in the array contains
+     *         CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array
+     *         is returned. CHAP credential information is provided in a JSON object with the following fields:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>InitiatorName</b>: The iSCSI initiator that connects to the
-     *         target.
+     *         <b>InitiatorName</b>: The iSCSI initiator that connects to the target.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>SecretToAuthenticateInitiator</b>: The secret key that the
-     *         initiator (for example, the Windows client) must provide to
-     *         participate in mutual CHAP with the target.
+     *         <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client)
+     *         must provide to participate in mutual CHAP with the target.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>SecretToAuthenticateTarget</b>: The secret key that the target
-     *         must provide to participate in mutual CHAP with the initiator
-     *         (e.g. Windows client).
+     *         <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual
+     *         CHAP with the initiator (e.g. Windows client).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
-     *         volume.
+     *         <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.
      *         </p>
      *         </li>
      */
@@ -140,11 +122,9 @@ public class DescribeChapCredentialsResult extends
 
     /**
      * <p>
-     * An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each
-     * object in the array contains CHAP credential information for one
-     * target-initiator pair. If no CHAP credentials are set, an empty array is
-     * returned. CHAP credential information is provided in a JSON object with
-     * the following fields:
+     * An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each object in the array contains CHAP
+     * credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned.
+     * CHAP credential information is provided in a JSON object with the following fields:
      * </p>
      * <ul>
      * <li>
@@ -154,16 +134,14 @@ public class DescribeChapCredentialsResult extends
      * </li>
      * <li>
      * <p>
-     * <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator
-     * (for example, the Windows client) must provide to participate in mutual
-     * CHAP with the target.
+     * <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must
+     * provide to participate in mutual CHAP with the target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SecretToAuthenticateTarget</b>: The secret key that the target must
-     * provide to participate in mutual CHAP with the initiator (e.g. Windows
-     * client).
+     * <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with
+     * the initiator (e.g. Windows client).
      * </p>
      * </li>
      * <li>
@@ -174,58 +152,48 @@ public class DescribeChapCredentialsResult extends
      * </ul>
      * 
      * @param chapCredentials
-     *        An array of <a>ChapInfo</a> objects that represent CHAP
-     *        credentials. Each object in the array contains CHAP credential
-     *        information for one target-initiator pair. If no CHAP credentials
-     *        are set, an empty array is returned. CHAP credential information
-     *        is provided in a JSON object with the following fields:</p>
+     *        An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each object in the array contains
+     *        CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array
+     *        is returned. CHAP credential information is provided in a JSON object with the following fields:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>InitiatorName</b>: The iSCSI initiator that connects to the
-     *        target.
+     *        <b>InitiatorName</b>: The iSCSI initiator that connects to the target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>SecretToAuthenticateInitiator</b>: The secret key that the
-     *        initiator (for example, the Windows client) must provide to
-     *        participate in mutual CHAP with the target.
+     *        <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client)
+     *        must provide to participate in mutual CHAP with the target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>SecretToAuthenticateTarget</b>: The secret key that the target
-     *        must provide to participate in mutual CHAP with the initiator
-     *        (e.g. Windows client).
+     *        <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual
+     *        CHAP with the initiator (e.g. Windows client).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
-     *        volume.
+     *        <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.
      *        </p>
      *        </li>
      */
 
-    public void setChapCredentials(
-            java.util.Collection<ChapInfo> chapCredentials) {
+    public void setChapCredentials(java.util.Collection<ChapInfo> chapCredentials) {
         if (chapCredentials == null) {
             this.chapCredentials = null;
             return;
         }
 
-        this.chapCredentials = new com.amazonaws.internal.SdkInternalList<ChapInfo>(
-                chapCredentials);
+        this.chapCredentials = new com.amazonaws.internal.SdkInternalList<ChapInfo>(chapCredentials);
     }
 
     /**
      * <p>
-     * An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each
-     * object in the array contains CHAP credential information for one
-     * target-initiator pair. If no CHAP credentials are set, an empty array is
-     * returned. CHAP credential information is provided in a JSON object with
-     * the following fields:
+     * An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each object in the array contains CHAP
+     * credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned.
+     * CHAP credential information is provided in a JSON object with the following fields:
      * </p>
      * <ul>
      * <li>
@@ -235,16 +203,14 @@ public class DescribeChapCredentialsResult extends
      * </li>
      * <li>
      * <p>
-     * <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator
-     * (for example, the Windows client) must provide to participate in mutual
-     * CHAP with the target.
+     * <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must
+     * provide to participate in mutual CHAP with the target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SecretToAuthenticateTarget</b>: The secret key that the target must
-     * provide to participate in mutual CHAP with the initiator (e.g. Windows
-     * client).
+     * <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with
+     * the initiator (e.g. Windows client).
      * </p>
      * </li>
      * <li>
@@ -254,54 +220,44 @@ public class DescribeChapCredentialsResult extends
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setChapCredentials(java.util.Collection)} or
-     * {@link #withChapCredentials(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setChapCredentials(java.util.Collection)} or {@link #withChapCredentials(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param chapCredentials
-     *        An array of <a>ChapInfo</a> objects that represent CHAP
-     *        credentials. Each object in the array contains CHAP credential
-     *        information for one target-initiator pair. If no CHAP credentials
-     *        are set, an empty array is returned. CHAP credential information
-     *        is provided in a JSON object with the following fields:</p>
+     *        An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each object in the array contains
+     *        CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array
+     *        is returned. CHAP credential information is provided in a JSON object with the following fields:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>InitiatorName</b>: The iSCSI initiator that connects to the
-     *        target.
+     *        <b>InitiatorName</b>: The iSCSI initiator that connects to the target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>SecretToAuthenticateInitiator</b>: The secret key that the
-     *        initiator (for example, the Windows client) must provide to
-     *        participate in mutual CHAP with the target.
+     *        <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client)
+     *        must provide to participate in mutual CHAP with the target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>SecretToAuthenticateTarget</b>: The secret key that the target
-     *        must provide to participate in mutual CHAP with the initiator
-     *        (e.g. Windows client).
+     *        <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual
+     *        CHAP with the initiator (e.g. Windows client).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
-     *        volume.
+     *        <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeChapCredentialsResult withChapCredentials(
-            ChapInfo... chapCredentials) {
+    public DescribeChapCredentialsResult withChapCredentials(ChapInfo... chapCredentials) {
         if (this.chapCredentials == null) {
-            setChapCredentials(new com.amazonaws.internal.SdkInternalList<ChapInfo>(
-                    chapCredentials.length));
+            setChapCredentials(new com.amazonaws.internal.SdkInternalList<ChapInfo>(chapCredentials.length));
         }
         for (ChapInfo ele : chapCredentials) {
             this.chapCredentials.add(ele);
@@ -311,11 +267,9 @@ public class DescribeChapCredentialsResult extends
 
     /**
      * <p>
-     * An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each
-     * object in the array contains CHAP credential information for one
-     * target-initiator pair. If no CHAP credentials are set, an empty array is
-     * returned. CHAP credential information is provided in a JSON object with
-     * the following fields:
+     * An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each object in the array contains CHAP
+     * credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned.
+     * CHAP credential information is provided in a JSON object with the following fields:
      * </p>
      * <ul>
      * <li>
@@ -325,16 +279,14 @@ public class DescribeChapCredentialsResult extends
      * </li>
      * <li>
      * <p>
-     * <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator
-     * (for example, the Windows client) must provide to participate in mutual
-     * CHAP with the target.
+     * <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must
+     * provide to participate in mutual CHAP with the target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SecretToAuthenticateTarget</b>: The secret key that the target must
-     * provide to participate in mutual CHAP with the initiator (e.g. Windows
-     * client).
+     * <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with
+     * the initiator (e.g. Windows client).
      * </p>
      * </li>
      * <li>
@@ -345,51 +297,42 @@ public class DescribeChapCredentialsResult extends
      * </ul>
      * 
      * @param chapCredentials
-     *        An array of <a>ChapInfo</a> objects that represent CHAP
-     *        credentials. Each object in the array contains CHAP credential
-     *        information for one target-initiator pair. If no CHAP credentials
-     *        are set, an empty array is returned. CHAP credential information
-     *        is provided in a JSON object with the following fields:</p>
+     *        An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each object in the array contains
+     *        CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array
+     *        is returned. CHAP credential information is provided in a JSON object with the following fields:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>InitiatorName</b>: The iSCSI initiator that connects to the
-     *        target.
+     *        <b>InitiatorName</b>: The iSCSI initiator that connects to the target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>SecretToAuthenticateInitiator</b>: The secret key that the
-     *        initiator (for example, the Windows client) must provide to
-     *        participate in mutual CHAP with the target.
+     *        <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client)
+     *        must provide to participate in mutual CHAP with the target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>SecretToAuthenticateTarget</b>: The secret key that the target
-     *        must provide to participate in mutual CHAP with the initiator
-     *        (e.g. Windows client).
+     *        <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual
+     *        CHAP with the initiator (e.g. Windows client).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
-     *        volume.
+     *        <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeChapCredentialsResult withChapCredentials(
-            java.util.Collection<ChapInfo> chapCredentials) {
+    public DescribeChapCredentialsResult withChapCredentials(java.util.Collection<ChapInfo> chapCredentials) {
         setChapCredentials(chapCredentials);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -415,11 +358,9 @@ public class DescribeChapCredentialsResult extends
         if (obj instanceof DescribeChapCredentialsResult == false)
             return false;
         DescribeChapCredentialsResult other = (DescribeChapCredentialsResult) obj;
-        if (other.getChapCredentials() == null
-                ^ this.getChapCredentials() == null)
+        if (other.getChapCredentials() == null ^ this.getChapCredentials() == null)
             return false;
-        if (other.getChapCredentials() != null
-                && other.getChapCredentials().equals(this.getChapCredentials()) == false)
+        if (other.getChapCredentials() != null && other.getChapCredentials().equals(this.getChapCredentials()) == false)
             return false;
         return true;
     }
@@ -429,10 +370,7 @@ public class DescribeChapCredentialsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getChapCredentials() == null) ? 0 : getChapCredentials()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getChapCredentials() == null) ? 0 : getChapCredentials().hashCode());
         return hashCode;
     }
 
@@ -441,9 +379,7 @@ public class DescribeChapCredentialsResult extends
         try {
             return (DescribeChapCredentialsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

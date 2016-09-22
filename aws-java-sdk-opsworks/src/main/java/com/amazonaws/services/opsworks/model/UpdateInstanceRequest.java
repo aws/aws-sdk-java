@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateInstanceRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -38,21 +34,18 @@ public class UpdateInstanceRequest extends
     private com.amazonaws.internal.SdkInternalList<String> layerIds;
     /**
      * <p>
-     * The instance type, such as <code>t2.micro</code>. For a list of supported
-     * instance types, open the stack in the console, choose <b>Instances</b>,
-     * and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently
-     * supported types. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Families and Types</a>. The parameter values that you use to
-     * specify the various types are in the <b>API Name</b> column of the
+     * The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the
+     * console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently
+     * supported types. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * The parameter values that you use to specify the various types are in the <b>API Name</b> column of the
      * <b>Available Instance Types</b> table.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * For load-based or time-based instances, the type. Windows stacks can use
-     * only time-based instances.
+     * For load-based or time-based instances, the type. Windows stacks can use only time-based instances.
      * </p>
      */
     private String autoScalingType;
@@ -64,21 +57,18 @@ public class UpdateInstanceRequest extends
     private String hostname;
     /**
      * <p>
-     * The instance's operating system, which must be set to one of the
-     * following.
+     * The instance's operating system, which must be set to one of the following.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
      * <code>Ubuntu 12.04 LTS</code>.
      * </p>
      * </li>
@@ -94,11 +84,10 @@ public class UpdateInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * A supported Windows operating system, such as
-     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
      * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
-     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
      * </p>
      * </li>
      * <li>
@@ -108,41 +97,36 @@ public class UpdateInstanceRequest extends
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     * >AWS OpsWorks Operating Systems</a>.
+     * For more information on the supported operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating
+     * Systems</a>.
      * </p>
      * <p>
-     * The default option is the current Amazon Linux version. If you set this
-     * parameter to <code>Custom</code>, you must use the AmiId parameter to
-     * specify the custom AMI that you want to use. For more information on the
-     * supported operating systems, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     * >Operating Systems</a>. For more information on how to use custom AMIs
-     * with OpsWorks, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Using Custom AMIs</a>.
+     * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
+     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information on the
+     * supported operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For
+     * more information on how to use custom AMIs with OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * AMIs</a>.
      * </p>
      * <note>
      * <p>
-     * You can specify a different Linux operating system for the updated stack,
-     * but you cannot change from Linux to Windows or Windows to Linux.
+     * You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to
+     * Windows or Windows to Linux.
      * </p>
      * </note>
      */
     private String os;
     /**
      * <p>
-     * A custom AMI ID to be used to create the instance. The AMI must be based
-     * on one of the supported operating systems. For more information, see <a
-     * href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Instances</a>
+     * A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported operating
+     * systems. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      * <note>
      * <p>
-     * If you specify a custom AMI, you must set <code>Os</code> to
-     * <code>Custom</code>.
+     * If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
      * </p>
      * </note>
      */
@@ -155,28 +139,23 @@ public class UpdateInstanceRequest extends
     private String sshKeyName;
     /**
      * <p>
-     * The instance architecture. Instance types do not necessarily support both
-     * architectures. For a list of the architectures that are supported by the
-     * different instance types, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Families and Types</a>.
+     * The instance architecture. Instance types do not necessarily support both architectures. For a list of the
+     * architectures that are supported by the different instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * </p>
      */
     private String architecture;
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. To control when updates
-     * are installed, set this value to <code>false</code>. You must then update
-     * your instances manually by using <a>CreateDeployment</a> to run the
-     * <code>update_dependencies</code> stack command or by manually running
-     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then
+     * update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
+     * command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to
-     * ensure that your instances have the latest security updates.
+     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * security updates.
      * </p>
      * </note>
      */
@@ -199,17 +178,15 @@ public class UpdateInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * <i>version_number</i> - Use the specified agent version. This value
-     * overrides the stack's default setting. To update the agent version, you
-     * must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.
+     * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
+     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks then
+     * automatically installs that version on the instance.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting is <code>INHERIT</code>. To specify an agent version,
-     * you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
+     * The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version
+     * number, not the abbreviated number shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
      */
@@ -247,8 +224,7 @@ public class UpdateInstanceRequest extends
      * 
      * @param instanceId
      *        The instance ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateInstanceRequest withInstanceId(String instanceId) {
@@ -286,8 +262,7 @@ public class UpdateInstanceRequest extends
             return;
         }
 
-        this.layerIds = new com.amazonaws.internal.SdkInternalList<String>(
-                layerIds);
+        this.layerIds = new com.amazonaws.internal.SdkInternalList<String>(layerIds);
     }
 
     /**
@@ -295,22 +270,19 @@ public class UpdateInstanceRequest extends
      * The instance's layer IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLayerIds(java.util.Collection)} or
-     * {@link #withLayerIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLayerIds(java.util.Collection)} or {@link #withLayerIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param layerIds
      *        The instance's layer IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateInstanceRequest withLayerIds(String... layerIds) {
         if (this.layerIds == null) {
-            setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    layerIds.length));
+            setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(layerIds.length));
         }
         for (String ele : layerIds) {
             this.layerIds.add(ele);
@@ -325,38 +297,31 @@ public class UpdateInstanceRequest extends
      * 
      * @param layerIds
      *        The instance's layer IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateInstanceRequest withLayerIds(
-            java.util.Collection<String> layerIds) {
+    public UpdateInstanceRequest withLayerIds(java.util.Collection<String> layerIds) {
         setLayerIds(layerIds);
         return this;
     }
 
     /**
      * <p>
-     * The instance type, such as <code>t2.micro</code>. For a list of supported
-     * instance types, open the stack in the console, choose <b>Instances</b>,
-     * and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently
-     * supported types. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Families and Types</a>. The parameter values that you use to
-     * specify the various types are in the <b>API Name</b> column of the
+     * The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the
+     * console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently
+     * supported types. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * The parameter values that you use to specify the various types are in the <b>API Name</b> column of the
      * <b>Available Instance Types</b> table.
      * </p>
      * 
      * @param instanceType
-     *        The instance type, such as <code>t2.micro</code>. For a list of
-     *        supported instance types, open the stack in the console, choose
-     *        <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b>
-     *        list contains the currently supported types. For more information,
-     *        see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     *        >Instance Families and Types</a>. The parameter values that you
-     *        use to specify the various types are in the <b>API Name</b> column
-     *        of the <b>Available Instance Types</b> table.
+     *        The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack
+     *        in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the
+     *        currently supported types. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+     *        Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b>
+     *        column of the <b>Available Instance Types</b> table.
      */
 
     public void setInstanceType(String instanceType) {
@@ -365,24 +330,19 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * The instance type, such as <code>t2.micro</code>. For a list of supported
-     * instance types, open the stack in the console, choose <b>Instances</b>,
-     * and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently
-     * supported types. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Families and Types</a>. The parameter values that you use to
-     * specify the various types are in the <b>API Name</b> column of the
+     * The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the
+     * console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently
+     * supported types. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * The parameter values that you use to specify the various types are in the <b>API Name</b> column of the
      * <b>Available Instance Types</b> table.
      * </p>
      * 
-     * @return The instance type, such as <code>t2.micro</code>. For a list of
-     *         supported instance types, open the stack in the console, choose
-     *         <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b>
-     *         list contains the currently supported types. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     *         >Instance Families and Types</a>. The parameter values that you
-     *         use to specify the various types are in the <b>API Name</b>
+     * @return The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack
+     *         in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the
+     *         currently supported types. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+     *         Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b>
      *         column of the <b>Available Instance Types</b> table.
      */
 
@@ -392,28 +352,22 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * The instance type, such as <code>t2.micro</code>. For a list of supported
-     * instance types, open the stack in the console, choose <b>Instances</b>,
-     * and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently
-     * supported types. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Families and Types</a>. The parameter values that you use to
-     * specify the various types are in the <b>API Name</b> column of the
+     * The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the
+     * console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently
+     * supported types. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * The parameter values that you use to specify the various types are in the <b>API Name</b> column of the
      * <b>Available Instance Types</b> table.
      * </p>
      * 
      * @param instanceType
-     *        The instance type, such as <code>t2.micro</code>. For a list of
-     *        supported instance types, open the stack in the console, choose
-     *        <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b>
-     *        list contains the currently supported types. For more information,
-     *        see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     *        >Instance Families and Types</a>. The parameter values that you
-     *        use to specify the various types are in the <b>API Name</b> column
-     *        of the <b>Available Instance Types</b> table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack
+     *        in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the
+     *        currently supported types. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+     *        Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b>
+     *        column of the <b>Available Instance Types</b> table.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateInstanceRequest withInstanceType(String instanceType) {
@@ -423,13 +377,11 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * For load-based or time-based instances, the type. Windows stacks can use
-     * only time-based instances.
+     * For load-based or time-based instances, the type. Windows stacks can use only time-based instances.
      * </p>
      * 
      * @param autoScalingType
-     *        For load-based or time-based instances, the type. Windows stacks
-     *        can use only time-based instances.
+     *        For load-based or time-based instances, the type. Windows stacks can use only time-based instances.
      * @see AutoScalingType
      */
 
@@ -439,12 +391,10 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * For load-based or time-based instances, the type. Windows stacks can use
-     * only time-based instances.
+     * For load-based or time-based instances, the type. Windows stacks can use only time-based instances.
      * </p>
      * 
-     * @return For load-based or time-based instances, the type. Windows stacks
-     *         can use only time-based instances.
+     * @return For load-based or time-based instances, the type. Windows stacks can use only time-based instances.
      * @see AutoScalingType
      */
 
@@ -454,15 +404,12 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * For load-based or time-based instances, the type. Windows stacks can use
-     * only time-based instances.
+     * For load-based or time-based instances, the type. Windows stacks can use only time-based instances.
      * </p>
      * 
      * @param autoScalingType
-     *        For load-based or time-based instances, the type. Windows stacks
-     *        can use only time-based instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For load-based or time-based instances, the type. Windows stacks can use only time-based instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoScalingType
      */
 
@@ -473,13 +420,11 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * For load-based or time-based instances, the type. Windows stacks can use
-     * only time-based instances.
+     * For load-based or time-based instances, the type. Windows stacks can use only time-based instances.
      * </p>
      * 
      * @param autoScalingType
-     *        For load-based or time-based instances, the type. Windows stacks
-     *        can use only time-based instances.
+     *        For load-based or time-based instances, the type. Windows stacks can use only time-based instances.
      * @see AutoScalingType
      */
 
@@ -489,20 +434,16 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * For load-based or time-based instances, the type. Windows stacks can use
-     * only time-based instances.
+     * For load-based or time-based instances, the type. Windows stacks can use only time-based instances.
      * </p>
      * 
      * @param autoScalingType
-     *        For load-based or time-based instances, the type. Windows stacks
-     *        can use only time-based instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For load-based or time-based instances, the type. Windows stacks can use only time-based instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoScalingType
      */
 
-    public UpdateInstanceRequest withAutoScalingType(
-            AutoScalingType autoScalingType) {
+    public UpdateInstanceRequest withAutoScalingType(AutoScalingType autoScalingType) {
         setAutoScalingType(autoScalingType);
         return this;
     }
@@ -539,8 +480,7 @@ public class UpdateInstanceRequest extends
      * 
      * @param hostname
      *        The instance host name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateInstanceRequest withHostname(String hostname) {
@@ -550,21 +490,18 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * The instance's operating system, which must be set to one of the
-     * following.
+     * The instance's operating system, which must be set to one of the following.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
      * <code>Ubuntu 12.04 LTS</code>.
      * </p>
      * </li>
@@ -580,11 +517,10 @@ public class UpdateInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * A supported Windows operating system, such as
-     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
      * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
-     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
      * </p>
      * </li>
      * <li>
@@ -594,45 +530,39 @@ public class UpdateInstanceRequest extends
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     * >AWS OpsWorks Operating Systems</a>.
+     * For more information on the supported operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating
+     * Systems</a>.
      * </p>
      * <p>
-     * The default option is the current Amazon Linux version. If you set this
-     * parameter to <code>Custom</code>, you must use the AmiId parameter to
-     * specify the custom AMI that you want to use. For more information on the
-     * supported operating systems, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     * >Operating Systems</a>. For more information on how to use custom AMIs
-     * with OpsWorks, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Using Custom AMIs</a>.
+     * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
+     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information on the
+     * supported operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For
+     * more information on how to use custom AMIs with OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * AMIs</a>.
      * </p>
      * <note>
      * <p>
-     * You can specify a different Linux operating system for the updated stack,
-     * but you cannot change from Linux to Windows or Windows to Linux.
+     * You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to
+     * Windows or Windows to Linux.
      * </p>
      * </note>
      * 
      * @param os
-     *        The instance's operating system, which must be set to one of the
-     *        following.</p>
+     *        The instance's operating system, which must be set to one of the following.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        A supported Linux operating system: An Amazon Linux version, such
-     *        as <code>Amazon Linux 2016.03</code>,
-     *        <code>Amazon Linux 2015.09</code>, or
-     *        <code>Amazon Linux 2015.03</code>.
+     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
+     *        <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        A supported Ubuntu operating system, such as
-     *        <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
-     *        <code>Ubuntu 12.04 LTS</code>.
+     *        A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>,
+     *        or <code>Ubuntu 12.04 LTS</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -647,11 +577,9 @@ public class UpdateInstanceRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        A supported Windows operating system, such as
-     *        <code>Microsoft Windows Server 2012 R2 Base</code>,
+     *        A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
      *        <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>
-     *        , or
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
      *        <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
      *        </p>
      *        </li>
@@ -663,26 +591,22 @@ public class UpdateInstanceRequest extends
      *        </ul>
      *        <p>
      *        For more information on the supported operating systems, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     *        >AWS OpsWorks Operating Systems</a>.
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
+     *        Operating Systems</a>.
      *        </p>
      *        <p>
-     *        The default option is the current Amazon Linux version. If you set
-     *        this parameter to <code>Custom</code>, you must use the AmiId
-     *        parameter to specify the custom AMI that you want to use. For more
-     *        information on the supported operating systems, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     *        >Operating Systems</a>. For more information on how to use custom
-     *        AMIs with OpsWorks, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *        >Using Custom AMIs</a>.
+     *        The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
+     *        you must use the AmiId parameter to specify the custom AMI that you want to use. For more information on
+     *        the supported operating systems, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *        Systems</a>. For more information on how to use custom AMIs with OpsWorks, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     *        AMIs</a>.
      *        </p>
      *        <note>
      *        <p>
-     *        You can specify a different Linux operating system for the updated
-     *        stack, but you cannot change from Linux to Windows or Windows to
-     *        Linux.
+     *        You can specify a different Linux operating system for the updated stack, but you cannot change from Linux
+     *        to Windows or Windows to Linux.
      *        </p>
      */
 
@@ -692,21 +616,18 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * The instance's operating system, which must be set to one of the
-     * following.
+     * The instance's operating system, which must be set to one of the following.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
      * <code>Ubuntu 12.04 LTS</code>.
      * </p>
      * </li>
@@ -722,11 +643,10 @@ public class UpdateInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * A supported Windows operating system, such as
-     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
      * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
-     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
      * </p>
      * </li>
      * <li>
@@ -736,44 +656,38 @@ public class UpdateInstanceRequest extends
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     * >AWS OpsWorks Operating Systems</a>.
+     * For more information on the supported operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating
+     * Systems</a>.
      * </p>
      * <p>
-     * The default option is the current Amazon Linux version. If you set this
-     * parameter to <code>Custom</code>, you must use the AmiId parameter to
-     * specify the custom AMI that you want to use. For more information on the
-     * supported operating systems, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     * >Operating Systems</a>. For more information on how to use custom AMIs
-     * with OpsWorks, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Using Custom AMIs</a>.
+     * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
+     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information on the
+     * supported operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For
+     * more information on how to use custom AMIs with OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * AMIs</a>.
      * </p>
      * <note>
      * <p>
-     * You can specify a different Linux operating system for the updated stack,
-     * but you cannot change from Linux to Windows or Windows to Linux.
+     * You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to
+     * Windows or Windows to Linux.
      * </p>
      * </note>
      * 
-     * @return The instance's operating system, which must be set to one of the
-     *         following.</p>
+     * @return The instance's operating system, which must be set to one of the following.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         A supported Linux operating system: An Amazon Linux version, such
-     *         as <code>Amazon Linux 2016.03</code>,
-     *         <code>Amazon Linux 2015.09</code>, or
-     *         <code>Amazon Linux 2015.03</code>.
+     *         A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
+     *         <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         A supported Ubuntu operating system, such as
-     *         <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
-     *         <code>Ubuntu 12.04 LTS</code>.
+     *         A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>
+     *         , or <code>Ubuntu 12.04 LTS</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -788,13 +702,10 @@ public class UpdateInstanceRequest extends
      *         </li>
      *         <li>
      *         <p>
-     *         A supported Windows operating system, such as
-     *         <code>Microsoft Windows Server 2012 R2 Base</code>,
+     *         A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
      *         <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     *         <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>
-     *         , or
-     *         <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>
-     *         .
+     *         <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+     *         <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -805,26 +716,22 @@ public class UpdateInstanceRequest extends
      *         </ul>
      *         <p>
      *         For more information on the supported operating systems, see <a
-     *         href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     *         >AWS OpsWorks Operating Systems</a>.
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
+     *         Operating Systems</a>.
      *         </p>
      *         <p>
-     *         The default option is the current Amazon Linux version. If you
-     *         set this parameter to <code>Custom</code>, you must use the AmiId
-     *         parameter to specify the custom AMI that you want to use. For
-     *         more information on the supported operating systems, see <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     *         >Operating Systems</a>. For more information on how to use custom
-     *         AMIs with OpsWorks, see <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *         >Using Custom AMIs</a>.
+     *         The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
+     *         you must use the AmiId parameter to specify the custom AMI that you want to use. For more information on
+     *         the supported operating systems, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *         Systems</a>. For more information on how to use custom AMIs with OpsWorks, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     *         AMIs</a>.
      *         </p>
      *         <note>
      *         <p>
-     *         You can specify a different Linux operating system for the
-     *         updated stack, but you cannot change from Linux to Windows or
-     *         Windows to Linux.
+     *         You can specify a different Linux operating system for the updated stack, but you cannot change from
+     *         Linux to Windows or Windows to Linux.
      *         </p>
      */
 
@@ -834,21 +741,18 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * The instance's operating system, which must be set to one of the
-     * following.
+     * The instance's operating system, which must be set to one of the following.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
      * <code>Ubuntu 12.04 LTS</code>.
      * </p>
      * </li>
@@ -864,11 +768,10 @@ public class UpdateInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * A supported Windows operating system, such as
-     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
      * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
-     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
      * </p>
      * </li>
      * <li>
@@ -878,45 +781,39 @@ public class UpdateInstanceRequest extends
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     * >AWS OpsWorks Operating Systems</a>.
+     * For more information on the supported operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating
+     * Systems</a>.
      * </p>
      * <p>
-     * The default option is the current Amazon Linux version. If you set this
-     * parameter to <code>Custom</code>, you must use the AmiId parameter to
-     * specify the custom AMI that you want to use. For more information on the
-     * supported operating systems, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     * >Operating Systems</a>. For more information on how to use custom AMIs
-     * with OpsWorks, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Using Custom AMIs</a>.
+     * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
+     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information on the
+     * supported operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For
+     * more information on how to use custom AMIs with OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * AMIs</a>.
      * </p>
      * <note>
      * <p>
-     * You can specify a different Linux operating system for the updated stack,
-     * but you cannot change from Linux to Windows or Windows to Linux.
+     * You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to
+     * Windows or Windows to Linux.
      * </p>
      * </note>
      * 
      * @param os
-     *        The instance's operating system, which must be set to one of the
-     *        following.</p>
+     *        The instance's operating system, which must be set to one of the following.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        A supported Linux operating system: An Amazon Linux version, such
-     *        as <code>Amazon Linux 2016.03</code>,
-     *        <code>Amazon Linux 2015.09</code>, or
-     *        <code>Amazon Linux 2015.03</code>.
+     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
+     *        <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        A supported Ubuntu operating system, such as
-     *        <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
-     *        <code>Ubuntu 12.04 LTS</code>.
+     *        A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>,
+     *        or <code>Ubuntu 12.04 LTS</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -931,11 +828,9 @@ public class UpdateInstanceRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        A supported Windows operating system, such as
-     *        <code>Microsoft Windows Server 2012 R2 Base</code>,
+     *        A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
      *        <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>
-     *        , or
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
      *        <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
      *        </p>
      *        </li>
@@ -947,29 +842,24 @@ public class UpdateInstanceRequest extends
      *        </ul>
      *        <p>
      *        For more information on the supported operating systems, see <a
-     *        href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     *        >AWS OpsWorks Operating Systems</a>.
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
+     *        Operating Systems</a>.
      *        </p>
      *        <p>
-     *        The default option is the current Amazon Linux version. If you set
-     *        this parameter to <code>Custom</code>, you must use the AmiId
-     *        parameter to specify the custom AMI that you want to use. For more
-     *        information on the supported operating systems, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
-     *        >Operating Systems</a>. For more information on how to use custom
-     *        AMIs with OpsWorks, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *        >Using Custom AMIs</a>.
+     *        The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
+     *        you must use the AmiId parameter to specify the custom AMI that you want to use. For more information on
+     *        the supported operating systems, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *        Systems</a>. For more information on how to use custom AMIs with OpsWorks, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     *        AMIs</a>.
      *        </p>
      *        <note>
      *        <p>
-     *        You can specify a different Linux operating system for the updated
-     *        stack, but you cannot change from Linux to Windows or Windows to
-     *        Linux.
+     *        You can specify a different Linux operating system for the updated stack, but you cannot change from Linux
+     *        to Windows or Windows to Linux.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateInstanceRequest withOs(String os) {
@@ -979,28 +869,23 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * A custom AMI ID to be used to create the instance. The AMI must be based
-     * on one of the supported operating systems. For more information, see <a
-     * href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Instances</a>
+     * A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported operating
+     * systems. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      * <note>
      * <p>
-     * If you specify a custom AMI, you must set <code>Os</code> to
-     * <code>Custom</code>.
+     * If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
      * </p>
      * </note>
      * 
      * @param amiId
-     *        A custom AMI ID to be used to create the instance. The AMI must be
-     *        based on one of the supported operating systems. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *        >Instances</a> </p> <note>
+     *        A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported operating
+     *        systems. For more information, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     *        </p> <note>
      *        <p>
-     *        If you specify a custom AMI, you must set <code>Os</code> to
-     *        <code>Custom</code>.
+     *        If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
      *        </p>
      */
 
@@ -1010,27 +895,22 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * A custom AMI ID to be used to create the instance. The AMI must be based
-     * on one of the supported operating systems. For more information, see <a
-     * href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Instances</a>
+     * A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported operating
+     * systems. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      * <note>
      * <p>
-     * If you specify a custom AMI, you must set <code>Os</code> to
-     * <code>Custom</code>.
+     * If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
      * </p>
      * </note>
      * 
-     * @return A custom AMI ID to be used to create the instance. The AMI must
-     *         be based on one of the supported operating systems. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
+     * @return A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported
+     *         operating systems. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      *         >Instances</a> </p> <note>
      *         <p>
-     *         If you specify a custom AMI, you must set <code>Os</code> to
-     *         <code>Custom</code>.
+     *         If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
      *         </p>
      */
 
@@ -1040,31 +920,25 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * A custom AMI ID to be used to create the instance. The AMI must be based
-     * on one of the supported operating systems. For more information, see <a
-     * href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Instances</a>
+     * A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported operating
+     * systems. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      * <note>
      * <p>
-     * If you specify a custom AMI, you must set <code>Os</code> to
-     * <code>Custom</code>.
+     * If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
      * </p>
      * </note>
      * 
      * @param amiId
-     *        A custom AMI ID to be used to create the instance. The AMI must be
-     *        based on one of the supported operating systems. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *        >Instances</a> </p> <note>
+     *        A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported operating
+     *        systems. For more information, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     *        </p> <note>
      *        <p>
-     *        If you specify a custom AMI, you must set <code>Os</code> to
-     *        <code>Custom</code>.
+     *        If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateInstanceRequest withAmiId(String amiId) {
@@ -1104,8 +978,7 @@ public class UpdateInstanceRequest extends
      * 
      * @param sshKeyName
      *        The instance's Amazon EC2 key name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateInstanceRequest withSshKeyName(String sshKeyName) {
@@ -1115,19 +988,16 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * The instance architecture. Instance types do not necessarily support both
-     * architectures. For a list of the architectures that are supported by the
-     * different instance types, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Families and Types</a>.
+     * The instance architecture. Instance types do not necessarily support both architectures. For a list of the
+     * architectures that are supported by the different instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * </p>
      * 
      * @param architecture
-     *        The instance architecture. Instance types do not necessarily
-     *        support both architectures. For a list of the architectures that
-     *        are supported by the different instance types, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     *        >Instance Families and Types</a>.
+     *        The instance architecture. Instance types do not necessarily support both architectures. For a list of the
+     *        architectures that are supported by the different instance types, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+     *        Types</a>.
      * @see Architecture
      */
 
@@ -1137,18 +1007,15 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * The instance architecture. Instance types do not necessarily support both
-     * architectures. For a list of the architectures that are supported by the
-     * different instance types, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Families and Types</a>.
+     * The instance architecture. Instance types do not necessarily support both architectures. For a list of the
+     * architectures that are supported by the different instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * </p>
      * 
-     * @return The instance architecture. Instance types do not necessarily
-     *         support both architectures. For a list of the architectures that
-     *         are supported by the different instance types, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     *         >Instance Families and Types</a>.
+     * @return The instance architecture. Instance types do not necessarily support both architectures. For a list of
+     *         the architectures that are supported by the different instance types, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+     *         Types</a>.
      * @see Architecture
      */
 
@@ -1158,21 +1025,17 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * The instance architecture. Instance types do not necessarily support both
-     * architectures. For a list of the architectures that are supported by the
-     * different instance types, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Families and Types</a>.
+     * The instance architecture. Instance types do not necessarily support both architectures. For a list of the
+     * architectures that are supported by the different instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * </p>
      * 
      * @param architecture
-     *        The instance architecture. Instance types do not necessarily
-     *        support both architectures. For a list of the architectures that
-     *        are supported by the different instance types, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     *        >Instance Families and Types</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance architecture. Instance types do not necessarily support both architectures. For a list of the
+     *        architectures that are supported by the different instance types, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+     *        Types</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Architecture
      */
 
@@ -1183,19 +1046,16 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * The instance architecture. Instance types do not necessarily support both
-     * architectures. For a list of the architectures that are supported by the
-     * different instance types, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Families and Types</a>.
+     * The instance architecture. Instance types do not necessarily support both architectures. For a list of the
+     * architectures that are supported by the different instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * </p>
      * 
      * @param architecture
-     *        The instance architecture. Instance types do not necessarily
-     *        support both architectures. For a list of the architectures that
-     *        are supported by the different instance types, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     *        >Instance Families and Types</a>.
+     *        The instance architecture. Instance types do not necessarily support both architectures. For a list of the
+     *        architectures that are supported by the different instance types, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+     *        Types</a>.
      * @see Architecture
      */
 
@@ -1205,21 +1065,17 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * The instance architecture. Instance types do not necessarily support both
-     * architectures. For a list of the architectures that are supported by the
-     * different instance types, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     * >Instance Families and Types</a>.
+     * The instance architecture. Instance types do not necessarily support both architectures. For a list of the
+     * architectures that are supported by the different instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * </p>
      * 
      * @param architecture
-     *        The instance architecture. Instance types do not necessarily
-     *        support both architectures. For a list of the architectures that
-     *        are supported by the different instance types, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
-     *        >Instance Families and Types</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance architecture. Instance types do not necessarily support both architectures. For a list of the
+     *        architectures that are supported by the different instance types, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+     *        Types</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Architecture
      */
 
@@ -1230,33 +1086,27 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. To control when updates
-     * are installed, set this value to <code>false</code>. You must then update
-     * your instances manually by using <a>CreateDeployment</a> to run the
-     * <code>update_dependencies</code> stack command or by manually running
-     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then
+     * update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
+     * command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to
-     * ensure that your instances have the latest security updates.
+     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * security updates.
      * </p>
      * </note>
      * 
      * @param installUpdatesOnBoot
-     *        Whether to install operating system and package updates when the
-     *        instance boots. The default value is <code>true</code>. To control
-     *        when updates are installed, set this value to <code>false</code>.
-     *        You must then update your instances manually by using
-     *        <a>CreateDeployment</a> to run the
-     *        <code>update_dependencies</code> stack command or by manually
-     *        running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-     *        (Ubuntu) on the instances. </p> <note>
+     *        Whether to install operating system and package updates when the instance boots. The default value is
+     *        <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must
+     *        then update your instances manually by using <a>CreateDeployment</a> to run the
+     *        <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or
+     *        <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
      *        <p>
-     *        We strongly recommend using the default value of <code>true</code>
-     *        , to ensure that your instances have the latest security updates.
+     *        We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the
+     *        latest security updates.
      *        </p>
      */
 
@@ -1266,33 +1116,26 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. To control when updates
-     * are installed, set this value to <code>false</code>. You must then update
-     * your instances manually by using <a>CreateDeployment</a> to run the
-     * <code>update_dependencies</code> stack command or by manually running
-     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then
+     * update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
+     * command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to
-     * ensure that your instances have the latest security updates.
+     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * security updates.
      * </p>
      * </note>
      * 
-     * @return Whether to install operating system and package updates when the
-     *         instance boots. The default value is <code>true</code>. To
-     *         control when updates are installed, set this value to
-     *         <code>false</code>. You must then update your instances manually
-     *         by using <a>CreateDeployment</a> to run the
-     *         <code>update_dependencies</code> stack command or by manually
-     *         running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-     *         (Ubuntu) on the instances. </p> <note>
+     * @return Whether to install operating system and package updates when the instance boots. The default value is
+     *         <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must
+     *         then update your instances manually by using <a>CreateDeployment</a> to run the
+     *         <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or
+     *         <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
      *         <p>
-     *         We strongly recommend using the default value of
-     *         <code>true</code>, to ensure that your instances have the latest
-     *         security updates.
+     *         We strongly recommend using the default value of <code>true</code>, to ensure that your instances have
+     *         the latest security updates.
      *         </p>
      */
 
@@ -1302,73 +1145,58 @@ public class UpdateInstanceRequest extends
 
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. To control when updates
-     * are installed, set this value to <code>false</code>. You must then update
-     * your instances manually by using <a>CreateDeployment</a> to run the
-     * <code>update_dependencies</code> stack command or by manually running
-     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then
+     * update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
+     * command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to
-     * ensure that your instances have the latest security updates.
+     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * security updates.
      * </p>
      * </note>
      * 
      * @param installUpdatesOnBoot
-     *        Whether to install operating system and package updates when the
-     *        instance boots. The default value is <code>true</code>. To control
-     *        when updates are installed, set this value to <code>false</code>.
-     *        You must then update your instances manually by using
-     *        <a>CreateDeployment</a> to run the
-     *        <code>update_dependencies</code> stack command or by manually
-     *        running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-     *        (Ubuntu) on the instances. </p> <note>
+     *        Whether to install operating system and package updates when the instance boots. The default value is
+     *        <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must
+     *        then update your instances manually by using <a>CreateDeployment</a> to run the
+     *        <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or
+     *        <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
      *        <p>
-     *        We strongly recommend using the default value of <code>true</code>
-     *        , to ensure that your instances have the latest security updates.
+     *        We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the
+     *        latest security updates.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateInstanceRequest withInstallUpdatesOnBoot(
-            Boolean installUpdatesOnBoot) {
+    public UpdateInstanceRequest withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         setInstallUpdatesOnBoot(installUpdatesOnBoot);
         return this;
     }
 
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. To control when updates
-     * are installed, set this value to <code>false</code>. You must then update
-     * your instances manually by using <a>CreateDeployment</a> to run the
-     * <code>update_dependencies</code> stack command or by manually running
-     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then
+     * update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
+     * command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to
-     * ensure that your instances have the latest security updates.
+     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * security updates.
      * </p>
      * </note>
      * 
-     * @return Whether to install operating system and package updates when the
-     *         instance boots. The default value is <code>true</code>. To
-     *         control when updates are installed, set this value to
-     *         <code>false</code>. You must then update your instances manually
-     *         by using <a>CreateDeployment</a> to run the
-     *         <code>update_dependencies</code> stack command or by manually
-     *         running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-     *         (Ubuntu) on the instances. </p> <note>
+     * @return Whether to install operating system and package updates when the instance boots. The default value is
+     *         <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must
+     *         then update your instances manually by using <a>CreateDeployment</a> to run the
+     *         <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or
+     *         <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
      *         <p>
-     *         We strongly recommend using the default value of
-     *         <code>true</code>, to ensure that your instances have the latest
-     *         security updates.
+     *         We strongly recommend using the default value of <code>true</code>, to ensure that your instances have
+     *         the latest security updates.
      *         </p>
      */
 
@@ -1408,8 +1236,7 @@ public class UpdateInstanceRequest extends
      * 
      * @param ebsOptimized
      *        This property cannot be updated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateInstanceRequest withEbsOptimized(Boolean ebsOptimized) {
@@ -1441,45 +1268,38 @@ public class UpdateInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * <i>version_number</i> - Use the specified agent version. This value
-     * overrides the stack's default setting. To update the agent version, you
-     * must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.
+     * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
+     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks then
+     * automatically installs that version on the instance.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting is <code>INHERIT</code>. To specify an agent version,
-     * you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
+     * The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version
+     * number, not the abbreviated number shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
      * 
      * @param agentVersion
-     *        The default AWS OpsWorks agent version. You have the following
-     *        options:</p>
+     *        The default AWS OpsWorks agent version. You have the following options:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>INHERIT</code> - Use the stack's default agent version
-     *        setting.
+     *        <code>INHERIT</code> - Use the stack's default agent version setting.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>version_number</i> - Use the specified agent version. This
-     *        value overrides the stack's default setting. To update the agent
-     *        version, you must edit the instance configuration and specify a
-     *        new version. AWS OpsWorks then automatically installs that version
-     *        on the instance.
+     *        <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting.
+     *        To update the agent version, you must edit the instance configuration and specify a new version. AWS
+     *        OpsWorks then automatically installs that version on the instance.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The default setting is <code>INHERIT</code>. To specify an agent
-     *        version, you must use the complete version number, not the
-     *        abbreviated number shown on the console. For a list of available
-     *        agent version numbers, call <a>DescribeAgentVersions</a>.
+     *        The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete
+     *        version number, not the abbreviated number shown on the console. For a list of available agent version
+     *        numbers, call <a>DescribeAgentVersions</a>.
      */
 
     public void setAgentVersion(String agentVersion) {
@@ -1498,44 +1318,37 @@ public class UpdateInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * <i>version_number</i> - Use the specified agent version. This value
-     * overrides the stack's default setting. To update the agent version, you
-     * must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.
+     * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
+     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks then
+     * automatically installs that version on the instance.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting is <code>INHERIT</code>. To specify an agent version,
-     * you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
+     * The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version
+     * number, not the abbreviated number shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
      * 
-     * @return The default AWS OpsWorks agent version. You have the following
-     *         options:</p>
+     * @return The default AWS OpsWorks agent version. You have the following options:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>INHERIT</code> - Use the stack's default agent version
-     *         setting.
+     *         <code>INHERIT</code> - Use the stack's default agent version setting.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>version_number</i> - Use the specified agent version. This
-     *         value overrides the stack's default setting. To update the agent
-     *         version, you must edit the instance configuration and specify a
-     *         new version. AWS OpsWorks then automatically installs that
-     *         version on the instance.
+     *         <i>version_number</i> - Use the specified agent version. This value overrides the stack's default
+     *         setting. To update the agent version, you must edit the instance configuration and specify a new version.
+     *         AWS OpsWorks then automatically installs that version on the instance.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         The default setting is <code>INHERIT</code>. To specify an agent
-     *         version, you must use the complete version number, not the
-     *         abbreviated number shown on the console. For a list of available
-     *         agent version numbers, call <a>DescribeAgentVersions</a>.
+     *         The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete
+     *         version number, not the abbreviated number shown on the console. For a list of available agent version
+     *         numbers, call <a>DescribeAgentVersions</a>.
      */
 
     public String getAgentVersion() {
@@ -1554,47 +1367,39 @@ public class UpdateInstanceRequest extends
      * </li>
      * <li>
      * <p>
-     * <i>version_number</i> - Use the specified agent version. This value
-     * overrides the stack's default setting. To update the agent version, you
-     * must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.
+     * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
+     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks then
+     * automatically installs that version on the instance.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting is <code>INHERIT</code>. To specify an agent version,
-     * you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
+     * The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version
+     * number, not the abbreviated number shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
      * 
      * @param agentVersion
-     *        The default AWS OpsWorks agent version. You have the following
-     *        options:</p>
+     *        The default AWS OpsWorks agent version. You have the following options:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>INHERIT</code> - Use the stack's default agent version
-     *        setting.
+     *        <code>INHERIT</code> - Use the stack's default agent version setting.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>version_number</i> - Use the specified agent version. This
-     *        value overrides the stack's default setting. To update the agent
-     *        version, you must edit the instance configuration and specify a
-     *        new version. AWS OpsWorks then automatically installs that version
-     *        on the instance.
+     *        <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting.
+     *        To update the agent version, you must edit the instance configuration and specify a new version. AWS
+     *        OpsWorks then automatically installs that version on the instance.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The default setting is <code>INHERIT</code>. To specify an agent
-     *        version, you must use the complete version number, not the
-     *        abbreviated number shown on the console. For a list of available
-     *        agent version numbers, call <a>DescribeAgentVersions</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete
+     *        version number, not the abbreviated number shown on the console. For a list of available agent version
+     *        numbers, call <a>DescribeAgentVersions</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateInstanceRequest withAgentVersion(String agentVersion) {
@@ -1603,8 +1408,7 @@ public class UpdateInstanceRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1633,8 +1437,7 @@ public class UpdateInstanceRequest extends
         if (getArchitecture() != null)
             sb.append("Architecture: " + getArchitecture() + ",");
         if (getInstallUpdatesOnBoot() != null)
-            sb.append("InstallUpdatesOnBoot: " + getInstallUpdatesOnBoot()
-                    + ",");
+            sb.append("InstallUpdatesOnBoot: " + getInstallUpdatesOnBoot() + ",");
         if (getEbsOptimized() != null)
             sb.append("EbsOptimized: " + getEbsOptimized() + ",");
         if (getAgentVersion() != null)
@@ -1655,66 +1458,51 @@ public class UpdateInstanceRequest extends
         UpdateInstanceRequest other = (UpdateInstanceRequest) obj;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         if (other.getLayerIds() == null ^ this.getLayerIds() == null)
             return false;
-        if (other.getLayerIds() != null
-                && other.getLayerIds().equals(this.getLayerIds()) == false)
+        if (other.getLayerIds() != null && other.getLayerIds().equals(this.getLayerIds()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
-        if (other.getAutoScalingType() == null
-                ^ this.getAutoScalingType() == null)
+        if (other.getAutoScalingType() == null ^ this.getAutoScalingType() == null)
             return false;
-        if (other.getAutoScalingType() != null
-                && other.getAutoScalingType().equals(this.getAutoScalingType()) == false)
+        if (other.getAutoScalingType() != null && other.getAutoScalingType().equals(this.getAutoScalingType()) == false)
             return false;
         if (other.getHostname() == null ^ this.getHostname() == null)
             return false;
-        if (other.getHostname() != null
-                && other.getHostname().equals(this.getHostname()) == false)
+        if (other.getHostname() != null && other.getHostname().equals(this.getHostname()) == false)
             return false;
         if (other.getOs() == null ^ this.getOs() == null)
             return false;
-        if (other.getOs() != null
-                && other.getOs().equals(this.getOs()) == false)
+        if (other.getOs() != null && other.getOs().equals(this.getOs()) == false)
             return false;
         if (other.getAmiId() == null ^ this.getAmiId() == null)
             return false;
-        if (other.getAmiId() != null
-                && other.getAmiId().equals(this.getAmiId()) == false)
+        if (other.getAmiId() != null && other.getAmiId().equals(this.getAmiId()) == false)
             return false;
         if (other.getSshKeyName() == null ^ this.getSshKeyName() == null)
             return false;
-        if (other.getSshKeyName() != null
-                && other.getSshKeyName().equals(this.getSshKeyName()) == false)
+        if (other.getSshKeyName() != null && other.getSshKeyName().equals(this.getSshKeyName()) == false)
             return false;
         if (other.getArchitecture() == null ^ this.getArchitecture() == null)
             return false;
-        if (other.getArchitecture() != null
-                && other.getArchitecture().equals(this.getArchitecture()) == false)
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
             return false;
-        if (other.getInstallUpdatesOnBoot() == null
-                ^ this.getInstallUpdatesOnBoot() == null)
+        if (other.getInstallUpdatesOnBoot() == null ^ this.getInstallUpdatesOnBoot() == null)
             return false;
-        if (other.getInstallUpdatesOnBoot() != null
-                && other.getInstallUpdatesOnBoot().equals(
-                        this.getInstallUpdatesOnBoot()) == false)
+        if (other.getInstallUpdatesOnBoot() != null && other.getInstallUpdatesOnBoot().equals(this.getInstallUpdatesOnBoot()) == false)
             return false;
         if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
             return false;
-        if (other.getEbsOptimized() != null
-                && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
+        if (other.getEbsOptimized() != null && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
             return false;
         if (other.getAgentVersion() == null ^ this.getAgentVersion() == null)
             return false;
-        if (other.getAgentVersion() != null
-                && other.getAgentVersion().equals(this.getAgentVersion()) == false)
+        if (other.getAgentVersion() != null && other.getAgentVersion().equals(this.getAgentVersion()) == false)
             return false;
         return true;
     }
@@ -1724,42 +1512,18 @@ public class UpdateInstanceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getLayerIds() == null) ? 0 : getLayerIds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingType() == null) ? 0 : getAutoScalingType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getHostname() == null) ? 0 : getHostname().hashCode());
-        hashCode = prime * hashCode
-                + ((getOs() == null) ? 0 : getOs().hashCode());
-        hashCode = prime * hashCode
-                + ((getAmiId() == null) ? 0 : getAmiId().hashCode());
-        hashCode = prime * hashCode
-                + ((getSshKeyName() == null) ? 0 : getSshKeyName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getArchitecture() == null) ? 0 : getArchitecture()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstallUpdatesOnBoot() == null) ? 0
-                        : getInstallUpdatesOnBoot().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEbsOptimized() == null) ? 0 : getEbsOptimized()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAgentVersion() == null) ? 0 : getAgentVersion()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getLayerIds() == null) ? 0 : getLayerIds().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingType() == null) ? 0 : getAutoScalingType().hashCode());
+        hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode());
+        hashCode = prime * hashCode + ((getOs() == null) ? 0 : getOs().hashCode());
+        hashCode = prime * hashCode + ((getAmiId() == null) ? 0 : getAmiId().hashCode());
+        hashCode = prime * hashCode + ((getSshKeyName() == null) ? 0 : getSshKeyName().hashCode());
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getInstallUpdatesOnBoot() == null) ? 0 : getInstallUpdatesOnBoot().hashCode());
+        hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
+        hashCode = prime * hashCode + ((getAgentVersion() == null) ? 0 : getAgentVersion().hashCode());
         return hashCode;
     }
 

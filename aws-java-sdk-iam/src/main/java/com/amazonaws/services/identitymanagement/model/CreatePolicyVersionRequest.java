@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -20,34 +18,28 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreatePolicyVersionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM policy to which you want to add
-     * a new version.
+     * The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String policyArn;
     /**
      * <p>
-     * The JSON policy document that you want to use as the content for this new
-     * version of the policy.
+     * The JSON policy document that you want to use as the content for this new version of the policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (
-     * ), line feed ( ), and carriage return ( ).
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
+     * ).
      * </p>
      */
     private String policyDocument;
@@ -56,38 +48,33 @@ public class CreatePolicyVersionRequest extends
      * Specifies whether to set this version as the policy's default version.
      * </p>
      * <p>
-     * When this parameter is <code>true</code>, the new policy version becomes
-     * the operative version; that is, the version that is in effect for the IAM
-     * users, groups, and roles that the policy is attached to.
+     * When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the
+     * version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      * </p>
      * <p>
-     * For more information about managed policy versions, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     * >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
+     * For more information about managed policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private Boolean setAsDefault;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM policy to which you want to add
-     * a new version.
+     * The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the IAM policy to which you want
-     *        to add a new version.</p>
+     *        The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
-     *        the <i>AWS General Reference</i>.
+     *        For more information about ARNs, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -96,23 +83,19 @@ public class CreatePolicyVersionRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM policy to which you want to add
-     * a new version.
+     * The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM policy to which you
-     *         want to add a new version.</p>
+     * @return The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.</p>
      *         <p>
-     *         For more information about ARNs, see <a href=
-     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
-     *         the <i>AWS General Reference</i>.
+     *         For more information about ARNs, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public String getPolicyArn() {
@@ -121,26 +104,21 @@ public class CreatePolicyVersionRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM policy to which you want to add
-     * a new version.
+     * The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the IAM policy to which you want
-     *        to add a new version.</p>
+     *        The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
-     *        the <i>AWS General Reference</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information about ARNs, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreatePolicyVersionRequest withPolicyArn(String policyArn) {
@@ -150,26 +128,21 @@ public class CreatePolicyVersionRequest extends
 
     /**
      * <p>
-     * The JSON policy document that you want to use as the content for this new
-     * version of the policy.
+     * The JSON policy document that you want to use as the content for this new version of the policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (
-     * ), line feed ( ), and carriage return ( ).
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
+     * ).
      * </p>
      * 
      * @param policyDocument
-     *        The JSON policy document that you want to use as the content for
-     *        this new version of the policy.</p>
+     *        The JSON policy document that you want to use as the content for this new version of the policy.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of any
-     *        printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range (\u00FF). It also
-     *        includes the special characters tab ( ), line feed ( ), and
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
+     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
      */
 
@@ -179,26 +152,21 @@ public class CreatePolicyVersionRequest extends
 
     /**
      * <p>
-     * The JSON policy document that you want to use as the content for this new
-     * version of the policy.
+     * The JSON policy document that you want to use as the content for this new version of the policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (
-     * ), line feed ( ), and carriage return ( ).
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
+     * ).
      * </p>
      * 
-     * @return The JSON policy document that you want to use as the content for
-     *         this new version of the policy.</p>
+     * @return The JSON policy document that you want to use as the content for this new version of the policy.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of any
-     *         printable ASCII character ranging from the space character ( )
-     *         through end of the ASCII character range (\u00FF). It also
-     *         includes the special characters tab ( ), line feed ( ), and
-     *         carriage return ( ).
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
+     *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
+     *         and carriage return ( ).
      */
 
     public String getPolicyDocument() {
@@ -207,29 +175,23 @@ public class CreatePolicyVersionRequest extends
 
     /**
      * <p>
-     * The JSON policy document that you want to use as the content for this new
-     * version of the policy.
+     * The JSON policy document that you want to use as the content for this new version of the policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (
-     * ), line feed ( ), and carriage return ( ).
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
+     * ).
      * </p>
      * 
      * @param policyDocument
-     *        The JSON policy document that you want to use as the content for
-     *        this new version of the policy.</p>
+     *        The JSON policy document that you want to use as the content for this new version of the policy.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of any
-     *        printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range (\u00FF). It also
-     *        includes the special characters tab ( ), line feed ( ), and
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
+     *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreatePolicyVersionRequest withPolicyDocument(String policyDocument) {
@@ -242,29 +204,25 @@ public class CreatePolicyVersionRequest extends
      * Specifies whether to set this version as the policy's default version.
      * </p>
      * <p>
-     * When this parameter is <code>true</code>, the new policy version becomes
-     * the operative version; that is, the version that is in effect for the IAM
-     * users, groups, and roles that the policy is attached to.
+     * When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the
+     * version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      * </p>
      * <p>
-     * For more information about managed policy versions, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     * >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
+     * For more information about managed policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param setAsDefault
-     *        Specifies whether to set this version as the policy's default
-     *        version.</p>
+     *        Specifies whether to set this version as the policy's default version.</p>
      *        <p>
-     *        When this parameter is <code>true</code>, the new policy version
-     *        becomes the operative version; that is, the version that is in
-     *        effect for the IAM users, groups, and roles that the policy is
-     *        attached to.
+     *        When this parameter is <code>true</code>, the new policy version becomes the operative version; that is,
+     *        the version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      *        </p>
      *        <p>
-     *        For more information about managed policy versions, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     *        >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
+     *        For more information about managed policy versions, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *        Managed Policies</a> in the <i>IAM User Guide</i>.
      */
 
     public void setSetAsDefault(Boolean setAsDefault) {
@@ -276,29 +234,24 @@ public class CreatePolicyVersionRequest extends
      * Specifies whether to set this version as the policy's default version.
      * </p>
      * <p>
-     * When this parameter is <code>true</code>, the new policy version becomes
-     * the operative version; that is, the version that is in effect for the IAM
-     * users, groups, and roles that the policy is attached to.
+     * When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the
+     * version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      * </p>
      * <p>
-     * For more information about managed policy versions, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     * >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
+     * For more information about managed policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
-     * @return Specifies whether to set this version as the policy's default
-     *         version.</p>
+     * @return Specifies whether to set this version as the policy's default version.</p>
      *         <p>
-     *         When this parameter is <code>true</code>, the new policy version
-     *         becomes the operative version; that is, the version that is in
-     *         effect for the IAM users, groups, and roles that the policy is
-     *         attached to.
+     *         When this parameter is <code>true</code>, the new policy version becomes the operative version; that is,
+     *         the version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      *         </p>
      *         <p>
-     *         For more information about managed policy versions, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     *         >Versioning for Managed Policies</a> in the <i>IAM User
-     *         Guide</i>.
+     *         For more information about managed policy versions, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *         Managed Policies</a> in the <i>IAM User Guide</i>.
      */
 
     public Boolean getSetAsDefault() {
@@ -310,31 +263,26 @@ public class CreatePolicyVersionRequest extends
      * Specifies whether to set this version as the policy's default version.
      * </p>
      * <p>
-     * When this parameter is <code>true</code>, the new policy version becomes
-     * the operative version; that is, the version that is in effect for the IAM
-     * users, groups, and roles that the policy is attached to.
+     * When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the
+     * version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      * </p>
      * <p>
-     * For more information about managed policy versions, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     * >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
+     * For more information about managed policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param setAsDefault
-     *        Specifies whether to set this version as the policy's default
-     *        version.</p>
+     *        Specifies whether to set this version as the policy's default version.</p>
      *        <p>
-     *        When this parameter is <code>true</code>, the new policy version
-     *        becomes the operative version; that is, the version that is in
-     *        effect for the IAM users, groups, and roles that the policy is
-     *        attached to.
+     *        When this parameter is <code>true</code>, the new policy version becomes the operative version; that is,
+     *        the version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      *        </p>
      *        <p>
-     *        For more information about managed policy versions, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     *        >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information about managed policy versions, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *        Managed Policies</a> in the <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreatePolicyVersionRequest withSetAsDefault(Boolean setAsDefault) {
@@ -347,29 +295,24 @@ public class CreatePolicyVersionRequest extends
      * Specifies whether to set this version as the policy's default version.
      * </p>
      * <p>
-     * When this parameter is <code>true</code>, the new policy version becomes
-     * the operative version; that is, the version that is in effect for the IAM
-     * users, groups, and roles that the policy is attached to.
+     * When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the
+     * version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      * </p>
      * <p>
-     * For more information about managed policy versions, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     * >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
+     * For more information about managed policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
-     * @return Specifies whether to set this version as the policy's default
-     *         version.</p>
+     * @return Specifies whether to set this version as the policy's default version.</p>
      *         <p>
-     *         When this parameter is <code>true</code>, the new policy version
-     *         becomes the operative version; that is, the version that is in
-     *         effect for the IAM users, groups, and roles that the policy is
-     *         attached to.
+     *         When this parameter is <code>true</code>, the new policy version becomes the operative version; that is,
+     *         the version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      *         </p>
      *         <p>
-     *         For more information about managed policy versions, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
-     *         >Versioning for Managed Policies</a> in the <i>IAM User
-     *         Guide</i>.
+     *         For more information about managed policy versions, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *         Managed Policies</a> in the <i>IAM User Guide</i>.
      */
 
     public Boolean isSetAsDefault() {
@@ -377,8 +320,7 @@ public class CreatePolicyVersionRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -410,19 +352,15 @@ public class CreatePolicyVersionRequest extends
         CreatePolicyVersionRequest other = (CreatePolicyVersionRequest) obj;
         if (other.getPolicyArn() == null ^ this.getPolicyArn() == null)
             return false;
-        if (other.getPolicyArn() != null
-                && other.getPolicyArn().equals(this.getPolicyArn()) == false)
+        if (other.getPolicyArn() != null && other.getPolicyArn().equals(this.getPolicyArn()) == false)
             return false;
-        if (other.getPolicyDocument() == null
-                ^ this.getPolicyDocument() == null)
+        if (other.getPolicyDocument() == null ^ this.getPolicyDocument() == null)
             return false;
-        if (other.getPolicyDocument() != null
-                && other.getPolicyDocument().equals(this.getPolicyDocument()) == false)
+        if (other.getPolicyDocument() != null && other.getPolicyDocument().equals(this.getPolicyDocument()) == false)
             return false;
         if (other.getSetAsDefault() == null ^ this.getSetAsDefault() == null)
             return false;
-        if (other.getSetAsDefault() != null
-                && other.getSetAsDefault().equals(this.getSetAsDefault()) == false)
+        if (other.getSetAsDefault() != null && other.getSetAsDefault().equals(this.getSetAsDefault()) == false)
             return false;
         return true;
     }
@@ -432,16 +370,9 @@ public class CreatePolicyVersionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPolicyArn() == null) ? 0 : getPolicyArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPolicyDocument() == null) ? 0 : getPolicyDocument()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSetAsDefault() == null) ? 0 : getSetAsDefault()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPolicyArn() == null) ? 0 : getPolicyArn().hashCode());
+        hashCode = prime * hashCode + ((getPolicyDocument() == null) ? 0 : getPolicyDocument().hashCode());
+        hashCode = prime * hashCode + ((getSetAsDefault() == null) ? 0 : getSetAsDefault().hashCode());
         return hashCode;
     }
 

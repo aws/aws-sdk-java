@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticsearch.model;
 
@@ -19,31 +17,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code><a>ListTags</a></code> operation.
- * Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
- * are attached that you want to view are attached.
+ * Container for the parameters to the <code><a>ListTags</a></code> operation. Specify the <code>ARN</code> for the
+ * Elasticsearch domain to which the tags are attached that you want to view are attached.
  * </p>
  */
-public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify the <code>ARN</code> for the Elasticsearch domain to which the
-     * tags are attached that you want to view.
+     * Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.
      * </p>
      */
     private String aRN;
 
     /**
      * <p>
-     * Specify the <code>ARN</code> for the Elasticsearch domain to which the
-     * tags are attached that you want to view.
+     * Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.
      * </p>
      * 
      * @param aRN
-     *        Specify the <code>ARN</code> for the Elasticsearch domain to which
-     *        the tags are attached that you want to view.
+     *        Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to
+     *        view.
      */
 
     public void setARN(String aRN) {
@@ -52,12 +46,11 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the <code>ARN</code> for the Elasticsearch domain to which the
-     * tags are attached that you want to view.
+     * Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.
      * </p>
      * 
-     * @return Specify the <code>ARN</code> for the Elasticsearch domain to
-     *         which the tags are attached that you want to view.
+     * @return Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to
+     *         view.
      */
 
     public String getARN() {
@@ -66,15 +59,13 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the <code>ARN</code> for the Elasticsearch domain to which the
-     * tags are attached that you want to view.
+     * Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.
      * </p>
      * 
      * @param aRN
-     *        Specify the <code>ARN</code> for the Elasticsearch domain to which
-     *        the tags are attached that you want to view.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to
+     *        view.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsRequest withARN(String aRN) {
@@ -83,8 +74,7 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -112,8 +102,7 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
         ListTagsRequest other = (ListTagsRequest) obj;
         if (other.getARN() == null ^ this.getARN() == null)
             return false;
-        if (other.getARN() != null
-                && other.getARN().equals(this.getARN()) == false)
+        if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
             return false;
         return true;
     }
@@ -123,8 +112,7 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getARN() == null) ? 0 : getARN().hashCode());
+        hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         return hashCode;
     }
 

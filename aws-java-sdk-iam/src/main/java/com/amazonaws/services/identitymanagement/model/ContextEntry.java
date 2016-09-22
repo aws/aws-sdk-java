@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -18,14 +16,12 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about a condition context key. It includes the name of
- * the key and specifies the value (or values, if the context key supports
- * multiple values) to use in the simulation. This information is used when
+ * Contains information about a condition context key. It includes the name of the key and specifies the value (or
+ * values, if the context key supports multiple values) to use in the simulation. This information is used when
  * evaluating the <code>Condition</code> elements of the input policies.
  * </p>
  * <p>
- * This data type is used as an input parameter to
- * <code> <a>SimulateCustomPolicy</a> </code> and
+ * This data type is used as an input parameter to <code> <a>SimulateCustomPolicy</a> </code> and
  * <code> <a>SimulateCustomPolicy</a> </code>.
  * </p>
  */
@@ -33,37 +29,34 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The full name of a condition context key, including the service prefix.
-     * For example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.
+     * The full name of a condition context key, including the service prefix. For example, <code>aws:SourceIp</code> or
+     * <code>s3:VersionId</code>.
      * </p>
      */
     private String contextKeyName;
     /**
      * <p>
-     * The value (or values, if the condition context key supports multiple
-     * values) to provide to the simulation for use when the key is referenced
-     * by a <code>Condition</code> element in an input policy.
+     * The value (or values, if the condition context key supports multiple values) to provide to the simulation for use
+     * when the key is referenced by a <code>Condition</code> element in an input policy.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> contextKeyValues;
     /**
      * <p>
-     * The data type of the value (or values) specified in the
-     * <code>ContextKeyValues</code> parameter.
+     * The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.
      * </p>
      */
     private String contextKeyType;
 
     /**
      * <p>
-     * The full name of a condition context key, including the service prefix.
-     * For example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.
+     * The full name of a condition context key, including the service prefix. For example, <code>aws:SourceIp</code> or
+     * <code>s3:VersionId</code>.
      * </p>
      * 
      * @param contextKeyName
-     *        The full name of a condition context key, including the service
-     *        prefix. For example, <code>aws:SourceIp</code> or
-     *        <code>s3:VersionId</code>.
+     *        The full name of a condition context key, including the service prefix. For example,
+     *        <code>aws:SourceIp</code> or <code>s3:VersionId</code>.
      */
 
     public void setContextKeyName(String contextKeyName) {
@@ -72,13 +65,12 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The full name of a condition context key, including the service prefix.
-     * For example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.
+     * The full name of a condition context key, including the service prefix. For example, <code>aws:SourceIp</code> or
+     * <code>s3:VersionId</code>.
      * </p>
      * 
-     * @return The full name of a condition context key, including the service
-     *         prefix. For example, <code>aws:SourceIp</code> or
-     *         <code>s3:VersionId</code>.
+     * @return The full name of a condition context key, including the service prefix. For example,
+     *         <code>aws:SourceIp</code> or <code>s3:VersionId</code>.
      */
 
     public String getContextKeyName() {
@@ -87,16 +79,14 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The full name of a condition context key, including the service prefix.
-     * For example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.
+     * The full name of a condition context key, including the service prefix. For example, <code>aws:SourceIp</code> or
+     * <code>s3:VersionId</code>.
      * </p>
      * 
      * @param contextKeyName
-     *        The full name of a condition context key, including the service
-     *        prefix. For example, <code>aws:SourceIp</code> or
-     *        <code>s3:VersionId</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The full name of a condition context key, including the service prefix. For example,
+     *        <code>aws:SourceIp</code> or <code>s3:VersionId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContextEntry withContextKeyName(String contextKeyName) {
@@ -106,15 +96,12 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value (or values, if the condition context key supports multiple
-     * values) to provide to the simulation for use when the key is referenced
-     * by a <code>Condition</code> element in an input policy.
+     * The value (or values, if the condition context key supports multiple values) to provide to the simulation for use
+     * when the key is referenced by a <code>Condition</code> element in an input policy.
      * </p>
      * 
-     * @return The value (or values, if the condition context key supports
-     *         multiple values) to provide to the simulation for use when the
-     *         key is referenced by a <code>Condition</code> element in an input
-     *         policy.
+     * @return The value (or values, if the condition context key supports multiple values) to provide to the simulation
+     *         for use when the key is referenced by a <code>Condition</code> element in an input policy.
      */
 
     public java.util.List<String> getContextKeyValues() {
@@ -126,55 +113,44 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value (or values, if the condition context key supports multiple
-     * values) to provide to the simulation for use when the key is referenced
-     * by a <code>Condition</code> element in an input policy.
+     * The value (or values, if the condition context key supports multiple values) to provide to the simulation for use
+     * when the key is referenced by a <code>Condition</code> element in an input policy.
      * </p>
      * 
      * @param contextKeyValues
-     *        The value (or values, if the condition context key supports
-     *        multiple values) to provide to the simulation for use when the key
-     *        is referenced by a <code>Condition</code> element in an input
-     *        policy.
+     *        The value (or values, if the condition context key supports multiple values) to provide to the simulation
+     *        for use when the key is referenced by a <code>Condition</code> element in an input policy.
      */
 
-    public void setContextKeyValues(
-            java.util.Collection<String> contextKeyValues) {
+    public void setContextKeyValues(java.util.Collection<String> contextKeyValues) {
         if (contextKeyValues == null) {
             this.contextKeyValues = null;
             return;
         }
 
-        this.contextKeyValues = new com.amazonaws.internal.SdkInternalList<String>(
-                contextKeyValues);
+        this.contextKeyValues = new com.amazonaws.internal.SdkInternalList<String>(contextKeyValues);
     }
 
     /**
      * <p>
-     * The value (or values, if the condition context key supports multiple
-     * values) to provide to the simulation for use when the key is referenced
-     * by a <code>Condition</code> element in an input policy.
+     * The value (or values, if the condition context key supports multiple values) to provide to the simulation for use
+     * when the key is referenced by a <code>Condition</code> element in an input policy.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setContextKeyValues(java.util.Collection)} or
-     * {@link #withContextKeyValues(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setContextKeyValues(java.util.Collection)} or {@link #withContextKeyValues(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param contextKeyValues
-     *        The value (or values, if the condition context key supports
-     *        multiple values) to provide to the simulation for use when the key
-     *        is referenced by a <code>Condition</code> element in an input
-     *        policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value (or values, if the condition context key supports multiple values) to provide to the simulation
+     *        for use when the key is referenced by a <code>Condition</code> element in an input policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContextEntry withContextKeyValues(String... contextKeyValues) {
         if (this.contextKeyValues == null) {
-            setContextKeyValues(new com.amazonaws.internal.SdkInternalList<String>(
-                    contextKeyValues.length));
+            setContextKeyValues(new com.amazonaws.internal.SdkInternalList<String>(contextKeyValues.length));
         }
         for (String ele : contextKeyValues) {
             this.contextKeyValues.add(ele);
@@ -184,35 +160,28 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value (or values, if the condition context key supports multiple
-     * values) to provide to the simulation for use when the key is referenced
-     * by a <code>Condition</code> element in an input policy.
+     * The value (or values, if the condition context key supports multiple values) to provide to the simulation for use
+     * when the key is referenced by a <code>Condition</code> element in an input policy.
      * </p>
      * 
      * @param contextKeyValues
-     *        The value (or values, if the condition context key supports
-     *        multiple values) to provide to the simulation for use when the key
-     *        is referenced by a <code>Condition</code> element in an input
-     *        policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value (or values, if the condition context key supports multiple values) to provide to the simulation
+     *        for use when the key is referenced by a <code>Condition</code> element in an input policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ContextEntry withContextKeyValues(
-            java.util.Collection<String> contextKeyValues) {
+    public ContextEntry withContextKeyValues(java.util.Collection<String> contextKeyValues) {
         setContextKeyValues(contextKeyValues);
         return this;
     }
 
     /**
      * <p>
-     * The data type of the value (or values) specified in the
-     * <code>ContextKeyValues</code> parameter.
+     * The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.
      * </p>
      * 
      * @param contextKeyType
-     *        The data type of the value (or values) specified in the
-     *        <code>ContextKeyValues</code> parameter.
+     *        The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.
      * @see ContextKeyTypeEnum
      */
 
@@ -222,12 +191,10 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data type of the value (or values) specified in the
-     * <code>ContextKeyValues</code> parameter.
+     * The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.
      * </p>
      * 
-     * @return The data type of the value (or values) specified in the
-     *         <code>ContextKeyValues</code> parameter.
+     * @return The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.
      * @see ContextKeyTypeEnum
      */
 
@@ -237,15 +204,12 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data type of the value (or values) specified in the
-     * <code>ContextKeyValues</code> parameter.
+     * The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.
      * </p>
      * 
      * @param contextKeyType
-     *        The data type of the value (or values) specified in the
-     *        <code>ContextKeyValues</code> parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContextKeyTypeEnum
      */
 
@@ -256,13 +220,11 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data type of the value (or values) specified in the
-     * <code>ContextKeyValues</code> parameter.
+     * The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.
      * </p>
      * 
      * @param contextKeyType
-     *        The data type of the value (or values) specified in the
-     *        <code>ContextKeyValues</code> parameter.
+     *        The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.
      * @see ContextKeyTypeEnum
      */
 
@@ -272,15 +234,12 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data type of the value (or values) specified in the
-     * <code>ContextKeyValues</code> parameter.
+     * The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.
      * </p>
      * 
      * @param contextKeyType
-     *        The data type of the value (or values) specified in the
-     *        <code>ContextKeyValues</code> parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContextKeyTypeEnum
      */
 
@@ -290,8 +249,7 @@ public class ContextEntry implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -321,24 +279,17 @@ public class ContextEntry implements Serializable, Cloneable {
         if (obj instanceof ContextEntry == false)
             return false;
         ContextEntry other = (ContextEntry) obj;
-        if (other.getContextKeyName() == null
-                ^ this.getContextKeyName() == null)
+        if (other.getContextKeyName() == null ^ this.getContextKeyName() == null)
             return false;
-        if (other.getContextKeyName() != null
-                && other.getContextKeyName().equals(this.getContextKeyName()) == false)
+        if (other.getContextKeyName() != null && other.getContextKeyName().equals(this.getContextKeyName()) == false)
             return false;
-        if (other.getContextKeyValues() == null
-                ^ this.getContextKeyValues() == null)
+        if (other.getContextKeyValues() == null ^ this.getContextKeyValues() == null)
             return false;
-        if (other.getContextKeyValues() != null
-                && other.getContextKeyValues().equals(
-                        this.getContextKeyValues()) == false)
+        if (other.getContextKeyValues() != null && other.getContextKeyValues().equals(this.getContextKeyValues()) == false)
             return false;
-        if (other.getContextKeyType() == null
-                ^ this.getContextKeyType() == null)
+        if (other.getContextKeyType() == null ^ this.getContextKeyType() == null)
             return false;
-        if (other.getContextKeyType() != null
-                && other.getContextKeyType().equals(this.getContextKeyType()) == false)
+        if (other.getContextKeyType() != null && other.getContextKeyType().equals(this.getContextKeyType()) == false)
             return false;
         return true;
     }
@@ -348,18 +299,9 @@ public class ContextEntry implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getContextKeyName() == null) ? 0 : getContextKeyName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getContextKeyValues() == null) ? 0 : getContextKeyValues()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getContextKeyType() == null) ? 0 : getContextKeyType()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getContextKeyName() == null) ? 0 : getContextKeyName().hashCode());
+        hashCode = prime * hashCode + ((getContextKeyValues() == null) ? 0 : getContextKeyValues().hashCode());
+        hashCode = prime * hashCode + ((getContextKeyType() == null) ? 0 : getContextKeyType().hashCode());
         return hashCode;
     }
 
@@ -368,9 +310,7 @@ public class ContextEntry implements Serializable, Cloneable {
         try {
             return (ContextEntry) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.apigateway.model.transform;
 
@@ -43,76 +41,61 @@ import com.amazonaws.protocol.json.*;
 /**
  * CreateDeploymentRequest Marshaller
  */
-public class CreateDeploymentRequestMarshaller implements
-        Marshaller<Request<CreateDeploymentRequest>, CreateDeploymentRequest> {
+public class CreateDeploymentRequestMarshaller implements Marshaller<Request<CreateDeploymentRequest>, CreateDeploymentRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public CreateDeploymentRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public CreateDeploymentRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<CreateDeploymentRequest> marshall(
-            CreateDeploymentRequest createDeploymentRequest) {
+    public Request<CreateDeploymentRequest> marshall(CreateDeploymentRequest createDeploymentRequest) {
 
         if (createDeploymentRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDeploymentRequest> request = new DefaultRequest<CreateDeploymentRequest>(
-                createDeploymentRequest, "AmazonApiGateway");
+        Request<CreateDeploymentRequest> request = new DefaultRequest<CreateDeploymentRequest>(createDeploymentRequest, "AmazonApiGateway");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/restapis/{restapi_id}/deployments";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (createDeploymentRequest.getRestApiId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils
-                                .fromString(createDeploymentRequest
-                                        .getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (createDeploymentRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils.fromString(createDeploymentRequest.getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
             jsonGenerator.writeStartObject();
 
             if (createDeploymentRequest.getStageName() != null) {
-                jsonGenerator.writeFieldName("stageName").writeValue(
-                        createDeploymentRequest.getStageName());
+                jsonGenerator.writeFieldName("stageName").writeValue(createDeploymentRequest.getStageName());
             }
             if (createDeploymentRequest.getStageDescription() != null) {
-                jsonGenerator.writeFieldName("stageDescription").writeValue(
-                        createDeploymentRequest.getStageDescription());
+                jsonGenerator.writeFieldName("stageDescription").writeValue(createDeploymentRequest.getStageDescription());
             }
             if (createDeploymentRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(
-                        createDeploymentRequest.getDescription());
+                jsonGenerator.writeFieldName("description").writeValue(createDeploymentRequest.getDescription());
             }
             if (createDeploymentRequest.getCacheClusterEnabled() != null) {
-                jsonGenerator.writeFieldName("cacheClusterEnabled").writeValue(
-                        createDeploymentRequest.getCacheClusterEnabled());
+                jsonGenerator.writeFieldName("cacheClusterEnabled").writeValue(createDeploymentRequest.getCacheClusterEnabled());
             }
             if (createDeploymentRequest.getCacheClusterSize() != null) {
-                jsonGenerator.writeFieldName("cacheClusterSize").writeValue(
-                        createDeploymentRequest.getCacheClusterSize());
+                jsonGenerator.writeFieldName("cacheClusterSize").writeValue(createDeploymentRequest.getCacheClusterSize());
             }
 
-            java.util.Map<String, String> variablesMap = createDeploymentRequest
-                    .getVariables();
+            java.util.Map<String, String> variablesMap = createDeploymentRequest.getVariables();
             if (variablesMap != null) {
                 jsonGenerator.writeFieldName("variables");
                 jsonGenerator.writeStartObject();
 
-                for (Map.Entry<String, String> variablesMapValue : variablesMap
-                        .entrySet()) {
+                for (Map.Entry<String, String> variablesMapValue : variablesMap.entrySet()) {
                     if (variablesMapValue.getValue() != null) {
-                        jsonGenerator
-                                .writeFieldName(variablesMapValue.getKey());
+                        jsonGenerator.writeFieldName(variablesMapValue.getKey());
 
                         jsonGenerator.writeValue(variablesMapValue.getValue());
                     }
@@ -124,15 +107,12 @@ public class CreateDeploymentRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type",
-                        protocolFactory.getContentType());
+                request.addHeader("Content-Type", protocolFactory.getContentType());
             }
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

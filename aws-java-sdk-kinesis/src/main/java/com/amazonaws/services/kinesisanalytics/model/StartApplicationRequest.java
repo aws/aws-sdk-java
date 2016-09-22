@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesisanalytics.model;
 
@@ -20,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class StartApplicationRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class StartApplicationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -32,10 +28,9 @@ public class StartApplicationRequest extends
     private String applicationName;
     /**
      * <p>
-     * Identifies the specific input, by ID, that the application starts
-     * consuming. Amazon Kinesis Analytics starts reading the streaming source
-     * associated with the input. You can also specify where in the streaming
-     * source you want Amazon Kinesis Analytics to start reading.
+     * Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts
+     * reading the streaming source associated with the input. You can also specify where in the streaming source you
+     * want Amazon Kinesis Analytics to start reading.
      * </p>
      */
     private java.util.List<InputConfiguration> inputConfigurations;
@@ -72,8 +67,7 @@ public class StartApplicationRequest extends
      * 
      * @param applicationName
      *        Name of the application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StartApplicationRequest withApplicationName(String applicationName) {
@@ -83,17 +77,14 @@ public class StartApplicationRequest extends
 
     /**
      * <p>
-     * Identifies the specific input, by ID, that the application starts
-     * consuming. Amazon Kinesis Analytics starts reading the streaming source
-     * associated with the input. You can also specify where in the streaming
-     * source you want Amazon Kinesis Analytics to start reading.
+     * Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts
+     * reading the streaming source associated with the input. You can also specify where in the streaming source you
+     * want Amazon Kinesis Analytics to start reading.
      * </p>
      * 
-     * @return Identifies the specific input, by ID, that the application starts
-     *         consuming. Amazon Kinesis Analytics starts reading the streaming
-     *         source associated with the input. You can also specify where in
-     *         the streaming source you want Amazon Kinesis Analytics to start
-     *         reading.
+     * @return Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics
+     *         starts reading the streaming source associated with the input. You can also specify where in the
+     *         streaming source you want Amazon Kinesis Analytics to start reading.
      */
 
     public java.util.List<InputConfiguration> getInputConfigurations() {
@@ -102,60 +93,48 @@ public class StartApplicationRequest extends
 
     /**
      * <p>
-     * Identifies the specific input, by ID, that the application starts
-     * consuming. Amazon Kinesis Analytics starts reading the streaming source
-     * associated with the input. You can also specify where in the streaming
-     * source you want Amazon Kinesis Analytics to start reading.
+     * Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts
+     * reading the streaming source associated with the input. You can also specify where in the streaming source you
+     * want Amazon Kinesis Analytics to start reading.
      * </p>
      * 
      * @param inputConfigurations
-     *        Identifies the specific input, by ID, that the application starts
-     *        consuming. Amazon Kinesis Analytics starts reading the streaming
-     *        source associated with the input. You can also specify where in
-     *        the streaming source you want Amazon Kinesis Analytics to start
-     *        reading.
+     *        Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics
+     *        starts reading the streaming source associated with the input. You can also specify where in the streaming
+     *        source you want Amazon Kinesis Analytics to start reading.
      */
 
-    public void setInputConfigurations(
-            java.util.Collection<InputConfiguration> inputConfigurations) {
+    public void setInputConfigurations(java.util.Collection<InputConfiguration> inputConfigurations) {
         if (inputConfigurations == null) {
             this.inputConfigurations = null;
             return;
         }
 
-        this.inputConfigurations = new java.util.ArrayList<InputConfiguration>(
-                inputConfigurations);
+        this.inputConfigurations = new java.util.ArrayList<InputConfiguration>(inputConfigurations);
     }
 
     /**
      * <p>
-     * Identifies the specific input, by ID, that the application starts
-     * consuming. Amazon Kinesis Analytics starts reading the streaming source
-     * associated with the input. You can also specify where in the streaming
-     * source you want Amazon Kinesis Analytics to start reading.
+     * Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts
+     * reading the streaming source associated with the input. You can also specify where in the streaming source you
+     * want Amazon Kinesis Analytics to start reading.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInputConfigurations(java.util.Collection)} or
-     * {@link #withInputConfigurations(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInputConfigurations(java.util.Collection)} or {@link #withInputConfigurations(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param inputConfigurations
-     *        Identifies the specific input, by ID, that the application starts
-     *        consuming. Amazon Kinesis Analytics starts reading the streaming
-     *        source associated with the input. You can also specify where in
-     *        the streaming source you want Amazon Kinesis Analytics to start
-     *        reading.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics
+     *        starts reading the streaming source associated with the input. You can also specify where in the streaming
+     *        source you want Amazon Kinesis Analytics to start reading.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartApplicationRequest withInputConfigurations(
-            InputConfiguration... inputConfigurations) {
+    public StartApplicationRequest withInputConfigurations(InputConfiguration... inputConfigurations) {
         if (this.inputConfigurations == null) {
-            setInputConfigurations(new java.util.ArrayList<InputConfiguration>(
-                    inputConfigurations.length));
+            setInputConfigurations(new java.util.ArrayList<InputConfiguration>(inputConfigurations.length));
         }
         for (InputConfiguration ele : inputConfigurations) {
             this.inputConfigurations.add(ele);
@@ -165,31 +144,25 @@ public class StartApplicationRequest extends
 
     /**
      * <p>
-     * Identifies the specific input, by ID, that the application starts
-     * consuming. Amazon Kinesis Analytics starts reading the streaming source
-     * associated with the input. You can also specify where in the streaming
-     * source you want Amazon Kinesis Analytics to start reading.
+     * Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts
+     * reading the streaming source associated with the input. You can also specify where in the streaming source you
+     * want Amazon Kinesis Analytics to start reading.
      * </p>
      * 
      * @param inputConfigurations
-     *        Identifies the specific input, by ID, that the application starts
-     *        consuming. Amazon Kinesis Analytics starts reading the streaming
-     *        source associated with the input. You can also specify where in
-     *        the streaming source you want Amazon Kinesis Analytics to start
-     *        reading.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics
+     *        starts reading the streaming source associated with the input. You can also specify where in the streaming
+     *        source you want Amazon Kinesis Analytics to start reading.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartApplicationRequest withInputConfigurations(
-            java.util.Collection<InputConfiguration> inputConfigurations) {
+    public StartApplicationRequest withInputConfigurations(java.util.Collection<InputConfiguration> inputConfigurations) {
         setInputConfigurations(inputConfigurations);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -217,18 +190,13 @@ public class StartApplicationRequest extends
         if (obj instanceof StartApplicationRequest == false)
             return false;
         StartApplicationRequest other = (StartApplicationRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
-        if (other.getInputConfigurations() == null
-                ^ this.getInputConfigurations() == null)
+        if (other.getInputConfigurations() == null ^ this.getInputConfigurations() == null)
             return false;
-        if (other.getInputConfigurations() != null
-                && other.getInputConfigurations().equals(
-                        this.getInputConfigurations()) == false)
+        if (other.getInputConfigurations() != null && other.getInputConfigurations().equals(this.getInputConfigurations()) == false)
             return false;
         return true;
     }
@@ -238,14 +206,8 @@ public class StartApplicationRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInputConfigurations() == null) ? 0
-                        : getInputConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getInputConfigurations() == null) ? 0 : getInputConfigurations().hashCode());
         return hashCode;
     }
 

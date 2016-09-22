@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatchevents.model;
 
@@ -22,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <a>RemoveTargets</a> operation.
  * </p>
  */
-public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -70,8 +67,7 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param rule
      *        The name of the rule you want to remove targets from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTargetsRequest withRule(String rule) {
@@ -114,16 +110,14 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest
      * The list of target IDs to remove from the rule.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setIds(java.util.Collection)} or
-     * {@link #withIds(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIds(java.util.Collection)} or {@link #withIds(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param ids
      *        The list of target IDs to remove from the rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTargetsRequest withIds(String... ids) {
@@ -143,8 +137,7 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param ids
      *        The list of target IDs to remove from the rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTargetsRequest withIds(java.util.Collection<String> ids) {
@@ -153,8 +146,7 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -184,13 +176,11 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest
         RemoveTargetsRequest other = (RemoveTargetsRequest) obj;
         if (other.getRule() == null ^ this.getRule() == null)
             return false;
-        if (other.getRule() != null
-                && other.getRule().equals(this.getRule()) == false)
+        if (other.getRule() != null && other.getRule().equals(this.getRule()) == false)
             return false;
         if (other.getIds() == null ^ this.getIds() == null)
             return false;
-        if (other.getIds() != null
-                && other.getIds().equals(this.getIds()) == false)
+        if (other.getIds() != null && other.getIds().equals(this.getIds()) == false)
             return false;
         return true;
     }
@@ -200,10 +190,8 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRule() == null) ? 0 : getRule().hashCode());
-        hashCode = prime * hashCode
-                + ((getIds() == null) ? 0 : getIds().hashCode());
+        hashCode = prime * hashCode + ((getRule() == null) ? 0 : getRule().hashCode());
+        hashCode = prime * hashCode + ((getIds() == null) ? 0 : getIds().hashCode());
         return hashCode;
     }
 

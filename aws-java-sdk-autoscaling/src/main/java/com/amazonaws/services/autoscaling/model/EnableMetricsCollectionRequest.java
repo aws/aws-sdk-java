@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for EnableMetricsCollection.
  * </p>
  */
-public class EnableMetricsCollectionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,8 +30,7 @@ public class EnableMetricsCollectionRequest extends
     private String autoScalingGroupName;
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all
-     * metrics are enabled.
+     * One or more of the following metrics. If you omit this parameter, all metrics are enabled.
      * </p>
      * <ul>
      * <li>
@@ -83,8 +78,7 @@ public class EnableMetricsCollectionRequest extends
     private com.amazonaws.internal.SdkInternalList<String> metrics;
     /**
      * <p>
-     * The granularity to associate with the metrics to collect. The only valid
-     * value is <code>1Minute</code>.
+     * The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
      * </p>
      */
     private String granularity;
@@ -121,20 +115,17 @@ public class EnableMetricsCollectionRequest extends
      * 
      * @param autoScalingGroupName
      *        The name or ARN of the Auto Scaling group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EnableMetricsCollectionRequest withAutoScalingGroupName(
-            String autoScalingGroupName) {
+    public EnableMetricsCollectionRequest withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
 
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all
-     * metrics are enabled.
+     * One or more of the following metrics. If you omit this parameter, all metrics are enabled.
      * </p>
      * <ul>
      * <li>
@@ -179,8 +170,7 @@ public class EnableMetricsCollectionRequest extends
      * </li>
      * </ul>
      * 
-     * @return One or more of the following metrics. If you omit this parameter,
-     *         all metrics are enabled.</p>
+     * @return One or more of the following metrics. If you omit this parameter, all metrics are enabled.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -233,8 +223,7 @@ public class EnableMetricsCollectionRequest extends
 
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all
-     * metrics are enabled.
+     * One or more of the following metrics. If you omit this parameter, all metrics are enabled.
      * </p>
      * <ul>
      * <li>
@@ -280,8 +269,7 @@ public class EnableMetricsCollectionRequest extends
      * </ul>
      * 
      * @param metrics
-     *        One or more of the following metrics. If you omit this parameter,
-     *        all metrics are enabled.</p>
+     *        One or more of the following metrics. If you omit this parameter, all metrics are enabled.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -331,14 +319,12 @@ public class EnableMetricsCollectionRequest extends
             return;
         }
 
-        this.metrics = new com.amazonaws.internal.SdkInternalList<String>(
-                metrics);
+        this.metrics = new com.amazonaws.internal.SdkInternalList<String>(metrics);
     }
 
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all
-     * metrics are enabled.
+     * One or more of the following metrics. If you omit this parameter, all metrics are enabled.
      * </p>
      * <ul>
      * <li>
@@ -383,15 +369,13 @@ public class EnableMetricsCollectionRequest extends
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setMetrics(java.util.Collection)} or
-     * {@link #withMetrics(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMetrics(java.util.Collection)} or {@link #withMetrics(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param metrics
-     *        One or more of the following metrics. If you omit this parameter,
-     *        all metrics are enabled.</p>
+     *        One or more of the following metrics. If you omit this parameter, all metrics are enabled.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -433,14 +417,12 @@ public class EnableMetricsCollectionRequest extends
      *        <code>GroupTotalInstances</code>
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EnableMetricsCollectionRequest withMetrics(String... metrics) {
         if (this.metrics == null) {
-            setMetrics(new com.amazonaws.internal.SdkInternalList<String>(
-                    metrics.length));
+            setMetrics(new com.amazonaws.internal.SdkInternalList<String>(metrics.length));
         }
         for (String ele : metrics) {
             this.metrics.add(ele);
@@ -450,8 +432,7 @@ public class EnableMetricsCollectionRequest extends
 
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all
-     * metrics are enabled.
+     * One or more of the following metrics. If you omit this parameter, all metrics are enabled.
      * </p>
      * <ul>
      * <li>
@@ -497,8 +478,7 @@ public class EnableMetricsCollectionRequest extends
      * </ul>
      * 
      * @param metrics
-     *        One or more of the following metrics. If you omit this parameter,
-     *        all metrics are enabled.</p>
+     *        One or more of the following metrics. If you omit this parameter, all metrics are enabled.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -540,25 +520,21 @@ public class EnableMetricsCollectionRequest extends
      *        <code>GroupTotalInstances</code>
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EnableMetricsCollectionRequest withMetrics(
-            java.util.Collection<String> metrics) {
+    public EnableMetricsCollectionRequest withMetrics(java.util.Collection<String> metrics) {
         setMetrics(metrics);
         return this;
     }
 
     /**
      * <p>
-     * The granularity to associate with the metrics to collect. The only valid
-     * value is <code>1Minute</code>.
+     * The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
      * </p>
      * 
      * @param granularity
-     *        The granularity to associate with the metrics to collect. The only
-     *        valid value is <code>1Minute</code>.
+     *        The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
      */
 
     public void setGranularity(String granularity) {
@@ -567,12 +543,10 @@ public class EnableMetricsCollectionRequest extends
 
     /**
      * <p>
-     * The granularity to associate with the metrics to collect. The only valid
-     * value is <code>1Minute</code>.
+     * The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
      * </p>
      * 
-     * @return The granularity to associate with the metrics to collect. The
-     *         only valid value is <code>1Minute</code>.
+     * @return The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
      */
 
     public String getGranularity() {
@@ -581,15 +555,12 @@ public class EnableMetricsCollectionRequest extends
 
     /**
      * <p>
-     * The granularity to associate with the metrics to collect. The only valid
-     * value is <code>1Minute</code>.
+     * The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
      * </p>
      * 
      * @param granularity
-     *        The granularity to associate with the metrics to collect. The only
-     *        valid value is <code>1Minute</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EnableMetricsCollectionRequest withGranularity(String granularity) {
@@ -598,8 +569,7 @@ public class EnableMetricsCollectionRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -610,8 +580,7 @@ public class EnableMetricsCollectionRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
         if (getMetrics() != null)
             sb.append("Metrics: " + getMetrics() + ",");
         if (getGranularity() != null)
@@ -630,22 +599,17 @@ public class EnableMetricsCollectionRequest extends
         if (obj instanceof EnableMetricsCollectionRequest == false)
             return false;
         EnableMetricsCollectionRequest other = (EnableMetricsCollectionRequest) obj;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
         if (other.getMetrics() == null ^ this.getMetrics() == null)
             return false;
-        if (other.getMetrics() != null
-                && other.getMetrics().equals(this.getMetrics()) == false)
+        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
             return false;
         if (other.getGranularity() == null ^ this.getGranularity() == null)
             return false;
-        if (other.getGranularity() != null
-                && other.getGranularity().equals(this.getGranularity()) == false)
+        if (other.getGranularity() != null && other.getGranularity().equals(this.getGranularity()) == false)
             return false;
         return true;
     }
@@ -655,15 +619,9 @@ public class EnableMetricsCollectionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getGranularity() == null) ? 0 : getGranularity().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
+        hashCode = prime * hashCode + ((getGranularity() == null) ? 0 : getGranularity().hashCode());
         return hashCode;
     }
 

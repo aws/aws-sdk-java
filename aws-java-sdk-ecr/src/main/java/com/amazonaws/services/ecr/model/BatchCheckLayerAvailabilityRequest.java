@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecr.model;
 
@@ -20,22 +18,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class BatchCheckLayerAvailabilityRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class BatchCheckLayerAvailabilityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the image
-     * layers to check. If you do not specify a registry, the default registry
-     * is assumed.
+     * The AWS account ID associated with the registry that contains the image layers to check. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      */
     private String registryId;
     /**
      * <p>
-     * The name of the repository that is associated with the image layers to
-     * check.
+     * The name of the repository that is associated with the image layers to check.
      * </p>
      */
     private String repositoryName;
@@ -48,15 +42,13 @@ public class BatchCheckLayerAvailabilityRequest extends
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the image
-     * layers to check. If you do not specify a registry, the default registry
-     * is assumed.
+     * The AWS account ID associated with the registry that contains the image layers to check. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the
-     *        image layers to check. If you do not specify a registry, the
-     *        default registry is assumed.
+     *        The AWS account ID associated with the registry that contains the image layers to check. If you do not
+     *        specify a registry, the default registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -65,14 +57,12 @@ public class BatchCheckLayerAvailabilityRequest extends
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the image
-     * layers to check. If you do not specify a registry, the default registry
-     * is assumed.
+     * The AWS account ID associated with the registry that contains the image layers to check. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry that contains the
-     *         image layers to check. If you do not specify a registry, the
-     *         default registry is assumed.
+     * @return The AWS account ID associated with the registry that contains the image layers to check. If you do not
+     *         specify a registry, the default registry is assumed.
      */
 
     public String getRegistryId() {
@@ -81,17 +71,14 @@ public class BatchCheckLayerAvailabilityRequest extends
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the image
-     * layers to check. If you do not specify a registry, the default registry
-     * is assumed.
+     * The AWS account ID associated with the registry that contains the image layers to check. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the
-     *        image layers to check. If you do not specify a registry, the
-     *        default registry is assumed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS account ID associated with the registry that contains the image layers to check. If you do not
+     *        specify a registry, the default registry is assumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchCheckLayerAvailabilityRequest withRegistryId(String registryId) {
@@ -101,13 +88,11 @@ public class BatchCheckLayerAvailabilityRequest extends
 
     /**
      * <p>
-     * The name of the repository that is associated with the image layers to
-     * check.
+     * The name of the repository that is associated with the image layers to check.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository that is associated with the image
-     *        layers to check.
+     *        The name of the repository that is associated with the image layers to check.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -116,12 +101,10 @@ public class BatchCheckLayerAvailabilityRequest extends
 
     /**
      * <p>
-     * The name of the repository that is associated with the image layers to
-     * check.
+     * The name of the repository that is associated with the image layers to check.
      * </p>
      * 
-     * @return The name of the repository that is associated with the image
-     *         layers to check.
+     * @return The name of the repository that is associated with the image layers to check.
      */
 
     public String getRepositoryName() {
@@ -130,19 +113,15 @@ public class BatchCheckLayerAvailabilityRequest extends
 
     /**
      * <p>
-     * The name of the repository that is associated with the image layers to
-     * check.
+     * The name of the repository that is associated with the image layers to check.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository that is associated with the image
-     *        layers to check.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the repository that is associated with the image layers to check.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchCheckLayerAvailabilityRequest withRepositoryName(
-            String repositoryName) {
+    public BatchCheckLayerAvailabilityRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
     }
@@ -182,20 +161,17 @@ public class BatchCheckLayerAvailabilityRequest extends
      * The digests of the image layers to check.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLayerDigests(java.util.Collection)} or
-     * {@link #withLayerDigests(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLayerDigests(java.util.Collection)} or {@link #withLayerDigests(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param layerDigests
      *        The digests of the image layers to check.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchCheckLayerAvailabilityRequest withLayerDigests(
-            String... layerDigests) {
+    public BatchCheckLayerAvailabilityRequest withLayerDigests(String... layerDigests) {
         if (this.layerDigests == null) {
             setLayerDigests(new java.util.ArrayList<String>(layerDigests.length));
         }
@@ -212,19 +188,16 @@ public class BatchCheckLayerAvailabilityRequest extends
      * 
      * @param layerDigests
      *        The digests of the image layers to check.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchCheckLayerAvailabilityRequest withLayerDigests(
-            java.util.Collection<String> layerDigests) {
+    public BatchCheckLayerAvailabilityRequest withLayerDigests(java.util.Collection<String> layerDigests) {
         setLayerDigests(layerDigests);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -256,19 +229,15 @@ public class BatchCheckLayerAvailabilityRequest extends
         BatchCheckLayerAvailabilityRequest other = (BatchCheckLayerAvailabilityRequest) obj;
         if (other.getRegistryId() == null ^ this.getRegistryId() == null)
             return false;
-        if (other.getRegistryId() != null
-                && other.getRegistryId().equals(this.getRegistryId()) == false)
+        if (other.getRegistryId() != null && other.getRegistryId().equals(this.getRegistryId()) == false)
             return false;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
         if (other.getLayerDigests() == null ^ this.getLayerDigests() == null)
             return false;
-        if (other.getLayerDigests() != null
-                && other.getLayerDigests().equals(this.getLayerDigests()) == false)
+        if (other.getLayerDigests() != null && other.getLayerDigests().equals(this.getLayerDigests()) == false)
             return false;
         return true;
     }
@@ -278,16 +247,9 @@ public class BatchCheckLayerAvailabilityRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLayerDigests() == null) ? 0 : getLayerDigests()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getLayerDigests() == null) ? 0 : getLayerDigests().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model.transform;
 
@@ -35,26 +33,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeCommandsRequest Marshaller
  */
-public class DescribeCommandsRequestMarshaller implements
-        Marshaller<Request<DescribeCommandsRequest>, DescribeCommandsRequest> {
+public class DescribeCommandsRequestMarshaller implements Marshaller<Request<DescribeCommandsRequest>, DescribeCommandsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeCommandsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeCommandsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeCommandsRequest> marshall(
-            DescribeCommandsRequest describeCommandsRequest) {
+    public Request<DescribeCommandsRequest> marshall(DescribeCommandsRequest describeCommandsRequest) {
 
         if (describeCommandsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeCommandsRequest> request = new DefaultRequest<DescribeCommandsRequest>(
-                describeCommandsRequest, "AWSOpsWorks");
+        Request<DescribeCommandsRequest> request = new DefaultRequest<DescribeCommandsRequest>(describeCommandsRequest, "AWSOpsWorks");
         request.addHeader("X-Amz-Target", "OpsWorks_20130218.DescribeCommands");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -62,18 +55,15 @@ public class DescribeCommandsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (describeCommandsRequest.getDeploymentId() != null) {
-                jsonGenerator.writeFieldName("DeploymentId").writeValue(
-                        describeCommandsRequest.getDeploymentId());
+                jsonGenerator.writeFieldName("DeploymentId").writeValue(describeCommandsRequest.getDeploymentId());
             }
             if (describeCommandsRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(
-                        describeCommandsRequest.getInstanceId());
+                jsonGenerator.writeFieldName("InstanceId").writeValue(describeCommandsRequest.getInstanceId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> commandIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeCommandsRequest
@@ -93,12 +83,10 @@ public class DescribeCommandsRequestMarshaller implements
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

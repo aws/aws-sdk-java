@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model.transform;
 
@@ -43,27 +41,21 @@ import com.amazonaws.protocol.json.*;
 /**
  * ListEventSourceMappingsRequest Marshaller
  */
-public class ListEventSourceMappingsRequestMarshaller
-        implements
-        Marshaller<Request<ListEventSourceMappingsRequest>, ListEventSourceMappingsRequest> {
+public class ListEventSourceMappingsRequestMarshaller implements Marshaller<Request<ListEventSourceMappingsRequest>, ListEventSourceMappingsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public ListEventSourceMappingsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public ListEventSourceMappingsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<ListEventSourceMappingsRequest> marshall(
-            ListEventSourceMappingsRequest listEventSourceMappingsRequest) {
+    public Request<ListEventSourceMappingsRequest> marshall(ListEventSourceMappingsRequest listEventSourceMappingsRequest) {
 
         if (listEventSourceMappingsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListEventSourceMappingsRequest> request = new DefaultRequest<ListEventSourceMappingsRequest>(
-                listEventSourceMappingsRequest, "AWSLambda");
+        Request<ListEventSourceMappingsRequest> request = new DefaultRequest<ListEventSourceMappingsRequest>(listEventSourceMappingsRequest, "AWSLambda");
 
         request.setHttpMethod(HttpMethodName.GET);
 
@@ -72,25 +64,19 @@ public class ListEventSourceMappingsRequestMarshaller
         request.setResourcePath(uriResourcePath);
 
         if (listEventSourceMappingsRequest.getEventSourceArn() != null) {
-            request.addParameter("EventSourceArn", StringUtils
-                    .fromString(listEventSourceMappingsRequest
-                            .getEventSourceArn()));
+            request.addParameter("EventSourceArn", StringUtils.fromString(listEventSourceMappingsRequest.getEventSourceArn()));
         }
 
         if (listEventSourceMappingsRequest.getFunctionName() != null) {
-            request.addParameter("FunctionName", StringUtils
-                    .fromString(listEventSourceMappingsRequest
-                            .getFunctionName()));
+            request.addParameter("FunctionName", StringUtils.fromString(listEventSourceMappingsRequest.getFunctionName()));
         }
 
         if (listEventSourceMappingsRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils
-                    .fromString(listEventSourceMappingsRequest.getMarker()));
+            request.addParameter("Marker", StringUtils.fromString(listEventSourceMappingsRequest.getMarker()));
         }
 
         if (listEventSourceMappingsRequest.getMaxItems() != null) {
-            request.addParameter("MaxItems", StringUtils
-                    .fromInteger(listEventSourceMappingsRequest.getMaxItems()));
+            request.addParameter("MaxItems", StringUtils.fromInteger(listEventSourceMappingsRequest.getMaxItems()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

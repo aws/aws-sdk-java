@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.logs.model.transform;
 
@@ -35,8 +33,7 @@ import com.amazonaws.protocol.json.*;
 /**
  * PutLogEventsRequest Marshaller
  */
-public class PutLogEventsRequestMarshaller implements
-        Marshaller<Request<PutLogEventsRequest>, PutLogEventsRequest> {
+public class PutLogEventsRequestMarshaller implements Marshaller<Request<PutLogEventsRequest>, PutLogEventsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
@@ -44,16 +41,13 @@ public class PutLogEventsRequestMarshaller implements
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<PutLogEventsRequest> marshall(
-            PutLogEventsRequest putLogEventsRequest) {
+    public Request<PutLogEventsRequest> marshall(PutLogEventsRequest putLogEventsRequest) {
 
         if (putLogEventsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutLogEventsRequest> request = new DefaultRequest<PutLogEventsRequest>(
-                putLogEventsRequest, "AWSLogs");
+        Request<PutLogEventsRequest> request = new DefaultRequest<PutLogEventsRequest>(putLogEventsRequest, "AWSLogs");
         request.addHeader("X-Amz-Target", "Logs_20140328.PutLogEvents");
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -61,18 +55,15 @@ public class PutLogEventsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
             jsonGenerator.writeStartObject();
 
             if (putLogEventsRequest.getLogGroupName() != null) {
-                jsonGenerator.writeFieldName("logGroupName").writeValue(
-                        putLogEventsRequest.getLogGroupName());
+                jsonGenerator.writeFieldName("logGroupName").writeValue(putLogEventsRequest.getLogGroupName());
             }
             if (putLogEventsRequest.getLogStreamName() != null) {
-                jsonGenerator.writeFieldName("logStreamName").writeValue(
-                        putLogEventsRequest.getLogStreamName());
+                jsonGenerator.writeFieldName("logStreamName").writeValue(putLogEventsRequest.getLogStreamName());
             }
 
             com.amazonaws.internal.SdkInternalList<InputLogEvent> logEventsList = (com.amazonaws.internal.SdkInternalList<InputLogEvent>) putLogEventsRequest
@@ -83,27 +74,23 @@ public class PutLogEventsRequestMarshaller implements
                 for (InputLogEvent logEventsListValue : logEventsList) {
                     if (logEventsListValue != null) {
 
-                        InputLogEventJsonMarshaller.getInstance().marshall(
-                                logEventsListValue, jsonGenerator);
+                        InputLogEventJsonMarshaller.getInstance().marshall(logEventsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (putLogEventsRequest.getSequenceToken() != null) {
-                jsonGenerator.writeFieldName("sequenceToken").writeValue(
-                        putLogEventsRequest.getSequenceToken());
+                jsonGenerator.writeFieldName("sequenceToken").writeValue(putLogEventsRequest.getSequenceToken());
             }
 
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
             request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
+            request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

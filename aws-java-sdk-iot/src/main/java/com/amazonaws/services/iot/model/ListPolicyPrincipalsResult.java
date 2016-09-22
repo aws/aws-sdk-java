@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * The output from the ListPolicyPrincipals operation.
  * </p>
  */
-public class ListPolicyPrincipalsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListPolicyPrincipalsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +29,7 @@ public class ListPolicyPrincipalsResult extends
     private java.util.List<String> principals;
     /**
      * <p>
-     * The marker for the next set of results, or null if there are no
-     * additional results.
+     * The marker for the next set of results, or null if there are no additional results.
      * </p>
      */
     private String nextMarker;
@@ -74,16 +69,14 @@ public class ListPolicyPrincipalsResult extends
      * The descriptions of the principals.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPrincipals(java.util.Collection)} or
-     * {@link #withPrincipals(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPrincipals(java.util.Collection)} or {@link #withPrincipals(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param principals
      *        The descriptions of the principals.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPolicyPrincipalsResult withPrincipals(String... principals) {
@@ -103,25 +96,21 @@ public class ListPolicyPrincipalsResult extends
      * 
      * @param principals
      *        The descriptions of the principals.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListPolicyPrincipalsResult withPrincipals(
-            java.util.Collection<String> principals) {
+    public ListPolicyPrincipalsResult withPrincipals(java.util.Collection<String> principals) {
         setPrincipals(principals);
         return this;
     }
 
     /**
      * <p>
-     * The marker for the next set of results, or null if there are no
-     * additional results.
+     * The marker for the next set of results, or null if there are no additional results.
      * </p>
      * 
      * @param nextMarker
-     *        The marker for the next set of results, or null if there are no
-     *        additional results.
+     *        The marker for the next set of results, or null if there are no additional results.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -130,12 +119,10 @@ public class ListPolicyPrincipalsResult extends
 
     /**
      * <p>
-     * The marker for the next set of results, or null if there are no
-     * additional results.
+     * The marker for the next set of results, or null if there are no additional results.
      * </p>
      * 
-     * @return The marker for the next set of results, or null if there are no
-     *         additional results.
+     * @return The marker for the next set of results, or null if there are no additional results.
      */
 
     public String getNextMarker() {
@@ -144,15 +131,12 @@ public class ListPolicyPrincipalsResult extends
 
     /**
      * <p>
-     * The marker for the next set of results, or null if there are no
-     * additional results.
+     * The marker for the next set of results, or null if there are no additional results.
      * </p>
      * 
      * @param nextMarker
-     *        The marker for the next set of results, or null if there are no
-     *        additional results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The marker for the next set of results, or null if there are no additional results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPolicyPrincipalsResult withNextMarker(String nextMarker) {
@@ -161,8 +145,7 @@ public class ListPolicyPrincipalsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -192,13 +175,11 @@ public class ListPolicyPrincipalsResult extends
         ListPolicyPrincipalsResult other = (ListPolicyPrincipalsResult) obj;
         if (other.getPrincipals() == null ^ this.getPrincipals() == null)
             return false;
-        if (other.getPrincipals() != null
-                && other.getPrincipals().equals(this.getPrincipals()) == false)
+        if (other.getPrincipals() != null && other.getPrincipals().equals(this.getPrincipals()) == false)
             return false;
         if (other.getNextMarker() == null ^ this.getNextMarker() == null)
             return false;
-        if (other.getNextMarker() != null
-                && other.getNextMarker().equals(this.getNextMarker()) == false)
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false)
             return false;
         return true;
     }
@@ -208,10 +189,8 @@ public class ListPolicyPrincipalsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPrincipals() == null) ? 0 : getPrincipals().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
+        hashCode = prime * hashCode + ((getPrincipals() == null) ? 0 : getPrincipals().hashCode());
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
         return hashCode;
     }
 
@@ -220,9 +199,7 @@ public class ListPolicyPrincipalsResult extends
         try {
             return (ListPolicyPrincipalsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Represents the output of a list action types action.
  * </p>
  */
-public class ListActionTypesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListActionTypesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,9 +29,8 @@ public class ListActionTypesResult extends
     private java.util.List<ActionType> actionTypes;
     /**
      * <p>
-     * If the amount of returned information is significantly large, an
-     * identifier is also returned which can be used in a subsequent list action
-     * types call to return the next set of action types in the list.
+     * If the amount of returned information is significantly large, an identifier is also returned which can be used in
+     * a subsequent list action types call to return the next set of action types in the list.
      * </p>
      */
     private String nextToken;
@@ -75,22 +70,19 @@ public class ListActionTypesResult extends
      * Provides details of the action types.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setActionTypes(java.util.Collection)} or
-     * {@link #withActionTypes(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setActionTypes(java.util.Collection)} or {@link #withActionTypes(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param actionTypes
      *        Provides details of the action types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListActionTypesResult withActionTypes(ActionType... actionTypes) {
         if (this.actionTypes == null) {
-            setActionTypes(new java.util.ArrayList<ActionType>(
-                    actionTypes.length));
+            setActionTypes(new java.util.ArrayList<ActionType>(actionTypes.length));
         }
         for (ActionType ele : actionTypes) {
             this.actionTypes.add(ele);
@@ -105,28 +97,23 @@ public class ListActionTypesResult extends
      * 
      * @param actionTypes
      *        Provides details of the action types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListActionTypesResult withActionTypes(
-            java.util.Collection<ActionType> actionTypes) {
+    public ListActionTypesResult withActionTypes(java.util.Collection<ActionType> actionTypes) {
         setActionTypes(actionTypes);
         return this;
     }
 
     /**
      * <p>
-     * If the amount of returned information is significantly large, an
-     * identifier is also returned which can be used in a subsequent list action
-     * types call to return the next set of action types in the list.
+     * If the amount of returned information is significantly large, an identifier is also returned which can be used in
+     * a subsequent list action types call to return the next set of action types in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the amount of returned information is significantly large, an
-     *        identifier is also returned which can be used in a subsequent list
-     *        action types call to return the next set of action types in the
-     *        list.
+     *        If the amount of returned information is significantly large, an identifier is also returned which can be
+     *        used in a subsequent list action types call to return the next set of action types in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -135,15 +122,12 @@ public class ListActionTypesResult extends
 
     /**
      * <p>
-     * If the amount of returned information is significantly large, an
-     * identifier is also returned which can be used in a subsequent list action
-     * types call to return the next set of action types in the list.
+     * If the amount of returned information is significantly large, an identifier is also returned which can be used in
+     * a subsequent list action types call to return the next set of action types in the list.
      * </p>
      * 
-     * @return If the amount of returned information is significantly large, an
-     *         identifier is also returned which can be used in a subsequent
-     *         list action types call to return the next set of action types in
-     *         the list.
+     * @return If the amount of returned information is significantly large, an identifier is also returned which can be
+     *         used in a subsequent list action types call to return the next set of action types in the list.
      */
 
     public String getNextToken() {
@@ -152,18 +136,14 @@ public class ListActionTypesResult extends
 
     /**
      * <p>
-     * If the amount of returned information is significantly large, an
-     * identifier is also returned which can be used in a subsequent list action
-     * types call to return the next set of action types in the list.
+     * If the amount of returned information is significantly large, an identifier is also returned which can be used in
+     * a subsequent list action types call to return the next set of action types in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the amount of returned information is significantly large, an
-     *        identifier is also returned which can be used in a subsequent list
-     *        action types call to return the next set of action types in the
-     *        list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the amount of returned information is significantly large, an identifier is also returned which can be
+     *        used in a subsequent list action types call to return the next set of action types in the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListActionTypesResult withNextToken(String nextToken) {
@@ -172,8 +152,7 @@ public class ListActionTypesResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -203,13 +182,11 @@ public class ListActionTypesResult extends
         ListActionTypesResult other = (ListActionTypesResult) obj;
         if (other.getActionTypes() == null ^ this.getActionTypes() == null)
             return false;
-        if (other.getActionTypes() != null
-                && other.getActionTypes().equals(this.getActionTypes()) == false)
+        if (other.getActionTypes() != null && other.getActionTypes().equals(this.getActionTypes()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -219,11 +196,8 @@ public class ListActionTypesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getActionTypes() == null) ? 0 : getActionTypes().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getActionTypes() == null) ? 0 : getActionTypes().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -232,9 +206,7 @@ public class ListActionTypesResult extends
         try {
             return (ListActionTypesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

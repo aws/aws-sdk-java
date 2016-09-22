@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.ReportInstanceStatusRequestMar
  * Contains the parameters for ReportInstanceStatus.
  * </p>
  */
-public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class ReportInstanceStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<ReportInstanceStatusRequest> {
 
     /**
@@ -54,8 +51,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
     private java.util.Date endTime;
     /**
      * <p>
-     * One or more reason codes that describes the health state of your
-     * instance.
+     * One or more reason codes that describes the health state of your instance.
      * </p>
      * <ul>
      * <li>
@@ -70,38 +66,35 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>not-accepting-credentials</code>: My instance is not accepting my
-     * credentials.
+     * <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>password-not-available</code>: A password is not available for my
-     * instance.
+     * <code>password-not-available</code>: A password is not available for my instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-network</code>: My instance is experiencing performance
-     * problems which I believe are network related.
+     * <code>performance-network</code>: My instance is experiencing performance problems which I believe are network
+     * related.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-instance-store</code>: My instance is experiencing
-     * performance problems which I believe are related to the instance stores.
+     * <code>performance-instance-store</code>: My instance is experiencing performance problems which I believe are
+     * related to the instance stores.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-ebs-volume</code>: My instance is experiencing
-     * performance problems which I believe are related to an EBS volume.
+     * <code>performance-ebs-volume</code>: My instance is experiencing performance problems which I believe are related
+     * to an EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-other</code>: My instance is experiencing performance
-     * problems.
+     * <code>performance-other</code>: My instance is experiencing performance problems.
      * </p>
      * </li>
      * <li>
@@ -149,8 +142,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.instances = new com.amazonaws.internal.SdkInternalList<String>(
-                instances);
+        this.instances = new com.amazonaws.internal.SdkInternalList<String>(instances);
     }
 
     /**
@@ -158,22 +150,19 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * One or more instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstances(java.util.Collection)} or
-     * {@link #withInstances(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstances(java.util.Collection)} or {@link #withInstances(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param instances
      *        One or more instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReportInstanceStatusRequest withInstances(String... instances) {
         if (this.instances == null) {
-            setInstances(new com.amazonaws.internal.SdkInternalList<String>(
-                    instances.length));
+            setInstances(new com.amazonaws.internal.SdkInternalList<String>(instances.length));
         }
         for (String ele : instances) {
             this.instances.add(ele);
@@ -188,12 +177,10 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * 
      * @param instances
      *        One or more instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReportInstanceStatusRequest withInstances(
-            java.util.Collection<String> instances) {
+    public ReportInstanceStatusRequest withInstances(java.util.Collection<String> instances) {
         setInstances(instances);
         return this;
     }
@@ -232,8 +219,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * 
      * @param status
      *        The status of all instances listed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReportStatusType
      */
 
@@ -263,8 +249,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * 
      * @param status
      *        The status of all instances listed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReportStatusType
      */
 
@@ -305,8 +290,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * 
      * @param startTime
      *        The time at which the reported instance health state began.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReportInstanceStatusRequest withStartTime(java.util.Date startTime) {
@@ -346,8 +330,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * 
      * @param endTime
      *        The time at which the reported instance health state ended.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReportInstanceStatusRequest withEndTime(java.util.Date endTime) {
@@ -357,8 +340,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more reason codes that describes the health state of your
-     * instance.
+     * One or more reason codes that describes the health state of your instance.
      * </p>
      * <ul>
      * <li>
@@ -373,38 +355,35 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>not-accepting-credentials</code>: My instance is not accepting my
-     * credentials.
+     * <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>password-not-available</code>: A password is not available for my
-     * instance.
+     * <code>password-not-available</code>: A password is not available for my instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-network</code>: My instance is experiencing performance
-     * problems which I believe are network related.
+     * <code>performance-network</code>: My instance is experiencing performance problems which I believe are network
+     * related.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-instance-store</code>: My instance is experiencing
-     * performance problems which I believe are related to the instance stores.
+     * <code>performance-instance-store</code>: My instance is experiencing performance problems which I believe are
+     * related to the instance stores.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-ebs-volume</code>: My instance is experiencing
-     * performance problems which I believe are related to an EBS volume.
+     * <code>performance-ebs-volume</code>: My instance is experiencing performance problems which I believe are related
+     * to an EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-other</code>: My instance is experiencing performance
-     * problems.
+     * <code>performance-other</code>: My instance is experiencing performance problems.
      * </p>
      * </li>
      * <li>
@@ -414,13 +393,11 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * </li>
      * </ul>
      * 
-     * @return One or more reason codes that describes the health state of your
-     *         instance.</p>
+     * @return One or more reason codes that describes the health state of your instance.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>instance-stuck-in-state</code>: My instance is stuck in a
-     *         state.
+     *         <code>instance-stuck-in-state</code>: My instance is stuck in a state.
      *         </p>
      *         </li>
      *         <li>
@@ -430,40 +407,35 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>not-accepting-credentials</code>: My instance is not
-     *         accepting my credentials.
+     *         <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>password-not-available</code>: A password is not available
-     *         for my instance.
+     *         <code>password-not-available</code>: A password is not available for my instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>performance-network</code>: My instance is experiencing
-     *         performance problems which I believe are network related.
+     *         <code>performance-network</code>: My instance is experiencing performance problems which I believe are
+     *         network related.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>performance-instance-store</code>: My instance is
-     *         experiencing performance problems which I believe are related to
-     *         the instance stores.
+     *         <code>performance-instance-store</code>: My instance is experiencing performance problems which I believe
+     *         are related to the instance stores.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>performance-ebs-volume</code>: My instance is experiencing
-     *         performance problems which I believe are related to an EBS
-     *         volume.
+     *         <code>performance-ebs-volume</code>: My instance is experiencing performance problems which I believe are
+     *         related to an EBS volume.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>performance-other</code>: My instance is experiencing
-     *         performance problems.
+     *         <code>performance-other</code>: My instance is experiencing performance problems.
      *         </p>
      *         </li>
      *         <li>
@@ -483,8 +455,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more reason codes that describes the health state of your
-     * instance.
+     * One or more reason codes that describes the health state of your instance.
      * </p>
      * <ul>
      * <li>
@@ -499,38 +470,35 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>not-accepting-credentials</code>: My instance is not accepting my
-     * credentials.
+     * <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>password-not-available</code>: A password is not available for my
-     * instance.
+     * <code>password-not-available</code>: A password is not available for my instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-network</code>: My instance is experiencing performance
-     * problems which I believe are network related.
+     * <code>performance-network</code>: My instance is experiencing performance problems which I believe are network
+     * related.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-instance-store</code>: My instance is experiencing
-     * performance problems which I believe are related to the instance stores.
+     * <code>performance-instance-store</code>: My instance is experiencing performance problems which I believe are
+     * related to the instance stores.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-ebs-volume</code>: My instance is experiencing
-     * performance problems which I believe are related to an EBS volume.
+     * <code>performance-ebs-volume</code>: My instance is experiencing performance problems which I believe are related
+     * to an EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-other</code>: My instance is experiencing performance
-     * problems.
+     * <code>performance-other</code>: My instance is experiencing performance problems.
      * </p>
      * </li>
      * <li>
@@ -541,13 +509,11 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * </ul>
      * 
      * @param reasonCodes
-     *        One or more reason codes that describes the health state of your
-     *        instance.</p>
+     *        One or more reason codes that describes the health state of your instance.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-stuck-in-state</code>: My instance is stuck in a
-     *        state.
+     *        <code>instance-stuck-in-state</code>: My instance is stuck in a state.
      *        </p>
      *        </li>
      *        <li>
@@ -557,39 +523,35 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>not-accepting-credentials</code>: My instance is not
-     *        accepting my credentials.
+     *        <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>password-not-available</code>: A password is not available
-     *        for my instance.
+     *        <code>password-not-available</code>: A password is not available for my instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-network</code>: My instance is experiencing
-     *        performance problems which I believe are network related.
+     *        <code>performance-network</code>: My instance is experiencing performance problems which I believe are
+     *        network related.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-instance-store</code>: My instance is
-     *        experiencing performance problems which I believe are related to
-     *        the instance stores.
+     *        <code>performance-instance-store</code>: My instance is experiencing performance problems which I believe
+     *        are related to the instance stores.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-ebs-volume</code>: My instance is experiencing
-     *        performance problems which I believe are related to an EBS volume.
+     *        <code>performance-ebs-volume</code>: My instance is experiencing performance problems which I believe are
+     *        related to an EBS volume.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-other</code>: My instance is experiencing
-     *        performance problems.
+     *        <code>performance-other</code>: My instance is experiencing performance problems.
      *        </p>
      *        </li>
      *        <li>
@@ -606,14 +568,12 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.reasonCodes = new com.amazonaws.internal.SdkInternalList<String>(
-                reasonCodes);
+        this.reasonCodes = new com.amazonaws.internal.SdkInternalList<String>(reasonCodes);
     }
 
     /**
      * <p>
-     * One or more reason codes that describes the health state of your
-     * instance.
+     * One or more reason codes that describes the health state of your instance.
      * </p>
      * <ul>
      * <li>
@@ -628,38 +588,35 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>not-accepting-credentials</code>: My instance is not accepting my
-     * credentials.
+     * <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>password-not-available</code>: A password is not available for my
-     * instance.
+     * <code>password-not-available</code>: A password is not available for my instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-network</code>: My instance is experiencing performance
-     * problems which I believe are network related.
+     * <code>performance-network</code>: My instance is experiencing performance problems which I believe are network
+     * related.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-instance-store</code>: My instance is experiencing
-     * performance problems which I believe are related to the instance stores.
+     * <code>performance-instance-store</code>: My instance is experiencing performance problems which I believe are
+     * related to the instance stores.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-ebs-volume</code>: My instance is experiencing
-     * performance problems which I believe are related to an EBS volume.
+     * <code>performance-ebs-volume</code>: My instance is experiencing performance problems which I believe are related
+     * to an EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-other</code>: My instance is experiencing performance
-     * problems.
+     * <code>performance-other</code>: My instance is experiencing performance problems.
      * </p>
      * </li>
      * <li>
@@ -669,20 +626,17 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setReasonCodes(java.util.Collection)} or
-     * {@link #withReasonCodes(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReasonCodes(java.util.Collection)} or {@link #withReasonCodes(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param reasonCodes
-     *        One or more reason codes that describes the health state of your
-     *        instance.</p>
+     *        One or more reason codes that describes the health state of your instance.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-stuck-in-state</code>: My instance is stuck in a
-     *        state.
+     *        <code>instance-stuck-in-state</code>: My instance is stuck in a state.
      *        </p>
      *        </li>
      *        <li>
@@ -692,39 +646,35 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>not-accepting-credentials</code>: My instance is not
-     *        accepting my credentials.
+     *        <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>password-not-available</code>: A password is not available
-     *        for my instance.
+     *        <code>password-not-available</code>: A password is not available for my instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-network</code>: My instance is experiencing
-     *        performance problems which I believe are network related.
+     *        <code>performance-network</code>: My instance is experiencing performance problems which I believe are
+     *        network related.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-instance-store</code>: My instance is
-     *        experiencing performance problems which I believe are related to
-     *        the instance stores.
+     *        <code>performance-instance-store</code>: My instance is experiencing performance problems which I believe
+     *        are related to the instance stores.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-ebs-volume</code>: My instance is experiencing
-     *        performance problems which I believe are related to an EBS volume.
+     *        <code>performance-ebs-volume</code>: My instance is experiencing performance problems which I believe are
+     *        related to an EBS volume.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-other</code>: My instance is experiencing
-     *        performance problems.
+     *        <code>performance-other</code>: My instance is experiencing performance problems.
      *        </p>
      *        </li>
      *        <li>
@@ -732,15 +682,13 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *        <code>other</code>: [explain using the description parameter]
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReportInstanceReasonCodes
      */
 
     public ReportInstanceStatusRequest withReasonCodes(String... reasonCodes) {
         if (this.reasonCodes == null) {
-            setReasonCodes(new com.amazonaws.internal.SdkInternalList<String>(
-                    reasonCodes.length));
+            setReasonCodes(new com.amazonaws.internal.SdkInternalList<String>(reasonCodes.length));
         }
         for (String ele : reasonCodes) {
             this.reasonCodes.add(ele);
@@ -750,8 +698,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more reason codes that describes the health state of your
-     * instance.
+     * One or more reason codes that describes the health state of your instance.
      * </p>
      * <ul>
      * <li>
@@ -766,38 +713,35 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>not-accepting-credentials</code>: My instance is not accepting my
-     * credentials.
+     * <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>password-not-available</code>: A password is not available for my
-     * instance.
+     * <code>password-not-available</code>: A password is not available for my instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-network</code>: My instance is experiencing performance
-     * problems which I believe are network related.
+     * <code>performance-network</code>: My instance is experiencing performance problems which I believe are network
+     * related.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-instance-store</code>: My instance is experiencing
-     * performance problems which I believe are related to the instance stores.
+     * <code>performance-instance-store</code>: My instance is experiencing performance problems which I believe are
+     * related to the instance stores.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-ebs-volume</code>: My instance is experiencing
-     * performance problems which I believe are related to an EBS volume.
+     * <code>performance-ebs-volume</code>: My instance is experiencing performance problems which I believe are related
+     * to an EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-other</code>: My instance is experiencing performance
-     * problems.
+     * <code>performance-other</code>: My instance is experiencing performance problems.
      * </p>
      * </li>
      * <li>
@@ -808,13 +752,11 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * </ul>
      * 
      * @param reasonCodes
-     *        One or more reason codes that describes the health state of your
-     *        instance.</p>
+     *        One or more reason codes that describes the health state of your instance.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-stuck-in-state</code>: My instance is stuck in a
-     *        state.
+     *        <code>instance-stuck-in-state</code>: My instance is stuck in a state.
      *        </p>
      *        </li>
      *        <li>
@@ -824,39 +766,35 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>not-accepting-credentials</code>: My instance is not
-     *        accepting my credentials.
+     *        <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>password-not-available</code>: A password is not available
-     *        for my instance.
+     *        <code>password-not-available</code>: A password is not available for my instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-network</code>: My instance is experiencing
-     *        performance problems which I believe are network related.
+     *        <code>performance-network</code>: My instance is experiencing performance problems which I believe are
+     *        network related.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-instance-store</code>: My instance is
-     *        experiencing performance problems which I believe are related to
-     *        the instance stores.
+     *        <code>performance-instance-store</code>: My instance is experiencing performance problems which I believe
+     *        are related to the instance stores.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-ebs-volume</code>: My instance is experiencing
-     *        performance problems which I believe are related to an EBS volume.
+     *        <code>performance-ebs-volume</code>: My instance is experiencing performance problems which I believe are
+     *        related to an EBS volume.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-other</code>: My instance is experiencing
-     *        performance problems.
+     *        <code>performance-other</code>: My instance is experiencing performance problems.
      *        </p>
      *        </li>
      *        <li>
@@ -864,21 +802,18 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *        <code>other</code>: [explain using the description parameter]
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReportInstanceReasonCodes
      */
 
-    public ReportInstanceStatusRequest withReasonCodes(
-            java.util.Collection<String> reasonCodes) {
+    public ReportInstanceStatusRequest withReasonCodes(java.util.Collection<String> reasonCodes) {
         setReasonCodes(reasonCodes);
         return this;
     }
 
     /**
      * <p>
-     * One or more reason codes that describes the health state of your
-     * instance.
+     * One or more reason codes that describes the health state of your instance.
      * </p>
      * <ul>
      * <li>
@@ -893,38 +828,35 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>not-accepting-credentials</code>: My instance is not accepting my
-     * credentials.
+     * <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>password-not-available</code>: A password is not available for my
-     * instance.
+     * <code>password-not-available</code>: A password is not available for my instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-network</code>: My instance is experiencing performance
-     * problems which I believe are network related.
+     * <code>performance-network</code>: My instance is experiencing performance problems which I believe are network
+     * related.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-instance-store</code>: My instance is experiencing
-     * performance problems which I believe are related to the instance stores.
+     * <code>performance-instance-store</code>: My instance is experiencing performance problems which I believe are
+     * related to the instance stores.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-ebs-volume</code>: My instance is experiencing
-     * performance problems which I believe are related to an EBS volume.
+     * <code>performance-ebs-volume</code>: My instance is experiencing performance problems which I believe are related
+     * to an EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>performance-other</code>: My instance is experiencing performance
-     * problems.
+     * <code>performance-other</code>: My instance is experiencing performance problems.
      * </p>
      * </li>
      * <li>
@@ -935,13 +867,11 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * </ul>
      * 
      * @param reasonCodes
-     *        One or more reason codes that describes the health state of your
-     *        instance.</p>
+     *        One or more reason codes that describes the health state of your instance.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-stuck-in-state</code>: My instance is stuck in a
-     *        state.
+     *        <code>instance-stuck-in-state</code>: My instance is stuck in a state.
      *        </p>
      *        </li>
      *        <li>
@@ -951,39 +881,35 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>not-accepting-credentials</code>: My instance is not
-     *        accepting my credentials.
+     *        <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>password-not-available</code>: A password is not available
-     *        for my instance.
+     *        <code>password-not-available</code>: A password is not available for my instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-network</code>: My instance is experiencing
-     *        performance problems which I believe are network related.
+     *        <code>performance-network</code>: My instance is experiencing performance problems which I believe are
+     *        network related.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-instance-store</code>: My instance is
-     *        experiencing performance problems which I believe are related to
-     *        the instance stores.
+     *        <code>performance-instance-store</code>: My instance is experiencing performance problems which I believe
+     *        are related to the instance stores.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-ebs-volume</code>: My instance is experiencing
-     *        performance problems which I believe are related to an EBS volume.
+     *        <code>performance-ebs-volume</code>: My instance is experiencing performance problems which I believe are
+     *        related to an EBS volume.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>performance-other</code>: My instance is experiencing
-     *        performance problems.
+     *        <code>performance-other</code>: My instance is experiencing performance problems.
      *        </p>
      *        </li>
      *        <li>
@@ -991,15 +917,12 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *        <code>other</code>: [explain using the description parameter]
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReportInstanceReasonCodes
      */
 
-    public ReportInstanceStatusRequest withReasonCodes(
-            ReportInstanceReasonCodes... reasonCodes) {
-        com.amazonaws.internal.SdkInternalList<String> reasonCodesCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                reasonCodes.length);
+    public ReportInstanceStatusRequest withReasonCodes(ReportInstanceReasonCodes... reasonCodes) {
+        com.amazonaws.internal.SdkInternalList<String> reasonCodesCopy = new com.amazonaws.internal.SdkInternalList<String>(reasonCodes.length);
         for (ReportInstanceReasonCodes value : reasonCodes) {
             reasonCodesCopy.add(value.toString());
         }
@@ -1043,8 +966,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * 
      * @param description
      *        Descriptive text about the health state of your instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReportInstanceStatusRequest withDescription(String description) {
@@ -1053,21 +975,18 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<ReportInstanceStatusRequest> getDryRunRequest() {
-        Request<ReportInstanceStatusRequest> request = new ReportInstanceStatusRequestMarshaller()
-                .marshall(this);
+        Request<ReportInstanceStatusRequest> request = new ReportInstanceStatusRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1105,33 +1024,27 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
         ReportInstanceStatusRequest other = (ReportInstanceStatusRequest) obj;
         if (other.getInstances() == null ^ this.getInstances() == null)
             return false;
-        if (other.getInstances() != null
-                && other.getInstances().equals(this.getInstances()) == false)
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
-        if (other.getStartTime() != null
-                && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
-        if (other.getEndTime() != null
-                && other.getEndTime().equals(this.getEndTime()) == false)
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
         if (other.getReasonCodes() == null ^ this.getReasonCodes() == null)
             return false;
-        if (other.getReasonCodes() != null
-                && other.getReasonCodes().equals(this.getReasonCodes()) == false)
+        if (other.getReasonCodes() != null && other.getReasonCodes().equals(this.getReasonCodes()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         return true;
     }
@@ -1141,20 +1054,12 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstances() == null) ? 0 : getInstances().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReasonCodes() == null) ? 0 : getReasonCodes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getReasonCodes() == null) ? 0 : getReasonCodes().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

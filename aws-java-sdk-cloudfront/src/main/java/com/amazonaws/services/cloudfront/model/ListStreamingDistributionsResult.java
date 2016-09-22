@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * The returned result of the corresponding request.
  */
-public class ListStreamingDistributionsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class ListStreamingDistributionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /** The StreamingDistributionList type. */
     private StreamingDistributionList streamingDistributionList;
@@ -33,8 +29,7 @@ public class ListStreamingDistributionsResult extends
      *        The StreamingDistributionList type.
      */
 
-    public void setStreamingDistributionList(
-            StreamingDistributionList streamingDistributionList) {
+    public void setStreamingDistributionList(StreamingDistributionList streamingDistributionList) {
         this.streamingDistributionList = streamingDistributionList;
     }
 
@@ -53,19 +48,16 @@ public class ListStreamingDistributionsResult extends
      * 
      * @param streamingDistributionList
      *        The StreamingDistributionList type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListStreamingDistributionsResult withStreamingDistributionList(
-            StreamingDistributionList streamingDistributionList) {
+    public ListStreamingDistributionsResult withStreamingDistributionList(StreamingDistributionList streamingDistributionList) {
         setStreamingDistributionList(streamingDistributionList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -76,8 +68,7 @@ public class ListStreamingDistributionsResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamingDistributionList() != null)
-            sb.append("StreamingDistributionList: "
-                    + getStreamingDistributionList());
+            sb.append("StreamingDistributionList: " + getStreamingDistributionList());
         sb.append("}");
         return sb.toString();
     }
@@ -92,12 +83,9 @@ public class ListStreamingDistributionsResult extends
         if (obj instanceof ListStreamingDistributionsResult == false)
             return false;
         ListStreamingDistributionsResult other = (ListStreamingDistributionsResult) obj;
-        if (other.getStreamingDistributionList() == null
-                ^ this.getStreamingDistributionList() == null)
+        if (other.getStreamingDistributionList() == null ^ this.getStreamingDistributionList() == null)
             return false;
-        if (other.getStreamingDistributionList() != null
-                && other.getStreamingDistributionList().equals(
-                        this.getStreamingDistributionList()) == false)
+        if (other.getStreamingDistributionList() != null && other.getStreamingDistributionList().equals(this.getStreamingDistributionList()) == false)
             return false;
         return true;
     }
@@ -107,10 +95,7 @@ public class ListStreamingDistributionsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getStreamingDistributionList() == null) ? 0
-                        : getStreamingDistributionList().hashCode());
+        hashCode = prime * hashCode + ((getStreamingDistributionList() == null) ? 0 : getStreamingDistributionList().hashCode());
         return hashCode;
     }
 
@@ -119,9 +104,7 @@ public class ListStreamingDistributionsResult extends
         try {
             return (ListStreamingDistributionsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

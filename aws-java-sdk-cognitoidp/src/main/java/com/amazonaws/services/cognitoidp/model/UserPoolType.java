@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model;
 
@@ -43,8 +41,7 @@ public class UserPoolType implements Serializable, Cloneable {
     private UserPoolPolicyType policies;
     /**
      * <p>
-     * A container describing the AWS Lambda triggers associated with a user
-     * pool.
+     * A container describing the AWS Lambda triggers associated with a user pool.
      * </p>
      */
     private LambdaConfigType lambdaConfig;
@@ -113,13 +110,10 @@ public class UserPoolType implements Serializable, Cloneable {
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be
-     * specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations.
-     * You can only specify required when you are initially creating a user
-     * pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to
-     * create an MFA token.</li>
+     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
+     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
+     * are initially creating a user pool.</li>
+     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
      * </ul>
      */
     private String mfaConfiguration;
@@ -149,15 +143,13 @@ public class UserPoolType implements Serializable, Cloneable {
     private SmsConfigurationType smsConfiguration;
     /**
      * <p>
-     * The reason why the SMS configuration cannot send the message(s) to your
-     * users.
+     * The reason why the SMS configuration cannot send the message(s) to your users.
      * </p>
      */
     private String smsConfigurationFailure;
     /**
      * <p>
-     * The reason why the email configuration cannot send the messages to your
-     * users.
+     * The reason why the email configuration cannot send the messages to your users.
      * </p>
      */
     private String emailConfigurationFailure;
@@ -194,8 +186,7 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param id
      *        The ID of the user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolType withId(String id) {
@@ -235,8 +226,7 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolType withName(String name) {
@@ -276,8 +266,7 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param policies
      *        A container describing the policies associated with a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolType withPolicies(UserPoolPolicyType policies) {
@@ -287,13 +276,11 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container describing the AWS Lambda triggers associated with a user
-     * pool.
+     * A container describing the AWS Lambda triggers associated with a user pool.
      * </p>
      * 
      * @param lambdaConfig
-     *        A container describing the AWS Lambda triggers associated with a
-     *        user pool.
+     *        A container describing the AWS Lambda triggers associated with a user pool.
      */
 
     public void setLambdaConfig(LambdaConfigType lambdaConfig) {
@@ -302,12 +289,10 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container describing the AWS Lambda triggers associated with a user
-     * pool.
+     * A container describing the AWS Lambda triggers associated with a user pool.
      * </p>
      * 
-     * @return A container describing the AWS Lambda triggers associated with a
-     *         user pool.
+     * @return A container describing the AWS Lambda triggers associated with a user pool.
      */
 
     public LambdaConfigType getLambdaConfig() {
@@ -316,15 +301,12 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container describing the AWS Lambda triggers associated with a user
-     * pool.
+     * A container describing the AWS Lambda triggers associated with a user pool.
      * </p>
      * 
      * @param lambdaConfig
-     *        A container describing the AWS Lambda triggers associated with a
-     *        user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A container describing the AWS Lambda triggers associated with a user pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolType withLambdaConfig(LambdaConfigType lambdaConfig) {
@@ -366,8 +348,7 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
 
@@ -397,8 +378,7 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
 
@@ -439,8 +419,7 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param lastModifiedDate
      *        The last modified date of a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolType withLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -480,8 +459,7 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param creationDate
      *        The creation date of a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolType withCreationDate(java.util.Date creationDate) {
@@ -510,15 +488,13 @@ public class UserPoolType implements Serializable, Cloneable {
      *        A container with the schema attributes of a user pool.
      */
 
-    public void setSchemaAttributes(
-            java.util.Collection<SchemaAttributeType> schemaAttributes) {
+    public void setSchemaAttributes(java.util.Collection<SchemaAttributeType> schemaAttributes) {
         if (schemaAttributes == null) {
             this.schemaAttributes = null;
             return;
         }
 
-        this.schemaAttributes = new java.util.ArrayList<SchemaAttributeType>(
-                schemaAttributes);
+        this.schemaAttributes = new java.util.ArrayList<SchemaAttributeType>(schemaAttributes);
     }
 
     /**
@@ -526,23 +502,19 @@ public class UserPoolType implements Serializable, Cloneable {
      * A container with the schema attributes of a user pool.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSchemaAttributes(java.util.Collection)} or
-     * {@link #withSchemaAttributes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSchemaAttributes(java.util.Collection)} or {@link #withSchemaAttributes(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param schemaAttributes
      *        A container with the schema attributes of a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolType withSchemaAttributes(
-            SchemaAttributeType... schemaAttributes) {
+    public UserPoolType withSchemaAttributes(SchemaAttributeType... schemaAttributes) {
         if (this.schemaAttributes == null) {
-            setSchemaAttributes(new java.util.ArrayList<SchemaAttributeType>(
-                    schemaAttributes.length));
+            setSchemaAttributes(new java.util.ArrayList<SchemaAttributeType>(schemaAttributes.length));
         }
         for (SchemaAttributeType ele : schemaAttributes) {
             this.schemaAttributes.add(ele);
@@ -557,12 +529,10 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param schemaAttributes
      *        A container with the schema attributes of a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolType withSchemaAttributes(
-            java.util.Collection<SchemaAttributeType> schemaAttributes) {
+    public UserPoolType withSchemaAttributes(java.util.Collection<SchemaAttributeType> schemaAttributes) {
         setSchemaAttributes(schemaAttributes);
         return this;
     }
@@ -590,15 +560,13 @@ public class UserPoolType implements Serializable, Cloneable {
      * @see VerifiedAttributeType
      */
 
-    public void setAutoVerifiedAttributes(
-            java.util.Collection<String> autoVerifiedAttributes) {
+    public void setAutoVerifiedAttributes(java.util.Collection<String> autoVerifiedAttributes) {
         if (autoVerifiedAttributes == null) {
             this.autoVerifiedAttributes = null;
             return;
         }
 
-        this.autoVerifiedAttributes = new java.util.ArrayList<String>(
-                autoVerifiedAttributes);
+        this.autoVerifiedAttributes = new java.util.ArrayList<String>(autoVerifiedAttributes);
     }
 
     /**
@@ -606,24 +574,20 @@ public class UserPoolType implements Serializable, Cloneable {
      * Specifies the attributes that are auto-verified in a user pool.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAutoVerifiedAttributes(java.util.Collection)} or
-     * {@link #withAutoVerifiedAttributes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAutoVerifiedAttributes(java.util.Collection)} or
+     * {@link #withAutoVerifiedAttributes(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param autoVerifiedAttributes
      *        Specifies the attributes that are auto-verified in a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifiedAttributeType
      */
 
-    public UserPoolType withAutoVerifiedAttributes(
-            String... autoVerifiedAttributes) {
+    public UserPoolType withAutoVerifiedAttributes(String... autoVerifiedAttributes) {
         if (this.autoVerifiedAttributes == null) {
-            setAutoVerifiedAttributes(new java.util.ArrayList<String>(
-                    autoVerifiedAttributes.length));
+            setAutoVerifiedAttributes(new java.util.ArrayList<String>(autoVerifiedAttributes.length));
         }
         for (String ele : autoVerifiedAttributes) {
             this.autoVerifiedAttributes.add(ele);
@@ -638,13 +602,11 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param autoVerifiedAttributes
      *        Specifies the attributes that are auto-verified in a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifiedAttributeType
      */
 
-    public UserPoolType withAutoVerifiedAttributes(
-            java.util.Collection<String> autoVerifiedAttributes) {
+    public UserPoolType withAutoVerifiedAttributes(java.util.Collection<String> autoVerifiedAttributes) {
         setAutoVerifiedAttributes(autoVerifiedAttributes);
         return this;
     }
@@ -656,15 +618,12 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param autoVerifiedAttributes
      *        Specifies the attributes that are auto-verified in a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifiedAttributeType
      */
 
-    public UserPoolType withAutoVerifiedAttributes(
-            VerifiedAttributeType... autoVerifiedAttributes) {
-        java.util.ArrayList<String> autoVerifiedAttributesCopy = new java.util.ArrayList<String>(
-                autoVerifiedAttributes.length);
+    public UserPoolType withAutoVerifiedAttributes(VerifiedAttributeType... autoVerifiedAttributes) {
+        java.util.ArrayList<String> autoVerifiedAttributesCopy = new java.util.ArrayList<String>(autoVerifiedAttributes.length);
         for (VerifiedAttributeType value : autoVerifiedAttributes) {
             autoVerifiedAttributesCopy.add(value.toString());
         }
@@ -713,23 +672,20 @@ public class UserPoolType implements Serializable, Cloneable {
      * Specifies the attributes that are aliased in a user pool.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAliasAttributes(java.util.Collection)} or
-     * {@link #withAliasAttributes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAliasAttributes(java.util.Collection)} or {@link #withAliasAttributes(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param aliasAttributes
      *        Specifies the attributes that are aliased in a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AliasAttributeType
      */
 
     public UserPoolType withAliasAttributes(String... aliasAttributes) {
         if (this.aliasAttributes == null) {
-            setAliasAttributes(new java.util.ArrayList<String>(
-                    aliasAttributes.length));
+            setAliasAttributes(new java.util.ArrayList<String>(aliasAttributes.length));
         }
         for (String ele : aliasAttributes) {
             this.aliasAttributes.add(ele);
@@ -744,13 +700,11 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param aliasAttributes
      *        Specifies the attributes that are aliased in a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AliasAttributeType
      */
 
-    public UserPoolType withAliasAttributes(
-            java.util.Collection<String> aliasAttributes) {
+    public UserPoolType withAliasAttributes(java.util.Collection<String> aliasAttributes) {
         setAliasAttributes(aliasAttributes);
         return this;
     }
@@ -762,15 +716,12 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param aliasAttributes
      *        Specifies the attributes that are aliased in a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AliasAttributeType
      */
 
-    public UserPoolType withAliasAttributes(
-            AliasAttributeType... aliasAttributes) {
-        java.util.ArrayList<String> aliasAttributesCopy = new java.util.ArrayList<String>(
-                aliasAttributes.length);
+    public UserPoolType withAliasAttributes(AliasAttributeType... aliasAttributes) {
+        java.util.ArrayList<String> aliasAttributesCopy = new java.util.ArrayList<String>(aliasAttributes.length);
         for (AliasAttributeType value : aliasAttributes) {
             aliasAttributesCopy.add(value.toString());
         }
@@ -814,8 +765,7 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param smsVerificationMessage
      *        The contents of the SMS verification message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UserPoolType withSmsVerificationMessage(String smsVerificationMessage) {
@@ -855,12 +805,10 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param emailVerificationMessage
      *        The contents of the email verification message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolType withEmailVerificationMessage(
-            String emailVerificationMessage) {
+    public UserPoolType withEmailVerificationMessage(String emailVerificationMessage) {
         setEmailVerificationMessage(emailVerificationMessage);
         return this;
     }
@@ -897,12 +845,10 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param emailVerificationSubject
      *        The subject of the email verification message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolType withEmailVerificationSubject(
-            String emailVerificationSubject) {
+    public UserPoolType withEmailVerificationSubject(String emailVerificationSubject) {
         setEmailVerificationSubject(emailVerificationSubject);
         return this;
     }
@@ -939,12 +885,10 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param smsAuthenticationMessage
      *        The contents of the SMS authentication message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolType withSmsAuthenticationMessage(
-            String smsAuthenticationMessage) {
+    public UserPoolType withSmsAuthenticationMessage(String smsAuthenticationMessage) {
         setSmsAuthenticationMessage(smsAuthenticationMessage);
         return this;
     }
@@ -954,25 +898,19 @@ public class UserPoolType implements Serializable, Cloneable {
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be
-     * specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations.
-     * You can only specify required when you are initially creating a user
-     * pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to
-     * create an MFA token.</li>
+     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
+     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
+     * are initially creating a user pool.</li>
+     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be
-     *        specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user
-     *        registrations. You can only specify required when you are
-     *        initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering
-     *        to create an MFA token.</li>
+     *        <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
+     *        <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
+     *        when you are initially creating a user pool.</li>
+     *        <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
      * @see UserPoolMfaType
      */
 
@@ -985,24 +923,18 @@ public class UserPoolType implements Serializable, Cloneable {
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be
-     * specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations.
-     * You can only specify required when you are initially creating a user
-     * pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to
-     * create an MFA token.</li>
+     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
+     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
+     * are initially creating a user pool.</li>
+     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
      * </ul>
      * 
      * @return Can be one of the following values:</p>
      *         <ul>
-     *         <li><code>OFF</code> - MFA tokens are not required and cannot be
-     *         specified during user registration.</li>
-     *         <li><code>ON</code> - MFA tokens are required for all user
-     *         registrations. You can only specify required when you are
-     *         initially creating a user pool.</li>
-     *         <li><code>OPTIONAL</code> - Users have the option when
-     *         registering to create an MFA token.</li>
+     *         <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
+     *         <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
+     *         when you are initially creating a user pool.</li>
+     *         <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
      * @see UserPoolMfaType
      */
 
@@ -1015,27 +947,20 @@ public class UserPoolType implements Serializable, Cloneable {
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be
-     * specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations.
-     * You can only specify required when you are initially creating a user
-     * pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to
-     * create an MFA token.</li>
+     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
+     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
+     * are initially creating a user pool.</li>
+     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be
-     *        specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user
-     *        registrations. You can only specify required when you are
-     *        initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering
-     *        to create an MFA token.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
+     *        <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
+     *        when you are initially creating a user pool.</li>
+     *        <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserPoolMfaType
      */
 
@@ -1049,25 +974,19 @@ public class UserPoolType implements Serializable, Cloneable {
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be
-     * specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations.
-     * You can only specify required when you are initially creating a user
-     * pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to
-     * create an MFA token.</li>
+     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
+     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
+     * are initially creating a user pool.</li>
+     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be
-     *        specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user
-     *        registrations. You can only specify required when you are
-     *        initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering
-     *        to create an MFA token.</li>
+     *        <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
+     *        <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
+     *        when you are initially creating a user pool.</li>
+     *        <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
      * @see UserPoolMfaType
      */
 
@@ -1080,27 +999,20 @@ public class UserPoolType implements Serializable, Cloneable {
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be
-     * specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations.
-     * You can only specify required when you are initially creating a user
-     * pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to
-     * create an MFA token.</li>
+     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
+     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
+     * are initially creating a user pool.</li>
+     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be
-     *        specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user
-     *        registrations. You can only specify required when you are
-     *        initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering
-     *        to create an MFA token.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
+     *        <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
+     *        when you are initially creating a user pool.</li>
+     *        <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserPoolMfaType
      */
 
@@ -1118,8 +1030,7 @@ public class UserPoolType implements Serializable, Cloneable {
      *        The device configuration.
      */
 
-    public void setDeviceConfiguration(
-            DeviceConfigurationType deviceConfiguration) {
+    public void setDeviceConfiguration(DeviceConfigurationType deviceConfiguration) {
         this.deviceConfiguration = deviceConfiguration;
     }
 
@@ -1142,12 +1053,10 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param deviceConfiguration
      *        The device configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolType withDeviceConfiguration(
-            DeviceConfigurationType deviceConfiguration) {
+    public UserPoolType withDeviceConfiguration(DeviceConfigurationType deviceConfiguration) {
         setDeviceConfiguration(deviceConfiguration);
         return this;
     }
@@ -1184,12 +1093,10 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param estimatedNumberOfUsers
      *        A number estimating the size of the user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolType withEstimatedNumberOfUsers(
-            Integer estimatedNumberOfUsers) {
+    public UserPoolType withEstimatedNumberOfUsers(Integer estimatedNumberOfUsers) {
         setEstimatedNumberOfUsers(estimatedNumberOfUsers);
         return this;
     }
@@ -1226,12 +1133,10 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param emailConfiguration
      *        The email configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolType withEmailConfiguration(
-            EmailConfigurationType emailConfiguration) {
+    public UserPoolType withEmailConfiguration(EmailConfigurationType emailConfiguration) {
         setEmailConfiguration(emailConfiguration);
         return this;
     }
@@ -1268,25 +1173,21 @@ public class UserPoolType implements Serializable, Cloneable {
      * 
      * @param smsConfiguration
      *        The SMS configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolType withSmsConfiguration(
-            SmsConfigurationType smsConfiguration) {
+    public UserPoolType withSmsConfiguration(SmsConfigurationType smsConfiguration) {
         setSmsConfiguration(smsConfiguration);
         return this;
     }
 
     /**
      * <p>
-     * The reason why the SMS configuration cannot send the message(s) to your
-     * users.
+     * The reason why the SMS configuration cannot send the message(s) to your users.
      * </p>
      * 
      * @param smsConfigurationFailure
-     *        The reason why the SMS configuration cannot send the message(s) to
-     *        your users.
+     *        The reason why the SMS configuration cannot send the message(s) to your users.
      */
 
     public void setSmsConfigurationFailure(String smsConfigurationFailure) {
@@ -1295,12 +1196,10 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason why the SMS configuration cannot send the message(s) to your
-     * users.
+     * The reason why the SMS configuration cannot send the message(s) to your users.
      * </p>
      * 
-     * @return The reason why the SMS configuration cannot send the message(s)
-     *         to your users.
+     * @return The reason why the SMS configuration cannot send the message(s) to your users.
      */
 
     public String getSmsConfigurationFailure() {
@@ -1309,32 +1208,26 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason why the SMS configuration cannot send the message(s) to your
-     * users.
+     * The reason why the SMS configuration cannot send the message(s) to your users.
      * </p>
      * 
      * @param smsConfigurationFailure
-     *        The reason why the SMS configuration cannot send the message(s) to
-     *        your users.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The reason why the SMS configuration cannot send the message(s) to your users.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolType withSmsConfigurationFailure(
-            String smsConfigurationFailure) {
+    public UserPoolType withSmsConfigurationFailure(String smsConfigurationFailure) {
         setSmsConfigurationFailure(smsConfigurationFailure);
         return this;
     }
 
     /**
      * <p>
-     * The reason why the email configuration cannot send the messages to your
-     * users.
+     * The reason why the email configuration cannot send the messages to your users.
      * </p>
      * 
      * @param emailConfigurationFailure
-     *        The reason why the email configuration cannot send the messages to
-     *        your users.
+     *        The reason why the email configuration cannot send the messages to your users.
      */
 
     public void setEmailConfigurationFailure(String emailConfigurationFailure) {
@@ -1343,12 +1236,10 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason why the email configuration cannot send the messages to your
-     * users.
+     * The reason why the email configuration cannot send the messages to your users.
      * </p>
      * 
-     * @return The reason why the email configuration cannot send the messages
-     *         to your users.
+     * @return The reason why the email configuration cannot send the messages to your users.
      */
 
     public String getEmailConfigurationFailure() {
@@ -1357,26 +1248,21 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason why the email configuration cannot send the messages to your
-     * users.
+     * The reason why the email configuration cannot send the messages to your users.
      * </p>
      * 
      * @param emailConfigurationFailure
-     *        The reason why the email configuration cannot send the messages to
-     *        your users.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The reason why the email configuration cannot send the messages to your users.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserPoolType withEmailConfigurationFailure(
-            String emailConfigurationFailure) {
+    public UserPoolType withEmailConfigurationFailure(String emailConfigurationFailure) {
         setEmailConfigurationFailure(emailConfigurationFailure);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1403,39 +1289,31 @@ public class UserPoolType implements Serializable, Cloneable {
         if (getSchemaAttributes() != null)
             sb.append("SchemaAttributes: " + getSchemaAttributes() + ",");
         if (getAutoVerifiedAttributes() != null)
-            sb.append("AutoVerifiedAttributes: " + getAutoVerifiedAttributes()
-                    + ",");
+            sb.append("AutoVerifiedAttributes: " + getAutoVerifiedAttributes() + ",");
         if (getAliasAttributes() != null)
             sb.append("AliasAttributes: " + getAliasAttributes() + ",");
         if (getSmsVerificationMessage() != null)
-            sb.append("SmsVerificationMessage: " + getSmsVerificationMessage()
-                    + ",");
+            sb.append("SmsVerificationMessage: " + getSmsVerificationMessage() + ",");
         if (getEmailVerificationMessage() != null)
-            sb.append("EmailVerificationMessage: "
-                    + getEmailVerificationMessage() + ",");
+            sb.append("EmailVerificationMessage: " + getEmailVerificationMessage() + ",");
         if (getEmailVerificationSubject() != null)
-            sb.append("EmailVerificationSubject: "
-                    + getEmailVerificationSubject() + ",");
+            sb.append("EmailVerificationSubject: " + getEmailVerificationSubject() + ",");
         if (getSmsAuthenticationMessage() != null)
-            sb.append("SmsAuthenticationMessage: "
-                    + getSmsAuthenticationMessage() + ",");
+            sb.append("SmsAuthenticationMessage: " + getSmsAuthenticationMessage() + ",");
         if (getMfaConfiguration() != null)
             sb.append("MfaConfiguration: " + getMfaConfiguration() + ",");
         if (getDeviceConfiguration() != null)
             sb.append("DeviceConfiguration: " + getDeviceConfiguration() + ",");
         if (getEstimatedNumberOfUsers() != null)
-            sb.append("EstimatedNumberOfUsers: " + getEstimatedNumberOfUsers()
-                    + ",");
+            sb.append("EstimatedNumberOfUsers: " + getEstimatedNumberOfUsers() + ",");
         if (getEmailConfiguration() != null)
             sb.append("EmailConfiguration: " + getEmailConfiguration() + ",");
         if (getSmsConfiguration() != null)
             sb.append("SmsConfiguration: " + getSmsConfiguration() + ",");
         if (getSmsConfigurationFailure() != null)
-            sb.append("SmsConfigurationFailure: "
-                    + getSmsConfigurationFailure() + ",");
+            sb.append("SmsConfigurationFailure: " + getSmsConfigurationFailure() + ",");
         if (getEmailConfigurationFailure() != null)
-            sb.append("EmailConfigurationFailure: "
-                    + getEmailConfigurationFailure());
+            sb.append("EmailConfigurationFailure: " + getEmailConfigurationFailure());
         sb.append("}");
         return sb.toString();
     }
@@ -1452,137 +1330,87 @@ public class UserPoolType implements Serializable, Cloneable {
         UserPoolType other = (UserPoolType) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getPolicies() == null ^ this.getPolicies() == null)
             return false;
-        if (other.getPolicies() != null
-                && other.getPolicies().equals(this.getPolicies()) == false)
+        if (other.getPolicies() != null && other.getPolicies().equals(this.getPolicies()) == false)
             return false;
         if (other.getLambdaConfig() == null ^ this.getLambdaConfig() == null)
             return false;
-        if (other.getLambdaConfig() != null
-                && other.getLambdaConfig().equals(this.getLambdaConfig()) == false)
+        if (other.getLambdaConfig() != null && other.getLambdaConfig().equals(this.getLambdaConfig()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getLastModifiedDate() == null
-                ^ this.getLastModifiedDate() == null)
+        if (other.getLastModifiedDate() == null ^ this.getLastModifiedDate() == null)
             return false;
-        if (other.getLastModifiedDate() != null
-                && other.getLastModifiedDate().equals(
-                        this.getLastModifiedDate()) == false)
+        if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
-        if (other.getCreationDate() != null
-                && other.getCreationDate().equals(this.getCreationDate()) == false)
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
-        if (other.getSchemaAttributes() == null
-                ^ this.getSchemaAttributes() == null)
+        if (other.getSchemaAttributes() == null ^ this.getSchemaAttributes() == null)
             return false;
-        if (other.getSchemaAttributes() != null
-                && other.getSchemaAttributes().equals(
-                        this.getSchemaAttributes()) == false)
+        if (other.getSchemaAttributes() != null && other.getSchemaAttributes().equals(this.getSchemaAttributes()) == false)
             return false;
-        if (other.getAutoVerifiedAttributes() == null
-                ^ this.getAutoVerifiedAttributes() == null)
+        if (other.getAutoVerifiedAttributes() == null ^ this.getAutoVerifiedAttributes() == null)
             return false;
-        if (other.getAutoVerifiedAttributes() != null
-                && other.getAutoVerifiedAttributes().equals(
-                        this.getAutoVerifiedAttributes()) == false)
+        if (other.getAutoVerifiedAttributes() != null && other.getAutoVerifiedAttributes().equals(this.getAutoVerifiedAttributes()) == false)
             return false;
-        if (other.getAliasAttributes() == null
-                ^ this.getAliasAttributes() == null)
+        if (other.getAliasAttributes() == null ^ this.getAliasAttributes() == null)
             return false;
-        if (other.getAliasAttributes() != null
-                && other.getAliasAttributes().equals(this.getAliasAttributes()) == false)
+        if (other.getAliasAttributes() != null && other.getAliasAttributes().equals(this.getAliasAttributes()) == false)
             return false;
-        if (other.getSmsVerificationMessage() == null
-                ^ this.getSmsVerificationMessage() == null)
+        if (other.getSmsVerificationMessage() == null ^ this.getSmsVerificationMessage() == null)
             return false;
-        if (other.getSmsVerificationMessage() != null
-                && other.getSmsVerificationMessage().equals(
-                        this.getSmsVerificationMessage()) == false)
+        if (other.getSmsVerificationMessage() != null && other.getSmsVerificationMessage().equals(this.getSmsVerificationMessage()) == false)
             return false;
-        if (other.getEmailVerificationMessage() == null
-                ^ this.getEmailVerificationMessage() == null)
+        if (other.getEmailVerificationMessage() == null ^ this.getEmailVerificationMessage() == null)
             return false;
-        if (other.getEmailVerificationMessage() != null
-                && other.getEmailVerificationMessage().equals(
-                        this.getEmailVerificationMessage()) == false)
+        if (other.getEmailVerificationMessage() != null && other.getEmailVerificationMessage().equals(this.getEmailVerificationMessage()) == false)
             return false;
-        if (other.getEmailVerificationSubject() == null
-                ^ this.getEmailVerificationSubject() == null)
+        if (other.getEmailVerificationSubject() == null ^ this.getEmailVerificationSubject() == null)
             return false;
-        if (other.getEmailVerificationSubject() != null
-                && other.getEmailVerificationSubject().equals(
-                        this.getEmailVerificationSubject()) == false)
+        if (other.getEmailVerificationSubject() != null && other.getEmailVerificationSubject().equals(this.getEmailVerificationSubject()) == false)
             return false;
-        if (other.getSmsAuthenticationMessage() == null
-                ^ this.getSmsAuthenticationMessage() == null)
+        if (other.getSmsAuthenticationMessage() == null ^ this.getSmsAuthenticationMessage() == null)
             return false;
-        if (other.getSmsAuthenticationMessage() != null
-                && other.getSmsAuthenticationMessage().equals(
-                        this.getSmsAuthenticationMessage()) == false)
+        if (other.getSmsAuthenticationMessage() != null && other.getSmsAuthenticationMessage().equals(this.getSmsAuthenticationMessage()) == false)
             return false;
-        if (other.getMfaConfiguration() == null
-                ^ this.getMfaConfiguration() == null)
+        if (other.getMfaConfiguration() == null ^ this.getMfaConfiguration() == null)
             return false;
-        if (other.getMfaConfiguration() != null
-                && other.getMfaConfiguration().equals(
-                        this.getMfaConfiguration()) == false)
+        if (other.getMfaConfiguration() != null && other.getMfaConfiguration().equals(this.getMfaConfiguration()) == false)
             return false;
-        if (other.getDeviceConfiguration() == null
-                ^ this.getDeviceConfiguration() == null)
+        if (other.getDeviceConfiguration() == null ^ this.getDeviceConfiguration() == null)
             return false;
-        if (other.getDeviceConfiguration() != null
-                && other.getDeviceConfiguration().equals(
-                        this.getDeviceConfiguration()) == false)
+        if (other.getDeviceConfiguration() != null && other.getDeviceConfiguration().equals(this.getDeviceConfiguration()) == false)
             return false;
-        if (other.getEstimatedNumberOfUsers() == null
-                ^ this.getEstimatedNumberOfUsers() == null)
+        if (other.getEstimatedNumberOfUsers() == null ^ this.getEstimatedNumberOfUsers() == null)
             return false;
-        if (other.getEstimatedNumberOfUsers() != null
-                && other.getEstimatedNumberOfUsers().equals(
-                        this.getEstimatedNumberOfUsers()) == false)
+        if (other.getEstimatedNumberOfUsers() != null && other.getEstimatedNumberOfUsers().equals(this.getEstimatedNumberOfUsers()) == false)
             return false;
-        if (other.getEmailConfiguration() == null
-                ^ this.getEmailConfiguration() == null)
+        if (other.getEmailConfiguration() == null ^ this.getEmailConfiguration() == null)
             return false;
-        if (other.getEmailConfiguration() != null
-                && other.getEmailConfiguration().equals(
-                        this.getEmailConfiguration()) == false)
+        if (other.getEmailConfiguration() != null && other.getEmailConfiguration().equals(this.getEmailConfiguration()) == false)
             return false;
-        if (other.getSmsConfiguration() == null
-                ^ this.getSmsConfiguration() == null)
+        if (other.getSmsConfiguration() == null ^ this.getSmsConfiguration() == null)
             return false;
-        if (other.getSmsConfiguration() != null
-                && other.getSmsConfiguration().equals(
-                        this.getSmsConfiguration()) == false)
+        if (other.getSmsConfiguration() != null && other.getSmsConfiguration().equals(this.getSmsConfiguration()) == false)
             return false;
-        if (other.getSmsConfigurationFailure() == null
-                ^ this.getSmsConfigurationFailure() == null)
+        if (other.getSmsConfigurationFailure() == null ^ this.getSmsConfigurationFailure() == null)
             return false;
-        if (other.getSmsConfigurationFailure() != null
-                && other.getSmsConfigurationFailure().equals(
-                        this.getSmsConfigurationFailure()) == false)
+        if (other.getSmsConfigurationFailure() != null && other.getSmsConfigurationFailure().equals(this.getSmsConfigurationFailure()) == false)
             return false;
-        if (other.getEmailConfigurationFailure() == null
-                ^ this.getEmailConfigurationFailure() == null)
+        if (other.getEmailConfigurationFailure() == null ^ this.getEmailConfigurationFailure() == null)
             return false;
-        if (other.getEmailConfigurationFailure() != null
-                && other.getEmailConfigurationFailure().equals(
-                        this.getEmailConfigurationFailure()) == false)
+        if (other.getEmailConfigurationFailure() != null && other.getEmailConfigurationFailure().equals(this.getEmailConfigurationFailure()) == false)
             return false;
         return true;
     }
@@ -1592,82 +1420,27 @@ public class UserPoolType implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPolicies() == null) ? 0 : getPolicies().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLambdaConfig() == null) ? 0 : getLambdaConfig()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDate() == null) ? 0 : getCreationDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSchemaAttributes() == null) ? 0 : getSchemaAttributes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoVerifiedAttributes() == null) ? 0
-                        : getAutoVerifiedAttributes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAliasAttributes() == null) ? 0 : getAliasAttributes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSmsVerificationMessage() == null) ? 0
-                        : getSmsVerificationMessage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEmailVerificationMessage() == null) ? 0
-                        : getEmailVerificationMessage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEmailVerificationSubject() == null) ? 0
-                        : getEmailVerificationSubject().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSmsAuthenticationMessage() == null) ? 0
-                        : getSmsAuthenticationMessage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMfaConfiguration() == null) ? 0 : getMfaConfiguration()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeviceConfiguration() == null) ? 0
-                        : getDeviceConfiguration().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEstimatedNumberOfUsers() == null) ? 0
-                        : getEstimatedNumberOfUsers().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEmailConfiguration() == null) ? 0
-                        : getEmailConfiguration().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSmsConfiguration() == null) ? 0 : getSmsConfiguration()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSmsConfigurationFailure() == null) ? 0
-                        : getSmsConfigurationFailure().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEmailConfigurationFailure() == null) ? 0
-                        : getEmailConfigurationFailure().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPolicies() == null) ? 0 : getPolicies().hashCode());
+        hashCode = prime * hashCode + ((getLambdaConfig() == null) ? 0 : getLambdaConfig().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getSchemaAttributes() == null) ? 0 : getSchemaAttributes().hashCode());
+        hashCode = prime * hashCode + ((getAutoVerifiedAttributes() == null) ? 0 : getAutoVerifiedAttributes().hashCode());
+        hashCode = prime * hashCode + ((getAliasAttributes() == null) ? 0 : getAliasAttributes().hashCode());
+        hashCode = prime * hashCode + ((getSmsVerificationMessage() == null) ? 0 : getSmsVerificationMessage().hashCode());
+        hashCode = prime * hashCode + ((getEmailVerificationMessage() == null) ? 0 : getEmailVerificationMessage().hashCode());
+        hashCode = prime * hashCode + ((getEmailVerificationSubject() == null) ? 0 : getEmailVerificationSubject().hashCode());
+        hashCode = prime * hashCode + ((getSmsAuthenticationMessage() == null) ? 0 : getSmsAuthenticationMessage().hashCode());
+        hashCode = prime * hashCode + ((getMfaConfiguration() == null) ? 0 : getMfaConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEstimatedNumberOfUsers() == null) ? 0 : getEstimatedNumberOfUsers().hashCode());
+        hashCode = prime * hashCode + ((getEmailConfiguration() == null) ? 0 : getEmailConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getSmsConfiguration() == null) ? 0 : getSmsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getSmsConfigurationFailure() == null) ? 0 : getSmsConfigurationFailure().hashCode());
+        hashCode = prime * hashCode + ((getEmailConfigurationFailure() == null) ? 0 : getEmailConfigurationFailure().hashCode());
         return hashCode;
     }
 
@@ -1676,9 +1449,7 @@ public class UserPoolType implements Serializable, Cloneable {
         try {
             return (UserPoolType) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

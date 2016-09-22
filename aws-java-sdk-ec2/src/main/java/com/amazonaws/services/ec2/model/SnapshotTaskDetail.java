@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -110,8 +108,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @param diskImageSize
      *        The size of the disk in the snapshot, in GiB.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotTaskDetail withDiskImageSize(Double diskImageSize) {
@@ -151,8 +148,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @param description
      *        The description of the snapshot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotTaskDetail withDescription(String description) {
@@ -192,8 +188,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @param format
      *        The format of the disk image from which the snapshot is created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotTaskDetail withFormat(String format) {
@@ -233,8 +228,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @param url
      *        The URL of the disk image from which the snapshot is created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotTaskDetail withUrl(String url) {
@@ -274,8 +268,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @param userBucket
      *        The S3 bucket for the disk image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotTaskDetail withUserBucket(UserBucketDetails userBucket) {
@@ -315,8 +308,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @param snapshotId
      *        The snapshot ID of the disk being imported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotTaskDetail withSnapshotId(String snapshotId) {
@@ -356,8 +348,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @param progress
      *        The percentage of completion for the import snapshot task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotTaskDetail withProgress(String progress) {
@@ -397,8 +388,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @param statusMessage
      *        A detailed status message for the import snapshot task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotTaskDetail withStatusMessage(String statusMessage) {
@@ -438,8 +428,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @param status
      *        A brief status for the import snapshot task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotTaskDetail withStatus(String status) {
@@ -448,8 +437,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -493,48 +481,39 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
         SnapshotTaskDetail other = (SnapshotTaskDetail) obj;
         if (other.getDiskImageSize() == null ^ this.getDiskImageSize() == null)
             return false;
-        if (other.getDiskImageSize() != null
-                && other.getDiskImageSize().equals(this.getDiskImageSize()) == false)
+        if (other.getDiskImageSize() != null && other.getDiskImageSize().equals(this.getDiskImageSize()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getFormat() == null ^ this.getFormat() == null)
             return false;
-        if (other.getFormat() != null
-                && other.getFormat().equals(this.getFormat()) == false)
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
             return false;
         if (other.getUrl() == null ^ this.getUrl() == null)
             return false;
-        if (other.getUrl() != null
-                && other.getUrl().equals(this.getUrl()) == false)
+        if (other.getUrl() != null && other.getUrl().equals(this.getUrl()) == false)
             return false;
         if (other.getUserBucket() == null ^ this.getUserBucket() == null)
             return false;
-        if (other.getUserBucket() != null
-                && other.getUserBucket().equals(this.getUserBucket()) == false)
+        if (other.getUserBucket() != null && other.getUserBucket().equals(this.getUserBucket()) == false)
             return false;
         if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
             return false;
-        if (other.getSnapshotId() != null
-                && other.getSnapshotId().equals(this.getSnapshotId()) == false)
+        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
             return false;
         if (other.getProgress() == null ^ this.getProgress() == null)
             return false;
-        if (other.getProgress() != null
-                && other.getProgress().equals(this.getProgress()) == false)
+        if (other.getProgress() != null && other.getProgress().equals(this.getProgress()) == false)
             return false;
         if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
-        if (other.getStatusMessage() != null
-                && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -544,29 +523,15 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDiskImageSize() == null) ? 0 : getDiskImageSize()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getFormat() == null) ? 0 : getFormat().hashCode());
-        hashCode = prime * hashCode
-                + ((getUrl() == null) ? 0 : getUrl().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserBucket() == null) ? 0 : getUserBucket().hashCode());
-        hashCode = prime * hashCode
-                + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
-        hashCode = prime * hashCode
-                + ((getProgress() == null) ? 0 : getProgress().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStatusMessage() == null) ? 0 : getStatusMessage()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getDiskImageSize() == null) ? 0 : getDiskImageSize().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
+        hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
+        hashCode = prime * hashCode + ((getUserBucket() == null) ? 0 : getUserBucket().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
+        hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 
@@ -575,9 +540,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
         try {
             return (SnapshotTaskDetail) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

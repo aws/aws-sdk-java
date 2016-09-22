@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
 
@@ -22,13 +20,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes the inputs for SetAlarmState.
  * </p>
  */
-public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The descriptive name for the alarm. This name must be unique within the
-     * user's AWS account. The maximum length is 255 characters.
+     * The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum length is
+     * 255 characters.
      * </p>
      */
     private String alarmName;
@@ -40,29 +37,26 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
     private String stateValue;
     /**
      * <p>
-     * The reason that this alarm is set to this specific state (in
-     * human-readable text format)
+     * The reason that this alarm is set to this specific state (in human-readable text format)
      * </p>
      */
     private String stateReason;
     /**
      * <p>
-     * The reason that this alarm is set to this specific state (in
-     * machine-readable JSON format)
+     * The reason that this alarm is set to this specific state (in machine-readable JSON format)
      * </p>
      */
     private String stateReasonData;
 
     /**
      * <p>
-     * The descriptive name for the alarm. This name must be unique within the
-     * user's AWS account. The maximum length is 255 characters.
+     * The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum length is
+     * 255 characters.
      * </p>
      * 
      * @param alarmName
-     *        The descriptive name for the alarm. This name must be unique
-     *        within the user's AWS account. The maximum length is 255
-     *        characters.
+     *        The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum
+     *        length is 255 characters.
      */
 
     public void setAlarmName(String alarmName) {
@@ -71,13 +65,12 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The descriptive name for the alarm. This name must be unique within the
-     * user's AWS account. The maximum length is 255 characters.
+     * The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum length is
+     * 255 characters.
      * </p>
      * 
-     * @return The descriptive name for the alarm. This name must be unique
-     *         within the user's AWS account. The maximum length is 255
-     *         characters.
+     * @return The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum
+     *         length is 255 characters.
      */
 
     public String getAlarmName() {
@@ -86,16 +79,14 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The descriptive name for the alarm. This name must be unique within the
-     * user's AWS account. The maximum length is 255 characters.
+     * The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum length is
+     * 255 characters.
      * </p>
      * 
      * @param alarmName
-     *        The descriptive name for the alarm. This name must be unique
-     *        within the user's AWS account. The maximum length is 255
-     *        characters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum
+     *        length is 255 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetAlarmStateRequest withAlarmName(String alarmName) {
@@ -137,8 +128,7 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param stateValue
      *        The value of the state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StateValue
      */
 
@@ -168,8 +158,7 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param stateValue
      *        The value of the state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StateValue
      */
 
@@ -180,13 +169,11 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The reason that this alarm is set to this specific state (in
-     * human-readable text format)
+     * The reason that this alarm is set to this specific state (in human-readable text format)
      * </p>
      * 
      * @param stateReason
-     *        The reason that this alarm is set to this specific state (in
-     *        human-readable text format)
+     *        The reason that this alarm is set to this specific state (in human-readable text format)
      */
 
     public void setStateReason(String stateReason) {
@@ -195,12 +182,10 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The reason that this alarm is set to this specific state (in
-     * human-readable text format)
+     * The reason that this alarm is set to this specific state (in human-readable text format)
      * </p>
      * 
-     * @return The reason that this alarm is set to this specific state (in
-     *         human-readable text format)
+     * @return The reason that this alarm is set to this specific state (in human-readable text format)
      */
 
     public String getStateReason() {
@@ -209,15 +194,12 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The reason that this alarm is set to this specific state (in
-     * human-readable text format)
+     * The reason that this alarm is set to this specific state (in human-readable text format)
      * </p>
      * 
      * @param stateReason
-     *        The reason that this alarm is set to this specific state (in
-     *        human-readable text format)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The reason that this alarm is set to this specific state (in human-readable text format)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetAlarmStateRequest withStateReason(String stateReason) {
@@ -227,13 +209,11 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The reason that this alarm is set to this specific state (in
-     * machine-readable JSON format)
+     * The reason that this alarm is set to this specific state (in machine-readable JSON format)
      * </p>
      * 
      * @param stateReasonData
-     *        The reason that this alarm is set to this specific state (in
-     *        machine-readable JSON format)
+     *        The reason that this alarm is set to this specific state (in machine-readable JSON format)
      */
 
     public void setStateReasonData(String stateReasonData) {
@@ -242,12 +222,10 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The reason that this alarm is set to this specific state (in
-     * machine-readable JSON format)
+     * The reason that this alarm is set to this specific state (in machine-readable JSON format)
      * </p>
      * 
-     * @return The reason that this alarm is set to this specific state (in
-     *         machine-readable JSON format)
+     * @return The reason that this alarm is set to this specific state (in machine-readable JSON format)
      */
 
     public String getStateReasonData() {
@@ -256,15 +234,12 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The reason that this alarm is set to this specific state (in
-     * machine-readable JSON format)
+     * The reason that this alarm is set to this specific state (in machine-readable JSON format)
      * </p>
      * 
      * @param stateReasonData
-     *        The reason that this alarm is set to this specific state (in
-     *        machine-readable JSON format)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The reason that this alarm is set to this specific state (in machine-readable JSON format)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetAlarmStateRequest withStateReasonData(String stateReasonData) {
@@ -273,8 +248,7 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -308,24 +282,19 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
         SetAlarmStateRequest other = (SetAlarmStateRequest) obj;
         if (other.getAlarmName() == null ^ this.getAlarmName() == null)
             return false;
-        if (other.getAlarmName() != null
-                && other.getAlarmName().equals(this.getAlarmName()) == false)
+        if (other.getAlarmName() != null && other.getAlarmName().equals(this.getAlarmName()) == false)
             return false;
         if (other.getStateValue() == null ^ this.getStateValue() == null)
             return false;
-        if (other.getStateValue() != null
-                && other.getStateValue().equals(this.getStateValue()) == false)
+        if (other.getStateValue() != null && other.getStateValue().equals(this.getStateValue()) == false)
             return false;
         if (other.getStateReason() == null ^ this.getStateReason() == null)
             return false;
-        if (other.getStateReason() != null
-                && other.getStateReason().equals(this.getStateReason()) == false)
+        if (other.getStateReason() != null && other.getStateReason().equals(this.getStateReason()) == false)
             return false;
-        if (other.getStateReasonData() == null
-                ^ this.getStateReasonData() == null)
+        if (other.getStateReasonData() == null ^ this.getStateReasonData() == null)
             return false;
-        if (other.getStateReasonData() != null
-                && other.getStateReasonData().equals(this.getStateReasonData()) == false)
+        if (other.getStateReasonData() != null && other.getStateReasonData().equals(this.getStateReasonData()) == false)
             return false;
         return true;
     }
@@ -335,17 +304,10 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode());
-        hashCode = prime * hashCode
-                + ((getStateValue() == null) ? 0 : getStateValue().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStateReason() == null) ? 0 : getStateReason().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStateReasonData() == null) ? 0 : getStateReasonData()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode());
+        hashCode = prime * hashCode + ((getStateValue() == null) ? 0 : getStateValue().hashCode());
+        hashCode = prime * hashCode + ((getStateReason() == null) ? 0 : getStateReason().hashCode());
+        hashCode = prime * hashCode + ((getStateReasonData() == null) ? 0 : getStateReasonData().hashCode());
         return hashCode;
     }
 

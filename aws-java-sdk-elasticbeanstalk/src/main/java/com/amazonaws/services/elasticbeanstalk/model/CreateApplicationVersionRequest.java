@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -20,15 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CreateApplicationVersionRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the application. If no application is found with this name,
-     * and <code>AutoCreateApplication</code> is <code>false</code>, returns an
-     * <code>InvalidParameterValue</code> error.
+     * The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is
+     * <code>false</code>, returns an <code>InvalidParameterValue</code> error.
      * </p>
      */
     private String applicationName;
@@ -37,9 +32,8 @@ public class CreateApplicationVersionRequest extends
      * A label identifying this version.
      * </p>
      * <p>
-     * Constraint: Must be unique per application. If an application version
-     * already exists with this label for the specified application, AWS Elastic
-     * Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * Constraint: Must be unique per application. If an application version already exists with this label for the
+     * specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      * </p>
      */
     private String versionLabel;
@@ -51,34 +45,28 @@ public class CreateApplicationVersionRequest extends
     private String description;
     /**
      * <p>
-     * The Amazon S3 bucket and key that identify the location of the source
-     * bundle for this version.
+     * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
      * </p>
      * <p>
-     * If data found at the Amazon S3 location exceeds the maximum allowed
-     * source bundle size, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. The maximum size allowed is 512
-     * MB.
+     * If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
+     * returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
      * </p>
      * <p>
-     * Default: If not specified, AWS Elastic Beanstalk uses a sample
-     * application. If only partially specified (for example, a bucket is
-     * provided but not the key) or if no data is found at the Amazon S3
-     * location, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error.
+     * Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for
+     * example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterCombination</code> error.
      * </p>
      */
     private S3Location sourceBundle;
     /**
      * <p>
-     * Determines how the system behaves if the specified application for this
-     * version does not already exist:
+     * Determines how the system behaves if the specified application for this version does not already exist:
      * </p>
      * <ul>
-     * <li> <code>true</code> : Automatically creates the specified application
-     * for this release if it does not already exist.</li>
-     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     * the specified application for this release does not already exist.</li>
+     * <li> <code>true</code> : Automatically creates the specified application for this release if it does not already
+     * exist.</li>
+     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
+     * release does not already exist.</li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -90,55 +78,48 @@ public class CreateApplicationVersionRequest extends
     private Boolean autoCreateApplication;
     /**
      * <p>
-     * Preprocesses and validates the environment manifest and configuration
-     * files in the source bundle. Validating configuration files can identify
-     * issues prior to deploying the application version to an environment.
+     * Preprocesses and validates the environment manifest and configuration files in the source bundle. Validating
+     * configuration files can identify issues prior to deploying the application version to an environment.
      * </p>
      */
     private Boolean process;
 
     /**
-     * Default constructor for CreateApplicationVersionRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * the object after creating it.
+     * Default constructor for CreateApplicationVersionRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public CreateApplicationVersionRequest() {
     }
 
     /**
-     * Constructs a new CreateApplicationVersionRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new CreateApplicationVersionRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param applicationName
-     *        The name of the application. If no application is found with this
-     *        name, and <code>AutoCreateApplication</code> is <code>false</code>
-     *        , returns an <code>InvalidParameterValue</code> error.
+     *        The name of the application. If no application is found with this name, and
+     *        <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code>
+     *        error.
      * @param versionLabel
      *        A label identifying this version.</p>
      *        <p>
-     *        Constraint: Must be unique per application. If an application
-     *        version already exists with this label for the specified
-     *        application, AWS Elastic Beanstalk returns an
-     *        <code>InvalidParameterValue</code> error.
+     *        Constraint: Must be unique per application. If an application version already exists with this label for
+     *        the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      */
-    public CreateApplicationVersionRequest(String applicationName,
-            String versionLabel) {
+    public CreateApplicationVersionRequest(String applicationName, String versionLabel) {
         setApplicationName(applicationName);
         setVersionLabel(versionLabel);
     }
 
     /**
      * <p>
-     * The name of the application. If no application is found with this name,
-     * and <code>AutoCreateApplication</code> is <code>false</code>, returns an
-     * <code>InvalidParameterValue</code> error.
+     * The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is
+     * <code>false</code>, returns an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application. If no application is found with this
-     *        name, and <code>AutoCreateApplication</code> is <code>false</code>
-     *        , returns an <code>InvalidParameterValue</code> error.
+     *        The name of the application. If no application is found with this name, and
+     *        <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code>
+     *        error.
      */
 
     public void setApplicationName(String applicationName) {
@@ -147,14 +128,12 @@ public class CreateApplicationVersionRequest extends
 
     /**
      * <p>
-     * The name of the application. If no application is found with this name,
-     * and <code>AutoCreateApplication</code> is <code>false</code>, returns an
-     * <code>InvalidParameterValue</code> error.
+     * The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is
+     * <code>false</code>, returns an <code>InvalidParameterValue</code> error.
      * </p>
      * 
-     * @return The name of the application. If no application is found with this
-     *         name, and <code>AutoCreateApplication</code> is
-     *         <code>false</code>, returns an <code>InvalidParameterValue</code>
+     * @return The name of the application. If no application is found with this name, and
+     *         <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code>
      *         error.
      */
 
@@ -164,21 +143,18 @@ public class CreateApplicationVersionRequest extends
 
     /**
      * <p>
-     * The name of the application. If no application is found with this name,
-     * and <code>AutoCreateApplication</code> is <code>false</code>, returns an
-     * <code>InvalidParameterValue</code> error.
+     * The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is
+     * <code>false</code>, returns an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application. If no application is found with this
-     *        name, and <code>AutoCreateApplication</code> is <code>false</code>
-     *        , returns an <code>InvalidParameterValue</code> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the application. If no application is found with this name, and
+     *        <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code>
+     *        error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateApplicationVersionRequest withApplicationName(
-            String applicationName) {
+    public CreateApplicationVersionRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
     }
@@ -188,18 +164,15 @@ public class CreateApplicationVersionRequest extends
      * A label identifying this version.
      * </p>
      * <p>
-     * Constraint: Must be unique per application. If an application version
-     * already exists with this label for the specified application, AWS Elastic
-     * Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * Constraint: Must be unique per application. If an application version already exists with this label for the
+     * specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param versionLabel
      *        A label identifying this version.</p>
      *        <p>
-     *        Constraint: Must be unique per application. If an application
-     *        version already exists with this label for the specified
-     *        application, AWS Elastic Beanstalk returns an
-     *        <code>InvalidParameterValue</code> error.
+     *        Constraint: Must be unique per application. If an application version already exists with this label for
+     *        the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      */
 
     public void setVersionLabel(String versionLabel) {
@@ -211,17 +184,14 @@ public class CreateApplicationVersionRequest extends
      * A label identifying this version.
      * </p>
      * <p>
-     * Constraint: Must be unique per application. If an application version
-     * already exists with this label for the specified application, AWS Elastic
-     * Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * Constraint: Must be unique per application. If an application version already exists with this label for the
+     * specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @return A label identifying this version.</p>
      *         <p>
-     *         Constraint: Must be unique per application. If an application
-     *         version already exists with this label for the specified
-     *         application, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterValue</code> error.
+     *         Constraint: Must be unique per application. If an application version already exists with this label for
+     *         the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      */
 
     public String getVersionLabel() {
@@ -233,20 +203,16 @@ public class CreateApplicationVersionRequest extends
      * A label identifying this version.
      * </p>
      * <p>
-     * Constraint: Must be unique per application. If an application version
-     * already exists with this label for the specified application, AWS Elastic
-     * Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * Constraint: Must be unique per application. If an application version already exists with this label for the
+     * specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param versionLabel
      *        A label identifying this version.</p>
      *        <p>
-     *        Constraint: Must be unique per application. If an application
-     *        version already exists with this label for the specified
-     *        application, AWS Elastic Beanstalk returns an
-     *        <code>InvalidParameterValue</code> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraint: Must be unique per application. If an application version already exists with this label for
+     *        the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateApplicationVersionRequest withVersionLabel(String versionLabel) {
@@ -286,8 +252,7 @@ public class CreateApplicationVersionRequest extends
      * 
      * @param description
      *        Describes this version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateApplicationVersionRequest withDescription(String description) {
@@ -297,38 +262,28 @@ public class CreateApplicationVersionRequest extends
 
     /**
      * <p>
-     * The Amazon S3 bucket and key that identify the location of the source
-     * bundle for this version.
+     * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
      * </p>
      * <p>
-     * If data found at the Amazon S3 location exceeds the maximum allowed
-     * source bundle size, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. The maximum size allowed is 512
-     * MB.
+     * If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
+     * returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
      * </p>
      * <p>
-     * Default: If not specified, AWS Elastic Beanstalk uses a sample
-     * application. If only partially specified (for example, a bucket is
-     * provided but not the key) or if no data is found at the Amazon S3
-     * location, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error.
+     * Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for
+     * example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterCombination</code> error.
      * </p>
      * 
      * @param sourceBundle
-     *        The Amazon S3 bucket and key that identify the location of the
-     *        source bundle for this version. </p>
+     *        The Amazon S3 bucket and key that identify the location of the source bundle for this version. </p>
      *        <p>
-     *        If data found at the Amazon S3 location exceeds the maximum
-     *        allowed source bundle size, AWS Elastic Beanstalk returns an
-     *        <code>InvalidParameterValue</code> error. The maximum size allowed
-     *        is 512 MB.
+     *        If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic
+     *        Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
      *        </p>
      *        <p>
-     *        Default: If not specified, AWS Elastic Beanstalk uses a sample
-     *        application. If only partially specified (for example, a bucket is
-     *        provided but not the key) or if no data is found at the Amazon S3
-     *        location, AWS Elastic Beanstalk returns an
-     *        <code>InvalidParameterCombination</code> error.
+     *        Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified
+     *        (for example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS
+     *        Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
      */
 
     public void setSourceBundle(S3Location sourceBundle) {
@@ -337,37 +292,27 @@ public class CreateApplicationVersionRequest extends
 
     /**
      * <p>
-     * The Amazon S3 bucket and key that identify the location of the source
-     * bundle for this version.
+     * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
      * </p>
      * <p>
-     * If data found at the Amazon S3 location exceeds the maximum allowed
-     * source bundle size, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. The maximum size allowed is 512
-     * MB.
+     * If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
+     * returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
      * </p>
      * <p>
-     * Default: If not specified, AWS Elastic Beanstalk uses a sample
-     * application. If only partially specified (for example, a bucket is
-     * provided but not the key) or if no data is found at the Amazon S3
-     * location, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error.
+     * Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for
+     * example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterCombination</code> error.
      * </p>
      * 
-     * @return The Amazon S3 bucket and key that identify the location of the
-     *         source bundle for this version. </p>
+     * @return The Amazon S3 bucket and key that identify the location of the source bundle for this version. </p>
      *         <p>
-     *         If data found at the Amazon S3 location exceeds the maximum
-     *         allowed source bundle size, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterValue</code> error. The maximum size
-     *         allowed is 512 MB.
+     *         If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic
+     *         Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
      *         </p>
      *         <p>
-     *         Default: If not specified, AWS Elastic Beanstalk uses a sample
-     *         application. If only partially specified (for example, a bucket
-     *         is provided but not the key) or if no data is found at the Amazon
-     *         S3 location, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterCombination</code> error.
+     *         Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified
+     *         (for example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS
+     *         Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
      */
 
     public S3Location getSourceBundle() {
@@ -376,58 +321,45 @@ public class CreateApplicationVersionRequest extends
 
     /**
      * <p>
-     * The Amazon S3 bucket and key that identify the location of the source
-     * bundle for this version.
+     * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
      * </p>
      * <p>
-     * If data found at the Amazon S3 location exceeds the maximum allowed
-     * source bundle size, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. The maximum size allowed is 512
-     * MB.
+     * If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
+     * returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
      * </p>
      * <p>
-     * Default: If not specified, AWS Elastic Beanstalk uses a sample
-     * application. If only partially specified (for example, a bucket is
-     * provided but not the key) or if no data is found at the Amazon S3
-     * location, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error.
+     * Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for
+     * example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterCombination</code> error.
      * </p>
      * 
      * @param sourceBundle
-     *        The Amazon S3 bucket and key that identify the location of the
-     *        source bundle for this version. </p>
+     *        The Amazon S3 bucket and key that identify the location of the source bundle for this version. </p>
      *        <p>
-     *        If data found at the Amazon S3 location exceeds the maximum
-     *        allowed source bundle size, AWS Elastic Beanstalk returns an
-     *        <code>InvalidParameterValue</code> error. The maximum size allowed
-     *        is 512 MB.
+     *        If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic
+     *        Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
      *        </p>
      *        <p>
-     *        Default: If not specified, AWS Elastic Beanstalk uses a sample
-     *        application. If only partially specified (for example, a bucket is
-     *        provided but not the key) or if no data is found at the Amazon S3
-     *        location, AWS Elastic Beanstalk returns an
-     *        <code>InvalidParameterCombination</code> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified
+     *        (for example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS
+     *        Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateApplicationVersionRequest withSourceBundle(
-            S3Location sourceBundle) {
+    public CreateApplicationVersionRequest withSourceBundle(S3Location sourceBundle) {
         setSourceBundle(sourceBundle);
         return this;
     }
 
     /**
      * <p>
-     * Determines how the system behaves if the specified application for this
-     * version does not already exist:
+     * Determines how the system behaves if the specified application for this version does not already exist:
      * </p>
      * <ul>
-     * <li> <code>true</code> : Automatically creates the specified application
-     * for this release if it does not already exist.</li>
-     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     * the specified application for this release does not already exist.</li>
+     * <li> <code>true</code> : Automatically creates the specified application for this release if it does not already
+     * exist.</li>
+     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
+     * release does not already exist.</li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -437,14 +369,13 @@ public class CreateApplicationVersionRequest extends
      * </p>
      * 
      * @param autoCreateApplication
-     *        Determines how the system behaves if the specified application for
-     *        this version does not already exist: </p>
+     *        Determines how the system behaves if the specified application for this version does not already exist:
+     *        </p>
      *        <ul>
-     *        <li> <code>true</code> : Automatically creates the specified
-     *        application for this release if it does not already exist.</li>
-     *        <li> <code>false</code> : Throws an
-     *        <code>InvalidParameterValue</code> if the specified application
-     *        for this release does not already exist.</li>
+     *        <li> <code>true</code> : Automatically creates the specified application for this release if it does not
+     *        already exist.</li>
+     *        <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for
+     *        this release does not already exist.</li>
      *        </ul>
      *        <p>
      *        Default: <code>false</code>
@@ -459,14 +390,13 @@ public class CreateApplicationVersionRequest extends
 
     /**
      * <p>
-     * Determines how the system behaves if the specified application for this
-     * version does not already exist:
+     * Determines how the system behaves if the specified application for this version does not already exist:
      * </p>
      * <ul>
-     * <li> <code>true</code> : Automatically creates the specified application
-     * for this release if it does not already exist.</li>
-     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     * the specified application for this release does not already exist.</li>
+     * <li> <code>true</code> : Automatically creates the specified application for this release if it does not already
+     * exist.</li>
+     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
+     * release does not already exist.</li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -475,14 +405,13 @@ public class CreateApplicationVersionRequest extends
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Determines how the system behaves if the specified application
-     *         for this version does not already exist: </p>
+     * @return Determines how the system behaves if the specified application for this version does not already exist:
+     *         </p>
      *         <ul>
-     *         <li> <code>true</code> : Automatically creates the specified
-     *         application for this release if it does not already exist.</li>
-     *         <li> <code>false</code> : Throws an
-     *         <code>InvalidParameterValue</code> if the specified application
-     *         for this release does not already exist.</li>
+     *         <li> <code>true</code> : Automatically creates the specified application for this release if it does not
+     *         already exist.</li>
+     *         <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for
+     *         this release does not already exist.</li>
      *         </ul>
      *         <p>
      *         Default: <code>false</code>
@@ -497,14 +426,13 @@ public class CreateApplicationVersionRequest extends
 
     /**
      * <p>
-     * Determines how the system behaves if the specified application for this
-     * version does not already exist:
+     * Determines how the system behaves if the specified application for this version does not already exist:
      * </p>
      * <ul>
-     * <li> <code>true</code> : Automatically creates the specified application
-     * for this release if it does not already exist.</li>
-     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     * the specified application for this release does not already exist.</li>
+     * <li> <code>true</code> : Automatically creates the specified application for this release if it does not already
+     * exist.</li>
+     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
+     * release does not already exist.</li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -514,40 +442,36 @@ public class CreateApplicationVersionRequest extends
      * </p>
      * 
      * @param autoCreateApplication
-     *        Determines how the system behaves if the specified application for
-     *        this version does not already exist: </p>
+     *        Determines how the system behaves if the specified application for this version does not already exist:
+     *        </p>
      *        <ul>
-     *        <li> <code>true</code> : Automatically creates the specified
-     *        application for this release if it does not already exist.</li>
-     *        <li> <code>false</code> : Throws an
-     *        <code>InvalidParameterValue</code> if the specified application
-     *        for this release does not already exist.</li>
+     *        <li> <code>true</code> : Automatically creates the specified application for this release if it does not
+     *        already exist.</li>
+     *        <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for
+     *        this release does not already exist.</li>
      *        </ul>
      *        <p>
      *        Default: <code>false</code>
      *        </p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateApplicationVersionRequest withAutoCreateApplication(
-            Boolean autoCreateApplication) {
+    public CreateApplicationVersionRequest withAutoCreateApplication(Boolean autoCreateApplication) {
         setAutoCreateApplication(autoCreateApplication);
         return this;
     }
 
     /**
      * <p>
-     * Determines how the system behaves if the specified application for this
-     * version does not already exist:
+     * Determines how the system behaves if the specified application for this version does not already exist:
      * </p>
      * <ul>
-     * <li> <code>true</code> : Automatically creates the specified application
-     * for this release if it does not already exist.</li>
-     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     * the specified application for this release does not already exist.</li>
+     * <li> <code>true</code> : Automatically creates the specified application for this release if it does not already
+     * exist.</li>
+     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
+     * release does not already exist.</li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -556,14 +480,13 @@ public class CreateApplicationVersionRequest extends
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Determines how the system behaves if the specified application
-     *         for this version does not already exist: </p>
+     * @return Determines how the system behaves if the specified application for this version does not already exist:
+     *         </p>
      *         <ul>
-     *         <li> <code>true</code> : Automatically creates the specified
-     *         application for this release if it does not already exist.</li>
-     *         <li> <code>false</code> : Throws an
-     *         <code>InvalidParameterValue</code> if the specified application
-     *         for this release does not already exist.</li>
+     *         <li> <code>true</code> : Automatically creates the specified application for this release if it does not
+     *         already exist.</li>
+     *         <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for
+     *         this release does not already exist.</li>
      *         </ul>
      *         <p>
      *         Default: <code>false</code>
@@ -578,16 +501,14 @@ public class CreateApplicationVersionRequest extends
 
     /**
      * <p>
-     * Preprocesses and validates the environment manifest and configuration
-     * files in the source bundle. Validating configuration files can identify
-     * issues prior to deploying the application version to an environment.
+     * Preprocesses and validates the environment manifest and configuration files in the source bundle. Validating
+     * configuration files can identify issues prior to deploying the application version to an environment.
      * </p>
      * 
      * @param process
-     *        Preprocesses and validates the environment manifest and
-     *        configuration files in the source bundle. Validating configuration
-     *        files can identify issues prior to deploying the application
-     *        version to an environment.
+     *        Preprocesses and validates the environment manifest and configuration files in the source bundle.
+     *        Validating configuration files can identify issues prior to deploying the application version to an
+     *        environment.
      */
 
     public void setProcess(Boolean process) {
@@ -596,15 +517,13 @@ public class CreateApplicationVersionRequest extends
 
     /**
      * <p>
-     * Preprocesses and validates the environment manifest and configuration
-     * files in the source bundle. Validating configuration files can identify
-     * issues prior to deploying the application version to an environment.
+     * Preprocesses and validates the environment manifest and configuration files in the source bundle. Validating
+     * configuration files can identify issues prior to deploying the application version to an environment.
      * </p>
      * 
-     * @return Preprocesses and validates the environment manifest and
-     *         configuration files in the source bundle. Validating
-     *         configuration files can identify issues prior to deploying the
-     *         application version to an environment.
+     * @return Preprocesses and validates the environment manifest and configuration files in the source bundle.
+     *         Validating configuration files can identify issues prior to deploying the application version to an
+     *         environment.
      */
 
     public Boolean getProcess() {
@@ -613,18 +532,15 @@ public class CreateApplicationVersionRequest extends
 
     /**
      * <p>
-     * Preprocesses and validates the environment manifest and configuration
-     * files in the source bundle. Validating configuration files can identify
-     * issues prior to deploying the application version to an environment.
+     * Preprocesses and validates the environment manifest and configuration files in the source bundle. Validating
+     * configuration files can identify issues prior to deploying the application version to an environment.
      * </p>
      * 
      * @param process
-     *        Preprocesses and validates the environment manifest and
-     *        configuration files in the source bundle. Validating configuration
-     *        files can identify issues prior to deploying the application
-     *        version to an environment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Preprocesses and validates the environment manifest and configuration files in the source bundle.
+     *        Validating configuration files can identify issues prior to deploying the application version to an
+     *        environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateApplicationVersionRequest withProcess(Boolean process) {
@@ -634,15 +550,13 @@ public class CreateApplicationVersionRequest extends
 
     /**
      * <p>
-     * Preprocesses and validates the environment manifest and configuration
-     * files in the source bundle. Validating configuration files can identify
-     * issues prior to deploying the application version to an environment.
+     * Preprocesses and validates the environment manifest and configuration files in the source bundle. Validating
+     * configuration files can identify issues prior to deploying the application version to an environment.
      * </p>
      * 
-     * @return Preprocesses and validates the environment manifest and
-     *         configuration files in the source bundle. Validating
-     *         configuration files can identify issues prior to deploying the
-     *         application version to an environment.
+     * @return Preprocesses and validates the environment manifest and configuration files in the source bundle.
+     *         Validating configuration files can identify issues prior to deploying the application version to an
+     *         environment.
      */
 
     public Boolean isProcess() {
@@ -650,8 +564,7 @@ public class CreateApplicationVersionRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -670,8 +583,7 @@ public class CreateApplicationVersionRequest extends
         if (getSourceBundle() != null)
             sb.append("SourceBundle: " + getSourceBundle() + ",");
         if (getAutoCreateApplication() != null)
-            sb.append("AutoCreateApplication: " + getAutoCreateApplication()
-                    + ",");
+            sb.append("AutoCreateApplication: " + getAutoCreateApplication() + ",");
         if (getProcess() != null)
             sb.append("Process: " + getProcess());
         sb.append("}");
@@ -688,38 +600,29 @@ public class CreateApplicationVersionRequest extends
         if (obj instanceof CreateApplicationVersionRequest == false)
             return false;
         CreateApplicationVersionRequest other = (CreateApplicationVersionRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
         if (other.getVersionLabel() == null ^ this.getVersionLabel() == null)
             return false;
-        if (other.getVersionLabel() != null
-                && other.getVersionLabel().equals(this.getVersionLabel()) == false)
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getSourceBundle() == null ^ this.getSourceBundle() == null)
             return false;
-        if (other.getSourceBundle() != null
-                && other.getSourceBundle().equals(this.getSourceBundle()) == false)
+        if (other.getSourceBundle() != null && other.getSourceBundle().equals(this.getSourceBundle()) == false)
             return false;
-        if (other.getAutoCreateApplication() == null
-                ^ this.getAutoCreateApplication() == null)
+        if (other.getAutoCreateApplication() == null ^ this.getAutoCreateApplication() == null)
             return false;
-        if (other.getAutoCreateApplication() != null
-                && other.getAutoCreateApplication().equals(
-                        this.getAutoCreateApplication()) == false)
+        if (other.getAutoCreateApplication() != null && other.getAutoCreateApplication().equals(this.getAutoCreateApplication()) == false)
             return false;
         if (other.getProcess() == null ^ this.getProcess() == null)
             return false;
-        if (other.getProcess() != null
-                && other.getProcess().equals(this.getProcess()) == false)
+        if (other.getProcess() != null && other.getProcess().equals(this.getProcess()) == false)
             return false;
         return true;
     }
@@ -729,27 +632,12 @@ public class CreateApplicationVersionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVersionLabel() == null) ? 0 : getVersionLabel()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceBundle() == null) ? 0 : getSourceBundle()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoCreateApplication() == null) ? 0
-                        : getAutoCreateApplication().hashCode());
-        hashCode = prime * hashCode
-                + ((getProcess() == null) ? 0 : getProcess().hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSourceBundle() == null) ? 0 : getSourceBundle().hashCode());
+        hashCode = prime * hashCode + ((getAutoCreateApplication() == null) ? 0 : getAutoCreateApplication().hashCode());
+        hashCode = prime * hashCode + ((getProcess() == null) ? 0 : getProcess().hashCode());
         return hashCode;
     }
 

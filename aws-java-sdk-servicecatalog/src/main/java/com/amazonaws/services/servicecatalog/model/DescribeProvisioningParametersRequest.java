@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.servicecatalog.model;
 
@@ -20,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeProvisioningParametersRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are
-     * as follows:
+     * The language code to use for this operation. Supported language codes are as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -57,17 +52,15 @@ public class DescribeProvisioningParametersRequest extends
     private String provisioningArtifactId;
     /**
      * <p>
-     * The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is
-     * more than one path for the specified product.
+     * The identifier of the path for this product's provisioning. This value is optional if the product has a default
+     * path, and is required if there is more than one path for the specified product.
      * </p>
      */
     private String pathId;
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are
-     * as follows:
+     * The language code to use for this operation. Supported language codes are as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -83,8 +76,7 @@ public class DescribeProvisioningParametersRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language
-     *        codes are as follows:</p>
+     *        The language code to use for this operation. Supported language codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -104,8 +96,7 @@ public class DescribeProvisioningParametersRequest extends
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are
-     * as follows:
+     * The language code to use for this operation. Supported language codes are as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -120,8 +111,7 @@ public class DescribeProvisioningParametersRequest extends
      * If no code is specified, "en" is used as the default.
      * </p>
      * 
-     * @return The language code to use for this operation. Supported language
-     *         codes are as follows:</p>
+     * @return The language code to use for this operation. Supported language codes are as follows:</p>
      *         <p>
      *         "en" (English)
      *         </p>
@@ -141,8 +131,7 @@ public class DescribeProvisioningParametersRequest extends
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are
-     * as follows:
+     * The language code to use for this operation. Supported language codes are as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -158,8 +147,7 @@ public class DescribeProvisioningParametersRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language
-     *        codes are as follows:</p>
+     *        The language code to use for this operation. Supported language codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -171,12 +159,10 @@ public class DescribeProvisioningParametersRequest extends
      *        </p>
      *        <p>
      *        If no code is specified, "en" is used as the default.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeProvisioningParametersRequest withAcceptLanguage(
-            String acceptLanguage) {
+    public DescribeProvisioningParametersRequest withAcceptLanguage(String acceptLanguage) {
         setAcceptLanguage(acceptLanguage);
         return this;
     }
@@ -213,8 +199,7 @@ public class DescribeProvisioningParametersRequest extends
      * 
      * @param productId
      *        The identifier of the product.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeProvisioningParametersRequest withProductId(String productId) {
@@ -254,27 +239,23 @@ public class DescribeProvisioningParametersRequest extends
      * 
      * @param provisioningArtifactId
      *        The provisioning artifact identifier for this product.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeProvisioningParametersRequest withProvisioningArtifactId(
-            String provisioningArtifactId) {
+    public DescribeProvisioningParametersRequest withProvisioningArtifactId(String provisioningArtifactId) {
         setProvisioningArtifactId(provisioningArtifactId);
         return this;
     }
 
     /**
      * <p>
-     * The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is
-     * more than one path for the specified product.
+     * The identifier of the path for this product's provisioning. This value is optional if the product has a default
+     * path, and is required if there is more than one path for the specified product.
      * </p>
      * 
      * @param pathId
-     *        The identifier of the path for this product's provisioning. This
-     *        value is optional if the product has a default path, and is
-     *        required if there is more than one path for the specified product.
+     *        The identifier of the path for this product's provisioning. This value is optional if the product has a
+     *        default path, and is required if there is more than one path for the specified product.
      */
 
     public void setPathId(String pathId) {
@@ -283,15 +264,12 @@ public class DescribeProvisioningParametersRequest extends
 
     /**
      * <p>
-     * The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is
-     * more than one path for the specified product.
+     * The identifier of the path for this product's provisioning. This value is optional if the product has a default
+     * path, and is required if there is more than one path for the specified product.
      * </p>
      * 
-     * @return The identifier of the path for this product's provisioning. This
-     *         value is optional if the product has a default path, and is
-     *         required if there is more than one path for the specified
-     *         product.
+     * @return The identifier of the path for this product's provisioning. This value is optional if the product has a
+     *         default path, and is required if there is more than one path for the specified product.
      */
 
     public String getPathId() {
@@ -300,17 +278,14 @@ public class DescribeProvisioningParametersRequest extends
 
     /**
      * <p>
-     * The identifier of the path for this product's provisioning. This value is
-     * optional if the product has a default path, and is required if there is
-     * more than one path for the specified product.
+     * The identifier of the path for this product's provisioning. This value is optional if the product has a default
+     * path, and is required if there is more than one path for the specified product.
      * </p>
      * 
      * @param pathId
-     *        The identifier of the path for this product's provisioning. This
-     *        value is optional if the product has a default path, and is
-     *        required if there is more than one path for the specified product.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the path for this product's provisioning. This value is optional if the product has a
+     *        default path, and is required if there is more than one path for the specified product.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeProvisioningParametersRequest withPathId(String pathId) {
@@ -319,8 +294,7 @@ public class DescribeProvisioningParametersRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -335,8 +309,7 @@ public class DescribeProvisioningParametersRequest extends
         if (getProductId() != null)
             sb.append("ProductId: " + getProductId() + ",");
         if (getProvisioningArtifactId() != null)
-            sb.append("ProvisioningArtifactId: " + getProvisioningArtifactId()
-                    + ",");
+            sb.append("ProvisioningArtifactId: " + getProvisioningArtifactId() + ",");
         if (getPathId() != null)
             sb.append("PathId: " + getPathId());
         sb.append("}");
@@ -353,28 +326,21 @@ public class DescribeProvisioningParametersRequest extends
         if (obj instanceof DescribeProvisioningParametersRequest == false)
             return false;
         DescribeProvisioningParametersRequest other = (DescribeProvisioningParametersRequest) obj;
-        if (other.getAcceptLanguage() == null
-                ^ this.getAcceptLanguage() == null)
+        if (other.getAcceptLanguage() == null ^ this.getAcceptLanguage() == null)
             return false;
-        if (other.getAcceptLanguage() != null
-                && other.getAcceptLanguage().equals(this.getAcceptLanguage()) == false)
+        if (other.getAcceptLanguage() != null && other.getAcceptLanguage().equals(this.getAcceptLanguage()) == false)
             return false;
         if (other.getProductId() == null ^ this.getProductId() == null)
             return false;
-        if (other.getProductId() != null
-                && other.getProductId().equals(this.getProductId()) == false)
+        if (other.getProductId() != null && other.getProductId().equals(this.getProductId()) == false)
             return false;
-        if (other.getProvisioningArtifactId() == null
-                ^ this.getProvisioningArtifactId() == null)
+        if (other.getProvisioningArtifactId() == null ^ this.getProvisioningArtifactId() == null)
             return false;
-        if (other.getProvisioningArtifactId() != null
-                && other.getProvisioningArtifactId().equals(
-                        this.getProvisioningArtifactId()) == false)
+        if (other.getProvisioningArtifactId() != null && other.getProvisioningArtifactId().equals(this.getProvisioningArtifactId()) == false)
             return false;
         if (other.getPathId() == null ^ this.getPathId() == null)
             return false;
-        if (other.getPathId() != null
-                && other.getPathId().equals(this.getPathId()) == false)
+        if (other.getPathId() != null && other.getPathId().equals(this.getPathId()) == false)
             return false;
         return true;
     }
@@ -384,18 +350,10 @@ public class DescribeProvisioningParametersRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getProductId() == null) ? 0 : getProductId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProvisioningArtifactId() == null) ? 0
-                        : getProvisioningArtifactId().hashCode());
-        hashCode = prime * hashCode
-                + ((getPathId() == null) ? 0 : getPathId().hashCode());
+        hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
+        hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
+        hashCode = prime * hashCode + ((getProvisioningArtifactId() == null) ? 0 : getProvisioningArtifactId().hashCode());
+        hashCode = prime * hashCode + ((getPathId() == null) ? 0 : getPathId().hashCode());
         return hashCode;
     }
 

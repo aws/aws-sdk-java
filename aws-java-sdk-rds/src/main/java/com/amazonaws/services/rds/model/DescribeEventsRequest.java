@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -20,14 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DescribeEventsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the event source for which events will be returned. If
-     * not specified, then all sources are included in the response.
+     * The identifier of the event source for which events will be returned. If not specified, then all sources are
+     * included in the response.
      * </p>
      * <p>
      * Constraints:
@@ -40,26 +36,22 @@ public class DescribeEventsRequest extends
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBInstance</code>, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.
+     * If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSecurityGroup</code>, a
-     * <code>DBSecurityGroupName</code> must be supplied.
+     * If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.
+     * If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSnapshot</code>, a
-     * <code>DBSnapshotIdentifier</code> must be supplied.
+     * If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
      * </p>
      * </li>
      * <li>
@@ -72,16 +64,14 @@ public class DescribeEventsRequest extends
     private String sourceIdentifier;
     /**
      * <p>
-     * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * The event source to retrieve events for. If no value is specified, all events are returned.
      * </p>
      */
     private String sourceType;
     /**
      * <p>
-     * The beginning of the time interval to retrieve events for, specified in
-     * ISO 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+     * The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information
+     * about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
      * </p>
      * <p>
      * Example: 2009-07-08T18:00Z
@@ -90,9 +80,8 @@ public class DescribeEventsRequest extends
     private java.util.Date startTime;
     /**
      * <p>
-     * The end of the time interval for which to retrieve events, specified in
-     * ISO 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+     * The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information
+     * about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
      * </p>
      * <p>
      * Example: 2009-07-08T18:00Z
@@ -110,8 +99,7 @@ public class DescribeEventsRequest extends
     private Integer duration;
     /**
      * <p>
-     * A list of event categories that trigger notifications for a event
-     * notification subscription.
+     * A list of event categories that trigger notifications for a event notification subscription.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> eventCategories;
@@ -123,10 +111,9 @@ public class DescribeEventsRequest extends
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -138,18 +125,16 @@ public class DescribeEventsRequest extends
     private Integer maxRecords;
     /**
      * <p>
-     * An optional pagination token provided by a previous DescribeEvents
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous DescribeEvents request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
 
     /**
      * <p>
-     * The identifier of the event source for which events will be returned. If
-     * not specified, then all sources are included in the response.
+     * The identifier of the event source for which events will be returned. If not specified, then all sources are
+     * included in the response.
      * </p>
      * <p>
      * Constraints:
@@ -162,26 +147,22 @@ public class DescribeEventsRequest extends
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBInstance</code>, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.
+     * If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSecurityGroup</code>, a
-     * <code>DBSecurityGroupName</code> must be supplied.
+     * If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.
+     * If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSnapshot</code>, a
-     * <code>DBSnapshotIdentifier</code> must be supplied.
+     * If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
      * </p>
      * </li>
      * <li>
@@ -192,9 +173,8 @@ public class DescribeEventsRequest extends
      * </ul>
      * 
      * @param sourceIdentifier
-     *        The identifier of the event source for which events will be
-     *        returned. If not specified, then all sources are included in the
-     *        response.</p>
+     *        The identifier of the event source for which events will be returned. If not specified, then all sources
+     *        are included in the response.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -206,26 +186,22 @@ public class DescribeEventsRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBInstance</code>, then a
-     *        <code>DBInstanceIdentifier</code> must be supplied.
+     *        If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBSecurityGroup</code>, a
-     *        <code>DBSecurityGroupName</code> must be supplied.
+     *        If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBParameterGroup</code>, a
-     *        <code>DBParameterGroupName</code> must be supplied.
+     *        If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBSnapshot</code>, a
-     *        <code>DBSnapshotIdentifier</code> must be supplied.
+     *        If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
@@ -241,8 +217,8 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The identifier of the event source for which events will be returned. If
-     * not specified, then all sources are included in the response.
+     * The identifier of the event source for which events will be returned. If not specified, then all sources are
+     * included in the response.
      * </p>
      * <p>
      * Constraints:
@@ -255,26 +231,22 @@ public class DescribeEventsRequest extends
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBInstance</code>, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.
+     * If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSecurityGroup</code>, a
-     * <code>DBSecurityGroupName</code> must be supplied.
+     * If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.
+     * If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSnapshot</code>, a
-     * <code>DBSnapshotIdentifier</code> must be supplied.
+     * If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
      * </p>
      * </li>
      * <li>
@@ -284,41 +256,36 @@ public class DescribeEventsRequest extends
      * </li>
      * </ul>
      * 
-     * @return The identifier of the event source for which events will be
-     *         returned. If not specified, then all sources are included in the
-     *         response.</p>
+     * @return The identifier of the event source for which events will be returned. If not specified, then all sources
+     *         are included in the response.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If SourceIdentifier is supplied, SourceType must also be
-     *         provided.
+     *         If SourceIdentifier is supplied, SourceType must also be provided.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source type is <code>DBInstance</code>, then a
-     *         <code>DBInstanceIdentifier</code> must be supplied.
+     *         If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source type is <code>DBSecurityGroup</code>, a
-     *         <code>DBSecurityGroupName</code> must be supplied.
+     *         If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source type is <code>DBParameterGroup</code>, a
-     *         <code>DBParameterGroupName</code> must be supplied.
+     *         If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be
+     *         supplied.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source type is <code>DBSnapshot</code>, a
-     *         <code>DBSnapshotIdentifier</code> must be supplied.
+     *         If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
      *         </p>
      *         </li>
      *         <li>
@@ -334,8 +301,8 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The identifier of the event source for which events will be returned. If
-     * not specified, then all sources are included in the response.
+     * The identifier of the event source for which events will be returned. If not specified, then all sources are
+     * included in the response.
      * </p>
      * <p>
      * Constraints:
@@ -348,26 +315,22 @@ public class DescribeEventsRequest extends
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBInstance</code>, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.
+     * If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSecurityGroup</code>, a
-     * <code>DBSecurityGroupName</code> must be supplied.
+     * If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.
+     * If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSnapshot</code>, a
-     * <code>DBSnapshotIdentifier</code> must be supplied.
+     * If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
      * </p>
      * </li>
      * <li>
@@ -378,9 +341,8 @@ public class DescribeEventsRequest extends
      * </ul>
      * 
      * @param sourceIdentifier
-     *        The identifier of the event source for which events will be
-     *        returned. If not specified, then all sources are included in the
-     *        response.</p>
+     *        The identifier of the event source for which events will be returned. If not specified, then all sources
+     *        are included in the response.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -392,26 +354,22 @@ public class DescribeEventsRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBInstance</code>, then a
-     *        <code>DBInstanceIdentifier</code> must be supplied.
+     *        If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBSecurityGroup</code>, a
-     *        <code>DBSecurityGroupName</code> must be supplied.
+     *        If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBParameterGroup</code>, a
-     *        <code>DBParameterGroupName</code> must be supplied.
+     *        If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBSnapshot</code>, a
-     *        <code>DBSnapshotIdentifier</code> must be supplied.
+     *        If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
@@ -419,8 +377,7 @@ public class DescribeEventsRequest extends
      *        Cannot end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEventsRequest withSourceIdentifier(String sourceIdentifier) {
@@ -430,13 +387,11 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * The event source to retrieve events for. If no value is specified, all events are returned.
      * </p>
      * 
      * @param sourceType
-     *        The event source to retrieve events for. If no value is specified,
-     *        all events are returned.
+     *        The event source to retrieve events for. If no value is specified, all events are returned.
      * @see SourceType
      */
 
@@ -446,12 +401,10 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * The event source to retrieve events for. If no value is specified, all events are returned.
      * </p>
      * 
-     * @return The event source to retrieve events for. If no value is
-     *         specified, all events are returned.
+     * @return The event source to retrieve events for. If no value is specified, all events are returned.
      * @see SourceType
      */
 
@@ -461,15 +414,12 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * The event source to retrieve events for. If no value is specified, all events are returned.
      * </p>
      * 
      * @param sourceType
-     *        The event source to retrieve events for. If no value is specified,
-     *        all events are returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The event source to retrieve events for. If no value is specified, all events are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
 
@@ -480,13 +430,11 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * The event source to retrieve events for. If no value is specified, all events are returned.
      * </p>
      * 
      * @param sourceType
-     *        The event source to retrieve events for. If no value is specified,
-     *        all events are returned.
+     *        The event source to retrieve events for. If no value is specified, all events are returned.
      * @see SourceType
      */
 
@@ -496,15 +444,12 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * The event source to retrieve events for. If no value is specified, all events are returned.
      * </p>
      * 
      * @param sourceType
-     *        The event source to retrieve events for. If no value is specified,
-     *        all events are returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The event source to retrieve events for. If no value is specified, all events are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
 
@@ -515,19 +460,17 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The beginning of the time interval to retrieve events for, specified in
-     * ISO 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+     * The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information
+     * about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
      * </p>
      * <p>
      * Example: 2009-07-08T18:00Z
      * </p>
      * 
      * @param startTime
-     *        The beginning of the time interval to retrieve events for,
-     *        specified in ISO 8601 format. For more information about ISO 8601,
-     *        go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
-     *        Wikipedia page.</a> </p>
+     *        The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more
+     *        information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     *        page.</a> </p>
      *        <p>
      *        Example: 2009-07-08T18:00Z
      */
@@ -538,18 +481,15 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The beginning of the time interval to retrieve events for, specified in
-     * ISO 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+     * The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information
+     * about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
      * </p>
      * <p>
      * Example: 2009-07-08T18:00Z
      * </p>
      * 
-     * @return The beginning of the time interval to retrieve events for,
-     *         specified in ISO 8601 format. For more information about ISO
-     *         8601, go to the <a
-     *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     * @return The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more
+     *         information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> </p>
      *         <p>
      *         Example: 2009-07-08T18:00Z
@@ -561,23 +501,20 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The beginning of the time interval to retrieve events for, specified in
-     * ISO 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+     * The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information
+     * about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
      * </p>
      * <p>
      * Example: 2009-07-08T18:00Z
      * </p>
      * 
      * @param startTime
-     *        The beginning of the time interval to retrieve events for,
-     *        specified in ISO 8601 format. For more information about ISO 8601,
-     *        go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
-     *        Wikipedia page.</a> </p>
+     *        The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more
+     *        information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     *        page.</a> </p>
      *        <p>
      *        Example: 2009-07-08T18:00Z
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEventsRequest withStartTime(java.util.Date startTime) {
@@ -587,19 +524,17 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The end of the time interval for which to retrieve events, specified in
-     * ISO 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+     * The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information
+     * about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
      * </p>
      * <p>
      * Example: 2009-07-08T18:00Z
      * </p>
      * 
      * @param endTime
-     *        The end of the time interval for which to retrieve events,
-     *        specified in ISO 8601 format. For more information about ISO 8601,
-     *        go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
-     *        Wikipedia page.</a> </p>
+     *        The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more
+     *        information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     *        page.</a> </p>
      *        <p>
      *        Example: 2009-07-08T18:00Z
      */
@@ -610,18 +545,15 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The end of the time interval for which to retrieve events, specified in
-     * ISO 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+     * The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information
+     * about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
      * </p>
      * <p>
      * Example: 2009-07-08T18:00Z
      * </p>
      * 
-     * @return The end of the time interval for which to retrieve events,
-     *         specified in ISO 8601 format. For more information about ISO
-     *         8601, go to the <a
-     *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     * @return The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more
+     *         information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> </p>
      *         <p>
      *         Example: 2009-07-08T18:00Z
@@ -633,23 +565,20 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The end of the time interval for which to retrieve events, specified in
-     * ISO 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+     * The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information
+     * about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
      * </p>
      * <p>
      * Example: 2009-07-08T18:00Z
      * </p>
      * 
      * @param endTime
-     *        The end of the time interval for which to retrieve events,
-     *        specified in ISO 8601 format. For more information about ISO 8601,
-     *        go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
-     *        Wikipedia page.</a> </p>
+     *        The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more
+     *        information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     *        page.</a> </p>
      *        <p>
      *        Example: 2009-07-08T18:00Z
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEventsRequest withEndTime(java.util.Date endTime) {
@@ -704,8 +633,7 @@ public class DescribeEventsRequest extends
      *        The number of minutes to retrieve events for.</p>
      *        <p>
      *        Default: 60
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEventsRequest withDuration(Integer duration) {
@@ -715,12 +643,10 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * A list of event categories that trigger notifications for a event
-     * notification subscription.
+     * A list of event categories that trigger notifications for a event notification subscription.
      * </p>
      * 
-     * @return A list of event categories that trigger notifications for a event
-     *         notification subscription.
+     * @return A list of event categories that trigger notifications for a event notification subscription.
      */
 
     public java.util.List<String> getEventCategories() {
@@ -732,13 +658,11 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * A list of event categories that trigger notifications for a event
-     * notification subscription.
+     * A list of event categories that trigger notifications for a event notification subscription.
      * </p>
      * 
      * @param eventCategories
-     *        A list of event categories that trigger notifications for a event
-     *        notification subscription.
+     *        A list of event categories that trigger notifications for a event notification subscription.
      */
 
     public void setEventCategories(java.util.Collection<String> eventCategories) {
@@ -747,33 +671,27 @@ public class DescribeEventsRequest extends
             return;
         }
 
-        this.eventCategories = new com.amazonaws.internal.SdkInternalList<String>(
-                eventCategories);
+        this.eventCategories = new com.amazonaws.internal.SdkInternalList<String>(eventCategories);
     }
 
     /**
      * <p>
-     * A list of event categories that trigger notifications for a event
-     * notification subscription.
+     * A list of event categories that trigger notifications for a event notification subscription.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEventCategories(java.util.Collection)} or
-     * {@link #withEventCategories(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEventCategories(java.util.Collection)} or {@link #withEventCategories(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param eventCategories
-     *        A list of event categories that trigger notifications for a event
-     *        notification subscription.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of event categories that trigger notifications for a event notification subscription.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEventsRequest withEventCategories(String... eventCategories) {
         if (this.eventCategories == null) {
-            setEventCategories(new com.amazonaws.internal.SdkInternalList<String>(
-                    eventCategories.length));
+            setEventCategories(new com.amazonaws.internal.SdkInternalList<String>(eventCategories.length));
         }
         for (String ele : eventCategories) {
             this.eventCategories.add(ele);
@@ -783,19 +701,15 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * A list of event categories that trigger notifications for a event
-     * notification subscription.
+     * A list of event categories that trigger notifications for a event notification subscription.
      * </p>
      * 
      * @param eventCategories
-     *        A list of event categories that trigger notifications for a event
-     *        notification subscription.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of event categories that trigger notifications for a event notification subscription.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEventsRequest withEventCategories(
-            java.util.Collection<String> eventCategories) {
+    public DescribeEventsRequest withEventCategories(java.util.Collection<String> eventCategories) {
         setEventCategories(eventCategories);
         return this;
     }
@@ -830,8 +744,7 @@ public class DescribeEventsRequest extends
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -839,22 +752,19 @@ public class DescribeEventsRequest extends
      * This parameter is not currently supported.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
      *        This parameter is not currently supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEventsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -869,22 +779,19 @@ public class DescribeEventsRequest extends
      * 
      * @param filters
      *        This parameter is not currently supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEventsRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeEventsRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -894,10 +801,9 @@ public class DescribeEventsRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        pagination token called a marker is included in the response so
-     *        that the remaining results can be retrieved. </p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *        remaining results can be retrieved. </p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -911,10 +817,9 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -923,10 +828,9 @@ public class DescribeEventsRequest extends
      * Constraints: Minimum 20, maximum 100.
      * </p>
      * 
-     * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         pagination token called a marker is included in the response so
-     *         that the remaining results can be retrieved. </p>
+     * @return The maximum number of records to include in the response. If more records exist than the specified
+     *         <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *         remaining results can be retrieved. </p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -940,10 +844,9 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -953,17 +856,15 @@ public class DescribeEventsRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        pagination token called a marker is included in the response so
-     *        that the remaining results can be retrieved. </p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *        remaining results can be retrieved. </p>
      *        <p>
      *        Default: 100
      *        </p>
      *        <p>
      *        Constraints: Minimum 20, maximum 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEventsRequest withMaxRecords(Integer maxRecords) {
@@ -973,16 +874,13 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous DescribeEvents
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous DescribeEvents request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous DescribeEvents
-     *        request. If this parameter is specified, the response includes
-     *        only records beyond the marker, up to the value specified by
+     *        An optional pagination token provided by a previous DescribeEvents request. If this parameter is
+     *        specified, the response includes only records beyond the marker, up to the value specified by
      *        <code>MaxRecords</code>.
      */
 
@@ -992,16 +890,13 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous DescribeEvents
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous DescribeEvents request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
-     * @return An optional pagination token provided by a previous
-     *         DescribeEvents request. If this parameter is specified, the
-     *         response includes only records beyond the marker, up to the value
-     *         specified by <code>MaxRecords</code>.
+     * @return An optional pagination token provided by a previous DescribeEvents request. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to the value specified by
+     *         <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -1010,19 +905,15 @@ public class DescribeEventsRequest extends
 
     /**
      * <p>
-     * An optional pagination token provided by a previous DescribeEvents
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous DescribeEvents request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous DescribeEvents
-     *        request. If this parameter is specified, the response includes
-     *        only records beyond the marker, up to the value specified by
+     *        An optional pagination token provided by a previous DescribeEvents request. If this parameter is
+     *        specified, the response includes only records beyond the marker, up to the value specified by
      *        <code>MaxRecords</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEventsRequest withMarker(String marker) {
@@ -1031,8 +922,7 @@ public class DescribeEventsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1074,53 +964,41 @@ public class DescribeEventsRequest extends
         if (obj instanceof DescribeEventsRequest == false)
             return false;
         DescribeEventsRequest other = (DescribeEventsRequest) obj;
-        if (other.getSourceIdentifier() == null
-                ^ this.getSourceIdentifier() == null)
+        if (other.getSourceIdentifier() == null ^ this.getSourceIdentifier() == null)
             return false;
-        if (other.getSourceIdentifier() != null
-                && other.getSourceIdentifier().equals(
-                        this.getSourceIdentifier()) == false)
+        if (other.getSourceIdentifier() != null && other.getSourceIdentifier().equals(this.getSourceIdentifier()) == false)
             return false;
         if (other.getSourceType() == null ^ this.getSourceType() == null)
             return false;
-        if (other.getSourceType() != null
-                && other.getSourceType().equals(this.getSourceType()) == false)
+        if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
-        if (other.getStartTime() != null
-                && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
-        if (other.getEndTime() != null
-                && other.getEndTime().equals(this.getEndTime()) == false)
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
         if (other.getDuration() == null ^ this.getDuration() == null)
             return false;
-        if (other.getDuration() != null
-                && other.getDuration().equals(this.getDuration()) == false)
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
             return false;
-        if (other.getEventCategories() == null
-                ^ this.getEventCategories() == null)
+        if (other.getEventCategories() == null ^ this.getEventCategories() == null)
             return false;
-        if (other.getEventCategories() != null
-                && other.getEventCategories().equals(this.getEventCategories()) == false)
+        if (other.getEventCategories() != null && other.getEventCategories().equals(this.getEventCategories()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -1130,28 +1008,15 @@ public class DescribeEventsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getDuration() == null) ? 0 : getDuration().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEventCategories() == null) ? 0 : getEventCategories()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
+        hashCode = prime * hashCode + ((getEventCategories() == null) ? 0 : getEventCategories().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 

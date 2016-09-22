@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kinesis.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for <a>IncreaseStreamRetentionPeriod</a>.
  * </p>
  */
-public class IncreaseStreamRetentionPeriodRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class IncreaseStreamRetentionPeriodRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,8 +30,7 @@ public class IncreaseStreamRetentionPeriodRequest extends
     private String streamName;
     /**
      * <p>
-     * The new retention period of the stream, in hours. Must be more than the
-     * current retention period.
+     * The new retention period of the stream, in hours. Must be more than the current retention period.
      * </p>
      */
     private Integer retentionPeriodHours;
@@ -72,8 +67,7 @@ public class IncreaseStreamRetentionPeriodRequest extends
      * 
      * @param streamName
      *        The name of the stream to modify.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IncreaseStreamRetentionPeriodRequest withStreamName(String streamName) {
@@ -83,13 +77,11 @@ public class IncreaseStreamRetentionPeriodRequest extends
 
     /**
      * <p>
-     * The new retention period of the stream, in hours. Must be more than the
-     * current retention period.
+     * The new retention period of the stream, in hours. Must be more than the current retention period.
      * </p>
      * 
      * @param retentionPeriodHours
-     *        The new retention period of the stream, in hours. Must be more
-     *        than the current retention period.
+     *        The new retention period of the stream, in hours. Must be more than the current retention period.
      */
 
     public void setRetentionPeriodHours(Integer retentionPeriodHours) {
@@ -98,12 +90,10 @@ public class IncreaseStreamRetentionPeriodRequest extends
 
     /**
      * <p>
-     * The new retention period of the stream, in hours. Must be more than the
-     * current retention period.
+     * The new retention period of the stream, in hours. Must be more than the current retention period.
      * </p>
      * 
-     * @return The new retention period of the stream, in hours. Must be more
-     *         than the current retention period.
+     * @return The new retention period of the stream, in hours. Must be more than the current retention period.
      */
 
     public Integer getRetentionPeriodHours() {
@@ -112,26 +102,21 @@ public class IncreaseStreamRetentionPeriodRequest extends
 
     /**
      * <p>
-     * The new retention period of the stream, in hours. Must be more than the
-     * current retention period.
+     * The new retention period of the stream, in hours. Must be more than the current retention period.
      * </p>
      * 
      * @param retentionPeriodHours
-     *        The new retention period of the stream, in hours. Must be more
-     *        than the current retention period.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The new retention period of the stream, in hours. Must be more than the current retention period.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public IncreaseStreamRetentionPeriodRequest withRetentionPeriodHours(
-            Integer retentionPeriodHours) {
+    public IncreaseStreamRetentionPeriodRequest withRetentionPeriodHours(Integer retentionPeriodHours) {
         setRetentionPeriodHours(retentionPeriodHours);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -161,15 +146,11 @@ public class IncreaseStreamRetentionPeriodRequest extends
         IncreaseStreamRetentionPeriodRequest other = (IncreaseStreamRetentionPeriodRequest) obj;
         if (other.getStreamName() == null ^ this.getStreamName() == null)
             return false;
-        if (other.getStreamName() != null
-                && other.getStreamName().equals(this.getStreamName()) == false)
+        if (other.getStreamName() != null && other.getStreamName().equals(this.getStreamName()) == false)
             return false;
-        if (other.getRetentionPeriodHours() == null
-                ^ this.getRetentionPeriodHours() == null)
+        if (other.getRetentionPeriodHours() == null ^ this.getRetentionPeriodHours() == null)
             return false;
-        if (other.getRetentionPeriodHours() != null
-                && other.getRetentionPeriodHours().equals(
-                        this.getRetentionPeriodHours()) == false)
+        if (other.getRetentionPeriodHours() != null && other.getRetentionPeriodHours().equals(this.getRetentionPeriodHours()) == false)
             return false;
         return true;
     }
@@ -179,12 +160,8 @@ public class IncreaseStreamRetentionPeriodRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRetentionPeriodHours() == null) ? 0
-                        : getRetentionPeriodHours().hashCode());
+        hashCode = prime * hashCode + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
+        hashCode = prime * hashCode + ((getRetentionPeriodHours() == null) ? 0 : getRetentionPeriodHours().hashCode());
         return hashCode;
     }
 

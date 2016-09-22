@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Contains the response to a successful <a>GetInstanceProfile</a> request.
  * </p>
  */
-public class GetInstanceProfileResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GetInstanceProfileResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -64,19 +60,16 @@ public class GetInstanceProfileResult extends
      * 
      * @param instanceProfile
      *        A structure containing details about the instance profile.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetInstanceProfileResult withInstanceProfile(
-            InstanceProfile instanceProfile) {
+    public GetInstanceProfileResult withInstanceProfile(InstanceProfile instanceProfile) {
         setInstanceProfile(instanceProfile);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -102,11 +95,9 @@ public class GetInstanceProfileResult extends
         if (obj instanceof GetInstanceProfileResult == false)
             return false;
         GetInstanceProfileResult other = (GetInstanceProfileResult) obj;
-        if (other.getInstanceProfile() == null
-                ^ this.getInstanceProfile() == null)
+        if (other.getInstanceProfile() == null ^ this.getInstanceProfile() == null)
             return false;
-        if (other.getInstanceProfile() != null
-                && other.getInstanceProfile().equals(this.getInstanceProfile()) == false)
+        if (other.getInstanceProfile() != null && other.getInstanceProfile().equals(this.getInstanceProfile()) == false)
             return false;
         return true;
     }
@@ -116,10 +107,7 @@ public class GetInstanceProfileResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceProfile() == null) ? 0 : getInstanceProfile()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getInstanceProfile() == null) ? 0 : getInstanceProfile().hashCode());
         return hashCode;
     }
 
@@ -128,9 +116,7 @@ public class GetInstanceProfileResult extends
         try {
             return (GetInstanceProfileResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

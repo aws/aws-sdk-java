@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DeleteAutoScalingGroup.
  * </p>
  */
-public class DeleteAutoScalingGroupRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteAutoScalingGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,10 +30,8 @@ public class DeleteAutoScalingGroupRequest extends
     private String autoScalingGroupName;
     /**
      * <p>
-     * Specifies that the group will be deleted along with all instances
-     * associated with the group, without waiting for all instances to be
-     * terminated. This parameter also deletes any lifecycle actions associated
-     * with the group.
+     * Specifies that the group will be deleted along with all instances associated with the group, without waiting for
+     * all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.
      * </p>
      */
     private Boolean forceDelete;
@@ -74,29 +68,24 @@ public class DeleteAutoScalingGroupRequest extends
      * 
      * @param autoScalingGroupName
      *        The name of the group to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteAutoScalingGroupRequest withAutoScalingGroupName(
-            String autoScalingGroupName) {
+    public DeleteAutoScalingGroupRequest withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
 
     /**
      * <p>
-     * Specifies that the group will be deleted along with all instances
-     * associated with the group, without waiting for all instances to be
-     * terminated. This parameter also deletes any lifecycle actions associated
-     * with the group.
+     * Specifies that the group will be deleted along with all instances associated with the group, without waiting for
+     * all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.
      * </p>
      * 
      * @param forceDelete
-     *        Specifies that the group will be deleted along with all instances
-     *        associated with the group, without waiting for all instances to be
-     *        terminated. This parameter also deletes any lifecycle actions
-     *        associated with the group.
+     *        Specifies that the group will be deleted along with all instances associated with the group, without
+     *        waiting for all instances to be terminated. This parameter also deletes any lifecycle actions associated
+     *        with the group.
      */
 
     public void setForceDelete(Boolean forceDelete) {
@@ -105,16 +94,13 @@ public class DeleteAutoScalingGroupRequest extends
 
     /**
      * <p>
-     * Specifies that the group will be deleted along with all instances
-     * associated with the group, without waiting for all instances to be
-     * terminated. This parameter also deletes any lifecycle actions associated
-     * with the group.
+     * Specifies that the group will be deleted along with all instances associated with the group, without waiting for
+     * all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.
      * </p>
      * 
-     * @return Specifies that the group will be deleted along with all instances
-     *         associated with the group, without waiting for all instances to
-     *         be terminated. This parameter also deletes any lifecycle actions
-     *         associated with the group.
+     * @return Specifies that the group will be deleted along with all instances associated with the group, without
+     *         waiting for all instances to be terminated. This parameter also deletes any lifecycle actions associated
+     *         with the group.
      */
 
     public Boolean getForceDelete() {
@@ -123,19 +109,15 @@ public class DeleteAutoScalingGroupRequest extends
 
     /**
      * <p>
-     * Specifies that the group will be deleted along with all instances
-     * associated with the group, without waiting for all instances to be
-     * terminated. This parameter also deletes any lifecycle actions associated
-     * with the group.
+     * Specifies that the group will be deleted along with all instances associated with the group, without waiting for
+     * all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.
      * </p>
      * 
      * @param forceDelete
-     *        Specifies that the group will be deleted along with all instances
-     *        associated with the group, without waiting for all instances to be
-     *        terminated. This parameter also deletes any lifecycle actions
-     *        associated with the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies that the group will be deleted along with all instances associated with the group, without
+     *        waiting for all instances to be terminated. This parameter also deletes any lifecycle actions associated
+     *        with the group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteAutoScalingGroupRequest withForceDelete(Boolean forceDelete) {
@@ -145,16 +127,13 @@ public class DeleteAutoScalingGroupRequest extends
 
     /**
      * <p>
-     * Specifies that the group will be deleted along with all instances
-     * associated with the group, without waiting for all instances to be
-     * terminated. This parameter also deletes any lifecycle actions associated
-     * with the group.
+     * Specifies that the group will be deleted along with all instances associated with the group, without waiting for
+     * all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.
      * </p>
      * 
-     * @return Specifies that the group will be deleted along with all instances
-     *         associated with the group, without waiting for all instances to
-     *         be terminated. This parameter also deletes any lifecycle actions
-     *         associated with the group.
+     * @return Specifies that the group will be deleted along with all instances associated with the group, without
+     *         waiting for all instances to be terminated. This parameter also deletes any lifecycle actions associated
+     *         with the group.
      */
 
     public Boolean isForceDelete() {
@@ -162,8 +141,7 @@ public class DeleteAutoScalingGroupRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -174,8 +152,7 @@ public class DeleteAutoScalingGroupRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
         if (getForceDelete() != null)
             sb.append("ForceDelete: " + getForceDelete());
         sb.append("}");
@@ -192,17 +169,13 @@ public class DeleteAutoScalingGroupRequest extends
         if (obj instanceof DeleteAutoScalingGroupRequest == false)
             return false;
         DeleteAutoScalingGroupRequest other = (DeleteAutoScalingGroupRequest) obj;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
         if (other.getForceDelete() == null ^ this.getForceDelete() == null)
             return false;
-        if (other.getForceDelete() != null
-                && other.getForceDelete().equals(this.getForceDelete()) == false)
+        if (other.getForceDelete() != null && other.getForceDelete().equals(this.getForceDelete()) == false)
             return false;
         return true;
     }
@@ -212,13 +185,8 @@ public class DeleteAutoScalingGroupRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getForceDelete() == null) ? 0 : getForceDelete().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getForceDelete() == null) ? 0 : getForceDelete().hashCode());
         return hashCode;
     }
 

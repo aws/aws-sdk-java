@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -31,8 +29,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * The network platform of the modified Reserved Instances, which is either
-     * EC2-Classic or EC2-VPC.
+     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
      * </p>
      */
     private String platform;
@@ -81,25 +78,21 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * 
      * @param availabilityZone
      *        The Availability Zone for the modified Reserved Instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedInstancesConfiguration withAvailabilityZone(
-            String availabilityZone) {
+    public ReservedInstancesConfiguration withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
     }
 
     /**
      * <p>
-     * The network platform of the modified Reserved Instances, which is either
-     * EC2-Classic or EC2-VPC.
+     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
      * </p>
      * 
      * @param platform
-     *        The network platform of the modified Reserved Instances, which is
-     *        either EC2-Classic or EC2-VPC.
+     *        The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
      */
 
     public void setPlatform(String platform) {
@@ -108,12 +101,10 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The network platform of the modified Reserved Instances, which is either
-     * EC2-Classic or EC2-VPC.
+     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
      * </p>
      * 
-     * @return The network platform of the modified Reserved Instances, which is
-     *         either EC2-Classic or EC2-VPC.
+     * @return The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
      */
 
     public String getPlatform() {
@@ -122,15 +113,12 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The network platform of the modified Reserved Instances, which is either
-     * EC2-Classic or EC2-VPC.
+     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
      * </p>
      * 
      * @param platform
-     *        The network platform of the modified Reserved Instances, which is
-     *        either EC2-Classic or EC2-VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservedInstancesConfiguration withPlatform(String platform) {
@@ -170,12 +158,10 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * 
      * @param instanceCount
      *        The number of modified Reserved Instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReservedInstancesConfiguration withInstanceCount(
-            Integer instanceCount) {
+    public ReservedInstancesConfiguration withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
         return this;
     }
@@ -214,8 +200,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type for the modified Reserved Instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
@@ -245,20 +230,17 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type for the modified Reserved Instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
-    public ReservedInstancesConfiguration withInstanceType(
-            InstanceType instanceType) {
+    public ReservedInstancesConfiguration withInstanceType(InstanceType instanceType) {
         setInstanceType(instanceType);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -290,27 +272,21 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
         if (obj instanceof ReservedInstancesConfiguration == false)
             return false;
         ReservedInstancesConfiguration other = (ReservedInstancesConfiguration) obj;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
-        if (other.getPlatform() != null
-                && other.getPlatform().equals(this.getPlatform()) == false)
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
-        if (other.getInstanceCount() != null
-                && other.getInstanceCount().equals(this.getInstanceCount()) == false)
+        if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         return true;
     }
@@ -320,20 +296,10 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceCount() == null) ? 0 : getInstanceCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         return hashCode;
     }
 
@@ -342,9 +308,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
         try {
             return (ReservedInstancesConfiguration) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

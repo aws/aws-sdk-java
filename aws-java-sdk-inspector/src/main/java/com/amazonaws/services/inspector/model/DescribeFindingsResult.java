@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector.model;
 
@@ -19,9 +17,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeFindingsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -31,8 +27,7 @@ public class DescribeFindingsResult extends
     private java.util.List<Finding> findings;
     /**
      * <p>
-     * Finding details that cannot be described. An error code is provided for
-     * each failed item.
+     * Finding details that cannot be described. An error code is provided for each failed item.
      * </p>
      */
     private java.util.Map<String, FailedItemDetails> failedItems;
@@ -72,16 +67,14 @@ public class DescribeFindingsResult extends
      * Information about the finding.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFindings(java.util.Collection)} or
-     * {@link #withFindings(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFindings(java.util.Collection)} or {@link #withFindings(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param findings
      *        Information about the finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeFindingsResult withFindings(Finding... findings) {
@@ -101,24 +94,20 @@ public class DescribeFindingsResult extends
      * 
      * @param findings
      *        Information about the finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeFindingsResult withFindings(
-            java.util.Collection<Finding> findings) {
+    public DescribeFindingsResult withFindings(java.util.Collection<Finding> findings) {
         setFindings(findings);
         return this;
     }
 
     /**
      * <p>
-     * Finding details that cannot be described. An error code is provided for
-     * each failed item.
+     * Finding details that cannot be described. An error code is provided for each failed item.
      * </p>
      * 
-     * @return Finding details that cannot be described. An error code is
-     *         provided for each failed item.
+     * @return Finding details that cannot be described. An error code is provided for each failed item.
      */
 
     public java.util.Map<String, FailedItemDetails> getFailedItems() {
@@ -127,54 +116,45 @@ public class DescribeFindingsResult extends
 
     /**
      * <p>
-     * Finding details that cannot be described. An error code is provided for
-     * each failed item.
+     * Finding details that cannot be described. An error code is provided for each failed item.
      * </p>
      * 
      * @param failedItems
-     *        Finding details that cannot be described. An error code is
-     *        provided for each failed item.
+     *        Finding details that cannot be described. An error code is provided for each failed item.
      */
 
-    public void setFailedItems(
-            java.util.Map<String, FailedItemDetails> failedItems) {
+    public void setFailedItems(java.util.Map<String, FailedItemDetails> failedItems) {
         this.failedItems = failedItems;
     }
 
     /**
      * <p>
-     * Finding details that cannot be described. An error code is provided for
-     * each failed item.
+     * Finding details that cannot be described. An error code is provided for each failed item.
      * </p>
      * 
      * @param failedItems
-     *        Finding details that cannot be described. An error code is
-     *        provided for each failed item.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Finding details that cannot be described. An error code is provided for each failed item.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeFindingsResult withFailedItems(
-            java.util.Map<String, FailedItemDetails> failedItems) {
+    public DescribeFindingsResult withFailedItems(java.util.Map<String, FailedItemDetails> failedItems) {
         setFailedItems(failedItems);
         return this;
     }
 
-    public DescribeFindingsResult addFailedItemsEntry(String key,
-            FailedItemDetails value) {
+    public DescribeFindingsResult addFailedItemsEntry(String key, FailedItemDetails value) {
         if (null == this.failedItems) {
             this.failedItems = new java.util.HashMap<String, FailedItemDetails>();
         }
         if (this.failedItems.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.failedItems.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into FailedItems. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into FailedItems. &lt;p> Returns a reference to this object so that method calls
+     * can be chained together.
      */
 
     public DescribeFindingsResult clearFailedItemsEntries() {
@@ -183,8 +163,7 @@ public class DescribeFindingsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -214,13 +193,11 @@ public class DescribeFindingsResult extends
         DescribeFindingsResult other = (DescribeFindingsResult) obj;
         if (other.getFindings() == null ^ this.getFindings() == null)
             return false;
-        if (other.getFindings() != null
-                && other.getFindings().equals(this.getFindings()) == false)
+        if (other.getFindings() != null && other.getFindings().equals(this.getFindings()) == false)
             return false;
         if (other.getFailedItems() == null ^ this.getFailedItems() == null)
             return false;
-        if (other.getFailedItems() != null
-                && other.getFailedItems().equals(this.getFailedItems()) == false)
+        if (other.getFailedItems() != null && other.getFailedItems().equals(this.getFailedItems()) == false)
             return false;
         return true;
     }
@@ -230,11 +207,8 @@ public class DescribeFindingsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFindings() == null) ? 0 : getFindings().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFailedItems() == null) ? 0 : getFailedItems().hashCode());
+        hashCode = prime * hashCode + ((getFindings() == null) ? 0 : getFindings().hashCode());
+        hashCode = prime * hashCode + ((getFailedItems() == null) ? 0 : getFailedItems().hashCode());
         return hashCode;
     }
 
@@ -243,9 +217,7 @@ public class DescribeFindingsResult extends
         try {
             return (DescribeFindingsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

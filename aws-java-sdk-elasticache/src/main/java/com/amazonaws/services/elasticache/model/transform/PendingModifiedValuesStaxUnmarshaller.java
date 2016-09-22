@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * PendingModifiedValues StAX Unmarshaller
  */
-public class PendingModifiedValuesStaxUnmarshaller implements
-        Unmarshaller<PendingModifiedValues, StaxUnmarshallerContext> {
+public class PendingModifiedValuesStaxUnmarshaller implements Unmarshaller<PendingModifiedValues, StaxUnmarshallerContext> {
 
-    public PendingModifiedValues unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public PendingModifiedValues unmarshall(StaxUnmarshallerContext context) throws Exception {
         PendingModifiedValues pendingModifiedValues = new PendingModifiedValues();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,31 +46,22 @@ public class PendingModifiedValuesStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("NumCacheNodes", targetDepth)) {
-                    pendingModifiedValues
-                            .setNumCacheNodes(IntegerStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    pendingModifiedValues.setNumCacheNodes(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("CacheNodeIdsToRemove/CacheNodeId",
-                        targetDepth)) {
-                    pendingModifiedValues
-                            .withCacheNodeIdsToRemove(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("CacheNodeIdsToRemove/CacheNodeId", targetDepth)) {
+                    pendingModifiedValues.withCacheNodeIdsToRemove(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EngineVersion", targetDepth)) {
-                    pendingModifiedValues
-                            .setEngineVersion(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    pendingModifiedValues.setEngineVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("CacheNodeType", targetDepth)) {
-                    pendingModifiedValues
-                            .setCacheNodeType(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    pendingModifiedValues.setCacheNodeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

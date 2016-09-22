@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model.transform;
 
@@ -39,47 +37,38 @@ import com.amazonaws.util.SdkHttpUtils;
  * UntagResourceRequest Marshaller
  */
 
-public class UntagResourceRequestMarshaller implements
-        Marshaller<Request<UntagResourceRequest>, UntagResourceRequest> {
+public class UntagResourceRequestMarshaller implements Marshaller<Request<UntagResourceRequest>, UntagResourceRequest> {
 
-    public Request<UntagResourceRequest> marshall(
-            UntagResourceRequest untagResourceRequest) {
+    public Request<UntagResourceRequest> marshall(UntagResourceRequest untagResourceRequest) {
 
         if (untagResourceRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UntagResourceRequest> request = new DefaultRequest<UntagResourceRequest>(
-                untagResourceRequest, "AmazonCloudFront");
+        Request<UntagResourceRequest> request = new DefaultRequest<UntagResourceRequest>(untagResourceRequest, "AmazonCloudFront");
 
         request.setHttpMethod(HttpMethodName.POST);
 
         String uriResourcePath = "/2016-09-07/tagging?Operation=Untag";
 
-        uriResourcePath = com.amazonaws.util.UriResourcePathUtils
-                .addStaticQueryParamtersToRequest(request, uriResourcePath);
+        uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
 
         request.setResourcePath(uriResourcePath);
 
         if (untagResourceRequest.getResource() != null) {
-            request.addParameter("Resource",
-                    StringUtils.fromString(untagResourceRequest.getResource()));
+            request.addParameter("Resource", StringUtils.fromString(untagResourceRequest.getResource()));
         }
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter,
-                    "http://cloudfront.amazonaws.com/doc/2016-09-07/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-09-07/");
 
             TagKeys tagKeys = untagResourceRequest.getTagKeys();
             if (tagKeys != null) {
                 xmlWriter.startElement("TagKeys");
 
-                com.amazonaws.internal.SdkInternalList<String> tagKeysItemsList = (com.amazonaws.internal.SdkInternalList<String>) tagKeys
-                        .getItems();
-                if (!tagKeysItemsList.isEmpty()
-                        || !tagKeysItemsList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> tagKeysItemsList = (com.amazonaws.internal.SdkInternalList<String>) tagKeys.getItems();
+                if (!tagKeysItemsList.isEmpty() || !tagKeysItemsList.isAutoConstruct()) {
                     xmlWriter.startElement("Items");
 
                     for (String tagKeysItemsListValue : tagKeysItemsList) {
@@ -92,18 +81,13 @@ public class UntagResourceRequestMarshaller implements
                 xmlWriter.endElement();
             }
 
-            request.setContent(new StringInputStream(stringWriter.getBuffer()
-                    .toString()));
-            request.addHeader(
-                    "Content-Length",
-                    Integer.toString(stringWriter.getBuffer().toString()
-                            .getBytes(UTF8).length));
+            request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
+            request.addHeader("Content-Length", Integer.toString(stringWriter.getBuffer().toString().getBytes(UTF8).length));
             if (!request.getHeaders().containsKey("Content-Type")) {
                 request.addHeader("Content-Type", "application/xml");
             }
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to XML: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to XML: " + t.getMessage(), t);
         }
 
         return request;

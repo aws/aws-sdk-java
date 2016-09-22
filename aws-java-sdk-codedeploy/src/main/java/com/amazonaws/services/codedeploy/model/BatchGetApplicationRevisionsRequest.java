@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -22,34 +20,28 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a batch get application revisions operation.
  * </p>
  */
-public class BatchGetApplicationRevisionsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class BatchGetApplicationRevisionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application about which to get revision
-     * information.
+     * The name of an AWS CodeDeploy application about which to get revision information.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * Information to get about the application revisions, including type and
-     * location.
+     * Information to get about the application revisions, including type and location.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RevisionLocation> revisions;
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application about which to get revision
-     * information.
+     * The name of an AWS CodeDeploy application about which to get revision information.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application about which to get
-     *        revision information.
+     *        The name of an AWS CodeDeploy application about which to get revision information.
      */
 
     public void setApplicationName(String applicationName) {
@@ -58,12 +50,10 @@ public class BatchGetApplicationRevisionsRequest extends
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application about which to get revision
-     * information.
+     * The name of an AWS CodeDeploy application about which to get revision information.
      * </p>
      * 
-     * @return The name of an AWS CodeDeploy application about which to get
-     *         revision information.
+     * @return The name of an AWS CodeDeploy application about which to get revision information.
      */
 
     public String getApplicationName() {
@@ -72,31 +62,25 @@ public class BatchGetApplicationRevisionsRequest extends
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application about which to get revision
-     * information.
+     * The name of an AWS CodeDeploy application about which to get revision information.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application about which to get
-     *        revision information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of an AWS CodeDeploy application about which to get revision information.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetApplicationRevisionsRequest withApplicationName(
-            String applicationName) {
+    public BatchGetApplicationRevisionsRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
     }
 
     /**
      * <p>
-     * Information to get about the application revisions, including type and
-     * location.
+     * Information to get about the application revisions, including type and location.
      * </p>
      * 
-     * @return Information to get about the application revisions, including
-     *         type and location.
+     * @return Information to get about the application revisions, including type and location.
      */
 
     public java.util.List<RevisionLocation> getRevisions() {
@@ -108,13 +92,11 @@ public class BatchGetApplicationRevisionsRequest extends
 
     /**
      * <p>
-     * Information to get about the application revisions, including type and
-     * location.
+     * Information to get about the application revisions, including type and location.
      * </p>
      * 
      * @param revisions
-     *        Information to get about the application revisions, including type
-     *        and location.
+     *        Information to get about the application revisions, including type and location.
      */
 
     public void setRevisions(java.util.Collection<RevisionLocation> revisions) {
@@ -123,34 +105,27 @@ public class BatchGetApplicationRevisionsRequest extends
             return;
         }
 
-        this.revisions = new com.amazonaws.internal.SdkInternalList<RevisionLocation>(
-                revisions);
+        this.revisions = new com.amazonaws.internal.SdkInternalList<RevisionLocation>(revisions);
     }
 
     /**
      * <p>
-     * Information to get about the application revisions, including type and
-     * location.
+     * Information to get about the application revisions, including type and location.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRevisions(java.util.Collection)} or
-     * {@link #withRevisions(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRevisions(java.util.Collection)} or {@link #withRevisions(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param revisions
-     *        Information to get about the application revisions, including type
-     *        and location.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information to get about the application revisions, including type and location.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetApplicationRevisionsRequest withRevisions(
-            RevisionLocation... revisions) {
+    public BatchGetApplicationRevisionsRequest withRevisions(RevisionLocation... revisions) {
         if (this.revisions == null) {
-            setRevisions(new com.amazonaws.internal.SdkInternalList<RevisionLocation>(
-                    revisions.length));
+            setRevisions(new com.amazonaws.internal.SdkInternalList<RevisionLocation>(revisions.length));
         }
         for (RevisionLocation ele : revisions) {
             this.revisions.add(ele);
@@ -160,26 +135,21 @@ public class BatchGetApplicationRevisionsRequest extends
 
     /**
      * <p>
-     * Information to get about the application revisions, including type and
-     * location.
+     * Information to get about the application revisions, including type and location.
      * </p>
      * 
      * @param revisions
-     *        Information to get about the application revisions, including type
-     *        and location.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information to get about the application revisions, including type and location.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetApplicationRevisionsRequest withRevisions(
-            java.util.Collection<RevisionLocation> revisions) {
+    public BatchGetApplicationRevisionsRequest withRevisions(java.util.Collection<RevisionLocation> revisions) {
         setRevisions(revisions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -207,16 +177,13 @@ public class BatchGetApplicationRevisionsRequest extends
         if (obj instanceof BatchGetApplicationRevisionsRequest == false)
             return false;
         BatchGetApplicationRevisionsRequest other = (BatchGetApplicationRevisionsRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
         if (other.getRevisions() == null ^ this.getRevisions() == null)
             return false;
-        if (other.getRevisions() != null
-                && other.getRevisions().equals(this.getRevisions()) == false)
+        if (other.getRevisions() != null && other.getRevisions().equals(this.getRevisions()) == false)
             return false;
         return true;
     }
@@ -226,12 +193,8 @@ public class BatchGetApplicationRevisionsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getRevisions() == null) ? 0 : getRevisions().hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getRevisions() == null) ? 0 : getRevisions().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53;
 
@@ -19,9 +17,8 @@ import com.amazonaws.*;
 import com.amazonaws.services.route53.waiters.AmazonRoute53Waiters;
 
 /**
- * Abstract implementation of {@code AmazonRoute53}. Convenient method forms
- * pass through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonRoute53}. Convenient method forms pass through to the corresponding overload
+ * that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAmazonRoute53 implements AmazonRoute53 {
 
@@ -39,92 +36,77 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
-    public AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(
-            AssociateVPCWithHostedZoneRequest request) {
+    public AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ChangeResourceRecordSetsResult changeResourceRecordSets(
-            ChangeResourceRecordSetsRequest request) {
+    public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ChangeTagsForResourceResult changeTagsForResource(
-            ChangeTagsForResourceRequest request) {
+    public ChangeTagsForResourceResult changeTagsForResource(ChangeTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateHealthCheckResult createHealthCheck(
-            CreateHealthCheckRequest request) {
+    public CreateHealthCheckResult createHealthCheck(CreateHealthCheckRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateHostedZoneResult createHostedZone(
-            CreateHostedZoneRequest request) {
+    public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateReusableDelegationSetResult createReusableDelegationSet(
-            CreateReusableDelegationSetRequest request) {
+    public CreateReusableDelegationSetResult createReusableDelegationSet(CreateReusableDelegationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateTrafficPolicyResult createTrafficPolicy(
-            CreateTrafficPolicyRequest request) {
+    public CreateTrafficPolicyResult createTrafficPolicy(CreateTrafficPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateTrafficPolicyInstanceResult createTrafficPolicyInstance(
-            CreateTrafficPolicyInstanceRequest request) {
+    public CreateTrafficPolicyInstanceResult createTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateTrafficPolicyVersionResult createTrafficPolicyVersion(
-            CreateTrafficPolicyVersionRequest request) {
+    public CreateTrafficPolicyVersionResult createTrafficPolicyVersion(CreateTrafficPolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteHealthCheckResult deleteHealthCheck(
-            DeleteHealthCheckRequest request) {
+    public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteHostedZoneResult deleteHostedZone(
-            DeleteHostedZoneRequest request) {
+    public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteReusableDelegationSetResult deleteReusableDelegationSet(
-            DeleteReusableDelegationSetRequest request) {
+    public DeleteReusableDelegationSetResult deleteReusableDelegationSet(DeleteReusableDelegationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteTrafficPolicyResult deleteTrafficPolicy(
-            DeleteTrafficPolicyRequest request) {
+    public DeleteTrafficPolicyResult deleteTrafficPolicy(DeleteTrafficPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteTrafficPolicyInstanceResult deleteTrafficPolicyInstance(
-            DeleteTrafficPolicyInstanceRequest request) {
+    public DeleteTrafficPolicyInstanceResult deleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(
-            DisassociateVPCFromHostedZoneRequest request) {
+    public DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -135,14 +117,12 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
 
     @Override
     @Deprecated
-    public GetChangeDetailsResult getChangeDetails(
-            GetChangeDetailsRequest request) {
+    public GetChangeDetailsResult getChangeDetails(GetChangeDetailsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetCheckerIpRangesResult getCheckerIpRanges(
-            GetCheckerIpRangesRequest request) {
+    public GetCheckerIpRangesResult getCheckerIpRanges(GetCheckerIpRangesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -167,8 +147,7 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
-    public GetHealthCheckCountResult getHealthCheckCount(
-            GetHealthCheckCountRequest request) {
+    public GetHealthCheckCountResult getHealthCheckCount(GetHealthCheckCountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -178,14 +157,12 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
-    public GetHealthCheckLastFailureReasonResult getHealthCheckLastFailureReason(
-            GetHealthCheckLastFailureReasonRequest request) {
+    public GetHealthCheckLastFailureReasonResult getHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetHealthCheckStatusResult getHealthCheckStatus(
-            GetHealthCheckStatusRequest request) {
+    public GetHealthCheckStatusResult getHealthCheckStatus(GetHealthCheckStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -195,8 +172,7 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
-    public GetHostedZoneCountResult getHostedZoneCount(
-            GetHostedZoneCountRequest request) {
+    public GetHostedZoneCountResult getHostedZoneCount(GetHostedZoneCountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -206,26 +182,22 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
-    public GetReusableDelegationSetResult getReusableDelegationSet(
-            GetReusableDelegationSetRequest request) {
+    public GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetTrafficPolicyResult getTrafficPolicy(
-            GetTrafficPolicyRequest request) {
+    public GetTrafficPolicyResult getTrafficPolicy(GetTrafficPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetTrafficPolicyInstanceResult getTrafficPolicyInstance(
-            GetTrafficPolicyInstanceRequest request) {
+    public GetTrafficPolicyInstanceResult getTrafficPolicyInstance(GetTrafficPolicyInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount(
-            GetTrafficPolicyInstanceCountRequest request) {
+    public GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -236,21 +208,18 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
 
     @Override
     @Deprecated
-    public ListChangeBatchesByHostedZoneResult listChangeBatchesByHostedZone(
-            ListChangeBatchesByHostedZoneRequest request) {
+    public ListChangeBatchesByHostedZoneResult listChangeBatchesByHostedZone(ListChangeBatchesByHostedZoneRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     @Deprecated
-    public ListChangeBatchesByRRSetResult listChangeBatchesByRRSet(
-            ListChangeBatchesByRRSetRequest request) {
+    public ListChangeBatchesByRRSetResult listChangeBatchesByRRSet(ListChangeBatchesByRRSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListGeoLocationsResult listGeoLocations(
-            ListGeoLocationsRequest request) {
+    public ListGeoLocationsResult listGeoLocations(ListGeoLocationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -260,8 +229,7 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
-    public ListHealthChecksResult listHealthChecks(
-            ListHealthChecksRequest request) {
+    public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -281,8 +249,7 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
-    public ListHostedZonesByNameResult listHostedZonesByName(
-            ListHostedZonesByNameRequest request) {
+    public ListHostedZonesByNameResult listHostedZonesByName(ListHostedZonesByNameRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -292,14 +259,12 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
-    public ListResourceRecordSetsResult listResourceRecordSets(
-            ListResourceRecordSetsRequest request) {
+    public ListResourceRecordSetsResult listResourceRecordSets(ListResourceRecordSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListReusableDelegationSetsResult listReusableDelegationSets(
-            ListReusableDelegationSetsRequest request) {
+    public ListReusableDelegationSetsResult listReusableDelegationSets(ListReusableDelegationSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -309,20 +274,17 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
-    public ListTagsForResourceResult listTagsForResource(
-            ListTagsForResourceRequest request) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListTagsForResourcesResult listTagsForResources(
-            ListTagsForResourcesRequest request) {
+    public ListTagsForResourcesResult listTagsForResources(ListTagsForResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListTrafficPoliciesResult listTrafficPolicies(
-            ListTrafficPoliciesRequest request) {
+    public ListTrafficPoliciesResult listTrafficPolicies(ListTrafficPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -332,8 +294,7 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
-    public ListTrafficPolicyInstancesResult listTrafficPolicyInstances(
-            ListTrafficPolicyInstancesRequest request) {
+    public ListTrafficPolicyInstancesResult listTrafficPolicyInstances(ListTrafficPolicyInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -343,20 +304,17 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
-    public ListTrafficPolicyInstancesByHostedZoneResult listTrafficPolicyInstancesByHostedZone(
-            ListTrafficPolicyInstancesByHostedZoneRequest request) {
+    public ListTrafficPolicyInstancesByHostedZoneResult listTrafficPolicyInstancesByHostedZone(ListTrafficPolicyInstancesByHostedZoneRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListTrafficPolicyInstancesByPolicyResult listTrafficPolicyInstancesByPolicy(
-            ListTrafficPolicyInstancesByPolicyRequest request) {
+    public ListTrafficPolicyInstancesByPolicyResult listTrafficPolicyInstancesByPolicy(ListTrafficPolicyInstancesByPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListTrafficPolicyVersionsResult listTrafficPolicyVersions(
-            ListTrafficPolicyVersionsRequest request) {
+    public ListTrafficPolicyVersionsResult listTrafficPolicyVersions(ListTrafficPolicyVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -366,26 +324,22 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
-    public UpdateHealthCheckResult updateHealthCheck(
-            UpdateHealthCheckRequest request) {
+    public UpdateHealthCheckResult updateHealthCheck(UpdateHealthCheckRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateHostedZoneCommentResult updateHostedZoneComment(
-            UpdateHostedZoneCommentRequest request) {
+    public UpdateHostedZoneCommentResult updateHostedZoneComment(UpdateHostedZoneCommentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateTrafficPolicyCommentResult updateTrafficPolicyComment(
-            UpdateTrafficPolicyCommentRequest request) {
+    public UpdateTrafficPolicyCommentResult updateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateTrafficPolicyInstanceResult updateTrafficPolicyInstance(
-            UpdateTrafficPolicyInstanceRequest request) {
+    public UpdateTrafficPolicyInstanceResult updateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -395,8 +349,7 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

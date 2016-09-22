@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
@@ -29,11 +27,9 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * UserType JSON Unmarshaller
  */
-public class UserTypeJsonUnmarshaller implements
-        Unmarshaller<UserType, JsonUnmarshallerContext> {
+public class UserTypeJsonUnmarshaller implements Unmarshaller<UserType, JsonUnmarshallerContext> {
 
-    public UserType unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public UserType unmarshall(JsonUnmarshallerContext context) throws Exception {
         UserType userType = new UserType();
 
         int originalDepth = context.getCurrentDepth();
@@ -53,39 +49,30 @@ public class UserTypeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
-                    userType.setUsername(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    userType.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
-                    userType.setAttributes(new ListUnmarshaller<AttributeType>(
-                            AttributeTypeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    userType.setAttributes(new ListUnmarshaller<AttributeType>(AttributeTypeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("UserCreateDate", targetDepth)) {
                     context.nextToken();
-                    userType.setUserCreateDate(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    userType.setUserCreateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("UserLastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    userType.setUserLastModifiedDate(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    userType.setUserLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();
-                    userType.setEnabled(context.getUnmarshaller(Boolean.class)
-                            .unmarshall(context));
+                    userType.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UserStatus", targetDepth)) {
                     context.nextToken();
-                    userType.setUserStatus(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    userType.setUserStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

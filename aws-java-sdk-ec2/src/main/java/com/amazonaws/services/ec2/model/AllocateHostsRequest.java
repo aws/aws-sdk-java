@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,14 +22,12 @@ import com.amazonaws.services.ec2.model.transform.AllocateHostsRequestMarshaller
  * Contains the parameters for AllocateHosts.
  * </p>
  */
-public class AllocateHostsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<AllocateHostsRequest> {
+public class AllocateHostsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AllocateHostsRequest> {
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated Hosts, when you are
-     * launching instances without specifying a host ID.
+     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
+     * Hosts, when you are launching instances without specifying a host ID.
      * </p>
      * <p>
      * Default: Enabled
@@ -40,26 +36,22 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
     private String autoPlacement;
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * Specify the instance type that you want your Dedicated Hosts to be
-     * configured for. When you specify the instance type, that is the only
-     * instance type that you can launch onto that host.
+     * Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the instance
+     * type, that is the only instance type that you can launch onto that host.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * The number of Dedicated Hosts you want to allocate to your account with
-     * these parameters.
+     * The number of Dedicated Hosts you want to allocate to your account with these parameters.
      * </p>
      */
     private Integer quantity;
@@ -72,18 +64,16 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated Hosts, when you are
-     * launching instances without specifying a host ID.
+     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
+     * Hosts, when you are launching instances without specifying a host ID.
      * </p>
      * <p>
      * Default: Enabled
      * </p>
      * 
      * @param autoPlacement
-     *        This is enabled by default. This property allows instances to be
-     *        automatically placed onto available Dedicated Hosts, when you are
-     *        launching instances without specifying a host ID.</p>
+     *        This is enabled by default. This property allows instances to be automatically placed onto available
+     *        Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
      *        <p>
      *        Default: Enabled
      * @see AutoPlacement
@@ -95,17 +85,15 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated Hosts, when you are
-     * launching instances without specifying a host ID.
+     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
+     * Hosts, when you are launching instances without specifying a host ID.
      * </p>
      * <p>
      * Default: Enabled
      * </p>
      * 
-     * @return This is enabled by default. This property allows instances to be
-     *         automatically placed onto available Dedicated Hosts, when you are
-     *         launching instances without specifying a host ID.</p>
+     * @return This is enabled by default. This property allows instances to be automatically placed onto available
+     *         Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
      *         <p>
      *         Default: Enabled
      * @see AutoPlacement
@@ -117,22 +105,19 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated Hosts, when you are
-     * launching instances without specifying a host ID.
+     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
+     * Hosts, when you are launching instances without specifying a host ID.
      * </p>
      * <p>
      * Default: Enabled
      * </p>
      * 
      * @param autoPlacement
-     *        This is enabled by default. This property allows instances to be
-     *        automatically placed onto available Dedicated Hosts, when you are
-     *        launching instances without specifying a host ID.</p>
+     *        This is enabled by default. This property allows instances to be automatically placed onto available
+     *        Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
      *        <p>
      *        Default: Enabled
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoPlacement
      */
 
@@ -143,18 +128,16 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated Hosts, when you are
-     * launching instances without specifying a host ID.
+     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
+     * Hosts, when you are launching instances without specifying a host ID.
      * </p>
      * <p>
      * Default: Enabled
      * </p>
      * 
      * @param autoPlacement
-     *        This is enabled by default. This property allows instances to be
-     *        automatically placed onto available Dedicated Hosts, when you are
-     *        launching instances without specifying a host ID.</p>
+     *        This is enabled by default. This property allows instances to be automatically placed onto available
+     *        Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
      *        <p>
      *        Default: Enabled
      * @see AutoPlacement
@@ -166,22 +149,19 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated Hosts, when you are
-     * launching instances without specifying a host ID.
+     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
+     * Hosts, when you are launching instances without specifying a host ID.
      * </p>
      * <p>
      * Default: Enabled
      * </p>
      * 
      * @param autoPlacement
-     *        This is enabled by default. This property allows instances to be
-     *        automatically placed onto available Dedicated Hosts, when you are
-     *        launching instances without specifying a host ID.</p>
+     *        This is enabled by default. This property allows instances to be automatically placed onto available
+     *        Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
      *        <p>
      *        Default: Enabled
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoPlacement
      */
 
@@ -192,19 +172,15 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure
-     *        idempotency of the request. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     *        >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
-     *        Cloud User Guide</i>.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setClientToken(String clientToken) {
@@ -213,18 +189,14 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure
-     *         idempotency of the request. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     *         >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
-     *         Cloud User Guide</i>.
+     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getClientToken() {
@@ -233,21 +205,16 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i>.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure
-     *        idempotency of the request. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
-     *        >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
-     *        Cloud User Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AllocateHostsRequest withClientToken(String clientToken) {
@@ -257,15 +224,13 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify the instance type that you want your Dedicated Hosts to be
-     * configured for. When you specify the instance type, that is the only
-     * instance type that you can launch onto that host.
+     * Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the instance
+     * type, that is the only instance type that you can launch onto that host.
      * </p>
      * 
      * @param instanceType
-     *        Specify the instance type that you want your Dedicated Hosts to be
-     *        configured for. When you specify the instance type, that is the
-     *        only instance type that you can launch onto that host.
+     *        Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the
+     *        instance type, that is the only instance type that you can launch onto that host.
      */
 
     public void setInstanceType(String instanceType) {
@@ -274,14 +239,12 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify the instance type that you want your Dedicated Hosts to be
-     * configured for. When you specify the instance type, that is the only
-     * instance type that you can launch onto that host.
+     * Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the instance
+     * type, that is the only instance type that you can launch onto that host.
      * </p>
      * 
-     * @return Specify the instance type that you want your Dedicated Hosts to
-     *         be configured for. When you specify the instance type, that is
-     *         the only instance type that you can launch onto that host.
+     * @return Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the
+     *         instance type, that is the only instance type that you can launch onto that host.
      */
 
     public String getInstanceType() {
@@ -290,17 +253,14 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify the instance type that you want your Dedicated Hosts to be
-     * configured for. When you specify the instance type, that is the only
-     * instance type that you can launch onto that host.
+     * Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the instance
+     * type, that is the only instance type that you can launch onto that host.
      * </p>
      * 
      * @param instanceType
-     *        Specify the instance type that you want your Dedicated Hosts to be
-     *        configured for. When you specify the instance type, that is the
-     *        only instance type that you can launch onto that host.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the
+     *        instance type, that is the only instance type that you can launch onto that host.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AllocateHostsRequest withInstanceType(String instanceType) {
@@ -310,13 +270,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The number of Dedicated Hosts you want to allocate to your account with
-     * these parameters.
+     * The number of Dedicated Hosts you want to allocate to your account with these parameters.
      * </p>
      * 
      * @param quantity
-     *        The number of Dedicated Hosts you want to allocate to your account
-     *        with these parameters.
+     *        The number of Dedicated Hosts you want to allocate to your account with these parameters.
      */
 
     public void setQuantity(Integer quantity) {
@@ -325,12 +283,10 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The number of Dedicated Hosts you want to allocate to your account with
-     * these parameters.
+     * The number of Dedicated Hosts you want to allocate to your account with these parameters.
      * </p>
      * 
-     * @return The number of Dedicated Hosts you want to allocate to your
-     *         account with these parameters.
+     * @return The number of Dedicated Hosts you want to allocate to your account with these parameters.
      */
 
     public Integer getQuantity() {
@@ -339,15 +295,12 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The number of Dedicated Hosts you want to allocate to your account with
-     * these parameters.
+     * The number of Dedicated Hosts you want to allocate to your account with these parameters.
      * </p>
      * 
      * @param quantity
-     *        The number of Dedicated Hosts you want to allocate to your account
-     *        with these parameters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of Dedicated Hosts you want to allocate to your account with these parameters.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AllocateHostsRequest withQuantity(Integer quantity) {
@@ -387,8 +340,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      * 
      * @param availabilityZone
      *        The Availability Zone for the Dedicated Hosts.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AllocateHostsRequest withAvailabilityZone(String availabilityZone) {
@@ -397,21 +349,18 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<AllocateHostsRequest> getDryRunRequest() {
-        Request<AllocateHostsRequest> request = new AllocateHostsRequestMarshaller()
-                .marshall(this);
+        Request<AllocateHostsRequest> request = new AllocateHostsRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -447,30 +396,23 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
         AllocateHostsRequest other = (AllocateHostsRequest) obj;
         if (other.getAutoPlacement() == null ^ this.getAutoPlacement() == null)
             return false;
-        if (other.getAutoPlacement() != null
-                && other.getAutoPlacement().equals(this.getAutoPlacement()) == false)
+        if (other.getAutoPlacement() != null && other.getAutoPlacement().equals(this.getAutoPlacement()) == false)
             return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getClientToken() != null
-                && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getQuantity() == null ^ this.getQuantity() == null)
             return false;
-        if (other.getQuantity() != null
-                && other.getQuantity().equals(this.getQuantity()) == false)
+        if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
         return true;
     }
@@ -480,23 +422,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoPlacement() == null) ? 0 : getAutoPlacement()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAutoPlacement() == null) ? 0 : getAutoPlacement().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         return hashCode;
     }
 

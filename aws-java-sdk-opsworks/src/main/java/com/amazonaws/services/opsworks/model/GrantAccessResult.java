@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
 
@@ -21,30 +19,25 @@ import java.io.Serializable;
  * Contains the response to a <code>GrantAccess</code> request.
  * </p>
  */
-public class GrantAccessResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class GrantAccessResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <code>TemporaryCredential</code> object that contains the data needed
-     * to log in to the instance by RDP clients, such as the Microsoft Remote
-     * Desktop Connection.
+     * A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients,
+     * such as the Microsoft Remote Desktop Connection.
      * </p>
      */
     private TemporaryCredential temporaryCredential;
 
     /**
      * <p>
-     * A <code>TemporaryCredential</code> object that contains the data needed
-     * to log in to the instance by RDP clients, such as the Microsoft Remote
-     * Desktop Connection.
+     * A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients,
+     * such as the Microsoft Remote Desktop Connection.
      * </p>
      * 
      * @param temporaryCredential
-     *        A <code>TemporaryCredential</code> object that contains the data
-     *        needed to log in to the instance by RDP clients, such as the
-     *        Microsoft Remote Desktop Connection.
+     *        A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP
+     *        clients, such as the Microsoft Remote Desktop Connection.
      */
 
     public void setTemporaryCredential(TemporaryCredential temporaryCredential) {
@@ -53,14 +46,12 @@ public class GrantAccessResult extends
 
     /**
      * <p>
-     * A <code>TemporaryCredential</code> object that contains the data needed
-     * to log in to the instance by RDP clients, such as the Microsoft Remote
-     * Desktop Connection.
+     * A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients,
+     * such as the Microsoft Remote Desktop Connection.
      * </p>
      * 
-     * @return A <code>TemporaryCredential</code> object that contains the data
-     *         needed to log in to the instance by RDP clients, such as the
-     *         Microsoft Remote Desktop Connection.
+     * @return A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP
+     *         clients, such as the Microsoft Remote Desktop Connection.
      */
 
     public TemporaryCredential getTemporaryCredential() {
@@ -69,28 +60,23 @@ public class GrantAccessResult extends
 
     /**
      * <p>
-     * A <code>TemporaryCredential</code> object that contains the data needed
-     * to log in to the instance by RDP clients, such as the Microsoft Remote
-     * Desktop Connection.
+     * A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients,
+     * such as the Microsoft Remote Desktop Connection.
      * </p>
      * 
      * @param temporaryCredential
-     *        A <code>TemporaryCredential</code> object that contains the data
-     *        needed to log in to the instance by RDP clients, such as the
-     *        Microsoft Remote Desktop Connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP
+     *        clients, such as the Microsoft Remote Desktop Connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GrantAccessResult withTemporaryCredential(
-            TemporaryCredential temporaryCredential) {
+    public GrantAccessResult withTemporaryCredential(TemporaryCredential temporaryCredential) {
         setTemporaryCredential(temporaryCredential);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -116,12 +102,9 @@ public class GrantAccessResult extends
         if (obj instanceof GrantAccessResult == false)
             return false;
         GrantAccessResult other = (GrantAccessResult) obj;
-        if (other.getTemporaryCredential() == null
-                ^ this.getTemporaryCredential() == null)
+        if (other.getTemporaryCredential() == null ^ this.getTemporaryCredential() == null)
             return false;
-        if (other.getTemporaryCredential() != null
-                && other.getTemporaryCredential().equals(
-                        this.getTemporaryCredential()) == false)
+        if (other.getTemporaryCredential() != null && other.getTemporaryCredential().equals(this.getTemporaryCredential()) == false)
             return false;
         return true;
     }
@@ -131,10 +114,7 @@ public class GrantAccessResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getTemporaryCredential() == null) ? 0
-                        : getTemporaryCredential().hashCode());
+        hashCode = prime * hashCode + ((getTemporaryCredential() == null) ? 0 : getTemporaryCredential().hashCode());
         return hashCode;
     }
 
@@ -143,9 +123,7 @@ public class GrantAccessResult extends
         try {
             return (GrantAccessResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

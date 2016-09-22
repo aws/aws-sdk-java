@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iotdata.model.transform;
 
@@ -43,36 +41,29 @@ import com.amazonaws.protocol.json.*;
 /**
  * GetThingShadowRequest Marshaller
  */
-public class GetThingShadowRequestMarshaller implements
-        Marshaller<Request<GetThingShadowRequest>, GetThingShadowRequest> {
+public class GetThingShadowRequestMarshaller implements Marshaller<Request<GetThingShadowRequest>, GetThingShadowRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public GetThingShadowRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public GetThingShadowRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<GetThingShadowRequest> marshall(
-            GetThingShadowRequest getThingShadowRequest) {
+    public Request<GetThingShadowRequest> marshall(GetThingShadowRequest getThingShadowRequest) {
 
         if (getThingShadowRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetThingShadowRequest> request = new DefaultRequest<GetThingShadowRequest>(
-                getThingShadowRequest, "AWSIotData");
+        Request<GetThingShadowRequest> request = new DefaultRequest<GetThingShadowRequest>(getThingShadowRequest, "AWSIotData");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/things/{thingName}/shadow";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{thingName}",
-                (getThingShadowRequest.getThingName() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(getThingShadowRequest
-                                .getThingName()), false) : "");
+        uriResourcePath = uriResourcePath.replace("{thingName}",
+                (getThingShadowRequest.getThingName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getThingShadowRequest.getThingName()), false)
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

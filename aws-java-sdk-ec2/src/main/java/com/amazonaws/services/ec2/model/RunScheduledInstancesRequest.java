@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,16 +22,14 @@ import com.amazonaws.services.ec2.model.transform.RunScheduledInstancesRequestMa
  * Contains the parameters for RunScheduledInstances.
  * </p>
  */
-public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+public class RunScheduledInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<RunScheduledInstancesRequest> {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that ensures the idempotency of the
-     * request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      */
     private String clientToken;
@@ -54,25 +50,23 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
     private String scheduledInstanceId;
     /**
      * <p>
-     * The launch specification. You must match the instance type, Availability
-     * Zone, network, and platform of the schedule that you purchased.
+     * The launch specification. You must match the instance type, Availability Zone, network, and platform of the
+     * schedule that you purchased.
      * </p>
      */
     private ScheduledInstancesLaunchSpecification launchSpecification;
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that ensures the idempotency of the
-     * request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier that ensures the idempotency of
-     *        the request. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *        >Ensuring Idempotency</a>.
+     *        Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see
+     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -81,16 +75,14 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that ensures the idempotency of the
-     * request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that ensures the idempotency of
-     *         the request. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *         >Ensuring Idempotency</a>.
+     * @return Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see
+     *         <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.
      */
 
     public String getClientToken() {
@@ -99,19 +91,16 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that ensures the idempotency of the
-     * request. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     * >Ensuring Idempotency</a>.
+     * Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier that ensures the idempotency of
-     *        the request. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
-     *        >Ensuring Idempotency</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see
+     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunScheduledInstancesRequest withClientToken(String clientToken) {
@@ -166,8 +155,7 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      *        The number of instances.</p>
      *        <p>
      *        Default: 1
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunScheduledInstancesRequest withInstanceCount(Integer instanceCount) {
@@ -207,42 +195,37 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      * 
      * @param scheduledInstanceId
      *        The Scheduled Instance ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RunScheduledInstancesRequest withScheduledInstanceId(
-            String scheduledInstanceId) {
+    public RunScheduledInstancesRequest withScheduledInstanceId(String scheduledInstanceId) {
         setScheduledInstanceId(scheduledInstanceId);
         return this;
     }
 
     /**
      * <p>
-     * The launch specification. You must match the instance type, Availability
-     * Zone, network, and platform of the schedule that you purchased.
+     * The launch specification. You must match the instance type, Availability Zone, network, and platform of the
+     * schedule that you purchased.
      * </p>
      * 
      * @param launchSpecification
-     *        The launch specification. You must match the instance type,
-     *        Availability Zone, network, and platform of the schedule that you
-     *        purchased.
+     *        The launch specification. You must match the instance type, Availability Zone, network, and platform of
+     *        the schedule that you purchased.
      */
 
-    public void setLaunchSpecification(
-            ScheduledInstancesLaunchSpecification launchSpecification) {
+    public void setLaunchSpecification(ScheduledInstancesLaunchSpecification launchSpecification) {
         this.launchSpecification = launchSpecification;
     }
 
     /**
      * <p>
-     * The launch specification. You must match the instance type, Availability
-     * Zone, network, and platform of the schedule that you purchased.
+     * The launch specification. You must match the instance type, Availability Zone, network, and platform of the
+     * schedule that you purchased.
      * </p>
      * 
-     * @return The launch specification. You must match the instance type,
-     *         Availability Zone, network, and platform of the schedule that you
-     *         purchased.
+     * @return The launch specification. You must match the instance type, Availability Zone, network, and platform of
+     *         the schedule that you purchased.
      */
 
     public ScheduledInstancesLaunchSpecification getLaunchSpecification() {
@@ -251,40 +234,34 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The launch specification. You must match the instance type, Availability
-     * Zone, network, and platform of the schedule that you purchased.
+     * The launch specification. You must match the instance type, Availability Zone, network, and platform of the
+     * schedule that you purchased.
      * </p>
      * 
      * @param launchSpecification
-     *        The launch specification. You must match the instance type,
-     *        Availability Zone, network, and platform of the schedule that you
-     *        purchased.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The launch specification. You must match the instance type, Availability Zone, network, and platform of
+     *        the schedule that you purchased.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RunScheduledInstancesRequest withLaunchSpecification(
-            ScheduledInstancesLaunchSpecification launchSpecification) {
+    public RunScheduledInstancesRequest withLaunchSpecification(ScheduledInstancesLaunchSpecification launchSpecification) {
         setLaunchSpecification(launchSpecification);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<RunScheduledInstancesRequest> getDryRunRequest() {
-        Request<RunScheduledInstancesRequest> request = new RunScheduledInstancesRequestMarshaller()
-                .marshall(this);
+        Request<RunScheduledInstancesRequest> request = new RunScheduledInstancesRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -318,27 +295,19 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
         RunScheduledInstancesRequest other = (RunScheduledInstancesRequest) obj;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getClientToken() != null
-                && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
-        if (other.getInstanceCount() != null
-                && other.getInstanceCount().equals(this.getInstanceCount()) == false)
+        if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
             return false;
-        if (other.getScheduledInstanceId() == null
-                ^ this.getScheduledInstanceId() == null)
+        if (other.getScheduledInstanceId() == null ^ this.getScheduledInstanceId() == null)
             return false;
-        if (other.getScheduledInstanceId() != null
-                && other.getScheduledInstanceId().equals(
-                        this.getScheduledInstanceId()) == false)
+        if (other.getScheduledInstanceId() != null && other.getScheduledInstanceId().equals(this.getScheduledInstanceId()) == false)
             return false;
-        if (other.getLaunchSpecification() == null
-                ^ this.getLaunchSpecification() == null)
+        if (other.getLaunchSpecification() == null ^ this.getLaunchSpecification() == null)
             return false;
-        if (other.getLaunchSpecification() != null
-                && other.getLaunchSpecification().equals(
-                        this.getLaunchSpecification()) == false)
+        if (other.getLaunchSpecification() != null && other.getLaunchSpecification().equals(this.getLaunchSpecification()) == false)
             return false;
         return true;
     }
@@ -348,21 +317,10 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceCount() == null) ? 0 : getInstanceCount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getScheduledInstanceId() == null) ? 0
-                        : getScheduledInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLaunchSpecification() == null) ? 0
-                        : getLaunchSpecification().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getScheduledInstanceId() == null) ? 0 : getScheduledInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getLaunchSpecification() == null) ? 0 : getLaunchSpecification().hashCode());
         return hashCode;
     }
 

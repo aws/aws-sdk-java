@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
@@ -34,54 +32,45 @@ public class PipelineDeclarationJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PipelineDeclaration pipelineDeclaration,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(PipelineDeclaration pipelineDeclaration, StructuredJsonGenerator jsonGenerator) {
 
         if (pipelineDeclaration == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (pipelineDeclaration.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(
-                        pipelineDeclaration.getName());
+                jsonGenerator.writeFieldName("name").writeValue(pipelineDeclaration.getName());
             }
             if (pipelineDeclaration.getRoleArn() != null) {
-                jsonGenerator.writeFieldName("roleArn").writeValue(
-                        pipelineDeclaration.getRoleArn());
+                jsonGenerator.writeFieldName("roleArn").writeValue(pipelineDeclaration.getRoleArn());
             }
             if (pipelineDeclaration.getArtifactStore() != null) {
                 jsonGenerator.writeFieldName("artifactStore");
-                ArtifactStoreJsonMarshaller.getInstance().marshall(
-                        pipelineDeclaration.getArtifactStore(), jsonGenerator);
+                ArtifactStoreJsonMarshaller.getInstance().marshall(pipelineDeclaration.getArtifactStore(), jsonGenerator);
             }
 
-            java.util.List<StageDeclaration> stagesList = pipelineDeclaration
-                    .getStages();
+            java.util.List<StageDeclaration> stagesList = pipelineDeclaration.getStages();
             if (stagesList != null) {
                 jsonGenerator.writeFieldName("stages");
                 jsonGenerator.writeStartArray();
                 for (StageDeclaration stagesListValue : stagesList) {
                     if (stagesListValue != null) {
 
-                        StageDeclarationJsonMarshaller.getInstance().marshall(
-                                stagesListValue, jsonGenerator);
+                        StageDeclarationJsonMarshaller.getInstance().marshall(stagesListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (pipelineDeclaration.getVersion() != null) {
-                jsonGenerator.writeFieldName("version").writeValue(
-                        pipelineDeclaration.getVersion());
+                jsonGenerator.writeFieldName("version").writeValue(pipelineDeclaration.getVersion());
             }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

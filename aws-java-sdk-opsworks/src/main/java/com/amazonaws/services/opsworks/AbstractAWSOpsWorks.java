@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.opsworks;
 
@@ -19,9 +17,8 @@ import com.amazonaws.*;
 import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
 
 /**
- * Abstract implementation of {@code AWSOpsWorks}. Convenient method forms pass
- * through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AWSOpsWorks}. Convenient method forms pass through to the corresponding overload
+ * that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAWSOpsWorks implements AWSOpsWorks {
 
@@ -49,14 +46,12 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public AssociateElasticIpResult associateElasticIp(
-            AssociateElasticIpRequest request) {
+    public AssociateElasticIpResult associateElasticIp(AssociateElasticIpRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public AttachElasticLoadBalancerResult attachElasticLoadBalancer(
-            AttachElasticLoadBalancerRequest request) {
+    public AttachElasticLoadBalancerResult attachElasticLoadBalancer(AttachElasticLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,8 +66,7 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public CreateDeploymentResult createDeployment(
-            CreateDeploymentRequest request) {
+    public CreateDeploymentResult createDeployment(CreateDeploymentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -92,8 +86,7 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public CreateUserProfileResult createUserProfile(
-            CreateUserProfileRequest request) {
+    public CreateUserProfileResult createUserProfile(CreateUserProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,44 +111,37 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public DeleteUserProfileResult deleteUserProfile(
-            DeleteUserProfileRequest request) {
+    public DeleteUserProfileResult deleteUserProfile(DeleteUserProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeregisterEcsClusterResult deregisterEcsCluster(
-            DeregisterEcsClusterRequest request) {
+    public DeregisterEcsClusterResult deregisterEcsCluster(DeregisterEcsClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeregisterElasticIpResult deregisterElasticIp(
-            DeregisterElasticIpRequest request) {
+    public DeregisterElasticIpResult deregisterElasticIp(DeregisterElasticIpRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeregisterInstanceResult deregisterInstance(
-            DeregisterInstanceRequest request) {
+    public DeregisterInstanceResult deregisterInstance(DeregisterInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeregisterRdsDbInstanceResult deregisterRdsDbInstance(
-            DeregisterRdsDbInstanceRequest request) {
+    public DeregisterRdsDbInstanceResult deregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeregisterVolumeResult deregisterVolume(
-            DeregisterVolumeRequest request) {
+    public DeregisterVolumeResult deregisterVolume(DeregisterVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeAgentVersionsResult describeAgentVersions(
-            DescribeAgentVersionsRequest request) {
+    public DescribeAgentVersionsResult describeAgentVersions(DescribeAgentVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -165,38 +151,32 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public DescribeCommandsResult describeCommands(
-            DescribeCommandsRequest request) {
+    public DescribeCommandsResult describeCommands(DescribeCommandsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeDeploymentsResult describeDeployments(
-            DescribeDeploymentsRequest request) {
+    public DescribeDeploymentsResult describeDeployments(DescribeDeploymentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeEcsClustersResult describeEcsClusters(
-            DescribeEcsClustersRequest request) {
+    public DescribeEcsClustersResult describeEcsClusters(DescribeEcsClustersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeElasticIpsResult describeElasticIps(
-            DescribeElasticIpsRequest request) {
+    public DescribeElasticIpsResult describeElasticIps(DescribeElasticIpsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeElasticLoadBalancersResult describeElasticLoadBalancers(
-            DescribeElasticLoadBalancersRequest request) {
+    public DescribeElasticLoadBalancersResult describeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeInstancesResult describeInstances(
-            DescribeInstancesRequest request) {
+    public DescribeInstancesResult describeInstances(DescribeInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -206,50 +186,42 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScaling(
-            DescribeLoadBasedAutoScalingRequest request) {
+    public DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeMyUserProfileResult describeMyUserProfile(
-            DescribeMyUserProfileRequest request) {
+    public DescribeMyUserProfileResult describeMyUserProfile(DescribeMyUserProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribePermissionsResult describePermissions(
-            DescribePermissionsRequest request) {
+    public DescribePermissionsResult describePermissions(DescribePermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeRaidArraysResult describeRaidArrays(
-            DescribeRaidArraysRequest request) {
+    public DescribeRaidArraysResult describeRaidArrays(DescribeRaidArraysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeRdsDbInstancesResult describeRdsDbInstances(
-            DescribeRdsDbInstancesRequest request) {
+    public DescribeRdsDbInstancesResult describeRdsDbInstances(DescribeRdsDbInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeServiceErrorsResult describeServiceErrors(
-            DescribeServiceErrorsRequest request) {
+    public DescribeServiceErrorsResult describeServiceErrors(DescribeServiceErrorsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeStackProvisioningParametersResult describeStackProvisioningParameters(
-            DescribeStackProvisioningParametersRequest request) {
+    public DescribeStackProvisioningParametersResult describeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeStackSummaryResult describeStackSummary(
-            DescribeStackSummaryRequest request) {
+    public DescribeStackSummaryResult describeStackSummary(DescribeStackSummaryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -259,14 +231,12 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public DescribeTimeBasedAutoScalingResult describeTimeBasedAutoScaling(
-            DescribeTimeBasedAutoScalingRequest request) {
+    public DescribeTimeBasedAutoScalingResult describeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeUserProfilesResult describeUserProfiles(
-            DescribeUserProfilesRequest request) {
+    public DescribeUserProfilesResult describeUserProfiles(DescribeUserProfilesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -276,20 +246,17 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public DetachElasticLoadBalancerResult detachElasticLoadBalancer(
-            DetachElasticLoadBalancerRequest request) {
+    public DetachElasticLoadBalancerResult detachElasticLoadBalancer(DetachElasticLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DisassociateElasticIpResult disassociateElasticIp(
-            DisassociateElasticIpRequest request) {
+    public DisassociateElasticIpResult disassociateElasticIp(DisassociateElasticIpRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetHostnameSuggestionResult getHostnameSuggestion(
-            GetHostnameSuggestionRequest request) {
+    public GetHostnameSuggestionResult getHostnameSuggestion(GetHostnameSuggestionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -304,26 +271,22 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public RegisterEcsClusterResult registerEcsCluster(
-            RegisterEcsClusterRequest request) {
+    public RegisterEcsClusterResult registerEcsCluster(RegisterEcsClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RegisterElasticIpResult registerElasticIp(
-            RegisterElasticIpRequest request) {
+    public RegisterElasticIpResult registerElasticIp(RegisterElasticIpRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RegisterInstanceResult registerInstance(
-            RegisterInstanceRequest request) {
+    public RegisterInstanceResult registerInstance(RegisterInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RegisterRdsDbInstanceResult registerRdsDbInstance(
-            RegisterRdsDbInstanceRequest request) {
+    public RegisterRdsDbInstanceResult registerRdsDbInstance(RegisterRdsDbInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -333,8 +296,7 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public SetLoadBasedAutoScalingResult setLoadBasedAutoScaling(
-            SetLoadBasedAutoScalingRequest request) {
+    public SetLoadBasedAutoScalingResult setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -344,8 +306,7 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public SetTimeBasedAutoScalingResult setTimeBasedAutoScaling(
-            SetTimeBasedAutoScalingRequest request) {
+    public SetTimeBasedAutoScalingResult setTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -370,8 +331,7 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public UnassignInstanceResult unassignInstance(
-            UnassignInstanceRequest request) {
+    public UnassignInstanceResult unassignInstance(UnassignInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -401,14 +361,12 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public UpdateMyUserProfileResult updateMyUserProfile(
-            UpdateMyUserProfileRequest request) {
+    public UpdateMyUserProfileResult updateMyUserProfile(UpdateMyUserProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateRdsDbInstanceResult updateRdsDbInstance(
-            UpdateRdsDbInstanceRequest request) {
+    public UpdateRdsDbInstanceResult updateRdsDbInstance(UpdateRdsDbInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -418,8 +376,7 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public UpdateUserProfileResult updateUserProfile(
-            UpdateUserProfileRequest request) {
+    public UpdateUserProfileResult updateUserProfile(UpdateUserProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -434,8 +391,7 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

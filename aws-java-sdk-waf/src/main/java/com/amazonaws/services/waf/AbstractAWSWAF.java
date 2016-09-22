@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf;
 
@@ -18,9 +16,8 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AWSWAF}. Convenient method forms pass
- * through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AWSWAF}. Convenient method forms pass through to the corresponding overload that
+ * takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAWSWAF implements AWSWAF {
 
@@ -38,8 +35,7 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
-    public CreateByteMatchSetResult createByteMatchSet(
-            CreateByteMatchSetRequest request) {
+    public CreateByteMatchSetResult createByteMatchSet(CreateByteMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,14 +50,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
-    public CreateSizeConstraintSetResult createSizeConstraintSet(
-            CreateSizeConstraintSetRequest request) {
+    public CreateSizeConstraintSetResult createSizeConstraintSet(CreateSizeConstraintSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateSqlInjectionMatchSetResult createSqlInjectionMatchSet(
-            CreateSqlInjectionMatchSetRequest request) {
+    public CreateSqlInjectionMatchSetResult createSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,14 +65,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
-    public CreateXssMatchSetResult createXssMatchSet(
-            CreateXssMatchSetRequest request) {
+    public CreateXssMatchSetResult createXssMatchSet(CreateXssMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteByteMatchSetResult deleteByteMatchSet(
-            DeleteByteMatchSetRequest request) {
+    public DeleteByteMatchSetResult deleteByteMatchSet(DeleteByteMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,14 +85,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
-    public DeleteSizeConstraintSetResult deleteSizeConstraintSet(
-            DeleteSizeConstraintSetRequest request) {
+    public DeleteSizeConstraintSetResult deleteSizeConstraintSet(DeleteSizeConstraintSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteSqlInjectionMatchSetResult deleteSqlInjectionMatchSet(
-            DeleteSqlInjectionMatchSetRequest request) {
+    public DeleteSqlInjectionMatchSetResult deleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,8 +100,7 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
-    public DeleteXssMatchSetResult deleteXssMatchSet(
-            DeleteXssMatchSetRequest request) {
+    public DeleteXssMatchSetResult deleteXssMatchSet(DeleteXssMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -126,8 +115,7 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
-    public GetChangeTokenStatusResult getChangeTokenStatus(
-            GetChangeTokenStatusRequest request) {
+    public GetChangeTokenStatusResult getChangeTokenStatus(GetChangeTokenStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -142,20 +130,17 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
-    public GetSampledRequestsResult getSampledRequests(
-            GetSampledRequestsRequest request) {
+    public GetSampledRequestsResult getSampledRequests(GetSampledRequestsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetSizeConstraintSetResult getSizeConstraintSet(
-            GetSizeConstraintSetRequest request) {
+    public GetSizeConstraintSetResult getSizeConstraintSet(GetSizeConstraintSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetSqlInjectionMatchSetResult getSqlInjectionMatchSet(
-            GetSqlInjectionMatchSetRequest request) {
+    public GetSqlInjectionMatchSetResult getSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -170,8 +155,7 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
-    public ListByteMatchSetsResult listByteMatchSets(
-            ListByteMatchSetsRequest request) {
+    public ListByteMatchSetsResult listByteMatchSets(ListByteMatchSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -186,14 +170,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
-    public ListSizeConstraintSetsResult listSizeConstraintSets(
-            ListSizeConstraintSetsRequest request) {
+    public ListSizeConstraintSetsResult listSizeConstraintSets(ListSizeConstraintSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListSqlInjectionMatchSetsResult listSqlInjectionMatchSets(
-            ListSqlInjectionMatchSetsRequest request) {
+    public ListSqlInjectionMatchSetsResult listSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -203,14 +185,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
-    public ListXssMatchSetsResult listXssMatchSets(
-            ListXssMatchSetsRequest request) {
+    public ListXssMatchSetsResult listXssMatchSets(ListXssMatchSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateByteMatchSetResult updateByteMatchSet(
-            UpdateByteMatchSetRequest request) {
+    public UpdateByteMatchSetResult updateByteMatchSet(UpdateByteMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -225,14 +205,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
-    public UpdateSizeConstraintSetResult updateSizeConstraintSet(
-            UpdateSizeConstraintSetRequest request) {
+    public UpdateSizeConstraintSetResult updateSizeConstraintSet(UpdateSizeConstraintSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateSqlInjectionMatchSetResult updateSqlInjectionMatchSet(
-            UpdateSqlInjectionMatchSetRequest request) {
+    public UpdateSqlInjectionMatchSetResult updateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -242,8 +220,7 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
-    public UpdateXssMatchSetResult updateXssMatchSet(
-            UpdateXssMatchSetRequest request) {
+    public UpdateXssMatchSetResult updateXssMatchSet(UpdateXssMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -253,8 +230,7 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

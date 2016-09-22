@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.gamelift.model;
 
@@ -22,83 +20,72 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for a request action.
  * </p>
  */
-public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of routing to filter results on. Use this parameter to retrieve only
-     * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty.
+     * Type of routing to filter results on. Use this parameter to retrieve only aliases of a certain type. To retrieve
+     * all aliases, leave this parameter empty.
      * </p>
      * <p>
      * Possible routing types include the following:
      * </p>
      * <ul>
-     * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.</li>
-     * <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead
-     * can be used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.</li>
+     * <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to the
+     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
      */
     private String routingStrategyType;
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be
-     * unique.
+     * Descriptive label associated with an alias. Alias names do not need to be unique.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
+     * sequential pages.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To
-     * specify the start of the result set, do not specify a value.
+     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
+     * call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Type of routing to filter results on. Use this parameter to retrieve only
-     * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty.
+     * Type of routing to filter results on. Use this parameter to retrieve only aliases of a certain type. To retrieve
+     * all aliases, leave this parameter empty.
      * </p>
      * <p>
      * Possible routing types include the following:
      * </p>
      * <ul>
-     * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.</li>
-     * <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead
-     * can be used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.</li>
+     * <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to the
+     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
      * 
      * @param routingStrategyType
-     *        Type of routing to filter results on. Use this parameter to
-     *        retrieve only aliases of a certain type. To retrieve all aliases,
-     *        leave this parameter empty.</p>
+     *        Type of routing to filter results on. Use this parameter to retrieve only aliases of a certain type. To
+     *        retrieve all aliases, leave this parameter empty.</p>
      *        <p>
      *        Possible routing types include the following:
      *        </p>
      *        <ul>
-     *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
-     *        this type when routing to active fleets.</li>
-     *        <li><b>TERMINAL</b> – The alias does not resolve to a fleet but
-     *        instead can be used to display a message to the user. A terminal
-     *        alias throws a TerminalRoutingStrategyException with the
-     *        <a>RoutingStrategy</a> message embedded.</li>
+     *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *        </li>
+     *        <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message
+     *        to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
+     *        message embedded.</li>
      * @see RoutingStrategyType
      */
 
@@ -108,35 +95,30 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Type of routing to filter results on. Use this parameter to retrieve only
-     * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty.
+     * Type of routing to filter results on. Use this parameter to retrieve only aliases of a certain type. To retrieve
+     * all aliases, leave this parameter empty.
      * </p>
      * <p>
      * Possible routing types include the following:
      * </p>
      * <ul>
-     * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.</li>
-     * <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead
-     * can be used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.</li>
+     * <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to the
+     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
      * 
-     * @return Type of routing to filter results on. Use this parameter to
-     *         retrieve only aliases of a certain type. To retrieve all aliases,
-     *         leave this parameter empty.</p>
+     * @return Type of routing to filter results on. Use this parameter to retrieve only aliases of a certain type. To
+     *         retrieve all aliases, leave this parameter empty.</p>
      *         <p>
      *         Possible routing types include the following:
      *         </p>
      *         <ul>
-     *         <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
-     *         this type when routing to active fleets.</li>
-     *         <li><b>TERMINAL</b> – The alias does not resolve to a fleet but
-     *         instead can be used to display a message to the user. A terminal
-     *         alias throws a TerminalRoutingStrategyException with the
-     *         <a>RoutingStrategy</a> message embedded.</li>
+     *         <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active
+     *         fleets.</li>
+     *         <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message
+     *         to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
+     *         message embedded.</li>
      * @see RoutingStrategyType
      */
 
@@ -146,38 +128,32 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Type of routing to filter results on. Use this parameter to retrieve only
-     * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty.
+     * Type of routing to filter results on. Use this parameter to retrieve only aliases of a certain type. To retrieve
+     * all aliases, leave this parameter empty.
      * </p>
      * <p>
      * Possible routing types include the following:
      * </p>
      * <ul>
-     * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.</li>
-     * <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead
-     * can be used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.</li>
+     * <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to the
+     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
      * 
      * @param routingStrategyType
-     *        Type of routing to filter results on. Use this parameter to
-     *        retrieve only aliases of a certain type. To retrieve all aliases,
-     *        leave this parameter empty.</p>
+     *        Type of routing to filter results on. Use this parameter to retrieve only aliases of a certain type. To
+     *        retrieve all aliases, leave this parameter empty.</p>
      *        <p>
      *        Possible routing types include the following:
      *        </p>
      *        <ul>
-     *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
-     *        this type when routing to active fleets.</li>
-     *        <li><b>TERMINAL</b> – The alias does not resolve to a fleet but
-     *        instead can be used to display a message to the user. A terminal
-     *        alias throws a TerminalRoutingStrategyException with the
-     *        <a>RoutingStrategy</a> message embedded.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *        </li>
+     *        <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message
+     *        to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
+     *        message embedded.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RoutingStrategyType
      */
 
@@ -188,36 +164,31 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Type of routing to filter results on. Use this parameter to retrieve only
-     * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty.
+     * Type of routing to filter results on. Use this parameter to retrieve only aliases of a certain type. To retrieve
+     * all aliases, leave this parameter empty.
      * </p>
      * <p>
      * Possible routing types include the following:
      * </p>
      * <ul>
-     * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.</li>
-     * <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead
-     * can be used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.</li>
+     * <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to the
+     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
      * 
      * @param routingStrategyType
-     *        Type of routing to filter results on. Use this parameter to
-     *        retrieve only aliases of a certain type. To retrieve all aliases,
-     *        leave this parameter empty.</p>
+     *        Type of routing to filter results on. Use this parameter to retrieve only aliases of a certain type. To
+     *        retrieve all aliases, leave this parameter empty.</p>
      *        <p>
      *        Possible routing types include the following:
      *        </p>
      *        <ul>
-     *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
-     *        this type when routing to active fleets.</li>
-     *        <li><b>TERMINAL</b> – The alias does not resolve to a fleet but
-     *        instead can be used to display a message to the user. A terminal
-     *        alias throws a TerminalRoutingStrategyException with the
-     *        <a>RoutingStrategy</a> message embedded.</li>
+     *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *        </li>
+     *        <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message
+     *        to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
+     *        message embedded.</li>
      * @see RoutingStrategyType
      */
 
@@ -227,56 +198,47 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Type of routing to filter results on. Use this parameter to retrieve only
-     * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty.
+     * Type of routing to filter results on. Use this parameter to retrieve only aliases of a certain type. To retrieve
+     * all aliases, leave this parameter empty.
      * </p>
      * <p>
      * Possible routing types include the following:
      * </p>
      * <ul>
-     * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.</li>
-     * <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead
-     * can be used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.</li>
+     * <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to the
+     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
      * 
      * @param routingStrategyType
-     *        Type of routing to filter results on. Use this parameter to
-     *        retrieve only aliases of a certain type. To retrieve all aliases,
-     *        leave this parameter empty.</p>
+     *        Type of routing to filter results on. Use this parameter to retrieve only aliases of a certain type. To
+     *        retrieve all aliases, leave this parameter empty.</p>
      *        <p>
      *        Possible routing types include the following:
      *        </p>
      *        <ul>
-     *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
-     *        this type when routing to active fleets.</li>
-     *        <li><b>TERMINAL</b> – The alias does not resolve to a fleet but
-     *        instead can be used to display a message to the user. A terminal
-     *        alias throws a TerminalRoutingStrategyException with the
-     *        <a>RoutingStrategy</a> message embedded.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *        </li>
+     *        <li><b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message
+     *        to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
+     *        message embedded.</li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RoutingStrategyType
      */
 
-    public ListAliasesRequest withRoutingStrategyType(
-            RoutingStrategyType routingStrategyType) {
+    public ListAliasesRequest withRoutingStrategyType(RoutingStrategyType routingStrategyType) {
         setRoutingStrategyType(routingStrategyType);
         return this;
     }
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be
-     * unique.
+     * Descriptive label associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with an alias. Alias names do not
-     *        need to be unique.
+     *        Descriptive label associated with an alias. Alias names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -285,12 +247,10 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be
-     * unique.
+     * Descriptive label associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with an alias. Alias names do not
-     *         need to be unique.
+     * @return Descriptive label associated with an alias. Alias names do not need to be unique.
      */
 
     public String getName() {
@@ -299,15 +259,12 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be
-     * unique.
+     * Descriptive label associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with an alias. Alias names do not
-     *        need to be unique.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Descriptive label associated with an alias. Alias names do not need to be unique.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListAliasesRequest withName(String name) {
@@ -317,14 +274,13 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
+     * sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with
-     *        <code>NextToken</code> to get results as a set of sequential
-     *        pages.
+     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
+     *        set of sequential pages.
      */
 
     public void setLimit(Integer limit) {
@@ -333,13 +289,12 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
+     * sequential pages.
      * </p>
      * 
-     * @return Maximum number of results to return. Use this parameter with
-     *         <code>NextToken</code> to get results as a set of sequential
-     *         pages.
+     * @return Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
+     *         set of sequential pages.
      */
 
     public Integer getLimit() {
@@ -348,16 +303,14 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with
-     * <code>NextToken</code> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
+     * sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with
-     *        <code>NextToken</code> to get results as a set of sequential
-     *        pages.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
+     *        set of sequential pages.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListAliasesRequest withLimit(Integer limit) {
@@ -367,16 +320,13 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To
-     * specify the start of the result set, do not specify a value.
+     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
+     * call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results.
-     *        Use the token that is returned with a previous call to this
-     *        action. To specify the start of the result set, do not specify a
-     *        value.
+     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
+     *        previous call to this action. To specify the start of the result set, do not specify a value.
      */
 
     public void setNextToken(String nextToken) {
@@ -385,15 +335,12 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To
-     * specify the start of the result set, do not specify a value.
+     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
+     * call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
-     * @return Token indicating the start of the next sequential page of
-     *         results. Use the token that is returned with a previous call to
-     *         this action. To specify the start of the result set, do not
-     *         specify a value.
+     * @return Token indicating the start of the next sequential page of results. Use the token that is returned with a
+     *         previous call to this action. To specify the start of the result set, do not specify a value.
      */
 
     public String getNextToken() {
@@ -402,18 +349,14 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To
-     * specify the start of the result set, do not specify a value.
+     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
+     * call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results.
-     *        Use the token that is returned with a previous call to this
-     *        action. To specify the start of the result set, do not specify a
-     *        value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
+     *        previous call to this action. To specify the start of the result set, do not specify a value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListAliasesRequest withNextToken(String nextToken) {
@@ -422,8 +365,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -455,27 +397,21 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof ListAliasesRequest == false)
             return false;
         ListAliasesRequest other = (ListAliasesRequest) obj;
-        if (other.getRoutingStrategyType() == null
-                ^ this.getRoutingStrategyType() == null)
+        if (other.getRoutingStrategyType() == null ^ this.getRoutingStrategyType() == null)
             return false;
-        if (other.getRoutingStrategyType() != null
-                && other.getRoutingStrategyType().equals(
-                        this.getRoutingStrategyType()) == false)
+        if (other.getRoutingStrategyType() != null && other.getRoutingStrategyType().equals(this.getRoutingStrategyType()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -485,16 +421,10 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRoutingStrategyType() == null) ? 0
-                        : getRoutingStrategyType().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getRoutingStrategyType() == null) ? 0 : getRoutingStrategyType().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

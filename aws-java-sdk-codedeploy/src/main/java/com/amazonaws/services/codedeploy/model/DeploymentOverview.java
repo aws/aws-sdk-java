@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.codedeploy.model;
 
@@ -37,8 +35,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
     private Long inProgress;
     /**
      * <p>
-     * The number of instances in the deployment to which revisions have been
-     * successfully deployed.
+     * The number of instances in the deployment to which revisions have been successfully deployed.
      * </p>
      */
     private Long succeeded;
@@ -87,8 +84,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * 
      * @param pending
      *        The number of instances in the deployment in a pending state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentOverview withPending(Long pending) {
@@ -128,8 +124,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * 
      * @param inProgress
      *        The number of instances in which the deployment is in progress.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentOverview withInProgress(Long inProgress) {
@@ -139,13 +134,11 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances in the deployment to which revisions have been
-     * successfully deployed.
+     * The number of instances in the deployment to which revisions have been successfully deployed.
      * </p>
      * 
      * @param succeeded
-     *        The number of instances in the deployment to which revisions have
-     *        been successfully deployed.
+     *        The number of instances in the deployment to which revisions have been successfully deployed.
      */
 
     public void setSucceeded(Long succeeded) {
@@ -154,12 +147,10 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances in the deployment to which revisions have been
-     * successfully deployed.
+     * The number of instances in the deployment to which revisions have been successfully deployed.
      * </p>
      * 
-     * @return The number of instances in the deployment to which revisions have
-     *         been successfully deployed.
+     * @return The number of instances in the deployment to which revisions have been successfully deployed.
      */
 
     public Long getSucceeded() {
@@ -168,15 +159,12 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances in the deployment to which revisions have been
-     * successfully deployed.
+     * The number of instances in the deployment to which revisions have been successfully deployed.
      * </p>
      * 
      * @param succeeded
-     *        The number of instances in the deployment to which revisions have
-     *        been successfully deployed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of instances in the deployment to which revisions have been successfully deployed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentOverview withSucceeded(Long succeeded) {
@@ -216,8 +204,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * 
      * @param failed
      *        The number of instances in the deployment in a failed state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentOverview withFailed(Long failed) {
@@ -257,8 +244,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * 
      * @param skipped
      *        The number of instances in the deployment in a skipped state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentOverview withSkipped(Long skipped) {
@@ -267,8 +253,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -304,28 +289,23 @@ public class DeploymentOverview implements Serializable, Cloneable {
         DeploymentOverview other = (DeploymentOverview) obj;
         if (other.getPending() == null ^ this.getPending() == null)
             return false;
-        if (other.getPending() != null
-                && other.getPending().equals(this.getPending()) == false)
+        if (other.getPending() != null && other.getPending().equals(this.getPending()) == false)
             return false;
         if (other.getInProgress() == null ^ this.getInProgress() == null)
             return false;
-        if (other.getInProgress() != null
-                && other.getInProgress().equals(this.getInProgress()) == false)
+        if (other.getInProgress() != null && other.getInProgress().equals(this.getInProgress()) == false)
             return false;
         if (other.getSucceeded() == null ^ this.getSucceeded() == null)
             return false;
-        if (other.getSucceeded() != null
-                && other.getSucceeded().equals(this.getSucceeded()) == false)
+        if (other.getSucceeded() != null && other.getSucceeded().equals(this.getSucceeded()) == false)
             return false;
         if (other.getFailed() == null ^ this.getFailed() == null)
             return false;
-        if (other.getFailed() != null
-                && other.getFailed().equals(this.getFailed()) == false)
+        if (other.getFailed() != null && other.getFailed().equals(this.getFailed()) == false)
             return false;
         if (other.getSkipped() == null ^ this.getSkipped() == null)
             return false;
-        if (other.getSkipped() != null
-                && other.getSkipped().equals(this.getSkipped()) == false)
+        if (other.getSkipped() != null && other.getSkipped().equals(this.getSkipped()) == false)
             return false;
         return true;
     }
@@ -335,16 +315,11 @@ public class DeploymentOverview implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPending() == null) ? 0 : getPending().hashCode());
-        hashCode = prime * hashCode
-                + ((getInProgress() == null) ? 0 : getInProgress().hashCode());
-        hashCode = prime * hashCode
-                + ((getSucceeded() == null) ? 0 : getSucceeded().hashCode());
-        hashCode = prime * hashCode
-                + ((getFailed() == null) ? 0 : getFailed().hashCode());
-        hashCode = prime * hashCode
-                + ((getSkipped() == null) ? 0 : getSkipped().hashCode());
+        hashCode = prime * hashCode + ((getPending() == null) ? 0 : getPending().hashCode());
+        hashCode = prime * hashCode + ((getInProgress() == null) ? 0 : getInProgress().hashCode());
+        hashCode = prime * hashCode + ((getSucceeded() == null) ? 0 : getSucceeded().hashCode());
+        hashCode = prime * hashCode + ((getFailed() == null) ? 0 : getFailed().hashCode());
+        hashCode = prime * hashCode + ((getSkipped() == null) ? 0 : getSkipped().hashCode());
         return hashCode;
     }
 
@@ -353,9 +328,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
         try {
             return (DeploymentOverview) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecs.model;
 
@@ -25,28 +23,24 @@ public class KeyValuePair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the key value pair. For environment variables, this is the
-     * name of the environment variable.
+     * The name of the key value pair. For environment variables, this is the name of the environment variable.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The value of the key value pair. For environment variables, this is the
-     * value of the environment variable.
+     * The value of the key value pair. For environment variables, this is the value of the environment variable.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The name of the key value pair. For environment variables, this is the
-     * name of the environment variable.
+     * The name of the key value pair. For environment variables, this is the name of the environment variable.
      * </p>
      * 
      * @param name
-     *        The name of the key value pair. For environment variables, this is
-     *        the name of the environment variable.
+     *        The name of the key value pair. For environment variables, this is the name of the environment variable.
      */
 
     public void setName(String name) {
@@ -55,12 +49,10 @@ public class KeyValuePair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the key value pair. For environment variables, this is the
-     * name of the environment variable.
+     * The name of the key value pair. For environment variables, this is the name of the environment variable.
      * </p>
      * 
-     * @return The name of the key value pair. For environment variables, this
-     *         is the name of the environment variable.
+     * @return The name of the key value pair. For environment variables, this is the name of the environment variable.
      */
 
     public String getName() {
@@ -69,15 +61,12 @@ public class KeyValuePair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the key value pair. For environment variables, this is the
-     * name of the environment variable.
+     * The name of the key value pair. For environment variables, this is the name of the environment variable.
      * </p>
      * 
      * @param name
-     *        The name of the key value pair. For environment variables, this is
-     *        the name of the environment variable.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the key value pair. For environment variables, this is the name of the environment variable.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public KeyValuePair withName(String name) {
@@ -87,13 +76,11 @@ public class KeyValuePair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the key value pair. For environment variables, this is the
-     * value of the environment variable.
+     * The value of the key value pair. For environment variables, this is the value of the environment variable.
      * </p>
      * 
      * @param value
-     *        The value of the key value pair. For environment variables, this
-     *        is the value of the environment variable.
+     *        The value of the key value pair. For environment variables, this is the value of the environment variable.
      */
 
     public void setValue(String value) {
@@ -102,12 +89,11 @@ public class KeyValuePair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the key value pair. For environment variables, this is the
-     * value of the environment variable.
+     * The value of the key value pair. For environment variables, this is the value of the environment variable.
      * </p>
      * 
-     * @return The value of the key value pair. For environment variables, this
-     *         is the value of the environment variable.
+     * @return The value of the key value pair. For environment variables, this is the value of the environment
+     *         variable.
      */
 
     public String getValue() {
@@ -116,15 +102,12 @@ public class KeyValuePair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the key value pair. For environment variables, this is the
-     * value of the environment variable.
+     * The value of the key value pair. For environment variables, this is the value of the environment variable.
      * </p>
      * 
      * @param value
-     *        The value of the key value pair. For environment variables, this
-     *        is the value of the environment variable.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value of the key value pair. For environment variables, this is the value of the environment variable.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public KeyValuePair withValue(String value) {
@@ -133,8 +116,7 @@ public class KeyValuePair implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -164,13 +146,11 @@ public class KeyValuePair implements Serializable, Cloneable {
         KeyValuePair other = (KeyValuePair) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
-        if (other.getValue() != null
-                && other.getValue().equals(this.getValue()) == false)
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
         return true;
     }
@@ -180,10 +160,8 @@ public class KeyValuePair implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         return hashCode;
     }
 
@@ -192,9 +170,7 @@ public class KeyValuePair implements Serializable, Cloneable {
         try {
             return (KeyValuePair) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

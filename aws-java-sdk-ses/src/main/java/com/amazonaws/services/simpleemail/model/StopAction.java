@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
 
@@ -18,47 +16,40 @@ import java.io.Serializable;
 
 /**
  * <p>
- * When included in a receipt rule, this action terminates the evaluation of the
- * receipt rule set and, optionally, publishes a notification to Amazon Simple
- * Notification Service (Amazon SNS).
+ * When included in a receipt rule, this action terminates the evaluation of the receipt rule set and, optionally,
+ * publishes a notification to Amazon Simple Notification Service (Amazon SNS).
  * </p>
  * <p>
  * For information about setting a stop action in a receipt rule, see the <a
- * href=
- * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html"
- * >Amazon SES Developer Guide</a>.
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon SES Developer
+ * Guide</a>.
  * </p>
  */
 public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scope to which the Stop action applies. That is, what is being
-     * stopped.
+     * The scope to which the Stop action applies. That is, what is being stopped.
      * </p>
      */
     private String scope;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * stop action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
-     * information about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. An example of an
+     * Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
+     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.
      * </p>
      */
     private String topicArn;
 
     /**
      * <p>
-     * The scope to which the Stop action applies. That is, what is being
-     * stopped.
+     * The scope to which the Stop action applies. That is, what is being stopped.
      * </p>
      * 
      * @param scope
-     *        The scope to which the Stop action applies. That is, what is being
-     *        stopped.
+     *        The scope to which the Stop action applies. That is, what is being stopped.
      * @see StopScope
      */
 
@@ -68,12 +59,10 @@ public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scope to which the Stop action applies. That is, what is being
-     * stopped.
+     * The scope to which the Stop action applies. That is, what is being stopped.
      * </p>
      * 
-     * @return The scope to which the Stop action applies. That is, what is
-     *         being stopped.
+     * @return The scope to which the Stop action applies. That is, what is being stopped.
      * @see StopScope
      */
 
@@ -83,15 +72,12 @@ public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scope to which the Stop action applies. That is, what is being
-     * stopped.
+     * The scope to which the Stop action applies. That is, what is being stopped.
      * </p>
      * 
      * @param scope
-     *        The scope to which the Stop action applies. That is, what is being
-     *        stopped.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The scope to which the Stop action applies. That is, what is being stopped.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StopScope
      */
 
@@ -102,13 +88,11 @@ public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scope to which the Stop action applies. That is, what is being
-     * stopped.
+     * The scope to which the Stop action applies. That is, what is being stopped.
      * </p>
      * 
      * @param scope
-     *        The scope to which the Stop action applies. That is, what is being
-     *        stopped.
+     *        The scope to which the Stop action applies. That is, what is being stopped.
      * @see StopScope
      */
 
@@ -118,15 +102,12 @@ public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scope to which the Stop action applies. That is, what is being
-     * stopped.
+     * The scope to which the Stop action applies. That is, what is being stopped.
      * </p>
      * 
      * @param scope
-     *        The scope to which the Stop action applies. That is, what is being
-     *        stopped.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The scope to which the Stop action applies. That is, what is being stopped.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StopScope
      */
 
@@ -137,21 +118,17 @@ public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * stop action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
-     * information about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. An example of an
+     * Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
+     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.
      * </p>
      * 
      * @param topicArn
-     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify
-     *        when the stop action is taken. An example of an Amazon SNS topic
-     *        ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>.
-     *        For more information about Amazon SNS topics, see the <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
-     *        >Amazon SNS Developer Guide</a>.
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. An example
+     *        of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
+     *        information about Amazon SNS topics, see the <a
+     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
     public void setTopicArn(String topicArn) {
@@ -160,20 +137,16 @@ public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * stop action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
-     * information about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. An example of an
+     * Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
+     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to notify
-     *         when the stop action is taken. An example of an Amazon SNS topic
-     *         ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>.
-     *         For more information about Amazon SNS topics, see the <a href=
-     *         "http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
-     *         >Amazon SNS Developer Guide</a>.
+     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. An
+     *         example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
+     *         information about Amazon SNS topics, see the <a
+     *         href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
     public String getTopicArn() {
@@ -182,23 +155,18 @@ public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * stop action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
-     * information about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. An example of an
+     * Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
+     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.
      * </p>
      * 
      * @param topicArn
-     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify
-     *        when the stop action is taken. An example of an Amazon SNS topic
-     *        ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>.
-     *        For more information about Amazon SNS topics, see the <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
-     *        >Amazon SNS Developer Guide</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. An example
+     *        of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
+     *        information about Amazon SNS topics, see the <a
+     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StopAction withTopicArn(String topicArn) {
@@ -207,8 +175,7 @@ public class StopAction implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -238,13 +205,11 @@ public class StopAction implements Serializable, Cloneable {
         StopAction other = (StopAction) obj;
         if (other.getScope() == null ^ this.getScope() == null)
             return false;
-        if (other.getScope() != null
-                && other.getScope().equals(this.getScope()) == false)
+        if (other.getScope() != null && other.getScope().equals(this.getScope()) == false)
             return false;
         if (other.getTopicArn() == null ^ this.getTopicArn() == null)
             return false;
-        if (other.getTopicArn() != null
-                && other.getTopicArn().equals(this.getTopicArn()) == false)
+        if (other.getTopicArn() != null && other.getTopicArn().equals(this.getTopicArn()) == false)
             return false;
         return true;
     }
@@ -254,10 +219,8 @@ public class StopAction implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getScope() == null) ? 0 : getScope().hashCode());
-        hashCode = prime * hashCode
-                + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode());
+        hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
+        hashCode = prime * hashCode + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode());
         return hashCode;
     }
 
@@ -266,9 +229,7 @@ public class StopAction implements Serializable, Cloneable {
         try {
             return (StopAction) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The RegisterDomain request includes the following elements.
  * </p>
  */
-public class RegisterDomainRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -37,9 +33,8 @@ public class RegisterDomainRequest extends
      * Default: None
      * </p>
      * <p>
-     * Constraints: The domain name can contain only the letters a through z,
-     * the numbers 0 through 9, and hyphen (-). Internationalized Domain Names
-     * are not supported.
+     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
+     * Internationalized Domain Names are not supported.
      * </p>
      * <p>
      * Required: Yes
@@ -54,9 +49,8 @@ public class RegisterDomainRequest extends
     private String idnLangCode;
     /**
      * <p>
-     * The number of years the domain will be registered. Domains are registered
-     * for a minimum of one year. The maximum period depends on the top-level
-     * domain.
+     * The number of years the domain will be registered. Domains are registered for a minimum of one year. The maximum
+     * period depends on the top-level domain.
      * </p>
      * <p>
      * Type: Integer
@@ -74,9 +68,8 @@ public class RegisterDomainRequest extends
     private Integer durationInYears;
     /**
      * <p>
-     * Indicates whether the domain will be automatically renewed (
-     * <code>true</code>) or not (<code>false</code>). Autorenewal only takes
-     * effect after the account is charged.
+     * Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>).
+     * Autorenewal only takes effect after the account is charged.
      * </p>
      * <p>
      * Type: Boolean
@@ -100,12 +93,10 @@ public class RegisterDomainRequest extends
      * Type: Complex
      * </p>
      * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
+     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
+     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      * <p>
      * Required: Yes
@@ -120,12 +111,10 @@ public class RegisterDomainRequest extends
      * Type: Complex
      * </p>
      * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
+     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
+     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      * <p>
      * Required: Yes
@@ -140,12 +129,10 @@ public class RegisterDomainRequest extends
      * Type: Complex
      * </p>
      * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
+     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
+     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      * <p>
      * Required: Yes
@@ -154,10 +141,9 @@ public class RegisterDomainRequest extends
     private ContactDetail techContact;
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -175,10 +161,9 @@ public class RegisterDomainRequest extends
     private Boolean privacyProtectAdminContact;
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -196,10 +181,9 @@ public class RegisterDomainRequest extends
     private Boolean privacyProtectRegistrantContact;
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -227,9 +211,8 @@ public class RegisterDomainRequest extends
      * Default: None
      * </p>
      * <p>
-     * Constraints: The domain name can contain only the letters a through z,
-     * the numbers 0 through 9, and hyphen (-). Internationalized Domain Names
-     * are not supported.
+     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
+     * Internationalized Domain Names are not supported.
      * </p>
      * <p>
      * Required: Yes
@@ -244,9 +227,8 @@ public class RegisterDomainRequest extends
      *        Default: None
      *        </p>
      *        <p>
-     *        Constraints: The domain name can contain only the letters a
-     *        through z, the numbers 0 through 9, and hyphen (-).
-     *        Internationalized Domain Names are not supported.
+     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
+     *        (-). Internationalized Domain Names are not supported.
      *        </p>
      *        <p>
      *        Required: Yes
@@ -267,9 +249,8 @@ public class RegisterDomainRequest extends
      * Default: None
      * </p>
      * <p>
-     * Constraints: The domain name can contain only the letters a through z,
-     * the numbers 0 through 9, and hyphen (-). Internationalized Domain Names
-     * are not supported.
+     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
+     * Internationalized Domain Names are not supported.
      * </p>
      * <p>
      * Required: Yes
@@ -283,9 +264,8 @@ public class RegisterDomainRequest extends
      *         Default: None
      *         </p>
      *         <p>
-     *         Constraints: The domain name can contain only the letters a
-     *         through z, the numbers 0 through 9, and hyphen (-).
-     *         Internationalized Domain Names are not supported.
+     *         Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and
+     *         hyphen (-). Internationalized Domain Names are not supported.
      *         </p>
      *         <p>
      *         Required: Yes
@@ -306,9 +286,8 @@ public class RegisterDomainRequest extends
      * Default: None
      * </p>
      * <p>
-     * Constraints: The domain name can contain only the letters a through z,
-     * the numbers 0 through 9, and hyphen (-). Internationalized Domain Names
-     * are not supported.
+     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
+     * Internationalized Domain Names are not supported.
      * </p>
      * <p>
      * Required: Yes
@@ -323,14 +302,12 @@ public class RegisterDomainRequest extends
      *        Default: None
      *        </p>
      *        <p>
-     *        Constraints: The domain name can contain only the letters a
-     *        through z, the numbers 0 through 9, and hyphen (-).
-     *        Internationalized Domain Names are not supported.
+     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
+     *        (-). Internationalized Domain Names are not supported.
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterDomainRequest withDomainName(String domainName) {
@@ -370,8 +347,7 @@ public class RegisterDomainRequest extends
      * 
      * @param idnLangCode
      *        Reserved for future use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterDomainRequest withIdnLangCode(String idnLangCode) {
@@ -381,9 +357,8 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * The number of years the domain will be registered. Domains are registered
-     * for a minimum of one year. The maximum period depends on the top-level
-     * domain.
+     * The number of years the domain will be registered. Domains are registered for a minimum of one year. The maximum
+     * period depends on the top-level domain.
      * </p>
      * <p>
      * Type: Integer
@@ -399,9 +374,8 @@ public class RegisterDomainRequest extends
      * </p>
      * 
      * @param durationInYears
-     *        The number of years the domain will be registered. Domains are
-     *        registered for a minimum of one year. The maximum period depends
-     *        on the top-level domain.</p>
+     *        The number of years the domain will be registered. Domains are registered for a minimum of one year. The
+     *        maximum period depends on the top-level domain.</p>
      *        <p>
      *        Type: Integer
      *        </p>
@@ -421,9 +395,8 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * The number of years the domain will be registered. Domains are registered
-     * for a minimum of one year. The maximum period depends on the top-level
-     * domain.
+     * The number of years the domain will be registered. Domains are registered for a minimum of one year. The maximum
+     * period depends on the top-level domain.
      * </p>
      * <p>
      * Type: Integer
@@ -438,9 +411,8 @@ public class RegisterDomainRequest extends
      * Required: Yes
      * </p>
      * 
-     * @return The number of years the domain will be registered. Domains are
-     *         registered for a minimum of one year. The maximum period depends
-     *         on the top-level domain.</p>
+     * @return The number of years the domain will be registered. Domains are registered for a minimum of one year. The
+     *         maximum period depends on the top-level domain.</p>
      *         <p>
      *         Type: Integer
      *         </p>
@@ -460,9 +432,8 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * The number of years the domain will be registered. Domains are registered
-     * for a minimum of one year. The maximum period depends on the top-level
-     * domain.
+     * The number of years the domain will be registered. Domains are registered for a minimum of one year. The maximum
+     * period depends on the top-level domain.
      * </p>
      * <p>
      * Type: Integer
@@ -478,9 +449,8 @@ public class RegisterDomainRequest extends
      * </p>
      * 
      * @param durationInYears
-     *        The number of years the domain will be registered. Domains are
-     *        registered for a minimum of one year. The maximum period depends
-     *        on the top-level domain.</p>
+     *        The number of years the domain will be registered. Domains are registered for a minimum of one year. The
+     *        maximum period depends on the top-level domain.</p>
      *        <p>
      *        Type: Integer
      *        </p>
@@ -492,8 +462,7 @@ public class RegisterDomainRequest extends
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterDomainRequest withDurationInYears(Integer durationInYears) {
@@ -503,9 +472,8 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Indicates whether the domain will be automatically renewed (
-     * <code>true</code>) or not (<code>false</code>). Autorenewal only takes
-     * effect after the account is charged.
+     * Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>).
+     * Autorenewal only takes effect after the account is charged.
      * </p>
      * <p>
      * Type: Boolean
@@ -521,9 +489,8 @@ public class RegisterDomainRequest extends
      * </p>
      * 
      * @param autoRenew
-     *        Indicates whether the domain will be automatically renewed (
-     *        <code>true</code>) or not (<code>false</code>). Autorenewal only
-     *        takes effect after the account is charged.</p>
+     *        Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>
+     *        ). Autorenewal only takes effect after the account is charged.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -543,9 +510,8 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Indicates whether the domain will be automatically renewed (
-     * <code>true</code>) or not (<code>false</code>). Autorenewal only takes
-     * effect after the account is charged.
+     * Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>).
+     * Autorenewal only takes effect after the account is charged.
      * </p>
      * <p>
      * Type: Boolean
@@ -560,9 +526,8 @@ public class RegisterDomainRequest extends
      * Required: No
      * </p>
      * 
-     * @return Indicates whether the domain will be automatically renewed (
-     *         <code>true</code>) or not (<code>false</code>). Autorenewal only
-     *         takes effect after the account is charged.</p>
+     * @return Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>
+     *         ). Autorenewal only takes effect after the account is charged.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -582,9 +547,8 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Indicates whether the domain will be automatically renewed (
-     * <code>true</code>) or not (<code>false</code>). Autorenewal only takes
-     * effect after the account is charged.
+     * Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>).
+     * Autorenewal only takes effect after the account is charged.
      * </p>
      * <p>
      * Type: Boolean
@@ -600,9 +564,8 @@ public class RegisterDomainRequest extends
      * </p>
      * 
      * @param autoRenew
-     *        Indicates whether the domain will be automatically renewed (
-     *        <code>true</code>) or not (<code>false</code>). Autorenewal only
-     *        takes effect after the account is charged.</p>
+     *        Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>
+     *        ). Autorenewal only takes effect after the account is charged.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -614,8 +577,7 @@ public class RegisterDomainRequest extends
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterDomainRequest withAutoRenew(Boolean autoRenew) {
@@ -625,9 +587,8 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Indicates whether the domain will be automatically renewed (
-     * <code>true</code>) or not (<code>false</code>). Autorenewal only takes
-     * effect after the account is charged.
+     * Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>).
+     * Autorenewal only takes effect after the account is charged.
      * </p>
      * <p>
      * Type: Boolean
@@ -642,9 +603,8 @@ public class RegisterDomainRequest extends
      * Required: No
      * </p>
      * 
-     * @return Indicates whether the domain will be automatically renewed (
-     *         <code>true</code>) or not (<code>false</code>). Autorenewal only
-     *         takes effect after the account is charged.</p>
+     * @return Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>
+     *         ). Autorenewal only takes effect after the account is charged.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -670,12 +630,10 @@ public class RegisterDomainRequest extends
      * Type: Complex
      * </p>
      * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
+     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
+     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      * <p>
      * Required: Yes
@@ -687,13 +645,9 @@ public class RegisterDomainRequest extends
      *        Type: Complex
      *        </p>
      *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *        <code>LastName</code>, <code>ContactType</code>,
-     *        <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *        <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *        <code>CountryCode</code>, <code>ZipCode</code>,
-     *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *        <code>ExtraParams</code>
+     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
+     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
      *        </p>
      *        <p>
      *        Required: Yes
@@ -711,12 +665,10 @@ public class RegisterDomainRequest extends
      * Type: Complex
      * </p>
      * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
+     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
+     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      * <p>
      * Required: Yes
@@ -727,12 +679,10 @@ public class RegisterDomainRequest extends
      *         Type: Complex
      *         </p>
      *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *         <code>LastName</code>, <code>ContactType</code>,
-     *         <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *         <code>CountryCode</code>, <code>ZipCode</code>,
-     *         <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
+     *         Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
+     *         <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
+     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
+     *         <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      *         <code>ExtraParams</code>
      *         </p>
      *         <p>
@@ -751,12 +701,10 @@ public class RegisterDomainRequest extends
      * Type: Complex
      * </p>
      * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
+     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
+     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      * <p>
      * Required: Yes
@@ -768,18 +716,13 @@ public class RegisterDomainRequest extends
      *        Type: Complex
      *        </p>
      *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *        <code>LastName</code>, <code>ContactType</code>,
-     *        <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *        <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *        <code>CountryCode</code>, <code>ZipCode</code>,
-     *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *        <code>ExtraParams</code>
+     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
+     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterDomainRequest withAdminContact(ContactDetail adminContact) {
@@ -795,12 +738,10 @@ public class RegisterDomainRequest extends
      * Type: Complex
      * </p>
      * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
+     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
+     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      * <p>
      * Required: Yes
@@ -812,13 +753,9 @@ public class RegisterDomainRequest extends
      *        Type: Complex
      *        </p>
      *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *        <code>LastName</code>, <code>ContactType</code>,
-     *        <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *        <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *        <code>CountryCode</code>, <code>ZipCode</code>,
-     *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *        <code>ExtraParams</code>
+     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
+     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
      *        </p>
      *        <p>
      *        Required: Yes
@@ -836,12 +773,10 @@ public class RegisterDomainRequest extends
      * Type: Complex
      * </p>
      * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
+     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
+     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      * <p>
      * Required: Yes
@@ -852,12 +787,10 @@ public class RegisterDomainRequest extends
      *         Type: Complex
      *         </p>
      *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *         <code>LastName</code>, <code>ContactType</code>,
-     *         <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *         <code>CountryCode</code>, <code>ZipCode</code>,
-     *         <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
+     *         Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
+     *         <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
+     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
+     *         <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      *         <code>ExtraParams</code>
      *         </p>
      *         <p>
@@ -876,12 +809,10 @@ public class RegisterDomainRequest extends
      * Type: Complex
      * </p>
      * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
+     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
+     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      * <p>
      * Required: Yes
@@ -893,22 +824,16 @@ public class RegisterDomainRequest extends
      *        Type: Complex
      *        </p>
      *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *        <code>LastName</code>, <code>ContactType</code>,
-     *        <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *        <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *        <code>CountryCode</code>, <code>ZipCode</code>,
-     *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *        <code>ExtraParams</code>
+     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
+     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RegisterDomainRequest withRegistrantContact(
-            ContactDetail registrantContact) {
+    public RegisterDomainRequest withRegistrantContact(ContactDetail registrantContact) {
         setRegistrantContact(registrantContact);
         return this;
     }
@@ -921,12 +846,10 @@ public class RegisterDomainRequest extends
      * Type: Complex
      * </p>
      * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
+     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
+     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      * <p>
      * Required: Yes
@@ -938,13 +861,9 @@ public class RegisterDomainRequest extends
      *        Type: Complex
      *        </p>
      *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *        <code>LastName</code>, <code>ContactType</code>,
-     *        <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *        <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *        <code>CountryCode</code>, <code>ZipCode</code>,
-     *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *        <code>ExtraParams</code>
+     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
+     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
      *        </p>
      *        <p>
      *        Required: Yes
@@ -962,12 +881,10 @@ public class RegisterDomainRequest extends
      * Type: Complex
      * </p>
      * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
+     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
+     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      * <p>
      * Required: Yes
@@ -978,12 +895,10 @@ public class RegisterDomainRequest extends
      *         Type: Complex
      *         </p>
      *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *         <code>LastName</code>, <code>ContactType</code>,
-     *         <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *         <code>CountryCode</code>, <code>ZipCode</code>,
-     *         <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
+     *         Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
+     *         <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
+     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
+     *         <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      *         <code>ExtraParams</code>
      *         </p>
      *         <p>
@@ -1002,12 +917,10 @@ public class RegisterDomainRequest extends
      * Type: Complex
      * </p>
      * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
+     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
+     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      * <p>
      * Required: Yes
@@ -1019,18 +932,13 @@ public class RegisterDomainRequest extends
      *        Type: Complex
      *        </p>
      *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *        <code>LastName</code>, <code>ContactType</code>,
-     *        <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *        <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *        <code>CountryCode</code>, <code>ZipCode</code>,
-     *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *        <code>ExtraParams</code>
+     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
+     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
+     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterDomainRequest withTechContact(ContactDetail techContact) {
@@ -1040,10 +948,9 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -1059,10 +966,9 @@ public class RegisterDomainRequest extends
      * </p>
      * 
      * @param privacyProtectAdminContact
-     *        Whether you want to conceal contact information from WHOIS
-     *        queries. If you specify true, WHOIS ("who is") queries will return
-     *        contact information for our registrar partner, Gandi, instead of
-     *        the contact information that you enter.</p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *        information that you enter.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -1082,10 +988,9 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -1100,10 +1005,9 @@ public class RegisterDomainRequest extends
      * Required: No
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS
-     *         queries. If you specify true, WHOIS ("who is") queries will
-     *         return contact information for our registrar partner, Gandi,
-     *         instead of the contact information that you enter.</p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *         information that you enter.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -1123,10 +1027,9 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -1142,10 +1045,9 @@ public class RegisterDomainRequest extends
      * </p>
      * 
      * @param privacyProtectAdminContact
-     *        Whether you want to conceal contact information from WHOIS
-     *        queries. If you specify true, WHOIS ("who is") queries will return
-     *        contact information for our registrar partner, Gandi, instead of
-     *        the contact information that you enter.</p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *        information that you enter.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -1157,22 +1059,19 @@ public class RegisterDomainRequest extends
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RegisterDomainRequest withPrivacyProtectAdminContact(
-            Boolean privacyProtectAdminContact) {
+    public RegisterDomainRequest withPrivacyProtectAdminContact(Boolean privacyProtectAdminContact) {
         setPrivacyProtectAdminContact(privacyProtectAdminContact);
         return this;
     }
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -1187,10 +1086,9 @@ public class RegisterDomainRequest extends
      * Required: No
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS
-     *         queries. If you specify true, WHOIS ("who is") queries will
-     *         return contact information for our registrar partner, Gandi,
-     *         instead of the contact information that you enter.</p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *         information that you enter.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -1210,10 +1108,9 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -1229,10 +1126,9 @@ public class RegisterDomainRequest extends
      * </p>
      * 
      * @param privacyProtectRegistrantContact
-     *        Whether you want to conceal contact information from WHOIS
-     *        queries. If you specify true, WHOIS ("who is") queries will return
-     *        contact information for our registrar partner, Gandi, instead of
-     *        the contact information that you enter.</p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *        information that you enter.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -1246,17 +1142,15 @@ public class RegisterDomainRequest extends
      *        Required: No
      */
 
-    public void setPrivacyProtectRegistrantContact(
-            Boolean privacyProtectRegistrantContact) {
+    public void setPrivacyProtectRegistrantContact(Boolean privacyProtectRegistrantContact) {
         this.privacyProtectRegistrantContact = privacyProtectRegistrantContact;
     }
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -1271,10 +1165,9 @@ public class RegisterDomainRequest extends
      * Required: No
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS
-     *         queries. If you specify true, WHOIS ("who is") queries will
-     *         return contact information for our registrar partner, Gandi,
-     *         instead of the contact information that you enter.</p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *         information that you enter.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -1294,10 +1187,9 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -1313,10 +1205,9 @@ public class RegisterDomainRequest extends
      * </p>
      * 
      * @param privacyProtectRegistrantContact
-     *        Whether you want to conceal contact information from WHOIS
-     *        queries. If you specify true, WHOIS ("who is") queries will return
-     *        contact information for our registrar partner, Gandi, instead of
-     *        the contact information that you enter.</p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *        information that you enter.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -1328,22 +1219,19 @@ public class RegisterDomainRequest extends
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RegisterDomainRequest withPrivacyProtectRegistrantContact(
-            Boolean privacyProtectRegistrantContact) {
+    public RegisterDomainRequest withPrivacyProtectRegistrantContact(Boolean privacyProtectRegistrantContact) {
         setPrivacyProtectRegistrantContact(privacyProtectRegistrantContact);
         return this;
     }
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -1358,10 +1246,9 @@ public class RegisterDomainRequest extends
      * Required: No
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS
-     *         queries. If you specify true, WHOIS ("who is") queries will
-     *         return contact information for our registrar partner, Gandi,
-     *         instead of the contact information that you enter.</p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *         information that you enter.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -1381,10 +1268,9 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -1400,10 +1286,9 @@ public class RegisterDomainRequest extends
      * </p>
      * 
      * @param privacyProtectTechContact
-     *        Whether you want to conceal contact information from WHOIS
-     *        queries. If you specify true, WHOIS ("who is") queries will return
-     *        contact information for our registrar partner, Gandi, instead of
-     *        the contact information that you enter.</p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *        information that you enter.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -1423,10 +1308,9 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -1441,10 +1325,9 @@ public class RegisterDomainRequest extends
      * Required: No
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS
-     *         queries. If you specify true, WHOIS ("who is") queries will
-     *         return contact information for our registrar partner, Gandi,
-     *         instead of the contact information that you enter.</p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *         information that you enter.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -1464,10 +1347,9 @@ public class RegisterDomainRequest extends
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -1483,10 +1365,9 @@ public class RegisterDomainRequest extends
      * </p>
      * 
      * @param privacyProtectTechContact
-     *        Whether you want to conceal contact information from WHOIS
-     *        queries. If you specify true, WHOIS ("who is") queries will return
-     *        contact information for our registrar partner, Gandi, instead of
-     *        the contact information that you enter.</p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *        information that you enter.</p>
      *        <p>
      *        Type: Boolean
      *        </p>
@@ -1498,22 +1379,19 @@ public class RegisterDomainRequest extends
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RegisterDomainRequest withPrivacyProtectTechContact(
-            Boolean privacyProtectTechContact) {
+    public RegisterDomainRequest withPrivacyProtectTechContact(Boolean privacyProtectTechContact) {
         setPrivacyProtectTechContact(privacyProtectTechContact);
         return this;
     }
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If
-     * you specify true, WHOIS ("who is") queries will return contact
-     * information for our registrar partner, Gandi, instead of the contact
-     * information that you enter.
+     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
+     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
+     * enter.
      * </p>
      * <p>
      * Type: Boolean
@@ -1528,10 +1406,9 @@ public class RegisterDomainRequest extends
      * Required: No
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS
-     *         queries. If you specify true, WHOIS ("who is") queries will
-     *         return contact information for our registrar partner, Gandi,
-     *         instead of the contact information that you enter.</p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
+     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
+     *         information that you enter.</p>
      *         <p>
      *         Type: Boolean
      *         </p>
@@ -1550,8 +1427,7 @@ public class RegisterDomainRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -1576,14 +1452,11 @@ public class RegisterDomainRequest extends
         if (getTechContact() != null)
             sb.append("TechContact: " + getTechContact() + ",");
         if (getPrivacyProtectAdminContact() != null)
-            sb.append("PrivacyProtectAdminContact: "
-                    + getPrivacyProtectAdminContact() + ",");
+            sb.append("PrivacyProtectAdminContact: " + getPrivacyProtectAdminContact() + ",");
         if (getPrivacyProtectRegistrantContact() != null)
-            sb.append("PrivacyProtectRegistrantContact: "
-                    + getPrivacyProtectRegistrantContact() + ",");
+            sb.append("PrivacyProtectRegistrantContact: " + getPrivacyProtectRegistrantContact() + ",");
         if (getPrivacyProtectTechContact() != null)
-            sb.append("PrivacyProtectTechContact: "
-                    + getPrivacyProtectTechContact());
+            sb.append("PrivacyProtectTechContact: " + getPrivacyProtectTechContact());
         sb.append("}");
         return sb.toString();
     }
@@ -1600,62 +1473,44 @@ public class RegisterDomainRequest extends
         RegisterDomainRequest other = (RegisterDomainRequest) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
         if (other.getIdnLangCode() == null ^ this.getIdnLangCode() == null)
             return false;
-        if (other.getIdnLangCode() != null
-                && other.getIdnLangCode().equals(this.getIdnLangCode()) == false)
+        if (other.getIdnLangCode() != null && other.getIdnLangCode().equals(this.getIdnLangCode()) == false)
             return false;
-        if (other.getDurationInYears() == null
-                ^ this.getDurationInYears() == null)
+        if (other.getDurationInYears() == null ^ this.getDurationInYears() == null)
             return false;
-        if (other.getDurationInYears() != null
-                && other.getDurationInYears().equals(this.getDurationInYears()) == false)
+        if (other.getDurationInYears() != null && other.getDurationInYears().equals(this.getDurationInYears()) == false)
             return false;
         if (other.getAutoRenew() == null ^ this.getAutoRenew() == null)
             return false;
-        if (other.getAutoRenew() != null
-                && other.getAutoRenew().equals(this.getAutoRenew()) == false)
+        if (other.getAutoRenew() != null && other.getAutoRenew().equals(this.getAutoRenew()) == false)
             return false;
         if (other.getAdminContact() == null ^ this.getAdminContact() == null)
             return false;
-        if (other.getAdminContact() != null
-                && other.getAdminContact().equals(this.getAdminContact()) == false)
+        if (other.getAdminContact() != null && other.getAdminContact().equals(this.getAdminContact()) == false)
             return false;
-        if (other.getRegistrantContact() == null
-                ^ this.getRegistrantContact() == null)
+        if (other.getRegistrantContact() == null ^ this.getRegistrantContact() == null)
             return false;
-        if (other.getRegistrantContact() != null
-                && other.getRegistrantContact().equals(
-                        this.getRegistrantContact()) == false)
+        if (other.getRegistrantContact() != null && other.getRegistrantContact().equals(this.getRegistrantContact()) == false)
             return false;
         if (other.getTechContact() == null ^ this.getTechContact() == null)
             return false;
-        if (other.getTechContact() != null
-                && other.getTechContact().equals(this.getTechContact()) == false)
+        if (other.getTechContact() != null && other.getTechContact().equals(this.getTechContact()) == false)
             return false;
-        if (other.getPrivacyProtectAdminContact() == null
-                ^ this.getPrivacyProtectAdminContact() == null)
+        if (other.getPrivacyProtectAdminContact() == null ^ this.getPrivacyProtectAdminContact() == null)
             return false;
-        if (other.getPrivacyProtectAdminContact() != null
-                && other.getPrivacyProtectAdminContact().equals(
-                        this.getPrivacyProtectAdminContact()) == false)
+        if (other.getPrivacyProtectAdminContact() != null && other.getPrivacyProtectAdminContact().equals(this.getPrivacyProtectAdminContact()) == false)
             return false;
-        if (other.getPrivacyProtectRegistrantContact() == null
-                ^ this.getPrivacyProtectRegistrantContact() == null)
+        if (other.getPrivacyProtectRegistrantContact() == null ^ this.getPrivacyProtectRegistrantContact() == null)
             return false;
         if (other.getPrivacyProtectRegistrantContact() != null
-                && other.getPrivacyProtectRegistrantContact().equals(
-                        this.getPrivacyProtectRegistrantContact()) == false)
+                && other.getPrivacyProtectRegistrantContact().equals(this.getPrivacyProtectRegistrantContact()) == false)
             return false;
-        if (other.getPrivacyProtectTechContact() == null
-                ^ this.getPrivacyProtectTechContact() == null)
+        if (other.getPrivacyProtectTechContact() == null ^ this.getPrivacyProtectTechContact() == null)
             return false;
-        if (other.getPrivacyProtectTechContact() != null
-                && other.getPrivacyProtectTechContact().equals(
-                        this.getPrivacyProtectTechContact()) == false)
+        if (other.getPrivacyProtectTechContact() != null && other.getPrivacyProtectTechContact().equals(this.getPrivacyProtectTechContact()) == false)
             return false;
         return true;
     }
@@ -1665,40 +1520,16 @@ public class RegisterDomainRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIdnLangCode() == null) ? 0 : getIdnLangCode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDurationInYears() == null) ? 0 : getDurationInYears()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getAutoRenew() == null) ? 0 : getAutoRenew().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAdminContact() == null) ? 0 : getAdminContact()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegistrantContact() == null) ? 0
-                        : getRegistrantContact().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTechContact() == null) ? 0 : getTechContact().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrivacyProtectAdminContact() == null) ? 0
-                        : getPrivacyProtectAdminContact().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrivacyProtectRegistrantContact() == null) ? 0
-                        : getPrivacyProtectRegistrantContact().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrivacyProtectTechContact() == null) ? 0
-                        : getPrivacyProtectTechContact().hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getIdnLangCode() == null) ? 0 : getIdnLangCode().hashCode());
+        hashCode = prime * hashCode + ((getDurationInYears() == null) ? 0 : getDurationInYears().hashCode());
+        hashCode = prime * hashCode + ((getAutoRenew() == null) ? 0 : getAutoRenew().hashCode());
+        hashCode = prime * hashCode + ((getAdminContact() == null) ? 0 : getAdminContact().hashCode());
+        hashCode = prime * hashCode + ((getRegistrantContact() == null) ? 0 : getRegistrantContact().hashCode());
+        hashCode = prime * hashCode + ((getTechContact() == null) ? 0 : getTechContact().hashCode());
+        hashCode = prime * hashCode + ((getPrivacyProtectAdminContact() == null) ? 0 : getPrivacyProtectAdminContact().hashCode());
+        hashCode = prime * hashCode + ((getPrivacyProtectRegistrantContact() == null) ? 0 : getPrivacyProtectRegistrantContact().hashCode());
+        hashCode = prime * hashCode + ((getPrivacyProtectTechContact() == null) ? 0 : getPrivacyProtectTechContact().hashCode());
         return hashCode;
     }
 

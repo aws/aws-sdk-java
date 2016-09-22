@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticfilesystem.model.transform;
 
@@ -43,42 +41,32 @@ import com.amazonaws.protocol.json.*;
 /**
  * DescribeMountTargetSecurityGroupsRequest Marshaller
  */
-public class DescribeMountTargetSecurityGroupsRequestMarshaller
-        implements
+public class DescribeMountTargetSecurityGroupsRequestMarshaller implements
         Marshaller<Request<DescribeMountTargetSecurityGroupsRequest>, DescribeMountTargetSecurityGroupsRequest> {
 
     private final SdkJsonProtocolFactory protocolFactory;
 
-    public DescribeMountTargetSecurityGroupsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
+    public DescribeMountTargetSecurityGroupsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<DescribeMountTargetSecurityGroupsRequest> marshall(
-            DescribeMountTargetSecurityGroupsRequest describeMountTargetSecurityGroupsRequest) {
+    public Request<DescribeMountTargetSecurityGroupsRequest> marshall(DescribeMountTargetSecurityGroupsRequest describeMountTargetSecurityGroupsRequest) {
 
         if (describeMountTargetSecurityGroupsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DescribeMountTargetSecurityGroupsRequest> request = new DefaultRequest<DescribeMountTargetSecurityGroupsRequest>(
-                describeMountTargetSecurityGroupsRequest,
-                "AmazonElasticFileSystem");
+                describeMountTargetSecurityGroupsRequest, "AmazonElasticFileSystem");
 
         request.setHttpMethod(HttpMethodName.GET);
 
         String uriResourcePath = "/2015-02-01/mount-targets/{MountTargetId}/security-groups";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{MountTargetId}",
-                        (describeMountTargetSecurityGroupsRequest
-                                .getMountTargetId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(describeMountTargetSecurityGroupsRequest
-                                                .getMountTargetId()), false)
-                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{MountTargetId}",
+                (describeMountTargetSecurityGroupsRequest.getMountTargetId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(describeMountTargetSecurityGroupsRequest.getMountTargetId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

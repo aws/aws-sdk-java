@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
 
@@ -20,27 +18,22 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The path for the user name. For more information about paths, see <a
-     * href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash
-     * (/).
+     * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      */
     private String path;
@@ -49,38 +42,32 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the user to create.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. User names are not distinguished by case.
-     * For example, you cannot create users named both "TESTUSER" and
-     * "testuser".
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-. User names are not distinguished by case. For example, you cannot create users named
+     * both "TESTUSER" and "testuser".
      * </p>
      */
     private String userName;
 
     /**
-     * Default constructor for CreateUserRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for CreateUserRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public CreateUserRequest() {
     }
 
     /**
-     * Constructs a new CreateUserRequest object. Callers should use the setter
-     * or fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new CreateUserRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param userName
      *        The name of the user to create.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-. User names are not
-     *        distinguished by case. For example, you cannot create users named
-     *        both "TESTUSER" and "testuser".
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-. User names are not distinguished by case. For example, you cannot
+     *        create users named both "TESTUSER" and "testuser".
      */
     public CreateUserRequest(String userName) {
         setUserName(userName);
@@ -89,39 +76,31 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The path for the user name. For more information about paths, see <a
-     * href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash
-     * (/).
+     * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param path
-     *        The path for the user name. For more information about paths, see
-     *        <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     *        The path for the user name. For more information about paths, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. If it is not included, it defaults to
-     *        a slash (/).
+     *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of either
-     *        a forward slash (/) by itself or a string that must begin and end
-     *        with forward slashes, containing any ASCII character from the !
-     *        (\u0021) thru the DEL character (\u007F), including most
-     *        punctuation characters, digits, and upper and lowercased letters.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
+     *        including most punctuation characters, digits, and upper and lowercased letters.
      */
 
     public void setPath(String path) {
@@ -131,38 +110,30 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The path for the user name. For more information about paths, see <a
-     * href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash
-     * (/).
+     * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      * 
-     * @return The path for the user name. For more information about paths, see
-     *         <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         >IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * @return The path for the user name. For more information about paths, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         <i>IAM User Guide</i>.</p>
      *         <p>
-     *         This parameter is optional. If it is not included, it defaults to
-     *         a slash (/).
+     *         This parameter is optional. If it is not included, it defaults to a slash (/).
      *         </p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of either
-     *         a forward slash (/) by itself or a string that must begin and end
-     *         with forward slashes, containing any ASCII character from the !
-     *         (\u0021) thru the DEL character (\u007F), including most
-     *         punctuation characters, digits, and upper and lowercased letters.
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *         forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
+     *         including most punctuation characters, digits, and upper and lowercased letters.
      */
 
     public String getPath() {
@@ -172,41 +143,32 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The path for the user name. For more information about paths, see <a
-     * href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash
-     * (/).
+     * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param path
-     *        The path for the user name. For more information about paths, see
-     *        <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     *        The path for the user name. For more information about paths, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. If it is not included, it defaults to
-     *        a slash (/).
+     *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of either
-     *        a forward slash (/) by itself or a string that must begin and end
-     *        with forward slashes, containing any ASCII character from the !
-     *        (\u0021) thru the DEL character (\u007F), including most
-     *        punctuation characters, digits, and upper and lowercased letters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
+     *        including most punctuation characters, digits, and upper and lowercased letters.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateUserRequest withPath(String path) {
@@ -219,23 +181,19 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the user to create.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. User names are not distinguished by case.
-     * For example, you cannot create users named both "TESTUSER" and
-     * "testuser".
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-. User names are not distinguished by case. For example, you cannot create users named
+     * both "TESTUSER" and "testuser".
      * </p>
      * 
      * @param userName
      *        The name of the user to create.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-. User names are not
-     *        distinguished by case. For example, you cannot create users named
-     *        both "TESTUSER" and "testuser".
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-. User names are not distinguished by case. For example, you cannot
+     *        create users named both "TESTUSER" and "testuser".
      */
 
     public void setUserName(String userName) {
@@ -247,22 +205,18 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the user to create.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. User names are not distinguished by case.
-     * For example, you cannot create users named both "TESTUSER" and
-     * "testuser".
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-. User names are not distinguished by case. For example, you cannot create users named
+     * both "TESTUSER" and "testuser".
      * </p>
      * 
      * @return The name of the user to create.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of upper
-     *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-. User names
-     *         are not distinguished by case. For example, you cannot create
-     *         users named both "TESTUSER" and "testuser".
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *         any of the following characters: =,.@-. User names are not distinguished by case. For example, you cannot
+     *         create users named both "TESTUSER" and "testuser".
      */
 
     public String getUserName() {
@@ -274,25 +228,20 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the user to create.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. User names are not distinguished by case.
-     * For example, you cannot create users named both "TESTUSER" and
-     * "testuser".
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-. User names are not distinguished by case. For example, you cannot create users named
+     * both "TESTUSER" and "testuser".
      * </p>
      * 
      * @param userName
      *        The name of the user to create.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-. User names are not
-     *        distinguished by case. For example, you cannot create users named
-     *        both "TESTUSER" and "testuser".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-. User names are not distinguished by case. For example, you cannot
+     *        create users named both "TESTUSER" and "testuser".
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateUserRequest withUserName(String userName) {
@@ -301,8 +250,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -332,13 +280,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest
         CreateUserRequest other = (CreateUserRequest) obj;
         if (other.getPath() == null ^ this.getPath() == null)
             return false;
-        if (other.getPath() != null
-                && other.getPath().equals(this.getPath()) == false)
+        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false)
             return false;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
-        if (other.getUserName() != null
-                && other.getUserName().equals(this.getUserName()) == false)
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
         return true;
     }
@@ -348,10 +294,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPath() == null) ? 0 : getPath().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.servicecatalog.model;
 
@@ -43,8 +41,7 @@ public class ProductViewSummary implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The owner of the product. Contact the product administrator for the
-     * significance of this value.
+     * The owner of the product. Contact the product administrator for the significance of this value.
      * </p>
      */
     private String owner;
@@ -56,26 +53,22 @@ public class ProductViewSummary implements Serializable, Cloneable {
     private String shortDescription;
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance
-     * of this value.
+     * The product type. Contact the product administrator for the significance of this value.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The distributor of the product. Contact the product administrator for the
-     * significance of this value.
+     * The distributor of the product. Contact the product administrator for the significance of this value.
      * </p>
      */
     private String distributor;
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a
-     * default path, while a value of <code>true</code> indicates that it does.
-     * If it's false, call <a>ListLaunchPaths</a> to disambiguate between paths.
-     * If true, <a>ListLaunchPaths</a> is not required, and the output of the
-     * <a>ProductViewSummary</a> operation can be used directly with
-     * <a>DescribeProvisioningParameters</a>.
+     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
+     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
+     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
+     * can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      */
     private Boolean hasDefaultPath;
@@ -130,8 +123,7 @@ public class ProductViewSummary implements Serializable, Cloneable {
      * 
      * @param id
      *        The product view identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProductViewSummary withId(String id) {
@@ -171,8 +163,7 @@ public class ProductViewSummary implements Serializable, Cloneable {
      * 
      * @param productId
      *        The product identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProductViewSummary withProductId(String productId) {
@@ -212,8 +203,7 @@ public class ProductViewSummary implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the product.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProductViewSummary withName(String name) {
@@ -223,13 +213,11 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The owner of the product. Contact the product administrator for the
-     * significance of this value.
+     * The owner of the product. Contact the product administrator for the significance of this value.
      * </p>
      * 
      * @param owner
-     *        The owner of the product. Contact the product administrator for
-     *        the significance of this value.
+     *        The owner of the product. Contact the product administrator for the significance of this value.
      */
 
     public void setOwner(String owner) {
@@ -238,12 +226,10 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The owner of the product. Contact the product administrator for the
-     * significance of this value.
+     * The owner of the product. Contact the product administrator for the significance of this value.
      * </p>
      * 
-     * @return The owner of the product. Contact the product administrator for
-     *         the significance of this value.
+     * @return The owner of the product. Contact the product administrator for the significance of this value.
      */
 
     public String getOwner() {
@@ -252,15 +238,12 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The owner of the product. Contact the product administrator for the
-     * significance of this value.
+     * The owner of the product. Contact the product administrator for the significance of this value.
      * </p>
      * 
      * @param owner
-     *        The owner of the product. Contact the product administrator for
-     *        the significance of this value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The owner of the product. Contact the product administrator for the significance of this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProductViewSummary withOwner(String owner) {
@@ -300,8 +283,7 @@ public class ProductViewSummary implements Serializable, Cloneable {
      * 
      * @param shortDescription
      *        Short description of the product.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProductViewSummary withShortDescription(String shortDescription) {
@@ -311,13 +293,11 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance
-     * of this value.
+     * The product type. Contact the product administrator for the significance of this value.
      * </p>
      * 
      * @param type
-     *        The product type. Contact the product administrator for the
-     *        significance of this value.
+     *        The product type. Contact the product administrator for the significance of this value.
      */
 
     public void setType(String type) {
@@ -326,12 +306,10 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance
-     * of this value.
+     * The product type. Contact the product administrator for the significance of this value.
      * </p>
      * 
-     * @return The product type. Contact the product administrator for the
-     *         significance of this value.
+     * @return The product type. Contact the product administrator for the significance of this value.
      */
 
     public String getType() {
@@ -340,15 +318,12 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance
-     * of this value.
+     * The product type. Contact the product administrator for the significance of this value.
      * </p>
      * 
      * @param type
-     *        The product type. Contact the product administrator for the
-     *        significance of this value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The product type. Contact the product administrator for the significance of this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProductViewSummary withType(String type) {
@@ -358,13 +333,11 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The distributor of the product. Contact the product administrator for the
-     * significance of this value.
+     * The distributor of the product. Contact the product administrator for the significance of this value.
      * </p>
      * 
      * @param distributor
-     *        The distributor of the product. Contact the product administrator
-     *        for the significance of this value.
+     *        The distributor of the product. Contact the product administrator for the significance of this value.
      */
 
     public void setDistributor(String distributor) {
@@ -373,12 +346,10 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The distributor of the product. Contact the product administrator for the
-     * significance of this value.
+     * The distributor of the product. Contact the product administrator for the significance of this value.
      * </p>
      * 
-     * @return The distributor of the product. Contact the product administrator
-     *         for the significance of this value.
+     * @return The distributor of the product. Contact the product administrator for the significance of this value.
      */
 
     public String getDistributor() {
@@ -387,15 +358,12 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The distributor of the product. Contact the product administrator for the
-     * significance of this value.
+     * The distributor of the product. Contact the product administrator for the significance of this value.
      * </p>
      * 
      * @param distributor
-     *        The distributor of the product. Contact the product administrator
-     *        for the significance of this value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The distributor of the product. Contact the product administrator for the significance of this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProductViewSummary withDistributor(String distributor) {
@@ -405,22 +373,17 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a
-     * default path, while a value of <code>true</code> indicates that it does.
-     * If it's false, call <a>ListLaunchPaths</a> to disambiguate between paths.
-     * If true, <a>ListLaunchPaths</a> is not required, and the output of the
-     * <a>ProductViewSummary</a> operation can be used directly with
-     * <a>DescribeProvisioningParameters</a>.
+     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
+     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
+     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
+     * can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
      * @param hasDefaultPath
-     *        A value of <code>false</code> indicates that the product does not
-     *        have a default path, while a value of <code>true</code> indicates
-     *        that it does. If it's false, call <a>ListLaunchPaths</a> to
-     *        disambiguate between paths. If true, <a>ListLaunchPaths</a> is not
-     *        required, and the output of the <a>ProductViewSummary</a>
-     *        operation can be used directly with
-     *        <a>DescribeProvisioningParameters</a>.
+     *        A value of <code>false</code> indicates that the product does not have a default path, while a value of
+     *        <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate
+     *        between paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the
+     *        <a>ProductViewSummary</a> operation can be used directly with <a>DescribeProvisioningParameters</a>.
      */
 
     public void setHasDefaultPath(Boolean hasDefaultPath) {
@@ -429,21 +392,16 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a
-     * default path, while a value of <code>true</code> indicates that it does.
-     * If it's false, call <a>ListLaunchPaths</a> to disambiguate between paths.
-     * If true, <a>ListLaunchPaths</a> is not required, and the output of the
-     * <a>ProductViewSummary</a> operation can be used directly with
-     * <a>DescribeProvisioningParameters</a>.
+     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
+     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
+     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
+     * can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
-     * @return A value of <code>false</code> indicates that the product does not
-     *         have a default path, while a value of <code>true</code> indicates
-     *         that it does. If it's false, call <a>ListLaunchPaths</a> to
-     *         disambiguate between paths. If true, <a>ListLaunchPaths</a> is
-     *         not required, and the output of the <a>ProductViewSummary</a>
-     *         operation can be used directly with
-     *         <a>DescribeProvisioningParameters</a>.
+     * @return A value of <code>false</code> indicates that the product does not have a default path, while a value of
+     *         <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate
+     *         between paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the
+     *         <a>ProductViewSummary</a> operation can be used directly with <a>DescribeProvisioningParameters</a>.
      */
 
     public Boolean getHasDefaultPath() {
@@ -452,24 +410,18 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a
-     * default path, while a value of <code>true</code> indicates that it does.
-     * If it's false, call <a>ListLaunchPaths</a> to disambiguate between paths.
-     * If true, <a>ListLaunchPaths</a> is not required, and the output of the
-     * <a>ProductViewSummary</a> operation can be used directly with
-     * <a>DescribeProvisioningParameters</a>.
+     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
+     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
+     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
+     * can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
      * @param hasDefaultPath
-     *        A value of <code>false</code> indicates that the product does not
-     *        have a default path, while a value of <code>true</code> indicates
-     *        that it does. If it's false, call <a>ListLaunchPaths</a> to
-     *        disambiguate between paths. If true, <a>ListLaunchPaths</a> is not
-     *        required, and the output of the <a>ProductViewSummary</a>
-     *        operation can be used directly with
-     *        <a>DescribeProvisioningParameters</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value of <code>false</code> indicates that the product does not have a default path, while a value of
+     *        <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate
+     *        between paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the
+     *        <a>ProductViewSummary</a> operation can be used directly with <a>DescribeProvisioningParameters</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProductViewSummary withHasDefaultPath(Boolean hasDefaultPath) {
@@ -479,21 +431,16 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a
-     * default path, while a value of <code>true</code> indicates that it does.
-     * If it's false, call <a>ListLaunchPaths</a> to disambiguate between paths.
-     * If true, <a>ListLaunchPaths</a> is not required, and the output of the
-     * <a>ProductViewSummary</a> operation can be used directly with
-     * <a>DescribeProvisioningParameters</a>.
+     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
+     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
+     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
+     * can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
-     * @return A value of <code>false</code> indicates that the product does not
-     *         have a default path, while a value of <code>true</code> indicates
-     *         that it does. If it's false, call <a>ListLaunchPaths</a> to
-     *         disambiguate between paths. If true, <a>ListLaunchPaths</a> is
-     *         not required, and the output of the <a>ProductViewSummary</a>
-     *         operation can be used directly with
-     *         <a>DescribeProvisioningParameters</a>.
+     * @return A value of <code>false</code> indicates that the product does not have a default path, while a value of
+     *         <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate
+     *         between paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the
+     *         <a>ProductViewSummary</a> operation can be used directly with <a>DescribeProvisioningParameters</a>.
      */
 
     public Boolean isHasDefaultPath() {
@@ -532,8 +479,7 @@ public class ProductViewSummary implements Serializable, Cloneable {
      * 
      * @param supportEmail
      *        The email contact information to obtain support for this Product.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProductViewSummary withSupportEmail(String supportEmail) {
@@ -573,8 +519,7 @@ public class ProductViewSummary implements Serializable, Cloneable {
      * 
      * @param supportDescription
      *        The description of the support for this Product.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProductViewSummary withSupportDescription(String supportDescription) {
@@ -614,8 +559,7 @@ public class ProductViewSummary implements Serializable, Cloneable {
      * 
      * @param supportUrl
      *        The URL information to obtain support for this Product.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProductViewSummary withSupportUrl(String supportUrl) {
@@ -624,8 +568,7 @@ public class ProductViewSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -673,63 +616,47 @@ public class ProductViewSummary implements Serializable, Cloneable {
         ProductViewSummary other = (ProductViewSummary) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getProductId() == null ^ this.getProductId() == null)
             return false;
-        if (other.getProductId() != null
-                && other.getProductId().equals(this.getProductId()) == false)
+        if (other.getProductId() != null && other.getProductId().equals(this.getProductId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getOwner() == null ^ this.getOwner() == null)
             return false;
-        if (other.getOwner() != null
-                && other.getOwner().equals(this.getOwner()) == false)
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
             return false;
-        if (other.getShortDescription() == null
-                ^ this.getShortDescription() == null)
+        if (other.getShortDescription() == null ^ this.getShortDescription() == null)
             return false;
-        if (other.getShortDescription() != null
-                && other.getShortDescription().equals(
-                        this.getShortDescription()) == false)
+        if (other.getShortDescription() != null && other.getShortDescription().equals(this.getShortDescription()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getDistributor() == null ^ this.getDistributor() == null)
             return false;
-        if (other.getDistributor() != null
-                && other.getDistributor().equals(this.getDistributor()) == false)
+        if (other.getDistributor() != null && other.getDistributor().equals(this.getDistributor()) == false)
             return false;
-        if (other.getHasDefaultPath() == null
-                ^ this.getHasDefaultPath() == null)
+        if (other.getHasDefaultPath() == null ^ this.getHasDefaultPath() == null)
             return false;
-        if (other.getHasDefaultPath() != null
-                && other.getHasDefaultPath().equals(this.getHasDefaultPath()) == false)
+        if (other.getHasDefaultPath() != null && other.getHasDefaultPath().equals(this.getHasDefaultPath()) == false)
             return false;
         if (other.getSupportEmail() == null ^ this.getSupportEmail() == null)
             return false;
-        if (other.getSupportEmail() != null
-                && other.getSupportEmail().equals(this.getSupportEmail()) == false)
+        if (other.getSupportEmail() != null && other.getSupportEmail().equals(this.getSupportEmail()) == false)
             return false;
-        if (other.getSupportDescription() == null
-                ^ this.getSupportDescription() == null)
+        if (other.getSupportDescription() == null ^ this.getSupportDescription() == null)
             return false;
-        if (other.getSupportDescription() != null
-                && other.getSupportDescription().equals(
-                        this.getSupportDescription()) == false)
+        if (other.getSupportDescription() != null && other.getSupportDescription().equals(this.getSupportDescription()) == false)
             return false;
         if (other.getSupportUrl() == null ^ this.getSupportUrl() == null)
             return false;
-        if (other.getSupportUrl() != null
-                && other.getSupportUrl().equals(this.getSupportUrl()) == false)
+        if (other.getSupportUrl() != null && other.getSupportUrl().equals(this.getSupportUrl()) == false)
             return false;
         return true;
     }
@@ -739,37 +666,17 @@ public class ProductViewSummary implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getProductId() == null) ? 0 : getProductId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getOwner() == null) ? 0 : getOwner().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getShortDescription() == null) ? 0 : getShortDescription()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDistributor() == null) ? 0 : getDistributor().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHasDefaultPath() == null) ? 0 : getHasDefaultPath()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSupportEmail() == null) ? 0 : getSupportEmail()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSupportDescription() == null) ? 0
-                        : getSupportDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getSupportUrl() == null) ? 0 : getSupportUrl().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
+        hashCode = prime * hashCode + ((getShortDescription() == null) ? 0 : getShortDescription().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getDistributor() == null) ? 0 : getDistributor().hashCode());
+        hashCode = prime * hashCode + ((getHasDefaultPath() == null) ? 0 : getHasDefaultPath().hashCode());
+        hashCode = prime * hashCode + ((getSupportEmail() == null) ? 0 : getSupportEmail().hashCode());
+        hashCode = prime * hashCode + ((getSupportDescription() == null) ? 0 : getSupportDescription().hashCode());
+        hashCode = prime * hashCode + ((getSupportUrl() == null) ? 0 : getSupportUrl().hashCode());
         return hashCode;
     }
 
@@ -778,9 +685,7 @@ public class ProductViewSummary implements Serializable, Cloneable {
         try {
             return (ProductViewSummary) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

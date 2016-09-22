@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to list completed and failed managed actions.
  * </p>
  */
-public class DescribeEnvironmentManagedActionHistoryRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DescribeEnvironmentManagedActionHistoryRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -83,12 +79,10 @@ public class DescribeEnvironmentManagedActionHistoryRequest extends
      * 
      * @param environmentId
      *        The environment ID of the target environment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEnvironmentManagedActionHistoryRequest withEnvironmentId(
-            String environmentId) {
+    public DescribeEnvironmentManagedActionHistoryRequest withEnvironmentId(String environmentId) {
         setEnvironmentId(environmentId);
         return this;
     }
@@ -125,12 +119,10 @@ public class DescribeEnvironmentManagedActionHistoryRequest extends
      * 
      * @param environmentName
      *        The name of the target environment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEnvironmentManagedActionHistoryRequest withEnvironmentName(
-            String environmentName) {
+    public DescribeEnvironmentManagedActionHistoryRequest withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
         return this;
     }
@@ -167,12 +159,10 @@ public class DescribeEnvironmentManagedActionHistoryRequest extends
      * 
      * @param nextToken
      *        The pagination token returned by a previous request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEnvironmentManagedActionHistoryRequest withNextToken(
-            String nextToken) {
+    public DescribeEnvironmentManagedActionHistoryRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
     }
@@ -209,19 +199,16 @@ public class DescribeEnvironmentManagedActionHistoryRequest extends
      * 
      * @param maxItems
      *        The maximum number of items to return for a single request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEnvironmentManagedActionHistoryRequest withMaxItems(
-            Integer maxItems) {
+    public DescribeEnvironmentManagedActionHistoryRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -255,24 +242,19 @@ public class DescribeEnvironmentManagedActionHistoryRequest extends
         DescribeEnvironmentManagedActionHistoryRequest other = (DescribeEnvironmentManagedActionHistoryRequest) obj;
         if (other.getEnvironmentId() == null ^ this.getEnvironmentId() == null)
             return false;
-        if (other.getEnvironmentId() != null
-                && other.getEnvironmentId().equals(this.getEnvironmentId()) == false)
+        if (other.getEnvironmentId() != null && other.getEnvironmentId().equals(this.getEnvironmentId()) == false)
             return false;
-        if (other.getEnvironmentName() == null
-                ^ this.getEnvironmentName() == null)
+        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
             return false;
-        if (other.getEnvironmentName() != null
-                && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
+        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         return true;
     }
@@ -282,18 +264,10 @@ public class DescribeEnvironmentManagedActionHistoryRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEnvironmentId() == null) ? 0 : getEnvironmentId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEnvironmentName() == null) ? 0 : getEnvironmentName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 
@@ -21,9 +19,7 @@ import java.io.Serializable;
  * Result message containing a list of application descriptions.
  * </p>
  */
-public class DescribeApplicationsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeApplicationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -56,15 +52,13 @@ public class DescribeApplicationsResult extends
      *        This parameter contains a list of <a>ApplicationDescription</a>.
      */
 
-    public void setApplications(
-            java.util.Collection<ApplicationDescription> applications) {
+    public void setApplications(java.util.Collection<ApplicationDescription> applications) {
         if (applications == null) {
             this.applications = null;
             return;
         }
 
-        this.applications = new com.amazonaws.internal.SdkInternalList<ApplicationDescription>(
-                applications);
+        this.applications = new com.amazonaws.internal.SdkInternalList<ApplicationDescription>(applications);
     }
 
     /**
@@ -72,23 +66,19 @@ public class DescribeApplicationsResult extends
      * This parameter contains a list of <a>ApplicationDescription</a>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setApplications(java.util.Collection)} or
-     * {@link #withApplications(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setApplications(java.util.Collection)} or {@link #withApplications(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param applications
      *        This parameter contains a list of <a>ApplicationDescription</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeApplicationsResult withApplications(
-            ApplicationDescription... applications) {
+    public DescribeApplicationsResult withApplications(ApplicationDescription... applications) {
         if (this.applications == null) {
-            setApplications(new com.amazonaws.internal.SdkInternalList<ApplicationDescription>(
-                    applications.length));
+            setApplications(new com.amazonaws.internal.SdkInternalList<ApplicationDescription>(applications.length));
         }
         for (ApplicationDescription ele : applications) {
             this.applications.add(ele);
@@ -103,19 +93,16 @@ public class DescribeApplicationsResult extends
      * 
      * @param applications
      *        This parameter contains a list of <a>ApplicationDescription</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeApplicationsResult withApplications(
-            java.util.Collection<ApplicationDescription> applications) {
+    public DescribeApplicationsResult withApplications(java.util.Collection<ApplicationDescription> applications) {
         setApplications(applications);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -143,8 +130,7 @@ public class DescribeApplicationsResult extends
         DescribeApplicationsResult other = (DescribeApplicationsResult) obj;
         if (other.getApplications() == null ^ this.getApplications() == null)
             return false;
-        if (other.getApplications() != null
-                && other.getApplications().equals(this.getApplications()) == false)
+        if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false)
             return false;
         return true;
     }
@@ -154,10 +140,7 @@ public class DescribeApplicationsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplications() == null) ? 0 : getApplications()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
         return hashCode;
     }
 
@@ -166,9 +149,7 @@ public class DescribeApplicationsResult extends
         try {
             return (DescribeApplicationsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

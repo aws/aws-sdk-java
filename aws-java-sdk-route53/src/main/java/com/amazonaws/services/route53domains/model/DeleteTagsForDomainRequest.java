@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The DeleteTagsForDomainRequest includes the following elements.
  * </p>
  */
-public class DeleteTagsForDomainRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class DeleteTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -40,12 +36,10 @@ public class DeleteTagsForDomainRequest extends
      * Default: None
      * </p>
      * <p>
-     * Constraints: The domain name can contain only the letters a through z,
-     * the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when
-     * they&apos;re surrounded by letters, numbers, or other hyphens. You
-     * can&apos;t specify a hyphen at the beginning or end of a label. To
-     * specify an Internationalized Domain Name, you must convert the name to
-     * Punycode.
+     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
+     * Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t
+     * specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must
+     * convert the name to Punycode.
      * </p>
      * <p>
      * Required: Yes
@@ -83,12 +77,10 @@ public class DeleteTagsForDomainRequest extends
      * Default: None
      * </p>
      * <p>
-     * Constraints: The domain name can contain only the letters a through z,
-     * the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when
-     * they&apos;re surrounded by letters, numbers, or other hyphens. You
-     * can&apos;t specify a hyphen at the beginning or end of a label. To
-     * specify an Internationalized Domain Name, you must convert the name to
-     * Punycode.
+     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
+     * Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t
+     * specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must
+     * convert the name to Punycode.
      * </p>
      * <p>
      * Required: Yes
@@ -106,12 +98,10 @@ public class DeleteTagsForDomainRequest extends
      *        Default: None
      *        </p>
      *        <p>
-     *        Constraints: The domain name can contain only the letters a
-     *        through z, the numbers 0 through 9, and hyphen (-). Hyphens are
-     *        allowed only when they&apos;re surrounded by letters, numbers, or
-     *        other hyphens. You can&apos;t specify a hyphen at the beginning or
-     *        end of a label. To specify an Internationalized Domain Name, you
-     *        must convert the name to Punycode.
+     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
+     *        (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You
+     *        can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain
+     *        Name, you must convert the name to Punycode.
      *        </p>
      *        <p>
      *        Required: Yes
@@ -135,12 +125,10 @@ public class DeleteTagsForDomainRequest extends
      * Default: None
      * </p>
      * <p>
-     * Constraints: The domain name can contain only the letters a through z,
-     * the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when
-     * they&apos;re surrounded by letters, numbers, or other hyphens. You
-     * can&apos;t specify a hyphen at the beginning or end of a label. To
-     * specify an Internationalized Domain Name, you must convert the name to
-     * Punycode.
+     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
+     * Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t
+     * specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must
+     * convert the name to Punycode.
      * </p>
      * <p>
      * Required: Yes
@@ -157,12 +145,10 @@ public class DeleteTagsForDomainRequest extends
      *         Default: None
      *         </p>
      *         <p>
-     *         Constraints: The domain name can contain only the letters a
-     *         through z, the numbers 0 through 9, and hyphen (-). Hyphens are
-     *         allowed only when they&apos;re surrounded by letters, numbers, or
-     *         other hyphens. You can&apos;t specify a hyphen at the beginning
-     *         or end of a label. To specify an Internationalized Domain Name,
-     *         you must convert the name to Punycode.
+     *         Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and
+     *         hyphen (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens.
+     *         You can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized
+     *         Domain Name, you must convert the name to Punycode.
      *         </p>
      *         <p>
      *         Required: Yes
@@ -186,12 +172,10 @@ public class DeleteTagsForDomainRequest extends
      * Default: None
      * </p>
      * <p>
-     * Constraints: The domain name can contain only the letters a through z,
-     * the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when
-     * they&apos;re surrounded by letters, numbers, or other hyphens. You
-     * can&apos;t specify a hyphen at the beginning or end of a label. To
-     * specify an Internationalized Domain Name, you must convert the name to
-     * Punycode.
+     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
+     * Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t
+     * specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must
+     * convert the name to Punycode.
      * </p>
      * <p>
      * Required: Yes
@@ -209,17 +193,14 @@ public class DeleteTagsForDomainRequest extends
      *        Default: None
      *        </p>
      *        <p>
-     *        Constraints: The domain name can contain only the letters a
-     *        through z, the numbers 0 through 9, and hyphen (-). Hyphens are
-     *        allowed only when they&apos;re surrounded by letters, numbers, or
-     *        other hyphens. You can&apos;t specify a hyphen at the beginning or
-     *        end of a label. To specify an Internationalized Domain Name, you
-     *        must convert the name to Punycode.
+     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
+     *        (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You
+     *        can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain
+     *        Name, you must convert the name to Punycode.
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteTagsForDomainRequest withDomainName(String domainName) {
@@ -244,8 +225,7 @@ public class DeleteTagsForDomainRequest extends
      * 
      * @return A list of tag keys to delete.</p>
      *         <p>
-     *         Type: A list that contains the keys of the tags that you want to
-     *         delete.
+     *         Type: A list that contains the keys of the tags that you want to delete.
      *         </p>
      *         <p>
      *         Default: None
@@ -279,8 +259,7 @@ public class DeleteTagsForDomainRequest extends
      * @param tagsToDelete
      *        A list of tag keys to delete.</p>
      *        <p>
-     *        Type: A list that contains the keys of the tags that you want to
-     *        delete.
+     *        Type: A list that contains the keys of the tags that you want to delete.
      *        </p>
      *        <p>
      *        Default: None
@@ -295,8 +274,7 @@ public class DeleteTagsForDomainRequest extends
             return;
         }
 
-        this.tagsToDelete = new com.amazonaws.internal.SdkInternalList<String>(
-                tagsToDelete);
+        this.tagsToDelete = new com.amazonaws.internal.SdkInternalList<String>(tagsToDelete);
     }
 
     /**
@@ -314,31 +292,27 @@ public class DeleteTagsForDomainRequest extends
      * </p>
      * '>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagsToDelete(java.util.Collection)} or
-     * {@link #withTagsToDelete(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagsToDelete(java.util.Collection)} or {@link #withTagsToDelete(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param tagsToDelete
      *        A list of tag keys to delete.</p>
      *        <p>
-     *        Type: A list that contains the keys of the tags that you want to
-     *        delete.
+     *        Type: A list that contains the keys of the tags that you want to delete.
      *        </p>
      *        <p>
      *        Default: None
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteTagsForDomainRequest withTagsToDelete(String... tagsToDelete) {
         if (this.tagsToDelete == null) {
-            setTagsToDelete(new com.amazonaws.internal.SdkInternalList<String>(
-                    tagsToDelete.length));
+            setTagsToDelete(new com.amazonaws.internal.SdkInternalList<String>(tagsToDelete.length));
         }
         for (String ele : tagsToDelete) {
             this.tagsToDelete.add(ele);
@@ -364,27 +338,23 @@ public class DeleteTagsForDomainRequest extends
      * @param tagsToDelete
      *        A list of tag keys to delete.</p>
      *        <p>
-     *        Type: A list that contains the keys of the tags that you want to
-     *        delete.
+     *        Type: A list that contains the keys of the tags that you want to delete.
      *        </p>
      *        <p>
      *        Default: None
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteTagsForDomainRequest withTagsToDelete(
-            java.util.Collection<String> tagsToDelete) {
+    public DeleteTagsForDomainRequest withTagsToDelete(java.util.Collection<String> tagsToDelete) {
         setTagsToDelete(tagsToDelete);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -414,13 +384,11 @@ public class DeleteTagsForDomainRequest extends
         DeleteTagsForDomainRequest other = (DeleteTagsForDomainRequest) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
         if (other.getTagsToDelete() == null ^ this.getTagsToDelete() == null)
             return false;
-        if (other.getTagsToDelete() != null
-                && other.getTagsToDelete().equals(this.getTagsToDelete()) == false)
+        if (other.getTagsToDelete() != null && other.getTagsToDelete().equals(this.getTagsToDelete()) == false)
             return false;
         return true;
     }
@@ -430,12 +398,8 @@ public class DeleteTagsForDomainRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTagsToDelete() == null) ? 0 : getTagsToDelete()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getTagsToDelete() == null) ? 0 : getTagsToDelete().hashCode());
         return hashCode;
     }
 

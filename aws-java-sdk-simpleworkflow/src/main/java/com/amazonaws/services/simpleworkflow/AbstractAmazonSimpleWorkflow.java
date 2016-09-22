@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow;
 
@@ -18,9 +16,8 @@ import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AmazonSimpleWorkflow}. Convenient method
- * forms pass through to the corresponding overload that takes a request object,
- * which throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonSimpleWorkflow}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
 public class AbstractAmazonSimpleWorkflow implements AmazonSimpleWorkflow {
 
@@ -38,26 +35,22 @@ public class AbstractAmazonSimpleWorkflow implements AmazonSimpleWorkflow {
     }
 
     @Override
-    public WorkflowExecutionCount countClosedWorkflowExecutions(
-            CountClosedWorkflowExecutionsRequest request) {
+    public WorkflowExecutionCount countClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public WorkflowExecutionCount countOpenWorkflowExecutions(
-            CountOpenWorkflowExecutionsRequest request) {
+    public WorkflowExecutionCount countOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public PendingTaskCount countPendingActivityTasks(
-            CountPendingActivityTasksRequest request) {
+    public PendingTaskCount countPendingActivityTasks(CountPendingActivityTasksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public PendingTaskCount countPendingDecisionTasks(
-            CountPendingDecisionTasksRequest request) {
+    public PendingTaskCount countPendingDecisionTasks(CountPendingDecisionTasksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -77,8 +70,7 @@ public class AbstractAmazonSimpleWorkflow implements AmazonSimpleWorkflow {
     }
 
     @Override
-    public ActivityTypeDetail describeActivityType(
-            DescribeActivityTypeRequest request) {
+    public ActivityTypeDetail describeActivityType(DescribeActivityTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,20 +80,17 @@ public class AbstractAmazonSimpleWorkflow implements AmazonSimpleWorkflow {
     }
 
     @Override
-    public WorkflowExecutionDetail describeWorkflowExecution(
-            DescribeWorkflowExecutionRequest request) {
+    public WorkflowExecutionDetail describeWorkflowExecution(DescribeWorkflowExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public WorkflowTypeDetail describeWorkflowType(
-            DescribeWorkflowTypeRequest request) {
+    public WorkflowTypeDetail describeWorkflowType(DescribeWorkflowTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public History getWorkflowExecutionHistory(
-            GetWorkflowExecutionHistoryRequest request) {
+    public History getWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -111,8 +100,7 @@ public class AbstractAmazonSimpleWorkflow implements AmazonSimpleWorkflow {
     }
 
     @Override
-    public WorkflowExecutionInfos listClosedWorkflowExecutions(
-            ListClosedWorkflowExecutionsRequest request) {
+    public WorkflowExecutionInfos listClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -122,8 +110,7 @@ public class AbstractAmazonSimpleWorkflow implements AmazonSimpleWorkflow {
     }
 
     @Override
-    public WorkflowExecutionInfos listOpenWorkflowExecutions(
-            ListOpenWorkflowExecutionsRequest request) {
+    public WorkflowExecutionInfos listOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,8 +130,7 @@ public class AbstractAmazonSimpleWorkflow implements AmazonSimpleWorkflow {
     }
 
     @Override
-    public ActivityTaskStatus recordActivityTaskHeartbeat(
-            RecordActivityTaskHeartbeatRequest request) {
+    public ActivityTaskStatus recordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -164,32 +150,27 @@ public class AbstractAmazonSimpleWorkflow implements AmazonSimpleWorkflow {
     }
 
     @Override
-    public void requestCancelWorkflowExecution(
-            RequestCancelWorkflowExecutionRequest request) {
+    public void requestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void respondActivityTaskCanceled(
-            RespondActivityTaskCanceledRequest request) {
+    public void respondActivityTaskCanceled(RespondActivityTaskCanceledRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void respondActivityTaskCompleted(
-            RespondActivityTaskCompletedRequest request) {
+    public void respondActivityTaskCompleted(RespondActivityTaskCompletedRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void respondActivityTaskFailed(
-            RespondActivityTaskFailedRequest request) {
+    public void respondActivityTaskFailed(RespondActivityTaskFailedRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void respondDecisionTaskCompleted(
-            RespondDecisionTaskCompletedRequest request) {
+    public void respondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -204,8 +185,7 @@ public class AbstractAmazonSimpleWorkflow implements AmazonSimpleWorkflow {
     }
 
     @Override
-    public void terminateWorkflowExecution(
-            TerminateWorkflowExecutionRequest request) {
+    public void terminateWorkflowExecution(TerminateWorkflowExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -215,8 +195,7 @@ public class AbstractAmazonSimpleWorkflow implements AmazonSimpleWorkflow {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

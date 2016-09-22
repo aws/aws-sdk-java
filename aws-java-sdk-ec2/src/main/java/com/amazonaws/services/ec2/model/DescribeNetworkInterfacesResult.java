@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -22,9 +20,7 @@ import com.amazonaws.AmazonWebServiceResult;
  * Contains the output of DescribeNetworkInterfaces.
  * </p>
  */
-public class DescribeNetworkInterfacesResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -57,15 +53,13 @@ public class DescribeNetworkInterfacesResult extends
      *        Information about one or more network interfaces.
      */
 
-    public void setNetworkInterfaces(
-            java.util.Collection<NetworkInterface> networkInterfaces) {
+    public void setNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
         if (networkInterfaces == null) {
             this.networkInterfaces = null;
             return;
         }
 
-        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<NetworkInterface>(
-                networkInterfaces);
+        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<NetworkInterface>(networkInterfaces);
     }
 
     /**
@@ -73,23 +67,19 @@ public class DescribeNetworkInterfacesResult extends
      * Information about one or more network interfaces.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNetworkInterfaces(java.util.Collection)} or
-     * {@link #withNetworkInterfaces(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param networkInterfaces
      *        Information about one or more network interfaces.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfacesResult withNetworkInterfaces(
-            NetworkInterface... networkInterfaces) {
+    public DescribeNetworkInterfacesResult withNetworkInterfaces(NetworkInterface... networkInterfaces) {
         if (this.networkInterfaces == null) {
-            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<NetworkInterface>(
-                    networkInterfaces.length));
+            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<NetworkInterface>(networkInterfaces.length));
         }
         for (NetworkInterface ele : networkInterfaces) {
             this.networkInterfaces.add(ele);
@@ -104,19 +94,16 @@ public class DescribeNetworkInterfacesResult extends
      * 
      * @param networkInterfaces
      *        Information about one or more network interfaces.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfacesResult withNetworkInterfaces(
-            java.util.Collection<NetworkInterface> networkInterfaces) {
+    public DescribeNetworkInterfacesResult withNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
         setNetworkInterfaces(networkInterfaces);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -142,12 +129,9 @@ public class DescribeNetworkInterfacesResult extends
         if (obj instanceof DescribeNetworkInterfacesResult == false)
             return false;
         DescribeNetworkInterfacesResult other = (DescribeNetworkInterfacesResult) obj;
-        if (other.getNetworkInterfaces() == null
-                ^ this.getNetworkInterfaces() == null)
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
             return false;
-        if (other.getNetworkInterfaces() != null
-                && other.getNetworkInterfaces().equals(
-                        this.getNetworkInterfaces()) == false)
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
             return false;
         return true;
     }
@@ -157,10 +141,7 @@ public class DescribeNetworkInterfacesResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaces() == null) ? 0
-                        : getNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         return hashCode;
     }
 
@@ -169,9 +150,7 @@ public class DescribeNetworkInterfacesResult extends
         try {
             return (DescribeNetworkInterfacesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

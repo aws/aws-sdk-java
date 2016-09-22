@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model.transform;
 
@@ -30,17 +28,13 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * GetIdentityVerificationAttributesResult StAX Unmarshaller
  */
-public class GetIdentityVerificationAttributesResultStaxUnmarshaller
-        implements
-        Unmarshaller<GetIdentityVerificationAttributesResult, StaxUnmarshallerContext> {
+public class GetIdentityVerificationAttributesResultStaxUnmarshaller implements Unmarshaller<GetIdentityVerificationAttributesResult, StaxUnmarshallerContext> {
 
-    private static class VerificationAttributesMapEntryUnmarshaller
-            implements
+    private static class VerificationAttributesMapEntryUnmarshaller implements
             Unmarshaller<Map.Entry<String, IdentityVerificationAttributes>, StaxUnmarshallerContext> {
 
         @Override
-        public Entry<String, IdentityVerificationAttributes> unmarshall(
-                StaxUnmarshallerContext context) throws Exception {
+        public Entry<String, IdentityVerificationAttributes> unmarshall(StaxUnmarshallerContext context) throws Exception {
             int originalDepth = context.getCurrentDepth();
             int targetDepth = originalDepth + 1;
 
@@ -53,13 +47,11 @@ public class GetIdentityVerificationAttributesResultStaxUnmarshaller
 
                 if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                     if (context.testExpression("key", targetDepth)) {
-                        entry.setKey(StringStaxUnmarshaller.getInstance()
-                                .unmarshall(context));
+                        entry.setKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
                         continue;
                     }
                     if (context.testExpression("value", targetDepth)) {
-                        entry.setValue(IdentityVerificationAttributesStaxUnmarshaller
-                                .getInstance().unmarshall(context));
+                        entry.setValue(IdentityVerificationAttributesStaxUnmarshaller.getInstance().unmarshall(context));
                         continue;
                     }
                 } else if (xmlEvent.isEndElement()) {
@@ -79,8 +71,7 @@ public class GetIdentityVerificationAttributesResultStaxUnmarshaller
 
     }
 
-    public GetIdentityVerificationAttributesResult unmarshall(
-            StaxUnmarshallerContext context) throws Exception {
+    public GetIdentityVerificationAttributesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         GetIdentityVerificationAttributesResult getIdentityVerificationAttributesResult = new GetIdentityVerificationAttributesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -95,13 +86,9 @@ public class GetIdentityVerificationAttributesResultStaxUnmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("VerificationAttributes/entry",
-                        targetDepth)) {
-                    Entry<String, IdentityVerificationAttributes> entry = VerificationAttributesMapEntryUnmarshaller
-                            .getInstance().unmarshall(context);
-                    getIdentityVerificationAttributesResult
-                            .addVerificationAttributesEntry(entry.getKey(),
-                                    entry.getValue());
+                if (context.testExpression("VerificationAttributes/entry", targetDepth)) {
+                    Entry<String, IdentityVerificationAttributes> entry = VerificationAttributesMapEntryUnmarshaller.getInstance().unmarshall(context);
+                    getIdentityVerificationAttributesResult.addVerificationAttributesEntry(entry.getKey(), entry.getValue());
                     continue;
                 }
 

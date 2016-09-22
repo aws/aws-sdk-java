@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.route53domains.model;
 
@@ -22,19 +20,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The ListOperations request includes the following elements.
  * </p>
  */
-public class ListOperationsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an initial request for a list of operations, omit this element. If
-     * the number of operations that are not yet complete is greater than the
-     * value that you specified for <code>MaxItems</code>, you can use
-     * <code>Marker</code> to return additional operations. Get the value of
-     * <code>NextPageMarker</code> from the previous response, and submit
-     * another request that includes the value of <code>NextPageMarker</code> in
-     * the <code>Marker</code> element.
+     * For an initial request for a list of operations, omit this element. If the number of operations that are not yet
+     * complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
+     * to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and
+     * submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
      * <p>
      * Type: String
@@ -68,13 +61,10 @@ public class ListOperationsRequest extends
 
     /**
      * <p>
-     * For an initial request for a list of operations, omit this element. If
-     * the number of operations that are not yet complete is greater than the
-     * value that you specified for <code>MaxItems</code>, you can use
-     * <code>Marker</code> to return additional operations. Get the value of
-     * <code>NextPageMarker</code> from the previous response, and submit
-     * another request that includes the value of <code>NextPageMarker</code> in
-     * the <code>Marker</code> element.
+     * For an initial request for a list of operations, omit this element. If the number of operations that are not yet
+     * complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
+     * to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and
+     * submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
      * <p>
      * Type: String
@@ -87,15 +77,11 @@ public class ListOperationsRequest extends
      * </p>
      * 
      * @param marker
-     *        For an initial request for a list of operations, omit this
-     *        element. If the number of operations that are not yet complete is
-     *        greater than the value that you specified for
-     *        <code>MaxItems</code>, you can use <code>Marker</code> to return
-     *        additional operations. Get the value of
-     *        <code>NextPageMarker</code> from the previous response, and submit
-     *        another request that includes the value of
-     *        <code>NextPageMarker</code> in the <code>Marker</code>
-     *        element.</p>
+     *        For an initial request for a list of operations, omit this element. If the number of operations that are
+     *        not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use
+     *        <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the
+     *        previous response, and submit another request that includes the value of <code>NextPageMarker</code> in
+     *        the <code>Marker</code> element.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -112,13 +98,10 @@ public class ListOperationsRequest extends
 
     /**
      * <p>
-     * For an initial request for a list of operations, omit this element. If
-     * the number of operations that are not yet complete is greater than the
-     * value that you specified for <code>MaxItems</code>, you can use
-     * <code>Marker</code> to return additional operations. Get the value of
-     * <code>NextPageMarker</code> from the previous response, and submit
-     * another request that includes the value of <code>NextPageMarker</code> in
-     * the <code>Marker</code> element.
+     * For an initial request for a list of operations, omit this element. If the number of operations that are not yet
+     * complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
+     * to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and
+     * submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
      * <p>
      * Type: String
@@ -130,15 +113,11 @@ public class ListOperationsRequest extends
      * Required: No
      * </p>
      * 
-     * @return For an initial request for a list of operations, omit this
-     *         element. If the number of operations that are not yet complete is
-     *         greater than the value that you specified for
-     *         <code>MaxItems</code>, you can use <code>Marker</code> to return
-     *         additional operations. Get the value of
-     *         <code>NextPageMarker</code> from the previous response, and
-     *         submit another request that includes the value of
-     *         <code>NextPageMarker</code> in the <code>Marker</code>
-     *         element.</p>
+     * @return For an initial request for a list of operations, omit this element. If the number of operations that are
+     *         not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use
+     *         <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from
+     *         the previous response, and submit another request that includes the value of <code>NextPageMarker</code>
+     *         in the <code>Marker</code> element.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -155,13 +134,10 @@ public class ListOperationsRequest extends
 
     /**
      * <p>
-     * For an initial request for a list of operations, omit this element. If
-     * the number of operations that are not yet complete is greater than the
-     * value that you specified for <code>MaxItems</code>, you can use
-     * <code>Marker</code> to return additional operations. Get the value of
-     * <code>NextPageMarker</code> from the previous response, and submit
-     * another request that includes the value of <code>NextPageMarker</code> in
-     * the <code>Marker</code> element.
+     * For an initial request for a list of operations, omit this element. If the number of operations that are not yet
+     * complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
+     * to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and
+     * submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
      * <p>
      * Type: String
@@ -174,15 +150,11 @@ public class ListOperationsRequest extends
      * </p>
      * 
      * @param marker
-     *        For an initial request for a list of operations, omit this
-     *        element. If the number of operations that are not yet complete is
-     *        greater than the value that you specified for
-     *        <code>MaxItems</code>, you can use <code>Marker</code> to return
-     *        additional operations. Get the value of
-     *        <code>NextPageMarker</code> from the previous response, and submit
-     *        another request that includes the value of
-     *        <code>NextPageMarker</code> in the <code>Marker</code>
-     *        element.</p>
+     *        For an initial request for a list of operations, omit this element. If the number of operations that are
+     *        not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use
+     *        <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the
+     *        previous response, and submit another request that includes the value of <code>NextPageMarker</code> in
+     *        the <code>Marker</code> element.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -191,8 +163,7 @@ public class ListOperationsRequest extends
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListOperationsRequest withMarker(String marker) {
@@ -301,8 +272,7 @@ public class ListOperationsRequest extends
      *        </p>
      *        <p>
      *        Required: No
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListOperationsRequest withMaxItems(Integer maxItems) {
@@ -311,8 +281,7 @@ public class ListOperationsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -342,13 +311,11 @@ public class ListOperationsRequest extends
         ListOperationsRequest other = (ListOperationsRequest) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         return true;
     }
@@ -358,10 +325,8 @@ public class ListOperationsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
 

@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
 
@@ -20,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CopyDBClusterSnapshotRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot to copy. This parameter is not
-     * case-sensitive.
+     * The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -56,8 +51,8 @@ public class CopyDBClusterSnapshotRequest extends
     private String sourceDBClusterSnapshotIdentifier;
     /**
      * <p>
-     * The identifier of the new DB cluster snapshot to create from the source
-     * DB cluster snapshot. This parameter is not case-sensitive.
+     * The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is
+     * not case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -89,8 +84,7 @@ public class CopyDBClusterSnapshotRequest extends
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot to copy. This parameter is not
-     * case-sensitive.
+     * The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -117,8 +111,7 @@ public class CopyDBClusterSnapshotRequest extends
      * </p>
      * 
      * @param sourceDBClusterSnapshotIdentifier
-     *        The identifier of the DB cluster snapshot to copy. This parameter
-     *        is not case-sensitive.</p>
+     *        The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -143,15 +136,13 @@ public class CopyDBClusterSnapshotRequest extends
      *        Example: <code>my-cluster-snapshot1</code>
      */
 
-    public void setSourceDBClusterSnapshotIdentifier(
-            String sourceDBClusterSnapshotIdentifier) {
+    public void setSourceDBClusterSnapshotIdentifier(String sourceDBClusterSnapshotIdentifier) {
         this.sourceDBClusterSnapshotIdentifier = sourceDBClusterSnapshotIdentifier;
     }
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot to copy. This parameter is not
-     * case-sensitive.
+     * The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -177,8 +168,7 @@ public class CopyDBClusterSnapshotRequest extends
      * Example: <code>my-cluster-snapshot1</code>
      * </p>
      * 
-     * @return The identifier of the DB cluster snapshot to copy. This parameter
-     *         is not case-sensitive.</p>
+     * @return The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -209,8 +199,7 @@ public class CopyDBClusterSnapshotRequest extends
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot to copy. This parameter is not
-     * case-sensitive.
+     * The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -237,8 +226,7 @@ public class CopyDBClusterSnapshotRequest extends
      * </p>
      * 
      * @param sourceDBClusterSnapshotIdentifier
-     *        The identifier of the DB cluster snapshot to copy. This parameter
-     *        is not case-sensitive.</p>
+     *        The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -261,20 +249,18 @@ public class CopyDBClusterSnapshotRequest extends
      *        </ul>
      *        <p>
      *        Example: <code>my-cluster-snapshot1</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CopyDBClusterSnapshotRequest withSourceDBClusterSnapshotIdentifier(
-            String sourceDBClusterSnapshotIdentifier) {
+    public CopyDBClusterSnapshotRequest withSourceDBClusterSnapshotIdentifier(String sourceDBClusterSnapshotIdentifier) {
         setSourceDBClusterSnapshotIdentifier(sourceDBClusterSnapshotIdentifier);
         return this;
     }
 
     /**
      * <p>
-     * The identifier of the new DB cluster snapshot to create from the source
-     * DB cluster snapshot. This parameter is not case-sensitive.
+     * The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is
+     * not case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -301,9 +287,8 @@ public class CopyDBClusterSnapshotRequest extends
      * </p>
      * 
      * @param targetDBClusterSnapshotIdentifier
-     *        The identifier of the new DB cluster snapshot to create from the
-     *        source DB cluster snapshot. This parameter is not
-     *        case-sensitive.</p>
+     *        The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This
+     *        parameter is not case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -328,15 +313,14 @@ public class CopyDBClusterSnapshotRequest extends
      *        Example: <code>my-cluster-snapshot2</code>
      */
 
-    public void setTargetDBClusterSnapshotIdentifier(
-            String targetDBClusterSnapshotIdentifier) {
+    public void setTargetDBClusterSnapshotIdentifier(String targetDBClusterSnapshotIdentifier) {
         this.targetDBClusterSnapshotIdentifier = targetDBClusterSnapshotIdentifier;
     }
 
     /**
      * <p>
-     * The identifier of the new DB cluster snapshot to create from the source
-     * DB cluster snapshot. This parameter is not case-sensitive.
+     * The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is
+     * not case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -362,9 +346,8 @@ public class CopyDBClusterSnapshotRequest extends
      * Example: <code>my-cluster-snapshot2</code>
      * </p>
      * 
-     * @return The identifier of the new DB cluster snapshot to create from the
-     *         source DB cluster snapshot. This parameter is not
-     *         case-sensitive.</p>
+     * @return The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This
+     *         parameter is not case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -395,8 +378,8 @@ public class CopyDBClusterSnapshotRequest extends
 
     /**
      * <p>
-     * The identifier of the new DB cluster snapshot to create from the source
-     * DB cluster snapshot. This parameter is not case-sensitive.
+     * The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is
+     * not case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -423,9 +406,8 @@ public class CopyDBClusterSnapshotRequest extends
      * </p>
      * 
      * @param targetDBClusterSnapshotIdentifier
-     *        The identifier of the new DB cluster snapshot to create from the
-     *        source DB cluster snapshot. This parameter is not
-     *        case-sensitive.</p>
+     *        The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This
+     *        parameter is not case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -448,12 +430,10 @@ public class CopyDBClusterSnapshotRequest extends
      *        </ul>
      *        <p>
      *        Example: <code>my-cluster-snapshot2</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CopyDBClusterSnapshotRequest withTargetDBClusterSnapshotIdentifier(
-            String targetDBClusterSnapshotIdentifier) {
+    public CopyDBClusterSnapshotRequest withTargetDBClusterSnapshotIdentifier(String targetDBClusterSnapshotIdentifier) {
         setTargetDBClusterSnapshotIdentifier(targetDBClusterSnapshotIdentifier);
         return this;
     }
@@ -484,15 +464,13 @@ public class CopyDBClusterSnapshotRequest extends
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CopyDBClusterSnapshotRequest withTags(Tag... tags) {
@@ -507,8 +485,7 @@ public class CopyDBClusterSnapshotRequest extends
 
     /**
      * @param tags
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CopyDBClusterSnapshotRequest withTags(java.util.Collection<Tag> tags) {
@@ -517,8 +494,7 @@ public class CopyDBClusterSnapshotRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -529,11 +505,9 @@ public class CopyDBClusterSnapshotRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceDBClusterSnapshotIdentifier() != null)
-            sb.append("SourceDBClusterSnapshotIdentifier: "
-                    + getSourceDBClusterSnapshotIdentifier() + ",");
+            sb.append("SourceDBClusterSnapshotIdentifier: " + getSourceDBClusterSnapshotIdentifier() + ",");
         if (getTargetDBClusterSnapshotIdentifier() != null)
-            sb.append("TargetDBClusterSnapshotIdentifier: "
-                    + getTargetDBClusterSnapshotIdentifier() + ",");
+            sb.append("TargetDBClusterSnapshotIdentifier: " + getTargetDBClusterSnapshotIdentifier() + ",");
         if (getTags() != null)
             sb.append("Tags: " + getTags());
         sb.append("}");
@@ -550,24 +524,19 @@ public class CopyDBClusterSnapshotRequest extends
         if (obj instanceof CopyDBClusterSnapshotRequest == false)
             return false;
         CopyDBClusterSnapshotRequest other = (CopyDBClusterSnapshotRequest) obj;
-        if (other.getSourceDBClusterSnapshotIdentifier() == null
-                ^ this.getSourceDBClusterSnapshotIdentifier() == null)
+        if (other.getSourceDBClusterSnapshotIdentifier() == null ^ this.getSourceDBClusterSnapshotIdentifier() == null)
             return false;
         if (other.getSourceDBClusterSnapshotIdentifier() != null
-                && other.getSourceDBClusterSnapshotIdentifier().equals(
-                        this.getSourceDBClusterSnapshotIdentifier()) == false)
+                && other.getSourceDBClusterSnapshotIdentifier().equals(this.getSourceDBClusterSnapshotIdentifier()) == false)
             return false;
-        if (other.getTargetDBClusterSnapshotIdentifier() == null
-                ^ this.getTargetDBClusterSnapshotIdentifier() == null)
+        if (other.getTargetDBClusterSnapshotIdentifier() == null ^ this.getTargetDBClusterSnapshotIdentifier() == null)
             return false;
         if (other.getTargetDBClusterSnapshotIdentifier() != null
-                && other.getTargetDBClusterSnapshotIdentifier().equals(
-                        this.getTargetDBClusterSnapshotIdentifier()) == false)
+                && other.getTargetDBClusterSnapshotIdentifier().equals(this.getTargetDBClusterSnapshotIdentifier()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -577,16 +546,9 @@ public class CopyDBClusterSnapshotRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSourceDBClusterSnapshotIdentifier() == null) ? 0
-                        : getSourceDBClusterSnapshotIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTargetDBClusterSnapshotIdentifier() == null) ? 0
-                        : getTargetDBClusterSnapshotIdentifier().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSourceDBClusterSnapshotIdentifier() == null) ? 0 : getSourceDBClusterSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getTargetDBClusterSnapshotIdentifier() == null) ? 0 : getTargetDBClusterSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

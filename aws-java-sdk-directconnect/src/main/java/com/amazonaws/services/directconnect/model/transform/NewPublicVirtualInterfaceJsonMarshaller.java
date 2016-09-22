@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model.transform;
 
@@ -34,55 +32,43 @@ public class NewPublicVirtualInterfaceJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(NewPublicVirtualInterface newPublicVirtualInterface,
-            StructuredJsonGenerator jsonGenerator) {
+    public void marshall(NewPublicVirtualInterface newPublicVirtualInterface, StructuredJsonGenerator jsonGenerator) {
 
         if (newPublicVirtualInterface == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
             jsonGenerator.writeStartObject();
 
             if (newPublicVirtualInterface.getVirtualInterfaceName() != null) {
-                jsonGenerator.writeFieldName("virtualInterfaceName")
-                        .writeValue(
-                                newPublicVirtualInterface
-                                        .getVirtualInterfaceName());
+                jsonGenerator.writeFieldName("virtualInterfaceName").writeValue(newPublicVirtualInterface.getVirtualInterfaceName());
             }
             if (newPublicVirtualInterface.getVlan() != null) {
-                jsonGenerator.writeFieldName("vlan").writeValue(
-                        newPublicVirtualInterface.getVlan());
+                jsonGenerator.writeFieldName("vlan").writeValue(newPublicVirtualInterface.getVlan());
             }
             if (newPublicVirtualInterface.getAsn() != null) {
-                jsonGenerator.writeFieldName("asn").writeValue(
-                        newPublicVirtualInterface.getAsn());
+                jsonGenerator.writeFieldName("asn").writeValue(newPublicVirtualInterface.getAsn());
             }
             if (newPublicVirtualInterface.getAuthKey() != null) {
-                jsonGenerator.writeFieldName("authKey").writeValue(
-                        newPublicVirtualInterface.getAuthKey());
+                jsonGenerator.writeFieldName("authKey").writeValue(newPublicVirtualInterface.getAuthKey());
             }
             if (newPublicVirtualInterface.getAmazonAddress() != null) {
-                jsonGenerator.writeFieldName("amazonAddress").writeValue(
-                        newPublicVirtualInterface.getAmazonAddress());
+                jsonGenerator.writeFieldName("amazonAddress").writeValue(newPublicVirtualInterface.getAmazonAddress());
             }
             if (newPublicVirtualInterface.getCustomerAddress() != null) {
-                jsonGenerator.writeFieldName("customerAddress").writeValue(
-                        newPublicVirtualInterface.getCustomerAddress());
+                jsonGenerator.writeFieldName("customerAddress").writeValue(newPublicVirtualInterface.getCustomerAddress());
             }
 
             com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixesList = (com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>) newPublicVirtualInterface
                     .getRouteFilterPrefixes();
-            if (!routeFilterPrefixesList.isEmpty()
-                    || !routeFilterPrefixesList.isAutoConstruct()) {
+            if (!routeFilterPrefixesList.isEmpty() || !routeFilterPrefixesList.isAutoConstruct()) {
                 jsonGenerator.writeFieldName("routeFilterPrefixes");
                 jsonGenerator.writeStartArray();
                 for (RouteFilterPrefix routeFilterPrefixesListValue : routeFilterPrefixesList) {
                     if (routeFilterPrefixesListValue != null) {
 
-                        RouteFilterPrefixJsonMarshaller.getInstance().marshall(
-                                routeFilterPrefixesListValue, jsonGenerator);
+                        RouteFilterPrefixJsonMarshaller.getInstance().marshall(routeFilterPrefixesListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();
@@ -90,8 +76,7 @@ public class NewPublicVirtualInterfaceJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

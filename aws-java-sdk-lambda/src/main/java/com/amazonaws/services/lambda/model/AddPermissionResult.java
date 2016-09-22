@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model;
 
@@ -19,30 +17,25 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class AddPermissionResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class AddPermissionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The permission statement you specified in the request. The response
-     * returns the same as a string using a backslash ("\") as an escape
-     * character in the JSON.
+     * The permission statement you specified in the request. The response returns the same as a string using a
+     * backslash ("\") as an escape character in the JSON.
      * </p>
      */
     private String statement;
 
     /**
      * <p>
-     * The permission statement you specified in the request. The response
-     * returns the same as a string using a backslash ("\") as an escape
-     * character in the JSON.
+     * The permission statement you specified in the request. The response returns the same as a string using a
+     * backslash ("\") as an escape character in the JSON.
      * </p>
      * 
      * @param statement
-     *        The permission statement you specified in the request. The
-     *        response returns the same as a string using a backslash ("\") as
-     *        an escape character in the JSON.
+     *        The permission statement you specified in the request. The response returns the same as a string using a
+     *        backslash ("\") as an escape character in the JSON.
      */
 
     public void setStatement(String statement) {
@@ -51,14 +44,12 @@ public class AddPermissionResult extends
 
     /**
      * <p>
-     * The permission statement you specified in the request. The response
-     * returns the same as a string using a backslash ("\") as an escape
-     * character in the JSON.
+     * The permission statement you specified in the request. The response returns the same as a string using a
+     * backslash ("\") as an escape character in the JSON.
      * </p>
      * 
-     * @return The permission statement you specified in the request. The
-     *         response returns the same as a string using a backslash ("\") as
-     *         an escape character in the JSON.
+     * @return The permission statement you specified in the request. The response returns the same as a string using a
+     *         backslash ("\") as an escape character in the JSON.
      */
 
     public String getStatement() {
@@ -67,17 +58,14 @@ public class AddPermissionResult extends
 
     /**
      * <p>
-     * The permission statement you specified in the request. The response
-     * returns the same as a string using a backslash ("\") as an escape
-     * character in the JSON.
+     * The permission statement you specified in the request. The response returns the same as a string using a
+     * backslash ("\") as an escape character in the JSON.
      * </p>
      * 
      * @param statement
-     *        The permission statement you specified in the request. The
-     *        response returns the same as a string using a backslash ("\") as
-     *        an escape character in the JSON.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The permission statement you specified in the request. The response returns the same as a string using a
+     *        backslash ("\") as an escape character in the JSON.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddPermissionResult withStatement(String statement) {
@@ -86,8 +74,7 @@ public class AddPermissionResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -115,8 +102,7 @@ public class AddPermissionResult extends
         AddPermissionResult other = (AddPermissionResult) obj;
         if (other.getStatement() == null ^ this.getStatement() == null)
             return false;
-        if (other.getStatement() != null
-                && other.getStatement().equals(this.getStatement()) == false)
+        if (other.getStatement() != null && other.getStatement().equals(this.getStatement()) == false)
             return false;
         return true;
     }
@@ -126,8 +112,7 @@ public class AddPermissionResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStatement() == null) ? 0 : getStatement().hashCode());
+        hashCode = prime * hashCode + ((getStatement() == null) ? 0 : getStatement().hashCode());
         return hashCode;
     }
 
@@ -136,9 +121,7 @@ public class AddPermissionResult extends
         try {
             return (AddPermissionResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

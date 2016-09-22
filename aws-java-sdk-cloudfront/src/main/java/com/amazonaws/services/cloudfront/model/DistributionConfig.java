@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
@@ -22,46 +20,33 @@ import java.io.Serializable;
 public class DistributionConfig implements Serializable, Cloneable {
 
     /**
-     * A unique number that ensures the request can't be replayed. If the
-     * CallerReference is new (no matter the content of the DistributionConfig
-     * object), a new distribution is created. If the CallerReference is a value
-     * you already sent in a previous request to create a distribution, and the
-     * content of the DistributionConfig is identical to the original request
-     * (ignoring white space), the response includes the same information
-     * returned to the original request. If the CallerReference is a value you
-     * already sent in a previous request to create a distribution but the
-     * content of the DistributionConfig is different from the original request,
-     * CloudFront returns a DistributionAlreadyExists error.
+     * A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content
+     * of the DistributionConfig object), a new distribution is created. If the CallerReference is a value you already
+     * sent in a previous request to create a distribution, and the content of the DistributionConfig is identical to the
+     * original request (ignoring white space), the response includes the same information returned to the original
+     * request. If the CallerReference is a value you already sent in a previous request to create a distribution but the
+     * content of the DistributionConfig is different from the original request, CloudFront returns a
+     * DistributionAlreadyExists error.
      */
     private String callerReference;
-    /**
-     * A complex type that contains information about CNAMEs (alternate domain
-     * names), if any, for this distribution.
-     */
+    /** A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution. */
     private Aliases aliases;
     /**
-     * The object that you want CloudFront to return (for example, index.html)
-     * when an end user requests the root URL for your distribution
-     * (http://www.example.com) instead of an object in your distribution
-     * (http://www.example.com/index.html). Specifying a default root object
-     * avoids exposing the contents of your distribution. If you don't want to
-     * specify a default root object when you create a distribution, include an
-     * empty DefaultRootObject element. To delete the default root object from an
-     * existing distribution, update the distribution configuration and include
-     * an empty DefaultRootObject element. To replace the default root object,
+     * The object that you want CloudFront to return (for example, index.html) when an end user requests the root URL
+     * for your distribution (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/index.html). Specifying a default root object avoids exposing the contents of your
+     * distribution. If you don't want to specify a default root object when you create a distribution, include an empty
+     * DefaultRootObject element. To delete the default root object from an existing distribution, update the
+     * distribution configuration and include an empty DefaultRootObject element. To replace the default root object,
      * update the distribution configuration and specify the new object.
      */
     private String defaultRootObject;
-    /**
-     * A complex type that contains information about origins for this
-     * distribution.
-     */
+    /** A complex type that contains information about origins for this distribution. */
     private Origins origins;
     /**
-     * A complex type that describes the default cache behavior if you do not
-     * specify a CacheBehavior element or if files don't match any of the values
-     * of PathPattern in CacheBehavior elements.You must create exactly one
-     * default cache behavior.
+     * A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if
+     * files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly one default
+     * cache behavior.
      */
     private DefaultCacheBehavior defaultCacheBehavior;
     /** A complex type that contains zero or more CacheBehavior elements. */
@@ -70,67 +55,49 @@ public class DistributionConfig implements Serializable, Cloneable {
     private CustomErrorResponses customErrorResponses;
     /** Any comments you want to include about the distribution. */
     private String comment;
-    /**
-     * A complex type that controls whether access logs are written for the
-     * distribution.
-     */
+    /** A complex type that controls whether access logs are written for the distribution. */
     private LoggingConfig logging;
-    /**
-     * A complex type that contains information about price class for this
-     * distribution.
-     */
+    /** A complex type that contains information about price class for this distribution. */
     private String priceClass;
-    /**
-     * Whether the distribution is enabled to accept end user requests for
-     * content.
-     */
+    /** Whether the distribution is enabled to accept end user requests for content. */
     private Boolean enabled;
 
     private ViewerCertificate viewerCertificate;
 
     private Restrictions restrictions;
     /**
-     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id
-     * of the AWS WAF web ACL that is associated with the distribution.
+     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is
+     * associated with the distribution.
      */
     private String webACLId;
     /**
-     * (Optional) Specify the maximum HTTP version that you want viewers to use
-     * to communicate with CloudFront. The default value for new web
-     * distributions is http2. Viewers that don't support HTTP/2 will
-     * automatically use an earlier version.
+     * (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The
+     * default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an
+     * earlier version.
      */
     private String httpVersion;
 
     /**
-     * Default constructor for DistributionConfig object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for DistributionConfig object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public DistributionConfig() {
     }
 
     /**
-     * Constructs a new DistributionConfig object. Callers should use the setter
-     * or fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new DistributionConfig object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param callerReference
-     *        A unique number that ensures the request can't be replayed. If the
-     *        CallerReference is new (no matter the content of the
-     *        DistributionConfig object), a new distribution is created. If the
-     *        CallerReference is a value you already sent in a previous request
-     *        to create a distribution, and the content of the
-     *        DistributionConfig is identical to the original request (ignoring
-     *        white space), the response includes the same information returned
-     *        to the original request. If the CallerReference is a value you
-     *        already sent in a previous request to create a distribution but
-     *        the content of the DistributionConfig is different from the
-     *        original request, CloudFront returns a DistributionAlreadyExists
-     *        error.
+     *        A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the
+     *        content of the DistributionConfig object), a new distribution is created. If the CallerReference is a
+     *        value you already sent in a previous request to create a distribution, and the content of the
+     *        DistributionConfig is identical to the original request (ignoring white space), the response includes the
+     *        same information returned to the original request. If the CallerReference is a value you already sent in a
+     *        previous request to create a distribution but the content of the DistributionConfig is different from the
+     *        original request, CloudFront returns a DistributionAlreadyExists error.
      * @param enabled
-     *        Whether the distribution is enabled to accept end user requests
-     *        for content.
+     *        Whether the distribution is enabled to accept end user requests for content.
      */
     public DistributionConfig(String callerReference, Boolean enabled) {
         setCallerReference(callerReference);
@@ -138,30 +105,22 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A unique number that ensures the request can't be replayed. If the
-     * CallerReference is new (no matter the content of the DistributionConfig
-     * object), a new distribution is created. If the CallerReference is a value
-     * you already sent in a previous request to create a distribution, and the
-     * content of the DistributionConfig is identical to the original request
-     * (ignoring white space), the response includes the same information
-     * returned to the original request. If the CallerReference is a value you
-     * already sent in a previous request to create a distribution but the
-     * content of the DistributionConfig is different from the original request,
-     * CloudFront returns a DistributionAlreadyExists error.
+     * A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content
+     * of the DistributionConfig object), a new distribution is created. If the CallerReference is a value you already
+     * sent in a previous request to create a distribution, and the content of the DistributionConfig is identical to the
+     * original request (ignoring white space), the response includes the same information returned to the original
+     * request. If the CallerReference is a value you already sent in a previous request to create a distribution but the
+     * content of the DistributionConfig is different from the original request, CloudFront returns a
+     * DistributionAlreadyExists error.
      * 
      * @param callerReference
-     *        A unique number that ensures the request can't be replayed. If the
-     *        CallerReference is new (no matter the content of the
-     *        DistributionConfig object), a new distribution is created. If the
-     *        CallerReference is a value you already sent in a previous request
-     *        to create a distribution, and the content of the
-     *        DistributionConfig is identical to the original request (ignoring
-     *        white space), the response includes the same information returned
-     *        to the original request. If the CallerReference is a value you
-     *        already sent in a previous request to create a distribution but
-     *        the content of the DistributionConfig is different from the
-     *        original request, CloudFront returns a DistributionAlreadyExists
-     *        error.
+     *        A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the
+     *        content of the DistributionConfig object), a new distribution is created. If the CallerReference is a
+     *        value you already sent in a previous request to create a distribution, and the content of the
+     *        DistributionConfig is identical to the original request (ignoring white space), the response includes the
+     *        same information returned to the original request. If the CallerReference is a value you already sent in a
+     *        previous request to create a distribution but the content of the DistributionConfig is different from the
+     *        original request, CloudFront returns a DistributionAlreadyExists error.
      */
 
     public void setCallerReference(String callerReference) {
@@ -169,29 +128,21 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A unique number that ensures the request can't be replayed. If the
-     * CallerReference is new (no matter the content of the DistributionConfig
-     * object), a new distribution is created. If the CallerReference is a value
-     * you already sent in a previous request to create a distribution, and the
-     * content of the DistributionConfig is identical to the original request
-     * (ignoring white space), the response includes the same information
-     * returned to the original request. If the CallerReference is a value you
-     * already sent in a previous request to create a distribution but the
-     * content of the DistributionConfig is different from the original request,
-     * CloudFront returns a DistributionAlreadyExists error.
+     * A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content
+     * of the DistributionConfig object), a new distribution is created. If the CallerReference is a value you already
+     * sent in a previous request to create a distribution, and the content of the DistributionConfig is identical to the
+     * original request (ignoring white space), the response includes the same information returned to the original
+     * request. If the CallerReference is a value you already sent in a previous request to create a distribution but the
+     * content of the DistributionConfig is different from the original request, CloudFront returns a
+     * DistributionAlreadyExists error.
      * 
-     * @return A unique number that ensures the request can't be replayed. If
-     *         the CallerReference is new (no matter the content of the
-     *         DistributionConfig object), a new distribution is created. If the
-     *         CallerReference is a value you already sent in a previous request
-     *         to create a distribution, and the content of the
-     *         DistributionConfig is identical to the original request (ignoring
-     *         white space), the response includes the same information returned
-     *         to the original request. If the CallerReference is a value you
-     *         already sent in a previous request to create a distribution but
-     *         the content of the DistributionConfig is different from the
-     *         original request, CloudFront returns a DistributionAlreadyExists
-     *         error.
+     * @return A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the
+     *         content of the DistributionConfig object), a new distribution is created. If the CallerReference is a
+     *         value you already sent in a previous request to create a distribution, and the content of the
+     *         DistributionConfig is identical to the original request (ignoring white space), the response includes the
+     *         same information returned to the original request. If the CallerReference is a value you already sent in
+     *         a previous request to create a distribution but the content of the DistributionConfig is different from
+     *         the original request, CloudFront returns a DistributionAlreadyExists error.
      */
 
     public String getCallerReference() {
@@ -199,32 +150,23 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A unique number that ensures the request can't be replayed. If the
-     * CallerReference is new (no matter the content of the DistributionConfig
-     * object), a new distribution is created. If the CallerReference is a value
-     * you already sent in a previous request to create a distribution, and the
-     * content of the DistributionConfig is identical to the original request
-     * (ignoring white space), the response includes the same information
-     * returned to the original request. If the CallerReference is a value you
-     * already sent in a previous request to create a distribution but the
-     * content of the DistributionConfig is different from the original request,
-     * CloudFront returns a DistributionAlreadyExists error.
+     * A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content
+     * of the DistributionConfig object), a new distribution is created. If the CallerReference is a value you already
+     * sent in a previous request to create a distribution, and the content of the DistributionConfig is identical to the
+     * original request (ignoring white space), the response includes the same information returned to the original
+     * request. If the CallerReference is a value you already sent in a previous request to create a distribution but the
+     * content of the DistributionConfig is different from the original request, CloudFront returns a
+     * DistributionAlreadyExists error.
      * 
      * @param callerReference
-     *        A unique number that ensures the request can't be replayed. If the
-     *        CallerReference is new (no matter the content of the
-     *        DistributionConfig object), a new distribution is created. If the
-     *        CallerReference is a value you already sent in a previous request
-     *        to create a distribution, and the content of the
-     *        DistributionConfig is identical to the original request (ignoring
-     *        white space), the response includes the same information returned
-     *        to the original request. If the CallerReference is a value you
-     *        already sent in a previous request to create a distribution but
-     *        the content of the DistributionConfig is different from the
-     *        original request, CloudFront returns a DistributionAlreadyExists
-     *        error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the
+     *        content of the DistributionConfig object), a new distribution is created. If the CallerReference is a
+     *        value you already sent in a previous request to create a distribution, and the content of the
+     *        DistributionConfig is identical to the original request (ignoring white space), the response includes the
+     *        same information returned to the original request. If the CallerReference is a value you already sent in a
+     *        previous request to create a distribution but the content of the DistributionConfig is different from the
+     *        original request, CloudFront returns a DistributionAlreadyExists error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DistributionConfig withCallerReference(String callerReference) {
@@ -233,12 +175,11 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains information about CNAMEs (alternate domain
-     * names), if any, for this distribution.
+     * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
      * 
      * @param aliases
-     *        A complex type that contains information about CNAMEs (alternate
-     *        domain names), if any, for this distribution.
+     *        A complex type that contains information about CNAMEs (alternate domain names), if any, for this
+     *        distribution.
      */
 
     public void setAliases(Aliases aliases) {
@@ -246,11 +187,10 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains information about CNAMEs (alternate domain
-     * names), if any, for this distribution.
+     * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
      * 
-     * @return A complex type that contains information about CNAMEs (alternate
-     *         domain names), if any, for this distribution.
+     * @return A complex type that contains information about CNAMEs (alternate domain names), if any, for this
+     *         distribution.
      */
 
     public Aliases getAliases() {
@@ -258,14 +198,12 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains information about CNAMEs (alternate domain
-     * names), if any, for this distribution.
+     * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
      * 
      * @param aliases
-     *        A complex type that contains information about CNAMEs (alternate
-     *        domain names), if any, for this distribution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains information about CNAMEs (alternate domain names), if any, for this
+     *        distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DistributionConfig withAliases(Aliases aliases) {
@@ -274,30 +212,22 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * The object that you want CloudFront to return (for example, index.html)
-     * when an end user requests the root URL for your distribution
-     * (http://www.example.com) instead of an object in your distribution
-     * (http://www.example.com/index.html). Specifying a default root object
-     * avoids exposing the contents of your distribution. If you don't want to
-     * specify a default root object when you create a distribution, include an
-     * empty DefaultRootObject element. To delete the default root object from an
-     * existing distribution, update the distribution configuration and include
-     * an empty DefaultRootObject element. To replace the default root object,
+     * The object that you want CloudFront to return (for example, index.html) when an end user requests the root URL
+     * for your distribution (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/index.html). Specifying a default root object avoids exposing the contents of your
+     * distribution. If you don't want to specify a default root object when you create a distribution, include an empty
+     * DefaultRootObject element. To delete the default root object from an existing distribution, update the
+     * distribution configuration and include an empty DefaultRootObject element. To replace the default root object,
      * update the distribution configuration and specify the new object.
      * 
      * @param defaultRootObject
-     *        The object that you want CloudFront to return (for example,
-     *        index.html) when an end user requests the root URL for your
-     *        distribution (http://www.example.com) instead of an object in your
-     *        distribution (http://www.example.com/index.html). Specifying a
-     *        default root object avoids exposing the contents of your
-     *        distribution. If you don't want to specify a default root object
-     *        when you create a distribution, include an empty DefaultRootObject
-     *        element. To delete the default root object from an existing
-     *        distribution, update the distribution configuration and include an
-     *        empty DefaultRootObject element. To replace the default root
-     *        object, update the distribution configuration and specify the new
-     *        object.
+     *        The object that you want CloudFront to return (for example, index.html) when an end user requests the root
+     *        URL for your distribution (http://www.example.com) instead of an object in your distribution
+     *        (http://www.example.com/index.html). Specifying a default root object avoids exposing the contents of your
+     *        distribution. If you don't want to specify a default root object when you create a distribution, include
+     *        an empty DefaultRootObject element. To delete the default root object from an existing distribution,
+     *        update the distribution configuration and include an empty DefaultRootObject element. To replace the
+     *        default root object, update the distribution configuration and specify the new object.
      */
 
     public void setDefaultRootObject(String defaultRootObject) {
@@ -305,29 +235,21 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * The object that you want CloudFront to return (for example, index.html)
-     * when an end user requests the root URL for your distribution
-     * (http://www.example.com) instead of an object in your distribution
-     * (http://www.example.com/index.html). Specifying a default root object
-     * avoids exposing the contents of your distribution. If you don't want to
-     * specify a default root object when you create a distribution, include an
-     * empty DefaultRootObject element. To delete the default root object from an
-     * existing distribution, update the distribution configuration and include
-     * an empty DefaultRootObject element. To replace the default root object,
+     * The object that you want CloudFront to return (for example, index.html) when an end user requests the root URL
+     * for your distribution (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/index.html). Specifying a default root object avoids exposing the contents of your
+     * distribution. If you don't want to specify a default root object when you create a distribution, include an empty
+     * DefaultRootObject element. To delete the default root object from an existing distribution, update the
+     * distribution configuration and include an empty DefaultRootObject element. To replace the default root object,
      * update the distribution configuration and specify the new object.
      * 
-     * @return The object that you want CloudFront to return (for example,
-     *         index.html) when an end user requests the root URL for your
-     *         distribution (http://www.example.com) instead of an object in
-     *         your distribution (http://www.example.com/index.html). Specifying
-     *         a default root object avoids exposing the contents of your
-     *         distribution. If you don't want to specify a default root object
-     *         when you create a distribution, include an empty
-     *         DefaultRootObject element. To delete the default root object from
-     *         an existing distribution, update the distribution configuration
-     *         and include an empty DefaultRootObject element. To replace the
-     *         default root object, update the distribution configuration and
-     *         specify the new object.
+     * @return The object that you want CloudFront to return (for example, index.html) when an end user requests the
+     *         root URL for your distribution (http://www.example.com) instead of an object in your distribution
+     *         (http://www.example.com/index.html). Specifying a default root object avoids exposing the contents of
+     *         your distribution. If you don't want to specify a default root object when you create a distribution,
+     *         include an empty DefaultRootObject element. To delete the default root object from an existing
+     *         distribution, update the distribution configuration and include an empty DefaultRootObject element. To
+     *         replace the default root object, update the distribution configuration and specify the new object.
      */
 
     public String getDefaultRootObject() {
@@ -335,32 +257,23 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * The object that you want CloudFront to return (for example, index.html)
-     * when an end user requests the root URL for your distribution
-     * (http://www.example.com) instead of an object in your distribution
-     * (http://www.example.com/index.html). Specifying a default root object
-     * avoids exposing the contents of your distribution. If you don't want to
-     * specify a default root object when you create a distribution, include an
-     * empty DefaultRootObject element. To delete the default root object from an
-     * existing distribution, update the distribution configuration and include
-     * an empty DefaultRootObject element. To replace the default root object,
+     * The object that you want CloudFront to return (for example, index.html) when an end user requests the root URL
+     * for your distribution (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/index.html). Specifying a default root object avoids exposing the contents of your
+     * distribution. If you don't want to specify a default root object when you create a distribution, include an empty
+     * DefaultRootObject element. To delete the default root object from an existing distribution, update the
+     * distribution configuration and include an empty DefaultRootObject element. To replace the default root object,
      * update the distribution configuration and specify the new object.
      * 
      * @param defaultRootObject
-     *        The object that you want CloudFront to return (for example,
-     *        index.html) when an end user requests the root URL for your
-     *        distribution (http://www.example.com) instead of an object in your
-     *        distribution (http://www.example.com/index.html). Specifying a
-     *        default root object avoids exposing the contents of your
-     *        distribution. If you don't want to specify a default root object
-     *        when you create a distribution, include an empty DefaultRootObject
-     *        element. To delete the default root object from an existing
-     *        distribution, update the distribution configuration and include an
-     *        empty DefaultRootObject element. To replace the default root
-     *        object, update the distribution configuration and specify the new
-     *        object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The object that you want CloudFront to return (for example, index.html) when an end user requests the root
+     *        URL for your distribution (http://www.example.com) instead of an object in your distribution
+     *        (http://www.example.com/index.html). Specifying a default root object avoids exposing the contents of your
+     *        distribution. If you don't want to specify a default root object when you create a distribution, include
+     *        an empty DefaultRootObject element. To delete the default root object from an existing distribution,
+     *        update the distribution configuration and include an empty DefaultRootObject element. To replace the
+     *        default root object, update the distribution configuration and specify the new object.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DistributionConfig withDefaultRootObject(String defaultRootObject) {
@@ -369,12 +282,10 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains information about origins for this
-     * distribution.
+     * A complex type that contains information about origins for this distribution.
      * 
      * @param origins
-     *        A complex type that contains information about origins for this
-     *        distribution.
+     *        A complex type that contains information about origins for this distribution.
      */
 
     public void setOrigins(Origins origins) {
@@ -382,11 +293,9 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains information about origins for this
-     * distribution.
+     * A complex type that contains information about origins for this distribution.
      * 
-     * @return A complex type that contains information about origins for this
-     *         distribution.
+     * @return A complex type that contains information about origins for this distribution.
      */
 
     public Origins getOrigins() {
@@ -394,14 +303,11 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains information about origins for this
-     * distribution.
+     * A complex type that contains information about origins for this distribution.
      * 
      * @param origins
-     *        A complex type that contains information about origins for this
-     *        distribution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains information about origins for this distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DistributionConfig withOrigins(Origins origins) {
@@ -410,33 +316,28 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that describes the default cache behavior if you do not
-     * specify a CacheBehavior element or if files don't match any of the values
-     * of PathPattern in CacheBehavior elements.You must create exactly one
-     * default cache behavior.
+     * A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if
+     * files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly one default
+     * cache behavior.
      * 
      * @param defaultCacheBehavior
-     *        A complex type that describes the default cache behavior if you do
-     *        not specify a CacheBehavior element or if files don't match any of
-     *        the values of PathPattern in CacheBehavior elements.You must
-     *        create exactly one default cache behavior.
+     *        A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or
+     *        if files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly
+     *        one default cache behavior.
      */
 
-    public void setDefaultCacheBehavior(
-            DefaultCacheBehavior defaultCacheBehavior) {
+    public void setDefaultCacheBehavior(DefaultCacheBehavior defaultCacheBehavior) {
         this.defaultCacheBehavior = defaultCacheBehavior;
     }
 
     /**
-     * A complex type that describes the default cache behavior if you do not
-     * specify a CacheBehavior element or if files don't match any of the values
-     * of PathPattern in CacheBehavior elements.You must create exactly one
-     * default cache behavior.
+     * A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if
+     * files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly one default
+     * cache behavior.
      * 
-     * @return A complex type that describes the default cache behavior if you
-     *         do not specify a CacheBehavior element or if files don't match
-     *         any of the values of PathPattern in CacheBehavior elements.You
-     *         must create exactly one default cache behavior.
+     * @return A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or
+     *         if files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly
+     *         one default cache behavior.
      */
 
     public DefaultCacheBehavior getDefaultCacheBehavior() {
@@ -444,22 +345,18 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that describes the default cache behavior if you do not
-     * specify a CacheBehavior element or if files don't match any of the values
-     * of PathPattern in CacheBehavior elements.You must create exactly one
-     * default cache behavior.
+     * A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if
+     * files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly one default
+     * cache behavior.
      * 
      * @param defaultCacheBehavior
-     *        A complex type that describes the default cache behavior if you do
-     *        not specify a CacheBehavior element or if files don't match any of
-     *        the values of PathPattern in CacheBehavior elements.You must
-     *        create exactly one default cache behavior.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or
+     *        if files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly
+     *        one default cache behavior.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DistributionConfig withDefaultCacheBehavior(
-            DefaultCacheBehavior defaultCacheBehavior) {
+    public DistributionConfig withDefaultCacheBehavior(DefaultCacheBehavior defaultCacheBehavior) {
         setDefaultCacheBehavior(defaultCacheBehavior);
         return this;
     }
@@ -490,8 +387,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * 
      * @param cacheBehaviors
      *        A complex type that contains zero or more CacheBehavior elements.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DistributionConfig withCacheBehaviors(CacheBehaviors cacheBehaviors) {
@@ -503,20 +399,17 @@ public class DistributionConfig implements Serializable, Cloneable {
      * A complex type that contains zero or more CustomErrorResponse elements.
      * 
      * @param customErrorResponses
-     *        A complex type that contains zero or more CustomErrorResponse
-     *        elements.
+     *        A complex type that contains zero or more CustomErrorResponse elements.
      */
 
-    public void setCustomErrorResponses(
-            CustomErrorResponses customErrorResponses) {
+    public void setCustomErrorResponses(CustomErrorResponses customErrorResponses) {
         this.customErrorResponses = customErrorResponses;
     }
 
     /**
      * A complex type that contains zero or more CustomErrorResponse elements.
      * 
-     * @return A complex type that contains zero or more CustomErrorResponse
-     *         elements.
+     * @return A complex type that contains zero or more CustomErrorResponse elements.
      */
 
     public CustomErrorResponses getCustomErrorResponses() {
@@ -527,14 +420,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      * A complex type that contains zero or more CustomErrorResponse elements.
      * 
      * @param customErrorResponses
-     *        A complex type that contains zero or more CustomErrorResponse
-     *        elements.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains zero or more CustomErrorResponse elements.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DistributionConfig withCustomErrorResponses(
-            CustomErrorResponses customErrorResponses) {
+    public DistributionConfig withCustomErrorResponses(CustomErrorResponses customErrorResponses) {
         setCustomErrorResponses(customErrorResponses);
         return this;
     }
@@ -565,8 +455,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * 
      * @param comment
      *        Any comments you want to include about the distribution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DistributionConfig withComment(String comment) {
@@ -575,12 +464,10 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that controls whether access logs are written for the
-     * distribution.
+     * A complex type that controls whether access logs are written for the distribution.
      * 
      * @param logging
-     *        A complex type that controls whether access logs are written for
-     *        the distribution.
+     *        A complex type that controls whether access logs are written for the distribution.
      */
 
     public void setLogging(LoggingConfig logging) {
@@ -588,11 +475,9 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that controls whether access logs are written for the
-     * distribution.
+     * A complex type that controls whether access logs are written for the distribution.
      * 
-     * @return A complex type that controls whether access logs are written for
-     *         the distribution.
+     * @return A complex type that controls whether access logs are written for the distribution.
      */
 
     public LoggingConfig getLogging() {
@@ -600,14 +485,11 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that controls whether access logs are written for the
-     * distribution.
+     * A complex type that controls whether access logs are written for the distribution.
      * 
      * @param logging
-     *        A complex type that controls whether access logs are written for
-     *        the distribution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that controls whether access logs are written for the distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DistributionConfig withLogging(LoggingConfig logging) {
@@ -616,12 +498,10 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains information about price class for this
-     * distribution.
+     * A complex type that contains information about price class for this distribution.
      * 
      * @param priceClass
-     *        A complex type that contains information about price class for
-     *        this distribution.
+     *        A complex type that contains information about price class for this distribution.
      * @see PriceClass
      */
 
@@ -630,11 +510,9 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains information about price class for this
-     * distribution.
+     * A complex type that contains information about price class for this distribution.
      * 
-     * @return A complex type that contains information about price class for
-     *         this distribution.
+     * @return A complex type that contains information about price class for this distribution.
      * @see PriceClass
      */
 
@@ -643,14 +521,11 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains information about price class for this
-     * distribution.
+     * A complex type that contains information about price class for this distribution.
      * 
      * @param priceClass
-     *        A complex type that contains information about price class for
-     *        this distribution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains information about price class for this distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */
 
@@ -660,12 +535,10 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains information about price class for this
-     * distribution.
+     * A complex type that contains information about price class for this distribution.
      * 
      * @param priceClass
-     *        A complex type that contains information about price class for
-     *        this distribution.
+     *        A complex type that contains information about price class for this distribution.
      * @see PriceClass
      */
 
@@ -674,14 +547,11 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains information about price class for this
-     * distribution.
+     * A complex type that contains information about price class for this distribution.
      * 
      * @param priceClass
-     *        A complex type that contains information about price class for
-     *        this distribution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that contains information about price class for this distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */
 
@@ -691,12 +561,10 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Whether the distribution is enabled to accept end user requests for
-     * content.
+     * Whether the distribution is enabled to accept end user requests for content.
      * 
      * @param enabled
-     *        Whether the distribution is enabled to accept end user requests
-     *        for content.
+     *        Whether the distribution is enabled to accept end user requests for content.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -704,11 +572,9 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Whether the distribution is enabled to accept end user requests for
-     * content.
+     * Whether the distribution is enabled to accept end user requests for content.
      * 
-     * @return Whether the distribution is enabled to accept end user requests
-     *         for content.
+     * @return Whether the distribution is enabled to accept end user requests for content.
      */
 
     public Boolean getEnabled() {
@@ -716,14 +582,11 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Whether the distribution is enabled to accept end user requests for
-     * content.
+     * Whether the distribution is enabled to accept end user requests for content.
      * 
      * @param enabled
-     *        Whether the distribution is enabled to accept end user requests
-     *        for content.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Whether the distribution is enabled to accept end user requests for content.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DistributionConfig withEnabled(Boolean enabled) {
@@ -732,11 +595,9 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Whether the distribution is enabled to accept end user requests for
-     * content.
+     * Whether the distribution is enabled to accept end user requests for content.
      * 
-     * @return Whether the distribution is enabled to accept end user requests
-     *         for content.
+     * @return Whether the distribution is enabled to accept end user requests for content.
      */
 
     public Boolean isEnabled() {
@@ -761,12 +622,10 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * @param viewerCertificate
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DistributionConfig withViewerCertificate(
-            ViewerCertificate viewerCertificate) {
+    public DistributionConfig withViewerCertificate(ViewerCertificate viewerCertificate) {
         setViewerCertificate(viewerCertificate);
         return this;
     }
@@ -789,8 +648,7 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * @param restrictions
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DistributionConfig withRestrictions(Restrictions restrictions) {
@@ -799,13 +657,12 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id
-     * of the AWS WAF web ACL that is associated with the distribution.
+     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is
+     * associated with the distribution.
      * 
      * @param webACLId
-     *        (Optional) If you're using AWS WAF to filter CloudFront requests,
-     *        the Id of the AWS WAF web ACL that is associated with the
-     *        distribution.
+     *        (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is
+     *        associated with the distribution.
      */
 
     public void setWebACLId(String webACLId) {
@@ -813,12 +670,11 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id
-     * of the AWS WAF web ACL that is associated with the distribution.
+     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is
+     * associated with the distribution.
      * 
-     * @return (Optional) If you're using AWS WAF to filter CloudFront requests,
-     *         the Id of the AWS WAF web ACL that is associated with the
-     *         distribution.
+     * @return (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is
+     *         associated with the distribution.
      */
 
     public String getWebACLId() {
@@ -826,15 +682,13 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id
-     * of the AWS WAF web ACL that is associated with the distribution.
+     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is
+     * associated with the distribution.
      * 
      * @param webACLId
-     *        (Optional) If you're using AWS WAF to filter CloudFront requests,
-     *        the Id of the AWS WAF web ACL that is associated with the
-     *        distribution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is
+     *        associated with the distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DistributionConfig withWebACLId(String webACLId) {
@@ -843,16 +697,14 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * (Optional) Specify the maximum HTTP version that you want viewers to use
-     * to communicate with CloudFront. The default value for new web
-     * distributions is http2. Viewers that don't support HTTP/2 will
-     * automatically use an earlier version.
+     * (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The
+     * default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an
+     * earlier version.
      * 
      * @param httpVersion
-     *        (Optional) Specify the maximum HTTP version that you want viewers
-     *        to use to communicate with CloudFront. The default value for new
-     *        web distributions is http2. Viewers that don't support HTTP/2 will
-     *        automatically use an earlier version.
+     *        (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront.
+     *        The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically
+     *        use an earlier version.
      * @see HttpVersion
      */
 
@@ -861,15 +713,13 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * (Optional) Specify the maximum HTTP version that you want viewers to use
-     * to communicate with CloudFront. The default value for new web
-     * distributions is http2. Viewers that don't support HTTP/2 will
-     * automatically use an earlier version.
+     * (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The
+     * default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an
+     * earlier version.
      * 
-     * @return (Optional) Specify the maximum HTTP version that you want viewers
-     *         to use to communicate with CloudFront. The default value for new
-     *         web distributions is http2. Viewers that don't support HTTP/2
-     *         will automatically use an earlier version.
+     * @return (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront.
+     *         The default value for new web distributions is http2. Viewers that don't support HTTP/2 will
+     *         automatically use an earlier version.
      * @see HttpVersion
      */
 
@@ -878,18 +728,15 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * (Optional) Specify the maximum HTTP version that you want viewers to use
-     * to communicate with CloudFront. The default value for new web
-     * distributions is http2. Viewers that don't support HTTP/2 will
-     * automatically use an earlier version.
+     * (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The
+     * default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an
+     * earlier version.
      * 
      * @param httpVersion
-     *        (Optional) Specify the maximum HTTP version that you want viewers
-     *        to use to communicate with CloudFront. The default value for new
-     *        web distributions is http2. Viewers that don't support HTTP/2 will
-     *        automatically use an earlier version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront.
+     *        The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically
+     *        use an earlier version.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpVersion
      */
 
@@ -899,16 +746,14 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * (Optional) Specify the maximum HTTP version that you want viewers to use
-     * to communicate with CloudFront. The default value for new web
-     * distributions is http2. Viewers that don't support HTTP/2 will
-     * automatically use an earlier version.
+     * (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The
+     * default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an
+     * earlier version.
      * 
      * @param httpVersion
-     *        (Optional) Specify the maximum HTTP version that you want viewers
-     *        to use to communicate with CloudFront. The default value for new
-     *        web distributions is http2. Viewers that don't support HTTP/2 will
-     *        automatically use an earlier version.
+     *        (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront.
+     *        The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically
+     *        use an earlier version.
      * @see HttpVersion
      */
 
@@ -917,18 +762,15 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * (Optional) Specify the maximum HTTP version that you want viewers to use
-     * to communicate with CloudFront. The default value for new web
-     * distributions is http2. Viewers that don't support HTTP/2 will
-     * automatically use an earlier version.
+     * (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The
+     * default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an
+     * earlier version.
      * 
      * @param httpVersion
-     *        (Optional) Specify the maximum HTTP version that you want viewers
-     *        to use to communicate with CloudFront. The default value for new
-     *        web distributions is http2. Viewers that don't support HTTP/2 will
-     *        automatically use an earlier version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront.
+     *        The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically
+     *        use an earlier version.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpVersion
      */
 
@@ -938,8 +780,7 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -958,13 +799,11 @@ public class DistributionConfig implements Serializable, Cloneable {
         if (getOrigins() != null)
             sb.append("Origins: " + getOrigins() + ",");
         if (getDefaultCacheBehavior() != null)
-            sb.append("DefaultCacheBehavior: " + getDefaultCacheBehavior()
-                    + ",");
+            sb.append("DefaultCacheBehavior: " + getDefaultCacheBehavior() + ",");
         if (getCacheBehaviors() != null)
             sb.append("CacheBehaviors: " + getCacheBehaviors() + ",");
         if (getCustomErrorResponses() != null)
-            sb.append("CustomErrorResponses: " + getCustomErrorResponses()
-                    + ",");
+            sb.append("CustomErrorResponses: " + getCustomErrorResponses() + ",");
         if (getComment() != null)
             sb.append("Comment: " + getComment() + ",");
         if (getLogging() != null)
@@ -995,90 +834,65 @@ public class DistributionConfig implements Serializable, Cloneable {
         if (obj instanceof DistributionConfig == false)
             return false;
         DistributionConfig other = (DistributionConfig) obj;
-        if (other.getCallerReference() == null
-                ^ this.getCallerReference() == null)
+        if (other.getCallerReference() == null ^ this.getCallerReference() == null)
             return false;
-        if (other.getCallerReference() != null
-                && other.getCallerReference().equals(this.getCallerReference()) == false)
+        if (other.getCallerReference() != null && other.getCallerReference().equals(this.getCallerReference()) == false)
             return false;
         if (other.getAliases() == null ^ this.getAliases() == null)
             return false;
-        if (other.getAliases() != null
-                && other.getAliases().equals(this.getAliases()) == false)
+        if (other.getAliases() != null && other.getAliases().equals(this.getAliases()) == false)
             return false;
-        if (other.getDefaultRootObject() == null
-                ^ this.getDefaultRootObject() == null)
+        if (other.getDefaultRootObject() == null ^ this.getDefaultRootObject() == null)
             return false;
-        if (other.getDefaultRootObject() != null
-                && other.getDefaultRootObject().equals(
-                        this.getDefaultRootObject()) == false)
+        if (other.getDefaultRootObject() != null && other.getDefaultRootObject().equals(this.getDefaultRootObject()) == false)
             return false;
         if (other.getOrigins() == null ^ this.getOrigins() == null)
             return false;
-        if (other.getOrigins() != null
-                && other.getOrigins().equals(this.getOrigins()) == false)
+        if (other.getOrigins() != null && other.getOrigins().equals(this.getOrigins()) == false)
             return false;
-        if (other.getDefaultCacheBehavior() == null
-                ^ this.getDefaultCacheBehavior() == null)
+        if (other.getDefaultCacheBehavior() == null ^ this.getDefaultCacheBehavior() == null)
             return false;
-        if (other.getDefaultCacheBehavior() != null
-                && other.getDefaultCacheBehavior().equals(
-                        this.getDefaultCacheBehavior()) == false)
+        if (other.getDefaultCacheBehavior() != null && other.getDefaultCacheBehavior().equals(this.getDefaultCacheBehavior()) == false)
             return false;
-        if (other.getCacheBehaviors() == null
-                ^ this.getCacheBehaviors() == null)
+        if (other.getCacheBehaviors() == null ^ this.getCacheBehaviors() == null)
             return false;
-        if (other.getCacheBehaviors() != null
-                && other.getCacheBehaviors().equals(this.getCacheBehaviors()) == false)
+        if (other.getCacheBehaviors() != null && other.getCacheBehaviors().equals(this.getCacheBehaviors()) == false)
             return false;
-        if (other.getCustomErrorResponses() == null
-                ^ this.getCustomErrorResponses() == null)
+        if (other.getCustomErrorResponses() == null ^ this.getCustomErrorResponses() == null)
             return false;
-        if (other.getCustomErrorResponses() != null
-                && other.getCustomErrorResponses().equals(
-                        this.getCustomErrorResponses()) == false)
+        if (other.getCustomErrorResponses() != null && other.getCustomErrorResponses().equals(this.getCustomErrorResponses()) == false)
             return false;
         if (other.getComment() == null ^ this.getComment() == null)
             return false;
-        if (other.getComment() != null
-                && other.getComment().equals(this.getComment()) == false)
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
             return false;
         if (other.getLogging() == null ^ this.getLogging() == null)
             return false;
-        if (other.getLogging() != null
-                && other.getLogging().equals(this.getLogging()) == false)
+        if (other.getLogging() != null && other.getLogging().equals(this.getLogging()) == false)
             return false;
         if (other.getPriceClass() == null ^ this.getPriceClass() == null)
             return false;
-        if (other.getPriceClass() != null
-                && other.getPriceClass().equals(this.getPriceClass()) == false)
+        if (other.getPriceClass() != null && other.getPriceClass().equals(this.getPriceClass()) == false)
             return false;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
-        if (other.getEnabled() != null
-                && other.getEnabled().equals(this.getEnabled()) == false)
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
-        if (other.getViewerCertificate() == null
-                ^ this.getViewerCertificate() == null)
+        if (other.getViewerCertificate() == null ^ this.getViewerCertificate() == null)
             return false;
-        if (other.getViewerCertificate() != null
-                && other.getViewerCertificate().equals(
-                        this.getViewerCertificate()) == false)
+        if (other.getViewerCertificate() != null && other.getViewerCertificate().equals(this.getViewerCertificate()) == false)
             return false;
         if (other.getRestrictions() == null ^ this.getRestrictions() == null)
             return false;
-        if (other.getRestrictions() != null
-                && other.getRestrictions().equals(this.getRestrictions()) == false)
+        if (other.getRestrictions() != null && other.getRestrictions().equals(this.getRestrictions()) == false)
             return false;
         if (other.getWebACLId() == null ^ this.getWebACLId() == null)
             return false;
-        if (other.getWebACLId() != null
-                && other.getWebACLId().equals(this.getWebACLId()) == false)
+        if (other.getWebACLId() != null && other.getWebACLId().equals(this.getWebACLId()) == false)
             return false;
         if (other.getHttpVersion() == null ^ this.getHttpVersion() == null)
             return false;
-        if (other.getHttpVersion() != null
-                && other.getHttpVersion().equals(this.getHttpVersion()) == false)
+        if (other.getHttpVersion() != null && other.getHttpVersion().equals(this.getHttpVersion()) == false)
             return false;
         return true;
     }
@@ -1088,51 +902,21 @@ public class DistributionConfig implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCallerReference() == null) ? 0 : getCallerReference()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getAliases() == null) ? 0 : getAliases().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultRootObject() == null) ? 0
-                        : getDefaultRootObject().hashCode());
-        hashCode = prime * hashCode
-                + ((getOrigins() == null) ? 0 : getOrigins().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultCacheBehavior() == null) ? 0
-                        : getDefaultCacheBehavior().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheBehaviors() == null) ? 0 : getCacheBehaviors()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomErrorResponses() == null) ? 0
-                        : getCustomErrorResponses().hashCode());
-        hashCode = prime * hashCode
-                + ((getComment() == null) ? 0 : getComment().hashCode());
-        hashCode = prime * hashCode
-                + ((getLogging() == null) ? 0 : getLogging().hashCode());
-        hashCode = prime * hashCode
-                + ((getPriceClass() == null) ? 0 : getPriceClass().hashCode());
-        hashCode = prime * hashCode
-                + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getViewerCertificate() == null) ? 0
-                        : getViewerCertificate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRestrictions() == null) ? 0 : getRestrictions()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getWebACLId() == null) ? 0 : getWebACLId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHttpVersion() == null) ? 0 : getHttpVersion().hashCode());
+        hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode());
+        hashCode = prime * hashCode + ((getAliases() == null) ? 0 : getAliases().hashCode());
+        hashCode = prime * hashCode + ((getDefaultRootObject() == null) ? 0 : getDefaultRootObject().hashCode());
+        hashCode = prime * hashCode + ((getOrigins() == null) ? 0 : getOrigins().hashCode());
+        hashCode = prime * hashCode + ((getDefaultCacheBehavior() == null) ? 0 : getDefaultCacheBehavior().hashCode());
+        hashCode = prime * hashCode + ((getCacheBehaviors() == null) ? 0 : getCacheBehaviors().hashCode());
+        hashCode = prime * hashCode + ((getCustomErrorResponses() == null) ? 0 : getCustomErrorResponses().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getLogging() == null) ? 0 : getLogging().hashCode());
+        hashCode = prime * hashCode + ((getPriceClass() == null) ? 0 : getPriceClass().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getViewerCertificate() == null) ? 0 : getViewerCertificate().hashCode());
+        hashCode = prime * hashCode + ((getRestrictions() == null) ? 0 : getRestrictions().hashCode());
+        hashCode = prime * hashCode + ((getWebACLId() == null) ? 0 : getWebACLId().hashCode());
+        hashCode = prime * hashCode + ((getHttpVersion() == null) ? 0 : getHttpVersion().hashCode());
         return hashCode;
     }
 
@@ -1141,9 +925,7 @@ public class DistributionConfig implements Serializable, Cloneable {
         try {
             return (DistributionConfig) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

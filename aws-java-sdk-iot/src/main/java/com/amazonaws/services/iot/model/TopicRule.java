@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.iot.model;
 
@@ -31,8 +29,8 @@ public class TopicRule implements Serializable, Cloneable {
     private String ruleName;
     /**
      * <p>
-     * The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters.
+     * The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the
+     * newline characters.
      * </p>
      */
     private String sql;
@@ -99,8 +97,7 @@ public class TopicRule implements Serializable, Cloneable {
      * 
      * @param ruleName
      *        The name of the rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TopicRule withRuleName(String ruleName) {
@@ -110,13 +107,13 @@ public class TopicRule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters.
+     * The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the
+     * newline characters.
      * </p>
      * 
      * @param sql
-     *        The SQL statement used to query the topic. When using a SQL query
-     *        with multiple lines, be sure to escape the newline characters.
+     *        The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape
+     *        the newline characters.
      */
 
     public void setSql(String sql) {
@@ -125,12 +122,12 @@ public class TopicRule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters.
+     * The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the
+     * newline characters.
      * </p>
      * 
-     * @return The SQL statement used to query the topic. When using a SQL query
-     *         with multiple lines, be sure to escape the newline characters.
+     * @return The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape
+     *         the newline characters.
      */
 
     public String getSql() {
@@ -139,15 +136,14 @@ public class TopicRule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters.
+     * The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the
+     * newline characters.
      * </p>
      * 
      * @param sql
-     *        The SQL statement used to query the topic. When using a SQL query
-     *        with multiple lines, be sure to escape the newline characters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape
+     *        the newline characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TopicRule withSql(String sql) {
@@ -187,8 +183,7 @@ public class TopicRule implements Serializable, Cloneable {
      * 
      * @param description
      *        The description of the rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TopicRule withDescription(String description) {
@@ -228,8 +223,7 @@ public class TopicRule implements Serializable, Cloneable {
      * 
      * @param createdAt
      *        The date and time the rule was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TopicRule withCreatedAt(java.util.Date createdAt) {
@@ -272,16 +266,14 @@ public class TopicRule implements Serializable, Cloneable {
      * The actions associated with the rule.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setActions(java.util.Collection)} or
-     * {@link #withActions(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setActions(java.util.Collection)} or {@link #withActions(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param actions
      *        The actions associated with the rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TopicRule withActions(Action... actions) {
@@ -301,8 +293,7 @@ public class TopicRule implements Serializable, Cloneable {
      * 
      * @param actions
      *        The actions associated with the rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TopicRule withActions(java.util.Collection<Action> actions) {
@@ -342,8 +333,7 @@ public class TopicRule implements Serializable, Cloneable {
      * 
      * @param ruleDisabled
      *        Specifies whether the rule is disabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TopicRule withRuleDisabled(Boolean ruleDisabled) {
@@ -369,8 +359,7 @@ public class TopicRule implements Serializable, Cloneable {
      * </p>
      * 
      * @param awsIotSqlVersion
-     *        The version of the SQL rules engine to use when evaluating the
-     *        rule.
+     *        The version of the SQL rules engine to use when evaluating the rule.
      */
 
     public void setAwsIotSqlVersion(String awsIotSqlVersion) {
@@ -382,8 +371,7 @@ public class TopicRule implements Serializable, Cloneable {
      * The version of the SQL rules engine to use when evaluating the rule.
      * </p>
      * 
-     * @return The version of the SQL rules engine to use when evaluating the
-     *         rule.
+     * @return The version of the SQL rules engine to use when evaluating the rule.
      */
 
     public String getAwsIotSqlVersion() {
@@ -396,10 +384,8 @@ public class TopicRule implements Serializable, Cloneable {
      * </p>
      * 
      * @param awsIotSqlVersion
-     *        The version of the SQL rules engine to use when evaluating the
-     *        rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The version of the SQL rules engine to use when evaluating the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TopicRule withAwsIotSqlVersion(String awsIotSqlVersion) {
@@ -408,8 +394,7 @@ public class TopicRule implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -449,40 +434,31 @@ public class TopicRule implements Serializable, Cloneable {
         TopicRule other = (TopicRule) obj;
         if (other.getRuleName() == null ^ this.getRuleName() == null)
             return false;
-        if (other.getRuleName() != null
-                && other.getRuleName().equals(this.getRuleName()) == false)
+        if (other.getRuleName() != null && other.getRuleName().equals(this.getRuleName()) == false)
             return false;
         if (other.getSql() == null ^ this.getSql() == null)
             return false;
-        if (other.getSql() != null
-                && other.getSql().equals(this.getSql()) == false)
+        if (other.getSql() != null && other.getSql().equals(this.getSql()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getCreatedAt() != null
-                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getActions() == null ^ this.getActions() == null)
             return false;
-        if (other.getActions() != null
-                && other.getActions().equals(this.getActions()) == false)
+        if (other.getActions() != null && other.getActions().equals(this.getActions()) == false)
             return false;
         if (other.getRuleDisabled() == null ^ this.getRuleDisabled() == null)
             return false;
-        if (other.getRuleDisabled() != null
-                && other.getRuleDisabled().equals(this.getRuleDisabled()) == false)
+        if (other.getRuleDisabled() != null && other.getRuleDisabled().equals(this.getRuleDisabled()) == false)
             return false;
-        if (other.getAwsIotSqlVersion() == null
-                ^ this.getAwsIotSqlVersion() == null)
+        if (other.getAwsIotSqlVersion() == null ^ this.getAwsIotSqlVersion() == null)
             return false;
-        if (other.getAwsIotSqlVersion() != null
-                && other.getAwsIotSqlVersion().equals(
-                        this.getAwsIotSqlVersion()) == false)
+        if (other.getAwsIotSqlVersion() != null && other.getAwsIotSqlVersion().equals(this.getAwsIotSqlVersion()) == false)
             return false;
         return true;
     }
@@ -492,25 +468,13 @@ public class TopicRule implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
-        hashCode = prime * hashCode
-                + ((getSql() == null) ? 0 : getSql().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode
-                + ((getActions() == null) ? 0 : getActions().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRuleDisabled() == null) ? 0 : getRuleDisabled()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAwsIotSqlVersion() == null) ? 0 : getAwsIotSqlVersion()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
+        hashCode = prime * hashCode + ((getSql() == null) ? 0 : getSql().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
+        hashCode = prime * hashCode + ((getRuleDisabled() == null) ? 0 : getRuleDisabled().hashCode());
+        hashCode = prime * hashCode + ((getAwsIotSqlVersion() == null) ? 0 : getAwsIotSqlVersion().hashCode());
         return hashCode;
     }
 
@@ -519,9 +483,7 @@ public class TopicRule implements Serializable, Cloneable {
         try {
             return (TopicRule) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

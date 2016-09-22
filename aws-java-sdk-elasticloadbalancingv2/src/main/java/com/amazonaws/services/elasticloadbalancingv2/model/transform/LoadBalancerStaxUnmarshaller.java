@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
@@ -30,11 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * LoadBalancer StAX Unmarshaller
  */
-public class LoadBalancerStaxUnmarshaller implements
-        Unmarshaller<LoadBalancer, StaxUnmarshallerContext> {
+public class LoadBalancerStaxUnmarshaller implements Unmarshaller<LoadBalancer, StaxUnmarshallerContext> {
 
-    public LoadBalancer unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+    public LoadBalancer unmarshall(StaxUnmarshallerContext context) throws Exception {
         LoadBalancer loadBalancer = new LoadBalancer();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -50,73 +46,57 @@ public class LoadBalancerStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("LoadBalancerArn", targetDepth)) {
-                    loadBalancer.setLoadBalancerArn(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    loadBalancer.setLoadBalancerArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DNSName", targetDepth)) {
-                    loadBalancer.setDNSName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    loadBalancer.setDNSName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("CanonicalHostedZoneId", targetDepth)) {
-                    loadBalancer
-                            .setCanonicalHostedZoneId(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("CanonicalHostedZoneId", targetDepth)) {
+                    loadBalancer.setCanonicalHostedZoneId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("CreatedTime", targetDepth)) {
-                    loadBalancer.setCreatedTime(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    loadBalancer.setCreatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LoadBalancerName", targetDepth)) {
-                    loadBalancer.setLoadBalancerName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    loadBalancer.setLoadBalancerName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Scheme", targetDepth)) {
-                    loadBalancer.setScheme(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    loadBalancer.setScheme(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("VpcId", targetDepth)) {
-                    loadBalancer.setVpcId(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    loadBalancer.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("State", targetDepth)) {
-                    loadBalancer.setState(LoadBalancerStateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    loadBalancer.setState(LoadBalancerStateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Type", targetDepth)) {
-                    loadBalancer.setType(StringStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    loadBalancer.setType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("AvailabilityZones/member",
-                        targetDepth)) {
-                    loadBalancer
-                            .withAvailabilityZones(AvailabilityZoneStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("AvailabilityZones/member", targetDepth)) {
+                    loadBalancer.withAvailabilityZones(AvailabilityZoneStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context
-                        .testExpression("SecurityGroups/member", targetDepth)) {
-                    loadBalancer.withSecurityGroups(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("SecurityGroups/member", targetDepth)) {
+                    loadBalancer.withSecurityGroups(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

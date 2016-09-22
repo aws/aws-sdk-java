@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda.model;
 
@@ -25,9 +23,8 @@ public class AliasConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Lambda function ARN that is qualified using the alias name as the suffix.
-     * For example, if you create an alias called <code>BETA</code> that points
-     * to a helloworld function version, the ARN is
+     * Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an alias
+     * called <code>BETA</code> that points to a helloworld function version, the ARN is
      * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
      * </p>
      */
@@ -53,19 +50,15 @@ public class AliasConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Lambda function ARN that is qualified using the alias name as the suffix.
-     * For example, if you create an alias called <code>BETA</code> that points
-     * to a helloworld function version, the ARN is
+     * Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an alias
+     * called <code>BETA</code> that points to a helloworld function version, the ARN is
      * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
      * </p>
      * 
      * @param aliasArn
-     *        Lambda function ARN that is qualified using the alias name as the
-     *        suffix. For example, if you create an alias called
-     *        <code>BETA</code> that points to a helloworld function version,
-     *        the ARN is
-     *        <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>
-     *        .
+     *        Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an
+     *        alias called <code>BETA</code> that points to a helloworld function version, the ARN is
+     *        <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
      */
 
     public void setAliasArn(String aliasArn) {
@@ -74,18 +67,14 @@ public class AliasConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Lambda function ARN that is qualified using the alias name as the suffix.
-     * For example, if you create an alias called <code>BETA</code> that points
-     * to a helloworld function version, the ARN is
+     * Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an alias
+     * called <code>BETA</code> that points to a helloworld function version, the ARN is
      * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
      * </p>
      * 
-     * @return Lambda function ARN that is qualified using the alias name as the
-     *         suffix. For example, if you create an alias called
-     *         <code>BETA</code> that points to a helloworld function version,
-     *         the ARN is
-     *         <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>
-     *         .
+     * @return Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an
+     *         alias called <code>BETA</code> that points to a helloworld function version, the ARN is
+     *         <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
      */
 
     public String getAliasArn() {
@@ -94,21 +83,16 @@ public class AliasConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Lambda function ARN that is qualified using the alias name as the suffix.
-     * For example, if you create an alias called <code>BETA</code> that points
-     * to a helloworld function version, the ARN is
+     * Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an alias
+     * called <code>BETA</code> that points to a helloworld function version, the ARN is
      * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
      * </p>
      * 
      * @param aliasArn
-     *        Lambda function ARN that is qualified using the alias name as the
-     *        suffix. For example, if you create an alias called
-     *        <code>BETA</code> that points to a helloworld function version,
-     *        the ARN is
-     *        <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>
-     *        .
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an
+     *        alias called <code>BETA</code> that points to a helloworld function version, the ARN is
+     *        <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AliasConfiguration withAliasArn(String aliasArn) {
@@ -148,8 +132,7 @@ public class AliasConfiguration implements Serializable, Cloneable {
      * 
      * @param name
      *        Alias name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AliasConfiguration withName(String name) {
@@ -189,8 +172,7 @@ public class AliasConfiguration implements Serializable, Cloneable {
      * 
      * @param functionVersion
      *        Function version to which the alias points.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AliasConfiguration withFunctionVersion(String functionVersion) {
@@ -230,8 +212,7 @@ public class AliasConfiguration implements Serializable, Cloneable {
      * 
      * @param description
      *        Alias description.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AliasConfiguration withDescription(String description) {
@@ -240,8 +221,7 @@ public class AliasConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -275,24 +255,19 @@ public class AliasConfiguration implements Serializable, Cloneable {
         AliasConfiguration other = (AliasConfiguration) obj;
         if (other.getAliasArn() == null ^ this.getAliasArn() == null)
             return false;
-        if (other.getAliasArn() != null
-                && other.getAliasArn().equals(this.getAliasArn()) == false)
+        if (other.getAliasArn() != null && other.getAliasArn().equals(this.getAliasArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getFunctionVersion() == null
-                ^ this.getFunctionVersion() == null)
+        if (other.getFunctionVersion() == null ^ this.getFunctionVersion() == null)
             return false;
-        if (other.getFunctionVersion() != null
-                && other.getFunctionVersion().equals(this.getFunctionVersion()) == false)
+        if (other.getFunctionVersion() != null && other.getFunctionVersion().equals(this.getFunctionVersion()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         return true;
     }
@@ -302,17 +277,10 @@ public class AliasConfiguration implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAliasArn() == null) ? 0 : getAliasArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFunctionVersion() == null) ? 0 : getFunctionVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getAliasArn() == null) ? 0 : getAliasArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getFunctionVersion() == null) ? 0 : getFunctionVersion().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 
@@ -321,9 +289,7 @@ public class AliasConfiguration implements Serializable, Cloneable {
         try {
             return (AliasConfiguration) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

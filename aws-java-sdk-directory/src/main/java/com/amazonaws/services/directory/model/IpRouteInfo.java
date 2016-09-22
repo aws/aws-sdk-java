@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory.model;
 
@@ -78,8 +76,7 @@ public class IpRouteInfo implements Serializable, Cloneable {
      * Identifier (ID) of the directory associated with the IP addresses.
      * </p>
      * 
-     * @return Identifier (ID) of the directory associated with the IP
-     *         addresses.
+     * @return Identifier (ID) of the directory associated with the IP addresses.
      */
 
     public String getDirectoryId() {
@@ -93,8 +90,7 @@ public class IpRouteInfo implements Serializable, Cloneable {
      * 
      * @param directoryId
      *        Identifier (ID) of the directory associated with the IP addresses.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IpRouteInfo withDirectoryId(String directoryId) {
@@ -134,8 +130,7 @@ public class IpRouteInfo implements Serializable, Cloneable {
      * 
      * @param cidrIp
      *        IP address block in the <a>IpRoute</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IpRouteInfo withCidrIp(String cidrIp) {
@@ -177,8 +172,7 @@ public class IpRouteInfo implements Serializable, Cloneable {
      * 
      * @param ipRouteStatusMsg
      *        The status of the IP address block.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpRouteStatusMsg
      */
 
@@ -208,8 +202,7 @@ public class IpRouteInfo implements Serializable, Cloneable {
      * 
      * @param ipRouteStatusMsg
      *        The status of the IP address block.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpRouteStatusMsg
      */
 
@@ -250,8 +243,7 @@ public class IpRouteInfo implements Serializable, Cloneable {
      * 
      * @param addedDateTime
      *        The date and time the address block was added to the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IpRouteInfo withAddedDateTime(java.util.Date addedDateTime) {
@@ -291,8 +283,7 @@ public class IpRouteInfo implements Serializable, Cloneable {
      * 
      * @param ipRouteStatusReason
      *        The reason for the IpRouteStatusMsg.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IpRouteInfo withIpRouteStatusReason(String ipRouteStatusReason) {
@@ -332,8 +323,7 @@ public class IpRouteInfo implements Serializable, Cloneable {
      * 
      * @param description
      *        Description of the <a>IpRouteInfo</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IpRouteInfo withDescription(String description) {
@@ -342,8 +332,7 @@ public class IpRouteInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -381,37 +370,27 @@ public class IpRouteInfo implements Serializable, Cloneable {
         IpRouteInfo other = (IpRouteInfo) obj;
         if (other.getDirectoryId() == null ^ this.getDirectoryId() == null)
             return false;
-        if (other.getDirectoryId() != null
-                && other.getDirectoryId().equals(this.getDirectoryId()) == false)
+        if (other.getDirectoryId() != null && other.getDirectoryId().equals(this.getDirectoryId()) == false)
             return false;
         if (other.getCidrIp() == null ^ this.getCidrIp() == null)
             return false;
-        if (other.getCidrIp() != null
-                && other.getCidrIp().equals(this.getCidrIp()) == false)
+        if (other.getCidrIp() != null && other.getCidrIp().equals(this.getCidrIp()) == false)
             return false;
-        if (other.getIpRouteStatusMsg() == null
-                ^ this.getIpRouteStatusMsg() == null)
+        if (other.getIpRouteStatusMsg() == null ^ this.getIpRouteStatusMsg() == null)
             return false;
-        if (other.getIpRouteStatusMsg() != null
-                && other.getIpRouteStatusMsg().equals(
-                        this.getIpRouteStatusMsg()) == false)
+        if (other.getIpRouteStatusMsg() != null && other.getIpRouteStatusMsg().equals(this.getIpRouteStatusMsg()) == false)
             return false;
         if (other.getAddedDateTime() == null ^ this.getAddedDateTime() == null)
             return false;
-        if (other.getAddedDateTime() != null
-                && other.getAddedDateTime().equals(this.getAddedDateTime()) == false)
+        if (other.getAddedDateTime() != null && other.getAddedDateTime().equals(this.getAddedDateTime()) == false)
             return false;
-        if (other.getIpRouteStatusReason() == null
-                ^ this.getIpRouteStatusReason() == null)
+        if (other.getIpRouteStatusReason() == null ^ this.getIpRouteStatusReason() == null)
             return false;
-        if (other.getIpRouteStatusReason() != null
-                && other.getIpRouteStatusReason().equals(
-                        this.getIpRouteStatusReason()) == false)
+        if (other.getIpRouteStatusReason() != null && other.getIpRouteStatusReason().equals(this.getIpRouteStatusReason()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         return true;
     }
@@ -421,26 +400,12 @@ public class IpRouteInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
-        hashCode = prime * hashCode
-                + ((getCidrIp() == null) ? 0 : getCidrIp().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIpRouteStatusMsg() == null) ? 0 : getIpRouteStatusMsg()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAddedDateTime() == null) ? 0 : getAddedDateTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIpRouteStatusReason() == null) ? 0
-                        : getIpRouteStatusReason().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getCidrIp() == null) ? 0 : getCidrIp().hashCode());
+        hashCode = prime * hashCode + ((getIpRouteStatusMsg() == null) ? 0 : getIpRouteStatusMsg().hashCode());
+        hashCode = prime * hashCode + ((getAddedDateTime() == null) ? 0 : getAddedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getIpRouteStatusReason() == null) ? 0 : getIpRouteStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 
@@ -449,9 +414,7 @@ public class IpRouteInfo implements Serializable, Cloneable {
         try {
             return (IpRouteInfo) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

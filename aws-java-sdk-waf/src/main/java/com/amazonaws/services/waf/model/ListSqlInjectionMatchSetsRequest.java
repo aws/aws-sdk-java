@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.waf.model;
 
@@ -19,60 +17,45 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to list the <a>SqlInjectionMatchSet</a> objects created by the
- * current AWS account.
+ * A request to list the <a>SqlInjectionMatchSet</a> objects created by the current AWS account.
  * </p>
  */
-public class ListSqlInjectionMatchSetsRequest extends
-        com.amazonaws.AmazonWebServiceRequest implements Serializable,
-        Cloneable {
+public class ListSqlInjectionMatchSetsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you specify a value for <code>Limit</code> and you have more
-     * <a>SqlInjectionMatchSet</a> objects than the value of <code>Limit</code>,
-     * AWS WAF returns a <code>NextMarker</code> value in the response that
-     * allows you to list another group of <code>SqlInjectionMatchSets</code>.
-     * For the second and subsequent <code>ListSqlInjectionMatchSets</code>
-     * requests, specify the value of <code>NextMarker</code> from the previous
-     * response to get information about another batch of
-     * <code>SqlInjectionMatchSets</code>.
+     * If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than the
+     * value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
+     * list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent
+     * <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous
+     * response to get information about another batch of <code>SqlInjectionMatchSets</code>.
      * </p>
      */
     private String nextMarker;
     /**
      * <p>
-     * Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want
-     * AWS WAF to return for this request. If you have more
-     * <code>SqlInjectionMatchSet</code> objects than the number you specify for
-     * <code>Limit</code>, the response includes a <code>NextMarker</code> value
-     * that you can use to get another batch of <code>Rules</code>.
+     * Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this request. If
+     * you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the
+     * response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * If you specify a value for <code>Limit</code> and you have more
-     * <a>SqlInjectionMatchSet</a> objects than the value of <code>Limit</code>,
-     * AWS WAF returns a <code>NextMarker</code> value in the response that
-     * allows you to list another group of <code>SqlInjectionMatchSets</code>.
-     * For the second and subsequent <code>ListSqlInjectionMatchSets</code>
-     * requests, specify the value of <code>NextMarker</code> from the previous
-     * response to get information about another batch of
-     * <code>SqlInjectionMatchSets</code>.
+     * If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than the
+     * value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
+     * list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent
+     * <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous
+     * response to get information about another batch of <code>SqlInjectionMatchSets</code>.
      * </p>
      * 
      * @param nextMarker
-     *        If you specify a value for <code>Limit</code> and you have more
-     *        <a>SqlInjectionMatchSet</a> objects than the value of
-     *        <code>Limit</code>, AWS WAF returns a <code>NextMarker</code>
-     *        value in the response that allows you to list another group of
-     *        <code>SqlInjectionMatchSets</code>. For the second and subsequent
-     *        <code>ListSqlInjectionMatchSets</code> requests, specify the value
-     *        of <code>NextMarker</code> from the previous response to get
-     *        information about another batch of
-     *        <code>SqlInjectionMatchSets</code>.
+     *        If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than
+     *        the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that
+     *        allows you to list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent
+     *        <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the
+     *        previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -81,25 +64,18 @@ public class ListSqlInjectionMatchSetsRequest extends
 
     /**
      * <p>
-     * If you specify a value for <code>Limit</code> and you have more
-     * <a>SqlInjectionMatchSet</a> objects than the value of <code>Limit</code>,
-     * AWS WAF returns a <code>NextMarker</code> value in the response that
-     * allows you to list another group of <code>SqlInjectionMatchSets</code>.
-     * For the second and subsequent <code>ListSqlInjectionMatchSets</code>
-     * requests, specify the value of <code>NextMarker</code> from the previous
-     * response to get information about another batch of
-     * <code>SqlInjectionMatchSets</code>.
+     * If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than the
+     * value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
+     * list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent
+     * <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous
+     * response to get information about another batch of <code>SqlInjectionMatchSets</code>.
      * </p>
      * 
-     * @return If you specify a value for <code>Limit</code> and you have more
-     *         <a>SqlInjectionMatchSet</a> objects than the value of
-     *         <code>Limit</code>, AWS WAF returns a <code>NextMarker</code>
-     *         value in the response that allows you to list another group of
-     *         <code>SqlInjectionMatchSets</code>. For the second and subsequent
-     *         <code>ListSqlInjectionMatchSets</code> requests, specify the
-     *         value of <code>NextMarker</code> from the previous response to
-     *         get information about another batch of
-     *         <code>SqlInjectionMatchSets</code>.
+     * @return If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than
+     *         the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that
+     *         allows you to list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent
+     *         <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the
+     *         previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.
      */
 
     public String getNextMarker() {
@@ -108,28 +84,20 @@ public class ListSqlInjectionMatchSetsRequest extends
 
     /**
      * <p>
-     * If you specify a value for <code>Limit</code> and you have more
-     * <a>SqlInjectionMatchSet</a> objects than the value of <code>Limit</code>,
-     * AWS WAF returns a <code>NextMarker</code> value in the response that
-     * allows you to list another group of <code>SqlInjectionMatchSets</code>.
-     * For the second and subsequent <code>ListSqlInjectionMatchSets</code>
-     * requests, specify the value of <code>NextMarker</code> from the previous
-     * response to get information about another batch of
-     * <code>SqlInjectionMatchSets</code>.
+     * If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than the
+     * value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
+     * list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent
+     * <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous
+     * response to get information about another batch of <code>SqlInjectionMatchSets</code>.
      * </p>
      * 
      * @param nextMarker
-     *        If you specify a value for <code>Limit</code> and you have more
-     *        <a>SqlInjectionMatchSet</a> objects than the value of
-     *        <code>Limit</code>, AWS WAF returns a <code>NextMarker</code>
-     *        value in the response that allows you to list another group of
-     *        <code>SqlInjectionMatchSets</code>. For the second and subsequent
-     *        <code>ListSqlInjectionMatchSets</code> requests, specify the value
-     *        of <code>NextMarker</code> from the previous response to get
-     *        information about another batch of
-     *        <code>SqlInjectionMatchSets</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than
+     *        the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that
+     *        allows you to list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent
+     *        <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the
+     *        previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListSqlInjectionMatchSetsRequest withNextMarker(String nextMarker) {
@@ -139,19 +107,15 @@ public class ListSqlInjectionMatchSetsRequest extends
 
     /**
      * <p>
-     * Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want
-     * AWS WAF to return for this request. If you have more
-     * <code>SqlInjectionMatchSet</code> objects than the number you specify for
-     * <code>Limit</code>, the response includes a <code>NextMarker</code> value
-     * that you can use to get another batch of <code>Rules</code>.
+     * Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this request. If
+     * you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the
+     * response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.
      * </p>
      * 
      * @param limit
-     *        Specifies the number of <a>SqlInjectionMatchSet</a> objects that
-     *        you want AWS WAF to return for this request. If you have more
-     *        <code>SqlInjectionMatchSet</code> objects than the number you
-     *        specify for <code>Limit</code>, the response includes a
-     *        <code>NextMarker</code> value that you can use to get another
+     *        Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this
+     *        request. If you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for
+     *        <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another
      *        batch of <code>Rules</code>.
      */
 
@@ -161,18 +125,14 @@ public class ListSqlInjectionMatchSetsRequest extends
 
     /**
      * <p>
-     * Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want
-     * AWS WAF to return for this request. If you have more
-     * <code>SqlInjectionMatchSet</code> objects than the number you specify for
-     * <code>Limit</code>, the response includes a <code>NextMarker</code> value
-     * that you can use to get another batch of <code>Rules</code>.
+     * Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this request. If
+     * you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the
+     * response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.
      * </p>
      * 
-     * @return Specifies the number of <a>SqlInjectionMatchSet</a> objects that
-     *         you want AWS WAF to return for this request. If you have more
-     *         <code>SqlInjectionMatchSet</code> objects than the number you
-     *         specify for <code>Limit</code>, the response includes a
-     *         <code>NextMarker</code> value that you can use to get another
+     * @return Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this
+     *         request. If you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for
+     *         <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another
      *         batch of <code>Rules</code>.
      */
 
@@ -182,22 +142,17 @@ public class ListSqlInjectionMatchSetsRequest extends
 
     /**
      * <p>
-     * Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want
-     * AWS WAF to return for this request. If you have more
-     * <code>SqlInjectionMatchSet</code> objects than the number you specify for
-     * <code>Limit</code>, the response includes a <code>NextMarker</code> value
-     * that you can use to get another batch of <code>Rules</code>.
+     * Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this request. If
+     * you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the
+     * response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.
      * </p>
      * 
      * @param limit
-     *        Specifies the number of <a>SqlInjectionMatchSet</a> objects that
-     *        you want AWS WAF to return for this request. If you have more
-     *        <code>SqlInjectionMatchSet</code> objects than the number you
-     *        specify for <code>Limit</code>, the response includes a
-     *        <code>NextMarker</code> value that you can use to get another
+     *        Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this
+     *        request. If you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for
+     *        <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another
      *        batch of <code>Rules</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListSqlInjectionMatchSetsRequest withLimit(Integer limit) {
@@ -206,8 +161,7 @@ public class ListSqlInjectionMatchSetsRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -237,13 +191,11 @@ public class ListSqlInjectionMatchSetsRequest extends
         ListSqlInjectionMatchSetsRequest other = (ListSqlInjectionMatchSetsRequest) obj;
         if (other.getNextMarker() == null ^ this.getNextMarker() == null)
             return false;
-        if (other.getNextMarker() != null
-                && other.getNextMarker().equals(this.getNextMarker()) == false)
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -253,10 +205,8 @@ public class ListSqlInjectionMatchSetsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 

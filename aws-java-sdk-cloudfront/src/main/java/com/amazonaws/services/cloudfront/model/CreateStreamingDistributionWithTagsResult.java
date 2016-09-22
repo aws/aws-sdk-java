@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
 
@@ -19,17 +17,14 @@ import java.io.Serializable;
 /**
  * The returned result of the corresponding request.
  */
-public class CreateStreamingDistributionWithTagsResult extends
-        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
-        implements Serializable, Cloneable {
+public class CreateStreamingDistributionWithTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
 
     /** The streaming distribution's information. */
     private StreamingDistribution streamingDistribution;
     /**
-     * The fully qualified URI of the new streaming distribution resource just
-     * created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/streaming
-     * -distribution/EGTXBD79H29TRA8.
+     * The fully qualified URI of the new streaming distribution resource just created. For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      */
     private String location;
     /** The current version of the streaming distribution created. */
@@ -42,8 +37,7 @@ public class CreateStreamingDistributionWithTagsResult extends
      *        The streaming distribution's information.
      */
 
-    public void setStreamingDistribution(
-            StreamingDistribution streamingDistribution) {
+    public void setStreamingDistribution(StreamingDistribution streamingDistribution) {
         this.streamingDistribution = streamingDistribution;
     }
 
@@ -62,27 +56,21 @@ public class CreateStreamingDistributionWithTagsResult extends
      * 
      * @param streamingDistribution
      *        The streaming distribution's information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateStreamingDistributionWithTagsResult withStreamingDistribution(
-            StreamingDistribution streamingDistribution) {
+    public CreateStreamingDistributionWithTagsResult withStreamingDistribution(StreamingDistribution streamingDistribution) {
         setStreamingDistribution(streamingDistribution);
         return this;
     }
 
     /**
-     * The fully qualified URI of the new streaming distribution resource just
-     * created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/streaming
-     * -distribution/EGTXBD79H29TRA8.
+     * The fully qualified URI of the new streaming distribution resource just created. For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      * 
      * @param location
-     *        The fully qualified URI of the new streaming distribution resource
-     *        just created. For example:
-     *        https://cloudfront.amazonaws.com/2010-11
-     *        -01/streaming-distribution/EGTXBD79H29TRA8.
+     *        The fully qualified URI of the new streaming distribution resource just created. For example:
+     *        https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      */
 
     public void setLocation(String location) {
@@ -90,15 +78,11 @@ public class CreateStreamingDistributionWithTagsResult extends
     }
 
     /**
-     * The fully qualified URI of the new streaming distribution resource just
-     * created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/streaming
-     * -distribution/EGTXBD79H29TRA8.
+     * The fully qualified URI of the new streaming distribution resource just created. For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      * 
-     * @return The fully qualified URI of the new streaming distribution
-     *         resource just created. For example:
-     *         https://cloudfront.amazonaws.com
-     *         /2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     * @return The fully qualified URI of the new streaming distribution resource just created. For example:
+     *         https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      */
 
     public String getLocation() {
@@ -106,22 +90,16 @@ public class CreateStreamingDistributionWithTagsResult extends
     }
 
     /**
-     * The fully qualified URI of the new streaming distribution resource just
-     * created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/streaming
-     * -distribution/EGTXBD79H29TRA8.
+     * The fully qualified URI of the new streaming distribution resource just created. For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      * 
      * @param location
-     *        The fully qualified URI of the new streaming distribution resource
-     *        just created. For example:
-     *        https://cloudfront.amazonaws.com/2010-11
-     *        -01/streaming-distribution/EGTXBD79H29TRA8.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The fully qualified URI of the new streaming distribution resource just created. For example:
+     *        https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateStreamingDistributionWithTagsResult withLocation(
-            String location) {
+    public CreateStreamingDistributionWithTagsResult withLocation(String location) {
         setLocation(location);
         return this;
     }
@@ -152,8 +130,7 @@ public class CreateStreamingDistributionWithTagsResult extends
      * 
      * @param eTag
      *        The current version of the streaming distribution created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateStreamingDistributionWithTagsResult withETag(String eTag) {
@@ -162,8 +139,7 @@ public class CreateStreamingDistributionWithTagsResult extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -174,8 +150,7 @@ public class CreateStreamingDistributionWithTagsResult extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamingDistribution() != null)
-            sb.append("StreamingDistribution: " + getStreamingDistribution()
-                    + ",");
+            sb.append("StreamingDistribution: " + getStreamingDistribution() + ",");
         if (getLocation() != null)
             sb.append("Location: " + getLocation() + ",");
         if (getETag() != null)
@@ -194,22 +169,17 @@ public class CreateStreamingDistributionWithTagsResult extends
         if (obj instanceof CreateStreamingDistributionWithTagsResult == false)
             return false;
         CreateStreamingDistributionWithTagsResult other = (CreateStreamingDistributionWithTagsResult) obj;
-        if (other.getStreamingDistribution() == null
-                ^ this.getStreamingDistribution() == null)
+        if (other.getStreamingDistribution() == null ^ this.getStreamingDistribution() == null)
             return false;
-        if (other.getStreamingDistribution() != null
-                && other.getStreamingDistribution().equals(
-                        this.getStreamingDistribution()) == false)
+        if (other.getStreamingDistribution() != null && other.getStreamingDistribution().equals(this.getStreamingDistribution()) == false)
             return false;
         if (other.getLocation() == null ^ this.getLocation() == null)
             return false;
-        if (other.getLocation() != null
-                && other.getLocation().equals(this.getLocation()) == false)
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
         if (other.getETag() == null ^ this.getETag() == null)
             return false;
-        if (other.getETag() != null
-                && other.getETag().equals(this.getETag()) == false)
+        if (other.getETag() != null && other.getETag().equals(this.getETag()) == false)
             return false;
         return true;
     }
@@ -219,14 +189,9 @@ public class CreateStreamingDistributionWithTagsResult extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getStreamingDistribution() == null) ? 0
-                        : getStreamingDistribution().hashCode());
-        hashCode = prime * hashCode
-                + ((getLocation() == null) ? 0 : getLocation().hashCode());
-        hashCode = prime * hashCode
-                + ((getETag() == null) ? 0 : getETag().hashCode());
+        hashCode = prime * hashCode + ((getStreamingDistribution() == null) ? 0 : getStreamingDistribution().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getETag() == null) ? 0 : getETag().hashCode());
         return hashCode;
     }
 
@@ -235,9 +200,7 @@ public class CreateStreamingDistributionWithTagsResult extends
         try {
             return (CreateStreamingDistributionWithTagsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

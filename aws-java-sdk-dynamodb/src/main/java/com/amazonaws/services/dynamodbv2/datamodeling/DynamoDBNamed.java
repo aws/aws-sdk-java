@@ -20,12 +20,15 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotation for overriding the an attribute's name.
+ * Annotation for overriding a property's DynamoDB attribute name.
  *
  * <pre class="brush: java">
  * &#064;DynamoDBNamed(&quot;InternalStatus&quot;)
  * public String getStatus()
  * </pre>
+ *
+ * <p>This annotation has the lowest precedence among other property/field
+ * annotations where {@code attributeName} may be specified.</p>
  *
  * <p>May be used as a meta-annotation.</p>
  */

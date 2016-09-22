@@ -1,16 +1,14 @@
 /*
  * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not
- * use this file except in compliance with the License. A copy of the License is
- * located at
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
  * 
  * http://aws.amazon.com/apache2.0
  * 
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
 
@@ -24,8 +22,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeVpcClassicLinkDnsSuppo
  * Contains the parameters for DescribeVpcClassicLinkDnsSupport.
  * </p>
  */
-public class DescribeVpcClassicLinkDnsSupportRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable,
+public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeVpcClassicLinkDnsSupportRequest> {
 
     /**
@@ -36,16 +33,14 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
     private com.amazonaws.internal.SdkInternalList<String> vpcIds;
     /**
      * <p>
-     * The maximum number of items to return for this request. The request
-     * returns a token that you can specify in a subsequent call to get the next
-     * set of results.
+     * The maximum number of items to return for this request. The request returns a token that you can specify in a
+     * subsequent call to get the next set of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token
-     * from a prior call.)
+     * The token for the next set of items to return. (You received this token from a prior call.)
      * </p>
      */
     private String nextToken;
@@ -88,22 +83,19 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
      * One or more VPC IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVpcIds(java.util.Collection)} or
-     * {@link #withVpcIds(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcIds(java.util.Collection)} or {@link #withVpcIds(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param vpcIds
      *        One or more VPC IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeVpcClassicLinkDnsSupportRequest withVpcIds(String... vpcIds) {
         if (this.vpcIds == null) {
-            setVpcIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    vpcIds.length));
+            setVpcIds(new com.amazonaws.internal.SdkInternalList<String>(vpcIds.length));
         }
         for (String ele : vpcIds) {
             this.vpcIds.add(ele);
@@ -118,27 +110,23 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
      * 
      * @param vpcIds
      *        One or more VPC IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeVpcClassicLinkDnsSupportRequest withVpcIds(
-            java.util.Collection<String> vpcIds) {
+    public DescribeVpcClassicLinkDnsSupportRequest withVpcIds(java.util.Collection<String> vpcIds) {
         setVpcIds(vpcIds);
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request
-     * returns a token that you can specify in a subsequent call to get the next
-     * set of results.
+     * The maximum number of items to return for this request. The request returns a token that you can specify in a
+     * subsequent call to get the next set of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this request. The
-     *        request returns a token that you can specify in a subsequent call
-     *        to get the next set of results.
+     *        The maximum number of items to return for this request. The request returns a token that you can specify
+     *        in a subsequent call to get the next set of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -147,14 +135,12 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request
-     * returns a token that you can specify in a subsequent call to get the next
-     * set of results.
+     * The maximum number of items to return for this request. The request returns a token that you can specify in a
+     * subsequent call to get the next set of results.
      * </p>
      * 
-     * @return The maximum number of items to return for this request. The
-     *         request returns a token that you can specify in a subsequent call
-     *         to get the next set of results.
+     * @return The maximum number of items to return for this request. The request returns a token that you can specify
+     *         in a subsequent call to get the next set of results.
      */
 
     public Integer getMaxResults() {
@@ -163,34 +149,28 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request
-     * returns a token that you can specify in a subsequent call to get the next
-     * set of results.
+     * The maximum number of items to return for this request. The request returns a token that you can specify in a
+     * subsequent call to get the next set of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this request. The
-     *        request returns a token that you can specify in a subsequent call
-     *        to get the next set of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of items to return for this request. The request returns a token that you can specify
+     *        in a subsequent call to get the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeVpcClassicLinkDnsSupportRequest withMaxResults(
-            Integer maxResults) {
+    public DescribeVpcClassicLinkDnsSupportRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
     }
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token
-     * from a prior call.)
+     * The token for the next set of items to return. (You received this token from a prior call.)
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this
-     *        token from a prior call.)
+     *        The token for the next set of items to return. (You received this token from a prior call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -199,12 +179,10 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token
-     * from a prior call.)
+     * The token for the next set of items to return. (You received this token from a prior call.)
      * </p>
      * 
-     * @return The token for the next set of items to return. (You received this
-     *         token from a prior call.)
+     * @return The token for the next set of items to return. (You received this token from a prior call.)
      */
 
     public String getNextToken() {
@@ -213,39 +191,32 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token
-     * from a prior call.)
+     * The token for the next set of items to return. (You received this token from a prior call.)
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this
-     *        token from a prior call.)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token for the next set of items to return. (You received this token from a prior call.)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeVpcClassicLinkDnsSupportRequest withNextToken(
-            String nextToken) {
+    public DescribeVpcClassicLinkDnsSupportRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeVpcClassicLinkDnsSupportRequest> getDryRunRequest() {
-        Request<DescribeVpcClassicLinkDnsSupportRequest> request = new DescribeVpcClassicLinkDnsSupportRequestMarshaller()
-                .marshall(this);
+        Request<DescribeVpcClassicLinkDnsSupportRequest> request = new DescribeVpcClassicLinkDnsSupportRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
      *
@@ -277,18 +248,15 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
         DescribeVpcClassicLinkDnsSupportRequest other = (DescribeVpcClassicLinkDnsSupportRequest) obj;
         if (other.getVpcIds() == null ^ this.getVpcIds() == null)
             return false;
-        if (other.getVpcIds() != null
-                && other.getVpcIds().equals(this.getVpcIds()) == false)
+        if (other.getVpcIds() != null && other.getVpcIds().equals(this.getVpcIds()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -298,12 +266,9 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVpcIds() == null) ? 0 : getVpcIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getVpcIds() == null) ? 0 : getVpcIds().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
